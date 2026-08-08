@@ -123,6 +123,34 @@ Open `http://127.0.0.1:4177/`. Database credentials remain server-side. The
 graph itself remains the immutable canonical snapshot; the server verifies
 projection parity rather than treating screen position as topology.
 
+## License
+
+This repository is dual-licensed by content type:
+
+- **Code** — all source, tooling, and tests (`src/`, `court-mathematics/`,
+  `tests/`, `scripts/`, `graph/`, `bestiary/site/`, and build configuration):
+  **MIT** — see `LICENSE`.
+- **Curated data** — the curated and audited datasets (`canonical/`, the
+  dataset/fixture files under `seven-governors-*`, and `graph/data/`):
+  **Creative Commons Attribution 4.0** (CC BY 4.0) — see `DATA_LICENSE.md`.
+
+Attribution for the data: *Erick Wright. Seven Governors / the-instrument.
+CC BY 4.0.* This is a summary, not legal advice — review both license texts
+before redistributing or remixing.
+
+## Archiving
+
+A permanent, versioned snapshot of this repository is archived on Zenodo:
+
+```
+[![DOI](https://zenodo.org/badge/DOI/<ZENODO-DOI>.svg)](https://doi.org/<ZENODO-DOI>)
+```
+
+Replace `<ZENODO-DOI>` with the DOI assigned by Zenodo when the snapshot is
+uploaded. Once archived, that version is immutable and independently
+preserved, so the project remains available even if this repository is ever
+removed or changed.
+
 ## Change policy
 
 - Mathematical or office-rule changes begin in the audit/framework layer.
