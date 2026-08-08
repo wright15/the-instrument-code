@@ -142,9 +142,7 @@ before redistributing or remixing.
 
 A permanent, versioned snapshot of this repository is archived on Zenodo:
 
-```
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21845819.svg)](https://doi.org/10.5281/zenodo.21845819)
-```
 
 That version is immutable and independently preserved on Zenodo, so the
 project remains available even if this repository is ever removed or changed.
