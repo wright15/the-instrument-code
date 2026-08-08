@@ -1,0 +1,83 @@
+{
+  "checks": [
+    {
+      "detail": [
+        {
+          "exitCode": 0,
+          "name": "emit-clean-a",
+          "passed": true
+        },
+        {
+          "exitCode": 0,
+          "name": "check-clean-a",
+          "passed": true
+        },
+        {
+          "exitCode": 0,
+          "name": "emit-clean-b",
+          "passed": true
+        },
+        {
+          "exitCode": 0,
+          "name": "check-clean-b",
+          "passed": true
+        },
+        {
+          "exitCode": 0,
+          "name": "emit-reordered",
+          "passed": true
+        },
+        {
+          "exitCode": 0,
+          "name": "check-reordered",
+          "passed": true
+        }
+      ],
+      "name": "separate-process-check-emit-check",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "installedHashes": {
+          "canonical-bridge-examples.json": "f116850049a4c7d74724c077c71bdf66cfec6b975c78bf91177554699f7fb3ef",
+          "feature-typed-aspect-crosswalk.json": "7857cb7bf5809a2860cd832eca9bf9ad04c40fadb4c4d0e333f8a6cf653c8a78",
+          "policy-release.json": "ab0a9d2827ae262a0e85bcaf3882839e070520ae596fa2c87d68ab0e1eae33d8"
+        },
+        "outputCount": 3
+      },
+      "name": "two-clean-builds-byte-identical",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "fixtureId": "fixture:reordered-policy-input:v1",
+        "reversedArrays": [
+          "featureCrosswalk.entries",
+          "policyInput.bridgeRules",
+          "policyInput.constraintMarkers",
+          "policyInput.operations",
+          "policyInput.typedAspects"
+        ]
+      },
+      "name": "reordered-input-byte-identical",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "policyFingerprint": "460e6c40bf96f58a0be36936a91939b930701dfee5875d5e5d0cd6311402f819",
+        "sourceFingerprint": "609be20d0ee5d2f400b42b09d16842d7bfa3fee42f6bed24dbc1b4bbf4bc6947"
+      },
+      "name": "source-policy-fingerprints-identical",
+      "status": "PASS"
+    }
+  ],
+  "packageVersion": "0.1.0",
+  "releaseId": "governor-runtime:0.1.0",
+  "schemaVersion": "1.0.0",
+  "status": "passed",
+  "summary": {
+    "checks": 4,
+    "failed": 0,
+    "passed": 4
+  }
+}

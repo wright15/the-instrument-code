@@ -1,0 +1,102 @@
+{
+  "fixtureId": "fixture:lydian-minor-midpoint",
+  "fixtureClass": "structural_normalization",
+  "evidenceScope": [
+    "harmonic_structure",
+    "office_resolution",
+    "normal_form_confluence"
+  ],
+  "semanticEffectEvidence": false,
+  "label": "Lydian Minor A2 midpoint confluence",
+  "fixtureType": "exact_midpoint_confluence",
+  "targetStateId": 1493,
+  "targetStateName": "Lydian Minor",
+  "expectedOffice": "Mars",
+  "routes": [
+    {
+      "routeId": "route:lydian-minor:1749:L6",
+      "sourceIds": [
+        1749
+      ],
+      "targetId": 1493,
+      "structuralOperatorIds": [
+        "L6"
+      ],
+      "operatorAnnotations": [
+        {
+          "structuralOperatorId": "L6",
+          "semanticOperatorId": "semantic:L6:v0.1.1",
+          "degree": 6,
+          "degreeGovernor": "Mercury",
+          "direction": "lower",
+          "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+          "semanticEffectEvidence": false
+        }
+      ],
+      "relationEvidence": [
+        {
+          "sourceId": 1749,
+          "sourceName": "Acoustic",
+          "operatorId": "L6",
+          "targetId": 1493,
+          "targetName": "Lydian Minor",
+          "structuralEvidence": true,
+          "structuralEdgeTypes": [
+            "CONSTRUCTS"
+          ],
+          "fieldEvidence": true,
+          "fieldEdgeTypes": [
+            "AUDITED_HAMMING2"
+          ],
+          "applicationStatus": "formal_substrate_observed"
+        }
+      ],
+      "note": "Exact A2 midpoint route.",
+      "excludedFromIntrinsicFingerprint": true
+    },
+    {
+      "routeId": "route:lydian-minor:1461:R4",
+      "sourceIds": [
+        1461
+      ],
+      "targetId": 1493,
+      "structuralOperatorIds": [
+        "R4"
+      ],
+      "operatorAnnotations": [
+        {
+          "structuralOperatorId": "R4",
+          "semanticOperatorId": "semantic:R4:v0.1.1",
+          "degree": 4,
+          "degreeGovernor": "Sun",
+          "direction": "raise",
+          "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+          "semanticEffectEvidence": false
+        }
+      ],
+      "relationEvidence": [
+        {
+          "sourceId": 1461,
+          "sourceName": "Mixolydian ♭6",
+          "operatorId": "R4",
+          "targetId": 1493,
+          "targetName": "Lydian Minor",
+          "structuralEvidence": true,
+          "structuralEdgeTypes": [
+            "CONSTRUCTS"
+          ],
+          "fieldEvidence": true,
+          "fieldEdgeTypes": [
+            "AUDITED_HAMMING2"
+          ],
+          "applicationStatus": "formal_substrate_observed"
+        }
+      ],
+      "note": "Exact A2 midpoint route.",
+      "excludedFromIntrinsicFingerprint": true
+    }
+  ],
+  "normalFormFingerprint": "63194a258f2a928bb669b60386a1066baefb35488b2e04266f2603bb8c0cbd62",
+  "assertion": "Acoustic --L6--> Lydian Minor and Mixolydian ♭6 --R4--> Lydian Minor compile to the same intrinsic Mars-office packet.",
+  "status": "passed"
+}

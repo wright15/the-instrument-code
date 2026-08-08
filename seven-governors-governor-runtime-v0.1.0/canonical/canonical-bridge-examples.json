@@ -1,0 +1,220 @@
+{
+  "examples": [
+    {
+      "active": true,
+      "admission": "canonical",
+      "exampleId": "example:jupiter:470nm-declared-anchor",
+      "facts": [
+        "470 nm is Jupiter's framework-declared representative office anchor.",
+        "Frequency and photon energy are registered SI derivations.",
+        "The record is not an empirical measurement of Jupiter and makes no musical causation claim."
+      ],
+      "kind": "declared_photonic_anchor",
+      "quantities": [
+        {
+          "assumptions": [],
+          "basis": {
+            "kind": "framework_declaration",
+            "ownerId": "office:Jupiter",
+            "ownerScope": "governor.office"
+          },
+          "dimension": "length",
+          "epistemicClass": "framework_declared_physical_anchor",
+          "provenance": [
+            {
+              "pointer": "/records/4/representativeWavelengthNm",
+              "sourceId": "source:photonic-records:0.1.1"
+            }
+          ],
+          "quantityId": "quantity:jupiter:declared-wavelength:v1",
+          "schemaVersion": "1.0.0",
+          "unit": "nm",
+          "value": 470
+        },
+        {
+          "assumptions": [
+            "vacuum_wavelength"
+          ],
+          "basis": {
+            "inputQuantityIds": [
+              "quantity:jupiter:declared-wavelength:v1"
+            ],
+            "kind": "registered_operation",
+            "operationId": "operation:vacuum-wavelength-frequency:v1"
+          },
+          "dimension": "frequency",
+          "epistemicClass": "physically_derived",
+          "provenance": [
+            {
+              "pointer": "/records/4/vacuumFrequencyHz",
+              "sourceId": "source:photonic-records:0.1.1"
+            }
+          ],
+          "quantityId": "quantity:jupiter:vacuum-frequency:v1",
+          "schemaVersion": "1.0.0",
+          "unit": "Hz",
+          "value": 637856293617021.2
+        },
+        {
+          "assumptions": [
+            "single_photon"
+          ],
+          "basis": {
+            "inputQuantityIds": [
+              "quantity:jupiter:vacuum-frequency:v1"
+            ],
+            "kind": "registered_operation",
+            "operationId": "operation:photon-energy-frequency:v1"
+          },
+          "dimension": "energy",
+          "epistemicClass": "physically_derived",
+          "provenance": [
+            {
+              "pointer": "/records/4/photonEnergyJ",
+              "sourceId": "source:photonic-records:0.1.1"
+            }
+          ],
+          "quantityId": "quantity:jupiter:photon-energy-j:v1",
+          "schemaVersion": "1.0.0",
+          "unit": "J",
+          "value": 4.22648054712538e-19
+        },
+        {
+          "assumptions": [],
+          "basis": {
+            "inputQuantityIds": [
+              "quantity:jupiter:photon-energy-j:v1"
+            ],
+            "kind": "registered_operation",
+            "operationId": "operation:energy-j-to-ev:v1"
+          },
+          "dimension": "energy",
+          "epistemicClass": "physically_derived",
+          "provenance": [
+            {
+              "pointer": "/records/4/photonEnergyEv",
+              "sourceId": "source:photonic-records:0.1.1"
+            }
+          ],
+          "quantityId": "quantity:jupiter:photon-energy-ev:v1",
+          "schemaVersion": "1.0.0",
+          "unit": "eV",
+          "value": 2.637961668791495
+        }
+      ],
+      "ruleId": "rule:jupiter:declared-wavelength:v1"
+    },
+    {
+      "active": false,
+      "admission": "proposed",
+      "exampleId": "example:jupiter:atmospheric-aeolian-process",
+      "facts": [
+        "process:atmospheric_aeolian_transport is distinct from mode:aeolian.",
+        "Jupiter's authored thermodynamic correspondence is distribution.",
+        "The proposed association does not assert that Aeolian mode causes wind or atmospheric transport."
+      ],
+      "kind": "authored_process_association",
+      "quantities": [],
+      "ruleId": "rule:jupiter:atmospheric-aeolian-process:v1"
+    },
+    {
+      "active": false,
+      "admission": "proposed",
+      "exampleId": "example:jupiter:scoped-rayleigh-behavior",
+      "facts": [
+        "Elastic scattering in the regime where scatterers are much smaller than the incident wavelength.",
+        "Relative fixed-condition ratio I(470 nm)/I(700 nm) = 4.920403608350627.",
+        "The physical calculation does not cause or admit the proposed Governor association."
+      ],
+      "kind": "scoped_physical_model",
+      "quantities": [
+        {
+          "assumptions": [],
+          "basis": {
+            "kind": "framework_declaration",
+            "ownerId": "office:Jupiter",
+            "ownerScope": "governor.office"
+          },
+          "dimension": "length",
+          "epistemicClass": "framework_declared_physical_anchor",
+          "provenance": [
+            {
+              "pointer": "/records/4/representativeWavelengthNm",
+              "sourceId": "source:photonic-records:0.1.1"
+            }
+          ],
+          "quantityId": "quantity:jupiter:declared-wavelength:v1",
+          "schemaVersion": "1.0.0",
+          "unit": "nm",
+          "value": 470
+        },
+        {
+          "assumptions": [],
+          "basis": {
+            "kind": "framework_declaration",
+            "ownerId": "office:Sun",
+            "ownerScope": "governor.office"
+          },
+          "dimension": "length",
+          "epistemicClass": "framework_declared_physical_anchor",
+          "provenance": [
+            {
+              "pointer": "/records/0/representativeWavelengthNm",
+              "sourceId": "source:photonic-records:0.1.1"
+            }
+          ],
+          "quantityId": "quantity:sun:declared-wavelength:v1",
+          "schemaVersion": "1.0.0",
+          "unit": "nm",
+          "value": 700
+        },
+        {
+          "assumptions": [
+            "fixed_geometry_polarization_and_angle",
+            "fixed_refractive_properties_and_number_density",
+            "relative_intensity_only",
+            "scatterer_size_much_smaller_than_both_wavelengths"
+          ],
+          "basis": {
+            "inputQuantityIds": [
+              "quantity:jupiter:declared-wavelength:v1",
+              "quantity:sun:declared-wavelength:v1"
+            ],
+            "kind": "registered_operation",
+            "operationId": "operation:relative-rayleigh:v1"
+          },
+          "dimension": "dimensionless",
+          "epistemicClass": "physically_derived",
+          "provenance": [
+            {
+              "pointer": "/physical_phenomena/governor_registry/jupiter/reference_formula",
+              "sourceId": "source:physical-phenomena:0.2.0"
+            }
+          ],
+          "quantityId": "quantity:rayleigh:470nm-to-700nm-relative-ratio:v1",
+          "schemaVersion": "1.0.0",
+          "unit": "one",
+          "value": 4.920403608350627
+        }
+      ],
+      "ruleId": "rule:jupiter:rayleigh-descriptive-model:v1"
+    },
+    {
+      "active": true,
+      "admission": "canonical",
+      "exampleId": "example:jupiter:symbolic-profile",
+      "facts": [
+        "The exact Jupiter profile contains eagle in its canonical symbolic reference pool.",
+        "An arbitrary eagle entity is not thereby classified as Jupiter.",
+        "Reference association is non-causal and non-exclusive outside the profile scope."
+      ],
+      "kind": "canonical_reference_association",
+      "quantities": [],
+      "ruleId": "rule:jupiter:symbolic-profile:v1"
+    }
+  ],
+  "policyFingerprint": "460e6c40bf96f58a0be36936a91939b930701dfee5875d5e5d0cd6311402f819",
+  "releaseId": "governor-runtime:0.1.0",
+  "schemaVersion": "1.0.0",
+  "sourceFingerprint": "609be20d0ee5d2f400b42b09d16842d7bfa3fee42f6bed24dbc1b4bbf4bc6947"
+}

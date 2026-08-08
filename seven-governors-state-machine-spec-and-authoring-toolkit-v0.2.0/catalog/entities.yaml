@@ -1,0 +1,378 @@
+catalog:
+  catalog_id: entities:seven-governors:0.2.0
+  version: 0.2.0
+  generated:
+    tool: scripts/build-catalogs.mjs
+    regenerated_at: 2026-07-31T01:53:42.205Z
+    admission: derived_explanatory_catalog; the cited upstream artifacts remain authoritative
+    sources:
+      - artifact: audit/operator-registry.csv
+        sha256: e5a9e6929fca048078e0db6ff044facc7137a6ef61e994d74f1d526e27b6482e
+      - artifact: audit/operator-applications.csv
+        sha256: 1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e
+      - artifact: audit/inverse-witnesses.csv
+        sha256: 3f5eda48ad74250b729c99c2cb13e3e258e83c358864c8d15f6af77f8f73667f
+      - artifact: audit/modal-covariance-witnesses.csv
+        sha256: d8189453bc8fa34e7d83db764965aa92b121cd8412df54bcd72a10f1e4fa861e
+      - artifact: audit/commutation-summary.csv
+        sha256: 3287bfa6b90487950c975172a757e0f9c4107d59480cfd09f53671639d59f04e
+      - artifact: audit/commutative-squares.csv
+        sha256: 431f0fc75f6f141d24354ad60de51b7efe0edabaf84b85b61e415b3ddf511131
+      - artifact: audit/confluence-witnesses.csv
+        sha256: ba2de478ebdebc576036d9f45009805758ae71c522b3eadd8ac78e20c02ad3dc
+      - artifact: audit/counterexamples.csv
+        sha256: 6d7bd3417e657af7f01b56517e5082872f39b4cfec6d37bc7ad671b5f219656c
+      - artifact: audit/cycle-identities.csv
+        sha256: be43441d5fea353c011e5538f001db9153c3d1b936c140858f01745ec41cd0dd
+      - artifact: audit/projection-coverage.csv
+        sha256: c8a75748021ac05b603a62e6c5f22d4b43c10ec6b74b6420b42b6ce7744f47bc
+      - artifact: audit/structural-edge-validation.csv
+        sha256: b8031a87d0353b3300761dfb5e5d11643dee0b1b75e15050c16dbb4d9e3f8692
+      - artifact: audit/field-edge-validation.csv
+        sha256: 155567e71e86270993ade4c6ef5baf2ac8c7154133d7583d27a8313cba05a014
+      - artifact: audit/mutation-algebra-hypotheses.md
+        sha256: c68dbea289f59a7cd49cec9b039f7dc2d08e3036c4210733031b10c4fafd3d19
+      - artifact: audit/stabilizer-results.csv
+        sha256: 43fb499b3d90d3c990a7bc5c879c53697b2c1e76606bd9b18c722848ca4b72c0
+      - artifact: canonical/topology-identity-definitions.json
+        sha256: ce7b3a3b8bed85d67df203a0dd6d2ba395effd19f0855869faa1a4d343bf127b
+      - artifact: canonical/universal-network-data.json
+        sha256: 21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc
+      - artifact: neo4j/schema.cypher
+        sha256: 919dd8c69afabae759a4a557c92220b378d123cf9e3ff1e4c7ff6ac971517ac4
+      - artifact: neo4j/import.cypher
+        sha256: b7d0267b4b35f884cfc68a481c5899511c82105daab913dbf3e9634c1d26c7b2
+      - artifact: neo4j/provenance.cypher
+        sha256: bba8e1b0b7e97ab7be17e56f327d62dcc5c3c1bb326263e3878d87505e83dd94
+      - artifact: schemas/compiled-profile.schema.json
+        sha256: b6079ced732b3f0ecda8eb384cb536f70a9ff080e15aabb2321209605841780f
+      - artifact: schemas/canonical-profile.schema.json
+        sha256: 8e0153a6d4cbaf53a80031347fb951777c2d4ea3a324ae3c9388b7ad6836939a
+      - artifact: schemas/semantic-operator.schema.json
+        sha256: 91267b028111c2078a230146b3af2fb1ab7a6eecd137bbfb5b0567f89678c6de
+      - artifact: neo4j/01_semantic_schema.cypher
+        sha256: d5071571910dae404cc5e66df06b8e6dc6bf813ffa3d94e5cecfffc4e7a6a961
+      - artifact: neo4j/02_semantic_import.cypher
+        sha256: 48e6a121ad8b408e0b02f941a4f4b7315dfb8397fcc68b38d272c6b9d3ed9e23
+      - artifact: neo4j/algebra-import.cypher
+        sha256: cf7dc6f41fcc2375647d2565f6ccf293075cb79fff5a479c14d502ae57172357
+  entities:
+    - entity_id: entity:GovernorOffice
+      graph_label: GovernorOffice
+      identity_fields:
+        - name
+        - officeIndex
+      owner: canonical_governor_registry
+      description: One of seven canonical State-Governor offices.
+    - entity_id: entity:ScaleState
+      graph_label: ScaleState
+      identity_fields:
+        - id
+        - nodeId
+      owner: audited_topology
+      description: A rooted weight-seven pitch-class state.
+    - entity_id: entity:ScaleFamily
+      graph_label: ScaleFamily
+      identity_fields:
+        - forte
+      owner: audited_topology
+      description: A Forte set class and family-level property owner.
+    - entity_id: entity:CanonicalFeatureProfile
+      graph_label: CanonicalFeatureProfile
+      identity_fields:
+        - profile_id
+      owner: canonical_profile_registry
+      description: Versioned intrinsic semantic and physical office profile.
+    - entity_id: entity:CompiledFeatureProfile
+      graph_label: CompiledFeatureProfile
+      identity_fields:
+        - normal_form_id
+        - intrinsic_fingerprint
+      owner: deterministic_compiler
+      description: Materialized destination/domain packet normal form.
+    - entity_id: entity:MutationOperator
+      graph_label: MutationOperator
+      identity_fields:
+        - id
+      owner: mutation_operator_registry
+      description: A structural state-transition function from the audit registry.
+    - entity_id: entity:RegistryRelease
+      graph_label: RegistryRelease
+      identity_fields:
+        - release_id
+      owner: canonical_profile_registry
+      description: Versioned profile-registry release.
+    - entity_id: entity:AuditRelease
+      graph_label: AuditRelease
+      identity_fields:
+        - releaseId
+      owner: integrated_release_provenance
+      description: Integrated topology release provenance.
+    - entity_id: entity:FrameworkDocument
+      graph_label: FrameworkDocument
+      identity_fields:
+        - documentId
+      owner: integrated_release_provenance
+      description: Hashed installed framework or machine-registry source.
+    - entity_id: entity:InvariantDefinition
+      graph_label: InvariantDefinition
+      identity_fields:
+        - invariantId
+      owner: integrated_release_provenance
+      description: Declared topology invariant provenance projection.
+    - entity_id: entity:PhenomenonModel
+      graph_label: PhenomenonModel
+      identity_fields:
+        - phenomenon_id
+        - registryVersion
+      owner: physical_phenomena_registry
+      admission: proposed
+      description: Candidate physical model plus scoped authored office assignment.
+    - entity_id: entity:CourtState
+      graph_label: CourtState
+      identity_fields:
+        - state_id
+        - vector
+        - engineVersion
+      owner: fivefold_engine_registry
+      admission: proposed
+      description: Candidate bounded four-pole operational state.
+    - entity_id: entity:LedgerEvent
+      graph_label: LedgerEvent
+      identity_fields:
+        - event_id
+      owner: runtime_ledger
+      admission: proposed
+      description: Candidate append-only observation and transition provenance.
+  structural_roles:
+    - role_id: role:anchor
+      primary_role: anchor
+      office_bearing: true
+      definition: Defines a tier seat through canonical identity, declared midpoint construction, or a
+        validated family-wide contact signature.
+    - role_id: role:satellite
+      primary_role: satellite
+      office_bearing: true
+      definition: Inherits one categorical office from exactly one selected governing parent after bridge
+        and precedence checks.
+    - role_id: role:boundary
+      primary_role: boundary
+      office_bearing: false
+      definition: No current declared rule authorizes a categorical office after all precedence and
+        qualification checks.
+  relationships:
+    - relationship_id: rel:BELONGS_TO_FAMILY
+      from: ScaleState
+      to: ScaleFamily
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:OCCUPIES_OFFICE
+      from: ScaleState
+      to: GovernorOffice
+      admission: admitted
+      categorical_office_claim: true
+    - relationship_id: rel:RELATIONAL_OFFICE_EVIDENCE
+      from: ScaleState
+      to: GovernorOffice
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:GOVERNS
+      from: ScaleState
+      to: ScaleState
+      admission: admitted
+      categorical_office_claim: destination_inherits_parent_office
+    - relationship_id: rel:CONSTRUCTS
+      from: ScaleState
+      to: ScaleState
+      admission: admitted
+      categorical_office_claim: only_through_declared_anchor_rule
+    - relationship_id: rel:SEAT_CONTACT
+      from: ScaleState
+      to: ScaleState
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:MODAL_SUCCESSOR
+      from: ScaleState
+      to: ScaleState
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:AUDITED_HAMMING2
+      from: ScaleState
+      to: ScaleState
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:PHASE_SHIFT
+      from: ScaleState
+      to: ScaleState
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:CONVERGENCE_CONTACT
+      from: ScaleState
+      to: ScaleState
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:JUNCTION_CONTACT
+      from: ScaleState
+      to: ScaleState
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:LEAF_CONTACT
+      from: ScaleState
+      to: ScaleState
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:MODAL_MUTATES_TO
+      from: ScaleState
+      to: ScaleState
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:LOCAL_MUTATES_TO
+      from: ScaleState
+      to: ScaleState
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:HAS_CANONICAL_PROFILE
+      from: GovernorOffice
+      to: CanonicalFeatureProfile
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:ACTIVE_PROFILE
+      from: GovernorOffice
+      to: CanonicalFeatureProfile
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:CANONICALIZED_BY
+      from: CanonicalFeatureProfile
+      to: ScaleState
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:HAS_PHOTONIC_RECORD
+      from: CanonicalFeatureProfile
+      to: PhotonicRecord
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:HAS_FEATURE
+      from: CanonicalFeatureProfile
+      to: FeatureDefinition
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:REFERENCES_LANDFORM
+      from: CanonicalFeatureProfile
+      to: LandformReference
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:ACTIVE_SEMANTIC_OPERATOR
+      from: MutationOperator
+      to: SemanticOperator
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:REALIZES
+      from: SemanticOperator
+      to: MutationOperator
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:HAS_UNRESOLVED_SCOPE
+      from: SemanticOperator
+      to: SemanticUnresolvedScope
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:PROJECTS_FEATURE
+      from: DomainProjection
+      to: FeatureDefinition
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:HAS_NORMAL_FORM
+      from: ScaleState
+      to: CompiledFeatureProfile
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:PART_OF_RELEASE
+      from: registry entity
+      to: RegistryRelease
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:PRODUCES
+      from: DerivationRoute
+      to: CompiledFeatureProfile
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:HAS_STEP
+      from: DerivationRoute
+      to: DerivationStep
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:STARTS_AT
+      from: DerivationStep
+      to: ScaleState
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:ENDS_AT
+      from: DerivationStep
+      to: ScaleState
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:APPLIES
+      from: DerivationStep
+      to: SemanticOperator
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:TESTS_ROUTE
+      from: ValidationFixture
+      to: DerivationRoute
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:INCLUDES_DOCUMENT
+      from: AuditRelease
+      to: FrameworkDocument
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:DECLARES_INVARIANT
+      from: AuditRelease
+      to: InvariantDefinition
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:DEFINED_BY
+      from: InvariantDefinition
+      to: FrameworkDocument
+      admission: admitted
+      categorical_office_claim: false
+    - relationship_id: rel:PRIMARY_PHENOMENON
+      from: GovernorOffice
+      to: PhenomenonModel
+      admission: proposed
+      categorical_office_claim: false
+    - relationship_id: rel:COURT_TRANSITION
+      from: CourtState
+      to: CourtState
+      admission: proposed
+      categorical_office_claim: false
+  relationship_derivation:
+    topology_cypher: neo4j/import.cypher
+    semantic_cypher: neo4j/02_semantic_import.cypher
+    provenance_cypher: neo4j/provenance.cypher
+    mutation_cypher: neo4j/algebra-import.cypher
+    candidate_cypher: neo4j/context-projection.cypher
+    parsed_relationship_types:
+      admitted:
+        - ACTIVE_PROFILE
+        - ACTIVE_SEMANTIC_OPERATOR
+        - APPLIES
+        - CANONICALIZED_BY
+        - DECLARES_INVARIANT
+        - DEFINED_BY
+        - ENDS_AT
+        - HAS_CANONICAL_PROFILE
+        - HAS_NORMAL_FORM
+        - HAS_PHOTONIC_RECORD
+        - HAS_UNRESOLVED_SCOPE
+        - INCLUDES_DOCUMENT
+        - PART_OF_RELEASE
+        - PRODUCES
+        - PROJECTS_FEATURE
+        - REALIZES
+        - REFERENCES_LANDFORM
+        - STARTS_AT
+        - TESTS_ROUTE
+      proposed:
+        - COURT_TRANSITION
+        - PRIMARY_PHENOMENON

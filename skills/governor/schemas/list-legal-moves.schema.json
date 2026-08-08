@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/gov-207/schemas/list-legal-moves.schema.json",
+  "title": "GOV-207 list_legal_moves Input and Output",
+  "oneOf": [
+    { "$ref": "#/$defs/input" },
+    { "$ref": "#/$defs/output" }
+  ],
+  "$defs": {
+    "input": {
+      "$id": "gov-207.list-legal-moves.input.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "requestId",
+        "taskId",
+        "expectedStateSha256",
+        "expectedLedgerHeadSha256"
+      ],
+      "properties": {
+        "schemaVersion": { "const": "gov-207.list-legal-moves.input.v1" },
+        "requestId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "taskId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "expectedStateSha256": { "$ref": "common.schema.json#/$defs/sha256" },
+        "expectedLedgerHeadSha256": { "$ref": "common.schema.json#/$defs/sha256" },
+        "includeGraphContext": { "type": "boolean", "default": true }
+      }
+    },
+    "output": {
+      "$id": "gov-207.list-legal-moves.output.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "skillId",
+        "requestId",
+        "status",
+        "state",
+        "moves",
+        "toolReceipts",
+        "nextMenu",
+        "directive",
+        "resultFingerprint"
+      ],
+      "properties": {
+        "schemaVersion": { "const": "gov-207.list-legal-moves.output.v1" },
+        "skillId": { "const": "list_legal_moves" },
+        "requestId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "status": { "enum": ["failed", "ok", "reinspect", "stopped"] },
+        "state": { "$ref": "common.schema.json#/$defs/stateRef" },
+        "moves": {
+          "type": "array",
+          "maxItems": 64,
+          "items": { "$ref": "common.schema.json#/$defs/legalMoveDescription" }
+        },
+        "toolReceipts": {
+          "type": "array",
+          "maxItems": 64,
+          "items": { "$ref": "common.schema.json#/$defs/toolReceipt" }
+        },
+        "nextMenu": { "$ref": "common.schema.json#/$defs/dynamicMenu" },
+        "directive": { "$ref": "common.schema.json#/$defs/directive" },
+        "resultFingerprint": { "$ref": "common.schema.json#/$defs/sha256" }
+      }
+    }
+  }
+}

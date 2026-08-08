@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #0d0d0d;
+  --color-panel: #111111;
+  --color-raised: #1a1a1a;
+  --color-edge: #222222;
+  --color-frost: #e0e0e0;
+  --color-muted: #888888;
+  --color-accent: #8cf;
+  --color-sun: #ff4444;
+  --color-moon: #ff8c00;
+  --color-mars: #ffd700;
+  --color-mercury: #44bb44;
+  --color-jupiter: #4488ff;
+  --color-venus: #8b008b;
+  --color-saturn: #9400d3;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-frost);
+  font-family: system-ui, sans-serif;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
+}
+
+[hidden] {
+  display: none !important;
+}

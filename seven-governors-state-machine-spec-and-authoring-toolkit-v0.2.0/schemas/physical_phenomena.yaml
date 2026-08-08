@@ -1,0 +1,235 @@
+physical_phenomena:
+  schema_version: "1.0.0"
+  registry_version: "0.2.0"
+  registry_id: "physical-phenomena:seven-governors:0.2.0"
+  admission: "proposed"
+  status: "framework_declared_descriptive_models"
+  assignment_policy:
+    primary_assignment_cardinality_per_office: 1
+    primary_assignee_cardinality_per_model: 1
+    assignment_type: "exclusive_primary_descriptive_model"
+    exclusivity_scope: "seven_governors_framework"
+    epistemic_class: "authored_descriptive_model"
+    physical_causation_claim: false
+    cross_office_secondary_use: "allowed_only_when_labeled_relational_and_non_primary"
+  governor_registry:
+    sun:
+      phenomenon_id: "phenomenon:thermal_radiative_emission"
+      display_name: "Thermal radiative emission"
+      governor_office: "Sun"
+      primary: true
+      assignment_type: "exclusive_primary_descriptive_model"
+      exclusivity_scope: "seven_governors_framework"
+      epistemic_class: "authored_descriptive_model"
+      physical_scope: "Thermal electromagnetic radiation emitted by matter; ideal blackbody emission is the limiting reference model."
+      physical_behavior: "A source generates an outward radiative field whose spectral distribution depends on wavelength and temperature."
+      reference_formula:
+        expression: "B_lambda(lambda,T) = (2*h*c^2/lambda^5) / (exp(h*c/(lambda*k_B*T)) - 1)"
+        formula_class: "Planck_spectral_radiance"
+        variables:
+          B_lambda: "spectral radiance"
+          lambda: "wavelength"
+          T: "absolute temperature"
+      assumptions:
+        - "The exact expression is for an ideal blackbody in thermal equilibrium."
+        - "Real materials require wavelength- and temperature-dependent emissivity."
+      semantic_affordances:
+        - "source"
+        - "radiance"
+        - "outward declaration"
+        - "field generation"
+        - "visibility"
+      prohibited_inferences:
+        - "The representative Sun wavelength is not a blackbody temperature."
+        - "Lydian does not physically cause thermal emission."
+      scientific_sources:
+        - "https://ies.org/definitions/planck-radiation-law/"
+    moon:
+      phenomenon_id: "phenomenon:diffuse_reflection"
+      display_name: "Diffuse reflection and reception"
+      governor_office: "Moon"
+      primary: true
+      assignment_type: "exclusive_primary_descriptive_model"
+      exclusivity_scope: "seven_governors_framework"
+      epistemic_class: "authored_descriptive_model"
+      physical_scope: "Reception and reflection of incident radiation by a surface; ideal Lambertian reflection is the reference case."
+      physical_behavior: "Incident irradiance is received and redistributed by the surface response."
+      reference_formula:
+        expression: "L_o = (rho/pi) * E_i"
+        formula_class: "ideal_Lambertian_reflection"
+        variables:
+          L_o: "outgoing radiance"
+          rho: "diffuse reflectance"
+          E_i: "incident irradiance"
+      assumptions:
+        - "The ideal surface has angle-independent outgoing radiance."
+        - "Real surfaces may be specular, anisotropic, or wavelength-dependent."
+      semantic_affordances:
+        - "reception"
+        - "mirroring"
+        - "return"
+        - "holding"
+        - "contextual appearance"
+      prohibited_inferences:
+        - "Reflection is not physically passive in every system."
+        - "Ionian does not physically cause optical reflection."
+      scientific_sources:
+        - "https://www.earthdata.nasa.gov/s3fs-public/2025-04/AST_05_ATBD.pdf"
+    mars:
+      phenomenon_id: "phenomenon:combustion_activation_front"
+      display_name: "Combustion activation front"
+      governor_office: "Mars"
+      primary: true
+      assignment_type: "exclusive_primary_descriptive_model"
+      exclusivity_scope: "seven_governors_framework"
+      epistemic_class: "authored_descriptive_model"
+      physical_scope: "Reactive ignition and propagating combustion fronts governed by coupled kinetics and transport."
+      physical_behavior: "A threshold-crossing reaction releases energy and may propagate through available reactants."
+      reference_formula:
+        expression: "k(T) = A * exp(-E_a/(R*T))"
+        formula_class: "simple_Arrhenius_rate"
+        variables:
+          k: "rate constant"
+          A: "pre-exponential factor"
+          E_a: "activation energy"
+          R: "gas constant"
+          T: "absolute temperature"
+      assumptions:
+        - "The simple Arrhenius form is valid only over a declared range."
+        - "Combustion additionally depends on transport, mixture, pressure, and geometry."
+      semantic_affordances:
+        - "ignition"
+        - "activation threshold"
+        - "force entry"
+        - "propagation"
+        - "urgency"
+      prohibited_inferences:
+        - "Mars does not own physical fire outside the framework namespace."
+        - "Mixolydian does not physically ignite material."
+      scientific_sources:
+        - "https://kinetics.nist.gov/kinetics/welcome.jsp"
+    mercury:
+      phenomenon_id: "phenomenon:photosynthetic_energy_transduction"
+      display_name: "Photosynthetic energy transduction"
+      governor_office: "Mercury"
+      primary: true
+      assignment_type: "exclusive_primary_descriptive_model"
+      exclusivity_scope: "seven_governors_framework"
+      epistemic_class: "authored_descriptive_model"
+      physical_scope: "Capture of light and conversion through electronic, chemical, and biochemical pathways into chemical free energy."
+      physical_behavior: "Energy changes carrier and representation through coupled stages rather than remaining in its incident form."
+      reference_formula:
+        expression: null
+        formula_class: "multistage_transduction_no_single_scalar_formula"
+        variables: {}
+      assumptions:
+        - "Organism, pathway, spectrum, intensity, environment, and timescale are required for quantitative use."
+        - "A domain implementation must declare its own measured variables and units."
+      semantic_affordances:
+        - "translation"
+        - "mediation"
+        - "coupled conversion"
+        - "adaptive response"
+        - "state transition"
+      prohibited_inferences:
+        - "The correspondence does not derive a biological rate."
+        - "Dorian does not physically perform photosynthesis."
+      scientific_sources:
+        - "https://pamspublic.science.energy.gov/WebPAMSExternal/Interface/Common/ViewPublicAbstract.aspx?PRoleId=10&rtc=24&rv=e69f20fb-7e68-4dbd-985e-78a36af15a36"
+    jupiter:
+      phenomenon_id: "phenomenon:rayleigh_scattering"
+      display_name: "Rayleigh scattering"
+      governor_office: "Jupiter"
+      primary: true
+      assignment_type: "exclusive_primary_descriptive_model"
+      exclusivity_scope: "seven_governors_framework"
+      epistemic_class: "authored_descriptive_model"
+      physical_scope: "Elastic scattering in the regime where scatterers are much smaller than the incident wavelength."
+      physical_behavior: "Radiation is redistributed in direction, with shorter wavelengths scattered more strongly under Rayleigh assumptions."
+      reference_formula:
+        expression: "I_scattered proportional_to lambda^-4"
+        formula_class: "Rayleigh_wavelength_dependence"
+        variables:
+          I_scattered: "scattered intensity under fixed comparison conditions"
+          lambda: "incident wavelength"
+      assumptions:
+        - "Scatterer size is much smaller than wavelength."
+        - "Refractive properties, number density, geometry, polarization, and angle remain relevant."
+        - "Larger scatterers require a different regime such as Mie theory."
+      semantic_affordances:
+        - "redistribution"
+        - "diffusion"
+        - "atmospheric spread"
+        - "branching visibility"
+        - "directional expansion"
+      prohibited_inferences:
+        - "Rayleigh scattering is not caused by Jupiter, Aeolian, Air, or a mutation."
+        - "Framework exclusivity is not exclusivity in physical nature."
+        - "No other office may claim Rayleigh scattering as a primary model in this registry version."
+      scientific_sources:
+        - "https://ntrs.nasa.gov/citations/20050177903"
+    venus:
+      phenomenon_id: "phenomenon:selective_molecular_absorption"
+      display_name: "Selective molecular absorption"
+      governor_office: "Venus"
+      primary: true
+      assignment_type: "exclusive_primary_descriptive_model"
+      exclusivity_scope: "seven_governors_framework"
+      epistemic_class: "authored_descriptive_model"
+      physical_scope: "Wavelength-selective attenuation of radiation by matter."
+      physical_behavior: "Composition and path determine which incident wavelengths are incorporated or attenuated."
+      reference_formula:
+        expression: "A = epsilon * ell * c; A = -log10(I/I_0)"
+        formula_class: "Beer_Lambert_absorbance"
+        variables:
+          A: "absorbance"
+          epsilon: "molar attenuation coefficient"
+          ell: "path length"
+          c: "concentration"
+          I: "transmitted intensity"
+          I_0: "incident intensity"
+      assumptions:
+        - "The sample is homogeneous and within an applicable linear concentration range."
+        - "Spectral bandwidth, stray light, and scattering are controlled."
+      semantic_affordances:
+        - "selection"
+        - "affinity"
+        - "incorporation"
+        - "value"
+        - "cohesion"
+      prohibited_inferences:
+        - "Absorption is not identical to molecular bonding."
+        - "Phrygian does not physically determine absorbance."
+      scientific_sources:
+        - "https://nvlpubs.nist.gov/nistpubs/jres/122/jres.122.033.pdf"
+    saturn:
+      phenomenon_id: "phenomenon:crystallization_phase_boundary"
+      display_name: "Crystallization and phase-boundary fixation"
+      governor_office: "Saturn"
+      primary: true
+      assignment_type: "exclusive_primary_descriptive_model"
+      exclusivity_scope: "seven_governors_framework"
+      epistemic_class: "authored_descriptive_model"
+      physical_scope: "Formation and growth of an ordered phase under bulk free-energy and interfacial constraints."
+      physical_behavior: "A favorable bulk phase must overcome an interfacial nucleation barrier before durable ordered growth."
+      reference_formula:
+        expression: "DeltaG(r) = 4*pi*r^2*gamma + (4/3)*pi*r^3*Delta_g_v"
+        formula_class: "classical_spherical_nucleation"
+        variables:
+          r: "nucleus radius"
+          gamma: "interfacial free energy per area"
+          Delta_g_v: "bulk free-energy change per volume"
+      assumptions:
+        - "Classical homogeneous nucleation with a spherical nucleus and uniform interfacial energy."
+        - "Real crystallization may be heterogeneous, anisotropic, kinetic, or nonclassical."
+      semantic_affordances:
+        - "boundary"
+        - "constraint"
+        - "critical threshold"
+        - "durable form"
+        - "terminal fixation"
+      prohibited_inferences:
+        - "Every Saturn expression is not a literal crystal."
+        - "Locrian does not physically cause a phase transition."
+      scientific_sources:
+        - "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=851489"

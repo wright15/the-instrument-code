@@ -1,0 +1,506 @@
+algebra:
+  catalog_id: mutation-algebra:seven-governors:0.2.0
+  version: 0.2.0
+  generated:
+    tool: scripts/build-catalogs.mjs
+    regenerated_at: 2026-07-31T01:53:42.204Z
+    admission: derived_explanatory_catalog; the cited upstream artifacts remain authoritative
+    sources:
+      - artifact: audit/operator-registry.csv
+        sha256: e5a9e6929fca048078e0db6ff044facc7137a6ef61e994d74f1d526e27b6482e
+      - artifact: audit/operator-applications.csv
+        sha256: 1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e
+      - artifact: audit/inverse-witnesses.csv
+        sha256: 3f5eda48ad74250b729c99c2cb13e3e258e83c358864c8d15f6af77f8f73667f
+      - artifact: audit/modal-covariance-witnesses.csv
+        sha256: d8189453bc8fa34e7d83db764965aa92b121cd8412df54bcd72a10f1e4fa861e
+      - artifact: audit/commutation-summary.csv
+        sha256: 3287bfa6b90487950c975172a757e0f9c4107d59480cfd09f53671639d59f04e
+      - artifact: audit/commutative-squares.csv
+        sha256: 431f0fc75f6f141d24354ad60de51b7efe0edabaf84b85b61e415b3ddf511131
+      - artifact: audit/confluence-witnesses.csv
+        sha256: ba2de478ebdebc576036d9f45009805758ae71c522b3eadd8ac78e20c02ad3dc
+      - artifact: audit/counterexamples.csv
+        sha256: 6d7bd3417e657af7f01b56517e5082872f39b4cfec6d37bc7ad671b5f219656c
+      - artifact: audit/cycle-identities.csv
+        sha256: be43441d5fea353c011e5538f001db9153c3d1b936c140858f01745ec41cd0dd
+      - artifact: audit/projection-coverage.csv
+        sha256: c8a75748021ac05b603a62e6c5f22d4b43c10ec6b74b6420b42b6ce7744f47bc
+      - artifact: audit/structural-edge-validation.csv
+        sha256: b8031a87d0353b3300761dfb5e5d11643dee0b1b75e15050c16dbb4d9e3f8692
+      - artifact: audit/field-edge-validation.csv
+        sha256: 155567e71e86270993ade4c6ef5baf2ac8c7154133d7583d27a8313cba05a014
+      - artifact: audit/mutation-algebra-hypotheses.md
+        sha256: c68dbea289f59a7cd49cec9b039f7dc2d08e3036c4210733031b10c4fafd3d19
+      - artifact: audit/stabilizer-results.csv
+        sha256: 43fb499b3d90d3c990a7bc5c879c53697b2c1e76606bd9b18c722848ca4b72c0
+      - artifact: canonical/topology-identity-definitions.json
+        sha256: ce7b3a3b8bed85d67df203a0dd6d2ba395effd19f0855869faa1a4d343bf127b
+      - artifact: canonical/universal-network-data.json
+        sha256: 21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc
+      - artifact: neo4j/schema.cypher
+        sha256: 919dd8c69afabae759a4a557c92220b378d123cf9e3ff1e4c7ff6ac971517ac4
+      - artifact: neo4j/import.cypher
+        sha256: b7d0267b4b35f884cfc68a481c5899511c82105daab913dbf3e9634c1d26c7b2
+      - artifact: neo4j/provenance.cypher
+        sha256: bba8e1b0b7e97ab7be17e56f327d62dcc5c3c1bb326263e3878d87505e83dd94
+      - artifact: schemas/compiled-profile.schema.json
+        sha256: b6079ced732b3f0ecda8eb384cb536f70a9ff080e15aabb2321209605841780f
+      - artifact: schemas/canonical-profile.schema.json
+        sha256: 8e0153a6d4cbaf53a80031347fb951777c2d4ea3a324ae3c9388b7ad6836939a
+      - artifact: schemas/semantic-operator.schema.json
+        sha256: 91267b028111c2078a230146b3af2fb1ab7a6eecd137bbfb5b0567f89678c6de
+      - artifact: neo4j/01_semantic_schema.cypher
+        sha256: d5071571910dae404cc5e66df06b8e6dc6bf813ffa3d94e5cecfffc4e7a6a961
+      - artifact: neo4j/02_semantic_import.cypher
+        sha256: 48e6a121ad8b408e0b02f941a4f4b7315dfb8397fcc68b38d272c6b9d3ed9e23
+      - artifact: neo4j/algebra-import.cypher
+        sha256: cf7dc6f41fcc2375647d2565f6ccf293075cb79fff5a479c14d502ae57172357
+  baseline_registry: canonical-profile-registry:0.1.1
+  authoritative_registry: audit/operator-registry.csv
+  policies:
+    structural_status: validated_in_baseline_registry
+    semantic_default: unresolved
+    destination_profile_rule: resolve_from_State_Governor
+    degree_label_rule: edge_metadata_only
+    physical_mutation_rule: never_mutate_office_wavelength
+    route_rule: exclude_route_from_intrinsic_normal_form
+    coverage_rule: projection_gaps_are_recorded_not_invented
+  operator_families:
+    - operator_id: M
+      notation: M
+      name: Modal successor
+      class: modal_re_rooting
+      action: Re-root the unchanged pitch-class set at its next ascending scale tone.
+      degree: null
+      degree_governor: null
+      direction: successor
+      delta_semitones: null
+      domain_rule: All rooted weight-seven states.
+      inverse: M^6
+      conjugate: M
+      partial: false
+      status: structurally_validated
+      application_count: 462
+      domain_size: 462
+      image_size: 462
+      structural_support_count: 182
+      field_support_count: 0
+      projection_gap:
+        unprojected_applications: 280
+        union_coverage_rate: 0.393939
+    - operator_id: R1
+      notation: R_1
+      name: Raise root phase by one semitone
+      class: root_phase
+      action: Move the tonic seam one semitone, retain the other six absolute pitches, then renormalize
+        the new root to 0.
+      degree: 1
+      degree_governor: Saturn
+      direction: raise
+      delta_semitones: 1
+      domain_rule: Defined when pitch class 1 is absent; replace root 0 with 1 and renormalize by -1.
+      inverse: L1
+      conjugate: R7
+      partial: true
+      status: structurally_validated
+      application_count: 210
+      domain_size: 210
+      image_size: 210
+      structural_support_count: 29
+      field_support_count: 175
+      projection_gap:
+        unprojected_applications: 30
+        union_coverage_rate: 0.857143
+    - operator_id: L1
+      notation: L_1
+      name: Lower root phase by one semitone
+      class: root_phase
+      action: Move the tonic seam one semitone, retain the other six absolute pitches, then renormalize
+        the new root to 0.
+      degree: 1
+      degree_governor: Saturn
+      direction: lower
+      delta_semitones: -1
+      domain_rule: Defined when pitch class 11 is absent; replace root 0 with 11 and renormalize by +1.
+      inverse: R1
+      conjugate: L7
+      partial: true
+      status: structurally_validated
+      application_count: 210
+      domain_size: 210
+      image_size: 210
+      structural_support_count: 29
+      field_support_count: 175
+      projection_gap:
+        unprojected_applications: 30
+        union_coverage_rate: 0.857143
+    - operator_id: R2
+      notation: R_2
+      name: Raise Degree 2 by one semitone
+      class: fixed_degree_shift
+      action: Replace the pitch at ordered Degree 2 by +1 semitone.
+      degree: 2
+      degree_governor: Jupiter
+      direction: raise
+      delta_semitones: 1
+      domain_rule: Defined when Degree 2 can move up one semitone without collision or crossing the rooted
+        boundary.
+      inverse: L2
+      conjugate: R1
+      partial: true
+      status: structurally_validated
+      application_count: 210
+      domain_size: 210
+      image_size: 210
+      structural_support_count: 29
+      field_support_count: 25
+      projection_gap:
+        unprojected_applications: 166
+        union_coverage_rate: 0.209524
+    - operator_id: L2
+      notation: L_2
+      name: Lower Degree 2 by one semitone
+      class: fixed_degree_shift
+      action: Replace the pitch at ordered Degree 2 by -1 semitone.
+      degree: 2
+      degree_governor: Jupiter
+      direction: lower
+      delta_semitones: -1
+      domain_rule: Defined when Degree 2 can move down one semitone without collision or crossing the
+        rooted boundary.
+      inverse: R2
+      conjugate: L1
+      partial: true
+      status: structurally_validated
+      application_count: 210
+      domain_size: 210
+      image_size: 210
+      structural_support_count: 29
+      field_support_count: 25
+      projection_gap:
+        unprojected_applications: 166
+        union_coverage_rate: 0.209524
+    - operator_id: R3
+      notation: R_3
+      name: Raise Degree 3 by one semitone
+      class: fixed_degree_shift
+      action: Replace the pitch at ordered Degree 3 by +1 semitone.
+      degree: 3
+      degree_governor: Mars
+      direction: raise
+      delta_semitones: 1
+      domain_rule: Defined when Degree 3 can move up one semitone without collision or crossing the rooted
+        boundary.
+      inverse: L3
+      conjugate: R2
+      partial: true
+      status: structurally_validated
+      application_count: 210
+      domain_size: 210
+      image_size: 210
+      structural_support_count: 29
+      field_support_count: 25
+      projection_gap:
+        unprojected_applications: 166
+        union_coverage_rate: 0.209524
+    - operator_id: L3
+      notation: L_3
+      name: Lower Degree 3 by one semitone
+      class: fixed_degree_shift
+      action: Replace the pitch at ordered Degree 3 by -1 semitone.
+      degree: 3
+      degree_governor: Mars
+      direction: lower
+      delta_semitones: -1
+      domain_rule: Defined when Degree 3 can move down one semitone without collision or crossing the
+        rooted boundary.
+      inverse: R3
+      conjugate: L2
+      partial: true
+      status: structurally_validated
+      application_count: 210
+      domain_size: 210
+      image_size: 210
+      structural_support_count: 29
+      field_support_count: 25
+      projection_gap:
+        unprojected_applications: 166
+        union_coverage_rate: 0.209524
+    - operator_id: R4
+      notation: R_4
+      name: Raise Degree 4 by one semitone
+      class: fixed_degree_shift
+      action: Replace the pitch at ordered Degree 4 by +1 semitone.
+      degree: 4
+      degree_governor: Sun
+      direction: raise
+      delta_semitones: 1
+      domain_rule: Defined when Degree 4 can move up one semitone without collision or crossing the rooted
+        boundary.
+      inverse: L4
+      conjugate: R3
+      partial: true
+      status: structurally_validated
+      application_count: 210
+      domain_size: 210
+      image_size: 210
+      structural_support_count: 29
+      field_support_count: 25
+      projection_gap:
+        unprojected_applications: 166
+        union_coverage_rate: 0.209524
+    - operator_id: L4
+      notation: L_4
+      name: Lower Degree 4 by one semitone
+      class: fixed_degree_shift
+      action: Replace the pitch at ordered Degree 4 by -1 semitone.
+      degree: 4
+      degree_governor: Sun
+      direction: lower
+      delta_semitones: -1
+      domain_rule: Defined when Degree 4 can move down one semitone without collision or crossing the
+        rooted boundary.
+      inverse: R4
+      conjugate: L3
+      partial: true
+      status: structurally_validated
+      application_count: 210
+      domain_size: 210
+      image_size: 210
+      structural_support_count: 29
+      field_support_count: 25
+      projection_gap:
+        unprojected_applications: 166
+        union_coverage_rate: 0.209524
+    - operator_id: R5
+      notation: R_5
+      name: Raise Degree 5 by one semitone
+      class: fixed_degree_shift
+      action: Replace the pitch at ordered Degree 5 by +1 semitone.
+      degree: 5
+      degree_governor: Venus
+      direction: raise
+      delta_semitones: 1
+      domain_rule: Defined when Degree 5 can move up one semitone without collision or crossing the rooted
+        boundary.
+      inverse: L5
+      conjugate: R4
+      partial: true
+      status: structurally_validated
+      application_count: 210
+      domain_size: 210
+      image_size: 210
+      structural_support_count: 29
+      field_support_count: 25
+      projection_gap:
+        unprojected_applications: 166
+        union_coverage_rate: 0.209524
+    - operator_id: L5
+      notation: L_5
+      name: Lower Degree 5 by one semitone
+      class: fixed_degree_shift
+      action: Replace the pitch at ordered Degree 5 by -1 semitone.
+      degree: 5
+      degree_governor: Venus
+      direction: lower
+      delta_semitones: -1
+      domain_rule: Defined when Degree 5 can move down one semitone without collision or crossing the
+        rooted boundary.
+      inverse: R5
+      conjugate: L4
+      partial: true
+      status: structurally_validated
+      application_count: 210
+      domain_size: 210
+      image_size: 210
+      structural_support_count: 29
+      field_support_count: 25
+      projection_gap:
+        unprojected_applications: 166
+        union_coverage_rate: 0.209524
+    - operator_id: R6
+      notation: R_6
+      name: Raise Degree 6 by one semitone
+      class: fixed_degree_shift
+      action: Replace the pitch at ordered Degree 6 by +1 semitone.
+      degree: 6
+      degree_governor: Mercury
+      direction: raise
+      delta_semitones: 1
+      domain_rule: Defined when Degree 6 can move up one semitone without collision or crossing the rooted
+        boundary.
+      inverse: L6
+      conjugate: R5
+      partial: true
+      status: structurally_validated
+      application_count: 210
+      domain_size: 210
+      image_size: 210
+      structural_support_count: 29
+      field_support_count: 25
+      projection_gap:
+        unprojected_applications: 166
+        union_coverage_rate: 0.209524
+    - operator_id: L6
+      notation: L_6
+      name: Lower Degree 6 by one semitone
+      class: fixed_degree_shift
+      action: Replace the pitch at ordered Degree 6 by -1 semitone.
+      degree: 6
+      degree_governor: Mercury
+      direction: lower
+      delta_semitones: -1
+      domain_rule: Defined when Degree 6 can move down one semitone without collision or crossing the
+        rooted boundary.
+      inverse: R6
+      conjugate: L5
+      partial: true
+      status: structurally_validated
+      application_count: 210
+      domain_size: 210
+      image_size: 210
+      structural_support_count: 29
+      field_support_count: 25
+      projection_gap:
+        unprojected_applications: 166
+        union_coverage_rate: 0.209524
+    - operator_id: R7
+      notation: R_7
+      name: Raise Degree 7 by one semitone
+      class: fixed_degree_shift
+      action: Replace the pitch at ordered Degree 7 by +1 semitone.
+      degree: 7
+      degree_governor: Moon
+      direction: raise
+      delta_semitones: 1
+      domain_rule: Defined when Degree 7 can move up one semitone without collision or crossing the rooted
+        boundary.
+      inverse: L7
+      conjugate: R6
+      partial: true
+      status: structurally_validated
+      application_count: 210
+      domain_size: 210
+      image_size: 210
+      structural_support_count: 29
+      field_support_count: 25
+      projection_gap:
+        unprojected_applications: 166
+        union_coverage_rate: 0.209524
+    - operator_id: L7
+      notation: L_7
+      name: Lower Degree 7 by one semitone
+      class: fixed_degree_shift
+      action: Replace the pitch at ordered Degree 7 by -1 semitone.
+      degree: 7
+      degree_governor: Moon
+      direction: lower
+      delta_semitones: -1
+      domain_rule: Defined when Degree 7 can move down one semitone without collision or crossing the
+        rooted boundary.
+      inverse: R7
+      conjugate: L6
+      partial: true
+      status: structurally_validated
+      application_count: 210
+      domain_size: 210
+      image_size: 210
+      structural_support_count: 29
+      field_support_count: 25
+      projection_gap:
+        unprojected_applications: 166
+        union_coverage_rate: 0.209524
+  laws:
+    modal_order_seven:
+      statement: M^7(s) = s for every rooted state.
+      witness_artifact: audit/cycle-identities.csv
+      modal_cycles: 66
+      anchor_cycles: 10
+      satellite_cycles: 34
+      boundary_cycles: 22
+      minimal_period_seven: true
+      result: structurally_validated
+    modal_office_transport:
+      statement: office(M(s)) = office(s) + 2 mod 7 on all 308 office-bearing states.
+      witness_artifact: audit/cycle-identities.csv
+      office_bearing_transported: 308
+      result: structurally_validated
+    local_inverse_laws:
+      statement: Lk(Rk(s)) = s on Dom(Rk) and Rk(Lk(s)) = s on Dom(Lk).
+      witness_artifact: audit/inverse-witnesses.csv
+      passing_witnesses: 3402
+      local_applications: 2940
+      modal_inverse: M^6
+      result: structurally_validated
+    modal_covariance:
+      statement: M Rk M^-1 = R(k-1 mod 7) and M Lk M^-1 = L(k-1 mod 7).
+      witness_artifact: audit/modal-covariance-witnesses.csv
+      passing_cases: 6468
+      domain_and_target_cases: 6468
+      defined_applications_each_side: 2940
+      result: structurally_validated
+    local_commutation:
+      statement: On the common composite domain, local two-step composites agree; unqualified global
+        commutation is not claimed.
+      witness_artifact: audit/commutation-summary.csv
+      pairs_tested: 91
+      classifications:
+        weak_common_domain_commutation: 21
+        strong_partial_commutation: 70
+      common_domain_value_mismatches: 0
+      one_sided_only_cases: 3528
+      commutative_squares_passing: 7644
+      counterexamples: 3978
+      result: qualified_partial_commutation
+    confluence:
+      statement: Same-source direct confluence diamonds and multi-source construction cospans are distinct
+        evidence classes.
+      witness_artifact: audit/confluence-witnesses.csv
+      same_source_direct_diamonds: 7644
+      multi_source_construction_cospans: 0
+      result: structurally_validated
+    edge_validation:
+      structural_edges_passed: 588
+      structural_edges_total: 588
+      field_edges_passed: 760
+      field_edges_total: 760
+      result: structurally_validated
+  negative_results:
+    hamming_adjacency_is_not_primitive:
+      statement: Hamming distance 2 is adjacency; 150 primitive adjacent pairs vs 435 multi-semitone
+        exchanges do not by themselves authorize macro operators.
+      witness_artifact: audit/field-edge-validation.csv
+      result: not_admitted
+    root_phase_is_not_an_office:
+      statement: Complete formal phase domain 210 inverse pairs; 175 projected in the current field and 30
+        valid pairs remain unprojected. Phase adjacency never assigns an office.
+      witness_artifact: audit/projection-coverage.csv
+      unprojected_phase_pairs: 30
+      result: not_admitted
+    lattice_not_proven:
+      statement: Modal cycles prevent a partial-order reading; no global lattice/meet/join theorem is
+        admitted.
+      result: not_proven
+  assertions:
+    - assertion_id: assertion:acoustic_confluence
+      type: confluence
+      statement: NF(L7(Lydian)) = NF(R4(Mixolydian)) = NF(Acoustic)
+      status: fixture_backed
+      witness_artifact: audit/confluence-witnesses.csv
+    - assertion_id: assertion:lydian_minor_confluence
+      type: confluence
+      statement: NF(L6(Acoustic)) = NF(R4(Mixolydian_flat_6)) = NF(Lydian_Minor)
+      status: fixture_backed
+      witness_artifact: audit/confluence-witnesses.csv
+    - assertion_id: assertion:aeolian_modal_covariance
+      type: covariance
+      statement: Declared Aeolian structural relation transports under modal rerooting.
+      status: fixture_backed
+      witness_artifact: audit/modal-covariance-witnesses.csv
+    - assertion_id: assertion:global_commutation
+      type: commutation
+      statement: No global operator-pair commutation theorem is currently admitted; equality holds only on
+        the common composite domain.
+      status: qualified
+      witness_artifact: audit/commutation-summary.csv

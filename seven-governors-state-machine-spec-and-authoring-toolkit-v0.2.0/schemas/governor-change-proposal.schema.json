@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/schemas/governor-change-proposal.schema.json",
+  "title": "Governor Change Draft",
+  "type": "object",
+  "required": ["proposal"],
+  "properties": {
+    "proposal": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "proposal_id",
+        "status",
+        "created_at",
+        "office",
+        "office_key",
+        "base",
+        "changes"
+      ],
+      "properties": {
+        "schema_version": {"const": "1.0.0"},
+        "proposal_id": {"type": "string", "pattern": "^governor-change:"},
+        "status": {"const": "draft"},
+        "created_at": {"type": "string", "format": "date-time"},
+        "office": {"enum": ["Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus", "Saturn"]},
+        "office_key": {"enum": ["sun", "moon", "mars", "mercury", "jupiter", "venus", "saturn"]},
+        "base": {
+          "type": "object",
+          "required": ["artifact", "sha256"],
+          "properties": {
+            "artifact": {"const": "source/governors.yaml"},
+            "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+          },
+          "additionalProperties": false
+        },
+        "changes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["field", "risk_class", "value"],
+            "properties": {
+              "field": {"type": "string"},
+              "risk_class": {"enum": ["authorable", "guarded"]},
+              "value": {}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

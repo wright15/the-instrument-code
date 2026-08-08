@@ -1,0 +1,253 @@
+---
+import type { ScaleState } from "../../lib/bestiary";
+import {
+  archetypeHref,
+  cyclesContaining,
+  familyForForte,
+  relationsFor,
+  stateById,
+  stateHref,
+} from "../../lib/bestiary";
+import DetailSection from "./DetailSection.astro";
+import EdgeChip from "./EdgeChip.astro";
+import PitchSetDial from "../PitchSetDial.astro";
+import TopologyNodeGraph from "../TopologyNodeGraph.astro";
+
+interface Props {
+  archetype: ScaleState;
+}
+
+const { archetype } = Astro.props;
+const family = archetype.forte ? familyForForte(archetype.forte) : undefined;
+const cycles = cyclesContaining(archetype.nodeId);
+const { incoming, outgoing } = relationsFor(archetype.nodeId);
+const parents = archetype.parents.map((parentId) => stateById(parentId)).filter(Boolean);
+---
+
+<div class="flex flex-col gap-4">
+  <DetailSection title="Pitch set">
+    {archetype.pitchSetPcs && archetype.pitchSetMask !== null ? (
+      <div
+        class="flex justify-center"
+        id="dial-interactive"
+        data-pcs={archetype.pitchSetPcs.join(",")}
+        data-mask={archetype.pitchSetMask}
+        data-office={archetype.office ?? ""}
+      >
+        <PitchSetDial
+          pcs={archetype.pitchSetPcs}
+          mask={archetype.pitchSetMask}
+          office={archetype.office}
+        />
+      </div>
+    ) : (
+      <p class="text-xs text-muted">
+        Pitch dial withheld — no pitch-set mask recorded for this state.
+      </p>
+    )}
+  </DetailSection>
+  <DetailSection title="Identity">
+    <dl class="grid grid-cols-2 gap-x-6 gap-y-2 text-xs md:grid-cols-3">
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">role</dt>
+        <dd class="font-mono text-frost/90">{archetype.role}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">fine role</dt>
+        <dd class="font-mono text-frost/90">{archetype.fineRole ?? "—"}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">tier</dt>
+        <dd class="font-mono text-frost/90">{archetype.tier ?? "—"}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">resolution class</dt>
+        <dd class="font-mono text-frost/90">{archetype.resolutionClass ?? "—"}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">chirality</dt>
+        <dd class="font-mono text-frost/90">{archetype.chirality ?? "—"}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">orientation</dt>
+        <dd class="font-mono text-frost/90">{archetype.orientation ?? "—"}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">forte</dt>
+        <dd>
+          {family ? (
+            <a class="text-accent hover:underline" href={archetypeHref(family.id)}>
+              {archetype.forte}
+            </a>
+          ) : (
+            <span class="font-mono text-frost/90">{archetype.forte ?? "—"}</span>
+          )}
+        </dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">office index</dt>
+        <dd class="font-mono text-frost/90">{archetype.officeIndex ?? "—"}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">assignment</dt>
+        <dd class="font-mono text-frost/90">{archetype.assignmentStatus}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">bit label</dt>
+        <dd class="font-mono text-[10px] text-frost/90">{archetype.bitLabel ?? "—"}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">bit reverse</dt>
+        <dd class="font-mono text-[10px] text-frost/90">{archetype.bitReverseLabel ?? "—"}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">in / out</dt>
+        <dd class="font-mono text-frost/90">
+          {archetype.incomingCount} / {archetype.outgoingCount}
+        </dd>
+      </div>
+      {archetype.compiledProfileId && (
+        <div class="flex justify-between gap-2 border-b border-edge pb-1">
+          <dt class="text-muted">compiled profile</dt>
+          <dd class="font-mono text-[10px] text-accent">{archetype.compiledProfileId}</dd>
+        </div>
+      )}
+    </dl>
+  </DetailSection>
+
+  {archetype.canonicalProfileId && (
+    <DetailSection title="Canonical profile">
+      <p class="text-xs text-muted">This state is the root of</p>
+      <a
+        class="mt-2 inline-block rounded border border-accent/40 bg-accent/10 px-2 py-1 font-mono text-[11px] text-accent transition-colors hover:border-accent/70"
+        href={`/archetypes/${archetype.canonicalProfileId}`}
+      >
+        {archetype.canonicalProfileId}
+      </a>
+    </DetailSection>
+  )}
+
+  <DetailSection title="Governing parents">
+    {parents.length > 0 ? (
+      <div class="flex flex-wrap gap-2">
+        {parents.map((parent) => (
+          <a
+            class="rounded border border-edge bg-raised px-2 py-1 text-[11px] text-frost transition-colors hover:border-accent/50 hover:text-accent"
+            href={stateHref(parent.nodeId)}
+          >
+            <span class="font-mono">{parent.nodeId}</span> {parent.name}
+          </a>
+        ))}
+      </div>
+    ) : (
+      <p class="text-xs text-muted">Anchor state — no governing parents.</p>
+    )}
+  </DetailSection>
+
+  <DetailSection
+    title="Relationships"
+    description={`Structural edges sourced from this state (${outgoing.length}) and structural edges targeting it plus field edges touching it (${incoming.length}).`}
+  >    <div class="flex flex-col gap-4">
+      <div>
+        <h3 class="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted">
+          Incoming
+        </h3>
+        {incoming.length > 0 ? (
+          <ul class="flex flex-col gap-1.5">
+            {incoming.map((relationship) => (
+              <li class="flex flex-wrap items-center gap-2 rounded border border-edge bg-raised px-2 py-1.5 text-[10px]">
+                <span class="font-mono text-frost/90">{relationship.id}</span>
+                <EdgeChip relationship={relationship} />
+                {relationship.mode && (
+                  <span class="rounded bg-void px-1.5 py-0.5 font-mono text-muted">mode {relationship.mode}</span>
+                )}
+                {relationship.mutation && (
+                  <span class="rounded bg-void px-1.5 py-0.5 font-mono text-muted">mutation {relationship.mutation}</span>
+                )}
+                {relationship.degree !== null && (
+                  <span class="rounded bg-void px-1.5 py-0.5 font-mono text-muted">degree {relationship.degree}</span>
+                )}
+                {relationship.hamming !== null && (
+                  <span class="rounded bg-void px-1.5 py-0.5 font-mono text-muted">hamming {relationship.hamming}</span>
+                )}
+                {relationship.governing && (
+                  <span class="rounded bg-accent/10 px-1.5 py-0.5 font-mono text-accent">governing</span>
+                )}
+                {relationship.selected && (
+                  <span class="rounded bg-void px-1.5 py-0.5 text-muted">selected</span>
+                )}
+                <span class="ml-auto text-muted">
+                  from <a class="text-accent hover:underline" href={stateHref(relationship.source)}>
+                    {relationship.source}
+                  </a>
+                </span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="text-xs text-muted">None.</p>
+        )}
+      </div>
+      <div>
+        <h3 class="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted">
+          Outgoing
+        </h3>
+        {outgoing.length > 0 ? (
+          <ul class="flex flex-col gap-1.5">
+            {outgoing.map((relationship) => (
+              <li class="flex flex-wrap items-center gap-2 rounded border border-edge bg-raised px-2 py-1.5 text-[10px]">
+                <span class="font-mono text-frost/90">{relationship.id}</span>
+                <EdgeChip relationship={relationship} />
+                {relationship.mode && (
+                  <span class="rounded bg-void px-1.5 py-0.5 font-mono text-muted">mode {relationship.mode}</span>
+                )}
+                {relationship.mutation && (
+                  <span class="rounded bg-void px-1.5 py-0.5 font-mono text-muted">mutation {relationship.mutation}</span>
+                )}
+                {relationship.degree !== null && (
+                  <span class="rounded bg-void px-1.5 py-0.5 font-mono text-muted">degree {relationship.degree}</span>
+                )}
+                {relationship.governing && (
+                  <span class="rounded bg-accent/10 px-1.5 py-0.5 font-mono text-accent">governing</span>
+                )}
+                <span class="ml-auto text-muted">
+                  to <a class="text-accent hover:underline" href={stateHref(relationship.target)}>
+                    {relationship.target}
+                  </a>
+                </span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="text-xs text-muted">None.</p>
+        )}
+      </div>
+    </div>
+  </DetailSection>
+
+  <TopologyNodeGraph nodeId={archetype.nodeId} />
+
+  {cycles.length > 0 && (
+    <DetailSection title="Member of modal cycles">
+      <div class="flex flex-wrap gap-2">
+        {cycles.map((cycle) => (
+          <a
+            class="rounded border border-edge bg-raised px-2 py-1 text-[11px] text-frost transition-colors hover:border-accent/50 hover:text-accent"
+            href={archetypeHref(cycle.id)}
+          >
+            {cycle.id}
+          </a>
+        ))}
+      </div>
+    </DetailSection>
+  )}
+</div>
+
+<script>
+  import { initDial } from "../../lib/dialClient";
+
+  const container = document.getElementById("dial-interactive");
+  if (container) {
+    initDial(container);
+  }
+</script>

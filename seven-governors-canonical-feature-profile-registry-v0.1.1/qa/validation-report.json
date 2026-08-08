@@ -1,0 +1,430 @@
+{
+  "schemaVersion": "1.0.0",
+  "packageVersion": "0.1.1",
+  "releaseId": "canonical-profile-registry:0.1.1",
+  "releaseFingerprint": "e67089fb4f81584710aca15b34eb61a1f382709d057518a69e4cadcd541d327d",
+  "generatedAt": "2026-07-30",
+  "status": "passed",
+  "checkCount": 45,
+  "passedCount": 45,
+  "failedCount": 0,
+  "sourceHashes": {
+    "source/governors.yaml": "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2",
+    "source/universal-network-data.json": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+    "source/topology-identity-definitions.json": "ce7b3a3b8bed85d67df203a0dd6d2ba395effd19f0855869faa1a4d343bf127b",
+    "source/operator-candidates.json": "0010268d655bd0c314629baaf433a47dab6c619a86f3bc67a46954523b4b935e",
+    "source/operator-applications.csv": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e",
+    "source/framework/AGENTS.md": "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24",
+    "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md": "5ba49b157aa6fd8ac672610f88df8ac01464fd71387f3c0e21b042e912636960",
+    "source/framework/TOPOLOGICAL_ANCHORING.md": "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c",
+    "source/framework/NATURAL_ORGANIZATION_THESIS.md": "898626127fbc7d7538bb954326f230db4bf97f084f35122c6e42b68dcdd37af9"
+  },
+  "checks": [
+    {
+      "name": "schema:canonical profiles",
+      "passed": true,
+      "detail": "valid"
+    },
+    {
+      "name": "schema:feature definitions",
+      "passed": true,
+      "detail": "valid"
+    },
+    {
+      "name": "schema:semantic operators",
+      "passed": true,
+      "detail": "valid"
+    },
+    {
+      "name": "schema:registry release",
+      "passed": true,
+      "detail": "valid"
+    },
+    {
+      "name": "schema:source authority",
+      "passed": true,
+      "detail": "valid"
+    },
+    {
+      "name": "schema:compiled:1493-route-lydian-minor-1461-R4.json",
+      "passed": true,
+      "detail": "valid"
+    },
+    {
+      "name": "fingerprint:1493-route-lydian-minor-1461-R4.json",
+      "passed": true,
+      "detail": "fingerprint recomputed from canonical intrinsic JSON"
+    },
+    {
+      "name": "route-separation:1493-route-lydian-minor-1461-R4.json",
+      "passed": true,
+      "detail": "route id absent from intrinsic fingerprint input"
+    },
+    {
+      "name": "schema:compiled:1493-route-lydian-minor-1749-L6.json",
+      "passed": true,
+      "detail": "valid"
+    },
+    {
+      "name": "fingerprint:1493-route-lydian-minor-1749-L6.json",
+      "passed": true,
+      "detail": "fingerprint recomputed from canonical intrinsic JSON"
+    },
+    {
+      "name": "route-separation:1493-route-lydian-minor-1749-L6.json",
+      "passed": true,
+      "detail": "route id absent from intrinsic fingerprint input"
+    },
+    {
+      "name": "schema:compiled:1643-route-aeolian-square-M-R6.json",
+      "passed": true,
+      "detail": "valid"
+    },
+    {
+      "name": "fingerprint:1643-route-aeolian-square-M-R6.json",
+      "passed": true,
+      "detail": "fingerprint recomputed from canonical intrinsic JSON"
+    },
+    {
+      "name": "route-separation:1643-route-aeolian-square-M-R6.json",
+      "passed": true,
+      "detail": "route id absent from intrinsic fingerprint input"
+    },
+    {
+      "name": "schema:compiled:1643-route-aeolian-square-R7-M.json",
+      "passed": true,
+      "detail": "valid"
+    },
+    {
+      "name": "fingerprint:1643-route-aeolian-square-R7-M.json",
+      "passed": true,
+      "detail": "fingerprint recomputed from canonical intrinsic JSON"
+    },
+    {
+      "name": "route-separation:1643-route-aeolian-square-R7-M.json",
+      "passed": true,
+      "detail": "route id absent from intrinsic fingerprint input"
+    },
+    {
+      "name": "schema:compiled:1749-route-acoustic-1717-R4.json",
+      "passed": true,
+      "detail": "valid"
+    },
+    {
+      "name": "fingerprint:1749-route-acoustic-1717-R4.json",
+      "passed": true,
+      "detail": "fingerprint recomputed from canonical intrinsic JSON"
+    },
+    {
+      "name": "route-separation:1749-route-acoustic-1717-R4.json",
+      "passed": true,
+      "detail": "route id absent from intrinsic fingerprint input"
+    },
+    {
+      "name": "schema:compiled:1749-route-acoustic-2773-L7.json",
+      "passed": true,
+      "detail": "valid"
+    },
+    {
+      "name": "fingerprint:1749-route-acoustic-2773-L7.json",
+      "passed": true,
+      "detail": "fingerprint recomputed from canonical intrinsic JSON"
+    },
+    {
+      "name": "route-separation:1749-route-acoustic-2773-L7.json",
+      "passed": true,
+      "detail": "route id absent from intrinsic fingerprint input"
+    },
+    {
+      "name": "schema:compiled:2477-route-harmonic-minor-aeolian-R7.json",
+      "passed": true,
+      "detail": "valid"
+    },
+    {
+      "name": "fingerprint:2477-route-harmonic-minor-aeolian-R7.json",
+      "passed": true,
+      "detail": "fingerprint recomputed from canonical intrinsic JSON"
+    },
+    {
+      "name": "route-separation:2477-route-harmonic-minor-aeolian-R7.json",
+      "passed": true,
+      "detail": "route id absent from intrinsic fingerprint input"
+    },
+    {
+      "name": "invariant:release-identity",
+      "passed": true,
+      "detail": [
+        {
+          "artifact": "profiles",
+          "releaseId": "canonical-profile-registry:0.1.1"
+        },
+        {
+          "artifact": "photonic",
+          "releaseId": "canonical-profile-registry:0.1.1"
+        },
+        {
+          "artifact": "features",
+          "releaseId": "canonical-profile-registry:0.1.1"
+        },
+        {
+          "artifact": "measures",
+          "releaseId": "canonical-profile-registry:0.1.1"
+        },
+        {
+          "artifact": "operators",
+          "releaseId": "canonical-profile-registry:0.1.1"
+        },
+        {
+          "artifact": "projections",
+          "releaseId": "canonical-profile-registry:0.1.1"
+        },
+        {
+          "artifact": "authority",
+          "releaseId": "canonical-profile-registry:0.1.1"
+        },
+        {
+          "artifact": "fixtures",
+          "releaseId": "canonical-profile-registry:0.1.1"
+        }
+      ]
+    },
+    {
+      "name": "invariant:office-order",
+      "passed": true,
+      "detail": [
+        "Sun",
+        "Moon",
+        "Mars",
+        "Mercury",
+        "Jupiter",
+        "Venus",
+        "Saturn"
+      ]
+    },
+    {
+      "name": "invariant:canonical-A0-alignment",
+      "passed": true,
+      "detail": "all canonical profiles resolve to their audited A0 anchor"
+    },
+    {
+      "name": "invariant:photonic-monotonicity",
+      "passed": true,
+      "detail": [
+        {
+          "office": "Sun",
+          "C_P": 0
+        },
+        {
+          "office": "Moon",
+          "C_P": 0.19672131147540983
+        },
+        {
+          "office": "Mars",
+          "C_P": 0.2758620689655172
+        },
+        {
+          "office": "Mercury",
+          "C_P": 0.4276729559748428
+        },
+        {
+          "office": "Jupiter",
+          "C_P": 0.6524822695035462
+        },
+        {
+          "office": "Venus",
+          "C_P": 0.8372093023255813
+        },
+        {
+          "office": "Saturn",
+          "C_P": 1
+        }
+      ]
+    },
+    {
+      "name": "invariant:photonic-noncausal",
+      "passed": true,
+      "detail": "musical operators do not mutate physical quantities"
+    },
+    {
+      "name": "invariant:C_S-nonmetric-order",
+      "passed": true,
+      "detail": [
+        {
+          "office": "Sun",
+          "orderedPosition": 1,
+          "normalizedOrdinal": 0,
+          "metric": false
+        },
+        {
+          "office": "Moon",
+          "orderedPosition": 2,
+          "normalizedOrdinal": 0.16666666666666666,
+          "metric": false
+        },
+        {
+          "office": "Mars",
+          "orderedPosition": 3,
+          "normalizedOrdinal": 0.3333333333333333,
+          "metric": false
+        },
+        {
+          "office": "Mercury",
+          "orderedPosition": 4,
+          "normalizedOrdinal": 0.5,
+          "metric": false
+        },
+        {
+          "office": "Jupiter",
+          "orderedPosition": 5,
+          "normalizedOrdinal": 0.6666666666666666,
+          "metric": false
+        },
+        {
+          "office": "Venus",
+          "orderedPosition": 6,
+          "normalizedOrdinal": 0.8333333333333334,
+          "metric": false
+        },
+        {
+          "office": "Saturn",
+          "orderedPosition": 7,
+          "normalizedOrdinal": 1,
+          "metric": false
+        }
+      ]
+    },
+    {
+      "name": "invariant:C_H-unresolved",
+      "passed": true,
+      "detail": "no aggregate harmonic compression formula was invented"
+    },
+    {
+      "name": "invariant:Carey-family-tuning-scope",
+      "passed": true,
+      "detail": "CQ/SQ remain family-and-tuning properties"
+    },
+    {
+      "name": "invariant:operator-completeness",
+      "passed": true,
+      "detail": "M plus R1–R7 and L1–L7"
+    },
+    {
+      "name": "invariant:no-premature-semantic-effects",
+      "passed": true,
+      "detail": "all effect slots and semantic-effect fixtures remain empty; four research scopes remain unresolved"
+    },
+    {
+      "name": "invariant:no-physical-operator-effect",
+      "passed": true,
+      "detail": "all 15 operator shells prohibit musical-to-optical causation"
+    },
+    {
+      "name": "fixture-suite:all-passed",
+      "passed": true,
+      "detail": [
+        {
+          "fixtureId": "fixture:acoustic-confluence",
+          "status": "passed",
+          "fixtureClass": "structural_normalization",
+          "semanticEffectEvidence": false
+        },
+        {
+          "fixtureId": "fixture:harmonic-minor-satellite",
+          "status": "passed",
+          "fixtureClass": "structural_normalization",
+          "semanticEffectEvidence": false
+        },
+        {
+          "fixtureId": "fixture:lydian-minor-midpoint",
+          "status": "passed",
+          "fixtureClass": "structural_normalization",
+          "semanticEffectEvidence": false
+        },
+        {
+          "fixtureId": "fixture:aeolian-modal-covariance",
+          "status": "passed",
+          "fixtureClass": "structural_normalization",
+          "semanticEffectEvidence": false
+        }
+      ]
+    },
+    {
+      "name": "invariant:reference-pools-are-not-requirements",
+      "passed": true,
+      "detail": "landform entries are candidate reference pools; canonical process and direction remain hard constraints"
+    },
+    {
+      "name": "invariant:legacy-source-references-quarantined",
+      "passed": true,
+      "detail": [
+        {
+          "target": "CONSTITUTION.md",
+          "packaged": false,
+          "status": "legacy_or_external_reference_unresolved",
+          "runtimeAuthority": false
+        },
+        {
+          "target": "UNIFIED_PROCESS_ONTOLOGY.md",
+          "packaged": false,
+          "status": "legacy_or_external_reference_unresolved",
+          "runtimeAuthority": false
+        },
+        {
+          "target": "schemas/vector_b_physics.yaml",
+          "packaged": false,
+          "status": "legacy_or_external_reference_unresolved",
+          "runtimeAuthority": false
+        },
+        {
+          "target": "schemas/physical_phenomena.yaml",
+          "packaged": false,
+          "status": "legacy_or_external_reference_unresolved",
+          "runtimeAuthority": false
+        },
+        {
+          "target": "schemas/color_palettes.yaml",
+          "packaged": false,
+          "status": "legacy_or_external_reference_unresolved",
+          "runtimeAuthority": false
+        },
+        {
+          "target": "schemas/zodiacal_systems.yaml",
+          "packaged": false,
+          "status": "legacy_or_external_reference_unresolved",
+          "runtimeAuthority": false
+        },
+        {
+          "target": "schemas/governors.yaml",
+          "packaged": false,
+          "status": "legacy_or_external_reference_unresolved",
+          "runtimeAuthority": false
+        }
+      ]
+    },
+    {
+      "name": "confluence:fixture:acoustic-confluence",
+      "passed": true,
+      "detail": "2 route packet(s) converge on 8077327cc0f809b85ab5379daefb0ab0dd61f4f7f1e52baf0e2020a68054652c"
+    },
+    {
+      "name": "confluence:fixture:harmonic-minor-satellite",
+      "passed": true,
+      "detail": "1 route packet(s) converge on c45ac3b92d76b6b13521b16adafececca9f94da7b63db8810211e4aee9b636a6"
+    },
+    {
+      "name": "confluence:fixture:lydian-minor-midpoint",
+      "passed": true,
+      "detail": "2 route packet(s) converge on 63194a258f2a928bb669b60386a1066baefb35488b2e04266f2603bb8c0cbd62"
+    },
+    {
+      "name": "confluence:fixture:aeolian-modal-covariance",
+      "passed": true,
+      "detail": "2 route packet(s) converge on 7fa303b646a8d9247261f0d48875e2dd8e9cf07e33b52f650b698f273cbc1e09"
+    },
+    {
+      "name": "invariant:release-source-hashes",
+      "passed": true,
+      "detail": "registry release fingerprint is bound to the frozen source snapshot"
+    }
+  ]
+}

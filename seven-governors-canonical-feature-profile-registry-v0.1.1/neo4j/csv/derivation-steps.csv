@@ -1,0 +1,10 @@
+step_id:ID(DerivationStep),route_id,sequence:int,source_state_id:int,target_state_id:int,structural_operator_id,application_status,structural_edge_types:string[],field_edge_types:string[],:LABEL
+step:route:lydian-minor:1461:R4:1,route:lydian-minor:1461:R4,1,1461,1493,R4,formal_substrate_observed,CONSTRUCTS,AUDITED_HAMMING2,DerivationStep
+step:route:lydian-minor:1749:L6:1,route:lydian-minor:1749:L6,1,1749,1493,L6,formal_substrate_observed,CONSTRUCTS,AUDITED_HAMMING2,DerivationStep
+step:route:aeolian-square:M-R6:1,route:aeolian-square:M-R6,1,1453,1387,M,formal_substrate_observed,MODAL_SUCCESSOR,,DerivationStep
+step:route:aeolian-square:M-R6:2,route:aeolian-square:M-R6,2,1387,1643,R6,formal_substrate_observed,GOVERNS,AUDITED_HAMMING2,DerivationStep
+step:route:aeolian-square:R7-M:1,route:aeolian-square:R7-M,1,1453,2477,R7,formal_substrate_observed,GOVERNS,AUDITED_HAMMING2,DerivationStep
+step:route:aeolian-square:R7-M:2,route:aeolian-square:R7-M,2,2477,1643,M,formal_substrate_observed,,,DerivationStep
+step:route:acoustic:1717:R4:1,route:acoustic:1717:R4,1,1717,1749,R4,formal_substrate_observed,CONSTRUCTS,AUDITED_HAMMING2,DerivationStep
+step:route:acoustic:2773:L7:1,route:acoustic:2773:L7,1,2773,1749,L7,formal_substrate_observed,CONSTRUCTS,AUDITED_HAMMING2,DerivationStep
+step:route:harmonic-minor:aeolian:R7:1,route:harmonic-minor:aeolian:R7,1,1453,2477,R7,formal_substrate_observed,GOVERNS,AUDITED_HAMMING2,DerivationStep

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/gov-207/schemas/inspect-context.schema.json",
+  "title": "GOV-207 inspect_context Input and Output",
+  "oneOf": [
+    { "$ref": "#/$defs/input" },
+    { "$ref": "#/$defs/output" }
+  ],
+  "$defs": {
+    "input": {
+      "$id": "gov-207.inspect-context.input.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "requestId", "taskId"],
+      "properties": {
+        "schemaVersion": { "const": "gov-207.inspect-context.input.v1" },
+        "requestId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "taskId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "expectedStateSha256": { "$ref": "common.schema.json#/$defs/sha256" },
+        "includePriorVerifiedOutcomes": { "type": "boolean", "default": false },
+        "priorOutcomeLimit": { "type": "integer", "minimum": 1, "maximum": 25 }
+      }
+    },
+    "output": {
+      "$id": "gov-207.inspect-context.output.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "skillId",
+        "requestId",
+        "status",
+        "context",
+        "menu",
+        "toolReceipts",
+        "directive",
+        "resultFingerprint"
+      ],
+      "properties": {
+        "schemaVersion": { "const": "gov-207.inspect-context.output.v1" },
+        "skillId": { "const": "inspect_context" },
+        "requestId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "status": { "enum": ["failed", "ok", "stopped", "unavailable"] },
+        "context": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "ledger", "graph", "pendingAttemptId"],
+          "properties": {
+            "state": {
+              "oneOf": [
+                { "$ref": "common.schema.json#/$defs/stateRef" },
+                { "type": "null" }
+              ]
+            },
+            "ledger": { "$ref": "common.schema.json#/$defs/ledgerStatus" },
+            "graph": { "$ref": "common.schema.json#/$defs/graphStatus" },
+            "pendingAttemptId": { "$ref": "common.schema.json#/$defs/nullableIdentifier" }
+          }
+        },
+        "priorVerifiedOutcomes": {
+          "type": "array",
+          "maxItems": 25,
+          "items": { "$ref": "common.schema.json#/$defs/stateRef" }
+        },
+        "menu": { "$ref": "common.schema.json#/$defs/dynamicMenu" },
+        "toolReceipts": {
+          "type": "array",
+          "maxItems": 64,
+          "items": { "$ref": "common.schema.json#/$defs/toolReceipt" }
+        },
+        "directive": { "$ref": "common.schema.json#/$defs/directive" },
+        "resultFingerprint": { "$ref": "common.schema.json#/$defs/sha256" }
+      }
+    }
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "schemaVersion": "1.0.0",
+  "compilerVersion": "0.1.1",
+  "releaseId": "canonical-profile-registry:0.1.1",
+  "normalFormId": "nf:scale:1493:landforms:v0.1.1",
+  "state": {
+    "stateId": 1493,
+    "name": "Lydian Minor",
+    "forteFamily": "7-33",
+    "bit": "b101010111010",
+    "pitchSet": "{0,2,4,6,7,8,10}",
+    "role": "anchor",
+    "fineRole": "anchor_A2",
+    "tier": "A2",
+    "chirality": "achiral",
+    "orientation": "7-33 single orientation",
+    "assignmentStatus": "declared fixture",
+    "resolutionClass": "validated_A2_anchor"
+  },
+  "resolution": {
+    "office": "Mars",
+    "officeIndex": 2,
+    "officeBearing": true,
+    "officeBasis": "declared A2 relational office",
+    "officeStatus": "declared fixture; declared A2 relational office"
+  },
+  "canonicalProfile": {
+    "profileId": "profile:mars:v0.1.1",
+    "releaseId": "canonical-profile-registry:0.1.1",
+    "office": "Mars",
+    "canonicalStateId": 1717,
+    "intrinsicFingerprint": "800f18256f29b81ccceeac53e39f9c49c5686c170876d0941d67897361783adb"
+  },
+  "photonic": {
+    "photonicId": "photonic:mars:v0.1.1",
+    "representativeWavelengthNm": 580,
+    "vacuumFrequencyHz": 516883548275862,
+    "photonEnergyEv": 2.1376585936758663,
+    "photonicCompression": 0.2758620689655172,
+    "coordinateSymbol": "C_P",
+    "normalizationStatus": "registry_coordinate_convention",
+    "inheritancePolicy": "resolved_from_state_governor_office",
+    "causationClaim": false
+  },
+  "harmonic": {
+    "stateGovernor": "Mars",
+    "rootedPitchMask": "b101010111010",
+    "forteFamily": "7-33",
+    "tier": "A2",
+    "role": "anchor",
+    "harmonicCompression": {
+      "coordinateSymbol": "C_H",
+      "status": "unresolved",
+      "value": null
+    }
+  },
+  "semantic": {
+    "stateGovernor": "Mars",
+    "thermodynamicFunction": "activation",
+    "opticalFunction": "ignition",
+    "directionality": "outward_projective",
+    "archetypalRole": "energy modulation; how force enters the pattern",
+    "element": "Fire",
+    "semanticCompression": {
+      "coordinateSymbol": "C_S",
+      "status": "framework_order_plus_registry_coordinate_convention",
+      "orderedPosition": 3,
+      "orderedProcess": "activation",
+      "normalizedOrdinal": 0.3333333333333333,
+      "metric": false,
+      "scale": "declared Sun-to-Saturn process order",
+      "physicalClaim": false
+    }
+  },
+  "domainProjection": {
+    "domain": "landforms",
+    "projectionId": "projection:landforms:v0.1.1",
+    "status": "canonical_reference_projection",
+    "canonicalReferences": [
+      "volcanoes",
+      "canyons",
+      "cliffs",
+      "gorges",
+      "deserts",
+      "cracked earth",
+      "impact craters"
+    ],
+    "requiredFeatures": [
+      {
+        "featureId": "harmonic.scale_state",
+        "value": 1493,
+        "reason": "Intrinsic rooted state identity."
+      },
+      {
+        "featureId": "semantic.governor_office",
+        "value": "Mars",
+        "reason": "Resolved State Governor."
+      },
+      {
+        "featureId": "semantic.thermodynamic_function",
+        "value": "activation",
+        "reason": "Canonical office process correspondence."
+      },
+      {
+        "featureId": "semantic.directionality",
+        "value": "outward_projective",
+        "reason": "Canonical office orientation."
+      }
+    ],
+    "softPriors": [
+      {
+        "featureId": "semantic.archetypal_role",
+        "value": "energy modulation; how force enters the pattern",
+        "reason": "Guide salience and interpretation without requiring literal depiction."
+      }
+    ],
+    "referencePool": [
+      {
+        "poolId": "landforms:mars:canonical",
+        "featureId": "domain.landforms",
+        "candidates": [
+          "volcanoes",
+          "canyons",
+          "cliffs",
+          "gorges",
+          "deserts",
+          "cracked earth",
+          "impact craters"
+        ],
+        "selectionRule": "select_zero_or_more_without_implying_exhaustiveness",
+        "authority": "framework_declared_reference_library"
+      }
+    ],
+    "promotedFeatures": [],
+    "suppressedFeatures": [],
+    "prohibitedFeatures": [
+      {
+        "featureId": "physical.musical_to_optical_causation",
+        "reason": "A musical mutation does not physically alter the representative wavelength."
+      },
+      {
+        "featureId": "semantic.unproven_operator_effect",
+        "reason": "No promote/suppress/transform claim may be added without semantic admission evidence."
+      }
+    ],
+    "unresolvedFeatures": [
+      "operator_specific_semantic_delta_if_a_route_is_applied"
+    ],
+    "creativeAffordances": [
+      "composition",
+      "scale",
+      "weather",
+      "material",
+      "viewpoint",
+      "inhabitants",
+      "surface detail"
+    ],
+    "renderingBrief": "Resolve the creation in the Mars office. Honor the canonical process correspondence “activation” and directionality “outward_projective”. Select freely from, combine, or abstract the reference pool: volcanoes, canyons, cliffs, gorges, deserts, cracked earth, impact craters. Surface realization may vary within the listed creative affordances. Any mutation route remains provenance-only until its semantic feature delta is admitted."
+  },
+  "creationConstraints": {
+    "required": [
+      {
+        "featureId": "harmonic.scale_state",
+        "value": 1493,
+        "reason": "Intrinsic rooted state identity."
+      },
+      {
+        "featureId": "semantic.governor_office",
+        "value": "Mars",
+        "reason": "Resolved State Governor."
+      },
+      {
+        "featureId": "semantic.thermodynamic_function",
+        "value": "activation",
+        "reason": "Canonical office process correspondence."
+      },
+      {
+        "featureId": "semantic.directionality",
+        "value": "outward_projective",
+        "reason": "Canonical office orientation."
+      }
+    ],
+    "softPriors": [
+      {
+        "featureId": "semantic.archetypal_role",
+        "value": "energy modulation; how force enters the pattern",
+        "reason": "Guide salience and interpretation without requiring literal depiction."
+      }
+    ],
+    "referencePool": [
+      {
+        "poolId": "landforms:mars:canonical",
+        "featureId": "domain.landforms",
+        "candidates": [
+          "volcanoes",
+          "canyons",
+          "cliffs",
+          "gorges",
+          "deserts",
+          "cracked earth",
+          "impact craters"
+        ],
+        "selectionRule": "select_zero_or_more_without_implying_exhaustiveness",
+        "authority": "framework_declared_reference_library"
+      }
+    ],
+    "promoted": [],
+    "suppressed": [],
+    "prohibited": [
+      {
+        "featureId": "physical.musical_to_optical_causation",
+        "reason": "A musical mutation does not physically alter the representative wavelength."
+      },
+      {
+        "featureId": "semantic.unproven_operator_effect",
+        "reason": "No promote/suppress/transform claim may be added without semantic admission evidence."
+      }
+    ],
+    "unresolved": [
+      "operator_specific_semantic_delta_if_a_route_is_applied"
+    ],
+    "creativeAffordances": [
+      "composition",
+      "scale",
+      "weather",
+      "material",
+      "viewpoint",
+      "inhabitants",
+      "surface detail"
+    ]
+  },
+  "provenance": {
+    "releaseId": "canonical-profile-registry:0.1.1",
+    "providerContract": "1.0.0",
+    "providerUsed": "file",
+    "providerExcludedFromIntrinsicIdentity": true,
+    "stateAuthority": "audited topology",
+    "canonicalProfileAuthority": "active versioned canonical profile",
+    "projectionAuthority": "projection:landforms:v0.1.1",
+    "compiler": "scripts/compiler.mjs"
+  },
+  "intrinsicFingerprint": "63194a258f2a928bb669b60386a1066baefb35488b2e04266f2603bb8c0cbd62",
+  "fingerprintInputCanonicalJson": "{\"canonicalProfile\":{\"canonicalStateId\":1717,\"intrinsicFingerprint\":\"800f18256f29b81ccceeac53e39f9c49c5686c170876d0941d67897361783adb\",\"office\":\"Mars\",\"profileId\":\"profile:mars:v0.1.1\",\"releaseId\":\"canonical-profile-registry:0.1.1\"},\"compilerVersion\":\"0.1.1\",\"creationConstraints\":{\"creativeAffordances\":[\"composition\",\"scale\",\"weather\",\"material\",\"viewpoint\",\"inhabitants\",\"surface detail\"],\"prohibited\":[{\"featureId\":\"physical.musical_to_optical_causation\",\"reason\":\"A musical mutation does not physically alter the representative wavelength.\"},{\"featureId\":\"semantic.unproven_operator_effect\",\"reason\":\"No promote/suppress/transform claim may be added without semantic admission evidence.\"}],\"promoted\":[],\"referencePool\":[{\"authority\":\"framework_declared_reference_library\",\"candidates\":[\"volcanoes\",\"canyons\",\"cliffs\",\"gorges\",\"deserts\",\"cracked earth\",\"impact craters\"],\"featureId\":\"domain.landforms\",\"poolId\":\"landforms:mars:canonical\",\"selectionRule\":\"select_zero_or_more_without_implying_exhaustiveness\"}],\"required\":[{\"featureId\":\"harmonic.scale_state\",\"reason\":\"Intrinsic rooted state identity.\",\"value\":1493},{\"featureId\":\"semantic.governor_office\",\"reason\":\"Resolved State Governor.\",\"value\":\"Mars\"},{\"featureId\":\"semantic.thermodynamic_function\",\"reason\":\"Canonical office process correspondence.\",\"value\":\"activation\"},{\"featureId\":\"semantic.directionality\",\"reason\":\"Canonical office orientation.\",\"value\":\"outward_projective\"}],\"softPriors\":[{\"featureId\":\"semantic.archetypal_role\",\"reason\":\"Guide salience and interpretation without requiring literal depiction.\",\"value\":\"energy modulation; how force enters the pattern\"}],\"suppressed\":[],\"unresolved\":[\"operator_specific_semantic_delta_if_a_route_is_applied\"]},\"domainProjection\":{\"canonicalReferences\":[\"volcanoes\",\"canyons\",\"cliffs\",\"gorges\",\"deserts\",\"cracked earth\",\"impact craters\"],\"creativeAffordances\":[\"composition\",\"scale\",\"weather\",\"material\",\"viewpoint\",\"inhabitants\",\"surface detail\"],\"domain\":\"landforms\",\"prohibitedFeatures\":[{\"featureId\":\"physical.musical_to_optical_causation\",\"reason\":\"A musical mutation does not physically alter the representative wavelength.\"},{\"featureId\":\"semantic.unproven_operator_effect\",\"reason\":\"No promote/suppress/transform claim may be added without semantic admission evidence.\"}],\"projectionId\":\"projection:landforms:v0.1.1\",\"promotedFeatures\":[],\"referencePool\":[{\"authority\":\"framework_declared_reference_library\",\"candidates\":[\"volcanoes\",\"canyons\",\"cliffs\",\"gorges\",\"deserts\",\"cracked earth\",\"impact craters\"],\"featureId\":\"domain.landforms\",\"poolId\":\"landforms:mars:canonical\",\"selectionRule\":\"select_zero_or_more_without_implying_exhaustiveness\"}],\"renderingBrief\":\"Resolve the creation in the Mars office. Honor the canonical process correspondence “activation” and directionality “outward_projective”. Select freely from, combine, or abstract the reference pool: volcanoes, canyons, cliffs, gorges, deserts, cracked earth, impact craters. Surface realization may vary within the listed creative affordances. Any mutation route remains provenance-only until its semantic feature delta is admitted.\",\"requiredFeatures\":[{\"featureId\":\"harmonic.scale_state\",\"reason\":\"Intrinsic rooted state identity.\",\"value\":1493},{\"featureId\":\"semantic.governor_office\",\"reason\":\"Resolved State Governor.\",\"value\":\"Mars\"},{\"featureId\":\"semantic.thermodynamic_function\",\"reason\":\"Canonical office process correspondence.\",\"value\":\"activation\"},{\"featureId\":\"semantic.directionality\",\"reason\":\"Canonical office orientation.\",\"value\":\"outward_projective\"}],\"softPriors\":[{\"featureId\":\"semantic.archetypal_role\",\"reason\":\"Guide salience and interpretation without requiring literal depiction.\",\"value\":\"energy modulation; how force enters the pattern\"}],\"status\":\"canonical_reference_projection\",\"suppressedFeatures\":[],\"unresolvedFeatures\":[\"operator_specific_semantic_delta_if_a_route_is_applied\"]},\"harmonic\":{\"forteFamily\":\"7-33\",\"harmonicCompression\":{\"coordinateSymbol\":\"C_H\",\"status\":\"unresolved\",\"value\":null},\"role\":\"anchor\",\"rootedPitchMask\":\"b101010111010\",\"stateGovernor\":\"Mars\",\"tier\":\"A2\"},\"normalFormId\":\"nf:scale:1493:landforms:v0.1.1\",\"photonic\":{\"causationClaim\":false,\"coordinateSymbol\":\"C_P\",\"inheritancePolicy\":\"resolved_from_state_governor_office\",\"normalizationStatus\":\"registry_coordinate_convention\",\"photonEnergyEv\":2.1376585936758663,\"photonicCompression\":0.2758620689655172,\"photonicId\":\"photonic:mars:v0.1.1\",\"representativeWavelengthNm\":580,\"vacuumFrequencyHz\":516883548275862},\"provenance\":{\"canonicalProfileAuthority\":\"active versioned canonical profile\",\"compiler\":\"scripts/compiler.mjs\",\"projectionAuthority\":\"projection:landforms:v0.1.1\",\"providerContract\":\"1.0.0\",\"providerExcludedFromIntrinsicIdentity\":true,\"providerUsed\":null,\"releaseId\":\"canonical-profile-registry:0.1.1\",\"stateAuthority\":\"audited topology\"},\"releaseId\":\"canonical-profile-registry:0.1.1\",\"resolution\":{\"office\":\"Mars\",\"officeBasis\":\"declared A2 relational office\",\"officeBearing\":true,\"officeIndex\":2,\"officeStatus\":\"declared fixture; declared A2 relational office\"},\"schemaVersion\":\"1.0.0\",\"semantic\":{\"archetypalRole\":\"energy modulation; how force enters the pattern\",\"directionality\":\"outward_projective\",\"element\":\"Fire\",\"opticalFunction\":\"ignition\",\"semanticCompression\":{\"coordinateSymbol\":\"C_S\",\"metric\":false,\"normalizedOrdinal\":0.3333333333333333,\"orderedPosition\":3,\"orderedProcess\":\"activation\",\"physicalClaim\":false,\"scale\":\"declared Sun-to-Saturn process order\",\"status\":\"framework_order_plus_registry_coordinate_convention\"},\"stateGovernor\":\"Mars\",\"thermodynamicFunction\":\"activation\"},\"state\":{\"assignmentStatus\":\"declared fixture\",\"bit\":\"b101010111010\",\"chirality\":\"achiral\",\"fineRole\":\"anchor_A2\",\"forteFamily\":\"7-33\",\"name\":\"Lydian Minor\",\"orientation\":\"7-33 single orientation\",\"pitchSet\":\"{0,2,4,6,7,8,10}\",\"resolutionClass\":\"validated_A2_anchor\",\"role\":\"anchor\",\"stateId\":1493,\"tier\":\"A2\"}}",
+  "routeContext": {
+    "routeId": "route:lydian-minor:1461:R4",
+    "sourceIds": [
+      1461
+    ],
+    "targetId": 1493,
+    "structuralOperatorIds": [
+      "R4"
+    ],
+    "operatorAnnotations": [
+      {
+        "structuralOperatorId": "R4",
+        "semanticOperatorId": "semantic:R4:v0.1.1",
+        "degree": 4,
+        "degreeGovernor": "Sun",
+        "direction": "raise",
+        "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+        "semanticEffectEvidence": false
+      }
+    ],
+    "relationEvidence": [
+      {
+        "sourceId": 1461,
+        "sourceName": "Mixolydian ♭6",
+        "operatorId": "R4",
+        "targetId": 1493,
+        "targetName": "Lydian Minor",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": [
+          "CONSTRUCTS"
+        ],
+        "fieldEvidence": true,
+        "fieldEdgeTypes": [
+          "AUDITED_HAMMING2"
+        ],
+        "applicationStatus": "formal_substrate_observed"
+      }
+    ],
+    "note": "Exact A2 midpoint route.",
+    "excludedFromIntrinsicFingerprint": true
+  }
+}

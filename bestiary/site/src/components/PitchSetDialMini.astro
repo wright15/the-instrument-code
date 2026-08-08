@@ -1,0 +1,76 @@
+---
+import { officeColors } from "../lib/bestiary";
+
+interface Props {
+  pcs: number[];
+  office?: string | null;
+  size?: number;
+}
+
+const { pcs, office = null, size = 64 } = Astro.props;
+
+const SIZE = 60;
+const CENTER = SIZE / 2;
+const DOT_R = 22;
+const selected = new Set(pcs);
+const tint = (office && officeColors[office]) || "#8CF";
+
+function miniPoint(pc: number, radius: number): { x: number; y: number } {
+  const angle = ((pc * 30 - 90) * Math.PI) / 180;
+  return {
+    x: CENTER + radius * Math.cos(angle),
+    y: CENTER + radius * Math.sin(angle),
+  };
+}
+
+const ticks = Array.from({ length: 12 }, (_, pc) => {
+  const outer = miniPoint(pc, DOT_R + 5);
+  const inner = miniPoint(pc, DOT_R - 4);
+  return { pc, outer, inner };
+});
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox={`0 0 ${SIZE} ${SIZE}`}
+  role="img"
+  aria-label={`Pitch set dial {${pcs.join(", ")}}`}
+  class="shrink-0"
+>
+  <title>{`Pitch set {${pcs.join(", ")}}`}</title>
+  <circle
+    cx={CENTER}
+    cy={CENTER}
+    r={DOT_R}
+    fill="none"
+    stroke="#222222"
+    stroke-width="1"
+  />
+  {ticks.map(({ pc, outer, inner }) => (
+    <line
+      key={`t-${pc}`}
+      x1={outer.x}
+      y1={outer.y}
+      x2={inner.x}
+      y2={inner.y}
+      stroke={selected.has(pc) ? tint : "#333333"}
+      stroke-width="0.75"
+    />
+  ))}
+  {Array.from({ length: 12 }, (_, pc) => {
+    const { x, y } = miniPoint(pc, DOT_R);
+    const active = selected.has(pc);
+    return (
+      <circle
+        key={`d-${pc}`}
+        cx={x}
+        cy={y}
+        r={active ? 3.6 : 1.7}
+        fill={active ? tint : "#1a1a1a"}
+        stroke={active ? "#e0e0e0" : "#222222"}
+        stroke-width={active ? 0.8 : 0.5}
+      />
+    );
+  })}
+</svg>

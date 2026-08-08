@@ -1,0 +1,549 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryVersion": "0.1.1",
+  "releaseId": "canonical-profile-registry:0.1.1",
+  "generatedAt": "2026-07-30",
+  "status": "canonical_fields_plus_explicit_unresolved_slots",
+  "invariants": [
+    "Physical, harmonic, semantic, domain, and generative fields retain distinct epistemic classes.",
+    "State Governor is a node/profile identity; Degree Governor is an operator/edge label.",
+    "CQ and SQ, when added, are properties of a Forte family under a declared tuning.",
+    "An empty semantic effect is preferable to an invented effect.",
+    "Route history is excluded from an intrinsic normal-form fingerprint.",
+    "C_S ordering is canonical; its normalized ordinal is a non-metric registry convention.",
+    "Reference-pool entities are candidates, not requirements that must all appear."
+  ],
+  "definitions": [
+    {
+      "featureId": "physical.wavelength_nm",
+      "label": "Representative wavelength",
+      "layer": "physical",
+      "epistemicClass": "framework_declared_physical_anchor",
+      "dataType": "number",
+      "unit": "nm",
+      "operatorScope": "office",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Representative optical wavelength assigned to a Governor office. It is not caused by musical mutation.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "physical.frequency_hz",
+      "label": "Optical frequency",
+      "layer": "physical",
+      "epistemicClass": "physically_derived",
+      "dataType": "number",
+      "unit": "Hz",
+      "operatorScope": "office",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Vacuum frequency c/λ derived from the representative wavelength.",
+      "source": {
+        "artifact": "scripts/build-registry.mjs",
+        "authority": "physically_derived_from_framework_anchor",
+        "formula": "See photonic-records.json calculation policy."
+      }
+    },
+    {
+      "featureId": "physical.photon_energy_j",
+      "label": "Photon energy",
+      "layer": "physical",
+      "epistemicClass": "physically_derived",
+      "dataType": "number",
+      "unit": "J",
+      "operatorScope": "office",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Single-photon energy hν derived from the representative wavelength.",
+      "source": {
+        "artifact": "scripts/build-registry.mjs",
+        "authority": "physically_derived_from_framework_anchor",
+        "formula": "See photonic-records.json calculation policy."
+      }
+    },
+    {
+      "featureId": "physical.photon_energy_ev",
+      "label": "Photon energy",
+      "layer": "physical",
+      "epistemicClass": "physically_derived",
+      "dataType": "number",
+      "unit": "eV",
+      "operatorScope": "office",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Single-photon energy expressed in electron-volts.",
+      "source": {
+        "artifact": "scripts/build-registry.mjs",
+        "authority": "physically_derived_from_framework_anchor",
+        "formula": "See photonic-records.json calculation policy."
+      }
+    },
+    {
+      "featureId": "physical.C_P",
+      "label": "Photonic compression coordinate",
+      "layer": "physical",
+      "epistemicClass": "physical_anchor_plus_normalization_convention",
+      "dataType": "number",
+      "unit": "normalized_inverse_wavelength",
+      "operatorScope": "office",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Inverse-wavelength coordinate normalized across the seven declared office anchors. Sun=0 and Saturn=1 are a registry coordinate convention, not absolute physical endpoints.",
+      "source": {
+        "artifact": "scripts/build-registry.mjs",
+        "authority": "physically_derived_from_framework_anchor",
+        "formula": "See photonic-records.json calculation policy."
+      }
+    },
+    {
+      "featureId": "harmonic.canonical_scale_state",
+      "label": "Canonical scale state",
+      "layer": "harmonic",
+      "epistemicClass": "formally_audited",
+      "dataType": "integer",
+      "unit": null,
+      "operatorScope": "state",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Rooted scale-state identifier of the canonical A0 office anchor.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "harmonic.pitch_mask",
+      "label": "Rooted pitch mask",
+      "layer": "harmonic",
+      "epistemicClass": "formally_audited",
+      "dataType": "string",
+      "unit": "12-bit mask",
+      "operatorScope": "state",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Rooted twelve-position binary representation.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "harmonic.forte_family",
+      "label": "Forte family",
+      "layer": "harmonic",
+      "epistemicClass": "formally_audited",
+      "dataType": "string",
+      "unit": null,
+      "operatorScope": "family",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Forte set-class membership.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "harmonic.anchor_tier",
+      "label": "Anchor tier",
+      "layer": "harmonic",
+      "epistemicClass": "framework_validated_topology",
+      "dataType": "string",
+      "unit": null,
+      "operatorScope": "state",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Validated anchoring stratum such as A0, A1, A2, or D1–D7.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "harmonic.C_H",
+      "label": "Harmonic compression coordinate",
+      "layer": "harmonic",
+      "epistemicClass": "unresolved_measure",
+      "dataType": "number_or_null",
+      "unit": "method_dependent",
+      "operatorScope": "state_or_family",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Reserved harmonic coordinate. Registry v0.1.1 deliberately supplies no aggregate formula.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "semantic.thermodynamic_function",
+      "label": "Thermodynamic correspondence",
+      "layer": "semantic",
+      "epistemicClass": "authored_correspondence",
+      "dataType": "string",
+      "unit": null,
+      "operatorScope": "office",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Framework-authored process correspondence; not a claim of physical causation.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "semantic.optical_function",
+      "label": "Optical correspondence",
+      "layer": "semantic",
+      "epistemicClass": "authored_correspondence",
+      "dataType": "string",
+      "unit": null,
+      "operatorScope": "office",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Framework-authored optical metaphor/correspondence distinct from measured wavelength.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "semantic.directionality",
+      "label": "Directionality",
+      "layer": "semantic",
+      "epistemicClass": "authored_correspondence",
+      "dataType": "string",
+      "unit": null,
+      "operatorScope": "office",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Canonical inward, outward, or mediating orientation.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "semantic.archetypal_role",
+      "label": "Archetypal role",
+      "layer": "semantic",
+      "epistemicClass": "authored_correspondence",
+      "dataType": "string",
+      "unit": null,
+      "operatorScope": "office",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Canonical role statement for the Governor.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "semantic.element",
+      "label": "Element",
+      "layer": "semantic",
+      "epistemicClass": "authored_correspondence",
+      "dataType": "string_or_null",
+      "unit": null,
+      "operatorScope": "office",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Declared elemental correspondence where present.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "semantic.zodiacal_systems",
+      "label": "Zodiacal systems",
+      "layer": "semantic",
+      "epistemicClass": "authored_correspondence",
+      "dataType": "object",
+      "unit": null,
+      "operatorScope": "office",
+      "domainScope": [
+        "all"
+      ],
+      "description": "External/internal system records declared under an office.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "semantic.C_S",
+      "label": "Semantic compression coordinate",
+      "layer": "semantic",
+      "epistemicClass": "framework_order_plus_registry_coordinate_convention",
+      "dataType": "object",
+      "unit": "ordered_category_nonmetric",
+      "operatorScope": "office",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Ordered position along the declared Sun→Saturn process canon. The optional 0–1 normalization is non-metric and does not assert equal semantic distance.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "domain.landforms",
+      "label": "Landform references",
+      "layer": "domain",
+      "epistemicClass": "canonical_reference_library",
+      "dataType": "array",
+      "unit": null,
+      "operatorScope": "office",
+      "domainScope": [
+        "landforms"
+      ],
+      "description": "Canonical landform references declared in the Governor reference library.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "domain.architecture",
+      "label": "Architecture references",
+      "layer": "domain",
+      "epistemicClass": "canonical_reference_library",
+      "dataType": "array",
+      "unit": null,
+      "operatorScope": "office",
+      "domainScope": [
+        "cross_domain"
+      ],
+      "description": "Canonical architecture references declared in the Governor reference library.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "domain.botany",
+      "label": "Botanical references",
+      "layer": "domain",
+      "epistemicClass": "canonical_reference_library",
+      "dataType": "array",
+      "unit": null,
+      "operatorScope": "office",
+      "domainScope": [
+        "cross_domain"
+      ],
+      "description": "Canonical botanical references declared in the Governor reference library.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "domain.material",
+      "label": "Material references",
+      "layer": "domain",
+      "epistemicClass": "canonical_reference_library",
+      "dataType": "array",
+      "unit": null,
+      "operatorScope": "office",
+      "domainScope": [
+        "cross_domain"
+      ],
+      "description": "Canonical material references declared in the Governor reference library.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "domain.color_associations",
+      "label": "Color references",
+      "layer": "domain",
+      "epistemicClass": "canonical_reference_library",
+      "dataType": "array",
+      "unit": null,
+      "operatorScope": "office",
+      "domainScope": [
+        "cross_domain"
+      ],
+      "description": "Canonical color references declared in the Governor reference library.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "domain.symbolic_references",
+      "label": "Symbolic references",
+      "layer": "domain",
+      "epistemicClass": "canonical_reference_library",
+      "dataType": "array",
+      "unit": null,
+      "operatorScope": "office",
+      "domainScope": [
+        "cross_domain"
+      ],
+      "description": "Canonical symbolic references declared in the Governor reference library.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "generative.required_features",
+      "label": "Required features",
+      "layer": "generative",
+      "epistemicClass": "compiled_constraint",
+      "dataType": "array",
+      "unit": null,
+      "operatorScope": "compiled_profile",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Required features emitted by the deterministic compiler.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "generative.soft_priors",
+      "label": "Soft priors",
+      "layer": "generative",
+      "epistemicClass": "compiled_constraint",
+      "dataType": "array",
+      "unit": null,
+      "operatorScope": "compiled_profile",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Soft priors emitted by the deterministic compiler.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "generative.reference_pool",
+      "label": "Reference pool",
+      "layer": "generative",
+      "epistemicClass": "compiled_constraint",
+      "dataType": "array",
+      "unit": null,
+      "operatorScope": "compiled_profile",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Reference pool emitted by the deterministic compiler.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "generative.promoted_features",
+      "label": "Promoted features",
+      "layer": "generative",
+      "epistemicClass": "compiled_constraint",
+      "dataType": "array",
+      "unit": null,
+      "operatorScope": "compiled_profile",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Promoted features emitted by the deterministic compiler.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "generative.suppressed_features",
+      "label": "Suppressed features",
+      "layer": "generative",
+      "epistemicClass": "compiled_constraint",
+      "dataType": "array",
+      "unit": null,
+      "operatorScope": "compiled_profile",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Suppressed features emitted by the deterministic compiler.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "generative.prohibited_features",
+      "label": "Prohibited features",
+      "layer": "generative",
+      "epistemicClass": "compiled_constraint",
+      "dataType": "array",
+      "unit": null,
+      "operatorScope": "compiled_profile",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Prohibited features emitted by the deterministic compiler.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "generative.unresolved_features",
+      "label": "Unresolved features",
+      "layer": "generative",
+      "epistemicClass": "compiled_constraint",
+      "dataType": "array",
+      "unit": null,
+      "operatorScope": "compiled_profile",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Unresolved features emitted by the deterministic compiler.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    },
+    {
+      "featureId": "generative.creative_affordances",
+      "label": "Creative affordances",
+      "layer": "generative",
+      "epistemicClass": "compiled_constraint",
+      "dataType": "array",
+      "unit": null,
+      "operatorScope": "compiled_profile",
+      "domainScope": [
+        "all"
+      ],
+      "description": "Creative affordances emitted by the deterministic compiler.",
+      "source": {
+        "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "framework_specification"
+      }
+    }
+  ]
+}

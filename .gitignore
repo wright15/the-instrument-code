@@ -1,0 +1,35 @@
+# Secrets — never commit real credentials
+.env
+
+# Dependencies (matches at any depth)
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Node / build tooling
+*.log
+npm-debug.log*
+.yarn/*
+!.yarn/releases
+pnpm-debug.log*
+
+# Astro / Vite build caches
+bestiary/site/.astro/
+bestiary/site/.vite/
+bestiary/site/dist/
+
+# Generated static build output (regenerate with `npm run build:bestiary`)
+bestiary/dist/
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

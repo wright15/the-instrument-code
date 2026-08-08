@@ -1,0 +1,125 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryVersion": "0.1.1",
+  "releaseId": "canonical-profile-registry:0.1.1",
+  "generatedAt": "2026-07-30",
+  "policy": "Authoring sources own declared canon; audited topology owns structural resolution; compiled registries are deterministic projections; Neo4j is the integrated runtime view.",
+  "authorityMatrix": [
+    {
+      "claimClass": "canonical_governor_identity_and_semantics",
+      "authority": "source/governors.yaml plus current framework documents"
+    },
+    {
+      "claimClass": "scale_state_topology_and_office_resolution",
+      "authority": "source/universal-network-data.json"
+    },
+    {
+      "claimClass": "structural_mutation_behavior",
+      "authority": "source/operator-candidates.json and source/operator-applications.csv"
+    },
+    {
+      "claimClass": "compiled_coordinates_and_normal_forms",
+      "authority": "versioned deterministic build scripts"
+    },
+    {
+      "claimClass": "runtime_hypotheses_and_observations",
+      "authority": "separate Mercury/Virgo ledger; never canonical by default"
+    }
+  ],
+  "consumedSources": [
+    {
+      "artifact": "source/governors.yaml",
+      "sha256": "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2",
+      "packaged": true
+    },
+    {
+      "artifact": "source/universal-network-data.json",
+      "sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+      "packaged": true
+    },
+    {
+      "artifact": "source/topology-identity-definitions.json",
+      "sha256": "ce7b3a3b8bed85d67df203a0dd6d2ba395effd19f0855869faa1a4d343bf127b",
+      "packaged": true
+    },
+    {
+      "artifact": "source/operator-candidates.json",
+      "sha256": "0010268d655bd0c314629baaf433a47dab6c619a86f3bc67a46954523b4b935e",
+      "packaged": true
+    },
+    {
+      "artifact": "source/operator-applications.csv",
+      "sha256": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e",
+      "packaged": true
+    },
+    {
+      "artifact": "source/framework/AGENTS.md",
+      "sha256": "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24",
+      "packaged": true
+    },
+    {
+      "artifact": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+      "sha256": "5ba49b157aa6fd8ac672610f88df8ac01464fd71387f3c0e21b042e912636960",
+      "packaged": true
+    },
+    {
+      "artifact": "source/framework/TOPOLOGICAL_ANCHORING.md",
+      "sha256": "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c",
+      "packaged": true
+    },
+    {
+      "artifact": "source/framework/NATURAL_ORGANIZATION_THESIS.md",
+      "sha256": "898626127fbc7d7538bb954326f230db4bf97f084f35122c6e42b68dcdd37af9",
+      "packaged": true
+    }
+  ],
+  "legacyReferences": [
+    {
+      "target": "CONSTITUTION.md",
+      "packaged": false,
+      "status": "legacy_or_external_reference_unresolved",
+      "runtimeAuthority": false
+    },
+    {
+      "target": "UNIFIED_PROCESS_ONTOLOGY.md",
+      "packaged": false,
+      "status": "legacy_or_external_reference_unresolved",
+      "runtimeAuthority": false
+    },
+    {
+      "target": "schemas/vector_b_physics.yaml",
+      "packaged": false,
+      "status": "legacy_or_external_reference_unresolved",
+      "runtimeAuthority": false
+    },
+    {
+      "target": "schemas/physical_phenomena.yaml",
+      "packaged": false,
+      "status": "legacy_or_external_reference_unresolved",
+      "runtimeAuthority": false
+    },
+    {
+      "target": "schemas/color_palettes.yaml",
+      "packaged": false,
+      "status": "legacy_or_external_reference_unresolved",
+      "runtimeAuthority": false
+    },
+    {
+      "target": "schemas/zodiacal_systems.yaml",
+      "packaged": false,
+      "status": "legacy_or_external_reference_unresolved",
+      "runtimeAuthority": false
+    },
+    {
+      "target": "schemas/governors.yaml",
+      "packaged": false,
+      "status": "legacy_or_external_reference_unresolved",
+      "runtimeAuthority": false
+    }
+  ],
+  "governorYamlPolicy": {
+    "status": "frozen_authoring_input_snapshot",
+    "runtimeReadsDirectly": false,
+    "note": "File-backed builds consume this snapshot. Integrated runtime compilation uses the provider contract and should use the Neo4j provider."
+  }
+}

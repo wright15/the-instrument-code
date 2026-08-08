@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/schemas/semantic-operator.schema.json",
+  "title": "Seven Governors Semantic Operator Registry",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "registryVersion",
+    "releaseId",
+    "operatorCount",
+    "admissionPolicy",
+    "operators"
+  ],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "registryVersion": { "type": "string" },
+    "releaseId": {
+      "type": "string",
+      "pattern": "^canonical-profile-registry:"
+    },
+    "operatorCount": { "const": 15 },
+    "admissionPolicy": {
+      "type": "object",
+      "required": ["minimumEvidence", "default", "prohibition"]
+    },
+    "operators": {
+      "type": "array",
+      "minItems": 15,
+      "maxItems": 15,
+      "items": {
+        "type": "object",
+        "required": [
+          "semanticOperatorId",
+          "releaseId",
+          "structuralOperatorId",
+          "operatorClass",
+          "harmonicAction",
+          "semanticStatus",
+          "semanticEffects",
+          "physicalPolicy",
+          "normalizationPolicy",
+          "structuralFixtureIds",
+          "semanticEffectFixtureIds",
+          "provenance"
+        ],
+        "properties": {
+          "semanticOperatorId": {
+            "type": "string",
+            "pattern": "^semantic:"
+          },
+          "releaseId": {
+            "type": "string",
+            "pattern": "^canonical-profile-registry:"
+          },
+          "structuralFixtureIds": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "semanticEffectFixtureIds": {
+            "type": "array",
+            "maxItems": 0
+          },
+          "structuralOperatorId": {
+            "type": "string",
+            "pattern": "^(M|R[1-7]|L[1-7])$"
+          },
+          "harmonicAction": {
+            "type": "object",
+            "required": [
+              "status",
+              "action",
+              "applicationCount",
+              "domainSize",
+              "imageSize"
+            ]
+          },
+          "semanticEffects": {
+            "type": "object",
+            "required": [
+              "preserves",
+              "transforms",
+              "promotes",
+              "suppresses",
+              "prohibits",
+              "unresolved"
+            ],
+            "properties": {
+              "preserves": { "type": "array", "maxItems": 0 },
+              "transforms": { "type": "array", "maxItems": 0 },
+              "promotes": { "type": "array", "maxItems": 0 },
+              "suppresses": { "type": "array", "maxItems": 0 },
+              "prohibits": { "type": "array", "maxItems": 0 },
+              "unresolved": {
+                "type": "array",
+                "minItems": 4,
+                "maxItems": 4
+              }
+            }
+          },
+          "physicalPolicy": {
+            "type": "object",
+            "required": [
+              "mutatesPhysicalQuantities",
+              "targetResolution",
+              "prohibitedInference"
+            ],
+            "properties": {
+              "mutatesPhysicalQuantities": { "const": false }
+            }
+          },
+          "normalizationPolicy": {
+            "type": "object",
+            "required": [
+              "destinationDefinesIntrinsicProfile",
+              "routeHistoryStoredSeparately",
+              "confluenceRequired"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

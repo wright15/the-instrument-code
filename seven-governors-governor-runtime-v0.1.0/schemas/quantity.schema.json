@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/governor-runtime/0.1.0/schemas/quantity.schema.json",
+  "title": "Governor Runtime Quantity",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "quantityId",
+    "value",
+    "dimension",
+    "unit",
+    "epistemicClass",
+    "basis",
+    "provenance",
+    "assumptions"
+  ],
+  "properties": {
+    "schemaVersion": { "$ref": "common.schema.json#/$defs/schemaVersion" },
+    "quantityId": { "$ref": "common.schema.json#/$defs/identifier" },
+    "value": { "type": "number" },
+    "dimension": { "$ref": "common.schema.json#/$defs/dimension" },
+    "unit": { "$ref": "common.schema.json#/$defs/unit" },
+    "epistemicClass": {
+      "enum": [
+        "framework_declared_physical_anchor",
+        "physically_derived",
+        "physical_anchor_plus_normalization_convention",
+        "observed_measurement"
+      ]
+    },
+    "basis": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "ownerScope", "ownerId"],
+          "properties": {
+            "kind": { "const": "framework_declaration" },
+            "ownerScope": { "$ref": "common.schema.json#/$defs/ownerScope" },
+            "ownerId": { "$ref": "common.schema.json#/$defs/identifier" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "subjectId", "methodId"],
+          "properties": {
+            "kind": { "const": "observed_measurement" },
+            "subjectId": { "$ref": "common.schema.json#/$defs/identifier" },
+            "methodId": { "$ref": "common.schema.json#/$defs/identifier" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "operationId", "inputQuantityIds"],
+          "properties": {
+            "kind": { "const": "registered_operation" },
+            "operationId": { "$ref": "common.schema.json#/$defs/identifier" },
+            "inputQuantityIds": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "$ref": "common.schema.json#/$defs/identifier" }
+            }
+          }
+        }
+      ]
+    },
+    "provenance": { "$ref": "common.schema.json#/$defs/provenance" },
+    "assumptions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "common.schema.json#/$defs/identifier" }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "dimension": { "const": "length" } }, "required": ["dimension"] },
+      "then": { "properties": { "unit": { "enum": ["nm", "m"] }, "value": { "type": "number", "exclusiveMinimum": 0 } } }
+    },
+    {
+      "if": { "properties": { "dimension": { "const": "frequency" } }, "required": ["dimension"] },
+      "then": { "properties": { "unit": { "const": "Hz" }, "value": { "type": "number", "exclusiveMinimum": 0 } } }
+    },
+    {
+      "if": { "properties": { "dimension": { "const": "energy" } }, "required": ["dimension"] },
+      "then": { "properties": { "unit": { "enum": ["J", "eV"] }, "value": { "type": "number", "exclusiveMinimum": 0 } } }
+    },
+    {
+      "if": { "properties": { "dimension": { "const": "dimensionless" } }, "required": ["dimension"] },
+      "then": { "properties": { "unit": { "enum": ["one", "normalized_inverse_wavelength"] } } }
+    },
+    {
+      "if": { "properties": { "unit": { "const": "normalized_inverse_wavelength" } }, "required": ["unit"] },
+      "then": { "properties": { "value": { "type": "number", "minimum": 0, "maximum": 1 } } }
+    },
+    {
+      "if": { "properties": { "epistemicClass": { "const": "framework_declared_physical_anchor" } }, "required": ["epistemicClass"] },
+      "then": { "properties": { "basis": { "type": "object", "properties": { "kind": { "const": "framework_declaration" } }, "required": ["kind"] } } }
+    },
+    {
+      "if": { "properties": { "epistemicClass": { "const": "observed_measurement" } }, "required": ["epistemicClass"] },
+      "then": { "properties": { "basis": { "type": "object", "properties": { "kind": { "const": "observed_measurement" } }, "required": ["kind"] } } }
+    },
+    {
+      "if": { "properties": { "epistemicClass": { "enum": ["physically_derived", "physical_anchor_plus_normalization_convention"] } }, "required": ["epistemicClass"] },
+      "then": { "properties": { "basis": { "type": "object", "properties": { "kind": { "const": "registered_operation" } }, "required": ["kind"] } } }
+    }
+  ]
+}

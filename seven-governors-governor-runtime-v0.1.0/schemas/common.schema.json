@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/governor-runtime/0.1.0/schemas/common.schema.json",
+  "title": "Governor Runtime Common Contracts",
+  "$defs": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "governor": {
+      "enum": ["Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus", "Saturn"]
+    },
+    "dimension": {
+      "enum": ["length", "frequency", "energy", "dimensionless"]
+    },
+    "unit": {
+      "enum": ["nm", "m", "Hz", "J", "eV", "one", "normalized_inverse_wavelength"]
+    },
+    "epistemicClass": {
+      "enum": [
+        "framework_declared_physical_anchor",
+        "physically_derived",
+        "physical_anchor_plus_normalization_convention",
+        "observed_measurement",
+        "formally_audited",
+        "framework_validated_topology",
+        "authored_correspondence",
+        "authored_descriptive_model",
+        "empirical_domain_fact",
+        "canonical_reference_library",
+        "compiled_constraint",
+        "framework_order_plus_registry_coordinate_convention",
+        "causal_claim",
+        "unresolved_measure"
+      ]
+    },
+    "admission": {
+      "enum": ["unresolved", "proposed", "fixture_supported", "provisionally_admitted", "canonical"]
+    },
+    "ownerScope": {
+      "enum": [
+        "governor.office",
+        "topology.scaleState",
+        "topology.scaleFamily",
+        "topology.scaleStateOrFamily",
+        "profile.governor",
+        "entity.aspect",
+        "runtime.task",
+        "compiler.output",
+        "phenomenon.model"
+      ]
+    },
+    "ruleScope": {
+      "enum": ["office.profile", "office.anchor", "physical.model", "domain.process", "entity.facet", "compiler.output"]
+    },
+    "missingPolicy": {
+      "enum": ["rule_not_applicable", "return_unresolved", "reject_invalid"]
+    },
+    "conflictPolicy": {
+      "enum": ["prefer_higher_priority_then_ambiguous", "return_ambiguous", "reject_invalid"]
+    },
+    "classificationOutcome": {
+      "enum": ["classified", "ambiguous", "unresolved", "invalid"]
+    },
+    "featureId": {
+      "enum": [
+        "physical.wavelength_nm",
+        "physical.frequency_hz",
+        "physical.photon_energy_j",
+        "physical.photon_energy_ev",
+        "physical.C_P",
+        "harmonic.canonical_scale_state",
+        "harmonic.pitch_mask",
+        "harmonic.forte_family",
+        "harmonic.anchor_tier",
+        "harmonic.C_H",
+        "semantic.thermodynamic_function",
+        "semantic.optical_function",
+        "semantic.directionality",
+        "semantic.archetypal_role",
+        "semantic.element",
+        "semantic.zodiacal_systems",
+        "semantic.C_S",
+        "domain.landforms",
+        "domain.architecture",
+        "domain.botany",
+        "domain.material",
+        "domain.color_associations",
+        "domain.symbolic_references",
+        "generative.required_features",
+        "generative.soft_priors",
+        "generative.reference_pool",
+        "generative.promoted_features",
+        "generative.suppressed_features",
+        "generative.prohibited_features",
+        "generative.unresolved_features",
+        "generative.creative_affordances"
+      ]
+    },
+    "provenanceRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceId"],
+      "properties": {
+        "sourceId": { "$ref": "#/$defs/identifier" },
+        "pointer": { "type": "string", "minLength": 1 }
+      }
+    },
+    "provenance": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/provenanceRecord" }
+    },
+    "scalarValue": {
+      "type": ["string", "number", "integer", "boolean", "null"]
+    }
+  }
+}

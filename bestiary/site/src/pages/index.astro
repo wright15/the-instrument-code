@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArchetypeCard from "../components/ArchetypeCard.astro";
+import FilterBar from "../components/FilterBar.astro";
+import SearchBox from "../components/SearchBox.astro";
+import Scatterplot from "../components/Scatterplot.astro";
+import { bestiary } from "../lib/bestiary";
+
+const archetypes = bestiary.archetypes;
+const admitted = archetypes.filter((a) => a.admission === "admitted").length;
+const proposed = archetypes.filter((a) => a.admission === "proposed").length;
+---
+
+<BaseLayout>
+  <section class="mb-8 flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <h1 class="text-2xl font-semibold tracking-tight">Bestiary of Archetypes</h1>
+      <p class="mt-1 max-w-2xl text-sm leading-relaxed text-muted">
+        The canonical map of the Seven Governors system: {bestiary.summary.archetypeCount} archetypes,
+        {bestiary.relationships.length} governing relationships, {bestiary.commutationPairs.length} commutation
+        pairs, and {bestiary.projectionGaps.length} projection gaps — pinned to release{" "}
+        <span class="text-accent">{bestiary.releaseId}</span>.
+      </p>
+    </div>
+    <div class="flex gap-2 text-[11px] text-muted">
+      <span class="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2.5 py-1">
+        {admitted} admitted
+      </span>
+      <span class="rounded-full border border-amber-400/30 bg-amber-400/10 px-2.5 py-1">
+        {proposed} proposed
+      </span>
+    </div>
+  </section>
+
+  <section class="mb-8 grid grid-cols-2 gap-3 md:grid-cols-4">
+    <div class="rounded-lg border border-edge bg-panel p-4">
+      <div class="text-2xl font-semibold text-frost">{bestiary.summary.archetypeCount}</div>
+      <div class="text-[11px] text-muted">Archetypes</div>
+    </div>
+    <div class="rounded-lg border border-edge bg-panel p-4">
+      <div class="text-2xl font-semibold text-frost">{bestiary.relationships.length}</div>
+      <div class="text-[11px] text-muted">Relationships</div>
+    </div>
+    <div class="rounded-lg border border-edge bg-panel p-4">
+      <div class="text-2xl font-semibold text-frost">{bestiary.commutationPairs.length}</div>
+      <div class="text-[11px] text-muted">Commutation pairs</div>
+    </div>
+    <div class="rounded-lg border border-edge bg-panel p-4">
+      <div class="text-2xl font-semibold text-frost">{bestiary.projectionGaps.length}</div>
+      <div class="text-[11px] text-muted">Projection gaps</div>
+    </div>
+  </section>
+
+  <Scatterplot />
+
+  <section class="mb-8 flex flex-col gap-3">
+    <SearchBox />
+    <FilterBar />
+  </section>
+
+  <section
+    id="archetype-grid"
+    class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+  >
+    {archetypes.map((archetype) => <ArchetypeCard archetype={archetype} />)}
+  </section>
+</BaseLayout>

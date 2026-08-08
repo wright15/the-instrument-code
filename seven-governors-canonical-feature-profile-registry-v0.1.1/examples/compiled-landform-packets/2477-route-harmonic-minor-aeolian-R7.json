@@ -1,0 +1,282 @@
+{
+  "schemaVersion": "1.0.0",
+  "compilerVersion": "0.1.1",
+  "releaseId": "canonical-profile-registry:0.1.1",
+  "normalFormId": "nf:scale:2477:landforms:v0.1.1",
+  "state": {
+    "stateId": 2477,
+    "name": "Harmonic Minor",
+    "forteFamily": "7-32",
+    "bit": "b101101011001",
+    "pitchSet": "{0,2,3,5,7,8,11}",
+    "role": "satellite",
+    "fineRole": "satellite_A0",
+    "tier": "A0",
+    "chirality": "chiral",
+    "orientation": "7-32 orientation A",
+    "assignmentStatus": "inherited",
+    "resolutionClass": "A0_direct_satellite"
+  },
+  "resolution": {
+    "office": "Jupiter",
+    "officeIndex": 4,
+    "officeBearing": true,
+    "officeBasis": "unique eligible parent at governing tier",
+    "officeStatus": "inherits unique A0 parent office"
+  },
+  "canonicalProfile": {
+    "profileId": "profile:jupiter:v0.1.1",
+    "releaseId": "canonical-profile-registry:0.1.1",
+    "office": "Jupiter",
+    "canonicalStateId": 1453,
+    "intrinsicFingerprint": "49ba0b38e37ecda33ce87946a0d4a4ab8e955dbf7c9b5f98cf4604e905223e12"
+  },
+  "photonic": {
+    "photonicId": "photonic:jupiter:v0.1.1",
+    "representativeWavelengthNm": 470,
+    "vacuumFrequencyHz": 637856293617021.2,
+    "photonEnergyEv": 2.637961668791495,
+    "photonicCompression": 0.6524822695035462,
+    "coordinateSymbol": "C_P",
+    "normalizationStatus": "registry_coordinate_convention",
+    "inheritancePolicy": "resolved_from_state_governor_office",
+    "causationClaim": false
+  },
+  "harmonic": {
+    "stateGovernor": "Jupiter",
+    "rootedPitchMask": "b101101011001",
+    "forteFamily": "7-32",
+    "tier": "A0",
+    "role": "satellite",
+    "harmonicCompression": {
+      "coordinateSymbol": "C_H",
+      "status": "unresolved",
+      "value": null
+    }
+  },
+  "semantic": {
+    "stateGovernor": "Jupiter",
+    "thermodynamicFunction": "distribution",
+    "opticalFunction": "scattering",
+    "directionality": "outward_projective",
+    "archetypalRole": "direction; where the flow is going",
+    "element": "Air",
+    "semanticCompression": {
+      "coordinateSymbol": "C_S",
+      "status": "framework_order_plus_registry_coordinate_convention",
+      "orderedPosition": 5,
+      "orderedProcess": "distribution",
+      "normalizedOrdinal": 0.6666666666666666,
+      "metric": false,
+      "scale": "declared Sun-to-Saturn process order",
+      "physicalClaim": false
+    }
+  },
+  "domainProjection": {
+    "domain": "landforms",
+    "projectionId": "projection:landforms:v0.1.1",
+    "status": "canonical_reference_projection",
+    "canonicalReferences": [
+      "plains",
+      "steppes",
+      "open skies",
+      "high plateaus",
+      "archipelagos",
+      "trade winds"
+    ],
+    "requiredFeatures": [
+      {
+        "featureId": "harmonic.scale_state",
+        "value": 2477,
+        "reason": "Intrinsic rooted state identity."
+      },
+      {
+        "featureId": "semantic.governor_office",
+        "value": "Jupiter",
+        "reason": "Resolved State Governor."
+      },
+      {
+        "featureId": "semantic.thermodynamic_function",
+        "value": "distribution",
+        "reason": "Canonical office process correspondence."
+      },
+      {
+        "featureId": "semantic.directionality",
+        "value": "outward_projective",
+        "reason": "Canonical office orientation."
+      }
+    ],
+    "softPriors": [
+      {
+        "featureId": "semantic.archetypal_role",
+        "value": "direction; where the flow is going",
+        "reason": "Guide salience and interpretation without requiring literal depiction."
+      }
+    ],
+    "referencePool": [
+      {
+        "poolId": "landforms:jupiter:canonical",
+        "featureId": "domain.landforms",
+        "candidates": [
+          "plains",
+          "steppes",
+          "open skies",
+          "high plateaus",
+          "archipelagos",
+          "trade winds"
+        ],
+        "selectionRule": "select_zero_or_more_without_implying_exhaustiveness",
+        "authority": "framework_declared_reference_library"
+      }
+    ],
+    "promotedFeatures": [],
+    "suppressedFeatures": [],
+    "prohibitedFeatures": [
+      {
+        "featureId": "physical.musical_to_optical_causation",
+        "reason": "A musical mutation does not physically alter the representative wavelength."
+      },
+      {
+        "featureId": "semantic.unproven_operator_effect",
+        "reason": "No promote/suppress/transform claim may be added without semantic admission evidence."
+      }
+    ],
+    "unresolvedFeatures": [
+      "operator_specific_semantic_delta_if_a_route_is_applied"
+    ],
+    "creativeAffordances": [
+      "composition",
+      "scale",
+      "weather",
+      "material",
+      "viewpoint",
+      "inhabitants",
+      "surface detail"
+    ],
+    "renderingBrief": "Resolve the creation in the Jupiter office. Honor the canonical process correspondence “distribution” and directionality “outward_projective”. Select freely from, combine, or abstract the reference pool: plains, steppes, open skies, high plateaus, archipelagos, trade winds. Surface realization may vary within the listed creative affordances. Any mutation route remains provenance-only until its semantic feature delta is admitted."
+  },
+  "creationConstraints": {
+    "required": [
+      {
+        "featureId": "harmonic.scale_state",
+        "value": 2477,
+        "reason": "Intrinsic rooted state identity."
+      },
+      {
+        "featureId": "semantic.governor_office",
+        "value": "Jupiter",
+        "reason": "Resolved State Governor."
+      },
+      {
+        "featureId": "semantic.thermodynamic_function",
+        "value": "distribution",
+        "reason": "Canonical office process correspondence."
+      },
+      {
+        "featureId": "semantic.directionality",
+        "value": "outward_projective",
+        "reason": "Canonical office orientation."
+      }
+    ],
+    "softPriors": [
+      {
+        "featureId": "semantic.archetypal_role",
+        "value": "direction; where the flow is going",
+        "reason": "Guide salience and interpretation without requiring literal depiction."
+      }
+    ],
+    "referencePool": [
+      {
+        "poolId": "landforms:jupiter:canonical",
+        "featureId": "domain.landforms",
+        "candidates": [
+          "plains",
+          "steppes",
+          "open skies",
+          "high plateaus",
+          "archipelagos",
+          "trade winds"
+        ],
+        "selectionRule": "select_zero_or_more_without_implying_exhaustiveness",
+        "authority": "framework_declared_reference_library"
+      }
+    ],
+    "promoted": [],
+    "suppressed": [],
+    "prohibited": [
+      {
+        "featureId": "physical.musical_to_optical_causation",
+        "reason": "A musical mutation does not physically alter the representative wavelength."
+      },
+      {
+        "featureId": "semantic.unproven_operator_effect",
+        "reason": "No promote/suppress/transform claim may be added without semantic admission evidence."
+      }
+    ],
+    "unresolved": [
+      "operator_specific_semantic_delta_if_a_route_is_applied"
+    ],
+    "creativeAffordances": [
+      "composition",
+      "scale",
+      "weather",
+      "material",
+      "viewpoint",
+      "inhabitants",
+      "surface detail"
+    ]
+  },
+  "provenance": {
+    "releaseId": "canonical-profile-registry:0.1.1",
+    "providerContract": "1.0.0",
+    "providerUsed": "file",
+    "providerExcludedFromIntrinsicIdentity": true,
+    "stateAuthority": "audited topology",
+    "canonicalProfileAuthority": "active versioned canonical profile",
+    "projectionAuthority": "projection:landforms:v0.1.1",
+    "compiler": "scripts/compiler.mjs"
+  },
+  "intrinsicFingerprint": "c45ac3b92d76b6b13521b16adafececca9f94da7b63db8810211e4aee9b636a6",
+  "fingerprintInputCanonicalJson": "{\"canonicalProfile\":{\"canonicalStateId\":1453,\"intrinsicFingerprint\":\"49ba0b38e37ecda33ce87946a0d4a4ab8e955dbf7c9b5f98cf4604e905223e12\",\"office\":\"Jupiter\",\"profileId\":\"profile:jupiter:v0.1.1\",\"releaseId\":\"canonical-profile-registry:0.1.1\"},\"compilerVersion\":\"0.1.1\",\"creationConstraints\":{\"creativeAffordances\":[\"composition\",\"scale\",\"weather\",\"material\",\"viewpoint\",\"inhabitants\",\"surface detail\"],\"prohibited\":[{\"featureId\":\"physical.musical_to_optical_causation\",\"reason\":\"A musical mutation does not physically alter the representative wavelength.\"},{\"featureId\":\"semantic.unproven_operator_effect\",\"reason\":\"No promote/suppress/transform claim may be added without semantic admission evidence.\"}],\"promoted\":[],\"referencePool\":[{\"authority\":\"framework_declared_reference_library\",\"candidates\":[\"plains\",\"steppes\",\"open skies\",\"high plateaus\",\"archipelagos\",\"trade winds\"],\"featureId\":\"domain.landforms\",\"poolId\":\"landforms:jupiter:canonical\",\"selectionRule\":\"select_zero_or_more_without_implying_exhaustiveness\"}],\"required\":[{\"featureId\":\"harmonic.scale_state\",\"reason\":\"Intrinsic rooted state identity.\",\"value\":2477},{\"featureId\":\"semantic.governor_office\",\"reason\":\"Resolved State Governor.\",\"value\":\"Jupiter\"},{\"featureId\":\"semantic.thermodynamic_function\",\"reason\":\"Canonical office process correspondence.\",\"value\":\"distribution\"},{\"featureId\":\"semantic.directionality\",\"reason\":\"Canonical office orientation.\",\"value\":\"outward_projective\"}],\"softPriors\":[{\"featureId\":\"semantic.archetypal_role\",\"reason\":\"Guide salience and interpretation without requiring literal depiction.\",\"value\":\"direction; where the flow is going\"}],\"suppressed\":[],\"unresolved\":[\"operator_specific_semantic_delta_if_a_route_is_applied\"]},\"domainProjection\":{\"canonicalReferences\":[\"plains\",\"steppes\",\"open skies\",\"high plateaus\",\"archipelagos\",\"trade winds\"],\"creativeAffordances\":[\"composition\",\"scale\",\"weather\",\"material\",\"viewpoint\",\"inhabitants\",\"surface detail\"],\"domain\":\"landforms\",\"prohibitedFeatures\":[{\"featureId\":\"physical.musical_to_optical_causation\",\"reason\":\"A musical mutation does not physically alter the representative wavelength.\"},{\"featureId\":\"semantic.unproven_operator_effect\",\"reason\":\"No promote/suppress/transform claim may be added without semantic admission evidence.\"}],\"projectionId\":\"projection:landforms:v0.1.1\",\"promotedFeatures\":[],\"referencePool\":[{\"authority\":\"framework_declared_reference_library\",\"candidates\":[\"plains\",\"steppes\",\"open skies\",\"high plateaus\",\"archipelagos\",\"trade winds\"],\"featureId\":\"domain.landforms\",\"poolId\":\"landforms:jupiter:canonical\",\"selectionRule\":\"select_zero_or_more_without_implying_exhaustiveness\"}],\"renderingBrief\":\"Resolve the creation in the Jupiter office. Honor the canonical process correspondence “distribution” and directionality “outward_projective”. Select freely from, combine, or abstract the reference pool: plains, steppes, open skies, high plateaus, archipelagos, trade winds. Surface realization may vary within the listed creative affordances. Any mutation route remains provenance-only until its semantic feature delta is admitted.\",\"requiredFeatures\":[{\"featureId\":\"harmonic.scale_state\",\"reason\":\"Intrinsic rooted state identity.\",\"value\":2477},{\"featureId\":\"semantic.governor_office\",\"reason\":\"Resolved State Governor.\",\"value\":\"Jupiter\"},{\"featureId\":\"semantic.thermodynamic_function\",\"reason\":\"Canonical office process correspondence.\",\"value\":\"distribution\"},{\"featureId\":\"semantic.directionality\",\"reason\":\"Canonical office orientation.\",\"value\":\"outward_projective\"}],\"softPriors\":[{\"featureId\":\"semantic.archetypal_role\",\"reason\":\"Guide salience and interpretation without requiring literal depiction.\",\"value\":\"direction; where the flow is going\"}],\"status\":\"canonical_reference_projection\",\"suppressedFeatures\":[],\"unresolvedFeatures\":[\"operator_specific_semantic_delta_if_a_route_is_applied\"]},\"harmonic\":{\"forteFamily\":\"7-32\",\"harmonicCompression\":{\"coordinateSymbol\":\"C_H\",\"status\":\"unresolved\",\"value\":null},\"role\":\"satellite\",\"rootedPitchMask\":\"b101101011001\",\"stateGovernor\":\"Jupiter\",\"tier\":\"A0\"},\"normalFormId\":\"nf:scale:2477:landforms:v0.1.1\",\"photonic\":{\"causationClaim\":false,\"coordinateSymbol\":\"C_P\",\"inheritancePolicy\":\"resolved_from_state_governor_office\",\"normalizationStatus\":\"registry_coordinate_convention\",\"photonEnergyEv\":2.637961668791495,\"photonicCompression\":0.6524822695035462,\"photonicId\":\"photonic:jupiter:v0.1.1\",\"representativeWavelengthNm\":470,\"vacuumFrequencyHz\":637856293617021.2},\"provenance\":{\"canonicalProfileAuthority\":\"active versioned canonical profile\",\"compiler\":\"scripts/compiler.mjs\",\"projectionAuthority\":\"projection:landforms:v0.1.1\",\"providerContract\":\"1.0.0\",\"providerExcludedFromIntrinsicIdentity\":true,\"providerUsed\":null,\"releaseId\":\"canonical-profile-registry:0.1.1\",\"stateAuthority\":\"audited topology\"},\"releaseId\":\"canonical-profile-registry:0.1.1\",\"resolution\":{\"office\":\"Jupiter\",\"officeBasis\":\"unique eligible parent at governing tier\",\"officeBearing\":true,\"officeIndex\":4,\"officeStatus\":\"inherits unique A0 parent office\"},\"schemaVersion\":\"1.0.0\",\"semantic\":{\"archetypalRole\":\"direction; where the flow is going\",\"directionality\":\"outward_projective\",\"element\":\"Air\",\"opticalFunction\":\"scattering\",\"semanticCompression\":{\"coordinateSymbol\":\"C_S\",\"metric\":false,\"normalizedOrdinal\":0.6666666666666666,\"orderedPosition\":5,\"orderedProcess\":\"distribution\",\"physicalClaim\":false,\"scale\":\"declared Sun-to-Saturn process order\",\"status\":\"framework_order_plus_registry_coordinate_convention\"},\"stateGovernor\":\"Jupiter\",\"thermodynamicFunction\":\"distribution\"},\"state\":{\"assignmentStatus\":\"inherited\",\"bit\":\"b101101011001\",\"chirality\":\"chiral\",\"fineRole\":\"satellite_A0\",\"forteFamily\":\"7-32\",\"name\":\"Harmonic Minor\",\"orientation\":\"7-32 orientation A\",\"pitchSet\":\"{0,2,3,5,7,8,11}\",\"resolutionClass\":\"A0_direct_satellite\",\"role\":\"satellite\",\"stateId\":2477,\"tier\":\"A0\"}}",
+  "routeContext": {
+    "routeId": "route:harmonic-minor:aeolian:R7",
+    "sourceIds": [
+      1453
+    ],
+    "targetId": 2477,
+    "structuralOperatorIds": [
+      "R7"
+    ],
+    "operatorAnnotations": [
+      {
+        "structuralOperatorId": "R7",
+        "semanticOperatorId": "semantic:R7:v0.1.1",
+        "degree": 7,
+        "degreeGovernor": "Moon",
+        "direction": "raise",
+        "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+        "semanticEffectEvidence": false
+      }
+    ],
+    "relationEvidence": [
+      {
+        "sourceId": 1453,
+        "sourceName": "Aeolian",
+        "operatorId": "R7",
+        "targetId": 2477,
+        "targetName": "Harmonic Minor",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": [
+          "GOVERNS"
+        ],
+        "fieldEvidence": true,
+        "fieldEdgeTypes": [
+          "AUDITED_HAMMING2"
+        ],
+        "applicationStatus": "formal_substrate_observed"
+      }
+    ],
+    "note": "Direct A0 satellite inheritance.",
+    "excludedFromIntrinsicFingerprint": true
+  }
+}

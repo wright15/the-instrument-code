@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/schemas/registry-release.schema.json",
+  "title": "Seven Governors Registry Release",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "registryName",
+    "registryVersion",
+    "releaseId",
+    "generatedAt",
+    "activeByDefault",
+    "releaseFingerprint",
+    "sourceHashes",
+    "compatibility"
+  ],
+  "properties": {
+    "registryName": {
+      "const": "seven-governors-canonical-feature-profile-registry"
+    },
+    "registryVersion": { "const": "0.1.1" },
+    "releaseId": { "const": "canonical-profile-registry:0.1.1" },
+    "activeByDefault": { "const": true },
+    "releaseFingerprint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "sourceHashes": {
+      "type": "object",
+      "minProperties": 9,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "required": ["priorRelease", "topologySchema", "providerContract"]
+    }
+  }
+}

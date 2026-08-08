@@ -1,0 +1,104 @@
+{
+  "releaseId": "seven-governors-integrated-1.2.0",
+  "version": "1.2.0",
+  "releaseDate": "2026-07-31",
+  "status": "validated",
+  "authorityOrder": [
+    "framework",
+    "canonical",
+    "mutation-audit",
+    "profile-registry",
+    "neo4j",
+    "renderer"
+  ],
+  "compositePackages": [
+    {
+      "packageId": "seven-governors-mutation-algebra-audit",
+      "version": "1.0.0",
+      "role": "structural mutation algebra audit",
+      "releaseId": "mutation-algebra-audit:1.0.0",
+      "admission": "admitted"
+    },
+    {
+      "packageId": "seven-governors-canonical-feature-profile-registry",
+      "version": "0.1.1",
+      "role": "semantic feature profiles, compiler, and creation packets",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "admission": "admitted"
+    },
+    {
+      "packageId": "seven-governors-state-machine-spec-and-authoring-toolkit",
+      "version": "0.2.0",
+      "role": "companion guide, candidate extensions, and safe authoring",
+      "releaseId": "companion-guide:0.2.0",
+      "admission": "companion_candidates_only"
+    }
+  ],
+  "canonicalCounts": {
+    "rootedScaleStates": 462,
+    "anchorStates": 70,
+    "satelliteStates": 238,
+    "boundaryStates": 154,
+    "officeBearingStates": 308,
+    "scaleFamilies": 38,
+    "governorOffices": 7,
+    "canonicalRelationships": 2594,
+    "neo4jProjectedRelationships": 2818,
+    "mutationOperators": 15,
+    "modalApplications": 462,
+    "localApplications": 2940,
+    "modalCycles": 66,
+    "inverseWitnesses": 3402,
+    "covarianceCases": 6468,
+    "commutationPairs": 91,
+    "canonicalProfiles": 7,
+    "activeProfiles": 7,
+    "photonicRecords": 7,
+    "landformReferences": 40,
+    "domainProjections": 1,
+    "semanticOperators": 15,
+    "unresolvedScopeBindings": 60,
+    "compiledProfiles": 4
+  },
+  "importOrder": [
+    "neo4j/schema.cypher",
+    "neo4j/import.cypher",
+    "neo4j/provenance.cypher",
+    "seven-governors-mutation-algebra-audit/neo4j/algebra-schema.cypher",
+    "seven-governors-mutation-algebra-audit/neo4j/algebra-import.cypher",
+    "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/01_semantic_schema.cypher",
+    "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/02_semantic_import.cypher"
+  ],
+  "frameworkSources": [
+    {
+      "documentId": "agents",
+      "path": "framework/AGENTS.md",
+      "sha256": "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24",
+      "authorityRole": "operational_behavior"
+    },
+    {
+      "documentId": "feature-profiles",
+      "path": "framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+      "sha256": "5ba49b157aa6fd8ac672610f88df8ac01464fd71387f3c0e21b042e912636960",
+      "authorityRole": "semantic_enrichment"
+    },
+    {
+      "documentId": "topological-anchoring",
+      "path": "framework/TOPOLOGICAL_ANCHORING.md",
+      "sha256": "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c",
+      "authorityRole": "topology_specification"
+    },
+    {
+      "documentId": "natural-organization-thesis",
+      "path": "framework/NATURAL_ORGANIZATION_THESIS.md",
+      "sha256": "898626127fbc7d7538bb954326f230db4bf97f084f35122c6e42b68dcdd37af9",
+      "authorityRole": "theoretical_foundation"
+    },
+    {
+      "documentId": "governor-registry",
+      "path": "schemas/governors.yaml",
+      "sha256": "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2",
+      "authorityRole": "machine_registry"
+    }
+  ]
+}

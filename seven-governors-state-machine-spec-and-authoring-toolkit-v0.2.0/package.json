@@ -1,0 +1,38 @@
+{
+  "name": "seven-governors-state-machine-spec-and-authoring-toolkit",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Executable specification, Fivefold Engine model, natural-phenomena registry, Cypher cookbook, and safe governors.yaml authoring workflow for the Seven Governors algebraic state machine.",
+  "scripts": {
+    "governor:list": "node scripts/governor-author.mjs list",
+    "governor:show": "node scripts/governor-author.mjs show",
+    "governor:draft": "node scripts/governor-author.mjs draft",
+    "governor:set": "node scripts/governor-author.mjs set",
+    "governor:validate": "node scripts/governor-author.mjs validate",
+    "governor:proposal": "node scripts/governor-author.mjs proposal",
+    "governor:materialize": "node scripts/governor-author.mjs materialize",
+    "validate": "node scripts/validate-package.mjs",
+    "manifest": "node scripts/build-manifest.mjs",
+    "catalogs": "node scripts/build-catalogs.mjs --emit"
+  },
+  "dependencies": {
+    "ajv": "8.17.1",
+    "ajv-formats": "3.0.1",
+    "yaml": "2.8.1"
+  },
+  "devDependencies": {
+    "@neo4j-cypher/language-support": "2.0.0-next.6"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "neo4j-driver": ">=5"
+  },
+  "peerDependenciesMeta": {
+    "neo4j-driver": {
+      "optional": true
+    }
+  }
+}

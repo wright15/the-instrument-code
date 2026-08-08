@@ -1,0 +1,41 @@
+---
+import type { Archetype } from "../lib/bestiary";
+
+interface Props {
+  archetype: Archetype;
+}
+
+const { archetype } = Astro.props;
+const { summary } = archetype;
+const pinned = summary.narrativeKind === "ai_generated";
+---
+
+<div class="rounded-lg border border-edge bg-panel p-5">
+  <h2 class="mb-3 text-xs font-semibold uppercase tracking-wider text-accent">
+    Narrative
+  </h2>
+  <p class="max-w-prose text-sm leading-relaxed text-frost/80">
+    {summary.text}
+  </p>
+  {pinned && (
+    <div class="mt-4 flex flex-wrap items-center gap-2 text-[10px] text-muted">
+      <span
+        class="rounded-full border border-edge bg-raised px-2 py-0.5"
+        title="Pinned AI-authored narrative"
+      >
+        written by {summary.model}
+      </span>
+      <span
+        class="rounded-full border border-edge bg-raised px-2 py-0.5 font-mono"
+        title={`sha256 of pinned text: ${summary.sha256}`}
+      >
+        sha256 {summary.sha256?.slice(0, 12)}…
+      </span>
+      <span
+        class="rounded-full border border-amber-400/30 bg-amber-400/10 px-2 py-0.5 text-amber-300"
+      >
+        pinned · immutable until next review pass
+      </span>
+    </div>
+  )}
+</div>

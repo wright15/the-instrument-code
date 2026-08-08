@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/schemas/compiled-profile.schema.json",
+  "title": "Seven Governors Compiled Creation Packet",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "compilerVersion",
+    "releaseId",
+    "normalFormId",
+    "state",
+    "resolution",
+    "canonicalProfile",
+    "photonic",
+    "harmonic",
+    "semantic",
+    "domainProjection",
+    "creationConstraints",
+    "provenance",
+    "intrinsicFingerprint",
+    "fingerprintInputCanonicalJson",
+    "routeContext"
+  ],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "compilerVersion": { "type": "string" },
+    "releaseId": {
+      "type": "string",
+      "pattern": "^canonical-profile-registry:"
+    },
+    "normalFormId": { "type": "string", "pattern": "^nf:scale:" },
+    "state": {
+      "type": "object",
+      "required": [
+        "stateId",
+        "name",
+        "forteFamily",
+        "bit",
+        "pitchSet",
+        "role",
+        "chirality"
+      ]
+    },
+    "resolution": {
+      "type": "object",
+      "required": ["office", "officeBearing"]
+    },
+    "canonicalProfile": {
+      "type": ["object", "null"]
+    },
+    "photonic": {
+      "type": ["object", "null"]
+    },
+    "harmonic": {
+      "type": "object",
+      "required": [
+        "stateGovernor",
+        "rootedPitchMask",
+        "forteFamily",
+        "role",
+        "harmonicCompression"
+      ]
+    },
+    "semantic": { "type": "object" },
+    "domainProjection": {
+      "type": "object",
+      "required": [
+        "domain",
+        "projectionId",
+        "status",
+        "requiredFeatures",
+        "softPriors",
+        "referencePool",
+        "promotedFeatures",
+        "suppressedFeatures",
+        "prohibitedFeatures",
+        "unresolvedFeatures",
+        "creativeAffordances",
+        "renderingBrief"
+      ]
+    },
+    "creationConstraints": {
+      "type": "object",
+      "required": [
+        "required",
+        "softPriors",
+        "referencePool",
+        "promoted",
+        "suppressed",
+        "prohibited",
+        "unresolved",
+        "creativeAffordances"
+      ]
+    },
+    "intrinsicFingerprint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "fingerprintInputCanonicalJson": { "type": "string" },
+    "routeContext": {
+      "type": ["object", "null"]
+    }
+  }
+}

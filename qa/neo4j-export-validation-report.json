@@ -1,0 +1,306 @@
+{
+  "verdict": "PASS",
+  "generatedAt": "2026-07-29T23:45:28.629Z",
+  "packageRoot": "/workspace/scratch/d722525ee1ca/outputs/topology-neo4j/seven-governors-topology-neo4j-package",
+  "counts": {
+    "checks": 58,
+    "passed": 58,
+    "failed": 0,
+    "scaleStates": 462,
+    "families": 38,
+    "offices": 7,
+    "relationships": 2818
+  },
+  "checks": [
+    {
+      "name": "462 scale states",
+      "pass": true,
+      "detail": "actual=462"
+    },
+    {
+      "name": "38 Forte families",
+      "pass": true,
+      "detail": "actual=38"
+    },
+    {
+      "name": "7 Governor offices",
+      "pass": true,
+      "detail": "actual=7"
+    },
+    {
+      "name": "507 total graph nodes",
+      "pass": true,
+      "detail": "actual=507"
+    },
+    {
+      "name": "unique scale IDs",
+      "pass": true,
+      "detail": "scale integer IDs are unique"
+    },
+    {
+      "name": "unique node IDs",
+      "pass": true,
+      "detail": "projection labels do not collide"
+    },
+    {
+      "name": "unique relationship IDs",
+      "pass": true,
+      "detail": "relationships=2818"
+    },
+    {
+      "name": "all relationship endpoints resolve",
+      "pass": true,
+      "detail": "source and target nodes exist"
+    },
+    {
+      "name": "rooted heptatonic representation",
+      "pass": true,
+      "detail": "violations=0"
+    },
+    {
+      "name": "complete rooted universe",
+      "pass": true,
+      "detail": "expected=462"
+    },
+    {
+      "name": "role partition",
+      "pass": true,
+      "detail": "{\"anchor\":70,\"satellite\":238,\"boundary\":154}"
+    },
+    {
+      "name": "identity partition",
+      "pass": true,
+      "detail": "{\"D\":49,\"SATELLITE\":238,\"BOUNDARY\":154,\"A\":21}"
+    },
+    {
+      "name": "boundary office withheld",
+      "pass": true,
+      "detail": "boundary has null office, null tier, and no categorical seat"
+    },
+    {
+      "name": "office-bearing state count",
+      "pass": true,
+      "detail": "actual=308"
+    },
+    {
+      "name": "one family projection per state",
+      "pass": true,
+      "detail": "actual=462"
+    },
+    {
+      "name": "one office projection per seated state",
+      "pass": true,
+      "detail": "actual=308"
+    },
+    {
+      "name": "no boundary OCCUPIES_OFFICE",
+      "pass": true,
+      "detail": "categorical office invariant"
+    },
+    {
+      "name": "relational-office evidence projection",
+      "pass": true,
+      "detail": "actual=224"
+    },
+    {
+      "name": "every boundary has office evidence",
+      "pass": true,
+      "detail": "evidence does not imply office occupancy"
+    },
+    {
+      "name": "GOVERNS count",
+      "pass": true,
+      "detail": "expected=238; actual=238"
+    },
+    {
+      "name": "CONSTRUCTS count",
+      "pass": true,
+      "detail": "expected=28; actual=28"
+    },
+    {
+      "name": "SEAT_CONTACT count",
+      "pass": true,
+      "detail": "expected=140; actual=140"
+    },
+    {
+      "name": "MODAL_SUCCESSOR count",
+      "pass": true,
+      "detail": "expected=182; actual=182"
+    },
+    {
+      "name": "AUDITED_HAMMING2 count",
+      "pass": true,
+      "detail": "expected=585; actual=585"
+    },
+    {
+      "name": "PHASE_SHIFT count",
+      "pass": true,
+      "detail": "expected=175; actual=175"
+    },
+    {
+      "name": "CONVERGENCE_CONTACT count",
+      "pass": true,
+      "detail": "expected=210; actual=210"
+    },
+    {
+      "name": "JUNCTION_CONTACT count",
+      "pass": true,
+      "detail": "expected=252; actual=252"
+    },
+    {
+      "name": "LEAF_CONTACT count",
+      "pass": true,
+      "detail": "expected=14; actual=14"
+    },
+    {
+      "name": "BELONGS_TO_FAMILY count",
+      "pass": true,
+      "detail": "expected=462; actual=462"
+    },
+    {
+      "name": "OCCUPIES_OFFICE count",
+      "pass": true,
+      "detail": "expected=308; actual=308"
+    },
+    {
+      "name": "RELATIONAL_OFFICE_EVIDENCE count",
+      "pass": true,
+      "detail": "expected=224; actual=224"
+    },
+    {
+      "name": "2,818 Neo4j relationships",
+      "pass": true,
+      "detail": "actual=2818"
+    },
+    {
+      "name": "one selected governing parent per satellite",
+      "pass": true,
+      "detail": "selected ancestry is unique"
+    },
+    {
+      "name": "governing inheritance consistency",
+      "pass": true,
+      "detail": "violations=0"
+    },
+    {
+      "name": "fixed-tonic Hamming-2 geometry",
+      "pass": true,
+      "detail": "violations=0"
+    },
+    {
+      "name": "root-phase delta",
+      "pass": true,
+      "detail": "violations=0"
+    },
+    {
+      "name": "A1/A2 construction parent count",
+      "pass": true,
+      "detail": "each direct midpoint anchor has two selected construction parents"
+    },
+    {
+      "name": "A anchors are achiral",
+      "pass": true,
+      "detail": "orientation-free direct frames"
+    },
+    {
+      "name": "D1 anchor orbit",
+      "pass": true,
+      "detail": "anchors=7"
+    },
+    {
+      "name": "D1 seat signature",
+      "pass": true,
+      "detail": "expected contacts per anchor=4"
+    },
+    {
+      "name": "D2 anchor orbit",
+      "pass": true,
+      "detail": "anchors=7"
+    },
+    {
+      "name": "D2 seat signature",
+      "pass": true,
+      "detail": "expected contacts per anchor=2"
+    },
+    {
+      "name": "D3 anchor orbit",
+      "pass": true,
+      "detail": "anchors=7"
+    },
+    {
+      "name": "D3 seat signature",
+      "pass": true,
+      "detail": "expected contacts per anchor=4"
+    },
+    {
+      "name": "D4 anchor orbit",
+      "pass": true,
+      "detail": "anchors=7"
+    },
+    {
+      "name": "D4 seat signature",
+      "pass": true,
+      "detail": "expected contacts per anchor=2"
+    },
+    {
+      "name": "D5 anchor orbit",
+      "pass": true,
+      "detail": "anchors=7"
+    },
+    {
+      "name": "D5 seat signature",
+      "pass": true,
+      "detail": "expected contacts per anchor=2"
+    },
+    {
+      "name": "D6 anchor orbit",
+      "pass": true,
+      "detail": "anchors=7"
+    },
+    {
+      "name": "D6 seat signature",
+      "pass": true,
+      "detail": "expected contacts per anchor=4"
+    },
+    {
+      "name": "D7 anchor orbit",
+      "pass": true,
+      "detail": "anchors=7"
+    },
+    {
+      "name": "D7 seat signature",
+      "pass": true,
+      "detail": "expected contacts per anchor=2"
+    },
+    {
+      "name": "anchor modal closure degree",
+      "pass": true,
+      "detail": "violations=0"
+    },
+    {
+      "name": "typed boundary partition",
+      "pass": true,
+      "detail": "{\"oriented_convergence\":84,\"peripheral_leaf\":14,\"office_junction\":56}"
+    },
+    {
+      "name": "oriented convergence identity",
+      "pass": true,
+      "detail": "violations=0"
+    },
+    {
+      "name": "office junction identity",
+      "pass": true,
+      "detail": "violations=0"
+    },
+    {
+      "name": "peripheral leaf identity",
+      "pass": true,
+      "detail": "violations=0"
+    },
+    {
+      "name": "D7 terminal identity",
+      "pass": true,
+      "detail": "anchors=7; residual=0"
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "schemaVersion": "1.0.0",
+  "packageName": "seven-governors-state-machine-spec-and-authoring-toolkit",
+  "packageVersion": "0.2.0",
+  "releaseId": "state-machine-spec:0.2.0",
+  "generatedAt": "2026-07-30",
+  "baseline": {
+    "canonicalProfileRegistry": "canonical-profile-registry:0.1.1",
+    "topologySchema": "4.0.0-universal-heptatonic"
+  },
+  "manifestPolicy": "All package files except node_modules, the archive, and this self-referential manifest.",
+  "fileCount": 42,
+  "totalBytes": 373412,
+  "categoryCounts": {
+    "root": 3,
+    "catalog": 3,
+    "docs": 13,
+    "examples": 1,
+    "neo4j": 3,
+    "qa": 1,
+    "schemas": 7,
+    "scripts": 4,
+    "source": 7
+  },
+  "aggregateFingerprint": "8c81d477ecbd3145a83e2f127d3a1fe3f298bf234f40380c6069f5f2041dc6d4",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3453,
+      "sha256": "01f226e3005f0f0236824d87d9b2803ad6c86eec29eb5ebd408b7153ed21a265"
+    },
+    {
+      "path": "catalog/algebra.yaml",
+      "bytes": 5297,
+      "sha256": "108c2cfa97e52bc4ff5164ee38c0b67fdf62075425cedb4e20bbde86932bcea0"
+    },
+    {
+      "path": "catalog/entities.yaml",
+      "bytes": 4625,
+      "sha256": "de487a1b4864240d3bd997efbb7ff3125573df192da62385d522e02f49df9281"
+    },
+    {
+      "path": "catalog/invariants.yaml",
+      "bytes": 5492,
+      "sha256": "b7498339834727c1e027fb8cf56c2e3767f3fae4d303342b9acc51cdba6c5c2c"
+    },
+    {
+      "path": "docs/CANON_HISTORY_AND_ROADMAP.md",
+      "bytes": 4388,
+      "sha256": "4cdfcbbce42f4030584c83c7a1791e7620aae8ef90478a1a5cdce41e8cc6fc4c"
+    },
+    {
+      "path": "docs/CAPABILITY_MATRIX_AND_ROADMAP.md",
+      "bytes": 4353,
+      "sha256": "2b86e88e23fe60cb7eb20db6f8291540141ec5ae47b3d8e8d34d15f180f250c9"
+    },
+    {
+      "path": "docs/COMPRESSION_COORDINATES.md",
+      "bytes": 3076,
+      "sha256": "4c1d8c706c97e7bca98d7bce022f73ad5b82d15e636750d8dd0c29cde422b0ac"
+    },
+    {
+      "path": "docs/CYPHER_QUERY_COOKBOOK.md",
+      "bytes": 3699,
+      "sha256": "8d9883e527fdf79a388a67567c74e33e589673715ff7a98c8065367801f091a6"
+    },
+    {
+      "path": "docs/ENTITY_AND_ALGEBRA_API.md",
+      "bytes": 10406,
+      "sha256": "77f39570b365e7e2ae58b2002a8844b7d7f85d1b9dd1602231cb0d7fad0479c2"
+    },
+    {
+      "path": "docs/FIVEFOLD_ENGINE_AND_THERMODYNAMICS.md",
+      "bytes": 8094,
+      "sha256": "5d1e47332482f72a089ac8572856aaaf78075f5a9c515659d686cc9826f2e46d"
+    },
+    {
+      "path": "docs/GOVERNOR_AUTHORING_GUIDE.md",
+      "bytes": 5092,
+      "sha256": "12aa027944225522993aae69b6a278806aef943ac65ce693fc9a2ffec465c85a"
+    },
+    {
+      "path": "docs/GRAPH_AND_COMPILER_API.md",
+      "bytes": 5544,
+      "sha256": "a5cb14966432f2ef83c42dd8cad09782fbdca7c1e1fba72587c13b388ac7e673"
+    },
+    {
+      "path": "docs/INVARIANT_CATALOG.md",
+      "bytes": 6387,
+      "sha256": "3ac4a02063b51e79d205719970b8f8ca2dd5fb151d94dc1ebf597a96cfe4351a"
+    },
+    {
+      "path": "docs/NATURAL_PHENOMENA_MODELS.md",
+      "bytes": 8677,
+      "sha256": "aa173061d94e0bdac29c4f49b8d2d5e2ce6d14bfbe8f307016d80f69ac0cd339"
+    },
+    {
+      "path": "docs/RELEASE_NOTES.md",
+      "bytes": 1261,
+      "sha256": "142fe27c100af015ff98cef532e0f800b595c46e16caada89625a2a110a95332"
+    },
+    {
+      "path": "docs/SOURCE_AUTHORITY.md",
+      "bytes": 3188,
+      "sha256": "702689bbc7cc6554f312ae4e64ecc4a7f2c87ee179f60322c874caf6a2fefce7"
+    },
+    {
+      "path": "docs/START_HERE.md",
+      "bytes": 3429,
+      "sha256": "3e8f95e825e3889868ec645cfa2813a279aad0bf0a56df524a49c720b2ea34f2"
+    },
+    {
+      "path": "examples/jupiter-change.draft.yaml",
+      "bytes": 507,
+      "sha256": "1507981cd5220b87375691a1778b0825cfd698e5bd672f80c1a9164986c35fdc"
+    },
+    {
+      "path": "neo4j/README.md",
+      "bytes": 1045,
+      "sha256": "305333ab2824829d7afd428369c02833721a0c5ea383dbfeeffffd21eef4e9e1"
+    },
+    {
+      "path": "neo4j/context-projection.cypher",
+      "bytes": 7328,
+      "sha256": "903e194f4b7adb06c53ccb40ec477a8cb2edb4ea1b6a3d472849fa46d246b00a"
+    },
+    {
+      "path": "neo4j/query-cookbook.cypher",
+      "bytes": 9442,
+      "sha256": "54d25749072a26039a96608d92c1aa3af1cc007ab30d98fee17e7036e80dc85a"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 6070,
+      "sha256": "669072e0ec79f7fa59a5b20e60245a2b608fbd18251421ed980f9d2c62d77746"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1280,
+      "sha256": "ce50f211fa993f532b5b027e41646fbfd7e5ffa6d428ea8605e5300026cd30ec"
+    },
+    {
+      "path": "qa/validation-report.json",
+      "bytes": 11575,
+      "sha256": "5815d388577dc7dc8ad44c23c961eae8d4864ebdeca3f1b4059ffa3e3bc98591"
+    },
+    {
+      "path": "schemas/fivefold-engine.schema.json",
+      "bytes": 1208,
+      "sha256": "b5e9ef391da16af04b4d1ee54c008728709438d7740293528c82908fcb0450f8"
+    },
+    {
+      "path": "schemas/fivefold_engine.yaml",
+      "bytes": 3037,
+      "sha256": "5f4a93a896d4d0749846693e95d0ed4155c0ab62389755acb66e9f430afd0113"
+    },
+    {
+      "path": "schemas/governor-change-proposal.schema.json",
+      "bytes": 1724,
+      "sha256": "d9282582c9e4674642e163985164a841254891f270e1e8ba86ddcf9dee7a516f"
+    },
+    {
+      "path": "schemas/physical-phenomena.schema.json",
+      "bytes": 3489,
+      "sha256": "0aba27264b9255a762a2b9183ee1f370f630f4576766feba27b095fa9cc19fca"
+    },
+    {
+      "path": "schemas/physical_phenomena.yaml",
+      "bytes": 11199,
+      "sha256": "bb64fb200e0f767d8e5fbd939cae5dc0fa7b9ca5c8da9ab9f99ba1e5b853b4fd"
+    },
+    {
+      "path": "schemas/thermodynamic-processes.schema.json",
+      "bytes": 1365,
+      "sha256": "b0463ac24bcc7fd7a962703283545cfbe211dcbd3bb8247d820b49d0fe49114d"
+    },
+    {
+      "path": "schemas/thermodynamic_processes.yaml",
+      "bytes": 1982,
+      "sha256": "f78f78f56925f2c2eeb69a045ce0fbbbb95964b177e1f585d51a239b3bd43967"
+    },
+    {
+      "path": "scripts/build-manifest.mjs",
+      "bytes": 1906,
+      "sha256": "a99a3097c3ca78466241143b5eede6b42f64ca96347bd7061c8646a76569eee6"
+    },
+    {
+      "path": "scripts/governor-author.mjs",
+      "bytes": 7046,
+      "sha256": "5e27b4e028d50a8d672500718dbc93295a16536bab91e91c61a8b836ffbd970d"
+    },
+    {
+      "path": "scripts/lib.mjs",
+      "bytes": 8116,
+      "sha256": "e5c9ef427acfd0b19445a71a5c1c44a94d5f84a559a61a5b60364058af8a5a52"
+    },
+    {
+      "path": "scripts/validate-package.mjs",
+      "bytes": 13098,
+      "sha256": "1fa71820a7a3d0bcbaf93c3d1049f52502144bebf7c45c257a22180ab2280a0c"
+    },
+    {
+      "path": "source/canon/AGENTS.md",
+      "bytes": 33553,
+      "sha256": "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24"
+    },
+    {
+      "path": "source/canon/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+      "bytes": 51939,
+      "sha256": "5ba49b157aa6fd8ac672610f88df8ac01464fd71387f3c0e21b042e912636960"
+    },
+    {
+      "path": "source/canon/NATURAL_ORGANIZATION_THESIS.md",
+      "bytes": 33625,
+      "sha256": "898626127fbc7d7538bb954326f230db4bf97f084f35122c6e42b68dcdd37af9"
+    },
+    {
+      "path": "source/canon/TOPOLOGICAL_ANCHORING.md",
+      "bytes": 26506,
+      "sha256": "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c"
+    },
+    {
+      "path": "source/governors.yaml",
+      "bytes": 44118,
+      "sha256": "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2"
+    },
+    {
+      "path": "source/registry-baseline/registry-release.json",
+      "bytes": 1548,
+      "sha256": "5072761cb53b98a1c0fa99cb6807f148963ca8ec8394af461b2c9822553f0a22"
+    },
+    {
+      "path": "source/registry-baseline/source-authority-registry.json",
+      "bytes": 4245,
+      "sha256": "a1f499a5759c2b20e7dd8e028c61b749a45724da1815a8d725a970b61617befe"
+    }
+  ]
+}

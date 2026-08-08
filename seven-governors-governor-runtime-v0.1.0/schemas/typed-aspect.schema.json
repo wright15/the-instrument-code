@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/governor-runtime/0.1.0/schemas/typed-aspect.schema.json",
+  "title": "Governor Runtime TypedAspect",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "aspectId",
+    "aspectVersion",
+    "facetPath",
+    "featureId",
+    "ownerScope",
+    "valueContractId",
+    "epistemicClass",
+    "admission",
+    "primaryGovernor",
+    "provenance"
+  ],
+  "properties": {
+    "schemaVersion": { "$ref": "common.schema.json#/$defs/schemaVersion" },
+    "aspectId": { "$ref": "common.schema.json#/$defs/identifier" },
+    "aspectVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "facetPath": { "type": "string", "pattern": "^/" },
+    "featureId": { "$ref": "common.schema.json#/$defs/featureId" },
+    "ownerScope": { "$ref": "common.schema.json#/$defs/ownerScope" },
+    "valueContractId": { "$ref": "common.schema.json#/$defs/identifier" },
+    "epistemicClass": { "$ref": "common.schema.json#/$defs/epistemicClass" },
+    "admission": { "$ref": "common.schema.json#/$defs/admission" },
+    "primaryGovernor": { "$ref": "common.schema.json#/$defs/governor" },
+    "provenance": { "$ref": "common.schema.json#/$defs/provenance" }
+  }
+}

@@ -1,0 +1,772 @@
+---
+import {
+  bestiary,
+  kindLabels,
+  officeColors,
+} from "../lib/bestiary";
+import { computeNetworkLayout, EDGE_COLORS, NETWORK_H, NETWORK_W } from "../lib/networkLayout";
+import {
+  BOUNDARY_COLORS,
+  TIER_COLORS,
+  nodeShapeFor,
+  type NodeShape,
+} from "../lib/nodeShapes";
+
+const W = 960;
+const H = 620;
+const PAD = 30;
+
+interface ScatterPoint {
+  id: string;
+  name: string;
+  kind: string;
+  admission: string;
+  office: string | null;
+  forte: string | null;
+  role: string | null;
+  tier: string | null;
+  search: string;
+  href: string;
+  px: number;
+  py: number;
+  r: number;
+  fill: string;
+  hollow: boolean;
+  stroke: string;
+  networkShape: NodeShape | null;
+}
+
+const archetypes = bestiary.archetypes;
+const xMin = Math.min(...archetypes.map((a) => a.scatterX));
+const xMax = Math.max(...archetypes.map((a) => a.scatterX));
+const yMin = Math.min(...archetypes.map((a) => a.scatterY));
+const yMax = Math.max(...archetypes.map((a) => a.scatterY));
+
+const scaleX = (W - 2 * PAD) / (xMax - xMin);
+const scaleY = (H - 2 * PAD) / (yMax - yMin);
+
+function shapeFor(archetype: (typeof archetypes)[number]): {
+  r: number;
+  fill: string;
+  hollow: boolean;
+  stroke: string;
+} {
+  switch (archetype.kind) {
+    case "scaleState":
+      return {
+        r: 3.5,
+        fill: archetype.office ? officeColors[archetype.office] ?? "#8CF" : "#8CF",
+        hollow: false,
+        stroke: "#e0e0e0",
+      };
+    case "scaleFamily":
+      return { r: 5.5, fill: "#0d0d0d", hollow: true, stroke: "#e0e0e0" };
+    case "governorOffice":
+      return { r: 7, fill: "#8CF", hollow: false, stroke: "#e0e0e0" };
+    case "canonicalProfile":
+      return { r: 5.5, fill: "#ffffff", hollow: false, stroke: "#e0e0e0" };
+    case "mutationOperator":
+      return { r: 4.5, fill: "#555555", hollow: false, stroke: "#888888" };
+    case "modalCycle":
+      return { r: 3.2, fill: "#222222", hollow: true, stroke: "#777777" };
+    case "candidateExtension":
+      return { r: 5, fill: "#FBBF24", hollow: false, stroke: "#FBBF24" };
+    default:
+      return { r: 4, fill: "#888888", hollow: false, stroke: "#888888" };
+  }
+}
+
+function describePoint(
+  archetype: (typeof archetypes)[number],
+  px: number,
+  py: number,
+  scale: number,
+): ScatterPoint {
+  const shape = shapeFor(archetype);
+  const searchBits = [
+    archetype.id,
+    archetype.name,
+    kindLabels[archetype.kind] ?? archetype.kind,
+  ];
+  if (archetype.kind === "scaleState") {
+    if (archetype.forte) searchBits.push(archetype.forte);
+    if (archetype.office) searchBits.push(archetype.office);
+  }
+  if (archetype.kind === "scaleFamily") searchBits.push(archetype.forte);
+  if (archetype.kind === "mutationOperator") {
+    searchBits.push(archetype.notation, archetype.operatorId);
+  }
+  if (archetype.kind === "modalCycle") searchBits.push(archetype.forte);
+  return {
+    id: archetype.id,
+    name: archetype.name,
+    kind: archetype.kind,
+    admission: archetype.admission,
+    office:
+      archetype.kind === "scaleState" || archetype.kind === "canonicalProfile"
+        ? archetype.office ?? null
+        : null,
+    forte: archetype.kind === "scaleState" || archetype.kind === "modalCycle" ? archetype.forte ?? null : archetype.kind === "scaleFamily" ? archetype.forte : null,
+    role: archetype.kind === "scaleState" ? archetype.role : null,
+    tier: archetype.kind === "scaleState" ? archetype.tier : null,
+    search: searchBits.join(" ").toLowerCase(),
+    href: `/archetypes/${archetype.id}`,
+    px: Math.round(px * 10) / 10,
+    py: Math.round(py * 10) / 10,
+    r: Math.round(shape.r * scale * 10) / 10,
+    fill: shape.fill,
+    hollow: shape.hollow,
+    stroke: shape.stroke,
+    networkShape: nodeShapeFor(archetype),
+  };
+}
+
+const gridPoints: ScatterPoint[] = archetypes.map((archetype) =>
+  describePoint(
+    archetype,
+    PAD + (archetype.scatterX - xMin) * scaleX,
+    H - PAD - (archetype.scatterY - yMin) * scaleY,
+    1,
+  ),
+);
+
+const layout = computeNetworkLayout(archetypes, bestiary.relationships);
+const netPos = layout.positions;
+const edges = layout.edges;
+const guides = layout.guides;
+const laneStep =
+  guides.lanes.length > 1 ? guides.lanes[1].x - guides.lanes[0].x : 194;
+const netPoints: ScatterPoint[] = archetypes.map((archetype) => {
+  const p = netPos.get(archetype.id) ?? { x: NETWORK_W / 2, y: NETWORK_H / 2 };
+  return describePoint(archetype, p.x, p.y, 1.3);
+});
+const networkAriaLabel = `Seven Governors network of all ${gridPoints.length} archetypes with structural edges`;
+const gridAriaLabel = `Scatterplot of all ${gridPoints.length} archetypes by tier and office`;
+---
+
+<section
+  id="topology-view"
+  aria-label={networkAriaLabel}
+  class="rounded-lg border border-edge bg-panel p-5"
+>
+  <div class="mb-1 flex items-center justify-between gap-3">
+    <h2 class="text-xs font-semibold uppercase tracking-wider text-accent">
+      Topology view
+    </h2>
+    <div
+      id="topology-view-toggle"
+      class="inline-flex gap-0.5 rounded-md border border-edge bg-void p-0.5"
+      role="group"
+      aria-label="Topology layout"
+    >
+      <button
+        type="button"
+        data-view="network"
+        data-active="true"
+        aria-pressed="true"
+        class="view-toggle rounded border border-accent bg-accent px-2.5 py-1 text-[10px] font-semibold text-void shadow-sm"
+      >
+        Network
+      </button>
+      <button
+        type="button"
+        data-view="grid"
+        data-active="false"
+        aria-pressed="false"
+        class="view-toggle rounded border border-transparent px-2.5 py-1 text-[10px] font-medium text-muted transition-colors hover:border-edge hover:bg-raised hover:text-frost"
+      >
+        Grid
+      </button>
+    </div>
+  </div>
+  <p class="mb-4 text-xs text-muted">
+    Two deterministic layouts (§4.3) of all {gridPoints.length} archetypes — hover
+    for identity, click to open. The network view replicates the Seven Governors
+    office-lane chart with{" "}
+    <span class="font-mono">{edges.length}</span> structural edges,
+    color-coded by type. Both respond to the filters and search below.
+  </p>
+
+  <div class="relative">
+    <svg
+      id="scatter-network-svg"
+      viewBox={`0 0 ${NETWORK_W} ${NETWORK_H}`}
+      class="h-auto w-full"
+      role="img"
+      aria-label={networkAriaLabel}
+    >
+      <g id="view-guides" pointer-events="none">
+        {guides.lanes.map((lane) => (
+          <g key={lane.office}>
+            <rect
+              x={lane.x - laneStep / 2 + 4}
+              y={58}
+              width={laneStep - 8}
+              height={guides.boundary.titleY - 76}
+              rx={8}
+              fill={lane.index % 2 === 0 ? "#82BFF5" : "#FFFFFF"}
+              fill-opacity={lane.index % 2 === 0 ? 0.025 : 0.018}
+              stroke="#222A35"
+              stroke-width="0.75"
+            />
+            <text
+              x={lane.x}
+              y={25}
+              fill="#8CF"
+              font-size="12"
+              font-family="monospace"
+              text-anchor="middle"
+              font-weight="700"
+            >
+              {lane.office}
+            </text>
+            <text
+              x={lane.x}
+              y={43}
+              fill="#888888"
+              font-size="8"
+              font-family="monospace"
+              text-anchor="middle"
+            >
+              {`${lane.count} states`}
+            </text>
+          </g>
+        ))}
+        {guides.rows.map((row) => (
+          <g key={row.y}>
+            <text
+              x={14}
+              y={row.y + 4}
+              fill="#888888"
+              font-size="9"
+              font-family="monospace"
+            >
+              {row.label}
+            </text>
+            <line
+              x1={108}
+              y1={row.y}
+              x2={guides.sideRail.x - 12}
+              y2={row.y}
+              stroke="#161616"
+              stroke-width="1"
+            />
+          </g>
+        ))}
+        <rect
+          x={12}
+          y={guides.boundary.titleY + 18}
+          width={guides.sideRail.x - 24}
+          height={guides.boundary.endY - guides.boundary.titleY - 18}
+          rx={8}
+          fill="#FFFFFF"
+          fill-opacity="0.018"
+          stroke="#222A35"
+          stroke-width="0.75"
+        />
+        <text
+          x={14}
+          y={guides.boundary.titleY + 4}
+          fill="#888888"
+          font-size="11"
+          font-family="monospace"
+          font-weight="700"
+        >
+          Typed boundary field
+        </text>
+        {guides.boundary.columns.map((column) => (
+          <text
+            key={column.forte}
+            x={column.x}
+            y={column.y}
+            fill="#888888"
+            font-size="9"
+            font-family="monospace"
+            text-anchor="middle"
+          >
+            {column.forte}
+          </text>
+        ))}
+        <rect
+          x={guides.sideRail.x}
+          y={guides.sideRail.y}
+          width={guides.sideRail.width}
+          height={guides.sideRail.height}
+          rx={8}
+          fill="#82BFF5"
+          fill-opacity="0.025"
+          stroke="#222A35"
+          stroke-width="0.75"
+        />
+        <text
+          x={guides.sideRail.x + 12}
+          y={guides.sideRail.y + 20}
+          fill="#888888"
+          font-size="10"
+          font-family="monospace"
+          font-weight="700"
+        >
+          {guides.sideRail.label}
+        </text>
+        <rect
+          x={12}
+          y={guides.operatorStrip.y - 42}
+          width={guides.sideRail.x - 24}
+          height={84}
+          rx={8}
+          fill="#FBBF24"
+          fill-opacity="0.025"
+          stroke="#222A35"
+          stroke-width="0.75"
+        />
+        <text
+          x={14}
+          y={guides.operatorStrip.y - 50}
+          fill="#888888"
+          font-size="11"
+          font-family="monospace"
+          font-weight="700"
+        >
+          {guides.operatorStrip.label}
+        </text>
+      </g>
+      <g id="view-network">
+        {edges.map((edge) => (
+          <line
+            key={edge.sourceId + "→" + edge.targetId}
+            class="network-edge"
+            x1={netPos.get(edge.sourceId)?.x ?? NETWORK_W / 2}
+            y1={netPos.get(edge.sourceId)?.y ?? NETWORK_H / 2}
+            x2={netPos.get(edge.targetId)?.x ?? NETWORK_W / 2}
+            y2={netPos.get(edge.targetId)?.y ?? NETWORK_H / 2}
+            data-source={edge.sourceId}
+            data-target={edge.targetId}
+            data-type={edge.type}
+            stroke={edge.color}
+            stroke-width="1"
+            stroke-opacity="0.42"
+            stroke-dasharray={edge.dash ?? undefined}
+          />
+        ))}
+        {netPoints.map((point) => {
+          const shape = point.networkShape;
+          return (
+            <a
+              href={point.href}
+              data-point="true"
+              data-point-id={point.id}
+              data-kind={point.kind}
+              data-admission={point.admission}
+              data-office={point.office ?? ""}
+              data-role={point.role ?? ""}
+              data-tier={point.tier ?? ""}
+              data-forte={point.forte ?? ""}
+              data-search={point.search}
+              aria-label={`${point.name} (${point.id})`}
+            >
+              <g
+                class="node-glyph network-glyph"
+                data-cx={point.px}
+                data-cy={point.py}
+                data-shape={shape?.name ?? point.kind}
+                transform={`translate(${point.px}, ${point.py})`}
+              >
+                <circle
+                  r={Math.max((shape?.r ?? point.r) + 3, 7)}
+                  fill="transparent"
+                  stroke="none"
+                  pointer-events="all"
+                  class="node-hit"
+                />
+                {shape?.circle !== undefined && (
+                  <circle
+                    r={shape.circle}
+                    fill={shape.fill}
+                    stroke={shape.stroke}
+                    stroke-width={shape.strokeWidth}
+                    class="network-node-shape"
+                  />
+                )}
+                {shape?.rect && (
+                  <rect
+                    x={-shape.rect.w / 2}
+                    y={-shape.rect.h / 2}
+                    width={shape.rect.w}
+                    height={shape.rect.h}
+                    rx={shape.rect.rx ?? 0}
+                    fill={shape.fill}
+                    stroke={shape.stroke}
+                    stroke-width={shape.strokeWidth}
+                    class="network-node-shape"
+                  />
+                )}
+                {shape?.path && (
+                  <path
+                    d={shape.path}
+                    fill={shape.fill}
+                    stroke={shape.stroke}
+                    stroke-width={shape.strokeWidth}
+                    class="network-node-shape"
+                  />
+                )}
+                {shape?.polygon && (
+                  <polygon
+                    points={shape.polygon}
+                    fill={shape.fill}
+                    stroke={shape.stroke}
+                    stroke-width={shape.strokeWidth}
+                    class="network-node-shape"
+                  />
+                )}
+                {!shape && (
+                  <circle
+                    r={point.r}
+                    fill={point.fill}
+                    stroke={point.stroke}
+                    stroke-width={point.hollow ? 1.4 : 0.8}
+                    class="network-node-shape"
+                  />
+                )}
+              </g>
+            </a>
+          );
+        })}
+      </g>
+    </svg>
+
+    <svg
+      id="scatter-grid-svg"
+      viewBox={`0 0 ${W} ${H}`}
+      class="h-auto w-full"
+      role="img"
+      aria-label={gridAriaLabel}
+      hidden
+    >
+      <g id="view-grid">
+        {gridPoints.map((point) => (
+          <a
+            href={point.href}
+            data-point="true"
+            data-point-id={point.id}
+            data-kind={point.kind}
+            data-admission={point.admission}
+            data-office={point.office ?? ""}
+            data-role={point.role ?? ""}
+            data-tier={point.tier ?? ""}
+            data-forte={point.forte ?? ""}
+            data-search={point.search}
+            aria-label={`${point.name} (${point.id})`}
+          >
+            <g
+              class="node-glyph grid-glyph"
+              data-cx={point.px}
+              data-cy={point.py}
+              data-shape="circle"
+              transform={`translate(${point.px}, ${point.py})`}
+            >
+              <circle
+                r={point.r}
+                fill={point.fill}
+                stroke={point.stroke}
+                stroke-width={point.hollow ? 1.4 : 0.8}
+                class="grid-dot"
+              />
+            </g>
+          </a>
+        ))}
+      </g>
+    </svg>
+
+    <div
+      id="scatterplot-tooltip"
+      class="pointer-events-none absolute z-30 hidden max-w-56 rounded-md border border-edge bg-raised px-2.5 py-1.5 text-[10px] leading-relaxed shadow-lg"
+    >
+      <div id="scatterplot-tooltip-title" class="font-semibold text-frost"></div>
+      <div id="scatterplot-tooltip-meta" class="font-mono text-muted"></div>
+    </div>
+  </div>
+
+  <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[10px] text-muted">
+    {Object.entries(kindLabels).map(([kind, label]) => (
+      <span key={kind} class="flex items-center gap-1.5">
+        <span
+          class="inline-block size-2 rounded-full"
+          style={`background: ${
+            kind === "scaleState"
+              ? "#8CF"
+              : kind === "scaleFamily"
+                ? "#0d0d0d"
+                : kind === "governorOffice"
+                  ? "#8CF"
+                  : kind === "canonicalProfile"
+                    ? "#ffffff"
+                    : kind === "mutationOperator"
+                      ? "#555555"
+                      : kind === "modalCycle"
+                        ? "#777777"
+                        : "#FBBF24"
+          }; ${
+            kind === "scaleFamily" || kind === "modalCycle"
+              ? "box-shadow: inset 0 0 0 1px currentColor;"
+              : ""
+          }`}
+        ></span>
+        {label}
+      </span>
+    ))}
+    {Object.entries(TIER_COLORS).map(([tier, color]) => (
+      <span key={tier} class="flex items-center gap-1.5">
+        <span
+          class="inline-block size-2 rounded-sm"
+          style={`background: ${color}`}
+        ></span>
+        {tier}
+      </span>
+    ))}
+    {Object.entries(BOUNDARY_COLORS).map(([kind, colors]) => (
+      <span key={kind} class="flex items-center gap-1.5">
+        <span
+          class="inline-block size-2 rounded-full"
+          style={`background: ${colors.fill}; box-shadow: inset 0 0 0 1px ${colors.stroke};`}
+        ></span>
+        {kind.replaceAll("_", " ")}
+      </span>
+    ))}
+    {Object.entries(EDGE_COLORS).map(([type, color]) => (
+      <span key={type} class="flex items-center gap-1.5">
+        <span
+          class="inline-block h-0.5 w-4"
+          style={`background: ${color}`}
+        ></span>
+        {type}
+      </span>
+    ))}
+    <span class="ml-auto font-mono">
+      {gridPoints.length} points · {edges.length} edges
+    </span>
+  </div>
+</section>
+
+<script>
+  const networkSvg = document.getElementById(
+    "scatter-network-svg",
+  ) as SVGSVGElement;
+  const gridSvg = document.getElementById(
+    "scatter-grid-svg",
+  ) as SVGSVGElement;
+  const topologyView = document.getElementById("topology-view") as HTMLElement;
+  const networkViewLabel = networkSvg.getAttribute("aria-label") ?? "Network view";
+  const gridViewLabel = gridSvg.getAttribute("aria-label") ?? "Grid view";
+  const tooltip = document.getElementById("scatterplot-tooltip") as HTMLElement;
+  const tooltipTitle = document.getElementById(
+    "scatterplot-tooltip-title",
+  ) as HTMLElement;
+  const tooltipMeta = document.getElementById(
+    "scatterplot-tooltip-meta",
+  ) as HTMLElement;
+  const viewNetwork = document.getElementById("view-network") as SVGGElement;
+  const anchors = Array.from(
+    networkSvg.querySelectorAll<HTMLAnchorElement>("[data-point]"),
+  ).concat(
+    Array.from(gridSvg.querySelectorAll<HTMLAnchorElement>("[data-point]")),
+  );
+  const glyphs = anchors
+    .map((anchor) => anchor.querySelector<SVGGElement>(".node-glyph"))
+    .filter((glyph): glyph is SVGGElement => glyph !== null);
+  const edgeLines = Array.from(
+    networkSvg.querySelectorAll<SVGLineElement>("line.network-edge"),
+  );
+  const viewButtons = Array.from(
+    document.querySelectorAll<HTMLButtonElement>(".view-toggle"),
+  );
+  const anchorsById = new Map<string, HTMLElement>();
+  const glyphsById = new Map<string, SVGGElement>();
+  for (const anchor of viewNetwork.querySelectorAll<HTMLElement>(
+    "[data-point-id]",
+  )) {
+    const id = anchor.dataset.pointId;
+    if (id) {
+      anchorsById.set(id, anchor);
+      const glyph = anchor.querySelector<SVGGElement>(".node-glyph");
+      if (glyph) glyphsById.set(id, glyph);
+    }
+  }
+  const neighbors = new Map<string, Set<string>>();
+  for (const line of edgeLines) {
+    const source = line.dataset.source ?? "";
+    const target = line.dataset.target ?? "";
+    if (!neighbors.has(source)) neighbors.set(source, new Set());
+    if (!neighbors.has(target)) neighbors.set(target, new Set());
+    neighbors.get(source)!.add(target);
+    neighbors.get(target)!.add(source);
+  }
+
+  const kindLabels: Record<string, string> = {
+    scaleState: "Scale state",
+    scaleFamily: "Scale family",
+    governorOffice: "Governor office",
+    canonicalProfile: "Canonical profile",
+    mutationOperator: "Mutation operator",
+    modalCycle: "Modal cycle",
+    candidateExtension: "Candidate extension",
+  };
+
+  let view: "network" | "grid" = "network";
+
+  function activeChips(): Map<string, string> {
+    const state = new Map<string, string>();
+    for (const chip of document.querySelectorAll<HTMLButtonElement>(
+      "#bestiary-filter-bar .filter-chip[data-active=\"true\"]",
+    )) {
+      const group = chip.closest("[data-filter-group]") as HTMLElement | null;
+      const key = group?.dataset.filterGroup;
+      if (key && chip.dataset.filterValue) {
+        state.set(key, chip.dataset.filterValue);
+      }
+    }
+    return state;
+  }
+
+  function searchQuery(): string {
+    const input = document.getElementById("bestiary-search") as HTMLInputElement | null;
+    return (input?.value ?? "").trim().toLowerCase();
+  }
+
+  function matches(anchor: HTMLElement): boolean {
+    const filters = activeChips();
+    for (const [key, value] of filters) {
+      if (anchor.getAttribute(`data-${key}`) !== value) {
+        return false;
+      }
+    }
+    const query = searchQuery();
+    if (!query) return true;
+    const searchable = anchor.getAttribute("data-search") ?? "";
+    return query.split(/\s+/).every((part) => searchable.includes(part));
+  }
+
+  function apply() {
+    for (const anchor of anchors) {
+      anchor.toggleAttribute("hidden", !matches(anchor));
+    }
+    for (const line of edgeLines) {
+      const source = anchorsById.get(line.dataset.source ?? "");
+      const target = anchorsById.get(line.dataset.target ?? "");
+      const hidden = !(
+        source &&
+        target &&
+        !source.hasAttribute("hidden") &&
+        !target.hasAttribute("hidden")
+      );
+      line.toggleAttribute("hidden", hidden);
+    }
+  }
+
+  function setView(next: "network" | "grid") {
+    view = next;
+    networkSvg.toggleAttribute("hidden", next !== "network");
+    gridSvg.toggleAttribute("hidden", next !== "grid");
+    topologyView.setAttribute(
+      "aria-label",
+      next === "network" ? networkViewLabel : gridViewLabel,
+    );
+    for (const button of viewButtons) {
+      const active = button.dataset.view === next;
+      button.dataset.active = String(active);
+      button.setAttribute("aria-pressed", String(active));
+      button.className = active
+        ? "view-toggle rounded border border-accent bg-accent px-2.5 py-1 text-[10px] font-semibold text-void shadow-sm"
+        : "view-toggle rounded border border-transparent px-2.5 py-1 text-[10px] font-medium text-muted transition-colors hover:border-edge hover:bg-raised hover:text-frost";
+    }
+  }
+
+  function setGlyphScale(glyph: SVGGElement, scale: number) {
+    const x = glyph.dataset.cx ?? "0";
+    const y = glyph.dataset.cy ?? "0";
+    glyph.setAttribute("transform", `translate(${x}, ${y}) scale(${scale})`);
+  }
+
+  function unhighlight() {
+    for (const glyph of glyphs) {
+      setGlyphScale(glyph, 1);
+    }
+    for (const line of edgeLines) {
+      if (line.dataset.baseOpacity) {
+        line.setAttribute("stroke-opacity", line.dataset.baseOpacity);
+        delete line.dataset.baseOpacity;
+      }
+      if (line.dataset.baseWidth) {
+        line.setAttribute("stroke-width", line.dataset.baseWidth);
+        delete line.dataset.baseWidth;
+      }
+    }
+  }
+
+  function highlightNeighbors(id: string) {
+    const set = neighbors.get(id) ?? new Set<string>();
+    for (const neighborId of set) {
+      const glyph = glyphsById.get(neighborId);
+      if (glyph) setGlyphScale(glyph, 1.25);
+    }
+    for (const line of edgeLines) {
+      if (line.dataset.source === id || line.dataset.target === id) {
+        if (!line.dataset.baseOpacity) {
+          line.dataset.baseOpacity = line.getAttribute("stroke-opacity") ?? "0.42";
+        }
+        if (!line.dataset.baseWidth) {
+          line.dataset.baseWidth = line.getAttribute("stroke-width") ?? "1";
+        }
+        line.setAttribute("stroke-opacity", "0.85");
+        line.setAttribute("stroke-width", "2");
+      }
+    }
+  }
+
+  for (const button of viewButtons) {
+    button.addEventListener("click", () => {
+      const next = button.dataset.view;
+      if (next === "grid" || next === "network") {
+        setView(next);
+        apply();
+      }
+    });
+  }
+
+  window.addEventListener("bestiary:filter-change", apply);
+  document
+    .getElementById("bestiary-search")
+    ?.addEventListener("input", apply);
+
+  for (const anchor of anchors) {
+    const glyph = anchor.querySelector<SVGGElement>(".node-glyph");
+    anchor.addEventListener("pointerenter", () => {
+      const name = anchor.getAttribute("aria-label")?.split(" (")[0] ?? "";
+      const id = anchor.getAttribute("aria-label")?.match(/\((.+)\)/)?.[1] ?? "";
+      const kind =
+        anchor.dataset.kind && kindLabels[anchor.dataset.kind]
+          ? kindLabels[anchor.dataset.kind]
+          : anchor.dataset.kind ?? "";
+      const office = anchor.dataset.office;
+      const metaBits = [id, kind];
+      if (office) metaBits.push(office);
+      tooltipTitle.textContent = name;
+      tooltipMeta.textContent = metaBits.join(" · ");
+      tooltip.classList.remove("hidden");
+      if (glyph) setGlyphScale(glyph, 1.45);
+      if (view === "network" && anchor.dataset.pointId) {
+        highlightNeighbors(anchor.dataset.pointId);
+      }
+    });
+    anchor.addEventListener("pointermove", (event) => {
+      tooltip.style.left = `${event.clientX + 14}px`;
+      tooltip.style.top = `${event.clientY + 12}px`;
+    });
+    anchor.addEventListener("pointerleave", () => {
+      unhighlight();
+      tooltip.classList.add("hidden");
+    });
+  }
+
+  setView("network");
+  apply();
+</script>

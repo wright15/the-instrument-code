@@ -1,0 +1,4026 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryVersion": "0.1.1",
+  "releaseId": "canonical-profile-registry:0.1.1",
+  "generatedAt": "2026-07-30",
+  "profileCount": 7,
+  "officeOrder": [
+    "Sun",
+    "Moon",
+    "Mars",
+    "Mercury",
+    "Jupiter",
+    "Venus",
+    "Saturn"
+  ],
+  "status": "canonical_profile_registry_v0.1.1",
+  "profiles": [
+    {
+      "profileId": "profile:sun:v0.1.1",
+      "profileVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "office": "Sun",
+      "officeIndex": 0,
+      "symbol": "☉",
+      "type": "monopolar_luminary",
+      "canonicalIdentity": {
+        "stateId": 2773,
+        "stateName": "Lydian",
+        "mode": "lydian",
+        "forteFamily": "7-35",
+        "pitchMask": "b101010110101",
+        "pitchSet": "{0,2,4,6,7,9,11}",
+        "anchorTier": "A0",
+        "chirality": "achiral",
+        "assignmentStatus": "canonical"
+      },
+      "physical": {
+        "photonicId": "photonic:sun:v0.1.1",
+        "wavelengthNm": 700,
+        "color": "#FF4444",
+        "physicalExtension": {
+          "vector_b_physics_ref": "schemas/vector_b_physics.yaml#vector_b_physics.governors.sun",
+          "physical_phenomena_ref": "schemas/physical_phenomena.yaml#physical_phenomena.governor_registry.sun",
+          "color_palette_ref": "schemas/color_palettes.yaml#spectral_vector_b.positions",
+          "detail_policy": "Use extension schemas for Vector B physics and natural phenomena."
+        },
+        "interpretationPolicy": "office_anchor_not_musical_causation"
+      },
+      "harmonic": {
+        "stateGovernor": "Sun",
+        "canonicalMode": "lydian",
+        "canonicalStateId": 2773,
+        "binary12Bit": "101010110101",
+        "constructiveEncoding": {
+          "binary": "101010110101",
+          "decimal": 2741,
+          "hex": "0xAB5"
+        },
+        "observationalEncoding": {
+          "binary": "101011010101",
+          "decimal": 2773,
+          "hex": "0xAD5"
+        },
+        "bitWeight": 7,
+        "compressionDerived": true,
+        "harmonicCompression": {
+          "coordinateSymbol": "C_H",
+          "status": "unresolved",
+          "value": null,
+          "reason": "No aggregate harmonic-compression formula has yet been admitted to canon."
+        }
+      },
+      "semantic": {
+        "thermodynamicFunction": "emission",
+        "opticalFunction": "source_radiance",
+        "directionality": "outward_projective",
+        "archetypalRole": "reality as coherent actuality",
+        "element": null,
+        "mythologyLayer": {
+          "narratives": [
+            "radiance",
+            "source-code",
+            "overlight",
+            "natural law",
+            "revelation",
+            "skyward illumination",
+            "coherent actuality",
+            "radiance",
+            "reality",
+            "source",
+            "natural law",
+            "illumination",
+            "Lydian makes source-code audible"
+          ],
+          "alchemical_phase": {
+            "name": "Rubedo",
+            "description": "Reddening, coagulation into fixed product",
+            "substance": "Gold",
+            "symbol": "Rose, red lion",
+            "function": "The fixed product that results from the work. The rubedo does not dissolve. It fixes."
+          },
+          "incarnational_layer": [
+            "source-code",
+            "natural law",
+            "DNA",
+            "chemistry",
+            "pattern",
+            "biomimicry",
+            "system fundamentals"
+          ],
+          "canonical_phrases": [
+            "Sun = reality as coherent actuality.",
+            "Sun = the source-code of reality.",
+            "Let there be light"
+          ]
+        },
+        "zodiacalSystems": {
+          "leo": {
+            "sex": "male",
+            "magnetism": "monopolar",
+            "directionality": "outward_projective",
+            "derives_from": "canonical_expression.binary_12bit",
+            "system_name": "Source-Code System",
+            "domain": [
+              "source-code",
+              "natural law",
+              "system fundamentals",
+              "DNA",
+              "chemistry",
+              "design logic",
+              "biomimicry"
+            ],
+            "core_question": "What is the underlying principle that makes this work?",
+            "canonical_phrase": "Leo / Sun = the source-code system."
+          }
+        },
+        "expressionVariants": {
+          "Superlocrian-1371": {
+            "binary_12bit": "110110101010",
+            "forte_number": "7-34"
+          }
+        },
+        "semanticCompression": {
+          "coordinateSymbol": "C_S",
+          "status": "framework_order_plus_registry_coordinate_convention",
+          "orderedPosition": 1,
+          "orderedProcess": "emission",
+          "normalizedOrdinal": 0,
+          "metric": false,
+          "scale": "declared Sun-to-Saturn process order",
+          "physicalClaim": false
+        }
+      },
+      "domainReferences": {
+        "landforms": [
+          "plains",
+          "savanna",
+          "plateaus",
+          "open fields bathed in sunlight"
+        ],
+        "architecture": [
+          "monolithic stone circles",
+          "temples open to the sky",
+          "altars",
+          "ziggurats",
+          "observatories"
+        ],
+        "botany": [
+          "sunflowers",
+          "marigolds",
+          "heliotropes",
+          "citrus trees",
+          "olive trees",
+          "bay laurel"
+        ],
+        "material": [
+          "gold",
+          "amber",
+          "citrine",
+          "brass",
+          "electrum"
+        ],
+        "colorAssociations": [
+          "red",
+          "gold",
+          "bright yellow",
+          "orange-gold"
+        ],
+        "symbolicReferences": [
+          "solar cross",
+          "crown",
+          "halo",
+          "lion",
+          "phoenix",
+          "eye of providence",
+          "the number 1",
+          "the point at the center"
+        ],
+        "rawReferenceLibrary": {
+          "landforms": [
+            "plains",
+            "savanna",
+            "plateaus",
+            "open fields bathed in sunlight"
+          ],
+          "architecture": [
+            "monolithic stone circles",
+            "temples open to the sky",
+            "altars",
+            "ziggurats",
+            "observatories"
+          ],
+          "botany": [
+            "sunflowers",
+            "marigolds",
+            "heliotropes",
+            "citrus trees",
+            "olive trees",
+            "bay laurel"
+          ],
+          "material": [
+            "gold",
+            "amber",
+            "citrine",
+            "brass",
+            "electrum"
+          ],
+          "color_associations": [
+            "red",
+            "gold",
+            "bright yellow",
+            "orange-gold"
+          ],
+          "symbolic_references": [
+            "solar cross",
+            "crown",
+            "halo",
+            "lion",
+            "phoenix",
+            "eye of providence",
+            "the number 1",
+            "the point at the center"
+          ]
+        }
+      },
+      "featureAssertions": [
+        {
+          "featureId": "physical.wavelength_nm",
+          "value": 700,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "physical.frequency_hz",
+          "value": 428274939999999.94,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.photon_energy_j",
+          "value": 2.8377797959270407e-19,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.photon_energy_ev",
+          "value": 1.7712028347600037,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.C_P",
+          "value": 0,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "harmonic.canonical_scale_state",
+          "value": 2773,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.pitch_mask",
+          "value": "b101010110101",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.forte_family",
+          "value": "7-35",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.anchor_tier",
+          "value": "A0",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.C_H",
+          "value": null,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.thermodynamic_function",
+          "value": "emission",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.optical_function",
+          "value": "source_radiance",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.directionality",
+          "value": "outward_projective",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.archetypal_role",
+          "value": "reality as coherent actuality",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.element",
+          "value": null,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.zodiacal_systems",
+          "value": {
+            "leo": {
+              "sex": "male",
+              "magnetism": "monopolar",
+              "directionality": "outward_projective",
+              "derives_from": "canonical_expression.binary_12bit",
+              "system_name": "Source-Code System",
+              "domain": [
+                "source-code",
+                "natural law",
+                "system fundamentals",
+                "DNA",
+                "chemistry",
+                "design logic",
+                "biomimicry"
+              ],
+              "core_question": "What is the underlying principle that makes this work?",
+              "canonical_phrase": "Leo / Sun = the source-code system."
+            }
+          },
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.C_S",
+          "value": {
+            "orderedPosition": 1,
+            "orderedProcess": "emission",
+            "normalizedOrdinal": 0,
+            "metric": false,
+            "status": "framework_order_plus_registry_coordinate_convention"
+          },
+          "provenance": {
+            "authority": "framework_order_plus_registry_coordinate_convention",
+            "sources": [
+              {
+                "artifact": "source/governors.yaml",
+                "pointer": "governors.sun.canonical_expression.thermodynamic_function",
+                "authority": "framework_declared"
+              },
+              {
+                "artifact": "scripts/build-registry.mjs",
+                "authority": "registry_coordinate_convention",
+                "description": "The ordered position is exposed as a non-metric normalized ordinal."
+              }
+            ]
+          }
+        },
+        {
+          "featureId": "domain.landforms",
+          "value": [
+            "plains",
+            "savanna",
+            "plateaus",
+            "open fields bathed in sunlight"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.architecture",
+          "value": [
+            "monolithic stone circles",
+            "temples open to the sky",
+            "altars",
+            "ziggurats",
+            "observatories"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.botany",
+          "value": [
+            "sunflowers",
+            "marigolds",
+            "heliotropes",
+            "citrus trees",
+            "olive trees",
+            "bay laurel"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.material",
+          "value": [
+            "gold",
+            "amber",
+            "citrine",
+            "brass",
+            "electrum"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.color_associations",
+          "value": [
+            "red",
+            "gold",
+            "bright yellow",
+            "orange-gold"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.symbolic_references",
+          "value": [
+            "solar cross",
+            "crown",
+            "halo",
+            "lion",
+            "phoenix",
+            "eye of providence",
+            "the number 1",
+            "the point at the center"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "framework_declared_and_topology_audited",
+        "sources": [
+          {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.sun",
+            "authority": "framework_declared"
+          },
+          {
+            "artifact": "source/universal-network-data.json",
+            "pointer": "governorRows[Office=Sun]",
+            "authority": "topology_audit"
+          }
+        ]
+      },
+      "intrinsicFingerprint": "467578262349069c83a0d43d7beaba4c48b7fc2b89bd576db242a3c7b2dbde48"
+    },
+    {
+      "profileId": "profile:moon:v0.1.1",
+      "profileVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "office": "Moon",
+      "officeIndex": 1,
+      "symbol": "☾",
+      "type": "monopolar_luminary",
+      "canonicalIdentity": {
+        "stateId": 2741,
+        "stateName": "Ionian",
+        "mode": "ionian",
+        "forteFamily": "7-35",
+        "pitchMask": "b101011010101",
+        "pitchSet": "{0,2,4,5,7,9,11}",
+        "anchorTier": "A0",
+        "chirality": "achiral",
+        "assignmentStatus": "canonical"
+      },
+      "physical": {
+        "photonicId": "photonic:moon:v0.1.1",
+        "wavelengthNm": 610,
+        "color": "#FF8C00",
+        "physicalExtension": {
+          "vector_b_physics_ref": "schemas/vector_b_physics.yaml#vector_b_physics.governors.moon",
+          "physical_phenomena_ref": "schemas/physical_phenomena.yaml#physical_phenomena.governor_registry.moon",
+          "color_palette_ref": "schemas/color_palettes.yaml#spectral_vector_b.positions",
+          "detail_policy": "Use extension schemas for Vector B physics and natural phenomena."
+        },
+        "interpretationPolicy": "office_anchor_not_musical_causation"
+      },
+      "harmonic": {
+        "stateGovernor": "Moon",
+        "canonicalMode": "ionian",
+        "canonicalStateId": 2741,
+        "binary12Bit": "101011010101",
+        "constructiveEncoding": {
+          "binary": "101011010101",
+          "decimal": 2773,
+          "hex": "0xAD5"
+        },
+        "observationalEncoding": {
+          "binary": "101010110101",
+          "decimal": 2741,
+          "hex": "0xAB5"
+        },
+        "bitWeight": 7,
+        "compressionDerived": true,
+        "harmonicCompression": {
+          "coordinateSymbol": "C_H",
+          "status": "unresolved",
+          "value": null,
+          "reason": "No aggregate harmonic-compression formula has yet been admitted to canon."
+        }
+      },
+      "semantic": {
+        "thermodynamicFunction": "reception",
+        "opticalFunction": "reflection",
+        "directionality": "inward_centripetal",
+        "archetypalRole": "the experience of reality",
+        "element": null,
+        "mythologyLayer": {
+          "narratives": [
+            "reflection",
+            "experience",
+            "memory",
+            "reception",
+            "mirroring",
+            "imaginal reception"
+          ],
+          "alchemical_phase": {
+            "name": "Albedo",
+            "description": "Whitening, purification, reflection",
+            "substance": "Silver",
+            "symbol": "Bowl, cup",
+            "function": "The purification that clarifies what has been dissolved. The albedo does not act. It receives and reflects."
+          },
+          "incarnational_layer": [
+            "lived life",
+            "home",
+            "family",
+            "memory",
+            "autobiography",
+            "daily life",
+            "marriage"
+          ],
+          "canonical_phrases": [
+            "Moon = the experience of reality.",
+            "Moon = the lived experience of reality."
+          ]
+        },
+        "zodiacalSystems": {
+          "cancer": {
+            "sex": "female",
+            "magnetism": "monopolar",
+            "directionality": "inward_centripetal",
+            "derives_from": "canonical_expression.binary_12bit",
+            "system_name": "Daily Personal Experience System",
+            "domain": [
+              "daily personal experience",
+              "situated life",
+              "home",
+              "family",
+              "what is directly lived",
+              "emotional climate",
+              "immediate physical setting"
+            ],
+            "core_question": "What is my lived reality right now?",
+            "canonical_phrase": "Cancer / Moon = the system of situated life."
+          }
+        },
+        "expressionVariants": {
+          "Acoustic-1749": {
+            "binary_12bit": "101010110110",
+            "forte_number": "7-34"
+          }
+        },
+        "semanticCompression": {
+          "coordinateSymbol": "C_S",
+          "status": "framework_order_plus_registry_coordinate_convention",
+          "orderedPosition": 2,
+          "orderedProcess": "reception",
+          "normalizedOrdinal": 0.16666666666666666,
+          "metric": false,
+          "scale": "declared Sun-to-Saturn process order",
+          "physicalClaim": false
+        }
+      },
+      "domainReferences": {
+        "landforms": [
+          "lakes",
+          "ponds",
+          "tidal pools",
+          "estuaries",
+          "marshes",
+          "foggy valleys"
+        ],
+        "architecture": [
+          "rounded buildings",
+          "moon gates",
+          "reflecting pools",
+          "crescent-shaped structures",
+          "oracles"
+        ],
+        "botany": [
+          "water lilies",
+          "lotus",
+          "moonflowers",
+          "jasmine",
+          "night-blooming cereus",
+          "silver sage"
+        ],
+        "material": [
+          "silver",
+          "moonstone",
+          "opal",
+          "pearl",
+          "selenite"
+        ],
+        "colorAssociations": [
+          "silver",
+          "white",
+          "pale blue",
+          "misty gray",
+          "pale orange"
+        ],
+        "symbolicReferences": [
+          "crescent",
+          "mirror",
+          "chalice",
+          "bowl",
+          "shell",
+          "silver cord",
+          "the number 2",
+          "duality"
+        ],
+        "rawReferenceLibrary": {
+          "landforms": [
+            "lakes",
+            "ponds",
+            "tidal pools",
+            "estuaries",
+            "marshes",
+            "foggy valleys"
+          ],
+          "architecture": [
+            "rounded buildings",
+            "moon gates",
+            "reflecting pools",
+            "crescent-shaped structures",
+            "oracles"
+          ],
+          "botany": [
+            "water lilies",
+            "lotus",
+            "moonflowers",
+            "jasmine",
+            "night-blooming cereus",
+            "silver sage"
+          ],
+          "material": [
+            "silver",
+            "moonstone",
+            "opal",
+            "pearl",
+            "selenite"
+          ],
+          "color_associations": [
+            "silver",
+            "white",
+            "pale blue",
+            "misty gray",
+            "pale orange"
+          ],
+          "symbolic_references": [
+            "crescent",
+            "mirror",
+            "chalice",
+            "bowl",
+            "shell",
+            "silver cord",
+            "the number 2",
+            "duality"
+          ]
+        }
+      },
+      "featureAssertions": [
+        {
+          "featureId": "physical.wavelength_nm",
+          "value": 610,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "physical.frequency_hz",
+          "value": 491463045901639.25,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.photon_energy_j",
+          "value": 3.2564686182769316e-19,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.photon_energy_ev",
+          "value": 2.032527843167217,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.C_P",
+          "value": 0.19672131147540983,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "harmonic.canonical_scale_state",
+          "value": 2741,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.pitch_mask",
+          "value": "b101011010101",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.forte_family",
+          "value": "7-35",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.anchor_tier",
+          "value": "A0",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.C_H",
+          "value": null,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.thermodynamic_function",
+          "value": "reception",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.optical_function",
+          "value": "reflection",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.directionality",
+          "value": "inward_centripetal",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.archetypal_role",
+          "value": "the experience of reality",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.element",
+          "value": null,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.zodiacal_systems",
+          "value": {
+            "cancer": {
+              "sex": "female",
+              "magnetism": "monopolar",
+              "directionality": "inward_centripetal",
+              "derives_from": "canonical_expression.binary_12bit",
+              "system_name": "Daily Personal Experience System",
+              "domain": [
+                "daily personal experience",
+                "situated life",
+                "home",
+                "family",
+                "what is directly lived",
+                "emotional climate",
+                "immediate physical setting"
+              ],
+              "core_question": "What is my lived reality right now?",
+              "canonical_phrase": "Cancer / Moon = the system of situated life."
+            }
+          },
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.C_S",
+          "value": {
+            "orderedPosition": 2,
+            "orderedProcess": "reception",
+            "normalizedOrdinal": 0.16666666666666666,
+            "metric": false,
+            "status": "framework_order_plus_registry_coordinate_convention"
+          },
+          "provenance": {
+            "authority": "framework_order_plus_registry_coordinate_convention",
+            "sources": [
+              {
+                "artifact": "source/governors.yaml",
+                "pointer": "governors.moon.canonical_expression.thermodynamic_function",
+                "authority": "framework_declared"
+              },
+              {
+                "artifact": "scripts/build-registry.mjs",
+                "authority": "registry_coordinate_convention",
+                "description": "The ordered position is exposed as a non-metric normalized ordinal."
+              }
+            ]
+          }
+        },
+        {
+          "featureId": "domain.landforms",
+          "value": [
+            "lakes",
+            "ponds",
+            "tidal pools",
+            "estuaries",
+            "marshes",
+            "foggy valleys"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.architecture",
+          "value": [
+            "rounded buildings",
+            "moon gates",
+            "reflecting pools",
+            "crescent-shaped structures",
+            "oracles"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.botany",
+          "value": [
+            "water lilies",
+            "lotus",
+            "moonflowers",
+            "jasmine",
+            "night-blooming cereus",
+            "silver sage"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.material",
+          "value": [
+            "silver",
+            "moonstone",
+            "opal",
+            "pearl",
+            "selenite"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.color_associations",
+          "value": [
+            "silver",
+            "white",
+            "pale blue",
+            "misty gray",
+            "pale orange"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.symbolic_references",
+          "value": [
+            "crescent",
+            "mirror",
+            "chalice",
+            "bowl",
+            "shell",
+            "silver cord",
+            "the number 2",
+            "duality"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "framework_declared_and_topology_audited",
+        "sources": [
+          {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.moon",
+            "authority": "framework_declared"
+          },
+          {
+            "artifact": "source/universal-network-data.json",
+            "pointer": "governorRows[Office=Moon]",
+            "authority": "topology_audit"
+          }
+        ]
+      },
+      "intrinsicFingerprint": "c4d2ede73648b2482b0dcc063b340a2665dcbf8816044734738eaac31258aede"
+    },
+    {
+      "profileId": "profile:mars:v0.1.1",
+      "profileVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "office": "Mars",
+      "officeIndex": 2,
+      "symbol": "♂",
+      "type": "bipolar_engine_governor",
+      "canonicalIdentity": {
+        "stateId": 1717,
+        "stateName": "Mixolydian",
+        "mode": "mixolydian",
+        "forteFamily": "7-35",
+        "pitchMask": "b101011010110",
+        "pitchSet": "{0,2,4,5,7,9,10}",
+        "anchorTier": "A0",
+        "chirality": "achiral",
+        "assignmentStatus": "canonical"
+      },
+      "physical": {
+        "photonicId": "photonic:mars:v0.1.1",
+        "wavelengthNm": 580,
+        "color": "#FFD700",
+        "physicalExtension": {
+          "vector_b_physics_ref": "schemas/vector_b_physics.yaml#vector_b_physics.governors.mars",
+          "physical_phenomena_ref": "schemas/physical_phenomena.yaml#physical_phenomena.governor_registry.mars",
+          "color_palette_ref": "schemas/color_palettes.yaml#spectral_vector_b.positions",
+          "detail_policy": "Use extension schemas for Vector B physics and natural phenomena."
+        },
+        "interpretationPolicy": "office_anchor_not_musical_causation"
+      },
+      "harmonic": {
+        "stateGovernor": "Mars",
+        "canonicalMode": "mixolydian",
+        "canonicalStateId": 1717,
+        "binary12Bit": "101011010110",
+        "constructiveEncoding": {
+          "binary": "101011010110",
+          "decimal": 2774,
+          "hex": "0xAD6"
+        },
+        "observationalEncoding": {
+          "binary": "011010110101",
+          "decimal": 1717,
+          "hex": "0x6B5"
+        },
+        "bitWeight": 7,
+        "compressionDerived": true,
+        "harmonicCompression": {
+          "coordinateSymbol": "C_H",
+          "status": "unresolved",
+          "value": null,
+          "reason": "No aggregate harmonic-compression formula has yet been admitted to canon."
+        }
+      },
+      "semantic": {
+        "thermodynamicFunction": "activation",
+        "opticalFunction": "ignition",
+        "directionality": "outward_projective",
+        "archetypalRole": "energy modulation; how force enters the pattern",
+        "element": "Fire",
+        "mythologyLayer": {
+          "narratives": [
+            "activation",
+            "force",
+            "fire",
+            "propulsion",
+            "survival-force",
+            "urgency",
+            "defense"
+          ],
+          "alchemical_phase": {
+            "name": "Calcination",
+            "description": "Fire, separation of elements, burning away impurities",
+            "substance": "Copper",
+            "symbol": "Sword, arrow",
+            "function": "The heat that begins the work by reducing matter to its ashes. Calcination separates and activates."
+          },
+          "incarnational_layer": [
+            "survival",
+            "hunting",
+            "protection",
+            "action",
+            "appetite",
+            "pursuit",
+            "defense"
+          ],
+          "canonical_phrases": [
+            "Mars = force entering the pattern.",
+            "Mars is the fire that turns union into action."
+          ]
+        },
+        "zodiacalSystems": {
+          "aries": {
+            "directionality": "external",
+            "derives_from": "canonical_expression.binary_12bit",
+            "system_name": "Tactical Environmental Mastery",
+            "domain": [
+              "terrain",
+              "flora",
+              "fauna",
+              "built systems",
+              "threats",
+              "action in the field",
+              "environmental strategy"
+            ],
+            "core_question": "How do I act effectively in the field?",
+            "canonical_phrase": "Aries / Mars External = the field of action."
+          },
+          "scorpio": {
+            "directionality": "inward",
+            "derives_from": "canonical_expression.binary_12bit_lsb",
+            "system_name": "Inner Strategy System",
+            "domain": [
+              "inner strategy",
+              "drives",
+              "habits",
+              "desire",
+              "shadow",
+              "philosophy of action",
+              "self-command"
+            ],
+            "core_question": "What internal forces shape my actions and patterns?",
+            "canonical_phrase": "Scorpio / Mars Internal = the war room of the self."
+          }
+        },
+        "expressionVariants": {
+          "Melodic_Minor-2733": {
+            "binary_12bit": "101101010101",
+            "forte_number": "7-34"
+          }
+        },
+        "semanticCompression": {
+          "coordinateSymbol": "C_S",
+          "status": "framework_order_plus_registry_coordinate_convention",
+          "orderedPosition": 3,
+          "orderedProcess": "activation",
+          "normalizedOrdinal": 0.3333333333333333,
+          "metric": false,
+          "scale": "declared Sun-to-Saturn process order",
+          "physicalClaim": false
+        }
+      },
+      "domainReferences": {
+        "landforms": [
+          "volcanoes",
+          "canyons",
+          "cliffs",
+          "gorges",
+          "deserts",
+          "cracked earth",
+          "impact craters"
+        ],
+        "architecture": [
+          "fortresses",
+          "towers",
+          "forges",
+          "arenas",
+          "gates",
+          "military camps",
+          "smithies"
+        ],
+        "botany": [
+          "nettles",
+          "thorns",
+          "cacti",
+          "chili peppers",
+          "ginger",
+          "garlic",
+          "hawthorn",
+          "ironwood"
+        ],
+        "material": [
+          "iron",
+          "steel",
+          "bloodstone",
+          "carnelian",
+          "garnet",
+          "flint",
+          "obsidian"
+        ],
+        "colorAssociations": [
+          "red",
+          "scarlet",
+          "bright yellow",
+          "orange",
+          "hot pink"
+        ],
+        "symbolicReferences": [
+          "sword",
+          "spear",
+          "shield",
+          "forge",
+          "anvil",
+          "the number 5",
+          "pentagram",
+          "fire"
+        ],
+        "rawReferenceLibrary": {
+          "landforms": [
+            "volcanoes",
+            "canyons",
+            "cliffs",
+            "gorges",
+            "deserts",
+            "cracked earth",
+            "impact craters"
+          ],
+          "architecture": [
+            "fortresses",
+            "towers",
+            "forges",
+            "arenas",
+            "gates",
+            "military camps",
+            "smithies"
+          ],
+          "botany": [
+            "nettles",
+            "thorns",
+            "cacti",
+            "chili peppers",
+            "ginger",
+            "garlic",
+            "hawthorn",
+            "ironwood"
+          ],
+          "material": [
+            "iron",
+            "steel",
+            "bloodstone",
+            "carnelian",
+            "garnet",
+            "flint",
+            "obsidian"
+          ],
+          "color_associations": [
+            "red",
+            "scarlet",
+            "bright yellow",
+            "orange",
+            "hot pink"
+          ],
+          "symbolic_references": [
+            "sword",
+            "spear",
+            "shield",
+            "forge",
+            "anvil",
+            "the number 5",
+            "pentagram",
+            "fire"
+          ]
+        }
+      },
+      "featureAssertions": [
+        {
+          "featureId": "physical.wavelength_nm",
+          "value": 580,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "physical.frequency_hz",
+          "value": 516883548275862,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.photon_energy_j",
+          "value": 3.424906650256773e-19,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.photon_energy_ev",
+          "value": 2.1376585936758663,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.C_P",
+          "value": 0.2758620689655172,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "harmonic.canonical_scale_state",
+          "value": 1717,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.pitch_mask",
+          "value": "b101011010110",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.forte_family",
+          "value": "7-35",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.anchor_tier",
+          "value": "A0",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.C_H",
+          "value": null,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.thermodynamic_function",
+          "value": "activation",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.optical_function",
+          "value": "ignition",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.directionality",
+          "value": "outward_projective",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.archetypal_role",
+          "value": "energy modulation; how force enters the pattern",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.element",
+          "value": "Fire",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.zodiacal_systems",
+          "value": {
+            "aries": {
+              "directionality": "external",
+              "derives_from": "canonical_expression.binary_12bit",
+              "system_name": "Tactical Environmental Mastery",
+              "domain": [
+                "terrain",
+                "flora",
+                "fauna",
+                "built systems",
+                "threats",
+                "action in the field",
+                "environmental strategy"
+              ],
+              "core_question": "How do I act effectively in the field?",
+              "canonical_phrase": "Aries / Mars External = the field of action."
+            },
+            "scorpio": {
+              "directionality": "inward",
+              "derives_from": "canonical_expression.binary_12bit_lsb",
+              "system_name": "Inner Strategy System",
+              "domain": [
+                "inner strategy",
+                "drives",
+                "habits",
+                "desire",
+                "shadow",
+                "philosophy of action",
+                "self-command"
+              ],
+              "core_question": "What internal forces shape my actions and patterns?",
+              "canonical_phrase": "Scorpio / Mars Internal = the war room of the self."
+            }
+          },
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.C_S",
+          "value": {
+            "orderedPosition": 3,
+            "orderedProcess": "activation",
+            "normalizedOrdinal": 0.3333333333333333,
+            "metric": false,
+            "status": "framework_order_plus_registry_coordinate_convention"
+          },
+          "provenance": {
+            "authority": "framework_order_plus_registry_coordinate_convention",
+            "sources": [
+              {
+                "artifact": "source/governors.yaml",
+                "pointer": "governors.mars.canonical_expression.thermodynamic_function",
+                "authority": "framework_declared"
+              },
+              {
+                "artifact": "scripts/build-registry.mjs",
+                "authority": "registry_coordinate_convention",
+                "description": "The ordered position is exposed as a non-metric normalized ordinal."
+              }
+            ]
+          }
+        },
+        {
+          "featureId": "domain.landforms",
+          "value": [
+            "volcanoes",
+            "canyons",
+            "cliffs",
+            "gorges",
+            "deserts",
+            "cracked earth",
+            "impact craters"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.architecture",
+          "value": [
+            "fortresses",
+            "towers",
+            "forges",
+            "arenas",
+            "gates",
+            "military camps",
+            "smithies"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.botany",
+          "value": [
+            "nettles",
+            "thorns",
+            "cacti",
+            "chili peppers",
+            "ginger",
+            "garlic",
+            "hawthorn",
+            "ironwood"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.material",
+          "value": [
+            "iron",
+            "steel",
+            "bloodstone",
+            "carnelian",
+            "garnet",
+            "flint",
+            "obsidian"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.color_associations",
+          "value": [
+            "red",
+            "scarlet",
+            "bright yellow",
+            "orange",
+            "hot pink"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.symbolic_references",
+          "value": [
+            "sword",
+            "spear",
+            "shield",
+            "forge",
+            "anvil",
+            "the number 5",
+            "pentagram",
+            "fire"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "framework_declared_and_topology_audited",
+        "sources": [
+          {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mars",
+            "authority": "framework_declared"
+          },
+          {
+            "artifact": "source/universal-network-data.json",
+            "pointer": "governorRows[Office=Mars]",
+            "authority": "topology_audit"
+          }
+        ]
+      },
+      "intrinsicFingerprint": "800f18256f29b81ccceeac53e39f9c49c5686c170876d0941d67897361783adb"
+    },
+    {
+      "profileId": "profile:mercury:v0.1.1",
+      "profileVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "office": "Mercury",
+      "officeIndex": 3,
+      "symbol": "☿",
+      "type": "bipolar_engine_governor",
+      "canonicalIdentity": {
+        "stateId": 1709,
+        "stateName": "Dorian",
+        "mode": "dorian",
+        "forteFamily": "7-35",
+        "pitchMask": "b101101010110",
+        "pitchSet": "{0,2,3,5,7,9,10}",
+        "anchorTier": "A0",
+        "chirality": "achiral",
+        "assignmentStatus": "canonical"
+      },
+      "physical": {
+        "photonicId": "photonic:mercury:v0.1.1",
+        "wavelengthNm": 530,
+        "color": "#44BB44",
+        "physicalExtension": {
+          "vector_b_physics_ref": "schemas/vector_b_physics.yaml#vector_b_physics.governors.mercury",
+          "physical_phenomena_ref": "schemas/physical_phenomena.yaml#physical_phenomena.governor_registry.mercury",
+          "color_palette_ref": "schemas/color_palettes.yaml#spectral_vector_b.positions",
+          "detail_policy": "Use extension schemas for Vector B physics and natural phenomena."
+        },
+        "interpretationPolicy": "office_anchor_not_musical_causation"
+      },
+      "harmonic": {
+        "stateGovernor": "Mercury",
+        "canonicalMode": "dorian",
+        "canonicalStateId": 1709,
+        "binary12Bit": "101101010110",
+        "constructiveEncoding": {
+          "binary": "101101010110",
+          "decimal": 2902,
+          "hex": "0xB56"
+        },
+        "observationalEncoding": {
+          "binary": "011010101101",
+          "decimal": 1709,
+          "hex": "0x6AD"
+        },
+        "bitWeight": 7,
+        "compressionDerived": true,
+        "harmonicCompression": {
+          "coordinateSymbol": "C_H",
+          "status": "unresolved",
+          "value": null,
+          "reason": "No aggregate harmonic-compression formula has yet been admitted to canon."
+        }
+      },
+      "semantic": {
+        "thermodynamicFunction": "transduction",
+        "opticalFunction": "conversion_interface",
+        "directionality": "hinge_mediator",
+        "archetypalRole": "responsiveness and integration; how the system adapts",
+        "element": "Quintessence",
+        "mythologyLayer": {
+          "narratives": [
+            "mediation",
+            "translation",
+            "responsiveness",
+            "integration",
+            "state transition",
+            "communication"
+          ],
+          "alchemical_phase": {
+            "name": "Azoth",
+            "description": "Universal solvent, dissolution and recombination",
+            "substance": "Mercury (quicksilver)",
+            "symbol": "Caduceus, serpent",
+            "function": "The universal solvent that mediates all transformation. Azoth is both agent and product."
+          },
+          "incarnational_layer": [
+            "mind",
+            "adaptation",
+            "metabolism",
+            "communication",
+            "language",
+            "internal integration",
+            "nervous-system-like coordination"
+          ],
+          "canonical_phrases": [
+            "Mercury = the hinge of transformation.",
+            "Mercury / Quintessence = responsiveness and integration."
+          ]
+        },
+        "zodiacalSystems": {
+          "gemini": {
+            "sex": "male",
+            "directionality": "outward_responsiveness",
+            "derives_from": "canonical_expression.binary_12bit",
+            "system_name": "Operational Interface Mastery",
+            "domain": [
+              "tools",
+              "workflows",
+              "interfaces",
+              "communication channels",
+              "APIs",
+              "dashboards",
+              "practical mastery of the fivefold engine"
+            ],
+            "core_question": "How do I operate, connect, translate, and coordinate the system?",
+            "canonical_phrase": "Gemini / Mercury External = the interface layer."
+          },
+          "virgo": {
+            "sex": "female",
+            "directionality": "internal_integration",
+            "derives_from": "canonical_expression.binary_12bit_lsb",
+            "system_name": "Diagnostic Story-Ledger",
+            "domain": [
+              "outcome interpretation",
+              "refinement",
+              "diagnosis",
+              "analytics",
+              "retrospectives",
+              "debugging",
+              "what events produced and what they mean"
+            ],
+            "core_question": "What did the system produce, and what does it mean?",
+            "canonical_phrase": "Virgo / Mercury Internal = the outcome interpretation system."
+          }
+        },
+        "expressionVariants": {
+          "Mixolydian_flat6-1461": {
+            "binary_12bit": "101011011010",
+            "forte_number": "7-34"
+          }
+        },
+        "semanticCompression": {
+          "coordinateSymbol": "C_S",
+          "status": "framework_order_plus_registry_coordinate_convention",
+          "orderedPosition": 4,
+          "orderedProcess": "transduction",
+          "normalizedOrdinal": 0.5,
+          "metric": false,
+          "scale": "declared Sun-to-Saturn process order",
+          "physicalClaim": false
+        }
+      },
+      "domainReferences": {
+        "landforms": [
+          "river deltas",
+          "estuaries",
+          "crossroads",
+          "winding paths",
+          "trade routes"
+        ],
+        "architecture": [
+          "bridges",
+          "arches",
+          "doorways",
+          "market squares",
+          "message towers",
+          "libraries",
+          "scriptoria"
+        ],
+        "botany": [
+          "ferns",
+          "ivy",
+          "vines",
+          "lavender",
+          "mint",
+          "vervain",
+          "lichen",
+          "moss"
+        ],
+        "material": [
+          "mercury",
+          "tin",
+          "bronze",
+          "jade",
+          "aventurine",
+          "emerald"
+        ],
+        "colorAssociations": [
+          "green",
+          "yellow-green",
+          "bright emerald",
+          "bronze"
+        ],
+        "symbolicReferences": [
+          "caduceus",
+          "winged sandals",
+          "the number 3",
+          "hexagram",
+          "serpent",
+          "messenger's staff"
+        ],
+        "rawReferenceLibrary": {
+          "landforms": [
+            "river deltas",
+            "estuaries",
+            "crossroads",
+            "winding paths",
+            "trade routes"
+          ],
+          "architecture": [
+            "bridges",
+            "arches",
+            "doorways",
+            "market squares",
+            "message towers",
+            "libraries",
+            "scriptoria"
+          ],
+          "botany": [
+            "ferns",
+            "ivy",
+            "vines",
+            "lavender",
+            "mint",
+            "vervain",
+            "lichen",
+            "moss"
+          ],
+          "material": [
+            "mercury",
+            "tin",
+            "bronze",
+            "jade",
+            "aventurine",
+            "emerald"
+          ],
+          "color_associations": [
+            "green",
+            "yellow-green",
+            "bright emerald",
+            "bronze"
+          ],
+          "symbolic_references": [
+            "caduceus",
+            "winged sandals",
+            "the number 3",
+            "hexagram",
+            "serpent",
+            "messenger's staff"
+          ]
+        }
+      },
+      "featureAssertions": [
+        {
+          "featureId": "physical.wavelength_nm",
+          "value": 530,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "physical.frequency_hz",
+          "value": 565646147169811.2,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.photon_energy_j",
+          "value": 3.7480110512243934e-19,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.photon_energy_ev",
+          "value": 2.3393244987396273,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.C_P",
+          "value": 0.4276729559748428,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "harmonic.canonical_scale_state",
+          "value": 1709,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.pitch_mask",
+          "value": "b101101010110",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.forte_family",
+          "value": "7-35",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.anchor_tier",
+          "value": "A0",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.C_H",
+          "value": null,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.thermodynamic_function",
+          "value": "transduction",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.optical_function",
+          "value": "conversion_interface",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.directionality",
+          "value": "hinge_mediator",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.archetypal_role",
+          "value": "responsiveness and integration; how the system adapts",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.element",
+          "value": "Quintessence",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.zodiacal_systems",
+          "value": {
+            "gemini": {
+              "sex": "male",
+              "directionality": "outward_responsiveness",
+              "derives_from": "canonical_expression.binary_12bit",
+              "system_name": "Operational Interface Mastery",
+              "domain": [
+                "tools",
+                "workflows",
+                "interfaces",
+                "communication channels",
+                "APIs",
+                "dashboards",
+                "practical mastery of the fivefold engine"
+              ],
+              "core_question": "How do I operate, connect, translate, and coordinate the system?",
+              "canonical_phrase": "Gemini / Mercury External = the interface layer."
+            },
+            "virgo": {
+              "sex": "female",
+              "directionality": "internal_integration",
+              "derives_from": "canonical_expression.binary_12bit_lsb",
+              "system_name": "Diagnostic Story-Ledger",
+              "domain": [
+                "outcome interpretation",
+                "refinement",
+                "diagnosis",
+                "analytics",
+                "retrospectives",
+                "debugging",
+                "what events produced and what they mean"
+              ],
+              "core_question": "What did the system produce, and what does it mean?",
+              "canonical_phrase": "Virgo / Mercury Internal = the outcome interpretation system."
+            }
+          },
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.C_S",
+          "value": {
+            "orderedPosition": 4,
+            "orderedProcess": "transduction",
+            "normalizedOrdinal": 0.5,
+            "metric": false,
+            "status": "framework_order_plus_registry_coordinate_convention"
+          },
+          "provenance": {
+            "authority": "framework_order_plus_registry_coordinate_convention",
+            "sources": [
+              {
+                "artifact": "source/governors.yaml",
+                "pointer": "governors.mercury.canonical_expression.thermodynamic_function",
+                "authority": "framework_declared"
+              },
+              {
+                "artifact": "scripts/build-registry.mjs",
+                "authority": "registry_coordinate_convention",
+                "description": "The ordered position is exposed as a non-metric normalized ordinal."
+              }
+            ]
+          }
+        },
+        {
+          "featureId": "domain.landforms",
+          "value": [
+            "river deltas",
+            "estuaries",
+            "crossroads",
+            "winding paths",
+            "trade routes"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.architecture",
+          "value": [
+            "bridges",
+            "arches",
+            "doorways",
+            "market squares",
+            "message towers",
+            "libraries",
+            "scriptoria"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.botany",
+          "value": [
+            "ferns",
+            "ivy",
+            "vines",
+            "lavender",
+            "mint",
+            "vervain",
+            "lichen",
+            "moss"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.material",
+          "value": [
+            "mercury",
+            "tin",
+            "bronze",
+            "jade",
+            "aventurine",
+            "emerald"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.color_associations",
+          "value": [
+            "green",
+            "yellow-green",
+            "bright emerald",
+            "bronze"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.symbolic_references",
+          "value": [
+            "caduceus",
+            "winged sandals",
+            "the number 3",
+            "hexagram",
+            "serpent",
+            "messenger's staff"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "framework_declared_and_topology_audited",
+        "sources": [
+          {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.mercury",
+            "authority": "framework_declared"
+          },
+          {
+            "artifact": "source/universal-network-data.json",
+            "pointer": "governorRows[Office=Mercury]",
+            "authority": "topology_audit"
+          }
+        ]
+      },
+      "intrinsicFingerprint": "642f38a44ea31f7583db0fe62b76252da4758209ad0038fdbf0d9d54afe43494"
+    },
+    {
+      "profileId": "profile:jupiter:v0.1.1",
+      "profileVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "office": "Jupiter",
+      "officeIndex": 4,
+      "symbol": "♃",
+      "type": "bipolar_engine_governor",
+      "canonicalIdentity": {
+        "stateId": 1453,
+        "stateName": "Aeolian",
+        "mode": "aeolian",
+        "forteFamily": "7-35",
+        "pitchMask": "b101101011010",
+        "pitchSet": "{0,2,3,5,7,8,10}",
+        "anchorTier": "A0",
+        "chirality": "achiral",
+        "assignmentStatus": "canonical"
+      },
+      "physical": {
+        "photonicId": "photonic:jupiter:v0.1.1",
+        "wavelengthNm": 470,
+        "color": "#4488FF",
+        "physicalExtension": {
+          "vector_b_physics_ref": "schemas/vector_b_physics.yaml#vector_b_physics.governors.jupiter",
+          "physical_phenomena_ref": "schemas/physical_phenomena.yaml#physical_phenomena.governor_registry.jupiter",
+          "color_palette_ref": "schemas/color_palettes.yaml#spectral_vector_b.positions",
+          "detail_policy": "Use extension schemas for Vector B physics and natural phenomena."
+        },
+        "interpretationPolicy": "office_anchor_not_musical_causation"
+      },
+      "harmonic": {
+        "stateGovernor": "Jupiter",
+        "canonicalMode": "aeolian",
+        "canonicalStateId": 1453,
+        "binary12Bit": "101101011010",
+        "constructiveEncoding": {
+          "binary": "101101011010",
+          "decimal": 2906,
+          "hex": "0xB5A"
+        },
+        "observationalEncoding": {
+          "binary": "010110101101",
+          "decimal": 1453,
+          "hex": "0x5AD"
+        },
+        "bitWeight": 7,
+        "compressionDerived": true,
+        "harmonicCompression": {
+          "coordinateSymbol": "C_H",
+          "status": "unresolved",
+          "value": null,
+          "reason": "No aggregate harmonic-compression formula has yet been admitted to canon."
+        }
+      },
+      "semantic": {
+        "thermodynamicFunction": "distribution",
+        "opticalFunction": "scattering",
+        "directionality": "outward_projective",
+        "archetypalRole": "direction; where the flow is going",
+        "element": "Air",
+        "mythologyLayer": {
+          "narratives": [
+            "expansion",
+            "air",
+            "horizon",
+            "direction",
+            "possibility",
+            "future branching",
+            "growth"
+          ],
+          "alchemical_phase": {
+            "name": "Philosophical tree",
+            "description": "Proliferation of possibility, branching of existence",
+            "substance": "Tin",
+            "symbol": "Tree, branching vine",
+            "function": "The wind that carries form into destiny. The philosophical tree branches infinitely, representing infinite possibilities."
+          },
+          "incarnational_layer": [
+            "journey",
+            "vision",
+            "legacy",
+            "optionality",
+            "winds of change",
+            "path",
+            "destiny"
+          ],
+          "canonical_phrases": [
+            "Jupiter = the wind that carries form into destiny.",
+            "Jupiter governs potential as horizon.",
+            "Money = stored potential.",
+            "Relationships = living potential."
+          ]
+        },
+        "zodiacalSystems": {
+          "sagittarius": {
+            "directionality": "external",
+            "derives_from": "canonical_expression.binary_12bit",
+            "system_name": "Route, Mobility, and Expansion Systems",
+            "domain": [
+              "route",
+              "movement",
+              "travel",
+              "rail",
+              "roads",
+              "logistics",
+              "entropy-like path-space"
+            ],
+            "core_question": "What pathways allow movement, expansion, and horizon?",
+            "canonical_phrase": "Sagittarius / Jupiter External = the horizon system."
+          },
+          "pisces": {
+            "directionality": "inward",
+            "derives_from": "canonical_expression.binary_12bit_lsb",
+            "system_name": "Potential Stewardship System",
+            "domain": [
+              "stored potential",
+              "living potential",
+              "money",
+              "relationships",
+              "future options",
+              "recovery",
+              "possibility"
+            ],
+            "core_question": "What possibilities can be preserved, created, or lost?",
+            "canonical_phrase": "Pisces / Jupiter Internal = the reservoir of possibility.",
+            "stable_rules": {
+              "money": "stored potential",
+              "relationships": "living potential",
+              "stewardship": "managing both toward survivable futures"
+            }
+          }
+        },
+        "expressionVariants": {
+          "Dorian_flat2-1707": {
+            "binary_12bit": "110101010110",
+            "forte_number": "7-34"
+          }
+        },
+        "semanticCompression": {
+          "coordinateSymbol": "C_S",
+          "status": "framework_order_plus_registry_coordinate_convention",
+          "orderedPosition": 5,
+          "orderedProcess": "distribution",
+          "normalizedOrdinal": 0.6666666666666666,
+          "metric": false,
+          "scale": "declared Sun-to-Saturn process order",
+          "physicalClaim": false
+        }
+      },
+      "domainReferences": {
+        "landforms": [
+          "plains",
+          "steppes",
+          "open skies",
+          "high plateaus",
+          "archipelagos",
+          "trade winds"
+        ],
+        "architecture": [
+          "temples on high places",
+          "palaces",
+          "courtrooms",
+          "columns",
+          "amphitheaters",
+          "ships"
+        ],
+        "botany": [
+          "oak trees",
+          "fig trees",
+          "dandelions",
+          "clover",
+          "sage",
+          "anise",
+          "fennel",
+          "thyme"
+        ],
+        "material": [
+          "tin",
+          "amethyst",
+          "sapphire",
+          "turquoise",
+          "lapis lazuli",
+          "topaz"
+        ],
+        "colorAssociations": [
+          "blue",
+          "royal blue",
+          "azure",
+          "deep violet-blue"
+        ],
+        "symbolicReferences": [
+          "thunderbolt",
+          "scepter",
+          "eagle",
+          "the number 6",
+          "hexagram",
+          "wheel",
+          "crown"
+        ],
+        "rawReferenceLibrary": {
+          "landforms": [
+            "plains",
+            "steppes",
+            "open skies",
+            "high plateaus",
+            "archipelagos",
+            "trade winds"
+          ],
+          "architecture": [
+            "temples on high places",
+            "palaces",
+            "courtrooms",
+            "columns",
+            "amphitheaters",
+            "ships"
+          ],
+          "botany": [
+            "oak trees",
+            "fig trees",
+            "dandelions",
+            "clover",
+            "sage",
+            "anise",
+            "fennel",
+            "thyme"
+          ],
+          "material": [
+            "tin",
+            "amethyst",
+            "sapphire",
+            "turquoise",
+            "lapis lazuli",
+            "topaz"
+          ],
+          "color_associations": [
+            "blue",
+            "royal blue",
+            "azure",
+            "deep violet-blue"
+          ],
+          "symbolic_references": [
+            "thunderbolt",
+            "scepter",
+            "eagle",
+            "the number 6",
+            "hexagram",
+            "wheel",
+            "crown"
+          ]
+        }
+      },
+      "featureAssertions": [
+        {
+          "featureId": "physical.wavelength_nm",
+          "value": 470,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "physical.frequency_hz",
+          "value": 637856293617021.2,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.photon_energy_j",
+          "value": 4.22648054712538e-19,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.photon_energy_ev",
+          "value": 2.637961668791495,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.C_P",
+          "value": 0.6524822695035462,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "harmonic.canonical_scale_state",
+          "value": 1453,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.pitch_mask",
+          "value": "b101101011010",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.forte_family",
+          "value": "7-35",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.anchor_tier",
+          "value": "A0",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.C_H",
+          "value": null,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.thermodynamic_function",
+          "value": "distribution",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.optical_function",
+          "value": "scattering",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.directionality",
+          "value": "outward_projective",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.archetypal_role",
+          "value": "direction; where the flow is going",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.element",
+          "value": "Air",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.zodiacal_systems",
+          "value": {
+            "sagittarius": {
+              "directionality": "external",
+              "derives_from": "canonical_expression.binary_12bit",
+              "system_name": "Route, Mobility, and Expansion Systems",
+              "domain": [
+                "route",
+                "movement",
+                "travel",
+                "rail",
+                "roads",
+                "logistics",
+                "entropy-like path-space"
+              ],
+              "core_question": "What pathways allow movement, expansion, and horizon?",
+              "canonical_phrase": "Sagittarius / Jupiter External = the horizon system."
+            },
+            "pisces": {
+              "directionality": "inward",
+              "derives_from": "canonical_expression.binary_12bit_lsb",
+              "system_name": "Potential Stewardship System",
+              "domain": [
+                "stored potential",
+                "living potential",
+                "money",
+                "relationships",
+                "future options",
+                "recovery",
+                "possibility"
+              ],
+              "core_question": "What possibilities can be preserved, created, or lost?",
+              "canonical_phrase": "Pisces / Jupiter Internal = the reservoir of possibility.",
+              "stable_rules": {
+                "money": "stored potential",
+                "relationships": "living potential",
+                "stewardship": "managing both toward survivable futures"
+              }
+            }
+          },
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.C_S",
+          "value": {
+            "orderedPosition": 5,
+            "orderedProcess": "distribution",
+            "normalizedOrdinal": 0.6666666666666666,
+            "metric": false,
+            "status": "framework_order_plus_registry_coordinate_convention"
+          },
+          "provenance": {
+            "authority": "framework_order_plus_registry_coordinate_convention",
+            "sources": [
+              {
+                "artifact": "source/governors.yaml",
+                "pointer": "governors.jupiter.canonical_expression.thermodynamic_function",
+                "authority": "framework_declared"
+              },
+              {
+                "artifact": "scripts/build-registry.mjs",
+                "authority": "registry_coordinate_convention",
+                "description": "The ordered position is exposed as a non-metric normalized ordinal."
+              }
+            ]
+          }
+        },
+        {
+          "featureId": "domain.landforms",
+          "value": [
+            "plains",
+            "steppes",
+            "open skies",
+            "high plateaus",
+            "archipelagos",
+            "trade winds"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.architecture",
+          "value": [
+            "temples on high places",
+            "palaces",
+            "courtrooms",
+            "columns",
+            "amphitheaters",
+            "ships"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.botany",
+          "value": [
+            "oak trees",
+            "fig trees",
+            "dandelions",
+            "clover",
+            "sage",
+            "anise",
+            "fennel",
+            "thyme"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.material",
+          "value": [
+            "tin",
+            "amethyst",
+            "sapphire",
+            "turquoise",
+            "lapis lazuli",
+            "topaz"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.color_associations",
+          "value": [
+            "blue",
+            "royal blue",
+            "azure",
+            "deep violet-blue"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.symbolic_references",
+          "value": [
+            "thunderbolt",
+            "scepter",
+            "eagle",
+            "the number 6",
+            "hexagram",
+            "wheel",
+            "crown"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "framework_declared_and_topology_audited",
+        "sources": [
+          {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.jupiter",
+            "authority": "framework_declared"
+          },
+          {
+            "artifact": "source/universal-network-data.json",
+            "pointer": "governorRows[Office=Jupiter]",
+            "authority": "topology_audit"
+          }
+        ]
+      },
+      "intrinsicFingerprint": "49ba0b38e37ecda33ce87946a0d4a4ab8e955dbf7c9b5f98cf4604e905223e12"
+    },
+    {
+      "profileId": "profile:venus:v0.1.1",
+      "profileVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "office": "Venus",
+      "officeIndex": 5,
+      "symbol": "♀",
+      "type": "bipolar_engine_governor",
+      "canonicalIdentity": {
+        "stateId": 1451,
+        "stateName": "Phrygian",
+        "mode": "phrygian",
+        "forteFamily": "7-35",
+        "pitchMask": "b110101011010",
+        "pitchSet": "{0,1,3,5,7,8,10}",
+        "anchorTier": "A0",
+        "chirality": "achiral",
+        "assignmentStatus": "canonical"
+      },
+      "physical": {
+        "photonicId": "photonic:venus:v0.1.1",
+        "wavelengthNm": 430,
+        "color": "#8B008B",
+        "physicalExtension": {
+          "vector_b_physics_ref": "schemas/vector_b_physics.yaml#vector_b_physics.governors.venus",
+          "physical_phenomena_ref": "schemas/physical_phenomena.yaml#physical_phenomena.governor_registry.venus",
+          "color_palette_ref": "schemas/color_palettes.yaml#spectral_vector_b.positions",
+          "detail_policy": "Use extension schemas for Vector B physics and natural phenomena."
+        },
+        "interpretationPolicy": "office_anchor_not_musical_causation"
+      },
+      "harmonic": {
+        "stateGovernor": "Venus",
+        "canonicalMode": "phrygian",
+        "canonicalStateId": 1451,
+        "binary12Bit": "110101011010",
+        "constructiveEncoding": {
+          "binary": "110101011010",
+          "decimal": 3418,
+          "hex": "0xD5A"
+        },
+        "observationalEncoding": {
+          "binary": "010110101011",
+          "decimal": 1451,
+          "hex": "0x5AB"
+        },
+        "bitWeight": 7,
+        "compressionDerived": true,
+        "harmonicCompression": {
+          "coordinateSymbol": "C_H",
+          "status": "unresolved",
+          "value": null,
+          "reason": "No aggregate harmonic-compression formula has yet been admitted to canon."
+        }
+      },
+      "semantic": {
+        "thermodynamicFunction": "coupling",
+        "opticalFunction": "selective_absorption",
+        "directionality": "inward_centripetal",
+        "archetypalRole": "taste, cohesion, aesthetic sensitivity; what feels fitting",
+        "element": "Water",
+        "mythologyLayer": {
+          "narratives": [
+            "cohesion",
+            "attraction",
+            "value",
+            "beauty",
+            "bonding",
+            "taste",
+            "dignity"
+          ],
+          "alchemical_phase": {
+            "name": "Conjunctio",
+            "description": "Sacred marriage, union of opposites",
+            "substance": "Copper and silver",
+            "symbol": "Mirror, scales",
+            "function": "The union that draws matter into coherent relation. The green lion that dissolves and the pearl that forms are both Venus operations."
+          },
+          "incarnational_layer": [
+            "union",
+            "conception",
+            "dignity",
+            "generative relation",
+            "bonding",
+            "sacred attraction"
+          ],
+          "canonical_phrases": [
+            "Venus = the embrace that makes incarnation possible.",
+            "Venus governs value: Libra externalizes value as exchange; Taurus internalizes value as embodied worth.",
+            "Venus governs the selective incorporation of value into coherent relationship.",
+            "Libra forms the bond across the boundary; Taurus sustains the bond within the boundary.",
+            "Jupiter distributes possibilities; Venus selects what can enter meaningful relation; Saturn gives the selected relation durable form."
+          ]
+        },
+        "zodiacalSystems": {
+          "libra": {
+            "sex": "male",
+            "directionality": "external_exchange",
+            "derives_from": "canonical_expression.binary_12bit",
+            "system_name": "Reciprocal Coupling and Relational Exchange System",
+            "aliases": [
+              "Social Exchange System"
+            ],
+            "boundary_relation": "coupling_across_the_boundary",
+            "dominant_function": "Establish a viable relational interface between distinct beings or systems and govern the terms under which value passes.",
+            "domain": [
+              "compatibility",
+              "consent",
+              "reciprocity",
+              "negotiation",
+              "relational interfaces",
+              "diplomacy",
+              "cooperation",
+              "reputation",
+              "social signaling",
+              "alliance formation",
+              "mutual recognition",
+              "exchange-value",
+              "proportion",
+              "fairness",
+              "partnership terms",
+              "conflict repair",
+              "role compatibility",
+              "relational boundaries",
+              "aesthetic coordination",
+              "trust calibration"
+            ],
+            "core_question": "How can separate beings or systems enter a mutually fitting relation, and under what terms can value pass between them?",
+            "canonical_phrases": [
+              "Libra / Venus External = coupling across the boundary.",
+              "Libra governs the interface through which value becomes relational.",
+              "Libra forms the bond across the boundary."
+            ]
+          },
+          "taurus": {
+            "sex": "female",
+            "directionality": "internal_cohesion",
+            "derives_from": "canonical_expression.binary_12bit_lsb",
+            "system_name": "Embodied Cohesion and Value Incorporation System",
+            "aliases": [
+              "Embodied Value System"
+            ],
+            "boundary_relation": "cohesion_within_the_boundary",
+            "dominant_function": "Receive, incorporate, nourish, retain, and maintain value as part of embodied life.",
+            "domain": [
+              "embodied worth",
+              "nourishment",
+              "appetite",
+              "sensory discernment",
+              "rest",
+              "recovery",
+              "touch",
+              "comfort",
+              "body care",
+              "home atmosphere",
+              "material stewardship",
+              "possessions",
+              "resource retention",
+              "maintenance",
+              "stable pleasure",
+              "environmental coherence",
+              "what is worth keeping",
+              "bodily tolerance",
+              "durable well-being"
+            ],
+            "core_question": "What can be received, incorporated, nourished, and retained so that the embodied system remains valuable, coherent, and alive?",
+            "canonical_phrases": [
+              "Taurus / Venus Internal = cohesion within the boundary.",
+              "Taurus governs the incorporation of value into embodied life.",
+              "Taurus sustains the bond within the boundary."
+            ]
+          }
+        },
+        "expressionVariants": {
+          "Half-Diminished-1389": {
+            "binary_12bit": "101101101010",
+            "forte_number": "7-34"
+          }
+        },
+        "semanticCompression": {
+          "coordinateSymbol": "C_S",
+          "status": "framework_order_plus_registry_coordinate_convention",
+          "orderedPosition": 6,
+          "orderedProcess": "coupling",
+          "normalizedOrdinal": 0.8333333333333334,
+          "metric": false,
+          "scale": "declared Sun-to-Saturn process order",
+          "physicalClaim": false
+        }
+      },
+      "domainReferences": {
+        "landforms": [
+          "valleys",
+          "gardens",
+          "groves",
+          "meadows",
+          "gentle hills",
+          "riverbanks"
+        ],
+        "architecture": [
+          "rose gardens",
+          "bowers",
+          "temples of love",
+          "theaters",
+          "concert halls",
+          "bathhouses"
+        ],
+        "botany": [
+          "roses",
+          "myrtle",
+          "violets",
+          "apple blossoms",
+          "cherry blossoms",
+          "lavender",
+          "jasmine",
+          "lilac"
+        ],
+        "material": [
+          "copper",
+          "rose quartz",
+          "coral",
+          "lapis lazuli",
+          "turquoise",
+          "emerald"
+        ],
+        "colorAssociations": [
+          "indigo",
+          "rose pink",
+          "soft green",
+          "turquoise",
+          "deep blue"
+        ],
+        "symbolicReferences": [
+          "ankh",
+          "knot",
+          "infinity symbol",
+          "rose",
+          "dove",
+          "seashell",
+          "mirror",
+          "necklace"
+        ],
+        "rawReferenceLibrary": {
+          "landforms": [
+            "valleys",
+            "gardens",
+            "groves",
+            "meadows",
+            "gentle hills",
+            "riverbanks"
+          ],
+          "architecture": [
+            "rose gardens",
+            "bowers",
+            "temples of love",
+            "theaters",
+            "concert halls",
+            "bathhouses"
+          ],
+          "botany": [
+            "roses",
+            "myrtle",
+            "violets",
+            "apple blossoms",
+            "cherry blossoms",
+            "lavender",
+            "jasmine",
+            "lilac"
+          ],
+          "material": [
+            "copper",
+            "rose quartz",
+            "coral",
+            "lapis lazuli",
+            "turquoise",
+            "emerald"
+          ],
+          "color_associations": [
+            "indigo",
+            "rose pink",
+            "soft green",
+            "turquoise",
+            "deep blue"
+          ],
+          "symbolic_references": [
+            "ankh",
+            "knot",
+            "infinity symbol",
+            "rose",
+            "dove",
+            "seashell",
+            "mirror",
+            "necklace"
+          ]
+        }
+      },
+      "featureAssertions": [
+        {
+          "featureId": "physical.wavelength_nm",
+          "value": 430,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "physical.frequency_hz",
+          "value": 697191762790697.6,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.photon_energy_j",
+          "value": 4.619641528253322e-19,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.photon_energy_ev",
+          "value": 2.8833534519348896,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.C_P",
+          "value": 0.8372093023255813,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "harmonic.canonical_scale_state",
+          "value": 1451,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.pitch_mask",
+          "value": "b110101011010",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.forte_family",
+          "value": "7-35",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.anchor_tier",
+          "value": "A0",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.C_H",
+          "value": null,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.thermodynamic_function",
+          "value": "coupling",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.optical_function",
+          "value": "selective_absorption",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.directionality",
+          "value": "inward_centripetal",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.archetypal_role",
+          "value": "taste, cohesion, aesthetic sensitivity; what feels fitting",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.element",
+          "value": "Water",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.zodiacal_systems",
+          "value": {
+            "libra": {
+              "sex": "male",
+              "directionality": "external_exchange",
+              "derives_from": "canonical_expression.binary_12bit",
+              "system_name": "Reciprocal Coupling and Relational Exchange System",
+              "aliases": [
+                "Social Exchange System"
+              ],
+              "boundary_relation": "coupling_across_the_boundary",
+              "dominant_function": "Establish a viable relational interface between distinct beings or systems and govern the terms under which value passes.",
+              "domain": [
+                "compatibility",
+                "consent",
+                "reciprocity",
+                "negotiation",
+                "relational interfaces",
+                "diplomacy",
+                "cooperation",
+                "reputation",
+                "social signaling",
+                "alliance formation",
+                "mutual recognition",
+                "exchange-value",
+                "proportion",
+                "fairness",
+                "partnership terms",
+                "conflict repair",
+                "role compatibility",
+                "relational boundaries",
+                "aesthetic coordination",
+                "trust calibration"
+              ],
+              "core_question": "How can separate beings or systems enter a mutually fitting relation, and under what terms can value pass between them?",
+              "canonical_phrases": [
+                "Libra / Venus External = coupling across the boundary.",
+                "Libra governs the interface through which value becomes relational.",
+                "Libra forms the bond across the boundary."
+              ]
+            },
+            "taurus": {
+              "sex": "female",
+              "directionality": "internal_cohesion",
+              "derives_from": "canonical_expression.binary_12bit_lsb",
+              "system_name": "Embodied Cohesion and Value Incorporation System",
+              "aliases": [
+                "Embodied Value System"
+              ],
+              "boundary_relation": "cohesion_within_the_boundary",
+              "dominant_function": "Receive, incorporate, nourish, retain, and maintain value as part of embodied life.",
+              "domain": [
+                "embodied worth",
+                "nourishment",
+                "appetite",
+                "sensory discernment",
+                "rest",
+                "recovery",
+                "touch",
+                "comfort",
+                "body care",
+                "home atmosphere",
+                "material stewardship",
+                "possessions",
+                "resource retention",
+                "maintenance",
+                "stable pleasure",
+                "environmental coherence",
+                "what is worth keeping",
+                "bodily tolerance",
+                "durable well-being"
+              ],
+              "core_question": "What can be received, incorporated, nourished, and retained so that the embodied system remains valuable, coherent, and alive?",
+              "canonical_phrases": [
+                "Taurus / Venus Internal = cohesion within the boundary.",
+                "Taurus governs the incorporation of value into embodied life.",
+                "Taurus sustains the bond within the boundary."
+              ]
+            }
+          },
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.C_S",
+          "value": {
+            "orderedPosition": 6,
+            "orderedProcess": "coupling",
+            "normalizedOrdinal": 0.8333333333333334,
+            "metric": false,
+            "status": "framework_order_plus_registry_coordinate_convention"
+          },
+          "provenance": {
+            "authority": "framework_order_plus_registry_coordinate_convention",
+            "sources": [
+              {
+                "artifact": "source/governors.yaml",
+                "pointer": "governors.venus.canonical_expression.thermodynamic_function",
+                "authority": "framework_declared"
+              },
+              {
+                "artifact": "scripts/build-registry.mjs",
+                "authority": "registry_coordinate_convention",
+                "description": "The ordered position is exposed as a non-metric normalized ordinal."
+              }
+            ]
+          }
+        },
+        {
+          "featureId": "domain.landforms",
+          "value": [
+            "valleys",
+            "gardens",
+            "groves",
+            "meadows",
+            "gentle hills",
+            "riverbanks"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.architecture",
+          "value": [
+            "rose gardens",
+            "bowers",
+            "temples of love",
+            "theaters",
+            "concert halls",
+            "bathhouses"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.botany",
+          "value": [
+            "roses",
+            "myrtle",
+            "violets",
+            "apple blossoms",
+            "cherry blossoms",
+            "lavender",
+            "jasmine",
+            "lilac"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.material",
+          "value": [
+            "copper",
+            "rose quartz",
+            "coral",
+            "lapis lazuli",
+            "turquoise",
+            "emerald"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.color_associations",
+          "value": [
+            "indigo",
+            "rose pink",
+            "soft green",
+            "turquoise",
+            "deep blue"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.symbolic_references",
+          "value": [
+            "ankh",
+            "knot",
+            "infinity symbol",
+            "rose",
+            "dove",
+            "seashell",
+            "mirror",
+            "necklace"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "framework_declared_and_topology_audited",
+        "sources": [
+          {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.venus",
+            "authority": "framework_declared"
+          },
+          {
+            "artifact": "source/universal-network-data.json",
+            "pointer": "governorRows[Office=Venus]",
+            "authority": "topology_audit"
+          }
+        ]
+      },
+      "intrinsicFingerprint": "7d1a804dfb0c65674f662027e8dd84a52e14ae9559806ec52a803143ea98d727"
+    },
+    {
+      "profileId": "profile:saturn:v0.1.1",
+      "profileVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "office": "Saturn",
+      "officeIndex": 6,
+      "symbol": "♄",
+      "type": "bipolar_engine_governor",
+      "canonicalIdentity": {
+        "stateId": 1387,
+        "stateName": "Locrian",
+        "mode": "locrian",
+        "forteFamily": "7-35",
+        "pitchMask": "b110101101010",
+        "pitchSet": "{0,1,3,5,6,8,10}",
+        "anchorTier": "A0",
+        "chirality": "achiral",
+        "assignmentStatus": "canonical"
+      },
+      "physical": {
+        "photonicId": "photonic:saturn:v0.1.1",
+        "wavelengthNm": 400,
+        "color": "#9400D3",
+        "physicalExtension": {
+          "vector_b_physics_ref": "schemas/vector_b_physics.yaml#vector_b_physics.governors.saturn",
+          "physical_phenomena_ref": "schemas/physical_phenomena.yaml#physical_phenomena.governor_registry.saturn",
+          "color_palette_ref": "schemas/color_palettes.yaml#spectral_vector_b.positions",
+          "detail_policy": "Use extension schemas for Vector B physics and natural phenomena."
+        },
+        "interpretationPolicy": "office_anchor_not_musical_causation"
+      },
+      "harmonic": {
+        "stateGovernor": "Saturn",
+        "canonicalMode": "locrian",
+        "canonicalStateId": 1387,
+        "binary12Bit": "110101101010",
+        "constructiveEncoding": {
+          "binary": "110101101010",
+          "decimal": 3434,
+          "hex": "0xD6A"
+        },
+        "observationalEncoding": {
+          "binary": "010101101011",
+          "decimal": 1387,
+          "hex": "0x56B"
+        },
+        "bitWeight": 7,
+        "compressionDerived": true,
+        "harmonicCompression": {
+          "coordinateSymbol": "C_H",
+          "status": "unresolved",
+          "value": null,
+          "reason": "No aggregate harmonic-compression formula has yet been admitted to canon."
+        }
+      },
+      "semantic": {
+        "thermodynamicFunction": "fixation",
+        "opticalFunction": "cutoff_crystallization",
+        "directionality": "inward_centripetal",
+        "archetypalRole": "constraint and form; what the flow cannot do",
+        "element": "Earth",
+        "mythologyLayer": {
+          "narratives": [
+            "constraint",
+            "boundary",
+            "form",
+            "law",
+            "hard limit",
+            "time",
+            "consequence"
+          ],
+          "alchemical_phase": {
+            "name": "Nigredo",
+            "description": "Blackening, dissolution, putrefaction into prima materia",
+            "substance": "Lead",
+            "symbol": "Cross",
+            "function": "The dissolution that makes transformation possible. Without nigredo, there is no prima materia."
+          },
+          "incarnational_layer": [
+            "body",
+            "boundary",
+            "mortality",
+            "embodiment",
+            "structure",
+            "physical limit",
+            "bone"
+          ],
+          "canonical_phrases": [
+            "Saturn = the wall that lets the self exist.",
+            "Saturn is the boundary that gives being form."
+          ]
+        },
+        "zodiacalSystems": {
+          "aquarius": {
+            "directionality": "external",
+            "derives_from": "canonical_expression.binary_12bit",
+            "system_name": "Civil Law System",
+            "domain": [
+              "civil law",
+              "institutions",
+              "public order",
+              "social rules",
+              "collective infrastructure",
+              "rights and obligations",
+              "public structure"
+            ],
+            "core_question": "What rules govern collective life?",
+            "canonical_phrase": "Aquarius / Saturn External = the law of society."
+          },
+          "capricorn": {
+            "directionality": "inward",
+            "derives_from": "canonical_expression.binary_12bit_lsb",
+            "system_name": "Body, Environment, and Planetary Constraint System",
+            "domain": [
+              "laws of the body",
+              "immediate environment",
+              "planet",
+              "material constraint",
+              "hard reality",
+              "health",
+              "land and shelter"
+            ],
+            "core_question": "What hard realities define survival here?",
+            "canonical_phrase": "Capricorn / Saturn Internal = the law of embodiment."
+          }
+        },
+        "expressionVariants": {
+          "Lydian_Augmented_2901": {
+            "binary_12bit": "101010101101",
+            "forte_number": "7-34"
+          }
+        },
+        "semanticCompression": {
+          "coordinateSymbol": "C_S",
+          "status": "framework_order_plus_registry_coordinate_convention",
+          "orderedPosition": 7,
+          "orderedProcess": "fixation",
+          "normalizedOrdinal": 1,
+          "metric": false,
+          "scale": "declared Sun-to-Saturn process order",
+          "physicalClaim": false
+        }
+      },
+      "domainReferences": {
+        "landforms": [
+          "mountains",
+          "cliffs",
+          "stone walls",
+          "caves",
+          "underground rivers",
+          "deserts of salt"
+        ],
+        "architecture": [
+          "walls",
+          "gates",
+          "towers",
+          "citadels",
+          "pyramids",
+          "mausoleums",
+          "stone circles",
+          "labyrinths"
+        ],
+        "botany": [
+          "cypress",
+          "yew",
+          "pine",
+          "holly",
+          "ivy",
+          "bindweed",
+          "nightshade",
+          "mushrooms"
+        ],
+        "material": [
+          "lead",
+          "obsidian",
+          "onyx",
+          "jet",
+          "hematite",
+          "basalt",
+          "diamond"
+        ],
+        "colorAssociations": [
+          "violet",
+          "purple",
+          "black",
+          "deep indigo",
+          "charcoal"
+        ],
+        "symbolicReferences": [
+          "scythe",
+          "hourglass",
+          "wall",
+          "chain",
+          "the number 8",
+          "cube",
+          "star tetrahedron"
+        ],
+        "rawReferenceLibrary": {
+          "landforms": [
+            "mountains",
+            "cliffs",
+            "stone walls",
+            "caves",
+            "underground rivers",
+            "deserts of salt"
+          ],
+          "architecture": [
+            "walls",
+            "gates",
+            "towers",
+            "citadels",
+            "pyramids",
+            "mausoleums",
+            "stone circles",
+            "labyrinths"
+          ],
+          "botany": [
+            "cypress",
+            "yew",
+            "pine",
+            "holly",
+            "ivy",
+            "bindweed",
+            "nightshade",
+            "mushrooms"
+          ],
+          "material": [
+            "lead",
+            "obsidian",
+            "onyx",
+            "jet",
+            "hematite",
+            "basalt",
+            "diamond"
+          ],
+          "color_associations": [
+            "violet",
+            "purple",
+            "black",
+            "deep indigo",
+            "charcoal"
+          ],
+          "symbolic_references": [
+            "scythe",
+            "hourglass",
+            "wall",
+            "chain",
+            "the number 8",
+            "cube",
+            "star tetrahedron"
+          ]
+        }
+      },
+      "featureAssertions": [
+        {
+          "featureId": "physical.wavelength_nm",
+          "value": 400,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "physical.frequency_hz",
+          "value": 749481144999999.9,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.photon_energy_j",
+          "value": 4.966114642872321e-19,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.photon_energy_ev",
+          "value": 3.0996049608300065,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "physical.C_P",
+          "value": 1,
+          "provenance": {
+            "artifact": "scripts/build-registry.mjs",
+            "authority": "physically_derived_from_framework_anchor",
+            "formula": "Derived from declared wavelength."
+          }
+        },
+        {
+          "featureId": "harmonic.canonical_scale_state",
+          "value": 1387,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.pitch_mask",
+          "value": "b110101101010",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.forte_family",
+          "value": "7-35",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.anchor_tier",
+          "value": "A0",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "harmonic.C_H",
+          "value": null,
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.thermodynamic_function",
+          "value": "fixation",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.optical_function",
+          "value": "cutoff_crystallization",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.directionality",
+          "value": "inward_centripetal",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.archetypal_role",
+          "value": "constraint and form; what the flow cannot do",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.element",
+          "value": "Earth",
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.zodiacal_systems",
+          "value": {
+            "aquarius": {
+              "directionality": "external",
+              "derives_from": "canonical_expression.binary_12bit",
+              "system_name": "Civil Law System",
+              "domain": [
+                "civil law",
+                "institutions",
+                "public order",
+                "social rules",
+                "collective infrastructure",
+                "rights and obligations",
+                "public structure"
+              ],
+              "core_question": "What rules govern collective life?",
+              "canonical_phrase": "Aquarius / Saturn External = the law of society."
+            },
+            "capricorn": {
+              "directionality": "inward",
+              "derives_from": "canonical_expression.binary_12bit_lsb",
+              "system_name": "Body, Environment, and Planetary Constraint System",
+              "domain": [
+                "laws of the body",
+                "immediate environment",
+                "planet",
+                "material constraint",
+                "hard reality",
+                "health",
+                "land and shelter"
+              ],
+              "core_question": "What hard realities define survival here?",
+              "canonical_phrase": "Capricorn / Saturn Internal = the law of embodiment."
+            }
+          },
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "semantic.C_S",
+          "value": {
+            "orderedPosition": 7,
+            "orderedProcess": "fixation",
+            "normalizedOrdinal": 1,
+            "metric": false,
+            "status": "framework_order_plus_registry_coordinate_convention"
+          },
+          "provenance": {
+            "authority": "framework_order_plus_registry_coordinate_convention",
+            "sources": [
+              {
+                "artifact": "source/governors.yaml",
+                "pointer": "governors.saturn.canonical_expression.thermodynamic_function",
+                "authority": "framework_declared"
+              },
+              {
+                "artifact": "scripts/build-registry.mjs",
+                "authority": "registry_coordinate_convention",
+                "description": "The ordered position is exposed as a non-metric normalized ordinal."
+              }
+            ]
+          }
+        },
+        {
+          "featureId": "domain.landforms",
+          "value": [
+            "mountains",
+            "cliffs",
+            "stone walls",
+            "caves",
+            "underground rivers",
+            "deserts of salt"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.architecture",
+          "value": [
+            "walls",
+            "gates",
+            "towers",
+            "citadels",
+            "pyramids",
+            "mausoleums",
+            "stone circles",
+            "labyrinths"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.botany",
+          "value": [
+            "cypress",
+            "yew",
+            "pine",
+            "holly",
+            "ivy",
+            "bindweed",
+            "nightshade",
+            "mushrooms"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.material",
+          "value": [
+            "lead",
+            "obsidian",
+            "onyx",
+            "jet",
+            "hematite",
+            "basalt",
+            "diamond"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.color_associations",
+          "value": [
+            "violet",
+            "purple",
+            "black",
+            "deep indigo",
+            "charcoal"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        },
+        {
+          "featureId": "domain.symbolic_references",
+          "value": [
+            "scythe",
+            "hourglass",
+            "wall",
+            "chain",
+            "the number 8",
+            "cube",
+            "star tetrahedron"
+          ],
+          "provenance": {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "framework_declared_and_topology_audited",
+        "sources": [
+          {
+            "artifact": "source/governors.yaml",
+            "pointer": "governors.saturn",
+            "authority": "framework_declared"
+          },
+          {
+            "artifact": "source/universal-network-data.json",
+            "pointer": "governorRows[Office=Saturn]",
+            "authority": "topology_audit"
+          }
+        ]
+      },
+      "intrinsicFingerprint": "9c68b7978a6146c23e0bc205695df9169dbeae0ed5bdfadc38b6b51fb8f8f6d3"
+    }
+  ]
+}

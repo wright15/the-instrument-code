@@ -1,0 +1,192 @@
+{
+  "schemaVersion": "1.0.0",
+  "sourceReleaseId": "canonical-profile-registry:0.1.1",
+  "entries": [
+    {
+      "featureId": "physical.wavelength_nm",
+      "disposition": "reusable",
+      "ownerScope": "governor.office",
+      "valueContractId": "quantity:length:nm"
+    },
+    {
+      "featureId": "physical.frequency_hz",
+      "disposition": "reusable",
+      "ownerScope": "governor.office",
+      "valueContractId": "quantity:frequency:Hz"
+    },
+    {
+      "featureId": "physical.photon_energy_j",
+      "disposition": "reusable",
+      "ownerScope": "governor.office",
+      "valueContractId": "quantity:energy:J"
+    },
+    {
+      "featureId": "physical.photon_energy_ev",
+      "disposition": "reusable",
+      "ownerScope": "governor.office",
+      "valueContractId": "quantity:energy:eV"
+    },
+    {
+      "featureId": "physical.C_P",
+      "disposition": "reusable",
+      "ownerScope": "governor.office",
+      "valueContractId": "quantity:dimensionless:normalized_inverse_wavelength"
+    },
+    {
+      "featureId": "harmonic.canonical_scale_state",
+      "disposition": "reusable",
+      "ownerScope": "topology.scaleState",
+      "valueContractId": "harmonic:canonical_a0_state_id"
+    },
+    {
+      "featureId": "harmonic.pitch_mask",
+      "disposition": "reusable",
+      "ownerScope": "topology.scaleState",
+      "valueContractId": "harmonic:rooted_12bit_mask"
+    },
+    {
+      "featureId": "harmonic.forte_family",
+      "disposition": "reusable",
+      "ownerScope": "topology.scaleFamily",
+      "valueContractId": "harmonic:forte_family_id"
+    },
+    {
+      "featureId": "harmonic.anchor_tier",
+      "disposition": "reusable",
+      "ownerScope": "topology.scaleState",
+      "valueContractId": "harmonic:topology_tier"
+    },
+    {
+      "featureId": "harmonic.C_H",
+      "disposition": "unresolved",
+      "ownerScope": "topology.scaleStateOrFamily",
+      "valueContractId": "unresolved:harmonic_measure"
+    },
+    {
+      "featureId": "semantic.thermodynamic_function",
+      "disposition": "reusable",
+      "ownerScope": "profile.governor",
+      "valueContractId": "semantic:process_term"
+    },
+    {
+      "featureId": "semantic.optical_function",
+      "disposition": "reusable",
+      "ownerScope": "profile.governor",
+      "valueContractId": "semantic:optical_term"
+    },
+    {
+      "featureId": "semantic.directionality",
+      "disposition": "reusable",
+      "ownerScope": "profile.governor",
+      "valueContractId": "semantic:directionality_term"
+    },
+    {
+      "featureId": "semantic.archetypal_role",
+      "disposition": "reusable",
+      "ownerScope": "profile.governor",
+      "valueContractId": "semantic:nonempty_text"
+    },
+    {
+      "featureId": "semantic.element",
+      "disposition": "reusable",
+      "ownerScope": "profile.governor",
+      "valueContractId": "semantic:nullable_element_term"
+    },
+    {
+      "featureId": "semantic.zodiacal_systems",
+      "disposition": "extended",
+      "ownerScope": "profile.governor",
+      "valueContractId": "semantic:zodiacal_system_map"
+    },
+    {
+      "featureId": "semantic.C_S",
+      "disposition": "reusable",
+      "ownerScope": "profile.governor",
+      "valueContractId": "semantic:ordered_nonmetric_coordinate"
+    },
+    {
+      "featureId": "domain.landforms",
+      "disposition": "extended",
+      "ownerScope": "profile.governor",
+      "valueContractId": "domain:reference_pool_terms"
+    },
+    {
+      "featureId": "domain.architecture",
+      "disposition": "extended",
+      "ownerScope": "profile.governor",
+      "valueContractId": "domain:reference_pool_terms"
+    },
+    {
+      "featureId": "domain.botany",
+      "disposition": "extended",
+      "ownerScope": "profile.governor",
+      "valueContractId": "domain:reference_pool_terms"
+    },
+    {
+      "featureId": "domain.material",
+      "disposition": "extended",
+      "ownerScope": "profile.governor",
+      "valueContractId": "domain:reference_pool_terms"
+    },
+    {
+      "featureId": "domain.color_associations",
+      "disposition": "extended",
+      "ownerScope": "profile.governor",
+      "valueContractId": "domain:reference_pool_terms"
+    },
+    {
+      "featureId": "domain.symbolic_references",
+      "disposition": "extended",
+      "ownerScope": "profile.governor",
+      "valueContractId": "domain:reference_pool_terms"
+    },
+    {
+      "featureId": "generative.required_features",
+      "disposition": "extended",
+      "ownerScope": "compiler.output",
+      "valueContractId": "generative:required_item_list"
+    },
+    {
+      "featureId": "generative.soft_priors",
+      "disposition": "extended",
+      "ownerScope": "compiler.output",
+      "valueContractId": "generative:soft_prior_item_list"
+    },
+    {
+      "featureId": "generative.reference_pool",
+      "disposition": "extended",
+      "ownerScope": "compiler.output",
+      "valueContractId": "generative:reference_pool_item_list"
+    },
+    {
+      "featureId": "generative.promoted_features",
+      "disposition": "extended",
+      "ownerScope": "compiler.output",
+      "valueContractId": "generative:feature_effect_item_list"
+    },
+    {
+      "featureId": "generative.suppressed_features",
+      "disposition": "extended",
+      "ownerScope": "compiler.output",
+      "valueContractId": "generative:feature_effect_item_list"
+    },
+    {
+      "featureId": "generative.prohibited_features",
+      "disposition": "extended",
+      "ownerScope": "compiler.output",
+      "valueContractId": "generative:prohibition_item_list"
+    },
+    {
+      "featureId": "generative.unresolved_features",
+      "disposition": "extended",
+      "ownerScope": "compiler.output",
+      "valueContractId": "generative:unresolved_item_list"
+    },
+    {
+      "featureId": "generative.creative_affordances",
+      "disposition": "extended",
+      "ownerScope": "compiler.output",
+      "valueContractId": "generative:creative_affordance_item_list"
+    }
+  ]
+}

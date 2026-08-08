@@ -1,0 +1,21 @@
+---
+interface Stat {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  stats: Stat[];
+}
+
+const { stats } = Astro.props;
+---
+
+<div class="flex flex-wrap gap-x-3 gap-y-1">
+  {stats.map((stat) => (
+    <div class="flex items-baseline gap-1 text-[10px]">
+      <span class="text-muted">{stat.label}</span>
+      <span class="font-mono text-frost/90">{stat.value}</span>
+    </div>
+  ))}
+</div>

@@ -1,0 +1,244 @@
+invariant_catalog:
+  catalog_id: invariants:seven-governors:0.2.0
+  version: 0.2.0
+  generated:
+    tool: scripts/build-catalogs.mjs
+    regenerated_at: 2026-07-31T01:53:42.205Z
+    admission: derived_explanatory_catalog; the cited upstream artifacts remain authoritative
+    sources:
+      - artifact: audit/operator-registry.csv
+        sha256: e5a9e6929fca048078e0db6ff044facc7137a6ef61e994d74f1d526e27b6482e
+      - artifact: audit/operator-applications.csv
+        sha256: 1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e
+      - artifact: audit/inverse-witnesses.csv
+        sha256: 3f5eda48ad74250b729c99c2cb13e3e258e83c358864c8d15f6af77f8f73667f
+      - artifact: audit/modal-covariance-witnesses.csv
+        sha256: d8189453bc8fa34e7d83db764965aa92b121cd8412df54bcd72a10f1e4fa861e
+      - artifact: audit/commutation-summary.csv
+        sha256: 3287bfa6b90487950c975172a757e0f9c4107d59480cfd09f53671639d59f04e
+      - artifact: audit/commutative-squares.csv
+        sha256: 431f0fc75f6f141d24354ad60de51b7efe0edabaf84b85b61e415b3ddf511131
+      - artifact: audit/confluence-witnesses.csv
+        sha256: ba2de478ebdebc576036d9f45009805758ae71c522b3eadd8ac78e20c02ad3dc
+      - artifact: audit/counterexamples.csv
+        sha256: 6d7bd3417e657af7f01b56517e5082872f39b4cfec6d37bc7ad671b5f219656c
+      - artifact: audit/cycle-identities.csv
+        sha256: be43441d5fea353c011e5538f001db9153c3d1b936c140858f01745ec41cd0dd
+      - artifact: audit/projection-coverage.csv
+        sha256: c8a75748021ac05b603a62e6c5f22d4b43c10ec6b74b6420b42b6ce7744f47bc
+      - artifact: audit/structural-edge-validation.csv
+        sha256: b8031a87d0353b3300761dfb5e5d11643dee0b1b75e15050c16dbb4d9e3f8692
+      - artifact: audit/field-edge-validation.csv
+        sha256: 155567e71e86270993ade4c6ef5baf2ac8c7154133d7583d27a8313cba05a014
+      - artifact: audit/mutation-algebra-hypotheses.md
+        sha256: c68dbea289f59a7cd49cec9b039f7dc2d08e3036c4210733031b10c4fafd3d19
+      - artifact: audit/stabilizer-results.csv
+        sha256: 43fb499b3d90d3c990a7bc5c879c53697b2c1e76606bd9b18c722848ca4b72c0
+      - artifact: canonical/topology-identity-definitions.json
+        sha256: ce7b3a3b8bed85d67df203a0dd6d2ba395effd19f0855869faa1a4d343bf127b
+      - artifact: canonical/universal-network-data.json
+        sha256: 21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc
+      - artifact: neo4j/schema.cypher
+        sha256: 919dd8c69afabae759a4a557c92220b378d123cf9e3ff1e4c7ff6ac971517ac4
+      - artifact: neo4j/import.cypher
+        sha256: b7d0267b4b35f884cfc68a481c5899511c82105daab913dbf3e9634c1d26c7b2
+      - artifact: neo4j/provenance.cypher
+        sha256: bba8e1b0b7e97ab7be17e56f327d62dcc5c3c1bb326263e3878d87505e83dd94
+      - artifact: schemas/compiled-profile.schema.json
+        sha256: b6079ced732b3f0ecda8eb384cb536f70a9ff080e15aabb2321209605841780f
+      - artifact: schemas/canonical-profile.schema.json
+        sha256: 8e0153a6d4cbaf53a80031347fb951777c2d4ea3a324ae3c9388b7ad6836939a
+      - artifact: schemas/semantic-operator.schema.json
+        sha256: 91267b028111c2078a230146b3af2fb1ab7a6eecd137bbfb5b0567f89678c6de
+      - artifact: neo4j/01_semantic_schema.cypher
+        sha256: d5071571910dae404cc5e66df06b8e6dc6bf813ffa3d94e5cecfffc4e7a6a961
+      - artifact: neo4j/02_semantic_import.cypher
+        sha256: 48e6a121ad8b408e0b02f941a4f4b7315dfb8397fcc68b38d272c6b9d3ed9e23
+      - artifact: neo4j/algebra-import.cypher
+        sha256: cf7dc6f41fcc2375647d2565f6ccf293075cb79fff5a479c14d502ae57172357
+  admission_policy: Entries marked admitted are executable in the installed release; entries marked
+    proposed belong to candidate extensions and are checked only by this package's validator.
+  invariants:
+    - invariant_id: INV-IDENTITY-001
+      severity: error
+      owner: canonical_topology
+      statement: ScaleState.id and ScaleState.nodeId are independently unique.
+      executable_surface: neo4j
+      admission: admitted
+      source: neo4j/schema.cypher
+    - invariant_id: INV-IDENTITY-002
+      severity: error
+      owner: audit_engine
+      statement: Every heptatonic state mask has bit weight seven.
+      executable_surface: audit
+      admission: admitted
+      source: audit/mutation-algebra-hypotheses.md
+    - invariant_id: INV-OFFICE-001
+      severity: error
+      owner: canonical_topology
+      statement: Every office-bearing state has exactly one OCCUPIES_OFFICE edge.
+      executable_surface: neo4j
+      admission: admitted
+      source: docs/TOPOLOGY_IDENTITY_AND_INVARIANTS.md
+    - invariant_id: INV-OFFICE-002
+      severity: error
+      owner: canonical_topology
+      statement: Boundary states have zero OCCUPIES_OFFICE edges.
+      executable_surface: neo4j
+      admission: admitted
+      source: docs/TOPOLOGY_IDENTITY_AND_INVARIANTS.md
+    - invariant_id: INV-OFFICE-003
+      severity: error
+      owner: neo4j_projection
+      statement: RELATIONAL_OFFICE_EVIDENCE never implies categorical office occupation.
+      executable_surface: neo4j
+      admission: admitted
+      source: docs/TOPOLOGY_IDENTITY_AND_INVARIANTS.md
+    - invariant_id: INV-ANCHOR-001
+      severity: error
+      owner: audit_engine
+      statement: Every admitted anchor family has exactly seven rooted anchor modes.
+      executable_surface: neo4j
+      admission: admitted
+      source: audit/cycle-identities.csv
+    - invariant_id: INV-ANCHOR-002
+      severity: error
+      owner: audit_engine
+      statement: Every admitted anchor family occupies each Governor office exactly once.
+      executable_surface: neo4j
+      admission: admitted
+      source: audit/cycle-identities.csv
+    - invariant_id: INV-ANCHOR-003
+      severity: error
+      owner: audit_engine
+      statement: Every anchor has one in-family modal predecessor and successor.
+      executable_surface: neo4j
+      admission: admitted
+      source: audit/cycle-identities.csv
+    - invariant_id: INV-ANCHOR-004
+      severity: error
+      owner: audit_engine
+      statement: Each anchor modal ring closes in exactly seven successor steps.
+      executable_surface: neo4j
+      admission: admitted
+      source: audit/cycle-identities.csv
+    - invariant_id: INV-BRIDGE-001
+      severity: error
+      owner: audit_engine
+      statement: Direct midpoint has endpoint distances 2 and endpoint-to-endpoint distance 4.
+      executable_surface: audit
+      admission: admitted
+      source: docs/OFFICE_ASSIGNMENT_AND_ANCHOR_QUALIFICATION_RULE.md
+    - invariant_id: INV-SATELLITE-001
+      severity: error
+      owner: canonical_topology
+      statement: Every satellite has exactly one selected incoming GOVERNS edge.
+      executable_surface: neo4j
+      admission: admitted
+      source: docs/TOPOLOGY_IDENTITY_AND_INVARIANTS.md
+    - invariant_id: INV-SATELLITE-002
+      severity: error
+      owner: canonical_topology
+      statement: Satellite and selected governing parent occupy the same State-Governor office.
+      executable_surface: neo4j
+      admission: admitted
+      source: docs/TOPOLOGY_IDENTITY_AND_INVARIANTS.md
+    - invariant_id: INV-PHASE-001
+      severity: error
+      owner: audit_engine
+      statement: Every admitted phase edge records adjacent phase delta and verified inverse.
+      executable_surface: neo4j
+      admission: admitted
+      source: audit/phase-completion-ledger.csv
+    - invariant_id: INV-ALG-001
+      severity: error
+      owner: operator_registry
+      statement: An operator applies only inside its declared partial domain.
+      executable_surface: compiler
+      admission: admitted
+      source: audit/operator-registry.csv
+    - invariant_id: INV-ALG-004
+      severity: error
+      owner: compiler
+      statement: Route history is excluded from intrinsic normal-form fingerprint.
+      executable_surface: compiler
+      admission: admitted
+      source: schemas/compiled-profile.schema.json
+    - invariant_id: INV-ALG-006
+      severity: error
+      owner: operator_registry
+      statement: Commutation claims include tested domain, support count, and counterexamples.
+      executable_surface: audit
+      admission: admitted
+      source: audit/commutation-summary.csv
+    - invariant_id: INV-ALG-007
+      severity: error
+      owner: semantic_registry
+      statement: Unadmitted semantic effects remain unresolved.
+      executable_surface: compiler
+      admission: admitted
+      source: schemas/semantic-operator.schema.json
+    - invariant_id: INV-ALG-008
+      severity: error
+      owner: compiler
+      statement: Musical operators do not mutate representative physical wavelength.
+      executable_surface: compiler
+      admission: admitted
+      source: audit/mutation-algebra-hypotheses.md
+    - invariant_id: INV-COMP-001
+      severity: error
+      owner: feature_registry
+      statement: C_P, C_H, and C_S remain distinct typed coordinates; no aggregate formula is invented.
+      executable_surface: compiler
+      admission: admitted
+      source: schemas/canonical-profile.schema.json
+    - invariant_id: INV-AUTHOR-001
+      severity: error
+      owner: authoring_tool
+      statement: The authoring CLI never overwrites source/governors.yaml.
+      executable_surface: package_validator
+      admission: admitted
+      source: scripts/governor-author.mjs
+    - invariant_id: INV-COURT-001
+      severity: error
+      owner: fivefold_engine
+      statement: Canonical Court vectors are 0000, 1000, 1100, 1110, and 1111.
+      executable_surface: package_validator
+      admission: proposed
+      source: schemas/fivefold_engine.yaml
+    - invariant_id: INV-COURT-002
+      severity: error
+      owner: fivefold_engine
+      statement: Each canonical adjacent transition changes exactly one pole in Mars-Jupiter-Venus-Saturn
+        order.
+      executable_surface: package_validator
+      admission: proposed
+      source: schemas/fivefold_engine.yaml
+    - invariant_id: INV-COURT-003
+      severity: error
+      owner: fivefold_engine
+      statement: kappa_court remains a distinct typed coordinate and is not a physical quantity.
+      executable_surface: package_validator
+      admission: proposed
+      source: schemas/fivefold_engine.yaml
+    - invariant_id: INV-PHEN-001
+      severity: error
+      owner: physical_phenomena_registry
+      statement: Each Governor office has exactly one exclusive primary phenomenon model.
+      executable_surface: package_validator
+      admission: proposed
+      source: schemas/physical_phenomena.yaml
+    - invariant_id: INV-PHEN-002
+      severity: error
+      owner: physical_phenomena_registry
+      statement: Rayleigh scattering has Jupiter as its only primary assignee.
+      executable_surface: package_validator
+      admission: proposed
+      source: schemas/physical_phenomena.yaml
+    - invariant_id: INV-PHEN-003
+      severity: error
+      owner: physical_phenomena_registry
+      statement: Each phenomenon declares assumptions, sources, and prohibited inferences.
+      executable_surface: json_schema
+      admission: proposed
+      source: schemas/physical-phenomena.schema.json

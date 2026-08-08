@@ -1,0 +1,43 @@
+{
+  "traceId": "site-launch",
+  "schemaVersion": "gov-207.trace.v1",
+  "setup": {
+    "taskId": "task:trace-site",
+    "phase": "INSPECTED",
+    "data": { "site_verified": false },
+    "withClassifier": false,
+    "withGraph": false
+  },
+  "steps": [
+    {
+      "operation": "inspect_context",
+      "expect": { "status": "ok" }
+    },
+    {
+      "operation": "list_legal_moves",
+      "expect": { "status": "ok", "movesContain": ["operation:start-site"] }
+    },
+    {
+      "operation": "validate_and_execute_move",
+      "request": {
+        "selectedMove": {
+          "operationId": "operation:start-site",
+          "moveSha256": "${moveSha256:operation:start-site}"
+        },
+        "parameters": { "port": "${freePort}", "bind_port": "${freePort}" }
+      },
+      "expect": {
+        "status": "verified",
+        "claimableSuccess": true,
+        "phaseAfter": "VERIFIED",
+        "ledgerPersisted": true
+      }
+    },
+    {
+      "operation": "verify_outcome",
+      "request": { "attemptId": "${attemptId}" },
+      "expect": { "status": "verified", "mayDeclareSuccess": true }
+    }
+  ],
+  "expectedFinal": { "phase": "VERIFIED", "mayDeclareSuccess": true }
+}

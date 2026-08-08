@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/schemas/feature-definition.schema.json",
+  "title": "Seven Governors Feature Registry",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "registryVersion",
+    "releaseId",
+    "invariants",
+    "definitions"
+  ],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "registryVersion": { "type": "string" },
+    "releaseId": {
+      "type": "string",
+      "pattern": "^canonical-profile-registry:"
+    },
+    "invariants": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "definitions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "featureId",
+          "label",
+          "layer",
+          "epistemicClass",
+          "dataType",
+          "operatorScope",
+          "domainScope",
+          "description",
+          "source"
+        ],
+        "properties": {
+          "featureId": {
+            "type": "string",
+            "pattern": "^(physical|harmonic|semantic|domain|generative)\\."
+          },
+          "label": { "type": "string" },
+          "layer": {
+            "enum": [
+              "physical",
+              "harmonic",
+              "semantic",
+              "domain",
+              "generative"
+            ]
+          },
+          "epistemicClass": { "type": "string" },
+          "dataType": { "type": "string" },
+          "operatorScope": { "type": "string" },
+          "domainScope": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "description": { "type": "string", "minLength": 1 },
+          "source": {
+            "type": "object",
+            "required": ["artifact", "authority"]
+          }
+        }
+      }
+    }
+  }
+}

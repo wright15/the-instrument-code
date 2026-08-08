@@ -1,0 +1,307 @@
+{
+  "schemaVersion": "1.0.0",
+  "compilerVersion": "0.1.1",
+  "releaseId": "canonical-profile-registry:0.1.1",
+  "normalFormId": "nf:scale:1643:landforms:v0.1.1",
+  "state": {
+    "stateId": 1643,
+    "name": "Locrian ♮6",
+    "forteFamily": "7-32",
+    "bit": "b110101100110",
+    "pitchSet": "{0,1,3,5,6,9,10}",
+    "role": "satellite",
+    "fineRole": "satellite_A0",
+    "tier": "A0",
+    "chirality": "chiral",
+    "orientation": "7-32 orientation A",
+    "assignmentStatus": "inherited",
+    "resolutionClass": "A0_direct_satellite"
+  },
+  "resolution": {
+    "office": "Saturn",
+    "officeIndex": 6,
+    "officeBearing": true,
+    "officeBasis": "unique eligible parent at governing tier",
+    "officeStatus": "inherits unique A0 parent office"
+  },
+  "canonicalProfile": {
+    "profileId": "profile:saturn:v0.1.1",
+    "releaseId": "canonical-profile-registry:0.1.1",
+    "office": "Saturn",
+    "canonicalStateId": 1387,
+    "intrinsicFingerprint": "9c68b7978a6146c23e0bc205695df9169dbeae0ed5bdfadc38b6b51fb8f8f6d3"
+  },
+  "photonic": {
+    "photonicId": "photonic:saturn:v0.1.1",
+    "representativeWavelengthNm": 400,
+    "vacuumFrequencyHz": 749481144999999.9,
+    "photonEnergyEv": 3.0996049608300065,
+    "photonicCompression": 1,
+    "coordinateSymbol": "C_P",
+    "normalizationStatus": "registry_coordinate_convention",
+    "inheritancePolicy": "resolved_from_state_governor_office",
+    "causationClaim": false
+  },
+  "harmonic": {
+    "stateGovernor": "Saturn",
+    "rootedPitchMask": "b110101100110",
+    "forteFamily": "7-32",
+    "tier": "A0",
+    "role": "satellite",
+    "harmonicCompression": {
+      "coordinateSymbol": "C_H",
+      "status": "unresolved",
+      "value": null
+    }
+  },
+  "semantic": {
+    "stateGovernor": "Saturn",
+    "thermodynamicFunction": "fixation",
+    "opticalFunction": "cutoff_crystallization",
+    "directionality": "inward_centripetal",
+    "archetypalRole": "constraint and form; what the flow cannot do",
+    "element": "Earth",
+    "semanticCompression": {
+      "coordinateSymbol": "C_S",
+      "status": "framework_order_plus_registry_coordinate_convention",
+      "orderedPosition": 7,
+      "orderedProcess": "fixation",
+      "normalizedOrdinal": 1,
+      "metric": false,
+      "scale": "declared Sun-to-Saturn process order",
+      "physicalClaim": false
+    }
+  },
+  "domainProjection": {
+    "domain": "landforms",
+    "projectionId": "projection:landforms:v0.1.1",
+    "status": "canonical_reference_projection",
+    "canonicalReferences": [
+      "mountains",
+      "cliffs",
+      "stone walls",
+      "caves",
+      "underground rivers",
+      "deserts of salt"
+    ],
+    "requiredFeatures": [
+      {
+        "featureId": "harmonic.scale_state",
+        "value": 1643,
+        "reason": "Intrinsic rooted state identity."
+      },
+      {
+        "featureId": "semantic.governor_office",
+        "value": "Saturn",
+        "reason": "Resolved State Governor."
+      },
+      {
+        "featureId": "semantic.thermodynamic_function",
+        "value": "fixation",
+        "reason": "Canonical office process correspondence."
+      },
+      {
+        "featureId": "semantic.directionality",
+        "value": "inward_centripetal",
+        "reason": "Canonical office orientation."
+      }
+    ],
+    "softPriors": [
+      {
+        "featureId": "semantic.archetypal_role",
+        "value": "constraint and form; what the flow cannot do",
+        "reason": "Guide salience and interpretation without requiring literal depiction."
+      }
+    ],
+    "referencePool": [
+      {
+        "poolId": "landforms:saturn:canonical",
+        "featureId": "domain.landforms",
+        "candidates": [
+          "mountains",
+          "cliffs",
+          "stone walls",
+          "caves",
+          "underground rivers",
+          "deserts of salt"
+        ],
+        "selectionRule": "select_zero_or_more_without_implying_exhaustiveness",
+        "authority": "framework_declared_reference_library"
+      }
+    ],
+    "promotedFeatures": [],
+    "suppressedFeatures": [],
+    "prohibitedFeatures": [
+      {
+        "featureId": "physical.musical_to_optical_causation",
+        "reason": "A musical mutation does not physically alter the representative wavelength."
+      },
+      {
+        "featureId": "semantic.unproven_operator_effect",
+        "reason": "No promote/suppress/transform claim may be added without semantic admission evidence."
+      }
+    ],
+    "unresolvedFeatures": [
+      "operator_specific_semantic_delta_if_a_route_is_applied"
+    ],
+    "creativeAffordances": [
+      "composition",
+      "scale",
+      "weather",
+      "material",
+      "viewpoint",
+      "inhabitants",
+      "surface detail"
+    ],
+    "renderingBrief": "Resolve the creation in the Saturn office. Honor the canonical process correspondence “fixation” and directionality “inward_centripetal”. Select freely from, combine, or abstract the reference pool: mountains, cliffs, stone walls, caves, underground rivers, deserts of salt. Surface realization may vary within the listed creative affordances. Any mutation route remains provenance-only until its semantic feature delta is admitted."
+  },
+  "creationConstraints": {
+    "required": [
+      {
+        "featureId": "harmonic.scale_state",
+        "value": 1643,
+        "reason": "Intrinsic rooted state identity."
+      },
+      {
+        "featureId": "semantic.governor_office",
+        "value": "Saturn",
+        "reason": "Resolved State Governor."
+      },
+      {
+        "featureId": "semantic.thermodynamic_function",
+        "value": "fixation",
+        "reason": "Canonical office process correspondence."
+      },
+      {
+        "featureId": "semantic.directionality",
+        "value": "inward_centripetal",
+        "reason": "Canonical office orientation."
+      }
+    ],
+    "softPriors": [
+      {
+        "featureId": "semantic.archetypal_role",
+        "value": "constraint and form; what the flow cannot do",
+        "reason": "Guide salience and interpretation without requiring literal depiction."
+      }
+    ],
+    "referencePool": [
+      {
+        "poolId": "landforms:saturn:canonical",
+        "featureId": "domain.landforms",
+        "candidates": [
+          "mountains",
+          "cliffs",
+          "stone walls",
+          "caves",
+          "underground rivers",
+          "deserts of salt"
+        ],
+        "selectionRule": "select_zero_or_more_without_implying_exhaustiveness",
+        "authority": "framework_declared_reference_library"
+      }
+    ],
+    "promoted": [],
+    "suppressed": [],
+    "prohibited": [
+      {
+        "featureId": "physical.musical_to_optical_causation",
+        "reason": "A musical mutation does not physically alter the representative wavelength."
+      },
+      {
+        "featureId": "semantic.unproven_operator_effect",
+        "reason": "No promote/suppress/transform claim may be added without semantic admission evidence."
+      }
+    ],
+    "unresolved": [
+      "operator_specific_semantic_delta_if_a_route_is_applied"
+    ],
+    "creativeAffordances": [
+      "composition",
+      "scale",
+      "weather",
+      "material",
+      "viewpoint",
+      "inhabitants",
+      "surface detail"
+    ]
+  },
+  "provenance": {
+    "releaseId": "canonical-profile-registry:0.1.1",
+    "providerContract": "1.0.0",
+    "providerUsed": "file",
+    "providerExcludedFromIntrinsicIdentity": true,
+    "stateAuthority": "audited topology",
+    "canonicalProfileAuthority": "active versioned canonical profile",
+    "projectionAuthority": "projection:landforms:v0.1.1",
+    "compiler": "scripts/compiler.mjs"
+  },
+  "intrinsicFingerprint": "7fa303b646a8d9247261f0d48875e2dd8e9cf07e33b52f650b698f273cbc1e09",
+  "fingerprintInputCanonicalJson": "{\"canonicalProfile\":{\"canonicalStateId\":1387,\"intrinsicFingerprint\":\"9c68b7978a6146c23e0bc205695df9169dbeae0ed5bdfadc38b6b51fb8f8f6d3\",\"office\":\"Saturn\",\"profileId\":\"profile:saturn:v0.1.1\",\"releaseId\":\"canonical-profile-registry:0.1.1\"},\"compilerVersion\":\"0.1.1\",\"creationConstraints\":{\"creativeAffordances\":[\"composition\",\"scale\",\"weather\",\"material\",\"viewpoint\",\"inhabitants\",\"surface detail\"],\"prohibited\":[{\"featureId\":\"physical.musical_to_optical_causation\",\"reason\":\"A musical mutation does not physically alter the representative wavelength.\"},{\"featureId\":\"semantic.unproven_operator_effect\",\"reason\":\"No promote/suppress/transform claim may be added without semantic admission evidence.\"}],\"promoted\":[],\"referencePool\":[{\"authority\":\"framework_declared_reference_library\",\"candidates\":[\"mountains\",\"cliffs\",\"stone walls\",\"caves\",\"underground rivers\",\"deserts of salt\"],\"featureId\":\"domain.landforms\",\"poolId\":\"landforms:saturn:canonical\",\"selectionRule\":\"select_zero_or_more_without_implying_exhaustiveness\"}],\"required\":[{\"featureId\":\"harmonic.scale_state\",\"reason\":\"Intrinsic rooted state identity.\",\"value\":1643},{\"featureId\":\"semantic.governor_office\",\"reason\":\"Resolved State Governor.\",\"value\":\"Saturn\"},{\"featureId\":\"semantic.thermodynamic_function\",\"reason\":\"Canonical office process correspondence.\",\"value\":\"fixation\"},{\"featureId\":\"semantic.directionality\",\"reason\":\"Canonical office orientation.\",\"value\":\"inward_centripetal\"}],\"softPriors\":[{\"featureId\":\"semantic.archetypal_role\",\"reason\":\"Guide salience and interpretation without requiring literal depiction.\",\"value\":\"constraint and form; what the flow cannot do\"}],\"suppressed\":[],\"unresolved\":[\"operator_specific_semantic_delta_if_a_route_is_applied\"]},\"domainProjection\":{\"canonicalReferences\":[\"mountains\",\"cliffs\",\"stone walls\",\"caves\",\"underground rivers\",\"deserts of salt\"],\"creativeAffordances\":[\"composition\",\"scale\",\"weather\",\"material\",\"viewpoint\",\"inhabitants\",\"surface detail\"],\"domain\":\"landforms\",\"prohibitedFeatures\":[{\"featureId\":\"physical.musical_to_optical_causation\",\"reason\":\"A musical mutation does not physically alter the representative wavelength.\"},{\"featureId\":\"semantic.unproven_operator_effect\",\"reason\":\"No promote/suppress/transform claim may be added without semantic admission evidence.\"}],\"projectionId\":\"projection:landforms:v0.1.1\",\"promotedFeatures\":[],\"referencePool\":[{\"authority\":\"framework_declared_reference_library\",\"candidates\":[\"mountains\",\"cliffs\",\"stone walls\",\"caves\",\"underground rivers\",\"deserts of salt\"],\"featureId\":\"domain.landforms\",\"poolId\":\"landforms:saturn:canonical\",\"selectionRule\":\"select_zero_or_more_without_implying_exhaustiveness\"}],\"renderingBrief\":\"Resolve the creation in the Saturn office. Honor the canonical process correspondence “fixation” and directionality “inward_centripetal”. Select freely from, combine, or abstract the reference pool: mountains, cliffs, stone walls, caves, underground rivers, deserts of salt. Surface realization may vary within the listed creative affordances. Any mutation route remains provenance-only until its semantic feature delta is admitted.\",\"requiredFeatures\":[{\"featureId\":\"harmonic.scale_state\",\"reason\":\"Intrinsic rooted state identity.\",\"value\":1643},{\"featureId\":\"semantic.governor_office\",\"reason\":\"Resolved State Governor.\",\"value\":\"Saturn\"},{\"featureId\":\"semantic.thermodynamic_function\",\"reason\":\"Canonical office process correspondence.\",\"value\":\"fixation\"},{\"featureId\":\"semantic.directionality\",\"reason\":\"Canonical office orientation.\",\"value\":\"inward_centripetal\"}],\"softPriors\":[{\"featureId\":\"semantic.archetypal_role\",\"reason\":\"Guide salience and interpretation without requiring literal depiction.\",\"value\":\"constraint and form; what the flow cannot do\"}],\"status\":\"canonical_reference_projection\",\"suppressedFeatures\":[],\"unresolvedFeatures\":[\"operator_specific_semantic_delta_if_a_route_is_applied\"]},\"harmonic\":{\"forteFamily\":\"7-32\",\"harmonicCompression\":{\"coordinateSymbol\":\"C_H\",\"status\":\"unresolved\",\"value\":null},\"role\":\"satellite\",\"rootedPitchMask\":\"b110101100110\",\"stateGovernor\":\"Saturn\",\"tier\":\"A0\"},\"normalFormId\":\"nf:scale:1643:landforms:v0.1.1\",\"photonic\":{\"causationClaim\":false,\"coordinateSymbol\":\"C_P\",\"inheritancePolicy\":\"resolved_from_state_governor_office\",\"normalizationStatus\":\"registry_coordinate_convention\",\"photonEnergyEv\":3.0996049608300065,\"photonicCompression\":1,\"photonicId\":\"photonic:saturn:v0.1.1\",\"representativeWavelengthNm\":400,\"vacuumFrequencyHz\":749481144999999.9},\"provenance\":{\"canonicalProfileAuthority\":\"active versioned canonical profile\",\"compiler\":\"scripts/compiler.mjs\",\"projectionAuthority\":\"projection:landforms:v0.1.1\",\"providerContract\":\"1.0.0\",\"providerExcludedFromIntrinsicIdentity\":true,\"providerUsed\":null,\"releaseId\":\"canonical-profile-registry:0.1.1\",\"stateAuthority\":\"audited topology\"},\"releaseId\":\"canonical-profile-registry:0.1.1\",\"resolution\":{\"office\":\"Saturn\",\"officeBasis\":\"unique eligible parent at governing tier\",\"officeBearing\":true,\"officeIndex\":6,\"officeStatus\":\"inherits unique A0 parent office\"},\"schemaVersion\":\"1.0.0\",\"semantic\":{\"archetypalRole\":\"constraint and form; what the flow cannot do\",\"directionality\":\"inward_centripetal\",\"element\":\"Earth\",\"opticalFunction\":\"cutoff_crystallization\",\"semanticCompression\":{\"coordinateSymbol\":\"C_S\",\"metric\":false,\"normalizedOrdinal\":1,\"orderedPosition\":7,\"orderedProcess\":\"fixation\",\"physicalClaim\":false,\"scale\":\"declared Sun-to-Saturn process order\",\"status\":\"framework_order_plus_registry_coordinate_convention\"},\"stateGovernor\":\"Saturn\",\"thermodynamicFunction\":\"fixation\"},\"state\":{\"assignmentStatus\":\"inherited\",\"bit\":\"b110101100110\",\"chirality\":\"chiral\",\"fineRole\":\"satellite_A0\",\"forteFamily\":\"7-32\",\"name\":\"Locrian ♮6\",\"orientation\":\"7-32 orientation A\",\"pitchSet\":\"{0,1,3,5,6,9,10}\",\"resolutionClass\":\"A0_direct_satellite\",\"role\":\"satellite\",\"stateId\":1643,\"tier\":\"A0\"}}",
+  "routeContext": {
+    "routeId": "route:aeolian-square:M-R6",
+    "sourceIds": [
+      1453,
+      1387
+    ],
+    "targetId": 1643,
+    "structuralOperatorIds": [
+      "M",
+      "R6"
+    ],
+    "operatorAnnotations": [
+      {
+        "structuralOperatorId": "M",
+        "semanticOperatorId": "semantic:M:v0.1.1",
+        "degree": null,
+        "degreeGovernor": null,
+        "direction": "successor",
+        "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+        "semanticEffectEvidence": false
+      },
+      {
+        "structuralOperatorId": "R6",
+        "semanticOperatorId": "semantic:R6:v0.1.1",
+        "degree": 6,
+        "degreeGovernor": "Mercury",
+        "direction": "raise",
+        "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+        "semanticEffectEvidence": false
+      }
+    ],
+    "relationEvidence": [
+      {
+        "sourceId": 1453,
+        "sourceName": "Aeolian",
+        "operatorId": "M",
+        "targetId": 1387,
+        "targetName": "Locrian",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": [
+          "MODAL_SUCCESSOR"
+        ],
+        "fieldEvidence": false,
+        "fieldEdgeTypes": [],
+        "applicationStatus": "formal_substrate_observed"
+      },
+      {
+        "sourceId": 1387,
+        "sourceName": "Locrian",
+        "operatorId": "R6",
+        "targetId": 1643,
+        "targetName": "Locrian ♮6",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": [
+          "GOVERNS"
+        ],
+        "fieldEvidence": true,
+        "fieldEdgeTypes": [
+          "AUDITED_HAMMING2"
+        ],
+        "applicationStatus": "formal_substrate_observed"
+      }
+    ],
+    "note": "Apply modal successor, then raise the covariant Degree 6.",
+    "excludedFromIntrinsicFingerprint": true
+  }
+}

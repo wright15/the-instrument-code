@@ -1,0 +1,217 @@
+{
+  "package": "seven-governors-mutation-algebra-audit",
+  "version": "1.0.0",
+  "auditProtocol": "seven-governors-graph-derived-mutation-algebra-v1",
+  "source": {
+    "file": "source/universal-network-data.json",
+    "sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+    "schemaVersion": "4.0.0-universal-heptatonic",
+    "generatedAt": "2026-07-29T19:51:18.915Z"
+  },
+  "verdict": "PASS",
+  "auditCounts": {
+    "scaleStates": 462,
+    "operatorCandidates": 15,
+    "modalOperators": 1,
+    "localDegreeOperators": 14,
+    "operatorApplications": 3402,
+    "modalApplications": 462,
+    "localApplications": 2940,
+    "inverseWitnesses": 3402,
+    "modalCycles": 66,
+    "modalCovarianceCases": 6468,
+    "commutativeSquares": 7644,
+    "directConfluenceDiamonds": 7644,
+    "structuralCospans": 14,
+    "counterexamples": 3978,
+    "partialDomainAsymmetryCounterexamples": 3528,
+    "commonDomainValueMismatches": 0,
+    "structuralEdgesValidated": 588,
+    "fieldEdgesValidated": 760,
+    "auditedHamming2Edges": 585,
+    "adjacentPrimitiveHamming2Edges": 150,
+    "nonlocalHamming2Edges": 435,
+    "phaseEdges": 175,
+    "completePhasePairs": 210,
+    "phasePairsFieldProjected": 175,
+    "phasePairsStructuralOnly": 5,
+    "phasePairsUnprojected": 30,
+    "canonicalModalApplicationsProjected": 182,
+    "formalModalApplicationsUnprojected": 280,
+    "officeBearingModalApplications": 308
+  },
+  "fileCount": 34,
+  "totalBytes": 8325139,
+  "files": [
+    {
+      "path": "audit/commutation-summary.csv",
+      "bytes": 6342,
+      "sha256": "3287bfa6b90487950c975172a757e0f9c4107d59480cfd09f53671639d59f04e"
+    },
+    {
+      "path": "audit/commutative-squares.csv",
+      "bytes": 571268,
+      "sha256": "431f0fc75f6f141d24354ad60de51b7efe0edabaf84b85b61e415b3ddf511131"
+    },
+    {
+      "path": "audit/confluence-witnesses.csv",
+      "bytes": 1817885,
+      "sha256": "ba2de478ebdebc576036d9f45009805758ae71c522b3eadd8ac78e20c02ad3dc"
+    },
+    {
+      "path": "audit/counterexamples.csv",
+      "bytes": 1082913,
+      "sha256": "6d7bd3417e657af7f01b56517e5082872f39b4cfec6d37bc7ad671b5f219656c"
+    },
+    {
+      "path": "audit/cycle-identities.csv",
+      "bytes": 21296,
+      "sha256": "be43441d5fea353c011e5538f001db9153c3d1b936c140858f01745ec41cd0dd"
+    },
+    {
+      "path": "audit/field-edge-validation.csv",
+      "bytes": 78514,
+      "sha256": "155567e71e86270993ade4c6ef5baf2ac8c7154133d7583d27a8313cba05a014"
+    },
+    {
+      "path": "audit/inverse-witnesses.csv",
+      "bytes": 196961,
+      "sha256": "3f5eda48ad74250b729c99c2cb13e3e258e83c358864c8d15f6af77f8f73667f"
+    },
+    {
+      "path": "audit/modal-completion-ledger.csv",
+      "bytes": 64881,
+      "sha256": "8fa2da374772935bd6f5b871dc811dcf0ac5434969f699dfe8dc9002b22bf0e6"
+    },
+    {
+      "path": "audit/modal-covariance-witnesses.csv",
+      "bytes": 460819,
+      "sha256": "d8189453bc8fa34e7d83db764965aa92b121cd8412df54bcd72a10f1e4fa861e"
+    },
+    {
+      "path": "audit/mutation-algebra-hypotheses.md",
+      "bytes": 7460,
+      "sha256": "c68dbea289f59a7cd49cec9b039f7dc2d08e3036c4210733031b10c4fafd3d19"
+    },
+    {
+      "path": "audit/operator-applications.csv",
+      "bytes": 1042979,
+      "sha256": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e"
+    },
+    {
+      "path": "audit/operator-candidates.json",
+      "bytes": 14906,
+      "sha256": "0010268d655bd0c314629baaf433a47dab6c619a86f3bc67a46954523b4b935e"
+    },
+    {
+      "path": "audit/operator-registry.csv",
+      "bytes": 4434,
+      "sha256": "e5a9e6929fca048078e0db6ff044facc7137a6ef61e994d74f1d526e27b6482e"
+    },
+    {
+      "path": "audit/phase-completion-ledger.csv",
+      "bytes": 26075,
+      "sha256": "af415f1f08dc247d3fdf0c2cc455539cdf56b7344f6f139bbcbbeecb5f61a0a4"
+    },
+    {
+      "path": "audit/projection-coverage.csv",
+      "bytes": 1911,
+      "sha256": "c8a75748021ac05b603a62e6c5f22d4b43c10ec6b74b6420b42b6ce7744f47bc"
+    },
+    {
+      "path": "audit/stabilizer-results.csv",
+      "bytes": 8135,
+      "sha256": "43fb499b3d90d3c990a7bc5c879c53697b2c1e76606bd9b18c722848ca4b72c0"
+    },
+    {
+      "path": "audit/structural-edge-validation.csv",
+      "bytes": 57905,
+      "sha256": "b8031a87d0353b3300761dfb5e5d11643dee0b1b75e15050c16dbb4d9e3f8692"
+    },
+    {
+      "path": "neo4j/algebra-import.cypher",
+      "bytes": 2868,
+      "sha256": "cf7dc6f41fcc2375647d2565f6ccf293075cb79fff5a479c14d502ae57172357"
+    },
+    {
+      "path": "neo4j/algebra-schema.cypher",
+      "bytes": 694,
+      "sha256": "a771cf78ff22f433da3b2e959225bf5cc18352fa5b25c5009f55b922d2163e01"
+    },
+    {
+      "path": "neo4j/algebra-validation.cypher",
+      "bytes": 5550,
+      "sha256": "66b51eadf67843c316f3ffa4d7d42cfe88e38bf432b519460b5cb57b7b2c433a"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 4989,
+      "sha256": "b7af4b9b33b54357ba9b3503839727a7ccdbb6b201e74e820239ec05fe13e720"
+    },
+    {
+      "path": "package.json",
+      "bytes": 732,
+      "sha256": "d7d41bed1513d17ce53a6ed30b1892fdd5143449329d7a4004e98cf1668529d5"
+    },
+    {
+      "path": "qa/mutation-algebra-validation.json",
+      "bytes": 2333,
+      "sha256": "b4ec306dc799c4c366995f02211d8e9f289d67cbf43d4c301bb9aec32091b98a"
+    },
+    {
+      "path": "qa/neo4j-cypher-syntax-report.json",
+      "bytes": 444,
+      "sha256": "973a6172b04f4cef440f431515c812446ac84884976aaf02bf4bf8e03ff07a27"
+    },
+    {
+      "path": "qa/operator-registry-schema-report.json",
+      "bytes": 141,
+      "sha256": "0240a7c2088a36c9817c11fb69e70a9c49ed10813d943688c944281a891c86df"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3417,
+      "sha256": "5ae0b9766023c848221e3bce351462b00ee01155d6ebb4d29157ca7f29e49a2c"
+    },
+    {
+      "path": "schemas/operator-registry.schema.json",
+      "bytes": 3991,
+      "sha256": "31878160a4fe7f919fdc2b7cf607f69cf314f8eba6dbd2eb4b1411b554009219"
+    },
+    {
+      "path": "scripts/build-package-manifest.mjs",
+      "bytes": 2231,
+      "sha256": "816e8d7c6fc187a6bad6ce0c189c1488b61ee010ac71ead5d454154faa7feec7"
+    },
+    {
+      "path": "scripts/run-mutation-algebra-audit.mjs",
+      "bytes": 57638,
+      "sha256": "e3e513b6c68ec728377ad32070ffed9157e5afa8fd405aeb8ee780bb9f57d7c2"
+    },
+    {
+      "path": "scripts/validate-cypher-syntax.mjs",
+      "bytes": 1574,
+      "sha256": "fcf75afdf444895eaba995c4f9481f9d47006403987c215161d36629ec76b727"
+    },
+    {
+      "path": "scripts/validate-operator-registry.mjs",
+      "bytes": 1060,
+      "sha256": "64f61a44a66447fe72bef87fad41d4427b4fd1887b34104784165179495b82a7"
+    },
+    {
+      "path": "source/topology-identity-definitions.json",
+      "bytes": 5410,
+      "sha256": "ce7b3a3b8bed85d67df203a0dd6d2ba395effd19f0855869faa1a4d343bf127b"
+    },
+    {
+      "path": "source/universal-network-data.json",
+      "bytes": 2765575,
+      "sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc"
+    },
+    {
+      "path": "SOURCE_AUTHORITY.md",
+      "bytes": 1808,
+      "sha256": "3cb7999acf18328959d4b3fffb707759e06dfaac4d85a29c8f4d44f2d242f127"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/schemas/source-authority.schema.json",
+  "title": "Seven Governors Source Authority Registry",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "registryVersion",
+    "releaseId",
+    "policy",
+    "authorityMatrix",
+    "consumedSources",
+    "legacyReferences",
+    "governorYamlPolicy"
+  ],
+  "properties": {
+    "releaseId": { "const": "canonical-profile-registry:0.1.1" },
+    "authorityMatrix": {
+      "type": "array",
+      "minItems": 5
+    },
+    "consumedSources": {
+      "type": "array",
+      "minItems": 9,
+      "items": {
+        "type": "object",
+        "required": ["artifact", "sha256", "packaged"],
+        "properties": {
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "packaged": { "const": true }
+        }
+      }
+    },
+    "legacyReferences": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "required": ["target", "packaged", "status", "runtimeAuthority"],
+        "properties": {
+          "packaged": { "const": false },
+          "status": {
+            "const": "legacy_or_external_reference_unresolved"
+          },
+          "runtimeAuthority": { "const": false }
+        }
+      }
+    },
+    "governorYamlPolicy": {
+      "type": "object",
+      "required": ["status", "runtimeReadsDirectly", "note"],
+      "properties": {
+        "runtimeReadsDirectly": { "const": false }
+      }
+    }
+  }
+}

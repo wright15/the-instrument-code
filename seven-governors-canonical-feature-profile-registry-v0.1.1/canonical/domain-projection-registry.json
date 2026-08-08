@@ -1,0 +1,126 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryVersion": "0.1.1",
+  "releaseId": "canonical-profile-registry:0.1.1",
+  "generatedAt": "2026-07-30",
+  "projections": [
+    {
+      "projectionId": "projection:landforms:v0.1.1",
+      "domain": "landforms",
+      "status": "canonical_reference_projection",
+      "inputContract": [
+        "resolved ScaleState",
+        "resolved Governor office or explicit unresolved office",
+        "canonical profile",
+        "optional derivation route"
+      ],
+      "outputContract": [
+        "requiredFeatures",
+        "softPriors",
+        "referencePool",
+        "promotedFeatures",
+        "suppressedFeatures",
+        "prohibitedFeatures",
+        "unresolvedFeatures",
+        "creativeAffordances",
+        "provenance"
+      ],
+      "rules": [
+        {
+          "office": "Sun",
+          "canonicalReferences": [
+            "plains",
+            "savanna",
+            "plateaus",
+            "open fields bathed in sunlight"
+          ],
+          "status": "framework_declared_reference_set",
+          "semanticMutationPolicy": "No operator-specific landform delta is admitted in v0.1.1."
+        },
+        {
+          "office": "Moon",
+          "canonicalReferences": [
+            "lakes",
+            "ponds",
+            "tidal pools",
+            "estuaries",
+            "marshes",
+            "foggy valleys"
+          ],
+          "status": "framework_declared_reference_set",
+          "semanticMutationPolicy": "No operator-specific landform delta is admitted in v0.1.1."
+        },
+        {
+          "office": "Mars",
+          "canonicalReferences": [
+            "volcanoes",
+            "canyons",
+            "cliffs",
+            "gorges",
+            "deserts",
+            "cracked earth",
+            "impact craters"
+          ],
+          "status": "framework_declared_reference_set",
+          "semanticMutationPolicy": "No operator-specific landform delta is admitted in v0.1.1."
+        },
+        {
+          "office": "Mercury",
+          "canonicalReferences": [
+            "river deltas",
+            "estuaries",
+            "crossroads",
+            "winding paths",
+            "trade routes"
+          ],
+          "status": "framework_declared_reference_set",
+          "semanticMutationPolicy": "No operator-specific landform delta is admitted in v0.1.1."
+        },
+        {
+          "office": "Jupiter",
+          "canonicalReferences": [
+            "plains",
+            "steppes",
+            "open skies",
+            "high plateaus",
+            "archipelagos",
+            "trade winds"
+          ],
+          "status": "framework_declared_reference_set",
+          "semanticMutationPolicy": "No operator-specific landform delta is admitted in v0.1.1."
+        },
+        {
+          "office": "Venus",
+          "canonicalReferences": [
+            "valleys",
+            "gardens",
+            "groves",
+            "meadows",
+            "gentle hills",
+            "riverbanks"
+          ],
+          "status": "framework_declared_reference_set",
+          "semanticMutationPolicy": "No operator-specific landform delta is admitted in v0.1.1."
+        },
+        {
+          "office": "Saturn",
+          "canonicalReferences": [
+            "mountains",
+            "cliffs",
+            "stone walls",
+            "caves",
+            "underground rivers",
+            "deserts of salt"
+          ],
+          "status": "framework_declared_reference_set",
+          "semanticMutationPolicy": "No operator-specific landform delta is admitted in v0.1.1."
+        }
+      ],
+      "provenance": {
+        "artifact": "source/governors.yaml",
+        "pointer": "governors.*.reference_library.landforms",
+        "authority": "framework_declared"
+      }
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+---
+import type { CanonicalProfile } from "../../lib/bestiary";
+import {
+  archetypeHref,
+  familyForForte,
+  stateById,
+  stateHref,
+} from "../../lib/bestiary";
+import DetailSection from "./DetailSection.astro";
+import PitchSetDial from "../PitchSetDial.astro";
+
+interface Props {
+  archetype: CanonicalProfile;
+}
+
+const { archetype } = Astro.props;
+const identity = archetype.canonicalIdentity;
+const family = familyForForte(identity.forteFamily);
+const photonic = archetype.photonic;
+const rootState = stateById(identity.stateId);
+---
+
+<div class="flex flex-col gap-4">
+  {rootState?.pitchSetPcs && rootState.pitchSetMask !== null && (
+    <DetailSection
+      title="Pitch set"
+      description={`Dial of the profile root state ${identity.stateId} ${identity.stateName}.`}
+    >
+      <div class="flex justify-center">
+        <PitchSetDial
+          pcs={rootState.pitchSetPcs}
+          mask={rootState.pitchSetMask}
+          office={archetype.office}
+        />
+      </div>
+    </DetailSection>
+  )}
+  <DetailSection title="Identity">
+    <dl class="grid grid-cols-2 gap-x-6 gap-y-2 text-xs md:grid-cols-3">
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">type</dt>
+        <dd class="font-mono text-frost/90">{archetype.type}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">profile version</dt>
+        <dd class="font-mono text-frost/90">{archetype.profileVersion}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">landform references</dt>
+        <dd class="font-mono text-frost/90">{archetype.landformReferences}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">unresolved scope bindings</dt>
+        <dd class="font-mono text-frost/90">{archetype.unresolvedScopeBindings}</dd>
+      </div>
+    </dl>
+  </DetailSection>
+
+  <DetailSection title="Canonical identity">
+    <dl class="grid grid-cols-2 gap-x-6 gap-y-2 text-xs md:grid-cols-3">
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">root state</dt>
+        <dd>
+          <a class="text-accent hover:underline" href={stateHref(identity.stateId)}>
+            {identity.stateId} {identity.stateName}
+          </a>
+        </dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">mode</dt>
+        <dd class="font-mono text-frost/90">{identity.mode}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">forte family</dt>
+        <dd>
+          {family ? (
+            <a class="text-accent hover:underline" href={archetypeHref(family.id)}>
+              {identity.forteFamily}
+            </a>
+          ) : (
+            <span class="font-mono text-frost/90">{identity.forteFamily}</span>
+          )}
+        </dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">pitch mask</dt>
+        <dd class="font-mono text-frost/90">{identity.pitchMask}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">pitch set</dt>
+        <dd class="font-mono text-frost/90">{identity.pitchSet}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">anchor tier</dt>
+        <dd class="font-mono text-frost/90">{identity.anchorTier}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">chirality</dt>
+        <dd class="font-mono text-frost/90">{identity.chirality}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">assignment</dt>
+        <dd class="font-mono text-frost/90">{identity.assignmentStatus}</dd>
+      </div>
+    </dl>
+  </DetailSection>
+
+  {photonic && (
+    <DetailSection title="Photonic identity">
+      <div class="flex items-center gap-4">
+        <span
+          class="size-12 rounded-full border border-edge"
+          style={`background: ${photonic.color}`}
+        ></span>
+        <dl class="grid grid-cols-1 gap-y-2 text-xs sm:grid-cols-3 sm:gap-x-8">
+          <div class="flex justify-between gap-2 border-b border-edge pb-1">
+            <dt class="text-muted">id</dt>
+            <dd class="font-mono text-frost/90">{photonic.photonicId}</dd>
+          </div>
+          <div class="flex justify-between gap-2 border-b border-edge pb-1">
+            <dt class="text-muted">wavelength</dt>
+            <dd class="font-mono text-frost/90">{photonic.wavelengthNm} nm</dd>
+          </div>
+          <div class="flex justify-between gap-2 border-b border-edge pb-1">
+            <dt class="text-muted">color</dt>
+            <dd class="font-mono text-frost/90">{photonic.color}</dd>
+          </div>
+        </dl>
+      </div>
+    </DetailSection>
+  )}
+
+  <DetailSection title="Intrinsic fingerprint">
+    <code class="block break-all rounded bg-void p-3 font-mono text-[10px] leading-relaxed text-frost/70">
+      {archetype.intrinsicFingerprint}
+    </code>
+  </DetailSection>
+</div>

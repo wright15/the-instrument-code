@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "packageVersion": "0.1.1",
+  "generatedAt": "2026-07-30",
+  "status": "passed",
+  "checkCount": 8,
+  "passedCount": 8,
+  "failedCount": 0,
+  "liveNeo4jExecution": "not_run; execute the packaged integration query against the host project after import",
+  "checks": [
+    {
+      "name": "provider-conformance:Acoustic via Lydian",
+      "passed": true,
+      "detail": {
+        "stateId": 1749,
+        "fingerprints": {
+          "file": "8077327cc0f809b85ab5379daefb0ab0dd61f4f7f1e52baf0e2020a68054652c",
+          "snapshot": "8077327cc0f809b85ab5379daefb0ab0dd61f4f7f1e52baf0e2020a68054652c",
+          "neo4j": "8077327cc0f809b85ab5379daefb0ab0dd61f4f7f1e52baf0e2020a68054652c"
+        }
+      }
+    },
+    {
+      "name": "provider-conformance:Harmonic Minor via Aeolian",
+      "passed": true,
+      "detail": {
+        "stateId": 2477,
+        "fingerprints": {
+          "file": "c45ac3b92d76b6b13521b16adafececca9f94da7b63db8810211e4aee9b636a6",
+          "snapshot": "c45ac3b92d76b6b13521b16adafececca9f94da7b63db8810211e4aee9b636a6",
+          "neo4j": "c45ac3b92d76b6b13521b16adafececca9f94da7b63db8810211e4aee9b636a6"
+        }
+      }
+    },
+    {
+      "name": "provider-conformance:Boundary state",
+      "passed": true,
+      "detail": {
+        "stateId": 223,
+        "fingerprints": {
+          "file": "607bdef35b84dfd4cef0c4589558abcda7b1646d4ffbed5acc57bb7ab8232082",
+          "snapshot": "607bdef35b84dfd4cef0c4589558abcda7b1646d4ffbed5acc57bb7ab8232082",
+          "neo4j": "607bdef35b84dfd4cef0c4589558abcda7b1646d4ffbed5acc57bb7ab8232082"
+        }
+      }
+    },
+    {
+      "name": "neo4j-provider-cypher:state",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "neo4j-provider-cypher:profile",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "neo4j-provider-cypher:projection",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "neo4j-provider-cypher:semanticOperator",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "neo4j-provider:session-contract",
+      "passed": true,
+      "detail": "Provider rejects construction without an open driver Session."
+    }
+  ]
+}

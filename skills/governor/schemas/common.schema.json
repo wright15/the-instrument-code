@@ -1,0 +1,580 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/gov-207/schemas/common.schema.json",
+  "title": "GOV-207 Shared Skill Contracts",
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,255}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "semanticVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "phase": {
+      "enum": [
+        "EVIDENCE_RECORDED",
+        "EXECUTED",
+        "FAILED",
+        "INSPECTED",
+        "PROPOSED",
+        "REPLAN",
+        "STOPPED",
+        "VALIDATED",
+        "VERIFIED"
+      ]
+    },
+    "nullableIdentifier": {
+      "oneOf": [
+        { "$ref": "#/$defs/identifier" },
+        { "type": "null" }
+      ]
+    },
+    "nullableSha256": {
+      "oneOf": [
+        { "$ref": "#/$defs/sha256" },
+        { "type": "null" }
+      ]
+    },
+    "jsonScalar": {
+      "oneOf": [
+        { "type": "null" },
+        { "type": "boolean" },
+        { "type": "number" },
+        { "type": "string", "maxLength": 8192 }
+      ]
+    },
+    "jsonArray": {
+      "type": "array",
+      "maxItems": 128,
+      "items": { "$ref": "#/$defs/jsonValue" }
+    },
+    "jsonObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "maxProperties": 64,
+      "patternProperties": {
+        "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$": { "$ref": "#/$defs/jsonValue" }
+      }
+    },
+    "jsonValue": {
+      "oneOf": [
+        { "$ref": "#/$defs/jsonScalar" },
+        { "$ref": "#/$defs/jsonArray" },
+        { "$ref": "#/$defs/jsonObject" }
+      ]
+    },
+    "parameterName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$",
+      "not": {
+        "enum": [
+          "argv",
+          "capability",
+          "command",
+          "deadline",
+          "executor",
+          "executorId",
+          "path",
+          "provider",
+          "token",
+          "tokenId",
+          "verifier",
+          "verifierId"
+        ]
+      }
+    },
+    "parameterValue": {
+      "oneOf": [
+        { "$ref": "#/$defs/jsonScalar" },
+        {
+          "type": "array",
+          "maxItems": 64,
+          "items": { "$ref": "#/$defs/jsonScalar" }
+        }
+      ]
+    },
+    "parameterValues": {
+      "type": "object",
+      "additionalProperties": false,
+      "maxProperties": 32,
+      "propertyNames": { "$ref": "#/$defs/parameterName" },
+      "patternProperties": {
+        "^[A-Za-z][A-Za-z0-9_]{0,63}$": { "$ref": "#/$defs/parameterValue" }
+      }
+    },
+    "parameterDefinition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "enum": ["array", "boolean", "integer", "number", "string"]
+        },
+        "descriptionCode": { "$ref": "#/$defs/identifier" },
+        "enum": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/jsonScalar" }
+        },
+        "itemsType": {
+          "enum": ["boolean", "integer", "number", "string"]
+        },
+        "minimum": { "type": "number" },
+        "maximum": { "type": "number" },
+        "minLength": { "type": "integer", "minimum": 0, "maximum": 8192 },
+        "maxLength": { "type": "integer", "minimum": 0, "maximum": 8192 },
+        "minItems": { "type": "integer", "minimum": 0, "maximum": 64 },
+        "maxItems": { "type": "integer", "minimum": 0, "maximum": 64 },
+        "pattern": { "type": "string", "minLength": 1, "maxLength": 512 }
+      }
+    },
+    "parameterDefinitionMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "maxProperties": 32,
+      "propertyNames": { "$ref": "#/$defs/parameterName" },
+      "patternProperties": {
+        "^[A-Za-z][A-Za-z0-9_]{0,63}$": { "$ref": "#/$defs/parameterDefinition" }
+      }
+    },
+    "parameterSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "additionalProperties", "properties", "required"],
+      "properties": {
+        "type": { "const": "object" },
+        "additionalProperties": { "const": false },
+        "properties": { "$ref": "#/$defs/parameterDefinitionMap" },
+        "required": {
+          "type": "array",
+          "maxItems": 32,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/parameterName" }
+        }
+      }
+    },
+    "stateRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "taskId",
+        "revision",
+        "phase",
+        "stateSha256",
+        "ledgerHeadSha256",
+        "policyFingerprint",
+        "contextFingerprint"
+      ],
+      "properties": {
+        "taskId": { "$ref": "#/$defs/identifier" },
+        "revision": { "type": "integer", "minimum": 0 },
+        "phase": { "$ref": "#/$defs/phase" },
+        "stateSha256": { "$ref": "#/$defs/sha256" },
+        "ledgerHeadSha256": { "$ref": "#/$defs/sha256" },
+        "policyFingerprint": { "$ref": "#/$defs/sha256" },
+        "contextFingerprint": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "ledgerStatus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["replayValid", "eventCount", "headSha256", "reasonCode"],
+      "properties": {
+        "replayValid": { "type": "boolean" },
+        "eventCount": { "type": "integer", "minimum": 0 },
+        "headSha256": { "$ref": "#/$defs/sha256" },
+        "reasonCode": { "$ref": "#/$defs/identifier" }
+      }
+    },
+    "graphStatus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["available", "readOnly", "projectionFingerprint", "reasonCode"],
+      "properties": {
+        "available": { "type": "boolean" },
+        "readOnly": { "const": true },
+        "projectionFingerprint": { "$ref": "#/$defs/nullableSha256" },
+        "reasonCode": { "$ref": "#/$defs/identifier" }
+      }
+    },
+    "recoveryMove": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operationId", "changedDimensions"],
+      "properties": {
+        "operationId": { "$ref": "#/$defs/identifier" },
+        "changedDimensions": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 32,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/parameterName" }
+        }
+      }
+    },
+    "directive": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["action", "reasonCode", "recoveryMoves", "operatorActionRequired"],
+      "properties": {
+        "action": {
+          "enum": ["continue", "list_legal_moves", "reinspect", "replan", "stop"]
+        },
+        "reasonCode": { "$ref": "#/$defs/identifier" },
+        "recoveryMoves": {
+          "type": "array",
+          "maxItems": 32,
+          "items": { "$ref": "#/$defs/recoveryMove" }
+        },
+        "operatorActionRequired": { "type": "boolean" }
+      }
+    },
+    "toolReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "toolId",
+        "operationId",
+        "status",
+        "reasonCode",
+        "requestFingerprint",
+        "resultFingerprint"
+      ],
+      "properties": {
+        "toolId": { "const": "governor.agent_api.invoke" },
+        "operationId": {
+          "enum": [
+            "classify_governor",
+            "inspect_context",
+            "list_legal_moves",
+            "validate_and_execute_move",
+            "verify_outcome"
+          ]
+        },
+        "status": {
+          "enum": ["accepted", "failed", "rejected", "stopped", "unavailable"]
+        },
+        "reasonCode": { "$ref": "#/$defs/identifier" },
+        "requestFingerprint": { "$ref": "#/$defs/sha256" },
+        "resultFingerprint": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "postconditionDescription": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["postconditionId", "evidenceType", "verifierId", "required"],
+      "properties": {
+        "postconditionId": { "$ref": "#/$defs/identifier" },
+        "evidenceType": {
+          "enum": ["exit_status", "file_sha256", "http", "json_pointer", "process", "regex"]
+        },
+        "verifierId": { "$ref": "#/$defs/identifier" },
+        "required": { "type": "boolean" }
+      }
+    },
+    "legalMoveDescription": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operationId",
+        "capability",
+        "moveSha256",
+        "priorStateSha256",
+        "resultPhase",
+        "effectClass",
+        "parameterSchema",
+        "defaults",
+        "searchDimensions",
+        "requiredPostconditions",
+        "victoryConditionId"
+      ],
+      "properties": {
+        "operationId": { "$ref": "#/$defs/identifier" },
+        "capability": { "$ref": "#/$defs/identifier" },
+        "moveSha256": { "$ref": "#/$defs/sha256" },
+        "priorStateSha256": { "$ref": "#/$defs/sha256" },
+        "resultPhase": { "$ref": "#/$defs/phase" },
+        "effectClass": { "$ref": "#/$defs/identifier" },
+        "parameterSchema": { "$ref": "#/$defs/parameterSchema" },
+        "defaults": { "$ref": "#/$defs/parameterValues" },
+        "searchDimensions": {
+          "type": "array",
+          "maxItems": 32,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/parameterName" }
+        },
+        "requiredPostconditions": {
+          "type": "array",
+          "maxItems": 32,
+          "items": { "$ref": "#/$defs/postconditionDescription" }
+        },
+        "victoryConditionId": { "$ref": "#/$defs/identifier" },
+        "contextualGraphFingerprint": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "namedQueryDescription": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "queryId",
+        "queryVersion",
+        "parameterFingerprint",
+        "sourceResultFingerprint"
+      ],
+      "properties": {
+        "queryId": {
+          "enum": [
+            "aspect_context",
+            "governor_profile",
+            "legal_move_context",
+            "prior_verified_outcomes",
+            "provenance_path",
+            "rule_explanation"
+          ]
+        },
+        "queryVersion": { "const": "1.0.0" },
+        "parameterFingerprint": { "$ref": "#/$defs/sha256" },
+        "sourceResultFingerprint": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "dynamicMenu": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stateSha256",
+        "skills",
+        "namedQueries",
+        "moves",
+        "executorExposed",
+        "menuFingerprint"
+      ],
+      "properties": {
+        "stateSha256": { "$ref": "#/$defs/nullableSha256" },
+        "skills": {
+          "type": "array",
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "classify_governor",
+              "inspect_context",
+              "list_legal_moves",
+              "validate_and_execute_move",
+              "verify_outcome"
+            ]
+          }
+        },
+        "namedQueries": {
+          "type": "array",
+          "maxItems": 6,
+          "items": { "$ref": "#/$defs/namedQueryDescription" }
+        },
+        "moves": {
+          "type": "array",
+          "maxItems": 64,
+          "items": { "$ref": "#/$defs/legalMoveDescription" }
+        },
+        "executorExposed": { "type": "boolean" },
+        "menuFingerprint": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "evidenceRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "evidenceId",
+        "attemptId",
+        "capability",
+        "postconditionId",
+        "evidenceType",
+        "normalizedRequest",
+        "observation",
+        "expectedPostcondition",
+        "verdict",
+        "verifierId",
+        "verifierVersion",
+        "evidenceSha256"
+      ],
+      "properties": {
+        "schemaVersion": { "const": "gov-205.evidence.v1" },
+        "evidenceId": { "$ref": "#/$defs/sha256" },
+        "attemptId": { "$ref": "#/$defs/identifier" },
+        "capability": { "$ref": "#/$defs/identifier" },
+        "postconditionId": { "$ref": "#/$defs/identifier" },
+        "evidenceType": {
+          "enum": ["exit_status", "file_sha256", "http", "json_pointer", "process", "regex"]
+        },
+        "normalizedRequest": { "$ref": "#/$defs/jsonObject" },
+        "observation": { "$ref": "#/$defs/jsonObject" },
+        "expectedPostcondition": { "$ref": "#/$defs/jsonObject" },
+        "verdict": { "enum": ["error", "fail", "pass"] },
+        "verifierId": { "$ref": "#/$defs/identifier" },
+        "verifierVersion": { "$ref": "#/$defs/identifier" },
+        "evidenceSha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "validationResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["accepted", "reasonCode", "normalizedParameters", "validationFingerprint"],
+      "properties": {
+        "accepted": { "type": "boolean" },
+        "reasonCode": { "$ref": "#/$defs/identifier" },
+        "normalizedParameters": { "$ref": "#/$defs/parameterValues" },
+        "validationFingerprint": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "executionResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attemptId", "started", "reasonCode", "effectClass", "executionFingerprint"],
+      "properties": {
+        "attemptId": { "$ref": "#/$defs/nullableIdentifier" },
+        "started": { "type": "boolean" },
+        "reasonCode": { "$ref": "#/$defs/identifier" },
+        "effectClass": { "$ref": "#/$defs/identifier" },
+        "executionFingerprint": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "verificationResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "passed",
+        "reasonCodes",
+        "evidenceIds",
+        "victoryConditionId",
+        "verificationFingerprint"
+      ],
+      "properties": {
+        "passed": { "type": "boolean" },
+        "reasonCodes": {
+          "type": "array",
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/identifier" }
+        },
+        "evidenceIds": {
+          "type": "array",
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/sha256" }
+        },
+        "victoryConditionId": { "$ref": "#/$defs/identifier" },
+        "verificationFingerprint": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "cleanupResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attempted", "succeeded", "fallbackUsed", "reasonCode", "cleanupFingerprint"],
+      "properties": {
+        "attempted": { "type": "boolean" },
+        "succeeded": { "type": "boolean" },
+        "fallbackUsed": { "type": "boolean" },
+        "reasonCode": { "$ref": "#/$defs/identifier" },
+        "cleanupFingerprint": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "ledgerDelta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eventsAppended", "beforeHeadSha256", "afterHeadSha256", "persisted"],
+      "properties": {
+        "eventsAppended": { "type": "integer", "minimum": 0 },
+        "beforeHeadSha256": { "$ref": "#/$defs/sha256" },
+        "afterHeadSha256": { "$ref": "#/$defs/sha256" },
+        "persisted": { "type": "boolean" }
+      }
+    },
+    "replayResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "valid",
+        "checkedEventCount",
+        "trustedHeadSha256",
+        "recomputedHeadSha256",
+        "firstFailingSequence",
+        "reasonCode"
+      ],
+      "properties": {
+        "valid": { "type": "boolean" },
+        "checkedEventCount": { "type": "integer", "minimum": 0 },
+        "trustedHeadSha256": { "$ref": "#/$defs/sha256" },
+        "recomputedHeadSha256": { "$ref": "#/$defs/sha256" },
+        "firstFailingSequence": {
+          "oneOf": [
+            { "type": "integer", "minimum": 1 },
+            { "type": "null" }
+          ]
+        },
+        "reasonCode": { "$ref": "#/$defs/identifier" }
+      }
+    },
+    "attemptResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attemptId",
+        "operationId",
+        "phase",
+        "started",
+        "reasonCode",
+        "recordedStateSha256",
+        "resultFingerprint"
+      ],
+      "properties": {
+        "attemptId": { "$ref": "#/$defs/identifier" },
+        "operationId": { "$ref": "#/$defs/identifier" },
+        "phase": { "$ref": "#/$defs/phase" },
+        "started": { "type": "boolean" },
+        "reasonCode": { "$ref": "#/$defs/identifier" },
+        "recordedStateSha256": { "$ref": "#/$defs/sha256" },
+        "resultFingerprint": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "classificationExplanation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "facetId",
+        "outcome",
+        "reasonCodes",
+        "evidenceIds",
+        "classifierResultFingerprint",
+        "graphContextFingerprint"
+      ],
+      "properties": {
+        "facetId": { "$ref": "#/$defs/identifier" },
+        "outcome": { "enum": ["ambiguous", "classified", "invalid", "unresolved"] },
+        "reasonCodes": {
+          "type": "array",
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/identifier" }
+        },
+        "evidenceIds": {
+          "type": "array",
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/identifier" }
+        },
+        "classifierResultFingerprint": { "$ref": "#/$defs/sha256" },
+        "graphContextFingerprint": { "$ref": "#/$defs/nullableSha256" }
+      }
+    }
+  }
+}

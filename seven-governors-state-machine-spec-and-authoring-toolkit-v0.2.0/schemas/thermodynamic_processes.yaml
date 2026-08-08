@@ -1,0 +1,55 @@
+thermodynamic_processes:
+  schema_version: "1.0.0"
+  registry_version: "0.2.0"
+  registry_id: "thermodynamic-processes:seven-governors:0.2.0"
+  admission: "proposed"
+  status: "framework_process_ontology"
+  epistemic_policy:
+    class: "authored_process_correspondence"
+    universal_physical_law_claim: false
+    musical_to_physical_causation_claim: false
+    quantitative_physics_requires:
+      - "declared variables"
+      - "units"
+      - "boundary conditions"
+      - "physical domain model"
+      - "validation method"
+  canonical_order:
+    - office: "Sun"
+      process: "emission"
+      process_index: 0
+      behavior: "A source releases or declares a field."
+    - office: "Moon"
+      process: "reception"
+      process_index: 1
+      behavior: "A context receives, reflects, or holds the field."
+    - office: "Mars"
+      process: "activation"
+      process_index: 2
+      behavior: "A threshold is crossed and force enters the process."
+    - office: "Mercury"
+      process: "transduction"
+      process_index: 3
+      behavior: "The active signal changes carrier, form, or representation."
+    - office: "Jupiter"
+      process: "distribution"
+      process_index: 4
+      behavior: "The transformed field propagates, branches, or diffuses."
+    - office: "Venus"
+      process: "coupling"
+      process_index: 5
+      behavior: "Selective relation binds compatible components."
+    - office: "Saturn"
+      process: "fixation"
+      process_index: 6
+      behavior: "Constraint stabilizes a boundary or durable form."
+  coordinate:
+    symbol: "C_S"
+    kind: "ordered_nonmetric_semantic_coordinate"
+    normalized_ordinal_allowed: true
+    normalized_ordinal_physical_metric: false
+  fivefold_interpretation:
+    status: "operational_thermodynamic_analogy"
+    court_coordinate: "kappa_court"
+    court_coordinate_physical_quantity: false
+    rule: "Court internalization may organize creation/runtime behavior but may not be reported as temperature, energy, entropy, or free energy."

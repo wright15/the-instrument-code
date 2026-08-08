@@ -1,0 +1,171 @@
+---
+import { intervalVector, pcsOfMask, complementMask, setSize } from "../lib/pitchSet";
+import { officeColors } from "../lib/bestiary";
+import { dialAngle, dialArcPath, dialPoint, DIAL_CENTER, DIAL_DOT_R, DIAL_LABEL_R, DIAL_SIZE } from "../lib/dialGeometry";
+
+interface Props {
+  pcs: number[];
+  mask: number;
+  office?: string | null;
+  showComplement?: boolean;
+  size?: number;
+}
+
+const { pcs, mask, office = null, showComplement = false, size = 240 } = Astro.props;
+
+const CENTER = DIAL_CENTER;
+const DOT_R = DIAL_DOT_R;
+const LABEL_R = DIAL_LABEL_R;
+const selected = new Set(pcs);
+const tint = (office && officeColors[office]) || "#8CF";
+const vector = intervalVector(mask);
+const maxCount = Math.max(1, ...vector);
+const complement = pcsOfMask(complementMask(mask));
+
+const ticks = Array.from({ length: 12 }, (_, pc) => {
+  const outer = dialPoint(pc, DOT_R + 10);
+  const inner = dialPoint(pc, DOT_R - 12);
+  return { pc, outer, inner };
+});
+---
+
+<div class="flex flex-col items-center gap-2">
+  <svg
+    width={size}
+    height={size}
+    viewBox={`0 0 ${DIAL_SIZE} ${DIAL_SIZE}`}
+    role="img"
+    aria-label={`Pitch set dial: {${pcs.join(", ")}} (mask ${mask}, ${setSize(mask)} notes)`}
+  >
+    <title>{`Pitch set dial {${pcs.join(", ")}}`}</title>
+
+    <circle cx={CENTER} cy={CENTER} r={DOT_R} fill="none" stroke="#222222" stroke-width="1.5" />
+
+    {showComplement &&
+      complement.map((pc) => {
+        const { x, y } = dialPoint(pc, DOT_R);
+        return (
+          <circle
+            key={`c-${pc}`}
+            cx={x}
+            cy={y}
+            r={5}
+            fill="none"
+            stroke="#888888"
+            stroke-width="1"
+            stroke-dasharray="2 2"
+          />
+        );
+      })}
+
+    {ticks.map(({ pc, outer, inner }) => (
+      <line
+        key={`t-${pc}`}
+        x1={outer.x}
+        y1={outer.y}
+        x2={inner.x}
+        y2={inner.y}
+        stroke={selected.has(pc) ? tint : "#333333"}
+        stroke-width="1"
+      />
+    ))}
+
+    {vector.map((count, index) => {
+      const radius = 24 + index * 8;
+      const sweep = (count / maxCount) * 300;
+      const arcs = [];
+      const startPc = 0;
+      const fullSteps = Math.floor(sweep / 30);
+      for (let step = 0; step < fullSteps; step++) {
+        arcs.push(dialArcPath((startPc + step) % 12, radius));
+      }
+      return (
+        <g key={`iv-${index + 1}`}>
+          <circle
+            cx={CENTER}
+            cy={CENTER}
+            r={radius}
+            fill="none"
+            stroke="#161616"
+            stroke-width="5"
+          />
+          {arcs.map((path, step) => (
+            <path
+              key={`iv-${index + 1}-${step}`}
+              d={path}
+              fill="none"
+              stroke={tint}
+              stroke-width="5"
+              stroke-linecap="round"
+              opacity={0.12 + (index + 1) * 0.07}
+            />
+          ))}
+          <text
+            x={CENTER - radius * 0.72}
+            y={CENTER - 0.5}
+            fill="#888888"
+            font-size="5.5"
+            font-family="monospace"
+            text-anchor="middle"
+          >
+            ic{index + 1}·{count}
+          </text>
+        </g>
+      );
+    })}
+
+    {Array.from({ length: 12 }, (_, pc) => {
+      const { x, y } = dialPoint(pc, DOT_R);
+      const active = selected.has(pc);
+      return (
+        <g key={`d-${pc}`}>
+          <circle
+            cx={x}
+            cy={y}
+            r={active ? 11 : 4.5}
+            fill={active ? tint : "#1a1a1a"}
+            stroke={active ? "#e0e0e0" : "#222222"}
+            stroke-width={active ? 1.5 : 1}
+          />
+          <text
+            x={x}
+            y={y + 3}
+            fill={active ? "#0d0d0d" : "#888888"}
+            font-size={active ? 7 : 5.5}
+            font-family="monospace"
+            text-anchor="middle"
+            font-weight={active ? 700 : 400}
+          >
+            {pc}
+          </text>
+        </g>
+      );
+    })}
+
+    {Array.from({ length: 12 }, (_, pc) => {
+      const { x, y } = dialPoint(pc, LABEL_R);
+      return (
+        <text
+          key={`l-${pc}`}
+          x={x}
+          y={y + 2.5}
+          fill={selected.has(pc) ? "#e0e0e0" : "#555555"}
+          font-size="7"
+          font-family="monospace"
+          text-anchor="middle"
+        >
+          {pc}
+        </text>
+      );
+    })}
+  </svg>
+
+  <div class="flex flex-col items-center gap-1 font-mono text-[10px] text-muted">
+    <span class="text-frost/90">{`{${pcs.join(", ")}}`}</span>
+    <span>mask {mask} · {setSize(mask)} notes</span>
+    <span>iv [{vector.join(",")}]</span>
+    {showComplement && (
+      <span>complement {`{${complement.join(", ")}}`}</span>
+    )}
+  </div>
+</div>

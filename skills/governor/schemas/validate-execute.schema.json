@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/gov-207/schemas/validate-execute.schema.json",
+  "title": "GOV-207 validate_and_execute_move Input and Output",
+  "oneOf": [
+    { "$ref": "#/$defs/input" },
+    { "$ref": "#/$defs/output" }
+  ],
+  "$defs": {
+    "input": {
+      "$id": "gov-207.validate-execute.input.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "requestId",
+        "taskId",
+        "selectedMove",
+        "parameters",
+        "expected"
+      ],
+      "properties": {
+        "schemaVersion": { "const": "gov-207.validate-execute.input.v1" },
+        "requestId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "taskId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "selectedMove": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["operationId", "moveSha256"],
+          "properties": {
+            "operationId": { "$ref": "common.schema.json#/$defs/identifier" },
+            "moveSha256": { "$ref": "common.schema.json#/$defs/sha256" }
+          }
+        },
+        "parameters": { "$ref": "common.schema.json#/$defs/parameterValues" },
+        "expected": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "revision",
+            "stateSha256",
+            "ledgerHeadSha256",
+            "policyFingerprint",
+            "contextFingerprint"
+          ],
+          "properties": {
+            "revision": { "type": "integer", "minimum": 0 },
+            "stateSha256": { "$ref": "common.schema.json#/$defs/sha256" },
+            "ledgerHeadSha256": { "$ref": "common.schema.json#/$defs/sha256" },
+            "policyFingerprint": { "$ref": "common.schema.json#/$defs/sha256" },
+            "contextFingerprint": { "$ref": "common.schema.json#/$defs/sha256" }
+          }
+        }
+      }
+    },
+    "output": {
+      "$id": "gov-207.validate-execute.output.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "skillId",
+        "requestId",
+        "status",
+        "stateBefore",
+        "stateAfter",
+        "validation",
+        "execution",
+        "verification",
+        "cleanup",
+        "ledgerDelta",
+        "claimableSuccess",
+        "toolReceipts",
+        "nextMenu",
+        "directive",
+        "resultFingerprint"
+      ],
+      "properties": {
+        "schemaVersion": { "const": "gov-207.validate-execute.output.v1" },
+        "skillId": { "const": "validate_and_execute_move" },
+        "requestId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "status": { "enum": ["failed", "rejected", "replan", "stopped", "verified"] },
+        "stateBefore": { "$ref": "common.schema.json#/$defs/stateRef" },
+        "stateAfter": { "$ref": "common.schema.json#/$defs/stateRef" },
+        "validation": { "$ref": "common.schema.json#/$defs/validationResult" },
+        "execution": { "$ref": "common.schema.json#/$defs/executionResult" },
+        "verification": { "$ref": "common.schema.json#/$defs/verificationResult" },
+        "cleanup": { "$ref": "common.schema.json#/$defs/cleanupResult" },
+        "ledgerDelta": { "$ref": "common.schema.json#/$defs/ledgerDelta" },
+        "claimableSuccess": { "type": "boolean" },
+        "toolReceipts": {
+          "type": "array",
+          "maxItems": 64,
+          "items": { "$ref": "common.schema.json#/$defs/toolReceipt" }
+        },
+        "nextMenu": { "$ref": "common.schema.json#/$defs/dynamicMenu" },
+        "directive": { "$ref": "common.schema.json#/$defs/directive" },
+        "resultFingerprint": { "$ref": "common.schema.json#/$defs/sha256" }
+      }
+    }
+  }
+}

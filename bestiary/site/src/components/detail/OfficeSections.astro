@@ -1,0 +1,73 @@
+---
+import type { GovernorOffice } from "../../lib/bestiary";
+import {
+  archetypeHref,
+  profileForOffice,
+  statesByOffice,
+  stateHref,
+} from "../../lib/bestiary";
+import DetailSection from "./DetailSection.astro";
+
+interface Props {
+  archetype: GovernorOffice;
+}
+
+const { archetype } = Astro.props;
+const tint = archetype.color ?? "#888888";
+const profile = archetype.profileId ? profileForOffice(archetype.office) : undefined;
+const states = statesByOffice(archetype.office);
+---
+
+<div class="flex flex-col gap-4">
+  <DetailSection title="Identity">
+    <dl class="grid grid-cols-2 gap-x-6 gap-y-2 text-xs md:grid-cols-3">
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">office index</dt>
+        <dd class="font-mono text-frost/90">{archetype.officeIndex}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">states</dt>
+        <dd class="font-mono text-frost/90">{archetype.stateCount}</dd>
+      </div>
+      {archetype.symbol && (
+        <div class="flex justify-between gap-2 border-b border-edge pb-1">
+          <dt class="text-muted">symbol</dt>
+          <dd class="font-mono text-frost/90">{archetype.symbol}</dd>
+        </div>
+      )}
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">color</dt>
+        <dd class="flex items-center gap-1.5 font-mono text-frost/90">
+          <span class="size-3 rounded-full border border-edge" style={`background: ${tint}`}></span>
+          {archetype.color ?? "—"}
+        </dd>
+      </div>
+      {archetype.profileId && (
+        <div class="flex justify-between gap-2 border-b border-edge pb-1">
+          <dt class="text-muted">profile</dt>
+          <dd>
+            <a class="text-accent hover:underline" href={archetypeHref(archetype.profileId)}>
+              {archetype.profileId}
+            </a>
+          </dd>
+        </div>
+      )}
+    </dl>
+  </DetailSection>
+
+  <DetailSection
+    title="States governed"
+    description={`All ${states.length} scale states assigned to the ${archetype.office} office.`}
+  >
+    <div class="flex flex-wrap gap-2">
+      {states.map((state) => (
+        <a
+          class="rounded border border-edge bg-raised px-2 py-1 text-[11px] text-frost transition-colors hover:border-accent/50 hover:text-accent"
+          href={stateHref(state.nodeId)}
+        >
+          <span class="font-mono">{state.nodeId}</span> {state.name}
+        </a>
+      ))}
+    </div>
+  </DetailSection>
+</div>

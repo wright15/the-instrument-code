@@ -1,0 +1,212 @@
+---
+import type { CommutationPair, MutationOperator } from "../lib/bestiary";
+import {
+  commutationOrder,
+  commutationPairFor,
+  commutationPartners,
+} from "../lib/bestiary";
+
+interface Props {
+  operator: MutationOperator;
+}
+
+const { operator } = Astro.props;
+const isRootClass = operator.operatorId === "M";
+const partners = commutationPartners(operator.operatorId);
+
+const classStyle: Record<string, string> = {
+  strong_partial_commutation: "#34D399",
+  weak_common_domain_commutation: "#FBBF24",
+};
+
+function tooltip(pair: CommutationPair): string {
+  return [
+    `${pair.operatorA} × ${pair.operatorB}`,
+    pair.classification,
+    `both defined ${pair.bothDefined}/${pair.sourceStatesTested}`,
+    `equal ${pair.equalWhenBothDefined}`,
+    `asymmetry ${pair.domainAsymmetry}`,
+    `neither ${pair.neitherDefined}`,
+  ].join(" · ");
+}
+
+function cellColor(pair: CommutationPair | undefined): string | null {
+  if (!pair) return null;
+  return classStyle[pair.classification] ?? "#8CF";
+}
+---
+
+{
+  isRootClass ? (
+    <div class="rounded-lg border border-edge bg-raised p-4 text-xs leading-relaxed text-muted">
+      <p>
+        Commutation auditing covers the {commutationOrder.length} rooted
+        mutation operators (L/R families) in the audited order{" "}
+        <span class="font-mono text-frost/90">
+          {commutationOrder.join(", ")}
+        </span>
+        . Operator <span class="font-mono text-frost/90">M</span> is the
+        self-inverse root class ({operator.inverseOperatorId}) and is excluded
+        from commutation pairs by design.
+      </p>
+    </div>
+  ) : (
+    <div class="flex flex-col gap-4">
+      <div class="overflow-x-auto">
+        <div
+          class="grid gap-px"
+          style={`grid-template-columns: 2rem repeat(${commutationOrder.length}, minmax(1.6rem, 1fr))`}
+        >
+          <div></div>
+          {commutationOrder.map((colOp) => (
+            <div
+              key={`h-${colOp}`}
+              class={`text-center font-mono text-[9px] ${
+                colOp === operator.operatorId
+                  ? "text-accent"
+                  : "text-muted"
+              }`}
+            >
+              {colOp}
+            </div>
+          ))}
+          {commutationOrder.map((rowOp, rowIndex) => (
+            <div key={`row-${rowOp}`} class="contents">
+              <div
+                class={`flex items-center justify-end pr-1 font-mono text-[9px] ${
+                  rowOp === operator.operatorId
+                    ? "text-accent"
+                    : "text-muted"
+                }`}
+              >
+                {rowOp}
+              </div>
+              {commutationOrder.map((colOp, colIndex) => {
+                const pair =
+                  rowIndex < colIndex
+                    ? commutationPairFor(rowOp, colOp)
+                    : undefined;
+                const color = cellColor(pair);
+                const isFocusRow = rowOp === operator.operatorId;
+                const isFocusCol = colOp === operator.operatorId;
+                const focused = isFocusRow || isFocusCol;
+                return (
+                  <div
+                    key={`c-${rowOp}-${colOp}`}
+                    class={`flex h-6 items-center justify-center rounded-[3px] ${
+                      color ? "" : "bg-raised"
+                    } ${focused ? "ring-1 ring-accent/60" : ""}`}
+                    style={color ? { background: `${color}22`, boxShadow: `inset 0 0 0 1px ${color}66` } : undefined}
+                    title={pair ? tooltip(pair) : undefined}
+                  >
+                    {pair && (
+                      <span
+                        class="font-mono text-[8px] leading-none"
+                        style={{ color }}
+                      >
+                        {pair.bothDefined}
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 text-[10px] text-muted">
+        <span class="flex items-center gap-1.5">
+          <span class="size-2.5 rounded-sm" style={{ background: "#34D39966", boxShadow: "inset 0 0 0 1px #34D399" }}></span>
+          strong_partial_commutation — symmetric shared domain, commutes on overlap
+        </span>
+        <span class="flex items-center gap-1.5">
+          <span class="size-2.5 rounded-sm" style={{ background: "#FBBF2466", boxShadow: "inset 0 0 0 1px #FBBF24" }}></span>
+          weak_common_domain_commutation — asymmetric shared domain
+        </span>
+        <span class="ml-auto font-mono">cells = bothDefined count · hover for details</span>
+      </div>
+
+      <div class="border-t border-edge pt-3">
+        <h3 class="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted">
+          Commutation partners of {operator.operatorId}
+        </h3>
+        {partners.length > 0 ? (
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-[11px]">
+              <thead>
+                <tr class="border-b border-edge text-[9px] uppercase tracking-wider text-muted">
+                  <th class="py-1 pr-3 font-medium">partner</th>
+                  <th class="py-1 pr-3 font-medium">classification</th>
+                  <th class="py-1 pr-3 text-right font-medium">both defined</th>
+                  <th class="py-1 pr-3 text-right font-medium">equal</th>
+                  <th class="py-1 pr-3 text-right font-medium">unequal</th>
+                  <th class="py-1 pr-3 text-right font-medium">asymmetry</th>
+                  <th class="py-1 pr-3 text-right font-medium">neither</th>
+                  <th class="py-1 font-medium">coverage</th>
+                </tr>
+              </thead>
+              <tbody>
+                {partners.map(({ partner, pair }) => {
+                  const color = classStyle[pair.classification] ?? "#8CF";
+                  const coverage = Math.round(
+                    (pair.bothDefined / pair.sourceStatesTested) * 100,
+                  );
+                  return (
+                    <tr key={`p-${partner}`} class="border-b border-edge/60">
+                      <td class="py-1.5 pr-3 font-mono text-frost/90">
+                        {pair.operatorA === operator.operatorId
+                          ? `${operator.operatorId} × ${partner}`
+                          : `${partner} × ${operator.operatorId}`}
+                      </td>
+                      <td class="py-1.5 pr-3">
+                        <span
+                          class="rounded px-1.5 py-0.5 font-mono text-[9px]"
+                          style={{ color, background: `${color}1a` }}
+                        >
+                          {pair.classification === "strong_partial_commutation"
+                            ? "strong"
+                            : "weak"}
+                        </span>
+                      </td>
+                      <td class="py-1.5 pr-3 text-right font-mono">
+                        {pair.bothDefined}
+                      </td>
+                      <td class="py-1.5 pr-3 text-right font-mono">
+                        {pair.equalWhenBothDefined}
+                      </td>
+                      <td class="py-1.5 pr-3 text-right font-mono">
+                        {pair.unequalWhenBothDefined}
+                      </td>
+                      <td class="py-1.5 pr-3 text-right font-mono">
+                        {pair.domainAsymmetry}
+                      </td>
+                      <td class="py-1.5 pr-3 text-right font-mono">
+                        {pair.neitherDefined}
+                      </td>
+                      <td class="py-1.5">
+                        <div class="flex items-center gap-1.5">
+                          <span class="h-1 w-16 overflow-hidden rounded bg-raised">
+                            <span
+                              class="block h-full rounded"
+                              style={`width: ${coverage}%; background: ${color}`}
+                            ></span>
+                          </span>
+                          <span class="font-mono text-[9px] text-muted">
+                            {coverage}%
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <p class="text-xs text-muted">No audited commutation partners.</p>
+        )}
+      </div>
+    </div>
+  )
+}

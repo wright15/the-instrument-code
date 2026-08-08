@@ -1,0 +1,35 @@
+{
+  "name": "seven-governors-canonical-feature-profile-registry",
+  "version": "0.1.1",
+  "private": true,
+  "type": "module",
+  "description": "Versioned canonical Governor profiles, photonic and harmonic feature registries, semantic operator declarations, creation-packet compiler, and Neo4j projection.",
+  "scripts": {
+    "build": "node scripts/build-registry.mjs",
+    "compile:fixtures": "node scripts/compile-reference-fixtures.mjs",
+    "export:neo4j": "node scripts/export-neo4j-csv.mjs",
+    "validate:registry": "node scripts/validate-registry.mjs",
+    "validate:providers": "node scripts/validate-provider-contract.mjs",
+    "validate:cypher": "node scripts/validate-cypher-syntax.mjs",
+    "validate": "npm run build && npm run compile:fixtures && npm run export:neo4j && npm run validate:registry && npm run validate:providers && npm run validate:cypher",
+    "manifest": "node scripts/build-package-manifest.mjs"
+  },
+  "dependencies": {
+    "yaml": "2.8.1"
+  },
+  "devDependencies": {
+    "@neo4j-cypher/language-support": "2.0.0-next.6",
+    "ajv": "8.17.1"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "neo4j-driver": ">=5"
+  },
+  "peerDependenciesMeta": {
+    "neo4j-driver": {
+      "optional": true
+    }
+  }
+}

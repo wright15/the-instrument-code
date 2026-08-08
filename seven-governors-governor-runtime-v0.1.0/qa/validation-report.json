@@ -1,0 +1,463 @@
+{
+  "checks": [
+    {
+      "detail": "valid",
+      "name": "schema:policy-release",
+      "status": "PASS"
+    },
+    {
+      "detail": "strict AJV compilation",
+      "name": "schema:compiled:typed-aspect",
+      "status": "PASS"
+    },
+    {
+      "detail": "strict AJV compilation",
+      "name": "schema:compiled:quantity",
+      "status": "PASS"
+    },
+    {
+      "detail": "strict AJV compilation",
+      "name": "schema:compiled:bridge-rule",
+      "status": "PASS"
+    },
+    {
+      "detail": "strict AJV compilation",
+      "name": "schema:compiled:classification-request",
+      "status": "PASS"
+    },
+    {
+      "detail": "strict AJV compilation",
+      "name": "schema:compiled:classification-result",
+      "status": "PASS"
+    },
+    {
+      "detail": "strict AJV compilation",
+      "name": "schema:compiled:policy-release",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "crosswalk": 31,
+        "upstream": 31
+      },
+      "name": "crosswalk:exact-closure",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "extended": 15,
+        "reusable": 15,
+        "unresolved": 1
+      },
+      "name": "crosswalk:dispositions",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        "runtime.constraint.destination_scale_state",
+        "runtime.constraint.resolved_governor_office",
+        "runtime.prohibition.musical_to_optical_causation",
+        "runtime.prohibition.unproven_operator_effect"
+      ],
+      "name": "crosswalk:compatibility-markers",
+      "status": "PASS"
+    },
+    {
+      "detail": "source, operation, aspect, and rule IDs unique",
+      "name": "identity:unique-ids",
+      "status": "PASS"
+    },
+    {
+      "detail": "all policy child references close",
+      "name": "closure:policy-children",
+      "status": "PASS"
+    },
+    {
+      "detail": "all operation dimensions and units agree",
+      "name": "closure:operation-signatures",
+      "status": "PASS"
+    },
+    {
+      "detail": "registered kinds, signatures, constants, assumptions, and epistemic outputs match the reviewed contract",
+      "name": "closure:operation-metadata",
+      "status": "PASS"
+    },
+    {
+      "detail": "every rule resolves to an aspect with the same Governor",
+      "name": "closure:rule-output",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "activeAspects": [
+          "aspect:jupiter:declared-wavelength:v1",
+          "aspect:jupiter:symbolic-profile:v1"
+        ],
+        "activeRules": [
+          "rule:jupiter:declared-wavelength:v1",
+          "rule:jupiter:symbolic-profile:v1"
+        ]
+      },
+      "name": "closure:active-admission",
+      "status": "PASS"
+    },
+    {
+      "detail": "active aspects and rules depend only on runtime-authoritative sources",
+      "name": "closure:active-runtime-authority",
+      "status": "PASS"
+    },
+    {
+      "detail": "every executable-admission item has runtime-authoritative provenance",
+      "name": "closure:admitted-runtime-authority",
+      "status": "PASS"
+    },
+    {
+      "detail": "physical values require an exact source owner and never classify by number alone",
+      "name": "guard:numeric-only-governor-bridge",
+      "status": "PASS"
+    },
+    {
+      "detail": "no causal Governor bridge admitted",
+      "name": "guard:noncausal-policy",
+      "status": "PASS"
+    },
+    {
+      "detail": "9 explicit sources",
+      "name": "fingerprint:source-hash-parity",
+      "status": "PASS"
+    },
+    {
+      "detail": "609be20d0ee5d2f400b42b09d16842d7bfa3fee42f6bed24dbc1b4bbf4bc6947",
+      "name": "fingerprint:source",
+      "status": "PASS"
+    },
+    {
+      "detail": "460e6c40bf96f58a0be36936a91939b930701dfee5875d5e5d0cd6311402f819",
+      "name": "fingerprint:policy",
+      "status": "PASS"
+    },
+    {
+      "detail": "crosswalk and examples bind to policy/source fingerprints",
+      "name": "fingerprint:derived-artifacts",
+      "status": "PASS"
+    },
+    {
+      "detail": "7 quantities valid",
+      "name": "examples:quantity-schema",
+      "status": "PASS"
+    },
+    {
+      "detail": "derived values, assumptions, and input IDs verified",
+      "name": "examples:operation-closure",
+      "status": "PASS"
+    },
+    {
+      "detail": "declared anchor is distinct from observation and causation",
+      "name": "examples:jupiter-470-anchor",
+      "status": "PASS"
+    },
+    {
+      "detail": "fixed-condition inverse-fourth-power ratio remains proposed association",
+      "name": "examples:rayleigh-scope",
+      "status": "PASS"
+    },
+    {
+      "detail": "proposed process and canonical profile reference remain separate",
+      "name": "examples:aeolian-symbolic-separation",
+      "status": "PASS"
+    },
+    {
+      "detail": "accepted",
+      "name": "fixture:positive:jupiter-declared-anchor-quantity",
+      "status": "PASS"
+    },
+    {
+      "detail": "accepted",
+      "name": "fixture:positive:registered-wavelength-frequency-operation",
+      "status": "PASS"
+    },
+    {
+      "detail": "accepted",
+      "name": "fixture:positive:classification-request",
+      "status": "PASS"
+    },
+    {
+      "detail": "accepted",
+      "name": "fixture:positive:classification-result",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "SCHEMA_UNKNOWN_PROPERTY"
+        ],
+        "expected": [
+          "SCHEMA_UNKNOWN_PROPERTY"
+        ]
+      },
+      "name": "fixture:negative:unknown-property",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "ENUM_INVALID"
+        ],
+        "expected": [
+          "ENUM_INVALID"
+        ]
+      },
+      "name": "fixture:negative:invalid-enum",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "UNIT_DIMENSION_MISMATCH"
+        ],
+        "expected": [
+          "UNIT_DIMENSION_MISMATCH"
+        ]
+      },
+      "name": "fixture:negative:wrong-unit",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "PROVENANCE_REQUIRED"
+        ],
+        "expected": [
+          "PROVENANCE_REQUIRED"
+        ]
+      },
+      "name": "fixture:negative:missing-provenance",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "REF_PROVENANCE_DANGLING"
+        ],
+        "expected": [
+          "REF_PROVENANCE_DANGLING"
+        ]
+      },
+      "name": "fixture:negative:missing-source",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "REF_FEATURE_DANGLING"
+        ],
+        "expected": [
+          "REF_FEATURE_DANGLING"
+        ]
+      },
+      "name": "fixture:negative:dangling-feature-id",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "REF_RULE_DANGLING"
+        ],
+        "expected": [
+          "REF_RULE_DANGLING"
+        ]
+      },
+      "name": "fixture:negative:dangling-rule-id",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "QUANTITY_DIMENSION_MISMATCH"
+        ],
+        "expected": [
+          "QUANTITY_DIMENSION_MISMATCH"
+        ]
+      },
+      "name": "fixture:negative:dimensional-mismatch",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "QUANTITY_OPERATION_NOT_REGISTERED"
+        ],
+        "expected": [
+          "QUANTITY_OPERATION_NOT_REGISTERED"
+        ]
+      },
+      "name": "fixture:negative:unregistered-conversion",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "CAUSAL_OVERCLAIM"
+        ],
+        "expected": [
+          "CAUSAL_OVERCLAIM"
+        ]
+      },
+      "name": "fixture:negative:causal-overclaim",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "REF_ASPECT_DANGLING"
+        ],
+        "expected": [
+          "REF_ASPECT_DANGLING"
+        ]
+      },
+      "name": "fixture:negative:dangling-requested-aspect",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "ASPECT_NOT_ACTIVE",
+          "RESULT_ASPECT_NOT_REQUESTED",
+          "RULE_NOT_ACTIVE"
+        ],
+        "expected": [
+          "ASPECT_NOT_ACTIVE",
+          "RESULT_ASPECT_NOT_REQUESTED",
+          "RULE_NOT_ACTIVE"
+        ]
+      },
+      "name": "fixture:negative:inactive-rule-classification",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "RESULT_ASPECT_NOT_REQUESTED",
+          "RESULT_RULE_OUTPUT_MISMATCH"
+        ],
+        "expected": [
+          "RESULT_ASPECT_NOT_REQUESTED",
+          "RESULT_RULE_OUTPUT_MISMATCH"
+        ]
+      },
+      "name": "fixture:negative:mismatched-rule-output",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "POLICY_FINGERPRINT_MISMATCH"
+        ],
+        "expected": [
+          "POLICY_FINGERPRINT_MISMATCH"
+        ]
+      },
+      "name": "fixture:negative:forged-policy-fingerprint",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "RESULT_FINGERPRINT_MISMATCH"
+        ],
+        "expected": [
+          "RESULT_FINGERPRINT_MISMATCH"
+        ]
+      },
+      "name": "fixture:negative:forged-result-fingerprint",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "MODEL_ASSUMPTION_MISSING"
+        ],
+        "expected": [
+          "MODEL_ASSUMPTION_MISSING"
+        ]
+      },
+      "name": "fixture:negative:missing-operation-assumption",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "ENUM_INVALID"
+        ],
+        "expected": [
+          "ENUM_INVALID"
+        ]
+      },
+      "name": "fixture:negative:causal-quantity-epistemic-class",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "RESULT_SUBJECT_MISMATCH"
+        ],
+        "expected": [
+          "RESULT_SUBJECT_MISMATCH"
+        ]
+      },
+      "name": "fixture:negative:result-subject-mismatch",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "QUANTITY_OPERATION_EPISTEMIC_MISMATCH"
+        ],
+        "expected": [
+          "QUANTITY_OPERATION_EPISTEMIC_MISMATCH"
+        ]
+      },
+      "name": "fixture:negative:operation-epistemic-mismatch",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "RESULT_ASPECT_NOT_REQUESTED",
+          "RESULT_REQUEST_SET_MISMATCH"
+        ],
+        "expected": [
+          "RESULT_ASPECT_NOT_REQUESTED",
+          "RESULT_REQUEST_SET_MISMATCH"
+        ]
+      },
+      "name": "fixture:negative:result-aspect-not-requested",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": [
+          "RESULT_CANDIDATE_DUPLICATE",
+          "RESULT_RULE_OUTPUT_MISMATCH"
+        ],
+        "expected": [
+          "RESULT_CANDIDATE_DUPLICATE",
+          "RESULT_RULE_OUTPUT_MISMATCH"
+        ]
+      },
+      "name": "fixture:negative:ambiguous-duplicate-candidate",
+      "status": "PASS"
+    }
+  ],
+  "packageVersion": "0.1.0",
+  "policyFingerprint": "460e6c40bf96f58a0be36936a91939b930701dfee5875d5e5d0cd6311402f819",
+  "releaseId": "governor-runtime:0.1.0",
+  "schemaVersion": "1.0.0",
+  "sourceFingerprint": "609be20d0ee5d2f400b42b09d16842d7bfa3fee42f6bed24dbc1b4bbf4bc6947",
+  "status": "passed",
+  "summary": {
+    "checks": 54,
+    "failed": 0,
+    "passed": 54
+  }
+}

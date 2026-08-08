@@ -1,0 +1,215 @@
+---
+import AdmissionBadge from "./AdmissionBadge.astro";
+import StatBar from "./StatBar.astro";
+import PitchSetDialMini from "./PitchSetDialMini.astro";
+import type { Archetype, ProjectionGap } from "../lib/bestiary";
+import { officeColors, projectionGapFor } from "../lib/bestiary";
+
+interface Props {
+  archetype: Archetype;
+}
+
+const { archetype } = Astro.props;
+
+const glyph: Record<string, string> = {
+  scaleState: "◇",
+  scaleFamily: "⊞",
+  governorOffice: "☉",
+  canonicalProfile: "✦",
+  mutationOperator: "⇄",
+  modalCycle: "◎",
+  candidateExtension: "▷",
+};
+
+const glyphColor: Record<string, string> = {
+  scaleState: "text-frost/70",
+  scaleFamily: "text-muted",
+  governorOffice: "text-accent",
+  canonicalProfile: "text-muted",
+  mutationOperator: "text-muted",
+  modalCycle: "text-muted",
+  candidateExtension: "text-amber-300",
+};
+
+const kindLabel: Record<string, string> = {
+  scaleState: "Scale state",
+  scaleFamily: "Scale family",
+  governorOffice: "Governor office",
+  canonicalProfile: "Canonical profile",
+  mutationOperator: "Mutation operator",
+  modalCycle: "Modal cycle",
+  candidateExtension: "Candidate extension",
+};
+
+let officeTint: string | undefined;
+let officeName: string | undefined;
+if (archetype.kind === "scaleState" && archetype.office) {
+  officeTint = officeColors[archetype.office];
+  officeName = archetype.office;
+} else if (archetype.kind === "governorOffice") {
+  officeTint = archetype.color ?? officeColors[archetype.office];
+  officeName = archetype.office;
+} else if (archetype.kind === "canonicalProfile") {
+  officeTint = officeColors[archetype.office];
+  officeName = archetype.office;
+}
+
+function statLines(archetype: Archetype): { label: string; value: string }[] {
+  switch (archetype.kind) {
+    case "scaleState": {
+      const lines: { label: string; value: string }[] = [
+        { label: "role", value: archetype.role },
+      ];
+      if (archetype.tier) lines.push({ label: "tier", value: archetype.tier });
+      if (archetype.forte) lines.push({ label: "forte", value: archetype.forte });
+      if (archetype.pitchSetPcs) {
+        lines.push({ label: "pitch set", value: `{${archetype.pitchSetPcs.join(",")}}` });
+      }
+      if (archetype.office) lines.push({ label: "office", value: archetype.office });
+      if (archetype.chirality) lines.push({ label: "chirality", value: archetype.chirality });
+      lines.push(
+        { label: "in", value: String(archetype.incomingCount) },
+        { label: "out", value: String(archetype.outgoingCount) },
+      );
+      if (archetype.compiledProfileId) lines.push({ label: "compiled", value: "yes" });
+      return lines;
+    }
+    case "scaleFamily":
+      return [
+        { label: "states", value: String(archetype.stateCount) },
+        { label: "orientations", value: String(archetype.modalOrientationCount) },
+        ...(archetype.chirality ? [{ label: "chirality", value: archetype.chirality }] : []),
+        ...(archetype.zPartner ? [{ label: "z-partner", value: archetype.zPartner }] : []),
+      ];
+    case "governorOffice":
+      return [
+        { label: "index", value: String(archetype.officeIndex) },
+        { label: "states", value: String(archetype.stateCount) },
+        ...(archetype.profileId ? [{ label: "profile", value: archetype.profileId }] : []),
+      ];
+    case "canonicalProfile":
+      return [
+        { label: "type", value: archetype.type },
+        {
+          label: "root",
+          value: `${archetype.canonicalIdentity.stateId} ${archetype.canonicalIdentity.mode}`,
+        },
+        { label: "forte", value: archetype.canonicalIdentity.forteFamily },
+        { label: "landforms", value: String(archetype.landformReferences) },
+      ];
+    case "mutationOperator": {
+      const gap: ProjectionGap | undefined = projectionGapFor(archetype.projectionGapId);
+      const lines: { label: string; value: string }[] = [
+        { label: "notation", value: archetype.notation },
+        { label: "class", value: archetype.operatorClass },
+      ];
+      if (archetype.degree !== null && archetype.degreeGovernor) {
+        lines.push({ label: "degree", value: `${archetype.degree} ${archetype.degreeGovernor}` });
+      }
+      lines.push(
+        { label: "direction", value: archetype.direction },
+        { label: "applications", value: String(archetype.applicationCount) },
+      );
+      if (gap) {
+        lines.push({
+          label: "coverage",
+          value: `${Math.round(gap.unionCoverageRate * 100)}%`,
+        });
+      }
+      return lines;
+    }
+    case "modalCycle":
+      return [
+        { label: "forte", value: archetype.forte },
+        { label: "role", value: archetype.role },
+        { label: "tier", value: archetype.tier },
+        { label: "length", value: String(archetype.cycleLength) },
+        ...(archetype.officeBearing ? [{ label: "office seq", value: "yes" }] : []),
+      ];
+    case "candidateExtension":
+      return [
+        { label: "category", value: archetype.category },
+        { label: "invariants", value: String(archetype.proposedInvariants.length) },
+      ];
+  }
+}
+
+const lines = statLines(archetype);
+---
+
+<article
+  class="group flex flex-col gap-2 rounded-lg border border-edge bg-panel p-4 transition-colors hover:border-accent/40"
+  data-archetype-id={archetype.id}
+  data-kind={archetype.kind}
+  data-admission={archetype.admission}
+  data-role={archetype.kind === "scaleState" ? archetype.role : undefined}
+  data-tier={archetype.kind === "scaleState" ? archetype.tier ?? "" : undefined}
+  data-office={
+    archetype.kind === "scaleState" || archetype.kind === "governorOffice"
+      ? archetype.office ?? ""
+      : archetype.kind === "canonicalProfile"
+        ? archetype.office
+        : undefined
+  }
+  data-search={[
+    archetype.id,
+    archetype.name,
+    archetype.kind === "scaleState" ? archetype.forte ?? "" : "",
+    archetype.kind === "scaleState" ? archetype.office ?? "" : "",
+    archetype.kind === "scaleFamily" ? archetype.forte : "",
+    archetype.kind === "mutationOperator" ? archetype.notation : "",
+    archetype.kind === "mutationOperator" ? archetype.operatorId : "",
+    archetype.kind === "governorOffice" ? archetype.office : "",
+    archetype.kind === "canonicalProfile" ? archetype.office : "",
+    archetype.kind === "modalCycle" ? archetype.forte : "",
+  ].join(" ")}
+>
+  <header class="flex items-start justify-between gap-2">
+    <div class="flex items-center gap-2">
+      <span
+        class={`text-lg leading-none ${glyphColor[archetype.kind]}`}
+        title={archetype.kind}
+      >
+        {glyph[archetype.kind]}
+      </span>
+      <h2 class="text-sm font-semibold leading-tight">{archetype.name}</h2>
+    </div>
+    <div class="flex flex-col items-end gap-1.5">
+      <AdmissionBadge admission={archetype.admission} />
+      {archetype.kind === "scaleState" && archetype.pitchSetPcs && (
+        <PitchSetDialMini
+          pcs={archetype.pitchSetPcs}
+          office={archetype.office}
+        />
+      )}
+    </div>
+  </header>
+
+  <div class="font-mono text-[10px] text-muted">{archetype.id}</div>
+
+  {officeTint && (
+    <div class="flex items-center gap-1.5 text-[10px] text-muted">
+      <span class="size-2 rounded-full" style={`background: ${officeTint}`}></span>
+      <span>{officeName}</span>
+      {archetype.kind === "governorOffice" && archetype.symbol && (
+        <span>{archetype.symbol}</span>
+      )}
+    </div>
+  )}
+
+  <StatBar stats={lines} />
+
+  <p class="line-clamp-3 text-xs leading-relaxed text-frost/70">
+    {archetype.summary.text}
+  </p>
+
+  <footer class="mt-auto flex items-center justify-between border-t border-edge pt-2 text-[10px] text-muted">
+    <span>{kindLabel[archetype.kind]}</span>
+    <span
+      class="rounded border border-transparent px-1.5 py-0.5 opacity-0 transition-opacity group-hover:opacity-100"
+      title={`${archetype.id} — ${archetype.sourcePath}`}
+    >
+      {archetype.sourcePath}
+    </span>
+  </footer>
+</article>

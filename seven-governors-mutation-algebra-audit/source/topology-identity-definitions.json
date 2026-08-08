@@ -1,0 +1,191 @@
+{
+  "schemaVersion": "1.0.0",
+  "scope": "Seven Governors universal rooted heptatonic topology",
+  "primaryRoles": {
+    "anchor": {
+      "officeBearing": true,
+      "identityRule": "Defines a tier seat through canonical identity, declared midpoint construction, or a validated family-wide contact signature."
+    },
+    "satellite": {
+      "officeBearing": true,
+      "identityRule": "Inherits one categorical office from exactly one selected governing parent after bridge and precedence checks."
+    },
+    "boundary": {
+      "officeBearing": false,
+      "identityRule": "No current declared rule authorizes a categorical office after all precedence and qualification checks."
+    }
+  },
+  "anchorCategories": {
+    "A": {
+      "label": "direct achiral anchor stratum",
+      "requirements": [
+        "achiral orientation-free family",
+        "complete seven-mode orbit",
+        "one mode per Governor office",
+        "canonical identity or declared direct midpoint construction"
+      ],
+      "tiers": {
+        "A0": {
+          "family": "7-35",
+          "mechanism": "canonical_governor_frame"
+        },
+        "A1": {
+          "family": "7-34",
+          "mechanism": "direct_achiral_midpoint"
+        },
+        "A2": {
+          "family": "7-33",
+          "mechanism": "direct_achiral_midpoint"
+        }
+      }
+    },
+    "D": {
+      "label": "declared second-order anchor stratum",
+      "requirements": [
+        "outside direct A0-A2 construction chain",
+        "complete seven-mode orbit",
+        "one mode per Governor office",
+        "uniform declared contact signature",
+        "deterministic office result",
+        "precedence clearance",
+        "fixed and phase closure",
+        "declared symmetry or orientation proof"
+      ],
+      "tiers": {
+        "D1": {
+          "family": "7-22",
+          "contactsPerMode": 4,
+          "contactTiers": {
+            "A0": 4
+          },
+          "mechanism": "two contacts in office g-2 and two in office g+2",
+          "satelliteFamilies": [
+            "7-20"
+          ],
+          "satelliteCount": 14
+        },
+        "D2": {
+          "family": "7-15",
+          "contactsPerMode": 2,
+          "contactTiers": {
+            "A0": 2
+          },
+          "mechanism": "same-office convergence",
+          "satelliteFamilies": [
+            "7-7",
+            "7-Z38"
+          ],
+          "satelliteCount": 28
+        },
+        "D3": {
+          "family": "7-Z37",
+          "contactsPerMode": 4,
+          "contactTiers": {
+            "A2": 2,
+            "D2": 2
+          },
+          "mechanism": "dual-tier same-office convergence",
+          "satelliteFamilies": [
+            "7-11"
+          ],
+          "satelliteCount": 14
+        },
+        "D4": {
+          "family": "7-Z17",
+          "contactsPerMode": 2,
+          "contactTiers": {
+            "A1": 2
+          },
+          "mechanism": "same-office convergence",
+          "satelliteFamilies": [
+            "7-13",
+            "7-16"
+          ],
+          "satelliteCount": 28
+        },
+        "D5": {
+          "family": "7-Z12",
+          "contactsPerMode": 2,
+          "contactTiers": {
+            "A2": 2
+          },
+          "mechanism": "same-office convergence",
+          "satelliteFamilies": [
+            "7-6",
+            "7-10"
+          ],
+          "satelliteCount": 28
+        },
+        "D6": {
+          "family": "7-8",
+          "contactsPerMode": 4,
+          "contactTiers": {
+            "D3": 2,
+            "D5": 2
+          },
+          "mechanism": "cross-tier same-office convergence",
+          "satelliteFamilies": [
+            "7-2"
+          ],
+          "satelliteCount": 14
+        },
+        "D7": {
+          "family": "7-1",
+          "contactsPerMode": 2,
+          "contactTiers": {
+            "D6": 2
+          },
+          "mechanism": "same-office terminal convergence from one 7-2 contact in each chiral orientation",
+          "terminalCondition": "no eligible residual children",
+          "satelliteFamilies": [],
+          "satelliteCount": 0
+        }
+      }
+    }
+  },
+  "boundaryTypes": {
+    "oriented_convergence": {
+      "families": [
+        "7-Z36",
+        "7-23",
+        "7-Z18",
+        "7-9",
+        "7-4",
+        "7-3"
+      ],
+      "stateCount": 84,
+      "identityRule": "At least two independent contacts agree on one relational office, but chiral orientation remains unresolved."
+    },
+    "office_junction": {
+      "families": [
+        "7-25",
+        "7-21",
+        "7-19",
+        "7-14"
+      ],
+      "stateCount": 56,
+      "identityRule": "A stable multi-office contact vector exists, but no deterministic vector-to-office operator is declared."
+    },
+    "peripheral_leaf": {
+      "families": [
+        "7-5"
+      ],
+      "stateCount": 14,
+      "identityRule": "Exactly one office-bearing contact supplies insufficient evidence for recursive inheritance."
+    }
+  },
+  "officeEvidence": {
+    "categoricalProperty": "office",
+    "categoricalRelationship": "OCCUPIES_OFFICE",
+    "relationalProperties": [
+      "relationalOffice",
+      "pluralityContactOffice",
+      "contactOfficeCounts",
+      "contactTierCounts",
+      "contactCount"
+    ],
+    "relationalRelationship": "RELATIONAL_OFFICE_EVIDENCE",
+    "invariant": "A boundary state may carry relational-office evidence but may not occupy a categorical Governor office."
+  }
+}
+

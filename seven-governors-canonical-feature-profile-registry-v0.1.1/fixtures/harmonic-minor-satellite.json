@@ -1,0 +1,61 @@
+{
+  "fixtureId": "fixture:harmonic-minor-satellite",
+  "fixtureClass": "structural_normalization",
+  "evidenceScope": [
+    "harmonic_structure",
+    "state_degree_governor_separation",
+    "office_resolution"
+  ],
+  "semanticEffectEvidence": false,
+  "label": "Harmonic Minor direct satellite",
+  "fixtureType": "direct_satellite_inheritance",
+  "targetStateId": 2477,
+  "targetStateName": "Harmonic Minor",
+  "expectedOffice": "Jupiter",
+  "routes": [
+    {
+      "routeId": "route:harmonic-minor:aeolian:R7",
+      "sourceIds": [
+        1453
+      ],
+      "targetId": 2477,
+      "structuralOperatorIds": [
+        "R7"
+      ],
+      "operatorAnnotations": [
+        {
+          "structuralOperatorId": "R7",
+          "semanticOperatorId": "semantic:R7:v0.1.1",
+          "degree": 7,
+          "degreeGovernor": "Moon",
+          "direction": "raise",
+          "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+          "semanticEffectEvidence": false
+        }
+      ],
+      "relationEvidence": [
+        {
+          "sourceId": 1453,
+          "sourceName": "Aeolian",
+          "operatorId": "R7",
+          "targetId": 2477,
+          "targetName": "Harmonic Minor",
+          "structuralEvidence": true,
+          "structuralEdgeTypes": [
+            "GOVERNS"
+          ],
+          "fieldEvidence": true,
+          "fieldEdgeTypes": [
+            "AUDITED_HAMMING2"
+          ],
+          "applicationStatus": "formal_substrate_observed"
+        }
+      ],
+      "note": "Direct A0 satellite inheritance.",
+      "excludedFromIntrinsicFingerprint": true
+    }
+  ],
+  "normalFormFingerprint": "c45ac3b92d76b6b13521b16adafececca9f94da7b63db8810211e4aee9b636a6",
+  "assertion": "Aeolian --R7--> Harmonic Minor retains the Jupiter State Governor while the edge records Moon as Degree Governor.",
+  "status": "passed"
+}

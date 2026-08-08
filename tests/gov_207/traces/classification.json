@@ -1,0 +1,48 @@
+{
+  "traceId": "classification",
+  "schemaVersion": "gov-207.trace.v1",
+  "setup": {
+    "taskId": "task:trace-classification",
+    "phase": "INSPECTED",
+    "data": {},
+    "withClassifier": true,
+    "withGraph": false
+  },
+  "steps": [
+    {
+      "operation": "inspect_context",
+      "expect": { "status": "ok", "directiveAction": "continue" }
+    },
+    {
+      "operation": "classify_governor",
+      "request": {
+        "classificationRequest": {
+          "schemaVersion": "1.0.0",
+          "policyReleaseId": "governor-runtime:test",
+          "subject": { "subjectId": "subject:test", "subjectType": "domain_entity" },
+          "facts": [
+            {
+              "schemaVersion": "1.0.0",
+              "factId": "fact:test:distribution",
+              "kind": "feature_value",
+              "facetPath": "/process",
+              "featureId": "semantic.thermodynamic_function",
+              "value": "Distribution",
+              "epistemicClass": "authored_correspondence",
+              "provenance": [
+                { "sourceId": "source:test:canonical", "pointer": "/facts/test" }
+              ]
+            }
+          ],
+          "quantities": [],
+          "requestedAspectIds": ["aspect:test:distribution:v1"]
+        }
+      },
+      "expect": {
+        "status": "ok",
+        "outcomeSummary": { "classified": 1, "ambiguous": 0, "unresolved": 0, "invalid": 0 }
+      }
+    }
+  ],
+  "expectedFinal": { "phase": "INSPECTED" }
+}

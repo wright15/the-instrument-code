@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/gov-207/schemas/classify-governor.schema.json",
+  "title": "GOV-207 classify_governor Input and Output",
+  "oneOf": [
+    { "$ref": "#/$defs/input" },
+    { "$ref": "#/$defs/output" }
+  ],
+  "$defs": {
+    "input": {
+      "$id": "gov-207.classify-governor.input.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "requestId",
+        "taskId",
+        "expectedStateSha256",
+        "expectedPolicyFingerprint",
+        "classificationRequest"
+      ],
+      "properties": {
+        "schemaVersion": { "const": "gov-207.classify-governor.input.v1" },
+        "requestId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "taskId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "expectedStateSha256": { "$ref": "common.schema.json#/$defs/sha256" },
+        "expectedPolicyFingerprint": { "$ref": "common.schema.json#/$defs/sha256" },
+        "classificationRequest": {
+          "$ref": "upstream/classification-request.schema.json"
+        },
+        "includeExplanations": { "type": "boolean", "default": true }
+      }
+    },
+    "output": {
+      "$id": "gov-207.classify-governor.output.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "skillId",
+        "requestId",
+        "status",
+        "state",
+        "classificationResult",
+        "outcomeSummary",
+        "explanations",
+        "toolReceipts",
+        "nextMenu",
+        "directive",
+        "resultFingerprint"
+      ],
+      "properties": {
+        "schemaVersion": { "const": "gov-207.classify-governor.output.v1" },
+        "skillId": { "const": "classify_governor" },
+        "requestId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "status": { "enum": ["failed", "ok", "rejected", "unavailable"] },
+        "state": { "$ref": "common.schema.json#/$defs/stateRef" },
+        "classificationResult": {
+          "oneOf": [
+            { "$ref": "upstream/classification-result.schema.json" },
+            { "type": "null" }
+          ]
+        },
+        "outcomeSummary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["classified", "ambiguous", "unresolved", "invalid"],
+          "properties": {
+            "classified": { "type": "integer", "minimum": 0, "maximum": 64 },
+            "ambiguous": { "type": "integer", "minimum": 0, "maximum": 64 },
+            "unresolved": { "type": "integer", "minimum": 0, "maximum": 64 },
+            "invalid": { "type": "integer", "minimum": 0, "maximum": 64 }
+          }
+        },
+        "explanations": {
+          "type": "array",
+          "maxItems": 64,
+          "items": { "$ref": "common.schema.json#/$defs/classificationExplanation" }
+        },
+        "toolReceipts": {
+          "type": "array",
+          "maxItems": 64,
+          "items": { "$ref": "common.schema.json#/$defs/toolReceipt" }
+        },
+        "nextMenu": { "$ref": "common.schema.json#/$defs/dynamicMenu" },
+        "directive": { "$ref": "common.schema.json#/$defs/directive" },
+        "resultFingerprint": { "$ref": "common.schema.json#/$defs/sha256" }
+      }
+    }
+  }
+}

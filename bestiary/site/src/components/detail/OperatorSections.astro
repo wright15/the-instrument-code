@@ -1,0 +1,171 @@
+---
+import type { MutationOperator, ProjectionGap } from "../../lib/bestiary";
+import { commutationOrder, operatorHref, projectionGapFor } from "../../lib/bestiary";
+import DetailSection from "./DetailSection.astro";
+import StatComparisonMatrix from "../StatComparisonMatrix.astro";
+
+interface Props {
+  archetype: MutationOperator;
+}
+
+const { archetype } = Astro.props;
+const gap: ProjectionGap | undefined = projectionGapFor(archetype.projectionGapId);
+const coveragePct = gap ? Math.round(gap.unionCoverageRate * 100) : null;
+const selfInverse = archetype.inverseOperatorId === archetype.operatorId;
+---
+
+<div class="flex flex-col gap-4">
+  <DetailSection title="Identity">
+    <dl class="grid grid-cols-2 gap-x-6 gap-y-2 text-xs md:grid-cols-3">
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">notation</dt>
+        <dd class="font-mono text-base font-semibold text-frost">{archetype.notation}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">class</dt>
+        <dd class="font-mono text-frost/90">{archetype.operatorClass}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">direction</dt>
+        <dd class="font-mono text-frost/90">{archetype.direction}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">degree</dt>
+        <dd class="font-mono text-frost/90">
+          {archetype.degree !== null
+            ? `${archetype.degree}${archetype.degreeGovernor ? ` ${archetype.degreeGovernor}` : ""}`
+            : "—"}
+        </dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">delta semitones</dt>
+        <dd class="font-mono text-frost/90">{archetype.deltaSemitones ?? "—"}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">status</dt>
+        <dd class="font-mono text-frost/90">{archetype.status}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">partial</dt>
+        <dd class="font-mono text-frost/90">{archetype.partial ? "yes" : "no"}</dd>
+      </div>
+      {archetype.semanticOperatorId && (
+        <div class="flex justify-between gap-2 border-b border-edge pb-1">
+          <dt class="text-muted">semantic operator</dt>
+          <dd class="font-mono text-[10px] text-frost/90">{archetype.semanticOperatorId}</dd>
+        </div>
+      )}
+    </dl>
+  </DetailSection>
+
+  <DetailSection title="Laws">
+    <div class="flex flex-col gap-3">
+      <div class="rounded bg-void p-3">
+        <div class="mb-1 text-[10px] font-semibold uppercase tracking-wider text-muted">
+          Domain rule
+        </div>
+        <p class="text-xs leading-relaxed text-frost/90">{archetype.domainRule}</p>
+      </div>
+      <div class="rounded bg-void p-3">
+        <div class="mb-1 text-[10px] font-semibold uppercase tracking-wider text-muted">
+          Action
+        </div>
+        <p class="text-xs leading-relaxed text-frost/90">{archetype.action}</p>
+      </div>
+    </div>
+  </DetailSection>
+
+  <DetailSection title="Algebra">
+    <div class="flex flex-wrap items-center gap-2 text-xs">
+      <span class="text-muted">inverse</span>
+      <a class="rounded border border-accent/40 bg-accent/10 px-2 py-1 font-mono text-[11px] text-accent transition-colors hover:border-accent/70" href={operatorHref(archetype.inverseOperatorId)}>
+        {archetype.inverseOperatorId}
+      </a>
+      <span class="text-muted">conjugate</span>
+      <a class="rounded border border-accent/40 bg-accent/10 px-2 py-1 font-mono text-[11px] text-accent transition-colors hover:border-accent/70" href={operatorHref(archetype.conjugateOperatorId)}>
+        {archetype.conjugateOperatorId}
+      </a>
+      {selfInverse && (
+        <span class="rounded bg-amber-400/10 px-1.5 py-0.5 font-mono text-[10px] text-amber-300">
+          self-inverse
+        </span>
+      )}
+    </div>
+  </DetailSection>
+
+  <DetailSection
+    title="Commutation matrix"
+    description={`Audited commutation pairs among the ${commutationOrder.length} rooted mutation operators, in the audited order ${commutationOrder.join(", ")}.`}
+  >
+    <StatComparisonMatrix operator={archetype} />
+  </DetailSection>
+
+  <DetailSection title="Domain coverage">
+    <dl class="grid grid-cols-2 gap-x-6 gap-y-2 text-xs md:grid-cols-3">
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">applications</dt>
+        <dd class="font-mono text-frost/90">{archetype.applicationCount}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">domain size</dt>
+        <dd class="font-mono text-frost/90">{archetype.domainSize}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">image size</dt>
+        <dd class="font-mono text-frost/90">{archetype.imageSize}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">structural support</dt>
+        <dd class="font-mono text-frost/90">{archetype.structuralSupportCount}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">field support</dt>
+        <dd class="font-mono text-frost/90">{archetype.fieldSupportCount}</dd>
+      </div>
+    </dl>
+  </DetailSection>
+
+  <DetailSection
+    title="Projection gap"
+    description={gap?.interpretation}
+  >
+    {gap ? (
+      <dl class="grid grid-cols-2 gap-x-6 gap-y-2 text-xs md:grid-cols-3">
+        <div class="flex justify-between gap-2 border-b border-edge pb-1">
+          <dt class="text-muted">formal applications</dt>
+          <dd class="font-mono text-frost/90">{gap.formalApplications}</dd>
+        </div>
+        <div class="flex justify-between gap-2 border-b border-edge pb-1">
+          <dt class="text-muted">structural projection</dt>
+          <dd class="font-mono text-frost/90">{gap.structuralProjection}</dd>
+        </div>
+        <div class="flex justify-between gap-2 border-b border-edge pb-1">
+          <dt class="text-muted">field projection</dt>
+          <dd class="font-mono text-frost/90">{gap.fieldProjection}</dd>
+        </div>
+        <div class="flex justify-between gap-2 border-b border-edge pb-1">
+          <dt class="text-muted">union projection</dt>
+          <dd class="font-mono text-frost/90">{gap.unionProjection}</dd>
+        </div>
+        <div class="flex justify-between gap-2 border-b border-edge pb-1">
+          <dt class="text-muted">unprojected applications</dt>
+          <dd class="font-mono text-frost/90">{gap.unprojectedApplications}</dd>
+        </div>
+        <div class="flex justify-between gap-2 border-b border-edge pb-1">
+          <dt class="text-muted">union coverage</dt>
+          <dd class="flex items-center gap-2 font-mono text-frost/90">
+            <span class="h-1.5 w-24 overflow-hidden rounded bg-raised">
+              <span
+                class="block h-full rounded bg-accent"
+                style={`width: ${coveragePct ?? 0}%`}
+              ></span>
+            </span>
+            {coveragePct}%
+          </dd>
+        </div>
+      </dl>
+    ) : (
+      <p class="text-xs text-muted">No projection gap recorded for {archetype.projectionGapId}.</p>
+    )}
+  </DetailSection>
+</div>

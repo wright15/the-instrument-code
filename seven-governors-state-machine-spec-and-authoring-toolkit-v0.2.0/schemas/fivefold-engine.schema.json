@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/schemas/fivefold-engine.schema.json",
+  "title": "Fivefold Engine",
+  "type": "object",
+  "required": [
+    "fivefold_engine"
+  ],
+  "properties": {
+    "fivefold_engine": {
+      "type": "object",
+      "required": [
+        "admission",
+        "schema_version",
+        "registry_version",
+        "status",
+        "physical_quantity_claim",
+        "macro_bracket",
+        "controller",
+        "pole_order",
+        "canonical_states",
+        "canonical_transitions",
+        "geometry",
+        "runtime_cycle",
+        "guards"
+      ],
+      "properties": {
+        "status": {
+          "const": "framework_operational_state_machine"
+        },
+        "physical_quantity_claim": {
+          "const": false
+        },
+        "pole_order": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "canonical_states": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "canonical_transitions": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "runtime_cycle": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "guards": {
+          "type": "array",
+          "minItems": 4
+        },
+        "admission": {
+          "const": "proposed"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

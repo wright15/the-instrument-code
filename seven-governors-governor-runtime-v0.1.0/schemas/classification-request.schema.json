@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/governor-runtime/0.1.0/schemas/classification-request.schema.json",
+  "title": "Governor Runtime ClassificationRequest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "policyReleaseId", "subject", "facts", "quantities", "requestedAspectIds"],
+  "properties": {
+    "schemaVersion": { "$ref": "common.schema.json#/$defs/schemaVersion" },
+    "policyReleaseId": { "const": "governor-runtime:0.1.0" },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subjectId", "subjectType"],
+      "properties": {
+        "subjectId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "subjectType": { "enum": ["governor_profile", "domain_entity", "phenomenon_model", "runtime_task"] }
+      }
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["factId", "kind", "facetPath", "featureId", "value", "epistemicClass", "provenance"],
+            "properties": {
+              "factId": { "$ref": "common.schema.json#/$defs/identifier" },
+              "kind": { "const": "feature_value" },
+              "facetPath": { "type": "string", "pattern": "^/" },
+              "featureId": { "$ref": "common.schema.json#/$defs/featureId" },
+              "value": { "$ref": "common.schema.json#/$defs/scalarValue" },
+              "epistemicClass": { "$ref": "common.schema.json#/$defs/epistemicClass" },
+              "provenance": { "$ref": "common.schema.json#/$defs/provenance" }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["factId", "kind", "facetPath", "predicateId", "objectId", "epistemicClass", "provenance"],
+            "properties": {
+              "factId": { "$ref": "common.schema.json#/$defs/identifier" },
+              "kind": { "const": "relation" },
+              "facetPath": { "type": "string", "pattern": "^/" },
+              "predicateId": { "$ref": "common.schema.json#/$defs/identifier" },
+              "objectId": { "$ref": "common.schema.json#/$defs/identifier" },
+              "epistemicClass": { "$ref": "common.schema.json#/$defs/epistemicClass" },
+              "provenance": { "$ref": "common.schema.json#/$defs/provenance" }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["factId", "kind", "facetPath", "termId", "epistemicClass", "provenance"],
+            "properties": {
+              "factId": { "$ref": "common.schema.json#/$defs/identifier" },
+              "kind": { "const": "taxonomy_term" },
+              "facetPath": { "type": "string", "pattern": "^/" },
+              "termId": { "$ref": "common.schema.json#/$defs/identifier" },
+              "epistemicClass": { "$ref": "common.schema.json#/$defs/epistemicClass" },
+              "provenance": { "$ref": "common.schema.json#/$defs/provenance" }
+            }
+          }
+        ]
+      }
+    },
+    "quantities": {
+      "type": "array",
+      "items": { "$ref": "quantity.schema.json" }
+    },
+    "requestedAspectIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "common.schema.json#/$defs/identifier" }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArchetypeLayout from "../../layouts/ArchetypeLayout.astro";
+import StateSections from "../../components/detail/StateSections.astro";
+import FamilySections from "../../components/detail/FamilySections.astro";
+import OfficeSections from "../../components/detail/OfficeSections.astro";
+import ProfileSections from "../../components/detail/ProfileSections.astro";
+import OperatorSections from "../../components/detail/OperatorSections.astro";
+import CycleSections from "../../components/detail/CycleSections.astro";
+import CandidateSections from "../../components/detail/CandidateSections.astro";
+import { bestiary, getArchetype } from "../../lib/bestiary";
+
+export function getStaticPaths() {
+  return bestiary.archetypes.map((archetype) => ({
+    params: { id: archetype.id },
+  }));
+}
+
+const { id } = Astro.params;
+const archetype = getArchetype(id ?? "");
+---
+
+<BaseLayout title={`${archetype?.name ?? "Unknown archetype"} — Bestiary of Archetypes`}>
+  {archetype ? (
+    <ArchetypeLayout archetype={archetype}>
+      {archetype.kind === "scaleState" && <StateSections archetype={archetype} />}
+      {archetype.kind === "scaleFamily" && <FamilySections archetype={archetype} />}
+      {archetype.kind === "governorOffice" && <OfficeSections archetype={archetype} />}
+      {archetype.kind === "canonicalProfile" && <ProfileSections archetype={archetype} />}
+      {archetype.kind === "mutationOperator" && <OperatorSections archetype={archetype} />}
+      {archetype.kind === "modalCycle" && <CycleSections archetype={archetype} />}
+      {archetype.kind === "candidateExtension" && <CandidateSections archetype={archetype} />}
+    </ArchetypeLayout>
+  ) : (
+    <div class="rounded-lg border border-edge bg-panel p-8 text-center">
+      <p class="text-sm text-muted">
+        Unknown archetype <span class="font-mono text-frost">{id}</span>.
+      </p>
+      <a class="mt-3 inline-block text-xs text-accent hover:underline" href="/">
+        ← Back to dashboard
+      </a>
+    </div>
+  )}
+</BaseLayout>

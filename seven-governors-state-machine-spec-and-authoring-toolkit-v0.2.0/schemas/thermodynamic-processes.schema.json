@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/schemas/thermodynamic-processes.schema.json",
+  "title": "Seven Governors Thermodynamic Process Ontology",
+  "type": "object",
+  "required": [
+    "thermodynamic_processes"
+  ],
+  "properties": {
+    "thermodynamic_processes": {
+      "type": "object",
+      "required": [
+        "admission",
+        "schema_version",
+        "registry_version",
+        "status",
+        "epistemic_policy",
+        "canonical_order",
+        "coordinate",
+        "fivefold_interpretation"
+      ],
+      "properties": {
+        "status": {
+          "const": "framework_process_ontology"
+        },
+        "epistemic_policy": {
+          "type": "object",
+          "required": [
+            "class",
+            "universal_physical_law_claim",
+            "musical_to_physical_causation_claim"
+          ],
+          "properties": {
+            "universal_physical_law_claim": {
+              "const": false
+            },
+            "musical_to_physical_causation_claim": {
+              "const": false
+            }
+          },
+          "additionalProperties": true
+        },
+        "canonical_order": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "required": [
+              "office",
+              "process",
+              "process_index",
+              "behavior"
+            ]
+          }
+        },
+        "admission": {
+          "const": "proposed"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

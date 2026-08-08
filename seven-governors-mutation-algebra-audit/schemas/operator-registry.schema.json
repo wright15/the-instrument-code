@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/schemas/operator-registry.schema.json",
+  "title": "Seven Governors structural operator registry",
+  "type": "object",
+  "required": [
+    "auditProtocol",
+    "sourceSha256",
+    "statusScale",
+    "summary",
+    "operators",
+    "excludedRelationshipTypes"
+  ],
+  "properties": {
+    "auditProtocol": {
+      "const": "seven-governors-graph-derived-mutation-algebra-v1"
+    },
+    "sourceSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "statusScale": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 6,
+      "uniqueItems": true
+    },
+    "summary": {
+      "type": "object"
+    },
+    "operators": {
+      "type": "array",
+      "minItems": 15,
+      "maxItems": 15,
+      "items": {
+        "$ref": "#/$defs/operator"
+      }
+    },
+    "excludedRelationshipTypes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "relationshipType",
+          "disposition",
+          "reason"
+        ],
+        "properties": {
+          "relationshipType": {
+            "type": "string"
+          },
+          "disposition": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "operator": {
+      "type": "object",
+      "required": [
+        "operator_id",
+        "notation",
+        "name",
+        "operator_class",
+        "direction",
+        "domain_rule",
+        "action",
+        "inverse_operator_id",
+        "conjugate_operator_id",
+        "partial",
+        "status",
+        "application_count",
+        "domain_size",
+        "image_size",
+        "structural_support_count",
+        "field_support_count"
+      ],
+      "properties": {
+        "operator_id": {
+          "type": "string",
+          "pattern": "^(M|[RL][1-7])$"
+        },
+        "notation": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "operator_class": {
+          "enum": [
+            "modal_re_rooting",
+            "root_phase",
+            "fixed_degree_shift"
+          ]
+        },
+        "degree": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 7
+        },
+        "degree_governor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "direction": {
+          "enum": [
+            "successor",
+            "raise",
+            "lower"
+          ]
+        },
+        "delta_semitones": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": -1,
+          "maximum": 1
+        },
+        "domain_rule": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "inverse_operator_id": {
+          "type": "string"
+        },
+        "conjugate_operator_id": {
+          "type": "string"
+        },
+        "partial": {
+          "type": "boolean"
+        },
+        "status": {
+          "enum": [
+            "observed",
+            "hypothesized",
+            "structurally_validated",
+            "semantically_declared",
+            "domain_validated",
+            "asset_approved"
+          ]
+        },
+        "application_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "domain_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "image_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "structural_support_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_support_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

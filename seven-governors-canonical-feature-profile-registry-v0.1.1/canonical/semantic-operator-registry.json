@@ -1,0 +1,892 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryVersion": "0.1.1",
+  "releaseId": "canonical-profile-registry:0.1.1",
+  "generatedAt": "2026-07-30",
+  "status": "structural_operators_bound_semantic_effects_unresolved",
+  "operatorCount": 15,
+  "admissionPolicy": {
+    "minimumEvidence": [
+      "named source and target feature",
+      "direction of effect",
+      "domain restriction",
+      "normalization behavior",
+      "inverse or declared irreversibility",
+      "at least one positive fixture",
+      "at least one counterexample or failure boundary"
+    ],
+    "default": "unresolved",
+    "prohibition": "No semantic effect may be inferred solely from a harmonic edge, a Degree Governor label, or a photonic coordinate."
+  },
+  "operators": [
+    {
+      "semanticOperatorId": "semantic:M:v0.1.1",
+      "registryVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "structuralOperatorId": "M",
+      "notation": "M",
+      "name": "Modal successor",
+      "operatorClass": "modal_re_rooting",
+      "degree": null,
+      "degreeGovernor": null,
+      "direction": "successor",
+      "domainRule": "All rooted weight-seven states.",
+      "harmonicAction": {
+        "status": "structurally_validated",
+        "action": "Re-root the unchanged pitch-class set at its next ascending scale tone.",
+        "partial": false,
+        "applicationCount": 462,
+        "domainSize": 462,
+        "imageSize": 462,
+        "structuralSupportCount": 182,
+        "fieldSupportCount": 0
+      },
+      "inverseStructuralOperatorId": "M^6",
+      "conjugateStructuralOperatorId": "M",
+      "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+      "semanticResearchPriority": "standard",
+      "semanticEffects": {
+        "preserves": [],
+        "transforms": [],
+        "promotes": [],
+        "suppresses": [],
+        "prohibits": [],
+        "unresolved": [
+          "canonical_feature_delta",
+          "domain_projection_delta",
+          "semantic_compression_delta",
+          "semantic_commutation_after_normalization"
+        ]
+      },
+      "physicalPolicy": {
+        "mutatesPhysicalQuantities": false,
+        "targetResolution": "The compiled destination state resolves the photonic anchor of its own Governor office.",
+        "prohibitedInference": "Do not infer that musical pitch mutation physically changes optical wavelength."
+      },
+      "normalizationPolicy": {
+        "destinationDefinesIntrinsicProfile": true,
+        "routeHistoryStoredSeparately": true,
+        "confluenceRequired": true
+      },
+      "structuralFixtureIds": [
+        "fixture:aeolian-modal-covariance"
+      ],
+      "semanticEffectFixtureIds": [],
+      "provenance": {
+        "structural": "source/operator-candidates.json",
+        "semantic": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "structural_action_validated; semantic_effects_explicitly_unresolved"
+      }
+    },
+    {
+      "semanticOperatorId": "semantic:R1:v0.1.1",
+      "registryVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "structuralOperatorId": "R1",
+      "notation": "R_1",
+      "name": "Raise root phase by one semitone",
+      "operatorClass": "root_phase",
+      "degree": 1,
+      "degreeGovernor": "Saturn",
+      "direction": "raise",
+      "domainRule": "Defined when pitch class 1 is absent; replace root 0 with 1 and renormalize by -1.",
+      "harmonicAction": {
+        "status": "structurally_validated",
+        "action": "Move the tonic seam one semitone, retain the other six absolute pitches, then renormalize the new root to 0.",
+        "partial": true,
+        "applicationCount": 210,
+        "domainSize": 210,
+        "imageSize": 210,
+        "structuralSupportCount": 29,
+        "fieldSupportCount": 175
+      },
+      "inverseStructuralOperatorId": "L1",
+      "conjugateStructuralOperatorId": "R7",
+      "semanticStatus": "structural_operator_semantics_unresolved",
+      "semanticResearchPriority": "standard",
+      "semanticEffects": {
+        "preserves": [],
+        "transforms": [],
+        "promotes": [],
+        "suppresses": [],
+        "prohibits": [],
+        "unresolved": [
+          "canonical_feature_delta",
+          "domain_projection_delta",
+          "semantic_compression_delta",
+          "semantic_commutation_after_normalization"
+        ]
+      },
+      "physicalPolicy": {
+        "mutatesPhysicalQuantities": false,
+        "targetResolution": "The compiled destination state resolves the photonic anchor of its own Governor office.",
+        "prohibitedInference": "Do not infer that musical pitch mutation physically changes optical wavelength."
+      },
+      "normalizationPolicy": {
+        "destinationDefinesIntrinsicProfile": true,
+        "routeHistoryStoredSeparately": true,
+        "confluenceRequired": true
+      },
+      "structuralFixtureIds": [],
+      "semanticEffectFixtureIds": [],
+      "provenance": {
+        "structural": "source/operator-candidates.json",
+        "semantic": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "structural_action_validated; semantic_effects_explicitly_unresolved"
+      }
+    },
+    {
+      "semanticOperatorId": "semantic:L1:v0.1.1",
+      "registryVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "structuralOperatorId": "L1",
+      "notation": "L_1",
+      "name": "Lower root phase by one semitone",
+      "operatorClass": "root_phase",
+      "degree": 1,
+      "degreeGovernor": "Saturn",
+      "direction": "lower",
+      "domainRule": "Defined when pitch class 11 is absent; replace root 0 with 11 and renormalize by +1.",
+      "harmonicAction": {
+        "status": "structurally_validated",
+        "action": "Move the tonic seam one semitone, retain the other six absolute pitches, then renormalize the new root to 0.",
+        "partial": true,
+        "applicationCount": 210,
+        "domainSize": 210,
+        "imageSize": 210,
+        "structuralSupportCount": 29,
+        "fieldSupportCount": 175
+      },
+      "inverseStructuralOperatorId": "R1",
+      "conjugateStructuralOperatorId": "L7",
+      "semanticStatus": "structural_operator_semantics_unresolved",
+      "semanticResearchPriority": "standard",
+      "semanticEffects": {
+        "preserves": [],
+        "transforms": [],
+        "promotes": [],
+        "suppresses": [],
+        "prohibits": [],
+        "unresolved": [
+          "canonical_feature_delta",
+          "domain_projection_delta",
+          "semantic_compression_delta",
+          "semantic_commutation_after_normalization"
+        ]
+      },
+      "physicalPolicy": {
+        "mutatesPhysicalQuantities": false,
+        "targetResolution": "The compiled destination state resolves the photonic anchor of its own Governor office.",
+        "prohibitedInference": "Do not infer that musical pitch mutation physically changes optical wavelength."
+      },
+      "normalizationPolicy": {
+        "destinationDefinesIntrinsicProfile": true,
+        "routeHistoryStoredSeparately": true,
+        "confluenceRequired": true
+      },
+      "structuralFixtureIds": [],
+      "semanticEffectFixtureIds": [],
+      "provenance": {
+        "structural": "source/operator-candidates.json",
+        "semantic": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "structural_action_validated; semantic_effects_explicitly_unresolved"
+      }
+    },
+    {
+      "semanticOperatorId": "semantic:R2:v0.1.1",
+      "registryVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "structuralOperatorId": "R2",
+      "notation": "R_2",
+      "name": "Raise Degree 2 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 2,
+      "degreeGovernor": "Jupiter",
+      "direction": "raise",
+      "domainRule": "Defined when Degree 2 can move up one semitone without collision or crossing the rooted boundary.",
+      "harmonicAction": {
+        "status": "structurally_validated",
+        "action": "Replace the pitch at ordered Degree 2 by +1 semitone.",
+        "partial": true,
+        "applicationCount": 210,
+        "domainSize": 210,
+        "imageSize": 210,
+        "structuralSupportCount": 29,
+        "fieldSupportCount": 25
+      },
+      "inverseStructuralOperatorId": "L2",
+      "conjugateStructuralOperatorId": "R1",
+      "semanticStatus": "structural_operator_semantics_unresolved",
+      "semanticResearchPriority": "standard",
+      "semanticEffects": {
+        "preserves": [],
+        "transforms": [],
+        "promotes": [],
+        "suppresses": [],
+        "prohibits": [],
+        "unresolved": [
+          "canonical_feature_delta",
+          "domain_projection_delta",
+          "semantic_compression_delta",
+          "semantic_commutation_after_normalization"
+        ]
+      },
+      "physicalPolicy": {
+        "mutatesPhysicalQuantities": false,
+        "targetResolution": "The compiled destination state resolves the photonic anchor of its own Governor office.",
+        "prohibitedInference": "Do not infer that musical pitch mutation physically changes optical wavelength."
+      },
+      "normalizationPolicy": {
+        "destinationDefinesIntrinsicProfile": true,
+        "routeHistoryStoredSeparately": true,
+        "confluenceRequired": true
+      },
+      "structuralFixtureIds": [],
+      "semanticEffectFixtureIds": [],
+      "provenance": {
+        "structural": "source/operator-candidates.json",
+        "semantic": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "structural_action_validated; semantic_effects_explicitly_unresolved"
+      }
+    },
+    {
+      "semanticOperatorId": "semantic:L2:v0.1.1",
+      "registryVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "structuralOperatorId": "L2",
+      "notation": "L_2",
+      "name": "Lower Degree 2 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 2,
+      "degreeGovernor": "Jupiter",
+      "direction": "lower",
+      "domainRule": "Defined when Degree 2 can move down one semitone without collision or crossing the rooted boundary.",
+      "harmonicAction": {
+        "status": "structurally_validated",
+        "action": "Replace the pitch at ordered Degree 2 by -1 semitone.",
+        "partial": true,
+        "applicationCount": 210,
+        "domainSize": 210,
+        "imageSize": 210,
+        "structuralSupportCount": 29,
+        "fieldSupportCount": 25
+      },
+      "inverseStructuralOperatorId": "R2",
+      "conjugateStructuralOperatorId": "L1",
+      "semanticStatus": "structural_operator_semantics_unresolved",
+      "semanticResearchPriority": "standard",
+      "semanticEffects": {
+        "preserves": [],
+        "transforms": [],
+        "promotes": [],
+        "suppresses": [],
+        "prohibits": [],
+        "unresolved": [
+          "canonical_feature_delta",
+          "domain_projection_delta",
+          "semantic_compression_delta",
+          "semantic_commutation_after_normalization"
+        ]
+      },
+      "physicalPolicy": {
+        "mutatesPhysicalQuantities": false,
+        "targetResolution": "The compiled destination state resolves the photonic anchor of its own Governor office.",
+        "prohibitedInference": "Do not infer that musical pitch mutation physically changes optical wavelength."
+      },
+      "normalizationPolicy": {
+        "destinationDefinesIntrinsicProfile": true,
+        "routeHistoryStoredSeparately": true,
+        "confluenceRequired": true
+      },
+      "structuralFixtureIds": [],
+      "semanticEffectFixtureIds": [],
+      "provenance": {
+        "structural": "source/operator-candidates.json",
+        "semantic": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "structural_action_validated; semantic_effects_explicitly_unresolved"
+      }
+    },
+    {
+      "semanticOperatorId": "semantic:R3:v0.1.1",
+      "registryVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "structuralOperatorId": "R3",
+      "notation": "R_3",
+      "name": "Raise Degree 3 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 3,
+      "degreeGovernor": "Mars",
+      "direction": "raise",
+      "domainRule": "Defined when Degree 3 can move up one semitone without collision or crossing the rooted boundary.",
+      "harmonicAction": {
+        "status": "structurally_validated",
+        "action": "Replace the pitch at ordered Degree 3 by +1 semitone.",
+        "partial": true,
+        "applicationCount": 210,
+        "domainSize": 210,
+        "imageSize": 210,
+        "structuralSupportCount": 29,
+        "fieldSupportCount": 25
+      },
+      "inverseStructuralOperatorId": "L3",
+      "conjugateStructuralOperatorId": "R2",
+      "semanticStatus": "structural_operator_semantics_unresolved",
+      "semanticResearchPriority": "standard",
+      "semanticEffects": {
+        "preserves": [],
+        "transforms": [],
+        "promotes": [],
+        "suppresses": [],
+        "prohibits": [],
+        "unresolved": [
+          "canonical_feature_delta",
+          "domain_projection_delta",
+          "semantic_compression_delta",
+          "semantic_commutation_after_normalization"
+        ]
+      },
+      "physicalPolicy": {
+        "mutatesPhysicalQuantities": false,
+        "targetResolution": "The compiled destination state resolves the photonic anchor of its own Governor office.",
+        "prohibitedInference": "Do not infer that musical pitch mutation physically changes optical wavelength."
+      },
+      "normalizationPolicy": {
+        "destinationDefinesIntrinsicProfile": true,
+        "routeHistoryStoredSeparately": true,
+        "confluenceRequired": true
+      },
+      "structuralFixtureIds": [],
+      "semanticEffectFixtureIds": [],
+      "provenance": {
+        "structural": "source/operator-candidates.json",
+        "semantic": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "structural_action_validated; semantic_effects_explicitly_unresolved"
+      }
+    },
+    {
+      "semanticOperatorId": "semantic:L3:v0.1.1",
+      "registryVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "structuralOperatorId": "L3",
+      "notation": "L_3",
+      "name": "Lower Degree 3 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 3,
+      "degreeGovernor": "Mars",
+      "direction": "lower",
+      "domainRule": "Defined when Degree 3 can move down one semitone without collision or crossing the rooted boundary.",
+      "harmonicAction": {
+        "status": "structurally_validated",
+        "action": "Replace the pitch at ordered Degree 3 by -1 semitone.",
+        "partial": true,
+        "applicationCount": 210,
+        "domainSize": 210,
+        "imageSize": 210,
+        "structuralSupportCount": 29,
+        "fieldSupportCount": 25
+      },
+      "inverseStructuralOperatorId": "R3",
+      "conjugateStructuralOperatorId": "L2",
+      "semanticStatus": "structural_operator_semantics_unresolved",
+      "semanticResearchPriority": "standard",
+      "semanticEffects": {
+        "preserves": [],
+        "transforms": [],
+        "promotes": [],
+        "suppresses": [],
+        "prohibits": [],
+        "unresolved": [
+          "canonical_feature_delta",
+          "domain_projection_delta",
+          "semantic_compression_delta",
+          "semantic_commutation_after_normalization"
+        ]
+      },
+      "physicalPolicy": {
+        "mutatesPhysicalQuantities": false,
+        "targetResolution": "The compiled destination state resolves the photonic anchor of its own Governor office.",
+        "prohibitedInference": "Do not infer that musical pitch mutation physically changes optical wavelength."
+      },
+      "normalizationPolicy": {
+        "destinationDefinesIntrinsicProfile": true,
+        "routeHistoryStoredSeparately": true,
+        "confluenceRequired": true
+      },
+      "structuralFixtureIds": [],
+      "semanticEffectFixtureIds": [],
+      "provenance": {
+        "structural": "source/operator-candidates.json",
+        "semantic": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "structural_action_validated; semantic_effects_explicitly_unresolved"
+      }
+    },
+    {
+      "semanticOperatorId": "semantic:R4:v0.1.1",
+      "registryVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "structuralOperatorId": "R4",
+      "notation": "R_4",
+      "name": "Raise Degree 4 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 4,
+      "degreeGovernor": "Sun",
+      "direction": "raise",
+      "domainRule": "Defined when Degree 4 can move up one semitone without collision or crossing the rooted boundary.",
+      "harmonicAction": {
+        "status": "structurally_validated",
+        "action": "Replace the pitch at ordered Degree 4 by +1 semitone.",
+        "partial": true,
+        "applicationCount": 210,
+        "domainSize": 210,
+        "imageSize": 210,
+        "structuralSupportCount": 29,
+        "fieldSupportCount": 25
+      },
+      "inverseStructuralOperatorId": "L4",
+      "conjugateStructuralOperatorId": "R3",
+      "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+      "semanticResearchPriority": "priority_v0.1_sun_moon_axis",
+      "semanticEffects": {
+        "preserves": [],
+        "transforms": [],
+        "promotes": [],
+        "suppresses": [],
+        "prohibits": [],
+        "unresolved": [
+          "canonical_feature_delta",
+          "domain_projection_delta",
+          "semantic_compression_delta",
+          "semantic_commutation_after_normalization"
+        ]
+      },
+      "physicalPolicy": {
+        "mutatesPhysicalQuantities": false,
+        "targetResolution": "The compiled destination state resolves the photonic anchor of its own Governor office.",
+        "prohibitedInference": "Do not infer that musical pitch mutation physically changes optical wavelength."
+      },
+      "normalizationPolicy": {
+        "destinationDefinesIntrinsicProfile": true,
+        "routeHistoryStoredSeparately": true,
+        "confluenceRequired": true
+      },
+      "structuralFixtureIds": [
+        "fixture:acoustic-confluence",
+        "fixture:lydian-minor-midpoint"
+      ],
+      "semanticEffectFixtureIds": [],
+      "provenance": {
+        "structural": "source/operator-candidates.json",
+        "semantic": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "structural_action_validated; semantic_effects_explicitly_unresolved"
+      }
+    },
+    {
+      "semanticOperatorId": "semantic:L4:v0.1.1",
+      "registryVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "structuralOperatorId": "L4",
+      "notation": "L_4",
+      "name": "Lower Degree 4 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 4,
+      "degreeGovernor": "Sun",
+      "direction": "lower",
+      "domainRule": "Defined when Degree 4 can move down one semitone without collision or crossing the rooted boundary.",
+      "harmonicAction": {
+        "status": "structurally_validated",
+        "action": "Replace the pitch at ordered Degree 4 by -1 semitone.",
+        "partial": true,
+        "applicationCount": 210,
+        "domainSize": 210,
+        "imageSize": 210,
+        "structuralSupportCount": 29,
+        "fieldSupportCount": 25
+      },
+      "inverseStructuralOperatorId": "R4",
+      "conjugateStructuralOperatorId": "L3",
+      "semanticStatus": "structural_operator_semantics_unresolved",
+      "semanticResearchPriority": "priority_v0.1_sun_moon_axis",
+      "semanticEffects": {
+        "preserves": [],
+        "transforms": [],
+        "promotes": [],
+        "suppresses": [],
+        "prohibits": [],
+        "unresolved": [
+          "canonical_feature_delta",
+          "domain_projection_delta",
+          "semantic_compression_delta",
+          "semantic_commutation_after_normalization"
+        ]
+      },
+      "physicalPolicy": {
+        "mutatesPhysicalQuantities": false,
+        "targetResolution": "The compiled destination state resolves the photonic anchor of its own Governor office.",
+        "prohibitedInference": "Do not infer that musical pitch mutation physically changes optical wavelength."
+      },
+      "normalizationPolicy": {
+        "destinationDefinesIntrinsicProfile": true,
+        "routeHistoryStoredSeparately": true,
+        "confluenceRequired": true
+      },
+      "structuralFixtureIds": [],
+      "semanticEffectFixtureIds": [],
+      "provenance": {
+        "structural": "source/operator-candidates.json",
+        "semantic": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "structural_action_validated; semantic_effects_explicitly_unresolved"
+      }
+    },
+    {
+      "semanticOperatorId": "semantic:R5:v0.1.1",
+      "registryVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "structuralOperatorId": "R5",
+      "notation": "R_5",
+      "name": "Raise Degree 5 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 5,
+      "degreeGovernor": "Venus",
+      "direction": "raise",
+      "domainRule": "Defined when Degree 5 can move up one semitone without collision or crossing the rooted boundary.",
+      "harmonicAction": {
+        "status": "structurally_validated",
+        "action": "Replace the pitch at ordered Degree 5 by +1 semitone.",
+        "partial": true,
+        "applicationCount": 210,
+        "domainSize": 210,
+        "imageSize": 210,
+        "structuralSupportCount": 29,
+        "fieldSupportCount": 25
+      },
+      "inverseStructuralOperatorId": "L5",
+      "conjugateStructuralOperatorId": "R4",
+      "semanticStatus": "structural_operator_semantics_unresolved",
+      "semanticResearchPriority": "standard",
+      "semanticEffects": {
+        "preserves": [],
+        "transforms": [],
+        "promotes": [],
+        "suppresses": [],
+        "prohibits": [],
+        "unresolved": [
+          "canonical_feature_delta",
+          "domain_projection_delta",
+          "semantic_compression_delta",
+          "semantic_commutation_after_normalization"
+        ]
+      },
+      "physicalPolicy": {
+        "mutatesPhysicalQuantities": false,
+        "targetResolution": "The compiled destination state resolves the photonic anchor of its own Governor office.",
+        "prohibitedInference": "Do not infer that musical pitch mutation physically changes optical wavelength."
+      },
+      "normalizationPolicy": {
+        "destinationDefinesIntrinsicProfile": true,
+        "routeHistoryStoredSeparately": true,
+        "confluenceRequired": true
+      },
+      "structuralFixtureIds": [],
+      "semanticEffectFixtureIds": [],
+      "provenance": {
+        "structural": "source/operator-candidates.json",
+        "semantic": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "structural_action_validated; semantic_effects_explicitly_unresolved"
+      }
+    },
+    {
+      "semanticOperatorId": "semantic:L5:v0.1.1",
+      "registryVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "structuralOperatorId": "L5",
+      "notation": "L_5",
+      "name": "Lower Degree 5 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 5,
+      "degreeGovernor": "Venus",
+      "direction": "lower",
+      "domainRule": "Defined when Degree 5 can move down one semitone without collision or crossing the rooted boundary.",
+      "harmonicAction": {
+        "status": "structurally_validated",
+        "action": "Replace the pitch at ordered Degree 5 by -1 semitone.",
+        "partial": true,
+        "applicationCount": 210,
+        "domainSize": 210,
+        "imageSize": 210,
+        "structuralSupportCount": 29,
+        "fieldSupportCount": 25
+      },
+      "inverseStructuralOperatorId": "R5",
+      "conjugateStructuralOperatorId": "L4",
+      "semanticStatus": "structural_operator_semantics_unresolved",
+      "semanticResearchPriority": "standard",
+      "semanticEffects": {
+        "preserves": [],
+        "transforms": [],
+        "promotes": [],
+        "suppresses": [],
+        "prohibits": [],
+        "unresolved": [
+          "canonical_feature_delta",
+          "domain_projection_delta",
+          "semantic_compression_delta",
+          "semantic_commutation_after_normalization"
+        ]
+      },
+      "physicalPolicy": {
+        "mutatesPhysicalQuantities": false,
+        "targetResolution": "The compiled destination state resolves the photonic anchor of its own Governor office.",
+        "prohibitedInference": "Do not infer that musical pitch mutation physically changes optical wavelength."
+      },
+      "normalizationPolicy": {
+        "destinationDefinesIntrinsicProfile": true,
+        "routeHistoryStoredSeparately": true,
+        "confluenceRequired": true
+      },
+      "structuralFixtureIds": [],
+      "semanticEffectFixtureIds": [],
+      "provenance": {
+        "structural": "source/operator-candidates.json",
+        "semantic": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "structural_action_validated; semantic_effects_explicitly_unresolved"
+      }
+    },
+    {
+      "semanticOperatorId": "semantic:R6:v0.1.1",
+      "registryVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "structuralOperatorId": "R6",
+      "notation": "R_6",
+      "name": "Raise Degree 6 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 6,
+      "degreeGovernor": "Mercury",
+      "direction": "raise",
+      "domainRule": "Defined when Degree 6 can move up one semitone without collision or crossing the rooted boundary.",
+      "harmonicAction": {
+        "status": "structurally_validated",
+        "action": "Replace the pitch at ordered Degree 6 by +1 semitone.",
+        "partial": true,
+        "applicationCount": 210,
+        "domainSize": 210,
+        "imageSize": 210,
+        "structuralSupportCount": 29,
+        "fieldSupportCount": 25
+      },
+      "inverseStructuralOperatorId": "L6",
+      "conjugateStructuralOperatorId": "R5",
+      "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+      "semanticResearchPriority": "standard",
+      "semanticEffects": {
+        "preserves": [],
+        "transforms": [],
+        "promotes": [],
+        "suppresses": [],
+        "prohibits": [],
+        "unresolved": [
+          "canonical_feature_delta",
+          "domain_projection_delta",
+          "semantic_compression_delta",
+          "semantic_commutation_after_normalization"
+        ]
+      },
+      "physicalPolicy": {
+        "mutatesPhysicalQuantities": false,
+        "targetResolution": "The compiled destination state resolves the photonic anchor of its own Governor office.",
+        "prohibitedInference": "Do not infer that musical pitch mutation physically changes optical wavelength."
+      },
+      "normalizationPolicy": {
+        "destinationDefinesIntrinsicProfile": true,
+        "routeHistoryStoredSeparately": true,
+        "confluenceRequired": true
+      },
+      "structuralFixtureIds": [
+        "fixture:aeolian-modal-covariance"
+      ],
+      "semanticEffectFixtureIds": [],
+      "provenance": {
+        "structural": "source/operator-candidates.json",
+        "semantic": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "structural_action_validated; semantic_effects_explicitly_unresolved"
+      }
+    },
+    {
+      "semanticOperatorId": "semantic:L6:v0.1.1",
+      "registryVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "structuralOperatorId": "L6",
+      "notation": "L_6",
+      "name": "Lower Degree 6 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 6,
+      "degreeGovernor": "Mercury",
+      "direction": "lower",
+      "domainRule": "Defined when Degree 6 can move down one semitone without collision or crossing the rooted boundary.",
+      "harmonicAction": {
+        "status": "structurally_validated",
+        "action": "Replace the pitch at ordered Degree 6 by -1 semitone.",
+        "partial": true,
+        "applicationCount": 210,
+        "domainSize": 210,
+        "imageSize": 210,
+        "structuralSupportCount": 29,
+        "fieldSupportCount": 25
+      },
+      "inverseStructuralOperatorId": "R6",
+      "conjugateStructuralOperatorId": "L5",
+      "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+      "semanticResearchPriority": "standard",
+      "semanticEffects": {
+        "preserves": [],
+        "transforms": [],
+        "promotes": [],
+        "suppresses": [],
+        "prohibits": [],
+        "unresolved": [
+          "canonical_feature_delta",
+          "domain_projection_delta",
+          "semantic_compression_delta",
+          "semantic_commutation_after_normalization"
+        ]
+      },
+      "physicalPolicy": {
+        "mutatesPhysicalQuantities": false,
+        "targetResolution": "The compiled destination state resolves the photonic anchor of its own Governor office.",
+        "prohibitedInference": "Do not infer that musical pitch mutation physically changes optical wavelength."
+      },
+      "normalizationPolicy": {
+        "destinationDefinesIntrinsicProfile": true,
+        "routeHistoryStoredSeparately": true,
+        "confluenceRequired": true
+      },
+      "structuralFixtureIds": [
+        "fixture:lydian-minor-midpoint"
+      ],
+      "semanticEffectFixtureIds": [],
+      "provenance": {
+        "structural": "source/operator-candidates.json",
+        "semantic": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "structural_action_validated; semantic_effects_explicitly_unresolved"
+      }
+    },
+    {
+      "semanticOperatorId": "semantic:R7:v0.1.1",
+      "registryVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "structuralOperatorId": "R7",
+      "notation": "R_7",
+      "name": "Raise Degree 7 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 7,
+      "degreeGovernor": "Moon",
+      "direction": "raise",
+      "domainRule": "Defined when Degree 7 can move up one semitone without collision or crossing the rooted boundary.",
+      "harmonicAction": {
+        "status": "structurally_validated",
+        "action": "Replace the pitch at ordered Degree 7 by +1 semitone.",
+        "partial": true,
+        "applicationCount": 210,
+        "domainSize": 210,
+        "imageSize": 210,
+        "structuralSupportCount": 29,
+        "fieldSupportCount": 25
+      },
+      "inverseStructuralOperatorId": "L7",
+      "conjugateStructuralOperatorId": "R6",
+      "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+      "semanticResearchPriority": "priority_v0.1_sun_moon_axis",
+      "semanticEffects": {
+        "preserves": [],
+        "transforms": [],
+        "promotes": [],
+        "suppresses": [],
+        "prohibits": [],
+        "unresolved": [
+          "canonical_feature_delta",
+          "domain_projection_delta",
+          "semantic_compression_delta",
+          "semantic_commutation_after_normalization"
+        ]
+      },
+      "physicalPolicy": {
+        "mutatesPhysicalQuantities": false,
+        "targetResolution": "The compiled destination state resolves the photonic anchor of its own Governor office.",
+        "prohibitedInference": "Do not infer that musical pitch mutation physically changes optical wavelength."
+      },
+      "normalizationPolicy": {
+        "destinationDefinesIntrinsicProfile": true,
+        "routeHistoryStoredSeparately": true,
+        "confluenceRequired": true
+      },
+      "structuralFixtureIds": [
+        "fixture:harmonic-minor-satellite",
+        "fixture:aeolian-modal-covariance"
+      ],
+      "semanticEffectFixtureIds": [],
+      "provenance": {
+        "structural": "source/operator-candidates.json",
+        "semantic": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "structural_action_validated; semantic_effects_explicitly_unresolved"
+      }
+    },
+    {
+      "semanticOperatorId": "semantic:L7:v0.1.1",
+      "registryVersion": "0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "structuralOperatorId": "L7",
+      "notation": "L_7",
+      "name": "Lower Degree 7 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 7,
+      "degreeGovernor": "Moon",
+      "direction": "lower",
+      "domainRule": "Defined when Degree 7 can move down one semitone without collision or crossing the rooted boundary.",
+      "harmonicAction": {
+        "status": "structurally_validated",
+        "action": "Replace the pitch at ordered Degree 7 by -1 semitone.",
+        "partial": true,
+        "applicationCount": 210,
+        "domainSize": 210,
+        "imageSize": 210,
+        "structuralSupportCount": 29,
+        "fieldSupportCount": 25
+      },
+      "inverseStructuralOperatorId": "R7",
+      "conjugateStructuralOperatorId": "L6",
+      "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+      "semanticResearchPriority": "priority_v0.1_sun_moon_axis",
+      "semanticEffects": {
+        "preserves": [],
+        "transforms": [],
+        "promotes": [],
+        "suppresses": [],
+        "prohibits": [],
+        "unresolved": [
+          "canonical_feature_delta",
+          "domain_projection_delta",
+          "semantic_compression_delta",
+          "semantic_commutation_after_normalization"
+        ]
+      },
+      "physicalPolicy": {
+        "mutatesPhysicalQuantities": false,
+        "targetResolution": "The compiled destination state resolves the photonic anchor of its own Governor office.",
+        "prohibitedInference": "Do not infer that musical pitch mutation physically changes optical wavelength."
+      },
+      "normalizationPolicy": {
+        "destinationDefinesIntrinsicProfile": true,
+        "routeHistoryStoredSeparately": true,
+        "confluenceRequired": true
+      },
+      "structuralFixtureIds": [
+        "fixture:acoustic-confluence"
+      ],
+      "semanticEffectFixtureIds": [],
+      "provenance": {
+        "structural": "source/operator-candidates.json",
+        "semantic": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "authority": "structural_action_validated; semantic_effects_explicitly_unresolved"
+      }
+    }
+  ]
+}

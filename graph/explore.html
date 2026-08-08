@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seven Governors — Mutation Algebra Explorer</title>
+<script src="vendor/vis-network.min.js"></script>
+<script src="vendor/3d-force-graph.min.js"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; font-family: system-ui, sans-serif; background: #0d0d0d; color: #e0e0e0; }
+#layout { display: flex; height: 100%; }
+#sidebar { width: 420px; min-width: 360px; padding: 16px; overflow-y: auto; background: #111; border-right: 1px solid #222; display: flex; flex-direction: column; gap: 10px; z-index: 2; }
+#sidebar h1 { font-size: 17px; color: #8cf; letter-spacing: .5px; }
+#sidebar h2 { font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+textarea { width: 100%; height: 100px; font-family: 'Courier New', monospace; font-size: 12px; background: #0a0a0a; color: #8cf; border: 1px solid #222; border-radius: 4px; padding: 8px; resize: vertical; }
+textarea:focus { outline: none; border-color: #2563eb; }
+.presets { display: flex; flex-wrap: wrap; gap: 4px; }
+.presets button { padding: 5px 10px; font-size: 11px; background: #1a1a2e; color: #8cf; border: 1px solid #2563eb44; border-radius: 3px; cursor: pointer; }
+.presets button:hover { background: #1e1e3e; border-color: #2563eb; }
+.toggles { display: flex; gap: 6px; }
+.toggles button { flex: 1; padding: 6px; font-size: 11px; font-weight: 600; border-radius: 4px; cursor: pointer; border: 1px solid #333; background: #1a1a1a; color: #888; }
+.toggles button.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+#run-bar { display: flex; gap: 8px; }
+#run-btn { flex: 1; padding: 7px; background: #2563eb; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600; }
+#run-btn:hover { background: #1d4ed8; }
+#run-btn:disabled { opacity: .4; cursor: default; }
+#legend { font-size: 11px; line-height: 1.6; background: #0a0a0a; border: 1px solid #222; border-radius: 4px; padding: 8px; }
+#legend .row { display: flex; align-items: center; gap: 6px; }
+#legend .swatch { width: 14px; height: 14px; border-radius: 2px; flex-shrink: 0; }
+#node-info { font-size: 11px; line-height: 1.5; background: #0a0a0a; border: 1px solid #222; border-radius: 4px; padding: 8px; max-height: 160px; overflow-y: auto; white-space: pre-wrap; font-family: 'Courier New', monospace; }
+#node-info .highlight { color: #8cf; font-weight: bold; }
+#status { font-size: 11px; color: #666; }
+#viewport { flex: 1; position: relative; overflow: hidden; }
+@media (max-width: 800px) {
+  #layout { flex-direction: column; }
+  #sidebar { width: 100%; min-width: 0; max-height: 48%; border-right: 0; border-bottom: 1px solid #222; }
+  #viewport { min-height: 52%; }
+}
+</style>
+</head>
+<body>
+<div id="layout">
+  <div id="sidebar">
+    <h1>Seven Governors · Semantic Graph</h1>
+    <div id="status">Ready</div>
+
+    <div class="toggles">
+      <button id="mode-2d" class="active">2D</button>
+      <button id="mode-3d">3D</button>
+    </div>
+    <div class="toggles" id="layout-toggles" style="display:none">
+      <button id="layout-force" class="active">Force</button>
+      <button id="layout-structural">Helical</button>
+    </div>
+
+    <textarea id="query"></textarea>
+
+    <div id="run-bar">
+      <button id="run-btn">Run</button>
+    </div>
+
+    <h2>Pattern Presets</h2>
+    <div class="presets">
+      <button data-preset="cycle">7-Cycle</button>
+      <button data-preset="diamond">Covariance</button>
+      <button data-preset="anchor-locals">Anchor Locals</button>
+      <button data-preset="commute">Confluence</button>
+      <button data-preset="stabilizers">M Stabilizers</button>
+      <button data-preset="governors">Governors</button>
+      <button data-preset="operator-net">Operator Net</button>
+      <button data-preset="satellites">Satellite Web</button>
+      <button data-preset="big-lattice">Full Lattice</button>
+    </div>
+
+    <h2>Semantic Layer</h2>
+    <div class="presets">
+      <button data-preset="sun-profile">Sun Profile</button>
+      <button data-preset="semantic-operators">Semantic Operators</button>
+      <button data-preset="acoustic-routes">Acoustic Routes</button>
+    </div>
+
+    <h2>Legend</h2>
+    <div id="legend"></div>
+
+    <h2>Node Info</h2>
+    <div id="node-info">Click a node to inspect</div>
+  </div>
+  <div id="viewport"></div>
+</div>
+
+<script>
+const queryEl = document.getElementById('query');
+const runBtn = document.getElementById('run-btn');
+const statusEl = document.getElementById('status');
+const legendEl = document.getElementById('legend');
+const infoEl = document.getElementById('node-info');
+const viewport = document.getElementById('viewport');
+const mode2d = document.getElementById('mode-2d');
+const mode3d = document.getElementById('mode-3d');
+const layoutToggles = document.getElementById('layout-toggles');
+const layoutForce = document.getElementById('layout-force');
+const layoutStructural = document.getElementById('layout-structural');
+
+let currentMode = '2d';
+let currentLayout = 'force';
+let network = null;
+let graph3d = null;
+let currentData = null;
+let allRelTypes = [];
+
+const presets = {
+  cycle: {
+    label: 'Modal 7-Cycle — Office Transport +2',
+    q: `MATCH (start:ScaleState {name: '7-1 terminal cluster state 127'})
+MATCH path = (start)-[:MODAL_MUTATES_TO*7]->(start)
+RETURN path`,
+  },
+  diamond: {
+    label: 'Covariance Diamond: M R3 = R2 M',
+    q: `MATCH (source:ScaleState)-[local:LOCAL_MUTATES_TO {operatorId: 'R3'}]->(localT)
+MATCH (localT)-[m1:MODAL_MUTATES_TO]->(leftT)
+MATCH (source)-[m2:MODAL_MUTATES_TO]->(modalT)
+MATCH (modalT)-[trans:LOCAL_MUTATES_TO {operatorId: 'R2'}]->(rightT)
+RETURN source, local, localT, m1, leftT, modalT, m2, trans, rightT LIMIT 1`,
+  },
+  'anchor-locals': {
+    label: 'All Local Ops from D7 Anchor',
+    q: `MATCH (a:ScaleState {fineRole: 'terminal_anchor_D7'})
+OPTIONAL MATCH (a)-[r:LOCAL_MUTATES_TO]->(t)
+RETURN a, r, t`,
+  },
+  commute: {
+    label: 'Confluence: R3·L5 = L5·R3',
+    q: `MATCH (s:ScaleState)
+MATCH (s)-[r3:LOCAL_MUTATES_TO {operatorId: 'R3'}]->(viaR)
+MATCH (s)-[l5:LOCAL_MUTATES_TO {operatorId: 'L5'}]->(viaL)
+MATCH (viaR)-[l5b:LOCAL_MUTATES_TO {operatorId: 'L5'}]->(t1)
+MATCH (viaL)-[r3b:LOCAL_MUTATES_TO {operatorId: 'R3'}]->(t2)
+WHERE t1.id = t2.id
+RETURN s, r3, viaR, l5, viaL, l5b, t1, r3b, t2 LIMIT 3`,
+  },
+  stabilizers: {
+    label: 'M Stabilizers (role/tier/forte preserved)',
+    q: `MATCH (s:ScaleState)-[r:MODAL_MUTATES_TO]->(t)
+RETURN s, r, t LIMIT 24`,
+  },
+  governors: {
+    label: 'Office Transport +2 mod 7',
+    q: `MATCH (s:ScaleState)-[r:MODAL_MUTATES_TO]->(t)
+WHERE s.office IS NOT NULL
+RETURN s, r, t LIMIT 21`,
+  },
+  'operator-net': {
+    label: 'M + Local Operators on D7',
+    q: `MATCH (s:ScaleState {tier: 'D7'})
+OPTIONAL MATCH (s)-[r:MODAL_MUTATES_TO|LOCAL_MUTATES_TO]->(t)
+RETURN s, r, t`,
+  },
+  satellites: {
+    label: 'GOVERNS + Locals from D7 Anchor',
+    q: `MATCH (a:ScaleState {fineRole: 'terminal_anchor_D7'})
+OPTIONAL MATCH (a)-[g:GOVERNS]->(sat)
+OPTIONAL MATCH (a)-[r:LOCAL_MUTATES_TO]->(t)
+RETURN a, g, sat, r, t`,
+  },
+  'big-lattice': {
+    label: 'Full Lattice (D5 anchor + all connections)',
+    q: `MATCH (a:ScaleState {fineRole: 'anchor_D5'})
+OPTIONAL MATCH (a)-[:GOVERNS]->(sat)
+OPTIONAL MATCH (a)-[:CONSTRUCTS]->(child)
+OPTIONAL MATCH (a)-[r:LOCAL_MUTATES_TO]->(t)
+OPTIONAL MATCH (a)-[:MODAL_MUTATES_TO]->(modal)
+RETURN a, sat, child, r, t, modal
+LIMIT 80`,
+  },
+  'sun-profile': {
+    label: 'Sun canonical profile and typed features',
+    q: `MATCH (release:RegistryRelease {
+  registry_name: 'seven-governors-canonical-feature-profile-registry',
+  active: true
+})
+MATCH (office:GovernorOffice)-[active:ACTIVE_PROFILE]->(profile:CanonicalFeatureProfile)
+MATCH (profile)-[version:PART_OF_RELEASE]->(release)
+WHERE coalesce(office.name, office.office) = 'Sun'
+MATCH (profile)-[photonic:HAS_PHOTONIC_RECORD]->(light:PhotonicRecord)
+OPTIONAL MATCH (profile)-[claim:HAS_FEATURE]->(feature:FeatureDefinition)
+RETURN release, office, active, profile, version, photonic, light, claim, feature`,
+  },
+  'semantic-operators': {
+    label: 'Sun/Moon-axis operators and unresolved semantic scopes',
+    q: `MATCH (release:RegistryRelease {
+  registry_name: 'seven-governors-canonical-feature-profile-registry',
+  active: true
+})
+MATCH (mutation:MutationOperator)-[active:ACTIVE_SEMANTIC_OPERATOR]->(semantic:SemanticOperator)
+MATCH (semantic)-[version:PART_OF_RELEASE]->(release)
+WHERE semantic.semantic_research_priority = 'priority_v0.1_sun_moon_axis'
+MATCH (semantic)-[realizes:REALIZES]->(mutation)
+MATCH (semantic)-[gap:HAS_UNRESOLVED_SCOPE]->(scope:SemanticUnresolvedScope)
+RETURN release, mutation, active, semantic, version, realizes, gap, scope`,
+  },
+  'acoustic-routes': {
+    label: 'Acoustic confluence routes and route-independent normal form',
+    q: `MATCH (release:RegistryRelease {
+  registry_name: 'seven-governors-canonical-feature-profile-registry',
+  active: true
+})
+MATCH (fixture:ValidationFixture {fixture_id: 'fixture:acoustic-confluence'})
+MATCH (fixture)-[fixtureVersion:PART_OF_RELEASE]->(release)
+MATCH (fixture)-[tests:TESTS_ROUTE]->(route:DerivationRoute)
+MATCH (route)-[hasStep:HAS_STEP]->(step:DerivationStep)
+MATCH (step)-[starts:STARTS_AT]->(source:ScaleState)
+MATCH (step)-[ends:ENDS_AT]->(target:ScaleState)
+MATCH (step)-[applies:APPLIES]->(operator:SemanticOperator)
+MATCH (route)-[produces:PRODUCES]->(normal:CompiledFeatureProfile)
+RETURN release, fixtureVersion, fixture, tests, route, hasStep, step,
+       starts, source, ends, target, applies, operator, produces, normal`,
+  },
+};
+
+const relColors = {
+  MODAL_MUTATES_TO: { color: '#00d4ff', label: 'M (modal)' },
+  LOCAL_MUTATES_TO: { color: '#22c55e', label: 'Rk/Lk (local)' },
+  GOVERNS: { color: '#f59e0b', label: 'Governs' },
+  CONSTRUCTS: { color: '#a855f7', label: 'Constructs' },
+  SEAT_CONTACT: { color: '#f97316', label: 'Seat Contact' },
+  MODAL_SUCCESSOR: { color: '#06b6d4', label: 'Modal Successor' },
+  PHASE_SHIFT: { color: '#ec4899', label: 'Phase Shift' },
+  ACTIVE_PROFILE: { color: '#fbbf24', label: 'Active Profile' },
+  HAS_CANONICAL_PROFILE: { color: '#d97706', label: 'Profile History' },
+  PART_OF_RELEASE: { color: '#64748b', label: 'Release', dashes: true },
+  HAS_PHOTONIC_RECORD: { color: '#fde047', label: 'Photonic Record' },
+  HAS_FEATURE: { color: '#4ade80', label: 'Typed Feature' },
+  REFERENCES_LANDFORM: { color: '#22c55e', label: 'Landform Reference' },
+  PROJECTS_FEATURE: { color: '#10b981', label: 'Projects Feature' },
+  CANONICALIZED_BY: { color: '#22d3ee', label: 'Canonicalized By' },
+  HAS_NORMAL_FORM: { color: '#14b8a6', label: 'Normal Form' },
+  ACTIVE_SEMANTIC_OPERATOR: { color: '#c084fc', label: 'Active Semantic Shell' },
+  REALIZES: { color: '#a855f7', label: 'Realizes Operator' },
+  HAS_UNRESOLVED_SCOPE: { color: '#f87171', label: 'Unresolved Scope', dashes: true },
+  TESTS_ROUTE: { color: '#f472b6', label: 'Tests Route' },
+  HAS_STEP: { color: '#fb923c', label: 'Route Step' },
+  STARTS_AT: { color: '#60a5fa', label: 'Starts At' },
+  ENDS_AT: { color: '#38bdf8', label: 'Ends At' },
+  APPLIES: { color: '#8b5cf6', label: 'Applies' },
+  PRODUCES: { color: '#2dd4bf', label: 'Produces Normal Form' },
+};
+
+const nodeColorByRole = {
+  anchor: '#2563eb',
+  satellite: '#16a34a',
+  boundary: '#9333ea',
+};
+const nodeDefaultColor = '#555';
+const nodeStylesByLabel = {
+  GovernorOffice: { color: '#f59e0b', shape: 'star', size: 24 },
+  CanonicalFeatureProfile: { color: '#06b6d4', shape: 'hexagon', size: 21 },
+  PhotonicRecord: { color: '#fde047', shape: 'dot', size: 16 },
+  FeatureDefinition: { color: '#22c55e', shape: 'box', size: 15 },
+  RegistryRelease: { color: '#64748b', shape: 'database', size: 18 },
+  MutationOperator: { color: '#8b5cf6', shape: 'triangle', size: 18 },
+  SemanticOperator: { color: '#c084fc', shape: 'diamond', size: 18 },
+  SemanticUnresolvedScope: { color: '#ef4444', shape: 'triangleDown', size: 15 },
+  ValidationFixture: { color: '#ec4899', shape: 'box', size: 17 },
+  DerivationRoute: { color: '#f97316', shape: 'diamond', size: 17 },
+  DerivationStep: { color: '#fb923c', shape: 'dot', size: 14 },
+  CompiledFeatureProfile: { color: '#14b8a6', shape: 'hexagon', size: 20 },
+  DomainProjection: { color: '#10b981', shape: 'box', size: 16 },
+  LandformReference: { color: '#84cc16', shape: 'dot', size: 13 },
+  HarmonicMeasureDefinition: { color: '#3b82f6', shape: 'box', size: 15 },
+};
+
+const tierOrder = ['', 'D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7'];
+const officeIndexMap = { Sun: 0, Moon: 1, Mars: 2, Mercury: 3, Jupiter: 4, Venus: 5, Saturn: 6 };
+
+function nodeRole(node) { return node.role || node.properties?.role || 'unknown'; }
+
+function primaryNodeLabel(node) {
+  const labels = node.labels || [];
+  return Object.keys(nodeStylesByLabel).find(label => labels.includes(label))
+    || (labels.includes('ScaleState') ? 'ScaleState' : labels[0] || 'Node');
+}
+
+function nodeStyle(node) {
+  const label = primaryNodeLabel(node);
+  if (label === 'ScaleState') {
+    const role = nodeRole(node);
+    return {
+      color: nodeColorByRole[role] || nodeDefaultColor,
+      shape: { anchor: 'star', satellite: 'dot', boundary: 'diamond' }[role] || 'ellipse',
+      size: { anchor: 22, satellite: 14, boundary: 11 }[role] || 15,
+    };
+  }
+  return nodeStylesByLabel[label] || { color: nodeDefaultColor, shape: 'ellipse', size: 15 };
+}
+
+function nodeLabel(node) {
+  const p = node.properties || node;
+  const type = primaryNodeLabel(node);
+  const labels = {
+    CanonicalFeatureProfile: p.office ? `${p.office} profile` : p.profile_id,
+    PhotonicRecord: p.office ? `${p.office} · ${p.wavelength_nm} nm` : p.photonic_id,
+    FeatureDefinition: p.label || p.feature_id,
+    RegistryRelease: p.registry_version ? `Registry v${p.registry_version}` : p.release_id,
+    MutationOperator: p.id || p.operator_id || p.operatorId,
+    SemanticOperator: p.notation || p.structural_operator_id,
+    SemanticUnresolvedScope: p.label || p.scope_id,
+    ValidationFixture: p.label || p.fixture_id,
+    DerivationRoute: Array.isArray(p.operator_ids) ? `Route ${p.operator_ids.join(' · ')}` : p.route_id,
+    DerivationStep: p.structural_operator_id ? `${p.structural_operator_id} · step ${p.sequence}` : p.step_id,
+    CompiledFeatureProfile: p.state_name ? `${p.state_name} normal form` : p.normal_form_id,
+    DomainProjection: p.domain,
+    LandformReference: p.name || p.landform_id,
+    HarmonicMeasureDefinition: p.measure_id,
+  };
+  const name = labels[type] || p.name || p.forte || `n${node.id}`;
+  return p.office ? `${name} [${p.office}]` : String(name);
+}
+
+function nodeColor(node) {
+  return nodeStyle(node).color;
+}
+
+// --- Api ---
+
+async function runQuery(cypher) {
+  runBtn.disabled = true;
+  statusEl.textContent = 'Running...';
+  try {
+    const res = await fetch('/api/query', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ cypher }),
+    });
+    if (!res.ok) {
+      const err = await res.text();
+      statusEl.textContent = 'Error: ' + err.slice(0, 120);
+      return;
+    }
+    const data = await res.json();
+    currentData = data;
+    renderCurrent();
+  } catch (e) {
+    statusEl.textContent = 'Error: ' + e.message;
+  } finally {
+    runBtn.disabled = false;
+  }
+}
+
+// --- 2D ---
+
+function render2D(data) {
+  destroy2D();
+  const visData = buildVisData2D(data);
+  if (visData.nodes.length === 0) {
+    statusEl.textContent = 'No nodes to render.';
+    return;
+  }
+
+  const options = {
+    physics: {
+      solver: 'forceAtlas2Based',
+      forceAtlas2Based: {
+        gravitationalConstant: -60,
+        centralGravity: 0.004,
+        springLength: 160,
+        springConstant: 0.03,
+        damping: 0.4,
+      },
+      stabilization: { iterations: 150 },
+    },
+    interaction: { hover: true, tooltipDelay: 150, navigationButtons: true, keyboard: true },
+    edges: { smooth: { type: 'continuous' } },
+    groups: {
+      anchor: { shape: 'star', size: 22, color: nodeColorByRole.anchor },
+      satellite: { shape: 'dot', size: 14, color: nodeColorByRole.satellite },
+      boundary: { shape: 'diamond', size: 11, color: nodeColorByRole.boundary },
+    },
+    nodes: { borderWidth: 2, font: { color: '#ccc', size: 11, strokeWidth: 0 } },
+  };
+
+  network = new vis.Network(viewport, visData, options);
+  network.on('click', (params) => {
+    if (params.nodes.length > 0) showNodeInfo(visData.nodes.find(n => n.id === params.nodes[0]));
+    else infoEl.textContent = 'Click a node to inspect';
+  });
+}
+
+function destroy2D() {
+  if (network) { network.destroy(); network = null; }
+}
+
+function buildVisData2D(data) {
+  const nodeMap = new Map();
+  const edgeList = [];
+  const edgeSet = new Set();
+  const relTypesSeen = new Set();
+  const nodes = data.nodes || [];
+  const edges = data.edges || [];
+
+  for (const n of nodes) {
+    const id = n.id != null ? n.id : n.identity;
+    if (nodeMap.has(id)) continue;
+    const p = n.properties || n;
+    const style = nodeStyle(n);
+    const label = nodeLabel(n);
+    nodeMap.set(id, {
+      id,
+      label,
+      title: JSON.stringify(p, null, 2),
+      color: { background: style.color, border: '#777' },
+      shape: style.shape,
+      size: style.size,
+      group: primaryNodeLabel(n),
+      labels: n.labels || [],
+      properties: p,
+    });
+  }
+
+  for (const e of edges) {
+    const from = e.from != null ? e.from : e.source;
+    const to = e.to != null ? e.to : e.target;
+    if (from == null || to == null) continue;
+    const type = e.type || 'RELATED';
+    relTypesSeen.add(type);
+    const key = `${from}-${to}-${type}`;
+    if (edgeSet.has(key)) continue;
+    edgeSet.add(key);
+    const rc = relColors[type] || { color: '#555' };
+    edgeList.push({
+      id: key, from, to,
+      label: type === 'LOCAL_MUTATES_TO' ? (e.properties?.operatorId || 'local') : type,
+      arrows: 'to',
+      color: { color: rc.color, highlight: '#fff' },
+      font: { size: 9, color: '#888', strokeWidth: 0 },
+      width: type === 'MODAL_MUTATES_TO' ? 2 : 1,
+      dashes: type === 'LOCAL_MUTATES_TO' || Boolean(rc.dashes),
+      smooth: { type: 'continuous' }, type,
+    });
+  }
+
+  allRelTypes = [...relTypesSeen].sort();
+  buildLegend();
+  return { nodes: [...nodeMap.values()], edges: edgeList };
+}
+
+// --- 3D ---
+
+function render3D(data) {
+  destroy3D();
+  const gData = buildGraph3D(data);
+  if (gData.nodes.length === 0) {
+    statusEl.textContent = 'No nodes to render.';
+    return;
+  }
+
+  const graph = ForceGraph3D()(viewport);
+  graph3d = graph;
+
+  graph
+    .graphData(gData)
+    .nodeColor(n => nodeColor(n))
+    .nodeLabel(n => nodeLabel(n) + '\n' + JSON.stringify(n.properties, null, 2))
+    .nodeVal(n => Math.max(1, nodeStyle(n).size / 7))
+    .nodeRelSize(1.2)
+    .linkColor(l => (relColors[l.type] || { color: '#555' }).color)
+    .linkWidth(l => l.type === 'MODAL_MUTATES_TO' ? 1.5 : 0.6)
+    .linkLabel(l => l.type)
+    .linkDirectionalArrowLength(l => l.type === 'MODAL_MUTATES_TO' ? 4 : 2)
+    .linkDirectionalArrowRelPos(0.95)
+    .backgroundColor('#0d0d0d')
+    .onNodeClick(node => showNodeInfo(node));
+
+  if (currentLayout === 'structural') applyStructuralLayout(gData);
+}
+
+function destroy3D() {
+  if (graph3d) {
+    try { graph3d.graphData({ nodes: [], links: [] }); } catch(e) {}
+    const canvas = viewport.querySelector('canvas');
+    if (canvas) canvas.remove();
+    viewport.innerHTML = '';
+    graph3d = null;
+  }
+}
+
+function buildGraph3D(data) {
+  const nodes = [];
+  const links = [];
+  const seenNodes = new Map();
+  const seenLinks = new Set();
+
+  for (const n of data.nodes || []) {
+    const id = n.id != null ? n.id : n.identity;
+    if (seenNodes.has(id)) continue;
+    seenNodes.set(id, { ...n, properties: n.properties || n });
+  }
+
+  for (const e of data.edges || []) {
+    const from = e.from != null ? e.from : e.source;
+    const to = e.to != null ? e.to : e.target;
+    if (from == null || to == null) continue;
+    const type = e.type || 'RELATED';
+    const key = `${from}-${to}-${type}`;
+    if (seenLinks.has(key)) continue;
+    seenLinks.add(key);
+    links.push({ source: from, target: to, type, properties: e.properties || {} });
+  }
+
+  for (const n of seenNodes.values()) {
+    const p = n.properties || {};
+    const tierIdx = tierOrder.indexOf(p.tier);
+    const officeIdx = p.officeIndex != null ? p.officeIndex : officeIndexMap[p.office];
+    nodes.push({
+      ...n,
+      id: n.id != null ? n.id : n.identity,
+      fx: null, fy: null, fz: null,
+      _tierIdx: tierIdx >= 0 ? tierIdx : -1,
+      _officeIdx: officeIdx != null ? officeIdx : -1,
+    });
+  }
+
+  allRelTypes = [...new Set(links.map(l => l.type))].sort();
+  buildLegend();
+
+  return { nodes, links };
+}
+
+function applyStructuralLayout(gData) {
+  const nodes = gData.nodes || [];
+  // group nodes by (tierIdx, officeIdx)
+  const groups = {};
+  for (const n of nodes) {
+    const t = n._tierIdx;
+    const o = n._officeIdx;
+    if (t < 0 || o < 0) continue;
+    const key = `${t}:${o}`;
+    if (!groups[key]) groups[key] = [];
+    groups[key].push(n);
+  }
+
+  for (const n of nodes) {
+    const t = n._tierIdx;
+    const o = n._officeIdx;
+    if (t < 0 || o < 0) {
+      // boundary or non-office nodes: place along center axis below
+      const tidx = t >= 0 ? t : 0;
+      n.fx = 0;
+      n.fy = tidx * 3 - 9;
+      n.fz = 0;
+      continue;
+    }
+    // base position: cylinder with 7 columns, tier-stacked
+    const angle = (o / 7) * 2 * Math.PI;
+    const radius = 4 + t * 0.3;
+    const group = groups[`${t}:${o}`];
+    const idx = group.indexOf(n);
+    const count = group.length;
+    // spread multiple nodes at same (tier, office) slightly
+    const spread = count > 1 ? (idx / (count - 1) - 0.5) * 0.8 : 0;
+    n.fx = radius * Math.cos(angle + spread * 0.3);
+    n.fy = t * 3 - 9;
+    n.fz = radius * Math.sin(angle + spread * 0.3);
+  }
+
+  if (graph3d) {
+    graph3d.d3Force('charge').strength(-120);
+    graph3d.d3Force('link').distance(l => l.type === 'MODAL_MUTATES_TO' ? 4 : 6);
+    graph3d.d3ReheatSimulation();
+  }
+}
+
+function toggleLayout(layout) {
+  currentLayout = layout;
+  layoutForce.classList.toggle('active', layout === 'force');
+  layoutStructural.classList.toggle('active', layout === 'structural');
+
+  if (currentMode !== '3d' || !graph3d || !currentData) return;
+
+  const gData = graph3d.graphData();
+  if (layout === 'structural') {
+    applyStructuralLayout(gData);
+  } else {
+    for (const n of gData.nodes) { n.fx = null; n.fy = null; n.fz = null; }
+    graph3d.d3Force('charge').strength(-60);
+    graph3d.d3ReheatSimulation();
+  }
+}
+
+// --- Shared ---
+
+function renderCurrent() {
+  if (!currentData) return;
+  statusEl.textContent = `${(currentData.nodes || []).length} nodes, ${(currentData.edges || []).length} edges`;
+  if (currentMode === '2d') {
+    render2D(currentData);
+  } else {
+    render3D(currentData);
+  }
+}
+
+function buildLegend() {
+  legendEl.innerHTML = '';
+  for (const t of allRelTypes) {
+    const rc = relColors[t] || { color: '#555', label: t };
+    const row = document.createElement('div');
+    row.className = 'row';
+    row.innerHTML = `<span class="swatch" style="background:${rc.color}"></span>${rc.label}`;
+    legendEl.appendChild(row);
+  }
+}
+
+function showNodeInfo(node) {
+  const p = node.properties || {};
+  const type = primaryNodeLabel(node);
+  const preferredByType = {
+    ScaleState: ['name', 'id', 'forte', 'tier', 'role', 'fineRole', 'office', 'chirality', 'pitchSet'],
+    CanonicalFeatureProfile: ['profile_id', 'office', 'canonical_state_name', 'anchor_tier', 'thermodynamic_function', 'directionality', 'fingerprint'],
+    PhotonicRecord: ['photonic_id', 'office', 'wavelength_nm', 'frequency_hz', 'photon_energy_ev', 'photonic_compression'],
+    FeatureDefinition: ['feature_id', 'label', 'layer', 'value_type', 'epistemic_status', 'definition'],
+    RegistryRelease: ['release_id', 'registry_version', 'active', 'release_fingerprint'],
+    MutationOperator: ['id', 'operatorClass', 'degree', 'degreeGovernor', 'direction'],
+    SemanticOperator: ['semantic_operator_id', 'structural_operator_id', 'degree_governor', 'direction', 'semantic_status', 'semantic_research_priority'],
+    SemanticUnresolvedScope: ['scope_id', 'label', 'status'],
+    CompiledFeatureProfile: ['normal_form_id', 'state_name', 'office', 'domain', 'status', 'intrinsic_fingerprint', 'rendering_brief'],
+    ValidationFixture: ['fixture_id', 'evidence_scope', 'semantic_effect_evidence', 'status', 'assertion'],
+    DerivationRoute: ['route_id', 'target_state_id', 'operator_ids', 'note', 'excluded_from_fingerprint'],
+    DerivationStep: ['step_id', 'sequence', 'source_state_id', 'target_state_id', 'structural_operator_id', 'application_status'],
+  };
+  const preferred = preferredByType[type] || ['name', 'office', 'status'];
+  const orderedKeys = [
+    ...preferred.filter(key => p[key] != null),
+    ...Object.keys(p).sort().filter(key => !preferred.includes(key)),
+  ];
+  const formatValue = (key, value) => {
+    if (key.endsWith('_json') && typeof value === 'string') {
+      try { return JSON.stringify(JSON.parse(value), null, 2); } catch (e) {}
+    }
+    if (Array.isArray(value)) return value.join(', ');
+    if (value && typeof value === 'object') return JSON.stringify(value, null, 2);
+    return String(value);
+  };
+  const title = document.createElement('span');
+  title.className = 'highlight';
+  title.textContent = `${nodeLabel(node)} · ${type}`;
+  const details = orderedKeys.map(key => `${key}: ${formatValue(key, p[key])}`);
+  details.push(`neo4jId: ${node.id}`);
+  infoEl.replaceChildren(title, document.createTextNode(`\n${details.join('\n')}`));
+}
+
+// --- Mode toggles ---
+
+function setMode(mode) {
+  currentMode = mode;
+  mode2d.classList.toggle('active', mode === '2d');
+  mode3d.classList.toggle('active', mode === '3d');
+  layoutToggles.style.display = mode === '3d' ? 'flex' : 'none';
+  destroy2D();
+  destroy3D();
+  if (currentData) renderCurrent();
+}
+
+mode2d.addEventListener('click', () => setMode('2d'));
+mode3d.addEventListener('click', () => setMode('3d'));
+layoutForce.addEventListener('click', () => toggleLayout('force'));
+layoutStructural.addEventListener('click', () => toggleLayout('structural'));
+
+// --- Events ---
+
+runBtn.addEventListener('click', () => runQuery(queryEl.value));
+
+document.querySelectorAll('[data-preset]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const key = btn.dataset.preset;
+    const p = presets[key];
+    if (p) { queryEl.value = p.q; statusEl.textContent = p.label; runQuery(p.q); }
+  });
+});
+
+// --- Start ---
+queryEl.value = presets.cycle.q;
+runQuery(presets.cycle.q);
+</script>
+</body>
+</html>

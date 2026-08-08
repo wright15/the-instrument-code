@@ -1,0 +1,335 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/gov-207/schemas/upstream/classification-request.schema.json",
+  "$comment": "Strict local equivalent of https://seven-governors.local/governor-runtime/0.1.0/schemas/classification-request.schema.json.",
+  "title": "GOV-207 Vendored ClassificationRequest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "policyReleaseId",
+    "subject",
+    "facts",
+    "quantities",
+    "requestedAspectIds"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "policyReleaseId": { "const": "governor-runtime:0.1.0" },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subjectId", "subjectType"],
+      "properties": {
+        "subjectId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "subjectType": {
+          "enum": ["domain_entity", "governor_profile", "phenomenon_model", "runtime_task"]
+        }
+      }
+    },
+    "facts": {
+      "type": "array",
+      "maxItems": 256,
+      "items": {
+        "oneOf": [
+          { "$ref": "#/$defs/featureValueFact" },
+          { "$ref": "#/$defs/relationFact" },
+          { "$ref": "#/$defs/taxonomyFact" }
+        ]
+      }
+    },
+    "quantities": {
+      "type": "array",
+      "maxItems": 64,
+      "items": { "$ref": "#/$defs/quantity" }
+    },
+    "requestedAspectIds": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "uniqueItems": true,
+      "items": { "$ref": "../common.schema.json#/$defs/identifier" }
+    }
+  },
+  "$defs": {
+    "featureId": {
+      "enum": [
+        "domain.architecture",
+        "domain.botany",
+        "domain.color_associations",
+        "domain.landforms",
+        "domain.material",
+        "domain.symbolic_references",
+        "generative.creative_affordances",
+        "generative.prohibited_features",
+        "generative.promoted_features",
+        "generative.reference_pool",
+        "generative.required_features",
+        "generative.soft_priors",
+        "generative.suppressed_features",
+        "generative.unresolved_features",
+        "harmonic.C_H",
+        "harmonic.anchor_tier",
+        "harmonic.canonical_scale_state",
+        "harmonic.forte_family",
+        "harmonic.pitch_mask",
+        "physical.C_P",
+        "physical.frequency_hz",
+        "physical.photon_energy_ev",
+        "physical.photon_energy_j",
+        "physical.wavelength_nm",
+        "semantic.C_S",
+        "semantic.archetypal_role",
+        "semantic.directionality",
+        "semantic.element",
+        "semantic.optical_function",
+        "semantic.thermodynamic_function",
+        "semantic.zodiacal_systems"
+      ]
+    },
+    "epistemicClass": {
+      "enum": [
+        "authored_correspondence",
+        "authored_descriptive_model",
+        "canonical_reference_library",
+        "causal_claim",
+        "compiled_constraint",
+        "empirical_domain_fact",
+        "formally_audited",
+        "framework_declared_physical_anchor",
+        "framework_order_plus_registry_coordinate_convention",
+        "framework_validated_topology",
+        "observed_measurement",
+        "physical_anchor_plus_normalization_convention",
+        "physically_derived",
+        "unresolved_measure"
+      ]
+    },
+    "provenanceRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceId"],
+      "properties": {
+        "sourceId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "pointer": { "type": "string", "minLength": 1, "maxLength": 2048 }
+      }
+    },
+    "provenance": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 16,
+      "items": { "$ref": "#/$defs/provenanceRecord" }
+    },
+    "featureValueFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "factId",
+        "kind",
+        "facetPath",
+        "featureId",
+        "value",
+        "epistemicClass",
+        "provenance"
+      ],
+      "properties": {
+        "factId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "kind": { "const": "feature_value" },
+        "facetPath": { "type": "string", "minLength": 1, "maxLength": 1024, "pattern": "^/" },
+        "featureId": { "$ref": "#/$defs/featureId" },
+        "value": { "$ref": "../common.schema.json#/$defs/jsonScalar" },
+        "epistemicClass": { "$ref": "#/$defs/epistemicClass" },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      }
+    },
+    "relationFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "factId",
+        "kind",
+        "facetPath",
+        "predicateId",
+        "objectId",
+        "epistemicClass",
+        "provenance"
+      ],
+      "properties": {
+        "factId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "kind": { "const": "relation" },
+        "facetPath": { "type": "string", "minLength": 1, "maxLength": 1024, "pattern": "^/" },
+        "predicateId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "objectId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "epistemicClass": { "$ref": "#/$defs/epistemicClass" },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      }
+    },
+    "taxonomyFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["factId", "kind", "facetPath", "termId", "epistemicClass", "provenance"],
+      "properties": {
+        "factId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "kind": { "const": "taxonomy_term" },
+        "facetPath": { "type": "string", "minLength": 1, "maxLength": 1024, "pattern": "^/" },
+        "termId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "epistemicClass": { "$ref": "#/$defs/epistemicClass" },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      }
+    },
+    "frameworkBasis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "ownerScope", "ownerId"],
+      "properties": {
+        "kind": { "const": "framework_declaration" },
+        "ownerScope": {
+          "enum": [
+            "compiler.output",
+            "entity.aspect",
+            "governor.office",
+            "phenomenon.model",
+            "profile.governor",
+            "runtime.task",
+            "topology.scaleFamily",
+            "topology.scaleState",
+            "topology.scaleStateOrFamily"
+          ]
+        },
+        "ownerId": { "$ref": "../common.schema.json#/$defs/identifier" }
+      }
+    },
+    "measurementBasis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "subjectId", "methodId"],
+      "properties": {
+        "kind": { "const": "observed_measurement" },
+        "subjectId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "methodId": { "$ref": "../common.schema.json#/$defs/identifier" }
+      }
+    },
+    "operationBasis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "operationId", "inputQuantityIds"],
+      "properties": {
+        "kind": { "const": "registered_operation" },
+        "operationId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "inputQuantityIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 32,
+          "uniqueItems": true,
+          "items": { "$ref": "../common.schema.json#/$defs/identifier" }
+        }
+      }
+    },
+    "quantity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "quantityId",
+        "value",
+        "dimension",
+        "unit",
+        "epistemicClass",
+        "basis",
+        "provenance",
+        "assumptions"
+      ],
+      "properties": {
+        "schemaVersion": { "const": "1.0.0" },
+        "quantityId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "value": { "type": "number" },
+        "dimension": { "enum": ["dimensionless", "energy", "frequency", "length"] },
+        "unit": { "enum": ["Hz", "J", "eV", "m", "nm", "normalized_inverse_wavelength", "one"] },
+        "epistemicClass": {
+          "enum": [
+            "framework_declared_physical_anchor",
+            "observed_measurement",
+            "physical_anchor_plus_normalization_convention",
+            "physically_derived"
+          ]
+        },
+        "basis": {
+          "oneOf": [
+            { "$ref": "#/$defs/frameworkBasis" },
+            { "$ref": "#/$defs/measurementBasis" },
+            { "$ref": "#/$defs/operationBasis" }
+          ]
+        },
+        "provenance": { "$ref": "#/$defs/provenance" },
+        "assumptions": {
+          "type": "array",
+          "maxItems": 32,
+          "uniqueItems": true,
+          "items": { "$ref": "../common.schema.json#/$defs/identifier" }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "dimension": { "const": "length" } }, "required": ["dimension"] },
+          "then": {
+            "properties": {
+              "unit": { "enum": ["m", "nm"] },
+              "value": { "type": "number", "exclusiveMinimum": 0 }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "dimension": { "const": "frequency" } }, "required": ["dimension"] },
+          "then": {
+            "properties": {
+              "unit": { "const": "Hz" },
+              "value": { "type": "number", "exclusiveMinimum": 0 }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "dimension": { "const": "energy" } }, "required": ["dimension"] },
+          "then": {
+            "properties": {
+              "unit": { "enum": ["J", "eV"] },
+              "value": { "type": "number", "exclusiveMinimum": 0 }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "dimension": { "const": "dimensionless" } }, "required": ["dimension"] },
+          "then": { "properties": { "unit": { "enum": ["normalized_inverse_wavelength", "one"] } } }
+        },
+        {
+          "if": { "properties": { "unit": { "const": "normalized_inverse_wavelength" } }, "required": ["unit"] },
+          "then": { "properties": { "value": { "type": "number", "minimum": 0, "maximum": 1 } } }
+        },
+        {
+          "if": {
+            "properties": { "epistemicClass": { "const": "framework_declared_physical_anchor" } },
+            "required": ["epistemicClass"]
+          },
+          "then": { "properties": { "basis": { "$ref": "#/$defs/frameworkBasis" } } }
+        },
+        {
+          "if": {
+            "properties": { "epistemicClass": { "const": "observed_measurement" } },
+            "required": ["epistemicClass"]
+          },
+          "then": { "properties": { "basis": { "$ref": "#/$defs/measurementBasis" } } }
+        },
+        {
+          "if": {
+            "properties": {
+              "epistemicClass": {
+                "enum": ["physical_anchor_plus_normalization_convention", "physically_derived"]
+              }
+            },
+            "required": ["epistemicClass"]
+          },
+          "then": { "properties": { "basis": { "$ref": "#/$defs/operationBasis" } } }
+        }
+      ]
+    }
+  }
+}

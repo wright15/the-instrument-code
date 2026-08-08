@@ -1,0 +1,435 @@
+{
+  "schemaVersion": "1.0.0",
+  "packageName": "seven-governors-canonical-feature-profile-registry",
+  "packageVersion": "0.1.1",
+  "releaseId": "canonical-profile-registry:0.1.1",
+  "generatedAt": "2026-07-30",
+  "manifestPolicy": "All package files except node_modules, the archive, and this self-referential manifest.",
+  "fileCount": 82,
+  "totalBytes": 4664513,
+  "categoryCounts": {
+    "root": 3,
+    "canonical": 8,
+    "docs": 6,
+    "examples": 7,
+    "fixtures": 5,
+    "neo4j": 21,
+    "qa": 3,
+    "schemas": 6,
+    "scripts": 14,
+    "source": 9
+  },
+  "aggregateFingerprint": "b4440f5bd03a8195e74a19989b4e1e9e412ce01d71816667a01a82ae36e06b05",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6346,
+      "sha256": "a7c7ee0d5e42a187c6d692dd4fce2210abd1e75a4e15a9fcc2f63f635b6ca20d"
+    },
+    {
+      "path": "canonical/canonical-governor-profiles.json",
+      "bytes": 125613,
+      "sha256": "620c5ea3d4d94bdf8c8a11bbc164157ebca41d9647c10fa5d5d978c6e433630a"
+    },
+    {
+      "path": "canonical/domain-projection-registry.json",
+      "bytes": 3773,
+      "sha256": "739c8007b74094fd93993180772dd297f3f1485dc65a192daa92f3c9fff1a650"
+    },
+    {
+      "path": "canonical/feature-registry.json",
+      "bytes": 18609,
+      "sha256": "36712b20eea1d4d36f302dba50bbc9673aea329334cc8d34093db8dfaf838255"
+    },
+    {
+      "path": "canonical/harmonic-measure-definitions.json",
+      "bytes": 3350,
+      "sha256": "1a234e60ca71c0aa4d5ebc41c2aad16eaf0430e1b444b5d71deced8a01e421bc"
+    },
+    {
+      "path": "canonical/photonic-records.json",
+      "bytes": 11275,
+      "sha256": "06a723deffe6e3302e33070d029b22ee0744405ed5e9d1a7fe89a87ecde9066b"
+    },
+    {
+      "path": "canonical/registry-release.json",
+      "bytes": 1548,
+      "sha256": "5072761cb53b98a1c0fa99cb6807f148963ca8ec8394af461b2c9822553f0a22"
+    },
+    {
+      "path": "canonical/semantic-operator-registry.json",
+      "bytes": 34738,
+      "sha256": "ef2c2e40562f79c57c5e7d3e86869de4141228711a15415ce4eff66056a9085f"
+    },
+    {
+      "path": "canonical/source-authority-registry.json",
+      "bytes": 4245,
+      "sha256": "a1f499a5759c2b20e7dd8e028c61b749a45724da1815a8d725a970b61617befe"
+    },
+    {
+      "path": "docs/CREATION_PACKET_CONTRACT.md",
+      "bytes": 3437,
+      "sha256": "dbd9e2cb19ff494f506468390859be187772b414d3d1a5df7ad166016409183e"
+    },
+    {
+      "path": "docs/NEO4J_INSTALL.md",
+      "bytes": 4245,
+      "sha256": "2c7d21d85a396b78be247b33c13294031636f708b261607ce80605da441c1808"
+    },
+    {
+      "path": "docs/OPERATOR_HYPOTHESIS_GUIDE.md",
+      "bytes": 4739,
+      "sha256": "b2429c453f9e60f77dc53679043f081e07aa85a87796c7acf04af32cf149d39f"
+    },
+    {
+      "path": "docs/RELEASE_NOTES.md",
+      "bytes": 1971,
+      "sha256": "dd2ab937ac4d93a29ad9fc039c645545edeeea1a72ee8873e0f9abd29b7d8cf0"
+    },
+    {
+      "path": "docs/SEMANTIC_ADMISSION_POLICY.md",
+      "bytes": 4019,
+      "sha256": "7080da667ed85226ed3dff8a4c0ce86a6ca2d2c1a9053f810ae450d86e6e572a"
+    },
+    {
+      "path": "docs/SOURCE_AUTHORITY.md",
+      "bytes": 3203,
+      "sha256": "99e8f4dcfb4db335746961890d5804fca903dec905e45eebea32e1b1a2b5437f"
+    },
+    {
+      "path": "examples/compiled-landform-packets/1493-route-lydian-minor-1461-R4.json",
+      "bytes": 15346,
+      "sha256": "1d9172a7ca4ae17734e93a1b529be02f08542c420cc7166e9449a0dd8045b681"
+    },
+    {
+      "path": "examples/compiled-landform-packets/1493-route-lydian-minor-1749-L6.json",
+      "bytes": 15343,
+      "sha256": "e4c33b760434b9a477d9646586cb3ffb04c40785d1f315b22f04162991aa584c"
+    },
+    {
+      "path": "examples/compiled-landform-packets/1643-route-aeolian-square-M-R6.json",
+      "bytes": 16009,
+      "sha256": "a4d227aae28b07f208c42c66f38600850e842571b551d0f6f78ede4547f4cb9d"
+    },
+    {
+      "path": "examples/compiled-landform-packets/1643-route-aeolian-square-R7-M.json",
+      "bytes": 15978,
+      "sha256": "9f1c1fd720823657e4a698da99be148266804df72c963e309e0bd49ae28e86ee"
+    },
+    {
+      "path": "examples/compiled-landform-packets/1749-route-acoustic-1717-R4.json",
+      "bytes": 15034,
+      "sha256": "a875cac922d7e2942a43291f3ef2a0b3c02c5b2935b8e6ac07a4c63df8604489"
+    },
+    {
+      "path": "examples/compiled-landform-packets/1749-route-acoustic-2773-L7.json",
+      "bytes": 15031,
+      "sha256": "479b1a2a822f6d753577b071f860641c145b75e3b5a5bb28d082fdaa515b6362"
+    },
+    {
+      "path": "examples/compiled-landform-packets/2477-route-harmonic-minor-aeolian-R7.json",
+      "bytes": 15270,
+      "sha256": "9c5a9ddb6f28e6aeeec7e0eb24035e30547c7810fa7f9f5eb6650f45b83b89ec"
+    },
+    {
+      "path": "fixtures/acoustic-confluence.json",
+      "bytes": 2920,
+      "sha256": "c8f6e4beb3ee47f02e26ca4459ef6e32605ba0efef85c9ea3ce423e9d8448807"
+    },
+    {
+      "path": "fixtures/aeolian-modal-covariance.json",
+      "bytes": 4531,
+      "sha256": "411dd2b36e2eb3efe74392348cda64ca161e28279e9d75c9e26cc9e1670c6962"
+    },
+    {
+      "path": "fixtures/harmonic-minor-satellite.json",
+      "bytes": 1851,
+      "sha256": "6e2f1c321a018251ccd2398ef033d12eaa1b55e19ebe19bd5c9cca38af28aedc"
+    },
+    {
+      "path": "fixtures/lydian-minor-midpoint.json",
+      "bytes": 2971,
+      "sha256": "d339a4e8641f316cacdf90601a49864dd4693ff9d2adfa6036031c5ec46bf61b"
+    },
+    {
+      "path": "fixtures/reference-fixture-index.json",
+      "bytes": 14211,
+      "sha256": "b712977d0784d12da791e24de500a87b6f780d5049b1d0968ba0a27609f83fdc"
+    },
+    {
+      "path": "neo4j/00_v0.1.0_to_v0.1.1_migration.cypher",
+      "bytes": 236,
+      "sha256": "df036577921c915ac42a5de9671d9261864b82aff3e735e162cfde37eb0248c2"
+    },
+    {
+      "path": "neo4j/01_semantic_schema.cypher",
+      "bytes": 2053,
+      "sha256": "d5071571910dae404cc5e66df06b8e6dc6bf813ffa3d94e5cecfffc4e7a6a961"
+    },
+    {
+      "path": "neo4j/02_semantic_import.cypher",
+      "bytes": 14029,
+      "sha256": "48e6a121ad8b408e0b02f941a4f4b7315dfb8397fcc68b38d272c6b9d3ed9e23"
+    },
+    {
+      "path": "neo4j/03_semantic_validation.cypher",
+      "bytes": 7395,
+      "sha256": "c6716d8f6abe633c06551832fd188138e7629c98e05fcf349342c7700716e44e"
+    },
+    {
+      "path": "neo4j/04_semantic_queries.cypher",
+      "bytes": 5121,
+      "sha256": "ab29c918b762dbee5ed5735d815897dbe12ad26b38ffb0b0fc9d7186ffb41a8f"
+    },
+    {
+      "path": "neo4j/csv/canonical-profiles.csv",
+      "bytes": 3255,
+      "sha256": "d0cd6aec70ca09b9755ab95b9d55b00a12c2c4fc955c18bccb0217f2a983dfa5"
+    },
+    {
+      "path": "neo4j/csv/compiled-profiles.csv",
+      "bytes": 8725,
+      "sha256": "afaa66bf95dc9ae1108970b4d98d42b3fb9ac138116f2b281d2dff0481b8b79b"
+    },
+    {
+      "path": "neo4j/csv/derivation-routes.csv",
+      "bytes": 997,
+      "sha256": "6e9d08211028b53d09fc692c932cf566b8d0412b29cdaaa509802722f7e25430"
+    },
+    {
+      "path": "neo4j/csv/derivation-steps.csv",
+      "bytes": 1438,
+      "sha256": "bf07b0edc24d2838cd3c940f363f2b11c1f78535af869840734a6255da8cb69e"
+    },
+    {
+      "path": "neo4j/csv/domain-projections.csv",
+      "bytes": 653,
+      "sha256": "01c001fc55111263dc3192ef675afe55a23681d2ab86d638ef3846ffc575c24b"
+    },
+    {
+      "path": "neo4j/csv/feature-definitions.csv",
+      "bytes": 11331,
+      "sha256": "ec40296a307175e51d8b9805bae7172b9f273111f62bd69b953ef4d4788ab714"
+    },
+    {
+      "path": "neo4j/csv/harmonic-measure-definitions.csv",
+      "bytes": 2235,
+      "sha256": "549011800ca96462f209ac6174eaed80864af230cff11f85dacf806f7a19387c"
+    },
+    {
+      "path": "neo4j/csv/landform-references.csv",
+      "bytes": 2828,
+      "sha256": "9f9393f7c9115424cb020af7dac21f56f32219d0ea926d64b5d668b69c25bb82"
+    },
+    {
+      "path": "neo4j/csv/photonic-records.csv",
+      "bytes": 3455,
+      "sha256": "c81280dee939d8a72b338054ed081bf0ac3f43e203d75f9d4279ced94e0d618a"
+    },
+    {
+      "path": "neo4j/csv/profile-feature-assertions.csv",
+      "bytes": 48773,
+      "sha256": "d2248a5ba21e3ddd29f30678bb30c7634a364b4f969eca2dcfec09f04e9a33b4"
+    },
+    {
+      "path": "neo4j/csv/profile-landform-references.csv",
+      "bytes": 3646,
+      "sha256": "0df5ac07823de2b1c50ea27513d2caaefd7a9c4d4959a736c9a912fa998a2657"
+    },
+    {
+      "path": "neo4j/csv/registry-releases.csv",
+      "bytes": 1333,
+      "sha256": "5abdbefd9e8b273ddf32009e38b7acc689be91ea2fc4c829be23f03163f11162"
+    },
+    {
+      "path": "neo4j/csv/semantic-operator-unresolved.csv",
+      "bytes": 5558,
+      "sha256": "2ab468b103dc13498eefdfbb0f65d4ae7fdf1f726d0c6064740f03df7bc0ce49"
+    },
+    {
+      "path": "neo4j/csv/semantic-operators.csv",
+      "bytes": 7933,
+      "sha256": "8d89391868de5e623a438d0cfcc36d4ce03e1ed97e79db2b87c0da6b468e420b"
+    },
+    {
+      "path": "neo4j/csv/semantic-unresolved-scopes.csv",
+      "bytes": 473,
+      "sha256": "ae279fb4be4e9675c6369741cba213b31e0fd4cbae9c08ea6f0c413791733e6e"
+    },
+    {
+      "path": "neo4j/csv/validation-fixtures.csv",
+      "bytes": 2220,
+      "sha256": "e8aceedf7c3faa73791145de509e4d8e14007a505afd0a80edd2a3e8c1b49cd8"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 5616,
+      "sha256": "03c8d3d84999c868693fbab3da2479c5605ac90990cab3b04fef9cd68c263150"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1261,
+      "sha256": "5cc51a2bbe40c65bcaf6b9d12eb85f42b38b244061093366bee3a6fc43fdc72f"
+    },
+    {
+      "path": "qa/cypher-syntax-report.json",
+      "bytes": 998,
+      "sha256": "74097f093f515b7a15efd136de589279a41fd1bfd237533f33959fd43abe359b"
+    },
+    {
+      "path": "qa/provider-contract-report.json",
+      "bytes": 2208,
+      "sha256": "b7b985d1781fa3fcc3d6485ed964dcfb3c51011c9dcfd26893b67a971c48d97e"
+    },
+    {
+      "path": "qa/validation-report.json",
+      "bytes": 13047,
+      "sha256": "a4f00de532ffca02b558cf56b5c7785807ba3ceffb29da46b9c85e86f36c09a4"
+    },
+    {
+      "path": "schemas/canonical-profile.schema.json",
+      "bytes": 3837,
+      "sha256": "8e0153a6d4cbaf53a80031347fb951777c2d4ea3a324ae3c9388b7ad6836939a"
+    },
+    {
+      "path": "schemas/compiled-profile.schema.json",
+      "bytes": 2392,
+      "sha256": "b6079ced732b3f0ecda8eb384cb536f70a9ff080e15aabb2321209605841780f"
+    },
+    {
+      "path": "schemas/feature-definition.schema.json",
+      "bytes": 1857,
+      "sha256": "f84b0a410c0c56b94350777de7bcc11aaa9d964d637db323006d5475c0d41acd"
+    },
+    {
+      "path": "schemas/registry-release.schema.json",
+      "bytes": 1093,
+      "sha256": "5e79c2a4db253c0bfb7cfa85d2eee83ad99542f91cd80a8d297a8076e6fa1782"
+    },
+    {
+      "path": "schemas/semantic-operator.schema.json",
+      "bytes": 3490,
+      "sha256": "91267b028111c2078a230146b3af2fb1ab7a6eecd137bbfb5b0567f89678c6de"
+    },
+    {
+      "path": "schemas/source-authority.schema.json",
+      "bytes": 1583,
+      "sha256": "937fa8479aaf276873d4958ed35e87455c2c1f56417524771929778199de5618"
+    },
+    {
+      "path": "scripts/build-package-manifest.mjs",
+      "bytes": 1764,
+      "sha256": "e2a583e9d06b454c5ccae231adaacda263d60d5704492d0bafffcc4fe7245987"
+    },
+    {
+      "path": "scripts/build-registry.mjs",
+      "bytes": 30997,
+      "sha256": "f2ab207ae8305edd614d7d988e32edbbf52248154bbb586eab1eaaa2b0029f35"
+    },
+    {
+      "path": "scripts/compile-profile.mjs",
+      "bytes": 1182,
+      "sha256": "d54d1ab2b0479d0c4a9483901dbd8986dad09e5fb1fc91bf776687b81d379833"
+    },
+    {
+      "path": "scripts/compile-reference-fixtures.mjs",
+      "bytes": 7703,
+      "sha256": "a99bb1028057e50f35f40ec9264b3c8b25d3fd08466353603f2e7cafddeda2c5"
+    },
+    {
+      "path": "scripts/compiler.mjs",
+      "bytes": 10729,
+      "sha256": "fffcfd07821e680993df55ebe1691696ee3a072c8cf9acf54e09ec02b8a14f27"
+    },
+    {
+      "path": "scripts/export-neo4j-csv.mjs",
+      "bytes": 17224,
+      "sha256": "48cf174481e27bf7119f82f7e8ad62fa675926799e44bb44c9e0a6578dc64870"
+    },
+    {
+      "path": "scripts/lib.mjs",
+      "bytes": 3402,
+      "sha256": "56b5abfe135a0a995f9232e492414fdd30bca1ce2bdfea1de55c275cf00ef042"
+    },
+    {
+      "path": "scripts/providers/README.md",
+      "bytes": 1944,
+      "sha256": "6eae8a9cd3250f0bab220f69e444d225fc2a234683eacfaec91c2fa9ab69d442"
+    },
+    {
+      "path": "scripts/providers/file-registry-provider.mjs",
+      "bytes": 681,
+      "sha256": "eea450ab794dac7c3280e367a54e5c319c59cbe88c688285a6703bdaacafdee4"
+    },
+    {
+      "path": "scripts/providers/neo4j-registry-provider.mjs",
+      "bytes": 8747,
+      "sha256": "de877034d122b500aa29f5c0c70e9278ffc55aa0e4f452b57d79e9281e706ef0"
+    },
+    {
+      "path": "scripts/providers/snapshot-registry-provider.mjs",
+      "bytes": 1999,
+      "sha256": "b225485e78167bf876fb61cb12c515d85b1475963cf677dfacea2ca52f5e84af"
+    },
+    {
+      "path": "scripts/validate-cypher-syntax.mjs",
+      "bytes": 2579,
+      "sha256": "2d2d56afee6fdd3207afea9496744d011ac29388ddfcb63b6bf107df65cea750"
+    },
+    {
+      "path": "scripts/validate-provider-contract.mjs",
+      "bytes": 8786,
+      "sha256": "36c9cacc98e8c5a9eadb0c37256d3fb2441c67b0e2b9f93ed9fa5e27c6d4cd97"
+    },
+    {
+      "path": "scripts/validate-registry.mjs",
+      "bytes": 11490,
+      "sha256": "372c4c4a76f5300c0bfa5d6d8dddc979cdcacc7c952c4691beac9bb529e5d084"
+    },
+    {
+      "path": "source/framework/AGENTS.md",
+      "bytes": 33553,
+      "sha256": "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24"
+    },
+    {
+      "path": "source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+      "bytes": 51939,
+      "sha256": "5ba49b157aa6fd8ac672610f88df8ac01464fd71387f3c0e21b042e912636960"
+    },
+    {
+      "path": "source/framework/NATURAL_ORGANIZATION_THESIS.md",
+      "bytes": 33625,
+      "sha256": "898626127fbc7d7538bb954326f230db4bf97f084f35122c6e42b68dcdd37af9"
+    },
+    {
+      "path": "source/framework/TOPOLOGICAL_ANCHORING.md",
+      "bytes": 26506,
+      "sha256": "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c"
+    },
+    {
+      "path": "source/governors.yaml",
+      "bytes": 44118,
+      "sha256": "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2"
+    },
+    {
+      "path": "source/operator-applications.csv",
+      "bytes": 1042979,
+      "sha256": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e"
+    },
+    {
+      "path": "source/operator-candidates.json",
+      "bytes": 14906,
+      "sha256": "0010268d655bd0c314629baaf433a47dab6c619a86f3bc67a46954523b4b935e"
+    },
+    {
+      "path": "source/topology-identity-definitions.json",
+      "bytes": 5410,
+      "sha256": "ce7b3a3b8bed85d67df203a0dd6d2ba395effd19f0855869faa1a4d343bf127b"
+    },
+    {
+      "path": "source/universal-network-data.json",
+      "bytes": 2765575,
+      "sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc"
+    }
+  ]
+}

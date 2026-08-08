@@ -1,0 +1,26 @@
+{
+  "name": "seven-governors-governor-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Strict typed-aspect, quantity, bridge-rule, and classification contracts for the Seven Governors runtime.",
+  "scripts": {
+    "build:check": "node scripts/build-policy.mjs --check",
+    "build:emit": "node scripts/build-policy.mjs --emit",
+    "validate:contracts": "node scripts/validate-package.mjs",
+    "validate:determinism": "node scripts/validate-determinism.mjs",
+    "manifest:check": "node scripts/build-package-manifest.mjs --check",
+    "manifest:emit": "node scripts/build-package-manifest.mjs --emit",
+    "release:emit": "npm run build:emit && npm run validate:contracts && npm run validate:determinism && npm run manifest:emit",
+    "validate": "npm run build:check && npm run validate:contracts && npm run validate:determinism && npm run manifest:check"
+  },
+  "dependencies": {
+    "yaml": "2.8.1"
+  },
+  "devDependencies": {
+    "ajv": "8.17.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

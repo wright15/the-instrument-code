@@ -1,0 +1,1455 @@
+metadata:
+  name: Seven Governors Core Correspondences
+  file: governors.yaml
+  description: >-
+    Machine-readable core governor correspondences for the Seven Governors framework.
+    Three-tier architecture: archetype (immutable identity), canonical expression (diatonic pure state),
+    and zodiacal systems (semantic interpretation lens persisting through mode change).
+    Use CONSTITUTION.md as the human-readable source of canon and this file as structured reference data.
+  hierarchy:
+    '12': articulated field / zodiacal practical systems / chromatic totality
+    '7': governors / governing functions / diatonic law
+    '5': elemental-quintessential engine
+    '2': 'luminary bracket: Sun = reality, Moon = experience'
+    '1': witnessing center / self / navigator
+  extension_schemas:
+    vector_b_physics: schemas/vector_b_physics.yaml
+    physical_phenomena: schemas/physical_phenomena.yaml
+    color_palettes: schemas/color_palettes.yaml
+    zodiacal_systems: schemas/zodiacal_systems.yaml
+    unified_process_ontology: UNIFIED_PROCESS_ONTOLOGY.md
+    visual_recipes: schemas/governors.yaml#governors.*.canonical_expression.visual_recipes
+  guardrails:
+  - Treat constructive +5 as build orientation and observational +7 as proposed readback orientation.
+  - Use CONSTITUTION.md as canonical authority if this schema conflicts with prose documentation.
+  bit_order_policy:
+    policy_version: 1
+    binary_12bit_role: constructive_semitone_order_canonical_string
+    binary_12bit_alias_for: binary_constructive
+    constructive_orientation: semitone_index_0_to_11
+    observational_orientation: reverse_of_constructive_readback
+    integer_parse_policy: parse_binary_string_as_written_msb_integer
+    legacy_hex_policy: legacy_hex_fields_match_observational_readback_when_present
+    binary_string_policy: all_binary_fields_must_be_quoted_strings
+    canonical_bit_weight: 7
+    variant_bit_weight_policy: validate_declared_weight_only
+  constructive_engine:
+    mod_12_step: 5
+  observational_engine:
+    mod_12_step: 7
+governors:
+  sun:
+    symbol: "☉"
+    type: monopolar_luminary
+    display_name: Sun
+    # Layer 1 — Archetype (immutable identity, survives mode change)
+    archetype:
+      element: null
+      luminary_role: reality as coherent actuality
+      directionality: outward_projective
+      mythology_layer:
+        narratives:
+          - radiance
+          - source-code
+          - overlight
+          - natural law
+          - revelation
+          - skyward illumination
+          - coherent actuality
+          - radiance
+          - reality
+          - source
+          - natural law
+          - illumination 
+          - Lydian makes source-code audible
+        alchemical_phase:
+          name: Rubedo
+          description: Reddening, coagulation into fixed product
+          substance: Gold
+          symbol: Rose, red lion
+          function: The fixed product that results from the work. The rubedo does not dissolve. It fixes.
+        incarnational_layer:
+          - source-code
+          - natural law
+          - DNA
+          - chemistry
+          - pattern
+          - biomimicry
+          - system fundamentals
+        canonical_phrases:
+          - Sun = reality as coherent actuality.
+          - Sun = the source-code of reality.
+          - Let there be light
+    # Layer 2 — Canonical expression (diatonic pure state)
+    canonical_expression:
+      mode: lydian
+      binary_12bit: "101010110101"
+      color: "#FF4444"
+      binary_constructive: "101010110101"
+      decimal_constructive: 2741
+      hex_constructive: "0xAB5"
+      binary_observational: "101011010101"
+      decimal_observational: 2773
+      hex_observational: "0xAD5"
+      bit_weight: 7
+      hex: 0xAD5
+      wavelength_nm: 700
+      compression_derived: true
+      thermodynamic_function: "emission"
+      optical_function: "source_radiance"
+      visual_recipes:
+        forest_setting:
+        - layer: Canopy_Radiant_Clearing
+          marks:
+          - type: paint_ellipse
+            cx: 0.5
+            cy: 0.35
+            rx: 0.35
+            ry: 0.4
+            pressure: 40
+            fill: true
+          - type: paint_ray_ring
+            cx: 0.5
+            cy: 0.35
+            count: 16
+            length: 0.45
+            pressure: 30
+        - layer: Sun_Axis_Light_Source
+          marks:
+          - type: paint_ellipse
+            cx: 0.5
+            cy: 0.35
+            rx: 0.08
+            ry: 0.06
+            pressure: 60
+            fill: true
+          - type: paint_line
+            x1: 0.5
+            y1: 0.05
+            x2: 0.5
+            y2: 0.95
+            pressure: 25
+    # Layer 3 — Expression variants (alternative expressions of the same archetype)
+    expression_variants:
+      Superlocrian-1371:
+        binary_12bit: "110110101010"
+        forte_number: 7-34
+    # Layer 4 — Zodiacal systems (semantic interpretation of archetype through canonical expression)
+    zodiacal_systems:
+      leo:
+        sex: male
+        magnetism: monopolar
+        directionality: outward_projective
+        derives_from: canonical_expression.binary_12bit
+        system_name: Source-Code System
+        domain:
+        - source-code
+        - natural law
+        - system fundamentals
+        - DNA
+        - chemistry
+        - design logic
+        - biomimicry
+        core_question: What is the underlying principle that makes this work?
+        canonical_phrase: Leo / Sun = the source-code system.
+    physical_extension:
+      vector_b_physics_ref: schemas/vector_b_physics.yaml#vector_b_physics.governors.sun
+      physical_phenomena_ref: schemas/physical_phenomena.yaml#physical_phenomena.governor_registry.sun
+      color_palette_ref: schemas/color_palettes.yaml#spectral_vector_b.positions
+      detail_policy: Use extension schemas for Vector B physics and natural phenomena.
+    reference_library:
+      landforms:
+      - plains
+      - savanna
+      - plateaus
+      - open fields bathed in sunlight
+      architecture:
+      - monolithic stone circles
+      - temples open to the sky
+      - altars
+      - ziggurats
+      - observatories
+      botany:
+      - sunflowers
+      - marigolds
+      - heliotropes
+      - citrus trees
+      - olive trees
+      - bay laurel
+      material:
+      - gold
+      - amber
+      - citrine
+      - brass
+      - electrum
+      color_associations:
+      - red
+      - gold
+      - bright yellow
+      - orange-gold
+      symbolic_references:
+      - solar cross
+      - crown
+      - halo
+      - lion
+      - phoenix
+      - eye of providence
+      - the number 1
+      - the point at the center
+  moon:
+    symbol: "☾"
+    display_name: Moon
+    type: monopolar_luminary
+    archetype:
+      luminary_role: the experience of reality
+      directionality: inward_centripetal
+      element: null
+      mythology_layer:
+        narratives:
+          - reflection
+          - experience
+          - memory
+          - reception
+          - mirroring
+          - imaginal reception
+        alchemical_phase:
+          name: Albedo
+          description: Whitening, purification, reflection
+          substance: Silver
+          symbol: Bowl, cup
+          function: The purification that clarifies what has been dissolved. The albedo does not act. It receives and reflects.
+        incarnational_layer:
+          - lived life
+          - home
+          - family
+          - memory
+          - autobiography
+          - daily life
+          - marriage
+        canonical_phrases:
+          - Moon = the experience of reality.
+          - Moon = the lived experience of reality.
+    canonical_expression:
+      mode: ionian
+      binary_12bit: "101011010101"
+      color: "#FF8C00"
+      binary_constructive: "101011010101"
+      decimal_constructive: 2773
+      hex_constructive: "0xAD5"
+      binary_observational: "101010110101"
+      decimal_observational: 2741
+      hex_observational: "0xAB5"
+      bit_weight: 7
+      hex: 0xAB5
+      wavelength_nm: 610
+      compression_derived: true
+      thermodynamic_function: "reception"
+      optical_function: "reflection"
+      visual_recipes:
+        forest_setting:
+        - layer: Mist_Memory_Field
+          marks:
+          - type: paint_ellipse
+            cx: 0.5
+            cy: 0.46
+            rx: 0.48
+            ry: 0.24
+            pressure: 20
+            fill: true
+          - type: paint_scatter
+            x: 0.08
+            y: 0.18
+            w: 0.84
+            h: 0.52
+            count: 120
+            pressure: 15
+            seed: 'moon_mist'
+        - layer: Water_Reflection_Pools
+          marks:
+          - type: paint_ellipse
+            cx: 0.34
+            cy: 0.78
+            rx: 0.24
+            ry: 0.06
+            pressure: 40
+            fill: true
+          - type: paint_ellipse
+            cx: 0.66
+            cy: 0.84
+            rx: 0.2
+            ry: 0.05
+            pressure: 35
+            fill: true
+      mode_details:
+        display_name: Ionian
+        formula: 1 2 3 4 5 6 7
+        binary_12bit: "101011010101"
+        hex: 0xAB5
+        sound_world:
+        - home
+        - ceremony
+        - lived life
+        - coherent experience
+        - family
+        - memory
+        - bridal procession
+        canonical_phrase: Ionian makes lived life audible.
+    expression_variants:
+      Acoustic-1749:
+        binary_12bit: "101010110110"
+        forte_number: 7-34
+    zodiacal_systems:
+      cancer:
+        sex: female
+        magnetism: monopolar
+        directionality: inward_centripetal
+        derives_from: canonical_expression.binary_12bit
+        system_name: Daily Personal Experience System
+        domain:
+        - daily personal experience
+        - situated life
+        - home
+        - family
+        - what is directly lived
+        - emotional climate
+        - immediate physical setting
+        core_question: What is my lived reality right now?
+        canonical_phrase: Cancer / Moon = the system of situated life.
+    physical_extension:
+      vector_b_physics_ref: schemas/vector_b_physics.yaml#vector_b_physics.governors.moon
+      physical_phenomena_ref: schemas/physical_phenomena.yaml#physical_phenomena.governor_registry.moon
+      color_palette_ref: schemas/color_palettes.yaml#spectral_vector_b.positions
+      detail_policy: Use extension schemas for Vector B physics and natural phenomena.
+    reference_library:
+      landforms:
+      - lakes
+      - ponds
+      - tidal pools
+      - estuaries
+      - marshes
+      - foggy valleys
+      architecture:
+      - rounded buildings
+      - moon gates
+      - reflecting pools
+      - crescent-shaped structures
+      - oracles
+      botany:
+      - water lilies
+      - lotus
+      - moonflowers
+      - jasmine
+      - night-blooming cereus
+      - silver sage
+      material:
+      - silver
+      - moonstone
+      - opal
+      - pearl
+      - selenite
+      color_associations:
+      - silver
+      - white
+      - pale blue
+      - misty gray
+      - pale orange
+      symbolic_references:
+      - crescent
+      - mirror
+      - chalice
+      - bowl
+      - shell
+      - silver cord
+      - the number 2
+      - duality
+  mercury:
+    symbol: "☿"
+    type: bipolar_engine_governor
+    display_name: Mercury
+    archetype:
+      element: Quintessence
+      engine_function: responsiveness and integration; how the system adapts
+      directionality: hinge_mediator
+      mythology_layer:
+        narratives:
+          - mediation
+          - translation
+          - responsiveness
+          - integration
+          - state transition
+          - communication
+        alchemical_phase:
+          name: Azoth
+          description: Universal solvent, dissolution and recombination
+          substance: Mercury (quicksilver)
+          symbol: Caduceus, serpent
+          function: The universal solvent that mediates all transformation. Azoth is both agent and product.
+        incarnational_layer:
+          - mind
+          - adaptation
+          - metabolism
+          - communication
+          - language
+          - internal integration
+          - nervous-system-like coordination
+        canonical_phrases:
+          - Mercury = the hinge of transformation.
+          - Mercury / Quintessence = responsiveness and integration.
+    canonical_expression:
+      mode: dorian
+      binary_12bit: "101101010110"
+      color: "#44BB44"
+      binary_constructive: "101101010110"
+      decimal_constructive: 2902
+      hex_constructive: "0xB56"
+      binary_observational: "011010101101"
+      decimal_observational: 1709
+      hex_observational: "0x6AD"
+      bit_weight: 7
+      binary_12bit_lsb: "010110101011"
+      hex: 0x6AD
+      wavelength_nm: 530
+      compression_derived: true
+      thermodynamic_function: "transduction"
+      optical_function: "conversion_interface"
+      rotation_k: 1
+      visual_recipes:
+        forest_setting:
+        - layer: Branch_Route_Linework
+          marks:
+          - type: paint_line
+            x1: 0.18
+            y1: 0.9
+            x2: 0.5
+            y2: 0.25
+            pressure: 55
+            end_pressure: 40
+          - type: paint_line
+            x1: 0.5
+            y1: 0.25
+            x2: 0.82
+            y2: 0.12
+            pressure: 40
+            end_pressure: 25
+          - type: paint_line
+            x1: 0.5
+            y1: 0.25
+            x2: 0.25
+            y2: 0.1
+            pressure: 35
+            end_pressure: 20
+        - layer: Mycelium_Signal_Network
+          marks:
+          - type: paint_scatter
+            x: 0.14
+            y: 0.58
+            w: 0.72
+            h: 0.32
+            count: 90
+            pressure: 25
+            seed: 'mercury_mycelium'
+          - type: paint_line
+            x1: 0.2
+            y1: 0.8
+            x2: 0.8
+            y2: 0.68
+            pressure: 30
+      mode_details:
+        display_name: Dorian
+        formula: 1 2 ♭3 4 5 6 ♭7
+        binary_12bit: "101101010110"
+        semitones: [0,2,3,5,7,9,10]
+        hex: 0x6AD
+        decimal: 1709
+        sound_world:
+        - adaptation
+        - hinge-state
+        - balance
+        - mediation
+        - mind
+        - passage
+        - balanced transformation
+        canonical_phrase: Dorian makes mediation audible.
+    expression_variants:
+      Mixolydian_flat6-1461:
+        binary_12bit: "101011011010"
+        forte_number: 7-34
+    
+    zodiacal_systems:
+      gemini:
+        sex: male
+        directionality: outward_responsiveness
+        derives_from: canonical_expression.binary_12bit
+        system_name: Operational Interface Mastery
+        domain:
+        - tools
+        - workflows
+        - interfaces
+        - communication channels
+        - APIs
+        - dashboards
+        - practical mastery of the fivefold engine
+        core_question: How do I operate, connect, translate, and coordinate the system?
+        canonical_phrase: Gemini / Mercury External = the interface layer.
+      virgo:
+        sex: female
+        directionality: internal_integration
+        derives_from: canonical_expression.binary_12bit_lsb
+        system_name: Diagnostic Story-Ledger
+        domain:
+        - outcome interpretation
+        - refinement
+        - diagnosis
+        - analytics
+        - retrospectives
+        - debugging
+        - what events produced and what they mean
+        core_question: What did the system produce, and what does it mean?
+        canonical_phrase: Virgo / Mercury Internal = the outcome interpretation system.
+    physical_extension:
+      vector_b_physics_ref: schemas/vector_b_physics.yaml#vector_b_physics.governors.mercury
+      physical_phenomena_ref: schemas/physical_phenomena.yaml#physical_phenomena.governor_registry.mercury
+      color_palette_ref: schemas/color_palettes.yaml#spectral_vector_b.positions
+      detail_policy: Use extension schemas for Vector B physics and natural phenomena.
+    reference_library:
+      landforms:
+      - river deltas
+      - estuaries
+      - crossroads
+      - winding paths
+      - trade routes
+      architecture:
+      - bridges
+      - arches
+      - doorways
+      - market squares
+      - message towers
+      - libraries
+      - scriptoria
+      botany:
+      - ferns
+      - ivy
+      - vines
+      - lavender
+      - mint
+      - vervain
+      - lichen
+      - moss
+      material:
+      - mercury
+      - tin
+      - bronze
+      - jade
+      - aventurine
+      - emerald
+      color_associations:
+      - green
+      - yellow-green
+      - bright emerald
+      - bronze
+      symbolic_references:
+      - caduceus
+      - winged sandals
+      - the number 3
+      - hexagram
+      - serpent
+      - messenger's staff
+  venus:
+    symbol: "♀"
+    display_name: Venus
+    type: bipolar_engine_governor
+    archetype:
+      element: Water
+      engine_function: taste, cohesion, aesthetic sensitivity; what feels fitting
+      directionality: inward_centripetal
+      mythology_layer:
+        narratives:
+          - cohesion
+          - attraction
+          - value
+          - beauty
+          - bonding
+          - taste
+          - dignity
+        alchemical_phase:
+          name: Conjunctio
+          description: Sacred marriage, union of opposites
+          substance: Copper and silver
+          symbol: Mirror, scales
+          function: The union that draws matter into coherent relation. The green lion that dissolves and the pearl that forms are both Venus operations.
+        incarnational_layer:
+          - union
+          - conception
+          - dignity
+          - generative relation
+          - bonding
+          - sacred attraction
+        canonical_phrases:
+          - Venus = the embrace that makes incarnation possible.
+          - 'Venus governs value: Libra externalizes value as exchange; Taurus internalizes value as embodied worth.'
+          - Venus governs the selective incorporation of value into coherent relationship.
+          - Libra forms the bond across the boundary; Taurus sustains the bond within the boundary.
+          - Jupiter distributes possibilities; Venus selects what can enter meaningful relation; Saturn gives the selected relation
+            durable form.
+    canonical_expression:
+      mode: phrygian
+      binary_12bit: "110101011010"
+      color: "#8B008B"
+      binary_constructive: "110101011010"
+      decimal_constructive: 3418
+      hex_constructive: "0xD5A"
+      binary_observational: "010110101011"
+      decimal_observational: 1451
+      hex_observational: "0x5AB"
+      bit_weight: 7
+      binary_12bit_lsb: "011010101101"
+      hex: 0x5AB
+      wavelength_nm: 430
+      compression_derived: true
+      thermodynamic_function: "coupling"
+      optical_function: "selective_absorption"
+      rotation_k: 1
+      visual_recipes:
+        forest_setting:
+        - layer: Lush_Coupled_Undergrowth
+          marks:
+          - type: paint_rect
+            x: 0.0
+            y: 0.68
+            w: 1.0
+            h: 0.32
+            pressure: 25
+            fill: true
+          - type: paint_ellipse
+            cx: 0.38
+            cy: 0.72
+            rx: 0.22
+            ry: 0.16
+            pressure: 35
+            fill: true
+          - type: paint_ellipse
+            cx: 0.64
+            cy: 0.74
+            rx: 0.24
+            ry: 0.15
+            pressure: 30
+            fill: true
+        - layer: Floral_Harmony_Detail
+          marks:
+          - type: paint_scatter
+            x: 0.18
+            y: 0.54
+            w: 0.64
+            h: 0.34
+            count: 70
+            pressure: 40
+            seed: 'venus_floral'
+          - type: paint_line
+            x1: 0.28
+            y1: 0.86
+            x2: 0.72
+            y2: 0.62
+            pressure: 30
+      mode_details:
+        display_name: Phrygian
+        formula: 1 ♭2 ♭3 4 5 ♭6 ♭7
+        binary_12bit: "110101011010"
+        semitones: [0,1,3,5,7,8,10]
+        hex: 0x5AB
+        decimal: 1451
+        sound_world:
+        - inward pull
+        - union
+        - dark beauty
+        - generative attraction
+        - ritual intimacy
+        - inner chamber
+        canonical_phrase: Phrygian makes generative union audible.
+    expression_variants:
+      Half-Diminished-1389:
+        binary_12bit: "101101101010"
+        forte_number: 7-34
+    zodiacal_systems:
+      libra:
+        sex: male
+        directionality: external_exchange
+        derives_from: canonical_expression.binary_12bit
+        system_name: Reciprocal Coupling and Relational Exchange System
+        aliases:
+        - Social Exchange System
+        boundary_relation: coupling_across_the_boundary
+        dominant_function: Establish a viable relational interface between distinct beings or systems and govern the terms
+          under which value passes.
+        domain:
+        - compatibility
+        - consent
+        - reciprocity
+        - negotiation
+        - relational interfaces
+        - diplomacy
+        - cooperation
+        - reputation
+        - social signaling
+        - alliance formation
+        - mutual recognition
+        - exchange-value
+        - proportion
+        - fairness
+        - partnership terms
+        - conflict repair
+        - role compatibility
+        - relational boundaries
+        - aesthetic coordination
+        - trust calibration
+        core_question: How can separate beings or systems enter a mutually fitting relation, and under what terms can value
+          pass between them?
+        canonical_phrases:
+        - Libra / Venus External = coupling across the boundary.
+        - Libra governs the interface through which value becomes relational.
+        - Libra forms the bond across the boundary.
+      taurus:
+        sex: female
+        directionality: internal_cohesion
+        derives_from: canonical_expression.binary_12bit_lsb
+        system_name: Embodied Cohesion and Value Incorporation System
+        aliases:
+        - Embodied Value System
+        boundary_relation: cohesion_within_the_boundary
+        dominant_function: Receive, incorporate, nourish, retain, and maintain value as part of embodied life.
+        domain:
+        - embodied worth
+        - nourishment
+        - appetite
+        - sensory discernment
+        - rest
+        - recovery
+        - touch
+        - comfort
+        - body care
+        - home atmosphere
+        - material stewardship
+        - possessions
+        - resource retention
+        - maintenance
+        - stable pleasure
+        - environmental coherence
+        - what is worth keeping
+        - bodily tolerance
+        - durable well-being
+        core_question: What can be received, incorporated, nourished, and retained so that the embodied system remains valuable,
+          coherent, and alive?
+        canonical_phrases:
+        - Taurus / Venus Internal = cohesion within the boundary.
+        - Taurus governs the incorporation of value into embodied life.
+        - Taurus sustains the bond within the boundary.
+    physical_extension:
+      vector_b_physics_ref: schemas/vector_b_physics.yaml#vector_b_physics.governors.venus
+      physical_phenomena_ref: schemas/physical_phenomena.yaml#physical_phenomena.governor_registry.venus
+      color_palette_ref: schemas/color_palettes.yaml#spectral_vector_b.positions
+      detail_policy: Use extension schemas for Vector B physics and natural phenomena.
+    reference_library:
+      landforms:
+      - valleys
+      - gardens
+      - groves
+      - meadows
+      - gentle hills
+      - riverbanks
+      architecture:
+      - rose gardens
+      - bowers
+      - temples of love
+      - theaters
+      - concert halls
+      - bathhouses
+      botany:
+      - roses
+      - myrtle
+      - violets
+      - apple blossoms
+      - cherry blossoms
+      - lavender
+      - jasmine
+      - lilac
+      material:
+      - copper
+      - rose quartz
+      - coral
+      - lapis lazuli
+      - turquoise
+      - emerald
+      color_associations:
+      - indigo
+      - rose pink
+      - soft green
+      - turquoise
+      - deep blue
+      symbolic_references:
+      - ankh
+      - knot
+      - infinity symbol
+      - rose
+      - dove
+      - seashell
+      - mirror
+      - necklace
+  mars:
+    symbol: "♂"
+    display_name: Mars
+    type: bipolar_engine_governor
+    archetype:
+      element: Fire
+      engine_function: energy modulation; how force enters the pattern
+      directionality: outward_projective
+      mythology_layer:
+        narratives:
+          - activation
+          - force
+          - fire
+          - propulsion
+          - survival-force
+          - urgency
+          - defense
+        alchemical_phase:
+          name: Calcination
+          description: Fire, separation of elements, burning away impurities
+          substance: Copper
+          symbol: Sword, arrow
+          function: The heat that begins the work by reducing matter to its ashes. Calcination separates and activates.
+        incarnational_layer:
+          - survival
+          - hunting
+          - protection
+          - action
+          - appetite
+          - pursuit
+          - defense
+        canonical_phrases:
+          - Mars = force entering the pattern.
+          - Mars is the fire that turns union into action.
+    canonical_expression:
+      mode: mixolydian
+      binary_12bit: "101011010110"
+      color: "#FFD700"
+      binary_constructive: "101011010110"
+      decimal_constructive: 2774
+      hex_constructive: "0xAD6"
+      binary_observational: "011010110101"
+      decimal_observational: 1717
+      hex_observational: "0x6B5"
+      bit_weight: 7
+      binary_12bit_lsb: "010101101011"
+      hex: 0x6B5
+      wavelength_nm: 580
+      compression_derived: true
+      thermodynamic_function: "activation"
+      optical_function: "ignition"
+      rotation_k: 1
+      visual_recipes:
+        forest_setting:
+        - layer: Cut_Path_Activation
+          marks:
+          - type: paint_line
+            x1: 0.12
+            y1: 0.92
+            x2: 0.74
+            y2: 0.2
+            pressure: 70
+            end_pressure: 50
+          - type: paint_line
+            x1: 0.2
+            y1: 0.78
+            x2: 0.88
+            y2: 0.5
+            pressure: 60
+        - layer: Scar_Fire_Contrast
+          marks:
+          - type: paint_scatter
+            x: 0.2
+            y: 0.2
+            w: 0.62
+            h: 0.48
+            count: 90
+            pressure: 50
+            seed: 'mars_sparks'
+          - type: paint_ellipse
+            cx: 0.72
+            cy: 0.28
+            rx: 0.1
+            ry: 0.08
+            pressure: 65
+            fill: true
+      mode_details:
+        display_name: Mixolydian
+        formula: 1 2 3 4 5 6 ♭7
+        binary_12bit: "101011010110"
+        semitones: [0,2,4,5,7,9,10]
+        hex: 0x6B5
+        decimal: 1717
+        sound_world:
+        - action
+        - survival
+        - dominant energy
+        - outward drive
+        - pursuit
+        - protection
+        - kinetic force
+        canonical_phrase: Mixolydian makes survival-force audible.
+    expression_variants:
+      Melodic_Minor-2733:
+        binary_12bit: "101101010101"
+        forte_number: 7-34
+    
+    zodiacal_systems:
+      aries:
+        directionality: external
+        derives_from: canonical_expression.binary_12bit
+        system_name: Tactical Environmental Mastery
+        domain:
+        - terrain
+        - flora
+        - fauna
+        - built systems
+        - threats
+        - action in the field
+        - environmental strategy
+        core_question: How do I act effectively in the field?
+        canonical_phrase: Aries / Mars External = the field of action.
+      scorpio:
+        directionality: inward
+        derives_from: canonical_expression.binary_12bit_lsb
+        system_name: Inner Strategy System
+        domain:
+        - inner strategy
+        - drives
+        - habits
+        - desire
+        - shadow
+        - philosophy of action
+        - self-command
+        core_question: What internal forces shape my actions and patterns?
+        canonical_phrase: Scorpio / Mars Internal = the war room of the self.
+    physical_extension:
+      vector_b_physics_ref: schemas/vector_b_physics.yaml#vector_b_physics.governors.mars
+      physical_phenomena_ref: schemas/physical_phenomena.yaml#physical_phenomena.governor_registry.mars
+      color_palette_ref: schemas/color_palettes.yaml#spectral_vector_b.positions
+      detail_policy: Use extension schemas for Vector B physics and natural phenomena.
+    reference_library:
+      landforms:
+      - volcanoes
+      - canyons
+      - cliffs
+      - gorges
+      - deserts
+      - cracked earth
+      - impact craters
+      architecture:
+      - fortresses
+      - towers
+      - forges
+      - arenas
+      - gates
+      - military camps
+      - smithies
+      botany:
+      - nettles
+      - thorns
+      - cacti
+      - chili peppers
+      - ginger
+      - garlic
+      - hawthorn
+      - ironwood
+      material:
+      - iron
+      - steel
+      - bloodstone
+      - carnelian
+      - garnet
+      - flint
+      - obsidian
+      color_associations:
+      - red
+      - scarlet
+      - bright yellow
+      - orange
+      - hot pink
+      symbolic_references:
+      - sword
+      - spear
+      - shield
+      - forge
+      - anvil
+      - the number 5
+      - pentagram
+      - fire
+  jupiter:
+    symbol: "♃"
+    display_name: Jupiter
+    type: bipolar_engine_governor
+    archetype:
+      element: Air
+      engine_function: direction; where the flow is going
+      directionality: outward_projective
+      mythology_layer:
+        narratives:
+          - expansion
+          - air
+          - horizon
+          - direction
+          - possibility
+          - future branching
+          - growth
+        alchemical_phase:
+          name: Philosophical tree
+          description: Proliferation of possibility, branching of existence
+          substance: Tin
+          symbol: Tree, branching vine
+          function: The wind that carries form into destiny. The philosophical tree branches infinitely, representing infinite possibilities.
+        incarnational_layer:
+          - journey
+          - vision
+          - legacy
+          - optionality
+          - winds of change
+          - path
+          - destiny
+        canonical_phrases:
+          - Jupiter = the wind that carries form into destiny.
+          - Jupiter governs potential as horizon.
+          - Money = stored potential.
+          - Relationships = living potential.
+    canonical_expression:
+      mode: aeolian
+      binary_12bit: "101101011010"
+      color: "#4488FF"
+      binary_constructive: "101101011010"
+      decimal_constructive: 2906
+      hex_constructive: "0xB5A"
+      binary_observational: "010110101101"
+      decimal_observational: 1453
+      hex_observational: "0x5AD"
+      bit_weight: 7
+      binary_12bit_lsb: "010110101101"
+      hex: 0x5AD
+      wavelength_nm: 470
+      compression_derived: true
+      thermodynamic_function: "distribution"
+      optical_function: "scattering"
+      rotation_k: 1
+      visual_recipes:
+        forest_setting:
+        - layer: Expansive_Canopy_Wash
+          marks:
+          - type: paint_rect
+            x: 0.0
+            y: 0.0
+            w: 1.0
+            h: 0.55
+            pressure: 15
+            fill: true
+          - type: paint_scatter
+            x: 0.04
+            y: 0.05
+            w: 0.92
+            h: 0.55
+            count: 150
+            pressure: 10
+            seed: 'jupiter_air'
+        - layer: Far_Horizon_Glade
+          marks:
+          - type: paint_line
+            x1: 0.04
+            y1: 0.58
+            x2: 0.96
+            y2: 0.54
+            pressure: 20
+          - type: paint_ellipse
+            cx: 0.5
+            cy: 0.62
+            rx: 0.44
+            ry: 0.12
+            pressure: 18
+            fill: true
+      mode_details:
+        display_name: Aeolian
+        formula: 1 2 ♭3 4 5 ♭6 ♭7
+        binary_12bit: "101101011010"
+        semitones: [0,2,3,5,7,8,10]
+        hex: 0x5AD
+        decimal: 1453
+        sound_world:
+        - journey
+        - wind
+        - change
+        - legacy
+        - coherent dispersal
+        - road
+        - horizon-seeking motion
+        canonical_phrase: Aeolian makes the road audible.
+    expression_variants:
+      Dorian_flat2-1707:
+        binary_12bit: "110101010110"
+        forte_number: 7-34
+    
+    zodiacal_systems:
+      sagittarius:
+        directionality: external
+        derives_from: canonical_expression.binary_12bit
+        system_name: Route, Mobility, and Expansion Systems
+        domain:
+        - route
+        - movement
+        - travel
+        - rail
+        - roads
+        - logistics
+        - entropy-like path-space
+        core_question: What pathways allow movement, expansion, and horizon?
+        canonical_phrase: Sagittarius / Jupiter External = the horizon system.
+      pisces:
+        directionality: inward
+        derives_from: canonical_expression.binary_12bit_lsb
+        system_name: Potential Stewardship System
+        domain:
+        - stored potential
+        - living potential
+        - money
+        - relationships
+        - future options
+        - recovery
+        - possibility
+        core_question: What possibilities can be preserved, created, or lost?
+        canonical_phrase: Pisces / Jupiter Internal = the reservoir of possibility.
+        stable_rules:
+          money: stored potential
+          relationships: living potential
+          stewardship: managing both toward survivable futures
+    physical_extension:
+      vector_b_physics_ref: schemas/vector_b_physics.yaml#vector_b_physics.governors.jupiter
+      physical_phenomena_ref: schemas/physical_phenomena.yaml#physical_phenomena.governor_registry.jupiter
+      color_palette_ref: schemas/color_palettes.yaml#spectral_vector_b.positions
+      detail_policy: Use extension schemas for Vector B physics and natural phenomena.
+    reference_library:
+      landforms:
+      - plains
+      - steppes
+      - open skies
+      - high plateaus
+      - archipelagos
+      - trade winds
+      architecture:
+      - temples on high places
+      - palaces
+      - courtrooms
+      - columns
+      - amphitheaters
+      - ships
+      botany:
+      - oak trees
+      - fig trees
+      - dandelions
+      - clover
+      - sage
+      - anise
+      - fennel
+      - thyme
+      material:
+      - tin
+      - amethyst
+      - sapphire
+      - turquoise
+      - lapis lazuli
+      - topaz
+      color_associations:
+      - blue
+      - royal blue
+      - azure
+      - deep violet-blue
+      symbolic_references:
+      - thunderbolt
+      - scepter
+      - eagle
+      - the number 6
+      - hexagram
+      - wheel
+      - crown
+  saturn:
+    symbol: "♄"
+    display_name: Saturn
+    type: bipolar_engine_governor
+    archetype:
+      element: Earth
+      engine_function: constraint and form; what the flow cannot do
+      directionality: inward_centripetal
+      mythology_layer:
+        narratives:
+          - constraint
+          - boundary
+          - form
+          - law
+          - hard limit
+          - time
+          - consequence
+        alchemical_phase:
+          name: Nigredo
+          description: Blackening, dissolution, putrefaction into prima materia
+          substance: Lead
+          symbol: Cross
+          function: The dissolution that makes transformation possible. Without nigredo, there is no prima materia.
+        incarnational_layer:
+          - body
+          - boundary
+          - mortality
+          - embodiment
+          - structure
+          - physical limit
+          - bone
+        canonical_phrases:
+          - Saturn = the wall that lets the self exist.
+          - Saturn is the boundary that gives being form.
+    canonical_expression:
+      mode: locrian
+      binary_12bit: "110101101010"
+      color: "#9400D3"
+      binary_constructive: "110101101010"
+      decimal_constructive: 3434
+      hex_constructive: "0xD6A"
+      binary_observational: "010101101011"
+      decimal_observational: 1387
+      hex_observational: "0x56B"
+      bit_weight: 7
+      binary_12bit_lsb: "011010110101"
+      hex: 0x56B
+      wavelength_nm: 400
+      compression_derived: true
+      thermodynamic_function: "fixation"
+      optical_function: "cutoff_crystallization"
+      rotation_k: 1
+      visual_recipes:
+        forest_setting:
+        - layer: Bounded_Trunk_Silhouettes
+          marks:
+          - type: paint_rect
+            x: 0.18
+            y: 0.2
+            w: 0.06
+            h: 0.76
+            pressure: 85
+            fill: true
+          - type: paint_rect
+            x: 0.48
+            y: 0.12
+            w: 0.07
+            h: 0.84
+            pressure: 90
+            fill: true
+          - type: paint_rect
+            x: 0.76
+            y: 0.24
+            w: 0.05
+            h: 0.7
+            pressure: 80
+            fill: true
+        - layer: Crystal_Edge_Mask
+          marks:
+          - type: paint_line
+            x1: 0.16
+            y1: 0.72
+            x2: 0.5
+            y2: 0.18
+            pressure: 75
+            end_pressure: 85
+          - type: paint_line
+            x1: 0.5
+            y1: 0.18
+            x2: 0.84
+            y2: 0.74
+            pressure: 85
+            end_pressure: 75
+          - type: paint_line
+            x1: 0.24
+            y1: 0.46
+            x2: 0.76
+            y2: 0.46
+            pressure: 60
+      mode_details:
+        display_name: Locrian
+        formula: 1 ♭2 ♭3 4 ♭5 ♭6 ♭7
+        binary_12bit: "110101101010"
+        semitones: [0,1,3,5,6,8,10]
+        hex: 0x56B
+        decimal: 1387
+        sound_world:
+        - body
+        - constraint
+        - broken form
+        - boundary
+        - mortality
+        - austerity
+        - unstable architecture
+        canonical_phrase: Locrian makes constraint audible.
+    expression_variants:
+      Lydian_Augmented_2901:
+        binary_12bit: "101010101101"
+        forte_number: 7-34
+    
+    zodiacal_systems:
+      aquarius:
+        directionality: external
+        derives_from: canonical_expression.binary_12bit
+        system_name: Civil Law System
+        domain:
+        - civil law
+        - institutions
+        - public order
+        - social rules
+        - collective infrastructure
+        - rights and obligations
+        - public structure
+        core_question: What rules govern collective life?
+        canonical_phrase: Aquarius / Saturn External = the law of society.
+      capricorn:
+        directionality: inward
+        derives_from: canonical_expression.binary_12bit_lsb
+        system_name: Body, Environment, and Planetary Constraint System
+        domain:
+        - laws of the body
+        - immediate environment
+        - planet
+        - material constraint
+        - hard reality
+        - health
+        - land and shelter
+        core_question: What hard realities define survival here?
+        canonical_phrase: Capricorn / Saturn Internal = the law of embodiment.
+    physical_extension:
+      vector_b_physics_ref: schemas/vector_b_physics.yaml#vector_b_physics.governors.saturn
+      physical_phenomena_ref: schemas/physical_phenomena.yaml#physical_phenomena.governor_registry.saturn
+      color_palette_ref: schemas/color_palettes.yaml#spectral_vector_b.positions
+      detail_policy: Use extension schemas for Vector B physics and natural phenomena.
+    reference_library:
+      landforms:
+      - mountains
+      - cliffs
+      - stone walls
+      - caves
+      - underground rivers
+      - deserts of salt
+      architecture:
+      - walls
+      - gates
+      - towers
+      - citadels
+      - pyramids
+      - mausoleums
+      - stone circles
+      - labyrinths
+      botany:
+      - cypress
+      - yew
+      - pine
+      - holly
+      - ivy
+      - bindweed
+      - nightshade
+      - mushrooms
+      material:
+      - lead
+      - obsidian
+      - onyx
+      - jet
+      - hematite
+      - basalt
+      - diamond
+      color_associations:
+      - violet
+      - purple
+      - black
+      - deep indigo
+      - charcoal
+      symbolic_references:
+      - scythe
+      - hourglass
+      - wall
+      - chain
+      - the number 8
+      - cube
+      - star tetrahedron
+directionality:
+  inward_centripetal:
+    governors -> meaning -> practical_expressions:
+    - moon -> receive -> being
+    - venus -> bind -> bond
+    - saturn -> contain -> structure
+  outward_projective:
+    governors -> meaning -> practical_expressions:
+    - sun -> radiate -> purpose
+    - mars -> activation -> action
+    - jupiter -> expand -> stewardship
+  hinge_mediator:
+    governors -> meaning -> practical_expressions:
+    - mercury -> translate -> ledger
+fivefold_engine:
+  mars:
+    element: Fire
+    function: energy modulation
+    alchemical_operation: Calcination — the heat that begins the work
+    flow_question: How does force enter the pattern?
+  jupiter:
+    element: Air
+    function: direction
+    alchemical_operation: Philosophical tree — the wind that carries form into destiny
+    flow_question: Where is the flow going?
+  venus:
+    element: Water
+    function: taste, cohesion, aesthetic sensitivity
+    alchemical_operation: Conjunctio — the union that draws matter into coherent relation
+    flow_question: What feels fitting?
+  saturn:
+    element: Earth
+    function: constraint and form
+    alchemical_operation: Nigredo — the vessel, the boundary within which the work occurs
+    flow_question: What can the flow not do?
+  mercury:
+    element: Quintessence
+    function: responsiveness and integration
+    alchemical_operation: Azoth — the universal solvent that mediates all transformation
+    flow_question: How does the system adapt?
+
+# Layer 6 — Topology Roots
+# Each topology specifies its root interval pattern across the Chaldean skeleton.
+# Delta vectors between topologies for the same tonic governor determine
+# wavelength/compression shifts via derive_governor_profile() in topologies.py.
+topology_roots:
+  7-35:
+    name: Diatonic
+    pitch_set: [0,2,4,5,7,9,11]
+    geometry: right_triangle
+    coherence_quotient: 0.952
+    hemitonia: 2
+    imperfections: 1
+    qkv_character: "90° routing, strict determinism"
+  7-34:
+    name: Acoustic
+    pitch_set: [0,2,4,6,7,9,10]
+    geometry: oblique
+    coherence_quotient: 0.871
+    hemitonia: 2
+    imperfections: 3
+    qkv_character: "non-linear associations, mid scatter"
+  7-32:
+    name: Harmonic Minor
+    pitch_set: [0,2,3,5,7,8,11]
+    geometry: acute
+    coherence_quotient: 0.871
+    hemitonia: 3
+    imperfections: 3
+    qkv_character: "highest angular tension, laser focus"
+  5-35:
+    name: Major Pentatonic
+    pitch_set: [0,2,4,7,9]
+    coherence_quotient: 1.0
+    hemitonia: 0
+    imperfections: 0
+    qkv_character: "pure operational engine"

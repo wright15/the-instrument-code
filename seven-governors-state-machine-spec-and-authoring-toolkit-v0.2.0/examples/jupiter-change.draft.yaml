@@ -1,0 +1,19 @@
+proposal:
+  schema_version: 1.0.0
+  proposal_id: governor-change:jupiter:example
+  status: draft
+  created_at: 2026-07-30T12:00:00.000Z
+  office: Jupiter
+  office_key: jupiter
+  base:
+    artifact: source/governors.yaml
+    sha256: 841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2
+  changes:
+    - field: reference_library.landforms
+      risk_class: authorable
+      value:
+        - mountain ranges
+        - canyons
+        - valleys
+        - river deltas
+        - wind-carved plateaus

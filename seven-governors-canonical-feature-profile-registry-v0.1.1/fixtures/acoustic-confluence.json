@@ -1,0 +1,102 @@
+{
+  "fixtureId": "fixture:acoustic-confluence",
+  "fixtureClass": "structural_normalization",
+  "evidenceScope": [
+    "harmonic_structure",
+    "office_resolution",
+    "normal_form_confluence"
+  ],
+  "semanticEffectEvidence": false,
+  "label": "Acoustic A1 midpoint confluence",
+  "fixtureType": "exact_midpoint_confluence",
+  "targetStateId": 1749,
+  "targetStateName": "Acoustic",
+  "expectedOffice": "Moon",
+  "routes": [
+    {
+      "routeId": "route:acoustic:2773:L7",
+      "sourceIds": [
+        2773
+      ],
+      "targetId": 1749,
+      "structuralOperatorIds": [
+        "L7"
+      ],
+      "operatorAnnotations": [
+        {
+          "structuralOperatorId": "L7",
+          "semanticOperatorId": "semantic:L7:v0.1.1",
+          "degree": 7,
+          "degreeGovernor": "Moon",
+          "direction": "lower",
+          "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+          "semanticEffectEvidence": false
+        }
+      ],
+      "relationEvidence": [
+        {
+          "sourceId": 2773,
+          "sourceName": "Lydian",
+          "operatorId": "L7",
+          "targetId": 1749,
+          "targetName": "Acoustic",
+          "structuralEvidence": true,
+          "structuralEdgeTypes": [
+            "CONSTRUCTS"
+          ],
+          "fieldEvidence": true,
+          "fieldEdgeTypes": [
+            "AUDITED_HAMMING2"
+          ],
+          "applicationStatus": "formal_substrate_observed"
+        }
+      ],
+      "note": "Exact A1 midpoint route.",
+      "excludedFromIntrinsicFingerprint": true
+    },
+    {
+      "routeId": "route:acoustic:1717:R4",
+      "sourceIds": [
+        1717
+      ],
+      "targetId": 1749,
+      "structuralOperatorIds": [
+        "R4"
+      ],
+      "operatorAnnotations": [
+        {
+          "structuralOperatorId": "R4",
+          "semanticOperatorId": "semantic:R4:v0.1.1",
+          "degree": 4,
+          "degreeGovernor": "Sun",
+          "direction": "raise",
+          "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+          "semanticEffectEvidence": false
+        }
+      ],
+      "relationEvidence": [
+        {
+          "sourceId": 1717,
+          "sourceName": "Mixolydian",
+          "operatorId": "R4",
+          "targetId": 1749,
+          "targetName": "Acoustic",
+          "structuralEvidence": true,
+          "structuralEdgeTypes": [
+            "CONSTRUCTS"
+          ],
+          "fieldEvidence": true,
+          "fieldEdgeTypes": [
+            "AUDITED_HAMMING2"
+          ],
+          "applicationStatus": "formal_substrate_observed"
+        }
+      ],
+      "note": "Exact A1 midpoint route.",
+      "excludedFromIntrinsicFingerprint": true
+    }
+  ],
+  "normalFormFingerprint": "8077327cc0f809b85ab5379daefb0ab0dd61f4f7f1e52baf0e2020a68054652c",
+  "assertion": "Lydian --L7--> Acoustic and Mixolydian --R4--> Acoustic compile to the same intrinsic Moon-office packet.",
+  "status": "passed"
+}

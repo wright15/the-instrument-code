@@ -1,0 +1,40 @@
+{
+  "verdict": "PASS",
+  "releaseId": "seven-governors-integrated-1.2.0",
+  "checksPassed": 5,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "name": "bestiary:schema-valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "bestiary:fresh",
+      "status": "PASS",
+      "diagnostic": "{\n  \"verdict\": \"PASS\",\n  \"target\": \"bestiary/data/bestiary-data.json\",\n  \"bytes\": 1006755\n}"
+    },
+    {
+      "name": "bestiary:refs-closed",
+      "status": "PASS",
+      "diagnostic": {
+        "violations": []
+      }
+    },
+    {
+      "name": "bestiary:counts",
+      "status": "PASS",
+      "diagnostic": {
+        "violations": []
+      }
+    },
+    {
+      "name": "bestiary:narrative-pins",
+      "status": "PASS",
+      "diagnostic": {
+        "violations": [],
+        "detail": "22 pinned narratives, sha256 bound, template narratives clean"
+      }
+    }
+  ]
+}

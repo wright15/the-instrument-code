@@ -1,0 +1,501 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Compare — Bestiary of Archetypes">
+  <section class="mb-6">
+    <h1 class="text-2xl font-semibold tracking-tight">Compare archetypes</h1>
+    <p class="mt-1 max-w-2xl text-sm leading-relaxed text-muted">
+      Pick any two archetypes of the same kind for a field-by-field
+      differential, shared-membership overlap, and (for two states) the
+      structural transformation path between them. The selection is reflected
+      in the URL as <span class="font-mono text-[11px]">?a=&amp;b=</span> so
+      comparisons can be shared.
+    </p>
+  </section>
+
+  <section class="mb-8 rounded-lg border border-edge bg-panel p-4">
+    <div class="flex flex-wrap items-center gap-3">
+      <label class="flex flex-col gap-1 text-[10px] uppercase tracking-wider text-muted">
+        Archetype A
+        <select id="compare-a" class="rounded border border-edge bg-raised px-2 py-1.5 text-xs text-frost focus:border-accent/50 focus:outline-none"></select>
+      </label>
+      <button
+        id="compare-swap"
+        type="button"
+        class="mt-4 rounded border border-edge px-2.5 py-1.5 text-xs text-muted transition-colors hover:border-accent/50 hover:text-accent"
+        title="Swap A and B"
+      >
+        ⇄
+      </button>
+      <label class="flex flex-col gap-1 text-[10px] uppercase tracking-wider text-muted">
+        Archetype B
+        <select id="compare-b" class="rounded border border-edge bg-raised px-2 py-1.5 text-xs text-frost focus:border-accent/50 focus:outline-none"></select>
+      </label>
+      <span id="compare-status" class="ml-auto text-[11px] text-muted"></span>
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4">
+    <div id="compare-differential" class="rounded-lg border border-edge bg-panel p-5"></div>
+    <div id="compare-overlap" class="rounded-lg border border-edge bg-panel p-5"></div>
+    <div id="compare-path" class="rounded-lg border border-edge bg-panel p-5"></div>
+  </section>
+
+  <noscript>
+    <p class="mt-4 text-xs text-muted">
+      Comparison requires JavaScript.
+    </p>
+  </noscript>
+</BaseLayout>
+
+<script>
+  import {
+    bestiary,
+    kindLabels,
+    officeColors,
+    projectionGapFor,
+    relationKind,
+    stateById,
+    type Archetype,
+    type CanonicalProfile,
+    type CandidateExtension,
+    type GovernorOffice,
+    type ModalCycle,
+    type MutationOperator,
+    type ScaleFamily,
+    type ScaleState,
+  } from "../lib/bestiary";
+
+  const selectA = document.getElementById("compare-a") as HTMLSelectElement;
+  const selectB = document.getElementById("compare-b") as HTMLSelectElement;
+  const statusEl = document.getElementById("compare-status") as HTMLElement;
+  const diffEl = document.getElementById("compare-differential") as HTMLElement;
+  const overlapEl = document.getElementById("compare-overlap") as HTMLElement;
+  const pathEl = document.getElementById("compare-path") as HTMLElement;
+
+  const kindOrder = [
+    "scaleState",
+    "scaleFamily",
+    "governorOffice",
+    "canonicalProfile",
+    "mutationOperator",
+    "modalCycle",
+    "candidateExtension",
+  ];
+
+  function populate() {
+    for (const [index, select] of [selectA, selectB].entries()) {
+      for (const kind of kindOrder) {
+        const group = document.createElement("optgroup");
+        group.label = kindLabels[kind];
+        for (const archetype of bestiary.archetypes.filter(
+          (a) => a.kind === kind,
+        )) {
+          const option = document.createElement("option");
+          option.value = archetype.id;
+          option.textContent = archetype.name;
+          if (index === 0 && archetype.kind === "scaleState" && archetype.nodeId === 127) {
+            option.selected = true;
+          }
+          if (index === 1 && archetype.kind === "scaleState" && archetype.nodeId === 1001) {
+            option.selected = true;
+          }
+          group.appendChild(option);
+        }
+        select.appendChild(group);
+      }
+    }
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const initialA = params.get("a");
+  const initialB = params.get("b");
+
+  function setFromUrl() {
+    if (initialA && bestiary.archetypes.some((a) => a.id === initialA)) {
+      selectA.value = initialA;
+    }
+    if (initialB && bestiary.archetypes.some((a) => a.id === initialB)) {
+      selectB.value = initialB;
+    }
+  }
+
+  function sectionTitle(title: string): HTMLElement {
+    const h = document.createElement("h2");
+    h.className =
+      "mb-3 text-xs font-semibold uppercase tracking-wider text-accent";
+    h.textContent = title;
+    return h;
+  }
+
+  function rowEl(label: string, a: string, b: string): HTMLElement {
+    const row = document.createElement("div");
+    row.className =
+      "grid grid-cols-[minmax(8rem,1fr)_1fr_1fr] gap-3 border-b border-edge/60 py-1.5 text-[11px] items-baseline";
+    const labelEl = document.createElement("span");
+    labelEl.className = "text-muted";
+    labelEl.textContent = label;
+    const aEl = document.createElement("span");
+    aEl.className = "font-mono text-frost/90";
+    aEl.textContent = a === "" ? "—" : a;
+    const bEl = document.createElement("span");
+    bEl.className = "font-mono text-frost/90";
+    bEl.textContent = b === "" ? "—" : b;
+    row.append(labelEl, aEl, bEl);
+    return row;
+  }
+
+  type DiffRow = { label: string; a: string; b: string };
+
+  function diffRows(a: Archetype, b: Archetype): DiffRow[] {
+    const spec: { label: string; get: (x: Archetype) => string }[] = [];
+    switch (a.kind) {
+      case "scaleState": {
+        spec.push(
+          { label: "forte", get: (x) => (x as ScaleState).forte ?? "" },
+          { label: "role", get: (x) => (x as ScaleState).role },
+          { label: "tier", get: (x) => (x as ScaleState).tier ?? "" },
+          { label: "office", get: (x) => (x as ScaleState).office ?? "" },
+          { label: "chirality", get: (x) => (x as ScaleState).chirality ?? "" },
+          {
+            label: "orientation",
+            get: (x) => (x as ScaleState).orientation ?? "",
+          },
+          {
+            label: "in / out",
+            get: (x) =>
+              `${(x as ScaleState).incomingCount} / ${(x as ScaleState).outgoingCount}`,
+          },
+          {
+            label: "pitch set",
+            get: (x) => {
+              const pcs = (x as ScaleState).pitchSetPcs;
+              return pcs ? `{${pcs.join(",")}}` : "";
+            },
+          },
+        );
+        break;
+      }
+      case "scaleFamily":
+        spec.push(
+          { label: "forte", get: (x) => (x as ScaleFamily).forte },
+          { label: "states", get: (x) => String((x as ScaleFamily).stateCount) },
+          {
+            label: "orientations",
+            get: (x) => String((x as ScaleFamily).modalOrientationCount),
+          },
+          {
+            label: "chirality",
+            get: (x) => (x as ScaleFamily).chirality ?? "",
+          },
+          {
+            label: "z-partner",
+            get: (x) => (x as ScaleFamily).zPartner ?? "",
+          },
+        );
+        break;
+      case "governorOffice":
+        spec.push(
+          { label: "office", get: (x) => (x as GovernorOffice).office },
+          { label: "index", get: (x) => String((x as GovernorOffice).officeIndex) },
+          { label: "states", get: (x) => String((x as GovernorOffice).stateCount) },
+          { label: "color", get: (x) => (x as GovernorOffice).color ?? "" },
+          { label: "symbol", get: (x) => (x as GovernorOffice).symbol ?? "" },
+        );
+        break;
+      case "canonicalProfile":
+        spec.push(
+          { label: "type", get: (x) => (x as CanonicalProfile).type },
+          {
+            label: "root state",
+            get: (x) => String((x as CanonicalProfile).canonicalIdentity.stateId),
+          },
+          {
+            label: "mode",
+            get: (x) => (x as CanonicalProfile).canonicalIdentity.mode,
+          },
+          {
+            label: "forte family",
+            get: (x) => (x as CanonicalProfile).canonicalIdentity.forteFamily,
+          },
+          {
+            label: "photonic",
+            get: (x) => {
+              const p = (x as CanonicalProfile).photonic;
+              return p ? `${p.wavelengthNm}nm ${p.color}` : "";
+            },
+          },
+          {
+            label: "landforms",
+            get: (x) => String((x as CanonicalProfile).landformReferences),
+          },
+        );
+        break;
+      case "mutationOperator": {
+        spec.push(
+          { label: "notation", get: (x) => (x as MutationOperator).notation },
+          { label: "class", get: (x) => (x as MutationOperator).operatorClass },
+          { label: "direction", get: (x) => (x as MutationOperator).direction },
+          {
+            label: "degree",
+            get: (x) => {
+              const degree = (x as MutationOperator).degree;
+              return degree !== null ? String(degree) : "";
+            },
+          },
+          {
+            label: "inverse",
+            get: (x) => (x as MutationOperator).inverseOperatorId,
+          },
+          {
+            label: "conjugate",
+            get: (x) => (x as MutationOperator).conjugateOperatorId,
+          },
+          {
+            label: "applications",
+            get: (x) => String((x as MutationOperator).applicationCount),
+          },
+          {
+            label: "coverage",
+            get: (x) => {
+              const gap = projectionGapFor((x as MutationOperator).projectionGapId);
+              return gap ? `${Math.round(gap.unionCoverageRate * 100)}%` : "";
+            },
+          },
+        );
+        break;
+      }
+      case "modalCycle":
+        spec.push(
+          { label: "forte", get: (x) => (x as ModalCycle).forte },
+          { label: "role", get: (x) => (x as ModalCycle).role },
+          { label: "tier", get: (x) => (x as ModalCycle).tier },
+          {
+            label: "chirality",
+            get: (x) => (x as ModalCycle).chirality ?? "",
+          },
+          { label: "length", get: (x) => String((x as ModalCycle).cycleLength) },
+          {
+            label: "office bearing",
+            get: (x) => ((x as ModalCycle).officeBearing ? "yes" : "no"),
+          },
+        );
+        break;
+      case "candidateExtension":
+        spec.push(
+          { label: "category", get: (x) => (x as CandidateExtension).category },
+          {
+            label: "invariants",
+            get: (x) => String((x as CandidateExtension).proposedInvariants.length),
+          },
+        );
+        break;
+    }
+    return spec.map((s) => ({ label: s.label, a: s.get(a), b: s.get(b) }));
+  }
+
+  function renderDifferential(aId: string, bId: string) {
+    const a = bestiary.archetypes.find((x) => x.id === aId);
+    const b = bestiary.archetypes.find((x) => x.id === bId);
+    diffEl.replaceChildren(sectionTitle("Differential matrix"));
+    if (!a || !b) {
+      diffEl.append(emptyNote("Select two archetypes to compare."));
+      return;
+    }
+    if (a.kind !== b.kind) {
+      diffEl.append(
+        emptyNote(
+          `Cross-kind comparison (${kindLabels[a.kind]} vs ${kindLabels[b.kind]}) — field-level differential requires same kind.`,
+        ),
+      );
+      return;
+    }
+    const differing = diffRows(a, b).filter((row) => row.a !== row.b);
+    if (differing.length === 0) {
+      diffEl.append(
+        emptyNote(
+          `No differing fields — ${a.name} and ${b.name} match on all compared fields.`,
+        ),
+      );
+      return;
+    }
+    for (const row of differing) {
+      diffEl.append(rowEl(row.label, row.a, row.b));
+    }
+  }
+
+  function renderOverlap(aId: string, bId: string) {
+    const a = bestiary.archetypes.find((x) => x.id === aId);
+    const b = bestiary.archetypes.find((x) => x.id === bId);
+    overlapEl.replaceChildren(sectionTitle("Overlap"));
+    if (!a || !b || a.kind !== b.kind) return;
+    const items: string[] = [];
+    if (a.kind === "scaleState" && b.kind === "scaleState") {
+      const sharedParents = a.parents.filter((p) => b.parents.includes(p));
+      if (sharedParents.length) {
+        items.push(`shared governing parents: ${sharedParents.map(String).join(", ")}`);
+      }
+      const sharedCycles = bestiary.archetypes
+        .filter(
+          (c) =>
+            c.kind === "modalCycle" &&
+            c.memberStateIds.includes(a.nodeId) &&
+            c.memberStateIds.includes(b.nodeId),
+        )
+        .map((c) => c.id);
+      if (sharedCycles.length) {
+        items.push(`shared modal cycles: ${sharedCycles.join(", ")}`);
+      }
+      if (a.office && a.office === b.office) {
+        items.push(`shared office: ${a.office}`);
+      }
+      if (a.forte && a.forte === b.forte) {
+        items.push(`same forte family: ${a.forte}`);
+      }
+    }
+    if (a.kind === "scaleFamily" && b.kind === "scaleFamily") {
+      const shared = a.memberStateIds.filter((m) => b.memberStateIds.includes(m));
+      if (shared.length) {
+        items.push(`shared members: ${shared.map(String).join(", ")}`);
+      } else {
+        items.push("no shared members");
+      }
+    }
+    if (a.kind === "modalCycle" && b.kind === "modalCycle") {
+      const shared = a.memberStateIds.filter((m) => b.memberStateIds.includes(m));
+      if (shared.length) {
+        items.push(`shared members: ${shared.map(String).join(", ")}`);
+      } else {
+        items.push("no shared members");
+      }
+    }
+    if (items.length === 0) {
+      items.push("no shared membership found");
+    }
+    for (const item of items) {
+      const p = document.createElement("p");
+      p.className = "py-1 text-[11px] text-frost/80";
+      p.textContent = item;
+      overlapEl.append(p);
+    }
+  }
+
+  function renderPath(aId: string, bId: string) {
+    pathEl.replaceChildren(sectionTitle("Transformation path"));
+    const a = bestiary.archetypes.find((x) => x.id === aId);
+    const b = bestiary.archetypes.find((x) => x.id === bId);
+    if (!a || !b || a.kind !== "scaleState" || b.kind !== "scaleState") {
+      pathEl.append(
+        emptyNote("Select two scale states to search a structural path."),
+      );
+      return;
+    }
+    if (a.nodeId === b.nodeId) {
+      pathEl.append(emptyNote("Same state — trivially connected."));
+      return;
+    }
+    const structural = bestiary.relationships.filter(
+      (r) => relationKind(r) === "structural",
+    );
+    const adjacency = new Map<number, typeof structural>();
+    for (const edge of structural) {
+      for (const [from, to] of [
+        [edge.source, edge.target],
+        [edge.target, edge.source],
+      ]) {
+        if (!adjacency.has(from)) adjacency.set(from, []);
+        adjacency.get(from)!.push(edge);
+      }
+    }
+    const queue: number[] = [a.nodeId];
+    const visited = new Set<number>([a.nodeId]);
+    const prev = new Map<number, { node: number; edge: (typeof structural)[number] }>();
+    while (queue.length) {
+      const current = queue.shift()!;
+      if (current === b.nodeId) break;
+      for (const edge of adjacency.get(current) ?? []) {
+        const neighbor = edge.source === current ? edge.target : edge.source;
+        if (visited.has(neighbor)) continue;
+        visited.add(neighbor);
+        prev.set(neighbor, { node: current, edge });
+        queue.push(neighbor);
+      }
+    }
+    if (!prev.has(b.nodeId)) {
+      pathEl.append(emptyNote("No structural path between these states."));
+      return;
+    }
+    const steps: { from: number; to: number; edge: (typeof structural)[number] }[] = [];
+    let cursor: number | undefined = b.nodeId;
+    while (cursor !== undefined && cursor !== a.nodeId) {
+      const hop = prev.get(cursor);
+      if (!hop) break;
+      steps.push({ from: hop.node, to: cursor, edge: hop.edge });
+      cursor = hop.node;
+    }
+    steps.reverse();
+    const chain = document.createElement("div");
+    chain.className = "flex flex-wrap items-center gap-1.5 text-[11px]";
+    for (let i = 0; i < steps.length; i++) {
+      const step = steps[i];
+      if (i === 0) chain.append(nodeChip(step.from));
+      const edgeLabel = document.createElement("span");
+      edgeLabel.className =
+        "rounded bg-raised px-1.5 py-0.5 font-mono text-[9px] text-muted";
+      edgeLabel.textContent = `${step.edge.type}${step.edge.directed ? " →" : " ↔"}${step.edge.mutation ? ` ${step.edge.mutation}` : ""}`;
+      chain.append(edgeLabel);
+      chain.append(nodeChip(step.to));
+    }
+    const meta = document.createElement("p");
+    meta.className = "mt-2 text-[10px] text-muted";
+    meta.textContent = `${steps.length} structural edge${steps.length === 1 ? "" : "s"} · ${visited.size} states explored`;
+    pathEl.append(chain, meta);
+  }
+
+  function nodeChip(nodeId: number): HTMLElement {
+    const state = stateById(nodeId);
+    const link = document.createElement("a");
+    link.href = `/archetypes/state:${nodeId}`;
+    link.className =
+      "rounded border border-edge bg-raised px-1.5 py-0.5 font-mono text-[10px] text-frost hover:border-accent/50 hover:text-accent";
+    const tint = state?.office ? officeColors[state.office] ?? "#888888" : "#888888";
+    link.textContent = state ? `${nodeId} ${state.name}` : String(nodeId);
+    link.style.boxShadow = `inset 3px 0 0 ${tint}`;
+    return link;
+  }
+
+  function emptyNote(text: string): HTMLElement {
+    const p = document.createElement("p");
+    p.className = "text-xs text-muted";
+    p.textContent = text;
+    return p;
+  }
+
+  function refresh() {
+    const aId = selectA.value;
+    const bId = selectB.value;
+    const params = new URLSearchParams();
+    params.set("a", aId);
+    params.set("b", bId);
+    window.history.replaceState(null, "", `?${params.toString()}`);
+    const aName = bestiary.archetypes.find((x) => x.id === aId)?.name ?? "";
+    const bName = bestiary.archetypes.find((x) => x.id === bId)?.name ?? "";
+    statusEl.textContent = aName && bName ? `${aName} vs ${bName}` : "";
+    renderDifferential(aId, bId);
+    renderOverlap(aId, bId);
+    renderPath(aId, bId);
+  }
+
+  populate();
+  setFromUrl();
+  selectA.addEventListener("change", refresh);
+  selectB.addEventListener("change", refresh);
+  document.getElementById("compare-swap")?.addEventListener("click", () => {
+    const tmp = selectA.value;
+    selectA.value = selectB.value;
+    selectB.value = tmp;
+    refresh();
+  });
+  refresh();
+</script>

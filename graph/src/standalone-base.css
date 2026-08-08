@@ -1,0 +1,149 @@
+:root {
+  color-scheme: light dark;
+  --background: #fbfcfe;
+  --foreground: #18202d;
+  --card: #f1f4f8;
+  --card-foreground: #18202d;
+  --primary: #246bb2;
+  --primary-foreground: #ffffff;
+  --muted: #e9eef4;
+  --muted-foreground: #5b6778;
+  --accent: #e3effc;
+  --accent-foreground: #174f88;
+  --border: #cfd8e3;
+  --input: #ffffff;
+  --ring: #2d7fd0;
+  --radius: 10px;
+  --viz-series-1: #2d73bf;
+  --viz-series-2: #d1742e;
+  --viz-series-3: #2f8b67;
+  --viz-series-4: #c6528b;
+  --viz-series-5: #795cc1;
+  --viz-series-6: #168d88;
+  --font-size-base: 14px;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #11151b;
+    --foreground: #eef3f8;
+    --card: #1b222c;
+    --card-foreground: #eef3f8;
+    --primary: #82bff5;
+    --primary-foreground: #0b1118;
+    --muted: #202a35;
+    --muted-foreground: #a9b5c3;
+    --accent: #173551;
+    --accent-foreground: #b8dcfb;
+    --border: #344150;
+    --input: #151b23;
+    --ring: #82bff5;
+    --viz-series-1: #7cb7ee;
+    --viz-series-2: #ef9b57;
+    --viz-series-3: #6fc595;
+    --viz-series-4: #e58bb7;
+    --viz-series-5: #a48ae7;
+    --viz-series-6: #5bc5c0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  padding: 16px;
+}
+
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+}
+
+.viz-controls {
+  width: 100%;
+}
+
+.form-label {
+  color: var(--muted-foreground);
+  display: grid;
+  font-size: 12px;
+  font-weight: 500;
+  gap: 5px;
+}
+
+.form-select,
+.form-control {
+  appearance: none;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--foreground);
+  min-height: 38px;
+  padding: 7px 32px 7px 10px;
+}
+
+.form-select {
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 15px) 16px,
+    calc(100% - 10px) 16px;
+  background-repeat: no-repeat;
+  background-size: 5px 5px, 5px 5px;
+}
+
+.form-select:focus-visible,
+.form-control:focus-visible {
+  border-color: var(--ring);
+  outline: 2px solid color-mix(in srgb, var(--ring) 35%, transparent);
+  outline-offset: 1px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--card-foreground);
+  padding: 12px;
+}
+
+.text-small {
+  font-size: max(11px, calc(var(--font-size-base) - 2px));
+}
+
+.tooltip {
+  background: var(--foreground);
+  border-radius: 7px;
+  color: var(--background);
+  font-size: 12px;
+  line-height: 1.35;
+  padding: 7px 9px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 18%);
+}
+
+code {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 10px;
+  }
+}

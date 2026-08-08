@@ -1,0 +1,81 @@
+{
+  "traceId": "loop-stop",
+  "schemaVersion": "gov-207.trace.v1",
+  "setup": {
+    "taskId": "task:trace-loop",
+    "phase": "INSPECTED",
+    "data": { "site_verified": false },
+    "loopPolicy": { "maxRetries": 1, "repetitionLimit": 9, "noProgressWindow": 2 },
+    "withClassifier": false,
+    "withGraph": false
+  },
+  "steps": [
+    {
+      "operation": "validate_and_execute_move",
+      "request": {
+        "selectedMove": {
+          "operationId": "operation:start-site",
+          "moveSha256": "${moveSha256:operation:start-site}"
+        },
+        "parameters": {
+          "port": "${freePort}",
+          "bind_port": "${freePort}",
+          "mode": "early_exit"
+        }
+      },
+      "expect": {
+        "status": "failed",
+        "claimableSuccess": false,
+        "phaseAfter": "FAILED"
+      }
+    },
+    {
+      "operation": "validate_and_execute_move",
+      "request": {
+        "selectedMove": {
+          "operationId": "operation:start-site",
+          "moveSha256": "${moveSha256:operation:start-site}"
+        },
+        "parameters": {
+          "port": "${freePort}",
+          "bind_port": "${freePort}",
+          "mode": "early_exit"
+        }
+      },
+      "expect": {
+        "status": "failed",
+        "claimableSuccess": false,
+        "phaseAfter": "FAILED"
+      }
+    },
+    {
+      "operation": "validate_and_execute_move",
+      "request": {
+        "selectedMove": {
+          "operationId": "operation:start-site",
+          "moveSha256": "${moveSha256:operation:start-site}"
+        },
+        "parameters": {
+          "port": "${freePort}",
+          "bind_port": "${freePort}",
+          "mode": "early_exit"
+        }
+      },
+      "expect": {
+        "status": "stopped",
+        "directiveAction": "stop",
+        "reasonCode": "retry_exhausted",
+        "claimableSuccess": false,
+        "phaseAfter": "STOPPED"
+      }
+    },
+    {
+      "operation": "list_legal_moves",
+      "expect": {
+        "status": "ok",
+        "menuSkills": ["inspect_context", "verify_outcome"]
+      }
+    }
+  ],
+  "expectedFinal": { "phase": "STOPPED", "mayDeclareSuccess": false }
+}

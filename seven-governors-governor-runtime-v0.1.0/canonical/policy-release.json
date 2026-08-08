@@ -1,0 +1,764 @@
+{
+  "activeAspectIds": [
+    "aspect:jupiter:declared-wavelength:v1",
+    "aspect:jupiter:symbolic-profile:v1"
+  ],
+  "activeRuleIds": [
+    "rule:jupiter:declared-wavelength:v1",
+    "rule:jupiter:symbolic-profile:v1"
+  ],
+  "bridgeRules": [
+    {
+      "admission": "proposed",
+      "antecedents": [
+        {
+          "antecedentId": "antecedent:atmospheric-aeolian-process",
+          "expectedValue": "process:atmospheric_aeolian_transport",
+          "kind": "relation_equals",
+          "provenance": [
+            {
+              "pointer": "/profiles/4/semantic/thermodynamicFunction",
+              "sourceId": "source:canonical-governor-profiles:0.1.1"
+            }
+          ],
+          "subjectScope": "entity.aspect"
+        },
+        {
+          "antecedentId": "antecedent:jupiter-distribution-correspondence",
+          "expectedValue": "distribution",
+          "featureId": "semantic.thermodynamic_function",
+          "kind": "feature_equals",
+          "provenance": [
+            {
+              "pointer": "/profiles/4/semantic/thermodynamicFunction",
+              "sourceId": "source:canonical-governor-profiles:0.1.1"
+            }
+          ],
+          "subjectScope": "profile.governor"
+        }
+      ],
+      "authoritySourceIds": [
+        "source:canonical-governor-profiles:0.1.1"
+      ],
+      "causalClaim": false,
+      "conflictPolicy": "return_ambiguous",
+      "epistemicClass": "authored_correspondence",
+      "missingPolicy": "return_unresolved",
+      "output": {
+        "aspectId": "aspect:jupiter:atmospheric-aeolian-process:v1",
+        "primaryGovernor": "Jupiter"
+      },
+      "priority": 40,
+      "provenance": [
+        {
+          "pointer": "/5-domain-namespace-crosswalk",
+          "sourceId": "source:governor-domain-authority:1.0.0"
+        }
+      ],
+      "ruleId": "rule:jupiter:atmospheric-aeolian-process:v1",
+      "ruleScope": "domain.process",
+      "ruleVersion": "1.0.0",
+      "schemaVersion": "1.0.0"
+    },
+    {
+      "admission": "canonical",
+      "antecedents": [
+        {
+          "antecedentId": "antecedent:jupiter-photonic-owner",
+          "expectedValue": "photonic:jupiter:v0.1.1",
+          "kind": "owner_equals",
+          "provenance": [
+            {
+              "pointer": "/records/4/photonicId",
+              "sourceId": "source:photonic-records:0.1.1"
+            }
+          ],
+          "subjectScope": "profile.governor"
+        },
+        {
+          "antecedentId": "antecedent:jupiter-wavelength",
+          "expectedValue": 470,
+          "featureId": "physical.wavelength_nm",
+          "kind": "feature_equals",
+          "provenance": [
+            {
+              "pointer": "/records/4/representativeWavelengthNm",
+              "sourceId": "source:photonic-records:0.1.1"
+            }
+          ],
+          "subjectScope": "governor.office"
+        }
+      ],
+      "authoritySourceIds": [
+        "source:photonic-records:0.1.1"
+      ],
+      "causalClaim": false,
+      "conflictPolicy": "return_ambiguous",
+      "epistemicClass": "framework_declared_physical_anchor",
+      "missingPolicy": "return_unresolved",
+      "output": {
+        "aspectId": "aspect:jupiter:declared-wavelength:v1",
+        "primaryGovernor": "Jupiter"
+      },
+      "priority": 100,
+      "provenance": [
+        {
+          "pointer": "/7-existing-featuredefinition-crosswalk",
+          "sourceId": "source:governor-domain-authority:1.0.0"
+        }
+      ],
+      "ruleId": "rule:jupiter:declared-wavelength:v1",
+      "ruleScope": "office.anchor",
+      "ruleVersion": "1.0.0",
+      "schemaVersion": "1.0.0"
+    },
+    {
+      "admission": "proposed",
+      "antecedents": [
+        {
+          "antecedentId": "antecedent:rayleigh-model-id",
+          "expectedValue": "phenomenon:rayleigh_scattering",
+          "kind": "relation_equals",
+          "provenance": [
+            {
+              "pointer": "/physical_phenomena/governor_registry/jupiter/phenomenon_id",
+              "sourceId": "source:physical-phenomena:0.2.0"
+            }
+          ],
+          "subjectScope": "phenomenon.model"
+        },
+        {
+          "antecedentId": "antecedent:rayleigh-relative-result",
+          "expectedValue": 4.920403608350627,
+          "kind": "operation_result",
+          "operationId": "operation:relative-rayleigh:v1",
+          "provenance": [
+            {
+              "pointer": "/physical_phenomena/governor_registry/jupiter/reference_formula",
+              "sourceId": "source:physical-phenomena:0.2.0"
+            }
+          ],
+          "subjectScope": "phenomenon.model"
+        }
+      ],
+      "authoritySourceIds": [
+        "source:physical-phenomena:0.2.0"
+      ],
+      "causalClaim": false,
+      "conflictPolicy": "return_ambiguous",
+      "epistemicClass": "authored_descriptive_model",
+      "missingPolicy": "return_unresolved",
+      "output": {
+        "aspectId": "aspect:jupiter:rayleigh-descriptive-model:v1",
+        "primaryGovernor": "Jupiter"
+      },
+      "priority": 50,
+      "provenance": [
+        {
+          "pointer": "/8-admission-boundaries",
+          "sourceId": "source:governor-domain-authority:1.0.0"
+        }
+      ],
+      "ruleId": "rule:jupiter:rayleigh-descriptive-model:v1",
+      "ruleScope": "physical.model",
+      "ruleVersion": "1.0.0",
+      "schemaVersion": "1.0.0"
+    },
+    {
+      "admission": "canonical",
+      "antecedents": [
+        {
+          "antecedentId": "antecedent:jupiter-profile-owner",
+          "expectedValue": "profile:jupiter:v0.1.1",
+          "kind": "owner_equals",
+          "provenance": [
+            {
+              "pointer": "/profiles/4/profileId",
+              "sourceId": "source:canonical-governor-profiles:0.1.1"
+            }
+          ],
+          "subjectScope": "profile.governor"
+        },
+        {
+          "antecedentId": "antecedent:jupiter-symbol-eagle",
+          "expectedValue": "eagle",
+          "featureId": "domain.symbolic_references",
+          "kind": "feature_contains",
+          "provenance": [
+            {
+              "pointer": "/profiles/4/domainReferences/symbolicReferences",
+              "sourceId": "source:canonical-governor-profiles:0.1.1"
+            }
+          ],
+          "subjectScope": "profile.governor"
+        }
+      ],
+      "authoritySourceIds": [
+        "source:canonical-governor-profiles:0.1.1"
+      ],
+      "causalClaim": false,
+      "conflictPolicy": "return_ambiguous",
+      "epistemicClass": "canonical_reference_library",
+      "missingPolicy": "return_unresolved",
+      "output": {
+        "aspectId": "aspect:jupiter:symbolic-profile:v1",
+        "primaryGovernor": "Jupiter"
+      },
+      "priority": 90,
+      "provenance": [
+        {
+          "pointer": "/5-domain-namespace-crosswalk",
+          "sourceId": "source:governor-domain-authority:1.0.0"
+        }
+      ],
+      "ruleId": "rule:jupiter:symbolic-profile:v1",
+      "ruleScope": "office.profile",
+      "ruleVersion": "1.0.0",
+      "schemaVersion": "1.0.0"
+    }
+  ],
+  "constraintMarkers": [
+    {
+      "kind": "compatibility_constraint",
+      "legacyCompilerString": "harmonic.scale_state",
+      "markerId": "runtime.constraint.destination_scale_state"
+    },
+    {
+      "kind": "derived_topology_mirror",
+      "legacyCompilerString": "semantic.governor_office",
+      "markerId": "runtime.constraint.resolved_governor_office"
+    },
+    {
+      "kind": "prohibition",
+      "legacyCompilerString": "physical.musical_to_optical_causation",
+      "markerId": "runtime.prohibition.musical_to_optical_causation"
+    },
+    {
+      "kind": "prohibition",
+      "legacyCompilerString": "semantic.unproven_operator_effect",
+      "markerId": "runtime.prohibition.unproven_operator_effect"
+    }
+  ],
+  "featureCrosswalk": [
+    {
+      "disposition": "extended",
+      "featureId": "domain.architecture",
+      "ownerScope": "profile.governor",
+      "valueContractId": "domain:reference_pool_terms"
+    },
+    {
+      "disposition": "extended",
+      "featureId": "domain.botany",
+      "ownerScope": "profile.governor",
+      "valueContractId": "domain:reference_pool_terms"
+    },
+    {
+      "disposition": "extended",
+      "featureId": "domain.color_associations",
+      "ownerScope": "profile.governor",
+      "valueContractId": "domain:reference_pool_terms"
+    },
+    {
+      "disposition": "extended",
+      "featureId": "domain.landforms",
+      "ownerScope": "profile.governor",
+      "valueContractId": "domain:reference_pool_terms"
+    },
+    {
+      "disposition": "extended",
+      "featureId": "domain.material",
+      "ownerScope": "profile.governor",
+      "valueContractId": "domain:reference_pool_terms"
+    },
+    {
+      "disposition": "extended",
+      "featureId": "domain.symbolic_references",
+      "ownerScope": "profile.governor",
+      "valueContractId": "domain:reference_pool_terms"
+    },
+    {
+      "disposition": "extended",
+      "featureId": "generative.creative_affordances",
+      "ownerScope": "compiler.output",
+      "valueContractId": "generative:creative_affordance_item_list"
+    },
+    {
+      "disposition": "extended",
+      "featureId": "generative.prohibited_features",
+      "ownerScope": "compiler.output",
+      "valueContractId": "generative:prohibition_item_list"
+    },
+    {
+      "disposition": "extended",
+      "featureId": "generative.promoted_features",
+      "ownerScope": "compiler.output",
+      "valueContractId": "generative:feature_effect_item_list"
+    },
+    {
+      "disposition": "extended",
+      "featureId": "generative.reference_pool",
+      "ownerScope": "compiler.output",
+      "valueContractId": "generative:reference_pool_item_list"
+    },
+    {
+      "disposition": "extended",
+      "featureId": "generative.required_features",
+      "ownerScope": "compiler.output",
+      "valueContractId": "generative:required_item_list"
+    },
+    {
+      "disposition": "extended",
+      "featureId": "generative.soft_priors",
+      "ownerScope": "compiler.output",
+      "valueContractId": "generative:soft_prior_item_list"
+    },
+    {
+      "disposition": "extended",
+      "featureId": "generative.suppressed_features",
+      "ownerScope": "compiler.output",
+      "valueContractId": "generative:feature_effect_item_list"
+    },
+    {
+      "disposition": "extended",
+      "featureId": "generative.unresolved_features",
+      "ownerScope": "compiler.output",
+      "valueContractId": "generative:unresolved_item_list"
+    },
+    {
+      "disposition": "unresolved",
+      "featureId": "harmonic.C_H",
+      "ownerScope": "topology.scaleStateOrFamily",
+      "valueContractId": "unresolved:harmonic_measure"
+    },
+    {
+      "disposition": "reusable",
+      "featureId": "harmonic.anchor_tier",
+      "ownerScope": "topology.scaleState",
+      "valueContractId": "harmonic:topology_tier"
+    },
+    {
+      "disposition": "reusable",
+      "featureId": "harmonic.canonical_scale_state",
+      "ownerScope": "topology.scaleState",
+      "valueContractId": "harmonic:canonical_a0_state_id"
+    },
+    {
+      "disposition": "reusable",
+      "featureId": "harmonic.forte_family",
+      "ownerScope": "topology.scaleFamily",
+      "valueContractId": "harmonic:forte_family_id"
+    },
+    {
+      "disposition": "reusable",
+      "featureId": "harmonic.pitch_mask",
+      "ownerScope": "topology.scaleState",
+      "valueContractId": "harmonic:rooted_12bit_mask"
+    },
+    {
+      "disposition": "reusable",
+      "featureId": "physical.C_P",
+      "ownerScope": "governor.office",
+      "valueContractId": "quantity:dimensionless:normalized_inverse_wavelength"
+    },
+    {
+      "disposition": "reusable",
+      "featureId": "physical.frequency_hz",
+      "ownerScope": "governor.office",
+      "valueContractId": "quantity:frequency:Hz"
+    },
+    {
+      "disposition": "reusable",
+      "featureId": "physical.photon_energy_ev",
+      "ownerScope": "governor.office",
+      "valueContractId": "quantity:energy:eV"
+    },
+    {
+      "disposition": "reusable",
+      "featureId": "physical.photon_energy_j",
+      "ownerScope": "governor.office",
+      "valueContractId": "quantity:energy:J"
+    },
+    {
+      "disposition": "reusable",
+      "featureId": "physical.wavelength_nm",
+      "ownerScope": "governor.office",
+      "valueContractId": "quantity:length:nm"
+    },
+    {
+      "disposition": "reusable",
+      "featureId": "semantic.C_S",
+      "ownerScope": "profile.governor",
+      "valueContractId": "semantic:ordered_nonmetric_coordinate"
+    },
+    {
+      "disposition": "reusable",
+      "featureId": "semantic.archetypal_role",
+      "ownerScope": "profile.governor",
+      "valueContractId": "semantic:nonempty_text"
+    },
+    {
+      "disposition": "reusable",
+      "featureId": "semantic.directionality",
+      "ownerScope": "profile.governor",
+      "valueContractId": "semantic:directionality_term"
+    },
+    {
+      "disposition": "reusable",
+      "featureId": "semantic.element",
+      "ownerScope": "profile.governor",
+      "valueContractId": "semantic:nullable_element_term"
+    },
+    {
+      "disposition": "reusable",
+      "featureId": "semantic.optical_function",
+      "ownerScope": "profile.governor",
+      "valueContractId": "semantic:optical_term"
+    },
+    {
+      "disposition": "reusable",
+      "featureId": "semantic.thermodynamic_function",
+      "ownerScope": "profile.governor",
+      "valueContractId": "semantic:process_term"
+    },
+    {
+      "disposition": "extended",
+      "featureId": "semantic.zodiacal_systems",
+      "ownerScope": "profile.governor",
+      "valueContractId": "semantic:zodiacal_system_map"
+    }
+  ],
+  "operations": [
+    {
+      "constants": [
+        {
+          "name": "electron_volt_j",
+          "unit": "J",
+          "value": 1.602176634e-19
+        }
+      ],
+      "formula": "value_j / electron_volt_j",
+      "inputDimensions": [
+        "energy"
+      ],
+      "inputUnits": [
+        "J"
+      ],
+      "kind": "conversion",
+      "operationId": "operation:energy-j-to-ev:v1",
+      "outputDimension": "energy",
+      "outputEpistemicClass": "physically_derived",
+      "outputUnit": "eV",
+      "provenance": [
+        {
+          "pointer": "/records/0/calculation/constants/electronVoltJ",
+          "sourceId": "source:photonic-records:0.1.1"
+        }
+      ],
+      "requiredAssumptions": []
+    },
+    {
+      "constants": [],
+      "formula": "value_nm * 1e-9",
+      "inputDimensions": [
+        "length"
+      ],
+      "inputUnits": [
+        "nm"
+      ],
+      "kind": "conversion",
+      "operationId": "operation:length-nm-to-m:v1",
+      "outputDimension": "length",
+      "outputEpistemicClass": "physically_derived",
+      "outputUnit": "m",
+      "provenance": [
+        {
+          "pointer": "/records/0/calculation/formulas/frequency",
+          "sourceId": "source:photonic-records:0.1.1"
+        }
+      ],
+      "requiredAssumptions": []
+    },
+    {
+      "constants": [
+        {
+          "name": "planck_constant_j_s",
+          "unit": "J_s",
+          "value": 6.62607015e-34
+        }
+      ],
+      "formula": "planck_constant_j_s * frequency_hz",
+      "inputDimensions": [
+        "frequency"
+      ],
+      "inputUnits": [
+        "Hz"
+      ],
+      "kind": "derivation",
+      "operationId": "operation:photon-energy-frequency:v1",
+      "outputDimension": "energy",
+      "outputEpistemicClass": "physically_derived",
+      "outputUnit": "J",
+      "provenance": [
+        {
+          "pointer": "/records/0/calculation/constants/planckConstantJS",
+          "sourceId": "source:photonic-records:0.1.1"
+        }
+      ],
+      "requiredAssumptions": [
+        "single_photon"
+      ]
+    },
+    {
+      "constants": [
+        {
+          "name": "saturn_anchor_nm",
+          "unit": "nm",
+          "value": 400
+        },
+        {
+          "name": "sun_anchor_nm",
+          "unit": "nm",
+          "value": 700
+        }
+      ],
+      "formula": "(1/lambda - 1/700) / (1/400 - 1/700)",
+      "inputDimensions": [
+        "length"
+      ],
+      "inputUnits": [
+        "nm"
+      ],
+      "kind": "derivation",
+      "operationId": "operation:photonic-compression:v1",
+      "outputDimension": "dimensionless",
+      "outputEpistemicClass": "physical_anchor_plus_normalization_convention",
+      "outputUnit": "normalized_inverse_wavelength",
+      "provenance": [
+        {
+          "pointer": "/records/0/calculation/formulas/photonicCompression",
+          "sourceId": "source:photonic-records:0.1.1"
+        }
+      ],
+      "requiredAssumptions": [
+        "registry_coordinate_not_absolute_physical_endpoint"
+      ]
+    },
+    {
+      "constants": [],
+      "formula": "(comparison_wavelength_nm / target_wavelength_nm)^4",
+      "inputDimensions": [
+        "length",
+        "length"
+      ],
+      "inputUnits": [
+        "nm",
+        "nm"
+      ],
+      "kind": "evaluation",
+      "operationId": "operation:relative-rayleigh:v1",
+      "outputDimension": "dimensionless",
+      "outputEpistemicClass": "physically_derived",
+      "outputUnit": "one",
+      "provenance": [
+        {
+          "pointer": "/physical_phenomena/governor_registry/jupiter/reference_formula",
+          "sourceId": "source:physical-phenomena:0.2.0"
+        }
+      ],
+      "requiredAssumptions": [
+        "fixed_geometry_polarization_and_angle",
+        "fixed_refractive_properties_and_number_density",
+        "relative_intensity_only",
+        "scatterer_size_much_smaller_than_both_wavelengths"
+      ]
+    },
+    {
+      "constants": [
+        {
+          "name": "speed_of_light_m_s",
+          "unit": "m_per_s",
+          "value": 299792458
+        }
+      ],
+      "formula": "speed_of_light_m_s / (wavelength_nm * 1e-9)",
+      "inputDimensions": [
+        "length"
+      ],
+      "inputUnits": [
+        "nm"
+      ],
+      "kind": "derivation",
+      "operationId": "operation:vacuum-wavelength-frequency:v1",
+      "outputDimension": "frequency",
+      "outputEpistemicClass": "physically_derived",
+      "outputUnit": "Hz",
+      "provenance": [
+        {
+          "pointer": "/records/0/calculation/constants/speedOfLightMS",
+          "sourceId": "source:photonic-records:0.1.1"
+        }
+      ],
+      "requiredAssumptions": [
+        "vacuum_wavelength"
+      ]
+    }
+  ],
+  "packageName": "seven-governors-governor-runtime",
+  "packageVersion": "0.1.0",
+  "policyFingerprint": "460e6c40bf96f58a0be36936a91939b930701dfee5875d5e5d0cd6311402f819",
+  "policyVersion": "0.1.0",
+  "releaseAdmission": "proposed",
+  "releaseDate": "2026-08-01",
+  "releaseId": "governor-runtime:0.1.0",
+  "schemaVersion": "1.0.0",
+  "sourceFingerprint": "609be20d0ee5d2f400b42b09d16842d7bfa3fee42f6bed24dbc1b4bbf4bc6947",
+  "sourceHashes": [
+    {
+      "admission": "canonical",
+      "authority": "profile_registry",
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/canonical-governor-profiles.json",
+      "runtimeAuthority": true,
+      "sha256": "620c5ea3d4d94bdf8c8a11bbc164157ebca41d9647c10fa5d5d978c6e433630a",
+      "sourceId": "source:canonical-governor-profiles:0.1.1"
+    },
+    {
+      "admission": "canonical",
+      "authority": "profile_registry",
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/domain-projection-registry.json",
+      "runtimeAuthority": true,
+      "sha256": "739c8007b74094fd93993180772dd297f3f1485dc65a192daa92f3c9fff1a650",
+      "sourceId": "source:domain-projection-registry:0.1.1"
+    },
+    {
+      "admission": "canonical",
+      "authority": "profile_registry",
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/feature-registry.json",
+      "runtimeAuthority": true,
+      "sha256": "36712b20eea1d4d36f302dba50bbc9673aea329334cc8d34093db8dfaf838255",
+      "sourceId": "source:feature-registry:0.1.1"
+    },
+    {
+      "admission": "canonical",
+      "authority": "runtime_policy",
+      "path": "docs/GOVERNOR_DOMAIN_AUTHORITY.md",
+      "runtimeAuthority": true,
+      "sha256": "6fc68741b082991bea84fcd3386b32f8eff52bf7e317b65b5e09feeb162c48e2",
+      "sourceId": "source:governor-domain-authority:1.0.0"
+    },
+    {
+      "admission": "canonical",
+      "authority": "runtime_policy",
+      "path": "seven-governors-governor-runtime-v0.1.0/source/feature-crosswalk.json",
+      "runtimeAuthority": true,
+      "sha256": "006d7ed3cfb84ed4ea9a4b7f7b3a37cb09712228c746cdeab0e6f89d6f7c2dc2",
+      "sourceId": "source:governor-runtime-crosswalk:0.1.0"
+    },
+    {
+      "admission": "canonical",
+      "authority": "runtime_policy",
+      "path": "seven-governors-governor-runtime-v0.1.0/source/policy-input.json",
+      "runtimeAuthority": true,
+      "sha256": "20ec8f96bc10cf7c7d6ed92a74092995189bad6692f4e153d0938aec7b28990e",
+      "sourceId": "source:governor-runtime-policy-input:0.1.0"
+    },
+    {
+      "admission": "canonical",
+      "authority": "profile_registry",
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/photonic-records.json",
+      "runtimeAuthority": true,
+      "sha256": "06a723deffe6e3302e33070d029b22ee0744405ed5e9d1a7fe89a87ecde9066b",
+      "sourceId": "source:photonic-records:0.1.1"
+    },
+    {
+      "admission": "proposed",
+      "authority": "candidate_companion",
+      "path": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/physical_phenomena.yaml",
+      "runtimeAuthority": false,
+      "sha256": "bf1839042568d0d0caf33e437a0321cd2ff5c4a7168af7204a8579b04f8a3133",
+      "sourceId": "source:physical-phenomena:0.2.0"
+    },
+    {
+      "admission": "canonical",
+      "authority": "profile_registry",
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/registry-release.json",
+      "runtimeAuthority": true,
+      "sha256": "5072761cb53b98a1c0fa99cb6807f148963ca8ec8394af461b2c9822553f0a22",
+      "sourceId": "source:profile-registry-release:0.1.1"
+    }
+  ],
+  "typedAspects": [
+    {
+      "admission": "proposed",
+      "aspectId": "aspect:jupiter:atmospheric-aeolian-process:v1",
+      "aspectVersion": "1.0.0",
+      "epistemicClass": "authored_correspondence",
+      "facetPath": "/processes/atmosphericAeolianTransport",
+      "featureId": "semantic.thermodynamic_function",
+      "ownerScope": "entity.aspect",
+      "primaryGovernor": "Jupiter",
+      "provenance": [
+        {
+          "pointer": "/profiles/4/semantic",
+          "sourceId": "source:canonical-governor-profiles:0.1.1"
+        }
+      ],
+      "schemaVersion": "1.0.0",
+      "valueContractId": "semantic:authored_process_association"
+    },
+    {
+      "admission": "canonical",
+      "aspectId": "aspect:jupiter:declared-wavelength:v1",
+      "aspectVersion": "1.0.0",
+      "epistemicClass": "framework_declared_physical_anchor",
+      "facetPath": "/photonic/representativeWavelength",
+      "featureId": "physical.wavelength_nm",
+      "ownerScope": "governor.office",
+      "primaryGovernor": "Jupiter",
+      "provenance": [
+        {
+          "pointer": "/records/4",
+          "sourceId": "source:photonic-records:0.1.1"
+        }
+      ],
+      "schemaVersion": "1.0.0",
+      "valueContractId": "quantity:length:nm"
+    },
+    {
+      "admission": "proposed",
+      "aspectId": "aspect:jupiter:rayleigh-descriptive-model:v1",
+      "aspectVersion": "1.0.0",
+      "epistemicClass": "authored_descriptive_model",
+      "facetPath": "/phenomena/rayleighScattering",
+      "featureId": "semantic.optical_function",
+      "ownerScope": "phenomenon.model",
+      "primaryGovernor": "Jupiter",
+      "provenance": [
+        {
+          "pointer": "/physical_phenomena/governor_registry/jupiter",
+          "sourceId": "source:physical-phenomena:0.2.0"
+        }
+      ],
+      "schemaVersion": "1.0.0",
+      "valueContractId": "semantic:authored_descriptive_model"
+    },
+    {
+      "admission": "canonical",
+      "aspectId": "aspect:jupiter:symbolic-profile:v1",
+      "aspectVersion": "1.0.0",
+      "epistemicClass": "canonical_reference_library",
+      "facetPath": "/profile/domainReferences/symbolicReferences",
+      "featureId": "domain.symbolic_references",
+      "ownerScope": "profile.governor",
+      "primaryGovernor": "Jupiter",
+      "provenance": [
+        {
+          "pointer": "/profiles/4/domainReferences/symbolicReferences",
+          "sourceId": "source:canonical-governor-profiles:0.1.1"
+        }
+      ],
+      "schemaVersion": "1.0.0",
+      "valueContractId": "domain:reference_pool_terms"
+    }
+  ],
+  "upstreamReleaseId": "canonical-profile-registry:0.1.1"
+}

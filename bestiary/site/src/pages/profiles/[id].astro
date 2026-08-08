@@ -1,0 +1,21 @@
+---
+import { bestiary } from "../../lib/bestiary";
+
+export function getStaticPaths() {
+  return bestiary.archetypes
+    .filter((archetype) => archetype.kind === "canonicalProfile")
+    .map((archetype) => ({
+      params: { id: archetype.profileId.replace(/^profile:/, "") },
+    }));
+}
+
+const { id } = Astro.params;
+const profile = bestiary.archetypes.find(
+  (archetype) =>
+    archetype.kind === "canonicalProfile" &&
+    archetype.profileId.replace(/^profile:/, "") === id,
+);
+return Astro.redirect(`/archetypes/${profile?.id ?? ""}`, 301);
+---
+
+<p class="text-xs text-muted">Redirecting to {profile?.id ?? id}…</p>

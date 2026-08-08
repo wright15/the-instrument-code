@@ -1,0 +1,169 @@
+---
+import { bestiary, kindLabels } from "../lib/bestiary";
+import { officeColors } from "../lib/bestiary";
+
+const kindOrder = [
+  "scaleState",
+  "scaleFamily",
+  "governorOffice",
+  "canonicalProfile",
+  "mutationOperator",
+  "modalCycle",
+  "candidateExtension",
+] as const;
+
+const counts = bestiary.summary.byCategory;
+const total = bestiary.archetypes.length;
+const offices = [...new Set(bestiary.archetypes.filter((a) => a.kind === "scaleState").map((a) => a.office).filter(Boolean))];
+---
+
+<div
+  id="bestiary-filter-bar"
+  class="flex flex-col gap-3 rounded-lg border border-edge bg-panel p-4"
+  data-total={total}
+>
+  <div class="flex flex-wrap gap-1.5" data-filter-group="kind">
+    {kindOrder.map((kind) => (
+      <button
+        type="button"
+        class="filter-chip rounded-full border border-edge bg-raised px-2.5 py-1 text-[11px] text-muted transition-colors hover:border-accent/40 hover:text-frost"
+        data-filter-value={kind}
+        data-active="false"
+      >
+        {kindLabels[kind]}
+        <span class="ml-1 font-mono text-[10px] text-muted">{counts[kind] ?? 0}</span>
+      </button>
+    ))}
+  </div>
+
+  <div class="flex flex-wrap gap-1.5" data-filter-group="office">
+    {offices.map((office) => (
+      <button
+        type="button"
+        class="filter-chip flex items-center gap-1 rounded-full border border-edge bg-raised px-2.5 py-1 text-[11px] text-muted transition-colors hover:border-accent/40 hover:text-frost"
+        data-filter-value={office}
+        data-active="false"
+      >
+        <span class="size-2 rounded-full" style={`background: ${officeColors[office]}`}></span>
+        {office}
+      </button>
+    ))}
+  </div>
+
+  <div class="flex flex-wrap gap-1.5" data-filter-group="admission">
+    <button
+      type="button"
+      class="filter-chip rounded-full border border-edge bg-raised px-2.5 py-1 text-[11px] text-muted transition-colors hover:border-accent/40 hover:text-frost"
+      data-filter-value="admitted"
+      data-active="false"
+    >
+      Admitted
+    </button>
+    <button
+      type="button"
+      class="filter-chip rounded-full border border-edge bg-raised px-2.5 py-1 text-[11px] text-muted transition-colors hover:border-accent/40 hover:text-frost"
+      data-filter-value="proposed"
+      data-active="false"
+    >
+      Proposed
+    </button>
+  </div>
+
+  <div class="flex flex-wrap items-center gap-3 border-t border-edge pt-3 text-[11px] text-muted">
+    <span>
+      Showing <strong id="result-count" class="text-frost">{total}</strong> of {total}
+    </span>
+    <button
+      id="clear-filters"
+      type="button"
+      class="ml-auto rounded border border-edge px-2 py-0.5 text-[10px] transition-colors hover:border-accent/50 hover:text-accent"
+    >
+      Clear filters
+    </button>
+  </div>
+</div>
+
+<script>
+  const bar = document.getElementById("bestiary-filter-bar") as HTMLElement;
+  const cards = Array.from(
+    document.querySelectorAll<HTMLElement>("[data-archetype-id]"),
+  );
+  const countEl = document.getElementById("result-count");
+  const clearButton = document.getElementById("clear-filters");
+  const chips = Array.from(bar.querySelectorAll<HTMLButtonElement>(".filter-chip"));
+  const state = new Map<string, string>();
+
+  function matchesFilters(card: HTMLElement): boolean {
+    for (const [key, value] of state) {
+      if (value === "none") continue;
+      if (card.dataset[key] !== value) return false;
+    }
+    return true;
+  }
+
+  function matchesSearch(card: HTMLElement): boolean {
+    const query = (document.getElementById("bestiary-search") as HTMLInputElement | null)
+      ?.value.trim().toLowerCase();
+    if (!query) return true;
+    const text = (card.dataset.search ?? "").toLowerCase();
+    return query.split(/\s+/).every((part) => text.includes(part));
+  }
+
+  function refresh() {
+    let visible = 0;
+    for (const card of cards) {
+      const show = matchesFilters(card) && matchesSearch(card);
+      card.hidden = !show;
+      if (show) visible++;
+    }
+    if (countEl) countEl.textContent = String(visible);
+    window.dispatchEvent(new CustomEvent("bestiary:filter-change"));
+  }
+
+  function chipActive(chip: HTMLButtonElement): boolean {
+    const group = chip.closest("[data-filter-group]") as HTMLElement | null;
+    const key = group?.dataset.filterGroup;
+    if (!key || !chip.dataset.filterValue) return false;
+    return state.get(key) === chip.dataset.filterValue;
+  }
+
+  function syncChips() {
+    for (const chip of chips) {
+      const group = chip.closest("[data-filter-group]") as HTMLElement | null;
+      const key = group?.dataset.filterGroup;
+      const active = chip.dataset.filterValue === state.get(key ?? "");
+      chip.dataset.active = String(active);
+      chip.classList.toggle("border-accent/50", active);
+      chip.classList.toggle("text-accent", active);
+      chip.classList.toggle("bg-accent/10", active);
+    }
+  }
+
+  for (const chip of chips) {
+    chip.addEventListener("click", () => {
+      const group = chip.closest("[data-filter-group]") as HTMLElement | null;
+      const key = group?.dataset.filterGroup;
+      if (!key) return;
+      const value = chip.dataset.filterValue ?? "none";
+      if (state.get(key) === value) {
+        state.delete(key);
+      } else {
+        state.set(key, value);
+      }
+      syncChips();
+      refresh();
+    });
+  }
+
+  clearButton?.addEventListener("click", () => {
+    state.clear();
+    const input = document.getElementById("bestiary-search") as HTMLInputElement | null;
+    if (input) input.value = "";
+    syncChips();
+    refresh();
+  });
+
+  document
+    .getElementById("bestiary-search")
+    ?.addEventListener("input", refresh);
+</script>

@@ -1,0 +1,282 @@
+{
+  "schemaVersion": "1.0.0",
+  "compilerVersion": "0.1.1",
+  "releaseId": "canonical-profile-registry:0.1.1",
+  "normalFormId": "nf:scale:1749:landforms:v0.1.1",
+  "state": {
+    "stateId": 1749,
+    "name": "Acoustic",
+    "forteFamily": "7-34",
+    "bit": "b101010110110",
+    "pitchSet": "{0,2,4,6,7,9,10}",
+    "role": "anchor",
+    "fineRole": "anchor_A1",
+    "tier": "A1",
+    "chirality": "achiral",
+    "orientation": "7-34 single orientation",
+    "assignmentStatus": "validated",
+    "resolutionClass": "validated_A1_anchor"
+  },
+  "resolution": {
+    "office": "Moon",
+    "officeIndex": 1,
+    "officeBearing": true,
+    "officeBasis": "validated A0 midpoint/phase-seam construction",
+    "officeStatus": "validated A0 midpoint office retained"
+  },
+  "canonicalProfile": {
+    "profileId": "profile:moon:v0.1.1",
+    "releaseId": "canonical-profile-registry:0.1.1",
+    "office": "Moon",
+    "canonicalStateId": 2741,
+    "intrinsicFingerprint": "c4d2ede73648b2482b0dcc063b340a2665dcbf8816044734738eaac31258aede"
+  },
+  "photonic": {
+    "photonicId": "photonic:moon:v0.1.1",
+    "representativeWavelengthNm": 610,
+    "vacuumFrequencyHz": 491463045901639.25,
+    "photonEnergyEv": 2.032527843167217,
+    "photonicCompression": 0.19672131147540983,
+    "coordinateSymbol": "C_P",
+    "normalizationStatus": "registry_coordinate_convention",
+    "inheritancePolicy": "resolved_from_state_governor_office",
+    "causationClaim": false
+  },
+  "harmonic": {
+    "stateGovernor": "Moon",
+    "rootedPitchMask": "b101010110110",
+    "forteFamily": "7-34",
+    "tier": "A1",
+    "role": "anchor",
+    "harmonicCompression": {
+      "coordinateSymbol": "C_H",
+      "status": "unresolved",
+      "value": null
+    }
+  },
+  "semantic": {
+    "stateGovernor": "Moon",
+    "thermodynamicFunction": "reception",
+    "opticalFunction": "reflection",
+    "directionality": "inward_centripetal",
+    "archetypalRole": "the experience of reality",
+    "element": null,
+    "semanticCompression": {
+      "coordinateSymbol": "C_S",
+      "status": "framework_order_plus_registry_coordinate_convention",
+      "orderedPosition": 2,
+      "orderedProcess": "reception",
+      "normalizedOrdinal": 0.16666666666666666,
+      "metric": false,
+      "scale": "declared Sun-to-Saturn process order",
+      "physicalClaim": false
+    }
+  },
+  "domainProjection": {
+    "domain": "landforms",
+    "projectionId": "projection:landforms:v0.1.1",
+    "status": "canonical_reference_projection",
+    "canonicalReferences": [
+      "lakes",
+      "ponds",
+      "tidal pools",
+      "estuaries",
+      "marshes",
+      "foggy valleys"
+    ],
+    "requiredFeatures": [
+      {
+        "featureId": "harmonic.scale_state",
+        "value": 1749,
+        "reason": "Intrinsic rooted state identity."
+      },
+      {
+        "featureId": "semantic.governor_office",
+        "value": "Moon",
+        "reason": "Resolved State Governor."
+      },
+      {
+        "featureId": "semantic.thermodynamic_function",
+        "value": "reception",
+        "reason": "Canonical office process correspondence."
+      },
+      {
+        "featureId": "semantic.directionality",
+        "value": "inward_centripetal",
+        "reason": "Canonical office orientation."
+      }
+    ],
+    "softPriors": [
+      {
+        "featureId": "semantic.archetypal_role",
+        "value": "the experience of reality",
+        "reason": "Guide salience and interpretation without requiring literal depiction."
+      }
+    ],
+    "referencePool": [
+      {
+        "poolId": "landforms:moon:canonical",
+        "featureId": "domain.landforms",
+        "candidates": [
+          "lakes",
+          "ponds",
+          "tidal pools",
+          "estuaries",
+          "marshes",
+          "foggy valleys"
+        ],
+        "selectionRule": "select_zero_or_more_without_implying_exhaustiveness",
+        "authority": "framework_declared_reference_library"
+      }
+    ],
+    "promotedFeatures": [],
+    "suppressedFeatures": [],
+    "prohibitedFeatures": [
+      {
+        "featureId": "physical.musical_to_optical_causation",
+        "reason": "A musical mutation does not physically alter the representative wavelength."
+      },
+      {
+        "featureId": "semantic.unproven_operator_effect",
+        "reason": "No promote/suppress/transform claim may be added without semantic admission evidence."
+      }
+    ],
+    "unresolvedFeatures": [
+      "operator_specific_semantic_delta_if_a_route_is_applied"
+    ],
+    "creativeAffordances": [
+      "composition",
+      "scale",
+      "weather",
+      "material",
+      "viewpoint",
+      "inhabitants",
+      "surface detail"
+    ],
+    "renderingBrief": "Resolve the creation in the Moon office. Honor the canonical process correspondence “reception” and directionality “inward_centripetal”. Select freely from, combine, or abstract the reference pool: lakes, ponds, tidal pools, estuaries, marshes, foggy valleys. Surface realization may vary within the listed creative affordances. Any mutation route remains provenance-only until its semantic feature delta is admitted."
+  },
+  "creationConstraints": {
+    "required": [
+      {
+        "featureId": "harmonic.scale_state",
+        "value": 1749,
+        "reason": "Intrinsic rooted state identity."
+      },
+      {
+        "featureId": "semantic.governor_office",
+        "value": "Moon",
+        "reason": "Resolved State Governor."
+      },
+      {
+        "featureId": "semantic.thermodynamic_function",
+        "value": "reception",
+        "reason": "Canonical office process correspondence."
+      },
+      {
+        "featureId": "semantic.directionality",
+        "value": "inward_centripetal",
+        "reason": "Canonical office orientation."
+      }
+    ],
+    "softPriors": [
+      {
+        "featureId": "semantic.archetypal_role",
+        "value": "the experience of reality",
+        "reason": "Guide salience and interpretation without requiring literal depiction."
+      }
+    ],
+    "referencePool": [
+      {
+        "poolId": "landforms:moon:canonical",
+        "featureId": "domain.landforms",
+        "candidates": [
+          "lakes",
+          "ponds",
+          "tidal pools",
+          "estuaries",
+          "marshes",
+          "foggy valleys"
+        ],
+        "selectionRule": "select_zero_or_more_without_implying_exhaustiveness",
+        "authority": "framework_declared_reference_library"
+      }
+    ],
+    "promoted": [],
+    "suppressed": [],
+    "prohibited": [
+      {
+        "featureId": "physical.musical_to_optical_causation",
+        "reason": "A musical mutation does not physically alter the representative wavelength."
+      },
+      {
+        "featureId": "semantic.unproven_operator_effect",
+        "reason": "No promote/suppress/transform claim may be added without semantic admission evidence."
+      }
+    ],
+    "unresolved": [
+      "operator_specific_semantic_delta_if_a_route_is_applied"
+    ],
+    "creativeAffordances": [
+      "composition",
+      "scale",
+      "weather",
+      "material",
+      "viewpoint",
+      "inhabitants",
+      "surface detail"
+    ]
+  },
+  "provenance": {
+    "releaseId": "canonical-profile-registry:0.1.1",
+    "providerContract": "1.0.0",
+    "providerUsed": "file",
+    "providerExcludedFromIntrinsicIdentity": true,
+    "stateAuthority": "audited topology",
+    "canonicalProfileAuthority": "active versioned canonical profile",
+    "projectionAuthority": "projection:landforms:v0.1.1",
+    "compiler": "scripts/compiler.mjs"
+  },
+  "intrinsicFingerprint": "8077327cc0f809b85ab5379daefb0ab0dd61f4f7f1e52baf0e2020a68054652c",
+  "fingerprintInputCanonicalJson": "{\"canonicalProfile\":{\"canonicalStateId\":2741,\"intrinsicFingerprint\":\"c4d2ede73648b2482b0dcc063b340a2665dcbf8816044734738eaac31258aede\",\"office\":\"Moon\",\"profileId\":\"profile:moon:v0.1.1\",\"releaseId\":\"canonical-profile-registry:0.1.1\"},\"compilerVersion\":\"0.1.1\",\"creationConstraints\":{\"creativeAffordances\":[\"composition\",\"scale\",\"weather\",\"material\",\"viewpoint\",\"inhabitants\",\"surface detail\"],\"prohibited\":[{\"featureId\":\"physical.musical_to_optical_causation\",\"reason\":\"A musical mutation does not physically alter the representative wavelength.\"},{\"featureId\":\"semantic.unproven_operator_effect\",\"reason\":\"No promote/suppress/transform claim may be added without semantic admission evidence.\"}],\"promoted\":[],\"referencePool\":[{\"authority\":\"framework_declared_reference_library\",\"candidates\":[\"lakes\",\"ponds\",\"tidal pools\",\"estuaries\",\"marshes\",\"foggy valleys\"],\"featureId\":\"domain.landforms\",\"poolId\":\"landforms:moon:canonical\",\"selectionRule\":\"select_zero_or_more_without_implying_exhaustiveness\"}],\"required\":[{\"featureId\":\"harmonic.scale_state\",\"reason\":\"Intrinsic rooted state identity.\",\"value\":1749},{\"featureId\":\"semantic.governor_office\",\"reason\":\"Resolved State Governor.\",\"value\":\"Moon\"},{\"featureId\":\"semantic.thermodynamic_function\",\"reason\":\"Canonical office process correspondence.\",\"value\":\"reception\"},{\"featureId\":\"semantic.directionality\",\"reason\":\"Canonical office orientation.\",\"value\":\"inward_centripetal\"}],\"softPriors\":[{\"featureId\":\"semantic.archetypal_role\",\"reason\":\"Guide salience and interpretation without requiring literal depiction.\",\"value\":\"the experience of reality\"}],\"suppressed\":[],\"unresolved\":[\"operator_specific_semantic_delta_if_a_route_is_applied\"]},\"domainProjection\":{\"canonicalReferences\":[\"lakes\",\"ponds\",\"tidal pools\",\"estuaries\",\"marshes\",\"foggy valleys\"],\"creativeAffordances\":[\"composition\",\"scale\",\"weather\",\"material\",\"viewpoint\",\"inhabitants\",\"surface detail\"],\"domain\":\"landforms\",\"prohibitedFeatures\":[{\"featureId\":\"physical.musical_to_optical_causation\",\"reason\":\"A musical mutation does not physically alter the representative wavelength.\"},{\"featureId\":\"semantic.unproven_operator_effect\",\"reason\":\"No promote/suppress/transform claim may be added without semantic admission evidence.\"}],\"projectionId\":\"projection:landforms:v0.1.1\",\"promotedFeatures\":[],\"referencePool\":[{\"authority\":\"framework_declared_reference_library\",\"candidates\":[\"lakes\",\"ponds\",\"tidal pools\",\"estuaries\",\"marshes\",\"foggy valleys\"],\"featureId\":\"domain.landforms\",\"poolId\":\"landforms:moon:canonical\",\"selectionRule\":\"select_zero_or_more_without_implying_exhaustiveness\"}],\"renderingBrief\":\"Resolve the creation in the Moon office. Honor the canonical process correspondence “reception” and directionality “inward_centripetal”. Select freely from, combine, or abstract the reference pool: lakes, ponds, tidal pools, estuaries, marshes, foggy valleys. Surface realization may vary within the listed creative affordances. Any mutation route remains provenance-only until its semantic feature delta is admitted.\",\"requiredFeatures\":[{\"featureId\":\"harmonic.scale_state\",\"reason\":\"Intrinsic rooted state identity.\",\"value\":1749},{\"featureId\":\"semantic.governor_office\",\"reason\":\"Resolved State Governor.\",\"value\":\"Moon\"},{\"featureId\":\"semantic.thermodynamic_function\",\"reason\":\"Canonical office process correspondence.\",\"value\":\"reception\"},{\"featureId\":\"semantic.directionality\",\"reason\":\"Canonical office orientation.\",\"value\":\"inward_centripetal\"}],\"softPriors\":[{\"featureId\":\"semantic.archetypal_role\",\"reason\":\"Guide salience and interpretation without requiring literal depiction.\",\"value\":\"the experience of reality\"}],\"status\":\"canonical_reference_projection\",\"suppressedFeatures\":[],\"unresolvedFeatures\":[\"operator_specific_semantic_delta_if_a_route_is_applied\"]},\"harmonic\":{\"forteFamily\":\"7-34\",\"harmonicCompression\":{\"coordinateSymbol\":\"C_H\",\"status\":\"unresolved\",\"value\":null},\"role\":\"anchor\",\"rootedPitchMask\":\"b101010110110\",\"stateGovernor\":\"Moon\",\"tier\":\"A1\"},\"normalFormId\":\"nf:scale:1749:landforms:v0.1.1\",\"photonic\":{\"causationClaim\":false,\"coordinateSymbol\":\"C_P\",\"inheritancePolicy\":\"resolved_from_state_governor_office\",\"normalizationStatus\":\"registry_coordinate_convention\",\"photonEnergyEv\":2.032527843167217,\"photonicCompression\":0.19672131147540983,\"photonicId\":\"photonic:moon:v0.1.1\",\"representativeWavelengthNm\":610,\"vacuumFrequencyHz\":491463045901639.25},\"provenance\":{\"canonicalProfileAuthority\":\"active versioned canonical profile\",\"compiler\":\"scripts/compiler.mjs\",\"projectionAuthority\":\"projection:landforms:v0.1.1\",\"providerContract\":\"1.0.0\",\"providerExcludedFromIntrinsicIdentity\":true,\"providerUsed\":null,\"releaseId\":\"canonical-profile-registry:0.1.1\",\"stateAuthority\":\"audited topology\"},\"releaseId\":\"canonical-profile-registry:0.1.1\",\"resolution\":{\"office\":\"Moon\",\"officeBasis\":\"validated A0 midpoint/phase-seam construction\",\"officeBearing\":true,\"officeIndex\":1,\"officeStatus\":\"validated A0 midpoint office retained\"},\"schemaVersion\":\"1.0.0\",\"semantic\":{\"archetypalRole\":\"the experience of reality\",\"directionality\":\"inward_centripetal\",\"element\":null,\"opticalFunction\":\"reflection\",\"semanticCompression\":{\"coordinateSymbol\":\"C_S\",\"metric\":false,\"normalizedOrdinal\":0.16666666666666666,\"orderedPosition\":2,\"orderedProcess\":\"reception\",\"physicalClaim\":false,\"scale\":\"declared Sun-to-Saturn process order\",\"status\":\"framework_order_plus_registry_coordinate_convention\"},\"stateGovernor\":\"Moon\",\"thermodynamicFunction\":\"reception\"},\"state\":{\"assignmentStatus\":\"validated\",\"bit\":\"b101010110110\",\"chirality\":\"achiral\",\"fineRole\":\"anchor_A1\",\"forteFamily\":\"7-34\",\"name\":\"Acoustic\",\"orientation\":\"7-34 single orientation\",\"pitchSet\":\"{0,2,4,6,7,9,10}\",\"resolutionClass\":\"validated_A1_anchor\",\"role\":\"anchor\",\"stateId\":1749,\"tier\":\"A1\"}}",
+  "routeContext": {
+    "routeId": "route:acoustic:2773:L7",
+    "sourceIds": [
+      2773
+    ],
+    "targetId": 1749,
+    "structuralOperatorIds": [
+      "L7"
+    ],
+    "operatorAnnotations": [
+      {
+        "structuralOperatorId": "L7",
+        "semanticOperatorId": "semantic:L7:v0.1.1",
+        "degree": 7,
+        "degreeGovernor": "Moon",
+        "direction": "lower",
+        "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+        "semanticEffectEvidence": false
+      }
+    ],
+    "relationEvidence": [
+      {
+        "sourceId": 2773,
+        "sourceName": "Lydian",
+        "operatorId": "L7",
+        "targetId": 1749,
+        "targetName": "Acoustic",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": [
+          "CONSTRUCTS"
+        ],
+        "fieldEvidence": true,
+        "fieldEdgeTypes": [
+          "AUDITED_HAMMING2"
+        ],
+        "applicationStatus": "formal_substrate_observed"
+      }
+    ],
+    "note": "Exact A1 midpoint route.",
+    "excludedFromIntrinsicFingerprint": true
+  }
+}

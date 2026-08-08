@@ -1,0 +1,242 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/gov-207/schemas/registry.schema.json",
+  "title": "GOV-207 Skill Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "bundleId",
+    "bundleVersion",
+    "apiVersion",
+    "contracts",
+    "limits",
+    "fingerprints",
+    "adapters",
+    "skills"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "gov-207.registry.v1" },
+    "bundleId": { "const": "seven-governors-gov-207" },
+    "bundleVersion": { "const": "1.0.0" },
+    "apiVersion": { "const": "gov-207.agent-api.v1" },
+    "contracts": { "$ref": "#/$defs/contracts" },
+    "limits": { "$ref": "#/$defs/limits" },
+    "fingerprints": { "$ref": "#/$defs/fingerprints" },
+    "adapters": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "$ref": "#/$defs/adapter" }
+    },
+    "skills": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": { "$ref": "#/$defs/skill" }
+    }
+  },
+  "$defs": {
+    "relativePath": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.?(?:/|$))[A-Za-z0-9._-]+(?:/[A-Za-z0-9._-]+)*$"
+    },
+    "schemaReference": {
+      "type": "string",
+      "pattern": "^schemas/[a-z0-9-]+\\.schema\\.json#/\\$defs/(input|output)$"
+    },
+    "contracts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "commonSchemaPath",
+        "registrySchemaPath",
+        "capabilitiesSchemaPath",
+        "installManifestSchemaPath",
+        "upstreamClassifier"
+      ],
+      "properties": {
+        "commonSchemaPath": { "const": "schemas/common.schema.json" },
+        "registrySchemaPath": { "const": "schemas/registry.schema.json" },
+        "capabilitiesSchemaPath": { "const": "schemas/capabilities.schema.json" },
+        "installManifestSchemaPath": { "const": "schemas/install-manifest.schema.json" },
+        "upstreamClassifier": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "requestPath",
+            "requestSchemaId",
+            "upstreamRequestSchemaId",
+            "requestSha256",
+            "resultPath",
+            "resultSchemaId",
+            "upstreamResultSchemaId",
+            "resultSha256"
+          ],
+          "properties": {
+            "requestPath": { "const": "schemas/upstream/classification-request.schema.json" },
+            "requestSchemaId": {
+              "const": "https://seven-governors.local/gov-207/schemas/upstream/classification-request.schema.json"
+            },
+            "upstreamRequestSchemaId": {
+              "const": "https://seven-governors.local/governor-runtime/0.1.0/schemas/classification-request.schema.json"
+            },
+            "requestSha256": { "$ref": "common.schema.json#/$defs/sha256" },
+            "resultPath": { "const": "schemas/upstream/classification-result.schema.json" },
+            "resultSchemaId": {
+              "const": "https://seven-governors.local/gov-207/schemas/upstream/classification-result.schema.json"
+            },
+            "upstreamResultSchemaId": {
+              "const": "https://seven-governors.local/governor-runtime/0.1.0/schemas/classification-result.schema.json"
+            },
+            "resultSha256": { "$ref": "common.schema.json#/$defs/sha256" }
+          }
+        }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maxRequestBytes", "maxResponseBytes", "maxMenuItems", "maxToolReceipts"],
+      "properties": {
+        "maxRequestBytes": { "const": 65536 },
+        "maxResponseBytes": { "const": 1048576 },
+        "maxMenuItems": { "const": 64 },
+        "maxToolReceipts": { "const": 64 }
+      }
+    },
+    "fingerprints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "algorithm",
+        "canonicalization",
+        "encoding",
+        "lineEndings",
+        "resultFingerprintInput",
+        "menuFingerprintInput",
+        "logicalOrdering"
+      ],
+      "properties": {
+        "algorithm": { "const": "sha256" },
+        "canonicalization": { "const": "RFC8785" },
+        "encoding": { "const": "UTF-8" },
+        "lineEndings": { "const": "LF" },
+        "resultFingerprintInput": { "const": "canonical-output-without-resultFingerprint" },
+        "menuFingerprintInput": { "const": "canonical-menu-without-menuFingerprint" },
+        "logicalOrdering": { "const": "unicode-code-point-by-logical-id" }
+      }
+    },
+    "adapter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["adapterId", "adapterVersion", "configPath"],
+      "properties": {
+        "adapterId": { "enum": ["generic-json", "hermes"] },
+        "adapterVersion": { "const": "1.0.0" },
+        "configPath": {
+          "enum": ["adapters/generic-json.json", "adapters/hermes.json"]
+        }
+      }
+    },
+    "adapterTarget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["targetPath", "operationId"],
+      "properties": {
+        "targetPath": { "$ref": "#/$defs/relativePath" },
+        "operationId": {
+          "enum": [
+            "classify_governor",
+            "inspect_context",
+            "list_legal_moves",
+            "validate_and_execute_move",
+            "verify_outcome"
+          ]
+        }
+      }
+    },
+    "adapterMappings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generic-json", "hermes"],
+      "properties": {
+        "generic-json": { "$ref": "#/$defs/adapterTarget" },
+        "hermes": { "$ref": "#/$defs/adapterTarget" }
+      }
+    },
+    "skill": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "skillId",
+        "name",
+        "description",
+        "operationId",
+        "workflowPath",
+        "inputSchema",
+        "inputSchemaId",
+        "outputSchema",
+        "outputSchemaId",
+        "triggers",
+        "toolIds",
+        "adapterMappings"
+      ],
+      "properties": {
+        "skillId": {
+          "enum": [
+            "classify_governor",
+            "inspect_context",
+            "list_legal_moves",
+            "validate_and_execute_move",
+            "verify_outcome"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^seven-governors-[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "description": { "type": "string", "minLength": 1, "maxLength": 512 },
+        "operationId": {
+          "enum": [
+            "classify_governor",
+            "inspect_context",
+            "list_legal_moves",
+            "validate_and_execute_move",
+            "verify_outcome"
+          ]
+        },
+        "workflowPath": {
+          "type": "string",
+          "pattern": "^workflows/(classify_governor|inspect_context|list_legal_moves|validate_and_execute_move|verify_outcome)/SKILL\\.md$"
+        },
+        "inputSchema": { "$ref": "#/$defs/schemaReference" },
+        "inputSchemaId": {
+          "type": "string",
+          "pattern": "^gov-207\\.[a-z-]+\\.input\\.v1$"
+        },
+        "outputSchema": { "$ref": "#/$defs/schemaReference" },
+        "outputSchemaId": {
+          "type": "string",
+          "pattern": "^gov-207\\.[a-z-]+\\.output\\.v1$"
+        },
+        "triggers": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 160 }
+        },
+        "toolIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": { "const": "governor.agent_api.invoke" }
+        },
+        "adapterMappings": { "$ref": "#/$defs/adapterMappings" }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "seven-governors-integrated-release",
+  "version": "1.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Framework sources, canonical topology, Neo4j projection, provenance, validation, and interactive Seven Governors graph.",
+  "scripts": {
+    "build:graph": "node graph/scripts/build-standalone.mjs",
+    "build:bestiary": "node scripts/build-bestiary.mjs --emit",
+    "bestiary:dev": "npm run dev --prefix bestiary/site",
+    "bestiary:build:site": "npm run build --prefix bestiary/site",
+    "bestiary:preview": "npm run preview --prefix bestiary/site",
+    "validate:graph": "node graph/scripts/verify-standalone.mjs",
+    "validate:release": "node scripts/validate-release.mjs",
+    "validate:cypher": "node scripts/validate-cypher-syntax.mjs",
+    "validate": "npm run build:graph && npm run validate:graph && npm run validate:release && npm run validate:cypher",
+    "check:neo4j": "node server.mjs --check",
+    "start": "node server.mjs",
+    "package:manifest": "node scripts/build-manifest.mjs",
+    "test:gov206": "node --test tests/gov_206/projection.test.mjs",
+    "test:gov206:neo4j": "node --test tests/gov_206/neo4j-live.test.mjs",
+    "validate:gov206": "node --test tests/gov_206/projection.test.mjs && node scripts/validate-cypher-syntax.mjs",
+    "test:court-graph": "python3 -m pytest tests/test_court_graph_projection.py",
+    "test:court-graph:neo4j": "node --test tests/court_graph/neo4j-live.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "neo4j-driver": "5.28.3",
+    "yaml": "2.8.1"
+  },
+  "devDependencies": {
+    "@neo4j-cypher/language-support": "2.0.0-next.6",
+    "ajv": "^8.20.0"
+  }
+}

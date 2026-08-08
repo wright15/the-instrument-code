@@ -1,0 +1,52 @@
+{
+  "verdict": "PASS",
+  "file": "/home/erick/projects/integrated-release/graph/index.html",
+  "bytes": 859710,
+  "checks": [
+    {
+      "name": "complete HTML document",
+      "status": "PASS",
+      "diagnostic": "The double-click artifact must be a complete document, not a host fragment."
+    },
+    {
+      "name": "offline asset closure",
+      "status": "PASS",
+      "diagnostic": "No remote script, stylesheet, image, or font is required."
+    },
+    {
+      "name": "graph root",
+      "status": "PASS",
+      "diagnostic": "Universal graph root is present."
+    },
+    {
+      "name": "primary controls",
+      "status": "PASS",
+      "diagnostic": "View, relationship, and state controls are present."
+    },
+    {
+      "name": "universal node count",
+      "status": "PASS",
+      "diagnostic": "Embedded canonical snapshot declares 462 rooted states."
+    },
+    {
+      "name": "boundary count",
+      "status": "PASS",
+      "diagnostic": "Embedded canonical snapshot declares 154 typed boundary states."
+    },
+    {
+      "name": "office network count",
+      "status": "PASS",
+      "diagnostic": "Embedded canonical snapshot declares 308 seated states."
+    },
+    {
+      "name": "universal relation count",
+      "status": "PASS",
+      "diagnostic": "Renderer declares 1,824 visible universal relationships."
+    },
+    {
+      "name": "JavaScript syntax",
+      "status": "PASS",
+      "diagnostic": "1 inline script passed."
+    }
+  ]
+}

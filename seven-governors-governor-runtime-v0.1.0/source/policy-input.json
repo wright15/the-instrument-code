@@ -1,0 +1,458 @@
+{
+  "schemaVersion": "1.0.0",
+  "policyVersion": "0.1.0",
+  "releaseId": "governor-runtime:0.1.0",
+  "releaseDate": "2026-08-01",
+  "releaseAdmission": "proposed",
+  "upstreamReleaseId": "canonical-profile-registry:0.1.1",
+  "constraintMarkers": [
+    {
+      "markerId": "runtime.constraint.destination_scale_state",
+      "legacyCompilerString": "harmonic.scale_state",
+      "kind": "compatibility_constraint"
+    },
+    {
+      "markerId": "runtime.constraint.resolved_governor_office",
+      "legacyCompilerString": "semantic.governor_office",
+      "kind": "derived_topology_mirror"
+    },
+    {
+      "markerId": "runtime.prohibition.musical_to_optical_causation",
+      "legacyCompilerString": "physical.musical_to_optical_causation",
+      "kind": "prohibition"
+    },
+    {
+      "markerId": "runtime.prohibition.unproven_operator_effect",
+      "legacyCompilerString": "semantic.unproven_operator_effect",
+      "kind": "prohibition"
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "operation:length-nm-to-m:v1",
+      "kind": "conversion",
+      "inputDimensions": ["length"],
+      "inputUnits": ["nm"],
+      "outputDimension": "length",
+      "outputUnit": "m",
+      "outputEpistemicClass": "physically_derived",
+      "formula": "value_nm * 1e-9",
+      "constants": [],
+      "requiredAssumptions": [],
+      "provenance": [
+        {
+          "sourceId": "source:photonic-records:0.1.1",
+          "pointer": "/records/0/calculation/formulas/frequency"
+        }
+      ]
+    },
+    {
+      "operationId": "operation:energy-j-to-ev:v1",
+      "kind": "conversion",
+      "inputDimensions": ["energy"],
+      "inputUnits": ["J"],
+      "outputDimension": "energy",
+      "outputUnit": "eV",
+      "outputEpistemicClass": "physically_derived",
+      "formula": "value_j / electron_volt_j",
+      "constants": [
+        {
+          "name": "electron_volt_j",
+          "value": 1.602176634e-19,
+          "unit": "J"
+        }
+      ],
+      "requiredAssumptions": [],
+      "provenance": [
+        {
+          "sourceId": "source:photonic-records:0.1.1",
+          "pointer": "/records/0/calculation/constants/electronVoltJ"
+        }
+      ]
+    },
+    {
+      "operationId": "operation:vacuum-wavelength-frequency:v1",
+      "kind": "derivation",
+      "inputDimensions": ["length"],
+      "inputUnits": ["nm"],
+      "outputDimension": "frequency",
+      "outputUnit": "Hz",
+      "outputEpistemicClass": "physically_derived",
+      "formula": "speed_of_light_m_s / (wavelength_nm * 1e-9)",
+      "constants": [
+        {
+          "name": "speed_of_light_m_s",
+          "value": 299792458,
+          "unit": "m_per_s"
+        }
+      ],
+      "requiredAssumptions": ["vacuum_wavelength"],
+      "provenance": [
+        {
+          "sourceId": "source:photonic-records:0.1.1",
+          "pointer": "/records/0/calculation/constants/speedOfLightMS"
+        }
+      ]
+    },
+    {
+      "operationId": "operation:photon-energy-frequency:v1",
+      "kind": "derivation",
+      "inputDimensions": ["frequency"],
+      "inputUnits": ["Hz"],
+      "outputDimension": "energy",
+      "outputUnit": "J",
+      "outputEpistemicClass": "physically_derived",
+      "formula": "planck_constant_j_s * frequency_hz",
+      "constants": [
+        {
+          "name": "planck_constant_j_s",
+          "value": 6.62607015e-34,
+          "unit": "J_s"
+        }
+      ],
+      "requiredAssumptions": ["single_photon"],
+      "provenance": [
+        {
+          "sourceId": "source:photonic-records:0.1.1",
+          "pointer": "/records/0/calculation/constants/planckConstantJS"
+        }
+      ]
+    },
+    {
+      "operationId": "operation:photonic-compression:v1",
+      "kind": "derivation",
+      "inputDimensions": ["length"],
+      "inputUnits": ["nm"],
+      "outputDimension": "dimensionless",
+      "outputUnit": "normalized_inverse_wavelength",
+      "outputEpistemicClass": "physical_anchor_plus_normalization_convention",
+      "formula": "(1/lambda - 1/700) / (1/400 - 1/700)",
+      "constants": [
+        {
+          "name": "sun_anchor_nm",
+          "value": 700,
+          "unit": "nm"
+        },
+        {
+          "name": "saturn_anchor_nm",
+          "value": 400,
+          "unit": "nm"
+        }
+      ],
+      "requiredAssumptions": ["registry_coordinate_not_absolute_physical_endpoint"],
+      "provenance": [
+        {
+          "sourceId": "source:photonic-records:0.1.1",
+          "pointer": "/records/0/calculation/formulas/photonicCompression"
+        }
+      ]
+    },
+    {
+      "operationId": "operation:relative-rayleigh:v1",
+      "kind": "evaluation",
+      "inputDimensions": ["length", "length"],
+      "inputUnits": ["nm", "nm"],
+      "outputDimension": "dimensionless",
+      "outputUnit": "one",
+      "outputEpistemicClass": "physically_derived",
+      "formula": "(comparison_wavelength_nm / target_wavelength_nm)^4",
+      "constants": [],
+      "requiredAssumptions": [
+        "scatterer_size_much_smaller_than_both_wavelengths",
+        "fixed_refractive_properties_and_number_density",
+        "fixed_geometry_polarization_and_angle",
+        "relative_intensity_only"
+      ],
+      "provenance": [
+        {
+          "sourceId": "source:physical-phenomena:0.2.0",
+          "pointer": "/physical_phenomena/governor_registry/jupiter/reference_formula"
+        }
+      ]
+    }
+  ],
+  "typedAspects": [
+    {
+      "schemaVersion": "1.0.0",
+      "aspectId": "aspect:jupiter:declared-wavelength:v1",
+      "aspectVersion": "1.0.0",
+      "facetPath": "/photonic/representativeWavelength",
+      "featureId": "physical.wavelength_nm",
+      "ownerScope": "governor.office",
+      "valueContractId": "quantity:length:nm",
+      "epistemicClass": "framework_declared_physical_anchor",
+      "admission": "canonical",
+      "primaryGovernor": "Jupiter",
+      "provenance": [
+        {
+          "sourceId": "source:photonic-records:0.1.1",
+          "pointer": "/records/4"
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "aspectId": "aspect:jupiter:rayleigh-descriptive-model:v1",
+      "aspectVersion": "1.0.0",
+      "facetPath": "/phenomena/rayleighScattering",
+      "featureId": "semantic.optical_function",
+      "ownerScope": "phenomenon.model",
+      "valueContractId": "semantic:authored_descriptive_model",
+      "epistemicClass": "authored_descriptive_model",
+      "admission": "proposed",
+      "primaryGovernor": "Jupiter",
+      "provenance": [
+        {
+          "sourceId": "source:physical-phenomena:0.2.0",
+          "pointer": "/physical_phenomena/governor_registry/jupiter"
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "aspectId": "aspect:jupiter:atmospheric-aeolian-process:v1",
+      "aspectVersion": "1.0.0",
+      "facetPath": "/processes/atmosphericAeolianTransport",
+      "featureId": "semantic.thermodynamic_function",
+      "ownerScope": "entity.aspect",
+      "valueContractId": "semantic:authored_process_association",
+      "epistemicClass": "authored_correspondence",
+      "admission": "proposed",
+      "primaryGovernor": "Jupiter",
+      "provenance": [
+        {
+          "sourceId": "source:canonical-governor-profiles:0.1.1",
+          "pointer": "/profiles/4/semantic"
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "aspectId": "aspect:jupiter:symbolic-profile:v1",
+      "aspectVersion": "1.0.0",
+      "facetPath": "/profile/domainReferences/symbolicReferences",
+      "featureId": "domain.symbolic_references",
+      "ownerScope": "profile.governor",
+      "valueContractId": "domain:reference_pool_terms",
+      "epistemicClass": "canonical_reference_library",
+      "admission": "canonical",
+      "primaryGovernor": "Jupiter",
+      "provenance": [
+        {
+          "sourceId": "source:canonical-governor-profiles:0.1.1",
+          "pointer": "/profiles/4/domainReferences/symbolicReferences"
+        }
+      ]
+    }
+  ],
+  "bridgeRules": [
+    {
+      "schemaVersion": "1.0.0",
+      "ruleId": "rule:jupiter:declared-wavelength:v1",
+      "ruleVersion": "1.0.0",
+      "antecedents": [
+        {
+          "antecedentId": "antecedent:jupiter-photonic-owner",
+          "kind": "owner_equals",
+          "subjectScope": "profile.governor",
+          "expectedValue": "photonic:jupiter:v0.1.1",
+          "provenance": [
+            {
+              "sourceId": "source:photonic-records:0.1.1",
+              "pointer": "/records/4/photonicId"
+            }
+          ]
+        },
+        {
+          "antecedentId": "antecedent:jupiter-wavelength",
+          "kind": "feature_equals",
+          "subjectScope": "governor.office",
+          "featureId": "physical.wavelength_nm",
+          "expectedValue": 470,
+          "provenance": [
+            {
+              "sourceId": "source:photonic-records:0.1.1",
+              "pointer": "/records/4/representativeWavelengthNm"
+            }
+          ]
+        }
+      ],
+      "output": {
+        "aspectId": "aspect:jupiter:declared-wavelength:v1",
+        "primaryGovernor": "Jupiter"
+      },
+      "ruleScope": "office.anchor",
+      "authoritySourceIds": ["source:photonic-records:0.1.1"],
+      "epistemicClass": "framework_declared_physical_anchor",
+      "admission": "canonical",
+      "priority": 100,
+      "missingPolicy": "return_unresolved",
+      "conflictPolicy": "return_ambiguous",
+      "causalClaim": false,
+      "provenance": [
+        {
+          "sourceId": "source:governor-domain-authority:1.0.0",
+          "pointer": "/7-existing-featuredefinition-crosswalk"
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "ruleId": "rule:jupiter:rayleigh-descriptive-model:v1",
+      "ruleVersion": "1.0.0",
+      "antecedents": [
+        {
+          "antecedentId": "antecedent:rayleigh-model-id",
+          "kind": "relation_equals",
+          "subjectScope": "phenomenon.model",
+          "expectedValue": "phenomenon:rayleigh_scattering",
+          "provenance": [
+            {
+              "sourceId": "source:physical-phenomena:0.2.0",
+              "pointer": "/physical_phenomena/governor_registry/jupiter/phenomenon_id"
+            }
+          ]
+        },
+        {
+          "antecedentId": "antecedent:rayleigh-relative-result",
+          "kind": "operation_result",
+          "subjectScope": "phenomenon.model",
+          "operationId": "operation:relative-rayleigh:v1",
+          "expectedValue": 4.920403608350627,
+          "provenance": [
+            {
+              "sourceId": "source:physical-phenomena:0.2.0",
+              "pointer": "/physical_phenomena/governor_registry/jupiter/reference_formula"
+            }
+          ]
+        }
+      ],
+      "output": {
+        "aspectId": "aspect:jupiter:rayleigh-descriptive-model:v1",
+        "primaryGovernor": "Jupiter"
+      },
+      "ruleScope": "physical.model",
+      "authoritySourceIds": ["source:physical-phenomena:0.2.0"],
+      "epistemicClass": "authored_descriptive_model",
+      "admission": "proposed",
+      "priority": 50,
+      "missingPolicy": "return_unresolved",
+      "conflictPolicy": "return_ambiguous",
+      "causalClaim": false,
+      "provenance": [
+        {
+          "sourceId": "source:governor-domain-authority:1.0.0",
+          "pointer": "/8-admission-boundaries"
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "ruleId": "rule:jupiter:atmospheric-aeolian-process:v1",
+      "ruleVersion": "1.0.0",
+      "antecedents": [
+        {
+          "antecedentId": "antecedent:atmospheric-aeolian-process",
+          "kind": "relation_equals",
+          "subjectScope": "entity.aspect",
+          "expectedValue": "process:atmospheric_aeolian_transport",
+          "provenance": [
+            {
+              "sourceId": "source:canonical-governor-profiles:0.1.1",
+              "pointer": "/profiles/4/semantic/thermodynamicFunction"
+            }
+          ]
+        },
+        {
+          "antecedentId": "antecedent:jupiter-distribution-correspondence",
+          "kind": "feature_equals",
+          "subjectScope": "profile.governor",
+          "featureId": "semantic.thermodynamic_function",
+          "expectedValue": "distribution",
+          "provenance": [
+            {
+              "sourceId": "source:canonical-governor-profiles:0.1.1",
+              "pointer": "/profiles/4/semantic/thermodynamicFunction"
+            }
+          ]
+        }
+      ],
+      "output": {
+        "aspectId": "aspect:jupiter:atmospheric-aeolian-process:v1",
+        "primaryGovernor": "Jupiter"
+      },
+      "ruleScope": "domain.process",
+      "authoritySourceIds": ["source:canonical-governor-profiles:0.1.1"],
+      "epistemicClass": "authored_correspondence",
+      "admission": "proposed",
+      "priority": 40,
+      "missingPolicy": "return_unresolved",
+      "conflictPolicy": "return_ambiguous",
+      "causalClaim": false,
+      "provenance": [
+        {
+          "sourceId": "source:governor-domain-authority:1.0.0",
+          "pointer": "/5-domain-namespace-crosswalk"
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "ruleId": "rule:jupiter:symbolic-profile:v1",
+      "ruleVersion": "1.0.0",
+      "antecedents": [
+        {
+          "antecedentId": "antecedent:jupiter-profile-owner",
+          "kind": "owner_equals",
+          "subjectScope": "profile.governor",
+          "expectedValue": "profile:jupiter:v0.1.1",
+          "provenance": [
+            {
+              "sourceId": "source:canonical-governor-profiles:0.1.1",
+              "pointer": "/profiles/4/profileId"
+            }
+          ]
+        },
+        {
+          "antecedentId": "antecedent:jupiter-symbol-eagle",
+          "kind": "feature_contains",
+          "subjectScope": "profile.governor",
+          "featureId": "domain.symbolic_references",
+          "expectedValue": "eagle",
+          "provenance": [
+            {
+              "sourceId": "source:canonical-governor-profiles:0.1.1",
+              "pointer": "/profiles/4/domainReferences/symbolicReferences"
+            }
+          ]
+        }
+      ],
+      "output": {
+        "aspectId": "aspect:jupiter:symbolic-profile:v1",
+        "primaryGovernor": "Jupiter"
+      },
+      "ruleScope": "office.profile",
+      "authoritySourceIds": ["source:canonical-governor-profiles:0.1.1"],
+      "epistemicClass": "canonical_reference_library",
+      "admission": "canonical",
+      "priority": 90,
+      "missingPolicy": "return_unresolved",
+      "conflictPolicy": "return_ambiguous",
+      "causalClaim": false,
+      "provenance": [
+        {
+          "sourceId": "source:governor-domain-authority:1.0.0",
+          "pointer": "/5-domain-namespace-crosswalk"
+        }
+      ]
+    }
+  ],
+  "activeAspectIds": [
+    "aspect:jupiter:declared-wavelength:v1",
+    "aspect:jupiter:symbolic-profile:v1"
+  ],
+  "activeRuleIds": [
+    "rule:jupiter:declared-wavelength:v1",
+    "rule:jupiter:symbolic-profile:v1"
+  ]
+}

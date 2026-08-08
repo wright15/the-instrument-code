@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/gov-206/named-query-request.schema.json",
+  "title": "GOV-206 Named Query Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "queryId", "parameters"],
+  "properties": {
+    "schemaVersion": { "const": "gov-206.named-query-request.v1" },
+    "queryId": { "enum": ["aspect_context", "governor_profile", "rule_explanation", "legal_move_context", "provenance_path", "prior_verified_outcomes"] },
+    "parameters": { "type": "object" }
+  },
+  "not": { "required": ["cypher"] }
+}

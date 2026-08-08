@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "gov-207.capabilities.v1",
+  "bundleId": "seven-governors-gov-207",
+  "bundleVersion": "1.0.0",
+  "defaultPolicy": "deny",
+  "grants": [
+    {
+      "skillId": "classify_governor",
+      "tools": ["governor.agent_api.invoke"],
+      "operations": ["classify_governor"],
+      "namedQueries": [
+        "aspect_context",
+        "governor_profile",
+        "provenance_path",
+        "rule_explanation"
+      ],
+      "capabilities": [
+        "graph.read.named",
+        "runtime.classify",
+        "runtime.context.read",
+        "runtime.ledger.replay"
+      ],
+      "dynamicBindings": [],
+      "effectPolicy": "runtime-authorized-transition"
+    },
+    {
+      "skillId": "inspect_context",
+      "tools": ["governor.agent_api.invoke"],
+      "operations": ["inspect_context"],
+      "namedQueries": ["prior_verified_outcomes"],
+      "capabilities": [
+        "graph.read.named",
+        "runtime.context.read",
+        "runtime.ledger.replay",
+        "runtime.outcome.read"
+      ],
+      "dynamicBindings": [],
+      "effectPolicy": "read-only"
+    },
+    {
+      "skillId": "list_legal_moves",
+      "tools": ["governor.agent_api.invoke"],
+      "operations": ["list_legal_moves"],
+      "namedQueries": ["legal_move_context"],
+      "capabilities": [
+        "graph.read.named",
+        "runtime.ledger.replay",
+        "runtime.moves.read"
+      ],
+      "dynamicBindings": [],
+      "effectPolicy": "read-only"
+    },
+    {
+      "skillId": "validate_and_execute_move",
+      "tools": ["governor.agent_api.invoke"],
+      "operations": ["validate_and_execute_move"],
+      "namedQueries": [],
+      "capabilities": [
+        "runtime.ledger.replay",
+        "runtime.move.execute",
+        "runtime.move.validate",
+        "runtime.outcome.verify"
+      ],
+      "dynamicBindings": [
+        {
+          "bindingId": "selected_move_capability",
+          "sourceField": "selectedMove.operationId",
+          "menuField": "moves.capability",
+          "requirements": [
+            "host_grant",
+            "registered_executor",
+            "registered_operation",
+            "registered_verifier",
+            "state_grant",
+            "trusted_menu_match"
+          ]
+        }
+      ],
+      "effectPolicy": "runtime-authorized-external-effect"
+    },
+    {
+      "skillId": "verify_outcome",
+      "tools": ["governor.agent_api.invoke"],
+      "operations": ["verify_outcome"],
+      "namedQueries": ["prior_verified_outcomes"],
+      "capabilities": [
+        "runtime.ledger.replay",
+        "runtime.outcome.read"
+      ],
+      "dynamicBindings": [],
+      "effectPolicy": "read-only"
+    }
+  ],
+  "forbidden": {
+    "tools": ["raw_cypher", "raw_shell"],
+    "operations": [
+      "graph.write",
+      "ledger.write",
+      "runtime.side-effect.rerun-for-verification",
+      "runtime.token.issue"
+    ],
+    "claims": ["prose_as_evidence", "success_without_verified_evidence"]
+  }
+}

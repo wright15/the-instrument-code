@@ -1,0 +1,18 @@
+---
+import { bestiary } from "../../lib/bestiary";
+
+export function getStaticPaths() {
+  return bestiary.archetypes
+    .filter((archetype) => archetype.kind === "mutationOperator")
+    .map((archetype) => ({ params: { id: archetype.operatorId } }));
+}
+
+const { id } = Astro.params;
+const operator = bestiary.archetypes.find(
+  (archetype) =>
+    archetype.kind === "mutationOperator" && archetype.operatorId === id,
+);
+return Astro.redirect(`/archetypes/${operator?.id ?? ""}`, 301);
+---
+
+<p class="text-xs text-muted">Redirecting to {operator?.id ?? id}…</p>

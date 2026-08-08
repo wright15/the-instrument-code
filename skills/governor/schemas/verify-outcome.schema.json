@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/gov-207/schemas/verify-outcome.schema.json",
+  "title": "GOV-207 verify_outcome Input and Output",
+  "oneOf": [
+    { "$ref": "#/$defs/input" },
+    { "$ref": "#/$defs/output" }
+  ],
+  "$defs": {
+    "input": {
+      "$id": "gov-207.verify-outcome.input.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "requestId",
+        "taskId",
+        "attemptId",
+        "expectedStateSha256",
+        "expectedLedgerHeadSha256"
+      ],
+      "properties": {
+        "schemaVersion": { "const": "gov-207.verify-outcome.input.v1" },
+        "requestId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "taskId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "attemptId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "expectedStateSha256": { "$ref": "common.schema.json#/$defs/sha256" },
+        "expectedLedgerHeadSha256": { "$ref": "common.schema.json#/$defs/sha256" }
+      }
+    },
+    "output": {
+      "$id": "gov-207.verify-outcome.output.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "skillId",
+        "requestId",
+        "status",
+        "state",
+        "replay",
+        "attempt",
+        "decision",
+        "evidence",
+        "cleanup",
+        "claim",
+        "toolReceipts",
+        "nextMenu",
+        "directive",
+        "resultFingerprint"
+      ],
+      "properties": {
+        "schemaVersion": { "const": "gov-207.verify-outcome.output.v1" },
+        "skillId": { "const": "verify_outcome" },
+        "requestId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "status": { "enum": ["failed", "not_verified", "stopped", "verified"] },
+        "state": { "$ref": "common.schema.json#/$defs/stateRef" },
+        "replay": { "$ref": "common.schema.json#/$defs/replayResult" },
+        "attempt": { "$ref": "common.schema.json#/$defs/attemptResult" },
+        "decision": { "$ref": "common.schema.json#/$defs/verificationResult" },
+        "evidence": {
+          "type": "array",
+          "maxItems": 64,
+          "items": { "$ref": "common.schema.json#/$defs/evidenceRecord" }
+        },
+        "cleanup": { "$ref": "common.schema.json#/$defs/cleanupResult" },
+        "claim": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mayDeclareSuccess", "claimCode"],
+          "properties": {
+            "mayDeclareSuccess": { "type": "boolean" },
+            "claimCode": {
+              "enum": [
+                "cleanup_failed",
+                "failed_evidence",
+                "invalid_ledger",
+                "missing_evidence",
+                "verified_evidence"
+              ]
+            }
+          }
+        },
+        "toolReceipts": {
+          "type": "array",
+          "maxItems": 64,
+          "items": { "$ref": "common.schema.json#/$defs/toolReceipt" }
+        },
+        "nextMenu": { "$ref": "common.schema.json#/$defs/dynamicMenu" },
+        "directive": { "$ref": "common.schema.json#/$defs/directive" },
+        "resultFingerprint": { "$ref": "common.schema.json#/$defs/sha256" }
+      }
+    }
+  }
+}

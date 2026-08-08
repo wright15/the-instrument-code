@@ -1,0 +1,108 @@
+fivefold_engine:
+  schema_version: "1.0.0"
+  registry_version: "0.2.0"
+  engine_id: "fivefold-engine:canonical-court:0.2.0"
+  admission: "proposed"
+  status: "framework_operational_state_machine"
+  physical_quantity_claim: false
+  macro_bracket:
+    source: "Sun"
+    reception: "Moon"
+  controller:
+    governor: "Mercury"
+    element: "Quintessence"
+    functions:
+      - "adaptation"
+      - "translation"
+      - "transition selection"
+      - "normalization"
+      - "ledger update"
+    is_binary_court_pole: false
+  pole_order:
+    - governor: "Mars"
+      element: "Fire"
+      function: "energy_modulation"
+      diagnostic_question: "How does force enter the pattern?"
+    - governor: "Jupiter"
+      element: "Air"
+      function: "direction_and_distribution"
+      diagnostic_question: "Where is the flow going?"
+    - governor: "Venus"
+      element: "Water"
+      function: "selective_cohesion"
+      diagnostic_question: "What enters meaningful relation?"
+    - governor: "Saturn"
+      element: "Earth"
+      function: "constraint_and_form"
+      diagnostic_question: "What can the flow not do?"
+  bit_semantics:
+    "0": "External"
+    "1": "Internal"
+  canonical_states:
+    - state_id: "C0"
+      vector: "0000"
+      internal_poles: []
+      kappa_court: 0
+    - state_id: "C1"
+      vector: "1000"
+      internal_poles: ["Mars"]
+      kappa_court: 0.25
+    - state_id: "C2"
+      vector: "1100"
+      internal_poles: ["Mars", "Jupiter"]
+      kappa_court: 0.5
+    - state_id: "C3"
+      vector: "1110"
+      internal_poles: ["Mars", "Jupiter", "Venus"]
+      kappa_court: 0.75
+    - state_id: "C4"
+      vector: "1111"
+      internal_poles: ["Mars", "Jupiter", "Venus", "Saturn"]
+      kappa_court: 1
+  canonical_transitions:
+    - transition_id: "court:C0:C1"
+      from: "C0"
+      to: "C1"
+      action: "internalize"
+      pole: "Mars"
+      reversible: true
+    - transition_id: "court:C1:C2"
+      from: "C1"
+      to: "C2"
+      action: "internalize"
+      pole: "Jupiter"
+      reversible: true
+    - transition_id: "court:C2:C3"
+      from: "C2"
+      to: "C3"
+      action: "internalize"
+      pole: "Venus"
+      reversible: true
+    - transition_id: "court:C3:C4"
+      from: "C3"
+      to: "C4"
+      action: "internalize"
+      pole: "Saturn"
+      reversible: true
+  geometry:
+    kappa_formula: "kappa(C_i) = i/4"
+    paired_mask_hamming_formula: "d_H(C_i,C_j) = 2*abs(i-j)"
+    signed_gram_matrix: "2*I_4"
+    full_binary_field_size: 16
+    canonical_path_size: 5
+  runtime_cycle:
+    - index: 1
+      stage: "ledger_assessment"
+    - index: 2
+      stage: "bracket_and_target"
+    - index: 3
+      stage: "court_compilation"
+    - index: 4
+      stage: "execution_and_cadence"
+    - index: 5
+      stage: "resolution_and_transduction"
+  guards:
+    - "Ordinary movement is adjacent."
+    - "A non-adjacent jump must be expanded or explicitly marked exceptional."
+    - "Court state is runtime context, not State Governor identity."
+    - "kappa_court is not C_P, C_H, C_S, temperature, entropy, enthalpy, or free energy."

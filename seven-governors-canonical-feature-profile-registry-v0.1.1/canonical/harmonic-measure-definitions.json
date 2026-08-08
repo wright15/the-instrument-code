@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryVersion": "0.1.1",
+  "releaseId": "canonical-profile-registry:0.1.1",
+  "generatedAt": "2026-07-30",
+  "aggregateHarmonicCompression": {
+    "symbol": "C_H",
+    "status": "unresolved",
+    "value": null,
+    "admissionRule": "A candidate C_H formula must declare domain, tuning, normalization, invariances, failure cases, and regression fixtures before promotion."
+  },
+  "measures": [
+    {
+      "measureId": "rooted_hamming_distance",
+      "status": "active",
+      "scope": "ScaleState_pair",
+      "tuningRequirement": "12-TET rooted 12-bit representation",
+      "definition": "Population count of XOR between two rooted 12-bit masks.",
+      "topologyUse": "fixed-tonic one-tone exchange uses dH=2"
+    },
+    {
+      "measureId": "raw_exchange_hamming",
+      "status": "active",
+      "scope": "unrooted_pitch_set_pair",
+      "tuningRequirement": "12-TET",
+      "definition": "Cardinality of the symmetric difference of two pitch-class sets.",
+      "topologyUse": "single-pitch exchange validation"
+    },
+    {
+      "measureId": "common_tone_count",
+      "status": "candidate",
+      "scope": "ScaleState_pair",
+      "tuningRequirement": "declared pitch representation",
+      "definition": "Cardinality of pitch-set intersection.",
+      "topologyUse": "possible local affinity descriptor; not C_H"
+    },
+    {
+      "measureId": "interval_vector",
+      "status": "active_descriptor",
+      "scope": "ScaleFamily",
+      "tuningRequirement": "12-TET",
+      "definition": "Six-entry interval-class vector.",
+      "topologyUse": "family-level structural descriptor; not an office value"
+    },
+    {
+      "measureId": "carey_CQ",
+      "status": "reserved_external_measure",
+      "scope": "ScaleFamily_under_tuning",
+      "tuningRequirement": "must be declared",
+      "definition": "Carey coherence quotient, when computed under a declared tuning.",
+      "topologyUse": "family/tuning property only; never copied to a Governor state as such"
+    },
+    {
+      "measureId": "carey_SQ",
+      "status": "reserved_external_measure",
+      "scope": "ScaleFamily_under_tuning",
+      "tuningRequirement": "must be declared",
+      "definition": "Carey simplicity quotient, when computed under a declared tuning.",
+      "topologyUse": "family/tuning property only; never copied to a Governor state as such"
+    },
+    {
+      "measureId": "anchor_distance",
+      "status": "active",
+      "scope": "ScaleState_to_anchor",
+      "tuningRequirement": "12-TET rooted topology",
+      "definition": "Declared eligible relation distance and tier-precedence record.",
+      "topologyUse": "anchor/satellite/boundary resolution"
+    },
+    {
+      "measureId": "modal_phase",
+      "status": "active",
+      "scope": "ScaleState_in_family_orbit",
+      "tuningRequirement": "ordered rooted scale",
+      "definition": "Successor index under modal re-rooting M.",
+      "topologyUse": "phase closure and covariance testing"
+    },
+    {
+      "measureId": "fourier_pitch_class_descriptor",
+      "status": "candidate_uncomputed",
+      "scope": "ScaleState_or_family",
+      "tuningRequirement": "explicit transform convention",
+      "definition": "Discrete Fourier descriptor of pitch-class occupancy.",
+      "topologyUse": "candidate C_H input; not admitted in registry v0.1.1"
+    }
+  ]
+}

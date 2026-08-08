@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/governor-runtime/0.1.0/schemas/bridge-rule.schema.json",
+  "title": "Governor Runtime BridgeRule",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "ruleId",
+    "ruleVersion",
+    "antecedents",
+    "output",
+    "ruleScope",
+    "authoritySourceIds",
+    "epistemicClass",
+    "admission",
+    "priority",
+    "missingPolicy",
+    "conflictPolicy",
+    "causalClaim",
+    "provenance"
+  ],
+  "properties": {
+    "schemaVersion": { "$ref": "common.schema.json#/$defs/schemaVersion" },
+    "ruleId": { "$ref": "common.schema.json#/$defs/identifier" },
+    "ruleVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "antecedents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["antecedentId", "kind", "subjectScope", "expectedValue", "provenance"],
+        "properties": {
+          "antecedentId": { "$ref": "common.schema.json#/$defs/identifier" },
+          "kind": {
+            "enum": [
+              "feature_equals",
+              "feature_contains",
+              "owner_equals",
+              "relation_equals",
+              "operation_result",
+              "assumption_holds"
+            ]
+          },
+          "subjectScope": { "$ref": "common.schema.json#/$defs/ownerScope" },
+          "featureId": { "$ref": "common.schema.json#/$defs/featureId" },
+          "operationId": { "$ref": "common.schema.json#/$defs/identifier" },
+          "expectedValue": { "$ref": "common.schema.json#/$defs/scalarValue" },
+          "provenance": { "$ref": "common.schema.json#/$defs/provenance" }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "kind": { "enum": ["feature_equals", "feature_contains"] } }, "required": ["kind"] },
+            "then": { "required": ["featureId"] }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "operation_result" } }, "required": ["kind"] },
+            "then": { "required": ["operationId"] }
+          }
+        ]
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["aspectId", "primaryGovernor"],
+      "properties": {
+        "aspectId": { "$ref": "common.schema.json#/$defs/identifier" },
+        "primaryGovernor": { "$ref": "common.schema.json#/$defs/governor" }
+      }
+    },
+    "ruleScope": { "$ref": "common.schema.json#/$defs/ruleScope" },
+    "authoritySourceIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "common.schema.json#/$defs/identifier" }
+    },
+    "epistemicClass": { "$ref": "common.schema.json#/$defs/epistemicClass" },
+    "admission": { "$ref": "common.schema.json#/$defs/admission" },
+    "priority": { "type": "integer", "minimum": 0, "maximum": 1000 },
+    "missingPolicy": { "$ref": "common.schema.json#/$defs/missingPolicy" },
+    "conflictPolicy": { "$ref": "common.schema.json#/$defs/conflictPolicy" },
+    "causalClaim": { "type": "boolean" },
+    "provenance": { "$ref": "common.schema.json#/$defs/provenance" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "epistemicClass": { "const": "causal_claim" } }, "required": ["epistemicClass"] },
+      "then": { "properties": { "causalClaim": { "const": true } } },
+      "else": { "properties": { "causalClaim": { "const": false } } }
+    }
+  ]
+}

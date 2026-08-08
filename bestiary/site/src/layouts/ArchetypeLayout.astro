@@ -1,0 +1,75 @@
+---
+import type { Archetype } from "../lib/bestiary";
+import { kindMeta, officeColors } from "../lib/bestiary";
+import AdmissionBadge from "../components/AdmissionBadge.astro";
+import ArchetypeNarrative from "../components/ArchetypeNarrative.astro";
+
+interface Props {
+  archetype: Archetype;
+}
+
+const { archetype } = Astro.props;
+const meta = kindMeta[archetype.kind];
+
+let officeTint: string | undefined;
+if (archetype.kind === "scaleState" && archetype.office) {
+  officeTint = officeColors[archetype.office];
+} else if (archetype.kind === "governorOffice") {
+  officeTint = archetype.color ?? officeColors[archetype.office];
+} else if (archetype.kind === "canonicalProfile") {
+  officeTint = officeColors[archetype.office];
+}
+---
+
+<div class="mb-6">
+  <nav class="mb-4 flex items-center gap-2 text-[11px] text-muted">
+    <a href="/" class="transition-colors hover:text-accent">Dashboard</a>
+    <span>/</span>
+    <span>{meta.label}</span>
+    <span>/</span>
+    <span class="text-frost">{archetype.name}</span>
+  </nav>
+
+  <header class="flex flex-wrap items-start justify-between gap-4 rounded-lg border border-edge bg-panel p-5">
+    <div class="flex items-start gap-4">
+      <span class={`text-3xl leading-none ${meta.glyphClass}`}>{meta.glyph}</span>
+      <div>
+        <div class="flex flex-wrap items-center gap-2">
+          <h1 class="text-xl font-semibold tracking-tight">{archetype.name}</h1>
+          <AdmissionBadge admission={archetype.admission} />
+        </div>
+        <div class="mt-1 font-mono text-[11px] text-muted">{archetype.id}</div>
+        <div class="mt-2 flex flex-wrap items-center gap-2 text-[11px] text-muted">
+          <span class="rounded-full border border-edge bg-raised px-2 py-0.5">
+            {meta.label}
+          </span>
+          {officeTint && archetype.kind !== "governorOffice" && (
+            <span
+              class="flex items-center gap-1.5 rounded-full border border-edge bg-raised px-2 py-0.5"
+            >
+              <span class="size-2 rounded-full" style={`background: ${officeTint}`}></span>
+              {archetype.office}
+            </span>
+          )}
+          {archetype.kind === "governorOffice" && (
+            <span
+              class="flex items-center gap-1.5 rounded-full border border-edge bg-raised px-2 py-0.5"
+            >
+              <span class="size-2 rounded-full" style={`background: ${officeTint}`}></span>
+              {archetype.office}
+              {archetype.symbol ? ` · ${archetype.symbol}` : ""}
+            </span>
+          )}
+        </div>
+      </div>
+    </div>
+    <div class="text-right text-[10px] leading-relaxed text-muted">
+      <div>source</div>
+      <div class="font-mono">{archetype.sourcePath}</div>
+    </div>
+  </header>
+</div>
+
+<ArchetypeNarrative archetype={archetype} />
+
+<slot />

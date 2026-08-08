@@ -1,0 +1,567 @@
+{
+  "schemaVersion": "1.0.0",
+  "cases": [
+    {
+      "caseId": "negative:unknown-property",
+      "kind": "schema",
+      "schemaName": "quantity",
+      "expectedCodes": ["SCHEMA_UNKNOWN_PROPERTY"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "quantityId": "quantity:invalid:unknown-property",
+        "value": 470,
+        "dimension": "length",
+        "unit": "nm",
+        "epistemicClass": "framework_declared_physical_anchor",
+        "basis": {
+          "kind": "framework_declaration",
+          "ownerScope": "governor.office",
+          "ownerId": "office:Jupiter"
+        },
+        "provenance": [{"sourceId": "source:photonic-records:0.1.1"}],
+        "assumptions": [],
+        "invented": true
+      }
+    },
+    {
+      "caseId": "negative:invalid-enum",
+      "kind": "schema",
+      "schemaName": "typed-aspect",
+      "expectedCodes": ["ENUM_INVALID"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "aspectId": "aspect:invalid:governor",
+        "aspectVersion": "1.0.0",
+        "facetPath": "/invalid",
+        "featureId": "semantic.directionality",
+        "ownerScope": "entity.aspect",
+        "valueContractId": "semantic:directionality_term",
+        "epistemicClass": "authored_correspondence",
+        "admission": "proposed",
+        "primaryGovernor": "Neptune",
+        "provenance": [{"sourceId": "source:governor-domain-authority:1.0.0"}]
+      }
+    },
+    {
+      "caseId": "negative:wrong-unit",
+      "kind": "schema",
+      "schemaName": "quantity",
+      "expectedCodes": ["UNIT_DIMENSION_MISMATCH"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "quantityId": "quantity:invalid:wrong-unit",
+        "value": 470,
+        "dimension": "length",
+        "unit": "Hz",
+        "epistemicClass": "observed_measurement",
+        "basis": {
+          "kind": "observed_measurement",
+          "subjectId": "subject:test",
+          "methodId": "method:test"
+        },
+        "provenance": [{"sourceId": "source:governor-domain-authority:1.0.0"}],
+        "assumptions": []
+      }
+    },
+    {
+      "caseId": "negative:missing-provenance",
+      "kind": "schema",
+      "schemaName": "quantity",
+      "expectedCodes": ["PROVENANCE_REQUIRED"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "quantityId": "quantity:invalid:missing-provenance",
+        "value": 470,
+        "dimension": "length",
+        "unit": "nm",
+        "epistemicClass": "observed_measurement",
+        "basis": {
+          "kind": "observed_measurement",
+          "subjectId": "subject:test",
+          "methodId": "method:test"
+        },
+        "assumptions": []
+      }
+    },
+    {
+      "caseId": "negative:missing-source",
+      "kind": "schema",
+      "schemaName": "quantity",
+      "expectedCodes": ["REF_PROVENANCE_DANGLING"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "quantityId": "quantity:invalid:missing-source",
+        "value": 470,
+        "dimension": "length",
+        "unit": "nm",
+        "epistemicClass": "observed_measurement",
+        "basis": {
+          "kind": "observed_measurement",
+          "subjectId": "subject:test",
+          "methodId": "method:test"
+        },
+        "provenance": [{"sourceId": "source:not-registered"}],
+        "assumptions": []
+      }
+    },
+    {
+      "caseId": "negative:dangling-feature-id",
+      "kind": "schema",
+      "schemaName": "typed-aspect",
+      "expectedCodes": ["REF_FEATURE_DANGLING"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "aspectId": "aspect:invalid:dangling-feature",
+        "aspectVersion": "1.0.0",
+        "facetPath": "/invalid",
+        "featureId": "semantic.governor_office",
+        "ownerScope": "entity.aspect",
+        "valueContractId": "semantic:invalid",
+        "epistemicClass": "authored_correspondence",
+        "admission": "proposed",
+        "primaryGovernor": "Jupiter",
+        "provenance": [{"sourceId": "source:governor-domain-authority:1.0.0"}]
+      }
+    },
+    {
+      "caseId": "negative:dangling-rule-id",
+      "kind": "schema",
+      "schemaName": "classification-result",
+      "requestCaseId": "positive:classification-request",
+      "expectedCodes": ["REF_RULE_DANGLING"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "policyReleaseId": "governor-runtime:0.1.0",
+        "policyFingerprint": "$POLICY_FINGERPRINT",
+        "sourceFingerprint": "$SOURCE_FINGERPRINT",
+        "requestFingerprint": "$REQUEST_FINGERPRINT",
+        "subjectId": "profile:jupiter:v0.1.1",
+        "facetResults": [
+          {
+            "facetId": "facet:invalid-rule",
+            "requestedAspectId": "aspect:jupiter:symbolic-profile:v1",
+            "outcome": "classified",
+            "aspectId": "aspect:jupiter:symbolic-profile:v1",
+            "primaryGovernor": "Jupiter",
+            "evidencePaths": [
+              {
+                "ruleId": "rule:not-registered",
+                "factIds": ["fact:jupiter-symbol-eagle"],
+                "provenanceSourceIds": ["source:canonical-governor-profiles:0.1.1"]
+              }
+            ]
+          }
+        ],
+        "resultFingerprint": "$RESULT_FINGERPRINT"
+      }
+    },
+    {
+      "caseId": "negative:dimensional-mismatch",
+      "kind": "quantity_operation",
+      "expectedCodes": ["QUANTITY_DIMENSION_MISMATCH"],
+      "document": {
+        "operationId": "intrinsic:add",
+        "operands": [
+          {
+            "schemaVersion": "1.0.0",
+            "quantityId": "quantity:test:length",
+            "value": 470,
+            "dimension": "length",
+            "unit": "nm",
+            "epistemicClass": "observed_measurement",
+            "basis": {"kind": "observed_measurement", "subjectId": "subject:test", "methodId": "method:test"},
+            "provenance": [{"sourceId": "source:governor-domain-authority:1.0.0"}],
+            "assumptions": []
+          },
+          {
+            "schemaVersion": "1.0.0",
+            "quantityId": "quantity:test:energy",
+            "value": 1,
+            "dimension": "energy",
+            "unit": "J",
+            "epistemicClass": "observed_measurement",
+            "basis": {"kind": "observed_measurement", "subjectId": "subject:test", "methodId": "method:test"},
+            "provenance": [{"sourceId": "source:governor-domain-authority:1.0.0"}],
+            "assumptions": []
+          }
+        ]
+      }
+    },
+    {
+      "caseId": "negative:unregistered-conversion",
+      "kind": "quantity_operation",
+      "expectedCodes": ["QUANTITY_OPERATION_NOT_REGISTERED"],
+      "document": {
+        "operationId": "operation:wavelength-direct-to-energy:not-registered",
+        "operands": [
+          {
+            "schemaVersion": "1.0.0",
+            "quantityId": "quantity:test:wavelength",
+            "value": 470,
+            "dimension": "length",
+            "unit": "nm",
+            "epistemicClass": "observed_measurement",
+            "basis": {"kind": "observed_measurement", "subjectId": "subject:test", "methodId": "method:test"},
+            "provenance": [{"sourceId": "source:governor-domain-authority:1.0.0"}],
+            "assumptions": []
+          }
+        ]
+      }
+    },
+    {
+      "caseId": "negative:causal-overclaim",
+      "kind": "schema",
+      "schemaName": "bridge-rule",
+      "expectedCodes": ["CAUSAL_OVERCLAIM"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "ruleId": "rule:invalid:musical-optical-causation",
+        "ruleVersion": "1.0.0",
+        "antecedents": [
+          {
+            "antecedentId": "antecedent:invalid-causal",
+            "kind": "relation_equals",
+            "subjectScope": "entity.aspect",
+            "expectedValue": "mode:aeolian",
+            "provenance": [{"sourceId": "source:physical-phenomena:0.2.0"}]
+          }
+        ],
+        "output": {
+          "aspectId": "aspect:jupiter:rayleigh-descriptive-model:v1",
+          "primaryGovernor": "Jupiter"
+        },
+        "ruleScope": "physical.model",
+        "authoritySourceIds": ["source:physical-phenomena:0.2.0"],
+        "epistemicClass": "causal_claim",
+        "admission": "canonical",
+        "priority": 100,
+        "missingPolicy": "return_unresolved",
+        "conflictPolicy": "return_ambiguous",
+        "causalClaim": true,
+        "provenance": [{"sourceId": "source:physical-phenomena:0.2.0"}]
+      }
+    },
+    {
+      "caseId": "negative:dangling-requested-aspect",
+      "kind": "schema",
+      "schemaName": "classification-request",
+      "expectedCodes": ["REF_ASPECT_DANGLING"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "policyReleaseId": "governor-runtime:0.1.0",
+        "subject": {"subjectId": "subject:test", "subjectType": "domain_entity"},
+        "facts": [],
+        "quantities": [],
+        "requestedAspectIds": ["aspect:not-registered"]
+      }
+    },
+    {
+      "caseId": "negative:inactive-rule-classification",
+      "kind": "schema",
+      "schemaName": "classification-result",
+      "requestCaseId": "positive:classification-request",
+      "expectedCodes": ["ASPECT_NOT_ACTIVE", "RESULT_ASPECT_NOT_REQUESTED", "RULE_NOT_ACTIVE"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "policyReleaseId": "governor-runtime:0.1.0",
+        "policyFingerprint": "$POLICY_FINGERPRINT",
+        "sourceFingerprint": "$SOURCE_FINGERPRINT",
+        "requestFingerprint": "$REQUEST_FINGERPRINT",
+        "subjectId": "profile:jupiter:v0.1.1",
+        "facetResults": [
+          {
+            "facetId": "facet:inactive-rayleigh",
+            "requestedAspectId": "aspect:jupiter:symbolic-profile:v1",
+            "outcome": "classified",
+            "aspectId": "aspect:jupiter:rayleigh-descriptive-model:v1",
+            "primaryGovernor": "Jupiter",
+            "evidencePaths": [
+              {
+                "ruleId": "rule:jupiter:rayleigh-descriptive-model:v1",
+                "factIds": ["fact:jupiter-symbol-eagle"],
+                "provenanceSourceIds": ["source:physical-phenomena:0.2.0"]
+              }
+            ]
+          }
+        ],
+        "resultFingerprint": "$RESULT_FINGERPRINT"
+      }
+    },
+    {
+      "caseId": "negative:mismatched-rule-output",
+      "kind": "schema",
+      "schemaName": "classification-result",
+      "requestCaseId": "positive:classification-request",
+      "expectedCodes": ["RESULT_ASPECT_NOT_REQUESTED", "RESULT_RULE_OUTPUT_MISMATCH"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "policyReleaseId": "governor-runtime:0.1.0",
+        "policyFingerprint": "$POLICY_FINGERPRINT",
+        "sourceFingerprint": "$SOURCE_FINGERPRINT",
+        "requestFingerprint": "$REQUEST_FINGERPRINT",
+        "subjectId": "profile:jupiter:v0.1.1",
+        "facetResults": [
+          {
+            "facetId": "facet:mismatched-output",
+            "requestedAspectId": "aspect:jupiter:symbolic-profile:v1",
+            "outcome": "classified",
+            "aspectId": "aspect:jupiter:declared-wavelength:v1",
+            "primaryGovernor": "Jupiter",
+            "evidencePaths": [
+              {
+                "ruleId": "rule:jupiter:symbolic-profile:v1",
+                "factIds": ["fact:jupiter-symbol-eagle"],
+                "provenanceSourceIds": ["source:canonical-governor-profiles:0.1.1"]
+              }
+            ]
+          }
+        ],
+        "resultFingerprint": "$RESULT_FINGERPRINT"
+      }
+    },
+    {
+      "caseId": "negative:forged-policy-fingerprint",
+      "kind": "schema",
+      "schemaName": "classification-result",
+      "requestCaseId": "positive:classification-request",
+      "expectedCodes": ["POLICY_FINGERPRINT_MISMATCH"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "policyReleaseId": "governor-runtime:0.1.0",
+        "policyFingerprint": "0000000000000000000000000000000000000000000000000000000000000000",
+        "sourceFingerprint": "$SOURCE_FINGERPRINT",
+        "requestFingerprint": "$REQUEST_FINGERPRINT",
+        "subjectId": "profile:jupiter:v0.1.1",
+        "facetResults": [
+          {
+            "facetId": "facet:jupiter-symbolic-profile",
+            "requestedAspectId": "aspect:jupiter:symbolic-profile:v1",
+            "outcome": "classified",
+            "aspectId": "aspect:jupiter:symbolic-profile:v1",
+            "primaryGovernor": "Jupiter",
+            "evidencePaths": [
+              {
+                "ruleId": "rule:jupiter:symbolic-profile:v1",
+                "factIds": ["fact:jupiter-symbol-eagle"],
+                "provenanceSourceIds": ["source:canonical-governor-profiles:0.1.1"]
+              }
+            ]
+          }
+        ],
+        "resultFingerprint": "$RESULT_FINGERPRINT"
+      }
+    },
+    {
+      "caseId": "negative:forged-result-fingerprint",
+      "kind": "schema",
+      "schemaName": "classification-result",
+      "requestCaseId": "positive:classification-request",
+      "expectedCodes": ["RESULT_FINGERPRINT_MISMATCH"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "policyReleaseId": "governor-runtime:0.1.0",
+        "policyFingerprint": "$POLICY_FINGERPRINT",
+        "sourceFingerprint": "$SOURCE_FINGERPRINT",
+        "requestFingerprint": "$REQUEST_FINGERPRINT",
+        "subjectId": "profile:jupiter:v0.1.1",
+        "facetResults": [
+          {
+            "facetId": "facet:jupiter-symbolic-profile",
+            "requestedAspectId": "aspect:jupiter:symbolic-profile:v1",
+            "outcome": "classified",
+            "aspectId": "aspect:jupiter:symbolic-profile:v1",
+            "primaryGovernor": "Jupiter",
+            "evidencePaths": [
+              {
+                "ruleId": "rule:jupiter:symbolic-profile:v1",
+                "factIds": ["fact:jupiter-symbol-eagle"],
+                "provenanceSourceIds": ["source:canonical-governor-profiles:0.1.1"]
+              }
+            ]
+          }
+        ],
+        "resultFingerprint": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "caseId": "negative:missing-operation-assumption",
+      "kind": "quantity_operation",
+      "expectedCodes": ["MODEL_ASSUMPTION_MISSING"],
+      "document": {
+        "operationId": "operation:vacuum-wavelength-frequency:v1",
+        "operands": [
+          {
+            "schemaVersion": "1.0.0",
+            "quantityId": "quantity:test:wavelength-for-assumption",
+            "value": 470,
+            "dimension": "length",
+            "unit": "nm",
+            "epistemicClass": "observed_measurement",
+            "basis": {"kind": "observed_measurement", "subjectId": "subject:test", "methodId": "method:test"},
+            "provenance": [{"sourceId": "source:governor-domain-authority:1.0.0"}],
+            "assumptions": []
+          }
+        ],
+        "output": {
+          "schemaVersion": "1.0.0",
+          "quantityId": "quantity:test:frequency-without-assumption",
+          "value": 637856293617021.2,
+          "dimension": "frequency",
+          "unit": "Hz",
+          "epistemicClass": "physically_derived",
+          "basis": {
+            "kind": "registered_operation",
+            "operationId": "operation:vacuum-wavelength-frequency:v1",
+            "inputQuantityIds": ["quantity:test:wavelength-for-assumption"]
+          },
+          "provenance": [{"sourceId": "source:photonic-records:0.1.1"}],
+          "assumptions": []
+        }
+      }
+    },
+    {
+      "caseId": "negative:causal-quantity-epistemic-class",
+      "kind": "schema",
+      "schemaName": "quantity",
+      "expectedCodes": ["ENUM_INVALID"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "quantityId": "quantity:invalid:causal-class",
+        "value": 470,
+        "dimension": "length",
+        "unit": "nm",
+        "epistemicClass": "causal_claim",
+        "basis": {
+          "kind": "registered_operation",
+          "operationId": "operation:length-nm-to-m:v1",
+          "inputQuantityIds": ["quantity:test:source"]
+        },
+        "provenance": [{"sourceId": "source:governor-domain-authority:1.0.0"}],
+        "assumptions": []
+      }
+    },
+    {
+      "caseId": "negative:result-subject-mismatch",
+      "kind": "schema",
+      "schemaName": "classification-result",
+      "requestCaseId": "positive:classification-request",
+      "expectedCodes": ["RESULT_SUBJECT_MISMATCH"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "policyReleaseId": "governor-runtime:0.1.0",
+        "policyFingerprint": "$POLICY_FINGERPRINT",
+        "sourceFingerprint": "$SOURCE_FINGERPRINT",
+        "requestFingerprint": "$REQUEST_FINGERPRINT",
+        "subjectId": "profile:mars:v0.1.1",
+        "facetResults": [
+          {
+            "facetId": "facet:jupiter-symbolic-profile",
+            "requestedAspectId": "aspect:jupiter:symbolic-profile:v1",
+            "outcome": "classified",
+            "aspectId": "aspect:jupiter:symbolic-profile:v1",
+            "primaryGovernor": "Jupiter",
+            "evidencePaths": [
+              {
+                "ruleId": "rule:jupiter:symbolic-profile:v1",
+                "factIds": ["fact:jupiter-symbol-eagle"],
+                "provenanceSourceIds": ["source:canonical-governor-profiles:0.1.1"]
+              }
+            ]
+          }
+        ],
+        "resultFingerprint": "$RESULT_FINGERPRINT"
+      }
+    },
+    {
+      "caseId": "negative:operation-epistemic-mismatch",
+      "kind": "schema",
+      "schemaName": "quantity",
+      "expectedCodes": ["QUANTITY_OPERATION_EPISTEMIC_MISMATCH"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "quantityId": "quantity:invalid:photonic-compression-class",
+        "value": 0.6524822695035462,
+        "dimension": "dimensionless",
+        "unit": "normalized_inverse_wavelength",
+        "epistemicClass": "physically_derived",
+        "basis": {
+          "kind": "registered_operation",
+          "operationId": "operation:photonic-compression:v1",
+          "inputQuantityIds": ["quantity:jupiter:declared-wavelength:v1"]
+        },
+        "provenance": [{"sourceId": "source:photonic-records:0.1.1"}],
+        "assumptions": ["registry_coordinate_not_absolute_physical_endpoint"]
+      }
+    },
+    {
+      "caseId": "negative:result-aspect-not-requested",
+      "kind": "schema",
+      "schemaName": "classification-result",
+      "requestCaseId": "positive:classification-request",
+      "expectedCodes": ["RESULT_ASPECT_NOT_REQUESTED", "RESULT_REQUEST_SET_MISMATCH"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "policyReleaseId": "governor-runtime:0.1.0",
+        "policyFingerprint": "$POLICY_FINGERPRINT",
+        "sourceFingerprint": "$SOURCE_FINGERPRINT",
+        "requestFingerprint": "$REQUEST_FINGERPRINT",
+        "subjectId": "profile:jupiter:v0.1.1",
+        "facetResults": [
+          {
+            "facetId": "facet:jupiter-declared-wavelength",
+            "requestedAspectId": "aspect:jupiter:declared-wavelength:v1",
+            "outcome": "classified",
+            "aspectId": "aspect:jupiter:declared-wavelength:v1",
+            "primaryGovernor": "Jupiter",
+            "evidencePaths": [
+              {
+                "ruleId": "rule:jupiter:declared-wavelength:v1",
+                "factIds": ["fact:jupiter-symbol-eagle"],
+                "provenanceSourceIds": ["source:photonic-records:0.1.1"]
+              }
+            ]
+          }
+        ],
+        "resultFingerprint": "$RESULT_FINGERPRINT"
+      }
+    },
+    {
+      "caseId": "negative:ambiguous-duplicate-candidate",
+      "kind": "schema",
+      "schemaName": "classification-result",
+      "requestCaseId": "positive:classification-request",
+      "expectedCodes": ["RESULT_CANDIDATE_DUPLICATE", "RESULT_RULE_OUTPUT_MISMATCH"],
+      "document": {
+        "schemaVersion": "1.0.0",
+        "policyReleaseId": "governor-runtime:0.1.0",
+        "policyFingerprint": "$POLICY_FINGERPRINT",
+        "sourceFingerprint": "$SOURCE_FINGERPRINT",
+        "requestFingerprint": "$REQUEST_FINGERPRINT",
+        "subjectId": "profile:jupiter:v0.1.1",
+        "facetResults": [
+          {
+            "facetId": "facet:duplicate-candidate",
+            "requestedAspectId": "aspect:jupiter:symbolic-profile:v1",
+            "outcome": "ambiguous",
+            "candidates": [
+              {
+                "aspectId": "aspect:jupiter:symbolic-profile:v1",
+                "primaryGovernor": "Jupiter",
+                "ruleIds": ["rule:jupiter:symbolic-profile:v1"]
+              },
+              {
+                "aspectId": "aspect:jupiter:symbolic-profile:v1",
+                "primaryGovernor": "Jupiter",
+                "ruleIds": [
+                  "rule:jupiter:declared-wavelength:v1",
+                  "rule:jupiter:symbolic-profile:v1"
+                ]
+              }
+            ]
+          }
+        ],
+        "resultFingerprint": "$RESULT_FINGERPRINT"
+      }
+    }
+  ]
+}

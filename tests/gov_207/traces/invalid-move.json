@@ -1,0 +1,35 @@
+{
+  "traceId": "invalid-move",
+  "schemaVersion": "gov-207.trace.v1",
+  "setup": {
+    "taskId": "task:trace-invalid",
+    "phase": "INSPECTED",
+    "data": {},
+    "withClassifier": false,
+    "withGraph": false
+  },
+  "steps": [
+    {
+      "operation": "validate_and_execute_move",
+      "request": {
+        "selectedMove": {
+          "operationId": "operation:does-not-exist",
+          "moveSha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "parameters": {}
+      },
+      "expect": {
+        "status": "rejected",
+        "directiveAction": "list_legal_moves",
+        "reasonCode": "operation_not_legal",
+        "claimableSuccess": false,
+        "ledgerPersisted": false
+      }
+    },
+    {
+      "operation": "inspect_context",
+      "expect": { "status": "ok", "phaseAfter": "INSPECTED" }
+    }
+  ],
+  "expectedFinal": { "phase": "INSPECTED", "mayDeclareSuccess": false }
+}

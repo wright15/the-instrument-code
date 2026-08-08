@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "gov-207.adapter.v1",
+  "adapterId": "generic-json",
+  "adapterVersion": "1.0.0",
+  "bundleId": "seven-governors-gov-207",
+  "bundleVersion": "1.0.0",
+  "semanticApi": {
+    "apiVersion": "gov-207.agent-api.v1",
+    "toolId": "governor.agent_api.invoke",
+    "operations": [
+      "classify_governor",
+      "inspect_context",
+      "list_legal_moves",
+      "validate_and_execute_move",
+      "verify_outcome"
+    ],
+    "requestEnvelope": {
+      "schemaVersion": "gov-207.agent-api.request.v1",
+      "operationField": "operationId",
+      "inputField": "input",
+      "schemaSource": "registry.skill.inputSchema"
+    },
+    "responseEnvelope": {
+      "schemaVersion": "gov-207.agent-api.response.v1",
+      "operationField": "operationId",
+      "outputField": "output",
+      "schemaSource": "registry.skill.outputSchema"
+    },
+    "acceptedFraming": ["json", "jsonl"],
+    "preservedSemanticFields": [
+      "directive",
+      "evidence",
+      "fingerprints",
+      "operationIds",
+      "reasonCodes",
+      "resultCodes"
+    ],
+    "authority": "deterministic-runtime-only"
+  },
+  "discovery": {
+    "mode": "registry-json",
+    "registryPath": "registry.json",
+    "capabilitiesPath": "capabilities.json",
+    "workflowRoot": "workflows",
+    "registryFormat": "json"
+  },
+  "rendering": {
+    "targetPattern": "governor/{skill-slug}/SKILL.md",
+    "copyWorkflowBytes": true,
+    "editHostConfiguration": false
+  },
+  "installation": {
+    "explicitTargetRequired": true,
+    "requiredArguments": ["--adapter", "--target"],
+    "optionalArguments": ["--create-target", "--overwrite-existing", "--update-owned"],
+    "manifestPath": ".seven-governors-gov-207-manifest.json",
+    "rejectSymlinks": true,
+    "rejectPathTraversal": true,
+    "preflightAllFiles": true,
+    "atomicCommit": true
+  }
+}

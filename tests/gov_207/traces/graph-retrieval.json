@@ -1,0 +1,52 @@
+{
+  "traceId": "graph-retrieval",
+  "schemaVersion": "gov-207.trace.v1",
+  "setup": {
+    "taskId": "task:trace-graph",
+    "phase": "INSPECTED",
+    "data": {},
+    "withClassifier": true,
+    "withGraph": true
+  },
+  "steps": [
+    {
+      "operation": "inspect_context",
+      "request": { "includePriorVerifiedOutcomes": true },
+      "expect": {
+        "status": "ok",
+        "namedQueriesContain": ["prior_verified_outcomes"]
+      }
+    },
+    {
+      "operation": "classify_governor",
+      "request": {
+        "classificationRequest": {
+          "schemaVersion": "1.0.0",
+          "policyReleaseId": "governor-runtime:test",
+          "subject": { "subjectId": "subject:test", "subjectType": "domain_entity" },
+          "facts": [
+            {
+              "schemaVersion": "1.0.0",
+              "factId": "fact:test:distribution",
+              "kind": "feature_value",
+              "facetPath": "/process",
+              "featureId": "semantic.thermodynamic_function",
+              "value": "distribution",
+              "epistemicClass": "authored_correspondence",
+              "provenance": [
+                { "sourceId": "source:test:canonical", "pointer": "/facts/test" }
+              ]
+            }
+          ],
+          "quantities": [],
+          "requestedAspectIds": ["aspect:test:distribution:v1"]
+        }
+      },
+      "expect": {
+        "status": "ok",
+        "namedQueriesContain": ["aspect_context", "governor_profile"]
+      }
+    }
+  ],
+  "expectedFinal": { "phase": "INSPECTED" }
+}

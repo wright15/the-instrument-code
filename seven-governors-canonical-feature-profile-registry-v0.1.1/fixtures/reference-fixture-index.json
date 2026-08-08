@@ -1,0 +1,425 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryVersion": "0.1.1",
+  "releaseId": "canonical-profile-registry:0.1.1",
+  "fixtureCount": 4,
+  "generatedAt": "2026-07-30",
+  "fixtures": [
+    {
+      "fixtureId": "fixture:acoustic-confluence",
+      "fixtureClass": "structural_normalization",
+      "evidenceScope": [
+        "harmonic_structure",
+        "office_resolution",
+        "normal_form_confluence"
+      ],
+      "semanticEffectEvidence": false,
+      "label": "Acoustic A1 midpoint confluence",
+      "fixtureType": "exact_midpoint_confluence",
+      "targetStateId": 1749,
+      "targetStateName": "Acoustic",
+      "expectedOffice": "Moon",
+      "routes": [
+        {
+          "routeId": "route:acoustic:2773:L7",
+          "sourceIds": [
+            2773
+          ],
+          "targetId": 1749,
+          "structuralOperatorIds": [
+            "L7"
+          ],
+          "operatorAnnotations": [
+            {
+              "structuralOperatorId": "L7",
+              "semanticOperatorId": "semantic:L7:v0.1.1",
+              "degree": 7,
+              "degreeGovernor": "Moon",
+              "direction": "lower",
+              "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+              "semanticEffectEvidence": false
+            }
+          ],
+          "relationEvidence": [
+            {
+              "sourceId": 2773,
+              "sourceName": "Lydian",
+              "operatorId": "L7",
+              "targetId": 1749,
+              "targetName": "Acoustic",
+              "structuralEvidence": true,
+              "structuralEdgeTypes": [
+                "CONSTRUCTS"
+              ],
+              "fieldEvidence": true,
+              "fieldEdgeTypes": [
+                "AUDITED_HAMMING2"
+              ],
+              "applicationStatus": "formal_substrate_observed"
+            }
+          ],
+          "note": "Exact A1 midpoint route.",
+          "excludedFromIntrinsicFingerprint": true
+        },
+        {
+          "routeId": "route:acoustic:1717:R4",
+          "sourceIds": [
+            1717
+          ],
+          "targetId": 1749,
+          "structuralOperatorIds": [
+            "R4"
+          ],
+          "operatorAnnotations": [
+            {
+              "structuralOperatorId": "R4",
+              "semanticOperatorId": "semantic:R4:v0.1.1",
+              "degree": 4,
+              "degreeGovernor": "Sun",
+              "direction": "raise",
+              "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+              "semanticEffectEvidence": false
+            }
+          ],
+          "relationEvidence": [
+            {
+              "sourceId": 1717,
+              "sourceName": "Mixolydian",
+              "operatorId": "R4",
+              "targetId": 1749,
+              "targetName": "Acoustic",
+              "structuralEvidence": true,
+              "structuralEdgeTypes": [
+                "CONSTRUCTS"
+              ],
+              "fieldEvidence": true,
+              "fieldEdgeTypes": [
+                "AUDITED_HAMMING2"
+              ],
+              "applicationStatus": "formal_substrate_observed"
+            }
+          ],
+          "note": "Exact A1 midpoint route.",
+          "excludedFromIntrinsicFingerprint": true
+        }
+      ],
+      "normalFormFingerprint": "8077327cc0f809b85ab5379daefb0ab0dd61f4f7f1e52baf0e2020a68054652c",
+      "assertion": "Lydian --L7--> Acoustic and Mixolydian --R4--> Acoustic compile to the same intrinsic Moon-office packet.",
+      "status": "passed"
+    },
+    {
+      "fixtureId": "fixture:harmonic-minor-satellite",
+      "fixtureClass": "structural_normalization",
+      "evidenceScope": [
+        "harmonic_structure",
+        "state_degree_governor_separation",
+        "office_resolution"
+      ],
+      "semanticEffectEvidence": false,
+      "label": "Harmonic Minor direct satellite",
+      "fixtureType": "direct_satellite_inheritance",
+      "targetStateId": 2477,
+      "targetStateName": "Harmonic Minor",
+      "expectedOffice": "Jupiter",
+      "routes": [
+        {
+          "routeId": "route:harmonic-minor:aeolian:R7",
+          "sourceIds": [
+            1453
+          ],
+          "targetId": 2477,
+          "structuralOperatorIds": [
+            "R7"
+          ],
+          "operatorAnnotations": [
+            {
+              "structuralOperatorId": "R7",
+              "semanticOperatorId": "semantic:R7:v0.1.1",
+              "degree": 7,
+              "degreeGovernor": "Moon",
+              "direction": "raise",
+              "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+              "semanticEffectEvidence": false
+            }
+          ],
+          "relationEvidence": [
+            {
+              "sourceId": 1453,
+              "sourceName": "Aeolian",
+              "operatorId": "R7",
+              "targetId": 2477,
+              "targetName": "Harmonic Minor",
+              "structuralEvidence": true,
+              "structuralEdgeTypes": [
+                "GOVERNS"
+              ],
+              "fieldEvidence": true,
+              "fieldEdgeTypes": [
+                "AUDITED_HAMMING2"
+              ],
+              "applicationStatus": "formal_substrate_observed"
+            }
+          ],
+          "note": "Direct A0 satellite inheritance.",
+          "excludedFromIntrinsicFingerprint": true
+        }
+      ],
+      "normalFormFingerprint": "c45ac3b92d76b6b13521b16adafececca9f94da7b63db8810211e4aee9b636a6",
+      "assertion": "Aeolian --R7--> Harmonic Minor retains the Jupiter State Governor while the edge records Moon as Degree Governor.",
+      "status": "passed"
+    },
+    {
+      "fixtureId": "fixture:lydian-minor-midpoint",
+      "fixtureClass": "structural_normalization",
+      "evidenceScope": [
+        "harmonic_structure",
+        "office_resolution",
+        "normal_form_confluence"
+      ],
+      "semanticEffectEvidence": false,
+      "label": "Lydian Minor A2 midpoint confluence",
+      "fixtureType": "exact_midpoint_confluence",
+      "targetStateId": 1493,
+      "targetStateName": "Lydian Minor",
+      "expectedOffice": "Mars",
+      "routes": [
+        {
+          "routeId": "route:lydian-minor:1749:L6",
+          "sourceIds": [
+            1749
+          ],
+          "targetId": 1493,
+          "structuralOperatorIds": [
+            "L6"
+          ],
+          "operatorAnnotations": [
+            {
+              "structuralOperatorId": "L6",
+              "semanticOperatorId": "semantic:L6:v0.1.1",
+              "degree": 6,
+              "degreeGovernor": "Mercury",
+              "direction": "lower",
+              "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+              "semanticEffectEvidence": false
+            }
+          ],
+          "relationEvidence": [
+            {
+              "sourceId": 1749,
+              "sourceName": "Acoustic",
+              "operatorId": "L6",
+              "targetId": 1493,
+              "targetName": "Lydian Minor",
+              "structuralEvidence": true,
+              "structuralEdgeTypes": [
+                "CONSTRUCTS"
+              ],
+              "fieldEvidence": true,
+              "fieldEdgeTypes": [
+                "AUDITED_HAMMING2"
+              ],
+              "applicationStatus": "formal_substrate_observed"
+            }
+          ],
+          "note": "Exact A2 midpoint route.",
+          "excludedFromIntrinsicFingerprint": true
+        },
+        {
+          "routeId": "route:lydian-minor:1461:R4",
+          "sourceIds": [
+            1461
+          ],
+          "targetId": 1493,
+          "structuralOperatorIds": [
+            "R4"
+          ],
+          "operatorAnnotations": [
+            {
+              "structuralOperatorId": "R4",
+              "semanticOperatorId": "semantic:R4:v0.1.1",
+              "degree": 4,
+              "degreeGovernor": "Sun",
+              "direction": "raise",
+              "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+              "semanticEffectEvidence": false
+            }
+          ],
+          "relationEvidence": [
+            {
+              "sourceId": 1461,
+              "sourceName": "Mixolydian ♭6",
+              "operatorId": "R4",
+              "targetId": 1493,
+              "targetName": "Lydian Minor",
+              "structuralEvidence": true,
+              "structuralEdgeTypes": [
+                "CONSTRUCTS"
+              ],
+              "fieldEvidence": true,
+              "fieldEdgeTypes": [
+                "AUDITED_HAMMING2"
+              ],
+              "applicationStatus": "formal_substrate_observed"
+            }
+          ],
+          "note": "Exact A2 midpoint route.",
+          "excludedFromIntrinsicFingerprint": true
+        }
+      ],
+      "normalFormFingerprint": "63194a258f2a928bb669b60386a1066baefb35488b2e04266f2603bb8c0cbd62",
+      "assertion": "Acoustic --L6--> Lydian Minor and Mixolydian ♭6 --R4--> Lydian Minor compile to the same intrinsic Mars-office packet.",
+      "status": "passed"
+    },
+    {
+      "fixtureId": "fixture:aeolian-modal-covariance",
+      "fixtureClass": "structural_normalization",
+      "evidenceScope": [
+        "harmonic_structure",
+        "modal_covariance",
+        "normal_form_confluence"
+      ],
+      "semanticEffectEvidence": false,
+      "label": "Aeolian mutation/modal covariance square",
+      "fixtureType": "modal_covariance_confluence",
+      "targetStateId": 1643,
+      "targetStateName": "Locrian ♮6",
+      "expectedOffice": "Saturn",
+      "routes": [
+        {
+          "routeId": "route:aeolian-square:R7-M",
+          "sourceIds": [
+            1453,
+            2477
+          ],
+          "targetId": 1643,
+          "structuralOperatorIds": [
+            "R7",
+            "M"
+          ],
+          "operatorAnnotations": [
+            {
+              "structuralOperatorId": "R7",
+              "semanticOperatorId": "semantic:R7:v0.1.1",
+              "degree": 7,
+              "degreeGovernor": "Moon",
+              "direction": "raise",
+              "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+              "semanticEffectEvidence": false
+            },
+            {
+              "structuralOperatorId": "M",
+              "semanticOperatorId": "semantic:M:v0.1.1",
+              "degree": null,
+              "degreeGovernor": null,
+              "direction": "successor",
+              "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+              "semanticEffectEvidence": false
+            }
+          ],
+          "relationEvidence": [
+            {
+              "sourceId": 1453,
+              "sourceName": "Aeolian",
+              "operatorId": "R7",
+              "targetId": 2477,
+              "targetName": "Harmonic Minor",
+              "structuralEvidence": true,
+              "structuralEdgeTypes": [
+                "GOVERNS"
+              ],
+              "fieldEvidence": true,
+              "fieldEdgeTypes": [
+                "AUDITED_HAMMING2"
+              ],
+              "applicationStatus": "formal_substrate_observed"
+            },
+            {
+              "sourceId": 2477,
+              "sourceName": "Harmonic Minor",
+              "operatorId": "M",
+              "targetId": 1643,
+              "targetName": "Locrian ♮6",
+              "structuralEvidence": false,
+              "structuralEdgeTypes": [],
+              "fieldEvidence": false,
+              "fieldEdgeTypes": [],
+              "applicationStatus": "formal_substrate_observed"
+            }
+          ],
+          "note": "Raise Aeolian Degree 7, then apply modal successor.",
+          "excludedFromIntrinsicFingerprint": true
+        },
+        {
+          "routeId": "route:aeolian-square:M-R6",
+          "sourceIds": [
+            1453,
+            1387
+          ],
+          "targetId": 1643,
+          "structuralOperatorIds": [
+            "M",
+            "R6"
+          ],
+          "operatorAnnotations": [
+            {
+              "structuralOperatorId": "M",
+              "semanticOperatorId": "semantic:M:v0.1.1",
+              "degree": null,
+              "degreeGovernor": null,
+              "direction": "successor",
+              "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+              "semanticEffectEvidence": false
+            },
+            {
+              "structuralOperatorId": "R6",
+              "semanticOperatorId": "semantic:R6:v0.1.1",
+              "degree": 6,
+              "degreeGovernor": "Mercury",
+              "direction": "raise",
+              "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+              "semanticEffectEvidence": false
+            }
+          ],
+          "relationEvidence": [
+            {
+              "sourceId": 1453,
+              "sourceName": "Aeolian",
+              "operatorId": "M",
+              "targetId": 1387,
+              "targetName": "Locrian",
+              "structuralEvidence": true,
+              "structuralEdgeTypes": [
+                "MODAL_SUCCESSOR"
+              ],
+              "fieldEvidence": false,
+              "fieldEdgeTypes": [],
+              "applicationStatus": "formal_substrate_observed"
+            },
+            {
+              "sourceId": 1387,
+              "sourceName": "Locrian",
+              "operatorId": "R6",
+              "targetId": 1643,
+              "targetName": "Locrian ♮6",
+              "structuralEvidence": true,
+              "structuralEdgeTypes": [
+                "GOVERNS"
+              ],
+              "fieldEvidence": true,
+              "fieldEdgeTypes": [
+                "AUDITED_HAMMING2"
+              ],
+              "applicationStatus": "formal_substrate_observed"
+            }
+          ],
+          "note": "Apply modal successor, then raise the covariant Degree 6.",
+          "excludedFromIntrinsicFingerprint": true
+        }
+      ],
+      "normalFormFingerprint": "7fa303b646a8d9247261f0d48875e2dd8e9cf07e33b52f650b698f273cbc1e09",
+      "assertion": "M∘R7(Aeolian) and R6∘M(Aeolian) both compile as Locrian ♮6 with one intrinsic Saturn-office packet.",
+      "status": "passed"
+    }
+  ],
+  "suiteFingerprint": "f2b3ccce5c4acd9ba833ac4c0afa337a866680d9efb3883e4515858bcdade1d8"
+}

@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/schemas/physical-phenomena.schema.json",
+  "title": "Seven Governors Physical Phenomena Registry",
+  "type": "object",
+  "required": [
+    "physical_phenomena"
+  ],
+  "properties": {
+    "physical_phenomena": {
+      "type": "object",
+      "required": [
+        "admission",
+        "schema_version",
+        "registry_version",
+        "assignment_policy",
+        "governor_registry"
+      ],
+      "properties": {
+        "schema_version": {
+          "type": "string"
+        },
+        "registry_version": {
+          "type": "string"
+        },
+        "registry_id": {
+          "type": "string"
+        },
+        "status": {
+          "const": "framework_declared_descriptive_models"
+        },
+        "assignment_policy": {
+          "type": "object",
+          "required": [
+            "assignment_type",
+            "exclusivity_scope",
+            "epistemic_class",
+            "physical_causation_claim"
+          ],
+          "properties": {
+            "assignment_type": {
+              "const": "exclusive_primary_descriptive_model"
+            },
+            "exclusivity_scope": {
+              "const": "seven_governors_framework"
+            },
+            "epistemic_class": {
+              "const": "authored_descriptive_model"
+            },
+            "physical_causation_claim": {
+              "const": false
+            }
+          },
+          "additionalProperties": true
+        },
+        "governor_registry": {
+          "type": "object",
+          "required": [
+            "sun",
+            "moon",
+            "mars",
+            "mercury",
+            "jupiter",
+            "venus",
+            "saturn"
+          ],
+          "properties": {
+            "sun": {
+              "$ref": "#/$defs/model"
+            },
+            "moon": {
+              "$ref": "#/$defs/model"
+            },
+            "mars": {
+              "$ref": "#/$defs/model"
+            },
+            "mercury": {
+              "$ref": "#/$defs/model"
+            },
+            "jupiter": {
+              "$ref": "#/$defs/model"
+            },
+            "venus": {
+              "$ref": "#/$defs/model"
+            },
+            "saturn": {
+              "$ref": "#/$defs/model"
+            }
+          },
+          "additionalProperties": false
+        },
+        "admission": {
+          "const": "proposed"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "model": {
+      "type": "object",
+      "required": [
+        "phenomenon_id",
+        "display_name",
+        "governor_office",
+        "primary",
+        "assignment_type",
+        "exclusivity_scope",
+        "epistemic_class",
+        "physical_scope",
+        "physical_behavior",
+        "reference_formula",
+        "assumptions",
+        "semantic_affordances",
+        "prohibited_inferences",
+        "scientific_sources"
+      ],
+      "properties": {
+        "phenomenon_id": {
+          "type": "string",
+          "pattern": "^phenomenon:"
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "governor_office": {
+          "enum": [
+            "Sun",
+            "Moon",
+            "Mars",
+            "Mercury",
+            "Jupiter",
+            "Venus",
+            "Saturn"
+          ]
+        },
+        "primary": {
+          "const": true
+        },
+        "assignment_type": {
+          "const": "exclusive_primary_descriptive_model"
+        },
+        "exclusivity_scope": {
+          "const": "seven_governors_framework"
+        },
+        "epistemic_class": {
+          "const": "authored_descriptive_model"
+        },
+        "physical_scope": {
+          "type": "string",
+          "minLength": 20
+        },
+        "physical_behavior": {
+          "type": "string",
+          "minLength": 20
+        },
+        "reference_formula": {
+          "type": "object"
+        },
+        "assumptions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "semantic_affordances": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "prohibited_inferences": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "scientific_sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

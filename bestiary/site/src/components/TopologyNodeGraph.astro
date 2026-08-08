@@ -1,0 +1,196 @@
+---
+import { relationsFor, stateById } from "../lib/bestiary";
+import DetailSection from "./detail/DetailSection.astro";
+
+interface Props {
+  nodeId: number;
+}
+
+const { nodeId } = Astro.props;
+const { incoming, outgoing } = relationsFor(nodeId);
+const edges = [...incoming, ...outgoing];
+const neighborIds = [
+  ...new Set(
+    edges
+      .flatMap((edge) => [edge.source, edge.target])
+      .filter((id) => id !== nodeId),
+  ),
+].sort((a, b) => a - b);
+
+const nodes = [nodeId, ...neighborIds].map((id) => {
+  const state = stateById(id);
+  return {
+    id,
+    label: state ? `${id} ${state.name}` : String(id),
+    office: state?.office ?? null,
+    isSelf: id === nodeId,
+  };
+});
+
+const graphPayload = {
+  nodeId,
+  nodes,
+  edges: edges.map((edge) => ({
+    id: edge.id,
+    from: edge.source,
+    to: edge.target,
+    type: edge.type,
+    directed: edge.directed,
+    mode: edge.mode,
+    mutation: edge.mutation,
+    degree: edge.degree,
+    hamming: edge.hamming,
+    governing: edge.governing,
+    provenance: edge.provenance,
+  })),
+};
+---
+
+<DetailSection
+  title="Topology"
+  description={`Ego graph of state ${nodeId}: ${neighborIds.length} neighbor${neighborIds.length === 1 ? "" : "s"} connected by ${edges.length} relationships (structural + field). Drag to pan, scroll to zoom, click a node to open it.`}
+>
+  <div
+    id="topology-graph"
+    data-node-id={nodeId}
+    class="h-[420px] w-full rounded border border-edge bg-raised"
+  ></div>
+  <noscript>
+    <p class="mt-2 text-xs text-muted">
+      Interactive topology requires JavaScript.{" "}
+      {neighborIds.map((id) => stateById(id)?.name).filter(Boolean).join(", ") || "No neighbors"}
+    </p>
+  </noscript>
+  <script
+    id="topology-graph-payload"
+    type="application/json"
+    set:html={JSON.stringify(graphPayload)}
+  ></script>
+</DetailSection>
+
+<script>
+  import vendorSource from "../../../../graph/vendor/vis-network.min.js?raw";
+
+  (0, eval)(vendorSource);
+
+  const container = document.getElementById("topology-graph") as HTMLElement;
+  if (container) {
+    const payloadElement = document.getElementById(
+      "topology-graph-payload",
+    ) as HTMLScriptElement;
+    const payload = JSON.parse(payloadElement.textContent ?? "{}") as {
+      nodeId: number;
+      nodes: { id: number; label: string; office: string | null; isSelf: boolean }[];
+      edges: {
+        id: string;
+        from: number;
+        to: number;
+        type: string;
+        directed: boolean;
+        mode: string | null;
+        mutation: string | null;
+        degree: number | null;
+        hamming: number | null;
+        governing: boolean;
+        provenance: string;
+      }[];
+    };
+
+    const officeColors: Record<string, string> = {
+      Sun: "#FF4444",
+      Moon: "#FF8C00",
+      Mars: "#FFD700",
+      Mercury: "#44BB44",
+      Jupiter: "#4488FF",
+      Venus: "#8B008B",
+      Saturn: "#9400D3",
+    };
+
+    const edgeColors: Record<string, string> = {
+      GOVERNS: "#8CF",
+      MODAL_SUCCESSOR: "#34D399",
+      CONSTRUCTS: "#FBBF24",
+      SEAT_CONTACT: "#C084FC",
+      PHASE_SHIFT: "#888888",
+      AUDITED_HAMMING2: "#555555",
+    };
+
+    const edgeDash: Record<string, number[]> = {
+      AUDITED_HAMMING2: [4, 4],
+      PHASE_SHIFT: [2, 3],
+      SEAT_CONTACT: [1, 2],
+    };
+
+    const vis = (window as { vis?: unknown }).vis as {
+      Network: new (
+        container: HTMLElement,
+        data: { nodes: unknown; edges: unknown },
+        options: Record<string, unknown>,
+      ) => { on: (event: string, cb: (params: { nodes: number[] }) => void) => void };
+      DataSet: new <T>(items?: T[]) => unknown;
+    };
+
+    const nodeIds = new Set(payload.nodes.map((node) => node.id));
+    const visNodes = payload.nodes.map((node) => ({
+      id: node.id,
+      label: node.label,
+      color: node.isSelf
+        ? { background: "#8CF", border: "#e0e0e0", highlight: { background: "#8CF", border: "#ffffff" } }
+        : node.office
+          ? { background: officeColors[node.office] ?? "#888888", border: "#e0e0e0", highlight: { background: officeColors[node.office] ?? "#888888", border: "#ffffff" } }
+          : { background: "#555555", border: "#888888", highlight: { background: "#555555", border: "#ffffff" } },
+      size: node.isSelf ? 26 : 16,
+      borderWidth: node.isSelf ? 3 : 1,
+      font: { color: "#e0e0e0", size: 11 },
+      shape: "dot",
+    }));
+
+    const visEdges = payload.edges
+      .filter((edge) => nodeIds.has(edge.from) && nodeIds.has(edge.to))
+      .map((edge) => ({
+        id: edge.id,
+        from: edge.from,
+        to: edge.to,
+        label:
+          edge.type === "GOVERNS" || edge.type === "SEAT_CONTACT"
+            ? `${edge.type}${edge.degree !== null ? ` d${edge.degree}` : ""}`
+            : edge.type === "MODAL_SUCCESSOR"
+              ? `${edge.type}${edge.mutation ? ` ${edge.mutation}` : ""}`
+              : edge.type === "CONSTRUCTS"
+                ? `${edge.type}${edge.mode ? ` ${edge.mode}` : ""}`
+                : `${edge.type}${edge.hamming !== null ? ` h${edge.hamming}` : ""}`,
+        color: { color: edgeColors[edge.type] ?? "#888888", highlight: edgeColors[edge.type] ?? "#888888", opacity: 0.8 },
+        dashes: edgeDash[edge.type],
+        arrows: edge.directed ? { to: { enabled: true, scaleFactor: 0.6 } } : undefined,
+        width: edge.governing ? 2.4 : 1,
+        font: { color: "#888888", size: 9, strokeWidth: 0 },
+        smooth: { enabled: true, type: "continuous", roundness: 0.4 },
+      }));
+
+    const network = new vis.Network(
+      container,
+      { nodes: new vis.DataSet(visNodes), edges: new vis.DataSet(visEdges) },
+      {
+        physics: {
+          enabled: true,
+          stabilization: { iterations: 300 },
+          barnesHut: {
+            gravitationalConstant: -4000,
+            springLength: 130,
+            springConstant: 0.06,
+            damping: 0.45,
+          },
+        },
+        interaction: { hover: true, tooltipDelay: 150, dragView: true, zoomView: true },
+        nodes: { font: { color: "#e0e0e0" } },
+      },
+    );
+
+    network.on("click", (params) => {
+      const clicked = params.nodes[0];
+      if (typeof clicked === "number" && clicked !== payload.nodeId) {
+        window.location.href = `/archetypes/state:${clicked}`;
+      }
+    });
+  }
+</script>

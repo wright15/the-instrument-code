@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/gov-207/schemas/upstream/classification-result.schema.json",
+  "$comment": "Strict local equivalent of https://seven-governors.local/governor-runtime/0.1.0/schemas/classification-result.schema.json.",
+  "title": "GOV-207 Vendored ClassificationResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "policyReleaseId",
+    "policyFingerprint",
+    "sourceFingerprint",
+    "requestFingerprint",
+    "subjectId",
+    "facetResults",
+    "resultFingerprint"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "policyReleaseId": { "const": "governor-runtime:0.1.0" },
+    "policyFingerprint": { "$ref": "../common.schema.json#/$defs/sha256" },
+    "sourceFingerprint": { "$ref": "../common.schema.json#/$defs/sha256" },
+    "requestFingerprint": { "$ref": "../common.schema.json#/$defs/sha256" },
+    "subjectId": { "$ref": "../common.schema.json#/$defs/identifier" },
+    "facetResults": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": {
+        "oneOf": [
+          { "$ref": "#/$defs/classifiedResult" },
+          { "$ref": "#/$defs/ambiguousResult" },
+          { "$ref": "#/$defs/unresolvedResult" },
+          { "$ref": "#/$defs/invalidResult" }
+        ]
+      }
+    },
+    "resultFingerprint": { "$ref": "../common.schema.json#/$defs/sha256" }
+  },
+  "$defs": {
+    "governor": {
+      "enum": ["Jupiter", "Mars", "Mercury", "Moon", "Saturn", "Sun", "Venus"]
+    },
+    "evidencePath": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ruleId", "factIds", "provenanceSourceIds"],
+      "properties": {
+        "ruleId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "factIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": { "$ref": "../common.schema.json#/$defs/identifier" }
+        },
+        "provenanceSourceIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": { "$ref": "../common.schema.json#/$defs/identifier" }
+        }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["aspectId", "primaryGovernor", "ruleIds"],
+      "properties": {
+        "aspectId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "primaryGovernor": { "$ref": "#/$defs/governor" },
+        "ruleIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": { "$ref": "../common.schema.json#/$defs/identifier" }
+        }
+      }
+    },
+    "classifiedResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "facetId",
+        "requestedAspectId",
+        "outcome",
+        "aspectId",
+        "primaryGovernor",
+        "evidencePaths"
+      ],
+      "properties": {
+        "facetId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "requestedAspectId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "outcome": { "const": "classified" },
+        "aspectId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "primaryGovernor": { "$ref": "#/$defs/governor" },
+        "evidencePaths": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "items": { "$ref": "#/$defs/evidencePath" }
+        }
+      }
+    },
+    "ambiguousResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["facetId", "requestedAspectId", "outcome", "candidates"],
+      "properties": {
+        "facetId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "requestedAspectId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "outcome": { "const": "ambiguous" },
+        "candidates": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/candidate" }
+        }
+      }
+    },
+    "unresolvedResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["facetId", "requestedAspectId", "outcome", "reasonCodes"],
+      "properties": {
+        "facetId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "requestedAspectId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "outcome": { "const": "unresolved" },
+        "reasonCodes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": { "$ref": "../common.schema.json#/$defs/identifier" }
+        }
+      }
+    },
+    "invalidResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["facetId", "requestedAspectId", "outcome", "errorCodes"],
+      "properties": {
+        "facetId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "requestedAspectId": { "$ref": "../common.schema.json#/$defs/identifier" },
+        "outcome": { "const": "invalid" },
+        "errorCodes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": { "$ref": "../common.schema.json#/$defs/identifier" }
+        }
+      }
+    }
+  }
+}

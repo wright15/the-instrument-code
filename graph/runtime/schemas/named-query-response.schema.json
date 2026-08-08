@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/gov-206/named-query-response.schema.json",
+  "title": "GOV-206 Named Query Response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "queryId", "queryVersion", "projectionFingerprint", "requestFingerprint", "resultFingerprint", "data"],
+  "properties": {
+    "schemaVersion": { "const": "gov-206.named-query-response.v1" },
+    "queryId": { "enum": ["aspect_context", "governor_profile", "rule_explanation", "legal_move_context", "provenance_path", "prior_verified_outcomes"] },
+    "queryVersion": { "const": "1.0.0" },
+    "projectionFingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "requestFingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "resultFingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "data": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "value"],
+          "properties": {
+            "mode": { "const": "scalar" },
+            "value": { "type": ["object", "null"] }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "columns", "rowCount", "rows"],
+          "properties": {
+            "mode": { "const": "tabular" },
+            "columns": { "type": "array", "items": { "type": "string" } },
+            "rowCount": { "type": "integer", "minimum": 0, "maximum": 100 },
+            "rows": { "type": "array", "maxItems": 100 }
+          }
+        }
+      ]
+    }
+  },
+  "not": { "anyOf": [{ "required": ["cypher"] }, { "required": ["provider"] }] }
+}

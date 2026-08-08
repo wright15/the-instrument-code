@@ -1,0 +1,38 @@
+{
+  "traceId": "legal-mutation",
+  "schemaVersion": "gov-207.trace.v1",
+  "setup": {
+    "taskId": "task:trace-mutation",
+    "phase": "INSPECTED",
+    "data": {},
+    "withClassifier": false,
+    "withGraph": false
+  },
+  "steps": [
+    {
+      "operation": "list_legal_moves",
+      "expect": { "status": "ok", "movesContain": ["operation:inspect-context"] }
+    },
+    {
+      "operation": "validate_and_execute_move",
+      "request": {
+        "selectedMove": {
+          "operationId": "operation:inspect-context",
+          "moveSha256": "${moveSha256:operation:inspect-context}"
+        },
+        "parameters": { "target": "canonical-docs" }
+      },
+      "expect": {
+        "status": "verified",
+        "claimableSuccess": true,
+        "phaseAfter": "PROPOSED",
+        "ledgerPersisted": true
+      }
+    },
+    {
+      "operation": "inspect_context",
+      "expect": { "status": "ok", "phaseAfter": "PROPOSED" }
+    }
+  ],
+  "expectedFinal": { "phase": "PROPOSED", "mayDeclareSuccess": true }
+}

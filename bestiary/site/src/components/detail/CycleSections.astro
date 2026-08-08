@@ -1,0 +1,140 @@
+---
+import type { ModalCycle } from "../../lib/bestiary";
+import {
+  archetypeHref,
+  familyForForte,
+  officeColors,
+  stateById,
+  stateHref,
+} from "../../lib/bestiary";
+import DetailSection from "./DetailSection.astro";
+import PitchSetDial from "../PitchSetDial.astro";
+
+interface Props {
+  archetype: ModalCycle;
+}
+
+const { archetype } = Astro.props;
+const family = familyForForte(archetype.forte);
+const representative = stateById(archetype.representativeStateId);
+const members = archetype.memberStateIds.map((nodeId) => stateById(nodeId)).filter(Boolean);
+---
+
+<div class="flex flex-col gap-4">
+  {representative?.pitchSetPcs && representative.pitchSetMask !== null && (
+    <DetailSection
+      title="Pitch set"
+      description={`Representative dial from cycle state ${representative.nodeId} ${representative.name}.`}
+    >
+      <div class="flex justify-center">
+        <PitchSetDial
+          pcs={representative.pitchSetPcs}
+          mask={representative.pitchSetMask}
+          office={representative.office}
+        />
+      </div>
+    </DetailSection>
+  )}
+  <DetailSection title="Identity">
+    <dl class="grid grid-cols-2 gap-x-6 gap-y-2 text-xs md:grid-cols-3">
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">forte</dt>
+        <dd>
+          {family ? (
+            <a class="text-accent hover:underline" href={archetypeHref(family.id)}>
+              {archetype.forte}
+            </a>
+          ) : (
+            <span class="font-mono text-frost/90">{archetype.forte}</span>
+          )}
+        </dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">role</dt>
+        <dd class="font-mono text-frost/90">{archetype.role}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">fine role</dt>
+        <dd class="font-mono text-frost/90">{archetype.fineRole}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">tier</dt>
+        <dd class="font-mono text-frost/90">{archetype.tier}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">orientation</dt>
+        <dd class="font-mono text-frost/90">{archetype.orientation ?? "—"}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">chirality</dt>
+        <dd class="font-mono text-frost/90">{archetype.chirality ?? "—"}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">cycle length</dt>
+        <dd class="font-mono text-frost/90">{archetype.cycleLength}</dd>
+      </div>
+      <div class="flex justify-between gap-2 border-b border-edge pb-1">
+        <dt class="text-muted">representative</dt>
+        <dd>
+          {representative ? (
+            <a class="text-accent hover:underline" href={stateHref(representative.nodeId)}>
+              {representative.nodeId} {representative.name}
+            </a>
+          ) : (
+            <span class="font-mono text-frost/90">{archetype.representativeStateId}</span>
+          )}
+        </dd>
+      </div>
+      {archetype.officeBearing && (
+        <div class="flex justify-between gap-2 border-b border-edge pb-1">
+          <dt class="text-muted">office bearing</dt>
+          <dd class="font-mono text-frost/90">yes</dd>
+        </div>
+      )}
+    </dl>
+  </DetailSection>
+
+  {archetype.officeBearing && archetype.officeSequence && (
+    <DetailSection
+      title="Office sequence"
+      description="Order in which the offices are visited around the cycle."
+    >
+      <div class="flex flex-wrap items-center gap-2">
+        {archetype.officeSequence.map((office, index) => (
+          <span key={`${office}-${index}`} class="flex items-center gap-2">
+            <span
+              class="flex items-center gap-1.5 rounded-full border border-edge bg-raised px-2 py-1 text-[11px] text-frost"
+            >
+              <span
+                class="size-2 rounded-full"
+                style={`background: ${officeColors[office] ?? "#888888"}`}
+              ></span>
+              {office}
+            </span>
+            {index < archetype.officeSequence.length - 1 && (
+              <span class="font-mono text-[10px] text-muted">
+                +{archetype.officeDeltaSequence?.[index] ?? "?"}
+              </span>
+            )}
+          </span>
+        ))}
+      </div>
+    </DetailSection>
+  )}
+
+  <DetailSection
+    title="Members"
+    description={`The ${members.length} states traversed by this modal cycle.`}
+  >
+    <div class="flex flex-wrap gap-2">
+      {members.map((member) => (
+        <a
+          class="rounded border border-edge bg-raised px-2 py-1 text-[11px] text-frost transition-colors hover:border-accent/50 hover:text-accent"
+          href={stateHref(member.nodeId)}
+        >
+          <span class="font-mono">{member.nodeId}</span> {member.name}
+        </a>
+      ))}
+    </div>
+  </DetailSection>
+</div>

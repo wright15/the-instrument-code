@@ -1,0 +1,21 @@
+{
+  "name": "seven-governors-mutation-algebra-audit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Reproducible graph-derived structural mutation algebra audit for the Seven Governors network.",
+  "scripts": {
+    "audit": "node scripts/run-mutation-algebra-audit.mjs",
+    "validate": "npm run audit && npm run validate:schema && npm run validate:cypher",
+    "validate:schema": "node scripts/validate-operator-registry.mjs",
+    "validate:cypher": "node scripts/validate-cypher-syntax.mjs",
+    "manifest": "node scripts/build-package-manifest.mjs"
+  },
+  "devDependencies": {
+    "@neo4j-cypher/language-support": "2.0.0-next.6",
+    "ajv": "8.17.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

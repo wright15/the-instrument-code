@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/gov-207/schemas/capabilities.schema.json",
+  "title": "GOV-207 Closed Capability Grants",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "bundleId",
+    "bundleVersion",
+    "defaultPolicy",
+    "grants",
+    "forbidden"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "gov-207.capabilities.v1" },
+    "bundleId": { "const": "seven-governors-gov-207" },
+    "bundleVersion": { "const": "1.0.0" },
+    "defaultPolicy": { "const": "deny" },
+    "grants": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": { "$ref": "#/$defs/grant" }
+    },
+    "forbidden": { "$ref": "#/$defs/forbidden" }
+  },
+  "$defs": {
+    "skillId": {
+      "enum": [
+        "classify_governor",
+        "inspect_context",
+        "list_legal_moves",
+        "validate_and_execute_move",
+        "verify_outcome"
+      ]
+    },
+    "operationId": { "$ref": "#/$defs/skillId" },
+    "queryId": {
+      "enum": [
+        "aspect_context",
+        "governor_profile",
+        "legal_move_context",
+        "prior_verified_outcomes",
+        "provenance_path",
+        "rule_explanation"
+      ]
+    },
+    "dynamicBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bindingId", "sourceField", "menuField", "requirements"],
+      "properties": {
+        "bindingId": { "const": "selected_move_capability" },
+        "sourceField": { "const": "selectedMove.operationId" },
+        "menuField": { "const": "moves.capability" },
+        "requirements": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "host_grant",
+              "registered_executor",
+              "registered_operation",
+              "registered_verifier",
+              "state_grant",
+              "trusted_menu_match"
+            ]
+          }
+        }
+      }
+    },
+    "grant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "skillId",
+        "tools",
+        "operations",
+        "namedQueries",
+        "capabilities",
+        "dynamicBindings",
+        "effectPolicy"
+      ],
+      "properties": {
+        "skillId": { "$ref": "#/$defs/skillId" },
+        "tools": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": { "const": "governor.agent_api.invoke" }
+        },
+        "operations": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": { "$ref": "#/$defs/operationId" }
+        },
+        "namedQueries": {
+          "type": "array",
+          "maxItems": 6,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/queryId" }
+        },
+        "capabilities": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 16,
+          "uniqueItems": true,
+          "items": { "$ref": "common.schema.json#/$defs/identifier" }
+        },
+        "dynamicBindings": {
+          "type": "array",
+          "maxItems": 1,
+          "items": { "$ref": "#/$defs/dynamicBinding" }
+        },
+        "effectPolicy": {
+          "enum": ["read-only", "runtime-authorized-external-effect", "runtime-authorized-transition"]
+        }
+      }
+    },
+    "forbidden": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tools", "operations", "claims"],
+      "properties": {
+        "tools": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": { "enum": ["raw_cypher", "raw_shell"] }
+        },
+        "operations": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "graph.write",
+              "ledger.write",
+              "runtime.side-effect.rerun-for-verification",
+              "runtime.token.issue"
+            ]
+          }
+        },
+        "claims": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": { "enum": ["prose_as_evidence", "success_without_verified_evidence"] }
+        }
+      }
+    }
+  }
+}

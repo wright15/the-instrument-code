@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "1.0.0",
+  "cases": [
+    {
+      "caseId": "positive:jupiter-declared-anchor-quantity",
+      "kind": "schema",
+      "schemaName": "quantity",
+      "document": {
+        "schemaVersion": "1.0.0",
+        "quantityId": "quantity:jupiter:declared-wavelength:fixture",
+        "value": 470,
+        "dimension": "length",
+        "unit": "nm",
+        "epistemicClass": "framework_declared_physical_anchor",
+        "basis": {
+          "kind": "framework_declaration",
+          "ownerScope": "governor.office",
+          "ownerId": "office:Jupiter"
+        },
+        "provenance": [
+          {
+            "sourceId": "source:photonic-records:0.1.1",
+            "pointer": "/records/4/representativeWavelengthNm"
+          }
+        ],
+        "assumptions": []
+      }
+    },
+    {
+      "caseId": "positive:registered-wavelength-frequency-operation",
+      "kind": "quantity_operation",
+      "document": {
+        "operationId": "operation:vacuum-wavelength-frequency:v1",
+        "operands": [
+          {
+            "schemaVersion": "1.0.0",
+            "quantityId": "quantity:jupiter:wavelength:operation-fixture",
+            "value": 470,
+            "dimension": "length",
+            "unit": "nm",
+            "epistemicClass": "framework_declared_physical_anchor",
+            "basis": {
+              "kind": "framework_declaration",
+              "ownerScope": "governor.office",
+              "ownerId": "office:Jupiter"
+            },
+            "provenance": [
+              {
+                "sourceId": "source:photonic-records:0.1.1",
+                "pointer": "/records/4/representativeWavelengthNm"
+              }
+            ],
+            "assumptions": []
+          }
+        ],
+        "output": {
+          "schemaVersion": "1.0.0",
+          "quantityId": "quantity:jupiter:frequency:operation-fixture",
+          "value": 637856293617021.2,
+          "dimension": "frequency",
+          "unit": "Hz",
+          "epistemicClass": "physically_derived",
+          "basis": {
+            "kind": "registered_operation",
+            "operationId": "operation:vacuum-wavelength-frequency:v1",
+            "inputQuantityIds": ["quantity:jupiter:wavelength:operation-fixture"]
+          },
+          "provenance": [
+            {
+              "sourceId": "source:photonic-records:0.1.1",
+              "pointer": "/records/4/vacuumFrequencyHz"
+            }
+          ],
+          "assumptions": ["vacuum_wavelength"]
+        }
+      }
+    },
+    {
+      "caseId": "positive:classification-request",
+      "kind": "schema",
+      "schemaName": "classification-request",
+      "document": {
+        "schemaVersion": "1.0.0",
+        "policyReleaseId": "governor-runtime:0.1.0",
+        "subject": {
+          "subjectId": "profile:jupiter:v0.1.1",
+          "subjectType": "governor_profile"
+        },
+        "facts": [
+          {
+            "factId": "fact:jupiter-symbol-eagle",
+            "kind": "feature_value",
+            "facetPath": "/profile/domainReferences/symbolicReferences",
+            "featureId": "domain.symbolic_references",
+            "value": "eagle",
+            "epistemicClass": "canonical_reference_library",
+            "provenance": [
+              {
+                "sourceId": "source:canonical-governor-profiles:0.1.1",
+                "pointer": "/profiles/4/domainReferences/symbolicReferences"
+              }
+            ]
+          }
+        ],
+        "quantities": [],
+        "requestedAspectIds": ["aspect:jupiter:symbolic-profile:v1"]
+      }
+    },
+    {
+      "caseId": "positive:classification-result",
+      "kind": "schema",
+      "schemaName": "classification-result",
+      "requestCaseId": "positive:classification-request",
+      "document": {
+        "schemaVersion": "1.0.0",
+        "policyReleaseId": "governor-runtime:0.1.0",
+        "policyFingerprint": "$POLICY_FINGERPRINT",
+        "sourceFingerprint": "$SOURCE_FINGERPRINT",
+        "requestFingerprint": "$REQUEST_FINGERPRINT",
+        "subjectId": "profile:jupiter:v0.1.1",
+        "facetResults": [
+          {
+            "facetId": "facet:jupiter-symbolic-profile",
+            "requestedAspectId": "aspect:jupiter:symbolic-profile:v1",
+            "outcome": "classified",
+            "aspectId": "aspect:jupiter:symbolic-profile:v1",
+            "primaryGovernor": "Jupiter",
+            "evidencePaths": [
+              {
+                "ruleId": "rule:jupiter:symbolic-profile:v1",
+                "factIds": ["fact:jupiter-symbol-eagle"],
+                "provenanceSourceIds": ["source:canonical-governor-profiles:0.1.1"]
+              }
+            ]
+          }
+        ],
+        "resultFingerprint": "$RESULT_FINGERPRINT"
+      }
+    }
+  ]
+}

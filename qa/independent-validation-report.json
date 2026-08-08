@@ -1,0 +1,512 @@
+{
+  "title": "Independent validation — Seven Governors universal heptatonic completion",
+  "generatedAt": "2026-07-29T19:53:05.894Z",
+  "verdict": "PASS",
+  "networkSha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+  "checks": [
+    {
+      "name": "Universal ledger has 462 rows",
+      "pass": true,
+      "detail": 462
+    },
+    {
+      "name": "Universal ledger IDs are unique",
+      "pass": true,
+      "detail": 462
+    },
+    {
+      "name": "Every ledger row is a rooted seven-note Z12 state",
+      "pass": true,
+      "detail": "root bit present and popcount = 7"
+    },
+    {
+      "name": "All 462 rooted seven-note states are present",
+      "pass": true,
+      "detail": "complete combinatorial enumeration"
+    },
+    {
+      "name": "There are 38 Forte classes",
+      "pass": true,
+      "detail": 38
+    },
+    {
+      "name": "There are 66 modal orientations",
+      "pass": true,
+      "detail": 66
+    },
+    {
+      "name": "Each modal orientation has seven rooted modes",
+      "pass": true,
+      "detail": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "name": "All frozen A0–D6 roles and offices are preserved; only boundary fine roles are refined",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "D7 contains seven 7-1 anchors",
+      "pass": true,
+      "detail": [
+        127,
+        2111,
+        3103,
+        3599,
+        3847,
+        3971,
+        4033
+      ]
+    },
+    {
+      "name": "D7 assigns exactly one mode to each office",
+      "pass": true,
+      "detail": [
+        "Jupiter:127",
+        "Saturn:2111",
+        "Moon:3103",
+        "Mercury:3599",
+        "Venus:3847",
+        "Sun:3971",
+        "Mars:4033"
+      ]
+    },
+    {
+      "name": "Every D7 mode has exactly two same-office D6 / 7-2 contacts",
+      "pass": true,
+      "detail": [
+        {
+          "id": 127,
+          "contacts": 2
+        },
+        {
+          "id": 2111,
+          "contacts": 2
+        },
+        {
+          "id": 3103,
+          "contacts": 2
+        },
+        {
+          "id": 3599,
+          "contacts": 2
+        },
+        {
+          "id": 3847,
+          "contacts": 2
+        },
+        {
+          "id": 3971,
+          "contacts": 2
+        },
+        {
+          "id": 4033,
+          "contacts": 2
+        }
+      ]
+    },
+    {
+      "name": "Every D7 mode contacts both chiral orientations of 7-2",
+      "pass": true,
+      "detail": "one contact from orientation A and one from orientation B"
+    },
+    {
+      "name": "D7 seat-contact split is twelve fixed plus two phase",
+      "pass": true,
+      "detail": {
+        "fixed": 12,
+        "phase": 2
+      }
+    },
+    {
+      "name": "D7 has no residual children",
+      "pass": true,
+      "detail": {
+        "anchorStates": 7,
+        "seatContacts": 14,
+        "fixedSeatContacts": 12,
+        "phaseSeatContacts": 2,
+        "fixedMidpointCases": 5,
+        "phaseSeamCases": 2,
+        "residualChildren": 0
+      }
+    },
+    {
+      "name": "All formal D7 validations pass",
+      "pass": true,
+      "detail": {
+        "sourceSnapshotValidationPreserved": true,
+        "completeSevenModeOrbit": true,
+        "allOrbitMembersSevenOne": true,
+        "achiralSingleOrbit": true,
+        "finalUnrepresentedAchiralClass": true,
+        "noEarlierAnchorClaims": true,
+        "exactlyTwoEligibleRelationsPerMode": true,
+        "exactlyTwoD6SeatContactsPerMode": true,
+        "oneContactFromEachSevenTwoOrientation": true,
+        "unanimousOfficePerMode": true,
+        "exactlyOneModePerGovernorOffice": true,
+        "noResidualChildren": true,
+        "fourteenSeatContacts": true,
+        "fixedPhaseSplit": true,
+        "fiveFixedMidpointCases": true,
+        "allFixedEndpointPairsHammingFour": true,
+        "twoPhaseSeamCases": true,
+        "sevenModalSuccessorEdges": true
+      }
+    },
+    {
+      "name": "All eleven residual Forte families receive the expected typed role",
+      "pass": true,
+      "detail": [
+        "7-3:oriented_convergence",
+        "7-4:oriented_convergence",
+        "7-5:peripheral_leaf",
+        "7-9:oriented_convergence",
+        "7-14:office_junction",
+        "7-Z18:oriented_convergence",
+        "7-19:office_junction",
+        "7-21:office_junction",
+        "7-23:oriented_convergence",
+        "7-25:office_junction",
+        "7-Z36:oriented_convergence"
+      ]
+    },
+    {
+      "name": "The typed boundary contains 154 office-neutral states",
+      "pass": true,
+      "detail": {
+        "families": 11,
+        "states": 154,
+        "orientedConvergenceFamilies": 6,
+        "orientedConvergenceStates": 84,
+        "officeJunctionFamilies": 4,
+        "officeJunctionStates": 56,
+        "peripheralLeafFamilies": 1,
+        "peripheralLeafStates": 14,
+        "relationCount": 476,
+        "governorOfficesAssigned": 0
+      }
+    },
+    {
+      "name": "All oriented convergence validations pass",
+      "pass": true,
+      "detail": "six qualified chiral convergence rings"
+    },
+    {
+      "name": "Mixed-office junctions remain non-governing",
+      "pass": true,
+      "detail": "four office junction families"
+    },
+    {
+      "name": "7-5 remains a peripheral leaf",
+      "pass": true,
+      "detail": {
+        "forte": "7-5",
+        "classification": "peripheral_leaf",
+        "label": "peripheral leaf",
+        "registeredBeforeCompletion": 4,
+        "missingBeforeCompletion": 10,
+        "stateCount": 14,
+        "orientationCount": 2,
+        "chirality": "chiral",
+        "contactsPerState": 1,
+        "tierSignature": {
+          "D4": 1
+        },
+        "officeMultiplicity": "unanimous",
+        "relationCount": 14,
+        "fixedRelationCount": 12,
+        "phaseRelationCount": 2,
+        "orientationOfficeCoverage": [
+          {
+            "orientation": "7-5 orientation A",
+            "stateIds": [
+              239,
+              2167,
+              3131,
+              3613,
+              1927,
+              3011,
+              3553
+            ],
+            "relationalOfficeCount": 7,
+            "pluralityOfficeCount": 7,
+            "relationalOffices": [
+              "Mercury",
+              "Venus",
+              "Sun",
+              "Mars",
+              "Jupiter",
+              "Saturn",
+              "Moon"
+            ],
+            "pluralityOffices": [
+              "Mercury",
+              "Venus",
+              "Sun",
+              "Mars",
+              "Jupiter",
+              "Saturn",
+              "Moon"
+            ],
+            "officeOffsetPatterns": [
+              []
+            ]
+          },
+          {
+            "orientation": "7-5 orientation B",
+            "stateIds": [
+              247,
+              2171,
+              3133,
+              1807,
+              2951,
+              3523,
+              3809
+            ],
+            "relationalOfficeCount": 7,
+            "pluralityOfficeCount": 7,
+            "relationalOffices": [
+              "Venus",
+              "Sun",
+              "Mars",
+              "Jupiter",
+              "Saturn",
+              "Moon",
+              "Mercury"
+            ],
+            "pluralityOffices": [
+              "Venus",
+              "Sun",
+              "Mars",
+              "Jupiter",
+              "Saturn",
+              "Moon",
+              "Mercury"
+            ],
+            "officeOffsetPatterns": [
+              []
+            ]
+          }
+        ],
+        "validations": {
+          "completeFamily": true,
+          "twoChiralOrientations": true,
+          "noDirectAnchorClaims": true,
+          "uniformTierSignature": true,
+          "uniformContactMultiplicity": true,
+          "unanimousSameOffice": true,
+          "sevenOfficeTraversalPerOrientation": true,
+          "noGovernorOfficeAssigned": true
+        },
+        "qualified": true
+      }
+    },
+    {
+      "name": "Every consolidated edge endpoint resolves to a node",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Consolidated summary counts reconcile",
+      "pass": true,
+      "detail": {
+        "registeredStates": 462,
+        "scaleStates": 462,
+        "a0A2ClosureStates": 326,
+        "a0A2BoundaryStates": 193,
+        "a0A2Anchors": 21,
+        "a0A2Satellites": 112,
+        "officeNetworkStates": 308,
+        "officeAssignedStates": 308,
+        "boundaryStates": 154,
+        "anchors": 70,
+        "a0Anchors": 7,
+        "a1Anchors": 7,
+        "a2Anchors": 7,
+        "d1Anchors": 7,
+        "satellites": 238,
+        "a0Satellites": 42,
+        "a1Satellites": 28,
+        "a2Satellites": 42,
+        "d1Satellites": 14,
+        "a2SatellitesFixed": 36,
+        "a2SatellitesPhase": 6,
+        "d1SatellitesFixed": 12,
+        "d1SatellitesPhase": 2,
+        "d1SeatContacts": 28,
+        "governingEdges": 238,
+        "constructionEdges": 28,
+        "seatContactEdges": 140,
+        "modalSuccessorEdges": 182,
+        "structuralEdges": 588,
+        "fixedAuditEdges": 585,
+        "phaseEdges": 175,
+        "fieldEdges": 760,
+        "graphEdges": 2594,
+        "resolutionCounts": {
+          "A0_direct_satellite": 42,
+          "A1_direct_satellite": 28,
+          "A2_direct_satellite": 42,
+          "canonical_A0_identity": 7,
+          "D1_direct_satellite": 14,
+          "D2_direct_satellite": 28,
+          "D3_direct_satellite": 14,
+          "D4_direct_satellite": 28,
+          "D5_direct_satellite": 28,
+          "D6_direct_satellite": 14,
+          "next_A2_check": 50,
+          "next_A3_check": 48,
+          "validated_A1_anchor": 7,
+          "validated_A2_anchor": 7,
+          "validated_D1_anchor": 7,
+          "validated_D2_anchor": 7,
+          "validated_D3_anchor": 7,
+          "validated_D4_anchor": 7,
+          "validated_D5_anchor": 7,
+          "validated_D6_anchor": 7,
+          "validated_D7_terminal_anchor": 7
+        },
+        "d2Anchors": 7,
+        "d2Satellites": 28,
+        "d2SatellitesFixed": 24,
+        "d2SatellitesPhase": 4,
+        "d2SeatContacts": 14,
+        "d3Anchors": 7,
+        "d3Satellites": 14,
+        "d3SatellitesFixed": 12,
+        "d3SatellitesPhase": 2,
+        "d3SeatContacts": 28,
+        "d3SeatContactsA2": 14,
+        "d3SeatContactsD2": 14,
+        "d3SeatContactsFixed": 24,
+        "d3SeatContactsPhase": 4,
+        "d3FixedMidpointPairs": 30,
+        "d4Anchors": 7,
+        "d4Satellites": 28,
+        "d4SatellitesFixed": 24,
+        "d4SatellitesPhase": 4,
+        "d4SeatContacts": 14,
+        "d4SeatContactsA1": 14,
+        "d4SeatContactsFixed": 12,
+        "d4SeatContactsPhase": 2,
+        "d4FixedMidpointPairs": 5,
+        "d4PhaseSeatCases": 2,
+        "d4HydratedMetadata": 12,
+        "d5Anchors": 7,
+        "d5Satellites": 28,
+        "d5SatellitesFixed": 24,
+        "d5SatellitesPhase": 4,
+        "d5SeatContacts": 14,
+        "d5SeatContactsA2": 14,
+        "d5SeatContactsFixed": 12,
+        "d5SeatContactsPhase": 2,
+        "d5FixedMidpointPairs": 5,
+        "d5PhaseSeatCases": 2,
+        "d5HydratedMetadata": 34,
+        "d5NewStates": 25,
+        "d5PromotedExistingStates": 10,
+        "d5GenericLabelsCorrected": 9,
+        "d6Anchors": 7,
+        "d6Satellites": 14,
+        "d6SatellitesFixed": 12,
+        "d6SatellitesPhase": 2,
+        "d6SeatContacts": 28,
+        "d6SeatContactsD3": 14,
+        "d6SeatContactsD5": 14,
+        "d6SeatContactsFixed": 24,
+        "d6SeatContactsPhase": 4,
+        "d6FixedMidpointPairs": 0,
+        "d6PhaseSeatCases": 4,
+        "d6HydratedMetadata": 13,
+        "d6NewStates": 12,
+        "d6PromotedExistingStates": 9,
+        "d6GenericLabelsCorrected": 1,
+        "d7Anchors": 7,
+        "d7Satellites": 0,
+        "d7SeatContacts": 14,
+        "d7FixedSeatContacts": 12,
+        "d7PhaseSeatContacts": 2,
+        "d7ResidualChildren": 0,
+        "forteClasses": 38,
+        "modalOrientations": 66,
+        "achiralFamilies": 10,
+        "chiralFamilies": 28,
+        "addedUniversalStates": 63,
+        "orientedConvergenceStates": 84,
+        "officeJunctionStates": 56,
+        "peripheralLeafStates": 14,
+        "boundaryRelationEdges": 476,
+        "graphNodes": 507,
+        "officeGraphEdges": 2118
+      }
+    }
+  ]
+}

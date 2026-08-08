@@ -1,0 +1,310 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryVersion": "0.1.1",
+  "releaseId": "canonical-profile-registry:0.1.1",
+  "generatedAt": "2026-07-30",
+  "recordCount": 7,
+  "records": [
+    {
+      "photonicId": "photonic:sun:v0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "office": "Sun",
+      "officeIndex": 0,
+      "representativeWavelengthNm": 700,
+      "vacuumFrequencyHz": 428274939999999.94,
+      "photonEnergyJ": 2.8377797959270407e-19,
+      "photonEnergyEv": 1.7712028347600037,
+      "photonicCompression": 0,
+      "coordinateSymbol": "C_P",
+      "calculation": {
+        "constants": {
+          "speedOfLightMS": 299792458,
+          "planckConstantJS": 6.62607015e-34,
+          "electronVoltJ": 1.602176634e-19
+        },
+        "formulas": {
+          "frequency": "c / (wavelength_nm * 1e-9)",
+          "photonEnergy": "h * frequency_hz",
+          "photonicCompression": "(1/lambda - 1/700nm) / (1/400nm - 1/700nm)"
+        }
+      },
+      "interpretationPolicy": {
+        "status": "representative_office_anchor",
+        "inheritedBySeatedState": true,
+        "mutatedByMusicalOperator": false,
+        "causationClaim": false,
+        "note": "The wavelength is framework-declared. Frequency and energy are physical calculations from that value. The office correspondence is authored."
+      },
+      "provenance": [
+        {
+          "artifact": "source/governors.yaml",
+          "pointer": "governors.sun.canonical_expression.wavelength_nm",
+          "authority": "framework_declared"
+        },
+        {
+          "artifact": "scripts/build-registry.mjs",
+          "authority": "physically_derived_from_framework_anchor",
+          "formula": "nu=c/lambda; E=h*nu"
+        }
+      ]
+    },
+    {
+      "photonicId": "photonic:moon:v0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "office": "Moon",
+      "officeIndex": 1,
+      "representativeWavelengthNm": 610,
+      "vacuumFrequencyHz": 491463045901639.25,
+      "photonEnergyJ": 3.2564686182769316e-19,
+      "photonEnergyEv": 2.032527843167217,
+      "photonicCompression": 0.19672131147540983,
+      "coordinateSymbol": "C_P",
+      "calculation": {
+        "constants": {
+          "speedOfLightMS": 299792458,
+          "planckConstantJS": 6.62607015e-34,
+          "electronVoltJ": 1.602176634e-19
+        },
+        "formulas": {
+          "frequency": "c / (wavelength_nm * 1e-9)",
+          "photonEnergy": "h * frequency_hz",
+          "photonicCompression": "(1/lambda - 1/700nm) / (1/400nm - 1/700nm)"
+        }
+      },
+      "interpretationPolicy": {
+        "status": "representative_office_anchor",
+        "inheritedBySeatedState": true,
+        "mutatedByMusicalOperator": false,
+        "causationClaim": false,
+        "note": "The wavelength is framework-declared. Frequency and energy are physical calculations from that value. The office correspondence is authored."
+      },
+      "provenance": [
+        {
+          "artifact": "source/governors.yaml",
+          "pointer": "governors.moon.canonical_expression.wavelength_nm",
+          "authority": "framework_declared"
+        },
+        {
+          "artifact": "scripts/build-registry.mjs",
+          "authority": "physically_derived_from_framework_anchor",
+          "formula": "nu=c/lambda; E=h*nu"
+        }
+      ]
+    },
+    {
+      "photonicId": "photonic:mars:v0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "office": "Mars",
+      "officeIndex": 2,
+      "representativeWavelengthNm": 580,
+      "vacuumFrequencyHz": 516883548275862,
+      "photonEnergyJ": 3.424906650256773e-19,
+      "photonEnergyEv": 2.1376585936758663,
+      "photonicCompression": 0.2758620689655172,
+      "coordinateSymbol": "C_P",
+      "calculation": {
+        "constants": {
+          "speedOfLightMS": 299792458,
+          "planckConstantJS": 6.62607015e-34,
+          "electronVoltJ": 1.602176634e-19
+        },
+        "formulas": {
+          "frequency": "c / (wavelength_nm * 1e-9)",
+          "photonEnergy": "h * frequency_hz",
+          "photonicCompression": "(1/lambda - 1/700nm) / (1/400nm - 1/700nm)"
+        }
+      },
+      "interpretationPolicy": {
+        "status": "representative_office_anchor",
+        "inheritedBySeatedState": true,
+        "mutatedByMusicalOperator": false,
+        "causationClaim": false,
+        "note": "The wavelength is framework-declared. Frequency and energy are physical calculations from that value. The office correspondence is authored."
+      },
+      "provenance": [
+        {
+          "artifact": "source/governors.yaml",
+          "pointer": "governors.mars.canonical_expression.wavelength_nm",
+          "authority": "framework_declared"
+        },
+        {
+          "artifact": "scripts/build-registry.mjs",
+          "authority": "physically_derived_from_framework_anchor",
+          "formula": "nu=c/lambda; E=h*nu"
+        }
+      ]
+    },
+    {
+      "photonicId": "photonic:mercury:v0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "office": "Mercury",
+      "officeIndex": 3,
+      "representativeWavelengthNm": 530,
+      "vacuumFrequencyHz": 565646147169811.2,
+      "photonEnergyJ": 3.7480110512243934e-19,
+      "photonEnergyEv": 2.3393244987396273,
+      "photonicCompression": 0.4276729559748428,
+      "coordinateSymbol": "C_P",
+      "calculation": {
+        "constants": {
+          "speedOfLightMS": 299792458,
+          "planckConstantJS": 6.62607015e-34,
+          "electronVoltJ": 1.602176634e-19
+        },
+        "formulas": {
+          "frequency": "c / (wavelength_nm * 1e-9)",
+          "photonEnergy": "h * frequency_hz",
+          "photonicCompression": "(1/lambda - 1/700nm) / (1/400nm - 1/700nm)"
+        }
+      },
+      "interpretationPolicy": {
+        "status": "representative_office_anchor",
+        "inheritedBySeatedState": true,
+        "mutatedByMusicalOperator": false,
+        "causationClaim": false,
+        "note": "The wavelength is framework-declared. Frequency and energy are physical calculations from that value. The office correspondence is authored."
+      },
+      "provenance": [
+        {
+          "artifact": "source/governors.yaml",
+          "pointer": "governors.mercury.canonical_expression.wavelength_nm",
+          "authority": "framework_declared"
+        },
+        {
+          "artifact": "scripts/build-registry.mjs",
+          "authority": "physically_derived_from_framework_anchor",
+          "formula": "nu=c/lambda; E=h*nu"
+        }
+      ]
+    },
+    {
+      "photonicId": "photonic:jupiter:v0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "office": "Jupiter",
+      "officeIndex": 4,
+      "representativeWavelengthNm": 470,
+      "vacuumFrequencyHz": 637856293617021.2,
+      "photonEnergyJ": 4.22648054712538e-19,
+      "photonEnergyEv": 2.637961668791495,
+      "photonicCompression": 0.6524822695035462,
+      "coordinateSymbol": "C_P",
+      "calculation": {
+        "constants": {
+          "speedOfLightMS": 299792458,
+          "planckConstantJS": 6.62607015e-34,
+          "electronVoltJ": 1.602176634e-19
+        },
+        "formulas": {
+          "frequency": "c / (wavelength_nm * 1e-9)",
+          "photonEnergy": "h * frequency_hz",
+          "photonicCompression": "(1/lambda - 1/700nm) / (1/400nm - 1/700nm)"
+        }
+      },
+      "interpretationPolicy": {
+        "status": "representative_office_anchor",
+        "inheritedBySeatedState": true,
+        "mutatedByMusicalOperator": false,
+        "causationClaim": false,
+        "note": "The wavelength is framework-declared. Frequency and energy are physical calculations from that value. The office correspondence is authored."
+      },
+      "provenance": [
+        {
+          "artifact": "source/governors.yaml",
+          "pointer": "governors.jupiter.canonical_expression.wavelength_nm",
+          "authority": "framework_declared"
+        },
+        {
+          "artifact": "scripts/build-registry.mjs",
+          "authority": "physically_derived_from_framework_anchor",
+          "formula": "nu=c/lambda; E=h*nu"
+        }
+      ]
+    },
+    {
+      "photonicId": "photonic:venus:v0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "office": "Venus",
+      "officeIndex": 5,
+      "representativeWavelengthNm": 430,
+      "vacuumFrequencyHz": 697191762790697.6,
+      "photonEnergyJ": 4.619641528253322e-19,
+      "photonEnergyEv": 2.8833534519348896,
+      "photonicCompression": 0.8372093023255813,
+      "coordinateSymbol": "C_P",
+      "calculation": {
+        "constants": {
+          "speedOfLightMS": 299792458,
+          "planckConstantJS": 6.62607015e-34,
+          "electronVoltJ": 1.602176634e-19
+        },
+        "formulas": {
+          "frequency": "c / (wavelength_nm * 1e-9)",
+          "photonEnergy": "h * frequency_hz",
+          "photonicCompression": "(1/lambda - 1/700nm) / (1/400nm - 1/700nm)"
+        }
+      },
+      "interpretationPolicy": {
+        "status": "representative_office_anchor",
+        "inheritedBySeatedState": true,
+        "mutatedByMusicalOperator": false,
+        "causationClaim": false,
+        "note": "The wavelength is framework-declared. Frequency and energy are physical calculations from that value. The office correspondence is authored."
+      },
+      "provenance": [
+        {
+          "artifact": "source/governors.yaml",
+          "pointer": "governors.venus.canonical_expression.wavelength_nm",
+          "authority": "framework_declared"
+        },
+        {
+          "artifact": "scripts/build-registry.mjs",
+          "authority": "physically_derived_from_framework_anchor",
+          "formula": "nu=c/lambda; E=h*nu"
+        }
+      ]
+    },
+    {
+      "photonicId": "photonic:saturn:v0.1.1",
+      "releaseId": "canonical-profile-registry:0.1.1",
+      "office": "Saturn",
+      "officeIndex": 6,
+      "representativeWavelengthNm": 400,
+      "vacuumFrequencyHz": 749481144999999.9,
+      "photonEnergyJ": 4.966114642872321e-19,
+      "photonEnergyEv": 3.0996049608300065,
+      "photonicCompression": 1,
+      "coordinateSymbol": "C_P",
+      "calculation": {
+        "constants": {
+          "speedOfLightMS": 299792458,
+          "planckConstantJS": 6.62607015e-34,
+          "electronVoltJ": 1.602176634e-19
+        },
+        "formulas": {
+          "frequency": "c / (wavelength_nm * 1e-9)",
+          "photonEnergy": "h * frequency_hz",
+          "photonicCompression": "(1/lambda - 1/700nm) / (1/400nm - 1/700nm)"
+        }
+      },
+      "interpretationPolicy": {
+        "status": "representative_office_anchor",
+        "inheritedBySeatedState": true,
+        "mutatedByMusicalOperator": false,
+        "causationClaim": false,
+        "note": "The wavelength is framework-declared. Frequency and energy are physical calculations from that value. The office correspondence is authored."
+      },
+      "provenance": [
+        {
+          "artifact": "source/governors.yaml",
+          "pointer": "governors.saturn.canonical_expression.wavelength_nm",
+          "authority": "framework_declared"
+        },
+        {
+          "artifact": "scripts/build-registry.mjs",
+          "authority": "physically_derived_from_framework_anchor",
+          "formula": "nu=c/lambda; E=h*nu"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+---
+import type { Relationship } from "../../lib/bestiary";
+import { relationKind } from "../../lib/bestiary";
+
+interface Props {
+  relationship: Relationship;
+}
+
+const { relationship } = Astro.props;
+const kind = relationKind(relationship);
+---
+
+<span
+  class={`rounded px-1.5 py-0.5 font-mono ${
+    kind === "structural"
+      ? "bg-accent/10 text-accent"
+      : "bg-violet-400/10 text-violet-300"
+  }`}
+  title={kind}
+>
+  {relationship.type}
+</span>

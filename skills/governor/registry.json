@@ -1,0 +1,181 @@
+{
+  "schemaVersion": "gov-207.registry.v1",
+  "bundleId": "seven-governors-gov-207",
+  "bundleVersion": "1.0.0",
+  "apiVersion": "gov-207.agent-api.v1",
+  "contracts": {
+    "commonSchemaPath": "schemas/common.schema.json",
+    "registrySchemaPath": "schemas/registry.schema.json",
+    "capabilitiesSchemaPath": "schemas/capabilities.schema.json",
+    "installManifestSchemaPath": "schemas/install-manifest.schema.json",
+    "upstreamClassifier": {
+      "requestPath": "schemas/upstream/classification-request.schema.json",
+      "requestSchemaId": "https://seven-governors.local/gov-207/schemas/upstream/classification-request.schema.json",
+      "upstreamRequestSchemaId": "https://seven-governors.local/governor-runtime/0.1.0/schemas/classification-request.schema.json",
+      "requestSha256": "43b3dc958cb890d20549b3b6c0e89d2ebc04a81e98eb3d4c1f55062785c15aa9",
+      "resultPath": "schemas/upstream/classification-result.schema.json",
+      "resultSchemaId": "https://seven-governors.local/gov-207/schemas/upstream/classification-result.schema.json",
+      "upstreamResultSchemaId": "https://seven-governors.local/governor-runtime/0.1.0/schemas/classification-result.schema.json",
+      "resultSha256": "92ccd490f05e6fa0cdf17c9afa65b2831a9cbb8c4e9149a131d6705da550ead3"
+    }
+  },
+  "limits": {
+    "maxRequestBytes": 65536,
+    "maxResponseBytes": 1048576,
+    "maxMenuItems": 64,
+    "maxToolReceipts": 64
+  },
+  "fingerprints": {
+    "algorithm": "sha256",
+    "canonicalization": "RFC8785",
+    "encoding": "UTF-8",
+    "lineEndings": "LF",
+    "resultFingerprintInput": "canonical-output-without-resultFingerprint",
+    "menuFingerprintInput": "canonical-menu-without-menuFingerprint",
+    "logicalOrdering": "unicode-code-point-by-logical-id"
+  },
+  "adapters": [
+    {
+      "adapterId": "generic-json",
+      "adapterVersion": "1.0.0",
+      "configPath": "adapters/generic-json.json"
+    },
+    {
+      "adapterId": "hermes",
+      "adapterVersion": "1.0.0",
+      "configPath": "adapters/hermes.json"
+    }
+  ],
+  "skills": [
+    {
+      "skillId": "classify_governor",
+      "name": "seven-governors-classify-governor",
+      "description": "Invoke the authoritative Governor classifier and report typed outcomes without model-side classification.",
+      "operationId": "classify_governor",
+      "workflowPath": "workflows/classify_governor/SKILL.md",
+      "inputSchema": "schemas/classify-governor.schema.json#/$defs/input",
+      "inputSchemaId": "gov-207.classify-governor.input.v1",
+      "outputSchema": "schemas/classify-governor.schema.json#/$defs/output",
+      "outputSchemaId": "gov-207.classify-governor.output.v1",
+      "triggers": [
+        "Classify supplied typed facts under the active Governor policy.",
+        "Explain an authoritative classified, ambiguous, unresolved, or invalid result."
+      ],
+      "toolIds": ["governor.agent_api.invoke"],
+      "adapterMappings": {
+        "generic-json": {
+          "targetPath": "governor/classify-governor/SKILL.md",
+          "operationId": "classify_governor"
+        },
+        "hermes": {
+          "targetPath": "seven-governors-classify-governor/SKILL.md",
+          "operationId": "classify_governor"
+        }
+      }
+    },
+    {
+      "skillId": "inspect_context",
+      "name": "seven-governors-inspect-context",
+      "description": "Inspect replay-verified Governor context and the state-filtered dynamic menu without exposing private state.",
+      "operationId": "inspect_context",
+      "workflowPath": "workflows/inspect_context/SKILL.md",
+      "inputSchema": "schemas/inspect-context.schema.json#/$defs/input",
+      "inputSchemaId": "gov-207.inspect-context.input.v1",
+      "outputSchema": "schemas/inspect-context.schema.json#/$defs/output",
+      "outputSchemaId": "gov-207.inspect-context.output.v1",
+      "triggers": [
+        "Inspect the current Governor task state before choosing an action.",
+        "Refresh context after a stale-state, stale-ledger, or stale-token reason."
+      ],
+      "toolIds": ["governor.agent_api.invoke"],
+      "adapterMappings": {
+        "generic-json": {
+          "targetPath": "governor/inspect-context/SKILL.md",
+          "operationId": "inspect_context"
+        },
+        "hermes": {
+          "targetPath": "seven-governors-inspect-context/SKILL.md",
+          "operationId": "inspect_context"
+        }
+      }
+    },
+    {
+      "skillId": "list_legal_moves",
+      "name": "seven-governors-list-legal-moves",
+      "description": "List only replay-valid legal moves with complete registered parameters, closure, and evidence requirements.",
+      "operationId": "list_legal_moves",
+      "workflowPath": "workflows/list_legal_moves/SKILL.md",
+      "inputSchema": "schemas/list-legal-moves.schema.json#/$defs/input",
+      "inputSchemaId": "gov-207.list-legal-moves.input.v1",
+      "outputSchema": "schemas/list-legal-moves.schema.json#/$defs/output",
+      "outputSchemaId": "gov-207.list-legal-moves.output.v1",
+      "triggers": [
+        "List legal moves and exact required parameters for the current replayed state.",
+        "Return to the authoritative legal-move menu after an illegal-operation reason."
+      ],
+      "toolIds": ["governor.agent_api.invoke"],
+      "adapterMappings": {
+        "generic-json": {
+          "targetPath": "governor/list-legal-moves/SKILL.md",
+          "operationId": "list_legal_moves"
+        },
+        "hermes": {
+          "targetPath": "seven-governors-list-legal-moves/SKILL.md",
+          "operationId": "list_legal_moves"
+        }
+      }
+    },
+    {
+      "skillId": "validate_and_execute_move",
+      "name": "seven-governors-validate-and-execute-move",
+      "description": "Submit one menu-selected move to atomic runtime validation, execution, evidence verification, and cleanup.",
+      "operationId": "validate_and_execute_move",
+      "workflowPath": "workflows/validate_and_execute_move/SKILL.md",
+      "inputSchema": "schemas/validate-execute.schema.json#/$defs/input",
+      "inputSchemaId": "gov-207.validate-execute.input.v1",
+      "outputSchema": "schemas/validate-execute.schema.json#/$defs/output",
+      "outputSchemaId": "gov-207.validate-execute.output.v1",
+      "triggers": [
+        "Execute one exact move selected from the current authoritative menu.",
+        "Validate bounded parameters and consume the runtime's atomic execution result."
+      ],
+      "toolIds": ["governor.agent_api.invoke"],
+      "adapterMappings": {
+        "generic-json": {
+          "targetPath": "governor/validate-and-execute-move/SKILL.md",
+          "operationId": "validate_and_execute_move"
+        },
+        "hermes": {
+          "targetPath": "seven-governors-validate-and-execute-move/SKILL.md",
+          "operationId": "validate_and_execute_move"
+        }
+      }
+    },
+    {
+      "skillId": "verify_outcome",
+      "name": "seven-governors-verify-outcome",
+      "description": "Read one recorded attempt, replay its ledger history, and report whether evidence permits a success claim.",
+      "operationId": "verify_outcome",
+      "workflowPath": "workflows/verify_outcome/SKILL.md",
+      "inputSchema": "schemas/verify-outcome.schema.json#/$defs/input",
+      "inputSchemaId": "gov-207.verify-outcome.input.v1",
+      "outputSchema": "schemas/verify-outcome.schema.json#/$defs/output",
+      "outputSchemaId": "gov-207.verify-outcome.output.v1",
+      "triggers": [
+        "Check whether one recorded attempt has replay-valid passing evidence and successful cleanup.",
+        "Inspect an executed, evidence-recorded, failed, verified, or stopped attempt without rerunning it."
+      ],
+      "toolIds": ["governor.agent_api.invoke"],
+      "adapterMappings": {
+        "generic-json": {
+          "targetPath": "governor/verify-outcome/SKILL.md",
+          "operationId": "verify_outcome"
+        },
+        "hermes": {
+          "targetPath": "seven-governors-verify-outcome/SKILL.md",
+          "operationId": "verify_outcome"
+        }
+      }
+    }
+  ]
+}

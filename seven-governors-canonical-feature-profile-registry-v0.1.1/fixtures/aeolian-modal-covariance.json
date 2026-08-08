@@ -1,0 +1,150 @@
+{
+  "fixtureId": "fixture:aeolian-modal-covariance",
+  "fixtureClass": "structural_normalization",
+  "evidenceScope": [
+    "harmonic_structure",
+    "modal_covariance",
+    "normal_form_confluence"
+  ],
+  "semanticEffectEvidence": false,
+  "label": "Aeolian mutation/modal covariance square",
+  "fixtureType": "modal_covariance_confluence",
+  "targetStateId": 1643,
+  "targetStateName": "Locrian ♮6",
+  "expectedOffice": "Saturn",
+  "routes": [
+    {
+      "routeId": "route:aeolian-square:R7-M",
+      "sourceIds": [
+        1453,
+        2477
+      ],
+      "targetId": 1643,
+      "structuralOperatorIds": [
+        "R7",
+        "M"
+      ],
+      "operatorAnnotations": [
+        {
+          "structuralOperatorId": "R7",
+          "semanticOperatorId": "semantic:R7:v0.1.1",
+          "degree": 7,
+          "degreeGovernor": "Moon",
+          "direction": "raise",
+          "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+          "semanticEffectEvidence": false
+        },
+        {
+          "structuralOperatorId": "M",
+          "semanticOperatorId": "semantic:M:v0.1.1",
+          "degree": null,
+          "degreeGovernor": null,
+          "direction": "successor",
+          "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+          "semanticEffectEvidence": false
+        }
+      ],
+      "relationEvidence": [
+        {
+          "sourceId": 1453,
+          "sourceName": "Aeolian",
+          "operatorId": "R7",
+          "targetId": 2477,
+          "targetName": "Harmonic Minor",
+          "structuralEvidence": true,
+          "structuralEdgeTypes": [
+            "GOVERNS"
+          ],
+          "fieldEvidence": true,
+          "fieldEdgeTypes": [
+            "AUDITED_HAMMING2"
+          ],
+          "applicationStatus": "formal_substrate_observed"
+        },
+        {
+          "sourceId": 2477,
+          "sourceName": "Harmonic Minor",
+          "operatorId": "M",
+          "targetId": 1643,
+          "targetName": "Locrian ♮6",
+          "structuralEvidence": false,
+          "structuralEdgeTypes": [],
+          "fieldEvidence": false,
+          "fieldEdgeTypes": [],
+          "applicationStatus": "formal_substrate_observed"
+        }
+      ],
+      "note": "Raise Aeolian Degree 7, then apply modal successor.",
+      "excludedFromIntrinsicFingerprint": true
+    },
+    {
+      "routeId": "route:aeolian-square:M-R6",
+      "sourceIds": [
+        1453,
+        1387
+      ],
+      "targetId": 1643,
+      "structuralOperatorIds": [
+        "M",
+        "R6"
+      ],
+      "operatorAnnotations": [
+        {
+          "structuralOperatorId": "M",
+          "semanticOperatorId": "semantic:M:v0.1.1",
+          "degree": null,
+          "degreeGovernor": null,
+          "direction": "successor",
+          "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+          "semanticEffectEvidence": false
+        },
+        {
+          "structuralOperatorId": "R6",
+          "semanticOperatorId": "semantic:R6:v0.1.1",
+          "degree": 6,
+          "degreeGovernor": "Mercury",
+          "direction": "raise",
+          "semanticStatus": "structural_fixture_backed_semantics_unresolved",
+          "semanticEffectEvidence": false
+        }
+      ],
+      "relationEvidence": [
+        {
+          "sourceId": 1453,
+          "sourceName": "Aeolian",
+          "operatorId": "M",
+          "targetId": 1387,
+          "targetName": "Locrian",
+          "structuralEvidence": true,
+          "structuralEdgeTypes": [
+            "MODAL_SUCCESSOR"
+          ],
+          "fieldEvidence": false,
+          "fieldEdgeTypes": [],
+          "applicationStatus": "formal_substrate_observed"
+        },
+        {
+          "sourceId": 1387,
+          "sourceName": "Locrian",
+          "operatorId": "R6",
+          "targetId": 1643,
+          "targetName": "Locrian ♮6",
+          "structuralEvidence": true,
+          "structuralEdgeTypes": [
+            "GOVERNS"
+          ],
+          "fieldEvidence": true,
+          "fieldEdgeTypes": [
+            "AUDITED_HAMMING2"
+          ],
+          "applicationStatus": "formal_substrate_observed"
+        }
+      ],
+      "note": "Apply modal successor, then raise the covariant Degree 6.",
+      "excludedFromIntrinsicFingerprint": true
+    }
+  ],
+  "normalFormFingerprint": "7fa303b646a8d9247261f0d48875e2dd8e9cf07e33b52f650b698f273cbc1e09",
+  "assertion": "M∘R7(Aeolian) and R6∘M(Aeolian) both compile as Locrian ♮6 with one intrinsic Saturn-office packet.",
+  "status": "passed"
+}

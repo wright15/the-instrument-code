@@ -1,0 +1,1026 @@
+{
+  "verdict": "FAIL",
+  "releaseId": "seven-governors-integrated-1.2.0",
+  "checksPassed": 134,
+  "checksFailed": 2,
+  "checks": [
+    {
+      "name": "release id",
+      "status": "PASS",
+      "diagnostic": {
+        "releaseId": "seven-governors-integrated-1.2.0",
+        "version": "1.2.0"
+      }
+    },
+    {
+      "name": "framework source hash: agents",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24",
+        "actual": "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24",
+        "path": "framework/AGENTS.md"
+      }
+    },
+    {
+      "name": "framework source hash: feature-profiles",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": "5ba49b157aa6fd8ac672610f88df8ac01464fd71387f3c0e21b042e912636960",
+        "actual": "5ba49b157aa6fd8ac672610f88df8ac01464fd71387f3c0e21b042e912636960",
+        "path": "framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md"
+      }
+    },
+    {
+      "name": "framework source hash: topological-anchoring",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c",
+        "actual": "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c",
+        "path": "framework/TOPOLOGICAL_ANCHORING.md"
+      }
+    },
+    {
+      "name": "framework source hash: natural-organization-thesis",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": "898626127fbc7d7538bb954326f230db4bf97f084f35122c6e42b68dcdd37af9",
+        "actual": "898626127fbc7d7538bb954326f230db4bf97f084f35122c6e42b68dcdd37af9",
+        "path": "framework/NATURAL_ORGANIZATION_THESIS.md"
+      }
+    },
+    {
+      "name": "framework source hash: governor-registry",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2",
+        "actual": "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2",
+        "path": "schemas/governors.yaml"
+      }
+    },
+    {
+      "name": "canonical rooted states",
+      "status": "PASS",
+      "diagnostic": 462
+    },
+    {
+      "name": "canonical anchors",
+      "status": "PASS",
+      "diagnostic": 70
+    },
+    {
+      "name": "canonical satellites",
+      "status": "PASS",
+      "diagnostic": 238
+    },
+    {
+      "name": "canonical boundaries",
+      "status": "PASS",
+      "diagnostic": 154
+    },
+    {
+      "name": "office-bearing states",
+      "status": "PASS",
+      "diagnostic": 308
+    },
+    {
+      "name": "boundary office withheld",
+      "status": "PASS",
+      "diagnostic": "all boundary offices must be null"
+    },
+    {
+      "name": "unique rooted state ids",
+      "status": "PASS",
+      "diagnostic": 462
+    },
+    {
+      "name": "canonical relationship total",
+      "status": "PASS",
+      "diagnostic": 2594
+    },
+    {
+      "name": "universal rendered relationship total",
+      "status": "PASS",
+      "diagnostic": 1824
+    },
+    {
+      "name": "family registry",
+      "status": "PASS",
+      "diagnostic": 38
+    },
+    {
+      "name": "CSV rows: scale-states.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 462,
+        "actual": 462
+      }
+    },
+    {
+      "name": "CSV rows: scale-families.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 38,
+        "actual": 38
+      }
+    },
+    {
+      "name": "CSV rows: governor-offices.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 7,
+        "actual": 7
+      }
+    },
+    {
+      "name": "CSV rows: governs.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 238,
+        "actual": 238
+      }
+    },
+    {
+      "name": "CSV rows: constructs.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 28,
+        "actual": 28
+      }
+    },
+    {
+      "name": "CSV rows: seat-contact.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 140,
+        "actual": 140
+      }
+    },
+    {
+      "name": "CSV rows: modal-successor.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 182,
+        "actual": 182
+      }
+    },
+    {
+      "name": "CSV rows: audited-hamming2.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 585,
+        "actual": 585
+      }
+    },
+    {
+      "name": "CSV rows: phase-shift.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 175,
+        "actual": 175
+      }
+    },
+    {
+      "name": "CSV rows: convergence-contact.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 210,
+        "actual": 210
+      }
+    },
+    {
+      "name": "CSV rows: junction-contact.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 252,
+        "actual": 252
+      }
+    },
+    {
+      "name": "CSV rows: leaf-contact.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 14,
+        "actual": 14
+      }
+    },
+    {
+      "name": "CSV rows: belongs-to-family.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 462,
+        "actual": 462
+      }
+    },
+    {
+      "name": "CSV rows: occupies-office.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 308,
+        "actual": 308
+      }
+    },
+    {
+      "name": "CSV rows: relational-office-evidence.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 224,
+        "actual": 224
+      }
+    },
+    {
+      "name": "CSV rows: relationships.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 2818,
+        "actual": 2818
+      }
+    },
+    {
+      "name": "audit rows: operator-registry.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 15,
+        "actual": 15
+      }
+    },
+    {
+      "name": "audit rows: operator-applications.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 3402,
+        "actual": 3402
+      }
+    },
+    {
+      "name": "audit rows: cycle-identities.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 66,
+        "actual": 66
+      }
+    },
+    {
+      "name": "audit rows: commutation-summary.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 91,
+        "actual": 91
+      }
+    },
+    {
+      "name": "audit rows: inverse-witnesses.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 3402,
+        "actual": 3402
+      }
+    },
+    {
+      "name": "audit validation report",
+      "status": "PASS",
+      "diagnostic": {
+        "allPass": true,
+        "assertions": null,
+        "counts": {
+          "scaleStates": 462,
+          "operatorCandidates": 15,
+          "modalOperators": 1,
+          "localDegreeOperators": 14,
+          "operatorApplications": 3402,
+          "modalApplications": 462,
+          "localApplications": 2940,
+          "inverseWitnesses": 3402,
+          "modalCycles": 66,
+          "modalCovarianceCases": 6468,
+          "commutativeSquares": 7644,
+          "directConfluenceDiamonds": 7644,
+          "structuralCospans": 14,
+          "counterexamples": 3978,
+          "partialDomainAsymmetryCounterexamples": 3528,
+          "commonDomainValueMismatches": 0,
+          "structuralEdgesValidated": 588,
+          "fieldEdgesValidated": 760,
+          "auditedHamming2Edges": 585,
+          "adjacentPrimitiveHamming2Edges": 150,
+          "nonlocalHamming2Edges": 435,
+          "phaseEdges": 175,
+          "completePhasePairs": 210,
+          "phasePairsFieldProjected": 175,
+          "phasePairsStructuralOnly": 5,
+          "phasePairsUnprojected": 30,
+          "canonicalModalApplicationsProjected": 182,
+          "formalModalApplicationsUnprojected": 280,
+          "officeBearingModalApplications": 308
+        }
+      }
+    },
+    {
+      "name": "audit operator-registry schema",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "audit cypher syntax",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "profile registry full validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "profile registry report",
+      "status": "PASS",
+      "diagnostic": {
+        "status": "passed",
+        "failedCount": 0
+      }
+    },
+    {
+      "name": "governor runtime validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "governor runtime report",
+      "status": "PASS",
+      "diagnostic": {
+        "status": "passed",
+        "failed": 0,
+        "packageVersion": "0.1.0",
+        "releaseId": "governor-runtime:0.1.0",
+        "policyFingerprint": "460e6c40bf96f58a0be36936a91939b930701dfee5875d5e5d0cd6311402f819"
+      }
+    },
+    {
+      "name": "governor runtime determinism",
+      "status": "PASS",
+      "diagnostic": {
+        "status": "passed",
+        "failed": 0,
+        "checks": 4
+      }
+    },
+    {
+      "name": "companion toolkit validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "companion toolkit report",
+      "status": "PASS",
+      "diagnostic": {
+        "status": "passed",
+        "failed": 0
+      }
+    },
+    {
+      "name": "syntax: server.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "syntax: scripts/validate-release.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "syntax: scripts/build-manifest.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "syntax: scripts/validate-cypher-syntax.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "server release id binding",
+      "status": "PASS",
+      "diagnostic": "server must target registry release 0.1.1"
+    },
+    {
+      "name": "server expected topology counts",
+      "status": "PASS",
+      "diagnostic": "server parity expectations must match canonical counts"
+    },
+    {
+      "name": "server expected mutation counts",
+      "status": "PASS",
+      "diagnostic": "server parity expectations must match audit counts"
+    },
+    {
+      "name": "server expected semantic counts",
+      "status": "PASS",
+      "diagnostic": "server parity expectations must match registry 0.1.1"
+    },
+    {
+      "name": "creation packet schema bound",
+      "status": "PASS",
+      "diagnostic": "server must compile packets through the registry compiler"
+    },
+    {
+      "name": "compiled-profile.schema.json contract",
+      "status": "PASS",
+      "diagnostic": []
+    },
+    {
+      "name": "standalone graph document",
+      "status": "PASS",
+      "diagnostic": {
+        "bytes": 859710
+      }
+    },
+    {
+      "name": "standalone graph offline closure",
+      "status": "PASS",
+      "diagnostic": "no remote runtime assets"
+    },
+    {
+      "name": "explorer: graph/explore.html",
+      "status": "PASS",
+      "diagnostic": {
+        "bytes": 26765
+      }
+    },
+    {
+      "name": "explorer vendor: graph/vendor/vis-network.min.js",
+      "status": "PASS",
+      "diagnostic": 643839
+    },
+    {
+      "name": "explorer vendor: graph/vendor/3d-force-graph.min.js",
+      "status": "PASS",
+      "diagnostic": 1313897
+    },
+    {
+      "name": "cross-package fingerprint: universal-network-data.json",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "canonical/universal-network-data.json",
+          "seven-governors-canonical-feature-profile-registry-v0.1.1/source/universal-network-data.json",
+          "seven-governors-mutation-algebra-audit/source/universal-network-data.json"
+        ],
+        "digests": [
+          "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+          "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+          "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc"
+        ]
+      }
+    },
+    {
+      "name": "cross-package fingerprint: topology-identity-definitions.json",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "canonical/topology-identity-definitions.json",
+          "seven-governors-canonical-feature-profile-registry-v0.1.1/source/topology-identity-definitions.json",
+          "seven-governors-mutation-algebra-audit/source/topology-identity-definitions.json"
+        ],
+        "digests": [
+          "ce7b3a3b8bed85d67df203a0dd6d2ba395effd19f0855869faa1a4d343bf127b",
+          "ce7b3a3b8bed85d67df203a0dd6d2ba395effd19f0855869faa1a4d343bf127b",
+          "ce7b3a3b8bed85d67df203a0dd6d2ba395effd19f0855869faa1a4d343bf127b"
+        ]
+      }
+    },
+    {
+      "name": "cross-package fingerprint: governors.yaml",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "schemas/governors.yaml",
+          "seven-governors-canonical-feature-profile-registry-v0.1.1/source/governors.yaml",
+          "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/source/governors.yaml"
+        ],
+        "digests": [
+          "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2",
+          "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2",
+          "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2"
+        ]
+      }
+    },
+    {
+      "name": "cross-package fingerprint: framework/AGENTS.md",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "framework/AGENTS.md",
+          "seven-governors-canonical-feature-profile-registry-v0.1.1/source/framework/AGENTS.md",
+          "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/source/canon/AGENTS.md"
+        ],
+        "digests": [
+          "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24",
+          "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24",
+          "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24"
+        ]
+      }
+    },
+    {
+      "name": "cross-package fingerprint: framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+          "seven-governors-canonical-feature-profile-registry-v0.1.1/source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+          "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/source/canon/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md"
+        ],
+        "digests": [
+          "5ba49b157aa6fd8ac672610f88df8ac01464fd71387f3c0e21b042e912636960",
+          "5ba49b157aa6fd8ac672610f88df8ac01464fd71387f3c0e21b042e912636960",
+          "5ba49b157aa6fd8ac672610f88df8ac01464fd71387f3c0e21b042e912636960"
+        ]
+      }
+    },
+    {
+      "name": "cross-package fingerprint: framework/NATURAL_ORGANIZATION_THESIS.md",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "framework/NATURAL_ORGANIZATION_THESIS.md",
+          "seven-governors-canonical-feature-profile-registry-v0.1.1/source/framework/NATURAL_ORGANIZATION_THESIS.md",
+          "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/source/canon/NATURAL_ORGANIZATION_THESIS.md"
+        ],
+        "digests": [
+          "898626127fbc7d7538bb954326f230db4bf97f084f35122c6e42b68dcdd37af9",
+          "898626127fbc7d7538bb954326f230db4bf97f084f35122c6e42b68dcdd37af9",
+          "898626127fbc7d7538bb954326f230db4bf97f084f35122c6e42b68dcdd37af9"
+        ]
+      }
+    },
+    {
+      "name": "cross-package fingerprint: framework/TOPOLOGICAL_ANCHORING.md",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "framework/TOPOLOGICAL_ANCHORING.md",
+          "seven-governors-canonical-feature-profile-registry-v0.1.1/source/framework/TOPOLOGICAL_ANCHORING.md",
+          "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/source/canon/TOPOLOGICAL_ANCHORING.md"
+        ],
+        "digests": [
+          "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c",
+          "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c",
+          "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c"
+        ]
+      }
+    },
+    {
+      "name": "cross-package fingerprint: docs/START_HERE.md",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "docs/START_HERE.md",
+          "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/docs/START_HERE.md"
+        ],
+        "digests": [
+          "5d7da3b424e5c67cc48f82ad7902dc85231b05cc9d8d0f27253ab1f0dff59226",
+          "5d7da3b424e5c67cc48f82ad7902dc85231b05cc9d8d0f27253ab1f0dff59226"
+        ]
+      }
+    },
+    {
+      "name": "cross-package fingerprint: docs/GRAPH_AND_COMPILER_API.md",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "docs/GRAPH_AND_COMPILER_API.md",
+          "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/docs/GRAPH_AND_COMPILER_API.md"
+        ],
+        "digests": [
+          "e75004e4935500ba21ed8ebfdb1f6df1c59cd5d6fb45fdf7254275f62444e025",
+          "e75004e4935500ba21ed8ebfdb1f6df1c59cd5d6fb45fdf7254275f62444e025"
+        ]
+      }
+    },
+    {
+      "name": "manifest completeness",
+      "status": "FAIL",
+      "diagnostic": {
+        "version": "1.2.0",
+        "missingFromManifest": [
+          ".pytest_cache/.gitignore",
+          ".pytest_cache/CACHEDIR.TAG",
+          ".pytest_cache/README.md",
+          ".pytest_cache/v/cache/lastfailed",
+          ".pytest_cache/v/cache/nodeids",
+          "docs/GOVERNOR_GRAPH_READ_API.md",
+          "graph/runtime/canonical.mjs",
+          "graph/runtime/contracts.mjs",
+          "graph/runtime/neo4j-harness.mjs",
+          "graph/runtime/providers/file-provider.mjs",
+          "graph/runtime/providers/neo4j-provider.mjs",
+          "graph/runtime/providers/snapshot-provider.mjs",
+          "graph/runtime/query-api.mjs",
+          "graph/runtime/query-catalog.mjs",
+          "graph/runtime/schemas/graph-snapshot.schema.json",
+          "graph/runtime/schemas/named-query-request.schema.json",
+          "graph/runtime/schemas/named-query-response.schema.json",
+          "neo4j/governor-runtime/README.md",
+          "neo4j/governor-runtime/reset.cypher",
+          "neo4j/governor-runtime/schema.cypher",
+          "neo4j/governor-runtime/validation.cypher",
+          "pytest.ini",
+          "scripts/import-governor-graph.mjs",
+          "src/governor/__init__.py",
+          "src/governor/__pycache__/__init__.cpython-312.pyc",
+          "src/governor/__pycache__/evidence.cpython-312.pyc",
+          "src/governor/__pycache__/executors.cpython-312.pyc",
+          "src/governor/__pycache__/graph_export.cpython-312.pyc",
+          "src/governor/__pycache__/hashing.cpython-312.pyc",
+          "src/governor/__pycache__/ledger.cpython-312.pyc",
+          "src/governor/__pycache__/lifecycle.cpython-312.pyc",
+          "src/governor/__pycache__/loop_guards.cpython-312.pyc",
+          "src/governor/__pycache__/models.cpython-312.pyc",
+          "src/governor/__pycache__/projections.cpython-312.pyc",
+          "src/governor/__pycache__/rebuild.cpython-312.pyc",
+          "src/governor/__pycache__/runtime_ledger.cpython-312.pyc",
+          "src/governor/__pycache__/runtime_models.cpython-312.pyc",
+          "src/governor/__pycache__/state_store.cpython-312.pyc",
+          "src/governor/__pycache__/transitions.cpython-312.pyc",
+          "src/governor/__pycache__/verification.cpython-312.pyc",
+          "src/governor/__pycache__/verifiers.cpython-312.pyc",
+          "src/governor/evidence.py",
+          "src/governor/executors.py",
+          "src/governor/graph_export.py",
+          "src/governor/hashing.py",
+          "src/governor/ledger.py",
+          "src/governor/lifecycle.py",
+          "src/governor/loop_guards.py",
+          "src/governor/models.py",
+          "src/governor/projections.py",
+          "src/governor/rebuild.py",
+          "src/governor/runtime_ledger.py",
+          "src/governor/runtime_models.py",
+          "src/governor/state_store.py",
+          "src/governor/transitions.py",
+          "src/governor/verification.py",
+          "src/governor/verifiers.py",
+          "tests/__pycache__/test_gov_204_projections.cpython-312-pytest-9.1.1.pyc",
+          "tests/__pycache__/test_gov_204_transitions.cpython-312-pytest-9.1.1.pyc",
+          "tests/__pycache__/test_gov_205_evidence.cpython-312-pytest-9.1.1.pyc",
+          "tests/__pycache__/test_gov_205_lifecycle.cpython-312-pytest-9.1.1.pyc",
+          "tests/__pycache__/test_gov_205_loop_guards.cpython-312-pytest-9.1.1.pyc",
+          "tests/__pycache__/test_gov_205_start_site.cpython-312-pytest-9.1.1.pyc",
+          "tests/__pycache__/test_gov_206_runtime_export.cpython-312-pytest-9.1.1.pyc",
+          "tests/fixtures/gov_205/site_server.py",
+          "tests/gov_206/neo4j-live.test.mjs",
+          "tests/gov_206/parity-audit.mjs",
+          "tests/gov_206/projection.test.mjs",
+          "tests/test_gov_204_projections.py",
+          "tests/test_gov_204_transitions.py",
+          "tests/test_gov_205_evidence.py",
+          "tests/test_gov_205_lifecycle.py",
+          "tests/test_gov_205_loop_guards.py",
+          "tests/test_gov_205_start_site.py",
+          "tests/test_gov_206_runtime_export.py"
+        ],
+        "missingFromDisk": []
+      }
+    },
+    {
+      "name": "manifest hash parity",
+      "status": "FAIL",
+      "diagnostic": {
+        "mismatched": [
+          "package.json",
+          "provenance/DECISION_LEDGER.md",
+          "scripts/validate-cypher-syntax.mjs",
+          "scrum/GOV-204-transition-engine-ledger.md",
+          "scrum/GOV-205-verification-loop-guards.md",
+          "scrum/GOV-206-graph-read-projection.md",
+          "server.mjs"
+        ]
+      }
+    },
+    {
+      "name": "checksums sha256 parity",
+      "status": "PASS",
+      "diagnostic": {
+        "checksumLines": 977,
+        "manifestFiles": 977
+      }
+    },
+    {
+      "name": "bestiary:schema-valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "bestiary:fresh",
+      "status": "PASS",
+      "diagnostic": "{\n  \"verdict\": \"PASS\",\n  \"target\": \"bestiary/data/bestiary-data.json\",\n  \"bytes\": 1006755\n}"
+    },
+    {
+      "name": "bestiary:refs-closed",
+      "status": "PASS",
+      "diagnostic": {
+        "violations": []
+      }
+    },
+    {
+      "name": "bestiary:counts",
+      "status": "PASS",
+      "diagnostic": {
+        "violations": []
+      }
+    },
+    {
+      "name": "bestiary:narrative-pins",
+      "status": "PASS",
+      "diagnostic": {
+        "violations": [],
+        "detail": "22 pinned narratives, sha256 bound, template narratives clean"
+      }
+    },
+    {
+      "name": "bestiary:site-built",
+      "status": "PASS",
+      "diagnostic": "index.html 1785556168297.265 >= newest source 1785551338095.5579"
+    },
+    {
+      "name": "bestiary:offline-closure",
+      "status": "PASS",
+      "diagnostic": {
+        "violations": [],
+        "files": 628
+      }
+    },
+    {
+      "name": "bestiary:detail-routes",
+      "status": "PASS",
+      "diagnostic": "598 detail routes (expected 598)"
+    },
+    {
+      "name": "bestiary:compare-route",
+      "status": "PASS",
+      "diagnostic": "compare page: selects=true, sections=true"
+    },
+    {
+      "name": "bestiary:alias-routes",
+      "status": "PASS",
+      "diagnostic": "operator aliases=15 (expected 15), profile aliases=7 (expected 7), redirects=22"
+    },
+    {
+      "name": "required file: framework/AGENTS.md",
+      "status": "PASS",
+      "diagnostic": 33553
+    },
+    {
+      "name": "required file: framework/TOPOLOGICAL_ANCHORING.md",
+      "status": "PASS",
+      "diagnostic": 26506
+    },
+    {
+      "name": "required file: framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+      "status": "PASS",
+      "diagnostic": 51939
+    },
+    {
+      "name": "required file: framework/NATURAL_ORGANIZATION_THESIS.md",
+      "status": "PASS",
+      "diagnostic": 33625
+    },
+    {
+      "name": "required file: schemas/governors.yaml",
+      "status": "PASS",
+      "diagnostic": 44118
+    },
+    {
+      "name": "required file: docs/TOPOLOGY_IDENTITY_AND_INVARIANTS.md",
+      "status": "PASS",
+      "diagnostic": 11232
+    },
+    {
+      "name": "required file: docs/FOUR_LAYER_FORMALIZATION.md",
+      "status": "PASS",
+      "diagnostic": 4502
+    },
+    {
+      "name": "required file: docs/START_HERE.md",
+      "status": "PASS",
+      "diagnostic": 4195
+    },
+    {
+      "name": "required file: docs/GRAPH_AND_COMPILER_API.md",
+      "status": "PASS",
+      "diagnostic": 15656
+    },
+    {
+      "name": "required file: neo4j/schema.cypher",
+      "status": "PASS",
+      "diagnostic": 1149
+    },
+    {
+      "name": "required file: neo4j/import.cypher",
+      "status": "PASS",
+      "diagnostic": 15471
+    },
+    {
+      "name": "required file: neo4j/validation.cypher",
+      "status": "PASS",
+      "diagnostic": 14222
+    },
+    {
+      "name": "required file: neo4j/provenance.cypher",
+      "status": "PASS",
+      "diagnostic": 3745
+    },
+    {
+      "name": "required file: neo4j/provenance-validation.cypher",
+      "status": "PASS",
+      "diagnostic": 1397
+    },
+    {
+      "name": "required file: seven-governors-mutation-algebra-audit/audit/operator-registry.csv",
+      "status": "PASS",
+      "diagnostic": 4434
+    },
+    {
+      "name": "required file: seven-governors-canonical-feature-profile-registry-v0.1.1/schemas/compiled-profile.schema.json",
+      "status": "PASS",
+      "diagnostic": 2392
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/package.json",
+      "status": "PASS",
+      "diagnostic": 1037
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/PACKAGE_MANIFEST.json",
+      "status": "PASS",
+      "diagnostic": 5332
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/canonical/policy-release.json",
+      "status": "PASS",
+      "diagnostic": 24529
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/canonical/feature-typed-aspect-crosswalk.json",
+      "status": "PASS",
+      "diagnostic": 6243
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/canonical/canonical-bridge-examples.json",
+      "status": "PASS",
+      "diagnostic": 7718
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/schemas/typed-aspect.schema.json",
+      "status": "PASS",
+      "diagnostic": 1299
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/schemas/quantity.schema.json",
+      "status": "PASS",
+      "diagnostic": 4628
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/schemas/bridge-rule.schema.json",
+      "status": "PASS",
+      "diagnostic": 3527
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/schemas/classification-request.schema.json",
+      "status": "PASS",
+      "diagnostic": 3474
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/schemas/classification-result.schema.json",
+      "status": "PASS",
+      "diagnostic": 4944
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/schemas/policy-release.schema.json",
+      "status": "PASS",
+      "diagnostic": 5820
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/fixtures/negative-cases.json",
+      "status": "PASS",
+      "diagnostic": 20792
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/qa/validation-report.json",
+      "status": "PASS",
+      "diagnostic": 11319
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/qa/determinism-report.json",
+      "status": "PASS",
+      "diagnostic": 2175
+    },
+    {
+      "name": "required file: seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/docs/START_HERE.md",
+      "status": "PASS",
+      "diagnostic": 4195
+    },
+    {
+      "name": "required file: bestiary/ARCH-SPEC.md",
+      "status": "PASS",
+      "diagnostic": 48982
+    },
+    {
+      "name": "required file: bestiary/data/bestiary-data.json",
+      "status": "PASS",
+      "diagnostic": 1006755
+    },
+    {
+      "name": "required file: bestiary/data/bestiary-data.schema.json",
+      "status": "PASS",
+      "diagnostic": 19301
+    },
+    {
+      "name": "required file: bestiary/data/pinned-narratives.json",
+      "status": "PASS",
+      "diagnostic": 16125
+    },
+    {
+      "name": "required file: bestiary/site/astro.config.mjs",
+      "status": "PASS",
+      "diagnostic": 191
+    },
+    {
+      "name": "required file: bestiary/site/package.json",
+      "status": "PASS",
+      "diagnostic": 349
+    },
+    {
+      "name": "required file: bestiary/site/src/lib/bestiary.ts",
+      "status": "PASS",
+      "diagnostic": 13340
+    },
+    {
+      "name": "required file: bestiary/site/src/pages/index.astro",
+      "status": "PASS",
+      "diagnostic": 2844
+    },
+    {
+      "name": "required file: bestiary/site/src/pages/archetypes/[id].astro",
+      "status": "PASS",
+      "diagnostic": 2077
+    },
+    {
+      "name": "required file: bestiary/site/src/layouts/ArchetypeLayout.astro",
+      "status": "PASS",
+      "diagnostic": 2816
+    },
+    {
+      "name": "required file: bestiary/site/src/components/StatComparisonMatrix.astro",
+      "status": "PASS",
+      "diagnostic": 8561
+    },
+    {
+      "name": "required file: bestiary/site/src/components/ArchetypeNarrative.astro",
+      "status": "PASS",
+      "diagnostic": 1184
+    },
+    {
+      "name": "required file: bestiary/site/src/components/Scatterplot.astro",
+      "status": "PASS",
+      "diagnostic": 25204
+    },
+    {
+      "name": "required file: bestiary/site/src/components/TopologyNodeGraph.astro",
+      "status": "PASS",
+      "diagnostic": 6278
+    },
+    {
+      "name": "required file: bestiary/site/src/components/PitchSetDialMini.astro",
+      "status": "PASS",
+      "diagnostic": 1705
+    },
+    {
+      "name": "required file: bestiary/site/src/lib/dialGeometry.ts",
+      "status": "PASS",
+      "diagnostic": 692
+    },
+    {
+      "name": "required file: bestiary/site/src/lib/dialClient.ts",
+      "status": "PASS",
+      "diagnostic": 9478
+    },
+    {
+      "name": "required file: bestiary/site/src/lib/networkLayout.ts",
+      "status": "PASS",
+      "diagnostic": 13305
+    },
+    {
+      "name": "required file: bestiary/site/src/lib/nodeShapes.ts",
+      "status": "PASS",
+      "diagnostic": 8343
+    },
+    {
+      "name": "required file: bestiary/site/src/pages/compare.astro",
+      "status": "PASS",
+      "diagnostic": 18296
+    },
+    {
+      "name": "required file: scripts/build-bestiary.mjs",
+      "status": "PASS",
+      "diagnostic": 33109
+    }
+  ]
+}
