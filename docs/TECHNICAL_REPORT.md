@@ -15,7 +15,7 @@ and are hypotheses the author intends to prove with further work.
 > Representation.* 2026. MIT license for code; CC BY 4.0 for curated data.
 > https://github.com/wright15/the-instrument-code
 
-**Archived snapshot:** `<ZENODO-DOI>` (add DOI after archival).
+**Archived snapshot:** `10.5281/zenodo.21845819` (add DOI after archival).
 
 ---
 
