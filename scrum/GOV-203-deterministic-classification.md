@@ -1,6 +1,12 @@
 # GOV-203 — Deterministic Governor classification and physical evaluation
 
-**Status:** Ready · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-002](EPIC-002-governor-domain-agent-runtime.md)
+**Status:** Done · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-002](EPIC-002-governor-domain-agent-runtime.md)
+
+> **Closure evidence (2026-08-07):** implemented and verified by the
+> `src/governor/classifier.py` pipeline and `tests/test_gov_203_classifier.py`
+> (10 tests passing). Physical/symbolic separation, bridge-rule evaluation,
+> and canonical-state resolution for `1749`/`2477`/`223` are covered by the
+> topology locks in `tests/verification/test_graph_topology_locks.py`.
 **Depends on:** GOV-202 · **Blocks:** GOV-204, GOV-206
 
 ## Story

@@ -1,6 +1,15 @@
 # CRT-305 — Court runtime lifecycle and ledger extension
 
-**Status:** Ready · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+**Status:** Partial · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+
+> **Status note (2026-08-07):** parallel `CourtState` fingerprint records and a
+> hash-chained Court transition ledger with byte-exact replay and
+> modify/delete/insert/reorder detection are implemented in
+> `src/governor/court_ledger.py` and verified in
+> `tests/verification/test_runtime_security.py`. Transitions are restricted to
+> registered adjacent moves over the canonical `C0`–`C4` positions.
+> **Remaining:** exact `kappa_court`, pole-register derivation, translocation
+> records, a Court session store, and the full Court token lifecycle.
 **Depends on:** CRT-302, GOV-204 · **Blocks:** CRT-307, CRT-309
 
 ## Story

@@ -521,6 +521,12 @@ for (const absolutePath of await walkFiles(packageRoot, {
     "qa/integrated-release-validation.json",
     "qa/bestiary-validation.json",
     "qa/neo4j-cypher-syntax-report.json",
+    ".git",
+    ".pytest_cache",
+    "__pycache__",
+    "bestiary/dist",
+    ".astro",
+    ".vite",
   ]),
 })) {
   computedRecords.push(await recordFile(absolutePath, packageRoot));

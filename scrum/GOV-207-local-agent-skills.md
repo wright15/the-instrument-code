@@ -1,6 +1,14 @@
 # GOV-207 — First-party local-agent skill bundle
 
-**Status:** Ready · **Priority:** High · **Points:** 5 · **Epic:** [EPIC-002](EPIC-002-governor-domain-agent-runtime.md)
+**Status:** Done · **Priority:** High · **Points:** 5 · **Epic:** [EPIC-002](EPIC-002-governor-domain-agent-runtime.md)
+
+> **Closure evidence (2026-08-07):** the five first-party operations
+> (`inspect_context`, `classify_governor`, `list_legal_moves`,
+> `validate_and_execute_move`, `verify_outcome`) are implemented in
+> `src/governor/agent_api.py` and the `skills/` bundle. Evaluation traces live
+> in `tests/gov_207/traces/` and are verified by `tests/test_gov_207_agent_api.py`
+> (22 tests), `test_gov_207_dynamic_menu.py` (15), and `test_gov_207_outcomes.py`
+> (5).
 **Depends on:** GOV-205, GOV-206 · **Blocks:** GOV-208, GOV-209
 
 ## Story

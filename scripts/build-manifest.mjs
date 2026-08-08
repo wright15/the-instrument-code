@@ -12,6 +12,12 @@ const excluded = new Set([
   "qa/integrated-release-validation.json",
   "qa/bestiary-validation.json",
   "qa/neo4j-cypher-syntax-report.json",
+  ".git",
+  ".pytest_cache",
+  "__pycache__",
+  "bestiary/dist",
+  ".astro",
+  ".vite",
 ]);
 
 const files = await walkFiles(packageRoot, { excluded });

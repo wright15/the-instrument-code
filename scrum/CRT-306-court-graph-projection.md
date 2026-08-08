@@ -1,6 +1,15 @@
 # CRT-306 — Court Neo4j projection and bounded named queries
 
-**Status:** Ready · **Priority:** High · **Points:** 5 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+**Status:** Done · **Priority:** High · **Points:** 5 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+
+> **Closure evidence (2026-08-07):** deterministic projection in
+> `src/governor/court_graph_projection.py`, bounded read-only catalog in
+> `src/governor/court_graph_queries.py`, CLI generator in
+> `scripts/generate-court-graph.py`, and schema/validation assets in
+> `neo4j/court-mathematics/`. Verified by `tests/test_court_graph_projection.py`
+> (19 tests), native Neo4j live parity in `tests/court_graph/neo4j-live.test.mjs`,
+> and byte determinism across hash seeds/time zones in
+> `tests/verification/test_graph_topology_locks.py`.
 **Depends on:** CRT-302, CRT-303, GOV-206 · **Blocks:** CRT-307, CRT-309
 
 ## Story

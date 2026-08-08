@@ -1,6 +1,6 @@
 # EPIC-003 — Pentatonic Court admission and harmonic-invariant runtime
 
-**Status:** Ready · **Priority:** High · **Owner:** pentatonic court workstream
+**Status:** In Progress · **Priority:** High · **Owner:** pentatonic court workstream
 **Epic ID:** EPIC-003 · **Target:** post-EPIC-002 admission, version TBD
 **Stories:** [CRT-301](CRT-301-court-admission-contract.md),
 [CRT-302](CRT-302-pentatonic-substrate-registry.md),

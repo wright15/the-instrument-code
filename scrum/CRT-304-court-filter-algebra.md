@@ -1,6 +1,15 @@
 # CRT-304 — Court-filter algebra and operator-commutation tests
 
-**Status:** Ready · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+**Status:** Partial · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+
+> **Status note (2026-08-07):** the linear diagonal filter `P_c(x) = x AND c`
+> is implemented in the projection layer and proven idempotent over all
+> 1,892,352 canonical state/mask pairs. The five-valued commutation result
+> space (`commutes`, `does_not_commute`, `left_undefined`, `right_undefined`,
+> `both_undefined`) is implemented, with the `R7`-after-filter `right_undefined`
+> case demonstrated. **Remaining:** a first-class `court-mathematics` filter
+> operator API with explicit domain/image objects and an admitted commutation
+> evaluator rather than authored records.
 **Depends on:** CRT-303, GOV-202 mutation operator contract · **Blocks:** CRT-307
 
 ## Story

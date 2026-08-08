@@ -1,5 +1,55 @@
 # Decision Ledger
 
+## Phases 1–4 closure: governor runtime and court-mathematics admitted as candidate-but-evidenced — 2026-08-07
+
+### Decision
+
+The governor runtime (`src/governor/`, GOV-203 through GOV-207 machinery) and
+the `court-mathematics` package are admitted in **candidate-but-evidenced**
+status: their executable implementation, determinism, and verification claims
+are accepted as evidenced, while they remain distinct from canonical topology
+admission. Full admission ceremony (CRT-301 admission contract, CRT-309
+release closure) remains open.
+
+### What was delivered and verified
+
+- `qa/integrated-release-validation.json` regenerated: **136 checks, 0 failed**
+  (`PASS`). Manifest and checksum freshness restored; generated/cache trees
+  (`.git`, `.pytest_cache`, `__pycache__`, `bestiary/dist`, `.astro`, `.vite`)
+  are now excluded from manifest walking.
+- Root pytest suite: **195 passed**. `court-mathematics`: **52 passed**.
+  GOV-206 Node contract suite: **33 passed**. Native live-Neo4j Court parity:
+  **passed** (byte-exact query results and full node/relationship property
+  comparison, reset/rebuild equality).
+- Phase 4 structural proofs (462-state field, filter idempotence, Carey
+  formula proofs, voice-leading triangle inequality, mutation algebra,
+  commutation table, ledger replay/tamper) verified by
+  `tests/verification/` and sealed by `scripts/run-phase4-verification.py`
+  (status `PASS` with integration suites).
+- Scrum board updated: GOV-203..207 and CRT-306 **Done**; CRT-303, CRT-304,
+  CRT-305 **Partial** with remaining items recorded on each ticket.
+
+### Explicitly not admitted
+
+- Pentatonic topology, Court/Fivefold, and natural-phenomena material remain
+  **proposed**.
+- Aggregate `C_H` remains **unresolved**; the four `C_h` coordinates do not
+  totalize.
+- Carey `CQ = 1` and `SQ = 1/2` are accepted as exact formula proofs under the
+  cited 12-TET premises; an independent failure/difference enumerator is not
+  yet admitted.
+- The voice-leading metric is accepted as structurally proven
+  (triangle inequality) while its musical semantics remain **provisional**.
+- `kappa_court`, pole-register derivation, translocation records, and a Court
+  session store are not implemented and remain open on CRT-305.
+
+### Change control
+
+Any change to the admitted candidate surface requires a new decision-ledger
+entry and a green root validation run. The full admission ceremony is
+recorded separately under CRT-301/CRT-309.
+
+
 ## Governor runtime transition engine and verification lifecycle — 2026-08-01
 
 ### In-repo Python runtime delivery

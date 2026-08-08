@@ -1,6 +1,14 @@
 # CRT-303 — Harmonic-invariant library and Carey CQ/SQ evaluation
 
-**Status:** Ready · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+**Status:** Partial · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+
+> **Status note (2026-08-07):** harmonic coordinates (`H_t`, `H_v`, `H_c`,
+> `H_s`) and the 462-state coordinate/proof suite are implemented in
+> `court-mathematics/` and verified by `tests/verification/`. Carey `CQ = 1`
+> and `SQ = 1/2` for the 5-35 seed are proven under exact rational arithmetic
+> with the cited 12-TET premises. **Remaining:** an independent Carey
+> failure/difference enumerator (values currently rest on stated premises),
+> an admitted invariant-registry artifact, and exact `kappa_court`.
 **Depends on:** CRT-302 · **Blocks:** CRT-304, CRT-306
 
 ## Story

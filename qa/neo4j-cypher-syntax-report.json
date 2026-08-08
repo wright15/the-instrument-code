@@ -1,6 +1,6 @@
 {
   "verdict": "PASS",
-  "generatedAt": "2026-08-01T01:52:35.829Z",
+  "generatedAt": "2026-08-08T20:13:07.669Z",
   "validator": "@neo4j-cypher/language-support",
   "files": [
     {
@@ -48,6 +48,48 @@
     {
       "file": "provenance-validation.cypher",
       "bytes": 1397,
+      "diagnostics": [],
+      "pass": true
+    },
+    {
+      "file": "governor-runtime/schema.cypher",
+      "bytes": 1819,
+      "diagnostics": [],
+      "pass": true
+    },
+    {
+      "file": "governor-runtime/reset.cypher",
+      "bytes": 480,
+      "diagnostics": [],
+      "pass": true
+    },
+    {
+      "file": "governor-runtime/validation.cypher",
+      "bytes": 2355,
+      "diagnostics": [],
+      "pass": true
+    },
+    {
+      "file": "court-mathematics/schema.cypher",
+      "bytes": 13168,
+      "diagnostics": [],
+      "pass": true
+    },
+    {
+      "file": "court-mathematics/reset.cypher",
+      "bytes": 313,
+      "diagnostics": [],
+      "pass": true
+    },
+    {
+      "file": "court-mathematics/validation.cypher",
+      "bytes": 7564,
+      "diagnostics": [],
+      "pass": true
+    },
+    {
+      "file": "court-mathematics/named-queries.cypher",
+      "bytes": 2565,
       "diagnostics": [],
       "pass": true
     }
