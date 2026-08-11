@@ -54,7 +54,8 @@ Planned story points: **57** (Court scope: 5 canonical rooted positions + 5–23
 
 | ID | Title | Points | Priority | Status |
 |---|---|---|---|---|
-| [GOV-210](GOV-210-graph-native-availability-housing.md) | Graph-native availability and housing layer | TBD | Medium | Backlog |
+| [GOV-210](GOV-210-graph-native-availability-housing.md) | Graph-native availability and housing layer | TBD | Medium | **Done** |
+| [GOV-211](GOV-211-assignment-aware-menu-integration.md) | Assignment-aware menu organization sidecar | TBD | High | **Done** |
 
 ## Global definition of done
 

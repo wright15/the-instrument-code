@@ -3,6 +3,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { canonicalJsonBytes } from "../graph/runtime/canonical.mjs";
 import { recordFile, walkFiles } from "./manifest-utils.mjs";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
@@ -24,6 +25,10 @@ async function read(relativePath) {
 async function hash(relativePath) {
   const bytes = await read(relativePath);
   return crypto.createHash("sha256").update(bytes).digest("hex");
+}
+
+function payloadHash(value) {
+  return crypto.createHash("sha256").update(canonicalJsonBytes(value)).digest("hex");
 }
 
 async function rowCount(relativePath) {
@@ -489,6 +494,101 @@ record(
   "court graph replay projection validation",
   courtGraphValidate.passed,
   courtGraphValidate.passed ? "passed" : courtGraphValidate.tail,
+);
+const gov210Validate = runNpmScript(".", "validate:gov210");
+record(
+  "GOV-210 availability and housing projection validation",
+  gov210Validate.passed,
+  gov210Validate.passed ? "passed" : gov210Validate.tail,
+);
+const gov210Projection = JSON.parse(
+  (await read("canonical/gov-210-availability-housing.json")).toString(),
+);
+record(
+  "GOV-210 canonical coverage and non-authority contract",
+  gov210Projection.schemaVersion === "gov-210.graph-projection.v1" &&
+    gov210Projection.releaseId === "gov-210-availability-housing:1.0.0" &&
+    gov210Projection.authority === "informational_catalog_only" &&
+    gov210Projection.runtimeAuthority === false &&
+    gov210Projection.counts?.availabilityCount === 10 &&
+    gov210Projection.counts?.eligibilityCount === 10 &&
+    gov210Projection.counts?.assignmentCount === 1873 &&
+    gov210Projection.counts?.topologyTargetCount === 462 &&
+    gov210Projection.counts?.courtTargetCount === 5 &&
+    gov210Projection.coverage?.mutationApplicationCount === 3402 &&
+    gov210Projection.coverage?.mutationOperatorCount === 15 &&
+    gov210Projection.coverage?.courtOrdinaryMoveCount === 8,
+  {
+    projectionFingerprint: gov210Projection.projectionFingerprint,
+    counts: gov210Projection.counts,
+    coverage: gov210Projection.coverage,
+  },
+);
+const gov210SourceChecks = await Promise.all(
+  gov210Projection.sourceBindings.map(async (binding) => ({
+    path: binding.path,
+    expected: binding.sha256,
+    actual: await hash(binding.path),
+  })),
+);
+record(
+  "GOV-210 source fingerprint closure",
+  gov210SourceChecks.length === 8 &&
+    gov210SourceChecks.every((binding) => binding.actual === binding.expected),
+  gov210SourceChecks,
+);
+record(
+  "GOV-210 legacy projection fingerprint isolation",
+  (await hash("graph/runtime/query-catalog.mjs")) ===
+      "c6e7f5a4bb87f0fb190e54bc5879271408d38c83fd58dbc2f6953f0523fd5e94" &&
+    (await hash("src/governor/court_graph_queries.py")) ===
+      "3442e4cd03a3885a5cd7706d8146974eba20fc564edf08acb4bb2db0479ddcc8",
+  "GOV-206 and CRT-306 query catalogs retain their release 1.3.0 bytes",
+);
+const gov211Validate = runNpmScript(".", "validate:gov211");
+record(
+  "GOV-211 assignment-aware menu validation",
+  gov211Validate.passed,
+  gov211Validate.passed ? "passed" : gov211Validate.tail,
+);
+const gov211Policy = JSON.parse(
+  (await read("schemas/gov-211/menu-organization-policy.json")).toString(),
+);
+const gov211PolicyCore = { ...gov211Policy };
+delete gov211PolicyCore.policyFingerprint;
+record(
+  "GOV-211 presentation-only policy closure",
+  gov211Policy.schemaVersion === "gov-211.menu-organization-policy.v1" &&
+    gov211Policy.authority === "presentation_order_only" &&
+    gov211Policy.runtimeAuthority === false &&
+    gov211Policy.policyFingerprint ===
+      "798336db2b977d40d819b6b64282b88eda5191f44954a87a5bb2386a6b0ab98a" &&
+    payloadHash(gov211PolicyCore) === gov211Policy.policyFingerprint &&
+    gov211Policy.fallback?.preserveOriginalOrder === true &&
+    gov211Policy.fallback?.preserveOriginalMembership === true &&
+    gov211Policy.fallback?.preserveMoves === true &&
+    gov211Policy.fallback?.preserveExecutorExposure === true,
+  {
+    policyFingerprint: gov211Policy.policyFingerprint,
+    authority: gov211Policy.authority,
+    runtimeAuthority: gov211Policy.runtimeAuthority,
+  },
+);
+record(
+  "GOV-211 closed-runtime and GOV-210 identity isolation",
+  gov210Projection.projectionFingerprint ===
+      "2b87a0ed677e4e75286ac2d6833d840fa674a051ffca1d3de5d92a8e979916df" &&
+    (await hash("canonical/gov-210-availability-housing.json")) ===
+      "7382b8ca818682a95b9f6f8d75e3130762ae992f761c1e25de7e31905d214858" &&
+    (await hash("skills/governor/registry.json")) ===
+      "f326aabe01c4be4d80589c84c7b8e9591e283c50d63d4b40b140bab11fbf64ae" &&
+    (await hash("skills/court/registry.json")) ===
+      "9eb2f62a6c30f6e608c37d9c9c383917f26475ec9d33c4a4b471bddd67803ca3" &&
+    (await hash("src/governor/agent_api.py")) ===
+      "75dc3baf00209697e61218338e52363c6a6b23563e7426039c7f5e25ba833804" &&
+    (await hash("src/governor/court_agent_api.py")) ===
+      "9b842b3b09580e17bf6b6169b7ea6a8d9d22462c36c3ca6762c2de8e38d90e39",
+  "GOV-207, CRT-307, and GOV-210 release identities retain their 1.3.0 bytes",
 );
 const courtSkillsValidate = runNpmScript(".", "validate:court-skills");
 record(
@@ -1598,6 +1698,34 @@ for (const requiredPath of [
   "scripts/run-governor-admission-benchmark.mjs",
   "scripts/validate-governor-admission.mjs",
   "tests/gov_209/benchmark-corpus.json",
+  "canonical/gov-210-availability-housing.json",
+  "schemas/gov-210/skill-eligibility-policy.json",
+  "schemas/gov-210/skill-availability.schema.json",
+  "schemas/gov-210/skill-eligibility.schema.json",
+  "schemas/gov-210/skill-assignment.schema.json",
+  "schemas/gov-210/context-housing.schema.json",
+  "schemas/gov-210/skill-lifecycle.schema.json",
+  "schemas/gov-210/graph-projection.schema.json",
+  "src/governor/availability_housing.py",
+  "src/governor/availability_housing_queries.py",
+  "scripts/generate-availability-housing.py",
+  "tests/test_gov_210_availability_housing.py",
+  "tests/gov_210/neo4j-live.test.mjs",
+  "tests/gov_210/context-fixture.json",
+  "tests/gov_210/lifecycle-fixture.json",
+  "neo4j/gov-210/schema.cypher",
+  "neo4j/gov-210/validation.cypher",
+  "neo4j/gov-210/reset.cypher",
+  "docs/GOV_210_AVAILABILITY_AND_HOUSING.md",
+  "schemas/gov-211/menu-organization-policy.json",
+  "schemas/gov-211/assignment-query-result.schema.json",
+  "schemas/gov-211/menu-organization.schema.json",
+  "schemas/gov-211/assignment-aware-response.schema.json",
+  "src/governor/assignment_menu.py",
+  "tests/test_gov_211_assignment_menu.py",
+  "tests/gov_211/neo4j-live.test.mjs",
+  "docs/GOV_211_ASSIGNMENT_AWARE_MENU.md",
+  "scrum/GOV-211-assignment-aware-menu-integration.md",
   "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/docs/START_HERE.md",
   "bestiary/ARCH-SPEC.md",
   "bestiary/data/bestiary-data.json",

@@ -203,6 +203,14 @@ from .dynamic_menu import (
     build_dynamic_menu,
 )
 from .agent_api import AgentApi, AgentApiError, initialize_session
+from .assignment_menu import (
+    AssignmentAwareFacade,
+    AssignmentMenuError,
+    SnapshotAssignmentProvider,
+    TrustedTopologyTargetBinding,
+    seal_assignment_query_result,
+    verify_assignment_aware_response,
+)
 from .graph_export import (
     RUNTIME_EXPORT_SCHEMA_VERSION,
     GraphExportError,
@@ -219,6 +227,8 @@ __all__ = (
     "AgentApi",
     "AgentApiError",
     "AgentState",
+    "AssignmentAwareFacade",
+    "AssignmentMenuError",
     "AttemptOutcome",
     "AttemptRecord",
     "ClassifierError",
@@ -303,10 +313,12 @@ __all__ = (
     "RuntimeReplayResult",
     "RuntimeSessionStore",
     "StateStore",
+    "SnapshotAssignmentProvider",
     "StagedRuntimeEvent",
     "TransitionError",
     "TransitionResult",
     "TopologicalTranslocationRecord",
+    "TrustedTopologyTargetBinding",
     "ValidatedMove",
     "ValidationToken",
     "VerificationDecision",
@@ -366,6 +378,7 @@ __all__ = (
     "read_attempt_outcome",
     "serialize_projection",
     "seal_runtime_event",
+    "seal_assignment_query_result",
     "stage_runtime_event",
     "commit_staged_runtime_event",
     "select_recovery_moves",
@@ -394,6 +407,7 @@ __all__ = (
     "validate_move",
     "validate_court_move",
     "verify_runtime_export",
+    "verify_assignment_aware_response",
     "court_state_body",
     "court_state_with_anchor",
     "write_kappa_coordinate",

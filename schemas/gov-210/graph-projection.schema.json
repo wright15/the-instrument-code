@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gov-210.graph-projection.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "releaseId", "authority", "runtimeAuthority", "sourceBindings", "coverage", "counts", "nodes", "relationships", "projectionFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "gov-210.graph-projection.v1"},
+    "releaseId": {"const": "gov-210-availability-housing:1.0.0"},
+    "authority": {"const": "informational_catalog_only"},
+    "runtimeAuthority": {"const": false},
+    "sourceBindings": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["dependencyId", "path", "sha256"],
+        "properties": {
+          "dependencyId": {"type": "string", "minLength": 1},
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"$ref": "#/$defs/sha256"}
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["availabilityByNamespace", "courtFilterCount", "courtOrdinaryMoveCount", "courtOrdinaryMoveCoverageBySkill", "courtPositionCount", "eligibilityCount", "mutationApplicationCount", "mutationApplicationCoverageBySkill", "mutationOperatorCount", "topologyTargetCount"],
+      "properties": {
+        "availabilityByNamespace": {"type": "object", "additionalProperties": false, "required": ["court", "governor"], "properties": {"court": {"const": 5}, "governor": {"const": 5}}},
+        "courtFilterCount": {"const": 5},
+        "courtOrdinaryMoveCount": {"const": 8},
+        "courtOrdinaryMoveCoverageBySkill": {"$ref": "#/$defs/courtMoveCoverage"},
+        "courtPositionCount": {"const": 5},
+        "eligibilityCount": {"const": 10},
+        "mutationApplicationCount": {"const": 3402},
+        "mutationApplicationCoverageBySkill": {"$ref": "#/$defs/mutationCoverage"},
+        "mutationOperatorCount": {"const": 15},
+        "topologyTargetCount": {"const": 462}
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assignmentCount", "availabilityCount", "courtTargetCount", "eligibilityCount", "housingCount", "lifecycleCount", "nodeCount", "relationshipCount", "topologyTargetCount"],
+      "properties": {
+        "assignmentCount": {"const": 1873},
+        "availabilityCount": {"const": 10},
+        "courtTargetCount": {"const": 5},
+        "eligibilityCount": {"const": 10},
+        "housingCount": {"type": "integer", "minimum": 0},
+        "lifecycleCount": {"type": "integer", "minimum": 0},
+        "nodeCount": {"type": "integer", "minimum": 2361},
+        "relationshipCount": {"type": "integer", "minimum": 3766},
+        "topologyTargetCount": {"const": 462}
+      }
+    },
+    "nodes": {"type": "array", "minItems": 2361, "items": {"$ref": "#/$defs/node"}},
+    "relationships": {"type": "array", "minItems": 3766, "items": {"$ref": "#/$defs/relationship"}},
+    "projectionFingerprint": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "mutationCoverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["list_legal_moves", "validate_and_execute_move", "verify_outcome"],
+      "properties": {"list_legal_moves": {"const": 3402}, "validate_and_execute_move": {"const": 3402}, "verify_outcome": {"const": 3402}}
+    },
+    "courtMoveCoverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["list_legal_court_moves", "validate_and_execute_court_transition", "verify_court_postcondition"],
+      "properties": {"list_legal_court_moves": {"const": 8}, "validate_and_execute_court_transition": {"const": 8}, "verify_court_postcondition": {"const": 8}}
+    },
+    "nodeEnvelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["admissionStatus", "label", "logicalId", "properties", "recordSha256", "sourceSha256"],
+      "properties": {
+        "admissionStatus": {"type": "string"},
+        "label": {"enum": ["Gov210AvailabilityRelease", "Gov210ContextHousing", "Gov210CourtTarget", "Gov210SkillAssignment", "Gov210SkillAvailability", "Gov210SkillEligibility", "Gov210SkillLifecycle", "Gov210TopologyTarget"]},
+        "logicalId": {"type": "string", "minLength": 1},
+        "properties": {"type": "object"},
+        "recordSha256": {"$ref": "#/$defs/sha256"},
+        "sourceSha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "node": {
+      "allOf": [
+        {"$ref": "#/$defs/nodeEnvelope"},
+        {
+          "if": {"properties": {"label": {"const": "Gov210SkillAvailability"}}},
+          "then": {"properties": {"properties": {"$ref": "skill-availability.schema.json"}}}
+        },
+        {
+          "if": {"properties": {"label": {"const": "Gov210SkillEligibility"}}},
+          "then": {"properties": {"properties": {"$ref": "skill-eligibility.schema.json"}}}
+        },
+        {
+          "if": {"properties": {"label": {"const": "Gov210SkillAssignment"}}},
+          "then": {"properties": {"properties": {"$ref": "skill-assignment.schema.json"}}}
+        },
+        {
+          "if": {"properties": {"label": {"const": "Gov210ContextHousing"}}},
+          "then": {"properties": {"properties": {"$ref": "context-housing.schema.json"}}}
+        },
+        {
+          "if": {"properties": {"label": {"const": "Gov210SkillLifecycle"}}},
+          "then": {"properties": {"properties": {"$ref": "skill-lifecycle.schema.json"}}}
+        },
+        {
+          "if": {"properties": {"label": {"const": "Gov210AvailabilityRelease"}}},
+          "then": {"properties": {"properties": {"$ref": "#/$defs/releaseProperties"}}}
+        },
+        {
+          "if": {"properties": {"label": {"const": "Gov210TopologyTarget"}}},
+          "then": {"properties": {"properties": {"$ref": "#/$defs/topologyTargetProperties"}}}
+        },
+        {
+          "if": {"properties": {"label": {"const": "Gov210CourtTarget"}}},
+          "then": {"properties": {"properties": {"$ref": "#/$defs/courtTargetProperties"}}}
+        }
+      ]
+    },
+    "releaseProperties": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authority", "policyFingerprint", "releaseId", "runtimeAuthority"],
+      "properties": {
+        "authority": {"const": "informational_catalog_only"},
+        "policyFingerprint": {"$ref": "#/$defs/sha256"},
+        "releaseId": {"const": "gov-210-availability-housing:1.0.0"},
+        "runtimeAuthority": {"const": false}
+      }
+    },
+    "topologyTargetProperties": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fineRole", "forte", "name", "office", "role", "scaleStateId", "tier"],
+      "properties": {
+        "fineRole": {"type": "string"},
+        "forte": {"type": "string"},
+        "name": {"type": "string"},
+        "office": {"type": ["string", "null"]},
+        "role": {"enum": ["anchor", "satellite", "boundary"]},
+        "scaleStateId": {"type": "integer", "minimum": 1, "maximum": 4095},
+        "tier": {"type": ["string", "null"]}
+      }
+    },
+    "courtTargetProperties": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["index", "internalPoles", "kappaDenominator", "kappaNumerator", "pitchMask", "positionId"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0, "maximum": 4},
+        "internalPoles": {"type": "array", "uniqueItems": true, "items": {"enum": ["Mars", "Jupiter", "Venus", "Saturn"]}},
+        "kappaDenominator": {"enum": [1, 2, 4]},
+        "kappaNumerator": {"type": "integer", "minimum": 0, "maximum": 3},
+        "pitchMask": {"type": "integer", "minimum": 1, "maximum": 4095},
+        "positionId": {"enum": ["C0", "C1", "C2", "C3", "C4"]}
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["admissionStatus", "logicalId", "properties", "recordSha256", "relationshipType", "sourceLabel", "sourceLogicalId", "sourceSha256", "targetLabel", "targetLogicalId"],
+      "properties": {
+        "admissionStatus": {"const": "informational"},
+        "logicalId": {"type": "string", "minLength": 1},
+        "properties": {"type": "object", "additionalProperties": false, "required": ["runtimeAuthority"], "properties": {"runtimeAuthority": {"const": false}}},
+        "recordSha256": {"$ref": "#/$defs/sha256"},
+        "relationshipType": {"enum": ["GOV210_ASSIGNS_SKILL", "GOV210_DECLARES_AVAILABILITY", "GOV210_DECLARES_HOUSING", "GOV210_DECLARES_LIFECYCLE", "GOV210_HAS_ELIGIBILITY", "GOV210_REFERENCES_SKILL", "GOV210_TARGETS"]},
+        "sourceLabel": {"type": "string", "pattern": "^Gov210"},
+        "sourceLogicalId": {"type": "string", "minLength": 1},
+        "sourceSha256": {"$ref": "#/$defs/sha256"},
+        "targetLabel": {"type": "string", "pattern": "^Gov210"},
+        "targetLogicalId": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

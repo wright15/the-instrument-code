@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gov-211.assignment-aware-response.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "namespace", "baseResultFingerprint", "baseOutput", "organization", "resultFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "gov-211.assignment-aware-response.v1"},
+    "namespace": {"enum": ["governor", "court"]},
+    "baseResultFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "baseOutput": {
+      "type": "object",
+      "required": ["schemaVersion", "skillId", "requestId", "status", "resultFingerprint"],
+      "properties": {
+        "schemaVersion": {"pattern": "^(gov-207|crt-307)\\..+\\.output\\.v1$"},
+        "skillId": {"enum": ["classify_governor", "inspect_context", "list_legal_moves", "validate_and_execute_move", "verify_outcome", "inspect_court_state", "list_legal_court_moves", "validate_and_execute_court_transition", "project_through_court", "verify_court_postcondition"]},
+        "requestId": {"type": "string", "minLength": 1, "maxLength": 128},
+        "status": {"type": "string", "minLength": 1, "maxLength": 128},
+        "resultFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "organization": {"$ref": "menu-organization.schema.json"},
+    "resultFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

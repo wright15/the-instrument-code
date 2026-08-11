@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gov-210.context-housing.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["housingId", "noteId", "contextNamespace", "depth", "frontmatterFields", "sectionRoles", "sectionRoleStatus", "resolvedLinkNoteIds", "linkStatuses", "provenanceRefs", "contentSha256", "sourceBundleFingerprint", "housingFingerprint"],
+  "properties": {
+    "housingId": {"type": "string", "minLength": 1},
+    "noteId": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"},
+    "contextNamespace": {"enum": ["governor", "court"]},
+    "depth": {"type": "integer", "minimum": 0},
+    "frontmatterFields": {"$ref": "#/$defs/strings"},
+    "sectionRoles": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["court_coordinate", "governor_reference", "identity", "link_topology", "provenance"]}},
+    "sectionRoleStatus": {"const": "derived_from_frontmatter_structure"},
+    "resolvedLinkNoteIds": {"$ref": "#/$defs/strings"},
+    "linkStatuses": {"$ref": "#/$defs/strings"},
+    "provenanceRefs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^provenance-sha256:[0-9a-f]{64}$"}},
+    "contentSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "sourceBundleFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "housingFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {"strings": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}}
+}

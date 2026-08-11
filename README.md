@@ -5,7 +5,10 @@ network. It combines the conceptual framework, audited canonical release,
 Neo4j projection, provenance layer, executable invariant checks, semantic
 profile registry and compiler, admitted Governor and bounded Court runtimes,
 optional read-only vault context, companion authoring toolkit, and repaired
-interactive graph.
+interactive graph. GOV-210 adds a separate graph-native skill availability,
+eligibility, assignment, and privacy-preserving context-housing catalog.
+GOV-211 uses that catalog only to organize already-legal Governor and Court
+menus through a sealed, presentation-only sidecar.
 
 The package is intentionally layered:
 
@@ -90,6 +93,19 @@ classifier/runtime output is byte-identical to the context-free path; with a
 provider, context remains separately fingerprinted evidence and cannot alter
 policy, legality, admission, graph-query identity, or office occupancy.
 
+GOV-210 projects all ten closed skill-registry records into an informational
+catalog over 462 topology targets and five Court positions. Assignments retain
+exact mutation, edge, degree-address, Court-move, or filter basis while runtime
+replay remains authoritative. Optional housing retains only field/link
+structure, explicit section roles, hashed provenance, and fingerprints.
+
+GOV-211 wraps unchanged GOV-207 and CRT-307 responses with deterministic
+assignment-aware presentation order. Governor targets require a
+host-authenticated binding to complete replay identity; Court targets derive
+from replayed state. Provider failure preserves original menu order and
+membership, moves, queries, executor exposure, directives, receipts, and base
+fingerprints. See `docs/GOV_211_ASSIGNMENT_AWARE_MENU.md`.
+
 Start with `docs/START_HERE.md` for the navigation map,
 `docs/GOVERNOR_DOMAIN_AUTHORITY.md` and
 `docs/COURT_ADMISSION_AND_AUTHORITY.md` for namespace boundaries, and
@@ -130,8 +146,15 @@ compiler (deterministic rebuild), provider parity, Governor-runtime contracts
 and clean-build determinism, Court substrate, harmonic-invariant, and
 filter-algebra candidate packages, the Court runtime policy/lifecycle, the
 replay-bound Court graph and agent skill bundle, the companion toolkit
-(candidate-scoped), the API contract, the offline explorer, cross-package
+(candidate-scoped), GOV-210 deterministic availability/housing, GOV-211
+assignment-aware presentation, the API contract, the offline explorer, cross-package
 fingerprints, manifest freshness, and all Cypher files.
+
+Run `npm run test:gov210:neo4j` separately for native Neo4j import, reset, and
+all-query provider parity.
+
+Run `npm run test:gov211:neo4j` separately for sealed file/live-Neo4j
+assignment-result parity.
 
 ## Import into Neo4j
 

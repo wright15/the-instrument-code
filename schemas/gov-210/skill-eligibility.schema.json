@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gov-210.skill-eligibility.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["eligibilityId", "skillId", "registryNamespace", "targetNamespace", "basisSelector", "assignmentSemantics", "runtimeAuthority"],
+  "properties": {
+    "eligibilityId": {"type": "string", "minLength": 1},
+    "skillId": {"type": "string", "minLength": 1},
+    "registryNamespace": {"enum": ["governor", "court"]},
+    "targetNamespace": {"enum": ["availability", "topology", "court"]},
+    "basisSelector": {"enum": ["availability_only", "topology_node_identity", "mutation_application_source", "mutation_application_target", "court_position_identity", "court_ordinary_move_source", "court_ordinary_move_target", "court_filter_position"]},
+    "assignmentSemantics": {"const": "informational_catalog_only"},
+    "runtimeAuthority": {"const": false}
+  }
+}

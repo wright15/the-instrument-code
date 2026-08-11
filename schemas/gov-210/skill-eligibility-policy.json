@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "gov-210.skill-eligibility-policy.v1",
+  "policyId": "gov-210-skill-eligibility:1.0.0",
+  "authority": "informational_assignment_only",
+  "runtimeAuthority": false,
+  "registryBindings": [
+    {
+      "namespace": "court",
+      "path": "skills/court/registry.json",
+      "sha256": "9eb2f62a6c30f6e608c37d9c9c383917f26475ec9d33c4a4b471bddd67803ca3"
+    },
+    {
+      "namespace": "governor",
+      "path": "skills/governor/registry.json",
+      "sha256": "f326aabe01c4be4d80589c84c7b8e9591e283c50d63d4b40b140bab11fbf64ae"
+    }
+  ],
+  "housingSectionRoles": [
+    {
+      "role": "court_coordinate",
+      "frontmatterFields": ["courtFilterMask", "courtRootedPosition", "kappaCourt", "pentatonicSetClass"]
+    },
+    {
+      "role": "governor_reference",
+      "frontmatterFields": ["aspectRefs", "governor", "ruleRefs"]
+    },
+    {
+      "role": "identity",
+      "frontmatterFields": ["noteId", "title"]
+    },
+    {
+      "role": "link_topology",
+      "structuralSignal": "links_present"
+    },
+    {
+      "role": "provenance",
+      "frontmatterFields": ["admissionStatus", "courtProvenanceRef", "source"]
+    }
+  ],
+  "eligibilities": [
+    {
+      "eligibilityId": "eligibility:classify_governor",
+      "skillId": "classify_governor",
+      "registryNamespace": "governor",
+      "targetNamespace": "availability",
+      "basisSelector": "availability_only"
+    },
+    {
+      "eligibilityId": "eligibility:inspect_context",
+      "skillId": "inspect_context",
+      "registryNamespace": "governor",
+      "targetNamespace": "topology",
+      "basisSelector": "topology_node_identity"
+    },
+    {
+      "eligibilityId": "eligibility:list_legal_moves",
+      "skillId": "list_legal_moves",
+      "registryNamespace": "governor",
+      "targetNamespace": "topology",
+      "basisSelector": "mutation_application_source"
+    },
+    {
+      "eligibilityId": "eligibility:validate_and_execute_move",
+      "skillId": "validate_and_execute_move",
+      "registryNamespace": "governor",
+      "targetNamespace": "topology",
+      "basisSelector": "mutation_application_source"
+    },
+    {
+      "eligibilityId": "eligibility:verify_outcome",
+      "skillId": "verify_outcome",
+      "registryNamespace": "governor",
+      "targetNamespace": "topology",
+      "basisSelector": "mutation_application_target"
+    },
+    {
+      "eligibilityId": "eligibility:inspect_court_state",
+      "skillId": "inspect_court_state",
+      "registryNamespace": "court",
+      "targetNamespace": "court",
+      "basisSelector": "court_position_identity"
+    },
+    {
+      "eligibilityId": "eligibility:list_legal_court_moves",
+      "skillId": "list_legal_court_moves",
+      "registryNamespace": "court",
+      "targetNamespace": "court",
+      "basisSelector": "court_ordinary_move_source"
+    },
+    {
+      "eligibilityId": "eligibility:project_through_court",
+      "skillId": "project_through_court",
+      "registryNamespace": "court",
+      "targetNamespace": "court",
+      "basisSelector": "court_filter_position"
+    },
+    {
+      "eligibilityId": "eligibility:validate_and_execute_court_transition",
+      "skillId": "validate_and_execute_court_transition",
+      "registryNamespace": "court",
+      "targetNamespace": "court",
+      "basisSelector": "court_ordinary_move_source"
+    },
+    {
+      "eligibilityId": "eligibility:verify_court_postcondition",
+      "skillId": "verify_court_postcondition",
+      "registryNamespace": "court",
+      "targetNamespace": "court",
+      "basisSelector": "court_ordinary_move_target"
+    }
+  ],
+  "policyFingerprint": "0f3e2c2fb8bb85a656425d6a1b580480c966422d52b565c0ed61425a89c980ac"
+}

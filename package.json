@@ -37,7 +37,14 @@
     "build:court-admission": "node scripts/build-court-admission.mjs",
     "validate:court-admission": "node scripts/validate-court-admission.mjs",
     "benchmark:governor-admission": "node scripts/run-governor-admission-benchmark.mjs",
-    "validate:governor-admission": "node scripts/validate-governor-admission.mjs"
+    "validate:governor-admission": "node scripts/validate-governor-admission.mjs",
+    "build:gov210": "python3 scripts/generate-availability-housing.py",
+    "test:gov210": "python3 -m pytest -p no:cacheprovider -q tests/test_gov_210_availability_housing.py",
+    "test:gov210:neo4j": "node --test tests/gov_210/neo4j-live.test.mjs",
+    "validate:gov210": "python3 scripts/generate-availability-housing.py --check && npm run test:gov210 --silent",
+    "test:gov211": "python3 -m pytest -p no:cacheprovider -q tests/test_gov_211_assignment_menu.py",
+    "test:gov211:neo4j": "node --test tests/gov_211/neo4j-live.test.mjs",
+    "validate:gov211": "npm run test:gov211 --silent"
   },
   "engines": {
     "node": ">=20"

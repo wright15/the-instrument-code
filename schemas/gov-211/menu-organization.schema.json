@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gov-211.menu-organization.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "namespace", "status", "reasonCode", "authority", "runtimeAuthority", "target", "projectionFingerprint", "queryResultFingerprint", "policyFingerprint", "baseResultFingerprint", "baseMenuFingerprint", "baseSkillsFingerprint", "baseMovesFingerprint", "originalSkillIds", "presentationOrder", "assignedSkills", "unassignedSkillIds", "baseMenuUnchanged", "skillMembershipChanged", "moveSetChanged", "executorExposureChanged", "organizationFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "gov-211.menu-organization.v1"},
+    "namespace": {"enum": ["governor", "court"]},
+    "status": {"enum": ["organized", "fallback"]},
+    "reasonCode": {"type": "string", "minLength": 1, "maxLength": 128},
+    "authority": {"const": "presentation_order_only"},
+    "runtimeAuthority": {"const": false},
+    "target": {"anyOf": [{"$ref": "#/$defs/topologyTarget"}, {"$ref": "#/$defs/courtTarget"}, {"type": "null"}]},
+    "projectionFingerprint": {"$ref": "#/$defs/nullableSha256"},
+    "queryResultFingerprint": {"$ref": "#/$defs/nullableSha256"},
+    "policyFingerprint": {"const": "798336db2b977d40d819b6b64282b88eda5191f44954a87a5bb2386a6b0ab98a"},
+    "baseResultFingerprint": {"$ref": "#/$defs/sha256"},
+    "baseMenuFingerprint": {"$ref": "#/$defs/nullableSha256"},
+    "baseSkillsFingerprint": {"$ref": "#/$defs/sha256"},
+    "baseMovesFingerprint": {"$ref": "#/$defs/sha256"},
+    "originalSkillIds": {"$ref": "#/$defs/skills"},
+    "presentationOrder": {"$ref": "#/$defs/skills"},
+    "assignedSkills": {"type": "array", "maxItems": 10, "uniqueItems": true, "items": {"$ref": "#/$defs/assignedSkill"}},
+    "unassignedSkillIds": {"$ref": "#/$defs/skills"},
+    "baseMenuUnchanged": {"const": true},
+    "skillMembershipChanged": {"const": false},
+    "moveSetChanged": {"const": false},
+    "executorExposureChanged": {"const": false},
+    "organizationFingerprint": {"$ref": "#/$defs/sha256"}
+  },
+  "allOf": [
+    {"if": {"properties": {"namespace": {"const": "governor"}, "target": {"type": "object"}}, "required": ["target"]}, "then": {"properties": {"target": {"$ref": "#/$defs/topologyTarget"}}}},
+    {"if": {"properties": {"namespace": {"const": "court"}, "target": {"type": "object"}}, "required": ["target"]}, "then": {"properties": {"target": {"$ref": "#/$defs/courtTarget"}}}},
+    {"if": {"properties": {"status": {"const": "organized"}}}, "then": {"properties": {"reasonCode": {"const": "ok"}, "target": {"type": "object"}, "projectionFingerprint": {"$ref": "#/$defs/sha256"}, "queryResultFingerprint": {"$ref": "#/$defs/sha256"}}}},
+    {"if": {"properties": {"status": {"const": "fallback"}}}, "then": {"properties": {"assignedSkills": {"maxItems": 0}, "projectionFingerprint": {"type": "null"}, "queryResultFingerprint": {"type": "null"}}}}
+  ],
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "nullableSha256": {"anyOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]},
+    "skillId": {"enum": ["classify_governor", "inspect_context", "list_legal_moves", "validate_and_execute_move", "verify_outcome", "inspect_court_state", "list_legal_court_moves", "validate_and_execute_court_transition", "project_through_court", "verify_court_postcondition"]},
+    "skills": {"type": "array", "maxItems": 10, "uniqueItems": true, "items": {"$ref": "#/$defs/skillId"}},
+    "topologyTarget": {"type": "object", "additionalProperties": false, "required": ["targetNamespace", "targetId", "bindingFingerprint"], "properties": {"targetNamespace": {"const": "topology"}, "targetId": {"type": "integer", "minimum": 1, "maximum": 4095}, "bindingFingerprint": {"$ref": "#/$defs/sha256"}}},
+    "courtTarget": {"type": "object", "additionalProperties": false, "required": ["targetNamespace", "targetId", "bindingFingerprint"], "properties": {"targetNamespace": {"const": "court"}, "targetId": {"enum": ["C0", "C1", "C2", "C3", "C4"]}, "bindingFingerprint": {"$ref": "#/$defs/sha256"}}},
+    "assignedSkill": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["skillId", "assignmentId", "basisKind", "basisSha256", "rank"],
+      "properties": {
+        "skillId": {"$ref": "#/$defs/skillId"},
+        "assignmentId": {"type": "string", "minLength": 1, "maxLength": 256},
+        "basisKind": {"enum": ["topology_node_identity", "mutation_application_source", "mutation_application_target", "court_position_identity", "court_ordinary_move_source", "court_filter_position", "court_ordinary_move_target"]},
+        "basisSha256": {"$ref": "#/$defs/sha256"},
+        "rank": {"type": "integer", "minimum": 0, "maximum": 3}
+      }
+    }
+  }
+}

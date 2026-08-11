@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gov-211.menu-organization-policy.v1",
+  "policyId": "gov-211-menu-organization:1.0.0",
+  "authority": "presentation_order_only",
+  "runtimeAuthority": false,
+  "basisOrder": {
+    "topology": [
+      "topology_node_identity",
+      "mutation_application_source",
+      "mutation_application_target",
+      "availability_only"
+    ],
+    "court": [
+      "court_position_identity",
+      "court_ordinary_move_source",
+      "court_filter_position",
+      "court_ordinary_move_target"
+    ]
+  },
+  "fallback": {
+    "preserveOriginalOrder": true,
+    "preserveOriginalMembership": true,
+    "preserveMoves": true,
+    "preserveExecutorExposure": true
+  },
+  "policyFingerprint": "798336db2b977d40d819b6b64282b88eda5191f44954a87a5bb2386a6b0ab98a"
+}

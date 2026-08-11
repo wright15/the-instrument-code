@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gov-211.assignment-query-result.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "queryId", "parameters", "parameterFingerprint", "projectionFingerprint", "rows", "resultFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "gov-211.assignment-query-result.v1"},
+    "queryId": {"enum": ["skills_for_topology_target", "skills_for_court_position"]},
+    "parameters": {"type": "object"},
+    "parameterFingerprint": {"$ref": "#/$defs/sha256"},
+    "projectionFingerprint": {"$ref": "#/$defs/sha256"},
+    "rows": {"type": "array", "maxItems": 10},
+    "resultFingerprint": {"$ref": "#/$defs/sha256"}
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "queryId": {"const": "skills_for_topology_target"},
+        "parameters": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["scaleStateId"],
+          "properties": {"scaleStateId": {"type": "integer", "minimum": 1, "maximum": 4095}}
+        },
+        "rows": {"type": "array", "maxItems": 10, "items": {"$ref": "#/$defs/topologyRow"}}
+      }
+    },
+    {
+      "properties": {
+        "queryId": {"const": "skills_for_court_position"},
+        "parameters": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["positionId"],
+          "properties": {"positionId": {"enum": ["C0", "C1", "C2", "C3", "C4"]}}
+        },
+        "rows": {"type": "array", "maxItems": 10, "items": {"$ref": "#/$defs/courtRow"}}
+      }
+    }
+  ],
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "identifier": {"type": "string", "minLength": 1, "maxLength": 256},
+    "commonProperties": {
+      "skillId": {"enum": ["inspect_context", "list_legal_moves", "validate_and_execute_move", "verify_outcome", "inspect_court_state", "list_legal_court_moves", "validate_and_execute_court_transition", "project_through_court", "verify_court_postcondition"]},
+      "name": {"$ref": "#/$defs/identifier"},
+      "assignmentId": {"$ref": "#/$defs/identifier"},
+      "basisKind": {"enum": ["topology_node_identity", "mutation_application_source", "mutation_application_target", "court_position_identity", "court_ordinary_move_source", "court_filter_position", "court_ordinary_move_target"]},
+      "basisSha256": {"$ref": "#/$defs/sha256"},
+      "informationalOnly": {"const": true},
+      "runtimeAuthority": {"const": false}
+    },
+    "topologyRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["skillId", "name", "assignmentId", "basisKind", "basisSha256", "informationalOnly", "runtimeAuthority", "scaleStateId", "targetRole", "targetTier", "targetOffice"],
+      "properties": {
+        "skillId": {"enum": ["inspect_context", "list_legal_moves", "validate_and_execute_move", "verify_outcome"]},
+        "name": {"$ref": "#/$defs/identifier"},
+        "assignmentId": {"$ref": "#/$defs/identifier"},
+        "basisKind": {"enum": ["topology_node_identity", "mutation_application_source", "mutation_application_target"]},
+        "basisSha256": {"$ref": "#/$defs/sha256"},
+        "informationalOnly": {"const": true},
+        "runtimeAuthority": {"const": false},
+        "scaleStateId": {"type": "integer", "minimum": 1, "maximum": 4095},
+        "targetRole": {"type": ["string", "null"], "maxLength": 256},
+        "targetTier": {"type": ["string", "null"], "maxLength": 256},
+        "targetOffice": {"type": ["string", "null"], "maxLength": 256}
+      },
+      "allOf": [
+        {"if": {"properties": {"skillId": {"const": "inspect_context"}}}, "then": {"properties": {"basisKind": {"const": "topology_node_identity"}}}},
+        {"if": {"properties": {"skillId": {"enum": ["list_legal_moves", "validate_and_execute_move"]}}}, "then": {"properties": {"basisKind": {"const": "mutation_application_source"}}}},
+        {"if": {"properties": {"skillId": {"const": "verify_outcome"}}}, "then": {"properties": {"basisKind": {"const": "mutation_application_target"}}}}
+      ]
+    },
+    "courtRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["skillId", "name", "assignmentId", "basisKind", "basisSha256", "informationalOnly", "runtimeAuthority", "positionId", "pitchMask", "kappaNumerator", "kappaDenominator"],
+      "properties": {
+        "skillId": {"enum": ["inspect_court_state", "list_legal_court_moves", "validate_and_execute_court_transition", "project_through_court", "verify_court_postcondition"]},
+        "name": {"$ref": "#/$defs/identifier"},
+        "assignmentId": {"$ref": "#/$defs/identifier"},
+        "basisKind": {"enum": ["court_position_identity", "court_ordinary_move_source", "court_filter_position", "court_ordinary_move_target"]},
+        "basisSha256": {"$ref": "#/$defs/sha256"},
+        "informationalOnly": {"const": true},
+        "runtimeAuthority": {"const": false},
+        "positionId": {"enum": ["C0", "C1", "C2", "C3", "C4"]},
+        "pitchMask": {"type": "integer", "minimum": 1, "maximum": 4095},
+        "kappaNumerator": {"type": "integer", "minimum": 0, "maximum": 1},
+        "kappaDenominator": {"type": "integer", "minimum": 1, "maximum": 4}
+      },
+      "allOf": [
+        {"if": {"properties": {"skillId": {"const": "inspect_court_state"}}}, "then": {"properties": {"basisKind": {"const": "court_position_identity"}}}},
+        {"if": {"properties": {"skillId": {"enum": ["list_legal_court_moves", "validate_and_execute_court_transition"]}}}, "then": {"properties": {"basisKind": {"const": "court_ordinary_move_source"}}}},
+        {"if": {"properties": {"skillId": {"const": "project_through_court"}}}, "then": {"properties": {"basisKind": {"const": "court_filter_position"}}}},
+        {"if": {"properties": {"skillId": {"const": "verify_court_postcondition"}}}, "then": {"properties": {"basisKind": {"const": "court_ordinary_move_target"}}}}
+      ]
+    }
+  }
+}

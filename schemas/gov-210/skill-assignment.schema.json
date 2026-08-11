@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gov-210.skill-assignment.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["assignmentId", "skillId", "targetNamespace", "targetId", "basisKind", "basisIds", "basisSha256", "applicationIds", "operatorIds", "edgeIds", "degreeAddresses", "directions", "targetRole", "targetTier", "targetOffice", "informationalOnly", "runtimeAuthority"],
+  "properties": {
+    "assignmentId": {"type": "string", "minLength": 1},
+    "skillId": {"type": "string", "minLength": 1},
+    "targetNamespace": {"enum": ["topology", "court"]},
+    "targetId": {"type": ["string", "integer"]},
+    "basisKind": {"enum": ["topology_node_identity", "mutation_application_source", "mutation_application_target", "court_position_identity", "court_ordinary_move_source", "court_ordinary_move_target", "court_filter_position"]},
+    "basisIds": {"$ref": "#/$defs/strings"},
+    "basisSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "applicationIds": {"$ref": "#/$defs/strings"},
+    "operatorIds": {"$ref": "#/$defs/strings"},
+    "edgeIds": {"$ref": "#/$defs/strings"},
+    "degreeAddresses": {"$ref": "#/$defs/strings"},
+    "directions": {"$ref": "#/$defs/strings"},
+    "targetRole": {"type": ["string", "null"]},
+    "targetTier": {"type": ["string", "null"]},
+    "targetOffice": {"type": ["string", "null"]},
+    "informationalOnly": {"const": true},
+    "runtimeAuthority": {"const": false}
+  },
+  "$defs": {"strings": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}}
+}

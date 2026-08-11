@@ -1,5 +1,83 @@
 # Decision Ledger
 
+## Assignment-aware menu organization (GOV-211) — 2026-08-11
+
+### Decision
+
+GOV-211 is accepted as a separate, presentation-only wrapper over unchanged
+GOV-207 and CRT-307 responses. It may reorder only skill IDs already exposed by
+the replay-derived base menu. The base response, menu membership, moves, named
+queries, executor exposure, directives, receipts, and fingerprints remain
+byte-identical and authoritative.
+
+Governor topology targets require a host-issued HMAC binding over task,
+revision, state, ledger head, policy, context, and canonical topology source.
+Court targets derive only from replayed CRT-307 state and are bound to the full
+state reference plus base/menu seals. No target is inferred from model input,
+office names, Governor identity, prose, mythology, or skill text.
+
+Only GOV-210 `skills_for_topology_target` and
+`skills_for_court_position` results are accepted. Provider rows are bounded,
+fingerprinted, authority-free, complete over the applicable closed skill set,
+and checked against exact skill-to-basis mappings. Missing, stale,
+unauthenticated, malformed, oversized, timed-out, or mismatched evidence falls
+back to original order with no authority effect. The policy fingerprint is
+`798336db2b977d40d819b6b64282b88eda5191f44954a87a5bb2386a6b0ab98a`.
+
+### Evidence
+
+- GOV-211 focused tests passed 13/13 across Governor/Court composition, closed
+  base seals, target authentication, exact partitions, schema-negative cases,
+  provider budgets, deterministic fallback, and rehashed tamper rejection.
+- The complete root Python suite passed 349/349 tests.
+- Native Neo4j assignment-query rows produced byte-identical sealed GOV-211
+  results to the file provider; repeated sealing and GOV-210-only reset passed.
+- Integrated release validation passed 316/316 checks over a 709-file canonical
+  manifest, including unchanged GOV-207, CRT-307, and GOV-210 identities.
+- `schemas/gov-211/`, `src/governor/assignment_menu.py`, and
+  `docs/GOV_211_ASSIGNMENT_AWARE_MENU.md` are the machine and human contracts.
+
+## Graph-native availability and housing (GOV-210) — 2026-08-11
+
+### Decision
+
+GOV-210 is accepted as a separate, authority-free read projection. Availability
+is derived only from the exact GOV-207 and CRT-307 registry bytes. Eligibility
+is an explicit companion policy and is never inferred from skill names,
+descriptions, triggers, mythology, elements, or Governor analogies.
+
+The canonical no-context snapshot contains ten availability records, ten
+eligibility records, 1,873 aggregated assignments, 462 topology targets, and
+five Court targets. Its 3,402 mutation applications, 15 operators, eight Court
+moves, and five position filters are fully covered by exact basis IDs. The
+projection fingerprint is
+`2b87a0ed677e4e75286ac2d6833d840fa674a051ffca1d3de5d92a8e979916df`.
+
+Assignments are informational catalog entries only. Runtime replay,
+capabilities, tokens, transition policy, CAS persistence, and verifier evidence
+retain all authority. GOV-206 and CRT-306 query-catalog bytes remain unchanged.
+
+Optional housing strips excerpts, raw text, private paths, and unresolved link
+targets; path-like note identifiers are redacted, provenance is hash-only, and
+section roles derive from explicit frontmatter/link structure. Optional
+lifecycles are ordered `publish`, `validate`, `retire` hash chains. Convergent
+Neo4j import/reset is restricted to `Gov210*` labels and `GOV210_*`
+relationships.
+
+### Evidence
+
+- GOV-210 focused tests passed 13/13, including build-twice, privacy,
+  no-context, schema, source-closure, tamper, query, and legacy-fingerprint
+  checks.
+- The complete root Python suite passed 336/336 tests.
+- Integrated release validation passed 304/304 checks over a 700-file
+  canonical manifest.
+- Native Neo4j import/rebuild, stale-record removal, six-query provider parity,
+  authority-tamper detection, and namespace-preserving reset passed.
+- `schemas/gov-210/`, `canonical/gov-210-availability-housing.json`, and
+  `docs/GOV_210_AVAILABILITY_AND_HOUSING.md` are the machine and human
+  contracts.
+
 ## Integrated Governor and Court admission (GOV-209 / CRT-309) — 2026-08-10
 
 ### Decision

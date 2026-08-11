@@ -1,9 +1,9 @@
 {
   "package": "seven-governors-integrated-release",
   "version": "1.3.0",
-  "generatedAt": "2026-08-11T02:19:56.169Z",
-  "fileCount": 681,
-  "totalBytes": 62893401,
+  "generatedAt": "2026-08-11T17:40:05.263Z",
+  "fileCount": 709,
+  "totalBytes": 67427772,
   "files": [
     {
       "path": ".env.example",
@@ -37,8 +37,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8723,
-      "sha256": "0db53c433773006f979dd9e58bcea7e576ad0542806df7b7b5046bf1e963466a"
+      "bytes": 10071,
+      "sha256": "86498288a74b7714d37def2d9d867cc483a57fc668ee618d196fc0ad1ec03b15"
     },
     {
       "path": "bestiary/ARCH-SPEC.md",
@@ -251,6 +251,11 @@
       "sha256": "83a616225a20475b91fc602b2bf9c139384b4d535c7ab7128340b1c2b0c79902"
     },
     {
+      "path": "canonical/gov-210-availability-housing.json",
+      "bytes": 4271217,
+      "sha256": "7382b8ca818682a95b9f6f8d75e3130762ae992f761c1e25de7e31905d214858"
+    },
+    {
       "path": "canonical/topology-identity-definitions.json",
       "bytes": 5410,
       "sha256": "ce7b3a3b8bed85d67df203a0dd6d2ba395effd19f0855869faa1a4d343bf127b"
@@ -389,6 +394,16 @@
       "path": "docs/GOVERNOR_VAULT_CONTEXT.md",
       "bytes": 1684,
       "sha256": "2aa51d97c0fe301729672a6ccd05aed05af7471ea70e19d5dbdda0b07f6ab0c1"
+    },
+    {
+      "path": "docs/GOV_210_AVAILABILITY_AND_HOUSING.md",
+      "bytes": 2701,
+      "sha256": "f842643bf281040b80202e3226f2ed609a76843eccfe388fe6bc208d5c1a365e"
+    },
+    {
+      "path": "docs/GOV_211_ASSIGNMENT_AWARE_MENU.md",
+      "bytes": 3227,
+      "sha256": "e462652fa6a48b6911010dc98c551e50f5c1cc040d3739705886c795074530eb"
     },
     {
       "path": "docs/GRAPH_AND_COMPILER_API.md",
@@ -731,6 +746,21 @@
       "sha256": "f5e560ae3cd397754d06167d0dfadf6fe33bb4eac061e3bf2413edcdcab7f485"
     },
     {
+      "path": "neo4j/gov-210/reset.cypher",
+      "bytes": 573,
+      "sha256": "ea1951364f4732f7346d6dc5c3da3fb5e9f965674b6f92ee6aaf149117c57f4c"
+    },
+    {
+      "path": "neo4j/gov-210/schema.cypher",
+      "bytes": 2090,
+      "sha256": "66b7dd8889dabd25448aee67632c488833b0b2c6818ff62f5dc5b2e846726199"
+    },
+    {
+      "path": "neo4j/gov-210/validation.cypher",
+      "bytes": 7813,
+      "sha256": "d06487b15e3085f8999d6e79022b4312d14e548184472565bc74270550a67d15"
+    },
+    {
       "path": "neo4j/governor-runtime/README.md",
       "bytes": 1507,
       "sha256": "a99f54e3f1d4949f9108794ee5c471f1d8272b8b328626b9d2731d00ebd5aa42"
@@ -792,18 +822,18 @@
     },
     {
       "path": "package.json",
-      "bytes": 3371,
-      "sha256": "8e56faf6297356d202b9719e7a499a1846ed57a02cdbf10460b3dd56481416bd"
+      "bytes": 3968,
+      "sha256": "d5cf35330a2bfa21f9a94a6494f9d331f21609db398ece5c27a1683f5629c314"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
-      "bytes": 38699,
-      "sha256": "282a8330c663788ce75d4ee59e22d6af323dfb5715256ff25d4721ad5271ecad"
+      "bytes": 42765,
+      "sha256": "d2397c94d95329dce0ddc4b2fcc13623f905fa9e488c0525b68f2f7d79d0da7c"
     },
     {
       "path": "provenance/NEXT_STEPS.md",
-      "bytes": 4379,
-      "sha256": "44d4fbfc2a50e6a385ade7977c27095b4fc28ca30c87c209bcc90e99a463dc33"
+      "bytes": 4571,
+      "sha256": "5ee36fdefa1581ee6fa77638a8c7ab684963443cb609aac07f83806f08173bc7"
     },
     {
       "path": "provenance/SOURCE_AUTHORITY.md",
@@ -996,6 +1026,61 @@
       "sha256": "09a9e65d2ccb4f0b83418754babbcd1f497733216e01c28e28ed5529d378d29a"
     },
     {
+      "path": "schemas/gov-210/context-housing.schema.json",
+      "bytes": 1554,
+      "sha256": "4bd777dcf4ff5ddf4474a695e5a9a010238bf57c06abff4efdd1e5530cbcbf82"
+    },
+    {
+      "path": "schemas/gov-210/graph-projection.schema.json",
+      "bytes": 9095,
+      "sha256": "d476ff5a99a07bcda1627f849485eb000c4bd694244ba8340b8b4bcf0aa6ab41"
+    },
+    {
+      "path": "schemas/gov-210/skill-assignment.schema.json",
+      "bytes": 1574,
+      "sha256": "fd01d59361a28dc93e537b7239ca69c7d24bb35cc7c83888ebb4795c8ec66da2"
+    },
+    {
+      "path": "schemas/gov-210/skill-availability.schema.json",
+      "bytes": 994,
+      "sha256": "b5b95916e35defd7bf6b739ad3b1eb2471d8d3ca692c80b27235e0b4b66dc23e"
+    },
+    {
+      "path": "schemas/gov-210/skill-eligibility-policy.json",
+      "bytes": 3654,
+      "sha256": "0f5b19a232e55aa5b96deddf86c86da32b7d5221ff536031b87053f745a7c2d7"
+    },
+    {
+      "path": "schemas/gov-210/skill-eligibility.schema.json",
+      "bytes": 926,
+      "sha256": "79fe66bc732ff506251c320e801b71c6f1ed14b0d30fab38c571f50b94a0f9a4"
+    },
+    {
+      "path": "schemas/gov-210/skill-lifecycle.schema.json",
+      "bytes": 715,
+      "sha256": "2e471946e7fca47b3a33b255580390933d427dbb328a9e7177cdb5c75bf267ee"
+    },
+    {
+      "path": "schemas/gov-211/assignment-aware-response.schema.json",
+      "bytes": 1407,
+      "sha256": "2f523e1f407ff4db201cdcfa78ee95e3a3d83595fd50cea7324b8d6222280572"
+    },
+    {
+      "path": "schemas/gov-211/assignment-query-result.schema.json",
+      "bytes": 5965,
+      "sha256": "75893fd11c7cce6ebe97ac8dd63b2161ed4812fdba2d322fd6a689d8ed90a172"
+    },
+    {
+      "path": "schemas/gov-211/menu-organization-policy.json",
+      "bytes": 768,
+      "sha256": "8a000095f117d874fa1d434bf8219b7a197b438dcedeaebe1fc6ab7f447492a2"
+    },
+    {
+      "path": "schemas/gov-211/menu-organization.schema.json",
+      "bytes": 4795,
+      "sha256": "88858d6781a97a78c583d1c46d54014241d827eb89f8c7e881cda678db0c3423"
+    },
+    {
       "path": "schemas/governor-context/context-bundle.schema.json",
       "bytes": 3216,
       "sha256": "b07198a4f5b507838e556ce661db4961b05d84403f8cf1ea2f054c9a9916535d"
@@ -1044,6 +1129,11 @@
       "path": "scripts/build-manifest.mjs",
       "bytes": 1562,
       "sha256": "b5ae433924fcd0f2dd0f957d42c6e909e4af2d8f605df3dbcdc8fe59d686eb85"
+    },
+    {
+      "path": "scripts/generate-availability-housing.py",
+      "bytes": 4649,
+      "sha256": "67e4498218da880b6dfb7da95594b8a82cdea71fd404e35bd4da5043b1f13d86"
     },
     {
       "path": "scripts/generate-court-graph.py",
@@ -1102,8 +1192,8 @@
     },
     {
       "path": "scripts/validate-cypher-syntax.mjs",
-      "bytes": 3523,
-      "sha256": "1969cf1873448323faf5250548abb7dc94d9011ec8b6a32ebb76856bc34e8c42"
+      "bytes": 4050,
+      "sha256": "5c09fb4f8a29c80046974120256f03b11c924275247d49559b85a0e6f3564cad"
     },
     {
       "path": "scripts/validate-governor-admission.mjs",
@@ -1117,8 +1207,8 @@
     },
     {
       "path": "scripts/validate-release.mjs",
-      "bytes": 60919,
-      "sha256": "463ef41f362fd0ff5c1babd72ecf8c3ae8d3547bca6113f4abe92f39a1329bc5"
+      "bytes": 66643,
+      "sha256": "60c5cb2ff2179e017aad995071248de5fb4426ef31529be5b85defb0f3ebae87"
     },
     {
       "path": "scripts/validate-vault-context.mjs",
@@ -1242,8 +1332,13 @@
     },
     {
       "path": "scrum/GOV-210-graph-native-availability-housing.md",
-      "bytes": 2087,
-      "sha256": "91012fc52fabd32db4b8472f361faf4c05e64da907fe4fd2bf9247169a2ab2b6"
+      "bytes": 2084,
+      "sha256": "3890702031bde81e3cf0557526a1bf2f5f767055d6fa0402dff40aa90f264e9c"
+    },
+    {
+      "path": "scrum/GOV-211-assignment-aware-menu-integration.md",
+      "bytes": 2305,
+      "sha256": "3e9bb4f05b5b61d32a03f752e85b44c12d160569e62d172a8d7a27da31e91a7e"
     },
     {
       "path": "scrum/NET-101-office-lane-layout.md",
@@ -1277,8 +1372,8 @@
     },
     {
       "path": "scrum/README.md",
-      "bytes": 6777,
-      "sha256": "324f3898e40a5bd100e1f5957056ad29bfef977d9dbd37bb94fb47bb41a9ef87"
+      "bytes": 6907,
+      "sha256": "47449646809446380d8f33805567dfb51847d03feadcaaeaa15fbfb75c39d5d6"
     },
     {
       "path": "scrum/pre-epic-400-audit-notes.md",
@@ -2962,13 +3057,28 @@
     },
     {
       "path": "src/governor/__init__.py",
-      "bytes": 10803,
-      "sha256": "e92de5e896b9654f35479bb8e1a66e6d4c82e538f2e3190e1f4757790435e012"
+      "bytes": 11228,
+      "sha256": "88eb11db664b30b2c6110934124b70d7826507b81410bb114cdb79a34b53a930"
     },
     {
       "path": "src/governor/agent_api.py",
       "bytes": 55912,
       "sha256": "75dc3baf00209697e61218338e52363c6a6b23563e7426039c7f5e25ba833804"
+    },
+    {
+      "path": "src/governor/assignment_menu.py",
+      "bytes": 43502,
+      "sha256": "b5dfd767b983c54d72929207d63cfbc6dcd395a9e26200ce2868e19883f6e1e6"
+    },
+    {
+      "path": "src/governor/availability_housing.py",
+      "bytes": 81624,
+      "sha256": "afe8e14b079e07c7c13169b44b5db4b5300c0526cd1cedc05d01b3f93cd5b936"
+    },
+    {
+      "path": "src/governor/availability_housing_queries.py",
+      "bytes": 14900,
+      "sha256": "039fa7c21e3207d1282aed63b43f59055c4a4061f337a6f50af03e3141ee7d0b"
     },
     {
       "path": "src/governor/classifier.py",
@@ -3261,6 +3371,26 @@
       "sha256": "89be7426f663f878bfa9d3124fdb984ec8e7e05716728204d4b13bb1da88b67c"
     },
     {
+      "path": "tests/gov_210/context-fixture.json",
+      "bytes": 977,
+      "sha256": "3412b6152d9f0ddd121fc0bc48b8dd33eae3858ef800c05a1a4bbe51615c9271"
+    },
+    {
+      "path": "tests/gov_210/lifecycle-fixture.json",
+      "bytes": 227,
+      "sha256": "761e6aa0b2e058913af4f6bda5d266366ecf8700967abe76d12722064886c60f"
+    },
+    {
+      "path": "tests/gov_210/neo4j-live.test.mjs",
+      "bytes": 8049,
+      "sha256": "52584b7e0492350888b96da81b0fda68a636d72a0d88c0728913d98ff5bc72fb"
+    },
+    {
+      "path": "tests/gov_211/neo4j-live.test.mjs",
+      "bytes": 5227,
+      "sha256": "4638b4ce982a854734db356c185e9a11b1ffaca55565830af9c1dfe813c0752f"
+    },
+    {
       "path": "tests/test_court_graph_projection.py",
       "bytes": 24524,
       "sha256": "5cd10baba17f7a3e1958c48c65a3db1043a5c07bb1909dea5f784e3aecdf3ab3"
@@ -3344,6 +3474,16 @@
       "path": "tests/test_gov_208_vault_context.py",
       "bytes": 6387,
       "sha256": "5a6053df1f2a5a9772021db94f668e5cc9f30b16c4e6dcb75e5050b9c2124151"
+    },
+    {
+      "path": "tests/test_gov_210_availability_housing.py",
+      "bytes": 20144,
+      "sha256": "50a4423cd57be9fc209ee0bb07cde0a499df46529b1cd5064f1e4f8a9fd01c94"
+    },
+    {
+      "path": "tests/test_gov_211_assignment_menu.py",
+      "bytes": 20693,
+      "sha256": "264c6fc3a68d5dc419603282d4eb4b29c2616ffa22eec22e9bba32e756638aad"
     },
     {
       "path": "tests/test_harmonic_runtime.py",

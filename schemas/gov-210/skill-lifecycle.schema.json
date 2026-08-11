@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gov-210.skill-lifecycle.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["eventId", "skillId", "action", "sequence", "priorEventSha256", "evidenceSha256", "eventSha256"],
+  "properties": {
+    "eventId": {"type": "string", "minLength": 1},
+    "skillId": {"type": "string", "minLength": 1},
+    "action": {"enum": ["publish", "validate", "retire"]},
+    "sequence": {"type": "integer", "minimum": 1},
+    "priorEventSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "evidenceSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "eventSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

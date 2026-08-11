@@ -43,6 +43,14 @@ const schema = {
     "CourtTransitionEvent",
     "CourtLedgerSnapshot",
     "TopologicalTranslocationRecord",
+    "Gov210AvailabilityRelease",
+    "Gov210ContextHousing",
+    "Gov210CourtTarget",
+    "Gov210SkillAssignment",
+    "Gov210SkillAvailability",
+    "Gov210SkillEligibility",
+    "Gov210SkillLifecycle",
+    "Gov210TopologyTarget",
   ],
   relationshipTypes: [
     "GOVERNS",
@@ -78,6 +86,13 @@ const schema = {
     "SNAPSHOTS_STATE",
     "HAS_TRANSLOCATION",
     "USES_ROUTE_RECORD",
+    "GOV210_ASSIGNS_SKILL",
+    "GOV210_DECLARES_AVAILABILITY",
+    "GOV210_DECLARES_HOUSING",
+    "GOV210_DECLARES_LIFECYCLE",
+    "GOV210_HAS_ELIGIBILITY",
+    "GOV210_REFERENCES_SKILL",
+    "GOV210_TARGETS",
   ],
   propertyKeys: [],
 };
@@ -97,6 +112,9 @@ const files = [
   "court-mathematics/reset.cypher",
   "court-mathematics/validation.cypher",
   "court-mathematics/named-queries.cypher",
+  "gov-210/schema.cypher",
+  "gov-210/reset.cypher",
+  "gov-210/validation.cypher",
 ];
 const results = [];
 for (const file of files) {

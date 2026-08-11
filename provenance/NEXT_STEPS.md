@@ -3,7 +3,8 @@
 Current release: `seven-governors-integrated-1.3.0`, validated and admitted.
 The release includes the audited topology, mutation algebra, canonical profile
 registry/compiler, Governor runtime, bounded Pentatonic Court, read projection,
-agent skills, and optional read-only vault context.
+agent skills, optional read-only vault context, GOV-210 availability/housing,
+and GOV-211 presentation-only assignment-aware menu organization.
 
 ## 1. Establish the full database
 
@@ -77,14 +78,15 @@ skills. GOV-208 and CRT-308 now supply bounded read-only context with exact
 disabled parity, and CRT-309 records the narrow admission. Do not edit frozen
 package or companion Fivefold bytes in place.
 
-## 6. Add graph-native availability and housing
+## 6. Preserve assignment-aware menu boundaries
 
-Proceed with `scrum/GOV-210-graph-native-availability-housing.md` after release
-closure. Derive skill availability only from registries; compute informational
-node/office and Court-position assignments from canonical mutation/Court
-structure; save exact assignment bases; project vault structure and fingerprints
-only; keep Governor affinities out of machine records and runtime legality out
-of the graph.
+GOV-210 and GOV-211 are complete. Consume assignments only through the two
+bounded target queries and treat GOV-211 `presentationOrder` as guidance, never
+as runtime legality. Keep host topology-binding keys outside requests and
+responses; preserve full replay identity in every binding; and retain exact
+fallback order whenever assignment evidence is absent or invalid. Any new skill,
+assignment basis, target namespace, query, or ordering policy requires a
+versioned policy and fresh admission evidence.
 
 ## 7. Version every protocol change
 
