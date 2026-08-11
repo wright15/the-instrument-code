@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gov-208.context-request.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "requestId", "policyFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "gov-208.context-request.v1"},
+    "requestId": {"type": "string"},
+    "policyFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "seedNoteIds": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "maxDepth": {"type": "integer", "minimum": 0, "maximum": 4}
+  }
+}

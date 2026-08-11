@@ -1,0 +1,475 @@
+{
+  "carey535": {
+    "CQ": {
+      "denominator": 1,
+      "numerator": 1
+    },
+    "SQ": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "ambiguityWitnesses": [],
+    "contradictionWitnesses": [],
+    "counts": {
+      "ambiguities": 0,
+      "contradictions": 0,
+      "crossGenericComparisons": 150,
+      "differenceSlots": 40,
+      "differences": 20,
+      "failureSlots": 25,
+      "failures": 0,
+      "intervalInstances": 20
+    },
+    "differenceWitnesses": [
+      {
+        "left": {
+          "destination": 1,
+          "generic": 1,
+          "origin": 0,
+          "specific": 2
+        },
+        "right": {
+          "destination": 3,
+          "generic": 1,
+          "origin": 2,
+          "specific": 3
+        },
+        "witnessId": "difference:g1:o0:g1:o2"
+      },
+      {
+        "left": {
+          "destination": 1,
+          "generic": 1,
+          "origin": 0,
+          "specific": 2
+        },
+        "right": {
+          "destination": 0,
+          "generic": 1,
+          "origin": 4,
+          "specific": 3
+        },
+        "witnessId": "difference:g1:o0:g1:o4"
+      },
+      {
+        "left": {
+          "destination": 2,
+          "generic": 1,
+          "origin": 1,
+          "specific": 2
+        },
+        "right": {
+          "destination": 3,
+          "generic": 1,
+          "origin": 2,
+          "specific": 3
+        },
+        "witnessId": "difference:g1:o1:g1:o2"
+      },
+      {
+        "left": {
+          "destination": 2,
+          "generic": 1,
+          "origin": 1,
+          "specific": 2
+        },
+        "right": {
+          "destination": 0,
+          "generic": 1,
+          "origin": 4,
+          "specific": 3
+        },
+        "witnessId": "difference:g1:o1:g1:o4"
+      },
+      {
+        "left": {
+          "destination": 3,
+          "generic": 1,
+          "origin": 2,
+          "specific": 3
+        },
+        "right": {
+          "destination": 4,
+          "generic": 1,
+          "origin": 3,
+          "specific": 2
+        },
+        "witnessId": "difference:g1:o2:g1:o3"
+      },
+      {
+        "left": {
+          "destination": 4,
+          "generic": 1,
+          "origin": 3,
+          "specific": 2
+        },
+        "right": {
+          "destination": 0,
+          "generic": 1,
+          "origin": 4,
+          "specific": 3
+        },
+        "witnessId": "difference:g1:o3:g1:o4"
+      },
+      {
+        "left": {
+          "destination": 2,
+          "generic": 2,
+          "origin": 0,
+          "specific": 4
+        },
+        "right": {
+          "destination": 3,
+          "generic": 2,
+          "origin": 1,
+          "specific": 5
+        },
+        "witnessId": "difference:g2:o0:g2:o1"
+      },
+      {
+        "left": {
+          "destination": 2,
+          "generic": 2,
+          "origin": 0,
+          "specific": 4
+        },
+        "right": {
+          "destination": 4,
+          "generic": 2,
+          "origin": 2,
+          "specific": 5
+        },
+        "witnessId": "difference:g2:o0:g2:o2"
+      },
+      {
+        "left": {
+          "destination": 2,
+          "generic": 2,
+          "origin": 0,
+          "specific": 4
+        },
+        "right": {
+          "destination": 0,
+          "generic": 2,
+          "origin": 3,
+          "specific": 5
+        },
+        "witnessId": "difference:g2:o0:g2:o3"
+      },
+      {
+        "left": {
+          "destination": 2,
+          "generic": 2,
+          "origin": 0,
+          "specific": 4
+        },
+        "right": {
+          "destination": 1,
+          "generic": 2,
+          "origin": 4,
+          "specific": 5
+        },
+        "witnessId": "difference:g2:o0:g2:o4"
+      },
+      {
+        "left": {
+          "destination": 3,
+          "generic": 3,
+          "origin": 0,
+          "specific": 7
+        },
+        "right": {
+          "destination": 0,
+          "generic": 3,
+          "origin": 2,
+          "specific": 8
+        },
+        "witnessId": "difference:g3:o0:g3:o2"
+      },
+      {
+        "left": {
+          "destination": 4,
+          "generic": 3,
+          "origin": 1,
+          "specific": 7
+        },
+        "right": {
+          "destination": 0,
+          "generic": 3,
+          "origin": 2,
+          "specific": 8
+        },
+        "witnessId": "difference:g3:o1:g3:o2"
+      },
+      {
+        "left": {
+          "destination": 0,
+          "generic": 3,
+          "origin": 2,
+          "specific": 8
+        },
+        "right": {
+          "destination": 1,
+          "generic": 3,
+          "origin": 3,
+          "specific": 7
+        },
+        "witnessId": "difference:g3:o2:g3:o3"
+      },
+      {
+        "left": {
+          "destination": 0,
+          "generic": 3,
+          "origin": 2,
+          "specific": 8
+        },
+        "right": {
+          "destination": 2,
+          "generic": 3,
+          "origin": 4,
+          "specific": 7
+        },
+        "witnessId": "difference:g3:o2:g3:o4"
+      },
+      {
+        "left": {
+          "destination": 4,
+          "generic": 4,
+          "origin": 0,
+          "specific": 9
+        },
+        "right": {
+          "destination": 0,
+          "generic": 4,
+          "origin": 1,
+          "specific": 10
+        },
+        "witnessId": "difference:g4:o0:g4:o1"
+      },
+      {
+        "left": {
+          "destination": 4,
+          "generic": 4,
+          "origin": 0,
+          "specific": 9
+        },
+        "right": {
+          "destination": 1,
+          "generic": 4,
+          "origin": 2,
+          "specific": 10
+        },
+        "witnessId": "difference:g4:o0:g4:o2"
+      },
+      {
+        "left": {
+          "destination": 4,
+          "generic": 4,
+          "origin": 0,
+          "specific": 9
+        },
+        "right": {
+          "destination": 3,
+          "generic": 4,
+          "origin": 4,
+          "specific": 10
+        },
+        "witnessId": "difference:g4:o0:g4:o4"
+      },
+      {
+        "left": {
+          "destination": 0,
+          "generic": 4,
+          "origin": 1,
+          "specific": 10
+        },
+        "right": {
+          "destination": 2,
+          "generic": 4,
+          "origin": 3,
+          "specific": 9
+        },
+        "witnessId": "difference:g4:o1:g4:o3"
+      },
+      {
+        "left": {
+          "destination": 1,
+          "generic": 4,
+          "origin": 2,
+          "specific": 10
+        },
+        "right": {
+          "destination": 2,
+          "generic": 4,
+          "origin": 3,
+          "specific": 9
+        },
+        "witnessId": "difference:g4:o2:g4:o3"
+      },
+      {
+        "left": {
+          "destination": 2,
+          "generic": 4,
+          "origin": 3,
+          "specific": 9
+        },
+        "right": {
+          "destination": 3,
+          "generic": 4,
+          "origin": 4,
+          "specific": 10
+        },
+        "witnessId": "difference:g4:o3:g4:o4"
+      }
+    ],
+    "forteNumber": "5-35",
+    "generator": {
+      "denominator": 12,
+      "numerator": 7
+    },
+    "intervalInstances": [
+      {
+        "destination": 1,
+        "generic": 1,
+        "origin": 0,
+        "specific": 2
+      },
+      {
+        "destination": 2,
+        "generic": 1,
+        "origin": 1,
+        "specific": 2
+      },
+      {
+        "destination": 3,
+        "generic": 1,
+        "origin": 2,
+        "specific": 3
+      },
+      {
+        "destination": 4,
+        "generic": 1,
+        "origin": 3,
+        "specific": 2
+      },
+      {
+        "destination": 0,
+        "generic": 1,
+        "origin": 4,
+        "specific": 3
+      },
+      {
+        "destination": 2,
+        "generic": 2,
+        "origin": 0,
+        "specific": 4
+      },
+      {
+        "destination": 3,
+        "generic": 2,
+        "origin": 1,
+        "specific": 5
+      },
+      {
+        "destination": 4,
+        "generic": 2,
+        "origin": 2,
+        "specific": 5
+      },
+      {
+        "destination": 0,
+        "generic": 2,
+        "origin": 3,
+        "specific": 5
+      },
+      {
+        "destination": 1,
+        "generic": 2,
+        "origin": 4,
+        "specific": 5
+      },
+      {
+        "destination": 3,
+        "generic": 3,
+        "origin": 0,
+        "specific": 7
+      },
+      {
+        "destination": 4,
+        "generic": 3,
+        "origin": 1,
+        "specific": 7
+      },
+      {
+        "destination": 0,
+        "generic": 3,
+        "origin": 2,
+        "specific": 8
+      },
+      {
+        "destination": 1,
+        "generic": 3,
+        "origin": 3,
+        "specific": 7
+      },
+      {
+        "destination": 2,
+        "generic": 3,
+        "origin": 4,
+        "specific": 7
+      },
+      {
+        "destination": 4,
+        "generic": 4,
+        "origin": 0,
+        "specific": 9
+      },
+      {
+        "destination": 0,
+        "generic": 4,
+        "origin": 1,
+        "specific": 10
+      },
+      {
+        "destination": 1,
+        "generic": 4,
+        "origin": 2,
+        "specific": 10
+      },
+      {
+        "destination": 2,
+        "generic": 4,
+        "origin": 3,
+        "specific": 9
+      },
+      {
+        "destination": 3,
+        "generic": 4,
+        "origin": 4,
+        "specific": 10
+      }
+    ],
+    "seedPitchClasses": [
+      0,
+      2,
+      4,
+      7,
+      9
+    ],
+    "tolerance": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "tuning": "12-TET"
+  },
+  "integratedAdmission": "proposed_pending_crt_309",
+  "invariantFingerprint": "ad604fdb42144882d38433e734759fcd5c160dfe628139ce0ede1ff093481323",
+  "releaseId": "harmonic-invariants:0.1.0",
+  "schemaVersion": "1.0.0",
+  "sourceFingerprint": "aa8cf2d5d060048bb7809fd78cccf8b3e0d6c71ff9b85c35e5551298f63e08e5",
+  "substrateDependency": {
+    "path": "seven-governors-court-substrate-v0.1.0/canonical/substrate-registry-release.json",
+    "releaseId": "court-substrate:0.1.0",
+    "substrateFingerprint": "fda4707f63b08ca02a155f8d5d8c738534f17e0ab2a234d79f83bf30f16a2fc2"
+  }
+}

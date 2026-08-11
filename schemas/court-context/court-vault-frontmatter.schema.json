@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "crt-308.court-vault-frontmatter.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["noteId", "admissionStatus", "source", "sensitivity", "courtRootedPosition", "pentatonicSetClass", "kappaCourt", "courtFilterMask", "courtProvenanceRef"],
+  "properties": {
+    "noteId": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,127}$"},
+    "title": {"type": "string", "minLength": 1, "maxLength": 200},
+    "aspectRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "ruleRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "governor": {"enum": ["Sun", "Moon", "Mercury", "Venus", "Mars", "Jupiter", "Saturn"]},
+    "admissionStatus": {"enum": ["admitted", "admitted-bridge", "proposed", "unresolved"]},
+    "source": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,127}$"},
+    "sensitivity": {"enum": ["public", "private", "restricted"]},
+    "maxTraversalDepth": {"type": "integer", "minimum": 0, "maximum": 4},
+    "courtRootedPosition": {"type": ["string", "null"], "enum": ["C0", "C1", "C2", "C3", "C4", null]},
+    "pentatonicSetClass": {"type": "string", "pattern": "^5-[0-9]+$"},
+    "kappaCourt": {"type": ["number", "null"], "enum": [0, 0.25, 0.5, 0.75, 1, null]},
+    "courtFilterMask": {"type": "string", "pattern": "^[01]{12}$"},
+    "courtProvenanceRef": {"type": "string", "pattern": "^crt-30[2345]:"}
+  }
+}

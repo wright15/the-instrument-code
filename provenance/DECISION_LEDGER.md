@@ -1,5 +1,468 @@
 # Decision Ledger
 
+## Integrated Governor and Court admission (GOV-209 / CRT-309) — 2026-08-10
+
+### Decision
+
+Integrated release `seven-governors-integrated-1.3.0` admits the bounded
+Governor runtime and Pentatonic Court through the external machine decision
+`provenance/court-admission-release.json` (fingerprint
+`df7e4c52131705b168efa14072d7fed14735fd073e9f8b4679d85a9c05ca0d26`).
+Historical package-internal candidate statuses remain unchanged; CRT-309 binds
+their exact bytes rather than rewriting frozen v0.1.0 artifacts.
+
+The admitted Court scope is C0-C4 of 5-35, bridge set classes 5-23 and 5-27,
+Carey CQ/SQ for 5-35 only, seven concrete linear diagonal filters, adjacent
+transitions, evidence-backed Topological Translocation, CRT-305 replay,
+CRT-306 projection v2, CRT-307 skills, and optional GOV-208/CRT-308 context.
+The remaining 35 pentatonic classes, aggregate `C_H`, Fourier/graph-spectral/
+semantic-scoped filters, route-cost/spectral measures, broader Fivefold
+controller claims, natural-phenomena, and thermodynamic mappings remain
+proposed or unresolved.
+
+CRT-306 admission is explicitly limited to replay-derived terminal state,
+snapshot, ordered events/translocations, and six bounded queries. It does not
+claim `T5CycleEntry`, `ComplementMap`, `CourtInvariant`, or a canonical
+Forte-to-Court mapping.
+
+### Evidence
+
+- `qa/governor-runtime-validation.json`: 7/7 Governor criteria passed; report
+  fingerprint `9d3b57f138badf46aeeeaa1698b5e87773075bb74603775db98e0d88d78c43ac`.
+- `qa/court-admission-validation.json`: 18/18 criteria passed; report
+  fingerprint `58b3d99e09b1782f8bc2e12ef52145b44895c0743ab3e260b505e858b835ec75`.
+- `qa/court-admission-benchmark.json`: ten machine-scored cases; deterministic
+  Court tools achieved 1.0 on all six rate categories while unverified model or
+  retrieval prose scored no machine-verifiable success.
+- Native live Neo4j parity and Neo4j-unavailable runtime/invariant operation
+  passed in the Phase-4 integration cascade.
+- Full root pytest passed 323 tests; integrated release validation passed
+  281/281 checks over a 681-file canonical manifest.
+
+## Optional vault context (GOV-208 / CRT-308) — 2026-08-10
+
+### Decision
+
+The read-only Obsidian provider and Court extension are accepted. No configured
+provider delegates directly to the existing classifier and preserves exact
+bytes/fingerprints. Enabled context is a separate evidence record and cannot
+change policy, admission, office occupancy, Court legality, Court state,
+ledger, or graph-query identity. Absolute roots and private note content remain
+outside canonical outputs and the release manifest.
+
+GOV-207 and CRT-307 bytes remain closed. GOV-208 report fingerprint is
+`e9a2aba3d0c675d85327154a825df09c37ec9d10457a5286baf8abe1d255b189`;
+CRT-308 report fingerprint is
+`79c25e45425d945a311a88ee8def800536876e1e73d95282ef4d5c0092c0b644`.
+
+## Post-admission organizational graph direction — 2026-08-10
+
+After CRT-309, a separate framework story will add graph-native availability
+and housing catalogs. Skill availability will derive only from hash-bound
+registries; deterministic, informational assignments will cite mutation
+algebra over both node/office and Court-position namespaces. Vault housing will
+project structure and fingerprints only. Machine records will carry no
+Governor-affinity field, and runtime legality remains authoritative.
+
+## Court-aware agent skills (CRT-307) — 2026-08-10
+
+### Decision
+
+The parallel `seven-governors-crt-307` Court skill bundle and
+`crt-307.court-agent-api.v1` facade are accepted as candidate integration
+evidence. They remain `proposed_pending_crt_309`; integrated release 1.2.0,
+frozen packages, and the closed GOV-207 five-skill contract are unchanged.
+
+### Authority and execution ruling
+
+The five workflows inspect replayed Court state, list legal Court moves,
+validate/execute one exact transition, project through the current Court filter,
+and verify a recorded postcondition. The model may select only from a trusted
+menu. It cannot submit a capability, token, verifier decision, evidence ID,
+filter, route, translocation record, pole register, or `kappa_court` value.
+
+Every operation explicitly replays CRT-305. A transition commits only after
+base and dynamic capability intersection, exact state/menu binding, internal
+single-use token validation, typed trusted evidence, semantic postcondition
+replay, and external compare-and-swap persistence. Historical verification
+reads the hash chain and never reruns an effect. Graph queries are normalized,
+row/byte/time bounded optional corroboration and cannot alter legality.
+
+`project_through_court` binds `court-filter:{currentPosition}` from the CRT-304
+fingerprint and computes `P_c(x) = x AND c` over the ambient 12-bit domain. It
+returns exact bit reduction and five-valued route semantics while proving Court
+state and ledger bytes unchanged. It cannot write topology, office occupancy,
+Degree-Governor metadata, or any compression namespace.
+
+### Installation and loop ruling
+
+The standalone registry, strict schemas, Hermes/generic adapters, and
+explicit-target installer use paths disjoint from GOV-207. Installation is
+content-addressed, idempotent, preflighted, symlink/path-escape rejecting, and
+rollback-safe for owned bytes. It never edits host configuration. Adversarial
+OS-level pathname TOCTOU remains an operating-system limitation.
+
+Repeated unchanged failed selections produce a deterministic `replan` followed
+by `stop` without another verifier call. This bounded history is process-local
+and resets on restart; it is safety metadata and never enters CRT-305 state or
+ledger authority.
+
+### Evidence
+
+- Strict bundle validator: 15/15 checks.
+- Python facade/schema/runtime acceptance: 44 passed.
+- Node schema/adapter/installer acceptance: 17 passed.
+- Unchanged GOV-207 regressions: 42 passed.
+- Eight checked-in trace decisions passed against local
+  `koboldcpp/Qwen3.6-35B-A3B-UD-IQ2_XXS` with thinking disabled. This model
+  observation is QA-only and excluded from canonical fingerprints.
+- Full root pytest: 305 passed. Phase-4: 45 verification tests and native live
+  Neo4j parity passed.
+- Root release validation: 236/236 checks passed. The 645-file canonical
+  manifest excludes live Court sessions and the local-model observation report.
+
+## Court graph replay compatibility amendment (CRT-306) — 2026-08-10
+
+### Decision
+
+CRT-306 remains Done for its original bounded read-projection scope. Projection
+schema `crt-306.court-graph-projection.v2` is accepted as the compatibility
+surface for the completed CRT-305 runtime before CRT-307 agent skills consume
+Court graph context. It remains `proposed_pending_crt_309`; integrated release
+1.2.0 and all frozen versioned packages are unchanged.
+
+### Replay and authority ruling
+
+The projection API no longer accepts caller-authored legacy Court runtime
+state. Its only runtime input is typed CRT-305 genesis, generic ledger events,
+and a trusted `LedgerAnchor`. Python independently calls semantic replay and
+projects nothing unless state, token, evidence, chain, policy, context,
+translocation, route, and terminal snapshot closure pass.
+
+Neo4j stores one replay-derived terminal state and snapshot plus ordered event
+and translocation evidence. It does not validate moves, issue tokens, replay
+authority, write topology/Governor fields, or persist live sessions. Static
+CRT-304 commutation rows retain null `ledgerPointer` values. A verified runtime
+event points to the exact static row through `USES_ROUTE_RECORD`, with route ID,
+operator, classification, route semantics, and CRT-304 fingerprint bound as one
+fail-closed closure.
+
+### Bounded projection and query ruling
+
+The deterministic release fixture contains one C0 -> C1 ordinary transition
+and one compound C1 -> C4 R7/5-23 translocation. It emits 21 Court-owned nodes,
+19 relationships, and one ID-only `ScaleState` reference. The CLI is restricted
+to this evidence recipe so it cannot be treated as a general verifier; the
+production projection remains generic over any valid CRT-305 replay.
+
+The read catalog contains six parameterized stable-order queries. The two new
+session queries return replay-verified terminal state and ordered verified
+events with optional translocation/route hashes. Limits are at most 100 rows,
+depth is at most two, and no query can write or authorize a transition.
+
+`T5CycleEntry`, `ComplementMap`, and `CourtInvariant` remain outside this
+amendment. No canonical Forte-family-to-Court-position mapping is asserted.
+
+### Evidence
+
+- Focused projection/topology suite: 23 passed.
+- Native live Neo4j suite: exact label/type counts, six-query byte parity,
+  negative missing-verification validation, idempotent ingestion, and exact
+  reset/rebuild passed.
+- Cypher syntax validation passes for all Court schema, reset, validation, and
+  named-query assets.
+- Hash-seed/time-zone runs reproduce snapshot, batch, and query-result bytes.
+- Full root pytest: 261 passed. Full Phase-4 integration: 45 verification tests
+  and native live Neo4j parity passed.
+- Root release validation: 220/220 checks passed. The refreshed 608-file
+  manifest contains no live Court session artifacts.
+
+## Court runtime lifecycle, translocation, and sessions (CRT-305) — 2026-08-09
+
+### Decision
+
+The root-owned `court-runtime-policy:0.1.0` and its implementation in
+`src/governor/court_runtime.py` are accepted as fingerprinted candidate runtime
+behavior. They remain `proposed_pending_crt_309`; this decision does not modify
+integrated release 1.2.0 or activate a live Court session.
+
+The policy fingerprint
+`90431c79b8bc06da7e6f5cb5ce207cb6cbfd86519bdb91df5aacc137065ec456`
+binds CRT-301 through CRT-304, the mutation registry/applications, and the
+unchanged GOV-204 generic ledger/model files. The existing `AgentState` and
+`LedgerEvent` field contracts are unchanged.
+
+### State and authorization ruling
+
+Verified runtime state derives the exact C0-C4 mask, monotone pole register,
+and normalized `kappa_court = i/4` ratio from policy. It rejects off-chain
+positions, inconsistent derived values, and writes to `C_P`, `C_H`, `C_S`,
+temperature, entropy, enthalpy, or free energy.
+
+The finite ordinary move graph contains eight directed adjacent transitions.
+Legal menus honor capability scope. Validation tokens bind operation, target,
+prior state, prior ledger head, policy, context, capability, revision expiry,
+and optional translocation/route hashes. Commit requires a typed passing
+GOV-205 `VerificationDecision`; stale, reused, expired, mismatched, unverified,
+or evidence-free requests return the original state and ledger with no delta.
+
+### Translocation ruling
+
+A non-adjacent jump fails with `non_adjacent_without_translocation` unless it
+has a strict compound record. The record combines a non-adjacent Court move
+with independently verified R7 `1453 -> 2477` or L7 reverse heptatonic evidence,
+Degree 7/Moon metadata, source hashes, and a 5-23 or 5-27 CRT-304 route record.
+This structure deliberately asserts no canonical Forte-family-to-Court-position
+mapping. Route cost remains unresolved.
+
+Static CRT-304 records remain immutable with null runtime pointers. The live
+Court event points back to the static record and includes the verified
+translocation/route hashes. Event identity excludes provider, wall clock,
+sequence, previous hash, and absolute storage path.
+
+### Replay and storage ruling
+
+Court events use the unchanged generic GOV-204 hash-chain envelope. Semantic
+replay verifies the generic chain, intrinsic event identity, prior/result state,
+token, evidence decision, exact poles/kappa, translocation, route context,
+consumed-token set, and snapshot. It requires neither Neo4j nor an LLM.
+
+`CourtSessionStore` keeps genesis, current state, events, trusted anchor, and
+snapshot under `${XDG_STATE_HOME:-~/.local/state}/seven-governors/court` or an
+explicit external root. Repository-contained paths and symlinks fail closed;
+writes are locked, atomic, and compare-and-swap protected. No live session is a
+release artifact.
+
+### Evidence
+
+- Focused runtime, store, schema, and security suite: 49 passed.
+- Eleven strict policy/runtime schemas validate canonical serialized examples
+  and reject open records.
+- Exhaustive ordinary matrix: eight accepts, twelve non-adjacent missing-record
+  rejections, and five same-state no-op rejections.
+- Separate process/hash-seed/time-zone/provider runs reproduce the intrinsic
+  Court event ID byte-identically.
+- Phase-4 invokes adjacent and translocation commit/replay plus the kappa guard
+  through the production API.
+- Root pytest: 262 passed. Full Phase-4 integration: 45 verification tests and
+  live Neo4j parity passed. Root release validation: 219/219 checks passed.
+
+## Court filter algebra and route semantics (CRT-304) — 2026-08-09
+
+### Decision
+
+`seven-governors-court-filter-algebra-v0.1.0` is accepted as the fingerprinted
+candidate filter registry over CRT-302, CRT-303, and the admitted mutation
+audit. It remains `integratedAdmission = proposed_pending_crt_309`; this
+decision neither changes integrated release 1.2.0 nor activates a Court
+runtime route.
+
+Only fixed-root `linear_diagonal` projection is eligible:
+`P_c(x) = x AND c`. The seven concrete filters are C0-C4 plus rooted 5-23 and
+5-27. CRT-302 proves no additional bridge is minimally necessary. Fourier,
+graph-spectral, semantic-scoped, unknown, and off-chain filters fail closed or
+remain explicitly proposed.
+
+### Operator and commutation ruling
+
+The operator theory sheet declares the ambient 12-bit binary-vector domain,
+support-subset image, absent global inverse due non-injectivity, identity on the
+image, exact bit reduction, preservation invariants, forbidden writes, and the
+five-valued partial-composition result space.
+
+The deterministic evaluator independently reproduces all 3,402 admitted
+mutation applications and covers seven filters, 15 operators, and 462 operands:
+48,510 evaluations in 105 filter/operator summaries. The exact result is
+23,814 `right_undefined` route asymmetries and 24,696 `both_undefined` cases,
+with no two-defined result. This follows from the authority boundary: filtered
+outputs have weight at most five, while admitted mutations require rooted
+weight-seven operands.
+
+Every route asymmetry has a typed record containing filter mask, mutation ID,
+source, target, left-route result, undefined reason, and route semantics. The
+record declares the `court.routeSemantics` ledger namespace and requires a
+runtime event, but its event pointer is null until CRT-305 creates a verified
+event. The earlier C2/L7 graph sample is corrected from `does_not_commute` to
+`right_undefined`, and invented fixture event pointers are removed.
+
+### Bridge and authority ruling
+
+Rooted 5-23 and 5-27 both mediate Aeolian `1453` to Harmonic Minor `2477` but
+retain different pitch information and hide different Degree-Governor
+addresses. They are therefore not interchangeable. State-Governor office,
+Degree-Governor metadata, mutation source/target, and canonical topology remain
+external unchanged authority. Route cost remains unresolved; spectral measures
+remain not admitted.
+
+### Evidence
+
+- Package tests: 6 passed.
+- Strict registry validation: 8/8 checks, including thirteen expected-failure
+  fixtures.
+- Determinism: 4/4 checks over five byte-identical canonical outputs and
+  reversed authored input order.
+- Root verification rebuilds all package artifacts and Phase-4 invokes the
+  production evaluator directly.
+- Root pytest: 213 passed. Full Phase-4 integration: 39 verification tests and
+  live Neo4j parity passed. Root release validation: 198/198 checks passed.
+
+## Harmonic invariant registry and Carey enumeration (CRT-303) — 2026-08-09
+
+### Decision
+
+`seven-governors-harmonic-invariants-v0.1.0` is accepted as the fingerprinted
+candidate invariant registry over `court-substrate:0.1.0`. The package remains
+`integratedAdmission = proposed_pending_crt_309`; this decision does not modify
+integrated release 1.2.0 or activate Court runtime behavior.
+
+The registry computes signed Court transition vectors, `G_Court = 2I_4`, all
+25 Hamming path entries, disjoint XOR supports, weight-five values, and exact
+`kappa_court = i/4` ratios. It binds every local claim to a source path and
+SHA-256 and binds Carey CQ/SQ to DOI `10.1080/17459730701376743`.
+
+### Carey ruling
+
+The prior premise-based Phase-4 proof is replaced by the production scoped
+enumerator. For Forte 5-35 it enumerates 20 directed interval instances, 40
+difference slots, and 150 cross-generic comparisons, yielding `D=20`, zero
+ambiguities, zero contradictions, `F=0`, `CQ=1/1`, and `SQ=1/2`. The scoped
+API rejects non-5-35 input; lower-level results for other five-note sets are
+diagnostic and do not acquire admitted Carey status.
+
+### Namespace ruling
+
+Aggregate `harmonic.C_H` remains `unresolved` with null value. Its literal guard
+forbids equivalence with `physical.C_P`, `semantic.C_S`,
+`court.kappa_court`, temperature, entropy, enthalpy, or free energy. Computed
+Court invariants do not totalize that aggregate namespace.
+
+### Evidence
+
+- Package tests: 8 passed.
+- Registry validation: 11/11 checks, including strict provenance closure and
+  expected-failure fixtures.
+- Determinism: 4/4 checks; two clean builds and reversed authored input arrays
+  produce byte-identical four-file canonical output.
+- Root verification uses the production evaluator and builder directly in
+  `tests/verification/` and `scripts/run-phase4-verification.py`.
+- Root pytest: 209 passed. Full Phase-4 integration: 35 verification tests and
+  live Neo4j parity passed. Root release validation: 181/181 checks passed.
+
+## Pentatonic substrate registry (CRT-302) — 2026-08-09
+
+### Decision
+
+`seven-governors-court-substrate-v0.1.0` is accepted as the fingerprinted
+candidate substrate for EPIC-003. The package is root-validated but has
+`integratedAdmission = proposed_pending_crt_309`; it is not appended
+retroactively to integrated release 1.2.0 and has no active import or runtime
+effect.
+
+The package registers all 38 pentatonic Forte classes. Its bounded internal
+admission ledger marks 5-35 as `admitted`, 5-23 and 5-27 as
+`admitted-bridge`, and the remaining 35 classes as `proposed` with the
+non-dangling blocker `scrum/CRT-310-remaining-pentatonic-admission.md`. These
+statuses identify records eligible for CRT-309 review; they do not themselves
+admit the package into the integrated release.
+
+### Court and bridge records
+
+- C0-C4 reproduce masks `661`, `677`, `1189`, `1193`, and `1321`, exact
+  `kappa_court` ratios, the Mars/Jupiter/Venus/Saturn pole register, disjoint
+  XOR supports, and selected T5 offsets `0,5,10,3,8`.
+- Rooted 5-23 `{0,2,3,5,7}` and rooted 5-27 `{0,3,5,7,8}` are independently
+  proven five-note subsets of both Aeolian `1453` and Harmonic Minor `2477`.
+  Therefore no additional pentatonic class is minimally required for that
+  bridge.
+- The full T5 root cycle has 12 entries. The five reviewed Court offsets are a
+  selected segment, not a falsely closed five-cycle. Bridge T5 references mean
+  root alignment only and do not claim T5 generates their set class.
+
+### Complement and source ruling
+
+The complete complement owner is the 38-family registry in
+`canonical/universal-network-data.json`. The narrower
+`canonical/topology-identity-definitions.json` supplies exact JSON pointers
+where it names a family and remains null for its eight omitted families.
+Concrete root-0 pentatonic records store both their raw complement mask and a
+separate TnI-normalized root-0 `ScaleState` pointer; those identities are never
+collapsed.
+
+The former 5-23 and 5-27 masks in
+`docs/MATHEMATICAL_REALIZATION_SPECIFICATION.md` were actually classes 5-35
+and 5-29 and contained pitches outside the endpoint intersection. The root
+specification is corrected; frozen framework and versioned package sources are
+unchanged.
+
+### Evidence
+
+- Package validation: 9/9 checks, including strict schema closure and eleven
+  expected-failure fixtures.
+- Determinism: 4/4 checks; two clean builds and reversed authored input arrays
+  produce byte-identical seven-file canonical output.
+- Root-independent mathematical verification:
+  `tests/verification/test_court_substrate_registry.py`.
+
+## Court admission authority contract (CRT-301) — 2026-08-09
+
+### Decision
+
+The root-owned Court authority contract in
+`docs/COURT_ADMISSION_AND_AUTHORITY.md` and its strict machine contract in
+`schemas/court-admission-contract.json` are accepted as the namespace and
+scope boundary for EPIC-003. They extend GOV-201 without modifying its
+hash-bound document or any frozen versioned package.
+
+This decision accepts the **contract**, not the Court subsystem. Court/Fivefold
+runtime material remains `proposed_pending_crt_309`. Only CRT-309 may admit the
+new versioned artifacts after CRT-302 through CRT-308 provide their required
+evidence.
+
+### Amended scope
+
+This decision supersedes the integrated-release 1.2.0 pending admission scope
+of **all 38 pentatonic set classes**. EPIC-003 is limited to:
+
+- the five rooted C0-C4 positions of Forte 5-35;
+- Forte 5-23 and Forte 5-27;
+- only additional set classes that CRT-302 proves minimally necessary for the
+  Aeolian 7-35 to Harmonic Minor 7-32 bridge;
+- Carey CQ/SQ for 5-35 only; and
+- `P_c = diag(c)` as the sole filter eligible for admission.
+
+All remaining pentatonic set classes, Fourier/graph-spectral/semantic-scoped
+filters, the frozen Fivefold controller and runtime cycle, natural-phenomenon
+material, thermodynamic mappings, and new cultural, regional, or landform
+semantics remain proposed. `physical_phenomena.yaml` and
+`thermodynamic_processes.yaml` belong to EPIC-004.
+
+### Namespace and topology boundary
+
+`kappa_court` is an exact-ratio fourth coordinate with values
+`{0/1, 1/4, 1/2, 3/4, 1/1}`. The machine-enforced guard is:
+
+> `kappa_court is not C_P, C_H, C_S, temperature, entropy, enthalpy, or free energy.`
+
+No Court operation or projection may write `ScaleState.office`,
+`ScaleState.officeIndex`, `ScaleState.hasGovernorSeat`, `OCCUPIES_OFFICE`,
+topology office evidence, Degree-Governor metadata, primary/operational
+Governor classifications, or canonical heptatonic topology. The topology
+fixtures `1749`, `2477`, and `223` remain locked. Court graph `ScaleState`
+references are ID-only and forbidden authority fields are rejected even when a
+tampered record is internally rehashed.
+
+### Evidence
+
+- Strict JSON Schema and canonical contract instance:
+  `schemas/court-admission-contract.schema.json` and
+  `schemas/court-admission-contract.json`.
+- Contract, source-link, scope, and namespace tests:
+  `tests/verification/test_court_admission_contract.py`.
+- Registered Court advance/retreat topology-preservation regression:
+  `tests/verification/test_graph_topology_locks.py`.
+- Hash-consistent forbidden-write and ID-only reference regressions:
+  `tests/test_court_graph_projection.py`.
+
 ## Phases 1–4 closure: governor runtime and court-mathematics admitted as candidate-but-evidenced — 2026-08-07
 
 ### Decision

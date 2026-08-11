@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/harmonic-invariants/0.1.0/schemas/invariant-record.schema.json",
+  "title": "HarmonicInvariantRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["invariantId", "kind", "status", "value", "diagnostics", "provenance"],
+  "properties": {
+    "invariantId": { "type": "string", "minLength": 1 },
+    "kind": {
+      "enum": ["exact_matrix", "exact_sets", "exact_vector", "exact_ratios", "exact_ratio", "namespace_guard"]
+    },
+    "status": { "enum": ["proven", "unresolved_guarded"] },
+    "value": {},
+    "diagnostics": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "provenance": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "common.schema.json#/$defs/provenance" }
+    }
+  }
+}

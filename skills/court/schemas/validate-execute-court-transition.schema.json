@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/crt-307/schemas/validate-execute-court-transition.schema.json",
+  "title": "CRT-307 validate_and_execute_court_transition facade contracts",
+  "oneOf": [{"$ref": "#/$defs/input"}, {"$ref": "#/$defs/output"}],
+  "$defs": {
+    "selectedMove": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operationId", "targetPosition", "moveHash", "translocationHash"],
+      "properties": {
+        "operationId": {"$ref": "common.schema.json#/$defs/identifier"},
+        "targetPosition": {"$ref": "common.schema.json#/$defs/identifier"},
+        "moveHash": {"$ref": "common.schema.json#/$defs/sha256"},
+        "translocationHash": {"$ref": "common.schema.json#/$defs/nullableSha256"}
+      }
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["revision", "stateSha256", "ledgerHeadSha256", "policyFingerprint", "contextFingerprint"],
+      "properties": {
+        "revision": {"type": "integer", "minimum": 0, "maximum": 2147483647},
+        "stateSha256": {"$ref": "common.schema.json#/$defs/sha256"},
+        "ledgerHeadSha256": {"$ref": "common.schema.json#/$defs/sha256"},
+        "policyFingerprint": {"$ref": "common.schema.json#/$defs/sha256"},
+        "contextFingerprint": {"$ref": "common.schema.json#/$defs/sha256"}
+      }
+    },
+    "input": {
+      "$id": "crt-307.validate-execute-court-transition.input.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "requestId", "sessionId", "selectedMove", "expected"],
+      "properties": {
+        "schemaVersion": {"const": "crt-307.validate-execute-court-transition.input.v1"},
+        "requestId": {"$ref": "common.schema.json#/$defs/identifier"},
+        "sessionId": {"$ref": "common.schema.json#/$defs/identifier"},
+        "selectedMove": {"$ref": "https://seven-governors.local/crt-307/schemas/validate-execute-court-transition.schema.json#/$defs/selectedMove"},
+        "expected": {"$ref": "https://seven-governors.local/crt-307/schemas/validate-execute-court-transition.schema.json#/$defs/expected"}
+      }
+    },
+    "transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eventId", "operationId", "targetPosition", "moveHash", "translocationHash", "routeContextHash", "verificationStatus", "evidenceEventIds"],
+      "properties": {
+        "eventId": {"$ref": "common.schema.json#/$defs/sha256"},
+        "operationId": {"$ref": "common.schema.json#/$defs/courtMoveOperationId"},
+        "targetPosition": {"$ref": "common.schema.json#/$defs/positionId"},
+        "moveHash": {"$ref": "common.schema.json#/$defs/sha256"},
+        "translocationHash": {"$ref": "common.schema.json#/$defs/nullableSha256"},
+        "routeContextHash": {"$ref": "common.schema.json#/$defs/nullableSha256"},
+        "verificationStatus": {"const": "VERIFIED"},
+        "evidenceEventIds": {"type": "array", "minItems": 1, "maxItems": 32, "uniqueItems": true, "items": {"$ref": "common.schema.json#/$defs/sha256"}}
+      }
+    },
+    "nullableTransition": {"oneOf": [{"$ref": "https://seven-governors.local/crt-307/schemas/validate-execute-court-transition.schema.json#/$defs/transition"}, {"type": "null"}]},
+    "ledgerDelta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["persisted", "eventsAppended"],
+      "properties": {"persisted": {"type": "boolean"}, "eventsAppended": {"type": "integer", "minimum": 0, "maximum": 1}}
+    },
+    "output": {
+      "$id": "crt-307.validate-execute-court-transition.output.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "skillId", "requestId", "status", "reasonCode", "directive", "stateBefore", "stateAfter", "transition", "ledgerDelta", "menu", "toolReceipts", "resultFingerprint"],
+      "properties": {
+        "schemaVersion": {"const": "crt-307.validate-execute-court-transition.output.v1"},
+        "skillId": {"const": "validate_and_execute_court_transition"},
+        "requestId": {"$ref": "common.schema.json#/$defs/identifier"},
+        "status": {"enum": ["verified", "rejected", "unavailable", "denied", "reinspect", "replan", "stopped"]},
+        "reasonCode": {"$ref": "common.schema.json#/$defs/identifier"},
+        "directive": {"$ref": "common.schema.json#/$defs/directive"},
+        "stateBefore": {"$ref": "common.schema.json#/$defs/nullableStateRef"},
+        "stateAfter": {"$ref": "common.schema.json#/$defs/nullableStateRef"},
+        "transition": {"$ref": "https://seven-governors.local/crt-307/schemas/validate-execute-court-transition.schema.json#/$defs/nullableTransition"},
+        "ledgerDelta": {"$ref": "https://seven-governors.local/crt-307/schemas/validate-execute-court-transition.schema.json#/$defs/ledgerDelta"},
+        "menu": {"$ref": "common.schema.json#/$defs/nullableMenu"},
+        "toolReceipts": {"$ref": "common.schema.json#/$defs/toolReceipts"},
+        "resultFingerprint": {"$ref": "common.schema.json#/$defs/sha256"}
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "seven-governors-court-substrate",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Deterministic pentatonic Court substrate registry for the Seven Governors system.",
+  "scripts": {
+    "build:check": "node scripts/build-substrate.mjs --check",
+    "build:emit": "node scripts/build-substrate.mjs --emit",
+    "validate:registry": "node scripts/validate-package.mjs",
+    "validate:determinism": "node scripts/validate-determinism.mjs",
+    "manifest:check": "node scripts/build-package-manifest.mjs --check",
+    "manifest:emit": "node scripts/build-package-manifest.mjs --emit",
+    "release:emit": "npm run build:emit && npm run validate:registry && npm run validate:determinism && npm run manifest:emit",
+    "validate": "npm run build:check && npm run validate:registry && npm run validate:determinism && npm run manifest:check"
+  },
+  "devDependencies": {
+    "ajv": "8.20.0"
+  },
+  "dependencies": {
+    "yaml": "2.9.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

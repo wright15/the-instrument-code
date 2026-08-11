@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gov-208.context-bundle.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "status", "requestFingerprint", "policyFingerprint", "vaultFingerprint", "notes", "exclusions", "diagnostics", "bundleFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "gov-208.context-bundle.v1"},
+    "status": {"enum": ["ok", "empty"]},
+    "requestFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "policyFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "vaultFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["noteId", "relativePath", "depth", "metadata", "excerpt", "contentSha256", "links"],
+        "properties": {
+          "noteId": {"type": "string"},
+          "relativePath": {"type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+\\.md$"},
+          "depth": {"type": "integer", "minimum": 0, "maximum": 4},
+          "metadata": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["noteId", "admissionStatus", "source"],
+            "properties": {
+              "noteId": {"type": "string"},
+              "title": {"type": "string"},
+              "aspectRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+              "ruleRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+              "governor": {"enum": ["Sun", "Moon", "Mercury", "Venus", "Mars", "Jupiter", "Saturn"]},
+              "admissionStatus": {"enum": ["admitted", "admitted-bridge", "proposed", "unresolved"]},
+              "source": {"type": "string"},
+              "maxTraversalDepth": {"type": "integer", "minimum": 0, "maximum": 4}
+            }
+          },
+          "excerpt": {"type": "string", "maxLength": 1200},
+          "contentSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "links": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["target", "status", "targetNoteId"],
+              "properties": {
+                "target": {"type": "string"},
+                "status": {"enum": ["resolved", "broken", "ambiguous"]},
+                "targetNoteId": {"type": ["string", "null"]}
+              }
+            }
+          }
+        }
+      }
+    },
+    "exclusions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["reasonCode"],
+        "properties": {"reasonCode": {"type": "string"}, "relativePath": {"type": "string"}}
+      }
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["reasonCode"],
+        "properties": {"reasonCode": {"type": "string"}, "noteId": {"type": "string"}, "target": {"type": "string"}}
+      }
+    },
+    "bundleFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

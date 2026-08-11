@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "crt-307.capabilities.v1",
+  "bundleId": "seven-governors-crt-307",
+  "bundleVersion": "1.0.0",
+  "defaultPolicy": "deny",
+  "grants": [
+    {
+      "skillId": "inspect_court_state",
+      "tools": ["governor.court_agent_api.invoke"],
+      "operations": ["inspect_court_state"],
+      "namedQueries": ["court_runtime_state_for_session", "court_verified_events_for_session"],
+      "capabilities": ["court.context.read", "court.ledger.replay"],
+      "optionalCapabilities": ["court.graph.read.named"],
+      "dynamicBindings": [],
+      "effectPolicy": "read-only"
+    },
+    {
+      "skillId": "list_legal_court_moves",
+      "tools": ["governor.court_agent_api.invoke"],
+      "operations": ["list_legal_court_moves"],
+      "namedQueries": [],
+      "capabilities": ["court.ledger.replay", "court.moves.read"],
+      "optionalCapabilities": [],
+      "dynamicBindings": [],
+      "effectPolicy": "read-only"
+    },
+    {
+      "skillId": "validate_and_execute_court_transition",
+      "tools": ["governor.court_agent_api.invoke"],
+      "operations": ["validate_and_execute_court_transition"],
+      "namedQueries": [],
+      "capabilities": ["court.ledger.replay", "court.move.validate", "court.move.execute", "court.postcondition.verify"],
+      "optionalCapabilities": [],
+      "dynamicBindings": [
+        {
+          "bindingId": "selected_court_move_capability",
+          "sourceField": "selectedMove.operationId",
+          "menuField": "moves.capability",
+          "allowedCapabilities": ["court.transition", "court.translocate"],
+          "requirements": ["trusted_menu_match", "exact_state_match", "host_grant", "policy_fingerprint_match", "registered_verifier"]
+        }
+      ],
+      "effectPolicy": "runtime-authorized-court-transition"
+    },
+    {
+      "skillId": "project_through_court",
+      "tools": ["governor.court_agent_api.invoke"],
+      "operations": ["project_through_court"],
+      "namedQueries": ["court_filter_commutation_outputs"],
+      "capabilities": ["court.ledger.replay", "court.filter.project"],
+      "optionalCapabilities": ["court.graph.read.named"],
+      "dynamicBindings": [],
+      "effectPolicy": "read-only"
+    },
+    {
+      "skillId": "verify_court_postcondition",
+      "tools": ["governor.court_agent_api.invoke"],
+      "operations": ["verify_court_postcondition"],
+      "namedQueries": ["court_runtime_state_for_session", "court_verified_events_for_session"],
+      "capabilities": ["court.ledger.replay", "court.outcome.read", "court.postcondition.verify"],
+      "optionalCapabilities": ["court.graph.read.named"],
+      "dynamicBindings": [],
+      "effectPolicy": "read-only"
+    }
+  ],
+  "forbidden": {
+    "tools": ["raw_cypher", "raw_shell"],
+    "operations": ["court.graph.write", "court.ledger.write", "court.position.write", "court.token.issue", "court.success.from_prose", "court.kappa.cross_namespace.write", "topology.write", "governor.write"],
+    "claims": ["prose_as_evidence", "success_without_verified_evidence"]
+  }
+}

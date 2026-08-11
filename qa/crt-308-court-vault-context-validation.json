@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "crt-308.validation-report.v1",
+  "verdict": "PASS",
+  "checksPassed": 3,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "name": "CRT-308 schema closure",
+      "status": "PASS",
+      "diagnostic": {
+        "schemaCount": 3
+      }
+    },
+    {
+      "name": "CRT-302 through CRT-306 byte parity",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "path": "schemas/court-runtime-policy.json",
+          "expected": "5164b74bf6cbbb55625eb0e9b958542cf20ddacb426813b7a93c1bffd7347605",
+          "actual": "5164b74bf6cbbb55625eb0e9b958542cf20ddacb426813b7a93c1bffd7347605",
+          "pass": true
+        },
+        {
+          "path": "src/governor/court_graph_queries.py",
+          "expected": "3442e4cd03a3885a5cd7706d8146974eba20fc564edf08acb4bb2db0479ddcc8",
+          "actual": "3442e4cd03a3885a5cd7706d8146974eba20fc564edf08acb4bb2db0479ddcc8",
+          "pass": true
+        },
+        {
+          "path": "seven-governors-court-substrate-v0.1.0/canonical/substrate-registry-release.json",
+          "expected": "6906a5b7a495feee7dddb02ee936393052e58315c28893a58c700ec60000f9a3",
+          "actual": "6906a5b7a495feee7dddb02ee936393052e58315c28893a58c700ec60000f9a3",
+          "pass": true
+        },
+        {
+          "path": "seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json",
+          "expected": "75b3ffaa0b126c4dbf0abf6e42a4674724092b0e403a2862d893b6f1493d0e6f",
+          "actual": "75b3ffaa0b126c4dbf0abf6e42a4674724092b0e403a2862d893b6f1493d0e6f",
+          "pass": true
+        },
+        {
+          "path": "seven-governors-court-filter-algebra-v0.1.0/canonical/filter-algebra-release.json",
+          "expected": "83bb95522b91170914c1a1306d2ae0d5e084842eea2723c2c0d9d44ef0543368",
+          "actual": "83bb95522b91170914c1a1306d2ae0d5e084842eea2723c2c0d9d44ef0543368",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "CRT-308 Court authority, privacy, and parity tests",
+      "status": "PASS",
+      "diagnostic": {
+        "passed": 7
+      }
+    }
+  ],
+  "reportFingerprint": "79c25e45425d945a311a88ee8def800536876e1e73d95282ef4d5c0092c0b644"
+}

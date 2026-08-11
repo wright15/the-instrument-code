@@ -1,15 +1,15 @@
 # CRT-305 — Court runtime lifecycle and ledger extension
 
-**Status:** Partial · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+**Status:** **Done** · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
 
-> **Status note (2026-08-07):** parallel `CourtState` fingerprint records and a
-> hash-chained Court transition ledger with byte-exact replay and
-> modify/delete/insert/reorder detection are implemented in
-> `src/governor/court_ledger.py` and verified in
-> `tests/verification/test_runtime_security.py`. Transitions are restricted to
-> registered adjacent moves over the canonical `C0`–`C4` positions.
-> **Remaining:** exact `kappa_court`, pole-register derivation, translocation
-> records, a Court session store, and the full Court token lifecycle.
+> **Completion note (2026-08-09):** the fingerprinted
+> `court-runtime-policy:0.1.0` and verified runtime in
+> `src/governor/court_runtime.py` add exact pole/`kappa_court` derivation,
+> capability-scoped legal moves, single-use validation tokens, typed GOV-205
+> decisions, replayable adjacent and compound translocation events, strict
+> schemas, and an external atomic session store. The implementation extends the
+> unchanged GOV-204 `LedgerEvent` envelope and binds CRT-304 route evidence
+> without rewriting static route records. Admission remains pending CRT-309.
 **Depends on:** CRT-302, GOV-204 · **Blocks:** CRT-307, CRT-309
 
 ## Story
@@ -50,33 +50,33 @@ events are a typed extension to the ledger, serialized as
 
 ## Tasks
 
-- [ ] Add strict `CourtState`, `CourtLegalMove`, `CourtValidatedMove`,
+- [x] Add strict `CourtState`, `CourtLegalMove`, `CourtValidatedMove`,
       `CourtTransitionEvent`, `CourtLedgerSnapshot`,
       `TopologicalTranslocationRecord`, Court replay-result schemas.
-- [ ] Implement pure `listLegalCourtMoves`, `validateCourtMove`,
+- [x] Implement pure `listLegalCourtMoves`, `validateCourtMove`,
       `applyCourtMove`, and `replayCourtLedger` functions over canonical
       JSON; ordinary moves are adjacent-only and the adjacency guard runs
       before validation.
-- [ ] Implement $\kappa_{\text{court}}$ derivation
+- [x] Implement $\kappa_{\text{court}}$ derivation
       $\kappa(C_i) = i/4$ and persist it as a typed fourth coordinate; the
       runtime refuses to write $\kappa_{\text{court}}$ into any $C_P$, $C_H$,
       $C_S$, temperature, entropy, enthalpy, or free-energy field.
-- [ ] Bind each Court validation token to Court policy fingerprint,
+- [x] Bind each Court validation token to Court policy fingerprint,
       normalized Court operation, prior Court-state hash, context
       fingerprint, and capability scope.
-- [ ] Implement append-only Court sequence numbers, previous-event hashes,
+- [x] Implement append-only Court sequence numbers, previous-event hashes,
       intrinsic Court-event identities, Court-snapshot fingerprints, and
       tamper verification.
-- [ ] Implement the Topological Translocation contract: any non-adjacent
+- [x] Implement the Topological Translocation contract: any non-adjacent
       Court jump must be accompanied by a Topological Translocation record
       citing the source state, the target state, the Forte family change,
       the altered Chaldean degree(s), the Degree Governor(s), and the
       evidence path; jumps without that record fail closed.
-- [ ] Keep wall-clock observations outside intrinsic Court-event identity;
+- [x] Keep wall-clock observations outside intrinsic Court-event identity;
       use logical sequence for replay ordering. Store live Court state
       under `XDG_STATE_HOME` (or an explicit external path), never inside
       release artifacts by default.
-- [ ] Require registered typed Court operations; raw shell, raw Cypher,
+- [x] Require registered typed Court operations; raw shell, raw Cypher,
   arbitrary ledger writes, and arbitrary Court-position writes are not
       legal moves.
 
@@ -123,6 +123,12 @@ unchanged by any Court transition). Confirm the GOV-204 root ledger remains
 authoritative and Court events are a typed extension.
 
 ## Definition of done
+
+Evidence is executable in `tests/test_court_runtime_transitions.py`,
+`tests/test_court_runtime_store.py`, and
+`tests/verification/test_court_runtime_security.py`. Phase-4 records the policy
+fingerprint, legal-move closure, exact C2 derivation, adjacent replay, compound
+R7 translocation replay, and namespace guard.
 
 All Court schemas, pure transition/ledger extension functions, the
 $\kappa_{\text{court}}$ coordinate, Topological Translocation contract, and

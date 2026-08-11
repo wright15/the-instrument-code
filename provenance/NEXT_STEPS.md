@@ -1,8 +1,9 @@
 # Recommended Next Steps
 
-Current release: `seven-governors-integrated-1.1.0`, validated. The release
-now includes the audited topology, the mutation algebra audit, the canonical
-feature-profile registry and compiler, and the companion authoring toolkit.
+Current release: `seven-governors-integrated-1.3.0`, validated and admitted.
+The release includes the audited topology, mutation algebra, canonical profile
+registry/compiler, Governor runtime, bounded Pentatonic Court, read projection,
+agent skills, and optional read-only vault context.
 
 ## 1. Establish the full database
 
@@ -47,10 +48,12 @@ Export the Neo4j projection into a normalized JSON form and compare it with
 the canonical release and the registry's compiled packets. No role, office,
 family, state, relationship, profile, or operator should be lost or invented.
 
-## 5. Admit the candidate extensions when ready
+## 5. Preserve bounded admission
 
-The Fivefold Engine and natural-phenomenon models are explicit candidates.
-Admission requires a new versioned release that:
+The bounded Court is admitted by CRT-309 through
+`provenance/court-admission-release.json`. The remaining 35 pentatonic classes,
+broader Fivefold controller claims, natural-phenomenon, and thermodynamic models
+remain proposed work. Any expansion still requires a new versioned release that:
 
 - moves or references schemas from the root authority namespace;
 - updates source-authority records and adds release provenance;
@@ -59,7 +62,31 @@ Admission requires a new versioned release that:
   where appropriate; and
 - records the decision in this ledger.
 
-## 6. Version every protocol change
+CRT-302's versioned pentatonic substrate registry is complete at
+`seven-governors-court-substrate-v0.1.0`. CRT-303's versioned invariant
+registry and independent Carey enumerator are complete at
+`seven-governors-harmonic-invariants-v0.1.0`. CRT-304's versioned filter
+algebra and complete commutation evidence are complete at
+`seven-governors-court-filter-algebra-v0.1.0`. CRT-305's runtime policy,
+route-event/translocation lifecycle, semantic replay, and external session
+store are complete under `schemas/court-runtime-policy.json` and
+`src/governor/court_runtime.py`. CRT-306 projection schema v2 now independently
+replays those sessions and exposes terminal state plus ordered verified events
+through six bounded read-only queries. CRT-307 supplies five replay-bound Court
+skills. GOV-208 and CRT-308 now supply bounded read-only context with exact
+disabled parity, and CRT-309 records the narrow admission. Do not edit frozen
+package or companion Fivefold bytes in place.
+
+## 6. Add graph-native availability and housing
+
+Proceed with `scrum/GOV-210-graph-native-availability-housing.md` after release
+closure. Derive skill availability only from registries; compute informational
+node/office and Court-position assignments from canonical mutation/Court
+structure; save exact assignment bases; project vault structure and fingerprints
+only; keep Governor affinities out of machine records and runtime legality out
+of the graph.
+
+## 7. Version every protocol change
 
 Create a new `AuditRelease` and a new integrated release whenever a
 qualification rule, precedence rule, operator, or canonical assignment

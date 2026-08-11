@@ -1,15 +1,16 @@
 # CRT-304 — Court-filter algebra and operator-commutation tests
 
-**Status:** Partial · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+**Status:** **Done** · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
 
-> **Status note (2026-08-07):** the linear diagonal filter `P_c(x) = x AND c`
-> is implemented in the projection layer and proven idempotent over all
-> 1,892,352 canonical state/mask pairs. The five-valued commutation result
-> space (`commutes`, `does_not_commute`, `left_undefined`, `right_undefined`,
-> `both_undefined`) is implemented, with the `R7`-after-filter `right_undefined`
-> case demonstrated. **Remaining:** a first-class `court-mathematics` filter
-> operator API with explicit domain/image objects and an admitted commutation
-> evaluator rather than authored records.
+> **Completion note (2026-08-09):**
+> `seven-governors-court-filter-algebra-v0.1.0` publishes the first-class
+> operator API, strict theory schemas, two bridge routes, and deterministic
+> commutation evidence. It covers seven admitted masks, all 15 mutation
+> operators, and all 462 canonical operands: 48,510 evaluations yielding
+> 23,814 typed `right_undefined` route asymmetries and 24,696
+> `both_undefined` cases. No additional bridge exists under CRT-302. Concrete
+> ledger event binding remains a CRT-305 runtime obligation; canonical records
+> declare the namespace without inventing events.
 **Depends on:** CRT-303, GOV-202 mutation operator contract · **Blocks:** CRT-307
 
 ## Story
@@ -49,33 +50,33 @@ referenced by GOV-202.
 
 ## Tasks
 
-- [ ] Implement $P_c=\operatorname{diag}(c)$ as the sole admitted linear
+- [x] Implement $P_c=\operatorname{diag}(c)$ as the sole admitted linear
       Court-filter operator in a new versioned `court-filter-algebra`
       package depending on CRT-302 and CRT-303.
-- [ ] Declare the operator's domain (12-bit pitch-class vector or
+- [x] Declare the operator's domain (12-bit pitch-class vector or
       declared sub-state), admissible source topologies (the CRT-302
       admitted set classes), image (the filtered 12-bit vector), inverse
       ($P_c$ is an idempotent projection; inverse is `none` and the schema
       records this), exact harmonic delta (the bit-reduction count),
       preservation invariants (weight-count of retained bits), and
       validation tests.
-- [ ] Implement a commutation test
+- [x] Implement a commutation test
       $P_c T \stackrel{?}{=} T P_c$ over every operator $T$ in the
-      EPIC-202 mutation operator registry, restricted to the CRT-302
+      EPIC-002 mutation operator registry, restricted to the CRT-302
       admitted pentatonic set classes as filters and the canonical
       heptatonic states as operands.
-- [ ] Record the Aeolian → Harmonic Minor (7–35 → 7–32) bridge through both
+- [x] Record the Aeolian → Harmonic Minor (7–35 → 7–32) bridge through both
       a 5–23 filter and a 5–27 filter as canonical fixtures; compute the
       retained pitches, omitted Governor logic, route cost, and any
       declared spectral measures for each.
-- [ ] When $P_c T \ne T P_c$, emit a non-commutation record containing the
+- [x] When $P_c T \ne T P_c$, emit a non-commutation record containing the
       Court mask, mutation operator ID, source state, target state, route
       semantics note, and a pointer into the ledger namespace established
       by CRT-305 (or the GOV-204 ledger if CRT-305 has not landed yet).
-- [ ] Add deterministic `--check` and `--emit` build modes with source
+- [x] Add deterministic `--check` and `--emit` build modes with source
       hashes; two clean builds produce byte-identical commutation tables
       and the same filter-algebra fingerprint.
-- [ ] Explicitly mark Fourier, graph-spectral, and semantic-scoped filter
+- [x] Explicitly mark Fourier, graph-spectral, and semantic-scoped filter
       operators `admission: proposed` with blocker pointers to follow-on
       stories or EPIC-004; the filter schema must reject any operator type
       outside `{linear_diagonal}` until separately admitted.
@@ -117,6 +118,13 @@ mask, dangling operator ID, missing inverse declaration, route-semantics
 record pointing at a missing ledger entry, and a Court filter claiming to
 mutate office occupancy. Compare canonical output bytes across two clean
 builds in separate processes.
+
+Evidence is recorded in
+`seven-governors-court-filter-algebra-v0.1.0/qa/validation-report.json`,
+`seven-governors-court-filter-algebra-v0.1.0/qa/determinism-report.json`, and
+`tests/verification/test_court_filter_algebra_registry.py`. Phase-4 invokes the
+production evaluator directly and reports the package fingerprint and complete
+classification totals.
 
 ## Definition of done
 

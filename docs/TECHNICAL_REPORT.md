@@ -126,23 +126,25 @@ operations.
 - **Filter operators.** A Court filter `P_c` is the linear diagonal operator
   `P_c(x) = x AND c` over 12-bit masks. Idempotence
   `P_c(P_c(x)) = P_c(x)` holds for **every** 12-bit mask pair
-  (1,892,352 pairs checked, zero violations) **[Proven]**.
+  (1,892,352 pairs checked, zero violations). The CRT-304 candidate registry
+  admits seven concrete masks with explicit domain, image, inverse, exact
+  delta, and preservation declarations **[Proven candidate]**.
 - **Carey quotients.** For the 5-35 set class, `CQ = 1` and `SQ = 1/2` under
-  exact rational arithmetic, using the cited definitions and the
-  full-convergent/well-formed premises **[Proven as a formula proof]**.
-  A generic independent failure/difference enumerator is not yet implemented,
-  so these values rest on the stated premises rather than on an independent
-  evaluator.
+  exact rational arithmetic. The scoped production evaluator independently
+  enumerates 20 interval instances, 20 differences, and zero coherence
+  failures **[Proven candidate]**.
 - **Commutation.** Compositions of filters and mutation operators are classified
   into a five-valued result space: `commutes`, `does_not_commute`,
-  `left_undefined`, `right_undefined`, `both_undefined`. For example,
-  filtering Aeolian `1453` with the C2 mask then applying `R7` is undefined,
-  because `R7` requires a seven-note input; the reverse order is defined
-  **[Proposed]**, demonstrated on the fixture.
-- **Pentatonic positions.** The canonical `C0–C4` rooted positions and their
-  pole registers are a **[Proposed]** substrate. The runtime ledger records
-  only adjacent canonical transitions (`court:advance` / `court:retreat`) and
-  rejects all others **[Proven]**.
+  `left_undefined`, `right_undefined`, `both_undefined`. CRT-304 evaluates all
+  48,510 combinations of seven candidate filters, 15 admitted mutations, and
+  462 canonical operands. It records 23,814 `right_undefined` route
+  asymmetries and 24,696 `both_undefined` cases **[Proven candidate]**.
+- **Pentatonic positions.** The C0-C4 rooted positions, 5-23/5-27 bridges, and
+  pole registers form a fingerprinted **[Proven candidate]** substrate. The
+  runtime derives exact pole/`kappa_court` state and records eight directed
+  adjacent transitions. A non-adjacent jump requires a typed compound
+  Topological Translocation record bound to R7/L7 mutation and CRT-304 route
+  evidence **[Proven candidate]**.
 
 ## 6. Deterministic runtime
 
@@ -159,9 +161,19 @@ The runtime binds every operation to exact, reproducible identity:
   Court runtime keep append-only hash-chained ledgers. Replay reconstructs the
   exact final state byte-for-byte; modifying, deleting, inserting, or reordering
   events is detected at the first failing sequence **[Proven]**.
-- **Graph projection.** A deterministic, idempotent projection exports the
-  field, the Court records, and the verified ledgers to Neo4j. Full wipe and
-  re-import reproduces the identical graph, node for node **[Proven]**.
+- **Court authorization.** Court moves use capability-scoped finite menus,
+  single-use state/ledger/policy/context-bound tokens, typed GOV-205 decisions,
+  and strict semantic replay. Live sessions are external, locked, atomic, and
+  compare-and-swap protected **[Proven candidate]**.
+- **Graph projection.** A deterministic, idempotent projection independently
+  replays typed Court ledgers, then exports terminal state, snapshot, event, and
+  translocation evidence to Neo4j. Full wipe and re-import reproduces the
+  identical graph, node for node, while Neo4j remains disposable
+  **[Proven candidate]**.
+- **Agent skills.** Five bounded Court workflows expose only replayed state,
+  legal menus, atomic verified transitions, read-only filters, and recorded
+  postconditions. Tokens and evidence authority remain internal; optional graph
+  results cannot authorize state change **[Proven candidate]**.
 
 ## 7. Verification
 
@@ -179,6 +191,10 @@ All **[Proven]** markers are enforced by the executable suite
 | Mutation operators / applications | 15 / 3,402 |
 | Operator domains: modal / local | 462 / 210 |
 | Commutation pairs / equal squares / mismatches | 91 / 7,644 / 0 |
+| Court filter/operator/operand evaluations | 48,510 |
+| Court route asymmetries / both-undefined | 23,814 / 24,696 |
+| Court positions / directed ordinary moves | 5 / 8 |
+| Court exact kappa values / forbidden target namespaces | 5 / 7 |
 | `R7(1453) = 2477` (`d_H = 2`, `d_VL = 1`) | Proven |
 | Ledger replay / tamper detection (governor + Court) | Proven |
 
@@ -206,11 +222,9 @@ Three observations motivate the research program:
 
 ## 9. Future work
 
-- Implement the independent Carey failure/difference enumerator so `CQ` and
-  `SQ` are derived, not premise-based.
 - Resolve or rigorously justify the aggregate `C_H` coordinate.
-- Complete the pentatonic substrate (`C0–C4`), pole registers, and the
-  translocation contract; admit them through the project's decision process.
+- Complete optional Court context bundles, then admit the evidenced candidate
+  surfaces through CRT-309.
 - Connect the runtime to learned systems and study whether the exact layer
   measurably improves determinism, auditability, or controllability.
 - Publish this material as an arXiv preprint (candidate categories:

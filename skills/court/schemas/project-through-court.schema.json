@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/crt-307/schemas/project-through-court.schema.json",
+  "title": "CRT-307 project_through_court facade contracts",
+  "oneOf": [{"$ref": "#/$defs/input"}, {"$ref": "#/$defs/output"}],
+  "$defs": {
+    "input": {
+      "$id": "crt-307.project-through-court.input.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "requestId", "sessionId", "expectedStateSha256", "expectedLedgerHeadSha256", "sourceMask", "mutationOperatorId"],
+      "properties": {
+        "schemaVersion": {"const": "crt-307.project-through-court.input.v1"},
+        "requestId": {"$ref": "common.schema.json#/$defs/identifier"},
+        "sessionId": {"$ref": "common.schema.json#/$defs/identifier"},
+        "expectedStateSha256": {"$ref": "common.schema.json#/$defs/sha256"},
+        "expectedLedgerHeadSha256": {"$ref": "common.schema.json#/$defs/sha256"},
+        "sourceMask": {"$ref": "common.schema.json#/$defs/pitchMask"},
+        "mutationOperatorId": {"enum": ["M", "R1", "R2", "R3", "R4", "R5", "R6", "R7", "L1", "L2", "L3", "L4", "L5", "L6", "L7"]}
+      }
+    },
+    "weights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "retained"],
+      "properties": {"source": {"type": "integer", "minimum": 0, "maximum": 12}, "retained": {"type": "integer", "minimum": 0, "maximum": 5}}
+    },
+    "nullableMask": {"oneOf": [{"$ref": "common.schema.json#/$defs/pitchMask"}, {"type": "null"}]},
+    "nullableIdentifier": {"oneOf": [{"$ref": "common.schema.json#/$defs/identifier"}, {"type": "null"}]},
+    "routeSemantics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mutationOperatorId", "classification", "leftResultMask", "rightResultMask", "leftUndefinedReason", "rightUndefinedReason"],
+      "properties": {
+        "mutationOperatorId": {"enum": ["M", "R1", "R2", "R3", "R4", "R5", "R6", "R7", "L1", "L2", "L3", "L4", "L5", "L6", "L7"]},
+        "classification": {"enum": ["commutes", "does_not_commute", "left_undefined", "right_undefined", "both_undefined"]},
+        "leftResultMask": {"$ref": "https://seven-governors.local/crt-307/schemas/project-through-court.schema.json#/$defs/nullableMask"},
+        "rightResultMask": {"$ref": "https://seven-governors.local/crt-307/schemas/project-through-court.schema.json#/$defs/nullableMask"},
+        "leftUndefinedReason": {"$ref": "https://seven-governors.local/crt-307/schemas/project-through-court.schema.json#/$defs/nullableIdentifier"},
+        "rightUndefinedReason": {"$ref": "https://seven-governors.local/crt-307/schemas/project-through-court.schema.json#/$defs/nullableIdentifier"}
+      }
+    },
+    "projection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceMask", "filterMask", "outputMask", "outputVector12", "weights", "exactBitReduction", "filterId", "filterAlgebraFingerprint", "routeSemantics", "runtimeUnchanged"],
+      "properties": {
+        "sourceMask": {"$ref": "common.schema.json#/$defs/pitchMask"},
+        "filterMask": {"$ref": "common.schema.json#/$defs/pitchMask"},
+        "outputMask": {"$ref": "common.schema.json#/$defs/pitchMask"},
+        "outputVector12": {"type": "string", "pattern": "^[01]{12}$"},
+        "weights": {"$ref": "https://seven-governors.local/crt-307/schemas/project-through-court.schema.json#/$defs/weights"},
+        "exactBitReduction": {"type": "integer", "minimum": 0, "maximum": 12},
+        "filterId": {"$ref": "common.schema.json#/$defs/identifier"},
+        "filterAlgebraFingerprint": {"const": "40bd74397ff9f4c8c0f0b845630e008cea66c9495413195c1e1c92ff02968589"},
+        "routeSemantics": {"$ref": "https://seven-governors.local/crt-307/schemas/project-through-court.schema.json#/$defs/routeSemantics"},
+        "runtimeUnchanged": {"type": "boolean"}
+      }
+    },
+    "nullableProjection": {"oneOf": [{"$ref": "https://seven-governors.local/crt-307/schemas/project-through-court.schema.json#/$defs/projection"}, {"type": "null"}]},
+    "output": {
+      "$id": "crt-307.project-through-court.output.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "skillId", "requestId", "status", "reasonCode", "directive", "stateBefore", "stateAfter", "projection", "graph", "menu", "toolReceipts", "resultFingerprint"],
+      "properties": {
+        "schemaVersion": {"const": "crt-307.project-through-court.output.v1"},
+        "skillId": {"const": "project_through_court"},
+        "requestId": {"$ref": "common.schema.json#/$defs/identifier"},
+        "status": {"enum": ["ok", "rejected", "unavailable", "denied", "reinspect"]},
+        "reasonCode": {"$ref": "common.schema.json#/$defs/identifier"},
+        "directive": {"$ref": "common.schema.json#/$defs/directive"},
+        "stateBefore": {"$ref": "common.schema.json#/$defs/nullableStateRef"},
+        "stateAfter": {"$ref": "common.schema.json#/$defs/nullableStateRef"},
+        "projection": {"$ref": "https://seven-governors.local/crt-307/schemas/project-through-court.schema.json#/$defs/nullableProjection"},
+        "graph": {"$ref": "common.schema.json#/$defs/nullableGraphContext"},
+        "menu": {"$ref": "common.schema.json#/$defs/nullableMenu"},
+        "toolReceipts": {"$ref": "common.schema.json#/$defs/toolReceipts"},
+        "resultFingerprint": {"$ref": "common.schema.json#/$defs/sha256"}
+      }
+    }
+  }
+}

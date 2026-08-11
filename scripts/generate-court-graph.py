@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate a canonical CRT-306 snapshot and deterministic Cypher batches."""
+"""Generate the bounded CRT-306 fixture snapshot and deterministic Cypher batches."""
 
 from __future__ import annotations
 
@@ -21,6 +21,7 @@ from governor.court_graph_projection import (  # noqa: E402
     CourtRootedPositionProjection,
     PentatonicSetClassProjection,
     PoleRegisterProjection,
+    VerifiedCourtRuntimeSessionProjection,
     build_court_graph_projection,
     iter_cypher_ingestion_batches,
     serialize_court_graph_projection,
@@ -29,9 +30,41 @@ from governor.court_graph_queries import (  # noqa: E402
     execute_court_snapshot_query,
     normalize_court_query_parameters,
 )
-from governor.harmonic_models import create_court_state  # noqa: E402
+from governor.court_runtime import (  # noqa: E402
+    apply_court_move,
+    create_court_route_context,
+    create_court_runtime_state,
+    create_topological_translocation_record,
+    load_court_runtime_policy,
+    replay_court_runtime_ledger,
+    validate_court_move,
+)
+from governor.evidence import VerificationDecision  # noqa: E402
 from governor.hashing import canonical_json_bytes  # noqa: E402
-from governor.models import LedgerAnchor  # noqa: E402
+
+
+_EXPECTED_RUNTIME_FIXTURE = {
+    "sessionId": "crt-306-runtime-fixture",
+    "genesisPositionId": "C0",
+    "harmonicProfileSha256": "3d48786309d428b467b29fa3473489e6b37b1f9f1efe58247ddd649dce2a2db8",
+    "policyFingerprint": "90431c79b8bc06da7e6f5cb5ce207cb6cbfd86519bdb91df5aacc137065ec456",
+    "contextFingerprint": "7bfb0cb975fca7bf074a8e6170ac8d7fbd92c0b665bcb42551595f44c9d6364c",
+    "capabilities": ["court.transition", "court.translocate"],
+    "transitions": [
+        {
+            "operationId": "court:advance",
+            "targetPosition": "C1",
+            "evidenceEventIds": ["8" + "1" * 63],
+        },
+        {
+            "operationId": "court:translocate",
+            "targetPosition": "C4",
+            "operatorId": "R7",
+            "forteFamily": "5-23",
+            "evidenceEventIds": ["9" + "2" * 63],
+        },
+    ],
+}
 
 
 def _profile(record):
@@ -44,26 +77,72 @@ def _profile(record):
     )
 
 
-def _court_state(record):
-    anchor = record.get("ledgerAnchor", {})
-    return create_court_state(
-        court_position_id=record["courtPositionId"],
+def _runtime_fixture_session(record):
+    if record != _EXPECTED_RUNTIME_FIXTURE:
+        raise ValueError("runtime_fixture_recipe_mismatch")
+    policy = load_court_runtime_policy()
+    if record["policyFingerprint"] != policy.policy_fingerprint:
+        raise ValueError("runtime_fixture_policy_fingerprint_mismatch")
+    genesis = create_court_runtime_state(
+        session_id=record["sessionId"],
+        position_id=record["genesisPositionId"],
         harmonic_profile_sha256=record["harmonicProfileSha256"],
-        court_policy_sha256=record["courtPolicySha256"],
-        revision=record.get("revision", 0),
-        ledger_anchor=LedgerAnchor(
-            anchor.get("eventCount", 0),
-            anchor.get("headSha256", "0" * 64),
-        ),
+        context_fingerprint=record["contextFingerprint"],
+        capabilities=tuple(record["capabilities"]),
+        policy=policy,
     )
+    state = genesis
+    events = ()
+    for transition in record.get("transitions", ()):
+        translocation = None
+        route = None
+        if transition["operationId"] == "court:translocate":
+            translocation = create_topological_translocation_record(
+                source_position=state.position_id,
+                target_position=transition["targetPosition"],
+                operator_id=transition["operatorId"],
+                forte_family=transition["forteFamily"],
+            )
+            route = create_court_route_context(
+                forte_family=transition["forteFamily"],
+                operator_id=transition["operatorId"],
+                source_scale_state_id=translocation.source_scale_state_id,
+            )
+        move = validate_court_move(
+            state,
+            transition["operationId"],
+            transition["targetPosition"],
+            policy=policy,
+            translocation_record=translocation,
+            route_context=route,
+        )
+        result = apply_court_move(
+            state,
+            move,
+            events,
+            policy=policy,
+            verification_decision=VerificationDecision(
+                True, (), tuple(transition["evidenceEventIds"])
+            ),
+        )
+        if not result.accepted:
+            raise ValueError(f"runtime_fixture_transition_rejected:{result.reason_code}")
+        state, events = result.state, result.events
+    replay = replay_court_runtime_ledger(genesis, events, state.ledger_anchor, policy=policy)
+    if not replay.valid or replay.state != state:
+        raise ValueError(f"runtime_fixture_replay_invalid:{replay.reason_code}")
+    return VerifiedCourtRuntimeSessionProjection(genesis, events, state.ledger_anchor)
 
 
 def _projection(document):
     profiles = tuple(_profile(record) for record in document.get("harmonicProfiles", ()))
-    states = tuple(_court_state(record) for record in document.get("courtStates", ()))
+    runtime_records = document.get("runtimeSessions", ())
+    if not isinstance(runtime_records, list) or len(runtime_records) != 1:
+        raise ValueError("runtime_fixture_session_cardinality_invalid")
+    sessions = tuple(_runtime_fixture_session(record) for record in runtime_records)
     return build_court_graph_projection(
         profiles,
-        states,
+        sessions,
         filter_operators=(
             CourtFilterOperatorProjection(
                 filter_id=record["filterId"],

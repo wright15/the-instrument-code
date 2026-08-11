@@ -3,7 +3,6 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
-from fractions import Fraction
 from itertools import combinations
 from pathlib import Path
 
@@ -163,28 +162,6 @@ def apply_court_filter(source_mask: int, court_mask: int) -> int:
     if not 0 <= source_mask < 4096 or not 0 <= court_mask < 4096:
         raise ValueError("court_filter_masks_must_be_12_bit")
     return source_mask & court_mask
-
-
-def carey_max_coherence_failures(cardinality: int) -> int:
-    return cardinality * (cardinality - 1) * (cardinality - 2) * (3 * cardinality - 5) // 24
-
-
-def carey_max_differences(cardinality: int) -> int:
-    return cardinality * (cardinality - 1) ** 2 // 2
-
-
-def carey_cq(cardinality: int, coherence_failures: int) -> Fraction:
-    maximum = carey_max_coherence_failures(cardinality)
-    return Fraction(maximum - coherence_failures, maximum)
-
-
-def carey_sq(cardinality: int, differences: int) -> Fraction:
-    maximum = carey_max_differences(cardinality)
-    return Fraction(maximum - differences, maximum)
-
-
-def carey_well_formed_sq(cardinality: int) -> Fraction:
-    return Fraction(2 * (cardinality - 2), 3 * (cardinality - 1))
 
 
 def operator_pairs():

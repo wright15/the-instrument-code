@@ -1,0 +1,178 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "bridge-route-comparison.json": [],
+        "commutation-table.json": [],
+        "filter-algebra-release.json": [],
+        "filter-operator-registry.json": [],
+        "non-commutation-records.json": []
+      },
+      "name": "strict-schemas",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "bridge-route-comparison.json": "facf453533540a54d2594adea16839f3ccf9975c852cc8b43a165e241c84129a",
+        "commutation-table.json": "48fa2dfde87a840252a63a35dd353903654be4cc80f8d36a4254004187cc5d1f",
+        "filter-algebra-release.json": "83bb95522b91170914c1a1306d2ae0d5e084842eea2723c2c0d9d44ef0543368",
+        "filter-operator-registry.json": "278abdbd5df579407d5dd8d7b8a0d1213b8d0aa0d67d7ce9c72f42dac5e8ab8b",
+        "non-commutation-records.json": "3d728e4c4252831a722ef1940c8019ab50b3e12b3b9afff1c31b083594f0ca91"
+      },
+      "name": "builder-parity",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "canonical-heptatonic-ledger": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+        "court-agent-framework": "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24",
+        "court-authority-contract": "b4351a14aa3dfde6043a609e4158abcb17b006b666a35220e5833cf1cf7ffa9b",
+        "court-authority-document": "5a659f14506d1c48e7be2d51d32510b7fb4dd4c1b3d32fcef8ee48e0b6e10637",
+        "court-mathematics-lexicon": "2b63dfdb793a83c35d954eff08c69afd3d5d1a15c3abc3a027a68fccff72cced",
+        "crt-302-substrate": "fda4707f63b08ca02a155f8d5d8c738534f17e0ab2a234d79f83bf30f16a2fc2",
+        "crt-303-harmonic-invariants": "ad604fdb42144882d38433e734759fcd5c160dfe628139ce0ede1ff093481323",
+        "mutation-operator-applications": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e",
+        "mutation-operator-registry": "e5a9e6929fca048078e0db6ff044facc7137a6ef61e994d74f1d526e27b6482e",
+        "topological-anchoring-framework": "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c"
+      },
+      "name": "dependency-bindings",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "both_undefined": 24696,
+        "commutes": 0,
+        "does_not_commute": 0,
+        "left_undefined": 0,
+        "right_undefined": 23814
+      },
+      "name": "aggregate-coverage",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "namespace": "court.routeSemantics",
+        "recordCount": 23814
+      },
+      "name": "route-semantics-records",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "minimalAdditionalBridgeFilters": [],
+        "routeCount": 2
+      },
+      "name": "bridge-comparison",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        {
+          "actualReason": "schema_const",
+          "expectedReason": "schema_const",
+          "fixtureId": "reject-fourier",
+          "passed": true
+        },
+        {
+          "actualReason": "schema_const",
+          "expectedReason": "schema_const",
+          "fixtureId": "reject-spectral",
+          "passed": true
+        },
+        {
+          "actualReason": "schema_const",
+          "expectedReason": "schema_const",
+          "fixtureId": "reject-graph-spectral",
+          "passed": true
+        },
+        {
+          "actualReason": "schema_const",
+          "expectedReason": "schema_const",
+          "fixtureId": "reject-semantic-scoped",
+          "passed": true
+        },
+        {
+          "actualReason": "schema_const",
+          "expectedReason": "schema_const",
+          "fixtureId": "reject-unknown-type",
+          "passed": true
+        },
+        {
+          "actualReason": "filter_mask_not_admitted",
+          "expectedReason": "filter_mask_not_admitted",
+          "fixtureId": "reject-off-chain-mask",
+          "passed": true
+        },
+        {
+          "actualReason": "schema_required",
+          "expectedReason": "schema_required",
+          "fixtureId": "reject-missing-domain",
+          "passed": true
+        },
+        {
+          "actualReason": "schema_required",
+          "expectedReason": "schema_required",
+          "fixtureId": "reject-missing-image",
+          "passed": true
+        },
+        {
+          "actualReason": "schema_required",
+          "expectedReason": "schema_required",
+          "fixtureId": "reject-missing-inverse",
+          "passed": true
+        },
+        {
+          "actualReason": "schema_required",
+          "expectedReason": "schema_required",
+          "fixtureId": "reject-missing-commutation",
+          "passed": true
+        },
+        {
+          "actualReason": "schema_pattern",
+          "expectedReason": "schema_pattern",
+          "fixtureId": "reject-dangling-operator-id",
+          "passed": true
+        },
+        {
+          "actualReason": "schema_type",
+          "expectedReason": "schema_type",
+          "fixtureId": "reject-invented-ledger-event",
+          "passed": true
+        },
+        {
+          "actualReason": "schema_const",
+          "expectedReason": "schema_const",
+          "fixtureId": "reject-office-write",
+          "passed": true
+        }
+      ],
+      "name": "negative-fixtures",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        "filter-C0",
+        "filter-C1",
+        "filter-C2",
+        "filter-C3",
+        "filter-C4",
+        "filter-5-23",
+        "filter-5-27",
+        "bridge-5-23-aeolian-harmonic-minor",
+        "bridge-5-27-aeolian-harmonic-minor"
+      ],
+      "name": "positive-fixtures",
+      "status": "PASS"
+    }
+  ],
+  "filterAlgebraFingerprint": "40bd74397ff9f4c8c0f0b845630e008cea66c9495413195c1e1c92ff02968589",
+  "packageVersion": "0.1.0",
+  "releaseId": "court-filter-algebra:0.1.0",
+  "schemaVersion": "1.0.0",
+  "status": "passed",
+  "summary": {
+    "checks": 8,
+    "failed": 0,
+    "passed": 8
+  }
+}

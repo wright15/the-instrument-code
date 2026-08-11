@@ -1,0 +1,107 @@
+{
+  "checks": [
+    {
+      "detail": [
+        {
+          "arguments": [
+            "--emit",
+            "--output-dir",
+            "<temporary-root>/clean-a"
+          ],
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "arguments": [
+            "--check",
+            "--output-dir",
+            "<temporary-root>/clean-a"
+          ],
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "arguments": [
+            "--emit",
+            "--output-dir",
+            "<temporary-root>/clean-b"
+          ],
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "arguments": [
+            "--check",
+            "--output-dir",
+            "<temporary-root>/clean-b"
+          ],
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "arguments": [
+            "--emit",
+            "--output-dir",
+            "<temporary-root>/reordered",
+            "--test-reverse-input-order"
+          ],
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "arguments": [
+            "--check",
+            "--output-dir",
+            "<temporary-root>/reordered",
+            "--test-reverse-input-order"
+          ],
+          "exitCode": 0,
+          "passed": true
+        }
+      ],
+      "name": "separate-process-check-emit-check",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "installedHashes": {
+          "carey-5-35.json": "27d1afafd965637e81614f601e3cf00fba70c19c529d81b493bc280c942eb966",
+          "compression-namespace-guard.json": "74aa4024d80b89feeecb09ad7d77d9b520542737a9e00ded70e50267324ef2a5",
+          "court-geometry.json": "371685cd7925bb84d7115b6d5389359bbb017e572a3353813dafe6457f2d6ea7",
+          "harmonic-invariant-registry.json": "75b3ffaa0b126c4dbf0abf6e42a4674724092b0e403a2862d893b6f1493d0e6f"
+        },
+        "outputCount": 4
+      },
+      "name": "two-clean-builds-byte-identical",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "fixtureId": "determinism:reordered-invariant-input",
+        "reverseArrays": [
+          "invariantDefinitions",
+          "sourcePaths"
+        ]
+      },
+      "name": "reordered-input-byte-identical",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "invariantFingerprint": "ad604fdb42144882d38433e734759fcd5c160dfe628139ce0ede1ff093481323",
+        "sourceFingerprint": "aa8cf2d5d060048bb7809fd78cccf8b3e0d6c71ff9b85c35e5551298f63e08e5"
+      },
+      "name": "source-invariant-fingerprints-identical",
+      "status": "PASS"
+    }
+  ],
+  "packageVersion": "0.1.0",
+  "releaseId": "harmonic-invariants:0.1.0",
+  "schemaVersion": "1.0.0",
+  "status": "passed",
+  "summary": {
+    "checks": 4,
+    "failed": 0,
+    "passed": 4
+  }
+}

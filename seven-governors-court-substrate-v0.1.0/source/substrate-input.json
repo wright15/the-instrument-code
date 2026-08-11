@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "1.0.0",
+  "packageId": "seven-governors-court-substrate",
+  "packageVersion": "0.1.0",
+  "releaseId": "court-substrate:0.1.0",
+  "integratedAdmission": "proposed_pending_crt_309",
+  "proposedAdmissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+  "sourcePaths": [
+    "canonical/universal-network-data.json",
+    "canonical/universal-heptatonic-ledger.json",
+    "canonical/topology-identity-definitions.json",
+    "docs/COURT_ADMISSION_AND_AUTHORITY.md",
+    "schemas/court-admission-contract.json",
+    "framework/AGENTS.md",
+    "framework/TOPOLOGICAL_ANCHORING.md",
+    "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml",
+    "scrum/CRT-310-remaining-pentatonic-admission.md"
+  ],
+  "setClassAdmissions": [
+    {
+      "setClassId": "pentatonic:5-35",
+      "admissionStatus": "admitted"
+    },
+    {
+      "setClassId": "pentatonic:5-23",
+      "admissionStatus": "admitted-bridge"
+    },
+    {
+      "setClassId": "pentatonic:5-27",
+      "admissionStatus": "admitted-bridge"
+    }
+  ],
+  "courtRootedPositions": [
+    {
+      "positionId": "C0",
+      "pitchClasses": [0, 2, 4, 7, 9],
+      "poleVector": "0000",
+      "internalPoles": [],
+      "kappaCourt": { "numerator": 0, "denominator": 1 },
+      "xorSupportFromPrevious": null,
+      "t5CycleIndex": 0
+    },
+    {
+      "positionId": "C1",
+      "pitchClasses": [0, 2, 5, 7, 9],
+      "poleVector": "1000",
+      "internalPoles": ["Mars"],
+      "kappaCourt": { "numerator": 1, "denominator": 4 },
+      "xorSupportFromPrevious": [4, 5],
+      "t5CycleIndex": 1
+    },
+    {
+      "positionId": "C2",
+      "pitchClasses": [0, 2, 5, 7, 10],
+      "poleVector": "1100",
+      "internalPoles": ["Mars", "Jupiter"],
+      "kappaCourt": { "numerator": 1, "denominator": 2 },
+      "xorSupportFromPrevious": [9, 10],
+      "t5CycleIndex": 2
+    },
+    {
+      "positionId": "C3",
+      "pitchClasses": [0, 3, 5, 7, 10],
+      "poleVector": "1110",
+      "internalPoles": ["Mars", "Jupiter", "Venus"],
+      "kappaCourt": { "numerator": 3, "denominator": 4 },
+      "xorSupportFromPrevious": [2, 3],
+      "t5CycleIndex": 3
+    },
+    {
+      "positionId": "C4",
+      "pitchClasses": [0, 3, 5, 8, 10],
+      "poleVector": "1111",
+      "internalPoles": ["Mars", "Jupiter", "Venus", "Saturn"],
+      "kappaCourt": { "numerator": 1, "denominator": 1 },
+      "xorSupportFromPrevious": [7, 8],
+      "t5CycleIndex": 4
+    }
+  ],
+  "bridgeRootings": [
+    {
+      "bridgeRootingId": "bridge-rooting:5-23:aeolian-harmonic-minor",
+      "setClassId": "pentatonic:5-23",
+      "rootPc": 0,
+      "pitchClasses": [0, 2, 3, 5, 7],
+      "sourceScaleStateId": 1453,
+      "targetScaleStateId": 2477,
+      "t5RootCycleIndex": 0,
+      "admissionStatus": "admitted-bridge"
+    },
+    {
+      "bridgeRootingId": "bridge-rooting:5-27:aeolian-harmonic-minor",
+      "setClassId": "pentatonic:5-27",
+      "rootPc": 0,
+      "pitchClasses": [0, 3, 5, 7, 8],
+      "sourceScaleStateId": 1453,
+      "targetScaleStateId": 2477,
+      "t5RootCycleIndex": 0,
+      "admissionStatus": "admitted-bridge"
+    }
+  ]
+}

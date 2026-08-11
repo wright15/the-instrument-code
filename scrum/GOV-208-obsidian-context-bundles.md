@@ -1,6 +1,6 @@
 # GOV-208 — Optional read-only Obsidian context bundles
 
-**Status:** Ready · **Priority:** Medium · **Points:** 5 · **Epic:** [EPIC-002](EPIC-002-governor-domain-agent-runtime.md)
+**Status:** Done · **Priority:** Medium · **Points:** 5 · **Epic:** [EPIC-002](EPIC-002-governor-domain-agent-runtime.md)
 **Depends on:** GOV-207 · **Blocks:** GOV-209
 
 ## Story
@@ -19,19 +19,19 @@ admission continue to come from versioned runtime artifacts and the ledger.
 
 ## Tasks
 
-- [ ] Add an opt-in vault provider requiring an explicit absolute vault path;
+- [x] Add an opt-in vault provider requiring an explicit absolute vault path;
       disabled/no-path behavior must match context-free runtime behavior.
-- [ ] Define strict frontmatter for note ID, aspect/rule references, Governor,
+- [x] Define strict frontmatter for note ID, aspect/rule references, Governor,
       admission/status, source, sensitivity, and allowed traversal depth.
-- [ ] Parse Markdown/frontmatter/wikilinks in normalized relative-path order
+- [x] Parse Markdown/frontmatter/wikilinks in normalized relative-path order
       with deterministic link resolution and explicit broken-link results.
-- [ ] Exclude `.obsidian`, hidden files, attachments/binaries, ignored paths,
+- [x] Exclude `.obsidian`, hidden files, attachments/binaries, ignored paths,
       and symlink escapes; enforce file-count, byte, depth, and result limits.
-- [ ] Compile canonical `ContextBundle` JSON with selected excerpts, logical
+- [x] Compile canonical `ContextBundle` JSON with selected excerpts, logical
       links, provenance, policy fingerprint, vault fingerprint, and exclusions.
-- [ ] Preserve `baseClassification`; represent any contextual refinement as a
+- [x] Preserve `baseClassification`; represent any contextual refinement as a
       separate rule-evidenced result that can abstain and be replayed.
-- [ ] Never write the vault or project raw private note content into Neo4j,
+- [x] Never write the vault or project raw private note content into Neo4j,
       release artifacts, logs, or model traces by default.
 
 ## Acceptance criteria
@@ -65,3 +65,7 @@ compiler, safety/limit controls, synthetic fixtures, privacy tests, and
 context-free parity proof are complete; the provider is read-only and disabled
 by default; package/root validation and context documentation pass; no vault
 or live-state artifact enters the release manifest.
+
+**Closure evidence (2026-08-10):** `src/governor/vault_context.py`, four strict
+schemas, 11 focused tests, deterministic 3/3 validator report, exact GOV-207
+byte bindings, two-run report identity, and release/root privacy gates pass.

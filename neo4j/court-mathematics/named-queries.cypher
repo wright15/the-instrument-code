@@ -12,7 +12,7 @@ RETURN state.id AS scaleStateId, has.degree AS degree,
 ORDER BY degree, triadId
 LIMIT 7;
 
-// modal_scale_states_by_triad_quality(quality, limit), maxRows=100
+// modal_scale_states_by_triad_quality(quality, limit), maxRows=100, maxDepth=1
 MATCH (state:ScaleState)-[has:HAS_TRIAD]->(triad:Triad {quality: $quality})
 RETURN state.id AS scaleStateId, has.degree AS degree,
        has.harmonicProfileSha256 AS harmonicProfileSha256,
@@ -21,7 +21,7 @@ RETURN state.id AS scaleStateId, has.degree AS degree,
 ORDER BY scaleStateId, degree, triadId
 LIMIT $limit;
 
-// modal_scale_states_by_interval_vector(intervalVector, limit), maxRows=100
+// modal_scale_states_by_interval_vector(intervalVector, limit), maxRows=100, maxDepth=1
 MATCH (state:ScaleState)-[has:HAS_TRIAD]->(:Triad)
 WHERE has.scaleIntervalVector = $intervalVector
 WITH DISTINCT state.id AS scaleStateId,
@@ -48,3 +48,45 @@ RETURN application.logicalId AS applicationLogicalId,
        commutation.recordSha256 AS commutationRecordSha256
 ORDER BY commutationId, mutationOperatorId
 LIMIT 100;
+
+// court_runtime_state_for_session(sessionId), maxRows=1, maxDepth=2
+MATCH (session:CourtRuntimeSession {sessionId: $sessionId})-[:HAS_LEDGER_SNAPSHOT]->(snapshot:CourtLedgerSnapshot)-[:SNAPSHOTS_STATE]->(state:CourtState)
+RETURN session.sessionId AS sessionId,
+       session.genesisStateSha256 AS genesisStateSha256,
+       session.currentStateSha256 AS currentStateSha256,
+       session.replayVerified AS replayVerified,
+       state.courtStateSha256 AS courtStateSha256,
+       state.courtPositionId AS courtPositionId, state.revision AS revision,
+       state.pitchMask AS pitchMask, state.poleVector AS poleVector,
+       state.kappaNumerator AS kappaNumerator,
+       state.kappaDenominator AS kappaDenominator,
+       state.harmonicProfileSha256 AS harmonicProfileSha256,
+       state.policyFingerprint AS policyFingerprint,
+       state.contextFingerprint AS contextFingerprint,
+       state.eventCount AS eventCount,
+       state.ledgerHeadSha256 AS ledgerHeadSha256,
+       state.consumedTokenCount AS consumedTokenCount,
+       snapshot.snapshotHash AS snapshotHash
+ORDER BY sessionId
+LIMIT 1;
+
+// court_verified_events_for_session(sessionId, limit), maxRows=100, maxDepth=2
+MATCH (session:CourtRuntimeSession {sessionId: $sessionId})-[:HAS_TRANSITION_EVENT]->(event:CourtTransitionEvent)
+OPTIONAL MATCH (event)-[:HAS_TRANSLOCATION]->(translocation:TopologicalTranslocationRecord)
+OPTIONAL MATCH (event)-[:USES_ROUTE_RECORD]->(route:CourtCommutationRecord)
+RETURN event.eventId AS eventId, event.intrinsicSha256 AS intrinsicSha256,
+       event.eventSha256 AS eventSha256, event.envelopeSha256 AS envelopeSha256,
+       event.previousEventSha256 AS previousEventSha256,
+       event.sequence AS sequence, event.sessionId AS sessionId,
+       event.operationId AS operationId,
+       event.priorStateSha256 AS priorStateSha256,
+       event.resultingStateSha256 AS resultingStateSha256,
+       event.targetPosition AS targetPosition,
+       event.verificationStatus AS verificationStatus,
+       event.evidenceEventIds AS evidenceEventIds,
+       event.tokenId AS tokenId,
+       event.translocationRecordHash AS translocationRecordHash,
+       event.routeContextHash AS routeContextHash,
+       route.commutationId AS staticRouteRecordId
+ORDER BY sequence, eventId
+LIMIT $limit;

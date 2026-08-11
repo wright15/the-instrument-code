@@ -1,0 +1,166 @@
+{
+  "schemaVersion": "crt-309.court-admission-validation.v1",
+  "verdict": "PASS",
+  "admissionId": "court-admission:crt-309:1.0.0",
+  "checksPassed": 18,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "criterionId": "CRT-301-AC",
+      "status": "PASS",
+      "fixtureIds": [
+        "schemas/court-admission-contract.json"
+      ],
+      "evidence": "namespace and narrow-scope admission contract"
+    },
+    {
+      "criterionId": "CRT-302-AC",
+      "status": "PASS",
+      "fixtureIds": [
+        "court-substrate fixtures"
+      ],
+      "evidence": "38-class registry with C0-C4 and bridge closure"
+    },
+    {
+      "criterionId": "CRT-303-AC",
+      "status": "PASS",
+      "fixtureIds": [
+        "Carey 5-35",
+        "Court Gram/Hamming invariants"
+      ],
+      "evidence": "exact invariant reproduction"
+    },
+    {
+      "criterionId": "CRT-304-AC",
+      "status": "PASS",
+      "fixtureIds": [
+        "commutation-table",
+        "bridge-route-comparison"
+      ],
+      "evidence": "linear diagonal filter algebra"
+    },
+    {
+      "criterionId": "CRT-305-AC",
+      "status": "PASS",
+      "fixtureIds": [
+        "adjacency",
+        "translocation",
+        "tamper",
+        "kappa namespace"
+      ],
+      "evidence": "runtime replay and transition gates"
+    },
+    {
+      "criterionId": "CRT-306-AC",
+      "status": "PASS",
+      "fixtureIds": [
+        "projection-v2",
+        "native-live-neo4j"
+      ],
+      "evidence": "rebuildable bounded read projection"
+    },
+    {
+      "criterionId": "CRT-307-AC",
+      "status": "PASS",
+      "fixtureIds": [
+        "eight Court traces",
+        "explicit-target installer"
+      ],
+      "evidence": "five replay-bound Court skills"
+    },
+    {
+      "criterionId": "CRT-308-AC",
+      "status": "PASS",
+      "fixtureIds": [
+        "synthetic-vault",
+        "false-admission",
+        "context-free parity"
+      ],
+      "evidence": "read-only private-data-safe Court context"
+    },
+    {
+      "criterionId": "CRT-309-AC-1",
+      "status": "PASS",
+      "fixtureIds": [
+        "one-command validator"
+      ],
+      "evidence": "deterministic validator cascade"
+    },
+    {
+      "criterionId": "CRT-309-AC-2",
+      "status": "PASS",
+      "fixtureIds": [
+        "integrated Court corpus"
+      ],
+      "evidence": "end-to-end Court evidence"
+    },
+    {
+      "criterionId": "CRT-309-AC-3",
+      "status": "PASS",
+      "fixtureIds": [
+        "ten-case shared benchmark"
+      ],
+      "evidence": "machine-scored model/retrieval/tool rates"
+    },
+    {
+      "criterionId": "CRT-309-AC-4",
+      "status": "PASS",
+      "fixtureIds": [
+        "native-live-neo4j",
+        "neo4j-unavailable"
+      ],
+      "evidence": "live parity and provider independence"
+    },
+    {
+      "criterionId": "CRT-309-AC-5",
+      "status": "PASS",
+      "fixtureIds": [
+        "admission-output privacy scan"
+      ],
+      "evidence": "no live state, private path, or raw vault content"
+    },
+    {
+      "criterionId": "CRT-309-AC-6",
+      "status": "PASS",
+      "fixtureIds": [
+        "court-admission-release.json"
+      ],
+      "evidence": "admitted and proposed scope explicit"
+    },
+    {
+      "criterionId": "CRT-309-AC-7",
+      "status": "PASS",
+      "fixtureIds": [
+        "court-admission-release.json"
+      ],
+      "evidence": "separate admission gate preserves historical candidates"
+    },
+    {
+      "criterionId": "EPIC-003-SC-1..6",
+      "status": "PASS",
+      "fixtureIds": [
+        "package and runtime suites"
+      ],
+      "evidence": "namespace, substrate, invariant, filter, transition, and loop safety"
+    },
+    {
+      "criterionId": "EPIC-003-SC-7..9",
+      "status": "PASS",
+      "fixtureIds": [
+        "projection",
+        "skills",
+        "vault"
+      ],
+      "evidence": "projection, agent, and context safety"
+    },
+    {
+      "criterionId": "EPIC-003-SC-10",
+      "status": "PASS",
+      "fixtureIds": [
+        "artifact and evidence bindings"
+      ],
+      "evidence": "release identity closure"
+    }
+  ],
+  "reportFingerprint": "58b3d99e09b1782f8bc2e12ef52145b44895c0743ab3e260b505e858b835ec75"
+}

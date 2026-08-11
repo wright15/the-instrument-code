@@ -1,0 +1,327 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/schemas/court-admission-contract.schema.json",
+  "title": "Court Admission and Authority Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "contractId",
+    "contractStatus",
+    "courtSubsystemAdmission",
+    "extendsAuthorityContract",
+    "namespaceRules",
+    "compressionCoordinate",
+    "forbiddenWrites",
+    "admissionScope",
+    "fivefoldFieldDisposition",
+    "outOfScope",
+    "topologyLocks",
+    "sourceReferences"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "crt-301.court-admission-contract.v1"
+    },
+    "contractId": {
+      "const": "court-admission-contract:1.0.0"
+    },
+    "contractStatus": {
+      "const": "accepted_for_epic_003"
+    },
+    "courtSubsystemAdmission": {
+      "const": "proposed_pending_crt_309"
+    },
+    "extendsAuthorityContract": {
+      "const": "docs/GOVERNOR_DOMAIN_AUTHORITY.md"
+    },
+    "namespaceRules": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/namespaceRule"
+      }
+    },
+    "compressionCoordinate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "namespace",
+        "symbol",
+        "valueType",
+        "derivation",
+        "values",
+        "forbiddenEquivalences",
+        "guardLiteral"
+      ],
+      "properties": {
+        "namespace": {
+          "const": "court.compression"
+        },
+        "symbol": {
+          "const": "kappa_court"
+        },
+        "valueType": {
+          "const": "exact_ratio"
+        },
+        "derivation": {
+          "const": "kappa(C_i) = i/4"
+        },
+        "values": {
+          "type": "array",
+          "prefixItems": [
+            { "const": { "numerator": 0, "denominator": 1 } },
+            { "const": { "numerator": 1, "denominator": 4 } },
+            { "const": { "numerator": 1, "denominator": 2 } },
+            { "const": { "numerator": 3, "denominator": 4 } },
+            { "const": { "numerator": 1, "denominator": 1 } }
+          ],
+          "items": false,
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "forbiddenEquivalences": {
+          "type": "array",
+          "prefixItems": [
+            { "const": "physical.C_P" },
+            { "const": "harmonic.C_H" },
+            { "const": "semantic.C_S" },
+            { "const": "physical.temperature" },
+            { "const": "physical.entropy" },
+            { "const": "physical.enthalpy" },
+            { "const": "physical.freeEnergy" }
+          ],
+          "items": false,
+          "minItems": 7,
+          "maxItems": 7
+        },
+        "guardLiteral": {
+          "const": "kappa_court is not C_P, C_H, C_S, temperature, entropy, enthalpy, or free energy."
+        }
+      }
+    },
+    "forbiddenWrites": {
+      "type": "array",
+      "prefixItems": [
+        { "const": "governor.office" },
+        { "const": "ScaleState.office" },
+        { "const": "ScaleState.officeIndex" },
+        { "const": "ScaleState.hasGovernorSeat" },
+        { "const": "OCCUPIES_OFFICE" },
+        { "const": "topology.officeEvidence" },
+        { "const": "mutation.degreeGovernor" },
+        { "const": "aspect.primaryGovernor" },
+        { "const": "runtime.operationalGovernor" },
+        { "const": "canonical.heptatonicTopology" }
+      ],
+      "items": false,
+      "minItems": 10,
+      "maxItems": 10
+    },
+    "admissionScope": {
+      "$ref": "#/$defs/admissionScope"
+    },
+    "fivefoldFieldDisposition": {
+      "$ref": "#/$defs/fivefoldFieldDisposition"
+    },
+    "outOfScope": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "status", "followOn"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "status": { "const": "proposed" },
+          "followOn": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "topologyLocks": {
+      "type": "array",
+      "prefixItems": [
+        { "$ref": "#/$defs/topologyLock1749" },
+        { "$ref": "#/$defs/topologyLock2477" },
+        { "$ref": "#/$defs/topologyLock223" }
+      ],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "sourceReferences": {
+      "type": "array",
+      "minItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "namespaceRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "namespace",
+        "existingNames",
+        "owner",
+        "allowedWriters",
+        "readOnlyConsumers",
+        "admission",
+        "nonEquivalence"
+      ],
+      "properties": {
+        "namespace": {
+          "enum": [
+            "court.state",
+            "court.poleRegister",
+            "court.poleDisposition",
+            "court.compression",
+            "court.filter",
+            "court.transition",
+            "court.translocation",
+            "court.fivefoldEngine",
+            "court.registerGovernor"
+          ]
+        },
+        "existingNames": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "owner": { "type": "string", "minLength": 1 },
+        "allowedWriters": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "readOnlyConsumers": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "admission": {
+          "enum": ["contract_defined_candidate", "proposed"]
+        },
+        "nonEquivalence": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "admissionScope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "supersedes",
+        "canonicalCourtPositions",
+        "canonicalSetClass",
+        "bridgeSetClasses",
+        "additionalBridgePolicy",
+        "remainingPentatonicSetClasses",
+        "careyEvaluationScope",
+        "admittedFilter"
+      ],
+      "properties": {
+        "supersedes": {
+          "const": "integrated-release-1.2.0 pending scope: all 38 pentatonic set classes"
+        },
+        "canonicalCourtPositions": {
+          "const": ["C0", "C1", "C2", "C3", "C4"]
+        },
+        "canonicalSetClass": { "const": "5-35" },
+        "bridgeSetClasses": { "const": ["5-23", "5-27"] },
+        "additionalBridgePolicy": {
+          "const": "only set classes proven minimally necessary to mediate Aeolian 7-35 to Harmonic Minor 7-32; CRT-302 must enumerate and evidence them"
+        },
+        "remainingPentatonicSetClasses": { "const": "proposed" },
+        "careyEvaluationScope": { "const": "5-35 only" },
+        "admittedFilter": { "const": "P_c = diag(c) only" }
+      }
+    },
+    "fivefoldFieldDisposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "sourceAdmission",
+        "eligibleForPromotionAtCrt309",
+        "remainProposed",
+        "excludedCandidateClaims"
+      ],
+      "properties": {
+        "source": {
+          "const": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml"
+        },
+        "sourceAdmission": { "const": "proposed" },
+        "eligibleForPromotionAtCrt309": {
+          "const": [
+            "fivefold_engine.physical_quantity_claim=false",
+            "fivefold_engine.pole_order",
+            "fivefold_engine.bit_semantics",
+            "fivefold_engine.canonical_states",
+            "fivefold_engine.canonical_transitions",
+            "fivefold_engine.geometry.kappa_formula",
+            "fivefold_engine.geometry.paired_mask_hamming_formula",
+            "fivefold_engine.geometry.signed_gram_matrix",
+            "fivefold_engine.geometry.canonical_path_size",
+            "fivefold_engine.guards"
+          ]
+        },
+        "remainProposed": {
+          "const": [
+            "fivefold_engine.macro_bracket",
+            "fivefold_engine.controller",
+            "fivefold_engine.runtime_cycle"
+          ]
+        },
+        "excludedCandidateClaims": {
+          "const": [
+            "Fourier Court filters",
+            "graph-spectral Court filters",
+            "semantic-scoped Court filters",
+            "thermodynamic analogies",
+            "natural-phenomenon mappings",
+            "pentatonic set classes outside the amended scope"
+          ]
+        }
+      }
+    },
+    "topologyLock1749": {
+      "const": {
+        "scaleStateId": 1749,
+        "office": "Moon",
+        "officeDisposition": "validated",
+        "requiredOccupiesOfficeCount": 1
+      }
+    },
+    "topologyLock2477": {
+      "const": {
+        "scaleStateId": 2477,
+        "office": "Jupiter",
+        "officeDisposition": "inherited",
+        "incomingDegreeGovernor": "Moon",
+        "requiredOccupiesOfficeCount": 1
+      }
+    },
+    "topologyLock223": {
+      "const": {
+        "scaleStateId": 223,
+        "office": null,
+        "officeDisposition": "unassigned",
+        "relationalOffice": "Jupiter",
+        "requiredOccupiesOfficeCount": 0
+      }
+    }
+  }
+}

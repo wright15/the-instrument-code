@@ -15,9 +15,30 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "court-mathematics" / "src"))
+sys.path.insert(0, str(ROOT / "seven-governors-harmonic-invariants-v0.1.0" / "src"))
+sys.path.insert(0, str(ROOT / "seven-governors-court-filter-algebra-v0.1.0" / "src"))
 sys.path.insert(0, str(ROOT / "tests" / "verification"))
 
+from court_filter_algebra import (  # noqa: E402
+    CourtFilterOperator,
+    evaluate_commutation,
+)
+from governor.court_runtime import (  # noqa: E402
+    CourtRuntimeError,
+    apply_court_move,
+    create_court_route_context,
+    create_court_runtime_state,
+    create_topological_translocation_record,
+    list_legal_court_moves,
+    load_court_runtime_policy,
+    replay_court_runtime_ledger,
+    validate_court_move,
+    write_kappa_coordinate,
+)
+from governor.evidence import VerificationDecision  # noqa: E402
 from governor.hashing import canonical_json_bytes, sha256_payload  # noqa: E402
+from harmonic_invariants import evaluate_carey_535  # noqa: E402
+from harmonic_invariants.builder import build_release as build_invariant_release  # noqa: E402
 from _oracles import (  # noqa: E402
     LOCAL_OPERATORS,
     OPERATORS,
@@ -25,11 +46,6 @@ from _oracles import (  # noqa: E402
     apply_operator,
     canonical_masks,
     canonical_records,
-    carey_cq,
-    carey_max_coherence_failures,
-    carey_max_differences,
-    carey_sq,
-    carey_well_formed_sq,
     commutation_metrics,
     mutation_application_map,
     operator_pairs,
@@ -129,10 +145,142 @@ def build_report(*, integration_results: dict[str, str] | None = None) -> dict[s
                 )
                 ground_triangle_checks += 1
 
-    cq = carey_cq(5, 0)
-    sq = carey_sq(5, 20)
-    _require(cq.numerator == cq.denominator == 1, "carey_cq_formula_mismatch")
-    _require(sq == carey_well_formed_sq(5), "carey_sq_formula_mismatch")
+    carey = evaluate_carey_535((0, 2, 4, 7, 9))
+    _require(carey.difference_count == 20, "carey_difference_enumeration_mismatch")
+    _require(carey.failure_count == 0, "carey_failure_enumeration_mismatch")
+    _require(
+        carey.coherence_quotient.numerator
+        == carey.coherence_quotient.denominator
+        == 1,
+        "carey_cq_enumerator_mismatch",
+    )
+    _require(
+        (carey.sameness_quotient.numerator, carey.sameness_quotient.denominator)
+        == (1, 2),
+        "carey_sq_enumerator_mismatch",
+    )
+    invariant_path = (
+        ROOT
+        / "seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json"
+    )
+    invariant_release = json.loads(invariant_path.read_text(encoding="utf-8"))
+    _require(invariant_release == build_invariant_release(), "harmonic_invariant_release_stale")
+    filter_root = ROOT / "seven-governors-court-filter-algebra-v0.1.0/canonical"
+    filter_release = json.loads(
+        (filter_root / "filter-algebra-release.json").read_text(encoding="utf-8")
+    )
+    filter_registry = json.loads(
+        (filter_root / "filter-operator-registry.json").read_text(encoding="utf-8")
+    )
+    filter_commutation = json.loads(
+        (filter_root / "commutation-table.json").read_text(encoding="utf-8")
+    )
+    bridge_filter = next(
+        item for item in filter_registry["operators"] if item["mask"] == 173
+    )
+    bridge_operator = CourtFilterOperator(
+        bridge_filter["filterId"],
+        bridge_filter["filterType"],
+        bridge_filter["mask"],
+        bridge_filter["setClassId"],
+    )
+    route = evaluate_commutation(bridge_operator, "R7", 1453)
+    _require(route.classification == "right_undefined", "court_filter_route_mismatch")
+    _require(route.left_result == 173, "court_filter_left_result_mismatch")
+    _require(filter_commutation["evaluationCount"] == 48510, "court_filter_coverage_mismatch")
+    _require(
+        filter_commutation["classificationTotals"]
+        == {
+            "both_undefined": 24696,
+            "commutes": 0,
+            "does_not_commute": 0,
+            "left_undefined": 0,
+            "right_undefined": 23814,
+        },
+        "court_filter_classification_totals_mismatch",
+    )
+    court_policy = load_court_runtime_policy()
+    court_states = tuple(
+        create_court_runtime_state(
+            session_id=f"phase4-position-{index}",
+            position_id=f"C{index}",
+            harmonic_profile_sha256="a" * 64,
+            context_fingerprint="b" * 64,
+            capabilities=("court.transition", "court.translocate"),
+            policy=court_policy,
+        )
+        for index in range(5)
+    )
+    legal_move_counts = [
+        len(list_legal_court_moves(state, court_policy)) for state in court_states
+    ]
+    _require(legal_move_counts == [1, 2, 2, 2, 1], "court_legal_move_closure_mismatch")
+    verification = VerificationDecision(True, (), ("c" * 64,))
+    adjacent_move = validate_court_move(
+        court_states[0], "court:advance", "C1", policy=court_policy
+    )
+    adjacent = apply_court_move(
+        court_states[0],
+        adjacent_move,
+        policy=court_policy,
+        verification_decision=verification,
+    )
+    _require(adjacent.accepted, "court_adjacent_transition_rejected")
+    adjacent_replay = replay_court_runtime_ledger(
+        court_states[0], adjacent.events, adjacent.state.ledger_anchor, policy=court_policy
+    )
+    _require(
+        adjacent_replay.valid and adjacent_replay.state == adjacent.state,
+        "court_adjacent_replay_mismatch",
+    )
+    translocation_state = create_court_runtime_state(
+        session_id="phase4-translocation",
+        position_id="C0",
+        harmonic_profile_sha256="a" * 64,
+        context_fingerprint="b" * 64,
+        capabilities=("court.transition", "court.translocate"),
+        policy=court_policy,
+    )
+    translocation_record = create_topological_translocation_record(
+        source_position="C0",
+        target_position="C4",
+        operator_id="R7",
+        forte_family="5-23",
+    )
+    route_context = create_court_route_context(
+        forte_family="5-23", operator_id="R7", source_scale_state_id=1453
+    )
+    translocation_move = validate_court_move(
+        translocation_state,
+        "court:translocate",
+        "C4",
+        policy=court_policy,
+        translocation_record=translocation_record,
+        route_context=route_context,
+    )
+    translocation = apply_court_move(
+        translocation_state,
+        translocation_move,
+        policy=court_policy,
+        verification_decision=verification,
+    )
+    _require(translocation.accepted, "court_translocation_rejected")
+    translocation_replay = replay_court_runtime_ledger(
+        translocation_state,
+        translocation.events,
+        translocation.state.ledger_anchor,
+        policy=court_policy,
+    )
+    _require(
+        translocation_replay.valid and translocation_replay.state == translocation.state,
+        "court_translocation_replay_mismatch",
+    )
+    try:
+        write_kappa_coordinate("harmonic.C_H", court_states[2].kappa_court)
+    except CourtRuntimeError as error:
+        _require(error.reason_code == "kappa_cross_namespace_write", "court_kappa_guard_mismatch")
+    else:
+        _require(False, "court_kappa_guard_missing")
 
     ledger_csv = ROOT / "canonical/universal-heptatonic-ledger.csv"
     with ledger_csv.open(newline="", encoding="utf-8") as handle:
@@ -196,13 +344,87 @@ def build_report(*, integration_results: dict[str, str] | None = None) -> dict[s
             "idempotenceViolations": 0,
         },
         "carey535": {
-            "scope": "exact-formula-proof-under-cited-12-TET-premises",
-            "coherenceFailureCount": 0,
-            "maximumCoherenceFailureCount": carey_max_coherence_failures(5),
-            "differenceCount": 20,
-            "maximumDifferenceCount": carey_max_differences(5),
-            "CQ": {"numerator": cq.numerator, "denominator": cq.denominator},
-            "SQ": {"numerator": sq.numerator, "denominator": sq.denominator},
+            "scope": "independent-directed-interval-enumerator-for-TnI-class-5-35",
+            "intervalInstanceCount": len(carey.interval_instances),
+            "differenceCount": carey.difference_count,
+            "differenceSlotCount": carey.difference_slots,
+            "ambiguityCount": carey.ambiguity_count,
+            "contradictionCount": carey.contradiction_count,
+            "coherenceFailureCount": carey.failure_count,
+            "failureSlotCount": carey.failure_slots,
+            "crossGenericComparisons": carey.cross_generic_comparisons,
+            "CQ": {
+                "numerator": carey.coherence_quotient.numerator,
+                "denominator": carey.coherence_quotient.denominator,
+            },
+            "SQ": {
+                "numerator": carey.sameness_quotient.numerator,
+                "denominator": carey.sameness_quotient.denominator,
+            },
+            "doi": "10.1080/17459730701376743",
+        },
+        "courtGeometry": invariant_release["courtGeometry"],
+        "compressionNamespaceGuard": invariant_release["compressionGuard"],
+        "harmonicInvariantRelease": {
+            "path": "seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json",
+            "releaseId": invariant_release["releaseId"],
+            "substrateFingerprint": invariant_release["substrateDependency"]["substrateFingerprint"],
+            "invariantFingerprint": invariant_release["invariantFingerprint"],
+        },
+        "courtFilterAlgebra": {
+            "path": "seven-governors-court-filter-algebra-v0.1.0/canonical/filter-algebra-release.json",
+            "releaseId": filter_release["releaseId"],
+            "filterAlgebraFingerprint": filter_release["filterAlgebraFingerprint"],
+            "filterCount": filter_release["summary"]["filterCount"],
+            "mutationOperatorCount": filter_release["summary"]["mutationOperatorCount"],
+            "canonicalOperandCount": filter_release["summary"]["canonicalOperandCount"],
+            "evaluationCount": filter_release["summary"]["evaluationCount"],
+            "nonCommutationRecordCount": filter_release["summary"]["nonCommutationRecordCount"],
+            "classificationTotals": filter_commutation["classificationTotals"],
+            "sampleRoute": {
+                "filterId": route.filter_id,
+                "operatorId": route.operator_id,
+                "sourceMask": route.source_mask,
+                "classification": route.classification,
+                "leftResult": route.left_result,
+                "rightUndefinedReason": route.right_undefined_reason,
+            },
+        },
+        "courtRuntime": {
+            "policyPath": "schemas/court-runtime-policy.json",
+            "policyId": court_policy.policy_id,
+            "policyFingerprint": court_policy.policy_fingerprint,
+            "positionCount": len(court_policy.positions),
+            "ordinaryDirectedMoveCount": len(court_policy.ordinary_moves),
+            "legalMoveCounts": legal_move_counts,
+            "c2DerivedState": {
+                "pitchMask": court_states[2].pitch_mask,
+                "poleVector": court_states[2].pole_register.vector,
+                "kappaCourt": {
+                    "numerator": court_states[2].kappa_court.numerator,
+                    "denominator": court_states[2].kappa_court.denominator,
+                },
+            },
+            "adjacentTransition": {
+                "operationId": adjacent_move.operation_id,
+                "sourcePosition": "C0",
+                "targetPosition": adjacent.state.position_id,
+                "eventId": adjacent.event_body.event_id,
+                "replayStatus": adjacent_replay.reason_code,
+            },
+            "translocation": {
+                "sourcePosition": translocation_record.source_position,
+                "targetPosition": translocation_record.target_position,
+                "operatorId": translocation_record.operator_id,
+                "sourceScaleStateId": translocation_record.source_scale_state_id,
+                "targetScaleStateId": translocation_record.target_scale_state_id,
+                "recordHash": translocation_record.record_hash,
+                "staticRouteRecordId": translocation_record.static_route_record_id,
+                "eventId": translocation.event_body.event_id,
+                "replayStatus": translocation_replay.reason_code,
+            },
+            "kappaNamespaceGuard": "kappa_cross_namespace_write",
+            "sessionStoreDefault": "${XDG_STATE_HOME:-~/.local/state}/seven-governors/court",
         },
         "voiceLeading": {
             "metricId": "pc-taxicab-bijection-v1",

@@ -1,0 +1,22 @@
+{
+  "traceId": "crt307-no-progress-loop-stop",
+  "setup": {"position": "C0", "verificationProvider": "malformed"},
+  "steps": [
+    {
+      "operation": "validate_and_execute_court_transition",
+      "selection": "listed_adjacent",
+      "expect": {"status": "rejected", "reasonCode": "verification_decision_invalid", "directive": "replan"}
+    },
+    {
+      "operation": "validate_and_execute_court_transition",
+      "selection": "listed_adjacent",
+      "expect": {"status": "replan", "reasonCode": "repetition_limit_reached", "directive": "replan"}
+    },
+    {
+      "operation": "validate_and_execute_court_transition",
+      "selection": "listed_adjacent",
+      "expect": {"status": "stopped", "reasonCode": "retry_exhausted", "directive": "stop"}
+    }
+  ],
+  "expectedFinal": {"position": "C0", "eventCount": 0}
+}

@@ -1,0 +1,12 @@
+{
+  "traceId": "crt307-adjacent-transition",
+  "setup": {"position": "C0"},
+  "steps": [
+    {
+      "operation": "validate_and_execute_court_transition",
+      "selection": "listed_adjacent",
+      "expect": {"status": "verified", "reasonCode": "ok", "positionAfter": "C1"}
+    }
+  ],
+  "expectedFinal": {"position": "C1", "eventCount": 1}
+}

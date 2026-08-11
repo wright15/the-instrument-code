@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "crt-307.adapter.v1",
+  "adapterId": "generic-json",
+  "adapterVersion": "1.0.0",
+  "bundleId": "seven-governors-crt-307",
+  "bundleVersion": "1.0.0",
+  "semanticApi": {
+    "apiVersion": "crt-307.court-agent-api.v1",
+    "toolId": "governor.court_agent_api.invoke",
+    "operations": ["inspect_court_state", "list_legal_court_moves", "validate_and_execute_court_transition", "project_through_court", "verify_court_postcondition"],
+    "requestEnvelope": {"operationField": "operationId", "inputField": "input", "schemaSource": "registry.skill.inputSchema"},
+    "responseEnvelope": {"operationField": "operationId", "outputField": "output", "schemaSource": "registry.skill.outputSchema"},
+    "preservedSemanticFields": ["status", "reasonCode", "directive", "toolReceipts", "resultFingerprint", "evidence"],
+    "authority": "deterministic-court-runtime-only"
+  },
+  "discovery": {"mode": "generic-json-directories", "bridgeMode": "json-tool"},
+  "rendering": {"targetPattern": "court/{skill-slug}/SKILL.md", "metadataRoot": "court", "copyWorkflowBytes": true, "editHostConfiguration": false},
+  "installation": {"explicitTargetRequired": true, "manifestPath": ".seven-governors-crt-307-manifest.json", "rejectSymlinks": true, "rejectPathTraversal": true, "preflightAllFiles": true, "atomicCommit": true}
+}

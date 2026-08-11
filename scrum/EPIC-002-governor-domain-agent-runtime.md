@@ -1,6 +1,6 @@
 # EPIC-002 — Governor domain algebra and deterministic local-agent runtime
 
-**Status:** In Progress · **Priority:** High · **Owner:** governor runtime workstream
+**Status:** Done · **Priority:** High · **Owner:** governor runtime workstream
 **Epic ID:** EPIC-002 · **Target:** post-1.2.0 admission, version TBD
 **Stories:** [GOV-201](GOV-201-authority-namespaces.md),
 [GOV-202](GOV-202-typed-aspects-quantities-bridges.md),

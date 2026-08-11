@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/court-filter-algebra/0.1.0/schemas/common.schema.json",
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "envelopeProperties": {
+      "schemaVersion": { "const": "1.0.0" },
+      "releaseId": { "const": "court-filter-algebra:0.1.0" },
+      "integratedAdmission": { "const": "proposed_pending_crt_309" },
+      "sourceFingerprint": { "$ref": "#/$defs/sha256" },
+      "filterAlgebraFingerprint": { "$ref": "#/$defs/sha256" }
+    },
+    "state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "forte", "pitchMask", "pitchClasses"],
+      "properties": {
+        "id": { "type": "integer", "minimum": 0, "maximum": 4095 },
+        "name": { "type": "string", "minLength": 1 },
+        "forte": { "type": "string", "pattern": "^7-" },
+        "pitchMask": { "type": "integer", "minimum": 0, "maximum": 4095 },
+        "pitchClasses": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "uniqueItems": true,
+          "items": { "type": "integer", "minimum": 0, "maximum": 11 }
+        }
+      }
+    },
+    "classificationCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commutes", "does_not_commute", "left_undefined", "right_undefined", "both_undefined"],
+      "properties": {
+        "commutes": { "type": "integer", "minimum": 0 },
+        "does_not_commute": { "type": "integer", "minimum": 0 },
+        "left_undefined": { "type": "integer", "minimum": 0 },
+        "right_undefined": { "type": "integer", "minimum": 0 },
+        "both_undefined": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}

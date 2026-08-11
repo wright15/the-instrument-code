@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/court-filter-algebra/0.1.0/schemas/filter-operator.schema.json",
+  "title": "CourtFilterOperator",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["filterId", "filterType", "admission", "setClassId", "mask", "pitchClasses", "fixedRootPc", "domain", "image", "inverse", "commutation", "exactHarmonicDelta", "preservationInvariants", "authorizedTransforms", "forbiddenWrites", "validationTests"],
+  "properties": {
+    "filterId": { "type": "string", "pattern": "^court-filter:" },
+    "filterType": { "const": "linear_diagonal" },
+    "admission": { "enum": ["admitted", "admitted_bridge"] },
+    "setClassId": { "enum": ["pentatonic:5-35", "pentatonic:5-23", "pentatonic:5-27"] },
+    "mask": { "enum": [173, 425, 661, 677, 1189, 1193, 1321] },
+    "pitchClasses": { "type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "contains": { "const": 0 }, "items": { "type": "integer", "minimum": 0, "maximum": 11 } },
+    "fixedRootPc": { "const": 0 },
+    "domain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ambient", "maskRange", "coordinateSemantics"],
+      "properties": {
+        "ambient": { "const": "binary_vector_12" },
+        "maskRange": { "const": [0, 4095] },
+        "coordinateSemantics": { "const": "fixed_root_pitch_class_coordinates" }
+      }
+    },
+    "image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ambient", "definition", "condition"],
+      "properties": {
+        "ambient": { "const": "binary_vector_12" },
+        "definition": { "const": "support_subsets_of_c" },
+        "condition": { "const": "output AND NOT c = 0" }
+      }
+    },
+    "inverse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["global", "globalReason", "restrictionToImage"],
+      "properties": {
+        "global": { "const": "none" },
+        "globalReason": { "const": "non_injective_projection" },
+        "restrictionToImage": { "const": "identity" }
+      }
+    },
+    "commutation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evaluator", "resultSpace", "leftRoute", "rightRoute"],
+      "properties": {
+        "evaluator": { "const": "evaluate_commutation" },
+        "resultSpace": { "const": ["commutes", "does_not_commute", "left_undefined", "right_undefined", "both_undefined"] },
+        "leftRoute": { "const": "P_c(T(x))" },
+        "rightRoute": { "const": "T(P_c(x))" }
+      }
+    },
+    "exactHarmonicDelta": { "const": "source_weight_minus_retained_weight" },
+    "preservationInvariants": { "const": ["output_subset_of_source", "output_subset_of_filter", "idempotent", "retained_weight_equals_popcount_source_and_filter"] },
+    "authorizedTransforms": { "const": ["court.filter.projection"] },
+    "forbiddenWrites": { "const": ["ScaleState.office", "OCCUPIES_OFFICE", "mutation.degreeGovernor", "mutation.sourceState", "mutation.targetState"] },
+    "validationTests": { "const": ["ambient_range", "fixed_root_weight_five", "subset_invariants", "idempotence", "retained_weight", "commutation_coverage"] }
+  }
+}

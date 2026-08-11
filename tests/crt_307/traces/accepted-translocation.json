@@ -1,0 +1,12 @@
+{
+  "traceId": "crt307-accepted-translocation",
+  "setup": {"position": "C0", "trustedTranslocation": true},
+  "steps": [
+    {
+      "operation": "validate_and_execute_court_transition",
+      "selection": "listed_translocation",
+      "expect": {"status": "verified", "reasonCode": "ok", "positionAfter": "C4"}
+    }
+  ],
+  "expectedFinal": {"position": "C4", "eventCount": 1}
+}

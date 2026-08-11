@@ -2,7 +2,16 @@
 
 This directory defines the CRT-306 rebuildable read projection. Neo4j is not a
 Court runtime authority. The projection does not issue validation tokens,
-authorize transitions, or import `governor.transitions`.
+authorize transitions, or import `governor.transitions`. Runtime records are
+created only after Python independently replays CRT-305 genesis, events, and a
+trusted ledger anchor.
+
+Projection schema `crt-306.court-graph-projection.v2` adds
+`CourtRuntimeSession`, `CourtTransitionEvent`, `CourtLedgerSnapshot`, and
+`TopologicalTranslocationRecord` records. The terminal `CourtState`, pole
+register, and exact `kappa_court` are replay-derived. Static CRT-304 commutation
+records always retain a null `ledgerPointer`; a verified runtime event points
+back through `USES_ROUTE_RECORD` instead of mutating that static record.
 
 ## Assets
 
@@ -25,7 +34,14 @@ python3 scripts/generate-court-graph.py \
   --batches /tmp/court-graph-batches.json
 ```
 
-The input order does not affect either output. Every batch is parameterized,
+This CLI generates only the bounded checked-in fixture recipe: C0 -> C1 and a
+compound C1 -> C4 R7/5-23 translocation. It is not a general evidence verifier.
+The production projection API accepts generic replay-valid CRT-305 sessions,
+but callers must supply the trusted anchor independently.
+
+The input order does not affect either output. The fixture contains 21
+Court-owned nodes, 19 relationships, and one ID-only `ScaleState` reference.
+Every batch is parameterized,
 bounded, dependency-ordered, and uses `MERGE`. Integer values must be sent to
 Neo4j as integer driver values; the live Node test demonstrates the required
 `neo4j.int(...)` conversion when consuming batch JSON from JavaScript.
@@ -42,6 +58,21 @@ A completely empty graph is also supported: ingestion first `MERGE`s stable
 minimal `ScaleState {id}` references before creating Court records. Importing
 the canonical topology before or after the Court projection enriches those same
 nodes by the existing unique `ScaleState.id` identity.
+
+## Named queries
+
+The allow-listed catalog contains six stable-order read queries:
+
+- `degree_triads_for_scale`
+- `modal_scale_states_by_triad_quality`
+- `modal_scale_states_by_interval_vector`
+- `court_filter_commutation_outputs`
+- `court_runtime_state_for_session`
+- `court_verified_events_for_session`
+
+Session IDs are strictly validated. Query limits are fixed or normalized to a
+maximum of 100 rows, traversal depth is at most two, and raw Cypher is not an
+accepted parameter.
 
 ## Verification
 

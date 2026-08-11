@@ -1,0 +1,200 @@
+{
+  "schemaVersion": "crt-309.court-admission-release.v1",
+  "admissionId": "court-admission:crt-309:1.0.0",
+  "integratedReleaseId": "seven-governors-integrated-1.3.0",
+  "status": "admitted",
+  "admissionGate": "CRT-309",
+  "historicalCandidateStatusesPreserved": true,
+  "admittedScope": {
+    "canonicalSetClass": "5-35",
+    "canonicalRootedPositions": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "bridgeSetClasses": [
+      "5-23",
+      "5-27"
+    ],
+    "minimalAdditionalBridgeSetClasses": [],
+    "careyEvaluationSetClasses": [
+      "5-35"
+    ],
+    "linearDiagonalFilters": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "5-23",
+      "5-27"
+    ],
+    "transitionPolicy": "adjacent-only-with-evidence-backed-topological-translocation",
+    "courtRuntimePolicyId": "court-runtime-policy:0.1.0",
+    "graphProjectionSchema": "crt-306.court-graph-projection.v2",
+    "agentSkillBundle": "seven-governors-crt-307",
+    "contextProviders": [
+      "gov-208.read-only-obsidian",
+      "crt-308.read-only-court-context"
+    ]
+  },
+  "proposedScope": {
+    "pentatonicSetClasses": [
+      "5-1",
+      "5-10",
+      "5-11",
+      "5-13",
+      "5-14",
+      "5-15",
+      "5-16",
+      "5-19",
+      "5-2",
+      "5-20",
+      "5-21",
+      "5-22",
+      "5-24",
+      "5-25",
+      "5-26",
+      "5-28",
+      "5-29",
+      "5-3",
+      "5-30",
+      "5-31",
+      "5-32",
+      "5-33",
+      "5-34",
+      "5-4",
+      "5-5",
+      "5-6",
+      "5-7",
+      "5-8",
+      "5-9",
+      "5-Z12",
+      "5-Z17",
+      "5-Z18",
+      "5-Z36",
+      "5-Z37",
+      "5-Z38"
+    ],
+    "pentatonicSetClassCount": 35,
+    "compressionCoordinates": [
+      "harmonic.C_H"
+    ],
+    "filterFamilies": [
+      "fourier",
+      "graph-spectral",
+      "semantic-scoped"
+    ],
+    "routeMeasures": [
+      "route-cost",
+      "spectral"
+    ],
+    "fivefoldClaims": [
+      "macro_bracket",
+      "controller",
+      "runtime_cycle"
+    ],
+    "futurePackages": [
+      "natural-phenomena",
+      "thermodynamic-mapping"
+    ]
+  },
+  "projectionRuling": {
+    "admittedSurface": "CRT-306 schema v2 replay-derived terminal state, snapshot, ordered events, translocations, and six bounded read-only queries",
+    "explicitlyNotClaimed": [
+      "T5CycleEntry",
+      "ComplementMap",
+      "CourtInvariant",
+      "canonical Forte-to-Court mapping"
+    ],
+    "neo4jAuthority": false
+  },
+  "artifactBindings": [
+    {
+      "artifactId": "crt-301-contract",
+      "path": "schemas/court-admission-contract.json",
+      "sha256": "b4351a14aa3dfde6043a609e4158abcb17b006b666a35220e5833cf1cf7ffa9b",
+      "intrinsicFingerprint": null
+    },
+    {
+      "artifactId": "crt-302-substrate",
+      "path": "seven-governors-court-substrate-v0.1.0/canonical/substrate-registry-release.json",
+      "sha256": "6906a5b7a495feee7dddb02ee936393052e58315c28893a58c700ec60000f9a3",
+      "intrinsicFingerprint": "fda4707f63b08ca02a155f8d5d8c738534f17e0ab2a234d79f83bf30f16a2fc2"
+    },
+    {
+      "artifactId": "crt-303-invariants",
+      "path": "seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json",
+      "sha256": "75b3ffaa0b126c4dbf0abf6e42a4674724092b0e403a2862d893b6f1493d0e6f",
+      "intrinsicFingerprint": "ad604fdb42144882d38433e734759fcd5c160dfe628139ce0ede1ff093481323"
+    },
+    {
+      "artifactId": "crt-304-filters",
+      "path": "seven-governors-court-filter-algebra-v0.1.0/canonical/filter-algebra-release.json",
+      "sha256": "83bb95522b91170914c1a1306d2ae0d5e084842eea2723c2c0d9d44ef0543368",
+      "intrinsicFingerprint": "40bd74397ff9f4c8c0f0b845630e008cea66c9495413195c1e1c92ff02968589"
+    },
+    {
+      "artifactId": "crt-305-runtime",
+      "path": "schemas/court-runtime-policy.json",
+      "sha256": "5164b74bf6cbbb55625eb0e9b958542cf20ddacb426813b7a93c1bffd7347605",
+      "intrinsicFingerprint": "90431c79b8bc06da7e6f5cb5ce207cb6cbfd86519bdb91df5aacc137065ec456"
+    },
+    {
+      "artifactId": "crt-306-projection",
+      "path": "src/governor/court_graph_projection.py",
+      "sha256": "4a5e13ebe69aa96f4a3319bdd5f3ea19bec745b3aa024532297acc885c85bb10",
+      "intrinsicFingerprint": null
+    },
+    {
+      "artifactId": "crt-306-query-catalog",
+      "path": "src/governor/court_graph_queries.py",
+      "sha256": "3442e4cd03a3885a5cd7706d8146974eba20fc564edf08acb4bb2db0479ddcc8",
+      "intrinsicFingerprint": null
+    },
+    {
+      "artifactId": "crt-307-skill-registry",
+      "path": "skills/court/registry.json",
+      "sha256": "9eb2f62a6c30f6e608c37d9c9c383917f26475ec9d33c4a4b471bddd67803ca3",
+      "intrinsicFingerprint": null
+    },
+    {
+      "artifactId": "gov-208-vault-provider",
+      "path": "src/governor/vault_context.py",
+      "sha256": "475fd41741a3e45867055ea07fb45cd8806ce93b1dab1323cb6c9bf1c958652b",
+      "intrinsicFingerprint": null
+    },
+    {
+      "artifactId": "crt-308-court-vault-provider",
+      "path": "src/governor/court_vault_context.py",
+      "sha256": "d61ef3eee5613c78dae8ecbd3129d2e3e7ad4720001cd717d7ebbd9703481dba",
+      "intrinsicFingerprint": null
+    },
+    {
+      "artifactId": "crt-308-context-schema",
+      "path": "schemas/court-context/court-context-bundle.schema.json",
+      "sha256": "65b1f9e5506df691da38e55320850dc3fcf886b921a60352380bb9176116f220",
+      "intrinsicFingerprint": null
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "evidenceId": "gov-208-validation",
+      "path": "qa/gov-208-vault-context-validation.json",
+      "reportFingerprint": "e9a2aba3d0c675d85327154a825df09c37ec9d10457a5286baf8abe1d255b189"
+    },
+    {
+      "evidenceId": "crt-308-validation",
+      "path": "qa/crt-308-court-vault-context-validation.json",
+      "reportFingerprint": "79c25e45425d945a311a88ee8def800536876e1e73d95282ef4d5c0092c0b644"
+    },
+    {
+      "evidenceId": "crt-309-benchmark",
+      "path": "qa/court-admission-benchmark.json",
+      "reportFingerprint": "9ec25fc8e19c7ab3916b525d48c2301433de4aa0afa4ae544127e60ab801f62e"
+    }
+  ],
+  "admissionFingerprint": "df7e4c52131705b168efa14072d7fed14735fd073e9f8b4679d85a9c05ca0d26"
+}

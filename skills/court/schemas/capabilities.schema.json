@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/crt-307/schemas/capabilities.schema.json",
+  "title": "CRT-307 closed Court capability grants",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "bundleId", "bundleVersion", "defaultPolicy", "grants", "forbidden"],
+  "properties": {
+    "schemaVersion": {"const": "crt-307.capabilities.v1"},
+    "bundleId": {"const": "seven-governors-crt-307"},
+    "bundleVersion": {"const": "1.0.0"},
+    "defaultPolicy": {"const": "deny"},
+    "grants": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/grant"}},
+    "forbidden": {"$ref": "#/$defs/forbidden"}
+  },
+  "$defs": {
+    "operationId": {"enum": ["inspect_court_state", "list_legal_court_moves", "validate_and_execute_court_transition", "project_through_court", "verify_court_postcondition"]},
+    "queryId": {"enum": ["court_filter_commutation_outputs", "court_runtime_state_for_session", "court_verified_events_for_session"]},
+    "capability": {"enum": ["court.context.read", "court.ledger.replay", "court.graph.read.named", "court.moves.read", "court.move.validate", "court.move.execute", "court.postcondition.verify", "court.filter.project", "court.outcome.read"]},
+    "dynamicBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bindingId", "sourceField", "menuField", "allowedCapabilities", "requirements"],
+      "properties": {
+        "bindingId": {"const": "selected_court_move_capability"},
+        "sourceField": {"const": "selectedMove.operationId"},
+        "menuField": {"const": "moves.capability"},
+        "allowedCapabilities": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": {"enum": ["court.transition", "court.translocate"]}},
+        "requirements": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "items": {"enum": ["trusted_menu_match", "exact_state_match", "host_grant", "policy_fingerprint_match", "registered_verifier"]}}
+      }
+    },
+    "grant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["skillId", "tools", "operations", "namedQueries", "capabilities", "optionalCapabilities", "dynamicBindings", "effectPolicy"],
+      "properties": {
+        "skillId": {"$ref": "#/$defs/operationId"},
+        "tools": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"const": "governor.court_agent_api.invoke"}},
+        "operations": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"$ref": "#/$defs/operationId"}},
+        "namedQueries": {"type": "array", "maxItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/queryId"}},
+        "capabilities": {"type": "array", "minItems": 1, "maxItems": 8, "uniqueItems": true, "items": {"$ref": "#/$defs/capability"}},
+        "optionalCapabilities": {"type": "array", "maxItems": 1, "uniqueItems": true, "items": {"const": "court.graph.read.named"}},
+        "dynamicBindings": {"type": "array", "maxItems": 1, "items": {"$ref": "#/$defs/dynamicBinding"}},
+        "effectPolicy": {"enum": ["read-only", "runtime-authorized-court-transition"]}
+      }
+    },
+    "forbidden": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tools", "operations", "claims"],
+      "properties": {
+        "tools": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": {"enum": ["raw_cypher", "raw_shell"]}},
+        "operations": {"type": "array", "minItems": 8, "maxItems": 8, "uniqueItems": true, "items": {"enum": ["court.graph.write", "court.ledger.write", "court.position.write", "court.token.issue", "court.success.from_prose", "court.kappa.cross_namespace.write", "topology.write", "governor.write"]}},
+        "claims": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": {"enum": ["prose_as_evidence", "success_without_verified_evidence"]}}
+      }
+    }
+  }
+}

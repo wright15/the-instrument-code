@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/court-substrate/0.1.0/schemas/substrate-registry-release.schema.json",
+  "title": "SubstrateRegistryRelease",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "packageId",
+    "packageVersion",
+    "releaseId",
+    "integratedAdmission",
+    "authorityContract",
+    "sourceHashes",
+    "sourceFingerprint",
+    "substrateFingerprint",
+    "admissionStatuses",
+    "pentatonicSetClasses",
+    "courtRootedPositions",
+    "bridgeRootings",
+    "t5Cycle",
+    "courtSegmentOffsets",
+    "complementMaps",
+    "minimalAdditionalBridgeSetClasses",
+    "summary"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "packageId": { "const": "seven-governors-court-substrate" },
+    "packageVersion": { "const": "0.1.0" },
+    "releaseId": { "const": "court-substrate:0.1.0" },
+    "integratedAdmission": { "const": "proposed_pending_crt_309" },
+    "authorityContract": { "const": "schemas/court-admission-contract.json" },
+    "sourceHashes": {
+      "type": "array",
+      "minItems": 10,
+      "uniqueItems": true,
+      "items": { "$ref": "common.schema.json#/$defs/sourceHash" }
+    },
+    "sourceFingerprint": { "$ref": "common.schema.json#/$defs/sha256" },
+    "substrateFingerprint": { "$ref": "common.schema.json#/$defs/sha256" },
+    "admissionStatuses": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": { "$ref": "admission-status.schema.json" }
+    },
+    "pentatonicSetClasses": {
+      "type": "array",
+      "minItems": 38,
+      "maxItems": 38,
+      "items": { "$ref": "pentatonic-set-class.schema.json" }
+    },
+    "courtRootedPositions": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": { "$ref": "court-rooted-position.schema.json" }
+    },
+    "bridgeRootings": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "$ref": "bridge-rooting.schema.json" }
+    },
+    "t5Cycle": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": { "$ref": "t5-cycle-entry.schema.json" }
+    },
+    "courtSegmentOffsets": { "const": [0, 5, 10, 3, 8] },
+    "complementMaps": {
+      "type": "array",
+      "minItems": 38,
+      "maxItems": 38,
+      "items": { "$ref": "complement-map.schema.json" }
+    },
+    "minimalAdditionalBridgeSetClasses": { "const": [] },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pentatonicSetClassCount",
+        "courtRootedPositionCount",
+        "bridgeRootingCount",
+        "admittedSetClassCount",
+        "admittedBridgeSetClassCount",
+        "proposedSetClassCount",
+        "complementMapCount",
+        "t5CycleEntryCount"
+      ],
+      "properties": {
+        "pentatonicSetClassCount": { "const": 38 },
+        "courtRootedPositionCount": { "const": 5 },
+        "bridgeRootingCount": { "const": 2 },
+        "admittedSetClassCount": { "const": 1 },
+        "admittedBridgeSetClassCount": { "const": 2 },
+        "proposedSetClassCount": { "const": 35 },
+        "complementMapCount": { "const": 38 },
+        "t5CycleEntryCount": { "const": 12 }
+      }
+    }
+  }
+}

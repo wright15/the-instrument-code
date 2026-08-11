@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0.0",
+  "cases": [
+    {
+      "fixtureId": "negative:unknown-property",
+      "operation": "add_unknown_property",
+      "target": "pentatonic:5-1",
+      "expectedCodes": ["SCHEMA_ADDITIONAL_PROPERTIES"]
+    },
+    {
+      "fixtureId": "negative:wrong-weight",
+      "operation": "set_representative_mask",
+      "target": "pentatonic:5-1",
+      "value": 15,
+      "expectedCodes": ["MASK_PITCH_CLASS_MISMATCH", "MASK_WEIGHT_INVALID"]
+    },
+    {
+      "fixtureId": "negative:invalid-mask-range",
+      "operation": "set_out_of_range_mask",
+      "target": "pentatonic:5-1",
+      "value": 4096,
+      "expectedCodes": ["SCHEMA_MAXIMUM"]
+    },
+    {
+      "fixtureId": "negative:missing-complement",
+      "operation": "remove_complement_map",
+      "target": "pentatonic:5-23",
+      "expectedCodes": ["COMPLEMENT_MISSING"]
+    },
+    {
+      "fixtureId": "negative:dangling-complement",
+      "operation": "set_complement_family",
+      "target": "pentatonic:5-23",
+      "value": "7-99",
+      "expectedCodes": ["COMPLEMENT_DANGLING"]
+    },
+    {
+      "fixtureId": "negative:missing-t5",
+      "operation": "remove_t5_reference",
+      "target": "pentatonic:5-23",
+      "expectedCodes": ["ADMITTED_T5_REFERENCE_MISSING"]
+    },
+    {
+      "fixtureId": "negative:t5-outside-cycle",
+      "operation": "set_t5_cycle_index",
+      "target": "pentatonic:5-23",
+      "value": 12,
+      "expectedCodes": ["ADMITTED_T5_REFERENCE_INVALID"]
+    },
+    {
+      "fixtureId": "negative:off-chain-canonical-claim",
+      "operation": "promote_proposed_class",
+      "target": "pentatonic:5-20",
+      "expectedCodes": ["OFF_CHAIN_CANONICAL_CLAIM"]
+    },
+    {
+      "fixtureId": "negative:dangling-admission-status",
+      "operation": "set_unknown_admission_status",
+      "target": "pentatonic:5-20",
+      "value": "canonical",
+      "expectedCodes": ["SCHEMA_ENUM", "SCHEMA_IF", "SCHEMA_TYPE"]
+    },
+    {
+      "fixtureId": "negative:wrong-kappa",
+      "operation": "set_kappa",
+      "target": "C2",
+      "value": { "numerator": 3, "denominator": 4 },
+      "expectedCodes": ["COURT_KAPPA_INVALID"]
+    },
+    {
+      "fixtureId": "negative:wrong-xor-support",
+      "operation": "set_xor_support",
+      "target": "C3",
+      "value": [2, 4],
+      "expectedCodes": ["COURT_XOR_SUPPORT_INVALID"]
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/harmonic-invariants/0.1.0/schemas/harmonic-invariant-release.schema.json",
+  "title": "HarmonicInvariantRelease",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "packageId",
+    "packageVersion",
+    "releaseId",
+    "integratedAdmission",
+    "substrateDependency",
+    "sourceHashes",
+    "sourceFingerprint",
+    "invariantFingerprint",
+    "compressionGuard",
+    "courtGeometry",
+    "carey535",
+    "invariants",
+    "summary"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "packageId": { "const": "seven-governors-harmonic-invariants" },
+    "packageVersion": { "const": "0.1.0" },
+    "releaseId": { "const": "harmonic-invariants:0.1.0" },
+    "integratedAdmission": { "const": "proposed_pending_crt_309" },
+    "substrateDependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "releaseId", "substrateFingerprint"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "releaseId": { "const": "court-substrate:0.1.0" },
+        "substrateFingerprint": { "$ref": "common.schema.json#/$defs/sha256" }
+      }
+    },
+    "sourceHashes": {
+      "type": "array",
+      "minItems": 8,
+      "uniqueItems": true,
+      "items": { "$ref": "common.schema.json#/$defs/sourceHash" }
+    },
+    "sourceFingerprint": { "$ref": "common.schema.json#/$defs/sha256" },
+    "invariantFingerprint": { "$ref": "common.schema.json#/$defs/sha256" },
+    "compressionGuard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["namespace", "symbol", "status", "value", "forbiddenEquivalences", "guardLiteral"],
+      "properties": {
+        "namespace": { "const": "harmonic.C_H" },
+        "symbol": { "const": "C_H" },
+        "status": { "const": "unresolved" },
+        "value": { "type": "null" },
+        "forbiddenEquivalences": {
+          "const": [
+            "physical.C_P",
+            "semantic.C_S",
+            "court.kappa_court",
+            "physical.temperature",
+            "physical.entropy",
+            "physical.enthalpy",
+            "physical.freeEnergy"
+          ]
+        },
+        "guardLiteral": {
+          "const": "C_H is a derived harmonic property, not a photonic measurement, not C_P, not C_S, not kappa_court, and not a thermodynamic quantity: not temperature, entropy, enthalpy, or free energy."
+        }
+      }
+    },
+    "courtGeometry": { "$ref": "#/$defs/courtGeometry" },
+    "carey535": { "$ref": "#/$defs/carey535" },
+    "invariants": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": { "$ref": "invariant-record.schema.json" }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["invariantCount", "provenCount", "unresolvedGuardCount", "careyDifferenceWitnessCount", "careyFailureWitnessCount"],
+      "properties": {
+        "invariantCount": { "const": 8 },
+        "provenCount": { "const": 7 },
+        "unresolvedGuardCount": { "const": 1 },
+        "careyDifferenceWitnessCount": { "const": 20 },
+        "careyFailureWitnessCount": { "const": 0 }
+      }
+    }
+  },
+  "$defs": {
+    "integerMatrix": {
+      "type": "array",
+      "items": { "type": "array", "items": { "type": "integer" } }
+    },
+    "courtGeometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["positionIds", "positionMasks", "signedTransitionVectors", "gramMatrix", "hammingMatrix", "xorSupports", "weights", "kappaCourt"],
+      "properties": {
+        "positionIds": { "const": ["C0", "C1", "C2", "C3", "C4"] },
+        "positionMasks": { "const": [661, 677, 1189, 1193, 1321] },
+        "signedTransitionVectors": { "$ref": "#/$defs/integerMatrix" },
+        "gramMatrix": { "$ref": "#/$defs/integerMatrix" },
+        "hammingMatrix": { "$ref": "#/$defs/integerMatrix" },
+        "xorSupports": {
+          "type": "array",
+          "items": { "type": "array", "items": { "type": "integer", "minimum": 0, "maximum": 11 } }
+        },
+        "weights": { "const": [5, 5, 5, 5, 5] },
+        "kappaCourt": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": { "$ref": "common.schema.json#/$defs/ratio" }
+        }
+      }
+    },
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin", "destination", "generic", "specific"],
+      "properties": {
+        "origin": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "destination": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "generic": { "type": "integer", "minimum": 1, "maximum": 4 },
+        "specific": { "type": "integer", "minimum": 1, "maximum": 11 }
+      }
+    },
+    "witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["witnessId", "left", "right"],
+      "properties": {
+        "witnessId": { "type": "string", "minLength": 1 },
+        "left": { "$ref": "#/$defs/interval" },
+        "right": { "$ref": "#/$defs/interval" }
+      }
+    },
+    "carey535": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tuning", "generator", "forteNumber", "seedPitchClasses", "intervalInstances", "differenceWitnesses", "ambiguityWitnesses", "contradictionWitnesses", "counts", "CQ", "SQ", "tolerance"],
+      "properties": {
+        "tuning": { "const": "12-TET" },
+        "generator": { "const": { "numerator": 7, "denominator": 12 } },
+        "forteNumber": { "const": "5-35" },
+        "seedPitchClasses": { "const": [0, 2, 4, 7, 9] },
+        "intervalInstances": { "type": "array", "minItems": 20, "maxItems": 20, "items": { "$ref": "#/$defs/interval" } },
+        "differenceWitnesses": { "type": "array", "minItems": 20, "maxItems": 20, "items": { "$ref": "#/$defs/witness" } },
+        "ambiguityWitnesses": { "const": [] },
+        "contradictionWitnesses": { "const": [] },
+        "counts": {
+          "const": {
+            "intervalInstances": 20,
+            "differenceSlots": 40,
+            "differences": 20,
+            "failureSlots": 25,
+            "ambiguities": 0,
+            "contradictions": 0,
+            "failures": 0,
+            "crossGenericComparisons": 150
+          }
+        },
+        "CQ": { "const": { "numerator": 1, "denominator": 1 } },
+        "SQ": { "const": { "numerator": 1, "denominator": 2 } },
+        "tolerance": { "const": { "numerator": 0, "denominator": 1 } }
+      }
+    }
+  }
+}

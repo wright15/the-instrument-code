@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "gov-209.runtime-validation.v1",
+  "verdict": "PASS",
+  "integratedReleaseId": "seven-governors-integrated-1.3.0",
+  "checksPassed": 7,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "criterionId": "GOV-201..203",
+      "status": "PASS",
+      "fixtureIds": [
+        "typed contracts",
+        "classification fixtures"
+      ],
+      "evidence": "namespace and deterministic classification"
+    },
+    {
+      "criterionId": "GOV-204",
+      "status": "PASS",
+      "fixtureIds": [
+        "transition and ledger fixtures"
+      ],
+      "evidence": "validated transition and tamper closure"
+    },
+    {
+      "criterionId": "GOV-205",
+      "status": "PASS",
+      "fixtureIds": [
+        "evidence, cleanup, loop fixtures"
+      ],
+      "evidence": "evidence-backed success and deterministic stopping"
+    },
+    {
+      "criterionId": "GOV-206",
+      "status": "PASS",
+      "fixtureIds": [
+        "snapshot/file/native Neo4j"
+      ],
+      "evidence": "bounded read projection parity"
+    },
+    {
+      "criterionId": "GOV-207",
+      "status": "PASS",
+      "fixtureIds": [
+        "five-skill traces"
+      ],
+      "evidence": "closed agent API behavior"
+    },
+    {
+      "criterionId": "GOV-208",
+      "status": "PASS",
+      "fixtureIds": [
+        "synthetic vault and privacy"
+      ],
+      "evidence": "optional context-free parity"
+    },
+    {
+      "criterionId": "GOV-209-AC-3",
+      "status": "PASS",
+      "fixtureIds": [
+        "eight-case shared corpus"
+      ],
+      "evidence": "machine-scored four-configuration benchmark"
+    }
+  ],
+  "reportFingerprint": "9d3b57f138badf46aeeeaa1698b5e87773075bb74603775db98e0d88d78c43ac"
+}

@@ -1,0 +1,196 @@
+{
+  "courtGeometry": {
+    "gramMatrix": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "hammingMatrix": [
+      [
+        0,
+        2,
+        4,
+        6,
+        8
+      ],
+      [
+        2,
+        0,
+        2,
+        4,
+        6
+      ],
+      [
+        4,
+        2,
+        0,
+        2,
+        4
+      ],
+      [
+        6,
+        4,
+        2,
+        0,
+        2
+      ],
+      [
+        8,
+        6,
+        4,
+        2,
+        0
+      ]
+    ],
+    "kappaCourt": [
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 4,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 4,
+        "numerator": 3
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      }
+    ],
+    "positionIds": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "positionMasks": [
+      661,
+      677,
+      1189,
+      1193,
+      1321
+    ],
+    "signedTransitionVectors": [
+      [
+        0,
+        0,
+        0,
+        0,
+        -1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "weights": [
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "xorSupports": [
+      [
+        4,
+        5
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        7,
+        8
+      ]
+    ]
+  },
+  "integratedAdmission": "proposed_pending_crt_309",
+  "invariantFingerprint": "ad604fdb42144882d38433e734759fcd5c160dfe628139ce0ede1ff093481323",
+  "releaseId": "harmonic-invariants:0.1.0",
+  "schemaVersion": "1.0.0",
+  "sourceFingerprint": "aa8cf2d5d060048bb7809fd78cccf8b3e0d6c71ff9b85c35e5551298f63e08e5",
+  "substrateDependency": {
+    "path": "seven-governors-court-substrate-v0.1.0/canonical/substrate-registry-release.json",
+    "releaseId": "court-substrate:0.1.0",
+    "substrateFingerprint": "fda4707f63b08ca02a155f8d5d8c738534f17e0ab2a234d79f83bf30f16a2fc2"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "compressionGuard": {
+    "forbiddenEquivalences": [
+      "physical.C_P",
+      "semantic.C_S",
+      "court.kappa_court",
+      "physical.temperature",
+      "physical.entropy",
+      "physical.enthalpy",
+      "physical.freeEnergy"
+    ],
+    "guardLiteral": "C_H is a derived harmonic property, not a photonic measurement, not C_P, not C_S, not kappa_court, and not a thermodynamic quantity: not temperature, entropy, enthalpy, or free energy.",
+    "namespace": "harmonic.C_H",
+    "status": "unresolved",
+    "symbol": "C_H",
+    "value": null
+  },
+  "integratedAdmission": "proposed_pending_crt_309",
+  "invariantFingerprint": "ad604fdb42144882d38433e734759fcd5c160dfe628139ce0ede1ff093481323",
+  "releaseId": "harmonic-invariants:0.1.0",
+  "schemaVersion": "1.0.0",
+  "sourceFingerprint": "aa8cf2d5d060048bb7809fd78cccf8b3e0d6c71ff9b85c35e5551298f63e08e5",
+  "substrateDependency": {
+    "path": "seven-governors-court-substrate-v0.1.0/canonical/substrate-registry-release.json",
+    "releaseId": "court-substrate:0.1.0",
+    "substrateFingerprint": "fda4707f63b08ca02a155f8d5d8c738534f17e0ab2a234d79f83bf30f16a2fc2"
+  }
+}

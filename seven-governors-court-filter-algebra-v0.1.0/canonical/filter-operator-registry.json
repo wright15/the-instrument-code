@@ -1,0 +1,517 @@
+{
+  "filterAlgebraFingerprint": "40bd74397ff9f4c8c0f0b845630e008cea66c9495413195c1e1c92ff02968589",
+  "integratedAdmission": "proposed_pending_crt_309",
+  "minimalAdditionalBridgeFilters": [],
+  "operators": [
+    {
+      "admission": "admitted",
+      "authorizedTransforms": [
+        "court.filter.projection"
+      ],
+      "commutation": {
+        "evaluator": "evaluate_commutation",
+        "leftRoute": "P_c(T(x))",
+        "resultSpace": [
+          "commutes",
+          "does_not_commute",
+          "left_undefined",
+          "right_undefined",
+          "both_undefined"
+        ],
+        "rightRoute": "T(P_c(x))"
+      },
+      "domain": {
+        "ambient": "binary_vector_12",
+        "coordinateSemantics": "fixed_root_pitch_class_coordinates",
+        "maskRange": [
+          0,
+          4095
+        ]
+      },
+      "exactHarmonicDelta": "source_weight_minus_retained_weight",
+      "filterId": "court-filter:C0",
+      "filterType": "linear_diagonal",
+      "fixedRootPc": 0,
+      "forbiddenWrites": [
+        "ScaleState.office",
+        "OCCUPIES_OFFICE",
+        "mutation.degreeGovernor",
+        "mutation.sourceState",
+        "mutation.targetState"
+      ],
+      "image": {
+        "ambient": "binary_vector_12",
+        "condition": "output AND NOT c = 0",
+        "definition": "support_subsets_of_c"
+      },
+      "inverse": {
+        "global": "none",
+        "globalReason": "non_injective_projection",
+        "restrictionToImage": "identity"
+      },
+      "mask": 661,
+      "pitchClasses": [
+        0,
+        2,
+        4,
+        7,
+        9
+      ],
+      "preservationInvariants": [
+        "output_subset_of_source",
+        "output_subset_of_filter",
+        "idempotent",
+        "retained_weight_equals_popcount_source_and_filter"
+      ],
+      "setClassId": "pentatonic:5-35",
+      "validationTests": [
+        "ambient_range",
+        "fixed_root_weight_five",
+        "subset_invariants",
+        "idempotence",
+        "retained_weight",
+        "commutation_coverage"
+      ]
+    },
+    {
+      "admission": "admitted",
+      "authorizedTransforms": [
+        "court.filter.projection"
+      ],
+      "commutation": {
+        "evaluator": "evaluate_commutation",
+        "leftRoute": "P_c(T(x))",
+        "resultSpace": [
+          "commutes",
+          "does_not_commute",
+          "left_undefined",
+          "right_undefined",
+          "both_undefined"
+        ],
+        "rightRoute": "T(P_c(x))"
+      },
+      "domain": {
+        "ambient": "binary_vector_12",
+        "coordinateSemantics": "fixed_root_pitch_class_coordinates",
+        "maskRange": [
+          0,
+          4095
+        ]
+      },
+      "exactHarmonicDelta": "source_weight_minus_retained_weight",
+      "filterId": "court-filter:C1",
+      "filterType": "linear_diagonal",
+      "fixedRootPc": 0,
+      "forbiddenWrites": [
+        "ScaleState.office",
+        "OCCUPIES_OFFICE",
+        "mutation.degreeGovernor",
+        "mutation.sourceState",
+        "mutation.targetState"
+      ],
+      "image": {
+        "ambient": "binary_vector_12",
+        "condition": "output AND NOT c = 0",
+        "definition": "support_subsets_of_c"
+      },
+      "inverse": {
+        "global": "none",
+        "globalReason": "non_injective_projection",
+        "restrictionToImage": "identity"
+      },
+      "mask": 677,
+      "pitchClasses": [
+        0,
+        2,
+        5,
+        7,
+        9
+      ],
+      "preservationInvariants": [
+        "output_subset_of_source",
+        "output_subset_of_filter",
+        "idempotent",
+        "retained_weight_equals_popcount_source_and_filter"
+      ],
+      "setClassId": "pentatonic:5-35",
+      "validationTests": [
+        "ambient_range",
+        "fixed_root_weight_five",
+        "subset_invariants",
+        "idempotence",
+        "retained_weight",
+        "commutation_coverage"
+      ]
+    },
+    {
+      "admission": "admitted",
+      "authorizedTransforms": [
+        "court.filter.projection"
+      ],
+      "commutation": {
+        "evaluator": "evaluate_commutation",
+        "leftRoute": "P_c(T(x))",
+        "resultSpace": [
+          "commutes",
+          "does_not_commute",
+          "left_undefined",
+          "right_undefined",
+          "both_undefined"
+        ],
+        "rightRoute": "T(P_c(x))"
+      },
+      "domain": {
+        "ambient": "binary_vector_12",
+        "coordinateSemantics": "fixed_root_pitch_class_coordinates",
+        "maskRange": [
+          0,
+          4095
+        ]
+      },
+      "exactHarmonicDelta": "source_weight_minus_retained_weight",
+      "filterId": "court-filter:C2",
+      "filterType": "linear_diagonal",
+      "fixedRootPc": 0,
+      "forbiddenWrites": [
+        "ScaleState.office",
+        "OCCUPIES_OFFICE",
+        "mutation.degreeGovernor",
+        "mutation.sourceState",
+        "mutation.targetState"
+      ],
+      "image": {
+        "ambient": "binary_vector_12",
+        "condition": "output AND NOT c = 0",
+        "definition": "support_subsets_of_c"
+      },
+      "inverse": {
+        "global": "none",
+        "globalReason": "non_injective_projection",
+        "restrictionToImage": "identity"
+      },
+      "mask": 1189,
+      "pitchClasses": [
+        0,
+        2,
+        5,
+        7,
+        10
+      ],
+      "preservationInvariants": [
+        "output_subset_of_source",
+        "output_subset_of_filter",
+        "idempotent",
+        "retained_weight_equals_popcount_source_and_filter"
+      ],
+      "setClassId": "pentatonic:5-35",
+      "validationTests": [
+        "ambient_range",
+        "fixed_root_weight_five",
+        "subset_invariants",
+        "idempotence",
+        "retained_weight",
+        "commutation_coverage"
+      ]
+    },
+    {
+      "admission": "admitted",
+      "authorizedTransforms": [
+        "court.filter.projection"
+      ],
+      "commutation": {
+        "evaluator": "evaluate_commutation",
+        "leftRoute": "P_c(T(x))",
+        "resultSpace": [
+          "commutes",
+          "does_not_commute",
+          "left_undefined",
+          "right_undefined",
+          "both_undefined"
+        ],
+        "rightRoute": "T(P_c(x))"
+      },
+      "domain": {
+        "ambient": "binary_vector_12",
+        "coordinateSemantics": "fixed_root_pitch_class_coordinates",
+        "maskRange": [
+          0,
+          4095
+        ]
+      },
+      "exactHarmonicDelta": "source_weight_minus_retained_weight",
+      "filterId": "court-filter:C3",
+      "filterType": "linear_diagonal",
+      "fixedRootPc": 0,
+      "forbiddenWrites": [
+        "ScaleState.office",
+        "OCCUPIES_OFFICE",
+        "mutation.degreeGovernor",
+        "mutation.sourceState",
+        "mutation.targetState"
+      ],
+      "image": {
+        "ambient": "binary_vector_12",
+        "condition": "output AND NOT c = 0",
+        "definition": "support_subsets_of_c"
+      },
+      "inverse": {
+        "global": "none",
+        "globalReason": "non_injective_projection",
+        "restrictionToImage": "identity"
+      },
+      "mask": 1193,
+      "pitchClasses": [
+        0,
+        3,
+        5,
+        7,
+        10
+      ],
+      "preservationInvariants": [
+        "output_subset_of_source",
+        "output_subset_of_filter",
+        "idempotent",
+        "retained_weight_equals_popcount_source_and_filter"
+      ],
+      "setClassId": "pentatonic:5-35",
+      "validationTests": [
+        "ambient_range",
+        "fixed_root_weight_five",
+        "subset_invariants",
+        "idempotence",
+        "retained_weight",
+        "commutation_coverage"
+      ]
+    },
+    {
+      "admission": "admitted",
+      "authorizedTransforms": [
+        "court.filter.projection"
+      ],
+      "commutation": {
+        "evaluator": "evaluate_commutation",
+        "leftRoute": "P_c(T(x))",
+        "resultSpace": [
+          "commutes",
+          "does_not_commute",
+          "left_undefined",
+          "right_undefined",
+          "both_undefined"
+        ],
+        "rightRoute": "T(P_c(x))"
+      },
+      "domain": {
+        "ambient": "binary_vector_12",
+        "coordinateSemantics": "fixed_root_pitch_class_coordinates",
+        "maskRange": [
+          0,
+          4095
+        ]
+      },
+      "exactHarmonicDelta": "source_weight_minus_retained_weight",
+      "filterId": "court-filter:C4",
+      "filterType": "linear_diagonal",
+      "fixedRootPc": 0,
+      "forbiddenWrites": [
+        "ScaleState.office",
+        "OCCUPIES_OFFICE",
+        "mutation.degreeGovernor",
+        "mutation.sourceState",
+        "mutation.targetState"
+      ],
+      "image": {
+        "ambient": "binary_vector_12",
+        "condition": "output AND NOT c = 0",
+        "definition": "support_subsets_of_c"
+      },
+      "inverse": {
+        "global": "none",
+        "globalReason": "non_injective_projection",
+        "restrictionToImage": "identity"
+      },
+      "mask": 1321,
+      "pitchClasses": [
+        0,
+        3,
+        5,
+        8,
+        10
+      ],
+      "preservationInvariants": [
+        "output_subset_of_source",
+        "output_subset_of_filter",
+        "idempotent",
+        "retained_weight_equals_popcount_source_and_filter"
+      ],
+      "setClassId": "pentatonic:5-35",
+      "validationTests": [
+        "ambient_range",
+        "fixed_root_weight_five",
+        "subset_invariants",
+        "idempotence",
+        "retained_weight",
+        "commutation_coverage"
+      ]
+    },
+    {
+      "admission": "admitted_bridge",
+      "authorizedTransforms": [
+        "court.filter.projection"
+      ],
+      "commutation": {
+        "evaluator": "evaluate_commutation",
+        "leftRoute": "P_c(T(x))",
+        "resultSpace": [
+          "commutes",
+          "does_not_commute",
+          "left_undefined",
+          "right_undefined",
+          "both_undefined"
+        ],
+        "rightRoute": "T(P_c(x))"
+      },
+      "domain": {
+        "ambient": "binary_vector_12",
+        "coordinateSemantics": "fixed_root_pitch_class_coordinates",
+        "maskRange": [
+          0,
+          4095
+        ]
+      },
+      "exactHarmonicDelta": "source_weight_minus_retained_weight",
+      "filterId": "court-filter:5-23:root-0",
+      "filterType": "linear_diagonal",
+      "fixedRootPc": 0,
+      "forbiddenWrites": [
+        "ScaleState.office",
+        "OCCUPIES_OFFICE",
+        "mutation.degreeGovernor",
+        "mutation.sourceState",
+        "mutation.targetState"
+      ],
+      "image": {
+        "ambient": "binary_vector_12",
+        "condition": "output AND NOT c = 0",
+        "definition": "support_subsets_of_c"
+      },
+      "inverse": {
+        "global": "none",
+        "globalReason": "non_injective_projection",
+        "restrictionToImage": "identity"
+      },
+      "mask": 173,
+      "pitchClasses": [
+        0,
+        2,
+        3,
+        5,
+        7
+      ],
+      "preservationInvariants": [
+        "output_subset_of_source",
+        "output_subset_of_filter",
+        "idempotent",
+        "retained_weight_equals_popcount_source_and_filter"
+      ],
+      "setClassId": "pentatonic:5-23",
+      "validationTests": [
+        "ambient_range",
+        "fixed_root_weight_five",
+        "subset_invariants",
+        "idempotence",
+        "retained_weight",
+        "commutation_coverage"
+      ]
+    },
+    {
+      "admission": "admitted_bridge",
+      "authorizedTransforms": [
+        "court.filter.projection"
+      ],
+      "commutation": {
+        "evaluator": "evaluate_commutation",
+        "leftRoute": "P_c(T(x))",
+        "resultSpace": [
+          "commutes",
+          "does_not_commute",
+          "left_undefined",
+          "right_undefined",
+          "both_undefined"
+        ],
+        "rightRoute": "T(P_c(x))"
+      },
+      "domain": {
+        "ambient": "binary_vector_12",
+        "coordinateSemantics": "fixed_root_pitch_class_coordinates",
+        "maskRange": [
+          0,
+          4095
+        ]
+      },
+      "exactHarmonicDelta": "source_weight_minus_retained_weight",
+      "filterId": "court-filter:5-27:root-0",
+      "filterType": "linear_diagonal",
+      "fixedRootPc": 0,
+      "forbiddenWrites": [
+        "ScaleState.office",
+        "OCCUPIES_OFFICE",
+        "mutation.degreeGovernor",
+        "mutation.sourceState",
+        "mutation.targetState"
+      ],
+      "image": {
+        "ambient": "binary_vector_12",
+        "condition": "output AND NOT c = 0",
+        "definition": "support_subsets_of_c"
+      },
+      "inverse": {
+        "global": "none",
+        "globalReason": "non_injective_projection",
+        "restrictionToImage": "identity"
+      },
+      "mask": 425,
+      "pitchClasses": [
+        0,
+        3,
+        5,
+        7,
+        8
+      ],
+      "preservationInvariants": [
+        "output_subset_of_source",
+        "output_subset_of_filter",
+        "idempotent",
+        "retained_weight_equals_popcount_source_and_filter"
+      ],
+      "setClassId": "pentatonic:5-27",
+      "validationTests": [
+        "ambient_range",
+        "fixed_root_weight_five",
+        "subset_invariants",
+        "idempotence",
+        "retained_weight",
+        "commutation_coverage"
+      ]
+    }
+  ],
+  "proposedFilterTypes": [
+    {
+      "admission": "proposed",
+      "blockerPointer": "scrum/CRT-304-court-filter-algebra.md#tasks-follow-on-admission-required",
+      "filterType": "fourier"
+    },
+    {
+      "admission": "proposed",
+      "blockerPointer": "scrum/CRT-304-court-filter-algebra.md#tasks-follow-on-admission-required",
+      "filterType": "graph_spectral"
+    },
+    {
+      "admission": "proposed",
+      "blockerPointer": "docs/COURT_ADMISSION_AND_AUTHORITY.md#8-explicitly-out-of-scope",
+      "filterType": "semantic_scoped"
+    }
+  ],
+  "releaseId": "court-filter-algebra:0.1.0",
+  "schemaVersion": "1.0.0",
+  "sourceFingerprint": "179a28902710b703d59ec0a35a0bcfb31a5ab0644ef8947c551278b0377d211a"
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/crt-307/schemas/adapter.schema.json",
+  "title": "CRT-307 Court host adapter",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "adapterId", "adapterVersion", "bundleId", "bundleVersion", "semanticApi", "discovery", "rendering", "installation"],
+  "properties": {
+    "schemaVersion": {"const": "crt-307.adapter.v1"},
+    "adapterId": {"enum": ["generic-json", "hermes"]},
+    "adapterVersion": {"const": "1.0.0"},
+    "bundleId": {"const": "seven-governors-crt-307"},
+    "bundleVersion": {"const": "1.0.0"},
+    "semanticApi": {"$ref": "#/$defs/semanticApi"},
+    "discovery": {"$ref": "#/$defs/discovery"},
+    "rendering": {"$ref": "#/$defs/rendering"},
+    "installation": {"$ref": "#/$defs/installation"}
+  },
+  "$defs": {
+    "operationId": {"enum": ["inspect_court_state", "list_legal_court_moves", "validate_and_execute_court_transition", "project_through_court", "verify_court_postcondition"]},
+    "envelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operationField", "inputField", "schemaSource"],
+      "properties": {"operationField": {"const": "operationId"}, "inputField": {"const": "input"}, "schemaSource": {"const": "registry.skill.inputSchema"}}
+    },
+    "responseEnvelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operationField", "outputField", "schemaSource"],
+      "properties": {"operationField": {"const": "operationId"}, "outputField": {"const": "output"}, "schemaSource": {"const": "registry.skill.outputSchema"}}
+    },
+    "semanticApi": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["apiVersion", "toolId", "operations", "requestEnvelope", "responseEnvelope", "preservedSemanticFields", "authority"],
+      "properties": {
+        "apiVersion": {"const": "crt-307.court-agent-api.v1"},
+        "toolId": {"const": "governor.court_agent_api.invoke"},
+        "operations": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "items": {"$ref": "#/$defs/operationId"}},
+        "requestEnvelope": {"$ref": "#/$defs/envelope"},
+        "responseEnvelope": {"$ref": "#/$defs/responseEnvelope"},
+        "preservedSemanticFields": {"type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true, "items": {"enum": ["status", "reasonCode", "directive", "toolReceipts", "resultFingerprint", "evidence"]}},
+        "authority": {"const": "deterministic-court-runtime-only"}
+      }
+    },
+    "discovery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "bridgeMode"],
+      "properties": {"mode": {"enum": ["generic-json-directories", "hermes-skill-directories"]}, "bridgeMode": {"const": "json-tool"}}
+    },
+    "rendering": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["targetPattern", "metadataRoot", "copyWorkflowBytes", "editHostConfiguration"],
+      "properties": {
+        "targetPattern": {"enum": ["court/{skill-slug}/SKILL.md", "seven-governors-{skill-slug}/SKILL.md"]},
+        "metadataRoot": {"enum": ["court", "seven-governors-court"]},
+        "copyWorkflowBytes": {"const": true},
+        "editHostConfiguration": {"const": false}
+      }
+    },
+    "installation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["explicitTargetRequired", "manifestPath", "rejectSymlinks", "rejectPathTraversal", "preflightAllFiles", "atomicCommit"],
+      "properties": {
+        "explicitTargetRequired": {"const": true},
+        "manifestPath": {"const": ".seven-governors-crt-307-manifest.json"},
+        "rejectSymlinks": {"const": true},
+        "rejectPathTraversal": {"const": true},
+        "preflightAllFiles": {"const": true},
+        "atomicCommit": {"const": true}
+      }
+    }
+  }
+}

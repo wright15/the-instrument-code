@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "crt-309.court-admission-validation.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "verdict", "admissionId", "checksPassed", "checksFailed", "checks", "reportFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "crt-309.court-admission-validation.v1"},
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "admissionId": {"const": "court-admission:crt-309:1.0.0"},
+    "checksPassed": {"type": "integer", "minimum": 0},
+    "checksFailed": {"type": "integer", "minimum": 0},
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["criterionId", "status", "fixtureIds", "evidence"],
+        "properties": {
+          "criterionId": {"type": "string"},
+          "status": {"enum": ["PASS", "FAIL"]},
+          "fixtureIds": {"type": "array", "items": {"type": "string"}},
+          "evidence": {"type": "string"}
+        }
+      }
+    },
+    "reportFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

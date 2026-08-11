@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/court-filter-algebra/0.1.0/schemas/filter-operator-registry.schema.json",
+  "title": "CourtFilterOperatorRegistry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "releaseId", "integratedAdmission", "sourceFingerprint", "filterAlgebraFingerprint", "operators", "proposedFilterTypes", "minimalAdditionalBridgeFilters"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "releaseId": { "const": "court-filter-algebra:0.1.0" },
+    "integratedAdmission": { "const": "proposed_pending_crt_309" },
+    "sourceFingerprint": { "$ref": "common.schema.json#/$defs/sha256" },
+    "filterAlgebraFingerprint": { "$ref": "common.schema.json#/$defs/sha256" },
+    "operators": { "type": "array", "minItems": 7, "maxItems": 7, "items": { "$ref": "filter-operator.schema.json" } },
+    "proposedFilterTypes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["filterType", "admission", "blockerPointer"],
+        "properties": {
+          "filterType": { "enum": ["fourier", "graph_spectral", "semantic_scoped"] },
+          "admission": { "const": "proposed" },
+          "blockerPointer": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "minimalAdditionalBridgeFilters": { "const": [] }
+  }
+}

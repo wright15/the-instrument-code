@@ -1,0 +1,12 @@
+{
+  "traceId": "crt307-read-only-projection",
+  "setup": {"position": "C0"},
+  "steps": [
+    {
+      "operation": "project_through_court",
+      "request": {"sourceMask": 1453, "mutationOperatorId": "R7"},
+      "expect": {"status": "ok", "reasonCode": "ok", "outputMask": 133}
+    }
+  ],
+  "expectedFinal": {"position": "C0", "eventCount": 0}
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gov-208.contextual-classification.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "baseClassification", "contextBundle", "contextualRefinement", "resultFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "gov-208.contextual-classification.v1"},
+    "baseClassification": {"type": "object"},
+    "contextBundle": {"$ref": "context-bundle.schema.json"},
+    "contextualRefinement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "authority", "baseResultFingerprint", "contextBundleFingerprint", "evidenceCandidates", "canonicalClassificationChanged"],
+      "properties": {
+        "status": {"enum": ["available", "abstained"]},
+        "authority": {"const": "context_evidence_only"},
+        "baseResultFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "contextBundleFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "evidenceCandidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["noteId", "admissionStatus", "aspectRefs", "ruleRefs", "disposition"],
+            "properties": {
+              "noteId": {"type": "string"},
+              "admissionStatus": {"enum": ["admitted", "admitted-bridge", "proposed", "unresolved"]},
+              "aspectRefs": {"type": "array", "items": {"type": "string"}},
+              "ruleRefs": {"type": "array", "items": {"type": "string"}},
+              "disposition": {"enum": ["evidence_only", "candidate_only"]}
+            }
+          }
+        },
+        "canonicalClassificationChanged": {"const": false}
+      }
+    },
+    "resultFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

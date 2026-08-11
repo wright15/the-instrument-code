@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import re
 from types import MappingProxyType
 from typing import Any, Mapping
 
@@ -12,6 +13,7 @@ from .court_graph_projection import CourtGraphProjectionError
 MAX_ROWS = 100
 MAX_DEPTH = 3
 TIMEOUT_MS = 1000
+_SESSION_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$")
 
 
 @dataclass(frozen=True, slots=True)
@@ -100,6 +102,60 @@ RETURN application.logicalId AS applicationLogicalId,
 ORDER BY commutationId, mutationOperatorId
 LIMIT 100""",
         ),
+        "court_runtime_state_for_session": CourtNamedQuery(
+            "court_runtime_state_for_session",
+            ("sessionId",),
+            (),
+            1,
+            2,
+            TIMEOUT_MS,
+            """MATCH (session:CourtRuntimeSession {sessionId: $sessionId})-[:HAS_LEDGER_SNAPSHOT]->(snapshot:CourtLedgerSnapshot)-[:SNAPSHOTS_STATE]->(state:CourtState)
+RETURN session.sessionId AS sessionId,
+       session.genesisStateSha256 AS genesisStateSha256,
+       session.currentStateSha256 AS currentStateSha256,
+       session.replayVerified AS replayVerified,
+       state.courtStateSha256 AS courtStateSha256,
+       state.courtPositionId AS courtPositionId, state.revision AS revision,
+       state.pitchMask AS pitchMask, state.poleVector AS poleVector,
+       state.kappaNumerator AS kappaNumerator,
+       state.kappaDenominator AS kappaDenominator,
+       state.harmonicProfileSha256 AS harmonicProfileSha256,
+       state.policyFingerprint AS policyFingerprint,
+       state.contextFingerprint AS contextFingerprint,
+       state.eventCount AS eventCount,
+       state.ledgerHeadSha256 AS ledgerHeadSha256,
+       state.consumedTokenCount AS consumedTokenCount,
+       snapshot.snapshotHash AS snapshotHash
+ORDER BY sessionId
+LIMIT 1""",
+        ),
+        "court_verified_events_for_session": CourtNamedQuery(
+            "court_verified_events_for_session",
+            ("sessionId",),
+            ("limit",),
+            MAX_ROWS,
+            2,
+            TIMEOUT_MS,
+            """MATCH (session:CourtRuntimeSession {sessionId: $sessionId})-[:HAS_TRANSITION_EVENT]->(event:CourtTransitionEvent)
+OPTIONAL MATCH (event)-[:HAS_TRANSLOCATION]->(translocation:TopologicalTranslocationRecord)
+OPTIONAL MATCH (event)-[:USES_ROUTE_RECORD]->(route:CourtCommutationRecord)
+RETURN event.eventId AS eventId, event.intrinsicSha256 AS intrinsicSha256,
+       event.eventSha256 AS eventSha256, event.envelopeSha256 AS envelopeSha256,
+       event.previousEventSha256 AS previousEventSha256,
+       event.sequence AS sequence, event.sessionId AS sessionId,
+       event.operationId AS operationId,
+       event.priorStateSha256 AS priorStateSha256,
+       event.resultingStateSha256 AS resultingStateSha256,
+       event.targetPosition AS targetPosition,
+       event.verificationStatus AS verificationStatus,
+       event.evidenceEventIds AS evidenceEventIds,
+       event.tokenId AS tokenId,
+       event.translocationRecordHash AS translocationRecordHash,
+       event.routeContextHash AS routeContextHash,
+       route.commutationId AS staticRouteRecordId
+ORDER BY sequence, eventId
+LIMIT $limit""",
+        ),
     }
 )
 
@@ -141,10 +197,15 @@ def normalize_court_query_parameters(
         value = normalized["applicationId"]
         if not isinstance(value, str) or not value:
             raise CourtGraphProjectionError("court_query_application_id_invalid")
-    limit = normalized.get("limit", spec.max_rows)
-    if type(limit) is not int or not 1 <= limit <= spec.max_rows:
-        raise CourtGraphProjectionError("court_query_limit_invalid")
-    normalized["limit"] = limit
+    if "sessionId" in normalized:
+        value = normalized["sessionId"]
+        if not isinstance(value, str) or not _SESSION_ID.fullmatch(value):
+            raise CourtGraphProjectionError("court_query_session_id_invalid")
+    if "limit" in spec.optional_parameters:
+        limit = normalized.get("limit", spec.max_rows)
+        if type(limit) is not int or not 1 <= limit <= spec.max_rows:
+            raise CourtGraphProjectionError("court_query_limit_invalid")
+        normalized["limit"] = limit
     return normalized
 
 
@@ -266,4 +327,109 @@ def execute_court_snapshot_query(
             )
         rows.sort(key=lambda row: (row["commutationId"] or "", row["mutationOperatorId"] or ""))
         return tuple(rows[: COURT_QUERY_CATALOG[query_id].max_rows])
+    if query_id == "court_runtime_state_for_session":
+        session = next(
+            (
+                node
+                for node in nodes
+                if node["label"] == "CourtRuntimeSession"
+                and node["properties"]["sessionId"] == params["sessionId"]
+            ),
+            None,
+        )
+        if session is None:
+            return ()
+        session_edges = [
+            edge
+            for edge in relationships
+            if edge["sourceLogicalId"] == session["logicalId"]
+            and edge["relationshipType"] == "HAS_LEDGER_SNAPSHOT"
+        ]
+        snapshot = node_by_id[session_edges[0]["targetLogicalId"]]
+        state_edge = next(
+            edge
+            for edge in relationships
+            if edge["sourceLogicalId"] == snapshot["logicalId"]
+            and edge["relationshipType"] == "SNAPSHOTS_STATE"
+        )
+        state = node_by_id[state_edge["targetLogicalId"]]
+        session_props = session["properties"]
+        state_props = state["properties"]
+        return (
+            {
+                "consumedTokenCount": state_props["consumedTokenCount"],
+                "contextFingerprint": state_props["contextFingerprint"],
+                "courtPositionId": state_props["courtPositionId"],
+                "courtStateSha256": state_props["courtStateSha256"],
+                "currentStateSha256": session_props["currentStateSha256"],
+                "eventCount": state_props["eventCount"],
+                "genesisStateSha256": session_props["genesisStateSha256"],
+                "harmonicProfileSha256": state_props["harmonicProfileSha256"],
+                "kappaDenominator": state_props["kappaDenominator"],
+                "kappaNumerator": state_props["kappaNumerator"],
+                "ledgerHeadSha256": state_props["ledgerHeadSha256"],
+                "pitchMask": state_props["pitchMask"],
+                "poleVector": state_props["poleVector"],
+                "policyFingerprint": state_props["policyFingerprint"],
+                "replayVerified": session_props["replayVerified"],
+                "revision": state_props["revision"],
+                "sessionId": session_props["sessionId"],
+                "snapshotHash": snapshot["properties"]["snapshotHash"],
+            },
+        )
+    if query_id == "court_verified_events_for_session":
+        session = next(
+            (
+                node
+                for node in nodes
+                if node["label"] == "CourtRuntimeSession"
+                and node["properties"]["sessionId"] == params["sessionId"]
+            ),
+            None,
+        )
+        if session is None:
+            return ()
+        event_edges = [
+            edge
+            for edge in relationships
+            if edge["sourceLogicalId"] == session["logicalId"]
+            and edge["relationshipType"] == "HAS_TRANSITION_EVENT"
+        ]
+        rows = []
+        for edge in event_edges:
+            event = node_by_id[edge["targetLogicalId"]]
+            props = event["properties"]
+            route_edge = next(
+                (
+                    candidate
+                    for candidate in relationships
+                    if candidate["sourceLogicalId"] == event["logicalId"]
+                    and candidate["relationshipType"] == "USES_ROUTE_RECORD"
+                ),
+                None,
+            )
+            route = node_by_id[route_edge["targetLogicalId"]] if route_edge else None
+            rows.append(
+                {
+                    "envelopeSha256": props["envelopeSha256"],
+                    "eventId": props["eventId"],
+                    "eventSha256": props["eventSha256"],
+                    "evidenceEventIds": props["evidenceEventIds"],
+                    "intrinsicSha256": props["intrinsicSha256"],
+                    "operationId": props["operationId"],
+                    "priorStateSha256": props["priorStateSha256"],
+                    "previousEventSha256": props["previousEventSha256"],
+                    "resultingStateSha256": props["resultingStateSha256"],
+                    "routeContextHash": props["routeContextHash"],
+                    "sequence": props["sequence"],
+                    "sessionId": props["sessionId"],
+                    "staticRouteRecordId": route["properties"]["commutationId"] if route else None,
+                    "targetPosition": props["targetPosition"],
+                    "tokenId": props["tokenId"],
+                    "translocationRecordHash": props["translocationRecordHash"],
+                    "verificationStatus": props["verificationStatus"],
+                }
+            )
+        rows.sort(key=lambda row: (row["sequence"], row["eventId"]))
+        return tuple(rows[: int(params["limit"])])
     raise CourtGraphProjectionError("court_query_not_allow_listed")

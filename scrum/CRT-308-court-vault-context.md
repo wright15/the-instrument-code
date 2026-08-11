@@ -1,6 +1,6 @@
 # CRT-308 — Optional Court context in Obsidian vault bundles
 
-**Status:** Ready · **Priority:** Medium · **Points:** 5 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+**Status:** Done · **Priority:** Medium · **Points:** 5 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
 **Depends on:** CRT-307, GOV-208 · **Blocks:** CRT-309
 
 ## Story
@@ -25,28 +25,28 @@ artifacts and the CRT-305 Court-ledger extension.
 
 ## Tasks
 
-- [ ] Extend GOV-208's opt-in vault provider with Court-specific frontmatter
+- [x] Extend GOV-208's opt-in vault provider with Court-specific frontmatter
       fields: `courtRootedPosition`, `pentatonicSetClass`, `kappaCourt`,
       `courtFilterMask`, `admissionStatus`, and `courtProvenanceRef`; the
       provider's disabled/no-path behavior must match context-free Court
       runtime behavior exactly.
-- [ ] Extend deterministic link resolution and traversal limits to Court
+- [x] Extend deterministic link resolution and traversal limits to Court
       notes; broken links return explicit results and never silently promote
       a Court note to admitted policy.
-- [ ] Extend the canonical `ContextBundle` JSON to carry Court substrate
+- [x] Extend the canonical `ContextBundle` JSON to carry Court substrate
       references, Court invariant citations, Court filter route-semantics
       pointers, $\kappa_{\text{court}}$ values, and provenance; preserve
       CRT-302 admission status as a separate axis from any contextual
       refinement.
-- [ ] Preserve the base Court classification (`admitted`, `admitted-bridge`,
+- [x] Preserve the base Court classification (`admitted`, `admitted-bridge`,
       `proposed`); represent any contextual Court refinement as a
       separate rule-evidenced result that can abstain and be replayed
       without changing admitted scope.
-- [ ] Never write the vault or raw private Court note content into Neo4j,
+- [x] Never write the vault or raw private Court note content into Neo4j,
       release artifacts, logs, model traces, or the CRT-305 Court ledger
       by default; run the vault provider alongside the CRT-306 projection
       without changing Court-query fingerprints.
-- [ ] Add Court privacy fixtures and synthetic vault content covering the
+- [x] Add Court privacy fixtures and synthetic vault content covering the
       canonical $C_0$–$C_4$ cycle, 5–23 and 5–27 bridge notes, a
       Topological Translocation example note, and a vault note that
       mislabels a proposed Court set class as `admitted` (must be rejected
@@ -97,3 +97,8 @@ the provider remains read-only and disabled by default; package/root
 validation and Court context documentation pass; no Court vault or live
 state artifact enters the release manifest; GOV-208 contracts remain
 unchanged.
+
+**Closure evidence (2026-08-10):** `src/governor/court_vault_context.py`, strict
+Court frontmatter/bundle schemas, seven focused tests, deterministic 3/3 report,
+exact CRT-302..306 byte bindings, false-admission downgrade, and unchanged
+runtime-policy/query hashes pass.

@@ -1,13 +1,15 @@
 {
-  "releaseId": "seven-governors-integrated-1.2.0",
-  "version": "1.2.0",
-  "releaseDate": "2026-07-31",
-  "status": "validated",
+  "releaseId": "seven-governors-integrated-1.3.0",
+  "version": "1.3.0",
+  "releaseDate": "2026-08-10",
+  "status": "validated_admitted",
   "authorityOrder": [
     "framework",
     "canonical",
     "mutation-audit",
     "profile-registry",
+    "governor-runtime",
+    "court-admission",
     "neo4j",
     "renderer"
   ],
@@ -32,6 +34,34 @@
       "role": "companion guide, candidate extensions, and safe authoring",
       "releaseId": "companion-guide:0.2.0",
       "admission": "companion_candidates_only"
+    },
+    {
+      "packageId": "seven-governors-governor-runtime",
+      "version": "0.1.0",
+      "role": "typed Governor classification and verified runtime",
+      "releaseId": "governor-runtime:0.1.0",
+      "admission": "admitted_by_GOV-209"
+    },
+    {
+      "packageId": "seven-governors-court-substrate",
+      "version": "0.1.0",
+      "role": "bounded Pentatonic Court substrate",
+      "releaseId": "court-substrate:0.1.0",
+      "admission": "admitted_by_CRT-309"
+    },
+    {
+      "packageId": "seven-governors-harmonic-invariants",
+      "version": "0.1.0",
+      "role": "Court geometry and scoped Carey invariants",
+      "releaseId": "harmonic-invariants:0.1.0",
+      "admission": "admitted_by_CRT-309"
+    },
+    {
+      "packageId": "seven-governors-court-filter-algebra",
+      "version": "0.1.0",
+      "role": "seven admitted linear diagonal Court filters",
+      "releaseId": "court-filter-algebra:0.1.0",
+      "admission": "admitted_by_CRT-309"
     }
   ],
   "canonicalCounts": {
@@ -58,7 +88,11 @@
     "domainProjections": 1,
     "semanticOperators": 15,
     "unresolvedScopeBindings": 60,
-    "compiledProfiles": 4
+    "compiledProfiles": 4,
+    "courtRootedPositions": 5,
+    "courtBridgeSetClasses": 2,
+    "courtLinearFilters": 7,
+    "courtProposedSetClasses": 35
   },
   "importOrder": [
     "neo4j/schema.cypher",

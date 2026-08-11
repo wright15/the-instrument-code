@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/court-filter-algebra/0.1.0/schemas/bridge-route-comparison.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "releaseId", "integratedAdmission", "sourceFingerprint", "filterAlgebraFingerprint", "comparisonId", "sourceState", "targetState", "routes", "minimalAdditionalBridgeFilters", "conclusion"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" }, "releaseId": { "const": "court-filter-algebra:0.1.0" }, "integratedAdmission": { "const": "proposed_pending_crt_309" },
+    "sourceFingerprint": { "$ref": "common.schema.json#/$defs/sha256" }, "filterAlgebraFingerprint": { "$ref": "common.schema.json#/$defs/sha256" },
+    "comparisonId": { "const": "bridge-comparison:aeolian-1453:harmonic-minor-2477" },
+    "sourceState": { "$ref": "common.schema.json#/$defs/state" }, "targetState": { "$ref": "common.schema.json#/$defs/state" },
+    "routes": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "$ref": "#/$defs/route" } },
+    "minimalAdditionalBridgeFilters": { "const": [] },
+    "conclusion": { "type": "string", "minLength": 1 }
+  },
+  "$defs": {
+    "pitchPair": {
+      "type": "object", "additionalProperties": false, "required": ["source", "target"],
+      "properties": { "source": { "type": "array", "items": { "type": "integer", "minimum": 0, "maximum": 11 } }, "target": { "type": "array", "items": { "type": "integer", "minimum": 0, "maximum": 11 } } }
+    },
+    "statusValue": {
+      "type": "object", "additionalProperties": false, "required": ["status", "value", "blockerPointer"],
+      "properties": { "status": { "const": "unresolved" }, "value": { "type": "null" }, "blockerPointer": { "type": "string", "minLength": 1 } }
+    },
+    "spectral": {
+      "type": "object", "additionalProperties": false, "required": ["admission", "value", "blockerPointer"],
+      "properties": { "admission": { "const": "not_admitted" }, "value": { "type": "null" }, "blockerPointer": { "type": "string", "minLength": 1 } }
+    },
+    "route": {
+      "type": "object", "additionalProperties": false,
+      "required": ["filterId", "filterMask", "retainedPitchClasses", "omittedPitchClasses", "distinctExposedInformation", "exactBitReduction", "hiddenDegreeGovernorAddresses", "governorOfficeDisposition", "routeCost", "spectralMeasures"],
+      "properties": {
+        "filterId": { "type": "string", "pattern": "^court-filter:5-" }, "filterMask": { "enum": [173, 425] },
+        "retainedPitchClasses": { "$ref": "#/$defs/pitchPair" }, "omittedPitchClasses": { "$ref": "#/$defs/pitchPair" },
+        "distinctExposedInformation": { "type": "string", "minLength": 1 },
+        "exactBitReduction": { "type": "object", "additionalProperties": false, "required": ["source", "target"], "properties": { "source": { "const": 2 }, "target": { "const": 2 } } },
+        "hiddenDegreeGovernorAddresses": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "object", "additionalProperties": false, "required": ["degree", "degreeGovernor"], "properties": { "degree": { "type": "integer", "minimum": 1, "maximum": 7 }, "degreeGovernor": { "enum": ["Jupiter", "Mercury", "Moon"] } } } },
+        "governorOfficeDisposition": { "const": "preserved_external_authority_not_transformed" },
+        "routeCost": { "$ref": "#/$defs/statusValue" }, "spectralMeasures": { "$ref": "#/$defs/spectral" }
+      }
+    }
+  }
+}

@@ -105,6 +105,50 @@ test("Court projection rebuild and all named queries have live Neo4j parity", as
       `))[0];
       assert.equal(counts.nodeCount, snapshot.counts.nodeCount + snapshot.counts.scaleStateReferenceCount);
       assert.equal(counts.relationshipCount, snapshot.counts.relationshipCount);
+      const labelCounts = records(await readSession.run(`
+        MATCH (n)
+        UNWIND labels(n) AS label
+        WITH label
+        WHERE label IN [
+          'Triad','CourtCommutationRecord','CourtTransitionEvent','CourtRuntimeSession',
+          'CourtLedgerSnapshot','TopologicalTranslocationRecord','CourtFilterApplication',
+          'CourtFilterOperator','CourtRootedPosition','CourtState','PentatonicSetClass','PoleRegister'
+        ]
+        RETURN label, count(*) AS count
+        ORDER BY label
+      `));
+      assert.deepEqual(labelCounts, [
+        { label: "CourtCommutationRecord", count: 3 },
+        { label: "CourtFilterApplication", count: 1 },
+        { label: "CourtFilterOperator", count: 1 },
+        { label: "CourtLedgerSnapshot", count: 1 },
+        { label: "CourtRootedPosition", count: 1 },
+        { label: "CourtRuntimeSession", count: 1 },
+        { label: "CourtState", count: 1 },
+        { label: "CourtTransitionEvent", count: 2 },
+        { label: "PentatonicSetClass", count: 1 },
+        { label: "PoleRegister", count: 1 },
+        { label: "TopologicalTranslocationRecord", count: 1 },
+        { label: "Triad", count: 7 },
+      ]);
+      const relationshipCounts = records(await readSession.run(`
+        MATCH ()-[r]->()
+        RETURN type(r) AS relationshipType, count(*) AS count
+        ORDER BY relationshipType
+      `));
+      assert.deepEqual(relationshipCounts, [
+        { relationshipType: "FILTERS", count: 1 },
+        { relationshipType: "HAS_COMMUTATION_RESULT", count: 2 },
+        { relationshipType: "HAS_LEDGER_SNAPSHOT", count: 1 },
+        { relationshipType: "HAS_POLE_REGISTER", count: 1 },
+        { relationshipType: "HAS_TRANSITION_EVENT", count: 2 },
+        { relationshipType: "HAS_TRANSLOCATION", count: 1 },
+        { relationshipType: "HAS_TRIAD", count: 7 },
+        { relationshipType: "SNAPSHOTS_STATE", count: 1 },
+        { relationshipType: "USES_FILTER", count: 1 },
+        { relationshipType: "USES_ROUTE_RECORD", count: 1 },
+        { relationshipType: "YIELDS_ADMITTED_SET", count: 1 },
+      ]);
 
       assert.equal(namedQueries.length, expectedQueries.length);
       for (let index = 0; index < expectedQueries.length; index += 1) {
@@ -127,6 +171,21 @@ test("Court projection rebuild and all named queries have live Neo4j parity", as
         const result = records(await readSession.run(statement));
         assert.ok(result.every((row) => row.status === "PASS"), JSON.stringify(result));
       }
+
+      await writeSession.run(`
+        MATCH (event:CourtTransitionEvent)
+        WITH event ORDER BY event.sequence LIMIT 1
+        REMOVE event.verificationStatus
+      `);
+      const tamperedValidation = [];
+      for (const statement of validationStatements) {
+        tamperedValidation.push(...records(await readSession.run(statement)));
+      }
+      assert.equal(
+        tamperedValidation.find((row) => row.check === "runtime_event_chain_closure")?.status,
+        "FAIL",
+      );
+      await runBatches(writeSession, batches);
 
       const beforeRebuild = records(await readSession.run(`
         MATCH (n)

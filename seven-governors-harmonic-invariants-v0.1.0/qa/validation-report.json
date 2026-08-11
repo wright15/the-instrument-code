@@ -1,0 +1,219 @@
+{
+  "checks": [
+    {
+      "detail": "valid",
+      "name": "release-schema",
+      "status": "PASS"
+    },
+    {
+      "detail": "ad604fdb42144882d38433e734759fcd5c160dfe628139ce0ede1ff093481323",
+      "name": "builder-parity",
+      "status": "PASS"
+    },
+    {
+      "detail": "ad604fdb42144882d38433e734759fcd5c160dfe628139ce0ede1ff093481323",
+      "name": "invariant-fingerprint",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "sourceCount": 8,
+        "sourceFingerprint": "aa8cf2d5d060048bb7809fd78cccf8b3e0d6c71ff9b85c35e5551298f63e08e5"
+      },
+      "name": "source-hash-parity",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/substrate-registry-release.json",
+        "releaseId": "court-substrate:0.1.0",
+        "substrateFingerprint": "fda4707f63b08ca02a155f8d5d8c738534f17e0ab2a234d79f83bf30f16a2fc2"
+      },
+      "name": "substrate-dependency",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "invariantCount": 8
+      },
+      "name": "provenance-closure",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gramMatrix": [
+          [
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "weights": [
+          5,
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      "name": "court-geometry",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "ambiguities": 0,
+        "contradictions": 0,
+        "crossGenericComparisons": 150,
+        "differenceSlots": 40,
+        "differences": 20,
+        "failureSlots": 25,
+        "failures": 0,
+        "intervalInstances": 20
+      },
+      "name": "carey-enumerator",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "forbiddenEquivalences": [
+          "physical.C_P",
+          "semantic.C_S",
+          "court.kappa_court",
+          "physical.temperature",
+          "physical.entropy",
+          "physical.enthalpy",
+          "physical.freeEnergy"
+        ],
+        "guardLiteral": "C_H is a derived harmonic property, not a photonic measurement, not C_P, not C_S, not kappa_court, and not a thermodynamic quantity: not temperature, entropy, enthalpy, or free energy.",
+        "namespace": "harmonic.C_H",
+        "status": "unresolved",
+        "symbol": "C_H",
+        "value": null
+      },
+      "name": "compression-namespace-guard",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        "positive:gram-2I4",
+        "positive:hamming-path",
+        "positive:disjoint-supports",
+        "positive:weight-five",
+        "positive:carey-5-35",
+        "positive:kappa-exact"
+      ],
+      "name": "positive-fixtures",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        {
+          "actualReason": "court_gram_entry_mismatch",
+          "detail": {
+            "actual": 2,
+            "column": 1,
+            "expected": 0,
+            "row": 0
+          },
+          "expectedReason": "court_gram_entry_mismatch",
+          "fixtureId": "negative:gram-entry",
+          "passed": true
+        },
+        {
+          "actualReason": "court_off_path_mask",
+          "detail": {
+            "mask": 173
+          },
+          "expectedReason": "court_off_path_mask",
+          "fixtureId": "negative:off-path-mask",
+          "passed": true
+        },
+        {
+          "actualReason": "court_xor_support_overlap",
+          "detail": {
+            "firstSupportIndex": 0,
+            "pitch": 5,
+            "secondSupportIndex": 1
+          },
+          "expectedReason": "court_xor_support_overlap",
+          "fixtureId": "negative:overlapping-support",
+          "passed": true
+        },
+        {
+          "actualReason": "court_weight_mismatch",
+          "detail": {
+            "actual": 4,
+            "expected": 5,
+            "positionIndex": 0
+          },
+          "expectedReason": "court_weight_mismatch",
+          "fixtureId": "negative:weight-four",
+          "passed": true
+        },
+        {
+          "actualReason": "court_weight_mismatch",
+          "detail": {
+            "actual": 6,
+            "expected": 5,
+            "positionIndex": 0
+          },
+          "expectedReason": "court_weight_mismatch",
+          "fixtureId": "negative:weight-six",
+          "passed": true
+        },
+        {
+          "actualReason": "carey_scope_requires_forte_5_35",
+          "detail": {},
+          "expectedReason": "carey_scope_requires_forte_5_35",
+          "fixtureId": "negative:carey-5-23",
+          "passed": true
+        },
+        {
+          "actualReason": "schema_minItems",
+          "detail": {},
+          "expectedReason": "schema_minItems",
+          "fixtureId": "negative:missing-provenance",
+          "passed": true
+        },
+        {
+          "actualReason": "schema_const",
+          "detail": {},
+          "expectedReason": "schema_const",
+          "fixtureId": "negative:tampered-C_H-guard",
+          "passed": true
+        }
+      ],
+      "name": "negative-fixtures",
+      "status": "PASS"
+    }
+  ],
+  "invariantFingerprint": "ad604fdb42144882d38433e734759fcd5c160dfe628139ce0ede1ff093481323",
+  "packageVersion": "0.1.0",
+  "releaseId": "harmonic-invariants:0.1.0",
+  "schemaVersion": "1.0.0",
+  "status": "passed",
+  "summary": {
+    "checks": 11,
+    "failed": 0,
+    "passed": 11
+  }
+}

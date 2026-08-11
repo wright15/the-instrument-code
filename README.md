@@ -3,8 +3,9 @@
 This is the complete working distribution of the Seven Governors universal
 network. It combines the conceptual framework, audited canonical release,
 Neo4j projection, provenance layer, executable invariant checks, semantic
-profile registry and compiler, proposed Governor-runtime policy contracts,
-companion authoring toolkit, and repaired interactive graph.
+profile registry and compiler, admitted Governor and bounded Court runtimes,
+optional read-only vault context, companion authoring toolkit, and repaired
+interactive graph.
 
 The package is intentionally layered:
 
@@ -15,7 +16,7 @@ Audited canonical release
     ↓
 Mutation algebra audit + semantic profile registry
     ↓
-Governor-runtime typed contracts (validated candidate)
+Admitted Governor runtime + bounded Pentatonic Court
     ↓
 Neo4j projection
     ↓
@@ -27,7 +28,7 @@ overwrite them.
 
 ## Composite sub-packages
 
-This release records three admitted/companion sub-packages in
+This release records admitted and companion sub-packages in
 `provenance/release.json`:
 
 - `seven-governors-mutation-algebra-audit` 1.0.0 — authoritative mutation
@@ -38,13 +39,60 @@ This release records three admitted/companion sub-packages in
   companion guide, candidate extensions (Fivefold and natural-phenomenon
   material, not admitted), and safe authoring.
 
+The Governor runtime and bounded Court packages below retain their original
+candidate bytes, while `provenance/court-admission-release.json` and integrated
+release 1.3.0 admit the exact referenced identities. Package-internal historical
+status fields are not rewritten by the later admission ceremony.
+
 The post-1.2.0 candidate
 `seven-governors-governor-runtime-v0.1.0` adds strict typed-aspect, quantity,
 bridge-rule, classification, and policy-release contracts. It is validated by
-the root suite but is not appended retroactively to the 1.2.0 release record;
-integrated admission and classifier execution remain future decisions.
+the root suite and is admitted by GOV-209 in release 1.3.0.
 
-Start with `docs/START_HERE.md` for the navigation map and
+The post-1.2.0 candidate
+`seven-governors-court-substrate-v0.1.0` adds the strict 38-class pentatonic
+registry, five C0-C4 rooted positions, 5-23/5-27 bridge rootings, full T5 root
+cycle, and complement maps. CRT-309 admits only C0-C4, 5-23, and 5-27.
+
+The dependent post-1.2.0 candidate
+`seven-governors-harmonic-invariants-v0.1.0` computes exact Court geometry,
+`kappa_court`, and scoped Carey 5-35 CQ/SQ through an independent enumerator.
+It preserves aggregate `C_H` as unresolved; CRT-309 admits its bounded exact
+invariant surface.
+
+The dependent post-1.2.0 candidate
+`seven-governors-court-filter-algebra-v0.1.0` admits only fixed-root
+`P_c(x) = x AND c`, publishes strict operator-theory records, and evaluates
+seven Court masks against every admitted mutation and canonical operand.
+CRT-309 admits those seven linear diagonal filters only.
+
+The root-owned post-1.2.0 `court-runtime-policy:0.1.0` binds those candidate
+packages to a verified Court lifecycle: exact pole/`kappa_court` state,
+capability-scoped moves, single-use tokens, evidence-gated ledger events,
+compound translocations, semantic replay, and external atomic sessions. Its
+exact fingerprinted policy is admitted by the external CRT-309 record.
+
+The CRT-306 Neo4j compatibility projection consumes only replay-verified
+CRT-305 sessions, projects terminal state/snapshot/event/translocation evidence,
+and exposes six bounded read-only queries. Neo4j remains disposable and cannot
+authorize or replay a Court transition. CRT-309 admits only this actual v2
+surface and explicitly quarantines broader historical projection claims.
+
+The parallel CRT-307 bundle under `skills/court/` adds five Court-aware local
+agent workflows over that runtime/projection boundary. Skills may select and
+explain trusted operations, but only CRT-305 replay, typed verifier evidence,
+and CAS persistence can commit or verify a transition. Installation is explicit
+target, adapter-portable, and non-destructive to GOV-207. CRT-309 admits the
+exact registry identity.
+
+GOV-208 and CRT-308 add optional read-only vault context. With no provider,
+classifier/runtime output is byte-identical to the context-free path; with a
+provider, context remains separately fingerprinted evidence and cannot alter
+policy, legality, admission, graph-query identity, or office occupancy.
+
+Start with `docs/START_HERE.md` for the navigation map,
+`docs/GOVERNOR_DOMAIN_AUTHORITY.md` and
+`docs/COURT_ADMISSION_AND_AUTHORITY.md` for namespace boundaries, and
 `docs/GRAPH_AND_COMPILER_API.md` for the API contract.
 
 ## Package map
@@ -79,9 +127,11 @@ npm run validate
 This validates the full composite system: topology facts, the mutation audit
 (operators, applications, cycles, witnesses), the profile registry and
 compiler (deterministic rebuild), provider parity, Governor-runtime contracts
-and clean-build determinism, the companion toolkit (candidate-scoped), the API
-contract, the offline explorer, cross-package fingerprints, manifest freshness,
-and all Cypher files.
+and clean-build determinism, Court substrate, harmonic-invariant, and
+filter-algebra candidate packages, the Court runtime policy/lifecycle, the
+replay-bound Court graph and agent skill bundle, the companion toolkit
+(candidate-scoped), the API contract, the offline explorer, cross-package
+fingerprints, manifest freshness, and all Cypher files.
 
 ## Import into Neo4j
 

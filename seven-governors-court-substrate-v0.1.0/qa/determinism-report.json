@@ -1,0 +1,86 @@
+{
+  "checks": [
+    {
+      "detail": [
+        {
+          "exitCode": 0,
+          "name": "emit-clean-a",
+          "passed": true
+        },
+        {
+          "exitCode": 0,
+          "name": "check-clean-a",
+          "passed": true
+        },
+        {
+          "exitCode": 0,
+          "name": "emit-clean-b",
+          "passed": true
+        },
+        {
+          "exitCode": 0,
+          "name": "check-clean-b",
+          "passed": true
+        },
+        {
+          "exitCode": 0,
+          "name": "emit-reordered",
+          "passed": true
+        },
+        {
+          "exitCode": 0,
+          "name": "check-reordered",
+          "passed": true
+        }
+      ],
+      "name": "separate-process-check-emit-check",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "installedHashes": {
+          "admission-status-ledger.json": "66246b79e20efd2512acd569088ba03796dbc30e0040aa850e9a892629919079",
+          "bridge-rootings.json": "04d17e0fc31e5bd4d2587e9f7b56494339e1fb5276ffc181884b17dcf29eb273",
+          "complement-map.json": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+          "court-rooted-positions.json": "85100e4bb5185b2630d1607a35e417fc90fdd5bb4ae63f0e775224d6b1436fec",
+          "pentatonic-set-class-registry.json": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+          "substrate-registry-release.json": "6906a5b7a495feee7dddb02ee936393052e58315c28893a58c700ec60000f9a3",
+          "t5-cycle.json": "971bfde835cd512f821536a471c190c22e08693f3767c34503af747a4ff21890"
+        },
+        "outputCount": 7
+      },
+      "name": "two-clean-builds-byte-identical",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "fixtureId": "determinism:reordered-authored-arrays",
+        "reversedArrays": [
+          "bridgeRootings",
+          "courtRootedPositions",
+          "setClassAdmissions",
+          "sourcePaths"
+        ]
+      },
+      "name": "reordered-input-byte-identical",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "sourceFingerprint": "0380f86c384228b7bbb3cbbb610919e6dc6f783c576aa082737426ee7b15df28",
+        "substrateFingerprint": "fda4707f63b08ca02a155f8d5d8c738534f17e0ab2a234d79f83bf30f16a2fc2"
+      },
+      "name": "source-substrate-fingerprints-identical",
+      "status": "PASS"
+    }
+  ],
+  "packageVersion": "0.1.0",
+  "releaseId": "court-substrate:0.1.0",
+  "schemaVersion": "1.0.0",
+  "status": "passed",
+  "summary": {
+    "checks": 4,
+    "failed": 0,
+    "passed": 4
+  }
+}

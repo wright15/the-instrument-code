@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "crt-309.court-benchmark-report.v1",
+  "corpusFingerprint": "455f00a82835ad95b0fc3bb2c1740e314d031113e29640305e06acae6a930680",
+  "authorityRuling": "machine-verifiable-outcomes-only; model prose scores no success",
+  "configurations": [
+    {
+      "configurationId": "model-only",
+      "caseCount": 10,
+      "rates": {
+        "success": 0,
+        "offChainRejection": 0,
+        "nonAdjacentRejection": 0,
+        "filterNonCommutation": 0,
+        "repeatedActionStop": 0,
+        "recovery": 0
+      }
+    },
+    {
+      "configurationId": "retrieval-only",
+      "caseCount": 10,
+      "rates": {
+        "success": 0,
+        "offChainRejection": 0,
+        "nonAdjacentRejection": 0,
+        "filterNonCommutation": 0,
+        "repeatedActionStop": 0,
+        "recovery": 0
+      }
+    },
+    {
+      "configurationId": "deterministic-court-tools",
+      "caseCount": 10,
+      "rates": {
+        "success": 1,
+        "offChainRejection": 1,
+        "nonAdjacentRejection": 1,
+        "filterNonCommutation": 1,
+        "repeatedActionStop": 1,
+        "recovery": 1
+      }
+    }
+  ],
+  "reportFingerprint": "9ec25fc8e19c7ab3916b525d48c2301433de4aa0afa4ae544127e60ab801f62e"
+}

@@ -1,0 +1,219 @@
+{
+  "schemaVersion": "crt-301.court-admission-contract.v1",
+  "contractId": "court-admission-contract:1.0.0",
+  "contractStatus": "accepted_for_epic_003",
+  "courtSubsystemAdmission": "proposed_pending_crt_309",
+  "extendsAuthorityContract": "docs/GOVERNOR_DOMAIN_AUTHORITY.md",
+  "namespaceRules": [
+    {
+      "namespace": "court.state",
+      "existingNames": ["Court State", "CourtState", "C0-C4"],
+      "owner": "versioned Court runtime policy and hash-chained Court ledger",
+      "allowedWriters": ["validated Court transition engine", "deterministic Court ledger replay"],
+      "readOnlyConsumers": ["Court agent skills", "Neo4j Court projection", "renderer", "optional vault context"],
+      "admission": "contract_defined_candidate",
+      "nonEquivalence": ["topology.scaleState", "runtime.agentState", "presentation.uiState"]
+    },
+    {
+      "namespace": "court.poleRegister",
+      "existingNames": ["Court pole register", "four-bit pole register"],
+      "owner": "versioned Court substrate for canonical values and Court ledger for runtime values",
+      "allowedWriters": ["deterministic Court substrate builder", "validated Court transition engine"],
+      "readOnlyConsumers": ["Court invariant library", "Court agent skills", "Neo4j Court projection"],
+      "admission": "contract_defined_candidate",
+      "nonEquivalence": ["governor.office", "topology.stateOffice", "mutation.degreeGovernor"]
+    },
+    {
+      "namespace": "court.poleDisposition",
+      "existingNames": ["Internal", "External", "bit_semantics"],
+      "owner": "versioned Court substrate and Court transition policy",
+      "allowedWriters": ["deterministic Court substrate builder", "validated Court transition engine"],
+      "readOnlyConsumers": ["Court invariant library", "Court agent skills", "Neo4j Court projection"],
+      "admission": "contract_defined_candidate",
+      "nonEquivalence": ["physical interior or exterior", "zodiac internal or external", "topology office occupancy"]
+    },
+    {
+      "namespace": "court.compression",
+      "existingNames": ["kappa_court", "fourth compression coordinate"],
+      "owner": "versioned Court substrate with deterministic runtime derivation",
+      "allowedWriters": ["deterministic Court substrate builder", "validated Court transition engine deriving i/4"],
+      "readOnlyConsumers": ["Court invariant library", "Court agent skills", "Neo4j Court projection"],
+      "admission": "contract_defined_candidate",
+      "nonEquivalence": ["physical.C_P", "harmonic.C_H", "semantic.C_S", "physical quantity"]
+    },
+    {
+      "namespace": "court.filter",
+      "existingNames": ["Court filter", "P_c", "diag(c)"],
+      "owner": "versioned Court filter registry and court-mathematics implementation",
+      "allowedWriters": ["deterministic Court filter registry builder"],
+      "readOnlyConsumers": ["Court runtime", "Court agent skills", "Neo4j Court projection"],
+      "admission": "contract_defined_candidate",
+      "nonEquivalence": ["topology mutation", "office assignment", "semantic operator effect"]
+    },
+    {
+      "namespace": "court.transition",
+      "existingNames": ["Court Modulation", "Master's Flip", "adjacent Court move"],
+      "owner": "versioned Court transition policy and hash-chained Court ledger",
+      "allowedWriters": ["validated Court transition engine"],
+      "readOnlyConsumers": ["Court agent skills", "Neo4j Court projection", "verifiers"],
+      "admission": "contract_defined_candidate",
+      "nonEquivalence": ["mutation operator", "State Governor change", "Degree Governor assignment"]
+    },
+    {
+      "namespace": "court.translocation",
+      "existingNames": ["Topological Translocation", "non-adjacent Court jump"],
+      "owner": "versioned Court transition policy and hash-chained Court ledger",
+      "allowedWriters": ["validated Court transition engine with an evidence-backed translocation record"],
+      "readOnlyConsumers": ["Court agent skills", "Neo4j Court projection", "verifiers"],
+      "admission": "contract_defined_candidate",
+      "nonEquivalence": ["ordinary Court modulation", "mutation operator", "unrecorded jump"]
+    },
+    {
+      "namespace": "court.fivefoldEngine",
+      "existingNames": ["Fivefold Engine", "canonical Court controller model"],
+      "owner": "reviewed Court release process",
+      "allowedWriters": ["new versioned Court package builder after acceptance evidence"],
+      "readOnlyConsumers": ["Court substrate builder", "Court runtime policy builder", "documentation"],
+      "admission": "proposed",
+      "nonEquivalence": ["active runtime authority", "canonical heptatonic topology", "physical system"]
+    },
+    {
+      "namespace": "court.registerGovernor",
+      "existingNames": ["pole Governor", "controller.governor"],
+      "owner": "versioned Court substrate and Court transition policy",
+      "allowedWriters": ["deterministic Court substrate builder", "validated Court transition engine"],
+      "readOnlyConsumers": ["Court agent skills", "Neo4j Court projection", "renderer"],
+      "admission": "contract_defined_candidate",
+      "nonEquivalence": ["governor.office", "topology.stateOffice", "aspect.primaryGovernor", "runtime.operationalGovernor"]
+    }
+  ],
+  "compressionCoordinate": {
+    "namespace": "court.compression",
+    "symbol": "kappa_court",
+    "valueType": "exact_ratio",
+    "derivation": "kappa(C_i) = i/4",
+    "values": [
+      { "numerator": 0, "denominator": 1 },
+      { "numerator": 1, "denominator": 4 },
+      { "numerator": 1, "denominator": 2 },
+      { "numerator": 3, "denominator": 4 },
+      { "numerator": 1, "denominator": 1 }
+    ],
+    "forbiddenEquivalences": [
+      "physical.C_P",
+      "harmonic.C_H",
+      "semantic.C_S",
+      "physical.temperature",
+      "physical.entropy",
+      "physical.enthalpy",
+      "physical.freeEnergy"
+    ],
+    "guardLiteral": "kappa_court is not C_P, C_H, C_S, temperature, entropy, enthalpy, or free energy."
+  },
+  "forbiddenWrites": [
+    "governor.office",
+    "ScaleState.office",
+    "ScaleState.officeIndex",
+    "ScaleState.hasGovernorSeat",
+    "OCCUPIES_OFFICE",
+    "topology.officeEvidence",
+    "mutation.degreeGovernor",
+    "aspect.primaryGovernor",
+    "runtime.operationalGovernor",
+    "canonical.heptatonicTopology"
+  ],
+  "admissionScope": {
+    "supersedes": "integrated-release-1.2.0 pending scope: all 38 pentatonic set classes",
+    "canonicalCourtPositions": ["C0", "C1", "C2", "C3", "C4"],
+    "canonicalSetClass": "5-35",
+    "bridgeSetClasses": ["5-23", "5-27"],
+    "additionalBridgePolicy": "only set classes proven minimally necessary to mediate Aeolian 7-35 to Harmonic Minor 7-32; CRT-302 must enumerate and evidence them",
+    "remainingPentatonicSetClasses": "proposed",
+    "careyEvaluationScope": "5-35 only",
+    "admittedFilter": "P_c = diag(c) only"
+  },
+  "fivefoldFieldDisposition": {
+    "source": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml",
+    "sourceAdmission": "proposed",
+    "eligibleForPromotionAtCrt309": [
+      "fivefold_engine.physical_quantity_claim=false",
+      "fivefold_engine.pole_order",
+      "fivefold_engine.bit_semantics",
+      "fivefold_engine.canonical_states",
+      "fivefold_engine.canonical_transitions",
+      "fivefold_engine.geometry.kappa_formula",
+      "fivefold_engine.geometry.paired_mask_hamming_formula",
+      "fivefold_engine.geometry.signed_gram_matrix",
+      "fivefold_engine.geometry.canonical_path_size",
+      "fivefold_engine.guards"
+    ],
+    "remainProposed": [
+      "fivefold_engine.macro_bracket",
+      "fivefold_engine.controller",
+      "fivefold_engine.runtime_cycle"
+    ],
+    "excludedCandidateClaims": [
+      "Fourier Court filters",
+      "graph-spectral Court filters",
+      "semantic-scoped Court filters",
+      "thermodynamic analogies",
+      "natural-phenomenon mappings",
+      "pentatonic set classes outside the amended scope"
+    ]
+  },
+  "outOfScope": [
+    {
+      "id": "physical_phenomena.yaml",
+      "status": "proposed",
+      "followOn": "EPIC-004"
+    },
+    {
+      "id": "thermodynamic_processes.yaml",
+      "status": "proposed",
+      "followOn": "EPIC-004"
+    },
+    {
+      "id": "natural-phenomenon mappings",
+      "status": "proposed",
+      "followOn": "EPIC-004"
+    },
+    {
+      "id": "semantic Governor enrichment including cultural, regional, and landform additions",
+      "status": "proposed",
+      "followOn": "separate semantic candidate release"
+    }
+  ],
+  "topologyLocks": [
+    {
+      "scaleStateId": 1749,
+      "office": "Moon",
+      "officeDisposition": "validated",
+      "requiredOccupiesOfficeCount": 1
+    },
+    {
+      "scaleStateId": 2477,
+      "office": "Jupiter",
+      "officeDisposition": "inherited",
+      "incomingDegreeGovernor": "Moon",
+      "requiredOccupiesOfficeCount": 1
+    },
+    {
+      "scaleStateId": 223,
+      "office": null,
+      "officeDisposition": "unassigned",
+      "relationalOffice": "Jupiter",
+      "requiredOccupiesOfficeCount": 0
+    }
+  ],
+  "sourceReferences": [
+    "docs/GOVERNOR_DOMAIN_AUTHORITY.md",
+    "framework/AGENTS.md",
+    "framework/TOPOLOGICAL_ANCHORING.md",
+    "canonical/universal-network-data.json",
+    "canonical/topology-identity-definitions.json",
+    "court-mathematics/docs/01_COURT_LEXICON.md",
+    "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml",
+    "scrum/EPIC-003-pentatonic-court-admission.md",
+    "scrum/CRT-301-court-admission-contract.md"
+  ]
+}

@@ -40,24 +40,34 @@ check with the minimum-bijection composition theorem and property-based checks
 against the executable `minimum_voice_leading()` implementation. The metric's
 repository status remains `provisional`; the proof does not change admission.
 
-## Carey Formula Proof
+## Carey Enumeration
 
-The suite uses exact `Fraction` arithmetic and the cited 12-TET 5-35 premises:
+The suite calls the production CRT-303 evaluator rather than supplying Carey
+difference or failure counts. For the 12-TET 5-35 seed `(0, 2, 4, 7, 9)`, it
+enumerates 20 directed interval instances, all 40 same-generic comparison
+slots, and all 150 cross-generic comparisons. The resulting exact counts are:
 
 ```text
-N = 5
-F(S) = 0
-max F(N) = N(N-1)(N-2)(3N-5)/24 = 25
-CQ = 1 - F(S)/max F(N) = 1/1
-
+interval instances = 20
+difference slots = 40
 D(S) = 20
-max D(N) = N(N-1)^2/2 = 40
-SQ = 1 - D(S)/max D(N) = 1/2
+ambiguities = 0
+contradictions = 0
+F(S) = 0
+CQ = 1/1
+SQ = 1/2
 ```
 
-This is explicitly a strict formula proof under the cited premises. The
-repository still has no admitted generic Carey failure/difference enumerator,
-so the suite does not misrepresent the premises as independently derived.
+`evaluate_carey_535()` fails closed unless its input has Forte 5-35 prime form,
+uses 12-TET, and declares generator step 7. The lower-level diagnostic
+enumerator may inspect other five-note sets but cannot assign them scoped 5-35
+results. Provenance cites Carey 2007, DOI `10.1080/17459730701376743`.
+
+The same production package recomputes the Court signed transition vectors,
+`G_Court = 2I_4`, all 25 Hamming path entries, disjoint XOR supports,
+weight-five values, and exact `kappa_court = i/4` ratios. Its aggregate
+`harmonic.C_H` remains explicitly `unresolved` and distinct from photonic,
+semantic, Court-compression, and thermodynamic namespaces.
 
 ## Mutation Algebra Metrics
 
@@ -87,6 +97,71 @@ d_H(1453, 2477) = 2
 d_VL(1453, 2477) = 1
 ```
 
+## Court Filter Algebra
+
+The production CRT-304 package defines `P_c(x) = x AND c` over the ambient
+12-bit binary-vector domain. Seven concrete filters are admitted within the
+candidate package: C0-C4 plus rooted 5-23 and 5-27. The global projection has
+no inverse because it is non-injective; its restriction to its image is the
+identity.
+
+The complete filter/mutation evaluation covers:
+
+| Metric | Result |
+|---|---:|
+| Filters | 7 |
+| Mutation operators | 15 |
+| Canonical operands | 462 |
+| Filter/operator summaries | 105 |
+| Evaluations | 48,510 |
+| `right_undefined` route asymmetries | 23,814 |
+| `both_undefined` | 24,696 |
+| Other classifications | 0 |
+
+The package independently reproduces all 3,402 admitted mutation applications.
+Filtered outputs have weight at most five, while admitted mutations require a
+rooted weight-seven operand. Consequently, a defined mutation-then-filter route
+has no admitted filter-then-mutation counterpart. Each such asymmetry has a
+typed record; it declares `court.routeSemantics` and requires a runtime event
+without inventing an event pointer before CRT-305.
+
+The 5-23 and 5-27 bridge routes retain different pitch information for the
+same Aeolian `1453` to Harmonic Minor `2477` endpoints. Route cost remains
+`unresolved`, and spectral measures remain `not_admitted`.
+
+## Court Runtime Lifecycle
+
+CRT-305 binds a strict candidate policy to the CRT-301 through CRT-304
+fingerprints and the unchanged GOV-204 ledger envelope. The runtime derives
+mask, pole register, and normalized exact `kappa_court` from C0-C4 rather than
+accepting them as caller-authored fields.
+
+| Runtime proof | Result |
+|---|---:|
+| Canonical positions | 5 |
+| Directed ordinary moves | 8 |
+| Legal moves at C0-C4 | 1 / 2 / 2 / 2 / 1 |
+| Exact kappa values | 5 |
+| Forbidden kappa namespaces | 7 |
+| Verified translocation directions | R7 forward / L7 reverse |
+| Verified bridge route contexts | 5-23 / 5-27 |
+
+Every committed transition requires a single-use token bound to the exact
+state, ledger head, policy, context, capability, operation, target, revision
+window, and optional translocation/route hashes. A typed passing GOV-205
+`VerificationDecision` with evidence IDs is mandatory. Rejected moves retain
+the original state and ledger bytes.
+
+Non-adjacent moves are compound runtime records: a Court-position jump plus an
+independently evidenced heptatonic R7/L7 mutation. This does not assert a new
+canonical mapping between Forte family and Court position. Runtime events point
+back to CRT-304 route records; the static records remain immutable.
+
+Semantic replay recomputes state, poles, kappa, token consumption, event
+identity, translocation evidence, and snapshots without Neo4j. Live sessions
+default to `${XDG_STATE_HOME:-~/.local/state}/seven-governors/court`, use atomic
+compare-and-swap persistence, and remain outside release artifacts.
+
 ## Runtime Security
 
 The suite verifies:
@@ -108,6 +183,32 @@ The live Neo4j suite compares canonical JSON bytes for every named-query result,
 then resets and rebuilds the projection and compares full node and relationship
 properties.
 
+CRT-306 projection schema v2 independently replays the CRT-305 ledger before
+emitting runtime records. Its bounded fixture contains 21 Court-owned nodes, 19
+relationships, and one ID-only `ScaleState` reference. The two-event history is
+C0 -> C1 followed by a compound C1 -> C4 R7/5-23 translocation. The event points
+to the exact CRT-304 route row while every static `ledgerPointer` remains null.
+Python snapshot verification and live Cypher validation both reject missing
+verification evidence, broken chain/snapshot closure, and mismatched route ID,
+operator, classification, semantics, or CRT-304 fingerprint.
+
+## Court Agent Skills
+
+CRT-307 adds a separate five-operation facade and bundle without changing the
+closed GOV-207 contract. Every operation replays CRT-305 first. Execution
+requires exact current menu/state/capability closure, a trusted typed verifier,
+semantic postcondition replay, and CAS persistence; no token or verifier
+decision is model-authored or emitted. Historical outcomes are read from the
+ledger without rerunning effects.
+
+The acceptance corpus covers all C0-C4 menus, adjacent and translocation
+commits, off-chain and non-adjacent rejection, stale bindings, denied grants,
+malformed verification, graph absence/timeout/size failures, read-only CRT-304
+projection, deterministic replan then stop, schema/facade parity, both host
+adapters, and installer collision/symlink/rollback behavior. Eight trace
+decisions also passed against a loopback Qwen 35B endpoint with thinking
+disabled. That observation is explicitly non-canonical.
+
 Topology locks are asserted in canonical JSON and Neo4j CSV projection data:
 
 - `1749`: Moon, A1, `anchor_A1`, exactly one Moon seat.
@@ -119,8 +220,10 @@ Topology locks are asserted in canonical JSON and Neo4j CSV projection data:
 ## Deterministic Report
 
 `scripts/run-phase4-verification.py` independently reruns the canonical mask,
-filter, mutation, commutation, Carey, and ground-metric checks. It emits compact
-canonical JSON with no timestamps or provider metadata and seals the report with
-`reportSha256`. Without `--run-integration`, its status is `STRUCTURAL_PASS` and
-the external suite fields remain `NOT_RUN`. `PASS` is emitted only after the
-Python verification suite and native Neo4j parity suite execute successfully.
+filter, mutation, commutation, production Carey enumerator, invariant-registry
+builder, production Court-filter evaluator, Court runtime policy/replay, and
+ground-metric checks. It emits compact canonical JSON with no timestamps or
+provider metadata and seals the report with `reportSha256`.
+Without `--run-integration`, its status is `STRUCTURAL_PASS` and the external
+suite fields remain `NOT_RUN`. `PASS` is emitted only after the Python
+verification suite and native Neo4j parity suite execute successfully.

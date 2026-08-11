@@ -1,6 +1,6 @@
 # CRT-309 — Admission, validator cascade, decision ledger, release closure
 
-**Status:** Ready · **Priority:** High · **Points:** 5 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+**Status:** Done · **Priority:** High · **Points:** 5 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
 **Depends on:** CRT-301, CRT-302, CRT-303, CRT-304, CRT-305, CRT-306, CRT-307, CRT-308 · **Blocks:** —
 
 ## Story
@@ -27,38 +27,38 @@ identities.
 
 ## Tasks
 
-- [ ] Add package/root scripts and a canonical
+- [x] Add package/root scripts and a canonical
       `qa/court-admission-validation.json` PASS/FAIL report covering every
       EPIC-003 success criterion and Court story-specific acceptance
       criteria, with failures tied to fixture IDs.
-- [ ] Validate Court schema closure, source fingerprints, deterministic
+- [x] Validate Court schema closure, source fingerprints, deterministic
       builds, substrate fixtures, harmonic-invariant fixtures, Carey
       reproductions, filter-algebra commutation table, Court-ledger
       replay/tamper, Court-transition adjacency, Topological Translocation
       evidence, Court graph parity, Court skill installation, and Court
       vault privacy in the integrated validator.
-- [ ] Run end-to-end test cases for: the canonical $C_0$–$C_4$ cycle,
+- [x] Run end-to-end test cases for: the canonical $C_0$–$C_4$ cycle,
       Cayley Carey $\mathrm{CQ}=1$/$\mathrm{SQ}=\tfrac12$ reproduction,
       the Aeolian → Harmonic Minor bridge through 5–23 vs 5–27,
       $\kappa_{\text{court}}$ cross-namespace-write rejection,
       Topological Translocation acceptance and rejection, Court-ledger
       tamper detection, Court graph rebuild after deletion, installed
       Court skill traces, and the Court vault context-free parity proof.
-- [ ] Benchmark Court-aware configurations against model-only and
+- [x] Benchmark Court-aware configurations against model-only and
       retrieval-only baselines with the same Court task corpus; record
       success, off-chain-rejection, non-adjacent-rejection, filter-
       non-commutation, and recovery rates without treating model prose
       as truth.
-- [ ] Update `docs/COURT_ADMISSION_AND_AUTHORITY.md`, authority/API/
+- [x] Update `docs/COURT_ADMISSION_AND_AUTHORITY.md`, authority/API/
       operator/graph/skill/vault docs, `START_HERE`,
       `provenance/SOURCE_AUTHORITY.md`, and `provenance/DECISION_LEDGER.md`
       for the Court admission; resolve or explicitly quarantine discovered
       version/path/check-count drift and never copy stale literals into
       new contracts.
-- [ ] Append a Decision Ledger amendment entry that explicitly supersedes
+- [x] Append a Decision Ledger amendment entry that explicitly supersedes
       the 1.2.0 "all 38 pentatonic set classes" scope with the narrower
       agreed EPIC-003 scope and cites this validation report as evidence.
-- [ ] Perform admission and security review; refresh manifest/checksums;
+- [x] Perform admission and security review; refresh manifest/checksums;
       run package plus full root validation twice.
 
 ## Acceptance criteria
@@ -113,3 +113,9 @@ scope; release artifacts are deterministic and private-data-free; manifest
 /checksums match; full validation passes twice; all nine Court stories and
 EPIC-003 are moved to Done; the natural-phenomena and thermodynamic-mapping
 packages remain explicitly `admission: proposed` for EPIC-004.
+
+**Closure evidence (2026-08-10):** the external admission record preserves
+frozen historical bytes and admits the narrow scope; the one-command cascade
+passed 18/18 criteria with native live Neo4j parity; the ten-case benchmark and
+privacy scan passed; root pytest passed 323 tests; release validation passed
+281/281 over a 681-file manifest; release 1.3.0 provenance is bound.

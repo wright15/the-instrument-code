@@ -1,0 +1,163 @@
+{
+  "schemaVersion": "crt-307.registry.v1",
+  "bundleId": "seven-governors-crt-307",
+  "bundleVersion": "1.0.0",
+  "apiVersion": "crt-307.court-agent-api.v1",
+  "toolId": "governor.court_agent_api.invoke",
+  "integratedAdmission": "proposed_pending_crt_309",
+  "contracts": {
+    "commonSchemaPath": "schemas/common.schema.json",
+    "registrySchemaPath": "schemas/registry.schema.json",
+    "capabilitiesSchemaPath": "schemas/capabilities.schema.json",
+    "adapterSchemaPath": "schemas/adapter.schema.json",
+    "installManifestSchemaPath": "schemas/install-manifest.schema.json"
+  },
+  "dependencies": {
+    "crt305RuntimePolicy": {
+      "path": "schemas/court-runtime-policy.json",
+      "schemaVersion": "crt-305.court-runtime-policy.v1",
+      "sourceSha256": "5164b74bf6cbbb55625eb0e9b958542cf20ddacb426813b7a93c1bffd7347605",
+      "policyFingerprint": "90431c79b8bc06da7e6f5cb5ce207cb6cbfd86519bdb91df5aacc137065ec456"
+    },
+    "crt306GraphProjection": {
+      "queryCatalogPath": "src/governor/court_graph_queries.py",
+      "queryCatalogSha256": "3442e4cd03a3885a5cd7706d8146974eba20fc564edf08acb4bb2db0479ddcc8",
+      "schemaVersion": "crt-306.court-graph-projection.v2",
+      "namedQueries": [
+        "degree_triads_for_scale",
+        "modal_scale_states_by_triad_quality",
+        "modal_scale_states_by_interval_vector",
+        "court_filter_commutation_outputs",
+        "court_runtime_state_for_session",
+        "court_verified_events_for_session"
+      ]
+    },
+    "crt304FilterAlgebra": {
+      "path": "seven-governors-court-filter-algebra-v0.1.0/canonical/filter-algebra-release.json",
+      "sourceSha256": "83bb95522b91170914c1a1306d2ae0d5e084842eea2723c2c0d9d44ef0543368",
+      "filterAlgebraFingerprint": "40bd74397ff9f4c8c0f0b845630e008cea66c9495413195c1e1c92ff02968589"
+    },
+    "crt303HarmonicInvariants": {
+      "path": "seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json",
+      "sourceSha256": "75b3ffaa0b126c4dbf0abf6e42a4674724092b0e403a2862d893b6f1493d0e6f",
+      "invariantFingerprint": "ad604fdb42144882d38433e734759fcd5c160dfe628139ce0ede1ff093481323"
+    }
+  },
+  "limits": {
+    "maxRequestBytes": 65536,
+    "maxResponseBytes": 1048576,
+    "maxToolReceipts": 16,
+    "maxGraphRows": 100,
+    "maxGraphRowBytes": 262144,
+    "maxGraphElapsedMs": 1000
+  },
+  "fingerprints": {
+    "algorithm": "sha256",
+    "canonicalization": "RFC8785",
+    "encoding": "UTF-8",
+    "lineEndings": "LF",
+    "resultFingerprintInput": "canonical-output-without-resultFingerprint",
+    "logicalOrdering": "unicode-code-point-by-logical-id"
+  },
+  "adapters": [
+    {"adapterId": "generic-json", "adapterVersion": "1.0.0", "configPath": "adapters/generic-json.json"},
+    {"adapterId": "hermes", "adapterVersion": "1.0.0", "configPath": "adapters/hermes.json"}
+  ],
+  "skills": [
+    {
+      "skillId": "inspect_court_state",
+      "name": "seven-governors-inspect-court-state",
+      "description": "Replay and inspect the exact authoritative Court state with optional read-only graph corroboration.",
+      "operationId": "inspect_court_state",
+      "workflowPath": "workflows/inspect_court_state/SKILL.md",
+      "inputSchema": "schemas/inspect-court-state.schema.json#/$defs/input",
+      "inputSchemaId": "crt-307.inspect-court-state.input.v1",
+      "outputSchema": "schemas/inspect-court-state.schema.json#/$defs/output",
+      "outputSchemaId": "crt-307.inspect-court-state.output.v1",
+      "triggers": ["Inspect or refresh the current replay-controlled Court state.", "Recover after stale state, ledger, policy, or context."],
+      "toolIds": ["governor.court_agent_api.invoke"],
+      "adapterMappings": {
+        "generic-json": {"targetPath": "court/inspect-court-state/SKILL.md", "operationId": "inspect_court_state"},
+        "hermes": {"targetPath": "seven-governors-inspect-court-state/SKILL.md", "operationId": "inspect_court_state"}
+      },
+      "tokenScope": "none",
+      "queryBudget": {"maxQueries": 2, "namedQueries": [{"queryId": "court_runtime_state_for_session", "maxCalls": 1}, {"queryId": "court_verified_events_for_session", "maxCalls": 1}]}
+    },
+    {
+      "skillId": "list_legal_court_moves",
+      "name": "seven-governors-list-legal-court-moves",
+      "description": "List only legal Court transitions from an exact replay-verified state.",
+      "operationId": "list_legal_court_moves",
+      "workflowPath": "workflows/list_legal_court_moves/SKILL.md",
+      "inputSchema": "schemas/list-legal-court-moves.schema.json#/$defs/input",
+      "inputSchemaId": "crt-307.list-legal-court-moves.input.v1",
+      "outputSchema": "schemas/list-legal-court-moves.schema.json#/$defs/output",
+      "outputSchemaId": "crt-307.list-legal-court-moves.output.v1",
+      "triggers": ["List exact adjacent or evidenced translocation moves for the current Court position.", "Refresh the trusted move menu after a rejected transition."],
+      "toolIds": ["governor.court_agent_api.invoke"],
+      "adapterMappings": {
+        "generic-json": {"targetPath": "court/list-legal-court-moves/SKILL.md", "operationId": "list_legal_court_moves"},
+        "hermes": {"targetPath": "seven-governors-list-legal-court-moves/SKILL.md", "operationId": "list_legal_court_moves"}
+      },
+      "tokenScope": "none",
+      "queryBudget": {"maxQueries": 0, "namedQueries": []}
+    },
+    {
+      "skillId": "validate_and_execute_court_transition",
+      "name": "seven-governors-validate-and-execute-court-transition",
+      "description": "Atomically validate, execute, and verify one trusted-menu Court transition.",
+      "operationId": "validate_and_execute_court_transition",
+      "workflowPath": "workflows/validate_and_execute_court_transition/SKILL.md",
+      "inputSchema": "schemas/validate-execute-court-transition.schema.json#/$defs/input",
+      "inputSchemaId": "crt-307.validate-execute-court-transition.input.v1",
+      "outputSchema": "schemas/validate-execute-court-transition.schema.json#/$defs/output",
+      "outputSchemaId": "crt-307.validate-execute-court-transition.output.v1",
+      "triggers": ["Execute one exact transition selected from the current trusted Court menu.", "Consume the runtime's atomic transition and postcondition result."],
+      "toolIds": ["governor.court_agent_api.invoke"],
+      "adapterMappings": {
+        "generic-json": {"targetPath": "court/validate-and-execute-court-transition/SKILL.md", "operationId": "validate_and_execute_court_transition"},
+        "hermes": {"targetPath": "seven-governors-validate-and-execute-court-transition/SKILL.md", "operationId": "validate_and_execute_court_transition"}
+      },
+      "tokenScope": "internal-single-use-created-and-consumed-one-invocation-never-emitted",
+      "queryBudget": {"maxQueries": 0, "namedQueries": []}
+    },
+    {
+      "skillId": "project_through_court",
+      "name": "seven-governors-project-through-court",
+      "description": "Apply the runtime-bound current-position Court filter to one ambient 12-bit mask without state mutation.",
+      "operationId": "project_through_court",
+      "workflowPath": "workflows/project_through_court/SKILL.md",
+      "inputSchema": "schemas/project-through-court.schema.json#/$defs/input",
+      "inputSchemaId": "crt-307.project-through-court.input.v1",
+      "outputSchema": "schemas/project-through-court.schema.json#/$defs/output",
+      "outputSchemaId": "crt-307.project-through-court.output.v1",
+      "triggers": ["Project an ambient 12-bit pitch mask through the current Court filter.", "Optionally corroborate one mutation/filter commutation record."],
+      "toolIds": ["governor.court_agent_api.invoke"],
+      "adapterMappings": {
+        "generic-json": {"targetPath": "court/project-through-court/SKILL.md", "operationId": "project_through_court"},
+        "hermes": {"targetPath": "seven-governors-project-through-court/SKILL.md", "operationId": "project_through_court"}
+      },
+      "tokenScope": "none",
+      "queryBudget": {"maxQueries": 1, "namedQueries": [{"queryId": "court_filter_commutation_outputs", "maxCalls": 1}]}
+    },
+    {
+      "skillId": "verify_court_postcondition",
+      "name": "seven-governors-verify-court-postcondition",
+      "description": "Replay a recorded Court event and report verifier-backed postcondition evidence without rerunning it.",
+      "operationId": "verify_court_postcondition",
+      "workflowPath": "workflows/verify_court_postcondition/SKILL.md",
+      "inputSchema": "schemas/verify-court-postcondition.schema.json#/$defs/input",
+      "inputSchemaId": "crt-307.verify-court-postcondition.input.v1",
+      "outputSchema": "schemas/verify-court-postcondition.schema.json#/$defs/output",
+      "outputSchemaId": "crt-307.verify-court-postcondition.output.v1",
+      "triggers": ["Verify one recorded Court postcondition from replayed ledger evidence.", "Determine whether machine evidence permits a success claim without rerunning an effect."],
+      "toolIds": ["governor.court_agent_api.invoke"],
+      "adapterMappings": {
+        "generic-json": {"targetPath": "court/verify-court-postcondition/SKILL.md", "operationId": "verify_court_postcondition"},
+        "hermes": {"targetPath": "seven-governors-verify-court-postcondition/SKILL.md", "operationId": "verify_court_postcondition"}
+      },
+      "tokenScope": "none",
+      "queryBudget": {"maxQueries": 2, "namedQueries": [{"queryId": "court_runtime_state_for_session", "maxCalls": 1}, {"queryId": "court_verified_events_for_session", "maxCalls": 1}]}
+    }
+  ]
+}

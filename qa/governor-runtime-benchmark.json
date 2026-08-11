@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "gov-209.runtime-benchmark.v1",
+  "corpusFingerprint": "ae6de4cbce658596163e973a6b106480f126e5df187469acce97e9692668785e",
+  "authorityRuling": "machine-verifiable-outcomes-only; model prose scores no success",
+  "configurations": [
+    {
+      "configurationId": "model-only",
+      "caseCount": 8,
+      "rates": {
+        "success": 0,
+        "falseSuccessRejection": 0,
+        "invalidTransitionRejection": 0,
+        "loopStop": 0,
+        "toolCall": 0,
+        "recovery": 0
+      }
+    },
+    {
+      "configurationId": "retrieval-only",
+      "caseCount": 8,
+      "rates": {
+        "success": 0,
+        "falseSuccessRejection": 0,
+        "invalidTransitionRejection": 0,
+        "loopStop": 0,
+        "toolCall": 0,
+        "recovery": 0
+      }
+    },
+    {
+      "configurationId": "deterministic-tool",
+      "caseCount": 8,
+      "rates": {
+        "success": 1,
+        "falseSuccessRejection": 1,
+        "invalidTransitionRejection": 1,
+        "loopStop": 1,
+        "toolCall": 1,
+        "recovery": 1
+      }
+    },
+    {
+      "configurationId": "state-machine-backed",
+      "caseCount": 8,
+      "rates": {
+        "success": 1,
+        "falseSuccessRejection": 1,
+        "invalidTransitionRejection": 1,
+        "loopStop": 1,
+        "toolCall": 1,
+        "recovery": 1
+      }
+    }
+  ],
+  "reportFingerprint": "dca438ec04fddcd488df6e1d78abb5c9ad317f9300f6c3fbb5dace6d2d354777"
+}

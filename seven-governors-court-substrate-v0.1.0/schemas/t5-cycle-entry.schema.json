@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/court-substrate/0.1.0/schemas/t5-cycle-entry.schema.json",
+  "title": "T5CycleEntry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["cycleIndex", "offset", "nextOffset", "courtSegmentIndex", "courtPositionId"],
+  "properties": {
+    "cycleIndex": { "type": "integer", "minimum": 0, "maximum": 11 },
+    "offset": { "$ref": "common.schema.json#/$defs/pitchClass" },
+    "nextOffset": { "$ref": "common.schema.json#/$defs/pitchClass" },
+    "courtSegmentIndex": { "type": ["integer", "null"], "minimum": 0, "maximum": 4 },
+    "courtPositionId": {
+      "oneOf": [
+        { "enum": ["C0", "C1", "C2", "C3", "C4"] },
+        { "type": "null" }
+      ]
+    }
+  }
+}

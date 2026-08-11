@@ -1,0 +1,12 @@
+{
+  "traceId": "crt307-graph-retrieval",
+  "setup": {"position": "C0", "graph": "available"},
+  "steps": [
+    {
+      "operation": "inspect_court_state",
+      "request": {"includeGraphContext": true, "eventLimit": 5},
+      "expect": {"status": "ok", "reasonCode": "ok", "graphStatus": "ok"}
+    }
+  ],
+  "expectedFinal": {"position": "C0", "eventCount": 0}
+}

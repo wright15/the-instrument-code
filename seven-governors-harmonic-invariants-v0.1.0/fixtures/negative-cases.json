@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "cases": [
+    {
+      "fixtureId": "negative:gram-entry",
+      "operation": "duplicate_transition_vector",
+      "expectedReason": "court_gram_entry_mismatch",
+      "expectedDetail": { "row": 0, "column": 1, "expected": 0, "actual": 2 }
+    },
+    {
+      "fixtureId": "negative:off-path-mask",
+      "operation": "resolve_off_path_mask",
+      "value": 173,
+      "expectedReason": "court_off_path_mask"
+    },
+    {
+      "fixtureId": "negative:overlapping-support",
+      "operation": "overlap_xor_support",
+      "expectedReason": "court_xor_support_overlap",
+      "expectedDetail": { "pitch": 5 }
+    },
+    {
+      "fixtureId": "negative:weight-four",
+      "operation": "verify_weight",
+      "value": 15,
+      "expectedReason": "court_weight_mismatch",
+      "expectedDetail": { "actual": 4 }
+    },
+    {
+      "fixtureId": "negative:weight-six",
+      "operation": "verify_weight",
+      "value": 63,
+      "expectedReason": "court_weight_mismatch",
+      "expectedDetail": { "actual": 6 }
+    },
+    {
+      "fixtureId": "negative:carey-5-23",
+      "operation": "evaluate_noncanonical_carey",
+      "value": [0, 2, 3, 5, 7],
+      "expectedReason": "carey_scope_requires_forte_5_35"
+    },
+    {
+      "fixtureId": "negative:missing-provenance",
+      "operation": "remove_invariant_provenance",
+      "expectedReason": "schema_minItems"
+    },
+    {
+      "fixtureId": "negative:tampered-C_H-guard",
+      "operation": "tamper_compression_guard",
+      "expectedReason": "schema_const"
+    }
+  ]
+}

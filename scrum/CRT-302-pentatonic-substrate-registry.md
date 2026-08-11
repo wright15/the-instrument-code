@@ -1,7 +1,14 @@
 # CRT-302 — Pentatonic substrate registry
 
-**Status:** Ready · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+**Status:** Done · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
 **Depends on:** CRT-301 · **Blocks:** CRT-303, CRT-305, CRT-306
+
+> **Closure note (2026-08-09):**
+> `seven-governors-court-substrate-v0.1.0` contains the strict 38-class
+> registry, C0-C4, reviewed 5-23/5-27 bridge rootings, full T5 root cycle,
+> complement maps, expected-failure fixtures, source fingerprints, and
+> byte-identical clean/reordered builds. Internal record admission has no
+> integrated effect before CRT-309.
 
 ## Story
 
@@ -29,30 +36,30 @@ declaration; the registry must record admission status per set class.
 
 ## Tasks
 
-- [ ] Create a new versioned `court-substrate` package rather than editing
+- [x] Create a new versioned `court-substrate` package rather than editing
       the frozen `fivefold_engine.yaml` in place.
-- [ ] Add a strict schema for `PentatonicSetClass`, `CourtRootedPosition`,
+- [x] Add a strict schema for `PentatonicSetClass`, `CourtRootedPosition`,
       `T5CycleEntry`, `ComplementMap`, `AdmissionStatus`, and
       `SubstrateRegistryRelease`.
-- [ ] Register the five canonical rooted positions $C_0$–$C_4$ of Forte
+- [x] Register the five canonical rooted positions $C_0$–$C_4$ of Forte
       5–35 with: 12-bit mask, pitch-class set, Mars/Jupiter/Venus/Saturn
       pole register, internal-poles set, $\kappa_{\text{court}}$ value,
       XOR support against the previous position, and `admission: admitted`.
-- [ ] Register Forte 5–23 and Forte 5–27, plus any other pentatonic set
+- [x] Register Forte 5–23 and Forte 5–27, plus any other pentatonic set
       classes minimally required to mediate the Aeolian (7–35) → Harmonic
       Minor (7–32) bridge, with masks, rootings, and
       `admission: admitted-bridge`.
-- [ ] Register every other pentatonic set class in the 38-class field
+- [x] Register every other pentatonic set class in the 38-class field
       with `admission: proposed` and an explicit `admission-blocker`
       pointing to the follow-on admission story; the registry must never
       silently promote a proposed set class to canonical status.
-- [ ] Record the $T_5$ generator cycle `0 → 5 → 10 → 3 → 8` and the
+- [x] Record the $T_5$ generator cycle `0 → 5 → 10 → 3 → 8` and the
       rooted-position mapping; declare which rooted positions are Court
       candidates and which are not.
-- [ ] Record the set-class complement map 5–35 ↔ 7–35 against
+- [x] Record the set-class complement map 5–35 ↔ 7–35 against
       `canonical/topology-identity-definitions.json`; record complement
       pairs for the admitted bridge set classes.
-- [ ] Add deterministic `--check` and `--emit` build modes with source
+- [x] Add deterministic `--check` and `--emit` build modes with source
       hashes; two clean builds from identical inputs produce byte-identical
       canonical JSON and the same substrate fingerprint.
 
@@ -95,3 +102,16 @@ committed; all negative fixtures fail for the expected reason; deterministic
 output is proven twice; existing frozen packages and the EPIC-002 GOV-202
 contract remain unchanged; package and root validation pass; documentation,
 manifest, and checksums include the new substrate.
+
+## Recorded evidence
+
+- Package validation report:
+  `seven-governors-court-substrate-v0.1.0/qa/validation-report.json`.
+- Determinism report:
+  `seven-governors-court-substrate-v0.1.0/qa/determinism-report.json` (4/4).
+- Negative fixtures cover unknown fields, invalid mask range, wrong weight,
+  missing/dangling complements, missing/invalid T5 references, off-chain
+  promotion with a proposed-record pointer, dangling admission status, wrong
+  kappa, and wrong XOR support.
+- `tests/verification/test_court_substrate_registry.py` independently checks
+  38-class closure, C0-C4, bridge subsets/complements, and full T5 closure.

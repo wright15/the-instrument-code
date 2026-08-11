@@ -9,11 +9,28 @@
       "rootPc": 0
     }
   ],
-  "courtStates": [
+  "runtimeSessions": [
     {
-      "courtPositionId": "court-position:C2",
+      "sessionId": "crt-306-runtime-fixture",
+      "genesisPositionId": "C0",
       "harmonicProfileSha256": "3d48786309d428b467b29fa3473489e6b37b1f9f1efe58247ddd649dce2a2db8",
-      "courtPolicySha256": "8063163dc7abdd822c3d345c4f06df015d42c4c8c7db19981609c052fab563f8"
+      "policyFingerprint": "90431c79b8bc06da7e6f5cb5ce207cb6cbfd86519bdb91df5aacc137065ec456",
+      "contextFingerprint": "7bfb0cb975fca7bf074a8e6170ac8d7fbd92c0b665bcb42551595f44c9d6364c",
+      "capabilities": ["court.transition", "court.translocate"],
+      "transitions": [
+        {
+          "operationId": "court:advance",
+          "targetPosition": "C1",
+          "evidenceEventIds": ["8111111111111111111111111111111111111111111111111111111111111111"]
+        },
+        {
+          "operationId": "court:translocate",
+          "targetPosition": "C4",
+          "operatorId": "R7",
+          "forteFamily": "5-23",
+          "evidenceEventIds": ["9222222222222222222222222222222222222222222222222222222222222222"]
+        }
+      ]
     }
   ],
   "filterOperators": [
@@ -36,9 +53,8 @@
     {
       "commutationId": "C2:L7:1453",
       "mutationOperatorId": "L7",
-      "result": "does_not_commute",
-      "routeSemantics": "both_routes_defined",
-      "ledgerPointer": "court-ledger:event:2",
+      "result": "right_undefined",
+      "routeSemantics": "mutation_then_filter_only",
       "sourceSha256": "3b79b0325158c2c69c7aa76d12376fbcefc6fd02b8ad8d11ef6299f8e04f1cf0",
       "admissionStatus": "proposed"
     },
@@ -47,8 +63,15 @@
       "mutationOperatorId": "R7",
       "result": "right_undefined",
       "routeSemantics": "mutation_then_filter_only",
-      "ledgerPointer": "court-ledger:event:1",
       "sourceSha256": "3b79b0325158c2c69c7aa76d12376fbcefc6fd02b8ad8d11ef6299f8e04f1cf0",
+      "admissionStatus": "proposed"
+    },
+    {
+      "commutationId": "noncomm:court-filter:5-23:root-0:R7:1453",
+      "mutationOperatorId": "R7",
+      "result": "right_undefined",
+      "routeSemantics": "mutation_then_filter_only",
+      "sourceSha256": "40bd74397ff9f4c8c0f0b845630e008cea66c9495413195c1e1c92ff02968589",
       "admissionStatus": "proposed"
     }
   ],
@@ -73,16 +96,6 @@
       "admissionStatus": "proposed"
     }
   ],
-  "poleRegisters": [
-    {
-      "poleRegisterId": "C2:runtime",
-      "ownerLabel": "CourtState",
-      "ownerId": "f2807a395c77f2542918e5f5fffd54b43cba25f5f0ef71512f2ba71b7df2bfa0",
-      "internalPoles": ["Mars", "Jupiter"],
-      "sourceSha256": "3b79b0325158c2c69c7aa76d12376fbcefc6fd02b8ad8d11ef6299f8e04f1cf0",
-      "admissionStatus": "proposed"
-    }
-  ],
   "queryCorpus": [
     {
       "queryId": "degree_triads_for_scale",
@@ -99,6 +112,14 @@
     {
       "queryId": "court_filter_commutation_outputs",
       "parameters": {"applicationId": "C2:1453"}
+    },
+    {
+      "queryId": "court_runtime_state_for_session",
+      "parameters": {"sessionId": "crt-306-runtime-fixture"}
+    },
+    {
+      "queryId": "court_verified_events_for_session",
+      "parameters": {"sessionId": "crt-306-runtime-fixture", "limit": 100}
     }
   ]
 }

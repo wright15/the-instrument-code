@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "crt-308.court-context-bundle.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "status", "authority", "baseBundleFingerprint", "policyFingerprint", "dependencyFingerprints", "courtNotes", "diagnostics", "canonicalCourtPolicyChanged", "canonicalAdmissionChanged", "graphQueryFingerprintChanged", "bundleFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "crt-308.court-context-bundle.v1"},
+    "status": {"enum": ["ok", "empty"]},
+    "authority": {"const": "context_evidence_only"},
+    "baseBundleFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "policyFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependencyFingerprints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["substrate", "invariants", "filters"],
+      "properties": {
+        "substrate": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "invariants": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "filters": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "courtNotes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["noteId", "baseNoteFingerprint", "courtRootedPosition", "pentatonicSetClass", "kappaCourt", "courtFilterMask", "claimedAdmissionStatus", "effectiveAdmissionStatus", "courtProvenanceRef"],
+        "properties": {
+          "noteId": {"type": "string"},
+          "baseNoteFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "courtRootedPosition": {"enum": ["C0", "C1", "C2", "C3", "C4", null]},
+          "pentatonicSetClass": {"type": "string", "pattern": "^5-[0-9]+$"},
+          "kappaCourt": {"enum": [0, 0.25, 0.5, 0.75, 1, null]},
+          "courtFilterMask": {"type": "string", "pattern": "^[01]{12}$"},
+          "claimedAdmissionStatus": {"enum": ["admitted", "admitted-bridge", "proposed", "unresolved"]},
+          "effectiveAdmissionStatus": {"enum": ["admitted", "admitted-bridge", "proposed", "unresolved"]},
+          "courtProvenanceRef": {"type": "string"}
+        }
+      }
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["reasonCode"],
+        "properties": {
+          "reasonCode": {"type": "string"},
+          "noteId": {"type": "string"},
+          "target": {"type": "string"},
+          "responsibleGate": {"type": "string"}
+        }
+      }
+    },
+    "canonicalCourtPolicyChanged": {"const": false},
+    "canonicalAdmissionChanged": {"const": false},
+    "graphQueryFingerprintChanged": {"const": false},
+    "bundleFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

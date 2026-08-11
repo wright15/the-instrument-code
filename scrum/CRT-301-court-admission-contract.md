@@ -1,7 +1,13 @@
 # CRT-301 — Court admission contract and namespace crosswalk
 
-**Status:** Ready · **Priority:** High · **Points:** 5 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+**Status:** Done · **Priority:** High · **Points:** 5 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
 **Depends on:** GOV-201 (must be closed) · **Blocks:** CRT-302
+
+> **Closure note (2026-08-09):** the root-owned authority document and strict
+> machine contract are accepted; the pending all-38 scope is superseded; exact
+> `kappa_court`, forbidden-write, source-link, and topology-lock checks are in
+> the root verification cascade. This closes the contract only. Court subsystem
+> admission remains proposed pending CRT-302 through CRT-309.
 
 ## Story
 
@@ -27,33 +33,33 @@ procedure for the Court coordinate only.
 
 ## Tasks
 
-- [ ] Author `docs/COURT_ADMISSION_AND_AUTHORITY.md` extending GOV-201's
+- [x] Author `docs/COURT_ADMISSION_AND_AUTHORITY.md` extending GOV-201's
       authority flow with Court State, Court pole register,
       $\kappa_{\text{court}}$, Court filter, and the Topological
       Translocation record.
-- [ ] Crosswalk each existing meaning of "Court," "fivefold," "pole," and
+- [x] Crosswalk each existing meaning of "Court," "fivefold," "pole," and
       "internal/external" against GOV-201's State Governor, Degree Governor,
       `occupiesOffice`, aspect `primaryGovernor`, and agent
       `operationalGovernor` namespaces; declare which are Court-owned,
       which inherit the GOV-201 boundary, and which remain proposed.
-- [ ] Declare the **fourth compression coordinate**: $\kappa_{\text{court}}
+- [x] Declare the **fourth compression coordinate**: $\kappa_{\text{court}}
       \in\{0,0.25,0.5,0.75,1\}$, explicitly distinct from $C_P$, $C_H$,
       $C_S$, temperature, entropy, enthalpy, and free energy.
-- [ ] Record the guard rules: Court pole transitions cannot write
+- [x] Record the guard rules: Court pole transitions cannot write
       `ScaleState.office`, `OCCUPIES_OFFICE`, or Degree-Governor metadata;
       $\kappa_{\text{court}}$ cannot equal any other compression coordinate
       or a physical quantity; a Master's Flip is a neighboring Court
       transition, not a permission to invent a Court.
-- [ ] Declare the amended admission scope in the authority document: the
+- [x] Declare the amended admission scope in the authority document: the
       five canonical rooted positions $C_0$–$C_4$ of Forte 5–35, plus
       Forte 5–23 and Forte 5–27, plus any other pentatonic set classes
       minimally required to mediate the Aeolian → Harmonic Minor (7–35 →
       7–32) bridge example. Remaining pentatonic set classes stay
       `admission: proposed`.
-- [ ] Declare the natural-phenomena and thermodynamic-mapping packages
+- [x] Declare the natural-phenomena and thermodynamic-mapping packages
       `physical_phenomena.yaml` and `thermodynamic_processes.yaml` remain
       `admission: proposed` for EPIC-004.
-- [ ] Record the crosswalk and amended-scope decision in
+- [x] Record the crosswalk and amended-scope decision in
       `provenance/DECISION_LEDGER.md` under the upcoming release entry.
 
 ## Acceptance criteria
@@ -98,3 +104,17 @@ paths resolve; namespace ownership and forbidden writes are explicit; the
 three topology fixtures are recorded as evidence; no frozen artifact
 changed; manifest/checksums refresh; the EPIC-002 GOV-201 contract remains
 the authoritative Governor-domain reference and is not rewritten.
+
+## Recorded evidence
+
+- `schemas/court-admission-contract.schema.json` validates the closed machine
+  contract, including exact-ratio `kappa_court` values and the full guard.
+- `tests/verification/test_court_admission_contract.py` checks namespace
+  ownership, scope, source closure, out-of-scope declarations, and Fivefold
+  field disposition.
+- `tests/verification/test_graph_topology_locks.py` runs registered Court
+  advance and retreat operations while locking states `1749`, `2477`, and
+  `223` and their Neo4j CSV authority inputs.
+- `tests/test_court_graph_projection.py` rejects forbidden authority fields,
+  `OCCUPIES_OFFICE`, and non-ID-only `ScaleState` references even after
+  internally consistent rehashing.

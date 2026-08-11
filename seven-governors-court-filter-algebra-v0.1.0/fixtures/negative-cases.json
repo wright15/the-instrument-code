@@ -1,0 +1,17 @@
+{
+  "cases": [
+    { "fixtureId": "reject-fourier", "operation": "set_filter_type", "value": "fourier", "expectedReason": "schema_const" },
+    { "fixtureId": "reject-spectral", "operation": "set_filter_type", "value": "spectral", "expectedReason": "schema_const" },
+    { "fixtureId": "reject-graph-spectral", "operation": "set_filter_type", "value": "graph_spectral", "expectedReason": "schema_const" },
+    { "fixtureId": "reject-semantic-scoped", "operation": "set_filter_type", "value": "semantic_scoped", "expectedReason": "schema_const" },
+    { "fixtureId": "reject-unknown-type", "operation": "set_filter_type", "value": "unknown", "expectedReason": "schema_const" },
+    { "fixtureId": "reject-off-chain-mask", "operation": "set_mask", "value": 31, "expectedReason": "filter_mask_not_admitted" },
+    { "fixtureId": "reject-missing-domain", "operation": "remove_declaration", "value": "domain", "expectedReason": "schema_required" },
+    { "fixtureId": "reject-missing-image", "operation": "remove_declaration", "value": "image", "expectedReason": "schema_required" },
+    { "fixtureId": "reject-missing-inverse", "operation": "remove_declaration", "value": "inverse", "expectedReason": "schema_required" },
+    { "fixtureId": "reject-missing-commutation", "operation": "remove_declaration", "value": "commutation", "expectedReason": "schema_required" },
+    { "fixtureId": "reject-dangling-operator-id", "operation": "dangling_operator_id", "expectedReason": "schema_pattern" },
+    { "fixtureId": "reject-invented-ledger-event", "operation": "invent_ledger_event", "expectedReason": "schema_type" },
+    { "fixtureId": "reject-office-write", "operation": "claim_office_write", "expectedReason": "schema_const" }
+  ]
+}

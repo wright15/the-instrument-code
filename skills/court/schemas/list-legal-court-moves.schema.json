@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/crt-307/schemas/list-legal-court-moves.schema.json",
+  "title": "CRT-307 list_legal_court_moves facade contracts",
+  "oneOf": [{"$ref": "#/$defs/input"}, {"$ref": "#/$defs/output"}],
+  "$defs": {
+    "input": {
+      "$id": "crt-307.list-legal-court-moves.input.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "requestId", "sessionId", "expectedStateSha256", "expectedLedgerHeadSha256"],
+      "properties": {
+        "schemaVersion": {"const": "crt-307.list-legal-court-moves.input.v1"},
+        "requestId": {"$ref": "common.schema.json#/$defs/identifier"},
+        "sessionId": {"$ref": "common.schema.json#/$defs/identifier"},
+        "expectedStateSha256": {"$ref": "common.schema.json#/$defs/sha256"},
+        "expectedLedgerHeadSha256": {"$ref": "common.schema.json#/$defs/sha256"}
+      }
+    },
+    "output": {
+      "$id": "crt-307.list-legal-court-moves.output.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "skillId", "requestId", "status", "reasonCode", "directive", "state", "moves", "menu", "toolReceipts", "resultFingerprint"],
+      "properties": {
+        "schemaVersion": {"const": "crt-307.list-legal-court-moves.output.v1"},
+        "skillId": {"const": "list_legal_court_moves"},
+        "requestId": {"$ref": "common.schema.json#/$defs/identifier"},
+        "status": {"enum": ["ok", "rejected", "unavailable", "denied", "reinspect"]},
+        "reasonCode": {"$ref": "common.schema.json#/$defs/identifier"},
+        "directive": {"$ref": "common.schema.json#/$defs/directive"},
+        "state": {"$ref": "common.schema.json#/$defs/nullableStateRef"},
+        "moves": {"type": "array", "maxItems": 2048, "items": {"$ref": "common.schema.json#/$defs/legalMove"}},
+        "menu": {"$ref": "common.schema.json#/$defs/nullableMenu"},
+        "toolReceipts": {"$ref": "common.schema.json#/$defs/toolReceipts"},
+        "resultFingerprint": {"$ref": "common.schema.json#/$defs/sha256"}
+      }
+    }
+  }
+}

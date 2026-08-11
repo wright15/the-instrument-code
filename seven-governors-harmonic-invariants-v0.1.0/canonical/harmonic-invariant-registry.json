@@ -1,0 +1,974 @@
+{
+  "carey535": {
+    "CQ": {
+      "denominator": 1,
+      "numerator": 1
+    },
+    "SQ": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "ambiguityWitnesses": [],
+    "contradictionWitnesses": [],
+    "counts": {
+      "ambiguities": 0,
+      "contradictions": 0,
+      "crossGenericComparisons": 150,
+      "differenceSlots": 40,
+      "differences": 20,
+      "failureSlots": 25,
+      "failures": 0,
+      "intervalInstances": 20
+    },
+    "differenceWitnesses": [
+      {
+        "left": {
+          "destination": 1,
+          "generic": 1,
+          "origin": 0,
+          "specific": 2
+        },
+        "right": {
+          "destination": 3,
+          "generic": 1,
+          "origin": 2,
+          "specific": 3
+        },
+        "witnessId": "difference:g1:o0:g1:o2"
+      },
+      {
+        "left": {
+          "destination": 1,
+          "generic": 1,
+          "origin": 0,
+          "specific": 2
+        },
+        "right": {
+          "destination": 0,
+          "generic": 1,
+          "origin": 4,
+          "specific": 3
+        },
+        "witnessId": "difference:g1:o0:g1:o4"
+      },
+      {
+        "left": {
+          "destination": 2,
+          "generic": 1,
+          "origin": 1,
+          "specific": 2
+        },
+        "right": {
+          "destination": 3,
+          "generic": 1,
+          "origin": 2,
+          "specific": 3
+        },
+        "witnessId": "difference:g1:o1:g1:o2"
+      },
+      {
+        "left": {
+          "destination": 2,
+          "generic": 1,
+          "origin": 1,
+          "specific": 2
+        },
+        "right": {
+          "destination": 0,
+          "generic": 1,
+          "origin": 4,
+          "specific": 3
+        },
+        "witnessId": "difference:g1:o1:g1:o4"
+      },
+      {
+        "left": {
+          "destination": 3,
+          "generic": 1,
+          "origin": 2,
+          "specific": 3
+        },
+        "right": {
+          "destination": 4,
+          "generic": 1,
+          "origin": 3,
+          "specific": 2
+        },
+        "witnessId": "difference:g1:o2:g1:o3"
+      },
+      {
+        "left": {
+          "destination": 4,
+          "generic": 1,
+          "origin": 3,
+          "specific": 2
+        },
+        "right": {
+          "destination": 0,
+          "generic": 1,
+          "origin": 4,
+          "specific": 3
+        },
+        "witnessId": "difference:g1:o3:g1:o4"
+      },
+      {
+        "left": {
+          "destination": 2,
+          "generic": 2,
+          "origin": 0,
+          "specific": 4
+        },
+        "right": {
+          "destination": 3,
+          "generic": 2,
+          "origin": 1,
+          "specific": 5
+        },
+        "witnessId": "difference:g2:o0:g2:o1"
+      },
+      {
+        "left": {
+          "destination": 2,
+          "generic": 2,
+          "origin": 0,
+          "specific": 4
+        },
+        "right": {
+          "destination": 4,
+          "generic": 2,
+          "origin": 2,
+          "specific": 5
+        },
+        "witnessId": "difference:g2:o0:g2:o2"
+      },
+      {
+        "left": {
+          "destination": 2,
+          "generic": 2,
+          "origin": 0,
+          "specific": 4
+        },
+        "right": {
+          "destination": 0,
+          "generic": 2,
+          "origin": 3,
+          "specific": 5
+        },
+        "witnessId": "difference:g2:o0:g2:o3"
+      },
+      {
+        "left": {
+          "destination": 2,
+          "generic": 2,
+          "origin": 0,
+          "specific": 4
+        },
+        "right": {
+          "destination": 1,
+          "generic": 2,
+          "origin": 4,
+          "specific": 5
+        },
+        "witnessId": "difference:g2:o0:g2:o4"
+      },
+      {
+        "left": {
+          "destination": 3,
+          "generic": 3,
+          "origin": 0,
+          "specific": 7
+        },
+        "right": {
+          "destination": 0,
+          "generic": 3,
+          "origin": 2,
+          "specific": 8
+        },
+        "witnessId": "difference:g3:o0:g3:o2"
+      },
+      {
+        "left": {
+          "destination": 4,
+          "generic": 3,
+          "origin": 1,
+          "specific": 7
+        },
+        "right": {
+          "destination": 0,
+          "generic": 3,
+          "origin": 2,
+          "specific": 8
+        },
+        "witnessId": "difference:g3:o1:g3:o2"
+      },
+      {
+        "left": {
+          "destination": 0,
+          "generic": 3,
+          "origin": 2,
+          "specific": 8
+        },
+        "right": {
+          "destination": 1,
+          "generic": 3,
+          "origin": 3,
+          "specific": 7
+        },
+        "witnessId": "difference:g3:o2:g3:o3"
+      },
+      {
+        "left": {
+          "destination": 0,
+          "generic": 3,
+          "origin": 2,
+          "specific": 8
+        },
+        "right": {
+          "destination": 2,
+          "generic": 3,
+          "origin": 4,
+          "specific": 7
+        },
+        "witnessId": "difference:g3:o2:g3:o4"
+      },
+      {
+        "left": {
+          "destination": 4,
+          "generic": 4,
+          "origin": 0,
+          "specific": 9
+        },
+        "right": {
+          "destination": 0,
+          "generic": 4,
+          "origin": 1,
+          "specific": 10
+        },
+        "witnessId": "difference:g4:o0:g4:o1"
+      },
+      {
+        "left": {
+          "destination": 4,
+          "generic": 4,
+          "origin": 0,
+          "specific": 9
+        },
+        "right": {
+          "destination": 1,
+          "generic": 4,
+          "origin": 2,
+          "specific": 10
+        },
+        "witnessId": "difference:g4:o0:g4:o2"
+      },
+      {
+        "left": {
+          "destination": 4,
+          "generic": 4,
+          "origin": 0,
+          "specific": 9
+        },
+        "right": {
+          "destination": 3,
+          "generic": 4,
+          "origin": 4,
+          "specific": 10
+        },
+        "witnessId": "difference:g4:o0:g4:o4"
+      },
+      {
+        "left": {
+          "destination": 0,
+          "generic": 4,
+          "origin": 1,
+          "specific": 10
+        },
+        "right": {
+          "destination": 2,
+          "generic": 4,
+          "origin": 3,
+          "specific": 9
+        },
+        "witnessId": "difference:g4:o1:g4:o3"
+      },
+      {
+        "left": {
+          "destination": 1,
+          "generic": 4,
+          "origin": 2,
+          "specific": 10
+        },
+        "right": {
+          "destination": 2,
+          "generic": 4,
+          "origin": 3,
+          "specific": 9
+        },
+        "witnessId": "difference:g4:o2:g4:o3"
+      },
+      {
+        "left": {
+          "destination": 2,
+          "generic": 4,
+          "origin": 3,
+          "specific": 9
+        },
+        "right": {
+          "destination": 3,
+          "generic": 4,
+          "origin": 4,
+          "specific": 10
+        },
+        "witnessId": "difference:g4:o3:g4:o4"
+      }
+    ],
+    "forteNumber": "5-35",
+    "generator": {
+      "denominator": 12,
+      "numerator": 7
+    },
+    "intervalInstances": [
+      {
+        "destination": 1,
+        "generic": 1,
+        "origin": 0,
+        "specific": 2
+      },
+      {
+        "destination": 2,
+        "generic": 1,
+        "origin": 1,
+        "specific": 2
+      },
+      {
+        "destination": 3,
+        "generic": 1,
+        "origin": 2,
+        "specific": 3
+      },
+      {
+        "destination": 4,
+        "generic": 1,
+        "origin": 3,
+        "specific": 2
+      },
+      {
+        "destination": 0,
+        "generic": 1,
+        "origin": 4,
+        "specific": 3
+      },
+      {
+        "destination": 2,
+        "generic": 2,
+        "origin": 0,
+        "specific": 4
+      },
+      {
+        "destination": 3,
+        "generic": 2,
+        "origin": 1,
+        "specific": 5
+      },
+      {
+        "destination": 4,
+        "generic": 2,
+        "origin": 2,
+        "specific": 5
+      },
+      {
+        "destination": 0,
+        "generic": 2,
+        "origin": 3,
+        "specific": 5
+      },
+      {
+        "destination": 1,
+        "generic": 2,
+        "origin": 4,
+        "specific": 5
+      },
+      {
+        "destination": 3,
+        "generic": 3,
+        "origin": 0,
+        "specific": 7
+      },
+      {
+        "destination": 4,
+        "generic": 3,
+        "origin": 1,
+        "specific": 7
+      },
+      {
+        "destination": 0,
+        "generic": 3,
+        "origin": 2,
+        "specific": 8
+      },
+      {
+        "destination": 1,
+        "generic": 3,
+        "origin": 3,
+        "specific": 7
+      },
+      {
+        "destination": 2,
+        "generic": 3,
+        "origin": 4,
+        "specific": 7
+      },
+      {
+        "destination": 4,
+        "generic": 4,
+        "origin": 0,
+        "specific": 9
+      },
+      {
+        "destination": 0,
+        "generic": 4,
+        "origin": 1,
+        "specific": 10
+      },
+      {
+        "destination": 1,
+        "generic": 4,
+        "origin": 2,
+        "specific": 10
+      },
+      {
+        "destination": 2,
+        "generic": 4,
+        "origin": 3,
+        "specific": 9
+      },
+      {
+        "destination": 3,
+        "generic": 4,
+        "origin": 4,
+        "specific": 10
+      }
+    ],
+    "seedPitchClasses": [
+      0,
+      2,
+      4,
+      7,
+      9
+    ],
+    "tolerance": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "tuning": "12-TET"
+  },
+  "compressionGuard": {
+    "forbiddenEquivalences": [
+      "physical.C_P",
+      "semantic.C_S",
+      "court.kappa_court",
+      "physical.temperature",
+      "physical.entropy",
+      "physical.enthalpy",
+      "physical.freeEnergy"
+    ],
+    "guardLiteral": "C_H is a derived harmonic property, not a photonic measurement, not C_P, not C_S, not kappa_court, and not a thermodynamic quantity: not temperature, entropy, enthalpy, or free energy.",
+    "namespace": "harmonic.C_H",
+    "status": "unresolved",
+    "symbol": "C_H",
+    "value": null
+  },
+  "courtGeometry": {
+    "gramMatrix": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "hammingMatrix": [
+      [
+        0,
+        2,
+        4,
+        6,
+        8
+      ],
+      [
+        2,
+        0,
+        2,
+        4,
+        6
+      ],
+      [
+        4,
+        2,
+        0,
+        2,
+        4
+      ],
+      [
+        6,
+        4,
+        2,
+        0,
+        2
+      ],
+      [
+        8,
+        6,
+        4,
+        2,
+        0
+      ]
+    ],
+    "kappaCourt": [
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 4,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 4,
+        "numerator": 3
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      }
+    ],
+    "positionIds": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "positionMasks": [
+      661,
+      677,
+      1189,
+      1193,
+      1321
+    ],
+    "signedTransitionVectors": [
+      [
+        0,
+        0,
+        0,
+        0,
+        -1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "weights": [
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "xorSupports": [
+      [
+        4,
+        5
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        7,
+        8
+      ]
+    ]
+  },
+  "integratedAdmission": "proposed_pending_crt_309",
+  "invariantFingerprint": "ad604fdb42144882d38433e734759fcd5c160dfe628139ce0ede1ff093481323",
+  "invariants": [
+    {
+      "diagnostics": [],
+      "invariantId": "carey.coherence_quotient_5_35",
+      "kind": "exact_ratio",
+      "provenance": [
+        {
+          "doi": "10.1080/17459730701376743",
+          "path": null,
+          "pointer": "Carey 2007 formal CQ/SQ source",
+          "sha256": null,
+          "sourceType": "external_doi"
+        }
+      ],
+      "status": "proven",
+      "value": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    {
+      "diagnostics": [],
+      "invariantId": "carey.sameness_quotient_5_35",
+      "kind": "exact_ratio",
+      "provenance": [
+        {
+          "doi": "10.1080/17459730701376743",
+          "path": null,
+          "pointer": "Carey 2007 formal CQ/SQ source",
+          "sha256": null,
+          "sourceType": "external_doi"
+        }
+      ],
+      "status": "proven",
+      "value": {
+        "denominator": 2,
+        "numerator": 1
+      }
+    },
+    {
+      "diagnostics": [],
+      "invariantId": "court.disjoint_xor_supports",
+      "kind": "exact_sets",
+      "provenance": [
+        {
+          "doi": null,
+          "path": "framework/AGENTS.md",
+          "pointer": "Court XOR supports {4,5}, {9,10}, {2,3}, {7,8}",
+          "sha256": "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24",
+          "sourceType": "local_document"
+        }
+      ],
+      "status": "proven",
+      "value": [
+        [
+          4,
+          5
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          7,
+          8
+        ]
+      ]
+    },
+    {
+      "diagnostics": [],
+      "invariantId": "court.gram_matrix",
+      "kind": "exact_matrix",
+      "provenance": [
+        {
+          "doi": null,
+          "path": "framework/TOPOLOGICAL_ANCHORING.md",
+          "pointer": "Court signed transition vectors and G_Court = 2I_4",
+          "sha256": "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c",
+          "sourceType": "local_document"
+        }
+      ],
+      "status": "proven",
+      "value": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "diagnostics": [],
+      "invariantId": "court.hamming_path",
+      "kind": "exact_matrix",
+      "provenance": [
+        {
+          "doi": null,
+          "path": "framework/TOPOLOGICAL_ANCHORING.md",
+          "pointer": "d_H(C_i,C_j) = 2|i-j|",
+          "sha256": "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c",
+          "sourceType": "local_document"
+        }
+      ],
+      "status": "proven",
+      "value": [
+        [
+          0,
+          2,
+          4,
+          6,
+          8
+        ],
+        [
+          2,
+          0,
+          2,
+          4,
+          6
+        ],
+        [
+          4,
+          2,
+          0,
+          2,
+          4
+        ],
+        [
+          6,
+          4,
+          2,
+          0,
+          2
+        ],
+        [
+          8,
+          6,
+          4,
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "diagnostics": [],
+      "invariantId": "court.kappa_exact",
+      "kind": "exact_ratios",
+      "provenance": [
+        {
+          "doi": null,
+          "path": "docs/COURT_ADMISSION_AND_AUTHORITY.md",
+          "pointer": "Fourth compression coordinate kappa(C_i)=i/4",
+          "sha256": "5a659f14506d1c48e7be2d51d32510b7fb4dd4c1b3d32fcef8ee48e0b6e10637",
+          "sourceType": "local_document"
+        }
+      ],
+      "status": "proven",
+      "value": [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 4,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    },
+    {
+      "diagnostics": [],
+      "invariantId": "court.weight_five",
+      "kind": "exact_vector",
+      "provenance": [
+        {
+          "doi": null,
+          "path": "framework/TOPOLOGICAL_ANCHORING.md",
+          "pointer": "Every canonical Court state has weight five",
+          "sha256": "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c",
+          "sourceType": "local_document"
+        }
+      ],
+      "status": "proven",
+      "value": [
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "diagnostics": [],
+      "invariantId": "harmonic.aggregate_C_H_guard",
+      "kind": "namespace_guard",
+      "provenance": [
+        {
+          "doi": null,
+          "path": "docs/COURT_ADMISSION_AND_AUTHORITY.md",
+          "pointer": "Fourth compression coordinate non-equivalence and unresolved aggregate C_H",
+          "sha256": "5a659f14506d1c48e7be2d51d32510b7fb4dd4c1b3d32fcef8ee48e0b6e10637",
+          "sourceType": "local_document"
+        }
+      ],
+      "status": "unresolved_guarded",
+      "value": {
+        "forbiddenEquivalences": [
+          "physical.C_P",
+          "semantic.C_S",
+          "court.kappa_court",
+          "physical.temperature",
+          "physical.entropy",
+          "physical.enthalpy",
+          "physical.freeEnergy"
+        ],
+        "guardLiteral": "C_H is a derived harmonic property, not a photonic measurement, not C_P, not C_S, not kappa_court, and not a thermodynamic quantity: not temperature, entropy, enthalpy, or free energy.",
+        "namespace": "harmonic.C_H",
+        "status": "unresolved",
+        "symbol": "C_H",
+        "value": null
+      }
+    }
+  ],
+  "packageId": "seven-governors-harmonic-invariants",
+  "packageVersion": "0.1.0",
+  "releaseId": "harmonic-invariants:0.1.0",
+  "schemaVersion": "1.0.0",
+  "sourceFingerprint": "aa8cf2d5d060048bb7809fd78cccf8b3e0d6c71ff9b85c35e5551298f63e08e5",
+  "sourceHashes": [
+    {
+      "path": "court-mathematics/docs/01_COURT_LEXICON.md",
+      "sha256": "2b63dfdb793a83c35d954eff08c69afd3d5d1a15c3abc3a027a68fccff72cced"
+    },
+    {
+      "path": "docs/COURT_ADMISSION_AND_AUTHORITY.md",
+      "sha256": "5a659f14506d1c48e7be2d51d32510b7fb4dd4c1b3d32fcef8ee48e0b6e10637"
+    },
+    {
+      "path": "framework/AGENTS.md",
+      "sha256": "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24"
+    },
+    {
+      "path": "framework/NATURAL_ORGANIZATION_THESIS.md",
+      "sha256": "898626127fbc7d7538bb954326f230db4bf97f084f35122c6e42b68dcdd37af9"
+    },
+    {
+      "path": "framework/TOPOLOGICAL_ANCHORING.md",
+      "sha256": "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/harmonic-measure-definitions.json",
+      "sha256": "1a234e60ca71c0aa4d5ebc41c2aad16eaf0430e1b444b5d71deced8a01e421bc"
+    },
+    {
+      "path": "seven-governors-court-substrate-v0.1.0/canonical/substrate-registry-release.json",
+      "sha256": "6906a5b7a495feee7dddb02ee936393052e58315c28893a58c700ec60000f9a3"
+    },
+    {
+      "path": "seven-governors-harmonic-invariants-v0.1.0/source/invariant-input.json",
+      "sha256": "d9ad072fe51e3eb2adddc29dd62f16b27a624e1ab2cd307dd2cd7bdb73b7d0c9"
+    }
+  ],
+  "substrateDependency": {
+    "path": "seven-governors-court-substrate-v0.1.0/canonical/substrate-registry-release.json",
+    "releaseId": "court-substrate:0.1.0",
+    "substrateFingerprint": "fda4707f63b08ca02a155f8d5d8c738534f17e0ab2a234d79f83bf30f16a2fc2"
+  },
+  "summary": {
+    "careyDifferenceWitnessCount": 20,
+    "careyFailureWitnessCount": 0,
+    "invariantCount": 8,
+    "provenCount": 7,
+    "unresolvedGuardCount": 1
+  }
+}

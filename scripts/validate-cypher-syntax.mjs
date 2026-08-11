@@ -39,6 +39,10 @@ const schema = {
     "CourtState",
     "CourtRootedPosition",
     "PoleRegister",
+    "CourtRuntimeSession",
+    "CourtTransitionEvent",
+    "CourtLedgerSnapshot",
+    "TopologicalTranslocationRecord",
   ],
   relationshipTypes: [
     "GOVERNS",
@@ -69,6 +73,11 @@ const schema = {
     "YIELDS_ADMITTED_SET",
     "HAS_COMMUTATION_RESULT",
     "HAS_POLE_REGISTER",
+    "HAS_TRANSITION_EVENT",
+    "HAS_LEDGER_SNAPSHOT",
+    "SNAPSHOTS_STATE",
+    "HAS_TRANSLOCATION",
+    "USES_ROUTE_RECORD",
   ],
   propertyKeys: [],
 };

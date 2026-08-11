@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/crt-307/schemas/verify-court-postcondition.schema.json",
+  "title": "CRT-307 verify_court_postcondition facade contracts",
+  "oneOf": [{"$ref": "#/$defs/input"}, {"$ref": "#/$defs/output"}],
+  "$defs": {
+    "input": {
+      "$id": "crt-307.verify-court-postcondition.input.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "requestId", "sessionId", "eventId", "expectedStateSha256", "expectedLedgerHeadSha256"],
+      "properties": {
+        "schemaVersion": {"const": "crt-307.verify-court-postcondition.input.v1"},
+        "requestId": {"$ref": "common.schema.json#/$defs/identifier"},
+        "sessionId": {"$ref": "common.schema.json#/$defs/identifier"},
+        "eventId": {"$ref": "common.schema.json#/$defs/sha256"},
+        "expectedStateSha256": {"$ref": "common.schema.json#/$defs/sha256"},
+        "expectedLedgerHeadSha256": {"$ref": "common.schema.json#/$defs/sha256"},
+        "includeGraphContext": {"type": "boolean"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eventFound", "eventIdBound", "verifiedEvidenceRecorded", "targetStateBound", "chainValid", "eventChainClosure", "semanticReplayValid"],
+      "properties": {
+        "eventFound": {"type": "boolean"},
+        "eventIdBound": {"type": "boolean"},
+        "verifiedEvidenceRecorded": {"type": "boolean"},
+        "targetStateBound": {"type": "boolean"},
+        "chainValid": {"type": "boolean"},
+        "eventChainClosure": {"type": "boolean"},
+        "semanticReplayValid": {"type": "boolean"}
+      }
+    },
+    "nullableMoveOperation": {"oneOf": [{"$ref": "common.schema.json#/$defs/courtMoveOperationId"}, {"type": "null"}]},
+    "nullablePosition": {"oneOf": [{"$ref": "common.schema.json#/$defs/positionId"}, {"type": "null"}]},
+    "postcondition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eventId", "operationId", "targetPosition", "checks"],
+      "properties": {
+        "eventId": {"$ref": "common.schema.json#/$defs/sha256"},
+        "operationId": {"$ref": "https://seven-governors.local/crt-307/schemas/verify-court-postcondition.schema.json#/$defs/nullableMoveOperation"},
+        "targetPosition": {"$ref": "https://seven-governors.local/crt-307/schemas/verify-court-postcondition.schema.json#/$defs/nullablePosition"},
+        "checks": {"$ref": "https://seven-governors.local/crt-307/schemas/verify-court-postcondition.schema.json#/$defs/checks"}
+      }
+    },
+    "nullablePostcondition": {"oneOf": [{"$ref": "https://seven-governors.local/crt-307/schemas/verify-court-postcondition.schema.json#/$defs/postcondition"}, {"type": "null"}]},
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mayDeclareSuccess", "claimCode"],
+      "properties": {"mayDeclareSuccess": {"type": "boolean"}, "claimCode": {"$ref": "common.schema.json#/$defs/identifier"}}
+    },
+    "output": {
+      "$id": "crt-307.verify-court-postcondition.output.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "skillId", "requestId", "status", "reasonCode", "directive", "state", "replay", "postcondition", "claim", "graph", "menu", "toolReceipts", "resultFingerprint"],
+      "properties": {
+        "schemaVersion": {"const": "crt-307.verify-court-postcondition.output.v1"},
+        "skillId": {"const": "verify_court_postcondition"},
+        "requestId": {"$ref": "common.schema.json#/$defs/identifier"},
+        "status": {"enum": ["verified", "rejected", "unavailable", "denied", "reinspect"]},
+        "reasonCode": {"$ref": "common.schema.json#/$defs/identifier"},
+        "directive": {"$ref": "common.schema.json#/$defs/directive"},
+        "state": {"$ref": "common.schema.json#/$defs/nullableStateRef"},
+        "replay": {"$ref": "common.schema.json#/$defs/replaySummary"},
+        "postcondition": {"$ref": "https://seven-governors.local/crt-307/schemas/verify-court-postcondition.schema.json#/$defs/nullablePostcondition"},
+        "claim": {"$ref": "https://seven-governors.local/crt-307/schemas/verify-court-postcondition.schema.json#/$defs/claim"},
+        "graph": {"$ref": "common.schema.json#/$defs/nullableGraphContext"},
+        "menu": {"$ref": "common.schema.json#/$defs/nullableMenu"},
+        "toolReceipts": {"$ref": "common.schema.json#/$defs/toolReceipts"},
+        "resultFingerprint": {"$ref": "common.schema.json#/$defs/sha256"}
+      }
+    }
+  }
+}

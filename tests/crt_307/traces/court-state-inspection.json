@@ -1,0 +1,11 @@
+{
+  "traceId": "crt307-state-inspection",
+  "setup": {"position": "C2"},
+  "steps": [
+    {
+      "operation": "inspect_court_state",
+      "expect": {"status": "ok", "reasonCode": "ok"}
+    }
+  ],
+  "expectedFinal": {"position": "C2", "eventCount": 0}
+}

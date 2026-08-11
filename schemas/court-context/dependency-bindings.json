@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "crt-308.dependency-bindings.v1",
+  "bindings": [
+    {"path": "schemas/court-runtime-policy.json", "sha256": "5164b74bf6cbbb55625eb0e9b958542cf20ddacb426813b7a93c1bffd7347605", "role": "CRT-305 policy bytes"},
+    {"path": "src/governor/court_graph_queries.py", "sha256": "3442e4cd03a3885a5cd7706d8146974eba20fc564edf08acb4bb2db0479ddcc8", "role": "CRT-306 query-catalog bytes"},
+    {"path": "seven-governors-court-substrate-v0.1.0/canonical/substrate-registry-release.json", "sha256": "6906a5b7a495feee7dddb02ee936393052e58315c28893a58c700ec60000f9a3", "role": "CRT-302 substrate"},
+    {"path": "seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json", "sha256": "75b3ffaa0b126c4dbf0abf6e42a4674724092b0e403a2862d893b6f1493d0e6f", "role": "CRT-303 invariant registry"},
+    {"path": "seven-governors-court-filter-algebra-v0.1.0/canonical/filter-algebra-release.json", "sha256": "83bb95522b91170914c1a1306d2ae0d5e084842eea2723c2c0d9d44ef0543368", "role": "CRT-304 filter algebra"}
+  ]
+}

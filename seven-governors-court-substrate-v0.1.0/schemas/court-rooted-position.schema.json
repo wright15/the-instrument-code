@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/court-substrate/0.1.0/schemas/court-rooted-position.schema.json",
+  "title": "CourtRootedPosition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "positionId",
+    "setClassId",
+    "rootPc",
+    "pitchClasses",
+    "pitchMask",
+    "pitchMask12",
+    "poleRegister",
+    "kappaCourt",
+    "xorSupportFromPrevious",
+    "t5CycleIndex",
+    "t5Offset",
+    "rawComplementMask",
+    "normalizedComplementScaleStateId",
+    "complementFamilyId",
+    "admissionStatus"
+  ],
+  "properties": {
+    "positionId": { "enum": ["C0", "C1", "C2", "C3", "C4"] },
+    "setClassId": { "const": "pentatonic:5-35" },
+    "rootPc": { "const": 0 },
+    "pitchClasses": { "$ref": "common.schema.json#/$defs/pitchClasses" },
+    "pitchMask": { "type": "integer", "minimum": 1, "maximum": 4095 },
+    "pitchMask12": { "$ref": "common.schema.json#/$defs/mask12" },
+    "poleRegister": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["vector", "poleOrder", "internalPoles"],
+      "properties": {
+        "vector": { "type": "string", "pattern": "^[01]{4}$" },
+        "poleOrder": { "const": ["Mars", "Jupiter", "Venus", "Saturn"] },
+        "internalPoles": {
+          "type": "array",
+          "maxItems": 4,
+          "uniqueItems": true,
+          "items": { "enum": ["Mars", "Jupiter", "Venus", "Saturn"] }
+        }
+      }
+    },
+    "kappaCourt": { "$ref": "common.schema.json#/$defs/exactRatio" },
+    "xorSupportFromPrevious": {
+      "oneOf": [
+        {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": { "$ref": "common.schema.json#/$defs/pitchClass" }
+        },
+        { "type": "null" }
+      ]
+    },
+    "t5CycleIndex": { "type": "integer", "minimum": 0, "maximum": 4 },
+    "t5Offset": { "$ref": "common.schema.json#/$defs/pitchClass" },
+    "rawComplementMask": { "type": "integer", "minimum": 1, "maximum": 4095 },
+    "normalizedComplementScaleStateId": { "type": "integer", "minimum": 1, "maximum": 4095 },
+    "complementFamilyId": { "const": "7-35" },
+    "admissionStatus": { "const": "admitted" }
+  }
+}

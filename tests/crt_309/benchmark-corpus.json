@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "crt-309.benchmark-corpus.v1",
+  "cases": [
+    {"caseId": "canonical-c0-c4-cycle", "metric": "success", "evidenceRef": "tests/test_court_runtime_transitions.py", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-court-tools": true}},
+    {"caseId": "carey-cq-sq-reproduction", "metric": "success", "evidenceRef": "tests/verification/test_harmonic_invariant_registry.py", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-court-tools": true}},
+    {"caseId": "aeolian-harmonic-minor-bridge", "metric": "success", "evidenceRef": "tests/verification/test_court_filter_algebra_registry.py", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-court-tools": true}},
+    {"caseId": "off-chain-rejection", "metric": "offChainRejection", "evidenceRef": "tests/crt_307/traces/off-chain-rejection.json", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-court-tools": true}},
+    {"caseId": "non-adjacent-rejection", "metric": "nonAdjacentRejection", "evidenceRef": "tests/crt_307/traces/invalid-court-move.json", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-court-tools": true}},
+    {"caseId": "filter-non-commutation", "metric": "filterNonCommutation", "evidenceRef": "tests/verification/test_court_filter_algebra_registry.py", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-court-tools": true}},
+    {"caseId": "topological-translocation-acceptance", "metric": "success", "evidenceRef": "tests/crt_307/traces/translocation-acceptance.json", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-court-tools": true}},
+    {"caseId": "court-ledger-tamper-rejection", "metric": "offChainRejection", "evidenceRef": "tests/verification/test_court_runtime_security.py", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-court-tools": true}},
+    {"caseId": "repeated-action-stop", "metric": "repeatedActionStop", "evidenceRef": "tests/crt_307/traces/no-progress-loop-stop.json", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-court-tools": true}},
+    {"caseId": "structured-recovery", "metric": "recovery", "evidenceRef": "tests/crt_307/traces/off-chain-rejection.json", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-court-tools": true}}
+  ]
+}

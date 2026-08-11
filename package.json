@@ -1,6 +1,6 @@
 {
   "name": "seven-governors-integrated-release",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "private": true,
   "type": "module",
   "description": "Framework sources, canonical topology, Neo4j projection, provenance, validation, and interactive Seven Governors graph.",
@@ -20,8 +20,24 @@
     "test:gov206": "node --test tests/gov_206/projection.test.mjs",
     "test:gov206:neo4j": "node --test tests/gov_206/neo4j-live.test.mjs",
     "validate:gov206": "node --test tests/gov_206/projection.test.mjs && node scripts/validate-cypher-syntax.mjs",
+    "validate:court-substrate": "npm run validate --prefix seven-governors-court-substrate-v0.1.0",
+    "validate:harmonic-invariants": "npm run validate --prefix seven-governors-harmonic-invariants-v0.1.0",
+    "validate:court-filter-algebra": "npm run validate --prefix seven-governors-court-filter-algebra-v0.1.0",
+    "validate:court-runtime": "python3 -m pytest -p no:cacheprovider -q tests/test_court_runtime_transitions.py tests/test_court_runtime_store.py tests/verification/test_court_runtime_security.py",
     "test:court-graph": "python3 -m pytest tests/test_court_graph_projection.py",
-    "test:court-graph:neo4j": "node --test tests/court_graph/neo4j-live.test.mjs"
+    "test:court-graph:neo4j": "node --test tests/court_graph/neo4j-live.test.mjs",
+    "validate:court-skills": "node scripts/validate-court-skills.mjs && python3 -m pytest -p no:cacheprovider -q tests/test_crt_307_court_agent_api.py && node --test tests/crt_307/*.test.mjs",
+    "test:court-skills": "python3 -m pytest -p no:cacheprovider -q tests/test_crt_307_court_agent_api.py && node --test tests/crt_307/*.test.mjs",
+    "install:court-skills": "node scripts/install-court-skills.mjs",
+    "observe:court-skills:local": "node scripts/run-crt307-local-model-observation.mjs",
+    "test:gov208": "python3 -m pytest -p no:cacheprovider -q tests/test_gov_208_vault_context.py",
+    "test:crt308": "python3 -m pytest -p no:cacheprovider -q tests/test_crt_308_court_vault_context.py",
+    "validate:vault-context": "node scripts/validate-vault-context.mjs",
+    "benchmark:court-admission": "node scripts/run-court-admission-benchmark.mjs",
+    "build:court-admission": "node scripts/build-court-admission.mjs",
+    "validate:court-admission": "node scripts/validate-court-admission.mjs",
+    "benchmark:governor-admission": "node scripts/run-governor-admission-benchmark.mjs",
+    "validate:governor-admission": "node scripts/validate-governor-admission.mjs"
   },
   "engines": {
     "node": ">=20"

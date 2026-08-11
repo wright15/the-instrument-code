@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/crt-307/schemas/common.schema.json",
+  "title": "CRT-307 shared Court facade contracts",
+  "$defs": {
+    "identifier": {"type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "nullableSha256": {"oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]},
+    "pitchMask": {"type": "integer", "minimum": 0, "maximum": 4095},
+    "positionId": {"enum": ["C0", "C1", "C2", "C3", "C4"]},
+    "operationId": {"enum": ["inspect_court_state", "list_legal_court_moves", "validate_and_execute_court_transition", "project_through_court", "verify_court_postcondition"]},
+    "courtMoveOperationId": {"enum": ["court:advance", "court:retreat", "court:translocate"]},
+    "queryId": {"enum": ["court_filter_commutation_outputs", "court_runtime_state_for_session", "court_verified_events_for_session"]},
+    "status": {"enum": ["ok", "verified", "rejected", "unavailable", "denied", "reinspect", "replan", "stopped"]},
+    "kappaCourt": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"const": 0}, "denominator": {"const": 1}}},
+        {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"const": 1}, "denominator": {"const": 4}}},
+        {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"const": 1}, "denominator": {"const": 2}}},
+        {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"const": 3}, "denominator": {"const": 4}}},
+        {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"const": 1}, "denominator": {"const": 1}}}
+      ]
+    },
+    "stateRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sessionId", "positionId", "revision", "stateSha256", "ledgerHeadSha256", "eventCount", "policyFingerprint", "contextFingerprint", "harmonicProfileSha256", "pitchMask", "poleVector", "internalPoles", "kappaCourt", "snapshotHash"],
+      "properties": {
+        "sessionId": {"$ref": "#/$defs/identifier"},
+        "positionId": {"$ref": "#/$defs/positionId"},
+        "revision": {"type": "integer", "minimum": 0, "maximum": 2147483647},
+        "stateSha256": {"$ref": "#/$defs/sha256"},
+        "ledgerHeadSha256": {"$ref": "#/$defs/sha256"},
+        "eventCount": {"type": "integer", "minimum": 0, "maximum": 2147483647},
+        "policyFingerprint": {"$ref": "#/$defs/sha256"},
+        "contextFingerprint": {"$ref": "#/$defs/sha256"},
+        "harmonicProfileSha256": {"$ref": "#/$defs/sha256"},
+        "pitchMask": {"$ref": "#/$defs/pitchMask"},
+        "poleVector": {"type": "string", "pattern": "^[01]{4}$"},
+        "internalPoles": {"type": "array", "maxItems": 4, "uniqueItems": true, "items": {"enum": ["Mars", "Jupiter", "Venus", "Saturn"]}},
+        "kappaCourt": {"$ref": "#/$defs/kappaCourt"},
+        "snapshotHash": {"$ref": "#/$defs/sha256"}
+      },
+      "allOf": [
+        {"if": {"properties": {"positionId": {"const": "C0"}}}, "then": {"properties": {"pitchMask": {"const": 661}, "poleVector": {"const": "0000"}, "internalPoles": {"const": []}, "kappaCourt": {"const": {"numerator": 0, "denominator": 1}}}}},
+        {"if": {"properties": {"positionId": {"const": "C1"}}}, "then": {"properties": {"pitchMask": {"const": 677}, "poleVector": {"const": "1000"}, "internalPoles": {"const": ["Mars"]}, "kappaCourt": {"const": {"numerator": 1, "denominator": 4}}}}},
+        {"if": {"properties": {"positionId": {"const": "C2"}}}, "then": {"properties": {"pitchMask": {"const": 1189}, "poleVector": {"const": "1100"}, "internalPoles": {"const": ["Mars", "Jupiter"]}, "kappaCourt": {"const": {"numerator": 1, "denominator": 2}}}}},
+        {"if": {"properties": {"positionId": {"const": "C3"}}}, "then": {"properties": {"pitchMask": {"const": 1193}, "poleVector": {"const": "1110"}, "internalPoles": {"const": ["Mars", "Jupiter", "Venus"]}, "kappaCourt": {"const": {"numerator": 3, "denominator": 4}}}}},
+        {"if": {"properties": {"positionId": {"const": "C4"}}}, "then": {"properties": {"pitchMask": {"const": 1321}, "poleVector": {"const": "1111"}, "internalPoles": {"const": ["Mars", "Jupiter", "Venus", "Saturn"]}, "kappaCourt": {"const": {"numerator": 1, "denominator": 1}}}}}
+      ]
+    },
+    "nullableStateRef": {"oneOf": [{"$ref": "#/$defs/stateRef"}, {"type": "null"}]},
+    "directive": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["action", "reasonCode", "operatorActionRequired"],
+      "properties": {"action": {"enum": ["continue", "reinspect", "replan", "stop"]}, "reasonCode": {"$ref": "#/$defs/identifier"}, "operatorActionRequired": {"type": "boolean"}}
+    },
+    "toolReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["toolId", "operationId", "status", "requestFingerprint", "resultFingerprint"],
+      "properties": {
+        "toolId": {"const": "governor.court_agent_api.invoke"},
+        "operationId": {"oneOf": [{"$ref": "#/$defs/operationId"}, {"$ref": "#/$defs/queryId"}]},
+        "status": {"$ref": "#/$defs/status"},
+        "requestFingerprint": {"$ref": "#/$defs/sha256"},
+        "resultFingerprint": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "toolReceipts": {"type": "array", "minItems": 1, "maxItems": 16, "items": {"$ref": "#/$defs/toolReceipt"}},
+    "replaySummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["valid", "eventCount", "ledgerHeadSha256", "firstFailingSequence", "reasonCode", "snapshotHash"],
+      "properties": {
+        "valid": {"type": "boolean"},
+        "eventCount": {"type": "integer", "minimum": 0, "maximum": 2147483647},
+        "ledgerHeadSha256": {"$ref": "#/$defs/sha256"},
+        "firstFailingSequence": {"oneOf": [{"type": "integer", "minimum": 1, "maximum": 2147483647}, {"type": "null"}]},
+        "reasonCode": {"$ref": "#/$defs/identifier"},
+        "snapshotHash": {"$ref": "#/$defs/nullableSha256"}
+      }
+    },
+    "moveParameterSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "required", "properties", "additionalProperties"],
+      "properties": {
+        "type": {"const": "object"},
+        "required": {"const": ["targetPosition"]},
+        "properties": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["targetPosition"],
+          "properties": {
+            "targetPosition": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["type", "const"],
+              "properties": {"type": {"const": "string"}, "const": {"$ref": "#/$defs/positionId"}}
+            }
+          }
+        },
+        "additionalProperties": {"const": false}
+      }
+    },
+    "legalMove": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operationId", "targetPosition", "capability", "priorStateSha256", "policyFingerprint", "translocationHash", "routeContextHash", "moveHash", "parameterSchema", "postconditions"],
+      "properties": {
+        "operationId": {"$ref": "#/$defs/courtMoveOperationId"},
+        "targetPosition": {"$ref": "#/$defs/positionId"},
+        "capability": {"enum": ["court.transition", "court.translocate"]},
+        "priorStateSha256": {"$ref": "#/$defs/sha256"},
+        "policyFingerprint": {"$ref": "#/$defs/sha256"},
+        "translocationHash": {"$ref": "#/$defs/nullableSha256"},
+        "routeContextHash": {"$ref": "#/$defs/nullableSha256"},
+        "moveHash": {"$ref": "#/$defs/sha256"},
+        "parameterSchema": {"$ref": "#/$defs/moveParameterSchema"},
+        "postconditions": {"type": "array", "minItems": 3, "maxItems": 3, "prefixItems": [{"const": "recorded_verified_evidence"}, {"const": "semantic_replay_valid"}, {"type": "string", "pattern": "^terminal_position:C[0-4]$"}], "items": false}
+      }
+    },
+    "menu": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "positionId", "kappaCourt", "skills", "namedQueries", "moves", "executorExposed", "menuFingerprint"],
+      "properties": {
+        "schemaVersion": {"const": "crt-307.court-menu.v1"},
+        "positionId": {"$ref": "#/$defs/positionId"},
+        "kappaCourt": {"$ref": "#/$defs/kappaCourt"},
+        "skills": {"type": "array", "maxItems": 5, "uniqueItems": true, "items": {"$ref": "#/$defs/operationId"}},
+        "namedQueries": {"type": "array", "maxItems": 3, "uniqueItems": true, "items": {"$ref": "#/$defs/queryId"}},
+        "moves": {"type": "array", "maxItems": 2048, "items": {"$ref": "#/$defs/legalMove"}},
+        "executorExposed": {"type": "boolean"},
+        "menuFingerprint": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "nullableMenu": {"oneOf": [{"$ref": "#/$defs/menu"}, {"type": "null"}]},
+    "graphQueryResult": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["queryId", "rowCount", "rowsFingerprint"], "properties": {"queryId": {"const": "court_runtime_state_for_session"}, "rowCount": {"type": "integer", "minimum": 0, "maximum": 1}, "rowsFingerprint": {"$ref": "#/$defs/sha256"}}},
+        {"type": "object", "additionalProperties": false, "required": ["queryId", "rowCount", "rowsFingerprint"], "properties": {"queryId": {"const": "court_verified_events_for_session"}, "rowCount": {"type": "integer", "minimum": 0, "maximum": 100}, "rowsFingerprint": {"$ref": "#/$defs/sha256"}}},
+        {"type": "object", "additionalProperties": false, "required": ["queryId", "rowCount", "rowsFingerprint"], "properties": {"queryId": {"const": "court_filter_commutation_outputs"}, "rowCount": {"type": "integer", "minimum": 0, "maximum": 100}, "rowsFingerprint": {"$ref": "#/$defs/sha256"}}}
+      ]
+    },
+    "graphContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requested", "available", "authoritative", "status", "reasonCode", "queryResults", "receipts"],
+      "properties": {
+        "requested": {"type": "boolean"},
+        "available": {"type": "boolean"},
+        "authoritative": {"const": false},
+        "status": {"enum": ["not_requested", "denied", "unavailable", "failed", "ok"]},
+        "reasonCode": {"$ref": "#/$defs/identifier"},
+        "queryResults": {"type": "array", "maxItems": 2, "items": {"$ref": "#/$defs/graphQueryResult"}},
+        "receipts": {"type": "array", "maxItems": 2, "items": {"$ref": "#/$defs/toolReceipt"}}
+      }
+    },
+    "nullableGraphContext": {"oneOf": [{"$ref": "#/$defs/graphContext"}, {"type": "null"}]}
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/court-substrate/0.1.0/schemas/pentatonic-set-class.schema.json",
+  "title": "PentatonicSetClass",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "setClassId",
+    "forteNumber",
+    "forteOrdinal",
+    "representativePitchClasses",
+    "representativeMask",
+    "representativeMask12",
+    "weight",
+    "sourceScaleStateId",
+    "complementMapId",
+    "t5Reference",
+    "admissionStatus",
+    "admissionBlocker"
+  ],
+  "properties": {
+    "setClassId": {
+      "type": "string",
+      "pattern": "^pentatonic:5-(?:Z)?[0-9]+$"
+    },
+    "forteNumber": {
+      "type": "string",
+      "pattern": "^5-(?:Z)?[0-9]+$"
+    },
+    "forteOrdinal": { "type": "integer", "minimum": 1, "maximum": 38 },
+    "representativePitchClasses": {
+      "$ref": "common.schema.json#/$defs/pitchClasses"
+    },
+    "representativeMask": { "type": "integer", "minimum": 1, "maximum": 4095 },
+    "representativeMask12": { "$ref": "common.schema.json#/$defs/mask12" },
+    "weight": { "const": 5 },
+    "sourceScaleStateId": { "type": "integer", "minimum": 1, "maximum": 4095 },
+    "complementMapId": { "type": "string", "minLength": 1 },
+    "t5Reference": {
+      "oneOf": [
+        { "$ref": "common.schema.json#/$defs/t5Reference" },
+        { "type": "null" }
+      ]
+    },
+    "admissionStatus": {
+      "$ref": "common.schema.json#/$defs/admissionStatusId"
+    },
+    "admissionBlocker": {
+      "type": ["string", "null"]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "admissionStatus": { "const": "proposed" } },
+        "required": ["admissionStatus"]
+      },
+      "then": {
+        "properties": {
+          "admissionBlocker": { "type": "string", "minLength": 1 },
+          "t5Reference": { "type": "null" }
+        }
+      },
+      "else": {
+        "properties": {
+          "admissionBlocker": { "type": "null" },
+          "t5Reference": { "$ref": "common.schema.json#/$defs/t5Reference" }
+        }
+      }
+    }
+  ]
+}

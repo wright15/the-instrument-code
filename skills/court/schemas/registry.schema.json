@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/crt-307/schemas/registry.schema.json",
+  "title": "CRT-307 Court skill registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "bundleId", "bundleVersion", "apiVersion", "toolId", "integratedAdmission", "contracts", "dependencies", "limits", "fingerprints", "adapters", "skills"],
+  "properties": {
+    "schemaVersion": {"const": "crt-307.registry.v1"},
+    "bundleId": {"const": "seven-governors-crt-307"},
+    "bundleVersion": {"const": "1.0.0"},
+    "apiVersion": {"const": "crt-307.court-agent-api.v1"},
+    "toolId": {"const": "governor.court_agent_api.invoke"},
+    "integratedAdmission": {"const": "proposed_pending_crt_309"},
+    "contracts": {"$ref": "#/$defs/contracts"},
+    "dependencies": {"$ref": "#/$defs/dependencies"},
+    "limits": {"$ref": "#/$defs/limits"},
+    "fingerprints": {"$ref": "#/$defs/fingerprints"},
+    "adapters": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/adapterRef"}},
+    "skills": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/skill"}}
+  },
+  "$defs": {
+    "relativePath": {"type": "string", "minLength": 1, "maxLength": 512, "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.?(?:/|$))[A-Za-z0-9._-]+(?:/[A-Za-z0-9._-]+)*$"},
+    "operationId": {"enum": ["inspect_court_state", "list_legal_court_moves", "validate_and_execute_court_transition", "project_through_court", "verify_court_postcondition"]},
+    "queryId": {"enum": ["degree_triads_for_scale", "modal_scale_states_by_triad_quality", "modal_scale_states_by_interval_vector", "court_filter_commutation_outputs", "court_runtime_state_for_session", "court_verified_events_for_session"]},
+    "contracts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commonSchemaPath", "registrySchemaPath", "capabilitiesSchemaPath", "adapterSchemaPath", "installManifestSchemaPath"],
+      "properties": {
+        "commonSchemaPath": {"const": "schemas/common.schema.json"},
+        "registrySchemaPath": {"const": "schemas/registry.schema.json"},
+        "capabilitiesSchemaPath": {"const": "schemas/capabilities.schema.json"},
+        "adapterSchemaPath": {"const": "schemas/adapter.schema.json"},
+        "installManifestSchemaPath": {"const": "schemas/install-manifest.schema.json"}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["crt305RuntimePolicy", "crt306GraphProjection", "crt304FilterAlgebra", "crt303HarmonicInvariants"],
+      "properties": {
+        "crt305RuntimePolicy": {"$ref": "#/$defs/crt305"},
+        "crt306GraphProjection": {"$ref": "#/$defs/crt306"},
+        "crt304FilterAlgebra": {"$ref": "#/$defs/crt304"},
+        "crt303HarmonicInvariants": {"$ref": "#/$defs/crt303"}
+      }
+    },
+    "crt305": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "schemaVersion", "sourceSha256", "policyFingerprint"],
+      "properties": {
+        "path": {"const": "schemas/court-runtime-policy.json"},
+        "schemaVersion": {"const": "crt-305.court-runtime-policy.v1"},
+        "sourceSha256": {"$ref": "common.schema.json#/$defs/sha256"},
+        "policyFingerprint": {"const": "90431c79b8bc06da7e6f5cb5ce207cb6cbfd86519bdb91df5aacc137065ec456"}
+      }
+    },
+    "crt306": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["queryCatalogPath", "queryCatalogSha256", "schemaVersion", "namedQueries"],
+      "properties": {
+        "queryCatalogPath": {"const": "src/governor/court_graph_queries.py"},
+        "queryCatalogSha256": {"$ref": "common.schema.json#/$defs/sha256"},
+        "schemaVersion": {"const": "crt-306.court-graph-projection.v2"},
+        "namedQueries": {"type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true, "items": {"$ref": "#/$defs/queryId"}}
+      }
+    },
+    "crt304": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sourceSha256", "filterAlgebraFingerprint"],
+      "properties": {
+        "path": {"const": "seven-governors-court-filter-algebra-v0.1.0/canonical/filter-algebra-release.json"},
+        "sourceSha256": {"$ref": "common.schema.json#/$defs/sha256"},
+        "filterAlgebraFingerprint": {"const": "40bd74397ff9f4c8c0f0b845630e008cea66c9495413195c1e1c92ff02968589"}
+      }
+    },
+    "crt303": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sourceSha256", "invariantFingerprint"],
+      "properties": {
+        "path": {"const": "seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json"},
+        "sourceSha256": {"$ref": "common.schema.json#/$defs/sha256"},
+        "invariantFingerprint": {"const": "ad604fdb42144882d38433e734759fcd5c160dfe628139ce0ede1ff093481323"}
+      }
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maxRequestBytes", "maxResponseBytes", "maxToolReceipts", "maxGraphRows", "maxGraphRowBytes", "maxGraphElapsedMs"],
+      "properties": {"maxRequestBytes": {"const": 65536}, "maxResponseBytes": {"const": 1048576}, "maxToolReceipts": {"const": 16}, "maxGraphRows": {"const": 100}, "maxGraphRowBytes": {"const": 262144}, "maxGraphElapsedMs": {"const": 1000}}
+    },
+    "fingerprints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "canonicalization", "encoding", "lineEndings", "resultFingerprintInput", "logicalOrdering"],
+      "properties": {
+        "algorithm": {"const": "sha256"},
+        "canonicalization": {"const": "RFC8785"},
+        "encoding": {"const": "UTF-8"},
+        "lineEndings": {"const": "LF"},
+        "resultFingerprintInput": {"const": "canonical-output-without-resultFingerprint"},
+        "logicalOrdering": {"const": "unicode-code-point-by-logical-id"}
+      }
+    },
+    "adapterRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["adapterId", "adapterVersion", "configPath"],
+      "properties": {
+        "adapterId": {"enum": ["generic-json", "hermes"]},
+        "adapterVersion": {"const": "1.0.0"},
+        "configPath": {"enum": ["adapters/generic-json.json", "adapters/hermes.json"]}
+      }
+    },
+    "adapterTarget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["targetPath", "operationId"],
+      "properties": {"targetPath": {"$ref": "#/$defs/relativePath"}, "operationId": {"$ref": "#/$defs/operationId"}}
+    },
+    "adapterMappings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generic-json", "hermes"],
+      "properties": {"generic-json": {"$ref": "#/$defs/adapterTarget"}, "hermes": {"$ref": "#/$defs/adapterTarget"}}
+    },
+    "queryAllowance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["queryId", "maxCalls"],
+      "properties": {"queryId": {"$ref": "#/$defs/queryId"}, "maxCalls": {"const": 1}}
+    },
+    "queryBudget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maxQueries", "namedQueries"],
+      "properties": {
+        "maxQueries": {"type": "integer", "minimum": 0, "maximum": 2},
+        "namedQueries": {"type": "array", "maxItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/queryAllowance"}}
+      }
+    },
+    "skill": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["skillId", "name", "description", "operationId", "workflowPath", "inputSchema", "inputSchemaId", "outputSchema", "outputSchemaId", "triggers", "toolIds", "adapterMappings", "tokenScope", "queryBudget"],
+      "properties": {
+        "skillId": {"$ref": "#/$defs/operationId"},
+        "name": {"type": "string", "pattern": "^seven-governors-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "description": {"type": "string", "minLength": 1, "maxLength": 256},
+        "operationId": {"$ref": "#/$defs/operationId"},
+        "workflowPath": {"type": "string", "pattern": "^workflows/(inspect_court_state|list_legal_court_moves|validate_and_execute_court_transition|project_through_court|verify_court_postcondition)/SKILL\\.md$"},
+        "inputSchema": {"type": "string", "pattern": "^schemas/[a-z0-9-]+\\.schema\\.json#/\\$defs/input$"},
+        "inputSchemaId": {"type": "string", "pattern": "^crt-307\\.[a-z-]+\\.input\\.v1$"},
+        "outputSchema": {"type": "string", "pattern": "^schemas/[a-z0-9-]+\\.schema\\.json#/\\$defs/output$"},
+        "outputSchemaId": {"type": "string", "pattern": "^crt-307\\.[a-z-]+\\.output\\.v1$"},
+        "triggers": {"type": "array", "minItems": 1, "maxItems": 4, "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 160}},
+        "toolIds": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"const": "governor.court_agent_api.invoke"}},
+        "adapterMappings": {"$ref": "#/$defs/adapterMappings"},
+        "tokenScope": {"enum": ["none", "internal-single-use-created-and-consumed-one-invocation-never-emitted"]},
+        "queryBudget": {"$ref": "#/$defs/queryBudget"}
+      }
+    }
+  }
+}

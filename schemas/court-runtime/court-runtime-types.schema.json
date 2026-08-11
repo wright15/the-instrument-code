@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/schemas/court-runtime/court-runtime-types.schema.json",
+  "title": "CRT-305 Court Runtime Types",
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "identifier": {"type": "string", "minLength": 1},
+    "sessionId": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"},
+    "position": {"enum": ["C0", "C1", "C2", "C3", "C4"]},
+    "operation": {"enum": ["court:advance", "court:retreat", "court:translocate"]},
+    "ratio": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "anchor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["eventCount", "headSha256"],
+      "properties": {"eventCount": {"type": "integer", "minimum": 0}, "headSha256": {"$ref": "#/$defs/sha256"}}
+    },
+    "poleRegister": {
+      "type": "object", "additionalProperties": false,
+      "required": ["poleOrder", "vector", "internalPoles"],
+      "properties": {
+        "poleOrder": {"const": ["Mars", "Jupiter", "Venus", "Saturn"]},
+        "vector": {"enum": ["0000", "1000", "1100", "1110", "1111"]},
+        "internalPoles": {"type": "array", "uniqueItems": true, "items": {"enum": ["Mars", "Jupiter", "Venus", "Saturn"]}}
+      }
+    },
+    "state": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "sessionId", "positionId", "revision", "harmonicProfileSha256", "policyFingerprint", "contextFingerprint", "capabilities", "consumedTokenIds", "pitchMask", "poleRegister", "kappaCourt", "stateSha256", "ledgerAnchor"],
+      "properties": {
+        "schemaVersion": {"const": "crt-305.court-runtime-state.v1"}, "sessionId": {"$ref": "#/$defs/sessionId"}, "positionId": {"$ref": "#/$defs/position"},
+        "revision": {"type": "integer", "minimum": 0}, "harmonicProfileSha256": {"$ref": "#/$defs/sha256"}, "policyFingerprint": {"$ref": "#/$defs/sha256"}, "contextFingerprint": {"$ref": "#/$defs/sha256"},
+        "capabilities": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/identifier"}},
+        "consumedTokenIds": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/sha256"}},
+        "pitchMask": {"enum": [661, 677, 1189, 1193, 1321]}, "poleRegister": {"$ref": "#/$defs/poleRegister"}, "kappaCourt": {"$ref": "#/$defs/ratio"}, "stateSha256": {"$ref": "#/$defs/sha256"}, "ledgerAnchor": {"$ref": "#/$defs/anchor"}
+      },
+      "allOf": [
+        {"if": {"properties": {"positionId": {"const": "C0"}}}, "then": {"properties": {"pitchMask": {"const": 661}, "poleRegister": {"properties": {"vector": {"const": "0000"}, "internalPoles": {"const": []}}}, "kappaCourt": {"const": {"numerator": 0, "denominator": 1}}}}},
+        {"if": {"properties": {"positionId": {"const": "C1"}}}, "then": {"properties": {"pitchMask": {"const": 677}, "poleRegister": {"properties": {"vector": {"const": "1000"}, "internalPoles": {"const": ["Mars"]}}}, "kappaCourt": {"const": {"numerator": 1, "denominator": 4}}}}},
+        {"if": {"properties": {"positionId": {"const": "C2"}}}, "then": {"properties": {"pitchMask": {"const": 1189}, "poleRegister": {"properties": {"vector": {"const": "1100"}, "internalPoles": {"const": ["Mars", "Jupiter"]}}}, "kappaCourt": {"const": {"numerator": 1, "denominator": 2}}}}},
+        {"if": {"properties": {"positionId": {"const": "C3"}}}, "then": {"properties": {"pitchMask": {"const": 1193}, "poleRegister": {"properties": {"vector": {"const": "1110"}, "internalPoles": {"const": ["Mars", "Jupiter", "Venus"]}}}, "kappaCourt": {"const": {"numerator": 3, "denominator": 4}}}}},
+        {"if": {"properties": {"positionId": {"const": "C4"}}}, "then": {"properties": {"pitchMask": {"const": 1321}, "poleRegister": {"properties": {"vector": {"const": "1111"}, "internalPoles": {"const": ["Mars", "Jupiter", "Venus", "Saturn"]}}}, "kappaCourt": {"const": {"numerator": 1, "denominator": 1}}}}}
+      ]
+    },
+    "legalMove": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "operationId", "targetPosition", "capability", "priorStateSha256", "policyFingerprint", "translocationHash", "routeContextHash", "moveHash"],
+      "properties": {"schemaVersion": {"const": "crt-305.court-legal-move.v1"}, "operationId": {"$ref": "#/$defs/operation"}, "targetPosition": {"$ref": "#/$defs/position"}, "capability": {"enum": ["court.transition", "court.translocate"]}, "priorStateSha256": {"$ref": "#/$defs/sha256"}, "policyFingerprint": {"$ref": "#/$defs/sha256"}, "translocationHash": {"anyOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]}, "routeContextHash": {"anyOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]}, "moveHash": {"$ref": "#/$defs/sha256"}}
+    },
+    "token": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "operationId", "normalizedParameters", "priorStateSha256", "priorLedgerHead", "policyFingerprint", "contextFingerprint", "capability", "issuedRevision", "expiresAfterRevision", "translocationHash", "routeContextHash", "tokenId"],
+      "properties": {
+        "schemaVersion": {"const": "crt-305.court-validation-token.v1"}, "operationId": {"$ref": "#/$defs/operation"},
+        "normalizedParameters": {"type": "object", "additionalProperties": false, "required": ["targetPosition"], "properties": {"targetPosition": {"$ref": "#/$defs/position"}}},
+        "priorStateSha256": {"$ref": "#/$defs/sha256"}, "priorLedgerHead": {"$ref": "#/$defs/sha256"}, "policyFingerprint": {"$ref": "#/$defs/sha256"}, "contextFingerprint": {"$ref": "#/$defs/sha256"}, "capability": {"enum": ["court.transition", "court.translocate"]},
+        "issuedRevision": {"type": "integer", "minimum": 0}, "expiresAfterRevision": {"type": "integer", "minimum": 0}, "translocationHash": {"anyOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]}, "routeContextHash": {"anyOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]}, "tokenId": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "scaleState": {
+      "type": "object", "additionalProperties": false, "required": ["id", "pitchMask", "forte"],
+      "properties": {"id": {"enum": [1453, 2477]}, "pitchMask": {"enum": [1453, 2477]}, "forte": {"enum": ["7-35", "7-32"]}}
+    },
+    "translocation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "compoundTransitionSemantics", "sourcePosition", "targetPosition", "sourceScaleState", "targetScaleState", "mutation", "evidence", "crt304", "recordHash"],
+      "properties": {
+        "schemaVersion": {"const": "crt-305.topological-translocation.v1"}, "compoundTransitionSemantics": {"const": "court_position_plus_heptatonic_mutation_no_canonical_mapping"}, "sourcePosition": {"$ref": "#/$defs/position"}, "targetPosition": {"$ref": "#/$defs/position"},
+        "sourceScaleState": {"$ref": "#/$defs/scaleState"}, "targetScaleState": {"$ref": "#/$defs/scaleState"},
+        "mutation": {"type": "object", "additionalProperties": false, "required": ["operatorId", "alteredDegree", "degreeGovernor", "direction", "sourcePitch", "targetPitch", "deltaSemitones", "applicationId"], "properties": {"operatorId": {"enum": ["R7", "L7"]}, "alteredDegree": {"const": 7}, "degreeGovernor": {"const": "Moon"}, "direction": {"enum": ["raise", "lower"]}, "sourcePitch": {"enum": [10, 11]}, "targetPitch": {"enum": [10, 11]}, "deltaSemitones": {"enum": [-1, 1]}, "applicationId": {"enum": ["R7:1453:2477", "L7:2477:1453"]}}},
+        "evidence": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"const": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv"}, "sha256": {"$ref": "#/$defs/sha256"}}},
+        "crt304": {"type": "object", "additionalProperties": false, "required": ["fingerprint", "filterId", "filterMask", "operatorId", "sourceScaleStateId", "targetScaleStateId", "classification", "staticRouteRecordId"], "properties": {"fingerprint": {"$ref": "#/$defs/sha256"}, "filterId": {"enum": ["court-filter:5-23:root-0", "court-filter:5-27:root-0"]}, "filterMask": {"enum": [173, 425]}, "operatorId": {"enum": ["R7", "L7"]}, "sourceScaleStateId": {"enum": [1453, 2477]}, "targetScaleStateId": {"enum": [1453, 2477]}, "classification": {"const": "right_undefined"}, "staticRouteRecordId": {"type": "string", "pattern": "^noncomm:court-filter:5-(23|27):root-0:(R7:1453|L7:2477)$"}}},
+        "recordHash": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "routeContext": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "forteFamily", "filterId", "filterMask", "classification", "staticRouteRecordId", "routeCostStatus", "routeContextHash"],
+      "properties": {"schemaVersion": {"const": "crt-305.court-route-context.v1"}, "forteFamily": {"enum": ["5-23", "5-27"]}, "filterId": {"enum": ["court-filter:5-23:root-0", "court-filter:5-27:root-0"]}, "filterMask": {"enum": [173, 425]}, "classification": {"const": "right_undefined"}, "staticRouteRecordId": {"type": "string", "pattern": "^noncomm:court-filter:5-(23|27):root-0:(R7:1453|L7:2477)$"}, "routeCostStatus": {"const": "unresolved"}, "routeContextHash": {"$ref": "#/$defs/sha256"}}
+    },
+    "validatedMove": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "operationId", "targetPosition", "capability", "token", "translocationRecord", "routeContext"],
+      "properties": {"schemaVersion": {"const": "crt-305.court-validated-move.v1"}, "operationId": {"$ref": "#/$defs/operation"}, "targetPosition": {"$ref": "#/$defs/position"}, "capability": {"enum": ["court.transition", "court.translocate"]}, "token": {"$ref": "#/$defs/token"}, "translocationRecord": {"anyOf": [{"$ref": "#/$defs/translocation"}, {"type": "null"}]}, "routeContext": {"anyOf": [{"$ref": "#/$defs/routeContext"}, {"type": "null"}]}}
+    },
+    "transitionPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "eventKind", "sessionId", "priorStateSha256", "resultingStateSha256", "operationId", "intrinsicData", "eventId", "observationData"],
+      "properties": {
+        "schemaVersion": {"const": "crt-305.court-transition-event.v1"}, "eventKind": {"const": "court_transition_applied"}, "sessionId": {"$ref": "#/$defs/sessionId"}, "priorStateSha256": {"$ref": "#/$defs/sha256"}, "resultingStateSha256": {"$ref": "#/$defs/sha256"}, "operationId": {"$ref": "#/$defs/operation"}, "eventId": {"$ref": "#/$defs/sha256"}, "observationData": {"type": "object"},
+        "intrinsicData": {"type": "object", "additionalProperties": false, "required": ["token", "targetPosition", "verificationStatus", "evidenceEventIds", "stateAfter", "poleDelta", "kappaDelta", "translocationRecord", "routeContext"], "properties": {"token": {"$ref": "#/$defs/token"}, "targetPosition": {"$ref": "#/$defs/position"}, "verificationStatus": {"const": "VERIFIED"}, "evidenceEventIds": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/sha256"}}, "stateAfter": {"$ref": "#/$defs/state"}, "poleDelta": {"anyOf": [{"type": "object", "additionalProperties": false, "required": ["pole", "from", "to"], "properties": {"pole": {"enum": ["Mars", "Jupiter", "Venus", "Saturn"]}, "from": {"enum": ["0", "1"]}, "to": {"enum": ["0", "1"]}}}, {"type": "null"}]}, "kappaDelta": {"$ref": "#/$defs/ratio"}, "translocationRecord": {"anyOf": [{"$ref": "#/$defs/translocation"}, {"type": "null"}]}, "routeContext": {"anyOf": [{"$ref": "#/$defs/routeContext"}, {"type": "null"}]}}}
+      }
+    },
+    "ledgerEvent": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sequence", "previousEventSha256", "payload", "payloadSha256", "eventSha256"],
+      "properties": {"sequence": {"type": "integer", "minimum": 1}, "previousEventSha256": {"$ref": "#/$defs/sha256"}, "payload": {"$ref": "#/$defs/transitionPayload"}, "payloadSha256": {"$ref": "#/$defs/sha256"}, "eventSha256": {"$ref": "#/$defs/sha256"}}
+    },
+    "snapshot": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "stateSha256", "kappaCourt", "eventCount", "ledgerHead", "policyFingerprint", "contextFingerprint", "snapshotHash"],
+      "properties": {"schemaVersion": {"const": "crt-305.court-runtime-snapshot.v1"}, "stateSha256": {"$ref": "#/$defs/sha256"}, "kappaCourt": {"$ref": "#/$defs/ratio"}, "eventCount": {"type": "integer", "minimum": 0}, "ledgerHead": {"$ref": "#/$defs/sha256"}, "policyFingerprint": {"$ref": "#/$defs/sha256"}, "contextFingerprint": {"$ref": "#/$defs/sha256"}, "snapshotHash": {"$ref": "#/$defs/sha256"}}
+    },
+    "replayResult": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "valid", "state", "snapshot", "firstFailingSequence", "reasonCode"],
+      "properties": {"schemaVersion": {"const": "crt-305.court-runtime-replay-result.v1"}, "valid": {"type": "boolean"}, "state": {"$ref": "#/$defs/state"}, "snapshot": {"anyOf": [{"$ref": "#/$defs/snapshot"}, {"type": "null"}]}, "firstFailingSequence": {"type": ["integer", "null"], "minimum": 1}, "reasonCode": {"$ref": "#/$defs/identifier"}}
+    },
+    "session": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "genesisState", "currentState", "events", "trustedAnchor", "snapshot"],
+      "properties": {"schemaVersion": {"const": "crt-305.court-runtime-session.v1"}, "genesisState": {"$ref": "#/$defs/state"}, "currentState": {"$ref": "#/$defs/state"}, "events": {"type": "array", "items": {"$ref": "#/$defs/ledgerEvent"}}, "trustedAnchor": {"$ref": "#/$defs/anchor"}, "snapshot": {"$ref": "#/$defs/snapshot"}}
+    }
+  }
+}

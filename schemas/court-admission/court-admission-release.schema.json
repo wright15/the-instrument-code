@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "crt-309.court-admission-release.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "admissionId", "integratedReleaseId", "status", "admissionGate", "historicalCandidateStatusesPreserved", "admittedScope", "proposedScope", "projectionRuling", "artifactBindings", "evidenceBindings", "admissionFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "crt-309.court-admission-release.v1"},
+    "admissionId": {"const": "court-admission:crt-309:1.0.0"},
+    "integratedReleaseId": {"const": "seven-governors-integrated-1.3.0"},
+    "status": {"const": "admitted"},
+    "admissionGate": {"const": "CRT-309"},
+    "historicalCandidateStatusesPreserved": {"const": true},
+    "admittedScope": {"type": "object"},
+    "proposedScope": {"type": "object"},
+    "projectionRuling": {"type": "object"},
+    "artifactBindings": {
+      "type": "array",
+      "minItems": 11,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["artifactId", "path", "sha256", "intrinsicFingerprint"],
+        "properties": {
+          "artifactId": {"type": "string"},
+          "path": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "intrinsicFingerprint": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "evidenceBindings": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["evidenceId", "path", "reportFingerprint"],
+        "properties": {
+          "evidenceId": {"type": "string"},
+          "path": {"type": "string"},
+          "reportFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "admissionFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "crt-309.court-benchmark-report.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "corpusFingerprint", "authorityRuling", "configurations", "reportFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "crt-309.court-benchmark-report.v1"},
+    "corpusFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "authorityRuling": {"const": "machine-verifiable-outcomes-only; model prose scores no success"},
+    "configurations": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["configurationId", "caseCount", "rates"],
+        "properties": {
+          "configurationId": {"enum": ["model-only", "retrieval-only", "deterministic-court-tools"]},
+          "caseCount": {"const": 10},
+          "rates": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["success", "offChainRejection", "nonAdjacentRejection", "filterNonCommutation", "repeatedActionStop", "recovery"],
+            "properties": {
+              "success": {"type": "number", "minimum": 0, "maximum": 1},
+              "offChainRejection": {"type": "number", "minimum": 0, "maximum": 1},
+              "nonAdjacentRejection": {"type": "number", "minimum": 0, "maximum": 1},
+              "filterNonCommutation": {"type": "number", "minimum": 0, "maximum": 1},
+              "repeatedActionStop": {"type": "number", "minimum": 0, "maximum": 1},
+              "recovery": {"type": "number", "minimum": 0, "maximum": 1}
+            }
+          }
+        }
+      }
+    },
+    "reportFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

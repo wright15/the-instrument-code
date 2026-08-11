@@ -1,0 +1,202 @@
+{
+  "checks": [
+    {
+      "detail": "valid",
+      "name": "release-schema",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "semantic-closure",
+      "status": "PASS"
+    },
+    {
+      "detail": "fda4707f63b08ca02a155f8d5d8c738534f17e0ab2a234d79f83bf30f16a2fc2",
+      "name": "substrate-fingerprint",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "sourceCount": 10,
+        "sourceFingerprint": "0380f86c384228b7bbb3cbbb610919e6dc6f783c576aa082737426ee7b15df28"
+      },
+      "name": "source-hash-parity",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "admittedBridgeSetClassCount": 2,
+        "admittedSetClassCount": 1,
+        "bridgeRootingCount": 2,
+        "complementMapCount": 38,
+        "courtRootedPositionCount": 5,
+        "pentatonicSetClassCount": 38,
+        "proposedSetClassCount": 35,
+        "t5CycleEntryCount": 12
+      },
+      "name": "registry-counts",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "bridgeIds": [
+          "bridge-rooting:5-23:aeolian-harmonic-minor",
+          "bridge-rooting:5-27:aeolian-harmonic-minor"
+        ],
+        "minimalAdditionalBridgeSetClasses": []
+      },
+      "name": "bridge-minimality",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        "positive:court-positions",
+        "positive:bridge-5-23",
+        "positive:bridge-5-27",
+        "positive:no-additional-bridge-class",
+        "positive:all-38-complements"
+      ],
+      "name": "positive-fixtures",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        {
+          "actualCodes": [
+            "SCHEMA_ADDITIONAL_PROPERTIES"
+          ],
+          "expectedCodes": [
+            "SCHEMA_ADDITIONAL_PROPERTIES"
+          ],
+          "fixtureId": "negative:unknown-property",
+          "passed": true
+        },
+        {
+          "actualCodes": [
+            "MASK_PITCH_CLASS_MISMATCH",
+            "MASK_WEIGHT_INVALID"
+          ],
+          "expectedCodes": [
+            "MASK_PITCH_CLASS_MISMATCH",
+            "MASK_WEIGHT_INVALID"
+          ],
+          "fixtureId": "negative:wrong-weight",
+          "passed": true
+        },
+        {
+          "actualCodes": [
+            "SCHEMA_MAXIMUM"
+          ],
+          "expectedCodes": [
+            "SCHEMA_MAXIMUM"
+          ],
+          "fixtureId": "negative:invalid-mask-range",
+          "passed": true
+        },
+        {
+          "actualCodes": [
+            "COMPLEMENT_MISSING"
+          ],
+          "expectedCodes": [
+            "COMPLEMENT_MISSING"
+          ],
+          "fixtureId": "negative:missing-complement",
+          "passed": true
+        },
+        {
+          "actualCodes": [
+            "COMPLEMENT_DANGLING"
+          ],
+          "expectedCodes": [
+            "COMPLEMENT_DANGLING"
+          ],
+          "fixtureId": "negative:dangling-complement",
+          "passed": true
+        },
+        {
+          "actualCodes": [
+            "ADMITTED_T5_REFERENCE_MISSING"
+          ],
+          "expectedCodes": [
+            "ADMITTED_T5_REFERENCE_MISSING"
+          ],
+          "fixtureId": "negative:missing-t5",
+          "passed": true
+        },
+        {
+          "actualCodes": [
+            "ADMITTED_T5_REFERENCE_INVALID"
+          ],
+          "expectedCodes": [
+            "ADMITTED_T5_REFERENCE_INVALID"
+          ],
+          "fixtureId": "negative:t5-outside-cycle",
+          "passed": true
+        },
+        {
+          "actualCodes": [
+            "OFF_CHAIN_CANONICAL_CLAIM"
+          ],
+          "expectedCodes": [
+            "OFF_CHAIN_CANONICAL_CLAIM"
+          ],
+          "fixtureId": "negative:off-chain-canonical-claim",
+          "passed": true,
+          "proposedSetClassId": "pentatonic:5-20",
+          "reasonCode": "off_chain"
+        },
+        {
+          "actualCodes": [
+            "SCHEMA_ENUM",
+            "SCHEMA_IF",
+            "SCHEMA_TYPE"
+          ],
+          "expectedCodes": [
+            "SCHEMA_ENUM",
+            "SCHEMA_IF",
+            "SCHEMA_TYPE"
+          ],
+          "fixtureId": "negative:dangling-admission-status",
+          "passed": true
+        },
+        {
+          "actualCodes": [
+            "COURT_KAPPA_INVALID"
+          ],
+          "expectedCodes": [
+            "COURT_KAPPA_INVALID"
+          ],
+          "fixtureId": "negative:wrong-kappa",
+          "passed": true
+        },
+        {
+          "actualCodes": [
+            "COURT_XOR_SUPPORT_INVALID"
+          ],
+          "expectedCodes": [
+            "COURT_XOR_SUPPORT_INVALID"
+          ],
+          "fixtureId": "negative:wrong-xor-support",
+          "passed": true
+        }
+      ],
+      "name": "negative-fixtures",
+      "status": "PASS"
+    },
+    {
+      "detail": "no forbidden authority fields",
+      "name": "topology-write-prohibition",
+      "status": "PASS"
+    }
+  ],
+  "packageVersion": "0.1.0",
+  "releaseId": "court-substrate:0.1.0",
+  "schemaVersion": "1.0.0",
+  "status": "passed",
+  "substrateFingerprint": "fda4707f63b08ca02a155f8d5d8c738534f17e0ab2a234d79f83bf30f16a2fc2",
+  "summary": {
+    "checks": 9,
+    "failed": 0,
+    "passed": 9
+  }
+}

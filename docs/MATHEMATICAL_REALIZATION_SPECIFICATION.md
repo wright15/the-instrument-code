@@ -658,13 +658,17 @@ substrate, the "rest position" of the engine.
 
 | Filter | Mutation | Source | Target | Commutes? | Route Semantics |
 |--------|----------|--------|--------|-----------|-----------------|
-| 5-23 | M (raise degree) | Aeolian (7-35) | Harmonic Minor (7-32) | Test | 5-23 retains {0,2,5,7,9}; suppresses ♭3, ♭6 |
-| 5-27 | M (raise degree) | Aeolian (7-35) | Harmonic Minor (7-32) | Test | 5-27 retains {0,4,5,7,10}; suppresses 2, ♭3, ♭6, ♭7 |
+| 5-23 | R7 (raise Degree 7) | Aeolian (7-35) | Harmonic Minor (7-32) | Test | Rooted 5-23 retains {0,2,3,5,7}; source suppresses {8,10}, target suppresses {8,11} |
+| 5-27 | R7 (raise Degree 7) | Aeolian (7-35) | Harmonic Minor (7-32) | Test | Rooted 5-27 retains {0,3,5,7,8}; source suppresses {2,10}, target suppresses {2,11} |
 | 5-35 (C0) | Any | Any 7-35 state | Any 7-35 state | Test | C0 mask = {0,2,4,7,9} |
 
 **Key test:** 5-23 and 5-27 both mediate 7-35 → 7-32 but expose different pitches.
 The commutation test must show `P_{5-23} T ≠ T P_{5-23}` for at least one mutation,
 proving the two bridge filters are **not interchangeable**.
+
+The concrete rooted masks above are the CRT-302 executable derivation from the
+six shared endpoint pitches `{0,2,3,5,7,8}`. Earlier draft masks at this table
+were classes 5-35 and 5-29 rather than 5-23 and 5-27 and are superseded.
 
 ### 5.3 7-33 Wormhole (Maximal-Symmetry Saddle Point)
 

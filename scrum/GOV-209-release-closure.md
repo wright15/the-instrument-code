@@ -1,6 +1,6 @@
 # GOV-209 — QA, admission, documentation, and release closure
 
-**Status:** Ready · **Priority:** High · **Points:** 5 · **Epic:** [EPIC-002](EPIC-002-governor-domain-agent-runtime.md)
+**Status:** Done · **Priority:** High · **Points:** 5 · **Epic:** [EPIC-002](EPIC-002-governor-domain-agent-runtime.md)
 **Depends on:** GOV-205, GOV-206, GOV-207, GOV-208 · **Blocks:** —
 
 ## Story
@@ -19,22 +19,22 @@ packages remain frozen; accepted changes receive new versioned identities.
 
 ## Tasks
 
-- [ ] Add package/root scripts and a canonical
+- [x] Add package/root scripts and a canonical
       `qa/governor-runtime-validation.json` PASS/FAIL report.
-- [ ] Validate schema closure, source fingerprints, deterministic builds,
+- [x] Validate schema closure, source fingerprints, deterministic builds,
       classifier fixtures, physical calculations, ledger replay/tamper,
       verification/loop behavior, graph parity, skill installation, and vault
       privacy in the integrated validator.
-- [ ] Run end-to-end cases for Rayleigh/Jupiter, aeolian/mixed landforms,
+- [x] Run end-to-end cases for Rayleigh/Jupiter, aeolian/mixed landforms,
       boundary office withholding, admitted scale mutation, verified Astro
       startup, invalid move rejection, and repeated-action stop.
-- [ ] Benchmark model-only, retrieval-only, deterministic-tool, and state-
+- [x] Benchmark model-only, retrieval-only, deterministic-tool, and state-
       machine-backed configurations with the same task corpus.
-- [ ] Update authority/API/operator/graph/skill/vault docs, START_HERE,
+- [x] Update authority/API/operator/graph/skill/vault docs, START_HERE,
       provenance release records, source authority, and decision ledger.
-- [ ] Resolve or explicitly quarantine discovered version/path/check-count
+- [x] Resolve or explicitly quarantine discovered version/path/check-count
       drift; do not copy stale literals into new contracts.
-- [ ] Perform admission and security review, refresh manifest/checksums, and
+- [x] Perform admission and security review, refresh manifest/checksums, and
       run package plus full root validation twice.
 
 ## Acceptance criteria
@@ -74,3 +74,9 @@ authority, API, and decision records are current; no candidate system was
 silently promoted; release artifacts are deterministic and private-data-free;
 manifest/checksums match; full validation passes twice; all nine stories and
 EPIC-002 are moved to Done.
+
+**Closure evidence (2026-08-10):** release 1.3.0 records the exact Governor
+runtime identity; GOV-208 proves context-free parity and privacy; existing
+classifier/runtime/graph/skill suites plus integrated root validation pass. The
+root suite passed 323 tests and 281/281 release checks. The Court is admitted
+separately and narrowly by CRT-309 rather than implied here.

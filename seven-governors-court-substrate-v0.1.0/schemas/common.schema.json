@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/court-substrate/0.1.0/schemas/common.schema.json",
+  "title": "Court substrate common definitions",
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "pitchClass": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 11
+    },
+    "pitchClasses": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/pitchClass" }
+    },
+    "mask12": {
+      "type": "string",
+      "pattern": "^[01]{12}$"
+    },
+    "exactRatio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": { "type": "integer", "minimum": 0 },
+        "denominator": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "admissionStatusId": {
+      "enum": ["admitted", "admitted-bridge", "proposed"]
+    },
+    "t5Reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cycleIndex", "offset", "semantics"],
+      "properties": {
+        "cycleIndex": { "type": "integer", "minimum": 0, "maximum": 11 },
+        "offset": { "$ref": "#/$defs/pitchClass" },
+        "semantics": {
+          "enum": ["canonical_court_segment_origin", "root_alignment_only"]
+        }
+      }
+    },
+    "sourceHash": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    }
+  }
+}

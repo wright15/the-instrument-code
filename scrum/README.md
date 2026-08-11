@@ -1,6 +1,6 @@
 # Scrum Board — Seven Governors integrated workstreams
 
-Completed release work and implementation-ready post-1.2.0 planning.
+Completed release 1.3.0 work and implementation-ready follow-on planning.
 
 ## EPIC-001 — Bestiary network replica
 
@@ -20,7 +20,7 @@ Total story points: **32**.
 
 | ID | Title | Points | Priority | Status |
 |---|---|---|---|---|
-| [EPIC-002](EPIC-002-governor-domain-agent-runtime.md) | Governor domain algebra and deterministic local-agent runtime | — | High | In Progress |
+| [EPIC-002](EPIC-002-governor-domain-agent-runtime.md) | Governor domain algebra and deterministic local-agent runtime | — | High | **Done** |
 | [GOV-201](GOV-201-authority-namespaces.md) | Governor authority model and namespace contracts | 5 | High | **Done** |
 | [GOV-202](GOV-202-typed-aspects-quantities-bridges.md) | Typed aspects, quantities, and bridge-rule contracts | 8 | High | **Done** |
 | [GOV-203](GOV-203-deterministic-classification.md) | Deterministic Governor classification and physical evaluation | 8 | High | **Done** |
@@ -28,8 +28,8 @@ Total story points: **32**.
 | [GOV-205](GOV-205-verification-loop-guards.md) | Evidence verification and no-progress loop guards | 8 | High | **Done** |
 | [GOV-206](GOV-206-graph-read-projection.md) | Neo4j read projection and bounded context queries | 5 | High | **Done** |
 | [GOV-207](GOV-207-local-agent-skills.md) | First-party local-agent skill bundle | 5 | High | **Done** |
-| [GOV-208](GOV-208-obsidian-context-bundles.md) | Optional read-only Obsidian context bundles | 5 | Medium | Ready |
-| [GOV-209](GOV-209-release-closure.md) | QA, admission, documentation, and release closure | 5 | High | Ready |
+| [GOV-208](GOV-208-obsidian-context-bundles.md) | Optional read-only Obsidian context bundles | 5 | Medium | **Done** |
+| [GOV-209](GOV-209-release-closure.md) | QA, admission, documentation, and release closure | 5 | High | **Done** |
 
 Planned story points: **57**.
 
@@ -37,18 +37,24 @@ Planned story points: **57**.
 
 | ID | Title | Points | Priority | Status |
 |---|---|---|---|---|
-| [EPIC-003](EPIC-003-pentatonic-court-admission.md) | Pentatonic Court admission and harmonic-invariant runtime | — | High | In Progress |
-| [CRT-301](CRT-301-court-admission-contract.md) | Court admission contract and namespace crosswalk | 5 | High | Ready |
-| [CRT-302](CRT-302-pentatonic-substrate-registry.md) | Pentatonic substrate registry (5 canonical + 5–23, 5–27 bridges) | 8 | High | Ready |
-| [CRT-303](CRT-303-harmonic-invariant-library.md) | Harmonic-invariant library and Carey CQ/SQ for 5–35 seed | 8 | High | Partial |
-| [CRT-304](CRT-304-court-filter-algebra.md) | Linear Court-filter algebra $P_c=\operatorname{diag}(c)$ and commutation tests | 8 | High | Partial |
-| [CRT-305](CRT-305-court-runtime-ledger.md) | Court runtime lifecycle, $\kappa_{\text{court}}$, adjacent-only transitions | 8 | High | Partial |
+| [EPIC-003](EPIC-003-pentatonic-court-admission.md) | Pentatonic Court admission and harmonic-invariant runtime | — | High | **Done** |
+| [CRT-301](CRT-301-court-admission-contract.md) | Court admission contract and namespace crosswalk | 5 | High | **Done** |
+| [CRT-302](CRT-302-pentatonic-substrate-registry.md) | Pentatonic substrate registry (5 canonical + 5–23, 5–27 bridges) | 8 | High | **Done** |
+| [CRT-303](CRT-303-harmonic-invariant-library.md) | Harmonic-invariant library and Carey CQ/SQ for 5–35 seed | 8 | High | **Done** |
+| [CRT-304](CRT-304-court-filter-algebra.md) | Linear Court-filter algebra $P_c=\operatorname{diag}(c)$ and commutation tests | 8 | High | **Done** |
+| [CRT-305](CRT-305-court-runtime-ledger.md) | Court runtime lifecycle, $\kappa_{\text{court}}$, adjacent-only transitions | 8 | High | **Done** |
 | [CRT-306](CRT-306-court-graph-projection.md) | Court Neo4j projection and bounded named queries | 5 | High | **Done** |
-| [CRT-307](CRT-307-court-agent-skills.md) | Court-aware first-party agent skills | 5 | High | Ready |
-| [CRT-308](CRT-308-court-vault-context.md) | Optional Court context in vault bundles | 5 | Medium | Ready |
-| [CRT-309](CRT-309-court-admission-release-closure.md) | Admission, validator cascade, decision ledger amendment, release closure | 5 | High | Ready |
+| [CRT-307](CRT-307-court-agent-skills.md) | Court-aware first-party agent skills | 5 | High | **Done** |
+| [CRT-308](CRT-308-court-vault-context.md) | Optional Court context in vault bundles | 5 | Medium | **Done** |
+| [CRT-309](CRT-309-court-admission-release-closure.md) | Admission, validator cascade, decision ledger amendment, release closure | 5 | High | **Done** |
 
 Planned story points: **57** (Court scope: 5 canonical rooted positions + 5–23 and 5–27 bridge set classes + minimal Aeolian→Harmonic Minor mediating set; Carey CQ/SQ only for 5–35 seed; only $P_c$ admitted; the original "all 38 pentatonic set classes" scope from the 1.2.0 ledger entry is superseded by CRT-309's amendment).
+
+## Framework follow-on
+
+| ID | Title | Points | Priority | Status |
+|---|---|---|---|---|
+| [GOV-210](GOV-210-graph-native-availability-housing.md) | Graph-native availability and housing layer | TBD | Medium | Backlog |
 
 ## Global definition of done
 

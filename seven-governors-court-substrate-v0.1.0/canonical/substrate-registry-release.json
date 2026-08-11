@@ -1,0 +1,1743 @@
+{
+  "admissionStatuses": [
+    {
+      "admissionStatusId": "admitted",
+      "integratedEffect": "none_until_crt_309",
+      "meaning": "Eligible canonical Court substrate within this package; integrated admission still waits for CRT-309."
+    },
+    {
+      "admissionStatusId": "admitted-bridge",
+      "integratedEffect": "none_until_crt_309",
+      "meaning": "Eligible bridge substrate within the amended CRT-301 scope; not a canonical Court position."
+    },
+    {
+      "admissionStatusId": "proposed",
+      "integratedEffect": "none_until_crt_309",
+      "meaning": "Registered for field closure but blocked from canonical or runtime use."
+    }
+  ],
+  "authorityContract": "schemas/court-admission-contract.json",
+  "bridgeRootings": [
+    {
+      "admissionStatus": "admitted-bridge",
+      "bridgeRootingId": "bridge-rooting:5-23:aeolian-harmonic-minor",
+      "complementFamilyId": "7-23",
+      "normalizedComplementScaleStateId": 701,
+      "pitchClasses": [
+        0,
+        2,
+        3,
+        5,
+        7
+      ],
+      "pitchMask": 173,
+      "pitchMask12": "101101010000",
+      "rawComplementMask": 3922,
+      "rootPc": 0,
+      "setClassId": "pentatonic:5-23",
+      "sourceScaleStateId": 1453,
+      "t5Reference": {
+        "cycleIndex": 0,
+        "offset": 0,
+        "semantics": "root_alignment_only"
+      },
+      "targetScaleStateId": 2477
+    },
+    {
+      "admissionStatus": "admitted-bridge",
+      "bridgeRootingId": "bridge-rooting:5-27:aeolian-harmonic-minor",
+      "complementFamilyId": "7-27",
+      "normalizedComplementScaleStateId": 695,
+      "pitchClasses": [
+        0,
+        3,
+        5,
+        7,
+        8
+      ],
+      "pitchMask": 425,
+      "pitchMask12": "100101011000",
+      "rawComplementMask": 3670,
+      "rootPc": 0,
+      "setClassId": "pentatonic:5-27",
+      "sourceScaleStateId": 1453,
+      "t5Reference": {
+        "cycleIndex": 0,
+        "offset": 0,
+        "semantics": "root_alignment_only"
+      },
+      "targetScaleStateId": 2477
+    }
+  ],
+  "complementMaps": [
+    {
+      "complementMapId": "complement:5-1:7-1",
+      "familyRegistryPointer": {
+        "familyId": "7-1",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-1",
+      "pentatonicSetClassId": "pentatonic:5-1",
+      "representativeHeptatonicMask": 127,
+      "representativePentatonicMask": 3968,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/D/tiers/D7/family"
+    },
+    {
+      "complementMapId": "complement:5-10:7-10",
+      "familyRegistryPointer": {
+        "familyId": "7-10",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-10",
+      "pentatonicSetClassId": "pentatonic:5-10",
+      "representativeHeptatonicMask": 607,
+      "representativePentatonicMask": 3488,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/D/tiers/D5/satelliteFamilies/1"
+    },
+    {
+      "complementMapId": "complement:5-11:7-11",
+      "familyRegistryPointer": {
+        "familyId": "7-11",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-11",
+      "pentatonicSetClassId": "pentatonic:5-11",
+      "representativeHeptatonicMask": 379,
+      "representativePentatonicMask": 3716,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/D/tiers/D3/satelliteFamilies/0"
+    },
+    {
+      "complementMapId": "complement:5-13:7-13",
+      "familyRegistryPointer": {
+        "familyId": "7-13",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-13",
+      "pentatonicSetClassId": "pentatonic:5-13",
+      "representativeHeptatonicMask": 375,
+      "representativePentatonicMask": 3720,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/D/tiers/D4/satelliteFamilies/0"
+    },
+    {
+      "complementMapId": "complement:5-14:7-14",
+      "familyRegistryPointer": {
+        "familyId": "7-14",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-14",
+      "pentatonicSetClassId": "pentatonic:5-14",
+      "representativeHeptatonicMask": 431,
+      "representativePentatonicMask": 3664,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/boundaryTypes/office_junction/families/3"
+    },
+    {
+      "complementMapId": "complement:5-15:7-15",
+      "familyRegistryPointer": {
+        "familyId": "7-15",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-15",
+      "pentatonicSetClassId": "pentatonic:5-15",
+      "representativeHeptatonicMask": 471,
+      "representativePentatonicMask": 3624,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/D/tiers/D2/family"
+    },
+    {
+      "complementMapId": "complement:5-16:7-16",
+      "familyRegistryPointer": {
+        "familyId": "7-16",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-16",
+      "pentatonicSetClassId": "pentatonic:5-16",
+      "representativeHeptatonicMask": 623,
+      "representativePentatonicMask": 3472,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/D/tiers/D4/satelliteFamilies/1"
+    },
+    {
+      "complementMapId": "complement:5-19:7-19",
+      "familyRegistryPointer": {
+        "familyId": "7-19",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-19",
+      "pentatonicSetClassId": "pentatonic:5-19",
+      "representativeHeptatonicMask": 719,
+      "representativePentatonicMask": 3376,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/boundaryTypes/office_junction/families/2"
+    },
+    {
+      "complementMapId": "complement:5-2:7-2",
+      "familyRegistryPointer": {
+        "familyId": "7-2",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-2",
+      "pentatonicSetClassId": "pentatonic:5-2",
+      "representativeHeptatonicMask": 191,
+      "representativePentatonicMask": 3904,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/D/tiers/D6/satelliteFamilies/0"
+    },
+    {
+      "complementMapId": "complement:5-20:7-20",
+      "familyRegistryPointer": {
+        "familyId": "7-20",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-20",
+      "pentatonicSetClassId": "pentatonic:5-20",
+      "representativeHeptatonicMask": 743,
+      "representativePentatonicMask": 3352,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/D/tiers/D1/satelliteFamilies/0"
+    },
+    {
+      "complementMapId": "complement:5-21:7-21",
+      "familyRegistryPointer": {
+        "familyId": "7-21",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-21",
+      "pentatonicSetClassId": "pentatonic:5-21",
+      "representativeHeptatonicMask": 823,
+      "representativePentatonicMask": 3272,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/boundaryTypes/office_junction/families/1"
+    },
+    {
+      "complementMapId": "complement:5-22:7-22",
+      "familyRegistryPointer": {
+        "familyId": "7-22",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-22",
+      "pentatonicSetClassId": "pentatonic:5-22",
+      "representativeHeptatonicMask": 871,
+      "representativePentatonicMask": 3224,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/D/tiers/D1/family"
+    },
+    {
+      "complementMapId": "complement:5-23:7-23",
+      "familyRegistryPointer": {
+        "familyId": "7-23",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-23",
+      "pentatonicSetClassId": "pentatonic:5-23",
+      "representativeHeptatonicMask": 701,
+      "representativePentatonicMask": 3394,
+      "rootedPairs": [
+        {
+          "normalizedHeptatonicScaleStateId": 701,
+          "pentatonicMask": 173,
+          "rawHeptatonicComplementMask": 3922,
+          "rootedRecordId": "bridge-rooting:5-23:aeolian-harmonic-minor"
+        }
+      ],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/boundaryTypes/oriented_convergence/families/1"
+    },
+    {
+      "complementMapId": "complement:5-24:7-24",
+      "familyRegistryPointer": {
+        "familyId": "7-24",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-24",
+      "pentatonicSetClassId": "pentatonic:5-24",
+      "representativeHeptatonicMask": 687,
+      "representativePentatonicMask": 3408,
+      "rootedPairs": [],
+      "topologyIdentityPointer": null
+    },
+    {
+      "complementMapId": "complement:5-25:7-25",
+      "familyRegistryPointer": {
+        "familyId": "7-25",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-25",
+      "pentatonicSetClassId": "pentatonic:5-25",
+      "representativeHeptatonicMask": 733,
+      "representativePentatonicMask": 3362,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/boundaryTypes/office_junction/families/0"
+    },
+    {
+      "complementMapId": "complement:5-26:7-26",
+      "familyRegistryPointer": {
+        "familyId": "7-26",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-26",
+      "pentatonicSetClassId": "pentatonic:5-26",
+      "representativeHeptatonicMask": 699,
+      "representativePentatonicMask": 3396,
+      "rootedPairs": [],
+      "topologyIdentityPointer": null
+    },
+    {
+      "complementMapId": "complement:5-27:7-27",
+      "familyRegistryPointer": {
+        "familyId": "7-27",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-27",
+      "pentatonicSetClassId": "pentatonic:5-27",
+      "representativeHeptatonicMask": 695,
+      "representativePentatonicMask": 3400,
+      "rootedPairs": [
+        {
+          "normalizedHeptatonicScaleStateId": 695,
+          "pentatonicMask": 425,
+          "rawHeptatonicComplementMask": 3670,
+          "rootedRecordId": "bridge-rooting:5-27:aeolian-harmonic-minor"
+        }
+      ],
+      "topologyIdentityPointer": null
+    },
+    {
+      "complementMapId": "complement:5-28:7-28",
+      "familyRegistryPointer": {
+        "familyId": "7-28",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-28",
+      "pentatonicSetClassId": "pentatonic:5-28",
+      "representativeHeptatonicMask": 747,
+      "representativePentatonicMask": 3348,
+      "rootedPairs": [],
+      "topologyIdentityPointer": null
+    },
+    {
+      "complementMapId": "complement:5-29:7-29",
+      "familyRegistryPointer": {
+        "familyId": "7-29",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-29",
+      "pentatonicSetClassId": "pentatonic:5-29",
+      "representativeHeptatonicMask": 727,
+      "representativePentatonicMask": 3368,
+      "rootedPairs": [],
+      "topologyIdentityPointer": null
+    },
+    {
+      "complementMapId": "complement:5-3:7-3",
+      "familyRegistryPointer": {
+        "familyId": "7-3",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-3",
+      "pentatonicSetClassId": "pentatonic:5-3",
+      "representativeHeptatonicMask": 319,
+      "representativePentatonicMask": 3776,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/boundaryTypes/oriented_convergence/families/5"
+    },
+    {
+      "complementMapId": "complement:5-30:7-30",
+      "familyRegistryPointer": {
+        "familyId": "7-30",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-30",
+      "pentatonicSetClassId": "pentatonic:5-30",
+      "representativeHeptatonicMask": 855,
+      "representativePentatonicMask": 3240,
+      "rootedPairs": [],
+      "topologyIdentityPointer": null
+    },
+    {
+      "complementMapId": "complement:5-31:7-31",
+      "familyRegistryPointer": {
+        "familyId": "7-31",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-31",
+      "pentatonicSetClassId": "pentatonic:5-31",
+      "representativeHeptatonicMask": 731,
+      "representativePentatonicMask": 3364,
+      "rootedPairs": [],
+      "topologyIdentityPointer": null
+    },
+    {
+      "complementMapId": "complement:5-32:7-32",
+      "familyRegistryPointer": {
+        "familyId": "7-32",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-32",
+      "pentatonicSetClassId": "pentatonic:5-32",
+      "representativeHeptatonicMask": 859,
+      "representativePentatonicMask": 3236,
+      "rootedPairs": [],
+      "topologyIdentityPointer": null
+    },
+    {
+      "complementMapId": "complement:5-33:7-33",
+      "familyRegistryPointer": {
+        "familyId": "7-33",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-33",
+      "pentatonicSetClassId": "pentatonic:5-33",
+      "representativeHeptatonicMask": 1367,
+      "representativePentatonicMask": 2728,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/A/tiers/A2/family"
+    },
+    {
+      "complementMapId": "complement:5-34:7-34",
+      "familyRegistryPointer": {
+        "familyId": "7-34",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-34",
+      "pentatonicSetClassId": "pentatonic:5-34",
+      "representativeHeptatonicMask": 1371,
+      "representativePentatonicMask": 2724,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/A/tiers/A1/family"
+    },
+    {
+      "complementMapId": "complement:5-35:7-35",
+      "familyRegistryPointer": {
+        "familyId": "7-35",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-35",
+      "pentatonicSetClassId": "pentatonic:5-35",
+      "representativeHeptatonicMask": 1387,
+      "representativePentatonicMask": 2708,
+      "rootedPairs": [
+        {
+          "normalizedHeptatonicScaleStateId": 1387,
+          "pentatonicMask": 661,
+          "rawHeptatonicComplementMask": 3434,
+          "rootedRecordId": "court-position:C0"
+        },
+        {
+          "normalizedHeptatonicScaleStateId": 1387,
+          "pentatonicMask": 677,
+          "rawHeptatonicComplementMask": 3418,
+          "rootedRecordId": "court-position:C1"
+        },
+        {
+          "normalizedHeptatonicScaleStateId": 1387,
+          "pentatonicMask": 1189,
+          "rawHeptatonicComplementMask": 2906,
+          "rootedRecordId": "court-position:C2"
+        },
+        {
+          "normalizedHeptatonicScaleStateId": 1387,
+          "pentatonicMask": 1193,
+          "rawHeptatonicComplementMask": 2902,
+          "rootedRecordId": "court-position:C3"
+        },
+        {
+          "normalizedHeptatonicScaleStateId": 1387,
+          "pentatonicMask": 1321,
+          "rawHeptatonicComplementMask": 2774,
+          "rootedRecordId": "court-position:C4"
+        }
+      ],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/A/tiers/A0/family"
+    },
+    {
+      "complementMapId": "complement:5-4:7-4",
+      "familyRegistryPointer": {
+        "familyId": "7-4",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-4",
+      "pentatonicSetClassId": "pentatonic:5-4",
+      "representativeHeptatonicMask": 223,
+      "representativePentatonicMask": 3872,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/boundaryTypes/oriented_convergence/families/4"
+    },
+    {
+      "complementMapId": "complement:5-5:7-5",
+      "familyRegistryPointer": {
+        "familyId": "7-5",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-5",
+      "pentatonicSetClassId": "pentatonic:5-5",
+      "representativeHeptatonicMask": 239,
+      "representativePentatonicMask": 3856,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/boundaryTypes/peripheral_leaf/families/0"
+    },
+    {
+      "complementMapId": "complement:5-6:7-6",
+      "familyRegistryPointer": {
+        "familyId": "7-6",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-6",
+      "pentatonicSetClassId": "pentatonic:5-6",
+      "representativeHeptatonicMask": 415,
+      "representativePentatonicMask": 3680,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/D/tiers/D5/satelliteFamilies/0"
+    },
+    {
+      "complementMapId": "complement:5-7:7-7",
+      "familyRegistryPointer": {
+        "familyId": "7-7",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-7",
+      "pentatonicSetClassId": "pentatonic:5-7",
+      "representativeHeptatonicMask": 463,
+      "representativePentatonicMask": 3632,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/D/tiers/D2/satelliteFamilies/0"
+    },
+    {
+      "complementMapId": "complement:5-8:7-8",
+      "familyRegistryPointer": {
+        "familyId": "7-8",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-8",
+      "pentatonicSetClassId": "pentatonic:5-8",
+      "representativeHeptatonicMask": 381,
+      "representativePentatonicMask": 3714,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/D/tiers/D6/family"
+    },
+    {
+      "complementMapId": "complement:5-9:7-9",
+      "familyRegistryPointer": {
+        "familyId": "7-9",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-9",
+      "pentatonicSetClassId": "pentatonic:5-9",
+      "representativeHeptatonicMask": 351,
+      "representativePentatonicMask": 3744,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/boundaryTypes/oriented_convergence/families/3"
+    },
+    {
+      "complementMapId": "complement:5-Z12:7-Z12",
+      "familyRegistryPointer": {
+        "familyId": "7-Z12",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-Z12",
+      "pentatonicSetClassId": "pentatonic:5-Z12",
+      "representativeHeptatonicMask": 671,
+      "representativePentatonicMask": 3424,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/D/tiers/D5/family"
+    },
+    {
+      "complementMapId": "complement:5-Z17:7-Z17",
+      "familyRegistryPointer": {
+        "familyId": "7-Z17",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-Z17",
+      "pentatonicSetClassId": "pentatonic:5-Z17",
+      "representativeHeptatonicMask": 631,
+      "representativePentatonicMask": 3464,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/D/tiers/D4/family"
+    },
+    {
+      "complementMapId": "complement:5-Z18:7-Z18",
+      "familyRegistryPointer": {
+        "familyId": "7-Z18",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-Z18",
+      "pentatonicSetClassId": "pentatonic:5-Z18",
+      "representativeHeptatonicMask": 755,
+      "representativePentatonicMask": 3340,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/boundaryTypes/oriented_convergence/families/2"
+    },
+    {
+      "complementMapId": "complement:5-Z36:7-Z36",
+      "familyRegistryPointer": {
+        "familyId": "7-Z36",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-Z36",
+      "pentatonicSetClassId": "pentatonic:5-Z36",
+      "representativeHeptatonicMask": 367,
+      "representativePentatonicMask": 3728,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/boundaryTypes/oriented_convergence/families/0"
+    },
+    {
+      "complementMapId": "complement:5-Z37:7-Z37",
+      "familyRegistryPointer": {
+        "familyId": "7-Z37",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-Z37",
+      "pentatonicSetClassId": "pentatonic:5-Z37",
+      "representativeHeptatonicMask": 443,
+      "representativePentatonicMask": 3652,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/D/tiers/D3/family"
+    },
+    {
+      "complementMapId": "complement:5-Z38:7-Z38",
+      "familyRegistryPointer": {
+        "familyId": "7-Z38",
+        "path": "canonical/universal-network-data.json#familyRegistry"
+      },
+      "heptatonicFamilyId": "7-Z38",
+      "pentatonicSetClassId": "pentatonic:5-Z38",
+      "representativeHeptatonicMask": 439,
+      "representativePentatonicMask": 3656,
+      "rootedPairs": [],
+      "topologyIdentityPointer": "canonical/topology-identity-definitions.json#/anchorCategories/D/tiers/D2/satelliteFamilies/1"
+    }
+  ],
+  "courtRootedPositions": [
+    {
+      "admissionStatus": "admitted",
+      "complementFamilyId": "7-35",
+      "kappaCourt": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "normalizedComplementScaleStateId": 1387,
+      "pitchClasses": [
+        0,
+        2,
+        4,
+        7,
+        9
+      ],
+      "pitchMask": 661,
+      "pitchMask12": "101010010100",
+      "poleRegister": {
+        "internalPoles": [],
+        "poleOrder": [
+          "Mars",
+          "Jupiter",
+          "Venus",
+          "Saturn"
+        ],
+        "vector": "0000"
+      },
+      "positionId": "C0",
+      "rawComplementMask": 3434,
+      "rootPc": 0,
+      "setClassId": "pentatonic:5-35",
+      "t5CycleIndex": 0,
+      "t5Offset": 0,
+      "xorSupportFromPrevious": null
+    },
+    {
+      "admissionStatus": "admitted",
+      "complementFamilyId": "7-35",
+      "kappaCourt": {
+        "denominator": 4,
+        "numerator": 1
+      },
+      "normalizedComplementScaleStateId": 1387,
+      "pitchClasses": [
+        0,
+        2,
+        5,
+        7,
+        9
+      ],
+      "pitchMask": 677,
+      "pitchMask12": "101001010100",
+      "poleRegister": {
+        "internalPoles": [
+          "Mars"
+        ],
+        "poleOrder": [
+          "Mars",
+          "Jupiter",
+          "Venus",
+          "Saturn"
+        ],
+        "vector": "1000"
+      },
+      "positionId": "C1",
+      "rawComplementMask": 3418,
+      "rootPc": 0,
+      "setClassId": "pentatonic:5-35",
+      "t5CycleIndex": 1,
+      "t5Offset": 5,
+      "xorSupportFromPrevious": [
+        4,
+        5
+      ]
+    },
+    {
+      "admissionStatus": "admitted",
+      "complementFamilyId": "7-35",
+      "kappaCourt": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "normalizedComplementScaleStateId": 1387,
+      "pitchClasses": [
+        0,
+        2,
+        5,
+        7,
+        10
+      ],
+      "pitchMask": 1189,
+      "pitchMask12": "101001010010",
+      "poleRegister": {
+        "internalPoles": [
+          "Mars",
+          "Jupiter"
+        ],
+        "poleOrder": [
+          "Mars",
+          "Jupiter",
+          "Venus",
+          "Saturn"
+        ],
+        "vector": "1100"
+      },
+      "positionId": "C2",
+      "rawComplementMask": 2906,
+      "rootPc": 0,
+      "setClassId": "pentatonic:5-35",
+      "t5CycleIndex": 2,
+      "t5Offset": 10,
+      "xorSupportFromPrevious": [
+        9,
+        10
+      ]
+    },
+    {
+      "admissionStatus": "admitted",
+      "complementFamilyId": "7-35",
+      "kappaCourt": {
+        "denominator": 4,
+        "numerator": 3
+      },
+      "normalizedComplementScaleStateId": 1387,
+      "pitchClasses": [
+        0,
+        3,
+        5,
+        7,
+        10
+      ],
+      "pitchMask": 1193,
+      "pitchMask12": "100101010010",
+      "poleRegister": {
+        "internalPoles": [
+          "Mars",
+          "Jupiter",
+          "Venus"
+        ],
+        "poleOrder": [
+          "Mars",
+          "Jupiter",
+          "Venus",
+          "Saturn"
+        ],
+        "vector": "1110"
+      },
+      "positionId": "C3",
+      "rawComplementMask": 2902,
+      "rootPc": 0,
+      "setClassId": "pentatonic:5-35",
+      "t5CycleIndex": 3,
+      "t5Offset": 3,
+      "xorSupportFromPrevious": [
+        2,
+        3
+      ]
+    },
+    {
+      "admissionStatus": "admitted",
+      "complementFamilyId": "7-35",
+      "kappaCourt": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "normalizedComplementScaleStateId": 1387,
+      "pitchClasses": [
+        0,
+        3,
+        5,
+        8,
+        10
+      ],
+      "pitchMask": 1321,
+      "pitchMask12": "100101001010",
+      "poleRegister": {
+        "internalPoles": [
+          "Mars",
+          "Jupiter",
+          "Venus",
+          "Saturn"
+        ],
+        "poleOrder": [
+          "Mars",
+          "Jupiter",
+          "Venus",
+          "Saturn"
+        ],
+        "vector": "1111"
+      },
+      "positionId": "C4",
+      "rawComplementMask": 2774,
+      "rootPc": 0,
+      "setClassId": "pentatonic:5-35",
+      "t5CycleIndex": 4,
+      "t5Offset": 8,
+      "xorSupportFromPrevious": [
+        7,
+        8
+      ]
+    }
+  ],
+  "courtSegmentOffsets": [
+    0,
+    5,
+    10,
+    3,
+    8
+  ],
+  "integratedAdmission": "proposed_pending_crt_309",
+  "minimalAdditionalBridgeSetClasses": [],
+  "packageId": "seven-governors-court-substrate",
+  "packageVersion": "0.1.0",
+  "pentatonicSetClasses": [
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-1:7-1",
+      "forteNumber": "5-1",
+      "forteOrdinal": 1,
+      "representativeMask": 3968,
+      "representativeMask12": "000000011111",
+      "representativePitchClasses": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-1",
+      "sourceScaleStateId": 127,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-2:7-2",
+      "forteNumber": "5-2",
+      "forteOrdinal": 2,
+      "representativeMask": 3904,
+      "representativeMask12": "000000101111",
+      "representativePitchClasses": [
+        6,
+        8,
+        9,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-2",
+      "sourceScaleStateId": 191,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-3:7-3",
+      "forteNumber": "5-3",
+      "forteOrdinal": 3,
+      "representativeMask": 3776,
+      "representativeMask12": "000000110111",
+      "representativePitchClasses": [
+        6,
+        7,
+        9,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-3",
+      "sourceScaleStateId": 319,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-4:7-4",
+      "forteNumber": "5-4",
+      "forteOrdinal": 4,
+      "representativeMask": 3872,
+      "representativeMask12": "000001001111",
+      "representativePitchClasses": [
+        5,
+        8,
+        9,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-4",
+      "sourceScaleStateId": 223,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-5:7-5",
+      "forteNumber": "5-5",
+      "forteOrdinal": 5,
+      "representativeMask": 3856,
+      "representativeMask12": "000010001111",
+      "representativePitchClasses": [
+        4,
+        8,
+        9,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-5",
+      "sourceScaleStateId": 239,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-6:7-6",
+      "forteNumber": "5-6",
+      "forteOrdinal": 6,
+      "representativeMask": 3680,
+      "representativeMask12": "000001100111",
+      "representativePitchClasses": [
+        5,
+        6,
+        9,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-6",
+      "sourceScaleStateId": 415,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-7:7-7",
+      "forteNumber": "5-7",
+      "forteOrdinal": 7,
+      "representativeMask": 3632,
+      "representativeMask12": "000011000111",
+      "representativePitchClasses": [
+        4,
+        5,
+        9,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-7",
+      "sourceScaleStateId": 463,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-8:7-8",
+      "forteNumber": "5-8",
+      "forteOrdinal": 8,
+      "representativeMask": 3714,
+      "representativeMask12": "010000010111",
+      "representativePitchClasses": [
+        1,
+        7,
+        9,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-8",
+      "sourceScaleStateId": 381,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-9:7-9",
+      "forteNumber": "5-9",
+      "forteOrdinal": 9,
+      "representativeMask": 3744,
+      "representativeMask12": "000001010111",
+      "representativePitchClasses": [
+        5,
+        7,
+        9,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-9",
+      "sourceScaleStateId": 351,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-10:7-10",
+      "forteNumber": "5-10",
+      "forteOrdinal": 10,
+      "representativeMask": 3488,
+      "representativeMask12": "000001011011",
+      "representativePitchClasses": [
+        5,
+        7,
+        8,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-10",
+      "sourceScaleStateId": 607,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-11:7-11",
+      "forteNumber": "5-11",
+      "forteOrdinal": 11,
+      "representativeMask": 3716,
+      "representativeMask12": "001000010111",
+      "representativePitchClasses": [
+        2,
+        7,
+        9,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-11",
+      "sourceScaleStateId": 379,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-Z12:7-Z12",
+      "forteNumber": "5-Z12",
+      "forteOrdinal": 12,
+      "representativeMask": 3424,
+      "representativeMask12": "000001101011",
+      "representativePitchClasses": [
+        5,
+        6,
+        8,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-Z12",
+      "sourceScaleStateId": 671,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-13:7-13",
+      "forteNumber": "5-13",
+      "forteOrdinal": 13,
+      "representativeMask": 3720,
+      "representativeMask12": "000100010111",
+      "representativePitchClasses": [
+        3,
+        7,
+        9,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-13",
+      "sourceScaleStateId": 375,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-14:7-14",
+      "forteNumber": "5-14",
+      "forteOrdinal": 14,
+      "representativeMask": 3664,
+      "representativeMask12": "000010100111",
+      "representativePitchClasses": [
+        4,
+        6,
+        9,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-14",
+      "sourceScaleStateId": 431,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-15:7-15",
+      "forteNumber": "5-15",
+      "forteOrdinal": 15,
+      "representativeMask": 3624,
+      "representativeMask12": "000101000111",
+      "representativePitchClasses": [
+        3,
+        5,
+        9,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-15",
+      "sourceScaleStateId": 471,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-16:7-16",
+      "forteNumber": "5-16",
+      "forteOrdinal": 16,
+      "representativeMask": 3472,
+      "representativeMask12": "000010011011",
+      "representativePitchClasses": [
+        4,
+        7,
+        8,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-16",
+      "sourceScaleStateId": 623,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-Z17:7-Z17",
+      "forteNumber": "5-Z17",
+      "forteOrdinal": 17,
+      "representativeMask": 3464,
+      "representativeMask12": "000100011011",
+      "representativePitchClasses": [
+        3,
+        7,
+        8,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-Z17",
+      "sourceScaleStateId": 631,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-Z18:7-Z18",
+      "forteNumber": "5-Z18",
+      "forteOrdinal": 18,
+      "representativeMask": 3340,
+      "representativeMask12": "001100001011",
+      "representativePitchClasses": [
+        2,
+        3,
+        8,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-Z18",
+      "sourceScaleStateId": 755,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-19:7-19",
+      "forteNumber": "5-19",
+      "forteOrdinal": 19,
+      "representativeMask": 3376,
+      "representativeMask12": "000011001011",
+      "representativePitchClasses": [
+        4,
+        5,
+        8,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-19",
+      "sourceScaleStateId": 719,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-20:7-20",
+      "forteNumber": "5-20",
+      "forteOrdinal": 20,
+      "representativeMask": 3352,
+      "representativeMask12": "000110001011",
+      "representativePitchClasses": [
+        3,
+        4,
+        8,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-20",
+      "sourceScaleStateId": 743,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-21:7-21",
+      "forteNumber": "5-21",
+      "forteOrdinal": 21,
+      "representativeMask": 3272,
+      "representativeMask12": "000100110011",
+      "representativePitchClasses": [
+        3,
+        6,
+        7,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-21",
+      "sourceScaleStateId": 823,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-22:7-22",
+      "forteNumber": "5-22",
+      "forteOrdinal": 22,
+      "representativeMask": 3224,
+      "representativeMask12": "000110010011",
+      "representativePitchClasses": [
+        3,
+        4,
+        7,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-22",
+      "sourceScaleStateId": 871,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": null,
+      "admissionStatus": "admitted-bridge",
+      "complementMapId": "complement:5-23:7-23",
+      "forteNumber": "5-23",
+      "forteOrdinal": 23,
+      "representativeMask": 3394,
+      "representativeMask12": "010000101011",
+      "representativePitchClasses": [
+        1,
+        6,
+        8,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-23",
+      "sourceScaleStateId": 701,
+      "t5Reference": {
+        "cycleIndex": 0,
+        "offset": 0,
+        "semantics": "root_alignment_only"
+      },
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-24:7-24",
+      "forteNumber": "5-24",
+      "forteOrdinal": 24,
+      "representativeMask": 3408,
+      "representativeMask12": "000010101011",
+      "representativePitchClasses": [
+        4,
+        6,
+        8,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-24",
+      "sourceScaleStateId": 687,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-25:7-25",
+      "forteNumber": "5-25",
+      "forteOrdinal": 25,
+      "representativeMask": 3362,
+      "representativeMask12": "010001001011",
+      "representativePitchClasses": [
+        1,
+        5,
+        8,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-25",
+      "sourceScaleStateId": 733,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-26:7-26",
+      "forteNumber": "5-26",
+      "forteOrdinal": 26,
+      "representativeMask": 3396,
+      "representativeMask12": "001000101011",
+      "representativePitchClasses": [
+        2,
+        6,
+        8,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-26",
+      "sourceScaleStateId": 699,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": null,
+      "admissionStatus": "admitted-bridge",
+      "complementMapId": "complement:5-27:7-27",
+      "forteNumber": "5-27",
+      "forteOrdinal": 27,
+      "representativeMask": 3400,
+      "representativeMask12": "000100101011",
+      "representativePitchClasses": [
+        3,
+        6,
+        8,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-27",
+      "sourceScaleStateId": 695,
+      "t5Reference": {
+        "cycleIndex": 0,
+        "offset": 0,
+        "semantics": "root_alignment_only"
+      },
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-28:7-28",
+      "forteNumber": "5-28",
+      "forteOrdinal": 28,
+      "representativeMask": 3348,
+      "representativeMask12": "001010001011",
+      "representativePitchClasses": [
+        2,
+        4,
+        8,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-28",
+      "sourceScaleStateId": 747,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-29:7-29",
+      "forteNumber": "5-29",
+      "forteOrdinal": 29,
+      "representativeMask": 3368,
+      "representativeMask12": "000101001011",
+      "representativePitchClasses": [
+        3,
+        5,
+        8,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-29",
+      "sourceScaleStateId": 727,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-30:7-30",
+      "forteNumber": "5-30",
+      "forteOrdinal": 30,
+      "representativeMask": 3240,
+      "representativeMask12": "000101010011",
+      "representativePitchClasses": [
+        3,
+        5,
+        7,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-30",
+      "sourceScaleStateId": 855,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-31:7-31",
+      "forteNumber": "5-31",
+      "forteOrdinal": 31,
+      "representativeMask": 3364,
+      "representativeMask12": "001001001011",
+      "representativePitchClasses": [
+        2,
+        5,
+        8,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-31",
+      "sourceScaleStateId": 731,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-32:7-32",
+      "forteNumber": "5-32",
+      "forteOrdinal": 32,
+      "representativeMask": 3236,
+      "representativeMask12": "001001010011",
+      "representativePitchClasses": [
+        2,
+        5,
+        7,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-32",
+      "sourceScaleStateId": 859,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-33:7-33",
+      "forteNumber": "5-33",
+      "forteOrdinal": 33,
+      "representativeMask": 2728,
+      "representativeMask12": "000101010101",
+      "representativePitchClasses": [
+        3,
+        5,
+        7,
+        9,
+        11
+      ],
+      "setClassId": "pentatonic:5-33",
+      "sourceScaleStateId": 1367,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-34:7-34",
+      "forteNumber": "5-34",
+      "forteOrdinal": 34,
+      "representativeMask": 2724,
+      "representativeMask12": "001001010101",
+      "representativePitchClasses": [
+        2,
+        5,
+        7,
+        9,
+        11
+      ],
+      "setClassId": "pentatonic:5-34",
+      "sourceScaleStateId": 1371,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": null,
+      "admissionStatus": "admitted",
+      "complementMapId": "complement:5-35:7-35",
+      "forteNumber": "5-35",
+      "forteOrdinal": 35,
+      "representativeMask": 2708,
+      "representativeMask12": "001010010101",
+      "representativePitchClasses": [
+        2,
+        4,
+        7,
+        9,
+        11
+      ],
+      "setClassId": "pentatonic:5-35",
+      "sourceScaleStateId": 1387,
+      "t5Reference": {
+        "cycleIndex": 0,
+        "offset": 0,
+        "semantics": "canonical_court_segment_origin"
+      },
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-Z36:7-Z36",
+      "forteNumber": "5-Z36",
+      "forteOrdinal": 36,
+      "representativeMask": 3728,
+      "representativeMask12": "000010010111",
+      "representativePitchClasses": [
+        4,
+        7,
+        9,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-Z36",
+      "sourceScaleStateId": 367,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-Z37:7-Z37",
+      "forteNumber": "5-Z37",
+      "forteOrdinal": 37,
+      "representativeMask": 3652,
+      "representativeMask12": "001000100111",
+      "representativePitchClasses": [
+        2,
+        6,
+        9,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-Z37",
+      "sourceScaleStateId": 443,
+      "t5Reference": null,
+      "weight": 5
+    },
+    {
+      "admissionBlocker": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "admissionStatus": "proposed",
+      "complementMapId": "complement:5-Z38:7-Z38",
+      "forteNumber": "5-Z38",
+      "forteOrdinal": 38,
+      "representativeMask": 3656,
+      "representativeMask12": "000100100111",
+      "representativePitchClasses": [
+        3,
+        6,
+        9,
+        10,
+        11
+      ],
+      "setClassId": "pentatonic:5-Z38",
+      "sourceScaleStateId": 439,
+      "t5Reference": null,
+      "weight": 5
+    }
+  ],
+  "releaseId": "court-substrate:0.1.0",
+  "schemaVersion": "1.0.0",
+  "sourceFingerprint": "0380f86c384228b7bbb3cbbb610919e6dc6f783c576aa082737426ee7b15df28",
+  "sourceHashes": [
+    {
+      "path": "canonical/topology-identity-definitions.json",
+      "sha256": "ce7b3a3b8bed85d67df203a0dd6d2ba395effd19f0855869faa1a4d343bf127b"
+    },
+    {
+      "path": "canonical/universal-heptatonic-ledger.json",
+      "sha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d"
+    },
+    {
+      "path": "canonical/universal-network-data.json",
+      "sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc"
+    },
+    {
+      "path": "docs/COURT_ADMISSION_AND_AUTHORITY.md",
+      "sha256": "5a659f14506d1c48e7be2d51d32510b7fb4dd4c1b3d32fcef8ee48e0b6e10637"
+    },
+    {
+      "path": "framework/AGENTS.md",
+      "sha256": "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24"
+    },
+    {
+      "path": "framework/TOPOLOGICAL_ANCHORING.md",
+      "sha256": "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c"
+    },
+    {
+      "path": "schemas/court-admission-contract.json",
+      "sha256": "b4351a14aa3dfde6043a609e4158abcb17b006b666a35220e5833cf1cf7ffa9b"
+    },
+    {
+      "path": "scrum/CRT-310-remaining-pentatonic-admission.md",
+      "sha256": "46e9f8f1edc69784ec9dcd2c18d6ffc3c54970d8011d3c979f8524797e1240a9"
+    },
+    {
+      "path": "seven-governors-court-substrate-v0.1.0/source/substrate-input.json",
+      "sha256": "071903e173ff784984a9e16786891eed038e68c061920435a4626370af76ea09"
+    },
+    {
+      "path": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml",
+      "sha256": "9cbf038c93a72719387e6a8094f5b466a79e61ce03371f5b2334fb26a480b64a"
+    }
+  ],
+  "substrateFingerprint": "fda4707f63b08ca02a155f8d5d8c738534f17e0ab2a234d79f83bf30f16a2fc2",
+  "summary": {
+    "admittedBridgeSetClassCount": 2,
+    "admittedSetClassCount": 1,
+    "bridgeRootingCount": 2,
+    "complementMapCount": 38,
+    "courtRootedPositionCount": 5,
+    "pentatonicSetClassCount": 38,
+    "proposedSetClassCount": 35,
+    "t5CycleEntryCount": 12
+  },
+  "t5Cycle": [
+    {
+      "courtPositionId": "C0",
+      "courtSegmentIndex": 0,
+      "cycleIndex": 0,
+      "nextOffset": 5,
+      "offset": 0
+    },
+    {
+      "courtPositionId": "C1",
+      "courtSegmentIndex": 1,
+      "cycleIndex": 1,
+      "nextOffset": 10,
+      "offset": 5
+    },
+    {
+      "courtPositionId": "C2",
+      "courtSegmentIndex": 2,
+      "cycleIndex": 2,
+      "nextOffset": 3,
+      "offset": 10
+    },
+    {
+      "courtPositionId": "C3",
+      "courtSegmentIndex": 3,
+      "cycleIndex": 3,
+      "nextOffset": 8,
+      "offset": 3
+    },
+    {
+      "courtPositionId": "C4",
+      "courtSegmentIndex": 4,
+      "cycleIndex": 4,
+      "nextOffset": 1,
+      "offset": 8
+    },
+    {
+      "courtPositionId": null,
+      "courtSegmentIndex": null,
+      "cycleIndex": 5,
+      "nextOffset": 6,
+      "offset": 1
+    },
+    {
+      "courtPositionId": null,
+      "courtSegmentIndex": null,
+      "cycleIndex": 6,
+      "nextOffset": 11,
+      "offset": 6
+    },
+    {
+      "courtPositionId": null,
+      "courtSegmentIndex": null,
+      "cycleIndex": 7,
+      "nextOffset": 4,
+      "offset": 11
+    },
+    {
+      "courtPositionId": null,
+      "courtSegmentIndex": null,
+      "cycleIndex": 8,
+      "nextOffset": 9,
+      "offset": 4
+    },
+    {
+      "courtPositionId": null,
+      "courtSegmentIndex": null,
+      "cycleIndex": 9,
+      "nextOffset": 2,
+      "offset": 9
+    },
+    {
+      "courtPositionId": null,
+      "courtSegmentIndex": null,
+      "cycleIndex": 10,
+      "nextOffset": 7,
+      "offset": 2
+    },
+    {
+      "courtPositionId": null,
+      "courtSegmentIndex": null,
+      "cycleIndex": 11,
+      "nextOffset": 0,
+      "offset": 7
+    }
+  ]
+}

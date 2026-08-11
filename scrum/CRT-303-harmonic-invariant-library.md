@@ -1,14 +1,14 @@
 # CRT-303 — Harmonic-invariant library and Carey CQ/SQ evaluation
 
-**Status:** Partial · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+**Status:** **Done** · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
 
-> **Status note (2026-08-07):** harmonic coordinates (`H_t`, `H_v`, `H_c`,
-> `H_s`) and the 462-state coordinate/proof suite are implemented in
-> `court-mathematics/` and verified by `tests/verification/`. Carey `CQ = 1`
-> and `SQ = 1/2` for the 5-35 seed are proven under exact rational arithmetic
-> with the cited 12-TET premises. **Remaining:** an independent Carey
-> failure/difference enumerator (values currently rest on stated premises),
-> an admitted invariant-registry artifact, and exact `kappa_court`.
+> **Completion note (2026-08-09):**
+> `seven-governors-harmonic-invariants-v0.1.0` computes the Court geometry,
+> exact `kappa_court`, and scoped Carey 5-35 results from the fingerprinted
+> CRT-302 substrate. The Carey evaluator independently enumerates 20 directed
+> intervals, 40 difference slots, and 150 cross-generic comparisons, yielding
+> `D=20`, `F=0`, `CQ=1`, and `SQ=1/2`. Aggregate `C_H` remains explicitly
+> unresolved. The package remains `proposed_pending_crt_309`.
 **Depends on:** CRT-302 · **Blocks:** CRT-304, CRT-306
 
 ## Story
@@ -46,29 +46,29 @@ that $\kappa_{\text{court}}\ne C_H$, and the SC-3 invariant-integrity gate.
 
 ## Tasks
 
-- [ ] Create a new versioned `harmonic-invariants` package dependent on the
+- [x] Create a new versioned `harmonic-invariants` package dependent on the
       CRT-302 substrate rather than the frozen `fivefold_engine.yaml`.
-- [ ] Implement the Gram matrix computation over the four signed Court
+- [x] Implement the Gram matrix computation over the four signed Court
       transition vectors $e_i$ taken from the XOR supports
       $\{4,5\}, \{9,10\}, \{2,3\}, \{7,8\}$; prove $G_{\text{Court}}=2I_4$.
-- [ ] Implement Hamming distance $d_H$ over the five canonical Court masks;
+- [x] Implement Hamming distance $d_H$ over the five canonical Court masks;
       prove $d_H(C_i,C_j)=2|i-j|$ for all $i,j\in\{0,1,2,3,4\}$.
-- [ ] Implement a disjoint-support check asserting the four XOR sets share
+- [x] Implement a disjoint-support check asserting the four XOR sets share
       no pitch.
-- [ ] Implement the weight-5 invariant over all admitted Court states.
-- [ ] Implement Norman Carey's Coherence Quotient $\mathrm{CQ}$ and Sameness
+- [x] Implement the weight-5 invariant over all admitted Court states.
+- [x] Implement Norman Carey's Coherence Quotient $\mathrm{CQ}$ and Sameness
       Quotient $\mathrm{SQ}$ for the canonical 5–35 seed; reproduce
       $\mathrm{CQ}=1$ and $\mathrm{SQ}=\tfrac12$ under 12-TET.
-- [ ] Mark the $C_H$ namespace in the schema as a fourth compression
+- [x] Mark the $C_H$ namespace in the schema as a fourth compression
       coordinate distinct from $C_P$ (GOV-202 photonic),
       $C_S$ (semantic gradient), and $\kappa_{\text{court}}$ (CRT-305
       runtime); add the guard "$C_H$ is a derived harmonic property, not a
       photonic measurement, not a thermodynamic quantity".
-- [ ] Add schema-validated provenance citing Carey 2007 (DOI
+- [x] Add schema-validated provenance citing Carey 2007 (DOI
       10.1080/17459730701376743) as the formal source of CQ/SQ; add
       document-internal provenance citations for $G_{\text{Court}}$,
       $d_H$, and the disjoint XOR supports.
-- [ ] Add deterministic `--check` and `--emit` build modes with source
+- [x] Add deterministic `--check` and `--emit` build modes with source
       hashes; two clean builds reproduce every invariant value byte-identically.
 
 ## Acceptance criteria
@@ -103,6 +103,12 @@ supports, weight-5, $\mathrm{CQ}=1$, $\mathrm{SQ}=\tfrac12$. Run negative
 fixtures: overlapping XOR supports, wrong-weight mask, off-cycle $T_5$
 entry, non-canonical seed claiming Carey computation. Compare canonical
 output bytes across two clean builds in separate processes.
+
+Evidence is recorded in
+`seven-governors-harmonic-invariants-v0.1.0/qa/validation-report.json`,
+`seven-governors-harmonic-invariants-v0.1.0/qa/determinism-report.json`, and
+`tests/verification/test_harmonic_invariant_registry.py`. The production
+enumerator is also used directly by `scripts/run-phase4-verification.py`.
 
 ## Definition of done
 

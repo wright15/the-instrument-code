@@ -1,0 +1,20 @@
+{
+  "name": "seven-governors-court-filter-algebra",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Deterministic Court filter algebra and mutation commutation evidence.",
+  "scripts": {
+    "build:check": "python3 scripts/build_filters.py --check",
+    "build:emit": "python3 scripts/build_filters.py --emit",
+    "test": "python3 -m pytest -p no:cacheprovider -q tests",
+    "validate:registry": "python3 scripts/validate_package.py",
+    "validate:determinism": "python3 scripts/validate_determinism.py",
+    "manifest:check": "python3 scripts/build_package_manifest.py --check",
+    "manifest:emit": "python3 scripts/build_package_manifest.py --emit",
+    "release:emit": "npm run build:emit && npm test && npm run validate:registry && npm run validate:determinism && npm run manifest:emit",
+    "validate": "npm run build:check && npm test && npm run validate:registry && npm run validate:determinism && npm run manifest:check"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

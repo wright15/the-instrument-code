@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/court-substrate/0.1.0/schemas/admission-status.schema.json",
+  "title": "AdmissionStatus",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["admissionStatusId", "meaning", "integratedEffect"],
+  "properties": {
+    "admissionStatusId": {
+      "$ref": "common.schema.json#/$defs/admissionStatusId"
+    },
+    "meaning": { "type": "string", "minLength": 1 },
+    "integratedEffect": {
+      "const": "none_until_crt_309"
+    }
+  }
+}

@@ -3,9 +3,13 @@ MATCH (n)
 WHERE n:Triad
    OR n:CourtFilterApplication
    OR n:CourtFilterOperator
-   OR n:PentatonicSetClass
    OR n:CourtCommutationRecord
-   OR n:CourtState
+   OR n:CourtLedgerSnapshot
    OR n:CourtRootedPosition
+   OR n:CourtRuntimeSession
+   OR n:CourtState
+   OR n:CourtTransitionEvent
+   OR n:PentatonicSetClass
    OR n:PoleRegister
+   OR n:TopologicalTranslocationRecord
 DETACH DELETE n;

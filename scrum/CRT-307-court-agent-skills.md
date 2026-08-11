@@ -1,6 +1,14 @@
 # CRT-307 — Court-aware first-party agent skills
 
-**Status:** Ready · **Priority:** High · **Points:** 5 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+**Status:** Done · **Priority:** High · **Points:** 5 · **Epic:** [EPIC-003](EPIC-003-pentatonic-court-admission.md)
+
+> **Closure evidence (2026-08-10):** parallel API
+> `src/governor/court_agent_api.py`, standalone bundle under `skills/court/`,
+> explicit-target installer/validator, eight deterministic traces, 44 Python
+> facade tests, 17 Node schema/adapter/installer tests, unchanged GOV-207
+> regressions (42 passed), and an 8/8 observational trace pass on local
+> `koboldcpp/Qwen3.6-35B-A3B-UD-IQ2_XXS`. Model output is non-canonical QA;
+> replay, schemas, and verifier evidence remain authoritative.
 **Depends on:** CRT-305, CRT-306, GOV-207 · **Blocks:** CRT-308, CRT-309
 
 ## Story
@@ -28,34 +36,68 @@ as GOV-205/207 gate the GOV-204 transition lifecycle.
 
 ## Tasks
 
-- [ ] Add Court-aware first-party skills:
+- [x] Add Court-aware first-party skills:
       `inspect_court_state`, `list_legal_court_moves`,
       `validate_and_execute_court_transition`,
       `project_through_court` (apply $P_c$ read-only), and
       `verify_court_postcondition`.
-- [ ] Give each skill a trigger, bounded inputs, JSON output schema,
+- [x] Give each skill a trigger, bounded inputs, JSON output schema,
       allowed tools/capabilities, procedure, stop conditions, and failure
       handling; each skill declares its CRT-305 token scope and
       CRT-306 named-query budget.
-- [ ] Load only the Court skill and named Court query relevant to the
+- [x] Load only the Court skill and named Court query relevant to the
       current Court state instead of exposing a flat unrestricted Court
       tool list; skill menus adapt to the current $\kappa_{\text{court}}$
       position.
-- [ ] Require runtime CLI/API results for Court math, Court graph facts,
+- [x] Require runtime CLI/API results for Court math, Court graph facts,
       Court validation, Court execution, and Court verification; prose
       cannot substitute for a Court tool result, and the model cannot
       invent a Court position or pole register.
-- [ ] Add explicit Court loop/replan instructions that consume machine
+- [x] Add explicit Court loop/replan instructions that consume machine
       stop reasons (e.g. `non_adjacent_without_translocation`,
       `kappa_cross_namespace_write`, `off_chain`) rather than relying on
       the model to notice repetition.
-- [ ] Extend GOV-207's framework-neutral skill registry and explicit-target
+- [x] Publish a parallel framework-neutral registry and explicit-target
       installer to publish Court skills into an explicit target directory
       without overwriting existing GOV-207 skills.
-- [ ] Add evaluation traces for Court classification, Court graph
+- [x] Add evaluation traces for Court classification, Court graph
       retrieval, a legal adjacent Court transition, an off-chain
       rejection, a Topological Translocation acceptance, an invalid Court
       move, and a no-progress Court loop stop.
+
+## Implementation ruling
+
+CRT-307 is a parallel `seven-governors-crt-307` bundle rather than a version
+change to GOV-207's closed five-skill contract. It uses API
+`crt-307.court-agent-api.v1` and tool
+`governor.court_agent_api.invoke`; installing it never overwrites GOV-207
+registry, capability, workflow, schema, or adapter bytes.
+
+Every operation explicitly replays the external CRT-305 session. Transition
+execution requires the published base capability intersection, an exact current
+menu match, the state-owned `court.transition` or `court.translocate` grant, a
+trusted typed verifier, postcondition replay, and CAS persistence. The model
+cannot submit a token, capability, evidence decision, filter, route, or
+translocation record. Historical event verification never reruns an effect.
+
+`project_through_court` resolves `court-filter:{currentPosition}` from the
+fingerprinted CRT-304 registry and accepts the full ambient 12-bit domain. It
+returns `P_c(x)`, exact reduction, and five-valued route semantics while proving
+state and ledger bytes unchanged. CRT-306 queries are optional, normalized, and
+bounded; timeout, malformed, oversized, or unavailable graph output cannot
+change runtime legality.
+
+The no-progress guard deterministically returns `repetition_limit_reached`
+then `retry_exhausted` without another verifier call. Its bounded history is
+facade-local and resets on process restart; it is safety metadata, never CRT-305
+state or ledger authority. Pathname installation rejects static and detected
+symlink races and rolls back owned bytes, while adversarial OS-level TOCTOU
+cannot be eliminated by a user-space Node installer.
+
+Final closure: 305 root Python tests passed; Phase-4 passed 45 verification
+tests plus native live Neo4j parity; root validation passed 236/236 checks; the
+canonical manifest contains 645 files and excludes live Court sessions and the
+non-canonical local-model observation report.
 
 ## Acceptance criteria
 

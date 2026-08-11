@@ -1,0 +1,154 @@
+{
+  "comparisonId": "bridge-comparison:aeolian-1453:harmonic-minor-2477",
+  "conclusion": "The two admitted bridges expose distinct fixed-root information and are not interchangeable.",
+  "filterAlgebraFingerprint": "40bd74397ff9f4c8c0f0b845630e008cea66c9495413195c1e1c92ff02968589",
+  "integratedAdmission": "proposed_pending_crt_309",
+  "minimalAdditionalBridgeFilters": [],
+  "releaseId": "court-filter-algebra:0.1.0",
+  "routes": [
+    {
+      "distinctExposedInformation": "retains Degree 2 / Jupiter at pitch class 2 while suppressing Degree 6 / Mercury at pitch class 8",
+      "exactBitReduction": {
+        "source": 2,
+        "target": 2
+      },
+      "filterId": "court-filter:5-23:root-0",
+      "filterMask": 173,
+      "governorOfficeDisposition": "preserved_external_authority_not_transformed",
+      "hiddenDegreeGovernorAddresses": [
+        {
+          "degree": 6,
+          "degreeGovernor": "Mercury"
+        },
+        {
+          "degree": 7,
+          "degreeGovernor": "Moon"
+        }
+      ],
+      "omittedPitchClasses": {
+        "source": [
+          8,
+          10
+        ],
+        "target": [
+          8,
+          11
+        ]
+      },
+      "retainedPitchClasses": {
+        "source": [
+          0,
+          2,
+          3,
+          5,
+          7
+        ],
+        "target": [
+          0,
+          2,
+          3,
+          5,
+          7
+        ]
+      },
+      "routeCost": {
+        "blockerPointer": "scrum/CRT-305-court-runtime-ledger.md#topological-translocation-contract",
+        "status": "unresolved",
+        "value": null
+      },
+      "spectralMeasures": {
+        "admission": "not_admitted",
+        "blockerPointer": "scrum/CRT-304-court-filter-algebra.md#tasks-follow-on-admission-required",
+        "value": null
+      }
+    },
+    {
+      "distinctExposedInformation": "retains Degree 6 / Mercury at pitch class 8 while suppressing Degree 2 / Jupiter at pitch class 2",
+      "exactBitReduction": {
+        "source": 2,
+        "target": 2
+      },
+      "filterId": "court-filter:5-27:root-0",
+      "filterMask": 425,
+      "governorOfficeDisposition": "preserved_external_authority_not_transformed",
+      "hiddenDegreeGovernorAddresses": [
+        {
+          "degree": 2,
+          "degreeGovernor": "Jupiter"
+        },
+        {
+          "degree": 7,
+          "degreeGovernor": "Moon"
+        }
+      ],
+      "omittedPitchClasses": {
+        "source": [
+          2,
+          10
+        ],
+        "target": [
+          2,
+          11
+        ]
+      },
+      "retainedPitchClasses": {
+        "source": [
+          0,
+          3,
+          5,
+          7,
+          8
+        ],
+        "target": [
+          0,
+          3,
+          5,
+          7,
+          8
+        ]
+      },
+      "routeCost": {
+        "blockerPointer": "scrum/CRT-305-court-runtime-ledger.md#topological-translocation-contract",
+        "status": "unresolved",
+        "value": null
+      },
+      "spectralMeasures": {
+        "admission": "not_admitted",
+        "blockerPointer": "scrum/CRT-304-court-filter-algebra.md#tasks-follow-on-admission-required",
+        "value": null
+      }
+    }
+  ],
+  "schemaVersion": "1.0.0",
+  "sourceFingerprint": "179a28902710b703d59ec0a35a0bcfb31a5ab0644ef8947c551278b0377d211a",
+  "sourceState": {
+    "forte": "7-35",
+    "id": 1453,
+    "name": "Aeolian",
+    "pitchClasses": [
+      0,
+      2,
+      3,
+      5,
+      7,
+      8,
+      10
+    ],
+    "pitchMask": 1453
+  },
+  "targetState": {
+    "forte": "7-32",
+    "id": 2477,
+    "name": "Harmonic Minor",
+    "pitchClasses": [
+      0,
+      2,
+      3,
+      5,
+      7,
+      8,
+      11
+    ],
+    "pitchMask": 2477
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0.0",
+  "packageId": "seven-governors-harmonic-invariants",
+  "packageVersion": "0.1.0",
+  "releaseId": "harmonic-invariants:0.1.0",
+  "integratedAdmission": "proposed_pending_crt_309",
+  "substratePath": "seven-governors-court-substrate-v0.1.0/canonical/substrate-registry-release.json",
+  "sourcePaths": [
+    "docs/COURT_ADMISSION_AND_AUTHORITY.md",
+    "framework/AGENTS.md",
+    "framework/TOPOLOGICAL_ANCHORING.md",
+    "framework/NATURAL_ORGANIZATION_THESIS.md",
+    "court-mathematics/docs/01_COURT_LEXICON.md",
+    "seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/harmonic-measure-definitions.json",
+    "seven-governors-court-substrate-v0.1.0/canonical/substrate-registry-release.json"
+  ],
+  "careyCitation": {
+    "title": "Coherence and sameness in well-formed and pairwise well-formed scales",
+    "author": "Norman Carey",
+    "year": 2007,
+    "doi": "10.1080/17459730701376743"
+  },
+  "compressionGuard": {
+    "namespace": "harmonic.C_H",
+    "symbol": "C_H",
+    "status": "unresolved",
+    "value": null,
+    "forbiddenEquivalences": [
+      "physical.C_P",
+      "semantic.C_S",
+      "court.kappa_court",
+      "physical.temperature",
+      "physical.entropy",
+      "physical.enthalpy",
+      "physical.freeEnergy"
+    ],
+    "guardLiteral": "C_H is a derived harmonic property, not a photonic measurement, not C_P, not C_S, not kappa_court, and not a thermodynamic quantity: not temperature, entropy, enthalpy, or free energy."
+  },
+  "invariantDefinitions": [
+    {
+      "invariantId": "court.gram_matrix",
+      "kind": "exact_matrix",
+      "sourcePath": "framework/TOPOLOGICAL_ANCHORING.md",
+      "sourcePointer": "Court signed transition vectors and G_Court = 2I_4"
+    },
+    {
+      "invariantId": "court.hamming_path",
+      "kind": "exact_matrix",
+      "sourcePath": "framework/TOPOLOGICAL_ANCHORING.md",
+      "sourcePointer": "d_H(C_i,C_j) = 2|i-j|"
+    },
+    {
+      "invariantId": "court.disjoint_xor_supports",
+      "kind": "exact_sets",
+      "sourcePath": "framework/AGENTS.md",
+      "sourcePointer": "Court XOR supports {4,5}, {9,10}, {2,3}, {7,8}"
+    },
+    {
+      "invariantId": "court.weight_five",
+      "kind": "exact_vector",
+      "sourcePath": "framework/TOPOLOGICAL_ANCHORING.md",
+      "sourcePointer": "Every canonical Court state has weight five"
+    },
+    {
+      "invariantId": "court.kappa_exact",
+      "kind": "exact_ratios",
+      "sourcePath": "docs/COURT_ADMISSION_AND_AUTHORITY.md",
+      "sourcePointer": "Fourth compression coordinate kappa(C_i)=i/4"
+    },
+    {
+      "invariantId": "carey.coherence_quotient_5_35",
+      "kind": "exact_ratio",
+      "externalDoi": "10.1080/17459730701376743"
+    },
+    {
+      "invariantId": "carey.sameness_quotient_5_35",
+      "kind": "exact_ratio",
+      "externalDoi": "10.1080/17459730701376743"
+    },
+    {
+      "invariantId": "harmonic.aggregate_C_H_guard",
+      "kind": "namespace_guard",
+      "sourcePath": "docs/COURT_ADMISSION_AND_AUTHORITY.md",
+      "sourcePointer": "Fourth compression coordinate non-equivalence and unresolved aggregate C_H"
+    }
+  ]
+}

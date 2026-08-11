@@ -1,0 +1,17 @@
+{
+  "traceId": "crt307-invalid-move",
+  "setup": {"position": "C1"},
+  "steps": [
+    {
+      "operation": "validate_and_execute_court_transition",
+      "selectedMove": {
+        "operationId": "court:translocate",
+        "targetPosition": "C4",
+        "moveHash": "4444444444444444444444444444444444444444444444444444444444444444",
+        "translocationHash": null
+      },
+      "expect": {"status": "rejected", "reasonCode": "non_adjacent_without_translocation"}
+    }
+  ],
+  "expectedFinal": {"position": "C1", "eventCount": 0}
+}

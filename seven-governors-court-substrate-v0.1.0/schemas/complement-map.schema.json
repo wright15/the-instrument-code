@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/court-substrate/0.1.0/schemas/complement-map.schema.json",
+  "title": "ComplementMap",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "complementMapId",
+    "pentatonicSetClassId",
+    "heptatonicFamilyId",
+    "familyRegistryPointer",
+    "topologyIdentityPointer",
+    "representativePentatonicMask",
+    "representativeHeptatonicMask",
+    "rootedPairs"
+  ],
+  "properties": {
+    "complementMapId": { "type": "string", "minLength": 1 },
+    "pentatonicSetClassId": { "type": "string", "pattern": "^pentatonic:5-(?:Z)?[0-9]+$" },
+    "heptatonicFamilyId": { "type": "string", "pattern": "^7-(?:Z)?[0-9]+$" },
+    "familyRegistryPointer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "familyId"],
+      "properties": {
+        "path": { "const": "canonical/universal-network-data.json#familyRegistry" },
+        "familyId": { "type": "string", "pattern": "^7-(?:Z)?[0-9]+$" }
+      }
+    },
+    "topologyIdentityPointer": { "type": ["string", "null"] },
+    "representativePentatonicMask": { "type": "integer", "minimum": 1, "maximum": 4095 },
+    "representativeHeptatonicMask": { "type": "integer", "minimum": 1, "maximum": 4095 },
+    "rootedPairs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rootedRecordId", "pentatonicMask", "rawHeptatonicComplementMask", "normalizedHeptatonicScaleStateId"],
+        "properties": {
+          "rootedRecordId": { "type": "string", "minLength": 1 },
+          "pentatonicMask": { "type": "integer", "minimum": 1, "maximum": 4095 },
+          "rawHeptatonicComplementMask": { "type": "integer", "minimum": 1, "maximum": 4095 },
+          "normalizedHeptatonicScaleStateId": { "type": "integer", "minimum": 1, "maximum": 4095 }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "crt-307.local-model-observation.v1",
+  "verdict": "PASS",
+  "endpointClass": "loopback-openai-compatible",
+  "model": "koboldcpp/Qwen3.6-35B-A3B-UD-IQ2_XXS",
+  "thinkingDisabled": true,
+  "temperature": 0,
+  "traceCount": 8,
+  "checks": [
+    {
+      "traceId": "crt307-accepted-translocation",
+      "pass": true
+    },
+    {
+      "traceId": "crt307-adjacent-transition",
+      "pass": true
+    },
+    {
+      "traceId": "crt307-graph-retrieval",
+      "pass": true
+    },
+    {
+      "traceId": "crt307-invalid-move",
+      "pass": true
+    },
+    {
+      "traceId": "crt307-no-progress-loop-stop",
+      "pass": true
+    },
+    {
+      "traceId": "crt307-off-chain-rejection",
+      "pass": true
+    },
+    {
+      "traceId": "crt307-read-only-projection",
+      "pass": true
+    },
+    {
+      "traceId": "crt307-state-inspection",
+      "pass": true
+    }
+  ],
+  "canonicalFingerprintExcluded": true
+}

@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "crt-305.court-runtime-policy.v1",
+  "policyId": "court-runtime-policy:0.1.0",
+  "integratedAdmission": "proposed_pending_crt_309",
+  "policyFingerprint": "90431c79b8bc06da7e6f5cb5ce207cb6cbfd86519bdb91df5aacc137065ec456",
+  "dependencies": [
+    {
+      "dependencyId": "crt-301-contract",
+      "path": "schemas/court-admission-contract.json",
+      "sha256": "b4351a14aa3dfde6043a609e4158abcb17b006b666a35220e5833cf1cf7ffa9b",
+      "fingerprintField": null,
+      "fingerprint": "b4351a14aa3dfde6043a609e4158abcb17b006b666a35220e5833cf1cf7ffa9b"
+    },
+    {
+      "dependencyId": "crt-302-substrate",
+      "path": "seven-governors-court-substrate-v0.1.0/canonical/substrate-registry-release.json",
+      "sha256": "6906a5b7a495feee7dddb02ee936393052e58315c28893a58c700ec60000f9a3",
+      "fingerprintField": "substrateFingerprint",
+      "fingerprint": "fda4707f63b08ca02a155f8d5d8c738534f17e0ab2a234d79f83bf30f16a2fc2"
+    },
+    {
+      "dependencyId": "crt-303-invariants",
+      "path": "seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json",
+      "sha256": "75b3ffaa0b126c4dbf0abf6e42a4674724092b0e403a2862d893b6f1493d0e6f",
+      "fingerprintField": "invariantFingerprint",
+      "fingerprint": "ad604fdb42144882d38433e734759fcd5c160dfe628139ce0ede1ff093481323"
+    },
+    {
+      "dependencyId": "crt-304-filter-algebra",
+      "path": "seven-governors-court-filter-algebra-v0.1.0/canonical/filter-algebra-release.json",
+      "sha256": "83bb95522b91170914c1a1306d2ae0d5e084842eea2723c2c0d9d44ef0543368",
+      "fingerprintField": "filterAlgebraFingerprint",
+      "fingerprint": "40bd74397ff9f4c8c0f0b845630e008cea66c9495413195c1e1c92ff02968589"
+    },
+    {
+      "dependencyId": "mutation-operator-registry",
+      "path": "seven-governors-mutation-algebra-audit/audit/operator-registry.csv",
+      "sha256": "e5a9e6929fca048078e0db6ff044facc7137a6ef61e994d74f1d526e27b6482e",
+      "fingerprintField": null,
+      "fingerprint": "e5a9e6929fca048078e0db6ff044facc7137a6ef61e994d74f1d526e27b6482e"
+    },
+    {
+      "dependencyId": "mutation-operator-applications",
+      "path": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv",
+      "sha256": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e",
+      "fingerprintField": null,
+      "fingerprint": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e"
+    },
+    {
+      "dependencyId": "gov-generic-ledger",
+      "path": "src/governor/ledger.py",
+      "sha256": "ee9292ae3a0c2f1b75a3053b22c0b8e0e188f8b1e9d5497b08cd955a8a368962",
+      "fingerprintField": null,
+      "fingerprint": "ee9292ae3a0c2f1b75a3053b22c0b8e0e188f8b1e9d5497b08cd955a8a368962"
+    },
+    {
+      "dependencyId": "gov-generic-ledger-model",
+      "path": "src/governor/models.py",
+      "sha256": "cf730121e3f8a15016323e37f2deee40d22d7e6fcabc9d88e899f235b434094c",
+      "fingerprintField": null,
+      "fingerprint": "cf730121e3f8a15016323e37f2deee40d22d7e6fcabc9d88e899f235b434094c"
+    }
+  ],
+  "genericLedgerContract": {
+    "schemaVersion": "gov-204.ledger-event.v1",
+    "genesisSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "envelopeFields": ["sequence", "previous_event_sha256", "payload", "payload_sha256", "event_sha256"]
+  },
+  "positions": [
+    {"positionId": "C0", "index": 0, "pitchMask": 661, "poleVector": "0000", "internalPoles": [], "kappaCourt": {"numerator": 0, "denominator": 1}},
+    {"positionId": "C1", "index": 1, "pitchMask": 677, "poleVector": "1000", "internalPoles": ["Mars"], "kappaCourt": {"numerator": 1, "denominator": 4}},
+    {"positionId": "C2", "index": 2, "pitchMask": 1189, "poleVector": "1100", "internalPoles": ["Mars", "Jupiter"], "kappaCourt": {"numerator": 1, "denominator": 2}},
+    {"positionId": "C3", "index": 3, "pitchMask": 1193, "poleVector": "1110", "internalPoles": ["Mars", "Jupiter", "Venus"], "kappaCourt": {"numerator": 3, "denominator": 4}},
+    {"positionId": "C4", "index": 4, "pitchMask": 1321, "poleVector": "1111", "internalPoles": ["Mars", "Jupiter", "Venus", "Saturn"], "kappaCourt": {"numerator": 1, "denominator": 1}}
+  ],
+  "poleOrder": ["Mars", "Jupiter", "Venus", "Saturn"],
+  "ordinaryMoves": [
+    {"source": "C0", "target": "C1", "operationId": "court:advance"},
+    {"source": "C1", "target": "C0", "operationId": "court:retreat"},
+    {"source": "C1", "target": "C2", "operationId": "court:advance"},
+    {"source": "C2", "target": "C1", "operationId": "court:retreat"},
+    {"source": "C2", "target": "C3", "operationId": "court:advance"},
+    {"source": "C3", "target": "C2", "operationId": "court:retreat"},
+    {"source": "C3", "target": "C4", "operationId": "court:advance"},
+    {"source": "C4", "target": "C3", "operationId": "court:retreat"}
+  ],
+  "operationAllowList": ["court:advance", "court:retreat", "court:translocate"],
+  "requiredCapabilities": {
+    "court:advance": "court.transition",
+    "court:retreat": "court.transition",
+    "court:translocate": "court.translocate"
+  },
+  "kappaNamespace": "court.kappa_court",
+  "forbiddenKappaNamespaces": [
+    "physical.C_P",
+    "harmonic.C_H",
+    "semantic.C_S",
+    "physical.temperature",
+    "physical.entropy",
+    "physical.enthalpy",
+    "physical.freeEnergy"
+  ],
+  "translocationEvidence": {
+    "evidencePath": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv",
+    "evidenceSha256": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e",
+    "filterAlgebraFingerprint": "40bd74397ff9f4c8c0f0b845630e008cea66c9495413195c1e1c92ff02968589",
+    "classification": "right_undefined",
+    "routeCostStatus": "unresolved",
+    "directions": [
+      {
+        "operatorId": "R7",
+        "alteredDegree": 7,
+        "degreeGovernor": "Moon",
+        "direction": "raise",
+        "sourceScaleStateId": 1453,
+        "sourcePitchMask": 1453,
+        "sourceForte": "7-35",
+        "targetScaleStateId": 2477,
+        "targetPitchMask": 2477,
+        "targetForte": "7-32",
+        "sourcePitch": 10,
+        "targetPitch": 11,
+        "deltaSemitones": 1,
+        "applicationId": "R7:1453:2477"
+      },
+      {
+        "operatorId": "L7",
+        "alteredDegree": 7,
+        "degreeGovernor": "Moon",
+        "direction": "lower",
+        "sourceScaleStateId": 2477,
+        "sourcePitchMask": 2477,
+        "sourceForte": "7-32",
+        "targetScaleStateId": 1453,
+        "targetPitchMask": 1453,
+        "targetForte": "7-35",
+        "sourcePitch": 11,
+        "targetPitch": 10,
+        "deltaSemitones": -1,
+        "applicationId": "L7:2477:1453"
+      }
+    ],
+    "routes": [
+      {"forteFamily": "5-23", "filterId": "court-filter:5-23:root-0", "filterMask": 173, "operatorId": "R7", "sourceScaleStateId": 1453, "targetScaleStateId": 2477, "staticRouteRecordId": "noncomm:court-filter:5-23:root-0:R7:1453"},
+      {"forteFamily": "5-23", "filterId": "court-filter:5-23:root-0", "filterMask": 173, "operatorId": "L7", "sourceScaleStateId": 2477, "targetScaleStateId": 1453, "staticRouteRecordId": "noncomm:court-filter:5-23:root-0:L7:2477"},
+      {"forteFamily": "5-27", "filterId": "court-filter:5-27:root-0", "filterMask": 425, "operatorId": "R7", "sourceScaleStateId": 1453, "targetScaleStateId": 2477, "staticRouteRecordId": "noncomm:court-filter:5-27:root-0:R7:1453"},
+      {"forteFamily": "5-27", "filterId": "court-filter:5-27:root-0", "filterMask": 425, "operatorId": "L7", "sourceScaleStateId": 2477, "targetScaleStateId": 1453, "staticRouteRecordId": "noncomm:court-filter:5-27:root-0:L7:2477"}
+    ]
+  }
+}

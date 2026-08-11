@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/court-filter-algebra/0.1.0/schemas/filter-algebra-release.schema.json",
+  "title": "CourtFilterAlgebraRelease",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "packageId", "packageVersion", "releaseId", "integratedAdmission", "dependencyBindings", "sourceHashes", "sourceFingerprint", "filterAlgebraFingerprint", "canonicalOutputs", "summary"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "packageId": { "const": "seven-governors-court-filter-algebra" },
+    "packageVersion": { "const": "0.1.0" },
+    "releaseId": { "const": "court-filter-algebra:0.1.0" },
+    "integratedAdmission": { "const": "proposed_pending_crt_309" },
+    "dependencyBindings": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["dependencyId", "path", "sha256", "releaseId", "fingerprintField", "fingerprint"],
+        "properties": {
+          "dependencyId": { "type": "string", "minLength": 1 },
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "$ref": "common.schema.json#/$defs/sha256" },
+          "releaseId": { "type": ["string", "null"] },
+          "fingerprintField": { "type": ["string", "null"] },
+          "fingerprint": { "$ref": "common.schema.json#/$defs/sha256" }
+        }
+      }
+    },
+    "sourceHashes": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": { "path": { "type": "string", "minLength": 1 }, "sha256": { "$ref": "common.schema.json#/$defs/sha256" } }
+      }
+    },
+    "sourceFingerprint": { "$ref": "common.schema.json#/$defs/sha256" },
+    "filterAlgebraFingerprint": { "$ref": "common.schema.json#/$defs/sha256" },
+    "canonicalOutputs": { "const": ["filter-algebra-release.json", "filter-operator-registry.json", "bridge-route-comparison.json", "commutation-table.json", "non-commutation-records.json"] },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["filterCount", "mutationOperatorCount", "canonicalOperandCount", "evaluationCount", "summaryRowCount", "nonCommutationRecordCount", "mutationAuditApplicationCount", "mutationAuditParity"],
+      "properties": {
+        "filterCount": { "const": 7 },
+        "mutationOperatorCount": { "const": 15 },
+        "canonicalOperandCount": { "const": 462 },
+        "evaluationCount": { "const": 48510 },
+        "summaryRowCount": { "const": 105 },
+        "nonCommutationRecordCount": { "const": 23814 },
+        "mutationAuditApplicationCount": { "const": 3402 },
+        "mutationAuditParity": { "const": "exact" }
+      }
+    }
+  }
+}

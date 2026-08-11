@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "gov-209.benchmark-corpus.v1",
+  "cases": [
+    {"caseId": "rayleigh-jupiter-classification", "metric": "success", "evidenceRef": "tests/test_gov_203_classifier.py", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-tool": true, "state-machine-backed": true}},
+    {"caseId": "boundary-office-withheld", "metric": "success", "evidenceRef": "tests/verification/test_graph_topology_locks.py", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-tool": true, "state-machine-backed": true}},
+    {"caseId": "verified-startup", "metric": "success", "evidenceRef": "tests/test_gov_207_agent_api.py", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-tool": true, "state-machine-backed": true}},
+    {"caseId": "false-success-rejection", "metric": "falseSuccessRejection", "evidenceRef": "tests/test_gov_205_evidence.py", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-tool": true, "state-machine-backed": true}},
+    {"caseId": "invalid-transition-rejection", "metric": "invalidTransitionRejection", "evidenceRef": "tests/test_gov_204_transitions.py", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-tool": true, "state-machine-backed": true}},
+    {"caseId": "repeated-action-stop", "metric": "loopStop", "evidenceRef": "tests/test_gov_205_loop_guards.py", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-tool": true, "state-machine-backed": true}},
+    {"caseId": "bounded-tool-call", "metric": "toolCall", "evidenceRef": "tests/test_gov_207_agent_api.py", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-tool": true, "state-machine-backed": true}},
+    {"caseId": "structured-recovery", "metric": "recovery", "evidenceRef": "tests/test_gov_207_outcomes.py", "outcomes": {"model-only": false, "retrieval-only": false, "deterministic-tool": true, "state-machine-backed": true}}
+  ]
+}

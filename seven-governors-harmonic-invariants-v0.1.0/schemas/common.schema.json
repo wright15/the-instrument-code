@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/harmonic-invariants/0.1.0/schemas/common.schema.json",
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "ratio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": { "type": "integer" },
+        "denominator": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "sourceHash": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "provenance": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["sourceType", "path", "sha256", "pointer", "doi"],
+          "properties": {
+            "sourceType": { "const": "local_document" },
+            "path": { "type": "string", "minLength": 1 },
+            "sha256": { "$ref": "#/$defs/sha256" },
+            "pointer": { "type": "string", "minLength": 1 },
+            "doi": { "type": "null" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["sourceType", "path", "sha256", "pointer", "doi"],
+          "properties": {
+            "sourceType": { "const": "external_doi" },
+            "path": { "type": "null" },
+            "sha256": { "type": "null" },
+            "pointer": { "type": "string", "minLength": 1 },
+            "doi": { "const": "10.1080/17459730701376743" }
+          }
+        }
+      ]
+    }
+  }
+}

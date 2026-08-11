@@ -1,0 +1,104 @@
+{
+  "checks": [
+    {
+      "detail": [
+        {
+          "arguments": [
+            "--emit",
+            "--output-dir",
+            "<temporary-root>/clean-a"
+          ],
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "arguments": [
+            "--check",
+            "--output-dir",
+            "<temporary-root>/clean-a"
+          ],
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "arguments": [
+            "--emit",
+            "--output-dir",
+            "<temporary-root>/clean-b"
+          ],
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "arguments": [
+            "--check",
+            "--output-dir",
+            "<temporary-root>/clean-b"
+          ],
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "arguments": [
+            "--emit",
+            "--output-dir",
+            "<temporary-root>/reordered",
+            "--test-reverse-input-order"
+          ],
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "arguments": [
+            "--check",
+            "--output-dir",
+            "<temporary-root>/reordered",
+            "--test-reverse-input-order"
+          ],
+          "exitCode": 0,
+          "passed": true
+        }
+      ],
+      "name": "separate-process-check-emit-check",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "installedHashes": {
+          "bridge-route-comparison.json": "facf453533540a54d2594adea16839f3ccf9975c852cc8b43a165e241c84129a",
+          "commutation-table.json": "48fa2dfde87a840252a63a35dd353903654be4cc80f8d36a4254004187cc5d1f",
+          "filter-algebra-release.json": "83bb95522b91170914c1a1306d2ae0d5e084842eea2723c2c0d9d44ef0543368",
+          "filter-operator-registry.json": "278abdbd5df579407d5dd8d7b8a0d1213b8d0aa0d67d7ce9c72f42dac5e8ab8b",
+          "non-commutation-records.json": "3d728e4c4252831a722ef1940c8019ab50b3e12b3b9afff1c31b083594f0ca91"
+        },
+        "outputCount": 5
+      },
+      "name": "two-clean-builds-byte-identical",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "fixtureId": "reordered-filter-input",
+        "temporaryRoot": "<temporary-root>"
+      },
+      "name": "reordered-input-byte-identical",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "filterAlgebraFingerprint": "40bd74397ff9f4c8c0f0b845630e008cea66c9495413195c1e1c92ff02968589"
+      },
+      "name": "filter-algebra-fingerprint-identical",
+      "status": "PASS"
+    }
+  ],
+  "packageVersion": "0.1.0",
+  "releaseId": "court-filter-algebra:0.1.0",
+  "schemaVersion": "1.0.0",
+  "status": "passed",
+  "summary": {
+    "checks": 4,
+    "failed": 0,
+    "passed": 4
+  }
+}

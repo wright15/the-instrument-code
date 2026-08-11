@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import csv
-from fractions import Fraction
 
 from hypothesis import given, settings, strategies as st
 
@@ -13,16 +12,12 @@ from court_mathematics import (
     derive_degree_triads,
     minimum_voice_leading,
 )
+from harmonic_invariants import evaluate_carey_535
 
 from ._oracles import (
     apply_court_filter,
     canonical_masks,
     canonical_records,
-    carey_cq,
-    carey_max_coherence_failures,
-    carey_max_differences,
-    carey_sq,
-    carey_well_formed_sq,
     pitch_classes,
     LEDGER_CSV,
     source_sha256,
@@ -120,16 +115,17 @@ def test_every_canonical_state_is_idempotent_under_every_12_bit_filter() -> None
             assert apply_court_filter(result, court_mask) == result
 
 
-def test_carey_535_formula_proof_is_exact_under_cited_12_tet_premises() -> None:
-    cardinality = 5
-    coherence_failures = 0
-    differences = 20
-
-    assert carey_max_coherence_failures(cardinality) == 25
-    assert carey_max_differences(cardinality) == 40
-    assert carey_cq(cardinality, coherence_failures) == Fraction(1, 1)
-    assert carey_sq(cardinality, differences) == Fraction(1, 2)
-    assert carey_well_formed_sq(cardinality) == Fraction(1, 2)
+def test_carey_535_counts_and_quotients_are_independently_enumerated() -> None:
+    result = evaluate_carey_535((0, 2, 4, 7, 9))
+    assert len(result.interval_instances) == 20
+    assert result.difference_slots == 40
+    assert result.difference_count == 20
+    assert result.failure_slots == 25
+    assert result.cross_generic_comparisons == 150
+    assert result.ambiguity_count == 0
+    assert result.contradiction_count == 0
+    assert result.coherence_quotient.numerator == result.coherence_quotient.denominator == 1
+    assert (result.sameness_quotient.numerator, result.sameness_quotient.denominator) == (1, 2)
 
 
 def test_pitch_class_ground_metric_satisfies_triangle_inequality() -> None:
