@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "seven-governors.neo4j-full-database-validation.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "verdict", "releaseId", "checksPassed", "checksFailed", "checks", "normalizedSnapshot", "evidenceBindings", "reportFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "seven-governors.neo4j-full-database-validation.v1"},
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "releaseId": {"const": "seven-governors-integrated-1.5.0"},
+    "checksPassed": {"type": "integer", "minimum": 0},
+    "checksFailed": {"type": "integer", "minimum": 0},
+    "checks": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/check"}},
+    "normalizedSnapshot": {"oneOf": [{"$ref": "#/$defs/normalizedSnapshot"}, {"type": "null"}]},
+    "evidenceBindings": {"type": "array", "minItems": 20, "uniqueItems": true, "items": {"$ref": "#/$defs/evidenceBinding"}},
+    "reportFingerprint": {"$ref": "#/$defs/sha256"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"verdict": {"const": "PASS"}}, "required": ["verdict"]},
+      "then": {
+        "properties": {
+          "checksPassed": {"const": 6},
+          "checksFailed": {"const": 0},
+          "checks": {"type": "array", "items": {"type": "object", "properties": {"status": {"const": "PASS"}}}},
+          "normalizedSnapshot": {"$ref": "#/$defs/normalizedSnapshot"}
+        }
+      },
+      "else": {"properties": {
+        "checksPassed": {"const": 0},
+        "checksFailed": {"const": 6},
+        "checks": {"type": "array", "items": {"type": "object", "properties": {"status": {"const": "FAIL"}}}}
+      }}
+    }
+  ],
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "check": {"type": "object", "additionalProperties": false, "required": ["checkId", "status", "diagnostic"], "properties": {"checkId": {"type": "string"}, "status": {"enum": ["PASS", "FAIL"]}, "diagnostic": {}}},
+    "evidenceBinding": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}}},
+    "sourceBinding": {"type": "object", "additionalProperties": false, "required": ["namespace", "path", "sha256"], "properties": {"namespace": {"enum": ["topology", "provenance", "mutation", "semantic", "governorRuntime", "court", "gov210"]}, "path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}}},
+    "namespaceFingerprints": {"type": "object", "additionalProperties": false, "required": ["topology", "provenance", "mutation", "semantic", "governorRuntime", "court", "gov210"], "properties": {"topology": {"$ref": "#/$defs/sha256"}, "provenance": {"$ref": "#/$defs/sha256"}, "mutation": {"$ref": "#/$defs/sha256"}, "semantic": {"$ref": "#/$defs/sha256"}, "governorRuntime": {"$ref": "#/$defs/sha256"}, "court": {"$ref": "#/$defs/sha256"}, "gov210": {"$ref": "#/$defs/sha256"}}},
+    "normalizedSnapshot": {"type": "object", "additionalProperties": false, "required": ["snapshotFingerprint", "namespaceFingerprints", "sourceBindings", "counts"], "properties": {"snapshotFingerprint": {"$ref": "#/$defs/sha256"}, "namespaceFingerprints": {"$ref": "#/$defs/namespaceFingerprints"}, "sourceBindings": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"$ref": "#/$defs/sourceBinding"}}, "counts": {"type": "object", "additionalProperties": false, "required": ["nodeCount", "relationshipCount"], "properties": {"nodeCount": {"const": 3061}, "relationshipCount": {"const": 10506}}}}}
+  }
+}

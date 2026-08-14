@@ -1,5 +1,51 @@
 # Release Notes
 
+## Integrated release 1.6.0 - 2026-08-13
+
+- Admits GOV-227's `harmonic.CH_D17_q_v2` coordinate for exactly the 49 D1-D7
+  anchors while keeping the GOV-213 A-tier sidecar byte-identical and global
+  `harmonic.C_H` unresolved/null.
+- Records the universal finite Governor Seat Invariant across all 70 anchors:
+  every admitted office seat has q_v2 class 2.
+- Records D2/D5 q-multiset twins and D3/D4 Z-partner discrimination, proving
+  rooted Q is useful evidence while graph topology remains tier authority.
+- Publishes exact fixed-witness overlap margins and three exact LP
+  infeasibility results under the fixed Chaldean hierarchy; the scoped W bands
+  are local coordinates, not a global tier classifier.
+- Defers Neo4j baseline refresh because no graph data changed. The retained 1.5
+  baseline must be refreshed at the next Neo4j availability.
+
+## Integrated release 1.5.0 - 2026-08-13
+
+- Admits GOV-213's root-owned `harmonic.CH_A012_q_v1` sidecar for exactly the
+  21 A0-A2 anchors while preserving global aggregate `harmonic.C_H` as
+  unresolved/null.
+- Publishes exact rooted Triadic Compression Signatures `Q(S)`, exact rational
+  weighted projections `W_A012(S)`, the 21/21 Governor-seat invariant, tier
+  multisets, A0 order, and strict A-tier bands.
+- Adds deterministic build-twice/reordered-input evidence, joint-transposition
+  invariance, modal `M^7` covariance, and six adversarial rejection cases.
+- Defers D1-D7, satellite, convergence, junction, leaf, boundary, operator-delta,
+  and cross-coordinate correspondence audits without weakening current guards.
+
+## Integrated release 1.4.0 - 2026-08-11
+
+- Admits GOV-210's deterministic, informational availability, eligibility,
+  assignment, and privacy-preserving context-housing projection without
+  changing runtime legality or the closed GOV-207/CRT-307 registries.
+- Admits GOV-211's assignment-aware presentation sidecar with authenticated
+  Governor target bindings, replay-derived Court targets, exact base-response
+  preservation, and deterministic no-provider/failure fallback.
+- Adds one reproducible seven-stage Neo4j bootstrap across topology,
+  provenance, mutation, semantic, GOV-206, CRT-306, and GOV-210 projections,
+  with projection-scoped readiness and no database authority.
+- Adds storage-ID-free normalized full-graph export, authoritative identity
+  parity, exact source-bound namespace fingerprints, and import-twice byte
+  identity. Reset preserves unrelated/mixed-label data and generated ingestion
+  rejects destructive Cypher.
+- Establishes CRT-310's per-class evidence backlog for all 35 proposed
+  pentatonic classes. It admits zero classes and prohibits bulk promotion.
+
 ## Integrated release 1.3.0 - 2026-08-10
 
 - Admits the bounded EPIC-002 Governor runtime and EPIC-003 Pentatonic Court

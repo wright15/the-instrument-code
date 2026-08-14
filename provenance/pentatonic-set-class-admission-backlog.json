@@ -1,0 +1,5048 @@
+{
+  "schemaVersion": "crt-310.pentatonic-set-class-admission-backlog.v1",
+  "backlogId": "court-admission-backlog:crt-310:1",
+  "storyId": "CRT-310",
+  "baselineIntegratedReleaseId": "seven-governors-integrated-1.3.0",
+  "baselineAdmissionId": "court-admission:crt-309:1.0.0",
+  "status": "backlog",
+  "authority": "admission_planning_only",
+  "admissionEffect": "none",
+  "historicalCandidateBytesPreserved": true,
+  "reviewUnit": "one_pentatonic_set_class",
+  "bulkPromotionAllowed": false,
+  "maxClassesPerAdmissionDecision": 1,
+  "sourceBindings": [
+    {
+      "bindingId": "crt-301-contract",
+      "path": "schemas/court-admission-contract.json",
+      "sha256": "b4351a14aa3dfde6043a609e4158abcb17b006b666a35220e5833cf1cf7ffa9b",
+      "intrinsicFingerprint": null,
+      "role": "admission_authority",
+      "frozen": true
+    },
+    {
+      "bindingId": "crt-302-class-registry",
+      "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+      "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+      "intrinsicFingerprint": null,
+      "role": "candidate_identity",
+      "frozen": true
+    },
+    {
+      "bindingId": "crt-302-complement-map",
+      "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+      "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+      "intrinsicFingerprint": null,
+      "role": "complement_closure",
+      "frozen": true
+    },
+    {
+      "bindingId": "crt-302-package",
+      "path": "seven-governors-court-substrate-v0.1.0/PACKAGE_MANIFEST.json",
+      "sha256": "376a64dd44a0d667e3778d8deafaddfc2c1b33377c3b00358f1f63eb0ff8c044",
+      "intrinsicFingerprint": null,
+      "role": "frozen_package_identity",
+      "frozen": true
+    },
+    {
+      "bindingId": "crt-302-release",
+      "path": "seven-governors-court-substrate-v0.1.0/canonical/substrate-registry-release.json",
+      "sha256": "6906a5b7a495feee7dddb02ee936393052e58315c28893a58c700ec60000f9a3",
+      "intrinsicFingerprint": "fda4707f63b08ca02a155f8d5d8c738534f17e0ab2a234d79f83bf30f16a2fc2",
+      "role": "substrate_release",
+      "frozen": true
+    },
+    {
+      "bindingId": "crt-303-invariants",
+      "path": "seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json",
+      "sha256": "75b3ffaa0b126c4dbf0abf6e42a4674724092b0e403a2862d893b6f1493d0e6f",
+      "intrinsicFingerprint": "ad604fdb42144882d38433e734759fcd5c160dfe628139ce0ede1ff093481323",
+      "role": "harmonic_scope_boundary",
+      "frozen": true
+    },
+    {
+      "bindingId": "crt-303-package",
+      "path": "seven-governors-harmonic-invariants-v0.1.0/PACKAGE_MANIFEST.json",
+      "sha256": "b1548524df9a04150d497f40d972311ce3163fb76ad832301529e0d353b9f4c3",
+      "intrinsicFingerprint": null,
+      "role": "frozen_package_identity",
+      "frozen": true
+    },
+    {
+      "bindingId": "crt-304-package",
+      "path": "seven-governors-court-filter-algebra-v0.1.0/PACKAGE_MANIFEST.json",
+      "sha256": "6b7f4ea79e4b4d151154544608cf6d46da55959b37208938467bf6bd11f4215a",
+      "intrinsicFingerprint": null,
+      "role": "frozen_package_identity",
+      "frozen": true
+    },
+    {
+      "bindingId": "crt-304-release",
+      "path": "seven-governors-court-filter-algebra-v0.1.0/canonical/filter-algebra-release.json",
+      "sha256": "83bb95522b91170914c1a1306d2ae0d5e084842eea2723c2c0d9d44ef0543368",
+      "intrinsicFingerprint": "40bd74397ff9f4c8c0f0b845630e008cea66c9495413195c1e1c92ff02968589",
+      "role": "filter_scope_boundary",
+      "frozen": true
+    },
+    {
+      "bindingId": "crt-309-admission",
+      "path": "provenance/court-admission-release.json",
+      "sha256": "2191f9c74afbc764818f5e1a5295cf7fd1265637f2255593d5b71bf5c3c15455",
+      "intrinsicFingerprint": "df7e4c52131705b168efa14072d7fed14735fd073e9f8b4679d85a9c05ca0d26",
+      "role": "baseline_admission",
+      "frozen": true
+    }
+  ],
+  "requiredGateIds": [
+    "source_identity",
+    "complement_closure",
+    "harmonic_characterization",
+    "transition_semantics",
+    "application_necessity",
+    "authority_safety",
+    "deterministic_candidate_release"
+  ],
+  "gateDefinitions": [
+    {
+      "gateId": "source_identity",
+      "criterion": "Exact frozen Forte identity, mask, pitch classes, source state, and substrate binding."
+    },
+    {
+      "gateId": "complement_closure",
+      "criterion": "Exact XOR complement and same-numbered heptatonic family binding."
+    },
+    {
+      "gateId": "harmonic_characterization",
+      "criterion": "Class-specific exact harmonic method without reusing 5-35-only Carey or kappa claims."
+    },
+    {
+      "gateId": "transition_semantics",
+      "criterion": "Explicit rooted role, transition/filter domain, image, and translocation semantics."
+    },
+    {
+      "gateId": "application_necessity",
+      "criterion": "Bounded use case with canonical endpoints, measurable acceptance, and minimality evidence."
+    },
+    {
+      "gateId": "authority_safety",
+      "criterion": "Forbidden-write, namespace, replay, graph, model, and vault non-authority fixtures."
+    },
+    {
+      "gateId": "deterministic_candidate_release",
+      "criterion": "New versioned per-class package with source closure and build-twice identity."
+    }
+  ],
+  "items": [
+    {
+      "itemId": "crt-310:5-1",
+      "setClassId": "pentatonic:5-1",
+      "forteNumber": "5-1",
+      "forteOrdinal": 1,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "representativeMask": 3968,
+        "representativeMask12": "000000011111",
+        "weight": 5,
+        "sourceScaleStateId": 127
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-1"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-1:7-1"
+        },
+        "complementMapId": "complement:5-1:7-1",
+        "heptatonicFamilyId": "7-1"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-1",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-1"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-1"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-1",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-1:7-1"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-1"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "91c9806a7df79ced792984b8766689bee8f6051ba4b979e674e0f2066f4f1182"
+    },
+    {
+      "itemId": "crt-310:5-2",
+      "setClassId": "pentatonic:5-2",
+      "forteNumber": "5-2",
+      "forteOrdinal": 2,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          6,
+          8,
+          9,
+          10,
+          11
+        ],
+        "representativeMask": 3904,
+        "representativeMask12": "000000101111",
+        "weight": 5,
+        "sourceScaleStateId": 191
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-2"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-2:7-2"
+        },
+        "complementMapId": "complement:5-2:7-2",
+        "heptatonicFamilyId": "7-2"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-2",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-2"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-2"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-2",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-2:7-2"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-2"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "f50e193903047496d12ff40dff7ccc9b24173de7a827da60999bc42fa459b77d"
+    },
+    {
+      "itemId": "crt-310:5-3",
+      "setClassId": "pentatonic:5-3",
+      "forteNumber": "5-3",
+      "forteOrdinal": 3,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          6,
+          7,
+          9,
+          10,
+          11
+        ],
+        "representativeMask": 3776,
+        "representativeMask12": "000000110111",
+        "weight": 5,
+        "sourceScaleStateId": 319
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-3"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-3:7-3"
+        },
+        "complementMapId": "complement:5-3:7-3",
+        "heptatonicFamilyId": "7-3"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-3",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-3"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-3"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-3",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-3:7-3"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-3"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "e89030ae8cbefbd55209a6112448cc74793d5e996bb857b164baab3333cea3b3"
+    },
+    {
+      "itemId": "crt-310:5-4",
+      "setClassId": "pentatonic:5-4",
+      "forteNumber": "5-4",
+      "forteOrdinal": 4,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          5,
+          8,
+          9,
+          10,
+          11
+        ],
+        "representativeMask": 3872,
+        "representativeMask12": "000001001111",
+        "weight": 5,
+        "sourceScaleStateId": 223
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-4"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-4:7-4"
+        },
+        "complementMapId": "complement:5-4:7-4",
+        "heptatonicFamilyId": "7-4"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-4",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-4"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-4"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-4",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-4:7-4"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-4"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "5bed7d26b4c52421fb2087c239a676202ea81d896fed1a6acd63e3b6a2987678"
+    },
+    {
+      "itemId": "crt-310:5-5",
+      "setClassId": "pentatonic:5-5",
+      "forteNumber": "5-5",
+      "forteOrdinal": 5,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          4,
+          8,
+          9,
+          10,
+          11
+        ],
+        "representativeMask": 3856,
+        "representativeMask12": "000010001111",
+        "weight": 5,
+        "sourceScaleStateId": 239
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-5"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-5:7-5"
+        },
+        "complementMapId": "complement:5-5:7-5",
+        "heptatonicFamilyId": "7-5"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-5",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-5"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-5"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-5",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-5:7-5"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-5"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "9775f3f9b7d712a918c0a13d10151a3ddd7d7f67935a14bab8d7ce7983801f90"
+    },
+    {
+      "itemId": "crt-310:5-6",
+      "setClassId": "pentatonic:5-6",
+      "forteNumber": "5-6",
+      "forteOrdinal": 6,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          5,
+          6,
+          9,
+          10,
+          11
+        ],
+        "representativeMask": 3680,
+        "representativeMask12": "000001100111",
+        "weight": 5,
+        "sourceScaleStateId": 415
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-6"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-6:7-6"
+        },
+        "complementMapId": "complement:5-6:7-6",
+        "heptatonicFamilyId": "7-6"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-6",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-6"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-6"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-6",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-6:7-6"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-6"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "33e0fa71fe869718a065392d983f8a1408be3a51e2ae98536627af3dfb75b8a5"
+    },
+    {
+      "itemId": "crt-310:5-7",
+      "setClassId": "pentatonic:5-7",
+      "forteNumber": "5-7",
+      "forteOrdinal": 7,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          4,
+          5,
+          9,
+          10,
+          11
+        ],
+        "representativeMask": 3632,
+        "representativeMask12": "000011000111",
+        "weight": 5,
+        "sourceScaleStateId": 463
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-7"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-7:7-7"
+        },
+        "complementMapId": "complement:5-7:7-7",
+        "heptatonicFamilyId": "7-7"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-7",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-7"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-7"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-7",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-7:7-7"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-7"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "4a768dfa6e98436e9cccb4e4f7e54ae3b5c4f4c278bf8b62515e9eef942e0c2b"
+    },
+    {
+      "itemId": "crt-310:5-8",
+      "setClassId": "pentatonic:5-8",
+      "forteNumber": "5-8",
+      "forteOrdinal": 8,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          1,
+          7,
+          9,
+          10,
+          11
+        ],
+        "representativeMask": 3714,
+        "representativeMask12": "010000010111",
+        "weight": 5,
+        "sourceScaleStateId": 381
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-8"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-8:7-8"
+        },
+        "complementMapId": "complement:5-8:7-8",
+        "heptatonicFamilyId": "7-8"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-8",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-8"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-8"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-8",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-8:7-8"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-8"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "a72fdda1ca5b8a2a5e09cdf7c3e8e91969614e4fe7a9525381a2606a277992f1"
+    },
+    {
+      "itemId": "crt-310:5-9",
+      "setClassId": "pentatonic:5-9",
+      "forteNumber": "5-9",
+      "forteOrdinal": 9,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          5,
+          7,
+          9,
+          10,
+          11
+        ],
+        "representativeMask": 3744,
+        "representativeMask12": "000001010111",
+        "weight": 5,
+        "sourceScaleStateId": 351
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-9"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-9:7-9"
+        },
+        "complementMapId": "complement:5-9:7-9",
+        "heptatonicFamilyId": "7-9"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-9",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-9"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-9"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-9",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-9:7-9"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-9"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "8a34dbc6a984fb89d8a4e205e67091589fbe9f192640f984697d4556a7def825"
+    },
+    {
+      "itemId": "crt-310:5-10",
+      "setClassId": "pentatonic:5-10",
+      "forteNumber": "5-10",
+      "forteOrdinal": 10,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          5,
+          7,
+          8,
+          10,
+          11
+        ],
+        "representativeMask": 3488,
+        "representativeMask12": "000001011011",
+        "weight": 5,
+        "sourceScaleStateId": 607
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-10"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-10:7-10"
+        },
+        "complementMapId": "complement:5-10:7-10",
+        "heptatonicFamilyId": "7-10"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-10",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-10"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-10"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-10",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-10:7-10"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-10"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "4452c3bcd037287f059db1f9c1e2e8a9ae8da6ab9e0cea6be4dec90d927fb763"
+    },
+    {
+      "itemId": "crt-310:5-11",
+      "setClassId": "pentatonic:5-11",
+      "forteNumber": "5-11",
+      "forteOrdinal": 11,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          2,
+          7,
+          9,
+          10,
+          11
+        ],
+        "representativeMask": 3716,
+        "representativeMask12": "001000010111",
+        "weight": 5,
+        "sourceScaleStateId": 379
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-11"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-11:7-11"
+        },
+        "complementMapId": "complement:5-11:7-11",
+        "heptatonicFamilyId": "7-11"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-11",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-11"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-11"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-11",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-11:7-11"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-11"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "1da3d5d1f7ded0711e5345d0cf126e6dfc43aa41130937775c39729742f9701b"
+    },
+    {
+      "itemId": "crt-310:5-Z12",
+      "setClassId": "pentatonic:5-Z12",
+      "forteNumber": "5-Z12",
+      "forteOrdinal": 12,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          5,
+          6,
+          8,
+          10,
+          11
+        ],
+        "representativeMask": 3424,
+        "representativeMask12": "000001101011",
+        "weight": 5,
+        "sourceScaleStateId": 671
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-Z12"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-Z12:7-Z12"
+        },
+        "complementMapId": "complement:5-Z12:7-Z12",
+        "heptatonicFamilyId": "7-Z12"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-Z12",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-Z12"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-Z12"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-Z12",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-Z12:7-Z12"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-Z12"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "bc37d2cd211f09f19b9c19f6a6379d57cd89c863357fd3b43c07825b40af7391"
+    },
+    {
+      "itemId": "crt-310:5-13",
+      "setClassId": "pentatonic:5-13",
+      "forteNumber": "5-13",
+      "forteOrdinal": 13,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          3,
+          7,
+          9,
+          10,
+          11
+        ],
+        "representativeMask": 3720,
+        "representativeMask12": "000100010111",
+        "weight": 5,
+        "sourceScaleStateId": 375
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-13"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-13:7-13"
+        },
+        "complementMapId": "complement:5-13:7-13",
+        "heptatonicFamilyId": "7-13"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-13",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-13"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-13"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-13",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-13:7-13"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-13"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "14c7dd21d9a0ed5eecfe3947156b4021117570ad4e0481a86aa1dad6e8389e3b"
+    },
+    {
+      "itemId": "crt-310:5-14",
+      "setClassId": "pentatonic:5-14",
+      "forteNumber": "5-14",
+      "forteOrdinal": 14,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          4,
+          6,
+          9,
+          10,
+          11
+        ],
+        "representativeMask": 3664,
+        "representativeMask12": "000010100111",
+        "weight": 5,
+        "sourceScaleStateId": 431
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-14"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-14:7-14"
+        },
+        "complementMapId": "complement:5-14:7-14",
+        "heptatonicFamilyId": "7-14"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-14",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-14"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-14"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-14",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-14:7-14"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-14"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "883a1edd487fef7eca861999e47c3cfc0d9e5b8f1a70119375318c378b37848f"
+    },
+    {
+      "itemId": "crt-310:5-15",
+      "setClassId": "pentatonic:5-15",
+      "forteNumber": "5-15",
+      "forteOrdinal": 15,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          3,
+          5,
+          9,
+          10,
+          11
+        ],
+        "representativeMask": 3624,
+        "representativeMask12": "000101000111",
+        "weight": 5,
+        "sourceScaleStateId": 471
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-15"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-15:7-15"
+        },
+        "complementMapId": "complement:5-15:7-15",
+        "heptatonicFamilyId": "7-15"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-15",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-15"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-15"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-15",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-15:7-15"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-15"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "687841f3b33356085e5a6c343d2f9388e356c5437db51480d54acd6cd3fc2a59"
+    },
+    {
+      "itemId": "crt-310:5-16",
+      "setClassId": "pentatonic:5-16",
+      "forteNumber": "5-16",
+      "forteOrdinal": 16,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          4,
+          7,
+          8,
+          10,
+          11
+        ],
+        "representativeMask": 3472,
+        "representativeMask12": "000010011011",
+        "weight": 5,
+        "sourceScaleStateId": 623
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-16"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-16:7-16"
+        },
+        "complementMapId": "complement:5-16:7-16",
+        "heptatonicFamilyId": "7-16"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-16",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-16"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-16"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-16",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-16:7-16"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-16"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "427817824c6d12cdffa5d14d4bc96fef3b48a529ce92f8674f666749ad5ccc70"
+    },
+    {
+      "itemId": "crt-310:5-Z17",
+      "setClassId": "pentatonic:5-Z17",
+      "forteNumber": "5-Z17",
+      "forteOrdinal": 17,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          3,
+          7,
+          8,
+          10,
+          11
+        ],
+        "representativeMask": 3464,
+        "representativeMask12": "000100011011",
+        "weight": 5,
+        "sourceScaleStateId": 631
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-Z17"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-Z17:7-Z17"
+        },
+        "complementMapId": "complement:5-Z17:7-Z17",
+        "heptatonicFamilyId": "7-Z17"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-Z17",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-Z17"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-Z17"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-Z17",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-Z17:7-Z17"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-Z17"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "1e4e8a9ec181772b0d7dc59f92df62bc9d274786f6ed384347e0a28d7b802e38"
+    },
+    {
+      "itemId": "crt-310:5-Z18",
+      "setClassId": "pentatonic:5-Z18",
+      "forteNumber": "5-Z18",
+      "forteOrdinal": 18,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          2,
+          3,
+          8,
+          10,
+          11
+        ],
+        "representativeMask": 3340,
+        "representativeMask12": "001100001011",
+        "weight": 5,
+        "sourceScaleStateId": 755
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-Z18"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-Z18:7-Z18"
+        },
+        "complementMapId": "complement:5-Z18:7-Z18",
+        "heptatonicFamilyId": "7-Z18"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-Z18",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-Z18"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-Z18"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-Z18",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-Z18:7-Z18"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-Z18"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "827cbde71c24df7b0690efbe653b731666aa5cc65c3fb4452ec97c4c0e653dd9"
+    },
+    {
+      "itemId": "crt-310:5-19",
+      "setClassId": "pentatonic:5-19",
+      "forteNumber": "5-19",
+      "forteOrdinal": 19,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          4,
+          5,
+          8,
+          10,
+          11
+        ],
+        "representativeMask": 3376,
+        "representativeMask12": "000011001011",
+        "weight": 5,
+        "sourceScaleStateId": 719
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-19"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-19:7-19"
+        },
+        "complementMapId": "complement:5-19:7-19",
+        "heptatonicFamilyId": "7-19"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-19",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-19"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-19"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-19",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-19:7-19"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-19"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "0dda9ff2a5702f4b6702138aceadcf9948776a148405ef67cde0b5af54c76543"
+    },
+    {
+      "itemId": "crt-310:5-20",
+      "setClassId": "pentatonic:5-20",
+      "forteNumber": "5-20",
+      "forteOrdinal": 20,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          3,
+          4,
+          8,
+          10,
+          11
+        ],
+        "representativeMask": 3352,
+        "representativeMask12": "000110001011",
+        "weight": 5,
+        "sourceScaleStateId": 743
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-20"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-20:7-20"
+        },
+        "complementMapId": "complement:5-20:7-20",
+        "heptatonicFamilyId": "7-20"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-20",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-20"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-20"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-20",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-20:7-20"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-20"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "e4a90adc1123e3090035dabf47d4e77c964c606a3e4a152f799999683fc99c93"
+    },
+    {
+      "itemId": "crt-310:5-21",
+      "setClassId": "pentatonic:5-21",
+      "forteNumber": "5-21",
+      "forteOrdinal": 21,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          3,
+          6,
+          7,
+          10,
+          11
+        ],
+        "representativeMask": 3272,
+        "representativeMask12": "000100110011",
+        "weight": 5,
+        "sourceScaleStateId": 823
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-21"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-21:7-21"
+        },
+        "complementMapId": "complement:5-21:7-21",
+        "heptatonicFamilyId": "7-21"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-21",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-21"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-21"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-21",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-21:7-21"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-21"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "2641b8a14a507523c18343eb47841616678e20157ce1af7f7fbe3c5cacd09927"
+    },
+    {
+      "itemId": "crt-310:5-22",
+      "setClassId": "pentatonic:5-22",
+      "forteNumber": "5-22",
+      "forteOrdinal": 22,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          3,
+          4,
+          7,
+          10,
+          11
+        ],
+        "representativeMask": 3224,
+        "representativeMask12": "000110010011",
+        "weight": 5,
+        "sourceScaleStateId": 871
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-22"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-22:7-22"
+        },
+        "complementMapId": "complement:5-22:7-22",
+        "heptatonicFamilyId": "7-22"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-22",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-22"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-22"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-22",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-22:7-22"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-22"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "d37aadd916f23e81df014e9021c3acfb9a51a7aa376dbd57a72a72b9648797bc"
+    },
+    {
+      "itemId": "crt-310:5-24",
+      "setClassId": "pentatonic:5-24",
+      "forteNumber": "5-24",
+      "forteOrdinal": 24,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          4,
+          6,
+          8,
+          10,
+          11
+        ],
+        "representativeMask": 3408,
+        "representativeMask12": "000010101011",
+        "weight": 5,
+        "sourceScaleStateId": 687
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-24"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-24:7-24"
+        },
+        "complementMapId": "complement:5-24:7-24",
+        "heptatonicFamilyId": "7-24"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-24",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-24"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-24"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-24",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-24:7-24"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-24"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "6e3e008c3cc3968f2e89594f3d3f0c1a9865c21208054435e3e5f9dedfdb8173"
+    },
+    {
+      "itemId": "crt-310:5-25",
+      "setClassId": "pentatonic:5-25",
+      "forteNumber": "5-25",
+      "forteOrdinal": 25,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          1,
+          5,
+          8,
+          10,
+          11
+        ],
+        "representativeMask": 3362,
+        "representativeMask12": "010001001011",
+        "weight": 5,
+        "sourceScaleStateId": 733
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-25"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-25:7-25"
+        },
+        "complementMapId": "complement:5-25:7-25",
+        "heptatonicFamilyId": "7-25"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-25",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-25"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-25"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-25",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-25:7-25"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-25"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "b05d91d49dca5630c97fd9d61ea0287ea17bc04140db16350c7446e64785e80a"
+    },
+    {
+      "itemId": "crt-310:5-26",
+      "setClassId": "pentatonic:5-26",
+      "forteNumber": "5-26",
+      "forteOrdinal": 26,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          2,
+          6,
+          8,
+          10,
+          11
+        ],
+        "representativeMask": 3396,
+        "representativeMask12": "001000101011",
+        "weight": 5,
+        "sourceScaleStateId": 699
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-26"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-26:7-26"
+        },
+        "complementMapId": "complement:5-26:7-26",
+        "heptatonicFamilyId": "7-26"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-26",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-26"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-26"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-26",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-26:7-26"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-26"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "5f0111ae617dad16084428e541b539d403bc071cbc138256bb9f06635690e253"
+    },
+    {
+      "itemId": "crt-310:5-28",
+      "setClassId": "pentatonic:5-28",
+      "forteNumber": "5-28",
+      "forteOrdinal": 28,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          2,
+          4,
+          8,
+          10,
+          11
+        ],
+        "representativeMask": 3348,
+        "representativeMask12": "001010001011",
+        "weight": 5,
+        "sourceScaleStateId": 747
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-28"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-28:7-28"
+        },
+        "complementMapId": "complement:5-28:7-28",
+        "heptatonicFamilyId": "7-28"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-28",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-28"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-28"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-28",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-28:7-28"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-28"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "80aee6d68fa8cdc9e5df49b31ea413828f2a9852dd05a98941c21971523b253a"
+    },
+    {
+      "itemId": "crt-310:5-29",
+      "setClassId": "pentatonic:5-29",
+      "forteNumber": "5-29",
+      "forteOrdinal": 29,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          3,
+          5,
+          8,
+          10,
+          11
+        ],
+        "representativeMask": 3368,
+        "representativeMask12": "000101001011",
+        "weight": 5,
+        "sourceScaleStateId": 727
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-29"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-29:7-29"
+        },
+        "complementMapId": "complement:5-29:7-29",
+        "heptatonicFamilyId": "7-29"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-29",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-29"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-29"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-29",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-29:7-29"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-29"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "949bf03b06d66d784b359fd9e6f6f1e0dac1442b6c290cf232b9f5a06e015bac"
+    },
+    {
+      "itemId": "crt-310:5-30",
+      "setClassId": "pentatonic:5-30",
+      "forteNumber": "5-30",
+      "forteOrdinal": 30,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          3,
+          5,
+          7,
+          10,
+          11
+        ],
+        "representativeMask": 3240,
+        "representativeMask12": "000101010011",
+        "weight": 5,
+        "sourceScaleStateId": 855
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-30"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-30:7-30"
+        },
+        "complementMapId": "complement:5-30:7-30",
+        "heptatonicFamilyId": "7-30"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-30",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-30"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-30"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-30",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-30:7-30"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-30"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "21acc9895203f1b2c9e3796dcda0cebd6e987feabd3c0434f70625a9b9f8bbb1"
+    },
+    {
+      "itemId": "crt-310:5-31",
+      "setClassId": "pentatonic:5-31",
+      "forteNumber": "5-31",
+      "forteOrdinal": 31,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          2,
+          5,
+          8,
+          10,
+          11
+        ],
+        "representativeMask": 3364,
+        "representativeMask12": "001001001011",
+        "weight": 5,
+        "sourceScaleStateId": 731
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-31"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-31:7-31"
+        },
+        "complementMapId": "complement:5-31:7-31",
+        "heptatonicFamilyId": "7-31"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-31",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-31"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-31"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-31",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-31:7-31"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-31"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "23921eb52ea64e7bbd5dd24ce704e0ebdb1f202747163e8fe89ecf8a0fde8317"
+    },
+    {
+      "itemId": "crt-310:5-32",
+      "setClassId": "pentatonic:5-32",
+      "forteNumber": "5-32",
+      "forteOrdinal": 32,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          2,
+          5,
+          7,
+          10,
+          11
+        ],
+        "representativeMask": 3236,
+        "representativeMask12": "001001010011",
+        "weight": 5,
+        "sourceScaleStateId": 859
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-32"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-32:7-32"
+        },
+        "complementMapId": "complement:5-32:7-32",
+        "heptatonicFamilyId": "7-32"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-32",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-32"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-32"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-32",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-32:7-32"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-32"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "5ffaf7002144b4fd31d9b0feb14faf462577b4ea5263dcf23be95f3287d49cef"
+    },
+    {
+      "itemId": "crt-310:5-33",
+      "setClassId": "pentatonic:5-33",
+      "forteNumber": "5-33",
+      "forteOrdinal": 33,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          3,
+          5,
+          7,
+          9,
+          11
+        ],
+        "representativeMask": 2728,
+        "representativeMask12": "000101010101",
+        "weight": 5,
+        "sourceScaleStateId": 1367
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-33"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-33:7-33"
+        },
+        "complementMapId": "complement:5-33:7-33",
+        "heptatonicFamilyId": "7-33"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-33",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-33"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-33"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-33",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-33:7-33"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-33"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "8a56aac4a0dd0db5808e50b0c943550718cd50d2ba2ed38b581996456041df24"
+    },
+    {
+      "itemId": "crt-310:5-34",
+      "setClassId": "pentatonic:5-34",
+      "forteNumber": "5-34",
+      "forteOrdinal": 34,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          2,
+          5,
+          7,
+          9,
+          11
+        ],
+        "representativeMask": 2724,
+        "representativeMask12": "001001010101",
+        "weight": 5,
+        "sourceScaleStateId": 1371
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-34"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-34:7-34"
+        },
+        "complementMapId": "complement:5-34:7-34",
+        "heptatonicFamilyId": "7-34"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-34",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-34"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-34"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-34",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-34:7-34"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-34"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "95c7b246332a3d28b56db1ed84f3bcf9a68fae0d7dc49836044c3cd10cb62ad7"
+    },
+    {
+      "itemId": "crt-310:5-Z36",
+      "setClassId": "pentatonic:5-Z36",
+      "forteNumber": "5-Z36",
+      "forteOrdinal": 36,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          4,
+          7,
+          9,
+          10,
+          11
+        ],
+        "representativeMask": 3728,
+        "representativeMask12": "000010010111",
+        "weight": 5,
+        "sourceScaleStateId": 367
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-Z36"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-Z36:7-Z36"
+        },
+        "complementMapId": "complement:5-Z36:7-Z36",
+        "heptatonicFamilyId": "7-Z36"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-Z36",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-Z36"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-Z36"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-Z36",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-Z36:7-Z36"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-Z36"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "84a7a9877c6d8c836c35709fbf36d7dd54ecfde9537db48554954f397d92ac5f"
+    },
+    {
+      "itemId": "crt-310:5-Z37",
+      "setClassId": "pentatonic:5-Z37",
+      "forteNumber": "5-Z37",
+      "forteOrdinal": 37,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          2,
+          6,
+          9,
+          10,
+          11
+        ],
+        "representativeMask": 3652,
+        "representativeMask12": "001000100111",
+        "weight": 5,
+        "sourceScaleStateId": 443
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-Z37"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-Z37:7-Z37"
+        },
+        "complementMapId": "complement:5-Z37:7-Z37",
+        "heptatonicFamilyId": "7-Z37"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-Z37",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-Z37"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-Z37"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-Z37",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-Z37:7-Z37"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-Z37"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "e6c204c109d011828ff62c5450167bf89dfa4d3e2cec2f29a8568c0ed02309a1"
+    },
+    {
+      "itemId": "crt-310:5-Z38",
+      "setClassId": "pentatonic:5-Z38",
+      "forteNumber": "5-Z38",
+      "forteOrdinal": 38,
+      "candidateIdentity": {
+        "representativePitchClasses": [
+          3,
+          6,
+          9,
+          10,
+          11
+        ],
+        "representativeMask": 3656,
+        "representativeMask12": "000100100111",
+        "weight": 5,
+        "sourceScaleStateId": 439
+      },
+      "sourceRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "artifactSha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+        "recordSelector": {
+          "setClassId": "pentatonic:5-Z38"
+        }
+      },
+      "complementRecordBinding": {
+        "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+        "artifactSha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+        "recordSelector": {
+          "complementMapId": "complement:5-Z38:7-Z38"
+        },
+        "complementMapId": "complement:5-Z38:7-Z38",
+        "heptatonicFamilyId": "7-Z38"
+      },
+      "currentAdmissionStatus": "proposed",
+      "effectiveAdmissionStatus": "proposed",
+      "requestedAdmissionRole": null,
+      "workflowStatus": "evidence_pending",
+      "eligibleForAdmissionReview": false,
+      "admissionDecision": "not_made",
+      "promotionReleaseId": null,
+      "decisionLedgerRef": null,
+      "gateResults": [
+        {
+          "gateId": "source_identity",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-source:5-Z38",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+              "sha256": "2e8cb33380473518bcd1de4fc19bf43cb97c8e1fdd600917faf46836b8c5828c",
+              "recordSelector": {
+                "setClassId": "pentatonic:5-Z38"
+              },
+              "claim": "exact_proposed_set_class_identity"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:source_identity:5-Z38"
+          ],
+          "criterionIds": [
+            "CRT-310-source_identity"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "complement_closure",
+          "status": "satisfied",
+          "evidenceRefs": [
+            {
+              "evidenceId": "crt-302-complement:5-Z38",
+              "path": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+              "sha256": "5b1bcf9969472341b74e7a0d2c439142a620ae9218d7be301daa89f07d2521d8",
+              "recordSelector": {
+                "complementMapId": "complement:5-Z38:7-Z38"
+              },
+              "claim": "exact_xor_complement_closure"
+            }
+          ],
+          "fixtureIds": [
+            "crt-310:complement_closure:5-Z38"
+          ],
+          "criterionIds": [
+            "CRT-310-complement_closure"
+          ],
+          "diagnosticCodes": []
+        },
+        {
+          "gateId": "harmonic_characterization",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "harmonic_characterization_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "transition_semantics",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "transition_semantics_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "application_necessity",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "application_necessity_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "authority_safety",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "authority_safety_evidence_pending"
+          ]
+        },
+        {
+          "gateId": "deterministic_candidate_release",
+          "status": "pending",
+          "evidenceRefs": [],
+          "fixtureIds": [],
+          "criterionIds": [],
+          "diagnosticCodes": [
+            "deterministic_candidate_release_evidence_pending"
+          ]
+        }
+      ],
+      "itemFingerprint": "af546d497b85e2675c5c39f09650d56531f27f8885fc862496447123a71501b9"
+    }
+  ],
+  "summary": {
+    "itemCount": 35,
+    "proposedCount": 35,
+    "eligibleForAdmissionReviewCount": 0,
+    "admittedCount": 0,
+    "gateDefinitionCount": 7,
+    "satisfiedGateResultCount": 70,
+    "pendingGateResultCount": 175,
+    "failedGateResultCount": 0
+  },
+  "backlogFingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c"
+}

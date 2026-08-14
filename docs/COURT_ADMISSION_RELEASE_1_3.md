@@ -30,3 +30,9 @@ queries. It does not claim `T5CycleEntry`, `ComplementMap`, `CourtInvariant`, or
 a canonical Forte-to-Court mapping.
 
 Validation: `npm run validate:court-admission`.
+
+CRT-310's later root-owned backlog at
+`provenance/pentatonic-set-class-admission-backlog.json` organizes future
+per-class evidence review only. It does not amend this admission: all 35 items
+remain proposed, none is eligible for review, and none is admitted.
+The expanded process is documented in `docs/CRT_310_ADMISSION_WORKFLOW.md`.

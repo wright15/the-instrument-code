@@ -38,6 +38,17 @@ be promoted into a topology fact.
 | `src/governor/vault_context.py` | Optional GOV-208 context provider | Compiles bounded, fingerprinted public Markdown context while preserving exact no-provider classifier parity |
 | `src/governor/court_vault_context.py` | Optional CRT-308 Court context provider | Validates Court note claims against CRT-302/303/304 and cannot change runtime policy, graph queries, or admission |
 | `provenance/court-admission-release.json` | CRT-309 admission authority | Admits the exact bounded Court identities and records all still-proposed scope without rewriting historical package bytes |
+| `provenance/pentatonic-set-class-admission-backlog.json` | CRT-310 planning evidence only | Tracks seven per-class gates for the 35 proposed set classes; it has no admission, runtime, filter, graph, or topology effect |
+| `canonical/gov-210-availability-housing.json` | GOV-210 informational catalog | Projects exact skill availability, eligibility, assignment bases, and optional privacy-preserving housing without runtime authority |
+| `schemas/gov-211/menu-organization-policy.json` | GOV-211 presentation policy | Orders only already-legal base-menu skills and cannot alter membership, moves, queries, capabilities, executors, or success |
+| `graph/runtime/neo4j-bootstrap.mjs` | Rebuild orchestration | Imports upstream records through fixed, parameterized, projection-scoped boundaries; Neo4j remains disposable |
+| `graph/runtime/neo4j-roundtrip.mjs` | Independent projection verification | Removes storage identity and verifies normalized graph content against authoritative source identities |
+| `provenance/neo4j-full-database-baseline.json` | Retained release projection baseline | Pins the exact seven normalized namespace fingerprints and source bindings accepted by release 1.5.0; release 1.6.0 defers refresh because no graph data changed, and current-release refresh is required at next Neo4j availability |
+| `provenance/neo4j-ingestion-template-baseline.json` | Ingestion safety baseline | Pins every generated Court/GOV-210 Cypher template by kind and SHA-256 so no unreviewed query text can execute during bootstrap |
+| `docs/A_TIER_TRIADIC_COMPRESSION_THEOREM.md` | Independently reproduced scoped theorem admitted by GOV-213 | Defines the bounded 21-anchor theorem; the machine sidecar and decision ledger own executable admission evidence |
+| `canonical/harmonic-compression-candidates/CH_A012_q_v1.json` | GOV-213 root-owned scoped harmonic descriptor | Admits exact `Q(S)` and `W_A012(S)` only for A0-A2 anchors; cannot infer offices or write global `harmonic.C_H`, `C_P`, `C_S`, Court, runtime, or topology state |
+| `docs/D_TIER_TRIADIC_COMPRESSION_THEOREM.md` | GOV-227 finite D-tier theorem | Records the universal 70-anchor seat invariant, q_v2 discrimination limits, and exact tier-band interleaving without replacing graph topology |
+| `canonical/harmonic-compression-candidates/CH_D17_q_v2.json` | GOV-227 root-owned scoped harmonic descriptor | Admits exact q_v2 `Q(S)` and `W_D17(S)` only for D1-D7 anchors; cannot infer tiers or offices, emit Neo4j data, or write global `harmonic.C_H` |
 
 The documents remain complete files rather than being copied into every scale
 node. Neo4j records their identity, role, and hash through

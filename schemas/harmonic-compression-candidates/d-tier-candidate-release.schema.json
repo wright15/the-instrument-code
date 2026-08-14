@@ -1,0 +1,304 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gov-227.d-tier-harmonic-compression-candidate.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion", "releaseId", "storyId", "candidateId", "coordinateId",
+    "status", "authority", "admissionEffect", "scope", "method",
+    "sourceBindings", "records", "tierSummaries", "comparisonEvidence",
+    "linearProgrammingAudit", "negativeControls", "globalAggregate",
+    "reviewGate", "deferredWork", "candidateFingerprint"
+  ],
+  "properties": {
+    "schemaVersion": {"const": "gov-227.d-tier-harmonic-compression-candidate.v1"},
+    "releaseId": {"const": "harmonic-compression-candidate:CH_D17_q_v2:1.0.0"},
+    "storyId": {"const": "GOV-227"},
+    "candidateId": {"const": "CH_D17_q_v2"},
+    "coordinateId": {"const": "harmonic.CH_D17_q_v2"},
+    "status": {"const": "admitted_scoped_D17"},
+    "authority": {"const": "root_owned_scoped_harmonic_audit"},
+    "admissionEffect": {"const": "Q_and_W_D17_only"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selection", "families", "tuning", "rootConvention", "stateCount", "excluded"],
+      "properties": {
+        "selection": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["role", "tiers"],
+          "properties": {
+            "role": {"const": "anchor"},
+            "tiers": {"const": ["D1", "D2", "D3", "D4", "D5", "D6", "D7"]}
+          }
+        },
+        "families": {"const": ["7-22", "7-15", "7-Z37", "7-Z17", "7-Z12", "7-8", "7-1"]},
+        "tuning": {"const": "12-TET"},
+        "rootConvention": {"const": "declared_root_normalized_to_pitch_class_0"},
+        "stateCount": {"const": 49},
+        "excluded": {"type": "array", "minItems": 6, "uniqueItems": true, "items": {"type": "string"}}
+      }
+    },
+    "method": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "algorithmVersion", "triadDerivation", "qVersion", "qFormula",
+        "intervalClassDissonance", "signatureClasses", "degreeOrder",
+        "governorDegreeMap", "weightVersion", "weightNumerators",
+        "weightDenominator", "weightOrdering", "uniquenessClaim"
+      ],
+      "properties": {
+        "algorithmVersion": {"const": "gov-227.rooted-triad-q-v2.v1"},
+        "triadDerivation": {"const": "court_mathematics.DegreeTriad"},
+        "qVersion": {"const": "q_v2"},
+        "qFormula": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["pairwiseIntervals", "combinedDissonance", "perfectFifthTertian", "equalStackedNonperfect", "other", "rankDomain", "ordinalInterpretation"],
+          "properties": {
+            "pairwiseIntervals": {"const": ["a", "b-a", "b"]},
+            "combinedDissonance": {"const": "delta(a)+delta(b-a)+delta(b)"},
+            "perfectFifthTertian": {"const": "major=0;minor=1"},
+            "equalStackedNonperfect": {"const": 2},
+            "other": {"const": "3+descending-unique-combined-dissonance-rank"},
+            "rankDomain": {"const": "all 21 signatures observed across the 70 A0-D7 anchors"},
+            "ordinalInterpretation": {"const": "structural class, not a monotone acoustic-energy magnitude"}
+          }
+        },
+        "intervalClassDissonance": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["intervalClass", "value"],
+            "properties": {
+              "intervalClass": {"type": "integer", "minimum": 1, "maximum": 6},
+              "value": {"$ref": "#/$defs/ratio"}
+            }
+          }
+        },
+        "signatureClasses": {
+          "type": "array", "minItems": 21, "maxItems": 21,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["signature", "bucket", "combinedDissonance", "value", "qV1Value"],
+            "properties": {
+              "signature": {"$ref": "#/$defs/intervalSignature"},
+              "bucket": {"enum": ["perfect_fifth_tertian", "equal_stacked_nonperfect", "dissonance_ranked_other"]},
+              "combinedDissonance": {"$ref": "#/$defs/ratio"},
+              "value": {"type": "integer", "minimum": 0},
+              "qV1Value": {"type": ["integer", "null"], "minimum": 0, "maximum": 3}
+            }
+          }
+        },
+        "degreeOrder": {"const": [1, 2, 3, 4, 5, 6, 7]},
+        "governorDegreeMap": {"$ref": "#/$defs/governorDegreeMap"},
+        "weightVersion": {"const": "chaldean_order_witness_v1_descriptive_only"},
+        "weightNumerators": {"const": [116, 56, 41, 35, 77, 44, 38]},
+        "weightDenominator": {"const": 407},
+        "weightOrdering": {"const": "w1>w5>w2>w6>w3>w7>w4>0"},
+        "uniquenessClaim": {"const": false}
+      }
+    },
+    "sourceBindings": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["bindingId", "path", "sha256", "role"],
+        "properties": {
+          "bindingId": {"type": "string", "minLength": 1},
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"$ref": "#/$defs/sha256"},
+          "role": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "records": {"type": "array", "minItems": 49, "maxItems": 49, "items": {"$ref": "#/$defs/stateRecord"}},
+    "tierSummaries": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["tier", "forte", "stateCount", "compressionClassMultiset", "unweightedSum", "governorSeatClassMultiset", "minimum", "maximum"],
+        "properties": {
+          "tier": {"enum": ["D1", "D2", "D3", "D4", "D5", "D6", "D7"]},
+          "forte": {"enum": ["7-22", "7-15", "7-Z37", "7-Z17", "7-Z12", "7-8", "7-1"]},
+          "stateCount": {"const": 7},
+          "compressionClassMultiset": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "integer", "minimum": 0}},
+          "unweightedSum": {"type": "integer", "minimum": 0},
+          "governorSeatClassMultiset": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "integer", "minimum": 0}},
+          "minimum": {"$ref": "#/$defs/extreme"},
+          "maximum": {"$ref": "#/$defs/extreme"}
+        }
+      }
+    },
+    "comparisonEvidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["qV1Fidelity", "zPartnerD3D4", "d2D5MultisetTwins"],
+      "properties": {
+        "qV1Fidelity": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["signature", "qV1Value", "qV2Value"],
+            "properties": {
+              "signature": {"$ref": "#/$defs/intervalSignature"},
+              "qV1Value": {"type": "integer", "minimum": 0, "maximum": 3},
+              "qV2Value": {"type": "integer", "minimum": 0, "maximum": 3}
+            }
+          }
+        },
+        "zPartnerD3D4": {
+          "type": "object", "additionalProperties": false,
+          "required": ["d3Forte", "d4Forte", "sharedIntervalVector", "intervalVectorsEqual", "distinctRawSignatureMultisets", "distinctQMultisets", "crossTierQTupleCollisionCount"],
+          "properties": {
+            "d3Forte": {"const": "7-Z37"},
+            "d4Forte": {"const": "7-Z17"},
+            "sharedIntervalVector": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "integer"}},
+            "intervalVectorsEqual": {"const": true},
+            "distinctRawSignatureMultisets": {"const": true},
+            "distinctQMultisets": {"const": true},
+            "crossTierQTupleCollisionCount": {"const": 0}
+          }
+        },
+        "d2D5MultisetTwins": {
+          "type": "object", "additionalProperties": false,
+          "required": ["d2Forte", "d5Forte", "sharedQMultiset", "sharedUnweightedSum", "distinctRawSignatureMultisets", "crossTierQTupleCollisionCount", "interpretation"],
+          "properties": {
+            "d2Forte": {"const": "7-15"},
+            "d5Forte": {"const": "7-Z12"},
+            "sharedQMultiset": {"const": [2, 3, 3, 6, 6, 7, 7]},
+            "sharedUnweightedSum": {"const": 34},
+            "distinctRawSignatureMultisets": {"const": true},
+            "crossTierQTupleCollisionCount": {"const": 0},
+            "interpretation": {"const": "rooted Q tuple required for discrimination, not the q_v2 multiset"}
+          }
+        }
+      }
+    },
+    "linearProgrammingAudit": {"$ref": "#/$defs/lpAudit"},
+    "negativeControls": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tierOnlySatelliteSelection", "boundarySelection", "aTierSelection"],
+      "properties": {
+        "tierOnlySatelliteSelection": {"$ref": "#/$defs/negativeControl"},
+        "boundarySelection": {"$ref": "#/$defs/negativeControl"},
+        "aTierSelection": {"$ref": "#/$defs/negativeControl"}
+      }
+    },
+    "globalAggregate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["namespace", "status", "value", "guardLiteral"],
+      "properties": {
+        "namespace": {"const": "harmonic.C_H"}, "status": {"const": "unresolved"},
+        "value": {"type": "null"}, "guardLiteral": {"type": "string", "minLength": 1}
+      }
+    },
+    "reviewGate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["stage", "releaseBinding", "neo4jIntegration"],
+      "properties": {
+        "stage": {"const": "B"},
+        "releaseBinding": {"const": "admitted_in_release_1_6_0"},
+        "neo4jIntegration": {"const": "prohibited"}
+      }
+    },
+    "deferredWork": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"type": "string"}},
+    "candidateFingerprint": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "ratio": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "intervalSignature": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1, "maximum": 11}},
+    "governorDegreeMap": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Saturn", "Jupiter", "Mars", "Sun", "Venus", "Mercury", "Moon"],
+      "properties": {"Saturn": {"const": 1}, "Jupiter": {"const": 2}, "Mars": {"const": 3}, "Sun": {"const": 4}, "Venus": {"const": 5}, "Mercury": {"const": 6}, "Moon": {"const": 7}}
+    },
+    "extreme": {
+      "type": "object", "additionalProperties": false,
+      "required": ["stateId", "name", "value"],
+      "properties": {
+        "stateId": {"type": "integer"}, "name": {"type": "string", "minLength": 1},
+        "value": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"const": 407}}}
+      }
+    },
+    "negativeControl": {
+      "type": "object", "additionalProperties": false,
+      "required": ["stateId", "tier", "role", "result"],
+      "properties": {"stateId": {"type": "integer"}, "tier": {"type": ["string", "null"]}, "role": {"enum": ["anchor", "satellite", "boundary"]}, "result": {"const": "excluded"}}
+    },
+    "stateRecord": {
+      "type": "object", "additionalProperties": false,
+      "required": ["stateId", "name", "forte", "tier", "role", "stateGovernor", "stateGovernorDegree", "pitchClasses", "intervalVector", "stepIntervals", "triadIntervalSignatures", "triadicCompressionSignature", "governorSeatCompressionClass", "weightedProjection", "recordFingerprint"],
+      "properties": {
+        "stateId": {"type": "integer", "minimum": 0, "maximum": 4095},
+        "name": {"type": "string", "minLength": 1},
+        "forte": {"enum": ["7-22", "7-15", "7-Z37", "7-Z17", "7-Z12", "7-8", "7-1"]},
+        "tier": {"enum": ["D1", "D2", "D3", "D4", "D5", "D6", "D7"]},
+        "role": {"const": "anchor"},
+        "stateGovernor": {"enum": ["Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus", "Saturn"]},
+        "stateGovernorDegree": {"type": "integer", "minimum": 1, "maximum": 7},
+        "pitchClasses": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 11}},
+        "intervalVector": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "integer", "minimum": 0}},
+        "stepIntervals": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "integer", "minimum": 1}},
+        "triadIntervalSignatures": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/intervalSignature"}},
+        "triadicCompressionSignature": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "integer", "minimum": 0}},
+        "governorSeatCompressionClass": {"type": "integer", "minimum": 0},
+        "weightedProjection": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"const": 407}}},
+        "recordFingerprint": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "lpAudit": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "solver", "fixedWitness", "calibration", "models"],
+      "properties": {
+        "schemaVersion": {"const": "gov-227.exact-tier-separation-audit.v1"},
+        "solver": {
+          "type": "object", "additionalProperties": false,
+          "required": ["algorithm", "arithmetic", "pivotRule", "normalization", "objective"],
+          "properties": {
+            "algorithm": {"const": "two_phase_simplex"}, "arithmetic": {"const": "fractions.Fraction"},
+            "pivotRule": {"const": "bland"}, "normalization": {"const": 407},
+            "objective": {"const": "maximize_common_strict_margin"}
+          }
+        },
+        "fixedWitness": {
+          "type": "object", "additionalProperties": false,
+          "required": ["weightNumerators", "weightDenominator", "tiers", "adjacentComparisons", "declaredOrderStrictlySeparated"],
+          "properties": {
+            "weightNumerators": {"const": [116, 56, 41, 35, 77, 44, 38]},
+            "weightDenominator": {"const": 407},
+            "tiers": {"type": "array", "minItems": 10, "maxItems": 10},
+            "adjacentComparisons": {"type": "array", "minItems": 9, "maxItems": 9},
+            "declaredOrderStrictlySeparated": {"type": "boolean"}
+          }
+        },
+        "calibration": {"$ref": "#/$defs/lpModel"},
+        "models": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {"$ref": "#/$defs/lpModel"}
+        }
+      }
+    },
+    "lpModel": {
+      "type": "object", "additionalProperties": false,
+      "required": ["auditId", "status", "constraintCount", "constraintFingerprint", "iterations", "weights", "margin", "activeConstraintIds", "verification"],
+      "properties": {
+        "auditId": {"type": "string", "minLength": 1},
+        "status": {"enum": ["OPTIMAL_STRICT", "OPTIMAL_ZERO_MARGIN", "WEAK_SYSTEM_INFEASIBLE", "LIMIT"]},
+        "constraintCount": {"type": "integer", "minimum": 1},
+        "constraintFingerprint": {"$ref": "#/$defs/sha256"},
+        "iterations": {"type": "integer", "minimum": 0},
+        "weights": {"type": ["array", "null"], "items": {"$ref": "#/$defs/ratio"}},
+        "margin": {"oneOf": [{"$ref": "#/$defs/ratio"}, {"type": "null"}]},
+        "activeConstraintIds": {"type": "array", "items": {"type": "string"}},
+        "verification": {"enum": ["all_constraints_replayed_exactly", "phase_one_exact_infeasibility", "not_run"]}
+      }
+    }
+  }
+}

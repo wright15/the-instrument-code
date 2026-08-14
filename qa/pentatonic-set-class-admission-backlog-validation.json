@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "crt-310.pentatonic-set-class-admission-backlog-validation.v1",
+  "verdict": "PASS",
+  "backlogId": "court-admission-backlog:crt-310:1",
+  "backlogFingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
+  "checksPassed": 12,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "checkId": "schema",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "checkId": "backlog-fingerprint",
+      "status": "PASS",
+      "diagnostic": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c"
+    },
+    {
+      "checkId": "authoritative-35-closure",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 35,
+        "actual": 35
+      }
+    },
+    {
+      "checkId": "admitted-class-exclusion",
+      "status": "PASS",
+      "diagnostic": []
+    },
+    {
+      "checkId": "source-record-parity",
+      "status": "PASS",
+      "diagnostic": []
+    },
+    {
+      "checkId": "complement-xor-closure",
+      "status": "PASS",
+      "diagnostic": []
+    },
+    {
+      "checkId": "per-class-gate-state",
+      "status": "PASS",
+      "diagnostic": []
+    },
+    {
+      "checkId": "zero-admission-effect",
+      "status": "PASS",
+      "diagnostic": {
+        "itemCount": 35,
+        "proposedCount": 35,
+        "eligibleForAdmissionReviewCount": 0,
+        "admittedCount": 0,
+        "gateDefinitionCount": 7,
+        "satisfiedGateResultCount": 70,
+        "pendingGateResultCount": 175,
+        "failedGateResultCount": 0
+      }
+    },
+    {
+      "checkId": "frozen-source-closure",
+      "status": "PASS",
+      "diagnostic": []
+    },
+    {
+      "checkId": "build-twice-identity",
+      "status": "PASS",
+      "diagnostic": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c"
+    },
+    {
+      "checkId": "reordered-input-identity",
+      "status": "PASS",
+      "diagnostic": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c"
+    },
+    {
+      "checkId": "checked-artifact-freshness",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
+        "actual": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c"
+      }
+    }
+  ],
+  "reportFingerprint": "2366b940743ed79aea0e5b08de04000bff796be3c40f2b3cf799f0a9cbfa02e6"
+}

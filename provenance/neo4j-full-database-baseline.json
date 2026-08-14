@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "seven-governors.neo4j-full-database-baseline.v1",
+  "releaseId": "seven-governors-integrated-1.5.0",
+  "snapshotFingerprint": "d78642dc1180837d059c9d03a6e4f582967d3c3a68d164578dc05688e5471fb3",
+  "namespaceFingerprints": {
+    "topology": "5504690205e5d06adbbecbeddba03deaef746b9ca219835285dcf80f4c0c2c24",
+    "provenance": "78a6e42677f5daa705b25d15dba7d9de7bd8377a4136c6f06b4d4f3d9955687f",
+    "mutation": "50e6f2c2bfa8c685cbdca34acac2e88c68b1cf92fdf7f3f1b9f04afe8f1062e5",
+    "semantic": "5ce8d0969416fbd3e414ca54975aa2a3f628887462b171a8259db2a18d0395d7",
+    "governorRuntime": "7f3bce665fff468f1f6e19b8bb72dd2d81e232b31b77d739d37e26e4ebed5222",
+    "court": "5eafe5e5970a2a286a4bb24525c0bf6c5bbee57da4343826022eeb3dc1573422",
+    "gov210": "4644528335fcb6c06280d5f4a67f05c2c14918f1bbfd9e7561732d95b510dd24"
+  },
+  "sourceBindings": [
+    {"namespace": "court", "path": "tests/court_graph/fixture-input.json", "sha256": "ed46bb74a84a28348ac0c004e0f4501282fe02b6fbd97950bd8df7eb24894455"},
+    {"namespace": "gov210", "path": "canonical/gov-210-availability-housing.json", "sha256": "7382b8ca818682a95b9f6f8d75e3130762ae992f761c1e25de7e31905d214858"},
+    {"namespace": "governorRuntime", "path": "seven-governors-governor-runtime-v0.1.0/canonical/policy-release.json", "sha256": "ab0a9d2827ae262a0e85bcaf3882839e070520ae596fa2c87d68ab0e1eae33d8"},
+    {"namespace": "mutation", "path": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv", "sha256": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e"},
+    {"namespace": "provenance", "path": "provenance/release.json", "sha256": "e542959cc512ef48bb936b1fa6f848ee0d5c8bc9a521ba2987b2f0c29f34cb04"},
+    {"namespace": "semantic", "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/registry-release.json", "sha256": "5072761cb53b98a1c0fa99cb6807f148963ca8ec8394af461b2c9822553f0a22"},
+    {"namespace": "topology", "path": "canonical/universal-network-data.json", "sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc"}
+  ],
+  "counts": {
+    "nodeCount": 3061,
+    "relationshipCount": 10506
+  }
+}

@@ -88,6 +88,13 @@ the direct precedence chain:
 | A1 | 7-34 | Declared exact midpoint construction from A0 |
 | A2 | 7-33 | Declared exact midpoint construction from A1 |
 
+The 21 A-category anchors also satisfy a reproduced and GOV-213-admitted,
+degree-sensitive triadic consistency result under the authored `q_v1`
+encoding. See
+[`A_TIER_TRIADIC_COMPRESSION_THEOREM.md`](A_TIER_TRIADIC_COMPRESSION_THEOREM.md).
+That scoped theorem does not alter anchor identity, infer offices, or admit a
+non-null global aggregate `harmonic.C_H`.
+
 An A-series state is therefore an anchor because its office is established by
 canonical identity or direct midpoint geometry in the achiral precedence
 chain.

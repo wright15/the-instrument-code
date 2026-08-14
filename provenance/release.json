@@ -1,7 +1,7 @@
 {
-  "releaseId": "seven-governors-integrated-1.3.0",
-  "version": "1.3.0",
-  "releaseDate": "2026-08-10",
+  "releaseId": "seven-governors-integrated-1.6.0",
+  "version": "1.6.0",
+  "releaseDate": "2026-08-13",
   "status": "validated_admitted",
   "authorityOrder": [
     "framework",
@@ -10,6 +10,9 @@
     "profile-registry",
     "governor-runtime",
     "court-admission",
+    "harmonic-compression-sidecar",
+    "availability-housing",
+    "menu-organization",
     "neo4j",
     "renderer"
   ],
@@ -19,49 +22,63 @@
       "version": "1.0.0",
       "role": "structural mutation algebra audit",
       "releaseId": "mutation-algebra-audit:1.0.0",
-      "admission": "admitted"
+      "admission": "admitted",
+      "manifestPath": "seven-governors-mutation-algebra-audit/MANIFEST.json",
+      "manifestSha256": "e45e685e9b85622e0581dfb32da46d31a9efe30e5d082e4bd4bc18b835a95cdd"
     },
     {
       "packageId": "seven-governors-canonical-feature-profile-registry",
       "version": "0.1.1",
       "role": "semantic feature profiles, compiler, and creation packets",
       "releaseId": "canonical-profile-registry:0.1.1",
-      "admission": "admitted"
+      "admission": "admitted",
+      "manifestPath": "seven-governors-canonical-feature-profile-registry-v0.1.1/PACKAGE_MANIFEST.json",
+      "manifestSha256": "c4ac240b24b7be39e9ab04c3fa475512adb65faef529968dfc0909a5f95e586c"
     },
     {
       "packageId": "seven-governors-state-machine-spec-and-authoring-toolkit",
       "version": "0.2.0",
       "role": "companion guide, candidate extensions, and safe authoring",
       "releaseId": "companion-guide:0.2.0",
-      "admission": "companion_candidates_only"
+      "admission": "companion_candidates_only",
+      "manifestPath": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/PACKAGE_MANIFEST.json",
+      "manifestSha256": "36d18b81efffd22494a45d96d437aa559152fb5f453c029f5457ae07e3ac98db"
     },
     {
       "packageId": "seven-governors-governor-runtime",
       "version": "0.1.0",
       "role": "typed Governor classification and verified runtime",
       "releaseId": "governor-runtime:0.1.0",
-      "admission": "admitted_by_GOV-209"
+      "admission": "admitted_by_GOV-209",
+      "manifestPath": "seven-governors-governor-runtime-v0.1.0/PACKAGE_MANIFEST.json",
+      "manifestSha256": "aef75a3057527e524562c3c04f0ee87bed2777a3616f2ec6e693062d64b74932"
     },
     {
       "packageId": "seven-governors-court-substrate",
       "version": "0.1.0",
       "role": "bounded Pentatonic Court substrate",
       "releaseId": "court-substrate:0.1.0",
-      "admission": "admitted_by_CRT-309"
+      "admission": "admitted_by_CRT-309",
+      "manifestPath": "seven-governors-court-substrate-v0.1.0/PACKAGE_MANIFEST.json",
+      "manifestSha256": "376a64dd44a0d667e3778d8deafaddfc2c1b33377c3b00358f1f63eb0ff8c044"
     },
     {
       "packageId": "seven-governors-harmonic-invariants",
       "version": "0.1.0",
       "role": "Court geometry and scoped Carey invariants",
       "releaseId": "harmonic-invariants:0.1.0",
-      "admission": "admitted_by_CRT-309"
+      "admission": "admitted_by_CRT-309",
+      "manifestPath": "seven-governors-harmonic-invariants-v0.1.0/PACKAGE_MANIFEST.json",
+      "manifestSha256": "b1548524df9a04150d497f40d972311ce3163fb76ad832301529e0d353b9f4c3"
     },
     {
       "packageId": "seven-governors-court-filter-algebra",
       "version": "0.1.0",
       "role": "seven admitted linear diagonal Court filters",
       "releaseId": "court-filter-algebra:0.1.0",
-      "admission": "admitted_by_CRT-309"
+      "admission": "admitted_by_CRT-309",
+      "manifestPath": "seven-governors-court-filter-algebra-v0.1.0/PACKAGE_MANIFEST.json",
+      "manifestSha256": "6b7f4ea79e4b4d151154544608cf6d46da55959b37208938467bf6bd11f4215a"
     }
   ],
   "canonicalCounts": {
@@ -92,7 +109,18 @@
     "courtRootedPositions": 5,
     "courtBridgeSetClasses": 2,
     "courtLinearFilters": 7,
-    "courtProposedSetClasses": 35
+    "courtProposedSetClasses": 35,
+    "gov210AvailabilityRecords": 10,
+    "gov210EligibilityRecords": 10,
+    "gov210Assignments": 1873,
+    "gov210TopologyTargets": 462,
+    "gov210CourtTargets": 5,
+    "gov213ScopedStates": 21,
+    "gov213ScopedCoordinates": 2,
+    "gov227ScopedStates": 49,
+    "gov227ScopedCoordinates": 2,
+    "fullDatabaseNodes": 3061,
+    "fullDatabaseRelationships": 10506
   },
   "importOrder": [
     "neo4j/schema.cypher",
@@ -101,7 +129,59 @@
     "seven-governors-mutation-algebra-audit/neo4j/algebra-schema.cypher",
     "seven-governors-mutation-algebra-audit/neo4j/algebra-import.cypher",
     "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/01_semantic_schema.cypher",
-    "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/02_semantic_import.cypher"
+    "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/02_semantic_import.cypher",
+    "neo4j/governor-runtime/schema.cypher",
+    "generated:GOV-206-policy-snapshot",
+    "neo4j/court-mathematics/schema.cypher",
+    "generated:CRT-306-verified-fixture-batches",
+    "neo4j/gov-210/schema.cypher",
+    "generated:GOV-210-canonical-batches"
+  ],
+  "databaseBootstrap": {
+    "script": "scripts/bootstrap-neo4j.mjs",
+    "normalizedSnapshotSchema": "schemas/neo4j-normalized-snapshot.schema.json",
+    "readinessSchemaVersion": "seven-governors.neo4j-full-readiness.v1",
+    "expectedNodeCount": 3061,
+    "expectedRelationshipCount": 10506,
+    "neo4jAuthority": false
+  },
+  "neo4jBaselineStatus": {
+    "status": "deferred_no_graph_data_change",
+    "retainedReleaseId": "seven-governors-integrated-1.5.0",
+    "reason": "only release.json provenance version and non-projected GOV-227 evidence changed",
+    "refreshRequired": "next Neo4j availability"
+  },
+  "rootExtensions": [
+    {
+      "storyId": "GOV-210",
+      "releaseId": "gov-210-availability-housing:1.0.0",
+      "fingerprint": "2b87a0ed677e4e75286ac2d6833d840fa674a051ffca1d3de5d92a8e979916df",
+      "authority": "informational_catalog_only"
+    },
+    {
+      "storyId": "GOV-211",
+      "releaseId": "gov-211-menu-organization:1.0.0",
+      "fingerprint": "798336db2b977d40d819b6b64282b88eda5191f44954a87a5bb2386a6b0ab98a",
+      "authority": "presentation_order_only"
+    },
+    {
+      "storyId": "GOV-213",
+      "releaseId": "harmonic-compression-candidate:CH_A012_q_v1:1.0.0",
+      "fingerprint": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1",
+      "authority": "scoped_A012_harmonic_descriptor_only"
+    },
+    {
+      "storyId": "GOV-227",
+      "releaseId": "harmonic-compression-candidate:CH_D17_q_v2:1.0.0",
+      "fingerprint": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe",
+      "authority": "scoped_D17_harmonic_descriptor_only"
+    },
+    {
+      "storyId": "CRT-310",
+      "releaseId": "court-admission-backlog:crt-310:1",
+      "fingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
+      "authority": "admission_planning_only"
+    }
   ],
   "frameworkSources": [
     {

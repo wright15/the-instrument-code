@@ -1,26 +1,20 @@
 # Recommended Next Steps
 
-Current release: `seven-governors-integrated-1.3.0`, validated and admitted.
+Current release: `seven-governors-integrated-1.6.0`, validated and admitted.
 The release includes the audited topology, mutation algebra, canonical profile
 registry/compiler, Governor runtime, bounded Pentatonic Court, read projection,
 agent skills, optional read-only vault context, GOV-210 availability/housing,
-and GOV-211 presentation-only assignment-aware menu organization.
+GOV-211 presentation-only assignment-aware menu organization, GOV-213's scoped
+A0-A2 harmonic-compression sidecar, and GOV-227's scoped D1-D7 q_v2 sidecar.
 
 ## 1. Establish the full database
 
-Import in the order recorded in `provenance/release.json`:
-
-1. topology: `neo4j/schema.cypher`, `neo4j/import.cypher`;
-2. provenance: `neo4j/provenance.cypher`;
-3. mutation algebra: the audit's `algebra-schema.cypher`,
-   `algebra-import.cypher` (15 operators, 3,402 applications);
-4. semantic registry: `01_semantic_schema.cypher`,
-   `02_semantic_import.cypher` (7 profiles, 4 compiled forms, 15 semantic
-   shells).
-
-Run both validation suites (`neo4j/validation.cypher`,
-`neo4j/provenance-validation.cypher`, plus the audit and registry validation
-files). Preserve the reports with the release.
+Release 1.6 changes no graph payload, but its `release.json` provenance identity
+is newer than the retained 1.5 Neo4j baseline. At the next Neo4j availability,
+use `npm run bootstrap:neo4j` with `NEO4J_URI`, `NEO4J_USERNAME`,
+`NEO4J_PASSWORD`, `NEO4J_IMPORT_DIR`, and optional `NEO4J_DATABASE`, then
+capture the new provenance namespace and normalized snapshot. Do not claim
+current-release baseline parity before that refresh.
 
 ## 2. Use explanation-first queries
 
@@ -45,14 +39,16 @@ returns `503` unless all parity groups pass.
 
 ## 4. Prove round-trip reproducibility
 
-Export the Neo4j projection into a normalized JSON form and compare it with
-the canonical release and the registry's compiled packets. No role, office,
-family, state, relationship, profile, or operator should be lost or invented.
+After the deferred baseline refresh, run `npm run verify:neo4j:roundtrip`
+against the deployed database and retain the normalized snapshot fingerprint.
+Then `npm run test:neo4j:full` independently proves that two clean imports
+produce identical bytes and that no canonical topology record, mutation ID,
+semantic ID, or projection fingerprint is lost or invented.
 
 ## 5. Preserve bounded admission
 
-The bounded Court is admitted by CRT-309 through
-`provenance/court-admission-release.json`. The remaining 35 pentatonic classes,
+The bounded Court remains admitted by CRT-309 through
+`provenance/court-admission-release.json`. CRT-310 tracks the remaining 35 pentatonic classes,
 broader Fivefold controller claims, natural-phenomenon, and thermodynamic models
 remain proposed work. Any expansion still requires a new versioned release that:
 
@@ -88,7 +84,21 @@ fallback order whenever assignment evidence is absent or invalid. Any new skill,
 assignment basis, target namespace, query, or ordering policy requires a
 versioned policy and fresh admission evidence.
 
-## 7. Version every protocol change
+## 7. Extend harmonic compression only through separate evidence
+
+GOV-213 admits q_v1 `Q(S)` and `W_A012(S)` for 21 A0-A2 anchors. GOV-227
+separately admits q_v2 `Q(S)` and `W_D17(S)` for 49 D1-D7 anchors. The finite
+Governor Seat Invariant holds across all 70 anchors, but scalar bands interleave
+and cannot resolve tier identity; consume the graph topology and declared
+precedence rules for tier resolution. Global `harmonic.C_H` remains null.
+Future work may independently test satellites and boundaries, all 15 operator
+deltas, and `C_P`/`C_H`/`C_S` correspondence.
+
+The Neo4j baseline remains the retained release 1.5.0 baseline because release
+1.6.0 changes no graph data. Refresh it at the next Neo4j availability before
+claiming current-release round-trip evidence.
+
+## 8. Version every protocol change
 
 Create a new `AuditRelease` and a new integrated release whenever a
 qualification rule, precedence rule, operator, or canonical assignment

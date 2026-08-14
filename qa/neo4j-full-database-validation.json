@@ -1,0 +1,650 @@
+{
+  "schemaVersion": "seven-governors.neo4j-full-database-validation.v1",
+  "verdict": "PASS",
+  "releaseId": "seven-governors-integrated-1.5.0",
+  "checksPassed": 6,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "checkId": "native-harness",
+      "status": "PASS",
+      "diagnostic": "isolated Neo4j 5.x lifecycle"
+    },
+    {
+      "checkId": "full-bootstrap",
+      "status": "PASS",
+      "diagnostic": {
+        "nodeCount": 3061,
+        "relationshipCount": 10506
+      }
+    },
+    {
+      "checkId": "projection-readiness",
+      "status": "PASS",
+      "diagnostic": [
+        "topology",
+        "provenance",
+        "mutation",
+        "semantic",
+        "governorRuntime",
+        "court",
+        "gov210"
+      ]
+    },
+    {
+      "checkId": "normalized-source-parity",
+      "status": "PASS",
+      "diagnostic": "source-bound exact normalized namespace fingerprints"
+    },
+    {
+      "checkId": "import-twice-byte-identity",
+      "status": "PASS",
+      "diagnostic": true
+    },
+    {
+      "checkId": "namespace-reset-isolation",
+      "status": "PASS",
+      "diagnostic": "external sentinel preserved"
+    }
+  ],
+  "normalizedSnapshot": {
+    "snapshotFingerprint": "d78642dc1180837d059c9d03a6e4f582967d3c3a68d164578dc05688e5471fb3",
+    "namespaceFingerprints": {
+      "topology": "5504690205e5d06adbbecbeddba03deaef746b9ca219835285dcf80f4c0c2c24",
+      "provenance": "78a6e42677f5daa705b25d15dba7d9de7bd8377a4136c6f06b4d4f3d9955687f",
+      "mutation": "50e6f2c2bfa8c685cbdca34acac2e88c68b1cf92fdf7f3f1b9f04afe8f1062e5",
+      "semantic": "5ce8d0969416fbd3e414ca54975aa2a3f628887462b171a8259db2a18d0395d7",
+      "governorRuntime": "7f3bce665fff468f1f6e19b8bb72dd2d81e232b31b77d739d37e26e4ebed5222",
+      "court": "5eafe5e5970a2a286a4bb24525c0bf6c5bbee57da4343826022eeb3dc1573422",
+      "gov210": "4644528335fcb6c06280d5f4a67f05c2c14918f1bbfd9e7561732d95b510dd24"
+    },
+    "sourceBindings": [
+      {
+        "namespace": "court",
+        "path": "tests/court_graph/fixture-input.json",
+        "sha256": "ed46bb74a84a28348ac0c004e0f4501282fe02b6fbd97950bd8df7eb24894455"
+      },
+      {
+        "namespace": "gov210",
+        "path": "canonical/gov-210-availability-housing.json",
+        "sha256": "7382b8ca818682a95b9f6f8d75e3130762ae992f761c1e25de7e31905d214858"
+      },
+      {
+        "namespace": "governorRuntime",
+        "path": "seven-governors-governor-runtime-v0.1.0/canonical/policy-release.json",
+        "sha256": "ab0a9d2827ae262a0e85bcaf3882839e070520ae596fa2c87d68ab0e1eae33d8"
+      },
+      {
+        "namespace": "mutation",
+        "path": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv",
+        "sha256": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e"
+      },
+      {
+        "namespace": "provenance",
+        "path": "provenance/release.json",
+        "sha256": "e542959cc512ef48bb936b1fa6f848ee0d5c8bc9a521ba2987b2f0c29f34cb04"
+      },
+      {
+        "namespace": "semantic",
+        "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/registry-release.json",
+        "sha256": "5072761cb53b98a1c0fa99cb6807f148963ca8ec8394af461b2c9822553f0a22"
+      },
+      {
+        "namespace": "topology",
+        "path": "canonical/universal-network-data.json",
+        "sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc"
+      }
+    ],
+    "counts": {
+      "nodeCount": 3061,
+      "relationshipCount": 10506
+    }
+  },
+  "evidenceBindings": [
+    {
+      "path": "canonical/gov-210-availability-housing.json",
+      "sha256": "7382b8ca818682a95b9f6f8d75e3130762ae992f761c1e25de7e31905d214858"
+    },
+    {
+      "path": "canonical/universal-network-data.json",
+      "sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc"
+    },
+    {
+      "path": "court-mathematics/pyproject.toml",
+      "sha256": "48bd8d45d08de33c5c5e104899f8055384fe0a9c2dc01981ed011fba1fba199a"
+    },
+    {
+      "path": "court-mathematics/src/court_mathematics/__init__.py",
+      "sha256": "1902de95765cdc329fd8e6d9406edf055b2903ba99a119c60096902aa014b1ba"
+    },
+    {
+      "path": "court-mathematics/src/court_mathematics/_canonical.py",
+      "sha256": "b431d30641520fa1bffa8ea643417fe0897150f02ef540bc0319a17f3f2667a0"
+    },
+    {
+      "path": "court-mathematics/src/court_mathematics/harmonic_profile.py",
+      "sha256": "7751fecbc760fb6c3b5910b87da8ee89888e8c6db2ecaf605275395274571bd0"
+    },
+    {
+      "path": "court-mathematics/src/court_mathematics/pitch_class.py",
+      "sha256": "0ebd9e91cab7c72cdb445f2405c31cc64031aba3e0653f08e020c6add45ba65c"
+    },
+    {
+      "path": "court-mathematics/src/court_mathematics/subset_lattice.py",
+      "sha256": "dde4acbe6f5e49783c95c8d1546362473aabb31f997a4aaac9159ae8f0399b9a"
+    },
+    {
+      "path": "court-mathematics/src/court_mathematics/triads.py",
+      "sha256": "396ced4501247fbe0d2362ed1b911a9fa72a02e0bb58e47fcb3dedf13b4f129e"
+    },
+    {
+      "path": "court-mathematics/src/court_mathematics/voice_leading.py",
+      "sha256": "17759c0fd7bc98384c88513367370791464788be2cc3a6dffc5a1d8876cc34e6"
+    },
+    {
+      "path": "graph/runtime/canonical.mjs",
+      "sha256": "8200fbf347992f37ce2a13737c76a0f5055e0cddb240f6f30d792db6306fd7d6"
+    },
+    {
+      "path": "graph/runtime/contracts.mjs",
+      "sha256": "f6ca78538d1aad1469bc5766fcdbfa0fe6ec5fdf99fd96517f03ca889f6f14cb"
+    },
+    {
+      "path": "graph/runtime/neo4j-bootstrap.mjs",
+      "sha256": "fbe48b913c6fefd9aaca642132138b45e5838bcd851a9575b6059debd91ed821"
+    },
+    {
+      "path": "graph/runtime/neo4j-evidence.mjs",
+      "sha256": "f1608afb61b03d11c8f703c3c7204367858a809cef0e5ed3f399029490c05896"
+    },
+    {
+      "path": "graph/runtime/neo4j-harness.mjs",
+      "sha256": "5a432d82b48cd4fcd3cf8fa7484828f16c106606dda5048284b318a8ca5a5da9"
+    },
+    {
+      "path": "graph/runtime/neo4j-roundtrip.mjs",
+      "sha256": "60e8ce3609a3d36b3c8053ee796eb8ab9b87a8b896d41ac7be00c8f54a3cfe2b"
+    },
+    {
+      "path": "graph/runtime/providers/file-provider.mjs",
+      "sha256": "5594006ad1fbb56b7da6693c3670e6f80bd26a0c07972359cb17f8506076b5f6"
+    },
+    {
+      "path": "graph/runtime/providers/neo4j-provider.mjs",
+      "sha256": "863e890268069ae49b2ab5ad0fb80c5190c3aa3db302cd26a7a6e48a08d9aef8"
+    },
+    {
+      "path": "graph/runtime/providers/snapshot-provider.mjs",
+      "sha256": "64fe06dd26f51f8c8662a894bc41a5187390f7fbcdcac6b9cbd01734f1fe75e3"
+    },
+    {
+      "path": "graph/runtime/query-api.mjs",
+      "sha256": "19004eb6f66aeac1b59d21dbd4393a145ba7c7a879917e332fadd7b9d60c5863"
+    },
+    {
+      "path": "graph/runtime/query-catalog.mjs",
+      "sha256": "c6e7f5a4bb87f0fb190e54bc5879271408d38c83fd58dbc2f6953f0523fd5e94"
+    },
+    {
+      "path": "neo4j/court-mathematics/schema.cypher",
+      "sha256": "8b7e878461ed24a097716d514a02c750159cec838b07a8cd4812507c34f71bcc"
+    },
+    {
+      "path": "neo4j/court-mathematics/validation.cypher",
+      "sha256": "46d6a51ebafa34b26b75a60df24b1d5dee0a2718c3a7216fc0ae8d23f2e6c9e2"
+    },
+    {
+      "path": "neo4j/csv/audited-hamming2.csv",
+      "sha256": "adfd3bab011e5edd9ce2ddbb4fb78841019c48fac1de8b3db57cf57f08df7924"
+    },
+    {
+      "path": "neo4j/csv/belongs-to-family.csv",
+      "sha256": "21b50b96a4bcd6385735f9cade6cbf947acbf27de77290b84b77c7af48a9563d"
+    },
+    {
+      "path": "neo4j/csv/constructs.csv",
+      "sha256": "9c0216a2a488ddbad768d0a0d6e780a9048ea46152acfe5ed552affb4431fd83"
+    },
+    {
+      "path": "neo4j/csv/convergence-contact.csv",
+      "sha256": "515d847d72e4bb0b7f19455c832a4455dee6b6b8b1a6534b5ac568cc55e9281f"
+    },
+    {
+      "path": "neo4j/csv/governor-offices.csv",
+      "sha256": "53e7a6527be64b59cc76f73a02536cf3ffb1ef90bfea508456b408ad22ad5508"
+    },
+    {
+      "path": "neo4j/csv/governs.csv",
+      "sha256": "6c74ee16cb47faf514b9a3acc06cb60a95899801e7d286764f745508ba9225d2"
+    },
+    {
+      "path": "neo4j/csv/identity-ledger.csv",
+      "sha256": "1df36a5f6684db35b189cb74addd0b739e062ee224f8f91a35f9f94901ff496c"
+    },
+    {
+      "path": "neo4j/csv/junction-contact.csv",
+      "sha256": "1663e1e817acea4c2133efbf60bafc77f35390ac7f6a47a0ec082c648f9137ec"
+    },
+    {
+      "path": "neo4j/csv/leaf-contact.csv",
+      "sha256": "cbbc2e46017f9d4d4a7f4541e7ae33557c297c098f8beca0465caddafe751676"
+    },
+    {
+      "path": "neo4j/csv/modal-successor.csv",
+      "sha256": "ba83d4e1fd48e79ade08ae7a901ab965e181d877a79466f763e664b4b3d0ce97"
+    },
+    {
+      "path": "neo4j/csv/occupies-office.csv",
+      "sha256": "fdbe2ca2be9b54fc7df09cc37e47c3ef13f105c42af8fa7728a9776b262b753d"
+    },
+    {
+      "path": "neo4j/csv/phase-shift.csv",
+      "sha256": "a46b9e7fcfc0e8a34b5c7abd3dc59043abdc8c93eeda4c9c218706f805ce5365"
+    },
+    {
+      "path": "neo4j/csv/relational-office-evidence.csv",
+      "sha256": "7c67c25f55b314739a46a6073ca9c67ac42a6862289de049bdee68f48df769fd"
+    },
+    {
+      "path": "neo4j/csv/relationships.csv",
+      "sha256": "86d3abee6ed86950f49f6015c4b9f7a72e2495286df40cf82e8a5c1194eae3e2"
+    },
+    {
+      "path": "neo4j/csv/scale-families.csv",
+      "sha256": "eb5fe1a87857945b80fefb425bd13fe274be379aae86b37afe1a3d8ab0551347"
+    },
+    {
+      "path": "neo4j/csv/scale-states.csv",
+      "sha256": "1df36a5f6684db35b189cb74addd0b739e062ee224f8f91a35f9f94901ff496c"
+    },
+    {
+      "path": "neo4j/csv/seat-contact.csv",
+      "sha256": "6192f754ce0daa68ec7d69c080fda84616c0f5cf885d17df25c6f3f7d2134096"
+    },
+    {
+      "path": "neo4j/gov-210/schema.cypher",
+      "sha256": "66b7dd8889dabd25448aee67632c488833b0b2c6818ff62f5dc5b2e846726199"
+    },
+    {
+      "path": "neo4j/gov-210/validation.cypher",
+      "sha256": "d06487b15e3085f8999d6e79022b4312d14e548184472565bc74270550a67d15"
+    },
+    {
+      "path": "neo4j/governor-runtime/schema.cypher",
+      "sha256": "466b9199cee75ba3e71bf455b7129cd95b489313e362e59849ed8f3778e3b608"
+    },
+    {
+      "path": "neo4j/import.cypher",
+      "sha256": "b7d0267b4b35f884cfc68a481c5899511c82105daab913dbf3e9634c1d26c7b2"
+    },
+    {
+      "path": "neo4j/provenance-validation.cypher",
+      "sha256": "a5269db18c2e705cbc2fedfb16f64c2e14810773fc3e7373be7d9d72d314cf7c"
+    },
+    {
+      "path": "neo4j/provenance.cypher",
+      "sha256": "bba8e1b0b7e97ab7be17e56f327d62dcc5c3c1bb326263e3878d87505e83dd94"
+    },
+    {
+      "path": "neo4j/schema.cypher",
+      "sha256": "919dd8c69afabae759a4a557c92220b378d123cf9e3ff1e4c7ff6ac971517ac4"
+    },
+    {
+      "path": "neo4j/validation.cypher",
+      "sha256": "00807dfe69494036d17f448403465ff3e063f44a264749fdfcb1bf0ec43f9d0b"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "e9a7b055312ad521e6ac679b0471fb9bd708dc0da7319537e6126cc256603816"
+    },
+    {
+      "path": "package.json",
+      "sha256": "ca43d2d8f82ce6ccb967afe49f936d8bb73655d11387aba2f1bdc8fecad94f58"
+    },
+    {
+      "path": "provenance/neo4j-full-database-baseline.json",
+      "sha256": "ef6e5dce817a9938747603357a07d45ce8e9c7e54defbd7719fbd5eda7641631"
+    },
+    {
+      "path": "provenance/neo4j-ingestion-template-baseline.json",
+      "sha256": "f66b0573e94d9e4cd704f9a987356659ae455a75b40066db1c89a12ec2a5b5d9"
+    },
+    {
+      "path": "provenance/release.json",
+      "sha256": "e542959cc512ef48bb936b1fa6f848ee0d5c8bc9a521ba2987b2f0c29f34cb04"
+    },
+    {
+      "path": "schemas/court-admission-contract.json",
+      "sha256": "b4351a14aa3dfde6043a609e4158abcb17b006b666a35220e5833cf1cf7ffa9b"
+    },
+    {
+      "path": "schemas/court-runtime-policy.json",
+      "sha256": "5164b74bf6cbbb55625eb0e9b958542cf20ddacb426813b7a93c1bffd7347605"
+    },
+    {
+      "path": "schemas/gov-210/skill-eligibility-policy.json",
+      "sha256": "0f5b19a232e55aa5b96deddf86c86da32b7d5221ff536031b87053f745a7c2d7"
+    },
+    {
+      "path": "schemas/neo4j-full-database-validation.schema.json",
+      "sha256": "0883d19784a3386c7787a528ba3888598b7db24899e5ebb3f99b463bf1587305"
+    },
+    {
+      "path": "schemas/neo4j-normalized-snapshot.schema.json",
+      "sha256": "ba9ca3f8894cf8aea558d562afd13d9dc1dae376228117bd6f3ac6409213e70d"
+    },
+    {
+      "path": "scripts/bootstrap-neo4j.mjs",
+      "sha256": "e9722ffe38ffe4286729f4a0d99e14e3c775d29b51fa3ad2b45eaeb269709d33"
+    },
+    {
+      "path": "scripts/generate-availability-housing.py",
+      "sha256": "67e4498218da880b6dfb7da95594b8a82cdea71fd404e35bd4da5043b1f13d86"
+    },
+    {
+      "path": "scripts/generate-court-graph.py",
+      "sha256": "37b5b941415c18bb26dcd24617929fd26f2d773001e3e39598e5f33669908b72"
+    },
+    {
+      "path": "scripts/validate-full-database.mjs",
+      "sha256": "abf66bd615e371a9e82ad2dca84ab767959a040941e4f57e877a723fc9fdde86"
+    },
+    {
+      "path": "scripts/verify-neo4j-roundtrip.mjs",
+      "sha256": "f18fb63e95cf9079509baa7f43e799b7ada7a7682e9fd6f3c5f91f9a2f4beaae"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/PACKAGE_MANIFEST.json",
+      "sha256": "c4ac240b24b7be39e9ab04c3fa475512adb65faef529968dfc0909a5f95e586c"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/registry-release.json",
+      "sha256": "5072761cb53b98a1c0fa99cb6807f148963ca8ec8394af461b2c9822553f0a22"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/01_semantic_schema.cypher",
+      "sha256": "d5071571910dae404cc5e66df06b8e6dc6bf813ffa3d94e5cecfffc4e7a6a961"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/02_semantic_import.cypher",
+      "sha256": "48e6a121ad8b408e0b02f941a4f4b7315dfb8397fcc68b38d272c6b9d3ed9e23"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/03_semantic_validation.cypher",
+      "sha256": "c6716d8f6abe633c06551832fd188138e7629c98e05fcf349342c7700716e44e"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/canonical-profiles.csv",
+      "sha256": "d0cd6aec70ca09b9755ab95b9d55b00a12c2c4fc955c18bccb0217f2a983dfa5"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/compiled-profiles.csv",
+      "sha256": "afaa66bf95dc9ae1108970b4d98d42b3fb9ac138116f2b281d2dff0481b8b79b"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/derivation-routes.csv",
+      "sha256": "6e9d08211028b53d09fc692c932cf566b8d0412b29cdaaa509802722f7e25430"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/derivation-steps.csv",
+      "sha256": "bf07b0edc24d2838cd3c940f363f2b11c1f78535af869840734a6255da8cb69e"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/domain-projections.csv",
+      "sha256": "01c001fc55111263dc3192ef675afe55a23681d2ab86d638ef3846ffc575c24b"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/feature-definitions.csv",
+      "sha256": "ec40296a307175e51d8b9805bae7172b9f273111f62bd69b953ef4d4788ab714"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/harmonic-measure-definitions.csv",
+      "sha256": "549011800ca96462f209ac6174eaed80864af230cff11f85dacf806f7a19387c"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/landform-references.csv",
+      "sha256": "9f9393f7c9115424cb020af7dac21f56f32219d0ea926d64b5d668b69c25bb82"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/photonic-records.csv",
+      "sha256": "c81280dee939d8a72b338054ed081bf0ac3f43e203d75f9d4279ced94e0d618a"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/profile-feature-assertions.csv",
+      "sha256": "d2248a5ba21e3ddd29f30678bb30c7634a364b4f969eca2dcfec09f04e9a33b4"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/profile-landform-references.csv",
+      "sha256": "0df5ac07823de2b1c50ea27513d2caaefd7a9c4d4959a736c9a912fa998a2657"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/registry-releases.csv",
+      "sha256": "5abdbefd9e8b273ddf32009e38b7acc689be91ea2fc4c829be23f03163f11162"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/semantic-operator-unresolved.csv",
+      "sha256": "2ab468b103dc13498eefdfbb0f65d4ae7fdf1f726d0c6064740f03df7bc0ce49"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/semantic-operators.csv",
+      "sha256": "8d89391868de5e623a438d0cfcc36d4ce03e1ed97e79db2b87c0da6b468e420b"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/semantic-unresolved-scopes.csv",
+      "sha256": "ae279fb4be4e9675c6369741cba213b31e0fd4cbae9c08ea6f0c413791733e6e"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/validation-fixtures.csv",
+      "sha256": "e8aceedf7c3faa73791145de509e4d8e14007a505afd0a80edd2a3e8c1b49cd8"
+    },
+    {
+      "path": "seven-governors-court-filter-algebra-v0.1.0/canonical/filter-algebra-release.json",
+      "sha256": "83bb95522b91170914c1a1306d2ae0d5e084842eea2723c2c0d9d44ef0543368"
+    },
+    {
+      "path": "seven-governors-court-filter-algebra-v0.1.0/canonical/filter-operator-registry.json",
+      "sha256": "278abdbd5df579407d5dd8d7b8a0d1213b8d0aa0d67d7ce9c72f42dac5e8ab8b"
+    },
+    {
+      "path": "seven-governors-court-substrate-v0.1.0/canonical/substrate-registry-release.json",
+      "sha256": "6906a5b7a495feee7dddb02ee936393052e58315c28893a58c700ec60000f9a3"
+    },
+    {
+      "path": "seven-governors-governor-runtime-v0.1.0/canonical/policy-release.json",
+      "sha256": "ab0a9d2827ae262a0e85bcaf3882839e070520ae596fa2c87d68ab0e1eae33d8"
+    },
+    {
+      "path": "seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json",
+      "sha256": "75b3ffaa0b126c4dbf0abf6e42a4674724092b0e403a2862d893b6f1493d0e6f"
+    },
+    {
+      "path": "seven-governors-mutation-algebra-audit/MANIFEST.json",
+      "sha256": "e45e685e9b85622e0581dfb32da46d31a9efe30e5d082e4bd4bc18b835a95cdd"
+    },
+    {
+      "path": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv",
+      "sha256": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e"
+    },
+    {
+      "path": "seven-governors-mutation-algebra-audit/audit/operator-registry.csv",
+      "sha256": "e5a9e6929fca048078e0db6ff044facc7137a6ef61e994d74f1d526e27b6482e"
+    },
+    {
+      "path": "seven-governors-mutation-algebra-audit/neo4j/algebra-import.cypher",
+      "sha256": "cf7dc6f41fcc2375647d2565f6ccf293075cb79fff5a479c14d502ae57172357"
+    },
+    {
+      "path": "seven-governors-mutation-algebra-audit/neo4j/algebra-schema.cypher",
+      "sha256": "a771cf78ff22f433da3b2e959225bf5cc18352fa5b25c5009f55b922d2163e01"
+    },
+    {
+      "path": "seven-governors-mutation-algebra-audit/neo4j/algebra-validation.cypher",
+      "sha256": "66b51eadf67843c316f3ffa4d7d42cfe88e38bf432b519460b5cb57b7b2c433a"
+    },
+    {
+      "path": "skills/court/registry.json",
+      "sha256": "9eb2f62a6c30f6e608c37d9c9c383917f26475ec9d33c4a4b471bddd67803ca3"
+    },
+    {
+      "path": "skills/governor/registry.json",
+      "sha256": "f326aabe01c4be4d80589c84c7b8e9591e283c50d63d4b40b140bab11fbf64ae"
+    },
+    {
+      "path": "src/governor/__init__.py",
+      "sha256": "88eb11db664b30b2c6110934124b70d7826507b81410bb114cdb79a34b53a930"
+    },
+    {
+      "path": "src/governor/agent_api.py",
+      "sha256": "75dc3baf00209697e61218338e52363c6a6b23563e7426039c7f5e25ba833804"
+    },
+    {
+      "path": "src/governor/assignment_menu.py",
+      "sha256": "b5dfd767b983c54d72929207d63cfbc6dcd395a9e26200ce2868e19883f6e1e6"
+    },
+    {
+      "path": "src/governor/availability_housing.py",
+      "sha256": "afe8e14b079e07c7c13169b44b5db4b5300c0526cd1cedc05d01b3f93cd5b936"
+    },
+    {
+      "path": "src/governor/availability_housing_queries.py",
+      "sha256": "039fa7c21e3207d1282aed63b43f59055c4a4061f337a6f50af03e3141ee7d0b"
+    },
+    {
+      "path": "src/governor/classifier.py",
+      "sha256": "3032fc908e12e6edf7fc89ed01533802a208da6d8af3ff86a1f7f489d5cea76f"
+    },
+    {
+      "path": "src/governor/court_agent_api.py",
+      "sha256": "9b842b3b09580e17bf6b6169b7ea6a8d9d22462c36c3ca6762c2de8e38d90e39"
+    },
+    {
+      "path": "src/governor/court_graph_projection.py",
+      "sha256": "4a5e13ebe69aa96f4a3319bdd5f3ea19bec745b3aa024532297acc885c85bb10"
+    },
+    {
+      "path": "src/governor/court_graph_queries.py",
+      "sha256": "3442e4cd03a3885a5cd7706d8146974eba20fc564edf08acb4bb2db0479ddcc8"
+    },
+    {
+      "path": "src/governor/court_ledger.py",
+      "sha256": "29f9ded02fc8ed63907f937cd82c1af221f7435788b5e4994c660ee3f85a02c1"
+    },
+    {
+      "path": "src/governor/court_runtime.py",
+      "sha256": "0842074eced10a8ab2dc91467f37760ef63a2acf0bbd352a7128f2a6722bf9be"
+    },
+    {
+      "path": "src/governor/court_session_store.py",
+      "sha256": "c3169431863f5e19be41de8166f012024c79afe408c667a2ffbbc170316da8cd"
+    },
+    {
+      "path": "src/governor/court_vault_context.py",
+      "sha256": "d61ef3eee5613c78dae8ecbd3129d2e3e7ad4720001cd717d7ebbd9703481dba"
+    },
+    {
+      "path": "src/governor/dynamic_menu.py",
+      "sha256": "de3ae71e92d197a8ad32a582a66778a1f8a292375dd4021de1a7df01143b60b5"
+    },
+    {
+      "path": "src/governor/evidence.py",
+      "sha256": "e98508b1bb107073fa13903195a41212180c48aafe915b133e70443db2929958"
+    },
+    {
+      "path": "src/governor/executors.py",
+      "sha256": "7235c382b8cf56725ee829e7a61ae04620333868a6b519302d53f14deb386c22"
+    },
+    {
+      "path": "src/governor/graph_export.py",
+      "sha256": "199237fea10550043724806f0b9d29b19cde076db5c20b0bd68822f2e98b03e9"
+    },
+    {
+      "path": "src/governor/harmonic.py",
+      "sha256": "d8a2cb7baf8b6d2751d985ffd5d046abe5e253faabc4a93b3bd61a152dbd5d3f"
+    },
+    {
+      "path": "src/governor/harmonic_compression.py",
+      "sha256": "4cf105e9c6503ebd03e33ed5f0ad8fb48129502370fa6598006007da670b0825"
+    },
+    {
+      "path": "src/governor/harmonic_models.py",
+      "sha256": "9cbf12faf7b5d643c15dfc0e92919d1bfb024e0e84b13f3706760a8cdfd92b90"
+    },
+    {
+      "path": "src/governor/hashing.py",
+      "sha256": "216085374ec0adf4490b788d9be77e9c695018aa16b7c49ac1e1f87b07ad13d3"
+    },
+    {
+      "path": "src/governor/ledger.py",
+      "sha256": "ee9292ae3a0c2f1b75a3053b22c0b8e0e188f8b1e9d5497b08cd955a8a368962"
+    },
+    {
+      "path": "src/governor/lifecycle.py",
+      "sha256": "083c23966d3a3a0313c1b2885041515975658b488e74318a9317e2b160fbcb7f"
+    },
+    {
+      "path": "src/governor/loop_guards.py",
+      "sha256": "15a58f89175c6269c9e45e809ff65884b856e517320873e04b197881e334322a"
+    },
+    {
+      "path": "src/governor/models.py",
+      "sha256": "cf730121e3f8a15016323e37f2deee40d22d7e6fcabc9d88e899f235b434094c"
+    },
+    {
+      "path": "src/governor/operation_catalog.py",
+      "sha256": "d77593b662f0172a49e34c062558f2bcd4b68c667726e06e7d11773f240bdd30"
+    },
+    {
+      "path": "src/governor/outcome_reader.py",
+      "sha256": "e12e9b4b14bf18500d07fb90178dd48b4f2779fb86d632c61d55ae3a40ef9692"
+    },
+    {
+      "path": "src/governor/projections.py",
+      "sha256": "168489bcbe365bac528184ae50391dfe8b30084555846e17596ab3f49b105efd"
+    },
+    {
+      "path": "src/governor/rebuild.py",
+      "sha256": "f568313e2b9d4fff522da77d606fddd1fcb1d467a111b7ad4e164e564bef7179"
+    },
+    {
+      "path": "src/governor/runtime_ledger.py",
+      "sha256": "7f32b637ba8b57c8e2bbf1f1b71e7038ad6a258a0151bc0ae29c8a0dde4cadc9"
+    },
+    {
+      "path": "src/governor/runtime_models.py",
+      "sha256": "14e4ccf5b4303c0edee61e69d13c0db128e41d8dd0894407beedf0e661217b2a"
+    },
+    {
+      "path": "src/governor/runtime_store.py",
+      "sha256": "80e26542242072473e7326d3f6d8dcacb17471c5ca254122cd68bd668ed41e30"
+    },
+    {
+      "path": "src/governor/state_store.py",
+      "sha256": "cd122e7b19c6c9e1f511b5a78f4eb552d5b6834a679614391610c7dc7fbb4db2"
+    },
+    {
+      "path": "src/governor/transitions.py",
+      "sha256": "3d48881f5f419fd2c7eb7caa04a5bd79b61caa3ebd560a7fe59a1917e327cc4e"
+    },
+    {
+      "path": "src/governor/vault_context.py",
+      "sha256": "475fd41741a3e45867055ea07fb45cd8806ce93b1dab1323cb6c9bf1c958652b"
+    },
+    {
+      "path": "src/governor/verification.py",
+      "sha256": "60311ea54870261189978aaefdbf54c250ee6394076957a9fae5817a8c27822d"
+    },
+    {
+      "path": "src/governor/verifiers.py",
+      "sha256": "9461d52c2b36eec083d7d5266a2c59b197164352027c5f32614e1450744250a0"
+    },
+    {
+      "path": "tests/court_graph/fixture-input.json",
+      "sha256": "ed46bb74a84a28348ac0c004e0f4501282fe02b6fbd97950bd8df7eb24894455"
+    },
+    {
+      "path": "tests/neo4j/full-database-live.test.mjs",
+      "sha256": "d29bdcbd5fad559955e5647338528fe241081fd00bf272b45edff869a4fb4b98"
+    }
+  ],
+  "reportFingerprint": "4cea63c91426188a9dba02b32683fc0858a6e5730174aeeec9d55152e153f873"
+}

@@ -56,12 +56,124 @@ function runNpmScript(relativeDirectory, script) {
 // ---------------------------------------------------------------------------
 
 const release = JSON.parse((await read("provenance/release.json")).toString());
+const expectedImportOrder = [
+  "neo4j/schema.cypher",
+  "neo4j/import.cypher",
+  "neo4j/provenance.cypher",
+  "seven-governors-mutation-algebra-audit/neo4j/algebra-schema.cypher",
+  "seven-governors-mutation-algebra-audit/neo4j/algebra-import.cypher",
+  "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/01_semantic_schema.cypher",
+  "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/02_semantic_import.cypher",
+  "neo4j/governor-runtime/schema.cypher",
+  "generated:GOV-206-policy-snapshot",
+  "neo4j/court-mathematics/schema.cypher",
+  "generated:CRT-306-verified-fixture-batches",
+  "neo4j/gov-210/schema.cypher",
+  "generated:GOV-210-canonical-batches",
+];
 record(
   "release id",
-  release.releaseId === "seven-governors-integrated-1.3.0" &&
-    release.version === "1.3.0" &&
+  release.releaseId === "seven-governors-integrated-1.6.0" &&
+    release.version === "1.6.0" &&
     release.status === "validated_admitted",
   { releaseId: release.releaseId, version: release.version },
+);
+record(
+  "release 1.6 root extension and retained database baseline",
+  payloadHash(release.rootExtensions) === payloadHash([
+    {
+      storyId: "GOV-210",
+      releaseId: "gov-210-availability-housing:1.0.0",
+      fingerprint: "2b87a0ed677e4e75286ac2d6833d840fa674a051ffca1d3de5d92a8e979916df",
+      authority: "informational_catalog_only",
+    },
+    {
+      storyId: "GOV-211",
+      releaseId: "gov-211-menu-organization:1.0.0",
+      fingerprint: "798336db2b977d40d819b6b64282b88eda5191f44954a87a5bb2386a6b0ab98a",
+      authority: "presentation_order_only",
+    },
+    {
+      storyId: "GOV-213",
+      releaseId: "harmonic-compression-candidate:CH_A012_q_v1:1.0.0",
+      fingerprint: "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1",
+      authority: "scoped_A012_harmonic_descriptor_only",
+    },
+    {
+      storyId: "GOV-227",
+      releaseId: "harmonic-compression-candidate:CH_D17_q_v2:1.0.0",
+      fingerprint: "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe",
+      authority: "scoped_D17_harmonic_descriptor_only",
+    },
+    {
+      storyId: "CRT-310",
+      releaseId: "court-admission-backlog:crt-310:1",
+      fingerprint: "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
+      authority: "admission_planning_only",
+    },
+  ]) &&
+    release.databaseBootstrap?.script === "scripts/bootstrap-neo4j.mjs" &&
+    release.databaseBootstrap?.expectedNodeCount === 3061 &&
+    release.databaseBootstrap?.expectedRelationshipCount === 10506 &&
+    release.databaseBootstrap?.neo4jAuthority === false &&
+    release.canonicalCounts?.gov227ScopedStates === 49 &&
+    release.canonicalCounts?.gov227ScopedCoordinates === 2 &&
+    release.neo4jBaselineStatus?.status === "deferred_no_graph_data_change" &&
+    release.neo4jBaselineStatus?.retainedReleaseId ===
+      "seven-governors-integrated-1.5.0" &&
+    release.neo4jBaselineStatus?.refreshRequired === "next Neo4j availability" &&
+    release.databaseBootstrap?.normalizedSnapshotSchema ===
+      "schemas/neo4j-normalized-snapshot.schema.json" &&
+    release.databaseBootstrap?.readinessSchemaVersion ===
+      "seven-governors.neo4j-full-readiness.v1" &&
+    canonicalJsonBytes(release.importOrder).equals(canonicalJsonBytes(expectedImportOrder)),
+  {
+    rootExtensions: release.rootExtensions,
+    databaseBootstrap: release.databaseBootstrap,
+    importStages: release.importOrder?.length,
+  },
+);
+const frozenPackageManifests = await Promise.all(release.compositePackages.map(
+  async (compositePackage) => ({
+    packageId: compositePackage.packageId,
+    expected: compositePackage.manifestSha256,
+    actual: await hash(compositePackage.manifestPath),
+    path: compositePackage.manifestPath,
+  }),
+));
+record(
+  "frozen composite package manifest identities",
+  frozenPackageManifests.length === 7
+    && frozenPackageManifests.every((item) => item.expected === item.actual),
+  frozenPackageManifests,
+);
+const frozenPackagePayloadSpecs = [
+  ["seven-governors-mutation-algebra-audit", "902619fce7f45dc52c30d4f245cb1ffee2caebc91f4504552acd26a489f28479"],
+  ["seven-governors-canonical-feature-profile-registry-v0.1.1", "b80b16f1a4a11ea877e47f37350a9e7a289bd10394501f97a8557e220cd943c6"],
+  ["seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0", "b7ebc16633e9694b72fdaeec5c6b3039a758d30019d5091fcca4829f12e23514"],
+  ["seven-governors-governor-runtime-v0.1.0", "78234a5aea4d3d882e59cc70fe0b7bfd719704f10acf34160e455551a471f135"],
+  ["seven-governors-court-substrate-v0.1.0", "bf0324074be036c4b939c2c2794a997c5c1f73808d8cf444c58395e4a6bc5f09"],
+  ["seven-governors-harmonic-invariants-v0.1.0", "3bf5f1815369dba2b9ca918a743d18cf1aa388b12f9ba7915ee87e8d8c8363f1"],
+  ["seven-governors-court-filter-algebra-v0.1.0", "a2ca514125ca5d0531c8a3c888f1f9f5bb3a152e858a308709fa4c4b9a973a59"],
+];
+const frozenPackagePayloads = await Promise.all(frozenPackagePayloadSpecs.map(
+  async ([directory, expected]) => {
+    const absoluteRoot = path.join(packageRoot, directory);
+    const files = await walkFiles(absoluteRoot, {
+      excluded: new Set([
+        ".git", "MANIFEST.json", "PACKAGE_MANIFEST.json", "CHECKSUMS.sha256",
+      ]),
+    });
+    const records = await Promise.all(
+      files.map((absolutePath) => recordFile(absolutePath, absoluteRoot)),
+    );
+    return { directory, fileCount: records.length, expected, actual: payloadHash(records) };
+  },
+));
+record(
+  "frozen composite package payload identities",
+  frozenPackagePayloads.every((item) => item.actual === item.expected),
+  frozenPackagePayloads,
 );
 for (const source of release.frameworkSources) {
   const actual = await hash(source.path);
@@ -590,6 +702,207 @@ record(
       "9b842b3b09580e17bf6b6169b7ea6a8d9d22462c36c3ca6762c2de8e38d90e39",
   "GOV-207, CRT-307, and GOV-210 release identities retain their 1.3.0 bytes",
 );
+const crt310Validate = runNpmScript(".", "validate:crt310");
+record(
+  "CRT-310 per-class admission backlog validation",
+  crt310Validate.passed,
+  crt310Validate.passed ? "passed" : crt310Validate.tail,
+);
+const crt310Backlog = JSON.parse(
+  (await read("provenance/pentatonic-set-class-admission-backlog.json")).toString(),
+);
+const crt310Report = JSON.parse(
+  (await read("qa/pentatonic-set-class-admission-backlog-validation.json")).toString(),
+);
+const crt310BacklogCore = { ...crt310Backlog };
+delete crt310BacklogCore.backlogFingerprint;
+const crt310ReportCore = { ...crt310Report };
+delete crt310ReportCore.reportFingerprint;
+record(
+  "CRT-310 zero-admission and fingerprint closure",
+  crt310Backlog.backlogFingerprint ===
+      "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c" &&
+    payloadHash(crt310BacklogCore) === crt310Backlog.backlogFingerprint &&
+    crt310Backlog.items?.length === 35 &&
+    crt310Backlog.summary?.admittedCount === 0 &&
+    crt310Backlog.summary?.eligibleForAdmissionReviewCount === 0 &&
+    crt310Backlog.bulkPromotionAllowed === false &&
+    crt310Report.verdict === "PASS" &&
+    crt310Report.checksPassed === 12 &&
+    crt310Report.checksFailed === 0 &&
+    crt310Report.checks?.length === 12 &&
+    new Set(crt310Report.checks.map((check) => check.checkId)).size === 12 &&
+    crt310Report.checks.every((check) => check.status === "PASS") &&
+    payloadHash(crt310ReportCore) === crt310Report.reportFingerprint,
+  {
+    backlogFingerprint: crt310Backlog.backlogFingerprint,
+    summary: crt310Backlog.summary,
+    reportFingerprint: crt310Report.reportFingerprint,
+  },
+);
+const gov213Validate = runNpmScript(".", "validate:gov213");
+record(
+  "GOV-213 scoped harmonic-compression validation",
+  gov213Validate.passed,
+  gov213Validate.passed ? "passed" : gov213Validate.tail,
+);
+const gov213Candidate = JSON.parse(
+  (await read("canonical/harmonic-compression-candidates/CH_A012_q_v1.json")).toString(),
+);
+const gov213Report = JSON.parse(
+  (await read("qa/harmonic-compression-candidates-validation.json")).toString(),
+);
+const gov213CandidateCore = { ...gov213Candidate };
+delete gov213CandidateCore.candidateFingerprint;
+const gov213ReportCore = { ...gov213Report };
+delete gov213ReportCore.reportFingerprint;
+record(
+  "GOV-213 scoped admission and global C_H guard",
+  gov213Candidate.candidateFingerprint ===
+      "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1" &&
+    payloadHash(gov213CandidateCore) === gov213Candidate.candidateFingerprint &&
+    gov213Candidate.status === "admitted_scoped_A012" &&
+    gov213Candidate.coordinateId === "harmonic.CH_A012_q_v1" &&
+    gov213Candidate.records?.length === 21 &&
+    gov213Candidate.records.every((item) => (
+      item.role === "anchor" && ["A0", "A1", "A2"].includes(item.tier)
+    )) &&
+    gov213Candidate.globalAggregate?.namespace === "harmonic.C_H" &&
+    gov213Candidate.globalAggregate?.status === "unresolved" &&
+    gov213Candidate.globalAggregate?.value === null &&
+    gov213Report.verdict === "PASS" &&
+    gov213Report.checksPassed === 12 &&
+    gov213Report.checksFailed === 0 &&
+    payloadHash(gov213ReportCore) === gov213Report.reportFingerprint,
+  {
+    candidateFingerprint: gov213Candidate.candidateFingerprint,
+    recordCount: gov213Candidate.records?.length,
+    globalAggregate: gov213Candidate.globalAggregate,
+    reportFingerprint: gov213Report.reportFingerprint,
+  },
+);
+const gov227Validate = runNpmScript(".", "validate:gov227");
+record(
+  "GOV-227 scoped D-tier harmonic-compression validation",
+  gov227Validate.passed,
+  gov227Validate.passed ? "passed" : gov227Validate.tail,
+);
+const gov227Candidate = JSON.parse(
+  (await read("canonical/harmonic-compression-candidates/CH_D17_q_v2.json")).toString(),
+);
+const gov227Report = JSON.parse(
+  (await read("qa/d-tier-harmonic-compression-validation.json")).toString(),
+);
+const gov227CandidateCore = { ...gov227Candidate };
+delete gov227CandidateCore.candidateFingerprint;
+const gov227ReportCore = { ...gov227Report };
+delete gov227ReportCore.reportFingerprint;
+record(
+  "GOV-227 scoped admission, topology boundary, and global C_H guard",
+  gov227Candidate.candidateFingerprint ===
+      "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe" &&
+    payloadHash(gov227CandidateCore) === gov227Candidate.candidateFingerprint &&
+    gov227Candidate.releaseId ===
+      "harmonic-compression-candidate:CH_D17_q_v2:1.0.0" &&
+    gov227Candidate.status === "admitted_scoped_D17" &&
+    gov227Candidate.admissionEffect === "Q_and_W_D17_only" &&
+    gov227Candidate.coordinateId === "harmonic.CH_D17_q_v2" &&
+    gov227Candidate.records?.length === 49 &&
+    gov227Candidate.records.every((item) => (
+      item.role === "anchor" && ["D1", "D2", "D3", "D4", "D5", "D6", "D7"].includes(item.tier)
+    )) &&
+    gov227Candidate.comparisonEvidence?.d2D5MultisetTwins?.crossTierQTupleCollisionCount === 0 &&
+    gov227Candidate.comparisonEvidence?.zPartnerD3D4?.crossTierQTupleCollisionCount === 0 &&
+    gov227Candidate.tierSummaries?.every((summary) => (
+      summary.governorSeatClassMultiset?.every((value) => value === 2)
+    )) &&
+    gov227Candidate.reviewGate?.neo4jIntegration === "prohibited" &&
+    gov227Candidate.globalAggregate?.namespace === "harmonic.C_H" &&
+    gov227Candidate.globalAggregate?.status === "unresolved" &&
+    gov227Candidate.globalAggregate?.value === null &&
+    gov227Report.verdict === "PASS" &&
+    gov227Report.checksPassed === 17 &&
+    gov227Report.checksFailed === 0 &&
+    payloadHash(gov227ReportCore) === gov227Report.reportFingerprint,
+  {
+    candidateFingerprint: gov227Candidate.candidateFingerprint,
+    recordCount: gov227Candidate.records?.length,
+    lpStatuses: gov227Candidate.linearProgrammingAudit?.models?.map((item) => item.status),
+    globalAggregate: gov227Candidate.globalAggregate,
+    reportFingerprint: gov227Report.reportFingerprint,
+  },
+);
+const fullDatabaseReport = JSON.parse(
+  (await read("qa/neo4j-full-database-validation.json")).toString(),
+);
+const fullDatabaseBaseline = JSON.parse(
+  (await read("provenance/neo4j-full-database-baseline.json")).toString(),
+);
+const ingestionTemplateBaseline = JSON.parse(
+  (await read("provenance/neo4j-ingestion-template-baseline.json")).toString(),
+);
+const fullDatabaseReportCore = { ...fullDatabaseReport };
+delete fullDatabaseReportCore.reportFingerprint;
+const fullDatabaseCheckIds = [
+  "native-harness",
+  "full-bootstrap",
+  "projection-readiness",
+  "normalized-source-parity",
+  "import-twice-byte-identity",
+  "namespace-reset-isolation",
+];
+const fullDatabaseNamespaces = [
+  "topology", "provenance", "mutation", "semantic", "governorRuntime", "court", "gov210",
+];
+record(
+  "retained release 1.5 full-database evidence with deferred 1.6 refresh",
+  fullDatabaseReport.schemaVersion ===
+      "seven-governors.neo4j-full-database-validation.v1" &&
+    fullDatabaseReport.releaseId === "seven-governors-integrated-1.5.0" &&
+    fullDatabaseReport.verdict === "PASS" &&
+    fullDatabaseReport.checksPassed === 6 &&
+    fullDatabaseReport.checksFailed === 0 &&
+    payloadHash(fullDatabaseReport.checks.map((check) => check.checkId)) ===
+      payloadHash(fullDatabaseCheckIds) &&
+    fullDatabaseReport.checks.every((check) => check.status === "PASS") &&
+    fullDatabaseReport.normalizedSnapshot?.counts?.nodeCount === 3061 &&
+    fullDatabaseReport.normalizedSnapshot?.counts?.relationshipCount === 10506 &&
+    fullDatabaseBaseline.schemaVersion ===
+      "seven-governors.neo4j-full-database-baseline.v1" &&
+    fullDatabaseBaseline.releaseId === "seven-governors-integrated-1.5.0" &&
+    ingestionTemplateBaseline.schemaVersion ===
+      "seven-governors.neo4j-ingestion-template-baseline.v1" &&
+    ingestionTemplateBaseline.releaseId === "seven-governors-integrated-1.5.0" &&
+    Object.keys(ingestionTemplateBaseline.namespaces?.court ?? {}).length === 24 &&
+    Object.keys(ingestionTemplateBaseline.namespaces?.gov210 ?? {}).length === 10 &&
+    Object.values(ingestionTemplateBaseline.namespaces ?? {}).every((templates) => (
+      Object.values(templates).every((value) => /^[0-9a-f]{64}$/.test(value))
+    )) &&
+    canonicalJsonBytes(fullDatabaseReport.normalizedSnapshot).equals(canonicalJsonBytes({
+      snapshotFingerprint: fullDatabaseBaseline.snapshotFingerprint,
+      namespaceFingerprints: fullDatabaseBaseline.namespaceFingerprints,
+      sourceBindings: fullDatabaseBaseline.sourceBindings,
+      counts: fullDatabaseBaseline.counts,
+    })) &&
+    payloadHash(Object.keys(fullDatabaseReport.normalizedSnapshot?.namespaceFingerprints ?? {})) ===
+      payloadHash(fullDatabaseNamespaces) &&
+    new Set(fullDatabaseReport.normalizedSnapshot?.sourceBindings?.map(
+      (binding) => binding.namespace,
+    )).size === fullDatabaseNamespaces.length &&
+    fullDatabaseNamespaces.every((namespace) => (
+      fullDatabaseReport.normalizedSnapshot.sourceBindings.some(
+        (binding) => binding.namespace === namespace,
+      )
+    )) &&
+    payloadHash(fullDatabaseReportCore) === fullDatabaseReport.reportFingerprint &&
+    release.neo4jBaselineStatus?.status === "deferred_no_graph_data_change" &&
+    release.neo4jBaselineStatus?.retainedReleaseId === fullDatabaseReport.releaseId,
+  {
+    reportFingerprint: fullDatabaseReport.reportFingerprint,
+    retainedReleaseId: fullDatabaseReport.releaseId,
+    deferredRefresh: release.neo4jBaselineStatus,
+  },
+);
 const courtSkillsValidate = runNpmScript(".", "validate:court-skills");
 record(
   "court agent skill bundle validation",
@@ -777,6 +1090,11 @@ for (const relativePath of [
   "scripts/validate-release.mjs",
   "scripts/build-manifest.mjs",
   "scripts/validate-cypher-syntax.mjs",
+  "scripts/build-pentatonic-admission-backlog.mjs",
+  "scripts/validate-pentatonic-admission-backlog.mjs",
+  "scripts/bootstrap-neo4j.mjs",
+  "scripts/verify-neo4j-roundtrip.mjs",
+  "scripts/validate-full-database.mjs",
 ]) {
   const syntaxCheck = spawnSync(
     process.execPath,
@@ -989,6 +1307,8 @@ for (const absolutePath of await walkFiles(packageRoot, {
     "qa/bestiary-validation.json",
     "qa/neo4j-cypher-syntax-report.json",
     "qa/crt-307-local-model-observation.json",
+    "qa/server-startup.log",
+    "graph/qa/server-startup.log",
     ".git",
     ".pytest_cache",
     "__pycache__",
@@ -1014,7 +1334,7 @@ const mismatchedHashes = computedRecords.filter(
 );
 record(
   "manifest completeness",
-    manifest.version === "1.3.0" &&
+    manifest.version === "1.6.0" &&
     missingFromManifest.length === 0 &&
     missingFromDisk.length === 0,
   {
@@ -1068,9 +1388,13 @@ const checksumParity = checksumLines.every((line) => {
   const record = manifestByPath.get(relativePath);
   return record?.sha256 === digest;
 });
+const checksumPaths = checksumLines.map((line) => line.match(/^([0-9a-f]{64})\s{2}(.+)$/)?.[2]);
 record(
   "checksums sha256 parity",
-  checksumLines.length === manifest.files.length && checksumParity,
+  checksumLines.length === manifest.files.length &&
+    new Set(checksumPaths).size === checksumPaths.length &&
+    checksumParity &&
+    [...manifestByPath.keys()].every((relativePath) => checksumPaths.includes(relativePath)),
   {
     checksumLines: checksumLines.length,
     manifestFiles: manifest.files.length,
@@ -1132,6 +1456,31 @@ for (const [label, schemaPath, document] of [
     "CRT-309 Court benchmark",
     "schemas/court-admission/court-benchmark-report.schema.json",
     courtBenchmark,
+  ],
+  [
+    "CRT-310 admission backlog",
+    "schemas/court-admission/pentatonic-set-class-admission-backlog.schema.json",
+    crt310Backlog,
+  ],
+  [
+    "CRT-310 admission backlog validation",
+    "schemas/court-admission/pentatonic-set-class-admission-backlog-validation.schema.json",
+    crt310Report,
+  ],
+  [
+    "GOV-227 D-tier candidate",
+    "schemas/harmonic-compression-candidates/d-tier-candidate-release.schema.json",
+    gov227Candidate,
+  ],
+  [
+    "GOV-227 D-tier validation",
+    "schemas/harmonic-compression-candidates/d-tier-validation-report.schema.json",
+    gov227Report,
+  ],
+  [
+    "retained release 1.5 full-database validation",
+    "schemas/neo4j-full-database-validation.schema.json",
+    fullDatabaseReport,
   ],
 ]) {
   const schema = JSON.parse((await read(schemaPath)).toString());
@@ -1564,6 +1913,7 @@ for (const requiredPath of [
   "schemas/court-admission-contract.json",
   "docs/COURT_ADMISSION_AND_AUTHORITY.md",
   "docs/TOPOLOGY_IDENTITY_AND_INVARIANTS.md",
+  "docs/A_TIER_TRIADIC_COMPRESSION_THEOREM.md",
   "docs/FOUR_LAYER_FORMALIZATION.md",
   "docs/START_HERE.md",
   "docs/GRAPH_AND_COMPILER_API.md",
@@ -1726,6 +2076,48 @@ for (const requiredPath of [
   "tests/gov_211/neo4j-live.test.mjs",
   "docs/GOV_211_ASSIGNMENT_AWARE_MENU.md",
   "scrum/GOV-211-assignment-aware-menu-integration.md",
+  "provenance/pentatonic-set-class-admission-backlog.json",
+  "schemas/court-admission/pentatonic-set-class-admission-backlog.schema.json",
+  "schemas/court-admission/pentatonic-set-class-admission-backlog-validation.schema.json",
+  "scripts/build-pentatonic-admission-backlog.mjs",
+  "scripts/validate-pentatonic-admission-backlog.mjs",
+  "tests/crt_310/backlog.test.mjs",
+  "qa/pentatonic-set-class-admission-backlog-validation.json",
+  "docs/CRT_310_ADMISSION_WORKFLOW.md",
+  "graph/runtime/neo4j-bootstrap.mjs",
+  "graph/runtime/neo4j-roundtrip.mjs",
+  "scripts/bootstrap-neo4j.mjs",
+  "scripts/verify-neo4j-roundtrip.mjs",
+  "scripts/validate-full-database.mjs",
+  "schemas/neo4j-normalized-snapshot.schema.json",
+  "schemas/neo4j-full-database-validation.schema.json",
+  "tests/neo4j/full-database-live.test.mjs",
+  "qa/neo4j-full-database-validation.json",
+  "provenance/neo4j-full-database-baseline.json",
+  "provenance/neo4j-ingestion-template-baseline.json",
+  "scrum/GOV-212-integrated-release-1.4-closure.md",
+  "canonical/harmonic-compression-candidates/CH_A012_q_v1.json",
+  "canonical/harmonic-compression-candidates/negative-cases.json",
+  "schemas/harmonic-compression-candidates/candidate-release.schema.json",
+  "schemas/harmonic-compression-candidates/validation-report.schema.json",
+  "src/governor/harmonic_compression.py",
+  "scripts/generate-harmonic-compression-candidates.py",
+  "scripts/validate-harmonic-compression-candidates.py",
+  "tests/test_gov_213_harmonic_compression.py",
+  "qa/harmonic-compression-candidates-validation.json",
+  "scrum/GOV-213-harmonic-compression-formalization.md",
+  "canonical/harmonic-compression-candidates/CH_D17_q_v2.json",
+  "canonical/harmonic-compression-candidates/d-tier-negative-cases.json",
+  "schemas/harmonic-compression-candidates/d-tier-candidate-release.schema.json",
+  "schemas/harmonic-compression-candidates/d-tier-validation-report.schema.json",
+  "src/governor/exact_lp.py",
+  "src/governor/harmonic_compression_d_tier.py",
+  "scripts/generate-d-tier-harmonic-compression.py",
+  "scripts/validate-d-tier-harmonic-compression.py",
+  "tests/test_gov_227_d_tier_harmonic_compression.py",
+  "qa/d-tier-harmonic-compression-validation.json",
+  "docs/D_TIER_TRIADIC_COMPRESSION_THEOREM.md",
+  "scrum/GOV-227-d-tier-harmonic-compression-audit.md",
   "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/docs/START_HERE.md",
   "bestiary/ARCH-SPEC.md",
   "bestiary/data/bestiary-data.json",

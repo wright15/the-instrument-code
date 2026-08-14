@@ -9,6 +9,13 @@ interactive graph. GOV-210 adds a separate graph-native skill availability,
 eligibility, assignment, and privacy-preserving context-housing catalog.
 GOV-211 uses that catalog only to organize already-legal Governor and Court
 menus through a sealed, presentation-only sidecar.
+Integrated release 1.4.0 binds both stories, adds a complete seven-stage Neo4j
+bootstrap, and proves normalized import-twice round-trip identity. Integrated
+release 1.5.0 adds GOV-213's root-owned A0-A2 harmonic-compression sidecar
+without changing the global `harmonic.C_H` null guard.
+Integrated release 1.6.0 admits GOV-227's D1-D7 q_v2 sidecar and universal
+70-anchor Governor Seat Invariant while recording that scoped compression bands
+interleave and cannot replace graph topology for tier resolution.
 
 The package is intentionally layered:
 
@@ -110,6 +117,15 @@ Start with `docs/START_HERE.md` for the navigation map,
 `docs/GOVERNOR_DOMAIN_AUTHORITY.md` and
 `docs/COURT_ADMISSION_AND_AUTHORITY.md` for namespace boundaries, and
 `docs/GRAPH_AND_COMPILER_API.md` for the API contract.
+The independently reproduced A0-A2 rooted-triad theorem and GOV-213 scoped
+compression admission are documented in
+`docs/A_TIER_TRIADIC_COMPRESSION_THEOREM.md`. The admitted sidecar exposes
+`Q(S)` and `W_A012(S)` for 21 anchors and does not replace the unresolved global
+aggregate `harmonic.C_H` guard.
+GOV-227's complementary D1-D7 theorem is documented in
+`docs/D_TIER_TRIADIC_COMPRESSION_THEOREM.md`. It admits `Q(S)` and `W_D17(S)`
+for 49 D-tier anchors, preserves global `harmonic.C_H` as unresolved/null, and
+emits no Neo4j data.
 
 ## Package map
 
@@ -147,7 +163,8 @@ and clean-build determinism, Court substrate, harmonic-invariant, and
 filter-algebra candidate packages, the Court runtime policy/lifecycle, the
 replay-bound Court graph and agent skill bundle, the companion toolkit
 (candidate-scoped), GOV-210 deterministic availability/housing, GOV-211
-assignment-aware presentation, the API contract, the offline explorer, cross-package
+assignment-aware presentation, GOV-213/GOV-227 scoped harmonic compression,
+the API contract, the offline explorer, cross-package
 fingerprints, manifest freshness, and all Cypher files.
 
 Run `npm run test:gov210:neo4j` separately for native Neo4j import, reset, and
@@ -156,25 +173,32 @@ all-query provider parity.
 Run `npm run test:gov211:neo4j` separately for sealed file/live-Neo4j
 assignment-result parity.
 
+Run `npm run test:neo4j:full` for the complete 3,061-node, 10,506-relationship
+bootstrap, readiness, authoritative-source parity, and import-twice proof.
+Release 1.6 retains the historical 1.5 baseline because no graph payload
+changed; refresh the provenance namespace at the next Neo4j availability before
+claiming current-release round-trip parity.
+
 ## Import into Neo4j
 
-Neo4j 5.x or later and `cypher-shell` are expected.
-
-1. Copy `neo4j/csv/` into the configured Neo4j import directory as
-   `seven-governors/csv/`.
-2. Run:
+Neo4j 5.x or later is required. Set the connection and configured server-side
+import directory, then run the complete release bootstrap:
 
 ```bash
-cypher-shell -f neo4j/schema.cypher
-cypher-shell -f neo4j/import.cypher
-cypher-shell -f neo4j/provenance.cypher
-cypher-shell --format plain -f neo4j/validation.cypher
-cypher-shell --format plain -f neo4j/provenance-validation.cypher
+export NEO4J_URI=neo4j://127.0.0.1:7687
+export NEO4J_USERNAME=neo4j
+export NEO4J_PASSWORD=change-me
+export NEO4J_IMPORT_DIR=/var/lib/neo4j/import
+export NEO4J_DATABASE=neo4j
+npm run bootstrap:neo4j -- --roundtrip-output /tmp/seven-governors-roundtrip.json
+npm run verify:neo4j:roundtrip
 ```
 
-Then project the mutation algebra and semantic layers in the order recorded in
-`provenance/release.json` using the audit's and registry's own import files.
-The invariant queries should all return `PASS`.
+The bootstrap stages checked-in CSVs, runs every schema/import in the order
+recorded by `provenance/release.json`, imports verified GOV-206/CRT-306/GOV-210
+snapshots through parameterized allow-listed batches, and fails unless all seven
+projection groups are ready. It is destructive only to release-owned labels;
+unrelated nodes are preserved. Neo4j remains a rebuildable read projection.
 
 ## Run the companion server
 

@@ -1,0 +1,205 @@
+{
+  "schemaVersion": "gov-213.harmonic-compression-candidate-validation.v1",
+  "verdict": "PASS",
+  "candidateId": "CH_A012_q_v1",
+  "candidateFingerprint": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1",
+  "checksPassed": 12,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "checkId": "schema",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "checkId": "candidate-fingerprint",
+      "status": "PASS",
+      "diagnostic": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1"
+    },
+    {
+      "checkId": "checked-artifact-freshness",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1",
+        "actual": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1"
+      }
+    },
+    {
+      "checkId": "build-twice-identity",
+      "status": "PASS",
+      "diagnostic": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1"
+    },
+    {
+      "checkId": "reordered-input-identity",
+      "status": "PASS",
+      "diagnostic": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1"
+    },
+    {
+      "checkId": "scope-and-theorem-closure",
+      "status": "PASS",
+      "diagnostic": {
+        "recordCount": 21,
+        "seatPassCount": 21
+      }
+    },
+    {
+      "checkId": "method-and-weight-closure",
+      "status": "PASS",
+      "diagnostic": {
+        "algorithmVersion": "gov-213.rooted-triad-q-v1.v1",
+        "degreeOrder": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "governorDegreeMap": {
+          "Jupiter": 2,
+          "Mars": 3,
+          "Mercury": 6,
+          "Moon": 7,
+          "Saturn": 1,
+          "Sun": 4,
+          "Venus": 5
+        },
+        "qClasses": [
+          {
+            "runtimeQuality": "major",
+            "signature": [
+              4,
+              7
+            ],
+            "value": 0
+          },
+          {
+            "runtimeQuality": "minor",
+            "signature": [
+              3,
+              7
+            ],
+            "value": 1
+          },
+          {
+            "runtimeQuality": "diminished",
+            "signature": [
+              3,
+              6
+            ],
+            "value": 2
+          },
+          {
+            "runtimeQuality": "augmented",
+            "signature": [
+              4,
+              8
+            ],
+            "value": 2
+          },
+          {
+            "runtimeQuality": "other",
+            "signature": [
+              2,
+              6
+            ],
+            "value": 3
+          },
+          {
+            "runtimeQuality": "other",
+            "signature": [
+              4,
+              6
+            ],
+            "value": 3
+          }
+        ],
+        "qVersion": "q_v1",
+        "triadDerivation": "court_mathematics.DegreeTriad",
+        "uniquenessClaim": false,
+        "weightDenominator": 407,
+        "weightNumerators": [
+          116,
+          56,
+          41,
+          35,
+          77,
+          44,
+          38
+        ],
+        "weightOrdering": "w1>w5>w2>w6>w3>w7>w4>0",
+        "weightSum": {
+          "denominator": 407,
+          "numerator": 407
+        },
+        "weightVersion": "chaldean_order_witness_v1"
+      }
+    },
+    {
+      "checkId": "joint-transposition-invariance",
+      "status": "PASS",
+      "diagnostic": []
+    },
+    {
+      "checkId": "modal-M7-covariance",
+      "status": "PASS",
+      "diagnostic": []
+    },
+    {
+      "checkId": "negative-control-closure",
+      "status": "PASS",
+      "diagnostic": {
+        "boundarySelectionTrap": {
+          "result": "excluded",
+          "role": "boundary",
+          "stateId": 223,
+          "tier": null
+        },
+        "intervalVectorOnlyCollision": {
+          "distinctQCount": 7,
+          "forte": "7-35",
+          "intervalVector": [
+            2,
+            5,
+            4,
+            3,
+            6,
+            1
+          ],
+          "result": "interval_vector_only_cannot_distinguish_rooted_modes",
+          "stateCount": 7
+        },
+        "tierOnlySelectionTrap": {
+          "result": "excluded",
+          "role": "satellite",
+          "stateId": 687,
+          "tier": "A2"
+        }
+      }
+    },
+    {
+      "checkId": "adversarial-tamper-rejection",
+      "status": "PASS",
+      "diagnostic": {
+        "tier-only-satellite-selection": true,
+        "boundary-selection": true,
+        "invalid-chaldean-weights": true,
+        "source-hash-drift": true,
+        "signature-tamper": true,
+        "global-C-H-promotion": true
+      }
+    },
+    {
+      "checkId": "global-C-H-remains-unresolved",
+      "status": "PASS",
+      "diagnostic": {
+        "guardLiteral": "C_H is a derived harmonic property, not a photonic measurement, not C_P, not C_S, not kappa_court, and not a thermodynamic quantity: not temperature, entropy, enthalpy, or free energy.",
+        "namespace": "harmonic.C_H",
+        "status": "unresolved",
+        "value": null
+      }
+    }
+  ],
+  "reportFingerprint": "2fb32dec2056b3965012db47a9f3a5c168a88a21c8af9d0230c94d71e185f308"
+}

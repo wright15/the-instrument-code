@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "seven-governors.neo4j-ingestion-template-baseline.v1",
+  "releaseId": "seven-governors-integrated-1.5.0",
+  "namespaces": {
+    "court": {
+      "nodes:CourtCommutationRecord": "efab0b6898d51e32a5bd5255018444ab34be8aae5a65483da3dce990cd6472bc",
+      "nodes:CourtFilterApplication": "eef3f0d59e6bb046e3f0570569583bf280a6033cecac97883f1dbaf24a4a9892",
+      "nodes:CourtFilterOperator": "804039a453f147cd9df5b658167c80000da3d460e75dafda212c6e6518877704",
+      "nodes:CourtLedgerSnapshot": "3c39d4fbaa77b4fa6c265925927fb45eaea14b2f2cdeea624ab3b04191370cb4",
+      "nodes:CourtRootedPosition": "a4b7886b4c27ce4c15411c4aaffaf03fe117393ae0960b270a75e0647e86a163",
+      "nodes:CourtRuntimeSession": "d7275d07c0bbe75b8b6c43d560d44139191ef6eed7f944c926a27ec245de4950",
+      "nodes:CourtState": "357abfdd760fa68b771f320bd9571136735b5acf7b308c7c6db2c8e1864f1288",
+      "nodes:CourtTransitionEvent": "13c7fd5818b800b989d479a7139af14729d666f9fde417ddff4f9c99e162943c",
+      "nodes:PentatonicSetClass": "8ec52a92d19a45e993ab5e9c8b3221a25b4b8ceee4b6391ea6fdaab08a14eada",
+      "nodes:PoleRegister": "51003cf2c9f01b9fe4501ec3ceb8627f882d0016eaae45b18a7a1a792489d8b5",
+      "nodes:TopologicalTranslocationRecord": "2642b3c0b53534768cf4a818a51a3b4671d4f58cbf35ba96f4b4a77feb19c358",
+      "nodes:Triad": "b0392883a08b8a82cf93495df2c953335e5488f8fd9ae0826a0403cf6d9aeb46",
+      "references:ScaleState": "fa240f56823d04db3b61ee4ba0782682e27e03e573efa7553b7d6640a5916b83",
+      "relationships:FILTERS": "b9d378e13b1c42dc8bbd71269a0dd6a65ef77e255d3c4b860519afa0876aa383",
+      "relationships:HAS_COMMUTATION_RESULT": "8b10cad0af456fa52ee4f4692d8718d4e3b53956fe9294004c2f0a08b4016050",
+      "relationships:HAS_LEDGER_SNAPSHOT": "67cbcd47ee9972dc65667f26d7aa5da8bfaef55482d7b553377c44e856a46493",
+      "relationships:HAS_POLE_REGISTER": "0e9be30e57d6b34fade134e7a638afaeaff216a804224acba512b5227270be61",
+      "relationships:HAS_TRANSITION_EVENT": "d4daf999791e08f7779257ab92a085b7fe189424a67831ca410497985554cc0d",
+      "relationships:HAS_TRANSLOCATION": "63b172fe089a6e00547a5afb6ba879c7d08b50c8e9d03abd9359ca7e82a88823",
+      "relationships:HAS_TRIAD": "8ab501d174c8a7600f824b1bca69428be68c5a69bfcabf32c63abecdf6f2ba4f",
+      "relationships:SNAPSHOTS_STATE": "58a3d426f53afafc6f9a024e820211cef88fcddc573766782df0a44624eb1c3a",
+      "relationships:USES_FILTER": "45c2fa70cb7f8bc269320a5d1a637b84063ca2451838884a53e3b2b17c3e904d",
+      "relationships:USES_ROUTE_RECORD": "6408375a65edde63acf8c077c57b0c4a290c8997796d140fe09a6f43c2d18494",
+      "relationships:YIELDS_ADMITTED_SET": "951c66be33868e9ce41996d852e9cb055b905bb9f9a41decba6d04f56f7cffa2"
+    },
+    "gov210": {
+      "nodes:Gov210AvailabilityRelease": "9ab49577276252e81c40a2a02ac1126ca9cbf7138be5adc26b012efc42795549",
+      "nodes:Gov210CourtTarget": "6500d0b83aac53bbfb62e34e9777d946d388b182bbf39a1f84c610908da7391f",
+      "nodes:Gov210SkillAssignment": "1019245dd8a6b7b3223889a27053c98f9a95712ddc324a02936e17550ddce4e2",
+      "nodes:Gov210SkillAvailability": "88e41e5bc2849d9847e0afe90fe4ac2c05f1f0f98de0d0c1318283f3f874742b",
+      "nodes:Gov210SkillEligibility": "d240fca7e3532cf7d0543e44f772e08ec101834987bc4157a8729433d0199609",
+      "nodes:Gov210TopologyTarget": "f0ae16b859a614f47eda0ca43664869a6d8cfd44b025652a50cefae784f60e5e",
+      "relationships:GOV210_ASSIGNS_SKILL": "9eb92bd3901a534be092e0b549a78f021e5ece89ec750786cd2c1d11d0ad30ad",
+      "relationships:GOV210_DECLARES_AVAILABILITY": "227250629b907d0225429e14327c716708c5c18ec9b8ee11feb51646ad723898",
+      "relationships:GOV210_HAS_ELIGIBILITY": "51e8361e1cf3a68c2f5a988f24b4e457c8bede986532d1d0d8dd6d213aa16b4d",
+      "relationships:GOV210_TARGETS": "ee1093e84ba427ba2f04e3658648de567377ac16529caba34e9f0eff4dc7b912"
+    }
+  }
+}

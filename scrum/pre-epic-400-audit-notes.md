@@ -14,6 +14,14 @@ Status legend:
 - **[PLANNED]** — specified in markdown/YAML but not enforced.
 - **[MISSING]** — absent from the integrated release.
 
+CRT-310 clarification: the distinctions below are research directions, not
+automatic evidence for admitting a pentatonic set class. Off-path pole vectors,
+zodiac mappings, five-bit aspect masks, filter substitution, and Mercury or
+Fivefold engines remain separate namespace proposals. A class may advance only
+through the seven per-class gates in
+`provenance/pentatonic-set-class-admission-backlog.json`; eligibility is not
+admission.
+
 ## Cross-cutting finding
 
 The canonical "fivefold engine" framework (`framework/AGENTS.md`,

@@ -1,9 +1,9 @@
 {
   "package": "seven-governors-integrated-release",
-  "version": "1.3.0",
-  "generatedAt": "2026-08-11T17:40:05.263Z",
-  "fileCount": 709,
-  "totalBytes": 67427772,
+  "version": "1.6.0",
+  "generatedAt": "2026-08-13T22:48:33.742Z",
+  "fileCount": 752,
+  "totalBytes": 68040761,
   "files": [
     {
       "path": ".env.example",
@@ -23,7 +23,7 @@
     {
       "path": "CITATION.cff",
       "bytes": 829,
-      "sha256": "26d558697b9760dcd231fac82a051280aa5813da4daf29c87234b7b5563032ea"
+      "sha256": "4fc7ecbab29ed4c733a907bfacb0acc1d5b4ef98055ae7458478bf31e7443864"
     },
     {
       "path": "DATA_LICENSE.md",
@@ -37,8 +37,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10071,
-      "sha256": "86498288a74b7714d37def2d9d867cc483a57fc668ee618d196fc0ad1ec03b15"
+      "bytes": 11734,
+      "sha256": "5a1b5bdad195a7d32cbbf624ba7a90d310c0a9fe0ae43b66a71401fdf2b5c5d1"
     },
     {
       "path": "bestiary/ARCH-SPEC.md",
@@ -48,7 +48,7 @@
     {
       "path": "bestiary/data/bestiary-data.json",
       "bytes": 1006755,
-      "sha256": "3e0aa4b04abdfce333646c0361c1077535eda7db344d8d31295505a6caf46314"
+      "sha256": "18c705500136967d8e415db4ccc875170a92b316a4385f3b7e072078cf77bfa5"
     },
     {
       "path": "bestiary/data/bestiary-data.schema.json",
@@ -256,6 +256,26 @@
       "sha256": "7382b8ca818682a95b9f6f8d75e3130762ae992f761c1e25de7e31905d214858"
     },
     {
+      "path": "canonical/harmonic-compression-candidates/CH_A012_q_v1.json",
+      "bytes": 15208,
+      "sha256": "fa2947440d90f67b65443ae03f1ce92a0cc8a6ca2e93e83dfdc2490a25723c98"
+    },
+    {
+      "path": "canonical/harmonic-compression-candidates/CH_D17_q_v2.json",
+      "bytes": 40486,
+      "sha256": "a8e5f64e51f4c1bb60550efd72dd13ddc1efad7317dd3ef664948a0948c5baa4"
+    },
+    {
+      "path": "canonical/harmonic-compression-candidates/d-tier-negative-cases.json",
+      "bytes": 1263,
+      "sha256": "b43663aa608332ef875932328f8949b3f226f83a670b8c9d29592fc7f280a3e6"
+    },
+    {
+      "path": "canonical/harmonic-compression-candidates/negative-cases.json",
+      "bytes": 1056,
+      "sha256": "8479d496b2fc6893985ab151d8aefa76d44c7223219bd8f8a97b5d263f0dd610"
+    },
+    {
       "path": "canonical/topology-identity-definitions.json",
       "bytes": 5410,
       "sha256": "ce7b3a3b8bed85d67df203a0dd6d2ba395effd19f0855869faa1a4d343bf127b"
@@ -361,19 +381,34 @@
       "sha256": "4c598f091994332f416dac1578e693963449dfa17bf45dc094a5baf1fd322e0a"
     },
     {
+      "path": "docs/A_TIER_TRIADIC_COMPRESSION_THEOREM.md",
+      "bytes": 14304,
+      "sha256": "cf2c8ae52021ce56094cfb5862c1ac25fe6369eb1fd8db4c63db6b8015a61707"
+    },
+    {
       "path": "docs/COURT_ADMISSION_AND_AUTHORITY.md",
       "bytes": 10560,
       "sha256": "5a659f14506d1c48e7be2d51d32510b7fb4dd4c1b3d32fcef8ee48e0b6e10637"
     },
     {
       "path": "docs/COURT_ADMISSION_RELEASE_1_3.md",
-      "bytes": 1524,
-      "sha256": "3b31bdb77db8782f74e83efa79b15be795300b43de9903cffe78143c48dab399"
+      "bytes": 1860,
+      "sha256": "c36a56936793c58a46e147cefd55e63556aa668ce75a49342d11861e4c34c922"
     },
     {
       "path": "docs/COURT_VAULT_CONTEXT.md",
       "bytes": 1273,
       "sha256": "13151017051979f577dbb5b4ead3ea84080ae6ffd3db36ff4f83d877120d42e3"
+    },
+    {
+      "path": "docs/CRT_310_ADMISSION_WORKFLOW.md",
+      "bytes": 1283,
+      "sha256": "4b21aae951a0df2dc4d348c272074d6b432bed7a53d6dfed87e269af964d51af"
+    },
+    {
+      "path": "docs/D_TIER_TRIADIC_COMPRESSION_THEOREM.md",
+      "bytes": 7703,
+      "sha256": "1c9acd5cbb3693cc330add93e3cd931e5af630a9e13f29ef87a449d6ac17746b"
     },
     {
       "path": "docs/FOUR_LAYER_FORMALIZATION.md",
@@ -432,8 +467,8 @@
     },
     {
       "path": "docs/RELEASE_NOTES.md",
-      "bytes": 10335,
-      "sha256": "f32fc882a9e5ffdcbece77f8f31a3102d313a70c61fe2ec9300245a47a186bdb"
+      "bytes": 13007,
+      "sha256": "d184011ab332d936f5944473140b8d377633fdc91ba9adcfc42cc140358aa8a2"
     },
     {
       "path": "docs/START_HERE.md",
@@ -447,8 +482,8 @@
     },
     {
       "path": "docs/TOPOLOGY_IDENTITY_AND_INVARIANTS.md",
-      "bytes": 11232,
-      "sha256": "5ee5d891e8935895a7b5f6ed84ca8c5e368c49e45e45e9565d61eb3eed982bf0"
+      "bytes": 11593,
+      "sha256": "4023d2dfefa9f17923858ea50cdaadd741eafe2178c22aecd5a08f886417af24"
     },
     {
       "path": "docs/UNIVERSAL_COMPLETION_SPEC.md",
@@ -531,11 +566,6 @@
       "sha256": "a4f7a1f0c84c0218e4c9fd32fb96378e7f00e91767e87730085072d0032997de"
     },
     {
-      "path": "graph/qa/server-startup.log",
-      "bytes": 74,
-      "sha256": "b07f0914b006e9fdaca228f257fe1bbd134b15f634748e839f0938dad313356c"
-    },
-    {
       "path": "graph/qa/standalone-validation-report.json",
       "bytes": 1464,
       "sha256": "41e9578ab3e5f181ad5148a81299b5569c3c9160866655028e85b66d65e6b3eb"
@@ -551,9 +581,24 @@
       "sha256": "f6ca78538d1aad1469bc5766fcdbfa0fe6ec5fdf99fd96517f03ca889f6f14cb"
     },
     {
+      "path": "graph/runtime/neo4j-bootstrap.mjs",
+      "bytes": 27095,
+      "sha256": "fbe48b913c6fefd9aaca642132138b45e5838bcd851a9575b6059debd91ed821"
+    },
+    {
+      "path": "graph/runtime/neo4j-evidence.mjs",
+      "bytes": 3462,
+      "sha256": "f1608afb61b03d11c8f703c3c7204367858a809cef0e5ed3f399029490c05896"
+    },
+    {
       "path": "graph/runtime/neo4j-harness.mjs",
       "bytes": 5577,
       "sha256": "5a432d82b48cd4fcd3cf8fa7484828f16c106606dda5048284b318a8ca5a5da9"
+    },
+    {
+      "path": "graph/runtime/neo4j-roundtrip.mjs",
+      "bytes": 13368,
+      "sha256": "60e8ce3609a3d36b3c8053ee796eb8ab9b87a8b896d41ac7be00c8f54a3cfe2b"
     },
     {
       "path": "graph/runtime/providers/file-provider.mjs",
@@ -627,8 +672,8 @@
     },
     {
       "path": "neo4j/README.md",
-      "bytes": 1095,
-      "sha256": "34fe638533ea5df074d5207fa090f03f37132d8a183066df8e338f9120b6e4e2"
+      "bytes": 2160,
+      "sha256": "58108e4a08447c94789f233acce9d8b3b9713c91fe0bf62142cdd4c916b9b566"
     },
     {
       "path": "neo4j/court-mathematics/README.md",
@@ -818,27 +863,27 @@
     {
       "path": "package-lock.json",
       "bytes": 10235,
-      "sha256": "bfebaa5aa8b2d03b5a09abc858d8f502e5aab29babc9a7ef2918ca14fb4d0bdf"
+      "sha256": "a7091201fac1de844a3635b42063064961e73bcca1fe029881187bc1abe13d94"
     },
     {
       "path": "package.json",
-      "bytes": 3968,
-      "sha256": "d5cf35330a2bfa21f9a94a6494f9d331f21609db398ece5c27a1683f5629c314"
+      "bytes": 5315,
+      "sha256": "fdc70059db728e0ccc33f784899ac0b9ac87755d9d6557e1fc8b8aa23e94941b"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
-      "bytes": 42765,
-      "sha256": "d2397c94d95329dce0ddc4b2fcc13623f905fa9e488c0525b68f2f7d79d0da7c"
+      "bytes": 48731,
+      "sha256": "f84c247c01a9322460f84aa6e5cc576a2383f41a2bdf8cdcbab83c64256d58ce"
     },
     {
       "path": "provenance/NEXT_STEPS.md",
-      "bytes": 4571,
-      "sha256": "5ee36fdefa1581ee6fa77638a8c7ab684963443cb609aac07f83806f08173bc7"
+      "bytes": 5418,
+      "sha256": "ea332254880682bc9a7d7dbb88383a11ffccc830cc9d13fe8e8fdb2e142c1183"
     },
     {
       "path": "provenance/SOURCE_AUTHORITY.md",
-      "bytes": 5063,
-      "sha256": "4ee49131c5812f725a515b62bef181802186f4e8f98ac7fd13cd3cb49eff9eba"
+      "bytes": 7589,
+      "sha256": "75fe1b7d6f669d49672bb96d8d5c9d9fef20d32c0ac536b91db74ede66a13d04"
     },
     {
       "path": "provenance/admission-governor-court-mathematics.md",
@@ -851,9 +896,24 @@
       "sha256": "2191f9c74afbc764818f5e1a5295cf7fd1265637f2255593d5b71bf5c3c15455"
     },
     {
+      "path": "provenance/neo4j-full-database-baseline.json",
+      "bytes": 2159,
+      "sha256": "ef6e5dce817a9938747603357a07d45ce8e9c7e54defbd7719fbd5eda7641631"
+    },
+    {
+      "path": "provenance/neo4j-ingestion-template-baseline.json",
+      "bytes": 3785,
+      "sha256": "f66b0573e94d9e4cd704f9a987356659ae455a75b40066db1c89a12ec2a5b5d9"
+    },
+    {
+      "path": "provenance/pentatonic-set-class-admission-backlog.json",
+      "bytes": 164999,
+      "sha256": "04015abb077ab02379034ba85eec5b5bef1eddbb1a4c6802da041b7a3d5f1760"
+    },
+    {
       "path": "provenance/release.json",
-      "bytes": 4629,
-      "sha256": "014f975e6f8906340f2f6d2d9ea9a5917e06b117945553a0b6ad6234f5c3879f"
+      "bytes": 8487,
+      "sha256": "20b757994a15efad9c4759dbb37ebbcc39e9416baddf95be9e31f7363d188625"
     },
     {
       "path": "pytest.ini",
@@ -881,6 +941,11 @@
       "sha256": "efe030c4062be90ff4f53fa259969d658cf27d05c06b0d73380e6cc938c736b6"
     },
     {
+      "path": "qa/d-tier-harmonic-compression-validation.json",
+      "bytes": 13966,
+      "sha256": "b9440f89484f3063b693efe70cd8aaaff25b37f3ab40c7f1cc716c6999684215"
+    },
+    {
       "path": "qa/gov-208-vault-context-validation.json",
       "bytes": 1730,
       "sha256": "3216042216d5e0e2ee458d8b74fef842645bccf6f5b5775e1640fb47f0e5dc9f"
@@ -896,6 +961,11 @@
       "sha256": "eae31fa9fa348ad37199106b4525fa0c8ba17c8106a4eb94ed39659c9244d4f6"
     },
     {
+      "path": "qa/harmonic-compression-candidates-validation.json",
+      "bytes": 5172,
+      "sha256": "4d7afdd324517ad9681fda0c08fa509d87b8036bab36cc924a3630b979147c54"
+    },
+    {
       "path": "qa/independent-validation-report.json",
       "bytes": 12903,
       "sha256": "f99e3e98d91e1c329b45a84eb327aa417abd84acc0ae7127b256b5ab22bda1d1"
@@ -906,9 +976,19 @@
       "sha256": "81719825933c01a86732ee7e3171a48ba5c58c4e5f1dc59578aead5c7d85c7ad"
     },
     {
+      "path": "qa/neo4j-full-database-validation.json",
+      "bytes": 25165,
+      "sha256": "2686fd4300e2e56b947557f8c10562eef2052528fab4572391ce013003b89339"
+    },
+    {
       "path": "qa/neo4j-invariant-ledger.csv",
       "bytes": 3374,
       "sha256": "7adac1589092731c16bf82a2566beaa2ad53213bfcddd9e4b49cbc5e261f39fd"
+    },
+    {
+      "path": "qa/pentatonic-set-class-admission-backlog-validation.json",
+      "bytes": 2334,
+      "sha256": "b95e54b6df62d23b286f08c836d09c1d3f955ffa646cb9840397c26613a53983"
     },
     {
       "path": "qa/phase4-verification.json",
@@ -919,11 +999,6 @@
       "path": "qa/server-health.json",
       "bytes": 392,
       "sha256": "4153a3a916a0a0727c9b76e0929dddbb35e7da2614e21cae158ae1fe48ffbfb6"
-    },
-    {
-      "path": "qa/server-startup.log",
-      "bytes": 74,
-      "sha256": "b07f0914b006e9fdaca228f257fe1bbd134b15f634748e839f0938dad313356c"
     },
     {
       "path": "schemas/court-admission-contract.json",
@@ -949,6 +1024,16 @@
       "path": "schemas/court-admission/court-benchmark-report.schema.json",
       "bytes": 1811,
       "sha256": "0751c57928faa41721e25a88a1c7458a57522361763dc780c54e850f278f1cf0"
+    },
+    {
+      "path": "schemas/court-admission/pentatonic-set-class-admission-backlog-validation.schema.json",
+      "bytes": 4400,
+      "sha256": "72e5ee13e2471845fdef575dd4e2810d42cfc972dd97667656b01353a3b9291e"
+    },
+    {
+      "path": "schemas/court-admission/pentatonic-set-class-admission-backlog.schema.json",
+      "bytes": 7316,
+      "sha256": "9b461fa9cc6789e7dde9f0c75afdb0d5ae6d416deb6f1067a5749054b01ae7bc"
     },
     {
       "path": "schemas/court-context/court-context-bundle.schema.json",
@@ -1116,6 +1201,41 @@
       "sha256": "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2"
     },
     {
+      "path": "schemas/harmonic-compression-candidates/candidate-release.schema.json",
+      "bytes": 7852,
+      "sha256": "04a270058078d70e9d9eddd2eca37d2cfe5b31d998a00950df5e654b7410ee5f"
+    },
+    {
+      "path": "schemas/harmonic-compression-candidates/d-tier-candidate-release.schema.json",
+      "bytes": 15887,
+      "sha256": "bba6d7e8ea8e993341d2392938e871fb1a3126c78c28d5a63beedb33f012c5a4"
+    },
+    {
+      "path": "schemas/harmonic-compression-candidates/d-tier-validation-report.schema.json",
+      "bytes": 1057,
+      "sha256": "8385bdf4b521920a97f8c952d1c600e087e04f68d26d69c48e5b2a146c01776a"
+    },
+    {
+      "path": "schemas/harmonic-compression-candidates/validation-report.schema.json",
+      "bytes": 1064,
+      "sha256": "a602787cadb87a778e7c14ffaf8b84c8a9778415c28a12c5e38254bc9f80253e"
+    },
+    {
+      "path": "schemas/neo4j-full-database-validation.schema.json",
+      "bytes": 3610,
+      "sha256": "0883d19784a3386c7787a528ba3888598b7db24899e5ebb3f99b463bf1587305"
+    },
+    {
+      "path": "schemas/neo4j-normalized-snapshot.schema.json",
+      "bytes": 3129,
+      "sha256": "ba9ca3f8894cf8aea558d562afd13d9dc1dae376228117bd6f3ac6409213e70d"
+    },
+    {
+      "path": "scripts/bootstrap-neo4j.mjs",
+      "bytes": 7995,
+      "sha256": "e9722ffe38ffe4286729f4a0d99e14e3c775d29b51fa3ad2b45eaeb269709d33"
+    },
+    {
       "path": "scripts/build-bestiary.mjs",
       "bytes": 33109,
       "sha256": "321f0262fcde8d003a2f00264097d45e169dbf5dff30204206843307f13779ae"
@@ -1127,8 +1247,13 @@
     },
     {
       "path": "scripts/build-manifest.mjs",
-      "bytes": 1562,
-      "sha256": "b5ae433924fcd0f2dd0f957d42c6e909e4af2d8f605df3dbcdc8fe59d686eb85"
+      "bytes": 1622,
+      "sha256": "42f21f7c7f32f132b7a2635bf04b6be71b06c086f15f12c3d9af23c0f44a8637"
+    },
+    {
+      "path": "scripts/build-pentatonic-admission-backlog.mjs",
+      "bytes": 9547,
+      "sha256": "e909f4b7d40d21a6dbb97f6ba7f627aee9c0dd552d178740a1e114a205f5438d"
     },
     {
       "path": "scripts/generate-availability-housing.py",
@@ -1139,6 +1264,16 @@
       "path": "scripts/generate-court-graph.py",
       "bytes": 10541,
       "sha256": "37b5b941415c18bb26dcd24617929fd26f2d773001e3e39598e5f33669908b72"
+    },
+    {
+      "path": "scripts/generate-d-tier-harmonic-compression.py",
+      "bytes": 1749,
+      "sha256": "d2df9c8f9fca4156df53b3570c20a6dcddef40d03a0f34165ecd927cbd2751e2"
+    },
+    {
+      "path": "scripts/generate-harmonic-compression-candidates.py",
+      "bytes": 1617,
+      "sha256": "883172246bb25585c57b5c3789b111e9a28870d90625457cdb3e4c2d05c8d768"
     },
     {
       "path": "scripts/import-governor-graph.mjs",
@@ -1196,6 +1331,16 @@
       "sha256": "5c09fb4f8a29c80046974120256f03b11c924275247d49559b85a0e6f3564cad"
     },
     {
+      "path": "scripts/validate-d-tier-harmonic-compression.py",
+      "bytes": 11925,
+      "sha256": "441789080ce6d022ad6dc8f9d829808ef2864869ffdeed20a1a2836be644005e"
+    },
+    {
+      "path": "scripts/validate-full-database.mjs",
+      "bytes": 2889,
+      "sha256": "abf66bd615e371a9e82ad2dca84ab767959a040941e4f57e877a723fc9fdde86"
+    },
+    {
       "path": "scripts/validate-governor-admission.mjs",
       "bytes": 3567,
       "sha256": "2a89fdd7ae29f3d3a2e6e65ea91048be6ff257839a88a16bcfca0c6a41ca3c88"
@@ -1206,14 +1351,29 @@
       "sha256": "24ab53ed3f796ecc69d66521cbba64c502be8a7965cce1b2607ebfc1eb388bb0"
     },
     {
+      "path": "scripts/validate-harmonic-compression-candidates.py",
+      "bytes": 9964,
+      "sha256": "45e457f5ead2c8e8aa719f44d1c3e51eb091396a99a22dc81701607ccebd1856"
+    },
+    {
+      "path": "scripts/validate-pentatonic-admission-backlog.mjs",
+      "bytes": 7848,
+      "sha256": "4e0133190a58825c54dc076d2dccfa635438cc786e35e98f878d055f7254db4e"
+    },
+    {
       "path": "scripts/validate-release.mjs",
-      "bytes": 66643,
-      "sha256": "60c5cb2ff2179e017aad995071248de5fb4426ef31529be5b85defb0f3ebae87"
+      "bytes": 84987,
+      "sha256": "ae53b3bdf221e81bbc86128de51f9bc5dbf3e7010f62148bf2c446b05cb5e936"
     },
     {
       "path": "scripts/validate-vault-context.mjs",
       "bytes": 5132,
       "sha256": "a4416a77d0dd5a7a5a872356644a3223c8b8d926f935f471fa2f3de8451a78fe"
+    },
+    {
+      "path": "scripts/verify-neo4j-roundtrip.mjs",
+      "bytes": 2658,
+      "sha256": "f18fb63e95cf9079509baa7f43e799b7ada7a7682e9fd6f3c5f91f9a2f4beaae"
     },
     {
       "path": "scrum/CRT-301-court-admission-contract.md",
@@ -1332,13 +1492,28 @@
     },
     {
       "path": "scrum/GOV-210-graph-native-availability-housing.md",
-      "bytes": 2084,
-      "sha256": "3890702031bde81e3cf0557526a1bf2f5f767055d6fa0402dff40aa90f264e9c"
+      "bytes": 2082,
+      "sha256": "5cb94329aca5360cb1a94da2e82692e5cf79116add9e0259ff35df52207514e9"
     },
     {
       "path": "scrum/GOV-211-assignment-aware-menu-integration.md",
-      "bytes": 2305,
-      "sha256": "3e9bb4f05b5b61d32a03f752e85b44c12d160569e62d172a8d7a27da31e91a7e"
+      "bytes": 2303,
+      "sha256": "7d3b91740d0ad6c3c65771f9a551c805289c47e5b1b5ee5e6ea95c9d46a709df"
+    },
+    {
+      "path": "scrum/GOV-212-integrated-release-1.4-closure.md",
+      "bytes": 2093,
+      "sha256": "45b63e5038238391609275845bc4646315f14e3a97d43c62c96fc756afa717e9"
+    },
+    {
+      "path": "scrum/GOV-213-harmonic-compression-formalization.md",
+      "bytes": 5068,
+      "sha256": "fe8d78c4cdb3c57b38cd92fcb897357dfe4b83554776d2d4618b9f29ed905cd1"
+    },
+    {
+      "path": "scrum/GOV-227-d-tier-harmonic-compression-audit.md",
+      "bytes": 8154,
+      "sha256": "49f47478bdeac5d16c1727122ade5b6c6d3fb1fa4b41bae361078505570cbfe9"
     },
     {
       "path": "scrum/NET-101-office-lane-layout.md",
@@ -1372,13 +1547,18 @@
     },
     {
       "path": "scrum/README.md",
-      "bytes": 6907,
-      "sha256": "47449646809446380d8f33805567dfb51847d03feadcaaeaa15fbfb75c39d5d6"
+      "bytes": 7793,
+      "sha256": "a754cd5dd3e02769df68c4414c6962567481ee4e9c7b07c514bdb71d28373111"
     },
     {
       "path": "scrum/pre-epic-400-audit-notes.md",
-      "bytes": 22209,
-      "sha256": "2544cf5a56f9ca25e7d4fab7646b1219be9bc9c1c7b9cbb1238708488c637465"
+      "bytes": 22646,
+      "sha256": "d3682156866182862b35632d3ccb2aa66f4e2bd81238995cdac2cafd0cddd607"
+    },
+    {
+      "path": "scrum/pre-epic-400-semantic-and-empirical-audit.md",
+      "bytes": 40944,
+      "sha256": "0fb9c8b68e2d82a5c545fbf0a00182d77867e2bafc5fbde2f14207cbc4ae358c"
     },
     {
       "path": "server.mjs",
@@ -3131,6 +3311,11 @@
       "sha256": "e98508b1bb107073fa13903195a41212180c48aafe915b133e70443db2929958"
     },
     {
+      "path": "src/governor/exact_lp.py",
+      "bytes": 6864,
+      "sha256": "a1ad75a6e1d7c9358436c274da8f81d20fd4aad61cbc77583922461a3a301c82"
+    },
+    {
       "path": "src/governor/executors.py",
       "bytes": 8913,
       "sha256": "7235c382b8cf56725ee829e7a61ae04620333868a6b519302d53f14deb386c22"
@@ -3144,6 +3329,16 @@
       "path": "src/governor/harmonic.py",
       "bytes": 9098,
       "sha256": "d8a2cb7baf8b6d2751d985ffd5d046abe5e253faabc4a93b3bd61a152dbd5d3f"
+    },
+    {
+      "path": "src/governor/harmonic_compression.py",
+      "bytes": 15167,
+      "sha256": "4cf105e9c6503ebd03e33ed5f0ad8fb48129502370fa6598006007da670b0825"
+    },
+    {
+      "path": "src/governor/harmonic_compression_d_tier.py",
+      "bytes": 27958,
+      "sha256": "6157c49501095326343091659c58f5f896565406c422b1420800ce930cebd5df"
     },
     {
       "path": "src/governor/harmonic_models.py",
@@ -3316,6 +3511,11 @@
       "sha256": "0259c2fac6b798985ea17bd7a847cbbe13656276bccb7b0a4d7e4ff55f65161a"
     },
     {
+      "path": "tests/crt_310/backlog.test.mjs",
+      "bytes": 2002,
+      "sha256": "1a48d8ca5592f9a090a6eefa86c6bf43f368c496d61e4ef351721769b457ae1d"
+    },
+    {
       "path": "tests/fixtures/gov_205/site_server.py",
       "bytes": 1397,
       "sha256": "455844eb6429b9c6e57c5868becae8dc31dee9e46572afb0d0e64764444a5d91"
@@ -3389,6 +3589,11 @@
       "path": "tests/gov_211/neo4j-live.test.mjs",
       "bytes": 5227,
       "sha256": "4638b4ce982a854734db356c185e9a11b1ffaca55565830af9c1dfe813c0752f"
+    },
+    {
+      "path": "tests/neo4j/full-database-live.test.mjs",
+      "bytes": 9687,
+      "sha256": "d29bdcbd5fad559955e5647338528fe241081fd00bf272b45edff869a4fb4b98"
     },
     {
       "path": "tests/test_court_graph_projection.py",
@@ -3484,6 +3689,16 @@
       "path": "tests/test_gov_211_assignment_menu.py",
       "bytes": 20693,
       "sha256": "264c6fc3a68d5dc419603282d4eb4b29c2616ffa22eec22e9bba32e756638aad"
+    },
+    {
+      "path": "tests/test_gov_213_harmonic_compression.py",
+      "bytes": 4592,
+      "sha256": "a986d3e2d38f8a4a2ba14ad4dfa9baf6acbc5f75d5f9a43257168ec27ea6ac0c"
+    },
+    {
+      "path": "tests/test_gov_227_d_tier_harmonic_compression.py",
+      "bytes": 6929,
+      "sha256": "9fc755660929ba0c7d1fb3e8d2f13fc22536f5b93bf899836bcd586fe78960cf"
     },
     {
       "path": "tests/test_harmonic_runtime.py",

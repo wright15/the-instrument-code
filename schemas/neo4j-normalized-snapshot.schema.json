@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "seven-governors.neo4j-normalized-snapshot.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "releaseId", "sourceBindings", "namespaces", "counts", "snapshotFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "seven-governors.neo4j-normalized-snapshot.v1"},
+    "releaseId": {"const": "seven-governors-integrated-1.5.0"},
+    "sourceBindings": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"$ref": "#/$defs/sourceBinding"}},
+    "namespaces": {
+      "type": "object", "additionalProperties": false,
+      "required": ["topology", "provenance", "mutation", "semantic", "governorRuntime", "court", "gov210"],
+      "properties": {
+        "topology": {"$ref": "#/$defs/namespace"}, "provenance": {"$ref": "#/$defs/namespace"},
+        "mutation": {"$ref": "#/$defs/namespace"}, "semantic": {"$ref": "#/$defs/namespace"},
+        "governorRuntime": {"$ref": "#/$defs/namespace"}, "court": {"$ref": "#/$defs/namespace"},
+        "gov210": {"$ref": "#/$defs/namespace"}
+      }
+    },
+    "counts": {"$ref": "#/$defs/counts"},
+    "snapshotFingerprint": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "sourceBinding": {"type": "object", "additionalProperties": false, "required": ["namespace", "path", "sha256"], "properties": {"namespace": {"enum": ["topology", "provenance", "mutation", "semantic", "governorRuntime", "court", "gov210"]}, "path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}}},
+    "node": {"type": "object", "additionalProperties": false, "required": ["logicalId", "labels", "properties"], "properties": {"logicalId": {"type": "string"}, "labels": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}, "properties": {"type": "object"}}},
+    "relationship": {"type": "object", "additionalProperties": false, "required": ["relationshipType", "sourceLogicalId", "targetLogicalId", "properties", "multiplicity"], "properties": {"relationshipType": {"type": "string"}, "sourceLogicalId": {"type": "string"}, "targetLogicalId": {"type": "string"}, "properties": {"type": "object"}, "multiplicity": {"type": "integer", "minimum": 1}}},
+    "counts": {"type": "object", "additionalProperties": false, "required": ["nodeCount", "relationshipCount"], "properties": {"nodeCount": {"type": "integer", "minimum": 0}, "relationshipCount": {"type": "integer", "minimum": 0}, "byLabel": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}}, "byRelationshipType": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}}}},
+    "namespace": {"type": "object", "additionalProperties": false, "required": ["nodes", "relationships", "counts", "namespaceFingerprint"], "properties": {"nodes": {"type": "array", "items": {"$ref": "#/$defs/node"}}, "relationships": {"type": "array", "items": {"$ref": "#/$defs/relationship"}}, "counts": {"$ref": "#/$defs/counts"}, "namespaceFingerprint": {"$ref": "#/$defs/sha256"}}}
+  }
+}

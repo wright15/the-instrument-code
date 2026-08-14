@@ -13,6 +13,8 @@ const excluded = new Set([
   "qa/bestiary-validation.json",
   "qa/neo4j-cypher-syntax-report.json",
   "qa/crt-307-local-model-observation.json",
+  "qa/server-startup.log",
+  "graph/qa/server-startup.log",
   ".git",
   ".pytest_cache",
   "__pycache__",

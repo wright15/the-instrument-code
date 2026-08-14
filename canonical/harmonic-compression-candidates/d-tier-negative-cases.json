@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "gov-227.d-tier-negative-cases.v1",
+  "candidateId": "CH_D17_q_v2",
+  "cases": [
+    {"caseId": "d-tier-satellite-selection", "mutation": "set first record role=satellite", "expectedCode": "candidate_does_not_match_fresh_build"},
+    {"caseId": "boundary-selection", "mutation": "set first record to boundary state 223", "expectedCode": "candidate_does_not_match_fresh_build"},
+    {"caseId": "a-tier-selection", "mutation": "set first record tier=A0", "expectedCode": "candidate_does_not_match_fresh_build"},
+    {"caseId": "q-v2-signature-tamper", "mutation": "increment first q-v2 class", "expectedCode": "candidate_does_not_match_fresh_build"},
+    {"caseId": "lp-result-tamper", "mutation": "promote infeasible LP model to strict", "expectedCode": "candidate_does_not_match_fresh_build"},
+    {"caseId": "source-hash-drift", "mutation": "replace ledger source SHA-256", "expectedCode": "candidate_does_not_match_fresh_build"},
+    {"caseId": "a-tier-baseline-drift", "mutation": "replace pinned A-tier source SHA-256", "expectedCode": "candidate_does_not_match_fresh_build"},
+    {"caseId": "global-C-H-promotion", "mutation": "set harmonic.C_H status=admitted and value=1", "expectedCode": "candidate_does_not_match_fresh_build"}
+  ]
+}

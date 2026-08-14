@@ -1,5 +1,121 @@
 # Decision Ledger
 
+## Scoped D-tier harmonic-compression admission (GOV-227) - 2026-08-13
+
+### Decision
+
+Release 1.6.0 admits root-owned coordinate `harmonic.CH_D17_q_v2` only for the
+49 canonical records satisfying `role=anchor` and `tier in {D1,...,D7}`. The
+candidate admits rooted `Q(S)` and descriptive `W_D17(S)` without topology,
+office, runtime, semantic, or Neo4j writing authority. Global aggregate
+`harmonic.C_H` remains `unresolved` with `value=null`.
+
+The finite Governor Seat Invariant now holds across all 70 A0-D7 anchors under
+q_v2: the triad at every admitted Governor seat has class 2. D2 and D5 share a
+q-v2 multiset but not rooted Q tuples; D3 and D4 share an interval vector but
+not q-v2 multisets. Compression evidence can distinguish structures but cannot
+replace graph-topological tier resolution.
+
+The Chaldean hierarchy is a fixed framework constraint for the exact LP audit.
+The numeric witness `(116,56,41,35,77,44,38)/407` retains
+`uniquenessClaim=false`: it is one feasible witness, not a natural law or unique
+solution. Fixed-witness bands interleave, and the declared-order, D-only, and
+all-A-before-all-D separation models are infeasible even at zero common margin.
+
+Neo4j baseline refresh deferred — no graph data changed; only `release.json`
+provenance version updated. Baseline refresh required at next Neo4j
+availability. Release 1.5 baseline files remain historical evidence and are not
+represented as current 1.6 round-trip evidence.
+
+### Explicitly deferred
+
+Satellites, boundaries, complete 462-state collision analysis, all 15
+mutation-operator deltas, `C_P`/`C_H`/`C_S` correspondence, global `C_H`, and
+Neo4j/runtime q-v2 projection remain unadmitted.
+
+## Scoped A-tier harmonic-compression admission (GOV-213) - 2026-08-13
+
+### Decision
+
+GOV-213 admits the root-owned coordinate `harmonic.CH_A012_q_v1` only for the
+21 canonical records satisfying `role=anchor` and `tier in {A0,A1,A2}`. The
+admitted object retains both the rooted Triadic Compression Signature `Q(S)`
+and its exact rational weighted projection `W_A012(S)` under the authored
+`q_v1` encoding and feasible Chaldean-order witness
+`(116,56,41,35,77,44,38)/407`.
+
+This is a bounded harmonic descriptor, not an office classifier. State Governor
+and Degree Governor authority remain unchanged. The weights are a feasible
+witness and are not unique or physically necessary. Global aggregate
+`harmonic.C_H` remains `unresolved` with `value=null`; the scoped coordinate is
+not `C_P`, `C_S`, `kappa_court`, photon energy, temperature, entropy, enthalpy,
+free energy, psychoacoustic roughness, or semantic evidence.
+
+### Evidence
+
+- `canonical/harmonic-compression-candidates/CH_A012_q_v1.json` contains exact
+  source bindings, 21 record fingerprints, `Q(S)`, exact ratios, tier summaries,
+  negative controls, and the scoped candidate fingerprint.
+- `scripts/generate-harmonic-compression-candidates.py` and
+  `src/governor/harmonic_compression.py` deterministically rebuild the sidecar
+  through the existing `court_mathematics.DegreeTriad` implementation.
+- `qa/harmonic-compression-candidates-validation.json` passes 12/12 checks:
+  strict schema, self-fingerprint, freshness, build-twice identity,
+  reordered-input identity, 21/21 theorem closure, method/weight closure,
+  joint-transposition invariance, modal `M^7` covariance, negative controls,
+  six tamper rejections, and the unchanged global null guard.
+- `tests/test_gov_213_harmonic_compression.py` provides nine focused tests.
+
+### Explicitly deferred
+
+D1-D7 anchors, satellites, convergence states, junctions, leaves, boundary
+states, complete 462-state collision analysis, all 15 mutation-operator deltas,
+and `C_P`/`C_H`/`C_S` correspondence evaluation remain untested and unadmitted.
+No follow-on story number is activated by this decision.
+
+## Integrated release 1.4.0 bootstrap and round-trip closure — 2026-08-11
+
+### Decision
+
+Root release `seven-governors-integrated-1.4.0` binds the already-closed GOV-210
+and GOV-211 identities without changing historical GOV-209/CRT-309 admission or
+any frozen package byte. The release adds one seven-stage Neo4j bootstrap and a
+storage-ID-free normalized exporter. Neo4j remains a rebuildable read projection
+with no runtime, topology, filter, or admission authority.
+
+### Evidence
+
+- The isolated full database contains 3,061 nodes and 10,506 relationships;
+  topology, provenance, mutation, semantic, GOV-206, CRT-306, and GOV-210
+  readiness all pass.
+- Exact canonical topology records, all 15 mutation operators, all 3,402
+  mutation applications, all semantic node identities, and all three optional
+  projection fingerprints match their upstream owners.
+- A second clean bootstrap produces a byte-identical normalized snapshot.
+- Native evidence records exact normalized fingerprints for all seven namespaces
+  and binds every source, importer, generator, schema, CLI, and adversarial test
+  required to reproduce them.
+- Projection-scoped reset preserves unrelated and mixed-label nodes plus external
+  relationships; generated ingestion rejects destructive Cypher, and Governor
+  relationship endpoints require exact owned labels.
+- All seven historical package manifests are SHA-256 pinned by the root release.
+
+## Per-class pentatonic admission planning (CRT-310) — 2026-08-11
+
+### Decision
+
+CRT-310 is accepted as planning machinery only. Its fingerprinted backlog
+contains exactly 35 proposed classes, prohibits bulk promotion, and permits at
+most one class per future external admission decision. Source identity and
+complement closure account for 70 satisfied gate results; 175 harmonic,
+transition, application, authority, and candidate-release gates remain pending.
+Eligibility is not admission.
+
+The backlog fingerprint is
+`ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c`.
+Its effective result is zero eligible classes and zero admissions. CRT-302/303/
+304 v0.1.0 bytes and the CRT-309 admission fingerprint remain unchanged.
+
 ## Assignment-aware menu organization (GOV-211) — 2026-08-11
 
 ### Decision

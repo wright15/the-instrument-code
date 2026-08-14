@@ -1,6 +1,6 @@
 # GOV-210 — Graph-native availability and housing layer
 
-**Status:** Done · **Priority:** Medium · **Points:** TBD · **Epic:** Framework follow-on
+**Status:** Done · **Priority:** Medium · **Points:** 8 · **Epic:** Framework follow-on
 **Depends on:** GOV-209, CRT-309 · **Blocks:** —
 
 ## Story

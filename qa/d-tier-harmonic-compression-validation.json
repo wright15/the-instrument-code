@@ -1,0 +1,573 @@
+{
+  "schemaVersion": "gov-227.d-tier-harmonic-compression-validation.v1",
+  "verdict": "PASS",
+  "candidateId": "CH_D17_q_v2",
+  "candidateFingerprint": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe",
+  "checksPassed": 17,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "checkId": "schema",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "checkId": "candidate-fingerprint",
+      "status": "PASS",
+      "diagnostic": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe"
+    },
+    {
+      "checkId": "checked-artifact-freshness",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe",
+        "actual": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe"
+      }
+    },
+    {
+      "checkId": "build-twice-identity",
+      "status": "PASS",
+      "diagnostic": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe"
+    },
+    {
+      "checkId": "reordered-input-identity",
+      "status": "PASS",
+      "diagnostic": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe"
+    },
+    {
+      "checkId": "scope-closure",
+      "status": "PASS",
+      "diagnostic": {
+        "recordCount": 49,
+        "tiers": [
+          "D1",
+          "D2",
+          "D3",
+          "D4",
+          "D5",
+          "D6",
+          "D7"
+        ]
+      }
+    },
+    {
+      "checkId": "q-v1-fidelity",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "qV1Value": 3,
+          "qV2Value": 3,
+          "signature": [
+            2,
+            6
+          ]
+        },
+        {
+          "qV1Value": 2,
+          "qV2Value": 2,
+          "signature": [
+            3,
+            6
+          ]
+        },
+        {
+          "qV1Value": 1,
+          "qV2Value": 1,
+          "signature": [
+            3,
+            7
+          ]
+        },
+        {
+          "qV1Value": 3,
+          "qV2Value": 3,
+          "signature": [
+            4,
+            6
+          ]
+        },
+        {
+          "qV1Value": 0,
+          "qV2Value": 0,
+          "signature": [
+            4,
+            7
+          ]
+        },
+        {
+          "qV1Value": 2,
+          "qV2Value": 2,
+          "signature": [
+            4,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "checkId": "q-v2-domain-closure",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "bucket": "equal_stacked_nonperfect",
+          "combinedDissonance": {
+            "denominator": 2,
+            "numerator": 9
+          },
+          "qV1Value": null,
+          "signature": [
+            2,
+            4
+          ],
+          "value": 2
+        },
+        {
+          "bucket": "dissonance_ranked_other",
+          "combinedDissonance": {
+            "denominator": 2,
+            "numerator": 5
+          },
+          "qV1Value": null,
+          "signature": [
+            2,
+            5
+          ],
+          "value": 5
+        },
+        {
+          "bucket": "dissonance_ranked_other",
+          "combinedDissonance": {
+            "denominator": 1,
+            "numerator": 5
+          },
+          "qV1Value": 3,
+          "signature": [
+            2,
+            6
+          ],
+          "value": 3
+        },
+        {
+          "bucket": "dissonance_ranked_other",
+          "combinedDissonance": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "qV1Value": null,
+          "signature": [
+            2,
+            7
+          ],
+          "value": 6
+        },
+        {
+          "bucket": "dissonance_ranked_other",
+          "combinedDissonance": {
+            "denominator": 1,
+            "numerator": 5
+          },
+          "qV1Value": null,
+          "signature": [
+            2,
+            8
+          ],
+          "value": 3
+        },
+        {
+          "bucket": "dissonance_ranked_other",
+          "combinedDissonance": {
+            "denominator": 2,
+            "numerator": 5
+          },
+          "qV1Value": null,
+          "signature": [
+            2,
+            9
+          ],
+          "value": 5
+        },
+        {
+          "bucket": "dissonance_ranked_other",
+          "combinedDissonance": {
+            "denominator": 2,
+            "numerator": 5
+          },
+          "qV1Value": null,
+          "signature": [
+            3,
+            5
+          ],
+          "value": 5
+        },
+        {
+          "bucket": "equal_stacked_nonperfect",
+          "combinedDissonance": {
+            "denominator": 2,
+            "numerator": 7
+          },
+          "qV1Value": 2,
+          "signature": [
+            3,
+            6
+          ],
+          "value": 2
+        },
+        {
+          "bucket": "perfect_fifth_tertian",
+          "combinedDissonance": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "qV1Value": 1,
+          "signature": [
+            3,
+            7
+          ],
+          "value": 1
+        },
+        {
+          "bucket": "dissonance_ranked_other",
+          "combinedDissonance": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "qV1Value": null,
+          "signature": [
+            3,
+            8
+          ],
+          "value": 7
+        },
+        {
+          "bucket": "dissonance_ranked_other",
+          "combinedDissonance": {
+            "denominator": 2,
+            "numerator": 7
+          },
+          "qV1Value": null,
+          "signature": [
+            3,
+            9
+          ],
+          "value": 4
+        },
+        {
+          "bucket": "dissonance_ranked_other",
+          "combinedDissonance": {
+            "denominator": 1,
+            "numerator": 5
+          },
+          "qV1Value": 3,
+          "signature": [
+            4,
+            6
+          ],
+          "value": 3
+        },
+        {
+          "bucket": "perfect_fifth_tertian",
+          "combinedDissonance": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "qV1Value": 0,
+          "signature": [
+            4,
+            7
+          ],
+          "value": 0
+        },
+        {
+          "bucket": "equal_stacked_nonperfect",
+          "combinedDissonance": {
+            "denominator": 2,
+            "numerator": 3
+          },
+          "qV1Value": 2,
+          "signature": [
+            4,
+            8
+          ],
+          "value": 2
+        },
+        {
+          "bucket": "dissonance_ranked_other",
+          "combinedDissonance": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "qV1Value": null,
+          "signature": [
+            4,
+            9
+          ],
+          "value": 7
+        },
+        {
+          "bucket": "dissonance_ranked_other",
+          "combinedDissonance": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "qV1Value": null,
+          "signature": [
+            5,
+            7
+          ],
+          "value": 6
+        },
+        {
+          "bucket": "dissonance_ranked_other",
+          "combinedDissonance": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "qV1Value": null,
+          "signature": [
+            5,
+            8
+          ],
+          "value": 7
+        },
+        {
+          "bucket": "dissonance_ranked_other",
+          "combinedDissonance": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "qV1Value": null,
+          "signature": [
+            5,
+            9
+          ],
+          "value": 7
+        },
+        {
+          "bucket": "dissonance_ranked_other",
+          "combinedDissonance": {
+            "denominator": 1,
+            "numerator": 5
+          },
+          "qV1Value": null,
+          "signature": [
+            6,
+            8
+          ],
+          "value": 3
+        },
+        {
+          "bucket": "dissonance_ranked_other",
+          "combinedDissonance": {
+            "denominator": 2,
+            "numerator": 7
+          },
+          "qV1Value": null,
+          "signature": [
+            6,
+            9
+          ],
+          "value": 4
+        },
+        {
+          "bucket": "dissonance_ranked_other",
+          "combinedDissonance": {
+            "denominator": 2,
+            "numerator": 5
+          },
+          "qV1Value": null,
+          "signature": [
+            7,
+            9
+          ],
+          "value": 5
+        }
+      ]
+    },
+    {
+      "checkId": "D3-D4-z-partner-discrimination",
+      "status": "PASS",
+      "diagnostic": {
+        "crossTierQTupleCollisionCount": 0,
+        "d3Forte": "7-Z37",
+        "d4Forte": "7-Z17",
+        "distinctQMultisets": true,
+        "distinctRawSignatureMultisets": true,
+        "intervalVectorsEqual": true,
+        "sharedIntervalVector": [
+          4,
+          3,
+          4,
+          5,
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "checkId": "D2-D5-multiset-twins",
+      "status": "PASS",
+      "diagnostic": {
+        "crossTierQTupleCollisionCount": 0,
+        "d2Forte": "7-15",
+        "d5Forte": "7-Z12",
+        "distinctRawSignatureMultisets": true,
+        "interpretation": "rooted Q tuple required for discrimination, not the q_v2 multiset",
+        "sharedQMultiset": [
+          2,
+          3,
+          3,
+          6,
+          6,
+          7,
+          7
+        ],
+        "sharedUnweightedSum": 34
+      }
+    },
+    {
+      "checkId": "exact-lp-audit-replay",
+      "status": "PASS",
+      "diagnostic": {
+        "calibration": {
+          "activeConstraintIds": [
+            "weight-order:w6>w3",
+            "weight-order:w3>w7",
+            "weight-order:w7>w4",
+            "band:A0:1387<A1:1749",
+            "a0-order:1709<1453",
+            "a0-order:1453<1451",
+            "a0-order:1451<1387"
+          ],
+          "auditId": "GOV-213-A-tier-calibration",
+          "constraintCount": 111,
+          "constraintFingerprint": "ef0f063945790b3444b9aa16aa87c4d6fb733bda6a3f1725e3d0d12ba32be5e3",
+          "iterations": 24,
+          "margin": {
+            "denominator": 1,
+            "numerator": 3
+          },
+          "status": "OPTIMAL_STRICT",
+          "verification": "all_constraints_replayed_exactly",
+          "weights": [
+            {
+              "denominator": 1,
+              "numerator": 116
+            },
+            {
+              "denominator": 1,
+              "numerator": 56
+            },
+            {
+              "denominator": 1,
+              "numerator": 41
+            },
+            {
+              "denominator": 1,
+              "numerator": 35
+            },
+            {
+              "denominator": 1,
+              "numerator": 77
+            },
+            {
+              "denominator": 1,
+              "numerator": 44
+            },
+            {
+              "denominator": 1,
+              "numerator": 38
+            }
+          ]
+        },
+        "models": [
+          {
+            "activeConstraintIds": [],
+            "auditId": "declared-order-A0-through-D7",
+            "constraintCount": 448,
+            "constraintFingerprint": "3124a26254165320a3ae277205232fa271f1572a52504712ddc934ee1b56bdfc",
+            "iterations": 15,
+            "margin": null,
+            "status": "WEAK_SYSTEM_INFEASIBLE",
+            "verification": "phase_one_exact_infeasibility",
+            "weights": null
+          },
+          {
+            "activeConstraintIds": [],
+            "auditId": "D1-through-D7",
+            "constraintCount": 301,
+            "constraintFingerprint": "9d59b9218058ce878d0615680a5845de1485baae37d1496e7282b974f3487fb7",
+            "iterations": 15,
+            "margin": null,
+            "status": "WEAK_SYSTEM_INFEASIBLE",
+            "verification": "phase_one_exact_infeasibility",
+            "weights": null
+          },
+          {
+            "activeConstraintIds": [],
+            "auditId": "A-block-before-D-block",
+            "constraintCount": 1036,
+            "constraintFingerprint": "9b64296758708b099ab676647e84d6a4683b9958003e42adf82a6b1612e2ae06",
+            "iterations": 15,
+            "margin": null,
+            "status": "WEAK_SYSTEM_INFEASIBLE",
+            "verification": "phase_one_exact_infeasibility",
+            "weights": null
+          }
+        ],
+        "fixedWitnessSeparated": false
+      }
+    },
+    {
+      "checkId": "joint-transposition-invariance",
+      "status": "PASS",
+      "diagnostic": []
+    },
+    {
+      "checkId": "modal-M7-covariance",
+      "status": "PASS",
+      "diagnostic": []
+    },
+    {
+      "checkId": "adversarial-tamper-rejection",
+      "status": "PASS",
+      "diagnostic": {
+        "d-tier-satellite-selection": true,
+        "boundary-selection": true,
+        "a-tier-selection": true,
+        "q-v2-signature-tamper": true,
+        "lp-result-tamper": true,
+        "source-hash-drift": true,
+        "a-tier-baseline-drift": true,
+        "global-C-H-promotion": true
+      }
+    },
+    {
+      "checkId": "A-tier-byte-pin",
+      "status": "PASS",
+      "diagnostic": {
+        "bytes": 15208,
+        "sha256": "fa2947440d90f67b65443ae03f1ce92a0cc8a6ca2e93e83dfdc2490a25723c98"
+      }
+    },
+    {
+      "checkId": "global-C-H-remains-unresolved",
+      "status": "PASS",
+      "diagnostic": {
+        "guardLiteral": "C_H is a derived harmonic property, not a photonic measurement, not C_P, not C_S, not kappa_court, and not a thermodynamic quantity: not temperature, entropy, enthalpy, or free energy.",
+        "namespace": "harmonic.C_H",
+        "status": "unresolved",
+        "value": null
+      }
+    },
+    {
+      "checkId": "Stage-B-admission-boundary",
+      "status": "PASS",
+      "diagnostic": {
+        "neo4jIntegration": "prohibited",
+        "releaseBinding": "admitted_in_release_1_6_0",
+        "stage": "B"
+      }
+    }
+  ],
+  "reportFingerprint": "036f8dfe5da5b59da4797cb84d971f689c741a3c52e0ed424ac3382d06e6b18d"
+}

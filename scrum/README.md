@@ -1,6 +1,7 @@
 # Scrum Board — Seven Governors integrated workstreams
 
-Completed release 1.3.0 work and implementation-ready follow-on planning.
+Completed release 1.3.0 work, integrated release 1.4.0 database closure,
+release 1.5.0 GOV-213 admission, and release 1.6.0 GOV-227 D-tier admission.
 
 ## EPIC-001 — Bestiary network replica
 
@@ -52,10 +53,18 @@ Planned story points: **57** (Court scope: 5 canonical rooted positions + 5–23
 
 ## Framework follow-on
 
+Planning audits: [structural/runtime distinctions](pre-epic-400-audit-notes.md)
+and [semantic/empirical horizon](pre-epic-400-semantic-and-empirical-audit.md).
+Neither audit activates an epic or changes admission authority.
+
 | ID | Title | Points | Priority | Status |
 |---|---|---|---|---|
-| [GOV-210](GOV-210-graph-native-availability-housing.md) | Graph-native availability and housing layer | TBD | Medium | **Done** |
-| [GOV-211](GOV-211-assignment-aware-menu-integration.md) | Assignment-aware menu organization sidecar | TBD | High | **Done** |
+| [GOV-210](GOV-210-graph-native-availability-housing.md) | Graph-native availability and housing layer | 8 | Medium | **Done** |
+| [GOV-211](GOV-211-assignment-aware-menu-integration.md) | Assignment-aware menu organization sidecar | 8 | High | **Done** |
+| [GOV-212](GOV-212-integrated-release-1.4-closure.md) | Integrated release 1.4.0 closure and full-database round trip | 8 | High | **Done** |
+| [GOV-213](GOV-213-harmonic-compression-formalization.md) | Scoped A-tier harmonic-compression formalization | 8 | High | **Done** |
+| [GOV-227](GOV-227-d-tier-harmonic-compression-audit.md) | D-tier additive harmonic-compression audit | 8 | High | **Done** |
+| [CRT-310](CRT-310-remaining-pentatonic-admission.md) | Per-class pentatonic admission evidence backlog ([workflow](../docs/CRT_310_ADMISSION_WORKFLOW.md)) | TBD | Low | **Backlog** |
 
 ## Global definition of done
 

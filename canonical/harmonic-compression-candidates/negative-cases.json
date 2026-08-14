@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "gov-213.harmonic-compression-negative-cases.v1",
+  "candidateId": "CH_A012_q_v1",
+  "cases": [
+    {"caseId": "tier-only-satellite-selection", "mutation": "replace role=anchor with role=satellite", "expectedCode": "candidate_does_not_match_fresh_build"},
+    {"caseId": "boundary-selection", "mutation": "replace scoped record with boundary state 223", "expectedCode": "candidate_does_not_match_fresh_build"},
+    {"caseId": "invalid-chaldean-weights", "mutation": "swap degree-1 and degree-4 weight numerators", "expectedCode": "candidate_does_not_match_fresh_build"},
+    {"caseId": "source-hash-drift", "mutation": "replace authoritative ledger sha256", "expectedCode": "candidate_does_not_match_fresh_build"},
+    {"caseId": "signature-tamper", "mutation": "change one Q coordinate and rehash record/candidate", "expectedCode": "candidate_does_not_match_fresh_build"},
+    {"caseId": "global-C-H-promotion", "mutation": "set harmonic.C_H status=admitted and value=1", "expectedCode": "candidate_does_not_match_fresh_build"}
+  ]
+}

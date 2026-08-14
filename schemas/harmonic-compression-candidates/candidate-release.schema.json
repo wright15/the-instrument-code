@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gov-213.harmonic-compression-candidate-release.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "releaseId", "storyId", "candidateId", "coordinateId", "status", "authority", "admissionEffect", "scope", "method", "sourceBindings", "records", "tierSummaries", "invariants", "negativeControls", "globalAggregate", "deferredWork", "candidateFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "gov-213.harmonic-compression-candidate-release.v1"},
+    "releaseId": {"const": "harmonic-compression-candidate:CH_A012_q_v1:1.0.0"},
+    "storyId": {"const": "GOV-213"},
+    "candidateId": {"const": "CH_A012_q_v1"},
+    "coordinateId": {"const": "harmonic.CH_A012_q_v1"},
+    "status": {"const": "admitted_scoped_A012"},
+    "authority": {"const": "root_owned_scoped_harmonic_descriptor"},
+    "admissionEffect": {"const": "Q_and_W_A012_only"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selection", "families", "tuning", "rootConvention", "stateCount", "excluded"],
+      "properties": {
+        "selection": {"type": "object", "additionalProperties": false, "required": ["role", "tiers"], "properties": {"role": {"const": "anchor"}, "tiers": {"const": ["A0", "A1", "A2"]}}},
+        "families": {"const": ["7-35", "7-34", "7-33"]},
+        "tuning": {"const": "12-TET"},
+        "rootConvention": {"const": "declared_root_normalized_to_pitch_class_0"},
+        "stateCount": {"const": 21},
+        "excluded": {"type": "array", "minItems": 6, "uniqueItems": true, "items": {"type": "string"}}
+      }
+    },
+    "method": {"type": "object", "additionalProperties": false, "required": ["algorithmVersion", "triadDerivation", "qVersion", "qClasses", "degreeOrder", "governorDegreeMap", "weightVersion", "weightNumerators", "weightDenominator", "weightOrdering", "weightSum", "uniquenessClaim"], "properties": {
+      "algorithmVersion": {"const": "gov-213.rooted-triad-q-v1.v1"},
+      "triadDerivation": {"const": "court_mathematics.DegreeTriad"},
+      "qVersion": {"const": "q_v1"},
+      "qClasses": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "additionalProperties": false, "required": ["signature", "runtimeQuality", "value"], "properties": {"signature": {"$ref": "#/$defs/intervalSignature"}, "runtimeQuality": {"enum": ["major", "minor", "diminished", "augmented", "other"]}, "value": {"type": "integer", "minimum": 0, "maximum": 3}}}},
+      "degreeOrder": {"const": [1, 2, 3, 4, 5, 6, 7]},
+      "governorDegreeMap": {"type": "object", "additionalProperties": false, "required": ["Saturn", "Jupiter", "Mars", "Sun", "Venus", "Mercury", "Moon"], "properties": {"Saturn": {"const": 1}, "Jupiter": {"const": 2}, "Mars": {"const": 3}, "Sun": {"const": 4}, "Venus": {"const": 5}, "Mercury": {"const": 6}, "Moon": {"const": 7}}},
+      "weightVersion": {"const": "chaldean_order_witness_v1"},
+      "weightNumerators": {"const": [116, 56, 41, 35, 77, 44, 38]},
+      "weightDenominator": {"const": 407},
+      "weightOrdering": {"const": "w1>w5>w2>w6>w3>w7>w4>0"},
+      "weightSum": {"$ref": "#/$defs/ratio"},
+      "uniquenessClaim": {"const": false}
+    }},
+    "sourceBindings": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "additionalProperties": false, "required": ["bindingId", "path", "sha256", "role"], "properties": {"bindingId": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha256"}, "role": {"type": "string", "minLength": 1}}}},
+    "records": {"type": "array", "minItems": 21, "maxItems": 21, "items": {"$ref": "#/$defs/stateRecord"}},
+    "tierSummaries": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "additionalProperties": false, "required": ["tier", "forte", "stateCount", "compressionClassMultiset", "unweightedSum", "minimum", "maximum"], "properties": {"tier": {"enum": ["A0", "A1", "A2"]}, "forte": {"enum": ["7-35", "7-34", "7-33"]}, "stateCount": {"const": 7}, "compressionClassMultiset": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "integer", "minimum": 0, "maximum": 3}}, "unweightedSum": {"enum": [5, 8, 13]}, "minimum": {"$ref": "#/$defs/extreme"}, "maximum": {"$ref": "#/$defs/extreme"}}}},
+    "invariants": {"type": "object", "additionalProperties": false, "required": ["governorSeatClass", "governorSeatPassCount", "a0Order", "tierSumOrder", "strictBandSeparation", "a0A1Gap", "a1A2Gap", "fibonacciObservation"], "properties": {"governorSeatClass": {"const": 2}, "governorSeatPassCount": {"const": 21}, "a0Order": {"const": ["Lydian", "Ionian", "Mixolydian", "Dorian", "Aeolian", "Phrygian", "Locrian"]}, "tierSumOrder": {"const": [5, 8, 13]}, "strictBandSeparation": {"const": true}, "a0A1Gap": {"$ref": "#/$defs/ratio"}, "a1A2Gap": {"$ref": "#/$defs/ratio"}, "fibonacciObservation": {"type": "object", "additionalProperties": false, "required": ["observationId", "status"], "properties": {"observationId": {"const": "CH-OBS-001"}, "status": {"const": "observed_noncausal"}}}}},
+    "negativeControls": {"type": "object"},
+    "globalAggregate": {"type": "object", "additionalProperties": false, "required": ["namespace", "status", "value", "guardLiteral"], "properties": {"namespace": {"const": "harmonic.C_H"}, "status": {"const": "unresolved"}, "value": {"type": "null"}, "guardLiteral": {"type": "string", "minLength": 1}}},
+    "deferredWork": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"type": "string"}},
+    "candidateFingerprint": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "ratio": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"const": 407}}},
+    "intervalSignature": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 12}},
+    "extreme": {"type": "object", "additionalProperties": false, "required": ["stateId", "name", "value"], "properties": {"stateId": {"type": "integer"}, "name": {"type": "string", "minLength": 1}, "value": {"$ref": "#/$defs/ratio"}}},
+    "stateRecord": {"type": "object", "additionalProperties": false, "required": ["stateId", "name", "forte", "tier", "role", "stateGovernor", "stateGovernorDegree", "pitchClasses", "intervalVector", "stepIntervals", "triadIntervalSignatures", "triadicCompressionSignature", "governorSeatCompressionClass", "weightedProjection", "recordFingerprint"], "properties": {
+      "stateId": {"type": "integer", "minimum": 0, "maximum": 4095}, "name": {"type": "string", "minLength": 1}, "forte": {"enum": ["7-35", "7-34", "7-33"]}, "tier": {"enum": ["A0", "A1", "A2"]}, "role": {"const": "anchor"}, "stateGovernor": {"enum": ["Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus", "Saturn"]}, "stateGovernorDegree": {"type": "integer", "minimum": 1, "maximum": 7}, "pitchClasses": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 11}}, "intervalVector": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "integer", "minimum": 0}}, "stepIntervals": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "integer", "minimum": 1}}, "triadIntervalSignatures": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/intervalSignature"}}, "triadicCompressionSignature": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "integer", "minimum": 0, "maximum": 3}}, "governorSeatCompressionClass": {"const": 2}, "weightedProjection": {"$ref": "#/$defs/ratio"}, "recordFingerprint": {"$ref": "#/$defs/sha256"}
+    }}
+  }
+}

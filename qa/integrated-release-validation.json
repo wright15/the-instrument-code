@@ -1,16 +1,159 @@
 {
   "verdict": "PASS",
-  "releaseId": "seven-governors-integrated-1.3.0",
-  "checksPassed": 316,
+  "releaseId": "seven-governors-integrated-1.6.0",
+  "checksPassed": 379,
   "checksFailed": 0,
   "checks": [
     {
       "name": "release id",
       "status": "PASS",
       "diagnostic": {
-        "releaseId": "seven-governors-integrated-1.3.0",
-        "version": "1.3.0"
+        "releaseId": "seven-governors-integrated-1.6.0",
+        "version": "1.6.0"
       }
+    },
+    {
+      "name": "release 1.6 root extension and retained database baseline",
+      "status": "PASS",
+      "diagnostic": {
+        "rootExtensions": [
+          {
+            "storyId": "GOV-210",
+            "releaseId": "gov-210-availability-housing:1.0.0",
+            "fingerprint": "2b87a0ed677e4e75286ac2d6833d840fa674a051ffca1d3de5d92a8e979916df",
+            "authority": "informational_catalog_only"
+          },
+          {
+            "storyId": "GOV-211",
+            "releaseId": "gov-211-menu-organization:1.0.0",
+            "fingerprint": "798336db2b977d40d819b6b64282b88eda5191f44954a87a5bb2386a6b0ab98a",
+            "authority": "presentation_order_only"
+          },
+          {
+            "storyId": "GOV-213",
+            "releaseId": "harmonic-compression-candidate:CH_A012_q_v1:1.0.0",
+            "fingerprint": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1",
+            "authority": "scoped_A012_harmonic_descriptor_only"
+          },
+          {
+            "storyId": "GOV-227",
+            "releaseId": "harmonic-compression-candidate:CH_D17_q_v2:1.0.0",
+            "fingerprint": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe",
+            "authority": "scoped_D17_harmonic_descriptor_only"
+          },
+          {
+            "storyId": "CRT-310",
+            "releaseId": "court-admission-backlog:crt-310:1",
+            "fingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
+            "authority": "admission_planning_only"
+          }
+        ],
+        "databaseBootstrap": {
+          "script": "scripts/bootstrap-neo4j.mjs",
+          "normalizedSnapshotSchema": "schemas/neo4j-normalized-snapshot.schema.json",
+          "readinessSchemaVersion": "seven-governors.neo4j-full-readiness.v1",
+          "expectedNodeCount": 3061,
+          "expectedRelationshipCount": 10506,
+          "neo4jAuthority": false
+        },
+        "importStages": 13
+      }
+    },
+    {
+      "name": "frozen composite package manifest identities",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "packageId": "seven-governors-mutation-algebra-audit",
+          "expected": "e45e685e9b85622e0581dfb32da46d31a9efe30e5d082e4bd4bc18b835a95cdd",
+          "actual": "e45e685e9b85622e0581dfb32da46d31a9efe30e5d082e4bd4bc18b835a95cdd",
+          "path": "seven-governors-mutation-algebra-audit/MANIFEST.json"
+        },
+        {
+          "packageId": "seven-governors-canonical-feature-profile-registry",
+          "expected": "c4ac240b24b7be39e9ab04c3fa475512adb65faef529968dfc0909a5f95e586c",
+          "actual": "c4ac240b24b7be39e9ab04c3fa475512adb65faef529968dfc0909a5f95e586c",
+          "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/PACKAGE_MANIFEST.json"
+        },
+        {
+          "packageId": "seven-governors-state-machine-spec-and-authoring-toolkit",
+          "expected": "36d18b81efffd22494a45d96d437aa559152fb5f453c029f5457ae07e3ac98db",
+          "actual": "36d18b81efffd22494a45d96d437aa559152fb5f453c029f5457ae07e3ac98db",
+          "path": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/PACKAGE_MANIFEST.json"
+        },
+        {
+          "packageId": "seven-governors-governor-runtime",
+          "expected": "aef75a3057527e524562c3c04f0ee87bed2777a3616f2ec6e693062d64b74932",
+          "actual": "aef75a3057527e524562c3c04f0ee87bed2777a3616f2ec6e693062d64b74932",
+          "path": "seven-governors-governor-runtime-v0.1.0/PACKAGE_MANIFEST.json"
+        },
+        {
+          "packageId": "seven-governors-court-substrate",
+          "expected": "376a64dd44a0d667e3778d8deafaddfc2c1b33377c3b00358f1f63eb0ff8c044",
+          "actual": "376a64dd44a0d667e3778d8deafaddfc2c1b33377c3b00358f1f63eb0ff8c044",
+          "path": "seven-governors-court-substrate-v0.1.0/PACKAGE_MANIFEST.json"
+        },
+        {
+          "packageId": "seven-governors-harmonic-invariants",
+          "expected": "b1548524df9a04150d497f40d972311ce3163fb76ad832301529e0d353b9f4c3",
+          "actual": "b1548524df9a04150d497f40d972311ce3163fb76ad832301529e0d353b9f4c3",
+          "path": "seven-governors-harmonic-invariants-v0.1.0/PACKAGE_MANIFEST.json"
+        },
+        {
+          "packageId": "seven-governors-court-filter-algebra",
+          "expected": "6b7f4ea79e4b4d151154544608cf6d46da55959b37208938467bf6bd11f4215a",
+          "actual": "6b7f4ea79e4b4d151154544608cf6d46da55959b37208938467bf6bd11f4215a",
+          "path": "seven-governors-court-filter-algebra-v0.1.0/PACKAGE_MANIFEST.json"
+        }
+      ]
+    },
+    {
+      "name": "frozen composite package payload identities",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "directory": "seven-governors-mutation-algebra-audit",
+          "fileCount": 35,
+          "expected": "902619fce7f45dc52c30d4f245cb1ffee2caebc91f4504552acd26a489f28479",
+          "actual": "902619fce7f45dc52c30d4f245cb1ffee2caebc91f4504552acd26a489f28479"
+        },
+        {
+          "directory": "seven-governors-canonical-feature-profile-registry-v0.1.1",
+          "fileCount": 82,
+          "expected": "b80b16f1a4a11ea877e47f37350a9e7a289bd10394501f97a8557e220cd943c6",
+          "actual": "b80b16f1a4a11ea877e47f37350a9e7a289bd10394501f97a8557e220cd943c6"
+        },
+        {
+          "directory": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0",
+          "fileCount": 43,
+          "expected": "b7ebc16633e9694b72fdaeec5c6b3039a758d30019d5091fcca4829f12e23514",
+          "actual": "b7ebc16633e9694b72fdaeec5c6b3039a758d30019d5091fcca4829f12e23514"
+        },
+        {
+          "directory": "seven-governors-governor-runtime-v0.1.0",
+          "fileCount": 30,
+          "expected": "78234a5aea4d3d882e59cc70fe0b7bfd719704f10acf34160e455551a471f135",
+          "actual": "78234a5aea4d3d882e59cc70fe0b7bfd719704f10acf34160e455551a471f135"
+        },
+        {
+          "directory": "seven-governors-court-substrate-v0.1.0",
+          "fileCount": 31,
+          "expected": "bf0324074be036c4b939c2c2794a997c5c1f73808d8cf444c58395e4a6bc5f09",
+          "actual": "bf0324074be036c4b939c2c2794a997c5c1f73808d8cf444c58395e4a6bc5f09"
+        },
+        {
+          "directory": "seven-governors-harmonic-invariants-v0.1.0",
+          "fileCount": 40,
+          "expected": "3bf5f1815369dba2b9ca918a743d18cf1aa388b12f9ba7915ee87e8d8c8363f1",
+          "actual": "3bf5f1815369dba2b9ca918a743d18cf1aa388b12f9ba7915ee87e8d8c8363f1"
+        },
+        {
+          "directory": "seven-governors-court-filter-algebra-v0.1.0",
+          "fileCount": 44,
+          "expected": "a2ca514125ca5d0531c8a3c888f1f9f5bb3a152e858a308709fa4c4b9a973a59",
+          "actual": "a2ca514125ca5d0531c8a3c888f1f9f5bb3a152e858a308709fa4c4b9a973a59"
+        }
+      ]
     },
     {
       "name": "framework source hash: agents",
@@ -623,6 +766,88 @@
       "diagnostic": "GOV-207, CRT-307, and GOV-210 release identities retain their 1.3.0 bytes"
     },
     {
+      "name": "CRT-310 per-class admission backlog validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "CRT-310 zero-admission and fingerprint closure",
+      "status": "PASS",
+      "diagnostic": {
+        "backlogFingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
+        "summary": {
+          "itemCount": 35,
+          "proposedCount": 35,
+          "eligibleForAdmissionReviewCount": 0,
+          "admittedCount": 0,
+          "gateDefinitionCount": 7,
+          "satisfiedGateResultCount": 70,
+          "pendingGateResultCount": 175,
+          "failedGateResultCount": 0
+        },
+        "reportFingerprint": "2366b940743ed79aea0e5b08de04000bff796be3c40f2b3cf799f0a9cbfa02e6"
+      }
+    },
+    {
+      "name": "GOV-213 scoped harmonic-compression validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "GOV-213 scoped admission and global C_H guard",
+      "status": "PASS",
+      "diagnostic": {
+        "candidateFingerprint": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1",
+        "recordCount": 21,
+        "globalAggregate": {
+          "guardLiteral": "C_H is a derived harmonic property, not a photonic measurement, not C_P, not C_S, not kappa_court, and not a thermodynamic quantity: not temperature, entropy, enthalpy, or free energy.",
+          "namespace": "harmonic.C_H",
+          "status": "unresolved",
+          "value": null
+        },
+        "reportFingerprint": "2fb32dec2056b3965012db47a9f3a5c168a88a21c8af9d0230c94d71e185f308"
+      }
+    },
+    {
+      "name": "GOV-227 scoped D-tier harmonic-compression validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "GOV-227 scoped admission, topology boundary, and global C_H guard",
+      "status": "PASS",
+      "diagnostic": {
+        "candidateFingerprint": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe",
+        "recordCount": 49,
+        "lpStatuses": [
+          "WEAK_SYSTEM_INFEASIBLE",
+          "WEAK_SYSTEM_INFEASIBLE",
+          "WEAK_SYSTEM_INFEASIBLE"
+        ],
+        "globalAggregate": {
+          "guardLiteral": "C_H is a derived harmonic property, not a photonic measurement, not C_P, not C_S, not kappa_court, and not a thermodynamic quantity: not temperature, entropy, enthalpy, or free energy.",
+          "namespace": "harmonic.C_H",
+          "status": "unresolved",
+          "value": null
+        },
+        "reportFingerprint": "036f8dfe5da5b59da4797cb84d971f689c741a3c52e0ed424ac3382d06e6b18d"
+      }
+    },
+    {
+      "name": "retained release 1.5 full-database evidence with deferred 1.6 refresh",
+      "status": "PASS",
+      "diagnostic": {
+        "reportFingerprint": "4cea63c91426188a9dba02b32683fc0858a6e5730174aeeec9d55152e153f873",
+        "retainedReleaseId": "seven-governors-integrated-1.5.0",
+        "deferredRefresh": {
+          "status": "deferred_no_graph_data_change",
+          "retainedReleaseId": "seven-governors-integrated-1.5.0",
+          "reason": "only release.json provenance version and non-projected GOV-227 evidence changed",
+          "refreshRequired": "next Neo4j availability"
+        }
+      }
+    },
+    {
       "name": "court agent skill bundle validation",
       "status": "PASS",
       "diagnostic": "passed"
@@ -790,6 +1015,31 @@
     },
     {
       "name": "syntax: scripts/validate-cypher-syntax.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "syntax: scripts/build-pentatonic-admission-backlog.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "syntax: scripts/validate-pentatonic-admission-backlog.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "syntax: scripts/bootstrap-neo4j.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "syntax: scripts/verify-neo4j-roundtrip.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "syntax: scripts/validate-full-database.mjs",
       "status": "PASS",
       "diagnostic": "ok"
     },
@@ -996,7 +1246,7 @@
       "name": "manifest completeness",
       "status": "PASS",
       "diagnostic": {
-        "version": "1.3.0",
+        "version": "1.6.0",
         "missingFromManifest": [],
         "missingFromDisk": []
       }
@@ -1027,8 +1277,8 @@
       "name": "checksums sha256 parity",
       "status": "PASS",
       "diagnostic": {
-        "checksumLines": 709,
-        "manifestFiles": 709
+        "checksumLines": 752,
+        "manifestFiles": 752
       }
     },
     {
@@ -1053,6 +1303,31 @@
     },
     {
       "name": "CRT-309 Court benchmark: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "CRT-310 admission backlog: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "CRT-310 admission backlog validation: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "GOV-227 D-tier candidate: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "GOV-227 D-tier validation: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "retained release 1.5 full-database validation: schema valid",
       "status": "PASS",
       "diagnostic": "valid"
     },
@@ -1203,7 +1478,12 @@
     {
       "name": "required file: docs/TOPOLOGY_IDENTITY_AND_INVARIANTS.md",
       "status": "PASS",
-      "diagnostic": 11232
+      "diagnostic": 11593
+    },
+    {
+      "name": "required file: docs/A_TIER_TRIADIC_COMPRESSION_THEOREM.md",
+      "status": "PASS",
+      "diagnostic": 14304
     },
     {
       "name": "required file: docs/FOUR_LAYER_FORMALIZATION.md",
@@ -1718,7 +1998,7 @@
     {
       "name": "required file: docs/COURT_ADMISSION_RELEASE_1_3.md",
       "status": "PASS",
-      "diagnostic": 1524
+      "diagnostic": 1860
     },
     {
       "name": "required file: src/governor/vault_context.py",
@@ -2013,7 +2293,217 @@
     {
       "name": "required file: scrum/GOV-211-assignment-aware-menu-integration.md",
       "status": "PASS",
-      "diagnostic": 2305
+      "diagnostic": 2303
+    },
+    {
+      "name": "required file: provenance/pentatonic-set-class-admission-backlog.json",
+      "status": "PASS",
+      "diagnostic": 164999
+    },
+    {
+      "name": "required file: schemas/court-admission/pentatonic-set-class-admission-backlog.schema.json",
+      "status": "PASS",
+      "diagnostic": 7316
+    },
+    {
+      "name": "required file: schemas/court-admission/pentatonic-set-class-admission-backlog-validation.schema.json",
+      "status": "PASS",
+      "diagnostic": 4400
+    },
+    {
+      "name": "required file: scripts/build-pentatonic-admission-backlog.mjs",
+      "status": "PASS",
+      "diagnostic": 9547
+    },
+    {
+      "name": "required file: scripts/validate-pentatonic-admission-backlog.mjs",
+      "status": "PASS",
+      "diagnostic": 7848
+    },
+    {
+      "name": "required file: tests/crt_310/backlog.test.mjs",
+      "status": "PASS",
+      "diagnostic": 2002
+    },
+    {
+      "name": "required file: qa/pentatonic-set-class-admission-backlog-validation.json",
+      "status": "PASS",
+      "diagnostic": 2334
+    },
+    {
+      "name": "required file: docs/CRT_310_ADMISSION_WORKFLOW.md",
+      "status": "PASS",
+      "diagnostic": 1283
+    },
+    {
+      "name": "required file: graph/runtime/neo4j-bootstrap.mjs",
+      "status": "PASS",
+      "diagnostic": 27095
+    },
+    {
+      "name": "required file: graph/runtime/neo4j-roundtrip.mjs",
+      "status": "PASS",
+      "diagnostic": 13368
+    },
+    {
+      "name": "required file: scripts/bootstrap-neo4j.mjs",
+      "status": "PASS",
+      "diagnostic": 7995
+    },
+    {
+      "name": "required file: scripts/verify-neo4j-roundtrip.mjs",
+      "status": "PASS",
+      "diagnostic": 2658
+    },
+    {
+      "name": "required file: scripts/validate-full-database.mjs",
+      "status": "PASS",
+      "diagnostic": 2889
+    },
+    {
+      "name": "required file: schemas/neo4j-normalized-snapshot.schema.json",
+      "status": "PASS",
+      "diagnostic": 3129
+    },
+    {
+      "name": "required file: schemas/neo4j-full-database-validation.schema.json",
+      "status": "PASS",
+      "diagnostic": 3610
+    },
+    {
+      "name": "required file: tests/neo4j/full-database-live.test.mjs",
+      "status": "PASS",
+      "diagnostic": 9687
+    },
+    {
+      "name": "required file: qa/neo4j-full-database-validation.json",
+      "status": "PASS",
+      "diagnostic": 25165
+    },
+    {
+      "name": "required file: provenance/neo4j-full-database-baseline.json",
+      "status": "PASS",
+      "diagnostic": 2159
+    },
+    {
+      "name": "required file: provenance/neo4j-ingestion-template-baseline.json",
+      "status": "PASS",
+      "diagnostic": 3785
+    },
+    {
+      "name": "required file: scrum/GOV-212-integrated-release-1.4-closure.md",
+      "status": "PASS",
+      "diagnostic": 2093
+    },
+    {
+      "name": "required file: canonical/harmonic-compression-candidates/CH_A012_q_v1.json",
+      "status": "PASS",
+      "diagnostic": 15208
+    },
+    {
+      "name": "required file: canonical/harmonic-compression-candidates/negative-cases.json",
+      "status": "PASS",
+      "diagnostic": 1056
+    },
+    {
+      "name": "required file: schemas/harmonic-compression-candidates/candidate-release.schema.json",
+      "status": "PASS",
+      "diagnostic": 7852
+    },
+    {
+      "name": "required file: schemas/harmonic-compression-candidates/validation-report.schema.json",
+      "status": "PASS",
+      "diagnostic": 1064
+    },
+    {
+      "name": "required file: src/governor/harmonic_compression.py",
+      "status": "PASS",
+      "diagnostic": 15167
+    },
+    {
+      "name": "required file: scripts/generate-harmonic-compression-candidates.py",
+      "status": "PASS",
+      "diagnostic": 1617
+    },
+    {
+      "name": "required file: scripts/validate-harmonic-compression-candidates.py",
+      "status": "PASS",
+      "diagnostic": 9964
+    },
+    {
+      "name": "required file: tests/test_gov_213_harmonic_compression.py",
+      "status": "PASS",
+      "diagnostic": 4592
+    },
+    {
+      "name": "required file: qa/harmonic-compression-candidates-validation.json",
+      "status": "PASS",
+      "diagnostic": 5172
+    },
+    {
+      "name": "required file: scrum/GOV-213-harmonic-compression-formalization.md",
+      "status": "PASS",
+      "diagnostic": 5068
+    },
+    {
+      "name": "required file: canonical/harmonic-compression-candidates/CH_D17_q_v2.json",
+      "status": "PASS",
+      "diagnostic": 40486
+    },
+    {
+      "name": "required file: canonical/harmonic-compression-candidates/d-tier-negative-cases.json",
+      "status": "PASS",
+      "diagnostic": 1263
+    },
+    {
+      "name": "required file: schemas/harmonic-compression-candidates/d-tier-candidate-release.schema.json",
+      "status": "PASS",
+      "diagnostic": 15887
+    },
+    {
+      "name": "required file: schemas/harmonic-compression-candidates/d-tier-validation-report.schema.json",
+      "status": "PASS",
+      "diagnostic": 1057
+    },
+    {
+      "name": "required file: src/governor/exact_lp.py",
+      "status": "PASS",
+      "diagnostic": 6864
+    },
+    {
+      "name": "required file: src/governor/harmonic_compression_d_tier.py",
+      "status": "PASS",
+      "diagnostic": 27958
+    },
+    {
+      "name": "required file: scripts/generate-d-tier-harmonic-compression.py",
+      "status": "PASS",
+      "diagnostic": 1749
+    },
+    {
+      "name": "required file: scripts/validate-d-tier-harmonic-compression.py",
+      "status": "PASS",
+      "diagnostic": 11925
+    },
+    {
+      "name": "required file: tests/test_gov_227_d_tier_harmonic_compression.py",
+      "status": "PASS",
+      "diagnostic": 6929
+    },
+    {
+      "name": "required file: qa/d-tier-harmonic-compression-validation.json",
+      "status": "PASS",
+      "diagnostic": 13966
+    },
+    {
+      "name": "required file: docs/D_TIER_TRIADIC_COMPRESSION_THEOREM.md",
+      "status": "PASS",
+      "diagnostic": 7703
+    },
+    {
+      "name": "required file: scrum/GOV-227-d-tier-harmonic-compression-audit.md",
+      "status": "PASS",
+      "diagnostic": 8154
     },
     {
       "name": "required file: seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/docs/START_HERE.md",

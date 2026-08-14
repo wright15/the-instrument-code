@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "crt-310.pentatonic-set-class-admission-backlog-validation.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "verdict", "backlogId", "backlogFingerprint", "checksPassed", "checksFailed", "checks", "reportFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "crt-310.pentatonic-set-class-admission-backlog-validation.v1"},
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "backlogId": {"const": "court-admission-backlog:crt-310:1"},
+    "backlogFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "checksPassed": {"type": "integer", "minimum": 0},
+    "checksFailed": {"type": "integer", "minimum": 0},
+    "checks": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "object", "additionalProperties": false, "required": ["checkId", "status", "diagnostic"], "properties": {"checkId": {"type": "string"}, "status": {"enum": ["PASS", "FAIL"]}, "diagnostic": {}}}},
+    "reportFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"verdict": {"const": "PASS"}}, "required": ["verdict"]},
+      "then": {"properties": {"checksPassed": {"const": 12}, "checksFailed": {"const": 0}, "checks": {"type": "array", "items": {"type": "object", "properties": {"status": {"const": "PASS"}}}}}},
+      "else": {"allOf": [
+        {"properties": {"checks": {"type": "array", "contains": {"type": "object", "properties": {"status": {"const": "FAIL"}}, "required": ["status"]}}}},
+        {"$ref": "#/$defs/failureCounts"}
+      ]}
+    }
+  ],
+  "$defs": {"failureCounts": {"type": "object", "anyOf": [
+    {"properties": {"checksPassed": {"const": 0}, "checksFailed": {"const": 12}, "checks": {"type": "array", "contains": {"type": "object", "properties": {"status": {"const": "PASS"}}}, "minContains": 0, "maxContains": 0}}},
+    {"properties": {"checksPassed": {"const": 1}, "checksFailed": {"const": 11}, "checks": {"type": "array", "contains": {"type": "object", "properties": {"status": {"const": "PASS"}}}, "minContains": 1, "maxContains": 1}}},
+    {"properties": {"checksPassed": {"const": 2}, "checksFailed": {"const": 10}, "checks": {"type": "array", "contains": {"type": "object", "properties": {"status": {"const": "PASS"}}}, "minContains": 2, "maxContains": 2}}},
+    {"properties": {"checksPassed": {"const": 3}, "checksFailed": {"const": 9}, "checks": {"type": "array", "contains": {"type": "object", "properties": {"status": {"const": "PASS"}}}, "minContains": 3, "maxContains": 3}}},
+    {"properties": {"checksPassed": {"const": 4}, "checksFailed": {"const": 8}, "checks": {"type": "array", "contains": {"type": "object", "properties": {"status": {"const": "PASS"}}}, "minContains": 4, "maxContains": 4}}},
+    {"properties": {"checksPassed": {"const": 5}, "checksFailed": {"const": 7}, "checks": {"type": "array", "contains": {"type": "object", "properties": {"status": {"const": "PASS"}}}, "minContains": 5, "maxContains": 5}}},
+    {"properties": {"checksPassed": {"const": 6}, "checksFailed": {"const": 6}, "checks": {"type": "array", "contains": {"type": "object", "properties": {"status": {"const": "PASS"}}}, "minContains": 6, "maxContains": 6}}},
+    {"properties": {"checksPassed": {"const": 7}, "checksFailed": {"const": 5}, "checks": {"type": "array", "contains": {"type": "object", "properties": {"status": {"const": "PASS"}}}, "minContains": 7, "maxContains": 7}}},
+    {"properties": {"checksPassed": {"const": 8}, "checksFailed": {"const": 4}, "checks": {"type": "array", "contains": {"type": "object", "properties": {"status": {"const": "PASS"}}}, "minContains": 8, "maxContains": 8}}},
+    {"properties": {"checksPassed": {"const": 9}, "checksFailed": {"const": 3}, "checks": {"type": "array", "contains": {"type": "object", "properties": {"status": {"const": "PASS"}}}, "minContains": 9, "maxContains": 9}}},
+    {"properties": {"checksPassed": {"const": 10}, "checksFailed": {"const": 2}, "checks": {"type": "array", "contains": {"type": "object", "properties": {"status": {"const": "PASS"}}}, "minContains": 10, "maxContains": 10}}},
+    {"properties": {"checksPassed": {"const": 11}, "checksFailed": {"const": 1}, "checks": {"type": "array", "contains": {"type": "object", "properties": {"status": {"const": "PASS"}}}, "minContains": 11, "maxContains": 11}}}
+  ]}}
+}

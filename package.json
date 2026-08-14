@@ -1,6 +1,6 @@
 {
   "name": "seven-governors-integrated-release",
-  "version": "1.3.0",
+  "version": "1.6.0",
   "private": true,
   "type": "module",
   "description": "Framework sources, canonical topology, Neo4j projection, provenance, validation, and interactive Seven Governors graph.",
@@ -44,7 +44,20 @@
     "validate:gov210": "python3 scripts/generate-availability-housing.py --check && npm run test:gov210 --silent",
     "test:gov211": "python3 -m pytest -p no:cacheprovider -q tests/test_gov_211_assignment_menu.py",
     "test:gov211:neo4j": "node --test tests/gov_211/neo4j-live.test.mjs",
-    "validate:gov211": "npm run test:gov211 --silent"
+    "validate:gov211": "npm run test:gov211 --silent",
+    "build:crt310": "node scripts/build-pentatonic-admission-backlog.mjs",
+    "test:crt310": "node --test tests/crt_310/backlog.test.mjs",
+    "validate:crt310": "node scripts/build-pentatonic-admission-backlog.mjs --check && node scripts/validate-pentatonic-admission-backlog.mjs && npm run test:crt310 --silent",
+    "build:gov213": "python3 scripts/generate-harmonic-compression-candidates.py",
+    "test:gov213": "python3 -m pytest -p no:cacheprovider -q tests/test_gov_213_harmonic_compression.py",
+    "validate:gov213": "python3 scripts/generate-harmonic-compression-candidates.py --check && python3 scripts/validate-harmonic-compression-candidates.py && npm run test:gov213 --silent",
+    "build:gov227": "python3 scripts/generate-d-tier-harmonic-compression.py",
+    "test:gov227": "python3 -m pytest -p no:cacheprovider -q tests/test_gov_227_d_tier_harmonic_compression.py",
+    "validate:gov227": "python3 scripts/generate-d-tier-harmonic-compression.py --check && python3 scripts/validate-d-tier-harmonic-compression.py && npm run test:gov227 --silent",
+    "bootstrap:neo4j": "node scripts/bootstrap-neo4j.mjs",
+    "verify:neo4j:roundtrip": "node scripts/verify-neo4j-roundtrip.mjs",
+    "test:neo4j:full:raw": "node --test tests/neo4j/full-database-live.test.mjs",
+    "test:neo4j:full": "node scripts/validate-full-database.mjs"
   },
   "engines": {
     "node": ">=20"

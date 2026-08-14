@@ -1,6 +1,6 @@
 # GOV-211 — Assignment-aware menu organization sidecar
 
-**Status:** Done · **Priority:** High · **Points:** TBD · **Epic:** Framework follow-on
+**Status:** Done · **Priority:** High · **Points:** 8 · **Epic:** Framework follow-on
 **Depends on:** GOV-210 · **Blocks:** —
 
 ## Story
