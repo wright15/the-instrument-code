@@ -1,0 +1,480 @@
+# Fivefold Capability Teleology — CRT-347 authored registry source
+#
+# Status: planning_evidence. This registry has no runtime, graph, policy,
+# ledger, admission, or physical effect. It records the authored
+# State/Capability/Teleology separation of the Seven Governors framework:
+#
+#   topology.ScaleState          -> State / Representation (Governor graph)
+#   court.state                  -> Capability Disposition (Pentatonic Court)
+#   fivefold.capability_school   -> semantic school namespace (authored)
+#   fivefold.teleology.win_condition -> authored goal namespace (authored)
+#
+# The generator (scripts/build-fivefold-capability-teleology.py) verifies
+# every foreign key and replayed value against the bound source authorities
+# before emitting canonical/fivefold-capability-candidates/.
+#
+# Canonical Governor rendering contract remains unchanged:
+#   Render_G(g', e_G) = IntrinsicNormalForm(g') (+) Delta_S(e_G)
+
+metadata:
+  registry_id: fivefold-capability-teleology
+  candidate_id: fivefold-capability-teleology-v1
+  version: 1.0.0
+  schema_version: crt-347.fivefold-capability-teleology.v1
+  story_id: CRT-347
+  follow_on_story_id: CRT-348
+  admission_status: planning_evidence
+  authority: root_owned_non_admitted_planning_evidence_sidecar
+  description: >-
+    Deterministic planning evidence for the Fivefold Capability Teleology
+    design: five capability schools over the four-pole Pentatonic Court,
+    a twelve-facet zodiac partition, and authored win conditions, all
+    separated from Governor State identity.
+
+admission_boundary:
+  runtime_effect: false
+  graph_effect: false
+  policy_effect: false
+  ledger_effect: false
+  admission_effect: false
+  neo4j_authority: false
+  crt310_gate_effect: false
+  physical_quantity_claim: false
+
+separation_contract:
+  topology_scale_state:
+    namespace: topology.ScaleState
+    role: state_representation
+    statement: Governor graph ontology; what state the system is in.
+  court_state:
+    namespace: court.state
+    role: capability_disposition
+    statement: Pentatonic Court affordance and control; how the four poles are disposed.
+  capability_school:
+    namespace: fivefold.capability_school
+    role: semantic_school_namespace
+    statement: Authored school identities; never the unqualified runtime term 'capability'.
+  teleology_win_condition:
+    namespace: fivefold.teleology.win_condition
+    role: authored_goal_namespace
+    statement: Authored teleology; what outcome an authored school aims at.
+  non_equivalence:
+    - topology.ScaleState
+    - court.state
+    - fivefold.capability_school
+    - fivefold.teleology.win_condition
+    - gov-210.skill.capability
+    - court.runtime.requiredCapabilities
+  semantic_field_writes_court_register: false
+  governor_rendering_contract:
+    canonical: "Render(s, e) = IntrinsicNormalForm(s) ⊕ Δ_S(e)"
+    contextual_model_only: >-
+      ContextualRender(g', e_G, c, w) is a planning model; it is not a
+      runtime contract, composite transition, or admission claim.
+  relation_vocabulary:
+    allowed:
+      - AFFORDS
+      - AMPLIFIES
+      - CONSTRAINS
+      - OPPOSES
+      - CORRESPONDS_TO
+    excluded:
+      - SETS_COURT_POLE
+      - EXECUTES_COURT_MOVE
+
+compression_coordinate_contract:
+  C_P:
+    access: read_only
+    source: IntrinsicNormalForm photonic convention
+    writable_by_this_registry: false
+  C_H:
+    status: unresolved
+    value: null
+    scoped_authorities:
+      - gov-213.A0-A2.Q_W_A012
+      - gov-227.D1-D7.q_v2_Q_W_D17
+    writable_by_this_registry: false
+    rule: >-
+      Global harmonic.C_H remains unresolved. Scoped sidecars are read-only
+      inputs and cannot write global harmonic.C_H.
+  C_S:
+    access: shade_only
+    source: immediately_traversed_edge
+    rule: Semantic operators may shade rendering; never state identity.
+  kappa_court:
+    access: read_only_replay
+    rule: "kappa(C_i) = i/4; not C_P, C_H, C_S, temperature, entropy, enthalpy, or free energy."
+    forbidden_equivalences:
+      - physical.C_P
+      - harmonic.C_H
+      - semantic.C_S
+      - physical.temperature
+      - physical.entropy
+      - physical.enthalpy
+      - physical.freeEnergy
+
+physical_claim_contract:
+  physical_quantity_claim: false
+  polarity_labels:
+    electric:
+      correspondence: External Court pole disposition
+      status: authored_semantic_correspondence
+    magnetic:
+      correspondence: Internal Court pole disposition
+      status: authored_semantic_correspondence
+    photonic:
+      correspondence: Sun/Moon system-level bracket facet
+      status: authored_semantic_correspondence
+  no_si_units: true
+  no_electromagnetic_equivalence: true
+  no_energy_equations: true
+  no_physical_causation: true
+
+promotion_inventory_replay:
+  source: schemas/court-admission-contract.json#fivefoldFieldDisposition
+  eligible_for_promotion_at_crt309:
+    - fivefold_engine.physical_quantity_claim=false
+    - fivefold_engine.pole_order
+    - fivefold_engine.bit_semantics
+    - fivefold_engine.canonical_states
+    - fivefold_engine.canonical_transitions
+    - fivefold_engine.geometry.kappa_formula
+    - fivefold_engine.geometry.paired_mask_hamming_formula
+    - fivefold_engine.geometry.signed_gram_matrix
+    - fivefold_engine.geometry.canonical_path_size
+    - fivefold_engine.guards
+  remain_proposed:
+    - fivefold_engine.macro_bracket
+    - fivefold_engine.controller
+    - fivefold_engine.runtime_cycle
+  role: read_only_evidence_for_crt_348
+
+capability_schools:
+  - school_id: fivefold.capability_school.fire
+    element: Fire
+    governor_ref: schemas/governors.yaml#governors.mars
+    court_pole_ref: seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml#fivefold_engine.pole_order[0]
+    court_pole_runtime_ref: schemas/court-runtime-policy.json#/poleOrder/0
+    court_pole_index: 0
+    source_function: energy_modulation
+    authored_verb: Activation
+    diagnostic_question: How does force enter the pattern?
+    win_condition_ref: fivefold.teleology.win_condition.activation
+    zodiac_external_facet_ref: fivefold.zodiac.capability_school_facet.aries
+    zodiac_internal_facet_ref: fivefold.zodiac.capability_school_facet.scorpio
+    semantic_relation: CORRESPONDS_TO
+    is_binary_court_pole: true
+    runtime_effect: false
+    provenance:
+      - framework/AGENTS.md#element-table
+      - seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml#fivefold_engine.pole_order
+  - school_id: fivefold.capability_school.air
+    element: Air
+    governor_ref: schemas/governors.yaml#governors.jupiter
+    court_pole_ref: seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml#fivefold_engine.pole_order[1]
+    court_pole_runtime_ref: schemas/court-runtime-policy.json#/poleOrder/1
+    court_pole_index: 1
+    source_function: direction_and_distribution
+    authored_verb: Distribution
+    diagnostic_question: Where is the flow going?
+    win_condition_ref: fivefold.teleology.win_condition.distribution
+    zodiac_external_facet_ref: fivefold.zodiac.capability_school_facet.sagittarius
+    zodiac_internal_facet_ref: fivefold.zodiac.capability_school_facet.pisces
+    semantic_relation: CORRESPONDS_TO
+    is_binary_court_pole: true
+    runtime_effect: false
+    provenance:
+      - framework/AGENTS.md#element-table
+      - seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml#fivefold_engine.pole_order
+  - school_id: fivefold.capability_school.water
+    element: Water
+    governor_ref: schemas/governors.yaml#governors.venus
+    court_pole_ref: seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml#fivefold_engine.pole_order[2]
+    court_pole_runtime_ref: schemas/court-runtime-policy.json#/poleOrder/2
+    court_pole_index: 2
+    source_function: selective_cohesion
+    authored_verb: Coupling
+    diagnostic_question: What enters meaningful relation?
+    win_condition_ref: fivefold.teleology.win_condition.coupling
+    zodiac_external_facet_ref: fivefold.zodiac.capability_school_facet.libra
+    zodiac_internal_facet_ref: fivefold.zodiac.capability_school_facet.taurus
+    semantic_relation: CORRESPONDS_TO
+    is_binary_court_pole: true
+    runtime_effect: false
+    provenance:
+      - framework/AGENTS.md#element-table
+      - seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml#fivefold_engine.pole_order
+  - school_id: fivefold.capability_school.earth
+    element: Earth
+    governor_ref: schemas/governors.yaml#governors.saturn
+    court_pole_ref: seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml#fivefold_engine.pole_order[3]
+    court_pole_runtime_ref: schemas/court-runtime-policy.json#/poleOrder/3
+    court_pole_index: 3
+    source_function: constraint_and_form
+    authored_verb: Fixation
+    diagnostic_question: What can the flow not do?
+    win_condition_ref: fivefold.teleology.win_condition.fixation
+    zodiac_external_facet_ref: fivefold.zodiac.capability_school_facet.aquarius
+    zodiac_internal_facet_ref: fivefold.zodiac.capability_school_facet.capricorn
+    semantic_relation: CORRESPONDS_TO
+    is_binary_court_pole: true
+    runtime_effect: false
+    provenance:
+      - framework/AGENTS.md#element-table
+      - seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml#fivefold_engine.pole_order
+  - school_id: fivefold.capability_school.quintessence
+    element: Quintessence
+    governor_ref: schemas/governors.yaml#governors.mercury
+    court_pole_ref: null
+    court_pole_runtime_ref: null
+    court_pole_index: null
+    source_function: responsiveness and integration
+    authored_verb: Transduction / Interface / Ledger continuity
+    diagnostic_question: How does the system adapt?
+    win_condition_ref: fivefold.teleology.win_condition.quintessence_integration
+    zodiac_external_facet_ref: fivefold.zodiac.capability_school_facet.gemini
+    zodiac_internal_facet_ref: fivefold.zodiac.capability_school_facet.virgo
+    semantic_relation: AMPLIFIES
+    is_binary_court_pole: false
+    court_pole_index_confirm: null
+    requires_all_four_elemental_schools: authored_semantic_only
+    no_controller: true
+    no_cycle_detector: true
+    no_completion_predicate: true
+    no_ledger_policy: true
+    runtime_effect: false
+    provenance:
+      - framework/AGENTS.md#tier-2-mercury
+      - seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml#fivefold_engine.controller
+      - schemas/governors.yaml#governors.mercury.archetype
+
+zodiac_facets:
+  - facet_id: fivefold.zodiac.capability_school_facet.aries
+    zodiac: aries
+    governor_ref: schemas/governors.yaml#governors.mars
+    polarity: External
+    derives_from: canonical_expression.binary_12bit
+    source_vector: "101011010110"
+    school_ref: fivefold.capability_school.fire
+    facet_category: capability_school_facet
+    relation_to_court: authored_correspondence
+    writes_court_pole_disposition: false
+    provenance: schemas/governors.yaml#governors.mars.zodiacal_systems.aries
+  - facet_id: fivefold.zodiac.capability_school_facet.scorpio
+    zodiac: scorpio
+    governor_ref: schemas/governors.yaml#governors.mars
+    polarity: Internal
+    derives_from: canonical_expression.binary_12bit_lsb
+    source_vector: "010101101011"
+    school_ref: fivefold.capability_school.fire
+    facet_category: capability_school_facet
+    relation_to_court: authored_correspondence
+    writes_court_pole_disposition: false
+    provenance: schemas/governors.yaml#governors.mars.zodiacal_systems.scorpio
+  - facet_id: fivefold.zodiac.capability_school_facet.sagittarius
+    zodiac: sagittarius
+    governor_ref: schemas/governors.yaml#governors.jupiter
+    polarity: External
+    derives_from: canonical_expression.binary_12bit
+    source_vector: "101101011010"
+    school_ref: fivefold.capability_school.air
+    facet_category: capability_school_facet
+    relation_to_court: authored_correspondence
+    writes_court_pole_disposition: false
+    provenance: schemas/governors.yaml#governors.jupiter.zodiacal_systems.sagittarius
+  - facet_id: fivefold.zodiac.capability_school_facet.pisces
+    zodiac: pisces
+    governor_ref: schemas/governors.yaml#governors.jupiter
+    polarity: Internal
+    derives_from: canonical_expression.binary_12bit_lsb
+    source_vector: "010110101101"
+    school_ref: fivefold.capability_school.air
+    facet_category: capability_school_facet
+    relation_to_court: authored_correspondence
+    writes_court_pole_disposition: false
+    provenance: schemas/governors.yaml#governors.jupiter.zodiacal_systems.pisces
+  - facet_id: fivefold.zodiac.capability_school_facet.libra
+    zodiac: libra
+    governor_ref: schemas/governors.yaml#governors.venus
+    polarity: External
+    derives_from: canonical_expression.binary_12bit
+    source_vector: "110101011010"
+    school_ref: fivefold.capability_school.water
+    facet_category: capability_school_facet
+    relation_to_court: authored_correspondence
+    writes_court_pole_disposition: false
+    provenance: schemas/governors.yaml#governors.venus.zodiacal_systems.libra
+  - facet_id: fivefold.zodiac.capability_school_facet.taurus
+    zodiac: taurus
+    governor_ref: schemas/governors.yaml#governors.venus
+    polarity: Internal
+    derives_from: canonical_expression.binary_12bit_lsb
+    source_vector: "011010101101"
+    school_ref: fivefold.capability_school.water
+    facet_category: capability_school_facet
+    relation_to_court: authored_correspondence
+    writes_court_pole_disposition: false
+    provenance: schemas/governors.yaml#governors.venus.zodiacal_systems.taurus
+  - facet_id: fivefold.zodiac.capability_school_facet.aquarius
+    zodiac: aquarius
+    governor_ref: schemas/governors.yaml#governors.saturn
+    polarity: External
+    derives_from: canonical_expression.binary_12bit
+    source_vector: "110101101010"
+    school_ref: fivefold.capability_school.earth
+    facet_category: capability_school_facet
+    relation_to_court: authored_correspondence
+    writes_court_pole_disposition: false
+    provenance: schemas/governors.yaml#governors.saturn.zodiacal_systems.aquarius
+  - facet_id: fivefold.zodiac.capability_school_facet.capricorn
+    zodiac: capricorn
+    governor_ref: schemas/governors.yaml#governors.saturn
+    polarity: Internal
+    derives_from: canonical_expression.binary_12bit_lsb
+    source_vector: "011010110101"
+    school_ref: fivefold.capability_school.earth
+    facet_category: capability_school_facet
+    relation_to_court: authored_correspondence
+    writes_court_pole_disposition: false
+    provenance: schemas/governors.yaml#governors.saturn.zodiacal_systems.capricorn
+  - facet_id: fivefold.zodiac.capability_school_facet.gemini
+    zodiac: gemini
+    governor_ref: schemas/governors.yaml#governors.mercury
+    polarity: External
+    derives_from: canonical_expression.binary_12bit
+    source_vector: "101101010110"
+    school_ref: fivefold.capability_school.quintessence
+    facet_category: capability_school_facet
+    relation_to_court: authored_correspondence
+    writes_court_pole_disposition: false
+    provenance: schemas/governors.yaml#governors.mercury.zodiacal_systems.gemini
+  - facet_id: fivefold.zodiac.capability_school_facet.virgo
+    zodiac: virgo
+    governor_ref: schemas/governors.yaml#governors.mercury
+    polarity: Internal
+    derives_from: canonical_expression.binary_12bit_lsb
+    source_vector: "010110101011"
+    school_ref: fivefold.capability_school.quintessence
+    facet_category: capability_school_facet
+    relation_to_court: authored_correspondence
+    writes_court_pole_disposition: false
+    provenance: schemas/governors.yaml#governors.mercury.zodiacal_systems.virgo
+
+system_level_facets:
+  - facet_id: fivefold.zodiac.system_level_facet.leo
+    zodiac: leo
+    governor_ref: schemas/governors.yaml#governors.sun
+    governor_type: monopolar_luminary
+    polarity: monopolar
+    derives_from: canonical_expression.binary_12bit
+    source_vector: "101010110101"
+    facet_category: system_level_facet
+    correspondence: authored_photonic_source_correspondence
+    relation_to_court: authored_correspondence
+    writes_court_pole_disposition: false
+    provenance: schemas/governors.yaml#governors.sun.zodiacal_systems.leo
+  - facet_id: fivefold.zodiac.system_level_facet.cancer
+    zodiac: cancer
+    governor_ref: schemas/governors.yaml#governors.moon
+    governor_type: monopolar_luminary
+    polarity: monopolar
+    derives_from: canonical_expression.binary_12bit
+    source_vector: "101011010101"
+    facet_category: system_level_facet
+    correspondence: authored_photonic_reception_correspondence
+    relation_to_court: authored_correspondence
+    writes_court_pole_disposition: false
+    provenance: schemas/governors.yaml#governors.moon.zodiacal_systems.cancer
+
+win_conditions:
+  - win_condition_id: fivefold.teleology.win_condition.activation
+    school_ref: fivefold.capability_school.fire
+    title: Mars Victory — Activation
+    description: Victory through decisive activation.
+    classification: authored_teleology
+    runtime_enforced: false
+    policy_effect: false
+    ledger_success_effect: false
+    admission_effect: false
+    contains_executable_predicate: false
+    provenance: framework/AGENTS.md#the-four-victory-conditions
+  - win_condition_id: fivefold.teleology.win_condition.distribution
+    school_ref: fivefold.capability_school.air
+    title: Jupiter Victory — Distribution
+    description: Victory through reach, coverage, or option expansion.
+    classification: authored_teleology
+    runtime_enforced: false
+    policy_effect: false
+    ledger_success_effect: false
+    admission_effect: false
+    contains_executable_predicate: false
+    provenance: framework/AGENTS.md#the-four-victory-conditions
+  - win_condition_id: fivefold.teleology.win_condition.coupling
+    school_ref: fivefold.capability_school.water
+    title: Venus Victory — Coupling
+    description: Victory through cohesion, relation, or synergy.
+    classification: authored_teleology
+    runtime_enforced: false
+    policy_effect: false
+    ledger_success_effect: false
+    admission_effect: false
+    contains_executable_predicate: false
+    provenance: framework/AGENTS.md#the-four-victory-conditions
+  - win_condition_id: fivefold.teleology.win_condition.fixation
+    school_ref: fivefold.capability_school.earth
+    title: Saturn Victory — Fixation
+    description: Victory through durable boundary or stabilization.
+    classification: authored_teleology
+    runtime_enforced: false
+    policy_effect: false
+    ledger_success_effect: false
+    admission_effect: false
+    contains_executable_predicate: false
+    provenance: framework/AGENTS.md#the-four-victory-conditions
+  - win_condition_id: fivefold.teleology.win_condition.quintessence_integration
+    school_ref: fivefold.capability_school.quintessence
+    title: Quintessence Meta-Win — Coordinated Integration
+    description: >-
+      Victory through coordinated difference without contradiction. Not
+      automatically achieved by visiting C0 through C4; that remains a
+      future policy decision.
+    classification: authored_teleology
+    runtime_enforced: false
+    policy_effect: false
+    ledger_success_effect: false
+    admission_effect: false
+    contains_executable_predicate: false
+    automatic_c0_c4_completion: false
+    provenance: framework/AGENTS.md#carey-coherence-and-sameness-of-the-canonical-court
+
+guards:
+  - guard_id: governor_court_teleology_non_equivalence
+    status: enforced
+    statement: Governor State, Court Capability, and authored Teleology are non-equivalent namespaces.
+  - guard_id: zodiac_no_court_write
+    status: enforced
+    statement: No zodiac facet, school, affinity, or win condition writes court.poleDisposition, graph state, runtime policy, or ledger success.
+  - guard_id: mercury_not_fifth_bit
+    status: enforced
+    statement: Mercury/Quintessence has is_binary_court_pole false, court_pole_index null, and never enters poleOrder.
+  - guard_id: complement_relation_inactive
+    status: enforced
+    statement: The complement map remains frozen and unclaimed; no active complement relation is declared.
+  - guard_id: subset_of_7_35_detached
+    status: enforced
+    statement: SUBSET_OF_7_35 remains detached audit-only planning evidence; no active subset-incidence relation is declared.
+  - guard_id: crt310_untouched
+    status: enforced
+    statement: CRT-310 files, gates, backlog status, and admission workflow remain unchanged.
+  - guard_id: physical_quantity_claim_false
+    status: enforced
+    statement: Electric/Magnetic/Photonic labels are authored semantic correspondences, not physical quantity claims.
+  - guard_id: ch_unresolved_preserved
+    status: enforced
+    statement: Global harmonic.C_H remains unresolved; scoped sidecars are read-only and cannot write it.
+  - guard_id: win_conditions_authored_only
+    status: enforced
+    statement: Win conditions are authored teleology with no enforcement, policy, transition, controller, or ledger-success behavior.
+  - guard_id: excluded_relation_vocabulary_absent
+    status: enforced
+    statement: SETS_COURT_POLE, EXECUTES_COURT_MOVE, and equivalent executable relations never appear.

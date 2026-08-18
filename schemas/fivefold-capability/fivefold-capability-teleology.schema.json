@@ -1,0 +1,359 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "crt-347.fivefold-capability-teleology.v1",
+  "title": "CRT-347 Fivefold Capability Teleology planning-evidence candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "candidateId",
+    "registryId",
+    "version",
+    "storyId",
+    "status",
+    "admissionEffect",
+    "authority",
+    "metadata",
+    "admissionBoundary",
+    "separationContract",
+    "compressionCoordinateContract",
+    "physicalClaimContract",
+    "promotionInventoryReplay",
+    "courtParityReplay",
+    "activeCrossGraphRelations",
+    "sourceBindings",
+    "capabilitySchools",
+    "zodiacFacets",
+    "systemLevelFacets",
+    "winConditions",
+    "guards",
+    "negativeCaseIds",
+    "candidateFingerprint"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "crt-347.fivefold-capability-teleology.v1" },
+    "candidateId": { "const": "fivefold-capability-teleology-v1" },
+    "registryId": { "const": "fivefold-capability-teleology" },
+    "version": { "const": "1.0.0" },
+    "storyId": { "const": "CRT-347" },
+    "status": { "const": "planning_evidence" },
+    "admissionEffect": { "const": "none" },
+    "authority": { "const": "root_owned_non_admitted_planning_evidence_sidecar" },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["registryId", "candidateId", "version", "schemaVersion", "storyId", "followOnStoryId", "admissionStatus"],
+      "properties": {
+        "registryId": { "const": "fivefold-capability-teleology" },
+        "candidateId": { "const": "fivefold-capability-teleology-v1" },
+        "version": { "const": "1.0.0" },
+        "schemaVersion": { "const": "crt-347.fivefold-capability-teleology.v1" },
+        "storyId": { "const": "CRT-347" },
+        "followOnStoryId": { "const": "CRT-348" },
+        "admissionStatus": { "const": "planning_evidence" },
+        "authority": { "const": "root_owned_non_admitted_planning_evidence_sidecar" },
+        "description": { "type": "string", "minLength": 1 }
+      }
+    },
+    "admissionBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["runtimeEffect", "graphEffect", "policyEffect", "ledgerEffect", "admissionEffect", "neo4jAuthority", "crt310GateEffect", "physicalQuantityClaim"],
+      "properties": {
+        "runtimeEffect": { "const": false },
+        "graphEffect": { "const": false },
+        "policyEffect": { "const": false },
+        "ledgerEffect": { "const": false },
+        "admissionEffect": { "const": false },
+        "neo4jAuthority": { "const": false },
+        "crt310GateEffect": { "const": false },
+        "physicalQuantityClaim": { "const": false }
+      }
+    },
+    "separationContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["topologyScaleState", "courtState", "capabilitySchool", "teleologyWinCondition", "nonEquivalence", "semanticFieldWritesCourtRegister", "governorRenderingContract", "relationVocabulary"],
+      "properties": {
+        "topologyScaleState": { "type": "object", "additionalProperties": false, "required": ["namespace", "role", "statement"], "properties": { "namespace": { "const": "topology.ScaleState" }, "role": { "const": "state_representation" }, "statement": { "type": "string", "minLength": 1 } } },
+        "courtState": { "type": "object", "additionalProperties": false, "required": ["namespace", "role", "statement"], "properties": { "namespace": { "const": "court.state" }, "role": { "const": "capability_disposition" }, "statement": { "type": "string", "minLength": 1 } } },
+        "capabilitySchool": { "type": "object", "additionalProperties": false, "required": ["namespace", "role", "statement"], "properties": { "namespace": { "const": "fivefold.capability_school" }, "role": { "const": "semantic_school_namespace" }, "statement": { "type": "string", "minLength": 1 } } },
+        "teleologyWinCondition": { "type": "object", "additionalProperties": false, "required": ["namespace", "role", "statement"], "properties": { "namespace": { "const": "fivefold.teleology.win_condition" }, "role": { "const": "authored_goal_namespace" }, "statement": { "type": "string", "minLength": 1 } } },
+        "nonEquivalence": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "semanticFieldWritesCourtRegister": { "const": false },
+        "governorRenderingContract": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["canonical", "contextualModelOnly"],
+          "properties": {
+            "canonical": { "type": "string", "minLength": 1 },
+            "contextualModelOnly": { "type": "string", "minLength": 1 }
+          }
+        },
+        "relationVocabulary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["allowed", "excluded"],
+          "properties": {
+            "allowed": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "uniqueItems": true,
+              "items": { "enum": ["AFFORDS", "AMPLIFIES", "CONSTRAINS", "OPPOSES", "CORRESPONDS_TO"] }
+            },
+            "excluded": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "uniqueItems": true,
+              "items": { "enum": ["SETS_COURT_POLE", "EXECUTES_COURT_MOVE"] }
+            }
+          }
+        }
+      }
+    },
+    "compressionCoordinateContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["CP", "CH", "CS", "kappaCourt"],
+      "properties": {
+        "CP": { "type": "object", "additionalProperties": false, "required": ["access", "source", "writableByThisRegistry"], "properties": { "access": { "const": "read_only" }, "source": { "type": "string", "minLength": 1 }, "writableByThisRegistry": { "const": false } } },
+        "CH": { "type": "object", "additionalProperties": false, "required": ["status", "value", "scopedAuthorities", "writableByThisRegistry", "rule"], "properties": { "status": { "const": "unresolved" }, "value": { "type": "null" }, "scopedAuthorities": { "type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }, "writableByThisRegistry": { "const": false }, "rule": { "type": "string", "minLength": 1 } } },
+        "CS": { "type": "object", "additionalProperties": false, "required": ["access", "source", "rule"], "properties": { "access": { "const": "shade_only" }, "source": { "const": "immediately_traversed_edge" }, "rule": { "type": "string", "minLength": 1 } } },
+        "kappaCourt": { "type": "object", "additionalProperties": false, "required": ["access", "rule", "forbiddenEquivalences"], "properties": { "access": { "const": "read_only_replay" }, "rule": { "type": "string", "minLength": 1 }, "forbiddenEquivalences": { "type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } } } }
+      }
+    },
+    "physicalClaimContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["physicalQuantityClaim", "polarityLabels", "noSiUnits", "noElectromagneticEquivalence", "noEnergyEquations", "noPhysicalCausation"],
+      "properties": {
+        "physicalQuantityClaim": { "const": false },
+        "polarityLabels": { "type": "object", "additionalProperties": false, "required": ["electric", "magnetic", "photonic"], "properties": { "electric": { "type": "object", "additionalProperties": false, "required": ["correspondence", "status"], "properties": { "correspondence": { "type": "string", "minLength": 1 }, "status": { "const": "authored_semantic_correspondence" } } }, "magnetic": { "type": "object", "additionalProperties": false, "required": ["correspondence", "status"], "properties": { "correspondence": { "type": "string", "minLength": 1 }, "status": { "const": "authored_semantic_correspondence" } } }, "photonic": { "type": "object", "additionalProperties": false, "required": ["correspondence", "status"], "properties": { "correspondence": { "type": "string", "minLength": 1 }, "status": { "const": "authored_semantic_correspondence" } } } } },
+        "noSiUnits": { "const": true },
+        "noElectromagneticEquivalence": { "const": true },
+        "noEnergyEquations": { "const": true },
+        "noPhysicalCausation": { "const": true }
+      }
+    },
+    "promotionInventoryReplay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "eligibleForPromotionAtCrt309", "remainProposed", "role"],
+      "properties": {
+        "source": { "const": "schemas/court-admission-contract.json#fivefoldFieldDisposition" },
+        "eligibleForPromotionAtCrt309": { "type": "array", "minItems": 10, "maxItems": 10, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "remainProposed": { "type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "role": { "const": "read_only_evidence_for_crt_348" }
+      }
+    },
+    "courtParityReplay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["poleOrder", "positions", "transitions", "operationAllowList", "ordinaryMoveCount", "kappaFormula"],
+      "properties": {
+        "poleOrder": { "type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true, "items": { "enum": ["Mars", "Jupiter", "Venus", "Saturn"] } },
+        "positions": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["positionId", "poleVector", "internalPoles", "kappaCourt"],
+            "properties": {
+              "positionId": { "enum": ["C0", "C1", "C2", "C3", "C4"] },
+              "poleVector": { "enum": ["0000", "1000", "1100", "1110", "1111"] },
+              "internalPoles": { "type": "array", "uniqueItems": true, "items": { "enum": ["Mars", "Jupiter", "Venus", "Saturn"] } },
+              "kappaCourt": { "type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": { "numerator": { "type": "integer", "minimum": 0 }, "denominator": { "type": "integer", "minimum": 1 } } }
+            }
+          }
+        },
+        "transitions": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["transitionId", "from", "to", "pole"],
+            "properties": {
+              "transitionId": { "type": "string", "minLength": 1 },
+              "from": { "enum": ["C0", "C1", "C2", "C3", "C4"] },
+              "to": { "enum": ["C0", "C1", "C2", "C3", "C4"] },
+              "pole": { "enum": ["Mars", "Jupiter", "Venus", "Saturn"] }
+            }
+          }
+        },
+        "operationAllowList": { "type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": { "enum": ["court:advance", "court:retreat", "court:translocate"] } },
+        "ordinaryMoveCount": { "const": 8 },
+        "kappaFormula": { "type": "string", "minLength": 1 }
+      }
+    },
+    "activeCrossGraphRelations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["declaredActive", "declaredInactive"],
+      "properties": {
+        "declaredActive": { "type": "array", "minItems": 1, "maxItems": 1, "uniqueItems": true, "items": { "const": "filter_projection" } },
+        "declaredInactive": { "type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": { "enum": ["complement_map", "SUBSET_OF_7_35"] } }
+      }
+    },
+    "sourceBindings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["bindingId", "path", "role", "sha256"],
+        "properties": {
+          "bindingId": { "type": "string", "minLength": 1 },
+          "path": { "type": "string", "minLength": 1 },
+          "role": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    },
+    "capabilitySchools": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/school" }
+    },
+    "zodiacFacets": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/zodiacFacet" }
+    },
+    "systemLevelFacets": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/systemLevelFacet" }
+    },
+    "winConditions": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/winCondition" }
+    },
+    "guards": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["guardId", "status", "statement"],
+        "properties": {
+          "guardId": { "type": "string", "minLength": 1 },
+          "status": { "const": "enforced" },
+          "statement": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "negativeCaseIds": { "type": "array", "minItems": 12, "maxItems": 12, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "candidateFingerprint": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+  },
+  "$defs": {
+    "school": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schoolId", "element", "governorRef", "courtPoleRef", "courtPoleRuntimeRef", "courtPoleIndex", "sourceFunction", "authoredVerb", "diagnosticQuestion", "winConditionRef", "zodiacExternalFacetRef", "zodiacInternalFacetRef", "semanticRelation", "isBinaryCourtPole", "runtimeEffect", "provenance", "recordFingerprint"],
+      "properties": {
+        "schoolId": { "type": "string", "pattern": "^fivefold\\.capability_school\\.[a-z_]+$" },
+        "element": { "type": "string", "minLength": 1 },
+        "governorRef": { "type": "string", "pattern": "^schemas/governors\\.yaml#governors\\.[a-z]+$" },
+        "courtPoleRef": { "type": ["string", "null"] },
+        "courtPoleRuntimeRef": { "type": ["string", "null"] },
+        "courtPoleIndex": { "type": ["integer", "null"], "minimum": 0, "maximum": 3 },
+        "sourceFunction": { "type": "string", "minLength": 1 },
+        "authoredVerb": { "type": "string", "minLength": 1 },
+        "diagnosticQuestion": { "type": "string", "minLength": 1 },
+        "winConditionRef": { "type": "string", "pattern": "^fivefold\\.teleology\\.win_condition\\.[a-z_]+$" },
+        "zodiacExternalFacetRef": { "type": "string", "pattern": "^fivefold\\.zodiac\\.[a-z_.]+$" },
+        "zodiacInternalFacetRef": { "type": "string", "pattern": "^fivefold\\.zodiac\\.[a-z_.]+$" },
+        "semanticRelation": { "enum": ["AFFORDS", "AMPLIFIES", "CONSTRAINS", "OPPOSES", "CORRESPONDS_TO"] },
+        "isBinaryCourtPole": { "type": "boolean" },
+        "runtimeEffect": { "const": false },
+        "provenance": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "recordFingerprint": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "zodiacFacet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["facetId", "zodiac", "governorRef", "polarity", "derivesFrom", "sourceVector", "schoolRef", "facetCategory", "relationToCourt", "writesCourtPoleDisposition", "provenance", "t1Relation", "inversionRelation", "recordFingerprint"],
+      "properties": {
+        "facetId": { "type": "string", "pattern": "^fivefold\\.zodiac\\.[a-z_.]+$" },
+        "zodiac": { "type": "string", "minLength": 1 },
+        "governorRef": { "type": "string", "pattern": "^schemas/governors\\.yaml#governors\\.[a-z]+$" },
+        "polarity": { "enum": ["External", "Internal"] },
+        "derivesFrom": { "enum": ["canonical_expression.binary_12bit", "canonical_expression.binary_12bit_lsb"] },
+        "sourceVector": { "type": "string", "pattern": "^[01]{12}$" },
+        "schoolRef": { "type": "string", "pattern": "^fivefold\\.capability_school\\.[a-z_]+$" },
+        "facetCategory": { "const": "capability_school_facet" },
+        "relationToCourt": { "const": "authored_correspondence" },
+        "writesCourtPoleDisposition": { "const": false },
+        "provenance": { "type": "string", "minLength": 1 },
+        "t1Relation": { "type": ["object", "null"], "additionalProperties": false, "required": ["matches", "witness"], "properties": { "matches": { "const": true }, "witness": { "type": "string", "pattern": "^[01]{12}$" } } },
+        "inversionRelation": { "type": ["object", "null"], "additionalProperties": false, "required": ["matches", "witnessAxis", "publishedWitnessAxis"], "properties": { "matches": { "const": true }, "witnessAxis": { "type": "integer", "minimum": 0, "maximum": 11 }, "publishedWitnessAxis": { "type": "integer", "minimum": 0, "maximum": 11 } } },
+        "recordFingerprint": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "systemLevelFacet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["facetId", "zodiac", "governorRef", "governorType", "polarity", "derivesFrom", "sourceVector", "facetCategory", "correspondence", "relationToCourt", "writesCourtPoleDisposition", "provenance", "recordFingerprint"],
+      "properties": {
+        "facetId": { "type": "string", "pattern": "^fivefold\\.zodiac\\.[a-z_.]+$" },
+        "zodiac": { "type": "string", "minLength": 1 },
+        "governorRef": { "type": "string", "pattern": "^schemas/governors\\.yaml#governors\\.[a-z]+$" },
+        "governorType": { "const": "monopolar_luminary" },
+        "polarity": { "const": "monopolar" },
+        "derivesFrom": { "const": "canonical_expression.binary_12bit" },
+        "sourceVector": { "type": "string", "pattern": "^[01]{12}$" },
+        "facetCategory": { "const": "system_level_facet" },
+        "correspondence": { "type": "string", "minLength": 1 },
+        "relationToCourt": { "const": "authored_correspondence" },
+        "writesCourtPoleDisposition": { "const": false },
+        "provenance": { "type": "string", "minLength": 1 },
+        "recordFingerprint": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "winCondition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["winConditionId", "schoolRef", "title", "description", "classification", "runtimeEnforced", "policyEffect", "ledgerSuccessEffect", "admissionEffect", "containsExecutablePredicate", "provenance", "recordFingerprint"],
+      "properties": {
+        "winConditionId": { "type": "string", "pattern": "^fivefold\\.teleology\\.win_condition\\.[a-z_]+$" },
+        "schoolRef": { "type": "string", "pattern": "^fivefold\\.capability_school\\.[a-z_]+$" },
+        "title": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "classification": { "const": "authored_teleology" },
+        "runtimeEnforced": { "const": false },
+        "policyEffect": { "const": false },
+        "ledgerSuccessEffect": { "const": false },
+        "admissionEffect": { "const": false },
+        "containsExecutablePredicate": { "const": false },
+        "provenance": { "type": "string", "minLength": 1 },
+        "recordFingerprint": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    }
+  }
+}

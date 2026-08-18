@@ -1,0 +1,761 @@
+{
+  "candidateFingerprint": "fa25b54fcc96602c44173411d3afa375dd6e5325a0fa645d600970d2c577991a",
+  "candidateId": "fivefold-capability-teleology-v1",
+  "checks": [
+    {
+      "checkId": "candidate-schema",
+      "diagnostic": "valid",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/fivefold-capability/fivefold-capability-teleology.schema.json",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "negative-case-schema",
+      "diagnostic": "valid",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/fivefold-capability/fivefold-capability-teleology-negative-cases.schema.json",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "candidate-fingerprint",
+      "diagnostic": "fa25b54fcc96602c44173411d3afa375dd6e5325a0fa645d600970d2c577991a",
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json",
+      "expected": "fa25b54fcc96602c44173411d3afa375dd6e5325a0fa645d600970d2c577991a",
+      "actual": "fa25b54fcc96602c44173411d3afa375dd6e5325a0fa645d600970d2c577991a",
+      "status": "PASS"
+    },
+    {
+      "checkId": "source-binding-freshness",
+      "diagnostic": {
+        "bindingCount": 8
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json#sourceBindings",
+      "expected": [
+        {
+          "bindingId": "court-admission-contract",
+          "path": "schemas/court-admission-contract.json",
+          "role": "machine-readable Court authority boundary",
+          "sha256": "b4351a14aa3dfde6043a609e4158abcb17b006b666a35220e5833cf1cf7ffa9b"
+        },
+        {
+          "bindingId": "court-admission-release",
+          "path": "provenance/court-admission-release.json",
+          "role": "current bounded Court admission",
+          "sha256": "2191f9c74afbc764818f5e1a5295cf7fd1265637f2255593d5b71bf5c3c15455"
+        },
+        {
+          "bindingId": "court-runtime-policy",
+          "path": "schemas/court-runtime-policy.json",
+          "role": "admitted Court runtime policy and pole order",
+          "sha256": "5164b74bf6cbbb55625eb0e9b958542cf20ddacb426813b7a93c1bffd7347605"
+        },
+        {
+          "bindingId": "fivefold-engine",
+          "path": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml",
+          "role": "frozen proposed fivefold engine source",
+          "sha256": "9cbf038c93a72719387e6a8094f5b466a79e61ce03371f5b2334fb26a480b64a"
+        },
+        {
+          "bindingId": "framework-agents",
+          "path": "framework/AGENTS.md",
+          "role": "element table and the four Victory Conditions",
+          "sha256": "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24"
+        },
+        {
+          "bindingId": "governor-registry",
+          "path": "schemas/governors.yaml",
+          "role": "Governor archetypes and zodiacal systems",
+          "sha256": "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2"
+        },
+        {
+          "bindingId": "semantic-operator-registry",
+          "path": "schemas/semantic_operator_registry_v1.0.1.yaml",
+          "role": "canonical Governor rendering contract",
+          "sha256": "0ed2925bcb8e578d8ba786e1b26d788c36d746eda095e8268d36f767a62a365c"
+        },
+        {
+          "bindingId": "source-authority",
+          "path": "provenance/SOURCE_AUTHORITY.md",
+          "role": "release authority precedence",
+          "sha256": "75d782437261dc8148e548fa97a99df28faf852bcec198f5b7057119a2f447fd"
+        }
+      ],
+      "actual": [
+        {
+          "bindingId": "court-admission-contract",
+          "path": "schemas/court-admission-contract.json",
+          "role": "machine-readable Court authority boundary",
+          "sha256": "b4351a14aa3dfde6043a609e4158abcb17b006b666a35220e5833cf1cf7ffa9b"
+        },
+        {
+          "bindingId": "court-admission-release",
+          "path": "provenance/court-admission-release.json",
+          "role": "current bounded Court admission",
+          "sha256": "2191f9c74afbc764818f5e1a5295cf7fd1265637f2255593d5b71bf5c3c15455"
+        },
+        {
+          "bindingId": "court-runtime-policy",
+          "path": "schemas/court-runtime-policy.json",
+          "role": "admitted Court runtime policy and pole order",
+          "sha256": "5164b74bf6cbbb55625eb0e9b958542cf20ddacb426813b7a93c1bffd7347605"
+        },
+        {
+          "bindingId": "fivefold-engine",
+          "path": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml",
+          "role": "frozen proposed fivefold engine source",
+          "sha256": "9cbf038c93a72719387e6a8094f5b466a79e61ce03371f5b2334fb26a480b64a"
+        },
+        {
+          "bindingId": "framework-agents",
+          "path": "framework/AGENTS.md",
+          "role": "element table and the four Victory Conditions",
+          "sha256": "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24"
+        },
+        {
+          "bindingId": "governor-registry",
+          "path": "schemas/governors.yaml",
+          "role": "Governor archetypes and zodiacal systems",
+          "sha256": "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2"
+        },
+        {
+          "bindingId": "semantic-operator-registry",
+          "path": "schemas/semantic_operator_registry_v1.0.1.yaml",
+          "role": "canonical Governor rendering contract",
+          "sha256": "0ed2925bcb8e578d8ba786e1b26d788c36d746eda095e8268d36f767a62a365c"
+        },
+        {
+          "bindingId": "source-authority",
+          "path": "provenance/SOURCE_AUTHORITY.md",
+          "role": "release authority precedence",
+          "sha256": "75d782437261dc8148e548fa97a99df28faf852bcec198f5b7057119a2f447fd"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "checkId": "record-fingerprints",
+      "diagnostic": [],
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "independent-rebuild",
+      "diagnostic": {
+        "actual": "fa25b54fcc96602c44173411d3afa375dd6e5325a0fa645d600970d2c577991a",
+        "expected": "fa25b54fcc96602c44173411d3afa375dd6e5325a0fa645d600970d2c577991a"
+      },
+      "evidenceLocator": "schemas/fivefold-capability/fivefold-capability-teleology.yaml",
+      "expected": "fa25b54fcc96602c44173411d3afa375dd6e5325a0fa645d600970d2c577991a",
+      "actual": "fa25b54fcc96602c44173411d3afa375dd6e5325a0fa645d600970d2c577991a",
+      "status": "PASS"
+    },
+    {
+      "checkId": "build-twice-identity",
+      "diagnostic": "fa25b54fcc96602c44173411d3afa375dd6e5325a0fa645d600970d2c577991a",
+      "evidenceLocator": "scripts/build-fivefold-capability-teleology.py",
+      "expected": "fa25b54fcc96602c44173411d3afa375dd6e5325a0fa645d600970d2c577991a",
+      "actual": "fa25b54fcc96602c44173411d3afa375dd6e5325a0fa645d600970d2c577991a",
+      "status": "PASS"
+    },
+    {
+      "checkId": "reordered-input-identity",
+      "diagnostic": "fa25b54fcc96602c44173411d3afa375dd6e5325a0fa645d600970d2c577991a",
+      "evidenceLocator": "scripts/build-fivefold-capability-teleology.py",
+      "expected": "fa25b54fcc96602c44173411d3afa375dd6e5325a0fa645d600970d2c577991a",
+      "actual": "fa25b54fcc96602c44173411d3afa375dd6e5325a0fa645d600970d2c577991a",
+      "status": "PASS"
+    },
+    {
+      "checkId": "FCT-001-schema-and-identity",
+      "diagnostic": "identity fields and stable-ID uniqueness",
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json#metadata",
+      "expected": "crt-347.fivefold-capability-teleology.v1 / CRT-347",
+      "actual": {
+        "schemaVersion": "crt-347.fivefold-capability-teleology.v1",
+        "storyId": "CRT-347",
+        "followOnStoryId": "CRT-348"
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "FCT-002-source-bindings",
+      "diagnostic": {
+        "bindingCount": 8
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json#sourceBindings",
+      "expected": 8,
+      "actual": 8,
+      "status": "PASS"
+    },
+    {
+      "checkId": "FCT-003-namespace-separation",
+      "diagnostic": "no unqualified capability identity; no runtime capability-ID collision",
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json#capabilitySchools",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "FCT-004-school-cardinality",
+      "diagnostic": {
+        "schools": 5,
+        "binaryPoles": 4,
+        "quintessenceMeta": 1
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json#capabilitySchools",
+      "expected": {
+        "schools": 5,
+        "binaryPoles": 4,
+        "quintessenceMeta": 1
+      },
+      "actual": {
+        "schools": 5,
+        "binaryPoles": 4,
+        "quintessenceMeta": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "FCT-005-court-parity",
+      "diagnostic": {
+        "poleOrder": [
+          "Mars",
+          "Jupiter",
+          "Venus",
+          "Saturn"
+        ],
+        "positions": [
+          {
+            "positionId": "C0",
+            "poleVector": "0000",
+            "internalPoles": [],
+            "kappaCourt": {
+              "numerator": 0,
+              "denominator": 1
+            }
+          },
+          {
+            "positionId": "C1",
+            "poleVector": "1000",
+            "internalPoles": [
+              "Mars"
+            ],
+            "kappaCourt": {
+              "numerator": 1,
+              "denominator": 4
+            }
+          },
+          {
+            "positionId": "C2",
+            "poleVector": "1100",
+            "internalPoles": [
+              "Mars",
+              "Jupiter"
+            ],
+            "kappaCourt": {
+              "numerator": 1,
+              "denominator": 2
+            }
+          },
+          {
+            "positionId": "C3",
+            "poleVector": "1110",
+            "internalPoles": [
+              "Mars",
+              "Jupiter",
+              "Venus"
+            ],
+            "kappaCourt": {
+              "numerator": 3,
+              "denominator": 4
+            }
+          },
+          {
+            "positionId": "C4",
+            "poleVector": "1111",
+            "internalPoles": [
+              "Mars",
+              "Jupiter",
+              "Venus",
+              "Saturn"
+            ],
+            "kappaCourt": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "transitions": [
+          {
+            "transitionId": "court:C0:C1",
+            "from": "C0",
+            "to": "C1",
+            "pole": "Mars"
+          },
+          {
+            "transitionId": "court:C1:C2",
+            "from": "C1",
+            "to": "C2",
+            "pole": "Jupiter"
+          },
+          {
+            "transitionId": "court:C2:C3",
+            "from": "C2",
+            "to": "C3",
+            "pole": "Venus"
+          },
+          {
+            "transitionId": "court:C3:C4",
+            "from": "C3",
+            "to": "C4",
+            "pole": "Saturn"
+          }
+        ],
+        "operationAllowList": [
+          "court:advance",
+          "court:retreat",
+          "court:translocate"
+        ],
+        "ordinaryMoveCount": 8,
+        "kappaFormula": "kappa(C_i) = i/4"
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json#courtParityReplay",
+      "expected": {
+        "poleOrder": [
+          "Mars",
+          "Jupiter",
+          "Venus",
+          "Saturn"
+        ],
+        "positions": [
+          {
+            "positionId": "C0",
+            "poleVector": "0000",
+            "internalPoles": [],
+            "kappaCourt": {
+              "numerator": 0,
+              "denominator": 1
+            }
+          },
+          {
+            "positionId": "C1",
+            "poleVector": "1000",
+            "internalPoles": [
+              "Mars"
+            ],
+            "kappaCourt": {
+              "numerator": 1,
+              "denominator": 4
+            }
+          },
+          {
+            "positionId": "C2",
+            "poleVector": "1100",
+            "internalPoles": [
+              "Mars",
+              "Jupiter"
+            ],
+            "kappaCourt": {
+              "numerator": 1,
+              "denominator": 2
+            }
+          },
+          {
+            "positionId": "C3",
+            "poleVector": "1110",
+            "internalPoles": [
+              "Mars",
+              "Jupiter",
+              "Venus"
+            ],
+            "kappaCourt": {
+              "numerator": 3,
+              "denominator": 4
+            }
+          },
+          {
+            "positionId": "C4",
+            "poleVector": "1111",
+            "internalPoles": [
+              "Mars",
+              "Jupiter",
+              "Venus",
+              "Saturn"
+            ],
+            "kappaCourt": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "transitions": [
+          {
+            "transitionId": "court:C0:C1",
+            "from": "C0",
+            "to": "C1",
+            "pole": "Mars"
+          },
+          {
+            "transitionId": "court:C1:C2",
+            "from": "C1",
+            "to": "C2",
+            "pole": "Jupiter"
+          },
+          {
+            "transitionId": "court:C2:C3",
+            "from": "C2",
+            "to": "C3",
+            "pole": "Venus"
+          },
+          {
+            "transitionId": "court:C3:C4",
+            "from": "C3",
+            "to": "C4",
+            "pole": "Saturn"
+          }
+        ],
+        "operationAllowList": [
+          "court:advance",
+          "court:retreat",
+          "court:translocate"
+        ],
+        "ordinaryMoveCount": 8,
+        "kappaFormula": "kappa(C_i) = i/4"
+      },
+      "actual": {
+        "kappaFormula": "kappa(C_i) = i/4",
+        "operationAllowList": [
+          "court:advance",
+          "court:retreat",
+          "court:translocate"
+        ],
+        "ordinaryMoveCount": 8,
+        "poleOrder": [
+          "Mars",
+          "Jupiter",
+          "Venus",
+          "Saturn"
+        ],
+        "positions": [
+          {
+            "internalPoles": [],
+            "kappaCourt": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "poleVector": "0000",
+            "positionId": "C0"
+          },
+          {
+            "internalPoles": [
+              "Mars"
+            ],
+            "kappaCourt": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "poleVector": "1000",
+            "positionId": "C1"
+          },
+          {
+            "internalPoles": [
+              "Mars",
+              "Jupiter"
+            ],
+            "kappaCourt": {
+              "denominator": 2,
+              "numerator": 1
+            },
+            "poleVector": "1100",
+            "positionId": "C2"
+          },
+          {
+            "internalPoles": [
+              "Mars",
+              "Jupiter",
+              "Venus"
+            ],
+            "kappaCourt": {
+              "denominator": 4,
+              "numerator": 3
+            },
+            "poleVector": "1110",
+            "positionId": "C3"
+          },
+          {
+            "internalPoles": [
+              "Mars",
+              "Jupiter",
+              "Venus",
+              "Saturn"
+            ],
+            "kappaCourt": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "poleVector": "1111",
+            "positionId": "C4"
+          }
+        ],
+        "transitions": [
+          {
+            "from": "C0",
+            "pole": "Mars",
+            "to": "C1",
+            "transitionId": "court:C0:C1"
+          },
+          {
+            "from": "C1",
+            "pole": "Jupiter",
+            "to": "C2",
+            "transitionId": "court:C1:C2"
+          },
+          {
+            "from": "C2",
+            "pole": "Venus",
+            "to": "C3",
+            "transitionId": "court:C2:C3"
+          },
+          {
+            "from": "C3",
+            "pole": "Saturn",
+            "to": "C4",
+            "transitionId": "court:C3:C4"
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "FCT-006-mercury-exclusion",
+      "diagnostic": "Mercury absent from poleOrder, positions, and pole indices",
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json#courtParityReplay",
+      "expected": [
+        "Mars",
+        "Jupiter",
+        "Venus",
+        "Saturn"
+      ],
+      "actual": [
+        "Mars",
+        "Jupiter",
+        "Venus",
+        "Saturn"
+      ],
+      "status": "PASS"
+    },
+    {
+      "checkId": "FCT-007-zodiac-partition",
+      "diagnostic": {
+        "schoolFacets": 10,
+        "systemFacets": 2
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json#zodiacFacets",
+      "expected": {
+        "schoolFacets": 10,
+        "systemFacets": 2
+      },
+      "actual": {
+        "schoolFacets": 10,
+        "systemFacets": 2
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "FCT-008-zodiac-replay",
+      "diagnostic": [],
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json#zodiacFacets",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "checkId": "FCT-009-forbidden-write-guard",
+      "diagnostic": "no zodiac, school, or contract field writes court.poleDisposition",
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json#zodiacFacets",
+      "expected": false,
+      "actual": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "status": "PASS"
+    },
+    {
+      "checkId": "FCT-010-compression-physics-guard",
+      "diagnostic": {
+        "rule": "Global harmonic.C_H remains unresolved. Scoped sidecars are read-only inputs and cannot write global harmonic.C_H.",
+        "scopedAuthorities": [
+          "gov-213.A0-A2.Q_W_A012",
+          "gov-227.D1-D7.q_v2_Q_W_D17"
+        ],
+        "status": "unresolved",
+        "value": null,
+        "writableByThisRegistry": false
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json#compressionCoordinateContract",
+      "expected": {
+        "status": "unresolved",
+        "value": null
+      },
+      "actual": {
+        "rule": "Global harmonic.C_H remains unresolved. Scoped sidecars are read-only inputs and cannot write global harmonic.C_H.",
+        "scopedAuthorities": [
+          "gov-213.A0-A2.Q_W_A012",
+          "gov-227.D1-D7.q_v2_Q_W_D17"
+        ],
+        "status": "unresolved",
+        "value": null,
+        "writableByThisRegistry": false
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "FCT-011-teleology-boundary",
+      "diagnostic": {
+        "winConditionCount": 5
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json#winConditions",
+      "expected": "authored-only teleology",
+      "actual": [
+        "authored_teleology",
+        "authored_teleology",
+        "authored_teleology",
+        "authored_teleology",
+        "authored_teleology"
+      ],
+      "status": "PASS"
+    },
+    {
+      "checkId": "FCT-012-determinism-admission-boundary",
+      "diagnostic": {
+        "status": "planning_evidence",
+        "declaredActive": [
+          "filter_projection"
+        ],
+        "promotionItemCount": 10,
+        "scriptHygiene": true,
+        "sourceAuthorityRowPresent": true
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json#status",
+      "expected": "planning_evidence with no Stage 2 authority",
+      "actual": {
+        "status": "planning_evidence",
+        "declaredActive": [
+          "filter_projection"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "negative-case-closure",
+      "diagnostic": [
+        "duplicate-school-id",
+        "mercury-fifth-court-bit",
+        "mercury-in-pole-order",
+        "zodiac-writes-court-disposition",
+        "sun-moon-capability-school-pole",
+        "numeric-ch-while-unresolved",
+        "physical-quantity-claim-true",
+        "win-condition-runtime-predicate",
+        "active-complement-relation",
+        "active-subset-of-7-35-relation",
+        "source-hash-drift",
+        "unresolved-foreign-key"
+      ],
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-negative-cases-v1.json",
+      "expected": [
+        "duplicate-school-id",
+        "mercury-fifth-court-bit",
+        "mercury-in-pole-order",
+        "zodiac-writes-court-disposition",
+        "sun-moon-capability-school-pole",
+        "numeric-ch-while-unresolved",
+        "physical-quantity-claim-true",
+        "win-condition-runtime-predicate",
+        "active-complement-relation",
+        "active-subset-of-7-35-relation",
+        "source-hash-drift",
+        "unresolved-foreign-key"
+      ],
+      "actual": [
+        "duplicate-school-id",
+        "mercury-fifth-court-bit",
+        "mercury-in-pole-order",
+        "zodiac-writes-court-disposition",
+        "sun-moon-capability-school-pole",
+        "numeric-ch-while-unresolved",
+        "physical-quantity-claim-true",
+        "win-condition-runtime-predicate",
+        "active-complement-relation",
+        "active-subset-of-7-35-relation",
+        "source-hash-drift",
+        "unresolved-foreign-key"
+      ],
+      "status": "PASS"
+    },
+    {
+      "checkId": "adversarial-rejection",
+      "diagnostic": {
+        "duplicate-school-id": "duplicate_identity_rejected",
+        "mercury-fifth-court-bit": "mercury_register_membership_invalid",
+        "mercury-in-pole-order": "mercury_pole_order_invalid",
+        "zodiac-writes-court-disposition": "zodiac_court_write_forbidden",
+        "sun-moon-capability-school-pole": "sun_moon_school_pole_invalid",
+        "numeric-ch-while-unresolved": "ch_unresolved_guard_invalid",
+        "physical-quantity-claim-true": "physical_claim_invalid",
+        "win-condition-runtime-predicate": "teleology_boundary_invalid",
+        "active-complement-relation": "active_relation_forbidden",
+        "active-subset-of-7-35-relation": "active_relation_forbidden",
+        "source-hash-drift": "source_binding_mismatch",
+        "unresolved-foreign-key": "foreign_key_unresolved"
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-negative-cases-v1.json",
+      "expected": {
+        "duplicate-school-id": "duplicate_identity_rejected",
+        "mercury-fifth-court-bit": "mercury_register_membership_invalid",
+        "mercury-in-pole-order": "mercury_pole_order_invalid",
+        "zodiac-writes-court-disposition": "zodiac_court_write_forbidden",
+        "sun-moon-capability-school-pole": "sun_moon_school_pole_invalid",
+        "numeric-ch-while-unresolved": "ch_unresolved_guard_invalid",
+        "physical-quantity-claim-true": "physical_claim_invalid",
+        "win-condition-runtime-predicate": "teleology_boundary_invalid",
+        "active-complement-relation": "active_relation_forbidden",
+        "active-subset-of-7-35-relation": "active_relation_forbidden",
+        "source-hash-drift": "source_binding_mismatch",
+        "unresolved-foreign-key": "foreign_key_unresolved"
+      },
+      "actual": {
+        "duplicate-school-id": "duplicate_identity_rejected",
+        "mercury-fifth-court-bit": "mercury_register_membership_invalid",
+        "mercury-in-pole-order": "mercury_pole_order_invalid",
+        "zodiac-writes-court-disposition": "zodiac_court_write_forbidden",
+        "sun-moon-capability-school-pole": "sun_moon_school_pole_invalid",
+        "numeric-ch-while-unresolved": "ch_unresolved_guard_invalid",
+        "physical-quantity-claim-true": "physical_claim_invalid",
+        "win-condition-runtime-predicate": "teleology_boundary_invalid",
+        "active-complement-relation": "active_relation_forbidden",
+        "active-subset-of-7-35-relation": "active_relation_forbidden",
+        "source-hash-drift": "source_binding_mismatch",
+        "unresolved-foreign-key": "foreign_key_unresolved"
+      },
+      "status": "PASS"
+    }
+  ],
+  "checksFailed": 0,
+  "checksPassed": 22,
+  "schemaVersion": "crt-347.fivefold-capability-teleology-validation.v1",
+  "verdict": "PASS",
+  "reportFingerprint": "cacd0eff82d2e9e48d0b3f974792849bb8b7d132a0284ed5ace9625fd83de47b"
+}

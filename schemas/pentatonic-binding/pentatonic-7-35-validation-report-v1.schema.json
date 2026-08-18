@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pre-epic-400.pentatonic-7-35-parent-audit-validation.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "verdict", "candidateId", "candidateFingerprint", "checksPassed", "checksFailed", "checks", "reportFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "pre-epic-400.pentatonic-7-35-parent-audit-validation.v1"},
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "candidateId": {"const": "pentatonic-7-35-parent-audit-v1"},
+    "candidateFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "checksPassed": {"type": "integer", "minimum": 0},
+    "checksFailed": {"type": "integer", "minimum": 0},
+    "checks": {
+      "type": "array",
+      "minItems": 19,
+      "maxItems": 19,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["checkId", "diagnostic", "status"],
+        "properties": {
+          "checkId": {"type": "string", "minLength": 1},
+          "diagnostic": {},
+          "status": {"enum": ["PASS", "FAIL"]}
+        }
+      }
+    },
+    "reportFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

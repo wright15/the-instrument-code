@@ -53,9 +53,13 @@ Planned story points: **57** (Court scope: 5 canonical rooted positions + 5–23
 
 ## Framework follow-on
 
-Planning audits: [structural/runtime distinctions](pre-epic-400-audit-notes.md)
-and [semantic/empirical horizon](pre-epic-400-semantic-and-empirical-audit.md).
-Neither audit activates an epic or changes admission authority.
+Planning audits: [structural/runtime distinctions](pre-epic-400-audit-notes.md),
+[semantic/empirical horizon](pre-epic-400-semantic-and-empirical-audit.md), and
+[pentatonic graph binding audit](pre-epic-400-pentatonic-graph-binding-audit.md)
+(`planning_evidence` closure complete). None of these audits activates an epic
+or changes admission authority.
+
+Continuation brief: [pentatonic graph binding Phases 2-4](pre-epic-400-pentatonic-graph-binding-phase-2-4-handoff.md).
 
 | ID | Title | Points | Priority | Status |
 |---|---|---|---|---|
@@ -65,6 +69,8 @@ Neither audit activates an epic or changes admission authority.
 | [GOV-213](GOV-213-harmonic-compression-formalization.md) | Scoped A-tier harmonic-compression formalization | 8 | High | **Done** |
 | [GOV-227](GOV-227-d-tier-harmonic-compression-audit.md) | D-tier additive harmonic-compression audit | 8 | High | **Done** |
 | [CRT-310](CRT-310-remaining-pentatonic-admission.md) | Per-class pentatonic admission evidence backlog ([workflow](../docs/CRT_310_ADMISSION_WORKFLOW.md)) | TBD | Low | **Backlog** |
+| [CRT-347](CRT-347-fivefold-capability-teleology.md) | Fivefold Capability Teleology planning evidence | 5 | Medium | **Done** |
+| [CRT-348](CRT-348-fivefold-engine-promotion-gate.md) | Fivefold engine promotion gate plan | 8 | Medium | **Done** |
 
 ## Global definition of done
 

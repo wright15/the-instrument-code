@@ -1,0 +1,211 @@
+{
+  "candidateFingerprint": "c0195143976c706e29574c07e82d4b5d612b6d9e9128b7c2a179379bf67dfad2",
+  "candidateId": "pentatonic-7-35-parent-audit-v1",
+  "checks": [
+    {
+      "checkId": "candidate-schema",
+      "diagnostic": "valid",
+      "status": "PASS"
+    },
+    {
+      "checkId": "negative-case-schema",
+      "diagnostic": "valid",
+      "status": "PASS"
+    },
+    {
+      "checkId": "candidate-fingerprint",
+      "diagnostic": "c0195143976c706e29574c07e82d4b5d612b6d9e9128b7c2a179379bf67dfad2",
+      "status": "PASS"
+    },
+    {
+      "checkId": "source-binding-freshness",
+      "diagnostic": {
+        "bindingCount": 14
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "record-fingerprints",
+      "diagnostic": [],
+      "status": "PASS"
+    },
+    {
+      "checkId": "independent-rebuild",
+      "diagnostic": {
+        "actual": "c0195143976c706e29574c07e82d4b5d612b6d9e9128b7c2a179379bf67dfad2",
+        "expected": "c0195143976c706e29574c07e82d4b5d612b6d9e9128b7c2a179379bf67dfad2"
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "build-twice-identity",
+      "diagnostic": "c0195143976c706e29574c07e82d4b5d612b6d9e9128b7c2a179379bf67dfad2",
+      "status": "PASS"
+    },
+    {
+      "checkId": "reordered-input-identity",
+      "diagnostic": "c0195143976c706e29574c07e82d4b5d612b6d9e9128b7c2a179379bf67dfad2",
+      "status": "PASS"
+    },
+    {
+      "checkId": "universe-and-incidence-closure",
+      "diagnostic": {
+        "distribution": {
+          "0": 612,
+          "1": 120,
+          "2": 48,
+          "3": 12
+        },
+        "incidenceCount": 252
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "forte-class-discriminator",
+      "diagnostic": {
+        "1": [
+          "5-Z12",
+          "5-20",
+          "5-24",
+          "5-25",
+          "5-29",
+          "5-34"
+        ],
+        "2": [
+          "5-23",
+          "5-27"
+        ],
+        "3": [
+          "5-35"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "reviewed-rooted-parent-windows",
+      "diagnostic": {
+        "court-position:C0": [
+          "Sun",
+          "Moon",
+          "Mars"
+        ],
+        "court-position:C1": [
+          "Moon",
+          "Mars",
+          "Mercury"
+        ],
+        "court-position:C2": [
+          "Mars",
+          "Mercury",
+          "Jupiter"
+        ],
+        "court-position:C3": [
+          "Mercury",
+          "Jupiter",
+          "Venus"
+        ],
+        "court-position:C4": [
+          "Jupiter",
+          "Venus",
+          "Saturn"
+        ],
+        "bridge-rooting:5-23:aeolian-harmonic-minor": [
+          "Mercury",
+          "Jupiter"
+        ],
+        "bridge-rooting:5-27:aeolian-harmonic-minor": [
+          "Jupiter",
+          "Venus"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "complement-parent-separation",
+      "diagnostic": [],
+      "status": "PASS"
+    },
+    {
+      "checkId": "bipolar-vector-relations",
+      "diagnostic": {
+        "Mars": 3,
+        "Mercury": 1,
+        "Jupiter": 11,
+        "Venus": 9,
+        "Saturn": 7
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "mars-coordinate-namespace-guard",
+      "diagnostic": {
+        "canonicalPitchMask": 1717,
+        "complementCanonicalPitchMask": 2378,
+        "complementConstructiveInteger": 1321,
+        "constructiveInteger": 2774,
+        "coordinateCollisionIsIdentity": false,
+        "courtC4PitchMask": 1321
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "relation-guard-closure",
+      "diagnostic": [
+        "exact-realization-subset-endpoint",
+        "complement-not-parent",
+        "projection-requires-filter-provenance",
+        "raw-complement-not-normalized-state",
+        "active-graph-effect-none"
+      ],
+      "status": "PASS"
+    },
+    {
+      "checkId": "admission-boundary",
+      "diagnostic": {
+        "candidateStatus": "planning_evidence",
+        "proposedClassCount": 35
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "negative-case-closure",
+      "diagnostic": [
+        "universal-three-parent-claim",
+        "five-32-parent-promotion",
+        "mars-pair-complement-substitution",
+        "coordinate-collision-1321",
+        "c2-c4-parent-window-swap",
+        "class-as-subset-endpoint",
+        "complement-as-parent-edge",
+        "source-hash-drift",
+        "pitch-set-parent-tamper"
+      ],
+      "status": "PASS"
+    },
+    {
+      "checkId": "adversarial-rejection",
+      "diagnostic": {
+        "universal-three-parent-claim": "universal_three_parent_claim_rejected",
+        "five-32-parent-promotion": "five_32_parent_count_invalid",
+        "mars-pair-complement-substitution": "mars_internal_relation_invalid",
+        "coordinate-collision-1321": "coordinate_collision_identity_forbidden",
+        "c2-c4-parent-window-swap": "c2_parent_window_invalid",
+        "class-as-subset-endpoint": "class_subset_endpoint_guard_invalid",
+        "complement-as-parent-edge": "complement_used_as_parent",
+        "source-hash-drift": "source_binding_mismatch",
+        "pitch-set-parent-tamper": "parent_incidence_invalid"
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "intrinsic-environment-independence",
+      "diagnostic": "integer-only intrinsic JSON",
+      "status": "PASS"
+    }
+  ],
+  "checksFailed": 0,
+  "checksPassed": 19,
+  "schemaVersion": "pre-epic-400.pentatonic-7-35-parent-audit-validation.v1",
+  "verdict": "PASS",
+  "reportFingerprint": "42794ba5043c29cf271f79b7b62ce794479a99252e141b0226fc3c11a2655b70"
+}

@@ -1,0 +1,125 @@
+{
+  "schemaVersion": "pre-epic-400.pentatonic-binding-audit-closure.v1",
+  "reportId": "pentatonic-binding-audit-closure-v1",
+  "status": "planning_evidence",
+  "admissionEffect": "none",
+  "graphScope": "detached_audit_only",
+  "crt310Execution": false,
+  "verdict": "PASS",
+  "evidenceBindings": {
+    "candidateFingerprint": "c0195143976c706e29574c07e82d4b5d612b6d9e9128b7c2a179379bf67dfad2",
+    "phase1ValidationReportFingerprint": "42794ba5043c29cf271f79b7b62ce794479a99252e141b0226fc3c11a2655b70",
+    "phase2Neo4jReportFingerprint": "56e12520c6f1e74438980b634f23fa28f1e50d10532746639257793909f5b6d0",
+    "phase3ReportSha256": "814512d4f4360dc7e9ab77b8190043a155ae8253d2729dbb21f33db91e37f1df",
+    "cypherDeterministicFingerprint": "f94c876bf9bd407cfe03750fb83df41f09bc7433fb8de39a250a989b6fd11c32",
+    "crt310BacklogFingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
+    "sourceAuthoritySha256": "75d782437261dc8148e548fa97a99df28faf852bcec198f5b7057119a2f447fd",
+    "decisionLedgerSha256": "32f08a16eeb4c13187939281621b4085fe377778539cc1268913e3cb285b9bc6"
+  },
+  "counts": {
+    "pitchSetCount": 792,
+    "incidenceCount": 252,
+    "classCount": 38,
+    "reviewedRootedWitnessCount": 7,
+    "detachedRealizationCount": 7,
+    "subsetEdgeCount": 19,
+    "zodiacRecordCount": 12,
+    "proposedClassCount": 35
+  },
+  "checksPassed": 11,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "checkId": "candidate-fingerprint-integrity",
+      "diagnostic": "c0195143976c706e29574c07e82d4b5d612b6d9e9128b7c2a179379bf67dfad2",
+      "status": "PASS"
+    },
+    {
+      "checkId": "phase1-independent-validation",
+      "diagnostic": "42794ba5043c29cf271f79b7b62ce794479a99252e141b0226fc3c11a2655b70",
+      "status": "PASS"
+    },
+    {
+      "checkId": "phase1-mathematical-closure",
+      "diagnostic": {
+        "distribution": [
+          {
+            "parentCount": 0,
+            "pitchSetCount": 612
+          },
+          {
+            "parentCount": 1,
+            "pitchSetCount": 120
+          },
+          {
+            "parentCount": 2,
+            "pitchSetCount": 48
+          },
+          {
+            "parentCount": 3,
+            "pitchSetCount": 12
+          }
+        ],
+        "incidenceCount": 252
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "phase2-detached-neo4j-closure",
+      "diagnostic": "56e12520c6f1e74438980b634f23fa28f1e50d10532746639257793909f5b6d0",
+      "status": "PASS"
+    },
+    {
+      "checkId": "active-source-and-decision-ledger-isolation",
+      "diagnostic": {
+        "activeSourceCount": 5,
+        "decisionLedgerSha256": "32f08a16eeb4c13187939281621b4085fe377778539cc1268913e3cb285b9bc6"
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "phase3-prose-tier-boundary",
+      "diagnostic": "814512d4f4360dc7e9ab77b8190043a155ae8253d2729dbb21f33db91e37f1df",
+      "status": "PASS"
+    },
+    {
+      "checkId": "cypher-syntax-deterministic-closure",
+      "diagnostic": "f94c876bf9bd407cfe03750fb83df41f09bc7433fb8de39a250a989b6fd11c32",
+      "status": "PASS"
+    },
+    {
+      "checkId": "crt310-zero-admission-boundary",
+      "diagnostic": {
+        "itemCount": 35,
+        "proposedCount": 35,
+        "eligibleForAdmissionReviewCount": 0,
+        "admittedCount": 0,
+        "gateDefinitionCount": 7,
+        "satisfiedGateResultCount": 70,
+        "pendingGateResultCount": 175,
+        "failedGateResultCount": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "planning-evidence-cross-references",
+      "diagnostic": "authority and CRT-310 workflow references remain planning_evidence only",
+      "status": "PASS"
+    },
+    {
+      "checkId": "package-entrypoint-closure",
+      "diagnostic": {
+        "build": "python3 scripts/generate-pentatonic-7-35-parent-audit.py",
+        "test": "python3 -m pytest -p no:cacheprovider -q tests/test_pentatonic_7_35_parent_audit.py && node --test tests/pentatonic_binding_audit/neo4j-live.test.mjs",
+        "validate": "python3 scripts/generate-pentatonic-7-35-parent-audit.py --check && python3 scripts/validate-pentatonic-7-35-parent-audit.py && npm run test:pentatonic-binding-audit --silent && npm run validate:cypher --silent"
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "intrinsic-environment-independence",
+      "diagnostic": "closure core excludes time, provider, host, process, port, and temporary-path identity",
+      "status": "PASS"
+    }
+  ],
+  "reportFingerprint": "51cff27e2f78565b0c6d31982bc29e131f055e4e1919fdc9f0d2d5f713a9e122"
+}

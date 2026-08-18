@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "crt-347.fivefold-capability-teleology-negative-cases.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "candidateId", "cases"],
+  "properties": {
+    "schemaVersion": { "const": "crt-347.fivefold-capability-teleology-negative-cases.v1" },
+    "candidateId": { "const": "fivefold-capability-teleology-v1" },
+    "cases": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["caseId", "mutation", "expectedCode"],
+        "properties": {
+          "caseId": { "type": "string", "minLength": 1 },
+          "mutation": { "type": "string", "minLength": 1 },
+          "expectedCode": {
+            "enum": [
+              "duplicate_identity_rejected",
+              "mercury_register_membership_invalid",
+              "mercury_pole_order_invalid",
+              "zodiac_court_write_forbidden",
+              "sun_moon_school_pole_invalid",
+              "ch_unresolved_guard_invalid",
+              "physical_claim_invalid",
+              "teleology_boundary_invalid",
+              "active_relation_forbidden",
+              "source_binding_mismatch",
+              "foreign_key_unresolved"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

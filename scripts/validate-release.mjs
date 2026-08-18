@@ -740,6 +740,133 @@ record(
     reportFingerprint: crt310Report.reportFingerprint,
   },
 );
+const pentatonicBindingValidate = runNpmScript(".", "validate:pentatonic-binding-audit");
+record(
+  "pentatonic binding planning-evidence validation",
+  pentatonicBindingValidate.passed,
+  pentatonicBindingValidate.passed ? "passed" : pentatonicBindingValidate.tail,
+);
+const pentatonicClosureCheck = runIn(
+  ".",
+  "node",
+  ["scripts/build-pentatonic-binding-audit-closure.mjs", "--check"],
+);
+record(
+  "pentatonic binding closure freshness",
+  pentatonicClosureCheck.status === 0,
+  pentatonicClosureCheck.status === 0
+    ? "passed"
+    : (pentatonicClosureCheck.stderr || pentatonicClosureCheck.stdout).trim().split(/\r?\n/).slice(-5).join("\n"),
+);
+const pentatonicCandidate = JSON.parse(
+  (await read(
+    "canonical/pentatonic-binding-candidates/pentatonic-7-35-parent-audit-v1.json",
+  )).toString(),
+);
+const pentatonicPhase1Report = JSON.parse(
+  (await read("qa/pentatonic-7-35-parent-audit-validation.json")).toString(),
+);
+const pentatonicPhase2Report = JSON.parse(
+  (await read("qa/pentatonic-binding-audit-neo4j-validation.json")).toString(),
+);
+const pentatonicClosure = JSON.parse(
+  (await read("qa/pentatonic-binding-audit-closure.json")).toString(),
+);
+const cypherSyntaxReport = JSON.parse(
+  (await read("qa/neo4j-cypher-syntax-report.json")).toString(),
+);
+const pentatonicCandidateCore = { ...pentatonicCandidate };
+delete pentatonicCandidateCore.candidateFingerprint;
+const pentatonicPhase1Core = { ...pentatonicPhase1Report };
+delete pentatonicPhase1Core.reportFingerprint;
+const pentatonicPhase2Core = { ...pentatonicPhase2Report };
+delete pentatonicPhase2Core.reportFingerprint;
+const pentatonicClosureCore = { ...pentatonicClosure };
+delete pentatonicClosureCore.reportFingerprint;
+const cypherSyntaxCore = {
+  verdict: cypherSyntaxReport.verdict,
+  validator: cypherSyntaxReport.validator,
+  files: cypherSyntaxReport.files,
+};
+record(
+  "pentatonic binding evidence fingerprint closure",
+  payloadHash(pentatonicCandidateCore) === pentatonicCandidate.candidateFingerprint &&
+    payloadHash(pentatonicPhase1Core) === pentatonicPhase1Report.reportFingerprint &&
+    payloadHash(pentatonicPhase2Core) === pentatonicPhase2Report.reportFingerprint &&
+    payloadHash(pentatonicClosureCore) === pentatonicClosure.reportFingerprint &&
+    pentatonicClosure.evidenceBindings?.candidateFingerprint ===
+      pentatonicCandidate.candidateFingerprint &&
+    pentatonicClosure.evidenceBindings?.phase1ValidationReportFingerprint ===
+      pentatonicPhase1Report.reportFingerprint &&
+    pentatonicClosure.evidenceBindings?.phase2Neo4jReportFingerprint ===
+      pentatonicPhase2Report.reportFingerprint &&
+    pentatonicClosure.evidenceBindings?.phase3ReportSha256 ===
+      await hash("docs/verification/PENTATONIC_GRAPH_BINDING_AUDIT_REPORT.md") &&
+    pentatonicClosure.evidenceBindings?.cypherDeterministicFingerprint ===
+      payloadHash(cypherSyntaxCore) &&
+    pentatonicClosure.evidenceBindings?.crt310BacklogFingerprint ===
+      crt310Backlog.backlogFingerprint &&
+    pentatonicClosure.evidenceBindings?.sourceAuthoritySha256 ===
+      await hash("provenance/SOURCE_AUTHORITY.md") &&
+    pentatonicClosure.evidenceBindings?.decisionLedgerSha256 ===
+      await hash("provenance/DECISION_LEDGER.md"),
+  pentatonicClosure.evidenceBindings,
+);
+const pentatonicDistribution = Object.fromEntries(
+  pentatonicCandidate.universeSummary.parentCountDistribution.map(
+    (item) => [String(item.parentCount), item.pitchSetCount],
+  ),
+);
+record(
+  "pentatonic binding finite result closure",
+  pentatonicCandidate.status === "planning_evidence" &&
+    pentatonicCandidate.admissionEffect === "none" &&
+    pentatonicCandidate.universeSummary.pitchSetCount === 792 &&
+    pentatonicCandidate.universeSummary.incidenceCount === 252 &&
+    pentatonicCandidate.classSummaries.length === 38 &&
+    pentatonicCandidate.reviewedRootedWitnesses.length === 7 &&
+    pentatonicDistribution["0"] === 612 &&
+    pentatonicDistribution["1"] === 120 &&
+    pentatonicDistribution["2"] === 48 &&
+    pentatonicDistribution["3"] === 12 &&
+    pentatonicPhase1Report.verdict === "PASS" &&
+    pentatonicPhase1Report.checksPassed === 19 &&
+    pentatonicPhase1Report.checksFailed === 0 &&
+    pentatonicPhase2Report.verdict === "PASS" &&
+    pentatonicPhase2Report.checksPassed === 11 &&
+    pentatonicPhase2Report.checksFailed === 0 &&
+    pentatonicPhase2Report.graphScope === "detached_audit_only" &&
+    pentatonicClosure.status === "planning_evidence" &&
+    pentatonicClosure.admissionEffect === "none" &&
+    pentatonicClosure.crt310Execution === false &&
+    pentatonicClosure.verdict === "PASS" &&
+    pentatonicClosure.checksPassed === 11 &&
+    pentatonicClosure.checksFailed === 0 &&
+    pentatonicClosure.checks.length === 11 &&
+    new Set(pentatonicClosure.checks.map((check) => check.checkId)).size === 11 &&
+    pentatonicClosure.checks.every((check) => check.status === "PASS"),
+  {
+    candidateFingerprint: pentatonicCandidate.candidateFingerprint,
+    distribution: pentatonicDistribution,
+    closureFingerprint: pentatonicClosure.reportFingerprint,
+  },
+);
+const sourceAuthorityText = (await read("provenance/SOURCE_AUTHORITY.md")).toString();
+const pentatonicScrumText = (await read(
+  "scrum/pre-epic-400-pentatonic-graph-binding-audit.md",
+)).toString();
+const crt310WorkflowText = (await read("docs/CRT_310_ADMISSION_WORKFLOW.md")).toString();
+record(
+  "pentatonic binding planning-evidence wording boundary",
+  sourceAuthorityText.includes("pentatonic-7-35-parent-audit-v1.json") &&
+    sourceAuthorityText.includes("pentatonic-binding-audit-closure.json") &&
+    sourceAuthorityText.includes("`planning_evidence`") &&
+    pentatonicScrumText.includes("planning evidence") &&
+    crt310WorkflowText.includes("`planning_evidence`") &&
+    crt310Backlog.summary.admittedCount === 0 &&
+    crt310Backlog.summary.eligibleForAdmissionReviewCount === 0,
+  "planning_evidence only; CRT-310 remains zero-eligible and zero-admission",
+);
 const gov213Validate = runNpmScript(".", "validate:gov213");
 record(
   "GOV-213 scoped harmonic-compression validation",
@@ -1468,6 +1595,21 @@ for (const [label, schemaPath, document] of [
     crt310Report,
   ],
   [
+    "pentatonic 7-35 parent audit candidate",
+    "schemas/pentatonic-binding/pentatonic-7-35-parent-audit-v1.schema.json",
+    pentatonicCandidate,
+  ],
+  [
+    "pentatonic 7-35 parent audit validation",
+    "schemas/pentatonic-binding/pentatonic-7-35-validation-report-v1.schema.json",
+    pentatonicPhase1Report,
+  ],
+  [
+    "pentatonic binding audit closure",
+    "schemas/pentatonic-binding/pentatonic-binding-audit-closure-v1.schema.json",
+    pentatonicClosure,
+  ],
+  [
     "GOV-227 D-tier candidate",
     "schemas/harmonic-compression-candidates/d-tier-candidate-release.schema.json",
     gov227Candidate,
@@ -2084,6 +2226,30 @@ for (const requiredPath of [
   "tests/crt_310/backlog.test.mjs",
   "qa/pentatonic-set-class-admission-backlog-validation.json",
   "docs/CRT_310_ADMISSION_WORKFLOW.md",
+  "docs/PENTATONIC_GRAPH_BINDING_AUDIT_SPEC.md",
+  "docs/verification/PENTATONIC_GRAPH_BINDING_AUDIT_REPORT.md",
+  "canonical/pentatonic-binding-candidates/pentatonic-7-35-parent-audit-v1.json",
+  "canonical/pentatonic-binding-candidates/negative-cases-v1.json",
+  "schemas/pentatonic-binding/pentatonic-7-35-parent-audit-v1.schema.json",
+  "schemas/pentatonic-binding/pentatonic-7-35-negative-cases-v1.schema.json",
+  "schemas/pentatonic-binding/pentatonic-7-35-validation-report-v1.schema.json",
+  "schemas/pentatonic-binding/pentatonic-binding-audit-closure-v1.schema.json",
+  "scripts/generate-pentatonic-7-35-parent-audit.py",
+  "scripts/validate-pentatonic-7-35-parent-audit.py",
+  "scripts/build-pentatonic-binding-audit-closure.mjs",
+  "tests/test_pentatonic_7_35_parent_audit.py",
+  "tests/pentatonic_binding_audit/neo4j-live.test.mjs",
+  "neo4j/pentatonic-binding-audit/README.md",
+  "neo4j/pentatonic-binding-audit/schema.cypher",
+  "neo4j/pentatonic-binding-audit/import.cypher",
+  "neo4j/pentatonic-binding-audit/validation.cypher",
+  "neo4j/pentatonic-binding-audit/reset.cypher",
+  "neo4j/pentatonic-binding-audit/teardown.cypher",
+  "qa/pentatonic-7-35-parent-audit-validation.json",
+  "qa/pentatonic-binding-audit-neo4j-validation.json",
+  "qa/pentatonic-binding-audit-closure.json",
+  "scrum/pre-epic-400-pentatonic-graph-binding-audit.md",
+  "scrum/pre-epic-400-pentatonic-graph-binding-phase-2-4-handoff.md",
   "graph/runtime/neo4j-bootstrap.mjs",
   "graph/runtime/neo4j-roundtrip.mjs",
   "scripts/bootstrap-neo4j.mjs",

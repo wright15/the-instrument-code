@@ -1,0 +1,156 @@
+governor: Jupiter
+tier: A0
+domain: landform
+process_family: aeolian
+entities:
+  - entity_id: barchan
+    definition: "Crescent-shaped dune formed by aeolian sand transport."
+    relation_type: distributed_through
+    value: moving_air_and_particulate_transport
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: blowout
+    definition: "Depression in a sand-dune ecosystem caused by wind removing exposed sediment."
+    relation_type: formed_by
+    value: wind_deflation
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: desert_pavement
+    definition: "Desert surface armored by closely packed gravel and rock fragments after finer material is removed or displaced."
+    relation_type: formed_by
+    value: aeolian_deflation_and_surface_lag_concentration
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: desert_varnish
+    definition: "Orange-to-black coating of clay minerals and iron and manganese oxides that develops on exposed rock in arid environments."
+    relation_type: receives
+    value: windborne_clay_and_mineral_oxide_accretion
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: dry_lake
+    definition: "Dry basin or lakebed formerly occupied by standing surface water and now exposing fine lacustrine sediment."
+    relation_type: activated_by
+    value: aeolian_reworking_of_exposed_lacustrine_sediment
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: dune
+    definition: "Hill or ridge of loose sediment built by wind-driven transport and deposition."
+    relation_type: formed_by
+    value: aeolian_sediment_transport_and_deposition
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: erg
+    definition: "Broad area of desert covered by an extensive accumulation of wind-swept sand."
+    relation_type: distributed_through
+    value: migrating_sand_sea
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: hamada
+    definition: "Rocky desert landscape from which most sand and fine sediment has been removed."
+    relation_type: bounded_by
+    value: wind_exposure
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: inland_dune
+    definition: "Sand dune located away from a modern coast and formed from wind-transported continental sediment."
+    relation_type: formed_by
+    value: continental_aeolian_sand_deposition
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: medanos
+    definition: "Continental dune or dune field formed by wind-driven accumulation of inland sand."
+    relation_type: formed_by
+    value: continental_aeolian_dune_accumulation
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: mushroom_rock
+    definition: "Mushroom-shaped rock formation produced when lower rock is eroded more rapidly than the upper portion."
+    relation_type: formed_by
+    value: differential_wind_erosion
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: paha
+    definition: "Elongated asymmetric loess hill formed from wind-deposited silt and subsequently shaped by erosion."
+    relation_type: formed_by
+    value: aeolian_loess_deposition_and_erosional_shaping
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: ripple_marks
+    definition: "Small repeated ridges in loose sediment produced by current flow; aeolian ripples are formed by wind-driven grain movement."
+    relation_type: formed_by
+    value: aeolian_saltation_and_surface_creep
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: sandhill
+    definition: "Xeric ecological community developed on sandy, commonly aeolian terrain and often maintained by recurring wildfire."
+    relation_type: fixed_as
+    value: vegetation_stabilized_aeolian_sand_system
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: sastrugi
+    definition: "Sharp irregular grooves or ridges formed on a snow surface by wind erosion, deposition, and packing."
+    relation_type: formed_by
+    value: wind_packing_snow
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: snowdrift
+    definition: "Mound or bank of snow accumulated and sculpted by wind during or after snowfall."
+    relation_type: formed_by
+    value: wind_transport_and_deposition_of_snow
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: tukulan
+    definition: "Active inland sand dune or dune field occurring in Yakutia in the Russian Federation."
+    relation_type: formed_by
+    value: aeolian_reworking_of_inland_sand_deposits
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: ventifact
+    definition: "Rock eroded, faceted, or polished by wind-driven sand or ice crystals."
+    relation_type: activated_by
+    value: aeolian_abrasion
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact
+
+  - entity_id: yardang
+    definition: "Streamlined ridge or landform carved from consolidated material by wind erosion and abrasion."
+    relation_type: formed_by
+    value: wind_erosion
+    governor: jupiter
+    canonicality: primary
+    source_class: empirical_domain_fact

@@ -24,6 +24,12 @@ Passing all seven gates means `eligible_for_admission_review`, not admitted. A
 separate external one-class decision, versioned substrate release, and
 decision-ledger entry remain mandatory. Bulk promotion is prohibited.
 
+The parent-incidence results in
+`canonical/pentatonic-binding-candidates/pentatonic-7-35-parent-audit-v1.json`
+may be cited as `planning_evidence` during a class review. They do not satisfy
+any gate by themselves, execute CRT-310, change eligibility, or authorize an
+active graph relationship.
+
 The initial backlog has 70 satisfied source/complement results, 175 pending
 results, zero eligible classes, and zero admissions. Run
 `npm run validate:crt310` to verify source hashes, complement XOR closure,

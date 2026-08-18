@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "crt-347.fivefold-capability-teleology-negative-cases.v1",
+  "candidateId": "fivefold-capability-teleology-v1",
+  "cases": [
+    {
+      "caseId": "duplicate-school-id",
+      "mutation": "Rename air school to the fire schoolId, leaving two identical identity strings.",
+      "expectedCode": "duplicate_identity_rejected"
+    },
+    {
+      "caseId": "mercury-fifth-court-bit",
+      "mutation": "Set quintessence isBinaryCourtPole true and courtPoleIndex 4.",
+      "expectedCode": "mercury_register_membership_invalid"
+    },
+    {
+      "caseId": "mercury-in-pole-order",
+      "mutation": "Append Mercury to the replayed runtime poleOrder.",
+      "expectedCode": "mercury_pole_order_invalid"
+    },
+    {
+      "caseId": "zodiac-writes-court-disposition",
+      "mutation": "Set one zodiac facet writesCourtPoleDisposition true.",
+      "expectedCode": "zodiac_court_write_forbidden"
+    },
+    {
+      "caseId": "sun-moon-capability-school-pole",
+      "mutation": "Add a school that names Sun as governor with courtPoleIndex 0.",
+      "expectedCode": "sun_moon_school_pole_invalid"
+    },
+    {
+      "caseId": "numeric-ch-while-unresolved",
+      "mutation": "Set compressionCoordinateContract CH value to numeric 1 while status stays unresolved.",
+      "expectedCode": "ch_unresolved_guard_invalid"
+    },
+    {
+      "caseId": "physical-quantity-claim-true",
+      "mutation": "Set admissionBoundary physicalQuantityClaim true.",
+      "expectedCode": "physical_claim_invalid"
+    },
+    {
+      "caseId": "win-condition-runtime-predicate",
+      "mutation": "Set one win condition runtimeEnforced true and append an executable transition predicate.",
+      "expectedCode": "teleology_boundary_invalid"
+    },
+    {
+      "caseId": "active-complement-relation",
+      "mutation": "Add complementMap as an active cross-graph relation declaration.",
+      "expectedCode": "active_relation_forbidden"
+    },
+    {
+      "caseId": "active-subset-of-7-35-relation",
+      "mutation": "Add SUBSET_OF_7_35 as an active cross-graph relation declaration.",
+      "expectedCode": "active_relation_forbidden"
+    },
+    {
+      "caseId": "source-hash-drift",
+      "mutation": "Replace the first sourceBindings sha256 with all zeros.",
+      "expectedCode": "source_binding_mismatch"
+    },
+    {
+      "caseId": "unresolved-foreign-key",
+      "mutation": "Change the earth school governorRef to schemas/governors.yaml#governors.missing.",
+      "expectedCode": "foreign_key_unresolved"
+    }
+  ]
+}

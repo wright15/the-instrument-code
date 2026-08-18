@@ -1,0 +1,88 @@
+{
+  "admissionEffect": "none",
+  "candidateFingerprint": "c0195143976c706e29574c07e82d4b5d612b6d9e9128b7c2a179379bf67dfad2",
+  "checks": [
+    {
+      "checkId": "candidate-fingerprint-integrity",
+      "diagnostic": "c0195143976c706e29574c07e82d4b5d612b6d9e9128b7c2a179379bf67dfad2",
+      "status": "PASS"
+    },
+    {
+      "checkId": "dedicated-connection-contract",
+      "diagnostic": "missing guard/URI and active-endpoint equality rejected",
+      "status": "PASS"
+    },
+    {
+      "checkId": "fresh-ephemeral-instance",
+      "diagnostic": "zero initial nodes, relationships, and audit schema objects",
+      "status": "PASS"
+    },
+    {
+      "checkId": "missing-endpoint-rollback",
+      "diagnostic": "missing ScaleState rejected without partial writes or manufacture",
+      "status": "PASS"
+    },
+    {
+      "checkId": "exact-projection",
+      "diagnostic": {
+        "realizationCount": 7,
+        "edgeCount": 19
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "idempotent-reimport",
+      "diagnostic": {
+        "realizationCount": 7,
+        "edgeCount": 19
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "cypher-invariants",
+      "diagnostic": [
+        "exact_projection_counts",
+        "realization_parent_cardinality",
+        "bitwise_subset_replay",
+        "exact_edge_identity_and_evidence_envelope",
+        "exact_realization_endpoint_guard",
+        "detached_label_and_relationship_scope",
+        "forbidden_authority_property_guard",
+        "realization_shape_and_complement_separation"
+      ],
+      "status": "PASS"
+    },
+    {
+      "checkId": "scale-state-immutability",
+      "diagnostic": "ab76011d687455c08f23791a8607fb32bb0015730240fcf94aacdc8e572449ff",
+      "status": "PASS"
+    },
+    {
+      "checkId": "reset-and-schema-teardown",
+      "diagnostic": "audit data and schema absent; ScaleState fingerprint preserved",
+      "status": "PASS"
+    },
+    {
+      "checkId": "active-source-hash-parity",
+      "diagnostic": {
+        "graph/runtime/neo4j-bootstrap.mjs": "fbe48b913c6fefd9aaca642132138b45e5838bcd851a9575b6059debd91ed821",
+        "graph/runtime/neo4j-roundtrip.mjs": "60e8ce3609a3d36b3c8053ee796eb8ab9b87a8b896d41ac7be00c8f54a3cfe2b",
+        "graph/runtime/query-catalog.mjs": "c6e7f5a4bb87f0fb190e54bc5879271408d38c83fd58dbc2f6953f0523fd5e94",
+        "src/governor/court_graph_projection.py": "4a5e13ebe69aa96f4a3319bdd5f3ea19bec745b3aa024532297acc885c85bb10",
+        "src/governor/court_graph_queries.py": "3442e4cd03a3885a5cd7706d8146974eba20fc564edf08acb4bb2db0479ddcc8"
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "native-harness-cleanup",
+      "diagnostic": "temporary directory, process, Bolt port, and HTTP port released",
+      "status": "PASS"
+    }
+  ],
+  "checksFailed": 0,
+  "checksPassed": 11,
+  "graphScope": "detached_audit_only",
+  "schemaVersion": "pre-epic-400.pentatonic-binding-audit-neo4j-validation.v1",
+  "verdict": "PASS",
+  "reportFingerprint": "56e12520c6f1e74438980b634f23fa28f1e50d10532746639257793909f5b6d0"
+}

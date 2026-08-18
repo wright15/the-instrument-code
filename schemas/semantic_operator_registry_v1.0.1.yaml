@@ -1,0 +1,535 @@
+# Semantic Operator Registry v1.0.1
+# Status: Proposed canonization.
+# Layer: 4 (Semantic translation dictionary).
+# Canonical rendering definition:
+#   Render(s, e) = IntrinsicNormalForm(s) ⊕ Δ_S(e)
+#
+# This registry does not compute or duplicate structural masks. Layer 3 resolves
+# and validates the algebraic transition before Layer 4 is invoked.
+
+metadata:
+  registry_id: "semantic_operator_registry"
+  version: "1.0.1"
+  status: "admitted"
+  author: "Solomon"
+  layer: 4
+  description: >-
+    Translation dictionary mapping the 15 algebraic mutation operators to
+    Chaldean degree addresses, single-edge semantic overlays, typed physical
+    processes, symbolic physical anchors, and domain-projection deltas.
+  architecture:
+    operators_are: "verbs"
+    intrinsic_identity: "state"
+    contextual_identity: "state_plus_immediately_traversed_edge"
+    canonical_rendering_definition: "Render(s, e) = IntrinsicNormalForm(s) ⊕ Δ_S(e)"
+
+dependencies:
+  algebraic_release:
+    package: "seven-governors-mutation-algebra-audit"
+    version: "1.0.0"
+    release_id: "mutation-algebra-audit:1.0.0"
+    relationship: "foreign_key_authority"
+
+structural_enforcement:
+  authority: "upstream"
+  enforced_by:
+    - "seven-governors-mutation-algebra-audit/audit/operator-applications.csv"
+    - "seven-governors-mutation-algebra-audit/neo4j/algebra-validation.cypher"
+  validates:
+    - "XOR masks"
+    - "source and target bit eligibility"
+    - "Hamming distances"
+    - "cardinality preservation"
+    - "partial inverse laws"
+    - "commutation laws"
+    - "modal covariance"
+    - "Governor-label transport"
+  registry_contract: >-
+    This semantic registry references algebraic operator IDs. It does not
+    duplicate, recompute, or override masks, bit transitions, Hamming distances,
+    inverse domains, commutation tables, or topology-derived state identity.
+
+compression_coordinate_contract:
+  C_P:
+    name: "Photonic Compression"
+    source: "IntrinsicNormalForm"
+    overlay_access: "read_only"
+    rule: >-
+      Physical-process anchors may annotate rendering, but Layer 4 does not
+      recompute or overwrite the intrinsic C_P coordinate.
+  C_H:
+    name: "Harmonic Compression"
+    source: "IntrinsicNormalForm"
+    overlay_access: "read_only"
+    rule: >-
+      C_H is compiled upstream from the resolved state. Semantic operators may
+      consume it as context but may not derive, modify, or replace it.
+  C_S:
+    name: "Semantic Compression"
+    source: "immediately_traversed_edge"
+    overlay_access: "shade_only"
+    rule: >-
+      The active operator contributes Δ_S(e) as a non-mutating rendering
+      overlay over the destination state's Intrinsic Normal Form.
+
+route_context:
+  context_id: "Virgo_Ledger"
+  scope: "immediately_traversed_edge"
+  accumulation: "none"
+  overlay_cardinality: 1
+  replacement_rule: >-
+    Each successful traversal replaces the previous active route overlay for
+    rendering purposes. Historical edges may remain in the ledger as
+    provenance, but they are not folded into the active semantic overlay.
+  identity_effect: "none"
+  render_effect: "shade_destination_intrinsic_normal_form"
+  confluence_rule: >-
+    IntrinsicNormalForm(state) is route-independent and categorical. Route
+    Context may alter rendered emphasis but never state identity.
+
+immutability_guard:
+  overlays_may_not_overwrite: [Governor_office, anchor_tier, C_H, bitmask]
+  violation_policy: "reject_overlay_and_emit_validation_error"
+
+physical_process_contract:
+  execution_mode: "symbolic_only"
+  equation_field: "symbolic_anchor"
+  rule: >-
+    Symbolic anchors describe the physical analogy used by the semantic
+    renderer. They are not numerically evaluated in v1.0.1.
+
+operator_binding_map:
+  R1: "saturn_degree_raise_v1"
+  L1: "saturn_degree_lower_v1"
+  R2: "jupiter_degree_raise_v1"
+  L2: "jupiter_degree_lower_v1"
+  R3: "mars_degree_raise_v1"
+  L3: "mars_degree_lower_v1"
+  R4: "sun_degree_raise_v1"
+  L4: "sun_degree_lower_v1"
+  R5: "venus_degree_raise_v1"
+  L5: "venus_degree_lower_v1"
+  R6: "mercury_degree_raise_v1"
+  L6: "mercury_degree_lower_v1"
+  R7: "moon_degree_raise_v1"
+  L7: "moon_degree_lower_v1"
+  M: "modal_shift_v1"
+
+operators:
+  # ==========================================================
+  # CHALDEAN ADDRESS 1: SATURN
+  # Boundary / Initiation / Fixation
+  # ==========================================================
+  - operator_id: "saturn_degree_raise_v1"
+    algebraic_operator_ref:
+      release_id: "mutation-algebra-audit:1.0.0"
+      operator_id: "R1"
+      domain_ref: "seven-governors-mutation-algebra-audit/audit/operator-applications.csv#operator_id=R1"
+      inverse_ref: "seven-governors-mutation-algebra-audit/audit/inverse-witnesses.csv#operator_id=R1&inverse_operator_id=L1"
+    degree_governor: "Saturn"
+    degree_number: 1
+    direction: "raise"
+    physical_process:
+      name: "Crystallization / Lattice Formation"
+      physical_domain: [solid_state_physics, optics]
+      symbolic_anchor: "nλ = 2d sin(θ) (Bragg's Law for diffraction boundary)"
+    semantic_delta:
+      promotes: [rigid_fixation, hard_crystallization, impenetrable_boundary]
+      suppresses: [fluidity, tonic_root_stability, openness]
+      domain_projection_delta:
+        terrain:
+          action: "Flash-freeze or petrify; create jagged, immovable structures."
+          examples:
+            - "magma field turning to obsidian glass"
+            - "mud turning to sharp shale"
+    preserves: [intrinsic_normal_form, degree_address_assignments]
+
+  - operator_id: "saturn_degree_lower_v1"
+    algebraic_operator_ref:
+      release_id: "mutation-algebra-audit:1.0.0"
+      operator_id: "L1"
+      domain_ref: "seven-governors-mutation-algebra-audit/audit/operator-applications.csv#operator_id=L1"
+      inverse_ref: "seven-governors-mutation-algebra-audit/audit/inverse-witnesses.csv#operator_id=L1&inverse_operator_id=R1"
+    degree_governor: "Saturn"
+    degree_number: 1
+    direction: "lower"
+    physical_process:
+      name: "Subduction / Entropic Collapse"
+      physical_domain: [geophysics, thermodynamics]
+      symbolic_anchor: "ΔS ≥ 0 (Second Law of Thermodynamics for boundary dissolution)"
+    semantic_delta:
+      promotes: [boundary_dissolution, subterranean_descent, entropy]
+      suppresses: [fixation, surface_structure]
+      domain_projection_delta:
+        terrain:
+          action: "Undermine foundations; create sinkholes or subterranean voids."
+          examples:
+            - "solid ground collapsing into a sinkhole"
+            - "mountain base eroding into a cave system"
+    preserves: [intrinsic_normal_form, degree_address_assignments]
+
+  # ==========================================================
+  # CHALDEAN ADDRESS 2: JUPITER
+  # Expansion / Distribution / Wind
+  # ==========================================================
+  - operator_id: "jupiter_degree_raise_v1"
+    algebraic_operator_ref:
+      release_id: "mutation-algebra-audit:1.0.0"
+      operator_id: "R2"
+      domain_ref: "seven-governors-mutation-algebra-audit/audit/operator-applications.csv#operator_id=R2"
+      inverse_ref: "seven-governors-mutation-algebra-audit/audit/inverse-witnesses.csv#operator_id=R2&inverse_operator_id=L2"
+    degree_governor: "Jupiter"
+    degree_number: 2
+    direction: "raise"
+    physical_process:
+      name: "Rayleigh Scattering / Updraft"
+      physical_domain: [optics, fluid_dynamics]
+      symbolic_anchor: "I ∝ 1/λ^4 (Rayleigh scattering intensity)"
+    semantic_delta:
+      promotes: [updraft, high_altitude_distribution, rarefied_flow]
+      suppresses: [ground_level_drag]
+      domain_projection_delta:
+        atmosphere:
+          action: "Lift and distribute matter through rarefied high-altitude flow."
+          examples: [updrafts, high_atmospheric_haze]
+        terrain:
+          action: "Erode through wind and favor streamlined, exposed formations."
+          examples: [yardangs, migrating_ergs, high_plateaus]
+    preserves: [intrinsic_normal_form, degree_address_assignments]
+
+  - operator_id: "jupiter_degree_lower_v1"
+    algebraic_operator_ref:
+      release_id: "mutation-algebra-audit:1.0.0"
+      operator_id: "L2"
+      domain_ref: "seven-governors-mutation-algebra-audit/audit/operator-applications.csv#operator_id=L2"
+      inverse_ref: "seven-governors-mutation-algebra-audit/audit/inverse-witnesses.csv#operator_id=L2&inverse_operator_id=R2"
+    degree_governor: "Jupiter"
+    degree_number: 2
+    direction: "lower"
+    physical_process:
+      name: "Atmospheric Drag / Ground Fog"
+      physical_domain: [fluid_dynamics, atmospheric_physics]
+      symbolic_anchor: "F_d = ½ρv²C_dA (drag equation for stifled flow)"
+    semantic_delta:
+      promotes: [dense_fog, ground_level_drag, stifled_distribution]
+      suppresses: [free_expansion]
+      domain_projection_delta:
+        atmosphere:
+          action: "Stifle circulation and accumulate dense matter near the ground."
+          examples: [dense_ground_fog, stagnant_air]
+        terrain:
+          action: "Deposit heavy particulates and inhibit migration."
+          examples: [loess_hills, stagnant_dunes]
+    preserves: [intrinsic_normal_form, degree_address_assignments]
+
+  # ==========================================================
+  # CHALDEAN ADDRESS 3: MARS
+  # Activation / Fire / Force
+  # ==========================================================
+  - operator_id: "mars_degree_raise_v1"
+    algebraic_operator_ref:
+      release_id: "mutation-algebra-audit:1.0.0"
+      operator_id: "R3"
+      domain_ref: "seven-governors-mutation-algebra-audit/audit/operator-applications.csv#operator_id=R3"
+      inverse_ref: "seven-governors-mutation-algebra-audit/audit/inverse-witnesses.csv#operator_id=R3&inverse_operator_id=L3"
+    degree_governor: "Mars"
+    degree_number: 3
+    direction: "raise"
+    physical_process:
+      name: "Combustion / Ignition"
+      physical_domain: [chemical_kinetics, thermodynamics]
+      symbolic_anchor: "k = A e^(-Ea/RT) (Arrhenius equation for activation)"
+    semantic_delta:
+      promotes: [ignition, intense_heat, combustion]
+      suppresses: [cool_structure]
+      domain_projection_delta:
+        terrain:
+          action: "Ignite; introduce volcanic or high-kinetic-energy formations."
+          examples: [active_volcanic_vents, impact_craters, scorched_earth]
+    preserves: [intrinsic_normal_form, degree_address_assignments]
+
+  - operator_id: "mars_degree_lower_v1"
+    algebraic_operator_ref:
+      release_id: "mutation-algebra-audit:1.0.0"
+      operator_id: "L3"
+      domain_ref: "seven-governors-mutation-algebra-audit/audit/operator-applications.csv#operator_id=L3"
+      inverse_ref: "seven-governors-mutation-algebra-audit/audit/inverse-witnesses.csv#operator_id=L3&inverse_operator_id=R3"
+    degree_governor: "Mars"
+    degree_number: 3
+    direction: "lower"
+    physical_process:
+      name: "Smoldering / Internal Heat"
+      physical_domain: [thermodynamics, geophysics]
+      symbolic_anchor: "Q = mcΔT (heat capacity without phase change)"
+    semantic_delta:
+      promotes: [smoldering, internal_heat, dampened_force]
+      suppresses: [explosive_activation]
+      domain_projection_delta:
+        terrain:
+          action: "Compress energy inward; create friction- or pressure-bearing terrain."
+          examples: [geothermal_hot_springs, high_friction_fault_lines, slow_moving_glaciers]
+    preserves: [intrinsic_normal_form, degree_address_assignments]
+
+  # ==========================================================
+  # CHALDEAN ADDRESS 4: SUN
+  # Source / Emission / Actuality
+  # ==========================================================
+  - operator_id: "sun_degree_raise_v1"
+    algebraic_operator_ref:
+      release_id: "mutation-algebra-audit:1.0.0"
+      operator_id: "R4"
+      domain_ref: "seven-governors-mutation-algebra-audit/audit/operator-applications.csv#operator_id=R4"
+      inverse_ref: "seven-governors-mutation-algebra-audit/audit/inverse-witnesses.csv#operator_id=R4&inverse_operator_id=L4"
+    degree_governor: "Sun"
+    degree_number: 4
+    direction: "raise"
+    physical_process:
+      name: "Thermal Emission / Expansion"
+      physical_domain: [optics, thermodynamics]
+      symbolic_anchor: "E_γ = hc/λ (Planck-Einstein relation for source emission)"
+    semantic_delta:
+      promotes:
+        - expansion
+        - source_emission
+        - expansive_openness
+        - emissive_openness
+        - boundary_dissolution
+        - potential_energy
+      suppresses: [gravity, fixation, terrestrial_boundary]
+      domain_projection_delta:
+        terrain:
+          action: "Erode boundaries; increase scale, openness, and emissive reach."
+          examples:
+            - "canyon widening into a plain"
+            - "valley opening to a plateau"
+        biome:
+          action: "Open formerly enclosed growth into exposed space."
+          examples: [forest_clearing]
+    preserves: [intrinsic_normal_form, degree_address_assignments]
+
+  - operator_id: "sun_degree_lower_v1"
+    algebraic_operator_ref:
+      release_id: "mutation-algebra-audit:1.0.0"
+      operator_id: "L4"
+      domain_ref: "seven-governors-mutation-algebra-audit/audit/operator-applications.csv#operator_id=L4"
+      inverse_ref: "seven-governors-mutation-algebra-audit/audit/inverse-witnesses.csv#operator_id=L4&inverse_operator_id=R4"
+    degree_governor: "Sun"
+    degree_number: 4
+    direction: "lower"
+    physical_process:
+      name: "Thermal Contraction / Gravitational Pull"
+      physical_domain: [mechanics, thermodynamics]
+      symbolic_anchor: "F = G(m₁m₂)/r² (Newton's law of universal gravitation)"
+    semantic_delta:
+      promotes: [gravity, boundary_formation, terrestrial_fixation]
+      suppresses: [expansion, source_emission, openness]
+      domain_projection_delta:
+        terrain:
+          action: "Impose hard limits; restrict movement and visibility."
+          examples:
+            - "plain collapsing into a canyon"
+            - "open field walled by mountains"
+            - "enclosed cavern"
+    preserves: [intrinsic_normal_form, degree_address_assignments]
+
+  # ==========================================================
+  # CHALDEAN ADDRESS 5: VENUS
+  # Coupling / Water / Cohesion
+  # ==========================================================
+  - operator_id: "venus_degree_raise_v1"
+    algebraic_operator_ref:
+      release_id: "mutation-algebra-audit:1.0.0"
+      operator_id: "R5"
+      domain_ref: "seven-governors-mutation-algebra-audit/audit/operator-applications.csv#operator_id=R5"
+      inverse_ref: "seven-governors-mutation-algebra-audit/audit/inverse-witnesses.csv#operator_id=R5&inverse_operator_id=L5"
+    degree_governor: "Venus"
+    degree_number: 5
+    direction: "raise"
+    physical_process:
+      name: "Surface Tension / Vortex"
+      physical_domain: [fluid_dynamics, interfacial_physics]
+      symbolic_anchor: "γ = (1/2)F/L (surface tension for a two-surface cohesive film)"
+    semantic_delta:
+      promotes: [intensified_bond, high_tension_cohesion, vortex]
+      suppresses: [gentle_flow]
+      domain_projection_delta:
+        hydrology:
+          action: "Tighten bonds; create high-pressure or rotational water features."
+          examples: [whirlpools, meander_cutoffs, oxbow_lakes]
+        terrain:
+          action: "Compress water-bound terrain into narrow channels."
+          examples: [compressed_gorges]
+    preserves: [intrinsic_normal_form, degree_address_assignments]
+
+  - operator_id: "venus_degree_lower_v1"
+    algebraic_operator_ref:
+      release_id: "mutation-algebra-audit:1.0.0"
+      operator_id: "L5"
+      domain_ref: "seven-governors-mutation-algebra-audit/audit/operator-applications.csv#operator_id=L5"
+      inverse_ref: "seven-governors-mutation-algebra-audit/audit/inverse-witnesses.csv#operator_id=L5&inverse_operator_id=R5"
+    degree_governor: "Venus"
+    degree_number: 5
+    direction: "lower"
+    physical_process:
+      name: "Solvent Dissolution / Swamp"
+      physical_domain: [physical_chemistry, thermodynamics]
+      symbolic_anchor: "ΔG = ΔH - TΔS (Gibbs free energy for dissolution)"
+    semantic_delta:
+      promotes: [dissolved_bond, stagnant_water, swamp]
+      suppresses: [cohesive_flow]
+      domain_projection_delta:
+        hydrology:
+          action: "Dissolve bonds; create stagnant or absorbing water systems."
+          examples: [marshlands, deltas]
+        terrain:
+          action: "Saturate depressions and fill dissolved voids with water."
+          examples: [water_filled_sinkholes]
+    preserves: [intrinsic_normal_form, degree_address_assignments]
+
+  # ==========================================================
+  # CHALDEAN ADDRESS 6: MERCURY
+  # Transduction / Interface / Hinge
+  # ==========================================================
+  - operator_id: "mercury_degree_raise_v1"
+    algebraic_operator_ref:
+      release_id: "mutation-algebra-audit:1.0.0"
+      operator_id: "R6"
+      domain_ref: "seven-governors-mutation-algebra-audit/audit/operator-applications.csv#operator_id=R6"
+      inverse_ref: "seven-governors-mutation-algebra-audit/audit/inverse-witnesses.csv#operator_id=R6&inverse_operator_id=L6"
+    degree_governor: "Mercury"
+    degree_number: 6
+    direction: "raise"
+    physical_process:
+      name: "Photosynthesis / Catalysis"
+      physical_domain: [biochemistry, chemical_kinetics]
+      symbolic_anchor: "6CO₂ + 6H₂O + hν → C₆H₁₂O₆ + 6O₂ (photosynthesis reaction)"
+    semantic_delta:
+      promotes: [accelerated_interface, sharp_translation, high_bandwidth]
+      suppresses: [sluggishness]
+      domain_projection_delta:
+        hydrology:
+          action: "Accelerate conversion across water-land interfaces."
+          examples: [river_deltas, tidal_estuaries]
+        constructed_space:
+          action: "Create rapid exchange and decision interfaces."
+          examples: [crossroads]
+    preserves: [intrinsic_normal_form, degree_address_assignments]
+
+  - operator_id: "mercury_degree_lower_v1"
+    algebraic_operator_ref:
+      release_id: "mutation-algebra-audit:1.0.0"
+      operator_id: "L6"
+      domain_ref: "seven-governors-mutation-algebra-audit/audit/operator-applications.csv#operator_id=L6"
+      inverse_ref: "seven-governors-mutation-algebra-audit/audit/inverse-witnesses.csv#operator_id=L6&inverse_operator_id=R6"
+    degree_governor: "Mercury"
+    degree_number: 6
+    direction: "lower"
+    physical_process:
+      name: "Metabolic Lag / Friction"
+      physical_domain: [mechanics, biophysics]
+      symbolic_anchor: "μ = F_f/F_n (coefficient of friction for interface drag)"
+    semantic_delta:
+      promotes: [lagging_interface, dense_translation, friction]
+      suppresses: [speed]
+      domain_projection_delta:
+        terrain:
+          action: "Slow conversion; create dense, friction-heavy terrain."
+          examples: [boggy_ground, ice_blocked_passages]
+        constructed_space:
+          action: "Increase navigational friction and translation cost."
+          examples: [winding_labyrinthine_paths]
+    preserves: [intrinsic_normal_form, degree_address_assignments]
+
+  # ==========================================================
+  # CHALDEAN ADDRESS 7: MOON
+  # Reception / Experience / Reactivity
+  # ==========================================================
+  - operator_id: "moon_degree_raise_v1"
+    algebraic_operator_ref:
+      release_id: "mutation-algebra-audit:1.0.0"
+      operator_id: "R7"
+      domain_ref: "seven-governors-mutation-algebra-audit/audit/operator-applications.csv#operator_id=R7"
+      inverse_ref: "seven-governors-mutation-algebra-audit/audit/inverse-witnesses.csv#operator_id=R7&inverse_operator_id=L7"
+    degree_governor: "Moon"
+    degree_number: 7
+    direction: "raise"
+    physical_process:
+      name: "Reflected Tension / Reactivity"
+      physical_domain: [optics, interfacial_physics]
+      symbolic_anchor: "I_r/I_i = ((n₂-n₁)/(n₂+n₁))² (normal-incidence Fresnel reflectance)"
+    semantic_delta:
+      promotes: [tension, leading_pull, anticipation, sharp_focus]
+      suppresses: [repose, groundedness, lived_inertia]
+      domain_projection_delta:
+        hydrology:
+          action: "Introduce kinetic tension or suspended potential into water systems."
+          examples:
+            - "calm lake becoming a rushing river"
+            - "geyser under pressure"
+        terrain:
+          action: "Suspend mass in a reactive or precarious configuration."
+          examples: [stable_cliff_becoming_an_overhang]
+    preserves: [intrinsic_normal_form, degree_address_assignments]
+
+  - operator_id: "moon_degree_lower_v1"
+    algebraic_operator_ref:
+      release_id: "mutation-algebra-audit:1.0.0"
+      operator_id: "L7"
+      domain_ref: "seven-governors-mutation-algebra-audit/audit/operator-applications.csv#operator_id=L7"
+      inverse_ref: "seven-governors-mutation-algebra-audit/audit/inverse-witnesses.csv#operator_id=L7&inverse_operator_id=R7"
+    degree_governor: "Moon"
+    degree_number: 7
+    direction: "lower"
+    physical_process:
+      name: "Reflected Inertia / Grounded Release"
+      physical_domain: [mechanics, continuum_physics]
+      symbolic_anchor: "ρ = m/V (density of the receiving medium)"
+    semantic_delta:
+      promotes: [groundedness, active_release, kinetic_action, tempo, outward_force]
+      suppresses: [tension, anticipation, receptive_pull]
+      domain_projection_delta:
+        hydrology:
+          action: "Ground energy and release receptive tension into active rolling force."
+          examples:
+            - "suspended waterfall becoming rolling rapids"
+        atmosphere:
+          action: "Convert suspended stillness into steady outward motion."
+          examples:
+            - "still air becoming steady wind"
+    preserves: [intrinsic_normal_form, degree_address_assignments]
+
+  # ==========================================================
+  # MODAL OPERATOR M
+  # Nodal shift and Governor-label transport
+  # ==========================================================
+  - operator_id: "modal_shift_v1"
+    algebraic_operator_ref:
+      release_id: "mutation-algebra-audit:1.0.0"
+      operator_id: "M"
+      domain_ref: "seven-governors-mutation-algebra-audit/audit/operator-applications.csv#operator_id=M"
+      inverse_ref: "seven-governors-mutation-algebra-audit/audit/inverse-witnesses.csv#operator_id=M&inverse_operator_id=M^6"
+      law_refs:
+        - "seven-governors-mutation-algebra-audit/audit/cycle-identities.csv#minimal_period_seven=true&result=PASS"
+        - "seven-governors-mutation-algebra-audit/audit/modal-covariance-witnesses.csv#result=PASS"
+        - "seven-governors-mutation-algebra-audit/neo4j/algebra-validation.cypher#degree_governor_transport_plus_two"
+    degree_governor: null
+    degree_number: null
+    direction: "rotate"
+    structural_effect_summary: >-
+      Preserves unrooted pitch-class content and Forte family while transporting
+      the tonic axis, State Governor, and Degree-Governor addresses. The upstream
+      algebra enforces M^7 = I and +2 Governor-label transport modulo 7.
+    physical_process:
+      name: "Gravitational Recentering"
+      physical_domain: [coordinate_geometry]
+      symbolic_anchor: "N/A — axis transport, not a scalar physical equation"
+    semantic_delta:
+      promotes: [perspective_shift, gravitational_recentering]
+      suppresses: [previous_tonic_axis]
+      domain_projection_delta:
+        environment:
+          action: >-
+            Shift the center of gravity of the environment. Its intrinsic form
+            remains unchanged, while salience and perspective are recentered.
+    preserves: [unrooted_pitch_class_content, forte_family]
+    transports: [tonic_axis, State_Governor, Degree_Governor_addresses]

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "crt-348.fivefold-engine-admission-contract.v1",
+  "title": "Fivefold engine admission contract (proposed)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "contractId",
+    "contractStatus",
+    "admission",
+    "gate",
+    "evidence",
+    "admissionRecord",
+    "extendsAuthorityContract",
+    "source",
+    "sourceSha256",
+    "runtimePolicyReference",
+    "effectBoundary",
+    "promotionInventory",
+    "remainProposed",
+    "promotedFields",
+    "forbiddenEquivalences",
+    "explicitlyNotClaimed",
+    "activationPreconditions",
+    "activationRecord"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "crt-348.fivefold-engine-admission-contract.v1" },
+    "contractId": { "const": "fivefold-engine-admission-contract:0.1.0" },
+    "contractStatus": { "const": "accepted_crt_348" },
+    "admission": { "const": "admitted" },
+    "gate": { "const": "CRT-348" },
+    "evidence": { "const": "qa/fivefold-engine-promotion-evidence.json" },
+    "admissionRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "admissionId", "integratedReleaseId", "decisionLedgerEntry"],
+      "properties": {
+        "path": { "const": "provenance/fivefold-engine-admission-release.json" },
+        "admissionId": { "const": "fivefold-engine-admission:crt-348:1.0.0" },
+        "integratedReleaseId": { "const": "seven-governors-integrated-1.7.0" },
+        "decisionLedgerEntry": { "type": "string", "minLength": 1 }
+      }
+    },
+    "extendsAuthorityContract": { "const": "schemas/court-admission-contract.json" },
+    "source": { "const": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml" },
+    "sourceSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "runtimePolicyReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "const": "schemas/court-runtime-policy.json" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "effectBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["runtimeEffect", "graphEffect", "policyEffect", "ledgerEffect", "admissionEffect", "physicalQuantityClaim"],
+      "properties": {
+        "runtimeEffect": { "const": false },
+        "graphEffect": { "const": false },
+        "policyEffect": { "const": false },
+        "ledgerEffect": { "const": false },
+        "admissionEffect": { "const": false },
+        "physicalQuantityClaim": { "const": false }
+      }
+    },
+    "promotionInventory": { "type": "array", "minItems": 10, "maxItems": 10, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "remainProposed": { "type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "promotedFields": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["physicalQuantityClaim", "poleOrder", "bitSemantics", "canonicalStates", "canonicalTransitions", "geometry", "guards"],
+      "properties": {
+        "physicalQuantityClaim": { "type": "object", "additionalProperties": false, "required": ["value", "sourcePointer", "schemaPin"], "properties": { "value": { "const": false }, "sourcePointer": { "const": "fivefold_engine.physical_quantity_claim" }, "schemaPin": { "type": "string", "minLength": 1 } } },
+        "poleOrder": { "type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true, "items": { "type": "object", "additionalProperties": false, "required": ["governor", "element", "function", "diagnosticQuestion"], "properties": { "governor": { "enum": ["Mars", "Jupiter", "Venus", "Saturn"] }, "element": { "enum": ["Fire", "Air", "Water", "Earth"] }, "function": { "type": "string", "minLength": 1 }, "diagnosticQuestion": { "type": "string", "minLength": 1 } } } },
+        "bitSemantics": { "type": "object", "additionalProperties": false, "required": ["0", "1", "zodiacSignNames", "sourcePointer"], "properties": { "0": { "const": "External" }, "1": { "const": "Internal" }, "zodiacSignNames": { "const": "excluded" }, "sourcePointer": { "const": "fivefold_engine.bit_semantics" } } },
+        "canonicalStates": { "type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "items": { "type": "object", "additionalProperties": false, "required": ["stateId", "vector", "internalPoles", "kappaCourt"], "properties": { "stateId": { "enum": ["C0", "C1", "C2", "C3", "C4"] }, "vector": { "enum": ["0000", "1000", "1100", "1110", "1111"] }, "internalPoles": { "type": "array", "uniqueItems": true, "items": { "enum": ["Mars", "Jupiter", "Venus", "Saturn"] } }, "kappaCourt": { "type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": { "numerator": { "type": "integer", "minimum": 0 }, "denominator": { "type": "integer", "minimum": 1 } } } } } },
+        "canonicalTransitions": { "type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true, "items": { "type": "object", "additionalProperties": false, "required": ["transitionId", "from", "to", "pole"], "properties": { "transitionId": { "type": "string", "minLength": 1 }, "from": { "enum": ["C0", "C1", "C2", "C3", "C4"] }, "to": { "enum": ["C0", "C1", "C2", "C3", "C4"] }, "pole": { "enum": ["Mars", "Jupiter", "Venus", "Saturn"] } } } },
+        "geometry": { "type": "object", "additionalProperties": false, "required": ["kappaFormula", "kappaCourtValues", "pairedMaskHammingFormula", "hammingMatrix", "signedGramMatrix", "gramMatrix", "canonicalPathSize"], "properties": { "kappaFormula": { "const": "kappa(C_i) = i/4" }, "kappaCourtValues": { "type": "array", "minItems": 5, "maxItems": 5, "items": { "type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": { "numerator": { "type": "integer", "minimum": 0 }, "denominator": { "type": "integer", "minimum": 1 } } } }, "pairedMaskHammingFormula": { "const": "d_H(C_i,C_j) = 2*abs(i-j)" }, "hammingMatrix": { "type": "array", "minItems": 5, "maxItems": 5, "items": { "type": "array", "minItems": 5, "maxItems": 5, "items": { "type": "integer", "minimum": 0 } } }, "signedGramMatrix": { "const": "2*I_4" }, "gramMatrix": { "type": "array", "minItems": 4, "maxItems": 4, "items": { "type": "array", "minItems": 4, "maxItems": 4, "items": { "type": "integer", "minimum": 0 } } }, "canonicalPathSize": { "const": 5 } } },
+        "guards": { "type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true, "items": { "type": "object", "additionalProperties": false, "required": ["guardLiteral", "enforcementPointer"], "properties": { "guardLiteral": { "type": "string", "minLength": 1 }, "enforcementPointer": { "type": "string", "minLength": 1 } } } }
+      }
+    },
+    "forbiddenEquivalences": { "type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "explicitlyNotClaimed": { "type": "array", "minItems": 11, "maxItems": 11, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "activationPreconditions": { "type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "activationRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["activatedBy", "activationDate", "releaseRolloutNote"],
+      "properties": {
+        "activatedBy": { "type": "string", "minLength": 1 },
+        "activationDate": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "releaseRolloutNote": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "crt-348.fivefold-engine-admission.v1",
+  "admissionId": "fivefold-engine-admission:crt-348:1.0.0",
+  "integratedReleaseId": "seven-governors-integrated-1.7.0",
+  "status": "admitted",
+  "admissionGate": "CRT-348",
+  "historicalCandidateStatusesPreserved": true,
+  "admittedScope": {
+    "promotedItems": [
+      "fivefold_engine.physical_quantity_claim=false",
+      "fivefold_engine.pole_order",
+      "fivefold_engine.bit_semantics",
+      "fivefold_engine.canonical_states",
+      "fivefold_engine.canonical_transitions",
+      "fivefold_engine.geometry.kappa_formula",
+      "fivefold_engine.geometry.paired_mask_hamming_formula",
+      "fivefold_engine.geometry.signed_gram_matrix",
+      "fivefold_engine.geometry.canonical_path_size",
+      "fivefold_engine.guards"
+    ],
+    "contractId": "fivefold-engine-admission-contract:0.1.0",
+    "contractStatus": "accepted_crt_348",
+    "geometry": {
+      "kappaFormula": "kappa(C_i) = i/4",
+      "pairedMaskHammingFormula": "d_H(C_i,C_j) = 2*abs(i-j)",
+      "signedGramMatrix": "2*I_4",
+      "canonicalPathSize": 5
+    }
+  },
+  "remainProposed": [
+    "fivefold_engine.macro_bracket",
+    "fivefold_engine.controller",
+    "fivefold_engine.runtime_cycle"
+  ],
+  "explicitlyNotClaimed": [
+    "win-condition enforcement",
+    "zodiac-to-Court runtime binding",
+    "concurrent Governor/Court transition envelope",
+    "electromagnetic or thermodynamic physical claims",
+    "active complement relation",
+    "active SUBSET_OF_7_35 projection",
+    "bulk availability of unadmitted pentatonic set classes",
+    "CRT-310 gate satisfaction"
+  ],
+  "artifactBindings": [
+    {
+      "artifactId": "crt-348-contract",
+      "path": "schemas/fivefold-engine-admission-contract.json",
+      "sha256": "7001103470d95e7c906e670851a9c12898b025dae01c1922da590797e6a094fc"
+    },
+    {
+      "artifactId": "fivefold-engine-source",
+      "path": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml",
+      "sha256": "9cbf038c93a72719387e6a8094f5b466a79e61ce03371f5b2334fb26a480b64a"
+    },
+    {
+      "artifactId": "crt-305-runtime-policy",
+      "path": "schemas/court-runtime-policy.json",
+      "sha256": "5164b74bf6cbbb55625eb0e9b958542cf20ddacb426813b7a93c1bffd7347605"
+    },
+    {
+      "artifactId": "crt-303-harmonic-registry",
+      "path": "seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json",
+      "sha256": "75b3ffaa0b126c4dbf0abf6e42a4674724092b0e403a2862d893b6f1493d0e6f"
+    },
+    {
+      "artifactId": "crt-347-planning-evidence",
+      "path": "canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json",
+      "sha256": "8491dd014b77ce21925dea47ca735901e3a380b2e626c8de7bcb5c2f27528ab9"
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "evidenceId": "crt-348-promotion-evidence",
+      "path": "qa/fivefold-engine-promotion-evidence.json",
+      "sha256": "cd120198c6b3cec48061914a4b3c572475aea4c00728d296af0da7368c06fdb4",
+      "reportFingerprint": "7c545c569fa4801d84c1596c1b45aedd5512bd98ba18b855ec49b76bb651e61c"
+    },
+    {
+      "evidenceId": "crt-347-validation",
+      "path": "qa/fivefold-capability-teleology-validation.json",
+      "reportFingerprint": "2a6542b857b8f73fb57369004ca2b2624ed62f547465968de3c34844722c69de"
+    }
+  ],
+  "decisionLedgerEntry": "Fivefold engine promotion admission (CRT-348) — 2026-08-17",
+  "admissionFingerprint": "fca20e66cb28b6cb813ef486a096ecbaf3405cd18e4f32ce4e426f5f3d29f5a4"
+}

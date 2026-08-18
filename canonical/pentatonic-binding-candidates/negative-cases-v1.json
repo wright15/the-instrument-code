@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "pre-epic-400.pentatonic-7-35-negative-cases.v1",
+  "candidateId": "pentatonic-7-35-parent-audit-v1",
+  "cases": [
+    {
+      "caseId": "universal-three-parent-claim",
+      "mutation": "set every Forte class parentCountPerRealization to 3",
+      "expectedCode": "universal_three_parent_claim_rejected"
+    },
+    {
+      "caseId": "five-32-parent-promotion",
+      "mutation": "set the 5-32 class parentCountPerRealization to 3",
+      "expectedCode": "five_32_parent_count_invalid"
+    },
+    {
+      "caseId": "mars-pair-complement-substitution",
+      "mutation": "replace the Mars internal source string with the characterwise complement",
+      "expectedCode": "mars_internal_relation_invalid"
+    },
+    {
+      "caseId": "coordinate-collision-1321",
+      "mutation": "claim constructive-coordinate integer 1321 is identical to Court pitch mask 1321",
+      "expectedCode": "coordinate_collision_identity_forbidden"
+    },
+    {
+      "caseId": "c2-c4-parent-window-swap",
+      "mutation": "replace the C2 parent window with the C4 parent window",
+      "expectedCode": "c2_parent_window_invalid"
+    },
+    {
+      "caseId": "class-as-subset-endpoint",
+      "mutation": "disable the exact-realization-only subset endpoint guard",
+      "expectedCode": "class_subset_endpoint_guard_invalid"
+    },
+    {
+      "caseId": "complement-as-parent-edge",
+      "mutation": "append one exact complement mask to a pitch-set parentMasks array",
+      "expectedCode": "complement_used_as_parent"
+    },
+    {
+      "caseId": "source-hash-drift",
+      "mutation": "replace one authoritative source SHA-256",
+      "expectedCode": "source_binding_mismatch"
+    },
+    {
+      "caseId": "pitch-set-parent-tamper",
+      "mutation": "remove one valid parent from a three-parent pitch-set record",
+      "expectedCode": "parent_incidence_invalid"
+    }
+  ]
+}

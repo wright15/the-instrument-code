@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "crt-348.fivefold-engine-admission-contract.v1",
+  "contractId": "fivefold-engine-admission-contract:0.1.0",
+  "contractStatus": "accepted_crt_348",
+  "admission": "admitted",
+  "gate": "CRT-348",
+  "evidence": "qa/fivefold-engine-promotion-evidence.json",
+  "admissionRecord": {
+    "path": "provenance/fivefold-engine-admission-release.json",
+    "admissionId": "fivefold-engine-admission:crt-348:1.0.0",
+    "integratedReleaseId": "seven-governors-integrated-1.7.0",
+    "decisionLedgerEntry": "Fivefold engine promotion admission (CRT-348) — 2026-08-17"
+  },
+  "extendsAuthorityContract": "schemas/court-admission-contract.json",
+  "source": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml",
+  "sourceSha256": "9cbf038c93a72719387e6a8094f5b466a79e61ce03371f5b2334fb26a480b64a",
+  "runtimePolicyReference": {
+    "path": "schemas/court-runtime-policy.json",
+    "sha256": "5164b74bf6cbbb55625eb0e9b958542cf20ddacb426813b7a93c1bffd7347605"
+  },
+  "effectBoundary": {
+    "runtimeEffect": false,
+    "graphEffect": false,
+    "policyEffect": false,
+    "ledgerEffect": false,
+    "admissionEffect": false,
+    "physicalQuantityClaim": false
+  },
+  "promotionInventory": [
+    "fivefold_engine.physical_quantity_claim=false",
+    "fivefold_engine.pole_order",
+    "fivefold_engine.bit_semantics",
+    "fivefold_engine.canonical_states",
+    "fivefold_engine.canonical_transitions",
+    "fivefold_engine.geometry.kappa_formula",
+    "fivefold_engine.geometry.paired_mask_hamming_formula",
+    "fivefold_engine.geometry.signed_gram_matrix",
+    "fivefold_engine.geometry.canonical_path_size",
+    "fivefold_engine.guards"
+  ],
+  "remainProposed": [
+    "fivefold_engine.macro_bracket",
+    "fivefold_engine.controller",
+    "fivefold_engine.runtime_cycle"
+  ],
+  "promotedFields": {
+    "physicalQuantityClaim": {
+      "value": false,
+      "sourcePointer": "fivefold_engine.physical_quantity_claim",
+      "schemaPin": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold-engine.schema.json#/properties/fivefold_engine/properties/physical_quantity_claim"
+    },
+    "poleOrder": [
+      {
+        "governor": "Mars",
+        "element": "Fire",
+        "function": "energy_modulation",
+        "diagnosticQuestion": "How does force enter the pattern?"
+      },
+      {
+        "governor": "Jupiter",
+        "element": "Air",
+        "function": "direction_and_distribution",
+        "diagnosticQuestion": "Where is the flow going?"
+      },
+      {
+        "governor": "Venus",
+        "element": "Water",
+        "function": "selective_cohesion",
+        "diagnosticQuestion": "What enters meaningful relation?"
+      },
+      {
+        "governor": "Saturn",
+        "element": "Earth",
+        "function": "constraint_and_form",
+        "diagnosticQuestion": "What can the flow not do?"
+      }
+    ],
+    "bitSemantics": {
+      "0": "External",
+      "1": "Internal",
+      "zodiacSignNames": "excluded",
+      "sourcePointer": "fivefold_engine.bit_semantics"
+    },
+    "canonicalStates": [
+      {"stateId": "C0", "vector": "0000", "internalPoles": [], "kappaCourt": {"numerator": 0, "denominator": 1}},
+      {"stateId": "C1", "vector": "1000", "internalPoles": ["Mars"], "kappaCourt": {"numerator": 1, "denominator": 4}},
+      {"stateId": "C2", "vector": "1100", "internalPoles": ["Mars", "Jupiter"], "kappaCourt": {"numerator": 1, "denominator": 2}},
+      {"stateId": "C3", "vector": "1110", "internalPoles": ["Mars", "Jupiter", "Venus"], "kappaCourt": {"numerator": 3, "denominator": 4}},
+      {"stateId": "C4", "vector": "1111", "internalPoles": ["Mars", "Jupiter", "Venus", "Saturn"], "kappaCourt": {"numerator": 1, "denominator": 1}}
+    ],
+    "canonicalTransitions": [
+      {"transitionId": "court:C0:C1", "from": "C0", "to": "C1", "pole": "Mars"},
+      {"transitionId": "court:C1:C2", "from": "C1", "to": "C2", "pole": "Jupiter"},
+      {"transitionId": "court:C2:C3", "from": "C2", "to": "C3", "pole": "Venus"},
+      {"transitionId": "court:C3:C4", "from": "C3", "to": "C4", "pole": "Saturn"}
+    ],
+    "geometry": {
+      "kappaFormula": "kappa(C_i) = i/4",
+      "kappaCourtValues": [
+        {"numerator": 0, "denominator": 1},
+        {"numerator": 1, "denominator": 4},
+        {"numerator": 1, "denominator": 2},
+        {"numerator": 3, "denominator": 4},
+        {"numerator": 1, "denominator": 1}
+      ],
+      "pairedMaskHammingFormula": "d_H(C_i,C_j) = 2*abs(i-j)",
+      "hammingMatrix": [
+        [0, 2, 4, 6, 8],
+        [2, 0, 2, 4, 6],
+        [4, 2, 0, 2, 4],
+        [6, 4, 2, 0, 2],
+        [8, 6, 4, 2, 0]
+      ],
+      "signedGramMatrix": "2*I_4",
+      "gramMatrix": [
+        [2, 0, 0, 0],
+        [0, 2, 0, 0],
+        [0, 0, 2, 0],
+        [0, 0, 0, 2]
+      ],
+      "canonicalPathSize": 5
+    },
+    "guards": [
+      {
+        "guardLiteral": "Ordinary movement is adjacent.",
+        "enforcementPointer": "src/governor/court_runtime.py#court_policy_move_not_adjacent"
+      },
+      {
+        "guardLiteral": "A non-adjacent jump must be expanded or explicitly marked exceptional.",
+        "enforcementPointer": "src/governor/court_runtime.py#translocation-evidence-gate"
+      },
+      {
+        "guardLiteral": "Court state is runtime context, not State Governor identity.",
+        "enforcementPointer": "schemas/court-admission-contract.json#namespaceRules[].nonEquivalence"
+      },
+      {
+        "guardLiteral": "kappa_court is not C_P, C_H, C_S, temperature, entropy, enthalpy, or free energy.",
+        "enforcementPointer": "schemas/court-runtime-policy.json#forbiddenKappaNamespaces"
+      }
+    ]
+  },
+  "forbiddenEquivalences": [
+    "physical.C_P",
+    "harmonic.C_H",
+    "semantic.C_S",
+    "physical.temperature",
+    "physical.entropy",
+    "physical.enthalpy",
+    "physical.freeEnergy"
+  ],
+  "explicitlyNotClaimed": [
+    "fivefold_engine.macro_bracket",
+    "fivefold_engine.controller",
+    "fivefold_engine.runtime_cycle",
+    "win-condition enforcement",
+    "zodiac-to-Court runtime binding",
+    "concurrent Governor/Court transition envelope",
+    "electromagnetic or thermodynamic physical claims",
+    "active complement relation",
+    "active SUBSET_OF_7_35 projection",
+    "bulk availability of unadmitted pentatonic set classes",
+    "CRT-310 gate satisfaction"
+  ],
+  "activationPreconditions": [
+    "maintainer approval after evidence review",
+    "decision-ledger amendment",
+    "SOURCE_AUTHORITY additive row",
+    "release version assignment",
+    "contractStatus transition to admitted in a new versioned contract"
+  ],
+  "activationRecord": {
+    "activatedBy": "maintainer approval of CRT-348 gate evidence",
+    "activationDate": "2026-08-17",
+    "releaseRolloutNote": "Release-number rollout (package.json/release.json/README bump to 1.7.0) is a separate release-management story; this admission records the 1.7.0 identity."
+  }
+}

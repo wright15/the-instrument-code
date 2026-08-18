@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { isDeepStrictEqual } from "node:util";
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const packageRoot =
@@ -13,6 +14,11 @@ const moduleUrl = moduleReference.startsWith("/")
   ? pathToFileURL(moduleReference).href
   : moduleReference;
 const { validateSyntax } = await import(moduleUrl);
+const args = process.argv.slice(2);
+const checkMode = args.length === 1 && args[0] === "--check";
+if (args.length > 0 && !checkMode) {
+  throw new Error(`unsupported_arguments:${args.join(",")}`);
+}
 
 const schema = {
   labels: [
@@ -43,6 +49,7 @@ const schema = {
     "CourtTransitionEvent",
     "CourtLedgerSnapshot",
     "TopologicalTranslocationRecord",
+    "PentatonicAuditRealization",
     "Gov210AvailabilityRelease",
     "Gov210ContextHousing",
     "Gov210CourtTarget",
@@ -86,6 +93,7 @@ const schema = {
     "SNAPSHOTS_STATE",
     "HAS_TRANSLOCATION",
     "USES_ROUTE_RECORD",
+    "SUBSET_OF_7_35",
     "GOV210_ASSIGNS_SKILL",
     "GOV210_DECLARES_AVAILABILITY",
     "GOV210_DECLARES_HOUSING",
@@ -115,6 +123,11 @@ const files = [
   "gov-210/schema.cypher",
   "gov-210/reset.cypher",
   "gov-210/validation.cypher",
+  "pentatonic-binding-audit/schema.cypher",
+  "pentatonic-binding-audit/reset.cypher",
+  "pentatonic-binding-audit/import.cypher",
+  "pentatonic-binding-audit/validation.cypher",
+  "pentatonic-binding-audit/teardown.cypher",
 ];
 const results = [];
 for (const file of files) {
@@ -132,15 +145,41 @@ for (const file of files) {
   });
 }
 const failures = results.filter((row) => !row.pass);
-const report = {
+const deterministicReport = {
   verdict: failures.length ? "FAIL" : "PASS",
-  generatedAt: new Date().toISOString(),
   validator: "@neo4j-cypher/language-support",
   files: results,
 };
-await fs.writeFile(
-  path.join(packageRoot, "qa/neo4j-cypher-syntax-report.json"),
-  `${JSON.stringify(report, null, 2)}\n`,
-);
-console.log(JSON.stringify(report, null, 2));
+const reportPath = path.join(packageRoot, "qa/neo4j-cypher-syntax-report.json");
+if (checkMode) {
+  let committed;
+  try {
+    committed = JSON.parse(await fs.readFile(reportPath, "utf8"));
+  } catch (error) {
+    console.error(`STALE_NEO4J_CYPHER_SYNTAX_REPORT:${error.message}`);
+    process.exitCode = 1;
+  }
+  if (committed) {
+    const keys = Object.keys(committed).sort();
+    const expectedKeys = ["files", "generatedAt", "validator", "verdict"];
+    const committedDeterministic = {
+      verdict: committed.verdict,
+      validator: committed.validator,
+      files: committed.files,
+    };
+    if (
+      !isDeepStrictEqual(keys, expectedKeys)
+      || typeof committed.generatedAt !== "string"
+      || !isDeepStrictEqual(committedDeterministic, deterministicReport)
+    ) {
+      console.error("STALE_NEO4J_CYPHER_SYNTAX_REPORT");
+      process.exitCode = 1;
+    }
+  }
+  console.log(JSON.stringify({ mode: "check", ...deterministicReport }, null, 2));
+} else {
+  const report = { ...deterministicReport, generatedAt: new Date().toISOString() };
+  await fs.writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`);
+  console.log(JSON.stringify(report, null, 2));
+}
 if (failures.length) process.exitCode = 1;

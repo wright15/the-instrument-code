@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pre-epic-400.pentatonic-7-35-negative-cases.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "candidateId", "cases"],
+  "properties": {
+    "schemaVersion": {"const": "pre-epic-400.pentatonic-7-35-negative-cases.v1"},
+    "candidateId": {"const": "pentatonic-7-35-parent-audit-v1"},
+    "cases": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["caseId", "mutation", "expectedCode"],
+        "properties": {
+          "caseId": {"type": "string", "minLength": 1},
+          "mutation": {"type": "string", "minLength": 1},
+          "expectedCode": {
+            "enum": [
+              "universal_three_parent_claim_rejected",
+              "five_32_parent_count_invalid",
+              "mars_internal_relation_invalid",
+              "coordinate_collision_identity_forbidden",
+              "c2_parent_window_invalid",
+              "class_subset_endpoint_guard_invalid",
+              "complement_used_as_parent",
+              "source_binding_mismatch",
+              "parent_incidence_invalid"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

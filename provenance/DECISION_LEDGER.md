@@ -1,5 +1,53 @@
 # Decision Ledger
 
+## Fivefold engine promotion admission (CRT-348) — 2026-08-17
+
+### Decision
+
+Release identity `seven-governors-integrated-1.7.0` admits the ten
+`fivefold_engine` items declared eligible in
+`schemas/court-admission-contract.json#fivefoldFieldDisposition` through the
+CRT-348 gate. The admitted contract is
+`schemas/fivefold-engine-admission-contract.json`
+(`admission: admitted`, `contractStatus: accepted_crt_348`), bound by the
+admission record `provenance/fivefold-engine-admission-release.json` and
+evidenced by `qa/fivefold-engine-promotion-evidence.json`.
+
+The promotion covers `physical_quantity_claim=false`, `pole_order`,
+`bit_semantics` (raw bit mapping only; zodiac sign names explicitly excluded),
+`canonical_states` C0–C4, `canonical_transitions`,
+`geometry.kappa_formula`, `geometry.paired_mask_hamming_formula`,
+`geometry.signed_gram_matrix`, `geometry.canonical_path_size`, and `guards`
+as declarative pointers to existing executable checks. No new runtime
+authority is created: `kappa_court` retains its forbidden-equivalence guard,
+adjacency and translocation gates are unchanged, and aggregate
+`harmonic.C_H` remains `unresolved` with `value=null`.
+
+### Explicitly not admitted
+
+`fivefold_engine.macro_bracket`, `fivefold_engine.controller`, and
+`fivefold_engine.runtime_cycle` remain proposed. Win-condition enforcement,
+zodiac-to-Court runtime binding, concurrent Governor/Court transition
+envelopes, electromagnetic or thermodynamic physical claims, active
+complement relations, active `SUBSET_OF_7_35` projection, bulk pentatonic
+availability, and any CRT-310 gate satisfaction are not claimed. The CRT-310
+backlog stays 35 proposed / 0 eligible / 0 admitted. Frozen
+`fivefold_engine.yaml` bytes remain unchanged (`9cbf038c…64a`).
+
+### Evidence
+
+- `qa/fivefold-engine-promotion-evidence.json`: 10/10 item groups and 11/11
+  exclusion groups PASS; independent validator PASS;
+  `tests/test_fivefold_engine_promotion_evidence.py` 9/9.
+- CRT-347 planning evidence remains `planning_evidence` with all checks PASS.
+- Root `npm run validate` PASS 411/411; manifest and checksums refreshed.
+
+### Release rollout note
+
+The 1.7.0 identity is recorded here and in the admission record. Bumping
+`package.json` / `provenance/release.json` / README release literals is a
+separate release-management story.
+
 ## Scoped D-tier harmonic-compression admission (GOV-227) - 2026-08-13
 
 ### Decision

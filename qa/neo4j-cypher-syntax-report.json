@@ -1,6 +1,5 @@
 {
   "verdict": "PASS",
-  "generatedAt": "2026-08-13T22:56:23.504Z",
   "validator": "@neo4j-cypher/language-support",
   "files": [
     {
@@ -110,6 +109,37 @@
       "bytes": 7813,
       "diagnostics": [],
       "pass": true
+    },
+    {
+      "file": "pentatonic-binding-audit/schema.cypher",
+      "bytes": 334,
+      "diagnostics": [],
+      "pass": true
+    },
+    {
+      "file": "pentatonic-binding-audit/reset.cypher",
+      "bytes": 130,
+      "diagnostics": [],
+      "pass": true
+    },
+    {
+      "file": "pentatonic-binding-audit/import.cypher",
+      "bytes": 2237,
+      "diagnostics": [],
+      "pass": true
+    },
+    {
+      "file": "pentatonic-binding-audit/validation.cypher",
+      "bytes": 5237,
+      "diagnostics": [],
+      "pass": true
+    },
+    {
+      "file": "pentatonic-binding-audit/teardown.cypher",
+      "bytes": 182,
+      "diagnostics": [],
+      "pass": true
     }
-  ]
+  ],
+  "generatedAt": "2026-08-17T01:54:08.593Z"
 }

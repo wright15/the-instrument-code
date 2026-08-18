@@ -1,0 +1,307 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pre-epic-400.pentatonic-7-35-parent-audit.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "candidateId",
+    "specificationId",
+    "status",
+    "authority",
+    "admissionEffect",
+    "scope",
+    "representationPolicy",
+    "sourceBindings",
+    "universeSummary",
+    "classSummaries",
+    "pitchSetRecords",
+    "reviewedRootedWitnesses",
+    "representationChecks",
+    "relationGuards",
+    "negativeCaseIds",
+    "candidateFingerprint"
+  ],
+  "properties": {
+    "schemaVersion": {"const": "pre-epic-400.pentatonic-7-35-parent-audit.v1"},
+    "candidateId": {"const": "pentatonic-7-35-parent-audit-v1"},
+    "specificationId": {"const": "pre-epic-400.pentatonic-7-35-binding.v1"},
+    "status": {"const": "planning_evidence"},
+    "authority": {"const": "root_owned_non_admitted_audit_sidecar"},
+    "admissionEffect": {"const": "none"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["activeGraphEffect", "crt310Execution", "diatonicSetClass", "diatonicSetCount", "fiveNoteSetCount", "pitchClassModulus", "reviewedRootedWitnessCount", "setClassCount", "tuning"],
+      "properties": {
+        "activeGraphEffect": {"const": "none"},
+        "crt310Execution": {"const": false},
+        "diatonicSetClass": {"const": "7-35"},
+        "diatonicSetCount": {"const": 12},
+        "fiveNoteSetCount": {"const": 792},
+        "pitchClassModulus": {"const": 12},
+        "reviewedRootedWitnessCount": {"const": 7},
+        "setClassCount": {"const": 38},
+        "tuning": {"const": "12-TET"}
+      }
+    },
+    "representationPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["binary12bitLsbObservedRelation", "canonicalPitchMaskDefinition", "constructiveIntegerDefinition", "ordinaryBinaryParseOfPitchMask12Forbidden", "pitchMask12Definition", "relationSeparation", "universalMask"],
+      "properties": {
+        "binary12bitLsbObservedRelation": {"const": "T1_with_coincident_inversion_witness"},
+        "canonicalPitchMaskDefinition": {"const": "sum(2^p for p in P)"},
+        "constructiveIntegerDefinition": {"const": "parse_as_written_msb_integer"},
+        "ordinaryBinaryParseOfPitchMask12Forbidden": {"const": true},
+        "pitchMask12Definition": {"const": "b0_through_b11_pitch_class_order"},
+        "relationSeparation": {
+          "const": [
+            "parent_incidence_is_subset",
+            "exact_complement_is_not_parent",
+            "transposition_and_inversion_are_distinct_operators",
+            "projection_requires_filter_provenance"
+          ]
+        },
+        "universalMask": {"const": 4095}
+      }
+    },
+    "sourceBindings": {
+      "type": "array",
+      "minItems": 14,
+      "maxItems": 14,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/sourceBinding"}
+    },
+    "universeSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["diatonicMasks", "incidenceCount", "maximumParentCount", "parentCountDistribution", "pitchSetCount"],
+      "properties": {
+        "diatonicMasks": {
+          "type": "array",
+          "minItems": 12,
+          "maxItems": 12,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/mask"}
+        },
+        "incidenceCount": {"const": 252},
+        "maximumParentCount": {"const": 3},
+        "parentCountDistribution": {
+          "const": [
+            {"parentCount": 0, "pitchSetCount": 612},
+            {"parentCount": 1, "pitchSetCount": 120},
+            {"parentCount": 2, "pitchSetCount": 48},
+            {"parentCount": 3, "pitchSetCount": 12}
+          ]
+        },
+        "pitchSetCount": {"const": 792}
+      }
+    },
+    "classSummaries": {
+      "type": "array",
+      "minItems": 38,
+      "maxItems": 38,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/classSummary"}
+    },
+    "pitchSetRecords": {
+      "type": "array",
+      "minItems": 792,
+      "maxItems": 792,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/pitchSetRecord"}
+    },
+    "reviewedRootedWitnesses": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/rootedWitness"}
+    },
+    "representationChecks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bipolarGovernorVectors", "marsCoordinateGuard"],
+      "properties": {
+        "bipolarGovernorVectors": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/bipolarVector"}
+        },
+        "marsCoordinateGuard": {"$ref": "#/$defs/marsCoordinateGuard"}
+      }
+    },
+    "relationGuards": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/relationGuard"}
+    },
+    "negativeCaseIds": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "candidateFingerprint": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "mask": {"type": "integer", "minimum": 0, "maximum": 4095},
+    "mask12": {"type": "string", "pattern": "^[01]{12}$"},
+    "pitchClass": {"type": "integer", "minimum": 0, "maximum": 11},
+    "pitchClasses5": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/pitchClass"}
+    },
+    "sourceBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bindingId", "path", "role", "sha256"],
+      "properties": {
+        "bindingId": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "role": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "classSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["admissionStatus", "complementMapId", "forteNumber", "forteOrdinal", "parentCountPerRealization", "primeForm", "realizationCount", "representativeMask", "setClassId"],
+      "properties": {
+        "admissionStatus": {"enum": ["admitted", "admitted-bridge", "proposed"]},
+        "complementMapId": {"type": "string", "pattern": "^complement:5-(?:Z)?[0-9]+:7-(?:Z)?[0-9]+$"},
+        "forteNumber": {"type": "string", "pattern": "^5-(?:Z)?[0-9]+$"},
+        "forteOrdinal": {"type": "integer", "minimum": 1, "maximum": 38},
+        "parentCountPerRealization": {"type": "integer", "minimum": 0, "maximum": 3},
+        "primeForm": {"$ref": "#/$defs/pitchClasses5"},
+        "realizationCount": {"type": "integer", "minimum": 1, "maximum": 24},
+        "representativeMask": {"$ref": "#/$defs/mask"},
+        "setClassId": {"type": "string", "pattern": "^pentatonic:5-(?:Z)?[0-9]+$"}
+      }
+    },
+    "pitchSetRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["forteNumber", "parentCount", "parentMasks", "pitchClasses", "pitchMask", "pitchMask12", "recordId", "setClassId", "recordFingerprint"],
+      "properties": {
+        "forteNumber": {"type": "string", "pattern": "^5-(?:Z)?[0-9]+$"},
+        "parentCount": {"type": "integer", "minimum": 0, "maximum": 3},
+        "parentMasks": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/mask"}
+        },
+        "pitchClasses": {"$ref": "#/$defs/pitchClasses5"},
+        "pitchMask": {"$ref": "#/$defs/mask"},
+        "pitchMask12": {"$ref": "#/$defs/mask12"},
+        "recordId": {"type": "string", "pattern": "^pentatonic-mask:[0-9]+$"},
+        "setClassId": {"type": "string", "pattern": "^pentatonic:5-(?:Z)?[0-9]+$"},
+        "recordFingerprint": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "parentScaleState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["governor", "mode", "officeIndex", "scaleStateId"],
+      "properties": {
+        "governor": {"enum": ["Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus", "Saturn"]},
+        "mode": {"enum": ["Lydian", "Ionian", "Mixolydian", "Dorian", "Aeolian", "Phrygian", "Locrian"]},
+        "officeIndex": {"type": "integer", "minimum": 0, "maximum": 6},
+        "scaleStateId": {"$ref": "#/$defs/mask"}
+      }
+    },
+    "complementEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["complementMapId", "normalizedHeptatonicScaleStateId", "rawHeptatonicComplementMask", "relationAdmission"],
+      "properties": {
+        "complementMapId": {"type": "string", "pattern": "^complement:5-(?:Z)?[0-9]+:7-(?:Z)?[0-9]+$"},
+        "normalizedHeptatonicScaleStateId": {"$ref": "#/$defs/mask"},
+        "rawHeptatonicComplementMask": {"$ref": "#/$defs/mask"},
+        "relationAdmission": {"const": "frozen_evidence_not_active_graph_relation"}
+      }
+    },
+    "rootedWitness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["admissionStatus", "complementEvidence", "forteNumber", "parentCount", "parentScaleStates", "pitchClasses", "pitchMask", "pitchMask12", "rootPc", "setClassId", "witnessId", "witnessType"],
+      "properties": {
+        "admissionStatus": {"enum": ["admitted", "admitted-bridge"]},
+        "complementEvidence": {"$ref": "#/$defs/complementEvidence"},
+        "forteNumber": {"enum": ["5-23", "5-27", "5-35"]},
+        "parentCount": {"type": "integer", "minimum": 2, "maximum": 3},
+        "parentScaleStates": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/parentScaleState"}
+        },
+        "pitchClasses": {"$ref": "#/$defs/pitchClasses5"},
+        "pitchMask": {"$ref": "#/$defs/mask"},
+        "pitchMask12": {"$ref": "#/$defs/mask12"},
+        "rootPc": {"const": 0},
+        "setClassId": {"enum": ["pentatonic:5-23", "pentatonic:5-27", "pentatonic:5-35"]},
+        "witnessId": {"type": "string", "minLength": 1},
+        "witnessType": {"enum": ["court_position", "bridge_rooting"]}
+      }
+    },
+    "bipolarVector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonicalPitchMask", "complementMatchesInternal", "complementPitchMask", "complementString", "constructiveInteger", "constructiveString", "governor", "internalPitchMask", "internalString", "inversionMatches", "inversionWitness", "mode", "officeIndex", "t1Matches", "t1String"],
+      "properties": {
+        "canonicalPitchMask": {"$ref": "#/$defs/mask"},
+        "complementMatchesInternal": {"const": false},
+        "complementPitchMask": {"$ref": "#/$defs/mask"},
+        "complementString": {"$ref": "#/$defs/mask12"},
+        "constructiveInteger": {"$ref": "#/$defs/mask"},
+        "constructiveString": {"$ref": "#/$defs/mask12"},
+        "governor": {"enum": ["Mars", "Mercury", "Jupiter", "Venus", "Saturn"]},
+        "internalPitchMask": {"$ref": "#/$defs/mask"},
+        "internalString": {"$ref": "#/$defs/mask12"},
+        "inversionMatches": {"const": true},
+        "inversionWitness": {"$ref": "#/$defs/pitchClass"},
+        "mode": {"enum": ["Mixolydian", "Dorian", "Aeolian", "Phrygian", "Locrian"]},
+        "officeIndex": {"type": "integer", "minimum": 2, "maximum": 6},
+        "t1Matches": {"const": true},
+        "t1String": {"$ref": "#/$defs/mask12"}
+      }
+    },
+    "marsCoordinateGuard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonicalPitchMask", "complementCanonicalPitchMask", "complementConstructiveInteger", "constructiveInteger", "coordinateCollisionIsIdentity", "courtC4PitchMask"],
+      "properties": {
+        "canonicalPitchMask": {"const": 1717},
+        "complementCanonicalPitchMask": {"const": 2378},
+        "complementConstructiveInteger": {"const": 1321},
+        "constructiveInteger": {"const": 2774},
+        "coordinateCollisionIsIdentity": {"const": false},
+        "courtC4PitchMask": {"const": 1321}
+      }
+    },
+    "relationGuard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["guardId", "status", "statement"],
+      "properties": {
+        "guardId": {"type": "string", "minLength": 1},
+        "status": {"const": "enforced"},
+        "statement": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}
