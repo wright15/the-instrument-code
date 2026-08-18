@@ -1,0 +1,422 @@
+{
+  "checks": [
+    {
+      "checkId": "tpr-schema-identity",
+      "diagnostic": "valid",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/teleological-physics-registry-v1.0.0.schema.json",
+      "expected": "teleological_physics_registry 1.0.0 proposed",
+      "actual": {
+        "registryId": "teleological_physics_registry",
+        "version": "1.0.0",
+        "admissionStatus": "proposed"
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "tpr-admission-boundary",
+      "diagnostic": {
+        "runtime_effect": false,
+        "graph_effect": false,
+        "policy_effect": false,
+        "ledger_effect": false,
+        "admission_effect": false,
+        "writes_court_pole_disposition": false,
+        "kappa_court_access": "read_only_replay",
+        "global_ch_access": "no_write",
+        "no_thermodynamic_equivalence": true,
+        "no_pentatonic_family_admission_claim": true,
+        "crt310_gate_effect": false
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/teleological_physics_registry_v1.0.0.yaml#admission_boundary",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "tpr-source-bindings",
+      "diagnostic": {
+        "policy": "5164b74bf6cbbb55625eb0e9b958542cf20ddacb426813b7a93c1bffd7347605",
+        "harmonic": "75b3ffaa0b126c4dbf0abf6e42a4674724092b0e403a2862d893b6f1493d0e6f",
+        "contract": "b4351a14aa3dfde6043a609e4158abcb17b006b666a35220e5833cf1cf7ffa9b"
+      },
+      "evidenceLocator": "schemas/court-runtime-policy.json",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "tpr-transition-coverage",
+      "diagnostic": {
+        "policyPairs": 8,
+        "registryTransitions": 8
+      },
+      "evidenceLocator": "schemas/court-runtime-policy.json#ordinaryMoves",
+      "expected": [
+        [
+          "C0",
+          "C1",
+          "court:advance"
+        ],
+        [
+          "C1",
+          "C0",
+          "court:retreat"
+        ],
+        [
+          "C1",
+          "C2",
+          "court:advance"
+        ],
+        [
+          "C2",
+          "C1",
+          "court:retreat"
+        ],
+        [
+          "C2",
+          "C3",
+          "court:advance"
+        ],
+        [
+          "C3",
+          "C2",
+          "court:retreat"
+        ],
+        [
+          "C3",
+          "C4",
+          "court:advance"
+        ],
+        [
+          "C4",
+          "C3",
+          "court:retreat"
+        ]
+      ],
+      "actual": [
+        [
+          "C0",
+          "C1",
+          "court:advance"
+        ],
+        [
+          "C1",
+          "C0",
+          "court:retreat"
+        ],
+        [
+          "C1",
+          "C2",
+          "court:advance"
+        ],
+        [
+          "C2",
+          "C1",
+          "court:retreat"
+        ],
+        [
+          "C2",
+          "C3",
+          "court:advance"
+        ],
+        [
+          "C3",
+          "C2",
+          "court:retreat"
+        ],
+        [
+          "C3",
+          "C4",
+          "court:advance"
+        ],
+        [
+          "C4",
+          "C3",
+          "court:retreat"
+        ]
+      ],
+      "status": "PASS"
+    },
+    {
+      "checkId": "tpr-xor-support-replay",
+      "diagnostic": [],
+      "evidenceLocator": "seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json#courtGeometry.xorSupports",
+      "expected": [
+        [
+          4,
+          5
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "actual": [
+        [
+          4,
+          5
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "status": "PASS"
+    },
+    {
+      "checkId": "tpr-pole-change-replay",
+      "diagnostic": {
+        "poleFailures": [],
+        "changeFailures": []
+      },
+      "evidenceLocator": "schemas/court-runtime-policy.json#positions",
+      "expected": [
+        "external_to_internal",
+        "external_to_internal",
+        "external_to_internal",
+        "external_to_internal",
+        "internal_to_external",
+        "internal_to_external",
+        "internal_to_external",
+        "internal_to_external"
+      ],
+      "actual": [
+        "external_to_internal",
+        "external_to_internal",
+        "external_to_internal",
+        "external_to_internal",
+        "internal_to_external",
+        "internal_to_external",
+        "internal_to_external",
+        "internal_to_external"
+      ],
+      "status": "PASS"
+    },
+    {
+      "checkId": "tpr-element-pole-coherence",
+      "diagnostic": [],
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/teleological_physics_registry_v1.0.0.yaml#transitions[].element",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "tpr-mercury-exclusion",
+      "diagnostic": [
+        {
+          "interface_id": "mercury_engine_cycle",
+          "is_transition": false,
+          "is_binary_court_pole": false,
+          "pole_change": "none",
+          "xor_support": null,
+          "element": "Quintessence (Mercury)",
+          "source_refs": [
+            "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml#fivefold_engine.controller",
+            "schemas/court-admission-contract.json#fivefoldFieldDisposition"
+          ],
+          "physical_process": {
+            "name": "Electromagnetic Induction Cycle (engine interface)",
+            "physical_domain": [
+              "electromagnetism"
+            ],
+            "symbolic_anchor": "c = 1/sqrt(eps0 mu0) (vacuum speed of light from EM constants)"
+          },
+          "semantic_delta": {
+            "promotes": [
+              "transduction",
+              "state_movement",
+              "ledger_update"
+            ],
+            "suppresses": [
+              "stasis"
+            ],
+            "domain_projection_delta": {
+              "capability": {
+                "action": "Execute the +5 / +7 mod 12 arithmetic to move the Court and update the ledger.",
+                "examples": [
+                  "gear_shift",
+                  "phase_transition",
+                  "engine_turn"
+                ]
+              }
+            }
+          },
+          "preserves": [
+            "intrinsic_court_register_size"
+          ]
+        }
+      ],
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/teleological_physics_registry_v1.0.0.yaml#engine_interface",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "tpr-physics-guard",
+      "diagnostic": "symbolic anchors only",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/teleological_physics_registry_v1.0.0.yaml#metadata",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "tpr-forbidden-relations",
+      "diagnostic": "no executable Court relation keys",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/teleological_physics_registry_v1.0.0.yaml#transitions",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "tpr-cross-registry-coherence",
+      "diagnostic": {
+        "r1": "nλ = 2d sin(θ) (Bragg's Law for diffraction boundary)",
+        "r5": "γ = (1/2)F/L (surface tension for a two-surface cohesive film)"
+      },
+      "evidenceLocator": "schemas/semantic_operator_registry_v1.0.1.yaml#operators",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "tpr-guard-closure",
+      "diagnostic": [
+        "crt310_untouched",
+        "excluded_relation_vocabulary_absent",
+        "kappa_and_ch_untouched",
+        "mercury_not_a_transition",
+        "no_court_writes",
+        "no_pentatonic_family_claims",
+        "physics_symbolic_only",
+        "runtime_owns_transitions"
+      ],
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/teleological_physics_registry_v1.0.0.yaml#guards",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "tpr-determinism",
+      "diagnostic": "3bbfc5521546fac3d6adb55875def36f96dacc17636a234c168a1214d1bd08aa",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/teleological_physics_registry_v1.0.0.yaml",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "tpr-negative-case-closure",
+      "diagnostic": [
+        "ninth-transition-or-duplicate",
+        "wrong-xor-support",
+        "reversed-pole-change",
+        "element-pole-mismatch",
+        "non-adjacent-transition",
+        "mercury-as-transition",
+        "physical-claim-true",
+        "court-write-boundary",
+        "forbidden-relation-injected"
+      ],
+      "evidenceLocator": "/home/erick/projects/integrated-release/qa/teleological-physics-registry-validation.json",
+      "expected": [
+        "court-write-boundary",
+        "element-pole-mismatch",
+        "forbidden-relation-injected",
+        "mercury-as-transition",
+        "ninth-transition-or-duplicate",
+        "non-adjacent-transition",
+        "physical-claim-true",
+        "reversed-pole-change",
+        "wrong-xor-support"
+      ],
+      "actual": [
+        "court-write-boundary",
+        "element-pole-mismatch",
+        "forbidden-relation-injected",
+        "mercury-as-transition",
+        "ninth-transition-or-duplicate",
+        "non-adjacent-transition",
+        "physical-claim-true",
+        "reversed-pole-change",
+        "wrong-xor-support"
+      ],
+      "status": "PASS"
+    },
+    {
+      "checkId": "tpr-adversarial-rejection",
+      "diagnostic": {
+        "ninth-transition-or-duplicate": "transition_count_invalid",
+        "wrong-xor-support": "xor_support_mismatch",
+        "reversed-pole-change": "pole_change_mismatch",
+        "element-pole-mismatch": "element_pole_mismatch",
+        "non-adjacent-transition": "transition_adjacency_invalid",
+        "mercury-as-transition": "mercury_transition_invalid",
+        "physical-claim-true": "physical_claim_invalid",
+        "court-write-boundary": "boundary_write_invalid",
+        "forbidden-relation-injected": "forbidden_relation"
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/teleological_physics_registry_v1.0.0.yaml",
+      "expected": {
+        "ninth-transition-or-duplicate": "transition_count_invalid",
+        "wrong-xor-support": "xor_support_mismatch",
+        "reversed-pole-change": "pole_change_mismatch",
+        "element-pole-mismatch": "element_pole_mismatch",
+        "non-adjacent-transition": "transition_adjacency_invalid",
+        "mercury-as-transition": "mercury_transition_invalid",
+        "physical-claim-true": "physical_claim_invalid",
+        "court-write-boundary": "boundary_write_invalid",
+        "forbidden-relation-injected": "forbidden_relation"
+      },
+      "actual": {
+        "ninth-transition-or-duplicate": "transition_count_invalid",
+        "wrong-xor-support": "xor_support_mismatch",
+        "reversed-pole-change": "pole_change_mismatch",
+        "element-pole-mismatch": "element_pole_mismatch",
+        "non-adjacent-transition": "transition_adjacency_invalid",
+        "mercury-as-transition": "mercury_transition_invalid",
+        "physical-claim-true": "physical_claim_invalid",
+        "court-write-boundary": "boundary_write_invalid",
+        "forbidden-relation-injected": "forbidden_relation"
+      },
+      "status": "PASS"
+    }
+  ],
+  "checksFailed": 0,
+  "checksPassed": 15,
+  "registryId": "teleological_physics_registry",
+  "registryVersion": "1.0.0",
+  "schemaVersion": "teleological-physics-registry-validation.v1.0.0",
+  "verdict": "PASS",
+  "reportFingerprint": "b84105f0204215c81ec9e0eb4061ba24cbc657d475f24350b08fd9b086b10912"
+}

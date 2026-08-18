@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "teleological-physics-registry.v1.0.0",
+  "title": "Teleological Physics Registry (proposed)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["metadata", "admission_boundary", "pole_definitions", "transitions", "engine_interface", "guards"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["registry_id", "version", "admission_status", "layer", "physical_quantity_claim", "no_electromagnetic_equivalence", "equations_symbolic_only", "description", "architecture"],
+      "properties": {
+        "registry_id": { "const": "teleological_physics_registry" },
+        "version": { "const": "1.0.0" },
+        "admission_status": { "const": "proposed" },
+        "layer": { "const": 4 },
+        "physical_quantity_claim": { "const": false },
+        "no_electromagnetic_equivalence": { "const": true },
+        "equations_symbolic_only": { "const": true },
+        "description": { "type": "string", "minLength": 1 },
+        "architecture": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["operators_are", "intrinsic_identity", "contextual_identity", "transition_mechanics_owner", "rendering_model_planning_only"],
+          "properties": {
+            "operators_are": { "const": "induction_events" },
+            "intrinsic_identity": { "const": "court_state" },
+            "contextual_identity": { "const": "court_state_plus_immediately_traversed_edge" },
+            "transition_mechanics_owner": { "const": "crt_305_runtime" },
+            "rendering_model_planning_only": { "const": true }
+          }
+        }
+      }
+    },
+    "admission_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["runtime_effect", "graph_effect", "policy_effect", "ledger_effect", "admission_effect", "writes_court_pole_disposition", "kappa_court_access", "global_ch_access", "no_thermodynamic_equivalence", "no_pentatonic_family_admission_claim", "crt310_gate_effect"],
+      "properties": {
+        "runtime_effect": { "const": false },
+        "graph_effect": { "const": false },
+        "policy_effect": { "const": false },
+        "ledger_effect": { "const": false },
+        "admission_effect": { "const": false },
+        "writes_court_pole_disposition": { "const": false },
+        "kappa_court_access": { "const": "read_only_replay" },
+        "global_ch_access": { "const": "no_write" },
+        "no_thermodynamic_equivalence": { "const": true },
+        "no_pentatonic_family_admission_claim": { "const": true },
+        "crt310_gate_effect": { "const": false }
+      }
+    },
+    "pole_definitions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["external", "internal"],
+      "properties": {
+        "external": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["bit_value", "physical_domain", "semantic_meaning"],
+          "properties": {
+            "bit_value": { "const": 0 },
+            "physical_domain": { "const": "Electric" },
+            "semantic_meaning": { "type": "string", "minLength": 1 }
+          }
+        },
+        "internal": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["bit_value", "physical_domain", "semantic_meaning"],
+          "properties": {
+            "bit_value": { "const": 1 },
+            "physical_domain": { "const": "Magnetic" },
+            "semantic_meaning": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "transitions": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/transition" }
+    },
+    "engine_interface": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": { "$ref": "#/$defs/engineInterface" }
+    },
+    "guards": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["guard_id", "status", "statement"],
+        "properties": {
+          "guard_id": { "type": "string", "minLength": 1 },
+          "status": { "const": "enforced" },
+          "statement": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "physicalProcess": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "physical_domain", "symbolic_anchor"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "physical_domain": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "symbolic_anchor": { "type": "string", "minLength": 1 }
+      }
+    },
+    "transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["transition_id", "operation_id", "element", "pole_change", "xor_support", "from_position", "to_position", "source_refs", "physical_process", "semantic_delta", "preserves"],
+      "properties": {
+        "transition_id": { "type": "string", "pattern": "^court_(advance|retreat)_C[0-4]_to_C[0-4]$" },
+        "operation_id": { "enum": ["court:advance", "court:retreat"] },
+        "element": { "enum": ["Fire (Mars)", "Air (Jupiter)", "Water (Venus)", "Earth (Saturn)"] },
+        "pole_change": { "enum": ["external_to_internal", "internal_to_external"] },
+        "xor_support": { "type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": { "type": "integer", "minimum": 0, "maximum": 11 } },
+        "from_position": { "enum": ["C0", "C1", "C2", "C3", "C4"] },
+        "to_position": { "enum": ["C0", "C1", "C2", "C3", "C4"] },
+        "source_refs": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "physical_process": { "$ref": "#/$defs/physicalProcess" },
+        "semantic_delta": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["promotes", "suppresses", "domain_projection_delta"],
+          "properties": {
+            "promotes": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+            "suppresses": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+            "domain_projection_delta": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["capability"],
+              "properties": {
+                "capability": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["action", "examples"],
+                  "properties": {
+                    "action": { "type": "string", "minLength": 1 },
+                    "examples": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "preserves": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }
+      }
+    },
+    "engineInterface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["interface_id", "is_transition", "is_binary_court_pole", "pole_change", "xor_support", "element", "source_refs", "physical_process", "semantic_delta", "preserves"],
+      "properties": {
+        "interface_id": { "const": "mercury_engine_cycle" },
+        "is_transition": { "const": false },
+        "is_binary_court_pole": { "const": false },
+        "pole_change": { "const": "none" },
+        "xor_support": { "type": "null" },
+        "element": { "const": "Quintessence (Mercury)" },
+        "source_refs": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "physical_process": { "$ref": "#/$defs/physicalProcess" },
+        "semantic_delta": { "$ref": "#/$defs/transition/properties/semantic_delta" },
+        "preserves": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }
+      }
+    }
+  }
+}

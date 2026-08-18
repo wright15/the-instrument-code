@@ -71,6 +71,7 @@ Continuation brief: [pentatonic graph binding Phases 2-4](pre-epic-400-pentatoni
 | [CRT-310](CRT-310-remaining-pentatonic-admission.md) | Per-class pentatonic admission evidence backlog ([workflow](../docs/CRT_310_ADMISSION_WORKFLOW.md)) | TBD | Low | **Backlog** |
 | [CRT-347](CRT-347-fivefold-capability-teleology.md) | Fivefold Capability Teleology planning evidence | 5 | Medium | **Done** |
 | [CRT-348](CRT-348-fivefold-engine-promotion-gate.md) | Fivefold engine promotion gate plan | 8 | Medium | **Done** |
+| [CRT-349](CRT-349-teleological-physics-registry.md) | Teleological Physics Registry (Court transition symbolic anchors) | 5 | Medium | **Done** |
 
 ## Global definition of done
 

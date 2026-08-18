@@ -1,9 +1,9 @@
 {
   "package": "seven-governors-integrated-release",
   "version": "1.6.0",
-  "generatedAt": "2026-08-18T02:18:45.532Z",
-  "fileCount": 801,
-  "totalBytes": 68897972,
+  "generatedAt": "2026-08-18T19:10:16.025Z",
+  "fileCount": 808,
+  "totalBytes": 68968728,
   "files": [
     {
       "path": ".env.example",
@@ -258,7 +258,7 @@
     {
       "path": "canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json",
       "bytes": 25494,
-      "sha256": "8491dd014b77ce21925dea47ca735901e3a380b2e626c8de7bcb5c2f27528ab9"
+      "sha256": "c2945f18cee9e6c36dfbe886d1002e49f8d21bd620ce2d0dcfda93d3b70bd78c"
     },
     {
       "path": "canonical/gov-210-availability-housing.json",
@@ -293,7 +293,7 @@
     {
       "path": "canonical/pentatonic-binding-candidates/pentatonic-7-35-parent-audit-v1.json",
       "bytes": 245494,
-      "sha256": "38e9ae26e977c531a65f218b659eb2fbb30f7fc4ee32eb9bf4b9d9f1bbf4a95d"
+      "sha256": "bfec16d8713bae784b39d77e1319a60fd0b9e148d916dfe760dc2ec397791eea"
     },
     {
       "path": "canonical/topology-identity-definitions.json",
@@ -932,8 +932,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 7010,
-      "sha256": "d3ddf68a0bc21cdffb0ec47cd65ca16e3eb71f04df1fecccdd3df3d7c2a7d740"
+      "bytes": 7302,
+      "sha256": "7e534e86294a6b0ff16fe55e36d47d8fe48eeb4f0715cc66971707467b33d40e"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
@@ -947,8 +947,8 @@
     },
     {
       "path": "provenance/SOURCE_AUTHORITY.md",
-      "bytes": 9649,
-      "sha256": "75d782437261dc8148e548fa97a99df28faf852bcec198f5b7057119a2f447fd"
+      "bytes": 9945,
+      "sha256": "9595ebcafbab5594ecdbe72f547f166df367380a8c331cdc13b4f40fa8070f81"
     },
     {
       "path": "provenance/admission-governor-court-mathematics.md",
@@ -963,7 +963,7 @@
     {
       "path": "provenance/fivefold-engine-admission-release.json",
       "bytes": 3511,
-      "sha256": "6e810ed539577705270373ace8b2ac7977b19240d483a26f609a56c639f5d485"
+      "sha256": "8ea5dca9f28c213d6c71cb25c80cb8d69f944109e1db5036baa4cdc0224d9450"
     },
     {
       "path": "provenance/neo4j-full-database-baseline.json",
@@ -1018,7 +1018,7 @@
     {
       "path": "qa/fivefold-capability-teleology-validation.json",
       "bytes": 25828,
-      "sha256": "5dc36cbeb79ccc660f545d144180b39f807139e9066dcd306ef2e04c00c415d0"
+      "sha256": "9f882dad25264d546c183eee14016f656efc08a75a9dbb858ba3a23f1a0faff5"
     },
     {
       "path": "qa/fivefold-engine-promotion-evidence.json",
@@ -1068,17 +1068,17 @@
     {
       "path": "qa/pentatonic-7-35-parent-audit-validation.json",
       "bytes": 5584,
-      "sha256": "8e0b1cfe49bf0e8ce5055167240903db33fb073287c8e96a765b6c9467d53424"
+      "sha256": "98ec4a282dc43e90f94bdfb57c08770af0c6a0f64d9becc197eedd21407aea2f"
     },
     {
       "path": "qa/pentatonic-binding-audit-closure.json",
       "bytes": 4552,
-      "sha256": "68006d331c77172fc801e82857d196594e7a327bd9ca155fb90241d9d7075884"
+      "sha256": "ca2677b533ed496088a6ae9a0c17e34ccb9f9289f4e2854b7fa3f6fe47cf8725"
     },
     {
       "path": "qa/pentatonic-binding-audit-neo4j-validation.json",
       "bytes": 3061,
-      "sha256": "c52e6a12ee252a6cbea043fef5988c522b288e5ea9d7217e460ef2bc5b26493f"
+      "sha256": "6af4e9a86e9e7f4e29221dc896911bbb3d7bfb20ec872b0145894e1dab21bec7"
     },
     {
       "path": "qa/pentatonic-set-class-admission-backlog-validation.json",
@@ -1094,6 +1094,11 @@
       "path": "qa/server-health.json",
       "bytes": 392,
       "sha256": "4153a3a916a0a0727c9b76e0929dddbb35e7da2614e21cae158ae1fe48ffbfb6"
+    },
+    {
+      "path": "qa/teleological-physics-registry-validation.json",
+      "bytes": 12257,
+      "sha256": "b71156570c82a640a70279af032f284800dc8dbff742b078a4e5929897ca1ff0"
     },
     {
       "path": "schemas/court-admission-contract.json",
@@ -1396,6 +1401,21 @@
       "sha256": "0ed2925bcb8e578d8ba786e1b26d788c36d746eda095e8268d36f767a62a365c"
     },
     {
+      "path": "schemas/teleological-physics-registry-v1.0.0.schema.json",
+      "bytes": 8334,
+      "sha256": "36b2f9413dda6778fee4254f5565627e2e2bcd82c67fc4407f41411fb4dab3b0"
+    },
+    {
+      "path": "schemas/teleological-physics-registry-validation-report-v1.0.0.schema.json",
+      "bytes": 1360,
+      "sha256": "92158ec7578b3f59a984cb8762a32ccc5177b0a37fed8650ed963e087c04d1f7"
+    },
+    {
+      "path": "schemas/teleological_physics_registry_v1.0.0.yaml",
+      "bytes": 13666,
+      "sha256": "457cf3d7adb8e15b1e0397c34dff9705a79390c3f4a68511c28261f32aeeb844"
+    },
+    {
       "path": "scripts/bootstrap-neo4j.mjs",
       "bytes": 7995,
       "sha256": "e9722ffe38ffe4286729f4a0d99e14e3c775d29b51fa3ad2b45eaeb269709d33"
@@ -1571,6 +1591,11 @@
       "sha256": "cd82623fc1c7341ceddc6b9e88b43fc8cb1937f204a28e8c5bd0f4bfc897dfcc"
     },
     {
+      "path": "scripts/validate-teleological-physics-registry.py",
+      "bytes": 22597,
+      "sha256": "c4a4365f2bb88cfad537051ea923d931187e6fd39b2020c3ea3542b7a4098c0c"
+    },
+    {
       "path": "scripts/validate-vault-context.mjs",
       "bytes": 5132,
       "sha256": "a4416a77d0dd5a7a5a872356644a3223c8b8d926f935f471fa2f3de8451a78fe"
@@ -1639,6 +1664,11 @@
       "path": "scrum/CRT-348-fivefold-engine-promotion-gate.md",
       "bytes": 12503,
       "sha256": "d9e548d9fd2f2c4002f2fdcf625056bd73cff62aaa7c474ee9f104b7d43a536b"
+    },
+    {
+      "path": "scrum/CRT-349-teleological-physics-registry.md",
+      "bytes": 4794,
+      "sha256": "8dd8eb784b73ce7d3a281e0339645264129fd18bc54b41a407472f963e12b11f"
     },
     {
       "path": "scrum/EPIC-001-network-replica.md",
@@ -1762,8 +1792,8 @@
     },
     {
       "path": "scrum/README.md",
-      "bytes": 8291,
-      "sha256": "6ea9822493495df88425a4ca71aa97443a600ff98ead1baefeba56281d53a56f"
+      "bytes": 8439,
+      "sha256": "7ba9a060388655d3791ae1a996b6063ca110a3cf89c97ceb9a8a06bcf749ef51"
     },
     {
       "path": "scrum/pre-epic-400-audit-notes.md",
@@ -3823,7 +3853,7 @@
     {
       "path": "tests/pentatonic_binding_audit/neo4j-live.test.mjs",
       "bytes": 19048,
-      "sha256": "e7105b3f69e53c9cacc4ba9cc18f843e55c4cc435f4cd22e646f9f6487e93050"
+      "sha256": "73596c16a9f1720ea8427bce88b8b6deb5d4f6f4381721493d720ad45e2b6d05"
     },
     {
       "path": "tests/test_court_graph_projection.py",
@@ -3949,6 +3979,11 @@
       "path": "tests/test_pentatonic_7_35_parent_audit.py",
       "bytes": 10080,
       "sha256": "130ce7b41c2e5ee5e1b1704e44d6bb61adf6ee80d72aa8e2b1ce1853867d500e"
+    },
+    {
+      "path": "tests/test_teleological_physics_registry.py",
+      "bytes": 7012,
+      "sha256": "d495da0e07c88a8276c2d0021303561d0b0fa3d82026e9f31e99f3ac3a3746bb"
     },
     {
       "path": "tests/verification/__init__.py",

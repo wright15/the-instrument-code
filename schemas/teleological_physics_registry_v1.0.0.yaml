@@ -1,0 +1,307 @@
+# Teleological Physics Registry (Court Transition Registry) v1.0.0
+#
+# Status: Proposed — planning evidence. No runtime, graph, policy, ledger,
+# admission, or physics effect. Every equation is a symbolic anchor string;
+# no electromagnetic equivalence, SI quantity, or physical causation is
+# claimed (physical_quantity_claim: false).
+#
+# Layer: 4 (Teleological / Electromagnetic translation dictionary).
+#
+# Rendering model (planning only — NOT transition mechanics):
+#   CourtTransitionRender(s, t) = IntrinsicCourtState(s) ⊕ EM_Delta(t)
+# The Court runtime (CRT-305, court-runtime-policy:0.1.0) remains the sole
+# owner of transitions. This registry shades the rendering of an already
+# committed move; it never executes, authorizes, or redefines one.
+#
+# The registry replays admitted sources without duplicating authority:
+#   - schemas/court-runtime-policy.json   (ordinaryMoves, poleOrder, positions)
+#   - seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json
+#     (xorSupports, gramMatrix 2*I_4, d_H = 2|i-j|, kappa i/4)
+#   - schemas/court-admission-contract.json (bit semantics boundary)
+#   - schemas/semantic_operator_registry_v1.0.1.yaml (Layer-4 precedent)
+
+metadata:
+  registry_id: teleological_physics_registry
+  version: 1.0.0
+  admission_status: proposed
+  layer: 4
+  physical_quantity_claim: false
+  no_electromagnetic_equivalence: true
+  equations_symbolic_only: true
+  description: >-
+    Maps the 8 directional Court transitions (4 advance, 4 retreat) to their
+    Chaldean elemental axes, electromagnetic symbolic anchors, and authored
+    capability deltas. The advance path C0 -> C4 is the inductive
+    polarization cycle (Electric -> Magnetic); the retreat path C4 -> C0 is
+    the capacitive discharge cycle (Magnetic -> Electric). Mercury is the
+    engine interface, not a transition or register bit.
+  architecture:
+    operators_are: induction_events
+    intrinsic_identity: court_state
+    contextual_identity: court_state_plus_immediately_traversed_edge
+    transition_mechanics_owner: crt_305_runtime
+    rendering_model_planning_only: true
+
+admission_boundary:
+  runtime_effect: false
+  graph_effect: false
+  policy_effect: false
+  ledger_effect: false
+  admission_effect: false
+  writes_court_pole_disposition: false
+  kappa_court_access: read_only_replay
+  global_ch_access: no_write
+  no_thermodynamic_equivalence: true
+  no_pentatonic_family_admission_claim: true
+  crt310_gate_effect: false
+
+pole_definitions:
+  external:
+    bit_value: 0
+    physical_domain: Electric
+    semantic_meaning: Outward, projective force; broadcasting into the environment.
+  internal:
+    bit_value: 1
+    physical_domain: Magnetic
+    semantic_meaning: Inward, receptive/storing force; absorbing or bounding the environment.
+
+transitions:
+  # ==========================================================
+  # ADVANCE (C0 -> C4): inductive polarization (Electric -> Magnetic)
+  # ==========================================================
+  - transition_id: court_advance_C0_to_C1
+    operation_id: court:advance
+    element: Fire (Mars)
+    pole_change: external_to_internal
+    xor_support: [4, 5]
+    from_position: C0
+    to_position: C1
+    source_refs:
+      - schemas/court-runtime-policy.json#/ordinaryMoves
+      - seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json#/courtGeometry/xorSupports/0
+    physical_process:
+      name: Inductive Resistance / Smoldering
+      physical_domain: [electromagnetism, thermodynamics]
+      symbolic_anchor: "E = -dPhi_B/dt (Faraday/Lenz law of induction)"
+    semantic_delta:
+      promotes: [internal_combustion, inductive_resistance, smoldering, absorbed_kinetic_energy]
+      suppresses: [outward_broadcast, explosive_activation]
+      domain_projection_delta:
+        capability:
+          action: Convert explosive outward force into sustained internal heat.
+          examples: [rage, smoldering_aura, heat_shield]
+    preserves: [intrinsic_court_state_id, other_pole_bits]
+
+  - transition_id: court_advance_C1_to_C2
+    operation_id: court:advance
+    element: Air (Jupiter)
+    pole_change: external_to_internal
+    xor_support: [9, 10]
+    from_position: C1
+    to_position: C2
+    source_refs:
+      - schemas/court-runtime-policy.json#/ordinaryMoves
+      - seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json#/courtGeometry/xorSupports/1
+    physical_process:
+      name: Magnetic Flux / Stewardship
+      physical_domain: [electromagnetism, fluid_dynamics]
+      symbolic_anchor: "Phi_B = integral B . dA (magnetic flux)"
+    semantic_delta:
+      promotes: [inward_pull, potential_stewardship, magnetic_drag]
+      suppresses: [free_expansion, updraft]
+      domain_projection_delta:
+        capability:
+          action: Draw scattered resources back to the center for storage.
+          examples: [vacuum_pull, resource_redistribution, gravity_well]
+    preserves: [intrinsic_court_state_id, other_pole_bits]
+
+  - transition_id: court_advance_C2_to_C3
+    operation_id: court:advance
+    element: Water (Venus)
+    pole_change: external_to_internal
+    xor_support: [2, 3]
+    from_position: C2
+    to_position: C3
+    source_refs:
+      - schemas/court-runtime-policy.json#/ordinaryMoves
+      - seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json#/courtGeometry/xorSupports/2
+    physical_process:
+      name: Surface Tension / Cohesion
+      physical_domain: [interfacial_physics, fluid_dynamics]
+      symbolic_anchor: "gamma = (1/2)F/L (surface tension for a cohesive film)"
+    semantic_delta:
+      promotes: [embodied_cohesion, high_tension_bond, vortex]
+      suppresses: [social_broadcast, outward_coupling]
+      domain_projection_delta:
+        capability:
+          action: Tighten external bonds into dense, internal, cohesive structures.
+          examples: [whirlpool, impervious_membrane, emotional_armor]
+    preserves: [intrinsic_court_state_id, other_pole_bits]
+
+  - transition_id: court_advance_C3_to_C4
+    operation_id: court:advance
+    element: Earth (Saturn)
+    pole_change: external_to_internal
+    xor_support: [7, 8]
+    from_position: C3
+    to_position: C4
+    source_refs:
+      - schemas/court-runtime-policy.json#/ordinaryMoves
+      - seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json#/courtGeometry/xorSupports/3
+      - schemas/semantic_operator_registry_v1.0.1.yaml#saturn_degree_raise_v1.physical_process.symbolic_anchor
+    physical_process:
+      name: Crystallization / Lattice Lock
+      physical_domain: [solid_state_physics, optics]
+      symbolic_anchor: "n*lambda = 2d sin(theta) (Bragg's law for a diffraction boundary)"
+    semantic_delta:
+      promotes: [absolute_fixation, impenetrable_boundary, zero_kinetic_state]
+      suppresses: [dielectric_boundary, structural_flexibility]
+      domain_projection_delta:
+        capability:
+          action: Freeze all internal states into a permanent, immutable lattice.
+          examples: [stasis_field, diamond_shell, absolute_zero]
+    preserves: [intrinsic_court_state_id, other_pole_bits]
+
+  # ==========================================================
+  # RETREAT (C4 -> C0): capacitive discharge (Magnetic -> Electric)
+  # ==========================================================
+  - transition_id: court_retreat_C4_to_C3
+    operation_id: court:retreat
+    element: Earth (Saturn)
+    pole_change: internal_to_external
+    xor_support: [7, 8]
+    from_position: C4
+    to_position: C3
+    source_refs:
+      - schemas/court-runtime-policy.json#/ordinaryMoves
+      - seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json#/courtGeometry/xorSupports/3
+    physical_process:
+      name: Dielectric Breakdown / Fracture
+      physical_domain: [electromagnetism, mechanics]
+      symbolic_anchor: "E = V/d (dielectric breakdown field strength)"
+    semantic_delta:
+      promotes: [structural_release, outward_fissure, boundary_dissolution]
+      suppresses: [absolute_fixation, lattice_lock]
+      domain_projection_delta:
+        capability:
+          action: Release the locked lattice; create outward fractures.
+          examples: [earthquake, shatter, fault_line]
+    preserves: [intrinsic_court_state_id, other_pole_bits]
+
+  - transition_id: court_retreat_C3_to_C2
+    operation_id: court:retreat
+    element: Water (Venus)
+    pole_change: internal_to_external
+    xor_support: [2, 3]
+    from_position: C3
+    to_position: C2
+    source_refs:
+      - schemas/court-runtime-policy.json#/ordinaryMoves
+      - seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json#/courtGeometry/xorSupports/2
+    physical_process:
+      name: Capacitive Discharge / Osmosis
+      physical_domain: [electromagnetism, physical_chemistry]
+      symbolic_anchor: "C = Q/V (capacitance discharging outward)"
+    semantic_delta:
+      promotes: [outward_flow, social_exchange, dissolving_bonds]
+      suppresses: [surface_tension, internal_cohesion]
+      domain_projection_delta:
+        capability:
+          action: Discharge stored value outward into the environment.
+          examples: [healing_pulse, tsunami, chemical_spill]
+    preserves: [intrinsic_court_state_id, other_pole_bits]
+
+  - transition_id: court_retreat_C2_to_C1
+    operation_id: court:retreat
+    element: Air (Jupiter)
+    pole_change: internal_to_external
+    xor_support: [9, 10]
+    from_position: C2
+    to_position: C1
+    source_refs:
+      - schemas/court-runtime-policy.json#/ordinaryMoves
+      - seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json#/courtGeometry/xorSupports/1
+    physical_process:
+      name: Ampère Force / Expansion
+      physical_domain: [electromagnetism, fluid_dynamics]
+      symbolic_anchor: "F = I L x B (Ampère force law for outward current)"
+    semantic_delta:
+      promotes: [updraft, high_altitude_distribution, rarefied_flow]
+      suppresses: [magnetic_drag, inward_pull]
+      domain_projection_delta:
+        capability:
+          action: Project stored potential outward as expanding wind/current.
+          examples: [gale_force, broadcast_signal, scattering]
+    preserves: [intrinsic_court_state_id, other_pole_bits]
+
+  - transition_id: court_retreat_C1_to_C0
+    operation_id: court:retreat
+    element: Fire (Mars)
+    pole_change: internal_to_external
+    xor_support: [4, 5]
+    from_position: C1
+    to_position: C0
+    source_refs:
+      - schemas/court-runtime-policy.json#/ordinaryMoves
+      - seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json#/courtGeometry/xorSupports/0
+    physical_process:
+      name: Coulomb Repulsion / Ignition
+      physical_domain: [electromagnetism, thermodynamics]
+      symbolic_anchor: "F = k(q1q2)/r^2 (Coulomb's law of repulsive force)"
+    semantic_delta:
+      promotes: [explosive_activation, outward_broadcast, kinetic_edge]
+      suppresses: [inductive_resistance, smoldering]
+      domain_projection_delta:
+        capability:
+          action: Discharge internal heat as explosive, outward kinetic force.
+          examples: [fireball, shockwave, berserker_rage]
+    preserves: [intrinsic_court_state_id, other_pole_bits]
+
+engine_interface:
+  - interface_id: mercury_engine_cycle
+    is_transition: false
+    is_binary_court_pole: false
+    pole_change: none
+    xor_support: null
+    element: Quintessence (Mercury)
+    source_refs:
+      - seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/fivefold_engine.yaml#fivefold_engine.controller
+      - schemas/court-admission-contract.json#fivefoldFieldDisposition
+    physical_process:
+      name: Electromagnetic Induction Cycle (engine interface)
+      physical_domain: [electromagnetism]
+      symbolic_anchor: "c = 1/sqrt(eps0 mu0) (vacuum speed of light from EM constants)"
+    semantic_delta:
+      promotes: [transduction, state_movement, ledger_update]
+      suppresses: [stasis]
+      domain_projection_delta:
+        capability:
+          action: Execute the +5 / +7 mod 12 arithmetic to move the Court and update the ledger.
+          examples: [gear_shift, phase_transition, engine_turn]
+    preserves: [intrinsic_court_register_size]
+
+guards:
+  - guard_id: physics_symbolic_only
+    status: enforced
+    statement: Every equation is a symbolic anchor; physical_quantity_claim is false and no electromagnetic equivalence is asserted.
+  - guard_id: runtime_owns_transitions
+    status: enforced
+    statement: This registry shades rendering only; the CRT-305 runtime is the sole executor of Court transitions.
+  - guard_id: no_court_writes
+    status: enforced
+    statement: No record writes court.poleDisposition, graph state, runtime policy, or ledger success.
+  - guard_id: mercury_not_a_transition
+    status: enforced
+    statement: "Mercury is engine_interface only: no bit, no XOR support, no pole change, no ninth move."
+  - guard_id: kappa_and_ch_untouched
+    status: enforced
+    statement: kappa_court is read-only replay; global harmonic.C_H is not written; no thermodynamic equivalence is claimed.
+  - guard_id: no_pentatonic_family_claims
+    status: enforced
+    statement: 5-23 and 5-27 appear only as admitted bridge-route references; no other pentatonic family is claimed as an admitted capability representation.
+  - guard_id: crt310_untouched
+    status: enforced
+    statement: CRT-310 gates, backlog, and workflow remain unchanged.
+  - guard_id: excluded_relation_vocabulary_absent
+    status: enforced
+    statement: SETS_COURT_POLE, EXECUTES_COURT_MOVE, and equivalent executable relations never appear.
