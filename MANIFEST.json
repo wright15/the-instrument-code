@@ -1,9 +1,9 @@
 {
   "package": "seven-governors-integrated-release",
   "version": "1.6.0",
-  "generatedAt": "2026-08-18T19:10:16.025Z",
-  "fileCount": 808,
-  "totalBytes": 68968728,
+  "generatedAt": "2026-08-20T23:11:16.707Z",
+  "fileCount": 815,
+  "totalBytes": 69036287,
   "files": [
     {
       "path": ".env.example",
@@ -258,7 +258,7 @@
     {
       "path": "canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json",
       "bytes": 25494,
-      "sha256": "c2945f18cee9e6c36dfbe886d1002e49f8d21bd620ce2d0dcfda93d3b70bd78c"
+      "sha256": "1dcb0bda3d3538140bb62f579d73fc9e7730d04a61a20c71d3216b5e5e536e7b"
     },
     {
       "path": "canonical/gov-210-availability-housing.json",
@@ -293,7 +293,7 @@
     {
       "path": "canonical/pentatonic-binding-candidates/pentatonic-7-35-parent-audit-v1.json",
       "bytes": 245494,
-      "sha256": "bfec16d8713bae784b39d77e1319a60fd0b9e148d916dfe760dc2ec397791eea"
+      "sha256": "b057dc8a1ff9c87647ae5cf27a6c819cedd3c073deb25fafe8a24aa1b673d2a4"
     },
     {
       "path": "canonical/topology-identity-definitions.json",
@@ -932,8 +932,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 7302,
-      "sha256": "7e534e86294a6b0ff16fe55e36d47d8fe48eeb4f0715cc66971707467b33d40e"
+      "bytes": 7599,
+      "sha256": "9c4c04c99377bad5296005ee62c8b32513685d518ff3485168570de9d1a41123"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
@@ -947,8 +947,8 @@
     },
     {
       "path": "provenance/SOURCE_AUTHORITY.md",
-      "bytes": 9945,
-      "sha256": "9595ebcafbab5594ecdbe72f547f166df367380a8c331cdc13b4f40fa8070f81"
+      "bytes": 10240,
+      "sha256": "c57cc34f85c2c8be7d0b74be325a714bc0a581ca87a4d301a32b05bd6efdf7d2"
     },
     {
       "path": "provenance/admission-governor-court-mathematics.md",
@@ -963,7 +963,7 @@
     {
       "path": "provenance/fivefold-engine-admission-release.json",
       "bytes": 3511,
-      "sha256": "8ea5dca9f28c213d6c71cb25c80cb8d69f944109e1db5036baa4cdc0224d9450"
+      "sha256": "9616752e56896e871c98d88c7ca0f12f87f96cfef281966bc01617d93bbdeb07"
     },
     {
       "path": "provenance/neo4j-full-database-baseline.json",
@@ -1016,9 +1016,14 @@
       "sha256": "b9440f89484f3063b693efe70cd8aaaff25b37f3ab40c7f1cc716c6999684215"
     },
     {
+      "path": "qa/elemental-pentatonic-scale-map-validation.json",
+      "bytes": 12211,
+      "sha256": "00c553d70a6f2d6b0fd773899b7e8648a1e8d9a9c267fea1b7bf683da05d313b"
+    },
+    {
       "path": "qa/fivefold-capability-teleology-validation.json",
       "bytes": 25828,
-      "sha256": "9f882dad25264d546c183eee14016f656efc08a75a9dbb858ba3a23f1a0faff5"
+      "sha256": "3f03b88f0383c0b53a1887fd7288af156f6238a0e681fdeac1f1838c8e7c3bf0"
     },
     {
       "path": "qa/fivefold-engine-promotion-evidence.json",
@@ -1068,17 +1073,17 @@
     {
       "path": "qa/pentatonic-7-35-parent-audit-validation.json",
       "bytes": 5584,
-      "sha256": "98ec4a282dc43e90f94bdfb57c08770af0c6a0f64d9becc197eedd21407aea2f"
+      "sha256": "6b57c88d707443d8314b9c7701792a6c012ceab78ae95d004a1043dd4b9bf37f"
     },
     {
       "path": "qa/pentatonic-binding-audit-closure.json",
       "bytes": 4552,
-      "sha256": "ca2677b533ed496088a6ae9a0c17e34ccb9f9289f4e2854b7fa3f6fe47cf8725"
+      "sha256": "d2d25ae09775081dad259f3b2b99ebaf5aa11f981e0da4e6c1e6c3034bed6ab4"
     },
     {
       "path": "qa/pentatonic-binding-audit-neo4j-validation.json",
       "bytes": 3061,
-      "sha256": "6af4e9a86e9e7f4e29221dc896911bbb3d7bfb20ec872b0145894e1dab21bec7"
+      "sha256": "2a1d6f9432089124071e3bfd76d08944548d944e5c8ff419bbaa6f872ade9dec"
     },
     {
       "path": "qa/pentatonic-set-class-admission-backlog-validation.json",
@@ -1214,6 +1219,21 @@
       "path": "schemas/domain_landform_registry.yaml",
       "bytes": 5748,
       "sha256": "5ee02b348f1898aedf7bc4e458bf24846cf364e1e6a4f765703372690b0f821e"
+    },
+    {
+      "path": "schemas/elemental-pentatonic-scale-map-v1.0.0.schema.json",
+      "bytes": 8265,
+      "sha256": "c21d3457015be893532259ed582b61affb3f7b9791b719e2ed15a7bdd12cc57f"
+    },
+    {
+      "path": "schemas/elemental-pentatonic-scale-map-validation-report-v1.0.0.schema.json",
+      "bytes": 1363,
+      "sha256": "e279d297dd5c9e252aa83f91bc3a2bbc6e2a73fca1fb7cd5f0eaaddaf525605e"
+    },
+    {
+      "path": "schemas/elemental_pentatonic_scale_map_v1.0.0.yaml",
+      "bytes": 11580,
+      "sha256": "129096045f2c721c474cc6e1def1a6f954087fb65dd397df250ccaa50fa09bf7"
     },
     {
       "path": "schemas/fivefold-capability/fivefold-capability-teleology-negative-cases.schema.json",
@@ -1541,6 +1561,11 @@
       "sha256": "441789080ce6d022ad6dc8f9d829808ef2864869ffdeed20a1a2836be644005e"
     },
     {
+      "path": "scripts/validate-elemental-pentatonic-scale-map.py",
+      "bytes": 22143,
+      "sha256": "fb3c5f87864d4cad7af13533090736f277728b97d0e4bdd3a72dbf367fd8a3b1"
+    },
+    {
       "path": "scripts/validate-fivefold-capability-teleology.py",
       "bytes": 50048,
       "sha256": "b584ab22fb4c85c26bcc49185adea4eb5d1da3fc1c2236df74667e815f38e88e"
@@ -1671,6 +1696,11 @@
       "sha256": "8dd8eb784b73ce7d3a281e0339645264129fd18bc54b41a407472f963e12b11f"
     },
     {
+      "path": "scrum/CRT-350-elemental-pentatonic-scale-map.md",
+      "bytes": 3777,
+      "sha256": "d887c3c09ace50514ba8db77f12ef5ea0f4cb85e0bf0dc0af2a22e4e17eb99a8"
+    },
+    {
       "path": "scrum/EPIC-001-network-replica.md",
       "bytes": 4634,
       "sha256": "fe081c90ba3ea97beaf0d326804a92c62626a5a2f0be84a38284c45d3122ccd0"
@@ -1792,8 +1822,8 @@
     },
     {
       "path": "scrum/README.md",
-      "bytes": 8439,
-      "sha256": "7ba9a060388655d3791ae1a996b6063ca110a3cf89c97ceb9a8a06bcf749ef51"
+      "bytes": 8588,
+      "sha256": "78f4b77c830869fc1046be1cc5e2fe60d45ee5983ff4c5625f325fc7f6cb5799"
     },
     {
       "path": "scrum/pre-epic-400-audit-notes.md",
@@ -3853,7 +3883,7 @@
     {
       "path": "tests/pentatonic_binding_audit/neo4j-live.test.mjs",
       "bytes": 19048,
-      "sha256": "73596c16a9f1720ea8427bce88b8b6deb5d4f6f4381721493d720ad45e2b6d05"
+      "sha256": "6f76eb020602afe065b46a6f4c5b9e12a6b9c6896117d26d7f9ccf3562fe2817"
     },
     {
       "path": "tests/test_court_graph_projection.py",
@@ -3879,6 +3909,11 @@
       "path": "tests/test_crt_308_court_vault_context.py",
       "bytes": 5898,
       "sha256": "c466bc14213ce3cf34bb097355c82660951ff789db6c55f661906e218a69b161"
+    },
+    {
+      "path": "tests/test_elemental_pentatonic_scale_map.py",
+      "bytes": 7479,
+      "sha256": "49e0ff7d7fc2b36203cad611e4f4b3114803e9b34ab90954c7f07b696e90b14e"
     },
     {
       "path": "tests/test_fivefold_capability_teleology.py",

@@ -1,0 +1,270 @@
+# Elemental Pentatonic Scale Map v1.0.0
+#
+# Status: Proposed — planning evidence. No runtime, graph, policy, ledger,
+# admission, or physics effect. The map is authored correspondence; the
+# underlying masks, classes, and complement pairs are replayed from admitted
+# sources without redefinition.
+#
+# The map finalizes the dual-core topological separation of domain-registry
+# physics categorization:
+#   Photonic (Governor / Ontological):    7-35 nodes — passive geography,
+#     light, and matter (landforms, flora, architecture). Variations are
+#     categorized by the 7 Governors; C_P is the photonic coordinate.
+#   Electromagnetic (Element / Teleological): 5-35 nodes — active mechanics,
+#     force, and capability (kinematics, weather). Variations are categorized
+#     by the 4 element axes plus the Mercury engine; Electric (External) and
+#     Magnetic (Internal) are authored correspondences, not physical fields.
+#
+# Orientation policy (replayed from schemas/governors.yaml#bit_order_policy):
+# mask strings are written MSB; the pitch_mask integer is the LSB parse
+# (bit p = pitch class p). The as-written MSB integer is recorded but never
+# used as a pitch mask (ordinaryBinaryParseOfPitchMask12Forbidden).
+#
+# Ian Ring scale catalog: https://ianring.com/musictheory/scales/<id>
+
+metadata:
+  registry_id: elemental_pentatonic_scale_map
+  version: 1.0.0
+  admission_status: proposed
+  physical_quantity_claim: false
+  no_electromagnetic_equivalence: true
+  description: >-
+    Binds the five elemental capability schools to their canonical 5-35
+    Ian Ring scale identities (661 Major Pentatonic, 677 Scottish Pentatonic,
+    1189 Qing Yu, 1193 Minor Pentatonic, 1321 Man Gong), each replayed from
+    the admitted C0-C4 Court register, with authored semantic roles.
+  architecture:
+    dual_core:
+      ontological_layer:
+        nodes: 7-35
+        physics_category: Photonic
+        coordinate: C_P
+        content: passive geography, light, and matter
+        examples: [landforms, flora, architecture]
+        variation_axis: 7 Governors
+      teleological_layer:
+        nodes: 5-35
+        physics_category: Electromagnetic
+        coordinate: kappa_court
+        content: active mechanics, force, and capability
+        examples: [kinematics, weather]
+        variation_axis: 4 element axes plus Mercury engine
+    emblem_not_register: >-
+      A scale mask belongs to its Court position. The element assignment is
+      an authored emblem; it never adds a fifth register axis and never
+      writes court.poleDisposition.
+
+admission_boundary:
+  runtime_effect: false
+  graph_effect: false
+  policy_effect: false
+  ledger_effect: false
+  admission_effect: false
+  writes_court_pole_disposition: false
+  kappa_court_access: read_only_replay
+  global_ch_access: no_write
+  no_pentatonic_family_admission_claim: true
+  crt310_gate_effect: false
+
+orientation_policy:
+  mask_string_written_msb: true
+  pitch_mask_integer_lsb: true
+  ordinary_msb_parse_forbidden: true
+  statement: >-
+    Each record stores the MSB doc string and the LSB pitch_mask integer.
+    Reversal of the string must equal the pitch mask; the as-written parse
+    is recorded as documentation only.
+
+scale_bindings:
+  - element: Fire (Mars)
+    school_ref: fivefold.capability_school.fire
+    zodiac_facets: [fivefold.zodiac.capability_school_facet.aries, fivefold.zodiac.capability_school_facet.scorpio]
+    ian_ring_id: 661
+    ian_ring_name: Major Pentatonic
+    ian_ring_url: https://ianring.com/musictheory/scales/661
+    mask_string_msb: "101010010100"
+    pitch_mask: 661
+    as_written_msb_integer: 2708
+    pitch_classes: [0, 2, 4, 7, 9]
+    prime_form: [0, 2, 4, 7, 9]
+    forte_class: 5-35
+    interval_structure: [2, 2, 3, 2, 3]
+    interval_vector: [0, 3, 2, 1, 4, 0]
+    court_position: C0
+    kappa_court: {numerator: 0, denominator: 1}
+    brightness: 22
+    emblem_role: electric_seed
+    semantic_fit: >-
+      The prime mode: fully open anhemitonic consonance, all four poles
+      External. Pure outward activation — the broadcast seed of the
+      polarization cycle.
+    complement_evidence:
+      raw_heptatonic_complement_mask: 3434
+      complement_governor: Saturn
+      relation_admission: frozen_evidence_not_active_graph_relation
+    transition_refs:
+      - court_advance_C0_to_C1
+      - court_retreat_C1_to_C0
+
+  - element: Air / Wind (Jupiter)
+    school_ref: fivefold.capability_school.air
+    zodiac_facets: [fivefold.zodiac.capability_school_facet.sagittarius, fivefold.zodiac.capability_school_facet.pisces]
+    ian_ring_id: 677
+    ian_ring_name: Scottish Pentatonic
+    ian_ring_url: https://ianring.com/musictheory/scales/677
+    mask_string_msb: "101001010100"
+    pitch_mask: 677
+    as_written_msb_integer: 2644
+    pitch_classes: [0, 2, 5, 7, 9]
+    prime_form: [0, 2, 4, 7, 9]
+    forte_class: 5-35
+    interval_structure: [2, 3, 2, 2, 3]
+    interval_vector: [0, 3, 2, 1, 4, 0]
+    court_position: C1
+    kappa_court: {numerator: 1, denominator: 4}
+    brightness: 23
+    emblem_role: suspended_horizon
+    semantic_fit: >-
+      The suspended mode: the third is absent and the fifth floats
+      unresolved — open-ended distribution without tonal anchor, matching
+      Air's horizon and option expansion.
+    complement_evidence:
+      raw_heptatonic_complement_mask: 3418
+      complement_governor: Venus
+      relation_admission: frozen_evidence_not_active_graph_relation
+    transition_refs:
+      - court_advance_C1_to_C2
+      - court_retreat_C2_to_C1
+
+  - element: Quintessence (Mercury)
+    school_ref: fivefold.capability_school.quintessence
+    zodiac_facets: [fivefold.zodiac.capability_school_facet.gemini, fivefold.zodiac.capability_school_facet.virgo]
+    ian_ring_id: 1189
+    ian_ring_name: Qing Yu
+    ian_ring_url: https://ianring.com/musictheory/scales/1189
+    mask_string_msb: "101001010010"
+    pitch_mask: 1189
+    as_written_msb_integer: 2642
+    pitch_classes: [0, 2, 5, 7, 10]
+    prime_form: [0, 2, 4, 7, 9]
+    forte_class: 5-35
+    interval_structure: [2, 3, 2, 3, 2]
+    interval_vector: [0, 3, 2, 1, 4, 0]
+    court_position: C2
+    kappa_court: {numerator: 1, denominator: 2}
+    brightness: 24
+    emblem_role: engine_hinge_emblem
+    is_binary_court_pole: false
+    court_pole_index: null
+    register_membership: excluded
+    semantic_fit: >-
+      The palindromic, self-inverse mode (T0I = T0): the only mirror-
+      symmetric 5-35 rotation, at the midpoint of the polarization cycle.
+      An authored emblem for the transductive engine — Mercury is not a
+      register bit, not a fifth position, and this record grants nothing.
+    complement_evidence:
+      raw_heptatonic_complement_mask: 2906
+      complement_governor: Jupiter
+      relation_admission: frozen_evidence_not_active_graph_relation
+    transition_refs: []
+    engine_interface_ref: mercury_engine_cycle
+
+  - element: Water (Venus)
+    school_ref: fivefold.capability_school.water
+    zodiac_facets: [fivefold.zodiac.capability_school_facet.libra, fivefold.zodiac.capability_school_facet.taurus]
+    ian_ring_id: 1193
+    ian_ring_name: Minor Pentatonic
+    ian_ring_url: https://ianring.com/musictheory/scales/1193
+    mask_string_msb: "100101010010"
+    pitch_mask: 1193
+    as_written_msb_integer: 2386
+    pitch_classes: [0, 3, 5, 7, 10]
+    prime_form: [0, 2, 4, 7, 9]
+    forte_class: 5-35
+    interval_structure: [3, 2, 2, 3, 2]
+    interval_vector: [0, 3, 2, 1, 4, 0]
+    court_position: C3
+    kappa_court: {numerator: 3, denominator: 4}
+    brightness: 25
+    emblem_role: inward_cohesion
+    semantic_fit: >-
+      The minor mode: the minor third pulls inward and darkens the field —
+      cohesion, embodied value, and coupling at the threshold of full
+      internalization.
+    complement_evidence:
+      raw_heptatonic_complement_mask: 2902
+      complement_governor: Mercury
+      relation_admission: frozen_evidence_not_active_graph_relation
+    transition_refs:
+      - court_advance_C2_to_C3
+      - court_retreat_C3_to_C2
+
+  - element: Earth (Saturn)
+    school_ref: fivefold.capability_school.earth
+    zodiac_facets: [fivefold.zodiac.capability_school_facet.aquarius, fivefold.zodiac.capability_school_facet.capricorn]
+    ian_ring_id: 1321
+    ian_ring_name: "Man Gong"
+    ian_ring_url: https://ianring.com/musictheory/scales/1321
+    mask_string_msb: "100101001010"
+    pitch_mask: 1321
+    as_written_msb_integer: 2378
+    pitch_classes: [0, 3, 5, 8, 10]
+    prime_form: [0, 2, 4, 7, 9]
+    forte_class: 5-35
+    interval_structure: [3, 2, 3, 2, 2]
+    interval_vector: [0, 3, 2, 1, 4, 0]
+    court_position: C4
+    kappa_court: {numerator: 1, denominator: 1}
+    brightness: 26
+    emblem_role: magnetic_terminus
+    semantic_fit: >-
+      The darkest anhemitonic mode (blues-minor / phrygian pentatonic
+      weight): all four poles Internal, full magnetic retention, the
+      absolute boundary of the cycle.
+    complement_evidence:
+      raw_heptatonic_complement_mask: 2774
+      complement_governor: Mars
+      relation_admission: frozen_evidence_not_active_graph_relation
+    transition_refs:
+      - court_advance_C3_to_C4
+      - court_retreat_C4_to_C3
+
+invariants:
+  - invariant_id: single_class_5_35
+    statement: All five bound masks are members of Forte 5-35 with prime form (0,2,4,7,9), interval vector <0,3,2,1,4,0>, anhemitonic, CQ=1, SQ=1/2.
+  - invariant_id: court_position_replay
+    statement: The five pitch masks are exactly the admitted C0-C4 masks from court-runtime-policy.json, in canonical order.
+  - invariant_id: brightness_kappa_monotonic
+    statement: Leonard brightness 22,23,24,25,26 tracks kappa_court 0,1/4,1/2,3/4,1 monotonically along C0-C4.
+  - invariant_id: complement_pairs_replay
+    statement: Each mask's raw 12-bit complement equals the frozen complement-map rooted pair for its Court position; the pairing is frozen evidence, not an active graph relation.
+  - invariant_id: orientation_policy
+    statement: mask strings are MSB documentation; pitch_mask integers are LSB parses; ordinary MSB parsing of the string is forbidden.
+  - invariant_id: emblem_not_register
+    statement: Element assignments are authored emblems; Mercury stays excluded from the register; no record writes court.poleDisposition.
+
+guards:
+  - guard_id: physics_authored_correspondence
+    status: enforced
+    statement: Electromagnetic labels are authored correspondence; physical_quantity_claim is false and no EM equivalence is asserted.
+  - guard_id: mercury_excluded_from_register
+    status: enforced
+    statement: Quintessence carries is_binary_court_pole false, court_pole_index null, and register_membership excluded.
+  - guard_id: no_court_writes
+    status: enforced
+    statement: No binding writes court.poleDisposition, graph state, runtime policy, or ledger success.
+  - guard_id: no_unadmitted_classes
+    status: enforced
+    statement: Every bound mask is admitted class 5-35; no proposed pentatonic class is claimed.
+  - guard_id: complement_frozen_not_active
+    status: enforced
+    statement: Complement pairs are replayed as frozen evidence with relation_admission frozen_evidence_not_active_graph_relation.
+  - guard_id: kappa_and_ch_untouched
+    status: enforced
+    statement: kappa_court is read-only replay; global harmonic.C_H is not written.
+  - guard_id: crt310_untouched
+    status: enforced
+    statement: CRT-310 gates, backlog, and workflow remain unchanged.
+  - guard_id: excluded_relation_vocabulary_absent
+    status: enforced
+    statement: SETS_COURT_POLE, EXECUTES_COURT_MOVE, and equivalent executable relations never appear.

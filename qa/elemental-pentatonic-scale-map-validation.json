@@ -1,0 +1,419 @@
+{
+  "checks": [
+    {
+      "checkId": "epsm-schema-identity",
+      "diagnostic": "valid",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/elemental-pentatonic-scale-map-v1.0.0.schema.json",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "epsm-admission-boundary",
+      "diagnostic": {
+        "runtime_effect": false,
+        "graph_effect": false,
+        "policy_effect": false,
+        "ledger_effect": false,
+        "admission_effect": false,
+        "writes_court_pole_disposition": false,
+        "kappa_court_access": "read_only_replay",
+        "global_ch_access": "no_write",
+        "no_pentatonic_family_admission_claim": true,
+        "crt310_gate_effect": false
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#admission_boundary",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "epsm-court-position-replay",
+      "diagnostic": {
+        "masks": [
+          661,
+          677,
+          1189,
+          1193,
+          1321
+        ],
+        "positions": [
+          "C0",
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ]
+      },
+      "evidenceLocator": "schemas/court-runtime-policy.json#positions",
+      "expected": {
+        "masks": [
+          661,
+          677,
+          1189,
+          1193,
+          1321
+        ],
+        "positions": [
+          "C0",
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ]
+      },
+      "actual": {
+        "masks": [
+          661,
+          677,
+          1189,
+          1193,
+          1321
+        ],
+        "positions": [
+          "C0",
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "epsm-orientation-replay",
+      "diagnostic": [],
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#orientation_policy",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "epsm-class-replay",
+      "diagnostic": [],
+      "evidenceLocator": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+      "expected": "all 5-35 admitted",
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "checkId": "epsm-brightness-kappa-monotonic",
+      "diagnostic": {
+        "brightness": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "kappa": [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 1,
+            "denominator": 4
+          },
+          {
+            "numerator": 1,
+            "denominator": 2
+          },
+          {
+            "numerator": 3,
+            "denominator": 4
+          },
+          {
+            "numerator": 1,
+            "denominator": 1
+          }
+        ]
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#invariants",
+      "expected": {
+        "brightness": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "kappa": [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 1,
+            "denominator": 4
+          },
+          {
+            "numerator": 1,
+            "denominator": 2
+          },
+          {
+            "numerator": 3,
+            "denominator": 4
+          },
+          {
+            "numerator": 1,
+            "denominator": 1
+          }
+        ]
+      },
+      "actual": {
+        "brightness": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "kappa": [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 1,
+            "denominator": 4
+          },
+          {
+            "numerator": 1,
+            "denominator": 2
+          },
+          {
+            "numerator": 3,
+            "denominator": 4
+          },
+          {
+            "numerator": 1,
+            "denominator": 1
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "epsm-complement-replay",
+      "diagnostic": [],
+      "evidenceLocator": "seven-governors-court-substrate-v0.1.0/canonical/complement-map.json#rootedPairs",
+      "expected": [
+        661,
+        677,
+        1189,
+        1193,
+        1321
+      ],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "checkId": "epsm-mercury-exclusion",
+      "diagnostic": {
+        "element": "Quintessence (Mercury)",
+        "school_ref": "fivefold.capability_school.quintessence",
+        "zodiac_facets": [
+          "fivefold.zodiac.capability_school_facet.gemini",
+          "fivefold.zodiac.capability_school_facet.virgo"
+        ],
+        "ian_ring_id": 1189,
+        "ian_ring_name": "Qing Yu",
+        "ian_ring_url": "https://ianring.com/musictheory/scales/1189",
+        "mask_string_msb": "101001010010",
+        "pitch_mask": 1189,
+        "as_written_msb_integer": 2642,
+        "pitch_classes": [
+          0,
+          2,
+          5,
+          7,
+          10
+        ],
+        "prime_form": [
+          0,
+          2,
+          4,
+          7,
+          9
+        ],
+        "forte_class": "5-35",
+        "interval_structure": [
+          2,
+          3,
+          2,
+          3,
+          2
+        ],
+        "interval_vector": [
+          0,
+          3,
+          2,
+          1,
+          4,
+          0
+        ],
+        "court_position": "C2",
+        "kappa_court": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "brightness": 24,
+        "emblem_role": "engine_hinge_emblem",
+        "is_binary_court_pole": false,
+        "court_pole_index": null,
+        "register_membership": "excluded",
+        "semantic_fit": "The palindromic, self-inverse mode (T0I = T0): the only mirror- symmetric 5-35 rotation, at the midpoint of the polarization cycle. An authored emblem for the transductive engine — Mercury is not a register bit, not a fifth position, and this record grants nothing.",
+        "complement_evidence": {
+          "raw_heptatonic_complement_mask": 2906,
+          "complement_governor": "Jupiter",
+          "relation_admission": "frozen_evidence_not_active_graph_relation"
+        },
+        "transition_refs": [],
+        "engine_interface_ref": "mercury_engine_cycle"
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#scale_bindings[2]",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "epsm-physics-guard",
+      "diagnostic": "authored correspondence only",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#metadata",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "epsm-forbidden-relations",
+      "diagnostic": "no executable Court relation keys",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#scale_bindings",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "epsm-cross-registry-refs",
+      "diagnostic": [],
+      "evidenceLocator": "canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "checkId": "epsm-guard-closure",
+      "diagnostic": [
+        "complement_frozen_not_active",
+        "crt310_untouched",
+        "excluded_relation_vocabulary_absent",
+        "kappa_and_ch_untouched",
+        "mercury_excluded_from_register",
+        "no_court_writes",
+        "no_unadmitted_classes",
+        "physics_authored_correspondence"
+      ],
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#guards",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "epsm-determinism",
+      "diagnostic": "1c90da46c6a7a75468301ec34b7dc6afe68f61bfaa2497493c95352f6e8cf045",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/elemental_pentatonic_scale_map_v1.0.0.yaml",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "epsm-negative-case-closure",
+      "diagnostic": [
+        "wrong-court-mask",
+        "mercury-exclusion-violated",
+        "orientation-mismatch",
+        "kappa-mismatch",
+        "brightness-non-monotonic",
+        "physical-claim-true",
+        "court-write-boundary",
+        "complement-wrong",
+        "forbidden-relation-injected",
+        "duplicate-id"
+      ],
+      "evidenceLocator": "/home/erick/projects/integrated-release/qa/elemental-pentatonic-scale-map-validation.json",
+      "expected": [
+        "brightness-non-monotonic",
+        "complement-wrong",
+        "court-write-boundary",
+        "duplicate-id",
+        "forbidden-relation-injected",
+        "kappa-mismatch",
+        "mercury-exclusion-violated",
+        "orientation-mismatch",
+        "physical-claim-true",
+        "wrong-court-mask"
+      ],
+      "actual": [
+        "brightness-non-monotonic",
+        "complement-wrong",
+        "court-write-boundary",
+        "duplicate-id",
+        "forbidden-relation-injected",
+        "kappa-mismatch",
+        "mercury-exclusion-violated",
+        "orientation-mismatch",
+        "physical-claim-true",
+        "wrong-court-mask"
+      ],
+      "status": "PASS"
+    },
+    {
+      "checkId": "epsm-adversarial-rejection",
+      "diagnostic": {
+        "wrong-court-mask": "court_position_mask_mismatch",
+        "mercury-exclusion-violated": "mercury_exclusion_invalid",
+        "orientation-mismatch": "orientation_mismatch",
+        "kappa-mismatch": "kappa_replay_mismatch",
+        "brightness-non-monotonic": "brightness_monotonic_invalid",
+        "physical-claim-true": "physical_claim_invalid",
+        "court-write-boundary": "boundary_write_invalid",
+        "complement-wrong": "complement_replay_mismatch",
+        "forbidden-relation-injected": "forbidden_relation",
+        "duplicate-id": "duplicate_id_rejected"
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/elemental_pentatonic_scale_map_v1.0.0.yaml",
+      "expected": {
+        "wrong-court-mask": "court_position_mask_mismatch",
+        "mercury-exclusion-violated": "mercury_exclusion_invalid",
+        "orientation-mismatch": "orientation_mismatch",
+        "kappa-mismatch": "kappa_replay_mismatch",
+        "brightness-non-monotonic": "brightness_monotonic_invalid",
+        "physical-claim-true": "physical_claim_invalid",
+        "court-write-boundary": "boundary_write_invalid",
+        "complement-wrong": "complement_replay_mismatch",
+        "forbidden-relation-injected": "forbidden_relation",
+        "duplicate-id": "duplicate_id_rejected"
+      },
+      "actual": {
+        "wrong-court-mask": "court_position_mask_mismatch",
+        "mercury-exclusion-violated": "mercury_exclusion_invalid",
+        "orientation-mismatch": "orientation_mismatch",
+        "kappa-mismatch": "kappa_replay_mismatch",
+        "brightness-non-monotonic": "brightness_monotonic_invalid",
+        "physical-claim-true": "physical_claim_invalid",
+        "court-write-boundary": "boundary_write_invalid",
+        "complement-wrong": "complement_replay_mismatch",
+        "forbidden-relation-injected": "forbidden_relation",
+        "duplicate-id": "duplicate_id_rejected"
+      },
+      "status": "PASS"
+    }
+  ],
+  "checksFailed": 0,
+  "checksPassed": 15,
+  "registryId": "elemental_pentatonic_scale_map",
+  "registryVersion": "1.0.0",
+  "schemaVersion": "elemental-pentatonic-scale-map-validation.v1.0.0",
+  "verdict": "PASS",
+  "reportFingerprint": "a5392520f033ce7e09a5ba5409b4392ab0e146da54bd84a515fb28312c3ffbf5"
+}

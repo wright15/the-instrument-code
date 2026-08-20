@@ -67,6 +67,8 @@
     "validate:fivefold-engine-promotion-evidence": "python3 scripts/build-fivefold-engine-promotion-evidence.py --check && python3 scripts/validate-fivefold-engine-promotion-evidence.py && npm run test:fivefold-engine-promotion-evidence --silent",
     "test:teleological-physics-registry": "python3 -m pytest -p no:cacheprovider -q tests/test_teleological_physics_registry.py",
     "validate:teleological-physics-registry": "python3 scripts/validate-teleological-physics-registry.py && npm run test:teleological-physics-registry --silent",
+    "test:elemental-pentatonic-scale-map": "python3 -m pytest -p no:cacheprovider -q tests/test_elemental_pentatonic_scale_map.py",
+    "validate:elemental-pentatonic-scale-map": "python3 scripts/validate-elemental-pentatonic-scale-map.py && npm run test:elemental-pentatonic-scale-map --silent",
     "bootstrap:neo4j": "node scripts/bootstrap-neo4j.mjs",
     "verify:neo4j:roundtrip": "node scripts/verify-neo4j-roundtrip.mjs",
     "test:neo4j:full:raw": "node --test tests/neo4j/full-database-live.test.mjs",
