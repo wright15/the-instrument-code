@@ -1,0 +1,235 @@
+# Mechanics Thermodynamics Registry v1.0.0
+#
+# Status: Proposed — planning evidence. No runtime, graph, policy, ledger,
+# admission, or physics effect.
+#
+# Layer: Teleological (Electromagnetic / 5-35 Capabilities).
+# Purpose: Defines the "Nouns of Action" (capabilities) related to heat,
+# energy state, and thermodynamic processes for the 5 Elements.
+# Architecture: Capabilities are split by Electric (External/0) and
+# Magnetic (Internal/1) polarities.
+#
+# These are authored game mechanics, not executable physics laws:
+# physical_quantity_claim is false; no SI quantity, electromagnetic
+# equivalence, or thermodynamic equivalence with kappa_court is asserted.
+# Thermodynamic vocabulary (heat, thermal, temperature) is authored
+# semantics; kappa_court remains the sole Court compression coordinate
+# (read-only replay) and global harmonic.C_H remains untouched.
+#
+# Cross-registry bindings:
+#   - elemental_pentatonic_scale_map_v1.0.0.yaml (CRT-350) for scale IDs
+#   - teleological_physics_registry_v1.0.0.yaml (CRT-349) for transitions
+#   - fivefold-capability-teleology-v1 (CRT-347) for schools and zodiac
+#     facets
+
+metadata:
+  registry_id: mechanics_thermodynamics_registry
+  version: 1.0.0
+  status: proposed_canonization
+  admission_status: proposed
+  author: Solomon
+  layer: 4
+  physical_quantity_claim: false
+  no_electromagnetic_equivalence: true
+  no_thermodynamic_equivalence_with_kappa_court: true
+  description: >-
+    Maps thermodynamic capabilities (heat/energy actions) to the 5
+    Elements, split by Electric (External) and Magnetic (Internal) poles.
+  architecture:
+    capabilities_are: nouns_of_action
+    split_by: electric_external_vs_magnetic_internal
+    electric_bit: 0
+    magnetic_bit: 1
+    authored_game_mechanics_not_physics: true
+
+admission_boundary:
+  runtime_effect: false
+  graph_effect: false
+  policy_effect: false
+  ledger_effect: false
+  admission_effect: false
+  writes_court_pole_disposition: false
+  kappa_court_access: read_only_replay
+  global_ch_access: no_write
+  no_pentatonic_family_admission_claim: true
+  crt310_gate_effect: false
+
+elements:
+
+  # ==========================================================
+  # FIRE (Mars) - Scale: Major Pentatonic (661)
+  # Kinetic activation and thermal force.
+  # ==========================================================
+  - element: Fire
+    governor: Mars
+    school_ref: fivefold.capability_school.fire
+    scale_id: 661
+    scale_map_ref: schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#scale_bindings[Fire (Mars)]
+    transition_refs: [court_advance_C0_to_C1, court_retreat_C1_to_C0]
+    capabilities:
+      electric_external:
+        polarity_bit: 0
+        zodiac: Aries
+        zodiac_facet_ref: fivefold.zodiac.capability_school_facet.aries
+        transition_ref: court_retreat_C1_to_C0
+        mechanic_id: explosive_emission
+        definition: "Rapid, outward broadcast of kinetic and thermal energy."
+        relation_type: activated_by
+        value: outward_kinetic_force
+        source_class: authored_capability
+      magnetic_internal:
+        polarity_bit: 1
+        zodiac: Scorpio
+        zodiac_facet_ref: fivefold.zodiac.capability_school_facet.scorpio
+        transition_ref: court_advance_C0_to_C1
+        mechanic_id: inductive_smoldering
+        definition: "Absorbs external kinetic energy and stores it as sustained internal heat."
+        relation_type: resists_by
+        value: inductive_resistance
+        source_class: authored_capability
+
+  # ==========================================================
+  # AIR / WIND (Jupiter) - Scale: Scottish Pentatonic (677)
+  # Thermal distribution and atmospheric state.
+  # ==========================================================
+  - element: Air
+    governor: Jupiter
+    school_ref: fivefold.capability_school.air
+    scale_id: 677
+    scale_map_ref: schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#scale_bindings[Air / Wind (Jupiter)]
+    transition_refs: [court_advance_C1_to_C2, court_retreat_C2_to_C1]
+    capabilities:
+      electric_external:
+        polarity_bit: 0
+        zodiac: Sagittarius
+        zodiac_facet_ref: fivefold.zodiac.capability_school_facet.sagittarius
+        transition_ref: court_retreat_C2_to_C1
+        mechanic_id: thermal_updraft
+        definition: "Expands and scatters heat outward, reducing localized energy density."
+        relation_type: distributes
+        value: rarefied_heat_flow
+        source_class: authored_capability
+      magnetic_internal:
+        polarity_bit: 1
+        zodiac: Pisces
+        zodiac_facet_ref: fivefold.zodiac.capability_school_facet.pisces
+        transition_ref: court_advance_C1_to_C2
+        mechanic_id: thermal_drag
+        definition: "Stifles heat distribution, creating localized cold pockets or dense pressure."
+        relation_type: constrains
+        value: ground_level_drag
+        source_class: authored_capability
+
+  # ==========================================================
+  # WATER (Venus) - Scale: Minor Pentatonic (1193)
+  # Cohesion, state change, and solvent dynamics.
+  # ==========================================================
+  - element: Water
+    governor: Venus
+    school_ref: fivefold.capability_school.water
+    scale_id: 1193
+    scale_map_ref: schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#scale_bindings[Water (Venus)]
+    transition_refs: [court_advance_C2_to_C3, court_retreat_C3_to_C2]
+    capabilities:
+      electric_external:
+        polarity_bit: 0
+        zodiac: Libra
+        zodiac_facet_ref: fivefold.zodiac.capability_school_facet.libra
+        transition_ref: court_retreat_C3_to_C2
+        mechanic_id: convective_discharge
+        definition: "Outward exchange of thermal energy; balancing the temperature of the environment."
+        relation_type: exchanges
+        value: thermal_coupling
+        source_class: authored_capability
+      magnetic_internal:
+        polarity_bit: 1
+        zodiac: Taurus
+        zodiac_facet_ref: fivefold.zodiac.capability_school_facet.taurus
+        transition_ref: court_advance_C2_to_C3
+        mechanic_id: latent_heat_storage
+        definition: "Absorbs massive amounts of heat without changing state; internal pressure building."
+        relation_type: absorbs
+        value: specific_heat_capacity
+        source_class: authored_capability
+
+  # ==========================================================
+  # EARTH (Saturn) - Scale: Man Gong (1321)
+  # Fixation, crystallization, and boundary enforcement.
+  # ==========================================================
+  - element: Earth
+    governor: Saturn
+    school_ref: fivefold.capability_school.earth
+    scale_id: 1321
+    scale_map_ref: schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#scale_bindings[Earth (Saturn)]
+    transition_refs: [court_advance_C3_to_C4, court_retreat_C4_to_C3]
+    capabilities:
+      electric_external:
+        polarity_bit: 0
+        zodiac: Aquarius
+        zodiac_facet_ref: fivefold.zodiac.capability_school_facet.aquarius
+        transition_ref: court_retreat_C4_to_C3
+        mechanic_id: dielectric_friction
+        definition: "Generates static/thermal friction at the boundary, repelling external heat."
+        relation_type: repels
+        value: thermal_insulation
+        source_class: authored_capability
+      magnetic_internal:
+        polarity_bit: 1
+        zodiac: Capricorn
+        zodiac_facet_ref: fivefold.zodiac.capability_school_facet.capricorn
+        transition_ref: court_advance_C3_to_C4
+        mechanic_id: crystallization_lock
+        definition: "Flash-freezes internal energy into an immutable, solid lattice."
+        relation_type: fixes
+        value: absolute_state_change
+        source_class: authored_capability
+
+  # ==========================================================
+  # QUINTESSENCE (Mercury) - Scale: Qing Yu (1189)
+  # The Engine: Transduction of state changes.
+  # ==========================================================
+  - element: Quintessence
+    governor: Mercury
+    school_ref: fivefold.capability_school.quintessence
+    scale_id: 1189
+    scale_map_ref: schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#scale_bindings[Quintessence (Mercury)]
+    is_binary_court_pole: false
+    court_pole_index: null
+    register_membership: excluded
+    engine_interface_ref: mercury_engine_cycle
+    capabilities:
+      engine_interface:
+        mechanic_id: phase_transition
+        definition: "Translates harmonic state mutations into elemental thermodynamic shifts."
+        relation_type: transduces
+        value: em_induction_cycle
+        source_class: authored_capability
+
+guards:
+  - guard_id: authored_game_mechanics_not_physics
+    status: enforced
+    statement: Every capability is an authored game mechanic; physical_quantity_claim is false and no executable physics law is asserted.
+  - guard_id: no_kappa_thermodynamic_equivalence
+    status: enforced
+    statement: Thermodynamic vocabulary is authored semantics; kappa_court remains read-only replay and is never equated with temperature, entropy, enthalpy, or free energy.
+  - guard_id: mercury_excluded_from_register
+    status: enforced
+    statement: Quintessence carries is_binary_court_pole false, court_pole_index null, and register_membership excluded; it has no polarity bit and no zodiac facet.
+  - guard_id: no_court_writes
+    status: enforced
+    statement: No capability writes court.poleDisposition, graph state, runtime policy, or ledger success.
+  - guard_id: relation_vocabulary_authored
+    status: enforced
+    statement: relation_type values are authored semantic verbs; executable Court-move relations never appear.
+  - guard_id: no_unadmitted_scale_classes
+    status: enforced
+    statement: Every scale_id is an admitted 5-35 Court mask replayed from the elemental scale map; no proposed pentatonic class is claimed.
+  - guard_id: kappa_and_ch_untouched
+    status: enforced
+    statement: kappa_court is read-only replay; global harmonic.C_H is not written.
+  - guard_id: crt310_untouched
+    status: enforced
+    statement: CRT-310 gates, backlog, and workflow remain unchanged.
+  - guard_id: excluded_relation_vocabulary_absent
+    status: enforced
+    statement: SETS_COURT_POLE, EXECUTES_COURT_MOVE, and equivalent executable relations never appear.

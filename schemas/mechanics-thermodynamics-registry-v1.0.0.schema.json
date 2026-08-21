@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mechanics-thermodynamics-registry.v1.0.0",
+  "title": "Mechanics Thermodynamics Registry (proposed)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["metadata", "admission_boundary", "elements", "guards"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["registry_id", "version", "status", "admission_status", "author", "layer", "physical_quantity_claim", "no_electromagnetic_equivalence", "no_thermodynamic_equivalence_with_kappa_court", "description", "architecture"],
+      "properties": {
+        "registry_id": { "const": "mechanics_thermodynamics_registry" },
+        "version": { "const": "1.0.0" },
+        "status": { "const": "proposed_canonization" },
+        "admission_status": { "const": "proposed" },
+        "author": { "type": "string", "minLength": 1 },
+        "layer": { "const": 4 },
+        "physical_quantity_claim": { "const": false },
+        "no_electromagnetic_equivalence": { "const": true },
+        "no_thermodynamic_equivalence_with_kappa_court": { "const": true },
+        "description": { "type": "string", "minLength": 1 },
+        "architecture": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["capabilities_are", "split_by", "electric_bit", "magnetic_bit", "authored_game_mechanics_not_physics"],
+          "properties": {
+            "capabilities_are": { "const": "nouns_of_action" },
+            "split_by": { "const": "electric_external_vs_magnetic_internal" },
+            "electric_bit": { "const": 0 },
+            "magnetic_bit": { "const": 1 },
+            "authored_game_mechanics_not_physics": { "const": true }
+          }
+        }
+      }
+    },
+    "admission_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["runtime_effect", "graph_effect", "policy_effect", "ledger_effect", "admission_effect", "writes_court_pole_disposition", "kappa_court_access", "global_ch_access", "no_pentatonic_family_admission_claim", "crt310_gate_effect"],
+      "properties": {
+        "runtime_effect": { "const": false },
+        "graph_effect": { "const": false },
+        "policy_effect": { "const": false },
+        "ledger_effect": { "const": false },
+        "admission_effect": { "const": false },
+        "writes_court_pole_disposition": { "const": false },
+        "kappa_court_access": { "const": "read_only_replay" },
+        "global_ch_access": { "const": "no_write" },
+        "no_pentatonic_family_admission_claim": { "const": true },
+        "crt310_gate_effect": { "const": false }
+      }
+    },
+    "elements": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/element" }
+    },
+    "guards": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["guard_id", "status", "statement"],
+        "properties": {
+          "guard_id": { "type": "string", "minLength": 1 },
+          "status": { "const": "enforced" },
+          "statement": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "capability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mechanic_id", "definition", "relation_type", "value", "source_class"],
+      "properties": {
+        "mechanic_id": { "type": "string", "minLength": 1 },
+        "definition": { "type": "string", "minLength": 1 },
+        "relation_type": { "type": "string", "enum": ["activated_by", "resists_by", "distributes", "constrains", "exchanges", "absorbs", "repels", "fixes", "transduces"] },
+        "value": { "type": "string", "minLength": 1 },
+        "source_class": { "const": "authored_capability" }
+      }
+    },
+    "polar_capability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["polarity_bit", "zodiac", "zodiac_facet_ref", "transition_ref", "mechanic_id", "definition", "relation_type", "value", "source_class"],
+      "properties": {
+        "polarity_bit": { "type": "integer", "enum": [0, 1] },
+        "zodiac": { "enum": ["Aries", "Scorpio", "Sagittarius", "Pisces", "Libra", "Taurus", "Aquarius", "Capricorn"] },
+        "zodiac_facet_ref": { "type": "string", "pattern": "^fivefold\\.zodiac\\.[a-z_.]+$" },
+        "transition_ref": { "type": "string", "pattern": "^court_(advance|retreat)_C[0-4]_to_C[0-4]$" },
+        "mechanic_id": { "type": "string", "minLength": 1 },
+        "definition": { "type": "string", "minLength": 1 },
+        "relation_type": { "type": "string", "enum": ["activated_by", "resists_by", "distributes", "constrains", "exchanges", "absorbs", "repels", "fixes", "transduces"] },
+        "value": { "type": "string", "minLength": 1 },
+        "source_class": { "const": "authored_capability" }
+      }
+    },
+    "element": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["element", "governor", "school_ref", "scale_id", "scale_map_ref", "capabilities"],
+      "properties": {
+        "element": { "enum": ["Fire", "Air", "Water", "Earth", "Quintessence"] },
+        "governor": { "enum": ["Mars", "Jupiter", "Venus", "Saturn", "Mercury"] },
+        "school_ref": { "type": "string", "pattern": "^fivefold\\.capability_school\\.[a-z_]+$" },
+        "scale_id": { "type": "integer", "minimum": 0, "maximum": 4095 },
+        "scale_map_ref": { "type": "string", "minLength": 1 },
+        "transition_refs": { "type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": { "type": "string", "pattern": "^court_(advance|retreat)_C[0-4]_to_C[0-4]$" } },
+        "is_binary_court_pole": { "const": false },
+        "court_pole_index": { "type": "null" },
+        "register_membership": { "const": "excluded" },
+        "engine_interface_ref": { "type": "string", "minLength": 1 },
+        "capabilities": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["electric_external", "magnetic_internal"],
+              "properties": {
+                "electric_external": { "$ref": "#/$defs/polar_capability" },
+                "magnetic_internal": { "$ref": "#/$defs/polar_capability" }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["engine_interface"],
+              "properties": {
+                "engine_interface": { "$ref": "#/$defs/capability" }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

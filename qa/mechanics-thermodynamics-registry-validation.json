@@ -1,0 +1,333 @@
+{
+  "checks": [
+    {
+      "checkId": "mtr-schema-identity",
+      "diagnostic": "valid",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics-thermodynamics-registry-v1.0.0.schema.json",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-admission-boundary",
+      "diagnostic": {
+        "runtime_effect": false,
+        "graph_effect": false,
+        "policy_effect": false,
+        "ledger_effect": false,
+        "admission_effect": false,
+        "writes_court_pole_disposition": false,
+        "kappa_court_access": "read_only_replay",
+        "global_ch_access": "no_write",
+        "no_pentatonic_family_admission_claim": true,
+        "crt310_gate_effect": false
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml#admission_boundary",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-element-coverage",
+      "diagnostic": [
+        "Fire",
+        "Air",
+        "Water",
+        "Earth",
+        "Quintessence"
+      ],
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml#elements",
+      "expected": [
+        "Air",
+        "Earth",
+        "Fire",
+        "Quintessence",
+        "Water"
+      ],
+      "actual": [
+        "Air",
+        "Earth",
+        "Fire",
+        "Quintessence",
+        "Water"
+      ],
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-scale-map-replay",
+      "diagnostic": [],
+      "evidenceLocator": "schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#scale_bindings",
+      "expected": {
+        "Fire": 661,
+        "Air": 677,
+        "Water": 1193,
+        "Earth": 1321,
+        "Quintessence": 1189
+      },
+      "actual": {
+        "Fire": 661,
+        "Air": 677,
+        "Water": 1193,
+        "Earth": 1321,
+        "Quintessence": 1189
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-polarity-bit-replay",
+      "diagnostic": [],
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml#elements",
+      "expected": {
+        "electric": 0,
+        "magnetic": 1
+      },
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-zodiac-facet-refs",
+      "diagnostic": [],
+      "evidenceLocator": "canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json#zodiacFacets",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-mercury-exclusion",
+      "diagnostic": {
+        "element": "Quintessence",
+        "governor": "Mercury",
+        "school_ref": "fivefold.capability_school.quintessence",
+        "scale_id": 1189,
+        "scale_map_ref": "schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#scale_bindings[Quintessence (Mercury)]",
+        "is_binary_court_pole": false,
+        "court_pole_index": null,
+        "register_membership": "excluded",
+        "engine_interface_ref": "mercury_engine_cycle",
+        "capabilities": {
+          "engine_interface": {
+            "mechanic_id": "phase_transition",
+            "definition": "Translates harmonic state mutations into elemental thermodynamic shifts.",
+            "relation_type": "transduces",
+            "value": "em_induction_cycle",
+            "source_class": "authored_capability"
+          }
+        }
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml#elements[Quintessence]",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-cross-registry-refs",
+      "diagnostic": [],
+      "evidenceLocator": "schemas/teleological_physics_registry_v1.0.0.yaml",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-physics-guard",
+      "diagnostic": "authored game mechanics, no physics claim",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml#metadata",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-forbidden-relations",
+      "diagnostic": "no executable Court relation keys",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml#elements",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-relation-vocabulary",
+      "diagnostic": [
+        "absorbs",
+        "activated_by",
+        "constrains",
+        "distributes",
+        "exchanges",
+        "fixes",
+        "repels",
+        "resists_by",
+        "transduces"
+      ],
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml#elements",
+      "expected": [
+        "absorbs",
+        "activated_by",
+        "constrains",
+        "distributes",
+        "exchanges",
+        "fixes",
+        "repels",
+        "resists_by",
+        "transduces"
+      ],
+      "actual": [
+        "absorbs",
+        "activated_by",
+        "constrains",
+        "distributes",
+        "exchanges",
+        "fixes",
+        "repels",
+        "resists_by",
+        "transduces"
+      ],
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-guard-closure",
+      "diagnostic": [
+        "authored_game_mechanics_not_physics",
+        "crt310_untouched",
+        "excluded_relation_vocabulary_absent",
+        "kappa_and_ch_untouched",
+        "mercury_excluded_from_register",
+        "no_court_writes",
+        "no_kappa_thermodynamic_equivalence",
+        "no_unadmitted_scale_classes",
+        "relation_vocabulary_authored"
+      ],
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml#guards",
+      "expected": null,
+      "actual": null,
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-determinism",
+      "diagnostic": {
+        "document": "c8eae1fac5f2d9066fed0efeee9c8aaa073b55d5872cd4d01a258b6120414e95",
+        "elements": "2297f70e7c598c77c83678dc04a570b7c439a340e08c6d0a61023a15075fdb90"
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml",
+      "expected": "2297f70e7c598c77c83678dc04a570b7c439a340e08c6d0a61023a15075fdb90",
+      "actual": "2297f70e7c598c77c83678dc04a570b7c439a340e08c6d0a61023a15075fdb90",
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-negative-case-closure",
+      "diagnostic": [
+        "wrong-scale-id",
+        "mercury-with-polarity-bit",
+        "physical-claim-true",
+        "court-write-boundary",
+        "forbidden-relation-injected",
+        "duplicate-mechanic-id",
+        "wrong-polarity-bit",
+        "wrong-governor",
+        "zodiac-swapped",
+        "sixth-element",
+        "school-ref-swapped",
+        "scale-map-ref-tampered",
+        "capability-transition-swapped",
+        "capability-definition-drift",
+        "mercury-transition-injected"
+      ],
+      "evidenceLocator": "/home/erick/projects/integrated-release/qa/mechanics-thermodynamics-registry-validation.json",
+      "expected": [
+        "capability-definition-drift",
+        "capability-transition-swapped",
+        "court-write-boundary",
+        "duplicate-mechanic-id",
+        "forbidden-relation-injected",
+        "mercury-transition-injected",
+        "mercury-with-polarity-bit",
+        "physical-claim-true",
+        "scale-map-ref-tampered",
+        "school-ref-swapped",
+        "sixth-element",
+        "wrong-governor",
+        "wrong-polarity-bit",
+        "wrong-scale-id",
+        "zodiac-swapped"
+      ],
+      "actual": [
+        "capability-definition-drift",
+        "capability-transition-swapped",
+        "court-write-boundary",
+        "duplicate-mechanic-id",
+        "forbidden-relation-injected",
+        "mercury-transition-injected",
+        "mercury-with-polarity-bit",
+        "physical-claim-true",
+        "scale-map-ref-tampered",
+        "school-ref-swapped",
+        "sixth-element",
+        "wrong-governor",
+        "wrong-polarity-bit",
+        "wrong-scale-id",
+        "zodiac-swapped"
+      ],
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-adversarial-rejection",
+      "diagnostic": {
+        "wrong-scale-id": "scale_map_replay_mismatch",
+        "mercury-with-polarity-bit": "mercury_exclusion_invalid",
+        "physical-claim-true": "physical_claim_invalid",
+        "court-write-boundary": "boundary_write_invalid",
+        "forbidden-relation-injected": "forbidden_relation",
+        "duplicate-mechanic-id": "duplicate_id_rejected",
+        "wrong-polarity-bit": "polarity_bit_mismatch",
+        "wrong-governor": "governor_mismatch",
+        "zodiac-swapped": "zodiac_mismatch",
+        "sixth-element": "element_count_invalid",
+        "school-ref-swapped": "cross_registry_binding_mismatch",
+        "scale-map-ref-tampered": "cross_registry_binding_mismatch",
+        "capability-transition-swapped": "cross_registry_binding_mismatch",
+        "capability-definition-drift": "authored_contract_mismatch",
+        "mercury-transition-injected": "mercury_exclusion_invalid"
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml",
+      "expected": {
+        "wrong-scale-id": "scale_map_replay_mismatch",
+        "mercury-with-polarity-bit": "mercury_exclusion_invalid",
+        "physical-claim-true": "physical_claim_invalid",
+        "court-write-boundary": "boundary_write_invalid",
+        "forbidden-relation-injected": "forbidden_relation",
+        "duplicate-mechanic-id": "duplicate_id_rejected",
+        "wrong-polarity-bit": "polarity_bit_mismatch",
+        "wrong-governor": "governor_mismatch",
+        "zodiac-swapped": "zodiac_mismatch",
+        "sixth-element": "element_count_invalid",
+        "school-ref-swapped": "cross_registry_binding_mismatch",
+        "scale-map-ref-tampered": "cross_registry_binding_mismatch",
+        "capability-transition-swapped": "cross_registry_binding_mismatch",
+        "capability-definition-drift": "authored_contract_mismatch",
+        "mercury-transition-injected": "mercury_exclusion_invalid"
+      },
+      "actual": {
+        "wrong-scale-id": "scale_map_replay_mismatch",
+        "mercury-with-polarity-bit": "mercury_exclusion_invalid",
+        "physical-claim-true": "physical_claim_invalid",
+        "court-write-boundary": "boundary_write_invalid",
+        "forbidden-relation-injected": "forbidden_relation",
+        "duplicate-mechanic-id": "duplicate_id_rejected",
+        "wrong-polarity-bit": "polarity_bit_mismatch",
+        "wrong-governor": "governor_mismatch",
+        "zodiac-swapped": "zodiac_mismatch",
+        "sixth-element": "element_count_invalid",
+        "school-ref-swapped": "cross_registry_binding_mismatch",
+        "scale-map-ref-tampered": "cross_registry_binding_mismatch",
+        "capability-transition-swapped": "cross_registry_binding_mismatch",
+        "capability-definition-drift": "authored_contract_mismatch",
+        "mercury-transition-injected": "mercury_exclusion_invalid"
+      },
+      "status": "PASS"
+    }
+  ],
+  "checksFailed": 0,
+  "checksPassed": 15,
+  "registryId": "mechanics_thermodynamics_registry",
+  "registryVersion": "1.0.0",
+  "schemaVersion": "mechanics-thermodynamics-registry-validation.v1.0.0",
+  "verdict": "PASS",
+  "reportFingerprint": "fb0c25cbe1f0c4c92124c50a81f30a368ff698ab85be464a84e80b38df9651e4"
+}

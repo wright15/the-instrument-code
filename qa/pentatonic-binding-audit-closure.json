@@ -7,13 +7,13 @@
   "crt310Execution": false,
   "verdict": "PASS",
   "evidenceBindings": {
-    "candidateFingerprint": "631eb1f43f9b4dc0c099368279fe6ea4f0156f6cc18d2c63b607ba7fa30520de",
-    "phase1ValidationReportFingerprint": "bb3c53456df664f09059f4b0ce3f94a07a745d6364ebd6bdb22a7d2447483d94",
-    "phase2Neo4jReportFingerprint": "4e070057cc9f761b55b95b6c9610dce89141a6e2dc974da48f10fcf0608ca5da",
+    "candidateFingerprint": "2276ae0c9d898cf22ce58ecd73a4545afb6d2b719b1cc6f3d507c23728635334",
+    "phase1ValidationReportFingerprint": "c025ef644bb5a1136afa0bfb87842bcd913bb04484fbd10c3e8449cd2428da96",
+    "phase2Neo4jReportFingerprint": "7bc88f3dd8451a378d7a723791becc12ee3f7941eb728d15d83907bc04ad20a2",
     "phase3ReportSha256": "814512d4f4360dc7e9ab77b8190043a155ae8253d2729dbb21f33db91e37f1df",
     "cypherDeterministicFingerprint": "f94c876bf9bd407cfe03750fb83df41f09bc7433fb8de39a250a989b6fd11c32",
     "crt310BacklogFingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
-    "sourceAuthoritySha256": "c57cc34f85c2c8be7d0b74be325a714bc0a581ca87a4d301a32b05bd6efdf7d2",
+    "sourceAuthoritySha256": "c4bb55832c6c5e5d43d340f7e26bb795c66ace2d20622b31ac7499b97fc485dc",
     "decisionLedgerSha256": "32f08a16eeb4c13187939281621b4085fe377778539cc1268913e3cb285b9bc6"
   },
   "counts": {
@@ -31,12 +31,12 @@
   "checks": [
     {
       "checkId": "candidate-fingerprint-integrity",
-      "diagnostic": "631eb1f43f9b4dc0c099368279fe6ea4f0156f6cc18d2c63b607ba7fa30520de",
+      "diagnostic": "2276ae0c9d898cf22ce58ecd73a4545afb6d2b719b1cc6f3d507c23728635334",
       "status": "PASS"
     },
     {
       "checkId": "phase1-independent-validation",
-      "diagnostic": "bb3c53456df664f09059f4b0ce3f94a07a745d6364ebd6bdb22a7d2447483d94",
+      "diagnostic": "c025ef644bb5a1136afa0bfb87842bcd913bb04484fbd10c3e8449cd2428da96",
       "status": "PASS"
     },
     {
@@ -66,7 +66,7 @@
     },
     {
       "checkId": "phase2-detached-neo4j-closure",
-      "diagnostic": "4e070057cc9f761b55b95b6c9610dce89141a6e2dc974da48f10fcf0608ca5da",
+      "diagnostic": "7bc88f3dd8451a378d7a723791becc12ee3f7941eb728d15d83907bc04ad20a2",
       "status": "PASS"
     },
     {
@@ -121,5 +121,5 @@
       "status": "PASS"
     }
   ],
-  "reportFingerprint": "b33c9780d82a38d93fd9a387ba4010dced8990d61058299d14a281c7af413f91"
+  "reportFingerprint": "2eddd5a0cb8a95b5122353d5bf670ddfa9f80bbd86af54ba5dba2ba41cd68be0"
 }
