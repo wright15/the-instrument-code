@@ -1,13 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "mechanics-thermodynamics-registry-validation.v1.0.0",
+  "$id": "mechanics-thermodynamics-registry-validation.v2.0.0",
   "type": "object",
   "additionalProperties": false,
   "required": ["schemaVersion", "registryId", "registryVersion", "verdict", "checksPassed", "checksFailed", "checks", "reportFingerprint"],
   "properties": {
-    "schemaVersion": { "const": "mechanics-thermodynamics-registry-validation.v1.0.0" },
+    "schemaVersion": { "const": "mechanics-thermodynamics-registry-validation.v2.0.0" },
     "registryId": { "const": "mechanics_thermodynamics_registry" },
-    "registryVersion": { "const": "1.0.0" },
+    "registryVersion": { "const": "2.0.0" },
     "verdict": { "enum": ["PASS", "FAIL"] },
     "checksPassed": { "type": "integer", "minimum": 0 },
     "checksFailed": { "type": "integer", "minimum": 0 },

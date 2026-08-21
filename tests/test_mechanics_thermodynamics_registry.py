@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from copy import deepcopy
 import importlib.util
 import json
 from pathlib import Path
@@ -66,6 +67,127 @@ def test_five_elements_with_four_polar_splits_and_one_engine(document) -> None:
         assert capabilities["magnetic_internal"]["polarity_bit"] == 1
     mercury = elements[4]
     assert set(mercury["capabilities"]) == {"engine_interface"}
+
+
+def test_each_element_has_the_four_part_phenomenon_scaffold(document) -> None:
+    expected_parts = {
+        "energy_states",
+        "transformations",
+        "structural_forms",
+        "transfer_modes",
+    }
+    expected_categories = {
+        "Fire": (
+            "high_enthalpy_phenomena",
+            "high_enthalpy_thermodynamics",
+            "populated",
+            "electric_external",
+        ),
+        "Air": (
+            "high_entropy_phenomena",
+            "high_entropy_thermodynamics",
+            "populated",
+            "electric_external",
+        ),
+        "Water": (
+            "low_enthalpy_phenomena",
+            "low_enthalpy_thermodynamics",
+            "placeholder",
+            "unassigned",
+        ),
+        "Earth": (
+            "low_entropy_phenomena",
+            "low_entropy_thermodynamics",
+            "placeholder",
+            "unassigned",
+        ),
+        "Quintessence": (
+            "equilibrium_phenomena",
+            "equilibrium_thermodynamics",
+            "placeholder",
+            "unassigned",
+        ),
+    }
+    for item in document["elements"]:
+        category_id, section_id, population_status, polarity_scope = expected_categories[
+            item["element"]
+        ]
+        assert set(item["phenomenon_categories"]) == {category_id}
+        category = item["phenomenon_categories"][category_id]
+        assert category["section_id"] == section_id
+        assert set(category["child_scaffold"]) == expected_parts
+        assert category["population_status"] == population_status
+        assert category["polarity_scope"] == polarity_scope
+        if population_status == "placeholder":
+            assert all(not category["child_scaffold"][part] for part in expected_parts)
+
+
+def test_populated_thermodynamics_glossaries_have_exact_rich_entries(document) -> None:
+    for (element, category_id), expected_catalog in (
+        VALIDATOR.EXPECTED_POPULATED_PHENOMENON_CATALOGS.items()
+    ):
+        item = next(item for item in document["elements"] if item["element"] == element)
+        child_scaffold = item["phenomenon_categories"][category_id]["child_scaffold"]
+        for category, expected_ids in expected_catalog.items():
+            entries = child_scaffold[category]
+            assert [entry["mechanic_id"] for entry in entries] == list(expected_ids)
+            assert all(set(entry) == VALIDATOR.RICH_ENTRY_KEYS for entry in entries)
+            assert all(entry["definition"] for entry in entries)
+            assert all(entry["value"] for entry in entries)
+            assert all(
+                entry["relation_type"]
+                == VALIDATOR.EXPECTED_CATEGORY_RELATION_TYPES[category]
+                for entry in entries
+            )
+            assert all(entry["source_class"] == "authored_capability" for entry in entries)
+
+
+def test_schema_enforces_elemental_phenomenon_ownership(document) -> None:
+    schema_validator = jsonschema.Draft202012Validator(
+        json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
+    )
+    invalid_fire = deepcopy(document)
+    fire = next(item for item in invalid_fire["elements"] if item["element"] == "Fire")
+    fire["phenomenon_categories"]["high_enthalpy_phenomena"][
+        "polarity_scope"
+    ] = "magnetic_internal"
+    with pytest.raises(jsonschema.ValidationError):
+        schema_validator.validate(invalid_fire)
+
+    invalid_air = deepcopy(document)
+    air = next(item for item in invalid_air["elements"] if item["element"] == "Air")
+    air["phenomenon_categories"]["high_entropy_phenomena"][
+        "population_status"
+    ] = "placeholder"
+    with pytest.raises(jsonschema.ValidationError):
+        schema_validator.validate(invalid_air)
+
+    invalid_air = deepcopy(document)
+    air = next(item for item in invalid_air["elements"] if item["element"] == "Air")
+    air["phenomenon_categories"] = {
+        "high_enthalpy_phenomena": deepcopy(
+            next(item for item in invalid_air["elements"] if item["element"] == "Fire")[
+                "phenomenon_categories"
+            ]["high_enthalpy_phenomena"]
+        )
+    }
+    with pytest.raises(jsonschema.ValidationError):
+        schema_validator.validate(invalid_air)
+
+
+def test_instrumentation_and_kinetics_terms_are_outside_this_registry(document) -> None:
+    assert document["framework"]["instrumentation_registry"] == (
+        VALIDATOR.EXPECTED_INSTRUMENTATION_BOUNDARY
+    )
+    glossary_ids = {
+        entry["mechanic_id"]
+        for item in document["elements"]
+        for category in item["phenomenon_categories"].values()
+        for entries in category["child_scaffold"].values()
+        for entry in entries
+    }
+    assert not glossary_ids & VALIDATOR.INSTRUMENTATION_MECHANIC_IDS
+    assert not glossary_ids & VALIDATOR.KINETICS_RESERVED_MECHANIC_IDS
 
 
 def test_scale_ids_replay_audited_map(document) -> None:
@@ -277,7 +399,7 @@ def test_qa_report_is_schema_valid_fingerprinted_and_passing() -> None:
         json.loads(REPORT_SCHEMA_PATH.read_text(encoding="utf-8"))
     ).validate(report)
     assert report["verdict"] == "PASS"
-    assert report["checksPassed"] == 15
+    assert report["checksPassed"] == 19
     assert report["checksFailed"] == 0
     check_ids = tuple(item["checkId"] for item in report["checks"])
     assert check_ids == VALIDATOR.REPORT_CHECK_IDS

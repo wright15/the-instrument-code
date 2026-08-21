@@ -4,7 +4,7 @@
   "title": "Mechanics Thermodynamics Registry (proposed)",
   "type": "object",
   "additionalProperties": false,
-  "required": ["metadata", "admission_boundary", "elements", "guards"],
+  "required": ["metadata", "admission_boundary", "framework", "elements", "guards"],
   "properties": {
     "metadata": {
       "type": "object",
@@ -52,6 +52,7 @@
         "crt310_gate_effect": { "const": false }
       }
     },
+    "framework": { "$ref": "#/$defs/framework" },
     "elements": {
       "type": "array",
       "minItems": 5,
@@ -61,8 +62,8 @@
     },
     "guards": {
       "type": "array",
-      "minItems": 9,
-      "maxItems": 9,
+      "minItems": 11,
+      "maxItems": 11,
       "uniqueItems": true,
       "items": {
         "type": "object",
@@ -77,14 +78,114 @@
     }
   },
   "$defs": {
+    "framework": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["framework_id", "child_scaffold", "parent_categories", "instrumentation_registry"],
+      "properties": {
+        "framework_id": { "const": "teleological_phenomenon_master_framework" },
+        "child_scaffold": {
+          "type": "array",
+          "const": ["energy_states", "transformations", "structural_forms", "transfer_modes"]
+        },
+        "parent_categories": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": { "$ref": "#/$defs/framework_parent_category" }
+        },
+        "instrumentation_registry": { "$ref": "#/$defs/instrumentation_registry" }
+      }
+    },
+    "framework_parent_category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["category_id", "section_id", "population_status"],
+      "properties": {
+        "category_id": { "enum": ["high_enthalpy_phenomena", "high_entropy_phenomena", "low_enthalpy_phenomena", "low_entropy_phenomena", "equilibrium_phenomena", "kinetics", "kinematics", "weather_dynamics"] },
+        "section_id": { "type": ["string", "null"] },
+        "population_status": { "enum": ["populated_in_this_registry", "placeholder_future_category"] }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "category_id": { "const": "high_enthalpy_phenomena" },
+            "section_id": { "const": "high_enthalpy_thermodynamics" },
+            "population_status": { "const": "populated_in_this_registry" }
+          }
+        },
+        {
+          "properties": {
+            "category_id": { "const": "high_entropy_phenomena" },
+            "section_id": { "const": "high_entropy_thermodynamics" },
+            "population_status": { "const": "populated_in_this_registry" }
+          }
+        },
+        {
+          "properties": {
+            "category_id": { "const": "low_enthalpy_phenomena" },
+            "section_id": { "const": "low_enthalpy_thermodynamics" },
+            "population_status": { "const": "placeholder_future_category" }
+          }
+        },
+        {
+          "properties": {
+            "category_id": { "const": "low_entropy_phenomena" },
+            "section_id": { "const": "low_entropy_thermodynamics" },
+            "population_status": { "const": "placeholder_future_category" }
+          }
+        },
+        {
+          "properties": {
+            "category_id": { "const": "equilibrium_phenomena" },
+            "section_id": { "const": "equilibrium_thermodynamics" },
+            "population_status": { "const": "placeholder_future_category" }
+          }
+        },
+        {
+          "properties": {
+            "category_id": { "const": "kinetics" },
+            "section_id": { "const": null },
+            "population_status": { "const": "placeholder_future_category" }
+          }
+        },
+        {
+          "properties": {
+            "category_id": { "const": "kinematics" },
+            "section_id": { "const": null },
+            "population_status": { "const": "placeholder_future_category" }
+          }
+        },
+        {
+          "properties": {
+            "category_id": { "const": "weather_dynamics" },
+            "section_id": { "const": null },
+            "population_status": { "const": "placeholder_future_category" }
+          }
+        }
+      ]
+    },
+    "instrumentation_registry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["registry_id", "registry_path", "status", "inclusion", "scope", "structural_descriptors_retained"],
+      "properties": {
+        "registry_id": { "const": "mechanics_instrumentation_registry" },
+        "registry_path": { "const": "schemas/mechanics_instrumentation_registry.yaml" },
+        "status": { "const": "future_separate_registry" },
+        "inclusion": { "const": "excluded_from_this_registry" },
+        "scope": { "const": "facilities_and_computational_simulation_models" },
+        "structural_descriptors_retained": { "const": ["two_temperature_model", "multi_temperature_model"] }
+      }
+    },
     "capability": {
       "type": "object",
       "additionalProperties": false,
       "required": ["mechanic_id", "definition", "relation_type", "value", "source_class"],
       "properties": {
-        "mechanic_id": { "type": "string", "minLength": 1 },
+        "mechanic_id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
         "definition": { "type": "string", "minLength": 1 },
-        "relation_type": { "type": "string", "enum": ["activated_by", "resists_by", "distributes", "constrains", "exchanges", "absorbs", "repels", "fixes", "transduces"] },
+        "relation_type": { "type": "string", "enum": ["activated_by", "resists_by", "distributes", "constrains", "exchanges", "absorbs", "repels", "fixes", "transduces", "characterizes", "transforms", "structures", "transfers"] },
         "value": { "type": "string", "minLength": 1 },
         "source_class": { "const": "authored_capability" }
       }
@@ -98,9 +199,9 @@
         "zodiac": { "enum": ["Aries", "Scorpio", "Sagittarius", "Pisces", "Libra", "Taurus", "Aquarius", "Capricorn"] },
         "zodiac_facet_ref": { "type": "string", "pattern": "^fivefold\\.zodiac\\.[a-z_.]+$" },
         "transition_ref": { "type": "string", "pattern": "^court_(advance|retreat)_C[0-4]_to_C[0-4]$" },
-        "mechanic_id": { "type": "string", "minLength": 1 },
+        "mechanic_id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
         "definition": { "type": "string", "minLength": 1 },
-        "relation_type": { "type": "string", "enum": ["activated_by", "resists_by", "distributes", "constrains", "exchanges", "absorbs", "repels", "fixes", "transduces"] },
+        "relation_type": { "type": "string", "enum": ["activated_by", "resists_by", "distributes", "constrains", "exchanges", "absorbs", "repels", "fixes", "transduces", "characterizes", "transforms", "structures", "transfers"] },
         "value": { "type": "string", "minLength": 1 },
         "source_class": { "const": "authored_capability" }
       }
@@ -108,7 +209,7 @@
     "element": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["element", "governor", "school_ref", "scale_id", "scale_map_ref", "capabilities"],
+      "required": ["element", "governor", "school_ref", "scale_id", "scale_map_ref", "capabilities", "phenomenon_categories"],
       "properties": {
         "element": { "enum": ["Fire", "Air", "Water", "Earth", "Quintessence"] },
         "governor": { "enum": ["Mars", "Jupiter", "Venus", "Saturn", "Mercury"] },
@@ -141,8 +242,223 @@
               }
             }
           ]
+        },
+        "phenomenon_categories": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "maxProperties": 1,
+          "properties": {
+            "high_enthalpy_phenomena": { "$ref": "#/$defs/high_enthalpy_phenomenon_category" },
+            "high_entropy_phenomena": { "$ref": "#/$defs/high_entropy_phenomenon_category" },
+            "low_enthalpy_phenomena": { "$ref": "#/$defs/low_enthalpy_phenomenon_category" },
+            "low_entropy_phenomena": { "$ref": "#/$defs/low_entropy_phenomenon_category" },
+            "equilibrium_phenomena": { "$ref": "#/$defs/equilibrium_phenomenon_category" }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "element": { "const": "Fire" } } },
+          "then": {
+            "properties": {
+              "phenomenon_categories": { "$ref": "#/$defs/fire_phenomenon_categories" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "element": { "const": "Air" } } },
+          "then": {
+            "properties": {
+              "phenomenon_categories": { "$ref": "#/$defs/air_phenomenon_categories" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "element": { "const": "Water" } } },
+          "then": {
+            "properties": {
+              "phenomenon_categories": { "$ref": "#/$defs/water_phenomenon_categories" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "element": { "const": "Earth" } } },
+          "then": {
+            "properties": {
+              "phenomenon_categories": { "$ref": "#/$defs/earth_phenomenon_categories" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "element": { "const": "Quintessence" } } },
+          "then": {
+            "properties": {
+              "phenomenon_categories": { "$ref": "#/$defs/quintessence_phenomenon_categories" }
+            }
+          }
+        }
+      ]
+    },
+    "high_enthalpy_phenomenon_category": {
+      "allOf": [
+        { "$ref": "#/$defs/phenomenon_category" },
+        { "properties": { "section_id": { "const": "high_enthalpy_thermodynamics" } } }
+      ]
+    },
+    "high_entropy_phenomenon_category": {
+      "allOf": [
+        { "$ref": "#/$defs/phenomenon_category" },
+        { "properties": { "section_id": { "const": "high_entropy_thermodynamics" } } }
+      ]
+    },
+    "low_enthalpy_phenomenon_category": {
+      "allOf": [
+        { "$ref": "#/$defs/phenomenon_category" },
+        { "properties": { "section_id": { "const": "low_enthalpy_thermodynamics" } } }
+      ]
+    },
+    "low_entropy_phenomenon_category": {
+      "allOf": [
+        { "$ref": "#/$defs/phenomenon_category" },
+        { "properties": { "section_id": { "const": "low_entropy_thermodynamics" } } }
+      ]
+    },
+    "equilibrium_phenomenon_category": {
+      "allOf": [
+        { "$ref": "#/$defs/phenomenon_category" },
+        { "properties": { "section_id": { "const": "equilibrium_thermodynamics" } } }
+      ]
+    },
+    "phenomenon_category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["section_id", "population_status", "polarity_scope", "child_scaffold"],
+      "properties": {
+        "section_id": { "enum": ["high_enthalpy_thermodynamics", "high_entropy_thermodynamics", "low_enthalpy_thermodynamics", "low_entropy_thermodynamics", "equilibrium_thermodynamics"] },
+        "population_status": { "enum": ["populated", "placeholder"] },
+        "polarity_scope": { "enum": ["electric_external", "magnetic_internal", "engine_interface", "unassigned"] },
+        "child_scaffold": { "$ref": "#/$defs/child_scaffold" }
+      }
+    },
+    "populated_electric_phenomenon_category": {
+      "allOf": [
+        { "$ref": "#/$defs/phenomenon_category" },
+        {
+          "properties": {
+            "population_status": { "const": "populated" },
+            "polarity_scope": { "const": "electric_external" },
+            "child_scaffold": {
+              "properties": {
+                "energy_states": { "minItems": 1 },
+                "transformations": { "minItems": 1 },
+                "structural_forms": { "minItems": 1 },
+                "transfer_modes": { "minItems": 1 }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "placeholder_phenomenon_category": {
+      "allOf": [
+        { "$ref": "#/$defs/phenomenon_category" },
+        {
+          "properties": {
+            "population_status": { "const": "placeholder" },
+            "polarity_scope": { "const": "unassigned" },
+            "child_scaffold": {
+              "properties": {
+                "energy_states": { "maxItems": 0 },
+                "transformations": { "maxItems": 0 },
+                "structural_forms": { "maxItems": 0 },
+                "transfer_modes": { "maxItems": 0 }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "fire_phenomenon_categories": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["high_enthalpy_phenomena"],
+      "properties": {
+        "high_enthalpy_phenomena": {
+          "allOf": [
+            { "$ref": "#/$defs/high_enthalpy_phenomenon_category" },
+            { "$ref": "#/$defs/populated_electric_phenomenon_category" }
+          ]
         }
       }
+    },
+    "air_phenomenon_categories": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["high_entropy_phenomena"],
+      "properties": {
+        "high_entropy_phenomena": {
+          "allOf": [
+            { "$ref": "#/$defs/high_entropy_phenomenon_category" },
+            { "$ref": "#/$defs/populated_electric_phenomenon_category" }
+          ]
+        }
+      }
+    },
+    "water_phenomenon_categories": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["low_enthalpy_phenomena"],
+      "properties": {
+        "low_enthalpy_phenomena": {
+          "allOf": [
+            { "$ref": "#/$defs/low_enthalpy_phenomenon_category" },
+            { "$ref": "#/$defs/placeholder_phenomenon_category" }
+          ]
+        }
+      }
+    },
+    "earth_phenomenon_categories": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["low_entropy_phenomena"],
+      "properties": {
+        "low_entropy_phenomena": {
+          "allOf": [
+            { "$ref": "#/$defs/low_entropy_phenomenon_category" },
+            { "$ref": "#/$defs/placeholder_phenomenon_category" }
+          ]
+        }
+      }
+    },
+    "quintessence_phenomenon_categories": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["equilibrium_phenomena"],
+      "properties": {
+        "equilibrium_phenomena": {
+          "allOf": [
+            { "$ref": "#/$defs/equilibrium_phenomenon_category" },
+            { "$ref": "#/$defs/placeholder_phenomenon_category" }
+          ]
+        }
+      }
+    },
+    "child_scaffold": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["energy_states", "transformations", "structural_forms", "transfer_modes"],
+      "properties": {
+        "energy_states": { "$ref": "#/$defs/glossary_entries" },
+        "transformations": { "$ref": "#/$defs/glossary_entries" },
+        "structural_forms": { "$ref": "#/$defs/glossary_entries" },
+        "transfer_modes": { "$ref": "#/$defs/glossary_entries" }
+      }
+    },
+    "glossary_entries": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/capability" }
     }
   }
 }

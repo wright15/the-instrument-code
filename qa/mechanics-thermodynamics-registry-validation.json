@@ -54,6 +54,175 @@
       "status": "PASS"
     },
     {
+      "checkId": "mtr-category-scaffold",
+      "diagnostic": {
+        "framework": [],
+        "elements": []
+      },
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml#framework",
+      "expected": {
+        "childScaffold": [
+          "energy_states",
+          "transformations",
+          "structural_forms",
+          "transfer_modes"
+        ],
+        "parentCategories": [
+          {
+            "category_id": "high_enthalpy_phenomena",
+            "section_id": "high_enthalpy_thermodynamics",
+            "population_status": "populated_in_this_registry"
+          },
+          {
+            "category_id": "high_entropy_phenomena",
+            "section_id": "high_entropy_thermodynamics",
+            "population_status": "populated_in_this_registry"
+          },
+          {
+            "category_id": "low_enthalpy_phenomena",
+            "section_id": "low_enthalpy_thermodynamics",
+            "population_status": "placeholder_future_category"
+          },
+          {
+            "category_id": "low_entropy_phenomena",
+            "section_id": "low_entropy_thermodynamics",
+            "population_status": "placeholder_future_category"
+          },
+          {
+            "category_id": "equilibrium_phenomena",
+            "section_id": "equilibrium_thermodynamics",
+            "population_status": "placeholder_future_category"
+          },
+          {
+            "category_id": "kinetics",
+            "section_id": null,
+            "population_status": "placeholder_future_category"
+          },
+          {
+            "category_id": "kinematics",
+            "section_id": null,
+            "population_status": "placeholder_future_category"
+          },
+          {
+            "category_id": "weather_dynamics",
+            "section_id": null,
+            "population_status": "placeholder_future_category"
+          }
+        ]
+      },
+      "actual": {
+        "framework_id": "teleological_phenomenon_master_framework",
+        "child_scaffold": [
+          "energy_states",
+          "transformations",
+          "structural_forms",
+          "transfer_modes"
+        ],
+        "parent_categories": [
+          {
+            "category_id": "high_enthalpy_phenomena",
+            "section_id": "high_enthalpy_thermodynamics",
+            "population_status": "populated_in_this_registry"
+          },
+          {
+            "category_id": "high_entropy_phenomena",
+            "section_id": "high_entropy_thermodynamics",
+            "population_status": "populated_in_this_registry"
+          },
+          {
+            "category_id": "low_enthalpy_phenomena",
+            "section_id": "low_enthalpy_thermodynamics",
+            "population_status": "placeholder_future_category"
+          },
+          {
+            "category_id": "low_entropy_phenomena",
+            "section_id": "low_entropy_thermodynamics",
+            "population_status": "placeholder_future_category"
+          },
+          {
+            "category_id": "equilibrium_phenomena",
+            "section_id": "equilibrium_thermodynamics",
+            "population_status": "placeholder_future_category"
+          },
+          {
+            "category_id": "kinetics",
+            "section_id": null,
+            "population_status": "placeholder_future_category"
+          },
+          {
+            "category_id": "kinematics",
+            "section_id": null,
+            "population_status": "placeholder_future_category"
+          },
+          {
+            "category_id": "weather_dynamics",
+            "section_id": null,
+            "population_status": "placeholder_future_category"
+          }
+        ],
+        "instrumentation_registry": {
+          "registry_id": "mechanics_instrumentation_registry",
+          "registry_path": "schemas/mechanics_instrumentation_registry.yaml",
+          "status": "future_separate_registry",
+          "inclusion": "excluded_from_this_registry",
+          "scope": "facilities_and_computational_simulation_models",
+          "structural_descriptors_retained": [
+            "two_temperature_model",
+            "multi_temperature_model"
+          ]
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-high-enthalpy-fire-population",
+      "diagnostic": [],
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml#elements[Fire].phenomenon_categories.high_enthalpy_phenomena",
+      "expected": {
+        "polarityScope": "electric_external",
+        "entryCounts": {
+          "energy_states": 13,
+          "transformations": 17,
+          "structural_forms": 26,
+          "transfer_modes": 27
+        }
+      },
+      "actual": {
+        "polarityScope": "electric_external",
+        "entryCounts": {
+          "energy_states": 13,
+          "transformations": 17,
+          "structural_forms": 26,
+          "transfer_modes": 27
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-high-entropy-air-population",
+      "diagnostic": [],
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml#elements[Air].phenomenon_categories.high_entropy_phenomena",
+      "expected": {
+        "polarityScope": "electric_external",
+        "entryCounts": {
+          "energy_states": 17,
+          "transformations": 12,
+          "structural_forms": 12,
+          "transfer_modes": 3
+        }
+      },
+      "actual": {
+        "polarityScope": "electric_external",
+        "entryCounts": {
+          "energy_states": 17,
+          "transformations": 12,
+          "structural_forms": 12,
+          "transfer_modes": 3
+        }
+      },
+      "status": "PASS"
+    },
+    {
       "checkId": "mtr-scale-map-replay",
       "diagnostic": [],
       "evidenceLocator": "schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#scale_bindings",
@@ -112,6 +281,19 @@
             "value": "em_induction_cycle",
             "source_class": "authored_capability"
           }
+        },
+        "phenomenon_categories": {
+          "equilibrium_phenomena": {
+            "section_id": "equilibrium_thermodynamics",
+            "population_status": "placeholder",
+            "polarity_scope": "unassigned",
+            "child_scaffold": {
+              "energy_states": [],
+              "transformations": [],
+              "structural_forms": [],
+              "transfer_modes": []
+            }
+          }
         }
       },
       "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml#elements[Quintessence]",
@@ -136,6 +318,41 @@
       "status": "PASS"
     },
     {
+      "checkId": "mtr-instrumentation-separation",
+      "diagnostic": [],
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml#framework.instrumentation_registry",
+      "expected": {
+        "instrumentationRegistry": {
+          "registry_id": "mechanics_instrumentation_registry",
+          "registry_path": "schemas/mechanics_instrumentation_registry.yaml",
+          "status": "future_separate_registry",
+          "inclusion": "excluded_from_this_registry",
+          "scope": "facilities_and_computational_simulation_models",
+          "structural_descriptors_retained": [
+            "two_temperature_model",
+            "multi_temperature_model"
+          ]
+        },
+        "forbiddenInstrumentationTerms": [],
+        "reservedKineticsTerms": []
+      },
+      "actual": {
+        "instrumentationRegistry": {
+          "registry_id": "mechanics_instrumentation_registry",
+          "registry_path": "schemas/mechanics_instrumentation_registry.yaml",
+          "status": "future_separate_registry",
+          "inclusion": "excluded_from_this_registry",
+          "scope": "facilities_and_computational_simulation_models",
+          "structural_descriptors_retained": [
+            "two_temperature_model",
+            "multi_temperature_model"
+          ]
+        },
+        "separationErrors": []
+      },
+      "status": "PASS"
+    },
+    {
       "checkId": "mtr-forbidden-relations",
       "diagnostic": "no executable Court relation keys",
       "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml#elements",
@@ -148,36 +365,48 @@
       "diagnostic": [
         "absorbs",
         "activated_by",
+        "characterizes",
         "constrains",
         "distributes",
         "exchanges",
         "fixes",
         "repels",
         "resists_by",
-        "transduces"
+        "structures",
+        "transduces",
+        "transfers",
+        "transforms"
       ],
       "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml#elements",
       "expected": [
         "absorbs",
         "activated_by",
+        "characterizes",
         "constrains",
         "distributes",
         "exchanges",
         "fixes",
         "repels",
         "resists_by",
-        "transduces"
+        "structures",
+        "transduces",
+        "transfers",
+        "transforms"
       ],
       "actual": [
         "absorbs",
         "activated_by",
+        "characterizes",
         "constrains",
         "distributes",
         "exchanges",
         "fixes",
         "repels",
         "resists_by",
-        "transduces"
+        "structures",
+        "transduces",
+        "transfers",
+        "transforms"
       ],
       "status": "PASS"
     },
@@ -187,7 +416,9 @@
         "authored_game_mechanics_not_physics",
         "crt310_untouched",
         "excluded_relation_vocabulary_absent",
+        "instrumentation_and_modeling_separated",
         "kappa_and_ch_untouched",
+        "kinetics_mechanism_terms_reserved",
         "mercury_excluded_from_register",
         "no_court_writes",
         "no_kappa_thermodynamic_equivalence",
@@ -202,12 +433,12 @@
     {
       "checkId": "mtr-determinism",
       "diagnostic": {
-        "document": "c8eae1fac5f2d9066fed0efeee9c8aaa073b55d5872cd4d01a258b6120414e95",
-        "elements": "2297f70e7c598c77c83678dc04a570b7c439a340e08c6d0a61023a15075fdb90"
+        "document": "aa641bb653450811acedd56bb9e66e582b4eefcfd53b7b2eabcf820cbbd1023a",
+        "authoring": "d4d31aec34f5568014b21b57340682e5b461cc348dc8d2333bf86695449536ff"
       },
       "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml",
-      "expected": "2297f70e7c598c77c83678dc04a570b7c439a340e08c6d0a61023a15075fdb90",
-      "actual": "2297f70e7c598c77c83678dc04a570b7c439a340e08c6d0a61023a15075fdb90",
+      "expected": "d4d31aec34f5568014b21b57340682e5b461cc348dc8d2333bf86695449536ff",
+      "actual": "d4d31aec34f5568014b21b57340682e5b461cc348dc8d2333bf86695449536ff",
       "status": "PASS"
     },
     {
@@ -227,17 +458,35 @@
         "scale-map-ref-tampered",
         "capability-transition-swapped",
         "capability-definition-drift",
-        "mercury-transition-injected"
+        "mercury-transition-injected",
+        "missing-category-scaffold",
+        "fire-glossary-wrong-polarity",
+        "high-enthalpy-definition-drift",
+        "air-high-entropy-wrong-polarity",
+        "high-entropy-definition-drift",
+        "high-entropy-glossary-duplicate-id",
+        "instrumentation-term-injected",
+        "kinetics-term-injected",
+        "glossary-duplicate-id"
       ],
       "evidenceLocator": "/home/erick/projects/integrated-release/qa/mechanics-thermodynamics-registry-validation.json",
       "expected": [
+        "air-high-entropy-wrong-polarity",
         "capability-definition-drift",
         "capability-transition-swapped",
         "court-write-boundary",
         "duplicate-mechanic-id",
+        "fire-glossary-wrong-polarity",
         "forbidden-relation-injected",
+        "glossary-duplicate-id",
+        "high-enthalpy-definition-drift",
+        "high-entropy-definition-drift",
+        "high-entropy-glossary-duplicate-id",
+        "instrumentation-term-injected",
+        "kinetics-term-injected",
         "mercury-transition-injected",
         "mercury-with-polarity-bit",
+        "missing-category-scaffold",
         "physical-claim-true",
         "scale-map-ref-tampered",
         "school-ref-swapped",
@@ -248,13 +497,22 @@
         "zodiac-swapped"
       ],
       "actual": [
+        "air-high-entropy-wrong-polarity",
         "capability-definition-drift",
         "capability-transition-swapped",
         "court-write-boundary",
         "duplicate-mechanic-id",
+        "fire-glossary-wrong-polarity",
         "forbidden-relation-injected",
+        "glossary-duplicate-id",
+        "high-enthalpy-definition-drift",
+        "high-entropy-definition-drift",
+        "high-entropy-glossary-duplicate-id",
+        "instrumentation-term-injected",
+        "kinetics-term-injected",
         "mercury-transition-injected",
         "mercury-with-polarity-bit",
+        "missing-category-scaffold",
         "physical-claim-true",
         "scale-map-ref-tampered",
         "school-ref-swapped",
@@ -283,7 +541,16 @@
         "scale-map-ref-tampered": "cross_registry_binding_mismatch",
         "capability-transition-swapped": "cross_registry_binding_mismatch",
         "capability-definition-drift": "authored_contract_mismatch",
-        "mercury-transition-injected": "mercury_exclusion_invalid"
+        "mercury-transition-injected": "mercury_exclusion_invalid",
+        "missing-category-scaffold": "category_scaffold_invalid",
+        "fire-glossary-wrong-polarity": "high_enthalpy_polarity_invalid",
+        "high-enthalpy-definition-drift": "authored_contract_mismatch",
+        "air-high-entropy-wrong-polarity": "high_entropy_polarity_invalid",
+        "high-entropy-definition-drift": "authored_contract_mismatch",
+        "high-entropy-glossary-duplicate-id": "duplicate_id_rejected",
+        "instrumentation-term-injected": "instrumentation_term_forbidden",
+        "kinetics-term-injected": "kinetics_term_forbidden",
+        "glossary-duplicate-id": "duplicate_id_rejected"
       },
       "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry.yaml",
       "expected": {
@@ -301,7 +568,16 @@
         "scale-map-ref-tampered": "cross_registry_binding_mismatch",
         "capability-transition-swapped": "cross_registry_binding_mismatch",
         "capability-definition-drift": "authored_contract_mismatch",
-        "mercury-transition-injected": "mercury_exclusion_invalid"
+        "mercury-transition-injected": "mercury_exclusion_invalid",
+        "missing-category-scaffold": "category_scaffold_invalid",
+        "fire-glossary-wrong-polarity": "high_enthalpy_polarity_invalid",
+        "high-enthalpy-definition-drift": "authored_contract_mismatch",
+        "air-high-entropy-wrong-polarity": "high_entropy_polarity_invalid",
+        "high-entropy-definition-drift": "authored_contract_mismatch",
+        "high-entropy-glossary-duplicate-id": "duplicate_id_rejected",
+        "instrumentation-term-injected": "instrumentation_term_forbidden",
+        "kinetics-term-injected": "kinetics_term_forbidden",
+        "glossary-duplicate-id": "duplicate_id_rejected"
       },
       "actual": {
         "wrong-scale-id": "scale_map_replay_mismatch",
@@ -318,16 +594,25 @@
         "scale-map-ref-tampered": "cross_registry_binding_mismatch",
         "capability-transition-swapped": "cross_registry_binding_mismatch",
         "capability-definition-drift": "authored_contract_mismatch",
-        "mercury-transition-injected": "mercury_exclusion_invalid"
+        "mercury-transition-injected": "mercury_exclusion_invalid",
+        "missing-category-scaffold": "category_scaffold_invalid",
+        "fire-glossary-wrong-polarity": "high_enthalpy_polarity_invalid",
+        "high-enthalpy-definition-drift": "authored_contract_mismatch",
+        "air-high-entropy-wrong-polarity": "high_entropy_polarity_invalid",
+        "high-entropy-definition-drift": "authored_contract_mismatch",
+        "high-entropy-glossary-duplicate-id": "duplicate_id_rejected",
+        "instrumentation-term-injected": "instrumentation_term_forbidden",
+        "kinetics-term-injected": "kinetics_term_forbidden",
+        "glossary-duplicate-id": "duplicate_id_rejected"
       },
       "status": "PASS"
     }
   ],
   "checksFailed": 0,
-  "checksPassed": 15,
+  "checksPassed": 19,
   "registryId": "mechanics_thermodynamics_registry",
   "registryVersion": "1.0.0",
   "schemaVersion": "mechanics-thermodynamics-registry-validation.v1.0.0",
   "verdict": "PASS",
-  "reportFingerprint": "fb0c25cbe1f0c4c92124c50a81f30a368ff698ab85be464a84e80b38df9651e4"
+  "reportFingerprint": "272f097f7b54d0d0d53f94991745eeeccf02c8267e43d91bf3a951ec6b9efca5"
 }

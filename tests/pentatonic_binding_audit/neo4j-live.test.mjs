@@ -200,7 +200,7 @@ test("detached pentatonic binding audit imports and tears down without residue",
   const candidate = JSON.parse(fs.readFileSync(candidatePath, "utf8"));
   const { candidateFingerprint, ...candidateCore } = candidate;
   assert.equal(sha256(candidateCore), candidateFingerprint);
-  assert.equal(candidate.candidateFingerprint, "2276ae0c9d898cf22ce58ecd73a4545afb6d2b719b1cc6f3d507c23728635334");
+  assert.equal(candidate.candidateFingerprint, "0b0f14de212c417f00de45978c71e9e6ecb916f627b8081b9b62bde1f8ff0094");
   assert.equal(candidate.status, "planning_evidence");
   assert.equal(candidate.reviewedRootedWitnesses.length, 7);
   const expected = expectedProjection(candidate);

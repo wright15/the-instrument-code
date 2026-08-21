@@ -1,0 +1,1379 @@
+# Mechanics Thermodynamics Registry v2.0.0
+#
+# Status: Proposed planning evidence. No runtime, graph, policy, ledger,
+# admission, or physics effect.
+#
+# v2 moves rich thermodynamic glossary entries directly into each capability
+# array. The four-part scaffold remains encoded by relation_type:
+# characterizes, transforms, structures, and transfers.
+#
+# Water/Venus Low-Enthalpy entries are Electric/External only. This semantic
+# placement does not claim electric and magnetic fields are physically separate.
+
+metadata:
+  registry_id: mechanics_thermodynamics_registry
+  version: 2.0.0
+  status: proposed_canonization
+  admission_status: proposed
+  author: Solomon
+  layer: 4
+  physical_quantity_claim: false
+  no_electromagnetic_equivalence: true
+  no_thermodynamic_equivalence_with_kappa_court: true
+  description: Maps authored thermodynamic capability entries directly to the 5 Elements, split by Electric
+    (External) and Magnetic (Internal) poles.
+  architecture:
+    capabilities_are: nouns_of_action
+    split_by: electric_external_vs_magnetic_internal
+    electric_bit: 0
+    magnetic_bit: 1
+    authored_game_mechanics_not_physics: true
+admission_boundary:
+  runtime_effect: false
+  graph_effect: false
+  policy_effect: false
+  ledger_effect: false
+  admission_effect: false
+  writes_court_pole_disposition: false
+  kappa_court_access: read_only_replay
+  global_ch_access: no_write
+  no_pentatonic_family_admission_claim: true
+  crt310_gate_effect: false
+framework:
+  framework_id: teleological_phenomenon_master_framework
+  child_scaffold:
+  - energy_states
+  - transformations
+  - structural_forms
+  - transfer_modes
+  parent_categories:
+  - category_id: high_enthalpy_phenomena
+    section_id: high_enthalpy_thermodynamics
+    population_status: populated_in_this_registry
+  - category_id: high_entropy_phenomena
+    section_id: high_entropy_thermodynamics
+    population_status: populated_in_this_registry
+  - category_id: low_enthalpy_phenomena
+    section_id: low_enthalpy_thermodynamics
+    population_status: populated_in_this_registry
+  - category_id: low_entropy_phenomena
+    section_id: low_entropy_thermodynamics
+    population_status: placeholder_future_category
+  - category_id: equilibrium_phenomena
+    section_id: equilibrium_thermodynamics
+    population_status: placeholder_future_category
+  - category_id: kinetics
+    section_id: null
+    population_status: placeholder_future_category
+  - category_id: kinematics
+    section_id: null
+    population_status: placeholder_future_category
+  - category_id: weather_dynamics
+    section_id: null
+    population_status: placeholder_future_category
+  instrumentation_registry:
+    registry_id: mechanics_instrumentation_registry
+    registry_path: schemas/mechanics_instrumentation_registry.yaml
+    status: future_separate_registry
+    inclusion: excluded_from_this_registry
+    scope: facilities_and_computational_simulation_models
+    structural_descriptors_retained:
+    - two_temperature_model
+    - multi_temperature_model
+elements:
+- element: Fire
+  governor: Mars
+  school_ref: fivefold.capability_school.fire
+  scale_id: 661
+  scale_map_ref: schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#scale_bindings[Fire (Mars)]
+  transition_refs:
+  - court_advance_C0_to_C1
+  - court_retreat_C1_to_C0
+  polarity_bindings:
+    electric_external:
+      polarity_bit: 0
+      zodiac: Aries
+      zodiac_facet_ref: fivefold.zodiac.capability_school_facet.aries
+      transition_ref: court_retreat_C1_to_C0
+    magnetic_internal:
+      polarity_bit: 1
+      zodiac: Scorpio
+      zodiac_facet_ref: fivefold.zodiac.capability_school_facet.scorpio
+      transition_ref: court_advance_C0_to_C1
+  capabilities:
+    electric_external:
+    - mechanic_id: explosive_emission
+      definition: Rapid, outward broadcast of kinetic and thermal energy.
+      relation_type: activated_by
+      value: outward_kinetic_force
+      phenomenon_class: capability_action
+      source_class: authored_capability
+    - mechanic_id: enthalpy
+      definition: Authored state marker for combined internal and pressure-volume energy.
+      relation_type: characterizes
+      value: combined_internal_pressure_volume_energy
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: specific_enthalpy
+      definition: Authored state marker for a mass-relative enthalpy pattern.
+      relation_type: characterizes
+      value: mass_normalized_energy_state
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: total_stagnation_enthalpy
+      definition: Authored state marker for static energy joined to motion brought to rest.
+      relation_type: characterizes
+      value: static_motion_energy_reserve
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: sensible_enthalpy
+      definition: Authored state marker for energy expressed through temperature change without a composition
+        or phase shift.
+      relation_type: characterizes
+      value: temperature_change_energy_state
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: chemical_enthalpy
+      definition: Authored state marker for energy held in molecular bond patterns.
+      relation_type: characterizes
+      value: molecular_bond_energy_reserve
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: formation_enthalpy
+      definition: Authored state marker for a substance-forming change from reference elements.
+      relation_type: characterizes
+      value: reference_formation_energy_marker
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: static_total_temperature
+      definition: Authored state marker contrasting local temperature with a rest-state temperature.
+      relation_type: characterizes
+      value: local_rest_temperature_contrast
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: entropy
+      definition: Authored state marker for energy dispersal and irreversibility.
+      relation_type: characterizes
+      value: dispersal_irreversibility_state
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: gibbs_free_energy
+      definition: Authored state marker for an equilibrium-composition potential at a fixed condition.
+      relation_type: characterizes
+      value: equilibrium_composition_potential
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: partition_function
+      definition: Authored state marker for the population of translational, rotational, vibrational,
+        and electronic modes.
+      relation_type: characterizes
+      value: internal_state_population_marker
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electron_heavy_particle_temperature
+      definition: Authored state marker for distinct electron and heavy-particle temperature profiles.
+      relation_type: characterizes
+      value: electron_heavy_particle_temperature_split
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: translational_rotational_vibrational_electronic_excitation
+      definition: Authored state marker for excitation stored across molecular motion and electronic modes.
+      relation_type: characterizes
+      value: molecular_mode_excitation_state
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: internal_energy_mode
+      definition: Authored state marker for a microscopic rotational, vibrational, electronic, or chemical
+        energy reservoir.
+      relation_type: characterizes
+      value: microscopic_energy_reservoir
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: dissociation
+      definition: Authored transformation marker for molecular breakup into fragments.
+      relation_type: transforms
+      value: molecular_fragmentation
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: recombination
+      definition: Authored transformation marker for forming a molecule from atoms or fragments.
+      relation_type: transforms
+      value: molecular_reassembly
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: ionization
+      definition: Authored transformation marker for producing a charged particle state through electron
+        removal.
+      relation_type: transforms
+      value: charged_particle_creation
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electron_impact_ionization
+      definition: Authored transformation marker for an electron-collision ionization pathway.
+      relation_type: transforms
+      value: collision_driven_ionization
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: associative_ionization
+      definition: Authored transformation marker for an association pathway that yields a charged state.
+      relation_type: transforms
+      value: association_driven_ionization
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: charge_exchange
+      definition: Authored transformation marker for exchanging charge between interacting particles.
+      relation_type: transforms
+      value: particle_charge_exchange
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: attachment
+      definition: Authored transformation marker for attaching an electron to a particle state.
+      relation_type: transforms
+      value: electron_attachment
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: detachment
+      definition: Authored transformation marker for releasing an attached electron from a particle state.
+      relation_type: transforms
+      value: electron_detachment
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: excitation
+      definition: Authored transformation marker for moving into a higher internal energy state.
+      relation_type: transforms
+      value: internal_state_elevation
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: de_excitation
+      definition: Authored transformation marker for returning to a lower internal energy state.
+      relation_type: transforms
+      value: internal_state_relaxation
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: mode_coupling
+      definition: Authored transformation marker for exchange between internal energy modes.
+      relation_type: transforms
+      value: internal_mode_exchange
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: vibrational_freezing
+      definition: Authored transformation marker for a vibrational population persisting when change outpaces
+        relaxation.
+      relation_type: transforms
+      value: vibrational_population_persistence
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: endothermic_reaction
+      definition: Authored transformation marker for an energy-absorbing reaction motif.
+      relation_type: transforms
+      value: energy_absorbing_reaction
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: exothermic_reaction
+      definition: Authored transformation marker for an energy-releasing reaction motif.
+      relation_type: transforms
+      value: energy_releasing_reaction
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: post_shock_relaxation
+      definition: Authored transformation marker for evolution toward equilibrium after a shock structure.
+      relation_type: transforms
+      value: post_shock_equilibration
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: expansion_cooling
+      definition: Authored transformation marker for a temperature-profile drop during rapid expansion.
+      relation_type: transforms
+      value: rapid_expansion_temperature_drop
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: chemical_freezing_during_expansion
+      definition: Authored transformation marker for composition lock-in during rapid expansion.
+      relation_type: transforms
+      value: expansion_composition_lock_in
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: thermal_equilibrium
+      definition: Authored structural marker for mutually adjusted thermal energy modes.
+      relation_type: structures
+      value: thermal_equilibrium_regime
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: chemical_equilibrium
+      definition: Authored structural marker for mutually adjusted composition.
+      relation_type: structures
+      value: chemical_equilibrium_regime
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: thermochemical_equilibrium
+      definition: Authored structural marker for jointly adjusted thermal modes and composition.
+      relation_type: structures
+      value: thermochemical_equilibrium_regime
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: thermal_nonequilibrium
+      definition: Authored structural marker for thermal modes that are not mutually adjusted.
+      relation_type: structures
+      value: thermal_nonequilibrium_regime
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: chemical_nonequilibrium
+      definition: Authored structural marker for composition that is not mutually adjusted.
+      relation_type: structures
+      value: chemical_nonequilibrium_regime
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: thermochemical_nonequilibrium
+      definition: Authored structural marker for thermal modes and composition that are not mutually adjusted.
+      relation_type: structures
+      value: thermochemical_nonequilibrium_regime
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: local_thermodynamic_equilibrium
+      definition: Authored structural marker for a local equilibrium approximation.
+      relation_type: structures
+      value: local_equilibrium_approximation
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: non_lte_plasma
+      definition: Authored structural marker for an ionized state outside the local-equilibrium approximation.
+      relation_type: structures
+      value: nonlocal_equilibrium_plasma_regime
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: frozen_flow
+      definition: Authored structural marker for a flow with composition held fixed.
+      relation_type: structures
+      value: composition_fixed_flow_regime
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: equilibrium_flow
+      definition: Authored structural marker for a flow treated as compositionally adjusted.
+      relation_type: structures
+      value: composition_adjusted_flow_regime
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: reacting_flow
+      definition: Authored structural marker for a flow carrying intermediate chemical transformation
+        motifs.
+      relation_type: structures
+      value: transformation_carrying_flow_regime
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: two_temperature_model
+      definition: Authored structural marker assigning separate temperature roles to two energy-mode groups.
+      relation_type: structures
+      value: two_group_temperature_structure
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: multi_temperature_model
+      definition: Authored structural marker assigning separate temperature roles to multiple energy-mode
+        groups.
+      relation_type: structures
+      value: multi_group_temperature_structure
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: normal_shock_wave
+      definition: Authored structural marker for an abrupt compression region aligned with an incoming
+        path.
+      relation_type: structures
+      value: aligned_shock_compression_structure
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: oblique_shock_wave
+      definition: Authored structural marker for an abrupt compression region angled to an incoming path.
+      relation_type: structures
+      value: angled_shock_compression_structure
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: bow_shock_wave
+      definition: Authored structural marker for an abrupt compression region ahead of a body.
+      relation_type: structures
+      value: body_front_shock_compression_structure
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: shock_layer
+      definition: Authored structural marker for a heated region between a shock structure and a body.
+      relation_type: structures
+      value: body_shock_heated_layer
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: shock_standoff_distance
+      definition: Authored structural marker for the separation geometry between a bow shock and a body.
+      relation_type: structures
+      value: bow_shock_body_separation_geometry
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: stagnation_region
+      definition: Authored structural marker for a near-zero-velocity region with peak heating emphasis.
+      relation_type: structures
+      value: near_zero_velocity_heating_region
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: boundary_layer
+      definition: Authored structural marker for a near-wall flow region.
+      relation_type: structures
+      value: near_wall_flow_structure
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: knudsen_layer
+      definition: Authored structural marker for a near-wall region where continuum assumptions weaken.
+      relation_type: structures
+      value: near_wall_continuum_limit_structure
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: rarefied_flow
+      definition: Authored structural marker for a regime with pronounced molecular-path effects.
+      relation_type: structures
+      value: molecular_path_dominated_flow_regime
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: continuum_breakdown
+      definition: Authored structural marker for a regime where continuum treatment no longer applies.
+      relation_type: structures
+      value: continuum_limit_regime
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: plasma
+      definition: Authored structural marker for an ionized gas state.
+      relation_type: structures
+      value: ionized_gas_structure
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: quasineutrality
+      definition: Authored structural marker for near-balanced positive and negative charge populations.
+      relation_type: structures
+      value: near_balanced_charge_structure
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: plasma_sheath
+      definition: Authored structural marker for an ionized-gas boundary region.
+      relation_type: structures
+      value: ionized_boundary_structure
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: convective_heating
+      definition: Authored transfer marker for gas-to-surface energy conveyance through fluid motion.
+      relation_type: transfers
+      value: fluid_motion_surface_heating
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: radiative_heating
+      definition: Authored transfer marker for energy conveyed to a body through absorbed radiation.
+      relation_type: transfers
+      value: absorbed_radiation_heating
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: radiative_cooling
+      definition: Authored transfer marker for energy conveyed away through emitted radiation.
+      relation_type: transfers
+      value: emitted_radiation_cooling
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: bound_bound_transitions
+      definition: Authored transfer marker for radiation associated with transitions between bound electronic
+        states.
+      relation_type: transfers
+      value: bound_state_radiation_pathway
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: bound_free_transitions
+      definition: Authored transfer marker for radiation associated with bound-to-ionized state changes.
+      relation_type: transfers
+      value: ionization_radiation_pathway
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: free_free_transitions
+      definition: Authored transfer marker for radiation associated with free charged-particle interactions.
+      relation_type: transfers
+      value: free_particle_radiation_pathway
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: line_radiation
+      definition: Authored transfer marker for discrete-wavelength emission or absorption.
+      relation_type: transfers
+      value: discrete_spectral_transfer
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: continuum_radiation
+      definition: Authored transfer marker for broadband emission or absorption.
+      relation_type: transfers
+      value: broadband_spectral_transfer
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: optically_thin
+      definition: Authored transfer marker for a medium where emitted radiation readily escapes.
+      relation_type: transfers
+      value: radiation_escape_transfer_regime
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: optically_thick
+      definition: Authored transfer marker for a medium that strongly retains or reprocesses radiation.
+      relation_type: transfers
+      value: radiation_retention_transfer_regime
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: radiative_transfer
+      definition: Authored transfer marker for radiation moving through matter.
+      relation_type: transfers
+      value: radiation_through_matter_transfer
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: radiative_precursor
+      definition: Authored transfer marker for a radiation-heated region ahead of a shock structure.
+      relation_type: transfers
+      value: pre_shock_radiation_heating_region
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: ambipolar_diffusion
+      definition: Authored transfer marker for coupled electron-ion diffusion constrained by internal
+        electric fields.
+      relation_type: transfers
+      value: coupled_charge_diffusion
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: debye_shielding
+      definition: Authored transfer marker for electrostatic screening within an ionized state.
+      relation_type: transfers
+      value: electrostatic_screening
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: debye_length
+      definition: Authored transfer marker for the reach of electrostatic screening.
+      relation_type: transfers
+      value: electrostatic_screening_extent
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: catalytic_wall
+      definition: Authored transfer marker for a surface that drives recombination behavior.
+      relation_type: transfers
+      value: surface_recombination_driver
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: wall_catalycity
+      definition: Authored transfer marker for the strength of a surface-driven catalytic role.
+      relation_type: transfers
+      value: surface_catalytic_role
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: catalytic_recombination_heating
+      definition: Authored transfer marker for heating associated with surface-driven recombination.
+      relation_type: transfers
+      value: surface_recombination_heating
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: ablation
+      definition: Authored transfer marker for material removal under a heat-load motif.
+      relation_type: transfers
+      value: heat_load_material_removal
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: pyrolysis
+      definition: Authored transfer marker for heat-driven material decomposition.
+      relation_type: transfers
+      value: heat_driven_material_decomposition
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: char_formation
+      definition: Authored transfer marker for forming a carbon-rich residual material layer.
+      relation_type: transfers
+      value: residual_material_layer_formation
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: blowing
+      definition: Authored transfer marker for outward material flow that alters incoming heat transfer.
+      relation_type: transfers
+      value: outward_material_flow_effect
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: convective_blockage
+      definition: Authored transfer marker for reducing incoming convective heat conveyance.
+      relation_type: transfers
+      value: convective_heat_reduction
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: sublimation
+      definition: Authored transfer marker for direct solid-to-vapor surface change under heat load.
+      relation_type: transfers
+      value: solid_to_vapor_surface_change
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: vaporization
+      definition: Authored transfer marker for liquid-to-vapor surface change under heat load.
+      relation_type: transfers
+      value: liquid_to_vapor_surface_change
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: oxidation
+      definition: Authored transfer marker for a heat-load surface oxidation motif.
+      relation_type: transfers
+      value: heat_load_surface_oxidation
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: nitridation
+      definition: Authored transfer marker for a heat-load surface nitridation motif.
+      relation_type: transfers
+      value: heat_load_surface_nitridation
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    magnetic_internal:
+    - mechanic_id: inductive_smoldering
+      definition: Absorbs external kinetic energy and stores it as sustained internal heat.
+      relation_type: resists_by
+      value: inductive_resistance
+      phenomenon_class: capability_action
+      source_class: authored_capability
+- element: Air
+  governor: Jupiter
+  school_ref: fivefold.capability_school.air
+  scale_id: 677
+  scale_map_ref: schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#scale_bindings[Air / Wind (Jupiter)]
+  transition_refs:
+  - court_advance_C1_to_C2
+  - court_retreat_C2_to_C1
+  polarity_bindings:
+    electric_external:
+      polarity_bit: 0
+      zodiac: Sagittarius
+      zodiac_facet_ref: fivefold.zodiac.capability_school_facet.sagittarius
+      transition_ref: court_retreat_C2_to_C1
+    magnetic_internal:
+      polarity_bit: 1
+      zodiac: Pisces
+      zodiac_facet_ref: fivefold.zodiac.capability_school_facet.pisces
+      transition_ref: court_advance_C1_to_C2
+  capabilities:
+    electric_external:
+    - mechanic_id: thermal_updraft
+      definition: Expands and scatters heat outward, reducing localized energy density.
+      relation_type: distributes
+      value: rarefied_heat_flow
+      phenomenon_class: capability_action
+      source_class: authored_capability
+    - mechanic_id: anergy
+      definition: Authored state marker for energy unavailable for useful work relative to a chosen environment.
+      relation_type: characterizes
+      value: unavailable_environment_relative_work
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: boltzmann_entropy
+      definition: Authored state marker for entropy expressed through the count of compatible microscopic
+        arrangements.
+      relation_type: characterizes
+      value: compatible_microstate_multiplicity
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: chemical_potential
+      definition: Authored state marker for the free-energy change associated with adding a component,
+        which can direct diffusion, mixing, or reaction.
+      relation_type: characterizes
+      value: component_addition_free_energy_tendency
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: configurational_entropy
+      definition: Authored state marker for the number of ways components can be arranged.
+      relation_type: characterizes
+      value: component_arrangement_multiplicity
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_entropy
+      definition: Authored Air state marker for energy dispersal and accessible microscopic arrangements;
+        it is not a synonym for disorder or heat.
+      relation_type: characterizes
+      value: energy_dispersal_microstate_accessibility
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: entropy_of_mixing
+      definition: Authored state marker for the entropy increase associated with distinguishable substances
+        intermingling.
+      relation_type: characterizes
+      value: distinguishable_substance_intermixture
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: exergy
+      definition: Authored state marker for the maximum useful work available as a system approaches a
+        chosen environment.
+      relation_type: characterizes
+      value: environment_relative_useful_work_reserve
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: free_energy
+      definition: Authored state marker for energy available to drive change after entropy effects are
+        included.
+      relation_type: characterizes
+      value: entropy_adjusted_change_potential
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_gibbs_free_energy
+      definition: Authored Air state marker for a free-energy balance in which an entropy contribution
+        can favor mixed or configuration-rich states at higher temperature.
+      relation_type: characterizes
+      value: entropy_weighted_equilibrium_potential
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: high_entropy_state
+      definition: Authored state marker for comparatively many accessible arrangements, energy distributions,
+        or compositional configurations.
+      relation_type: characterizes
+      value: high_accessibility_configuration_state
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: information_entropy
+      definition: Authored state marker for uncertainty in a probability distribution, related to but
+        not equated with thermodynamic entropy.
+      relation_type: characterizes
+      value: probability_distribution_uncertainty
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: macrostate
+      definition: Authored state marker for a bulk system description using variables such as temperature,
+        pressure, composition, and volume.
+      relation_type: characterizes
+      value: bulk_state_description
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: microstate
+      definition: Authored state marker for one exact microscopic arrangement of particles, energies,
+        and internal states.
+      relation_type: characterizes
+      value: exact_microscopic_arrangement
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: residual_entropy
+      definition: Authored state marker for entropy remaining near absolute zero when more than one microscopic
+        arrangement remains possible.
+      relation_type: characterizes
+      value: low_temperature_arrangement_residue
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: specific_entropy
+      definition: Authored state marker for a mass-relative entropy pattern.
+      relation_type: characterizes
+      value: mass_normalized_entropy_state
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: thermodynamic_probability
+      definition: Authored state marker for the number of microstates compatible with a macrostate.
+      relation_type: characterizes
+      value: macrostate_compatible_microstate_count
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: vibrational_entropy
+      definition: Authored state marker for an entropy contribution from available molecular or atomic
+        vibrational states.
+      relation_type: characterizes
+      value: vibrational_state_accessibility
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: dissipation
+      definition: Authored transformation marker for conversion of organized mechanical, electrical, or
+        chemical energy into dispersed internal energy.
+      relation_type: transforms
+      value: organized_to_dispersed_energy_conversion
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: entropy_generation
+      definition: Authored transformation marker for entropy created internally by irreversible processes.
+      relation_type: transforms
+      value: irreversible_internal_entropy_creation
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: entropy_production
+      definition: Authored transformation marker for irreversible entropy creation through friction, diffusion,
+        heat flow, reaction, or similar processes.
+      relation_type: transforms
+      value: irreversible_entropy_production
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: equilibration
+      definition: Authored transformation marker for evolution from an imbalance toward no net thermodynamic
+        driving tendency.
+      relation_type: transforms
+      value: imbalance_to_equilibrium_evolution
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: irreversibility
+      definition: Authored transformation marker for a real process that cannot be exactly undone without
+        changes to the system or surroundings.
+      relation_type: transforms
+      value: nonrecoverable_process_direction
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: isentropic_process
+      definition: Authored transformation marker for an ideal reversible adiabatic process with a constant
+        entropy marker.
+      relation_type: transforms
+      value: reversible_adiabatic_entropy_limit
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: mixing
+      definition: Authored transformation marker for combining materials or energy distributions into
+        a more uniform composite state.
+      relation_type: transforms
+      value: composite_uniformity_formation
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: order_disorder_transition
+      definition: Authored transformation marker for change between an ordered arrangement and a more
+        configuration-rich disordered arrangement.
+      relation_type: transforms
+      value: arrangement_accessibility_shift
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: phase_separation
+      definition: Authored transformation marker for demixing a material into distinct phases in competition
+        with entropy of mixing.
+      relation_type: transforms
+      value: compositional_demixing
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: relaxation
+      definition: Authored transformation marker for return of a disturbed system toward equilibrium.
+      relation_type: transforms
+      value: disturbance_to_equilibrium_return
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: thermalization
+      definition: Authored transformation marker for redistribution of energy among particles or modes
+        toward a common thermal distribution.
+      relation_type: transforms
+      value: energy_mode_distribution_equalization
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: viscous_dissipation
+      definition: Authored transformation marker for fluid-motion conversion into internal energy through
+        friction.
+      relation_type: transforms
+      value: fluid_motion_frictional_conversion
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: dissipative_structure
+      definition: Authored structural marker for an ordered pattern maintained in an open nonequilibrium
+        system by continual energy or material flow.
+      relation_type: structures
+      value: flow_maintained_ordered_pattern
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: entropy_balance
+      definition: Authored structural marker for accounting of entropy entering, leaving, stored within,
+        and generated by a system.
+      relation_type: structures
+      value: boundary_storage_generation_accounting
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: entropy_reservoir
+      definition: Authored structural marker for an idealized system that can receive or supply entropy
+        without appreciably changing its temperature.
+      relation_type: structures
+      value: entropy_exchange_reference_system
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: equilibrium
+      definition: Authored structural marker for a state with no net thermodynamic driving force.
+      relation_type: structures
+      value: no_net_driving_force_regime
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: high_entropy_alloy
+      definition: Authored structural marker for a multi-principal-element alloy in which configurational
+        entropy contributes substantially to phase stability.
+      relation_type: structures
+      value: multicomponent_configurationally_stabilized_alloy
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: high_entropy_material
+      definition: Authored structural marker for a multicomponent material class such as alloys, oxides,
+        ceramics, or carbides with substantial configurational entropy.
+      relation_type: structures
+      value: multicomponent_configurational_material_class
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: maximum_entropy_principle
+      definition: Authored structural marker for selecting the least-biased equilibrium distribution with
+        the greatest entropy under stated constraints.
+      relation_type: structures
+      value: constrained_maximum_entropy_selection
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: nonequilibrium
+      definition: Authored structural marker for a state with gradients or imbalances that can still drive
+        heat, mass, charge, or chemical flow.
+      relation_type: structures
+      value: gradient_driven_flow_regime
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: nonequilibrium_steady_state
+      definition: Authored structural marker for a persistent dynamic state with ongoing flows and stable
+        average properties.
+      relation_type: structures
+      value: persistent_flow_stable_average_regime
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: open_system
+      definition: Authored structural marker for a system that exchanges energy or matter with its environment.
+      relation_type: structures
+      value: environment_exchanging_system_boundary
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: second_law_of_thermodynamics
+      definition: Authored structural marker for the directional constraint that isolated-system entropy
+        does not decrease.
+      relation_type: structures
+      value: nondecreasing_isolated_entropy_constraint
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: statistical_mechanics
+      definition: Authored structural marker for a framework relating microscopic states and probabilities
+        to macroscopic thermodynamic descriptions.
+      relation_type: structures
+      value: micro_macro_probability_framework
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: diffusion
+      definition: Authored transfer marker for net outward spreading of particles from a gradient toward
+        a more mixed state.
+      relation_type: transfers
+      value: gradient_driven_particle_spreading
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: entropic_force
+      definition: Authored transfer marker for an effective directional tendency toward configurations
+        with more accessible microstates.
+      relation_type: transfers
+      value: microstate_accessibility_tendency
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: entropy_flux
+      definition: Authored transfer marker for entropy transported across a boundary by heat flow or moving
+        matter.
+      relation_type: transfers
+      value: boundary_entropy_transport
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    magnetic_internal:
+    - mechanic_id: thermal_drag
+      definition: Stifles heat distribution, creating localized cold pockets or dense pressure.
+      relation_type: constrains
+      value: ground_level_drag
+      phenomenon_class: capability_action
+      source_class: authored_capability
+- element: Water
+  governor: Venus
+  school_ref: fivefold.capability_school.water
+  scale_id: 1193
+  scale_map_ref: schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#scale_bindings[Water (Venus)]
+  transition_refs:
+  - court_advance_C2_to_C3
+  - court_retreat_C3_to_C2
+  polarity_bindings:
+    electric_external:
+      polarity_bit: 0
+      zodiac: Libra
+      zodiac_facet_ref: fivefold.zodiac.capability_school_facet.libra
+      transition_ref: court_retreat_C3_to_C2
+    magnetic_internal:
+      polarity_bit: 1
+      zodiac: Taurus
+      zodiac_facet_ref: fivefold.zodiac.capability_school_facet.taurus
+      transition_ref: court_advance_C2_to_C3
+  capabilities:
+    electric_external:
+    - mechanic_id: convective_discharge
+      definition: Outward exchange of thermal energy; balancing the temperature of the environment.
+      relation_type: exchanges
+      value: thermal_coupling
+      phenomenon_class: capability_action
+      source_class: authored_capability
+    - mechanic_id: electrolyte_activity
+      definition: Authored solution-state marker for effective dissolved-species concentration after non-ideal
+        interactions.
+      relation_type: characterizes
+      value: nonideal_dissolved_species_effect
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: interfacial_capacitance
+      definition: Authored state marker for an interface or device storing separated electric charge.
+      relation_type: characterizes
+      value: separated_charge_storage_capacity
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: interfacial_electric_field
+      definition: Authored state marker for the spatial influence that exerts force on electric charges.
+      relation_type: characterizes
+      value: charge_force_spatial_influence
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrochemical_potential
+      definition: Authored state marker combining a species chemical and electrical driving forces at
+        a specified electric potential.
+      relation_type: characterizes
+      value: chemical_electrical_driving_force
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrode_potential
+      definition: Authored state marker for the potential difference associated with an electrode-electrolyte
+        interface.
+      relation_type: characterizes
+      value: electrode_electrolyte_potential_difference
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrolyte_ionic_strength
+      definition: Authored solution-state marker for total charge concentration affecting screening and
+        double-layer behavior.
+      relation_type: characterizes
+      value: total_solution_charge_concentration
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: nernst_potential
+      definition: Authored state marker for an equilibrium voltage associated with an ion concentration
+        ratio across a boundary.
+      relation_type: characterizes
+      value: ion_concentration_ratio_equilibrium_voltage
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrochemical_overpotential
+      definition: Authored state marker for voltage beyond equilibrium potential needed to drive an electrode
+        reaction at a chosen rate.
+      relation_type: characterizes
+      value: reaction_driving_voltage_excess
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrolyte_ph
+      definition: Authored solution-state marker related to hydrogen-ion activity in an aqueous solution.
+      relation_type: characterizes
+      value: hydrogen_ion_activity_marker
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: interfacial_polarization
+      definition: Authored state marker for charge redistribution in a material or electrochemical interface
+        under an applied field.
+      relation_type: characterizes
+      value: field_driven_charge_redistribution
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: interfacial_surface_charge
+      definition: Authored state marker for net electric charge accumulated at an interface.
+      relation_type: characterizes
+      value: interface_net_charge_accumulation
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: interfacial_surface_tension
+      definition: Authored state marker for the energy cost of increasing a liquid interface.
+      relation_type: characterizes
+      value: liquid_interface_expansion_energy
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: zeta_potential
+      definition: Authored state marker for the potential drop near the mobile part of an electrical double
+        layer.
+      relation_type: characterizes
+      value: mobile_double_layer_potential_drop
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: interfacial_adsorption
+      definition: Authored transformation marker for ions or molecules attaching to a surface or electrode.
+      relation_type: transforms
+      value: surface_species_attachment
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: interfacial_charge_separation
+      definition: Authored transformation marker for forming regions with unequal positive and negative
+        charge.
+      relation_type: transforms
+      value: unequal_charge_region_formation
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrochemical_condensation
+      definition: Authored transformation marker for a cohesion-dominant gas-to-liquid phase change.
+      relation_type: transforms
+      value: gas_to_liquid_cohesive_transition
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: interfacial_desorption
+      definition: Authored transformation marker for releasing an adsorbed ion or molecule from a surface.
+      relation_type: transforms
+      value: surface_species_release
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: dielectric_polarization
+      definition: Authored transformation marker for small charge displacement or orientation within a
+        dielectric under an electric field.
+      relation_type: transforms
+      value: field_driven_bound_charge_displacement
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrolyte_dissolution
+      definition: Authored transformation marker for incorporating a solute into a solvent through solvation
+        and mixing.
+      relation_type: transforms
+      value: solute_solvent_incorporation
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrolysis
+      definition: Authored transformation marker for an electric-field-driven chemical reaction powered
+        by external voltage.
+      relation_type: transforms
+      value: voltage_driven_chemical_transformation
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrowetting
+      definition: Authored transformation marker for voltage changing a liquid wetting behavior on a surface.
+      relation_type: transforms
+      value: voltage_driven_wetting_change
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: faradaic_process
+      definition: Authored transformation marker for electrode charge transfer coupled to a chemical reaction.
+      relation_type: transforms
+      value: reaction_coupled_charge_transfer
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: nonfaradaic_process
+      definition: Authored transformation marker for charge storage or rearrangement without net chemical
+        reaction.
+      relation_type: transforms
+      value: reaction_free_charge_storage
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrochemical_redox_reaction
+      definition: Authored transformation marker for coupled oxidation and reduction involving electron
+        transfer.
+      relation_type: transforms
+      value: coupled_oxidation_reduction_electron_transfer
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrolyte_solvation
+      definition: Authored transformation marker for solvent molecules stabilizing a dissolved solute;
+        hydration is its water-specific form.
+      relation_type: transforms
+      value: solvent_stabilized_solute_environment
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: aqueous_electrolyte
+      definition: Authored structural marker for water containing dissolved ions that can carry electric
+        current.
+      relation_type: structures
+      value: ion_containing_water_solution
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: ionic_charge_carrier
+      definition: Authored structural marker for a mobile charged entity such as an electron, cation,
+        anion, or proton.
+      relation_type: structures
+      value: mobile_charged_entity
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrolyte_counterion
+      definition: Authored structural marker for an ion with charge opposite to a nearby surface, ion,
+        or colloid.
+      relation_type: structures
+      value: oppositely_charged_compensating_ion
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrolyte_dielectric
+      definition: Authored structural marker for material that polarizes in an electric field while largely
+        blocking direct charge flow.
+      relation_type: structures
+      value: field_polarizing_charge_blocking_material
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electric_double_layer
+      definition: Authored structural marker for surface charge with compensating ions or dipoles at a
+        solid-liquid interface.
+      relation_type: structures
+      value: solid_liquid_charge_compensation_structure
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrochemical_cell
+      definition: Authored structural marker for a system converting chemical free energy and electrical
+        energy between one another.
+      relation_type: structures
+      value: chemical_electrical_energy_conversion_system
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrochemical_equilibrium
+      definition: Authored structural marker for balanced chemical and electrical driving forces with
+        no net reaction or ion flow.
+      relation_type: structures
+      value: balanced_chemical_electrical_driving_regime
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrochemical_electrode
+      definition: Authored structural marker for a conducting surface through which electrons enter or
+        leave an electrolyte.
+      relation_type: structures
+      value: electron_electrolyte_exchange_surface
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: galvanic_cell
+      definition: Authored structural marker for an electrochemical cell producing electric current from
+        a spontaneous redox reaction.
+      relation_type: structures
+      value: spontaneous_redox_current_source
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: hydration_shell
+      definition: Authored structural marker for the organized layer of water molecules surrounding an
+        ion or polar molecule.
+      relation_type: structures
+      value: ion_surrounding_water_structure
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrolyte_debye_length
+      definition: Authored transfer marker for the characteristic electrolyte distance over which electrical
+        potential is screened.
+      relation_type: transfers
+      value: electrolyte_screening_extent
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrocapillarity
+      definition: Authored transfer marker for electrical potential changing interfacial tension.
+      relation_type: transfers
+      value: potential_modulated_interfacial_tension
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electrodiffusion
+      definition: Authored transfer marker for ion transport jointly driven by concentration gradients
+        and electric fields.
+      relation_type: transfers
+      value: gradient_field_coupled_ion_transport
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: electroosmosis
+      definition: Authored transfer marker for liquid motion through a capillary, membrane, or porous
+        material under an applied electric field.
+      relation_type: transfers
+      value: field_driven_liquid_motion
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: ionic_conduction
+      definition: Authored transfer marker for electric current carried by moving ions rather than electrons.
+      relation_type: transfers
+      value: ion_carried_electric_current
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: ionic_mobility
+      definition: Authored transfer marker for ion speed through a medium under an electric field.
+      relation_type: transfers
+      value: field_response_ion_speed
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: osmotic_transfer
+      definition: Authored transfer marker for solvent movement across a selective boundary toward higher
+        solute activity.
+      relation_type: transfers
+      value: activity_gradient_solvent_transfer
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: proton_conduction
+      definition: Authored transfer marker for charge transport through hydrogen ions or protonic defects.
+      relation_type: transfers
+      value: protonic_charge_transport
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: streaming_potential
+      definition: Authored transfer marker for voltage generated when electrolyte flows through a charged
+        channel or porous material.
+      relation_type: transfers
+      value: flow_generated_electrolyte_voltage
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    magnetic_internal:
+    - mechanic_id: latent_heat_storage
+      definition: Absorbs massive amounts of heat without changing state; internal pressure building.
+      relation_type: absorbs
+      value: specific_heat_capacity
+      phenomenon_class: capability_action
+      source_class: authored_capability
+- element: Earth
+  governor: Saturn
+  school_ref: fivefold.capability_school.earth
+  scale_id: 1321
+  scale_map_ref: schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#scale_bindings[Earth (Saturn)]
+  transition_refs:
+  - court_advance_C3_to_C4
+  - court_retreat_C4_to_C3
+  polarity_bindings:
+    electric_external:
+      polarity_bit: 0
+      zodiac: Aquarius
+      zodiac_facet_ref: fivefold.zodiac.capability_school_facet.aquarius
+      transition_ref: court_retreat_C4_to_C3
+    magnetic_internal:
+      polarity_bit: 1
+      zodiac: Capricorn
+      zodiac_facet_ref: fivefold.zodiac.capability_school_facet.capricorn
+      transition_ref: court_advance_C3_to_C4
+  capabilities:
+    electric_external:
+    - mechanic_id: dielectric_friction
+      definition: Generates static/thermal friction at the boundary, repelling external heat.
+      relation_type: repels
+      value: thermal_insulation
+      phenomenon_class: capability_action
+      source_class: authored_capability
+    magnetic_internal:
+    - mechanic_id: crystallization_lock
+      definition: Flash-freezes internal energy into an immutable, solid lattice.
+      relation_type: fixes
+      value: absolute_state_change
+      phenomenon_class: capability_action
+      source_class: authored_capability
+- element: Quintessence
+  governor: Mercury
+  school_ref: fivefold.capability_school.quintessence
+  scale_id: 1189
+  scale_map_ref: schemas/elemental_pentatonic_scale_map_v1.0.0.yaml#scale_bindings[Quintessence (Mercury)]
+  is_binary_court_pole: false
+  court_pole_index: null
+  register_membership: excluded
+  engine_interface_ref: mercury_engine_cycle
+  capabilities:
+    engine_interface:
+    - mechanic_id: phase_transition
+      definition: Translates harmonic state mutations into elemental thermodynamic shifts.
+      relation_type: transduces
+      value: em_induction_cycle
+      phenomenon_class: capability_action
+      source_class: authored_capability
+guards:
+- guard_id: authored_game_mechanics_not_physics
+  status: enforced
+  statement: Every capability is an authored game mechanic; physical_quantity_claim is false and no executable
+    physics law is asserted.
+- guard_id: no_kappa_thermodynamic_equivalence
+  status: enforced
+  statement: Thermodynamic vocabulary is authored semantics; kappa_court remains read-only replay and
+    is never equated with temperature, entropy, enthalpy, or free energy.
+- guard_id: mercury_excluded_from_register
+  status: enforced
+  statement: Quintessence carries is_binary_court_pole false, court_pole_index null, and register_membership
+    excluded; it has no polarity bit and no zodiac facet.
+- guard_id: no_court_writes
+  status: enforced
+  statement: No capability writes court.poleDisposition, graph state, runtime policy, or ledger success.
+- guard_id: relation_vocabulary_authored
+  status: enforced
+  statement: relation_type values are authored semantic verbs; executable Court-move relations never appear.
+- guard_id: no_unadmitted_scale_classes
+  status: enforced
+  statement: Every scale_id is an admitted 5-35 Court mask replayed from the elemental scale map; no proposed
+    pentatonic class is claimed.
+- guard_id: kappa_and_ch_untouched
+  status: enforced
+  statement: kappa_court is read-only replay; global harmonic.C_H is not written.
+- guard_id: crt310_untouched
+  status: enforced
+  statement: CRT-310 gates, backlog, and workflow remain unchanged.
+- guard_id: excluded_relation_vocabulary_absent
+  status: enforced
+  statement: SETS_COURT_POLE, EXECUTES_COURT_MOVE, and equivalent executable relations never appear.
+- guard_id: instrumentation_and_modeling_separated
+  status: enforced
+  statement: Facilities and computational simulation/modeling terms are excluded from this glossary and
+    reserved for the future mechanics_instrumentation_registry.yaml; two-temperature and multi-temperature
+    entries remain authored structural regime descriptors, not simulation tooling.
+- guard_id: kinetics_mechanism_terms_reserved
+  status: enforced
+  statement: Finite-rate chemistry, reaction-mechanism, and third-body-reaction terms remain reserved
+    for the future Kinetics parent category.

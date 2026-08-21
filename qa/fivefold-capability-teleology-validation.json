@@ -1,5 +1,5 @@
 {
-  "candidateFingerprint": "2c591881bbeae0615af39c6ee7e3c4fcc9593c00d0263ab98e5d2179333a05f8",
+  "candidateFingerprint": "a8857e18d9cb351a56bd0042a78d73233abd832f408926d735532b72c18a3b34",
   "candidateId": "fivefold-capability-teleology-v1",
   "checks": [
     {
@@ -20,10 +20,10 @@
     },
     {
       "checkId": "candidate-fingerprint",
-      "diagnostic": "2c591881bbeae0615af39c6ee7e3c4fcc9593c00d0263ab98e5d2179333a05f8",
+      "diagnostic": "a8857e18d9cb351a56bd0042a78d73233abd832f408926d735532b72c18a3b34",
       "evidenceLocator": "/home/erick/projects/integrated-release/canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json",
-      "expected": "2c591881bbeae0615af39c6ee7e3c4fcc9593c00d0263ab98e5d2179333a05f8",
-      "actual": "2c591881bbeae0615af39c6ee7e3c4fcc9593c00d0263ab98e5d2179333a05f8",
+      "expected": "a8857e18d9cb351a56bd0042a78d73233abd832f408926d735532b72c18a3b34",
+      "actual": "a8857e18d9cb351a56bd0042a78d73233abd832f408926d735532b72c18a3b34",
       "status": "PASS"
     },
     {
@@ -79,7 +79,7 @@
           "bindingId": "source-authority",
           "path": "provenance/SOURCE_AUTHORITY.md",
           "role": "release authority precedence",
-          "sha256": "c4bb55832c6c5e5d43d340f7e26bb795c66ace2d20622b31ac7499b97fc485dc"
+          "sha256": "7420bbcc9d4e7ee5505473ef2ffefb2ec4af884b03b12afd7e089140cfcc0f37"
         }
       ],
       "actual": [
@@ -129,7 +129,7 @@
           "bindingId": "source-authority",
           "path": "provenance/SOURCE_AUTHORITY.md",
           "role": "release authority precedence",
-          "sha256": "c4bb55832c6c5e5d43d340f7e26bb795c66ace2d20622b31ac7499b97fc485dc"
+          "sha256": "7420bbcc9d4e7ee5505473ef2ffefb2ec4af884b03b12afd7e089140cfcc0f37"
         }
       ],
       "status": "PASS"
@@ -145,28 +145,28 @@
     {
       "checkId": "independent-rebuild",
       "diagnostic": {
-        "actual": "2c591881bbeae0615af39c6ee7e3c4fcc9593c00d0263ab98e5d2179333a05f8",
-        "expected": "2c591881bbeae0615af39c6ee7e3c4fcc9593c00d0263ab98e5d2179333a05f8"
+        "actual": "a8857e18d9cb351a56bd0042a78d73233abd832f408926d735532b72c18a3b34",
+        "expected": "a8857e18d9cb351a56bd0042a78d73233abd832f408926d735532b72c18a3b34"
       },
       "evidenceLocator": "schemas/fivefold-capability/fivefold-capability-teleology.yaml",
-      "expected": "2c591881bbeae0615af39c6ee7e3c4fcc9593c00d0263ab98e5d2179333a05f8",
-      "actual": "2c591881bbeae0615af39c6ee7e3c4fcc9593c00d0263ab98e5d2179333a05f8",
+      "expected": "a8857e18d9cb351a56bd0042a78d73233abd832f408926d735532b72c18a3b34",
+      "actual": "a8857e18d9cb351a56bd0042a78d73233abd832f408926d735532b72c18a3b34",
       "status": "PASS"
     },
     {
       "checkId": "build-twice-identity",
-      "diagnostic": "2c591881bbeae0615af39c6ee7e3c4fcc9593c00d0263ab98e5d2179333a05f8",
+      "diagnostic": "a8857e18d9cb351a56bd0042a78d73233abd832f408926d735532b72c18a3b34",
       "evidenceLocator": "scripts/build-fivefold-capability-teleology.py",
-      "expected": "2c591881bbeae0615af39c6ee7e3c4fcc9593c00d0263ab98e5d2179333a05f8",
-      "actual": "2c591881bbeae0615af39c6ee7e3c4fcc9593c00d0263ab98e5d2179333a05f8",
+      "expected": "a8857e18d9cb351a56bd0042a78d73233abd832f408926d735532b72c18a3b34",
+      "actual": "a8857e18d9cb351a56bd0042a78d73233abd832f408926d735532b72c18a3b34",
       "status": "PASS"
     },
     {
       "checkId": "reordered-input-identity",
-      "diagnostic": "2c591881bbeae0615af39c6ee7e3c4fcc9593c00d0263ab98e5d2179333a05f8",
+      "diagnostic": "a8857e18d9cb351a56bd0042a78d73233abd832f408926d735532b72c18a3b34",
       "evidenceLocator": "scripts/build-fivefold-capability-teleology.py",
-      "expected": "2c591881bbeae0615af39c6ee7e3c4fcc9593c00d0263ab98e5d2179333a05f8",
-      "actual": "2c591881bbeae0615af39c6ee7e3c4fcc9593c00d0263ab98e5d2179333a05f8",
+      "expected": "a8857e18d9cb351a56bd0042a78d73233abd832f408926d735532b72c18a3b34",
+      "actual": "a8857e18d9cb351a56bd0042a78d73233abd832f408926d735532b72c18a3b34",
       "status": "PASS"
     },
     {
@@ -757,5 +757,5 @@
   "checksPassed": 22,
   "schemaVersion": "crt-347.fivefold-capability-teleology-validation.v1",
   "verdict": "PASS",
-  "reportFingerprint": "2b70191d01f98859e96beb149b451e7930af85c1aa212c777262aee2dcbfa25a"
+  "reportFingerprint": "a197f0daae046509f9df58bfb467b387cbc5f513273ca4b8c61ba63008a561a2"
 }

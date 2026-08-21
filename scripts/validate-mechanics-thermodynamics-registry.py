@@ -91,7 +91,277 @@ EXPECTED_BINDINGS = {
         "engine_interface_ref": "mercury_engine_cycle",
     },
 }
-EXPECTED_ELEMENTS_FINGERPRINT = "2297f70e7c598c77c83678dc04a570b7c439a340e08c6d0a61023a15075fdb90"
+SCAFFOLD_KEYS = (
+    "energy_states",
+    "transformations",
+    "structural_forms",
+    "transfer_modes",
+)
+EXPECTED_FRAMEWORK_PARENT_CATEGORIES = [
+    {
+        "category_id": "high_enthalpy_phenomena",
+        "section_id": "high_enthalpy_thermodynamics",
+        "population_status": "populated_in_this_registry",
+    },
+    {
+        "category_id": "high_entropy_phenomena",
+        "section_id": "high_entropy_thermodynamics",
+        "population_status": "populated_in_this_registry",
+    },
+    {
+        "category_id": "low_enthalpy_phenomena",
+        "section_id": "low_enthalpy_thermodynamics",
+        "population_status": "placeholder_future_category",
+    },
+    {
+        "category_id": "low_entropy_phenomena",
+        "section_id": "low_entropy_thermodynamics",
+        "population_status": "placeholder_future_category",
+    },
+    {
+        "category_id": "equilibrium_phenomena",
+        "section_id": "equilibrium_thermodynamics",
+        "population_status": "placeholder_future_category",
+    },
+    {
+        "category_id": "kinetics",
+        "section_id": None,
+        "population_status": "placeholder_future_category",
+    },
+    {
+        "category_id": "kinematics",
+        "section_id": None,
+        "population_status": "placeholder_future_category",
+    },
+    {
+        "category_id": "weather_dynamics",
+        "section_id": None,
+        "population_status": "placeholder_future_category",
+    },
+]
+EXPECTED_INSTRUMENTATION_BOUNDARY = {
+    "registry_id": "mechanics_instrumentation_registry",
+    "registry_path": "schemas/mechanics_instrumentation_registry.yaml",
+    "status": "future_separate_registry",
+    "inclusion": "excluded_from_this_registry",
+    "scope": "facilities_and_computational_simulation_models",
+    "structural_descriptors_retained": [
+        "two_temperature_model",
+        "multi_temperature_model",
+    ],
+}
+EXPECTED_HIGH_ENTHALPY_IDS = {
+    "energy_states": (
+        "enthalpy",
+        "specific_enthalpy",
+        "total_stagnation_enthalpy",
+        "sensible_enthalpy",
+        "chemical_enthalpy",
+        "formation_enthalpy",
+        "static_total_temperature",
+        "entropy",
+        "gibbs_free_energy",
+        "partition_function",
+        "electron_heavy_particle_temperature",
+        "translational_rotational_vibrational_electronic_excitation",
+        "internal_energy_mode",
+    ),
+    "transformations": (
+        "dissociation",
+        "recombination",
+        "ionization",
+        "electron_impact_ionization",
+        "associative_ionization",
+        "charge_exchange",
+        "attachment",
+        "detachment",
+        "excitation",
+        "de_excitation",
+        "mode_coupling",
+        "vibrational_freezing",
+        "endothermic_reaction",
+        "exothermic_reaction",
+        "post_shock_relaxation",
+        "expansion_cooling",
+        "chemical_freezing_during_expansion",
+    ),
+    "structural_forms": (
+        "thermal_equilibrium",
+        "chemical_equilibrium",
+        "thermochemical_equilibrium",
+        "thermal_nonequilibrium",
+        "chemical_nonequilibrium",
+        "thermochemical_nonequilibrium",
+        "local_thermodynamic_equilibrium",
+        "non_lte_plasma",
+        "frozen_flow",
+        "equilibrium_flow",
+        "reacting_flow",
+        "two_temperature_model",
+        "multi_temperature_model",
+        "normal_shock_wave",
+        "oblique_shock_wave",
+        "bow_shock_wave",
+        "shock_layer",
+        "shock_standoff_distance",
+        "stagnation_region",
+        "boundary_layer",
+        "knudsen_layer",
+        "rarefied_flow",
+        "continuum_breakdown",
+        "plasma",
+        "quasineutrality",
+        "plasma_sheath",
+    ),
+    "transfer_modes": (
+        "convective_heating",
+        "radiative_heating",
+        "radiative_cooling",
+        "bound_bound_transitions",
+        "bound_free_transitions",
+        "free_free_transitions",
+        "line_radiation",
+        "continuum_radiation",
+        "optically_thin",
+        "optically_thick",
+        "radiative_transfer",
+        "radiative_precursor",
+        "ambipolar_diffusion",
+        "debye_shielding",
+        "debye_length",
+        "catalytic_wall",
+        "wall_catalycity",
+        "catalytic_recombination_heating",
+        "ablation",
+        "pyrolysis",
+        "char_formation",
+        "blowing",
+        "convective_blockage",
+        "sublimation",
+        "vaporization",
+        "oxidation",
+        "nitridation",
+    ),
+}
+EXPECTED_HIGH_ENTROPY_IDS = {
+    "energy_states": (
+        "anergy",
+        "boltzmann_entropy",
+        "chemical_potential",
+        "configurational_entropy",
+        "air_entropy",
+        "entropy_of_mixing",
+        "exergy",
+        "free_energy",
+        "air_gibbs_free_energy",
+        "high_entropy_state",
+        "information_entropy",
+        "macrostate",
+        "microstate",
+        "residual_entropy",
+        "specific_entropy",
+        "thermodynamic_probability",
+        "vibrational_entropy",
+    ),
+    "transformations": (
+        "dissipation",
+        "entropy_generation",
+        "entropy_production",
+        "equilibration",
+        "irreversibility",
+        "isentropic_process",
+        "mixing",
+        "order_disorder_transition",
+        "phase_separation",
+        "relaxation",
+        "thermalization",
+        "viscous_dissipation",
+    ),
+    "structural_forms": (
+        "dissipative_structure",
+        "entropy_balance",
+        "entropy_reservoir",
+        "equilibrium",
+        "high_entropy_alloy",
+        "high_entropy_material",
+        "maximum_entropy_principle",
+        "nonequilibrium",
+        "nonequilibrium_steady_state",
+        "open_system",
+        "second_law_of_thermodynamics",
+        "statistical_mechanics",
+    ),
+    "transfer_modes": (
+        "diffusion",
+        "entropic_force",
+        "entropy_flux",
+    ),
+}
+EXPECTED_CATEGORY_RELATION_TYPES = {
+    "energy_states": "characterizes",
+    "transformations": "transforms",
+    "structural_forms": "structures",
+    "transfer_modes": "transfers",
+}
+PHENOMENON_CATEGORY_SECTION_IDS = {
+    "high_enthalpy_phenomena": "high_enthalpy_thermodynamics",
+    "high_entropy_phenomena": "high_entropy_thermodynamics",
+    "low_enthalpy_phenomena": "low_enthalpy_thermodynamics",
+    "low_entropy_phenomena": "low_entropy_thermodynamics",
+    "equilibrium_phenomena": "equilibrium_thermodynamics",
+}
+EXPECTED_ELEMENT_PHENOMENON_CATEGORIES = {
+    "Fire": "high_enthalpy_phenomena",
+    "Air": "high_entropy_phenomena",
+    "Water": "low_enthalpy_phenomena",
+    "Earth": "low_entropy_phenomena",
+    "Quintessence": "equilibrium_phenomena",
+}
+EXPECTED_POPULATED_PHENOMENON_CATALOGS = {
+    ("Fire", "high_enthalpy_phenomena"): EXPECTED_HIGH_ENTHALPY_IDS,
+    ("Air", "high_entropy_phenomena"): EXPECTED_HIGH_ENTROPY_IDS,
+}
+CATEGORY_VALIDATION_PREFIXES = {
+    "high_enthalpy_phenomena": "high_enthalpy",
+    "high_entropy_phenomena": "high_entropy",
+}
+RICH_ENTRY_KEYS = {
+    "mechanic_id",
+    "definition",
+    "relation_type",
+    "value",
+    "source_class",
+}
+INSTRUMENTATION_MECHANIC_IDS = {
+    "shock_tube",
+    "shock_tunnel",
+    "reflected_shock_tunnel",
+    "expansion_tube",
+    "arc_jet_facility",
+    "plasma_wind_tunnel",
+    "inductively_coupled_plasma_torch",
+    "reservoir_region",
+    "test_section",
+    "navier_stokes_equations",
+    "euler_equations",
+    "direct_simulation_monte_carlo",
+    "finite_rate_reaction_model",
+    "equilibrium_flow_model",
+    "frozen_flow_model",
+    "radiation_transport_model",
+    "line_by_line_radiation_model",
+    "state_to_state_kinetics",
+    "state_specific_kinetics",
+    "saha_equation",
+    "knudsen_number",
+    "damkohler_number",
+}
+KINETICS_RESERVED_MECHANIC_IDS = {
+    "finite_rate_chemistry",
+    "reaction_mechanism",
+    "third_body_reaction",
+}
+EXPECTED_AUTHORING_FINGERPRINT = "d4d31aec34f5568014b21b57340682e5b461cc348dc8d2333bf86695449536ff"
 FORBIDDEN_RELATIONS = ("SETS_COURT_POLE", "EXECUTES_COURT_MOVE")
 AUTHORED_RELATION_VOCABULARY = {
     "activated_by",
@@ -103,18 +373,26 @@ AUTHORED_RELATION_VOCABULARY = {
     "repels",
     "fixes",
     "transduces",
+    "characterizes",
+    "transforms",
+    "structures",
+    "transfers",
 }
 
 REPORT_CHECK_IDS = (
     "mtr-schema-identity",
     "mtr-admission-boundary",
     "mtr-element-coverage",
+    "mtr-category-scaffold",
+    "mtr-high-enthalpy-fire-population",
+    "mtr-high-entropy-air-population",
     "mtr-scale-map-replay",
     "mtr-polarity-bit-replay",
     "mtr-zodiac-facet-refs",
     "mtr-mercury-exclusion",
     "mtr-cross-registry-refs",
     "mtr-physics-guard",
+    "mtr-instrumentation-separation",
     "mtr-forbidden-relations",
     "mtr-relation-vocabulary",
     "mtr-guard-closure",
@@ -139,6 +417,15 @@ MUTATION_IDS = (
     "capability-transition-swapped",
     "capability-definition-drift",
     "mercury-transition-injected",
+    "missing-category-scaffold",
+    "fire-glossary-wrong-polarity",
+    "high-enthalpy-definition-drift",
+    "air-high-entropy-wrong-polarity",
+    "high-entropy-definition-drift",
+    "high-entropy-glossary-duplicate-id",
+    "instrumentation-term-injected",
+    "kinetics-term-injected",
+    "glossary-duplicate-id",
 )
 
 EXPECTED_MUTATION_CODES = {
@@ -157,6 +444,15 @@ EXPECTED_MUTATION_CODES = {
     "capability-transition-swapped": "cross_registry_binding_mismatch",
     "capability-definition-drift": "authored_contract_mismatch",
     "mercury-transition-injected": "mercury_exclusion_invalid",
+    "missing-category-scaffold": "category_scaffold_invalid",
+    "fire-glossary-wrong-polarity": "high_enthalpy_polarity_invalid",
+    "high-enthalpy-definition-drift": "authored_contract_mismatch",
+    "air-high-entropy-wrong-polarity": "high_entropy_polarity_invalid",
+    "high-entropy-definition-drift": "authored_contract_mismatch",
+    "high-entropy-glossary-duplicate-id": "duplicate_id_rejected",
+    "instrumentation-term-injected": "instrumentation_term_forbidden",
+    "kinetics-term-injected": "kinetics_term_forbidden",
+    "glossary-duplicate-id": "duplicate_id_rejected",
 }
 
 
@@ -223,6 +519,120 @@ def _load_crt350() -> dict[str, Any]:
     return yaml.safe_load((ROOT / CRT350_PATH).read_text(encoding="utf-8"))
 
 
+def _phenomenon_category(
+    item: dict[str, Any], category_id: str
+) -> dict[str, Any]:
+    categories = item.get("phenomenon_categories", {})
+    return categories.get(category_id, {})
+
+
+def _glossary_entries(elements: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    entries = []
+    for item in elements:
+        category_id = EXPECTED_ELEMENT_PHENOMENON_CATEGORIES.get(item.get("element"))
+        if category_id is None:
+            continue
+        child_scaffold = _phenomenon_category(item, category_id).get(
+            "child_scaffold", {}
+        )
+        for scaffold_key in SCAFFOLD_KEYS:
+            entries.extend(child_scaffold.get(scaffold_key, []))
+    return entries
+
+
+def _framework_errors(document: dict[str, Any]) -> list[str]:
+    framework = document.get("framework", {})
+    errors = []
+    if framework.get("framework_id") != "teleological_phenomenon_master_framework":
+        errors.append("framework_id")
+    if framework.get("child_scaffold") != list(SCAFFOLD_KEYS):
+        errors.append("child_scaffold")
+    if framework.get("parent_categories") != EXPECTED_FRAMEWORK_PARENT_CATEGORIES:
+        errors.append("parent_categories")
+    return errors
+
+
+def _scaffold_errors(elements: list[dict[str, Any]]) -> list[str]:
+    errors = []
+    for item in elements:
+        element = item.get("element", "unknown")
+        category_id = EXPECTED_ELEMENT_PHENOMENON_CATEGORIES.get(element)
+        if category_id is None:
+            errors.append(f"{element}:phenomenon_category")
+            continue
+        categories = item.get("phenomenon_categories", {})
+        if set(categories) != {category_id}:
+            errors.append(f"{element}:phenomenon_category_ownership")
+            continue
+        category = _phenomenon_category(item, category_id)
+        if not category:
+            errors.append(f"{element}:{category_id}")
+            continue
+        if category.get("section_id") != PHENOMENON_CATEGORY_SECTION_IDS[category_id]:
+            errors.append(f"{element}:section_id")
+        child_scaffold = category.get("child_scaffold")
+        if not isinstance(child_scaffold, dict) or set(child_scaffold) != set(SCAFFOLD_KEYS):
+            errors.append(f"{element}:child_scaffold")
+            continue
+        if (element, category_id) not in EXPECTED_POPULATED_PHENOMENON_CATALOGS:
+            if category.get("population_status") != "placeholder":
+                errors.append(f"{element}:population_status")
+            if category.get("polarity_scope") != "unassigned":
+                errors.append(f"{element}:polarity_scope")
+            if any(child_scaffold[part] for part in SCAFFOLD_KEYS):
+                errors.append(f"{element}:placeholder_entries")
+    return errors
+
+
+def _population_errors(
+    item: dict[str, Any], category_id: str, expected_ids: dict[str, tuple[str, ...]]
+) -> list[str]:
+    category = _phenomenon_category(item, category_id)
+    errors = []
+    if category.get("population_status") != "populated":
+        errors.append("population_status")
+    if category.get("polarity_scope") != "electric_external":
+        errors.append("polarity_scope")
+    child_scaffold = category.get("child_scaffold", {})
+    for scaffold_key, scaffold_ids in expected_ids.items():
+        entries = child_scaffold.get(scaffold_key, [])
+        if [entry.get("mechanic_id") for entry in entries] != list(scaffold_ids):
+            errors.append(f"{scaffold_key}:mechanic_ids")
+        if any(
+            not isinstance(entry, dict)
+            or set(entry) != RICH_ENTRY_KEYS
+            or not entry.get("definition")
+            or not entry.get("value")
+            or entry.get("relation_type") != EXPECTED_CATEGORY_RELATION_TYPES[scaffold_key]
+            or entry.get("source_class") != "authored_capability"
+            for entry in entries
+        ):
+            errors.append(f"{scaffold_key}:rich_schema")
+    return errors
+
+
+def _instrumentation_errors(
+    document: dict[str, Any], elements: list[dict[str, Any]]
+) -> list[str]:
+    errors = []
+    if document.get("framework", {}).get("instrumentation_registry") != EXPECTED_INSTRUMENTATION_BOUNDARY:
+        errors.append("instrumentation_registry_boundary")
+    glossary_ids = {
+        entry.get("mechanic_id") for entry in _glossary_entries(elements)
+    }
+    forbidden_instrumentation = sorted(glossary_ids & INSTRUMENTATION_MECHANIC_IDS)
+    if forbidden_instrumentation:
+        errors.extend(f"instrumentation:{item}" for item in forbidden_instrumentation)
+    forbidden_kinetics = sorted(glossary_ids & KINETICS_RESERVED_MECHANIC_IDS)
+    if forbidden_kinetics:
+        errors.extend(f"kinetics:{item}" for item in forbidden_kinetics)
+    return errors
+
+
+def _authoring_payload(document: dict[str, Any]) -> dict[str, Any]:
+    return {"framework": document.get("framework"), "elements": document.get("elements")}
+
+
 def _cross_registry_binding_failures(elements: list[dict[str, Any]]) -> list[str]:
     failures = []
     for item in elements:
@@ -261,6 +671,8 @@ def _semantic_rejection_code(document: dict[str, Any]) -> str | None:
     names = [item.get("element") for item in elements]
     if sorted(names) != ["Air", "Earth", "Fire", "Quintessence", "Water"]:
         return "element_count_invalid"
+    if _framework_errors(document) or _scaffold_errors(elements):
+        return "category_scaffold_invalid"
 
     mechanic_ids = []
     for item in elements:
@@ -294,6 +706,7 @@ def _semantic_rejection_code(document: dict[str, Any]) -> str | None:
                 return "zodiac_mismatch"
         for capability in capabilities.values():
             mechanic_ids.append(capability.get("mechanic_id"))
+    mechanic_ids.extend(entry.get("mechanic_id") for entry in _glossary_entries(elements))
 
     if len(set(mechanic_ids)) != len(mechanic_ids):
         return "duplicate_id_rejected"
@@ -309,9 +722,26 @@ def _semantic_rejection_code(document: dict[str, Any]) -> str | None:
 
     if _has_forbidden_relation_key(document):
         return "forbidden_relation"
+    instrumentation_errors = _instrumentation_errors(document, elements)
+    if "instrumentation_registry_boundary" in instrumentation_errors:
+        return "instrumentation_boundary_invalid"
+    if any(error.startswith("instrumentation:") for error in instrumentation_errors):
+        return "instrumentation_term_forbidden"
+    if any(error.startswith("kinetics:") for error in instrumentation_errors):
+        return "kinetics_term_forbidden"
+    for (element, category_id), expected_ids in (
+        EXPECTED_POPULATED_PHENOMENON_CATALOGS.items()
+    ):
+        item = next(item for item in elements if item["element"] == element)
+        population_errors = _population_errors(item, category_id, expected_ids)
+        validation_prefix = CATEGORY_VALIDATION_PREFIXES[category_id]
+        if "polarity_scope" in population_errors:
+            return f"{validation_prefix}_polarity_invalid"
+        if population_errors:
+            return f"{validation_prefix}_catalog_invalid"
     if _cross_registry_binding_failures(elements):
         return "cross_registry_binding_mismatch"
-    if _sha256_payload(elements) != EXPECTED_ELEMENTS_FINGERPRINT:
+    if _sha256_payload(_authoring_payload(document)) != EXPECTED_AUTHORING_FINGERPRINT:
         return "authored_contract_mismatch"
     return None
 
@@ -417,6 +847,84 @@ def _mutated_cases(document: dict[str, Any]) -> dict[str, dict[str, Any]]:
     ] = ["court_advance_C0_to_C1", "court_retreat_C1_to_C0"]
     cases["mercury-transition-injected"] = tampered
 
+    tampered = deepcopy(document)
+    del next(item for item in tampered["elements"] if item["element"] == "Air")[
+        "phenomenon_categories"
+    ]["high_entropy_phenomena"]["child_scaffold"]["transfer_modes"]
+    cases["missing-category-scaffold"] = tampered
+
+    tampered = deepcopy(document)
+    next(item for item in tampered["elements"] if item["element"] == "Fire")[
+        "phenomenon_categories"
+    ]["high_enthalpy_phenomena"]["polarity_scope"] = "magnetic_internal"
+    cases["fire-glossary-wrong-polarity"] = tampered
+
+    tampered = deepcopy(document)
+    next(item for item in tampered["elements"] if item["element"] == "Fire")[
+        "phenomenon_categories"
+    ]["high_enthalpy_phenomena"]["child_scaffold"]["energy_states"][0][
+        "definition"
+    ] += " Drift."
+    cases["high-enthalpy-definition-drift"] = tampered
+
+    tampered = deepcopy(document)
+    next(item for item in tampered["elements"] if item["element"] == "Air")[
+        "phenomenon_categories"
+    ]["high_entropy_phenomena"]["polarity_scope"] = "magnetic_internal"
+    cases["air-high-entropy-wrong-polarity"] = tampered
+
+    tampered = deepcopy(document)
+    next(item for item in tampered["elements"] if item["element"] == "Air")[
+        "phenomenon_categories"
+    ]["high_entropy_phenomena"]["child_scaffold"]["energy_states"][0][
+        "definition"
+    ] += " Drift."
+    cases["high-entropy-definition-drift"] = tampered
+
+    tampered = deepcopy(document)
+    next(item for item in tampered["elements"] if item["element"] == "Air")[
+        "phenomenon_categories"
+    ]["high_entropy_phenomena"]["child_scaffold"]["energy_states"][4][
+        "mechanic_id"
+    ] = "entropy"
+    cases["high-entropy-glossary-duplicate-id"] = tampered
+
+    tampered = deepcopy(document)
+    next(item for item in tampered["elements"] if item["element"] == "Fire")[
+        "phenomenon_categories"
+    ]["high_enthalpy_phenomena"]["child_scaffold"]["transfer_modes"].append(
+        {
+            "mechanic_id": "shock_tube",
+            "definition": "Injected instrumentation term.",
+            "relation_type": "transfers",
+            "value": "instrumentation",
+            "source_class": "authored_capability",
+        }
+    )
+    cases["instrumentation-term-injected"] = tampered
+
+    tampered = deepcopy(document)
+    next(item for item in tampered["elements"] if item["element"] == "Fire")[
+        "phenomenon_categories"
+    ]["high_enthalpy_phenomena"]["child_scaffold"]["transformations"].append(
+        {
+            "mechanic_id": "finite_rate_chemistry",
+            "definition": "Injected Kinetics term.",
+            "relation_type": "transforms",
+            "value": "kinetics",
+            "source_class": "authored_capability",
+        }
+    )
+    cases["kinetics-term-injected"] = tampered
+
+    tampered = deepcopy(document)
+    next(item for item in tampered["elements"] if item["element"] == "Fire")[
+        "phenomenon_categories"
+    ]["high_enthalpy_phenomena"]["child_scaffold"]["energy_states"][0][
+        "mechanic_id"
+    ] = "explosive_emission"
+    cases["glossary-duplicate-id"] = tampered
+
     return cases
 
 
@@ -516,6 +1024,65 @@ def validate(document: dict[str, Any]) -> dict[str, Any]:
         str(REGISTRY_PATH) + "#elements",
         ["Air", "Earth", "Fire", "Quintessence", "Water"],
         sorted(names),
+    )
+
+    framework_errors = _framework_errors(document)
+    scaffold_errors = _scaffold_errors(elements)
+    record(
+        "mtr-category-scaffold",
+        not framework_errors and not scaffold_errors,
+        {"framework": framework_errors, "elements": scaffold_errors},
+        str(REGISTRY_PATH) + "#framework",
+        {
+            "childScaffold": list(SCAFFOLD_KEYS),
+            "parentCategories": EXPECTED_FRAMEWORK_PARENT_CATEGORIES,
+        },
+        document.get("framework"),
+    )
+
+    def record_population(
+        check_id: str,
+        element: str,
+        category_id: str,
+        expected_ids: dict[str, tuple[str, ...]],
+    ) -> None:
+        item = next(item for item in elements if item["element"] == element)
+        population_errors = _population_errors(item, category_id, expected_ids)
+        category = _phenomenon_category(item, category_id)
+        children = category.get("child_scaffold", {})
+        record(
+            check_id,
+            not population_errors,
+            population_errors,
+            str(REGISTRY_PATH)
+            + f"#elements[{element}].phenomenon_categories.{category_id}",
+            {
+                "polarityScope": "electric_external",
+                "entryCounts": {
+                    scaffold_key: len(ids)
+                    for scaffold_key, ids in expected_ids.items()
+                },
+            },
+            {
+                "polarityScope": category.get("polarity_scope"),
+                "entryCounts": {
+                    scaffold_key: len(children.get(scaffold_key, []))
+                    for scaffold_key in SCAFFOLD_KEYS
+                },
+            },
+        )
+
+    record_population(
+        "mtr-high-enthalpy-fire-population",
+        "Fire",
+        "high_enthalpy_phenomena",
+        EXPECTED_HIGH_ENTHALPY_IDS,
+    )
+    record_population(
+        "mtr-high-entropy-air-population",
+        "Air",
+        "high_entropy_phenomena",
+        EXPECTED_HIGH_ENTROPY_IDS,
     )
 
     crt350 = _load_crt350()
@@ -632,6 +1199,25 @@ def validate(document: dict[str, Any]) -> dict[str, Any]:
         str(REGISTRY_PATH) + "#metadata",
     )
 
+    instrumentation_errors = _instrumentation_errors(document, elements)
+    record(
+        "mtr-instrumentation-separation",
+        not instrumentation_errors,
+        instrumentation_errors,
+        str(REGISTRY_PATH) + "#framework.instrumentation_registry",
+        {
+            "instrumentationRegistry": EXPECTED_INSTRUMENTATION_BOUNDARY,
+            "forbiddenInstrumentationTerms": [],
+            "reservedKineticsTerms": [],
+        },
+        {
+            "instrumentationRegistry": document.get("framework", {}).get(
+                "instrumentation_registry"
+            ),
+            "separationErrors": instrumentation_errors,
+        },
+    )
+
     def _has_forbidden_relation_key(value: Any) -> bool:
         if isinstance(value, dict):
             if any(key in FORBIDDEN_RELATIONS for key in value):
@@ -648,11 +1234,12 @@ def validate(document: dict[str, Any]) -> dict[str, Any]:
         str(REGISTRY_PATH) + "#elements",
     )
 
-    relation_types = {
-        capability["relation_type"]
+    authored_entries = [
+        capability
         for item in elements
         for capability in item["capabilities"].values()
-    }
+    ] + _glossary_entries(elements)
+    relation_types = {capability["relation_type"] for capability in authored_entries}
     record(
         "mtr-relation-vocabulary",
         relation_types <= AUTHORED_RELATION_VOCABULARY,
@@ -673,10 +1260,12 @@ def validate(document: dict[str, Any]) -> dict[str, Any]:
         "kappa_and_ch_untouched",
         "crt310_untouched",
         "excluded_relation_vocabulary_absent",
+        "instrumentation_and_modeling_separated",
+        "kinetics_mechanism_terms_reserved",
     }
     record(
         "mtr-guard-closure",
-        guard_ids == expected_guards and len(document["guards"]) == 9,
+        guard_ids == expected_guards and len(document["guards"]) == 11,
         sorted(guard_ids),
         str(REGISTRY_PATH) + "#guards",
     )
@@ -684,11 +1273,15 @@ def validate(document: dict[str, Any]) -> dict[str, Any]:
     record(
         "mtr-determinism",
         _canonical_bytes(document) == _canonical_bytes(_load_registry())
-        and _sha256_payload(elements) == EXPECTED_ELEMENTS_FINGERPRINT,
-        {"document": _sha256_payload(document), "elements": _sha256_payload(elements)},
+        and _sha256_payload(_authoring_payload(document))
+        == EXPECTED_AUTHORING_FINGERPRINT,
+        {
+            "document": _sha256_payload(document),
+            "authoring": _sha256_payload(_authoring_payload(document)),
+        },
         str(REGISTRY_PATH),
-        EXPECTED_ELEMENTS_FINGERPRINT,
-        _sha256_payload(elements),
+        EXPECTED_AUTHORING_FINGERPRINT,
+        _sha256_payload(_authoring_payload(document)),
     )
 
     adversarial = _adversarial_results(document)
