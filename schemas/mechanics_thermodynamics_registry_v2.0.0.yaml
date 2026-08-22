@@ -7,13 +7,15 @@
 # array. The four-part scaffold remains encoded by relation_type:
 # characterizes, transforms, structures, and transfers.
 #
-# Water/Venus Low-Enthalpy, Earth/Saturn Low-Entropy, and
-# Quintessence/Mercury Equilibrium entries are Electric/External only.
-# Low-Entropy markers describe local ordering sustained by external work or
-# entropy export, never a second-law exception. Mercury remains excluded from
-# the binary Court register; its Electric/External channel is an authored
-# outward-facing capability path, not a Court polarity bit. This semantic
-# placement does not claim electric and magnetic fields are physically separate.
+# Magnetic/Internal is a semantic polarity for inward absorption, confinement,
+# storage, resistance, and stabilization; it does not require a literal magnetic
+# field. Air/Internal distinguishes irreversible compression and dissipative
+# losses from reversible compression. Low-Entropy markers describe local ordering
+# sustained by heat rejection or other entropy export, never a second-law
+# exception. Mercury remains excluded from the binary Court register; its
+# Electric/External and Magnetic/Internal channels are authored semantic paths,
+# not Court polarity bits. This placement does not claim electric and magnetic
+# fields are physically separate.
 
 metadata:
   registry_id: mechanics_thermodynamics_registry
@@ -628,6 +630,198 @@ elements:
       value: inductive_resistance
       phenomenon_class: capability_action
       source_class: authored_capability
+    - mechanic_id: fire_magnetic_sensible_heat
+      definition: Thermal energy stored as an increase in material temperature.
+      relation_type: characterizes
+      value: material_temperature_stored_thermal_energy
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_heat_capacity
+      definition: Amount of heat a substance can absorb per unit temperature increase.
+      relation_type: characterizes
+      value: heat_absorption_per_temperature_increase
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_thermal_inertia
+      definition: Resistance to rapid temperature change arising from heat capacity and heat-transfer properties.
+      relation_type: characterizes
+      value: resistance_to_rapid_temperature_change
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_heat_soak
+      definition: Accumulation of thermal energy within a material after sustained heating.
+      relation_type: characterizes
+      value: sustained_heating_internal_energy_accumulation
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_chemical_enthalpy_storage
+      definition: Retention of energy in products formed through an endothermic chemical transformation.
+      relation_type: characterizes
+      value: endothermic_product_chemical_energy_retention
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_smoldering_combustion
+      definition: Slow, flameless oxidation concentrated within a porous solid or fuel bed.
+      relation_type: characterizes
+      value: porous_fuel_bed_flameless_oxidation
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_high_temperature_thermal_reservoir
+      definition: Confined material or region holding substantial internal thermal energy.
+      relation_type: characterizes
+      value: confined_high_temperature_internal_energy_store
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_adiabatic_confinement
+      definition: Containment condition that minimizes heat exchange with the surroundings.
+      relation_type: characterizes
+      value: minimized_surrounding_heat_exchange_condition
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_endothermic_reaction
+      definition: Chemical transformation that absorbs heat from its surroundings.
+      relation_type: transforms
+      value: surrounding_heat_absorbing_chemical_change
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_endothermic_dissociation
+      definition: Molecular bond breaking that consumes incoming thermal energy.
+      relation_type: transforms
+      value: thermal_energy_consuming_bond_breaking
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_pyrolysis
+      definition: Thermal decomposition that absorbs heat while producing gases and solid residue.
+      relation_type: transforms
+      value: heat_absorbing_thermal_decomposition
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_thermochemical_charging
+      definition: Storage of heat by driving an endothermic chemical reaction.
+      relation_type: transforms
+      value: endothermic_reaction_heat_storage
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_char_formation
+      definition: Production of a carbon-rich protective layer during thermal decomposition.
+      relation_type: transforms
+      value: carbon_rich_protective_layer_production
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_oxygen_limited_oxidation
+      definition: Restricted combustion that slows energy release and supports contained smoldering.
+      relation_type: transforms
+      value: restricted_combustion_contained_smoldering
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_thermal_charging
+      definition: Deliberate accumulation of heat within a thermal-storage medium.
+      relation_type: transforms
+      value: thermal_storage_medium_heat_accumulation
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_ablative_decomposition
+      definition: Sacrificial material transformation that absorbs heat while protecting an underlying structure.
+      relation_type: transforms
+      value: sacrificial_heat_absorbing_material_protection
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_ablative_heat_shield
+      definition: Protective structure that consumes incoming thermal energy through material decomposition.
+      relation_type: structures
+      value: decomposition_based_thermal_protection_structure
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_char_layer
+      definition: Carbonaceous barrier formed during pyrolysis that slows further heat penetration.
+      relation_type: structures
+      value: pyrolysis_formed_heat_penetration_barrier
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_pyrolysis_front
+      definition: Moving boundary separating decomposed material from intact material.
+      relation_type: structures
+      value: decomposed_intact_material_boundary
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_refractory_lining
+      definition: Heat-resistant interior layer that contains extreme temperatures.
+      relation_type: structures
+      value: extreme_temperature_containing_interior_layer
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_smoldering_front
+      definition: Localized, slowly advancing zone of flameless oxidation.
+      relation_type: structures
+      value: localized_flameless_oxidation_zone
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_packed_fuel_bed
+      definition: Porous arrangement of combustible solids capable of retaining an internal reaction zone.
+      relation_type: structures
+      value: porous_internal_reaction_zone_structure
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_thermal_penetration_layer
+      definition: Material region into which transient heating has diffused.
+      relation_type: structures
+      value: transient_heating_diffused_material_region
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_insulated_hot_zone
+      definition: Enclosed high-temperature region protected against rapid heat loss.
+      relation_type: structures
+      value: protected_enclosed_high_temperature_region
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_inward_heat_conduction
+      definition: Movement of heat from an exposed surface into an underlying material.
+      relation_type: transfers
+      value: exposed_surface_to_material_heat_movement
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_radiative_absorption
+      definition: Capture of incoming electromagnetic radiation as internal thermal energy.
+      relation_type: transfers
+      value: incoming_radiation_internal_thermal_capture
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_sensible_heat_uptake
+      definition: Absorption of heat accompanied by a rise in temperature.
+      relation_type: transfers
+      value: temperature_rise_heat_absorption
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_endothermic_heat_uptake
+      definition: Capture of thermal energy through a heat-absorbing reaction.
+      relation_type: transfers
+      value: reaction_mediated_thermal_energy_capture
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_thermal_diffusion
+      definition: Progressive redistribution of heat into the interior of a medium.
+      relation_type: transfers
+      value: interior_progressive_heat_redistribution
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_volumetric_absorption
+      definition: Energy absorption distributed throughout a material rather than limited to its surface.
+      relation_type: transfers
+      value: bulk_material_distributed_energy_absorption
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_thermochemical_heat_storage
+      definition: Conversion of incoming heat into stored chemical potential.
+      relation_type: transfers
+      value: incoming_heat_to_chemical_potential_conversion
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
+    - mechanic_id: fire_magnetic_ablative_heat_absorption
+      definition: Consumption of incident thermal energy by a sacrificial protective material.
+      relation_type: transfers
+      value: sacrificial_material_incident_heat_consumption
+      phenomenon_class: high_enthalpy
+      source_class: authored_capability
 - element: Air
   governor: Jupiter
   school_ref: fivefold.capability_school.air
@@ -962,6 +1156,198 @@ elements:
       value: ground_level_drag
       phenomenon_class: capability_action
       source_class: authored_capability
+    - mechanic_id: air_magnetic_compressed_gas_state
+      definition: Confined gas occupying reduced volume at elevated pressure or density.
+      relation_type: characterizes
+      value: confined_reduced_volume_gas_state
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_stagnation_state
+      definition: Flow condition in which directed fluid velocity approaches zero.
+      relation_type: characterizes
+      value: near_zero_directed_fluid_velocity
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_stagnation_pressure_loss
+      definition: Reduction in recoverable total pressure caused by irreversible fluid processes.
+      relation_type: characterizes
+      value: irreversible_recoverable_total_pressure_reduction
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_viscous_stress
+      definition: Internal fluid stress that resists relative motion between adjacent layers.
+      relation_type: characterizes
+      value: adjacent_layer_relative_motion_resistance
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_bulk_viscous_stress
+      definition: Resistance associated with compression or expansion of a fluid.
+      relation_type: characterizes
+      value: compressive_or_expansive_fluid_resistance
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_high_density_gas_state
+      definition: Gas configuration with increased mass per unit volume.
+      relation_type: characterizes
+      value: increased_mass_per_volume_gas_configuration
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_viscosity_dominated_flow
+      definition: Flow regime in which viscous forces strongly constrain motion.
+      relation_type: characterizes
+      value: viscous_force_constrained_motion_regime
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_stable_stratification
+      definition: Density layering that suppresses vertical displacement and mixing.
+      relation_type: characterizes
+      value: vertical_displacement_and_mixing_suppression
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_viscous_dissipation
+      definition: Conversion of organized fluid motion into internal thermal energy.
+      relation_type: transforms
+      value: organized_fluid_motion_to_internal_heat
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_irreversible_compression
+      definition: Compression accompanied by friction, shock formation, or other entropy-producing losses.
+      relation_type: transforms
+      value: entropy_producing_compression_losses
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_shock_compression
+      definition: Abrupt, irreversible increase in gas pressure, density, and entropy across a shock.
+      relation_type: transforms
+      value: shock_driven_irreversible_gas_compression
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_flow_stagnation
+      definition: Deceleration of moving fluid toward a near-motionless state.
+      relation_type: transforms
+      value: moving_fluid_to_near_motionless_state
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_turbulent_decay
+      definition: Progressive conversion of turbulent kinetic energy into heat.
+      relation_type: transforms
+      value: turbulent_kinetic_energy_to_heat_conversion
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_aerodynamic_damping
+      definition: Reduction of mechanical motion through resistive interaction with a fluid.
+      relation_type: transforms
+      value: fluid_resistive_mechanical_motion_reduction
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_acoustic_attenuation
+      definition: Weakening of sound through viscous, thermal, or molecular relaxation processes.
+      relation_type: transforms
+      value: viscous_thermal_molecular_sound_weakening
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_vortex_trapping
+      definition: Confinement of fluid within a localized recirculating region.
+      relation_type: transforms
+      value: localized_recirculating_fluid_confinement
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_stagnation_region
+      definition: Zone where incoming fluid decelerates against a surface or opposing flow.
+      relation_type: structures
+      value: incoming_fluid_deceleration_zone
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_viscous_boundary_layer
+      definition: Near-surface region where fluid motion is constrained by viscosity.
+      relation_type: structures
+      value: near_surface_viscosity_constrained_region
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_viscous_sublayer
+      definition: Thin region closest to a wall where viscous effects dominate turbulent transport.
+      relation_type: structures
+      value: wall_adjacent_viscous_dominant_region
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_recirculation_bubble
+      definition: Confined flow region containing circulating, relatively stagnant fluid.
+      relation_type: structures
+      value: confined_circulating_stagnant_fluid_region
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_trapped_vortex
+      definition: Persistent circulating structure that retains fluid within a bounded zone.
+      relation_type: structures
+      value: bounded_fluid_retaining_circulation_structure
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_temperature_inversion_layer
+      definition: Atmospheric layer that suppresses vertical mixing and traps material below it.
+      relation_type: structures
+      value: vertical_mixing_suppressing_atmospheric_layer
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_compression_layer
+      definition: Region in which a fluid becomes compressed by confinement or flow deceleration.
+      relation_type: structures
+      value: confinement_or_deceleration_compressed_fluid_region
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_stagnant_air_layer
+      definition: Relatively motionless trapped gas region with limited convective exchange.
+      relation_type: structures
+      value: trapped_gas_limited_convection_region
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_viscous_drag
+      definition: Transfer of directed momentum into resistive fluid stresses.
+      relation_type: transfers
+      value: directed_momentum_to_resistive_stress_transfer
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_momentum_diffusion
+      definition: Redistribution of momentum through viscous interaction between fluid layers.
+      relation_type: transfers
+      value: viscous_interlayer_momentum_redistribution
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_bulk_viscous_dissipation
+      definition: Conversion of compressive fluid motion into internal energy.
+      relation_type: transfers
+      value: compressive_motion_to_internal_energy_conversion
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_compressive_work
+      definition: Mechanical work transferred inward as a gas is forced into a smaller volume.
+      relation_type: transfers
+      value: inward_mechanical_work_from_volume_reduction
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_frictional_heating
+      definition: Production of thermal energy through internal fluid friction.
+      relation_type: transfers
+      value: internal_fluid_friction_heat_production
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_acoustic_absorption
+      definition: Conversion of sound-wave energy into heat within a medium.
+      relation_type: transfers
+      value: sound_wave_energy_to_heat_conversion
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_turbulent_dissipation
+      definition: Transfer of kinetic energy from turbulent motion into microscopic thermal motion.
+      relation_type: transfers
+      value: turbulent_kinetic_to_microscopic_thermal_transfer
+      phenomenon_class: high_entropy
+      source_class: authored_capability
+    - mechanic_id: air_magnetic_boundary_layer_momentum_absorption
+      definition: Removal of organized flow momentum by a viscous near-wall region.
+      relation_type: transfers
+      value: viscous_near_wall_organized_momentum_removal
+      phenomenon_class: high_entropy
+      source_class: authored_capability
 - element: Water
   governor: Venus
   school_ref: fivefold.capability_school.water
@@ -1289,6 +1675,198 @@ elements:
       relation_type: absorbs
       value: specific_heat_capacity
       phenomenon_class: capability_action
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_surface_tension
+      definition: Interfacial free-energy cost that causes a liquid surface to resist expansion.
+      relation_type: characterizes
+      value: liquid_interface_expansion_resistance
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_capillary_pressure
+      definition: Pressure difference across a curved liquid interface.
+      relation_type: characterizes
+      value: curved_liquid_interface_pressure_difference
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_osmotic_pressure
+      definition: Pressure needed to prevent solvent movement across a semipermeable membrane.
+      relation_type: characterizes
+      value: solvent_movement_preventing_membrane_pressure
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_latent_heat_of_fusion
+      definition: Energy absorbed during melting or released during freezing without an equivalent temperature jump.
+      relation_type: characterizes
+      value: melting_freezing_phase_change_energy
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_latent_heat_of_vaporization
+      definition: Energy absorbed during evaporation or released during condensation.
+      relation_type: characterizes
+      value: evaporation_condensation_phase_change_energy
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_cohesive_energy_density
+      definition: Energy associated with intermolecular attraction per unit volume.
+      relation_type: characterizes
+      value: intermolecular_attraction_energy_per_volume
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_bound_water
+      definition: Water retained near a surface, solute, or structure through molecular interactions.
+      relation_type: characterizes
+      value: molecularly_retained_surface_or_solute_water
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_hydrostatic_pressure
+      definition: Pressure developed within a contained or gravitationally loaded liquid.
+      relation_type: characterizes
+      value: contained_or_gravitational_liquid_pressure
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_hydration
+      definition: Binding or surrounding of a substance by water molecules.
+      relation_type: transforms
+      value: water_molecule_substance_binding
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_solvation
+      definition: Stabilization of a dissolved species by surrounding solvent molecules.
+      relation_type: transforms
+      value: dissolved_species_solvent_stabilization
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_hydrogen_bond_formation
+      definition: Creation of directional intermolecular attractions between compatible molecules.
+      relation_type: transforms
+      value: directional_inter_molecular_attraction_creation
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_capillary_condensation
+      definition: Vapor condensation within confined pores under conditions shaped by surface curvature.
+      relation_type: transforms
+      value: curvature_shaped_confined_pore_condensation
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_capillary_imbibition
+      definition: Spontaneous inward movement of liquid into pores or narrow channels.
+      relation_type: transforms
+      value: spontaneous_inward_pore_liquid_movement
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_osmotic_uptake
+      definition: Movement of solvent into a compartment because of a chemical-potential difference.
+      relation_type: transforms
+      value: chemical_potential_driven_compartment_solvent_uptake
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_droplet_coalescence
+      definition: Fusion of liquid droplets into a larger body with reduced total interfacial area.
+      relation_type: transforms
+      value: reduced_interfacial_area_droplet_fusion
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_phase_change_charging
+      definition: Absorption of latent heat during a controlled phase transition.
+      relation_type: transforms
+      value: controlled_phase_transition_latent_heat_absorption
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_hydration_shell
+      definition: Organized layer of water molecules surrounding an ion or dissolved molecule.
+      relation_type: structures
+      value: ion_or_solute_surrounding_water_layer
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_hydrogen_bond_network
+      definition: Interconnected set of intermolecular hydrogen bonds within a liquid or hydrated material.
+      relation_type: structures
+      value: interconnected_liquid_or_hydrated_hydrogen_bonds
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_capillary_meniscus
+      definition: Curved liquid interface that produces capillary pressure.
+      relation_type: structures
+      value: capillary_pressure_producing_curved_interface
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_liquid_bridge
+      definition: Small liquid connection between surfaces that draws them together through capillary forces.
+      relation_type: structures
+      value: capillary_force_surface_connecting_liquid
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_bound_water_layer
+      definition: Thin region of water retained at a surface through adsorption or hydration.
+      relation_type: structures
+      value: surface_retained_adsorbed_or_hydrated_water_region
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_semipermeable_membrane
+      definition: Boundary that allows selected solvent molecules to pass while restricting other species.
+      relation_type: structures
+      value: selective_solvent_passing_species_restricting_boundary
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_capillary_pore_network
+      definition: Connected narrow passages that retain and draw liquid inward.
+      relation_type: structures
+      value: connected_inward_liquid_retaining_passages
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_vesicle
+      definition: Membrane-enclosed compartment containing an internal liquid volume.
+      relation_type: structures
+      value: membrane_enclosed_internal_liquid_compartment
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_latent_heat_absorption
+      definition: Uptake of energy during a phase transition without an immediate equivalent temperature increase.
+      relation_type: transfers
+      value: phase_transition_energy_uptake_without_temperature_jump
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_osmotic_inflow
+      definition: Inward solvent transport driven by unequal chemical potentials.
+      relation_type: transfers
+      value: unequal_chemical_potential_inward_solvent_transport
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_capillary_uptake
+      definition: Liquid absorption into a confined structure under surface-tension forces.
+      relation_type: transfers
+      value: surface_tension_driven_confined_liquid_absorption
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_solvent_permeation
+      definition: Movement of solvent through a selective membrane or porous boundary.
+      relation_type: transfers
+      value: selective_boundary_solvent_movement
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_interfacial_adsorption
+      definition: Accumulation of molecules or ions at a surface.
+      relation_type: transfers
+      value: surface_molecule_or_ion_accumulation
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_hygroscopic_absorption
+      definition: Uptake of water from humid surroundings into a material.
+      relation_type: transfers
+      value: humid_surroundings_water_material_uptake
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_condensational_heat_transfer
+      definition: Transfer of latent heat into a cooler surface as vapor condenses.
+      relation_type: transfers
+      value: condensation_latent_heat_to_cooler_surface
+      phenomenon_class: low_enthalpy
+      source_class: authored_capability
+    - mechanic_id: water_magnetic_cohesive_retention
+      definition: Resistance to liquid separation caused by intermolecular attraction.
+      relation_type: transfers
+      value: intermolecular_attraction_liquid_separation_resistance
+      phenomenon_class: low_enthalpy
       source_class: authored_capability
 - element: Earth
   governor: Saturn
@@ -1645,6 +2223,198 @@ elements:
       value: absolute_state_change
       phenomenon_class: capability_action
       source_class: authored_capability
+    - mechanic_id: earth_magnetic_crystalline_order
+      definition: Repeating atomic arrangement with constrained structural degrees of freedom.
+      relation_type: characterizes
+      value: constrained_repeating_atomic_arrangement
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_lattice_energy
+      definition: Energy associated with the binding and stability of an ionic crystalline lattice.
+      relation_type: characterizes
+      value: ionic_crystal_binding_and_stability_energy
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_elastic_strain_energy
+      definition: Mechanical energy stored within a deformed solid.
+      relation_type: characterizes
+      value: deformed_solid_mechanical_energy_storage
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_peierls_barrier
+      definition: Energy barrier opposing movement of a dislocation through a crystal lattice.
+      relation_type: characterizes
+      value: crystal_dislocation_motion_energy_barrier
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_yield_stress
+      definition: Stress threshold required to initiate permanent deformation.
+      relation_type: characterizes
+      value: permanent_deformation_initiation_stress_threshold
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_pinned_dislocation_state
+      definition: Condition in which lattice defects cannot move freely because of obstacles or solute binding.
+      relation_type: characterizes
+      value: obstacle_or_solute_restricted_lattice_defects
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_thermal_resistivity
+      definition: Material property opposing conductive heat transfer.
+      relation_type: characterizes
+      value: conductive_heat_transfer_opposing_material_property
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_low_diffusivity_solid
+      definition: Solid in which atomic or molecular mobility is strongly restricted.
+      relation_type: characterizes
+      value: strongly_restricted_atomic_molecular_mobility
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_crystallization
+      definition: Formation of an ordered solid from a less ordered precursor; local ordering rejects heat to its surroundings.
+      relation_type: transforms
+      value: heat_rejecting_ordered_solid_formation
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_solidification
+      definition: Transformation of a liquid into a solid phase.
+      relation_type: transforms
+      value: liquid_to_solid_phase_transformation
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_recrystallization
+      definition: Formation of new, comparatively strain-free crystal grains within a previously deformed solid.
+      relation_type: transforms
+      value: deformed_solid_strain_free_grain_formation
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_sintering
+      definition: Bonding and densification of solid particles through thermally activated material transport.
+      relation_type: transforms
+      value: thermally_activated_particle_bonding_densification
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_precipitation_hardening
+      definition: Formation of solid particles that obstruct dislocation motion.
+      relation_type: transforms
+      value: dislocation_obstructing_solid_particle_formation
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_grain_boundary_pinning
+      definition: Restriction of grain-boundary movement by particles, defects, or solute segregation.
+      relation_type: transforms
+      value: particle_defect_solute_boundary_movement_restriction
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_zener_pinning
+      definition: Immobilization of grain boundaries by dispersed second-phase particles.
+      relation_type: transforms
+      value: dispersed_particle_grain_boundary_immobilization
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_dislocation_pinning
+      definition: Prevention of dislocation movement by impurities, precipitates, or other defects.
+      relation_type: transforms
+      value: defect_or_impurity_dislocation_movement_prevention
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_crystal_lattice
+      definition: Periodic atomic framework defining an ordered solid.
+      relation_type: structures
+      value: periodic_atomic_ordered_solid_framework
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_grain_boundary
+      definition: Interface separating neighboring crystal regions with different orientations.
+      relation_type: structures
+      value: differently_oriented_crystal_region_interface
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_second_phase_precipitate
+      definition: Embedded particle that can obstruct deformation or boundary migration.
+      relation_type: structures
+      value: deformation_or_boundary_migration_obstructing_particle
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_cottrell_atmosphere
+      definition: Concentration of solute atoms surrounding a dislocation and restricting its movement.
+      relation_type: structures
+      value: solute_surrounded_dislocation_motion_restriction
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_vacancy_ordered_crystal
+      definition: Crystal containing a regular, organized pattern of vacant lattice sites.
+      relation_type: structures
+      value: regular_vacant_lattice_site_pattern
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_ceramic_insulating_layer
+      definition: Solid barrier that resists heat flow, electrical conduction, or chemical penetration.
+      relation_type: structures
+      value: heat_charge_chemical_penetration_resisting_solid_barrier
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_phononic_crystal
+      definition: Periodic structure engineered to restrict selected vibrational or acoustic modes.
+      relation_type: structures
+      value: selected_vibrational_acoustic_mode_restricting_periodic_structure
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_diffusion_barrier_layer
+      definition: Solid interface designed to suppress the movement of atoms or molecules.
+      relation_type: structures
+      value: atomic_molecular_movement_suppressing_solid_interface
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_thermal_insulation
+      definition: Reduction of heat transfer through a resistant material or boundary.
+      relation_type: transfers
+      value: resistant_material_or_boundary_heat_reduction
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_electrical_insulation
+      definition: Suppression of mobile-charge transport through a solid.
+      relation_type: transfers
+      value: solid_mobile_charge_transport_suppression
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_suppressed_mass_diffusion
+      definition: Restriction of molecular or atomic movement across a structural barrier.
+      relation_type: transfers
+      value: structural_barrier_atomic_molecular_movement_restriction
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_thermal_boundary_resistance
+      definition: Resistance to heat transfer across an interface between materials.
+      relation_type: transfers
+      value: material_interface_heat_transfer_resistance
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_phonon_reflection
+      definition: Redirection of vibrational energy at a structural boundary.
+      relation_type: transfers
+      value: structural_boundary_vibrational_energy_redirection
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_acoustic_impedance_mismatch
+      definition: Resistance to transmission of mechanical waves across unlike materials.
+      relation_type: transfers
+      value: unlike_material_mechanical_wave_transmission_resistance
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_elastic_energy_storage
+      definition: Retention of mechanical energy within a reversibly strained solid.
+      relation_type: transfers
+      value: reversibly_strained_solid_mechanical_energy_retention
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: earth_magnetic_dislocation_immobilization
+      definition: Suppression of plastic deformation by preventing defect movement.
+      relation_type: transfers
+      value: defect_motion_preventing_plastic_deformation_suppression
+      phenomenon_class: low_entropy
+      source_class: authored_capability
 - element: Quintessence
   governor: Mercury
   school_ref: fivefold.capability_school.quintessence
@@ -1963,6 +2733,223 @@ elements:
       value: evaporation_condensation_outward_heat_transport
       phenomenon_class: equilibrium
       source_class: authored_capability
+    magnetic_internal:
+    - mechanic_id: quintessence_magnetic_thermodynamic_equilibrium
+      definition: State without net thermal, mechanical, or chemical driving forces.
+      relation_type: characterizes
+      value: no_net_thermodynamic_driving_forces
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_thermal_equilibrium
+      definition: Condition in which systems share a temperature and exhibit no net heat exchange.
+      relation_type: characterizes
+      value: common_temperature_no_net_heat_exchange
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_chemical_equilibrium
+      definition: Condition in which opposing chemical reactions balance.
+      relation_type: characterizes
+      value: balanced_opposing_chemical_reactions
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_mechanical_equilibrium
+      definition: Balance of forces and pressures with no net mechanical acceleration.
+      relation_type: characterizes
+      value: balanced_forces_pressures_no_acceleration
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_phase_equilibrium
+      definition: Balance of chemical potentials between coexisting phases.
+      relation_type: characterizes
+      value: coexisting_phase_chemical_potential_balance
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_detailed_balance
+      definition: Condition in which each microscopic transition is matched by its reverse transition.
+      relation_type: characterizes
+      value: matched_microscopic_forward_reverse_transitions
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_gibbs_free_energy_minimum
+      definition: Stable equilibrium condition for a closed system at fixed temperature and pressure.
+      relation_type: characterizes
+      value: fixed_temperature_pressure_closed_system_stability
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_stable_fixed_point
+      definition: State toward which a dynamical system returns after a sufficiently small disturbance.
+      relation_type: characterizes
+      value: small_disturbance_restoring_dynamical_state
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_nonequilibrium_steady_state
+      definition: Constant macroscopic condition maintained despite continuing internal or boundary fluxes.
+      relation_type: characterizes
+      value: continuing_flux_maintained_macroscopic_condition
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_thermal_equilibration
+      definition: Redistribution of heat until a common temperature is reached.
+      relation_type: transforms
+      value: heat_redistribution_to_common_temperature
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_relaxation_to_equilibrium
+      definition: Progressive return toward a stable thermodynamic state.
+      relation_type: transforms
+      value: progressive_stable_thermodynamic_state_return
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_negative_feedback_stabilization
+      definition: Counteraction of deviations through a response that restores a reference condition.
+      relation_type: transforms
+      value: reference_condition_restoring_deviation_counteraction
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_thermostatic_regulation
+      definition: Maintenance of temperature within a defined range.
+      relation_type: transforms
+      value: defined_temperature_range_maintenance
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_phase_change_buffering
+      definition: Stabilization of temperature by absorbing or releasing latent heat near a transition point.
+      relation_type: transforms
+      value: transition_point_latent_heat_temperature_stabilization
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_thermal_anchoring_transformation
+      definition: Coupling of a component to a controlled thermal reference or bath.
+      relation_type: transforms
+      value: controlled_thermal_reference_component_coupling
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_calorimetric_integration
+      definition: Measurement of absorbed energy through accumulated thermal response.
+      relation_type: transforms
+      value: accumulated_thermal_response_energy_measurement
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_re_equilibration
+      definition: Restoration of equilibrium following a disturbance.
+      relation_type: transforms
+      value: post_disturbance_equilibrium_restoration
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_temperature_clamping
+      definition: Maintenance of a subsystem near a prescribed temperature through a controlled reference.
+      relation_type: transforms
+      value: controlled_reference_prescribed_temperature_maintenance
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_thermal_reservoir
+      definition: Body large enough to absorb or release heat with minimal temperature change.
+      relation_type: structures
+      value: minimal_temperature_change_heat_absorbing_body
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_thermal_bath
+      definition: Controlled environment that establishes and maintains a reference temperature.
+      relation_type: structures
+      value: reference_temperature_maintaining_environment
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_heat_sink
+      definition: Structure that absorbs heat from a component to stabilize its operating temperature.
+      relation_type: structures
+      value: component_heat_absorbing_temperature_stabilizer
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_isothermal_enclosure
+      definition: Chamber maintained at an approximately uniform temperature.
+      relation_type: structures
+      value: approximately_uniform_temperature_chamber
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_adiabatic_calorimeter
+      definition: Measurement system designed to retain absorbed heat while minimizing environmental exchange.
+      relation_type: structures
+      value: environmentally_isolated_absorbed_heat_measurement_system
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_fixed_point_cell
+      definition: Temperature-reference device maintained at a reproducible phase-transition condition.
+      relation_type: structures
+      value: reproducible_phase_transition_temperature_reference
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_triple_point_cell
+      definition: Sealed reference system holding solid, liquid, and vapor in mutual equilibrium.
+      relation_type: structures
+      value: sealed_three_phase_mutual_equilibrium_reference
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_bolometer
+      definition: Detector that absorbs incident radiation and measures the resulting temperature change.
+      relation_type: structures
+      value: incident_radiation_absorbing_temperature_change_detector
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_thermal_anchor
+      definition: Conductive connection tying a subsystem to a stable reference temperature.
+      relation_type: structures
+      value: stable_reference_temperature_conductive_connection
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_conductive_equilibration
+      definition: Internal heat transfer that reduces a temperature difference.
+      relation_type: transfers
+      value: temperature_difference_reducing_internal_heat_transfer
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_heat_sink_absorption
+      definition: Capture of excess thermal energy by a stabilizing thermal mass or reservoir.
+      relation_type: transfers
+      value: stabilizing_thermal_mass_excess_energy_capture
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_latent_heat_buffering
+      definition: Uptake or release of transition energy to resist changes in temperature.
+      relation_type: transfers
+      value: phase_transition_energy_temperature_change_resistance
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_calorimetric_heat_uptake
+      definition: Absorption of energy into a measurement system for quantitative accounting.
+      relation_type: transfers
+      value: measurement_system_quantitative_energy_absorption
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_bolometric_absorption
+      definition: Capture of radiation as measurable internal heat.
+      relation_type: transfers
+      value: radiation_to_measurable_internal_heat_capture
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_thermometric_transduction
+      definition: Conversion of an internal temperature state into a measurable physical signal.
+      relation_type: transfers
+      value: internal_temperature_to_measurable_signal_conversion
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_thermal_anchoring_transfer
+      definition: Transfer of heat into a reference bath to preserve a controlled state.
+      relation_type: transfers
+      value: reference_bath_heat_transfer_controlled_state_preservation
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_near_reversible_heat_exchange
+      definition: Heat transfer across a sufficiently small temperature difference to approach equilibrium behavior.
+      relation_type: transfers
+      value: small_temperature_difference_near_equilibrium_exchange
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quintessence_magnetic_internal_feedback_compensation
+      definition: Adjustment of heating or cooling within a closed control loop to suppress deviation from a reference state.
+      relation_type: transfers
+      value: closed_loop_reference_state_deviation_compensation
+      phenomenon_class: equilibrium
+      source_class: authored_capability
 guards:
 - guard_id: authored_game_mechanics_not_physics
   status: enforced
@@ -1975,7 +2962,8 @@ guards:
 - guard_id: mercury_excluded_from_register
   status: enforced
   statement: Quintessence carries is_binary_court_pole false, court_pole_index null, and register_membership
-    excluded; its electric_external capability channel grants no binary Court polarity bit or zodiac facet.
+    excluded; its electric_external and magnetic_internal semantic capability channels grant no binary Court
+    polarity bit or zodiac facet.
 - guard_id: no_court_writes
   status: enforced
   statement: No capability writes court.poleDisposition, graph state, runtime policy, or ledger success.

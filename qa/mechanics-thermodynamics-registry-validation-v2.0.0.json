@@ -78,7 +78,8 @@
         ],
         "Quintessence": [
           "engine_interface",
-          "electric_external"
+          "electric_external",
+          "magnetic_internal"
         ]
       },
       "status": "PASS"
@@ -86,90 +87,170 @@
     {
       "checkId": "mtr-v2-high-enthalpy-fire-population",
       "diagnostic": [],
-      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry_v2.0.0.yaml#elements[Fire].capabilities.electric_external",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry_v2.0.0.yaml#elements",
       "expected": {
-        "characterizes": 13,
-        "transforms": 17,
-        "structures": 26,
-        "transfers": 27
+        "Fire.electric_external": {
+          "characterizes": 13,
+          "transforms": 17,
+          "structures": 26,
+          "transfers": 27
+        },
+        "Fire.magnetic_internal": {
+          "characterizes": 8,
+          "transforms": 8,
+          "structures": 8,
+          "transfers": 8
+        }
       },
       "actual": {
-        "characterizes": 13,
-        "transforms": 17,
-        "structures": 26,
-        "transfers": 27
+        "Fire.electric_external": {
+          "characterizes": 13,
+          "transforms": 17,
+          "structures": 26,
+          "transfers": 27
+        },
+        "Fire.magnetic_internal": {
+          "characterizes": 8,
+          "transforms": 8,
+          "structures": 8,
+          "transfers": 8
+        }
       },
       "status": "PASS"
     },
     {
       "checkId": "mtr-v2-high-entropy-air-population",
       "diagnostic": [],
-      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry_v2.0.0.yaml#elements[Air].capabilities.electric_external",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry_v2.0.0.yaml#elements",
       "expected": {
-        "characterizes": 17,
-        "transforms": 12,
-        "structures": 12,
-        "transfers": 3
+        "Air.electric_external": {
+          "characterizes": 17,
+          "transforms": 12,
+          "structures": 12,
+          "transfers": 3
+        },
+        "Air.magnetic_internal": {
+          "characterizes": 8,
+          "transforms": 8,
+          "structures": 8,
+          "transfers": 8
+        }
       },
       "actual": {
-        "characterizes": 17,
-        "transforms": 12,
-        "structures": 12,
-        "transfers": 3
+        "Air.electric_external": {
+          "characterizes": 17,
+          "transforms": 12,
+          "structures": 12,
+          "transfers": 3
+        },
+        "Air.magnetic_internal": {
+          "characterizes": 8,
+          "transforms": 8,
+          "structures": 8,
+          "transfers": 8
+        }
       },
       "status": "PASS"
     },
     {
       "checkId": "mtr-v2-low-enthalpy-water-population",
       "diagnostic": [],
-      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry_v2.0.0.yaml#elements[Water].capabilities.electric_external",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry_v2.0.0.yaml#elements",
       "expected": {
-        "characterizes": 13,
-        "transforms": 12,
-        "structures": 10,
-        "transfers": 9
+        "Water.electric_external": {
+          "characterizes": 13,
+          "transforms": 12,
+          "structures": 10,
+          "transfers": 9
+        },
+        "Water.magnetic_internal": {
+          "characterizes": 8,
+          "transforms": 8,
+          "structures": 8,
+          "transfers": 8
+        }
       },
       "actual": {
-        "characterizes": 13,
-        "transforms": 12,
-        "structures": 10,
-        "transfers": 9
+        "Water.electric_external": {
+          "characterizes": 13,
+          "transforms": 12,
+          "structures": 10,
+          "transfers": 9
+        },
+        "Water.magnetic_internal": {
+          "characterizes": 8,
+          "transforms": 8,
+          "structures": 8,
+          "transfers": 8
+        }
       },
       "status": "PASS"
     },
     {
       "checkId": "mtr-v2-low-entropy-earth-population",
       "diagnostic": [],
-      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry_v2.0.0.yaml#elements[Earth].capabilities.electric_external",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry_v2.0.0.yaml#elements",
       "expected": {
-        "characterizes": 10,
-        "transforms": 12,
-        "structures": 12,
-        "transfers": 12
+        "Earth.electric_external": {
+          "characterizes": 10,
+          "transforms": 12,
+          "structures": 12,
+          "transfers": 12
+        },
+        "Earth.magnetic_internal": {
+          "characterizes": 8,
+          "transforms": 8,
+          "structures": 8,
+          "transfers": 8
+        }
       },
       "actual": {
-        "characterizes": 10,
-        "transforms": 12,
-        "structures": 12,
-        "transfers": 12
+        "Earth.electric_external": {
+          "characterizes": 10,
+          "transforms": 12,
+          "structures": 12,
+          "transfers": 12
+        },
+        "Earth.magnetic_internal": {
+          "characterizes": 8,
+          "transforms": 8,
+          "structures": 8,
+          "transfers": 8
+        }
       },
       "status": "PASS"
     },
     {
       "checkId": "mtr-v2-equilibrium-mercury-population",
       "diagnostic": [],
-      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry_v2.0.0.yaml#elements[Quintessence].capabilities.electric_external",
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry_v2.0.0.yaml#elements",
       "expected": {
-        "characterizes": 11,
-        "transforms": 12,
-        "structures": 14,
-        "transfers": 13
+        "Quintessence.electric_external": {
+          "characterizes": 11,
+          "transforms": 12,
+          "structures": 14,
+          "transfers": 13
+        },
+        "Quintessence.magnetic_internal": {
+          "characterizes": 9,
+          "transforms": 9,
+          "structures": 9,
+          "transfers": 9
+        }
       },
       "actual": {
-        "characterizes": 11,
-        "transforms": 12,
-        "structures": 14,
-        "transfers": 13
+        "Quintessence.electric_external": {
+          "characterizes": 11,
+          "transforms": 12,
+          "structures": 14,
+          "transfers": 13
+        },
+        "Quintessence.magnetic_internal": {
+          "characterizes": 9,
+          "transforms": 9,
+          "structures": 9,
+          "transfers": 9
+        }
       },
       "status": "PASS"
     },
@@ -636,6 +717,296 @@
               "phenomenon_class": "equilibrium",
               "source_class": "authored_capability"
             }
+          ],
+          "magnetic_internal": [
+            {
+              "mechanic_id": "quintessence_magnetic_thermodynamic_equilibrium",
+              "definition": "State without net thermal, mechanical, or chemical driving forces.",
+              "relation_type": "characterizes",
+              "value": "no_net_thermodynamic_driving_forces",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_thermal_equilibrium",
+              "definition": "Condition in which systems share a temperature and exhibit no net heat exchange.",
+              "relation_type": "characterizes",
+              "value": "common_temperature_no_net_heat_exchange",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_chemical_equilibrium",
+              "definition": "Condition in which opposing chemical reactions balance.",
+              "relation_type": "characterizes",
+              "value": "balanced_opposing_chemical_reactions",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_mechanical_equilibrium",
+              "definition": "Balance of forces and pressures with no net mechanical acceleration.",
+              "relation_type": "characterizes",
+              "value": "balanced_forces_pressures_no_acceleration",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_phase_equilibrium",
+              "definition": "Balance of chemical potentials between coexisting phases.",
+              "relation_type": "characterizes",
+              "value": "coexisting_phase_chemical_potential_balance",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_detailed_balance",
+              "definition": "Condition in which each microscopic transition is matched by its reverse transition.",
+              "relation_type": "characterizes",
+              "value": "matched_microscopic_forward_reverse_transitions",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_gibbs_free_energy_minimum",
+              "definition": "Stable equilibrium condition for a closed system at fixed temperature and pressure.",
+              "relation_type": "characterizes",
+              "value": "fixed_temperature_pressure_closed_system_stability",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_stable_fixed_point",
+              "definition": "State toward which a dynamical system returns after a sufficiently small disturbance.",
+              "relation_type": "characterizes",
+              "value": "small_disturbance_restoring_dynamical_state",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_nonequilibrium_steady_state",
+              "definition": "Constant macroscopic condition maintained despite continuing internal or boundary fluxes.",
+              "relation_type": "characterizes",
+              "value": "continuing_flux_maintained_macroscopic_condition",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_thermal_equilibration",
+              "definition": "Redistribution of heat until a common temperature is reached.",
+              "relation_type": "transforms",
+              "value": "heat_redistribution_to_common_temperature",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_relaxation_to_equilibrium",
+              "definition": "Progressive return toward a stable thermodynamic state.",
+              "relation_type": "transforms",
+              "value": "progressive_stable_thermodynamic_state_return",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_negative_feedback_stabilization",
+              "definition": "Counteraction of deviations through a response that restores a reference condition.",
+              "relation_type": "transforms",
+              "value": "reference_condition_restoring_deviation_counteraction",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_thermostatic_regulation",
+              "definition": "Maintenance of temperature within a defined range.",
+              "relation_type": "transforms",
+              "value": "defined_temperature_range_maintenance",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_phase_change_buffering",
+              "definition": "Stabilization of temperature by absorbing or releasing latent heat near a transition point.",
+              "relation_type": "transforms",
+              "value": "transition_point_latent_heat_temperature_stabilization",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_thermal_anchoring_transformation",
+              "definition": "Coupling of a component to a controlled thermal reference or bath.",
+              "relation_type": "transforms",
+              "value": "controlled_thermal_reference_component_coupling",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_calorimetric_integration",
+              "definition": "Measurement of absorbed energy through accumulated thermal response.",
+              "relation_type": "transforms",
+              "value": "accumulated_thermal_response_energy_measurement",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_re_equilibration",
+              "definition": "Restoration of equilibrium following a disturbance.",
+              "relation_type": "transforms",
+              "value": "post_disturbance_equilibrium_restoration",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_temperature_clamping",
+              "definition": "Maintenance of a subsystem near a prescribed temperature through a controlled reference.",
+              "relation_type": "transforms",
+              "value": "controlled_reference_prescribed_temperature_maintenance",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_thermal_reservoir",
+              "definition": "Body large enough to absorb or release heat with minimal temperature change.",
+              "relation_type": "structures",
+              "value": "minimal_temperature_change_heat_absorbing_body",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_thermal_bath",
+              "definition": "Controlled environment that establishes and maintains a reference temperature.",
+              "relation_type": "structures",
+              "value": "reference_temperature_maintaining_environment",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_heat_sink",
+              "definition": "Structure that absorbs heat from a component to stabilize its operating temperature.",
+              "relation_type": "structures",
+              "value": "component_heat_absorbing_temperature_stabilizer",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_isothermal_enclosure",
+              "definition": "Chamber maintained at an approximately uniform temperature.",
+              "relation_type": "structures",
+              "value": "approximately_uniform_temperature_chamber",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_adiabatic_calorimeter",
+              "definition": "Measurement system designed to retain absorbed heat while minimizing environmental exchange.",
+              "relation_type": "structures",
+              "value": "environmentally_isolated_absorbed_heat_measurement_system",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_fixed_point_cell",
+              "definition": "Temperature-reference device maintained at a reproducible phase-transition condition.",
+              "relation_type": "structures",
+              "value": "reproducible_phase_transition_temperature_reference",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_triple_point_cell",
+              "definition": "Sealed reference system holding solid, liquid, and vapor in mutual equilibrium.",
+              "relation_type": "structures",
+              "value": "sealed_three_phase_mutual_equilibrium_reference",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_bolometer",
+              "definition": "Detector that absorbs incident radiation and measures the resulting temperature change.",
+              "relation_type": "structures",
+              "value": "incident_radiation_absorbing_temperature_change_detector",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_thermal_anchor",
+              "definition": "Conductive connection tying a subsystem to a stable reference temperature.",
+              "relation_type": "structures",
+              "value": "stable_reference_temperature_conductive_connection",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_conductive_equilibration",
+              "definition": "Internal heat transfer that reduces a temperature difference.",
+              "relation_type": "transfers",
+              "value": "temperature_difference_reducing_internal_heat_transfer",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_heat_sink_absorption",
+              "definition": "Capture of excess thermal energy by a stabilizing thermal mass or reservoir.",
+              "relation_type": "transfers",
+              "value": "stabilizing_thermal_mass_excess_energy_capture",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_latent_heat_buffering",
+              "definition": "Uptake or release of transition energy to resist changes in temperature.",
+              "relation_type": "transfers",
+              "value": "phase_transition_energy_temperature_change_resistance",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_calorimetric_heat_uptake",
+              "definition": "Absorption of energy into a measurement system for quantitative accounting.",
+              "relation_type": "transfers",
+              "value": "measurement_system_quantitative_energy_absorption",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_bolometric_absorption",
+              "definition": "Capture of radiation as measurable internal heat.",
+              "relation_type": "transfers",
+              "value": "radiation_to_measurable_internal_heat_capture",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_thermometric_transduction",
+              "definition": "Conversion of an internal temperature state into a measurable physical signal.",
+              "relation_type": "transfers",
+              "value": "internal_temperature_to_measurable_signal_conversion",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_thermal_anchoring_transfer",
+              "definition": "Transfer of heat into a reference bath to preserve a controlled state.",
+              "relation_type": "transfers",
+              "value": "reference_bath_heat_transfer_controlled_state_preservation",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_near_reversible_heat_exchange",
+              "definition": "Heat transfer across a sufficiently small temperature difference to approach equilibrium behavior.",
+              "relation_type": "transfers",
+              "value": "small_temperature_difference_near_equilibrium_exchange",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            },
+            {
+              "mechanic_id": "quintessence_magnetic_internal_feedback_compensation",
+              "definition": "Adjustment of heating or cooling within a closed control loop to suppress deviation from a reference state.",
+              "relation_type": "transfers",
+              "value": "closed_loop_reference_state_deviation_compensation",
+              "phenomenon_class": "equilibrium",
+              "source_class": "authored_capability"
+            }
           ]
         }
       },
@@ -749,11 +1120,11 @@
     {
       "checkId": "mtr-v2-determinism",
       "diagnostic": {
-        "authoring": "0c6fa08e1bad3ded42bcbe38637e583b937f6d5700b8e4ee9d4d2e085f6a606a"
+        "authoring": "0691837291afcd1cd2abe3ff998b4835dffdb03e5910be3a8ea3058662e8cf3c"
       },
       "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry_v2.0.0.yaml",
-      "expected": "0c6fa08e1bad3ded42bcbe38637e583b937f6d5700b8e4ee9d4d2e085f6a606a",
-      "actual": "0c6fa08e1bad3ded42bcbe38637e583b937f6d5700b8e4ee9d4d2e085f6a606a",
+      "expected": "0691837291afcd1cd2abe3ff998b4835dffdb03e5910be3a8ea3058662e8cf3c",
+      "actual": "0691837291afcd1cd2abe3ff998b4835dffdb03e5910be3a8ea3058662e8cf3c",
       "status": "PASS"
     },
     {
@@ -775,11 +1146,12 @@
         "capability-definition-drift": "authored_contract_mismatch",
         "mercury-transition-injected": "mercury_exclusion_invalid",
         "legacy-category-injected": "capability_array_invalid",
-        "fire-glossary-in-magnetic": "phenomenon_class_placement_invalid",
-        "water-glossary-in-magnetic": "phenomenon_class_placement_invalid",
-        "earth-glossary-in-magnetic": "phenomenon_class_placement_invalid",
+        "fire-glossary-in-magnetic": "glossary_catalog_invalid",
+        "magnetic-catalog-id-substituted": "glossary_catalog_invalid",
+        "water-glossary-in-magnetic": "glossary_catalog_invalid",
+        "earth-glossary-in-magnetic": "glossary_catalog_invalid",
         "mercury-equilibrium-in-engine-interface": "phenomenon_class_placement_invalid",
-        "mercury-equilibrium-in-magnetic": "mercury_exclusion_invalid",
+        "mercury-equilibrium-in-magnetic": "glossary_catalog_invalid",
         "missing-phenomenon-class": "rich_entry_invalid",
         "missing-equilibrium-phenomenon-class": "rich_entry_invalid",
         "water-glossary-wrong-class": "phenomenon_class_placement_invalid",
@@ -809,11 +1181,12 @@
         "capability-definition-drift": "authored_contract_mismatch",
         "mercury-transition-injected": "mercury_exclusion_invalid",
         "legacy-category-injected": "capability_array_invalid",
-        "fire-glossary-in-magnetic": "phenomenon_class_placement_invalid",
-        "water-glossary-in-magnetic": "phenomenon_class_placement_invalid",
-        "earth-glossary-in-magnetic": "phenomenon_class_placement_invalid",
+        "magnetic-catalog-id-substituted": "glossary_catalog_invalid",
+        "fire-glossary-in-magnetic": "glossary_catalog_invalid",
+        "water-glossary-in-magnetic": "glossary_catalog_invalid",
+        "earth-glossary-in-magnetic": "glossary_catalog_invalid",
         "mercury-equilibrium-in-engine-interface": "phenomenon_class_placement_invalid",
-        "mercury-equilibrium-in-magnetic": "mercury_exclusion_invalid",
+        "mercury-equilibrium-in-magnetic": "glossary_catalog_invalid",
         "missing-phenomenon-class": "rich_entry_invalid",
         "missing-equilibrium-phenomenon-class": "rich_entry_invalid",
         "water-glossary-wrong-class": "phenomenon_class_placement_invalid",
@@ -842,11 +1215,12 @@
         "capability-definition-drift": "authored_contract_mismatch",
         "mercury-transition-injected": "mercury_exclusion_invalid",
         "legacy-category-injected": "capability_array_invalid",
-        "fire-glossary-in-magnetic": "phenomenon_class_placement_invalid",
-        "water-glossary-in-magnetic": "phenomenon_class_placement_invalid",
-        "earth-glossary-in-magnetic": "phenomenon_class_placement_invalid",
+        "fire-glossary-in-magnetic": "glossary_catalog_invalid",
+        "magnetic-catalog-id-substituted": "glossary_catalog_invalid",
+        "water-glossary-in-magnetic": "glossary_catalog_invalid",
+        "earth-glossary-in-magnetic": "glossary_catalog_invalid",
         "mercury-equilibrium-in-engine-interface": "phenomenon_class_placement_invalid",
-        "mercury-equilibrium-in-magnetic": "mercury_exclusion_invalid",
+        "mercury-equilibrium-in-magnetic": "glossary_catalog_invalid",
         "missing-phenomenon-class": "rich_entry_invalid",
         "missing-equilibrium-phenomenon-class": "rich_entry_invalid",
         "water-glossary-wrong-class": "phenomenon_class_placement_invalid",
@@ -867,5 +1241,5 @@
   "registryVersion": "2.0.0",
   "schemaVersion": "mechanics-thermodynamics-registry-validation.v2.0.0",
   "verdict": "PASS",
-  "reportFingerprint": "37ea3dd08b2398a7345cc33105373ac732e7ac958f65920c6b28c31eaaae89a9"
+  "reportFingerprint": "168e2ca6c270e041ab15d3ad2c3d12fe0b498fc3df4f29107a8d5d486afc6181"
 }

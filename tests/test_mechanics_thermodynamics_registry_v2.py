@@ -73,9 +73,14 @@ def test_all_capability_channels_are_direct_rich_entry_arrays(document) -> None:
         assert all(isinstance(entries, list) and entries for entries in item["capabilities"].values())
         assert "phenomenon_categories" not in item
     mercury = document["elements"][-1]
-    assert set(mercury["capabilities"]) == {"engine_interface", "electric_external"}
+    assert set(mercury["capabilities"]) == {
+        "engine_interface",
+        "electric_external",
+        "magnetic_internal",
+    }
     assert isinstance(mercury["capabilities"]["engine_interface"], list)
     assert isinstance(mercury["capabilities"]["electric_external"], list)
+    assert isinstance(mercury["capabilities"]["magnetic_internal"], list)
     assert "polarity_bindings" not in mercury
     assert "transition_refs" not in mercury
     assert "phenomenon_categories" not in mercury
@@ -83,7 +88,7 @@ def test_all_capability_channels_are_direct_rich_entry_arrays(document) -> None:
 
 def test_every_leaf_uses_the_strict_rich_schema(document) -> None:
     entries = [entry for _, _, entry in VALIDATOR._all_entries(document)]
-    assert len(entries) == 276
+    assert len(entries) == 440
     assert all(
         VALIDATOR.RICH_ENTRY_REQUIRED_KEYS <= set(entry) <= VALIDATOR.RICH_ENTRY_KEYS
         for entry in entries
@@ -105,29 +110,32 @@ def test_every_leaf_uses_the_strict_rich_schema(document) -> None:
 
 
 def test_four_part_scaffold_is_preserved_by_relation_type(document) -> None:
-    for phenomenon_class, expected_counts in VALIDATOR.EXPECTED_CLASS_COUNTS.items():
-        element, channel = VALIDATOR.POPULATED_CLASS_PLACEMENTS[phenomenon_class]
-        entries = [
-            entry
-            for entry in _element(document, element)["capabilities"][channel]
-            if entry["phenomenon_class"] == phenomenon_class
-        ]
-        actual = {
-            relation: sum(entry["relation_type"] == relation for entry in entries)
-            for relation in VALIDATOR.SCAFFOLD_RELATIONS.values()
-        }
-        assert actual == expected_counts
+    for phenomenon_class, placements in VALIDATOR.POPULATED_CLASS_PLACEMENTS.items():
+        for element, channel in placements:
+            entries = [
+                entry
+                for entry in _element(document, element)["capabilities"][channel]
+                if entry["phenomenon_class"] == phenomenon_class
+            ]
+            actual = {
+                relation: sum(entry["relation_type"] == relation for entry in entries)
+                for relation in VALIDATOR.SCAFFOLD_RELATIONS.values()
+            }
+            expected = (
+                VALIDATOR.MAGNETIC_CLASS_COUNTS[phenomenon_class]
+                if channel == "magnetic_internal"
+                else VALIDATOR.EXPECTED_CLASS_COUNTS[phenomenon_class]
+            )
+            assert actual == expected
 
 
-def test_water_low_enthalpy_catalog_is_electric_external_only(document) -> None:
+def test_water_low_enthalpy_external_catalog_is_preserved(document) -> None:
     water = _element(document, "Water")
     electric = water["capabilities"]["electric_external"]
-    magnetic = water["capabilities"]["magnetic_internal"]
     low_enthalpy_entries = [
         entry for entry in electric if entry["phenomenon_class"] == "low_enthalpy"
     ]
     assert len(low_enthalpy_entries) == 44
-    assert all(entry["phenomenon_class"] != "low_enthalpy" for entry in magnetic)
     assert [entry["mechanic_id"] for entry in low_enthalpy_entries] == [
         mechanic_id
         for relation in VALIDATOR.SCAFFOLD_RELATIONS.values()
@@ -139,15 +147,13 @@ def test_water_low_enthalpy_catalog_is_electric_external_only(document) -> None:
     )
 
 
-def test_earth_low_entropy_catalog_is_electric_external_only(document) -> None:
+def test_earth_low_entropy_external_catalog_is_preserved(document) -> None:
     earth = _element(document, "Earth")
     electric = earth["capabilities"]["electric_external"]
-    magnetic = earth["capabilities"]["magnetic_internal"]
     low_entropy_entries = [
         entry for entry in electric if entry["phenomenon_class"] == "low_entropy"
     ]
     assert len(low_entropy_entries) == 46
-    assert all(entry["phenomenon_class"] != "low_entropy" for entry in magnetic)
     assert [entry["mechanic_id"] for entry in low_entropy_entries] == [
         mechanic_id
         for relation in VALIDATOR.SCAFFOLD_RELATIONS.values()
@@ -164,7 +170,7 @@ def test_earth_low_entropy_catalog_is_electric_external_only(document) -> None:
     } == VALIDATOR.EXPECTED_SEMANTIC_TRANSITIONS
 
 
-def test_mercury_equilibrium_catalog_is_electric_external_only(document) -> None:
+def test_mercury_equilibrium_external_catalog_is_preserved(document) -> None:
     mercury = _element(document, "Quintessence")
     electric = mercury["capabilities"]["electric_external"]
     engine = mercury["capabilities"]["engine_interface"]
@@ -173,7 +179,6 @@ def test_mercury_equilibrium_catalog_is_electric_external_only(document) -> None
     ]
     assert len(equilibrium_entries) == 50
     assert all(entry["phenomenon_class"] != "equilibrium" for entry in engine)
-    assert "magnetic_internal" not in mercury["capabilities"]
     assert [entry["mechanic_id"] for entry in equilibrium_entries] == [
         mechanic_id
         for relation in VALIDATOR.SCAFFOLD_RELATIONS.values()
@@ -183,6 +188,28 @@ def test_mercury_equilibrium_catalog_is_electric_external_only(document) -> None
         entry["relation_type"] in VALIDATOR.SCAFFOLD_RELATIONS.values()
         for entry in equilibrium_entries
     )
+
+
+def test_magnetic_glossaries_are_namespaced_and_owned_by_element(document) -> None:
+    for phenomenon_class, placements in VALIDATOR.POPULATED_CLASS_PLACEMENTS.items():
+        element, channel = placements[1]
+        magnetic_entries = [
+            entry
+            for entry in _element(document, element)["capabilities"][channel]
+            if entry["phenomenon_class"] == phenomenon_class
+        ]
+        expected_prefix = f"{element.lower()}_magnetic_"
+        assert all(
+            entry["mechanic_id"].startswith(expected_prefix)
+            for entry in magnetic_entries
+        )
+        assert not any(
+            entry["mechanic_id"].startswith(expected_prefix)
+            for entry in _element(document, element)["capabilities"]["electric_external"]
+        )
+        assert len(magnetic_entries) == sum(
+            VALIDATOR.MAGNETIC_CLASS_COUNTS[phenomenon_class].values()
+        )
 
 
 def test_base_capability_actions_remain_distinct_from_glossaries(document) -> None:
@@ -225,15 +252,14 @@ def test_schema_rejects_nonuniform_direct_array_entries(document) -> None:
         schema_validator.validate(invalid_transition)
 
     mercury_magnetic = deepcopy(document)
-    mercury = _element(mercury_magnetic, "Quintessence")
-    mercury["capabilities"]["magnetic_internal"] = deepcopy(
-        mercury["capabilities"]["electric_external"]
-    )
+    del _element(mercury_magnetic, "Quintessence")["capabilities"][
+        "magnetic_internal"
+    ]
     with pytest.raises(jsonschema.ValidationError):
         schema_validator.validate(mercury_magnetic)
 
 
-def test_semantic_validator_rejects_water_magnetic_glossary_contamination(document) -> None:
+def test_semantic_validator_rejects_water_magnetic_glossary_cross_channel_copy(document) -> None:
     tampered = deepcopy(document)
     water = _element(tampered, "Water")
     water["capabilities"]["magnetic_internal"].append(
@@ -241,10 +267,10 @@ def test_semantic_validator_rejects_water_magnetic_glossary_contamination(docume
     )
     with pytest.raises(VALIDATOR.MechanicsThermodynamicsValidationError) as error:
         VALIDATOR.verify_registry_document(tampered)
-    assert error.value.reason_code == "phenomenon_class_placement_invalid"
+    assert error.value.reason_code == "glossary_catalog_invalid"
 
 
-def test_semantic_validator_rejects_earth_magnetic_glossary_contamination(document) -> None:
+def test_semantic_validator_rejects_earth_magnetic_glossary_cross_channel_copy(document) -> None:
     tampered = deepcopy(document)
     earth = _element(tampered, "Earth")
     earth["capabilities"]["magnetic_internal"].append(
@@ -252,7 +278,7 @@ def test_semantic_validator_rejects_earth_magnetic_glossary_contamination(docume
     )
     with pytest.raises(VALIDATOR.MechanicsThermodynamicsValidationError) as error:
         VALIDATOR.verify_registry_document(tampered)
-    assert error.value.reason_code == "phenomenon_class_placement_invalid"
+    assert error.value.reason_code == "glossary_catalog_invalid"
 
 
 def test_semantic_validator_rejects_mercury_engine_glossary_contamination(document) -> None:

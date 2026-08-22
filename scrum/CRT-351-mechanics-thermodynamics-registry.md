@@ -24,15 +24,13 @@ repository admission boundary `admission_status: proposed`. Its
 change are game semantics rather than executable physics quantities.
 
 The master phenomenon framework gives every element one four-part child scaffold:
-Energy States, Transformations, Structural Forms, and Transfer Modes. Fire's
-Electric/External pole carries the authored High-Enthalpy glossary, and Air's
-Electric/External pole carries the authored High-Entropy glossary. The v1 registry
-reserves Water Low-Enthalpy, Earth Low-Entropy, and Quintessence Equilibrium;
-the v2 registry subsequently populates the Water, Earth, and Quintessence
-categories. Mercury's Equilibrium glossary occupies its outward-facing
-Electric/External capability path while Mercury remains excluded from the binary
-Court register. Air High-Entropy excludes a Magnetic/Internal base glossary,
-reserving any later modifier or delta for the Teleological Physics Registry.
+Energy States, Transformations, Structural Forms, and Transfer Modes. The existing
+Electric/External catalogues carry the authored outward-facing terms, while v2 also
+populates the corresponding Magnetic/Internal semantic catalogues for Fire,
+Air, Water, Earth, and Quintessence. Mercury's Equilibrium glossaries occupy
+outward-facing and semantic-internal capability paths while Mercury remains
+excluded from the binary Court register; its Magnetic/Internal path grants no
+Court polarity bit or zodiac facet.
 Kinetics, Kinematics, and Weather Dynamics remain future parent categories.
 Facilities and computational simulation/modeling vocabulary is explicitly excluded for the future
 `mechanics_instrumentation_registry.yaml`; the supplied two-temperature and
@@ -58,8 +56,9 @@ simulation tooling.
 - [x] Populate Fire/Electric with 83 authored High-Enthalpy entries: 13 energy
       states, 17 transformations, 26 structural forms, and 27 transfer modes.
 - [x] Populate Air/Electric with 44 authored High-Entropy entries: 17 energy
-      states, 12 transformations, 12 structural forms, and 3 transfer modes;
-      retain no High-Entropy glossary in Air/Magnetic.
+      states, 12 transformations, 12 structural forms, and 3 transfer modes.
+- [x] Complete the v2 Magnetic/Internal catalogues: 32 entries each for Fire,
+      Air, Water, and Earth, plus 36 Quintessence Equilibrium entries.
 - [x] Reserve facilities and computational simulation/modeling entries for future
       `mechanics_instrumentation_registry.yaml`; reject instrumentation and
       Kinetics-only terms from this registry.
@@ -74,19 +73,16 @@ simulation tooling.
   Water 1193, and Earth 1321.
 - **AC-4**: zodiac facets replay CRT-347 and transition references resolve
   against CRT-349.
-- **AC-5**: Mercury retains its engine interface and exposes only an
-  Electric/External Equilibrium glossary, with no binary Court polarity bit,
-  zodiac facet, or Magnetic/Internal capability channel; it remains excluded
-  from the binary Court register.
+- **AC-5**: Mercury retains its engine interface and both semantic capability
+  channels, with no binary Court polarity bit, zodiac facet, or transition
+  metadata; it remains excluded from the binary Court register.
 - **AC-6**: no executable Court relation or state write is introduced;
   `kappa_court` remains read-only and global `harmonic.C_H` remains untouched.
 - **AC-7**: validator 19/19 PASS; pytest 14/14; root validation PASS.
 - **AC-8**: every Element owns exactly one four-part thermodynamic scaffold:
   Fire High-Enthalpy, Air High-Entropy, Water Low-Enthalpy, Earth Low-Entropy,
-  and Quintessence Equilibrium. Fire/Electric replays the complete 83-entry
-  High-Enthalpy glossary, and Air/Electric replays the complete 44-entry
-  High-Entropy glossary through the strict Rich Schema with no Air/Magnetic
-  High-Entropy glossary.
+  and Quintessence Equilibrium. Existing Electric/External catalogues remain
+  intact, and each Magnetic/Internal catalogue uses the strict Rich Schema.
 - **AC-9**: facilities and computational simulation/modeling vocabulary remains
   out of this registry and points only to the future separate registry boundary;
   supplied two-temperature and multi-temperature structural descriptors remain
@@ -100,7 +96,7 @@ npm run validate
 ```
 
 **Results (2026-08-22):** v1 validator 19/19 PASS; v2 validator 21/21 PASS;
-pytest 14/14; root validation PASS; manifest and checksums refreshed.
+pytest 15/15; root validation PASS; manifest and checksums refreshed.
 
 ## v2.0.0 Direct Capability Array Migration
 
@@ -108,9 +104,8 @@ v2 preserves the v1 registry as historical planning evidence and introduces a
 parallel, breaking schema version. The rich glossary contract is now uniform:
 every `electric_external`, `magnetic_internal`, and Mercury `engine_interface`
 channel is a direct array of six required fields, with a controlled optional
-`semantic_transition` field. Mercury additionally has an outward-facing
-`electric_external` array for Equilibrium entries, but it retains no binary
-Court polarity metadata. The former pole metadata moves to sibling
+`semantic_transition` field. Mercury has outward-facing and semantic-internal
+Equilibrium arrays, but it retains no binary Court polarity metadata. The former pole metadata moves to sibling
 `polarity_bindings` for the four binary elements.
 
 The four-part scaffold remains enforced through the authored relation types:
@@ -119,44 +114,42 @@ per-element wrapper. All leaf entries carry `phenomenon_class`; base pole
 mechanics use `capability_action`, while glossary entries use their relevant
 thermodynamic class.
 
-Water/Venus v2 adds 44 Low-Enthalpy electrochemical glossary entries to
+Water/Venus v2 retains 44 Low-Enthalpy electrochemical glossary entries in
 `capabilities.electric_external`: 13 energy states, 12 transformations, 10
-structural forms, and 9 transfer modes. All use
-`phenomenon_class: low_enthalpy`. No supplied electrochemical term is placed in
-Water/Magnetic; its existing `latent_heat_storage` action remains distinct.
+structural forms, and 9 transfer modes. Its semantic Magnetic/Internal channel
+adds 32 cohesion, interface, osmotic, and latent-heat entries, all using
+`phenomenon_class: low_enthalpy`; its `latent_heat_storage` action remains distinct.
 
-Earth/Saturn v2 adds 46 Low-Entropy electro-thermodynamic glossary entries to
+Earth/Saturn v2 retains 46 Low-Entropy electro-thermodynamic glossary entries in
 `capabilities.electric_external`: 10 energy states, 12 transformations, 12
-structural forms, and 12 transfer modes. All use
-`phenomenon_class: low_entropy`; no supplied Low-Entropy term is placed in
-Earth/Magnetic, whose `crystallization_lock` action remains distinct. The
+structural forms, and 12 transfer modes. Its semantic Magnetic/Internal channel
+adds 32 solid-order and immobilization entries, all using
+`phenomenon_class: low_entropy`; `crystallization_lock` remains distinct. The
 `dielectric_breakdown`, `electrical_tree`, and `breakdown_conduction` entries carry
 the controlled `semantic_transition: failure_or_crossover` marker because they
 begin with insulation or order and terminate in a discharge crossover.
 
-Mercury/Quintessence v2 adds 50 Equilibrium glossary entries to
+Mercury/Quintessence v2 retains 50 Equilibrium glossary entries in
 `capabilities.electric_external`: 11 energy states, 12 transformations, 14
-structural forms, and 13 transfer modes. All use
-`phenomenon_class: equilibrium`; no supplied equilibrium term is placed in
-Mercury's engine interface or a Magnetic/Internal channel. This outward-facing
-path supports authored balance, conversion, sensing, and heat rejection without
-granting Mercury a binary Court polarity bit or zodiac facet.
+structural forms, and 13 transfer modes. Its semantic Magnetic/Internal channel
+adds 36 equilibrium, buffering, and reference-state entries, all using
+`phenomenon_class: equilibrium`. Neither channel grants Mercury a binary Court
+polarity bit or zodiac facet, and the engine interface remains action-only.
 
 ### v2 Acceptance Criteria
 
-- Direct capability arrays contain 276 unique rich entries across all five
+- Direct capability arrays contain 440 unique rich entries across all five
   elements, each with required `mechanic_id`, `definition`, `relation_type`,
   `value`, `phenomenon_class`, and `source_class` fields, plus the controlled
   optional `semantic_transition` field where applicable.
-- Fire's 83 High-Enthalpy entries, Air's 44 High-Entropy entries, Water's 44
-  Low-Enthalpy entries, Earth's 46 Low-Entropy entries, and Mercury's 50
-  Equilibrium entries remain Electric/External only.
+- Existing Electric/External catalogues remain intact. Magnetic/Internal adds
+  32 entries each for Fire, Air, Water, and Earth, plus 36 Equilibrium entries
+  for Quintessence.
 - The v2 schema rejects legacy category wrappers, incomplete or unbounded rich
   entries, and mismatched element polarity bindings.
-- The v2 validator has 21 PASS checks and 31 adversarial rejection cases,
-  including Mercury Equilibrium contamination of its engine interface or a
-  Magnetic/Internal channel, Water and Earth glossary contamination of
-  Magnetic/Internal, and invalid Earth transition tags.
+- The v2 validator has 21 PASS checks and adversarial rejection cases covering
+  semantic channel ownership, namespacing, Mercury engine-interface isolation,
+  nonbinary Mercury metadata, and invalid Earth transition tags.
 - V1 source, schema, validator, test, and QA evidence remain available and are
   validated alongside v2.
 

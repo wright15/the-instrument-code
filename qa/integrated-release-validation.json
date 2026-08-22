@@ -1,8 +1,8 @@
 {
-  "verdict": "PASS",
+  "verdict": "FAIL",
   "releaseId": "seven-governors-integrated-1.6.0",
-  "checksPassed": 411,
-  "checksFailed": 0,
+  "checksPassed": 410,
+  "checksFailed": 1,
   "checks": [
     {
       "name": "release id",
@@ -790,8 +790,8 @@
     },
     {
       "name": "pentatonic binding planning-evidence validation",
-      "status": "PASS",
-      "diagnostic": "passed"
+      "status": "FAIL",
+      "diagnostic": "STALE_PENTATONIC_7_35_PARENT_AUDIT"
     },
     {
       "name": "pentatonic binding closure freshness",
@@ -808,7 +808,7 @@
         "phase3ReportSha256": "814512d4f4360dc7e9ab77b8190043a155ae8253d2729dbb21f33db91e37f1df",
         "cypherDeterministicFingerprint": "f94c876bf9bd407cfe03750fb83df41f09bc7433fb8de39a250a989b6fd11c32",
         "crt310BacklogFingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
-        "sourceAuthoritySha256": "7420bbcc9d4e7ee5505473ef2ffefb2ec4af884b03b12afd7e089140cfcc0f37",
+        "sourceAuthoritySha256": "626334f013c6229b9c9a8c2a2793a7d7b7bf9f7fee1ba603502317d3f638aa42",
         "decisionLedgerSha256": "32f08a16eeb4c13187939281621b4085fe377778539cc1268913e3cb285b9bc6"
       }
     },
@@ -823,7 +823,7 @@
           "2": 48,
           "3": 12
         },
-        "closureFingerprint": "1e9abc9a1a3e01f141805982b8e3e1b2e25c0df94ea9752186e52b24ecea1e55"
+        "closureFingerprint": "b8a1cdd64f51e6ef2f359fa3740be0d760fb16c1a5a8b39832faf4afc651b671"
       }
     },
     {

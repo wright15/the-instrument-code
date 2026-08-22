@@ -230,10 +230,11 @@
         "capabilities": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["engine_interface", "electric_external"],
+          "required": ["engine_interface", "electric_external", "magnetic_internal"],
           "properties": {
             "engine_interface": { "$ref": "#/$defs/capability_entries" },
-            "electric_external": { "$ref": "#/$defs/capability_entries" }
+            "electric_external": { "$ref": "#/$defs/capability_entries" },
+            "magnetic_internal": { "$ref": "#/$defs/capability_entries" }
           }
         }
       }

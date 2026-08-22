@@ -64,11 +64,26 @@ PHENOMENON_CLASSES = {
     "equilibrium",
 }
 POPULATED_CLASS_PLACEMENTS = {
-    "high_enthalpy": ("Fire", "electric_external"),
-    "high_entropy": ("Air", "electric_external"),
-    "low_enthalpy": ("Water", "electric_external"),
-    "low_entropy": ("Earth", "electric_external"),
-    "equilibrium": ("Quintessence", "electric_external"),
+    "high_enthalpy": (
+        ("Fire", "electric_external"),
+        ("Fire", "magnetic_internal"),
+    ),
+    "high_entropy": (
+        ("Air", "electric_external"),
+        ("Air", "magnetic_internal"),
+    ),
+    "low_enthalpy": (
+        ("Water", "electric_external"),
+        ("Water", "magnetic_internal"),
+    ),
+    "low_entropy": (
+        ("Earth", "electric_external"),
+        ("Earth", "magnetic_internal"),
+    ),
+    "equilibrium": (
+        ("Quintessence", "electric_external"),
+        ("Quintessence", "magnetic_internal"),
+    ),
 }
 EXPECTED_CLASS_COUNTS = {
     "high_enthalpy": {
@@ -100,6 +115,38 @@ EXPECTED_CLASS_COUNTS = {
         "transforms": 12,
         "structures": 14,
         "transfers": 13,
+    },
+}
+MAGNETIC_CLASS_COUNTS = {
+    "high_enthalpy": {
+        "characterizes": 8,
+        "transforms": 8,
+        "structures": 8,
+        "transfers": 8,
+    },
+    "high_entropy": {
+        "characterizes": 8,
+        "transforms": 8,
+        "structures": 8,
+        "transfers": 8,
+    },
+    "low_enthalpy": {
+        "characterizes": 8,
+        "transforms": 8,
+        "structures": 8,
+        "transfers": 8,
+    },
+    "low_entropy": {
+        "characterizes": 8,
+        "transforms": 8,
+        "structures": 8,
+        "transfers": 8,
+    },
+    "equilibrium": {
+        "characterizes": 9,
+        "transforms": 9,
+        "structures": 9,
+        "transfers": 9,
     },
 }
 EXPECTED_LOW_ENTHALPY_IDS = {
@@ -276,6 +323,222 @@ EXPECTED_CATALOG_IDS = {
     "low_enthalpy": EXPECTED_LOW_ENTHALPY_IDS,
     "low_entropy": EXPECTED_LOW_ENTROPY_IDS,
     "equilibrium": EXPECTED_EQUILIBRIUM_IDS,
+}
+EXPECTED_MAGNETIC_CATALOG_IDS = {
+    "Fire": {
+        "characterizes": (
+            "fire_magnetic_sensible_heat",
+            "fire_magnetic_heat_capacity",
+            "fire_magnetic_thermal_inertia",
+            "fire_magnetic_heat_soak",
+            "fire_magnetic_chemical_enthalpy_storage",
+            "fire_magnetic_smoldering_combustion",
+            "fire_magnetic_high_temperature_thermal_reservoir",
+            "fire_magnetic_adiabatic_confinement",
+        ),
+        "transforms": (
+            "fire_magnetic_endothermic_reaction",
+            "fire_magnetic_endothermic_dissociation",
+            "fire_magnetic_pyrolysis",
+            "fire_magnetic_thermochemical_charging",
+            "fire_magnetic_char_formation",
+            "fire_magnetic_oxygen_limited_oxidation",
+            "fire_magnetic_thermal_charging",
+            "fire_magnetic_ablative_decomposition",
+        ),
+        "structures": (
+            "fire_magnetic_ablative_heat_shield",
+            "fire_magnetic_char_layer",
+            "fire_magnetic_pyrolysis_front",
+            "fire_magnetic_refractory_lining",
+            "fire_magnetic_smoldering_front",
+            "fire_magnetic_packed_fuel_bed",
+            "fire_magnetic_thermal_penetration_layer",
+            "fire_magnetic_insulated_hot_zone",
+        ),
+        "transfers": (
+            "fire_magnetic_inward_heat_conduction",
+            "fire_magnetic_radiative_absorption",
+            "fire_magnetic_sensible_heat_uptake",
+            "fire_magnetic_endothermic_heat_uptake",
+            "fire_magnetic_thermal_diffusion",
+            "fire_magnetic_volumetric_absorption",
+            "fire_magnetic_thermochemical_heat_storage",
+            "fire_magnetic_ablative_heat_absorption",
+        ),
+    },
+    "Air": {
+        "characterizes": (
+            "air_magnetic_compressed_gas_state",
+            "air_magnetic_stagnation_state",
+            "air_magnetic_stagnation_pressure_loss",
+            "air_magnetic_viscous_stress",
+            "air_magnetic_bulk_viscous_stress",
+            "air_magnetic_high_density_gas_state",
+            "air_magnetic_viscosity_dominated_flow",
+            "air_magnetic_stable_stratification",
+        ),
+        "transforms": (
+            "air_magnetic_viscous_dissipation",
+            "air_magnetic_irreversible_compression",
+            "air_magnetic_shock_compression",
+            "air_magnetic_flow_stagnation",
+            "air_magnetic_turbulent_decay",
+            "air_magnetic_aerodynamic_damping",
+            "air_magnetic_acoustic_attenuation",
+            "air_magnetic_vortex_trapping",
+        ),
+        "structures": (
+            "air_magnetic_stagnation_region",
+            "air_magnetic_viscous_boundary_layer",
+            "air_magnetic_viscous_sublayer",
+            "air_magnetic_recirculation_bubble",
+            "air_magnetic_trapped_vortex",
+            "air_magnetic_temperature_inversion_layer",
+            "air_magnetic_compression_layer",
+            "air_magnetic_stagnant_air_layer",
+        ),
+        "transfers": (
+            "air_magnetic_viscous_drag",
+            "air_magnetic_momentum_diffusion",
+            "air_magnetic_bulk_viscous_dissipation",
+            "air_magnetic_compressive_work",
+            "air_magnetic_frictional_heating",
+            "air_magnetic_acoustic_absorption",
+            "air_magnetic_turbulent_dissipation",
+            "air_magnetic_boundary_layer_momentum_absorption",
+        ),
+    },
+    "Water": {
+        "characterizes": (
+            "water_magnetic_surface_tension",
+            "water_magnetic_capillary_pressure",
+            "water_magnetic_osmotic_pressure",
+            "water_magnetic_latent_heat_of_fusion",
+            "water_magnetic_latent_heat_of_vaporization",
+            "water_magnetic_cohesive_energy_density",
+            "water_magnetic_bound_water",
+            "water_magnetic_hydrostatic_pressure",
+        ),
+        "transforms": (
+            "water_magnetic_hydration",
+            "water_magnetic_solvation",
+            "water_magnetic_hydrogen_bond_formation",
+            "water_magnetic_capillary_condensation",
+            "water_magnetic_capillary_imbibition",
+            "water_magnetic_osmotic_uptake",
+            "water_magnetic_droplet_coalescence",
+            "water_magnetic_phase_change_charging",
+        ),
+        "structures": (
+            "water_magnetic_hydration_shell",
+            "water_magnetic_hydrogen_bond_network",
+            "water_magnetic_capillary_meniscus",
+            "water_magnetic_liquid_bridge",
+            "water_magnetic_bound_water_layer",
+            "water_magnetic_semipermeable_membrane",
+            "water_magnetic_capillary_pore_network",
+            "water_magnetic_vesicle",
+        ),
+        "transfers": (
+            "water_magnetic_latent_heat_absorption",
+            "water_magnetic_osmotic_inflow",
+            "water_magnetic_capillary_uptake",
+            "water_magnetic_solvent_permeation",
+            "water_magnetic_interfacial_adsorption",
+            "water_magnetic_hygroscopic_absorption",
+            "water_magnetic_condensational_heat_transfer",
+            "water_magnetic_cohesive_retention",
+        ),
+    },
+    "Earth": {
+        "characterizes": (
+            "earth_magnetic_crystalline_order",
+            "earth_magnetic_lattice_energy",
+            "earth_magnetic_elastic_strain_energy",
+            "earth_magnetic_peierls_barrier",
+            "earth_magnetic_yield_stress",
+            "earth_magnetic_pinned_dislocation_state",
+            "earth_magnetic_thermal_resistivity",
+            "earth_magnetic_low_diffusivity_solid",
+        ),
+        "transforms": (
+            "earth_magnetic_crystallization",
+            "earth_magnetic_solidification",
+            "earth_magnetic_recrystallization",
+            "earth_magnetic_sintering",
+            "earth_magnetic_precipitation_hardening",
+            "earth_magnetic_grain_boundary_pinning",
+            "earth_magnetic_zener_pinning",
+            "earth_magnetic_dislocation_pinning",
+        ),
+        "structures": (
+            "earth_magnetic_crystal_lattice",
+            "earth_magnetic_grain_boundary",
+            "earth_magnetic_second_phase_precipitate",
+            "earth_magnetic_cottrell_atmosphere",
+            "earth_magnetic_vacancy_ordered_crystal",
+            "earth_magnetic_ceramic_insulating_layer",
+            "earth_magnetic_phononic_crystal",
+            "earth_magnetic_diffusion_barrier_layer",
+        ),
+        "transfers": (
+            "earth_magnetic_thermal_insulation",
+            "earth_magnetic_electrical_insulation",
+            "earth_magnetic_suppressed_mass_diffusion",
+            "earth_magnetic_thermal_boundary_resistance",
+            "earth_magnetic_phonon_reflection",
+            "earth_magnetic_acoustic_impedance_mismatch",
+            "earth_magnetic_elastic_energy_storage",
+            "earth_magnetic_dislocation_immobilization",
+        ),
+    },
+    "Quintessence": {
+        "characterizes": (
+            "quintessence_magnetic_thermodynamic_equilibrium",
+            "quintessence_magnetic_thermal_equilibrium",
+            "quintessence_magnetic_chemical_equilibrium",
+            "quintessence_magnetic_mechanical_equilibrium",
+            "quintessence_magnetic_phase_equilibrium",
+            "quintessence_magnetic_detailed_balance",
+            "quintessence_magnetic_gibbs_free_energy_minimum",
+            "quintessence_magnetic_stable_fixed_point",
+            "quintessence_magnetic_nonequilibrium_steady_state",
+        ),
+        "transforms": (
+            "quintessence_magnetic_thermal_equilibration",
+            "quintessence_magnetic_relaxation_to_equilibrium",
+            "quintessence_magnetic_negative_feedback_stabilization",
+            "quintessence_magnetic_thermostatic_regulation",
+            "quintessence_magnetic_phase_change_buffering",
+            "quintessence_magnetic_thermal_anchoring_transformation",
+            "quintessence_magnetic_calorimetric_integration",
+            "quintessence_magnetic_re_equilibration",
+            "quintessence_magnetic_temperature_clamping",
+        ),
+        "structures": (
+            "quintessence_magnetic_thermal_reservoir",
+            "quintessence_magnetic_thermal_bath",
+            "quintessence_magnetic_heat_sink",
+            "quintessence_magnetic_isothermal_enclosure",
+            "quintessence_magnetic_adiabatic_calorimeter",
+            "quintessence_magnetic_fixed_point_cell",
+            "quintessence_magnetic_triple_point_cell",
+            "quintessence_magnetic_bolometer",
+            "quintessence_magnetic_thermal_anchor",
+        ),
+        "transfers": (
+            "quintessence_magnetic_conductive_equilibration",
+            "quintessence_magnetic_heat_sink_absorption",
+            "quintessence_magnetic_latent_heat_buffering",
+            "quintessence_magnetic_calorimetric_heat_uptake",
+            "quintessence_magnetic_bolometric_absorption",
+            "quintessence_magnetic_thermometric_transduction",
+            "quintessence_magnetic_thermal_anchoring_transfer",
+            "quintessence_magnetic_near_reversible_heat_exchange",
+            "quintessence_magnetic_internal_feedback_compensation",
+        ),
+    },
 }
 EXPECTED_SEMANTIC_TRANSITIONS = {
     "dielectric_breakdown": SEMANTIC_TRANSITION_VALUE,
@@ -515,7 +778,7 @@ KINETICS_RESERVED_MECHANIC_IDS = {
     "third_body_reaction",
 }
 FORBIDDEN_RELATIONS = ("SETS_COURT_POLE", "EXECUTES_COURT_MOVE")
-EXPECTED_AUTHORING_FINGERPRINT = "0c6fa08e1bad3ded42bcbe38637e583b937f6d5700b8e4ee9d4d2e085f6a606a"
+EXPECTED_AUTHORING_FINGERPRINT = "0691837291afcd1cd2abe3ff998b4835dffdb03e5910be3a8ea3058662e8cf3c"
 
 REPORT_CHECK_IDS = (
     "mtr-v2-schema-identity",
@@ -557,11 +820,12 @@ EXPECTED_MUTATION_CODES = {
     "capability-definition-drift": "authored_contract_mismatch",
     "mercury-transition-injected": "mercury_exclusion_invalid",
     "legacy-category-injected": "capability_array_invalid",
-    "fire-glossary-in-magnetic": "phenomenon_class_placement_invalid",
-    "water-glossary-in-magnetic": "phenomenon_class_placement_invalid",
-    "earth-glossary-in-magnetic": "phenomenon_class_placement_invalid",
+    "magnetic-catalog-id-substituted": "glossary_catalog_invalid",
+    "fire-glossary-in-magnetic": "glossary_catalog_invalid",
+    "water-glossary-in-magnetic": "glossary_catalog_invalid",
+    "earth-glossary-in-magnetic": "glossary_catalog_invalid",
     "mercury-equilibrium-in-engine-interface": "phenomenon_class_placement_invalid",
-    "mercury-equilibrium-in-magnetic": "mercury_exclusion_invalid",
+    "mercury-equilibrium-in-magnetic": "glossary_catalog_invalid",
     "missing-phenomenon-class": "rich_entry_invalid",
     "missing-equilibrium-phenomenon-class": "rich_entry_invalid",
     "water-glossary-wrong-class": "phenomenon_class_placement_invalid",
@@ -668,9 +932,13 @@ def _array_layout_errors(document: dict[str, Any]) -> list[str]:
             errors.append(f"{element}:capabilities")
             continue
         if element == "Quintessence":
-            if set(capabilities) != {"engine_interface", "electric_external"}:
+            if set(capabilities) != {
+                "engine_interface",
+                "electric_external",
+                "magnetic_internal",
+            }:
                 errors.append("Quintessence:capability_channels")
-            for channel in ("engine_interface", "electric_external"):
+            for channel in ("engine_interface", "electric_external", "magnetic_internal"):
                 if not isinstance(capabilities.get(channel), list) or not capabilities.get(channel):
                     errors.append(f"Quintessence:{channel}:array")
             if "polarity_bindings" in item or "transition_refs" in item:
@@ -752,25 +1020,22 @@ def _class_placement_errors(document: dict[str, Any]) -> list[str]:
         if not isinstance(entry, dict):
             continue
         phenomenon_class = entry.get("phenomenon_class")
-        if (element, channel) == ("Quintessence", "engine_interface"):
-            if phenomenon_class != "capability_action":
+        if phenomenon_class == "capability_action":
+            if (element, channel) not in EXPECTED_ACTIONS:
                 errors.append(f"{element}:{channel}:{phenomenon_class}:placement")
             continue
-        if (element, channel) == ("Quintessence", "electric_external"):
-            if phenomenon_class != "equilibrium":
-                errors.append(f"{element}:{channel}:{phenomenon_class}:placement")
-            continue
-        expected = POPULATED_CLASS_PLACEMENTS.get(phenomenon_class)
-        if expected and (element, channel) != expected:
+        expected_placements = POPULATED_CLASS_PLACEMENTS.get(phenomenon_class, ())
+        if (element, channel) not in expected_placements:
             errors.append(f"{element}:{channel}:{phenomenon_class}:placement")
     return errors
 
 
-def _catalog_errors(document: dict[str, Any], phenomenon_class: str) -> list[str]:
+def _catalog_errors(
+    document: dict[str, Any], element: str, channel: str, phenomenon_class: str
+) -> list[str]:
     errors = []
-    expected_element, expected_channel = POPULATED_CLASS_PLACEMENTS[phenomenon_class]
     try:
-        entries = _entries(_element(document, expected_element), expected_channel)
+        entries = _entries(_element(document, element), channel)
     except StopIteration:
         return ["missing_element"]
     catalog = [
@@ -778,7 +1043,11 @@ def _catalog_errors(document: dict[str, Any], phenomenon_class: str) -> list[str
         for entry in entries
         if isinstance(entry, dict) and entry.get("phenomenon_class") == phenomenon_class
     ]
-    expected_counts = EXPECTED_CLASS_COUNTS[phenomenon_class]
+    expected_counts = (
+        MAGNETIC_CLASS_COUNTS[phenomenon_class]
+        if channel == "magnetic_internal"
+        else EXPECTED_CLASS_COUNTS[phenomenon_class]
+    )
     actual_counts = {
         relation: sum(entry.get("relation_type") == relation for entry in catalog)
         for relation in SCAFFOLD_RELATIONS.values()
@@ -787,7 +1056,11 @@ def _catalog_errors(document: dict[str, Any], phenomenon_class: str) -> list[str
         errors.append("scaffold_counts")
     if any(entry.get("relation_type") not in SCAFFOLD_RELATIONS.values() for entry in catalog):
         errors.append("scaffold_relation")
-    expected_ids = EXPECTED_CATALOG_IDS.get(phenomenon_class)
+    expected_ids = (
+        EXPECTED_MAGNETIC_CATALOG_IDS[element]
+        if channel == "magnetic_internal"
+        else EXPECTED_CATALOG_IDS.get(phenomenon_class)
+    )
     if expected_ids is not None:
         actual_ids = {
             relation: tuple(
@@ -799,6 +1072,14 @@ def _catalog_errors(document: dict[str, Any], phenomenon_class: str) -> list[str
         }
         if actual_ids != expected_ids:
             errors.append(f"{phenomenon_class}_catalog_ids")
+    if channel == "magnetic_internal":
+        expected_prefix = f"{element.lower()}_magnetic_"
+        if any(
+            not isinstance(entry.get("mechanic_id"), str)
+            or not entry["mechanic_id"].startswith(expected_prefix)
+            for entry in catalog
+        ):
+            errors.append("magnetic_namespace")
     return errors
 
 
@@ -900,7 +1181,7 @@ def _semantic_rejection_code(document: dict[str, Any]) -> str | None:
         or "transition_refs" in mercury
         or "polarity_bindings" in mercury
         or set(mercury.get("capabilities", {}))
-        != {"engine_interface", "electric_external"}
+        != {"engine_interface", "electric_external", "magnetic_internal"}
     ):
         return "mercury_exclusion_invalid"
 
@@ -951,7 +1232,11 @@ def _semantic_rejection_code(document: dict[str, Any]) -> str | None:
         return "semantic_transition_invalid"
     if _action_errors(document):
         return "authored_contract_mismatch"
-    if any(_catalog_errors(document, phenomenon_class) for phenomenon_class in POPULATED_CLASS_PLACEMENTS):
+    if any(
+        _catalog_errors(document, element, channel, phenomenon_class)
+        for phenomenon_class, placements in POPULATED_CLASS_PLACEMENTS.items()
+        for element, channel in placements
+    ):
         return "glossary_catalog_invalid"
     if _sha256_payload(_authoring_payload(document)) != EXPECTED_AUTHORING_FINGERPRINT:
         return "authored_contract_mismatch"
@@ -1079,6 +1364,12 @@ def _mutated_cases(document: dict[str, Any]) -> dict[str, dict[str, Any]]:
     cases["fire-glossary-in-magnetic"] = tampered
 
     tampered = deepcopy(document)
+    _entries(_element(tampered, "Fire"), "magnetic_internal")[1][
+        "mechanic_id"
+    ] = "fire_magnetic_unlisted_entry"
+    cases["magnetic-catalog-id-substituted"] = tampered
+
+    tampered = deepcopy(document)
     water = _element(tampered, "Water")
     low_entry = water["capabilities"]["electric_external"].pop(1)
     water["capabilities"]["magnetic_internal"].append(low_entry)
@@ -1099,9 +1390,9 @@ def _mutated_cases(document: dict[str, Any]) -> dict[str, dict[str, Any]]:
 
     tampered = deepcopy(document)
     mercury = _element(tampered, "Quintessence")
-    mercury["capabilities"]["magnetic_internal"] = [
-        deepcopy(_equilibrium_entry(tampered))
-    ]
+    mercury["capabilities"]["magnetic_internal"].append(
+        mercury["capabilities"]["electric_external"].pop(0)
+    )
     cases["mercury-equilibrium-in-magnetic"] = tampered
 
     tampered = deepcopy(document)
@@ -1282,30 +1573,45 @@ def validate(document: dict[str, Any]) -> dict[str, Any]:
         ("mtr-v2-low-entropy-earth-population", "low_entropy"),
         ("mtr-v2-equilibrium-mercury-population", "equilibrium"),
     ):
-        expected_element, expected_channel = POPULATED_CLASS_PLACEMENTS[phenomenon_class]
-        catalog_errors = _catalog_errors(document, phenomenon_class)
+        placements = POPULATED_CLASS_PLACEMENTS[phenomenon_class]
+        catalog_errors = [
+            f"{element}:{channel}:{error}"
+            for element, channel in placements
+            for error in _catalog_errors(document, element, channel, phenomenon_class)
+        ]
         transition_errors = (
             _semantic_transition_errors(document)
             if phenomenon_class == "low_entropy"
             else []
         )
-        catalog = [
-            entry
-            for entry in _entries(_element(document, expected_element), expected_channel)
-            if entry.get("phenomenon_class") == phenomenon_class
-        ]
+        expected_counts = {
+            f"{element}.{channel}": (
+                MAGNETIC_CLASS_COUNTS[phenomenon_class]
+                if channel == "magnetic_internal"
+                else EXPECTED_CLASS_COUNTS[phenomenon_class]
+            )
+            for element, channel in placements
+        }
+        actual_counts = {}
+        for element, channel in placements:
+            catalog = [
+                entry
+                for entry in _entries(_element(document, element), channel)
+                if entry.get("phenomenon_class") == phenomenon_class
+            ]
+            actual_counts[f"{element}.{channel}"] = {
+                relation: sum(entry["relation_type"] == relation for entry in catalog)
+                for relation in SCAFFOLD_RELATIONS.values()
+            }
         record(
             check_id,
             not catalog_errors
             and not transition_errors
             and not _class_placement_errors(document),
             catalog_errors + transition_errors,
-            str(REGISTRY_PATH) + f"#elements[{expected_element}].capabilities.{expected_channel}",
-            EXPECTED_CLASS_COUNTS[phenomenon_class],
-            {
-                relation: sum(entry["relation_type"] == relation for entry in catalog)
-                for relation in SCAFFOLD_RELATIONS.values()
-            },
+            str(REGISTRY_PATH) + "#elements",
+            expected_counts,
+            actual_counts,
         )
     crt350 = _load_crt350()
     scale_map = {
@@ -1362,7 +1668,8 @@ def validate(document: dict[str, Any]) -> dict[str, Any]:
         mercury.get("is_binary_court_pole") is False
         and mercury.get("court_pole_index") is None
         and mercury.get("register_membership") == "excluded"
-        and set(mercury["capabilities"]) == {"engine_interface", "electric_external"}
+        and set(mercury["capabilities"])
+        == {"engine_interface", "electric_external", "magnetic_internal"}
         and "polarity_bindings" not in mercury
         and "transition_refs" not in mercury
     )
