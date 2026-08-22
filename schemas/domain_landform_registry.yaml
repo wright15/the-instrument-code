@@ -1,156 +1,2781 @@
-governor: Jupiter
 tier: A0
 domain: landform
-process_family: aeolian
-entities:
-  - entity_id: barchan
-    definition: "Crescent-shaped dune formed by aeolian sand transport."
-    relation_type: distributed_through
-    value: moving_air_and_particulate_transport
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
 
-  - entity_id: blowout
-    definition: "Depression in a sand-dune ecosystem caused by wind removing exposed sediment."
-    relation_type: formed_by
-    value: wind_deflation
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
+sun:
+  process_family: insolation_and_thermal
+  entities:
+    - entity_id: bornhardt
+      definition: "A large, steep-sided bedrock dome formed through differential weathering and erosion, with solar heating and thermal exfoliation often modifying its exposed surface."
+      relation_type: formed_by
+      value: differential_weathering_erosion_and_thermal_exfoliation
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: exfoliation_dome
+      definition: "A rounded rock outcrop shaped by successive detachment of curved rock sheets through thermal stress, unloading, or both."
+      relation_type: formed_by
+      value: thermal_stress_and_pressure_release
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: granite_dome
+      definition: "A rounded granite prominence shaped by joint-controlled erosion, pressure release, and, in some settings, solar-driven thermal exfoliation."
+      relation_type: formed_by
+      value: joint_controlled_erosion_pressure_release_and_thermal_exfoliation
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: exfoliation_sheet
+      definition: "A curved slab detached from exposed bedrock by surface-parallel cracking generated through thermal stress or pressure release."
+      relation_type: formed_by
+      value: thermal_stress_or_pressure_release
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: exfoliation_scarp
+      definition: "A steep rock face exposed when thermal expansion, unloading, or both cause an outer bedrock sheet to separate."
+      relation_type: formed_by
+      value: thermal_expansion_and_unloading
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: sheet_joint
+      definition: "A curved, near-surface fracture formed parallel to exposed bedrock through unloading and, in some cases, repeated thermal stressing."
+      relation_type: formed_by
+      value: unloading_and_repeated_thermal_stressing
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: thermal_stress_fracture
+      definition: "A crack in exposed rock generated when uneven heating and cooling create differential expansion and contraction."
+      relation_type: formed_by
+      value: differential_thermal_expansion_and_contraction
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: thermal_fatigue_crack
+      definition: "A progressively enlarging rock fracture produced by repeated daily or seasonal heating and cooling cycles."
+      relation_type: formed_by
+      value: repeated_thermal_cycling
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: insolation_weathered_rock_surface
+      definition: "An exposed bedrock surface physically weakened by repeated expansion and contraction under direct solar radiation."
+      relation_type: formed_by
+      value: solar_radiation_driven_thermal_expansion_and_contraction
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: thermal_spall
+      definition: "A detached rock fragment produced when rapid or uneven heating causes near-surface bedrock to fracture."
+      relation_type: formed_by
+      value: rapid_or_uneven_heating
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tafoni
+      definition: "Cavities in exposed rock enlarged by salt crystallization, moisture cycling, chemical weathering, and sometimes thermal stress."
+      relation_type: formed_by
+      value: salt_crystallization_moisture_cycling_and_thermal_stress
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: honeycomb_weathering_cavity
+      definition: "A small, closely spaced rock hollow created mainly by evaporative salt crystallization and repeated wetting and drying."
+      relation_type: formed_by
+      value: evaporative_salt_crystallization_and_wet_dry_cycling
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: panhole
+      definition: "A shallow rock basin enlarged by standing water, chemical weathering, evaporation, and alternating wet-dry conditions (cross: Mercury)."
+      relation_type: formed_by
+      value: standing_water_weathering_evaporation_and_wet_dry_cycling
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: gnamma
+      definition: "A water-holding depression in exposed bedrock formed through localized weathering, dissolution, and repeated drying (cross: Mercury)."
+      relation_type: formed_by
+      value: localized_weathering_dissolution_and_repeated_drying
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: desiccation_crack
+      definition: "A fracture in drying sediment produced when solar heating and evaporation cause the surface to contract."
+      relation_type: formed_by
+      value: solar_heating_evaporation_and_sediment_contraction
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: desiccation_polygon
+      definition: "A polygonal surface pattern created when evaporative drying produces interconnected shrinkage cracks in fine-grained sediment."
+      relation_type: formed_by
+      value: evaporative_drying_and_sediment_shrinkage
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: mud_crack_network
+      definition: "An interconnected pattern of fractures formed when exposed, water-rich mud dries and contracts."
+      relation_type: formed_by
+      value: mud_drying_and_contraction
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: evaporite_crust
+      definition: "A mineral-rich surface layer formed when evaporation concentrates dissolved salts until they crystallize."
+      relation_type: formed_by
+      value: evaporative_salt_concentration_and_crystallization
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: salt_flat
+      definition: "A broad, level surface covered by evaporite minerals deposited when water repeatedly evaporates from a closed basin."
+      relation_type: formed_by
+      value: closed_basin_evaporation_and_evaporite_deposition
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: salt_pan
+      definition: "A shallow, commonly flat depression coated with salts concentrated through intense evaporation."
+      relation_type: formed_by
+      value: intense_evaporation_and_salt_concentration
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: salt_polygon
+      definition: "A polygonal pattern on a salt flat produced by cycles of evaporation, salt crystallization, expansion, and contraction."
+      relation_type: formed_by
+      value: evaporation_salt_crystallization_expansion_and_contraction
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: salt_ridge_polygon
+      definition: "A raised polygonal boundary on an evaporite flat formed when expanding or recrystallizing salts buckle the surface."
+      relation_type: formed_by
+      value: salt_expansion_or_recrystallization
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: playa
+      definition: "A low-lying basin floor that periodically floods and subsequently dries through evaporation."
+      relation_type: formed_by
+      value: periodic_flooding_and_evaporation
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: dry_lake
+      definition: "A former or intermittently occupied lake basin exposed when evaporation and water loss exceed incoming supply."
+      relation_type: formed_by
+      value: evaporation_and_water_loss_exceeding_inflow
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: chott
+      definition: "A North African saline depression that undergoes intermittent flooding followed by strong evaporative concentration."
+      relation_type: formed_by
+      value: intermittent_flooding_and_evaporative_concentration
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: salar
+      definition: "An extensive salt-encrusted basin produced by evaporation of mineral-rich water in a closed, commonly high-altitude drainage system."
+      relation_type: formed_by
+      value: closed_basin_evaporation_of_mineral_rich_water
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: sabkha
+      definition: "A coastal or inland evaporitic flat shaped by intense evaporation, shallow groundwater, and repeated salt precipitation (cross: Moon or Mercury)."
+      relation_type: formed_by
+      value: intense_evaporation_shallow_groundwater_and_salt_precipitation
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: gypsum_crust
+      definition: "A hardened surface layer formed when evaporating groundwater or surface water precipitates gypsum."
+      relation_type: formed_by
+      value: evaporative_gypsum_precipitation
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: gypcrete
+      definition: "A gypsum-cemented soil or sediment horizon produced by evaporative concentration and precipitation in arid environments."
+      relation_type: formed_by
+      value: evaporative_gypsum_concentration_and_precipitation
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: calcrete
+      definition: "A hardened carbonate-rich soil or sediment layer formed when evaporation and groundwater movement concentrate and precipitate calcium carbonate."
+      relation_type: formed_by
+      value: evaporative_groundwater_calcium_carbonate_precipitation
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: desert_pavement
+      definition: "A tightly packed surface of stones produced by combinations of wind deflation, runoff, soil development, and surface accumulation under arid conditions, rather than by sunlight alone (cross: Jupiter)."
+      relation_type: formed_by
+      value: polygenetic_arid_surface_processes
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: suncup
+      definition: "A shallow, bowl-shaped depression in snow or ice produced by uneven solar heating and melt."
+      relation_type: formed_by
+      value: differential_solar_heating_and_melt
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: penitente
+      definition: "A narrow blade or spike of snow or ice formed when intense sunlight drives differential melting and sublimation."
+      relation_type: formed_by
+      value: solar_driven_differential_melting_and_sublimation
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: cryoconite_hole
+      definition: "A cylindrical depression melted into glacier ice when dark sediment absorbs solar radiation more effectively than the surrounding surface."
+      relation_type: formed_by
+      value: solar_absorption_by_dark_sediment
+      governor: sun
+      canonicality: primary
+      source_class: empirical_domain_fact
 
-  - entity_id: desert_pavement
-    definition: "Desert surface armored by closely packed gravel and rock fragments after finer material is removed or displaced."
-    relation_type: formed_by
-    value: aeolian_deflation_and_surface_lag_concentration
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
+moon:
+  process_family: tidal_and_gravitational
+  entities:
+    - entity_id: tidal_flat
+      definition: "A broad, low-gradient coastal surface alternately submerged and exposed by gravitationally driven tidal cycles."
+      relation_type: formed_by
+      value: gravitational_tidal_cycles
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: mudflat
+      definition: "A fine-grained intertidal plain formed where slow-moving tidal water deposits suspended silt and clay."
+      relation_type: formed_by
+      value: tidal_suspension_deposition
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: sandflat
+      definition: "An intertidal surface composed mainly of sand transported and redistributed by tidal currents."
+      relation_type: formed_by
+      value: tidal_current_sediment_transport
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: mixed_tidal_flat
+      definition: "An intertidal plain containing alternating sand and mud deposited under changing tidal-current strength."
+      relation_type: formed_by
+      value: variable_tidal_current_deposition
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: supratidal_flat
+      definition: "A low coastal surface above ordinary high tide that is flooded during exceptionally high tides or storm surges."
+      relation_type: formed_by
+      value: exceptional_tidal_or_storm_inundation
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_creek
+      definition: "A branching coastal channel carved and maintained by repeated inflow and outflow of tidal water."
+      relation_type: formed_by
+      value: tidal_inflow_and_outflow
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_channel
+      definition: "A natural watercourse shaped by the alternating movement of flood and ebb currents across an intertidal landscape."
+      relation_type: formed_by
+      value: alternating_flood_and_ebb_currents
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_inlet
+      definition: "An opening through a coastal barrier maintained by tidal currents moving between the sea and a sheltered basin."
+      relation_type: formed_by
+      value: tidal_exchange_currents
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_basin
+      definition: "A coastal depression or embayment that fills and drains through repeated tidal exchange."
+      relation_type: formed_by
+      value: repeated_tidal_exchange
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_lagoon
+      definition: "A shallow water body behind a coastal barrier whose connection to the sea is maintained by tidal exchange (cross: Mercury)."
+      relation_type: formed_by
+      value: tidal_exchange
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_marsh
+      definition: "A low-lying vegetated coastal surface built and maintained by periodic tidal inundation and sediment deposition."
+      relation_type: formed_by
+      value: tidal_inundation_and_sediment_deposition
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: salt_marsh
+      definition: "A vegetated intertidal wetland formed where repeated tidal flooding deposits fine sediment and sustains salt-tolerant plants."
+      relation_type: formed_by
+      value: tidal_flooding_fine_sediment_deposition_and_salt_tolerant_vegetation
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: marsh_platform
+      definition: "A relatively level vegetated intertidal surface built through tidal sediment deposition and organic accumulation."
+      relation_type: formed_by
+      value: tidal_sediment_deposition_and_organic_accumulation
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: salt_panne
+      definition: "A shallow depression within a salt marsh produced by ponding, evaporation, salinity concentration, and restricted tidal drainage."
+      relation_type: formed_by
+      value: ponding_evaporation_salinity_concentration_and_restricted_tidal_drainage
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: flood_tidal_delta
+      definition: "A fan-shaped sand deposit inside a tidal inlet formed as incoming tidal currents lose velocity."
+      relation_type: formed_by
+      value: incoming_tidal_current_deceleration
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: ebb_tidal_delta
+      definition: "A seaward sand deposit outside a tidal inlet formed when outgoing tidal currents disperse sediment."
+      relation_type: formed_by
+      value: outgoing_tidal_current_sediment_dispersion
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_bar
+      definition: "An elongated sediment accumulation deposited and reshaped by alternating tidal currents."
+      relation_type: formed_by
+      value: alternating_tidal_currents
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_sandbank
+      definition: "A submerged or intermittently exposed sand body maintained by strong, recurring tidal flow."
+      relation_type: formed_by
+      value: strong_recurring_tidal_flow
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_sand_ridge
+      definition: "An elongated offshore sediment ridge produced by sustained tidal-current transport and deposition."
+      relation_type: formed_by
+      value: sustained_tidal_current_transport_and_deposition
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_sand_wave
+      definition: "A large underwater bedform created when tidal currents organize movable seabed sediment into migrating ridges."
+      relation_type: formed_by
+      value: tidal_current_bedform_migration
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_dune
+      definition: "A subaqueous dune formed by sediment transport under reversing or strongly asymmetric tidal currents."
+      relation_type: formed_by
+      value: reversing_or_asymmetric_tidal_currents
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_scour_channel
+      definition: "A deepened seabed or marsh channel excavated by concentrated tidal flow."
+      relation_type: formed_by
+      value: concentrated_tidal_flow
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_scour_pool
+      definition: "A localized depression formed where accelerated tidal currents remove sediment from the bed."
+      relation_type: formed_by
+      value: accelerated_tidal_current_scour
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_meander
+      definition: "A sinuous tidal channel shaped by alternating currents, bank erosion, and sediment deposition."
+      relation_type: formed_by
+      value: alternating_tidal_currents_bank_erosion_and_sediment_deposition
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_creek_levee
+      definition: "A low ridge bordering a tidal channel, formed when suspended sediment settles during tidal flooding."
+      relation_type: formed_by
+      value: tidal_flooding_suspended_sediment_settling
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_island
+      definition: "An island connected to or separated from the mainland as changing tidal elevation exposes or submerges the intervening ground."
+      relation_type: formed_by
+      value: tidal_elevation_change
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tide_pool
+      definition: "A rocky coastal depression that retains seawater after the falling tide isolates it from the surrounding sea (cross: Venus)."
+      relation_type: formed_by
+      value: falling_tide_isolation
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_notch
+      definition: "A horizontal indentation in coastal rock shaped near recurring tidal levels by wave action, marine weathering, and biological erosion (cross: Venus)."
+      relation_type: formed_by
+      value: tidal_level_wave_action_marine_weathering_and_biological_erosion
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: intertidal_shore_platform
+      definition: "A relatively flat rocky coastal surface exposed between tidal limits and shaped by marine erosion and weathering (cross: Venus)."
+      relation_type: formed_by
+      value: marine_erosion_and_weathering_between_tidal_limits
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tide_dominated_delta
+      definition: "A river-mouth deposit whose channels and sediment bodies are strongly reorganized by reversing tidal currents (cross: Mercury)."
+      relation_type: formed_by
+      value: reversing_tidal_current_reorganization
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tidal_river_reach
+      definition: "A lower river channel whose water level, flow direction, and sediment distribution are periodically influenced by tides (cross: Venus)."
+      relation_type: formed_by
+      value: periodic_tidal_influence
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: barrier_island
+      definition: "An elongated offshore sand body constructed mainly by wave deposition and subsequently modified by tidal inlets, tidal flooding, and wind-blown dunes (cross: Venus and Jupiter)."
+      relation_type: formed_by
+      value: wave_deposition_tidal_modification_and_wind_blown_dunes
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: talus_slope
+      definition: "A sloping accumulation of broken rock formed when gravity pulls detached fragments downward from a cliff or steep rock face."
+      relation_type: formed_by
+      value: gravity_driven_rockfall_accumulation
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: scree_slope
+      definition: "A steep surface of loose rock fragments produced by physical weathering followed by gravity-driven downslope accumulation."
+      relation_type: formed_by
+      value: physical_weathering_and_gravity_driven_accumulation
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: talus_cone
+      definition: "A cone-shaped deposit of rock debris built beneath a gully or cliff by repeated gravity-driven rockfall."
+      relation_type: formed_by
+      value: repeated_gravity_driven_rockfall
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: colluvial_apron
+      definition: "A gently sloping deposit at a hillside base formed by gravity-driven accumulation of weathered soil and rock."
+      relation_type: formed_by
+      value: gravity_driven_accumulation_of_weathered_material
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: landslide_scar
+      definition: "A steep, exposed slope surface left behind when rock or soil detaches and moves downslope under gravity."
+      relation_type: formed_by
+      value: gravity_driven_slope_failure
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: slump_scarp
+      definition: "A curved headwall formed when a mass of soil or rock rotates and moves downward under gravitational force."
+      relation_type: formed_by
+      value: rotational_gravity_driven_mass_movement
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: rotational_slump_block
+      definition: "A displaced mass of earth or rock that moves downslope along a curved failure surface under gravity."
+      relation_type: formed_by
+      value: rotational_gravity_driven_mass_movement
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: earthflow_lobe
+      definition: "A rounded deposit formed when water-rich soil or weathered material moves slowly downhill under gravitational force."
+      relation_type: formed_by
+      value: water_rich_gravity_driven_earthflow
+      governor: moon
+      canonicality: primary
+      source_class: empirical_domain_fact
 
-  - entity_id: desert_varnish
-    definition: "Orange-to-black coating of clay minerals and iron and manganese oxides that develops on exposed rock in arid environments."
-    relation_type: receives
-    value: windborne_clay_and_mineral_oxide_accretion
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
+mars:
+  process_family: igneous_and_impact
+  entities:
+    - entity_id: volcano
+      definition: "A landform built around a crustal opening through which magma, volcanic gases, and fragmented rock reach the surface."
+      relation_type: formed_by
+      value: magma_eruption_and_volcanic_construction
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: volcanic_vent
+      definition: "An opening in the ground formed and maintained by the upward escape of magma, ash, and volcanic gases."
+      relation_type: formed_by
+      value: magma_ash_and_volcanic_gas_escape
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: volcanic_cone
+      definition: "A cone-shaped accumulation of lava, ash, or fragmented volcanic material deposited around an eruptive vent."
+      relation_type: formed_by
+      value: eruptive_material_deposition
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: cinder_cone
+      definition: "A steep volcanic hill built from loose fragments of gas-rich lava expelled during explosive eruptions."
+      relation_type: formed_by
+      value: explosive_eruption_of_gas_rich_lava
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: spatter_cone
+      definition: "A steep-sided cone formed when still-molten lava fragments fall around a vent and weld together."
+      relation_type: formed_by
+      value: welding_of_molten_lava_fragments
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tuff_cone
+      definition: "A volcanic cone composed mainly of fragmented ash produced when rising magma explosively interacts with water."
+      relation_type: formed_by
+      value: explosive_magma_water_interaction
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tuff_ring
+      definition: "A broad, low volcanic rim formed by explosive interaction between magma and shallow groundwater or surface water."
+      relation_type: formed_by
+      value: explosive_magma_water_interaction
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: shield_volcano
+      definition: "A broad, gently sloping volcano constructed by repeated eruptions of highly fluid lava."
+      relation_type: formed_by
+      value: repeated_fluid_lava_eruptions
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: stratovolcano
+      definition: "A steep-sided volcanic mountain built from alternating layers of lava flows, ash, and other eruptive debris."
+      relation_type: formed_by
+      value: alternating_lava_ash_and_eruptive_debris_deposition
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: complex_volcano
+      definition: "A volcanic landform composed of multiple overlapping vents, cones, domes, or eruption centers."
+      relation_type: formed_by
+      value: overlapping_volcanic_eruption_centers
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: somma_volcano
+      definition: "A volcanic complex consisting of a younger central cone surrounded partly or completely by an older caldera rim."
+      relation_type: formed_by
+      value: central_cone_growth_within_caldera_remnant
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: pyroclastic_shield
+      definition: "A broad volcanic edifice built predominantly from widespread deposits of explosive volcanic fragments."
+      relation_type: formed_by
+      value: widespread_pyroclastic_deposition
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: supervolcano
+      definition: "A volcanic system capable of exceptionally large explosive eruptions that produce extensive ash deposits and major caldera collapse."
+      relation_type: formed_by
+      value: exceptionally_large_explosive_eruption_and_caldera_collapse
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: volcanic_crater
+      definition: "A roughly circular depression around a volcanic vent formed by explosive excavation or localized collapse."
+      relation_type: formed_by
+      value: explosive_excavation_or_localized_collapse
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: caldera
+      definition: "A large volcanic depression formed when the ground collapses after substantial withdrawal or eruption of underlying magma."
+      relation_type: formed_by
+      value: magma_withdrawal_or_eruption_induced_collapse
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: pit_crater
+      definition: "A steep-sided volcanic depression formed by collapse into an underground void or evacuated magma pathway."
+      relation_type: formed_by
+      value: collapse_into_an_underground_void_or_evacuated_magma_pathway
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: maar
+      definition: "A broad, low-relief volcanic crater excavated by explosive interaction between magma and groundwater."
+      relation_type: formed_by
+      value: explosive_magma_groundwater_interaction
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: diatreme
+      definition: "A steep volcanic pipe excavated and filled by gas-driven explosive eruptions, commonly involving magma-water interaction."
+      relation_type: formed_by
+      value: gas_driven_explosive_eruption_and_magma_water_interaction
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: fissure_vent
+      definition: "An elongated volcanic opening through which lava erupts along a fracture in the ground."
+      relation_type: formed_by
+      value: lava_eruption_along_a_ground_fracture
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: lava_dome
+      definition: "A steep-sided mound formed when highly viscous lava extrudes slowly and accumulates around a volcanic vent."
+      relation_type: formed_by
+      value: slow_extrusion_of_highly_viscous_lava
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: cryptodome
+      definition: "A buried or partly exposed dome created when rising magma deforms overlying rock without immediately erupting at the surface."
+      relation_type: formed_by
+      value: magma_induced_deformation_of_overlying_rock
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: resurgent_dome
+      definition: "A raised floor within a caldera formed when renewed magma accumulation pushes the ground upward."
+      relation_type: formed_by
+      value: renewed_magma_accumulation
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: lava_spine
+      definition: "A steep, narrow projection formed when highly viscous solidifying lava is extruded upward from a volcanic vent."
+      relation_type: formed_by
+      value: upward_extrusion_of_viscous_solidifying_lava
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: lava_coulee
+      definition: "A short, thick lava body formed when viscous magma extrudes and advances slowly away from its source."
+      relation_type: formed_by
+      value: slow_advance_of_viscous_extruded_magma
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: lava_field
+      definition: "An extensive surface covered by one or more solidified lava flows."
+      relation_type: formed_by
+      value: solidification_of_lava_flows
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: lava_plain
+      definition: "A broad, relatively level volcanic surface produced by repeated spreading and solidification of fluid lava."
+      relation_type: formed_by
+      value: repeated_spreading_and_solidification_of_fluid_lava
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: basalt_plateau
+      definition: "An elevated or extensive landscape built by successive outpourings of low-viscosity basaltic lava."
+      relation_type: formed_by
+      value: successive_low_viscosity_basaltic_lava_outpourings
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: flood_basalt_plateau
+      definition: "A vast volcanic plain or plateau formed by unusually large eruptions of basalt from fissures."
+      relation_type: formed_by
+      value: large_scale_fissure_basalt_eruptions
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: ignimbrite_plateau
+      definition: "A broad volcanic surface formed when extensive pyroclastic density currents deposit thick sheets of hot ash and pumice."
+      relation_type: formed_by
+      value: pyroclastic_density_current_deposition
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: oceanic_plateau
+      definition: "A broad elevated region of oceanic crust commonly formed by unusually large submarine basalt eruptions (cross: Saturn)."
+      relation_type: formed_by
+      value: large_scale_submarine_basalt_eruptions
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: lava_tube
+      definition: "A tunnel formed when the exterior of a flowing lava stream hardens while molten lava continues moving beneath the crust."
+      relation_type: formed_by
+      value: lava_crust_solidification_over_continued_molten_flow
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: lava_channel
+      definition: "An open trough formed and maintained by flowing molten lava."
+      relation_type: formed_by
+      value: flowing_molten_lava
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: lava_levee
+      definition: "A raised ridge along a lava channel formed when cooling lava accumulates beside the moving flow."
+      relation_type: formed_by
+      value: cooling_lava_accumulation_beside_moving_flow
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: hornito
+      definition: "A small spatter-built cone formed when lava escapes through the solidified crust of an underlying lava flow."
+      relation_type: formed_by
+      value: lava_escape_through_solidified_flow_crust
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: rootless_cone
+      definition: "A small volcanic-looking cone produced when a lava flow triggers steam explosions over wet ground without a direct magma conduit beneath it."
+      relation_type: formed_by
+      value: lava_induced_steam_explosions_over_wet_ground
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: malpais
+      definition: "A rough, sparsely vegetated landscape formed by the accumulation and preservation of irregular volcanic lava flows."
+      relation_type: formed_by
+      value: accumulation_and_preservation_of_irregular_lava_flows
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: kipuka
+      definition: "An isolated patch of older terrain surrounded by younger lava flows."
+      relation_type: formed_by
+      value: younger_lava_flow_encirclement
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: lava_lake
+      definition: "A crater or vent basin occupied by exposed molten lava supplied from an underlying magmatic system."
+      relation_type: formed_by
+      value: magmatic_supply_of_exposed_molten_lava
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: columnar_basalt
+      definition: "An exposure of polygonally jointed basalt formed when a cooling lava body contracts and fractures."
+      relation_type: formed_by
+      value: cooling_lava_contraction_and_fracturing
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: volcanic_plug
+      definition: "A resistant mass of solidified magma occupying a former volcanic conduit and commonly exposed by erosion."
+      relation_type: formed_by
+      value: magma_solidification_in_a_volcanic_conduit
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: volcanic_neck
+      definition: "A steep residual landform formed when erosion removes softer surrounding material from a solidified volcanic conduit."
+      relation_type: formed_by
+      value: erosional_exposure_of_a_solidified_volcanic_conduit
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: dike_ridge
+      definition: "A narrow wall-like landform formed when erosion exposes a resistant sheet of igneous rock injected into an older fracture."
+      relation_type: formed_by
+      value: erosional_exposure_of_an_igneous_dike
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: volcanic_dam
+      definition: "A natural barrier formed when lava flows or volcanic debris block an existing drainage route (cross: Venus)."
+      relation_type: formed_by
+      value: lava_flow_or_volcanic_debris_drainage_blockage
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: volcanic_crater_lake
+      definition: "A lake occupying a volcanic crater or caldera excavated by eruption or collapse."
+      relation_type: formed_by
+      value: volcanic_eruption_or_collapse_excavation
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: volcanic_island
+      definition: "An island constructed when repeated eruptions build a submarine volcano above sea level."
+      relation_type: formed_by
+      value: repeated_submarine_eruption_and_volcanic_construction
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: seamount
+      definition: "An underwater mountain formed predominantly by submarine volcanic activity."
+      relation_type: formed_by
+      value: submarine_volcanic_activity
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: seamount_chain
+      definition: "A linear sequence of submarine volcanic mountains formed as a tectonic plate moves across a persistent magma source (cross: Saturn)."
+      relation_type: formed_by
+      value: plate_motion_across_a_persistent_magma_source
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: guyot
+      definition: "A flat-topped submarine volcanic mountain whose summit was eroded near sea level before tectonic subsidence submerged it (cross: Venus and Saturn)."
+      relation_type: formed_by
+      value: submarine_volcanic_construction_erosion_and_tectonic_subsidence
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: volcanic_arc
+      definition: "A curved chain of volcanoes formed where subduction generates magma above a descending tectonic plate (cross: Saturn)."
+      relation_type: formed_by
+      value: subduction_generated_magma
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: submarine_volcano
+      definition: "A volcano formed beneath a sea or lake through eruption of magma from the submerged crust."
+      relation_type: formed_by
+      value: submerged_crustal_magma_eruption
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: subglacial_mound
+      definition: "A volcanic mound built by eruptions occurring beneath a glacier or ice sheet."
+      relation_type: formed_by
+      value: subglacial_volcanic_eruption
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tuya
+      definition: "A steep-sided, flat-topped volcano formed when magma erupts beneath ice and subsequently breaks through or melts upward."
+      relation_type: formed_by
+      value: subglacial_magma_eruption_and_ice_breakthrough
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: cryovolcano
+      definition: "An extraterrestrial eruptive landform that expels water, ammonia, methane, or other volatile substances instead of conventional molten silicate rock."
+      relation_type: formed_by
+      value: cryovolcanic_volatile_eruption
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: geyser
+      definition: "A hydrothermal vent that intermittently erupts hot water and steam when geothermal heating builds pressure in an underground plumbing system (cross: Mercury)."
+      relation_type: formed_by
+      value: geothermal_heating_and_pressure_buildup
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: fumarole
+      definition: "A volcanic or geothermal opening through which heated gases and steam escape from underground."
+      relation_type: formed_by
+      value: volcanic_or_geothermal_gas_and_steam_escape
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: hydrothermal_vent_chimney
+      definition: "A mineral tower formed when hot, chemically enriched geothermal fluids discharge and precipitate minerals into colder surrounding water (cross: Mercury)."
+      relation_type: formed_by
+      value: hydrothermal_fluid_discharge_and_mineral_precipitation
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: impact_crater
+      definition: "A circular depression excavated when an asteroid, comet, or other object strikes a planetary surface at high velocity."
+      relation_type: formed_by
+      value: hypervelocity_extraterrestrial_impact
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: simple_crater
+      definition: "A relatively small, bowl-shaped impact depression formed primarily by explosive excavation."
+      relation_type: formed_by
+      value: impact_driven_explosive_excavation
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: complex_crater
+      definition: "A large impact crater with terraced walls, a relatively flat floor, or central uplift produced by gravitational collapse after impact."
+      relation_type: formed_by
+      value: impact_induced_gravitational_collapse
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: central_peak
+      definition: "A raised mound in the middle of a large impact crater formed when compressed rock rebounds upward following impact."
+      relation_type: formed_by
+      value: impact_induced_rock_rebound
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: peak_ring_crater
+      definition: "A large impact structure containing an inner ring of uplifted mountains produced by collapse and rebound after impact."
+      relation_type: formed_by
+      value: impact_induced_collapse_and_rebound
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: multi_ring_impact_basin
+      definition: "An exceptionally large impact depression surrounded by multiple concentric structural rings created during crustal excavation and collapse."
+      relation_type: formed_by
+      value: impact_driven_crustal_excavation_and_collapse
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: ejecta_blanket
+      definition: "A surrounding deposit of rock and debris thrown outward during formation of an impact crater."
+      relation_type: formed_by
+      value: impact_ejecta_deposition
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: crater_ray
+      definition: "A long, radial streak of impact ejecta extending outward from an impact crater."
+      relation_type: formed_by
+      value: radial_impact_ejecta_deposition
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: secondary_impact_crater
+      definition: "A smaller crater produced when material ejected from a larger impact strikes the surrounding surface."
+      relation_type: formed_by
+      value: secondary_impact_by_ejected_material
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: impact_crater_lake
+      definition: "A lake occupying a basin originally excavated by an extraterrestrial impact."
+      relation_type: formed_by
+      value: extraterrestrial_impact_excavation
+      governor: mars
+      canonicality: primary
+      source_class: empirical_domain_fact
 
-  - entity_id: dry_lake
-    definition: "Dry basin or lakebed formerly occupied by standing surface water and now exposing fine lacustrine sediment."
-    relation_type: activated_by
-    value: aeolian_reworking_of_exposed_lacustrine_sediment
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
+mercury:
+  process_family: transitional_and_interface
+  entities:
+    - entity_id: river_delta
+      definition: "A sedimentary landform built where a river enters standing water and loses enough velocity to deposit its sediment load."
+      relation_type: formed_by
+      value: river_entry_into_standing_water_and_sediment_deposition
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: delta_plain
+      definition: "The relatively flat upper surface of a delta formed by distributary-channel migration, overbank flooding, and sediment accumulation."
+      relation_type: formed_by
+      value: distributary_channel_migration_overbank_flooding_and_sediment_accumulation
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: delta_front
+      definition: "The inclined zone at the outward margin of a delta where river-delivered sediment enters and settles into a receiving water body."
+      relation_type: formed_by
+      value: river_delivered_sediment_settling_in_receiving_water
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: prodelta
+      definition: "A submerged, fine-grained sedimentary zone beyond the delta front where suspended river sediment settles into deeper water."
+      relation_type: formed_by
+      value: suspended_river_sediment_settling_in_deeper_water
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: distributary_channel
+      definition: "A branching channel that diverts water and sediment away from a main river across a delta or alluvial fan."
+      relation_type: formed_by
+      value: river_water_and_sediment_diversion
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: distributary_mouth_bar
+      definition: "A sediment deposit formed where a distributary enters open water and its current abruptly slows."
+      relation_type: formed_by
+      value: distributary_current_deceleration_in_open_water
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: fan_delta
+      definition: "A delta formed where a steep alluvial fan delivers sediment directly into a lake or coastal water body."
+      relation_type: formed_by
+      value: alluvial_fan_sediment_delivery_to_standing_water
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: estuary
+      definition: "A partially enclosed coastal basin where freshwater discharge mixes with seawater under the combined influence of river flow and tides."
+      relation_type: formed_by
+      value: freshwater_seawater_mixing_under_river_and_tidal_influence
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: bar_built_estuary
+      definition: "An estuary partly enclosed by a coastal sediment barrier that restricts and regulates exchange between river water and the sea."
+      relation_type: formed_by
+      value: coastal_sediment_barrier_restricted_exchange
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: ria
+      definition: "A coastal inlet formed when rising sea level or land subsidence floods a previously river-cut valley."
+      relation_type: formed_by
+      value: sea_level_rise_or_land_subsidence_flooding_of_a_river_valley
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: lagoon
+      definition: "A shallow water body separated from a larger sea or lake by a barrier while retaining limited hydrological exchange."
+      relation_type: formed_by
+      value: barrier_separation_and_limited_hydrological_exchange
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: back_barrier_lagoon
+      definition: "A shallow basin behind a barrier island or spit, maintained by restricted exchange among tidal water, groundwater, and freshwater inflow."
+      relation_type: formed_by
+      value: restricted_tidal_groundwater_and_freshwater_exchange
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: baymouth_bar
+      definition: "A sediment barrier deposited across the entrance of a bay by waves and longshore currents, partly isolating the water behind it (cross: Venus)."
+      relation_type: formed_by
+      value: wave_and_longshore_current_sediment_deposition
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: alluvial_fan
+      definition: "A fan-shaped sediment deposit formed where a stream exits a confined mountain channel and spreads across a lower-gradient surface."
+      relation_type: formed_by
+      value: stream_exit_from_a_confined_channel_and_sediment_spreading
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: bajada
+      definition: "A broad piedmont surface formed when neighboring alluvial fans merge along a mountain front."
+      relation_type: formed_by
+      value: coalescence_of_neighboring_alluvial_fans
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: debris_flow_fan
+      definition: "A fan-shaped deposit formed where sediment-rich gravity-driven flows leave a confined channel and spread across flatter ground (cross: Moon)."
+      relation_type: formed_by
+      value: sediment_rich_gravity_flow_spreading
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: pediment
+      definition: "A gently sloping bedrock surface at a mountain front shaped by weathering, sheetwash, and the transition from steep upland to lower-relief terrain."
+      relation_type: formed_by
+      value: weathering_sheetwash_and_mountain_plain_transition
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: abyssal_fan
+      definition: "A deep-sea sediment deposit formed where sediment-laden gravity currents emerge from submarine channels and spread across the ocean floor."
+      relation_type: formed_by
+      value: submarine_gravity_current_sediment_spreading
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: submarine_canyon
+      definition: "A steep underwater valley cut into a continental margin by sediment-laden flows, slope failure, and related erosive processes."
+      relation_type: formed_by
+      value: sediment_laden_flows_slope_failure_and_erosion
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: continental_rise
+      definition: "A gently sloping submarine accumulation formed where sediments descend the continental slope and spread toward the abyssal plain."
+      relation_type: formed_by
+      value: continental_slope_sediment_descent_and_spreading
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: confluence
+      definition: "A junction where two flowing watercourses meet and combine their discharge, sediment loads, and channel-forming forces."
+      relation_type: formed_by
+      value: watercourse_convergence_and_combined_discharge
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: fall_line
+      definition: "A boundary where rivers cross from resistant upland bedrock onto softer coastal-plain sediments, commonly producing rapids or waterfalls (cross: Venus and Saturn)."
+      relation_type: formed_by
+      value: river_transition_between_resistant_bedrock_and_softer_sediment
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: knickpoint
+      definition: "An abrupt break in a river’s longitudinal slope formed where changing base level, bedrock resistance, or uplift reorganizes channel erosion (cross: Venus and Saturn)."
+      relation_type: formed_by
+      value: base_level_bedrock_resistance_or_uplift_reorganization
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: karst
+      definition: "A landscape shaped by the dissolution of soluble bedrock where groundwater and surface water interact with limestone, dolomite, gypsum, or similar materials."
+      relation_type: formed_by
+      value: groundwater_and_surface_water_dissolution_of_soluble_bedrock
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: sinkhole
+      definition: "A closed depression formed when soluble bedrock dissolves or when overlying material collapses into an underground cavity."
+      relation_type: formed_by
+      value: soluble_bedrock_dissolution_or_cavity_collapse
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: doline
+      definition: "A closed karst depression produced by dissolution, subsidence, or collapse of soluble bedrock."
+      relation_type: formed_by
+      value: soluble_bedrock_dissolution_subsidence_or_collapse
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: cenote
+      definition: "A steep-sided, groundwater-filled karst sinkhole formed when dissolution and roof collapse expose an underground aquifer."
+      relation_type: formed_by
+      value: karst_dissolution_and_roof_collapse
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: blue_hole
+      definition: "A deep, water-filled karst depression created by dissolution and collapse before subsequent flooding by freshwater or seawater."
+      relation_type: formed_by
+      value: karst_dissolution_collapse_and_subsequent_flooding
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: uvala
+      definition: "A large, irregular karst depression formed through enlargement and merging of multiple sinkholes."
+      relation_type: formed_by
+      value: enlargement_and_merging_of_sinkholes
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: polje
+      definition: "A broad, flat-floored closed basin formed by karst dissolution, structural control, and sediment accumulation."
+      relation_type: formed_by
+      value: karst_dissolution_structural_control_and_sediment_accumulation
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: ponor
+      definition: "An opening through which surface water drains downward into an underground karst system."
+      relation_type: formed_by
+      value: surface_water_drainage_into_underground_karst
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: swallow_hole
+      definition: "A natural opening where a surface stream disappears into fractures, cavities, or conduits in soluble rock."
+      relation_type: formed_by
+      value: surface_stream_capture_by_soluble_rock_conduits
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: sinking_stream
+      definition: "A surface watercourse that enters an underground drainage network through a sinkhole or swallow hole."
+      relation_type: formed_by
+      value: surface_water_entry_into_underground_drainage
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: blind_valley
+      definition: "A valley that terminates abruptly where its stream disappears into an underground karst conduit."
+      relation_type: formed_by
+      value: stream_capture_by_an_underground_karst_conduit
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: karst_window
+      definition: "An opening created when collapse exposes an underground stream or groundwater passage."
+      relation_type: formed_by
+      value: collapse_exposure_of_an_underground_waterway
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: karst_spring
+      definition: "A groundwater outlet where water traveling through dissolved bedrock conduits reemerges at the surface."
+      relation_type: formed_by
+      value: groundwater_reemergence_from_dissolved_bedrock_conduits
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: resurgence
+      definition: "A spring where an underground stream returns to the surface after passing through a subterranean drainage system."
+      relation_type: formed_by
+      value: underground_stream_reemergence
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: estavelle
+      definition: "A karst opening that alternates between functioning as a spring and a sink according to changing groundwater pressure."
+      relation_type: formed_by
+      value: changing_groundwater_pressure
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: solution_cave
+      definition: "An underground cavity formed when groundwater chemically dissolves soluble bedrock along fractures and bedding planes."
+      relation_type: formed_by
+      value: groundwater_dissolution_along_fractures_and_bedding_planes
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: limestone_pavement
+      definition: "A flat limestone surface subdivided into blocks and fissures by dissolution along natural joints."
+      relation_type: formed_by
+      value: dissolution_along_natural_joints
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: clint
+      definition: "A relatively intact block of limestone pavement separated from neighboring blocks by dissolution-widened fractures."
+      relation_type: formed_by
+      value: dissolution_widening_of_limestone_fractures
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: grike
+      definition: "A narrow fissure in limestone pavement enlarged by acidic water dissolving rock along an existing joint."
+      relation_type: formed_by
+      value: acidic_water_dissolution_along_a_joint
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: karren
+      definition: "Small grooves, runnels, and sculpted depressions produced when water dissolves exposed soluble bedrock."
+      relation_type: formed_by
+      value: water_dissolution_of_exposed_soluble_bedrock
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tower_karst
+      definition: "A landscape of steep residual limestone towers formed by prolonged dissolution and erosion around more resistant rock masses."
+      relation_type: formed_by
+      value: prolonged_dissolution_and_erosion
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: mogote
+      definition: "An isolated, steep-sided limestone hill left standing after surrounding soluble rock is lowered by karst dissolution and erosion."
+      relation_type: formed_by
+      value: karst_dissolution_and_erosion_of_surrounding_rock
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: natural_bridge
+      definition: "A rock arch commonly formed when groundwater dissolution or flowing water removes material beneath a resistant rock span."
+      relation_type: formed_by
+      value: groundwater_dissolution_or_flowing_water_erosion
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: spring
+      definition: "A natural discharge point where groundwater emerges onto the land surface."
+      relation_type: formed_by
+      value: groundwater_discharge
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: contact_spring
+      definition: "A spring formed where groundwater encounters a less permeable rock layer and is forced to emerge at the surface."
+      relation_type: formed_by
+      value: groundwater_contact_with_a_less_permeable_layer
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: fault_controlled_spring
+      definition: "A groundwater outlet localized where fault-related fractures provide a pathway or barrier that redirects subsurface flow (cross: Saturn)."
+      relation_type: formed_by
+      value: fault_controlled_groundwater_flow
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: spring_line
+      definition: "A linear arrangement of springs formed where permeable and impermeable rock layers meet along a hillside."
+      relation_type: formed_by
+      value: permeable_and_impermeable_rock_layer_contact
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: seep
+      definition: "A diffuse groundwater discharge area where subsurface water slowly emerges through soil or fractured rock."
+      relation_type: formed_by
+      value: diffuse_groundwater_discharge
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: travertine_terrace
+      definition: "A stepped carbonate deposit formed when mineral-rich spring water loses dissolved carbon dioxide and precipitates calcium carbonate."
+      relation_type: formed_by
+      value: spring_water_degasification_and_calcium_carbonate_precipitation
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tufa_mound
+      definition: "A porous carbonate mound formed when spring water precipitates minerals around a groundwater discharge point."
+      relation_type: formed_by
+      value: spring_water_mineral_precipitation
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: spring_mound
+      definition: "A raised landform built by mineral deposition and sediment accumulation around a persistent groundwater outlet."
+      relation_type: formed_by
+      value: groundwater_outlet_mineral_deposition_and_sediment_accumulation
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: groundwater_sapping_valley
+      definition: "A steep-headed valley formed when groundwater discharge undermines soil or bedrock and causes the valley head to retreat."
+      relation_type: formed_by
+      value: groundwater_discharge_undermining_and_headward_retreat
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: lavaka
+      definition: "A steep-sided erosional hollow formed when groundwater seepage destabilizes deeply weathered hillslope material."
+      relation_type: formed_by
+      value: groundwater_seepage_destabilization_of_weathered_hillslope_material
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: flared_slope
+      definition: "A concave bedrock face developed where moisture-driven weathering concentrates near the boundary between exposed rock and soil."
+      relation_type: formed_by
+      value: moisture_driven_weathering_at_the_rock_soil_boundary
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: etchplain
+      definition: "A low-relief surface produced when bedrock is deeply weathered beneath a soil cover and the weakened material is subsequently stripped away."
+      relation_type: formed_by
+      value: deep_subsurface_weathering_and_material_stripping
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: gas_seep
+      definition: "A localized surface outlet where subsurface gases migrate upward through permeable sediments or fractured bedrock."
+      relation_type: formed_by
+      value: upward_subsurface_gas_migration
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: mofette
+      definition: "A low-temperature geological vent through which carbon dioxide and other deep-sourced gases escape along fractures."
+      relation_type: formed_by
+      value: fracture_controlled_deep_sourced_gas_escape
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: mud_volcano
+      definition: "A cone or mound formed when pressurized water, gas, and fine sediment erupt from underground without requiring molten rock (cross: Saturn)."
+      relation_type: formed_by
+      value: pressurized_water_gas_and_fine_sediment_eruption
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: oasis
+      definition: "A localized desert landscape sustained where groundwater discharge or shallow groundwater reaches an otherwise arid surface (cross: Sun)."
+      relation_type: formed_by
+      value: groundwater_discharge_or_shallow_groundwater
+      governor: mercury
+      canonicality: primary
+      source_class: empirical_domain_fact
 
-  - entity_id: dune
-    definition: "Hill or ridge of loose sediment built by wind-driven transport and deposition."
-    relation_type: formed_by
-    value: aeolian_sediment_transport_and_deposition
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
+venus:
+  process_family: fluvial_and_coastal
+  entities:
+    - entity_id: river
+      definition: "A natural flowing watercourse that shapes its channel and surrounding landscape through erosion, sediment transport, and deposition."
+      relation_type: formed_by
+      value: fluvial_erosion_sediment_transport_and_deposition
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: stream
+      definition: "A flowing surface-water channel formed and continually modified by moving freshwater."
+      relation_type: formed_by
+      value: moving_freshwater
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: river_channel
+      definition: "A linear depression excavated and maintained by the flow of a river."
+      relation_type: formed_by
+      value: river_flow
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: braided_channel
+      definition: "A network of interweaving river channels formed when abundant sediment and variable discharge produce shifting mid-channel bars."
+      relation_type: formed_by
+      value: abundant_sediment_variable_discharge_and_bar_migration
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: anabranch
+      definition: "A subsidiary river channel that separates from and later rejoins the principal watercourse."
+      relation_type: formed_by
+      value: channel_bifurcation_and_rejoining
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: anastomosing_river
+      definition: "A river system consisting of multiple relatively stable interconnected channels separated by vegetated or sediment-built islands."
+      relation_type: formed_by
+      value: stable_interconnected_channels_and_island_formation
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: meander
+      definition: "A sinuous river bend formed by erosion along its outer bank and deposition along its inner bank."
+      relation_type: formed_by
+      value: outer_bank_erosion_and_inner_bank_deposition
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: entrenched_meander
+      definition: "A deeply incised river bend formed when a previously meandering channel cuts downward into bedrock."
+      relation_type: formed_by
+      value: downcutting_of_a_meandering_channel_into_bedrock
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: meander_neck
+      definition: "A narrow strip of land separating adjacent bends of a strongly curving river channel."
+      relation_type: formed_by
+      value: meander_bend_proximity
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: meander_cutoff
+      definition: "A shortened river channel formed when flowing water breaches the narrow neck of an existing meander."
+      relation_type: formed_by
+      value: flowing_water_breach_of_a_meander_neck
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: oxbow_lake
+      definition: "A curved lake formed when a river abandons a former meander after cutting a shorter channel."
+      relation_type: formed_by
+      value: meander_cutoff_and_channel_abandonment
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: cut_bank
+      definition: "A steep outer riverbank eroded by relatively fast-moving water along the outside of a bend."
+      relation_type: formed_by
+      value: fast_flowing_water_outer_bank_erosion
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: point_bar
+      definition: "A sediment accumulation deposited along the inside of a river bend where flow velocity is lower."
+      relation_type: formed_by
+      value: low_velocity_inner_bank_deposition
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: scroll_bar
+      definition: "A curved ridge on a floodplain formed as repeated point-bar deposition accompanies gradual meander migration."
+      relation_type: formed_by
+      value: repeated_point_bar_deposition_and_meander_migration
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: channel_bar
+      definition: "An exposed or submerged sediment deposit formed where a flowing river loses enough energy to deposit transported material."
+      relation_type: formed_by
+      value: river_flow_energy_loss_and_sediment_deposition
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: mid_channel_bar
+      definition: "A sediment body deposited within a river channel where local flow conditions reduce sediment-transport capacity."
+      relation_type: formed_by
+      value: reduced_sediment_transport_capacity
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: braid_bar
+      definition: "A sediment island formed between shifting channels of a braided river."
+      relation_type: formed_by
+      value: braided_channel_sediment_deposition
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: fluvial_island
+      definition: "A landmass within a river formed or maintained by channel splitting, sediment deposition, or erosion around resistant ground."
+      relation_type: formed_by
+      value: channel_splitting_sediment_deposition_or_differential_erosion
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: ait
+      definition: "A small river island formed by sediment accumulation within a flowing channel."
+      relation_type: formed_by
+      value: fluvial_sediment_accumulation
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: towhead
+      definition: "A small, commonly vegetated river island or sandbar produced by fluvial sediment deposition."
+      relation_type: formed_by
+      value: fluvial_sediment_deposition
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: riffle
+      definition: "A shallow, relatively fast-flowing section of a stream formed where coarse sediment accumulates across the channel bed."
+      relation_type: formed_by
+      value: coarse_sediment_accumulation
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: stream_pool
+      definition: "A deeper, slower-moving section of a stream created by localized scour or alternating channel-bed topography."
+      relation_type: formed_by
+      value: localized_scour_or_channel_bed_topography
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: rapids
+      definition: "A steep or constricted river reach where flowing water accelerates over resistant bedrock or coarse channel sediment."
+      relation_type: formed_by
+      value: flow_acceleration_over_resistant_bedrock_or_coarse_sediment
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: waterfall
+      definition: "A vertical or near-vertical drop in a river produced by differential erosion, structural discontinuity, or abrupt channel incision."
+      relation_type: formed_by
+      value: differential_erosion_structural_discontinuity_or_channel_incision
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: plunge_pool
+      definition: "A deep basin excavated beneath a waterfall by the force of falling water and circulating sediment."
+      relation_type: formed_by
+      value: falling_water_and_circulating_sediment_scour
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: fluvial_pothole
+      definition: "A rounded bedrock cavity drilled into a streambed by swirling water and abrasive sediment."
+      relation_type: formed_by
+      value: swirling_water_and_abrasive_sediment
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: rock_cut_basin
+      definition: "A depression carved into bedrock by concentrated flowing water and sediment abrasion."
+      relation_type: formed_by
+      value: concentrated_flowing_water_and_sediment_abrasion
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: canyon
+      definition: "A deep, steep-sided valley excavated predominantly by long-term river incision."
+      relation_type: formed_by
+      value: long_term_river_incision
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: gorge
+      definition: "A narrow, steep-walled valley carved by concentrated river erosion."
+      relation_type: formed_by
+      value: concentrated_river_erosion
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: slot_canyon
+      definition: "A very narrow, deep canyon formed when fast-moving runoff or flash floods incise resistant bedrock."
+      relation_type: formed_by
+      value: fast_moving_runoff_or_flash_flood_incision
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: v_shaped_valley
+      definition: "A narrow valley formed when a river cuts downward while weathering and gravity reshape the valley sides."
+      relation_type: formed_by
+      value: river_downcutting_weathering_and_gravity
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: ravine
+      definition: "A small, steep-sided valley formed chiefly by concentrated runoff and stream erosion."
+      relation_type: formed_by
+      value: concentrated_runoff_and_stream_erosion
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: gulch
+      definition: "A narrow, steep-sided channel or valley carved by intermittent or rapidly flowing water."
+      relation_type: formed_by
+      value: intermittent_or_rapidly_flowing_water
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: gully
+      definition: "A sharply incised channel formed when concentrated runoff erodes soil or unconsolidated sediment."
+      relation_type: formed_by
+      value: concentrated_runoff_erosion
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: arroyo
+      definition: "A steep-banked, usually dry channel carved by intermittent runoff and flash floods in an arid region."
+      relation_type: formed_by
+      value: intermittent_runoff_and_flash_floods
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: wadi
+      definition: "An ordinarily dry valley or channel that carries water during episodic rainfall and flash flooding."
+      relation_type: formed_by
+      value: episodic_rainfall_and_flash_flooding
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: badlands
+      definition: "A heavily dissected landscape shaped by rapid runoff erosion, gullying, and slope instability in weak sedimentary material."
+      relation_type: formed_by
+      value: rapid_runoff_erosion_gullying_and_slope_instability
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: floodplain
+      definition: "A relatively flat valley-floor surface built by repeated river flooding and sediment deposition."
+      relation_type: formed_by
+      value: repeated_river_flooding_and_sediment_deposition
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: backswamp
+      definition: "A low-lying floodplain depression where fine sediment and standing water accumulate behind natural levees."
+      relation_type: formed_by
+      value: fine_sediment_and_standing_water_accumulation
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: natural_levee
+      definition: "A raised ridge beside a river formed when floodwaters spill over the bank and deposit relatively coarse sediment."
+      relation_type: formed_by
+      value: overbank_floodwater_coarse_sediment_deposition
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: crevasse_splay
+      definition: "A fan-shaped floodplain deposit formed when floodwater breaches a natural levee and spreads sediment outward."
+      relation_type: formed_by
+      value: levee_breach_floodwater_and_sediment_spreading
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: yazoo_stream
+      definition: "A tributary that flows parallel to a larger river because the main river’s natural levee prevents immediate confluence."
+      relation_type: formed_by
+      value: natural_levee_prevention_of_immediate_confluence
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: palaeochannel
+      definition: "An abandoned river channel preserved as a depression, sediment-filled trough, or buried landscape feature."
+      relation_type: formed_by
+      value: river_channel_abandonment_and_preservation
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: fluvial_terrace
+      definition: "An elevated remnant of a former floodplain or riverbed left above a modern channel after renewed river incision."
+      relation_type: formed_by
+      value: renewed_river_incision
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: strath_terrace
+      definition: "A bedrock bench along a valley side formed by lateral river erosion and later abandoned as the river cuts downward."
+      relation_type: formed_by
+      value: lateral_river_erosion_and_subsequent_downcutting
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: alluvial_terrace
+      definition: "A step-like remnant of former river deposits left above the active floodplain by subsequent channel incision."
+      relation_type: formed_by
+      value: channel_incision_of_former_alluvial_deposits
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: exhumed_river_channel
+      definition: "An ancient sediment-filled channel exposed when erosion removes younger material that had buried it."
+      relation_type: formed_by
+      value: erosional_exhumation_of_a_buried_channel
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: inverted_river_channel
+      definition: "A former river channel standing above its surroundings because its cemented or coarse fill resists erosion more effectively than adjacent deposits."
+      relation_type: formed_by
+      value: differential_erosion_of_resistant_channel_fill
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: water_gap
+      definition: "A narrow opening through a ridge cut by a river that maintains its course despite resistant or rising terrain."
+      relation_type: formed_by
+      value: river_incision_through_resistant_or_rising_terrain
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: wind_gap
+      definition: "A former river-cut opening through a ridge that no longer carries a stream and is not necessarily shaped by wind."
+      relation_type: formed_by
+      value: abandoned_river_incision
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: drainage_divide
+      definition: "An elevated boundary separating neighboring river catchments and maintained by competing erosion on opposite slopes."
+      relation_type: formed_by
+      value: competing_erosion_between_river_catchments
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: interfluve
+      definition: "The elevated ground between adjacent river valleys shaped by incision of the surrounding drainage channels."
+      relation_type: formed_by
+      value: surrounding_drainage_channel_incision
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: pediplain
+      definition: "A broad low-relief surface produced when multiple pediments expand and merge through prolonged weathering and sheetwash erosion."
+      relation_type: formed_by
+      value: pediment_expansion_weathering_and_sheetwash_erosion
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: peneplain
+      definition: "A landscape reduced to low relief by prolonged erosion, commonly involving extensive river-driven denudation."
+      relation_type: formed_by
+      value: prolonged_river_driven_denudation
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: lacustrine_plain
+      definition: "A relatively flat surface formed when a lake basin fills with water-transported sediment."
+      relation_type: formed_by
+      value: lake_basin_sediment_infill
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: lacustrine_terrace
+      definition: "A step-like former lakeshore shaped by wave erosion or sediment deposition at an earlier lake level."
+      relation_type: formed_by
+      value: wave_erosion_or_sediment_deposition_at_a_former_lake_level
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: beach
+      definition: "An accumulation of sand, gravel, or other loose sediment shaped by waves and shoreline currents along a sea or lake."
+      relation_type: formed_by
+      value: wave_and_shoreline_current_sediment_transport
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: beach_ridge
+      definition: "An elongated sediment ridge parallel to a shoreline, built by repeated wave deposition and storm activity."
+      relation_type: formed_by
+      value: repeated_wave_deposition_and_storm_activity
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: beach_cusp
+      definition: "A rhythmic, crescent-shaped shoreline feature formed through interaction between swash, sediment movement, and beach slope."
+      relation_type: formed_by
+      value: swash_sediment_movement_and_beach_slope_interaction
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: beach_berm
+      definition: "A low ridge or nearly level bench on a beach formed by sediment deposited at the upper limit of ordinary wave swash."
+      relation_type: formed_by
+      value: upper_swash_limit_sediment_deposition
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: shingle_beach
+      definition: "A shoreline accumulation of pebbles and cobbles sorted and deposited by wave action."
+      relation_type: formed_by
+      value: wave_sorting_and_deposition
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: ayre
+      definition: "A shingle beach or gravel barrier formed by wave-driven transport and deposition along certain northern Scottish coastlines."
+      relation_type: formed_by
+      value: wave_driven_transport_and_deposition
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: nearshore_bar
+      definition: "A submerged or intermittently exposed sediment ridge formed by waves and nearshore currents."
+      relation_type: formed_by
+      value: wave_and_nearshore_current_sediment_transport
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: barrier_bar
+      definition: "An elongated coastal sediment ridge deposited by waves and currents, sometimes partly enclosing a lagoon or bay."
+      relation_type: formed_by
+      value: wave_and_current_sediment_deposition
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: spit
+      definition: "An elongated coastal sediment body built outward from shore by longshore drift."
+      relation_type: formed_by
+      value: longshore_drift
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: recurved_spit
+      definition: "A spit with a curved distal end formed when changing wave direction or tidal currents redirect transported sediment."
+      relation_type: formed_by
+      value: changing_wave_direction_or_tidal_current_sediment_redirection
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tombolo
+      definition: "A sand or gravel ridge connecting an island to the mainland through wave refraction and sediment deposition."
+      relation_type: formed_by
+      value: wave_refraction_and_sediment_deposition
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tied_island
+      definition: "An island connected to the mainland by a tombolo constructed through coastal sediment transport."
+      relation_type: formed_by
+      value: coastal_sediment_transport_and_tombolo_construction
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: cuspate_foreland
+      definition: "A triangular coastal projection formed where sediment accumulates under converging longshore currents."
+      relation_type: formed_by
+      value: converging_longshore_current_sediment_accumulation
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: headland
+      definition: "A coastal rock projection left standing when waves erode neighboring, less resistant material more rapidly."
+      relation_type: formed_by
+      value: differential_wave_erosion
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: cape
+      definition: "A prominent coastal projection shaped by differential marine erosion, sediment accumulation, or underlying geological structure."
+      relation_type: formed_by
+      value: differential_marine_erosion_sediment_accumulation_or_geological_structure
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: bay
+      definition: "A recessed coastal indentation formed or enlarged when waves preferentially erode weaker shoreline material."
+      relation_type: formed_by
+      value: preferential_wave_erosion_of_weaker_shoreline_material
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: bight
+      definition: "A broad, shallow coastal indentation shaped by marine erosion, sediment redistribution, or inherited shoreline structure."
+      relation_type: formed_by
+      value: marine_erosion_sediment_redistribution_or_inherited_shoreline_structure
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: cove
+      definition: "A small, sheltered coastal inlet formed when waves exploit weaker rock behind a more resistant shoreline opening."
+      relation_type: formed_by
+      value: wave_erosion_of_weaker_rock
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: calanque
+      definition: "A steep-sided Mediterranean coastal inlet formed through valley incision, limestone dissolution, and subsequent marine flooding (cross: Mercury)."
+      relation_type: formed_by
+      value: valley_incision_limestone_dissolution_and_marine_flooding
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: sea_cliff
+      definition: "A steep coastal rock face formed when wave erosion undercuts the shoreline and triggers repeated collapse."
+      relation_type: formed_by
+      value: wave_undercutting_and_repeated_collapse
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: sea_cave
+      definition: "A coastal cavity excavated when waves exploit fractures or weak zones in exposed rock."
+      relation_type: formed_by
+      value: wave_erosion_along_fractures_or_weak_zones
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: sea_arch
+      definition: "A natural rock arch formed when wave erosion cuts through a coastal headland."
+      relation_type: formed_by
+      value: wave_erosion_through_a_coastal_headland
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: sea_stack
+      definition: "An isolated coastal rock pillar left standing after wave erosion collapses or removes an adjoining sea arch or headland."
+      relation_type: formed_by
+      value: wave_erosion_and_collapse
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: sea_stump
+      definition: "A low remnant of a former sea stack reduced by continued wave erosion and collapse."
+      relation_type: formed_by
+      value: continued_wave_erosion_and_collapse
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: blowhole
+      definition: "A vertical coastal opening formed where wave action enlarges a sea cave upward until water or spray can escape."
+      relation_type: formed_by
+      value: wave_enlargement_of_a_sea_cave
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: surge_channel
+      definition: "A narrow rocky coastal passage enlarged by repeatedly concentrated wave surges."
+      relation_type: formed_by
+      value: concentrated_wave_surges
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: geo
+      definition: "A narrow, steep-sided coastal inlet carved where wave erosion exploits a fracture or weakness in a cliff."
+      relation_type: formed_by
+      value: wave_erosion_along_a_cliff_fracture_or_weakness
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: wave_cut_notch
+      definition: "A horizontal indentation at the base of a coastal cliff excavated by repeated wave impact and abrasion."
+      relation_type: formed_by
+      value: repeated_wave_impact_and_abrasion
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: wave_cut_platform
+      definition: "A gently sloping bedrock surface exposed as waves erode a coastal cliff and drive it landward."
+      relation_type: formed_by
+      value: wave_erosion_and_cliff_retreat
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: marine_terrace
+      definition: "An elevated former shoreline platform originally shaped by marine erosion or deposition and later raised by uplift or sea-level change (cross: Saturn)."
+      relation_type: formed_by
+      value: marine_erosion_or_deposition_and_subsequent_uplift_or_sea_level_change
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: raised_beach
+      definition: "A former beach stranded above the modern shoreline by tectonic uplift, crustal rebound, or falling relative sea level (cross: Saturn)."
+      relation_type: formed_by
+      value: tectonic_uplift_crustal_rebound_or_relative_sea_level_fall
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: strandflat
+      definition: "A broad, low-relief coastal rock platform produced by interacting marine erosion, weathering, and commonly cold-climate processes."
+      relation_type: formed_by
+      value: marine_erosion_weathering_and_cold_climate_processes
+      governor: venus
+      canonicality: primary
+      source_class: empirical_domain_fact
 
-  - entity_id: erg
-    definition: "Broad area of desert covered by an extensive accumulation of wind-swept sand."
-    relation_type: distributed_through
-    value: migrating_sand_sea
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
+saturn:
+  process_family: tectonic_and_structural
+  entities:
+    - entity_id: fault_trace
+      definition: "A linear surface feature marking where a geological fault intersects the ground."
+      relation_type: formed_by
+      value: fault_intersection_with_the_ground_surface
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: fault_scarp
+      definition: "A steep slope or small cliff formed when movement along a fault vertically offsets the land surface."
+      relation_type: formed_by
+      value: fault_displacement
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: fault_line_scarp
+      definition: "A steep slope produced when erosion preferentially removes weaker rock on one side of an existing fault."
+      relation_type: formed_by
+      value: fault_controlled_differential_erosion
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: normal_fault_escarpment
+      definition: "A steep landform created when crustal extension causes one fault block to drop relative to another."
+      relation_type: formed_by
+      value: crustal_extension_and_normal_fault_displacement
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: reverse_fault_scarp
+      definition: "A steep surface offset formed when tectonic compression pushes one crustal block upward over another."
+      relation_type: formed_by
+      value: tectonic_compression_and_reverse_fault_displacement
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: thrust_front
+      definition: "A structural boundary where compressional faulting forces older or deeper rock over adjacent terrain."
+      relation_type: formed_by
+      value: compressional_thrust_faulting
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: graben
+      definition: "A depressed crustal block bounded by normal faults and formed through tectonic extension."
+      relation_type: formed_by
+      value: tectonic_extension_and_normal_faulting
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: half_graben
+      definition: "An asymmetrical subsiding basin bounded mainly by a normal fault along one side."
+      relation_type: formed_by
+      value: normal_fault_controlled_subsidence
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: horst
+      definition: "An elevated crustal block bounded by normal faults and left standing above neighboring subsided blocks."
+      relation_type: formed_by
+      value: normal_faulting_and_relative_uplift
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: fault_block_mountain
+      definition: "A mountain formed when tectonic faulting uplifts, tilts, or exposes a discrete block of crust."
+      relation_type: formed_by
+      value: tectonic_faulting_and_crustal_block_uplift
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tilted_fault_block
+      definition: "A crustal block rotated during extension and bounded by fault-controlled escarpments."
+      relation_type: formed_by
+      value: crustal_extension_and_fault_block_rotation
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: rift_valley
+      definition: "An elongated lowland formed when tectonic extension stretches the crust and causes fault-bounded blocks to subside."
+      relation_type: formed_by
+      value: tectonic_extension_and_fault_bounded_subsidence
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: rift_shoulder
+      definition: "An elevated margin bordering a rift valley, produced by tectonic uplift and flexure during crustal extension."
+      relation_type: formed_by
+      value: tectonic_uplift_and_flexure_during_extension
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: pull_apart_basin
+      definition: "A localized depression formed where movement along offset strike-slip faults creates an extensional gap."
+      relation_type: formed_by
+      value: offset_strike_slip_fault_extension
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: sag_pond
+      definition: "A small depression or pond formed where strike-slip fault movement creates localized subsidence."
+      relation_type: formed_by
+      value: strike_slip_fault_induced_subsidence
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: pressure_ridge
+      definition: "A narrow ridge formed where compressive movement along a fault pushes and buckles the ground upward."
+      relation_type: formed_by
+      value: compressive_fault_motion_and_ground_buckling
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: shutter_ridge
+      definition: "A fault-displaced ridge that moves laterally across a drainage course and blocks or diverts it."
+      relation_type: formed_by
+      value: lateral_fault_displacement
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: offset_stream_channel
+      definition: "A river channel laterally displaced where repeated strike-slip fault movement shifts the ground beneath it (cross: Venus)."
+      relation_type: formed_by
+      value: repeated_strike_slip_fault_displacement
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: faceted_spur
+      definition: "A truncated ridge end shaped when faulting or tectonically controlled erosion cuts across a mountain-front spur."
+      relation_type: formed_by
+      value: faulting_or_tectonically_controlled_erosion
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: triangular_facet
+      definition: "A roughly triangular slope at a mountain front formed where faulting or erosion truncates successive ridges."
+      relation_type: formed_by
+      value: faulting_or_erosional_ridge_truncation
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: fold_mountain
+      definition: "A mountain formed when tectonic compression folds and uplifts layered rock."
+      relation_type: formed_by
+      value: tectonic_compression_folding_and_uplift
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: fold_and_thrust_belt
+      definition: "A mountainous structural zone produced by repeated crustal shortening, folding, and thrust faulting."
+      relation_type: formed_by
+      value: crustal_shortening_folding_and_thrust_faulting
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: orogenic_belt
+      definition: "A broad mountain-building region formed through plate convergence, crustal compression, and tectonic uplift."
+      relation_type: formed_by
+      value: plate_convergence_crustal_compression_and_uplift
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: cordillera
+      definition: "An extensive system of mountain ranges produced primarily by large-scale tectonic convergence, uplift, and deformation."
+      relation_type: formed_by
+      value: large_scale_tectonic_convergence_uplift_and_deformation
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: anticlinal_ridge
+      definition: "An elongated topographic ridge associated with upward-arched rock layers exposed or maintained by tectonic folding and differential erosion."
+      relation_type: formed_by
+      value: tectonic_folding_and_differential_erosion
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: synclinal_valley
+      definition: "An elongated depression associated with downward-folded rock layers and subsequent erosion."
+      relation_type: formed_by
+      value: downward_folding_and_subsequent_erosion
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: monocline
+      definition: "A step-like geological fold formed when otherwise relatively flat rock layers bend over an underlying structural displacement."
+      relation_type: formed_by
+      value: structural_displacement_induced_bending
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: structural_dome
+      definition: "A rounded uplift formed when rock layers arch upward through tectonic deformation, intrusion, or deep subsurface displacement."
+      relation_type: formed_by
+      value: tectonic_deformation_intrusion_or_subsurface_displacement
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: structural_basin
+      definition: "A broad depression formed when geological layers bend downward through tectonic loading, subsidence, or crustal deformation."
+      relation_type: formed_by
+      value: tectonic_loading_subsidence_or_crustal_deformation
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: salt_dome
+      definition: "A structural uplift created when buoyant buried salt rises through overlying sedimentary rocks."
+      relation_type: formed_by
+      value: salt_diaperism
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: cuesta
+      definition: "An asymmetrical ridge formed when gently tilted rock layers produce a steep escarpment on one side and a gentler dip slope on the other."
+      relation_type: formed_by
+      value: tilted_rock_layers_and_differential_erosion
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: hogback
+      definition: "A narrow, steep-sided ridge formed when resistant, strongly tilted rock layers stand above more easily eroded surrounding strata."
+      relation_type: formed_by
+      value: differential_erosion_of_strongly_tilted_resistant_layers
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: homoclinal_ridge
+      definition: "A ridge shaped by erosion of uniformly dipping rock layers with different resistance to weathering."
+      relation_type: formed_by
+      value: differential_erosion_of_uniformly_dipping_layers
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: strike_ridge
+      definition: "An elongated ridge aligned with the horizontal orientation of resistant tilted rock layers."
+      relation_type: formed_by
+      value: erosional_expression_of_resistant_tilted_layers
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: flatiron
+      definition: "A steep triangular landform formed where erosion exposes the inclined surface of a resistant rock layer."
+      relation_type: formed_by
+      value: erosional_exposure_of_an_inclined_resistant_layer
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: structural_bench
+      definition: "A narrow, relatively level surface controlled by a resistant geological layer or structural boundary."
+      relation_type: formed_by
+      value: resistant_geological_layer_or_structural_boundary
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: structural_terrace
+      definition: "A step-like landform produced where contrasting rock resistance or structural displacement creates successive topographic levels."
+      relation_type: formed_by
+      value: contrasting_rock_resistance_or_structural_displacement
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: escarpment
+      definition: "A long, steep slope separating terrain at different elevations, formed by fault displacement, differential erosion, or both."
+      relation_type: formed_by
+      value: fault_displacement_or_differential_erosion
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: mesa
+      definition: "A broad, flat-topped landform preserved where a resistant caprock protects underlying horizontal strata from erosion."
+      relation_type: formed_by
+      value: caprock_protection_and_differential_erosion
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: butte
+      definition: "An isolated, steep-sided, flat-topped hill formed when erosion reduces a formerly larger caprock-protected plateau or mesa."
+      relation_type: formed_by
+      value: erosional_reduction_of_a_caprock_protected_plateau_or_mesa
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tepui
+      definition: "A steep-sided table mountain preserved where resistant plateau-forming rock remains above extensively eroded surrounding terrain."
+      relation_type: formed_by
+      value: differential_erosion_of_resistant_plateau_rock
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: hoodoo
+      definition: "A narrow rock pillar formed when erosion preferentially removes softer material beneath or around a more resistant caprock."
+      relation_type: formed_by
+      value: differential_erosion_beneath_resistant_caprock
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: inselberg
+      definition: "An isolated residual hill or mountain preserved where resistant bedrock withstands weathering and erosion more effectively than surrounding terrain."
+      relation_type: formed_by
+      value: differential_weathering_and_erosion_of_resistant_bedrock
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tor
+      definition: "A prominent pile or outcrop of jointed bedrock exposed when differential weathering and erosion remove surrounding material."
+      relation_type: formed_by
+      value: differential_weathering_and_erosional_exposure
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: nubbin
+      definition: "A small rounded residual bedrock hill formed when joint-controlled weathering and erosion expose resistant rock blocks."
+      relation_type: formed_by
+      value: joint_controlled_weathering_and_erosion
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: joint_valley
+      definition: "A valley aligned with bedrock fractures because flowing water and weathering preferentially erode structurally weakened rock (cross: Venus)."
+      relation_type: formed_by
+      value: structurally_controlled_water_and_weathering_erosion
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: inverted_relief
+      definition: "A landscape in which formerly low features become elevated because resistant infill or cemented material survives erosion better than its surroundings."
+      relation_type: formed_by
+      value: differential_erosion_of_resistant_infill_or_cemented_material
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: uplifted_plateau
+      definition: "A broad, relatively elevated surface raised by regional tectonic uplift."
+      relation_type: formed_by
+      value: regional_tectonic_uplift
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: dissected_plateau
+      definition: "An uplifted or structurally elevated surface cut into ridges and valleys by subsequent stream erosion (cross: Venus)."
+      relation_type: formed_by
+      value: tectonic_uplift_and_subsequent_stream_erosion
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: foreland_basin
+      definition: "A long subsiding basin formed when the weight of an adjacent mountain belt bends the underlying crust downward."
+      relation_type: formed_by
+      value: flexural_subsidence_beneath_an_adjacent_mountain_belt
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: forearc_basin
+      definition: "A sedimentary depression formed between a subduction trench and its associated volcanic arc."
+      relation_type: formed_by
+      value: subduction_zone_tectonic_configuration
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: back_arc_basin
+      definition: "A tectonic basin formed behind a volcanic arc where the overriding plate undergoes extension."
+      relation_type: formed_by
+      value: back_arc_extension
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: accretionary_wedge
+      definition: "A ridge-like mass of deformed sediment scraped from a descending tectonic plate and compressed against an overriding plate."
+      relation_type: formed_by
+      value: subduction_zone_sediment_accretion_and_compression
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: oceanic_trench
+      definition: "A long, narrow seafloor depression formed where one tectonic plate bends downward beneath another."
+      relation_type: formed_by
+      value: subduction
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: mid_ocean_ridge
+      definition: "A submarine mountain chain formed where tectonic plates separate and ascending magma creates new oceanic crust (cross: Mars)."
+      relation_type: formed_by
+      value: seafloor_spreading_and_magma_upwelling
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: transform_fracture_zone
+      definition: "An elongated seafloor lineament formed by lateral displacement and inherited structural offsets along oceanic plate boundaries."
+      relation_type: formed_by
+      value: transform_fault_displacement
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: triple_junction
+      definition: "A location where three tectonic plate boundaries meet and create an intersecting structural pattern."
+      relation_type: formed_by
+      value: intersection_of_three_plate_boundaries
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: ocean_basin
+      definition: "A large submarine depression created and modified by plate spreading, crustal cooling, subsidence, and sediment accumulation."
+      relation_type: formed_by
+      value: plate_spreading_crustal_cooling_subsidence_and_sediment_accumulation
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: continental_shelf
+      definition: "A shallow submerged continental margin shaped by tectonic framework, sea-level change, and marine sediment deposition."
+      relation_type: formed_by
+      value: tectonic_framework_sea_level_change_and_marine_sediment_deposition
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: continental_slope
+      definition: "A steep submarine descent separating the continental shelf from deeper oceanic crust and reflecting the structure of the continental margin."
+      relation_type: formed_by
+      value: continental_margin_structure
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: abyssal_plain
+      definition: "A broad, exceptionally flat deep-ocean surface created when sediment blankets the irregular relief of tectonically formed oceanic crust (cross: Mercury)."
+      relation_type: formed_by
+      value: sediment_blanketing_of_tectonically_formed_oceanic_crust
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: sand_boil
+      definition: "A small sand cone or vent formed when earthquake shaking liquefies water-saturated sediment and forces it upward to the surface (cross: Mercury)."
+      relation_type: formed_by
+      value: earthquake_induced_sediment_liquefaction
+      governor: saturn
+      canonicality: primary
+      source_class: empirical_domain_fact
 
-  - entity_id: hamada
-    definition: "Rocky desert landscape from which most sand and fine sediment has been removed."
-    relation_type: bounded_by
-    value: wind_exposure
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
-
-  - entity_id: inland_dune
-    definition: "Sand dune located away from a modern coast and formed from wind-transported continental sediment."
-    relation_type: formed_by
-    value: continental_aeolian_sand_deposition
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
-
-  - entity_id: medanos
-    definition: "Continental dune or dune field formed by wind-driven accumulation of inland sand."
-    relation_type: formed_by
-    value: continental_aeolian_dune_accumulation
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
-
-  - entity_id: mushroom_rock
-    definition: "Mushroom-shaped rock formation produced when lower rock is eroded more rapidly than the upper portion."
-    relation_type: formed_by
-    value: differential_wind_erosion
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
-
-  - entity_id: paha
-    definition: "Elongated asymmetric loess hill formed from wind-deposited silt and subsequently shaped by erosion."
-    relation_type: formed_by
-    value: aeolian_loess_deposition_and_erosional_shaping
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
-
-  - entity_id: ripple_marks
-    definition: "Small repeated ridges in loose sediment produced by current flow; aeolian ripples are formed by wind-driven grain movement."
-    relation_type: formed_by
-    value: aeolian_saltation_and_surface_creep
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
-
-  - entity_id: sandhill
-    definition: "Xeric ecological community developed on sandy, commonly aeolian terrain and often maintained by recurring wildfire."
-    relation_type: fixed_as
-    value: vegetation_stabilized_aeolian_sand_system
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
-
-  - entity_id: sastrugi
-    definition: "Sharp irregular grooves or ridges formed on a snow surface by wind erosion, deposition, and packing."
-    relation_type: formed_by
-    value: wind_packing_snow
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
-
-  - entity_id: snowdrift
-    definition: "Mound or bank of snow accumulated and sculpted by wind during or after snowfall."
-    relation_type: formed_by
-    value: wind_transport_and_deposition_of_snow
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
-
-  - entity_id: tukulan
-    definition: "Active inland sand dune or dune field occurring in Yakutia in the Russian Federation."
-    relation_type: formed_by
-    value: aeolian_reworking_of_inland_sand_deposits
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
-
-  - entity_id: ventifact
-    definition: "Rock eroded, faceted, or polished by wind-driven sand or ice crystals."
-    relation_type: activated_by
-    value: aeolian_abrasion
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
-
-  - entity_id: yardang
-    definition: "Streamlined ridge or landform carved from consolidated material by wind erosion and abrasion."
-    relation_type: formed_by
-    value: wind_erosion
-    governor: jupiter
-    canonicality: primary
-    source_class: empirical_domain_fact
+jupiter:
+  process_family: aeolian
+  entities:
+    - entity_id: barchan
+      definition: "Crescent-shaped dune formed by aeolian sand transport."
+      relation_type: distributed_through
+      value: moving_air_and_particulate_transport
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: blowout
+      definition: "Depression in a sand-dune ecosystem caused by wind removing exposed sediment."
+      relation_type: formed_by
+      value: wind_deflation
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: desert_varnish
+      definition: "Orange-to-black coating of clay minerals and iron and manganese oxides that develops on exposed rock in arid environments; it is primarily a mineralogical and biological surface coating rather than an inherently Aeolian landform."
+      relation_type: formed_by
+      value: mineralogical_and_biological_surface_accretion
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: dune
+      definition: "Hill or ridge of loose sediment built by wind-driven transport and deposition."
+      relation_type: formed_by
+      value: aeolian_sediment_transport_and_deposition
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: erg
+      definition: "Broad area of desert covered by an extensive accumulation of wind-swept sand."
+      relation_type: distributed_through
+      value: migrating_sand_sea
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: hamada
+      definition: "Rocky desert landscape from which most sand and fine sediment has been removed."
+      relation_type: bounded_by
+      value: wind_exposure
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: inland_dune
+      definition: "Sand dune located away from a modern coast and formed from wind-transported continental sediment."
+      relation_type: formed_by
+      value: continental_aeolian_sand_deposition
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: medanos
+      definition: "Continental dune or dune field formed by wind-driven accumulation of inland sand."
+      relation_type: formed_by
+      value: continental_aeolian_dune_accumulation
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: mushroom_rock
+      definition: "Mushroom-shaped rock formation produced when lower rock is eroded more rapidly than the upper portion; it can result from multiple erosional mechanisms and qualifies as Aeolian only where wind abrasion is demonstrated."
+      relation_type: formed_by
+      value: demonstrated_aeolian_abrasion_and_differential_erosion
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: paha
+      definition: "Elongated asymmetric loess hill formed from wind-deposited silt and subsequently shaped by erosion."
+      relation_type: formed_by
+      value: aeolian_loess_deposition_and_erosional_shaping
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: aeolian_ripple
+      definition: "A small, regularly spaced sediment ridge formed by wind-driven movement of sand grains."
+      relation_type: formed_by
+      value: aeolian_saltation_and_surface_creep
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: sandhill
+      definition: "Xeric ecological community developed on sandy, commonly aeolian terrain and often maintained by recurring wildfire."
+      relation_type: fixed_as
+      value: vegetation_stabilized_aeolian_sand_system
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: sastrugi
+      definition: "Sharp irregular grooves or ridges formed on a cryogenic snow surface by wind erosion, deposition, and packing."
+      relation_type: formed_by
+      value: wind_erosion_deposition_and_packing_of_cryogenic_snow
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: snowdrift
+      definition: "Mound or bank of snow accumulated and sculpted by wind during or after snowfall on a cryogenic substrate."
+      relation_type: formed_by
+      value: wind_transport_and_deposition_of_cryogenic_snow
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: tukulan
+      definition: "Active inland sand dune or dune field occurring in Yakutia in the Russian Federation."
+      relation_type: formed_by
+      value: aeolian_reworking_of_inland_sand_deposits
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: ventifact
+      definition: "Rock eroded, faceted, or polished by wind-driven sand or ice crystals."
+      relation_type: activated_by
+      value: aeolian_abrasion
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: yardang
+      definition: "Streamlined ridge or landform carved from consolidated material by wind erosion and abrasion."
+      relation_type: formed_by
+      value: wind_erosion
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: coastal_foredune
+      definition: "A shore-parallel dune built when wind transports beach sand inland and vegetation or topography traps it (cross: Venus)."
+      relation_type: formed_by
+      value: wind_transport_of_beach_sand_and_vegetation_or_topographic_trapping
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: coastal_dune_system
+      definition: "A group of dunes formed when wind repeatedly transports and deposits sand supplied by a nearby beach (cross: Venus)."
+      relation_type: formed_by
+      value: repeated_wind_transport_and_deposition_of_beach_sand
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: transverse_dune
+      definition: "A dune ridge oriented approximately perpendicular to the prevailing wind where sand supply is abundant."
+      relation_type: formed_by
+      value: abundant_sand_supply_and_prevailing_wind_transport
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: longitudinal_dune
+      definition: "An elongated dune ridge aligned approximately parallel to the dominant sand-transport direction."
+      relation_type: formed_by
+      value: dominant_sand_transport_direction
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: seif_dune
+      definition: "A long, narrow desert dune shaped by winds that approach from more than one direction."
+      relation_type: formed_by
+      value: multidirectional_wind_transport
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: parabolic_dune
+      definition: "A U-shaped dune whose arms point upwind because vegetation anchors its margins while wind advances its center."
+      relation_type: formed_by
+      value: wind_transport_and_vegetation_anchoring
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: star_dune
+      definition: "A tall pyramidal dune with multiple radiating arms formed under strongly variable wind directions."
+      relation_type: formed_by
+      value: strongly_variable_wind_directions
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: barchanoid_ridge
+      definition: "A scalloped dune ridge formed when neighboring crescent-shaped dunes merge under persistent wind transport."
+      relation_type: formed_by
+      value: persistent_wind_transport_and_dune_merging
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: dome_dune
+      definition: "A rounded sand mound formed by wind deposition without a strongly developed slip face."
+      relation_type: formed_by
+      value: wind_deposition
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: reversing_dune
+      definition: "A dune with opposing slip faces produced when seasonal or periodic winds reverse direction."
+      relation_type: formed_by
+      value: reversing_seasonal_or_periodic_winds
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: climbing_dune
+      definition: "A dune that ascends a hillside because persistent wind drives sand upward against the slope."
+      relation_type: formed_by
+      value: persistent_wind_driven_upslope_sand_transport
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: falling_dune
+      definition: "A dune formed when wind-blown sand descends and accumulates on the sheltered side of a steep slope."
+      relation_type: formed_by
+      value: wind_blown_sand_descent_and_accumulation
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: nebkha
+      definition: "A small mound of wind-blown sand accumulated around vegetation or another obstacle."
+      relation_type: formed_by
+      value: wind_blown_sand_accumulation_around_an_obstacle
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: lunette_dune
+      definition: "A crescent-shaped dune formed when wind deposits sediment eroded from the margin of a lake or playa (cross: Sun)."
+      relation_type: formed_by
+      value: wind_deposition_of_lake_or_playa_margin_sediment
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: sand_sheet
+      definition: "A broad, relatively flat accumulation of wind-transported sand lacking prominent dune relief."
+      relation_type: formed_by
+      value: wind_transport_and_deposition_of_sand
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: deflation_hollow
+      definition: "A depression excavated when persistent wind removes loose surface sediment."
+      relation_type: formed_by
+      value: persistent_wind_deflation
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: deflation_lag
+      definition: "A coarse surface layer left behind when wind selectively removes finer sediment."
+      relation_type: formed_by
+      value: selective_wind_deflation
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: megaripple
+      definition: "A large wind-formed ripple composed of mixed grain sizes and maintained by differential sediment transport."
+      relation_type: formed_by
+      value: differential_aeolian_sediment_transport
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: loess_deposit
+      definition: "A widespread accumulation of fine silt transported through the atmosphere and deposited by wind."
+      relation_type: formed_by
+      value: atmospheric_silt_transport_and_wind_deposition
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: loess_hill
+      definition: "An elevated landform composed largely of wind-deposited silt subsequently modified by runoff and slope processes."
+      relation_type: formed_by
+      value: wind_deposited_silt_and_subsequent_runoff_and_slope_processes
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: machair
+      definition: "A low coastal plain formed partly from wind-blown shell-rich beach sand and subsequently stabilized by soil development and vegetation (cross: Venus)."
+      relation_type: formed_by
+      value: wind_blown_shell_rich_beach_sand_and_biotic_stabilization
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: dune_slack
+      definition: "A low depression between coastal dunes formed through wind erosion, dune migration, and interaction with the groundwater table (cross: Mercury)."
+      relation_type: formed_by
+      value: wind_erosion_dune_migration_and_groundwater_interaction
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: zeugen
+      definition: "A tabular desert ridge formed where wind abrasion and weathering remove softer rock beneath or around a resistant cap."
+      relation_type: formed_by
+      value: wind_abrasion_weathering_and_differential_erosion
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
+    - entity_id: ventifact_pavement
+      definition: "A stony desert surface containing rocks faceted and polished by persistent wind-driven sand abrasion."
+      relation_type: formed_by
+      value: persistent_wind_driven_sand_abrasion
+      governor: jupiter
+      canonicality: primary
+      source_class: empirical_domain_fact
