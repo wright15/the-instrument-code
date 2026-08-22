@@ -99,8 +99,8 @@ npm run validate:mechanics-thermodynamics-registry
 npm run validate
 ```
 
-**Results (2026-08-21):** validator 19/19 PASS; pytest 14/14; root validation
-PASS; manifest and checksums refreshed.
+**Results (2026-08-22):** v1 validator 19/19 PASS; v2 validator 21/21 PASS;
+pytest 14/14; root validation PASS; manifest and checksums refreshed.
 
 ## v2.0.0 Direct Capability Array Migration
 
@@ -172,3 +172,5 @@ npm run validate
 All acceptance criteria pass; the registry remains proposed with zero
 authority effect. No runtime, graph, policy, ledger, CRT-310, decision-ledger,
 or frozen-toolkit content changed.
+
+**Ticket closed:** 2026-08-22. Commit `6435c1d`.
