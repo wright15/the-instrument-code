@@ -107,7 +107,7 @@
         { "properties": { "category_id": { "const": "high_entropy_phenomena" }, "section_id": { "const": "high_entropy_thermodynamics" }, "population_status": { "const": "populated_in_this_registry" } } },
         { "properties": { "category_id": { "const": "low_enthalpy_phenomena" }, "section_id": { "const": "low_enthalpy_thermodynamics" }, "population_status": { "const": "populated_in_this_registry" } } },
         { "properties": { "category_id": { "const": "low_entropy_phenomena" }, "section_id": { "const": "low_entropy_thermodynamics" }, "population_status": { "const": "populated_in_this_registry" } } },
-        { "properties": { "category_id": { "const": "equilibrium_phenomena" }, "section_id": { "const": "equilibrium_thermodynamics" }, "population_status": { "const": "placeholder_future_category" } } },
+        { "properties": { "category_id": { "const": "equilibrium_phenomena" }, "section_id": { "const": "equilibrium_thermodynamics" }, "population_status": { "const": "populated_in_this_registry" } } },
         { "properties": { "category_id": { "const": "kinetics" }, "section_id": { "const": null }, "population_status": { "const": "placeholder_future_category" } } },
         { "properties": { "category_id": { "const": "kinematics" }, "section_id": { "const": null }, "population_status": { "const": "placeholder_future_category" } } },
         { "properties": { "category_id": { "const": "weather_dynamics" }, "section_id": { "const": null }, "population_status": { "const": "placeholder_future_category" } } }
@@ -230,8 +230,11 @@
         "capabilities": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["engine_interface"],
-          "properties": { "engine_interface": { "$ref": "#/$defs/capability_entries" } }
+          "required": ["engine_interface", "electric_external"],
+          "properties": {
+            "engine_interface": { "$ref": "#/$defs/capability_entries" },
+            "electric_external": { "$ref": "#/$defs/capability_entries" }
+          }
         }
       }
     },

@@ -73,15 +73,17 @@ def test_all_capability_channels_are_direct_rich_entry_arrays(document) -> None:
         assert all(isinstance(entries, list) and entries for entries in item["capabilities"].values())
         assert "phenomenon_categories" not in item
     mercury = document["elements"][-1]
-    assert set(mercury["capabilities"]) == {"engine_interface"}
+    assert set(mercury["capabilities"]) == {"engine_interface", "electric_external"}
     assert isinstance(mercury["capabilities"]["engine_interface"], list)
+    assert isinstance(mercury["capabilities"]["electric_external"], list)
     assert "polarity_bindings" not in mercury
+    assert "transition_refs" not in mercury
     assert "phenomenon_categories" not in mercury
 
 
 def test_every_leaf_uses_the_strict_rich_schema(document) -> None:
     entries = [entry for _, _, entry in VALIDATOR._all_entries(document)]
-    assert len(entries) == 226
+    assert len(entries) == 276
     assert all(
         VALIDATOR.RICH_ENTRY_REQUIRED_KEYS <= set(entry) <= VALIDATOR.RICH_ENTRY_KEYS
         for entry in entries
@@ -94,6 +96,7 @@ def test_every_leaf_uses_the_strict_rich_schema(document) -> None:
         "high_entropy",
         "low_enthalpy",
         "low_entropy",
+        "equilibrium",
     }
     tagged = [entry for entry in entries if "semantic_transition" in entry]
     assert {
@@ -161,6 +164,27 @@ def test_earth_low_entropy_catalog_is_electric_external_only(document) -> None:
     } == VALIDATOR.EXPECTED_SEMANTIC_TRANSITIONS
 
 
+def test_mercury_equilibrium_catalog_is_electric_external_only(document) -> None:
+    mercury = _element(document, "Quintessence")
+    electric = mercury["capabilities"]["electric_external"]
+    engine = mercury["capabilities"]["engine_interface"]
+    equilibrium_entries = [
+        entry for entry in electric if entry["phenomenon_class"] == "equilibrium"
+    ]
+    assert len(equilibrium_entries) == 50
+    assert all(entry["phenomenon_class"] != "equilibrium" for entry in engine)
+    assert "magnetic_internal" not in mercury["capabilities"]
+    assert [entry["mechanic_id"] for entry in equilibrium_entries] == [
+        mechanic_id
+        for relation in VALIDATOR.SCAFFOLD_RELATIONS.values()
+        for mechanic_id in VALIDATOR.EXPECTED_EQUILIBRIUM_IDS[relation]
+    ]
+    assert all(
+        entry["relation_type"] in VALIDATOR.SCAFFOLD_RELATIONS.values()
+        for entry in equilibrium_entries
+    )
+
+
 def test_base_capability_actions_remain_distinct_from_glossaries(document) -> None:
     for (element, channel), expected in VALIDATOR.EXPECTED_ACTIONS.items():
         entry = _element(document, element)["capabilities"][channel][0]
@@ -200,6 +224,14 @@ def test_schema_rejects_nonuniform_direct_array_entries(document) -> None:
     with pytest.raises(jsonschema.ValidationError):
         schema_validator.validate(invalid_transition)
 
+    mercury_magnetic = deepcopy(document)
+    mercury = _element(mercury_magnetic, "Quintessence")
+    mercury["capabilities"]["magnetic_internal"] = deepcopy(
+        mercury["capabilities"]["electric_external"]
+    )
+    with pytest.raises(jsonschema.ValidationError):
+        schema_validator.validate(mercury_magnetic)
+
 
 def test_semantic_validator_rejects_water_magnetic_glossary_contamination(document) -> None:
     tampered = deepcopy(document)
@@ -223,6 +255,17 @@ def test_semantic_validator_rejects_earth_magnetic_glossary_contamination(docume
     assert error.value.reason_code == "phenomenon_class_placement_invalid"
 
 
+def test_semantic_validator_rejects_mercury_engine_glossary_contamination(document) -> None:
+    tampered = deepcopy(document)
+    mercury = _element(tampered, "Quintessence")
+    mercury["capabilities"]["engine_interface"].append(
+        mercury["capabilities"]["electric_external"].pop(0)
+    )
+    with pytest.raises(VALIDATOR.MechanicsThermodynamicsValidationError) as error:
+        VALIDATOR.verify_registry_document(tampered)
+    assert error.value.reason_code == "phenomenon_class_placement_invalid"
+
+
 def test_adversarial_mutations_are_rejected_with_stable_codes(document) -> None:
     assert VALIDATOR._adversarial_results(document) == VALIDATOR.EXPECTED_MUTATION_CODES
 
@@ -233,7 +276,7 @@ def test_v2_qa_report_is_schema_valid_fingerprinted_and_passing() -> None:
         json.loads(REPORT_SCHEMA_PATH.read_text(encoding="utf-8"))
     ).validate(report)
     assert report["verdict"] == "PASS"
-    assert report["checksPassed"] == 20
+    assert report["checksPassed"] == 21
     assert report["checksFailed"] == 0
     assert tuple(item["checkId"] for item in report["checks"]) == VALIDATOR.REPORT_CHECK_IDS
     core = {key: value for key, value in report.items() if key != "reportFingerprint"}

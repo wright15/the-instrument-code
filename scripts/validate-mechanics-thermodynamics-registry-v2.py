@@ -68,6 +68,7 @@ POPULATED_CLASS_PLACEMENTS = {
     "high_entropy": ("Air", "electric_external"),
     "low_enthalpy": ("Water", "electric_external"),
     "low_entropy": ("Earth", "electric_external"),
+    "equilibrium": ("Quintessence", "electric_external"),
 }
 EXPECTED_CLASS_COUNTS = {
     "high_enthalpy": {
@@ -93,6 +94,12 @@ EXPECTED_CLASS_COUNTS = {
         "transforms": 12,
         "structures": 12,
         "transfers": 12,
+    },
+    "equilibrium": {
+        "characterizes": 11,
+        "transforms": 12,
+        "structures": 14,
+        "transfers": 13,
     },
 }
 EXPECTED_LOW_ENTHALPY_IDS = {
@@ -205,9 +212,70 @@ EXPECTED_LOW_ENTROPY_IDS = {
         "breakdown_conduction",
     ),
 }
+EXPECTED_EQUILIBRIUM_IDS = {
+    "characterizes": (
+        "dynamic_equilibrium",
+        "mercury_electric_electrochemical_equilibrium",
+        "equilibrium_potential",
+        "isothermal_state",
+        "open_circuit_thermoelectric_state",
+        "phase_equilibrium",
+        "quasi_static_state",
+        "radiative_equilibrium",
+        "reversible_state",
+        "thermal_steady_state",
+        "mercury_electric_nonequilibrium_steady_state",
+    ),
+    "transforms": (
+        "electrocaloric_effect",
+        "isothermal_expansion",
+        "latent_heat_buffering",
+        "peltier_effect",
+        "phase_change_heat_rejection",
+        "radiative_equilibration",
+        "seebeck_effect",
+        "thermal_feedback_stabilization",
+        "thermoelectric_heat_pumping",
+        "thomson_effect",
+        "thermostatic_switching",
+        "pyroelectric_conversion",
+    ),
+    "structures": (
+        "blackbody_radiator",
+        "heat_pipe_radiator",
+        "isothermal_boundary",
+        "phase_change_heat_exchanger",
+        "phase_interface",
+        "radiative_equilibrium_surface",
+        "thermal_boundary_layer",
+        "thermal_control_loop",
+        "thermal_radiator",
+        "thermal_strap",
+        "thermocouple_junction",
+        "thermoelectric_module",
+        "thermopile",
+        "two_phase_flow_loop",
+    ),
+    "transfers": (
+        "conductive_heat_rejection",
+        "convective_heat_rejection",
+        "electrocaloric_heat_transfer",
+        "entropy_export",
+        "isothermal_heat_transfer",
+        "latent_heat_transfer",
+        "peltier_heat_pumping",
+        "pyroelectric_signal_transduction",
+        "mercury_electric_radiative_cooling",
+        "seebeck_voltage_transduction",
+        "thermal_radiation_exchange",
+        "thermoelectric_power_generation",
+        "two_phase_heat_transport",
+    ),
+}
 EXPECTED_CATALOG_IDS = {
     "low_enthalpy": EXPECTED_LOW_ENTHALPY_IDS,
     "low_entropy": EXPECTED_LOW_ENTROPY_IDS,
+    "equilibrium": EXPECTED_EQUILIBRIUM_IDS,
 }
 EXPECTED_SEMANTIC_TRANSITIONS = {
     "dielectric_breakdown": SEMANTIC_TRANSITION_VALUE,
@@ -335,7 +403,7 @@ EXPECTED_FRAMEWORK_PARENT_CATEGORIES = [
     {
         "category_id": "equilibrium_phenomena",
         "section_id": "equilibrium_thermodynamics",
-        "population_status": "placeholder_future_category",
+        "population_status": "populated_in_this_registry",
     },
     {
         "category_id": "kinetics",
@@ -447,7 +515,7 @@ KINETICS_RESERVED_MECHANIC_IDS = {
     "third_body_reaction",
 }
 FORBIDDEN_RELATIONS = ("SETS_COURT_POLE", "EXECUTES_COURT_MOVE")
-EXPECTED_AUTHORING_FINGERPRINT = "6e0c8c8ddac35f2afcda02eee88f67732badf520b282413039eb7373bfb9eb83"
+EXPECTED_AUTHORING_FINGERPRINT = "0c6fa08e1bad3ded42bcbe38637e583b937f6d5700b8e4ee9d4d2e085f6a606a"
 
 REPORT_CHECK_IDS = (
     "mtr-v2-schema-identity",
@@ -458,6 +526,7 @@ REPORT_CHECK_IDS = (
     "mtr-v2-high-entropy-air-population",
     "mtr-v2-low-enthalpy-water-population",
     "mtr-v2-low-entropy-earth-population",
+    "mtr-v2-equilibrium-mercury-population",
     "mtr-v2-scale-map-replay",
     "mtr-v2-polarity-binding-replay",
     "mtr-v2-zodiac-facet-refs",
@@ -491,9 +560,13 @@ EXPECTED_MUTATION_CODES = {
     "fire-glossary-in-magnetic": "phenomenon_class_placement_invalid",
     "water-glossary-in-magnetic": "phenomenon_class_placement_invalid",
     "earth-glossary-in-magnetic": "phenomenon_class_placement_invalid",
+    "mercury-equilibrium-in-engine-interface": "phenomenon_class_placement_invalid",
+    "mercury-equilibrium-in-magnetic": "mercury_exclusion_invalid",
     "missing-phenomenon-class": "rich_entry_invalid",
+    "missing-equilibrium-phenomenon-class": "rich_entry_invalid",
     "water-glossary-wrong-class": "phenomenon_class_placement_invalid",
     "earth-glossary-wrong-class": "phenomenon_class_placement_invalid",
+    "equilibrium-glossary-wrong-class": "phenomenon_class_placement_invalid",
     "missing-earth-semantic-transition": "semantic_transition_invalid",
     "unexpected-semantic-transition": "semantic_transition_invalid",
     "instrumentation-term-injected": "instrumentation_term_forbidden",
@@ -595,10 +668,11 @@ def _array_layout_errors(document: dict[str, Any]) -> list[str]:
             errors.append(f"{element}:capabilities")
             continue
         if element == "Quintessence":
-            if set(capabilities) != {"engine_interface"}:
-                errors.append("Quintessence:engine_interface")
-            if not isinstance(capabilities.get("engine_interface"), list):
-                errors.append("Quintessence:engine_interface_array")
+            if set(capabilities) != {"engine_interface", "electric_external"}:
+                errors.append("Quintessence:capability_channels")
+            for channel in ("engine_interface", "electric_external"):
+                if not isinstance(capabilities.get(channel), list) or not capabilities.get(channel):
+                    errors.append(f"Quintessence:{channel}:array")
             if "polarity_bindings" in item or "transition_refs" in item:
                 errors.append("Quintessence:polar_metadata")
             continue
@@ -678,8 +752,13 @@ def _class_placement_errors(document: dict[str, Any]) -> list[str]:
         if not isinstance(entry, dict):
             continue
         phenomenon_class = entry.get("phenomenon_class")
-        if phenomenon_class == "equilibrium":
-            errors.append(f"{element}:{channel}:{phenomenon_class}:unpopulated")
+        if (element, channel) == ("Quintessence", "engine_interface"):
+            if phenomenon_class != "capability_action":
+                errors.append(f"{element}:{channel}:{phenomenon_class}:placement")
+            continue
+        if (element, channel) == ("Quintessence", "electric_external"):
+            if phenomenon_class != "equilibrium":
+                errors.append(f"{element}:{channel}:{phenomenon_class}:placement")
             continue
         expected = POPULATED_CLASS_PLACEMENTS.get(phenomenon_class)
         if expected and (element, channel) != expected:
@@ -820,7 +899,8 @@ def _semantic_rejection_code(document: dict[str, Any]) -> str | None:
         or mercury.get("register_membership") != "excluded"
         or "transition_refs" in mercury
         or "polarity_bindings" in mercury
-        or set(mercury.get("capabilities", {})) != {"engine_interface"}
+        or set(mercury.get("capabilities", {}))
+        != {"engine_interface", "electric_external"}
     ):
         return "mercury_exclusion_invalid"
 
@@ -903,6 +983,15 @@ def _low_entropy_entry(document: dict[str, Any]) -> dict[str, Any]:
         entry
         for entry in _entries(earth, "electric_external")
         if entry.get("phenomenon_class") == "low_entropy"
+    )
+
+
+def _equilibrium_entry(document: dict[str, Any]) -> dict[str, Any]:
+    mercury = _element(document, "Quintessence")
+    return next(
+        entry
+        for entry in _entries(mercury, "electric_external")
+        if entry.get("phenomenon_class") == "equilibrium"
     )
 
 
@@ -1002,8 +1091,26 @@ def _mutated_cases(document: dict[str, Any]) -> dict[str, dict[str, Any]]:
     cases["earth-glossary-in-magnetic"] = tampered
 
     tampered = deepcopy(document)
+    mercury = _element(tampered, "Quintessence")
+    mercury["capabilities"]["engine_interface"].append(
+        mercury["capabilities"]["electric_external"].pop(0)
+    )
+    cases["mercury-equilibrium-in-engine-interface"] = tampered
+
+    tampered = deepcopy(document)
+    mercury = _element(tampered, "Quintessence")
+    mercury["capabilities"]["magnetic_internal"] = [
+        deepcopy(_equilibrium_entry(tampered))
+    ]
+    cases["mercury-equilibrium-in-magnetic"] = tampered
+
+    tampered = deepcopy(document)
     del _low_entry(tampered)["phenomenon_class"]
     cases["missing-phenomenon-class"] = tampered
+
+    tampered = deepcopy(document)
+    del _equilibrium_entry(tampered)["phenomenon_class"]
+    cases["missing-equilibrium-phenomenon-class"] = tampered
 
     tampered = deepcopy(document)
     _low_entry(tampered)["phenomenon_class"] = "high_entropy"
@@ -1012,6 +1119,10 @@ def _mutated_cases(document: dict[str, Any]) -> dict[str, dict[str, Any]]:
     tampered = deepcopy(document)
     _low_entropy_entry(tampered)["phenomenon_class"] = "high_entropy"
     cases["earth-glossary-wrong-class"] = tampered
+
+    tampered = deepcopy(document)
+    _equilibrium_entry(tampered)["phenomenon_class"] = "high_entropy"
+    cases["equilibrium-glossary-wrong-class"] = tampered
 
     tampered = deepcopy(document)
     dielectric_breakdown = next(
@@ -1169,6 +1280,7 @@ def validate(document: dict[str, Any]) -> dict[str, Any]:
         ("mtr-v2-high-entropy-air-population", "high_entropy"),
         ("mtr-v2-low-enthalpy-water-population", "low_enthalpy"),
         ("mtr-v2-low-entropy-earth-population", "low_entropy"),
+        ("mtr-v2-equilibrium-mercury-population", "equilibrium"),
     ):
         expected_element, expected_channel = POPULATED_CLASS_PLACEMENTS[phenomenon_class]
         catalog_errors = _catalog_errors(document, phenomenon_class)
@@ -1250,8 +1362,9 @@ def validate(document: dict[str, Any]) -> dict[str, Any]:
         mercury.get("is_binary_court_pole") is False
         and mercury.get("court_pole_index") is None
         and mercury.get("register_membership") == "excluded"
-        and set(mercury["capabilities"]) == {"engine_interface"}
+        and set(mercury["capabilities"]) == {"engine_interface", "electric_external"}
         and "polarity_bindings" not in mercury
+        and "transition_refs" not in mercury
     )
     record(
         "mtr-v2-mercury-exclusion",

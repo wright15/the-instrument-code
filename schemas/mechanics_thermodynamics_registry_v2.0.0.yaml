@@ -7,11 +7,13 @@
 # array. The four-part scaffold remains encoded by relation_type:
 # characterizes, transforms, structures, and transfers.
 #
-# Water/Venus Low-Enthalpy and Earth/Saturn Low-Entropy entries are
-# Electric/External only. Low-Entropy markers describe local ordering sustained
-# by external work or entropy export, never a second-law exception. This
-# semantic placement does not claim electric and magnetic fields are physically
-# separate.
+# Water/Venus Low-Enthalpy, Earth/Saturn Low-Entropy, and
+# Quintessence/Mercury Equilibrium entries are Electric/External only.
+# Low-Entropy markers describe local ordering sustained by external work or
+# entropy export, never a second-law exception. Mercury remains excluded from
+# the binary Court register; its Electric/External channel is an authored
+# outward-facing capability path, not a Court polarity bit. This semantic
+# placement does not claim electric and magnetic fields are physically separate.
 
 metadata:
   registry_id: mechanics_thermodynamics_registry
@@ -64,7 +66,7 @@ framework:
     population_status: populated_in_this_registry
   - category_id: equilibrium_phenomena
     section_id: equilibrium_thermodynamics
-    population_status: placeholder_future_category
+    population_status: populated_in_this_registry
   - category_id: kinetics
     section_id: null
     population_status: placeholder_future_category
@@ -1660,6 +1662,307 @@ elements:
       value: em_induction_cycle
       phenomenon_class: capability_action
       source_class: authored_capability
+    electric_external:
+    - mechanic_id: dynamic_equilibrium
+      definition: Authored state marker for opposing microscopic processes continuing at equal rates with no net macroscopic change.
+      relation_type: characterizes
+      value: balanced_opposing_microscopic_rates
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: mercury_electric_electrochemical_equilibrium
+      definition: Authored state marker for chemical and electrical driving forces balanced with no net reaction current.
+      relation_type: characterizes
+      value: balanced_electrochemical_driving_forces
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: equilibrium_potential
+      definition: Authored state marker for an electrode potential at which an electrochemical reaction has no net forward or reverse rate.
+      relation_type: characterizes
+      value: zero_net_electrochemical_reaction_rate
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: isothermal_state
+      definition: Authored state marker for a system held at uniform or actively controlled constant temperature.
+      relation_type: characterizes
+      value: uniform_controlled_constant_temperature
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: open_circuit_thermoelectric_state
+      definition: Authored state marker for a temperature difference yielding a Seebeck voltage while no current is drawn.
+      relation_type: characterizes
+      value: open_circuit_thermal_voltage_state
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: phase_equilibrium
+      definition: Authored state marker for coexisting phases with balanced chemical potentials, such as liquid and vapor at saturation.
+      relation_type: characterizes
+      value: balanced_phase_chemical_potentials
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: quasi_static_state
+      definition: Authored state marker for change slow enough to remain near equilibrium throughout a process.
+      relation_type: characterizes
+      value: near_equilibrium_slow_change_regime
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: radiative_equilibrium
+      definition: Authored state marker for absorbed radiative power equal to emitted radiative power.
+      relation_type: characterizes
+      value: balanced_absorbed_emitted_radiation
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: reversible_state
+      definition: Authored state marker for the ideal limiting condition with no entropy production.
+      relation_type: characterizes
+      value: zero_entropy_production_limit
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: thermal_steady_state
+      definition: Authored state marker for heat generation, absorption, and outward rejection balancing so internal energy remains constant.
+      relation_type: characterizes
+      value: balanced_heat_throughput_constant_internal_energy
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: mercury_electric_nonequilibrium_steady_state
+      definition: Authored state marker for constant macroscopic properties maintained by continuous energy, matter, or charge throughflow.
+      relation_type: characterizes
+      value: continuous_throughflow_stable_macroscopic_state
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: electrocaloric_effect
+      definition: Authored transformation marker for reversible dielectric or ferroelectric temperature change caused by an applied-field change.
+      relation_type: transforms
+      value: field_driven_reversible_temperature_change
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: isothermal_expansion
+      definition: Authored transformation marker for expansion at constant temperature that converts absorbed heat into outward mechanical work.
+      relation_type: transforms
+      value: heat_to_outward_mechanical_work
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: latent_heat_buffering
+      definition: Authored transformation marker for heat absorption or release during a phase transition while temperature remains nearly constant.
+      relation_type: transforms
+      value: phase_transition_heat_buffering
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: peltier_effect
+      definition: Authored transformation marker for current causing a junction to absorb heat at one side and reject it at the other.
+      relation_type: transforms
+      value: junction_current_heat_absorption_rejection
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: phase_change_heat_rejection
+      definition: Authored transformation marker for heat exported by a controlled melting, boiling, condensing, or freezing transition.
+      relation_type: transforms
+      value: controlled_transition_temperature_heat_export
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: radiative_equilibration
+      definition: Authored transformation marker for surface temperature adjustment through balanced absorbed and emitted radiation.
+      relation_type: transforms
+      value: radiative_gain_loss_temperature_adjustment
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: seebeck_effect
+      definition: Authored transformation marker for a temperature difference generating an outward electrical potential.
+      relation_type: transforms
+      value: thermal_gradient_electrical_potential_generation
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: thermal_feedback_stabilization
+      definition: Authored transformation marker for sensing a thermal deviation and actively restoring a temperature set point.
+      relation_type: transforms
+      value: sensed_deviation_active_setpoint_restoration
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: thermoelectric_heat_pumping
+      definition: Authored transformation marker for electrical work moving heat from a colder region to a hotter external sink.
+      relation_type: transforms
+      value: electrical_work_cold_to_hot_heat_transfer
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: thomson_effect
+      definition: Authored transformation marker for reversible heat absorption or evolution along a current-carrying conductor with a temperature gradient.
+      relation_type: transforms
+      value: temperature_gradient_current_reversible_heat_exchange
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: thermostatic_switching
+      definition: Authored transformation marker for threshold-controlled activation or deactivation of a heat-control pathway.
+      relation_type: transforms
+      value: threshold_controlled_heat_pathway_activation
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: pyroelectric_conversion
+      definition: Authored transformation marker for changing temperature producing surface charge or current as an external electrical signal.
+      relation_type: transforms
+      value: temperature_change_surface_charge_signal
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: blackbody_radiator
+      definition: Authored structural marker for an idealized surface emitting the maximum possible thermal radiation for its temperature.
+      relation_type: structures
+      value: maximum_temperature_dependent_radiative_emission
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: heat_pipe_radiator
+      definition: Authored structural marker for a two-phase transport structure carrying heat to an exterior radiating surface.
+      relation_type: structures
+      value: two_phase_transport_exterior_radiator
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: isothermal_boundary
+      definition: Authored structural marker for a surface or interface maintained at nearly constant temperature.
+      relation_type: structures
+      value: constant_temperature_interface
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: phase_change_heat_exchanger
+      definition: Authored structural marker for heat exchange through controlled melting, freezing, evaporation, or condensation.
+      relation_type: structures
+      value: controlled_phase_transition_heat_exchange
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: phase_interface
+      definition: Authored structural marker for a boundary between coexisting phases where latent heat can be absorbed or released.
+      relation_type: structures
+      value: coexisting_phase_latent_heat_boundary
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: radiative_equilibrium_surface
+      definition: Authored structural marker for an exterior surface whose temperature is set by radiative gains and losses.
+      relation_type: structures
+      value: radiative_gain_loss_temperature_surface
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: thermal_boundary_layer
+      definition: Authored structural marker for the fluid region next to a surface where temperature changes from wall to bulk conditions.
+      relation_type: structures
+      value: wall_to_bulk_temperature_gradient_region
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: thermal_control_loop
+      definition: Authored structural marker for a sensor, controller, and actuator arrangement maintaining a target thermal state.
+      relation_type: structures
+      value: sensor_controller_actuator_temperature_regulation
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: thermal_radiator
+      definition: Authored structural marker for an exterior surface designed to reject excess heat through infrared emission.
+      relation_type: structures
+      value: exterior_infrared_heat_rejection_surface
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: thermal_strap
+      definition: Authored structural marker for a high-conductance link carrying heat from a source to a controlled sink or radiator.
+      relation_type: structures
+      value: high_conductance_heat_sink_link
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: thermocouple_junction
+      definition: Authored structural marker for a junction of dissimilar conductors converting a temperature difference into voltage.
+      relation_type: structures
+      value: dissimilar_conductor_temperature_voltage_junction
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: thermoelectric_module
+      definition: Authored structural marker for a semiconductor junction array used for Peltier cooling or Seebeck power generation.
+      relation_type: structures
+      value: semiconductor_peltier_seebeck_junction_array
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: thermopile
+      definition: Authored structural marker for series-connected thermocouples amplifying a thermal gradient into an outward electrical signal.
+      relation_type: structures
+      value: series_thermocouple_amplified_voltage_array
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: two_phase_flow_loop
+      definition: Authored structural marker for a circulating liquid-vapor system regulating temperature through latent-heat transport.
+      relation_type: structures
+      value: circulating_liquid_vapor_temperature_control_loop
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: conductive_heat_rejection
+      definition: Authored transfer marker for heat moving through a solid path toward an external sink or radiator.
+      relation_type: transfers
+      value: solid_path_external_sink_heat_export
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: convective_heat_rejection
+      definition: Authored transfer marker for heat carried outward by moving liquid or gas.
+      relation_type: transfers
+      value: moving_fluid_outward_heat_export
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: electrocaloric_heat_transfer
+      definition: Authored transfer marker for field-controlled heat movement caused by reversible electrocaloric temperature change.
+      relation_type: transfers
+      value: field_controlled_reversible_heat_transfer
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: entropy_export
+      definition: Authored transfer marker for heat or matter rejection to the environment that preserves local order or steady operation.
+      relation_type: transfers
+      value: environmental_heat_or_matter_rejection
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: isothermal_heat_transfer
+      definition: Authored transfer marker for heat exchange at constant temperature through a reservoir or phase transition.
+      relation_type: transfers
+      value: constant_temperature_reservoir_phase_exchange
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: latent_heat_transfer
+      definition: Authored transfer marker for energy movement through a phase change rather than an ordinary temperature rise or fall.
+      relation_type: transfers
+      value: phase_change_energy_movement
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: peltier_heat_pumping
+      definition: Authored transfer marker for current-driven heat transport across a thermoelectric junction.
+      relation_type: transfers
+      value: current_driven_junction_heat_transport
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: pyroelectric_signal_transduction
+      definition: Authored transfer marker for a temperature change becoming an outward electrical output signal.
+      relation_type: transfers
+      value: thermal_event_electrical_signal_output
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: mercury_electric_radiative_cooling
+      definition: Authored transfer marker for net outward thermal-radiation emission to a cooler environment.
+      relation_type: transfers
+      value: net_outward_cooler_environment_radiation
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: seebeck_voltage_transduction
+      definition: Authored transfer marker for a temperature difference converting into an observable electrical signal.
+      relation_type: transfers
+      value: temperature_difference_observable_voltage
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: thermal_radiation_exchange
+      definition: Authored transfer marker for bidirectional infrared energy transfer with net direction set by temperature and emissivity.
+      relation_type: transfers
+      value: temperature_emissivity_directed_infrared_exchange
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: thermoelectric_power_generation
+      definition: Authored transfer marker for heat-flow imbalance converting into exported electrical power.
+      relation_type: transfers
+      value: heat_flow_imbalance_exported_electrical_power
+      phenomenon_class: equilibrium
+      source_class: authored_capability
+    - mechanic_id: two_phase_heat_transport
+      definition: Authored transfer marker for heat carried outward by evaporation and returned by condensation or liquid flow.
+      relation_type: transfers
+      value: evaporation_condensation_outward_heat_transport
+      phenomenon_class: equilibrium
+      source_class: authored_capability
 guards:
 - guard_id: authored_game_mechanics_not_physics
   status: enforced
@@ -1672,7 +1975,7 @@ guards:
 - guard_id: mercury_excluded_from_register
   status: enforced
   statement: Quintessence carries is_binary_court_pole false, court_pole_index null, and register_membership
-    excluded; it has no polarity bit and no zodiac facet.
+    excluded; its electric_external capability channel grants no binary Court polarity bit or zodiac facet.
 - guard_id: no_court_writes
   status: enforced
   statement: No capability writes court.poleDisposition, graph state, runtime policy, or ledger success.
