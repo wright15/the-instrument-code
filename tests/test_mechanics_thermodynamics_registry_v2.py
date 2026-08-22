@@ -79,10 +79,13 @@ def test_all_capability_channels_are_direct_rich_entry_arrays(document) -> None:
     assert "phenomenon_categories" not in mercury
 
 
-def test_every_leaf_uses_the_uniform_six_field_rich_schema(document) -> None:
+def test_every_leaf_uses_the_strict_rich_schema(document) -> None:
     entries = [entry for _, _, entry in VALIDATOR._all_entries(document)]
-    assert len(entries) == 180
-    assert all(set(entry) == VALIDATOR.RICH_ENTRY_KEYS for entry in entries)
+    assert len(entries) == 226
+    assert all(
+        VALIDATOR.RICH_ENTRY_REQUIRED_KEYS <= set(entry) <= VALIDATOR.RICH_ENTRY_KEYS
+        for entry in entries
+    )
     assert all(entry["definition"] and entry["value"] for entry in entries)
     assert all(entry["source_class"] == "authored_capability" for entry in entries)
     assert {entry["phenomenon_class"] for entry in entries} == {
@@ -90,7 +93,12 @@ def test_every_leaf_uses_the_uniform_six_field_rich_schema(document) -> None:
         "high_enthalpy",
         "high_entropy",
         "low_enthalpy",
+        "low_entropy",
     }
+    tagged = [entry for entry in entries if "semantic_transition" in entry]
+    assert {
+        entry["mechanic_id"]: entry["semantic_transition"] for entry in tagged
+    } == VALIDATOR.EXPECTED_SEMANTIC_TRANSITIONS
 
 
 def test_four_part_scaffold_is_preserved_by_relation_type(document) -> None:
@@ -128,6 +136,31 @@ def test_water_low_enthalpy_catalog_is_electric_external_only(document) -> None:
     )
 
 
+def test_earth_low_entropy_catalog_is_electric_external_only(document) -> None:
+    earth = _element(document, "Earth")
+    electric = earth["capabilities"]["electric_external"]
+    magnetic = earth["capabilities"]["magnetic_internal"]
+    low_entropy_entries = [
+        entry for entry in electric if entry["phenomenon_class"] == "low_entropy"
+    ]
+    assert len(low_entropy_entries) == 46
+    assert all(entry["phenomenon_class"] != "low_entropy" for entry in magnetic)
+    assert [entry["mechanic_id"] for entry in low_entropy_entries] == [
+        mechanic_id
+        for relation in VALIDATOR.SCAFFOLD_RELATIONS.values()
+        for mechanic_id in VALIDATOR.EXPECTED_LOW_ENTROPY_IDS[relation]
+    ]
+    assert all(
+        entry["relation_type"] in VALIDATOR.SCAFFOLD_RELATIONS.values()
+        for entry in low_entropy_entries
+    )
+    assert {
+        entry["mechanic_id"]: entry["semantic_transition"]
+        for entry in low_entropy_entries
+        if "semantic_transition" in entry
+    } == VALIDATOR.EXPECTED_SEMANTIC_TRANSITIONS
+
+
 def test_base_capability_actions_remain_distinct_from_glossaries(document) -> None:
     for (element, channel), expected in VALIDATOR.EXPECTED_ACTIONS.items():
         entry = _element(document, element)["capabilities"][channel][0]
@@ -160,12 +193,30 @@ def test_schema_rejects_nonuniform_direct_array_entries(document) -> None:
     with pytest.raises(jsonschema.ValidationError):
         schema_validator.validate(swapped_binding)
 
+    invalid_transition = deepcopy(document)
+    _element(invalid_transition, "Earth")["capabilities"]["electric_external"][
+        1
+    ]["semantic_transition"] = "unbounded_transition"
+    with pytest.raises(jsonschema.ValidationError):
+        schema_validator.validate(invalid_transition)
+
 
 def test_semantic_validator_rejects_water_magnetic_glossary_contamination(document) -> None:
     tampered = deepcopy(document)
     water = _element(tampered, "Water")
     water["capabilities"]["magnetic_internal"].append(
         water["capabilities"]["electric_external"].pop(1)
+    )
+    with pytest.raises(VALIDATOR.MechanicsThermodynamicsValidationError) as error:
+        VALIDATOR.verify_registry_document(tampered)
+    assert error.value.reason_code == "phenomenon_class_placement_invalid"
+
+
+def test_semantic_validator_rejects_earth_magnetic_glossary_contamination(document) -> None:
+    tampered = deepcopy(document)
+    earth = _element(tampered, "Earth")
+    earth["capabilities"]["magnetic_internal"].append(
+        earth["capabilities"]["electric_external"].pop(1)
     )
     with pytest.raises(VALIDATOR.MechanicsThermodynamicsValidationError) as error:
         VALIDATOR.verify_registry_document(tampered)
@@ -182,7 +233,7 @@ def test_v2_qa_report_is_schema_valid_fingerprinted_and_passing() -> None:
         json.loads(REPORT_SCHEMA_PATH.read_text(encoding="utf-8"))
     ).validate(report)
     assert report["verdict"] == "PASS"
-    assert report["checksPassed"] == 19
+    assert report["checksPassed"] == 20
     assert report["checksFailed"] == 0
     assert tuple(item["checkId"] for item in report["checks"]) == VALIDATOR.REPORT_CHECK_IDS
     core = {key: value for key, value in report.items() if key != "reportFingerprint"}

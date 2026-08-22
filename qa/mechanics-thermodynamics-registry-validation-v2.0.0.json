@@ -46,13 +46,16 @@
       "diagnostic": [],
       "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry_v2.0.0.yaml#elements",
       "expected": {
-        "entryKeys": [
+        "requiredEntryKeys": [
           "definition",
           "mechanic_id",
           "phenomenon_class",
           "relation_type",
           "source_class",
           "value"
+        ],
+        "optionalEntryKeys": [
+          "semantic_transition"
         ],
         "noPhenomenonCategories": true
       },
@@ -130,6 +133,24 @@
         "transforms": 12,
         "structures": 10,
         "transfers": 9
+      },
+      "status": "PASS"
+    },
+    {
+      "checkId": "mtr-v2-low-entropy-earth-population",
+      "diagnostic": [],
+      "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry_v2.0.0.yaml#elements[Earth].capabilities.electric_external",
+      "expected": {
+        "characterizes": 10,
+        "transforms": 12,
+        "structures": 12,
+        "transfers": 12
+      },
+      "actual": {
+        "characterizes": 10,
+        "transforms": 12,
+        "structures": 12,
+        "transfers": 12
       },
       "status": "PASS"
     },
@@ -307,11 +328,11 @@
     {
       "checkId": "mtr-v2-determinism",
       "diagnostic": {
-        "authoring": "39828e7cc39c9fcdaed9f620629c57b63c6e86b0b37ded0907e86122a5ee1368"
+        "authoring": "6e0c8c8ddac35f2afcda02eee88f67732badf520b282413039eb7373bfb9eb83"
       },
       "evidenceLocator": "/home/erick/projects/integrated-release/schemas/mechanics_thermodynamics_registry_v2.0.0.yaml",
-      "expected": "39828e7cc39c9fcdaed9f620629c57b63c6e86b0b37ded0907e86122a5ee1368",
-      "actual": "39828e7cc39c9fcdaed9f620629c57b63c6e86b0b37ded0907e86122a5ee1368",
+      "expected": "6e0c8c8ddac35f2afcda02eee88f67732badf520b282413039eb7373bfb9eb83",
+      "actual": "6e0c8c8ddac35f2afcda02eee88f67732badf520b282413039eb7373bfb9eb83",
       "status": "PASS"
     },
     {
@@ -335,8 +356,12 @@
         "legacy-category-injected": "capability_array_invalid",
         "fire-glossary-in-magnetic": "phenomenon_class_placement_invalid",
         "water-glossary-in-magnetic": "phenomenon_class_placement_invalid",
+        "earth-glossary-in-magnetic": "phenomenon_class_placement_invalid",
         "missing-phenomenon-class": "rich_entry_invalid",
         "water-glossary-wrong-class": "phenomenon_class_placement_invalid",
+        "earth-glossary-wrong-class": "phenomenon_class_placement_invalid",
+        "missing-earth-semantic-transition": "semantic_transition_invalid",
+        "unexpected-semantic-transition": "semantic_transition_invalid",
         "instrumentation-term-injected": "instrumentation_term_forbidden",
         "kinetics-term-injected": "kinetics_term_forbidden",
         "glossary-duplicate-id": "duplicate_id_rejected"
@@ -361,8 +386,12 @@
         "legacy-category-injected": "capability_array_invalid",
         "fire-glossary-in-magnetic": "phenomenon_class_placement_invalid",
         "water-glossary-in-magnetic": "phenomenon_class_placement_invalid",
+        "earth-glossary-in-magnetic": "phenomenon_class_placement_invalid",
         "missing-phenomenon-class": "rich_entry_invalid",
         "water-glossary-wrong-class": "phenomenon_class_placement_invalid",
+        "earth-glossary-wrong-class": "phenomenon_class_placement_invalid",
+        "missing-earth-semantic-transition": "semantic_transition_invalid",
+        "unexpected-semantic-transition": "semantic_transition_invalid",
         "instrumentation-term-injected": "instrumentation_term_forbidden",
         "kinetics-term-injected": "kinetics_term_forbidden",
         "glossary-duplicate-id": "duplicate_id_rejected"
@@ -386,8 +415,12 @@
         "legacy-category-injected": "capability_array_invalid",
         "fire-glossary-in-magnetic": "phenomenon_class_placement_invalid",
         "water-glossary-in-magnetic": "phenomenon_class_placement_invalid",
+        "earth-glossary-in-magnetic": "phenomenon_class_placement_invalid",
         "missing-phenomenon-class": "rich_entry_invalid",
         "water-glossary-wrong-class": "phenomenon_class_placement_invalid",
+        "earth-glossary-wrong-class": "phenomenon_class_placement_invalid",
+        "missing-earth-semantic-transition": "semantic_transition_invalid",
+        "unexpected-semantic-transition": "semantic_transition_invalid",
         "instrumentation-term-injected": "instrumentation_term_forbidden",
         "kinetics-term-injected": "kinetics_term_forbidden",
         "glossary-duplicate-id": "duplicate_id_rejected"
@@ -396,10 +429,10 @@
     }
   ],
   "checksFailed": 0,
-  "checksPassed": 19,
+  "checksPassed": 20,
   "registryId": "mechanics_thermodynamics_registry",
   "registryVersion": "2.0.0",
   "schemaVersion": "mechanics-thermodynamics-registry-validation.v2.0.0",
   "verdict": "PASS",
-  "reportFingerprint": "2a3e093959ca45ea01bebf2747c3894532cab922f106c7183afa4deb6e630371"
+  "reportFingerprint": "6c761e01dfb37f7357406f0e18bc68d7c9aca98a95f599812c82bedbbf0443c3"
 }

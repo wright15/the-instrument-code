@@ -106,7 +106,7 @@
         { "properties": { "category_id": { "const": "high_enthalpy_phenomena" }, "section_id": { "const": "high_enthalpy_thermodynamics" }, "population_status": { "const": "populated_in_this_registry" } } },
         { "properties": { "category_id": { "const": "high_entropy_phenomena" }, "section_id": { "const": "high_entropy_thermodynamics" }, "population_status": { "const": "populated_in_this_registry" } } },
         { "properties": { "category_id": { "const": "low_enthalpy_phenomena" }, "section_id": { "const": "low_enthalpy_thermodynamics" }, "population_status": { "const": "populated_in_this_registry" } } },
-        { "properties": { "category_id": { "const": "low_entropy_phenomena" }, "section_id": { "const": "low_entropy_thermodynamics" }, "population_status": { "const": "placeholder_future_category" } } },
+        { "properties": { "category_id": { "const": "low_entropy_phenomena" }, "section_id": { "const": "low_entropy_thermodynamics" }, "population_status": { "const": "populated_in_this_registry" } } },
         { "properties": { "category_id": { "const": "equilibrium_phenomena" }, "section_id": { "const": "equilibrium_thermodynamics" }, "population_status": { "const": "placeholder_future_category" } } },
         { "properties": { "category_id": { "const": "kinetics" }, "section_id": { "const": null }, "population_status": { "const": "placeholder_future_category" } } },
         { "properties": { "category_id": { "const": "kinematics" }, "section_id": { "const": null }, "population_status": { "const": "placeholder_future_category" } } },
@@ -136,6 +136,7 @@
         "relation_type": { "enum": ["activated_by", "resists_by", "distributes", "constrains", "exchanges", "absorbs", "repels", "fixes", "transduces", "characterizes", "transforms", "structures", "transfers"] },
         "value": { "type": "string", "minLength": 1 },
         "phenomenon_class": { "enum": ["capability_action", "high_enthalpy", "high_entropy", "low_enthalpy", "low_entropy", "equilibrium"] },
+        "semantic_transition": { "const": "failure_or_crossover" },
         "source_class": { "const": "authored_capability" }
       }
     },

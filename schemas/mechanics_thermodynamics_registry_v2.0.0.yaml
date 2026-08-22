@@ -7,8 +7,11 @@
 # array. The four-part scaffold remains encoded by relation_type:
 # characterizes, transforms, structures, and transfers.
 #
-# Water/Venus Low-Enthalpy entries are Electric/External only. This semantic
-# placement does not claim electric and magnetic fields are physically separate.
+# Water/Venus Low-Enthalpy and Earth/Saturn Low-Entropy entries are
+# Electric/External only. Low-Entropy markers describe local ordering sustained
+# by external work or entropy export, never a second-law exception. This
+# semantic placement does not claim electric and magnetic fields are physically
+# separate.
 
 metadata:
   registry_id: mechanics_thermodynamics_registry
@@ -58,7 +61,7 @@ framework:
     population_status: populated_in_this_registry
   - category_id: low_entropy_phenomena
     section_id: low_entropy_thermodynamics
-    population_status: placeholder_future_category
+    population_status: populated_in_this_registry
   - category_id: equilibrium_phenomena
     section_id: equilibrium_thermodynamics
     population_status: placeholder_future_category
@@ -1311,6 +1314,327 @@ elements:
       relation_type: repels
       value: thermal_insulation
       phenomenon_class: capability_action
+      source_class: authored_capability
+    - mechanic_id: band_gap
+      definition: Authored state marker for the energy range in a crystalline solid with no available electronic
+        states, supporting insulating behavior.
+      relation_type: characterizes
+      value: crystal_forbidden_electronic_energy_range
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: crystalline_dielectric
+      definition: Authored state marker for a lattice-ordered insulating material that polarizes under an applied
+        electric field rather than carrying free charge.
+      relation_type: characterizes
+      value: lattice_ordered_field_polarizing_insulator
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: depletion_region
+      definition: Authored state marker for a charge-carrier-poor zone near a semiconductor junction or surface
+        that establishes an electrically ordered barrier.
+      relation_type: characterizes
+      value: carrier_depleted_electrical_barrier
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: dielectric_strength
+      definition: Authored state marker for the maximum electric field an insulating material can withstand before
+        electrical failure.
+      relation_type: characterizes
+      value: insulator_failure_field_threshold
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: electric_displacement_field
+      definition: Authored state marker for the field quantity describing how free charge produces electric flux
+        through a dielectric medium.
+      relation_type: characterizes
+      value: free_charge_dielectric_flux_field
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: electrostatic_surface_potential
+      definition: Authored state marker for electric potential established at a material's outward-facing surface.
+      relation_type: characterizes
+      value: exterior_interface_electric_potential
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: ferroelectric_phase
+      definition: Authored state marker for a crystal phase with spontaneous electric polarization reorientable by
+        an applied electric field.
+      relation_type: characterizes
+      value: switchable_spontaneous_polarization_phase
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: poled_ferroelectric_state
+      definition: Authored state marker for a field-aligned configuration of ferroelectric domains.
+      relation_type: characterizes
+      value: field_aligned_ferroelectric_domain_configuration
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: piezoelectric_strain_state
+      definition: Authored state marker for ordered crystal deformation produced by an applied electric field.
+      relation_type: characterizes
+      value: field_induced_ordered_crystal_deformation
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: surface_charge_state
+      definition: Authored state marker for a stable or quasi-stable charge distribution localized at an exterior
+        interface.
+      relation_type: characterizes
+      value: localized_exterior_charge_distribution
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: anodization
+      definition: Authored transformation marker for electrochemical formation of a protective oxide layer on a
+        metal surface.
+      relation_type: transforms
+      value: electrochemical_protective_oxide_formation
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: dielectric_breakdown
+      definition: Authored transformation marker for field-driven collapse of an insulating barrier into a
+        conducting path.
+      relation_type: transforms
+      value: field_driven_insulator_to_conductor_crossover
+      phenomenon_class: low_entropy
+      semantic_transition: failure_or_crossover
+      source_class: authored_capability
+    - mechanic_id: dielectrophoretic_assembly
+      definition: Authored transformation marker for using a nonuniform electric field to position and organize
+        polarizable particles.
+      relation_type: transforms
+      value: nonuniform_field_particle_organization
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: electric_field_assisted_crystallization
+      definition: Authored transformation marker for an applied field biasing crystal nucleation, orientation, or
+        growth.
+      relation_type: transforms
+      value: field_biased_crystal_nucleation_orientation_growth
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: electric_field_directed_self_assembly
+      definition: Authored transformation marker for an external field aligning particles, fibers, or domains into
+        a controlled structure.
+      relation_type: transforms
+      value: field_aligned_particle_fiber_domain_structure
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: electrodeposition
+      definition: Authored transformation marker for electric-current-driven formation of a solid metal or compound
+        on an electrode.
+      relation_type: transforms
+      value: current_driven_electrode_solid_formation
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: electrochemical_passivation
+      definition: Authored transformation marker for formation of a stable protective surface film that limits
+        further reaction or transport.
+      relation_type: transforms
+      value: protective_surface_film_transport_limitation
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: electrocrystallization
+      definition: Authored transformation marker for nucleation and crystal growth governed by electrochemical
+        potential and charge transfer.
+      relation_type: transforms
+      value: electrochemical_nucleation_and_crystal_growth
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: electroepitaxy
+      definition: Authored transformation marker for electrodeposition growing a crystalline film in registry with
+        a crystalline substrate.
+      relation_type: transforms
+      value: substrate_registry_crystalline_film_growth
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: electrophoretic_deposition
+      definition: Authored transformation marker for electric-field transport of charged particles to a surface,
+        creating a fixed coating.
+      relation_type: transforms
+      value: field_driven_charged_particle_fixed_coating
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: ferroelectric_domain_switching
+      definition: Authored transformation marker for an applied electric field reorienting ordered polarization
+        domains.
+      relation_type: transforms
+      value: field_reoriented_polarization_domains
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: piezoelectric_actuation
+      definition: Authored transformation marker for conversion of an applied voltage into controlled mechanical
+        displacement.
+      relation_type: transforms
+      value: voltage_to_controlled_mechanical_displacement
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: crystal_lattice
+      definition: Authored structural marker for a repeating three-dimensional arrangement of atoms, ions, or
+        molecules in a solid.
+      relation_type: structures
+      value: repeating_three_dimensional_solid_arrangement
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: dielectric_layer
+      definition: Authored structural marker for an ordered insulating layer separating charge regions while
+        allowing electric-field interaction.
+      relation_type: structures
+      value: charge_separating_field_coupling_layer
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: domain_wall
+      definition: Authored structural marker for a boundary between regions of differing ferroelectric polarization
+        orientation.
+      relation_type: structures
+      value: ferroelectric_polarization_orientation_boundary
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: electrical_tree
+      definition: Authored structural marker for a branched damage structure formed in an insulating dielectric
+        under sustained high electric stress.
+      relation_type: structures
+      value: branched_dielectric_damage_structure
+      phenomenon_class: low_entropy
+      semantic_transition: failure_or_crossover
+      source_class: authored_capability
+    - mechanic_id: electrodeposited_coating
+      definition: Authored structural marker for a solid surface layer grown from ions under applied electrical
+        potential.
+      relation_type: structures
+      value: potential_grown_ionic_surface_layer
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: electrocrystalline_dendrite
+      definition: Authored structural marker for a branching crystalline deposit growing outward from an electrode
+        under electric driving.
+      relation_type: structures
+      value: electric_driven_branching_crystalline_deposit
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: epitaxial_film
+      definition: Authored structural marker for a crystalline film whose lattice orientation follows that of its
+        substrate.
+      relation_type: structures
+      value: substrate_registered_crystalline_film
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: ferroelectric_domain
+      definition: Authored structural marker for a ferroelectric crystal region with a uniform polarization
+        direction.
+      relation_type: structures
+      value: uniform_ferroelectric_polarization_region
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: passivation_layer
+      definition: Authored structural marker for a thin protective solid film that stabilizes and isolates an
+        underlying surface.
+      relation_type: structures
+      value: protective_surface_stabilizing_film
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: pn_junction
+      definition: Authored structural marker for a semiconductor interface whose fixed doping arrangement creates
+        directional electrical behavior.
+      relation_type: structures
+      value: fixed_doping_directional_semiconductor_interface
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: thermal_barrier_coating
+      definition: Authored structural marker for a ceramic or composite exterior layer engineered to reduce heat
+        transfer into a structure.
+      relation_type: structures
+      value: heat_transfer_reducing_exterior_coating
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: vacancy_ordered_crystal
+      definition: Authored structural marker for a solid lattice with an organized pattern of atomic vacancies
+        rather than random defects.
+      relation_type: structures
+      value: organized_atomic_vacancy_lattice_pattern
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: capacitive_coupling
+      definition: Authored transfer marker for alternating electrical energy crossing an insulating gap without
+        direct charge conduction.
+      relation_type: transfers
+      value: alternating_energy_insulating_gap_transfer
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: dielectric_displacement_current
+      definition: Authored transfer marker for apparent current associated with a changing electric field in an
+        insulating material.
+      relation_type: transfers
+      value: time_varying_dielectric_field_current
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: electrical_insulation
+      definition: Authored transfer marker for suppression of charge transport by a material's band structure and
+        lattice arrangement.
+      relation_type: transfers
+      value: band_lattice_charge_transport_suppression
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: electrostatic_induction
+      definition: Authored transfer marker for an external field producing charge separation and potential at a
+        distance without direct contact.
+      relation_type: transfers
+      value: contactless_field_induced_charge_separation
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: electric_field_shielding
+      definition: Authored transfer marker for redistribution or attenuation of an applied electric field by an
+        engineered material boundary.
+      relation_type: transfers
+      value: engineered_boundary_field_attenuation
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: field_emission
+      definition: Authored transfer marker for outward extraction of electrons from a solid surface by a strong
+        electric field.
+      relation_type: transfers
+      value: strong_field_surface_electron_extraction
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: piezoelectric_transduction
+      definition: Authored transfer marker for conversion between electrical energy and mechanical strain through
+        an ordered crystal lattice.
+      relation_type: transfers
+      value: electrical_mechanical_ordered_lattice_conversion
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: radiative_reflection
+      definition: Authored transfer marker for an exterior surface redirecting incoming electromagnetic radiation
+        rather than absorbing it.
+      relation_type: transfers
+      value: exterior_electromagnetic_radiation_redirection
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: thermal_boundary_resistance
+      definition: Authored transfer marker for resistance to heat flow across a material interface.
+      relation_type: transfers
+      value: interfacial_heat_flow_resistance
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: thermal_insulation
+      definition: Authored transfer marker for restriction of conductive, convective, or radiative heat transfer by
+        a structured barrier.
+      relation_type: transfers
+      value: structured_heat_transfer_restriction
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: tunneling_current
+      definition: Authored transfer marker for charge transfer across a thin ordered potential barrier without
+        classical passage over it.
+      relation_type: transfers
+      value: thin_barrier_quantum_charge_transfer
+      phenomenon_class: low_entropy
+      source_class: authored_capability
+    - mechanic_id: breakdown_conduction
+      definition: Authored transfer marker for sudden charge transfer through a formerly insulating material after
+        dielectric strength is exceeded.
+      relation_type: transfers
+      value: post_strength_exceedance_charge_transfer
+      phenomenon_class: low_entropy
+      semantic_transition: failure_or_crossover
       source_class: authored_capability
     magnetic_internal:
     - mechanic_id: crystallization_lock

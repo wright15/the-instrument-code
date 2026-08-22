@@ -26,13 +26,14 @@ change are game semantics rather than executable physics quantities.
 The master phenomenon framework gives every element one four-part child scaffold:
 Energy States, Transformations, Structural Forms, and Transfer Modes. Fire's
 Electric/External pole carries the authored High-Enthalpy glossary, and Air's
-Electric/External pole carries the authored High-Entropy glossary. Water reserves
-Low-Enthalpy, Earth reserves Low-Entropy, and Quintessence reserves Equilibrium;
-those three categories remain placeholders. Air High-Entropy excludes a
-Magnetic/Internal base glossary, reserving any later modifier or delta for the
-Teleological Physics Registry. Kinetics, Kinematics, and Weather Dynamics remain
-future parent categories. Facilities and computational simulation/modeling
-vocabulary is explicitly excluded for the future
+Electric/External pole carries the authored High-Entropy glossary. The v1 registry
+reserves Water Low-Enthalpy, Earth Low-Entropy, and Quintessence Equilibrium;
+the v2 registry subsequently populates the Water and Earth categories while
+Quintessence remains a placeholder. Air High-Entropy excludes a Magnetic/Internal
+base glossary, reserving any later modifier or delta for the Teleological Physics
+Registry. Kinetics, Kinematics, and Weather Dynamics remain future parent
+categories. Facilities and computational simulation/modeling vocabulary is
+explicitly excluded for the future
 `mechanics_instrumentation_registry.yaml`; the supplied two-temperature and
 multi-temperature entries remain authored structural regime descriptors, not
 simulation tooling.
@@ -103,8 +104,9 @@ PASS; manifest and checksums refreshed.
 v2 preserves the v1 registry as historical planning evidence and introduces a
 parallel, breaking schema version. The rich glossary contract is now uniform:
 every `electric_external`, `magnetic_internal`, and Mercury `engine_interface`
-channel is a direct array of six-field entries. The former pole metadata moves
-to sibling `polarity_bindings` for the four binary elements.
+channel is a direct array of six required fields, with a controlled optional
+`semantic_transition` field. The former pole metadata moves to sibling
+`polarity_bindings` for the four binary elements.
 
 The four-part scaffold remains enforced through the authored relation types:
 `characterizes`, `transforms`, `structures`, and `transfers`. It is no longer a
@@ -118,17 +120,29 @@ structural forms, and 9 transfer modes. All use
 `phenomenon_class: low_enthalpy`. No supplied electrochemical term is placed in
 Water/Magnetic; its existing `latent_heat_storage` action remains distinct.
 
+Earth/Saturn v2 adds 46 Low-Entropy electro-thermodynamic glossary entries to
+`capabilities.electric_external`: 10 energy states, 12 transformations, 12
+structural forms, and 12 transfer modes. All use
+`phenomenon_class: low_entropy`; no supplied Low-Entropy term is placed in
+Earth/Magnetic, whose `crystallization_lock` action remains distinct. The
+`dielectric_breakdown`, `electrical_tree`, and `breakdown_conduction` entries carry
+the controlled `semantic_transition: failure_or_crossover` marker because they
+begin with insulation or order and terminate in a discharge crossover.
+
 ### v2 Acceptance Criteria
 
-- Direct capability arrays contain 180 unique rich entries across all five
-  elements, each with `mechanic_id`, `definition`, `relation_type`, `value`,
-  `phenomenon_class`, and `source_class`.
-- Fire's 83 High-Enthalpy entries, Air's 44 High-Entropy entries, and Water's
-  44 Low-Enthalpy entries remain Electric/External only.
-- The v2 schema rejects legacy category wrappers, incomplete rich entries, and
-  mismatched element polarity bindings.
-- The v2 validator has 19 PASS checks and 23 adversarial rejection cases,
-  including Water Low-Enthalpy contamination of Magnetic/Internal.
+- Direct capability arrays contain 226 unique rich entries across all five
+  elements, each with required `mechanic_id`, `definition`, `relation_type`,
+  `value`, `phenomenon_class`, and `source_class` fields, plus the controlled
+  optional `semantic_transition` field where applicable.
+- Fire's 83 High-Enthalpy entries, Air's 44 High-Entropy entries, Water's 44
+  Low-Enthalpy entries, and Earth's 46 Low-Entropy entries remain
+  Electric/External only.
+- The v2 schema rejects legacy category wrappers, incomplete or unbounded rich
+  entries, and mismatched element polarity bindings.
+- The v2 validator has 20 PASS checks and 27 adversarial rejection cases,
+  including Water and Earth glossary contamination of Magnetic/Internal and
+  invalid Earth transition tags.
 - V1 source, schema, validator, test, and QA evidence remain available and are
   validated alongside v2.
 

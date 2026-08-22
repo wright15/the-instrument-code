@@ -32,7 +32,7 @@ SCAFFOLD_RELATIONS = {
     "structural_forms": "structures",
     "transfer_modes": "transfers",
 }
-RICH_ENTRY_KEYS = {
+RICH_ENTRY_REQUIRED_KEYS = {
     "mechanic_id",
     "definition",
     "relation_type",
@@ -40,6 +40,9 @@ RICH_ENTRY_KEYS = {
     "phenomenon_class",
     "source_class",
 }
+RICH_ENTRY_OPTIONAL_KEYS = {"semantic_transition"}
+RICH_ENTRY_KEYS = RICH_ENTRY_REQUIRED_KEYS | RICH_ENTRY_OPTIONAL_KEYS
+SEMANTIC_TRANSITION_VALUE = "failure_or_crossover"
 AUTHORED_RELATION_VOCABULARY = {
     "activated_by",
     "resists_by",
@@ -64,6 +67,7 @@ POPULATED_CLASS_PLACEMENTS = {
     "high_enthalpy": ("Fire", "electric_external"),
     "high_entropy": ("Air", "electric_external"),
     "low_enthalpy": ("Water", "electric_external"),
+    "low_entropy": ("Earth", "electric_external"),
 }
 EXPECTED_CLASS_COUNTS = {
     "high_enthalpy": {
@@ -83,6 +87,12 @@ EXPECTED_CLASS_COUNTS = {
         "transforms": 12,
         "structures": 10,
         "transfers": 9,
+    },
+    "low_entropy": {
+        "characterizes": 10,
+        "transforms": 12,
+        "structures": 12,
+        "transfers": 12,
     },
 }
 EXPECTED_LOW_ENTHALPY_IDS = {
@@ -138,6 +148,71 @@ EXPECTED_LOW_ENTHALPY_IDS = {
         "proton_conduction",
         "streaming_potential",
     ),
+}
+EXPECTED_LOW_ENTROPY_IDS = {
+    "characterizes": (
+        "band_gap",
+        "crystalline_dielectric",
+        "depletion_region",
+        "dielectric_strength",
+        "electric_displacement_field",
+        "electrostatic_surface_potential",
+        "ferroelectric_phase",
+        "poled_ferroelectric_state",
+        "piezoelectric_strain_state",
+        "surface_charge_state",
+    ),
+    "transforms": (
+        "anodization",
+        "dielectric_breakdown",
+        "dielectrophoretic_assembly",
+        "electric_field_assisted_crystallization",
+        "electric_field_directed_self_assembly",
+        "electrodeposition",
+        "electrochemical_passivation",
+        "electrocrystallization",
+        "electroepitaxy",
+        "electrophoretic_deposition",
+        "ferroelectric_domain_switching",
+        "piezoelectric_actuation",
+    ),
+    "structures": (
+        "crystal_lattice",
+        "dielectric_layer",
+        "domain_wall",
+        "electrical_tree",
+        "electrodeposited_coating",
+        "electrocrystalline_dendrite",
+        "epitaxial_film",
+        "ferroelectric_domain",
+        "passivation_layer",
+        "pn_junction",
+        "thermal_barrier_coating",
+        "vacancy_ordered_crystal",
+    ),
+    "transfers": (
+        "capacitive_coupling",
+        "dielectric_displacement_current",
+        "electrical_insulation",
+        "electrostatic_induction",
+        "electric_field_shielding",
+        "field_emission",
+        "piezoelectric_transduction",
+        "radiative_reflection",
+        "thermal_boundary_resistance",
+        "thermal_insulation",
+        "tunneling_current",
+        "breakdown_conduction",
+    ),
+}
+EXPECTED_CATALOG_IDS = {
+    "low_enthalpy": EXPECTED_LOW_ENTHALPY_IDS,
+    "low_entropy": EXPECTED_LOW_ENTROPY_IDS,
+}
+EXPECTED_SEMANTIC_TRANSITIONS = {
+    "dielectric_breakdown": SEMANTIC_TRANSITION_VALUE,
+    "electrical_tree": SEMANTIC_TRANSITION_VALUE,
+    "breakdown_conduction": SEMANTIC_TRANSITION_VALUE,
 }
 EXPECTED_SCALE_IDS = {
     "Fire": 661,
@@ -255,7 +330,7 @@ EXPECTED_FRAMEWORK_PARENT_CATEGORIES = [
     {
         "category_id": "low_entropy_phenomena",
         "section_id": "low_entropy_thermodynamics",
-        "population_status": "placeholder_future_category",
+        "population_status": "populated_in_this_registry",
     },
     {
         "category_id": "equilibrium_phenomena",
@@ -372,7 +447,7 @@ KINETICS_RESERVED_MECHANIC_IDS = {
     "third_body_reaction",
 }
 FORBIDDEN_RELATIONS = ("SETS_COURT_POLE", "EXECUTES_COURT_MOVE")
-EXPECTED_AUTHORING_FINGERPRINT = "39828e7cc39c9fcdaed9f620629c57b63c6e86b0b37ded0907e86122a5ee1368"
+EXPECTED_AUTHORING_FINGERPRINT = "6e0c8c8ddac35f2afcda02eee88f67732badf520b282413039eb7373bfb9eb83"
 
 REPORT_CHECK_IDS = (
     "mtr-v2-schema-identity",
@@ -382,6 +457,7 @@ REPORT_CHECK_IDS = (
     "mtr-v2-high-enthalpy-fire-population",
     "mtr-v2-high-entropy-air-population",
     "mtr-v2-low-enthalpy-water-population",
+    "mtr-v2-low-entropy-earth-population",
     "mtr-v2-scale-map-replay",
     "mtr-v2-polarity-binding-replay",
     "mtr-v2-zodiac-facet-refs",
@@ -414,8 +490,12 @@ EXPECTED_MUTATION_CODES = {
     "legacy-category-injected": "capability_array_invalid",
     "fire-glossary-in-magnetic": "phenomenon_class_placement_invalid",
     "water-glossary-in-magnetic": "phenomenon_class_placement_invalid",
+    "earth-glossary-in-magnetic": "phenomenon_class_placement_invalid",
     "missing-phenomenon-class": "rich_entry_invalid",
     "water-glossary-wrong-class": "phenomenon_class_placement_invalid",
+    "earth-glossary-wrong-class": "phenomenon_class_placement_invalid",
+    "missing-earth-semantic-transition": "semantic_transition_invalid",
+    "unexpected-semantic-transition": "semantic_transition_invalid",
     "instrumentation-term-injected": "instrumentation_term_forbidden",
     "kinetics-term-injected": "kinetics_term_forbidden",
     "glossary-duplicate-id": "duplicate_id_rejected",
@@ -539,11 +619,23 @@ def _array_layout_errors(document: dict[str, Any]) -> list[str]:
 def _entry_errors(document: dict[str, Any]) -> list[str]:
     errors = []
     for element, channel, entry in _all_entries(document):
-        if not isinstance(entry, dict) or set(entry) != RICH_ENTRY_KEYS:
+        if (
+            not isinstance(entry, dict)
+            or not RICH_ENTRY_REQUIRED_KEYS <= set(entry) <= RICH_ENTRY_KEYS
+        ):
             errors.append(f"{element}:{channel}:rich_keys")
             continue
-        if not all(isinstance(entry.get(key), str) and entry[key] for key in RICH_ENTRY_KEYS):
+        if not all(
+            isinstance(entry.get(key), str) and entry[key]
+            for key in RICH_ENTRY_REQUIRED_KEYS
+        ):
             errors.append(f"{element}:{channel}:rich_values")
+            continue
+        if "semantic_transition" in entry and not (
+            isinstance(entry["semantic_transition"], str)
+            and entry["semantic_transition"]
+        ):
+            errors.append(f"{element}:{channel}:semantic_transition")
             continue
         if entry["relation_type"] not in AUTHORED_RELATION_VOCABULARY:
             errors.append(f"{element}:{channel}:relation_type")
@@ -586,7 +678,7 @@ def _class_placement_errors(document: dict[str, Any]) -> list[str]:
         if not isinstance(entry, dict):
             continue
         phenomenon_class = entry.get("phenomenon_class")
-        if phenomenon_class in {"low_entropy", "equilibrium"}:
+        if phenomenon_class == "equilibrium":
             errors.append(f"{element}:{channel}:{phenomenon_class}:unpopulated")
             continue
         expected = POPULATED_CLASS_PLACEMENTS.get(phenomenon_class)
@@ -616,7 +708,8 @@ def _catalog_errors(document: dict[str, Any], phenomenon_class: str) -> list[str
         errors.append("scaffold_counts")
     if any(entry.get("relation_type") not in SCAFFOLD_RELATIONS.values() for entry in catalog):
         errors.append("scaffold_relation")
-    if phenomenon_class == "low_enthalpy":
+    expected_ids = EXPECTED_CATALOG_IDS.get(phenomenon_class)
+    if expected_ids is not None:
         actual_ids = {
             relation: tuple(
                 entry.get("mechanic_id")
@@ -625,8 +718,27 @@ def _catalog_errors(document: dict[str, Any], phenomenon_class: str) -> list[str
             )
             for relation in SCAFFOLD_RELATIONS.values()
         }
-        if actual_ids != EXPECTED_LOW_ENTHALPY_IDS:
-            errors.append("water_catalog_ids")
+        if actual_ids != expected_ids:
+            errors.append(f"{phenomenon_class}_catalog_ids")
+    return errors
+
+
+def _semantic_transition_errors(document: dict[str, Any]) -> list[str]:
+    errors = []
+    for element, channel, entry in _all_entries(document):
+        if not isinstance(entry, dict):
+            continue
+        mechanic_id = entry.get("mechanic_id")
+        if mechanic_id in EXPECTED_SEMANTIC_TRANSITIONS:
+            if (
+                (element, channel) != ("Earth", "electric_external")
+                or entry.get("phenomenon_class") != "low_entropy"
+                or entry.get("semantic_transition")
+                != EXPECTED_SEMANTIC_TRANSITIONS[mechanic_id]
+            ):
+                errors.append(f"{element}:{channel}:{mechanic_id}")
+        elif "semantic_transition" in entry:
+            errors.append(f"{element}:{channel}:{mechanic_id}:unexpected")
     return errors
 
 
@@ -755,6 +867,8 @@ def _semantic_rejection_code(document: dict[str, Any]) -> str | None:
         return "cross_registry_binding_mismatch"
     if _class_placement_errors(document):
         return "phenomenon_class_placement_invalid"
+    if _semantic_transition_errors(document):
+        return "semantic_transition_invalid"
     if _action_errors(document):
         return "authored_contract_mismatch"
     if any(_catalog_errors(document, phenomenon_class) for phenomenon_class in POPULATED_CLASS_PLACEMENTS):
@@ -780,6 +894,15 @@ def _low_entry(document: dict[str, Any]) -> dict[str, Any]:
         entry
         for entry in _entries(water, "electric_external")
         if entry.get("phenomenon_class") == "low_enthalpy"
+    )
+
+
+def _low_entropy_entry(document: dict[str, Any]) -> dict[str, Any]:
+    earth = _element(document, "Earth")
+    return next(
+        entry
+        for entry in _entries(earth, "electric_external")
+        if entry.get("phenomenon_class") == "low_entropy"
     )
 
 
@@ -873,12 +996,35 @@ def _mutated_cases(document: dict[str, Any]) -> dict[str, dict[str, Any]]:
     cases["water-glossary-in-magnetic"] = tampered
 
     tampered = deepcopy(document)
+    earth = _element(tampered, "Earth")
+    low_entropy_entry = earth["capabilities"]["electric_external"].pop(1)
+    earth["capabilities"]["magnetic_internal"].append(low_entropy_entry)
+    cases["earth-glossary-in-magnetic"] = tampered
+
+    tampered = deepcopy(document)
     del _low_entry(tampered)["phenomenon_class"]
     cases["missing-phenomenon-class"] = tampered
 
     tampered = deepcopy(document)
     _low_entry(tampered)["phenomenon_class"] = "high_entropy"
     cases["water-glossary-wrong-class"] = tampered
+
+    tampered = deepcopy(document)
+    _low_entropy_entry(tampered)["phenomenon_class"] = "high_entropy"
+    cases["earth-glossary-wrong-class"] = tampered
+
+    tampered = deepcopy(document)
+    dielectric_breakdown = next(
+        entry
+        for entry in _entries(_element(tampered, "Earth"), "electric_external")
+        if entry["mechanic_id"] == "dielectric_breakdown"
+    )
+    del dielectric_breakdown["semantic_transition"]
+    cases["missing-earth-semantic-transition"] = tampered
+
+    tampered = deepcopy(document)
+    _low_entropy_entry(tampered)["semantic_transition"] = SEMANTIC_TRANSITION_VALUE
+    cases["unexpected-semantic-transition"] = tampered
 
     tampered = deepcopy(document)
     _element(tampered, "Fire")["capabilities"]["electric_external"].append(
@@ -1011,16 +1157,26 @@ def validate(document: dict[str, Any]) -> dict[str, Any]:
         not layout_errors,
         layout_errors,
         str(REGISTRY_PATH) + "#elements",
-        {"entryKeys": sorted(RICH_ENTRY_KEYS), "noPhenomenonCategories": True},
+        {
+            "requiredEntryKeys": sorted(RICH_ENTRY_REQUIRED_KEYS),
+            "optionalEntryKeys": sorted(RICH_ENTRY_OPTIONAL_KEYS),
+            "noPhenomenonCategories": True,
+        },
         {item["element"]: list(item["capabilities"]) for item in elements},
     )
     for check_id, phenomenon_class in (
         ("mtr-v2-high-enthalpy-fire-population", "high_enthalpy"),
         ("mtr-v2-high-entropy-air-population", "high_entropy"),
         ("mtr-v2-low-enthalpy-water-population", "low_enthalpy"),
+        ("mtr-v2-low-entropy-earth-population", "low_entropy"),
     ):
         expected_element, expected_channel = POPULATED_CLASS_PLACEMENTS[phenomenon_class]
         catalog_errors = _catalog_errors(document, phenomenon_class)
+        transition_errors = (
+            _semantic_transition_errors(document)
+            if phenomenon_class == "low_entropy"
+            else []
+        )
         catalog = [
             entry
             for entry in _entries(_element(document, expected_element), expected_channel)
@@ -1028,8 +1184,10 @@ def validate(document: dict[str, Any]) -> dict[str, Any]:
         ]
         record(
             check_id,
-            not catalog_errors and not _class_placement_errors(document),
-            catalog_errors,
+            not catalog_errors
+            and not transition_errors
+            and not _class_placement_errors(document),
+            catalog_errors + transition_errors,
             str(REGISTRY_PATH) + f"#elements[{expected_element}].capabilities.{expected_channel}",
             EXPECTED_CLASS_COUNTS[phenomenon_class],
             {
