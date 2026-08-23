@@ -1,0 +1,254 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/schemas/execution_envelope.schema.json",
+  "title": "Intra-Node Execution Envelope",
+  "description": "Read-only post-tonal elaboration parameters for rendering one resolved Forte 7-35 node.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "node_identity",
+    "navigation_context",
+    "elaboration_state",
+    "render_parameters"
+  ],
+  "properties": {
+    "node_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "governor",
+        "mode",
+        "tier"
+      ],
+      "properties": {
+        "governor": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "mode": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "tier": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "navigation_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "last_navigation_operator",
+        "route_overlay"
+      ],
+      "properties": {
+        "last_navigation_operator": {
+          "$ref": "#/$defs/nonEmptyString",
+          "description": "Read-only provenance label for the most recent navigation operation."
+        },
+        "route_overlay": {
+          "type": "array",
+          "maxItems": 1,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          },
+          "description": "Zero or one active semantic route-overlay token; historical routes are not active overlays."
+        }
+      }
+    },
+    "elaboration_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "active_subset_root_degree",
+        "chaldean_weight",
+        "ic_emphasis",
+        "modal_rotation",
+        "court_projection_id"
+      ],
+      "properties": {
+        "active_subset_root_degree": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7,
+          "description": "Fixed Chaldean degree address used as the active subset-emphasis root."
+        },
+        "chaldean_weight": {
+          "$ref": "#/$defs/normalizedChaldeanWeight",
+          "description": "The chaldean_order_witness_v1 value for active_subset_root_degree."
+        },
+        "ic_emphasis": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
+          "description": "Interval class selected for render emphasis."
+        },
+        "modal_rotation": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 6,
+          "description": "Read-only modal perspective indexed by M^r; it does not execute M or traverse an edge."
+        },
+        "court_projection_id": {
+          "enum": [
+            "C0",
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            null
+          ],
+          "description": "Optional named 5-35 Court filter; null disables Court projection."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/chaldeanWeightMapping"
+        }
+      ]
+    },
+    "render_parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "amplitude",
+        "tempo",
+        "density"
+      ],
+      "properties": {
+        "amplitude": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "tempo": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "density": {
+          "$ref": "#/$defs/unitInterval"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "unitInterval": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "normalizedChaldeanWeight": {
+      "type": "number",
+      "exclusiveMinimum": 0.0,
+      "maximum": 1.0
+    },
+    "chaldeanWeightMapping": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "active_subset_root_degree": {
+              "const": 1
+            },
+            "chaldean_weight": {
+              "const": 0.28501228501228504
+            }
+          },
+          "required": [
+            "active_subset_root_degree",
+            "chaldean_weight"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "active_subset_root_degree": {
+              "const": 2
+            },
+            "chaldean_weight": {
+              "const": 0.1375921375921376
+            }
+          },
+          "required": [
+            "active_subset_root_degree",
+            "chaldean_weight"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "active_subset_root_degree": {
+              "const": 3
+            },
+            "chaldean_weight": {
+              "const": 0.10073710073710074
+            }
+          },
+          "required": [
+            "active_subset_root_degree",
+            "chaldean_weight"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "active_subset_root_degree": {
+              "const": 4
+            },
+            "chaldean_weight": {
+              "const": 0.085995085995086
+            }
+          },
+          "required": [
+            "active_subset_root_degree",
+            "chaldean_weight"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "active_subset_root_degree": {
+              "const": 5
+            },
+            "chaldean_weight": {
+              "const": 0.1891891891891892
+            }
+          },
+          "required": [
+            "active_subset_root_degree",
+            "chaldean_weight"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "active_subset_root_degree": {
+              "const": 6
+            },
+            "chaldean_weight": {
+              "const": 0.10810810810810811
+            }
+          },
+          "required": [
+            "active_subset_root_degree",
+            "chaldean_weight"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "active_subset_root_degree": {
+              "const": 7
+            },
+            "chaldean_weight": {
+              "const": 0.09336609336609336
+            }
+          },
+          "required": [
+            "active_subset_root_degree",
+            "chaldean_weight"
+          ]
+        }
+      ]
+    }
+  }
+}
