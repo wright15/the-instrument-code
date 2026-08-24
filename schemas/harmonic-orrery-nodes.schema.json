@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/schemas/harmonic-orrery-nodes.schema.json",
+  "title": "Harmonic Orrery Nodes Response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "profileRegistryReleaseId",
+    "harmonicDescriptor",
+    "nodeCount",
+    "nodes"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "harmonic-orrery.nodes.v1" },
+    "profileRegistryReleaseId": { "type": "string", "minLength": 1 },
+    "harmonicDescriptor": { "$ref": "#/$defs/harmonicDescriptorRelease" },
+    "nodeCount": { "const": 21 },
+    "nodes": {
+      "type": "array",
+      "minItems": 21,
+      "maxItems": 21,
+      "items": { "$ref": "#/$defs/node" }
+    }
+  },
+  "$defs": {
+    "governor": {
+      "enum": ["Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus", "Saturn"]
+    },
+    "ratio407": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": { "type": "integer" },
+        "denominator": { "const": 407 }
+      }
+    },
+    "harmonicDescriptorRelease": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidateId", "coordinateId", "releaseId", "status", "candidateFingerprint"],
+      "properties": {
+        "candidateId": { "const": "CH_A012_q_v1" },
+        "coordinateId": { "const": "harmonic.CH_A012_q_v1" },
+        "releaseId": { "const": "harmonic-compression-candidate:CH_A012_q_v1:1.0.0" },
+        "status": { "const": "admitted_scoped_A012" },
+        "candidateFingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "resolution", "photonic", "canonicalProfile", "scopedHarmonicDescriptor"],
+      "properties": {
+        "state": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["stateId", "nodeId", "name", "forteFamily", "tier", "role"],
+          "properties": {
+            "stateId": { "type": "integer", "minimum": 0, "maximum": 4095 },
+            "nodeId": { "type": "string", "pattern": "^scale:" },
+            "name": { "type": "string", "minLength": 1 },
+            "forteFamily": { "enum": ["7-35", "7-34", "7-33"] },
+            "tier": { "enum": ["A0", "A1", "A2"] },
+            "role": { "const": "anchor" }
+          }
+        },
+        "resolution": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["office", "officeBearing"],
+          "properties": {
+            "office": { "$ref": "#/$defs/governor" },
+            "officeBearing": { "const": true }
+          }
+        },
+        "photonic": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["photonicId", "office", "representativeWavelengthNm", "photonicCompression"],
+          "properties": {
+            "photonicId": { "type": "string", "minLength": 1 },
+            "office": { "$ref": "#/$defs/governor" },
+            "representativeWavelengthNm": { "type": "number" },
+            "photonicCompression": { "type": "number" }
+          }
+        },
+        "canonicalProfile": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["profileId", "profileVersion", "office", "domainReferences"],
+          "properties": {
+            "profileId": { "type": "string", "pattern": "^profile:" },
+            "profileVersion": { "type": "string", "minLength": 1 },
+            "office": { "$ref": "#/$defs/governor" },
+            "domainReferences": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["landforms"],
+              "properties": {
+                "landforms": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": { "type": "string", "minLength": 1 }
+                }
+              }
+            }
+          }
+        },
+        "scopedHarmonicDescriptor": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["coordinateId", "status", "stateGovernor", "weightedProjection"],
+          "properties": {
+            "coordinateId": { "const": "harmonic.CH_A012_q_v1" },
+            "status": { "const": "admitted_scoped_A012" },
+            "stateGovernor": { "$ref": "#/$defs/governor" },
+            "weightedProjection": { "$ref": "#/$defs/ratio407" }
+          }
+        }
+      }
+    }
+  }
+}

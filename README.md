@@ -136,6 +136,7 @@ canonical/     Frozen universal network and identity ledgers
 docs/          Formal topology, identity, audit, four-layer, and API specs
 neo4j/         CSV projection, schema, imports, provenance, and Cypher checks
 graph/         Complete offline interactive network
+orrery/        Read-only Vite and Three.js Harmonic Orrery application
 provenance/    Authority map, release record, source hashes, and decision ledger
 qa/            Independent release and Neo4j validation evidence
 scripts/       Reproducibility and release-integrity checks
@@ -146,6 +147,24 @@ scripts/       Reproducibility and release-integrity checks
 Open `graph/index.html` directly. It is a complete offline document and does
 not require Neo4j, Node.js, or an internet connection. `graph/explore.html`
 offers the mutation-algebra explorer with locally vendored runtime assets.
+
+## Run the Harmonic Orrery
+
+The standalone `orrery/` application renders the live, read-only A0-A2 anchor
+projection. It does not connect to Neo4j directly and does not write runtime or
+canonical state. Start the API and frontend in separate terminals.
+
+```bash
+npm run orrery:start -- --reload
+npm install --prefix orrery
+npm run orrery:dev
+npm run orrery:api:test
+npm run orrery:browser:test
+```
+
+The Vite development server proxies `/api/nodes` to the local FastAPI service.
+See [`orrery/README.md`](orrery/README.md) for its API boundary and focused
+checks.
 
 ## Validate the release
 

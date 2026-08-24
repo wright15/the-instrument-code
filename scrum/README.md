@@ -75,6 +75,27 @@ Continuation brief: [pentatonic graph binding Phases 2-4](pre-epic-400-pentatoni
 | [CRT-350](CRT-350-elemental-pentatonic-scale-map.md) | Elemental Pentatonic Scale Map (dual-core physics categorization) | 5 | Medium | **Done** |
 | [CRT-351](CRT-351-mechanics-thermodynamics-registry.md) | Mechanics Thermodynamics Registry (elemental capability glossary) | 5 | Medium | **Done** |
 
+## EPIC-009 - Harmonic Orrery application MVP
+
+This is an application-layer, non-admission workstream. It consumes existing
+read-only canonical data and keeps player state local. It does not activate the
+proposed EPIC-004 through EPIC-008 authority workstreams.
+
+| ID | Title | Points | Priority | Status |
+|---|---|---|---|---|
+| [EPIC-009](EPIC-009-harmonic-orrery-mvp.md) | Read-only 3D, audio, Court, and local-game MVP | - | High | **In Progress** |
+| [ORR-401](ORR-401-orrery-api-foundation.md) | Orrery API foundation and local developer runtime | 5 | High | **Done** |
+| [ORR-402](ORR-402-three-dimensional-anchor-orrery.md) | Three-dimensional 21-anchor Orrery | 8 | High | **Done** |
+| [ORR-403](ORR-403-anchor-interaction-and-session-state.md) | Anchor interaction and local session state | 5 | High | **Backlog** |
+| [ORR-404](ORR-404-hybrid-audio-engine.md) | Hybrid audio engine for Governor anchors | 8 | High | **Backlog** |
+| [ORR-405](ORR-405-court-control-surface.md) | Court control surface and pentatonic voicing | 5 | High | **Backlog** |
+| [ORR-406](ORR-406-legal-move-game-loop.md) | Legal-move game loop and local objectives | 8 | High | **Backlog** |
+| [ORR-407](ORR-407-procedural-scene-composer.md) | Procedural scene composer | 5 | Medium | **Backlog** |
+| [ORR-408](ORR-408-mvp-goals-polish-and-release.md) | MVP goals, polish, and release closure | 5 | High | **Backlog** |
+
+Planned story points: **49**. The active implementation story is
+[ORR-403](ORR-403-anchor-interaction-and-session-state.md).
+
 ## Global definition of done
 
 Every ticket also carries a story-specific definition of done. Globally:

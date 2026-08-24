@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A read-only three-dimensional view of the 21 Harmonic Orrery anchors."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Harmonic Orrery</title>
+  </head>
+  <body>
+    <main class="app-shell" id="app">
+      <header class="masthead">
+        <a class="wordmark" href="/" aria-label="Harmonic Orrery home">
+          <span>Harmonic</span>
+          <strong>Orrery</strong>
+        </a>
+        <p class="masthead-caption">21 seated anchors / A0-A2 scoped field</p>
+        <p class="api-status" id="api-status" role="status" aria-live="polite">
+          Connecting to canonical projection
+        </p>
+      </header>
+
+      <section class="intro-band" aria-labelledby="orrery-title">
+        <p class="eyebrow">Read-only navigator</p>
+        <h1 id="orrery-title">The seated harmonic field</h1>
+        <p>
+          Select an anchor to inspect its admitted office, photonic reference,
+          landform pool, and scoped A0-A2 weight. The unresolved global C_H is
+          intentionally not displayed here.
+        </p>
+      </section>
+
+      <div class="orrery-layout">
+        <section class="scene-panel" aria-labelledby="scene-heading">
+          <div class="scene-topline">
+            <div>
+              <p class="eyebrow">Orbital instrument</p>
+              <h2 id="scene-heading">21-anchor view</h2>
+            </div>
+            <p class="scene-key"><span></span> drag to orbit / scroll to zoom</p>
+          </div>
+
+          <div class="scene-frame" id="scene-frame">
+            <canvas
+              id="orrery-canvas"
+              aria-label="Interactive three-dimensional view of 21 harmonic anchors"
+            ></canvas>
+            <div class="anchor-labels" id="anchor-labels" aria-hidden="true"></div>
+            <p class="scene-message" id="scene-message" aria-live="polite">
+              Loading the anchor projection...
+            </p>
+          </div>
+
+          <div class="scene-footnote">
+            <span id="scene-count">0 / 21 anchors</span>
+            <span>Tier bands: A0 core / A1 middle / A2 perimeter</span>
+          </div>
+        </section>
+
+        <aside class="detail-rail" aria-label="Anchor inspector and index">
+          <section class="inspector" aria-labelledby="inspector-heading">
+            <p class="eyebrow">Selected anchor</p>
+            <h2 id="inspector-heading">Awaiting projection</h2>
+            <p class="inspector-subtitle" id="selected-identity">No anchor selected</p>
+            <dl class="measurements">
+              <div>
+                <dt>Governor</dt>
+                <dd id="selected-governor">-</dd>
+              </div>
+              <div>
+                <dt>Wavelength</dt>
+                <dd id="selected-wavelength">-</dd>
+              </div>
+              <div>
+                <dt>W_A012</dt>
+                <dd id="selected-weight">-</dd>
+              </div>
+              <div>
+                <dt>Profile</dt>
+                <dd id="selected-profile">-</dd>
+              </div>
+            </dl>
+            <div class="landform-block">
+              <p class="field-label">Baseline A0 landform reference pool</p>
+              <ul id="selected-landforms" class="landform-list">
+                <li>Loading source references</li>
+              </ul>
+            </div>
+          </section>
+
+          <nav class="anchor-index" aria-label="Anchor index">
+            <div class="index-heading">
+              <div>
+                <p class="eyebrow">Direct selection</p>
+                <h2>Anchor index</h2>
+              </div>
+              <span id="index-count">00</span>
+            </div>
+            <div id="anchor-list" class="anchor-list"></div>
+          </nav>
+        </aside>
+      </div>
+
+      <footer class="app-footer">
+        <span>Presentation layer only</span>
+        <span>Neo4j remains a read projection</span>
+        <span>Source: harmonic-orrery.nodes.v1</span>
+      </footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
