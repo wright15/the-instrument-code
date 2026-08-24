@@ -33,8 +33,28 @@ npm run orrery:api:test
 ```
 
 `orrery:browser:test` starts an isolated Vite server and mocks `/api/nodes`.
-It covers a 503 projection failure and a WebGL-disabled fallback without FastAPI
+It covers unavailable and incompatible projection responses, shared URLs, local
+progress recovery, WebGL fallback, and keyboard navigation without FastAPI
 credentials or a live Neo4j instance.
 
+## Local exploration state
+
+The Orrery automatically saves non-secret local exploration state under
+`seven-governors.harmonic-orrery.session`. The versioned document contains only
+the selected anchor ID, visited anchor IDs, an unset local Court placeholder,
+and the source identity needed to validate it against the current projection.
+
+Use `?anchor=<state-id>` to share one selected anchor. Visited history and the
+local Court placeholder are intentionally not included in URLs. Invalid links
+select nothing and offer a clear-link action rather than falling back to an
+arbitrary anchor.
+
+Saved progress is discarded with an explanation when the nodes schema,
+profile-registry release, harmonic descriptor release, or descriptor fingerprint
+does not match the live response. Unavailable and incompatible API responses
+never hydrate or overwrite saved progress.
+
 The app intentionally presents scoped `W_A012` only. It does not display or
-calculate unresolved global `harmonic.C_H`, Court state, or game state.
+calculate unresolved global `harmonic.C_H`, Court runtime state, or game state.
+The HUD's Court entry is an unset local presentation placeholder; ORR-405 owns
+actual C0-C4 controls.

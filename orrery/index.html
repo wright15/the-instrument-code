@@ -33,6 +33,30 @@
         </p>
       </section>
 
+      <section class="session-hud" aria-label="Local exploration state">
+        <div class="session-metric">
+          <span>Selected anchor</span>
+          <strong id="session-selected">Awaiting projection</strong>
+        </div>
+        <div class="session-metric">
+          <span>Visited anchors</span>
+          <strong id="session-visited">0 / 21 visited</strong>
+        </div>
+        <div class="session-metric">
+          <span>Local Court display</span>
+          <strong id="session-court">Not set / local-only</strong>
+        </div>
+        <div class="session-metric">
+          <span>Projection health</span>
+          <strong id="session-api-health">Connecting to canonical projection</strong>
+        </div>
+        <p class="session-message" id="session-message" role="status" aria-live="polite" hidden></p>
+        <div class="session-actions">
+          <button id="clear-link-selection" type="button" hidden>Clear link selection</button>
+          <button id="reload-projection" type="button" hidden>Reload projection</button>
+        </div>
+      </section>
+
       <div class="orrery-layout">
         <section class="scene-panel" aria-labelledby="scene-heading">
           <div class="scene-topline">
@@ -67,19 +91,27 @@
             <p class="inspector-subtitle" id="selected-identity">No anchor selected</p>
             <dl class="measurements">
               <div>
-                <dt>Governor</dt>
+                <dt>State Governor</dt>
                 <dd id="selected-governor">-</dd>
               </div>
               <div>
-                <dt>Wavelength</dt>
+                <dt>Tier band</dt>
+                <dd id="selected-tier">-</dd>
+              </div>
+              <div>
+                <dt>Representative wavelength</dt>
                 <dd id="selected-wavelength">-</dd>
               </div>
               <div>
-                <dt>W_A012</dt>
+                <dt>Photonic compression (C_P)</dt>
+                <dd id="selected-photonic-compression">-</dd>
+              </div>
+              <div>
+                <dt>Scoped anchor weight (W_A012)</dt>
                 <dd id="selected-weight">-</dd>
               </div>
               <div>
-                <dt>Profile</dt>
+                <dt>Profile release</dt>
                 <dd id="selected-profile">-</dd>
               </div>
             </dl>

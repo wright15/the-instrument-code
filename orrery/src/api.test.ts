@@ -1,6 +1,11 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
-import { parseNodesResponse } from "./api";
+import {
+  fetchNodes,
+  parseNodesResponse,
+  ProjectionCompatibilityError,
+  ProjectionUnavailableError,
+} from "./api";
 import { layoutAnchors } from "./layout";
 import { GOVERNORS, TIERS } from "./types";
 
@@ -91,6 +96,11 @@ function responseFixture(): {
 }
 
 describe("Harmonic Orrery nodes contract", () => {
+  afterEach(() => {
+    vi.useRealTimers();
+    vi.unstubAllGlobals();
+  });
+
   it("normalizes the 21 anchors into deterministic tier and office order", () => {
     const response = parseNodesResponse(responseFixture());
 
@@ -108,6 +118,59 @@ describe("Harmonic Orrery nodes contract", () => {
     response.nodes[0].scopedHarmonicDescriptor.weightedProjection.denominator = 408;
 
     expect(() => parseNodesResponse(response)).toThrow("denominator must be 407");
+    expect(() => parseNodesResponse(response)).toThrow(ProjectionCompatibilityError);
+  });
+
+  it("classifies schema, descriptor release, invalid fields, and invalid anchor IDs as incompatible", () => {
+    const schemaChanged = responseFixture();
+    schemaChanged.schemaVersion = "harmonic-orrery.nodes.v2";
+    expect(() => parseNodesResponse(schemaChanged)).toThrow(ProjectionCompatibilityError);
+
+    const releaseChanged = responseFixture();
+    releaseChanged.harmonicDescriptor.releaseId = "harmonic-compression-candidate:CH_A012_q_v1:2.0.0";
+    expect(() => parseNodesResponse(releaseChanged)).toThrow(ProjectionCompatibilityError);
+
+    const invalidId = responseFixture();
+    invalidId.nodes[0].state.stateId = -1;
+    expect(() => parseNodesResponse(invalidId)).toThrow("must be between 0 and 4095");
+
+    const unknownField = responseFixture();
+    Object.assign(unknownField.nodes[0].state, { unexpected: true });
+    expect(() => parseNodesResponse(unknownField)).toThrow("has unexpected fields");
+  });
+
+  it("classifies unavailable network and HTTP projection responses", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new TypeError("offline")));
+    await expect(fetchNodes()).rejects.toBeInstanceOf(ProjectionUnavailableError);
+
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response("", { status: 503 })));
+    await expect(fetchNodes()).rejects.toBeInstanceOf(ProjectionUnavailableError);
+
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response("{", { status: 200 })));
+    await expect(fetchNodes()).rejects.toBeInstanceOf(ProjectionCompatibilityError);
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: vi.fn().mockRejectedValue(new TypeError("connection closed")),
+      }),
+    );
+    await expect(fetchNodes()).rejects.toBeInstanceOf(ProjectionUnavailableError);
+
+    vi.useFakeTimers();
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(
+        (_input: RequestInfo | URL, init?: RequestInit) =>
+          new Promise<Response>((_resolve, reject) => {
+            init?.signal?.addEventListener("abort", () => reject(new Error("aborted")));
+          }),
+      ),
+    );
+    const stalledRequest = expect(fetchNodes()).rejects.toThrow("timed out");
+    await vi.runAllTimersAsync();
+    await stalledRequest;
   });
 
   it("creates stable, separated tier-orbit positions", () => {

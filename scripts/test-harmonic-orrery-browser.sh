@@ -14,14 +14,23 @@ if [[ ! -x "${cli}" || ! -x "${vite}" ]]; then
 fi
 
 fixture_body="$(node "${frontend_dir}/test/fixtures/nodes-response.mjs")"
+release_fixture_body="$(node "${frontend_dir}/test/fixtures/nodes-response.mjs" "harmonic-compression-candidate:CH_A012_q_v1:2.0.0")"
 work_dir="$(mktemp -d "${TMPDIR:-/tmp}/orrery-browser.XXXXXX")"
 api_session="orrery-api-unavailable-$$"
 webgl_session="orrery-webgl-unavailable-$$"
+shared_session="orrery-shared-session-$$"
+invalid_link_session="orrery-invalid-link-$$"
+stale_session="orrery-stale-session-$$"
+incompatible_session="orrery-incompatible-response-$$"
 vite_pid=""
 
 cleanup() {
   "${cli}" -s="${api_session}" close >/dev/null 2>&1 || true
   "${cli}" -s="${webgl_session}" close >/dev/null 2>&1 || true
+  "${cli}" -s="${shared_session}" close >/dev/null 2>&1 || true
+  "${cli}" -s="${invalid_link_session}" close >/dev/null 2>&1 || true
+  "${cli}" -s="${stale_session}" close >/dev/null 2>&1 || true
+  "${cli}" -s="${incompatible_session}" close >/dev/null 2>&1 || true
 
   if [[ -n "${vite_pid}" ]]; then
     kill "${vite_pid}" >/dev/null 2>&1 || true
@@ -57,7 +66,25 @@ run_cli() {
   "${cli}" -s="${session}" "$@"
 }
 
+assert_page() {
+  local session="$1"
+  local expression="$2"
+  local description="$3"
+  local result
+  result="$(run_cli "${session}" --raw eval "${expression}")"
+  if [[ "${result}" != "true" ]]; then
+    printf '%s\n' "Browser assertion failed: ${description}"
+    printf '%s\n' "Actual result: ${result}"
+    exit 1
+  fi
+}
+
 run_cli "${api_session}" open
+run_cli "${api_session}" run-code "async page => {
+  await page.addInitScript(() => {
+    localStorage.setItem('seven-governors.harmonic-orrery.session', 'preserved-unavailable');
+  });
+}"
 run_cli "${api_session}" route "**/api/nodes" \
   --status 503 \
   --body '{"detail":"Neo4j projection is unavailable"}' \
@@ -72,6 +99,8 @@ run_cli "${api_session}" run-code "async page => {
     messageText: document.querySelector('#scene-message')?.textContent?.trim(),
     canvasHidden: document.querySelector('#orrery-canvas')?.hidden,
     anchorCount: document.querySelectorAll('#anchor-list .anchor-button').length,
+    reloadHidden: document.querySelector('#reload-projection')?.hidden,
+    sessionHealth: document.querySelector('#session-api-health')?.textContent?.trim(),
   }));
   if (
     result.apiState !== 'error' ||
@@ -79,11 +108,28 @@ run_cli "${api_session}" run-code "async page => {
     result.messageState !== 'error' ||
     !result.messageText?.includes('Anchor projection request failed (503)') ||
     result.canvasHidden !== true ||
-    result.anchorCount !== 0
+    result.anchorCount !== 0 ||
+    result.reloadHidden !== false ||
+    result.sessionHealth !== 'Projection unavailable'
   ) {
     throw new Error('Unexpected API-unavailable state: ' + JSON.stringify(result));
   }
 }"
+assert_page "${api_session}" "() => {
+  const status = document.querySelector('#api-status');
+  const message = document.querySelector('#scene-message');
+  return (
+    status?.dataset.state === 'error' &&
+    status.textContent?.trim() === 'Projection unavailable' &&
+    message?.dataset.state === 'error' &&
+    message.textContent?.includes('Anchor projection request failed (503)') &&
+    document.querySelector('#orrery-canvas')?.hidden === true &&
+    document.querySelectorAll('#anchor-list .anchor-button').length === 0 &&
+    document.querySelector('#reload-projection')?.hidden === false &&
+    document.querySelector('#session-api-health')?.textContent?.trim() === 'Projection unavailable' &&
+    localStorage.getItem('seven-governors.harmonic-orrery.session') === 'preserved-unavailable'
+  );
+}" "API unavailable state"
 
 run_cli "${webgl_session}" open
 run_cli "${webgl_session}" run-code "async page => {
@@ -121,26 +167,350 @@ run_cli "${webgl_session}" run-code "async page => {
   ) {
     throw new Error('Unexpected WebGL fallback state: ' + JSON.stringify(initial));
   }
-
+}"
+assert_page "${webgl_session}" "() => {
+  return (
+    document.querySelector('#api-status')?.textContent?.trim() === 'Live projection / harmonic-orrery.nodes.v1' &&
+    document.querySelector('#orrery-canvas')?.hidden === true &&
+    document.querySelector('#scene-message')?.textContent === 'WebGL is unavailable. Use the keyboard-accessible anchor index to inspect the live projection.' &&
+    document.querySelectorAll('#anchor-list .anchor-button').length === 21 &&
+    document.querySelector('#inspector-heading')?.textContent === 'Choose an anchor' &&
+    document.querySelector('#session-selected')?.textContent?.trim() === 'No anchor selected' &&
+    document.querySelector('#session-visited')?.textContent?.trim() === '0 / 21 visited' &&
+    document.querySelectorAll('.anchor-button[aria-pressed=true]').length === 0
+  );
+}" "first-visit WebGL fallback state"
+run_cli "${webgl_session}" run-code "async page => {
   const target = page.locator(\"button[data-state-id='3']\");
   await target.focus();
   await page.keyboard.press('Enter');
   await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Mars A0');
-
-  const selection = await page.evaluate(() => ({
-    activeStateId: document.activeElement?.getAttribute('data-state-id'),
-    pressed: document.querySelector(\"button[data-state-id='3']\")?.getAttribute('aria-pressed'),
-    heading: document.querySelector('#inspector-heading')?.textContent,
-    identity: document.querySelector('#selected-identity')?.textContent,
+}"
+assert_page "${webgl_session}" "() => {
+  return (
+    document.activeElement?.getAttribute('data-state-id') === '3' &&
+    document.querySelector(\"button[data-state-id='3']\")?.getAttribute('aria-pressed') === 'true' &&
+    document.querySelector('#inspector-heading')?.textContent === 'Mars A0' &&
+    document.querySelector('#selected-identity')?.textContent === 'scale:3 / A0 / 7-35' &&
+    document.querySelector('#session-selected')?.textContent?.trim() === 'Mars A0 / scale:3' &&
+    document.querySelector('#session-visited')?.textContent?.trim() === '1 / 21 visited'
+  );
+}" "WebGL fallback selection"
+run_cli "${webgl_session}" reload
+run_cli "${webgl_session}" run-code "async page => {
+  await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Mars A0');
+  const restored = await page.evaluate(() => ({
+    selected: document.querySelector(\"button[data-state-id='3']\")?.getAttribute('aria-pressed'),
+    visited: document.querySelector('#session-visited')?.textContent?.trim(),
   }));
-  if (
-    selection.activeStateId !== '3' ||
-    selection.pressed !== 'true' ||
-    selection.heading !== 'Mars A0' ||
-    selection.identity !== 'scale:3 / A0 / 7-35'
-  ) {
-    throw new Error('Keyboard selection did not update the fallback index: ' + JSON.stringify(selection));
+  if (restored.selected !== 'true' || restored.visited !== '1 / 21 visited') {
+    throw new Error('WebGL fallback did not restore local progress: ' + JSON.stringify(restored));
   }
 }"
+assert_page "${webgl_session}" "() => {
+  return (
+    document.querySelector(\"button[data-state-id='3']\")?.getAttribute('aria-pressed') === 'true' &&
+    document.querySelector('#session-visited')?.textContent?.trim() === '1 / 21 visited'
+  );
+}" "WebGL fallback reload persistence"
 
-printf '%s\n' "Orrery browser fallback checks passed."
+run_cli "${shared_session}" open
+run_cli "${shared_session}" route "**/api/nodes" \
+  --body "${fixture_body}" \
+  --content-type application/json
+run_cli "${shared_session}" goto "${base_url}/?anchor=3"
+run_cli "${shared_session}" run-code "async page => {
+  await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Mars A0');
+  const result = await page.evaluate(() => {
+    const stored = JSON.parse(window.localStorage.getItem('seven-governors.harmonic-orrery.session') ?? 'null');
+    return {
+      search: window.location.search,
+      pressed: document.querySelector(\"button[data-state-id='3']\")?.getAttribute('aria-pressed'),
+      selected: document.querySelector('#session-selected')?.textContent?.trim(),
+      visited: document.querySelector('#session-visited')?.textContent?.trim(),
+      court: document.querySelector('#session-court')?.textContent?.trim(),
+      health: document.querySelector('#session-api-health')?.textContent?.trim(),
+      labels: Array.from(document.querySelectorAll('.measurements dt')).map(item => item.textContent?.trim()),
+      storedSelected: stored?.selectedAnchorId,
+      storedVisited: stored?.visitedAnchorIds,
+    };
+  });
+  if (
+    result.search !== '?anchor=3' ||
+    result.pressed !== 'true' ||
+    result.selected !== 'Mars A0 / scale:3' ||
+    result.visited !== '1 / 21 visited' ||
+    result.court !== 'Not set / local-only' ||
+    result.health !== 'Live projection / harmonic-orrery.nodes.v1' ||
+    JSON.stringify(result.labels) !== JSON.stringify([
+      'State Governor',
+      'Tier band',
+      'Representative wavelength',
+      'Photonic compression (C_P)',
+      'Scoped anchor weight (W_A012)',
+      'Profile release',
+    ]) ||
+    result.storedSelected !== 3 ||
+    JSON.stringify(result.storedVisited) !== JSON.stringify([3])
+  ) {
+    throw new Error('Shared URL did not hydrate the expected local session: ' + JSON.stringify(result));
+  }
+
+}"
+assert_page "${shared_session}" "() => {
+  const stored = JSON.parse(window.localStorage.getItem('seven-governors.harmonic-orrery.session') ?? 'null');
+  const labels = Array.from(document.querySelectorAll('.measurements dt')).map(item => item.textContent?.trim());
+  return (
+    window.location.search === '?anchor=3' &&
+    document.querySelector(\"button[data-state-id='3']\")?.getAttribute('aria-pressed') === 'true' &&
+    document.querySelector('#session-selected')?.textContent?.trim() === 'Mars A0 / scale:3' &&
+    document.querySelector('#session-visited')?.textContent?.trim() === '1 / 21 visited' &&
+    document.querySelector('#session-court')?.textContent?.trim() === 'Not set / local-only' &&
+    document.querySelector('#session-api-health')?.textContent?.trim() === 'Live projection / harmonic-orrery.nodes.v1' &&
+    JSON.stringify(labels) === JSON.stringify([
+      'State Governor',
+      'Tier band',
+      'Representative wavelength',
+      'Photonic compression (C_P)',
+      'Scoped anchor weight (W_A012)',
+      'Profile release',
+    ]) &&
+    stored?.selectedAnchorId === 3 &&
+    JSON.stringify(stored?.visitedAnchorIds) === JSON.stringify([3])
+  );
+}" "shared URL hydration and inspector labels"
+run_cli "${shared_session}" run-code "async page => {
+  const target = page.locator(\"button[data-state-id='2']\");
+  await target.focus();
+  await page.keyboard.press('Enter');
+  await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Moon A0');
+  await page.evaluate(() => window.history.replaceState(null, '', window.location.pathname));
+}"
+run_cli "${shared_session}" reload
+run_cli "${shared_session}" run-code "async page => {
+  await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Moon A0');
+  const restored = await page.evaluate(() => {
+    const stored = JSON.parse(window.localStorage.getItem('seven-governors.harmonic-orrery.session') ?? 'null');
+    return {
+      search: window.location.search,
+      pressed: document.querySelector(\"button[data-state-id='2']\")?.getAttribute('aria-pressed'),
+      visited: document.querySelector('#session-visited')?.textContent?.trim(),
+      storedSelected: stored?.selectedAnchorId,
+      storedVisited: stored?.visitedAnchorIds,
+    };
+  });
+  if (
+    restored.search !== '?anchor=2' ||
+    restored.pressed !== 'true' ||
+    restored.visited !== '2 / 21 visited' ||
+    restored.storedSelected !== 2 ||
+    JSON.stringify(restored.storedVisited) !== JSON.stringify([2, 3])
+  ) {
+    throw new Error('Reload did not restore local exploration progress: ' + JSON.stringify(restored));
+  }
+
+  await page.locator('.wordmark').focus();
+  await page.keyboard.press('Tab');
+  const firstAnchor = await page.evaluate(() => document.activeElement?.getAttribute('data-state-id'));
+  for (let index = 1; index < 21; index += 1) {
+    await page.keyboard.press('Tab');
+  }
+  const lastAnchor = await page.evaluate(() => document.activeElement?.getAttribute('data-state-id'));
+  if (firstAnchor !== '1' || lastAnchor !== '207') {
+    throw new Error('Anchor index focus order is not complete: ' + JSON.stringify({ firstAnchor, lastAnchor }));
+  }
+}"
+assert_page "${shared_session}" "() => {
+  const stored = JSON.parse(window.localStorage.getItem('seven-governors.harmonic-orrery.session') ?? 'null');
+  return (
+    window.location.search === '?anchor=2' &&
+    document.querySelector(\"button[data-state-id='2']\")?.getAttribute('aria-pressed') === 'true' &&
+    document.querySelector('#session-visited')?.textContent?.trim() === '2 / 21 visited' &&
+    stored?.selectedAnchorId === 2 &&
+    JSON.stringify(stored?.visitedAnchorIds) === JSON.stringify([2, 3]) &&
+    document.activeElement?.getAttribute('data-state-id') === '207'
+  );
+}" "local session reload and anchor focus order"
+
+run_cli "${invalid_link_session}" open
+run_cli "${invalid_link_session}" run-code "async page => {
+  await page.addInitScript(() => {
+    localStorage.setItem(
+      'seven-governors.harmonic-orrery.session',
+      JSON.stringify({
+        schemaVersion: 'harmonic-orrery.session.v1',
+        source: {
+          nodesSchemaVersion: 'harmonic-orrery.nodes.v1',
+          profileRegistryReleaseId: 'canonical-feature-profile-registry:0.1.0',
+          harmonicDescriptorReleaseId: 'harmonic-compression-candidate:CH_A012_q_v1:1.0.0',
+          harmonicDescriptorFingerprint: 'a'.repeat(64),
+        },
+        selectedAnchorId: 3,
+        visitedAnchorIds: [3],
+        courtPresentationPosition: null,
+      }),
+    );
+    const originalSetItem = Storage.prototype.setItem;
+    Storage.prototype.setItem = function(key, value) {
+      if (key === 'seven-governors.harmonic-orrery.session') {
+        throw new DOMException('Local storage quota exceeded', 'QuotaExceededError');
+      }
+      return originalSetItem.call(this, key, value);
+    };
+  });
+}"
+run_cli "${invalid_link_session}" route "**/api/nodes" \
+  --body "${fixture_body}" \
+  --content-type application/json
+run_cli "${invalid_link_session}" goto "${base_url}/?anchor=999999"
+run_cli "${invalid_link_session}" run-code "async page => {
+  await page.waitForFunction(() => document.querySelector('#api-status')?.dataset.state === 'ready');
+}"
+assert_page "${invalid_link_session}" "() => {
+  return (
+    document.querySelector('#inspector-heading')?.textContent?.trim() === 'Choose an anchor' &&
+    document.querySelector('#session-selected')?.textContent?.trim() === 'No anchor selected' &&
+    document.querySelectorAll('.anchor-button[aria-pressed=true]').length === 0 &&
+    document.querySelector('#session-message')?.textContent?.includes('not present in this live projection') &&
+    document.querySelector('#session-message')?.textContent?.includes('different projection release') &&
+    document.querySelector('#session-message')?.textContent?.includes('could not be saved') &&
+    document.querySelector('#clear-link-selection')?.hidden === false
+  );
+}" "invalid shared link with blocked local storage"
+run_cli "${invalid_link_session}" run-code "async page => {
+  await page.locator('#clear-link-selection').click();
+  await page.waitForFunction(() => !new URL(window.location.href).searchParams.has('anchor'));
+}"
+assert_page "${invalid_link_session}" "() => {
+  return (
+    window.location.search === '' &&
+    document.querySelector('#inspector-heading')?.textContent?.trim() === 'Choose an anchor' &&
+    document.querySelector('#session-message')?.textContent?.includes('Link selection cleared') &&
+    document.querySelector('#session-message')?.textContent?.includes('could not be saved') &&
+    document.querySelectorAll('.anchor-button[aria-pressed=true]').length === 0 &&
+    document.activeElement?.getAttribute('data-state-id') === '1'
+  );
+}" "invalid shared link recovery with blocked local storage"
+
+run_cli "${stale_session}" open
+run_cli "${stale_session}" run-code "async page => {
+  await page.addInitScript(() => {
+    localStorage.setItem(
+      'seven-governors.harmonic-orrery.session',
+      JSON.stringify({
+        schemaVersion: 'harmonic-orrery.session.v1',
+        source: {
+          nodesSchemaVersion: 'harmonic-orrery.nodes.v1',
+          profileRegistryReleaseId: 'canonical-feature-profile-registry:0.1.0',
+          harmonicDescriptorReleaseId: 'harmonic-compression-candidate:CH_A012_q_v1:1.0.0',
+          harmonicDescriptorFingerprint: 'a'.repeat(64),
+        },
+        selectedAnchorId: 3,
+        visitedAnchorIds: [3],
+        courtPresentationPosition: null,
+      }),
+    );
+    localStorage.setItem('orrery-unrelated', 'preserved');
+  });
+}"
+run_cli "${stale_session}" route "**/api/nodes" \
+  --body "${fixture_body}" \
+  --content-type application/json
+run_cli "${stale_session}" goto "${base_url}/"
+run_cli "${stale_session}" run-code "async page => {
+  await page.waitForFunction(() => document.querySelector('#session-message')?.textContent?.includes('different projection release'));
+  const reset = await page.evaluate(() => ({
+    selected: document.querySelector('#session-selected')?.textContent?.trim(),
+    ownStorage: localStorage.getItem('seven-governors.harmonic-orrery.session'),
+    unrelatedStorage: localStorage.getItem('orrery-unrelated'),
+    message: document.querySelector('#session-message')?.textContent?.trim(),
+  }));
+  if (
+    reset.selected !== 'No anchor selected' ||
+    reset.ownStorage !== null ||
+    reset.unrelatedStorage !== 'preserved' ||
+    !reset.message?.includes('different projection release')
+  ) {
+    throw new Error('Stale local progress was not safely reset: ' + JSON.stringify(reset));
+  }
+}"
+assert_page "${stale_session}" "() => {
+  return (
+    document.querySelector('#session-selected')?.textContent?.trim() === 'No anchor selected' &&
+    localStorage.getItem('seven-governors.harmonic-orrery.session') === null &&
+    localStorage.getItem('orrery-unrelated') === 'preserved' &&
+    document.querySelector('#session-message')?.textContent?.includes('different projection release')
+  );
+}" "stale local session reset"
+
+run_cli "${incompatible_session}" open
+run_cli "${incompatible_session}" run-code "async page => {
+  await page.addInitScript(() => {
+    localStorage.setItem('seven-governors.harmonic-orrery.session', 'preserved-incompatible');
+  });
+}"
+run_cli "${incompatible_session}" route "**/api/nodes" \
+  --body '{"schemaVersion":"harmonic-orrery.nodes.v2"}' \
+  --content-type application/json
+run_cli "${incompatible_session}" goto "${base_url}/"
+run_cli "${incompatible_session}" run-code "async page => {
+  await page.waitForFunction(() => document.querySelector('#api-status')?.textContent?.trim() === 'Projection update required');
+  const incompatible = await page.evaluate(() => ({
+    apiState: document.querySelector('#api-status')?.dataset.state,
+    health: document.querySelector('#session-api-health')?.textContent?.trim(),
+    message: document.querySelector('#scene-message')?.textContent?.trim(),
+    anchorCount: document.querySelectorAll('#anchor-list .anchor-button').length,
+    reloadHidden: document.querySelector('#reload-projection')?.hidden,
+    storage: localStorage.getItem('seven-governors.harmonic-orrery.session'),
+  }));
+  if (
+    incompatible.apiState !== 'error' ||
+    incompatible.health !== 'Projection update required' ||
+    !incompatible.message?.includes('cannot safely read') ||
+    incompatible.anchorCount !== 0 ||
+    incompatible.reloadHidden !== false ||
+    incompatible.storage !== 'preserved-incompatible'
+  ) {
+    throw new Error('Incompatible projection was not isolated from local state: ' + JSON.stringify(incompatible));
+  }
+}"
+assert_page "${incompatible_session}" "() => {
+  return (
+    document.querySelector('#api-status')?.dataset.state === 'error' &&
+    document.querySelector('#session-api-health')?.textContent?.trim() === 'Projection update required' &&
+    document.querySelector('#scene-message')?.textContent?.includes('cannot safely read') &&
+    document.querySelectorAll('#anchor-list .anchor-button').length === 0 &&
+    document.querySelector('#reload-projection')?.hidden === false &&
+    localStorage.getItem('seven-governors.harmonic-orrery.session') === 'preserved-incompatible'
+  );
+}" "schema-incompatible projection"
+run_cli "${incompatible_session}" unroute "**/api/nodes"
+run_cli "${incompatible_session}" route "**/api/nodes" \
+  --body "${release_fixture_body}" \
+  --content-type application/json
+run_cli "${incompatible_session}" reload
+run_cli "${incompatible_session}" run-code "async page => {
+  await page.waitForFunction(() => document.querySelector('#api-status')?.textContent?.trim() === 'Projection update required');
+  const releaseMismatch = await page.evaluate(() => ({
+    message: document.querySelector('#scene-message')?.textContent?.trim(),
+    anchorCount: document.querySelectorAll('#anchor-list .anchor-button').length,
+    reloadHidden: document.querySelector('#reload-projection')?.hidden,
+  }));
+  if (
+    !releaseMismatch.message?.includes('Unexpected harmonic descriptor release') ||
+    releaseMismatch.anchorCount !== 0 ||
+    releaseMismatch.reloadHidden !== false
+  ) {
+    throw new Error('Descriptor release mismatch was not visibly rejected: ' + JSON.stringify(releaseMismatch));
+  }
+}"
+assert_page "${incompatible_session}" "() => {
+  return (
+    document.querySelector('#scene-message')?.textContent?.includes('Unexpected harmonic descriptor release') &&
+    document.querySelectorAll('#anchor-list .anchor-button').length === 0 &&
+    document.querySelector('#reload-projection')?.hidden === false &&
+    localStorage.getItem('seven-governors.harmonic-orrery.session') === 'preserved-incompatible'
+  );
+}" "descriptor-release-incompatible projection"
+
+printf '%s\n' "Orrery browser checks passed."

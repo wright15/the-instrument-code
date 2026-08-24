@@ -11,6 +11,21 @@ import {
 } from "./types";
 
 type JsonRecord = Record<string, unknown>;
+const PROJECTION_REQUEST_TIMEOUT_MS = 10_000;
+
+export class ProjectionUnavailableError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "ProjectionUnavailableError";
+  }
+}
+
+export class ProjectionCompatibilityError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "ProjectionCompatibilityError";
+  }
+}
 
 function record(value: unknown, context: string): JsonRecord {
   if (value === null || typeof value !== "object" || Array.isArray(value)) {
@@ -18,6 +33,13 @@ function record(value: unknown, context: string): JsonRecord {
   }
 
   return value as JsonRecord;
+}
+
+function exactKeys(value: JsonRecord, expected: readonly string[], context: string): void {
+  const keys = Object.keys(value);
+  if (keys.length !== expected.length || expected.some((key) => !Object.hasOwn(value, key))) {
+    throw new Error(`${context} has unexpected fields`);
+  }
 }
 
 function string(value: unknown, context: string): string {
@@ -29,11 +51,20 @@ function string(value: unknown, context: string): string {
 }
 
 function integer(value: unknown, context: string): number {
-  if (typeof value !== "number" || !Number.isInteger(value)) {
+  if (typeof value !== "number" || !Number.isSafeInteger(value)) {
     throw new Error(`${context} must be an integer`);
   }
 
   return value;
+}
+
+function anchorId(value: unknown, context: string): number {
+  const parsed = integer(value, context);
+  if (parsed < 0 || parsed > 4095) {
+    throw new Error(`${context} must be between 0 and 4095`);
+  }
+
+  return parsed;
 }
 
 function number(value: unknown, context: string): number {
@@ -62,6 +93,7 @@ function tier(value: unknown, context: string): AnchorTier {
 
 function ratio(value: unknown, context: string): ExactRatio {
   const source = record(value, context);
+  exactKeys(source, ["numerator", "denominator"], context);
   const numerator = integer(source.numerator, `${context}.numerator`);
   const denominator = integer(source.denominator, `${context}.denominator`);
 
@@ -82,21 +114,49 @@ function landforms(value: unknown, context: string): string[] {
 
 function node(value: unknown, index: number): OrreryNode {
   const source = record(value, `nodes[${index}]`);
+  exactKeys(
+    source,
+    ["state", "resolution", "photonic", "canonicalProfile", "scopedHarmonicDescriptor"],
+    `nodes[${index}]`,
+  );
   const state = record(source.state, `nodes[${index}].state`);
+  exactKeys(
+    state,
+    ["stateId", "nodeId", "name", "forteFamily", "tier", "role"],
+    `nodes[${index}].state`,
+  );
   const resolution = record(source.resolution, `nodes[${index}].resolution`);
+  exactKeys(resolution, ["office", "officeBearing"], `nodes[${index}].resolution`);
   const photonic = record(source.photonic, `nodes[${index}].photonic`);
+  exactKeys(
+    photonic,
+    ["photonicId", "office", "representativeWavelengthNm", "photonicCompression"],
+    `nodes[${index}].photonic`,
+  );
   const canonicalProfile = record(source.canonicalProfile, `nodes[${index}].canonicalProfile`);
+  exactKeys(
+    canonicalProfile,
+    ["profileId", "profileVersion", "office", "domainReferences"],
+    `nodes[${index}].canonicalProfile`,
+  );
   const domainReferences = record(
     canonicalProfile.domainReferences,
     `nodes[${index}].canonicalProfile.domainReferences`,
   );
+  exactKeys(domainReferences, ["landforms"], `nodes[${index}].canonicalProfile.domainReferences`);
   const descriptor = record(
     source.scopedHarmonicDescriptor,
     `nodes[${index}].scopedHarmonicDescriptor`,
   );
+  exactKeys(
+    descriptor,
+    ["coordinateId", "status", "stateGovernor", "weightedProjection"],
+    `nodes[${index}].scopedHarmonicDescriptor`,
+  );
 
-  const stateId = integer(state.stateId, `nodes[${index}].state.stateId`);
+  const stateId = anchorId(state.stateId, `nodes[${index}].state.stateId`);
   const nodeId = string(state.nodeId, `nodes[${index}].state.nodeId`);
+  const profileId = string(canonicalProfile.profileId, `nodes[${index}].canonicalProfile.profileId`);
   const forteFamily = string(state.forteFamily, `nodes[${index}].state.forteFamily`);
   const stateTier = tier(state.tier, `nodes[${index}].state.tier`);
   const office = governor(resolution.office, `nodes[${index}].resolution.office`);
@@ -109,6 +169,9 @@ function node(value: unknown, index: number): OrreryNode {
 
   if (!nodeId.startsWith("scale:")) {
     throw new Error(`nodes[${index}].state.nodeId must start with scale:`);
+  }
+  if (!profileId.startsWith("profile:")) {
+    throw new Error(`nodes[${index}].canonicalProfile.profileId must start with profile:`);
   }
   if (!(["7-35", "7-34", "7-33"] as const).includes(forteFamily as "7-35" | "7-34" | "7-33")) {
     throw new Error(`nodes[${index}].state.forteFamily is not an A-tier family`);
@@ -149,7 +212,7 @@ function node(value: unknown, index: number): OrreryNode {
       ),
     },
     canonicalProfile: {
-      profileId: string(canonicalProfile.profileId, `nodes[${index}].canonicalProfile.profileId`),
+      profileId,
       profileVersion: string(
         canonicalProfile.profileVersion,
         `nodes[${index}].canonicalProfile.profileVersion`,
@@ -171,8 +234,9 @@ function node(value: unknown, index: number): OrreryNode {
   };
 }
 
-export function parseNodesResponse(value: unknown): NodesResponse {
+function parseNodesResponseValue(value: unknown): NodesResponse {
   const source = record(value, "response");
+  exactKeys(source, ["schemaVersion", "profileRegistryReleaseId", "harmonicDescriptor", "nodeCount", "nodes"], "response");
   const rawNodes = source.nodes;
 
   if (source.schemaVersion !== "harmonic-orrery.nodes.v1") {
@@ -183,6 +247,11 @@ export function parseNodesResponse(value: unknown): NodesResponse {
   }
 
   const harmonicDescriptor = record(source.harmonicDescriptor, "harmonicDescriptor");
+  exactKeys(
+    harmonicDescriptor,
+    ["candidateId", "coordinateId", "releaseId", "status", "candidateFingerprint"],
+    "harmonicDescriptor",
+  );
   if (
     harmonicDescriptor.candidateId !== "CH_A012_q_v1" ||
     harmonicDescriptor.coordinateId !== "harmonic.CH_A012_q_v1" ||
@@ -224,19 +293,58 @@ export function parseNodesResponse(value: unknown): NodesResponse {
   };
 }
 
+export function parseNodesResponse(value: unknown): NodesResponse {
+  try {
+    return parseNodesResponseValue(value);
+  } catch (error) {
+    const detail = error instanceof Error ? error.message : "Unknown projection contract error";
+    throw new ProjectionCompatibilityError(detail);
+  }
+}
+
 export function nodesEndpoint(): string {
   const baseUrl = (import.meta.env.VITE_ORRERY_API_BASE ?? "/api").replace(/\/$/, "");
   return `${baseUrl}/nodes`;
 }
 
 export async function fetchNodes(): Promise<NodesResponse> {
-  const response = await fetch(nodesEndpoint(), {
-    headers: { Accept: "application/json" },
-  });
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), PROJECTION_REQUEST_TIMEOUT_MS);
+  let response: Response;
+  try {
+    try {
+      response = await fetch(nodesEndpoint(), {
+        headers: { Accept: "application/json" },
+        signal: controller.signal,
+      });
+    } catch {
+      throw new ProjectionUnavailableError(
+        controller.signal.aborted
+          ? "Anchor projection request timed out"
+          : "Anchor projection request could not reach the API",
+      );
+    }
 
-  if (!response.ok) {
-    throw new Error(`Anchor projection request failed (${response.status})`);
+    if (!response.ok) {
+      throw new ProjectionUnavailableError(`Anchor projection request failed (${response.status})`);
+    }
+
+    let payload: unknown;
+    try {
+      payload = await response.json();
+    } catch (error) {
+      if (error instanceof SyntaxError || (error instanceof Error && error.name === "SyntaxError")) {
+        throw new ProjectionCompatibilityError("Anchor projection response was not valid JSON");
+      }
+      throw new ProjectionUnavailableError(
+        controller.signal.aborted
+          ? "Anchor projection request timed out"
+          : "Anchor projection response could not be read",
+      );
+    }
+
+    return parseNodesResponse(payload);
+  } finally {
+    clearTimeout(timeout);
   }
-
-  return parseNodesResponse(await response.json());
 }

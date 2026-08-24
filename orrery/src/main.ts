@@ -1,5 +1,16 @@
-import { fetchNodes } from "./api";
+import { fetchNodes, ProjectionCompatibilityError } from "./api";
 import { createOrreryScene, type OrreryScene } from "./scene";
+import {
+  clearSessionSelection,
+  createSession,
+  loadSession,
+  parseUrlAnchorSelection,
+  saveSession,
+  selectSessionAnchor,
+  sourceFromResponse,
+  type OrrerySession,
+  type StorageLike,
+} from "./session";
 import { GOVERNOR_META, TIERS, TIER_META, formatRatio, type OrreryNode } from "./types";
 import "./style.css";
 
@@ -21,13 +32,24 @@ const anchorList = requiredElement<HTMLElement>("#anchor-list");
 const inspectorHeading = requiredElement<HTMLElement>("#inspector-heading");
 const selectedIdentity = requiredElement<HTMLElement>("#selected-identity");
 const selectedGovernor = requiredElement<HTMLElement>("#selected-governor");
+const selectedTier = requiredElement<HTMLElement>("#selected-tier");
 const selectedWavelength = requiredElement<HTMLElement>("#selected-wavelength");
+const selectedPhotonicCompression = requiredElement<HTMLElement>("#selected-photonic-compression");
 const selectedWeight = requiredElement<HTMLElement>("#selected-weight");
 const selectedProfile = requiredElement<HTMLElement>("#selected-profile");
 const selectedLandforms = requiredElement<HTMLUListElement>("#selected-landforms");
+const sessionSelected = requiredElement<HTMLElement>("#session-selected");
+const sessionVisited = requiredElement<HTMLElement>("#session-visited");
+const sessionCourt = requiredElement<HTMLElement>("#session-court");
+const sessionApiHealth = requiredElement<HTMLElement>("#session-api-health");
+const sessionMessage = requiredElement<HTMLElement>("#session-message");
+const clearLinkSelectionButton = requiredElement<HTMLButtonElement>("#clear-link-selection");
+const reloadProjectionButton = requiredElement<HTMLButtonElement>("#reload-projection");
 
 let scene: OrreryScene | undefined;
-let selectedId: number | undefined;
+let session: OrrerySession | undefined;
+let progressStorage: StorageLike | undefined;
+let nodesById = new Map<number, OrreryNode>();
 const anchorButtons = new Map<number, HTMLButtonElement>();
 
 function supportsWebGl(): boolean {
@@ -46,14 +68,46 @@ function showWebGlFallback(): void {
   sceneMessage.dataset.state = "notice";
 }
 
-function showProjectionError(error: unknown): void {
+function setApiHealth(text: string, state: "ready" | "error"): void {
+  apiStatus.textContent = text;
+  apiStatus.dataset.state = state;
+  sessionApiHealth.textContent = text;
+  sessionApiHealth.dataset.state = state;
+}
+
+function setSessionNotice(message?: string, action?: "clear-link" | "reload"): void {
+  sessionMessage.hidden = message === undefined;
+  sessionMessage.textContent = message ?? "";
+  clearLinkSelectionButton.hidden = action !== "clear-link";
+  reloadProjectionButton.hidden = action !== "reload";
+}
+
+function showProjectionUnavailable(error: unknown): void {
   const detail = error instanceof Error ? error.message : "Unknown projection error";
-  apiStatus.textContent = "Projection unavailable";
-  apiStatus.dataset.state = "error";
+  setApiHealth("Projection unavailable", "error");
   sceneMessage.hidden = false;
   sceneMessage.textContent = `The live anchor projection could not be loaded: ${detail}`;
   sceneMessage.dataset.state = "error";
   canvas.hidden = true;
+  setSessionNotice("The live anchor projection is unavailable. Reload to try again.", "reload");
+}
+
+function showProjectionIncompatible(error: unknown): void {
+  const detail = error instanceof Error ? error.message : "Unknown projection contract error";
+  setApiHealth("Projection update required", "error");
+  sceneMessage.hidden = false;
+  sceneMessage.textContent = `This browser cannot safely read the live anchor projection: ${detail}`;
+  sceneMessage.dataset.state = "error";
+  canvas.hidden = true;
+  setSessionNotice("The local app and projection releases are incompatible. Reload after they are updated together.", "reload");
+}
+
+function browserStorage(): StorageLike | undefined {
+  try {
+    return window.localStorage;
+  } catch {
+    return undefined;
+  }
 }
 
 function renderLandforms(landforms: string[]): void {
@@ -66,12 +120,54 @@ function renderLandforms(landforms: string[]): void {
   );
 }
 
+function clearInspector(): void {
+  inspectorHeading.textContent = "Choose an anchor";
+  selectedIdentity.textContent = "Select an anchor from the index or three-dimensional view.";
+  selectedGovernor.textContent = "-";
+  selectedGovernor.style.color = "";
+  selectedTier.textContent = "-";
+  selectedWavelength.textContent = "-";
+  selectedPhotonicCompression.textContent = "-";
+  selectedWeight.textContent = "-";
+  selectedProfile.textContent = "-";
+
+  const item = document.createElement("li");
+  item.textContent = "Select an anchor to view its reference pool.";
+  selectedLandforms.replaceChildren(item);
+}
+
+function renderSessionHud(): void {
+  const selectedNode =
+    session?.selectedAnchorId === null || session?.selectedAnchorId === undefined
+      ? undefined
+      : nodesById.get(session.selectedAnchorId);
+  sessionSelected.textContent = selectedNode
+    ? `${selectedNode.state.name} / ${selectedNode.state.nodeId}`
+    : "No anchor selected";
+  sessionVisited.textContent = `${session?.visitedAnchorIds.length ?? 0} / ${nodesById.size} visited`;
+  sessionCourt.textContent = "Not set / local-only";
+}
+
+function updateAnchorUrl(anchorId: number | null): void {
+  const url = new URL(window.location.href);
+  if (anchorId === null) {
+    url.searchParams.delete("anchor");
+  } else {
+    url.searchParams.set("anchor", String(anchorId));
+  }
+  window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+}
+
 function selectAnchor(node: OrreryNode): void {
-  selectedId = node.state.stateId;
+  if (!session) {
+    return;
+  }
+
+  session = selectSessionAnchor(session, node.state.stateId);
   scene?.select(node);
 
   for (const [stateId, button] of anchorButtons) {
-    const isSelected = stateId === selectedId;
+    const isSelected = stateId === session.selectedAnchorId;
     button.classList.toggle("is-selected", isSelected);
     button.setAttribute("aria-pressed", String(isSelected));
   }
@@ -81,13 +177,21 @@ function selectAnchor(node: OrreryNode): void {
   selectedIdentity.textContent = `${node.state.nodeId} / ${node.state.tier} / ${node.state.forteFamily}`;
   selectedGovernor.textContent = office;
   selectedGovernor.style.color = GOVERNOR_META[office].color;
+  selectedTier.textContent = `${node.state.tier} / ${TIER_META[node.state.tier].label}`;
   selectedWavelength.textContent = `${node.photonic.representativeWavelengthNm.toFixed(1)} nm`;
+  selectedPhotonicCompression.textContent = node.photonic.photonicCompression.toFixed(3);
   selectedWeight.textContent = formatRatio(node.scopedHarmonicDescriptor.weightedProjection);
   selectedProfile.textContent = node.canonicalProfile.profileVersion;
   renderLandforms(node.canonicalProfile.domainReferences.landforms);
+  renderSessionHud();
+  updateAnchorUrl(node.state.stateId);
+  setSessionNotice(saveSession(progressStorage, session));
 }
 
 function renderAnchorIndex(nodes: OrreryNode[]): void {
+  anchorButtons.clear();
+  anchorList.replaceChildren();
+
   for (const currentTier of TIERS) {
     const group = document.createElement("section");
     group.className = "tier-group";
@@ -133,17 +237,29 @@ async function start(): Promise<void> {
   try {
     response = await fetchNodes();
   } catch (error) {
-    showProjectionError(error);
+    if (error instanceof ProjectionCompatibilityError) {
+      showProjectionIncompatible(error);
+    } else {
+      showProjectionUnavailable(error);
+    }
     return;
   }
 
   const { nodes } = response;
+  nodesById = new Map(nodes.map((node) => [node.state.stateId, node]));
+  const validAnchorIds = new Set(nodesById.keys());
+  progressStorage = browserStorage();
+  const loadedSession = loadSession(progressStorage, sourceFromResponse(response), validAnchorIds);
+  session = loadedSession.session ?? createSession(sourceFromResponse(response));
+  const urlSelection = parseUrlAnchorSelection(window.location.search, validAnchorIds);
+
   renderAnchorIndex(nodes);
 
   sceneCount.textContent = `${nodes.length} / ${response.nodeCount} anchors`;
   indexCount.textContent = String(nodes.length).padStart(2, "0");
-  apiStatus.textContent = `Live projection / ${response.schemaVersion}`;
-  apiStatus.dataset.state = "ready";
+  setApiHealth(`Live projection / ${response.schemaVersion}`, "ready");
+  clearInspector();
+  renderSessionHud();
 
   if (supportsWebGl()) {
     try {
@@ -161,7 +277,64 @@ async function start(): Promise<void> {
     showWebGlFallback();
   }
 
-  selectAnchor(nodes[0]);
+  if (urlSelection.kind === "selected") {
+    const node = nodesById.get(urlSelection.anchorId);
+    if (node) {
+      selectAnchor(node);
+    }
+    if (loadedSession.notice) {
+      setSessionNotice(loadedSession.notice);
+    }
+    return;
+  }
+
+  if (urlSelection.kind === "invalid") {
+    session = clearSessionSelection(session);
+    renderSessionHud();
+    const storageNotice = saveSession(progressStorage, session);
+    const invalidLinkNotice = `${urlSelection.message} Clear the link selection to choose an anchor.`;
+    const resetAndLinkNotice = loadedSession.notice
+      ? `${loadedSession.notice} ${invalidLinkNotice}`
+      : invalidLinkNotice;
+    setSessionNotice(
+      storageNotice ? `${resetAndLinkNotice} ${storageNotice}` : resetAndLinkNotice,
+      "clear-link",
+    );
+    return;
+  }
+
+  if (session.selectedAnchorId !== null) {
+    const node = nodesById.get(session.selectedAnchorId);
+    if (node) {
+      selectAnchor(node);
+    }
+  }
+
+  if (loadedSession.notice) {
+    setSessionNotice(loadedSession.notice);
+  }
 }
+
+clearLinkSelectionButton.addEventListener("click", () => {
+  if (!session) {
+    return;
+  }
+
+  session = clearSessionSelection(session);
+  updateAnchorUrl(null);
+  clearInspector();
+  renderSessionHud();
+  for (const button of anchorButtons.values()) {
+    button.classList.remove("is-selected");
+    button.setAttribute("aria-pressed", "false");
+  }
+  const storageNotice = saveSession(progressStorage, session);
+  setSessionNotice(
+    storageNotice ? `Link selection cleared. ${storageNotice}` : "Link selection cleared. Choose an anchor.",
+  );
+  anchorList.querySelector<HTMLButtonElement>(".anchor-button")?.focus();
+});
+
+reloadProjectionButton.addEventListener("click", () => window.location.reload());
 
 void start();
