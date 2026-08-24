@@ -57,6 +57,33 @@
         </div>
       </section>
 
+      <section class="audio-console" aria-labelledby="audio-heading">
+        <div class="audio-console-copy">
+          <p class="eyebrow">Authored audio rendering</p>
+          <h2 id="audio-heading">Governor sound desk</h2>
+          <p id="audio-palette" class="audio-palette">Select an anchor to inspect its A0 office palette.</p>
+        </div>
+        <div class="audio-controls" aria-label="Audio controls">
+          <button id="audio-enable" type="button" disabled>Enable &amp; play sound</button>
+          <button id="audio-pause" type="button" disabled>Pause sound</button>
+          <button id="audio-mute" type="button" aria-pressed="false" disabled>Mute sound</button>
+          <label class="audio-volume" for="audio-volume">
+            <span>Volume <output id="audio-volume-value">65%</output></span>
+            <input id="audio-volume" type="range" min="0" max="1" step="0.01" value="0.65" disabled />
+          </label>
+          <label class="audio-visual-only" for="audio-visual-only">
+            <input id="audio-visual-only" type="checkbox" />
+            <span>Visual-only</span>
+          </label>
+        </div>
+        <p class="audio-status" id="audio-status" role="status" aria-live="polite">
+          Sound is off. Enable sound after selecting an anchor.
+        </p>
+        <p class="audio-disclaimer">
+          Pitch palettes replay canonical A0 sets. Timbres and percussion are authored presentation choices, not canonical or physical claims.
+        </p>
+      </section>
+
       <div class="orrery-layout">
         <section class="scene-panel" aria-labelledby="scene-heading">
           <div class="scene-topline">
@@ -120,6 +147,13 @@
               <ul id="selected-landforms" class="landform-list">
                 <li>Loading source references</li>
               </ul>
+            </div>
+            <div class="audio-palette-block">
+              <p class="field-label">Authored audio palette</p>
+              <p id="selected-audio-palette">Select an anchor to inspect its office A0 palette.</p>
+              <p id="selected-audio-note" class="audio-palette-note">
+                Audio is an optional presentation layer.
+              </p>
             </div>
           </section>
 

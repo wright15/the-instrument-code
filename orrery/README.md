@@ -27,6 +27,7 @@ read-only API.
 ```bash
 npm run orrery:check
 npm run orrery:test
+npm run orrery:audio:check
 npm run orrery:browser:test
 npm run orrery:build
 npm run orrery:api:test
@@ -34,8 +35,37 @@ npm run orrery:api:test
 
 `orrery:browser:test` starts an isolated Vite server and mocks `/api/nodes`.
 It covers unavailable and incompatible projection responses, shared URLs, local
-progress recovery, WebGL fallback, and keyboard navigation without FastAPI
+progress recovery, WebGL fallback, keyboard navigation, and mocked Web Audio
+controls with keyboard and touch-emulated interactions, without FastAPI
 credentials or a live Neo4j instance.
+
+## Audio rendering
+
+Audio is an optional, authored presentation layer. It does not create an
+`AudioContext`, oscillator, sample, or audio asset request until the player
+uses **Enable & play sound**. A shared URL or restored local selection remains
+silent until that explicit action.
+
+The source-bound `harmonic-orrery.audio.v1` manifest uses the current
+`canonical-feature-profile-registry:0.1.1` projection release and replays the seven canonical A0
+office palettes: Sun/Lydian, Moon/Ionian, Mars/Mixolydian, Mercury/Dorian,
+Jupiter/Aeolian, Venus/Phrygian, and Saturn/Locrian. It uses authored C4/MIDI
+60, 12-TET, A4=440 Hz register conventions. A1 and A2 anchors retain their
+own displayed state identity while using their office's A0 palette.
+
+Timbres, register choices, and percussion loops are authored choices. They do
+not derive from wavelength, `C_P`, `W_A012`, or unresolved `C_H`, and make no
+canonical or physical causal claim. The engine blocks playback when the live
+profile-registry release does not match its manifest source.
+
+The three self-authored, unpitched WAV loops and their MIT provenance, hashes,
+and generation method are documented at `/AUDIO_ASSETS.md`. Regenerate them
+with `node scripts/generate-orrery-audio-loops.mjs`; verify the checked-in
+bytes with `npm run orrery:audio:check`.
+
+Mute, pause, volume, and visual-only settings are runtime controls only. They
+are intentionally not stored in the local exploration session, so no browser
+reload can implicitly resume sound.
 
 ## Local exploration state
 

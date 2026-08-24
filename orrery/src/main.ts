@@ -1,4 +1,11 @@
 import { fetchNodes, ProjectionCompatibilityError } from "./api";
+import {
+  OrreryAudioEngine,
+  formatPitchClasses,
+  isAudioSourceCompatible,
+  type AudioEngineState,
+  type AudioSelection,
+} from "./audio";
 import { createOrreryScene, type OrreryScene } from "./scene";
 import {
   clearSessionSelection,
@@ -38,6 +45,8 @@ const selectedPhotonicCompression = requiredElement<HTMLElement>("#selected-phot
 const selectedWeight = requiredElement<HTMLElement>("#selected-weight");
 const selectedProfile = requiredElement<HTMLElement>("#selected-profile");
 const selectedLandforms = requiredElement<HTMLUListElement>("#selected-landforms");
+const selectedAudioPalette = requiredElement<HTMLElement>("#selected-audio-palette");
+const selectedAudioNote = requiredElement<HTMLElement>("#selected-audio-note");
 const sessionSelected = requiredElement<HTMLElement>("#session-selected");
 const sessionVisited = requiredElement<HTMLElement>("#session-visited");
 const sessionCourt = requiredElement<HTMLElement>("#session-court");
@@ -45,12 +54,22 @@ const sessionApiHealth = requiredElement<HTMLElement>("#session-api-health");
 const sessionMessage = requiredElement<HTMLElement>("#session-message");
 const clearLinkSelectionButton = requiredElement<HTMLButtonElement>("#clear-link-selection");
 const reloadProjectionButton = requiredElement<HTMLButtonElement>("#reload-projection");
+const audioEnableButton = requiredElement<HTMLButtonElement>("#audio-enable");
+const audioPauseButton = requiredElement<HTMLButtonElement>("#audio-pause");
+const audioMuteButton = requiredElement<HTMLButtonElement>("#audio-mute");
+const audioVolume = requiredElement<HTMLInputElement>("#audio-volume");
+const audioVolumeValue = requiredElement<HTMLOutputElement>("#audio-volume-value");
+const audioVisualOnly = requiredElement<HTMLInputElement>("#audio-visual-only");
+const audioPalette = requiredElement<HTMLElement>("#audio-palette");
+const audioStatus = requiredElement<HTMLElement>("#audio-status");
 
 let scene: OrreryScene | undefined;
 let session: OrrerySession | undefined;
 let progressStorage: StorageLike | undefined;
 let nodesById = new Map<number, OrreryNode>();
+let profileRegistryReleaseId: string | undefined;
 const anchorButtons = new Map<number, HTMLButtonElement>();
+const audioEngine = new OrreryAudioEngine();
 
 function supportsWebGl(): boolean {
   try {
@@ -82,6 +101,46 @@ function setSessionNotice(message?: string, action?: "clear-link" | "reload"): v
   reloadProjectionButton.hidden = action !== "reload";
 }
 
+function renderAudioState(state: AudioEngineState): void {
+  const sourceCompatible =
+    profileRegistryReleaseId !== undefined && isAudioSourceCompatible(profileRegistryReleaseId);
+  const prepared = state.readiness === "ready" || state.readiness === "degraded";
+  const enableUnavailable =
+    !sourceCompatible ||
+    state.visualOnly ||
+    state.readiness === "loading" ||
+    state.readiness === "unsupported" ||
+    state.transport === "playing";
+
+  audioEnableButton.disabled = enableUnavailable;
+  audioEnableButton.textContent =
+    state.readiness === "loading"
+      ? "Preparing sound"
+      : state.readiness === "degraded"
+        ? "Retry loops & play"
+        : "Enable & play sound";
+  audioPauseButton.disabled = !prepared || state.visualOnly || state.transport === "stopped";
+  audioPauseButton.textContent = state.transport === "playing" ? "Pause sound" : "Resume sound";
+  audioMuteButton.disabled = !prepared || state.visualOnly;
+  audioMuteButton.textContent = state.muted ? "Unmute sound" : "Mute sound";
+  audioMuteButton.setAttribute("aria-pressed", String(state.muted));
+  audioVolume.disabled = !prepared || state.visualOnly;
+  audioVolume.value = String(state.volume);
+  audioVolumeValue.value = `${Math.round(state.volume * 100)}%`;
+  audioVisualOnly.checked = state.visualOnly;
+  audioStatus.textContent = state.detail;
+  audioStatus.dataset.state = state.readiness;
+}
+
+function renderAudioPalette(selection: AudioSelection): void {
+  const paletteLabel = `${selection.office} A0 / ${selection.palette.mode} / ${formatPitchClasses(selection.palette.pitchClasses)}`;
+  selectedAudioPalette.textContent = paletteLabel;
+  selectedAudioNote.textContent = selection.inheritedOfficePalette
+    ? `${selection.selectedStateName} remains an ${selection.selectedTier} state; its authored sound inherits the ${selection.office} A0 palette.`
+    : `${selection.selectedStateName} is the canonical A0 state for this authored palette.`;
+  audioPalette.textContent = `Current palette: ${paletteLabel}`;
+}
+
 function showProjectionUnavailable(error: unknown): void {
   const detail = error instanceof Error ? error.message : "Unknown projection error";
   setApiHealth("Projection unavailable", "error");
@@ -89,6 +148,8 @@ function showProjectionUnavailable(error: unknown): void {
   sceneMessage.textContent = `The live anchor projection could not be loaded: ${detail}`;
   sceneMessage.dataset.state = "error";
   canvas.hidden = true;
+  profileRegistryReleaseId = undefined;
+  renderAudioState(audioEngine.snapshot());
   setSessionNotice("The live anchor projection is unavailable. Reload to try again.", "reload");
 }
 
@@ -99,6 +160,8 @@ function showProjectionIncompatible(error: unknown): void {
   sceneMessage.textContent = `This browser cannot safely read the live anchor projection: ${detail}`;
   sceneMessage.dataset.state = "error";
   canvas.hidden = true;
+  profileRegistryReleaseId = undefined;
+  renderAudioState(audioEngine.snapshot());
   setSessionNotice("The local app and projection releases are incompatible. Reload after they are updated together.", "reload");
 }
 
@@ -134,6 +197,9 @@ function clearInspector(): void {
   const item = document.createElement("li");
   item.textContent = "Select an anchor to view its reference pool.";
   selectedLandforms.replaceChildren(item);
+  selectedAudioPalette.textContent = "Select an anchor to inspect its office A0 palette.";
+  selectedAudioNote.textContent = "Audio is an optional presentation layer.";
+  audioPalette.textContent = "Select an anchor to inspect its A0 office palette.";
 }
 
 function renderSessionHud(): void {
@@ -158,7 +224,7 @@ function updateAnchorUrl(anchorId: number | null): void {
   window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
 }
 
-function selectAnchor(node: OrreryNode): void {
+function selectAnchor(node: OrreryNode, selectionSource: "restore" | "user" = "restore"): void {
   if (!session) {
     return;
   }
@@ -183,6 +249,7 @@ function selectAnchor(node: OrreryNode): void {
   selectedWeight.textContent = formatRatio(node.scopedHarmonicDescriptor.weightedProjection);
   selectedProfile.textContent = node.canonicalProfile.profileVersion;
   renderLandforms(node.canonicalProfile.domainReferences.landforms);
+  renderAudioPalette(audioEngine.select(node, selectionSource === "user"));
   renderSessionHud();
   updateAnchorUrl(node.state.stateId);
   setSessionNotice(saveSession(progressStorage, session));
@@ -221,7 +288,7 @@ function renderAnchorIndex(nodes: OrreryNode[]): void {
       const stateId = document.createElement("small");
       stateId.textContent = String(node.state.stateId);
       button.append(officeLabel, name, stateId);
-      button.addEventListener("click", () => selectAnchor(node));
+      button.addEventListener("click", () => selectAnchor(node, "user"));
       anchorButtons.set(node.state.stateId, button);
       entries.append(button);
     }
@@ -246,6 +313,8 @@ async function start(): Promise<void> {
   }
 
   const { nodes } = response;
+  profileRegistryReleaseId = response.profileRegistryReleaseId;
+  renderAudioState(audioEngine.snapshot());
   nodesById = new Map(nodes.map((node) => [node.state.stateId, node]));
   const validAnchorIds = new Set(nodesById.keys());
   progressStorage = browserStorage();
@@ -267,7 +336,7 @@ async function start(): Promise<void> {
         canvas,
         labelRoot,
         nodes,
-        onSelect: selectAnchor,
+        onSelect: (node) => selectAnchor(node, "user"),
       });
       sceneMessage.hidden = true;
     } catch {
@@ -321,6 +390,7 @@ clearLinkSelectionButton.addEventListener("click", () => {
   }
 
   session = clearSessionSelection(session);
+  audioEngine.clearSelection();
   updateAnchorUrl(null);
   clearInspector();
   renderSessionHud();
@@ -336,5 +406,37 @@ clearLinkSelectionButton.addEventListener("click", () => {
 });
 
 reloadProjectionButton.addEventListener("click", () => window.location.reload());
+
+audioEnableButton.addEventListener("click", () => {
+  if (profileRegistryReleaseId) {
+    void audioEngine.enable(profileRegistryReleaseId);
+  }
+});
+
+audioPauseButton.addEventListener("click", () => {
+  if (audioEngine.snapshot().transport === "playing") {
+    void audioEngine.pause();
+  } else if (profileRegistryReleaseId) {
+    void audioEngine.enable(profileRegistryReleaseId);
+  }
+});
+
+audioMuteButton.addEventListener("click", () => {
+  audioEngine.setMuted(!audioEngine.snapshot().muted);
+});
+
+audioVolume.addEventListener("input", () => {
+  audioEngine.setVolume(Number(audioVolume.value));
+});
+
+audioVisualOnly.addEventListener("change", () => {
+  audioEngine.setVisualOnly(audioVisualOnly.checked);
+});
+
+audioEngine.subscribe(renderAudioState);
+window.addEventListener("pagehide", () => {
+  scene?.dispose();
+  audioEngine.dispose();
+});
 
 void start();

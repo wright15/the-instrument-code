@@ -22,6 +22,7 @@ shared_session="orrery-shared-session-$$"
 invalid_link_session="orrery-invalid-link-$$"
 stale_session="orrery-stale-session-$$"
 incompatible_session="orrery-incompatible-response-$$"
+audio_session="orrery-audio-$$"
 vite_pid=""
 
 cleanup() {
@@ -31,6 +32,7 @@ cleanup() {
   "${cli}" -s="${invalid_link_session}" close >/dev/null 2>&1 || true
   "${cli}" -s="${stale_session}" close >/dev/null 2>&1 || true
   "${cli}" -s="${incompatible_session}" close >/dev/null 2>&1 || true
+  "${cli}" -s="${audio_session}" close >/dev/null 2>&1 || true
 
   if [[ -n "${vite_pid}" ]]; then
     kill "${vite_pid}" >/dev/null 2>&1 || true
@@ -309,8 +311,7 @@ run_cli "${shared_session}" run-code "async page => {
     throw new Error('Reload did not restore local exploration progress: ' + JSON.stringify(restored));
   }
 
-  await page.locator('.wordmark').focus();
-  await page.keyboard.press('Tab');
+  await page.locator(\"button[data-state-id='1']\").focus();
   const firstAnchor = await page.evaluate(() => document.activeElement?.getAttribute('data-state-id'));
   for (let index = 1; index < 21; index += 1) {
     await page.keyboard.press('Tab');
@@ -512,5 +513,224 @@ assert_page "${incompatible_session}" "() => {
     localStorage.getItem('seven-governors.harmonic-orrery.session') === 'preserved-incompatible'
   );
 }" "descriptor-release-incompatible projection"
+
+PLAYWRIGHT_MCP_DEVICE="iPhone 15" run_cli "${audio_session}" open
+run_cli "${audio_session}" run-code "async page => {
+  await page.addInitScript(() => {
+    const events = {
+      assetFetches: [],
+      bufferSources: 0,
+      closes: 0,
+      contexts: 0,
+      frequencies: [],
+      resumes: 0,
+      suspends: 0,
+    };
+    window.__orreryAudioEvents = events;
+
+    class FakeAudioParam {
+      constructor(kind) {
+        this.kind = kind;
+      }
+      setValueAtTime(value) {
+        if (this.kind === 'frequency') {
+          events.frequencies.push(value);
+        }
+      }
+      linearRampToValueAtTime() {}
+    }
+
+    class FakeAudioNode {
+      connect() {
+        return this;
+      }
+      disconnect() {}
+    }
+
+    class FakeAudioContext {
+      constructor() {
+        events.contexts += 1;
+        this.currentTime = 1;
+        this.destination = new FakeAudioNode();
+      }
+      createGain() {
+        const gain = new FakeAudioNode();
+        gain.gain = new FakeAudioParam('gain');
+        return gain;
+      }
+      createOscillator() {
+        const oscillator = new FakeAudioNode();
+        oscillator.detune = new FakeAudioParam('detune');
+        oscillator.frequency = new FakeAudioParam('frequency');
+        oscillator.onended = null;
+        oscillator.start = () => {};
+        oscillator.stop = () => {};
+        oscillator.type = 'sine';
+        return oscillator;
+      }
+      createBufferSource() {
+        events.bufferSources += 1;
+        const source = new FakeAudioNode();
+        source.buffer = null;
+        source.loop = false;
+        source.loopStart = 0;
+        source.loopEnd = 0;
+        source.onended = null;
+        source.start = () => {};
+        source.stop = () => {};
+        return source;
+      }
+      decodeAudioData() {
+        return Promise.resolve({ duration: 2 });
+      }
+      resume() {
+        events.resumes += 1;
+        return Promise.resolve();
+      }
+      suspend() {
+        events.suspends += 1;
+        return Promise.resolve();
+      }
+      close() {
+        events.closes += 1;
+        return Promise.resolve();
+      }
+    }
+
+    Object.defineProperty(window, 'AudioContext', {
+      configurable: true,
+      value: FakeAudioContext,
+      writable: true,
+    });
+    const originalFetch = window.fetch.bind(window);
+    window.fetch = async (...args) => {
+      const input = args[0];
+      const url = typeof input === 'string' ? input : input instanceof Request ? input.url : String(input);
+      if (url.includes('/audio/')) {
+        events.assetFetches.push(url);
+      }
+      return originalFetch(...args);
+    };
+  });
+}"
+run_cli "${audio_session}" route "**/api/nodes" \
+  --body "${fixture_body}" \
+  --content-type application/json
+run_cli "${audio_session}" goto "${base_url}/?anchor=1"
+run_cli "${audio_session}" run-code "async page => {
+  await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Sun A0');
+  const initial = await page.evaluate(() => ({
+    contexts: window.__orreryAudioEvents.contexts,
+    assetFetches: window.__orreryAudioEvents.assetFetches.length,
+    frequencies: window.__orreryAudioEvents.frequencies.length,
+    enableDisabled: document.querySelector('#audio-enable')?.disabled,
+    palette: document.querySelector('#selected-audio-palette')?.textContent?.trim(),
+  }));
+  if (
+    initial.contexts !== 0 ||
+    initial.assetFetches !== 0 ||
+    initial.frequencies !== 0 ||
+    initial.enableDisabled !== false ||
+    initial.palette !== 'Sun A0 / Lydian / {0, 2, 4, 6, 7, 9, 11}'
+  ) {
+    throw new Error('Audio began before an explicit gesture: ' + JSON.stringify(initial));
+  }
+}"
+assert_page "${audio_session}" "() => {
+  return (
+    window.__orreryAudioEvents.contexts === 0 &&
+    window.__orreryAudioEvents.assetFetches.length === 0 &&
+    window.__orreryAudioEvents.frequencies.length === 0 &&
+    document.querySelector('#audio-enable')?.disabled === false
+  );
+}" "no audio before explicit enable or URL restoration"
+run_cli "${audio_session}" run-code "async page => {
+  await page.locator('#audio-enable').focus();
+  await page.keyboard.press('Enter');
+  await page.waitForFunction(() => document.querySelector('#audio-pause')?.textContent === 'Pause sound');
+  const enabled = await page.evaluate(() => ({
+    contexts: window.__orreryAudioEvents.contexts,
+    assetFetches: window.__orreryAudioEvents.assetFetches.length,
+    frequencies: window.__orreryAudioEvents.frequencies.length,
+    resumes: window.__orreryAudioEvents.resumes,
+  }));
+  if (
+    enabled.contexts !== 1 ||
+    enabled.assetFetches !== 3 ||
+    enabled.frequencies !== 7 ||
+    enabled.resumes !== 1
+  ) {
+    throw new Error('Explicit audio enable did not initialize deterministically: ' + JSON.stringify(enabled));
+  }
+}"
+run_cli "${audio_session}" run-code "async page => {
+  const expectedByStateId = {
+    1: [0, 2, 4, 6, 7, 9, 11],
+    2: [0, 2, 4, 5, 7, 9, 11],
+    3: [0, 2, 4, 5, 7, 9, 10],
+    4: [0, 2, 3, 5, 7, 9, 10],
+    5: [0, 2, 3, 5, 7, 8, 10],
+    6: [0, 1, 3, 5, 7, 8, 10],
+    7: [0, 1, 3, 5, 6, 8, 10],
+  };
+  for (const [stateId, expected] of Object.entries(expectedByStateId)) {
+    await page.evaluate(() => {
+      window.__orreryAudioEvents.frequencies.length = 0;
+    });
+    const target = page.locator('button[data-state-id=\"' + stateId + '\"]');
+    await target.focus();
+    await page.keyboard.press('Enter');
+    const actual = await page.evaluate(() =>
+      window.__orreryAudioEvents.frequencies.map((frequency) => {
+        const midi = Math.round(69 + 12 * Math.log2(frequency / 440));
+        return ((midi % 12) + 12) % 12;
+      }),
+    );
+    if (JSON.stringify(actual) !== JSON.stringify(expected)) {
+      throw new Error('Unexpected A0 palette for state ' + stateId + ': ' + JSON.stringify(actual));
+    }
+  }
+  await page.locator('button[data-state-id=\"101\"]').tap();
+  await page.waitForFunction(() => document.querySelector('#selected-audio-note')?.textContent?.includes('remains an A1 state'));
+}"
+assert_page "${audio_session}" "() => {
+  return (
+    document.querySelector('#selected-audio-palette')?.textContent?.trim() === 'Sun A0 / Lydian / {0, 2, 4, 6, 7, 9, 11}' &&
+    document.querySelector('#selected-audio-note')?.textContent?.includes('remains an A1 state') &&
+    Array.from(document.querySelectorAll('.audio-controls button')).every((button) => button.getBoundingClientRect().height >= 44)
+  );
+}" "all A0 palettes and A1 inheritance"
+run_cli "${audio_session}" run-code "async page => {
+  await page.locator('#audio-mute').tap();
+  await page.waitForFunction(() => document.querySelector('#audio-mute')?.getAttribute('aria-pressed') === 'true');
+  await page.locator('#audio-pause').tap();
+  await page.waitForFunction(() => document.querySelector('#audio-pause')?.textContent === 'Resume sound');
+  await page.locator('#audio-pause').focus();
+  await page.keyboard.press('Enter');
+  await page.waitForFunction(() => document.querySelector('#audio-pause')?.textContent === 'Pause sound');
+  const volumeControl = page.locator('#audio-volume');
+  const volumeBounds = await volumeControl.boundingBox();
+  if (!volumeBounds) {
+    throw new Error('Audio volume control is not visible for touch input.');
+  }
+  await volumeControl.tap({ position: { x: volumeBounds.width * 0.2, y: volumeBounds.height / 2 } });
+  await page.waitForFunction(() => Number(document.querySelector('#audio-volume')?.value) < 0.4);
+  await page.locator('#audio-visual-only').tap();
+  await page.waitForFunction(() => document.querySelector('#audio-status')?.textContent?.includes('Visual-only mode is active'));
+  const frequencyCount = await page.evaluate(() => window.__orreryAudioEvents.frequencies.length);
+  await page.locator('button[data-state-id=\"102\"]').tap();
+  const afterSelection = await page.evaluate(() => window.__orreryAudioEvents.frequencies.length);
+  if (afterSelection !== frequencyCount) {
+    throw new Error('Visual-only mode created a new oscillator event.');
+  }
+}"
+assert_page "${audio_session}" "() => {
+  return (
+    document.querySelector('#audio-mute')?.getAttribute('aria-pressed') === 'true' &&
+    Number(document.querySelector('#audio-volume')?.value) < 0.4 &&
+    document.querySelector('#audio-visual-only')?.checked === true &&
+    document.querySelector('#audio-enable')?.disabled === true
+  );
+}" "keyboard and touch audio controls with visual-only suppression"
 
 printf '%s\n' "Orrery browser checks passed."

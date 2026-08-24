@@ -134,6 +134,7 @@ a:focus-visible {
 }
 
 .intro-band h1,
+.audio-console h2,
 .scene-topline h2,
 .inspector h2,
 .index-heading h2 {
@@ -228,6 +229,123 @@ a:focus-visible {
 
 .session-actions button:hover {
   border-color: #8fb7f6;
+}
+
+.audio-console {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
+  gap: 15px 24px;
+  margin-top: 18px;
+  padding: 17px;
+  border: 1px solid rgb(133 165 212 / 28%);
+  background:
+    linear-gradient(105deg, rgb(47 78 123 / 12%), transparent 48%),
+    rgb(9 17 30 / 76%);
+}
+
+.audio-console-copy h2 {
+  font-size: 1.55rem;
+  letter-spacing: -0.035em;
+}
+
+.audio-palette {
+  margin: 8px 0 0;
+  color: #b6c7df;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.audio-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.audio-controls button,
+.audio-visual-only {
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid rgb(151 180 222 / 38%);
+  color: #dbe7fa;
+  background: #0b121f;
+  cursor: pointer;
+}
+
+.audio-controls button:hover:not(:disabled),
+.audio-visual-only:hover {
+  border-color: #8fb7f6;
+}
+
+.audio-controls button:disabled,
+.audio-volume input:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.audio-volume,
+.audio-visual-only {
+  color: #b6c7df;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+}
+
+.audio-volume {
+  display: grid;
+  min-width: 155px;
+  gap: 5px;
+}
+
+.audio-volume span {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.audio-volume input {
+  width: 100%;
+  accent-color: #8fb7f6;
+}
+
+.audio-visual-only {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.audio-visual-only input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: #8fb7f6;
+}
+
+.audio-status,
+.audio-disclaimer {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.66rem;
+  line-height: 1.55;
+}
+
+.audio-status {
+  color: #83dfb6;
+}
+
+.audio-status[data-state="degraded"] {
+  color: #f3ca83;
+}
+
+.audio-status[data-state="error"],
+.audio-status[data-state="unsupported"] {
+  color: #ffabb2;
+}
+
+.audio-disclaimer {
+  color: #8495ad;
 }
 
 .orrery-layout {
@@ -449,6 +567,26 @@ a:focus-visible {
   margin-top: 21px;
 }
 
+.audio-palette-block {
+  margin-top: 21px;
+  padding-top: 17px;
+  border-top: 1px solid rgb(133 165 212 / 18%);
+}
+
+.audio-palette-block > p:not(.field-label) {
+  margin: 0;
+  color: #dbe7fa;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.audio-palette-block .audio-palette-note {
+  margin-top: 7px;
+  color: #8495ad;
+  font-size: 0.66rem;
+}
+
 .field-label {
   margin: 0 0 9px;
   line-height: 1.5;
@@ -577,6 +715,10 @@ a:focus-visible {
     border-bottom: 1px solid rgb(133 165 212 / 22%);
   }
 
+  .audio-console {
+    grid-template-columns: 1fr;
+  }
+
   .orrery-layout {
     grid-template-columns: 1fr;
   }
@@ -644,6 +786,20 @@ a:focus-visible {
 
   .session-actions button {
     flex: 1;
+  }
+
+  .audio-console {
+    gap: 14px;
+    margin-top: 14px;
+    padding: 14px;
+  }
+
+  .audio-controls button {
+    flex: 1 1 145px;
+  }
+
+  .audio-volume {
+    flex: 1 1 100%;
   }
 
   .scene-panel {

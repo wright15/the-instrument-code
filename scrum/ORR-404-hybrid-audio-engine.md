@@ -1,6 +1,6 @@
 # ORR-404 - Hybrid audio engine for Governor anchors
 
-**Status:** Backlog · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-009](EPIC-009-harmonic-orrery-mvp.md)
+**Status:** Done · **Priority:** High · **Points:** 8 · **Epic:** [EPIC-009](EPIC-009-harmonic-orrery-mvp.md)
 **Depends on:** ORR-402 · **Blocks:** ORR-405, ORR-406, ORR-408
 
 ## Story
@@ -20,6 +20,28 @@ felt as well as seen.
   resulting timbre is canonically implied by a Governor profile.
 - Provide mute, volume, pause, and reduced-sensory controls.
 
+## Implementation record
+
+- [x] Add the source-bound `harmonic-orrery.audio.v1` presentation manifest with
+      the seven declared A0 palettes, C4/MIDI 60 root, and 12-TET/A4=440 Hz
+      register convention.
+- [x] Create Web Audio only after explicit enablement; URL/local-session
+      restoration records the selected palette without requesting or playing
+      audio.
+- [x] Preserve A1/A2 selected-state identity while inheriting the corresponding
+      office A0 palette, with visible disclosure in the inspector.
+- [x] Add versioned authored office timbre presets and three self-authored,
+      deterministic MIT WAV loops with SHA-256 provenance documentation and a
+      reproducibility check.
+- [x] Provide source-release guarding, deterministic sequential preload,
+      degraded-loop handling, bounded synthesis voices, mute, pause, gain, and
+      visual-only controls without persisting audio preferences in local session
+      data.
+- [x] Add unit coverage for pitch conversion, source guarding, inheritance,
+      voice allocation, pre-gesture silence, and degraded assets; add mocked
+      browser coverage for every A0 palette plus keyboard and touch-emulated
+      controls.
+
 ## Acceptance criteria
 
 1. No audio context, oscillator, sample, or network audio request begins before
@@ -34,6 +56,10 @@ felt as well as seen.
 
 ## Verification
 
-- Unit-test pitch-set conversion, voice allocation, and no-audio-before-gesture.
-- Browser-test controls and audio-engine state with a mocked AudioContext.
-- Manually review all seven A0 palettes against declared pitch sets.
+- `npm run orrery:audio:check`
+- `npm run orrery:check`
+- `npm run orrery:test` (16 tests)
+- `npm run orrery:build`
+- `npm run orrery:api:test` (6 tests)
+- `npm run orrery:browser:test` (mocked AudioContext, all A0 palettes, keyboard,
+  and touch-emulated controls)
