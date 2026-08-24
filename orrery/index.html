@@ -57,6 +57,57 @@
         </div>
       </section>
 
+      <section class="move-console" aria-labelledby="move-heading">
+        <div class="move-console-copy">
+          <p class="eyebrow">Declared local transitions</p>
+          <h2 id="move-heading">Modal route desk</h2>
+          <p>
+            A route records only a local exploration sequence. It never changes an anchor's canonical
+            office, profile, harmonic value, Court runtime, or graph projection.
+          </p>
+        </div>
+        <div class="move-route-state">
+          <p id="move-status" class="move-status" role="status" aria-live="polite">
+            Awaiting the live anchor projection.
+          </p>
+          <dl class="move-state-readout">
+            <div>
+              <dt>Inspected anchor</dt>
+              <dd id="move-inspected-anchor">Awaiting local session</dd>
+            </div>
+            <div>
+              <dt>Active route position</dt>
+              <dd id="move-route-position">Awaiting local session</dd>
+            </div>
+          </dl>
+          <div class="move-actions" aria-label="Local route actions">
+            <button id="start-route" type="button" disabled>Start route here</button>
+            <button id="resume-route" type="button" hidden>Resume route position</button>
+            <button id="clear-route" type="button" disabled>Clear local route</button>
+          </div>
+        </div>
+        <div class="legal-move-block">
+          <p class="field-label">Declared move from the active route position</p>
+          <div id="legal-move-list" class="legal-move-list" aria-label="Available legal moves"></div>
+          <p id="move-provenance" class="move-provenance">
+            No local route is active. The catalog never infers a generic graph edge.
+          </p>
+          <button id="apply-legal-move" class="apply-legal-move" type="button" disabled>
+            Apply selected local move
+          </button>
+        </div>
+        <div class="route-history-block">
+          <p class="field-label">Local route history</p>
+          <ol id="route-history" class="route-history">
+            <li>No local modal route recorded.</li>
+          </ol>
+        </div>
+        <div class="objective-block">
+          <p class="field-label">Local discovery objectives</p>
+          <div id="objective-list" class="objective-list"></div>
+        </div>
+      </section>
+
       <section class="court-console" aria-labelledby="court-heading">
         <div class="court-console-copy">
           <p class="eyebrow">Local presentation filter</p>

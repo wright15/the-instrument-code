@@ -26,6 +26,7 @@ read-only API.
 
 ```bash
 npm run orrery:check
+npm run orrery:catalog:check
 npm run orrery:test
 npm run orrery:audio:check
 npm run orrery:browser:test
@@ -35,9 +36,13 @@ npm run orrery:api:test
 
 `orrery:browser:test` starts an isolated Vite server and mocks `/api/nodes`.
 It covers unavailable and incompatible projection responses, shared URLs, local
-progress recovery, WebGL fallback, keyboard navigation, and mocked Web Audio
-controls with keyboard and touch-emulated interactions, without FastAPI
-credentials or a live Neo4j instance.
+progress recovery, WebGL fallback, keyboard navigation, a source-faithful modal
+route/objective flow, and mocked Web Audio controls with keyboard and
+touch-emulated interactions, without FastAPI credentials or a live Neo4j
+instance.
+
+`orrery:catalog:check` verifies the bundled legal-move artifact against its
+audited source inputs and validates its strict schema.
 
 ## Audio rendering
 
@@ -75,10 +80,11 @@ reload can implicitly resume sound.
 ## Local exploration state
 
 The Orrery automatically saves non-secret local exploration state under
-`seven-governors.harmonic-orrery.session`. The versioned document contains only
-the selected anchor ID, visited anchor IDs, a local C0-C4 Court presentation
-position, and the source identity needed to validate it against the current
-projection. Valid v1 anchor-only sessions migrate to C0.
+`seven-governors.harmonic-orrery.session`. The v3 document contains the
+selected and visited anchor IDs, local C0-C4 presentation history, a bounded
+modal-route history, selected catalog move, completed local objectives, and the
+projection/catalog identities needed to validate it. Valid v1 and v2 sessions
+migrate without inventing route history.
 
 Use `?anchor=<state-id>` to share one selected anchor. Visited history and the
 local Court position are intentionally not included in URLs. Invalid links
@@ -86,13 +92,37 @@ select nothing and offer a clear-link action rather than falling back to an
 arbitrary anchor.
 
 Saved progress is discarded with an explanation when the nodes schema,
-profile-registry release, harmonic descriptor release, or descriptor fingerprint
-does not match the live response. Unavailable and incompatible API responses
-never hydrate or overwrite saved progress.
+profile-registry release, harmonic descriptor release, descriptor fingerprint,
+or bundled catalog fingerprint does not match. Unavailable and incompatible API
+responses never hydrate or overwrite saved progress.
+
+## Legal modal routes
+
+The bundled `harmonic-orrery.legal-moves.v1` catalog is generated from the
+mutation audit's operator registry, application ledger, modal completion ledger,
+and cycle identities. It binds every scope ID to its canonical tier, Forte
+family, and office, and exposes exactly the 21 canonically projected `M`
+(modal-successor) moves whose source and target are both A0-A2 anchors. These
+form three verified seven-step cycles, one per tier; no generic graph edge, raw
+`GOVERNS` relationship, synthesized `M^6` inverse, or `R`/`L` operation is
+offered by this MVP catalog.
+
+Move cards disclose their application and structural-edge provenance. `M` has
+no declared Degree Governor, which is displayed explicitly rather than inferred.
+Catalog/projection identity mismatch, an unavailable target, or a route that no
+longer matches the inspected anchor fails visibly without inventing a target.
+
+Selecting an anchor remains free inspection. A player must explicitly start a
+local route, select an offered `M` move, and apply it before the route history
+or objectives change. The local objectives are a seven-step modal orbit, one
+anchor in every office, Lydian-to-Aeolian in two modal steps, and C0-C4 Court
+traversal. Route history is client-side experience data only: it never changes
+canonical anchor identity, office, profile, Court runtime, Neo4j, or Mercury's
+authoritative ledger.
 
 The app intentionally presents scoped `W_A012` only. It does not display or
-calculate unresolved global `harmonic.C_H`, Court runtime state, or game state.
-The Court surface starts at C0 Major Pentatonic and permits adjacent local
-presentation moves only. It renders four binary pole dispositions in Mars,
-Jupiter, Venus, Saturn order; Mercury remains a C2 engine/ledger emblem, never
-a fifth pole, toggle, or runtime input.
+calculate unresolved global `harmonic.C_H`, Court runtime state, or an
+authoritative game ledger. The Court surface starts at C0 Major Pentatonic and
+permits adjacent local presentation moves only. It renders four binary pole
+dispositions in Mars, Jupiter, Venus, Saturn order; Mercury remains a C2
+engine/ledger emblem, never a fifth pole, toggle, or runtime input.

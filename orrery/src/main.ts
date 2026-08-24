@@ -16,17 +16,31 @@ import {
 } from "./court";
 import { createOrreryScene, type OrreryScene } from "./scene";
 import {
+  applySessionLegalMove,
   clearSessionSelection,
+  clearSessionRoute,
   createSession,
   loadSession,
+  markSessionObjectivesCompleted,
   parseUrlAnchorSelection,
   saveSession,
   selectSessionAnchor,
   selectSessionCourtPosition,
+  selectSessionLegalMove,
+  startSessionRoute,
   sourceFromResponse,
   type OrrerySession,
   type StorageLike,
 } from "./session";
+import {
+  LEGAL_MOVE_CATALOG,
+  catalogIdentity,
+  createLegalMoveCatalogIndex,
+  legalMovesForSource,
+  type LegalMove,
+  type LegalMoveCatalogIndex,
+} from "./moves";
+import { LOCAL_OBJECTIVE_IDS, newlyCompletedObjectiveIds, scoreObjectives } from "./objectives";
 import { GOVERNOR_META, TIERS, TIER_META, formatRatio, type OrreryNode } from "./types";
 import "./style.css";
 
@@ -64,6 +78,17 @@ const sessionApiHealth = requiredElement<HTMLElement>("#session-api-health");
 const sessionMessage = requiredElement<HTMLElement>("#session-message");
 const clearLinkSelectionButton = requiredElement<HTMLButtonElement>("#clear-link-selection");
 const reloadProjectionButton = requiredElement<HTMLButtonElement>("#reload-projection");
+const moveStatus = requiredElement<HTMLElement>("#move-status");
+const moveRoutePosition = requiredElement<HTMLElement>("#move-route-position");
+const moveInspectedAnchor = requiredElement<HTMLElement>("#move-inspected-anchor");
+const moveProvenance = requiredElement<HTMLElement>("#move-provenance");
+const legalMoveList = requiredElement<HTMLElement>("#legal-move-list");
+const routeHistory = requiredElement<HTMLOListElement>("#route-history");
+const objectiveList = requiredElement<HTMLElement>("#objective-list");
+const startRouteButton = requiredElement<HTMLButtonElement>("#start-route");
+const resumeRouteButton = requiredElement<HTMLButtonElement>("#resume-route");
+const clearRouteButton = requiredElement<HTMLButtonElement>("#clear-route");
+const applyLegalMoveButton = requiredElement<HTMLButtonElement>("#apply-legal-move");
 const audioEnableButton = requiredElement<HTMLButtonElement>("#audio-enable");
 const audioPauseButton = requiredElement<HTMLButtonElement>("#audio-pause");
 const audioMuteButton = requiredElement<HTMLButtonElement>("#audio-mute");
@@ -87,9 +112,12 @@ let session: OrrerySession | undefined;
 let progressStorage: StorageLike | undefined;
 let nodesById = new Map<number, OrreryNode>();
 let profileRegistryReleaseId: string | undefined;
+let legalMoveCatalog: LegalMoveCatalogIndex | undefined;
+let legalMoveCatalogNotice: string | undefined;
 const anchorButtons = new Map<number, HTMLButtonElement>();
 const courtButtons = new Map<CourtPosition, HTMLButtonElement>();
 const audioEngine = new OrreryAudioEngine();
+const localObjectiveIds = new Set<string>(LOCAL_OBJECTIVE_IDS);
 
 function supportsWebGl(): boolean {
   try {
@@ -242,6 +270,180 @@ function renderSessionHud(): void {
     : "Awaiting local session";
 }
 
+function setMoveStatus(message: string, state: "ready" | "notice" | "error" | "unavailable"): void {
+  moveStatus.textContent = message;
+  moveStatus.dataset.state = state;
+}
+
+function nodeLabel(node: OrreryNode | undefined): string {
+  return node ? `${node.state.name} / ${node.state.nodeId}` : "No anchor";
+}
+
+function updateCompletedObjectives(): void {
+  if (!session || !legalMoveCatalog) {
+    return;
+  }
+
+  const progress = scoreObjectives(session, legalMoveCatalog, nodesById);
+  const newlyCompleted = newlyCompletedObjectiveIds(progress).filter(
+    (objectiveId) => !session?.completedObjectiveIds.includes(objectiveId),
+  );
+  if (newlyCompleted.length > 0) {
+    session = markSessionObjectivesCompleted(session, newlyCompleted, localObjectiveIds);
+  }
+}
+
+function renderRouteHistory(): void {
+  if (!session || !legalMoveCatalog || session.modalRoute.moveIds.length === 0) {
+    const item = document.createElement("li");
+    item.textContent = "No local modal route recorded.";
+    routeHistory.replaceChildren(item);
+    return;
+  }
+
+  routeHistory.replaceChildren(
+    ...session.modalRoute.moveIds.map((moveId) => {
+      const move = legalMoveCatalog?.movesById.get(moveId);
+      const item = document.createElement("li");
+      if (!move) {
+        item.textContent = `${moveId} is unavailable in this catalog.`;
+        return item;
+      }
+      item.textContent = `${move.operatorId}: ${nodeLabel(nodesById.get(move.sourceId))} -> ${nodeLabel(nodesById.get(move.targetId))}`;
+      return item;
+    }),
+  );
+}
+
+function renderObjectives(): void {
+  if (!session || !legalMoveCatalog) {
+    const item = document.createElement("p");
+    item.textContent = "Local objectives are unavailable until the move catalog matches the live projection.";
+    objectiveList.replaceChildren(item);
+    return;
+  }
+
+  const objectives = scoreObjectives(session, legalMoveCatalog, nodesById);
+  objectiveList.replaceChildren(
+    ...objectives.map((objective) => {
+      const item = document.createElement("article");
+      item.className = "objective-card";
+      item.dataset.objective = objective.id;
+      item.dataset.state = objective.status;
+      const title = document.createElement("strong");
+      title.textContent = objective.title;
+      const detail = document.createElement("p");
+      detail.textContent = objective.detail;
+      const progress = document.createElement("span");
+      progress.textContent = objective.status === "completed" ? `Complete / ${objective.progress}` : objective.progress;
+      item.append(title, detail, progress);
+      return item;
+    }),
+  );
+}
+
+function renderLegalMoves(): void {
+  if (!session || !legalMoveCatalog) {
+    const message = document.createElement("p");
+    message.textContent = "No source-backed modal move can be offered for this projection.";
+    legalMoveList.replaceChildren(message);
+    moveProvenance.textContent = "Catalog binding unavailable; no route result is inferred.";
+    applyLegalMoveButton.disabled = true;
+    return;
+  }
+
+  const routeAnchorId = session.modalRoute.currentAnchorId;
+  if (routeAnchorId === null) {
+    const message = document.createElement("p");
+    message.textContent = "Start a local route at the inspected anchor to reveal its declared modal successor.";
+    legalMoveList.replaceChildren(message);
+    moveProvenance.textContent = "A route is local experience data. It does not alter the inspected anchor's canonical identity.";
+    applyLegalMoveButton.disabled = true;
+    return;
+  }
+
+  if (session.selectedAnchorId !== routeAnchorId) {
+    const message = document.createElement("p");
+    message.textContent = "The inspected anchor differs from the active route. Resume the route before selecting its next move.";
+    legalMoveList.replaceChildren(message);
+    moveProvenance.textContent = "Inspection is free exploration; only the active route can receive a local move.";
+    applyLegalMoveButton.disabled = true;
+    return;
+  }
+
+  const moves = legalMovesForSource(legalMoveCatalog, routeAnchorId);
+  legalMoveList.replaceChildren(
+    ...moves.map((move) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "legal-move-button";
+      button.dataset.legalMoveId = move.id;
+      const selected = session?.selectedLegalMoveId === move.id;
+      button.classList.toggle("is-selected", selected);
+      button.setAttribute("aria-pressed", String(selected));
+      const operator = document.createElement("strong");
+      operator.textContent = `${move.operatorId} / Modal successor`;
+      const target = document.createElement("span");
+      target.textContent = `Target: ${nodeLabel(nodesById.get(move.targetId))}`;
+      const degree = document.createElement("small");
+      degree.textContent = "Degree Governor: not declared for M";
+      button.append(operator, target, degree);
+      button.addEventListener("click", () => selectLegalMove(move));
+      return button;
+    }),
+  );
+
+  const selectedMove = session.selectedLegalMoveId
+    ? legalMoveCatalog.movesById.get(session.selectedLegalMoveId)
+    : undefined;
+  const moveForProvenance = selectedMove ?? moves[0];
+  moveProvenance.textContent = moveForProvenance
+    ? `Provenance: ${moveForProvenance.provenance.applicationId} / ${moveForProvenance.provenance.structuralEdgeTypes} / ${moveForProvenance.provenance.structuralEdgeIds.join(", ")}. The route entry is local only.`
+    : "No declared modal successor is available from this route position.";
+  applyLegalMoveButton.disabled = selectedMove === undefined;
+}
+
+function renderMoveConsole(): void {
+  if (!session) {
+    return;
+  }
+
+  const inspected = session.selectedAnchorId === null ? undefined : nodesById.get(session.selectedAnchorId);
+  const routePosition =
+    session.modalRoute.currentAnchorId === null ? undefined : nodesById.get(session.modalRoute.currentAnchorId);
+  moveInspectedAnchor.textContent = nodeLabel(inspected);
+  moveRoutePosition.textContent = routePosition
+    ? `${nodeLabel(routePosition)} / local route position`
+    : "No active local route";
+  startRouteButton.disabled = !legalMoveCatalog || !inspected;
+  startRouteButton.textContent = routePosition ? "Start new route here" : "Start route here";
+  resumeRouteButton.hidden = !routePosition || routePosition.state.stateId === session.selectedAnchorId;
+  resumeRouteButton.disabled = !routePosition;
+  clearRouteButton.disabled = !routePosition;
+
+  renderLegalMoves();
+  renderRouteHistory();
+  renderObjectives();
+
+  if (!legalMoveCatalog) {
+    setMoveStatus(
+      legalMoveCatalogNotice ?? "The legal-move catalog is unavailable for this projection.",
+      "unavailable",
+    );
+  } else if (!routePosition) {
+    setMoveStatus("Inspect an anchor, then start a local route to reveal its declared move.", "notice");
+  } else if (session.selectedAnchorId !== routePosition.state.stateId) {
+    setMoveStatus(
+      "The inspected anchor cannot receive a move while the active local route is elsewhere. Resume or start a new route.",
+      "error",
+    );
+  } else if (session.selectedLegalMoveId) {
+    setMoveStatus("The selected modal move is ready to apply locally.", "ready");
+  } else {
+    setMoveStatus("One source-backed modal successor is available from this route position.", "ready");
+  }
+}
+
 function initializeCourtControls(): void {
   courtControls.replaceChildren(
     ...COURT_POSITIONS.map((position) => {
@@ -368,6 +570,7 @@ function selectAnchor(node: OrreryNode, selectionSource: "restore" | "user" = "r
   renderLandforms(node.canonicalProfile.domainReferences.landforms);
   renderAudioPalette(audioEngine.select(node, session.courtPresentationPosition, selectionSource === "user"));
   renderSessionHud();
+  renderMoveConsole();
   updateAnchorUrl(node.state.stateId);
   setSessionNotice(saveSession(progressStorage, session));
 }
@@ -383,10 +586,13 @@ function selectCourtPosition(courtPosition: CourtPosition): void {
   try {
     session = selectSessionCourtPosition(session, courtPosition);
   } catch {
+    courtRouteStatus.textContent = "That Court presentation move is unavailable. Use an adjacent position.";
     return;
   }
+  updateCompletedObjectives();
   renderCourtSurface();
   renderSessionHud();
+  renderMoveConsole();
 
   if (session.selectedAnchorId !== null) {
     const selectedNode = nodesById.get(session.selectedAnchorId);
@@ -396,6 +602,107 @@ function selectCourtPosition(courtPosition: CourtPosition): void {
   }
 
   setSessionNotice(saveSession(progressStorage, session));
+}
+
+function startRouteAtInspectedAnchor(): void {
+  if (!session || !legalMoveCatalog || session.selectedAnchorId === null) {
+    return;
+  }
+
+  const source = nodesById.get(session.selectedAnchorId);
+  if (!source) {
+    setMoveStatus("The inspected anchor is unavailable in the live projection.", "error");
+    return;
+  }
+
+  session = startSessionRoute(session, source.state.stateId);
+  renderSessionHud();
+  renderMoveConsole();
+  const storageNotice = saveSession(progressStorage, session);
+  setSessionNotice(storageNotice);
+  setMoveStatus(
+    storageNotice
+      ? `Started a local route at ${source.state.name}. ${storageNotice}`
+      : `Started a local route at ${source.state.name}. Select its declared modal successor.`,
+    "ready",
+  );
+}
+
+function resumeRouteInspection(): void {
+  if (!session || session.modalRoute.currentAnchorId === null) {
+    return;
+  }
+
+  const routeNode = nodesById.get(session.modalRoute.currentAnchorId);
+  if (!routeNode) {
+    setMoveStatus("The active local route position is unavailable in the live projection.", "error");
+    return;
+  }
+  selectAnchor(routeNode);
+  setMoveStatus("Resumed the active local route position.", "ready");
+}
+
+function clearRoute(): void {
+  if (!session) {
+    return;
+  }
+
+  session = clearSessionRoute(session);
+  renderSessionHud();
+  renderMoveConsole();
+  const storageNotice = saveSession(progressStorage, session);
+  setSessionNotice(storageNotice);
+  setMoveStatus(
+    storageNotice ? `The local modal route was cleared. ${storageNotice}` : "The local modal route was cleared.",
+    "notice",
+  );
+}
+
+function selectLegalMove(move: LegalMove): void {
+  if (!session) {
+    return;
+  }
+
+  const result = selectSessionLegalMove(session, move, legalMoveCatalog?.movesById ?? new Map());
+  if (result.kind === "invalid") {
+    setMoveStatus(result.message, "error");
+    return;
+  }
+
+  session = result.session;
+  renderMoveConsole();
+  const storageNotice = saveSession(progressStorage, session);
+  setSessionNotice(storageNotice);
+  setMoveStatus(
+    storageNotice ? `Selected ${move.operatorId}. ${storageNotice}` : `Selected ${move.operatorId}; apply it to record the local route step.`,
+    "ready",
+  );
+}
+
+function applySelectedLegalMove(): void {
+  if (!session || !legalMoveCatalog) {
+    return;
+  }
+
+  const result = applySessionLegalMove(session, legalMoveCatalog.movesById);
+  if (result.kind === "invalid") {
+    setMoveStatus(result.message, "error");
+    return;
+  }
+
+  const target = nodesById.get(result.move.targetId);
+  if (!target) {
+    setMoveStatus("The declared move target is unavailable in the live projection.", "error");
+    return;
+  }
+
+  session = result.session;
+  updateCompletedObjectives();
+  selectAnchor(target, "user");
+  setMoveStatus(
+    `Applied M locally: ${nodeLabel(nodesById.get(result.move.sourceId))} -> ${target.state.name}.`,
+    "ready",
+  );
 }
 
 function renderAnchorIndex(nodes: OrreryNode[]): void {
@@ -460,9 +767,24 @@ async function start(): Promise<void> {
   renderAudioState(audioEngine.snapshot());
   nodesById = new Map(nodes.map((node) => [node.state.stateId, node]));
   const validAnchorIds = new Set(nodesById.keys());
+  try {
+    legalMoveCatalog = createLegalMoveCatalogIndex(response);
+    legalMoveCatalogNotice = undefined;
+  } catch (error) {
+    legalMoveCatalog = undefined;
+    const detail = error instanceof Error ? error.message : "Unknown legal-move catalog compatibility error";
+    legalMoveCatalogNotice = `Legal moves are unavailable: ${detail}`;
+  }
   progressStorage = browserStorage();
-  const loadedSession = loadSession(progressStorage, sourceFromResponse(response), validAnchorIds);
-  session = loadedSession.session ?? createSession(sourceFromResponse(response));
+  const sessionSource = sourceFromResponse(response, catalogIdentity(LEGAL_MOVE_CATALOG));
+  const loadedSession = loadSession(
+    progressStorage,
+    sessionSource,
+    validAnchorIds,
+    legalMoveCatalog?.movesById ?? new Map(),
+    localObjectiveIds,
+  );
+  session = loadedSession.session ?? createSession(sessionSource);
   const urlSelection = parseUrlAnchorSelection(window.location.search, validAnchorIds);
   clearCourtUrlState();
 
@@ -473,6 +795,7 @@ async function start(): Promise<void> {
   setApiHealth(`Live projection / ${response.schemaVersion}`, "ready");
   clearInspector();
   renderSessionHud();
+  renderMoveConsole();
   renderCourtSurface();
 
   if (supportsWebGl()) {
@@ -505,6 +828,7 @@ async function start(): Promise<void> {
   if (urlSelection.kind === "invalid") {
     session = clearSessionSelection(session);
     renderSessionHud();
+    renderMoveConsole();
     const storageNotice = saveSession(progressStorage, session);
     const invalidLinkNotice = `${urlSelection.message} Clear the link selection to choose an anchor.`;
     const resetAndLinkNotice = loadedSession.notice
@@ -539,6 +863,7 @@ clearLinkSelectionButton.addEventListener("click", () => {
   updateAnchorUrl(null);
   clearInspector();
   renderSessionHud();
+  renderMoveConsole();
   for (const button of anchorButtons.values()) {
     button.classList.remove("is-selected");
     button.setAttribute("aria-pressed", "false");
@@ -551,6 +876,11 @@ clearLinkSelectionButton.addEventListener("click", () => {
 });
 
 reloadProjectionButton.addEventListener("click", () => window.location.reload());
+
+startRouteButton.addEventListener("click", startRouteAtInspectedAnchor);
+resumeRouteButton.addEventListener("click", resumeRouteInspection);
+clearRouteButton.addEventListener("click", clearRoute);
+applyLegalMoveButton.addEventListener("click", applySelectedLegalMove);
 
 audioEnableButton.addEventListener("click", () => {
   if (profileRegistryReleaseId) {

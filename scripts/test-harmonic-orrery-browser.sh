@@ -14,6 +14,7 @@ if [[ ! -x "${cli}" || ! -x "${vite}" ]]; then
 fi
 
 fixture_body="$(node "${frontend_dir}/test/fixtures/nodes-response.mjs")"
+canonical_fixture_body="$(node "${frontend_dir}/test/fixtures/canonical-nodes-response.mjs")"
 release_fixture_body="$(node "${frontend_dir}/test/fixtures/nodes-response.mjs" "harmonic-compression-candidate:CH_A012_q_v1:2.0.0")"
 work_dir="$(mktemp -d "${TMPDIR:-/tmp}/orrery-browser.XXXXXX")"
 api_session="orrery-api-unavailable-$$"
@@ -22,6 +23,7 @@ shared_session="orrery-shared-session-$$"
 invalid_link_session="orrery-invalid-link-$$"
 stale_session="orrery-stale-session-$$"
 incompatible_session="orrery-incompatible-response-$$"
+game_session="orrery-game-$$"
 audio_session="orrery-audio-$$"
 vite_pid=""
 
@@ -32,6 +34,7 @@ cleanup() {
   "${cli}" -s="${invalid_link_session}" close >/dev/null 2>&1 || true
   "${cli}" -s="${stale_session}" close >/dev/null 2>&1 || true
   "${cli}" -s="${incompatible_session}" close >/dev/null 2>&1 || true
+  "${cli}" -s="${game_session}" close >/dev/null 2>&1 || true
   "${cli}" -s="${audio_session}" close >/dev/null 2>&1 || true
 
   if [[ -n "${vite_pid}" ]]; then
@@ -631,6 +634,98 @@ assert_page "${incompatible_session}" "() => {
     localStorage.getItem('seven-governors.harmonic-orrery.session') === 'preserved-incompatible'
   );
 }" "descriptor-release-incompatible projection"
+
+run_cli "${game_session}" open
+run_cli "${game_session}" route "**/api/nodes" \
+  --body "${canonical_fixture_body}" \
+  --content-type application/json
+run_cli "${game_session}" goto "${base_url}/"
+run_cli "${game_session}" run-code "async page => {
+  await page.waitForFunction(() =>
+    document.querySelector('#api-status')?.dataset.state === 'ready' &&
+    document.querySelector('#move-status')?.dataset.state === 'notice'
+  );
+  await page.locator('button[data-state-id=\"2773\"]').focus();
+  await page.keyboard.press('Enter');
+  await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Lydian');
+  await page.locator('#start-route').click();
+  await page.waitForFunction(() => document.querySelector('[data-legal-move-id=\"M:2773:1717\"]'));
+  await page.locator('[data-legal-move-id=\"M:2773:1717\"]').click();
+  await page.waitForFunction(() => document.querySelector('#apply-legal-move')?.disabled === false);
+  await page.locator('#apply-legal-move').click();
+  await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Mixolydian');
+  const firstStep = await page.evaluate(() => ({
+    routePosition: document.querySelector('#move-route-position')?.textContent?.trim(),
+    routeEntries: document.querySelectorAll('#route-history li').length,
+    selected: document.querySelector('#session-selected')?.textContent?.trim(),
+  }));
+  if (
+    !firstStep.routePosition?.includes('Mixolydian / scale:1717') ||
+    firstStep.routeEntries !== 1 ||
+    firstStep.selected !== 'Mixolydian / scale:1717'
+  ) {
+    throw new Error('First local modal step did not render: ' + JSON.stringify(firstStep));
+  }
+
+  await page.locator('button[data-state-id=\"1387\"]').click();
+  await page.waitForFunction(() => document.querySelector('#move-status')?.dataset.state === 'error');
+  const rejected = await page.evaluate(() => ({
+    applyDisabled: document.querySelector('#apply-legal-move')?.disabled,
+    legalText: document.querySelector('#legal-move-list')?.textContent?.trim(),
+    status: document.querySelector('#move-status')?.textContent?.trim(),
+  }));
+  if (
+    rejected.applyDisabled !== true ||
+    !rejected.legalText?.includes('differs from the active route') ||
+    !rejected.status?.includes('cannot receive a move')
+  ) {
+    throw new Error('Invalid route state was not visibly rejected: ' + JSON.stringify(rejected));
+  }
+  await page.locator('#resume-route').click();
+  await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Mixolydian');
+  await page.locator('[data-legal-move-id=\"M:1717:1453\"]').click();
+  await page.locator('#apply-legal-move').click();
+  await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Aeolian');
+}"
+assert_page "${game_session}" "() => {
+  const stored = JSON.parse(localStorage.getItem('seven-governors.harmonic-orrery.session') ?? 'null');
+  return (
+    document.querySelector('#inspector-heading')?.textContent === 'Aeolian' &&
+    document.querySelector('[data-objective=\"lydian-to-aeolian\"]')?.dataset.state === 'completed' &&
+    document.querySelectorAll('#route-history li').length === 2 &&
+    stored?.schemaVersion === 'harmonic-orrery.session.v3' &&
+    stored?.modalRoute?.startAnchorId === 2773 &&
+    stored?.modalRoute?.currentAnchorId === 1453 &&
+    JSON.stringify(stored?.modalRoute?.moveIds) === JSON.stringify(['M:2773:1717', 'M:1717:1453']) &&
+    JSON.stringify(stored?.courtRouteHistory) === JSON.stringify(['C0']) &&
+    !new URL(window.location.href).searchParams.has('court')
+  );
+}" "fresh-session modal objective and invalid-route feedback"
+run_cli "${game_session}" run-code "async page => {
+  for (const position of ['C1', 'C2', 'C3', 'C4']) {
+    await page.locator('[data-court-position=\"' + position + '\"]').click();
+    await page.waitForFunction((target) => document.querySelector('[data-court-position=\"' + target + '\"]')?.getAttribute('aria-pressed') === 'true', position);
+  }
+}"
+assert_page "${game_session}" "() => {
+  const stored = JSON.parse(localStorage.getItem('seven-governors.harmonic-orrery.session') ?? 'null');
+  return (
+    document.querySelector('[data-objective=\"court-c0-c4\"]')?.dataset.state === 'completed' &&
+    document.querySelector('#session-court')?.textContent?.trim() === 'C4 / Man Gong / local-only' &&
+    JSON.stringify(stored?.courtRouteHistory) === JSON.stringify(['C0', 'C1', 'C2', 'C3', 'C4'])
+  );
+}" "local Court traversal objective"
+run_cli "${game_session}" reload
+run_cli "${game_session}" run-code "async page => {
+  await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Aeolian');
+}"
+assert_page "${game_session}" "() => {
+  return (
+    document.querySelector('[data-objective=\"lydian-to-aeolian\"]')?.dataset.state === 'completed' &&
+    document.querySelector('[data-objective=\"court-c0-c4\"]')?.dataset.state === 'completed' &&
+    document.querySelectorAll('#route-history li').length === 2
+  );
+}" "local game persistence"
 
 PLAYWRIGHT_MCP_DEVICE="iPhone 15" run_cli "${audio_session}" open
 run_cli "${audio_session}" run-code "async page => {

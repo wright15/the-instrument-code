@@ -13,6 +13,7 @@
     "orrery:dev": "npm run dev --prefix orrery",
     "orrery:build": "npm run build --prefix orrery",
     "orrery:check": "npm run check --prefix orrery",
+    "orrery:catalog:check": "node scripts/build-orrery-legal-move-catalog.mjs --check && node orrery/scripts/validate-orrery-legal-move-catalog.mjs",
     "orrery:test": "npm run test --prefix orrery",
     "orrery:audio:check": "npm run audio:check --prefix orrery",
     "orrery:browser:test": "npm run browser:test --prefix orrery",

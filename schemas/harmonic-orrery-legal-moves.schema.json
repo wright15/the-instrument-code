@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-governors.local/schemas/harmonic-orrery-legal-moves.schema.json",
+  "title": "Harmonic Orrery Legal Move Catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "catalogId",
+    "catalogFingerprint",
+    "scope",
+    "sources",
+    "operators",
+    "moves"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "harmonic-orrery.legal-moves.v1" },
+    "catalogId": { "const": "harmonic-orrery.modal-anchor-cycles.v1" },
+    "catalogFingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "scope": { "$ref": "#/$defs/scope" },
+    "sources": {
+      "type": "array",
+      "minItems": 4,
+      "items": { "$ref": "#/$defs/source" }
+    },
+    "operators": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": { "$ref": "#/$defs/operator" }
+    },
+    "moves": {
+      "type": "array",
+      "minItems": 21,
+      "maxItems": 21,
+      "items": { "$ref": "#/$defs/move" }
+    }
+  },
+  "$defs": {
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nodesSchemaVersion",
+        "harmonicDescriptorReleaseId",
+        "harmonicDescriptorFingerprint",
+        "anchorIds",
+        "anchors"
+      ],
+      "properties": {
+        "nodesSchemaVersion": { "const": "harmonic-orrery.nodes.v1" },
+        "harmonicDescriptorReleaseId": {
+          "const": "harmonic-compression-candidate:CH_A012_q_v1:1.0.0"
+        },
+        "harmonicDescriptorFingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "anchorIds": {
+          "type": "array",
+          "minItems": 21,
+          "maxItems": 21,
+          "uniqueItems": true,
+          "items": { "type": "integer", "minimum": 0, "maximum": 4095 }
+        },
+        "anchors": {
+          "type": "array",
+          "minItems": 21,
+          "maxItems": 21,
+          "items": { "$ref": "#/$defs/anchor" }
+        }
+      }
+    },
+    "anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stateId", "tier", "forteFamily", "office"],
+      "properties": {
+        "stateId": { "type": "integer", "minimum": 0, "maximum": 4095 },
+        "tier": { "enum": ["A0", "A1", "A2"] },
+        "forteFamily": { "enum": ["7-35", "7-34", "7-33"] },
+        "office": { "enum": ["Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus", "Saturn"] }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "sha256", "role"],
+      "properties": {
+        "artifact": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "role": { "type": "string", "minLength": 1 }
+      }
+    },
+    "operator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operatorId",
+        "notation",
+        "name",
+        "operatorClass",
+        "degree",
+        "degreeGovernor",
+        "direction",
+        "inverseOperatorId",
+        "partial",
+        "status"
+      ],
+      "properties": {
+        "operatorId": { "const": "M" },
+        "notation": { "const": "M" },
+        "name": { "const": "Modal successor" },
+        "operatorClass": { "const": "modal_re_rooting" },
+        "degree": { "const": null },
+        "degreeGovernor": { "const": null },
+        "direction": { "const": "successor" },
+        "inverseOperatorId": { "const": "M^6" },
+        "partial": { "const": false },
+        "status": { "const": "structurally_validated" }
+      }
+    },
+    "move": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "sourceId", "targetId", "operatorId", "availability", "provenance"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^M:[0-9]+:[0-9]+$" },
+        "sourceId": { "type": "integer", "minimum": 0, "maximum": 4095 },
+        "targetId": { "type": "integer", "minimum": 0, "maximum": 4095 },
+        "operatorId": { "const": "M" },
+        "availability": { "const": "available" },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "applicationId",
+        "projectionStatus",
+        "structuralEvidence",
+        "structuralEdgeTypes",
+        "structuralEdgeIds"
+      ],
+      "properties": {
+        "applicationId": { "type": "string", "pattern": "^M:[0-9]+:[0-9]+$" },
+        "projectionStatus": { "const": "canonical_modal_edge_projected" },
+        "structuralEvidence": { "const": true },
+        "structuralEdgeTypes": { "const": "MODAL_SUCCESSOR" },
+        "structuralEdgeIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

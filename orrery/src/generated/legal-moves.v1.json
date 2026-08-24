@@ -1,0 +1,540 @@
+{
+  "schemaVersion": "harmonic-orrery.legal-moves.v1",
+  "catalogId": "harmonic-orrery.modal-anchor-cycles.v1",
+  "scope": {
+    "nodesSchemaVersion": "harmonic-orrery.nodes.v1",
+    "harmonicDescriptorReleaseId": "harmonic-compression-candidate:CH_A012_q_v1:1.0.0",
+    "harmonicDescriptorFingerprint": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1",
+    "anchorIds": [
+      1367,
+      1371,
+      1373,
+      1387,
+      1389,
+      1397,
+      1451,
+      1453,
+      1461,
+      1493,
+      1707,
+      1709,
+      1717,
+      1749,
+      1877,
+      2731,
+      2733,
+      2741,
+      2773,
+      2901,
+      3413
+    ],
+    "anchors": [
+      {
+        "stateId": 1367,
+        "tier": "A2",
+        "forteFamily": "7-33",
+        "office": "Moon"
+      },
+      {
+        "stateId": 1371,
+        "tier": "A1",
+        "forteFamily": "7-34",
+        "office": "Sun"
+      },
+      {
+        "stateId": 1373,
+        "tier": "A2",
+        "forteFamily": "7-33",
+        "office": "Saturn"
+      },
+      {
+        "stateId": 1387,
+        "tier": "A0",
+        "forteFamily": "7-35",
+        "office": "Saturn"
+      },
+      {
+        "stateId": 1389,
+        "tier": "A1",
+        "forteFamily": "7-34",
+        "office": "Venus"
+      },
+      {
+        "stateId": 1397,
+        "tier": "A2",
+        "forteFamily": "7-33",
+        "office": "Jupiter"
+      },
+      {
+        "stateId": 1451,
+        "tier": "A0",
+        "forteFamily": "7-35",
+        "office": "Venus"
+      },
+      {
+        "stateId": 1453,
+        "tier": "A0",
+        "forteFamily": "7-35",
+        "office": "Jupiter"
+      },
+      {
+        "stateId": 1461,
+        "tier": "A1",
+        "forteFamily": "7-34",
+        "office": "Mercury"
+      },
+      {
+        "stateId": 1493,
+        "tier": "A2",
+        "forteFamily": "7-33",
+        "office": "Mars"
+      },
+      {
+        "stateId": 1707,
+        "tier": "A1",
+        "forteFamily": "7-34",
+        "office": "Jupiter"
+      },
+      {
+        "stateId": 1709,
+        "tier": "A0",
+        "forteFamily": "7-35",
+        "office": "Mercury"
+      },
+      {
+        "stateId": 1717,
+        "tier": "A0",
+        "forteFamily": "7-35",
+        "office": "Mars"
+      },
+      {
+        "stateId": 1749,
+        "tier": "A1",
+        "forteFamily": "7-34",
+        "office": "Moon"
+      },
+      {
+        "stateId": 1877,
+        "tier": "A2",
+        "forteFamily": "7-33",
+        "office": "Sun"
+      },
+      {
+        "stateId": 2731,
+        "tier": "A2",
+        "forteFamily": "7-33",
+        "office": "Mercury"
+      },
+      {
+        "stateId": 2733,
+        "tier": "A1",
+        "forteFamily": "7-34",
+        "office": "Mars"
+      },
+      {
+        "stateId": 2741,
+        "tier": "A0",
+        "forteFamily": "7-35",
+        "office": "Moon"
+      },
+      {
+        "stateId": 2773,
+        "tier": "A0",
+        "forteFamily": "7-35",
+        "office": "Sun"
+      },
+      {
+        "stateId": 2901,
+        "tier": "A1",
+        "forteFamily": "7-34",
+        "office": "Saturn"
+      },
+      {
+        "stateId": 3413,
+        "tier": "A2",
+        "forteFamily": "7-33",
+        "office": "Venus"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "artifact": "canonical/harmonic-compression-candidates/CH_A012_q_v1.json",
+      "sha256": "fa2947440d90f67b65443ae03f1ce92a0cc8a6ca2e93e83dfdc2490a25723c98",
+      "role": "A0-A2 anchor scope"
+    },
+    {
+      "artifact": "seven-governors-mutation-algebra-audit/audit/operator-registry.csv",
+      "sha256": "e5a9e6929fca048078e0db6ff044facc7137a6ef61e994d74f1d526e27b6482e",
+      "role": "modal operator metadata"
+    },
+    {
+      "artifact": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv",
+      "sha256": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e",
+      "role": "source-backed structural applications"
+    },
+    {
+      "artifact": "seven-governors-mutation-algebra-audit/audit/modal-completion-ledger.csv",
+      "sha256": "8fa2da374772935bd6f5b871dc811dcf0ac5434969f699dfe8dc9002b22bf0e6",
+      "role": "canonical modal projection status"
+    },
+    {
+      "artifact": "seven-governors-mutation-algebra-audit/audit/cycle-identities.csv",
+      "sha256": "be43441d5fea353c011e5538f001db9153c3d1b936c140858f01745ec41cd0dd",
+      "role": "verified modal cycle closure"
+    }
+  ],
+  "operators": [
+    {
+      "operatorId": "M",
+      "notation": "M",
+      "name": "Modal successor",
+      "operatorClass": "modal_re_rooting",
+      "degree": null,
+      "degreeGovernor": null,
+      "direction": "successor",
+      "inverseOperatorId": "M^6",
+      "partial": false,
+      "status": "structurally_validated"
+    }
+  ],
+  "moves": [
+    {
+      "id": "M:1367:2731",
+      "sourceId": 1367,
+      "targetId": 2731,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:1367:2731",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A2:1367:2731"
+        ]
+      }
+    },
+    {
+      "id": "M:1371:2733",
+      "sourceId": 1371,
+      "targetId": 2733,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:1371:2733",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A1:1371:2733"
+        ]
+      }
+    },
+    {
+      "id": "M:1373:1367",
+      "sourceId": 1373,
+      "targetId": 1367,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:1373:1367",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A2:1373:1367"
+        ]
+      }
+    },
+    {
+      "id": "M:1387:2741",
+      "sourceId": 1387,
+      "targetId": 2741,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:1387:2741",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A0:1387:2741"
+        ]
+      }
+    },
+    {
+      "id": "M:1389:1371",
+      "sourceId": 1389,
+      "targetId": 1371,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:1389:1371",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A1:1389:1371"
+        ]
+      }
+    },
+    {
+      "id": "M:1397:1373",
+      "sourceId": 1397,
+      "targetId": 1373,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:1397:1373",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A2:1397:1373"
+        ]
+      }
+    },
+    {
+      "id": "M:1451:2773",
+      "sourceId": 1451,
+      "targetId": 2773,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:1451:2773",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A0:1451:2773"
+        ]
+      }
+    },
+    {
+      "id": "M:1453:1387",
+      "sourceId": 1453,
+      "targetId": 1387,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:1453:1387",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A0:1453:1387"
+        ]
+      }
+    },
+    {
+      "id": "M:1461:1389",
+      "sourceId": 1461,
+      "targetId": 1389,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:1461:1389",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A1:1461:1389"
+        ]
+      }
+    },
+    {
+      "id": "M:1493:1397",
+      "sourceId": 1493,
+      "targetId": 1397,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:1493:1397",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A2:1493:1397"
+        ]
+      }
+    },
+    {
+      "id": "M:1707:2901",
+      "sourceId": 1707,
+      "targetId": 2901,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:1707:2901",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A1:1707:2901"
+        ]
+      }
+    },
+    {
+      "id": "M:1709:1451",
+      "sourceId": 1709,
+      "targetId": 1451,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:1709:1451",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A0:1709:1451"
+        ]
+      }
+    },
+    {
+      "id": "M:1717:1453",
+      "sourceId": 1717,
+      "targetId": 1453,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:1717:1453",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A0:1717:1453"
+        ]
+      }
+    },
+    {
+      "id": "M:1749:1461",
+      "sourceId": 1749,
+      "targetId": 1461,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:1749:1461",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A1:1749:1461"
+        ]
+      }
+    },
+    {
+      "id": "M:1877:1493",
+      "sourceId": 1877,
+      "targetId": 1493,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:1877:1493",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A2:1877:1493"
+        ]
+      }
+    },
+    {
+      "id": "M:2731:3413",
+      "sourceId": 2731,
+      "targetId": 3413,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:2731:3413",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A2:2731:3413"
+        ]
+      }
+    },
+    {
+      "id": "M:2733:1707",
+      "sourceId": 2733,
+      "targetId": 1707,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:2733:1707",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A1:2733:1707"
+        ]
+      }
+    },
+    {
+      "id": "M:2741:1709",
+      "sourceId": 2741,
+      "targetId": 1709,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:2741:1709",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A0:2741:1709"
+        ]
+      }
+    },
+    {
+      "id": "M:2773:1717",
+      "sourceId": 2773,
+      "targetId": 1717,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:2773:1717",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A0:2773:1717"
+        ]
+      }
+    },
+    {
+      "id": "M:2901:1749",
+      "sourceId": 2901,
+      "targetId": 1749,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:2901:1749",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A1:2901:1749"
+        ]
+      }
+    },
+    {
+      "id": "M:3413:1877",
+      "sourceId": 3413,
+      "targetId": 1877,
+      "operatorId": "M",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "M:3413:1877",
+        "projectionStatus": "canonical_modal_edge_projected",
+        "structuralEvidence": true,
+        "structuralEdgeTypes": "MODAL_SUCCESSOR",
+        "structuralEdgeIds": [
+          "modal:A2:3413:1877"
+        ]
+      }
+    }
+  ],
+  "catalogFingerprint": "ae99a609040af5554e8a154968913598416814a6735a4d1ec7658f92e537ac46"
+}

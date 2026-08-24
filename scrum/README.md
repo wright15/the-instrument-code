@@ -89,12 +89,12 @@ proposed EPIC-004 through EPIC-008 authority workstreams.
 | [ORR-403](ORR-403-anchor-interaction-and-session-state.md) | Anchor interaction and local session state | 5 | High | **Done** |
 | [ORR-404](ORR-404-hybrid-audio-engine.md) | Hybrid audio engine for Governor anchors | 8 | High | **Done** |
 | [ORR-405](ORR-405-court-control-surface.md) | Court control surface and pentatonic voicing | 5 | High | **Done** |
-| [ORR-406](ORR-406-legal-move-game-loop.md) | Legal-move game loop and local objectives | 8 | High | **Backlog** |
+| [ORR-406](ORR-406-legal-move-game-loop.md) | Legal-move game loop and local objectives | 8 | High | **Done** |
 | [ORR-407](ORR-407-procedural-scene-composer.md) | Procedural scene composer | 5 | Medium | **Backlog** |
 | [ORR-408](ORR-408-mvp-goals-polish-and-release.md) | MVP goals, polish, and release closure | 5 | High | **Backlog** |
 
 Planned story points: **49**. The next implementation story is
-[ORR-406](ORR-406-legal-move-game-loop.md).
+[ORR-407](ORR-407-procedural-scene-composer.md).
 
 ## Global definition of done
 
