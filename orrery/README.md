@@ -53,6 +53,11 @@ Jupiter/Aeolian, Venus/Phrygian, and Saturn/Locrian. It uses authored C4/MIDI
 60, 12-TET, A4=440 Hz register conventions. A1 and A2 anchors retain their
 own displayed state identity while using their office's A0 palette.
 
+The selected local Court position filters an office palette with its admitted
+Court mask before it is voiced. The control surface exposes the source,
+retained, and suppressed pitch classes so that this authored presentation
+filter is visible. It never replaces an anchor's intrinsic identity.
+
 Timbres, register choices, and percussion loops are authored choices. They do
 not derive from wavelength, `C_P`, `W_A012`, or unresolved `C_H`, and make no
 canonical or physical causal claim. The engine blocks playback when the live
@@ -71,11 +76,12 @@ reload can implicitly resume sound.
 
 The Orrery automatically saves non-secret local exploration state under
 `seven-governors.harmonic-orrery.session`. The versioned document contains only
-the selected anchor ID, visited anchor IDs, an unset local Court placeholder,
-and the source identity needed to validate it against the current projection.
+the selected anchor ID, visited anchor IDs, a local C0-C4 Court presentation
+position, and the source identity needed to validate it against the current
+projection. Valid v1 anchor-only sessions migrate to C0.
 
 Use `?anchor=<state-id>` to share one selected anchor. Visited history and the
-local Court placeholder are intentionally not included in URLs. Invalid links
+local Court position are intentionally not included in URLs. Invalid links
 select nothing and offer a clear-link action rather than falling back to an
 arbitrary anchor.
 
@@ -86,5 +92,7 @@ never hydrate or overwrite saved progress.
 
 The app intentionally presents scoped `W_A012` only. It does not display or
 calculate unresolved global `harmonic.C_H`, Court runtime state, or game state.
-The HUD's Court entry is an unset local presentation placeholder; ORR-405 owns
-actual C0-C4 controls.
+The Court surface starts at C0 Major Pentatonic and permits adjacent local
+presentation moves only. It renders four binary pole dispositions in Mars,
+Jupiter, Venus, Saturn order; Mercury remains a C2 engine/ledger emblem, never
+a fifth pole, toggle, or runtime input.

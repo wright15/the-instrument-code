@@ -205,9 +205,9 @@ describe("Harmonic Orrery audio manifest", () => {
   });
 
   it("keeps A1 and A2 identity while inheriting their office A0 palette", () => {
-    const a0 = resolveAudioSelection(node("Mars", "A0"));
-    const a1 = resolveAudioSelection(node("Mars", "A1"));
-    const a2 = resolveAudioSelection(node("Mars", "A2"));
+    const a0 = resolveAudioSelection(node("Mars", "A0"), "C0");
+    const a1 = resolveAudioSelection(node("Mars", "A1"), "C0");
+    const a2 = resolveAudioSelection(node("Mars", "A2"), "C0");
 
     expect(a0.inheritedOfficePalette).toBe(false);
     expect(a1.inheritedOfficePalette).toBe(true);
@@ -217,6 +217,15 @@ describe("Harmonic Orrery audio manifest", () => {
     expect(a1.palette).toBe(OFFICE_PALETTES.Mars);
     expect(a2.palette).toBe(OFFICE_PALETTES.Mars);
   });
+
+  it("retains and exposes only office pitches admitted by the selected Court mask", () => {
+    const selection = resolveAudioSelection(node("Sun"), "C1");
+
+    expect(selection.court).toMatchObject({ positionId: "C1", scaleName: "Scottish Pentatonic", pitchMask: 677 });
+    expect(selection.palette.pitchClasses).toEqual([0, 2, 4, 6, 7, 9, 11]);
+    expect(selection.retainedPitchClasses).toEqual([0, 2, 7, 9]);
+    expect(selection.suppressedPitchClasses).toEqual([4, 6, 11]);
+  });
 });
 
 describe("Harmonic Orrery audio engine", () => {
@@ -225,7 +234,8 @@ describe("Harmonic Orrery audio engine", () => {
     const fake = audioRuntime(context);
     const engine = new OrreryAudioEngine(fake.runtime);
 
-    engine.select(node("Sun"));
+    engine.select(node("Sun"), "C0");
+    engine.select(node("Sun"), "C1");
     expect(fake.createContext).not.toHaveBeenCalled();
     expect(fake.fetchAudio).not.toHaveBeenCalled();
     expect(context.oscillators).toHaveLength(0);
@@ -237,11 +247,11 @@ describe("Harmonic Orrery audio engine", () => {
     expect(fake.fetchAudio.mock.calls.map(([path]) => path)).toEqual(
       AUDIO_LOOP_ASSETS.map((asset) => asset.filename),
     );
-    expect(context.oscillators).toHaveLength(7);
-    expect(pitchClassesFromOscillators(context)).toEqual(OFFICE_PALETTES.Sun.pitchClasses);
+    expect(context.oscillators).toHaveLength(4);
+    expect(pitchClassesFromOscillators(context)).toEqual([0, 2, 7, 9]);
     expect(context.bufferSources).toHaveLength(1);
-    expect(context.oscillators.filter((oscillator) => oscillator.stopTimes).length).toBe(7);
-    expect(context.oscillators.filter((oscillator) => oscillator.stopTimes.length === 2)).toHaveLength(7 - AUDIO_VOICE_LIMIT);
+    expect(context.oscillators.filter((oscillator) => oscillator.stopTimes).length).toBe(4);
+    expect(context.oscillators.filter((oscillator) => oscillator.stopTimes.length === 2)).toHaveLength(0);
   });
 
   it("rejects a mismatched canonical source before creating an audio context", async () => {
@@ -271,7 +281,7 @@ describe("Harmonic Orrery audio engine", () => {
     });
     const engine = new OrreryAudioEngine(fake.runtime);
 
-    engine.select(node("Mercury"));
+    engine.select(node("Mercury"), "C0");
     await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID);
 
     expect(engine.snapshot()).toMatchObject({
@@ -279,7 +289,7 @@ describe("Harmonic Orrery audio engine", () => {
       readiness: "degraded",
       transport: "playing",
     });
-    expect(context.oscillators).toHaveLength(7);
+    expect(context.oscillators).toHaveLength(4);
     expect(context.bufferSources).toHaveLength(0);
 
     engine.setMuted(true);
@@ -291,8 +301,29 @@ describe("Harmonic Orrery audio engine", () => {
 
     engine.setVisualOnly(true);
     const oscillatorCount = context.oscillators.length;
-    engine.select(node("Mercury", "A2"));
+    engine.select(node("Mercury", "A2"), "C0");
     expect(engine.snapshot().visualOnly).toBe(true);
     expect(context.oscillators).toHaveLength(oscillatorCount);
+  });
+
+  it("revoices a playing selection through a new Court mask without reinitializing audio", async () => {
+    const context = new FakeAudioContext();
+    const fake = audioRuntime(context);
+    const engine = new OrreryAudioEngine(fake.runtime);
+
+    engine.select(node("Sun"), "C0");
+    await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID);
+    const initialOscillatorCount = context.oscillators.length;
+
+    expect(initialOscillatorCount).toBe(5);
+    expect(context.oscillators.filter((oscillator) => oscillator.stopTimes.length === 2)).toHaveLength(
+      initialOscillatorCount - AUDIO_VOICE_LIMIT,
+    );
+
+    engine.select(node("Sun"), "C1");
+
+    expect(fake.createContext).toHaveBeenCalledTimes(1);
+    expect(fake.fetchAudio).toHaveBeenCalledTimes(AUDIO_LOOP_ASSETS.length);
+    expect(pitchClassesFromOscillators(context).slice(initialOscillatorCount)).toEqual([0, 2, 7, 9]);
   });
 });

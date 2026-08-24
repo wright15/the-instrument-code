@@ -1,10 +1,11 @@
+import { courtPositionById, filterPitchClasses, type CourtPosition, type CourtPresentation } from "./court";
 import type { Governor, OrreryNode } from "./types";
 
 export const AUDIO_SCHEMA_VERSION = "harmonic-orrery.audio.v1";
 export const AUDIO_PROFILE_REGISTRY_RELEASE_ID = "canonical-feature-profile-registry:0.1.1";
 export const AUDIO_ROOT_MIDI_NOTE = 60;
 export const AUDIO_A4_HZ = 440;
-export const AUDIO_VOICE_LIMIT = 4;
+export const AUDIO_VOICE_LIMIT = 5;
 
 type AudioNodeLike = {
   connect(destination: AudioNodeLike): AudioNodeLike;
@@ -248,12 +249,15 @@ export const OFFICE_PALETTES: Readonly<Record<Governor, OfficePalette>> = {
 };
 
 export interface AudioSelection {
+  court: CourtPresentation;
   inheritedOfficePalette: boolean;
   office: Governor;
   palette: OfficePalette;
+  retainedPitchClasses: readonly number[];
   selectedStateId: number;
   selectedStateName: string;
   selectedTier: OrreryNode["state"]["tier"];
+  suppressedPitchClasses: readonly number[];
 }
 
 export type AudioReadiness = "idle" | "loading" | "ready" | "degraded" | "unsupported" | "error";
@@ -316,15 +320,21 @@ export function midiToFrequency(midiNote: number): number {
   return AUDIO_A4_HZ * 2 ** ((midiNote - 69) / 12);
 }
 
-export function resolveAudioSelection(node: OrreryNode): AudioSelection {
+export function resolveAudioSelection(node: OrreryNode, courtPosition: CourtPosition): AudioSelection {
   const office = node.resolution.office;
+  const palette = OFFICE_PALETTES[office];
+  const court = courtPositionById(courtPosition);
+  const retainedPitchClasses = filterPitchClasses(palette.pitchClasses, court);
   return {
+    court,
     inheritedOfficePalette: node.state.tier !== "A0",
     office,
-    palette: OFFICE_PALETTES[office],
+    palette,
+    retainedPitchClasses,
     selectedStateId: node.state.stateId,
     selectedStateName: node.state.name,
     selectedTier: node.state.tier,
+    suppressedPitchClasses: palette.pitchClasses.filter((pitchClass) => !retainedPitchClasses.includes(pitchClass)),
   };
 }
 
@@ -396,8 +406,8 @@ export class OrreryAudioEngine {
     return () => this.listeners.delete(listener);
   }
 
-  select(node: OrreryNode, playSound = true): AudioSelection {
-    const selection = resolveAudioSelection(node);
+  select(node: OrreryNode, courtPosition: CourtPosition, playSound = true): AudioSelection {
+    const selection = resolveAudioSelection(node, courtPosition);
     this.currentSelection = selection;
     if (playSound && this.state.transport === "playing" && !this.state.visualOnly) {
       this.playSelection(selection);
@@ -464,7 +474,7 @@ export class OrreryAudioEngine {
     this.replaceState({
       detail:
         this.state.failedAssetIds.length === 0
-          ? "Sound is enabled. Anchor selections play their authored office palette."
+          ? "Sound is enabled. Anchor selections play their office palette through the selected Court mask."
           : `Sound is enabled with ${this.state.failedAssetIds.length} unavailable percussion loop${this.state.failedAssetIds.length === 1 ? "" : "s"}.`,
       readiness: this.state.failedAssetIds.length === 0 ? "ready" : "degraded",
       transport: "playing",
@@ -570,7 +580,7 @@ export class OrreryAudioEngine {
 
     this.stopSources();
     const start = context.currentTime + 0.02;
-    selection.palette.pitchClasses.forEach((pitchClass, index) => {
+    selection.retainedPitchClasses.forEach((pitchClass, index) => {
       this.startVoice(
         context,
         masterGain,

@@ -9,6 +9,7 @@ import {
   parseUrlAnchorSelection,
   saveSession,
   selectSessionAnchor,
+  selectSessionCourtPosition,
   type StorageLike,
 } from "./session";
 import type { OrrerySourceIdentity } from "./session";
@@ -47,17 +48,22 @@ describe("Harmonic Orrery session", () => {
     expect(parseUrlAnchorSelection("?anchor=9007199254740992", anchors).kind).toBe("invalid");
   });
 
-  it("persists deterministic local selection and discovery state", () => {
+  it("persists deterministic local selection, discovery, and adjacent Court state", () => {
     const storage = new MemoryStorage();
-    const session = selectSessionAnchor(selectSessionAnchor(createSession(source), 3), 1);
+    const session = selectSessionCourtPosition(
+      selectSessionAnchor(selectSessionAnchor(createSession(source), 3), 1),
+      "C1",
+    );
 
     expect(session.visitedAnchorIds).toEqual([1, 3]);
+    expect(session.courtPresentationPosition).toBe("C1");
     expect(saveSession(storage, session)).toBeUndefined();
     expect(loadSession(storage, source, anchors)).toEqual({ session });
 
     const serialized = storage.getItem(SESSION_STORAGE_KEY);
     expect(serialized).toContain(`"schemaVersion":"${SESSION_SCHEMA_VERSION}"`);
     expect(serialized).toContain('"visitedAnchorIds":[1,3]');
+    expect(serialized).toContain('"courtPresentationPosition":"C1"');
   });
 
   it("clears selection without losing visited local discovery state", () => {
@@ -66,7 +72,44 @@ describe("Harmonic Orrery session", () => {
     expect(clearSessionSelection(session)).toMatchObject({
       selectedAnchorId: null,
       visitedAnchorIds: [2],
-      courtPresentationPosition: null,
+      courtPresentationPosition: "C0",
+    });
+  });
+
+  it("accepts only adjacent Court presentation changes", () => {
+    const c0 = createSession(source);
+    const c1 = selectSessionCourtPosition(c0, "C1");
+    const c2 = selectSessionCourtPosition(c1, "C2");
+
+    expect(c0.courtPresentationPosition).toBe("C0");
+    expect(c1.courtPresentationPosition).toBe("C1");
+    expect(c2.courtPresentationPosition).toBe("C2");
+    expect(() => selectSessionCourtPosition(c0, "C0")).toThrow("adjacent");
+    expect(() => selectSessionCourtPosition(c0, "C2")).toThrow("adjacent");
+  });
+
+  it("migrates valid v1 local progress to C0 while preserving anchor discovery", () => {
+    const storage = new MemoryStorage();
+    storage.setItem(
+      SESSION_STORAGE_KEY,
+      JSON.stringify({
+        ...selectSessionAnchor(createSession(source), 3),
+        schemaVersion: "harmonic-orrery.session.v1",
+        courtPresentationPosition: null,
+      }),
+    );
+
+    expect(loadSession(storage, source, anchors)).toEqual({
+      session: {
+        ...selectSessionAnchor(createSession(source), 3),
+        courtPresentationPosition: "C0",
+      },
+    });
+    expect(JSON.parse(storage.getItem(SESSION_STORAGE_KEY) ?? "{}")).toMatchObject({
+      schemaVersion: SESSION_SCHEMA_VERSION,
+      courtPresentationPosition: "C0",
+      selectedAnchorId: 3,
+      visitedAnchorIds: [3],
     });
   });
 
@@ -113,6 +156,22 @@ describe("Harmonic Orrery session", () => {
     storage.setItem(
       SESSION_STORAGE_KEY,
       JSON.stringify({ ...createSession(source), unexpected: true }),
+    );
+    expect(loadSession(storage, source, anchors).notice).toContain("invalid");
+
+    storage.setItem(
+      SESSION_STORAGE_KEY,
+      JSON.stringify({ ...createSession(source), courtPresentationPosition: "C5" }),
+    );
+    expect(loadSession(storage, source, anchors).notice).toContain("invalid");
+
+    storage.setItem(
+      SESSION_STORAGE_KEY,
+      JSON.stringify({
+        ...createSession(source),
+        schemaVersion: "harmonic-orrery.session.v1",
+        courtPresentationPosition: "C1",
+      }),
     );
     expect(loadSession(storage, source, anchors).notice).toContain("invalid");
   });

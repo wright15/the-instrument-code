@@ -1,6 +1,6 @@
 # ORR-405 - Court control surface and pentatonic voicing
 
-**Status:** Backlog · **Priority:** High · **Points:** 5 · **Epic:** [EPIC-009](EPIC-009-harmonic-orrery-mvp.md)
+**Status:** Done · **Priority:** High · **Points:** 5 · **Epic:** [EPIC-009](EPIC-009-harmonic-orrery-mvp.md)
 **Depends on:** ORR-403, ORR-404 · **Blocks:** ORR-406, ORR-407
 
 ## Story
@@ -19,6 +19,21 @@ engine boundaries.
   binary input or pole index.
 - Apply Court position only to local presentation and audio voicing until a
   separate game move contract is complete.
+
+## Implementation record
+
+- [x] Add a source-bound C0-C4 presentation manifest with the exact admitted
+      masks, scale names, pitch classes, Court ratios, four-pole vectors, and
+      Mercury C2 engine-emblem boundary.
+- [x] Start local sessions at C0 and migrate valid v1 anchor-progress documents
+      without adding Court state to shared URLs, API payloads, Neo4j, or Court
+      runtime state.
+- [x] Render five adjacent-only position controls, four derived elemental-pole
+      indicators, and a non-interactive Mercury disclosure.
+- [x] Filter the selected anchor's authored A0 palette through the selected
+      Court mask and visibly disclose source, retained, and suppressed classes.
+- [x] Preserve explicit-gesture audio, mute, pause, visual-only, and source
+      compatibility behavior while revoicing an already playing local selection.
 
 ## Acceptance criteria
 
@@ -39,3 +54,12 @@ engine boundaries.
 - Unit-test all five masks, names, ratios, adjacent routes, and Mercury negative
   cases.
 - Browser-test the five controls, four-pole display, and no-fifth-toggle guard.
+
+Implemented verification:
+
+- `npm run orrery:check`
+- `npm run orrery:test` (24 tests)
+- `npm run orrery:build`
+- `npm run orrery:api:test`
+- `npm run orrery:browser:test`
+- `npm run validate:elemental-pentatonic-scale-map`

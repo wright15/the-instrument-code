@@ -179,9 +179,118 @@ assert_page "${webgl_session}" "() => {
     document.querySelector('#inspector-heading')?.textContent === 'Choose an anchor' &&
     document.querySelector('#session-selected')?.textContent?.trim() === 'No anchor selected' &&
     document.querySelector('#session-visited')?.textContent?.trim() === '0 / 21 visited' &&
+    document.querySelector('#session-court')?.textContent?.trim() === 'C0 / Major Pentatonic / local-only' &&
+    document.querySelectorAll('#court-controls [data-court-position]').length === 5 &&
+    document.querySelector('[data-court-position="C0"]')?.getAttribute('aria-pressed') === 'true' &&
+    document.querySelector('[data-court-position="C0"]')?.disabled === false &&
+    document.querySelector('[data-court-position="C1"]')?.disabled === false &&
+    document.querySelector('[data-court-position="C2"]')?.disabled === true &&
+    document.querySelector('#court-current')?.textContent?.trim() === 'C0 / Major Pentatonic / Fire / Mars' &&
+    document.querySelector('#court-mask')?.textContent?.trim() === '661 / 101010010100' &&
+    document.querySelector('#court-pitch-classes')?.textContent?.trim() === '{0, 2, 4, 7, 9}' &&
+    document.querySelectorAll('[data-court-pole]').length === 4 &&
+    document.querySelector('[data-court-pole="Mercury"]') === null &&
+    document.querySelectorAll('#court-poles button, #court-poles input').length === 0 &&
+    document.querySelector('#court-mercury')?.textContent?.includes('not a binary Court pole or toggle') &&
     document.querySelectorAll('.anchor-button[aria-pressed=true]').length === 0
   );
 }" "first-visit WebGL fallback state"
+run_cli "${webgl_session}" run-code "async page => {
+  const c1 = page.locator('[data-court-position=\"C1\"]');
+  await c1.focus();
+  await page.keyboard.press('Enter');
+  await page.waitForFunction(() => document.querySelector('[data-court-position=\"C1\"]')?.getAttribute('aria-pressed') === 'true');
+  const moved = await page.evaluate(() => ({
+    court: document.querySelector('#session-court')?.textContent?.trim(),
+    focused: document.activeElement?.getAttribute('data-court-position'),
+    c0Enabled: document.querySelector('[data-court-position=\"C0\"]')?.disabled === false,
+    c2Enabled: document.querySelector('[data-court-position=\"C2\"]')?.disabled === false,
+    c3Disabled: document.querySelector('[data-court-position=\"C3\"]')?.disabled === true,
+    route: document.querySelector('#court-route-status')?.textContent?.trim(),
+    mars: document.querySelector('[data-court-pole=\"Mars\"]')?.textContent?.trim(),
+  }));
+  if (
+    moved.court !== 'C1 / Scottish Pentatonic / local-only' ||
+    moved.focused !== 'C1' ||
+    !moved.c0Enabled ||
+    !moved.c2Enabled ||
+    !moved.c3Disabled ||
+    !moved.route?.includes('C0, C2') ||
+    moved.mars !== 'MarsInternal'
+  ) {
+    throw new Error('Court adjacency controls did not render correctly: ' + JSON.stringify(moved));
+  }
+
+  await page.locator('[data-court-position=\"C2\"]').focus();
+  await page.keyboard.press('Enter');
+  await page.waitForFunction(() => document.querySelector('[data-court-position=\"C2\"]')?.getAttribute('aria-pressed') === 'true');
+  const c2 = await page.evaluate(() => ({
+    court: document.querySelector('#session-court')?.textContent?.trim(),
+    mask: document.querySelector('#court-mask')?.textContent?.trim(),
+    mercuryActive: document.querySelector('#court-mercury')?.dataset.active,
+    poles: Array.from(document.querySelectorAll('[data-court-pole]')).map(item => item.textContent?.trim()),
+  }));
+  if (
+    c2.court !== 'C2 / Qing Yu / local-only' ||
+    c2.mask !== '1189 / 101001010010' ||
+    c2.mercuryActive !== 'true' ||
+    JSON.stringify(c2.poles) !== JSON.stringify(['MarsInternal', 'JupiterInternal', 'VenusExternal', 'SaturnExternal'])
+  ) {
+    throw new Error('Court C2 did not render its canonical filter: ' + JSON.stringify(c2));
+  }
+
+  await page.locator('[data-court-position=\"C3\"]').focus();
+  await page.keyboard.press('Enter');
+  await page.waitForFunction(() => document.querySelector('[data-court-position=\"C3\"]')?.getAttribute('aria-pressed') === 'true');
+  const c3 = await page.evaluate(() => ({
+    court: document.querySelector('#session-court')?.textContent?.trim(),
+    mask: document.querySelector('#court-mask')?.textContent?.trim(),
+    c1Disabled: document.querySelector('[data-court-position=\"C1\"]')?.disabled === true,
+    venus: document.querySelector('[data-court-pole=\"Venus\"]')?.textContent?.trim(),
+  }));
+  if (
+    c3.court !== 'C3 / Minor Pentatonic / local-only' ||
+    c3.mask !== '1193 / 100101010010' ||
+    !c3.c1Disabled ||
+    c3.venus !== 'VenusInternal'
+  ) {
+    throw new Error('Court C3 did not render its canonical filter: ' + JSON.stringify(c3));
+  }
+
+  await page.locator('[data-court-position=\"C4\"]').focus();
+  await page.keyboard.press('Enter');
+  await page.waitForFunction(() => document.querySelector('[data-court-position=\"C4\"]')?.getAttribute('aria-pressed') === 'true');
+  const c4 = await page.evaluate(() => ({
+    court: document.querySelector('#session-court')?.textContent?.trim(),
+    mask: document.querySelector('#court-mask')?.textContent?.trim(),
+    c2Disabled: document.querySelector('[data-court-position=\"C2\"]')?.disabled === true,
+    c3Enabled: document.querySelector('[data-court-position=\"C3\"]')?.disabled === false,
+    saturn: document.querySelector('[data-court-pole=\"Saturn\"]')?.textContent?.trim(),
+  }));
+  if (
+    c4.court !== 'C4 / Man Gong / local-only' ||
+    c4.mask !== '1321 / 100101001010' ||
+    !c4.c2Disabled ||
+    !c4.c3Enabled ||
+    c4.saturn !== 'SaturnInternal'
+  ) {
+    throw new Error('Court C4 did not render its canonical filter: ' + JSON.stringify(c4));
+  }
+
+  for (const position of ['C3', 'C2', 'C1', 'C0']) {
+    await page.locator('[data-court-position=\"' + position + '\"]').focus();
+    await page.keyboard.press('Enter');
+    await page.waitForFunction((target) => document.querySelector('[data-court-position=\"' + target + '\"]')?.getAttribute('aria-pressed') === 'true', position);
+  }
+}"
+assert_page "${webgl_session}" "() => {
+  const stored = JSON.parse(localStorage.getItem('seven-governors.harmonic-orrery.session') ?? 'null');
+  return (
+    document.querySelector('#session-court')?.textContent?.trim() === 'C0 / Major Pentatonic / local-only' &&
+    stored?.courtPresentationPosition === 'C0' &&
+    !new URL(window.location.href).searchParams.has('court')
+  );
+}" "adjacent keyboard Court controls and local persistence"
 run_cli "${webgl_session}" run-code "async page => {
   const target = page.locator(\"button[data-state-id='3']\");
   await target.focus();
@@ -220,7 +329,7 @@ run_cli "${shared_session}" open
 run_cli "${shared_session}" route "**/api/nodes" \
   --body "${fixture_body}" \
   --content-type application/json
-run_cli "${shared_session}" goto "${base_url}/?anchor=3"
+run_cli "${shared_session}" goto "${base_url}/?anchor=3&court=C4"
 run_cli "${shared_session}" run-code "async page => {
   await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Mars A0');
   const result = await page.evaluate(() => {
@@ -232,8 +341,9 @@ run_cli "${shared_session}" run-code "async page => {
       visited: document.querySelector('#session-visited')?.textContent?.trim(),
       court: document.querySelector('#session-court')?.textContent?.trim(),
       health: document.querySelector('#session-api-health')?.textContent?.trim(),
-      labels: Array.from(document.querySelectorAll('.measurements dt')).map(item => item.textContent?.trim()),
-      storedSelected: stored?.selectedAnchorId,
+       labels: Array.from(document.querySelectorAll('.measurements dt')).map(item => item.textContent?.trim()),
+       storedCourt: stored?.courtPresentationPosition,
+       storedSelected: stored?.selectedAnchorId,
       storedVisited: stored?.visitedAnchorIds,
     };
   });
@@ -242,7 +352,7 @@ run_cli "${shared_session}" run-code "async page => {
     result.pressed !== 'true' ||
     result.selected !== 'Mars A0 / scale:3' ||
     result.visited !== '1 / 21 visited' ||
-    result.court !== 'Not set / local-only' ||
+    result.court !== 'C0 / Major Pentatonic / local-only' ||
     result.health !== 'Live projection / harmonic-orrery.nodes.v1' ||
     JSON.stringify(result.labels) !== JSON.stringify([
       'State Governor',
@@ -252,6 +362,7 @@ run_cli "${shared_session}" run-code "async page => {
       'Scoped anchor weight (W_A012)',
       'Profile release',
     ]) ||
+    result.storedCourt !== 'C0' ||
     result.storedSelected !== 3 ||
     JSON.stringify(result.storedVisited) !== JSON.stringify([3])
   ) {
@@ -267,7 +378,7 @@ assert_page "${shared_session}" "() => {
     document.querySelector(\"button[data-state-id='3']\")?.getAttribute('aria-pressed') === 'true' &&
     document.querySelector('#session-selected')?.textContent?.trim() === 'Mars A0 / scale:3' &&
     document.querySelector('#session-visited')?.textContent?.trim() === '1 / 21 visited' &&
-    document.querySelector('#session-court')?.textContent?.trim() === 'Not set / local-only' &&
+    document.querySelector('#session-court')?.textContent?.trim() === 'C0 / Major Pentatonic / local-only' &&
     document.querySelector('#session-api-health')?.textContent?.trim() === 'Live projection / harmonic-orrery.nodes.v1' &&
     JSON.stringify(labels) === JSON.stringify([
       'State Governor',
@@ -277,6 +388,7 @@ assert_page "${shared_session}" "() => {
       'Scoped anchor weight (W_A012)',
       'Profile release',
     ]) &&
+    stored?.courtPresentationPosition === 'C0' &&
     stored?.selectedAnchorId === 3 &&
     JSON.stringify(stored?.visitedAnchorIds) === JSON.stringify([3])
   );
@@ -296,17 +408,21 @@ run_cli "${shared_session}" run-code "async page => {
     return {
       search: window.location.search,
       pressed: document.querySelector(\"button[data-state-id='2']\")?.getAttribute('aria-pressed'),
-      visited: document.querySelector('#session-visited')?.textContent?.trim(),
-      storedSelected: stored?.selectedAnchorId,
-      storedVisited: stored?.visitedAnchorIds,
+       visited: document.querySelector('#session-visited')?.textContent?.trim(),
+       court: document.querySelector('#session-court')?.textContent?.trim(),
+       storedSelected: stored?.selectedAnchorId,
+       storedVisited: stored?.visitedAnchorIds,
+       storedCourt: stored?.courtPresentationPosition,
     };
   });
   if (
     restored.search !== '?anchor=2' ||
     restored.pressed !== 'true' ||
     restored.visited !== '2 / 21 visited' ||
+    restored.court !== 'C0 / Major Pentatonic / local-only' ||
     restored.storedSelected !== 2 ||
-    JSON.stringify(restored.storedVisited) !== JSON.stringify([2, 3])
+    JSON.stringify(restored.storedVisited) !== JSON.stringify([2, 3]) ||
+    restored.storedCourt !== 'C0'
   ) {
     throw new Error('Reload did not restore local exploration progress: ' + JSON.stringify(restored));
   }
@@ -327,8 +443,10 @@ assert_page "${shared_session}" "() => {
     window.location.search === '?anchor=2' &&
     document.querySelector(\"button[data-state-id='2']\")?.getAttribute('aria-pressed') === 'true' &&
     document.querySelector('#session-visited')?.textContent?.trim() === '2 / 21 visited' &&
+    document.querySelector('#session-court')?.textContent?.trim() === 'C0 / Major Pentatonic / local-only' &&
     stored?.selectedAnchorId === 2 &&
     JSON.stringify(stored?.visitedAnchorIds) === JSON.stringify([2, 3]) &&
+    stored?.courtPresentationPosition === 'C0' &&
     document.activeElement?.getAttribute('data-state-id') === '207'
   );
 }" "local session reload and anchor focus order"
@@ -625,15 +743,38 @@ run_cli "${audio_session}" run-code "async page => {
     frequencies: window.__orreryAudioEvents.frequencies.length,
     enableDisabled: document.querySelector('#audio-enable')?.disabled,
     palette: document.querySelector('#selected-audio-palette')?.textContent?.trim(),
+    court: document.querySelector('#session-court')?.textContent?.trim(),
   }));
   if (
     initial.contexts !== 0 ||
     initial.assetFetches !== 0 ||
     initial.frequencies !== 0 ||
     initial.enableDisabled !== false ||
-    initial.palette !== 'Sun A0 / Lydian / {0, 2, 4, 6, 7, 9, 11}'
+    initial.palette !== 'Sun A0 / Lydian / source {0, 2, 4, 6, 7, 9, 11}' ||
+    initial.court !== 'C0 / Major Pentatonic / local-only'
   ) {
     throw new Error('Audio began before an explicit gesture: ' + JSON.stringify(initial));
+  }
+  await page.locator('[data-court-position=\"C1\"]').tap();
+  await page.waitForFunction(() => document.querySelector('[data-court-position=\"C1\"]')?.getAttribute('aria-pressed') === 'true');
+  const afterCourtSelection = await page.evaluate(() => {
+    const stored = JSON.parse(localStorage.getItem('seven-governors.harmonic-orrery.session') ?? 'null');
+    return {
+      contexts: window.__orreryAudioEvents.contexts,
+      assetFetches: window.__orreryAudioEvents.assetFetches.length,
+      frequencies: window.__orreryAudioEvents.frequencies.length,
+      filter: document.querySelector('#selected-court-filter')?.textContent?.trim(),
+      storedCourt: stored?.courtPresentationPosition,
+    };
+  });
+  if (
+    afterCourtSelection.contexts !== 0 ||
+    afterCourtSelection.assetFetches !== 0 ||
+    afterCourtSelection.frequencies !== 0 ||
+    afterCourtSelection.filter !== 'Court C1 / Scottish Pentatonic / mask 677 retains {0, 2, 7, 9} and suppresses {4, 6, 11}.' ||
+    afterCourtSelection.storedCourt !== 'C1'
+  ) {
+    throw new Error('Court selection began audio or did not expose its filter: ' + JSON.stringify(afterCourtSelection));
   }
 }"
 assert_page "${audio_session}" "() => {
@@ -641,9 +782,11 @@ assert_page "${audio_session}" "() => {
     window.__orreryAudioEvents.contexts === 0 &&
     window.__orreryAudioEvents.assetFetches.length === 0 &&
     window.__orreryAudioEvents.frequencies.length === 0 &&
-    document.querySelector('#audio-enable')?.disabled === false
+    document.querySelector('#audio-enable')?.disabled === false &&
+    window.location.search === '?anchor=1' &&
+    document.querySelector('#session-court')?.textContent?.trim() === 'C1 / Scottish Pentatonic / local-only'
   );
-}" "no audio before explicit enable or URL restoration"
+}" "no audio before explicit enable or local Court selection"
 run_cli "${audio_session}" run-code "async page => {
   await page.locator('#audio-enable').focus();
   await page.keyboard.press('Enter');
@@ -657,7 +800,7 @@ run_cli "${audio_session}" run-code "async page => {
   if (
     enabled.contexts !== 1 ||
     enabled.assetFetches !== 3 ||
-    enabled.frequencies !== 7 ||
+    enabled.frequencies !== 4 ||
     enabled.resumes !== 1
   ) {
     throw new Error('Explicit audio enable did not initialize deterministically: ' + JSON.stringify(enabled));
@@ -665,13 +808,13 @@ run_cli "${audio_session}" run-code "async page => {
 }"
 run_cli "${audio_session}" run-code "async page => {
   const expectedByStateId = {
-    1: [0, 2, 4, 6, 7, 9, 11],
-    2: [0, 2, 4, 5, 7, 9, 11],
-    3: [0, 2, 4, 5, 7, 9, 10],
-    4: [0, 2, 3, 5, 7, 9, 10],
-    5: [0, 2, 3, 5, 7, 8, 10],
-    6: [0, 1, 3, 5, 7, 8, 10],
-    7: [0, 1, 3, 5, 6, 8, 10],
+    1: [0, 2, 7, 9],
+    2: [0, 2, 5, 7, 9],
+    3: [0, 2, 5, 7, 9],
+    4: [0, 2, 5, 7, 9],
+    5: [0, 2, 5, 7],
+    6: [0, 5, 7],
+    7: [0, 5],
   };
   for (const [stateId, expected] of Object.entries(expectedByStateId)) {
     await page.evaluate(() => {
@@ -695,11 +838,49 @@ run_cli "${audio_session}" run-code "async page => {
 }"
 assert_page "${audio_session}" "() => {
   return (
-    document.querySelector('#selected-audio-palette')?.textContent?.trim() === 'Sun A0 / Lydian / {0, 2, 4, 6, 7, 9, 11}' &&
+    document.querySelector('#selected-audio-palette')?.textContent?.trim() === 'Sun A0 / Lydian / source {0, 2, 4, 6, 7, 9, 11}' &&
     document.querySelector('#selected-audio-note')?.textContent?.includes('remains an A1 state') &&
     Array.from(document.querySelectorAll('.audio-controls button')).every((button) => button.getBoundingClientRect().height >= 44)
   );
-}" "all A0 palettes and A1 inheritance"
+}" "all A0 Court-filtered palettes and A1 inheritance"
+run_cli "${audio_session}" run-code "async page => {
+  await page.evaluate(() => {
+    window.__orreryAudioEvents.frequencies.length = 0;
+  });
+  const c2 = page.locator('[data-court-position=\"C2\"]');
+  const bounds = await c2.boundingBox();
+  if (!bounds || bounds.height < 44) {
+    throw new Error('Court control is not visible for touch input.');
+  }
+  await c2.tap();
+  await page.waitForFunction(() => document.querySelector('[data-court-position=\"C2\"]')?.getAttribute('aria-pressed') === 'true');
+  const result = await page.evaluate(() => ({
+    contexts: window.__orreryAudioEvents.contexts,
+    assetFetches: window.__orreryAudioEvents.assetFetches.length,
+    frequencies: window.__orreryAudioEvents.frequencies.map((frequency) => {
+      const midi = Math.round(69 + 12 * Math.log2(frequency / 440));
+      return ((midi % 12) + 12) % 12;
+    }),
+    filter: document.querySelector('#selected-court-filter')?.textContent?.trim(),
+  }));
+  if (
+    result.contexts !== 1 ||
+    result.assetFetches !== 3 ||
+    JSON.stringify(result.frequencies) !== JSON.stringify([0, 2, 7]) ||
+    result.filter !== 'Court C2 / Qing Yu / mask 1189 retains {0, 2, 7} and suppresses {4, 6, 9, 11}.'
+  ) {
+    throw new Error('Court revoicing was not local and filtered: ' + JSON.stringify(result));
+  }
+}"
+assert_page "${audio_session}" "() => {
+  return (
+    document.querySelector('#session-court')?.textContent?.trim() === 'C2 / Qing Yu / local-only' &&
+    document.querySelector('[data-court-position=\"C1\"]')?.disabled === false &&
+    document.querySelector('[data-court-position=\"C3\"]')?.disabled === false &&
+    document.querySelector('[data-court-position=\"C4\"]')?.disabled === true &&
+    document.querySelector('#court-mercury')?.dataset.active === 'true'
+  );
+}" "touch Court revoicing and C2 Mercury emblem"
 run_cli "${audio_session}" run-code "async page => {
   await page.locator('#audio-mute').tap();
   await page.waitForFunction(() => document.querySelector('#audio-mute')?.getAttribute('aria-pressed') === 'true');

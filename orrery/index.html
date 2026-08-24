@@ -44,7 +44,7 @@
         </div>
         <div class="session-metric">
           <span>Local Court display</span>
-          <strong id="session-court">Not set / local-only</strong>
+          <strong id="session-court">Awaiting local session</strong>
         </div>
         <div class="session-metric">
           <span>Projection health</span>
@@ -54,6 +54,51 @@
         <div class="session-actions">
           <button id="clear-link-selection" type="button" hidden>Clear link selection</button>
           <button id="reload-projection" type="button" hidden>Reload projection</button>
+        </div>
+      </section>
+
+      <section class="court-console" aria-labelledby="court-heading">
+        <div class="court-console-copy">
+          <p class="eyebrow">Local presentation filter</p>
+          <h2 id="court-heading">Court voicing surface</h2>
+          <p>
+            Move through the five-position Court route one adjacent step at a time. This changes only
+            local presentation and authored audio voicing.
+          </p>
+        </div>
+        <div class="court-route">
+          <p id="court-route-status" class="court-route-status" role="status" aria-live="polite">
+            Awaiting local session.
+          </p>
+          <div id="court-controls" class="court-controls" aria-label="Court position controls"></div>
+        </div>
+        <div class="court-readout" aria-label="Selected Court position">
+          <div class="court-current">
+            <p class="field-label">Current local position</p>
+            <p id="court-current">Awaiting local session</p>
+            <p id="court-strategy" class="court-strategy">Local strategy emphasis is unavailable.</p>
+          </div>
+          <dl class="court-measurements">
+            <div>
+              <dt>Mask / MSB display</dt>
+              <dd id="court-mask">-</dd>
+            </div>
+            <div>
+              <dt>Retained Court classes</dt>
+              <dd id="court-pitch-classes">-</dd>
+            </div>
+            <div>
+              <dt>Court ratio</dt>
+              <dd id="court-ratio">-</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="court-poles-block">
+          <p class="field-label">Four binary elemental-pole dispositions</p>
+          <div id="court-poles" class="court-poles" aria-label="Court pole dispositions"></div>
+          <p id="court-mercury" class="court-mercury">
+            Mercury is the C2 engine and ledger emblem, not a binary Court pole or toggle.
+          </p>
         </div>
       </section>
 
@@ -153,6 +198,9 @@
               <p id="selected-audio-palette">Select an anchor to inspect its office A0 palette.</p>
               <p id="selected-audio-note" class="audio-palette-note">
                 Audio is an optional presentation layer.
+              </p>
+              <p id="selected-court-filter" class="audio-palette-note">
+                Select an anchor to inspect its local Court filter.
               </p>
             </div>
           </section>

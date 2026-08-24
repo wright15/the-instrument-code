@@ -137,9 +137,9 @@ ORR-404 ------> ORR-405 --+
 ORR-407 ------------------> ORR-408
 ```
 
-The immediate next story is [ORR-404](ORR-404-hybrid-audio-engine.md). The 3D
-anchor and local-session contracts are stable; Court, game-loop, and
-procedural-scene work retain their declared dependencies.
+The 3D, local-session, audio, and Court presentation contracts are stable. The
+immediate next story is [ORR-406](ORR-406-legal-move-game-loop.md); procedural
+scene work retains its declared dependency on ORR-405.
 
 ## Definition of done
 

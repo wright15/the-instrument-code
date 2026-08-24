@@ -1,7 +1,9 @@
+import { isAdjacentCourtPosition, isCourtPosition, type CourtPosition } from "./court";
 import type { NodesResponse } from "./types";
 
 export const SESSION_STORAGE_KEY = "seven-governors.harmonic-orrery.session";
-export const SESSION_SCHEMA_VERSION = "harmonic-orrery.session.v1";
+export const SESSION_SCHEMA_VERSION = "harmonic-orrery.session.v2";
+const LEGACY_SESSION_SCHEMA_VERSION = "harmonic-orrery.session.v1";
 
 const MAX_SESSION_BYTES = 4096;
 
@@ -23,7 +25,7 @@ export interface OrrerySession {
   source: OrrerySourceIdentity;
   selectedAnchorId: number | null;
   visitedAnchorIds: number[];
-  courtPresentationPosition: null;
+  courtPresentationPosition: CourtPosition;
 }
 
 export type UrlAnchorSelection =
@@ -106,12 +108,16 @@ function parseSession(value: unknown, validAnchorIds: ReadonlySet<number>): Orre
     ["schemaVersion", "source", "selectedAnchorId", "visitedAnchorIds", "courtPresentationPosition"],
     "session",
   );
-  if (session.schemaVersion !== SESSION_SCHEMA_VERSION) {
+  if (
+    session.schemaVersion !== SESSION_SCHEMA_VERSION &&
+    session.schemaVersion !== LEGACY_SESSION_SCHEMA_VERSION
+  ) {
     throw new Error("session schema version is unsupported");
   }
-  if (session.courtPresentationPosition !== null) {
-    throw new Error("session Court presentation must remain unset");
-  }
+  const courtPresentationPosition =
+    session.schemaVersion === LEGACY_SESSION_SCHEMA_VERSION
+      ? legacyCourtPresentationPosition(session.courtPresentationPosition)
+      : currentCourtPresentationPosition(session.courtPresentationPosition);
   if (!Array.isArray(session.visitedAnchorIds)) {
     throw new Error("session.visitedAnchorIds must be an array");
   }
@@ -136,8 +142,22 @@ function parseSession(value: unknown, validAnchorIds: ReadonlySet<number>): Orre
     source: sourceIdentity(session.source),
     selectedAnchorId,
     visitedAnchorIds: visited.sort((left, right) => left - right),
-    courtPresentationPosition: null,
+    courtPresentationPosition,
   };
+}
+
+function legacyCourtPresentationPosition(value: unknown): CourtPosition {
+  if (value !== null) {
+    throw new Error("legacy session Court presentation must remain unset");
+  }
+  return "C0";
+}
+
+function currentCourtPresentationPosition(value: unknown): CourtPosition {
+  if (!isCourtPosition(value)) {
+    throw new Error("session Court presentation must be a canonical Court position");
+  }
+  return value;
 }
 
 function sourceMatches(left: OrrerySourceIdentity, right: OrrerySourceIdentity): boolean {
@@ -174,7 +194,7 @@ export function createSession(source: OrrerySourceIdentity): OrrerySession {
     source,
     selectedAnchorId: null,
     visitedAnchorIds: [],
-    courtPresentationPosition: null,
+    courtPresentationPosition: "C0",
   };
 }
 
@@ -215,6 +235,16 @@ export function clearSessionSelection(session: OrrerySession): OrrerySession {
   return { ...session, selectedAnchorId: null };
 }
 
+export function selectSessionCourtPosition(
+  session: OrrerySession,
+  courtPresentationPosition: CourtPosition,
+): OrrerySession {
+  if (!isAdjacentCourtPosition(session.courtPresentationPosition, courtPresentationPosition)) {
+    throw new Error("Court presentation positions must be adjacent.");
+  }
+  return { ...session, courtPresentationPosition };
+}
+
 export function loadSession(
   storage: StorageLike | undefined,
   source: OrrerySourceIdentity,
@@ -239,14 +269,22 @@ export function loadSession(
   }
 
   let parsed: OrrerySession;
+  let migratedLegacySession = false;
   try {
-    parsed = parseSession(JSON.parse(raw), validAnchorIds);
+    const document = JSON.parse(raw);
+    migratedLegacySession = record(document, "session").schemaVersion === LEGACY_SESSION_SCHEMA_VERSION;
+    parsed = parseSession(document, validAnchorIds);
   } catch {
     return discardSession(storage, "Saved local progress was invalid and has been reset.");
   }
 
   if (!sourceMatches(parsed.source, source)) {
     return discardSession(storage, "Saved local progress belonged to a different projection release and has been reset.");
+  }
+
+  if (migratedLegacySession) {
+    const notice = saveSession(storage, parsed);
+    return notice ? { session: parsed, notice } : { session: parsed };
   }
 
   return { session: parsed };

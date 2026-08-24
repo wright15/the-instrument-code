@@ -6,6 +6,14 @@ import {
   type AudioEngineState,
   type AudioSelection,
 } from "./audio";
+import {
+  COURT_POLE_ORDER,
+  COURT_POSITIONS,
+  courtPositionById,
+  formatCourtRatio,
+  isAdjacentCourtPosition,
+  type CourtPosition,
+} from "./court";
 import { createOrreryScene, type OrreryScene } from "./scene";
 import {
   clearSessionSelection,
@@ -14,6 +22,7 @@ import {
   parseUrlAnchorSelection,
   saveSession,
   selectSessionAnchor,
+  selectSessionCourtPosition,
   sourceFromResponse,
   type OrrerySession,
   type StorageLike,
@@ -47,6 +56,7 @@ const selectedProfile = requiredElement<HTMLElement>("#selected-profile");
 const selectedLandforms = requiredElement<HTMLUListElement>("#selected-landforms");
 const selectedAudioPalette = requiredElement<HTMLElement>("#selected-audio-palette");
 const selectedAudioNote = requiredElement<HTMLElement>("#selected-audio-note");
+const selectedCourtFilter = requiredElement<HTMLElement>("#selected-court-filter");
 const sessionSelected = requiredElement<HTMLElement>("#session-selected");
 const sessionVisited = requiredElement<HTMLElement>("#session-visited");
 const sessionCourt = requiredElement<HTMLElement>("#session-court");
@@ -62,6 +72,15 @@ const audioVolumeValue = requiredElement<HTMLOutputElement>("#audio-volume-value
 const audioVisualOnly = requiredElement<HTMLInputElement>("#audio-visual-only");
 const audioPalette = requiredElement<HTMLElement>("#audio-palette");
 const audioStatus = requiredElement<HTMLElement>("#audio-status");
+const courtControls = requiredElement<HTMLElement>("#court-controls");
+const courtRouteStatus = requiredElement<HTMLElement>("#court-route-status");
+const courtCurrent = requiredElement<HTMLElement>("#court-current");
+const courtStrategy = requiredElement<HTMLElement>("#court-strategy");
+const courtMask = requiredElement<HTMLElement>("#court-mask");
+const courtPitchClasses = requiredElement<HTMLElement>("#court-pitch-classes");
+const courtRatio = requiredElement<HTMLElement>("#court-ratio");
+const courtPoles = requiredElement<HTMLElement>("#court-poles");
+const courtMercury = requiredElement<HTMLElement>("#court-mercury");
 
 let scene: OrreryScene | undefined;
 let session: OrrerySession | undefined;
@@ -69,6 +88,7 @@ let progressStorage: StorageLike | undefined;
 let nodesById = new Map<number, OrreryNode>();
 let profileRegistryReleaseId: string | undefined;
 const anchorButtons = new Map<number, HTMLButtonElement>();
+const courtButtons = new Map<CourtPosition, HTMLButtonElement>();
 const audioEngine = new OrreryAudioEngine();
 
 function supportsWebGl(): boolean {
@@ -133,12 +153,16 @@ function renderAudioState(state: AudioEngineState): void {
 }
 
 function renderAudioPalette(selection: AudioSelection): void {
-  const paletteLabel = `${selection.office} A0 / ${selection.palette.mode} / ${formatPitchClasses(selection.palette.pitchClasses)}`;
+  const sourcePitchClasses = formatPitchClasses(selection.palette.pitchClasses);
+  const retainedPitchClasses = formatPitchClasses(selection.retainedPitchClasses);
+  const suppressedPitchClasses = formatPitchClasses(selection.suppressedPitchClasses);
+  const paletteLabel = `${selection.office} A0 / ${selection.palette.mode} / source ${sourcePitchClasses}`;
   selectedAudioPalette.textContent = paletteLabel;
   selectedAudioNote.textContent = selection.inheritedOfficePalette
     ? `${selection.selectedStateName} remains an ${selection.selectedTier} state; its authored sound inherits the ${selection.office} A0 palette.`
     : `${selection.selectedStateName} is the canonical A0 state for this authored palette.`;
-  audioPalette.textContent = `Current palette: ${paletteLabel}`;
+  selectedCourtFilter.textContent = `Court ${selection.court.positionId} / ${selection.court.scaleName} / mask ${selection.court.pitchMask} retains ${retainedPitchClasses} and suppresses ${suppressedPitchClasses}.`;
+  audioPalette.textContent = `Current voiced palette: ${selection.office} A0 / ${selection.palette.mode} / Court ${selection.court.positionId} ${retainedPitchClasses}`;
 }
 
 function showProjectionUnavailable(error: unknown): void {
@@ -199,6 +223,7 @@ function clearInspector(): void {
   selectedLandforms.replaceChildren(item);
   selectedAudioPalette.textContent = "Select an anchor to inspect its office A0 palette.";
   selectedAudioNote.textContent = "Audio is an optional presentation layer.";
+  selectedCourtFilter.textContent = "Select an anchor to inspect its local Court filter.";
   audioPalette.textContent = "Select an anchor to inspect its A0 office palette.";
 }
 
@@ -211,16 +236,108 @@ function renderSessionHud(): void {
     ? `${selectedNode.state.name} / ${selectedNode.state.nodeId}`
     : "No anchor selected";
   sessionVisited.textContent = `${session?.visitedAnchorIds.length ?? 0} / ${nodesById.size} visited`;
-  sessionCourt.textContent = "Not set / local-only";
+  const court = session ? courtPositionById(session.courtPresentationPosition) : undefined;
+  sessionCourt.textContent = court
+    ? `${court.positionId} / ${court.scaleName} / local-only`
+    : "Awaiting local session";
+}
+
+function initializeCourtControls(): void {
+  courtControls.replaceChildren(
+    ...COURT_POSITIONS.map((position) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "court-position-button";
+      button.dataset.courtPosition = position.positionId;
+      button.disabled = true;
+      button.setAttribute("aria-pressed", "false");
+
+      const id = document.createElement("span");
+      id.textContent = position.positionId;
+      const name = document.createElement("strong");
+      name.textContent = position.scaleName;
+      const mask = document.createElement("small");
+      mask.textContent = String(position.pitchMask);
+      button.append(id, name, mask);
+      button.addEventListener("click", () => selectCourtPosition(position.positionId));
+      courtButtons.set(position.positionId, button);
+      return button;
+    }),
+  );
+}
+
+function renderCourtSurface(): void {
+  if (!session) {
+    return;
+  }
+
+  const court = courtPositionById(session.courtPresentationPosition);
+  const adjacentPositions = COURT_POSITIONS.filter((position) =>
+    isAdjacentCourtPosition(court.positionId, position.positionId),
+  );
+  courtRouteStatus.textContent = `${court.positionId} is active. Adjacent local presentation moves: ${adjacentPositions.map((position) => position.positionId).join(", ")}.`;
+  courtCurrent.textContent = `${court.positionId} / ${court.scaleName} / ${court.emblem}`;
+  courtStrategy.textContent = court.strategyEmphasis;
+  courtMask.textContent = `${court.pitchMask} / ${court.maskStringMsb}`;
+  courtPitchClasses.textContent = formatPitchClasses(court.pitchClasses);
+  courtRatio.textContent = formatCourtRatio(court.kappaCourt);
+  courtMercury.textContent = court.mercuryEngineEmblem
+    ? "Mercury C2 engine and ledger emblem is active. It is not a binary Court pole or toggle."
+    : "Mercury is the C2 engine and ledger emblem, not a binary Court pole or toggle.";
+  courtMercury.dataset.active = String(court.mercuryEngineEmblem);
+
+  for (const position of COURT_POSITIONS) {
+    const button = courtButtons.get(position.positionId);
+    if (!button) {
+      continue;
+    }
+    const selected = position.positionId === court.positionId;
+    const adjacent = isAdjacentCourtPosition(court.positionId, position.positionId);
+    button.disabled = !selected && !adjacent;
+    button.classList.toggle("is-selected", selected);
+    button.dataset.state = selected ? "current" : adjacent ? "available" : "unavailable";
+    button.setAttribute("aria-pressed", String(selected));
+    if (selected) {
+      button.setAttribute("aria-current", "step");
+    } else {
+      button.removeAttribute("aria-current");
+    }
+  }
+
+  courtPoles.replaceChildren(
+    ...COURT_POLE_ORDER.map((pole) => {
+      const disposition = court.internalPoles.includes(pole) ? "Internal" : "External";
+      const item = document.createElement("div");
+      item.className = "court-pole";
+      item.dataset.courtPole = pole;
+      item.dataset.disposition = disposition.toLowerCase();
+      const label = document.createElement("span");
+      label.textContent = pole;
+      const value = document.createElement("strong");
+      value.textContent = disposition;
+      item.append(label, value);
+      return item;
+    }),
+  );
 }
 
 function updateAnchorUrl(anchorId: number | null): void {
   const url = new URL(window.location.href);
+  url.searchParams.delete("court");
   if (anchorId === null) {
     url.searchParams.delete("anchor");
   } else {
     url.searchParams.set("anchor", String(anchorId));
   }
+  window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+}
+
+function clearCourtUrlState(): void {
+  const url = new URL(window.location.href);
+  if (!url.searchParams.has("court")) {
+    return;
+  }
+  url.searchParams.delete("court");
   window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
 }
 
@@ -249,9 +366,35 @@ function selectAnchor(node: OrreryNode, selectionSource: "restore" | "user" = "r
   selectedWeight.textContent = formatRatio(node.scopedHarmonicDescriptor.weightedProjection);
   selectedProfile.textContent = node.canonicalProfile.profileVersion;
   renderLandforms(node.canonicalProfile.domainReferences.landforms);
-  renderAudioPalette(audioEngine.select(node, selectionSource === "user"));
+  renderAudioPalette(audioEngine.select(node, session.courtPresentationPosition, selectionSource === "user"));
   renderSessionHud();
   updateAnchorUrl(node.state.stateId);
+  setSessionNotice(saveSession(progressStorage, session));
+}
+
+function selectCourtPosition(courtPosition: CourtPosition): void {
+  if (!session) {
+    return;
+  }
+  if (session.courtPresentationPosition === courtPosition) {
+    return;
+  }
+
+  try {
+    session = selectSessionCourtPosition(session, courtPosition);
+  } catch {
+    return;
+  }
+  renderCourtSurface();
+  renderSessionHud();
+
+  if (session.selectedAnchorId !== null) {
+    const selectedNode = nodesById.get(session.selectedAnchorId);
+    if (selectedNode) {
+      renderAudioPalette(audioEngine.select(selectedNode, session.courtPresentationPosition, true));
+    }
+  }
+
   setSessionNotice(saveSession(progressStorage, session));
 }
 
@@ -321,6 +464,7 @@ async function start(): Promise<void> {
   const loadedSession = loadSession(progressStorage, sourceFromResponse(response), validAnchorIds);
   session = loadedSession.session ?? createSession(sourceFromResponse(response));
   const urlSelection = parseUrlAnchorSelection(window.location.search, validAnchorIds);
+  clearCourtUrlState();
 
   renderAnchorIndex(nodes);
 
@@ -329,6 +473,7 @@ async function start(): Promise<void> {
   setApiHealth(`Live projection / ${response.schemaVersion}`, "ready");
   clearInspector();
   renderSessionHud();
+  renderCourtSurface();
 
   if (supportsWebGl()) {
     try {
@@ -433,6 +578,7 @@ audioVisualOnly.addEventListener("change", () => {
   audioEngine.setVisualOnly(audioVisualOnly.checked);
 });
 
+initializeCourtControls();
 audioEngine.subscribe(renderAudioState);
 window.addEventListener("pagehide", () => {
   scene?.dispose();
