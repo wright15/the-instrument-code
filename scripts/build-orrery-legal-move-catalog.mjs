@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(scriptDirectory, "..");
 const auditRoot = path.join(root, "seven-governors-mutation-algebra-audit");
-const defaultOutput = path.join(root, "orrery", "src", "generated", "legal-moves.v1.json");
+const defaultOutput = path.join(root, "orrery", "src", "generated", "legal-moves.v2.json");
 
 function sha256(value) {
   return crypto.createHash("sha256").update(value).digest("hex");
@@ -242,15 +242,15 @@ function buildCatalog() {
   assertVerifiedCycles(moves, scopedCycles, scope);
 
   const fingerprintInput = {
-    schemaVersion: "harmonic-orrery.legal-moves.v1",
+    schemaVersion: "harmonic-orrery.legal-moves.v2",
     catalogId: "harmonic-orrery.modal-anchor-cycles.v1",
     scope: {
-      nodesSchemaVersion: "harmonic-orrery.nodes.v1",
-        harmonicDescriptorReleaseId: candidate.releaseId,
-        harmonicDescriptorFingerprint: candidate.candidateFingerprint,
-        anchorIds: scopeIds,
-        anchors: scopeAnchors,
-      },
+      nodesSchemaVersion: "harmonic-orrery.nodes.v2",
+      harmonicDescriptorReleaseId: candidate.releaseId,
+      harmonicDescriptorFingerprint: candidate.candidateFingerprint,
+      anchorIds: scopeIds,
+      anchors: scopeAnchors,
+    },
     sources: [
       sourceArtifact(candidatePath, "A0-A2 anchor scope"),
       sourceArtifact(operatorRegistryPath, "modal operator metadata"),

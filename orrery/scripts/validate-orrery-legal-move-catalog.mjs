@@ -7,7 +7,7 @@ import Ajv2020 from "ajv/dist/2020.js";
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const orreryRoot = path.resolve(scriptDirectory, "..");
 const root = path.resolve(orreryRoot, "..");
-const catalogPath = path.join(orreryRoot, "src", "generated", "legal-moves.v1.json");
+const catalogPath = path.join(orreryRoot, "src", "generated", "legal-moves.v2.json");
 const schemaPath = path.join(root, "schemas", "harmonic-orrery-legal-moves.schema.json");
 const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 const schema = JSON.parse(fs.readFileSync(schemaPath, "utf8"));

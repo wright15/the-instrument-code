@@ -33,6 +33,7 @@ HARMONIC_SIDECAR_PATH = (
 
 Governor = Literal["Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus", "Saturn"]
 AnchorTier = Literal["A0", "A1", "A2"]
+Chirality = Literal["achiral", "chiral"]
 
 
 class StrictModel(BaseModel):
@@ -46,6 +47,10 @@ class ExactRatio(StrictModel):
 
 class StateSummary(StrictModel):
     stateId: int = Field(ge=0, le=4095)
+    pitchMask: int = Field(ge=0, le=4095)
+    pitchClasses: list[int] = Field(min_length=7, max_length=7)
+    intervalVector: list[int] = Field(min_length=6, max_length=6)
+    chirality: Chirality
     nodeId: str = Field(pattern=r"^scale:")
     name: str
     forteFamily: Literal["7-35", "7-34", "7-33"]
@@ -100,7 +105,7 @@ class OrreryNode(StrictModel):
 
 
 class NodesResponse(StrictModel):
-    schemaVersion: Literal["harmonic-orrery.nodes.v1"]
+    schemaVersion: Literal["harmonic-orrery.nodes.v2"]
     profileRegistryReleaseId: str
     harmonicDescriptor: HarmonicDescriptorRelease
     nodeCount: Literal[21]
@@ -158,8 +163,9 @@ RETURN
   state.name AS name,
   state.forte AS forteFamily,
   state.tier AS tier,
-  state.role AS role,
-  office.name AS office,
+    state.role AS role,
+    state.chirality AS chirality,
+    office.name AS office,
   canonicalProfile.profile_id AS profileId,
   canonicalProfile.profile_version AS profileVersion,
   canonicalProfile.office AS profileOffice,
@@ -205,6 +211,15 @@ async def read_nodes(transaction: Any) -> list[dict[str, Any]]:
     return await result.data()
 
 
+def interval_vector_for_pitch_classes(pitch_classes: list[int]) -> list[int]:
+    counts = [0] * 6
+    for start, pitch_class in enumerate(pitch_classes):
+        for other_pitch_class in pitch_classes[start + 1 :]:
+            interval_class = min(other_pitch_class - pitch_class, 12 - (other_pitch_class - pitch_class))
+            counts[interval_class - 1] += 1
+    return counts
+
+
 def build_nodes_response(
     rows: list[dict[str, Any]],
     candidate: HarmonicCandidate,
@@ -230,6 +245,8 @@ def build_nodes_response(
         state_id = int(row["stateId"])
         descriptor = candidate.records_by_state_id[state_id]
         office = row["office"]
+        pitch_classes = descriptor["pitchClasses"]
+        interval_vector = descriptor["intervalVector"]
 
         if (
             descriptor["stateGovernor"] != office
@@ -239,7 +256,31 @@ def build_nodes_response(
             or row["role"] != "anchor"
             or row["profileOffice"] != office
             or row["photonicOffice"] != office
+            or row["chirality"] not in {"achiral", "chiral"}
+            or not isinstance(pitch_classes, list)
+            or not isinstance(interval_vector, list)
+            or len(pitch_classes) != 7
+            or len(interval_vector) != 6
+            or len(set(pitch_classes)) != 7
+            or any(
+                not isinstance(pitch_class, int) or pitch_class < 0 or pitch_class > 11
+                for pitch_class in pitch_classes
+            )
+            or any(
+                pitch_class <= pitch_classes[index - 1]
+                for index, pitch_class in enumerate(pitch_classes)
+                if index > 0
+            )
+            or any(not isinstance(interval, int) or interval < 0 for interval in interval_vector)
         ):
+            raise HTTPException(
+                status_code=503,
+                detail=f"Canonical data mismatch for ScaleState {state_id}",
+            )
+
+        pitch_mask = sum(1 << pitch_class for pitch_class in pitch_classes)
+        expected_interval_vector = interval_vector_for_pitch_classes(pitch_classes)
+        if pitch_mask != state_id or interval_vector != expected_interval_vector:
             raise HTTPException(
                 status_code=503,
                 detail=f"Canonical data mismatch for ScaleState {state_id}",
@@ -249,6 +290,10 @@ def build_nodes_response(
             OrreryNode(
                 state=StateSummary(
                     stateId=state_id,
+                    pitchMask=pitch_mask,
+                    pitchClasses=pitch_classes,
+                    intervalVector=interval_vector,
+                    chirality=row["chirality"],
                     nodeId=row["nodeId"],
                     name=row["name"],
                     forteFamily=row["forteFamily"],
@@ -279,7 +324,7 @@ def build_nodes_response(
 
     # Court state is intentionally absent: Mercury is a Governor/engine, not a fifth binary pole.
     return NodesResponse(
-        schemaVersion="harmonic-orrery.nodes.v1",
+        schemaVersion="harmonic-orrery.nodes.v2",
         profileRegistryReleaseId=next(iter(release_ids)),
         harmonicDescriptor=HarmonicDescriptorRelease(
             candidateId=candidate.candidate_id,

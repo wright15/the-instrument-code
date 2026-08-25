@@ -12,7 +12,7 @@
     "nodes"
   ],
   "properties": {
-    "schemaVersion": { "const": "harmonic-orrery.nodes.v1" },
+    "schemaVersion": { "const": "harmonic-orrery.nodes.v2" },
     "profileRegistryReleaseId": { "type": "string", "minLength": 1 },
     "harmonicDescriptor": { "$ref": "#/$defs/harmonicDescriptorRelease" },
     "nodeCount": { "const": 21 },
@@ -56,10 +56,25 @@
         "state": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["stateId", "nodeId", "name", "forteFamily", "tier", "role"],
-          "properties": {
-            "stateId": { "type": "integer", "minimum": 0, "maximum": 4095 },
-            "nodeId": { "type": "string", "pattern": "^scale:" },
+            "required": ["stateId", "pitchMask", "pitchClasses", "intervalVector", "chirality", "nodeId", "name", "forteFamily", "tier", "role"],
+            "properties": {
+              "stateId": { "type": "integer", "minimum": 0, "maximum": 4095 },
+              "pitchMask": { "type": "integer", "minimum": 0, "maximum": 4095 },
+              "pitchClasses": {
+                "type": "array",
+                "minItems": 7,
+                "maxItems": 7,
+                "uniqueItems": true,
+                "items": { "type": "integer", "minimum": 0, "maximum": 11 }
+              },
+              "intervalVector": {
+                "type": "array",
+                "minItems": 6,
+                "maxItems": 6,
+                "items": { "type": "integer", "minimum": 0 }
+              },
+              "chirality": { "enum": ["achiral", "chiral"] },
+              "nodeId": { "type": "string", "pattern": "^scale:" },
             "name": { "type": "string", "minLength": 1 },
             "forteFamily": { "enum": ["7-35", "7-34", "7-33"] },
             "tier": { "enum": ["A0", "A1", "A2"] },

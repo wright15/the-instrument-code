@@ -1,11 +1,14 @@
 import { isAdjacentCourtPosition, isCourtPosition, type CourtPosition } from "./court";
-import type { LegalMoveCatalogIdentity } from "./moves";
+import { LEGAL_MOVE_SCHEMA_VERSION, type LegalMoveCatalogIdentity } from "./moves";
 import type { NodesResponse } from "./types";
 
 export const SESSION_STORAGE_KEY = "seven-governors.harmonic-orrery.session";
 export const SESSION_SCHEMA_VERSION = "harmonic-orrery.session.v3";
 const LEGACY_SESSION_SCHEMA_VERSION = "harmonic-orrery.session.v1";
 const PREVIOUS_SESSION_SCHEMA_VERSION = "harmonic-orrery.session.v2";
+const PREVIOUS_NODES_SCHEMA_VERSION = "harmonic-orrery.nodes.v1";
+const PREVIOUS_LEGAL_MOVE_CATALOG_SCHEMA_VERSION = "harmonic-orrery.legal-moves.v1";
+const PREVIOUS_LEGAL_MOVE_CATALOG_FINGERPRINT = "ae99a609040af5554e8a154968913598416814a6735a4d1ec7658f92e537ac46";
 
 const MAX_SESSION_BYTES = 4096;
 const MAX_MODAL_ROUTE_STEPS = 32;
@@ -69,6 +72,13 @@ export type LegalMoveApplicationResult =
 
 type JsonRecord = Record<string, unknown>;
 
+interface StoredSourceBase {
+  nodesSchemaVersion: NodesResponse["schemaVersion"] | typeof PREVIOUS_NODES_SCHEMA_VERSION;
+  profileRegistryReleaseId: string;
+  harmonicDescriptorReleaseId: NodesResponse["harmonicDescriptor"]["releaseId"];
+  harmonicDescriptorFingerprint: string;
+}
+
 function record(value: unknown, context: string): JsonRecord {
   if (value === null || typeof value !== "object" || Array.isArray(value)) {
     throw new Error(`${context} must be an object`);
@@ -101,7 +111,7 @@ function fingerprint(value: unknown, context: string): string {
   return value;
 }
 
-function baseSourceIdentity(value: unknown, version: string): Omit<OrrerySourceIdentity, keyof LegalMoveCatalogIdentity> {
+function baseSourceIdentity(value: unknown, version: string): StoredSourceBase {
   const source = record(value, "session.source");
   const expected = [
     "nodesSchemaVersion",
@@ -118,7 +128,7 @@ function baseSourceIdentity(value: unknown, version: string): Omit<OrrerySourceI
   const profileRegistryReleaseId = source.profileRegistryReleaseId;
   const harmonicDescriptorReleaseId = source.harmonicDescriptorReleaseId;
   if (
-    nodesSchemaVersion !== "harmonic-orrery.nodes.v1" ||
+    (nodesSchemaVersion !== "harmonic-orrery.nodes.v2" && nodesSchemaVersion !== PREVIOUS_NODES_SCHEMA_VERSION) ||
     typeof profileRegistryReleaseId !== "string" ||
     profileRegistryReleaseId.length === 0 ||
     harmonicDescriptorReleaseId !== "harmonic-compression-candidate:CH_A012_q_v1:1.0.0"
@@ -134,11 +144,42 @@ function baseSourceIdentity(value: unknown, version: string): Omit<OrrerySourceI
   };
 }
 
+function sourceMatchesProjection(source: StoredSourceBase, currentSource: OrrerySourceIdentity): boolean {
+  return (
+    source.profileRegistryReleaseId === currentSource.profileRegistryReleaseId &&
+    source.harmonicDescriptorReleaseId === currentSource.harmonicDescriptorReleaseId &&
+    source.harmonicDescriptorFingerprint === currentSource.harmonicDescriptorFingerprint
+  );
+}
+
 function sourceIdentity(value: unknown, version: string, currentSource: OrrerySourceIdentity): OrrerySourceIdentity {
   const base = baseSourceIdentity(value, version);
+  if (base.nodesSchemaVersion === PREVIOUS_NODES_SCHEMA_VERSION) {
+    if (!sourceMatchesProjection(base, currentSource)) {
+      throw new Error("session.source cannot migrate from a different projection release");
+    }
+
+    if (version === SESSION_SCHEMA_VERSION) {
+      const source = record(value, "session.source");
+      if (
+        source.legalMoveCatalogSchemaVersion !== PREVIOUS_LEGAL_MOVE_CATALOG_SCHEMA_VERSION ||
+        fingerprint(source.legalMoveCatalogFingerprint, "session.source.legalMoveCatalogFingerprint") !==
+          PREVIOUS_LEGAL_MOVE_CATALOG_FINGERPRINT
+      ) {
+        throw new Error("session.source cannot migrate from an unknown legal-move catalog");
+      }
+    }
+
+    // v2 adds presentation data only; preserve source-compatible local progress.
+    return currentSource;
+  }
+
   if (version !== SESSION_SCHEMA_VERSION) {
     return {
-      ...base,
+      nodesSchemaVersion: currentSource.nodesSchemaVersion,
+      profileRegistryReleaseId: base.profileRegistryReleaseId,
+      harmonicDescriptorReleaseId: base.harmonicDescriptorReleaseId,
+      harmonicDescriptorFingerprint: base.harmonicDescriptorFingerprint,
       legalMoveCatalogSchemaVersion: currentSource.legalMoveCatalogSchemaVersion,
       legalMoveCatalogFingerprint: currentSource.legalMoveCatalogFingerprint,
     };
@@ -146,15 +187,29 @@ function sourceIdentity(value: unknown, version: string, currentSource: OrrerySo
 
   const source = record(value, "session.source");
   if (
-    source.legalMoveCatalogSchemaVersion !== "harmonic-orrery.legal-moves.v1" ||
+    source.legalMoveCatalogSchemaVersion === PREVIOUS_LEGAL_MOVE_CATALOG_SCHEMA_VERSION &&
+    fingerprint(source.legalMoveCatalogFingerprint, "session.source.legalMoveCatalogFingerprint") ===
+      PREVIOUS_LEGAL_MOVE_CATALOG_FINGERPRINT
+  ) {
+    if (!sourceMatchesProjection(base, currentSource)) {
+      throw new Error("session.source cannot migrate from a different projection release");
+    }
+    return currentSource;
+  }
+
+  if (
+    source.legalMoveCatalogSchemaVersion !== LEGAL_MOVE_SCHEMA_VERSION ||
     typeof source.legalMoveCatalogFingerprint !== "string"
   ) {
     throw new Error("session.source legal-move catalog identity is invalid");
   }
 
   return {
-    ...base,
-    legalMoveCatalogSchemaVersion: "harmonic-orrery.legal-moves.v1",
+    nodesSchemaVersion: currentSource.nodesSchemaVersion,
+    profileRegistryReleaseId: base.profileRegistryReleaseId,
+    harmonicDescriptorReleaseId: base.harmonicDescriptorReleaseId,
+    harmonicDescriptorFingerprint: base.harmonicDescriptorFingerprint,
+    legalMoveCatalogSchemaVersion: LEGAL_MOVE_SCHEMA_VERSION,
     legalMoveCatalogFingerprint: fingerprint(source.legalMoveCatalogFingerprint, "session.source.legalMoveCatalogFingerprint"),
   };
 }
@@ -580,11 +635,16 @@ export function loadSession(
   }
 
   let parsed: OrrerySession;
-  let migratedLegacySession = false;
+  let migratedSession = false;
   try {
     const document = JSON.parse(raw);
     const documentVersion = record(document, "session").schemaVersion;
-    migratedLegacySession = documentVersion !== SESSION_SCHEMA_VERSION;
+    const documentSource = record(record(document, "session").source, "session.source");
+    migratedSession =
+      documentVersion !== SESSION_SCHEMA_VERSION ||
+      documentSource.nodesSchemaVersion !== source.nodesSchemaVersion ||
+      documentSource.legalMoveCatalogSchemaVersion !== source.legalMoveCatalogSchemaVersion ||
+      documentSource.legalMoveCatalogFingerprint !== source.legalMoveCatalogFingerprint;
     parsed = parseSession(document, validAnchorIds, legalMoves, validObjectiveIds, source);
   } catch {
     return discardSession(storage, "Saved local progress was invalid and has been reset.");
@@ -594,7 +654,7 @@ export function loadSession(
     return discardSession(storage, "Saved local progress belonged to a different projection release and has been reset.");
   }
 
-  if (migratedLegacySession) {
+  if (migratedSession) {
     const notice = saveSession(storage, parsed);
     return notice ? { session: parsed, notice } : { session: parsed };
   }

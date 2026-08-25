@@ -8,9 +8,16 @@ import type { NodesResponse, OrreryNode } from "./types";
 function nodesResponse(): NodesResponse {
   const nodes = LEGAL_MOVE_CATALOG.scope.anchors.map((anchor) => {
     const { stateId, office } = anchor;
+    const pitchClasses = Array.from({ length: 12 }, (_value, pitchClass) => pitchClass).filter(
+      (pitchClass) => (stateId & (1 << pitchClass)) !== 0,
+    );
     return {
       state: {
         stateId,
+        pitchMask: stateId,
+        pitchClasses,
+        intervalVector: [0, 0, 0, 0, 0, 0],
+        chirality: "achiral" as const,
         nodeId: `scale:${stateId}`,
         name: `Anchor ${stateId}`,
         forteFamily: anchor.forteFamily,
@@ -39,7 +46,7 @@ function nodesResponse(): NodesResponse {
     } satisfies OrreryNode;
   });
   return {
-    schemaVersion: "harmonic-orrery.nodes.v1",
+    schemaVersion: "harmonic-orrery.nodes.v2",
     profileRegistryReleaseId: "canonical-feature-profile-registry:0.1.1",
     harmonicDescriptor: {
       candidateId: "CH_A012_q_v1",

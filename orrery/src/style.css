@@ -834,6 +834,35 @@ a:focus-visible {
   white-space: nowrap;
 }
 
+.scene-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.scene-quality-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #8a99af;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.61rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.scene-quality-control select {
+  min-height: 34px;
+  padding: 0 8px;
+  border: 1px solid rgb(151 180 222 / 38%);
+  border-radius: 2px;
+  color: #dbe7fa;
+  background: #0b121f;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+}
+
 .scene-key span {
   display: inline-block;
   width: 7px;
@@ -957,6 +986,27 @@ a:focus-visible {
   padding-top: 13px;
   letter-spacing: 0.04em;
   text-transform: none;
+}
+
+.scene-presentation {
+  margin-top: 16px;
+  padding: 15px 16px;
+  border: 1px solid rgb(133 165 212 / 22%);
+  background: rgb(10 19 34 / 58%);
+}
+
+.scene-presentation > p:not(.field-label) {
+  margin: 0;
+  color: #dbe7fa;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
+
+.scene-presentation .scene-disclaimer {
+  margin-top: 8px;
+  color: #8495ad;
+  font-size: 0.64rem;
 }
 
 .detail-rail {
@@ -1325,6 +1375,14 @@ a:focus-visible {
 
   .scene-key {
     display: none;
+  }
+
+  .scene-tools {
+    align-items: flex-end;
+  }
+
+  .scene-quality-control select {
+    min-height: 44px;
   }
 
   .scene-frame {

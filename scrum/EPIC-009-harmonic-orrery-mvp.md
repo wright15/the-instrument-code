@@ -15,9 +15,8 @@
 
 The release has a verified harmonic topology, a 21-anchor scoped harmonic
 descriptor, canonical Governor profiles, Court runtime, Neo4j projection, and
-reference visualizations. It does not yet offer a focused experience that lets a
-player see, hear, and navigate the system without first learning its internal
-vocabulary or using graph tooling directly.
+a focused 3D, audio, local-game, and authored-scene experience. It still needs
+first-session polish and release closure before it can be presented as an MVP.
 
 The Harmonic Orrery is an application-layer MVP. It makes the admitted,
 read-only data legible through a 3D anchor map, authored audio and visual
@@ -137,9 +136,9 @@ ORR-404 ------> ORR-405 --+
 ORR-407 ------------------> ORR-408
 ```
 
-The 3D, local-session, audio, Court presentation, and legal-move contracts are
-stable. The immediate next story is
-[ORR-407](ORR-407-procedural-scene-composer.md).
+The 3D, local-session, audio, Court presentation, legal-move, and authored-scene
+contracts are stable. The immediate next story is
+[ORR-408](ORR-408-mvp-goals-polish-and-release.md).
 
 ## Definition of done
 

@@ -187,7 +187,16 @@
               <p class="eyebrow">Orbital instrument</p>
               <h2 id="scene-heading">21-anchor view</h2>
             </div>
-            <p class="scene-key"><span></span> drag to orbit / scroll to zoom</p>
+            <div class="scene-tools">
+              <p class="scene-key"><span></span> drag to orbit / scroll to zoom</p>
+              <label class="scene-quality-control" for="scene-quality">
+                <span>Scene quality</span>
+                <select id="scene-quality">
+                  <option value="auto">Auto</option>
+                  <option value="reduced">Reduced</option>
+                </select>
+              </label>
+            </div>
           </div>
 
           <div class="scene-frame" id="scene-frame">
@@ -204,6 +213,16 @@
           <div class="scene-footnote">
             <span id="scene-count">0 / 21 anchors</span>
             <span>Tier bands: A0 core / A1 middle / A2 perimeter</span>
+            <span id="scene-quality-status">Auto quality / determining device cost</span>
+          </div>
+          <div class="scene-presentation">
+            <p class="field-label">Authored scene interpretation</p>
+            <p id="scene-presentation-status" role="status" aria-live="polite">
+              Choose an anchor to compose a local authored presentation interpretation.
+            </p>
+            <p class="scene-disclaimer">
+              Presentation only: no mesh, lighting choice, or reference prompt is a canonical landform, generated-world fact, scientific simulation, or thermodynamic calculation.
+            </p>
           </div>
         </section>
 
@@ -272,7 +291,7 @@
       <footer class="app-footer">
         <span>Presentation layer only</span>
         <span>Neo4j remains a read projection</span>
-        <span>Source: harmonic-orrery.nodes.v1</span>
+        <span>Source: harmonic-orrery.nodes.v2</span>
       </footer>
     </main>
     <script type="module" src="/src/main.ts"></script>

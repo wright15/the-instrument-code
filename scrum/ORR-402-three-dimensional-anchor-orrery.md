@@ -25,7 +25,7 @@ any game decision.
 - [x] Create the standalone `orrery/` Vite, TypeScript, and Three.js package.
 - [x] Proxy local `/api/nodes` requests through Vite so browser code never holds
       Neo4j credentials or requires a direct cross-origin request.
-- [x] Validate and normalize `harmonic-orrery.nodes.v1` before rendering the
+- [x] Validate and normalize `harmonic-orrery.nodes.v2` before rendering the
       21-node scene.
 - [x] Render deterministic A0/A1/A2 radial depth bands with icosahedron,
       octahedron, and tetrahedron anchors, canonical office colors, pointer

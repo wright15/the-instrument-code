@@ -1,7 +1,7 @@
-import catalogDocument from "./generated/legal-moves.v1.json";
+import catalogDocument from "./generated/legal-moves.v2.json";
 import { GOVERNORS, TIERS, type AnchorTier, type Governor, type NodesResponse, type OrreryNode } from "./types";
 
-export const LEGAL_MOVE_SCHEMA_VERSION = "harmonic-orrery.legal-moves.v1";
+export const LEGAL_MOVE_SCHEMA_VERSION = "harmonic-orrery.legal-moves.v2";
 export const LEGAL_MOVE_CATALOG_ID = "harmonic-orrery.modal-anchor-cycles.v1";
 
 type JsonRecord = Record<string, unknown>;
@@ -154,7 +154,7 @@ function scope(value: unknown): LegalMoveCatalogScope {
     "catalog.scope",
   );
   if (
-    source.nodesSchemaVersion !== "harmonic-orrery.nodes.v1" ||
+    source.nodesSchemaVersion !== "harmonic-orrery.nodes.v2" ||
     source.harmonicDescriptorReleaseId !== "harmonic-compression-candidate:CH_A012_q_v1:1.0.0" ||
     !Array.isArray(source.anchorIds) ||
     source.anchorIds.length !== 21 ||
@@ -180,7 +180,7 @@ function scope(value: unknown): LegalMoveCatalogScope {
   }
 
   return {
-    nodesSchemaVersion: "harmonic-orrery.nodes.v1",
+    nodesSchemaVersion: "harmonic-orrery.nodes.v2",
     harmonicDescriptorReleaseId: "harmonic-compression-candidate:CH_A012_q_v1:1.0.0",
     harmonicDescriptorFingerprint: fingerprint(
       source.harmonicDescriptorFingerprint,

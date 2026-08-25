@@ -1,6 +1,12 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
+import {
+  sceneRenderBudget,
+  type SceneParameters,
+  type SceneQuality,
+  type SceneRenderBudget,
+} from "./scene-composer";
 import { layoutAnchors, type LayoutAnchor } from "./layout";
 import { GOVERNOR_META, type OrreryNode } from "./types";
 
@@ -10,8 +16,15 @@ interface SceneMesh {
   label: HTMLSpanElement;
 }
 
+interface SelectedPresentation {
+  sceneMesh: SceneMesh;
+  parameters: SceneParameters;
+}
+
 export interface OrreryScene {
-  select(node: OrreryNode): void;
+  select(node: OrreryNode, parameters: SceneParameters): void;
+  clearSelection(): void;
+  setQuality(quality: SceneQuality): void;
   dispose(): void;
 }
 
@@ -19,6 +32,7 @@ interface CreateSceneOptions {
   canvas: HTMLCanvasElement;
   labelRoot: HTMLElement;
   nodes: OrreryNode[];
+  initialQuality?: SceneQuality;
   onSelect: (node: OrreryNode) => void;
 }
 
@@ -102,10 +116,140 @@ function disposeObject(object: THREE.Object3D): void {
   });
 }
 
-export function createOrreryScene({ canvas, labelRoot, nodes, onSelect }: CreateSceneOptions): OrreryScene {
+function clearGroup(group: THREE.Group): void {
+  for (const child of [...group.children]) {
+    group.remove(child);
+    disposeObject(child);
+  }
+}
+
+function makeParticleCloud(
+  parameters: SceneParameters,
+  budget: SceneRenderBudget,
+  color: THREE.Color,
+): THREE.Points<THREE.BufferGeometry, THREE.PointsMaterial> {
+  const random = seededRandom(parameters.seed ^ 0x9e3779b9);
+  const positions = new Float32Array(budget.particleCount * 3);
+  const colors = new Float32Array(budget.particleCount * 3);
+  const pale = new THREE.Color("#dceaff");
+
+  for (let index = 0; index < budget.particleCount; index += 1) {
+    const radius = parameters.composition.mesh.radius + random() * parameters.composition.particles.spread;
+    const theta = parameters.composition.particles.phase + random() * Math.PI * 2;
+    const elevation = (random() - 0.5) * Math.PI * 0.72;
+    const cursor = index * 3;
+    positions[cursor] = Math.cos(theta) * Math.cos(elevation) * radius;
+    positions[cursor + 1] = Math.sin(elevation) * radius * 0.7;
+    positions[cursor + 2] = Math.sin(theta) * Math.cos(elevation) * radius;
+
+    const blend = 0.2 + random() * 0.58;
+    const particleColor = color.clone().lerp(pale, blend);
+    colors[cursor] = particleColor.r;
+    colors[cursor + 1] = particleColor.g;
+    colors[cursor + 2] = particleColor.b;
+  }
+
+  const geometry = new THREE.BufferGeometry();
+  geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+  geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+  return new THREE.Points(
+    geometry,
+    new THREE.PointsMaterial({
+      size: parameters.composition.particles.pointSize,
+      sizeAttenuation: true,
+      transparent: true,
+      opacity: 0.8,
+      vertexColors: true,
+      depthWrite: false,
+    }),
+  );
+}
+
+function makeSurfacePattern(
+  parameters: SceneParameters,
+  budget: SceneRenderBudget,
+  color: THREE.Color,
+): THREE.Group {
+  const pattern = new THREE.Group();
+  const retainedPitchClasses = new Set(parameters.source.retainedPitchClasses);
+  const spokeOrigin = new THREE.Vector3(0, 0, 0);
+
+  parameters.composition.mesh.radialProfile.forEach((profile, pitchClass) => {
+    const angle = (pitchClass / 12) * Math.PI * 2;
+    const radius = profile * parameters.composition.mesh.radius * 1.12;
+    const endpoint = new THREE.Vector3(Math.cos(angle) * radius, 0, Math.sin(angle) * radius);
+    const geometry = new THREE.BufferGeometry().setFromPoints([spokeOrigin, endpoint]);
+    const material = new THREE.LineBasicMaterial({
+      color: retainedPitchClasses.has(pitchClass) ? color : "#55708f",
+      transparent: true,
+      opacity: retainedPitchClasses.has(pitchClass) ? 0.88 : 0.28,
+    });
+    pattern.add(new THREE.Line(geometry, material));
+  });
+
+  parameters.composition.surface.intervalBands.forEach((band, index) => {
+    const material = new THREE.MeshBasicMaterial({
+      color,
+      transparent: true,
+      opacity: 0.09 + index * 0.025,
+      depthWrite: false,
+    });
+    const ring = new THREE.Mesh(
+      new THREE.TorusGeometry(band * parameters.composition.mesh.radius, 0.012, 4, budget.surfaceSegments),
+      material,
+    );
+    ring.rotation.x = Math.PI / 2;
+    ring.rotation.z = parameters.composition.surface.rotation + index * 0.24;
+    pattern.add(ring);
+  });
+
+  return pattern;
+}
+
+function addPresentation(
+  group: THREE.Group,
+  parameters: SceneParameters,
+  budget: SceneRenderBudget,
+): void {
+  const color = new THREE.Color(parameters.source.officeColor);
+  const accentColor = color.clone().lerp(new THREE.Color("#e7f1ff"), 0.2 + parameters.composition.lighting.wavelengthAccent * 0.25);
+  const mesh = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(parameters.composition.mesh.radius, parameters.composition.mesh.detail),
+    new THREE.MeshStandardMaterial({
+      color,
+      emissive: color,
+      emissiveIntensity: 0.44,
+      metalness: 0.42,
+      roughness: 0.3,
+      transparent: true,
+      opacity: 0.78,
+    }),
+  );
+  mesh.rotation.y = parameters.composition.surface.rotation;
+  mesh.rotation.z = parameters.composition.surface.twist * 0.18;
+  group.add(mesh);
+  group.add(makeSurfacePattern(parameters, budget, accentColor));
+  group.add(makeParticleCloud(parameters, budget, accentColor));
+
+  const keyLight = new THREE.PointLight(color, parameters.composition.lighting.keyIntensity, 10, 2);
+  keyLight.position.set(1.5, 2.5, 1.5);
+  const accentLight = new THREE.PointLight(accentColor, parameters.composition.lighting.accentIntensity, 8, 2);
+  accentLight.position.fromArray(parameters.composition.lighting.accentOffset);
+  group.add(keyLight, accentLight);
+}
+
+export function createOrreryScene({
+  canvas,
+  labelRoot,
+  nodes,
+  initialQuality = "full",
+  onSelect,
+}: CreateSceneOptions): OrreryScene {
+  let quality = initialQuality;
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, sceneRenderBudget(quality).pixelRatioCap));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
+  canvas.dataset.sceneQuality = quality;
 
   const scene = new THREE.Scene();
   scene.fog = new THREE.FogExp2("#050914", 0.043);
@@ -120,6 +264,8 @@ export function createOrreryScene({ canvas, labelRoot, nodes, onSelect }: Create
   controls.maxDistance = 31;
   controls.enableDamping = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   controls.dampingFactor = 0.08;
+  const initialCameraPosition = camera.position.clone();
+  const initialControlsTarget = controls.target.clone();
 
   const ambient = new THREE.HemisphereLight("#8ba8df", "#020307", 1.3);
   const keyLight = new THREE.PointLight("#d8e6ff", 18, 31, 2);
@@ -153,7 +299,8 @@ export function createOrreryScene({ canvas, labelRoot, nodes, onSelect }: Create
   ringData.forEach(([radius, height]) => scene.add(makeTierOrbit(radius, height)));
 
   const group = new THREE.Group();
-  scene.add(group);
+  const presentationGroup = new THREE.Group();
+  scene.add(group, presentationGroup);
 
   const sceneMeshes: SceneMesh[] = layoutAnchors(nodes).map((anchor) => {
     const color = GOVERNOR_META[anchor.node.resolution.office].color;
@@ -180,10 +327,39 @@ export function createOrreryScene({ canvas, labelRoot, nodes, onSelect }: Create
   const raycaster = new THREE.Raycaster();
   const pointer = new THREE.Vector2();
   let selectedId: number | undefined;
+  let selectedPresentation: SelectedPresentation | undefined;
   let pointerDown: { x: number; y: number } | undefined;
   let frame = 0;
 
-  const select = (node: OrreryNode): void => {
+  const renderPresentation = (frameCamera = true): void => {
+    clearGroup(presentationGroup);
+    if (!selectedPresentation) {
+      return;
+    }
+
+    const { sceneMesh, parameters } = selectedPresentation;
+    presentationGroup.position.copy(sceneMesh.mesh.position);
+    presentationGroup.rotation.set(0, parameters.composition.surface.rotation, parameters.composition.surface.twist * 0.18);
+    addPresentation(presentationGroup, parameters, sceneRenderBudget(quality));
+
+    if (frameCamera) {
+      const direction = new THREE.Vector3(
+        Math.cos(parameters.composition.camera.azimuth),
+        parameters.composition.camera.elevation,
+        Math.sin(parameters.composition.camera.azimuth),
+      ).normalize();
+      controls.target.copy(sceneMesh.mesh.position);
+      camera.position.copy(sceneMesh.mesh.position).addScaledVector(direction, parameters.composition.camera.distance);
+      controls.update();
+    }
+  };
+
+  const select = (node: OrreryNode, parameters: SceneParameters): void => {
+    const nextSceneMesh = sceneMeshes.find((item) => item.anchor.node.state.stateId === node.state.stateId);
+    if (!nextSceneMesh || parameters.stateId !== node.state.stateId) {
+      return;
+    }
+
     selectedId = node.state.stateId;
     for (const sceneMesh of sceneMeshes) {
       const isSelected = sceneMesh.anchor.node.state.stateId === selectedId;
@@ -191,6 +367,34 @@ export function createOrreryScene({ canvas, labelRoot, nodes, onSelect }: Create
       sceneMesh.mesh.material.emissiveIntensity = isSelected ? 1.05 : 0.28;
       sceneMesh.label.classList.toggle("is-selected", isSelected);
     }
+    selectedPresentation = { sceneMesh: nextSceneMesh, parameters };
+    renderPresentation();
+  };
+
+  const clearSelection = (): void => {
+    selectedId = undefined;
+    selectedPresentation = undefined;
+    for (const sceneMesh of sceneMeshes) {
+      sceneMesh.mesh.scale.setScalar(1);
+      sceneMesh.mesh.material.emissiveIntensity = 0.28;
+      sceneMesh.label.classList.remove("is-selected");
+    }
+    clearGroup(presentationGroup);
+    presentationGroup.position.set(0, 0, 0);
+    presentationGroup.rotation.set(0, 0, 0);
+    camera.position.copy(initialCameraPosition);
+    controls.target.copy(initialControlsTarget);
+    controls.update();
+  };
+
+  const setQuality = (nextQuality: SceneQuality): void => {
+    if (quality === nextQuality) {
+      return;
+    }
+    quality = nextQuality;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, sceneRenderBudget(quality).pixelRatioCap));
+    canvas.dataset.sceneQuality = quality;
+    renderPresentation(false);
   };
 
   const updateLabels = (): void => {
@@ -273,6 +477,8 @@ export function createOrreryScene({ canvas, labelRoot, nodes, onSelect }: Create
 
   return {
     select,
+    clearSelection,
+    setQuality,
     dispose(): void {
       window.cancelAnimationFrame(frame);
       resizeObserver.disconnect();

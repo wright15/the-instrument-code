@@ -25,6 +25,8 @@ stale_session="orrery-stale-session-$$"
 incompatible_session="orrery-incompatible-response-$$"
 game_session="orrery-game-$$"
 audio_session="orrery-audio-$$"
+scene_session="orrery-scene-$$"
+mobile_scene_session="orrery-mobile-scene-$$"
 vite_pid=""
 
 cleanup() {
@@ -36,6 +38,8 @@ cleanup() {
   "${cli}" -s="${incompatible_session}" close >/dev/null 2>&1 || true
   "${cli}" -s="${game_session}" close >/dev/null 2>&1 || true
   "${cli}" -s="${audio_session}" close >/dev/null 2>&1 || true
+  "${cli}" -s="${scene_session}" close >/dev/null 2>&1 || true
+  "${cli}" -s="${mobile_scene_session}" close >/dev/null 2>&1 || true
 
   if [[ -n "${vite_pid}" ]]; then
     kill "${vite_pid}" >/dev/null 2>&1 || true
@@ -82,6 +86,36 @@ assert_page() {
     printf '%s\n' "Actual result: ${result}"
     exit 1
   fi
+}
+
+profile_frames() {
+  local session="$1"
+  local label="$2"
+  local result
+  result="$(run_cli "${session}" --raw eval "async () => {
+    const samples = await new Promise((resolve) => {
+      const values = [];
+      let previous = performance.now();
+      const frame = (now) => {
+        values.push(now - previous);
+        previous = now;
+        if (values.length === 120) {
+          resolve(values);
+          return;
+        }
+        requestAnimationFrame(frame);
+      };
+      requestAnimationFrame(frame);
+    });
+    const sorted = [...samples].sort((left, right) => left - right);
+    const percentile = (fraction) => sorted[Math.min(sorted.length - 1, Math.floor((sorted.length - 1) * fraction))];
+    return { medianMs: percentile(0.5), p95Ms: percentile(0.95), sampleCount: samples.length };
+  }")"
+  if ! node -e "const value = JSON.parse(process.argv[1]); if (value.sampleCount !== 120 || !Number.isFinite(value.medianMs) || !Number.isFinite(value.p95Ms)) process.exit(1);" "${result}"; then
+    printf '%s\n' "Invalid scene frame profile for ${label}: ${result}"
+    exit 1
+  fi
+  printf '%s\n' "Scene frame profile / ${label}: ${result}"
 }
 
 run_cli "${api_session}" open
@@ -163,7 +197,7 @@ run_cli "${webgl_session}" run-code "async page => {
     anchorCount: document.querySelectorAll('#anchor-list .anchor-button').length,
   }));
   if (
-    initial.apiText !== 'Live projection / harmonic-orrery.nodes.v1' ||
+    initial.apiText !== 'Live projection / harmonic-orrery.nodes.v2' ||
     initial.canvasHidden !== true ||
     initial.messageState !== 'notice' ||
     initial.messageText !== 'WebGL is unavailable. Use the keyboard-accessible anchor index to inspect the live projection.' ||
@@ -175,7 +209,7 @@ run_cli "${webgl_session}" run-code "async page => {
 }"
 assert_page "${webgl_session}" "() => {
   return (
-    document.querySelector('#api-status')?.textContent?.trim() === 'Live projection / harmonic-orrery.nodes.v1' &&
+    document.querySelector('#api-status')?.textContent?.trim() === 'Live projection / harmonic-orrery.nodes.v2' &&
     document.querySelector('#orrery-canvas')?.hidden === true &&
     document.querySelector('#scene-message')?.textContent === 'WebGL is unavailable. Use the keyboard-accessible anchor index to inspect the live projection.' &&
     document.querySelectorAll('#anchor-list .anchor-button').length === 21 &&
@@ -295,18 +329,18 @@ assert_page "${webgl_session}" "() => {
   );
 }" "adjacent keyboard Court controls and local persistence"
 run_cli "${webgl_session}" run-code "async page => {
-  const target = page.locator(\"button[data-state-id='3']\");
+  const target = page.locator(\"button[data-state-id='1717']\");
   await target.focus();
   await page.keyboard.press('Enter');
   await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Mars A0');
 }"
 assert_page "${webgl_session}" "() => {
   return (
-    document.activeElement?.getAttribute('data-state-id') === '3' &&
-    document.querySelector(\"button[data-state-id='3']\")?.getAttribute('aria-pressed') === 'true' &&
+    document.activeElement?.getAttribute('data-state-id') === '1717' &&
+    document.querySelector(\"button[data-state-id='1717']\")?.getAttribute('aria-pressed') === 'true' &&
     document.querySelector('#inspector-heading')?.textContent === 'Mars A0' &&
-    document.querySelector('#selected-identity')?.textContent === 'scale:3 / A0 / 7-35' &&
-    document.querySelector('#session-selected')?.textContent?.trim() === 'Mars A0 / scale:3' &&
+    document.querySelector('#selected-identity')?.textContent === 'scale:1717 / A0 / 7-35' &&
+    document.querySelector('#session-selected')?.textContent?.trim() === 'Mars A0 / scale:1717' &&
     document.querySelector('#session-visited')?.textContent?.trim() === '1 / 21 visited'
   );
 }" "WebGL fallback selection"
@@ -314,7 +348,7 @@ run_cli "${webgl_session}" reload
 run_cli "${webgl_session}" run-code "async page => {
   await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Mars A0');
   const restored = await page.evaluate(() => ({
-    selected: document.querySelector(\"button[data-state-id='3']\")?.getAttribute('aria-pressed'),
+    selected: document.querySelector(\"button[data-state-id='1717']\")?.getAttribute('aria-pressed'),
     visited: document.querySelector('#session-visited')?.textContent?.trim(),
   }));
   if (restored.selected !== 'true' || restored.visited !== '1 / 21 visited') {
@@ -323,7 +357,7 @@ run_cli "${webgl_session}" run-code "async page => {
 }"
 assert_page "${webgl_session}" "() => {
   return (
-    document.querySelector(\"button[data-state-id='3']\")?.getAttribute('aria-pressed') === 'true' &&
+    document.querySelector(\"button[data-state-id='1717']\")?.getAttribute('aria-pressed') === 'true' &&
     document.querySelector('#session-visited')?.textContent?.trim() === '1 / 21 visited'
   );
 }" "WebGL fallback reload persistence"
@@ -332,14 +366,14 @@ run_cli "${shared_session}" open
 run_cli "${shared_session}" route "**/api/nodes" \
   --body "${fixture_body}" \
   --content-type application/json
-run_cli "${shared_session}" goto "${base_url}/?anchor=3&court=C4"
+run_cli "${shared_session}" goto "${base_url}/?anchor=1717&court=C4"
 run_cli "${shared_session}" run-code "async page => {
   await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Mars A0');
   const result = await page.evaluate(() => {
     const stored = JSON.parse(window.localStorage.getItem('seven-governors.harmonic-orrery.session') ?? 'null');
     return {
       search: window.location.search,
-      pressed: document.querySelector(\"button[data-state-id='3']\")?.getAttribute('aria-pressed'),
+      pressed: document.querySelector(\"button[data-state-id='1717']\")?.getAttribute('aria-pressed'),
       selected: document.querySelector('#session-selected')?.textContent?.trim(),
       visited: document.querySelector('#session-visited')?.textContent?.trim(),
       court: document.querySelector('#session-court')?.textContent?.trim(),
@@ -351,12 +385,12 @@ run_cli "${shared_session}" run-code "async page => {
     };
   });
   if (
-    result.search !== '?anchor=3' ||
+    result.search !== '?anchor=1717' ||
     result.pressed !== 'true' ||
-    result.selected !== 'Mars A0 / scale:3' ||
+    result.selected !== 'Mars A0 / scale:1717' ||
     result.visited !== '1 / 21 visited' ||
     result.court !== 'C0 / Major Pentatonic / local-only' ||
-    result.health !== 'Live projection / harmonic-orrery.nodes.v1' ||
+    result.health !== 'Live projection / harmonic-orrery.nodes.v2' ||
     JSON.stringify(result.labels) !== JSON.stringify([
       'State Governor',
       'Tier band',
@@ -366,8 +400,8 @@ run_cli "${shared_session}" run-code "async page => {
       'Profile release',
     ]) ||
     result.storedCourt !== 'C0' ||
-    result.storedSelected !== 3 ||
-    JSON.stringify(result.storedVisited) !== JSON.stringify([3])
+    result.storedSelected !== 1717 ||
+    JSON.stringify(result.storedVisited) !== JSON.stringify([1717])
   ) {
     throw new Error('Shared URL did not hydrate the expected local session: ' + JSON.stringify(result));
   }
@@ -377,12 +411,12 @@ assert_page "${shared_session}" "() => {
   const stored = JSON.parse(window.localStorage.getItem('seven-governors.harmonic-orrery.session') ?? 'null');
   const labels = Array.from(document.querySelectorAll('.measurements dt')).map(item => item.textContent?.trim());
   return (
-    window.location.search === '?anchor=3' &&
-    document.querySelector(\"button[data-state-id='3']\")?.getAttribute('aria-pressed') === 'true' &&
-    document.querySelector('#session-selected')?.textContent?.trim() === 'Mars A0 / scale:3' &&
+    window.location.search === '?anchor=1717' &&
+    document.querySelector(\"button[data-state-id='1717']\")?.getAttribute('aria-pressed') === 'true' &&
+    document.querySelector('#session-selected')?.textContent?.trim() === 'Mars A0 / scale:1717' &&
     document.querySelector('#session-visited')?.textContent?.trim() === '1 / 21 visited' &&
     document.querySelector('#session-court')?.textContent?.trim() === 'C0 / Major Pentatonic / local-only' &&
-    document.querySelector('#session-api-health')?.textContent?.trim() === 'Live projection / harmonic-orrery.nodes.v1' &&
+    document.querySelector('#session-api-health')?.textContent?.trim() === 'Live projection / harmonic-orrery.nodes.v2' &&
     JSON.stringify(labels) === JSON.stringify([
       'State Governor',
       'Tier band',
@@ -392,12 +426,12 @@ assert_page "${shared_session}" "() => {
       'Profile release',
     ]) &&
     stored?.courtPresentationPosition === 'C0' &&
-    stored?.selectedAnchorId === 3 &&
-    JSON.stringify(stored?.visitedAnchorIds) === JSON.stringify([3])
+    stored?.selectedAnchorId === 1717 &&
+    JSON.stringify(stored?.visitedAnchorIds) === JSON.stringify([1717])
   );
 }" "shared URL hydration and inspector labels"
 run_cli "${shared_session}" run-code "async page => {
-  const target = page.locator(\"button[data-state-id='2']\");
+  const target = page.locator(\"button[data-state-id='2741']\");
   await target.focus();
   await page.keyboard.press('Enter');
   await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Moon A0');
@@ -410,7 +444,7 @@ run_cli "${shared_session}" run-code "async page => {
     const stored = JSON.parse(window.localStorage.getItem('seven-governors.harmonic-orrery.session') ?? 'null');
     return {
       search: window.location.search,
-      pressed: document.querySelector(\"button[data-state-id='2']\")?.getAttribute('aria-pressed'),
+      pressed: document.querySelector(\"button[data-state-id='2741']\")?.getAttribute('aria-pressed'),
        visited: document.querySelector('#session-visited')?.textContent?.trim(),
        court: document.querySelector('#session-court')?.textContent?.trim(),
        storedSelected: stored?.selectedAnchorId,
@@ -419,38 +453,38 @@ run_cli "${shared_session}" run-code "async page => {
     };
   });
   if (
-    restored.search !== '?anchor=2' ||
+    restored.search !== '?anchor=2741' ||
     restored.pressed !== 'true' ||
     restored.visited !== '2 / 21 visited' ||
     restored.court !== 'C0 / Major Pentatonic / local-only' ||
-    restored.storedSelected !== 2 ||
-    JSON.stringify(restored.storedVisited) !== JSON.stringify([2, 3]) ||
+    restored.storedSelected !== 2741 ||
+    JSON.stringify(restored.storedVisited) !== JSON.stringify([1717, 2741]) ||
     restored.storedCourt !== 'C0'
   ) {
     throw new Error('Reload did not restore local exploration progress: ' + JSON.stringify(restored));
   }
 
-  await page.locator(\"button[data-state-id='1']\").focus();
+  await page.locator(\"button[data-state-id='2773']\").focus();
   const firstAnchor = await page.evaluate(() => document.activeElement?.getAttribute('data-state-id'));
   for (let index = 1; index < 21; index += 1) {
     await page.keyboard.press('Tab');
   }
   const lastAnchor = await page.evaluate(() => document.activeElement?.getAttribute('data-state-id'));
-  if (firstAnchor !== '1' || lastAnchor !== '207') {
+  if (firstAnchor !== '2773' || lastAnchor !== '1373') {
     throw new Error('Anchor index focus order is not complete: ' + JSON.stringify({ firstAnchor, lastAnchor }));
   }
 }"
 assert_page "${shared_session}" "() => {
   const stored = JSON.parse(window.localStorage.getItem('seven-governors.harmonic-orrery.session') ?? 'null');
   return (
-    window.location.search === '?anchor=2' &&
-    document.querySelector(\"button[data-state-id='2']\")?.getAttribute('aria-pressed') === 'true' &&
+    window.location.search === '?anchor=2741' &&
+    document.querySelector(\"button[data-state-id='2741']\")?.getAttribute('aria-pressed') === 'true' &&
     document.querySelector('#session-visited')?.textContent?.trim() === '2 / 21 visited' &&
     document.querySelector('#session-court')?.textContent?.trim() === 'C0 / Major Pentatonic / local-only' &&
-    stored?.selectedAnchorId === 2 &&
-    JSON.stringify(stored?.visitedAnchorIds) === JSON.stringify([2, 3]) &&
+    stored?.selectedAnchorId === 2741 &&
+    JSON.stringify(stored?.visitedAnchorIds) === JSON.stringify([1717, 2741]) &&
     stored?.courtPresentationPosition === 'C0' &&
-    document.activeElement?.getAttribute('data-state-id') === '207'
+    document.activeElement?.getAttribute('data-state-id') === '1373'
   );
 }" "local session reload and anchor focus order"
 
@@ -462,13 +496,13 @@ run_cli "${invalid_link_session}" run-code "async page => {
       JSON.stringify({
         schemaVersion: 'harmonic-orrery.session.v1',
         source: {
-          nodesSchemaVersion: 'harmonic-orrery.nodes.v1',
+          nodesSchemaVersion: 'harmonic-orrery.nodes.v2',
           profileRegistryReleaseId: 'canonical-feature-profile-registry:0.1.0',
           harmonicDescriptorReleaseId: 'harmonic-compression-candidate:CH_A012_q_v1:1.0.0',
           harmonicDescriptorFingerprint: 'a'.repeat(64),
         },
-        selectedAnchorId: 3,
-        visitedAnchorIds: [3],
+        selectedAnchorId: 1717,
+        visitedAnchorIds: [1717],
         courtPresentationPosition: null,
       }),
     );
@@ -510,7 +544,7 @@ assert_page "${invalid_link_session}" "() => {
     document.querySelector('#session-message')?.textContent?.includes('Link selection cleared') &&
     document.querySelector('#session-message')?.textContent?.includes('could not be saved') &&
     document.querySelectorAll('.anchor-button[aria-pressed=true]').length === 0 &&
-    document.activeElement?.getAttribute('data-state-id') === '1'
+    document.activeElement?.getAttribute('data-state-id') === '2773'
   );
 }" "invalid shared link recovery with blocked local storage"
 
@@ -522,13 +556,13 @@ run_cli "${stale_session}" run-code "async page => {
       JSON.stringify({
         schemaVersion: 'harmonic-orrery.session.v1',
         source: {
-          nodesSchemaVersion: 'harmonic-orrery.nodes.v1',
+          nodesSchemaVersion: 'harmonic-orrery.nodes.v2',
           profileRegistryReleaseId: 'canonical-feature-profile-registry:0.1.0',
           harmonicDescriptorReleaseId: 'harmonic-compression-candidate:CH_A012_q_v1:1.0.0',
           harmonicDescriptorFingerprint: 'a'.repeat(64),
         },
-        selectedAnchorId: 3,
-        visitedAnchorIds: [3],
+        selectedAnchorId: 1717,
+        visitedAnchorIds: [1717],
         courtPresentationPosition: null,
       }),
     );
@@ -572,7 +606,7 @@ run_cli "${incompatible_session}" run-code "async page => {
   });
 }"
 run_cli "${incompatible_session}" route "**/api/nodes" \
-  --body '{"schemaVersion":"harmonic-orrery.nodes.v2"}' \
+  --body '{"schemaVersion":"harmonic-orrery.nodes.v3"}' \
   --content-type application/json
 run_cli "${incompatible_session}" goto "${base_url}/"
 run_cli "${incompatible_session}" run-code "async page => {
@@ -727,6 +761,72 @@ assert_page "${game_session}" "() => {
   );
 }" "local game persistence"
 
+run_cli "${scene_session}" open
+run_cli "${scene_session}" route "**/api/nodes" \
+  --body "${fixture_body}" \
+  --content-type application/json
+run_cli "${scene_session}" goto "${base_url}/?anchor=1717"
+run_cli "${scene_session}" run-code "async page => {
+  await page.waitForFunction(() =>
+    document.querySelector('#api-status')?.dataset.state === 'ready' &&
+    document.querySelector('#scene-presentation-status')?.textContent?.includes('Mars A0 / Court C0 / reference prompt only:')
+  );
+  const initial = await page.evaluate(() => ({
+    canvasHidden: document.querySelector('#orrery-canvas')?.hidden,
+    canvasQuality: document.querySelector('#orrery-canvas')?.dataset.sceneQuality,
+    disclosure: document.querySelector('#scene-presentation-status')?.textContent?.trim(),
+    disclaimer: document.querySelector('.scene-disclaimer')?.textContent?.trim(),
+    quality: document.querySelector('#scene-quality')?.value,
+  }));
+  if (
+    initial.canvasHidden ||
+    initial.canvasQuality !== 'full' ||
+    initial.quality !== 'auto' ||
+    !initial.disclosure?.includes('reference prompt only:') ||
+    !initial.disclaimer?.includes('canonical landform') ||
+    !initial.disclaimer?.includes('scientific simulation')
+  ) {
+    throw new Error('Authored scene presentation did not initialize: ' + JSON.stringify(initial));
+  }
+  await page.locator('[data-court-position=\"C1\"]').click();
+  await page.waitForFunction(() => document.querySelector('#scene-presentation-status')?.textContent?.includes('Mars A0 / Court C1 / reference prompt only:'));
+  await page.locator('#scene-quality').selectOption('reduced');
+  await page.waitForFunction(() => document.querySelector('#orrery-canvas')?.dataset.sceneQuality === 'reduced');
+}"
+assert_page "${scene_session}" "() => {
+  return (
+    document.querySelector('#scene-presentation-status')?.textContent?.includes('Court C1') &&
+    document.querySelector('#orrery-canvas')?.dataset.sceneQuality === 'reduced' &&
+    document.querySelector('#scene-quality-status')?.textContent?.includes('Reduced quality')
+  );
+}" "authored scene composition, Court updates, and reduced quality"
+profile_frames "${scene_session}" "desktop / 21 anchors / reduced quality"
+
+PLAYWRIGHT_MCP_DEVICE="iPhone 15" run_cli "${mobile_scene_session}" open
+run_cli "${mobile_scene_session}" route "**/api/nodes" \
+  --body "${fixture_body}" \
+  --content-type application/json
+run_cli "${mobile_scene_session}" goto "${base_url}/?anchor=2773"
+run_cli "${mobile_scene_session}" run-code "async page => {
+  await page.waitForFunction(() =>
+    document.querySelector('#api-status')?.dataset.state === 'ready' &&
+    document.querySelector('#orrery-canvas')?.hidden === false &&
+    document.querySelector('#orrery-canvas')?.dataset.sceneQuality === 'reduced'
+  );
+  const qualityBounds = await page.locator('#scene-quality').boundingBox();
+  if (!qualityBounds || qualityBounds.height < 44) {
+    throw new Error('Scene quality control is not touch-accessible.');
+  }
+}"
+assert_page "${mobile_scene_session}" "() => {
+  return (
+    document.querySelector('#scene-quality')?.value === 'auto' &&
+    document.querySelector('#orrery-canvas')?.dataset.sceneQuality === 'reduced' &&
+    document.querySelector('#scene-presentation-status')?.textContent?.includes('Sun A0 / Court C0')
+  );
+}" "mobile auto-reduced scene quality"
+profile_frames "${mobile_scene_session}" "iPhone 15 / 21 anchors / auto-reduced quality"
+
 PLAYWRIGHT_MCP_DEVICE="iPhone 15" run_cli "${audio_session}" open
 run_cli "${audio_session}" run-code "async page => {
   await page.addInitScript(() => {
@@ -829,7 +929,7 @@ run_cli "${audio_session}" run-code "async page => {
 run_cli "${audio_session}" route "**/api/nodes" \
   --body "${fixture_body}" \
   --content-type application/json
-run_cli "${audio_session}" goto "${base_url}/?anchor=1"
+run_cli "${audio_session}" goto "${base_url}/?anchor=2773"
 run_cli "${audio_session}" run-code "async page => {
   await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Sun A0');
   const initial = await page.evaluate(() => ({
@@ -878,7 +978,7 @@ assert_page "${audio_session}" "() => {
     window.__orreryAudioEvents.assetFetches.length === 0 &&
     window.__orreryAudioEvents.frequencies.length === 0 &&
     document.querySelector('#audio-enable')?.disabled === false &&
-    window.location.search === '?anchor=1' &&
+    window.location.search === '?anchor=2773' &&
     document.querySelector('#session-court')?.textContent?.trim() === 'C1 / Scottish Pentatonic / local-only'
   );
 }" "no audio before explicit enable or local Court selection"
@@ -903,13 +1003,13 @@ run_cli "${audio_session}" run-code "async page => {
 }"
 run_cli "${audio_session}" run-code "async page => {
   const expectedByStateId = {
-    1: [0, 2, 7, 9],
-    2: [0, 2, 5, 7, 9],
-    3: [0, 2, 5, 7, 9],
-    4: [0, 2, 5, 7, 9],
-    5: [0, 2, 5, 7],
-    6: [0, 5, 7],
-    7: [0, 5],
+    2773: [0, 2, 7, 9],
+    2741: [0, 2, 5, 7, 9],
+    1717: [0, 2, 5, 7, 9],
+    1709: [0, 2, 5, 7, 9],
+    1453: [0, 2, 5, 7],
+    1451: [0, 5, 7],
+    1387: [0, 5],
   };
   for (const [stateId, expected] of Object.entries(expectedByStateId)) {
     await page.evaluate(() => {
@@ -928,7 +1028,7 @@ run_cli "${audio_session}" run-code "async page => {
       throw new Error('Unexpected A0 palette for state ' + stateId + ': ' + JSON.stringify(actual));
     }
   }
-  await page.locator('button[data-state-id=\"101\"]').tap();
+  await page.locator('button[data-state-id=\"1371\"]').tap();
   await page.waitForFunction(() => document.querySelector('#selected-audio-note')?.textContent?.includes('remains an A1 state'));
 }"
 assert_page "${audio_session}" "() => {
@@ -994,7 +1094,7 @@ run_cli "${audio_session}" run-code "async page => {
   await page.locator('#audio-visual-only').tap();
   await page.waitForFunction(() => document.querySelector('#audio-status')?.textContent?.includes('Visual-only mode is active'));
   const frequencyCount = await page.evaluate(() => window.__orreryAudioEvents.frequencies.length);
-  await page.locator('button[data-state-id=\"102\"]').tap();
+  await page.locator('button[data-state-id=\"1749\"]').tap();
   const afterSelection = await page.evaluate(() => window.__orreryAudioEvents.frequencies.length);
   if (afterSelection !== frequencyCount) {
     throw new Error('Visual-only mode created a new oscillator event.');

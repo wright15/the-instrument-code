@@ -1,9 +1,11 @@
 import {
+  CHIRALITIES,
   GOVERNORS,
   OFFICE_INDEX,
   TIERS,
   TIER_INDEX,
   type AnchorTier,
+  type Chirality,
   type ExactRatio,
   type Governor,
   type NodesResponse,
@@ -67,6 +69,57 @@ function anchorId(value: unknown, context: string): number {
   return parsed;
 }
 
+function pitchClasses(value: unknown, context: string): number[] {
+  if (!Array.isArray(value) || value.length !== 7) {
+    throw new Error(`${context} must contain exactly seven pitch classes`);
+  }
+
+  const parsed = value.map((item, index) => integer(item, `${context}[${index}]`));
+  if (
+    parsed.some((pitchClass) => pitchClass < 0 || pitchClass > 11) ||
+    new Set(parsed).size !== parsed.length ||
+    parsed.some((pitchClass, index) => index > 0 && pitchClass <= parsed[index - 1])
+  ) {
+    throw new Error(`${context} must be seven unique ascending pitch classes from 0 through 11`);
+  }
+
+  return parsed;
+}
+
+function intervalVector(value: unknown, context: string): number[] {
+  if (!Array.isArray(value) || value.length !== 6) {
+    throw new Error(`${context} must contain exactly six interval counts`);
+  }
+
+  const parsed = value.map((item, index) => integer(item, `${context}[${index}]`));
+  if (parsed.some((interval) => interval < 0)) {
+    throw new Error(`${context} must contain non-negative interval counts`);
+  }
+
+  return parsed;
+}
+
+function intervalVectorForPitchClasses(pitchClasses: readonly number[]): number[] {
+  const counts = Array.from({ length: 6 }, () => 0);
+  for (let start = 0; start < pitchClasses.length; start += 1) {
+    for (let end = start + 1; end < pitchClasses.length; end += 1) {
+      const distance = pitchClasses[end] - pitchClasses[start];
+      const intervalClass = Math.min(distance, 12 - distance);
+      counts[intervalClass - 1] += 1;
+    }
+  }
+
+  return counts;
+}
+
+function chirality(value: unknown, context: string): Chirality {
+  if (typeof value !== "string" || !CHIRALITIES.includes(value as Chirality)) {
+    throw new Error(`${context} must be achiral or chiral`);
+  }
+
+  return value as Chirality;
+}
+
 function number(value: unknown, context: string): number {
   if (typeof value !== "number" || !Number.isFinite(value)) {
     throw new Error(`${context} must be a finite number`);
@@ -122,7 +175,7 @@ function node(value: unknown, index: number): OrreryNode {
   const state = record(source.state, `nodes[${index}].state`);
   exactKeys(
     state,
-    ["stateId", "nodeId", "name", "forteFamily", "tier", "role"],
+    ["stateId", "pitchMask", "pitchClasses", "intervalVector", "chirality", "nodeId", "name", "forteFamily", "tier", "role"],
     `nodes[${index}].state`,
   );
   const resolution = record(source.resolution, `nodes[${index}].resolution`);
@@ -155,6 +208,10 @@ function node(value: unknown, index: number): OrreryNode {
   );
 
   const stateId = anchorId(state.stateId, `nodes[${index}].state.stateId`);
+  const pitchMask = anchorId(state.pitchMask, `nodes[${index}].state.pitchMask`);
+  const statePitchClasses = pitchClasses(state.pitchClasses, `nodes[${index}].state.pitchClasses`);
+  const stateIntervalVector = intervalVector(state.intervalVector, `nodes[${index}].state.intervalVector`);
+  const stateChirality = chirality(state.chirality, `nodes[${index}].state.chirality`);
   const nodeId = string(state.nodeId, `nodes[${index}].state.nodeId`);
   const profileId = string(canonicalProfile.profileId, `nodes[${index}].canonicalProfile.profileId`);
   const forteFamily = string(state.forteFamily, `nodes[${index}].state.forteFamily`);
@@ -169,6 +226,16 @@ function node(value: unknown, index: number): OrreryNode {
 
   if (!nodeId.startsWith("scale:")) {
     throw new Error(`nodes[${index}].state.nodeId must start with scale:`);
+  }
+  if (pitchMask !== stateId) {
+    throw new Error(`nodes[${index}].state.pitchMask must match stateId`);
+  }
+  if (statePitchClasses.reduce((mask, pitchClass) => mask | (1 << pitchClass), 0) !== pitchMask) {
+    throw new Error(`nodes[${index}].state.pitchClasses must match pitchMask`);
+  }
+  const expectedIntervalVector = intervalVectorForPitchClasses(statePitchClasses);
+  if (stateIntervalVector.some((interval, intervalClass) => interval !== expectedIntervalVector[intervalClass])) {
+    throw new Error(`nodes[${index}].state.intervalVector must match pitchClasses`);
   }
   if (!profileId.startsWith("profile:")) {
     throw new Error(`nodes[${index}].canonicalProfile.profileId must start with profile:`);
@@ -192,6 +259,10 @@ function node(value: unknown, index: number): OrreryNode {
   return {
     state: {
       stateId,
+      pitchMask,
+      pitchClasses: statePitchClasses,
+      intervalVector: stateIntervalVector,
+      chirality: stateChirality,
       nodeId,
       name: string(state.name, `nodes[${index}].state.name`),
       forteFamily: forteFamily as "7-35" | "7-34" | "7-33",
@@ -239,7 +310,7 @@ function parseNodesResponseValue(value: unknown): NodesResponse {
   exactKeys(source, ["schemaVersion", "profileRegistryReleaseId", "harmonicDescriptor", "nodeCount", "nodes"], "response");
   const rawNodes = source.nodes;
 
-  if (source.schemaVersion !== "harmonic-orrery.nodes.v1") {
+  if (source.schemaVersion !== "harmonic-orrery.nodes.v2") {
     throw new Error("Unsupported nodes schema version");
   }
   if (source.nodeCount !== 21 || !Array.isArray(rawNodes) || rawNodes.length !== 21) {
@@ -275,7 +346,7 @@ function parseNodesResponseValue(value: unknown): NodesResponse {
   }
 
   return {
-    schemaVersion: "harmonic-orrery.nodes.v1",
+    schemaVersion: "harmonic-orrery.nodes.v2",
     profileRegistryReleaseId: string(source.profileRegistryReleaseId, "profileRegistryReleaseId"),
     harmonicDescriptor: {
       candidateId: "CH_A012_q_v1",

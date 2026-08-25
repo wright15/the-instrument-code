@@ -14,6 +14,7 @@ import {
   isAdjacentCourtPosition,
   type CourtPosition,
 } from "./court";
+import { composeSceneParameters, type SceneQuality } from "./scene-composer";
 import { createOrreryScene, type OrreryScene } from "./scene";
 import {
   applySessionLegalMove,
@@ -53,10 +54,14 @@ function requiredElement<Element extends HTMLElement>(selector: string): Element
 }
 
 const canvas = requiredElement<HTMLCanvasElement>("#orrery-canvas");
+const sceneFrame = requiredElement<HTMLElement>("#scene-frame");
 const labelRoot = requiredElement<HTMLElement>("#anchor-labels");
 const apiStatus = requiredElement<HTMLElement>("#api-status");
 const sceneMessage = requiredElement<HTMLElement>("#scene-message");
 const sceneCount = requiredElement<HTMLElement>("#scene-count");
+const sceneQualityMode = requiredElement<HTMLSelectElement>("#scene-quality");
+const sceneQualityStatus = requiredElement<HTMLElement>("#scene-quality-status");
+const scenePresentationStatus = requiredElement<HTMLElement>("#scene-presentation-status");
 const indexCount = requiredElement<HTMLElement>("#index-count");
 const anchorList = requiredElement<HTMLElement>("#anchor-list");
 const inspectorHeading = requiredElement<HTMLElement>("#inspector-heading");
@@ -233,6 +238,43 @@ function renderLandforms(landforms: string[]): void {
       return item;
     }),
   );
+}
+
+function autoSceneQuality(): SceneQuality {
+  return window.matchMedia("(max-width: 680px), (pointer: coarse)").matches ? "reduced" : "full";
+}
+
+function selectedSceneQuality(): SceneQuality {
+  return sceneQualityMode.value === "reduced" ? "reduced" : autoSceneQuality();
+}
+
+function renderSceneQuality(): SceneQuality {
+  const quality = selectedSceneQuality();
+  scene?.setQuality(quality);
+  sceneFrame.dataset.quality = quality;
+  sceneQualityStatus.textContent =
+    sceneQualityMode.value === "auto"
+      ? `Auto quality / ${quality === "full" ? "full detail" : "reduced detail"}`
+      : "Reduced quality / lower render cost";
+  return quality;
+}
+
+function clearScenePresentation(): void {
+  scene?.clearSelection();
+  scenePresentationStatus.dataset.state = "idle";
+  scenePresentationStatus.textContent = "Choose an anchor to compose a local authored presentation interpretation.";
+}
+
+function renderScenePresentation(node: OrreryNode): void {
+  if (!session) {
+    return;
+  }
+
+  const court = courtPositionById(session.courtPresentationPosition);
+  const parameters = composeSceneParameters(node, court);
+  scene?.select(node, parameters);
+  scenePresentationStatus.dataset.state = "ready";
+  scenePresentationStatus.textContent = `${node.state.name} / Court ${court.positionId} / reference prompt only: ${parameters.source.landformReference}. The local mesh, particles, light, surface pattern, and framing are authored presentation choices.`;
 }
 
 function clearInspector(): void {
@@ -549,7 +591,7 @@ function selectAnchor(node: OrreryNode, selectionSource: "restore" | "user" = "r
   }
 
   session = selectSessionAnchor(session, node.state.stateId);
-  scene?.select(node);
+  renderScenePresentation(node);
 
   for (const [stateId, button] of anchorButtons) {
     const isSelected = stateId === session.selectedAnchorId;
@@ -598,6 +640,7 @@ function selectCourtPosition(courtPosition: CourtPosition): void {
     const selectedNode = nodesById.get(session.selectedAnchorId);
     if (selectedNode) {
       renderAudioPalette(audioEngine.select(selectedNode, session.courtPresentationPosition, true));
+      renderScenePresentation(selectedNode);
     }
   }
 
@@ -794,6 +837,8 @@ async function start(): Promise<void> {
   indexCount.textContent = String(nodes.length).padStart(2, "0");
   setApiHealth(`Live projection / ${response.schemaVersion}`, "ready");
   clearInspector();
+  clearScenePresentation();
+  renderSceneQuality();
   renderSessionHud();
   renderMoveConsole();
   renderCourtSurface();
@@ -804,8 +849,10 @@ async function start(): Promise<void> {
         canvas,
         labelRoot,
         nodes,
+        initialQuality: selectedSceneQuality(),
         onSelect: (node) => selectAnchor(node, "user"),
       });
+      renderSceneQuality();
       sceneMessage.hidden = true;
     } catch {
       showWebGlFallback();
@@ -862,6 +909,7 @@ clearLinkSelectionButton.addEventListener("click", () => {
   audioEngine.clearSelection();
   updateAnchorUrl(null);
   clearInspector();
+  clearScenePresentation();
   renderSessionHud();
   renderMoveConsole();
   for (const button of anchorButtons.values()) {
@@ -910,6 +958,14 @@ audioVisualOnly.addEventListener("change", () => {
 
 initializeCourtControls();
 audioEngine.subscribe(renderAudioState);
+sceneQualityMode.addEventListener("change", () => {
+  renderSceneQuality();
+});
+window.addEventListener("resize", () => {
+  if (sceneQualityMode.value === "auto") {
+    renderSceneQuality();
+  }
+});
 window.addEventListener("pagehide", () => {
   scene?.dispose();
   audioEngine.dispose();

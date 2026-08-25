@@ -21,11 +21,11 @@ import {
 } from "./session";
 
 const source: OrrerySourceIdentity = {
-  nodesSchemaVersion: "harmonic-orrery.nodes.v1",
+  nodesSchemaVersion: "harmonic-orrery.nodes.v2",
   profileRegistryReleaseId: "canonical-feature-profile-registry:0.1.1",
   harmonicDescriptorReleaseId: "harmonic-compression-candidate:CH_A012_q_v1:1.0.0",
   harmonicDescriptorFingerprint: "a".repeat(64),
-  legalMoveCatalogSchemaVersion: "harmonic-orrery.legal-moves.v1",
+  legalMoveCatalogSchemaVersion: "harmonic-orrery.legal-moves.v2",
   legalMoveCatalogFingerprint: "b".repeat(64),
 };
 const anchors = new Set([1387, 2741, 1709, 1451, 2773, 1717, 1453]);
@@ -74,7 +74,7 @@ function selectMove(session = startSessionRoute(selectSessionAnchor(createSessio
 
 function legacySource() {
   return {
-    nodesSchemaVersion: source.nodesSchemaVersion,
+    nodesSchemaVersion: "harmonic-orrery.nodes.v1",
     profileRegistryReleaseId: source.profileRegistryReleaseId,
     harmonicDescriptorReleaseId: source.harmonicDescriptorReleaseId,
     harmonicDescriptorFingerprint: source.harmonicDescriptorFingerprint,
@@ -227,9 +227,69 @@ describe("Harmonic Orrery session", () => {
     });
   });
 
+  it("migrates the published v1 projection/catalog binding without losing local route progress", () => {
+    const storage = new MemoryStorage();
+    storage.setItem(
+      SESSION_STORAGE_KEY,
+      JSON.stringify({
+        ...createSession(source),
+        source: {
+          ...source,
+          nodesSchemaVersion: "harmonic-orrery.nodes.v1",
+          legalMoveCatalogSchemaVersion: "harmonic-orrery.legal-moves.v1",
+          legalMoveCatalogFingerprint: "ae99a609040af5554e8a154968913598416814a6735a4d1ec7658f92e537ac46",
+        },
+        selectedAnchorId: 2773,
+        visitedAnchorIds: [2773],
+        modalRoute: { startAnchorId: 2773, currentAnchorId: 2773, moveIds: [] },
+      }),
+    );
+
+    expect(load(storage)).toMatchObject({
+      session: {
+        source,
+        selectedAnchorId: 2773,
+        modalRoute: { startAnchorId: 2773, currentAnchorId: 2773, moveIds: [] },
+      },
+    });
+    expect(storage.getItem(SESSION_STORAGE_KEY)).toContain('"nodesSchemaVersion":"harmonic-orrery.nodes.v2"');
+  });
+
+  it("migrates only the published v1 legal-move catalog binding for a v2 projection", () => {
+    const storage = new MemoryStorage();
+    storage.setItem(
+      SESSION_STORAGE_KEY,
+      JSON.stringify({
+        ...createSession(source),
+        source: {
+          ...source,
+          legalMoveCatalogSchemaVersion: "harmonic-orrery.legal-moves.v1",
+          legalMoveCatalogFingerprint: "ae99a609040af5554e8a154968913598416814a6735a4d1ec7658f92e537ac46",
+        },
+      }),
+    );
+
+    expect(load(storage)).toMatchObject({ session: { source } });
+    expect(storage.getItem(SESSION_STORAGE_KEY)).toContain('"legalMoveCatalogSchemaVersion":"harmonic-orrery.legal-moves.v2"');
+  });
+
   it("discards malformed, stale, and catalog-incompatible saved documents", () => {
     const storage = new MemoryStorage();
     storage.setItem(SESSION_STORAGE_KEY, "not json");
+    expect(load(storage).notice).toContain("invalid");
+
+    storage.setItem(
+      SESSION_STORAGE_KEY,
+      JSON.stringify({
+        ...createSession(source),
+        source: {
+          ...source,
+          profileRegistryReleaseId: "stale-projection-release",
+          legalMoveCatalogSchemaVersion: "harmonic-orrery.legal-moves.v1",
+          legalMoveCatalogFingerprint: "ae99a609040af5554e8a154968913598416814a6735a4d1ec7658f92e537ac46",
+        },
+      }),
+    );
     expect(load(storage).notice).toContain("invalid");
     expect(storage.getItem(SESSION_STORAGE_KEY)).toBeNull();
 
@@ -244,6 +304,19 @@ describe("Harmonic Orrery session", () => {
       JSON.stringify({ ...createSession({ ...source, legalMoveCatalogFingerprint: "c".repeat(64) }) }),
     );
     expect(load(storage).notice).toContain("different projection release");
+
+    storage.setItem(
+      SESSION_STORAGE_KEY,
+      JSON.stringify({
+        ...createSession(source),
+        source: {
+          ...source,
+          legalMoveCatalogSchemaVersion: "harmonic-orrery.legal-moves.v1",
+          legalMoveCatalogFingerprint: "c".repeat(64),
+        },
+      }),
+    );
+    expect(load(storage).notice).toContain("invalid");
 
     storage.setItem(
       SESSION_STORAGE_KEY,

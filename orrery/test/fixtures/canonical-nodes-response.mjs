@@ -14,6 +14,10 @@ const candidate = JSON.parse(
 const nodes = candidate.records.map((record) => ({
   state: {
     stateId: record.stateId,
+    pitchMask: record.stateId,
+    pitchClasses: record.pitchClasses,
+    intervalVector: record.intervalVector,
+    chirality: "achiral",
     nodeId: `scale:${record.stateId}`,
     name: record.name,
     forteFamily: record.forte,
@@ -43,7 +47,7 @@ const nodes = candidate.records.map((record) => ({
 
 process.stdout.write(
   JSON.stringify({
-    schemaVersion: "harmonic-orrery.nodes.v1",
+    schemaVersion: "harmonic-orrery.nodes.v2",
     profileRegistryReleaseId: "canonical-feature-profile-registry:0.1.1",
     harmonicDescriptor: {
       candidateId: candidate.candidateId,

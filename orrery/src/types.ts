@@ -13,6 +13,9 @@ export type Governor = (typeof GOVERNORS)[number];
 export const TIERS = ["A0", "A1", "A2"] as const;
 export type AnchorTier = (typeof TIERS)[number];
 
+export const CHIRALITIES = ["achiral", "chiral"] as const;
+export type Chirality = (typeof CHIRALITIES)[number];
+
 export const GOVERNOR_META: Record<Governor, { color: string; shortLabel: string }> = {
   Sun: { color: "#ff4444", shortLabel: "SOL" },
   Moon: { color: "#ff8c00", shortLabel: "LUN" },
@@ -37,6 +40,10 @@ export interface ExactRatio {
 export interface OrreryNode {
   state: {
     stateId: number;
+    pitchMask: number;
+    pitchClasses: number[];
+    intervalVector: number[];
+    chirality: Chirality;
     nodeId: string;
     name: string;
     forteFamily: "7-35" | "7-34" | "7-33";
@@ -70,7 +77,7 @@ export interface OrreryNode {
 }
 
 export interface NodesResponse {
-  schemaVersion: "harmonic-orrery.nodes.v1";
+  schemaVersion: "harmonic-orrery.nodes.v2";
   profileRegistryReleaseId: string;
   harmonicDescriptor: {
     candidateId: "CH_A012_q_v1";

@@ -140,9 +140,14 @@ function audioRuntime(
 }
 
 function node(office: Governor, tier: OrreryNode["state"]["tier"] = "A0"): OrreryNode {
+  const canonicalStateId = OFFICE_PALETTES[office].canonicalStateId;
   return {
     state: {
-      stateId: tier === "A0" ? OFFICE_PALETTES[office].canonicalStateId : 100 + OFFICE_PALETTES[office].canonicalStateId,
+      stateId: tier === "A0" ? canonicalStateId : 100 + canonicalStateId,
+      pitchMask: canonicalStateId,
+      pitchClasses: [...OFFICE_PALETTES[office].pitchClasses],
+      intervalVector: [2, 5, 4, 3, 6, 1],
+      chirality: "achiral",
       nodeId: `scale:${office.toLowerCase()}-${tier}`,
       name: `${office} ${tier}`,
       forteFamily: tier === "A0" ? "7-35" : tier === "A1" ? "7-34" : "7-33",

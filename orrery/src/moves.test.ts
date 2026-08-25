@@ -11,9 +11,16 @@ import type { NodesResponse, OrreryNode } from "./types";
 
 function node(anchor: LegalMoveCatalogAnchor): OrreryNode {
   const { stateId, office } = anchor;
+  const pitchClasses = Array.from({ length: 12 }, (_value, pitchClass) => pitchClass).filter(
+    (pitchClass) => (stateId & (1 << pitchClass)) !== 0,
+  );
   return {
     state: {
       stateId,
+      pitchMask: stateId,
+      pitchClasses,
+      intervalVector: [0, 0, 0, 0, 0, 0],
+      chirality: "achiral",
       nodeId: `scale:${stateId}`,
       name: `Anchor ${stateId}`,
       forteFamily: anchor.forteFamily,
@@ -44,7 +51,7 @@ function node(anchor: LegalMoveCatalogAnchor): OrreryNode {
 
 function responseFixture(): NodesResponse {
   return {
-    schemaVersion: "harmonic-orrery.nodes.v1",
+    schemaVersion: "harmonic-orrery.nodes.v2",
     profileRegistryReleaseId: "canonical-feature-profile-registry:0.1.1",
     harmonicDescriptor: {
       candidateId: "CH_A012_q_v1",
@@ -60,7 +67,7 @@ function responseFixture(): NodesResponse {
 
 describe("Harmonic Orrery legal-move catalog", () => {
   it("contains exactly the 21 source-backed canonical modal moves", () => {
-    expect(LEGAL_MOVE_CATALOG.schemaVersion).toBe("harmonic-orrery.legal-moves.v1");
+    expect(LEGAL_MOVE_CATALOG.schemaVersion).toBe("harmonic-orrery.legal-moves.v2");
     expect(LEGAL_MOVE_CATALOG.moves).toHaveLength(21);
     expect(new Set(LEGAL_MOVE_CATALOG.moves.map((move) => move.sourceId))).toHaveLength(21);
     expect(new Set(LEGAL_MOVE_CATALOG.moves.map((move) => move.targetId))).toHaveLength(21);

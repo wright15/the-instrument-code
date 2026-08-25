@@ -7,11 +7,16 @@ import {
   ProjectionUnavailableError,
 } from "./api";
 import { layoutAnchors } from "./layout";
+import { LEGAL_MOVE_CATALOG } from "./moves";
 import { GOVERNORS, TIERS } from "./types";
 
 type FixtureNode = {
   state: {
     stateId: number;
+    pitchMask: number;
+    pitchClasses: number[];
+    intervalVector: number[];
+    chirality: string;
     nodeId: string;
     name: string;
     forteFamily: string;
@@ -39,13 +44,44 @@ type FixtureNode = {
   };
 };
 
-function fixtureNode(tier: string, office: string, stateId: number): FixtureNode {
+function pitchClassesForMask(mask: number): number[] {
+  return Array.from({ length: 12 }, (_value, pitchClass) => pitchClass).filter(
+    (pitchClass) => (mask & (1 << pitchClass)) !== 0,
+  );
+}
+
+function intervalVectorForPitchClasses(pitchClasses: readonly number[]): number[] {
+  const counts = Array.from({ length: 6 }, () => 0);
+  for (let start = 0; start < pitchClasses.length; start += 1) {
+    for (let end = start + 1; end < pitchClasses.length; end += 1) {
+      const distance = pitchClasses[end] - pitchClasses[start];
+      const intervalClass = Math.min(distance, 12 - distance);
+      counts[intervalClass - 1] += 1;
+    }
+  }
+
+  return counts;
+}
+
+function fixtureNode(tier: string, office: string): FixtureNode {
+  const anchor = LEGAL_MOVE_CATALOG.scope.anchors.find(
+    (item) => item.tier === tier && item.office === office,
+  );
+  if (!anchor) {
+    throw new Error(`Missing fixture anchor for ${tier} ${office}`);
+  }
+  const stateId = anchor.stateId;
+
   return {
     state: {
       stateId,
+      pitchMask: stateId,
+      pitchClasses: pitchClassesForMask(stateId),
+      intervalVector: intervalVectorForPitchClasses(pitchClassesForMask(stateId)),
+      chirality: "achiral",
       nodeId: `scale:${stateId}`,
       name: `${office} ${tier}`,
-      forteFamily: "7-35",
+      forteFamily: anchor.forteFamily,
       tier,
       role: "anchor",
     },
@@ -79,7 +115,7 @@ function responseFixture(): {
   nodes: FixtureNode[];
 } {
   return {
-    schemaVersion: "harmonic-orrery.nodes.v1",
+    schemaVersion: "harmonic-orrery.nodes.v2",
     profileRegistryReleaseId: "canonical-feature-profile-registry:0.1.1",
     harmonicDescriptor: {
       candidateId: "CH_A012_q_v1",
@@ -89,8 +125,8 @@ function responseFixture(): {
       candidateFingerprint: "a".repeat(64),
     },
     nodeCount: 21,
-    nodes: TIERS.flatMap((tier, tierIndex) =>
-      GOVERNORS.map((office, officeIndex) => fixtureNode(tier, office, tierIndex * 100 + officeIndex + 1)),
+    nodes: TIERS.flatMap((tier) =>
+      GOVERNORS.map((office) => fixtureNode(tier, office)),
     ).reverse(),
   };
 }
@@ -123,7 +159,7 @@ describe("Harmonic Orrery nodes contract", () => {
 
   it("classifies schema, descriptor release, invalid fields, and invalid anchor IDs as incompatible", () => {
     const schemaChanged = responseFixture();
-    schemaChanged.schemaVersion = "harmonic-orrery.nodes.v2";
+    schemaChanged.schemaVersion = "harmonic-orrery.nodes.v3";
     expect(() => parseNodesResponse(schemaChanged)).toThrow(ProjectionCompatibilityError);
 
     const releaseChanged = responseFixture();
@@ -133,6 +169,18 @@ describe("Harmonic Orrery nodes contract", () => {
     const invalidId = responseFixture();
     invalidId.nodes[0].state.stateId = -1;
     expect(() => parseNodesResponse(invalidId)).toThrow("must be between 0 and 4095");
+
+    const mismatchedMask = responseFixture();
+    mismatchedMask.nodes[0].state.pitchMask = 1;
+    expect(() => parseNodesResponse(mismatchedMask)).toThrow("pitchMask must match stateId");
+
+    const mismatchedPitchClasses = responseFixture();
+    mismatchedPitchClasses.nodes[0].state.pitchClasses = [0, 1, 2, 3, 4, 5, 6];
+    expect(() => parseNodesResponse(mismatchedPitchClasses)).toThrow("pitchClasses must match pitchMask");
+
+    const mismatchedIntervalVector = responseFixture();
+    mismatchedIntervalVector.nodes[0].state.intervalVector = [0, 0, 0, 0, 0, 0];
+    expect(() => parseNodesResponse(mismatchedIntervalVector)).toThrow("intervalVector must match pitchClasses");
 
     const unknownField = responseFixture();
     Object.assign(unknownField.nodes[0].state, { unexpected: true });

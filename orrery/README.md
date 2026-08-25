@@ -37,12 +37,36 @@ npm run orrery:api:test
 `orrery:browser:test` starts an isolated Vite server and mocks `/api/nodes`.
 It covers unavailable and incompatible projection responses, shared URLs, local
 progress recovery, WebGL fallback, keyboard navigation, a source-faithful modal
-route/objective flow, and mocked Web Audio controls with keyboard and
-touch-emulated interactions, without FastAPI credentials or a live Neo4j
-instance.
+route/objective flow, authored scene disclosure, Court/quality scene updates,
+desktop and mobile frame-time samples, and mocked Web Audio controls with
+keyboard and touch-emulated interactions, without FastAPI credentials or a live
+Neo4j instance.
 
 `orrery:catalog:check` verifies the bundled legal-move artifact against its
 audited source inputs and validates its strict schema.
+
+## Nodes v2 and scene presentation
+
+`GET /nodes` currently returns `harmonic-orrery.nodes.v2`. Each anchor includes
+its source-backed `pitchMask`, seven `pitchClasses`, six-entry `intervalVector`,
+and `chirality`. `pitchMask` must equal the rooted `stateId`; the API derives
+the pitch fields from the verified harmonic sidecar and reads chirality from the
+Neo4j projection. The frontend strictly validates this versioned contract and
+does not infer topology from a state ID.
+
+Selecting an anchor composes a local scene packet with
+`SCENE_RENDERER_VERSION`, state ID, and Court position as its only seed inputs.
+It uses declared office color, tier, chirality, topology, Court mask, wavelength,
+and a canonical landform reference noun as bounded presentation inputs. Meshes,
+particles, lighting, surface patterns, and camera framing are deterministic
+authored render choices, not canonical landforms, generated-world facts,
+scientific simulations, or thermodynamic calculations.
+
+The `Auto` scene-quality control selects reduced cost on coarse/mobile devices;
+`Reduced` can also be selected explicitly. Quality changes only pixel-ratio,
+particle-count, and surface-segment budgets, never the semantic scene packet.
+Court selection remains local presentation state and is intentionally absent from
+shared URLs and the API contract.
 
 ## Audio rendering
 
@@ -83,29 +107,32 @@ The Orrery automatically saves non-secret local exploration state under
 `seven-governors.harmonic-orrery.session`. The v3 document contains the
 selected and visited anchor IDs, local C0-C4 presentation history, a bounded
 modal-route history, selected catalog move, completed local objectives, and the
-projection/catalog identities needed to validate it. Valid v1 and v2 sessions
-migrate without inventing route history.
+projection/catalog identities needed to validate it. The known compatible
+pre-v2 source remains a controlled exception: every migration must match the
+current projection identity, and a v3 document must also carry the published
+pre-v2 catalog fingerprint. Migration never invents route history.
 
 Use `?anchor=<state-id>` to share one selected anchor. Visited history and the
 local Court position are intentionally not included in URLs. Invalid links
 select nothing and offer a clear-link action rather than falling back to an
 arbitrary anchor.
 
-Saved progress is discarded with an explanation when the nodes schema,
-profile-registry release, harmonic descriptor release, descriptor fingerprint,
-or bundled catalog fingerprint does not match. Unavailable and incompatible API
-responses never hydrate or overwrite saved progress.
+Saved progress is discarded with an explanation when its source cannot pass that
+compatibility check, or when the profile-registry release, harmonic descriptor
+release/fingerprint, or bundled catalog fingerprint does not match. Unavailable
+and incompatible API responses never hydrate or overwrite saved progress.
 
 ## Legal modal routes
 
-The bundled `harmonic-orrery.legal-moves.v1` catalog is generated from the
-mutation audit's operator registry, application ledger, modal completion ledger,
-and cycle identities. It binds every scope ID to its canonical tier, Forte
-family, and office, and exposes exactly the 21 canonically projected `M`
-(modal-successor) moves whose source and target are both A0-A2 anchors. These
-form three verified seven-step cycles, one per tier; no generic graph edge, raw
-`GOVERNS` relationship, synthesized `M^6` inverse, or `R`/`L` operation is
-offered by this MVP catalog.
+The stable `harmonic-orrery.modal-anchor-cycles.v1` catalog is generated and
+strictly bound as `harmonic-orrery.legal-moves.v2` from the mutation audit's
+operator registry, application ledger, modal completion ledger, and cycle
+identities. It binds every scope ID to its canonical tier, Forte family, and
+office, and exposes exactly the 21 canonically projected `M` (modal-successor)
+moves whose source and target are both A0-A2 anchors. These form three verified
+seven-step cycles, one per tier; no generic graph edge, raw `GOVERNS`
+relationship, synthesized `M^6` inverse, or `R`/`L` operation is offered by this
+MVP catalog.
 
 Move cards disclose their application and structural-edge provenance. `M` has
 no declared Degree Governor, which is displayed explicitly rather than inferred.

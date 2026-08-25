@@ -61,6 +61,7 @@ def neo4j_rows(candidate: main.HarmonicCandidate) -> list[dict[str, object]]:
                 "forteFamily": descriptor["forte"],
                 "tier": descriptor["tier"],
                 "role": "anchor",
+                "chirality": "achiral",
                 "office": office,
                 "profileId": profile["profileId"],
                 "profileVersion": profile["profileVersion"],
@@ -85,7 +86,7 @@ def test_nodes_response_matches_versioned_schema(
     schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
 
     jsonschema.Draft202012Validator(schema).validate(response)
-    assert response["schemaVersion"] == "harmonic-orrery.nodes.v1"
+    assert response["schemaVersion"] == "harmonic-orrery.nodes.v2"
     assert response["nodeCount"] == 21
     assert len(response["nodes"]) == 21
 
@@ -106,6 +107,18 @@ def test_nodes_response_preserves_exact_a0_a2_harmonic_values(
     assert by_state_id[1373]["scopedHarmonicDescriptor"]["weightedProjection"] == {
         "numerator": 779,
         "denominator": 407,
+    }
+    assert by_state_id[2773]["state"] == {
+        "stateId": 2773,
+        "pitchMask": 2773,
+        "pitchClasses": [0, 2, 4, 6, 7, 9, 11],
+        "intervalVector": [2, 5, 4, 3, 6, 1],
+        "chirality": "achiral",
+        "nodeId": "scale:2773",
+        "name": "Lydian",
+        "forteFamily": "7-35",
+        "tier": "A0",
+        "role": "anchor",
     }
 
 
@@ -131,6 +144,38 @@ def test_nodes_response_rejects_a_projection_mismatch(
 
     with pytest.raises(main.HTTPException) as error:
         main.build_nodes_response(mismatched, candidate)
+
+    assert error.value.status_code == 503
+
+
+def test_nodes_response_rejects_invalid_topology_presentation_data(
+    candidate: main.HarmonicCandidate,
+    neo4j_rows: list[dict[str, object]],
+) -> None:
+    invalid_chirality = [dict(row) for row in neo4j_rows]
+    invalid_chirality[0]["chirality"] = "unresolved"
+
+    with pytest.raises(main.HTTPException) as error:
+        main.build_nodes_response(invalid_chirality, candidate)
+
+    assert error.value.status_code == 503
+
+    invalid_records = {
+        state_id: {**record}
+        for state_id, record in candidate.records_by_state_id.items()
+    }
+    invalid_records[2773]["intervalVector"] = [0, 0, 0, 0, 0, 0]
+    invalid_candidate = main.HarmonicCandidate(
+        release_id=candidate.release_id,
+        candidate_id=candidate.candidate_id,
+        coordinate_id=candidate.coordinate_id,
+        status=candidate.status,
+        fingerprint=candidate.fingerprint,
+        records_by_state_id=invalid_records,
+    )
+
+    with pytest.raises(main.HTTPException) as error:
+        main.build_nodes_response(neo4j_rows, invalid_candidate)
 
     assert error.value.status_code == 503
 

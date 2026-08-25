@@ -14,7 +14,7 @@
     "moves"
   ],
   "properties": {
-    "schemaVersion": { "const": "harmonic-orrery.legal-moves.v1" },
+    "schemaVersion": { "const": "harmonic-orrery.legal-moves.v2" },
     "catalogId": { "const": "harmonic-orrery.modal-anchor-cycles.v1" },
     "catalogFingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
     "scope": { "$ref": "#/$defs/scope" },
@@ -48,7 +48,7 @@
         "anchors"
       ],
       "properties": {
-        "nodesSchemaVersion": { "const": "harmonic-orrery.nodes.v1" },
+        "nodesSchemaVersion": { "const": "harmonic-orrery.nodes.v2" },
         "harmonicDescriptorReleaseId": {
           "const": "harmonic-compression-candidate:CH_A012_q_v1:1.0.0"
         },
