@@ -1,9 +1,9 @@
 {
   "package": "seven-governors-integrated-release",
-  "version": "1.6.0",
-  "generatedAt": "2026-08-23T19:57:17.694Z",
-  "fileCount": 831,
-  "totalBytes": 69658903,
+  "version": "1.7.0",
+  "generatedAt": "2026-08-25T02:57:22.503Z",
+  "fileCount": 886,
+  "totalBytes": 70445368,
   "files": [
     {
       "path": ".env.example",
@@ -12,8 +12,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 500,
-      "sha256": "e3e735938666b121c7c9bdc6e105df9f000c27239d9a9fa01b2d0cb4eb09382c"
+      "bytes": 544,
+      "sha256": "81d48cc414fc817bd1f84a3ceab66ec677b8c4100d4292d3c0157a6227516723"
     },
     {
       "path": "AUTHORS.md",
@@ -37,8 +37,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11734,
-      "sha256": "5a1b5bdad195a7d32cbbf624ba7a90d310c0a9fe0ae43b66a71401fdf2b5c5d1"
+      "bytes": 12673,
+      "sha256": "25f566fe606d814dc35cc1b07ff5a69749246c4fa14dde3c5c83951795c2583a"
     },
     {
       "path": "bestiary/ARCH-SPEC.md",
@@ -48,7 +48,7 @@
     {
       "path": "bestiary/data/bestiary-data.json",
       "bytes": 1006755,
-      "sha256": "18c705500136967d8e415db4ccc875170a92b316a4385f3b7e072078cf77bfa5"
+      "sha256": "61f4dc13b0c854d23aa8a83550a1c439c42b4d3b4f0e253e96c7b13921beec53"
     },
     {
       "path": "bestiary/data/bestiary-data.schema.json",
@@ -711,6 +711,11 @@
       "sha256": "fd730e304a5b877a937a896be9536e7974dc473d8ac87fa66644bce52cb5f8e4"
     },
     {
+      "path": "main.py",
+      "bytes": 13316,
+      "sha256": "83a54810e2a35c87da57a99062e6fb7cba9059d2830110228d8f757877cc52b5"
+    },
+    {
       "path": "neo4j/README.md",
       "bytes": 2160,
       "sha256": "58108e4a08447c94789f233acce9d8b3b9713c91fe0bf62142cdd4c916b9b566"
@@ -931,14 +936,189 @@
       "sha256": "00807dfe69494036d17f448403465ff3e063f44a264749fdfcb1bf0ec43f9d0b"
     },
     {
+      "path": "orrery/README.md",
+      "bytes": 9123,
+      "sha256": "0e27aa2a0b54fe1d3bbe1ba23131097067f53d63195b112bfe1e8e0d54e07a1b"
+    },
+    {
+      "path": "orrery/RELEASE_CHECKLIST.md",
+      "bytes": 6763,
+      "sha256": "51414d37a994e5d6dbf26e8adc8bebda9969b214d8fc90634eea3ab3e8289cb9"
+    },
+    {
+      "path": "orrery/index.html",
+      "bytes": 18589,
+      "sha256": "219ef63c3b8951102923524faf2315a68449a5d0811373055980615777514c0d"
+    },
+    {
+      "path": "orrery/package-lock.json",
+      "bytes": 56486,
+      "sha256": "f8e7d05cd6910b5ebbef6aa7a88a9f4561513a55a7e5cb47ce7ab25d4a331e12"
+    },
+    {
+      "path": "orrery/package.json",
+      "bytes": 804,
+      "sha256": "9ecac4a1a637bf4920aa65c12326499f94086d2879eed96575f99c4ac8f497b3"
+    },
+    {
+      "path": "orrery/public/AUDIO_ASSETS.md",
+      "bytes": 978,
+      "sha256": "2a798c0d68014f3dcf54222b57f300d1a3f8bbd79e86dfec652ca33db77b6287"
+    },
+    {
+      "path": "orrery/public/audio/orrery-grain-v1.wav",
+      "bytes": 88244,
+      "sha256": "da2b72c9ddb1d148ef6eacd073acf1d8a60945d1bf2a346d65d89341c065def5"
+    },
+    {
+      "path": "orrery/public/audio/orrery-pulse-v1.wav",
+      "bytes": 88244,
+      "sha256": "24933450ab0546eef5ea4f24ce62f2b09848b08abfa66130bdcb17a8fa6ae95f"
+    },
+    {
+      "path": "orrery/public/audio/orrery-ticks-v1.wav",
+      "bytes": 88244,
+      "sha256": "b6a33c0522496fc61675c8b358b5951b5a483eca43d2a87a770f1b38c51b2e2c"
+    },
+    {
+      "path": "orrery/public/favicon.svg",
+      "bytes": 375,
+      "sha256": "14683dd4b6dc375258dc1a21d1e606a11c3cc3b6b2ec394c5c6732ef4f3cf07d"
+    },
+    {
+      "path": "orrery/scripts/validate-orrery-legal-move-catalog.mjs",
+      "bytes": 2530,
+      "sha256": "b6deab246b491a6676a9b7d27226f0428df7901119db0c33114aea58f3ddec18"
+    },
+    {
+      "path": "orrery/src/api.test.ts",
+      "bytes": 8554,
+      "sha256": "bf97e6d383fba6dbc5866add29120b3e0d01a0eef626331f9847ed2a9ee649d1"
+    },
+    {
+      "path": "orrery/src/api.ts",
+      "bytes": 14977,
+      "sha256": "47f9149602030b197619270958143394ec3a306684ce7122f7f8ffdd59bd5ae7"
+    },
+    {
+      "path": "orrery/src/audio.test.ts",
+      "bytes": 11403,
+      "sha256": "09c3b12c27886f796fc35a555f0cccd2d08519b0704b8b6c6e1751c317ff5fd8"
+    },
+    {
+      "path": "orrery/src/audio.ts",
+      "bytes": 20028,
+      "sha256": "54e428b1c6fa9770393f8df7608fcba211cf6710ab4b70aed5422ee8944004b3"
+    },
+    {
+      "path": "orrery/src/court.test.ts",
+      "bytes": 3760,
+      "sha256": "80b432f3be28a2472d18486aeb402113cf1c3174cbd658ca41e2e77fd27fc7f9"
+    },
+    {
+      "path": "orrery/src/court.ts",
+      "bytes": 4303,
+      "sha256": "48904797de31cc9cd56cb37a11b72dc1ff531076ccb66b28c5a449990ca7898e"
+    },
+    {
+      "path": "orrery/src/generated/legal-moves.v2.json",
+      "bytes": 14039,
+      "sha256": "214ed6848abce69784a419acbc9570ae0f9300c4c1ec0d8a15e3fdf72040c990"
+    },
+    {
+      "path": "orrery/src/layout.ts",
+      "bytes": 852,
+      "sha256": "6ce0ad434fefd460f72666def0fa321a756c729a47d282d1c8f8b42f291f3429"
+    },
+    {
+      "path": "orrery/src/main.ts",
+      "bytes": 45502,
+      "sha256": "c1e14fa4e5eb0badc0af64bf09a9a9f83e49867fcd9c05fd7aaa717455bca9ef"
+    },
+    {
+      "path": "orrery/src/moves.test.ts",
+      "bytes": 6306,
+      "sha256": "3afa2aa6a31c5e15c7d1f064b855f89a36f49419a10b0a22d32d07dfaed34b2e"
+    },
+    {
+      "path": "orrery/src/moves.ts",
+      "bytes": 15728,
+      "sha256": "46b15e32cf0ecc22e31dcf772050f0ea8710b55e4466dcf7c5da33de585904bb"
+    },
+    {
+      "path": "orrery/src/objectives.test.ts",
+      "bytes": 7208,
+      "sha256": "c829773cc5e1c0b335a6fc0b5d3e5b45d062971e327d685c062d8c361bc7f086"
+    },
+    {
+      "path": "orrery/src/objectives.ts",
+      "bytes": 5698,
+      "sha256": "d38b44adeca7c50512de7f355635c2ddd784bd35ac597e7b19d8382a12029360"
+    },
+    {
+      "path": "orrery/src/scene-composer.test.ts",
+      "bytes": 9640,
+      "sha256": "3feaa4fe0338c707972c12e769e659b49a09446dc72be3e352930574d0dc778b"
+    },
+    {
+      "path": "orrery/src/scene-composer.ts",
+      "bytes": 5762,
+      "sha256": "2459b124beaf4fcb8d000c04503f25058f22d796e69719e9b9f8f12f4a076c9b"
+    },
+    {
+      "path": "orrery/src/scene.ts",
+      "bytes": 18688,
+      "sha256": "c3ea86e0d144e0c14b7c74579e26c137f7ba075618c841ce0a57dfe51efa8a67"
+    },
+    {
+      "path": "orrery/src/session.test.ts",
+      "bytes": 17120,
+      "sha256": "228b10a548e35367aa3042563fd965a3be12976a54e7bb8f0bc53097112c611c"
+    },
+    {
+      "path": "orrery/src/session.ts",
+      "bytes": 26961,
+      "sha256": "38f88b1c6d3a89bb18739e90ca480ea352be72d58bcc8c0c73843d2a1463eee5"
+    },
+    {
+      "path": "orrery/src/style.css",
+      "bytes": 29232,
+      "sha256": "7ef8ce9d69ea08662b253c90ad1a00888792188ed9e989aae4f3f9996e6fce02"
+    },
+    {
+      "path": "orrery/src/types.ts",
+      "bytes": 2728,
+      "sha256": "fe2bd04882ad96d11f90ee91b5bd091a210b7b4222b464d3c02db9ddb7f99699"
+    },
+    {
+      "path": "orrery/test/fixtures/canonical-nodes-response.mjs",
+      "bytes": 1871,
+      "sha256": "ec6f91b0c7528355c73819e1e77f599b809dd94d34990026fdd9a29afcea2984"
+    },
+    {
+      "path": "orrery/test/fixtures/nodes-response.mjs",
+      "bytes": 2504,
+      "sha256": "24b89f033a0bec27ad2a793f9f6697aa62ebc4ad26d72248bdda8401b41d3abe"
+    },
+    {
+      "path": "orrery/tsconfig.json",
+      "bytes": 565,
+      "sha256": "f4af4271ed245b0689c094e7d3e77474f3296ef88950d3d149ae36bdddb18614"
+    },
+    {
+      "path": "orrery/vite.config.ts",
+      "bytes": 398,
+      "sha256": "d00812b72d51e0e37a0831243b816ec2ae507f15b57783a009ef7f638f6b5cd8"
+    },
+    {
       "path": "package-lock.json",
       "bytes": 10235,
       "sha256": "a7091201fac1de844a3635b42063064961e73bcca1fe029881187bc1abe13d94"
     },
     {
       "path": "package.json",
-      "bytes": 8367,
-      "sha256": "2546dc80505cee0449c6b77552cf24928256285587962a45f70e66ab129664fc"
+      "bytes": 8977,
+      "sha256": "ae8804c91fbb478a6dd455d3064a859d965babf8b4867b5a47841cf8c55ad743"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
@@ -988,7 +1168,7 @@
     {
       "path": "provenance/release.json",
       "bytes": 8487,
-      "sha256": "20b757994a15efad9c4759dbb37ebbcc39e9416baddf95be9e31f7363d188625"
+      "sha256": "8cbcaea3e8e50a73d74d6f4bd23cc644cc5ed6045b1f2476be36441c421c0594"
     },
     {
       "path": "pytest.ini",
@@ -1119,6 +1299,16 @@
       "path": "qa/teleological-physics-registry-validation.json",
       "bytes": 12257,
       "sha256": "b71156570c82a640a70279af032f284800dc8dbff742b078a4e5929897ca1ff0"
+    },
+    {
+      "path": "requirements-orrery-dev.txt",
+      "bytes": 60,
+      "sha256": "2b31667a1de2e6bcb6289ad515dd6ef412adb7f6b93d5b54de5d93cebce44edd"
+    },
+    {
+      "path": "requirements-orrery.txt",
+      "bytes": 60,
+      "sha256": "31550580668babab2053a4ee8d6839df7977b291b0bfbae0458943bbdb3667ab"
     },
     {
       "path": "schemas/court-admission-contract.json",
@@ -1401,6 +1591,16 @@
       "sha256": "a602787cadb87a778e7c14ffaf8b84c8a9778415c28a12c5e38254bc9f80253e"
     },
     {
+      "path": "schemas/harmonic-orrery-legal-moves.schema.json",
+      "bytes": 4912,
+      "sha256": "fe6c32140540f347999ee9d1f6262406d5a157faa02a0bbd32648873d07c08c2"
+    },
+    {
+      "path": "schemas/harmonic-orrery-nodes.schema.json",
+      "bytes": 5265,
+      "sha256": "f778f5f74b1b540091faac6e6fe66a932f0aa963ce932e0bea24c62167d73225"
+    },
+    {
       "path": "schemas/mechanics-thermodynamics-registry-v1.0.0.schema.json",
       "bytes": 18673,
       "sha256": "5c3caffd6db17eb91c12d13a389185c33d192e80d71eb5d5d2b28bd47459cb89"
@@ -1512,8 +1712,13 @@
     },
     {
       "path": "scripts/build-manifest.mjs",
-      "bytes": 1622,
-      "sha256": "42f21f7c7f32f132b7a2635bf04b6be71b06c086f15f12c3d9af23c0f44a8637"
+      "bytes": 1689,
+      "sha256": "2a74e6244bd4ee603c7ad107fe43c644bcd1da54fb92e4d87957b59c56813134"
+    },
+    {
+      "path": "scripts/build-orrery-legal-move-catalog.mjs",
+      "bytes": 11906,
+      "sha256": "fbae7f39210863e64f482cdaa73f30d1c70b626fd377a33d670be5243512b6e0"
     },
     {
       "path": "scripts/build-pentatonic-admission-backlog.mjs",
@@ -1544,6 +1749,11 @@
       "path": "scripts/generate-harmonic-compression-candidates.py",
       "bytes": 1617,
       "sha256": "883172246bb25585c57b5c3789b111e9a28870d90625457cdb3e4c2d05c8d768"
+    },
+    {
+      "path": "scripts/generate-orrery-audio-loops.mjs",
+      "bytes": 3313,
+      "sha256": "13c7933430d533d48e0879019bf637bb2400fbdeaddaa053d8c17b0c6be58721"
     },
     {
       "path": "scripts/generate-pentatonic-7-35-parent-audit.py",
@@ -1586,9 +1796,24 @@
       "sha256": "8c7ad0c2c2d323908784e3f7b4d06f7e46f0d7179d4f04332006e07c34b4e224"
     },
     {
+      "path": "scripts/run-harmonic-orrery.sh",
+      "bytes": 748,
+      "sha256": "47574792935374d6018f1104a5aaa85e8c582c3c23561dbb1c5a75d9881f476c"
+    },
+    {
       "path": "scripts/run-phase4-verification.py",
       "bytes": 20584,
       "sha256": "3cca6173d6fec9f9340de89b47f95e83a449576bcbed7391616490217218a409"
+    },
+    {
+      "path": "scripts/test-harmonic-orrery-browser.sh",
+      "bytes": 69231,
+      "sha256": "4571e89723ad303075ef4d9342a580715c88ac4782a25b00d4ffbb08a9a305a0"
+    },
+    {
+      "path": "scripts/test-harmonic-orrery.sh",
+      "bytes": 548,
+      "sha256": "4920507ba7fa2354d14e19889445c1b1aa3ba0fdda13350b41184cd131c5856f"
     },
     {
       "path": "scripts/validate-court-admission.mjs",
@@ -1667,8 +1892,8 @@
     },
     {
       "path": "scripts/validate-release.mjs",
-      "bytes": 92863,
-      "sha256": "253053d5888def83d026f9c2845c2e3fde0fce95e08605f434a6752591b396dd"
+      "bytes": 92938,
+      "sha256": "c29498084f1f372a687bd97a8e665669a6446406370144e93b12edbd5b488720"
     },
     {
       "path": "scripts/validate-semantic-operator-registry.mjs",
@@ -1781,6 +2006,11 @@
       "sha256": "c7f6df599c3d1f7f59e586008457cc525b9e50dbce7ebfadedc37032bcd257b7"
     },
     {
+      "path": "scrum/EPIC-009-harmonic-orrery-mvp.md",
+      "bytes": 6537,
+      "sha256": "a6f1f6f45440e61f8e9381a95fa2e8122b4dd0709b64818bc92c05ce940557f7"
+    },
+    {
       "path": "scrum/GOV-201-authority-namespaces.md",
       "bytes": 3975,
       "sha256": "ec57d3e7deca600946fbae81767f2ef7f545b6d06d4f02af960aea7a7cc3831c"
@@ -1891,9 +2121,49 @@
       "sha256": "393f42df3edeca23fc4c9b5c5ca0bfd280b153b6d9c80ea42d547365c8565a15"
     },
     {
+      "path": "scrum/ORR-401-orrery-api-foundation.md",
+      "bytes": 2381,
+      "sha256": "bca32d4aa5f13708f5cf1f38ed0f3200785445ca27a679ab78fdb5aaabd60aa0"
+    },
+    {
+      "path": "scrum/ORR-402-three-dimensional-anchor-orrery.md",
+      "bytes": 3058,
+      "sha256": "91c26698d62d1b19aaca7379f86afae1e420a716777cd4fb129513fc26abadfb"
+    },
+    {
+      "path": "scrum/ORR-403-anchor-interaction-and-session-state.md",
+      "bytes": 2844,
+      "sha256": "90afaf63351e491c630ae74e6e0f8e9c7c06e2f0193d887f2a24fe9c532bd315"
+    },
+    {
+      "path": "scrum/ORR-404-hybrid-audio-engine.md",
+      "bytes": 3050,
+      "sha256": "69b9d057dee40c4e86eec72e741eda972fb7dd255b2d5b676014ff54fef750b5"
+    },
+    {
+      "path": "scrum/ORR-405-court-control-surface.md",
+      "bytes": 2872,
+      "sha256": "6f1ddd4266cd90893a8ed1cb7575a584f22314df48fe16aa8647f3f4f3c104d3"
+    },
+    {
+      "path": "scrum/ORR-406-legal-move-game-loop.md",
+      "bytes": 3682,
+      "sha256": "51a487c85fa4d701a990176eb6c5e9b92d277fd693aedfbfec70f38aaeb1e8c7"
+    },
+    {
+      "path": "scrum/ORR-407-procedural-scene-composer.md",
+      "bytes": 3005,
+      "sha256": "a55dca3f9b2ac48f0a7f7caf4cd55682adad41d1e2add05b858a41e553c544f1"
+    },
+    {
+      "path": "scrum/ORR-408-mvp-goals-polish-and-release.md",
+      "bytes": 3728,
+      "sha256": "2e229eb601a69f13222566772aa267dca9dc1c479c85ed68a59b5e8e4c7fbf8d"
+    },
+    {
       "path": "scrum/README.md",
-      "bytes": 8740,
-      "sha256": "1ea07406cea60c4d89fc89a2b35e74bcab295899aad6bd95033a5fd20ce1169f"
+      "bytes": 10241,
+      "sha256": "0809d9f6da32f43c79e52a5ea30950f1001dd47e32556f18b516f2625df2df11"
     },
     {
       "path": "scrum/pre-epic-400-audit-notes.md",
@@ -4074,6 +4344,11 @@
       "path": "tests/test_gov_227_d_tier_harmonic_compression.py",
       "bytes": 6929,
       "sha256": "9fc755660929ba0c7d1fb3e8d2f13fc22536f5b93bf899836bcd586fe78960cf"
+    },
+    {
+      "path": "tests/test_harmonic_orrery_api.py",
+      "bytes": 8506,
+      "sha256": "83d6e143c1297465d7a20af907bd34d0987047c3ef11a131f89962917a177809"
     },
     {
       "path": "tests/test_harmonic_runtime.py",

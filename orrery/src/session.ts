@@ -3,6 +3,7 @@ import { LEGAL_MOVE_SCHEMA_VERSION, type LegalMoveCatalogIdentity } from "./move
 import type { NodesResponse } from "./types";
 
 export const SESSION_STORAGE_KEY = "seven-governors.harmonic-orrery.session";
+export const SESSION_TUTORIAL_DISMISS_KEY = "seven-governors.harmonic-orrery.tutorial-dismissed";
 export const SESSION_SCHEMA_VERSION = "harmonic-orrery.session.v3";
 const LEGACY_SESSION_SCHEMA_VERSION = "harmonic-orrery.session.v1";
 const PREVIOUS_SESSION_SCHEMA_VERSION = "harmonic-orrery.session.v2";
@@ -505,6 +506,54 @@ export function clearSessionRoute(session: OrrerySession): OrrerySession {
     selectedLegalMoveId: null,
     modalRoute: { startAnchorId: null, currentAnchorId: null, moveIds: [] },
   };
+}
+
+export function resetOrrerySession(
+  storage: StorageLike | undefined,
+  source: OrrerySourceIdentity,
+): { session: OrrerySession; notice?: string } {
+  if (storage) {
+    try {
+      storage.removeItem(SESSION_STORAGE_KEY);
+    } catch {
+      const fresh = createSession(source);
+      return { session: fresh, notice: "Local progress could not be reset in this browser." };
+    }
+  }
+  return { session: createSession(source) };
+}
+
+export function buildAnchorShareUrl(anchorId: number | null, baseHref: string): string {
+  const url = new URL(baseHref);
+  url.searchParams.delete("court");
+  if (anchorId === null) {
+    url.searchParams.delete("anchor");
+  } else {
+    url.searchParams.set("anchor", String(anchorId));
+  }
+  return `${url.pathname}${url.search}${url.hash}`;
+}
+
+export function isTutorialDismissed(storage: StorageLike | undefined): boolean {
+  if (!storage) {
+    return false;
+  }
+  try {
+    return storage.getItem(SESSION_TUTORIAL_DISMISS_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+export function dismissTutorial(storage: StorageLike | undefined): void {
+  if (!storage) {
+    return;
+  }
+  try {
+    storage.setItem(SESSION_TUTORIAL_DISMISS_KEY, "1");
+  } catch {
+    // Ignore write failures; tutorial will show again next session.
+  }
 }
 
 export function selectSessionLegalMove(

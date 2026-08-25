@@ -11,6 +11,7 @@
     <title>Harmonic Orrery</title>
   </head>
   <body>
+    <a class="skip-link" href="#orrery-title">Skip to content</a>
     <main class="app-shell" id="app">
       <header class="masthead">
         <a class="wordmark" href="/" aria-label="Harmonic Orrery home">
@@ -31,6 +32,42 @@
           landform pool, and scoped A0-A2 weight. The unresolved global C_H is
           intentionally not displayed here.
         </p>
+        <p class="intro-theory-note">
+          Theory is optional context. Audio timbres, scene meshes, lighting, particles, and surface patterns are
+          authored presentation choices, not canonical landforms, physics, or `C_H` claims.
+        </p>
+      </section>
+
+      <section
+        class="onboarding"
+        id="onboarding"
+        aria-labelledby="onboarding-title"
+        aria-describedby="onboarding-body"
+        hidden
+      >
+        <div class="onboarding-card" role="dialog" aria-modal="true" aria-labelledby="onboarding-title">
+          <p class="eyebrow">First session</p>
+          <h2 id="onboarding-title">Start here</h2>
+          <p id="onboarding-body">
+            Select an anchor, optionally enable audio, change Court presentation, make one legal local move, and
+            complete one objective. Audio only starts after an explicit gesture; visual-only remains available.
+          </p>
+          <ol class="onboarding-steps">
+            <li>Choose an anchor from the index or 3D view</li>
+            <li>Enable &amp; play sound (or keep Visual-only)</li>
+            <li>Change Court to an adjacent position</li>
+            <li>Start a local route and apply its declared modal successor</li>
+            <li>Complete Lydian → Aeolian in two steps or traverse C0–C4</li>
+          </ol>
+          <p class="onboarding-disclosure">
+            Audio and scene rendering are authored presentation interpretations. They do not assert a canonical
+            landform, thermodynamic value, or global harmonic fact.
+          </p>
+          <div class="onboarding-actions">
+            <button id="onboarding-dismiss" type="button">Dismiss</button>
+            <button id="onboarding-start-lydian" type="button">Start at Lydian</button>
+          </div>
+        </div>
       </section>
 
       <section class="session-hud" aria-label="Local exploration state">
@@ -51,9 +88,28 @@
           <strong id="session-api-health">Connecting to canonical projection</strong>
         </div>
         <p class="session-message" id="session-message" role="status" aria-live="polite" hidden></p>
+        <p class="session-announce" id="session-announce" role="status" aria-live="polite"></p>
         <div class="session-actions">
+          <button id="copy-anchor-link" type="button">Copy anchor link</button>
+          <button id="share-anchor-link" type="button">Share anchor</button>
+          <button id="reset-orrery" type="button">Reset local Orrery</button>
           <button id="clear-link-selection" type="button" hidden>Clear link selection</button>
           <button id="reload-projection" type="button" hidden>Reload projection</button>
+          <span class="help-trigger-wrap">
+            <button
+              id="help-session"
+              class="help-trigger"
+              type="button"
+              aria-label="Help for local exploration state"
+              aria-describedby="help-session-tip"
+            >
+              ?
+            </button>
+            <span id="help-session-tip" class="help-tip" role="tooltip" hidden
+              >Selected anchor and visit counts are local-only. Copy link shares only `?anchor`. Reset clears only local
+              Orrery state and never touches Neo4j or canonical data.</span
+            >
+          </span>
         </div>
       </section>
 
@@ -65,6 +121,21 @@
             A route records only a local exploration sequence. It never changes an anchor's canonical
             office, profile, harmonic value, Court runtime, or graph projection.
           </p>
+          <span class="help-trigger-wrap">
+            <button
+              id="help-moves"
+              class="help-trigger"
+              type="button"
+              aria-label="Help for modal routes"
+              aria-describedby="help-moves-tip"
+            >
+              ?
+            </button>
+            <span id="help-moves-tip" class="help-tip" role="tooltip" hidden
+              >Start a route at the inspected anchor, then apply its single declared modal successor. Invalid or
+              non-modal moves are never offered; route history is local experience data only.</span
+            >
+          </span>
         </div>
         <div class="move-route-state">
           <p id="move-status" class="move-status" role="status" aria-live="polite">
@@ -103,7 +174,11 @@
           </ol>
         </div>
         <div class="objective-block">
-          <p class="field-label">Local discovery objectives</p>
+          <div class="objective-block-heading">
+            <p class="field-label">Local objectives</p>
+            <span class="field-hint">Discovery • Strategy • Learning</span>
+          </div>
+          <p id="objective-announce" class="sr-only" role="status" aria-live="polite"></p>
           <div id="objective-list" class="objective-list"></div>
         </div>
       </section>
@@ -116,6 +191,21 @@
             Move through the five-position Court route one adjacent step at a time. This changes only
             local presentation and authored audio voicing.
           </p>
+          <span class="help-trigger-wrap">
+            <button
+              id="help-court"
+              class="help-trigger"
+              type="button"
+              aria-label="Help for Court presentation"
+              aria-describedby="help-court-tip"
+            >
+              ?
+            </button>
+            <span id="help-court-tip" class="help-tip" role="tooltip" hidden
+              >Court is local presentation. Four binary poles + Mercury C2 engine only. Moves are adjacent-only and
+              never write Court runtime. Displayed masks re-filter the same A0 palette.</span
+            >
+          </span>
         </div>
         <div class="court-route">
           <p id="court-route-status" class="court-route-status" role="status" aria-live="polite">
@@ -158,6 +248,21 @@
           <p class="eyebrow">Authored audio rendering</p>
           <h2 id="audio-heading">Governor sound desk</h2>
           <p id="audio-palette" class="audio-palette">Select an anchor to inspect its A0 office palette.</p>
+          <span class="help-trigger-wrap">
+            <button
+              id="help-audio"
+              class="help-trigger"
+              type="button"
+              aria-label="Help for authored audio"
+              aria-describedby="help-audio-tip"
+            >
+              ?
+            </button>
+            <span id="help-audio-tip" class="help-tip" role="tooltip" hidden
+              >Audio starts only after Enable &amp; play sound. Visual-only suppresses all audio and never auto-resumes.
+              Timbres and loops are authored presentation, not physics or canon.</span
+            >
+          </span>
         </div>
         <div class="audio-controls" aria-label="Audio controls">
           <button id="audio-enable" type="button" disabled>Enable &amp; play sound</button>
@@ -187,6 +292,21 @@
               <p class="eyebrow">Orbital instrument</p>
               <h2 id="scene-heading">21-anchor view</h2>
             </div>
+            <span class="help-trigger-wrap">
+              <button
+                id="help-scene"
+                class="help-trigger"
+                type="button"
+                aria-label="Help for authored scene"
+                aria-describedby="help-scene-tip"
+              >
+                ?
+              </button>
+              <span id="help-scene-tip" class="help-tip" role="tooltip" hidden
+                >Scene is an authored interpretation. Set `?anchor` selects the anchor; Court pick is local-only and
+                never encoded in shared links. Reduced quality lowers only render cost.</span
+              >
+            </span>
             <div class="scene-tools">
               <p class="scene-key"><span></span> drag to orbit / scroll to zoom</p>
               <label class="scene-quality-control" for="scene-quality">

@@ -3,13 +3,18 @@ import { describe, expect, it } from "vitest";
 import {
   SESSION_SCHEMA_VERSION,
   SESSION_STORAGE_KEY,
+  SESSION_TUTORIAL_DISMISS_KEY,
   applySessionLegalMove,
+  buildAnchorShareUrl,
   clearSessionSelection,
   clearSessionRoute,
   createSession,
+  dismissTutorial,
+  isTutorialDismissed,
   loadSession,
   markSessionObjectivesCompleted,
   parseUrlAnchorSelection,
+  resetOrrerySession,
   saveSession,
   selectSessionAnchor,
   selectSessionCourtPosition,
@@ -355,5 +360,81 @@ describe("Harmonic Orrery session", () => {
 
     expect(load(unavailable).notice).toContain("unavailable");
     expect(saveSession(unavailable, createSession(source))).toContain("could not be saved");
+  });
+
+  it("resets only local Orrery state and preserves unrelated storage", () => {
+    const storage = new MemoryStorage();
+    // Simulate a populated session with visited anchors and route
+    const populated = (() => {
+      let s = startSessionRoute(selectSessionAnchor(createSession(source), 2773), 2773);
+      const m1 = moves.get("M:2773:1717")!;
+      const sel = selectSessionLegalMove(s, m1, moves);
+      if (sel.kind !== "selected") throw new Error(sel.message);
+      s = sel.session;
+      const app = applySessionLegalMove(s, moves);
+      if (app.kind !== "applied") throw new Error(app.message);
+      s = selectSessionCourtPosition(app.session, "C1");
+      return s;
+    })();
+    saveSession(storage, populated);
+    storage.setItem("unrelated-key", "preserve-me");
+    storage.setItem(SESSION_TUTORIAL_DISMISS_KEY, "1");
+
+    const { session: reset, notice } = resetOrrerySession(storage, source);
+    expect(notice).toBeUndefined();
+    expect(reset.selectedAnchorId).toBeNull();
+    expect(reset.visitedAnchorIds).toEqual([]);
+    expect(reset.modalRoute).toEqual({ startAnchorId: null, currentAnchorId: null, moveIds: [] });
+    expect(reset.courtPresentationPosition).toBe("C0");
+    expect(reset.courtRouteHistory).toEqual(["C0"]);
+    expect(reset.completedObjectiveIds).toEqual([]);
+    expect(storage.getItem(SESSION_STORAGE_KEY)).toBeNull();
+    expect(storage.getItem("unrelated-key")).toBe("preserve-me");
+    expect(storage.getItem(SESSION_TUTORIAL_DISMISS_KEY)).toBe("1");
+    // Persisted reset session should save correctly
+    expect(saveSession(storage, reset)).toBeUndefined();
+    expect(load(storage).session?.selectedAnchorId).toBeNull();
+  });
+
+  it("handles reset when storage removal is blocked", () => {
+    const blocked: StorageLike = {
+      getItem(): string | null { return null; },
+      setItem(): void { throw new Error("blocked"); },
+      removeItem(): void { throw new Error("blocked"); },
+    };
+    const { session: reset, notice } = resetOrrerySession(blocked, source);
+    expect(reset.selectedAnchorId).toBeNull();
+    expect(notice).toContain("could not be reset");
+  });
+
+  it("builds anchor-only share URLs and never includes Court state", () => {
+    expect(buildAnchorShareUrl(1717, "http://example.com/?anchor=999&court=C4#hash")).toBe("/?anchor=1717#hash");
+    expect(buildAnchorShareUrl(null, "http://example.com/?anchor=1717&court=C2")).toBe("/");
+    expect(buildAnchorShareUrl(2773, "http://example.com/?court=C1")).toBe("/?anchor=2773");
+    expect(buildAnchorShareUrl(2741, "http://example.com/path?x=1#top")).toBe("/path?x=1&anchor=2741#top");
+  });
+
+  it("tracks tutorial dismissal separately from exploration state", () => {
+    const storage = new MemoryStorage();
+    expect(isTutorialDismissed(storage)).toBe(false);
+    dismissTutorial(storage);
+    expect(isTutorialDismissed(storage)).toBe(true);
+    expect(storage.getItem(SESSION_TUTORIAL_DISMISS_KEY)).toBe("1");
+    // Reset does not clear tutorial dismissal
+    const populated = startSessionRoute(selectSessionAnchor(createSession(source), 2773), 2773);
+    saveSession(storage, populated);
+    resetOrrerySession(storage, source);
+    expect(isTutorialDismissed(storage)).toBe(true);
+    expect(storage.getItem(SESSION_TUTORIAL_DISMISS_KEY)).toBe("1");
+  });
+
+  it("visual-only vs exploration separation: reset excludes audio runtime state conceptually", () => {
+    // Audio volume/muted are not stored in session; reset must not affect a separate audio key.
+    const storage = new MemoryStorage();
+    storage.setItem("audio-volume", "0.8");
+    const populated = startSessionRoute(selectSessionAnchor(createSession(source), 1387), 1387);
+    saveSession(storage, populated);
+    resetOrrerySession(storage, source);
+    expect(storage.getItem("audio-volume")).toBe("0.8");
   });
 });

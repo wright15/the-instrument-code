@@ -16,6 +16,10 @@ without changing the global `harmonic.C_H` null guard.
 Integrated release 1.6.0 admits GOV-227's D1-D7 q_v2 sidecar and universal
 70-anchor Governor Seat Invariant while recording that scoped compression bands
 interleave and cannot replace graph topology for tier resolution.
+Integrated release 1.7.0 binds the Harmonic Orrery MVP (EPIC-009) with first-session
+onboarding, local-only reset/share, discovery/strategy/learning objectives, and a pinned
+release checklist; the application layer remains presentation-only and cannot mutate
+topology, Court runtime, or Neo4j projection.
 
 The package is intentionally layered:
 

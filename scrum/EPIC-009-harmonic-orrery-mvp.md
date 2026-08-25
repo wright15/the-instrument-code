@@ -1,6 +1,6 @@
 # EPIC-009 - Harmonic Orrery MVP
 
-**Status:** In Progress · **Priority:** High · **Owner:** Harmonic Orrery application workstream
+**Status:** Done · **Priority:** High · **Owner:** Harmonic Orrery application workstream
 **Epic ID:** EPIC-009 · **Target:** A read-only generative strategy, art, and music prototype
 **Stories:** [ORR-401](ORR-401-orrery-api-foundation.md),
 [ORR-402](ORR-402-three-dimensional-anchor-orrery.md),
@@ -136,9 +136,10 @@ ORR-404 ------> ORR-405 --+
 ORR-407 ------------------> ORR-408
 ```
 
-The 3D, local-session, audio, Court presentation, legal-move, and authored-scene
-contracts are stable. The immediate next story is
-[ORR-408](ORR-408-mvp-goals-polish-and-release.md).
+The 3D, local-session, audio, Court presentation, legal-move, authored-scene,
+and MVP polish contracts are stable. EPIC-009 is complete and released as
+`seven-governors-integrated-1.7.0` with `orrery/RELEASE_CHECKLIST.md` as the
+pinned evidence record.
 
 ## Definition of done
 

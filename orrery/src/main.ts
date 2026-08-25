@@ -18,12 +18,16 @@ import { composeSceneParameters, type SceneQuality } from "./scene-composer";
 import { createOrreryScene, type OrreryScene } from "./scene";
 import {
   applySessionLegalMove,
+  buildAnchorShareUrl,
   clearSessionSelection,
   clearSessionRoute,
   createSession,
+  dismissTutorial,
+  isTutorialDismissed,
   loadSession,
   markSessionObjectivesCompleted,
   parseUrlAnchorSelection,
+  resetOrrerySession,
   saveSession,
   selectSessionAnchor,
   selectSessionCourtPosition,
@@ -81,8 +85,16 @@ const sessionVisited = requiredElement<HTMLElement>("#session-visited");
 const sessionCourt = requiredElement<HTMLElement>("#session-court");
 const sessionApiHealth = requiredElement<HTMLElement>("#session-api-health");
 const sessionMessage = requiredElement<HTMLElement>("#session-message");
+const sessionAnnounce = requiredElement<HTMLElement>("#session-announce");
 const clearLinkSelectionButton = requiredElement<HTMLButtonElement>("#clear-link-selection");
 const reloadProjectionButton = requiredElement<HTMLButtonElement>("#reload-projection");
+const copyAnchorLinkButton = requiredElement<HTMLButtonElement>("#copy-anchor-link");
+const shareAnchorLinkButton = requiredElement<HTMLButtonElement>("#share-anchor-link");
+const resetOrreryButton = requiredElement<HTMLButtonElement>("#reset-orrery");
+const onboarding = requiredElement<HTMLElement>("#onboarding");
+const onboardingDismissButton = requiredElement<HTMLButtonElement>("#onboarding-dismiss");
+const onboardingStartLydianButton = requiredElement<HTMLButtonElement>("#onboarding-start-lydian");
+const objectiveAnnounce = requiredElement<HTMLElement>("#objective-announce");
 const moveStatus = requiredElement<HTMLElement>("#move-status");
 const moveRoutePosition = requiredElement<HTMLElement>("#move-route-position");
 const moveInspectedAnchor = requiredElement<HTMLElement>("#move-inspected-anchor");
@@ -152,6 +164,153 @@ function setSessionNotice(message?: string, action?: "clear-link" | "reload"): v
   sessionMessage.textContent = message ?? "";
   clearLinkSelectionButton.hidden = action !== "clear-link";
   reloadProjectionButton.hidden = action !== "reload";
+}
+
+function announceSession(message: string): void {
+  sessionAnnounce.textContent = message;
+  // Force re-announcement for identical consecutive messages.
+  void sessionAnnounce.offsetHeight;
+}
+
+function updateShareButtons(): void {
+  const anchorId = session?.selectedAnchorId ?? null;
+  const hasSelection = anchorId !== null && nodesById.has(anchorId);
+  copyAnchorLinkButton.disabled = !hasSelection;
+  shareAnchorLinkButton.disabled = !hasSelection;
+  copyAnchorLinkButton.setAttribute("aria-disabled", String(!hasSelection));
+  shareAnchorLinkButton.setAttribute("aria-disabled", String(!hasSelection));
+  const shareSupported = typeof navigator !== "undefined" && typeof (navigator as { share?: unknown }).share === "function";
+  shareAnchorLinkButton.hidden = !shareSupported;
+}
+
+function shareUrlForAnchor(anchorId: number | null): string {
+  return new URL(buildAnchorShareUrl(anchorId, window.location.href), window.location.origin).toString();
+}
+
+async function copyAnchorLink(): Promise<void> {
+  const anchorId = session?.selectedAnchorId ?? null;
+  if (anchorId === null || !nodesById.has(anchorId)) {
+    setSessionNotice("Select an anchor before copying its link.");
+    return;
+  }
+  const url = shareUrlForAnchor(anchorId);
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(url);
+      setSessionNotice(`Copied ${url} — Court, route, and objectives stay local-only.`);
+      announceSession(`Copied anchor link ${anchorId}`);
+      return;
+    }
+    throw new Error("Clipboard unavailable");
+  } catch {
+    window.prompt("Copy this anchor link (Court and route stay local-only):", url);
+    setSessionNotice("Anchor link ready to copy — Court, route, and objectives stay local-only.");
+  }
+}
+
+async function shareAnchorLink(): Promise<void> {
+  const anchorId = session?.selectedAnchorId ?? null;
+  if (anchorId === null || !nodesById.has(anchorId)) {
+    setSessionNotice("Select an anchor before sharing.");
+    return;
+  }
+  const url = shareUrlForAnchor(anchorId);
+  const nav = navigator as unknown as { share?: (data: { title?: string; text?: string; url?: string }) => Promise<void> };
+  if (typeof nav.share === "function") {
+    try {
+      await nav.share({ title: "Harmonic Orrery", text: `Harmonic Orrery anchor ${anchorId}`, url });
+      setSessionNotice(`Shared ${url} — Court, route, and objectives stay local-only.`);
+      return;
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") {
+        return;
+      }
+    }
+  }
+  await copyAnchorLink();
+}
+
+function resetLocalOrrery(): void {
+  if (!session) {
+    return;
+  }
+  const source = session.source;
+  const result = resetOrrerySession(progressStorage, source);
+  session = result.session;
+  audioEngine.clearSelection();
+  updateAnchorUrl(null);
+  clearInspector();
+  clearScenePresentation();
+  renderSessionHud();
+  renderMoveConsole();
+  renderCourtSurface();
+  updateShareButtons();
+  for (const button of anchorButtons.values()) {
+    button.classList.remove("is-selected");
+    button.setAttribute("aria-pressed", "false");
+  }
+  const storageNotice = saveSession(progressStorage, session);
+  const baseNotice = "Local Orrery state reset. Neo4j and canonical data were not affected.";
+  const combinedNotice = [baseNotice, result.notice, storageNotice].filter(Boolean).join(" ");
+  setSessionNotice(combinedNotice || baseNotice);
+  announceSession("Local Orrery state reset");
+  anchorList.querySelector<HTMLButtonElement>(".anchor-button")?.focus();
+}
+
+function setupHelpTooltips(): void {
+  const pairs: Array<[string, string]> = [
+    ["#help-session", "#help-session-tip"],
+    ["#help-moves", "#help-moves-tip"],
+    ["#help-court", "#help-court-tip"],
+    ["#help-audio", "#help-audio-tip"],
+    ["#help-scene", "#help-scene-tip"],
+  ];
+  for (const [triggerSelector, tipSelector] of pairs) {
+    const trigger = document.querySelector<HTMLButtonElement>(triggerSelector);
+    const tip = document.querySelector<HTMLElement>(tipSelector);
+    if (!trigger || !tip) continue;
+    let pinned = false;
+    const show = () => {
+      tip.hidden = false;
+      trigger.setAttribute("aria-expanded", "true");
+    };
+    const hide = () => {
+      if (pinned) return;
+      tip.hidden = true;
+      trigger.setAttribute("aria-expanded", "false");
+    };
+    const togglePinned = () => {
+      pinned = !pinned;
+      tip.hidden = !pinned;
+      trigger.setAttribute("aria-expanded", String(pinned));
+    };
+    trigger.setAttribute("aria-expanded", "false");
+    trigger.addEventListener("mouseenter", () => {
+      if (!pinned) show();
+    });
+    trigger.addEventListener("mouseleave", hide);
+    trigger.addEventListener("focus", () => {
+      if (!pinned) show();
+    });
+    trigger.addEventListener("blur", hide);
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      togglePinned();
+    });
+  }
+}
+
+function showOnboardingIfNeeded(): void {
+  if (!progressStorage || isTutorialDismissed(progressStorage)) {
+    onboarding.hidden = true;
+    return;
+  }
+  onboarding.hidden = false;
+}
+
+function dismissOnboarding(): void {
+  onboarding.hidden = true;
+  dismissTutorial(progressStorage);
 }
 
 function renderAudioState(state: AudioEngineState): void {
@@ -310,6 +469,7 @@ function renderSessionHud(): void {
   sessionCourt.textContent = court
     ? `${court.positionId} / ${court.scaleName} / local-only`
     : "Awaiting local session";
+  updateShareButtons();
 }
 
 function setMoveStatus(message: string, state: "ready" | "notice" | "error" | "unavailable"): void {
@@ -332,6 +492,12 @@ function updateCompletedObjectives(): void {
   );
   if (newlyCompleted.length > 0) {
     session = markSessionObjectivesCompleted(session, newlyCompleted, localObjectiveIds);
+    const completedTitles = progress
+      .filter((item) => newlyCompleted.includes(item.id))
+      .map((item) => item.title)
+      .join(", ");
+    objectiveAnnounce.textContent = `Objective completed: ${completedTitles}.`;
+    announceSession(`Objective completed: ${completedTitles}`);
   }
 }
 
@@ -372,13 +538,18 @@ function renderObjectives(): void {
       item.className = "objective-card";
       item.dataset.objective = objective.id;
       item.dataset.state = objective.status;
+      item.dataset.category = objective.category;
+      const badge = document.createElement("span");
+      badge.className = "objective-badge";
+      badge.textContent = objective.categoryLabel;
       const title = document.createElement("strong");
       title.textContent = objective.title;
       const detail = document.createElement("p");
       detail.textContent = objective.detail;
       const progress = document.createElement("span");
+      progress.className = "objective-progress";
       progress.textContent = objective.status === "completed" ? `Complete / ${objective.progress}` : objective.progress;
-      item.append(title, detail, progress);
+      item.append(badge, title, detail, progress);
       return item;
     }),
   );
@@ -566,14 +737,8 @@ function renderCourtSurface(): void {
 }
 
 function updateAnchorUrl(anchorId: number | null): void {
-  const url = new URL(window.location.href);
-  url.searchParams.delete("court");
-  if (anchorId === null) {
-    url.searchParams.delete("anchor");
-  } else {
-    url.searchParams.set("anchor", String(anchorId));
-  }
-  window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+  const next = buildAnchorShareUrl(anchorId, window.location.href);
+  window.history.replaceState(null, "", next);
 }
 
 function clearCourtUrlState(): void {
@@ -832,6 +997,7 @@ async function start(): Promise<void> {
   clearCourtUrlState();
 
   renderAnchorIndex(nodes);
+  setupHelpTooltips();
 
   sceneCount.textContent = `${nodes.length} / ${response.nodeCount} anchors`;
   indexCount.textContent = String(nodes.length).padStart(2, "0");
@@ -842,6 +1008,7 @@ async function start(): Promise<void> {
   renderSessionHud();
   renderMoveConsole();
   renderCourtSurface();
+  showOnboardingIfNeeded();
 
   if (supportsWebGl()) {
     try {
@@ -924,6 +1091,25 @@ clearLinkSelectionButton.addEventListener("click", () => {
 });
 
 reloadProjectionButton.addEventListener("click", () => window.location.reload());
+copyAnchorLinkButton.addEventListener("click", () => void copyAnchorLink());
+shareAnchorLinkButton.addEventListener("click", () => void shareAnchorLink());
+resetOrreryButton.addEventListener("click", resetLocalOrrery);
+onboardingDismissButton.addEventListener("click", dismissOnboarding);
+onboardingStartLydianButton.addEventListener("click", () => {
+  dismissOnboarding();
+  const lydian = nodesById.get(2773);
+  if (lydian) {
+    selectAnchor(lydian, "user");
+    lydianEntryButton()?.focus();
+  } else {
+    anchorList.querySelector<HTMLButtonElement>(".anchor-button")?.focus();
+  }
+  announceSession("Started at Lydian. Enable sound, change Court, then start a local route.");
+});
+
+function lydianEntryButton(): HTMLButtonElement | null {
+  return anchorButtons.get(2773) ?? null;
+}
 
 startRouteButton.addEventListener("click", startRouteAtInspectedAnchor);
 resumeRouteButton.addEventListener("click", resumeRouteInspection);

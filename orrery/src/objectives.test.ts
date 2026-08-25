@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { selectSessionAnchor, selectSessionCourtPosition, startSessionRoute, createSession, applySessionLegalMove, selectSessionLegalMove, type OrrerySourceIdentity } from "./session";
 import { LEGAL_MOVE_CATALOG, createLegalMoveCatalogIndex } from "./moves";
-import { scoreObjectives } from "./objectives";
+import { OBJECTIVE_CATEGORIES, OBJECTIVE_CATEGORY_LABELS, scoreObjectives } from "./objectives";
 import type { NodesResponse, OrreryNode } from "./types";
 
 function nodesResponse(): NodesResponse {
@@ -150,5 +150,23 @@ describe("Harmonic Orrery local objectives", () => {
       boundedCourtSession = selectSessionCourtPosition(boundedCourtSession, position);
     }
     expect(objectiveState(boundedCourtSession, "court-c0-c4")).toBe("completed");
+  });
+
+  it("assigns discovery/strategy/learning categories to each objective", () => {
+    const session = createSession(source);
+    const progress = scoreObjectives(session, catalog, nodesById);
+    expect(progress.find((o) => o.id === "modal-orbit")?.category).toBe("strategy");
+    expect(progress.find((o) => o.id === "all-offices")?.category).toBe("discovery");
+    expect(progress.find((o) => o.id === "lydian-to-aeolian")?.category).toBe("strategy");
+    expect(progress.find((o) => o.id === "court-c0-c4")?.category).toBe("learning");
+    expect(OBJECTIVE_CATEGORIES["modal-orbit"]).toBe("strategy");
+    expect(OBJECTIVE_CATEGORIES["all-offices"]).toBe("discovery");
+    expect(OBJECTIVE_CATEGORIES["court-c0-c4"]).toBe("learning");
+    expect(OBJECTIVE_CATEGORY_LABELS["discovery"]).toBe("Discovery");
+    expect(OBJECTIVE_CATEGORY_LABELS["strategy"]).toBe("Strategy");
+    expect(OBJECTIVE_CATEGORY_LABELS["learning"]).toBe("Learning");
+    for (const item of progress) {
+      expect(item.categoryLabel).toBe(OBJECTIVE_CATEGORY_LABELS[item.category]);
+    }
   });
 });

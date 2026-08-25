@@ -262,8 +262,19 @@ export function createOrreryScene({
   controls.enablePan = false;
   controls.minDistance = 10;
   controls.maxDistance = 31;
-  controls.enableDamping = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  controls.enableDamping = !reducedMotionQuery.matches;
   controls.dampingFactor = 0.08;
+  const handleReducedMotionChange = (event: MediaQueryListEvent | MediaQueryList) => {
+    controls.enableDamping = !event.matches;
+  };
+  if (typeof reducedMotionQuery.addEventListener === "function") {
+    reducedMotionQuery.addEventListener("change", handleReducedMotionChange as (e: Event) => void);
+  } else if (typeof (reducedMotionQuery as unknown as { addListener?: (cb: (e: MediaQueryListEvent) => void) => void }).addListener === "function") {
+    (reducedMotionQuery as unknown as { addListener: (cb: (e: MediaQueryListEvent) => void) => void }).addListener(
+      handleReducedMotionChange as (e: MediaQueryListEvent) => void,
+    );
+  }
   const initialCameraPosition = camera.position.clone();
   const initialControlsTarget = controls.target.clone();
 
@@ -486,6 +497,16 @@ export function createOrreryScene({
       canvas.removeEventListener("pointermove", onPointerMove);
       canvas.removeEventListener("pointerup", onPointerUp);
       controls.removeEventListener("change", updateLabels);
+      if (typeof reducedMotionQuery.removeEventListener === "function") {
+        reducedMotionQuery.removeEventListener("change", handleReducedMotionChange as (e: Event) => void);
+      } else if (
+        typeof (reducedMotionQuery as unknown as { removeListener?: (cb: (e: MediaQueryListEvent) => void) => void }).removeListener ===
+        "function"
+      ) {
+        (reducedMotionQuery as unknown as { removeListener: (cb: (e: MediaQueryListEvent) => void) => void }).removeListener(
+          handleReducedMotionChange as (e: MediaQueryListEvent) => void,
+        );
+      }
       controls.dispose();
       sceneMeshes.forEach(({ label }) => label.remove());
       disposeObject(scene);

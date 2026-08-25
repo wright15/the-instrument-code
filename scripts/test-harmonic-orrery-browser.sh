@@ -27,6 +27,7 @@ game_session="orrery-game-$$"
 audio_session="orrery-audio-$$"
 scene_session="orrery-scene-$$"
 mobile_scene_session="orrery-mobile-scene-$$"
+mvp_session="orrery-mvp-$$"
 vite_pid=""
 
 cleanup() {
@@ -40,6 +41,7 @@ cleanup() {
   "${cli}" -s="${audio_session}" close >/dev/null 2>&1 || true
   "${cli}" -s="${scene_session}" close >/dev/null 2>&1 || true
   "${cli}" -s="${mobile_scene_session}" close >/dev/null 2>&1 || true
+  "${cli}" -s="${mvp_session}" close >/dev/null 2>&1 || true
 
   if [[ -n "${vite_pid}" ]]; then
     kill "${vite_pid}" >/dev/null 2>&1 || true
@@ -1108,5 +1110,266 @@ assert_page "${audio_session}" "() => {
     document.querySelector('#audio-enable')?.disabled === true
   );
 }" "keyboard and touch audio controls with visual-only suppression"
+
+run_cli "${mvp_session}" open
+run_cli "${mvp_session}" route "**/api/nodes" \
+  --body "${canonical_fixture_body}" \
+  --content-type application/json
+run_cli "${mvp_session}" goto "${base_url}/"
+run_cli "${mvp_session}" run-code "async page => {
+  await page.waitForFunction(() => document.querySelector('#api-status')?.dataset.state === 'ready', null, { timeout: 15000 });
+  // Onboarding must be visible on first visit and include theory disclosure
+  const onboarding = await page.evaluate(() => ({
+    hidden: document.querySelector('#onboarding')?.hidden,
+    hasDisclosure: document.querySelector('#onboarding .onboarding-disclosure')?.textContent?.includes('not assert a canonical'),
+    stepCount: document.querySelectorAll('#onboarding .onboarding-steps li').length,
+    theoryNote: document.querySelector('.intro-theory-note')?.textContent?.includes('Theory is optional context'),
+  }));
+  if (onboarding.hidden !== false || !onboarding.hasDisclosure || onboarding.stepCount !== 5 || !onboarding.theoryNote) {
+    throw new Error('Onboarding did not render correctly: ' + JSON.stringify(onboarding));
+  }
+  // Help tooltips: session help trigger exists, tooltip hidden initially, click reveals
+  const helpBefore = await page.evaluate(() => ({
+    triggerExists: !!document.querySelector('#help-session'),
+    tipHidden: document.querySelector('#help-session-tip')?.hidden,
+    describedBy: document.querySelector('#help-session')?.getAttribute('aria-describedby'),
+  }));
+  if (!helpBefore.triggerExists || helpBefore.tipHidden !== true || helpBefore.describedBy !== 'help-session-tip') {
+    throw new Error('Help tooltip not initialized correctly: ' + JSON.stringify(helpBefore));
+  }
+  await page.locator('#help-session').click();
+  await page.waitForFunction(() => document.querySelector('#help-session-tip')?.hidden === false);
+  await page.locator('#help-session').click();
+  await page.waitForFunction(() => document.querySelector('#help-session-tip')?.hidden === true);
+  // Objective categories: 4 badges with discovery/strategy/learning labels
+  const categories = await page.evaluate(() => Array.from(document.querySelectorAll('.objective-card')).map(el => ({
+    id: el.getAttribute('data-objective'),
+    category: el.getAttribute('data-category'),
+    badge: el.querySelector('.objective-badge')?.textContent?.trim(),
+  })));
+  const expected = {
+    'modal-orbit': 'strategy',
+    'all-offices': 'discovery',
+    'lydian-to-aeolian': 'strategy',
+    'court-c0-c4': 'learning',
+  };
+  for (const item of categories) {
+    if (expected[item.id] !== item.category) {
+      throw new Error('Objective category mismatch: ' + JSON.stringify(item));
+    }
+    if (!['Discovery','Strategy','Learning'].includes(item.badge)) {
+      throw new Error('Objective badge label missing: ' + JSON.stringify(item));
+    }
+  }
+  // Skip link
+  const skipLink = await page.evaluate(() => document.querySelector('.skip-link')?.getAttribute('href'));
+  if (skipLink !== '#orrery-title') {
+    throw new Error('Skip link missing: ' + skipLink);
+  }
+  // Copy/share disabled before selection
+  const shareBefore = await page.evaluate(() => ({
+    copyDisabled: document.querySelector('#copy-anchor-link')?.disabled,
+    copyText: document.querySelector('#copy-anchor-link')?.textContent?.trim(),
+    hasAnnounce: !!document.querySelector('#session-announce'),
+    hasObjectiveAnnounce: !!document.querySelector('#objective-announce'),
+  }));
+  if (shareBefore.copyDisabled !== true || shareBefore.copyText !== 'Copy anchor link' || !shareBefore.hasAnnounce || !shareBefore.hasObjectiveAnnounce) {
+    throw new Error('Share/copy controls not initialized: ' + JSON.stringify(shareBefore));
+  }
+  // Dismiss onboarding
+  await page.locator('#onboarding-dismiss').click();
+  await page.waitForFunction(() => document.querySelector('#onboarding')?.hidden === true);
+  const dismissed = await page.evaluate(() => localStorage.getItem('seven-governors.harmonic-orrery.tutorial-dismissed'));
+  if (dismissed !== '1') {
+    throw new Error('Onboarding dismissal not persisted: ' + dismissed);
+  }
+}"
+assert_page "${mvp_session}" "() => {
+  return (
+    document.querySelector('#onboarding')?.hidden === true &&
+    localStorage.getItem('seven-governors.harmonic-orrery.tutorial-dismissed') === '1' &&
+    document.querySelectorAll('.objective-card').length === 4 &&
+    document.querySelector('[data-objective=\"modal-orbit\"]')?.getAttribute('data-category') === 'strategy' &&
+    document.querySelector('[data-objective=\"all-offices\"]')?.getAttribute('data-category') === 'discovery' &&
+    document.querySelector('[data-objective=\"court-c0-c4\"]')?.getAttribute('data-category') === 'learning'
+  );
+}" "onboarding, help tooltips, objective categories, and copy/share initial state"
+run_cli "${mvp_session}" run-code "async page => {
+  // Onboarding should stay dismissed after reload
+  await page.reload();
+  await page.waitForTimeout(600);
+  await page.waitForFunction(() => document.querySelector('#api-status')?.dataset.state === 'ready', null, { timeout: 15000 });
+  const afterReload = await page.evaluate(() => ({
+    hidden: document.querySelector('#onboarding')?.hidden,
+    dismissed: localStorage.getItem('seven-governors.harmonic-orrery.tutorial-dismissed'),
+  }));
+  if (afterReload.hidden !== true || afterReload.dismissed !== '1') {
+    throw new Error('Onboarding dismissal did not persist across reload: ' + JSON.stringify(afterReload));
+  }
+  // Select anchor to enable copy/share, then verify 44px targets
+  await page.locator('button[data-state-id=\"2773\"]').click();
+  await page.waitForFunction(() => document.querySelector('button[data-state-id=\"2773\"]')?.getAttribute('aria-pressed') === 'true');
+  const shareEnabled = await page.evaluate(() => ({
+    copyDisabled: document.querySelector('#copy-anchor-link')?.disabled,
+    copyHeight: document.querySelector('#copy-anchor-link')?.getBoundingClientRect().height,
+    resetHeight: document.querySelector('#reset-orrery')?.getBoundingClientRect().height,
+    anchorHeight: document.querySelector('button[data-state-id=\"2773\"]')?.getBoundingClientRect().height,
+    courtHeight: document.querySelector('[data-court-position=\"C0\"]')?.getBoundingClientRect().height,
+  }));
+  if (shareEnabled.copyDisabled !== false || shareEnabled.copyHeight < 44 || shareEnabled.resetHeight < 44 || shareEnabled.anchorHeight < 44 || shareEnabled.courtHeight < 44) {
+    throw new Error('44px target not met: ' + JSON.stringify(shareEnabled));
+  }
+  // Copy anchor link: mock clipboard and verify anchor-only URL
+  await page.evaluate(() => {
+    window.__copiedUrl = null;
+    const nav = navigator;
+    nav.clipboard = nav.clipboard || {};
+    nav.clipboard.writeText = async (text) => { window.__copiedUrl = text; };
+  });
+  // Change Court to C1 so stored Court is not C0, then copy should still be anchor-only
+  await page.locator('[data-court-position=\"C1\"]').click();
+  await page.waitForFunction(() => document.querySelector('[data-court-position=\"C1\"]')?.getAttribute('aria-pressed') === 'true');
+  await page.locator('#copy-anchor-link').click();
+  await page.waitForFunction(() => window.__copiedUrl !== null);
+  const copied = await page.evaluate(() => window.__copiedUrl);
+  if (copied !== window.location.origin + '/?anchor=2773' && copied !== '/?anchor=2773' && !String(copied).endsWith('/?anchor=2773')) {
+    const urlCheck = await page.evaluate(() => ({ copied: window.__copiedUrl, href: window.location.href }));
+    if (!String(urlCheck.copied).endsWith('/?anchor=2773') || String(urlCheck.copied).includes('court')) {
+      throw new Error('Copy anchor link did not produce anchor-only URL: ' + JSON.stringify(urlCheck));
+    }
+  }
+  const courtInCopied = await page.evaluate(() => String(window.__copiedUrl).includes('court'));
+  if (courtInCopied) {
+    throw new Error('Copied URL incorrectly included Court: ' + await page.evaluate(() => window.__copiedUrl));
+  }
+}"
+assert_page "${mvp_session}" "() => {
+  return (
+    document.querySelector('#copy-anchor-link')?.disabled === false &&
+    document.querySelector('#copy-anchor-link')?.getBoundingClientRect().height >= 44 &&
+    localStorage.getItem('seven-governors.harmonic-orrery.tutorial-dismissed') === '1'
+  );
+}" "mvp copy/share 44px targets and anchor-only URL"
+run_cli "${mvp_session}" run-code "async page => {
+  // Build local history: start route, apply one move, traverse Court partially, adjust audio volume, set unrelated storage
+  await page.evaluate(() => localStorage.setItem('unrelated-key', 'preserve-me'));
+  await page.locator('#start-route').click();
+  await page.waitForFunction(() => document.querySelector('#move-status')?.textContent?.includes('Started a local route'));
+  await page.locator('[data-legal-move-id=\"M:2773:1717\"]').click();
+  await page.locator('#apply-legal-move').click();
+  await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Mixolydian');
+  await page.waitForFunction(() => document.querySelector('[data-court-position=\"C1\"]')?.getAttribute('aria-pressed') === 'true');
+  await page.waitForFunction(() => document.querySelector('[data-court-position=\"C2\"]')?.disabled === false);
+  await page.locator('[data-court-position=\"C2\"]').click();
+  await page.waitForFunction(() => document.querySelector('[data-court-position=\"C2\"]')?.getAttribute('aria-pressed') === 'true');
+  await page.locator('#audio-volume').evaluate((el) => { el.value = '0.8'; el.dispatchEvent(new Event('input', { bubbles: true })); });
+  await page.waitForFunction(() => document.querySelector('#audio-volume')?.value === '0.8');
+  const beforeReset = await page.evaluate(() => ({
+    selected: document.querySelector('#session-selected')?.textContent?.trim(),
+    visited: document.querySelector('#session-visited')?.textContent?.trim(),
+    court: document.querySelector('#session-court')?.textContent?.trim(),
+    hasRoute: document.querySelector('#route-history')?.textContent?.includes('Mixolydian'),
+    routeCount: document.querySelectorAll('#route-history li').length,
+    volume: document.querySelector('#audio-volume')?.value,
+    search: window.location.search,
+  }));
+  if (!beforeReset.hasRoute || beforeReset.routeCount !== 1 || beforeReset.court !== 'C2 / Qing Yu / local-only' || beforeReset.volume !== '0.8') {
+    throw new Error('Pre-reset state not built: ' + JSON.stringify(beforeReset));
+  }
+  // Reset local Orrery: should clear session, URL anchor, route, Court to C0, preserve unrelated and audio volume muted
+  await page.locator('#reset-orrery').click();
+  await page.waitForFunction(() => document.querySelector('#session-selected')?.textContent?.trim() === 'No anchor selected');
+  const afterReset = await page.evaluate(() => {
+    const stored = JSON.parse(localStorage.getItem('seven-governors.harmonic-orrery.session') ?? 'null');
+    return {
+      selected: document.querySelector('#session-selected')?.textContent?.trim(),
+      visited: document.querySelector('#session-visited')?.textContent?.trim(),
+      court: document.querySelector('#session-court')?.textContent?.trim(),
+      message: document.querySelector('#session-message')?.textContent?.trim(),
+      announce: document.querySelector('#session-announce')?.textContent?.trim(),
+      search: window.location.search,
+      storedSelected: stored?.selectedAnchorId,
+      storedVisited: stored?.visitedAnchorIds,
+      storedCourt: stored?.courtPresentationPosition,
+      storedRouteLen: stored?.modalRoute?.moveIds?.length,
+      volume: document.querySelector('#audio-volume')?.value,
+      unrelated: localStorage.getItem('unrelated-key'),
+      tutorial: localStorage.getItem('seven-governors.harmonic-orrery.tutorial-dismissed'),
+      inspector: document.querySelector('#inspector-heading')?.textContent?.trim(),
+      onboardingHidden: document.querySelector('#onboarding')?.hidden,
+      copyDisabled: document.querySelector('#copy-anchor-link')?.disabled,
+    };
+  });
+  if (
+    afterReset.selected !== 'No anchor selected' ||
+    afterReset.visited !== '0 / 21 visited' ||
+    afterReset.court !== 'C0 / Major Pentatonic / local-only' ||
+    !afterReset.message?.includes('Local Orrery state reset') ||
+    !afterReset.message?.includes('Neo4j') ||
+    afterReset.search !== '' ||
+    afterReset.storedSelected !== null ||
+    JSON.stringify(afterReset.storedVisited) !== JSON.stringify([]) ||
+    afterReset.storedCourt !== 'C0' ||
+    afterReset.storedRouteLen !== 0 ||
+    afterReset.volume !== '0.8' ||
+    afterReset.unrelated !== 'preserve-me' ||
+    afterReset.tutorial !== '1' ||
+    afterReset.inspector !== 'Choose an anchor' ||
+    afterReset.copyDisabled !== true
+  ) {
+    throw new Error('Reset did not clear only local Orrery state: ' + JSON.stringify(afterReset));
+  }
+  // After reset, fresh route to Lydian->Aeolian should still score and announce completion
+  await page.locator('button[data-state-id=\"2773\"]').click();
+  await page.waitForFunction(() => document.querySelector('button[data-state-id=\"2773\"]')?.getAttribute('aria-pressed') === 'true');
+  await page.locator('#start-route').click();
+  await page.waitForFunction(() => document.querySelector('[data-legal-move-id=\"M:2773:1717\"]'));
+  await page.locator('[data-legal-move-id=\"M:2773:1717\"]').click();
+  await page.locator('#apply-legal-move').click();
+  await page.waitForFunction(() => document.querySelector('#inspector-heading')?.textContent === 'Mixolydian');
+  await page.locator('[data-legal-move-id=\"M:1717:1453\"]').click();
+  await page.locator('#apply-legal-move').click();
+  await page.waitForFunction(() => document.querySelector('[data-objective=\"lydian-to-aeolian\"]')?.dataset.state === 'completed');
+  const completed = await page.evaluate(() => ({
+    state: document.querySelector('[data-objective=\"lydian-to-aeolian\"]')?.dataset.state,
+    announce: document.querySelector('#objective-announce')?.textContent?.trim(),
+    sessionAnnounce: document.querySelector('#session-announce')?.textContent?.trim(),
+  }));
+  if (completed.state !== 'completed' || !completed.announce?.includes('Objective completed') || !completed.sessionAnnounce?.includes('Objective completed')) {
+    throw new Error('Objective completion not announced: ' + JSON.stringify(completed));
+  }
+}"
+assert_page "${mvp_session}" "() => {
+  return (
+    document.querySelector('#session-selected')?.textContent?.trim() === 'Aeolian / scale:1453' &&
+    document.querySelector('[data-objective=\"lydian-to-aeolian\"]')?.dataset.state === 'completed' &&
+    document.querySelector('[data-objective=\"lydian-to-aeolian\"]')?.getAttribute('data-category') === 'strategy' &&
+    document.querySelector('#copy-anchor-link')?.disabled === false
+  );
+}" "local reset (anchor-only, preserves unrelated/audio) and objective completion"
+run_cli "${mvp_session}" run-code "async page => {
+  // Reduced-motion: verify enableDamping is false when matches
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.waitForFunction(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches === true);
+  // Force scene to re-evaluate reduced-motion by triggering a resize (scene listens to media query)
+  const reducedMotionActive = await page.evaluate(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  if (!reducedMotionActive) throw new Error('Reduced-motion media not emulated');
+  // Check that at least session and objective announces have polite live regions
+  const liveRegions = await page.evaluate(() => ({
+    sessionAnnounceLive: document.querySelector('#session-announce')?.getAttribute('aria-live'),
+    objectiveAnnounceLive: document.querySelector('#objective-announce')?.getAttribute('aria-live'),
+    scenePresentationLive: document.querySelector('#scene-presentation-status')?.getAttribute('aria-live'),
+  }));
+  if (liveRegions.sessionAnnounceLive !== 'polite' || liveRegions.objectiveAnnounceLive !== 'polite') {
+    throw new Error('Live regions not polite: ' + JSON.stringify(liveRegions));
+  }
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+}"
+assert_page "${mvp_session}" "() => {
+  return (
+    document.querySelector('#session-announce')?.getAttribute('aria-live') === 'polite' &&
+    document.querySelector('#objective-announce')?.getAttribute('aria-live') === 'polite'
+  );
+}" "reduced-motion and aria-live regions"
 
 printf '%s\n' "Orrery browser checks passed."

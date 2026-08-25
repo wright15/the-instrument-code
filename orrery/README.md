@@ -18,9 +18,19 @@ npm install --prefix orrery
 npm run orrery:dev
 ```
 
-Vite proxies `/api/nodes` to `http://127.0.0.1:8000/nodes`. Set
+Vite proxies `/api/nodes` to `http://127.0.0.1:8000/nodes` (`orrery/vite.config.ts`). Set
 `VITE_ORRERY_API_BASE` for a deployed same-origin route or a separately hosted
 read-only API.
+
+API availability: the frontend checks `GET /nodes` (`harmonic-orrery.nodes.v2`, 21 A0-A2 anchors) with
+visible states for `Projection unavailable` (503) vs `Projection update required` (schema/release
+mismatch) vs invalid `?anchor` vs stale local session. See `RELEASE_CHECKLIST.md` for the pinned
+compatibility matrix and rollback path.
+
+Known non-goals: no canonical topology/Court policy mutation, no global `C_H` calculation, no
+`C_P`/`C_S`/`kappa_court` equivalence, no thermodynamic/teleological numeric evaluation, no direct
+frontend Cypher/Neo4j writes, no accounts/multiplayer/server game state, and no generated assets
+presented as canonical facts.
 
 ## Checks
 
@@ -38,9 +48,10 @@ npm run orrery:api:test
 It covers unavailable and incompatible projection responses, shared URLs, local
 progress recovery, WebGL fallback, keyboard navigation, a source-faithful modal
 route/objective flow, authored scene disclosure, Court/quality scene updates,
-desktop and mobile frame-time samples, and mocked Web Audio controls with
-keyboard and touch-emulated interactions, without FastAPI credentials or a live
-Neo4j instance.
+desktop and mobile frame-time samples, mocked Web Audio controls with
+keyboard and touch-emulated interactions, plus first-session onboarding, local
+reset/share (anchor-only), reduced-motion, and mobile viewport checks, without
+FastAPI credentials or a live Neo4j instance.
 
 `orrery:catalog:check` verifies the bundled legal-move artifact against its
 audited source inputs and validates its strict schema.
@@ -106,14 +117,21 @@ reload can implicitly resume sound.
 The Orrery automatically saves non-secret local exploration state under
 `seven-governors.harmonic-orrery.session`. The v3 document contains the
 selected and visited anchor IDs, local C0-C4 presentation history, a bounded
-modal-route history, selected catalog move, completed local objectives, and the
-projection/catalog identities needed to validate it. The known compatible
-pre-v2 source remains a controlled exception: every migration must match the
-current projection identity, and a v3 document must also carry the published
-pre-v2 catalog fingerprint. Migration never invents route history.
+modal-route history, selected catalog move, completed local objectives (with
+Discovery/Strategy/Learning categories), and the projection/catalog identities
+needed to validate it. The known compatible pre-v2 source remains a controlled
+exception: every migration must match the current projection identity, and a v3
+document must also carry the published pre-v2 catalog fingerprint. Migration
+never invents route history. First-session onboarding dismissal is tracked
+separately under `seven-governors.harmonic-orrery.tutorial-dismissed` via
+`sessionStorage` semantics (localStorage key).
 
 Use `?anchor=<state-id>` to share one selected anchor. Visited history and the
-local Court position are intentionally not included in URLs. Invalid links
+local Court position are intentionally not included in URLs. `Copy anchor link`
+and `Share anchor` produce an anchor-only URL (Web Share API when available,
+otherwise clipboard `writeText` with `prompt` fallback). `Reset local Orrery`
+clears only that local key and recreates a fresh session — it never touches
+Neo4j, canonical data, or audio `volume`/`muted` runtime controls. Invalid links
 select nothing and offer a clear-link action rather than falling back to an
 arbitrary anchor.
 
@@ -141,11 +159,13 @@ longer matches the inspected anchor fails visibly without inventing a target.
 
 Selecting an anchor remains free inspection. A player must explicitly start a
 local route, select an offered `M` move, and apply it before the route history
-or objectives change. The local objectives are a seven-step modal orbit, one
-anchor in every office, Lydian-to-Aeolian in two modal steps, and C0-C4 Court
-traversal. Route history is client-side experience data only: it never changes
-canonical anchor identity, office, profile, Court runtime, Neo4j, or Mercury's
-authoritative ledger.
+or objectives change. The local objectives are a seven-step modal orbit
+(Strategy), one anchor in every office (Discovery), Lydian-to-Aeolian in two
+modal steps (Strategy), and C0-C4 Court traversal (Learning) — each with an
+explicit category badge. Objective completion is announced via `aria-live` and
+persists in local history. Route history is client-side experience data only: it
+never changes canonical anchor identity, office, profile, Court runtime, Neo4j,
+or Mercury's authoritative ledger.
 
 The app intentionally presents scoped `W_A012` only. It does not display or
 calculate unresolved global `harmonic.C_H`, Court runtime state, or an

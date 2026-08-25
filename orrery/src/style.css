@@ -29,10 +29,40 @@ a {
   font: inherit;
 }
 
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 20;
+  padding: 8px 12px;
+  border: 1px solid #8fb7f6;
+  background: #0b121f;
+  color: #dbe7fa;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 button:focus-visible,
 a:focus-visible {
   outline: 2px solid #b8d7ff;
   outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .app-shell {
@@ -160,6 +190,79 @@ a:focus-visible {
   line-height: 1.7;
 }
 
+.intro-theory-note {
+  max-width: 660px;
+  margin: 12px 0 0;
+  color: #8a99af;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.68rem;
+  line-height: 1.6;
+}
+
+.onboarding {
+  margin: 0 0 18px;
+  padding: 16px;
+  border: 1px solid rgb(101 219 167 / 42%);
+  background: linear-gradient(135deg, rgb(31 89 72 / 22%), rgb(10 19 34 / 78%));
+}
+
+.onboarding[hidden] {
+  display: none;
+}
+
+.onboarding-card {
+  display: grid;
+  gap: 10px;
+}
+
+.onboarding-card h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.onboarding-card > p {
+  margin: 0;
+  color: #b6c7df;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.onboarding-steps {
+  margin: 0;
+  padding-left: 18px;
+  color: #dbe7fa;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.68rem;
+  line-height: 1.7;
+}
+
+.onboarding-disclosure {
+  color: #8a99af !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.66rem;
+}
+
+.onboarding-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.onboarding-actions button {
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid rgb(151 180 222 / 38%);
+  background: #0b121f;
+  color: #dbe7fa;
+  cursor: pointer;
+}
+
+.onboarding-actions button:hover {
+  border-color: #8fb7f6;
+}
+
 .session-hud {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -217,11 +320,14 @@ a:focus-visible {
 
 .session-actions {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   grid-column: 1 / -1;
   gap: 8px;
 }
 
 .session-actions button {
+  min-height: 44px;
   padding: 8px 11px;
   border: 1px solid rgb(151 180 222 / 38%);
   color: #dbe7fa;
@@ -229,8 +335,27 @@ a:focus-visible {
   cursor: pointer;
 }
 
-.session-actions button:hover {
+.session-actions button:hover:not(:disabled) {
   border-color: #8fb7f6;
+}
+
+.session-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.session-announce {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 0 14px 10px;
+  color: #83dfb6;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.66rem;
+  line-height: 1.5;
+}
+
+.session-announce:empty {
+  display: none;
 }
 
 .move-console {
@@ -255,6 +380,52 @@ a:focus-visible {
   color: #b6c7df;
   font-size: 0.85rem;
   line-height: 1.55;
+}
+
+.help-trigger-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.help-trigger {
+  width: 28px;
+  height: 28px;
+  min-height: 28px;
+  padding: 0;
+  border: 1px solid rgb(151 180 222 / 38%);
+  border-radius: 50%;
+  background: #0b121f;
+  color: #8fb7f6;
+  cursor: pointer;
+  font-size: 0.78rem;
+  line-height: 1;
+}
+
+.help-trigger:hover,
+.help-trigger:focus-visible {
+  border-color: #8fb7f6;
+}
+
+.help-tip {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 5;
+  min-width: 260px;
+  max-width: 360px;
+  padding: 10px 11px;
+  border: 1px solid rgb(151 180 222 / 32%);
+  background: #0b121f;
+  color: #b6c7df;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.66rem;
+  line-height: 1.55;
+  box-shadow: 0 12px 32px rgb(1 3 7 / 42%);
+}
+
+.help-tip[hidden] {
+  display: none;
 }
 
 .move-route-state,
@@ -435,6 +606,22 @@ a:focus-visible {
   grid-column: 1 / -1;
 }
 
+.objective-block-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 9px;
+}
+
+.field-hint {
+  color: #8a99af;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .objective-list {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -450,6 +637,27 @@ a:focus-visible {
   background: #0b121f;
 }
 
+.objective-badge {
+  justify-self: start;
+  padding: 2px 6px;
+  border: 1px solid rgb(151 180 222 / 26%);
+  color: #8fb7f6;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.objective-card[data-category="discovery"] .objective-badge {
+  border-color: rgb(101 219 167 / 42%);
+  color: #83dfb6;
+}
+
+.objective-card[data-category="learning"] .objective-badge {
+  border-color: rgb(243 202 131 / 36%);
+  color: #f3ca83;
+}
+
 .objective-card strong {
   color: #dbe7fa;
   font-size: 0.74rem;
@@ -457,14 +665,14 @@ a:focus-visible {
 }
 
 .objective-card p,
-.objective-card span {
+.objective-card .objective-progress {
   margin: 0;
   color: #8495ad;
   font-size: 0.61rem;
   line-height: 1.48;
 }
 
-.objective-card span {
+.objective-card .objective-progress {
   color: #8fb7f6;
 }
 
@@ -473,7 +681,7 @@ a:focus-visible {
   background: rgb(31 89 72 / 24%);
 }
 
-.objective-card[data-state="completed"] span {
+.objective-card[data-state="completed"] .objective-progress {
   color: #83dfb6;
 }
 
@@ -529,7 +737,7 @@ a:focus-visible {
 .court-position-button {
   display: grid;
   min-width: 0;
-  min-height: 62px;
+  min-height: 44px;
   padding: 8px;
   border: 1px solid rgb(151 180 222 / 28%);
   color: #dbe7fa;
@@ -1166,6 +1374,7 @@ a:focus-visible {
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: baseline;
   min-width: 0;
+  min-height: 44px;
   padding: 7px 6px;
   border: 1px solid transparent;
   border-left-color: color-mix(in srgb, var(--office-color) 58%, transparent);

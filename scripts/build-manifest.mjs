@@ -21,6 +21,10 @@ const excluded = new Set([
   "bestiary/dist",
   ".astro",
   ".vite",
+  ".venv",
+  ".playwright-cli",
+  "orrery/dist",
+  "orrery/.vite",
 ]);
 
 const files = await walkFiles(packageRoot, { excluded });

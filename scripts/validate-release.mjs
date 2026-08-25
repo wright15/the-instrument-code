@@ -73,13 +73,13 @@ const expectedImportOrder = [
 ];
 record(
   "release id",
-  release.releaseId === "seven-governors-integrated-1.6.0" &&
-    release.version === "1.6.0" &&
+  release.releaseId === "seven-governors-integrated-1.7.0" &&
+    release.version === "1.7.0" &&
     release.status === "validated_admitted",
   { releaseId: release.releaseId, version: release.version },
 );
 record(
-  "release 1.6 root extension and retained database baseline",
+  "release 1.7 root extension and retained database baseline",
   payloadHash(release.rootExtensions) === payloadHash([
     {
       storyId: "GOV-210",
@@ -1442,6 +1442,10 @@ for (const absolutePath of await walkFiles(packageRoot, {
     "bestiary/dist",
     ".astro",
     ".vite",
+    ".venv",
+    ".playwright-cli",
+    "orrery/dist",
+    "orrery/.vite",
   ]),
 })) {
   computedRecords.push(await recordFile(absolutePath, packageRoot));
@@ -1461,7 +1465,7 @@ const mismatchedHashes = computedRecords.filter(
 );
 record(
   "manifest completeness",
-    manifest.version === "1.6.0" &&
+    manifest.version === "1.7.0" &&
     missingFromManifest.length === 0 &&
     missingFromDisk.length === 0,
   {

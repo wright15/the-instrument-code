@@ -12,11 +12,27 @@ export const LOCAL_OBJECTIVE_IDS = [
 
 export type LocalObjectiveId = (typeof LOCAL_OBJECTIVE_IDS)[number];
 export type ObjectiveStatus = "ready" | "in-progress" | "completed";
+export type ObjectiveCategory = "discovery" | "strategy" | "learning";
+
+export const OBJECTIVE_CATEGORIES: Record<LocalObjectiveId, ObjectiveCategory> = {
+  "modal-orbit": "strategy",
+  "all-offices": "discovery",
+  "lydian-to-aeolian": "strategy",
+  "court-c0-c4": "learning",
+};
+
+export const OBJECTIVE_CATEGORY_LABELS: Record<ObjectiveCategory, string> = {
+  discovery: "Discovery",
+  strategy: "Strategy",
+  learning: "Learning",
+};
 
 export interface LocalObjectiveProgress {
   id: LocalObjectiveId;
   title: string;
   detail: string;
+  category: ObjectiveCategory;
+  categoryLabel: string;
   status: ObjectiveStatus;
   progress: string;
 }
@@ -99,6 +115,8 @@ export function scoreObjectives(
       id: "modal-orbit",
       title: "Complete a modal orbit",
       detail: "Follow seven declared M transitions and return to the route origin.",
+      category: OBJECTIVE_CATEGORIES["modal-orbit"],
+      categoryLabel: OBJECTIVE_CATEGORY_LABELS[OBJECTIVE_CATEGORIES["modal-orbit"]],
       status: completed(session, "modal-orbit", orbitComplete),
       progress: `${Math.min(moves.length, 7)} / 7 modal steps`,
     },
@@ -106,6 +124,8 @@ export function scoreObjectives(
       id: "all-offices",
       title: "Visit every office",
       detail: "Route through one anchor in each of the seven State Governor offices.",
+      category: OBJECTIVE_CATEGORIES["all-offices"],
+      categoryLabel: OBJECTIVE_CATEGORY_LABELS[OBJECTIVE_CATEGORIES["all-offices"]],
       status: completed(session, "all-offices", offices.size === 7),
       progress: `${offices.size} / 7 offices on this route`,
     },
@@ -113,6 +133,8 @@ export function scoreObjectives(
       id: "lydian-to-aeolian",
       title: "Lydian to Aeolian",
       detail: "Start at Lydian and reach Aeolian using the two declared modal steps.",
+      category: OBJECTIVE_CATEGORIES["lydian-to-aeolian"],
+      categoryLabel: OBJECTIVE_CATEGORY_LABELS[OBJECTIVE_CATEGORIES["lydian-to-aeolian"]],
       status: completed(session, "lydian-to-aeolian", reachesAeolian),
       progress:
         session.modalRoute.startAnchorId === 2773
@@ -123,6 +145,8 @@ export function scoreObjectives(
       id: "court-c0-c4",
       title: "Traverse the Court",
       detail: "Move through C0, C1, C2, C3, and C4 in order. This remains presentation-only.",
+      category: OBJECTIVE_CATEGORIES["court-c0-c4"],
+      categoryLabel: OBJECTIVE_CATEGORY_LABELS[OBJECTIVE_CATEGORIES["court-c0-c4"]],
       status: completed(session, "court-c0-c4", courtComplete),
       progress: `${courtTraversalProgress(session.courtRouteHistory)} / 4 Court steps`,
     },
