@@ -234,6 +234,35 @@ The historical `M` value in `last_navigation_operator` records provenance. The
 `modal_rotation` field in the same packet is still a read-only perspective and
 does not execute `M`.
 
+## Rank-4 Extension (SubsetLattice v2)
+
+Version: `subset_lattice.v2.rank4` — this section extends the contract above and
+does not modify any canonical package, graph projection, or node identity
+surface.
+
+The original contract deferred tetrachords until "a versioned rank-4
+implementation and validation evidence exist". That evidence is now recorded:
+
+1. **Materialization.** The renderer-side lattice (`orrery/src/harmony.ts`)
+   materializes the root-addressed rank-4 family: seven stacked-seventh
+   tetrachords `[d, d+2, d+4, d+6]`, one per fixed Chaldean degree address,
+   derived with the same `+12` extended-interval arithmetic as
+   `court_mathematics.DegreeTriad`. Full-lattice cardinality remains
+   `C(7,2)=21`, `C(7,3)=35`, `C(7,4)=35`; `orrery/src/harmony.test.ts` asserts
+   these counts and that every voiced pitch class stays inside the parent
+   node's immutable 12-bit inventory.
+2. **Quality classification.** Tetrachord labels pair a `qClasses` triad root
+   quality (major/minor/diminished/augmented) with an interval-based seventh
+   suffix (`maj7`, `dominant 7`, `min7`, `min-maj7`, `dim7`,
+   `half-diminished`). Unmatched signatures fall to the existing `other`
+   bucket.
+3. **Render surface only.** As with all intra-node vectors, tetrachord
+   activation is presentation: it MUST NOT change the node's mask, cardinality,
+   Forte family, office, tier, or any graph edge. Amplitude shading follows the
+   existing render-gravity clause (`w1 > w5 > w2 > w6 > w3 > w7 > w4`).
+
+No `harmonic.C_H` value is derived, implied, or written by this extension.
+
 ## Sources
 
 - `docs/A_TIER_TRIADIC_COMPRESSION_THEOREM.md`

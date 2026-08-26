@@ -1047,6 +1047,87 @@ a:focus-visible {
   accent-color: #8fb7f6;
 }
 
+.intra-node-harmony {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgb(133 165 212 / 22%);
+}
+
+.harmony-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 8px;
+}
+
+.harmony-size,
+.harmony-controls button {
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid rgb(151 180 222 / 38%);
+  color: #dbe7fa;
+  background: #0b121f;
+}
+
+.harmony-controls button {
+  cursor: pointer;
+}
+
+.harmony-controls button:hover:not(:disabled) {
+  border-color: #8fb7f6;
+}
+
+.harmony-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.harmony-controls button[aria-pressed="true"] {
+  border-color: #83dfb6;
+  background: linear-gradient(150deg, rgb(66 151 123 / 30%), rgb(11 18 31 / 90%));
+}
+
+.harmony-size {
+  display: grid;
+  min-width: 150px;
+  gap: 5px;
+  color: #b6c7df;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+}
+
+.harmony-size select {
+  min-height: 36px;
+  padding: 6px 10px;
+  color: #dbe7fa;
+  background: #0b121f;
+  border: 1px solid rgb(151 180 222 / 38%);
+  font: inherit;
+  cursor: pointer;
+}
+
+.harmony-readout {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 4px;
+  color: #9bb5d7;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.64rem;
+  line-height: 1.5;
+}
+
+.harmony-note {
+  margin: 0;
+  color: #6d7f97;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.61rem;
+  line-height: 1.55;
+}
+
 .audio-status,
 .audio-disclaimer {
   grid-column: 1 / -1;

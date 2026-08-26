@@ -1,4 +1,12 @@
 import { courtPositionById, filterPitchClasses, type CourtPosition, type CourtPresentation } from "./court";
+import {
+  CHALDEAN_WEIGHT_NUMERATORS,
+  buildNodeChords,
+  generateProgression,
+  isChordSize,
+  nodeProgressionSeed,
+  type ChordSize,
+} from "./harmony";
 import type { Governor, OrreryNode } from "./types";
 
 export const AUDIO_SCHEMA_VERSION = "harmonic-orrery.audio.v1";
@@ -9,6 +17,25 @@ export const AUDIO_VOICE_LIMIT = 8;
 export const AUDIO_CROSSFADE_SECONDS = 0.15;
 export const AUDIO_VOICE_STAGGER_SECONDS = 0.5;
 export const AUDIO_OCTAVE_SEMITONES = 12;
+export const AUDIO_PROGRESSION_STEP_SECONDS = 1.8;
+export const AUDIO_CHORD_ROLL_SECONDS = 0.04;
+
+export interface ProgressionStepView {
+  index: number;
+  rootDegree: number;
+  governor: Governor;
+  weightNumerator: number;
+  weightLabel: string;
+  qualityLabel: string;
+  pitchClasses: number[];
+  voicedPitchClasses: number[];
+}
+
+export interface ProgressionOptions {
+  steps?: number;
+  chordSize?: ChordSize;
+  seed?: number;
+}
 export const AUDIO_VOICING_STORAGE_KEY = "seven-governors.harmonic-orrery.audio-voicing";
 
 export type AudioVoicingMode = "heptatonic" | "court-pentatonic";
@@ -309,6 +336,7 @@ export interface AudioEngineState {
   detail: string;
   failedAssetIds: readonly string[];
   muted: boolean;
+  progression: boolean;
   readiness: AudioReadiness;
   transport: AudioTransport;
   visualOnly: boolean;
@@ -452,11 +480,16 @@ export class OrreryAudioEngine {
     detail: "Sound is off. Enable sound after selecting an anchor.",
     failedAssetIds: [],
     muted: false,
+    progression: false,
     readiness: "idle",
     transport: "stopped",
     visualOnly: false,
     volume: 0.65,
   };
+  private progressionActive = false;
+  private progressionIndex = 0;
+  private progressionPlan: ProgressionStepView[] = [];
+  private progressionTimer: ReturnType<typeof setTimeout> | undefined;
 
   constructor(runtime: AudioRuntime = browserRuntime()) {
     validateAudioManifest();
@@ -474,6 +507,9 @@ export class OrreryAudioEngine {
   }
 
   select(node: OrreryNode, courtPosition: CourtPosition, playSound = true): AudioSelection {
+    // A node change ends any active progression; the UI may restart it for the
+    // newly selected node.
+    this.stopProgression();
     const selection = resolveAudioSelection(node, courtPosition, this.voicingMode);
     this.currentSource = { node, courtPosition };
     this.currentSelection = selection;
@@ -511,7 +547,150 @@ export class OrreryAudioEngine {
     return this.currentSelection;
   }
 
+  /**
+   * Start a seeded Chaldean-weighted chord progression inside the selected
+   * node. Replaces the melodic arpeggio while active. Returns the planned
+   * steps for UI readout, or an empty array when playback is unavailable.
+   */
+  startProgression(options: ProgressionOptions = {}): ProgressionStepView[] {
+    const source = this.currentSource;
+    if (
+      !source ||
+      this.state.transport !== "playing" ||
+      this.state.visualOnly ||
+      !this.context ||
+      !this.masterGain
+    ) {
+      this.replaceState({
+        detail: "Select an anchor and enable & play sound before starting an intra-node progression.",
+      });
+      return [];
+    }
+
+    const steps = options.steps ?? 8;
+    const chordSize = options.chordSize ?? 3;
+    if (!isChordSize(chordSize)) {
+      return [];
+    }
+    const seed = options.seed ?? nodeProgressionSeed(source.node.state.stateId, steps, chordSize);
+
+    this.stopProgression();
+    const chords = buildNodeChords(source.node.state.pitchClasses, chordSize);
+    const sizeLabel = chordSize === 2 ? "dyad" : chordSize === 3 ? "trichord" : "tetrachord";
+    this.progressionPlan = generateProgression(seed, steps).map((rootDegree, index) => {
+      const chord = chords[rootDegree - 1];
+      const governor = source.node.resolution.office;
+      return {
+        index,
+        rootDegree,
+        governor,
+        weightNumerator: chord.weightNumerator,
+        weightLabel: chord.weightLabel,
+        qualityLabel: chord.qualityLabel,
+        pitchClasses: [...chord.pitchClasses],
+        voicedPitchClasses: this.resolveChordVoices(chord.pitchClasses),
+      };
+    });
+    this.progressionActive = true;
+    this.progressionIndex = 0;
+    // Stop the arpeggio path so the two voicing strategies never stack.
+    this.stopSources();
+    this.runProgressionTick();
+    this.replaceState({
+      detail: `Intra-node ${sizeLabel} progression active (${steps} steps). Amplitude follows Chaldean degree gravity.`,
+      progression: true,
+    });
+    return this.progressionPlan.map((step) => ({ ...step }));
+  }
+
+  stopProgression(): void {
+    if (this.progressionTimer !== undefined) {
+      clearTimeout(this.progressionTimer);
+      this.progressionTimer = undefined;
+    }
+    if (!this.progressionActive) {
+      return;
+    }
+    this.progressionActive = false;
+    this.progressionIndex = 0;
+    this.replaceState({
+      detail: "Intra-node progression stopped. Anchor selections resume their melodic arpeggio.",
+      progression: false,
+    });
+  }
+
+  private resolveChordVoices(pitchClasses: readonly number[]): number[] {
+    if (this.voicingMode !== "court-pentatonic" || !this.currentSource) {
+      return [...pitchClasses];
+    }
+    const court = courtPositionById(this.currentSource.courtPosition);
+    const filtered = pitchClasses.filter((pc) => (court.pitchMask & (1 << pc)) !== 0);
+    // The Court projection must remain playable; fall back to the full subset
+    // when the filter would collapse the chord below a dyad.
+    return filtered.length >= 2 ? filtered : [...pitchClasses];
+  }
+
+  private runProgressionTick(): void {
+    const context = this.context;
+    const masterGain = this.masterGain;
+    if (
+      !this.progressionActive ||
+      !context ||
+      !masterGain ||
+      !this.currentSource ||
+      this.state.transport !== "playing" ||
+      this.state.visualOnly
+    ) {
+      this.stopProgression();
+      return;
+    }
+
+    const step = this.progressionPlan[this.progressionIndex % this.progressionPlan.length];
+    this.scheduleChordVoices(step);
+    this.progressionIndex += 1;
+    this.progressionTimer = setTimeout(
+      () => this.runProgressionTick(),
+      AUDIO_PROGRESSION_STEP_SECONDS * 1000,
+    );
+  }
+
+  private scheduleChordVoices(step: ProgressionStepView): void {
+    const context = this.context;
+    const masterGain = this.masterGain;
+    const preset = this.currentSelection?.palette.preset;
+    if (!context || !masterGain || !preset) {
+      return;
+    }
+
+    // Render gravity: heavier Chaldean degrees voice slightly louder.
+    const relativeGravity = step.weightNumerator / CHALDEAN_WEIGHT_NUMERATORS[0];
+    const gainScale = 0.7 + 0.45 * relativeGravity;
+    const start = context.currentTime + 0.03;
+    const voiced = step.voicedPitchClasses;
+
+    // Bass root one octave down opens each chord, then the roll ascends.
+    this.startVoice(
+      context,
+      masterGain,
+      midiToFrequency(pitchClassToMidi(voiced[0], preset.registerOffset) - 12),
+      preset,
+      start,
+      gainScale,
+    );
+    voiced.forEach((pitchClass, index) => {
+      this.startVoice(
+        context,
+        masterGain,
+        midiToFrequency(pitchClassToMidi(pitchClass, preset.registerOffset)),
+        preset,
+        start + (index + 1) * AUDIO_CHORD_ROLL_SECONDS,
+        gainScale,
+      );
+    });
+  }
+
   clearSelection(): void {
+    this.stopProgression();
     this.currentSelection = undefined;
     this.currentSource = undefined;
     this.stopSources();
@@ -585,6 +764,7 @@ export class OrreryAudioEngine {
     if (!this.context || this.state.transport !== "playing") {
       return;
     }
+    this.stopProgression();
     this.stopSources();
     try {
       await this.context.suspend();
@@ -602,6 +782,7 @@ export class OrreryAudioEngine {
 
   setVisualOnly(visualOnly: boolean): void {
     if (visualOnly) {
+      this.stopProgression();
       this.stopSources();
       void this.context?.suspend().catch(() => undefined);
       this.replaceState({
@@ -625,6 +806,7 @@ export class OrreryAudioEngine {
   }
 
   dispose(): void {
+    this.stopProgression();
     this.stopSources();
     this.listeners.clear();
     if (this.context) {
@@ -749,6 +931,7 @@ export class OrreryAudioEngine {
     frequency: number,
     preset: TimbrePreset,
     start: number,
+    gainScale = 1,
   ): void {
     while (this.activeVoices.length >= AUDIO_VOICE_LIMIT) {
       this.activeVoices.shift()?.source.stop(context.currentTime);
@@ -757,11 +940,12 @@ export class OrreryAudioEngine {
     const source = context.createOscillator();
     const envelope = context.createGain();
     const end = start + preset.releaseSeconds;
+    const peakGain = preset.gain * gainScale;
     source.type = preset.waveform;
     source.frequency.setValueAtTime(frequency, start);
     source.detune.setValueAtTime(preset.detuneCents, start);
     envelope.gain.setValueAtTime(0.0001, start);
-    envelope.gain.linearRampToValueAtTime(preset.gain, start + preset.attackSeconds);
+    envelope.gain.linearRampToValueAtTime(peakGain, start + preset.attackSeconds);
     envelope.gain.linearRampToValueAtTime(0.0001, end);
     source.connect(envelope).connect(masterGain);
     source.onended = () => {

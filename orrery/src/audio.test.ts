@@ -5,6 +5,7 @@ import {
   AUDIO_CROSSFADE_SECONDS,
   AUDIO_LOOP_ASSETS,
   AUDIO_PROFILE_REGISTRY_RELEASE_ID,
+  AUDIO_PROGRESSION_STEP_SECONDS,
   AUDIO_ROOT_MIDI_NOTE,
   AUDIO_VOICE_STAGGER_SECONDS,
   AUDIO_VOICING_STORAGE_KEY,
@@ -20,6 +21,7 @@ import {
   type AudioResponseLike,
   type AudioRuntime,
 } from "./audio";
+import { generateProgression } from "./harmony";
 import type { Governor, OrreryNode } from "./types";
 
 class FakeParam {
@@ -452,5 +454,99 @@ describe("Harmonic Orrery audio engine", () => {
 
     storage.values.set(AUDIO_VOICING_STORAGE_KEY, "bogus");
     expect(loadVoicingMode(storage)).toBe("heptatonic");
+  });
+});
+
+describe("Intra-node progression engine", () => {
+  it("refuses to start without a playing selection", async () => {
+    const context = new FakeAudioContext();
+    const fake = audioRuntime(context);
+    const engine = new OrreryAudioEngine(fake.runtime);
+
+    expect(engine.startProgression({ seed: 20260825 })).toEqual([]);
+    expect(engine.snapshot().progression).toBe(false);
+
+    engine.select(node("Sun"), "C0");
+    await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID);
+    // Now available: a real plan is returned.
+    const plan = engine.startProgression({ steps: 4, chordSize: 3, seed: 20260825 });
+    expect(plan.length).toBe(4);
+  });
+
+  it("schedules gravity-shaded chord rolls and stops on demand", async () => {
+    vi.useFakeTimers();
+    try {
+      const context = new FakeAudioContext();
+      const fake = audioRuntime(context);
+      const engine = new OrreryAudioEngine(fake.runtime);
+
+      engine.select(node("Sun"), "C0");
+      await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID);
+      const afterArpeggio = context.oscillators.length; // 8 (scale + octave)
+
+      const plan = engine.startProgression({ steps: 8, chordSize: 3, seed: 20260825 });
+      expect(engine.snapshot().progression).toBe(true);
+      expect(plan).toHaveLength(8);
+      expect(plan[0].rootDegree).toBe(1);
+      expect(plan[7].rootDegree).toBe(1);
+      expect(plan.map((step) => step.rootDegree)).toEqual(generateProgression(20260825, 8));
+
+      // First tick fired synchronously: Lydian d1 trichord {0,4,7} with bass root.
+      const firstBatch = context.oscillators.slice(afterArpeggio);
+      expect(firstBatch).toHaveLength(4);
+      const batchPcs = pitchClassesFromOscillators(context).slice(afterArpeggio);
+      expect(batchPcs).toEqual([0, 0, 4, 7]);
+      // Gravity: Sun preset gain 0.12 x (0.7 + 0.45 x w1/116) = 0.138.
+      const envelopeCount = context.gains.length;
+      const batchEnvelopes = context.gains.slice(envelopeCount - firstBatch.length, envelopeCount);
+      for (const envelope of batchEnvelopes) {
+        expect(envelope.gain.values[1]).toBeCloseTo(0.138, 5);
+      }
+
+      // Second tick after one progression step: next seeded degree's chord.
+      vi.advanceTimersByTime(AUDIO_PROGRESSION_STEP_SECONDS * 1000);
+      const secondBatch = context.oscillators.slice(afterArpeggio + 4);
+      expect(secondBatch).toHaveLength(4);
+
+      engine.stopProgression();
+      expect(engine.snapshot().progression).toBe(false);
+      const countAfterStop = context.oscillators.length;
+      vi.advanceTimersByTime(AUDIO_PROGRESSION_STEP_SECONDS * 4000);
+      expect(context.oscillators).toHaveLength(countAfterStop);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it("stops the progression on pause and on node change", async () => {
+    vi.useFakeTimers();
+    try {
+      const context = new FakeAudioContext();
+      const fake = audioRuntime(context);
+      const engine = new OrreryAudioEngine(fake.runtime);
+
+      engine.select(node("Sun"), "C0");
+      await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID);
+      engine.startProgression({ steps: 8, chordSize: 2, seed: 42 });
+      expect(engine.snapshot().progression).toBe(true);
+
+      await engine.pause();
+      expect(engine.snapshot().progression).toBe(false);
+      const pausedCount = context.oscillators.length;
+      vi.advanceTimersByTime(AUDIO_PROGRESSION_STEP_SECONDS * 5000);
+      expect(context.oscillators).toHaveLength(pausedCount);
+
+      await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID); // resume transport
+      engine.select(node("Moon"), "C0"); // node change must not resurrect it
+      engine.startProgression({ steps: 8, chordSize: 2, seed: 42 });
+      expect(engine.snapshot().progression).toBe(true);
+      engine.select(node("Sun"), "C1");
+      expect(engine.snapshot().progression).toBe(false);
+      const finalCount = context.oscillators.length;
+      vi.advanceTimersByTime(AUDIO_PROGRESSION_STEP_SECONDS * 5000);
+      expect(context.oscillators).toHaveLength(finalCount);
+    } finally {
+      vi.useRealTimers();
+    }
   });
 });

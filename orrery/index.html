@@ -298,9 +298,33 @@
             <span>Visual-only</span>
           </label>
         </div>
-        <p class="audio-status" id="audio-status" role="status" aria-live="polite">
-          Sound is off. Enable sound after selecting an anchor.
-        </p>
+          <p class="audio-status" id="audio-status" role="status" aria-live="polite">
+            Sound is off. Enable sound after selecting an anchor.
+          </p>
+          <div class="intra-node-harmony">
+            <p class="field-label">Intra-node harmony</p>
+            <div class="harmony-controls" aria-label="Intra-node progression controls">
+              <label class="harmony-size" for="harmony-size">
+                <span>Chord size</span>
+                <select id="harmony-size">
+                  <option value="2">Dyads</option>
+                  <option value="3" selected>Trichords</option>
+                  <option value="4">Tetrachords</option>
+                </select>
+              </label>
+              <button id="harmony-toggle" type="button" aria-pressed="false" disabled>
+                Play progression
+              </button>
+              <button id="harmony-reseed" type="button" disabled>Reseed</button>
+            </div>
+            <ol id="harmony-readout" class="harmony-readout">
+              <li>Select an anchor and enable sound to generate a progression.</li>
+            </ol>
+            <p class="harmony-note">
+              Root degrees sample the admitted Chaldean witness w1 &gt; w5 &gt; w2 &gt; w6 &gt; w3 &gt; w7 &gt; w4;
+              chord amplitude follows degree gravity. Presentation only — subsets never alter the node's pitch mask.
+            </p>
+          </div>
         <p class="audio-disclaimer">
           Heptatonic voicing replays each anchor's own seven-note pitch mask; Court pentatonic re-filters the office A0
           set. Timbres and percussion are authored presentation choices, not canonical or physical claims.

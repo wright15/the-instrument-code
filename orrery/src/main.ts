@@ -8,7 +8,9 @@ import {
   saveVoicingMode,
   type AudioEngineState,
   type AudioSelection,
+  type ProgressionStepView,
 } from "./audio";
+import { DEGREE_GOVERNORS, isChordSize, type ChordSize } from "./harmony";
 import {
   COURT_POLE_ORDER,
   COURT_POSITIONS,
@@ -119,6 +121,10 @@ const audioVolume = requiredElement<HTMLInputElement>("#audio-volume");
 const audioVolumeValue = requiredElement<HTMLOutputElement>("#audio-volume-value");
 const audioVoicingSelect = requiredElement<HTMLSelectElement>("#audio-voicing");
 const audioVisualOnly = requiredElement<HTMLInputElement>("#audio-visual-only");
+const harmonySize = requiredElement<HTMLSelectElement>("#harmony-size");
+const harmonyToggle = requiredElement<HTMLButtonElement>("#harmony-toggle");
+const harmonyReseed = requiredElement<HTMLButtonElement>("#harmony-reseed");
+const harmonyReadout = requiredElement<HTMLOListElement>("#harmony-readout");
 const audioPalette = requiredElement<HTMLElement>("#audio-palette");
 const audioStatus = requiredElement<HTMLElement>("#audio-status");
 const courtControls = requiredElement<HTMLElement>("#court-controls");
@@ -142,6 +148,80 @@ const anchorButtons = new Map<number, HTMLButtonElement>();
 const courtButtons = new Map<CourtPosition, HTMLButtonElement>();
 const audioEngine = new OrreryAudioEngine();
 const localObjectiveIds = new Set<string>(LOCAL_OBJECTIVE_IDS);
+
+const HARMONY_SIZE_STORAGE_KEY = "seven-governors.harmonic-orrery.harmony-size";
+let harmonyEnabled = false;
+
+function loadHarmonySize(storage: StorageLike | undefined): ChordSize {
+  if (!storage) {
+    return 3;
+  }
+  try {
+    const value = Number(storage.getItem(HARMONY_SIZE_STORAGE_KEY));
+    return isChordSize(value) ? value : 3;
+  } catch {
+    return 3;
+  }
+}
+
+function saveHarmonySize(storage: StorageLike | undefined, size: ChordSize): void {
+  if (!storage) {
+    return;
+  }
+  try {
+    storage.setItem(HARMONY_SIZE_STORAGE_KEY, String(size));
+  } catch {
+    // Harmony preference is non-critical; ignore write failures.
+  }
+}
+
+function renderHarmonyReadout(plan: readonly ProgressionStepView[]): void {
+  if (plan.length === 0) {
+    const item = document.createElement("li");
+    item.textContent = "Select an anchor and enable sound to generate a progression.";
+    harmonyReadout.replaceChildren(item);
+    return;
+  }
+
+  harmonyReadout.replaceChildren(
+    ...plan.map((step) => {
+      const item = document.createElement("li");
+      const degreeGovernor = DEGREE_GOVERNORS[step.rootDegree - 1];
+      item.textContent = `Step ${step.index + 1} · d${step.rootDegree} ${degreeGovernor} · ${step.weightLabel} gravity · ${step.qualityLabel} · ${formatPitchClasses(step.voicedPitchClasses)}`;
+      return item;
+    }),
+  );
+}
+
+function syncHarmonyControls(state: AudioEngineState): void {
+  const prepared =
+    (state.readiness === "ready" || state.readiness === "degraded") &&
+    !state.visualOnly &&
+    state.transport !== "stopped" &&
+    legalMoveCatalog !== undefined;
+  harmonyToggle.disabled = !prepared;
+  harmonyReseed.disabled = !prepared;
+  harmonyToggle.setAttribute("aria-pressed", String(state.progression));
+  harmonyToggle.textContent = state.progression ? "Stop progression" : "Play progression";
+}
+
+function selectedHarmonySize(): ChordSize {
+  const value = Number(harmonySize.value);
+  return isChordSize(value) ? value : 3;
+}
+
+function startHarmonyProgression(seed?: number): void {
+  const plan = audioEngine.startProgression({ steps: 8, chordSize: selectedHarmonySize(), seed });
+  harmonyEnabled = plan.length > 0;
+  renderHarmonyReadout(plan);
+}
+
+function stopHarmonyProgression(notice: string): void {
+  audioEngine.stopProgression();
+  harmonyEnabled = false;
+  renderHarmonyReadout([]);
+  announceSession(notice);
+}
 
 function supportsWebGl(): boolean {
   try {
@@ -245,6 +325,8 @@ function resetLocalOrrery(): void {
   const result = resetOrrerySession(progressStorage, source);
   session = result.session;
   audioEngine.clearSelection();
+  harmonyEnabled = false;
+  renderHarmonyReadout([]);
   updateAnchorUrl(null);
   clearInspector();
   clearScenePresentation();
@@ -349,6 +431,7 @@ function renderAudioState(state: AudioEngineState): void {
   audioVisualOnly.checked = state.visualOnly;
   audioStatus.textContent = state.detail;
   audioStatus.dataset.state = state.readiness;
+  syncHarmonyControls(state);
 }
 
 function renderAudioPalette(selection: AudioSelection): void {
@@ -821,6 +904,11 @@ function selectAnchor(node: OrreryNode, selectionSource: "restore" | "user" = "r
   selectedProfile.textContent = node.canonicalProfile.profileVersion;
   renderLandforms(node.canonicalProfile.domainReferences.landforms);
   renderAudioPalette(audioEngine.select(node, session.courtPresentationPosition, selectionSource === "user"));
+  // The engine stops any progression on node change; re-issue it for the new
+  // anchor when the harmony toggle is still engaged.
+  if (harmonyEnabled && audioEngine.snapshot().transport === "playing" && !audioEngine.snapshot().visualOnly) {
+    startHarmonyProgression();
+  }
   renderSessionHud();
   renderMoveConsole();
   updateAnchorUrl(node.state.stateId);
@@ -1032,6 +1120,7 @@ async function start(): Promise<void> {
   progressStorage = browserStorage();
   audioEngine.setVoicingMode(loadVoicingMode(progressStorage));
   audioVoicingSelect.value = audioEngine.currentVoicingMode();
+  harmonySize.value = String(loadHarmonySize(progressStorage));
   const sessionSource = sourceFromResponse(response, catalogIdentity(LEGAL_MOVE_CATALOG));
   const loadedSession = loadSession(
     progressStorage,
@@ -1122,6 +1211,8 @@ clearLinkSelectionButton.addEventListener("click", () => {
 
   session = clearSessionSelection(session);
   audioEngine.clearSelection();
+  harmonyEnabled = false;
+  renderHarmonyReadout([]);
   updateAnchorUrl(null);
   clearInspector();
   clearScenePresentation();
@@ -1200,6 +1291,37 @@ audioVoicingSelect.addEventListener("change", () => {
   if (selection) {
     renderAudioPalette(selection);
   }
+});
+
+harmonySize.addEventListener("change", () => {
+  const size = selectedHarmonySize();
+  saveHarmonySize(progressStorage, size);
+  if (harmonyEnabled && audioEngine.snapshot().progression) {
+    startHarmonyProgression();
+    announceSession(`Intra-node harmony switched to ${size === 2 ? "dyads" : size === 3 ? "trichords" : "tetrachords"}.`);
+  }
+});
+
+harmonyToggle.addEventListener("click", () => {
+  if (audioEngine.snapshot().progression || harmonyEnabled) {
+    stopHarmonyProgression("Intra-node progression stopped.");
+    return;
+  }
+  startHarmonyProgression();
+  announceSession(
+    audioEngine.snapshot().progression
+      ? "Intra-node progression started. Chord amplitude follows Chaldean degree gravity."
+      : "Progression unavailable — select an anchor with sound playing.",
+  );
+});
+
+harmonyReseed.addEventListener("click", () => {
+  if (!audioEngine.snapshot().progression) {
+    return;
+  }
+  const seed = (Date.now() % 0x7fff_ffff) + 1;
+  startHarmonyProgression(seed);
+  announceSession("Intra-node progression reseeded.");
 });
 
 initializeCourtControls();
