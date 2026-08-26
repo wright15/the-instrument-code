@@ -52,7 +52,7 @@ function node(anchor: LegalMoveCatalogAnchor): OrreryNode {
 function responseFixture(): NodesResponse {
   return {
     schemaVersion: "harmonic-orrery.nodes.v2",
-    profileRegistryReleaseId: "canonical-feature-profile-registry:0.1.1",
+    profileRegistryReleaseId: "canonical-profile-registry:0.1.1",
     harmonicDescriptor: {
       candidateId: "CH_A012_q_v1",
       coordinateId: "harmonic.CH_A012_q_v1",
@@ -66,54 +66,70 @@ function responseFixture(): NodesResponse {
 }
 
 describe("Harmonic Orrery legal-move catalog", () => {
-  it("contains exactly the 21 source-backed canonical modal moves", () => {
+  it("contains exactly the 60 source-backed parallel R/L moves (fixed_degree_shift)", () => {
     expect(LEGAL_MOVE_CATALOG.schemaVersion).toBe("harmonic-orrery.legal-moves.v2");
-    expect(LEGAL_MOVE_CATALOG.moves).toHaveLength(21);
-    expect(new Set(LEGAL_MOVE_CATALOG.moves.map((move) => move.sourceId))).toHaveLength(21);
-    expect(new Set(LEGAL_MOVE_CATALOG.moves.map((move) => move.targetId))).toHaveLength(21);
+    expect(LEGAL_MOVE_CATALOG.catalogId).toBe("harmonic-orrery.parallel-anchor-edges.v1");
+    expect(LEGAL_MOVE_CATALOG.moves).toHaveLength(60);
+    expect(LEGAL_MOVE_CATALOG.operators).toHaveLength(12);
+    // every operator is a fixed_degree_shift R/L degree 2..7
+    for (const op of LEGAL_MOVE_CATALOG.operators) {
+      expect(op.operatorClass).toBe("fixed_degree_shift");
+      expect([2, 3, 4, 5, 6, 7]).toContain(op.degree);
+      expect(["Jupiter", "Mars", "Sun", "Venus", "Mercury", "Moon"]).toContain(op.degreeGovernor);
+      expect(["raise", "lower"]).toContain(op.direction);
+      expect(op.partial).toBe(true);
+    }
+    // all 21 anchors appear as source and target at least once
+    expect(new Set(LEGAL_MOVE_CATALOG.moves.map((move) => move.sourceId)).size).toBe(21);
+    expect(new Set(LEGAL_MOVE_CATALOG.moves.map((move) => move.targetId)).size).toBe(21);
+    // canonical parallel edge: R4 Ionian -> Lydian (Sun) xor 96 is present, and its inverse L4
     expect(LEGAL_MOVE_CATALOG.moves).toContainEqual(
       expect.objectContaining({
-        id: "M:2773:1717",
-        sourceId: 2773,
-        targetId: 1717,
-        operatorId: "M",
+        id: "R4:2741:2773",
+        sourceId: 2741,
+        targetId: 2773,
+        operatorId: "R4",
         availability: "available",
         provenance: expect.objectContaining({
-          projectionStatus: "canonical_modal_edge_projected",
-          structuralEvidence: true,
-          structuralEdgeTypes: "MODAL_SUCCESSOR",
-          structuralEdgeIds: ["modal:A0:2773:1717"],
+          projectionStatus: "audited_parallel_edge_projected",
+          structuralEdgeTypes: expect.any(String),
+          structuralEdgeIds: expect.arrayContaining([expect.stringContaining("2741:2773")]),
         }),
       }),
     );
-
-    for (const tier of ["A0", "A1", "A2"] as const) {
-      const anchors = LEGAL_MOVE_CATALOG.scope.anchors.filter((anchor) => anchor.tier === tier);
-      const startId = anchors[0].stateId;
-      const visited = new Set<number>();
-      let currentId = startId;
-      for (let step = 0; step < 7; step += 1) {
-        visited.add(currentId);
-        currentId = LEGAL_MOVE_CATALOG.moves.find((move) => move.sourceId === currentId)?.targetId ?? -1;
-      }
-      expect(visited.size).toBe(7);
-      expect(currentId).toBe(startId);
+    expect(LEGAL_MOVE_CATALOG.moves).toContainEqual(
+      expect.objectContaining({
+        id: "L4:2773:2741",
+        sourceId: 2773,
+        targetId: 2741,
+        operatorId: "L4",
+      }),
+    );
+    // every operator has at least one move
+    const opsInMoves = new Set(LEGAL_MOVE_CATALOG.moves.map((m) => m.operatorId));
+    for (const op of LEGAL_MOVE_CATALOG.operators) {
+      expect(opsInMoves.has(op.operatorId)).toBe(true);
     }
   });
 
-  it("indexes exactly one offered move for each compatible live anchor", () => {
+  it("indexes multiple parallel moves for each live anchor", () => {
     const index = createLegalMoveCatalogIndex(responseFixture());
 
-    expect(index.movesById.get("M:1387:2741")?.targetId).toBe(2741);
-    expect(index.movesBySourceId.get(2773)).toEqual([index.movesById.get("M:2773:1717")]);
+    // parallel catalog: Lydian (2773) has 3 outgoing R/L edges (L4->Ionian, R5->Lydian Augmented, L7->Acoustic)
+    const lydianMoves = index.movesBySourceId.get(2773) ?? [];
+    expect(lydianMoves.length).toBeGreaterThanOrEqual(2);
+    expect(lydianMoves.map((m) => m.id)).toEqual(expect.arrayContaining(["L4:2773:2741"]));
+    expect(index.movesById.get("R4:2741:2773")?.targetId).toBe(2773);
+    expect(index.movesById.get("L4:2773:2741")?.targetId).toBe(2741);
     expect(index.movesBySourceId.size).toBe(21);
+    expect(index.movesById.size).toBe(60);
   });
 
   it("rejects malformed catalog records and a projection with different source identity", () => {
     const malformed = JSON.parse(JSON.stringify(LEGAL_MOVE_CATALOG)) as Record<string, unknown>;
     const moves = malformed.moves as Array<Record<string, unknown>>;
     moves[0].targetId = 999;
-    expect(() => parseLegalMoveCatalog(malformed)).toThrow("available scoped modal move");
+    expect(() => parseLegalMoveCatalog(malformed)).toThrow("available scoped move");
 
     const incompatible = responseFixture();
     incompatible.harmonicDescriptor.candidateFingerprint = "f".repeat(64);
@@ -125,32 +141,43 @@ describe("Harmonic Orrery legal-move catalog", () => {
     expect(() => createLegalMoveCatalogIndex(mismatchedAnchor)).toThrow(LegalMoveCatalogCompatibilityError);
   });
 
-  it("rejects a one-to-one mapping that does not preserve the three seven-step cycles", () => {
+  it("rejects a catalog with duplicate ids or that does not cover all anchors", () => {
+    // duplicate id — clone entire move so id remains consistent with source/target/operator
     const malformed = JSON.parse(JSON.stringify(LEGAL_MOVE_CATALOG)) as Record<string, unknown>;
     const moves = malformed.moves as Array<Record<string, unknown>>;
-    const first = moves.find((move) => move.id === "M:1387:2741");
-    const second = moves.find((move) => move.id === "M:1709:1451");
-    if (!first || !second) {
-      throw new Error("Missing A0 test moves");
-    }
-    const firstTargetId = first.targetId as number;
-    const secondTargetId = second.targetId as number;
-    first.targetId = secondTargetId;
-    first.id = `M:${first.sourceId}:${secondTargetId}`;
-    (first.provenance as Record<string, unknown>).applicationId = first.id;
-    second.targetId = firstTargetId;
-    second.id = `M:${second.sourceId}:${firstTargetId}`;
-    (second.provenance as Record<string, unknown>).applicationId = second.id;
+    moves[1] = JSON.parse(JSON.stringify(moves[0]));
+    expect(() => parseLegalMoveCatalog(malformed)).toThrow("unique ids");
 
-    expect(() => parseLegalMoveCatalog(malformed)).toThrow("three seven-step modal cycles");
+    // missing coverage: change one move's source to duplicate another source and orphan an anchor
+    const malformedCoverage = JSON.parse(JSON.stringify(LEGAL_MOVE_CATALOG)) as Record<string, unknown>;
+    const moves2 = malformedCoverage.moves as Array<Record<string, unknown>>;
+    // make catalog have 60 moves but one anchor never appears as source:
+    //   find anchor that appears once as source and change that move's source to another value
+    const anchorCounts = new Map<number, number>();
+    for (const m of moves2) anchorCounts.set(m.sourceId as number, (anchorCounts.get(m.sourceId as number) ?? 0) + 1);
+    let singleSource: number | undefined;
+    for (const [anchor, count] of anchorCounts) if (count === 1) singleSource = anchor;
+    // fallback: just corrupt moves length
+    if (singleSource === undefined) {
+      // force length error by removing a move
+      moves2.pop();
+      expect(() => parseLegalMoveCatalog(malformedCoverage)).toThrow("60 moves");
+    } else {
+      const duplicateSource = moves2.find((m) => m.sourceId !== singleSource)!.sourceId;
+      const idx = moves2.findIndex((m) => m.sourceId === singleSource);
+      moves2[idx].sourceId = duplicateSource;
+      moves2[idx].id = `${moves2[idx].operatorId}:${duplicateSource}:${moves2[idx].targetId}`;
+      (moves2[idx].provenance as Record<string, unknown>).applicationId = moves2[idx].id;
+      expect(() => parseLegalMoveCatalog(malformedCoverage)).toThrow("cover all 21");
+    }
 
     const malformedScope = JSON.parse(JSON.stringify(LEGAL_MOVE_CATALOG)) as Record<string, unknown>;
-    const anchors = ((malformedScope.scope as Record<string, unknown>).anchors as Array<Record<string, unknown>>);
-    const a0Anchor = anchors.find((anchor) => anchor.tier === "A0");
-    if (!a0Anchor) {
-      throw new Error("Missing A0 test anchor");
-    }
-    a0Anchor.tier = "A1";
-    expect(() => parseLegalMoveCatalog(malformedScope)).toThrow("seven anchors in every tier");
+    const scope = malformedScope.scope as Record<string, unknown>;
+    // corrupt anchorIds to be unsorted
+    const anchorIds = scope.anchorIds as number[];
+    const tmp = anchorIds[0];
+    anchorIds[0] = anchorIds[1];
+    anchorIds[1] = tmp;
+    expect(() => parseLegalMoveCatalog(malformedScope)).toThrow("21 unique ascending");
   });
 });

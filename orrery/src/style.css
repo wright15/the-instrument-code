@@ -492,6 +492,42 @@ a:focus-visible {
   overflow-wrap: anywhere;
 }
 
+.move-target-preview {
+  padding-top: 2px;
+}
+
+.move-target-measurements {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 8px 0 0;
+  border: 1px solid rgb(131 223 182 / 26%);
+  background: rgb(131 223 182 / 26%);
+}
+
+.move-target-measurements div {
+  min-width: 0;
+  padding: 10px 11px;
+  background: #0b121f;
+}
+
+.move-target-measurements dt {
+  color: #8495ad;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.61rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.move-target-measurements dd {
+  margin: 6px 0 0;
+  color: #b9ecd4;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
 .move-actions {
   display: flex;
   flex-wrap: wrap;
@@ -948,6 +984,7 @@ a:focus-visible {
 }
 
 .audio-volume,
+.audio-voicing,
 .audio-visual-only {
   color: #b6c7df;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -959,6 +996,31 @@ a:focus-visible {
   display: grid;
   min-width: 155px;
   gap: 5px;
+}
+
+.audio-voicing {
+  display: grid;
+  min-width: 175px;
+  gap: 5px;
+}
+
+.audio-voicing select {
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 1px solid rgb(151 180 222 / 38%);
+  color: #dbe7fa;
+  background: #0b121f;
+  font: inherit;
+  cursor: pointer;
+}
+
+.audio-voicing select:hover {
+  border-color: #8fb7f6;
+}
+
+.audio-voicing select:focus-visible {
+  outline: 2px solid #b8d7ff;
+  outline-offset: 2px;
 }
 
 .audio-volume span {
@@ -1571,6 +1633,10 @@ a:focus-visible {
   }
 
   .audio-volume {
+    flex: 1 1 100%;
+  }
+
+  .audio-voicing {
     flex: 1 1 100%;
   }
 

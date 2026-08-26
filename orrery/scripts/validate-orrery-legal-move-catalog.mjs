@@ -21,10 +21,10 @@ const sourceIds = new Set(catalog.moves.map((move) => move.sourceId));
 const targetIds = new Set(catalog.moves.map((move) => move.targetId));
 const scopeIds = new Set(catalog.scope.anchorIds);
 const anchorsById = new Map(catalog.scope.anchors.map((anchor) => [anchor.stateId, anchor]));
+const isParallel = catalog.catalogId === "harmonic-orrery.parallel-anchor-edges.v1";
+const expectedMoveCount = isParallel ? 60 : 21;
 if (
-  catalog.moves.length !== 21 ||
-  sourceIds.size !== 21 ||
-  targetIds.size !== 21 ||
+  catalog.moves.length !== expectedMoveCount ||
   anchorsById.size !== 21 ||
   catalog.scope.anchors.some((anchor, index) => anchor.stateId !== catalog.scope.anchorIds[index]) ||
   catalog.moves.some(
@@ -36,27 +36,42 @@ if (
 ) {
   throw new Error("INVALID_ORRERY_LEGAL_MOVE_CATALOG_CLOSURE");
 }
-
-const targetsBySource = new Map(catalog.moves.map((move) => [move.sourceId, move.targetId]));
-for (const tier of ["A0", "A1", "A2"]) {
-  const anchors = catalog.scope.anchors.filter((anchor) => anchor.tier === tier);
-  if (anchors.length !== 7) {
-    throw new Error("INVALID_ORRERY_LEGAL_MOVE_CATALOG_CYCLES");
+if (!isParallel) {
+  if (sourceIds.size !== 21 || targetIds.size !== 21) {
+    throw new Error("INVALID_ORRERY_LEGAL_MOVE_CATALOG_CLOSURE");
   }
+} else {
+  if (sourceIds.size !== 21 || targetIds.size !== 21) {
+    throw new Error("INVALID_ORRERY_LEGAL_MOVE_CATALOG_CLOSURE");
+  }
+  // parallel catalog should have 12 operators and every anchor has at least one outgoing/incoming
+  if (!Array.isArray(catalog.operators) || catalog.operators.length !== 12) {
+    throw new Error("INVALID_ORRERY_LEGAL_MOVE_CATALOG_OPERATORS");
+  }
+}
 
-  const startId = anchors[0].stateId;
-  const visited = new Set();
-  let currentId = startId;
-  for (let step = 0; step < 7; step += 1) {
-    const targetId = targetsBySource.get(currentId);
-    if (visited.has(currentId) || targetId === undefined || anchorsById.get(targetId)?.tier !== tier) {
+if (!isParallel) {
+  const targetsBySource = new Map(catalog.moves.map((move) => [move.sourceId, move.targetId]));
+  for (const tier of ["A0", "A1", "A2"]) {
+    const anchors = catalog.scope.anchors.filter((anchor) => anchor.tier === tier);
+    if (anchors.length !== 7) {
       throw new Error("INVALID_ORRERY_LEGAL_MOVE_CATALOG_CYCLES");
     }
-    visited.add(currentId);
-    currentId = targetId;
-  }
-  if (currentId !== startId || visited.size !== 7) {
-    throw new Error("INVALID_ORRERY_LEGAL_MOVE_CATALOG_CYCLES");
+
+    const startId = anchors[0].stateId;
+    const visited = new Set();
+    let currentId = startId;
+    for (let step = 0; step < 7; step += 1) {
+      const targetId = targetsBySource.get(currentId);
+      if (visited.has(currentId) || targetId === undefined || anchorsById.get(targetId)?.tier !== tier) {
+        throw new Error("INVALID_ORRERY_LEGAL_MOVE_CATALOG_CYCLES");
+      }
+      visited.add(currentId);
+      currentId = targetId;
+    }
+    if (currentId !== startId || visited.size !== 7) {
+      throw new Error("INVALID_ORRERY_LEGAL_MOVE_CATALOG_CYCLES");
+    }
   }
 }
 

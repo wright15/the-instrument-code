@@ -15,24 +15,29 @@
   ],
   "properties": {
     "schemaVersion": { "const": "harmonic-orrery.legal-moves.v2" },
-    "catalogId": { "const": "harmonic-orrery.modal-anchor-cycles.v1" },
+    "catalogId": {
+      "enum": [
+        "harmonic-orrery.modal-anchor-cycles.v1",
+        "harmonic-orrery.parallel-anchor-edges.v1"
+      ]
+    },
     "catalogFingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
     "scope": { "$ref": "#/$defs/scope" },
     "sources": {
       "type": "array",
-      "minItems": 4,
+      "minItems": 3,
       "items": { "$ref": "#/$defs/source" }
     },
     "operators": {
       "type": "array",
       "minItems": 1,
-      "maxItems": 1,
+      "maxItems": 12,
       "items": { "$ref": "#/$defs/operator" }
     },
     "moves": {
       "type": "array",
       "minItems": 21,
-      "maxItems": 21,
+      "maxItems": 60,
       "items": { "$ref": "#/$defs/move" }
     }
   },
@@ -105,15 +110,34 @@
         "status"
       ],
       "properties": {
-        "operatorId": { "const": "M" },
-        "notation": { "const": "M" },
-        "name": { "const": "Modal successor" },
-        "operatorClass": { "const": "modal_re_rooting" },
-        "degree": { "const": null },
-        "degreeGovernor": { "const": null },
-        "direction": { "const": "successor" },
-        "inverseOperatorId": { "const": "M^6" },
-        "partial": { "const": false },
+        "operatorId": {
+          "anyOf": [
+            { "const": "M" },
+            { "type": "string", "pattern": "^[RL][2-7]$" }
+          ]
+        },
+        "notation": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "operatorClass": {
+          "anyOf": [
+            { "const": "modal_re_rooting" },
+            { "const": "fixed_degree_shift" }
+          ]
+        },
+        "degree": {
+          "anyOf": [{ "const": null }, { "type": "integer", "minimum": 1, "maximum": 7 }]
+        },
+        "degreeGovernor": {
+          "anyOf": [
+            { "const": null },
+            { "enum": ["Saturn", "Jupiter", "Mars", "Sun", "Venus", "Mercury", "Moon"] }
+          ]
+        },
+        "direction": {
+          "anyOf": [{ "const": "successor" }, { "enum": ["raise", "lower"] }]
+        },
+        "inverseOperatorId": { "type": "string", "minLength": 1 },
+        "partial": { "type": "boolean" },
         "status": { "const": "structurally_validated" }
       }
     },
@@ -122,17 +146,19 @@
       "additionalProperties": false,
       "required": ["id", "sourceId", "targetId", "operatorId", "availability", "provenance"],
       "properties": {
-        "id": { "type": "string", "pattern": "^M:[0-9]+:[0-9]+$" },
+        "id": { "type": "string", "pattern": "^([M]|R[2-7]|L[2-7]):[0-9]+:[0-9]+$" },
         "sourceId": { "type": "integer", "minimum": 0, "maximum": 4095 },
         "targetId": { "type": "integer", "minimum": 0, "maximum": 4095 },
-        "operatorId": { "const": "M" },
+        "operatorId": {
+          "anyOf": [{ "const": "M" }, { "type": "string", "pattern": "^[RL][2-7]$" }]
+        },
         "availability": { "const": "available" },
         "provenance": { "$ref": "#/$defs/provenance" }
       }
     },
     "provenance": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "required": [
         "applicationId",
         "projectionStatus",
@@ -141,10 +167,15 @@
         "structuralEdgeIds"
       ],
       "properties": {
-        "applicationId": { "type": "string", "pattern": "^M:[0-9]+:[0-9]+$" },
-        "projectionStatus": { "const": "canonical_modal_edge_projected" },
-        "structuralEvidence": { "const": true },
-        "structuralEdgeTypes": { "const": "MODAL_SUCCESSOR" },
+        "applicationId": { "type": "string", "pattern": "^([M]|R[2-7]|L[2-7]):[0-9]+:[0-9]+$" },
+        "projectionStatus": {
+          "anyOf": [
+            { "const": "canonical_modal_edge_projected" },
+            { "const": "audited_parallel_edge_projected" }
+          ]
+        },
+        "structuralEvidence": { "type": "boolean" },
+        "structuralEdgeTypes": { "type": ["string", "null"] },
         "structuralEdgeIds": {
           "type": "array",
           "minItems": 1,

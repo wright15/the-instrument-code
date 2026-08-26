@@ -1,9 +1,9 @@
 {
   "package": "seven-governors-integrated-release",
   "version": "1.7.0",
-  "generatedAt": "2026-08-25T02:57:22.503Z",
-  "fileCount": 886,
-  "totalBytes": 70445368,
+  "generatedAt": "2026-08-26T01:27:35.214Z",
+  "fileCount": 888,
+  "totalBytes": 70523718,
   "files": [
     {
       "path": ".env.example",
@@ -506,6 +506,11 @@
       "sha256": "d184011ab332d936f5944473140b8d377633fdc91ba9adcfc42cc140358aa8a2"
     },
     {
+      "path": "docs/R_L_OPERATOR_MATH.md",
+      "bytes": 13265,
+      "sha256": "ab5746357090e8e314b019f41107664e9c701f08f266b00a34784623e00c4f4b"
+    },
+    {
       "path": "docs/START_HERE.md",
       "bytes": 4195,
       "sha256": "5d7da3b424e5c67cc48f82ad7902dc85231b05cc9d8d0f27253ab1f0dff59226"
@@ -947,8 +952,8 @@
     },
     {
       "path": "orrery/index.html",
-      "bytes": 18589,
-      "sha256": "219ef63c3b8951102923524faf2315a68449a5d0811373055980615777514c0d"
+      "bytes": 19706,
+      "sha256": "f515ee22ebbf5f138258d6cdfcf099e0a033936f848374c8230d4449779c8f28"
     },
     {
       "path": "orrery/package-lock.json",
@@ -987,13 +992,13 @@
     },
     {
       "path": "orrery/scripts/validate-orrery-legal-move-catalog.mjs",
-      "bytes": 2530,
-      "sha256": "b6deab246b491a6676a9b7d27226f0428df7901119db0c33114aea58f3ddec18"
+      "bytes": 3218,
+      "sha256": "09518305c45251003d0f770a606aecfbe71facd27f052c958324e070f2b4cdb4"
     },
     {
       "path": "orrery/src/api.test.ts",
-      "bytes": 8554,
-      "sha256": "bf97e6d383fba6dbc5866add29120b3e0d01a0eef626331f9847ed2a9ee649d1"
+      "bytes": 8546,
+      "sha256": "3f7b8847e712a1af0135a1ab51d8da20a97a88a528d754443cb998ffc4cfad24"
     },
     {
       "path": "orrery/src/api.ts",
@@ -1002,13 +1007,13 @@
     },
     {
       "path": "orrery/src/audio.test.ts",
-      "bytes": 11403,
-      "sha256": "09c3b12c27886f796fc35a555f0cccd2d08519b0704b8b6c6e1751c317ff5fd8"
+      "bytes": 16876,
+      "sha256": "cc5e293b0b48e904e2d458849a2693b5633d123901076b89516f1cd403d94547"
     },
     {
       "path": "orrery/src/audio.ts",
-      "bytes": 20028,
-      "sha256": "54e428b1c6fa9770393f8df7608fcba211cf6710ab4b70aed5422ee8944004b3"
+      "bytes": 24990,
+      "sha256": "56822ad4fa938a61795272262755f9ab4408c212a523b39e80eaaedce97ae354"
     },
     {
       "path": "orrery/src/court.test.ts",
@@ -1022,8 +1027,8 @@
     },
     {
       "path": "orrery/src/generated/legal-moves.v2.json",
-      "bytes": 14039,
-      "sha256": "214ed6848abce69784a419acbc9570ae0f9300c4c1ec0d8a15e3fdf72040c990"
+      "bytes": 44269,
+      "sha256": "0e7a5aba71d7ae0fce0e75e32313bbb19d423bbaf142f3364340e34c304498c3"
     },
     {
       "path": "orrery/src/layout.ts",
@@ -1032,28 +1037,33 @@
     },
     {
       "path": "orrery/src/main.ts",
-      "bytes": 45502,
-      "sha256": "c1e14fa4e5eb0badc0af64bf09a9a9f83e49867fcd9c05fd7aaa717455bca9ef"
+      "bytes": 48311,
+      "sha256": "7ab338c5e236903b32a44c4363afb5e8f20b1510f52370e9aa9bb4149aa19693"
+    },
+    {
+      "path": "orrery/src/moves.math.test.ts",
+      "bytes": 7116,
+      "sha256": "b8efb5882729f99964b2d20cd335e98be05309899aec62e28305fc5a7c8ac36f"
     },
     {
       "path": "orrery/src/moves.test.ts",
-      "bytes": 6306,
-      "sha256": "3afa2aa6a31c5e15c7d1f064b855f89a36f49419a10b0a22d32d07dfaed34b2e"
+      "bytes": 8180,
+      "sha256": "df8d2e202064bd577eb195eb11975547799c2bce524fd6a0e90cee2e583e9df2"
     },
     {
       "path": "orrery/src/moves.ts",
-      "bytes": 15728,
-      "sha256": "46b15e32cf0ecc22e31dcf772050f0ea8710b55e4466dcf7c5da33de585904bb"
+      "bytes": 22687,
+      "sha256": "eb86b072c0a2458afd71889aba5e3fd8e4229f14a7023f82a6e3faf457b2d51a"
     },
     {
       "path": "orrery/src/objectives.test.ts",
-      "bytes": 7208,
-      "sha256": "c829773cc5e1c0b335a6fc0b5d3e5b45d062971e327d685c062d8c361bc7f086"
+      "bytes": 7993,
+      "sha256": "5ff96a7252add6a978199166649af01e974c74ba1f98b9119ffd4c88e8f41d06"
     },
     {
       "path": "orrery/src/objectives.ts",
-      "bytes": 5698,
-      "sha256": "d38b44adeca7c50512de7f355635c2ddd784bd35ac597e7b19d8382a12029360"
+      "bytes": 5772,
+      "sha256": "36899808c0d24906c2f33e8296bd8c6edf9f5223016381b11b5555d11d2c7f93"
     },
     {
       "path": "orrery/src/scene-composer.test.ts",
@@ -1072,8 +1082,8 @@
     },
     {
       "path": "orrery/src/session.test.ts",
-      "bytes": 17120,
-      "sha256": "228b10a548e35367aa3042563fd965a3be12976a54e7bb8f0bc53097112c611c"
+      "bytes": 17118,
+      "sha256": "12db29967c3d497a876305c3f8506c9e26ca16ce964d91e3c38a4b0f063d9c78"
     },
     {
       "path": "orrery/src/session.ts",
@@ -1082,8 +1092,8 @@
     },
     {
       "path": "orrery/src/style.css",
-      "bytes": 29232,
-      "sha256": "7ef8ce9d69ea08662b253c90ad1a00888792188ed9e989aae4f3f9996e6fce02"
+      "bytes": 30453,
+      "sha256": "e141e48d90d61bc5b1582f1d45d6ef927090c86dbd29d1ff3ebb93d3c6eebca7"
     },
     {
       "path": "orrery/src/types.ts",
@@ -1092,13 +1102,13 @@
     },
     {
       "path": "orrery/test/fixtures/canonical-nodes-response.mjs",
-      "bytes": 1871,
-      "sha256": "ec6f91b0c7528355c73819e1e77f599b809dd94d34990026fdd9a29afcea2984"
+      "bytes": 1863,
+      "sha256": "e634bea15a82dc88cfa295046a3ae8b35b0cdb15666def7fd7dedaff2e65a419"
     },
     {
       "path": "orrery/test/fixtures/nodes-response.mjs",
-      "bytes": 2504,
-      "sha256": "24b89f033a0bec27ad2a793f9f6697aa62ebc4ad26d72248bdda8401b41d3abe"
+      "bytes": 2496,
+      "sha256": "3f3420bdee82f48288e81fa73d9cf91f6284909d4236e521e71e55a803379186"
     },
     {
       "path": "orrery/tsconfig.json",
@@ -1592,8 +1602,8 @@
     },
     {
       "path": "schemas/harmonic-orrery-legal-moves.schema.json",
-      "bytes": 4912,
-      "sha256": "fe6c32140540f347999ee9d1f6262406d5a157faa02a0bbd32648873d07c08c2"
+      "bytes": 5793,
+      "sha256": "90d23853d85ec5fe7c28218da35c1bf4baf4c59e179c6b927f0c88770083cd0e"
     },
     {
       "path": "schemas/harmonic-orrery-nodes.schema.json",
@@ -1717,8 +1727,8 @@
     },
     {
       "path": "scripts/build-orrery-legal-move-catalog.mjs",
-      "bytes": 11906,
-      "sha256": "fbae7f39210863e64f482cdaa73f30d1c70b626fd377a33d670be5243512b6e0"
+      "bytes": 12068,
+      "sha256": "c496920c713cafa18a01336f61e30d10b836a942820cb5f4b454af0f27e74850"
     },
     {
       "path": "scripts/build-pentatonic-admission-backlog.mjs",
@@ -1807,8 +1817,8 @@
     },
     {
       "path": "scripts/test-harmonic-orrery-browser.sh",
-      "bytes": 69231,
-      "sha256": "4571e89723ad303075ef4d9342a580715c88ac4782a25b00d4ffbb08a9a305a0"
+      "bytes": 69991,
+      "sha256": "6215f6695ad4bc7917a7bb9c99f6f5ed7da9cd25e83d3cbf0d57b08a4604734e"
     },
     {
       "path": "scripts/test-harmonic-orrery.sh",

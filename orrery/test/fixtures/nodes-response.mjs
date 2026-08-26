@@ -64,7 +64,7 @@ const nodes = tiers.flatMap((tier) =>
 process.stdout.write(
   JSON.stringify({
     schemaVersion: "harmonic-orrery.nodes.v2",
-    profileRegistryReleaseId: "canonical-feature-profile-registry:0.1.1",
+    profileRegistryReleaseId: "canonical-profile-registry:0.1.1",
     harmonicDescriptor: {
       candidateId: "CH_A012_q_v1",
       coordinateId: "harmonic.CH_A012_q_v1",

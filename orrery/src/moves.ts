@@ -2,7 +2,8 @@ import catalogDocument from "./generated/legal-moves.v2.json";
 import { GOVERNORS, TIERS, type AnchorTier, type Governor, type NodesResponse, type OrreryNode } from "./types";
 
 export const LEGAL_MOVE_SCHEMA_VERSION = "harmonic-orrery.legal-moves.v2";
-export const LEGAL_MOVE_CATALOG_ID = "harmonic-orrery.modal-anchor-cycles.v1";
+export const LEGAL_MOVE_CATALOG_ID = "harmonic-orrery.parallel-anchor-edges.v1";
+export const LEGACY_CATALOG_ID = "harmonic-orrery.modal-anchor-cycles.v1";
 
 type JsonRecord = Record<string, unknown>;
 
@@ -27,7 +28,9 @@ export interface LegalMoveCatalogSource {
   role: string;
 }
 
-export interface LegalMoveOperator {
+export type LegalMoveOperatorId = "M" | `R${2 | 3 | 4 | 5 | 6 | 7}` | `L${2 | 3 | 4 | 5 | 6 | 7}`;
+
+export interface ModalOperator {
   operatorId: "M";
   notation: "M";
   name: "Modal successor";
@@ -40,30 +43,49 @@ export interface LegalMoveOperator {
   status: "structurally_validated";
 }
 
+export interface ParallelOperator {
+  operatorId: `R${2 | 3 | 4 | 5 | 6 | 7}` | `L${2 | 3 | 4 | 5 | 6 | 7}`;
+  notation: string;
+  name: string;
+  operatorClass: "fixed_degree_shift";
+  degree: 2 | 3 | 4 | 5 | 6 | 7;
+  degreeGovernor: Governor;
+  direction: "raise" | "lower";
+  inverseOperatorId: string;
+  partial: true;
+  status: "structurally_validated";
+}
+
+export type LegalMoveOperator = ModalOperator | ParallelOperator;
+
 export interface LegalMoveProvenance {
   applicationId: string;
-  projectionStatus: "canonical_modal_edge_projected";
-  structuralEvidence: true;
-  structuralEdgeTypes: "MODAL_SUCCESSOR";
+  projectionStatus: "canonical_modal_edge_projected" | "audited_parallel_edge_projected";
+  structuralEvidence: boolean;
+  structuralEdgeTypes: string | null;
   structuralEdgeIds: string[];
+  // optional parallel fields, preserved for new catalog
+  fieldEvidence?: boolean;
+  provenanceEdgeTypes?: string | null;
+  provenanceEdgeIds?: string[];
 }
 
 export interface LegalMove {
   id: string;
   sourceId: number;
   targetId: number;
-  operatorId: "M";
+  operatorId: LegalMoveOperatorId;
   availability: "available";
   provenance: LegalMoveProvenance;
 }
 
 export interface LegalMoveCatalog {
   schemaVersion: typeof LEGAL_MOVE_SCHEMA_VERSION;
-  catalogId: typeof LEGAL_MOVE_CATALOG_ID;
+  catalogId: typeof LEGAL_MOVE_CATALOG_ID | typeof LEGACY_CATALOG_ID;
   catalogFingerprint: string;
   scope: LegalMoveCatalogScope;
   sources: LegalMoveCatalogSource[];
-  operators: [LegalMoveOperator];
+  operators: LegalMoveOperator[];
   moves: LegalMove[];
 }
 
@@ -201,8 +223,12 @@ function source(value: unknown, index: number): LegalMoveCatalogSource {
   };
 }
 
-function operator(value: unknown): LegalMoveOperator {
-  const item = record(value, "catalog.operators[0]");
+function isParallelOperatorId(id: unknown): boolean {
+  return typeof id === "string" && /^[RL][2-7]$/.test(id);
+}
+
+function operator(value: unknown, index: number): LegalMoveOperator {
+  const item = record(value, `catalog.operators[${index}]`);
   exactKeys(
     item,
     [
@@ -217,63 +243,125 @@ function operator(value: unknown): LegalMoveOperator {
       "partial",
       "status",
     ],
-    "catalog.operators[0]",
+    `catalog.operators[${index}]`,
   );
-  if (
-    item.operatorId !== "M" ||
-    item.notation !== "M" ||
-    item.name !== "Modal successor" ||
-    item.operatorClass !== "modal_re_rooting" ||
-    item.degree !== null ||
-    item.degreeGovernor !== null ||
-    item.direction !== "successor" ||
-    item.inverseOperatorId !== "M^6" ||
-    item.partial !== false ||
-    item.status !== "structurally_validated"
-  ) {
-    throw new Error("catalog.operators[0] is not the supported modal operator");
+  // Modal M
+  if (item.operatorId === "M") {
+    if (
+      item.notation !== "M" ||
+      item.name !== "Modal successor" ||
+      item.operatorClass !== "modal_re_rooting" ||
+      item.degree !== null ||
+      item.degreeGovernor !== null ||
+      item.direction !== "successor" ||
+      item.inverseOperatorId !== "M^6" ||
+      item.partial !== false ||
+      item.status !== "structurally_validated"
+    ) {
+      throw new Error(`catalog.operators[${index}] is not a supported modal operator`);
+    }
+    return {
+      operatorId: "M",
+      notation: "M",
+      name: "Modal successor",
+      operatorClass: "modal_re_rooting",
+      degree: null,
+      degreeGovernor: null,
+      direction: "successor",
+      inverseOperatorId: "M^6",
+      partial: false,
+      status: "structurally_validated",
+    };
   }
-
-  return {
-    operatorId: "M",
-    notation: "M",
-    name: "Modal successor",
-    operatorClass: "modal_re_rooting",
-    degree: null,
-    degreeGovernor: null,
-    direction: "successor",
-    inverseOperatorId: "M^6",
-    partial: false,
-    status: "structurally_validated",
-  };
+  // Parallel R/L
+  if (isParallelOperatorId(item.operatorId)) {
+    const degree = item.degree as number;
+    const degreeGovernor = item.degreeGovernor as string;
+    const direction = item.direction as string;
+    const validDegrees: Record<string, Governor> = {
+      "2": "Jupiter",
+      "3": "Mars",
+      "4": "Sun",
+      "5": "Venus",
+      "6": "Mercury",
+      "7": "Moon",
+    };
+    if (
+      typeof degree !== "number" ||
+      !Number.isInteger(degree) ||
+      degree < 2 ||
+      degree > 7 ||
+      validDegrees[String(degree)] !== degreeGovernor ||
+      !["raise", "lower"].includes(direction) ||
+      typeof item.inverseOperatorId !== "string" ||
+      item.partial !== true ||
+      item.status !== "structurally_validated" ||
+      item.operatorClass !== "fixed_degree_shift"
+    ) {
+      throw new Error(`catalog.operators[${index}] is not a supported parallel operator`);
+    }
+    return {
+      operatorId: item.operatorId as ParallelOperator["operatorId"],
+      notation: string(item.notation, `catalog.operators[${index}].notation`),
+      name: string(item.name, `catalog.operators[${index}].name`),
+      operatorClass: "fixed_degree_shift",
+      degree: degree as 2 | 3 | 4 | 5 | 6 | 7,
+      degreeGovernor: degreeGovernor as Governor,
+      direction: direction as "raise" | "lower",
+      inverseOperatorId: string(item.inverseOperatorId, `catalog.operators[${index}].inverseOperatorId`),
+      partial: true,
+      status: "structurally_validated",
+    };
+  }
+  throw new Error(`catalog.operators[${index}].operatorId is not supported`);
 }
 
 function provenance(value: unknown, moveId: string, index: number): LegalMoveProvenance {
   const item = record(value, `catalog.moves[${index}].provenance`);
-  exactKeys(
-    item,
-    ["applicationId", "projectionStatus", "structuralEvidence", "structuralEdgeTypes", "structuralEdgeIds"],
-    `catalog.moves[${index}].provenance`,
-  );
-  if (
-    item.applicationId !== moveId ||
-    item.projectionStatus !== "canonical_modal_edge_projected" ||
-    item.structuralEvidence !== true ||
-    item.structuralEdgeTypes !== "MODAL_SUCCESSOR" ||
-    !Array.isArray(item.structuralEdgeIds) ||
-    item.structuralEdgeIds.length === 0
-  ) {
+  // allow both legacy and parallel provenance shapes
+  const hasLegacy = "structuralEdgeTypes" in item && "structuralEdgeIds" in item;
+  const hasParallel = "provenanceEdgeTypes" in item || "fieldEvidence" in item;
+  if (!hasLegacy && !hasParallel) {
     throw new Error(`catalog.moves[${index}].provenance is not source-backed`);
+  }
+  // Normalize: support both shapes
+  const appId = string(item.applicationId, `catalog.moves[${index}].provenance.applicationId`);
+  if (appId !== moveId) throw new Error(`catalog.moves[${index}].provenance.applicationId mismatch`);
+  const projectionStatus = string(item.projectionStatus, `catalog.moves[${index}].provenance.projectionStatus`);
+  if (
+    projectionStatus !== "canonical_modal_edge_projected" &&
+    projectionStatus !== "audited_parallel_edge_projected"
+  ) {
+    throw new Error(`catalog.moves[${index}].provenance.projectionStatus unsupported`);
+  }
+  if (typeof item.structuralEvidence !== "boolean") {
+    throw new Error(`catalog.moves[${index}].provenance.structuralEvidence must be boolean`);
+  }
+  // structuralEdgeTypes may be string or null for parallel
+  const structuralEdgeTypes =
+    item.structuralEdgeTypes === null ? null : string(item.structuralEdgeTypes as unknown, `catalog.moves[${index}].provenance.structuralEdgeTypes`);
+  if (!Array.isArray(item.structuralEdgeIds)) {
+    throw new Error(`catalog.moves[${index}].provenance.structuralEdgeIds must be array`);
+  }
+  const structuralEdgeIds = (item.structuralEdgeIds as unknown[]).map((edgeId, edgeIndex) =>
+    string(edgeId, `catalog.moves[${index}].provenance.structuralEdgeIds[${edgeIndex}]`),
+  );
+  if (structuralEdgeIds.length === 0) {
+    throw new Error(`catalog.moves[${index}].provenance.structuralEdgeIds is empty`);
   }
 
   return {
     applicationId: moveId,
-    projectionStatus: "canonical_modal_edge_projected",
-    structuralEvidence: true,
-    structuralEdgeTypes: "MODAL_SUCCESSOR",
-    structuralEdgeIds: item.structuralEdgeIds.map((edgeId, edgeIndex) =>
-      string(edgeId, `catalog.moves[${index}].provenance.structuralEdgeIds[${edgeIndex}]`),
-    ),
+    projectionStatus: projectionStatus as LegalMoveProvenance["projectionStatus"],
+    structuralEvidence: item.structuralEvidence as boolean,
+    structuralEdgeTypes: structuralEdgeTypes as string | null,
+    structuralEdgeIds,
+    fieldEvidence: typeof item.fieldEvidence === "boolean" ? (item.fieldEvidence as boolean) : undefined,
+    provenanceEdgeTypes:
+      typeof item.provenanceEdgeTypes === "string" ? (item.provenanceEdgeTypes as string) : undefined,
+    provenanceEdgeIds: Array.isArray(item.provenanceEdgeIds)
+      ? (item.provenanceEdgeIds as unknown[]).map((v) => String(v))
+      : undefined,
   };
 }
 
@@ -283,23 +371,25 @@ function move(value: unknown, index: number, scopeIds: ReadonlySet<number>): Leg
   const id = string(item.id, `catalog.moves[${index}].id`);
   const sourceId = anchorId(item.sourceId, `catalog.moves[${index}].sourceId`);
   const targetId = anchorId(item.targetId, `catalog.moves[${index}].targetId`);
+  const operatorId = string(item.operatorId, `catalog.moves[${index}].operatorId`) as LegalMoveOperatorId;
+  const idPattern = /^([M]|R[2-7]|L[2-7]):[0-9]+:[0-9]+$/;
   if (
-    !/^M:[0-9]+:[0-9]+$/.test(id) ||
-    id !== `M:${sourceId}:${targetId}` ||
-    item.operatorId !== "M" ||
+    !idPattern.test(id) ||
+    id !== `${operatorId}:${sourceId}:${targetId}` ||
+    (operatorId !== "M" && !isParallelOperatorId(operatorId)) ||
     item.availability !== "available" ||
     !scopeIds.has(sourceId) ||
     !scopeIds.has(targetId) ||
     sourceId === targetId
   ) {
-    throw new Error(`catalog.moves[${index}] is not an available scoped modal move`);
+    throw new Error(`catalog.moves[${index}] is not an available scoped move`);
   }
 
   return {
     id,
     sourceId,
     targetId,
-    operatorId: "M",
+    operatorId,
     availability: "available",
     provenance: provenance(item.provenance, id, index),
   };
@@ -340,33 +430,80 @@ export function parseLegalMoveCatalog(value: unknown): LegalMoveCatalog {
     ["schemaVersion", "catalogId", "catalogFingerprint", "scope", "sources", "operators", "moves"],
     "catalog",
   );
-  if (catalog.schemaVersion !== LEGAL_MOVE_SCHEMA_VERSION || catalog.catalogId !== LEGAL_MOVE_CATALOG_ID) {
+  if (
+    catalog.schemaVersion !== LEGAL_MOVE_SCHEMA_VERSION ||
+    (catalog.catalogId !== LEGAL_MOVE_CATALOG_ID && catalog.catalogId !== LEGACY_CATALOG_ID)
+  ) {
     throw new Error("Unsupported legal-move catalog version");
   }
-  if (!Array.isArray(catalog.sources) || catalog.sources.length < 4 || !Array.isArray(catalog.operators) || catalog.operators.length !== 1 || !Array.isArray(catalog.moves) || catalog.moves.length !== 21) {
+  if (
+    !Array.isArray(catalog.sources) ||
+    catalog.sources.length < 3 ||
+    !Array.isArray(catalog.operators) ||
+    catalog.operators.length < 1 ||
+    catalog.operators.length > 12 ||
+    !Array.isArray(catalog.moves) ||
+    catalog.moves.length < 21 ||
+    catalog.moves.length > 60
+  ) {
     throw new Error("catalog has an invalid move catalog shape");
   }
 
   const parsedScope = scope(catalog.scope);
   const scopeIds = new Set(parsedScope.anchorIds);
+  const operators = catalog.operators.map((op, idx) => operator(op, idx));
   const moves = catalog.moves.map((item, index) => move(item, index, scopeIds));
-  if (
-    new Set(moves.map((item) => item.id)).size !== 21 ||
-    new Set(moves.map((item) => item.sourceId)).size !== 21 ||
-    new Set(moves.map((item) => item.targetId)).size !== 21
-  ) {
-    throw new Error("catalog moves must map each scoped anchor exactly once");
+
+  if (new Set(moves.map((item) => item.id)).size !== moves.length) {
+    throw new Error("catalog moves must have unique ids");
   }
-  assertSevenStepTierCycles(moves, parsedScope.anchors);
+
+  // Legacy modal catalog must preserve 1-to-1 cycles; parallel catalog covers all anchors with multiple edges
+  const isLegacy = catalog.catalogId === LEGACY_CATALOG_ID;
+  if (isLegacy) {
+    if (
+      moves.length !== 21 ||
+      new Set(moves.map((item) => item.sourceId)).size !== 21 ||
+      new Set(moves.map((item) => item.targetId)).size !== 21
+    ) {
+      throw new Error("legacy catalog moves must map each scoped anchor exactly once");
+    }
+    assertSevenStepTierCycles(moves, parsedScope.anchors);
+  } else {
+    // Parallel catalog: 60 moves, each anchor appears as source and target at least once, all within scope
+    if (moves.length !== 60) {
+      throw new Error("parallel catalog must contain exactly 60 moves");
+    }
+    if (operators.length !== 12) {
+      throw new Error("parallel catalog must contain 12 operators");
+    }
+    const sources = new Set(moves.map((m) => m.sourceId));
+    const targets = new Set(moves.map((m) => m.targetId));
+    if (sources.size !== 21 || targets.size !== 21) {
+      throw new Error("parallel catalog must cover all 21 anchors as source and target");
+    }
+    for (const op of operators) {
+      if (op.operatorClass !== "fixed_degree_shift") {
+        throw new Error("parallel catalog operators must be fixed_degree_shift");
+      }
+    }
+    // Ensure every operator has at least one move
+    const opsInMoves = new Set(moves.map((m) => m.operatorId));
+    for (const op of operators) {
+      if (!opsInMoves.has(op.operatorId)) {
+        throw new Error(`parallel operator ${op.operatorId} has no moves`);
+      }
+    }
+  }
 
   return {
     schemaVersion: LEGAL_MOVE_SCHEMA_VERSION,
-    catalogId: LEGAL_MOVE_CATALOG_ID,
+    catalogId: catalog.catalogId as LegalMoveCatalog["catalogId"],
     catalogFingerprint: fingerprint(catalog.catalogFingerprint, "catalog.catalogFingerprint"),
     scope: parsedScope,
     sources: catalog.sources.map(source),
-    operators: [operator(catalog.operators[0])],
-    moves: moves.sort((left, right) => left.sourceId - right.sourceId),
+    operators: operators as LegalMoveOperator[],
+    moves: moves.sort((left, right) => left.sourceId - right.sourceId || left.targetId - right.targetId || left.operatorId.localeCompare(right.operatorId)),
   };
 }
 
@@ -413,24 +550,36 @@ export function createLegalMoveCatalogIndex(
   }
 
   const movesById = new Map<string, LegalMove>();
-  const movesBySourceId = new Map<number, readonly LegalMove[]>();
+  const movesBySourceId = new Map<number, LegalMove[]>();
   for (const legalMove of catalog.moves) {
     const source = liveNodesById.get(legalMove.sourceId);
     const target = liveNodesById.get(legalMove.targetId);
-    if (!source || !target || source.state.tier !== target.state.tier) {
+    if (!source || !target) {
       throw new LegalMoveCatalogCompatibilityError(
         "The bundled legal-move catalog contains a move outside the live anchor scope.",
       );
     }
+    // For parallel catalog, moves may cross tiers — do not enforce tier equality.
+    // Legacy modal catalog did require tier equality; we keep it permissive for parallel.
     movesById.set(legalMove.id, legalMove);
-    movesBySourceId.set(legalMove.sourceId, [legalMove]);
+    const existing = movesBySourceId.get(legalMove.sourceId) ?? [];
+    movesBySourceId.set(legalMove.sourceId, [...existing, legalMove]);
   }
 
-  if (movesById.size !== 21 || movesBySourceId.size !== 21) {
+  const expectedMoveCount = catalog.catalogId === LEGACY_CATALOG_ID ? 21 : 60;
+  const expectedSourceCount = 21;
+  if (movesById.size !== expectedMoveCount) {
     throw new LegalMoveCatalogCompatibilityError("The bundled legal-move catalog is incomplete.");
   }
+  if (catalog.catalogId === LEGACY_CATALOG_ID && movesBySourceId.size !== expectedSourceCount) {
+    throw new LegalMoveCatalogCompatibilityError("The bundled legal-move catalog is incomplete.");
+  }
+  // Parallel catalog: every anchor must have at least one outgoing move (already validated) and total 21 sources
+  if (catalog.catalogId !== LEGACY_CATALOG_ID && movesBySourceId.size !== expectedSourceCount) {
+    throw new LegalMoveCatalogCompatibilityError("The bundled parallel catalog must have 21 source groups.");
+  }
 
-  return { catalog, movesById, movesBySourceId };
+  return { catalog, movesById, movesBySourceId: movesBySourceId as ReadonlyMap<number, readonly LegalMove[]> };
 }
 
 export function legalMovesForSource(

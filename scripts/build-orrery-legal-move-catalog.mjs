@@ -5,7 +5,6 @@ import { fileURLToPath } from "node:url";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(scriptDirectory, "..");
-const auditRoot = path.join(root, "seven-governors-mutation-algebra-audit");
 const defaultOutput = path.join(root, "orrery", "src", "generated", "legal-moves.v2.json");
 
 function sha256(value) {
@@ -81,41 +80,13 @@ function anchor(record) {
   return { stateId, tier: record.tier, forteFamily: record.forte, office: record.stateGovernor };
 }
 
-function assertVerifiedCycles(moves, cycles, scope) {
-  const targetBySource = new Map(moves.map((move) => [move.sourceId, move.targetId]));
-  const cycleMembers = new Set();
-
-  for (const cycle of cycles) {
-    const members = cycle.member_ids.split(";").map(Number);
-    if (new Set(members).size !== 7 || members.some((memberId) => !scope.has(memberId))) {
-      fail(`cycle ${cycle.cycle_id} does not contain seven distinct scoped anchors`);
-    }
-    for (let index = 0; index < members.length; index += 1) {
-      const sourceId = members[index];
-      const targetId = members[(index + 1) % members.length];
-      if (targetBySource.get(sourceId) !== targetId) {
-        fail(`cycle ${cycle.cycle_id} does not match the audited modal successor ordering`);
-      }
-      cycleMembers.add(sourceId);
-    }
-  }
-
-  if (cycleMembers.size !== 21 || [...scope].some((anchorId) => !cycleMembers.has(anchorId))) {
-    fail("cycle identities do not cover the complete A0-A2 scope");
-  }
-}
-
 function buildCatalog() {
   const candidatePath = "canonical/harmonic-compression-candidates/CH_A012_q_v1.json";
   const operatorRegistryPath = "seven-governors-mutation-algebra-audit/audit/operator-registry.csv";
   const applicationsPath = "seven-governors-mutation-algebra-audit/audit/operator-applications.csv";
-  const completionLedgerPath = "seven-governors-mutation-algebra-audit/audit/modal-completion-ledger.csv";
-  const cycleIdentitiesPath = "seven-governors-mutation-algebra-audit/audit/cycle-identities.csv";
   const candidate = JSON.parse(read(candidatePath));
   const operators = parseCsv(read(operatorRegistryPath));
   const applications = parseCsv(read(applicationsPath));
-  const completionLedger = parseCsv(read(completionLedgerPath));
-  const cycles = parseCsv(read(cycleIdentitiesPath));
   const scopeAnchors = candidate.records.map(anchor).sort((left, right) => left.stateId - right.stateId);
   const scopeIds = scopeAnchors.map((item) => item.stateId);
 
@@ -132,118 +103,131 @@ function buildCatalog() {
     fail("harmonic descriptor scope must contain seven anchors in every A0-A2 tier");
   }
 
-  const modalOperator = operators.find((operator) => operator.operator_id === "M");
-  if (
-    !modalOperator ||
-    modalOperator.notation !== "M" ||
-    modalOperator.name !== "Modal successor" ||
-    modalOperator.operator_class !== "modal_re_rooting" ||
-    modalOperator.inverse_operator_id !== "M^6" ||
-    modalOperator.partial !== "false" ||
-    modalOperator.status !== "structurally_validated"
-  ) {
-    fail("modal operator metadata does not match the audited registry");
+  // --- R/L parallel-mode operators (fixed_degree_shift, degrees 2..7) ---
+  const parallelOperators = operators.filter((op) => op.operator_class === "fixed_degree_shift");
+  if (parallelOperators.length !== 12) {
+    fail(`expected 12 fixed_degree_shift operators, got ${parallelOperators.length}`);
   }
+  // Validate each parallel operator matches registry
+  for (const op of parallelOperators) {
+    const degree = Number(op.degree);
+    if (!Number.isInteger(degree) || degree < 2 || degree > 7) {
+      fail(`parallel operator ${op.operator_id} has invalid degree`);
+    }
+    if (op.partial !== "true" || op.status !== "structurally_validated") {
+      fail(`parallel operator ${op.operator_id} is not structurally validated`);
+    }
+    if (!["Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus"].includes(op.degree_governor)) {
+      fail(`parallel operator ${op.operator_id} has invalid degree_governor`);
+    }
+    if (!["raise", "lower"].includes(op.direction)) {
+      fail(`parallel operator ${op.operator_id} has invalid direction`);
+    }
+  }
+  parallelOperators.sort((a, b) => a.operator_id.localeCompare(b.operator_id));
 
-  const applicationById = new Map(applications.map((application) => [application.application_id, application]));
   const scope = new Set(scopeIds);
   const anchorById = new Map(scopeAnchors.map((item) => [item.stateId, item]));
-  const selectedLedgerRows = completionLedger.filter(
-    (row) =>
-      row.canonical_modal_successor_projected === "true" &&
-      scope.has(Number(row.source_id)) &&
-      scope.has(Number(row.target_id)),
+  const operatorById = new Map(parallelOperators.map((op) => [op.operator_id, op]));
+
+  // Select all audited fixed_degree_shift applications where both endpoints are in the 21-anchor scope.
+  // For fixed_degree_shift the field evidence is the authoritative hamming-2 edge (AUDITED_HAMMING2),
+  // while structural CONSTRUCTS is present for a subset. We accept any formal_substrate_observed
+  // edge that keeps the root fixed (field_evidence true in practice for all 60).
+  const selectedApplications = applications.filter(
+    (app) =>
+      app.operator_class === "fixed_degree_shift" &&
+      operatorById.has(app.operator_id) &&
+      scope.has(Number(app.source_id)) &&
+      scope.has(Number(app.target_id)) &&
+      app.application_status === "formal_substrate_observed",
   );
 
-  if (selectedLedgerRows.length !== 21) {
-    fail("expected exactly 21 canonical modal moves in the A0-A2 scope");
+  if (selectedApplications.length !== 60) {
+    fail(`expected exactly 60 parallel R/L moves in the A0-A2 scope, got ${selectedApplications.length}`);
   }
 
-  const scopedCycles = cycles.filter((cycle) => {
-    const members = cycle.member_ids.split(";").map(Number);
-    return members.length === 7 && members.every((memberId) => scope.has(memberId));
-  });
-  if (
-    scopedCycles.length !== 3 ||
-    new Set(scopedCycles.map((cycle) => cycle.tier)).size !== 3 ||
-    ["A0", "A1", "A2"].some((tier) => !scopedCycles.some((cycle) => cycle.tier === tier)) ||
-    scopedCycles.some(
-      (cycle) =>
-        cycle.cycle_length !== "7" ||
-        cycle.closes_at_source !== "true" ||
-        cycle.minimal_period_seven !== "true" ||
-        cycle.result !== "PASS" ||
-        cycle.member_ids.split(";").some((memberId) => anchorById.get(Number(memberId))?.tier !== cycle.tier),
-    )
-  ) {
-    fail("the scoped modal cycles are not the three verified seven-step cycles");
-  }
-
-  const moves = selectedLedgerRows
-      .map((ledger) => {
-        const application = applicationById.get(ledger.application_id);
-        const source = anchorById.get(Number(ledger.source_id));
-        const target = anchorById.get(Number(ledger.target_id));
-        if (!application) {
-          fail(`missing audited application ${ledger.application_id}`);
-        }
-        if (!source || !target) {
-          fail(`application ${ledger.application_id} is outside the scoped anchor identity`);
-        }
-        if (
-        application.operator_id !== "M" ||
-        application.source_id !== ledger.source_id ||
-        application.target_id !== ledger.target_id ||
-        application.source_role !== "anchor" ||
-        application.target_role !== "anchor" ||
-          application.source_tier !== application.target_tier ||
-          application.source_forte !== application.target_forte ||
-          application.source_tier !== source.tier ||
-          application.target_tier !== target.tier ||
-          application.source_forte !== source.forteFamily ||
-          application.target_forte !== target.forteFamily ||
-          application.source_office !== source.office ||
-          application.target_office !== target.office ||
-        application.structural_evidence !== "true" ||
-        application.structural_edge_types !== "MODAL_SUCCESSOR" ||
-        application.structural_edge_ids.length === 0 ||
-        application.application_status !== "formal_substrate_observed" ||
-        ledger.projection_status !== "canonical_modal_edge_projected"
-      ) {
-        fail(`application ${ledger.application_id} is not a source-backed scoped modal move`);
+  // Build moves — keep source-backed provenance. Structural edge ids may be empty for many
+  // fixed edges; field edge ids carry the audit trail (audit:fixed:*).
+  const moves = selectedApplications
+    .map((app) => {
+      const source = anchorById.get(Number(app.source_id));
+      const target = anchorById.get(Number(app.target_id));
+      if (!source || !target) {
+        fail(`application ${app.application_id} is outside the scoped anchor identity`);
       }
-
+      if (app.source_role !== "anchor" || app.target_role !== "anchor") {
+        fail(`application ${app.application_id} is not anchor->anchor`);
+      }
+      // Root is fixed for parallel operators, but tier/forte may change — do not enforce equality.
+      // At least verify the operator's degree-governor matches the registry.
+      const registry = operatorById.get(app.operator_id);
+      if (!registry || String(registry.degree) !== app.degree || registry.degree_governor !== app.degree_governor) {
+        fail(`application ${app.application_id} mismatches registry degree/governor`);
+      }
+      // Determine provenance edge ids: prefer structural if present, otherwise field.
+      const structuralIds = app.structural_edge_ids ? app.structural_edge_ids.split(";").filter(Boolean) : [];
+      const fieldIds = app.field_edge_ids ? app.field_edge_ids.split(";").filter(Boolean) : [];
+      const provenanceIds = structuralIds.length > 0 ? structuralIds : fieldIds;
+      const edgeType = structuralIds.length > 0 ? app.structural_edge_types : app.field_edge_types;
+      if (provenanceIds.length === 0) {
+        fail(`application ${app.application_id} has no provenance edge ids`);
+      }
       return {
-        id: application.application_id,
-        sourceId: Number(application.source_id),
-        targetId: Number(application.target_id),
-        operatorId: "M",
+        id: app.application_id,
+        sourceId: Number(app.source_id),
+        targetId: Number(app.target_id),
+        operatorId: app.operator_id,
         availability: "available",
         provenance: {
-          applicationId: application.application_id,
-          projectionStatus: ledger.projection_status,
-          structuralEvidence: true,
-          structuralEdgeTypes: application.structural_edge_types,
-          structuralEdgeIds: application.structural_edge_ids.split(";").filter(Boolean),
+          applicationId: app.application_id,
+          projectionStatus: "audited_parallel_edge_projected",
+          structuralEvidence: app.structural_evidence === "true",
+          fieldEvidence: app.field_evidence === "true",
+          structuralEdgeTypes: structuralIds.length > 0 ? app.structural_edge_types : null,
+          fieldEdgeTypes: app.field_edge_types || null,
+          provenanceEdgeTypes: edgeType,
+          provenanceEdgeIds: provenanceIds,
+          // legacy fields for backwards compat with schema that expects structuralEdgeTypes/Ids
+          structuralEdgeTypes: edgeType,
+          structuralEdgeIds: provenanceIds,
         },
       };
     })
-    .sort((left, right) => left.sourceId - right.sourceId || left.targetId - right.targetId);
+    .sort((left, right) => left.sourceId - right.sourceId || left.targetId - right.targetId || left.operatorId.localeCompare(right.operatorId));
 
-  if (
-    new Set(moves.map((move) => move.id)).size !== 21 ||
-    new Set(moves.map((move) => move.sourceId)).size !== 21 ||
-    new Set(moves.map((move) => move.targetId)).size !== 21 ||
-    moves.some((move) => !scope.has(move.sourceId) || !scope.has(move.targetId))
-  ) {
-    fail("scoped catalog moves must form a one-to-one closed mapping over the 21 anchors");
+  if (new Set(moves.map((m) => m.id)).size !== moves.length) {
+    fail("parallel catalog moves must have unique ids");
+  }
+  // Ensure every anchor appears as source at least once and as target at least once (parallel graph is connected)
+  const sources = new Set(moves.map((m) => m.sourceId));
+  const targets = new Set(moves.map((m) => m.targetId));
+  if (sources.size !== 21 || targets.size !== 21) {
+    fail("parallel catalog must cover all 21 anchors as source and target");
+  }
+  for (const anchorId of scopeIds) {
+    if (!sources.has(anchorId) || !targets.has(anchorId)) {
+      fail(`anchor ${anchorId} missing from parallel move coverage`);
+    }
   }
 
-  assertVerifiedCycles(moves, scopedCycles, scope);
+  // Build operators array for catalog — preserve full registry metadata
+  const catalogOperators = parallelOperators.map((op) => ({
+    operatorId: op.operator_id,
+    notation: op.notation,
+    name: op.name,
+    operatorClass: op.operator_class,
+    degree: Number(op.degree),
+    degreeGovernor: op.degree_governor,
+    direction: op.direction,
+    inverseOperatorId: op.inverse_operator_id,
+    partial: true,
+    status: op.status,
+  }));
 
   const fingerprintInput = {
     schemaVersion: "harmonic-orrery.legal-moves.v2",
-    catalogId: "harmonic-orrery.modal-anchor-cycles.v1",
+    catalogId: "harmonic-orrery.parallel-anchor-edges.v1",
     scope: {
       nodesSchemaVersion: "harmonic-orrery.nodes.v2",
       harmonicDescriptorReleaseId: candidate.releaseId,
@@ -253,26 +237,27 @@ function buildCatalog() {
     },
     sources: [
       sourceArtifact(candidatePath, "A0-A2 anchor scope"),
-      sourceArtifact(operatorRegistryPath, "modal operator metadata"),
-      sourceArtifact(applicationsPath, "source-backed structural applications"),
-      sourceArtifact(completionLedgerPath, "canonical modal projection status"),
-      sourceArtifact(cycleIdentitiesPath, "verified modal cycle closure"),
+      sourceArtifact(operatorRegistryPath, "parallel operator metadata (fixed_degree_shift)"),
+      sourceArtifact(applicationsPath, "source-backed parallel applications (R/L)"),
     ],
-    operators: [
-      {
-        operatorId: "M",
-        notation: modalOperator.notation,
-        name: modalOperator.name,
-        operatorClass: modalOperator.operator_class,
-        degree: null,
-        degreeGovernor: null,
-        direction: modalOperator.direction,
-        inverseOperatorId: modalOperator.inverse_operator_id,
-        partial: false,
-        status: modalOperator.status,
+    operators: catalogOperators,
+    moves: moves.map((m) => ({
+      id: m.id,
+      sourceId: m.sourceId,
+      targetId: m.targetId,
+      operatorId: m.operatorId,
+      availability: m.availability,
+      provenance: {
+        applicationId: m.provenance.applicationId,
+        projectionStatus: m.provenance.projectionStatus,
+        structuralEvidence: m.provenance.structuralEvidence,
+        fieldEvidence: m.provenance.fieldEvidence,
+        provenanceEdgeTypes: m.provenance.provenanceEdgeTypes,
+        provenanceEdgeIds: m.provenance.provenanceEdgeIds,
+        structuralEdgeTypes: m.provenance.structuralEdgeTypes,
+        structuralEdgeIds: m.provenance.structuralEdgeIds,
       },
-    ],
-    moves,
+    })),
   };
 
   return {

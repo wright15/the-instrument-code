@@ -947,7 +947,7 @@ run_cli "${audio_session}" run-code "async page => {
     initial.assetFetches !== 0 ||
     initial.frequencies !== 0 ||
     initial.enableDisabled !== false ||
-    initial.palette !== 'Sun A0 / Lydian / source {0, 2, 4, 6, 7, 9, 11}' ||
+    initial.palette !== 'Sun A0 / heptatonic voicing / {0, 2, 4, 6, 7, 9, 11}' ||
     initial.court !== 'C0 / Major Pentatonic / local-only'
   ) {
     throw new Error('Audio began before an explicit gesture: ' + JSON.stringify(initial));
@@ -968,7 +968,7 @@ run_cli "${audio_session}" run-code "async page => {
     afterCourtSelection.contexts !== 0 ||
     afterCourtSelection.assetFetches !== 0 ||
     afterCourtSelection.frequencies !== 0 ||
-    afterCourtSelection.filter !== 'Court C1 / Scottish Pentatonic / mask 677 retains {0, 2, 7, 9} and suppresses {4, 6, 11}.' ||
+    afterCourtSelection.filter !== 'Court C1 / Scottish Pentatonic does not filter pitch content in heptatonic voicing.' ||
     afterCourtSelection.storedCourt !== 'C1'
   ) {
     throw new Error('Court selection began audio or did not expose its filter: ' + JSON.stringify(afterCourtSelection));
@@ -997,7 +997,7 @@ run_cli "${audio_session}" run-code "async page => {
   if (
     enabled.contexts !== 1 ||
     enabled.assetFetches !== 3 ||
-    enabled.frequencies !== 4 ||
+    enabled.frequencies !== 8 ||
     enabled.resumes !== 1
   ) {
     throw new Error('Explicit audio enable did not initialize deterministically: ' + JSON.stringify(enabled));
@@ -1005,13 +1005,13 @@ run_cli "${audio_session}" run-code "async page => {
 }"
 run_cli "${audio_session}" run-code "async page => {
   const expectedByStateId = {
-    2773: [0, 2, 7, 9],
-    2741: [0, 2, 5, 7, 9],
-    1717: [0, 2, 5, 7, 9],
-    1709: [0, 2, 5, 7, 9],
-    1453: [0, 2, 5, 7],
-    1451: [0, 5, 7],
-    1387: [0, 5],
+    2773: [0, 2, 4, 6, 7, 9, 11, 0],
+    2741: [0, 2, 4, 5, 7, 9, 11, 0],
+    1717: [0, 2, 4, 5, 7, 9, 10, 0],
+    1709: [0, 2, 3, 5, 7, 9, 10, 0],
+    1453: [0, 2, 3, 5, 7, 8, 10, 0],
+    1451: [0, 1, 3, 5, 7, 8, 10, 0],
+    1387: [0, 1, 3, 5, 6, 8, 10, 0],
   };
   for (const [stateId, expected] of Object.entries(expectedByStateId)) {
     await page.evaluate(() => {
@@ -1031,15 +1031,15 @@ run_cli "${audio_session}" run-code "async page => {
     }
   }
   await page.locator('button[data-state-id=\"1371\"]').tap();
-  await page.waitForFunction(() => document.querySelector('#selected-audio-note')?.textContent?.includes('remains an A1 state'));
+  await page.waitForFunction(() => document.querySelector('#selected-audio-note')?.textContent?.includes('seven-note scale'));
 }"
 assert_page "${audio_session}" "() => {
   return (
-    document.querySelector('#selected-audio-palette')?.textContent?.trim() === 'Sun A0 / Lydian / source {0, 2, 4, 6, 7, 9, 11}' &&
-    document.querySelector('#selected-audio-note')?.textContent?.includes('remains an A1 state') &&
+    document.querySelector('#selected-audio-palette')?.textContent?.includes('/ heptatonic voicing /') &&
+    document.querySelector('#selected-audio-note')?.textContent?.includes('seven-note scale') &&
     Array.from(document.querySelectorAll('.audio-controls button')).every((button) => button.getBoundingClientRect().height >= 44)
   );
-}" "all A0 Court-filtered palettes and A1 inheritance"
+}" "all A0 heptatonic palettes and A1 self-voicing"
 run_cli "${audio_session}" run-code "async page => {
   await page.evaluate(() => {
     window.__orreryAudioEvents.frequencies.length = 0;
@@ -1063,10 +1063,22 @@ run_cli "${audio_session}" run-code "async page => {
   if (
     result.contexts !== 1 ||
     result.assetFetches !== 3 ||
-    JSON.stringify(result.frequencies) !== JSON.stringify([0, 2, 7]) ||
-    result.filter !== 'Court C2 / Qing Yu / mask 1189 retains {0, 2, 7} and suppresses {4, 6, 9, 11}.'
+    JSON.stringify(result.frequencies) !== JSON.stringify([0, 1, 3, 4, 6, 8, 10, 0]) ||
+    result.filter !== 'Court C2 / Qing Yu does not filter pitch content in heptatonic voicing.'
   ) {
-    throw new Error('Court revoicing was not local and filtered: ' + JSON.stringify(result));
+    throw new Error('Court change was not local or heptatonic voicing was filtered: ' + JSON.stringify(result));
+  }
+  await page.selectOption('#audio-voicing', 'court-pentatonic');
+  await page.waitForFunction(() => document.querySelector('#audio-status')?.textContent?.includes('Court pentatonic voicing active'));
+  const pentatonic = await page.evaluate(() => ({
+    frequencies: window.__orreryAudioEvents.frequencies.slice(-4),
+    filter: document.querySelector('#selected-court-filter')?.textContent?.trim(),
+  }));
+  if (
+    JSON.stringify(pentatonic.frequencies) !== JSON.stringify([0, 2, 7, 0]) ||
+    !pentatonic.filter.includes('retains {0, 2, 7}')
+  ) {
+    throw new Error('Court pentatonic voicing did not re-filter through the Court mask: ' + JSON.stringify(pentatonic));
   }
 }"
 assert_page "${audio_session}" "() => {

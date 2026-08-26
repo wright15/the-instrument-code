@@ -2,10 +2,51 @@ import { courtPositionById, filterPitchClasses, type CourtPosition, type CourtPr
 import type { Governor, OrreryNode } from "./types";
 
 export const AUDIO_SCHEMA_VERSION = "harmonic-orrery.audio.v1";
-export const AUDIO_PROFILE_REGISTRY_RELEASE_ID = "canonical-feature-profile-registry:0.1.1";
+export const AUDIO_PROFILE_REGISTRY_RELEASE_ID = "canonical-profile-registry:0.1.1";
 export const AUDIO_ROOT_MIDI_NOTE = 60;
 export const AUDIO_A4_HZ = 440;
-export const AUDIO_VOICE_LIMIT = 5;
+export const AUDIO_VOICE_LIMIT = 8;
+export const AUDIO_CROSSFADE_SECONDS = 0.15;
+export const AUDIO_VOICE_STAGGER_SECONDS = 0.5;
+export const AUDIO_OCTAVE_SEMITONES = 12;
+export const AUDIO_VOICING_STORAGE_KEY = "seven-governors.harmonic-orrery.audio-voicing";
+
+export type AudioVoicingMode = "heptatonic" | "court-pentatonic";
+
+const VOICING_MODES: readonly AudioVoicingMode[] = ["heptatonic", "court-pentatonic"];
+
+interface VoicingStorageLike {
+  getItem(key: string): string | null;
+  setItem(key: string, value: string): void;
+}
+
+export function isAudioVoicingMode(value: unknown): value is AudioVoicingMode {
+  return typeof value === "string" && (VOICING_MODES as readonly string[]).includes(value);
+}
+
+export function loadVoicingMode(storage: VoicingStorageLike | undefined): AudioVoicingMode {
+  if (!storage) {
+    return "heptatonic";
+  }
+  try {
+    return storage.getItem(AUDIO_VOICING_STORAGE_KEY) === "court-pentatonic"
+      ? "court-pentatonic"
+      : "heptatonic";
+  } catch {
+    return "heptatonic";
+  }
+}
+
+export function saveVoicingMode(storage: VoicingStorageLike | undefined, mode: AudioVoicingMode): void {
+  if (!storage) {
+    return;
+  }
+  try {
+    storage.setItem(AUDIO_VOICING_STORAGE_KEY, mode);
+  } catch {
+    // Voicing preference is non-critical; ignore write failures.
+  }
+}
 
 type AudioNodeLike = {
   connect(destination: AudioNodeLike): AudioNodeLike;
@@ -258,6 +299,7 @@ export interface AudioSelection {
   selectedStateName: string;
   selectedTier: OrreryNode["state"]["tier"];
   suppressedPitchClasses: readonly number[];
+  voicingMode: AudioVoicingMode;
 }
 
 export type AudioReadiness = "idle" | "loading" | "ready" | "degraded" | "unsupported" | "error";
@@ -275,6 +317,13 @@ export interface AudioEngineState {
 
 interface ActiveVoice {
   source: OscillatorNodeLike;
+  envelope: GainNodeLike;
+}
+
+interface ActiveLoop {
+  source: AudioBufferSourceNodeLike;
+  gain: GainNodeLike;
+  level: number;
 }
 
 function browserRuntime(): AudioRuntime {
@@ -320,21 +369,37 @@ export function midiToFrequency(midiNote: number): number {
   return AUDIO_A4_HZ * 2 ** ((midiNote - 69) / 12);
 }
 
-export function resolveAudioSelection(node: OrreryNode, courtPosition: CourtPosition): AudioSelection {
+export function resolveAudioSelection(
+  node: OrreryNode,
+  courtPosition: CourtPosition,
+  voicingMode: AudioVoicingMode = "heptatonic",
+): AudioSelection {
   const office = node.resolution.office;
   const palette = OFFICE_PALETTES[office];
   const court = courtPositionById(courtPosition);
-  const retainedPitchClasses = filterPitchClasses(palette.pitchClasses, court);
+  // Heptatonic voicing plays the inspected anchor's own seven-note mask, so
+  // every node is audibly distinct. Court pentatonic keeps the legacy behavior:
+  // the office A0 palette re-filtered through the Court position mask.
+  const inheritedOfficePalette =
+    voicingMode === "court-pentatonic" && node.state.tier !== "A0";
+  const retainedPitchClasses =
+    voicingMode === "heptatonic"
+      ? [...node.state.pitchClasses]
+      : filterPitchClasses(palette.pitchClasses, court);
   return {
     court,
-    inheritedOfficePalette: node.state.tier !== "A0",
+    voicingMode,
+    inheritedOfficePalette,
     office,
     palette,
     retainedPitchClasses,
     selectedStateId: node.state.stateId,
     selectedStateName: node.state.name,
     selectedTier: node.state.tier,
-    suppressedPitchClasses: palette.pitchClasses.filter((pitchClass) => !retainedPitchClasses.includes(pitchClass)),
+    suppressedPitchClasses:
+      voicingMode === "heptatonic"
+        ? []
+        : palette.pitchClasses.filter((pitchClass) => !retainedPitchClasses.includes(pitchClass)),
   };
 }
 
@@ -373,11 +438,13 @@ export function validateAudioManifest(): void {
 }
 
 export class OrreryAudioEngine {
-  private activeLoop: AudioBufferSourceNodeLike | undefined;
+  private activeLoop: ActiveLoop | undefined;
   private activeVoices: ActiveVoice[] = [];
   private readonly buffers = new Map<string, AudioBufferLike>();
   private context: AudioContextLike | undefined;
   private currentSelection: AudioSelection | undefined;
+  private currentSource: { node: OrreryNode; courtPosition: CourtPosition } | undefined;
+  private voicingMode: AudioVoicingMode = "heptatonic";
   private readonly listeners = new Set<(state: AudioEngineState) => void>();
   private masterGain: GainNodeLike | undefined;
   private readonly runtime: AudioRuntime;
@@ -407,7 +474,8 @@ export class OrreryAudioEngine {
   }
 
   select(node: OrreryNode, courtPosition: CourtPosition, playSound = true): AudioSelection {
-    const selection = resolveAudioSelection(node, courtPosition);
+    const selection = resolveAudioSelection(node, courtPosition, this.voicingMode);
+    this.currentSource = { node, courtPosition };
     this.currentSelection = selection;
     if (playSound && this.state.transport === "playing" && !this.state.visualOnly) {
       this.playSelection(selection);
@@ -415,8 +483,37 @@ export class OrreryAudioEngine {
     return selection;
   }
 
+  currentVoicingMode(): AudioVoicingMode {
+    return this.voicingMode;
+  }
+
+  setVoicingMode(mode: AudioVoicingMode): AudioSelection | undefined {
+    if (!isAudioVoicingMode(mode) || mode === this.voicingMode) {
+      return this.currentSelection;
+    }
+
+    this.voicingMode = mode;
+    const revoiced = this.currentSource
+      ? resolveAudioSelection(this.currentSource.node, this.currentSource.courtPosition, mode)
+      : undefined;
+    if (revoiced) {
+      this.currentSelection = revoiced;
+      if (this.state.transport === "playing" && !this.state.visualOnly) {
+        this.crossfadeSelection(revoiced);
+      }
+    }
+    this.replaceState({
+      detail:
+        mode === "heptatonic"
+          ? "Heptatonic voicing active. Each anchor sounds its own seven-note scale."
+          : "Court pentatonic voicing active. The office A0 palette is filtered through the Court mask.",
+    });
+    return this.currentSelection;
+  }
+
   clearSelection(): void {
     this.currentSelection = undefined;
+    this.currentSource = undefined;
     this.stopSources();
   }
 
@@ -578,17 +675,71 @@ export class OrreryAudioEngine {
       return;
     }
 
-    this.stopSources();
-    const start = context.currentTime + 0.02;
+    if (this.activeVoices.length > 0 || this.activeLoop) {
+      // A selection is already sounding: release it over a short fade while the
+      // mutated pitch mask attacks, so revoicing never hard-cuts the audio.
+      this.crossfadeSelection(selection);
+      return;
+    }
+
+    this.startSelection(context, masterGain, selection, context.currentTime + 0.02);
+  }
+
+  private crossfadeSelection(selection: AudioSelection): void {
+    const context = this.context;
+    const masterGain = this.masterGain;
+    if (!context || !masterGain) {
+      return;
+    }
+
+    const now = context.currentTime;
+    const fadeEnd = now + AUDIO_CROSSFADE_SECONDS;
+
+    for (const voice of this.activeVoices) {
+      voice.envelope.gain.linearRampToValueAtTime(0.0001, fadeEnd);
+      voice.source.stop(fadeEnd);
+    }
+    this.activeVoices = [];
+
+    if (this.activeLoop) {
+      const { source, gain, level } = this.activeLoop;
+      gain.gain.setValueAtTime(level, now);
+      gain.gain.linearRampToValueAtTime(0.0001, fadeEnd);
+      source.stop(fadeEnd);
+      this.activeLoop = undefined;
+    }
+
+    this.startSelection(context, masterGain, selection, now + 0.02);
+  }
+
+  private startSelection(
+    context: AudioContextLike,
+    masterGain: GainNodeLike,
+    selection: AudioSelection,
+    start: number,
+  ): void {
     selection.retainedPitchClasses.forEach((pitchClass, index) => {
       this.startVoice(
         context,
         masterGain,
         midiToFrequency(pitchClassToMidi(pitchClass, selection.palette.preset.registerOffset)),
         selection.palette.preset,
-        start + index * 0.1,
+        start + index * AUDIO_VOICE_STAGGER_SECONDS,
       );
     });
+    // Close the arpeggio on the root an octave up, one stagger after the last note.
+    const rootPitchClass = selection.retainedPitchClasses[0];
+    if (rootPitchClass !== undefined) {
+      this.startVoice(
+        context,
+        masterGain,
+        midiToFrequency(
+          pitchClassToMidi(rootPitchClass, selection.palette.preset.registerOffset) + AUDIO_OCTAVE_SEMITONES,
+        ),
+        selection.palette.preset,
+        start + selection.retainedPitchClasses.length * AUDIO_VOICE_STAGGER_SECONDS,
+      );
+    }
     this.startLoop(context, masterGain, selection.palette.preset.loopAssetId);
   }
 
@@ -616,7 +767,7 @@ export class OrreryAudioEngine {
     source.onended = () => {
       this.activeVoices = this.activeVoices.filter((voice) => voice.source !== source);
     };
-    this.activeVoices.push({ source });
+    this.activeVoices.push({ source, envelope });
     source.start(start);
     source.stop(end);
   }
@@ -636,11 +787,11 @@ export class OrreryAudioEngine {
     gain.gain.setValueAtTime(asset.gain, context.currentTime);
     source.connect(gain).connect(masterGain);
     source.onended = () => {
-      if (this.activeLoop === source) {
+      if (this.activeLoop?.source === source) {
         this.activeLoop = undefined;
       }
     };
-    this.activeLoop = source;
+    this.activeLoop = { source, gain, level: asset.gain };
     source.start(context.currentTime);
   }
 
@@ -651,7 +802,7 @@ export class OrreryAudioEngine {
     }
     this.activeVoices = [];
     if (this.activeLoop) {
-      this.activeLoop.stop(now);
+      this.activeLoop.source.stop(now);
       this.activeLoop = undefined;
     }
   }

@@ -48,7 +48,7 @@ const nodes = candidate.records.map((record) => ({
 process.stdout.write(
   JSON.stringify({
     schemaVersion: "harmonic-orrery.nodes.v2",
-    profileRegistryReleaseId: "canonical-feature-profile-registry:0.1.1",
+    profileRegistryReleaseId: "canonical-profile-registry:0.1.1",
     harmonicDescriptor: {
       candidateId: candidate.candidateId,
       coordinateId: candidate.coordinateId,

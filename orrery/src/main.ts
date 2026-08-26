@@ -3,6 +3,9 @@ import {
   OrreryAudioEngine,
   formatPitchClasses,
   isAudioSourceCompatible,
+  isAudioVoicingMode,
+  loadVoicingMode,
+  saveVoicingMode,
   type AudioEngineState,
   type AudioSelection,
 } from "./audio";
@@ -99,6 +102,9 @@ const moveStatus = requiredElement<HTMLElement>("#move-status");
 const moveRoutePosition = requiredElement<HTMLElement>("#move-route-position");
 const moveInspectedAnchor = requiredElement<HTMLElement>("#move-inspected-anchor");
 const moveProvenance = requiredElement<HTMLElement>("#move-provenance");
+const moveTargetPreview = requiredElement<HTMLElement>("#move-target-preview");
+const moveTargetPitchClasses = requiredElement<HTMLElement>("#move-target-pitch-classes");
+const moveTargetCh = requiredElement<HTMLElement>("#move-target-ch");
 const legalMoveList = requiredElement<HTMLElement>("#legal-move-list");
 const routeHistory = requiredElement<HTMLOListElement>("#route-history");
 const objectiveList = requiredElement<HTMLElement>("#objective-list");
@@ -111,6 +117,7 @@ const audioPauseButton = requiredElement<HTMLButtonElement>("#audio-pause");
 const audioMuteButton = requiredElement<HTMLButtonElement>("#audio-mute");
 const audioVolume = requiredElement<HTMLInputElement>("#audio-volume");
 const audioVolumeValue = requiredElement<HTMLOutputElement>("#audio-volume-value");
+const audioVoicingSelect = requiredElement<HTMLSelectElement>("#audio-voicing");
 const audioVisualOnly = requiredElement<HTMLInputElement>("#audio-visual-only");
 const audioPalette = requiredElement<HTMLElement>("#audio-palette");
 const audioStatus = requiredElement<HTMLElement>("#audio-status");
@@ -345,8 +352,16 @@ function renderAudioState(state: AudioEngineState): void {
 }
 
 function renderAudioPalette(selection: AudioSelection): void {
-  const sourcePitchClasses = formatPitchClasses(selection.palette.pitchClasses);
   const retainedPitchClasses = formatPitchClasses(selection.retainedPitchClasses);
+  if (selection.voicingMode === "heptatonic") {
+    selectedAudioPalette.textContent = `${selection.selectedStateName} / heptatonic voicing / ${retainedPitchClasses}`;
+    selectedAudioNote.textContent = `Heptatonic voicing plays the inspected anchor's own seven-note scale; its timbre inherits the authored ${selection.office} A0 preset.`;
+    selectedCourtFilter.textContent = `Court ${selection.court.positionId} / ${selection.court.scaleName} does not filter pitch content in heptatonic voicing.`;
+    audioPalette.textContent = `Current voiced palette: Heptatonic / ${retainedPitchClasses}`;
+    return;
+  }
+
+  const sourcePitchClasses = formatPitchClasses(selection.palette.pitchClasses);
   const suppressedPitchClasses = formatPitchClasses(selection.suppressedPitchClasses);
   const paletteLabel = `${selection.office} A0 / ${selection.palette.mode} / source ${sourcePitchClasses}`;
   selectedAudioPalette.textContent = paletteLabel;
@@ -481,6 +496,34 @@ function nodeLabel(node: OrreryNode | undefined): string {
   return node ? `${node.state.name} / ${node.state.nodeId}` : "No anchor";
 }
 
+function operatorLabel(operatorId: LegalMove["operatorId"]): { title: string; detail: string } {
+  const operator = legalMoveCatalog?.catalog.operators.find((item) => item.operatorId === operatorId);
+  if (operator && typeof operator.degree === "number") {
+    return {
+      title: `${operatorId} / ${operator.name}`,
+      detail: `Degree ${operator.degree} / ${operator.degreeGovernor} / ${operator.direction}`,
+    };
+  }
+  return { title: `${operatorId} / Parallel move`, detail: "Operator metadata unavailable" };
+}
+
+function renderMoveTargetPreview(selectedLegalMoveId: string | null | undefined): void {
+  const selectedMove = selectedLegalMoveId
+    ? legalMoveCatalog?.movesById.get(selectedLegalMoveId)
+    : undefined;
+  const targetNode = selectedMove ? nodesById.get(selectedMove.targetId) : undefined;
+  if (!targetNode) {
+    moveTargetPreview.hidden = true;
+    moveTargetPitchClasses.textContent = "-";
+    moveTargetCh.textContent = "-";
+    return;
+  }
+
+  moveTargetPreview.hidden = false;
+  moveTargetPitchClasses.textContent = `${formatPitchClasses(targetNode.state.pitchClasses)} / mask ${targetNode.state.pitchMask}`;
+  moveTargetCh.textContent = formatRatio(targetNode.scopedHarmonicDescriptor.weightedProjection);
+}
+
 function updateCompletedObjectives(): void {
   if (!session || !legalMoveCatalog) {
     return;
@@ -504,7 +547,7 @@ function updateCompletedObjectives(): void {
 function renderRouteHistory(): void {
   if (!session || !legalMoveCatalog || session.modalRoute.moveIds.length === 0) {
     const item = document.createElement("li");
-    item.textContent = "No local modal route recorded.";
+    item.textContent = "No local route recorded.";
     routeHistory.replaceChildren(item);
     return;
   }
@@ -558,7 +601,7 @@ function renderObjectives(): void {
 function renderLegalMoves(): void {
   if (!session || !legalMoveCatalog) {
     const message = document.createElement("p");
-    message.textContent = "No source-backed modal move can be offered for this projection.";
+    message.textContent = "No source-backed parallel move can be offered for this projection.";
     legalMoveList.replaceChildren(message);
     moveProvenance.textContent = "Catalog binding unavailable; no route result is inferred.";
     applyLegalMoveButton.disabled = true;
@@ -568,7 +611,7 @@ function renderLegalMoves(): void {
   const routeAnchorId = session.modalRoute.currentAnchorId;
   if (routeAnchorId === null) {
     const message = document.createElement("p");
-    message.textContent = "Start a local route at the inspected anchor to reveal its declared modal successor.";
+    message.textContent = "Start a local route at the inspected anchor to reveal its declared parallel moves.";
     legalMoveList.replaceChildren(message);
     moveProvenance.textContent = "A route is local experience data. It does not alter the inspected anchor's canonical identity.";
     applyLegalMoveButton.disabled = true;
@@ -594,12 +637,13 @@ function renderLegalMoves(): void {
       const selected = session?.selectedLegalMoveId === move.id;
       button.classList.toggle("is-selected", selected);
       button.setAttribute("aria-pressed", String(selected));
+      const label = operatorLabel(move.operatorId);
       const operator = document.createElement("strong");
-      operator.textContent = `${move.operatorId} / Modal successor`;
+      operator.textContent = label.title;
       const target = document.createElement("span");
       target.textContent = `Target: ${nodeLabel(nodesById.get(move.targetId))}`;
       const degree = document.createElement("small");
-      degree.textContent = "Degree Governor: not declared for M";
+      degree.textContent = label.detail;
       button.append(operator, target, degree);
       button.addEventListener("click", () => selectLegalMove(move));
       return button;
@@ -612,7 +656,7 @@ function renderLegalMoves(): void {
   const moveForProvenance = selectedMove ?? moves[0];
   moveProvenance.textContent = moveForProvenance
     ? `Provenance: ${moveForProvenance.provenance.applicationId} / ${moveForProvenance.provenance.structuralEdgeTypes} / ${moveForProvenance.provenance.structuralEdgeIds.join(", ")}. The route entry is local only.`
-    : "No declared modal successor is available from this route position.";
+    : "No declared parallel move is available from this route position.";
   applyLegalMoveButton.disabled = selectedMove === undefined;
 }
 
@@ -635,6 +679,7 @@ function renderMoveConsole(): void {
   clearRouteButton.disabled = !routePosition;
 
   renderLegalMoves();
+  renderMoveTargetPreview(session.selectedLegalMoveId);
   renderRouteHistory();
   renderObjectives();
 
@@ -644,16 +689,16 @@ function renderMoveConsole(): void {
       "unavailable",
     );
   } else if (!routePosition) {
-    setMoveStatus("Inspect an anchor, then start a local route to reveal its declared move.", "notice");
+    setMoveStatus("Inspect an anchor, then start a local route to reveal its declared parallel moves.", "notice");
   } else if (session.selectedAnchorId !== routePosition.state.stateId) {
     setMoveStatus(
       "The inspected anchor cannot receive a move while the active local route is elsewhere. Resume or start a new route.",
       "error",
     );
   } else if (session.selectedLegalMoveId) {
-    setMoveStatus("The selected modal move is ready to apply locally.", "ready");
+    setMoveStatus("The selected parallel move is ready to apply locally.", "ready");
   } else {
-    setMoveStatus("One source-backed modal successor is available from this route position.", "ready");
+    setMoveStatus("Source-backed parallel R/L moves are available from this route position.", "ready");
   }
 }
 
@@ -831,7 +876,7 @@ function startRouteAtInspectedAnchor(): void {
   setMoveStatus(
     storageNotice
       ? `Started a local route at ${source.state.name}. ${storageNotice}`
-      : `Started a local route at ${source.state.name}. Select its declared modal successor.`,
+      : `Started a local route at ${source.state.name}. Select a declared parallel move.`,
     "ready",
   );
 }
@@ -861,7 +906,7 @@ function clearRoute(): void {
   const storageNotice = saveSession(progressStorage, session);
   setSessionNotice(storageNotice);
   setMoveStatus(
-    storageNotice ? `The local modal route was cleared. ${storageNotice}` : "The local modal route was cleared.",
+    storageNotice ? `The local route was cleared. ${storageNotice}` : "The local route was cleared.",
     "notice",
   );
 }
@@ -907,8 +952,9 @@ function applySelectedLegalMove(): void {
   session = result.session;
   updateCompletedObjectives();
   selectAnchor(target, "user");
+  const appliedOperatorId = result.move.id.split(":")[0] ?? "move";
   setMoveStatus(
-    `Applied M locally: ${nodeLabel(nodesById.get(result.move.sourceId))} -> ${target.state.name}.`,
+    `Applied ${appliedOperatorId} locally: ${nodeLabel(nodesById.get(result.move.sourceId))} -> ${target.state.name}.`,
     "ready",
   );
 }
@@ -984,6 +1030,8 @@ async function start(): Promise<void> {
     legalMoveCatalogNotice = `Legal moves are unavailable: ${detail}`;
   }
   progressStorage = browserStorage();
+  audioEngine.setVoicingMode(loadVoicingMode(progressStorage));
+  audioVoicingSelect.value = audioEngine.currentVoicingMode();
   const sessionSource = sourceFromResponse(response, catalogIdentity(LEGAL_MOVE_CATALOG));
   const loadedSession = loadSession(
     progressStorage,
@@ -1140,6 +1188,18 @@ audioVolume.addEventListener("input", () => {
 
 audioVisualOnly.addEventListener("change", () => {
   audioEngine.setVisualOnly(audioVisualOnly.checked);
+});
+
+audioVoicingSelect.addEventListener("change", () => {
+  const value = audioVoicingSelect.value;
+  if (!isAudioVoicingMode(value)) {
+    return;
+  }
+  const selection = audioEngine.setVoicingMode(value);
+  saveVoicingMode(progressStorage, value);
+  if (selection) {
+    renderAudioPalette(selection);
+  }
 });
 
 initializeCourtControls();

@@ -27,14 +27,14 @@ import {
 
 const source: OrrerySourceIdentity = {
   nodesSchemaVersion: "harmonic-orrery.nodes.v2",
-  profileRegistryReleaseId: "canonical-feature-profile-registry:0.1.1",
+  profileRegistryReleaseId: "canonical-profile-registry:0.1.1",
   harmonicDescriptorReleaseId: "harmonic-compression-candidate:CH_A012_q_v1:1.0.0",
   harmonicDescriptorFingerprint: "a".repeat(64),
   legalMoveCatalogSchemaVersion: "harmonic-orrery.legal-moves.v2",
   legalMoveCatalogFingerprint: "b".repeat(64),
 };
 const anchors = new Set([1387, 2741, 1709, 1451, 2773, 1717, 1453]);
-const objectives = new Set(["modal-orbit", "all-offices", "lydian-to-aeolian", "court-c0-c4"]);
+const objectives = new Set(["modal-orbit", "all-offices", "lydian-to-mixolydian", "court-c0-c4"]);
 const moves = new Map<string, SessionLegalMove>([
   ["M:1387:2741", { id: "M:1387:2741", sourceId: 1387, targetId: 2741 }],
   ["M:2741:1709", { id: "M:2741:1709", sourceId: 2741, targetId: 1709 }],
@@ -105,7 +105,7 @@ describe("Harmonic Orrery session", () => {
     }
     const session = markSessionObjectivesCompleted(
       selectSessionCourtPosition(applied.session, "C1"),
-      ["lydian-to-aeolian"],
+      ["lydian-to-mixolydian"],
       objectives,
     );
 

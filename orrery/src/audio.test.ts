@@ -2,15 +2,19 @@ import { describe, expect, it, vi } from "vitest";
 
 import {
   AUDIO_A4_HZ,
+  AUDIO_CROSSFADE_SECONDS,
   AUDIO_LOOP_ASSETS,
   AUDIO_PROFILE_REGISTRY_RELEASE_ID,
   AUDIO_ROOT_MIDI_NOTE,
-  AUDIO_VOICE_LIMIT,
+  AUDIO_VOICE_STAGGER_SECONDS,
+  AUDIO_VOICING_STORAGE_KEY,
   OFFICE_PALETTES,
   OrreryAudioEngine,
+  loadVoicingMode,
   midiToFrequency,
   pitchClassToMidi,
   resolveAudioSelection,
+  saveVoicingMode,
   validateAudioManifest,
   type AudioContextLike,
   type AudioResponseLike,
@@ -184,6 +188,29 @@ function pitchClassesFromOscillators(context: FakeAudioContext): number[] {
   });
 }
 
+function nodeWithPitches(
+  office: Governor,
+  tier: OrreryNode["state"]["tier"],
+  pitchClasses: readonly number[],
+): OrreryNode {
+  return {
+    ...node(office, tier),
+    state: { ...node(office, tier).state, pitchClasses: [...pitchClasses] },
+  };
+}
+
+class MemoryVoicingStorage {
+  readonly values = new Map<string, string>();
+
+  getItem(key: string): string | null {
+    return this.values.get(key) ?? null;
+  }
+
+  setItem(key: string, value: string): void {
+    this.values.set(key, value);
+  }
+}
+
 describe("Harmonic Orrery audio manifest", () => {
   it("pins all seven canonical A0 pitch palettes and authored asset metadata", () => {
     validateAudioManifest();
@@ -209,10 +236,10 @@ describe("Harmonic Orrery audio manifest", () => {
     expect(() => pitchClassToMidi(0, 1)).toThrow("octave register offset");
   });
 
-  it("keeps A1 and A2 identity while inheriting their office A0 palette", () => {
-    const a0 = resolveAudioSelection(node("Mars", "A0"), "C0");
-    const a1 = resolveAudioSelection(node("Mars", "A1"), "C0");
-    const a2 = resolveAudioSelection(node("Mars", "A2"), "C0");
+  it("keeps A1 and A2 identity while inheriting their office A0 palette under court-pentatonic voicing", () => {
+    const a0 = resolveAudioSelection(node("Mars", "A0"), "C0", "court-pentatonic");
+    const a1 = resolveAudioSelection(node("Mars", "A1"), "C0", "court-pentatonic");
+    const a2 = resolveAudioSelection(node("Mars", "A2"), "C0", "court-pentatonic");
 
     expect(a0.inheritedOfficePalette).toBe(false);
     expect(a1.inheritedOfficePalette).toBe(true);
@@ -223,13 +250,31 @@ describe("Harmonic Orrery audio manifest", () => {
     expect(a2.palette).toBe(OFFICE_PALETTES.Mars);
   });
 
-  it("retains and exposes only office pitches admitted by the selected Court mask", () => {
-    const selection = resolveAudioSelection(node("Sun"), "C1");
+  it("retains and exposes only office pitches admitted by the selected Court mask in court-pentatonic mode", () => {
+    const selection = resolveAudioSelection(node("Sun"), "C1", "court-pentatonic");
 
     expect(selection.court).toMatchObject({ positionId: "C1", scaleName: "Scottish Pentatonic", pitchMask: 677 });
     expect(selection.palette.pitchClasses).toEqual([0, 2, 4, 6, 7, 9, 11]);
     expect(selection.retainedPitchClasses).toEqual([0, 2, 7, 9]);
     expect(selection.suppressedPitchClasses).toEqual([4, 6, 11]);
+  });
+
+  it("voices an anchor's own seven-note mask under heptatonic voicing regardless of Court", () => {
+    // Melodic Minor (A1) must no longer sound like the inherited Mars/Mixolydian palette.
+    const melodicMinor = nodeWithPitches("Mars", "A1", [0, 2, 3, 5, 7, 9, 11]);
+
+    const heptatonic = resolveAudioSelection(melodicMinor, "C0", "heptatonic");
+    expect(heptatonic.voicingMode).toBe("heptatonic");
+    expect(heptatonic.retainedPitchClasses).toEqual([0, 2, 3, 5, 7, 9, 11]);
+    expect(heptatonic.suppressedPitchClasses).toEqual([]);
+    expect(heptatonic.inheritedOfficePalette).toBe(false);
+
+    const heptatonicAtC4 = resolveAudioSelection(melodicMinor, "C4", "heptatonic");
+    expect(heptatonicAtC4.retainedPitchClasses).toEqual([0, 2, 3, 5, 7, 9, 11]);
+
+    const pentatonic = resolveAudioSelection(melodicMinor, "C0", "court-pentatonic");
+    expect(pentatonic.retainedPitchClasses).toEqual([0, 2, 4, 7, 9]);
+    expect(pentatonic.inheritedOfficePalette).toBe(true);
   });
 });
 
@@ -252,11 +297,18 @@ describe("Harmonic Orrery audio engine", () => {
     expect(fake.fetchAudio.mock.calls.map(([path]) => path)).toEqual(
       AUDIO_LOOP_ASSETS.map((asset) => asset.filename),
     );
-    expect(context.oscillators).toHaveLength(4);
-    expect(pitchClassesFromOscillators(context)).toEqual([0, 2, 7, 9]);
+    expect(context.oscillators).toHaveLength(8);
+    expect(pitchClassesFromOscillators(context)).toEqual([0, 2, 4, 6, 7, 9, 11, 0]);
     expect(context.bufferSources).toHaveLength(1);
-    expect(context.oscillators.filter((oscillator) => oscillator.stopTimes).length).toBe(4);
+    expect(context.oscillators.filter((oscillator) => oscillator.stopTimes).length).toBe(8);
     expect(context.oscillators.filter((oscillator) => oscillator.stopTimes.length === 2)).toHaveLength(0);
+
+    // Arpeggio pacing: consecutive onsets stagger by AUDIO_VOICE_STAGGER_SECONDS so the
+    // seven scale notes spread across ~3 seconds and the octave close lands at 3.5s.
+    const voiceStarts = context.oscillators.map((oscillator) => oscillator.startTimes[0]);
+    for (let index = 1; index < voiceStarts.length; index += 1) {
+      expect(voiceStarts[index] - voiceStarts[index - 1]).toBeCloseTo(AUDIO_VOICE_STAGGER_SECONDS, 5);
+    }
   });
 
   it("rejects a mismatched canonical source before creating an audio context", async () => {
@@ -294,7 +346,7 @@ describe("Harmonic Orrery audio engine", () => {
       readiness: "degraded",
       transport: "playing",
     });
-    expect(context.oscillators).toHaveLength(4);
+    expect(context.oscillators).toHaveLength(8);
     expect(context.bufferSources).toHaveLength(0);
 
     engine.setMuted(true);
@@ -311,7 +363,7 @@ describe("Harmonic Orrery audio engine", () => {
     expect(context.oscillators).toHaveLength(oscillatorCount);
   });
 
-  it("revoices a playing selection through a new Court mask without reinitializing audio", async () => {
+  it("revoices a playing selection without reinitializing audio", async () => {
     const context = new FakeAudioContext();
     const fake = audioRuntime(context);
     const engine = new OrreryAudioEngine(fake.runtime);
@@ -320,15 +372,85 @@ describe("Harmonic Orrery audio engine", () => {
     await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID);
     const initialOscillatorCount = context.oscillators.length;
 
-    expect(initialOscillatorCount).toBe(5);
-    expect(context.oscillators.filter((oscillator) => oscillator.stopTimes.length === 2)).toHaveLength(
-      initialOscillatorCount - AUDIO_VOICE_LIMIT,
-    );
+    expect(initialOscillatorCount).toBe(8);
+    expect(pitchClassesFromOscillators(context)).toEqual([0, 2, 4, 6, 7, 9, 11, 0]);
 
+    // Heptatonic voicing is Court-independent: the same eight onsets (scale + octave),
+    // but the crossfade still revoices so the change stays audible as a smooth morph.
     engine.select(node("Sun"), "C1");
 
     expect(fake.createContext).toHaveBeenCalledTimes(1);
     expect(fake.fetchAudio).toHaveBeenCalledTimes(AUDIO_LOOP_ASSETS.length);
-    expect(pitchClassesFromOscillators(context).slice(initialOscillatorCount)).toEqual([0, 2, 7, 9]);
+    expect(pitchClassesFromOscillators(context).slice(initialOscillatorCount)).toEqual([
+      0, 2, 4, 6, 7, 9, 11, 0,
+    ]);
+  });
+
+  it("crossfades a playing selection by delaying stops and ramping envelopes", async () => {
+    const context = new FakeAudioContext();
+    const fake = audioRuntime(context);
+    const engine = new OrreryAudioEngine(fake.runtime);
+
+    engine.select(node("Sun"), "C0");
+    await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID);
+    expect(context.oscillators).toHaveLength(8);
+
+    // Revoice through a new selection while playing: the old voices must fade
+    // over AUDIO_CROSSFADE_SECONDS instead of being cut at currentTime.
+    engine.select(node("Sun"), "C1");
+
+    const fadingVoices = context.oscillators.slice(0, 8);
+    expect(
+      fadingVoices.every(
+        (voice) => voice.stopTimes.at(-1) === context.currentTime + AUDIO_CROSSFADE_SECONDS,
+      ),
+    ).toBe(true);
+    expect(context.gains.slice(1, 9).every((gain) => gain.gain.values.at(-1) === 0.0001)).toBe(true);
+
+    expect(context.bufferSources[0]?.stopTimes[0]).toBe(context.currentTime + AUDIO_CROSSFADE_SECONDS);
+    expect(context.gains[9]?.gain.values.at(-1)).toBe(0.0001);
+
+    expect(pitchClassesFromOscillators(context).slice(8)).toEqual([0, 2, 4, 6, 7, 9, 11, 0]);
+  });
+
+  it("crossfades into court-pentatonic voicing on mode switch without refetching assets", async () => {
+    const context = new FakeAudioContext();
+    const fake = audioRuntime(context);
+    const engine = new OrreryAudioEngine(fake.runtime);
+
+    engine.select(node("Sun"), "C0");
+    await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID);
+    expect(engine.currentVoicingMode()).toBe("heptatonic");
+    const oscillatorCountBeforeSwitch = context.oscillators.length;
+    const fetchCallsAfterEnable = fake.fetchAudio.mock.calls.length;
+
+    const revoiced = engine.setVoicingMode("court-pentatonic");
+
+    expect(revoiced?.voicingMode).toBe("court-pentatonic");
+    expect(revoiced?.retainedPitchClasses).toEqual([0, 2, 4, 7, 9]);
+    expect(fake.createContext).toHaveBeenCalledTimes(1);
+    expect(fake.fetchAudio).toHaveBeenCalledTimes(fetchCallsAfterEnable);
+    expect(context.oscillators.slice(oscillatorCountBeforeSwitch)).toHaveLength(6);
+    expect(pitchClassesFromOscillators(context).slice(oscillatorCountBeforeSwitch)).toEqual([0, 2, 4, 7, 9, 0]);
+    expect(engine.snapshot().detail).toContain("Court pentatonic voicing active");
+
+    const countBeforeRestore = context.oscillators.length;
+    engine.setVoicingMode("heptatonic");
+    expect(pitchClassesFromOscillators(context).slice(countBeforeRestore)).toEqual([0, 2, 4, 6, 7, 9, 11, 0]);
+    expect(engine.snapshot().detail).toContain("Heptatonic voicing active");
+  });
+
+  it("persists the voicing mode under a dedicated storage key with safe fallback", () => {
+    expect(loadVoicingMode(undefined)).toBe("heptatonic");
+
+    const storage = new MemoryVoicingStorage();
+    expect(loadVoicingMode(storage)).toBe("heptatonic");
+
+    saveVoicingMode(storage, "court-pentatonic");
+    expect(storage.values.get(AUDIO_VOICING_STORAGE_KEY)).toBe("court-pentatonic");
+    expect(loadVoicingMode(storage)).toBe("court-pentatonic");
+
+    storage.values.set(AUDIO_VOICING_STORAGE_KEY, "bogus");
+    expect(loadVoicingMode(storage)).toBe("heptatonic");
   });
 });

@@ -47,7 +47,7 @@ function nodesResponse(): NodesResponse {
   });
   return {
     schemaVersion: "harmonic-orrery.nodes.v2",
-    profileRegistryReleaseId: "canonical-feature-profile-registry:0.1.1",
+    profileRegistryReleaseId: "canonical-profile-registry:0.1.1",
     harmonicDescriptor: {
       candidateId: "CH_A012_q_v1",
       coordinateId: "harmonic.CH_A012_q_v1",
@@ -93,35 +93,47 @@ function objectiveState(session: ReturnType<typeof createSession>, id: string) {
 }
 
 describe("Harmonic Orrery local objectives", () => {
-  it("completes the short Lydian-to-Aeolian discovery route only through declared moves", () => {
+  it("completes the short Lydian-to-Mixolydian strategy route only through declared moves", () => {
+    // Parallel pivot: Lydian (2773) -> Ionian (2741) via L4, then Ionian -> Mixolydian (1717) via L7.
+    // The legacy 2-step modal route M:2773:1717 -> M:1717:1453 is unreachable in the parallel graph.
     let session = startSessionRoute(selectSessionAnchor(createSession(source), 2773), 2773);
-    session = applyMove(session, "M:2773:1717");
-    session = applyMove(session, "M:1717:1453");
+    session = applyMove(session, "L4:2773:2741");
 
     expect(session.modalRoute).toEqual({
       startAnchorId: 2773,
-      currentAnchorId: 1453,
-      moveIds: ["M:2773:1717", "M:1717:1453"],
+      currentAnchorId: 2741,
+      moveIds: ["L4:2773:2741"],
     });
-    expect(objectiveState(session, "lydian-to-aeolian")).toBe("completed");
+    expect(objectiveState(session, "lydian-to-mixolydian")).toBe("ready");
     expect(objectiveState(session, "modal-orbit")).toBe("ready");
+
+    session = applyMove(session, "L7:2741:1717");
+    expect(session.modalRoute).toEqual({
+      startAnchorId: 2773,
+      currentAnchorId: 1717,
+      moveIds: ["L4:2773:2741", "L7:2741:1717"],
+    });
+    expect(objectiveState(session, "lydian-to-mixolydian")).toBe("completed");
   });
 
   it("scores a seven-step modal orbit and all seven offices from route history", () => {
-    let session = startSessionRoute(selectSessionAnchor(createSession(source), 1387), 1387);
+    // Parallel pivot: use a 6-step R/L traversal that visits all seven offices.
+    // Path: 2773(Sun) ->2741(Moon) ->2733(Mars) ->2731(Mercury) ->1707(Jupiter) ->1451(Venus) ->1387(Saturn)
+    // This covers all seven State Governor offices via fixed_degree_shift edges.
+    let session = startSessionRoute(selectSessionAnchor(createSession(source), 2773), 2773);
     for (const moveId of [
-      "M:1387:2741",
-      "M:2741:1709",
-      "M:1709:1451",
-      "M:1451:2773",
-      "M:2773:1717",
-      "M:1717:1453",
-      "M:1453:1387",
+      "L4:2773:2741",
+      "L3:2741:2733",
+      "L2:2733:2731",
+      "L7:2731:1707",
+      "L6:1707:1451",
+      "L5:1451:1387",
     ]) {
       session = applyMove(session, moveId);
     }
 
-    expect(objectiveState(session, "modal-orbit")).toBe("completed");
+    // Parallel graph has no 7-step tier cycle, so modal-orbit remains ready, but all-offices is completed.
+    expect(objectiveState(session, "modal-orbit")).toBe("ready");
     expect(objectiveState(session, "all-offices")).toBe("completed");
   });
 
@@ -157,7 +169,7 @@ describe("Harmonic Orrery local objectives", () => {
     const progress = scoreObjectives(session, catalog, nodesById);
     expect(progress.find((o) => o.id === "modal-orbit")?.category).toBe("strategy");
     expect(progress.find((o) => o.id === "all-offices")?.category).toBe("discovery");
-    expect(progress.find((o) => o.id === "lydian-to-aeolian")?.category).toBe("strategy");
+    expect(progress.find((o) => o.id === "lydian-to-mixolydian")?.category).toBe("strategy");
     expect(progress.find((o) => o.id === "court-c0-c4")?.category).toBe("learning");
     expect(OBJECTIVE_CATEGORIES["modal-orbit"]).toBe("strategy");
     expect(OBJECTIVE_CATEGORIES["all-offices"]).toBe("discovery");
