@@ -1,0 +1,174 @@
+{
+  "schemaVersion": "gov-2xx.tiered-photonic-candidate-validation.v1",
+  "verdict": "PASS",
+  "candidateId": "CH_TIERED_v1",
+  "candidateFingerprint": "a05b0b543c473b3ffb0c282eff0300fc2d392b7d97a5cbf382d20a4a928ae404",
+  "checksPassed": 15,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "checkId": "schema",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "checkId": "candidate-fingerprint",
+      "status": "PASS",
+      "diagnostic": "a05b0b543c473b3ffb0c282eff0300fc2d392b7d97a5cbf382d20a4a928ae404"
+    },
+    {
+      "checkId": "checked-artifact-freshness",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": "a05b0b543c473b3ffb0c282eff0300fc2d392b7d97a5cbf382d20a4a928ae404",
+        "actual": "a05b0b543c473b3ffb0c282eff0300fc2d392b7d97a5cbf382d20a4a928ae404"
+      }
+    },
+    {
+      "checkId": "build-twice-identity",
+      "status": "PASS",
+      "diagnostic": "a05b0b543c473b3ffb0c282eff0300fc2d392b7d97a5cbf382d20a4a928ae404"
+    },
+    {
+      "checkId": "reordered-input-identity",
+      "status": "PASS",
+      "diagnostic": "a05b0b543c473b3ffb0c282eff0300fc2d392b7d97a5cbf382d20a4a928ae404"
+    },
+    {
+      "checkId": "scope-channel-blind-edge-faithful",
+      "status": "PASS",
+      "diagnostic": {
+        "recordCount": 28
+      }
+    },
+    {
+      "checkId": "variant-duality-14-per-variant",
+      "status": "PASS",
+      "diagnostic": {
+        "sum": 14,
+        "geom": 14
+      }
+    },
+    {
+      "checkId": "photonicCompression-domain-per-record",
+      "status": "PASS",
+      "diagnostic": "sum_mixing null, geometric_mean in [0,1], source-derived two-decimal bands"
+    },
+    {
+      "checkId": "global-C_H-remains-unresolved",
+      "status": "PASS",
+      "diagnostic": {
+        "guardLiteral": "C_H is a derived harmonic property, not a photonic measurement, not C_P, not C_S, not kappa_court, and not a thermodynamic quantity: not temperature, entropy, enthalpy, or free energy.",
+        "namespace": "harmonic.C_H",
+        "status": "unresolved",
+        "value": null
+      }
+    },
+    {
+      "checkId": "interpretation-flags",
+      "status": "PASS",
+      "diagnostic": {
+        "causationClaim": false,
+        "globalCHNull": true,
+        "note": "Derived constants are authored informational sidecar; numeric bands only canonical; UV labels Layer-4 prose; not C_P replacement, not C_H, not kappa_court, not thermodynamic; not a tier classifier.",
+        "physicalQuantityClaim": false,
+        "tierClassifier": false
+      }
+    },
+    {
+      "checkId": "adversarial-tamper-rejection",
+      "status": "PASS",
+      "diagnostic": {
+        "tier-missing-or-A0": true,
+        "lambda-outside-declared-band": true,
+        "causation-claim-present": true,
+        "tier-classifier-claim-present": true,
+        "derivation-branching-on-channel": true,
+        "W-as-input": true,
+        "input-drift-governors-lambda": true
+      }
+    },
+    {
+      "checkId": "seam-inclusion-4-4-both-variants",
+      "status": "PASS",
+      "diagnostic": {
+        "seams": [
+          1371,
+          2901,
+          3413,
+          1367
+        ]
+      }
+    },
+    {
+      "checkId": "source-bindings-include-photonic-records",
+      "status": "PASS",
+      "diagnostic": {
+        "bindingIds": [
+          "canonical-heptatonic-ledger",
+          "canonical-network-data",
+          "governor-registry",
+          "photonic-records",
+          "global-C_H-guard",
+          "tiered-photonic-theorem"
+        ],
+        "matchesDeclaredSources": true,
+        "derivedInputsMatch": true
+      }
+    },
+    {
+      "checkId": "mean-doubling-2t",
+      "status": "PASS",
+      "diagnostic": {
+        "ratioA1": 2,
+        "ratioA2": 2,
+        "sumNuA0": 0.013632087044548104,
+        "sumNuA1": 0.027264174089096208,
+        "sumNuA2": 0.054528348178192416
+      }
+    },
+    {
+      "checkId": "fingerprint-closure-6-bindings",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "bindingId": "canonical-heptatonic-ledger",
+          "path": "canonical/universal-heptatonic-ledger.json",
+          "role": "authoritative_state_identity",
+          "sha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d"
+        },
+        {
+          "bindingId": "canonical-network-data",
+          "path": "canonical/universal-network-data.json",
+          "role": "construction_edges_K_kernel",
+          "sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc"
+        },
+        {
+          "bindingId": "governor-registry",
+          "path": "schemas/governors.yaml",
+          "role": "A0_wavelength_source",
+          "sha256": "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2"
+        },
+        {
+          "bindingId": "photonic-records",
+          "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/photonic-records.json",
+          "role": "physical_constants_and_C_P_convention",
+          "sha256": "06a723deffe6e3302e33070d029b22ee0744405ed5e9d1a7fe89a87ecde9066b"
+        },
+        {
+          "bindingId": "global-C_H-guard",
+          "path": "seven-governors-harmonic-invariants-v0.1.0/canonical/compression-namespace-guard.json",
+          "role": "global_namespace_boundary",
+          "sha256": "74aa4024d80b89feeecb09ad7d77d9b520542737a9e00ded70e50267324ef2a5"
+        },
+        {
+          "bindingId": "tiered-photonic-theorem",
+          "path": "docs/TIERED_PHOTONIC_THEOREM.md",
+          "role": "scoped_research_theorem",
+          "sha256": "c1d6fcb53ff947b9aa32991d8d3dfc999f127bba0cb48ddf807ecc37386867c3"
+        }
+      ]
+    }
+  ],
+  "reportFingerprint": "9707efad931ba67390076b0efe480c945060caf009a2058bc7fe024e100edd1a"
+}

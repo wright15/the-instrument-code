@@ -354,6 +354,65 @@ The displayed vector proves feasibility. Without a separately declared and
 validated optimization objective, it must not be described as the unique
 mathematically necessary weight vector.
 
+### Theorem 3′ (max-margin): optimal value and unique witness
+
+Let the LP maximize `ε` subject to the 111 inequalities + `Σw=1`:
+
+- 6 Chaldean differences (`w₁−w₅,w₅−w₂,w₂−w₆,w₆−w₃,w₃−w₇,w₇−w₄`) + `w₄≥ε` (7)
+- 6 adjacent A0-ordering gaps (6)
+- 49 `A1×A0` + 49 `A2×A1` cross-tier gaps (98)
+
+Then:
+
+```math
+\boxed{\varepsilon^\star = 3/407},\quad
+\boxed{w^\star = \tfrac1{407}(116,56,41,35,77,44,38)},\quad
+\boxed{\lambda^\star = \tfrac1{407}(122,101,67,63,30,17,7)}
+```
+
+supported on the 7 binding constraints
+
+```
+w₆−w₃, w₃−w₇, w₇−w₄,  Aeolian−Dorian (b+d−2f), Phrygian−Aeolian (e+g−2b),
+Locrian−Phrygian (a+c−2e), Acoustic−Locrian (c+d+e+f+g−2a)
+```
+
+where `a…g = w₁…w₇`. The certificate satisfies:
+
+```math
+\sum_{i=1}^{7}\lambda_i \nabla L_i = \varepsilon^\star\cdot\mathbf{1}\in\mathbb Q^7,
+\qquad \sum_{i=1}^{7}\lambda_i = 1,
+\qquad \lambda_i\ge0,
+```
+
+so by weak duality `ε≤3/407` for every feasible `w`, and `w⋆` attains `3/407`. Explicitly, the displayed integer coefficients are the lambda numerators, so the identity includes their common `1/407` scale:
+
+```math
+\frac1{407}\Bigl(
+122(w₆−w₃)+101(w₃−w₇)+67(w₇−w₄)
++63[W_{Aeo}−W_{Dor}]+30[W_{Phr}−W_{Aeo}]+17[W_{Loc}−W_{Phr}]
++7[W_{Acoustic}−W_{Loc}]
+\Bigr)=\frac3{407}\sum_{j=1}^{7}w_j\equiv\frac3{407}.
+```
+
+identically in `w` (verified at `e₁,e₂` and every degree). All `λ_i>0` ⇒ complementary slackness forces the 7 bindings tight at any optimum ⇒ the tight system
+
+```
+f=c+ε, g=c−ε, d=c−2ε, b=c+5ε, e=c+12ε, a=c+25ε,
+3c=41ε, 7c+40ε=1
+```
+
+forces `ε=3/407`, `c=41/407` and `w=w⋆` uniquely — **one optimum, no others**. Next-tightest slack is `Acoustic−Phrygian` at `6/407` (verified; all else ≥6/407). Hence `Theorem 3` upgrades from *feasible witness exists* to *unique max-margin*.
+
+The unique statement is limited to the declared max-margin objective. It does not change `method.uniquenessClaim=false`: absent that objective, feasible witnesses need not be unique, and neither witness is presented as a natural law.
+
+The certificate `(ε⋆,w⋆,λ⋆)` is carried in the pinned artifact `certificate:{epsilonStar,witness,dualCertificate}` and verified by `src/governor/certificate_verifier.py` (all 111 rows, exact `Fraction`, no simplex). `Σλ=1` makes `λ` a probability distribution over the 7 tightest gaps — `ε⋆` is their weighted average.
+
+The persisted v1 schema keeps `certificate` optional so the historical pre-certificate
+v1 payload remains structurally valid. The current `1.8.0` generator always emits it,
+and the current semantic validator requires and independently verifies it before the
+artifact is accepted as fresh evidence.
+
 ## 10. Governor identity and score remain separate
 
 Governor office is categorical:

@@ -2,7 +2,7 @@
   "schemaVersion": "gov-227.d-tier-harmonic-compression-validation.v1",
   "verdict": "PASS",
   "candidateId": "CH_D17_q_v2",
-  "candidateFingerprint": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe",
+  "candidateFingerprint": "c078171a73465e256b43ad4bc3a75c787866b582ec7783edf6e42c13e096b685",
   "checksPassed": 17,
   "checksFailed": 0,
   "checks": [
@@ -14,25 +14,25 @@
     {
       "checkId": "candidate-fingerprint",
       "status": "PASS",
-      "diagnostic": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe"
+      "diagnostic": "c078171a73465e256b43ad4bc3a75c787866b582ec7783edf6e42c13e096b685"
     },
     {
       "checkId": "checked-artifact-freshness",
       "status": "PASS",
       "diagnostic": {
-        "expected": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe",
-        "actual": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe"
+        "expected": "c078171a73465e256b43ad4bc3a75c787866b582ec7783edf6e42c13e096b685",
+        "actual": "c078171a73465e256b43ad4bc3a75c787866b582ec7783edf6e42c13e096b685"
       }
     },
     {
       "checkId": "build-twice-identity",
       "status": "PASS",
-      "diagnostic": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe"
+      "diagnostic": "c078171a73465e256b43ad4bc3a75c787866b582ec7783edf6e42c13e096b685"
     },
     {
       "checkId": "reordered-input-identity",
       "status": "PASS",
-      "diagnostic": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe"
+      "diagnostic": "c078171a73465e256b43ad4bc3a75c787866b582ec7783edf6e42c13e096b685"
     },
     {
       "checkId": "scope-closure",
@@ -545,8 +545,8 @@
       "checkId": "A-tier-byte-pin",
       "status": "PASS",
       "diagnostic": {
-        "bytes": 15208,
-        "sha256": "fa2947440d90f67b65443ae03f1ce92a0cc8a6ca2e93e83dfdc2490a25723c98"
+        "bytes": 16008,
+        "sha256": "2c6ffae3acc7d5e6bc7154783967ad463d99fab96c0e410b69b27fb21af59c6e"
       }
     },
     {
@@ -569,5 +569,5 @@
       }
     }
   ],
-  "reportFingerprint": "036f8dfe5da5b59da4797cb84d971f689c741a3c52e0ed424ac3382d06e6b18d"
+  "reportFingerprint": "0cd03f739fe17189541c6c29c706254d32a8dcafdaa3f4ef11b00a1cbda640aa"
 }

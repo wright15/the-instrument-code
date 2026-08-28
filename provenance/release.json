@@ -1,7 +1,7 @@
 {
-  "releaseId": "seven-governors-integrated-1.7.0",
-  "version": "1.7.0",
-  "releaseDate": "2026-08-24",
+  "releaseId": "seven-governors-integrated-1.8.0",
+  "version": "1.8.0",
+  "releaseDate": "2026-08-27",
   "status": "validated_admitted",
   "authorityOrder": [
     "framework",
@@ -120,7 +120,10 @@
     "gov227ScopedStates": 49,
     "gov227ScopedCoordinates": 2,
     "fullDatabaseNodes": 3061,
-    "fullDatabaseRelationships": 10506
+    "fullDatabaseRelationships": 10506,
+    "tieredPhotonicScopedStates": 14,
+    "tieredPhotonicScopedRecords": 28,
+    "tieredPhotonicScopedVariants": 2
   },
   "importOrder": [
     "neo4j/schema.cypher",
@@ -148,7 +151,7 @@
   "neo4jBaselineStatus": {
     "status": "deferred_no_graph_data_change",
     "retainedReleaseId": "seven-governors-integrated-1.5.0",
-    "reason": "only release.json provenance version and non-projected GOV-227 evidence changed",
+    "reason": "only release provenance and non-projected GOV-213, GOV-2XX, and GOV-227 evidence changed",
     "refreshRequired": "next Neo4j availability"
   },
   "rootExtensions": [
@@ -167,13 +170,19 @@
     {
       "storyId": "GOV-213",
       "releaseId": "harmonic-compression-candidate:CH_A012_q_v1:1.0.0",
-      "fingerprint": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1",
+      "fingerprint": "b2e57f6b0e2d8ac10113dc1861430ff5c205dedb8b079312232b2a76f167df5f",
       "authority": "scoped_A012_harmonic_descriptor_only"
+    },
+    {
+      "storyId": "GOV-2XX",
+      "releaseId": "tiered-photonic-candidate:CH_TIERED_v1:1.0.0",
+      "fingerprint": "a05b0b543c473b3ffb0c282eff0300fc2d392b7d97a5cbf382d20a4a928ae404",
+      "authority": "informational_sidecar_only"
     },
     {
       "storyId": "GOV-227",
       "releaseId": "harmonic-compression-candidate:CH_D17_q_v2:1.0.0",
-      "fingerprint": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe",
+      "fingerprint": "c078171a73465e256b43ad4bc3a75c787866b582ec7783edf6e42c13e096b685",
       "authority": "scoped_D17_harmonic_descriptor_only"
     },
     {

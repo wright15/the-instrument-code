@@ -231,7 +231,7 @@ incidences into the 12 absolute 7-35 sets.
 | 2 | 48 |
 | 3 | 12 |
 
-No exact five-note set is expected to have more than three 7-35 parents.
+No exact five-note set has more than three 7-35 parents — proved: span `s∈[4,10]`, parents `max(0,7−s)≤3`; checked invariant `parentCount≤3`.
 
 ### 6.2 Forte-class discriminator
 

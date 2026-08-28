@@ -40,6 +40,16 @@
       "weightSum": {"$ref": "#/$defs/ratio"},
       "uniquenessClaim": {"const": false}
     }},
+    "certificate": {"type": "object", "additionalProperties": false, "required": ["epsilonStar", "witness", "dualCertificate", "bindingConstraints", "tightSet", "nextTightestSlack", "optimalityClaim", "verifier"], "properties": {
+      "epsilonStar": {"$ref": "#/$defs/ratio"},
+      "witness": {"type": "object", "additionalProperties": false, "required": ["weightNumerators", "weightDenominator"], "properties": {"weightNumerators": {"const": [116, 56, 41, 35, 77, 44, 38]}, "weightDenominator": {"const": 407}}},
+      "dualCertificate": {"type": "object", "additionalProperties": false, "required": ["lambdaNumerators", "lambdaDenominator", "sumLambda", "bindingConstraints"], "properties": {"lambdaNumerators": {"const": [122, 101, 67, 63, 30, 17, 7]}, "lambdaDenominator": {"const": 407}, "sumLambda": {"$ref": "#/$defs/ratio"}, "bindingConstraints": {"const": ["w6-w3", "w3-w7", "w7-w4", "Aeolian-Dorian", "Phrygian-Aeolian", "Locrian-Phrygian", "Acoustic-Locrian"]}}},
+      "bindingConstraints": {"const": ["w6-w3", "w3-w7", "w7-w4", "Aeolian-Dorian", "Phrygian-Aeolian", "Locrian-Phrygian", "Acoustic-Locrian"]},
+      "tightSet": {"const": ["w6-w3", "w3-w7", "w7-w4", "Aeolian-Dorian", "Phrygian-Aeolian", "Locrian-Phrygian", "Acoustic-Locrian"]},
+      "nextTightestSlack": {"type": "object", "additionalProperties": false, "required": ["pair", "numerator", "denominator"], "properties": {"pair": {"const": "Acoustic-Phrygian"}, "numerator": {"const": 6}, "denominator": {"const": 407}}},
+      "optimalityClaim": {"const": "unique_max_margin"},
+      "verifier": {"const": "src/governor/certificate_verifier.py"}
+    }},
     "sourceBindings": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "additionalProperties": false, "required": ["bindingId", "path", "sha256", "role"], "properties": {"bindingId": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha256"}, "role": {"type": "string", "minLength": 1}}}},
     "records": {"type": "array", "minItems": 21, "maxItems": 21, "items": {"$ref": "#/$defs/stateRecord"}},
     "tierSummaries": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "additionalProperties": false, "required": ["tier", "forte", "stateCount", "compressionClassMultiset", "unweightedSum", "minimum", "maximum"], "properties": {"tier": {"enum": ["A0", "A1", "A2"]}, "forte": {"enum": ["7-35", "7-34", "7-33"]}, "stateCount": {"const": 7}, "compressionClassMultiset": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "integer", "minimum": 0, "maximum": 3}}, "unweightedSum": {"enum": [5, 8, 13]}, "minimum": {"$ref": "#/$defs/extreme"}, "maximum": {"$ref": "#/$defs/extreme"}}}},

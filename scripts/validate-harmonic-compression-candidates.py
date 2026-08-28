@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 from copy import deepcopy
 import json
 from pathlib import Path
@@ -28,6 +29,10 @@ from governor.harmonic_compression import (  # noqa: E402
     build_harmonic_compression_candidate,
     serialize_harmonic_compression_candidate,
     verify_harmonic_compression_candidate,
+)
+from governor.certificate_verifier import (  # noqa: E402
+    CertificateVerificationError,
+    verify_certificate_semantics,
 )
 from governor.hashing import sha256_payload  # noqa: E402
 
@@ -240,6 +245,21 @@ def validate(document: dict) -> dict:
         global_aggregate,
     )
 
+    try:
+        certificate = verify_certificate_semantics(document)
+    except CertificateVerificationError as error:
+        certificate_diagnostic = str(error)
+        certificate_valid = False
+    else:
+        certificate_diagnostic = certificate.diagnostic()
+        certificate_valid = True
+    record("certificate-optimality", certificate_valid, certificate_diagnostic)
+    record(
+        "constraint-census-and-tight-set",
+        certificate_valid,
+        certificate_diagnostic,
+    )
+
     failed = [check for check in checks if check["status"] == "FAIL"]
     report_core = {
         "schemaVersion": "gov-213.harmonic-compression-candidate-validation.v1",
@@ -253,11 +273,19 @@ def validate(document: dict) -> dict:
     return {**report_core, "reportFingerprint": sha256_payload(report_core)}
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--no-write",
+        action="store_true",
+        help="print the validation report without updating the tracked QA artifact",
+    )
+    args = parser.parse_args(argv)
     document = _read_json(CANDIDATE_PATH)
     report = validate(document)
     jsonschema.Draft202012Validator(_read_json(REPORT_SCHEMA_PATH)).validate(report)
-    REPORT_PATH.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    if not args.no_write:
+        REPORT_PATH.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2))
     return 0 if report["verdict"] == "PASS" else 1
 

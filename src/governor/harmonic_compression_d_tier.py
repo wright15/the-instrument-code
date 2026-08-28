@@ -51,7 +51,7 @@ INTERVAL_CLASS_DISSONANCE = {
     5: Fraction(0),
     6: Fraction(5, 2),
 }
-A_TIER_FILE_SHA256 = "fa2947440d90f67b65443ae03f1ce92a0cc8a6ca2e93e83dfdc2490a25723c98"
+A_TIER_FILE_SHA256 = "2c6ffae3acc7d5e6bc7154783967ad463d99fab96c0e410b69b27fb21af59c6e"
 LP_NORMALIZATION = WEIGHT_DENOMINATOR
 A0_ORDER_STATE_IDS = (2773, 2741, 1717, 1709, 1453, 1451, 1387)
 
@@ -531,7 +531,7 @@ def build_d_tier_harmonic_compression_candidate(
     a_tier_path = root / "canonical/harmonic-compression-candidates/CH_A012_q_v1.json"
     guard_path = root / "seven-governors-harmonic-invariants-v0.1.0/canonical/compression-namespace-guard.json"
     scrum_path = root / "scrum/GOV-227-d-tier-harmonic-compression-audit.md"
-    if _file_sha256(a_tier_path) != A_TIER_FILE_SHA256 or a_tier_path.stat().st_size != 15_208:
+    if _file_sha256(a_tier_path) != A_TIER_FILE_SHA256 or a_tier_path.stat().st_size != 16_008:
         raise DTierHarmonicCompressionError("a_tier_candidate_byte_identity_changed")
     ledger = _read_json(ledger_path)
     if reverse_input:

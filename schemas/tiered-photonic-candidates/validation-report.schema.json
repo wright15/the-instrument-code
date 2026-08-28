@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gov-2xx.tiered-photonic-candidate-validation.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "verdict", "candidateId", "candidateFingerprint", "checksPassed", "checksFailed", "checks", "reportFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "gov-2xx.tiered-photonic-candidate-validation.v1"},
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "candidateId": {"const": "CH_TIERED_v1"},
+    "candidateFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "checksPassed": {"type": "integer", "minimum": 0},
+    "checksFailed": {"type": "integer", "minimum": 0},
+    "checks": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["checkId", "status", "diagnostic"], "properties": {"checkId": {"type": "string"}, "status": {"enum": ["PASS", "FAIL"]}, "diagnostic": {}}}},
+    "reportFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

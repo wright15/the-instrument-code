@@ -1,19 +1,34 @@
 {
   "verdict": "PASS",
-  "releaseId": "seven-governors-integrated-1.7.0",
-  "checksPassed": 411,
+  "releaseId": "seven-governors-integrated-1.8.0",
+  "checksPassed": 414,
   "checksFailed": 0,
   "checks": [
+    {
+      "name": "release manifest fixed point",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "Orrery legal-move catalog freshness",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "shadow-ladder source-derived planning-evidence validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
     {
       "name": "release id",
       "status": "PASS",
       "diagnostic": {
-        "releaseId": "seven-governors-integrated-1.7.0",
-        "version": "1.7.0"
+        "releaseId": "seven-governors-integrated-1.8.0",
+        "version": "1.8.0"
       }
     },
     {
-      "name": "release 1.7 root extension and retained database baseline",
+      "name": "release 1.8 root extension and retained database baseline",
       "status": "PASS",
       "diagnostic": {
         "rootExtensions": [
@@ -32,13 +47,19 @@
           {
             "storyId": "GOV-213",
             "releaseId": "harmonic-compression-candidate:CH_A012_q_v1:1.0.0",
-            "fingerprint": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1",
+            "fingerprint": "b2e57f6b0e2d8ac10113dc1861430ff5c205dedb8b079312232b2a76f167df5f",
             "authority": "scoped_A012_harmonic_descriptor_only"
+          },
+          {
+            "storyId": "GOV-2XX",
+            "releaseId": "tiered-photonic-candidate:CH_TIERED_v1:1.0.0",
+            "fingerprint": "a05b0b543c473b3ffb0c282eff0300fc2d392b7d97a5cbf382d20a4a928ae404",
+            "authority": "informational_sidecar_only"
           },
           {
             "storyId": "GOV-227",
             "releaseId": "harmonic-compression-candidate:CH_D17_q_v2:1.0.0",
-            "fingerprint": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe",
+            "fingerprint": "c078171a73465e256b43ad4bc3a75c787866b582ec7783edf6e42c13e096b685",
             "authority": "scoped_D17_harmonic_descriptor_only"
           },
           {
@@ -56,7 +77,8 @@
           "expectedRelationshipCount": 10506,
           "neo4jAuthority": false
         },
-        "importStages": 13
+        "importStages": 13,
+        "tieredValidation": "passed"
       }
     },
     {
@@ -802,28 +824,28 @@
       "name": "pentatonic binding evidence fingerprint closure",
       "status": "PASS",
       "diagnostic": {
-        "candidateFingerprint": "ce6702441e0d302480b2949304d76079c529b6b445fca7d1e9a58ea16678a43a",
-        "phase1ValidationReportFingerprint": "27a1be6931ce95a9e5c72a6c6ad6deb9505a30163c76f3c33f31219e71679965",
-        "phase2Neo4jReportFingerprint": "6eaf952b39348a394234946754885b47a34c3d92c32fe93852cab2b46de9aeb0",
+        "candidateFingerprint": "2940b6ce1fe161013f1b17e867f3cff5ee92f0f548ad3db25d2c0c5c77575ae2",
+        "phase1ValidationReportFingerprint": "5740bf9602b3d3a6950b1d19a7325f1a134bfa7e65207c3a0aa838e5e39d076b",
+        "phase2Neo4jReportFingerprint": "1a3fe40762aec9549edbbdc7e59f8b36d37deee614d023d002e75330f89f409b",
         "phase3ReportSha256": "814512d4f4360dc7e9ab77b8190043a155ae8253d2729dbb21f33db91e37f1df",
-        "cypherDeterministicFingerprint": "f94c876bf9bd407cfe03750fb83df41f09bc7433fb8de39a250a989b6fd11c32",
+        "cypherDeterministicFingerprint": "17a99dde862c5853031724a11c6435d372fd795eeb86a700fbc266068e7a8b61",
         "crt310BacklogFingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
         "sourceAuthoritySha256": "626334f013c6229b9c9a8c2a2793a7d7b7bf9f7fee1ba603502317d3f638aa42",
-        "decisionLedgerSha256": "32f08a16eeb4c13187939281621b4085fe377778539cc1268913e3cb285b9bc6"
+        "decisionLedgerSha256": "e691435f219264a031b11292355a4e3d0accdc2d1c1c16745e591e188e2c7883"
       }
     },
     {
       "name": "pentatonic binding finite result closure",
       "status": "PASS",
       "diagnostic": {
-        "candidateFingerprint": "ce6702441e0d302480b2949304d76079c529b6b445fca7d1e9a58ea16678a43a",
+        "candidateFingerprint": "2940b6ce1fe161013f1b17e867f3cff5ee92f0f548ad3db25d2c0c5c77575ae2",
         "distribution": {
           "0": 612,
           "1": 120,
           "2": 48,
           "3": 12
         },
-        "closureFingerprint": "0e3d029b51229c83b55a0c8882fd640f69508bf01ef0a2a98d86479c0eab83f8"
+        "closureFingerprint": "6bc900ed27792fdef06c88c5641da2c0478e62828d965fce9b948fb97941aefa"
       }
     },
     {
@@ -837,10 +859,10 @@
       "diagnostic": "passed"
     },
     {
-      "name": "GOV-213 scoped admission and global C_H guard",
+      "name": "GOV-213 scoped admission and global C_H guard — Theorem 3′ certificate",
       "status": "PASS",
       "diagnostic": {
-        "candidateFingerprint": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1",
+        "candidateFingerprint": "b2e57f6b0e2d8ac10113dc1861430ff5c205dedb8b079312232b2a76f167df5f",
         "recordCount": 21,
         "globalAggregate": {
           "guardLiteral": "C_H is a derived harmonic property, not a photonic measurement, not C_P, not C_S, not kappa_court, and not a thermodynamic quantity: not temperature, entropy, enthalpy, or free energy.",
@@ -848,7 +870,7 @@
           "status": "unresolved",
           "value": null
         },
-        "reportFingerprint": "2fb32dec2056b3965012db47a9f3a5c168a88a21c8af9d0230c94d71e185f308"
+        "reportFingerprint": "e15024ed0a764854b568b91ecdf726db03d81c6638cd84e9e97905dffb5c02f6"
       }
     },
     {
@@ -860,7 +882,7 @@
       "name": "GOV-227 scoped admission, topology boundary, and global C_H guard",
       "status": "PASS",
       "diagnostic": {
-        "candidateFingerprint": "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe",
+        "candidateFingerprint": "c078171a73465e256b43ad4bc3a75c787866b582ec7783edf6e42c13e096b685",
         "recordCount": 49,
         "lpStatuses": [
           "WEAK_SYSTEM_INFEASIBLE",
@@ -873,7 +895,7 @@
           "status": "unresolved",
           "value": null
         },
-        "reportFingerprint": "036f8dfe5da5b59da4797cb84d971f689c741a3c52e0ed424ac3382d06e6b18d"
+        "reportFingerprint": "0cd03f739fe17189541c6c29c706254d32a8dcafdaa3f4ef11b00a1cbda640aa"
       }
     },
     {
@@ -885,7 +907,7 @@
         "deferredRefresh": {
           "status": "deferred_no_graph_data_change",
           "retainedReleaseId": "seven-governors-integrated-1.5.0",
-          "reason": "only release.json provenance version and non-projected GOV-227 evidence changed",
+          "reason": "only release provenance and non-projected GOV-213, GOV-2XX, and GOV-227 evidence changed",
           "refreshRequired": "next Neo4j availability"
         }
       }
@@ -1289,7 +1311,7 @@
       "name": "manifest completeness",
       "status": "PASS",
       "diagnostic": {
-        "version": "1.7.0",
+        "version": "1.8.0",
         "missingFromManifest": [],
         "missingFromDisk": []
       }
@@ -1320,8 +1342,8 @@
       "name": "checksums sha256 parity",
       "status": "PASS",
       "diagnostic": {
-        "checksumLines": 890,
-        "manifestFiles": 890
+        "checksumLines": 911,
+        "manifestFiles": 911
       }
     },
     {
@@ -1541,7 +1563,7 @@
     {
       "name": "required file: docs/A_TIER_TRIADIC_COMPRESSION_THEOREM.md",
       "status": "PASS",
-      "diagnostic": 14304
+      "diagnostic": 17070
     },
     {
       "name": "required file: docs/FOUR_LAYER_FORMALIZATION.md",
@@ -1571,7 +1593,7 @@
     {
       "name": "required file: neo4j/validation.cypher",
       "status": "PASS",
-      "diagnostic": 14222
+      "diagnostic": 14727
     },
     {
       "name": "required file: neo4j/provenance.cypher",
@@ -2396,7 +2418,7 @@
     {
       "name": "required file: docs/PENTATONIC_GRAPH_BINDING_AUDIT_SPEC.md",
       "status": "PASS",
-      "diagnostic": 20805
+      "diagnostic": 20884
     },
     {
       "name": "required file: docs/verification/PENTATONIC_GRAPH_BINDING_AUDIT_REPORT.md",
@@ -2446,7 +2468,7 @@
     {
       "name": "required file: scripts/build-pentatonic-binding-audit-closure.mjs",
       "status": "PASS",
-      "diagnostic": 10859
+      "diagnostic": 10900
     },
     {
       "name": "required file: tests/test_pentatonic_7_35_parent_audit.py",
@@ -2576,7 +2598,7 @@
     {
       "name": "required file: canonical/harmonic-compression-candidates/CH_A012_q_v1.json",
       "status": "PASS",
-      "diagnostic": 15208
+      "diagnostic": 16008
     },
     {
       "name": "required file: canonical/harmonic-compression-candidates/negative-cases.json",
@@ -2586,7 +2608,7 @@
     {
       "name": "required file: schemas/harmonic-compression-candidates/candidate-release.schema.json",
       "status": "PASS",
-      "diagnostic": 7852
+      "diagnostic": 9486
     },
     {
       "name": "required file: schemas/harmonic-compression-candidates/validation-report.schema.json",
@@ -2596,7 +2618,7 @@
     {
       "name": "required file: src/governor/harmonic_compression.py",
       "status": "PASS",
-      "diagnostic": 15167
+      "diagnostic": 15797
     },
     {
       "name": "required file: scripts/generate-harmonic-compression-candidates.py",
@@ -2606,17 +2628,17 @@
     {
       "name": "required file: scripts/validate-harmonic-compression-candidates.py",
       "status": "PASS",
-      "diagnostic": 9964
+      "diagnostic": 10908
     },
     {
       "name": "required file: tests/test_gov_213_harmonic_compression.py",
       "status": "PASS",
-      "diagnostic": 4592
+      "diagnostic": 9388
     },
     {
       "name": "required file: qa/harmonic-compression-candidates-validation.json",
       "status": "PASS",
-      "diagnostic": 5172
+      "diagnostic": 6521
     },
     {
       "name": "required file: scrum/GOV-213-harmonic-compression-formalization.md",
@@ -2681,7 +2703,7 @@
     {
       "name": "required file: scrum/GOV-227-d-tier-harmonic-compression-audit.md",
       "status": "PASS",
-      "diagnostic": 8154
+      "diagnostic": 9270
     },
     {
       "name": "required file: seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/docs/START_HERE.md",

@@ -198,7 +198,7 @@ def validate(document: dict) -> dict:
     record("adversarial-tamper-rejection", set(adversarial) == fixture_case_ids and all(adversarial.values()), adversarial)
 
     a_tier_sha = hashlib.sha256(A_TIER_PATH.read_bytes()).hexdigest()
-    record("A-tier-byte-pin", A_TIER_PATH.stat().st_size == 15_208 and a_tier_sha == A_TIER_FILE_SHA256, {"bytes": A_TIER_PATH.stat().st_size, "sha256": a_tier_sha})
+    record("A-tier-byte-pin", A_TIER_PATH.stat().st_size == 16_008 and a_tier_sha == A_TIER_FILE_SHA256, {"bytes": A_TIER_PATH.stat().st_size, "sha256": a_tier_sha})
     aggregate = document.get("globalAggregate", {})
     record("global-C-H-remains-unresolved", aggregate == {"namespace": "harmonic.C_H", "status": "unresolved", "value": None, "guardLiteral": GLOBAL_GUARD_LITERAL}, aggregate)
     review_gate = document.get("reviewGate", {})

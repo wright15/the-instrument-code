@@ -20,6 +20,9 @@ Integrated release 1.7.0 binds the Harmonic Orrery MVP (EPIC-009) with first-ses
 onboarding, local-only reset/share, discovery/strategy/learning objectives, and a pinned
 release checklist; the application layer remains presentation-only and cannot mutate
 topology, Court runtime, or Neo4j projection.
+Integrated release 1.8.0 adds source-derived GOV-2XX tiered-photonic planning evidence
+and an executable GOV-213 max-margin certificate while preserving the same topology,
+Court runtime, and Neo4j boundaries.
 
 The package is intentionally layered:
 

@@ -31,8 +31,9 @@ admitted A-tier theorem, global `harmonic.C_H`, or graph projection.
   A-block versus D-block separation.
 - Keep Stage A sidecar-only. Do not emit q_v2 data into Neo4j, runtime,
   classifiers, menus, or creation packets.
-- Leave `CH_A012_q_v1` byte-identical and preserve global `harmonic.C_H` as
-  `unresolved` with `value=null`.
+- At the Stage A snapshot, leave `CH_A012_q_v1` byte-identical and preserve
+  global `harmonic.C_H` as `unresolved` with `value=null`. The later `1.8.0`
+  certificate amendment is explicitly rebound below.
 - Produce the sidecar and QA evidence for review before any integrated-release
   version bump, provenance admission, manifest refresh, or checksum refresh.
 
@@ -70,7 +71,8 @@ admitted A-tier theorem, global `harmonic.C_H`, or graph projection.
    algorithm fingerprints, canonical serialization, and build-twice identity.
 7. Adversarial fixtures reject scope drift, source drift, q-v2 tampering, LP
    result tampering, A-tier byte drift, and non-null global `harmonic.C_H`.
-8. `canonical/harmonic-compression-candidates/CH_A012_q_v1.json` remains exactly
+8. At the Stage A snapshot,
+   `canonical/harmonic-compression-candidates/CH_A012_q_v1.json` was exactly
    15,208 bytes with SHA-256
    `fa2947440d90f67b65443ae03f1ce92a0cc8a6ca2e93e83dfdc2490a25723c98`.
 
@@ -129,6 +131,24 @@ projection and preserving global `harmonic.C_H` as unresolved/null.
   focused tests. The A-tier candidate remains exactly 15,208 bytes at its
   pinned SHA-256, global `harmonic.C_H` remains unresolved/null, and Neo4j,
   graph-data integration remains deferred.
+
+## Release 1.8.0 certificate amendment
+
+The Stage A byte pin above is a historical acceptance snapshot, not a permanent
+prohibition on a later GOV-213 proof amendment. Before any external `1.8.0`
+consumer existed, the release added the executable Theorem 3' certificate to the
+same session-local GOV-213 sidecar. The candidate's `Q`, `W`, records, tier
+summaries, coordinate, release ID, and admission boundary are unchanged; the
+serialized source changed only because the certificate is now carried with the
+payload.
+
+- Current A-tier source: 16,008 bytes, SHA-256
+  `2c6ffae3acc7d5e6bc7154783967ad463d99fab96c0e410b69b27fb21af59c6e`.
+- The v1 schema accepts the historical certificate-free payload; the current
+  generator and semantic validator require the current certificate.
+- `CH_D17_q_v2` rebinding is required because it pins the exact A-tier source
+  bytes. Its D-tier records, `Q`, `W`, and tier summaries remain unchanged;
+  only source-closure fingerprints and receipts regenerate.
 
 ## Stage B closure
 

@@ -56,6 +56,38 @@ function runNpmScript(relativeDirectory, script) {
 // ---------------------------------------------------------------------------
 
 const release = JSON.parse((await read("provenance/release.json")).toString());
+const gov213Validate = runNpmScript(".", "validate:gov213");
+// Tiered artifacts carry decimal-derived floats; validate their fingerprints with
+// the native Python serializer rather than a cross-runtime JSON rehash.
+const tieredValidate = runNpmScript(".", "validate:tiered-photonic");
+const shadowLadderValidate = runNpmScript(".", "validate:shadow-ladder");
+const gov227Validate = runNpmScript(".", "validate:gov227");
+const orreryCatalogValidate = runNpmScript(".", "orrery:catalog:check");
+const manifestValidate = runNpmScript(".", "validate:manifest");
+const gov213Candidate = JSON.parse(
+  (await read("canonical/harmonic-compression-candidates/CH_A012_q_v1.json")).toString(),
+);
+const gov213Report = JSON.parse(
+  (await read("qa/harmonic-compression-candidates-validation.json")).toString(),
+);
+const tieredCandidate = JSON.parse(
+  (await read("canonical/tiered-photonic-candidates/tiered-photonic-v1.json")).toString(),
+);
+const tieredReport = JSON.parse(
+  (await read("qa/tiered-photonic-candidates-validation.json")).toString(),
+);
+const shadowLadderCandidate = JSON.parse(
+  (await read("canonical/fivefold-incubator/shadow-ladder-v0.json")).toString(),
+);
+const shadowLadderReport = JSON.parse(
+  (await read("qa/shadow-ladder-validation.json")).toString(),
+);
+const gov227Candidate = JSON.parse(
+  (await read("canonical/harmonic-compression-candidates/CH_D17_q_v2.json")).toString(),
+);
+const gov227Report = JSON.parse(
+  (await read("qa/d-tier-harmonic-compression-validation.json")).toString(),
+);
 const expectedImportOrder = [
   "neo4j/schema.cypher",
   "neo4j/import.cypher",
@@ -72,14 +104,34 @@ const expectedImportOrder = [
   "generated:GOV-210-canonical-batches",
 ];
 record(
+  "release manifest fixed point",
+  manifestValidate.passed,
+  manifestValidate.passed ? "passed" : manifestValidate.tail,
+);
+record(
+  "Orrery legal-move catalog freshness",
+  orreryCatalogValidate.passed,
+  orreryCatalogValidate.passed ? "passed" : orreryCatalogValidate.tail,
+);
+record(
+  "shadow-ladder source-derived planning-evidence validation",
+  shadowLadderValidate.passed &&
+    shadowLadderCandidate.status === "planning_evidence" &&
+    shadowLadderReport.verdict === "PASS" &&
+    shadowLadderReport.checksPassed === 37 &&
+    shadowLadderReport.checksFailed === 0 &&
+    shadowLadderReport.candidateFingerprint === shadowLadderCandidate.candidateFingerprint,
+  shadowLadderValidate.passed ? "passed" : shadowLadderValidate.tail,
+);
+record(
   "release id",
-  release.releaseId === "seven-governors-integrated-1.7.0" &&
-    release.version === "1.7.0" &&
+  release.releaseId === "seven-governors-integrated-1.8.0" &&
+    release.version === "1.8.0" &&
     release.status === "validated_admitted",
   { releaseId: release.releaseId, version: release.version },
 );
 record(
-  "release 1.7 root extension and retained database baseline",
+  "release 1.8 root extension and retained database baseline",
   payloadHash(release.rootExtensions) === payloadHash([
     {
       storyId: "GOV-210",
@@ -96,13 +148,19 @@ record(
     {
       storyId: "GOV-213",
       releaseId: "harmonic-compression-candidate:CH_A012_q_v1:1.0.0",
-      fingerprint: "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1",
+      fingerprint: gov213Candidate.candidateFingerprint,
       authority: "scoped_A012_harmonic_descriptor_only",
+    },
+    {
+      storyId: "GOV-2XX",
+      releaseId: "tiered-photonic-candidate:CH_TIERED_v1:1.0.0",
+      fingerprint: tieredCandidate.candidateFingerprint,
+      authority: "informational_sidecar_only",
     },
     {
       storyId: "GOV-227",
       releaseId: "harmonic-compression-candidate:CH_D17_q_v2:1.0.0",
-      fingerprint: "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe",
+      fingerprint: gov227Candidate.candidateFingerprint,
       authority: "scoped_D17_harmonic_descriptor_only",
     },
     {
@@ -126,11 +184,24 @@ record(
       "schemas/neo4j-normalized-snapshot.schema.json" &&
     release.databaseBootstrap?.readinessSchemaVersion ===
       "seven-governors.neo4j-full-readiness.v1" &&
-    canonicalJsonBytes(release.importOrder).equals(canonicalJsonBytes(expectedImportOrder)),
+    canonicalJsonBytes(release.importOrder).equals(canonicalJsonBytes(expectedImportOrder)) &&
+    gov213Report.candidateFingerprint === gov213Candidate.candidateFingerprint &&
+    tieredCandidate.candidateId === "CH_TIERED_v1" &&
+    tieredCandidate.releaseId === "tiered-photonic-candidate:CH_TIERED_v1:1.0.0" &&
+    tieredCandidate.records?.length === 28 &&
+    tieredCandidate.invariants?.anchorCount === 14 &&
+    tieredCandidate.invariants?.variantsPerAnchor === 2 &&
+    tieredValidate.passed &&
+    tieredReport.verdict === "PASS" &&
+    tieredReport.checksPassed === 15 &&
+    tieredReport.checksFailed === 0 &&
+    tieredReport.candidateFingerprint === tieredCandidate.candidateFingerprint &&
+    gov227Report.candidateFingerprint === gov227Candidate.candidateFingerprint,
   {
     rootExtensions: release.rootExtensions,
     databaseBootstrap: release.databaseBootstrap,
     importStages: release.importOrder?.length,
+    tieredValidation: tieredValidate.passed ? "passed" : tieredValidate.tail,
   },
 );
 const frozenPackageManifests = await Promise.all(release.compositePackages.map(
@@ -867,30 +938,26 @@ record(
     crt310Backlog.summary.eligibleForAdmissionReviewCount === 0,
   "planning_evidence only; CRT-310 remains zero-eligible and zero-admission",
 );
-const gov213Validate = runNpmScript(".", "validate:gov213");
 record(
   "GOV-213 scoped harmonic-compression validation",
   gov213Validate.passed,
   gov213Validate.passed ? "passed" : gov213Validate.tail,
-);
-const gov213Candidate = JSON.parse(
-  (await read("canonical/harmonic-compression-candidates/CH_A012_q_v1.json")).toString(),
-);
-const gov213Report = JSON.parse(
-  (await read("qa/harmonic-compression-candidates-validation.json")).toString(),
 );
 const gov213CandidateCore = { ...gov213Candidate };
 delete gov213CandidateCore.candidateFingerprint;
 const gov213ReportCore = { ...gov213Report };
 delete gov213ReportCore.reportFingerprint;
 record(
-  "GOV-213 scoped admission and global C_H guard",
-  gov213Candidate.candidateFingerprint ===
-      "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1" &&
-    payloadHash(gov213CandidateCore) === gov213Candidate.candidateFingerprint &&
+  "GOV-213 scoped admission and global C_H guard — Theorem 3′ certificate",
+  payloadHash(gov213CandidateCore) === gov213Candidate.candidateFingerprint &&
     gov213Candidate.status === "admitted_scoped_A012" &&
     gov213Candidate.coordinateId === "harmonic.CH_A012_q_v1" &&
     gov213Candidate.records?.length === 21 &&
+    gov213Candidate.certificate?.epsilonStar?.numerator === 3 &&
+    gov213Candidate.certificate?.epsilonStar?.denominator === 407 &&
+    gov213Candidate.certificate?.dualCertificate?.lambdaNumerators?.length === 7 &&
+    gov213Candidate.certificate?.tightSet?.length === 7 &&
+    gov213Candidate.certificate?.nextTightestSlack?.numerator === 6 &&
     gov213Candidate.records.every((item) => (
       item.role === "anchor" && ["A0", "A1", "A2"].includes(item.tier)
     )) &&
@@ -898,7 +965,7 @@ record(
     gov213Candidate.globalAggregate?.status === "unresolved" &&
     gov213Candidate.globalAggregate?.value === null &&
     gov213Report.verdict === "PASS" &&
-    gov213Report.checksPassed === 12 &&
+    gov213Report.checksPassed === 14 &&
     gov213Report.checksFailed === 0 &&
     payloadHash(gov213ReportCore) === gov213Report.reportFingerprint,
   {
@@ -908,17 +975,10 @@ record(
     reportFingerprint: gov213Report.reportFingerprint,
   },
 );
-const gov227Validate = runNpmScript(".", "validate:gov227");
 record(
   "GOV-227 scoped D-tier harmonic-compression validation",
   gov227Validate.passed,
   gov227Validate.passed ? "passed" : gov227Validate.tail,
-);
-const gov227Candidate = JSON.parse(
-  (await read("canonical/harmonic-compression-candidates/CH_D17_q_v2.json")).toString(),
-);
-const gov227Report = JSON.parse(
-  (await read("qa/d-tier-harmonic-compression-validation.json")).toString(),
 );
 const gov227CandidateCore = { ...gov227Candidate };
 delete gov227CandidateCore.candidateFingerprint;
@@ -926,9 +986,7 @@ const gov227ReportCore = { ...gov227Report };
 delete gov227ReportCore.reportFingerprint;
 record(
   "GOV-227 scoped admission, topology boundary, and global C_H guard",
-  gov227Candidate.candidateFingerprint ===
-      "2a015e18efecd31a06a7dbf214c8dd01bdbeb71f9a7066e919a1efad1e47aabe" &&
-    payloadHash(gov227CandidateCore) === gov227Candidate.candidateFingerprint &&
+  payloadHash(gov227CandidateCore) === gov227Candidate.candidateFingerprint &&
     gov227Candidate.releaseId ===
       "harmonic-compression-candidate:CH_D17_q_v2:1.0.0" &&
     gov227Candidate.status === "admitted_scoped_D17" &&
@@ -1465,7 +1523,7 @@ const mismatchedHashes = computedRecords.filter(
 );
 record(
   "manifest completeness",
-    manifest.version === "1.7.0" &&
+    manifest.version === "1.8.0" &&
     missingFromManifest.length === 0 &&
     missingFromDisk.length === 0,
   {

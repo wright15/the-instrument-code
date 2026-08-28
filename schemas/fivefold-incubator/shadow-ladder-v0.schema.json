@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fivefold-incubator.shadow-ladder.v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "candidateId", "status", "scope", "method", "shadowLadder", "courtAlignment", "shadowRingGeometry", "typedIncidences", "evidenceBindings", "candidateFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "fivefold-incubator.shadow-ladder.v0"},
+    "candidateId": {"const": "SHADOW_LADDER_v0"},
+    "status": {"const": "planning_evidence"},
+    "scope": {"type": "object"},
+    "method": {"type": "object"},
+    "shadowLadder": {"type": "array"},
+    "courtAlignment": {"type": "object"},
+    "shadowRingGeometry": {"type": "object"},
+    "typedIncidences": {"type": "object"},
+    "evidenceBindings": {"type": "object"},
+    "checks": {"type": "object"},
+    "candidateFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

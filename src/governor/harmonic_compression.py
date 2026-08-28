@@ -11,6 +11,12 @@ from typing import Any, Iterable, Mapping
 
 from court_mathematics import DegreeTriad, RootedScale
 
+from .certificate_verifier import (
+    CertificateVerificationError,
+    full_certificate,
+    verify_certificate_semantics,
+)
+
 from .hashing import canonical_json_bytes, sha256_payload
 
 
@@ -323,6 +329,7 @@ def build_harmonic_compression_candidate(
             "weightSum": _ratio(WEIGHT_DENOMINATOR),
             "uniquenessClaim": False,
         },
+        "certificate": full_certificate(),
         "sourceBindings": [
             {
                 "bindingId": "canonical-heptatonic-ledger",
@@ -376,6 +383,12 @@ def build_harmonic_compression_candidate(
             "C_P_C_H_C_S_correspondence_evaluation",
         ],
     }
+    try:
+        verify_certificate_semantics(core)
+    except CertificateVerificationError as error:
+        raise HarmonicCompressionError(
+            f"certificate_semantic_verification_failed:{error}"
+        ) from error
     return {**core, "candidateFingerprint": sha256_payload(core)}
 
 
@@ -390,6 +403,12 @@ def verify_harmonic_compression_candidate(document: Mapping[str, Any], *, root: 
     core = {key: value for key, value in document.items() if key != "candidateFingerprint"}
     if fingerprint != sha256_payload(core):
         raise HarmonicCompressionError("candidate_fingerprint_mismatch")
+    try:
+        verify_certificate_semantics(document)
+    except CertificateVerificationError as error:
+        raise HarmonicCompressionError(
+            f"certificate_semantic_verification_failed:{error}"
+        ) from error
     expected = build_harmonic_compression_candidate(root=root)
     if canonical_json_bytes(document) != canonical_json_bytes(expected):
         raise HarmonicCompressionError("candidate_does_not_match_fresh_build")

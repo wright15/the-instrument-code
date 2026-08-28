@@ -334,6 +334,15 @@ RETURN '44_states_per_governor_office' AS check,
        counts AS observed,
        44 AS expectedPerOffice;
 
+MATCH (state:ScaleState)-[:OCCUPIES_OFFICE]->(office:GovernorOffice)
+WITH office.name AS office, count(state) AS actual
+WITH collect({office: office, actual: actual}) AS counts
+WITH counts, [entry IN counts WHERE entry.actual <> 44] AS failures
+RETURN 'everyOfficeHasFortyThreeStates_alias' AS check,
+       CASE size(failures) WHEN 0 THEN 'PASS' ELSE 'FAIL' END AS result,
+       counts AS observed,
+       'legacy 43 → 44 alias: 308/7=44 post-D7, everyOfficeHasFortyThreeStates renamed' AS expected;
+
 MATCH ()-[relation]->()
 WITH type(relation) AS relationshipType, count(*) AS actual
 WITH collect({relationshipType: relationshipType, actual: actual}) AS counts

@@ -7,14 +7,14 @@
   "crt310Execution": false,
   "verdict": "PASS",
   "evidenceBindings": {
-    "candidateFingerprint": "ce6702441e0d302480b2949304d76079c529b6b445fca7d1e9a58ea16678a43a",
-    "phase1ValidationReportFingerprint": "27a1be6931ce95a9e5c72a6c6ad6deb9505a30163c76f3c33f31219e71679965",
-    "phase2Neo4jReportFingerprint": "6eaf952b39348a394234946754885b47a34c3d92c32fe93852cab2b46de9aeb0",
+    "candidateFingerprint": "2940b6ce1fe161013f1b17e867f3cff5ee92f0f548ad3db25d2c0c5c77575ae2",
+    "phase1ValidationReportFingerprint": "5740bf9602b3d3a6950b1d19a7325f1a134bfa7e65207c3a0aa838e5e39d076b",
+    "phase2Neo4jReportFingerprint": "1a3fe40762aec9549edbbdc7e59f8b36d37deee614d023d002e75330f89f409b",
     "phase3ReportSha256": "814512d4f4360dc7e9ab77b8190043a155ae8253d2729dbb21f33db91e37f1df",
-    "cypherDeterministicFingerprint": "f94c876bf9bd407cfe03750fb83df41f09bc7433fb8de39a250a989b6fd11c32",
+    "cypherDeterministicFingerprint": "17a99dde862c5853031724a11c6435d372fd795eeb86a700fbc266068e7a8b61",
     "crt310BacklogFingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
     "sourceAuthoritySha256": "626334f013c6229b9c9a8c2a2793a7d7b7bf9f7fee1ba603502317d3f638aa42",
-    "decisionLedgerSha256": "32f08a16eeb4c13187939281621b4085fe377778539cc1268913e3cb285b9bc6"
+    "decisionLedgerSha256": "e691435f219264a031b11292355a4e3d0accdc2d1c1c16745e591e188e2c7883"
   },
   "counts": {
     "pitchSetCount": 792,
@@ -31,12 +31,12 @@
   "checks": [
     {
       "checkId": "candidate-fingerprint-integrity",
-      "diagnostic": "ce6702441e0d302480b2949304d76079c529b6b445fca7d1e9a58ea16678a43a",
+      "diagnostic": "2940b6ce1fe161013f1b17e867f3cff5ee92f0f548ad3db25d2c0c5c77575ae2",
       "status": "PASS"
     },
     {
       "checkId": "phase1-independent-validation",
-      "diagnostic": "27a1be6931ce95a9e5c72a6c6ad6deb9505a30163c76f3c33f31219e71679965",
+      "diagnostic": "5740bf9602b3d3a6950b1d19a7325f1a134bfa7e65207c3a0aa838e5e39d076b",
       "status": "PASS"
     },
     {
@@ -66,14 +66,14 @@
     },
     {
       "checkId": "phase2-detached-neo4j-closure",
-      "diagnostic": "6eaf952b39348a394234946754885b47a34c3d92c32fe93852cab2b46de9aeb0",
+      "diagnostic": "1a3fe40762aec9549edbbdc7e59f8b36d37deee614d023d002e75330f89f409b",
       "status": "PASS"
     },
     {
       "checkId": "active-source-and-decision-ledger-isolation",
       "diagnostic": {
         "activeSourceCount": 5,
-        "decisionLedgerSha256": "32f08a16eeb4c13187939281621b4085fe377778539cc1268913e3cb285b9bc6"
+        "decisionLedgerSha256": "e691435f219264a031b11292355a4e3d0accdc2d1c1c16745e591e188e2c7883"
       },
       "status": "PASS"
     },
@@ -84,7 +84,7 @@
     },
     {
       "checkId": "cypher-syntax-deterministic-closure",
-      "diagnostic": "f94c876bf9bd407cfe03750fb83df41f09bc7433fb8de39a250a989b6fd11c32",
+      "diagnostic": "17a99dde862c5853031724a11c6435d372fd795eeb86a700fbc266068e7a8b61",
       "status": "PASS"
     },
     {
@@ -121,5 +121,5 @@
       "status": "PASS"
     }
   ],
-  "reportFingerprint": "0e3d029b51229c83b55a0c8882fd640f69508bf01ef0a2a98d86479c0eab83f8"
+  "reportFingerprint": "6bc900ed27792fdef06c88c5641da2c0478e62828d965fce9b948fb97941aefa"
 }

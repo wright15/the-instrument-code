@@ -2,8 +2,8 @@
   "schemaVersion": "gov-213.harmonic-compression-candidate-validation.v1",
   "verdict": "PASS",
   "candidateId": "CH_A012_q_v1",
-  "candidateFingerprint": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1",
-  "checksPassed": 12,
+  "candidateFingerprint": "b2e57f6b0e2d8ac10113dc1861430ff5c205dedb8b079312232b2a76f167df5f",
+  "checksPassed": 14,
   "checksFailed": 0,
   "checks": [
     {
@@ -14,25 +14,25 @@
     {
       "checkId": "candidate-fingerprint",
       "status": "PASS",
-      "diagnostic": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1"
+      "diagnostic": "b2e57f6b0e2d8ac10113dc1861430ff5c205dedb8b079312232b2a76f167df5f"
     },
     {
       "checkId": "checked-artifact-freshness",
       "status": "PASS",
       "diagnostic": {
-        "expected": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1",
-        "actual": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1"
+        "expected": "b2e57f6b0e2d8ac10113dc1861430ff5c205dedb8b079312232b2a76f167df5f",
+        "actual": "b2e57f6b0e2d8ac10113dc1861430ff5c205dedb8b079312232b2a76f167df5f"
       }
     },
     {
       "checkId": "build-twice-identity",
       "status": "PASS",
-      "diagnostic": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1"
+      "diagnostic": "b2e57f6b0e2d8ac10113dc1861430ff5c205dedb8b079312232b2a76f167df5f"
     },
     {
       "checkId": "reordered-input-identity",
       "status": "PASS",
-      "diagnostic": "b2cf9997b6e52b87a0a2c30125a9600ec2317879231d6f54e13814ea61d494d1"
+      "diagnostic": "b2e57f6b0e2d8ac10113dc1861430ff5c205dedb8b079312232b2a76f167df5f"
     },
     {
       "checkId": "scope-and-theorem-closure",
@@ -199,7 +199,63 @@
         "status": "unresolved",
         "value": null
       }
+    },
+    {
+      "checkId": "certificate-optimality",
+      "status": "PASS",
+      "diagnostic": {
+        "constraintCount": 111,
+        "epsilonStar": {
+          "numerator": 3,
+          "denominator": 407
+        },
+        "tightSet": [
+          "w6-w3",
+          "w3-w7",
+          "w7-w4",
+          "Aeolian-Dorian",
+          "Phrygian-Aeolian",
+          "Locrian-Phrygian",
+          "Acoustic-Locrian"
+        ],
+        "nextTightestSlack": {
+          "pair": "Acoustic-Phrygian",
+          "numerator": 6,
+          "denominator": 407
+        },
+        "positiveLambda": true,
+        "tightSystemRank": 8,
+        "uniqueMaxMargin": true
+      }
+    },
+    {
+      "checkId": "constraint-census-and-tight-set",
+      "status": "PASS",
+      "diagnostic": {
+        "constraintCount": 111,
+        "epsilonStar": {
+          "numerator": 3,
+          "denominator": 407
+        },
+        "tightSet": [
+          "w6-w3",
+          "w3-w7",
+          "w7-w4",
+          "Aeolian-Dorian",
+          "Phrygian-Aeolian",
+          "Locrian-Phrygian",
+          "Acoustic-Locrian"
+        ],
+        "nextTightestSlack": {
+          "pair": "Acoustic-Phrygian",
+          "numerator": 6,
+          "denominator": 407
+        },
+        "positiveLambda": true,
+        "tightSystemRank": 8,
+        "uniqueMaxMargin": true
+      }
     }
   ],
-  "reportFingerprint": "2fb32dec2056b3965012db47a9f3a5c168a88a21c8af9d0230c94d71e185f308"
+  "reportFingerprint": "e15024ed0a764854b568b91ecdf726db03d81c6638cd84e9e97905dffb5c02f6"
 }

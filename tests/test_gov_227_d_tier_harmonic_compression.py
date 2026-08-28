@@ -114,7 +114,7 @@ def test_exact_lp_reports_interleaving_not_a_witness(document) -> None:
 
 
 def test_a_tier_and_global_boundaries_remain_unchanged(document) -> None:
-    assert A_TIER_PATH.stat().st_size == 15_208
+    assert A_TIER_PATH.stat().st_size == 16_008
     assert hashlib.sha256(A_TIER_PATH.read_bytes()).hexdigest() == A_TIER_FILE_SHA256
     assert document["globalAggregate"]["status"] == "unresolved"
     assert document["globalAggregate"]["value"] is None

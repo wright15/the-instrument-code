@@ -1,6 +1,32 @@
 # Recommended Next Steps
 
-Current release: `seven-governors-integrated-1.6.0`, validated and admitted.
+Current release: `seven-governors-integrated-1.8.0`, closed at fixed point 2026-08-27, no further emissions this cycle.
+
+**Fixed-point declaration:** `1.8.0` closed at fixed point; `681` geometry correction (`OBS-011` punched holes `{10,2}`) folded into this point; `OBS-014` queued. Next emissions are `planning_evidence` only.
+
+## Queued — OBS-014 — twin-hub convergence audit (untested)
+
+Twin-hub convergence at the `A2` boundary: `D4` (`7-Z17`, `2× A1-sat`) and `D5` (`7-Z12`, `2× A2-sat`) seat contacts should route through `T₁`-twin satellites converging via Mercury hub. **Tier asymmetry:** at `A2` twins share Mercury hub and midpoints `{Mars,Jupiter}` are **unseated** (`field closes its own seams from below` — strongest hypothesis); at `A1` twins `{Moon–Saturn, Sun–Venus}` are disjoint (no hub) and midpoints `{Sun,Saturn}` already seated as `A1` seams — so `D4` = convergence-through-twins, `D5` = convergence-onto-unseated-midpoints. Falsifiable from ledger data (`seat-contact.csv` + `constructionEdges` + `T₁` `transpose_mask 1`).
+
+## Queued — q_v2 design for D-tier compression
+
+Domain cracks already documented (`1447→(2,7)` `2859→(3,8)`; interval-class basis, inversion-aware). Design before needed, not during.
+
+## Queued — FM/DFG variant-C (declared β, chiral sideband typing)
+
+Proposed, no urgency — true FM `β` Bessel sidebands, declared `β`, chiral typing.
+
+## Queued — CRT-310 namespace question
+
+Whether `shadow.*` coordinates ever get admitted or stay proposed forever — a decision, not an audit.
+
+## Queued — Intersection lattice d=3/d=4 strata
+
+Prose only: `d=3→4` consecutive fifths, `d=4→3` (quartal/sus, not tertian triads) — not strata of this lattice.
+
+---
+
+Current release: `seven-governors-integrated-1.6.0` was the prior baseline.
 The release includes the audited topology, mutation algebra, canonical profile
 registry/compiler, Governor runtime, bounded Pentatonic Court, read projection,
 agent skills, optional read-only vault context, GOV-210 availability/housing,

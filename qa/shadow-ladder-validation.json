@@ -1,0 +1,200 @@
+{
+  "schemaVersion": "shadow-ladder-validation.v0",
+  "verdict": "PASS",
+  "candidateId": "SHADOW_LADDER_v0",
+  "candidateFingerprint": "f9d146740eec0bb5a8d0a2181dd41bf77641ca4e9bcab2ed60b59c13009a4fe8",
+  "checksPassed": 37,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "checkId": "schema",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "checkId": "fingerprint",
+      "status": "PASS",
+      "diagnostic": "f9d146740eec0bb5a8d0a2181dd41bf77641ca4e9bcab2ed60b59c13009a4fe8"
+    },
+    {
+      "checkId": "freshness",
+      "status": "PASS",
+      "diagnostic": "f9d146740eec0bb5a8d0a2181dd41bf77641ca4e9bcab2ed60b59c13009a4fe8"
+    },
+    {
+      "checkId": "build-twice",
+      "status": "PASS",
+      "diagnostic": "source-derived"
+    },
+    {
+      "checkId": "determinism-build-twice",
+      "status": "PASS",
+      "diagnostic": "identical source builds"
+    },
+    {
+      "checkId": "determinism-reorder",
+      "status": "PASS",
+      "diagnostic": "ledger and construction-edge order independent"
+    },
+    {
+      "checkId": "determinism-schema",
+      "status": "PASS",
+      "diagnostic": "stable candidate envelope"
+    },
+    {
+      "checkId": "operators-Tn",
+      "status": "PASS",
+      "diagnostic": "A1 shifted-complement identities"
+    },
+    {
+      "checkId": "operators-comp",
+      "status": "PASS",
+      "diagnostic": "complement involution over all derived shadow masks"
+    },
+    {
+      "checkId": "span-arc",
+      "status": "PASS",
+      "diagnostic": "all minimal fifth arcs"
+    },
+    {
+      "checkId": "span-C0-negative",
+      "status": "PASS",
+      "diagnostic": "C0 is a fifth-span four 5-35 window"
+    },
+    {
+      "checkId": "span-holes",
+      "status": "PASS",
+      "diagnostic": "span plus one minus cardinality"
+    },
+    {
+      "checkId": "span-ME-5-35",
+      "status": "PASS",
+      "diagnostic": "source audit maps span four to 5-35 and span six to 5-34"
+    },
+    {
+      "checkId": "court-mode-windows",
+      "status": "PASS",
+      "diagnostic": "seven source A0 mode windows"
+    },
+    {
+      "checkId": "court-Cj",
+      "status": "PASS",
+      "diagnostic": "five source Court windows"
+    },
+    {
+      "checkId": "court-intersection",
+      "status": "PASS",
+      "diagnostic": "A1 parent intersections equal C0-C4"
+    },
+    {
+      "checkId": "A1-overhang",
+      "status": "PASS",
+      "diagnostic": "five source-derived A1 cores"
+    },
+    {
+      "checkId": "A1-rigid-shift",
+      "status": "PASS",
+      "diagnostic": "successive A1 cores move by one fifth"
+    },
+    {
+      "checkId": "A2-punching",
+      "status": "PASS",
+      "diagnostic": "A2 parent-arc holes are source-derived"
+    },
+    {
+      "checkId": "A2-office-matched",
+      "status": "PASS",
+      "diagnostic": "each A2 core is a subset of its same-office A0 anchor"
+    },
+    {
+      "checkId": "A2-two-parents",
+      "status": "PASS",
+      "diagnostic": "five selected A2 midpoint pairs"
+    },
+    {
+      "checkId": "seam-pairs",
+      "status": "PASS",
+      "diagnostic": "four source phase-seam T1 twin pairs"
+    },
+    {
+      "checkId": "seam-per-tier",
+      "status": "PASS",
+      "diagnostic": "two seam pairs at A1 and A2"
+    },
+    {
+      "checkId": "seam-chain",
+      "status": "PASS",
+      "diagnostic": "source seam midpoints march inward"
+    },
+    {
+      "checkId": "termination-dH-census",
+      "status": "PASS",
+      "diagnostic": {
+        "dH2": 5,
+        "dH4": 0,
+        "dH10": 2
+      }
+    },
+    {
+      "checkId": "termination-hexachord",
+      "status": "PASS",
+      "diagnostic": "all dH2 A2 pairs share the whole-tone hexachord"
+    },
+    {
+      "checkId": "termination-no-dH4",
+      "status": "PASS",
+      "diagnostic": "no A2 office-distance-two dH4 pair"
+    },
+    {
+      "checkId": "termination-5-33-detachment",
+      "status": "PASS",
+      "diagnostic": "T1-complement A3 predictions are detached 5-33 masks"
+    },
+    {
+      "checkId": "incidence-15-36",
+      "status": "PASS",
+      "diagnostic": "five selected 5-35 cores contribute 15 of 36 incidences"
+    },
+    {
+      "checkId": "incidence-5-120",
+      "status": "PASS",
+      "diagnostic": "five selected 5-34 cores are in the 120-mask one-parent stratum"
+    },
+    {
+      "checkId": "incidence-out-of-census",
+      "status": "PASS",
+      "diagnostic": "ten A2-to-A1 construction incidences are outside the detached audit"
+    },
+    {
+      "checkId": "guards-no-court",
+      "status": "PASS",
+      "diagnostic": "Court positions cross-check A1 only"
+    },
+    {
+      "checkId": "guards-seam-typed",
+      "status": "PASS",
+      "diagnostic": "midpoint and phase-seam provenance remain distinct"
+    },
+    {
+      "checkId": "guards-namespace",
+      "status": "PASS",
+      "diagnostic": "planning evidence has no admission or topology coordinate"
+    },
+    {
+      "checkId": "achirality",
+      "status": "PASS",
+      "diagnostic": "all derived 5-35, 5-34, and predicted 5-33 masks are achiral"
+    },
+    {
+      "checkId": "bindings-ledger-shas",
+      "status": "PASS",
+      "diagnostic": "frozen ledger bindings"
+    },
+    {
+      "checkId": "bindings-source-derivation",
+      "status": "PASS",
+      "diagnostic": "all semantic source bindings"
+    }
+  ],
+  "reportFingerprint": "843f388d3f6a23444b15ea8bb1a9d751f61c891d894796900ed1dd11fc2bf09e"
+}

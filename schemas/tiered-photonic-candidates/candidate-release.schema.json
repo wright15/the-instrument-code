@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gov-2xx.tiered-photonic-candidate-release.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "releaseId", "storyId", "candidateId", "coordinateId", "status", "authority", "admissionEffect", "scope", "method", "sourceBindings", "records", "invariants", "negativeControls", "globalAggregate", "interpretationPolicy", "deferredWork", "candidateFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "gov-2xx.tiered-photonic-candidate-release.v1"},
+    "releaseId": {"const": "tiered-photonic-candidate:CH_TIERED_v1:1.0.0"},
+    "storyId": {"const": "GOV-2XX"},
+    "candidateId": {"const": "CH_TIERED_v1"},
+    "coordinateId": {"const": "photonic.tiered_v1"},
+    "status": {"const": "admitted_informational_sidecar"},
+    "authority": {"const": "root_owned_informational_sidecar"},
+    "admissionEffect": {"const": "tiered_photonic_constants_only"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selection", "tuning", "rootConvention", "anchorStateCount", "recordCount", "variants", "excluded"],
+      "properties": {
+        "selection": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["role", "tiers", "families"],
+          "properties": {
+            "role": {"const": "anchor"},
+            "tiers": {"const": ["A1", "A2"]},
+            "families": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+          }
+        },
+        "tuning": {"const": "12-TET"},
+        "rootConvention": {"const": "declared_root_normalized_to_pitch_class_0"},
+        "anchorStateCount": {"const": 14},
+        "recordCount": {"const": 28},
+        "variants": {"const": ["sum_mixing", "geometric_mean"]},
+        "excluded": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["variantA", "variantB", "officeOrder", "a0WavelengthsNm", "constants"],
+      "properties": {
+        "variantA": {"$ref": "#/$defs/sumVariant"},
+        "variantB": {"$ref": "#/$defs/geometricVariant"},
+        "officeOrder": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "a0WavelengthsNm": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"type": "number", "minimum": 400, "maximum": 700}},
+        "constants": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["speedOfLightMS", "planckJS", "electronVoltJ"],
+          "properties": {
+            "speedOfLightMS": {"type": "number", "exclusiveMinimum": 0},
+            "planckJS": {"type": "number", "exclusiveMinimum": 0},
+            "electronVoltJ": {"type": "number", "exclusiveMinimum": 0}
+          }
+        }
+      }
+    },
+    "sourceBindings": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "prefixItems": [
+        {"$ref": "#/$defs/canonicalHeptatonicLedgerBinding"},
+        {"$ref": "#/$defs/canonicalNetworkDataBinding"},
+        {"$ref": "#/$defs/governorRegistryBinding"},
+        {"$ref": "#/$defs/photonicRecordsBinding"},
+        {"$ref": "#/$defs/globalCHGuardBinding"},
+        {"$ref": "#/$defs/tieredPhotonicTheoremBinding"}
+      ],
+      "items": false
+    },
+    "records": {"type": "array", "minItems": 28, "maxItems": 28, "items": {"$ref": "#/$defs/record"}},
+    "invariants": {
+      "type": "object",
+      "required": ["strictBands"],
+      "properties": {
+        "strictBands": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["sum_A1", "sum_A2", "geom_A1", "geom_A2"],
+          "properties": {
+            "sum_A1": {"$ref": "#/$defs/band"},
+            "sum_A2": {"$ref": "#/$defs/band"},
+            "geom_A1": {"$ref": "#/$defs/band"},
+            "geom_A2": {"$ref": "#/$defs/band"}
+          }
+        }
+      }
+    },
+    "negativeControls": {"type": "object"},
+    "globalAggregate": {"type": "object", "additionalProperties": false, "required": ["namespace", "status", "value", "guardLiteral"], "properties": {"namespace": {"const": "harmonic.C_H"}, "status": {"const": "unresolved"}, "value": {"type": "null"}, "guardLiteral": {"type": "string", "minLength": 1}}},
+    "interpretationPolicy": {"type": "object", "additionalProperties": false, "required": ["causationClaim", "physicalQuantityClaim", "tierClassifier", "globalCHNull", "note"], "properties": {"causationClaim": {"const": false}, "physicalQuantityClaim": {"const": false}, "tierClassifier": {"const": false}, "globalCHNull": {"const": true}, "note": {"type": "string"}}},
+    "deferredWork": {"type": "array", "items": {"type": "string"}},
+    "candidateFingerprint": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "nonzeroSha256": {"allOf": [{"$ref": "#/$defs/sha256"}], "not": {"const": "0000000000000000000000000000000000000000000000000000000000000000"}},
+    "band": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}},
+    "sourceBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bindingId", "path", "sha256", "role"],
+      "properties": {
+        "bindingId": {"type": "string"},
+        "path": {"type": "string"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "role": {"type": "string"}
+      }
+    },
+    "canonicalHeptatonicLedgerBinding": {
+      "allOf": [{"$ref": "#/$defs/sourceBinding"}],
+      "properties": {
+        "bindingId": {"const": "canonical-heptatonic-ledger"},
+        "path": {"const": "canonical/universal-heptatonic-ledger.json"},
+        "role": {"const": "authoritative_state_identity"}
+      }
+    },
+    "canonicalNetworkDataBinding": {
+      "allOf": [{"$ref": "#/$defs/sourceBinding"}],
+      "properties": {
+        "bindingId": {"const": "canonical-network-data"},
+        "path": {"const": "canonical/universal-network-data.json"},
+        "role": {"const": "construction_edges_K_kernel"}
+      }
+    },
+    "governorRegistryBinding": {
+      "allOf": [{"$ref": "#/$defs/sourceBinding"}],
+      "properties": {
+        "bindingId": {"const": "governor-registry"},
+        "path": {"const": "schemas/governors.yaml"},
+        "role": {"const": "A0_wavelength_source"}
+      }
+    },
+    "photonicRecordsBinding": {
+      "allOf": [{"$ref": "#/$defs/sourceBinding"}],
+      "properties": {
+        "bindingId": {"const": "photonic-records"},
+        "path": {"const": "seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/photonic-records.json"},
+        "role": {"const": "physical_constants_and_C_P_convention"}
+      }
+    },
+    "globalCHGuardBinding": {
+      "allOf": [{"$ref": "#/$defs/sourceBinding"}],
+      "properties": {
+        "bindingId": {"const": "global-C_H-guard"},
+        "path": {"const": "seven-governors-harmonic-invariants-v0.1.0/canonical/compression-namespace-guard.json"},
+        "role": {"const": "global_namespace_boundary"}
+      }
+    },
+    "tieredPhotonicTheoremBinding": {
+      "allOf": [{"$ref": "#/$defs/sourceBinding"}],
+      "properties": {
+        "bindingId": {"const": "tiered-photonic-theorem"},
+        "path": {"const": "docs/TIERED_PHOTONIC_THEOREM.md"},
+        "sha256": {"$ref": "#/$defs/nonzeroSha256"},
+        "role": {"const": "scoped_research_theorem"}
+      }
+    },
+    "sumVariant": {
+      "type": "object",
+      "required": ["numericBandA1Nm", "numericBandA2Nm"],
+      "properties": {
+        "numericBandA1Nm": {"$ref": "#/$defs/band"},
+        "numericBandA2Nm": {"$ref": "#/$defs/band"}
+      }
+    },
+    "geometricVariant": {
+      "type": "object",
+      "required": ["numericBandA1Nm", "numericBandA2Nm"],
+      "properties": {
+        "numericBandA1Nm": {"$ref": "#/$defs/band"},
+        "numericBandA2Nm": {"$ref": "#/$defs/band"}
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stateId", "name", "office", "tier", "forte", "variant", "parentStateIds", "constructionEdgeIds", "parentWavelengthsNm", "derivedWavelengthNm", "derivedWavenumberPerNm", "derivedWavenumberPerM", "derivedFrequencyHz", "derivedPhotonEnergyJ", "derivedPhotonEnergyEv", "photonicCompression", "bandMetadata", "derivationNote", "channelIndependence", "interpretationPolicy", "recordFingerprint"],
+      "properties": {
+        "stateId": {"type": "integer"},
+        "name": {"type": "string"},
+        "office": {"enum": ["Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus", "Saturn"]},
+        "tier": {"enum": ["A1", "A2"]},
+        "forte": {"type": "string", "minLength": 1},
+        "variant": {"enum": ["sum_mixing", "geometric_mean"]},
+        "parentStateIds": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer"}},
+        "constructionEdgeIds": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string", "pattern": "^constructs:"}},
+        "parentWavelengthsNm": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}},
+        "derivedWavelengthNm": {"type": "number", "exclusiveMinimum": 0},
+        "derivedWavenumberPerNm": {"type": "number", "exclusiveMinimum": 0},
+        "derivedWavenumberPerM": {"type": "number", "exclusiveMinimum": 0},
+        "derivedFrequencyHz": {"type": "number", "exclusiveMinimum": 0},
+        "derivedPhotonEnergyJ": {"type": "number", "exclusiveMinimum": 0},
+        "derivedPhotonEnergyEv": {"type": "number", "exclusiveMinimum": 0},
+        "photonicCompression": {"type": ["number", "null"]},
+        "bandMetadata": {
+          "type": "object",
+          "required": ["numericBandNm"],
+          "properties": {"numericBandNm": {"$ref": "#/$defs/band"}}
+        },
+        "derivationNote": {"type": "string"},
+        "channelIndependence": {"const": true},
+        "interpretationPolicy": {"type": "object"},
+        "recordFingerprint": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}

@@ -1,5 +1,43 @@
 # Decision Ledger
 
+## Release 1.8.0 close-out — fixed point — 2026-08-27
+
+### Decision — in-place closure, no external consumer
+
+`1.8.0` was session-local at `GOV-2XX` emission; no tag, push, CI artifact, deposit, or externally recorded checksum had consumed `1.8.0` at close time, so it closes **in place** as `1.8.0`. The fixed-point rule is now executable: package manifests use a release-bound timestamp and `--check` is non-writing. Collateral regeneration `CH_D17_q_v2` (`2a015…→c0781…`, `15_208→16_008`, A-tier SHA `2c6ff…`) is a no-semantic-change source closure: D-tier records, `Q`, `W`, and tier summaries are unchanged. `681` correction: `provenance/OBSERVATION_LEDGER.md:OBS-011` and `docs/verification/SHADOW_LADDER_THEOREM.md` record punched holes `{10,2}` in fifth-arc `[9,3]`; the earlier `10`-only transcription was invalid. Shadow evidence now derives its cores, holes, seams, and termination directly from canonical sources and is release-gated while retaining `planning_evidence` status. The executable GOV-213 Theorem 3' certificate and source-derived GOV-2XX sidecar are `1.8.0` content; neither changes graph topology.
+
+**Validation composition:** the release validator covers manifest fixed point, Orrery catalog freshness, GOV-213, GOV-2XX, GOV-227, topology, audit, registry, runtime, Court, and Neo4j receipts. The source-derived shadow ladder remains a separate planning-evidence artifact but is invoked and checked by the release validator; its 37 checks do not grant admission.
+
+### Evidence
+
+- `npm run validate` passes with the integrated release report, tiered `15/15`, GOV-213 `14/14`, GOV-227 `17/17`, and shadow `37/37` receipts current.
+- `node scripts/build-manifest.mjs --check` and `node scripts/build-pentatonic-binding-audit-closure.mjs --check` are non-writing fixed-point checks.
+
+## Informational tiered-photonic sidecar and observation laws (GOV-2XX) — 2026-08-26
+
+### Decision — informational, not topology-admission
+
+GOV-2XX emits an informational sidecar `photonic.tiered_v1` (`CH_TIERED_v1`) deriving tiered photonic constants for the 14 anchors `tier in {A1,A2}` via office-space convolution `K = δ_{-1}+δ_{+1}` over `Z7`. Two variants are retained:
+
+- **Variant A sum_mixing (K-sum in wavenumber ν̂=1/λ):** `ν̂_t[k]=ν̂_{t-1}[k-1]+ν̂_{t-1}[k+1]`, extended vacuum-UV bands `A1 [216.09,317.19]` / `A2 [114.06,144.78]` nm, mean-doubling `Σν_t=2^t Σν_0` (photonic octaves), rendering as luminance/grain.
+- **Variant B geometric_mean (K-mean in ln λ):** `λ_t[k]=√(λ_{t-1}[k-1]·λ_{t-1}[k+1])`, hull-preserving `A1 [433.59,637.18]` / `A2 [462.79,591.25]` nm.
+
+Records are edge-faithful (`parentStateIds` + `constructionEdgeIds`) but derivation is channel-blind — `K` reads only office `λ`, never construction channel (`single_degree` vs `root_phase`), enforced by `channelIndependence` gate and normalization principle. `photonicCompression` is `null` for variant A (extended gamut needs versioned successor) and `∈[0,1]` for variant B. `causationClaim:false`, `physicalQuantityClaim:false`, `tierClassifier:false`, `C_H` guard preserved (`harmonic.C_H unresolved null`).
+
+The 7 A0 wavelengths (`700,610,580,530,470,430,400`) are source bindings, not derived records; derived = 28 records (14 anchors ×2 variants). Source bindings include `photonic-records.json` for `c/h` constants.
+
+Five observation laws are recorded in `provenance/OBSERVATION_LEDGER.md` (`OBS-004` through `OBS-008`): court-core identity `5/5`, shifted-complement `10/10`, core-and-tension `10/10`, seam non-collision `4/4`, construction exhaustivity (21 pairs/tier). The shifted-complement law subsumes prior complement-family facts and predicts `A3` interior cores `5-33`; it replaces the draft `complement-family cores` entry. Shadow ladder `shadow(core) = T₁∘comp` of tier `t−1` is now exact algebra — evidence type #2 for CRT-310.
+
+### Explicitly deferred
+
+`D1-D7` photonic extension, `satellite/boundary` evaluation, `C_P/C_H/C_S` correspondence, true FM `β` Bessel sidebands (variant C).
+
+### Evidence
+
+- `canonical/tiered-photonic-candidates/tiered-photonic-v1.json` 28 records, 6 source bindings, `candidateFingerprint a05b0b543c473b3ffb0c282eff0300fc2d392b7d97a5cbf382d20a4a928ae404`.
+- `qa/tiered-photonic-candidates-validation.json` **PASS 15/15**.
+- `tests/test_gov_2xx_tiered_photonic.py` 14/14, `npm run validate:tiered-photonic` PASS, now **wired** into `npm run validate` (`package.json:24` `validate:tiered-photonic --silent`) and `1.8.0` rootExtension.
+
 ## Fivefold engine promotion admission (CRT-348) — 2026-08-17
 
 ### Decision
