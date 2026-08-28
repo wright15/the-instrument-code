@@ -1,5 +1,19 @@
 # Release Notes
 
+## Integrated release 1.8.0 - 2026-08-27
+
+- Adds the exact GOV-213 A-tier max-margin certificate, the informational
+  GOV-2XX A1/A2 tiered-photonic sidecar, and source-derived shadow-ladder
+  planning evidence without changing canonical topology or global
+  `harmonic.C_H` status.
+- Rebuilds GOV-227's D-tier artifact through its A-tier source binding; the
+  D-tier records, `Q`, `W`, and tier summaries remain unchanged.
+- Adds deterministic manifest fixed-point validation and release gates for the
+  Orrery catalog, GOV-2XX, and shadow-ladder artifacts.
+- See `RELEASE_1_8_TAXONOMY_AND_ORRERY_GUIDE.md` for the full ten-tier
+  taxonomy, authority boundaries, Orrery coverage assessment, and recommended
+  presentation path.
+
 ## Integrated release 1.6.0 - 2026-08-13
 
 - Admits GOV-227's `harmonic.CH_D17_q_v2` coordinate for exactly the 49 D1-D7
