@@ -1,5 +1,31 @@
 # Decision Ledger
 
+## Release 1.9.0-dev opens on main — 2026-08-29
+
+### Decision — retain the closed 1.8.1 baseline while planning
+
+`1.9.0-dev` opens immediately after the sealed `1.8.1` provenance-baseline
+closure. It retains `1.8.1` as its declared Neo4j baseline: the native
+clean-import receipt and separately configured disposable-local
+bootstrap/roundtrip receipt remain release-scoped evidence for that closed
+baseline, not new deployment evidence for the development identity.
+
+The cycle begins on `main`; no branch-and-hold release line is created. Its
+planned work starts with the State Honesty and Baseline Parity, Full-Field
+Derivation, Orrery Evidence Surfaces, and Taxonomy Explorer epics. Any research
+output remains bounded by its declared authority and must not silently alter
+canonical topology, admission, runtime policy, Court state, or global
+`harmonic.C_H`.
+
+### Guard
+
+No Neo4j baseline is recaptured at cycle open. Before a `1.9.0` close can claim
+current-release round-trip parity, any changed provenance or projected data
+requires fresh native reproducibility and separately configured
+bootstrap/roundtrip evidence. This entry moves the decision-ledger binding, so
+dependent planning-evidence artifacts are regenerated with the cycle-open
+fixed-point pass.
+
 ## Release 1.8.1 Neo4j provenance-baseline closure — fixed point — 2026-08-29
 
 ### Decision — dual evidence, no topology change

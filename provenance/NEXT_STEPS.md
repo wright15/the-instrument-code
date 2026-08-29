@@ -1,8 +1,8 @@
 # Recommended Next Steps
 
-Current release: `seven-governors-integrated-1.8.1`, closed at fixed point 2026-08-29, no further emissions this cycle.
+Current release: `seven-governors-integrated-1.9.0-dev`, opened on `main` 2026-08-29.
 
-**Fixed-point declaration:** `1.8.1` closes the deferred Neo4j provenance baseline with separate native reproducibility and configured bootstrap/roundtrip receipts; `681` geometry correction (`OBS-011` punched holes `{10,2}`) remains folded into the prior point; `OBS-014` remains queued. Next emissions are `planning_evidence` only.
+**Development declaration:** `1.8.1` remains the sealed Neo4j baseline with separate native reproducibility and configured bootstrap/roundtrip receipts. `1.9.0-dev` plans bounded research and interface work on `main`; `681` geometry correction (`OBS-011` punched holes `{10,2}`) remains folded into the prior point, and `OBS-014` remains queued. No development emission changes canonical topology, admission, runtime authority, Court policy, or global `harmonic.C_H` without its own versioned evidence and release decision.
 
 ## Queued — OBS-014 — twin-hub convergence audit (untested)
 
@@ -26,7 +26,7 @@ Prose only: `d=3→4` consecutive fifths, `d=4→3` (quartal/sus, not tertian tr
 
 ---
 
-Current release: `seven-governors-integrated-1.8.1` is the current baseline.
+The retained Neo4j baseline is closed release `seven-governors-integrated-1.8.1`.
 The release includes the audited topology, mutation algebra, canonical profile
 registry/compiler, Governor runtime, bounded Pentatonic Court, read projection,
 agent skills, optional read-only vault context, GOV-210 availability/housing,
@@ -35,10 +35,10 @@ A0-A2 harmonic-compression sidecar, and GOV-227's scoped D1-D7 q_v2 sidecar.
 
 ## 1. Establish the full database
 
-Release 1.8.1 refreshes the current Neo4j baseline without changing graph
+Release 1.9.0-dev retains the 1.8.1 Neo4j baseline without changing graph
 payload. The native reproducibility receipt and separately configured
-bootstrap/roundtrip receipt are retained in `qa/`; refresh both before a later
-release changes provenance or projected data.
+bootstrap/roundtrip receipt remain in `qa/`; refresh both before a 1.9.0 close
+claims parity for changed provenance or projected data.
 
 ## 2. Use explanation-first queries
 
@@ -63,11 +63,11 @@ returns `503` unless all parity groups pass.
 
 ## 4. Prove round-trip reproducibility
 
-After the deferred baseline refresh, run `npm run verify:neo4j:roundtrip`
-against the deployed database and retain the normalized snapshot fingerprint.
-Then `npm run test:neo4j:full` independently proves that two clean imports
-produce identical bytes and that no canonical topology record, mutation ID,
-semantic ID, or projection fingerprint is lost or invented.
+For a future release-closing refresh, run `npm run verify:neo4j:roundtrip`
+against the configured deployment and retain the normalized snapshot
+fingerprint. Then `npm run test:neo4j:full` independently proves that two clean
+imports produce identical bytes and that no canonical topology record,
+mutation ID, semantic ID, or projection fingerprint is lost or invented.
 
 ## 5. Preserve bounded admission
 
@@ -118,9 +118,10 @@ precedence rules for tier resolution. Global `harmonic.C_H` remains null.
 Future work may independently test satellites and boundaries, all 15 operator
 deltas, and `C_P`/`C_H`/`C_S` correspondence.
 
-The Neo4j baseline is release 1.8.1. A future provenance or projected-data
-change requires fresh native reproducibility and configured bootstrap/roundtrip
-evidence before claiming current-release round-trip parity.
+The 1.8.1 Neo4j baseline is retained through the 1.9.0-dev cycle. A future
+provenance or projected-data change requires fresh native reproducibility and
+configured bootstrap/roundtrip evidence before claiming 1.9.0 round-trip
+parity.
 
 ## 8. Version every protocol change
 

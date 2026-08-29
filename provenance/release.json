@@ -1,8 +1,8 @@
 {
-  "releaseId": "seven-governors-integrated-1.8.1",
-  "version": "1.8.1",
+  "releaseId": "seven-governors-integrated-1.9.0-dev",
+  "version": "1.9.0-dev",
   "releaseDate": "2026-08-29",
-  "status": "validated_admitted",
+  "status": "development",
   "authorityOrder": [
     "framework",
     "canonical",
@@ -149,12 +149,12 @@
     "neo4jAuthority": false
   },
   "neo4jBaselineStatus": {
-    "status": "current_release_baseline",
+    "status": "retained_previous_release_baseline",
     "retainedReleaseId": "seven-governors-integrated-1.8.1",
-    "reason": "native clean-import reproducibility and a separately configured disposable-local bootstrap/roundtrip both pass against the current release provenance",
+    "reason": "the closed 1.8.1 native reproducibility and separately configured disposable-local bootstrap/roundtrip receipts remain the retained baseline while 1.9.0-dev plans new work",
     "reproducibilityReceipt": "qa/neo4j-full-database-validation.json",
     "deploymentReceipt": "qa/neo4j-deployment-roundtrip-validation.json",
-    "refreshRequired": "next release provenance or projected-data change"
+    "refreshRequired": "before 1.9.0 close if provenance or projected data changes"
   },
   "rootExtensions": [
     {
