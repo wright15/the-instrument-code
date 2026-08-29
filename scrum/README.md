@@ -95,6 +95,61 @@ proposed EPIC-004 through EPIC-008 authority workstreams.
 
 Planned story points: **49**. EPIC-009 is complete and released as `seven-governors-integrated-1.7.0`.
 
+## 1.9.0-dev planned work
+
+The following backlog is bounded by `provenance/SOURCE_AUTHORITY.md`. Sprint
+allocation is sequencing information, not evidence of completion. All points
+remain **TBD** until work is explicitly sized; generated census output overrides
+planning arithmetic.
+
+### EPIC-500 - State Honesty and Baseline Parity
+
+| ID | Title | Sprint | Points | Priority | Status |
+|---|---|---|---|---|---|
+| [EPIC-500](EPIC-500-state-honesty-and-baseline-parity.md) | State honesty and retained-baseline parity | Sprint 1 | - | High | **In Progress** |
+| [GOV-501](GOV-501-neo4j-baseline-parity.md) | Neo4j baseline parity refresh | Sprint 1 | TBD | High | **Done** |
+| [GOV-502](GOV-502-documentation-validation-census.md) | Documentation and validation census reconciliation | Sprint 1 | TBD | High | **Backlog** |
+
+### EPIC-510 - Full-Field Derivation
+
+| ID | Title | Sprint | Points | Priority | Status |
+|---|---|---|---|---|---|
+| [EPIC-510](EPIC-510-full-field-derivation.md) | Full-field derivation | Sprint 2 | - | High | **Backlog** |
+| [GOV-510](GOV-510-twin-hub-contact-convergence-audit.md) | Twin-hub contact convergence audit | Sprint 2 | TBD | High | **Backlog** |
+| [GOV-511](GOV-511-d-tier-fifth-space-census.md) | D-tier fifth-space census | Sprint 2 | TBD | High | **Backlog** |
+
+GOV-510 and GOV-511 run in parallel. Their completed results are the only
+inputs to [GOV-512](GOV-512-research-gate-3.md).
+
+### EPIC-511 - Orrery Evidence Surfaces
+
+| ID | Title | Sprint | Points | Priority | Status |
+|---|---|---|---|---|---|
+| [EPIC-511](EPIC-511-orrery-evidence-surfaces.md) | Orrery evidence surfaces | Sprint 2-3 | - | High | **Backlog** |
+| [ORR-511](ORR-511-evidence-inspector-bundle.md) | Evidence inspector bundle | Sprint 2 | TBD | High | **Backlog** |
+| [ORR-512](ORR-512-provenance-explain-surface.md) | Provenance explain surface | Sprint 3 | TBD | High | **Backlog** |
+| [ORR-513](ORR-513-field-derivation-surface.md) | Field derivation surface | Sprint 3 | TBD | High | **Backlog** |
+
+### EPIC-512 - Taxonomy Explorer
+
+| ID | Title | Sprint | Points | Priority | Status |
+|---|---|---|---|---|---|
+| [EPIC-512](EPIC-512-taxonomy-explorer.md) | Taxonomy Explorer | Sprint 3-5 | - | High | **Backlog** |
+| [GOV-512](GOV-512-research-gate-3.md) | Research Gate 3 | Sprint 3 | TBD | High | **Backlog** |
+| [ORR-521](ORR-521-taxonomy-explorer-read-model.md) | Taxonomy Explorer read model | Sprint 4 | TBD | High | **Backlog** |
+| [ORR-522](ORR-522-d-tier-taxonomy-dataset.md) | D-tier taxonomy dataset | Sprint 4 | TBD | High | **Backlog** |
+| [ORR-523](ORR-523-taxonomy-derivation-explanations.md) | Taxonomy derivation explanations | Sprint 5 | TBD | High | **Backlog** |
+| [ORR-524](ORR-524-taxonomy-explorer-release-closure.md) | Taxonomy Explorer release closure | Sprint 5 | TBD | High | **Backlog** |
+
+### EPIC-520 - Unified Operator
+
+| ID | Title | Sprint | Points | Priority | Status |
+|---|---|---|---|---|---|
+| [EPIC-520](EPIC-520-unified-operator.md) | Conditional unified-operator workstream | Sprint 4 if opened | - | High | **Conditional** |
+
+EPIC-520 is not open and has no child stories. It can become active only after
+GOV-512 records confirmed results from both GOV-510 and GOV-511.
+
 ## Global definition of done
 
 Every ticket also carries a story-specific definition of done. Globally:
