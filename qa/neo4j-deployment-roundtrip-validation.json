@@ -1,17 +1,14 @@
 {
-  "schemaVersion": "seven-governors.neo4j-full-database-validation.v1",
+  "schemaVersion": "seven-governors.neo4j-deployment-roundtrip-validation.v1",
   "verdict": "PASS",
   "releaseId": "seven-governors-integrated-1.8.1",
-  "checksPassed": 6,
+  "targetClass": "disposable_local",
+  "credentialsExcluded": true,
+  "checksPassed": 3,
   "checksFailed": 0,
   "checks": [
     {
-      "checkId": "native-harness",
-      "status": "PASS",
-      "diagnostic": "isolated Neo4j 5.x lifecycle"
-    },
-    {
-      "checkId": "full-bootstrap",
+      "checkId": "configured-bootstrap",
       "status": "PASS",
       "diagnostic": {
         "nodeCount": 3061,
@@ -19,32 +16,16 @@
       }
     },
     {
-      "checkId": "projection-readiness",
+      "checkId": "configured-roundtrip",
       "status": "PASS",
-      "diagnostic": [
-        "topology",
-        "provenance",
-        "mutation",
-        "semantic",
-        "governorRuntime",
-        "court",
-        "gov210"
-      ]
+      "diagnostic": {
+        "snapshotFingerprint": "fd089ea9a0b91d1572b0efeeaa724a53e9d182e8bbc6f793111f52873a41c1a1"
+      }
     },
     {
-      "checkId": "normalized-source-parity",
-      "status": "PASS",
-      "diagnostic": "source-bound exact normalized namespace fingerprints"
-    },
-    {
-      "checkId": "import-twice-byte-identity",
+      "checkId": "bootstrap-roundtrip-byte-identity",
       "status": "PASS",
       "diagnostic": true
-    },
-    {
-      "checkId": "namespace-reset-isolation",
-      "status": "PASS",
-      "diagnostic": "external sentinel preserved"
     }
   ],
   "normalizedSnapshot": {
@@ -674,5 +655,5 @@
       "sha256": "d7ae0021b72c0c469ab3f942d2fa2b9f5957eccf694c1300f7ca9b3aac1c8ae7"
     }
   ],
-  "reportFingerprint": "f85d08ad10450c001d2d8cdcc9f2aa52c103f23db03d7c51b317e1f60650ddd3"
+  "reportFingerprint": "b941a90e091db8189b1252373974e78d2de794abe1f6cc63c43e04a8cd34db20"
 }

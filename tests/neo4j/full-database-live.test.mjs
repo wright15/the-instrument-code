@@ -69,7 +69,7 @@ test("trusted ingestion rejects destructive batches before execution", async () 
   assert.equal(executed, false);
 });
 
-test("release 1.5 full database bootstraps and round-trips byte-identically", async () => {
+test("current release full database bootstraps and round-trips byte-identically", async () => {
   const captureBaseline = process.env.NEO4J_FULL_CAPTURE_BASELINE === "1";
   const temp = fs.mkdtempSync(path.join(os.tmpdir(), "full-database-live-"));
   const inputs = buildReleaseDatabaseInputs(temp);

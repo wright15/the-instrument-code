@@ -1,6 +1,6 @@
 {
   "name": "seven-governors-integrated-release",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "private": true,
   "type": "module",
   "description": "Framework sources, canonical topology, Neo4j projection, provenance, validation, and interactive Seven Governors graph.",
@@ -92,7 +92,8 @@
     "bootstrap:neo4j": "node scripts/bootstrap-neo4j.mjs",
     "verify:neo4j:roundtrip": "node scripts/verify-neo4j-roundtrip.mjs",
     "test:neo4j:full:raw": "node --test tests/neo4j/full-database-live.test.mjs",
-    "test:neo4j:full": "node scripts/validate-full-database.mjs"
+    "test:neo4j:full": "node scripts/validate-full-database.mjs",
+    "validate:neo4j:deployment": "node scripts/validate-neo4j-deployment-roundtrip.mjs"
   },
   "engines": {
     "node": ">=20"

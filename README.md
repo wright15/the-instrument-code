@@ -23,6 +23,9 @@ topology, Court runtime, or Neo4j projection.
 Integrated release 1.8.0 adds source-derived GOV-2XX tiered-photonic planning evidence
 and an executable GOV-213 max-margin certificate while preserving the same topology,
 Court runtime, and Neo4j boundaries.
+Integrated release 1.8.1 refreshes the Neo4j baseline with separate native
+reproducibility and configured bootstrap/roundtrip evidence, without changing
+canonical topology or runtime authority.
 
 The package is intentionally layered:
 

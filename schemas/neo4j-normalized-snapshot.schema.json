@@ -6,7 +6,7 @@
   "required": ["schemaVersion", "releaseId", "sourceBindings", "namespaces", "counts", "snapshotFingerprint"],
   "properties": {
     "schemaVersion": {"const": "seven-governors.neo4j-normalized-snapshot.v1"},
-    "releaseId": {"const": "seven-governors-integrated-1.5.0"},
+    "releaseId": {"$ref": "#/$defs/integratedReleaseId"},
     "sourceBindings": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"$ref": "#/$defs/sourceBinding"}},
     "namespaces": {
       "type": "object", "additionalProperties": false,
@@ -23,6 +23,7 @@
   },
   "$defs": {
     "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "integratedReleaseId": {"type": "string", "pattern": "^seven-governors-integrated-[0-9]+\\.[0-9]+\\.[0-9]+(?:-dev)?$"},
     "sourceBinding": {"type": "object", "additionalProperties": false, "required": ["namespace", "path", "sha256"], "properties": {"namespace": {"enum": ["topology", "provenance", "mutation", "semantic", "governorRuntime", "court", "gov210"]}, "path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}}},
     "node": {"type": "object", "additionalProperties": false, "required": ["logicalId", "labels", "properties"], "properties": {"logicalId": {"type": "string"}, "labels": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}, "properties": {"type": "object"}}},
     "relationship": {"type": "object", "additionalProperties": false, "required": ["relationshipType", "sourceLogicalId", "targetLogicalId", "properties", "multiplicity"], "properties": {"relationshipType": {"type": "string"}, "sourceLogicalId": {"type": "string"}, "targetLogicalId": {"type": "string"}, "properties": {"type": "object"}, "multiplicity": {"type": "integer", "minimum": 1}}},

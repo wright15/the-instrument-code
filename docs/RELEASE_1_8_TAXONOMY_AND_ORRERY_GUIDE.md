@@ -290,7 +290,7 @@ checks. The integrated receipt records 414 passing checks, including:
 | q_v2 successor design | Known domain cracks require a future versioned design rather than in-place expansion |
 | Cross-coordinate claims | No equivalence is established among `C_P`, `C_H`, `C_S`, `kappa_court`, or physical quantities |
 | Global aggregate | `harmonic.C_H` remains unresolved and null |
-| Live Neo4j parity | The retained full-database baseline is release 1.5.0 and must be refreshed before claiming 1.8.0 live parity |
+| Live Neo4j parity | Release 1.8.1 records separate native reproducibility and configured bootstrap/roundtrip evidence for the 3,061-node, 10,506-relationship projection |
 
 ## Current Orrery position
 

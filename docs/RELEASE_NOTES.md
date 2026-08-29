@@ -1,5 +1,16 @@
 # Release Notes
 
+## Integrated release 1.8.1 - 2026-08-29
+
+- Refreshes the Neo4j full-database baseline to the current release provenance
+  without changing canonical topology, graph payload, admission, or runtime
+  authority.
+- Separates isolated clean-import byte-identity evidence from a separately
+  configured disposable-local bootstrap and roundtrip receipt; both retain the
+  3,061-node and 10,506-relationship projection boundary.
+- Makes normalized snapshot and full-database validation release-parameterized
+  so retained evidence can be named explicitly by a later development cycle.
+
 ## Integrated release 1.8.0 - 2026-08-27
 
 - Adds the exact GOV-213 A-tier max-margin certificate, the informational

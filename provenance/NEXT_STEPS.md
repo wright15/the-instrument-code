@@ -1,8 +1,8 @@
 # Recommended Next Steps
 
-Current release: `seven-governors-integrated-1.8.0`, closed at fixed point 2026-08-27, no further emissions this cycle.
+Current release: `seven-governors-integrated-1.8.1`, closed at fixed point 2026-08-29, no further emissions this cycle.
 
-**Fixed-point declaration:** `1.8.0` closed at fixed point; `681` geometry correction (`OBS-011` punched holes `{10,2}`) folded into this point; `OBS-014` queued. Next emissions are `planning_evidence` only.
+**Fixed-point declaration:** `1.8.1` closes the deferred Neo4j provenance baseline with separate native reproducibility and configured bootstrap/roundtrip receipts; `681` geometry correction (`OBS-011` punched holes `{10,2}`) remains folded into the prior point; `OBS-014` remains queued. Next emissions are `planning_evidence` only.
 
 ## Queued — OBS-014 — twin-hub convergence audit (untested)
 
@@ -26,7 +26,7 @@ Prose only: `d=3→4` consecutive fifths, `d=4→3` (quartal/sus, not tertian tr
 
 ---
 
-Current release: `seven-governors-integrated-1.6.0` was the prior baseline.
+Current release: `seven-governors-integrated-1.8.1` is the current baseline.
 The release includes the audited topology, mutation algebra, canonical profile
 registry/compiler, Governor runtime, bounded Pentatonic Court, read projection,
 agent skills, optional read-only vault context, GOV-210 availability/housing,
@@ -35,12 +35,10 @@ A0-A2 harmonic-compression sidecar, and GOV-227's scoped D1-D7 q_v2 sidecar.
 
 ## 1. Establish the full database
 
-Release 1.6 changes no graph payload, but its `release.json` provenance identity
-is newer than the retained 1.5 Neo4j baseline. At the next Neo4j availability,
-use `npm run bootstrap:neo4j` with `NEO4J_URI`, `NEO4J_USERNAME`,
-`NEO4J_PASSWORD`, `NEO4J_IMPORT_DIR`, and optional `NEO4J_DATABASE`, then
-capture the new provenance namespace and normalized snapshot. Do not claim
-current-release baseline parity before that refresh.
+Release 1.8.1 refreshes the current Neo4j baseline without changing graph
+payload. The native reproducibility receipt and separately configured
+bootstrap/roundtrip receipt are retained in `qa/`; refresh both before a later
+release changes provenance or projected data.
 
 ## 2. Use explanation-first queries
 
@@ -120,9 +118,9 @@ precedence rules for tier resolution. Global `harmonic.C_H` remains null.
 Future work may independently test satellites and boundaries, all 15 operator
 deltas, and `C_P`/`C_H`/`C_S` correspondence.
 
-The Neo4j baseline remains the retained release 1.5.0 baseline because release
-1.6.0 changes no graph data. Refresh it at the next Neo4j availability before
-claiming current-release round-trip evidence.
+The Neo4j baseline is release 1.8.1. A future provenance or projected-data
+change requires fresh native reproducibility and configured bootstrap/roundtrip
+evidence before claiming current-release round-trip parity.
 
 ## 8. Version every protocol change
 

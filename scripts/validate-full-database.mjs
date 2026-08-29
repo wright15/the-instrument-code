@@ -13,6 +13,7 @@ import { fullDatabaseEvidencePaths } from "../graph/runtime/neo4j-evidence.mjs";
 
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const release = JSON.parse(fs.readFileSync(path.join(root, "provenance/release.json"), "utf8"));
 
 function sha256Bytes(bytes) {
   return crypto.createHash("sha256").update(bytes).digest("hex");
@@ -54,7 +55,7 @@ const checksFailed = checks.filter((check) => check.status === "FAIL").length;
 const core = {
   schemaVersion: "seven-governors.neo4j-full-database-validation.v1",
   verdict: checksFailed === 0 ? "PASS" : "FAIL",
-  releaseId: "seven-governors-integrated-1.5.0",
+  releaseId: release.releaseId,
   checksPassed: checks.length - checksFailed,
   checksFailed,
   checks,

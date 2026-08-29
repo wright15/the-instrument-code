@@ -1,5 +1,36 @@
 # Decision Ledger
 
+## Release 1.8.1 Neo4j provenance-baseline closure — fixed point — 2026-08-29
+
+### Decision — dual evidence, no topology change
+
+`1.8.1` is a narrow provenance-only patch. It refreshes the full-database
+baseline for the current release identity without changing canonical topology,
+projection payload, admission, runtime, Court policy, or global
+`harmonic.C_H`. The two required records remain deliberately separate:
+
+- `qa/neo4j-full-database-validation.json` records isolated clean-import
+  reproducibility and byte-identical normalized output.
+- `qa/neo4j-deployment-roundtrip-validation.json` records a separately
+  configured disposable-local bootstrap and roundtrip without storing target
+  URI, credentials, or import-directory details.
+
+Both receipts require 3,061 nodes, 10,506 relationships, source parity,
+readiness, and normalized snapshot identity. The normalized snapshot and
+receipt schemas now accept an explicitly named integrated-release identity;
+the release gate binds the declared retained baseline rather than inferring it
+from a hard-coded historical release. This ledger entry changes the
+shadow-ladder evidence binding, so its dependent planning-evidence artifact is
+regenerated within this closure.
+
+### Evidence
+
+- `npm run test:neo4j:full` is the native reproducibility receipt.
+- `npm run validate:neo4j:deployment` is the separately configured bootstrap
+  and roundtrip receipt.
+- The full manifest, shadow-ladder, pentatonic closure, and root validation
+  loop must return to a clean fixed point before this release is closed.
+
 ## Release 1.8.0 close-out — fixed point — 2026-08-27
 
 ### Decision — in-place closure, no external consumer

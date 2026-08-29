@@ -1,16 +1,18 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "seven-governors.neo4j-full-database-validation.v1",
+  "$id": "seven-governors.neo4j-deployment-roundtrip-validation.v1",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "verdict", "releaseId", "checksPassed", "checksFailed", "checks", "normalizedSnapshot", "evidenceBindings", "reportFingerprint"],
+  "required": ["schemaVersion", "verdict", "releaseId", "targetClass", "credentialsExcluded", "checksPassed", "checksFailed", "checks", "normalizedSnapshot", "evidenceBindings", "reportFingerprint"],
   "properties": {
-    "schemaVersion": {"const": "seven-governors.neo4j-full-database-validation.v1"},
+    "schemaVersion": {"const": "seven-governors.neo4j-deployment-roundtrip-validation.v1"},
     "verdict": {"enum": ["PASS", "FAIL"]},
     "releaseId": {"$ref": "#/$defs/integratedReleaseId"},
+    "targetClass": {"enum": ["configured_deployment", "disposable_local"]},
+    "credentialsExcluded": {"const": true},
     "checksPassed": {"type": "integer", "minimum": 0},
     "checksFailed": {"type": "integer", "minimum": 0},
-    "checks": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/check"}},
+    "checks": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/check"}},
     "normalizedSnapshot": {"oneOf": [{"$ref": "#/$defs/normalizedSnapshot"}, {"type": "null"}]},
     "evidenceBindings": {"type": "array", "minItems": 20, "uniqueItems": true, "items": {"$ref": "#/$defs/evidenceBinding"}},
     "reportFingerprint": {"$ref": "#/$defs/sha256"}
@@ -20,17 +22,18 @@
       "if": {"properties": {"verdict": {"const": "PASS"}}, "required": ["verdict"]},
       "then": {
         "properties": {
-          "checksPassed": {"const": 6},
+          "checksPassed": {"const": 3},
           "checksFailed": {"const": 0},
           "checks": {"type": "array", "items": {"type": "object", "properties": {"status": {"const": "PASS"}}}},
           "normalizedSnapshot": {"$ref": "#/$defs/normalizedSnapshot"}
         }
       },
-      "else": {"properties": {
-        "checksPassed": {"const": 0},
-        "checksFailed": {"const": 6},
-        "checks": {"type": "array", "items": {"type": "object", "properties": {"status": {"const": "FAIL"}}}}
-      }}
+      "else": {
+        "properties": {
+          "checksPassed": {"type": "integer", "maximum": 2},
+          "checksFailed": {"type": "integer", "minimum": 1}
+        }
+      }
     }
   ],
   "$defs": {

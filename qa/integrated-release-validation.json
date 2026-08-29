@@ -1,8 +1,8 @@
 {
-  "verdict": "PASS",
-  "releaseId": "seven-governors-integrated-1.8.0",
-  "checksPassed": 414,
-  "checksFailed": 0,
+  "verdict": "FAIL",
+  "releaseId": "seven-governors-integrated-1.8.1",
+  "checksPassed": 417,
+  "checksFailed": 1,
   "checks": [
     {
       "name": "release manifest fixed point",
@@ -23,12 +23,12 @@
       "name": "release id",
       "status": "PASS",
       "diagnostic": {
-        "releaseId": "seven-governors-integrated-1.8.0",
-        "version": "1.8.0"
+        "releaseId": "seven-governors-integrated-1.8.1",
+        "version": "1.8.1"
       }
     },
     {
-      "name": "release 1.8 root extension and retained database baseline",
+      "name": "release root extension and declared database baseline",
       "status": "PASS",
       "diagnostic": {
         "rootExtensions": [
@@ -812,8 +812,8 @@
     },
     {
       "name": "pentatonic binding planning-evidence validation",
-      "status": "PASS",
-      "diagnostic": "passed"
+      "status": "FAIL",
+      "diagnostic": "STALE_PENTATONIC_7_35_PARENT_AUDIT"
     },
     {
       "name": "pentatonic binding closure freshness",
@@ -830,8 +830,8 @@
         "phase3ReportSha256": "814512d4f4360dc7e9ab77b8190043a155ae8253d2729dbb21f33db91e37f1df",
         "cypherDeterministicFingerprint": "17a99dde862c5853031724a11c6435d372fd795eeb86a700fbc266068e7a8b61",
         "crt310BacklogFingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
-        "sourceAuthoritySha256": "626334f013c6229b9c9a8c2a2793a7d7b7bf9f7fee1ba603502317d3f638aa42",
-        "decisionLedgerSha256": "e691435f219264a031b11292355a4e3d0accdc2d1c1c16745e591e188e2c7883"
+        "sourceAuthoritySha256": "385107616bbf85fe2c8e149f2567f61912f8fe62f1aaa5e1ce1cac7e2e223c2b",
+        "decisionLedgerSha256": "8b021ae75280d4ca0b6bb4c5b7c08c348a9d03d6765ff46bda478f83a7aff439"
       }
     },
     {
@@ -845,7 +845,7 @@
           "2": 48,
           "3": 12
         },
-        "closureFingerprint": "6bc900ed27792fdef06c88c5641da2c0478e62828d965fce9b948fb97941aefa"
+        "closureFingerprint": "7c7b76d6ae34e26f1f851bf120192aa87f7bfe673b4248bb42e106ce6cb62153"
       }
     },
     {
@@ -899,17 +899,20 @@
       }
     },
     {
-      "name": "retained release 1.5 full-database evidence with deferred 1.6 refresh",
+      "name": "declared full-database reproducibility and deployment evidence",
       "status": "PASS",
       "diagnostic": {
-        "reportFingerprint": "4cea63c91426188a9dba02b32683fc0858a6e5730174aeeec9d55152e153f873",
-        "retainedReleaseId": "seven-governors-integrated-1.5.0",
-        "deferredRefresh": {
-          "status": "deferred_no_graph_data_change",
-          "retainedReleaseId": "seven-governors-integrated-1.5.0",
-          "reason": "only release provenance and non-projected GOV-213, GOV-2XX, and GOV-227 evidence changed",
-          "refreshRequired": "next Neo4j availability"
-        }
+        "reportFingerprint": "f85d08ad10450c001d2d8cdcc9f2aa52c103f23db03d7c51b317e1f60650ddd3",
+        "retainedReleaseId": "seven-governors-integrated-1.8.1",
+        "baselineStatus": {
+          "status": "current_release_baseline",
+          "retainedReleaseId": "seven-governors-integrated-1.8.1",
+          "reason": "native clean-import reproducibility and a separately configured disposable-local bootstrap/roundtrip both pass against the current release provenance",
+          "reproducibilityReceipt": "qa/neo4j-full-database-validation.json",
+          "deploymentReceipt": "qa/neo4j-deployment-roundtrip-validation.json",
+          "refreshRequired": "next release provenance or projected-data change"
+        },
+        "deploymentTargetClass": "disposable_local"
       }
     },
     {
@@ -1311,7 +1314,7 @@
       "name": "manifest completeness",
       "status": "PASS",
       "diagnostic": {
-        "version": "1.8.0",
+        "version": "1.8.1",
         "missingFromManifest": [],
         "missingFromDisk": []
       }
@@ -1342,8 +1345,8 @@
       "name": "checksums sha256 parity",
       "status": "PASS",
       "diagnostic": {
-        "checksumLines": 912,
-        "manifestFiles": 912
+        "checksumLines": 915,
+        "manifestFiles": 915
       }
     },
     {
@@ -1407,7 +1410,12 @@
       "diagnostic": "valid"
     },
     {
-      "name": "retained release 1.5 full-database validation: schema valid",
+      "name": "declared full-database reproducibility validation: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "declared full-database deployment validation: schema valid",
       "status": "PASS",
       "diagnostic": "valid"
     },
@@ -2558,27 +2566,42 @@
     {
       "name": "required file: scripts/validate-full-database.mjs",
       "status": "PASS",
-      "diagnostic": 2889
+      "diagnostic": 2969
+    },
+    {
+      "name": "required file: scripts/validate-neo4j-deployment-roundtrip.mjs",
+      "status": "PASS",
+      "diagnostic": 6109
     },
     {
       "name": "required file: schemas/neo4j-normalized-snapshot.schema.json",
       "status": "PASS",
-      "diagnostic": 3129
+      "diagnostic": 3247
     },
     {
       "name": "required file: schemas/neo4j-full-database-validation.schema.json",
       "status": "PASS",
-      "diagnostic": 3610
+      "diagnostic": 3728
+    },
+    {
+      "name": "required file: schemas/neo4j-deployment-roundtrip-validation.schema.json",
+      "status": "PASS",
+      "diagnostic": 3853
     },
     {
       "name": "required file: tests/neo4j/full-database-live.test.mjs",
       "status": "PASS",
-      "diagnostic": 9687
+      "diagnostic": 9691
     },
     {
       "name": "required file: qa/neo4j-full-database-validation.json",
       "status": "PASS",
-      "diagnostic": 25165
+      "diagnostic": 26230
+    },
+    {
+      "name": "required file: qa/neo4j-deployment-roundtrip-validation.json",
+      "status": "PASS",
+      "diagnostic": 25860
     },
     {
       "name": "required file: provenance/neo4j-full-database-baseline.json",

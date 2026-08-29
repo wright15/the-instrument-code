@@ -56,6 +56,11 @@ function runNpmScript(relativeDirectory, script) {
 // ---------------------------------------------------------------------------
 
 const release = JSON.parse((await read("provenance/release.json")).toString());
+const developmentCycle = release.version.endsWith("-dev");
+const declaredBaselineReleaseId = release.neo4jBaselineStatus?.retainedReleaseId;
+const declaredBaselineStatus = developmentCycle
+  ? "retained_previous_release_baseline"
+  : "current_release_baseline";
 const gov213Validate = runNpmScript(".", "validate:gov213");
 // Tiered artifacts carry decimal-derived floats; validate their fingerprints with
 // the native Python serializer rather than a cross-runtime JSON rehash.
@@ -125,13 +130,13 @@ record(
 );
 record(
   "release id",
-  release.releaseId === "seven-governors-integrated-1.8.0" &&
-    release.version === "1.8.0" &&
-    release.status === "validated_admitted",
+  /^seven-governors-integrated-\d+\.\d+\.\d+(?:-dev)?$/.test(release.releaseId) &&
+    release.releaseId === `seven-governors-integrated-${release.version}` &&
+    release.status === (developmentCycle ? "development" : "validated_admitted"),
   { releaseId: release.releaseId, version: release.version },
 );
 record(
-  "release 1.8 root extension and retained database baseline",
+  "release root extension and declared database baseline",
   payloadHash(release.rootExtensions) === payloadHash([
     {
       storyId: "GOV-210",
@@ -176,10 +181,14 @@ record(
     release.databaseBootstrap?.neo4jAuthority === false &&
     release.canonicalCounts?.gov227ScopedStates === 49 &&
     release.canonicalCounts?.gov227ScopedCoordinates === 2 &&
-    release.neo4jBaselineStatus?.status === "deferred_no_graph_data_change" &&
-    release.neo4jBaselineStatus?.retainedReleaseId ===
-      "seven-governors-integrated-1.5.0" &&
-    release.neo4jBaselineStatus?.refreshRequired === "next Neo4j availability" &&
+    release.neo4jBaselineStatus?.status === declaredBaselineStatus &&
+    declaredBaselineReleaseId === (developmentCycle
+      ? "seven-governors-integrated-1.8.1"
+      : release.releaseId) &&
+    release.neo4jBaselineStatus?.reproducibilityReceipt ===
+      "qa/neo4j-full-database-validation.json" &&
+    release.neo4jBaselineStatus?.deploymentReceipt ===
+      "qa/neo4j-deployment-roundtrip-validation.json" &&
     release.databaseBootstrap?.normalizedSnapshotSchema ===
       "schemas/neo4j-normalized-snapshot.schema.json" &&
     release.databaseBootstrap?.readinessSchemaVersion ===
@@ -1020,6 +1029,9 @@ record(
 const fullDatabaseReport = JSON.parse(
   (await read("qa/neo4j-full-database-validation.json")).toString(),
 );
+const deploymentRoundtripReport = JSON.parse(
+  (await read("qa/neo4j-deployment-roundtrip-validation.json")).toString(),
+);
 const fullDatabaseBaseline = JSON.parse(
   (await read("provenance/neo4j-full-database-baseline.json")).toString(),
 );
@@ -1028,6 +1040,8 @@ const ingestionTemplateBaseline = JSON.parse(
 );
 const fullDatabaseReportCore = { ...fullDatabaseReport };
 delete fullDatabaseReportCore.reportFingerprint;
+const deploymentRoundtripReportCore = { ...deploymentRoundtripReport };
+delete deploymentRoundtripReportCore.reportFingerprint;
 const fullDatabaseCheckIds = [
   "native-harness",
   "full-bootstrap",
@@ -1040,10 +1054,10 @@ const fullDatabaseNamespaces = [
   "topology", "provenance", "mutation", "semantic", "governorRuntime", "court", "gov210",
 ];
 record(
-  "retained release 1.5 full-database evidence with deferred 1.6 refresh",
+  "declared full-database reproducibility and deployment evidence",
   fullDatabaseReport.schemaVersion ===
       "seven-governors.neo4j-full-database-validation.v1" &&
-    fullDatabaseReport.releaseId === "seven-governors-integrated-1.5.0" &&
+    fullDatabaseReport.releaseId === declaredBaselineReleaseId &&
     fullDatabaseReport.verdict === "PASS" &&
     fullDatabaseReport.checksPassed === 6 &&
     fullDatabaseReport.checksFailed === 0 &&
@@ -1054,7 +1068,7 @@ record(
     fullDatabaseReport.normalizedSnapshot?.counts?.relationshipCount === 10506 &&
     fullDatabaseBaseline.schemaVersion ===
       "seven-governors.neo4j-full-database-baseline.v1" &&
-    fullDatabaseBaseline.releaseId === "seven-governors-integrated-1.5.0" &&
+    fullDatabaseBaseline.releaseId === declaredBaselineReleaseId &&
     ingestionTemplateBaseline.schemaVersion ===
       "seven-governors.neo4j-ingestion-template-baseline.v1" &&
     ingestionTemplateBaseline.releaseId === "seven-governors-integrated-1.5.0" &&
@@ -1080,12 +1094,37 @@ record(
       )
     )) &&
     payloadHash(fullDatabaseReportCore) === fullDatabaseReport.reportFingerprint &&
-    release.neo4jBaselineStatus?.status === "deferred_no_graph_data_change" &&
+    deploymentRoundtripReport.schemaVersion ===
+      "seven-governors.neo4j-deployment-roundtrip-validation.v1" &&
+    deploymentRoundtripReport.releaseId === declaredBaselineReleaseId &&
+    deploymentRoundtripReport.verdict === "PASS" &&
+    deploymentRoundtripReport.credentialsExcluded === true &&
+    ["configured_deployment", "disposable_local"].includes(deploymentRoundtripReport.targetClass) &&
+    deploymentRoundtripReport.checksPassed === 3 &&
+    deploymentRoundtripReport.checksFailed === 0 &&
+    payloadHash(deploymentRoundtripReport.checks.map((check) => check.checkId)) ===
+      payloadHash([
+        "configured-bootstrap",
+        "configured-roundtrip",
+        "bootstrap-roundtrip-byte-identity",
+      ]) &&
+    deploymentRoundtripReport.checks.every((check) => check.status === "PASS") &&
+    canonicalJsonBytes(deploymentRoundtripReport.normalizedSnapshot).equals(canonicalJsonBytes({
+      snapshotFingerprint: fullDatabaseBaseline.snapshotFingerprint,
+      namespaceFingerprints: fullDatabaseBaseline.namespaceFingerprints,
+      sourceBindings: fullDatabaseBaseline.sourceBindings,
+      counts: fullDatabaseBaseline.counts,
+    })) &&
+    payloadHash(deploymentRoundtripReportCore) === deploymentRoundtripReport.reportFingerprint &&
+    payloadHash(deploymentRoundtripReport.evidenceBindings) ===
+      payloadHash(fullDatabaseReport.evidenceBindings) &&
+    release.neo4jBaselineStatus?.status === declaredBaselineStatus &&
     release.neo4jBaselineStatus?.retainedReleaseId === fullDatabaseReport.releaseId,
   {
     reportFingerprint: fullDatabaseReport.reportFingerprint,
     retainedReleaseId: fullDatabaseReport.releaseId,
-    deferredRefresh: release.neo4jBaselineStatus,
+    baselineStatus: release.neo4jBaselineStatus,
+    deploymentTargetClass: deploymentRoundtripReport.targetClass,
   },
 );
 const courtSkillsValidate = runNpmScript(".", "validate:court-skills");
@@ -1523,7 +1562,7 @@ const mismatchedHashes = computedRecords.filter(
 );
 record(
   "manifest completeness",
-    manifest.version === "1.8.0" &&
+    manifest.version === release.version &&
     missingFromManifest.length === 0 &&
     missingFromDisk.length === 0,
   {
@@ -1682,9 +1721,14 @@ for (const [label, schemaPath, document] of [
     gov227Report,
   ],
   [
-    "retained release 1.5 full-database validation",
+    "declared full-database reproducibility validation",
     "schemas/neo4j-full-database-validation.schema.json",
     fullDatabaseReport,
+  ],
+  [
+    "declared full-database deployment validation",
+    "schemas/neo4j-deployment-roundtrip-validation.schema.json",
+    deploymentRoundtripReport,
   ],
 ]) {
   const schema = JSON.parse((await read(schemaPath)).toString());
@@ -2317,10 +2361,13 @@ for (const requiredPath of [
   "scripts/bootstrap-neo4j.mjs",
   "scripts/verify-neo4j-roundtrip.mjs",
   "scripts/validate-full-database.mjs",
+  "scripts/validate-neo4j-deployment-roundtrip.mjs",
   "schemas/neo4j-normalized-snapshot.schema.json",
   "schemas/neo4j-full-database-validation.schema.json",
+  "schemas/neo4j-deployment-roundtrip-validation.schema.json",
   "tests/neo4j/full-database-live.test.mjs",
   "qa/neo4j-full-database-validation.json",
+  "qa/neo4j-deployment-roundtrip-validation.json",
   "provenance/neo4j-full-database-baseline.json",
   "provenance/neo4j-ingestion-template-baseline.json",
   "scrum/GOV-212-integrated-release-1.4-closure.md",
