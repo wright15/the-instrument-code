@@ -1,7 +1,7 @@
 # ORR-513 - Field derivation surface
 
 **Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-511](EPIC-511-orrery-evidence-surfaces.md) · **Sprint:** Sprint 3
-**Depends on:** ORR-512 · **Blocks:** ORR-521
+**Depends on:** ORR-511 · **Blocks:** ORR-521
 
 ## Story
 

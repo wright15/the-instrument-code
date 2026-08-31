@@ -2,7 +2,7 @@
 
 **Status:** Backlog · **Priority:** High · **Owner:** Harmonic Orrery application workstream
 **Epic ID:** EPIC-511 · **Release:** `1.9.0-dev`
-**Stories:** [ORR-511](ORR-511-evidence-inspector-bundle.md), [ORR-512](ORR-512-provenance-explain-surface.md), and [ORR-513](ORR-513-field-derivation-surface.md)
+**Stories:** [ORR-511](ORR-511-evidence-inspector-bundle.md), [ORR-512](ORR-512-provenance-explain-surface.md), [ORR-513](ORR-513-field-derivation-surface.md), and [ORR-514](ORR-514-tiered-photonic-overlay.md)
 
 ## Problem statement
 
@@ -35,11 +35,14 @@ new admission, player-state authority, or physics claims.
 ## Sequencing
 
 ```text
-ORR-511 -> ORR-512 -> ORR-513
+             +-> ORR-512
+ORR-511 -----+-> ORR-513
+             +-> ORR-514
 ```
 
-ORR-511 starts in Sprint 2. ORR-512 and ORR-513 are Sprint 3 work and remain
-read-only regardless of GOV-510 or GOV-511 findings.
+ORR-511 starts in Sprint 2. ORR-512, ORR-513, and ORR-514 are parallel Sprint 3
+work that each depend only on ORR-511 and remain read-only regardless of GOV-510
+or GOV-511 findings.
 
 ## Definition of done
 

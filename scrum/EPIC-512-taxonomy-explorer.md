@@ -36,11 +36,17 @@ decision inferred from visualization, or automatic EPIC-520 activation.
 
 ```text
 GOV-510 + GOV-511 -> GOV-512
-ORR-513 -> ORR-521 -> ORR-522 -> ORR-523 -> ORR-524
+ORR-511 -> ORR-512
+ORR-511 -> ORR-513 -> ORR-521 -> ORR-522 -> ORR-523
+ORR-511 -> ORR-514
+GOV-511 dataset -> ORR-522
+GOV-510 + GOV-511 + GOV-512 + ORR-521 + ORR-522 + ORR-523 + ORR-514 -> ORR-524
 ```
 
-GOV-512, ORR-512, and ORR-513 are Sprint 3. ORR-521 and ORR-522 are Sprint 4;
-ORR-523 and ORR-524 are Sprint 5. EPIC-520 remains conditional on GOV-512.
+GOV-512, ORR-512, ORR-513, and ORR-514 are parallel Sprint 3 work. ORR-521 and
+ORR-522 are Sprint 4 work; ORR-522 receives the GOV-511 dataset as Sprint 4's
+only cross-track input and also depends on ORR-521. ORR-523 and ORR-524 are
+Sprint 5 work. EPIC-520 remains conditional on GOV-512.
 
 ## Definition of done
 

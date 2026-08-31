@@ -27,9 +27,7 @@ Orrery contract from historical 1.7 sign-off language.
    validator.
 2. The census table derives every reported total from an artifact, scope,
    per-validator count, and runner; prose is not an independent count source.
-3. The planning baseline that cited a 414-check integrated receipt is retained
-   as historical context only. The emitted `qa/integrated-release-validation.json`
-   total is authoritative when the work is performed.
+3. The emitted `qa/integrated-release-validation.json` total is the sole authoritative current validation count; hard-coded totals are prohibited in prose. 440 and 441 are recognized as historical planning-prose artifacts only and must not be recorded as current validation totals.
 4. The documentation does not present 441 or 440 as a current validation total.
 5. This story changes documentation and census wiring only; it does not alter
    legal moves, canonical data, API behavior, admission, or runtime authority.

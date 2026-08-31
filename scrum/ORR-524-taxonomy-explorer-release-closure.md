@@ -1,7 +1,7 @@
 # ORR-524 - Taxonomy Explorer release closure
 
 **Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-512](EPIC-512-taxonomy-explorer.md) · **Sprint:** Sprint 5
-**Depends on:** GOV-510, GOV-511, GOV-512, ORR-521, ORR-522, ORR-523 · **Blocks:** `1.9.0` release closure
+**Depends on:** GOV-510, GOV-511, GOV-512, ORR-521, ORR-522, ORR-523, ORR-514 · **Blocks:** `1.9.0` release closure
 
 ## Story
 

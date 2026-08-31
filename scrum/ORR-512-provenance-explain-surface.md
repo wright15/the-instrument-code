@@ -1,7 +1,7 @@
 # ORR-512 - Provenance explain surface
 
 **Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-511](EPIC-511-orrery-evidence-surfaces.md) · **Sprint:** Sprint 3
-**Depends on:** ORR-511 · **Blocks:** ORR-513
+**Depends on:** ORR-511 · **Blocks:** —
 
 ## Story
 
@@ -13,6 +13,9 @@ queries or an unverified causal narrative.
 
 - Consume only named, read-only explanation contracts such as
   `rule_explanation`, `legal_move_context`, and `provenance_path`.
+- Align `skills/governor/schemas/inspect-context.schema.json` so it explicitly
+  references `rule_explanation`, `legal_move_context`, and `provenance_path` as
+  the allowed named query contracts.
 - Render an ordered evidence path with source identity, authority status, and
   explicit unavailable or incompatible states.
 - Reuse ORR-511's exact labels and source bundle rather than reconstructing
@@ -29,6 +32,9 @@ queries or an unverified causal narrative.
 4. The explanation of a legal move preserves the current catalog provenance and
    does not make a move legal merely because a visual path exists.
 5. Ordering and formatting are deterministic for the same source response.
+6. `skills/governor/schemas/inspect-context.schema.json` explicitly references
+   `rule_explanation`, `legal_move_context`, and `provenance_path` as the
+   allowed named query contracts.
 
 ## Non-goals and guards
 

@@ -1,7 +1,7 @@
 # GOV-510 - Twin-hub contact convergence audit
 
 **Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-510](EPIC-510-full-field-derivation.md) · **Sprint:** Sprint 2
-**Depends on:** GOV-501 · **Blocks:** GOV-512
+**Depends on:** GOV-501 · **Blocks:** GOV-512, ORR-524
 
 ## Story
 
@@ -15,6 +15,10 @@ falsifiable verdict without smuggling a new operator into authority.
   `m(B)=T+/-1(m(A))` under the declared mask convention.
 - Define the `root_phase` edge, the `T1(Ionian)=Locrian` receipt, a hub, an
   office-ring midpoint, and the permitted source-backed chain between them.
+- *(i) $T_1$-twin pair:* Two root-0 states of the same Forte family with $m(B) = T_{\pm 1}(m(A))$, joined by a `root_phase` edge ($T_1(\text{Ionian}) = \text{Locrian}$).
+- *(ii) Hub:* The office appearing in both twin pairs of a tier; may be undefined (A1 pairs {Moon,Saturn}/{Sun,Venus} are disjoint); undefinedness constitutes D4/D5 asymmetry.
+- *(iii) Ring midpoint:* For a distance-2 office pair $\{k-1, k+1\}$, office $k$ is the unique vertex adjacent to both.
+- *(iv) Permitted parent-chain path:* D-anchor $\leftarrow$ `SEAT_CONTACT` $\leftarrow$ satellite $\leftarrow$ `GOVERNS` $\leftarrow$ parent anchor (single hop, satellite tier = parent tier).
 - Test the documented D4/D5 asymmetry rather than flattening it into a single
   convergence claim.
 - Emit a deterministic, source-bound result with confirm, refute, or partial

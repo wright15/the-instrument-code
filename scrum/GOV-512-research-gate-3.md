@@ -1,7 +1,7 @@
 # GOV-512 - Research Gate 3
 
 **Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-512](EPIC-512-taxonomy-explorer.md) · **Sprint:** Sprint 3
-**Depends on:** GOV-510, GOV-511 · **Blocks:** Conditional EPIC-520 activation
+**Depends on:** GOV-510, GOV-511 · **Blocks:** ORR-524, Conditional EPIC-520 activation
 
 ## Story
 

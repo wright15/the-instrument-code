@@ -1,7 +1,7 @@
 # GOV-511 - D-tier fifth-space census
 
 **Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-510](EPIC-510-full-field-derivation.md) · **Sprint:** Sprint 2
-**Depends on:** GOV-501 · **Blocks:** GOV-512, ORR-522
+**Depends on:** GOV-501 · **Blocks:** GOV-512, ORR-522, ORR-524
 
 ## Story
 
@@ -15,6 +15,9 @@ treating a descriptive span measurement itself as a D-tier verdict.
   and source-bound QA receipt.
 - Use the existing `fifth_span` definition rather than reimplementing an
   incompatible span calculation.
+- Emit a canonical binary representation for fifth-space — `fifthMask` integer `0..4095` and `fifthPositions` derived deterministically from `pitchClasses` via `FIFTH_ORDER`/`FIFTH_POS` in `src/governor/shadow_ladder.py` — alongside `fifthSpan`/`fifthArc` so downstream ingestion can read the census as an integer without inferring geometry from prose.
+- Add companion checks for 17-family office uniformity, the `GOVERNS`
+  out-degree table, and the OBS-013 geometric termination addendum.
 - Bind Court C0 from the admitted Court position source, retaining its canonical
   mask and coordinate identity rather than copying historical prose labels.
 - Pre-register any fifth-space research question and emit its separate,
@@ -27,13 +30,16 @@ treating a descriptive span measurement itself as a D-tier verdict.
 
 1. The census contains exactly 462 canonical state records and reconciles the
    21 A anchors, 49 D anchors, 238 satellites, and 154 boundaries.
-2. Each record has explicit source identity, role/tier status, fifth-span data,
-   and a provenance path; unknown or inapplicable values are explicit rather
-   than inferred.
-3. The validator uses the existing `fifth_span` definition and proves C0 against
-   `court-rooted-positions.json`, including its admitted mask `661`.
-4. Schema, source-drift, cardinality, ordering, and tampering fixtures fail
-   deterministically.
+2. Each record has explicit source identity, role/tier status, fifth-span data
+   with its canonical binary `fifthMask`/`fifthPositions` representation, and a
+   provenance path; unknown or inapplicable values are explicit rather than
+   inferred.
+3. The validator uses the existing `fifth_span` definition, proves the binary
+   field is byte-identical to `FIFTH_POS` deterministically derived from
+   `pitchClasses`, and proves C0 against `court-rooted-positions.json`,
+   including its admitted mask `661`.
+4. Schema, source-drift, cardinality, ordering, binary-field equivalence, and
+   tampering fixtures fail deterministically.
 5. The census remains descriptive and independently usable by ORR-522. A
    separate, pre-registered research verdict is schema-valid, names its question,
    and cannot remove, relabel, or gate valid census data when it is confirmed,
@@ -50,8 +56,10 @@ treating a descriptive span measurement itself as a D-tier verdict.
 
 ## Verification
 
-- Build twice and reorder the source input without changing the intrinsic bytes.
-- Run schema, source-binding, C0, cardinality, and adversarial-tamper tests.
+- Build twice and reorder the source input without changing the intrinsic bytes,
+  including byte-identical `fifthMask`/`fifthPositions`.
+- Run schema, source-binding, C0, cardinality, binary-equivalence, and
+  adversarial-tamper tests.
 - Verify the delivered dataset can be consumed by an ORR-522 fixture without a
   truth-value gate.
 
@@ -60,6 +68,8 @@ treating a descriptive span measurement itself as a D-tier verdict.
 A strict, source-bound 462-record census and its QA receipt pass independently;
 its separate research verdict is outcome-honest and exposes no authority beyond
 descriptive planning evidence.
+
+Execute `npm run build:shadow-ladder`, re-verify `qa/shadow-ladder-validation.json`, and record the refreshed ledger SHA before closing Sprint 2. Note: The shadow-ladder rebuild is owned by whichever research story (`GOV-510` or `GOV-511`) closes last. If `GOV-510` is still open when `GOV-511` finishes, transfer this closing step to `GOV-510`'s DoD.
 
 ## References
 

@@ -1,7 +1,7 @@
 # ORR-522 - D-tier taxonomy dataset
 
 **Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-512](EPIC-512-taxonomy-explorer.md) · **Sprint:** Sprint 4
-**Depends on:** GOV-511, ORR-521 · **Blocks:** ORR-523, ORR-524
+**Depends on:** GOV-511 dataset, ORR-521 · **Blocks:** ORR-523, ORR-524
 
 ## Story
 
@@ -13,9 +13,10 @@ the dataset itself proves a research conclusion.
 
 - Consume GOV-511's schema-closed census as data, including source identity,
   fifth-span fields, explicit unavailable values, and authority status.
-- Provide a stable fallback only when the census is absent, stale, or
-  incompatible; a non-confirming research outcome remains a visible verdict,
-  not a reason to withhold valid data.
+- Provide bounded dataset-loading and deterministic ordinal-by-tier layout
+  fallbacks only when the census is absent, stale, or incompatible; a
+  non-confirming research outcome remains a visible verdict, not a reason to
+  withhold valid data.
 - Keep research verdict presentation separate from the dataset contract.
 
 ## Acceptance criteria
@@ -24,10 +25,11 @@ the dataset itself proves a research conclusion.
    the GOV-511 census and preserves their exact source and ordering fields.
 2. The explorer can render the dataset when GOV-511 is confirmed, refuted, or
    partial; only schema validity and source compatibility govern data use.
-3. Missing, stale, or incompatible census data displays a bounded fallback with
-   no invented values, inferred verdict, or substitute record.
-4. Dataset schema, source-drift, result-state, fallback, and deterministic-order
-   fixtures pass.
+3. Missing, stale, or incompatible census data displays bounded dataset-loading
+   and deterministic ordinal-by-tier layout fallbacks with no invented values,
+   inferred verdict, or substitute record.
+4. Dataset schema, source-drift, result-state, dataset-loading fallback,
+   ordinal-by-tier layout fallback, and deterministic-order fixtures pass.
 5. The presentation labels the data as descriptive/planning evidence where
    appropriate and never promotes it to admission or topology authority.
 
@@ -40,15 +42,17 @@ the dataset itself proves a research conclusion.
 
 ## Verification
 
-- Contract tests for confirmed, refuted, partial, absent, stale, and incompatible
-  GOV-511 inputs.
-- Browser tests for fallback visibility and source labels.
+- Contract tests for dataset loading and its fallback with confirmed, refuted,
+  partial, absent, stale, and incompatible GOV-511 inputs.
+- Browser tests for deterministic ordinal-by-tier layout fallback visibility and
+  source labels.
 - Relevant GOV-511 and Orrery validation suites.
 
 ## Definition of done
 
 The Taxonomy Explorer consumes the GOV-511 dataset faithfully under every valid
-research outcome and exposes a safe fallback for invalid data.
+research outcome and exposes safe dataset-loading and deterministic
+ordinal-by-tier layout fallbacks for invalid data.
 
 ## References
 

@@ -118,8 +118,9 @@ planning arithmetic.
 | [GOV-510](GOV-510-twin-hub-contact-convergence-audit.md) | Twin-hub contact convergence audit | Sprint 2 | TBD | High | **Backlog** |
 | [GOV-511](GOV-511-d-tier-fifth-space-census.md) | D-tier fifth-space census | Sprint 2 | TBD | High | **Backlog** |
 
-GOV-510 and GOV-511 run in parallel. Their completed results are the only
-inputs to [GOV-512](GOV-512-research-gate-3.md).
+GOV-510, GOV-511, and ORR-511 run in parallel in Sprint 2. The completed
+GOV-510 and GOV-511 results are the only inputs to
+[GOV-512](GOV-512-research-gate-3.md).
 
 ### EPIC-511 - Orrery Evidence Surfaces
 
@@ -129,6 +130,9 @@ inputs to [GOV-512](GOV-512-research-gate-3.md).
 | [ORR-511](ORR-511-evidence-inspector-bundle.md) | Evidence inspector bundle | Sprint 2 | TBD | High | **Backlog** |
 | [ORR-512](ORR-512-provenance-explain-surface.md) | Provenance explain surface | Sprint 3 | TBD | High | **Backlog** |
 | [ORR-513](ORR-513-field-derivation-surface.md) | Field derivation surface | Sprint 3 | TBD | High | **Backlog** |
+| [ORR-514](ORR-514-tiered-photonic-overlay.md) | Photonic candidate overlay surface | Sprint 3 | TBD | High | **Backlog** |
+
+ORR-512, ORR-513, and ORR-514 run in parallel in Sprint 3 after ORR-511.
 
 ### EPIC-512 - Taxonomy Explorer
 

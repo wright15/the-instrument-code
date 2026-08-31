@@ -1,7 +1,7 @@
 # ORR-511 - Evidence inspector bundle
 
 **Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-511](EPIC-511-orrery-evidence-surfaces.md) · **Sprint:** Sprint 2
-**Depends on:** GOV-501 · **Blocks:** ORR-512, ORR-513
+**Depends on:** GOV-501 · **Blocks:** ORR-512, ORR-513, ORR-514
 
 ## Story
 
@@ -17,6 +17,7 @@ the current node endpoint or legal move set.
 - When displaying GOV-213's `W_A012`, label it as the unique max-margin optimum
   only under its declared objective; it is not a unique feasible witness and
   `method.uniquenessClaim=false` remains true outside that objective.
+- Enumerate all seven $Q(S)$ positions, exact ratios, certificate status, the $3/407$ margin, the $6/407$ next slack, and the 7-member tight set labeled *"active-set rank 8 (7 binding + normalization)"*.
 - Keep the bundle separate from local session state and from canonical graph
   authority.
 - Preserve the current `/nodes` response shape and the exact bytes of
