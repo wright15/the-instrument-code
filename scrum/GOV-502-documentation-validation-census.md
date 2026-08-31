@@ -1,6 +1,6 @@
 # GOV-502 - Documentation and validation census reconciliation
 
-**Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-500](EPIC-500-state-honesty-and-baseline-parity.md) · **Sprint:** Sprint 1
+**Status:** Done · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-500](EPIC-500-state-honesty-and-baseline-parity.md) · **Sprint:** Sprint 1
 **Depends on:** GOV-501 · **Blocks:** -
 
 ## Story
@@ -15,8 +15,15 @@ Orrery contract from historical 1.7 sign-off language.
   rewriting the historical 1.7 sign-off.
 - Add a current compatibility section to `orrery/RELEASE_CHECKLIST.md` without
   changing its historical release record.
-- Add a census composition table that traces artifact, declared scope,
-  per-validator count, and runner command.
+- Add a census composition table (`docs/VALIDATION_CENSUS.md`) that traces
+  artifact, declared scope, per-validator count, and runner command, with the
+  414→418 release-total transition as its first composition entry.
+- Add a generalized, fail-closed validation-prose consistency check
+  (`scripts/validate-validation-prose-consistency.mjs`) that requires every
+  validation-total claim in current-facing prose to match the emitted
+  `qa/integrated-release-validation.json` total or carry a release qualifier,
+  records audio/line-number/registry-cardinality exemptions, and emits
+  `qa/validation-prose-consistency.json`. Wire it after `validate:release`.
 - State the legal predicate as 60 source-backed fixed-degree R/L applications
   from 12 operators, covering all 21 anchors as both source and target.
 
@@ -43,18 +50,34 @@ Orrery contract from historical 1.7 sign-off language.
 ## Verification
 
 - `npm run orrery:catalog:check`
+- `npm run validate:prose-consistency`
 - Inspect the generated census against `qa/integrated-release-validation.json`.
 - `npm run validate --silent`
 
 ## Definition of done
 
 The two Orrery documents contain the current compatibility section, the census
-table has an executable derivation path, and all current totals agree with the
-generated receipts.
+table has an executable derivation path (414→418 as its first composition
+entry), the prose-consistency check is wired after `validate:release` and green,
+and all current totals agree with the generated receipts.
+
+## Completion
+
+- `docs/VALIDATION_CENSUS.md` records 414 (`1.8.0`) → 418 (`1.9.0-dev`) as the
+  first composition entry and lists the per-validator receipt totals.
+- `qa/integrated-release-validation.json` (418 checks, 0 failed) is the sole
+  authoritative current total; `440` and `441` are not presented as current.
+- `qa/validation-prose-consistency.json` verdict PASS, zero violations; the
+  check exempts audio (`A4=440 Hz`), line-number (`session.ts:440`), and
+  registry-cardinality numbers rather than counting them as totals.
 
 ## References
 
 - `orrery/src/generated/legal-moves.v2.json`
 - `scripts/build-orrery-legal-move-catalog.mjs`
 - `orrery/scripts/validate-orrery-legal-move-catalog.mjs`
+- `scripts/validate-validation-prose-consistency.mjs`
+- `docs/VALIDATION_CENSUS.md`
+- `qa/integrated-release-validation.json`
+- `qa/validation-prose-consistency.json`
 - `docs/RELEASE_1_8_TAXONOMY_AND_ORRERY_GUIDE.md`

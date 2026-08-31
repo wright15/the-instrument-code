@@ -15,6 +15,7 @@ const excluded = new Set([
   "MANIFEST.json",
   ".env",
   "qa/integrated-release-validation.json",
+  "qa/validation-prose-consistency.json",
   "qa/bestiary-validation.json",
   "qa/neo4j-cypher-syntax-report.json",
   "qa/crt-307-local-model-observation.json",

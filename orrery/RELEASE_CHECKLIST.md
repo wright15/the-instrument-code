@@ -2,6 +2,15 @@
 
 Applicable to `seven-governors-integrated-release` 1.7.0. Verify at a no-tracked-change fixed point before claiming MVP release.
 
+## Current compatibility (1.9.0-dev)
+
+This checklist is the sealed 1.7.0 MVP sign-off and is retained unchanged. The
+current legal-move catalog is 60 source-backed fixed-degree `R`/`L` applications
+from 12 operators over all 21 A0-A2 anchors, bound as
+`harmonic-orrery.legal-moves.v2`, not the 21 `M` moves described below. See
+`orrery/README.md` "Current compatibility" and `docs/VALIDATION_CENSUS.md` for
+the current catalog, its validator, and the authoritative validation count.
+
 ## 1. Data / API version compatibility
 
 - [ ] `GET /nodes` returns `harmonic-orrery.nodes.v2` with exactly 21 A0-A2 anchors (`main.py:107,327`).

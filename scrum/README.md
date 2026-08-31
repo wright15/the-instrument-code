@@ -106,9 +106,9 @@ planning arithmetic.
 
 | ID | Title | Sprint | Points | Priority | Status |
 |---|---|---|---|---|---|
-| [EPIC-500](EPIC-500-state-honesty-and-baseline-parity.md) | State honesty and retained-baseline parity | Sprint 1 | - | High | **In Progress** |
+| [EPIC-500](EPIC-500-state-honesty-and-baseline-parity.md) | State honesty and retained-baseline parity | Sprint 1 | - | High | **Done** |
 | [GOV-501](GOV-501-neo4j-baseline-parity.md) | Neo4j baseline parity refresh | Sprint 1 | TBD | High | **Done** |
-| [GOV-502](GOV-502-documentation-validation-census.md) | Documentation and validation census reconciliation | Sprint 1 | TBD | High | **Backlog** |
+| [GOV-502](GOV-502-documentation-validation-census.md) | Documentation and validation census reconciliation | Sprint 1 | TBD | High | **Done** |
 
 ### EPIC-510 - Full-Field Derivation
 

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "seven-governors.validation-prose-consistency.v1",
+  "verdict": "PASS",
+  "releaseId": "seven-governors-integrated-1.9.0-dev",
+  "authoritativeChecksPassed": 418,
+  "scope": [
+    "docs/**/*.md",
+    "orrery/*.md",
+    "README.md"
+  ],
+  "statistics": {
+    "filesScanned": 39,
+    "claims": 2,
+    "claimsMatchingCurrent": 0,
+    "claimsReleaseQualified": 2,
+    "claimsScoped": 0,
+    "exemptions": 2,
+    "violations": 0
+  },
+  "claims": [
+    {
+      "file": "docs/RELEASE_1_8_TAXONOMY_AND_ORRERY_GUIDE.md",
+      "line": 272,
+      "number": 414,
+      "unit": "checks",
+      "classification": "release_qualified",
+      "qualifier": "1.8.0"
+    },
+    {
+      "file": "docs/RELEASE_NOTES.md",
+      "line": 230,
+      "number": 58,
+      "unit": "checks",
+      "classification": "release_qualified",
+      "qualifier": "5.0.0"
+    }
+  ],
+  "exemptions": [
+    {
+      "file": "orrery/README.md",
+      "line": 109,
+      "literal": 440,
+      "reason": "audio_tuning"
+    },
+    {
+      "file": "orrery/RELEASE_CHECKLIST.md",
+      "line": 40,
+      "literal": 440,
+      "reason": "line_reference"
+    }
+  ],
+  "violations": []
+}

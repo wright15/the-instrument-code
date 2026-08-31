@@ -1,6 +1,6 @@
 # EPIC-500 - State Honesty and Baseline Parity
 
-**Status:** In Progress · **Priority:** High · **Owner:** Integrated release governance
+**Status:** Done · **Priority:** High · **Owner:** Integrated release governance
 **Epic ID:** EPIC-500 · **Release:** `1.9.0-dev`
 **Stories:** [GOV-501](GOV-501-neo4j-baseline-parity.md) and [GOV-502](GOV-502-documentation-validation-census.md)
 

@@ -56,6 +56,22 @@ FastAPI credentials or a live Neo4j instance.
 `orrery:catalog:check` verifies the bundled legal-move artifact against its
 audited source inputs and validates its strict schema.
 
+## Current compatibility
+
+The current legal-move catalog is `harmonic-orrery.legal-moves.v2`, bound from
+the parallel source catalog `harmonic-orrery.parallel-anchor-edges.v1`
+(`orrery/src/generated/legal-moves.v2.json`). It exposes 60 source-backed
+fixed-degree `R`/`L` applications from 12 operators, covering all 21 A0-A2
+anchors as both source and target. Its validator is
+`orrery/scripts/validate-orrery-legal-move-catalog.mjs`, run by
+`npm run orrery:catalog:check`.
+
+The "21 `M` moves in 3×7 cycles" wording in the legal-modal-routes section
+below is the 1.7.0 MVP sign-off and is retained unchanged as release history;
+it does not describe the current catalog. Current validation totals are derived
+in `docs/VALIDATION_CENSUS.md`; `qa/integrated-release-validation.json` is the
+sole authoritative current validation count.
+
 ## Nodes v2 and scene presentation
 
 `GET /nodes` currently returns `harmonic-orrery.nodes.v2`. Each anchor includes
