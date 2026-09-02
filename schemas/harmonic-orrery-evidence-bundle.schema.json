@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "harmonic-orrery.evidence-bundle.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "bundleId", "harmonicDescriptorBinding", "legalMoveCatalogBinding", "sources", "labelMap", "method", "certificate", "invariants", "globalAggregate", "records", "bundleFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "harmonic-orrery.evidence-bundle.v1"},
+    "bundleId": {"const": "EVIDENCE_BUNDLE_A012_v1"},
+    "harmonicDescriptorBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidateId", "coordinateId", "releaseId", "status", "candidateFingerprint"],
+      "properties": {
+        "candidateId": {"const": "CH_A012_q_v1"},
+        "coordinateId": {"const": "harmonic.CH_A012_q_v1"},
+        "releaseId": {"const": "harmonic-compression-candidate:CH_A012_q_v1:1.0.0"},
+        "status": {"const": "admitted_scoped_A012"},
+        "candidateFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "legalMoveCatalogBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "catalogId", "catalogFingerprint"],
+      "properties": {
+        "schemaVersion": {"const": "harmonic-orrery.legal-moves.v2"},
+        "catalogId": {"type": "string"},
+        "catalogFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "sources": {"type": "array", "minItems": 4, "maxItems": 4},
+    "labelMap": {"type": "object", "additionalProperties": true},
+    "method": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithmVersion", "qClasses", "governorDegreeMap", "degreeOrder", "weightDenominator", "weightNumerators", "weightOrdering", "weightSum", "uniquenessClaim"],
+      "properties": {
+        "algorithmVersion": {"type": "string"},
+        "qClasses": {"type": "array", "minItems": 6, "maxItems": 6},
+        "governorDegreeMap": {"type": "object", "additionalProperties": {"type": "integer"}},
+        "degreeOrder": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "integer"}},
+        "weightDenominator": {"const": 407},
+        "weightNumerators": {"const": [116, 56, 41, 35, 77, 44, 38]},
+        "weightOrdering": {"type": "string"},
+        "weightSum": {"type": "object"},
+        "uniquenessClaim": {"const": false}
+      }
+    },
+    "certificate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["epsilonStar", "nextTightestSlack", "tightSet", "activeSetLabel", "optimalityClaim", "witness", "dualCertificate", "verifier"],
+      "properties": {
+        "epsilonStar": {
+          "type": "object",
+          "required": ["numerator", "denominator"],
+          "properties": {
+            "numerator": {"type": "integer"},
+            "denominator": {"type": "integer"}
+          }
+        },
+        "nextTightestSlack": {
+          "type": "object",
+          "required": ["numerator", "denominator", "pair"],
+          "properties": {
+            "numerator": {"type": "integer"},
+            "denominator": {"type": "integer"},
+            "pair": {"type": "string"}
+          }
+        },
+        "tightSet": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "string"}},
+        "activeSetLabel": {"const": "active-set rank 8 (7 binding + normalization)"},
+        "optimalityClaim": {"const": "unique_max_margin"},
+        "witness": {"type": "object"},
+        "dualCertificate": {"type": "object"},
+        "verifier": {"type": "string"}
+      }
+    },
+    "invariants": {"type": "object", "additionalProperties": true},
+    "globalAggregate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["namespace", "status", "value", "guardLiteral"],
+      "properties": {
+        "namespace": {"const": "harmonic.C_H"},
+        "status": {"const": "unresolved"},
+        "value": {"const": null},
+        "guardLiteral": {"type": "string"}
+      }
+    },
+    "records": {"type": "array", "minItems": 21, "maxItems": 21},
+    "bundleFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

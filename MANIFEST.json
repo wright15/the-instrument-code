@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 935,
-  "totalBytes": 70939570,
+  "fileCount": 958,
+  "totalBytes": 71347559,
   "files": [
     {
       "path": ".env.example",
@@ -261,9 +261,19 @@
       "sha256": "bd1eaf273ba0f9c00e1be4e99fc25ab3078dd3538db90f568ddb9e837c3e43ad"
     },
     {
+      "path": "canonical/fivefold-incubator/fifth-space-census-v0.json",
+      "bytes": 194194,
+      "sha256": "898f56a917ff2bc6138ff4807ce6d51f0832c0add758d19b625abe42df4ee80b"
+    },
+    {
       "path": "canonical/fivefold-incubator/shadow-ladder-v0.json",
       "bytes": 3927,
-      "sha256": "a21b5ee5a611d376bbb2d136d03afe387aa50574c1d022e23eed590f29581fa4"
+      "sha256": "808d065488220b402278bddeac0780537de617f9ee05ae30147bc1d29878882b"
+    },
+    {
+      "path": "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
+      "bytes": 12396,
+      "sha256": "80eac95c74b183f16b3a737546cf1f6e938c3d31c1f5802d127659b060c6e5b4"
     },
     {
       "path": "canonical/gov-210-availability-housing.json",
@@ -552,8 +562,8 @@
     },
     {
       "path": "docs/VALIDATION_CENSUS.md",
-      "bytes": 2788,
-      "sha256": "099f89640f13b3182901184d1844dfbe69566f57257e32189908eae02ba1e18b"
+      "bytes": 4168,
+      "sha256": "6cba2a9fb3d36dba6a728fb4073bb1df5fbf1cc644d7739454805080a2681424"
     },
     {
       "path": "docs/implementation-plans/court-mathematics-governor-integration.md",
@@ -567,8 +577,8 @@
     },
     {
       "path": "docs/verification/FINGERPRINT_BLAST_RADIUS.md",
-      "bytes": 3460,
-      "sha256": "cea2b8a7a50ef3e575548e88b694c927a9b6a61ccab706f2086b63201ee786be"
+      "bytes": 5341,
+      "sha256": "50e3e9ceef607d58cba419ecc2852c1b207ceda8f6ec3489e98293e0e77fc157"
     },
     {
       "path": "docs/verification/PENTATONIC_GRAPH_BINDING_AUDIT_REPORT.md",
@@ -987,8 +997,8 @@
     },
     {
       "path": "orrery/index.html",
-      "bytes": 20981,
-      "sha256": "3a678ddb782d74c5cec7d65a92037a017862f387bd10b036eb6333fe8f7540f7"
+      "bytes": 22563,
+      "sha256": "924d9eb8e582469fbb070768b0f4e8c699ded1465ede282bfc21855162877329"
     },
     {
       "path": "orrery/package-lock.json",
@@ -997,8 +1007,8 @@
     },
     {
       "path": "orrery/package.json",
-      "bytes": 804,
-      "sha256": "9ecac4a1a637bf4920aa65c12326499f94086d2879eed96575f99c4ac8f497b3"
+      "bytes": 984,
+      "sha256": "2675bd28a8405da5bcca31471af22729fc6192e4f5eec5ca458751a6d33ef6fd"
     },
     {
       "path": "orrery/public/AUDIO_ASSETS.md",
@@ -1024,6 +1034,11 @@
       "path": "orrery/public/favicon.svg",
       "bytes": 375,
       "sha256": "14683dd4b6dc375258dc1a21d1e606a11c3cc3b6b2ec394c5c6732ef4f3cf07d"
+    },
+    {
+      "path": "orrery/scripts/validate-orrery-evidence-bundle.mjs",
+      "bytes": 8407,
+      "sha256": "23b28b2e5254947f6464e89e3c200b66f07c63ec7fbc893774d296a8815b7ff2"
     },
     {
       "path": "orrery/scripts/validate-orrery-legal-move-catalog.mjs",
@@ -1061,6 +1076,21 @@
       "sha256": "48904797de31cc9cd56cb37a11b72dc1ff531076ccb66b28c5a449990ca7898e"
     },
     {
+      "path": "orrery/src/evidence-bundle.test.ts",
+      "bytes": 6847,
+      "sha256": "f6372d8d9a9da60afaae701979b9edea5a36df2cb8d70662c108d77a516fb60c"
+    },
+    {
+      "path": "orrery/src/evidence-bundle.ts",
+      "bytes": 15788,
+      "sha256": "3fcda3d530c13afee919a2b0b4a05ca3764ba37f967c0f410fb329165cdec4b5"
+    },
+    {
+      "path": "orrery/src/generated/evidence-bundle.v1.json",
+      "bytes": 16384,
+      "sha256": "1d0bfb7a77743e8006230993b21c52d9918ccc62c9b7dc0172130e03ccf2de6b"
+    },
+    {
       "path": "orrery/src/generated/legal-moves.v2.json",
       "bytes": 44269,
       "sha256": "c017c3c66e10b803eccb82342d030575c8069434063657fb89b5d56169db4d4b"
@@ -1082,8 +1112,8 @@
     },
     {
       "path": "orrery/src/main.ts",
-      "bytes": 52625,
-      "sha256": "45c371726ab5c991df4e1f495f8b6a3d774d98e017f4233a4436d1c9f0811aad"
+      "bytes": 57114,
+      "sha256": "3c91b1a61ce65e3dd7b545c6e9ff3d60fe89f69563e9245a593523d218b4e8c4"
     },
     {
       "path": "orrery/src/moves.math.test.ts",
@@ -1137,8 +1167,8 @@
     },
     {
       "path": "orrery/src/style.css",
-      "bytes": 31972,
-      "sha256": "bd574aa631ec082ae6e60cb486846b71bd02f11c06289befcdc8dad6949441c3"
+      "bytes": 33025,
+      "sha256": "c915bb8559963221d28aaec54881010d97cb5038e6d7285eefbde4ef9f2a6aec"
     },
     {
       "path": "orrery/src/types.ts",
@@ -1172,23 +1202,23 @@
     },
     {
       "path": "package.json",
-      "bytes": 10044,
-      "sha256": "f2d29ccbf77d5a0f7a89c49dec8b7bb72b5804cd8ac2589e427d4792b0715000"
+      "bytes": 11071,
+      "sha256": "f779ea057d3b632566cdc7c8f09236192414c16d1c66c9e7a9d9c0ab29a3cada"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
-      "bytes": 58415,
-      "sha256": "0672fa1795277091b3397f12ecd377d59c4188af06febadebca4c0c467a98720"
+      "bytes": 64877,
+      "sha256": "7a3d3236cb4cf1cf8bc54756c72111dac9cb3455197a8b9343b298184f53bdb7"
     },
     {
       "path": "provenance/NEXT_STEPS.md",
-      "bytes": 7327,
-      "sha256": "74fc3626f62f34a294b6cc79a3d1d7061607930ead88e10eedc619a4cf3b2b13"
+      "bytes": 10745,
+      "sha256": "2b6795c985d29efeefbddf71844ece2bddc37e4a65cecf71f473a3b87cc20844"
     },
     {
       "path": "provenance/OBSERVATION_LEDGER.md",
-      "bytes": 12286,
-      "sha256": "324f51b23874fa2847c47aa43b18ea79d012b91800e02feb8c61981d7adadd34"
+      "bytes": 18563,
+      "sha256": "1fcdc4bcad1a5d7fa6198a40c312297dc4e970edd425c1471e1080d79b143978"
     },
     {
       "path": "provenance/SOURCE_AUTHORITY.md",
@@ -1266,6 +1296,11 @@
       "sha256": "00c553d70a6f2d6b0fd773899b7e8648a1e8d9a9c267fea1b7bf683da05d313b"
     },
     {
+      "path": "qa/fifth-space-census-validation.json",
+      "bytes": 16323,
+      "sha256": "e215e2981b6aaef595a2069aee18e20223cd8902561ec102fbae91352a45ad5f"
+    },
+    {
       "path": "qa/fivefold-capability-teleology-validation.json",
       "bytes": 25828,
       "sha256": "c1969124402c2ff015ee13429a12231c8814f12424e739da75548f74c517a1c3"
@@ -1273,7 +1308,7 @@
     {
       "path": "qa/fivefold-engine-promotion-evidence.json",
       "bytes": 22859,
-      "sha256": "cd120198c6b3cec48061914a4b3c572475aea4c00728d296af0da7368c06fdb4"
+      "sha256": "9dbf7ebd58cdcc94ac5eaa9f3fce565ce620d95211bd6e0973f4edf8872161ab"
     },
     {
       "path": "qa/gov-208-vault-context-validation.json",
@@ -1331,6 +1366,11 @@
       "sha256": "7adac1589092731c16bf82a2566beaa2ad53213bfcddd9e4b49cbc5e261f39fd"
     },
     {
+      "path": "qa/orrery-evidence-bundle-validation.json",
+      "bytes": 2434,
+      "sha256": "4606ab4cef51c1cd4d489c23953ba8d39d16d9f5d69188207259c5d513c36586"
+    },
+    {
       "path": "qa/pentatonic-7-35-parent-audit-validation.json",
       "bytes": 5584,
       "sha256": "bec94c589a5bd26bb10784c40cf17fbe80ecf4b32d4d51f4a6ef9140885e50c9"
@@ -1338,7 +1378,7 @@
     {
       "path": "qa/pentatonic-binding-audit-closure.json",
       "bytes": 4552,
-      "sha256": "87cba12f41dd88777fca3160f359e9aa5c0397ec5102e0e91652610914ea2ca8"
+      "sha256": "a26916102dc04c0dc462a41d3df62c1a510098d07a64b13c69a7ba0244628754"
     },
     {
       "path": "qa/pentatonic-binding-audit-neo4j-validation.json",
@@ -1363,7 +1403,7 @@
     {
       "path": "qa/shadow-ladder-validation.json",
       "bytes": 5382,
-      "sha256": "f589194989589c4b3769df2a2d006a38b0ff49ca7e56cfd537c3f4278967debd"
+      "sha256": "d84d54a4f1b193e3d3f7936ed19e3763d3a8c04126d173fe1a461d067edcab59"
     },
     {
       "path": "qa/teleological-physics-registry-validation.json",
@@ -1374,6 +1414,11 @@
       "path": "qa/tiered-photonic-candidates-validation.json",
       "bytes": 5737,
       "sha256": "6646154ba5dd67558008bc6863095423c840e51cf5485a775274bff109e58b61"
+    },
+    {
+      "path": "qa/twin-hub-convergence-validation.json",
+      "bytes": 5369,
+      "sha256": "01cc2099c2bf0b87dd495ba725eb0dd9f58be8f9deffe24d288d52d459a8dc1d"
     },
     {
       "path": "requirements-orrery-dev.txt",
@@ -1556,6 +1601,16 @@
       "sha256": "3e47637641bedc2b08d6b597c70a7de44b540ec66c3362b3329af4a9e98e29be"
     },
     {
+      "path": "schemas/fivefold-incubator/fifth-space-census-v0.schema.json",
+      "bytes": 1646,
+      "sha256": "19653f55c71856cb163044120c77944bfc667fe1d2c7bb4e0bdea6ae423cae31"
+    },
+    {
+      "path": "schemas/fivefold-incubator/fifth-space-census-validation.schema.json",
+      "bytes": 637,
+      "sha256": "65c002ef035020518207a6d5b81209c09b57a648770e1df9e1812a6f8a2d2253"
+    },
+    {
       "path": "schemas/fivefold-incubator/shadow-ladder-v0.schema.json",
       "bytes": 942,
       "sha256": "5c5329b708e38ee3660099c79758d3a8f60a2178684b36ffe27b18e939b165aa"
@@ -1564,6 +1619,16 @@
       "path": "schemas/fivefold-incubator/shadow-ladder-validation.schema.json",
       "bytes": 622,
       "sha256": "2f6866a9fa233f9005746cd5abf5ff122bae23b6c48729b58fe98b9c9a8dcc2d"
+    },
+    {
+      "path": "schemas/fivefold-incubator/twin-hub-convergence-v0.schema.json",
+      "bytes": 1580,
+      "sha256": "4e8f3f5bf3674b63e5d11f115590c3f6de0dc71769893e59b3b5406d05497d6d"
+    },
+    {
+      "path": "schemas/fivefold-incubator/twin-hub-convergence-validation.schema.json",
+      "bytes": 643,
+      "sha256": "e8ec79f4d44d1dbaf934474549e72ea22685a6b9bf7e624d3785adbb204cbe19"
     },
     {
       "path": "schemas/gov-210/context-housing.schema.json",
@@ -1674,6 +1739,11 @@
       "path": "schemas/harmonic-compression-candidates/validation-report.schema.json",
       "bytes": 1064,
       "sha256": "a602787cadb87a778e7c14ffaf8b84c8a9778415c28a12c5e38254bc9f80253e"
+    },
+    {
+      "path": "schemas/harmonic-orrery-evidence-bundle.schema.json",
+      "bytes": 4206,
+      "sha256": "9f27cf50f4ebda928f9ee364b6cef97e91d27578dc96f3b9c11ed4e2cb823505"
     },
     {
       "path": "schemas/harmonic-orrery-legal-moves.schema.json",
@@ -1808,12 +1878,17 @@
     {
       "path": "scripts/build-fivefold-engine-promotion-evidence.py",
       "bytes": 31509,
-      "sha256": "59f1aa41e67796d68a9a4a9d553ceac2a5d21cdf6e3ee89117b947c08f2f2d99"
+      "sha256": "686c03295b72e5e456d4071abc96cd3aae7b11c3e8f50975e5e0334272002a09"
     },
     {
       "path": "scripts/build-manifest.mjs",
       "bytes": 2711,
       "sha256": "8ea71fcf100c6ab6043aa14a53acdbc73ba27dc614c198809387f080c3aa43c6"
+    },
+    {
+      "path": "scripts/build-orrery-evidence-bundle.mjs",
+      "bytes": 11807,
+      "sha256": "56ed7c5d8488bbad85666047f60da4b8de7ab40fd4316a723005f3b1705381af"
     },
     {
       "path": "scripts/build-orrery-legal-move-catalog.mjs",
@@ -1846,6 +1921,11 @@
       "sha256": "d2df9c8f9fca4156df53b3570c20a6dcddef40d03a0f34165ecd927cbd2751e2"
     },
     {
+      "path": "scripts/generate-fifth-space-census.py",
+      "bytes": 1103,
+      "sha256": "a4045b393c22ea7d8c62c2ff04178742b3509545b7aea289b13bd43f277a3fc6"
+    },
+    {
       "path": "scripts/generate-harmonic-compression-candidates.py",
       "bytes": 1617,
       "sha256": "883172246bb25585c57b5c3789b111e9a28870d90625457cdb3e4c2d05c8d768"
@@ -1869,6 +1949,11 @@
       "path": "scripts/generate-tiered-photonic-candidates.py",
       "bytes": 1817,
       "sha256": "a166e6adf7f2a4cab58fc10011e86c9c58cc07be9075cba21e32cf8c8a59a369"
+    },
+    {
+      "path": "scripts/generate-twin-hub-convergence.py",
+      "bytes": 1062,
+      "sha256": "892f50b4a3d3b7a45ef0f76d970650c1538cac04d6dabd2c2ef4d0fa1ea79bb4"
     },
     {
       "path": "scripts/import-governor-graph.mjs",
@@ -1951,6 +2036,11 @@
       "sha256": "fb3c5f87864d4cad7af13533090736f277728b97d0e4bdd3a72dbf367fd8a3b1"
     },
     {
+      "path": "scripts/validate-fifth-space-census.py",
+      "bytes": 10432,
+      "sha256": "2baf7a4a06333f9989b7abdb21c3124c2ef3b27072e8eb669feb4acec8b06745"
+    },
+    {
       "path": "scripts/validate-fivefold-capability-teleology.py",
       "bytes": 50048,
       "sha256": "b584ab22fb4c85c26bcc49185adea4eb5d1da3fc1c2236df74667e815f38e88e"
@@ -1958,7 +2048,7 @@
     {
       "path": "scripts/validate-fivefold-engine-promotion-evidence.py",
       "bytes": 11637,
-      "sha256": "0a8c57166c123a8e2d132170dd4fe307638049408eb0c5f4c02c49f3f4e869ea"
+      "sha256": "989342f61107b5ebb1b1b4e34ded7006213ed9cff712c98c15c44445026d50b2"
     },
     {
       "path": "scripts/validate-full-database.mjs",
@@ -2029,6 +2119,11 @@
       "path": "scripts/validate-tiered-photonic-candidates.py",
       "bytes": 10338,
       "sha256": "01a2196c6df3d46d2f429b900ec77757f043dc4315355a50788aaf1e68fa90b3"
+    },
+    {
+      "path": "scripts/validate-twin-hub-convergence.py",
+      "bytes": 11240,
+      "sha256": "47c0feb6a0974aa611170b31abd93c2a4035d5f68441184d37b3dd3dbc681f90"
     },
     {
       "path": "scripts/validate-validation-prose-consistency.mjs",
@@ -2162,8 +2257,8 @@
     },
     {
       "path": "scrum/EPIC-520-unified-operator.md",
-      "bytes": 1807,
-      "sha256": "cedc781f2882e5ee5464f0ae4f7558d1a9c67fe0fe5db11d68d5d12ba3773ae0"
+      "bytes": 1869,
+      "sha256": "0c30484c154a03d096030c0ae80f088976fa0b96d4388559790f4c228d29f356"
     },
     {
       "path": "scrum/GOV-201-authority-namespaces.md",
@@ -2257,13 +2352,13 @@
     },
     {
       "path": "scrum/GOV-510-twin-hub-contact-convergence-audit.md",
-      "bytes": 3495,
-      "sha256": "294b057d14ad02889905cf9868caf79f8e77ce865d5c8e17a8b862af7f817c02"
+      "bytes": 3975,
+      "sha256": "e8ca5664b62b17609d3de7ca6d74c4a8436ae093b83b2cc4f2b638447888ad83"
     },
     {
       "path": "scrum/GOV-511-d-tier-fifth-space-census.md",
-      "bytes": 4251,
-      "sha256": "a54b8344f58a952c86e286194d9e71cc2249b907a8a0806ca43be59c938d9e2f"
+      "bytes": 4689,
+      "sha256": "7703768573274b29b1216d8d9640ca6125af48a4aa0094b27b507a9371b7f165"
     },
     {
       "path": "scrum/GOV-512-research-gate-3.md",
@@ -2342,8 +2437,8 @@
     },
     {
       "path": "scrum/ORR-511-evidence-inspector-bundle.md",
-      "bytes": 3159,
-      "sha256": "1ecf7775146252bfd3064a4c9040b753fde40a15efd0bd4d2ccaa65c8514e86d"
+      "bytes": 3156,
+      "sha256": "1b9dd633a403c1f23a7a52cce1117ef55de390ac5aa20d57a1e2fbb479881af0"
     },
     {
       "path": "scrum/ORR-512-provenance-explain-surface.md",
@@ -4171,6 +4266,11 @@
       "sha256": "7235c382b8cf56725ee829e7a61ae04620333868a6b519302d53f14deb386c22"
     },
     {
+      "path": "src/governor/fifth_space_census.py",
+      "bytes": 17419,
+      "sha256": "1215b32818c0eea46860d8d239f431f169a36db197a03599eabbf9a14959e6ba"
+    },
+    {
       "path": "src/governor/graph_export.py",
       "bytes": 7926,
       "sha256": "199237fea10550043724806f0b9d29b19cde076db5c20b0bd68822f2e98b03e9"
@@ -4274,6 +4374,11 @@
       "path": "src/governor/transitions.py",
       "bytes": 11694,
       "sha256": "3d48881f5f419fd2c7eb7caa04a5bd79b61caa3ebd560a7fe59a1917e327cc4e"
+    },
+    {
+      "path": "src/governor/twin_hub_convergence.py",
+      "bytes": 27922,
+      "sha256": "238828e87c2e1d3f8b2bc9fb1d8c1e85fa6cb62213b084d0fd5d8348df3d5efb"
     },
     {
       "path": "src/governor/vault_context.py",
@@ -4491,6 +4596,11 @@
       "sha256": "49e0ff7d7fc2b36203cad611e4f4b3114803e9b34ab90954c7f07b696e90b14e"
     },
     {
+      "path": "tests/test_fifth_space_census.py",
+      "bytes": 6052,
+      "sha256": "8943802d47fe5e0f3cbc575737037cdbd04327c2f5a27212646a82f22bbe9a4a"
+    },
+    {
       "path": "tests/test_fivefold_capability_teleology.py",
       "bytes": 14158,
       "sha256": "fd8f753a7b5c11573f6dbe4dbfaaac9b331af17f73e5026bcf71f05ee11e6955"
@@ -4619,6 +4729,11 @@
       "path": "tests/test_teleological_physics_registry.py",
       "bytes": 7012,
       "sha256": "d495da0e07c88a8276c2d0021303561d0b0fa3d82026e9f31e99f3ac3a3746bb"
+    },
+    {
+      "path": "tests/test_twin_hub_convergence.py",
+      "bytes": 5372,
+      "sha256": "a8eac6a3450990e7ba0a9f18da301f832b950bd5efc75f52b30006d7e71ccaa3"
     },
     {
       "path": "tests/verification/__init__.py",

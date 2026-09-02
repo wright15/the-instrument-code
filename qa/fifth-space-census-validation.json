@@ -1,0 +1,712 @@
+{
+  "schemaVersion": "fifth-space-census-validation.v0",
+  "verdict": "PASS",
+  "candidateId": "FIFTH_SPACE_CENSUS_v0",
+  "candidateFingerprint": "556d3f652261616d5d7021d041ec7435da0bb32a42804ba168fe9658ad96ee92",
+  "checksPassed": 24,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "checkId": "schema",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "checkId": "fingerprint",
+      "status": "PASS",
+      "diagnostic": "556d3f652261616d5d7021d041ec7435da0bb32a42804ba168fe9658ad96ee92"
+    },
+    {
+      "checkId": "freshness",
+      "status": "PASS",
+      "diagnostic": "556d3f652261616d5d7021d041ec7435da0bb32a42804ba168fe9658ad96ee92"
+    },
+    {
+      "checkId": "determinism-build-twice",
+      "status": "PASS",
+      "diagnostic": "identical source builds"
+    },
+    {
+      "checkId": "determinism-reorder",
+      "status": "PASS",
+      "diagnostic": "ledger and structural-edge order independent"
+    },
+    {
+      "checkId": "determinism-schema",
+      "status": "PASS",
+      "diagnostic": "stable candidate envelope"
+    },
+    {
+      "checkId": "cardinality-462",
+      "status": "PASS",
+      "diagnostic": 462
+    },
+    {
+      "checkId": "ordering-unique",
+      "status": "PASS",
+      "diagnostic": "records sorted by stateId ascending, unique"
+    },
+    {
+      "checkId": "role-reconciliation",
+      "status": "PASS",
+      "diagnostic": {
+        "aTierAnchors": 21,
+        "boundaries": 154,
+        "byRole": {
+          "anchor": 70,
+          "boundary": 154,
+          "satellite": 238
+        },
+        "dTierAnchors": 49,
+        "expectedRoles": {
+          "anchor": 70,
+          "boundary": 154,
+          "satellite": 238
+        },
+        "reconciled": true
+      }
+    },
+    {
+      "checkId": "binary-field-equivalence",
+      "status": "PASS",
+      "diagnostic": "fifthMask/fifthPositions byte-identical to FIFTH_POS derivation"
+    },
+    {
+      "checkId": "span-arc-holes",
+      "status": "PASS",
+      "diagnostic": "span is the minimal covering arc; holes = span+1-cardinality"
+    },
+    {
+      "checkId": "gap-multiset",
+      "status": "PASS",
+      "diagnostic": "sorted cyclic fifth-gap multiset"
+    },
+    {
+      "checkId": "span-ceiling-10",
+      "status": "PASS",
+      "diagnostic": "no state exceeds the geometric span ceiling"
+    },
+    {
+      "checkId": "c0-binding",
+      "status": "PASS",
+      "diagnostic": "C0 binds court-rooted-positions.json mask 661 (span 4)"
+    },
+    {
+      "checkId": "c0-negative-fixture",
+      "status": "PASS",
+      "diagnostic": "C0=661 is the negative fixture proving the minimal-covering-arc definition"
+    },
+    {
+      "checkId": "satellite-family-uniformity",
+      "status": "PASS",
+      "diagnostic": {
+        "familyCount": 17,
+        "perFamilyUniform": true,
+        "satellitesPerFamily": 14,
+        "satellitesPerOffice": {
+          "Jupiter": 34,
+          "Mars": 34,
+          "Mercury": 34,
+          "Moon": 34,
+          "Saturn": 34,
+          "Sun": 34,
+          "Venus": 34
+        },
+        "statesPerOfficePerFamily": 2,
+        "verified": true
+      }
+    },
+    {
+      "checkId": "governs-out-degree",
+      "status": "PASS",
+      "diagnostic": {
+        "byOffice": {
+          "Jupiter": {
+            "A0": 6,
+            "A1": 4,
+            "A2": 6,
+            "D1": 2,
+            "D2": 4,
+            "D3": 2,
+            "D4": 4,
+            "D5": 4,
+            "D6": 2,
+            "D7": 0
+          },
+          "Mars": {
+            "A0": 6,
+            "A1": 4,
+            "A2": 6,
+            "D1": 2,
+            "D2": 4,
+            "D3": 2,
+            "D4": 4,
+            "D5": 4,
+            "D6": 2,
+            "D7": 0
+          },
+          "Mercury": {
+            "A0": 6,
+            "A1": 4,
+            "A2": 6,
+            "D1": 2,
+            "D2": 4,
+            "D3": 2,
+            "D4": 4,
+            "D5": 4,
+            "D6": 2,
+            "D7": 0
+          },
+          "Moon": {
+            "A0": 6,
+            "A1": 4,
+            "A2": 6,
+            "D1": 2,
+            "D2": 4,
+            "D3": 2,
+            "D4": 4,
+            "D5": 4,
+            "D6": 2,
+            "D7": 0
+          },
+          "Saturn": {
+            "A0": 6,
+            "A1": 4,
+            "A2": 6,
+            "D1": 2,
+            "D2": 4,
+            "D3": 2,
+            "D4": 4,
+            "D5": 4,
+            "D6": 2,
+            "D7": 0
+          },
+          "Sun": {
+            "A0": 6,
+            "A1": 4,
+            "A2": 6,
+            "D1": 2,
+            "D2": 4,
+            "D3": 2,
+            "D4": 4,
+            "D5": 4,
+            "D6": 2,
+            "D7": 0
+          },
+          "Venus": {
+            "A0": 6,
+            "A1": 4,
+            "A2": 6,
+            "D1": 2,
+            "D2": 4,
+            "D3": 2,
+            "D4": 4,
+            "D5": 4,
+            "D6": 2,
+            "D7": 0
+          }
+        },
+        "edgeCount": 238,
+        "expected": {
+          "Jupiter": {
+            "A0": 6,
+            "A1": 4,
+            "A2": 6,
+            "D1": 2,
+            "D2": 4,
+            "D3": 2,
+            "D4": 4,
+            "D5": 4,
+            "D6": 2,
+            "D7": 0
+          },
+          "Mars": {
+            "A0": 6,
+            "A1": 4,
+            "A2": 6,
+            "D1": 2,
+            "D2": 4,
+            "D3": 2,
+            "D4": 4,
+            "D5": 4,
+            "D6": 2,
+            "D7": 0
+          },
+          "Mercury": {
+            "A0": 6,
+            "A1": 4,
+            "A2": 6,
+            "D1": 2,
+            "D2": 4,
+            "D3": 2,
+            "D4": 4,
+            "D5": 4,
+            "D6": 2,
+            "D7": 0
+          },
+          "Moon": {
+            "A0": 6,
+            "A1": 4,
+            "A2": 6,
+            "D1": 2,
+            "D2": 4,
+            "D3": 2,
+            "D4": 4,
+            "D5": 4,
+            "D6": 2,
+            "D7": 0
+          },
+          "Saturn": {
+            "A0": 6,
+            "A1": 4,
+            "A2": 6,
+            "D1": 2,
+            "D2": 4,
+            "D3": 2,
+            "D4": 4,
+            "D5": 4,
+            "D6": 2,
+            "D7": 0
+          },
+          "Sun": {
+            "A0": 6,
+            "A1": 4,
+            "A2": 6,
+            "D1": 2,
+            "D2": 4,
+            "D3": 2,
+            "D4": 4,
+            "D5": 4,
+            "D6": 2,
+            "D7": 0
+          },
+          "Venus": {
+            "A0": 6,
+            "A1": 4,
+            "A2": 6,
+            "D1": 2,
+            "D2": 4,
+            "D3": 2,
+            "D4": 4,
+            "D5": 4,
+            "D6": 2,
+            "D7": 0
+          }
+        },
+        "perOfficeTotal": {
+          "Jupiter": 34,
+          "Mars": 34,
+          "Mercury": 34,
+          "Moon": 34,
+          "Saturn": 34,
+          "Sun": 34,
+          "Venus": 34
+        },
+        "verified": true
+      }
+    },
+    {
+      "checkId": "obs013-addendum",
+      "status": "PASS",
+      "diagnostic": {
+        "a2AnchorsAtCeiling": true,
+        "ceilingRespected": true,
+        "ceilingStateCount": 21,
+        "ceilingStates": [
+          {
+            "forte": "7-1",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "7-1 terminal cluster state 127",
+            "office": "Jupiter",
+            "role": "anchor",
+            "stateId": 127,
+            "tier": "D7"
+          },
+          {
+            "forte": "7-8",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "Alt \u266e25\u266d67",
+            "office": "Jupiter",
+            "role": "anchor",
+            "stateId": 381,
+            "tier": "D6"
+          },
+          {
+            "forte": "7-8",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "Infra-Alt 56\u266d7",
+            "office": "Saturn",
+            "role": "anchor",
+            "stateId": 1119,
+            "tier": "D6"
+          },
+          {
+            "forte": "7-33",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "Leading Whole-Tone Inverse",
+            "office": "Moon",
+            "role": "anchor",
+            "stateId": 1367,
+            "tier": "A2"
+          },
+          {
+            "forte": "7-33",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "Storian",
+            "office": "Saturn",
+            "role": "anchor",
+            "stateId": 1373,
+            "tier": "A2"
+          },
+          {
+            "forte": "7-33",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "Major Locrian",
+            "office": "Jupiter",
+            "role": "anchor",
+            "stateId": 1397,
+            "tier": "A2"
+          },
+          {
+            "forte": "7-33",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "Lydian Minor",
+            "office": "Mars",
+            "role": "anchor",
+            "stateId": 1493,
+            "tier": "A2"
+          },
+          {
+            "forte": "7-33",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "Aeroptian",
+            "office": "Sun",
+            "role": "anchor",
+            "stateId": 1877,
+            "tier": "A2"
+          },
+          {
+            "forte": "7-8",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "Dominant +234",
+            "office": "Mars",
+            "role": "anchor",
+            "stateId": 2001,
+            "tier": "D6"
+          },
+          {
+            "forte": "7-1",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "7-1 terminal cluster state 2111",
+            "office": "Saturn",
+            "role": "anchor",
+            "stateId": 2111,
+            "tier": "D7"
+          },
+          {
+            "forte": "7-8",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "Alt \u266e67345",
+            "office": "Moon",
+            "role": "anchor",
+            "stateId": 2607,
+            "tier": "D6"
+          },
+          {
+            "forte": "7-33",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "Neapolitan Major",
+            "office": "Mercury",
+            "role": "anchor",
+            "stateId": 2731,
+            "tier": "A2"
+          },
+          {
+            "forte": "7-1",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "7-1 terminal cluster state 3103",
+            "office": "Moon",
+            "role": "anchor",
+            "stateId": 3103,
+            "tier": "D7"
+          },
+          {
+            "forte": "7-8",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "Crater Scale",
+            "office": "Mercury",
+            "role": "anchor",
+            "stateId": 3351,
+            "tier": "D6"
+          },
+          {
+            "forte": "7-33",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "Leading Whole-Tone",
+            "office": "Venus",
+            "role": "anchor",
+            "stateId": 3413,
+            "tier": "A2"
+          },
+          {
+            "forte": "7-1",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "7-1 terminal cluster state 3599",
+            "office": "Mercury",
+            "role": "anchor",
+            "stateId": 3599,
+            "tier": "D7"
+          },
+          {
+            "forte": "7-8",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "Phrygian +45",
+            "office": "Venus",
+            "role": "anchor",
+            "stateId": 3723,
+            "tier": "D6"
+          },
+          {
+            "forte": "7-1",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "7-1 terminal cluster state 3847",
+            "office": "Venus",
+            "role": "anchor",
+            "stateId": 3847,
+            "tier": "D7"
+          },
+          {
+            "forte": "7-8",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "Superlydian Augmented \u266e235\u266f4",
+            "office": "Sun",
+            "role": "anchor",
+            "stateId": 3909,
+            "tier": "D6"
+          },
+          {
+            "forte": "7-1",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "7-1 terminal cluster state 3971",
+            "office": "Sun",
+            "role": "anchor",
+            "stateId": 3971,
+            "tier": "D7"
+          },
+          {
+            "forte": "7-1",
+            "gapMultiset": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "name": "7-1 terminal cluster state 4033",
+            "office": "Mars",
+            "role": "anchor",
+            "stateId": 4033,
+            "tier": "D7"
+          }
+        ],
+        "d7AnchorsAtCeiling": true,
+        "spanCeiling": 10,
+        "theorem": "seven points on the 12-cycle have seven gaps summing to 12, so the largest gap is at least 2 and the minimal covering arc span is at most 10: the A-ladder ceiling is geometry, not fiat",
+        "verified": true
+      }
+    },
+    {
+      "checkId": "research-verdict-consistency",
+      "status": "PASS",
+      "diagnostic": "confirmed"
+    },
+    {
+      "checkId": "research-verdict-non-gating",
+      "status": "PASS",
+      "diagnostic": "records carry no truth-value gate; ORR-522 consumes them regardless"
+    },
+    {
+      "checkId": "guards-namespace",
+      "status": "PASS",
+      "diagnostic": "planning evidence has no admission or topology coordinate"
+    },
+    {
+      "checkId": "bindings-ledger-shas",
+      "status": "PASS",
+      "diagnostic": "frozen ledger bindings (both ledgers)"
+    },
+    {
+      "checkId": "bindings-court",
+      "status": "PASS",
+      "diagnostic": "frozen Court position binding"
+    },
+    {
+      "checkId": "bindings-source-derivation",
+      "status": "PASS",
+      "diagnostic": "all semantic source bindings"
+    }
+  ],
+  "reportFingerprint": "30ff191c3292ed35a40ffa2fa246fc4fa0bf91135c256f0aa385f6f0013f862f"
+}

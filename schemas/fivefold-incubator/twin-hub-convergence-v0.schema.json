@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fivefold-incubator.twin-hub-convergence.v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "candidateId", "status", "scope", "method", "t1Receipt", "twinCensus", "d4Case", "d5Case", "chainAudit", "negativeControls", "verdict", "evidenceBindings", "candidateFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "fivefold-incubator.twin-hub-convergence.v0"},
+    "candidateId": {"const": "TWIN_HUB_CONVERGENCE_v0"},
+    "status": {"const": "planning_evidence"},
+    "scope": {"type": "object"},
+    "method": {"type": "object"},
+    "t1Receipt": {"type": "object", "required": ["claim", "ionianMask", "locrianMask", "verified"]},
+    "twinCensus": {
+      "type": "object",
+      "required": ["A0", "A1", "A2"],
+      "additionalProperties": false,
+      "properties": {
+        "A0": {"type": "object", "required": ["pairs", "hub"]},
+        "A1": {"type": "object", "required": ["pairs", "hub"]},
+        "A2": {"type": "object", "required": ["pairs", "hub"]}
+      }
+    },
+    "d4Case": {"type": "object", "required": ["claim", "tier", "verified"]},
+    "d5Case": {"type": "object", "required": ["claim", "tier", "verified"]},
+    "chainAudit": {"type": "object", "required": ["rows", "total", "validCount", "violations"]},
+    "negativeControls": {"type": "array"},
+    "verdict": {"enum": ["confirmed", "refuted", "partial"]},
+    "evidenceBindings": {"type": "object"},
+    "candidateFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

@@ -1,6 +1,6 @@
 # ORR-511 - Evidence inspector bundle
 
-**Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-511](EPIC-511-orrery-evidence-surfaces.md) · **Sprint:** Sprint 2
+**Status:** Done · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-511](EPIC-511-orrery-evidence-surfaces.md) · **Sprint:** Sprint 2
 **Depends on:** GOV-501 · **Blocks:** ORR-512, ORR-513, ORR-514
 
 ## Story

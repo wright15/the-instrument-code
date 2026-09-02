@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fivefold-incubator.fifth-space-census.v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "candidateId", "status", "scope", "method", "courtBinding", "records", "roleReconciliation", "companionChecks", "researchVerdict", "evidenceBindings", "candidateFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "fivefold-incubator.fifth-space-census.v0"},
+    "candidateId": {"const": "FIFTH_SPACE_CENSUS_v0"},
+    "status": {"const": "planning_evidence"},
+    "scope": {"type": "object", "required": ["stateCount"]},
+    "method": {"type": "object"},
+    "courtBinding": {
+      "type": "object",
+      "required": ["positionId", "mask", "source"],
+      "properties": {
+        "positionId": {"const": "C0"},
+        "mask": {"type": "integer", "minimum": 1, "maximum": 4095},
+        "source": {"type": "string"}
+      }
+    },
+    "records": {"type": "array", "minItems": 462, "maxItems": 462},
+    "roleReconciliation": {"type": "object", "required": ["reconciled"]},
+    "companionChecks": {
+      "type": "object",
+      "required": ["satelliteFamilyUniformity", "governsOutDegree", "obs013Addendum"]
+    },
+    "researchVerdict": {
+      "type": "object",
+      "required": ["questionId", "question", "verdict"],
+      "properties": {
+        "questionId": {"type": "string"},
+        "question": {"type": "string"},
+        "verdict": {"enum": ["confirmed", "refuted", "partial"]}
+      }
+    },
+    "evidenceBindings": {"type": "object"},
+    "candidateFingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

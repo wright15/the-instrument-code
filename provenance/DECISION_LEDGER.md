@@ -26,6 +26,90 @@ bootstrap/roundtrip evidence. This entry moves the decision-ledger binding, so
 dependent planning-evidence artifacts are regenerated with the cycle-open
 fixed-point pass.
 
+## Post-closure clarification — GOV-502 — 2026-09-01
+
+### Decision — census scope note, seam as known
+
+Post-closure clarification: non-summability scope note added to `docs/VALIDATION_CENSUS.md` (418 distinct scope, column sum 120); seam recorded in `provenance/NEXT_STEPS.md` as known, derivation of integrated 418's own composition queued as optional. GOV-502 remains Done; no defect, no count change.
+
+## Research Gate 3 — GOV-512 — dual confirmation, EPIC-520 opened — 2026-09-01
+
+### Decision — open: both research stories confirmed, receipts cited
+
+Research Gate 3 records dual confirmation. GOV-510 (OBS-014) `confirmed` — twin-hub convergence verified with the asymmetry intact: D4 converges through twins to offices adjacent to the seated structure (midpoints already seated at A1 seams), D5 converges onto the two offices the A2 twin march designated but could not construct ({Mars, Jupiter} via pairs {Moon,Mercury}/{Mercury,Venus}), both A2 twin pairs routing through the shared Mercury hub; A2-seam ∩ D5-anchor = {2383, 3667}. GOV-511 (FSC-RQ-001) `confirmed` — ceiling respected; span sequence A 6→8→10 strict climb, D 9→8→9→8→9→10→10 oscillation-then-ridge; ceiling 10 shared by exactly three families (7-33, 7-8, 7-1), 21 anchors, gap multiset [1,1,2,2,2,2,2].
+
+EPIC-520 status: opened as a research question, not a conclusion.
+
+**Receipts (gate-time, pre-close):**
+
+- `qa/twin-hub-convergence-validation.json` — PASS 30/30, reportFingerprint `a5bebe2372be2a40c280120d72f6139c1f8d043ab3f4e2279138ff97ccb1dbec`; candidate `canonical/fivefold-incubator/twin-hub-convergence-v0.json` fingerprint `38dc41317e251b2e9147a2228fa03adf2313cdd14fa56fbd49764084d124ab1c`.
+- `qa/fifth-space-census-validation.json` — PASS 24/24, reportFingerprint `e08027b0f08cdd6a38844a71cf8db4be319e840b1440384c26a5f7597abea4e7`; candidate `canonical/fivefold-incubator/fifth-space-census-v0.json` fingerprint `570679dfe46e5c9ba305464e4a7e532bfff7baed34570780f6e27ace4b4f0a0d`.
+
+Both receipts were source-fresh against the ledger at gate time; the post-entry close regeneration refreshes their binding SHAs (ledger → sidecar DAG) without changing verdicts, records, or substantive content.
+
+**What dual confirmation establishes:** two independent derivations of the seam structure (construction from above, contact from below) converging on the same office geometry, plus a first span-topological characterization of the D-channel.
+
+**What it does not establish:** existence, form, or uniqueness of a unified operator subsuming construction K and the seven declared contact signatures. EPIC-520's first work item is a separate planning cycle to define scope; the census's oscillation/ridge structure is input to that cycle, not evidence for any particular operator.
+
+**Weakness note:** what was confirmed is FSC-RQ-001's registered question (the ceiling claim), exactly as strong as the receipts prove. The oscillation, three-family ceiling, and D6-ridge are census-derived content beyond the registered question and are recorded in OBS-015/OBS-016 (observation ledger), not in this entry's confirmed-verdict claim.
+
+### Guard
+
+EPIC-520's scrum record flips `Conditional` → `Backlog` with zero child stories, per its own activation rule. No implementation, operator, graph, admission, or runtime authority is granted by this entry.
+
+## Sprint 2 research — GOV-510 twin-hub convergence audit — 2026-09-01
+
+### Decision — verdict confirmed, planning evidence only
+
+GOV-510 closes with verdict `confirmed`. Definitions are pre-registered in the
+ticket and carried verbatim in the machine artifact (`canonical/fivefold-incubator/
+twin-hub-convergence-v0.json`, `planning_evidence`). Executable findings: the
+T₁ receipt `T₁(Ionian)=Locrian` passes and its near-match (`2774`) is rejected;
+the T₁-twin census over tiers A0/A1/A2 holds exactly two dH10 pairs per tier;
+the spec'd D4/D5 asymmetry is present — A0/A1 twin office pairs are disjoint
+(no hub) with midpoints `{Sun,Saturn}` seated as A1 phase seams, while the A2
+twin pairs share the Mercury hub and their midpoints `{Mars,Jupiter}` are
+unseated as seams (no A3). All 28 D4/D5 `SEAT_CONTACT` rows route the permitted
+single-hop chain (satellite tier = parent tier), two selected contacts per
+anchor. D-tier seat-contact evidence thus derives the seam mechanism (OBS-012)
+a second time, from below. No graph edges, office assignments, or admission
+effect; `harmonic.C_H` untouched. GOV-512 consumes the artifact, not prose.
+
+### Guard
+
+Outcome-honest verdict semantics: `confirmed/refuted/partial` all close the
+story; the artifact's `verdict` field is computed from the executable checks,
+never asserted in prose. Malformed-chain fixtures (missing GOVERNS, reversed
+direction, cross-tier parent) are rejected by the validator.
+
+## Sprint 2 research — GOV-511 fifth-space census — 2026-09-01
+
+### Decision — schema-closed 462-record census, research verdict confirmed
+
+GOV-511 closes with a 462-record fifth-space census
+(`canonical/fivefold-incubator/fifth-space-census-v0.json`, `planning_evidence`):
+one row per canonical state, ordered by `stateId`, each with
+`fifthMask`/`fifthPositions` derived deterministically from `pitchClasses` via
+`FIFTH_POS`, `fifthSpan` (minimal covering arc), `fifthArc`, `holes`, and the
+gap multiset. C0 (mask `661`) binds the admitted Court source
+(`court-rooted-positions.json`). Companion checks pass: 17 chiral satellite
+families contribute exactly 2 states per office (34 per office, 238 total);
+the `GOVERNS` out-degree table matches `{A0:6,A1:4,A2:6,D1:2,D2:4,D3:2,D4:4,
+D5:4,D6:2,D7:0}` per office; and the OBS-013 geometric addendum holds — no
+state exceeds span 10, with the ceiling attained by the 21 anchors of `7-33`,
+`7-1`, and (arithmetic output, not previously listed) `7-8`. The separate
+research verdict `FSC-RQ-001` is `confirmed` and structurally cannot gate the
+records: ORR-522 consumes `records[]` regardless. The dataset is descriptive;
+it is not a D-tier ranking, admission decision, or operator definition.
+
+### Guard
+
+The census binds both `decisionLedgerSha256` and `observationLedgerSha256`
+(this entry and the OBS-013 addendum landed before census emission — ledger →
+sidecar DAG). Tamper fixtures, cardinality, ordering, and binary-field
+equivalence are validator-enforced. The shadow-ladder rebuild for the
+S2→S3 boundary is owned by this story (transfer clause in GOV-510's DoD).
+
 ## Release 1.8.1 Neo4j provenance-baseline closure — fixed point — 2026-08-29
 
 ### Decision — dual evidence, no topology change

@@ -35,6 +35,20 @@ runner. These per-validator totals are scoped inputs; the integrated receipt
 folds each into its own pass/fail record plus additional topology, audit,
 runtime, Court, Neo4j, and manifest checks.
 
+> **Scope note — not summable:** The `qa/integrated-release-validation.json`
+> row (418) is distinct scope, not the sum of the `checksPassed` column.
+> That column sums to 188 (14+15+37+17+12+7+18+30+24+14). The integrated receipt runs
+> its own checks across its distinct scope — manifest fixed-point, frozen
+> package identities, topology/mutation/semantic counts, Court/runtime/Governor,
+> and additional audit checks. The standalone validators' per-validator checks
+> are scoped inputs that the integrated receipt re-verifies in folded form
+> (each validator's checks fold into a small number of integrated checks that
+> re-verify the receipt's verdict and fingerprint), not added. The per-validator
+> counts and integrated totals have different scopes by construction (the 1.8.0
+> close-out's planning arithmetic 411+15+14+1 never matched the emitted 414).
+> The GOV-510, GOV-511, and ORR-511 receipts are Sprint 2 standalone scoped
+> receipts; release-gate wiring is owned by ORR-524.
+
 | Artifact | Declared scope | checksPassed | Runner |
 |---|---|---:|---|
 | `qa/integrated-release-validation.json` | integrated release validation (all layers) | 418 | `npm run validate:release` |
@@ -45,3 +59,6 @@ runtime, Court, Neo4j, and manifest checks.
 | `qa/pentatonic-set-class-admission-backlog-validation.json` | CRT-310 per-class admission backlog | 12 | `npm run validate:crt310` |
 | `qa/governor-runtime-validation.json` | Governor runtime admission | 7 | `npm run validate:governor-admission` |
 | `qa/court-admission-validation.json` | CRT-309 Court admission | 18 | `npm run validate:court-admission` |
+| `qa/twin-hub-convergence-validation.json` | GOV-510 T1-twin contact convergence audit | 30 | `npm run validate:twin-hub` |
+| `qa/fifth-space-census-validation.json` | GOV-511 462-record fifth-space census | 24 | `npm run validate:fifth-space-census` |
+| `qa/orrery-evidence-bundle-validation.json` | ORR-511 A-series evidence inspector bundle | 14 | `npm run orrery:bundle:check` |

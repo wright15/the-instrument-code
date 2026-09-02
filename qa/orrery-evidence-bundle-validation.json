@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "harmonic-orrery.evidence-bundle-validation.v1",
+  "verdict": "PASS",
+  "bundleId": "EVIDENCE_BUNDLE_A012_v1",
+  "bundleFingerprint": "b6394e8b9497c899f8bd8c260255d997fb7a846a84db7f1d1f304d4cfbc4661a",
+  "checksPassed": 14,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "checkId": "schema",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "checkId": "fingerprint",
+      "status": "PASS",
+      "diagnostic": "b6394e8b9497c899f8bd8c260255d997fb7a846a84db7f1d1f304d4cfbc4661a"
+    },
+    {
+      "checkId": "freshness",
+      "status": "PASS",
+      "diagnostic": "byte-identical rebuild"
+    },
+    {
+      "checkId": "legal-move-byte-identity",
+      "status": "PASS",
+      "diagnostic": "legal-move catalog bytes unchanged and pinned"
+    },
+    {
+      "checkId": "pin-derived-from-artifact",
+      "status": "PASS",
+      "diagnostic": "candidate pin derived from the live sidecar file, not a literal"
+    },
+    {
+      "checkId": "records-21",
+      "status": "PASS",
+      "diagnostic": "21 A0-A2 anchor records, seven per tier"
+    },
+    {
+      "checkId": "exact-ratios",
+      "status": "PASS",
+      "diagnostic": "every W_A012 projection is an exact numerator/407 rational"
+    },
+    {
+      "checkId": "qs-seven-positions",
+      "status": "PASS",
+      "diagnostic": "all seven Q(S) positions enumerated per anchor"
+    },
+    {
+      "checkId": "certificate-values",
+      "status": "PASS",
+      "diagnostic": "3/407 margin, 6/407 next slack, 7-member tight set"
+    },
+    {
+      "checkId": "active-set-label",
+      "status": "PASS",
+      "diagnostic": "active-set rank 8 (7 binding + normalization)"
+    },
+    {
+      "checkId": "wording-discipline",
+      "status": "PASS",
+      "diagnostic": "unique max-margin optimum under the declared objective; uniquenessClaim=false preserved"
+    },
+    {
+      "checkId": "global-null-guard",
+      "status": "PASS",
+      "diagnostic": "global C_H stays unresolved null with its guard literal"
+    },
+    {
+      "checkId": "label-map-complete",
+      "status": "PASS",
+      "diagnostic": "every displayed field has a stable label, source path, and absent-value rule"
+    },
+    {
+      "checkId": "deterministic-serialization",
+      "status": "PASS",
+      "diagnostic": "serialization is stable under round-trip"
+    }
+  ],
+  "reportFingerprint": "486e2f5e2ca77a50cc64d4c1989fdffcb901c15386626ef733a24b350044990e"
+}

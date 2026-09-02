@@ -1423,6 +1423,62 @@ a:focus-visible {
   margin-top: 21px;
 }
 
+.evidence-block {
+  margin-top: 21px;
+  padding-top: 17px;
+  border-top: 1px solid rgb(133 165 212 / 18%);
+}
+
+.qs-list {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 5px;
+  margin: 9px 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.qs-list li {
+  min-width: 0;
+  padding: 7px 4px;
+  border: 1px solid rgb(133 165 212 / 28%);
+  background: #0b121f;
+  text-align: center;
+}
+
+.qs-list li span {
+  display: block;
+  color: #8495ad;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.qs-list li strong {
+  display: block;
+  margin-top: 3px;
+  color: #e7effd;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+}
+
+.evidence-block > .field-label {
+  margin: 0 0 5px;
+}
+
+.certificate-measurements {
+  margin-top: 8px;
+}
+
+.evidence-block .audio-palette-note {
+  margin: 6px 0 0;
+  color: #8495ad;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.66rem;
+  line-height: 1.55;
+}
+
 .audio-palette-block {
   margin-top: 21px;
   padding-top: 17px;

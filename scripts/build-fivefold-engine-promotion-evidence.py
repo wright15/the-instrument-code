@@ -22,7 +22,7 @@ CONTRACT_PATH = "schemas/fivefold-engine-admission-contract.json"
 CONTRACT_SCHEMA_PATH = "schemas/fivefold-engine-admission-contract.schema.json"
 
 FROZEN_ENGINE_SHA256 = "9cbf038c93a72719387e6a8094f5b466a79e61ce03371f5b2334fb26a480b64a"
-DECISION_LEDGER_SHA256 = "32f08a16eeb4c13187939281621b4085fe377778539cc1268913e3cb285b9bc6"
+DECISION_LEDGER_SHA256 = "7a3d3236cb4cf1cf8bc54756c72111dac9cb3455197a8b9343b298184f53bdb7"
 
 SOURCE_BINDINGS = (
     ("court-admission-contract", "schemas/court-admission-contract.json", "machine Court authority boundary"),

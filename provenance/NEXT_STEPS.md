@@ -2,11 +2,29 @@
 
 Current release: `seven-governors-integrated-1.9.0-dev`, opened on `main` 2026-08-29.
 
-**Development declaration:** `1.8.1` remains the sealed Neo4j baseline with separate native reproducibility and configured bootstrap/roundtrip receipts. `1.9.0-dev` plans bounded research and interface work on `main`; `681` geometry correction (`OBS-011` punched holes `{10,2}`) remains folded into the prior point, and `OBS-014` remains queued. No development emission changes canonical topology, admission, runtime authority, Court policy, or global `harmonic.C_H` without its own versioned evidence and release decision.
+**Development declaration:** `1.8.1` remains the sealed Neo4j baseline with separate native reproducibility and configured bootstrap/roundtrip receipts. `1.9.0-dev` plans bounded research and interface work on `main`; `681` geometry correction (`OBS-011` punched holes `{10,2}`) remains folded into the prior point. Sprint 2 closed `OBS-014` (twin-hub convergence, verdict `confirmed`, GOV-510), emitted the 462-record fifth-space census (GOV-511, verdict `confirmed`), and shipped the A-series evidence inspector bundle (ORR-511). No development emission changes canonical topology, admission, runtime authority, Court policy, or global `harmonic.C_H` without its own versioned evidence and release decision.
 
-## Queued — OBS-014 — twin-hub convergence audit (untested)
+## Sprint 2 closure — shadow-ladder rebuild receipt — 2026-09-01
+
+The S2→S3 boundary rebuild is owned by GOV-511 (primary) per the kickoff directive. After the final Sprint 2 ledger edits (OBS-013 addendum, OBS-014 entry, GOV-510/GOV-511 decision entries), `npm run build:shadow-ladder` regenerated `canonical/fivefold-incubator/shadow-ladder-v0.json` (candidate fingerprint `0e859f974e239dc3f5fd1fbe785f4aa8d0567cc21e6c715d07fcb48cf43789ab`) and `npm run validate:shadow-ladder` re-verified `qa/shadow-ladder-validation.json` at 37/37 (report fingerprint `2e03c00be169cac6a1d5496ad562f5ea33d2d1108041809d0196b8db998f57dd`). Refreshed ledger SHAs bound by the regenerated artifact: `decisionLedgerSha256` `8bd53883bbfe6059176966567d991b16302a11c5f4966202fb7a7730ea2762c8`, `observationLedgerSha256` `47aae971e2baff51d8b54ef0b1ece15b03c9a7056e6bc138e8c8649ae9de7ba4` (the ledger itself stays fingerprint-free — DAG: ledger → sidecar). Sprint 2 research artifacts: twin-hub `canonical/fivefold-incubator/twin-hub-convergence-v0.json` and fifth-space census `canonical/fivefold-incubator/fifth-space-census-v0.json` — each derived from the post-edit ledger SHAs and validated by their own qa receipts.
+
+## Queued — Validation census scope seam (known, not a defect)
+
+`docs/VALIDATION_CENSUS.md` shows 418 (`qa/integrated-release-validation.json`, integrated release validation — distinct scope: topology/audit/runtime/Court/Neo4j/manifest) vs per-validator column sum 120 (14+15+37+17+12+7+18) — not summable; precedent `411+15+14+1 ≠ 414` (the 1.8.0 close-out's planning arithmetic never matched the emitted 414; per-validator and integrated scopes differ by construction). Minimal fix is scope note in census doc (prose block); optional future GOV may derive the integrated 418's own composition as done for per-validator counts.
+
+## Queued — OBS-014 — twin-hub convergence audit (resolved Sprint 2, GOV-510)
 
 Twin-hub convergence at the `A2` boundary: `D4` (`7-Z17`, `2× A1-sat`) and `D5` (`7-Z12`, `2× A2-sat`) seat contacts should route through `T₁`-twin satellites converging via Mercury hub. **Tier asymmetry:** at `A2` twins share Mercury hub and midpoints `{Mars,Jupiter}` are **unseated** (`field closes its own seams from below` — strongest hypothesis); at `A1` twins `{Moon–Saturn, Sun–Venus}` are disjoint (no hub) and midpoints `{Sun,Saturn}` already seated as `A1` seams — so `D4` = convergence-through-twins, `D5` = convergence-onto-unseated-midpoints. Falsifiable from ledger data (`seat-contact.csv` + `constructionEdges` + `T₁` `transpose_mask 1`).
+
+**Resolved:** verdict `confirmed` — recorded as `provenance/OBSERVATION_LEDGER.md:OBS-014`, artifact `canonical/fivefold-incubator/twin-hub-convergence-v0.json`, receipt `qa/twin-hub-convergence-validation.json` (28/28 chains valid, A2 hub Mercury, midpoints seated/unseated exactly as spec'd). GOV-512 consumes the artifact, not prose.
+
+## Queued — fivefold-capability-teleology regeneration (known stale)
+
+`canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json` binds `provenance/SOURCE_AUTHORITY.md` at sha `7420bbcc…`, but the file has been at `b27e9a23…` since the 1.9.0-dev cycle open (`4a3989f`); the teleology tests were failing at HEAD before Sprint 2. Regeneration was not applied in Sprint 2 (out-of-directive); queue the rebuild plus a recommendations review of hard-coded source pins (same class as the promotion-evidence ledger pin, which Sprint 2 refreshed because its own ledger edit invalidated it).
+
+## Queued — ORR-522 fifth-space census consumption
+
+`canonical/fivefold-incubator/fifth-space-census-v0.json` (462 records, `fifthMask` integers, `records[]` ungated by `researchVerdict`) is the Sprint 2 dataset ORR-522 consumes in the Taxonomy Explorer workstream. The research verdict (`FSC-RQ-001`, `confirmed`) is structurally non-gating; treat span measurements as descriptive, never as a D-tier ranking.
 
 ## Queued — q_v2 design for D-tier compression
 

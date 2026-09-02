@@ -1,5 +1,11 @@
 import { fetchNodes, ProjectionCompatibilityError } from "./api";
 import {
+  EVIDENCE_BUNDLE,
+  EvidenceBundleCompatibilityError,
+  createEvidenceBundleIndex,
+  type EvidenceBundleRecord,
+} from "./evidence-bundle";
+import {
   OrreryAudioEngine,
   formatPitchClasses,
   isAudioSourceCompatible,
@@ -82,6 +88,13 @@ const selectedPhotonicCompression = requiredElement<HTMLElement>("#selected-phot
 const selectedWeight = requiredElement<HTMLElement>("#selected-weight");
 const selectedProfile = requiredElement<HTMLElement>("#selected-profile");
 const selectedLandforms = requiredElement<HTMLUListElement>("#selected-landforms");
+const selectedQs = requiredElement<HTMLOListElement>("#selected-qs");
+const selectedWWording = requiredElement<HTMLElement>("#selected-w-wording");
+const selectedCertificateStatus = requiredElement<HTMLElement>("#selected-certificate-status");
+const selectedCertificateMargin = requiredElement<HTMLElement>("#selected-certificate-margin");
+const selectedCertificateSlack = requiredElement<HTMLElement>("#selected-certificate-slack");
+const selectedCertificateTightSet = requiredElement<HTMLElement>("#selected-certificate-tightset");
+const selectedCHGuard = requiredElement<HTMLElement>("#selected-c-h-guard");
 const selectedAudioPalette = requiredElement<HTMLElement>("#selected-audio-palette");
 const selectedAudioNote = requiredElement<HTMLElement>("#selected-audio-note");
 const selectedCourtFilter = requiredElement<HTMLElement>("#selected-court-filter");
@@ -144,6 +157,8 @@ let nodesById = new Map<number, OrreryNode>();
 let profileRegistryReleaseId: string | undefined;
 let legalMoveCatalog: LegalMoveCatalogIndex | undefined;
 let legalMoveCatalogNotice: string | undefined;
+let evidenceRecords: Map<number, EvidenceBundleRecord> | undefined;
+let evidenceBundleNotice: string | undefined;
 const anchorButtons = new Map<number, HTMLButtonElement>();
 const courtButtons = new Map<CourtPosition, HTMLButtonElement>();
 const audioEngine = new OrreryAudioEngine();
@@ -548,10 +563,64 @@ function clearInspector(): void {
   const item = document.createElement("li");
   item.textContent = "Select an anchor to view its reference pool.";
   selectedLandforms.replaceChildren(item);
+  const qsItem = document.createElement("li");
+  qsItem.textContent = "Select an anchor to enumerate its Q(S) positions.";
+  selectedQs.replaceChildren(qsItem);
+  selectedWWording.textContent = evidenceBundleNotice
+    ? `Evidence bundle unavailable: ${evidenceBundleNotice}`
+    : "W_A012 wording: unique max-margin optimum under the declared objective; method.uniquenessClaim=false remains true outside it.";
+  selectedCertificateStatus.textContent = "-";
+  selectedCertificateMargin.textContent = "-";
+  selectedCertificateSlack.textContent = "-";
+  selectedCertificateTightSet.textContent = "-";
+  selectedCHGuard.textContent = evidenceBundleNotice
+    ? "Global harmonic.C_H guard is unavailable while the evidence bundle is incompatible."
+    : EVIDENCE_BUNDLE.globalAggregate.guardLiteral;
   selectedAudioPalette.textContent = "Select an anchor to inspect its office A0 palette.";
   selectedAudioNote.textContent = "Audio is an optional presentation layer.";
   selectedCourtFilter.textContent = "Select an anchor to inspect its local Court filter.";
   audioPalette.textContent = "Select an anchor to inspect its A0 office palette.";
+}
+
+function renderEvidenceBlock(node: OrreryNode): void {
+  const evidence = evidenceRecords?.get(node.state.stateId);
+  if (!evidence) {
+    const item = document.createElement("li");
+    item.textContent = evidenceBundleNotice ?? "Evidence record unavailable for this anchor.";
+    selectedQs.replaceChildren(item);
+    selectedWWording.textContent = "W_A012 wording is unavailable while the evidence bundle is incompatible.";
+    selectedCertificateStatus.textContent = "-";
+    selectedCertificateMargin.textContent = "-";
+    selectedCertificateSlack.textContent = "-";
+    selectedCertificateTightSet.textContent = "-";
+    selectedCHGuard.textContent = "Global harmonic.C_H guard is unavailable while the evidence bundle is incompatible.";
+    return;
+  }
+
+  selectedQs.replaceChildren(
+    ...evidence.triadicCompressionSignature.map((value, index) => {
+      const cell = document.createElement("li");
+      cell.dataset.position = String(index + 1);
+      cell.dataset.qClass = String(value);
+      const position = document.createElement("span");
+      position.textContent = `d${index + 1}`;
+      const qValue = document.createElement("strong");
+      qValue.textContent = String(value);
+      cell.append(position, qValue);
+      return cell;
+    }),
+  );
+  selectedWWording.textContent =
+    `W_A012 ${evidence.weightedProjection.numerator}/${evidence.weightedProjection.denominator} is the ${evidence.wA012Wording}. ` +
+    "method.uniquenessClaim=false remains true outside that objective.";
+  selectedCertificateStatus.textContent =
+    `${EVIDENCE_BUNDLE.certificate.optimalityClaim} / ${EVIDENCE_BUNDLE.certificate.activeSetLabel}`;
+  selectedCertificateMargin.textContent =
+    `${EVIDENCE_BUNDLE.certificate.epsilonStar.numerator}/${EVIDENCE_BUNDLE.certificate.epsilonStar.denominator}`;
+  selectedCertificateSlack.textContent =
+    `${EVIDENCE_BUNDLE.certificate.nextTightestSlack.numerator}/${EVIDENCE_BUNDLE.certificate.nextTightestSlack.denominator} / ${EVIDENCE_BUNDLE.certificate.nextTightestSlack.pair}`;
+  selectedCertificateTightSet.textContent = EVIDENCE_BUNDLE.certificate.tightSet.join(" · ");
+  selectedCHGuard.textContent = EVIDENCE_BUNDLE.globalAggregate.guardLiteral;
 }
 
 function renderSessionHud(): void {
@@ -903,6 +972,7 @@ function selectAnchor(node: OrreryNode, selectionSource: "restore" | "user" = "r
   selectedWeight.textContent = formatRatio(node.scopedHarmonicDescriptor.weightedProjection);
   selectedProfile.textContent = node.canonicalProfile.profileVersion;
   renderLandforms(node.canonicalProfile.domainReferences.landforms);
+  renderEvidenceBlock(node);
   renderAudioPalette(audioEngine.select(node, session.courtPresentationPosition, selectionSource === "user"));
   // The engine stops any progression on node change; re-issue it for the new
   // anchor when the harmony toggle is still engaged.
@@ -1116,6 +1186,22 @@ async function start(): Promise<void> {
     legalMoveCatalog = undefined;
     const detail = error instanceof Error ? error.message : "Unknown legal-move catalog compatibility error";
     legalMoveCatalogNotice = `Legal moves are unavailable: ${detail}`;
+  }
+  try {
+    evidenceRecords = createEvidenceBundleIndex(
+      response,
+      EVIDENCE_BUNDLE,
+      LEGAL_MOVE_CATALOG.catalogFingerprint,
+    );
+    evidenceBundleNotice = undefined;
+  } catch (error) {
+    evidenceRecords = undefined;
+    if (error instanceof EvidenceBundleCompatibilityError) {
+      evidenceBundleNotice = `Evidence bundle unavailable: ${error.message}`;
+    } else {
+      const detail = error instanceof Error ? error.message : "Unknown evidence-bundle compatibility error";
+      evidenceBundleNotice = `Evidence bundle unavailable: ${detail}`;
+    }
   }
   progressStorage = browserStorage();
   audioEngine.setVoicingMode(loadVoicingMode(progressStorage));

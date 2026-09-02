@@ -1,6 +1,6 @@
 # GOV-511 - D-tier fifth-space census
 
-**Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-510](EPIC-510-full-field-derivation.md) · **Sprint:** Sprint 2
+**Status:** Done · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-510](EPIC-510-full-field-derivation.md) · **Sprint:** Sprint 2
 **Depends on:** GOV-501 · **Blocks:** GOV-512, ORR-522, ORR-524
 
 ## Story
@@ -70,6 +70,13 @@ its separate research verdict is outcome-honest and exposes no authority beyond
 descriptive planning evidence.
 
 Execute `npm run build:shadow-ladder`, re-verify `qa/shadow-ladder-validation.json`, and record the refreshed ledger SHA before closing Sprint 2. Note: The shadow-ladder rebuild is owned by whichever research story (`GOV-510` or `GOV-511`) closes last. If `GOV-510` is still open when `GOV-511` finishes, transfer this closing step to `GOV-510`'s DoD.
+
+**Ownership (Sprint 2 kickoff directive):** this story is the primary owner of
+the S2→S3 shadow-ladder rebuild and fixed-point loop. The OBS-013 geometric
+termination addendum lands in `provenance/OBSERVATION_LEDGER.md` **before** the
+census is generated — the census binds both `decisionLedgerSha256` and
+`observationLedgerSha256`, so the ledger entry must precede artifact emission
+(ledger → sidecar DAG, never sidecar → ledger).
 
 ## References
 

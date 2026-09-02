@@ -1,8 +1,8 @@
 # EPIC-520 - Unified Operator
 
-**Status:** Conditional · **Priority:** High · **Owner:** Research governance
+**Status:** Backlog · **Priority:** High · **Owner:** Research governance
 **Epic ID:** EPIC-520 · **Release:** `1.9.0-dev`
-**Stories:** None. This conditional record is not an open workstream.
+**Stories:** None. Zero child stories; activation opens the epic only, and the first story (a separate planning cycle) is spec'd fresh.
 
 ## Problem statement
 

@@ -1,0 +1,195 @@
+{
+  "schemaVersion": "twin-hub-convergence-validation.v0",
+  "verdict": "PASS",
+  "candidateId": "TWIN_HUB_CONVERGENCE_v0",
+  "candidateFingerprint": "3f3fab2701b7d71bd62e089bb7475785672f77ff6228c5a51bcf6fa217d6b4be",
+  "checksPassed": 30,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "checkId": "schema",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "checkId": "fingerprint",
+      "status": "PASS",
+      "diagnostic": "3f3fab2701b7d71bd62e089bb7475785672f77ff6228c5a51bcf6fa217d6b4be"
+    },
+    {
+      "checkId": "freshness",
+      "status": "PASS",
+      "diagnostic": "3f3fab2701b7d71bd62e089bb7475785672f77ff6228c5a51bcf6fa217d6b4be"
+    },
+    {
+      "checkId": "determinism-build-twice",
+      "status": "PASS",
+      "diagnostic": "identical source builds"
+    },
+    {
+      "checkId": "determinism-reorder",
+      "status": "PASS",
+      "diagnostic": "ledger and structural-edge order independent"
+    },
+    {
+      "checkId": "determinism-schema",
+      "status": "PASS",
+      "diagnostic": "stable candidate envelope"
+    },
+    {
+      "checkId": "t1-receipt-positive",
+      "status": "PASS",
+      "diagnostic": "T1(Ionian)=Locrian under the declared mask convention"
+    },
+    {
+      "checkId": "t1-receipt-near-match-rejected",
+      "status": "PASS",
+      "diagnostic": "T1(Locrian)=2774 is not accepted as the pre-registered partner"
+    },
+    {
+      "checkId": "t1-receipt-root-phase-edges",
+      "status": "PASS",
+      "diagnostic": "Ionian and Locrian are joined by root_phase phase-seam edges"
+    },
+    {
+      "checkId": "twin-census-pre-registered",
+      "status": "PASS",
+      "diagnostic": {
+        "A0": [
+          [
+            1387,
+            2741
+          ],
+          [
+            1451,
+            2773
+          ]
+        ],
+        "A1": [
+          [
+            1371,
+            2733
+          ],
+          [
+            1707,
+            2901
+          ]
+        ],
+        "A2": [
+          [
+            1367,
+            2731
+          ],
+          [
+            2731,
+            3413
+          ]
+        ]
+      }
+    },
+    {
+      "checkId": "twin-pair-dH10",
+      "status": "PASS",
+      "diagnostic": "every T1-twin pair sits at dH10"
+    },
+    {
+      "checkId": "hub-A0-undefined",
+      "status": "PASS",
+      "diagnostic": "A0 and A1 twin office pairs are disjoint; no hub"
+    },
+    {
+      "checkId": "hub-A2-mercury",
+      "status": "PASS",
+      "diagnostic": "A2 twin pairs share the Mercury hub"
+    },
+    {
+      "checkId": "d4-midpoints-seated",
+      "status": "PASS",
+      "diagnostic": "A1-generating twin midpoints {Sun, Saturn} are seated phase seams"
+    },
+    {
+      "checkId": "d4-pairs-disjoint-no-hub",
+      "status": "PASS",
+      "diagnostic": "D4 twin pairs disjoint; hub undefined"
+    },
+    {
+      "checkId": "d4-chains-valid",
+      "status": "PASS",
+      "diagnostic": "all 14 D4 seat-contact rows route the permitted chain"
+    },
+    {
+      "checkId": "d4-case-verified",
+      "status": "PASS",
+      "diagnostic": "A1-generating twin pairs are disjoint (no hub) and their midpoints {Sun, Saturn} are seated as A1 phase seams; all 14 D4 seat-contact rows route the permitted single-hop chain."
+    },
+    {
+      "checkId": "d5-midpoints-unseated",
+      "status": "PASS",
+      "diagnostic": "A2 twin midpoints {Mars, Jupiter} are unseated as seams; no A3"
+    },
+    {
+      "checkId": "d5-hub-mercury",
+      "status": "PASS",
+      "diagnostic": "D5 twins share the Mercury hub"
+    },
+    {
+      "checkId": "d5-chains-valid",
+      "status": "PASS",
+      "diagnostic": "all 14 D5 seat-contact rows route the permitted chain"
+    },
+    {
+      "checkId": "d5-seats-unseated-offices",
+      "status": "PASS",
+      "diagnostic": "D5 anchors seat the unseated-midpoint offices Mars and Jupiter"
+    },
+    {
+      "checkId": "d5-case-verified",
+      "status": "PASS",
+      "diagnostic": "A2 twin pairs share the Mercury hub; their ring midpoints {Mars, Jupiter} are unseated as seams (exact midpoints, no A3); all 14 D5 seat-contact rows route the permitted single-hop chain, seating the unseated-midpoint offices."
+    },
+    {
+      "checkId": "chain-total-28",
+      "status": "PASS",
+      "diagnostic": {
+        "total": 28,
+        "valid": 28
+      }
+    },
+    {
+      "checkId": "chain-two-contacts-per-anchor",
+      "status": "PASS",
+      "diagnostic": "exactly two selected contacts per D4/D5 anchor"
+    },
+    {
+      "checkId": "chain-no-violations",
+      "status": "PASS",
+      "diagnostic": "no missing, reversed, or cross-tier relation accepted"
+    },
+    {
+      "checkId": "negative-controls",
+      "status": "PASS",
+      "diagnostic": "six negative controls pass"
+    },
+    {
+      "checkId": "verdict-consistency",
+      "status": "PASS",
+      "diagnostic": "confirmed"
+    },
+    {
+      "checkId": "guards-namespace",
+      "status": "PASS",
+      "diagnostic": "planning evidence has no admission or topology coordinate"
+    },
+    {
+      "checkId": "bindings-ledger-shas",
+      "status": "PASS",
+      "diagnostic": "frozen ledger bindings"
+    },
+    {
+      "checkId": "bindings-source-derivation",
+      "status": "PASS",
+      "diagnostic": "all semantic source bindings"
+    }
+  ],
+  "reportFingerprint": "def1b7c34bdc90f2b30ee9ecc1b1e444eecd50f8d7de8105281538c75621ced6"
+}

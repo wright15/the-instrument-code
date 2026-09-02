@@ -1,6 +1,6 @@
 # GOV-510 - Twin-hub contact convergence audit
 
-**Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-510](EPIC-510-full-field-derivation.md) · **Sprint:** Sprint 2
+**Status:** Done · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-510](EPIC-510-full-field-derivation.md) · **Sprint:** Sprint 2
 **Depends on:** GOV-501 · **Blocks:** GOV-512, ORR-524
 
 ## Story
@@ -58,6 +58,14 @@ falsifiable verdict without smuggling a new operator into authority.
 
 The pre-registered definitions, D4/D5 tests, negative controls, and explicit
 verdict are recorded. GOV-512 can consume the result without interpreting prose.
+
+**Shadow-ladder rebuild handoff (Sprint 2 kickoff directive):** the S2→S3
+shadow-ladder rebuild (`npm run build:shadow-ladder`, re-verify
+`qa/shadow-ladder-validation.json`, record refreshed ledger SHA) is owned by
+GOV-511. Transfer: if this story closes **last**, this DoD inherits the rebuild
+plus the fixed-point loop before Sprint 2 closes. Any ledger edit in this story
+must land before its artifact is generated (ledger → sidecar DAG; the artifact
+pins both ledger SHAs).
 
 ## References
 

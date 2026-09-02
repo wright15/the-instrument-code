@@ -197,6 +197,74 @@ Consequences: shadow ladder ends at `5-34`; `5-33` detached on both channels `0`
 
 **Achirality:** all three shadow families `5-35,5-34,5-33` achiral (complement of achiral `A-tier` is achiral) — no orientation ambiguity.
 
+**Addendum 2026-09-01 (GOV-511 fifth-space census): geometric termination.** Any 7 points on the 12-cycle have seven gaps summing to 12, so the largest gap is ≥ `ceil(12/7)=2` and the minimal covering arc `span = 12 − max gap ≤ 10` — the A-ladder ceiling is geometry, not fiat. The 462-record census (`canonical/fivefold-incubator/fifth-space-census-v0.json`) shows no state exceeds span 10. Ceiling attainment: exactly 21 anchor states sit at span 10 — the 7 `7-33` (A2) anchors, the 7 `7-1` (D7) anchors, **and** the 7 `7-8` (D6) anchors (arithmetic output; the D6 family shares the ceiling, which the planning prose did not list). `7-33`/`7-1` sitting at the ceiling is confirmed; exclusivity is not claimed.
+
+---
+
+## OBS-014 — Twin-hub contact convergence (D4/D5 seat-contact audit)
+
+**Status:** derived `planning_evidence` 2026-09-01
+**Scope:** 28 D4/D5 `SEAT_CONTACT` rows; T₁-twin census over tiers A0/A1/A2
+**Verdict:** `confirmed`
+
+Definitions are pre-registered in `scrum/GOV-510-twin-hub-contact-convergence-audit.md` and carried verbatim in the machine artifact (`method` block); the executable checks are `scripts/validate-twin-hub-convergence.py`.
+
+**T₁ receipt:** `T₁(Ionian)=Locrian` under the declared 12-bit mask convention (`2741 → 1387`), joined by a `root_phase` phase-seam edge into the A1 Sun seam (`1371`); the near-match `T₁(Locrian)=2774` (same family, root-0) is rejected because `2774 ≠ 2741`.
+
+**Twin census (T₁-twin pairs per tier, all dH10):**
+
+| tier | pair 1 | pair 2 | hub |
+|---|---|---|---|
+| A0 (7-35) | {Ionian 2741 Moon, Locrian 1387 Saturn} | {Lydian 2773 Sun, Phrygian 1451 Venus} | undefined (disjoint) |
+| A1 (7-34) | {MelMinor 2733 Mars, Superlocrian 1371 Sun} | {LydAug 2901 Saturn, Dorian♭2 1707 Jupiter} | undefined (disjoint) |
+| A2 (7-33) | {LWT-I 1367 Moon, NeapMaj 2731 Mercury} | {LWT 3413 Venus, NeapMaj 2731 Mercury} | **Mercury** |
+
+**D4 (7-Z17) — convergence-through-twins:** the A1-generating twin pairs `{Moon,Saturn}/{Sun,Venus}` are disjoint (no hub); their ring midpoints `{Sun,Saturn}` are seated as A1 phase seams (`1371`,`2901`). All 14 D4 `SEAT_CONTACT` rows route the permitted chain (D-anchor ← `SEAT_CONTACT` ← satellite ← `GOVERNS` ← parent anchor; single hop; satellite tier = parent tier = A1), two selected contacts per anchor, 7/7 offices.
+
+**D5 (7-Z12) — convergence-onto-unseated-midpoints:** the A2 twin pairs share the Mercury hub; their ring midpoints `{Mars,Jupiter}` are unseated as seams (the A2 anchors `1493`,`1397` there are exact midpoints, not phase seams; no A3 exists per `OBS-013`). All 14 D5 rows route the permitted chain (satellite tier = parent tier = A2), and D5 anchors seat the unseated-midpoint offices Mars and Jupiter.
+
+**Reading:** D-tier seat-contact evidence routes through T₁-twin structure exactly as spec'd: D4 converges through twins whose midpoints are already seated; D5 converges onto the offices the twin march designated but the A-ladder could not construct — the field closes its own seams from below. This derives the seam mechanism (`OBS-012`) a second time, from below, over the spec'd D4/D5 asymmetry. No topology rewrite; `planning_evidence` only.
+
+**Falsification:** any D4/D5 chain violating the permitted single-hop chain, any A2 twin pair not sharing Mercury, or any A2 anchor at Mars/Jupiter carrying phase-seam provenance breaks it.
+
+**Upstream:** `canonical/universal-heptatonic-ledger.json`, `canonical/universal-network-data.json` (`SEAT_CONTACT`/`GOVERNS`/`CONSTRUCTS`), `src/governor/shadow_ladder.py` (`transpose_mask`).
+
+---
+
+## OBS-015 — D-channel span sequence (oscillation, then ridge)
+
+**Status:** derived `planning_evidence` 2026-09-01
+**Scope:** 70 A0-D7 anchors; per-tier fifth-space span, office-uniform within each tier
+
+```
+span(A0,A1,A2) = 6, 8, 10          (strict climb, even steps)
+span(D1..D7)   = 9, 8, 9, 8, 9, 10, 10   (oscillation 9↔8, then ridge climb 9→10→10)
+```
+
+Every tier is office-uniform (same span at all 7 offices). The D-channel is not a monotone climb: D1-D5 alternate 9↔8 around the field's middle, and only D6-D7 commit to the ceiling. Mirror: the A-ladder climbs 6→8→10 in even steps; the D-channel's signature is alternation. D5 — the tier converging onto the unseated midpoints (OBS-014) — sits at span 9, one below the ceiling; the seam-closure convergence concentrates immediately preceding the ceiling ridge. For EPIC-520 this poses the question: why does seam-closure concentrate at span 9?
+
+**Falsification:** any tier whose anchors are not office-uniform in span, or any recomputation of the sequence differing from the above.
+
+**Upstream:** `canonical/fivefold-incubator/fifth-space-census-v0.json` (records), `qa/fifth-space-census-validation.json`.
+
+## OBS-016 — Three-family fifth-span ceiling
+
+**Status:** derived `planning_evidence` 2026-09-01
+**Scope:** all 462 states; ceiling = span 10
+
+```
+geometric bound: 7 points on the 12-cycle force a gap >= 2, so span <= 10 (OBS-013 addendum)
+ceiling attained by exactly 21 anchors:
+  7-33 (A2) x7, 7-8 (D6) x7, 7-1 (D7) x7
+all with gap multiset [1,1,2,2,2,2,2]
+```
+
+The ceiling census is richer than the planning prose: three families, not two — the 7-8 D6 family is arithmetic output, and D6 is the ridge between the A-terminal (7-33) and D-terminal (7-1) ceiling families, which are ceiling co-residents. No state exceeds span 10.
+
+**Falsification:** any anchor at span 10 outside the three families, or any state exceeding span 10.
+
+**Upstream:** `canonical/fivefold-incubator/fifth-space-census-v0.json` (records), `qa/fifth-space-census-validation.json`.
+
 ---
 
 ## Index
@@ -213,5 +281,8 @@ Consequences: shadow ladder ends at `5-34`; `5-33` detached on both channels `0`
 | OBS-011 hole-punching | 5/5 | `arc∩ − punched holes` table | Mechanizes `005` at `A2` |
 | OBS-012 seam/twin | 4/4 | `T₁`-twin `4/4`, `2 per tier` | Cross-refs `007` |
 | OBS-013 termination | 7/7 masks | `dH 5×2/2×10/0×4`, `WT hex 7/7`, `5-33` dual detachment | Caps shadow ladder at `5-34`; `A3` is clean negative |
+| OBS-014 twin-hub convergence | 28/28 chains | T₁ receipt, `hub A0/A1 undefined, A2 Mercury`, `midpoints {Sun,Saturn} seated / {Mars,Jupiter} unseated`, verdict `confirmed` | Derives `012` from below over spec'd D4/D5 asymmetry |
+| OBS-015 D-channel span sequence | 70 anchors | `A 6→8→10` climb; `D 9,8,9,8,9,10,10` oscillation-then-ridge; office-uniform per tier | Well-poses "seam-closure at span 9" for EPIC-520 |
+| OBS-016 three-family ceiling | 462 states | span 10 attained by exactly 21 anchors of `7-33`/`7-8`/`7-1`, gap `[1,1,2,2,2,2,2]` | D6 is the ceiling ridge; A- and D-terminal families co-reside at 10 |
 
 No entry writes `ScaleState.office`, `OCCUPIES_OFFICE`, `mutation.degreeGovernor`, `C_H`, `photonicCompression`, or ledger state.
