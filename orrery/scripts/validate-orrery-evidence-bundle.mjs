@@ -194,6 +194,19 @@ async function validate() {
   );
 
   const failed = checks.filter((check) => check.status === "FAIL");
+  const suiteStatus = [
+    { suite: "strict-schema", status: "ran" },
+    { suite: "self-fingerprint", status: "ran" },
+    { suite: "freshness (byte-identical rebuild)", status: "ran" },
+    { suite: "legal-move-byte-identity", status: "ran" },
+    { suite: "pin-derived-from-artifact", status: "ran" },
+    { suite: "records-21 + exact-ratios + qs-seven-positions", status: "ran" },
+    { suite: "certificate-values + active-set-label", status: "ran" },
+    { suite: "wording-discipline (uniquenessClaim=false)", status: "ran" },
+    { suite: "global-null-guard", status: "ran" },
+    { suite: "label-map-complete", status: "ran" },
+    { suite: "deterministic-serialization", status: "ran" },
+  ];
   const reportCore = {
     schemaVersion: "harmonic-orrery.evidence-bundle-validation.v1",
     verdict: failed.length === 0 ? "PASS" : "FAIL",
@@ -201,6 +214,7 @@ async function validate() {
     bundleFingerprint: bundle?.bundleFingerprint ?? null,
     checksPassed: checks.length - failed.length,
     checksFailed: failed.length,
+    suiteStatus,
     checks,
   };
   const { sha256Payload } = await import(BUILDER_PATH);

@@ -55,7 +55,10 @@ trap cleanup EXIT INT TERM
 export PLAYWRIGHT_MCP_OUTPUT_DIR="${work_dir}/playwright"
 export PLAYWRIGHT_MCP_HEADLESS=true
 
-"${vite}" --host 127.0.0.1 --port "${port}" --strictPort >"${work_dir}/vite.log" 2>&1 &
+(
+  cd "${frontend_dir}"
+  exec "${vite}" --host 127.0.0.1 --port "${port}" --strictPort
+) >"${work_dir}/vite.log" 2>&1 &
 vite_pid="$!"
 
 for ((attempt = 0; attempt < 100; attempt += 1)); do
@@ -400,6 +403,10 @@ run_cli "${shared_session}" run-code "async page => {
       'Photonic compression (C_P)',
       'Scoped anchor weight (W_A012)',
       'Profile release',
+      'Status',
+      'Margin ε*',
+      'Next-tightest slack',
+      'Tight set',
     ]) ||
     result.storedCourt !== 'C0' ||
     result.storedSelected !== 1717 ||
@@ -426,6 +433,10 @@ assert_page "${shared_session}" "() => {
       'Photonic compression (C_P)',
       'Scoped anchor weight (W_A012)',
       'Profile release',
+      'Status',
+      'Margin ε*',
+      'Next-tightest slack',
+      'Tight set',
     ]) &&
     stored?.courtPresentationPosition === 'C0' &&
     stored?.selectedAnchorId === 1717 &&

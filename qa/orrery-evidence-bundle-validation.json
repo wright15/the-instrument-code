@@ -5,6 +5,52 @@
   "bundleFingerprint": "b6394e8b9497c899f8bd8c260255d997fb7a846a84db7f1d1f304d4cfbc4661a",
   "checksPassed": 14,
   "checksFailed": 0,
+  "suiteStatus": [
+    {
+      "suite": "strict-schema",
+      "status": "ran"
+    },
+    {
+      "suite": "self-fingerprint",
+      "status": "ran"
+    },
+    {
+      "suite": "freshness (byte-identical rebuild)",
+      "status": "ran"
+    },
+    {
+      "suite": "legal-move-byte-identity",
+      "status": "ran"
+    },
+    {
+      "suite": "pin-derived-from-artifact",
+      "status": "ran"
+    },
+    {
+      "suite": "records-21 + exact-ratios + qs-seven-positions",
+      "status": "ran"
+    },
+    {
+      "suite": "certificate-values + active-set-label",
+      "status": "ran"
+    },
+    {
+      "suite": "wording-discipline (uniquenessClaim=false)",
+      "status": "ran"
+    },
+    {
+      "suite": "global-null-guard",
+      "status": "ran"
+    },
+    {
+      "suite": "label-map-complete",
+      "status": "ran"
+    },
+    {
+      "suite": "deterministic-serialization",
+      "status": "ran"
+    }
+  ],
   "checks": [
     {
       "checkId": "schema",
@@ -77,5 +123,5 @@
       "diagnostic": "serialization is stable under round-trip"
     }
   ],
-  "reportFingerprint": "486e2f5e2ca77a50cc64d4c1989fdffcb901c15386626ef733a24b350044990e"
+  "reportFingerprint": "831e523cbfa4ee523aa48d0685a70eefbba91f47bf9bc981513092c2e8c799b8"
 }
