@@ -1,7 +1,26 @@
 # GOV-512 - Research Gate 3
 
-**Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-512](EPIC-512-taxonomy-explorer.md) · **Sprint:** Sprint 3
+**Status:** Done · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-512](EPIC-512-taxonomy-explorer.md) · **Sprint:** Sprint 3
 **Depends on:** GOV-510, GOV-511 · **Blocks:** ORR-524, Conditional EPIC-520 activation
+
+**Receipt:** `provenance/DECISION_LEDGER.md:35` — Research Gate 3 `open`, dual confirmation.
+Gate-time fingerprints `38dc4131…`/`570679df…` (decision inputs); artifacts refreshed
+post-entry to `3f3fab27…`/`556d3f65…`, verdicts unchanged. QA receipts
+`qa/twin-hub-convergence-validation.json` 30/30 and
+`qa/fifth-space-census-validation.json` 24/24. EPIC-520 opened per activation
+rule (`provenance/DECISION_LEDGER.md:58`), zero child stories.
+
+**Sprint 3 close confirmation (ran/skipped):**
+
+- `validate:twin-hub` — ran, PASS 30/30 (8 pytest).
+- `validate:fifth-space-census` — ran, PASS 24/24 (8 pytest).
+- `build:shadow-ladder` — ran, idempotent; candidateFingerprint `2f2d59db…`.
+- `validate:shadow-ladder` — ran, PASS 37/37 (6 pytest), reportFingerprint `adabef8d…`.
+- Gate fixture matrix — analytic only: no executable gate-decision harness exists;
+  both inputs `confirmed` → `open`, consistent with the activation rule. The
+  `do_not_open`/`defer` cells are non-triggered (no refuted/partial/stale/absent input).
+- `validate:release` + full `npm run validate` — ran at sprint exit fixed point, PASS 418/418, no tracked change.
+- `test:neo4j:full` — skipped, no `NEO4J_URI` configured in this environment.
 
 ## Story
 

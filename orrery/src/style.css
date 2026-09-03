@@ -167,6 +167,9 @@ a:focus-visible {
 .audio-console h2,
 .court-console h2,
 .move-console h2,
+.provenance-console h2,
+.field-derivation-console h2,
+.photonic-console h2,
 .scene-topline h2,
 .inspector h2,
 .index-heading h2 {
@@ -719,6 +722,336 @@ a:focus-visible {
 
 .objective-card[data-state="completed"] .objective-progress {
   color: #83dfb6;
+}
+
+.provenance-console {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.64fr) minmax(0, 1.36fr);
+  gap: 15px 24px;
+  margin-top: 18px;
+  padding: 17px;
+  border: 1px solid rgb(133 165 212 / 28%);
+  background:
+    linear-gradient(105deg, rgb(61 84 123 / 15%), transparent 48%),
+    rgb(9 17 30 / 76%);
+}
+
+.field-derivation-console {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.64fr) minmax(0, 1.36fr);
+  gap: 15px 24px;
+  margin-top: 18px;
+  padding: 17px;
+  border: 1px solid rgb(133 165 212 / 28%);
+  background:
+    linear-gradient(105deg, rgb(61 84 123 / 15%), transparent 48%),
+    rgb(9 17 30 / 76%);
+}
+
+.photonic-console {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.64fr) minmax(0, 1.36fr);
+  gap: 15px 24px;
+  margin-top: 18px;
+  padding: 17px;
+  border: 1px solid rgb(133 165 212 / 28%);
+  background:
+    linear-gradient(105deg, rgb(61 84 123 / 15%), transparent 48%),
+    rgb(9 17 30 / 76%);
+}
+
+.photonic-console h2 {
+  font-size: 1.55rem;
+  letter-spacing: -0.035em;
+}
+
+.photonic-disclaimer {
+  margin: 8px 0 0;
+  color: #e7d28a;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.photonic-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  align-content: start;
+}
+
+.photonic-controls label {
+  display: grid;
+  gap: 4px;
+  color: #b6c7df;
+  font-size: 0.7rem;
+}
+
+.photonic-controls select {
+  min-height: 38px;
+  padding: 6px 8px;
+  border: 1px solid rgb(151 180 222 / 28%);
+  color: #e7effd;
+  background: #0b121f;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+}
+
+.photonic-channel-status {
+  margin: 0;
+  color: #83dfb6;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.67rem;
+  line-height: 1.55;
+}
+
+.photonic-channel-status[data-state="off"] {
+  color: #9aa7bd;
+}
+
+.photonic-channel-status[data-state="variant-a"] {
+  color: #8fb7f6;
+}
+
+.photonic-list {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.photonic-entry {
+  padding: 12px 14px;
+  border: 1px solid rgb(133 165 212 / 22%);
+  background: #0b121f;
+}
+
+.photonic-entry-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.photonic-entry-heading h3 {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #e7effd;
+}
+
+.photonic-band {
+  color: #8fb7f6;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.6rem;
+}
+
+.photonic-measurements {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 5px 14px;
+  margin: 10px 0 0;
+}
+
+.photonic-measurements > div {
+  display: contents;
+}
+
+.photonic-measurements dt {
+  color: #b6c7df;
+  font-size: 0.62rem;
+}
+
+.photonic-measurements dd {
+  margin: 0 0 6px;
+  color: #e7effd;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.68rem;
+  overflow-wrap: anywhere;
+}
+
+.field-derivation-console h2 {
+  font-size: 1.55rem;
+  letter-spacing: -0.035em;
+}
+
+.field-derivation-note {
+  margin: 8px 0 0;
+  color: #e7d28a;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.field-derivation-list {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.field-derivation-card {
+  padding: 12px 14px;
+  border: 1px solid rgb(133 165 212 / 22%);
+  background: #0b121f;
+}
+
+.field-derivation-card-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.field-derivation-card-heading h3 {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #e7effd;
+}
+
+.verdict-badge {
+  padding: 1px 7px;
+  border: 1px solid rgb(151 180 222 / 30%);
+  color: #dbe7fa;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+}
+
+.verdict-badge[data-verdict="confirmed"] {
+  border-color: #83dfb6;
+  color: #83dfb6;
+}
+
+.verdict-badge[data-verdict="refuted"] {
+  border-color: #ff9d9d;
+  color: #ff9d9d;
+}
+
+.verdict-badge[data-verdict="partial"] {
+  border-color: #e7d28a;
+  color: #e7d28a;
+}
+
+.verdict-badge[data-verdict="unavailable"],
+.verdict-badge[data-verdict="incompatible"] {
+  border-color: #9aa7bd;
+  color: #9aa7bd;
+}
+
+.authority-label {
+  color: #8fb7f6;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.62rem;
+}
+
+.field-derivation-provenance {
+  margin: 7px 0 0;
+  color: #9aa7bd;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.62rem;
+  overflow-wrap: anywhere;
+}
+
+.field-derivation-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 5px 14px;
+  margin: 10px 0 0;
+}
+
+.field-derivation-facts > div {
+  display: contents;
+}
+
+.field-derivation-facts dt {
+  color: #b6c7df;
+  font-size: 0.62rem;
+}
+
+.field-derivation-facts dd {
+  margin: 0 0 6px;
+  color: #e7effd;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.68rem;
+  overflow-wrap: anywhere;
+}
+
+.provenance-console-copy h2 {
+  font-size: 1.55rem;
+  letter-spacing: -0.035em;
+}
+
+.provenance-console-copy > p:last-child {
+  margin: 8px 0 0;
+  color: #b6c7df;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.provenance-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr) auto;
+  gap: 8px;
+  align-items: end;
+}
+
+.provenance-controls label {
+  display: grid;
+  gap: 4px;
+  color: #b6c7df;
+  font-size: 0.7rem;
+}
+
+.provenance-controls select,
+.provenance-controls input {
+  min-height: 38px;
+  padding: 6px 8px;
+  border: 1px solid rgb(151 180 222 / 28%);
+  color: #e7effd;
+  background: #0b121f;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+}
+
+.provenance-controls button {
+  min-height: 38px;
+  padding: 6px 14px;
+  border: 1px solid rgb(151 180 222 / 28%);
+  color: #dbe7fa;
+  background: #0b121f;
+  cursor: pointer;
+}
+
+.provenance-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #83dfb6;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.67rem;
+  line-height: 1.55;
+}
+
+.provenance-status[data-state="invalid"],
+.provenance-status[data-state="unavailable"],
+.provenance-status[data-state="incompatible"] {
+  color: #ff9d9d;
+}
+
+.provenance-status[data-state="empty"] {
+  color: #e7d28a;
+}
+
+.provenance-results {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 10px 12px 10px 28px;
+  border: 1px solid rgb(133 165 212 / 22%);
+  background: #0b121f;
+  color: #dbe7fa;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 .court-console {

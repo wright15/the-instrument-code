@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "harmonic-orrery.field-derivation-validation.v1",
+  "verdict": "PASS",
+  "bundleId": "FIELD_DERIVATION_OBS014_015_016_v1",
+  "bundleFingerprint": "39716f5e914a77e12e3c0738cedeae4ee82d22a7d9f47d151144c816d8ec505c",
+  "checksPassed": 7,
+  "checksFailed": 0,
+  "suiteStatus": [
+    {
+      "suite": "strict-schema",
+      "status": "ran"
+    },
+    {
+      "suite": "self-fingerprint",
+      "status": "ran"
+    },
+    {
+      "suite": "freshness (byte-identical rebuild)",
+      "status": "ran"
+    },
+    {
+      "suite": "observations-complete",
+      "status": "ran"
+    },
+    {
+      "suite": "verdict-authority-discipline",
+      "status": "ran"
+    },
+    {
+      "suite": "receipts-bound",
+      "status": "ran"
+    },
+    {
+      "suite": "deterministic-serialization",
+      "status": "ran"
+    }
+  ],
+  "checks": [
+    {
+      "checkId": "schema",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "checkId": "fingerprint",
+      "status": "PASS",
+      "diagnostic": "39716f5e914a77e12e3c0738cedeae4ee82d22a7d9f47d151144c816d8ec505c"
+    },
+    {
+      "checkId": "freshness",
+      "status": "PASS",
+      "diagnostic": "byte-identical rebuild"
+    },
+    {
+      "checkId": "observations-complete",
+      "status": "PASS",
+      "diagnostic": "OBS-014, OBS-015, and OBS-016 present in order"
+    },
+    {
+      "checkId": "verdict-authority-discipline",
+      "status": "PASS",
+      "diagnostic": "every observation carries a verdict, planning-evidence authority, and source/receipt links"
+    },
+    {
+      "checkId": "receipts-bound",
+      "status": "PASS",
+      "diagnostic": "both QA receipts bound with checksPassed and reportFingerprint"
+    },
+    {
+      "checkId": "deterministic-serialization",
+      "status": "PASS",
+      "diagnostic": "serialization is stable under round-trip"
+    }
+  ],
+  "reportFingerprint": "5f241d518ca4741a0a95ae333d9b516258df2d9d6b67268aa6b2c2cf739a650c"
+}

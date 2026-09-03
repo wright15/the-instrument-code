@@ -2,11 +2,28 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://seven-governors.local/gov-207/schemas/inspect-context.schema.json",
   "title": "GOV-207 inspect_context Input and Output",
+  "$comment": "v1 (unchanged) + ORR-512 additive bounded-query contract reference. The three allowed named query contracts are rule_explanation, legal_move_context, and provenance_path, bounded by MAX_ROWS 100 / MAX_DEPTH 3 per docs/GOVERNOR_GRAPH_READ_API.md. This addition does not modify the v1 input/output shapes.",
   "oneOf": [
     { "$ref": "#/$defs/input" },
     { "$ref": "#/$defs/output" }
   ],
   "$defs": {
+    "allowedNamedQuery": {
+      "$id": "gov-207.inspect-context.allowed-named-query.v1",
+      "type": "string",
+      "enum": ["rule_explanation", "legal_move_context", "provenance_path"],
+      "description": "The only named query contracts an inspect-context surface may request. Bounded: MAX_ROWS 100, MAX_DEPTH 3. No raw Cypher, no provider selection, no write operations."
+    },
+    "namedQueryBounds": {
+      "$id": "gov-207.inspect-context.named-query-bounds.v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maxRows", "maxDepth"],
+      "properties": {
+        "maxRows": { "const": 100 },
+        "maxDepth": { "const": 3 }
+      }
+    },
     "input": {
       "$id": "gov-207.inspect-context.input.v1",
       "type": "object",

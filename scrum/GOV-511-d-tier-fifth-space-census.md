@@ -3,6 +3,12 @@
 **Status:** Done · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-510](EPIC-510-full-field-derivation.md) · **Sprint:** Sprint 2
 **Depends on:** GOV-501 · **Blocks:** GOV-512, ORR-522, ORR-524
 
+**Receipt:** `qa/fifth-space-census-validation.json` 24/24. Gate-time candidate
+fingerprint `570679df…` (decision input); artifact refreshed post-entry to
+`556d3f65…`, verdict `confirmed` unchanged. 462 records `records[]` ungated by
+verdict (ORR-522 consumes regardless). Consumed by GOV-512 at
+`provenance/DECISION_LEDGER.md:35`.
+
 ## Story
 
 As a research maintainer, I want a schema-closed fifth-space census over all 462

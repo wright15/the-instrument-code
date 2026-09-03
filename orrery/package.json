@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run catalog:check && npm run bundle:check && tsc --noEmit && vite build",
-    "check": "npm run catalog:check && npm run bundle:check && tsc --noEmit",
+    "build": "npm run catalog:check && npm run bundle:check && npm run field-derivation:check && npm run photonic:check && tsc --noEmit && vite build",
+    "check": "npm run catalog:check && npm run bundle:check && npm run field-derivation:check && npm run photonic:check && tsc --noEmit",
     "catalog:check": "node ../scripts/build-orrery-legal-move-catalog.mjs --check && node scripts/validate-orrery-legal-move-catalog.mjs",
     "bundle:check": "node ../scripts/build-orrery-evidence-bundle.mjs --check && node scripts/validate-orrery-evidence-bundle.mjs",
+    "field-derivation:check": "node ../scripts/build-field-derivation-bundle.mjs --check && node scripts/validate-field-derivation-bundle.mjs",
+    "photonic:check": "node ../scripts/build-photonic-overlay.mjs --check && node scripts/validate-photonic-overlay.mjs",
     "test": "vitest run",
     "audio:check": "node ../scripts/generate-orrery-audio-loops.mjs --check",
     "browser:test": "bash ../scripts/test-harmonic-orrery-browser.sh"

@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "harmonic-orrery.photonic-overlay-validation.v1",
+  "verdict": "PASS",
+  "bundleId": "PHOTONIC_OVERLAY_CH_TIERED_v1",
+  "bundleFingerprint": "1b8680a1c88320f52128fb41b48106f085bff42b6ea1895a2d65ea9bb1602bff",
+  "checksPassed": 9,
+  "checksFailed": 0,
+  "suiteStatus": [
+    {
+      "suite": "strict-schema",
+      "status": "ran"
+    },
+    {
+      "suite": "self-fingerprint",
+      "status": "ran"
+    },
+    {
+      "suite": "freshness (byte-identical rebuild)",
+      "status": "ran"
+    },
+    {
+      "suite": "records-28 / anchors-14",
+      "status": "ran"
+    },
+    {
+      "suite": "channel-discipline-variant-a",
+      "status": "ran"
+    },
+    {
+      "suite": "channel-discipline-variant-b",
+      "status": "ran"
+    },
+    {
+      "suite": "zero-mutation",
+      "status": "ran"
+    },
+    {
+      "suite": "deterministic-serialization",
+      "status": "ran"
+    }
+  ],
+  "checks": [
+    {
+      "checkId": "schema",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "checkId": "fingerprint",
+      "status": "PASS",
+      "diagnostic": "1b8680a1c88320f52128fb41b48106f085bff42b6ea1895a2d65ea9bb1602bff"
+    },
+    {
+      "checkId": "freshness",
+      "status": "PASS",
+      "diagnostic": "byte-identical rebuild"
+    },
+    {
+      "checkId": "records-28",
+      "status": "PASS",
+      "diagnostic": "28 records, 14 sum_mixing and 14 geometric_mean"
+    },
+    {
+      "checkId": "anchors-14",
+      "status": "PASS",
+      "diagnostic": "14 unique A1/A2 anchors across both variants"
+    },
+    {
+      "checkId": "channel-discipline-variant-a",
+      "status": "PASS",
+      "diagnostic": "Variant A modulates luminance/grain/pulse only; hue null; photonicCompression null; beyond-visible"
+    },
+    {
+      "checkId": "channel-discipline-variant-b",
+      "status": "PASS",
+      "diagnostic": "Variant B may modulate hue (in-hull); photonicCompression numeric"
+    },
+    {
+      "checkId": "zero-mutation",
+      "status": "PASS",
+      "diagnostic": "overlay declares no mutation, legal-move, office-assignment, or admission capability"
+    },
+    {
+      "checkId": "deterministic-serialization",
+      "status": "PASS",
+      "diagnostic": "serialization is stable under round-trip"
+    }
+  ],
+  "reportFingerprint": "0530b295fc0d18e9b8fae7c79cdc157c8a27b4e2ce1d326bbe135613f9021244"
+}

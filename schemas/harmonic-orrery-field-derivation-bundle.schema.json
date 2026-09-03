@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "harmonic-orrery.field-derivation.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "bundleId", "authorityBoundary", "authorityNote", "sources", "observations", "bundleFingerprint"],
+  "properties": {
+    "schemaVersion": { "const": "harmonic-orrery.field-derivation.v1" },
+    "bundleId": { "const": "FIELD_DERIVATION_OBS014_015_016_v1" },
+    "authorityBoundary": { "const": "planning_evidence" },
+    "authorityNote": { "type": "string" },
+    "sources": { "type": "array", "minItems": 2, "maxItems": 2 },
+    "observations": { "type": "array", "minItems": 3, "maxItems": 3 },
+    "bundleFingerprint": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+  }
+}

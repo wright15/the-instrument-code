@@ -256,6 +256,76 @@
         </div>
       </section>
 
+      <section class="provenance-console" aria-labelledby="provenance-heading">
+        <div class="provenance-console-copy">
+          <p class="eyebrow">Bounded provenance explanation</p>
+          <h2 id="provenance-heading">Provenance explain surface</h2>
+          <p>
+            Request one of three bounded, read-only named queries. No raw Cypher, no
+            provider selection, and no write operation is ever submitted.
+          </p>
+        </div>
+        <div class="provenance-controls" aria-label="Provenance query controls">
+          <label for="provenance-query">
+            <span>Query contract</span>
+            <select id="provenance-query">
+              <option value="provenance_path">provenance_path</option>
+              <option value="rule_explanation">rule_explanation</option>
+              <option value="legal_move_context">legal_move_context</option>
+            </select>
+          </label>
+          <label for="provenance-identifier">
+            <span>Logical identifier</span>
+            <input id="provenance-identifier" type="text" autocomplete="off" spellcheck="false" />
+          </label>
+          <button id="provenance-run" type="button">Explain</button>
+        </div>
+        <p id="provenance-status" class="provenance-status" role="status" aria-live="polite">
+          Enter a logical identifier to explain its provenance through a bounded named query.
+        </p>
+        <ol id="provenance-results" class="provenance-results"></ol>
+      </section>
+
+      <section class="field-derivation-console" aria-labelledby="field-derivation-heading">
+        <div class="field-derivation-copy">
+          <p class="eyebrow">Research-derived field relationships</p>
+          <h2 id="field-derivation-heading">Field derivation surface</h2>
+          <p id="field-derivation-authority-note" class="field-derivation-note">
+            Confirmed research findings remain planning evidence until a separately
+            authorized release decision. None of these records changes office
+            occupancy, legal moves, graph edges, or admission.
+          </p>
+        </div>
+        <div id="field-derivation-list" class="field-derivation-list"></div>
+      </section>
+
+      <section class="photonic-console" aria-labelledby="photonic-heading">
+        <div class="photonic-console-copy">
+          <p class="eyebrow">Candidate evidence overlay</p>
+          <h2 id="photonic-heading">Tiered photonic overlay</h2>
+          <p id="photonic-disclaimer" class="photonic-disclaimer">
+            Tiered photonic candidates are an authored informational sidecar
+            (planning evidence), not canonical office colors. Variant A
+            wavelengths are UV and invisible by construction; they render as
+            luminance, grain, and pulse only.
+          </p>
+        </div>
+        <div class="photonic-controls" aria-label="Photonic overlay controls">
+          <label for="photonic-variant">
+            <span>Overlay variant</span>
+            <select id="photonic-variant">
+              <option value="off" selected>Off</option>
+              <option value="sum_mixing">Variant A — luminance / grain / pulse</option>
+              <option value="geometric_mean">Variant B — hue (in-hull)</option>
+            </select>
+          </label>
+          <p id="photonic-channel-status" class="photonic-channel-status" role="status" aria-live="polite">
+            Overlay off. Candidate evidence is never shown by default.
+          </p>
+        </div>
+        <div id="photonic-list" class="photonic-list"></div>
+      </section>
+
       <section class="audio-console" aria-labelledby="audio-heading">
         <div class="audio-console-copy">
           <p class="eyebrow">Authored audio rendering</p>

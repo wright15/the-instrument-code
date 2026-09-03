@@ -26,6 +26,30 @@ import {
   type CourtPosition,
 } from "./court";
 import { composeSceneParameters, type SceneQuality } from "./scene-composer";
+import {
+  OVERLAY_DISCLAIMER,
+  PHOTONIC_OVERLAY_BUNDLE,
+  VARIANT_A,
+  VARIANT_B,
+  type PhotonicOverlayRecord,
+} from "./photonic-overlay";
+import {
+  FIELD_DERIVATION_BUNDLE,
+  observationViews,
+  type ObservationView,
+} from "./field-derivation";
+import {
+  ProvenanceCompatibilityError,
+  ProvenanceExplainError,
+  fetchNamedQuery,
+  isProvenanceQueryId,
+  provenancePathSteps,
+  type LegalMoveContext,
+  type NamedQueryResponse,
+  type ProvenancePathRow,
+  type ProvenanceQueryId,
+  type RuleExplanation,
+} from "./provenance-explain";
 import { createOrreryScene, type OrreryScene } from "./scene";
 import {
   applySessionLegalMove,
@@ -149,6 +173,17 @@ const courtPitchClasses = requiredElement<HTMLElement>("#court-pitch-classes");
 const courtRatio = requiredElement<HTMLElement>("#court-ratio");
 const courtPoles = requiredElement<HTMLElement>("#court-poles");
 const courtMercury = requiredElement<HTMLElement>("#court-mercury");
+const provenanceQuery = requiredElement<HTMLSelectElement>("#provenance-query");
+const provenanceIdentifier = requiredElement<HTMLInputElement>("#provenance-identifier");
+const provenanceRun = requiredElement<HTMLButtonElement>("#provenance-run");
+const provenanceStatus = requiredElement<HTMLElement>("#provenance-status");
+const provenanceResults = requiredElement<HTMLOListElement>("#provenance-results");
+const fieldDerivationAuthorityNote = requiredElement<HTMLElement>("#field-derivation-authority-note");
+const fieldDerivationList = requiredElement<HTMLElement>("#field-derivation-list");
+const photonicDisclaimer = requiredElement<HTMLElement>("#photonic-disclaimer");
+const photonicVariant = requiredElement<HTMLSelectElement>("#photonic-variant");
+const photonicChannelStatus = requiredElement<HTMLElement>("#photonic-channel-status");
+const photonicList = requiredElement<HTMLElement>("#photonic-list");
 
 let scene: OrreryScene | undefined;
 let session: OrrerySession | undefined;
@@ -854,6 +889,199 @@ function renderMoveConsole(): void {
   }
 }
 
+function provenanceParameterName(queryId: ProvenanceQueryId): string {
+  if (queryId === "rule_explanation") return "ruleId";
+  if (queryId === "legal_move_context") return "snapshotId";
+  return "logicalId";
+}
+
+function renderProvenanceItems(items: string[]): void {
+  provenanceResults.replaceChildren(
+    ...items.map((text) => {
+      const item = document.createElement("li");
+      item.textContent = text;
+      return item;
+    }),
+  );
+}
+
+function formatProvenanceResponse(queryId: ProvenanceQueryId, response: NamedQueryResponse): string[] {
+  if (queryId === "provenance_path") {
+    const data = response.data as { mode: "tabular"; rows: ProvenancePathRow[] };
+    const steps = provenancePathSteps(data.rows);
+    return steps.map(
+      (step) =>
+        `${step.sourceIdentity} → ${step.targetIdentity} / ${step.relationship} / depth ${step.depth} / ${step.authorityStatus}`,
+    );
+  }
+  if (queryId === "rule_explanation") {
+    const data = response.data as RuleExplanation;
+    const value = data.value;
+    if (!value) return [];
+    return [
+      `Rule ${value.ruleId} / scope ${value.ruleScope}`,
+      `Admission status: ${value.admissionStatus} / active: ${String(value.active)}`,
+      `Output aspect: ${value.outputAspectLogicalId ?? "none"}`,
+      `Provenance: ${value.provenanceLogicalIds.join(", ") || "none"}`,
+    ];
+  }
+  const data = response.data as LegalMoveContext;
+  return data.rows.map(
+    (row) =>
+      `${row.operationId} / ${row.executionAuthority} / contextualOnly ${String(row.contextualOnly)} / ${row.moveSha256.slice(0, 12)}…`,
+  );
+}
+
+async function runProvenanceQuery(): Promise<void> {
+  const queryId = provenanceQuery.value;
+  if (!isProvenanceQueryId(queryId)) {
+    renderProvenanceItems(["Only the three bounded named-query contracts are permitted."]);
+    provenanceStatus.dataset.state = "invalid";
+    provenanceStatus.textContent = `Unsupported query contract: ${queryId}`;
+    return;
+  }
+  const identifier = provenanceIdentifier.value.trim();
+  const parameters: Record<string, unknown> = { [provenanceParameterName(queryId)]: identifier };
+  try {
+    const response = await fetchNamedQuery(queryId, parameters);
+    const items = formatProvenanceResponse(queryId, response);
+    if (items.length === 0) {
+      renderProvenanceItems(["No provenance path is available for this logical identifier."]);
+      provenanceStatus.dataset.state = "empty";
+      provenanceStatus.textContent = "No evidence path is available; nothing is inferred.";
+      return;
+    }
+    renderProvenanceItems(items);
+    provenanceStatus.dataset.state = "success";
+    provenanceStatus.textContent =
+      `Ordered evidence path / ${response.queryId} / projection ${response.projectionFingerprint.slice(0, 12)}…`;
+  } catch (error) {
+    renderProvenanceItems([]);
+    const detail = error instanceof Error ? error.message : "Unknown provenance query error";
+    provenanceStatus.dataset.state =
+      error instanceof ProvenanceCompatibilityError
+        ? "incompatible"
+        : error instanceof ProvenanceExplainError
+          ? "invalid"
+          : "unavailable";
+    provenanceStatus.textContent = `Provenance query failed: ${detail}`;
+  }
+}
+
+function factLabel(key: string): string {
+  return key
+    .replace(/([A-Z])/g, " $1")
+    .replace(/^./, (character) => character.toUpperCase());
+}
+
+function renderObservationFacts(container: HTMLElement, observation: ObservationView): void {
+  const facts = document.createElement("dl");
+  facts.className = "field-derivation-facts";
+  for (const [key, value] of Object.entries(observation.facts)) {
+    const row = document.createElement("div");
+    const term = document.createElement("dt");
+    term.textContent = factLabel(key);
+    const description = document.createElement("dd");
+    description.textContent = JSON.stringify(value).replace(/"/g, "");
+    row.append(term, description);
+    facts.append(row);
+  }
+  container.append(facts);
+}
+
+function renderFieldDerivation(): void {
+  fieldDerivationAuthorityNote.textContent = FIELD_DERIVATION_BUNDLE.authorityNote;
+  fieldDerivationList.replaceChildren(
+    ...observationViews().map((observation) => {
+      const card = document.createElement("article");
+      card.className = "field-derivation-card";
+      card.dataset.observation = observation.id;
+      card.dataset.verdict = observation.verdict;
+
+      const heading = document.createElement("div");
+      heading.className = "field-derivation-card-heading";
+      const title = document.createElement("h3");
+      title.textContent = `${observation.id} / ${observation.title}`;
+      const badge = document.createElement("span");
+      badge.className = "verdict-badge";
+      badge.dataset.verdict = observation.verdict;
+      badge.textContent = observation.verdictLabel;
+      const authority = document.createElement("span");
+      authority.className = "authority-label";
+      authority.textContent = observation.authorityLabel;
+      heading.append(title, badge, authority);
+
+      const provenance = document.createElement("p");
+      provenance.className = "field-derivation-provenance";
+      provenance.textContent =
+        `Source: ${observation.sourceArtifact} / Receipt: ${observation.receiptArtifact} (${observation.receiptChecks} checks)`;
+
+      card.append(heading, provenance);
+      renderObservationFacts(card, observation);
+      return card;
+    }),
+  );
+}
+
+function photonicRecordEntry(record: PhotonicOverlayRecord): HTMLElement {
+  const entry = document.createElement("article");
+  entry.className = "photonic-entry";
+  entry.dataset.stateId = String(record.stateId);
+  entry.dataset.variant = record.variant;
+
+  const heading = document.createElement("div");
+  heading.className = "photonic-entry-heading";
+  const title = document.createElement("h3");
+  title.textContent = `${record.name} / ${record.office} / ${record.tier}`;
+  const band = document.createElement("span");
+  band.className = "photonic-band";
+  band.textContent = `${record.variant} / ${record.forte}`;
+  heading.append(title, band);
+
+  const measurements = document.createElement("dl");
+  measurements.className = "photonic-measurements";
+  const rows: Array<[string, string]> = [
+    ["Derived wavelength", `${record.derivedWavelengthNm.toFixed(4)} nm`],
+    ["Spectral band", `${record.bandMetadata.numericBandNm[0].toFixed(2)} – ${record.bandMetadata.numericBandNm[1].toFixed(2)} nm`],
+    ["Photonic compression", record.photonicCompression === null ? "null (variant A)" : record.photonicCompression.toFixed(6)],
+    ["Channels", record.channels.join(" / ")],
+    ["Hue", record.hue === null ? "none (forbidden for Variant A)" : record.hue.toFixed(2)],
+    ["Rendering hint", record.bandMetadata.renderingHint],
+  ];
+  for (const [term, description] of rows) {
+    const row = document.createElement("div");
+    const dt = document.createElement("dt");
+    dt.textContent = term;
+    const dd = document.createElement("dd");
+    dd.textContent = description;
+    row.append(dt, dd);
+    measurements.append(row);
+  }
+
+  entry.append(heading, measurements);
+  return entry;
+}
+
+function renderPhotonicOverlay(): void {
+  const selected = photonicVariant.value;
+  if (selected !== VARIANT_A && selected !== VARIANT_B) {
+    photonicList.replaceChildren();
+    photonicChannelStatus.dataset.state = "off";
+    photonicChannelStatus.textContent = "Overlay off. Candidate evidence is never shown by default.";
+    return;
+  }
+  const records = PHOTONIC_OVERLAY_BUNDLE.records
+    .filter((record) => record.variant === selected)
+    .slice()
+    .sort((left, right) => left.tier.localeCompare(right.tier) || left.stateId - right.stateId);
+  photonicList.replaceChildren(...records.map(photonicRecordEntry));
+  const variantA = selected === VARIANT_A;
+  photonicChannelStatus.dataset.state = variantA ? "variant-a" : "variant-b";
+  photonicChannelStatus.textContent = variantA
+    ? "Variant A active: luminance, grain, and pulse only — hue is forbidden and UV wavelengths stay invisible."
+    : "Variant B active: in-hull wavelengths may modulate hue. Candidate evidence remains planning evidence.";
+}
+
 function initializeCourtControls(): void {
   courtControls.replaceChildren(
     ...COURT_POSITIONS.map((position) => {
@@ -1231,6 +1459,9 @@ async function start(): Promise<void> {
   renderSessionHud();
   renderMoveConsole();
   renderCourtSurface();
+  renderFieldDerivation();
+  photonicDisclaimer.textContent = OVERLAY_DISCLAIMER;
+  renderPhotonicOverlay();
   showOnboardingIfNeeded();
 
   if (supportsWebGl()) {
@@ -1412,6 +1643,8 @@ harmonyReseed.addEventListener("click", () => {
 
 initializeCourtControls();
 audioEngine.subscribe(renderAudioState);
+provenanceRun.addEventListener("click", () => void runProvenanceQuery());
+photonicVariant.addEventListener("change", renderPhotonicOverlay);
 sceneQualityMode.addEventListener("change", () => {
   renderSceneQuality();
 });

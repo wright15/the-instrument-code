@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "harmonic-orrery.photonic-overlay.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "bundleId", "candidateId", "candidateFingerprint", "source", "authority", "interpretationPolicy", "bands", "records", "bundleFingerprint"],
+  "properties": {
+    "schemaVersion": { "const": "harmonic-orrery.photonic-overlay.v1" },
+    "bundleId": { "const": "PHOTONIC_OVERLAY_CH_TIERED_v1" },
+    "candidateId": { "const": "CH_TIERED_v1" },
+    "candidateFingerprint": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "source": { "type": "object", "additionalProperties": false, "required": ["artifact", "sha256"], "properties": { "artifact": { "type": "string" }, "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" } } },
+    "authority": { "type": "string" },
+    "interpretationPolicy": { "type": "object", "additionalProperties": true },
+    "bands": { "type": "object", "additionalProperties": true },
+    "records": { "type": "array", "minItems": 28, "maxItems": 28 },
+    "bundleFingerprint": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+  }
+}

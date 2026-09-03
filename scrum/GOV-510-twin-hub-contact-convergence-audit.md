@@ -3,6 +3,11 @@
 **Status:** Done · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-510](EPIC-510-full-field-derivation.md) · **Sprint:** Sprint 2
 **Depends on:** GOV-501 · **Blocks:** GOV-512, ORR-524
 
+**Receipt:** `qa/twin-hub-convergence-validation.json` 30/30. Gate-time candidate
+fingerprint `38dc4131…` (decision input); artifact refreshed post-entry to
+`3f3fab27…`, verdict `confirmed` unchanged. Consumed by GOV-512 at
+`provenance/DECISION_LEDGER.md:35`.
+
 ## Story
 
 As a research maintainer, I want the T1 twin-hub convergence claim defined and

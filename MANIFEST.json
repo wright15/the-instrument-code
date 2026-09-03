@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 959,
-  "totalBytes": 71351601,
+  "fileCount": 975,
+  "totalBytes": 71484751,
   "files": [
     {
       "path": ".env.example",
@@ -1002,8 +1002,8 @@
     },
     {
       "path": "orrery/index.html",
-      "bytes": 22563,
-      "sha256": "924d9eb8e582469fbb070768b0f4e8c699ded1465ede282bfc21855162877329"
+      "bytes": 26159,
+      "sha256": "8867cd04a181e60e10fdea751d0a3544cc84e0eedb842e53d93b69e202516e18"
     },
     {
       "path": "orrery/package-lock.json",
@@ -1012,8 +1012,8 @@
     },
     {
       "path": "orrery/package.json",
-      "bytes": 984,
-      "sha256": "2675bd28a8405da5bcca31471af22729fc6192e4f5eec5ca458751a6d33ef6fd"
+      "bytes": 1370,
+      "sha256": "c3df408859045bc283bcdedfb2830c2577d19d0c08fb10f076534662e0c44954"
     },
     {
       "path": "orrery/public/AUDIO_ASSETS.md",
@@ -1041,6 +1041,11 @@
       "sha256": "14683dd4b6dc375258dc1a21d1e606a11c3cc3b6b2ec394c5c6732ef4f3cf07d"
     },
     {
+      "path": "orrery/scripts/validate-field-derivation-bundle.mjs",
+      "bytes": 5774,
+      "sha256": "1aa4a6dc301371db6f52f55e22500bb73e55132a38e05834ccf7faf721603ac6"
+    },
+    {
       "path": "orrery/scripts/validate-orrery-evidence-bundle.mjs",
       "bytes": 9126,
       "sha256": "88500cdb48af6aac43fbcfac4fc6e5d589caa326f32a3dd5cac3f5a149bee674"
@@ -1049,6 +1054,11 @@
       "path": "orrery/scripts/validate-orrery-legal-move-catalog.mjs",
       "bytes": 3218,
       "sha256": "09518305c45251003d0f770a606aecfbe71facd27f052c958324e070f2b4cdb4"
+    },
+    {
+      "path": "orrery/scripts/validate-photonic-overlay.mjs",
+      "bytes": 7117,
+      "sha256": "9a033507da83aa48d62fcbee47848096e4be0e2b1ebe6e9220c40f4ed7c91af0"
     },
     {
       "path": "orrery/src/api.test.ts",
@@ -1091,14 +1101,34 @@
       "sha256": "3fcda3d530c13afee919a2b0b4a05ca3764ba37f967c0f410fb329165cdec4b5"
     },
     {
+      "path": "orrery/src/field-derivation.test.ts",
+      "bytes": 4673,
+      "sha256": "6cbab1c2f453d0503becb14f030c5a96dc592a2eadf2a01b46e9dd5176edfca0"
+    },
+    {
+      "path": "orrery/src/field-derivation.ts",
+      "bytes": 7857,
+      "sha256": "56ffc7b36d8ff0369b5ee00e0a3f68af3e03b567011f4a5025a5c178f0eb8168"
+    },
+    {
       "path": "orrery/src/generated/evidence-bundle.v1.json",
       "bytes": 16384,
       "sha256": "1d0bfb7a77743e8006230993b21c52d9918ccc62c9b7dc0172130e03ccf2de6b"
     },
     {
+      "path": "orrery/src/generated/field-derivation-bundle.v1.json",
+      "bytes": 2783,
+      "sha256": "764b3380f15b2ef384c90594e584f4b8a6bc6b7b730f7535427fbd0a26e9cd21"
+    },
+    {
       "path": "orrery/src/generated/legal-moves.v2.json",
       "bytes": 44269,
       "sha256": "c017c3c66e10b803eccb82342d030575c8069434063657fb89b5d56169db4d4b"
+    },
+    {
+      "path": "orrery/src/generated/photonic-overlay.v1.json",
+      "bytes": 17403,
+      "sha256": "35e8958d6e6d2455ceb6442ef7dc50d07de80416bbed7bf78260c670cc10901e"
     },
     {
       "path": "orrery/src/harmony.test.ts",
@@ -1117,8 +1147,8 @@
     },
     {
       "path": "orrery/src/main.ts",
-      "bytes": 57114,
-      "sha256": "3c91b1a61ce65e3dd7b545c6e9ff3d60fe89f69563e9245a593523d218b4e8c4"
+      "bytes": 66950,
+      "sha256": "74fef09143cb2500ad0c5377de1e65bb046aeaecd6c84346f092a48a80eed9bc"
     },
     {
       "path": "orrery/src/moves.math.test.ts",
@@ -1144,6 +1174,26 @@
       "path": "orrery/src/objectives.ts",
       "bytes": 5772,
       "sha256": "36899808c0d24906c2f33e8296bd8c6edf9f5223016381b11b5555d11d2c7f93"
+    },
+    {
+      "path": "orrery/src/photonic-overlay.test.ts",
+      "bytes": 3753,
+      "sha256": "8e4af7966088f2c90f97bceb5a830ad9f78ffb5d1a1e114827cc0bdb366ba35f"
+    },
+    {
+      "path": "orrery/src/photonic-overlay.ts",
+      "bytes": 8921,
+      "sha256": "6f15e6d41b3c9f2a8c385d8b9c6fe185afbc95ecf3bc5834fbe347dc2927f48d"
+    },
+    {
+      "path": "orrery/src/provenance-explain.test.ts",
+      "bytes": 9092,
+      "sha256": "3c6b821193d782dfb9e7928129ede135f4fb1ad0d050c468f6a93ba001067d0d"
+    },
+    {
+      "path": "orrery/src/provenance-explain.ts",
+      "bytes": 16974,
+      "sha256": "987cf711da84b3b3fc04ac7f08abe9fd8ee7fb56c86ffce11baabc458f03cd79"
     },
     {
       "path": "orrery/src/scene-composer.test.ts",
@@ -1172,8 +1222,8 @@
     },
     {
       "path": "orrery/src/style.css",
-      "bytes": 33025,
-      "sha256": "c915bb8559963221d28aaec54881010d97cb5038e6d7285eefbde4ef9f2a6aec"
+      "bytes": 39561,
+      "sha256": "115714ae81e4c21c361b9577aa931a277707d0db661564f1fe7a72085d1d1e55"
     },
     {
       "path": "orrery/src/types.ts",
@@ -1197,8 +1247,8 @@
     },
     {
       "path": "orrery/vite.config.ts",
-      "bytes": 398,
-      "sha256": "d00812b72d51e0e37a0831243b816ec2ae507f15b57783a009ef7f638f6b5cd8"
+      "bytes": 507,
+      "sha256": "fc72be770c4e9c7675b506dbf8cf4fa20aeb622e9467aaca59db9a18efb9bdd3"
     },
     {
       "path": "package-lock.json",
@@ -1207,8 +1257,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 11071,
-      "sha256": "f779ea057d3b632566cdc7c8f09236192414c16d1c66c9e7a9d9c0ab29a3cada"
+      "bytes": 11518,
+      "sha256": "e1853dcf032266fd69f76f2f443c680b67f32599f6017855ff49629fa6593252"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
@@ -1374,6 +1424,16 @@
       "path": "qa/orrery-evidence-bundle-validation.json",
       "bytes": 3350,
       "sha256": "9f0e86e9956a299b3316bcc653be434371a6d7bfe3406258d1767b943cbd9a7e"
+    },
+    {
+      "path": "qa/orrery-field-derivation-bundle-validation.json",
+      "bytes": 1953,
+      "sha256": "e29964878d871aa27f7029473b68f444816d02e9b4fcdc813bbd9b28c8b1acfd"
+    },
+    {
+      "path": "qa/orrery-photonic-overlay-validation.json",
+      "bytes": 2359,
+      "sha256": "1d63124fc4fe07294db855d95ae7d18238af4d0368908514cead9b2de05241a6"
     },
     {
       "path": "qa/pentatonic-7-35-parent-audit-validation.json",
@@ -1751,6 +1811,11 @@
       "sha256": "9f27cf50f4ebda928f9ee364b6cef97e91d27578dc96f3b9c11ed4e2cb823505"
     },
     {
+      "path": "schemas/harmonic-orrery-field-derivation-bundle.schema.json",
+      "bytes": 773,
+      "sha256": "2d71d4c9e4e5fa37bc9ff6ad22ec006cbc5a1be5853b410bf369afe0ebfd0662"
+    },
+    {
       "path": "schemas/harmonic-orrery-legal-moves.schema.json",
       "bytes": 5793,
       "sha256": "90d23853d85ec5fe7c28218da35c1bf4baf4c59e179c6b927f0c88770083cd0e"
@@ -1759,6 +1824,11 @@
       "path": "schemas/harmonic-orrery-nodes.schema.json",
       "bytes": 5265,
       "sha256": "f778f5f74b1b540091faac6e6fe66a932f0aa963ce932e0bea24c62167d73225"
+    },
+    {
+      "path": "schemas/harmonic-orrery-photonic-overlay.schema.json",
+      "bytes": 1165,
+      "sha256": "86aadd304c3559ffbc92390eb39f9773b26a9019495432463a0eae2645c03358"
     },
     {
       "path": "schemas/mechanics-thermodynamics-registry-v1.0.0.schema.json",
@@ -1876,6 +1946,11 @@
       "sha256": "34199d91513b19f647f7d9f8dee353388b924b02726558ec1ce457ef6b33e158"
     },
     {
+      "path": "scripts/build-field-derivation-bundle.mjs",
+      "bytes": 10380,
+      "sha256": "249501849faca5fd2bdfa0dad251c2833d22843e202a0b73d56b1a87c1871d5c"
+    },
+    {
       "path": "scripts/build-fivefold-capability-teleology.py",
       "bytes": 37361,
       "sha256": "4f462cad01f43b9c0c8b7c77c2aa236ff9d64ab8d5066eb0cd95c278e61cfdca"
@@ -1909,6 +1984,11 @@
       "path": "scripts/build-pentatonic-binding-audit-closure.mjs",
       "bytes": 10900,
       "sha256": "06a0ec841cdad7c554ec1ae0ae9b9e37c3c008b16478e79517718e8d02061173"
+    },
+    {
+      "path": "scripts/build-photonic-overlay.mjs",
+      "bytes": 8412,
+      "sha256": "5edfe953e83d5e69392c83ce30f283bd460ef1a49110ac053a3b7599591c4692"
     },
     {
       "path": "scripts/generate-availability-housing.py",
@@ -2357,18 +2437,18 @@
     },
     {
       "path": "scrum/GOV-510-twin-hub-contact-convergence-audit.md",
-      "bytes": 3975,
-      "sha256": "e8ca5664b62b17609d3de7ca6d74c4a8436ae093b83b2cc4f2b638447888ad83"
+      "bytes": 4240,
+      "sha256": "c3860ab81debbaf3e16ceacadaae5d09841fa05c4d9a3a6cad6881998a93c0a0"
     },
     {
       "path": "scrum/GOV-511-d-tier-fifth-space-census.md",
-      "bytes": 4689,
-      "sha256": "7703768573274b29b1216d8d9640ca6125af48a4aa0094b27b507a9371b7f165"
+      "bytes": 5026,
+      "sha256": "03eb720b104520a7bd71737e013c1f465491efaf5c097c447a136507f483f696"
     },
     {
       "path": "scrum/GOV-512-research-gate-3.md",
-      "bytes": 2880,
-      "sha256": "8235076cbe4979821644a5b674a2a4c8a8be5c632136008530cb8e42d3b1ad03"
+      "bytes": 4120,
+      "sha256": "0483b0ee2aee00956951d605b4dc35c82abca016276bac505dda1c2315ad215e"
     },
     {
       "path": "scrum/NET-101-office-lane-layout.md",
@@ -4117,8 +4197,8 @@
     },
     {
       "path": "skills/governor/schemas/inspect-context.schema.json",
-      "bytes": 2819,
-      "sha256": "aba7608f7ad8587428b7b4e49f8e946082cd93f19f58e8526787db4029a1aed8"
+      "bytes": 3828,
+      "sha256": "d694dd2080152b6cb6e73770c1b91dff021930ff82e11bed29a9e06ba6405011"
     },
     {
       "path": "skills/governor/schemas/install-manifest.schema.json",
