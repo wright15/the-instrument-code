@@ -1,6 +1,6 @@
 # EPIC-512 - Taxonomy Explorer
 
-**Status:** Backlog · **Priority:** High · **Owner:** Harmonic Orrery application workstream
+**Status:** Active · **Priority:** High · **Owner:** Harmonic Orrery application workstream · **Sprint:** Sprint 4
 **Epic ID:** EPIC-512 · **Release:** `1.9.0-dev`
 **Stories:** [GOV-512](GOV-512-research-gate-3.md), [ORR-521](ORR-521-taxonomy-explorer-read-model.md), [ORR-522](ORR-522-d-tier-taxonomy-dataset.md), [ORR-523](ORR-523-taxonomy-derivation-explanations.md), and [ORR-524](ORR-524-taxonomy-explorer-release-closure.md)
 

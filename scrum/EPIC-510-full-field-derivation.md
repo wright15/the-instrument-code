@@ -1,6 +1,6 @@
 # EPIC-510 - Full-Field Derivation
 
-**Status:** Backlog · **Priority:** High · **Owner:** Research and provenance governance
+**Status:** Done · **Priority:** High · **Owner:** Research and provenance governance
 **Epic ID:** EPIC-510 · **Release:** `1.9.0-dev`
 **Stories:** [GOV-510](GOV-510-twin-hub-contact-convergence-audit.md) and [GOV-511](GOV-511-d-tier-fifth-space-census.md)
 

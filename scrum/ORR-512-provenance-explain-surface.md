@@ -1,6 +1,6 @@
 # ORR-512 - Provenance explain surface
 
-**Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-511](EPIC-511-orrery-evidence-surfaces.md) · **Sprint:** Sprint 3
+**Status:** Done · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-511](EPIC-511-orrery-evidence-surfaces.md) · **Sprint:** Sprint 3
 **Depends on:** ORR-511 · **Blocks:** —
 
 ## Story

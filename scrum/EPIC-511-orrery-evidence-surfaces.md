@@ -1,6 +1,6 @@
 # EPIC-511 - Orrery Evidence Surfaces
 
-**Status:** Backlog · **Priority:** High · **Owner:** Harmonic Orrery application workstream
+**Status:** Done · **Priority:** High · **Owner:** Harmonic Orrery application workstream
 **Epic ID:** EPIC-511 · **Release:** `1.9.0-dev`
 **Stories:** [ORR-511](ORR-511-evidence-inspector-bundle.md), [ORR-512](ORR-512-provenance-explain-surface.md), [ORR-513](ORR-513-field-derivation-surface.md), and [ORR-514](ORR-514-tiered-photonic-overlay.md)
 
