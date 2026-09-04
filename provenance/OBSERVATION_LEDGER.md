@@ -5,6 +5,19 @@ ledger and constructionEdges. Records are `planning_evidence` — machine-checke
 and falsifiable, but not admitted as topology, runtime, or admission authority.
 Each entry must be broken by a single counterexample in the canonical data.
 
+## Sprint 3 → EPIC-520 boundary — 2026-09-04
+
+**Status:** navigation-only project epistemic-state summary; no authority implied.
+
+Research mode transition: Sprints 1–2 derived structure; EPIC-520 opens
+hypothesis discrimination (three hypotheses, zero checks run). Evidence surfaces
+completed in Sprint 3 support this phase.
+
+**Guard:** This entry reports current status, not hypothesis likelihood. It is
+not topology, admission, operator, or runtime authority.
+
+---
+
 ## OBS-004 — Court-core identity (A1 interior skeleton)
 
 **Status:** derived `planning_evidence` 2026-08-26
