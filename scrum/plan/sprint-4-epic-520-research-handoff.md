@@ -1,7 +1,8 @@
 # Sprint 4 EPIC-520 Research Handoff
 
-**Status:** Draft for user review. This is a review handoff, not an execution
-receipt or a research conclusion. **Release:** `1.9.0-dev`
+**Status:** Reviewed; durable standing-rules repository home pending. This is a
+review handoff, not an execution receipt or a research conclusion. **Release:**
+`1.9.0-dev`
 **Policy receipt:** `provenance/DECISION_LEDGER.md`, "Sprint 4 research-track
 shape - 2026-09-05". **Execution plan:** `scrum/plan/sprint-4-intake.md`.
 
@@ -95,25 +96,35 @@ Known environment history is not proof of a current gap: Sprint 3 skipped
 `software-GL` sessions. Re-test or record an explicit current skip reason when
 those suites are named.
 
-## Guard Inventory Review
+## Standing Rules
 
-No canonical source enumerates a stable set titled "the eleven rules." Do not
-claim that an unverified reconstructed list is authoritative. Before approval,
-the reviewer must provide the canonical source for that requested list or accept
-the following source-backed guard inventory instead:
+Canonical list received through the maintainer relay review channel, 2026-09.
+Its repository-durable home is pending; this handoff is not that source of
+authority.
 
-1. Ticket result is not unified-operator evidence.
-2. GOV-513 and GOV-514 execute only within their declared scopes.
-3. GOV-515 is Stage-1 definition-only.
-4. Stage 2 needs a separate maintainer-reviewed successor.
-5. Gate-time and current fingerprints remain separate.
-6. Every named suite records `ran` or `skipped` with reason.
-7. Arithmetic output wins over a planned or inferred result.
-8. A source/spec/output mismatch fails and uses maintainer re-audit.
-9. Declared D signatures cannot enter H2 ring-alone inputs.
-10. Scalar bands cannot classify tier or office, or establish global compression.
-11. No result writes topology, office, admission, runtime, Neo4j, release pins,
-    or `harmonic.C_H` authority.
+1. Arithmetic output wins over planning assumptions; artifacts outrank hand
+   tables, which outrank prose. Every derived cardinality records its source
+   path.
+2. Report tables are derived from `git diff`, never composed.
+3. Out-of-directive changes go to a recommendations list, not applied, even when
+   correct.
+4. Fix the class, not the count: incidents get generalized guards, not patches.
+5. Verdict closes story: `confirmed`, `refuted`, and `partial` all close research
+   stories; no signal forces a positive outcome.
+6. No model prose is a mathematical or admission source; planning documents are
+   evidence of intent, not state.
+7. Fingerprint literals in prose are stale until proven live by build-time
+   derivation; carried fingerprints are hypotheses. GOV-510/511 receipts now
+   have three generations, which must never be collapsed.
+8. Ticket status is not state; receipts are state; sync direction is ledger to
+   scrum with citation.
+9. Sprint exit is a fixed point:
+   `package:manifest -> --check -> validate`, with a full pass that makes no
+   tracked change.
+10. Verification receipts enumerate each suite as `ran` or `skipped` plus a
+    reason; "passed" never silently means "all that could run."
+11. EPIC-520-family specs use registered vocabulary only; unregistered terms
+    fail the language guard (`exists-or-ticketed`, prose-consistency pattern).
 
 ## Correction History
 
@@ -150,8 +161,9 @@ is not substitute evidence.
 4. Ticket closure records the actual suites, source bindings, verdict semantics,
    and limited H1/H2/H3 disposition. Only then may the board status change.
 
-## Review Requests
+## Durable Record Follow-up
 
-- Supply or confirm the canonical source for the requested "eleven rules."
-- Confirm that the three documented corrections above are the intended minimum
-  fabrication-history examples for this handoff.
+- Put the standing-rules list in its repository-durable home when the maintainer
+  relay designates one; retain its review-channel provenance until then.
+- The three documented corrections above are the minimum fabrication-history
+  examples for this handoff, not a claim of a complete incident register.
