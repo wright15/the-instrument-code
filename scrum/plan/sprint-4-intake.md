@@ -38,5 +38,6 @@ claim to reopen or argue during execution.
 ## References
 
 - [EPIC-520-1](../EPIC-520-1-unified-operator-planning.md)
+- `provenance/DECISION_LEDGER.md` - Standing rules recorded
 - `provenance/DECISION_LEDGER.md` - Sprint 4 research-track shape
 - `docs/verification/VERIFICATION_REPORT_GATE_STATUS.md`

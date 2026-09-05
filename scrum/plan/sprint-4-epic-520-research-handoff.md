@@ -1,7 +1,8 @@
 # Sprint 4 EPIC-520 Research Handoff
 
-**Status:** Reviewed; durable standing-rules repository home pending. This is a
-review handoff, not an execution receipt or a research conclusion. **Release:**
+**Status:** Reviewed; standing rules durably recorded in
+`provenance/DECISION_LEDGER.md` "Standing rules recorded - 2026-09-05". This is
+a review handoff, not an execution receipt or a research conclusion. **Release:**
 `1.9.0-dev`
 **Policy receipt:** `provenance/DECISION_LEDGER.md`, "Sprint 4 research-track
 shape - 2026-09-05". **Execution plan:** `scrum/plan/sprint-4-intake.md`.
@@ -99,8 +100,8 @@ those suites are named.
 ## Standing Rules
 
 Canonical list received through the maintainer relay review channel, 2026-09.
-Its repository-durable home is pending; this handoff is not that source of
-authority.
+Durable home: `provenance/DECISION_LEDGER.md` "Standing rules recorded -
+2026-09-05"; this handoff cites it and is not the source of authority.
 
 1. Arithmetic output wins over planning assumptions; artifacts outrank hand
    tables, which outrank prose. Every derived cardinality records its source
@@ -128,15 +129,45 @@ authority.
 
 ## Correction History
 
-These incidents motivate evidence discipline; do not describe the list as a
-complete incident register:
+These five incidents motivate evidence discipline; do not describe the list as a
+complete incident register. Items 1-2 are thread-sourced with no repo receipt;
+items 3-5 are the repo-receipted subset:
 
-1. Review intercepted an EPIC-520 `99.36%` scalar-mass claim before it entered
+1. **Z-twin engine-flip (thread-sourced; no repo receipt).** A generated
+   field-analysis presented four correct structural findings alongside one
+   invented mechanism: a "Z-Twin Space (Engine Flip)" claimed to "swap internal
+   geometry while preserving interval vectors, allowing state momentum to invert
+   from fifth-expansion to chromatic contraction without logical disruption."
+   The mechanism conflated two real, distinct structures — T₁-twin pairs (same
+   Forte family, root-phase-related; later receipted as the seam mechanism) and
+   Forte Z-pairs (same interval vector, different set class; recorded only as
+   GOV-227 comparison evidence, where they support the no-linear-separator
+   result, the opposite of a mechanism). Neither is an operator; "state
+   momentum" is not a quantity the field defines. Intercepted at review before
+   entering any artifact. Failure mode: real vocabulary recombined into a
+   mechanism indistinguishable from findings at prose resolution. Live risk:
+   prose about hypotheses recombining registered terms into new mechanism claims.
+2. **Refresher-prompt status corruption (thread-sourced; no repo receipt).** A
+   drafted context-pinning directive restated project results with two status
+   corruptions: it presented OBS-014 — then a queued, untested hypothesis — as
+   demonstrated mechanics ("D5 routes SEAT_CONTACT edges directly onto {Mars,
+   Jupiter}… demonstrating how the D-series closes A-series structural seams"),
+   and it replaced the real OBS-015 candidate (spectral-order observation,
+   conditional, authored-binding-dependent) with an invented dynamical mechanism
+   ("1-bit Hamming shift creating a phase shear/torque vector driving decay from
+   A2→A1"), mislabeling the 7-33↔5-34 complement-conjugation as that shear. The
+   draft arrived wearing directive authority and would have pre-judged GOV-510's
+   verdict before the audit ran. Intercepted at review. Failure mode:
+   status-flattening — verified theorems, conditional observations, and untested
+   hypotheses compressed into one undifferentiated list of "invariants." Live
+   risk: flattened status consumed as state by a fresh executor writing audit
+   prose.
+3. Review intercepted an EPIC-520 `99.36%` scalar-mass claim before it entered
    project records (`docs/verification/SPRINT_3_RETROSPECTIVE.md:19-21`, a
    non-canonical process record).
-2. The Mercury mask-681 claim of a single `{10}` hole was corrected to `{10,2}`
+4. The Mercury mask-681 claim of a single `{10}` hole was corrected to `{10,2}`
    (`provenance/OBSERVATION_LEDGER.md:162-182`).
-3. A C2/L7 graph fixture and invented ledger pointers were corrected; the graph
+5. A C2/L7 graph fixture and invented ledger pointers were corrected; the graph
    result is `right_undefined`, not `does_not_commute`
    (`provenance/DECISION_LEDGER.md:724-737`).
 
@@ -161,9 +192,10 @@ is not substitute evidence.
 4. Ticket closure records the actual suites, source bindings, verdict semantics,
    and limited H1/H2/H3 disposition. Only then may the board status change.
 
-## Durable Record Follow-up
+## Durable Record
 
-- Put the standing-rules list in its repository-durable home when the maintainer
-  relay designates one; retain its review-channel provenance until then.
-- The three documented corrections above are the minimum fabrication-history
-  examples for this handoff, not a claim of a complete incident register.
+- Standing rules are durably recorded in `provenance/DECISION_LEDGER.md`
+  "Standing rules recorded - 2026-09-05"; retain their review-channel provenance.
+- The five documented incidents above (two provenance classes) are the minimum
+  fabrication-history examples for this handoff, not a claim of a complete
+  incident register.

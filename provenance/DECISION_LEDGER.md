@@ -26,6 +26,41 @@ bootstrap/roundtrip evidence. This entry moves the decision-ledger binding, so
 dependent planning-evidence artifacts are regenerated with the cycle-open
 fixed-point pass.
 
+## Standing rules recorded - 2026-09-05
+
+### Decision — eleven standing rules, ledger as durable home
+
+1. Arithmetic output wins over planning assumptions; artifacts outrank hand
+   tables, which outrank prose. Every derived cardinality records its source
+   path.
+2. Report tables are derived from `git diff`, never composed.
+3. Out-of-directive changes go to a recommendations list, not applied, even when
+   correct.
+4. Fix the class, not the count: incidents get generalized guards, not patches.
+5. Verdict closes story: `confirmed`, `refuted`, and `partial` all close research
+   stories; no signal forces a positive outcome.
+6. No model prose is a mathematical or admission source; planning documents are
+   evidence of intent, not state.
+7. Fingerprint literals in prose are stale until proven live by build-time
+   derivation; carried fingerprints are hypotheses. GOV-510/511 receipts now
+   have three generations, which must never be collapsed.
+8. Ticket status is not state; receipts are state; sync direction is ledger to
+   scrum with citation.
+9. Sprint exit is a fixed point:
+   `package:manifest -> --check -> validate`, with a full pass that makes no
+   tracked change.
+10. Verification receipts enumerate each suite as `ran` or `skipped` plus a
+    reason; "passed" never silently means "all that could run."
+11. EPIC-520-family specs use registered vocabulary only; unregistered terms
+    fail the language guard (`exists-or-ticketed`, prose-consistency pattern).
+
+### Provenance
+
+Canonical list received through the maintainer relay review channel, 2026-09.
+Amendments require future ledger entries; this handoff is not the source of
+authority. Rule set originates from the 1.8.0→1.9.0 development cycle's incident
+history; see handoff correction history for representative incidents.
+
 ## Sprint 4 research-track shape - 2026-09-05
 
 ### Decision - option 2: execute two checks, define H2 before execution
