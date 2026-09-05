@@ -2,7 +2,7 @@
 
 **Status:** Backlog · **Priority:** High · **Owner:** Research governance
 **Epic ID:** EPIC-520 · **Release:** `1.9.0-dev`
-**Stories:** None. Zero child stories; activation opens the epic only, and the first story (a separate planning cycle) is spec'd fresh.
+**Stories:** [EPIC-520-1](EPIC-520-1-unified-operator-planning.md) - unified-operator planning and hypothesis discrimination (Sprint 4 proposed).
 
 ## Problem statement
 

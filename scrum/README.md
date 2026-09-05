@@ -149,10 +149,13 @@ ORR-512, ORR-513, and ORR-514 run in parallel in Sprint 3 after ORR-511.
 
 | ID | Title | Sprint | Points | Priority | Status |
 |---|---|---|---|---|---|
-| [EPIC-520](EPIC-520-unified-operator.md) | Conditional unified-operator workstream | Sprint 4 if opened | - | High | **Conditional** |
+| [EPIC-520](EPIC-520-unified-operator.md) | Unified-operator research workstream | Sprint 4 | - | High | **Backlog** |
+| [EPIC-520-1](EPIC-520-1-unified-operator-planning.md) | Unified-operator planning and hypothesis discrimination | Sprint 4 proposed | 5 | High | **Done** |
 
-EPIC-520 is not open and has no child stories. It can become active only after
-GOV-512 records confirmed results from both GOV-510 and GOV-511.
+Research Gate 3 opened EPIC-520 as a research question, not a conclusion, on
+dual GOV-510/GOV-511 confirmation (`provenance/DECISION_LEDGER.md:35-58`). Its
+first child is a planning-only story; no operator, implementation, or authority
+is granted by the gate or this board entry.
 
 ## Global definition of done
 
