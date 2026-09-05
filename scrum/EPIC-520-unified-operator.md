@@ -2,7 +2,7 @@
 
 **Status:** Backlog · **Priority:** High · **Owner:** Research governance
 **Epic ID:** EPIC-520 · **Release:** `1.9.0-dev`
-**Stories:** [EPIC-520-1](EPIC-520-1-unified-operator-planning.md) - unified-operator planning and hypothesis discrimination (Sprint 4 proposed).
+**Stories:** [EPIC-520-1](EPIC-520-1-unified-operator-planning.md) - planning and hypothesis discrimination (Done); [GOV-513](GOV-513-d-shadow-complement-span-audit.md) - D-shadow audit; [GOV-514](GOV-514-d-tier-compression-interleaving-check.md) - compression interleaving; [GOV-515](GOV-515-ring-force-enumeration-definition.md) - definition-only ring-force gate.
 
 ## Problem statement
 

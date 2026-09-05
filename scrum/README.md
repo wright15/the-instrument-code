@@ -151,11 +151,16 @@ ORR-512, ORR-513, and ORR-514 run in parallel in Sprint 3 after ORR-511.
 |---|---|---|---|---|---|
 | [EPIC-520](EPIC-520-unified-operator.md) | Unified-operator research workstream | Sprint 4 | - | High | **Backlog** |
 | [EPIC-520-1](EPIC-520-1-unified-operator-planning.md) | Unified-operator planning and hypothesis discrimination | Sprint 4 proposed | 5 | High | **Done** |
+| [GOV-513](GOV-513-d-shadow-complement-span-audit.md) | D-shadow complement-span audit | Sprint 4 | TBD | High | **Backlog** |
+| [GOV-514](GOV-514-d-tier-compression-interleaving-check.md) | D-tier compression interleaving check | Sprint 4 | TBD | High | **Backlog** |
+| [GOV-515](GOV-515-ring-force-enumeration-definition.md) | Ring-force enumeration definition gate | Sprint 4 | TBD | High | **Backlog** |
 
 Research Gate 3 opened EPIC-520 as a research question, not a conclusion, on
 dual GOV-510/GOV-511 confirmation (`provenance/DECISION_LEDGER.md:35-58`). Its
-first child is a planning-only story; no operator, implementation, or authority
-is granted by the gate or this board entry.
+first child is a completed planning-only story. Sprint 4 policy executes
+GOV-513/514, makes GOV-515 definition-only, and defers the single-signature
+derivation check (`provenance/DECISION_LEDGER.md`, Sprint 4 research-track
+shape). No operator, implementation, or authority is granted by this board.
 
 ## Global definition of done
 

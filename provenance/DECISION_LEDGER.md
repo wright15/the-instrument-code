@@ -26,6 +26,36 @@ bootstrap/roundtrip evidence. This entry moves the decision-ledger binding, so
 dependent planning-evidence artifacts are regenerated with the cycle-open
 fixed-point pass.
 
+## Sprint 4 research-track shape - 2026-09-05
+
+### Decision - option 2: execute two checks, define H2 before execution
+
+Sprint 4 research-track shape: GOV-513 and GOV-514 execute; GOV-515 is
+definition-only with a non-execution guard; the single-signature derivation
+check remains deferred to a second child. GOV-513, GOV-514, and GOV-515 map
+one-to-one to EPIC-520-1 section 4 checks (i), (ii), and (iii), respectively.
+
+### Rationale
+
+The ring-force enumeration's input boundary is hypothesis-laden and requires an
+unhurried definitional pass; running it alongside two executing checks risks
+rigging H2's test in either direction. This policy was decided in maintainer
+review on 2026-09-05.
+
+### Guard
+
+GOV-515 cannot run an enumeration, emit a candidate artifact, or assign an H2
+verdict. A separately scoped, maintainer-reviewed successor may execute only
+the Stage 2 definition that GOV-515 freezes. This policy grants no operator,
+topology, admission, runtime, office, or global `harmonic.C_H` authority.
+
+### References
+
+- `scrum/EPIC-520-1-unified-operator-planning.md`
+- `scrum/GOV-513-d-shadow-complement-span-audit.md`
+- `scrum/GOV-514-d-tier-compression-interleaving-check.md`
+- `scrum/GOV-515-ring-force-enumeration-definition.md`
+
 ## Post-closure clarification — GOV-502 — 2026-09-01
 
 ### Decision — census scope note, seam as known

@@ -12,6 +12,13 @@ The S2→S3 boundary rebuild is owned by GOV-511 (primary) per the kickoff direc
 
 `docs/VALIDATION_CENSUS.md` shows 418 (`qa/integrated-release-validation.json`, integrated release validation — distinct scope: topology/audit/runtime/Court/Neo4j/manifest) vs per-validator column sum 120 (14+15+37+17+12+7+18) — not summable; precedent `411+15+14+1 ≠ 414` (the 1.8.0 close-out's planning arithmetic never matched the emitted 414; per-validator and integrated scopes differ by construction). Minimal fix is scope note in census doc (prose block); optional future GOV may derive the integrated 418's own composition as done for per-validator counts.
 
+## Sprint 4 research track - option 2
+
+The received policy and its boundary rationale are authoritative in
+`provenance/DECISION_LEDGER.md` under "Sprint 4 research-track shape";
+`scrum/plan/sprint-4-intake.md` applies it. Do not infer execution of GOV-515
+from its presence on the board.
+
 ## Queued — OBS-014 — twin-hub convergence audit (resolved Sprint 2, GOV-510)
 
 Twin-hub convergence at the `A2` boundary: `D4` (`7-Z17`, `2× A1-sat`) and `D5` (`7-Z12`, `2× A2-sat`) seat contacts should route through `T₁`-twin satellites converging via Mercury hub. **Tier asymmetry:** at `A2` twins share Mercury hub and midpoints `{Mars,Jupiter}` are **unseated** (`field closes its own seams from below` — strongest hypothesis); at `A1` twins `{Moon–Saturn, Sun–Venus}` are disjoint (no hub) and midpoints `{Sun,Saturn}` already seated as `A1` seams — so `D4` = convergence-through-twins, `D5` = convergence-onto-unseated-midpoints. Falsifiable from ledger data (`seat-contact.csv` + `constructionEdges` + `T₁` `transpose_mask 1`).
