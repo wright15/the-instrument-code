@@ -1,5 +1,10 @@
 # EPIC-520-1 Planning Handoff — Build Plan (Sprint 4 intake)
 
+**Historical planning record:** This conversion handoff predates the Sprint 4
+ticket split. For execution status and current receipts, use
+`scrum/plan/sprint-4-epic-520-research-handoff.md` and
+`scrum/plan/sprint-4-intake.md`.
+
 **Status:** Approved for execution · **Story ID:** EPIC-520-1 (confirmed; GOV-numbering rejected — no verdict semantics by design) · **File:** `scrum/EPIC-520-1-unified-operator-planning.md` · **Epic:** EPIC-520 (opened by GOV-512, `DECISION_LEDGER.md:35`) · **Release:** `1.9.0-dev`
 **Depends on:** GOV-512 (Done) · **Blocks:** EPIC-520's first research child (unspec'd)
 

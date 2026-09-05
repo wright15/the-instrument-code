@@ -1,17 +1,17 @@
 # EPIC-520-1 - Unified-operator planning and hypothesis discrimination
 
-**Status:** Done · **Priority:** High · **Points:** 5 · **Epic:** [EPIC-520](EPIC-520-unified-operator.md) · **Sprint:** Sprint 4 proposed
-**Depends on:** GOV-512 · **Blocks:** EPIC-520's first research child
+**Status:** Done · **Priority:** High · **Points:** 5 · **Epic:** [EPIC-520](EPIC-520-unified-operator.md) · **Sprint:** Sprint 4
+**Depends on:** GOV-512 · **Blocks:** GOV-513, GOV-514, GOV-515
 
 **Completion receipt:** Deliverable verified per the conversion-verification
 table and review; definition of done satisfied - questions, vocabulary, gates,
 negative controls, and check specifications exist; no answer is recorded.
 
 **Receipt:** Research Gate 3 opened EPIC-520 as a research question, not a
-conclusion (`provenance/DECISION_LEDGER.md:35-58`). Gate-time decision inputs
-were twin-hub `38dc4131...` and fifth-space census `570679df...`; current QA
-receipts are PASS 30/30 with candidate `e136583b...` and PASS 24/24 with
-candidate `02093e6e...`, respectively. Gate-time and current fingerprints are
+conclusion (`provenance/DECISION_LEDGER.md:65-88`). Gate-time decision inputs
+were twin-hub `38dc4131...` and fifth-space census `570679df...`; checked-in
+QA receipts are PASS 30/30 with candidate `d7405100...` and PASS 24/24 with
+candidate `6878c7fd...`, respectively. Gate-time and current fingerprints are
 separate receipts and must not be collapsed into one value.
 
 ## Story
@@ -157,7 +157,7 @@ against the containing commit diff when committing.
 
 ## References
 
-- `provenance/DECISION_LEDGER.md:35-58,161-170`
+- `provenance/DECISION_LEDGER.md:65-88,161-170`
 - `provenance/OBSERVATION_LEDGER.md:108-119,217-279,291-301`
 - `qa/twin-hub-convergence-validation.json`
 - `qa/fifth-space-census-validation.json`

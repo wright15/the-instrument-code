@@ -156,7 +156,7 @@ ORR-512, ORR-513, and ORR-514 run in parallel in Sprint 3 after ORR-511.
 | [GOV-515](GOV-515-ring-force-enumeration-definition.md) | Ring-force enumeration definition gate | Sprint 4 | TBD | High | **Backlog** |
 
 Research Gate 3 opened EPIC-520 as a research question, not a conclusion, on
-dual GOV-510/GOV-511 confirmation (`provenance/DECISION_LEDGER.md:35-58`). Its
+dual GOV-510/GOV-511 confirmation (`provenance/DECISION_LEDGER.md:65-88`). Its
 first child is a completed planning-only story. Sprint 4 policy executes
 GOV-513/514, makes GOV-515 definition-only, and defers the single-signature
 derivation check (`provenance/DECISION_LEDGER.md`, Sprint 4 research-track
