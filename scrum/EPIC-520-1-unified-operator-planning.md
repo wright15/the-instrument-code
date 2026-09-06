@@ -30,8 +30,9 @@ established.
 - Specify three Sprint 4 checks: D-shadow, GOV-227 interleaving, and ring-force
   enumeration. These checks are newly specified here; none is represented as
   an already queued implementation.
-- Identify, but do not open, a second-child candidate to derive a single D4 or
-  D5 signature from its stated inputs.
+- Identify, but do not open, Check (iv): a D5-only run-space derivability
+  target that tests whether the frozen D-tier maxrun frame selects D5 without
+  importing a declared contact signature, office result, or observed outcome.
 
 ## Hypotheses
 
@@ -60,6 +61,7 @@ than absorbent; it is load-bearing, not overhead.
 | D-shadow | A proposed check for a D-channel shadow relation. | Newly specified by this story; no current queue item found. |
 | GOV-227 interleaving | A proposed check of whether the admitted D-tier compression scalar bands distinguish the relevant structure. | Newly specified by this story; existing evidence says scalar bands interleave. |
 | ring-force enumeration | Exhaustive enumeration of the stated office-ring constraints and admissible D4/D5 outcomes. | Newly specified by this story; H2 DoD gate. |
+| run-space frame | The ordered D1-D7 maxrun sequence derived from canonical pitch-class masks and used to test D5 target derivability. | GOV-515 Stage 1 definition only; no execution result. |
 | odd-span anomaly | The newly registered name for the open OBS-015 question about seam-closure at span 9. | Registered here; not an OBS-015 term. |
 
 Every named check or result in this story must be either (a) an existing,
@@ -83,8 +85,10 @@ or executed result where neither exists.
 4. D-shadow and GOV-227-interleaving checks are each framed as a new Sprint 4
    specification with stated inputs, expected negative controls, and no
    predeclared outcome.
-5. Any follow-on derivation is restricted to one D4 or D5 signature and is
-   opened only as a separate child after this planning story records its scope.
+5. Check (iv) is restricted to the D5 run-space target: whether the frozen
+   maxrun frame uniquely selects D5 without a declared contact signature,
+   office result, or observed outcome. It is opened only as a separate child
+   after this planning story records its scope.
 6. The registered vocabulary distinguishes rooted 12-bit mask arithmetic in
    `Z12` from the rational LP witness: epsilon `3/407` and
    lambda `(122,101,67,63,30,17,7)/407` are rational certificate values, never
