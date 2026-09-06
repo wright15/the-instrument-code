@@ -285,10 +285,14 @@ The ceiling census is richer than the planning prose: three families, not two â€
 **Status:** derived `planning_evidence` 2026-09-06
 **Scope:** 49 canonical D1-D7 anchors
 **Provenance:** derived in the maintainer re-audit and receipted by the
-source-derived D-shadow generator; candidate fingerprint
-`8c2416b8f51f8ae8cdb0fc9f2490beeb9e3cc49f435be7d992f55f5f7c122cb8`,
-QA report fingerprint
+source-derived D-shadow generator. Artifact identity (candidate fingerprint):
+`8c2416b8f51f8ae8cdb0fc9f2490beeb9e3cc49f435be7d992f55f5f7c122cb8`.
+Artifact file SHA-256:
+`91fead6b1e637ed6dd82dc4f47bd3c357abfee6958aabfe28406399414a6d34c`.
+QA validation report fingerprint:
 `1651b362eb5317d03b13664af99eba718d2db7772ba5c3fe55376d3af4a13db7`.
+QA receipt file SHA-256:
+`af2cdd6cde8a1da708a3df9dee1ceb10670f9ab1742939193a7b130b6a153bbf`.
 
 ```
 span(complement(C)) = 11 - maxrun(C)
@@ -317,8 +321,16 @@ not `11 - maxrun(C)` breaks it.
 
 **Status:** derived `planning_evidence` 2026-09-06
 **Scope:** D1-D7 anchors, office-uniform per tier
-**Generator receipt SHA:**
+**Provenance:** derived in the maintainer re-audit and receipted by the
+source-derived D-shadow generator and QA validation receipt.
+**Artifact identity (candidate fingerprint):**
 `8c2416b8f51f8ae8cdb0fc9f2490beeb9e3cc49f435be7d992f55f5f7c122cb8`.
+**Artifact file SHA-256:**
+`91fead6b1e637ed6dd82dc4f47bd3c357abfee6958aabfe28406399414a6d34c`.
+**QA validation report fingerprint:**
+`1651b362eb5317d03b13664af99eba718d2db7772ba5c3fe55376d3af4a13db7`.
+**QA receipt file SHA-256:**
+`af2cdd6cde8a1da708a3df9dee1ceb10670f9ab1742939193a7b130b6a153bbf`.
 
 The D-channel's run-space route is hold `3` through D1-D4, spike to `5` at
 D5, then floor at `2` for D6-D7:
@@ -330,6 +342,10 @@ D5, then floor at `2` for D6-D7:
 **Falsification:** any regenerated D-tier maxrun summary that differs from the
 complete sequence breaks it.
 
+**Binding philosophy:** source-bound artifacts and receipts bind the run-space
+arithmetic; this ledger entry records the derived observation and creates no
+topology, admission, runtime, office, or `harmonic.C_H` authority.
+
 **Upstream:** `canonical/fivefold-incubator/d-shadow-complement-span-v0.json`,
 `qa/d-shadow-complement-span-validation.json`.
 
@@ -339,8 +355,16 @@ complete sequence breaks it.
 
 **Status:** derived `planning_evidence` 2026-09-06
 **Scope:** all seven D5 anchors
-**Generator receipt SHA:**
+**Provenance:** derived in the maintainer re-audit and receipted by the
+source-derived D-shadow generator and QA validation receipt.
+**Artifact identity (candidate fingerprint):**
 `8c2416b8f51f8ae8cdb0fc9f2490beeb9e3cc49f435be7d992f55f5f7c122cb8`.
+**Artifact file SHA-256:**
+`91fead6b1e637ed6dd82dc4f47bd3c357abfee6958aabfe28406399414a6d34c`.
+**QA validation report fingerprint:**
+`1651b362eb5317d03b13664af99eba718d2db7772ba5c3fe55376d3af4a13db7`.
+**QA receipt file SHA-256:**
+`af2cdd6cde8a1da708a3df9dee1ceb10670f9ab1742939193a7b130b6a153bbf`.
 
 Every D5 maximal five-run is contained in Court class `5-35`. The D5 anchors
 at the non-hub offices of the two A2 T1-twin pairs intersect at state IDs
@@ -348,6 +372,10 @@ at the non-hub offices of the two A2 T1-twin pairs intersect at state IDs
 
 **Falsification:** any D5 maximal run that is not `5-35`, or a regenerated
 twin-outer-office intersection other than `{2383, 3667}`, breaks it.
+
+**Binding philosophy:** source-bound artifacts and receipts bind the
+containment arithmetic; this ledger entry records the derived observation and
+creates no topology, admission, runtime, office, or `harmonic.C_H` authority.
 
 **Upstream:** `canonical/fivefold-incubator/d-shadow-complement-span-v0.json`,
 `qa/d-shadow-complement-span-validation.json`.

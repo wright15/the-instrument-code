@@ -127,6 +127,12 @@ the GOV-513 verdict requires maintainer re-audit of its candidate and QA receipt
 GOV-515 Stage 2 remains blocked until a separately scoped successor carries the
 current manifest binding and receives maintainer review.
 
+**Commit-scope record:** `7e9be6d804a92b122375edeadfa98f64a347e3d2`
+intentionally bundles the complete GOV-514 implementation with run-space
+banking, and `fefdba8cb297b5252fc64ee28ea3de08a9488886` carries terminal
+manifest/QA riders with the Check (iv) planning edit; both sets are independently
+receipted and validated, so validated history is retained rather than rewritten.
+
 ## Post-closure clarification — GOV-502 — 2026-09-01
 
 ### Decision — census scope note, seam as known
