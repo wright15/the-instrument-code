@@ -1,0 +1,345 @@
+{
+  "schemaVersion": "d-tier-interleaving-check-validation.v0",
+  "verdict": "PASS",
+  "candidateId": "D_TIER_INTERLEAVING_CHECK_v0",
+  "candidateFingerprint": "d320f40b64e7a49799dd47e93a4ba5b9fedf68a797e9f237379c1ea6865f67b1",
+  "checksPassed": 14,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "checkId": "schema",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "checkId": "candidate-fingerprint",
+      "status": "PASS",
+      "diagnostic": "d320f40b64e7a49799dd47e93a4ba5b9fedf68a797e9f237379c1ea6865f67b1"
+    },
+    {
+      "checkId": "freshness",
+      "status": "PASS",
+      "diagnostic": "d320f40b64e7a49799dd47e93a4ba5b9fedf68a797e9f237379c1ea6865f67b1"
+    },
+    {
+      "checkId": "determinism-build-twice",
+      "status": "PASS",
+      "diagnostic": "identical fresh reproductions"
+    },
+    {
+      "checkId": "determinism-reorder",
+      "status": "PASS",
+      "diagnostic": "ledger order independent"
+    },
+    {
+      "checkId": "determinism-schema",
+      "status": "PASS",
+      "diagnostic": "stable candidate envelope"
+    },
+    {
+      "checkId": "all-declared-adjacent-gaps",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "gap": {
+            "denominator": 407,
+            "numerator": 3
+          },
+          "lowerTier": "A0",
+          "relation": "disjoint",
+          "upperTier": "A1"
+        },
+        {
+          "gap": {
+            "denominator": 37,
+            "numerator": 2
+          },
+          "lowerTier": "A1",
+          "relation": "disjoint",
+          "upperTier": "A2"
+        },
+        {
+          "gap": {
+            "denominator": 407,
+            "numerator": -372
+          },
+          "lowerTier": "A2",
+          "relation": "overlap",
+          "upperTier": "D1"
+        },
+        {
+          "gap": {
+            "denominator": 407,
+            "numerator": 1113
+          },
+          "lowerTier": "D1",
+          "relation": "disjoint",
+          "upperTier": "D2"
+        },
+        {
+          "gap": {
+            "denominator": 407,
+            "numerator": -117
+          },
+          "lowerTier": "D2",
+          "relation": "overlap",
+          "upperTier": "D3"
+        },
+        {
+          "gap": {
+            "denominator": 407,
+            "numerator": -1581
+          },
+          "lowerTier": "D3",
+          "relation": "overlap",
+          "upperTier": "D4"
+        },
+        {
+          "gap": {
+            "denominator": 407,
+            "numerator": 516
+          },
+          "lowerTier": "D4",
+          "relation": "disjoint",
+          "upperTier": "D5"
+        },
+        {
+          "gap": {
+            "denominator": 407,
+            "numerator": -697
+          },
+          "lowerTier": "D5",
+          "relation": "overlap",
+          "upperTier": "D6"
+        },
+        {
+          "gap": {
+            "denominator": 407,
+            "numerator": -204
+          },
+          "lowerTier": "D6",
+          "relation": "overlap",
+          "upperTier": "D7"
+        }
+      ]
+    },
+    {
+      "checkId": "exact-lp-models",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "activeConstraintIds": [],
+          "auditId": "declared-order-A0-through-D7",
+          "constraintCount": 448,
+          "constraintFingerprint": "3124a26254165320a3ae277205232fa271f1572a52504712ddc934ee1b56bdfc",
+          "iterations": 15,
+          "margin": null,
+          "status": "WEAK_SYSTEM_INFEASIBLE",
+          "verification": "phase_one_exact_infeasibility",
+          "weights": null
+        },
+        {
+          "activeConstraintIds": [],
+          "auditId": "D1-through-D7",
+          "constraintCount": 301,
+          "constraintFingerprint": "9d59b9218058ce878d0615680a5845de1485baae37d1496e7282b974f3487fb7",
+          "iterations": 15,
+          "margin": null,
+          "status": "WEAK_SYSTEM_INFEASIBLE",
+          "verification": "phase_one_exact_infeasibility",
+          "weights": null
+        },
+        {
+          "activeConstraintIds": [],
+          "auditId": "A-block-before-D-block",
+          "constraintCount": 1036,
+          "constraintFingerprint": "9b64296758708b099ab676647e84d6a4683b9958003e42adf82a6b1612e2ae06",
+          "iterations": 15,
+          "margin": null,
+          "status": "WEAK_SYSTEM_INFEASIBLE",
+          "verification": "phase_one_exact_infeasibility",
+          "weights": null
+        }
+      ]
+    },
+    {
+      "checkId": "quotient-controls",
+      "status": "PASS",
+      "diagnostic": {
+        "d2D5MultisetTwins": {
+          "crossTierQTupleCollisionCount": 0,
+          "d2Forte": "7-15",
+          "d5Forte": "7-Z12",
+          "distinctRawSignatureMultisets": true,
+          "interpretation": "rooted Q tuple required for discrimination, not the q_v2 multiset",
+          "sharedQMultiset": [
+            2,
+            3,
+            3,
+            6,
+            6,
+            7,
+            7
+          ],
+          "sharedUnweightedSum": 34
+        },
+        "qV1Fidelity": [
+          {
+            "qV1Value": 3,
+            "qV2Value": 3,
+            "signature": [
+              2,
+              6
+            ]
+          },
+          {
+            "qV1Value": 2,
+            "qV2Value": 2,
+            "signature": [
+              3,
+              6
+            ]
+          },
+          {
+            "qV1Value": 1,
+            "qV2Value": 1,
+            "signature": [
+              3,
+              7
+            ]
+          },
+          {
+            "qV1Value": 3,
+            "qV2Value": 3,
+            "signature": [
+              4,
+              6
+            ]
+          },
+          {
+            "qV1Value": 0,
+            "qV2Value": 0,
+            "signature": [
+              4,
+              7
+            ]
+          },
+          {
+            "qV1Value": 2,
+            "qV2Value": 2,
+            "signature": [
+              4,
+              8
+            ]
+          }
+        ],
+        "zPartnerD3D4": {
+          "crossTierQTupleCollisionCount": 0,
+          "d3Forte": "7-Z37",
+          "d4Forte": "7-Z17",
+          "distinctQMultisets": true,
+          "distinctRawSignatureMultisets": true,
+          "intervalVectorsEqual": true,
+          "sharedIntervalVector": [
+            4,
+            3,
+            4,
+            5,
+            4,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "checkId": "verdict-case-logic",
+      "status": "PASS",
+      "diagnostic": "confirmed"
+    },
+    {
+      "checkId": "global-boundary",
+      "status": "PASS",
+      "diagnostic": {
+        "comparisonUniverseAnchorCount": 70,
+        "dTierAnchorCount": 49,
+        "excluded": [
+          "satellites",
+          "boundary states",
+          "runtime",
+          "Neo4j",
+          "global harmonic.C_H"
+        ],
+        "sourceCandidateId": "CH_D17_q_v2"
+      }
+    },
+    {
+      "checkId": "source-bindings",
+      "status": "PASS",
+      "diagnostic": {
+        "canonicalLedgerSha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+        "gov227CandidateSha256": "48f476118324386da2ba6f10f10a5aefdd183341ea79e3b18a6727f3e24b76fc",
+        "gov227GeneratorSha256": "3f2b519e98ef73055c99d40645cadf7c9765a86b46a469de1ddc7adbb0b2ecfe"
+      }
+    },
+    {
+      "checkId": "adversarial-tamper-rejection",
+      "status": "PASS",
+      "diagnostic": {
+        "D4-D5-cherry-pick-rejected": true,
+        "LP-status-tamper-rejected": true,
+        "q-multiset-tamper-rejected": true,
+        "source-binding-tamper-rejected": true,
+        "authority-field-rejected": true
+      }
+    },
+    {
+      "checkId": "required-suite-outcomes",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "suite": "fresh-source",
+          "status": "ran",
+          "reason": "fresh GOV-227 source sidecar check executed"
+        },
+        {
+          "suite": "validator",
+          "status": "ran",
+          "reason": "GOV-227 validator executed"
+        },
+        {
+          "suite": "focused-test",
+          "status": "ran",
+          "reason": "GOV-227 focused test suite executed"
+        },
+        {
+          "suite": "gov227-validation-command",
+          "status": "ran",
+          "reason": "ticket-required GOV-227 validation command executed"
+        }
+      ]
+    }
+  ],
+  "suiteStatus": [
+    {
+      "suite": "fresh-source",
+      "status": "ran",
+      "reason": "fresh GOV-227 source sidecar check executed"
+    },
+    {
+      "suite": "validator",
+      "status": "ran",
+      "reason": "GOV-227 validator executed"
+    },
+    {
+      "suite": "focused-test",
+      "status": "ran",
+      "reason": "GOV-227 focused test suite executed"
+    },
+    {
+      "suite": "gov227-validation-command",
+      "status": "ran",
+      "reason": "ticket-required GOV-227 validation command executed"
+    }
+  ],
+  "reportFingerprint": "6779ae1e1363284c9114bc0eb938b3141ed55fac2e43af086b0e320b6402d9c6"
+}

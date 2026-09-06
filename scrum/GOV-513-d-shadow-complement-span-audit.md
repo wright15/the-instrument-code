@@ -1,10 +1,15 @@
 # GOV-513 - D-shadow complement-span audit
 
-**Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-520](EPIC-520-unified-operator.md) · **Sprint:** Sprint 4
+**Status:** Done · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-520](EPIC-520-unified-operator.md) · **Sprint:** Sprint 4
 **Depends on:** [EPIC-520-1](EPIC-520-1-unified-operator-planning.md) · **Blocks:** H1's D-shadow route assessment
 
 **Mapping:** EPIC-520-1 §4 check (i) D-shadow -> GOV-513. This is newly
 specified research work, not a queued or executed D-shadow result.
+
+**Completion receipt:** `provenance/DECISION_LEDGER.md`, "Sprint 4 research
+receipts - 2026-09-05"; verdict `refuted` in
+`canonical/fivefold-incubator/d-shadow-complement-span-v0.json`, validated by
+`qa/d-shadow-complement-span-validation.json`.
 
 ## Story
 

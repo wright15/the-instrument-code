@@ -280,6 +280,80 @@ The ceiling census is richer than the planning prose: three families, not two �
 
 ---
 
+## OBS-017 — D-shadow complement/run identity
+
+**Status:** derived `planning_evidence` 2026-09-06
+**Scope:** 49 canonical D1-D7 anchors
+**Provenance:** derived in the maintainer re-audit and receipted by the
+source-derived D-shadow generator; candidate fingerprint
+`8c2416b8f51f8ae8cdb0fc9f2490beeb9e3cc49f435be7d992f55f5f7c122cb8`,
+QA report fingerprint
+`1651b362eb5317d03b13664af99eba718d2db7772ba5c3fe55376d3af4a13db7`.
+
+```
+span(complement(C)) = 11 - maxrun(C)
+```
+
+Here `maxrun(C)` is recomputed as the largest cyclic consecutive run in the
+anchor's fifth-position mask. The identity holds for all 49 anchors.
+
+**Frame-level combinatorics guard:** this asserts the generator's
+combinatorial verification only, not a hypothesis meaning, preference, or
+disposition.
+
+**Binding philosophy:** source-bound artifacts and receipts bind arithmetic;
+this ledger entry records the derived observation and creates no topology,
+admission, runtime, office, or `harmonic.C_H` authority.
+
+**Falsification:** any in-scope anchor for which recomputed complement span is
+not `11 - maxrun(C)` breaks it.
+
+**Upstream:** `canonical/fivefold-incubator/d-shadow-complement-span-v0.json`,
+`qa/d-shadow-complement-span-validation.json`.
+
+---
+
+## OBS-018 — D-channel run-space route
+
+**Status:** derived `planning_evidence` 2026-09-06
+**Scope:** D1-D7 anchors, office-uniform per tier
+**Generator receipt SHA:**
+`8c2416b8f51f8ae8cdb0fc9f2490beeb9e3cc49f435be7d992f55f5f7c122cb8`.
+
+The D-channel's run-space route is hold `3` through D1-D4, spike to `5` at
+D5, then floor at `2` for D6-D7:
+
+```
+(3, 3, 3, 3, 5, 2, 2)
+```
+
+**Falsification:** any regenerated D-tier maxrun summary that differs from the
+complete sequence breaks it.
+
+**Upstream:** `canonical/fivefold-incubator/d-shadow-complement-span-v0.json`,
+`qa/d-shadow-complement-span-validation.json`.
+
+---
+
+## OBS-019 — D5 Court-class five-run containment
+
+**Status:** derived `planning_evidence` 2026-09-06
+**Scope:** all seven D5 anchors
+**Generator receipt SHA:**
+`8c2416b8f51f8ae8cdb0fc9f2490beeb9e3cc49f435be7d992f55f5f7c122cb8`.
+
+Every D5 maximal five-run is contained in Court class `5-35`. The D5 anchors
+at the non-hub offices of the two A2 T1-twin pairs intersect at state IDs
+`{2383, 3667}`.
+
+**Falsification:** any D5 maximal run that is not `5-35`, or a regenerated
+twin-outer-office intersection other than `{2383, 3667}`, breaks it.
+
+**Upstream:** `canonical/fivefold-incubator/d-shadow-complement-span-v0.json`,
+`qa/d-shadow-complement-span-validation.json`.
+
+---
+
 ## Index
 
 | ID | Scope | Verification | Admission impact |
@@ -297,5 +371,8 @@ The ceiling census is richer than the planning prose: three families, not two �
 | OBS-014 twin-hub convergence | 28/28 chains | T₁ receipt, `hub A0/A1 undefined, A2 Mercury`, `midpoints {Sun,Saturn} seated / {Mars,Jupiter} unseated`, verdict `confirmed` | Derives `012` from below over spec'd D4/D5 asymmetry |
 | OBS-015 D-channel span sequence | 70 anchors | `A 6→8→10` climb; `D 9,8,9,8,9,10,10` oscillation-then-ridge; office-uniform per tier | Well-poses "seam-closure at span 9" for EPIC-520 |
 | OBS-016 three-family ceiling | 462 states | span 10 attained by exactly 21 anchors of `7-33`/`7-8`/`7-1`, gap `[1,1,2,2,2,2,2]` | D6 is the ceiling ridge; A- and D-terminal families co-reside at 10 |
+| OBS-017 D-shadow complement/run identity | 49 D anchors | `span(complement(C)) = 11 - maxrun(C)` | Combinatorics only; no hypothesis disposition or authority |
+| OBS-018 D-channel run-space route | D1-D7 anchors | `3,3,3,3,5,2,2` hold/spike/floor | D5 is the run-space spike |
+| OBS-019 D5 Court-class five-run containment | 7 D5 anchors | all maximal runs `5-35`; intersection `{2383,3667}` | Bounded containment observation only |
 
 No entry writes `ScaleState.office`, `OCCUPIES_OFFICE`, `mutation.degreeGovernor`, `C_H`, `photonicCompression`, or ledger state.

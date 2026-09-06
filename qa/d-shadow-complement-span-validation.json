@@ -1,0 +1,432 @@
+{
+  "schemaVersion": "d-shadow-complement-span-validation.v0",
+  "verdict": "PASS",
+  "candidateId": "D_SHADOW_COMPLEMENT_SPAN_v0",
+  "candidateFingerprint": "8c2416b8f51f8ae8cdb0fc9f2490beeb9e3cc49f435be7d992f55f5f7c122cb8",
+  "checksPassed": 19,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "checkId": "schema",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "checkId": "candidate-fingerprint",
+      "status": "PASS",
+      "diagnostic": "8c2416b8f51f8ae8cdb0fc9f2490beeb9e3cc49f435be7d992f55f5f7c122cb8"
+    },
+    {
+      "checkId": "freshness",
+      "status": "PASS",
+      "diagnostic": "8c2416b8f51f8ae8cdb0fc9f2490beeb9e3cc49f435be7d992f55f5f7c122cb8"
+    },
+    {
+      "checkId": "determinism-build-twice",
+      "status": "PASS",
+      "diagnostic": "identical source builds"
+    },
+    {
+      "checkId": "determinism-reorder",
+      "status": "PASS",
+      "diagnostic": "ledger order independent"
+    },
+    {
+      "checkId": "determinism-schema",
+      "status": "PASS",
+      "diagnostic": "stable candidate envelope"
+    },
+    {
+      "checkId": "scope-closure",
+      "status": "PASS",
+      "diagnostic": {
+        "recordCount": 49,
+        "tiers": [
+          "D1",
+          "D2",
+          "D3",
+          "D4",
+          "D5",
+          "D6",
+          "D7"
+        ]
+      }
+    },
+    {
+      "checkId": "scope-identity-pairings",
+      "status": "PASS",
+      "diagnostic": "49 unique canonical anchor identities paired with their direct complements"
+    },
+    {
+      "checkId": "direct-complement-arithmetic",
+      "status": "PASS",
+      "diagnostic": "direct complement masks and fifth-space relation recomputed"
+    },
+    {
+      "checkId": "maxrun-complement-identity",
+      "status": "PASS",
+      "diagnostic": "span(complement(mask)) = 11 - maxrun(mask) across all 49 anchors"
+    },
+    {
+      "checkId": "transposition-control",
+      "status": "PASS",
+      "diagnostic": "T+/-1 complement forms preserve span and cannot create a pass"
+    },
+    {
+      "checkId": "tier-counts",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "anchorCount": 7,
+          "failingStateIds": [
+            871,
+            923,
+            1651,
+            2483,
+            2509,
+            2873,
+            3289
+          ],
+          "passingStateIds": [],
+          "tier": "D1",
+          "tierPasses": false
+        },
+        {
+          "anchorCount": 7,
+          "failingStateIds": [
+            471,
+            1479,
+            1821,
+            2283,
+            2787,
+            3189,
+            3441
+          ],
+          "passingStateIds": [],
+          "tier": "D2",
+          "tierPasses": false
+        },
+        {
+          "anchorCount": 7,
+          "failingStateIds": [
+            443,
+            1591,
+            1891,
+            2269,
+            2843,
+            2993,
+            3469
+          ],
+          "passingStateIds": [],
+          "tier": "D3",
+          "tierPasses": false
+        },
+        {
+          "anchorCount": 7,
+          "failingStateIds": [
+            631,
+            953,
+            1831,
+            2363,
+            2963,
+            3229,
+            3529
+          ],
+          "passingStateIds": [],
+          "tier": "D4",
+          "tierPasses": false
+        },
+        {
+          "anchorCount": 7,
+          "failingStateIds": [
+            671,
+            997,
+            1273,
+            2383,
+            3239,
+            3667,
+            3881
+          ],
+          "passingStateIds": [],
+          "tier": "D5",
+          "tierPasses": false
+        },
+        {
+          "anchorCount": 7,
+          "failingStateIds": [
+            381,
+            1119,
+            2001,
+            2607,
+            3351,
+            3723,
+            3909
+          ],
+          "passingStateIds": [],
+          "tier": "D6",
+          "tierPasses": false
+        },
+        {
+          "anchorCount": 7,
+          "failingStateIds": [
+            127,
+            2111,
+            3103,
+            3599,
+            3847,
+            3971,
+            4033
+          ],
+          "passingStateIds": [],
+          "tier": "D7",
+          "tierPasses": false
+        }
+      ]
+    },
+    {
+      "checkId": "verdict-case-logic",
+      "status": "PASS",
+      "diagnostic": "refuted"
+    },
+    {
+      "checkId": "hypothesis-disposition",
+      "status": "PASS",
+      "diagnostic": {
+        "H1": "weakens this D-shadow route to H1, not H1 as a whole",
+        "H2": "no disposition",
+        "H3": "compatible but not confirmation"
+      }
+    },
+    {
+      "checkId": "D-tier-maxrun-sequence",
+      "status": "PASS",
+      "diagnostic": [
+        3,
+        3,
+        3,
+        3,
+        5,
+        2,
+        2
+      ]
+    },
+    {
+      "checkId": "D5-court-class-5-run-containment",
+      "status": "PASS",
+      "diagnostic": {
+        "allD5MaxRunsAreCourtClass": true,
+        "courtClass": "5-35",
+        "maxRunLength": 5,
+        "runs": [
+          {
+            "forteNumber": "5-35",
+            "maxRunFifthPositions": [
+              [
+                0,
+                1,
+                2,
+                3,
+                4
+              ]
+            ],
+            "maxRunMasks": [
+              661
+            ],
+            "stateId": 671
+          },
+          {
+            "forteNumber": "5-35",
+            "maxRunFifthPositions": [
+              [
+                11,
+                0,
+                1,
+                2,
+                3
+              ]
+            ],
+            "maxRunMasks": [
+              677
+            ],
+            "stateId": 997
+          },
+          {
+            "forteNumber": "5-35",
+            "maxRunFifthPositions": [
+              [
+                9,
+                10,
+                11,
+                0,
+                1
+              ]
+            ],
+            "maxRunMasks": [
+              1193
+            ],
+            "stateId": 1273
+          },
+          {
+            "forteNumber": "5-35",
+            "maxRunFifthPositions": [
+              [
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
+            ],
+            "maxRunMasks": [
+              2378
+            ],
+            "stateId": 2383
+          },
+          {
+            "forteNumber": "5-35",
+            "maxRunFifthPositions": [
+              [
+                10,
+                11,
+                0,
+                1,
+                2
+              ]
+            ],
+            "maxRunMasks": [
+              1189
+            ],
+            "stateId": 3239
+          },
+          {
+            "forteNumber": "5-35",
+            "maxRunFifthPositions": [
+              [
+                3,
+                4,
+                5,
+                6,
+                7
+              ]
+            ],
+            "maxRunMasks": [
+              2642
+            ],
+            "stateId": 3667
+          },
+          {
+            "forteNumber": "5-35",
+            "maxRunFifthPositions": [
+              [
+                8,
+                9,
+                10,
+                11,
+                0
+              ]
+            ],
+            "maxRunMasks": [
+              1321
+            ],
+            "stateId": 3881
+          }
+        ],
+        "tier": "D5",
+        "twinOuterOfficeIntersection": {
+          "definition": "D5 anchors at the non-hub offices of the two A2 T1-twin pairs",
+          "offices": [
+            "Moon",
+            "Venus"
+          ],
+          "stateIds": [
+            2383,
+            3667
+          ]
+        }
+      }
+    },
+    {
+      "checkId": "shuffle-null-control",
+      "status": "PASS",
+      "diagnostic": {
+        "passingPairCount": 17,
+        "totalPairCount": 49
+      }
+    },
+    {
+      "checkId": "source-bindings",
+      "status": "PASS",
+      "diagnostic": {
+        "canonicalLedgerSha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+        "courtRootedPositionsSha256": "85100e4bb5185b2630d1607a35e417fc90fdd5bb4ae63f0e775224d6b1436fec",
+        "networkSha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+        "pentatonicAuditSha256": "862b9548a25c532380be28fff09853eb50a82a3d090fc71db90238e03f58164b",
+        "spanDefinitionSha256": "c3da91f835cc68fb15e411e0b9235c7cedfbb0297627458a91fcab5c826d4ff5"
+      }
+    },
+    {
+      "checkId": "adversarial-tamper-rejection",
+      "status": "PASS",
+      "diagnostic": {
+        "a-anchor-rejected": true,
+        "satellite-rejected": true,
+        "boundary-rejected": true,
+        "duplicate-rejected": true,
+        "missing-anchor-rejected": true,
+        "mask-tamper-rejected": true,
+        "span-tamper-rejected": true,
+        "maxrun-tamper-rejected": true,
+        "expectation-tamper-rejected": true,
+        "identity-pairing-tamper-rejected": true,
+        "shuffle-tamper-rejected": true,
+        "verdict-tamper-rejected": true,
+        "source-binding-tamper-rejected": true,
+        "court-run-tamper-rejected": true,
+        "authority-field-rejected": true
+      }
+    }
+  ],
+  "suiteStatus": [
+    {
+      "suite": "source-binding",
+      "status": "ran",
+      "reason": "validator compared source hashes to live files"
+    },
+    {
+      "suite": "schema",
+      "status": "ran",
+      "reason": "validator applied the candidate and receipt schemas"
+    },
+    {
+      "suite": "scope",
+      "status": "ran",
+      "reason": "validator recomputed complete D1-D7 anchor scope"
+    },
+    {
+      "suite": "arithmetic",
+      "status": "ran",
+      "reason": "validator recomputed complement masks, fifth spans, maxrun, and identities"
+    },
+    {
+      "suite": "build-twice",
+      "status": "ran",
+      "reason": "validator built the source-derived candidate twice"
+    },
+    {
+      "suite": "reordered-input",
+      "status": "ran",
+      "reason": "validator rebuilt from reversed authoritative input order"
+    },
+    {
+      "suite": "negative-control",
+      "status": "ran",
+      "reason": "validator checked the declared deranged-pairing null control"
+    },
+    {
+      "suite": "adversarial-tamper",
+      "status": "ran",
+      "reason": "validator proved rehashed semantic tampering is rejected"
+    }
+  ],
+  "reportFingerprint": "1651b362eb5317d03b13664af99eba718d2db7772ba5c3fe55376d3af4a13db7"
+}

@@ -91,6 +91,42 @@ topology, admission, runtime, office, or global `harmonic.C_H` authority.
 - `scrum/GOV-514-d-tier-compression-interleaving-check.md`
 - `scrum/GOV-515-ring-force-enumeration-definition.md`
 
+## Sprint 4 research receipts - 2026-09-05
+
+### Decision - GOV-513 and GOV-514 closed; GOV-515 Stage 1 defined only
+
+GOV-513 closes with verdict `refuted` for its direct-complement span relation.
+`canonical/fivefold-incubator/d-shadow-complement-span-v0.json` derives the
+complete 49-anchor D1-D7 scope from the canonical ledger and records that no
+whole D tier satisfies `span(complement(mask)) = span(mask) - 2`.
+`qa/d-shadow-complement-span-validation.json` records source binding, schema,
+scope, arithmetic, build-twice, reordered-input, declared null control, and
+rehashed-tamper checks as executed. This weakens that one D-shadow route to H1;
+it gives H2 no disposition and is compatible with, but does not confirm, H3.
+
+GOV-514 closes with verdict `confirmed` for the bounded GOV-227 reproduction.
+`canonical/fivefold-incubator/d-tier-interleaving-check-v0.json` retains all
+nine declared-adjacent fixed-witness gaps, the three exact
+`WEAK_SYSTEM_INFEASIBLE` models, and the D2/D5 and D3/D4 quotient controls.
+`qa/d-tier-interleaving-check-validation.json` separately records fresh-source,
+validator, focused-test, and `validate:gov227` command outcomes. This bounds
+scalar evidence only: it partially weakens scalar support for H1, is neutral for
+H2, and partially supports the need for non-scalar topology without proving H3.
+
+GOV-515 closes its Stage 1 definition only. The frozen input boundary, candidate
+space, ordering, statistic, categories, verdict mapping, and maintainer stop
+point are in `scrum/GOV-515-ring-force-enumeration-definition.md`. Its current
+byte binding is the generated `MANIFEST.json` record for that ticket. No Stage 2
+enumeration, candidate artifact, QA receipt, outcome selection, or H2 verdict
+was run or emitted.
+
+### Guard
+
+The three closures do not synthesize an operator result. Any downstream use of
+the GOV-513 verdict requires maintainer re-audit of its candidate and QA receipt.
+GOV-515 Stage 2 remains blocked until a separately scoped successor carries the
+current manifest binding and receives maintainer review.
+
 ## Post-closure clarification — GOV-502 — 2026-09-01
 
 ### Decision — census scope note, seam as known

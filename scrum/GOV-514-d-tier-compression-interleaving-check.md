@@ -1,11 +1,16 @@
 # GOV-514 - D-tier compression interleaving check
 
-**Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-520](EPIC-520-unified-operator.md) · **Sprint:** Sprint 4
+**Status:** Done · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-520](EPIC-520-unified-operator.md) · **Sprint:** Sprint 4
 **Depends on:** [EPIC-520-1](EPIC-520-1-unified-operator-planning.md), GOV-227 · **Blocks:** Scalar-evidence disposition for the EPIC-520 research track
 
 **Mapping:** EPIC-520-1 §4 check (ii) GOV-227 interleaving -> GOV-514. This is
 a newly specified reproduction and discrimination check, not a new compression
 coordinate or tier classifier.
+
+**Completion receipt:** `provenance/DECISION_LEDGER.md`, "Sprint 4 research
+receipts - 2026-09-05"; verdict `confirmed` in
+`canonical/fivefold-incubator/d-tier-interleaving-check-v0.json`, validated by
+`qa/d-tier-interleaving-check-validation.json`.
 
 ## Story
 
