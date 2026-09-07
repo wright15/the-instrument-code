@@ -382,6 +382,35 @@ creates no topology, admission, runtime, office, or `harmonic.C_H` authority.
 
 ---
 
+## OBS-020 — D-channel max-run uniqueness
+
+**Status:** derived `planning_evidence` 2026-09-06
+**Scope:** the complete D1-D7 `runSpace.tierSummaries` input
+**Provenance:** derived directly from the source-bound D-shadow run-space
+artifact. The complete maximum candidate set is `{5}`; this records the unique
+max-run target fact only and supplies no H1, H2, or H3 disposition.
+**Artifact identity (candidate fingerprint):**
+`1aaf77169c7558cb927e2bb3dc8526b8bafb8b275529d989c59db70eb3705f51`.
+**Artifact file SHA-256:**
+`389f98e01e54e7e0f88c7b36fad0b321662904db15c936815a82630461eb4d02`.
+**QA validation report fingerprint:**
+`abc1a72bf127d965e617c3261dbee14d26ee9fd2b665aeea692515e64a5df8c0`.
+**QA receipt file SHA-256:**
+`cf7c7519328192a870bd48506b044ab07fa99bda588b2c00c82d722e7bcc9f8f`.
+
+**Falsification:** any regenerated D1-D7 candidate set other than `{5}` breaks
+this observation.
+
+**Binding philosophy:** the source artifact verifies the canonical pitch-class
+mask binding before the target set is enumerated. This observation creates no
+forcing claim, topology, admission, runtime, office, or `harmonic.C_H`
+authority.
+
+**Upstream:** `canonical/fivefold-incubator/d-shadow-uniqueness-check-v0.json`,
+`qa/d-shadow-uniqueness-validation.json`.
+
+---
+
 ## Index
 
 | ID | Scope | Verification | Admission impact |
@@ -402,5 +431,6 @@ creates no topology, admission, runtime, office, or `harmonic.C_H` authority.
 | OBS-017 D-shadow complement/run identity | 49 D anchors | `span(complement(C)) = 11 - maxrun(C)` | Combinatorics only; no hypothesis disposition or authority |
 | OBS-018 D-channel run-space route | D1-D7 anchors | `3,3,3,3,5,2,2` hold/spike/floor | D5 is the run-space spike |
 | OBS-019 D5 Court-class five-run containment | 7 D5 anchors | all maximal runs `5-35`; intersection `{2383,3667}` | Bounded containment observation only |
+| OBS-020 D-channel max-run uniqueness | D1-D7 run-space summaries | complete maximum candidate set `{5}` | Unique target fact only; no hypothesis disposition |
 
 No entry writes `ScaleState.office`, `OCCUPIES_OFFICE`, `mutation.degreeGovernor`, `C_H`, `photonicCompression`, or ledger state.

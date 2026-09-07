@@ -1,0 +1,216 @@
+{
+  "schemaVersion": "d-shadow-uniqueness-validation.v0",
+  "verdict": "PASS",
+  "candidateId": "D_SHADOW_UNIQUENESS_CHECK_v0",
+  "candidateFingerprint": "1aaf77169c7558cb927e2bb3dc8526b8bafb8b275529d989c59db70eb3705f51",
+  "checksPassed": 14,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "checkId": "schema",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "checkId": "candidate-fingerprint",
+      "status": "PASS",
+      "diagnostic": "1aaf77169c7558cb927e2bb3dc8526b8bafb8b275529d989c59db70eb3705f51"
+    },
+    {
+      "checkId": "source-binding",
+      "status": "PASS",
+      "diagnostic": "verified D-shadow artifact against canonical pitch-class masks"
+    },
+    {
+      "checkId": "freshness",
+      "status": "PASS",
+      "diagnostic": "1aaf77169c7558cb927e2bb3dc8526b8bafb8b275529d989c59db70eb3705f51"
+    },
+    {
+      "checkId": "determinism-build-twice",
+      "status": "PASS",
+      "diagnostic": "identical source builds"
+    },
+    {
+      "checkId": "determinism-reorder",
+      "status": "PASS",
+      "diagnostic": "tier summary order independent"
+    },
+    {
+      "checkId": "determinism-schema",
+      "status": "PASS",
+      "diagnostic": "stable candidate envelope"
+    },
+    {
+      "checkId": "exhaustive-candidate-set",
+      "status": "PASS",
+      "diagnostic": {
+        "cardinality": 1,
+        "coordinates": [
+          5
+        ],
+        "definition": "coordinates with maxRunLength equal to the maximum across D1-D7",
+        "enumerationComplete": true,
+        "isD5Unique": true,
+        "maximumMaxRunLength": 5
+      }
+    },
+    {
+      "checkId": "source-tier-summaries",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "coordinate": 1,
+          "maxRunLength": 3,
+          "tier": "D1"
+        },
+        {
+          "coordinate": 2,
+          "maxRunLength": 3,
+          "tier": "D2"
+        },
+        {
+          "coordinate": 3,
+          "maxRunLength": 3,
+          "tier": "D3"
+        },
+        {
+          "coordinate": 4,
+          "maxRunLength": 3,
+          "tier": "D4"
+        },
+        {
+          "coordinate": 5,
+          "maxRunLength": 5,
+          "tier": "D5"
+        },
+        {
+          "coordinate": 6,
+          "maxRunLength": 2,
+          "tier": "D6"
+        },
+        {
+          "coordinate": 7,
+          "maxRunLength": 2,
+          "tier": "D7"
+        }
+      ]
+    },
+    {
+      "checkId": "case-logic",
+      "status": "PASS",
+      "diagnostic": {
+        "category": "one_target",
+        "verdict": "confirmed"
+      }
+    },
+    {
+      "checkId": "no-hypothesis-disposition",
+      "status": "PASS",
+      "diagnostic": {
+        "H1": "no disposition",
+        "H2": "no disposition",
+        "H3": "no disposition"
+      }
+    },
+    {
+      "checkId": "source-artifact-binding",
+      "status": "PASS",
+      "diagnostic": {
+        "dShadowCandidateFingerprint": "8c2416b8f51f8ae8cdb0fc9f2490beeb9e3cc49f435be7d992f55f5f7c122cb8",
+        "dShadowCandidateSha256": "91fead6b1e637ed6dd82dc4f47bd3c357abfee6958aabfe28406399414a6d34c"
+      }
+    },
+    {
+      "checkId": "adversarial-tamper-rejection",
+      "status": "PASS",
+      "diagnostic": {
+        "excluded-input-rejected": true,
+        "tier-order-tamper-rejected": true,
+        "selected-only-output-rejected": true,
+        "source-binding-tamper-rejected": true,
+        "disposition-tamper-rejected": true,
+        "authority-field-rejected": true
+      }
+    },
+    {
+      "checkId": "required-suite-outcomes",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "suite": "source-binding",
+          "status": "ran",
+          "reason": "validator verified the D-shadow source artifact against canonical pitch-class masks"
+        },
+        {
+          "suite": "schema",
+          "status": "ran",
+          "reason": "validator applied the candidate and receipt schemas"
+        },
+        {
+          "suite": "exhaustive-completion",
+          "status": "ran",
+          "reason": "validator recomputed every D1-D7 candidate coordinate from source tier summaries"
+        },
+        {
+          "suite": "build-twice",
+          "status": "ran",
+          "reason": "validator built the source-derived candidate twice"
+        },
+        {
+          "suite": "reordered-input",
+          "status": "ran",
+          "reason": "validator rebuilt from reversed source tier-summary order"
+        },
+        {
+          "suite": "negative-control",
+          "status": "ran",
+          "reason": "validator rejected excluded inputs, changed order, and selected-only output"
+        },
+        {
+          "suite": "adversarial-tamper",
+          "status": "ran",
+          "reason": "validator proved rehashed semantic tampering is rejected"
+        }
+      ]
+    }
+  ],
+  "suiteStatus": [
+    {
+      "suite": "source-binding",
+      "status": "ran",
+      "reason": "validator verified the D-shadow source artifact against canonical pitch-class masks"
+    },
+    {
+      "suite": "schema",
+      "status": "ran",
+      "reason": "validator applied the candidate and receipt schemas"
+    },
+    {
+      "suite": "exhaustive-completion",
+      "status": "ran",
+      "reason": "validator recomputed every D1-D7 candidate coordinate from source tier summaries"
+    },
+    {
+      "suite": "build-twice",
+      "status": "ran",
+      "reason": "validator built the source-derived candidate twice"
+    },
+    {
+      "suite": "reordered-input",
+      "status": "ran",
+      "reason": "validator rebuilt from reversed source tier-summary order"
+    },
+    {
+      "suite": "negative-control",
+      "status": "ran",
+      "reason": "validator rejected excluded inputs, changed order, and selected-only output"
+    },
+    {
+      "suite": "adversarial-tamper",
+      "status": "ran",
+      "reason": "validator proved rehashed semantic tampering is rejected"
+    }
+  ],
+  "reportFingerprint": "abc1a72bf127d965e617c3261dbee14d26ee9fd2b665aeea692515e64a5df8c0"
+}
