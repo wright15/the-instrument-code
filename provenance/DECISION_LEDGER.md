@@ -1312,3 +1312,53 @@ GOV-516 Stage 2 review (2026-09-06) found the frozen input boundary supports a
 uniqueness observation, not a forcing test; H2 dispositions struck; a
 ring-constraint forcing enumeration (successor, e.g. GOV-518) remains the H2
 test and must be drafted from this review's framing.
+
+## GOV-518 registration and freeze — 2026-09-07
+
+**Status:** derived `planning_evidence`, maintainer-bound.
+
+**Provenance:** `DECISION_LEDGER.md:1309-1314`; GOV-515 Stage-1 template; `EPIC-520-1:37-52`.
+
+**Frame-level guard:** records boundary registration shell and parallel capacity grant; grants zero topology, admission, runtime, office, or global `harmonic.C_H` authority.
+
+### Decision — freeze-shell with D7/D9/D10 decided, D1–D6/D8 as explicit TBD blockers
+
+The GOV-518 freeze-shell is registered as `scrum/GOV-518-ring-constraint-forcing-enumeration.md` (Review, definition-only; ledger to scrum with citation). It carries boundary_declaration_cells R1–R8 as slots with binding acceptance criteria and proposes no primitive domains, predicates, orderings, or enumeration content. No enumeration, candidate artifact, QA receipt, outcome selection, or H2 verdict is emitted.
+
+Decision table (TBD cells block execution, not shell freezing; no cell is filled by approximation):
+
+| Slot | Registration | Status |
+|---|---|---|
+| D1 | Assignment space, domains, cardinality bound (R1); primitive_variable_independence | ☐ TBD — maintainer |
+| D2 | Derived statistic + positional shape predicate (R1/R5) | ☐ TBD — maintainer |
+| D3 | Constraint set with provenance + selection attestations (R2) | ☐ TBD — maintainer |
+| D4 | Outcome equivalence + granularity rationale (R3) | ☐ TBD — maintainer |
+| D5 | Ordering + order_invariance statement (R4) | ☐ TBD — maintainer |
+| D6 | Non-vacuity demonstration + strictness notes (R8) | ☐ TBD — maintainer |
+| D7 | Outcome categories incl. forced_nonmatching ratification; verdict mapping | ☑ Ratified 2026-09-07 as written (see below) |
+| D8 | Completion feasibility: orbit argument, timeout, environment (R6) | ☐ TBD — maintainer |
+| D9 | Lineage and queue: GOV-515 binding, `:1309-1314`, GOV-516 parallel-capacity grant | ☑ Granted here (see Grant) |
+| D10 | Vocabulary disposition | ☑ Recorded here via EPIC-520-1 addendum (see below) |
+
+D7 ratification: `forced_nonmatching` — exactly one outcome class whose statistic differs from the canonical_observation_record — refutes H2-as-frozen within the boundary, records a frame–observation inconsistency flag per rule 1, reported as-is with no H1/H3 disposition and no input re-tuning. Exactly one matching class alongside non-matching classes is underdetermined, never forced.
+
+D10 disposition: frozen wording `canonical_observation_record`, `input_reach_boundary`, `boundary_declaration_cell` replaces scaffolding wordings; structural invariants `completion_certificate`, `target_blindness`, `primitive_variable_independence`, `order_invariance`, `forced_nonmatching` are registered in the consolidated `EPIC-520-1` addendum table dated 2026-09-07 and cited by anchor from GOV-518 (Rule 11 exists-or-ticketed).
+
+### Grant — parallel capacity without awaiting GOV-516 Done
+
+GOV-516 mathematical and observational outcomes are banked; its ticket remains Review. This entry grants parallel capacity for the GOV-518 freeze (and, once D1–D6/D8 are filled and the fresh manifest binding accepted, its execution) without awaiting an administrative flip to Done. Queue discipline mirrors the GOV-517 grant pattern; GOV-517 itself is untouched. The grant confers no operator, topology, admission, runtime, or synthesis authority.
+
+### Guard
+
+Arithmetic output wins over planning assumptions (rule 1); all four GOV-518 categories close the story with no signal favoring a positive outcome (rule 5); ticket status is not state, receipts are state, sync direction is ledger to scrum with citation (rule 8); sprint exit remains the manifest fixed point (rule 9); frozen text uses registered vocabulary only (rule 11). The shell is `planning_evidence`: the H2 ring-force enumeration remains the non-bypassable DoD gate, and any re-test after an invalid run requires a new boundary registration and new ticket with the original verdict preserved. No bare row counts; the D4/D5 chain audit is cited only as qualified `CONSTRUCTS` edges versus selected D4/D5 `SEAT_CONTACT` chain-audit rows.
+
+### References
+
+- `scrum/GOV-518-ring-constraint-forcing-enumeration.md`
+- `scrum/EPIC-520-1-unified-operator-planning.md` (hypotheses; 2026-09-07 addendum anchors)
+- `scrum/GOV-515-ring-force-enumeration-definition.md`
+- `scrum/GOV-516-run-space-d5-derivability-enumeration.md`
+- `scrum/GOV-517-d5-signature-derivation-definition.md` (queue discipline, untouched)
+- `provenance/OBSERVATION_LEDGER.md` (OBS-008 owns K exhaustivity; OBS-014, OBS-018, OBS-019, OBS-020 observation side)
+- `docs/TOPOLOGY_IDENTITY_AND_INVARIANTS.md:119-149` (exclusion authority)
+- `MANIFEST.json` (current generated byte binding for the shell)

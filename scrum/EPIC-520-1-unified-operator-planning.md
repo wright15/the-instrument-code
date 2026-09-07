@@ -69,6 +69,26 @@ cited receipt or (b) explicitly marked newly specified with a ticketed
 deliverable. Spec language must not imply an existing artifact, queued work,
 or executed result where neither exists.
 
+## Addendum — GOV-518 structural invariants — 2026-09-07
+
+Re-expression disposition for GOV-518 frozen wording (scaffolding wordings are superseded and do not appear as live vocabulary in frozen text):
+
+| Superseded scaffolding wording | Frozen wording | Note |
+|---|---|---|
+| comparison-target scaffolding | `canonical_observation_record` | The fingerprint-verified post-enumeration observation side (OBS-018 sequence, OBS-020 maximum-candidate record, GOV-516 receipt content); exactly one pipeline role. |
+| dependency-surface scaffolding | `input_reach_boundary` | The enumeration program read and import surface verified by the static dependency check; the comparison step is a separate entry point. |
+| registration-slot scaffolding | `boundary_declaration_cell` | A maintainer-must-register slot (R1–R8) or decision cell (D1–D10) with binding acceptance criteria. |
+
+Consolidated structural invariants registered here and cited by anchor from `GOV-518-ring-constraint-forcing-enumeration.md` (Rule 11 exists-or-ticketed):
+
+| Term | Meaning in the GOV-518 shell | Status |
+|---|---|---|
+| `completion_certificate` | Valid-run evidence: declared bound, visited count equal to the bound (or registered orbit count), and environment fingerprint. Exactly one admissible class is reportable only under a valid certificate. | Registered here 2026-09-07; cited by GOV-518 R6 and D8. |
+| `target_blindness` | Required fixture: the enumeration completes with byte-identical output when the canonical_observation_record artifacts are unreadable. Failure means the design is loaded. | Registered here 2026-09-07; cited by GOV-518 R7 and §3. |
+| `primitive_variable_independence` | No primitive variable coincides with, or is a bijective re-encoding of, a coordinate of the compared statistic; the statistic is derived, never assigned. | Registered here 2026-09-07; cited by GOV-518 R1 and D1. |
+| `order_invariance` | The verdict statistic is a function of the whole class set and is invariant under the registered ordering; ordering resolves representative selection and artifact reproducibility only. | Registered here 2026-09-07; cited by GOV-518 R4 and D5. |
+| `forced_nonmatching` | Exactly one outcome class whose statistic differs from the canonical_observation_record; refutes H2-as-frozen within the boundary with a frame–observation inconsistency flag per rule 1; no input re-tuning. | Registered here 2026-09-07; ratified as-written in GOV-518 §2 and D7. |
+
 ## Acceptance criteria
 
 1. The story preserves the confirmed inputs without expanding their authority:
