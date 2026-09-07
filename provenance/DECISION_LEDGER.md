@@ -1422,3 +1422,55 @@ replaced by maintainer-cited content and the accepted binding is current.
   OBS-014/018/019/020 observation side only)
 - `docs/TOPOLOGY_IDENTITY_AND_INVARIANTS.md:119-149` (exclusion authority)
 - `MANIFEST.json` (post-regeneration binding)
+
+## GOV-518 maintainer mathematical registration — 2026-09-07
+
+**Status:** derived `planning_evidence`, maintainer-bound, definition-only.
+
+**Lineage:** `DECISION_LEDGER.md:1309-1314,1316-1424`; the GOV-518
+freeze-shell R1-R8; and the EPIC-520-1 addendum dated 2026-09-07. This
+entry is ledger to scrum with citation and grants zero topology, admission,
+runtime, office, or global `harmonic.C_H` authority.
+
+### Decision — register D1-D6 and D8
+
+The following mathematical boundary replaces the seven maintainer blockers.
+It is target-blind: no D-series output, observed bitmask, 5-35 or declared
+contact signature, office result, or GOV-514 scalar is an enumeration input.
+The `canonical_observation_record` remains a fingerprint-verified,
+post-enumeration comparison input only.
+
+| Cell | Registration |
+|---|---|
+| D1 / R1 | Let `X = (x_0,...,x_6) in Z_7^7`, indexed modulo 7, with every primitive `x_i in Z_7`; `mathcal X = Z_7^7` and `N = |mathcal X| = 7^7 = 823543`. Define the K-neighbor projection `b_i(X) = 1` exactly when `x_{i-1} != x_{i+1}`, otherwise `0`; define `S_i(X)` as the largest `ell in {0,...,7}` for which `b_i(X),...,b_{i+ell-1}(X)` are all 1 (indices modulo 7); and define the total deterministic map `f: mathcal X -> mathcal S = {0,...,7}^7` by `f(X) = (S_0(X),...,S_6(X))`. The statistic is computed from X and is never a primitive input. For every `c in Z_7`, replacing X by `X+c` changes every primitive `x_i` while preserving every equality in b and therefore preserves f(X). Thus no `x_i` is a function of, much less a direct or bijective re-encoding of, a statistic coordinate. The primitive domain has seven values whereas each statistic coordinate has the declared eight-value codomain; no domain bijection exists. This proves `primitive_variable_independence`. |
+| D2 / R1+R5 | The sole shape predicate is `P(S) = argmax_i(S_i) = {i in Z_7 : S_i = max_j S_j}`. It is relational and contains no literal run length, coordinate, sequence, signature, or observation value. The canonical comparison is a separate verdict-time entry point. |
+| D3 / R2 | `C_adj(X): for every i in Z_7, x_i != x_{i+1}`; source: registered office-ring adjacency axiom, whose adjacent positions remain distinct. `C_step2(X): for every i in Z_7, x_{i-1} != x_{i+1}`; source: the distance-2 K construction-step structure, with K exhaustivity cited to OBS-008 only. `C_close(X): sum_{i in Z_7} x_i = 0 in Z_7`; source: 7-cycle closure and coordinate-consistency predicate. Let `C(X) = C_adj(X) and C_step2(X) and C_close(X)`. Each predicate is invariant under cyclic shift and reflection. **Selection attestation:** these predicates were selected only from the registered adjacency, OBS-008 distance-2 construction-step, and 7-cycle closure sources. None was selected by effect on the outcome space or by reference to an R7-forbidden input. OBS-004, OBS-005, OBS-009, and the D-signature exclusion authority are not K-exhaustivity sources. |
+| D4 / R3 | Let `sigma` act by `(sigma X)_i = x_{i-1}` and let `tau` act by `(tau X)_i = x_{-i}`. Define `X ~ X'` iff `X' = gX` for some `g in D_7 = <sigma,tau>`, and enumerate `mathcal X / ~` (filtering its representatives by C). The quotient is structurally justified because the three predicates and f are equivariant under the registered ring symmetries. It is fine enough to retain every non-dihedral coordinate/run structure, so it cannot artificially force a match by identifying unrelated configurations. It is coarse enough to collapse only trivial cyclic rotations and reflections, so it does not weaken the test by counting the same ring configuration in multiple orientations. No post-execution retuning is permitted. |
+| D5 / R4 | Represent each `Z_7` coordinate by `0 < 1 < ... < 6`. Set `X prec X'` when, at the first coordinate where they differ, `x_i < x'_i`. Order classes by their lexicographically least representative and then by its f(X) tuple under the same lexicographic order. This order uses only the fixed coordinate order and has no dependency on canonical observation records or their artifacts. The verdict is a function of the complete set of admissible classes, their count, and their per-class statistics; ordering selects representatives and stabilizes artifact emission only. This establishes `order_invariance`. |
+| D6 / R8 | The R7-screened non-vacuity witness is `X_wit = (0,0,0,0,0,0,0)`. It is a generic Z_7 tuple, not a target edit or encoding of any excluded value, and it fails `C_adj` and `C_step2`; hence C excludes an R1 assignment. Per-constraint strictness is demonstrated: removing `C_adj` admits `(0,0,1,1,2,2,1)`, which satisfies `C_step2` and `C_close` but not `C_adj`; removing `C_step2` admits `(0,1,0,1,0,1,4)`, which satisfies `C_adj` and `C_close` but not `C_step2`; removing `C_close` admits `(0,1,2,3,4,5,3)`, which satisfies `C_adj` and `C_step2` but not `C_close` because its coordinate sum is `4 in Z_7`. Therefore each removal strictly enlarges the admissible space. |
+| D8 / R6 | Symmetry reduction uses the D_7 action above. Burnside gives `N_orbit = (7^7 + 6*7 + 7*7^4)/14 = 60028`: identity fixes `7^7`, each of the six nonidentity rotations fixes 7 constant assignments, and each of seven reflections fixes `7^4` assignments. The admissible orbit count is at most 60028. The timeout is 60 seconds. The deterministic CPU-only environment is Node.js v22.22.0 and Python 3.12.3, with no RNG, wall-clock, or locale input. A `completion_certificate` records `N_orbit`, visited orbit representatives equal to `N_orbit`, the admissible-class count, and the environment fingerprint. |
+
+### Guard and attestations
+
+The enumeration reads only the registered primitive assignments and predicates.
+The `input_reach_boundary` must reject any path to R7-forbidden material, and
+the `target_blindness` fixture must complete with the comparison artifacts
+unreadable. The constraint selection attestation above is final: no
+selection-by-effect occurred. Arithmetic output wins over this registration;
+all frozen outcome categories remain unchanged; no model prose is a
+mathematical source; and any revision requires a new append-only entry.
+
+### Manifest receipt
+
+After fixed-point regeneration, the `MANIFEST.json` SHA-256 binding for
+`scrum/GOV-518-ring-constraint-forcing-enumeration.md` is recorded here:
+
+`6d97c285ed25c1f153131da639d5a2eeab5b5919b7960da723bd56bcfe9537b2`.
+
+### References
+
+- `scrum/GOV-518-ring-constraint-forcing-enumeration.md`
+- `scrum/EPIC-520-1-unified-operator-planning.md:72-90`
+- `provenance/OBSERVATION_LEDGER.md:108-119` (OBS-008 only for K exhaustivity)
+- `provenance/DECISION_LEDGER.md:1309-1314,1316-1424`
+- `MANIFEST.json` (post-regeneration binding)
