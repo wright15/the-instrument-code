@@ -1,8 +1,8 @@
 {
-  "verdict": "FAIL",
+  "verdict": "PASS",
   "releaseId": "seven-governors-integrated-1.9.0-dev",
-  "checksPassed": 416,
-  "checksFailed": 2,
+  "checksPassed": 418,
+  "checksFailed": 0,
   "checks": [
     {
       "name": "release manifest fixed point",
@@ -817,12 +817,12 @@
     },
     {
       "name": "pentatonic binding closure freshness",
-      "status": "FAIL",
-      "diagnostic": "    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)\n\nNode.js v22.22.0"
+      "status": "PASS",
+      "diagnostic": "passed"
     },
     {
       "name": "pentatonic binding evidence fingerprint closure",
-      "status": "FAIL",
+      "status": "PASS",
       "diagnostic": {
         "candidateFingerprint": "7c38e457ce903a3dd72a007265eda256c48c5a326b66bc32bb4c92a93aacdf3e",
         "phase1ValidationReportFingerprint": "f7edfb035ab16682359bcf15474d533b214ab1259591284433928a6971239ddc",
@@ -831,7 +831,7 @@
         "cypherDeterministicFingerprint": "17a99dde862c5853031724a11c6435d372fd795eeb86a700fbc266068e7a8b61",
         "crt310BacklogFingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
         "sourceAuthoritySha256": "b27e9a23b58c1944f33629f103f0d9614c4347084d1aff7a9640f67ac386fd72",
-        "decisionLedgerSha256": "3ae0753708041dfa60eaee9aca8cd52a0950834ad6945378bbe543ec64833aef"
+        "decisionLedgerSha256": "5c52cbbd35db29feafbe079b4fed8be5758481eed7e81157f8b45684870ace42"
       }
     },
     {
@@ -845,7 +845,7 @@
           "2": 48,
           "3": 12
         },
-        "closureFingerprint": "08d9af486404d46e4032205bd4d2bf5aee582d80fe3e454925b91c3ac8948316"
+        "closureFingerprint": "bc317dad1f274e2d15f6a3bb5caa1ad80e8b92715bd386f4c02eb7c5179bcfe1"
       }
     },
     {
