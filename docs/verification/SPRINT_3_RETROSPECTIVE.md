@@ -6,6 +6,12 @@ Sprint 3 was a load-bearing infrastructure interlude. It delivered the bounded
 query contract, receipt-bound evidence surfaces, and reporting format required
 by the EPIC-520 handoff; it was not a failure to advance mathematics.
 
+## Browser Flake
+
+Single-session isolation runs still reproduce the `orrery-game` 30s timeout.
+This confirms the flake's reproduction and retires the prior claim that
+isolation mitigates it.
+
 ## Patterns Retained
 
 1. The verification gate established per-suite `ran`/`skipped` receipts as the
