@@ -1,20 +1,23 @@
 {
-  "schemaVersion": "seven-governors.validation-prose-consistency.v1",
+  "schemaVersion": "seven-governors.validation-prose-consistency.v2",
   "verdict": "PASS",
   "releaseId": "seven-governors-integrated-1.9.0-dev",
   "authoritativeChecksPassed": 418,
   "scope": [
     "docs/**/*.md",
     "orrery/*.md",
+    "scrum/**/*.md",
     "README.md"
   ],
   "statistics": {
-    "filesScanned": 41,
+    "filesScanned": 123,
     "claims": 2,
     "claimsMatchingCurrent": 0,
     "claimsReleaseQualified": 2,
     "claimsScoped": 0,
     "exemptions": 2,
+    "scrumFingerprintLiterals": 29,
+    "scrumFingerprintViolations": 0,
     "violations": 0
   },
   "claims": [
@@ -47,6 +50,182 @@
       "line": 40,
       "literal": 440,
       "reason": "line_reference"
+    }
+  ],
+  "scrumFingerprintLiterals": [
+    {
+      "file": "scrum/CRT-348-fivefold-engine-promotion-gate.md",
+      "line": 130,
+      "fingerprint": "9cbf038c93a72719387e6a8094f5b466a79e61ce03371f5b2334fb26a480b64a",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/CRT-348-fivefold-engine-promotion-gate.md",
+      "line": 131,
+      "fingerprint": "b4351a14aa3dfde6043a609e4158abcb17b006b666a35220e5833cf1cf7ffa9b",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/CRT-348-fivefold-engine-promotion-gate.md",
+      "line": 132,
+      "fingerprint": "5164b74bf6cbbb55625eb0e9b958542cf20ddacb426813b7a93c1bffd7347605",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/GOV-202-typed-aspects-quantities-bridges.md",
+      "line": 79,
+      "fingerprint": "609be20d0ee5d2f400b42b09d16842d7bfa3fee42f6bed24dbc1b4bbf4bc6947",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/GOV-202-typed-aspects-quantities-bridges.md",
+      "line": 81,
+      "fingerprint": "460e6c40bf96f58a0be36936a91939b930701dfee5875d5e5d0cd6311402f819",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/GOV-227-d-tier-harmonic-compression-audit.md",
+      "line": 77,
+      "fingerprint": "fa2947440d90f67b65443ae03f1ce92a0cc8a6ca2e93e83dfdc2490a25723c98",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/GOV-227-d-tier-harmonic-compression-audit.md",
+      "line": 146,
+      "fingerprint": "2c6ffae3acc7d5e6bc7154783967ad463d99fab96c0e410b69b27fb21af59c6e",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/GOV-501-neo4j-baseline-parity.md",
+      "line": 31,
+      "fingerprint": "fd089ea9a0b91d1572b0efeeaa724a53e9d182e8bbc6f793111f52873a41c1a1",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/NET-103-non-state-placement.md",
+      "line": 65,
+      "fingerprint": "434e0d3f1c2fea2c3c382c69076161465fc6f6702f994cdcb65d1aa7fde534f9",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/NET-106-docs-closure.md",
+      "line": 61,
+      "fingerprint": "2034cc9eb6fa422c4c41695b63d89236efdb38d04bba2961c8b7a645f5466d27",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-audit.md",
+      "line": 134,
+      "fingerprint": "048d9195d156a769c05887ea41a6ccffae26b36757996fffdc12a0ade3122ec5",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-audit.md",
+      "line": 136,
+      "fingerprint": "16969457214966f8f9138dad7b7e6221b4cf950a962e6806e5900fd87828629b",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-audit.md",
+      "line": 175,
+      "fingerprint": "ab76011d687455c08f23791a8607fb32bb0015730240fcf94aacdc8e572449ff",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-audit.md",
+      "line": 182,
+      "fingerprint": "fbe7f8fa8b98e6942bab1f7c66e3822c339716e5a2ef693ba0f780661d4fa037",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-audit.md",
+      "line": 215,
+      "fingerprint": "814512d4f4360dc7e9ab77b8190043a155ae8253d2729dbb21f33db91e37f1df",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-audit.md",
+      "line": 251,
+      "fingerprint": "84717a2e9c0b3bed7262420e2a109bf0407dca9df341d4e2d58874003a9324bb",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-phase-2-4-handoff.md",
+      "line": 27,
+      "fingerprint": "048d9195d156a769c05887ea41a6ccffae26b36757996fffdc12a0ade3122ec5",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-phase-2-4-handoff.md",
+      "line": 28,
+      "fingerprint": "16969457214966f8f9138dad7b7e6221b4cf950a962e6806e5900fd87828629b",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-phase-2-4-handoff.md",
+      "line": 37,
+      "fingerprint": "fbe7f8fa8b98e6942bab1f7c66e3822c339716e5a2ef693ba0f780661d4fa037",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-phase-2-4-handoff.md",
+      "line": 47,
+      "fingerprint": "814512d4f4360dc7e9ab77b8190043a155ae8253d2729dbb21f33db91e37f1df",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-phase-2-4-handoff.md",
+      "line": 56,
+      "fingerprint": "84717a2e9c0b3bed7262420e2a109bf0407dca9df341d4e2d58874003a9324bb",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-phase-2-4-handoff.md",
+      "line": 255,
+      "fingerprint": "ab76011d687455c08f23791a8607fb32bb0015730240fcf94aacdc8e572449ff",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-phase-2-4-handoff.md",
+      "line": 261,
+      "fingerprint": "fbe7f8fa8b98e6942bab1f7c66e3822c339716e5a2ef693ba0f780661d4fa037",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-phase-2-4-handoff.md",
+      "line": 306,
+      "fingerprint": "814512d4f4360dc7e9ab77b8190043a155ae8253d2729dbb21f33db91e37f1df",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-phase-2-4-handoff.md",
+      "line": 378,
+      "fingerprint": "048d9195d156a769c05887ea41a6ccffae26b36757996fffdc12a0ade3122ec5",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-phase-2-4-handoff.md",
+      "line": 381,
+      "fingerprint": "16969457214966f8f9138dad7b7e6221b4cf950a962e6806e5900fd87828629b",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-phase-2-4-handoff.md",
+      "line": 385,
+      "fingerprint": "fbe7f8fa8b98e6942bab1f7c66e3822c339716e5a2ef693ba0f780661d4fa037",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-pentatonic-graph-binding-phase-2-4-handoff.md",
+      "line": 389,
+      "fingerprint": "84717a2e9c0b3bed7262420e2a109bf0407dca9df341d4e2d58874003a9324bb",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/pre-epic-400-semantic-and-empirical-audit.md",
+      "line": 270,
+      "fingerprint": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+      "classification": "bound"
     }
   ],
   "violations": []

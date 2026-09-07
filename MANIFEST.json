@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1000,
-  "totalBytes": 71677584,
+  "fileCount": 1023,
+  "totalBytes": 71968308,
   "files": [
     {
       "path": ".env.example",
@@ -266,6 +266,11 @@
       "sha256": "91fead6b1e637ed6dd82dc4f47bd3c357abfee6958aabfe28406399414a6d34c"
     },
     {
+      "path": "canonical/fivefold-incubator/d-shadow-uniqueness-check-v0.json",
+      "bytes": 1350,
+      "sha256": "389f98e01e54e7e0f88c7b36fad0b321662904db15c936815a82630461eb4d02"
+    },
+    {
       "path": "canonical/fivefold-incubator/d-tier-interleaving-check-v0.json",
       "bytes": 6049,
       "sha256": "5ad6c3c433e2b4b0216d3715afe91405a88b9288ea3caae37f6008b2c53a2723"
@@ -273,17 +278,17 @@
     {
       "path": "canonical/fivefold-incubator/fifth-space-census-v0.json",
       "bytes": 194194,
-      "sha256": "d437b390e1547ede9887c51c0ac5488e174e1666e8bc4d08759b4092bbb9935b"
+      "sha256": "21dc921d2e96a6f0d99960d386c0202aa1e094070d94ef937b190160bf3eb036"
     },
     {
       "path": "canonical/fivefold-incubator/shadow-ladder-v0.json",
       "bytes": 3927,
-      "sha256": "c848703ef1395dc09faae00bf62204633767f3edeadfed2f7021dca58003e4bc"
+      "sha256": "f88e4da32f1b8897a19c51beea2f165675dc2824f90e5870ab244a0a893dff4b"
     },
     {
       "path": "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
       "bytes": 12396,
-      "sha256": "c5e2fdae57e0058c1ba1b97cf050c20489033401d3e20ea8c566fb0369530ab8"
+      "sha256": "1270ea8c6eda09d598ee4a04d652742f6586f3bac571216d5b11672b57dc8742"
     },
     {
       "path": "canonical/gov-210-availability-housing.json",
@@ -607,8 +612,8 @@
     },
     {
       "path": "docs/verification/SPRINT_3_RETROSPECTIVE.md",
-      "bytes": 1688,
-      "sha256": "b1153258d6c9b9b6a57bd674ed45902a11e1878ea03b9faa97d0b6280d564cb0"
+      "bytes": 1880,
+      "sha256": "8b6c9558f62a72617dca27b391ca13c6814c0af67021876e9bc687623c9c22b5"
     },
     {
       "path": "docs/verification/VERIFICATION_REPORT_GATE_STATUS.md",
@@ -1017,8 +1022,8 @@
     },
     {
       "path": "orrery/index.html",
-      "bytes": 26159,
-      "sha256": "8867cd04a181e60e10fdea751d0a3544cc84e0eedb842e53d93b69e202516e18"
+      "bytes": 28374,
+      "sha256": "6946bff69882f31572d9950dc0780b17b6c7abae84e4f1af07fe4415f24c3d0a"
     },
     {
       "path": "orrery/package-lock.json",
@@ -1027,8 +1032,8 @@
     },
     {
       "path": "orrery/package.json",
-      "bytes": 1370,
-      "sha256": "c3df408859045bc283bcdedfb2830c2577d19d0c08fb10f076534662e0c44954"
+      "bytes": 1766,
+      "sha256": "80303d1a2b2e872bd55ddd17c01839262bad7588bcd96edefce78659e853e90e"
     },
     {
       "path": "orrery/public/AUDIO_ASSETS.md",
@@ -1106,6 +1111,16 @@
       "sha256": "48904797de31cc9cd56cb37a11b72dc1ff531076ccb66b28c5a449990ca7898e"
     },
     {
+      "path": "orrery/src/d-tier-taxonomy-dataset.test.ts",
+      "bytes": 1942,
+      "sha256": "a6dd3d455374e67173393666a098f9253c5d25b5d16e30892ceb4a65f8421a71"
+    },
+    {
+      "path": "orrery/src/d-tier-taxonomy-dataset.ts",
+      "bytes": 4493,
+      "sha256": "b80060685681f851ebf3a8d935df78a32ed0b18252fbb49ee695d6c09fddb1f7"
+    },
+    {
       "path": "orrery/src/evidence-bundle.test.ts",
       "bytes": 6847,
       "sha256": "f6372d8d9a9da60afaae701979b9edea5a36df2cb8d70662c108d77a516fb60c"
@@ -1124,6 +1139,11 @@
       "path": "orrery/src/field-derivation.ts",
       "bytes": 7857,
       "sha256": "56ffc7b36d8ff0369b5ee00e0a3f68af3e03b567011f4a5025a5c178f0eb8168"
+    },
+    {
+      "path": "orrery/src/generated/d-tier-taxonomy-dataset.v1.json",
+      "bytes": 66006,
+      "sha256": "5a6fb4a4f3bba6bef74ccc37a1dd31008272c77b207b50ae4d64f13d8042b88a"
     },
     {
       "path": "orrery/src/generated/evidence-bundle.v1.json",
@@ -1146,6 +1166,11 @@
       "sha256": "35e8958d6e6d2455ceb6442ef7dc50d07de80416bbed7bf78260c670cc10901e"
     },
     {
+      "path": "orrery/src/generated/taxonomy-read-model.v1.json",
+      "bytes": 143714,
+      "sha256": "976fc68203ab598d49122a958d30365dbcc368f0c9fb7475f1974f0af8541b06"
+    },
+    {
       "path": "orrery/src/harmony.test.ts",
       "bytes": 7597,
       "sha256": "d65a2261a685c986be9103ade1720c00044013e5f0113afc971581a6d2bd6059"
@@ -1162,8 +1187,8 @@
     },
     {
       "path": "orrery/src/main.ts",
-      "bytes": 66950,
-      "sha256": "74fef09143cb2500ad0c5377de1e65bb046aeaecd6c84346f092a48a80eed9bc"
+      "bytes": 72232,
+      "sha256": "651251a9e5e8d9f81208c0188de2108a0ddd625d854533e6ea9e1f60909140c5"
     },
     {
       "path": "orrery/src/moves.math.test.ts",
@@ -1237,8 +1262,18 @@
     },
     {
       "path": "orrery/src/style.css",
-      "bytes": 39561,
-      "sha256": "115714ae81e4c21c361b9577aa931a277707d0db661564f1fe7a72085d1d1e55"
+      "bytes": 41432,
+      "sha256": "0d948f09abd65823c0360a59f31e2fb038bda4e279ef6ab4005fe02c162b6fc1"
+    },
+    {
+      "path": "orrery/src/taxonomy-read-model.test.ts",
+      "bytes": 2301,
+      "sha256": "b6bda8f2d87bfd18688f7185088825c231a67b208054b51bdc4e69922d3835b3"
+    },
+    {
+      "path": "orrery/src/taxonomy-read-model.ts",
+      "bytes": 4819,
+      "sha256": "a445c426772b78c282d2220d2a6828bf88e56d8496588f89b90b032cdd811e83"
     },
     {
       "path": "orrery/src/types.ts",
@@ -1272,13 +1307,13 @@
     },
     {
       "path": "package.json",
-      "bytes": 12310,
-      "sha256": "b4336113c84cb0b97d6243ff30194cd895e3a494e2f6d9437207fa642c280b96"
+      "bytes": 12608,
+      "sha256": "31b3a002eaf7b231da54bd84241fec8c558adb324646fb2fb687da3a2c2c1ad1"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
-      "bytes": 70373,
-      "sha256": "3ae0753708041dfa60eaee9aca8cd52a0950834ad6945378bbe543ec64833aef"
+      "bytes": 70693,
+      "sha256": "5c52cbbd35db29feafbe079b4fed8be5758481eed7e81157f8b45684870ace42"
     },
     {
       "path": "provenance/NEXT_STEPS.md",
@@ -1287,8 +1322,8 @@
     },
     {
       "path": "provenance/OBSERVATION_LEDGER.md",
-      "bytes": 23563,
-      "sha256": "3e448bc12589922fc31551f6fcd059c8fe8e855975aa2c369bb8e68a76cf9914"
+      "bytes": 24982,
+      "sha256": "c5e994efbcb083ee76cb9a29ba19d243f534d566b195375808156274c9aafa2a"
     },
     {
       "path": "provenance/SOURCE_AUTHORITY.md",
@@ -1361,6 +1396,11 @@
       "sha256": "af2cdd6cde8a1da708a3df9dee1ceb10670f9ab1742939193a7b130b6a153bbf"
     },
     {
+      "path": "qa/d-shadow-uniqueness-validation.json",
+      "bytes": 5993,
+      "sha256": "cf7c7519328192a870bd48506b044ab07fa99bda588b2c00c82d722e7bcc9f8f"
+    },
+    {
       "path": "qa/d-tier-harmonic-compression-validation.json",
       "bytes": 13966,
       "sha256": "63d6a6fb0cdac87eddd0cee2cf3093749fbf273abe3f2536453ccd884cb84549"
@@ -1378,7 +1418,7 @@
     {
       "path": "qa/fifth-space-census-validation.json",
       "bytes": 16323,
-      "sha256": "29226e7dde4e4a2c405ce22921ba3ea7b099a22a3ba5c3615336a09426047200"
+      "sha256": "3cc28f902a06176a5d9c2e54b206ad525c1980c3f875a18a7508efe1b8a70dc1"
     },
     {
       "path": "qa/fivefold-capability-teleology-validation.json",
@@ -1493,7 +1533,7 @@
     {
       "path": "qa/shadow-ladder-validation.json",
       "bytes": 5382,
-      "sha256": "9ed864963746c311aec26cf8e6d636a723d446951d3c6e41f4527583d54f51d5"
+      "sha256": "d1ba8d4c6527381b91f4768cb685da546acb4a4df8f2afe6978fd0c6cb977481"
     },
     {
       "path": "qa/teleological-physics-registry-validation.json",
@@ -1508,7 +1548,7 @@
     {
       "path": "qa/twin-hub-convergence-validation.json",
       "bytes": 5369,
-      "sha256": "d067e469598078ac113a32ea2fce716588c77d270a24bc09b6c68608cbeae49d"
+      "sha256": "1974b491f82b3a9f439c3d200a825e14ae27f4c8788eda9e888853881bfb62a4"
     },
     {
       "path": "requirements-orrery-dev.txt",
@@ -1701,6 +1741,16 @@
       "sha256": "b89b156cacfe6326bde342942b3301be9e8780cd098750e8f6d6d07d9182d36e"
     },
     {
+      "path": "schemas/fivefold-incubator/d-shadow-uniqueness-check-v0.schema.json",
+      "bytes": 2095,
+      "sha256": "3ac37dc2d3dc6bcc7732d90dfa1f8d45edd5687f8005d2d291042e4b18af334a"
+    },
+    {
+      "path": "schemas/fivefold-incubator/d-shadow-uniqueness-validation.schema.json",
+      "bytes": 691,
+      "sha256": "ef59636bcc55a7393f225b06a47e7fc49842ce5e4574f80ab9a7e8702d122470"
+    },
+    {
       "path": "schemas/fivefold-incubator/d-tier-interleaving-check-v0.schema.json",
       "bytes": 1017,
       "sha256": "32f51ea56cd42aa439280933782d168bad3bb31ed5d5cf87fad3d2a79dc7c574"
@@ -1851,6 +1901,11 @@
       "sha256": "a602787cadb87a778e7c14ffaf8b84c8a9778415c28a12c5e38254bc9f80253e"
     },
     {
+      "path": "schemas/harmonic-orrery-d-tier-taxonomy-dataset.schema.json",
+      "bytes": 858,
+      "sha256": "9646c211e4e34220eb594c3d47b976e81d0d93faa0ed505663ab2f6be7c6645f"
+    },
+    {
       "path": "schemas/harmonic-orrery-evidence-bundle.schema.json",
       "bytes": 4206,
       "sha256": "9f27cf50f4ebda928f9ee364b6cef97e91d27578dc96f3b9c11ed4e2cb823505"
@@ -1874,6 +1929,11 @@
       "path": "schemas/harmonic-orrery-photonic-overlay.schema.json",
       "bytes": 1165,
       "sha256": "86aadd304c3559ffbc92390eb39f9773b26a9019495432463a0eae2645c03358"
+    },
+    {
+      "path": "schemas/harmonic-orrery-taxonomy-read-model.schema.json",
+      "bytes": 849,
+      "sha256": "4c1598870e0afa6a35e080c9536f79fff0bb9c4f69f643a4377e3e4573fcd264"
     },
     {
       "path": "schemas/mechanics-thermodynamics-registry-v1.0.0.schema.json",
@@ -2011,6 +2071,11 @@
       "sha256": "8ea71fcf100c6ab6043aa14a53acdbc73ba27dc614c198809387f080c3aa43c6"
     },
     {
+      "path": "scripts/build-orrery-d-tier-taxonomy-dataset.mjs",
+      "bytes": 4729,
+      "sha256": "fb7b608b88feb07415217dbc7f4028b1febdebedaf97c09ffe2f56be69125cc2"
+    },
+    {
       "path": "scripts/build-orrery-evidence-bundle.mjs",
       "bytes": 11807,
       "sha256": "56ed7c5d8488bbad85666047f60da4b8de7ab40fd4316a723005f3b1705381af"
@@ -2019,6 +2084,11 @@
       "path": "scripts/build-orrery-legal-move-catalog.mjs",
       "bytes": 12068,
       "sha256": "c496920c713cafa18a01336f61e30d10b836a942820cb5f4b454af0f27e74850"
+    },
+    {
+      "path": "scripts/build-orrery-taxonomy-read-model.mjs",
+      "bytes": 4378,
+      "sha256": "bb127a76997d80bb66ed496a0ce716dc355da43926b86764e5485498e1671493"
     },
     {
       "path": "scripts/build-pentatonic-admission-backlog.mjs",
@@ -2049,6 +2119,11 @@
       "path": "scripts/generate-d-shadow-complement-span.py",
       "bytes": 1251,
       "sha256": "61981bba3a7d4f644a9fc71438c39239ad6b537db5b718808ed2050bf6fc9d66"
+    },
+    {
+      "path": "scripts/generate-d-shadow-uniqueness.py",
+      "bytes": 1264,
+      "sha256": "79d829073cc711a2d5aa6301e417792bef7c76136e451e0ec7a9c83360ef5b64"
     },
     {
       "path": "scripts/generate-d-tier-harmonic-compression.py",
@@ -2171,6 +2246,11 @@
       "sha256": "09bfddff8e7dad41fd66011ca6cccb74350a4b7eb6fa845ce8fc96e941c2cdd5"
     },
     {
+      "path": "scripts/validate-d-shadow-uniqueness.py",
+      "bytes": 8820,
+      "sha256": "fb71d682947781d41f00a3c2ce2d9b15b1ec97bee9230140a3861f2329844a5a"
+    },
+    {
       "path": "scripts/validate-d-tier-harmonic-compression.py",
       "bytes": 11925,
       "sha256": "71575aaa805fc439640bcb1d381828b5f80ffa7440f6f63e17fa1d4bf6e6ecf6"
@@ -2236,6 +2316,16 @@
       "sha256": "f4acc40b27377700ad6dd86be675b2ab980d89a330b1864c2adcd21c838cd07f"
     },
     {
+      "path": "scripts/validate-orrery-d-tier-taxonomy-dataset.mjs",
+      "bytes": 1190,
+      "sha256": "628599699fb243849ad05f12f06d51bb578587443ffa7b31d76e4d1a3bd278c1"
+    },
+    {
+      "path": "scripts/validate-orrery-taxonomy-read-model.mjs",
+      "bytes": 1261,
+      "sha256": "48045c6fc5770a41e66bf7cb755c8d2132608bee7517a3c78be0a8244cbeef9c"
+    },
+    {
       "path": "scripts/validate-pentatonic-7-35-parent-audit.py",
       "bytes": 47373,
       "sha256": "81c5bcb52becc9f1432a599bf4abd9ba68a1f7341756917bd53dd04ffeeb5f90"
@@ -2277,8 +2367,8 @@
     },
     {
       "path": "scripts/validate-validation-prose-consistency.mjs",
-      "bytes": 9372,
-      "sha256": "121c3aa75dbf10235d6425f30d239202aa428e4d2f9141ba8490b0bb5a14cb0b"
+      "bytes": 10973,
+      "sha256": "8cbadb01b69d3a9ad6cd5c9f82be23c019383470792a75a80d1851b35f53ab23"
     },
     {
       "path": "scripts/validate-vault-context.mjs",
@@ -2364,6 +2454,11 @@
       "path": "scrum/CRT-351-mechanics-thermodynamics-registry.md",
       "bytes": 9157,
       "sha256": "13e676627e76fe7e2a8f0b81a78ccd85992f632d6e04cf1a6fedbdea07515d5b"
+    },
+    {
+      "path": "scrum/DEFECT-orrery-game-timeout.md",
+      "bytes": 832,
+      "sha256": "07245add636ec3028f3871e80650568c0807e0f0f4c892c935f5c03b3e215799"
     },
     {
       "path": "scrum/EPIC-001-network-replica.md",
@@ -2536,6 +2631,16 @@
       "sha256": "fe30d6ae269de4ec3925fada8097a574eb99c97bc5a21dfe262c02c00d06ba0e"
     },
     {
+      "path": "scrum/GOV-516-run-space-d5-derivability-enumeration.md",
+      "bytes": 5929,
+      "sha256": "3923c711ab02fe49aa75b0cecd2911967007f3c5fbed80c9e0890bcfd4fbb4cb"
+    },
+    {
+      "path": "scrum/GOV-517-d5-signature-derivation-definition.md",
+      "bytes": 3581,
+      "sha256": "05f57aea9177fe012cbf199cedbf5a328393cc79c7ae70545cd1211c3d1b6907"
+    },
+    {
       "path": "scrum/NET-101-office-lane-layout.md",
       "bytes": 3108,
       "sha256": "52bd3ac2a3d417b15842adae96351eacd40288da73bc192feaa80a46dc67340f"
@@ -2647,8 +2752,8 @@
     },
     {
       "path": "scrum/README.md",
-      "bytes": 14676,
-      "sha256": "4ca74184090a1aaddba2558dd1d396e44b25ce4511cf729dab1ffb6a78436dec"
+      "bytes": 15206,
+      "sha256": "42639cf90e96682161e19c5fc29e50d7413be17698796d835f54f12f92419e31"
     },
     {
       "path": "scrum/plan/epic-520-1-planning-handoff.md",
@@ -4441,6 +4546,11 @@
       "sha256": "b790baa5ffa78e4673ea915e6bf4b9ef10f42266c71f751f4d79a394a3edac23"
     },
     {
+      "path": "src/governor/d_shadow_uniqueness.py",
+      "bytes": 6137,
+      "sha256": "1458aa98075f56bb3395ec0c6467e2a5aefcc2bbfc5ca931bcb2688e8a4bb8f7"
+    },
+    {
       "path": "src/governor/d_tier_interleaving_check.py",
       "bytes": 6520,
       "sha256": "3bae1b8ab0fe3153bb3ba845887505e2e08b123cb546bfefba66017afa66b409"
@@ -4794,6 +4904,11 @@
       "path": "tests/test_d_shadow_complement_span.py",
       "bytes": 4174,
       "sha256": "6d93a124bfa827ea8deb6ed16702d5d38690974f5a8a89d69ca2ef732faab632"
+    },
+    {
+      "path": "tests/test_d_shadow_uniqueness.py",
+      "bytes": 3368,
+      "sha256": "b08cdfd886b7f66a5fb12919e7d1159a9c7ee83677201e0ec91d082963da486e"
     },
     {
       "path": "tests/test_d_tier_interleaving_check.py",
