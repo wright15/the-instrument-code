@@ -115,11 +115,12 @@ planning arithmetic.
 | ID | Title | Sprint | Points | Priority | Status |
 |---|---|---|---|---|---|
 | [EPIC-510](EPIC-510-full-field-derivation.md) | Full-field derivation | Sprint 2 | - | High | **Backlog** |
-| [GOV-510](GOV-510-twin-hub-contact-convergence-audit.md) | Twin-hub contact convergence audit | Sprint 2 | TBD | High | **Backlog** |
-| [GOV-511](GOV-511-d-tier-fifth-space-census.md) | D-tier fifth-space census | Sprint 2 | TBD | High | **Backlog** |
+| [GOV-510](GOV-510-twin-hub-contact-convergence-audit.md) | Twin-hub contact convergence audit | Sprint 2 | TBD | High | **Done** |
+| [GOV-511](GOV-511-d-tier-fifth-space-census.md) | D-tier fifth-space census | Sprint 2 | TBD | High | **Done** |
 
-GOV-510, GOV-511, and ORR-511 run in parallel in Sprint 2. The completed
-GOV-510 and GOV-511 results are the only inputs to
+GOV-510 and GOV-511 close from `provenance/DECISION_LEDGER.md`, Sprint 2
+research receipts (2026-09-01); ORR-511 remains independently receipted. The
+completed GOV-510 and GOV-511 results are the only inputs to
 [GOV-512](GOV-512-research-gate-3.md).
 
 ### EPIC-511 - Orrery Evidence Surfaces
@@ -154,6 +155,8 @@ ORR-512, ORR-513, and ORR-514 run in parallel in Sprint 3 after ORR-511.
 | [GOV-513](GOV-513-d-shadow-complement-span-audit.md) | D-shadow complement-span audit | Sprint 4 | TBD | High | **Done** |
 | [GOV-514](GOV-514-d-tier-compression-interleaving-check.md) | D-tier compression interleaving check | Sprint 4 | TBD | High | **Done** |
 | [GOV-515](GOV-515-ring-force-enumeration-definition.md) | Ring-force enumeration definition gate | Sprint 4 | TBD | High | **Done** |
+| [GOV-516](GOV-516-run-space-d5-derivability-enumeration.md) | Run-space D5 derivability enumeration | Sprint 4 | TBD | High | **Review** |
+| [GOV-517](GOV-517-d5-signature-derivation-definition.md) | D5 signature derivation definition | Sprint 4 | TBD | High | **Backlog** |
 
 Research Gate 3 opened EPIC-520 as a research question, not a conclusion, on
 dual GOV-510/GOV-511 confirmation (`provenance/DECISION_LEDGER.md:65-88`). Its
@@ -162,7 +165,9 @@ GOV-513/514, makes GOV-515 definition-only, and defers the single-signature
 derivation check (`provenance/DECISION_LEDGER.md`, Sprint 4 research-track
 shape). GOV-513/514/515 close from the ledger receipt "Sprint 4 research
 receipts - 2026-09-05"; GOV-515 is Stage 1 only. No operator, implementation,
-or authority is granted by this board.
+or authority is granted by this board. GOV-516 is submitted for maintainer
+review and cannot execute until that review accepts GOV-515's fresh manifest
+binding; GOV-517 is queued for a later D5-only definition.
 
 ## Global definition of done
 

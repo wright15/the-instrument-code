@@ -8,9 +8,9 @@ const packageRoot = path.resolve(scriptDirectory, "..");
 
 const RECEIPT_PATH = "qa/integrated-release-validation.json";
 const OUTPUT_PATH = "qa/validation-prose-consistency.json";
-const SCHEMA_VERSION = "seven-governors.validation-prose-consistency.v1";
+const SCHEMA_VERSION = "seven-governors.validation-prose-consistency.v2";
 
-const SCOPE_LABEL = ["docs/**/*.md", "orrery/*.md", "README.md"];
+const SCOPE_LABEL = ["docs/**/*.md", "orrery/*.md", "scrum/**/*.md", "README.md"];
 
 const WATCHED_LITERALS = [440, 441];
 
@@ -46,6 +46,8 @@ const HISTORICAL_MARKERS =
 const SCOPED_MARKERS =
   /\b(?:GOV-\d+|CRT-\d+|ORR-\d+|NET-\d+|EPIC-\d+|qa\/[^\s|]+\.json|validator|sub-validator)\b/i;
 const VERSION_TOKEN = /\b\d+\.\d+(?:\.\d+)?(?:-dev)?\b/g;
+const FINGERPRINT_LITERAL = /\b[a-f0-9]{64}\b/g;
+const FINGERPRINT_BINDING_MARKERS = /\b(?:sha-?256|fingerprint|manifest|receipt|historical)\b|(?:canonical|qa)\//i;
 
 function readText(relativePath) {
   return fs.readFile(path.join(packageRoot, relativePath), "utf8");
@@ -87,6 +89,11 @@ async function collectScopeFiles() {
     if (entry.isFile() && entry.name.endsWith(".md")) {
       files.push(path.join(orreryDir, entry.name));
     }
+  }
+  for (const absolutePath of await walkFiles(path.join(packageRoot, "scrum"), {
+    excluded: new Set(),
+  })) {
+    if (absolutePath.endsWith(".md")) files.push(absolutePath);
   }
   files.push(path.join(packageRoot, "README.md"));
   return files.sort();
@@ -137,6 +144,8 @@ async function main() {
   const claims = [];
   const exemptions = [];
   const watchedViolations = [];
+  const scrumFingerprintLiterals = [];
+  const scrumFingerprintViolations = [];
 
   const files = await collectScopeFiles();
 
@@ -165,13 +174,18 @@ async function main() {
       }
       return nearest;
     };
+    const isScrumProse = relativePath.startsWith("scrum/");
+    const historicalScrumRecord =
+      isScrumProse &&
+      (lines.some((line) => /\*\*Status:\*\*.*\bDone\b/i.test(line)) ||
+        relativePath.includes("pre-epic-"));
 
     for (let lineIndex = 0; lineIndex < lines.length; lineIndex += 1) {
       const line = lines[lineIndex];
       const heading = headingFor(lineIndex);
       const context = [line, heading, documentTitle, relativePath].join("\n");
 
-      for (const { unit, patterns } of COUNT_UNIT_PATTERNS) {
+      if (!isScrumProse) for (const { unit, patterns } of COUNT_UNIT_PATTERNS) {
         for (const pattern of patterns) {
           pattern.lastIndex = 0;
           let match;
@@ -202,7 +216,7 @@ async function main() {
         }
       }
 
-      for (const literal of WATCHED_LITERALS) {
+      if (!isScrumProse) for (const literal of WATCHED_LITERALS) {
         const literalPattern = new RegExp(`\\b${literal}\\b`, "g");
         let match;
         while ((match = literalPattern.exec(line)) !== null) {
@@ -227,6 +241,23 @@ async function main() {
           }
         }
       }
+
+      if (isScrumProse) {
+        let fingerprintMatch;
+        while ((fingerprintMatch = FINGERPRINT_LITERAL.exec(line)) !== null) {
+          const bindingContext = [line, heading, documentTitle].join("\n");
+          const bound = historicalScrumRecord || FINGERPRINT_BINDING_MARKERS.test(bindingContext);
+          const item = {
+            file: relativePath,
+            line: lineIndex + 1,
+            fingerprint: fingerprintMatch[0],
+            classification: bound ? "bound" : "violation",
+          };
+          scrumFingerprintLiterals.push(item);
+          if (!bound) scrumFingerprintViolations.push(item);
+        }
+        FINGERPRINT_LITERAL.lastIndex = 0;
+      }
     }
   }
 
@@ -236,6 +267,7 @@ async function main() {
   const violations = [
     ...dedupedClaims.filter((item) => item.classification === "violation"),
     ...watchedViolations,
+    ...scrumFingerprintViolations,
   ];
 
   const sortKey = (item) =>
@@ -263,10 +295,13 @@ async function main() {
       ).length,
       claimsScoped: dedupedClaims.filter((item) => item.classification === "scoped").length,
       exemptions: exemptions.length,
+      scrumFingerprintLiterals: scrumFingerprintLiterals.length,
+      scrumFingerprintViolations: scrumFingerprintViolations.length,
       violations: violations.length,
     },
     claims: dedupedClaims,
     exemptions,
+    scrumFingerprintLiterals,
     violations,
   };
 
