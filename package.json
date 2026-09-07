@@ -22,6 +22,8 @@
     "orrery:field-derivation:check": "node scripts/build-field-derivation-bundle.mjs --check && node orrery/scripts/validate-field-derivation-bundle.mjs",
     "orrery:photonic:build": "node scripts/build-photonic-overlay.mjs",
     "orrery:photonic:check": "node scripts/build-photonic-overlay.mjs --check && node orrery/scripts/validate-photonic-overlay.mjs",
+    "orrery:taxonomy:check": "node scripts/build-orrery-taxonomy-read-model.mjs --check && node scripts/validate-orrery-taxonomy-read-model.mjs",
+    "orrery:d-tier:check": "node scripts/build-orrery-d-tier-taxonomy-dataset.mjs --check && node scripts/validate-orrery-d-tier-taxonomy-dataset.mjs",
     "orrery:browser:test": "npm run browser:test --prefix orrery",
     "validate:graph": "node graph/scripts/verify-standalone.mjs",
     "validate:release": "node scripts/validate-release.mjs",

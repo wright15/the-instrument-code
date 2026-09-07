@@ -39,6 +39,14 @@ import {
   type ObservationView,
 } from "./field-derivation";
 import {
+  TAXONOMY_READ_MODEL,
+  filterTaxonomyRecords,
+  taxonomyRecordById,
+  type TaxonomyFilter,
+  type TaxonomyRecord,
+} from "./taxonomy-read-model";
+import { D_TIER_DATASET, dTierDatasetView, type DTierViewRecord } from "./d-tier-taxonomy-dataset";
+import {
   ProvenanceCompatibilityError,
   ProvenanceExplainError,
   fetchNamedQuery,
@@ -180,6 +188,17 @@ const provenanceStatus = requiredElement<HTMLElement>("#provenance-status");
 const provenanceResults = requiredElement<HTMLOListElement>("#provenance-results");
 const fieldDerivationAuthorityNote = requiredElement<HTMLElement>("#field-derivation-authority-note");
 const fieldDerivationList = requiredElement<HTMLElement>("#field-derivation-list");
+const taxonomyAuthorityNote = requiredElement<HTMLElement>("#taxonomy-authority-note");
+const taxonomyRole = requiredElement<HTMLSelectElement>("#taxonomy-role");
+const taxonomyTier = requiredElement<HTMLSelectElement>("#taxonomy-tier");
+const taxonomyForte = requiredElement<HTMLSelectElement>("#taxonomy-forte");
+const taxonomyOfficeStatus = requiredElement<HTMLSelectElement>("#taxonomy-office-status");
+const taxonomyStateId = requiredElement<HTMLInputElement>("#taxonomy-state-id");
+const taxonomyStatus = requiredElement<HTMLElement>("#taxonomy-status");
+const taxonomyRecordList = requiredElement<HTMLElement>("#taxonomy-record-list");
+const taxonomyInspector = requiredElement<HTMLElement>("#taxonomy-inspector");
+const dTierTaxonomyStatus = requiredElement<HTMLElement>("#d-tier-taxonomy-status");
+const dTierTaxonomyList = requiredElement<HTMLElement>("#d-tier-taxonomy-list");
 const photonicDisclaimer = requiredElement<HTMLElement>("#photonic-disclaimer");
 const photonicVariant = requiredElement<HTMLSelectElement>("#photonic-variant");
 const photonicChannelStatus = requiredElement<HTMLElement>("#photonic-channel-status");
@@ -194,6 +213,7 @@ let legalMoveCatalog: LegalMoveCatalogIndex | undefined;
 let legalMoveCatalogNotice: string | undefined;
 let evidenceRecords: Map<number, EvidenceBundleRecord> | undefined;
 let evidenceBundleNotice: string | undefined;
+let selectedTaxonomyRecord: TaxonomyRecord | null = null;
 const anchorButtons = new Map<number, HTMLButtonElement>();
 const courtButtons = new Map<CourtPosition, HTMLButtonElement>();
 const audioEngine = new OrreryAudioEngine();
@@ -1023,6 +1043,82 @@ function renderFieldDerivation(): void {
   );
 }
 
+function appendSelectOptions(select: HTMLSelectElement, values: Array<string | null>): void {
+  select.replaceChildren();
+  const all = document.createElement("option");
+  all.value = "";
+  all.textContent = "All";
+  select.append(all);
+  for (const value of [...new Set(values.filter((value): value is string => value !== null))].sort()) {
+    const option = document.createElement("option");
+    option.value = value;
+    option.textContent = value;
+    select.append(option);
+  }
+}
+
+function renderTaxonomyInspector(record: TaxonomyRecord | null): void {
+  selectedTaxonomyRecord = record;
+  if (!record) {
+    taxonomyInspector.textContent = "No source-backed record is available for this ID. No nearby record is substituted.";
+    return;
+  }
+  taxonomyInspector.textContent = `${record.name} / ${record.stateId} / ${record.role} / ${record.tier ?? "tier withheld"} / ${record.forte} / office ${record.office ?? "withheld"} / ${record.authority} / ${record.provenancePath}`;
+}
+
+function taxonomyFilter(): TaxonomyFilter {
+  return {
+    ...(taxonomyRole.value ? { role: taxonomyRole.value } : {}),
+    ...(taxonomyTier.value ? { tier: taxonomyTier.value } : {}),
+    ...(taxonomyForte.value ? { forte: taxonomyForte.value } : {}),
+    ...(taxonomyOfficeStatus.value ? { officeStatus: taxonomyOfficeStatus.value as "available" | "withheld" } : {}),
+  };
+}
+
+function renderTaxonomyRecords(): void {
+  const records = filterTaxonomyRecords(taxonomyFilter());
+  taxonomyStatus.textContent = `${records.length} / ${TAXONOMY_READ_MODEL.recordCount} canonical records / source order / ${TAXONOMY_READ_MODEL.authorityBoundary}`;
+  taxonomyRecordList.replaceChildren(
+    ...records.map((record) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "taxonomy-record";
+      button.dataset.taxonomyStateId = String(record.stateId);
+      button.setAttribute("aria-pressed", String(selectedTaxonomyRecord?.stateId === record.stateId));
+      button.textContent = `${record.stateId} / ${record.name} / ${record.role} / ${record.tier ?? "tier withheld"} / ${record.office ?? "office withheld"}`;
+      button.addEventListener("click", () => {
+        renderTaxonomyInspector(record);
+        renderTaxonomyRecords();
+      });
+      return button;
+    }),
+  );
+}
+
+function renderDTierRecord(record: DTierViewRecord): HTMLButtonElement {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "taxonomy-record";
+  button.dataset.taxonomyStateId = String(record.identity.stateId);
+  const fifth = record.fifthSpace;
+  button.textContent = fifth
+    ? `${record.ordinal}. ${record.identity.name} / ${record.identity.tier} / span ${fifth.fifthSpan} / fifth positions ${fifth.fifthPositions.join(",")}`
+    : `${record.ordinal}. ${record.identity.name} / ${record.identity.tier} / fifth-space unavailable`;
+  button.addEventListener("click", () => renderTaxonomyInspector(record.identity));
+  return button;
+}
+
+function initializeTaxonomyExplorer(): void {
+  taxonomyAuthorityNote.textContent = TAXONOMY_READ_MODEL.authorityNote;
+  appendSelectOptions(taxonomyRole, TAXONOMY_READ_MODEL.records.map((record) => record.role));
+  appendSelectOptions(taxonomyTier, TAXONOMY_READ_MODEL.records.map((record) => record.tier));
+  appendSelectOptions(taxonomyForte, TAXONOMY_READ_MODEL.records.map((record) => record.forte));
+  renderTaxonomyRecords();
+  const dTier = dTierDatasetView(D_TIER_DATASET);
+  dTierTaxonomyStatus.textContent = `${dTier.state} / ${dTier.verdict ?? "no research verdict"} / ${dTier.notice}`;
+  dTierTaxonomyList.replaceChildren(...dTier.records.map(renderDTierRecord));
+}
+
 function photonicRecordEntry(record: PhotonicOverlayRecord): HTMLElement {
   const entry = document.createElement("article");
   entry.className = "photonic-entry";
@@ -1642,9 +1738,18 @@ harmonyReseed.addEventListener("click", () => {
 });
 
 initializeCourtControls();
+initializeTaxonomyExplorer();
 audioEngine.subscribe(renderAudioState);
 provenanceRun.addEventListener("click", () => void runProvenanceQuery());
 photonicVariant.addEventListener("change", renderPhotonicOverlay);
+for (const control of [taxonomyRole, taxonomyTier, taxonomyForte, taxonomyOfficeStatus]) {
+  control.addEventListener("change", renderTaxonomyRecords);
+}
+taxonomyStateId.addEventListener("change", () => {
+  const value = taxonomyStateId.value.trim();
+  renderTaxonomyInspector(value === "" ? null : taxonomyRecordById(Number(value)));
+  renderTaxonomyRecords();
+});
 sceneQualityMode.addEventListener("change", () => {
   renderSceneQuality();
 });

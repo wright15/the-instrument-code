@@ -299,6 +299,40 @@
         <div id="field-derivation-list" class="field-derivation-list"></div>
       </section>
 
+      <section class="taxonomy-console" aria-labelledby="taxonomy-heading">
+        <div class="taxonomy-copy">
+          <p class="eyebrow">Canonical read model</p>
+          <h2 id="taxonomy-heading">Taxonomy Explorer</h2>
+          <p id="taxonomy-authority-note" class="taxonomy-note">
+            Loading the source-bound taxonomy read model.
+          </p>
+        </div>
+        <div class="taxonomy-controls" aria-label="Taxonomy filters">
+          <label for="taxonomy-role"><span>Role</span><select id="taxonomy-role"></select></label>
+          <label for="taxonomy-tier"><span>Tier</span><select id="taxonomy-tier"></select></label>
+          <label for="taxonomy-forte"><span>Forte</span><select id="taxonomy-forte"></select></label>
+          <label for="taxonomy-office-status"><span>Office status</span><select id="taxonomy-office-status"><option value="">All</option><option value="available">Available</option><option value="withheld">Withheld</option></select></label>
+          <label for="taxonomy-state-id"><span>State ID</span><input id="taxonomy-state-id" inputmode="numeric" autocomplete="off" /></label>
+        </div>
+        <p id="taxonomy-status" class="taxonomy-status" role="status" aria-live="polite"></p>
+        <div class="taxonomy-explorer-grid">
+          <div id="taxonomy-record-list" class="taxonomy-record-list" aria-label="Taxonomy records"></div>
+          <aside class="taxonomy-inspector" aria-label="Taxonomy record inspector">
+            <p class="field-label">Selected canonical record</p>
+            <p id="taxonomy-inspector">Choose a source-backed record. An invalid ID remains unavailable.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="d-tier-taxonomy-console" aria-labelledby="d-tier-taxonomy-heading">
+        <div class="taxonomy-copy">
+          <p class="eyebrow">GOV-511 descriptive dataset</p>
+          <h2 id="d-tier-taxonomy-heading">D-tier fifth-space records</h2>
+          <p id="d-tier-taxonomy-status" class="taxonomy-status" role="status" aria-live="polite"></p>
+        </div>
+        <div id="d-tier-taxonomy-list" class="taxonomy-record-list" aria-label="D-tier fifth-space records"></div>
+      </section>
+
       <section class="photonic-console" aria-labelledby="photonic-heading">
         <div class="photonic-console-copy">
           <p class="eyebrow">Candidate evidence overlay</p>

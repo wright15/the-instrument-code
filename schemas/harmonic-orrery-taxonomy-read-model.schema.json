@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "harmonic-orrery.taxonomy-read-model.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "bundleId", "authorityBoundary", "authorityNote", "sources", "recordCount", "roleCounts", "records", "bundleFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "harmonic-orrery.taxonomy-read-model.v1"},
+    "bundleId": {"const": "TAXONOMY_READ_MODEL_v1"},
+    "authorityBoundary": {"const": "canonical_release"},
+    "authorityNote": {"type": "string"},
+    "sources": {"type": "array", "minItems": 2, "maxItems": 2},
+    "recordCount": {"const": 462},
+    "roleCounts": {"type": "object"},
+    "records": {"type": "array", "minItems": 462, "maxItems": 462},
+    "bundleFingerprint": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

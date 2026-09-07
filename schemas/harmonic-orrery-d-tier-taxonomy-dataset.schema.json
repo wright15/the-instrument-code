@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "harmonic-orrery.d-tier-taxonomy-dataset.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "datasetId", "authorityBoundary", "authorityNote", "taxonomyBinding", "censusBinding", "recordCount", "records", "datasetFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": "harmonic-orrery.d-tier-taxonomy-dataset.v1"},
+    "datasetId": {"const": "D_TIER_TAXONOMY_DATASET_v1"},
+    "authorityBoundary": {"const": "planning_evidence"},
+    "authorityNote": {"type": "string"},
+    "taxonomyBinding": {"type": "object"},
+    "censusBinding": {"type": "object"},
+    "recordCount": {"const": 175},
+    "records": {"type": "array", "minItems": 175, "maxItems": 175},
+    "datasetFingerprint": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}
