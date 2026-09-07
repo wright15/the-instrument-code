@@ -1305,3 +1305,10 @@ scale-state and relationship counts.
 Any new anchor tier, office-assignment operator, or boundary promotion requires
 a new release identifier, regenerated canonical data, all invariant checks,
 updated source hashes, and a new decision-ledger entry.
+
+## GOV-516 Stage 2 review - 2026-09-06
+
+GOV-516 Stage 2 review (2026-09-06) found the frozen input boundary supports a
+uniqueness observation, not a forcing test; H2 dispositions struck; a
+ring-constraint forcing enumeration (successor, e.g. GOV-518) remains the H2
+test and must be drafted from this review's framing.
