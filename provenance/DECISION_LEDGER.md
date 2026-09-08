@@ -1423,6 +1423,86 @@ replaced by maintainer-cited content and the accepted binding is current.
 - `docs/TOPOLOGY_IDENTITY_AND_INVARIANTS.md:119-149` (exclusion authority)
 - `MANIFEST.json` (post-regeneration binding)
 
+**Process record — early fixed-point commit 7f61d7c.** Commit 7f61d7c ("SCRUM: GOV-518 A1-A5 amendment, GOV-519 gate, and manifest fixed point") recorded the post-M-CHAIN-v3 verified green state ahead of the planned commit point (after GOV-519 Step 2 fixture deletion). Recorded as facts: (a) the true-value fixture corpus `qa/fixtures/gov-518/tamper-01..04` entered permanent history; Step 2 deletion removes it from the working tree only, and the CR-8 audit operates on the working tree; (b) the pre-rename GOV-519 ticket and pre-redesign staged scripts entered history as provenance; (c) no accepted boundary byte changed — B₂ and the ledger hash verified identical across the commit, and the committed tree is byte-identical to the state that validated 418/0. Standing policy: commits and pushes land only by maintainer act, at verified green fixed points, announced in the planning thread with their SHA, and are never agent-initiated.
+
+**Grant clarification (narrowing) — 2026-09-07 grant, execution condition.** The registered grant authorizes GOV-518 execution "once D1–D6/D8 are filled and the fresh manifest binding accepted." That condition set predates the D7/D9/D10 registration, the comparison-semantics amendment (A1–A5), and the verified absence of negative-control scaffolding. Recorded narrowing, append-only: execution under the grant additionally requires the GOV-519 scaffolding receipt — import-closure screen, decoy corpus, in-memory live-value suite, target-blindness digest proof, adversarial self-test — proven fail-closed and cited by a subsequent activation entry. Reason: an execution authorization exercisable before the frozen §3 pre-flight inputs exist converts any premature run into a recorded invalid that burns the boundary; this narrowing makes the grant's condition set coextensive with the frozen pre-flight rather than broader than it. Freeze authority and all other grant terms unchanged. If rejected, the maintainer records that rejection with reason and the literal grant text stands as the operative authorization.
+
+**GOV-518 boundary acceptance.**
+(1) *Freeze authority:* proceeds under the registered grant (DECISION_LEDGER.md:1347-1349, "parallel capacity without awaiting GOV-516 Done"); GOV-516 remains Review with banked outcomes; GOV-517 queue untouched.
+(2) *Object:* the GOV-518 boundary at binding B₂ = `77379a8654357a784cdadf23b230ff05845f840ea51f7997f1832fd6f25325bf`, over ticket bytes incorporating amendment A1–A5 (entry "GOV-518 comparison-semantics amendment A1–A5 — 2026-09-07"); three-way equality computed ↔ MANIFEST.json ↔ this entry verified. Full-suite PASS verdict lines quoted verbatim in this entry (Appendix), captured at the M-CHAIN v3 fixed-point sitting; the boundary artifacts this entry accepts are byte-identical across that run and this entry — this entry and "GOV-518 grant narrowing — execution condition — 2026-09-07" append ledger-tail prose only. Those appends are re-covered by the rule-9 fixed-point proof (regen → `--check` → full validate → zero tracked change) executed immediately after this entry lands and before any commit authorization; no entry can contain verdict lines for a tree containing itself.
+(3) *Grant-condition reconciliation:* the grant's condition names "D1–D6/D8 … filled and the fresh manifest binding accepted." D1–D6/D8 were filled at e83d9f7; D7/D9/D10 and A1–A5 completed the decision table and comparison semantics; "fresh manifest binding accepted" is satisfied by this entry accepting B₂. **This entry is a freeze acceptance, not an execution authorization**; execution authority is the grant as narrowed by entry "GOV-518 grant narrowing — execution condition — 2026-09-07" — scaffolding receipt plus activation entry required.
+(4) *Preparation-scope determination:* prospective preparation scope comprises GOV-519 (negative-control scaffolding per CR-1–CR-8, harness, decoy corpus, fail-closed proof) and GOV-520 ticket preparation (text only). Retroactively recorded as facts, backdating no authority beyond preparation: boundary drafts and the staged enumerator/checker/harness built pre-determination; the true-value fixture corpus staged into the commit path and deleted as a recorded correction in the GOV-519 receipt; the checker rule-table true-value finding (OW-A item 7) and its redesign. **The two-ticket split (GOV-519 scaffolding / GOV-520 execution) is authorized by this paragraph.**
+(5) *D3 timing note:* D1–D6/D8 were registered while GOV-516 review was pending; D3's selection attestation covers the condition; this acceptance is the D3 review checkpoint, amendable/rejectable by new entry with reason.
+(6) *Executor-discretion inventory,* asserted item-by-item against the B₂ text: (a) enumerator file reads — none; zero-fs, inputs = source constants + pathless argv allowlist; frozen. (b) termination — registered bound/timeout (D8); frozen. (c) ordering — registered total order (R4), verdict order-invariant; frozen. (d) receipt contents — §2 template + certificate fields; frozen. (e) binding mismatch at run start — invalid, no disposition; frozen. (f) failed-run retry — no changes; re-run only under unchanged binding; re-test = new boundary + new ticket; frozen. (g) post-execution input/equivalence revision — none under any verdict; frozen. (h) comparison semantics — A1–A5, membership-based; frozen. Each item resolves to frozen.
+(7) *Lineage disclosure:* Recorded process finding (facts only): the twin-hub, fifth-space, shadow-ladder, and pentatonic-binding-closure freshness families were stale from commit 92210fd (2026-09-07 12:35) onward — the relevant generators/builders bind decision-ledger bytes, and the registration-series commits 92210fd (+50), d06b050 (+60), e83d9f7 (+52) appended ledger context without regenerating the affected artifacts (last regenerated at d8210b0/83052fe according to family); the full validate suite was therefore red at each of those commits. Remediation is evidenced by each artifact's embedded `decisionLedgerSha256` equality with the then-current ledger bytes and by the quoted full-suite PASS; no domain-content cause in any diff (churn confined to `evidenceBindings.decisionLedgerSha256` plus dependent fingerprints/reports). The sprint-4 exit at 83052fe predates the lapse and was a verified fixed point.
+
+**Appendix — full-suite verdict lines (verbatim):**
+build:graph
+/home/erick/projects/integrated-release/graph/index.html
+
+validate:graph
+"verdict": "PASS",
+
+validate:semantic-operators
+"verdict": "PASS",
+
+validate:mechanics-thermodynamics-registry
+"checksFailed": 0,
+"checksPassed": 19,
+"verdict": "PASS",
+14 passed in 0.22s
+
+validate:mechanics-thermodynamics-registry-v2
+"checksFailed": 0,
+"checksPassed": 21,
+"verdict": "PASS",
+15 passed in 0.36s
+
+validate:tiered-photonic
+"verdict": "PASS",
+"checksPassed": 15,
+"checksFailed": 0,
+23 passed in 2.92s
+
+validate:twin-hub
+"verdict": "PASS",
+"checksPassed": 30,
+"checksFailed": 0,
+8 passed in 0.81s
+
+validate:fifth-space-census
+"verdict": "PASS",
+"checksPassed": 24,
+"checksFailed": 0,
+8 passed in 1.83s
+
+validate:d-shadow
+"verdict": "PASS",
+"checksPassed": 19,
+"checksFailed": 0,
+5 passed in 4.47s
+
+validate:gov514
+"verdict": "PASS",
+"checksPassed": 14,
+"checksFailed": 0,
+4 passed in 23.61s
+
+validate:release
+"verdict": "PASS",
+"checksPassed": 418,
+"checksFailed": 0,
+
+validate:prose-consistency
+"verdict": "PASS",
+"authoritativeChecksPassed": 418,
+"violations": 0
+
+validate:cypher
+"mode": "check",
+"verdict": "PASS",
+"validator": "@neo4j-cypher/language-support",
+
 ## GOV-518 maintainer mathematical registration — 2026-09-07
 
 **Status:** derived `planning_evidence`, maintainer-bound, definition-only.
