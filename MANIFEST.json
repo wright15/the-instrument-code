@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1024,
-  "totalBytes": 72008920,
+  "fileCount": 1032,
+  "totalBytes": 72043142,
   "files": [
     {
       "path": ".env.example",
@@ -278,17 +278,17 @@
     {
       "path": "canonical/fivefold-incubator/fifth-space-census-v0.json",
       "bytes": 194194,
-      "sha256": "21dc921d2e96a6f0d99960d386c0202aa1e094070d94ef937b190160bf3eb036"
+      "sha256": "ccb56eb5ba5c8904d8f9ab9ab4f9d69cc6df71c30eeaa738f4ec2db55fe1f232"
     },
     {
       "path": "canonical/fivefold-incubator/shadow-ladder-v0.json",
       "bytes": 3927,
-      "sha256": "f88e4da32f1b8897a19c51beea2f165675dc2824f90e5870ab244a0a893dff4b"
+      "sha256": "379da9ceffb07b000346c8419206c113997a7b840760759b33328e1e2e59cd37"
     },
     {
       "path": "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
       "bytes": 12396,
-      "sha256": "1270ea8c6eda09d598ee4a04d652742f6586f3bac571216d5b11672b57dc8742"
+      "sha256": "fd7105bcf27222be7be9b897a56a3956aa9cda94f33a2d72acbd063a68c580c8"
     },
     {
       "path": "canonical/gov-210-availability-housing.json",
@@ -1312,8 +1312,8 @@
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
-      "bytes": 88488,
-      "sha256": "93ca78ab49738dc641ba8f1827bbb7b1a410e4653b20de442ee6aa4e7e4590b5"
+      "bytes": 94312,
+      "sha256": "12f904109356ebdb1f3a70de31ed28c0f7d49ddabd7b67e9badb0cb86854e389"
     },
     {
       "path": "provenance/NEXT_STEPS.md",
@@ -1418,7 +1418,7 @@
     {
       "path": "qa/fifth-space-census-validation.json",
       "bytes": 16323,
-      "sha256": "3cc28f902a06176a5d9c2e54b206ad525c1980c3f875a18a7508efe1b8a70dc1"
+      "sha256": "2c7a7a860740e7262eddabec2374486bf0d7f705fc936b8082b0c95713f1409b"
     },
     {
       "path": "qa/fivefold-capability-teleology-validation.json",
@@ -1429,6 +1429,26 @@
       "path": "qa/fivefold-engine-promotion-evidence.json",
       "bytes": 22859,
       "sha256": "9dbf7ebd58cdcc94ac5eaa9f3fce565ce620d95211bd6e0973f4edf8872161ab"
+    },
+    {
+      "path": "qa/fixtures/gov-518/tamper-01-observation-sequence.json",
+      "bytes": 638,
+      "sha256": "a49a1928fced7d5f9378e122d9239f91d632d9cf966e2cca1cfa4ed628889f1b"
+    },
+    {
+      "path": "qa/fixtures/gov-518/tamper-02-contact-signature.json",
+      "bytes": 568,
+      "sha256": "444c7372d03ed2721b6c36071412413ba13e70c0a9c65a0beb8d3414e3bdfe47"
+    },
+    {
+      "path": "qa/fixtures/gov-518/tamper-03-position-masks.json",
+      "bytes": 713,
+      "sha256": "5b01e794f50514d96474fab7f7757d3e0835efa8df75a4cca77cd98a185f22c1"
+    },
+    {
+      "path": "qa/fixtures/gov-518/tamper-04-scalar-reordering.json",
+      "bytes": 761,
+      "sha256": "b120f7edcb3f54349c8f4144391c33e64dc09c5ff75bc3b926a5a6d316fa3000"
     },
     {
       "path": "qa/gov-208-vault-context-validation.json",
@@ -1508,7 +1528,7 @@
     {
       "path": "qa/pentatonic-binding-audit-closure.json",
       "bytes": 4552,
-      "sha256": "c6add78b4bbd60dcabaf66966404d7c8acd2cfec75c4e4f716f4f023742343cc"
+      "sha256": "e2950f08619748510c91b4d9af0aca462cf009bb1fafa755ca0690010d6cebc5"
     },
     {
       "path": "qa/pentatonic-binding-audit-neo4j-validation.json",
@@ -1533,7 +1553,7 @@
     {
       "path": "qa/shadow-ladder-validation.json",
       "bytes": 5382,
-      "sha256": "d1ba8d4c6527381b91f4768cb685da546acb4a4df8f2afe6978fd0c6cb977481"
+      "sha256": "7d395903c6faf5ee276ff014fe01522cd864788cbf438607feccfccb52f9a9c6"
     },
     {
       "path": "qa/teleological-physics-registry-validation.json",
@@ -1548,7 +1568,7 @@
     {
       "path": "qa/twin-hub-convergence-validation.json",
       "bytes": 5369,
-      "sha256": "1974b491f82b3a9f439c3d200a825e14ae27f4c8788eda9e888853881bfb62a4"
+      "sha256": "8041f38adac3efbe54ccab6212127024c2fb1432aceff11a39d7c9c755d960f2"
     },
     {
       "path": "requirements-orrery-dev.txt",
@@ -2106,6 +2126,11 @@
       "sha256": "5edfe953e83d5e69392c83ce30f283bd460ef1a49110ac053a3b7599591c4692"
     },
     {
+      "path": "scripts/check-gov518-target-blindness.mjs",
+      "bytes": 2403,
+      "sha256": "ea0e3c74fd0ed3fd439cd85433b3c675afa1cedfbf5c2de1d7cb0b81a6e5decc"
+    },
+    {
       "path": "scripts/generate-availability-housing.py",
       "bytes": 4649,
       "sha256": "67e4498218da880b6dfb7da95594b8a82cdea71fd404e35bd4da5043b1f13d86"
@@ -2199,6 +2224,11 @@
       "path": "scripts/run-crt307-local-model-observation.mjs",
       "bytes": 3900,
       "sha256": "50b0f35079e414e07b1821fe6f89bfea5e15cb1f48c5c55f989c3b6c4c12a59c"
+    },
+    {
+      "path": "scripts/run-gov518-enumeration.mjs",
+      "bytes": 6773,
+      "sha256": "9a60c6b7500bd8bedd76cda122efbdfe739f5394bee2408d88670e49276d7c9f"
     },
     {
       "path": "scripts/run-governor-admission-benchmark.mjs",
@@ -2376,6 +2406,11 @@
       "sha256": "a4416a77d0dd5a7a5a872356644a3223c8b8d926f935f471fa2f3de8451a78fe"
     },
     {
+      "path": "scripts/verify-gov518-boundary.mjs",
+      "bytes": 5893,
+      "sha256": "26182ce5797503990678a3ebf59bca17a4b128d0e55859562f83e07e9d07a217"
+    },
+    {
       "path": "scripts/verify-neo4j-roundtrip.mjs",
       "bytes": 2658,
       "sha256": "f18fb63e95cf9079509baa7f43e799b7ada7a7682e9fd6f3c5f91f9a2f4beaae"
@@ -2502,8 +2537,8 @@
     },
     {
       "path": "scrum/EPIC-520-1-unified-operator-planning.md",
-      "bytes": 13246,
-      "sha256": "96e59aa506bce75d6b89c1ee17a9ca9ea8fe2eeec1560c468b313c0832d7defd"
+      "bytes": 14570,
+      "sha256": "d890922818d2783a5b087fb77aa3017045741124cfb172e25ed3d0735656d56c"
     },
     {
       "path": "scrum/EPIC-520-unified-operator.md",
@@ -2642,8 +2677,13 @@
     },
     {
       "path": "scrum/GOV-518-ring-constraint-forcing-enumeration.md",
-      "bytes": 20340,
-      "sha256": "6d97c285ed25c1f153131da639d5a2eeab5b5919b7960da723bd56bcfe9537b2"
+      "bytes": 22865,
+      "sha256": "77379a8654357a784cdadf23b230ff05845f840ea51f7997f1832fd6f25325bf"
+    },
+    {
+      "path": "scrum/GOV-519-ring-forcing-execution.md",
+      "bytes": 6800,
+      "sha256": "26afdeaf7153fe5284443e7415ae9d30c5b6ef65ed42e6895698b1ad4e46b46f"
     },
     {
       "path": "scrum/NET-101-office-lane-layout.md",

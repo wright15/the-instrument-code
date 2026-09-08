@@ -1474,3 +1474,51 @@ After fixed-point regeneration, the `MANIFEST.json` SHA-256 binding for
 - `provenance/OBSERVATION_LEDGER.md:108-119` (OBS-008 only for K exhaustivity)
 - `provenance/DECISION_LEDGER.md:1309-1314,1316-1424`
 - `MANIFEST.json` (post-regeneration binding)
+
+## GOV-518 comparison-semantics amendment A1–A5 — 2026-09-07
+
+**Status:** derived `planning_evidence`, maintainer-bound, definition-only.
+
+**Lineage:** `DECISION_LEDGER.md:1309-1314,1316-1476`; `scrum/GOV-518-ring-constraint-forcing-enumeration.md` R1-R8/D1-D10; EPIC-520-1 addendum dated 2026-09-07. Ledger to scrum with citation; grants zero topology, admission, runtime, office, or global `harmonic.C_H` authority.
+
+### Decision — register comparison semantics A1–A5 (append-only; ticket bytes [0, 20340) untouched)
+
+A1 parenthetical context-forensic strip applied per directive: stripped form below is the review baseline and matches the ticket landing.
+
+**A1 — Statistic equivariance.** The registered derivation map P (GOV-518:41) is equivariant under the registered ring symmetries: for every g ∈ D₇ and assignment S, P(g·S) = g·P(S), pointwise action on argmax sets. This extends the registered clause — "the predicates and f are equivariant" — to P, the statistic actually compared.
+
+**A2 — Statistic orbit.** For an outcome class C: stat-orbit(C) = { P(S) : S ∈ C }. D4 registers the D₇-orbit quotient and P is equivariant per A1; therefore stat-orbit(C) is exactly one D₇-orbit of argmax sets.
+
+**A3 — Equality mode (membership-based).** A class C matches the comparison target iff the observed argmax set — derived at comparison time by the registered separate comparison entry point from fingerprint-verified canonical observation artifacts — is an element of stat-orbit(C); equivalently, ∃ S ∈ C with P(S) equal to the observed argmax set, exact set equality under the registered coordinate labeling. Type note: the comparison target is the observed argmax set (the coordinate attaining the maximal entry of the canonical maxrun sequence), not the observed run-value set; OBS-020's V = {5} is a value-set of different type and is not a comparison operand. Recorded consequence: within the registered symmetry, peak position is identified only up to D₇ — the singleton-argmax orbit is a single orbit under the transitive action — so `forced` asserts the observed shape (a unique maximal coordinate) is the unique admissible shape up to the registered symmetry; a position-specific forcing claim would require a symmetry-breaking registration and is out of scope. Rejected alternative: exact comparison against the class's least representative — rejected because R4's order is registered for reproducibility, and representative-anchored equality would make the verdict order-dependent, violating the registered order-invariance invariant.
+
+**A4 — Representative rule (reporting only).** The receipt reports, per class, the statistic of the class's least representative under the registered order; verdict computation never consults representatives — A3 is membership-based. This separates R4's ordering role from comparison semantics.
+
+**A5 — Vocabulary.** `statistic_orbit`, `equality_mode`, `matches`, `comparison_target` receive exists-or-ticketed disposition in this entry via the EPIC-520-1 addendum table; prose-consistency must pass on the amended text.
+
+### Registry delta mirror (EPIC-520-1 addendum; additive-only +4 rows, 0 deletions)
+
+| Term | Meaning in the GOV-518 shell | Status |
+|---|---|---|
+| `comparison_target` | The observed argmax set operand per A3, element-compared against stat-orbit(C); underscore token distinct from the superseded hyphenated comparison-target scaffolding wording (which resolves to `canonical_observation_record`); not the artifact container itself. | Registered here 2026-09-07; cited by GOV-518 A3 and A5. |
+| `statistic_orbit` | stat-orbit(C) per A2: the set of P(S) over S in C, exactly one D₇-orbit of argmax sets under A1 equivariance; underscore token distinct from the superseded hyphenated comparison-target scaffolding wording; ticket hyphenated stat-orbit(C) prose denotes this token. | Registered here 2026-09-07; cited by GOV-518 A2, A3 and A5. |
+| `equality_mode` | Membership-based comparison per A3 (observed set element of stat-orbit(C), exact set equality); representative-anchored equality rejected as order-dependent per R4; underscore token distinct from the superseded hyphenated comparison-target scaffolding wording. | Registered here 2026-09-07; cited by GOV-518 A3 and A5. |
+| `matches` | A class C matches iff its statistic_orbit contains the comparison_target per A3; verb token, not a category label; underscore token distinct from the superseded hyphenated comparison-target scaffolding wording. | Registered here 2026-09-07; cited by GOV-518 A3 and A5. |
+
+### Binding
+
+B₂ = `77379a8654357a784cdadf23b230ff05845f840ea51f7997f1832fd6f25325bf`, computed via `sha256sum scrum/GOV-518-ring-constraint-forcing-enumeration.md` over ticket bytes incorporating A1–A5. Three-way equality asserted: computed ↔ MANIFEST.json (post-regen ticket binding) ↔ this entry; verified by `node scripts/build-manifest.mjs --check` and `sha256sum` in mechanics.
+
+### Declared deviations
+
+Declared deviations: none.
+
+### Guard
+
+Final `npm run validate` verdict lines are NOT in this entry; they belong to 0c per the amended clause. Arithmetic output wins over planning prose (rule 1); all four categories close without favoring a positive result (rule 5); no model prose as source (rule 6); ledger to scrum with citation (rule 8); sprint exit is the manifest fixed point (rule 9); frozen wording only (rule 11). D7/D9/D10 unretuned; GOV-517 untouched.
+
+### References
+
+- `scrum/GOV-518-ring-constraint-forcing-enumeration.md` (amended; binding B₂ above)
+- `scrum/EPIC-520-1-unified-operator-planning.md` (2026-09-07 addendum +4 rows)
+- `provenance/OBSERVATION_LEDGER.md` (OBS-008 only for K exhaustivity; OBS-014/018/019/020 observation side only)
+- `MANIFEST.json` (post-regeneration binding)
