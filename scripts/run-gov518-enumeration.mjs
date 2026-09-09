@@ -6,7 +6,8 @@
 //
 // Registered content:
 // R1: assignment space Z7 to the power 7, total 823543, derived run map.
-// R2: exactly three predicates below as the sole filter.
+// R2: exactly two predicates below as the sole filter (C_adj, C_close).
+// C_step2 removed per 'GOV-518 degeneracy ruling and boundary amendment — 2026-09-07'; the offset-2 comparison remains in the derivation map's mask, where it is now non-constant on the admissible set.
 // R5: shape form is the argmax set of the run vector.
 // D4: quotient by the registered D7 action, lex least representative.
 // R4: classes in lex order by representative then by run vector.
@@ -67,16 +68,7 @@ function holdsAdjacent(x) {
   return true;
 }
 
-function holdsStepTwo(x) {
-  for (let i = 0; i < DIMENSION; i += 1) {
-    if (x[(i + DIMENSION - 1) % DIMENSION] === x[(i + 1) % DIMENSION]) {
-      return false;
-    }
-  }
-  return true;
-}
-
-function holdsClosure(x) {
+function holdsClose(x) {
   let total = 0;
   for (let i = 0; i < DIMENSION; i += 1) {
     total += x[i];
@@ -85,7 +77,7 @@ function holdsClosure(x) {
 }
 
 function holdsAll(x) {
-  return holdsAdjacent(x) && holdsStepTwo(x) && holdsClosure(x);
+  return holdsAdjacent(x) && holdsClose(x);
 }
 
 function compareLex(a, b) {

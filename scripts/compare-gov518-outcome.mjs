@@ -195,7 +195,15 @@ const results = [];
 for (let k = 0; k < outcome.classes.length; k += 1) {
   const entry = outcome.classes[k];
   const stat = runOf(entry.representative);
+  if (!Array.isArray(entry.statistic) || !sameSet(stat, entry.statistic.map(Number))) {
+    console.error(JSON.stringify({ verdict: "abort", error: "statistic divergence", index: k }));
+    process.exit(1);
+  }
   const arg = peakSet(stat);
+  if (!Array.isArray(entry.argmax) || !sameSet(arg, entry.argmax.map(Number))) {
+    console.error(JSON.stringify({ verdict: "abort", error: "statistic divergence", index: k }));
+    process.exit(1);
+  }
   const keys = orbitOf(arg);
   let hit = false;
   for (const key of keys) {
