@@ -1,6 +1,6 @@
 # GOV-519 — Ring-forcing negative-control scaffolding
 
-**Status:** Queued (not Done) · **Sprint:** Sprint 4 · **Epic:** EPIC-520
+**Status:** Done — receipt 4401bceadfd2370d99b5202d985740344994865f1eb687c17c4fa6e0dd3d0bad; closed per rule 5 (see activation entry) · **Sprint:** Sprint 4 · **Epic:** EPIC-520
 **Depends on:** GOV-518 boundary accepted at binding B₂ = `77379a8654357a784cdadf23b230ff05845f840ea51f7997f1832fd6f25325bf` · **Blocks:** GOV-520 execution gate
 
 **Lineage.** Mandate: DECISION_LEDGER.md:1309-1314 (GOV-518 named the H2 forcing successor). Grant: DECISION_LEDGER.md:1347-1349, as narrowed by entry "GOV-518 grant narrowing — execution condition — 2026-09-07" (the GOV-519 scaffolding receipt is the added execution precondition). Authorization: "GOV-518 boundary acceptance" paragraph (4) (two-ticket split) and entry "Ticket registration — GOV-519 scaffolding re-scope; GOV-520 execution shell opened — 2026-09-07" (this ticket's registration; board rows sync from it). Comparison semantics: amendment A1–A5 ("GOV-518 comparison-semantics amendment A1–A5 — 2026-09-07"). Process record: "Process record — early fixed-point commit 7f61d7c." GOV-516 remains Review with banked outcomes; GOV-517 queue untouched. Renamed from `GOV-519-ring-forcing-execution.md` per paragraph (4); the pre-rename text remains in history as provenance.

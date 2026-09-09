@@ -157,7 +157,7 @@ ORR-512, ORR-513, and ORR-514 run in parallel in Sprint 3 after ORR-511.
 | [GOV-515](GOV-515-ring-force-enumeration-definition.md) | Ring-force enumeration definition gate | Sprint 4 | TBD | High | **Done** |
 | [GOV-516](GOV-516-run-space-d5-derivability-enumeration.md) | Run-space D5 derivability enumeration | Sprint 4 | TBD | High | **Review** |
 | [GOV-517](GOV-517-d5-signature-derivation-definition.md) | D5 signature derivation definition | Sprint 4 | TBD | High | **Backlog** |
-| [GOV-519](GOV-519-ring-forcing-scaffolding.md) | Ring-forcing negative-control scaffolding | Sprint 4 | TBD | High | **Backlog** |
+| [GOV-519](GOV-519-ring-forcing-scaffolding.md) | Ring-forcing negative-control scaffolding | Sprint 4 | TBD | High | **Done** |
 | [GOV-520](GOV-520-ring-constraint-forcing-execution.md) | Ring-constraint forcing execution (gated shell) | Sprint 4 | TBD | High | **Backlog** |
 
 Research Gate 3 opened EPIC-520 as a research question, not a conclusion, on
