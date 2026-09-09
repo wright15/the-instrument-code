@@ -1,12 +1,12 @@
 {
   "schemaVersion": "gov-520-preflight-receipt.v0",
   "ticket": "GOV-520",
-  "sitting": "S-F2",
+  "sitting": "S-F3",
   "boundaryBinding": "bee5f2a19a7ebca153fe0331cb9e8691c305c32c03c16f765396047201cba382",
   "ledgerBinding": "d9736c0b19c9709a9a1abbd8ff58790bce45e73c6d27706887a333c46b5e5c41",
   "ledgerBytes": 110920,
-  "supersedes": "38ed86987e05e425c7a6e03caf9f90cfd45f9971ac63662ef6ef739e2051c568",
-  "supersedesNote": "This receipt supersedes the 38ed8698\u2026 receipt; that receipt evidenced the superseded degenerate boundary (C_step2 present, statistic constant). Fresh blindness digests and new certificate arithmetic under the enlarged admissible set are recorded here.",
+  "supersedes": "83a531c08490d2776ae6c08a3a7ad23f368bca6d0cbf4631a2d2376eea070fb2",
+  "supersedesNote": "This receipt supersedes two predecessors: (1) 38ed86987e05e425c7a6e03caf9f90cfd45f9971ac63662ef6ef739e2051c568 (superseded-boundary evidence about the degenerate boundary with C_step2 present, statistic constant); (2) 83a531c08490d2776ae6c08a3a7ad23f368bca6d0cbf4631a2d2376eea070fb2 (S-F2 state superseded for its stale three-predicate exhaustive-completion row, FAIL-expected-stale). S-F3 refreshes the exhaustive-completion row to current-boundary PASS under the amended two-predicate check with standing D6 witness assertions; all other S-F2 evidence carried forward.",
   "verdict": "PASS",
   "verdictNote": "Rehearsal pre-flight green in substance on the amended boundary: checker GREEN (61 literals, zero unlisted), decoys 4/4 rejected, history tampers 4/4 rejected, live zero forbidden match with nothing persisted, blindness byte-identical non-empty (228338 bytes), comparison statistic-assertion verified fail-closed (clean PASS, tampered ABORT), certificate N/N_orbit/visited/Burnside green with classCount 2859. Harness overall reports FAIL only on its built-in HEAD tamper fetch (fixtures absent from HEAD per the recorded correction); the history-based tamper proof covers the same four fixtures. No verdict category emitted; rehearsal outputs discarded after digest capture; production run not authorized here.",
   "preflightGate": "GREEN-substance",
@@ -250,8 +250,37 @@
     "failures": []
   },
   "exhaustiveCompletion": {
-    "verdict": "FAIL-expected-stale",
-    "note": "Committed tests/gov_518/exhaustive-completion.mjs still encodes the superseded three-predicate admissibility (adj && step2 && close) and is byte-inviolable per S-F2 boundaries; on the amended two-predicate enumeration it reports FAIL at admissibility index 0 while certificate fields match exactly. This is the expected staleness signal, not a gate failure; W6 arithmetic is captured directly from the rehearsal enumeration.",
+    "verdict": "PASS",
+    "suite": "exhaustive-completion",
+    "conformanceMap": "R6/D8",
+    "boundary": "current (amended two-predicate C_adj and C_close)",
+    "note": "S-F3 refresh to the current boundary: tests/gov_518/exhaustive-completion.mjs updated from the stale three-predicate admissibility (adj && step2 && close, FAIL-expected-stale at S-F2 while certificate fields matched exactly) to the amended two-predicate check (C_adj and C_close mirroring the repaired enumerator's holdsAdjacent/holdsClose logic) with header lineage citing 'GOV-518 degeneracy ruling and boundary amendment \u2014 2026-09-07' plus standing D6 statistic-level assertions (witness class (0,1,2,3,4,5,6)/(7,...,7) present, >=2 distinct statistics). S-F3 rehearsal PASS: 2859 classes, all representatives admissible, witnesses present. The S-F2 stale FAIL was the expected staleness signal, not a gate failure.",
+    "admissibility": "two-predicate (C_adj \u2227 C_close) per amended boundary; C_step2 removed",
+    "nonVacuity": {
+      "witness": {
+        "representative": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "statistic": [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7
+        ]
+      },
+      "witnessPresent": true,
+      "distinctStatistics": 53,
+      "distinctStatisticsGate": ">=2"
+    },
     "certificate": {
       "boundaryId": "GOV-518",
       "N": 823543,
@@ -262,7 +291,9 @@
       "burnside": 60028
     },
     "outputDigest": "15b56a2c4f953e7bd19c583c04155d26728498e7bed66e6e82f8a450b34ea653",
-    "outputBytes": 228338
+    "outputBytes": 228338,
+    "persistedFiles": [],
+    "failures": []
   },
   "reorderedInput": {
     "verdict": "PASS",
@@ -714,8 +745,8 @@
     },
     {
       "path": "tests/gov_518/exhaustive-completion.mjs",
-      "sha256": "180550ae1ed95a5429576016297f05e0e73daca2356876082f26748931916aec",
-      "bytes": 4031
+      "sha256": "97734847991f775afde74ea20af5fa91534ae9c2159aae6c7d77968d514a6ec0",
+      "bytes": 6085
     },
     {
       "path": "tests/gov_518/reordered-input.mjs",

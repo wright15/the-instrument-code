@@ -2,9 +2,11 @@
 // Validates the enumeration certificate structure from a single rehearsal
 // run: N, N_orbit, visited == orbit bound, Burnside identity, class list
 // length == classCount, registered order, and admissibility of every listed
-// representative under exactly the three registered predicates. Runs the
-// enumerator via subprocess pipe only; persists nothing; verdict-ineligible
+// representative under exactly the two amended predicates (C_adj ∧ C_close).
+// Amended boundary per 'GOV-518 degeneracy ruling and boundary amendment — 2026-09-07' (B3 bee5f2a1…cba382): C_step2 removed; mirrors the repaired enumerator's holdsAdjacent/holdsClose logic. Refreshed under S-F3 to the current boundary; supersedes the stale three-predicate revision.
+// Runs the enumerator via subprocess pipe only; persists nothing; verdict-ineligible
 // (rehearsal output discarded after digest capture per single-pass rule).
+// Standing D6 statistic-level check: witness class (0,1,2,3,4,5,6)/(7,…,7) present and ≥2 distinct statistics among classes.
 
 import crypto from "node:crypto";
 import { spawnSync } from "node:child_process";
@@ -32,6 +34,8 @@ function lex(a, b) {
 }
 
 const failures = [];
+let witnessPresent = null;
+let distinctStatistics = null;
 const child = spawnSync("node", [RUNNER], {
   encoding: "utf8",
   maxBuffer: 256 * 1024 * 1024,
@@ -72,20 +76,48 @@ if (cert) {
     }
     for (let k = 0; k < cert.classes.length; k += 1) {
       const x = cert.classes[k].representative;
+      // Amended two-predicate admissibility: C_adj ∧ C_close, mirroring the
+      // repaired enumerator's holdsAdjacent/holdsClose logic.
       let adj = true;
-      let step2 = true;
       for (let i = 0; i < DIMENSION; i += 1) {
         if (x[i] === x[(i + 1) % DIMENSION]) adj = false;
-        if (x[(i + DIMENSION - 1) % DIMENSION] === x[(i + 1) % DIMENSION]) step2 = false;
       }
       let total = 0;
       for (let i = 0; i < DIMENSION; i += 1) total += x[i];
       const close = total % MODULUS === 0;
-      if (!(adj && step2 && close)) {
+      if (!(adj && close)) {
         failures.push({ check: "admissibility", index: k });
         break;
       }
     }
+    // Two-level non-vacuity assertion (standing D6 statistic-level proof):
+    // witness class (0,1,2,3,4,5,6)/(7,…,7) present, and ≥2 distinct
+    // statistics among classes.
+    const WITNESS_REP = [0, 1, 2, 3, 4, 5, 6];
+    const WITNESS_STAT = [7, 7, 7, 7, 7, 7, 7];
+    witnessPresent = false;
+    const statisticKeys = new Set();
+    for (let k = 0; k < cert.classes.length; k += 1) {
+      const entry = cert.classes[k];
+      if (Array.isArray(entry.statistic)) statisticKeys.add(entry.statistic.join(","));
+      if (
+        Array.isArray(entry.representative) &&
+        Array.isArray(entry.statistic) &&
+        entry.representative.length === DIMENSION &&
+        entry.statistic.length === DIMENSION &&
+        entry.representative.every((v, i) => v === WITNESS_REP[i]) &&
+        entry.statistic.every((v, i) => v === WITNESS_STAT[i])
+      ) {
+        witnessPresent = true;
+      }
+    }
+    if (!witnessPresent) {
+      failures.push({ check: "non-vacuity-witness", expected: { representative: WITNESS_REP, statistic: WITNESS_STAT } });
+    }
+    if (statisticKeys.size < 2) {
+      failures.push({ check: "non-vacuity-distinct-statistics", distinctStatistics: statisticKeys.size });
+    }
+    distinctStatistics = statisticKeys.size;
   }
 }
 
@@ -93,6 +125,13 @@ const report = {
   verdict: failures.length === 0 ? "PASS" : "FAIL",
   suite: "exhaustive-completion",
   conformanceMap: "R6/D8",
+  admissibility: "two-predicate (C_adj ∧ C_close) per amended boundary; C_step2 removed",
+  nonVacuity: {
+    witness: { representative: [0, 1, 2, 3, 4, 5, 6], statistic: [7, 7, 7, 7, 7, 7, 7] },
+    witnessPresent,
+    distinctStatistics,
+    distinctStatisticsGate: ">=2",
+  },
   certificate: cert ? {
     boundaryId: cert.boundaryId,
     N: cert.N,
