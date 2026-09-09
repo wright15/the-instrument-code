@@ -1,13 +1,13 @@
 # GOV-520 — Ring-constraint forcing execution (gated shell)
 
 **Status:** Gated execution ticket (not authorized) · **Sprint:** Sprint 4 · **Epic:** EPIC-520
-**Depends on:** GOV-518 at B₂ = `77379a8654357a784cdadf23b230ff05845f840ea51f7997f1832fd6f25325bf`; GOV-519 scaffolding receipt; activation entry · **Blocks:** the H2 verdict only
+**Depends on:** GOV-518 at B₃ = `bee5f2a19a7ebca153fe0331cb9e8691c305c32c03c16f765396047201cba382`; GOV-519 scaffolding receipt; activation entry · **Blocks:** the H2 verdict only
 
 **Lineage.** Mandate: DECISION_LEDGER.md:1309-1314. Grant: DECISION_LEDGER.md:1347-1349, as narrowed by "GOV-518 grant narrowing — execution condition — 2026-09-07". Authorized as a ticket by "GOV-518 boundary acceptance" paragraph (4) and the ticket-registration entry. Comparison semantics: amendment A1–A5.
 
 **Authorization notice.** This ticket confers no execution authority by existing. Execution requires the gate below. The run emits a category — success is never presumed; all four categories close the story (rule 5).
 
-**Gate (all required).** Frozen binding valid at run start (B₂ three-way: computed ↔ MANIFEST.json ↔ 0b entry) AND grant-as-narrowed conditions satisfied (acceptance landed; GOV-519 scaffolding receipt proven fail-closed; activation entry citing that receipt) AND GOV-516 state consistent with the registered grant. GOV-517 queue untouched.
+**Gate (all required).** Frozen binding valid at run start (B₃ three-way: computed ↔ MANIFEST.json ↔ amendment entry) AND grant-as-narrowed conditions satisfied (acceptance landed; GOV-519 scaffolding receipt proven fail-closed; activation entry citing that receipt) AND GOV-516 state consistent with the registered grant. GOV-517 queue untouched.
 
 **Pre-flight order.** Binding check → input-boundary screen (import-closure + tamper suite) → fixture/control runs (digests only, discarded, verdict-ineligible) → unconditional adversarial self-test → green or stop. Any detector red ⇒ the frozen invalid category; no H2 disposition.
 
@@ -27,4 +27,4 @@
 
 **Definition of done.** One gated run completed with a valid completion_certificate and full receipt, or a recorded invalid with reason — and nothing beyond that.
 
-**References.** GOV-518 ticket at B₂; amendment A1–A5; "GOV-518 grant narrowing — execution condition — 2026-09-07"; "GOV-518 boundary acceptance"; ticket-registration entry; GOV-519 scaffolding receipt (pending); DECISION_LEDGER.md:1309-1314,1347-1349; EPIC-520-1 addendum; MANIFEST.json.
+**References.** GOV-518 ticket at B₃; amendment A1–A5; "GOV-518 grant narrowing — execution condition — 2026-09-07"; "GOV-518 boundary acceptance"; ticket-registration entry; GOV-519 scaffolding receipt (pending); DECISION_LEDGER.md:1309-1314,1347-1349; EPIC-520-1 addendum; MANIFEST.json.
