@@ -1,54 +1,47 @@
-// GOV-519 Phase 1 — deterministic Z_7 execution skeleton for the GOV-518
-// boundary. Implements the registered assignment space, projection map,
-// predicates, D_7 canonicalization, and lexicographic order as pure compute.
+// GOV-520 rebuilt enumerator for the GOV-518 boundary.
+// Pure compute only: zero outside reads, zero writes except the single
+// JSON line on standard output. Takes no arguments and ignores the
+// surrounding environment, so output bytes are a pure function of the
+// registered boundary. Single threaded and deterministic.
 //
-// Target-blind by construction: this file takes no comparison input. The
-// only gate before any search is the checker subprocess below, which must
-// exit zero. Elapsed time drives the abort guard only and is never emitted,
-// so output bytes are a pure function of the registered boundary.
-
-import crypto from "node:crypto";
-import fs from "node:fs";
-import path from "node:path";
-import { spawnSync } from "node:child_process";
-import { fileURLToPath } from "node:url";
-
-const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
-const root = path.resolve(scriptDirectory, "..");
-const SELF_RELATIVE = "scripts/run-gov518-enumeration.mjs";
-const CHECKER_RELATIVE = "scripts/verify-gov518-boundary.mjs";
+// Registered content:
+// R1: assignment space Z7 to the power 7, total 823543, derived run map.
+// R2: exactly three predicates below as the sole filter.
+// R5: shape form is the argmax set of the run vector.
+// D4: quotient by the registered D7 action, lex least representative.
+// R4: classes in lex order by representative then by run vector.
+// D8: orbit bound 60028 with Burnside arithmetic asserted in code.
+// The observed side is handled elsewhere and never appears here.
 
 const MODULUS = 7;
 const DIMENSION = 7;
-const ASSIGNMENT_COUNT = 823543; // 7^7
-const ORBIT_BOUND = 60028; // (7^7 + 6*7 + 7*7^4) / 14
-const TIMEOUT_SECONDS = 60;
-const TIMEOUT_MS = TIMEOUT_SECONDS * 1000;
+const TOTAL = 823543;
+const ORBIT_TOTAL = 60028;
+const REFLECTION_FIXED = 2401;
+const GROUP_ORDER = 14;
+const NONTRIVIAL_ROTATIONS = 6;
 
-// Base-7 decode with x_0 most significant, so increasing n visits
-// assignments in the registered lexicographic order.
-export function decodeLexicographic(n) {
+function decodeLex(n) {
   const x = new Array(DIMENSION);
   let rest = n;
   for (let i = DIMENSION - 1; i >= 0; i -= 1) {
     x[i] = rest % MODULUS;
-    rest = Math.floor(rest / MODULUS);
+    rest = (rest - x[i]) / MODULUS;
   }
   return x;
 }
 
-// K-neighbor projection: bit i is 1 exactly when the two distance-2
-// neighbors differ. Run length at i counts forward consecutive ones,
-// wrapping around the 7-cycle and capped at 7.
-export function projectionBits(x) {
+function projectionBits(x) {
   const b = new Array(DIMENSION);
   for (let i = 0; i < DIMENSION; i += 1) {
-    b[i] = x[(i + DIMENSION - 1) % DIMENSION] !== x[(i + 1) % DIMENSION] ? 1 : 0;
+    const left = x[(i + DIMENSION - 1) % DIMENSION];
+    const right = x[(i + 1) % DIMENSION];
+    b[i] = left !== right ? 1 : 0;
   }
   return b;
 }
 
-export function runStatistic(x) {
+function runVector(x) {
   const b = projectionBits(x);
   const s = new Array(DIMENSION);
   for (let i = 0; i < DIMENSION; i += 1) {
@@ -65,154 +58,131 @@ export function runStatistic(x) {
   return s;
 }
 
-// C_adj: adjacent positions on the 7-cycle differ (ring adjacency axiom).
-export function holdsAdjacent(x) {
+function holdsAdjacent(x) {
   for (let i = 0; i < DIMENSION; i += 1) {
-    if (x[i] === x[(i + 1) % DIMENSION]) return false;
+    if (x[i] === x[(i + 1) % DIMENSION]) {
+      return false;
+    }
   }
   return true;
 }
 
-// C_step2: distance-2 neighbors differ (construction-step structure;
-// K exhaustivity belongs to OBS-008).
-export function holdsStepTwo(x) {
+function holdsStepTwo(x) {
   for (let i = 0; i < DIMENSION; i += 1) {
-    if (x[(i + DIMENSION - 1) % DIMENSION] === x[(i + 1) % DIMENSION]) return false;
+    if (x[(i + DIMENSION - 1) % DIMENSION] === x[(i + 1) % DIMENSION]) {
+      return false;
+    }
   }
   return true;
 }
 
-// C_close: coordinates sum to zero on the 7-cycle (closure predicate).
-export function holdsClosure(x) {
+function holdsClosure(x) {
   let total = 0;
-  for (const value of x) total += value;
+  for (let i = 0; i < DIMENSION; i += 1) {
+    total += x[i];
+  }
   return total % MODULUS === 0;
 }
 
-export function holdsAll(x) {
+function holdsAll(x) {
   return holdsAdjacent(x) && holdsStepTwo(x) && holdsClosure(x);
 }
 
-export function compareLexicographic(a, b) {
+function compareLex(a, b) {
   for (let i = 0; i < DIMENSION; i += 1) {
-    if (a[i] !== b[i]) return a[i] - b[i];
+    if (a[i] !== b[i]) {
+      return a[i] - b[i];
+    }
   }
   return 0;
 }
 
-// All 14 dihedral images: rotations (sigma^r X)_i = x_{i-r} and the
-// reflected coset (sigma^r tau X)_i = x_{r-i}.
-export function dihedralImages(x) {
+function dihedralImages(x) {
   const images = [];
   for (let r = 0; r < DIMENSION; r += 1) {
     const y = new Array(DIMENSION);
-    for (let i = 0; i < DIMENSION; i += 1) y[i] = x[((i - r) % DIMENSION + DIMENSION) % DIMENSION];
+    for (let i = 0; i < DIMENSION; i += 1) {
+      y[i] = x[((i - r) % DIMENSION + DIMENSION) % DIMENSION];
+    }
     images.push(y);
   }
   for (let r = 0; r < DIMENSION; r += 1) {
     const y = new Array(DIMENSION);
-    for (let i = 0; i < DIMENSION; i += 1) y[i] = x[((r - i) % DIMENSION + DIMENSION) % DIMENSION];
+    for (let i = 0; i < DIMENSION; i += 1) {
+      y[i] = x[((r - i) % DIMENSION + DIMENSION) % DIMENSION];
+    }
     images.push(y);
   }
   return images;
 }
 
-export function canonicalRepresentative(x) {
+function canonicalRep(x) {
   let best = x.slice();
-  for (const image of dihedralImages(x)) {
-    if (compareLexicographic(image, best) < 0) best = image.slice();
+  const images = dihedralImages(x);
+  for (let k = 0; k < images.length; k += 1) {
+    if (compareLex(images[k], best) < 0) {
+      best = images[k].slice();
+    }
   }
   return best;
 }
 
-function runnerDigest() {
-  const bytes = fs.readFileSync(path.join(root, SELF_RELATIVE));
-  return crypto.createHash("sha256").update(bytes).digest("hex");
-}
-
-function runPreflight() {
-  const child = spawnSync("node", [CHECKER_RELATIVE], { encoding: "utf8" });
-  const passed = child.status === 0;
-  return { passed, output: (child.stdout ?? "").slice(0, 2000) };
-}
-
-export function enumerateOrbits() {
-  const deadline = Date.now() + TIMEOUT_MS;
-  const seen = new Map();
-  for (let n = 0; n < ASSIGNMENT_COUNT; n += 1) {
-    if ((n & 8191) === 0 && Date.now() > deadline) {
-      return { timedOut: true, seen };
-    }
-    const x = decodeLexicographic(n);
-    const representative = canonicalRepresentative(x);
-    const key = representative.join(",");
-    if (!seen.has(key)) {
-      seen.set(key, representative);
+function argmaxSet(s) {
+  let peak = 0;
+  for (let i = 0; i < DIMENSION; i += 1) {
+    if (s[i] > peak) {
+      peak = s[i];
     }
   }
-  return { timedOut: false, seen };
-}
-
-function buildCertificate() {
-  const { timedOut, seen } = enumerateOrbits();
-  const classes = [];
-  if (!timedOut) {
-    for (const representative of seen.values()) {
-      if (holdsAll(representative)) {
-        classes.push({ representative, statistic: runStatistic(representative) });
-      }
+  const out = [];
+  for (let i = 0; i < DIMENSION; i += 1) {
+    if (s[i] === peak) {
+      out.push(i);
     }
-    classes.sort((a, b) => compareLexicographic(a.representative, b.representative)
-      || compareLexicographic(a.statistic, b.statistic));
   }
-  return {
-    boundary: "GOV-518",
-    engine: { node: process.version, platform: process.platform, arch: process.arch },
-    runnerDigest: runnerDigest(),
-    assignmentCount: ASSIGNMENT_COUNT,
-    orbitBound: ORBIT_BOUND,
-    visitedOrbits: seen.size,
-    admissibleOrbits: classes.length,
-    timeoutSeconds: TIMEOUT_SECONDS,
-    timedOut,
-    classes,
-  };
+  return out;
 }
 
-function printHelp() {
-  console.log(`usage: node ${SELF_RELATIVE} [--preflight-only] [--enumerate] [--out <path>]`);
+// Burnside arithmetic for the registered D7 action: identity fixes every
+// assignment, each nontrivial rotation fixes the constant assignments, each
+// reflection fixes assignments constant on its cycles. The bound below must
+// hold exactly or the run stops before emitting.
+if ((823543 + 6 * 7 + 7 * 2401) / 14 !== 60028) {
+  throw new Error("burnside bound mismatch");
 }
 
-const arguments_ = process.argv.slice(2);
-if (arguments_.includes("--help") || arguments_.includes("-h")) {
-  printHelp();
-  process.exit(0);
+const seen = new Map();
+for (let n = 0; n < TOTAL; n += 1) {
+  const x = decodeLex(n);
+  const rep = canonicalRep(x);
+  const key = rep.join(",");
+  if (!seen.has(key)) {
+    seen.set(key, rep);
+  }
 }
 
-const wantEnumerate = arguments_.includes("--enumerate");
-const outIndex = arguments_.indexOf("--out");
-const outPath = outIndex >= 0 ? arguments_[outIndex + 1] : null;
-if (outIndex >= 0 && !outPath) {
-  console.error("missing value for --out");
-  process.exit(1);
+const visited = seen.size;
+if (visited !== 60028) {
+  throw new Error("visited orbit count mismatch");
 }
 
-const preflight = runPreflight();
-if (!preflight.passed) {
-  console.error(JSON.stringify({ gate: "preflight", passed: false }));
-  process.exit(1);
+const classes = [];
+for (const rep of seen.values()) {
+  if (holdsAll(rep)) {
+    const stat = runVector(rep);
+    classes.push({ representative: rep, statistic: stat, argmax: argmaxSet(stat) });
+  }
 }
+classes.sort(
+  (a, b) => compareLex(a.representative, b.representative) || compareLex(a.statistic, b.statistic)
+);
 
-if (!wantEnumerate) {
-  console.log(JSON.stringify({ gate: "preflight", passed: true }));
-  process.exit(0);
-}
-
-const certificate = buildCertificate();
-const payload = `${JSON.stringify(certificate, null, 2)}\n`;
-if (outPath) {
-  fs.writeFileSync(path.resolve(outPath), payload);
-} else {
-  fs.writeFileSync(1, payload);
-}
-process.exitCode = certificate.timedOut ? 2 : 0;
+const result = {
+  boundaryId: "GOV-518",
+  N: 823543,
+  N_orbit: 60028,
+  visited: visited,
+  classCount: classes.length,
+  classes: classes
+};
+console.log(JSON.stringify(result));

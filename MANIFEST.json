@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1036,
-  "totalBytes": 72176121,
+  "fileCount": 1040,
+  "totalBytes": 72208623,
   "files": [
     {
       "path": ".env.example",
@@ -1441,6 +1441,11 @@
       "sha256": "4401bceadfd2370d99b5202d985740344994865f1eb687c17c4fa6e0dd3d0bad"
     },
     {
+      "path": "qa/gov-520-preflight-receipt.json",
+      "bytes": 20372,
+      "sha256": "38ed86987e05e425c7a6e03caf9f90cfd45f9971ac63662ef6ef739e2051c568"
+    },
+    {
       "path": "qa/governor-runtime-benchmark.json",
       "bytes": 1436,
       "sha256": "c6fca295013dada9b875435f1b9525d6ddbc1c1c8927a2e10e87699e5c6b8d3a"
@@ -2116,6 +2121,11 @@
       "sha256": "0a8fac817220db8abe029c40f8f90dfd5837378a515094e6997891f2583c8ae7"
     },
     {
+      "path": "scripts/compare-gov518-outcome.mjs",
+      "bytes": 5753,
+      "sha256": "5432a5adfa54d10a3a76224fc7038aaec439808f359f9c29e090f7519c4e8af6"
+    },
+    {
       "path": "scripts/generate-availability-housing.py",
       "bytes": 4649,
       "sha256": "67e4498218da880b6dfb7da95594b8a82cdea71fd404e35bd4da5043b1f13d86"
@@ -2212,8 +2222,8 @@
     },
     {
       "path": "scripts/run-gov518-enumeration.mjs",
-      "bytes": 6773,
-      "sha256": "9a60c6b7500bd8bedd76cda122efbdfe739f5394bee2408d88670e49276d7c9f"
+      "bytes": 4722,
+      "sha256": "0bd436f249bd7bb3995d5ab5378f14f387cf8ad581d1056421d9def89cf8f080"
     },
     {
       "path": "scripts/run-governor-admission-benchmark.mjs",
@@ -4921,9 +4931,19 @@
       "sha256": "64af588903b618aa039dd9097fd9e97781ac54e75f5a5778486e22f07d2921a2"
     },
     {
+      "path": "tests/gov_518/exhaustive-completion.mjs",
+      "bytes": 4031,
+      "sha256": "180550ae1ed95a5429576016297f05e0e73daca2356876082f26748931916aec"
+    },
+    {
       "path": "tests/gov_518/gov518-live-suite.mjs",
-      "bytes": 10246,
-      "sha256": "f72d2c019537eb41e40a7ee775cd7ce56733079b551291d962df7ddb721065a8"
+      "bytes": 11625,
+      "sha256": "b2777a473a54cf75e8fe7b96e147f21138143dcaaea0dab1f12901f72daee4cb"
+    },
+    {
+      "path": "tests/gov_518/reordered-input.mjs",
+      "bytes": 3018,
+      "sha256": "190181cb77fe36171ad1e4479b0fd60817455b07cc300c858dc588c1315b3a92"
     },
     {
       "path": "tests/gov_518/structural-allowlist.json",

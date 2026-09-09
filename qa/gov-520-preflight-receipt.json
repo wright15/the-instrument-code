@@ -1,0 +1,593 @@
+{
+  "schemaVersion": "gov-520-preflight-receipt.v0",
+  "ticket": "GOV-520",
+  "sitting": "S-F",
+  "boundaryBinding": "77379a8654357a784cdadf23b230ff05845f840ea51f7997f1832fd6f25325bf",
+  "ledgerBinding": "3c942b9c5b1cbe61f1030980b184c2b1d022890511e7365961d91061d883f22f",
+  "verdict": "PASS",
+  "verdictNote": "Rehearsal pre-flight green in substance: checker GREEN, decoys 4/4 rejected, tampers 4/4 rejected via history fetch, live zero forbidden match with nothing persisted, blindness byte-identical non-empty, deferred suites PASS. Harness overall reports FAIL only on its built-in HEAD tamper fetch (fixtures absent from HEAD per the recorded correction); the history-based tamper proof covers the same four fixtures. No verdict category emitted; rehearsal outputs discarded after digest capture; production run not authorized here.",
+  "preflightGate": "GREEN-substance",
+  "handoff": "READY-for-review",
+  "handoffReason": "Rebuild conforms to the frozen input-channel inventory; independent semantic-fidelity review of the rebuilt source is the remaining gate before any production run (Sitting G). No commit performed here.",
+  "orientation": {
+    "head": "cb955b98fb2eddf701c9d43ff80b41a87b76508a",
+    "worktree": "clean at open",
+    "aheadBehind": "0/0 recorded not gated",
+    "ticketB2": {
+      "path": "scrum/GOV-518-ring-constraint-forcing-enumeration.md",
+      "bytes": 22865,
+      "sha256": "77379a8654357a784cdadf23b230ff05845f840ea51f7997f1832fd6f25325bf",
+      "hex64": 0
+    },
+    "ledger": {
+      "path": "provenance/DECISION_LEDGER.md",
+      "bytes": 105681,
+      "sha256": "3c942b9c5b1cbe61f1030980b184c2b1d022890511e7365961d91061d883f22f"
+    },
+    "fingerprints": {
+      "twinHub": "888d90b2a6ad5a4a3c8e0043511e2b02edeacdad8c4fa4a46466d9868b737616",
+      "fifthSpace": "bf9d046547d297af0931726ef427fab562ebcb8aac33e2bd0260e1e1b265431b",
+      "shadowLadder": "0fe74479689496ded3158f76be6bfbfd35250891278239fb52cc3a92d636827d",
+      "pentatonicReport": "1022f5782e710f3fffd4a01c0e00dc199d9ed098019c340c75d83432afd8ee25"
+    },
+    "gov519Status": "**Status:** Done \u2014 receipt 4401bcea\u2026",
+    "boardRows": "GOV-519 Done, GOV-520 Backlog",
+    "gov519Receipt": "4401bceadfd2370d99b5202d985740344994865f1eb687c17c4fa6e0dd3d0bad",
+    "fixturesAbsent": true,
+    "allowlistPresent": true,
+    "graphIndex": "9d3aebb318f31e6cd53f737bcb66ff33400beb3bfed2e1da71c4a874b51cdef6"
+  },
+  "rebuildConformance": {
+    "enumerator": "scripts/run-gov518-enumeration.mjs",
+    "sha256": "0bd436f249bd7bb3995d5ab5378f14f387cf8ad581d1056421d9def89cf8f080",
+    "imports": "zero (no fs/path/child_process constructs, no dynamic import/require, no spawn, no sync IO)",
+    "rng": "none",
+    "wallClock": "none",
+    "locale": "none",
+    "threads": "single",
+    "argv": "takes no arguments; source carries zero option tokens; no path-taking or output-file argument",
+    "stdout": "single JSON document {boundaryId,N,N_orbit,visited,classCount,classes}",
+    "literals": [
+      0,
+      1,
+      6,
+      7,
+      14,
+      2401,
+      60028,
+      823543
+    ],
+    "allowlistDiff": "none: all eight code literals already present in tests/gov_518/structural-allowlist.json (10 entries); no amendment required; allowlist bytes and SHA unchanged from GOV-519",
+    "semantics": {
+      "R1": "iterates all 823543 assignments, canonicalizes under the registered D7 action, deduplicates to orbit representatives",
+      "R2": "filters by exactly the three registered predicates and no others",
+      "R5": "per-class argmax set of the run vector recorded alongside representative and run vector",
+      "D4": "D7-orbit quotient at registered granularity; lex-least representative",
+      "D8": "Burnside arithmetic (823543 + 6*7 + 7*2401)/14 asserted equal to 60028 in code; visited asserted equal to 60028",
+      "R4": "classes sorted by representative then run vector in lex order",
+      "noComparisonContent": "no observed values, masks, target shape, or matches logic; live scan zero-match confirms"
+    }
+  },
+  "comparisonEntry": {
+    "file": "scripts/compare-gov518-outcome.mjs",
+    "sha256": "5432a5adfa54d10a3a76224fc7038aaec439808f359f9c29e090f7519c4e8af6",
+    "role": "reads exactly two inputs: enumeration output location (positional) and the registered observation record; never executes the enumeration",
+    "binding": "recomputes record SHA-256 against CHECKSUMS.sha256 and MANIFEST.json at runtime plus fingerprint check; mismatch aborts with no verdict",
+    "equality": "membership per A3: matches iff comparison_target in statistic_orbit(C) via the registered D7 action on argmax sets",
+    "emits": "per-class results plus forced/forced_nonmatching/underdetermined (invalid for bad inputs)",
+    "literals": [
+      0,
+      1,
+      2,
+      7,
+      60028,
+      823543
+    ],
+    "literalDecoyScan": "GREEN under enumerator rules (unlisted [], decoyHits [], argv [], selfTest PASS); import-closure and reachability RED by role (filesystem constructs and the registered record location are its registered duties)",
+    "liveScan": "2 observation-vocabulary matches (registered record field references, allowed by comparison-role policy); 0 forbidden matches (zero true integers, zero true sequences)"
+  },
+  "checker": {
+    "verdict": "PASS",
+    "boundary": "GOV-518 R7",
+    "mode": "preflight",
+    "allowlistEntries": 10,
+    "decoyFixtures": 4,
+    "decoyFamilies": [
+      "complement",
+      "per-tier-difference",
+      "reordering",
+      "reversal"
+    ],
+    "production": [
+      {
+        "file": "scripts/run-gov518-enumeration.mjs",
+        "closureViolations": 0,
+        "reachabilityViolations": 0,
+        "integerLiterals": 65,
+        "unlistedIntegers": [],
+        "decoyHits": [],
+        "argvViolations": [],
+        "selfTest": "PASS"
+      }
+    ],
+    "failures": []
+  },
+  "adversarialSelfTest": {
+    "verdict": "PASS",
+    "boundary": "GOV-518 R7",
+    "mode": "adversarial-self-test",
+    "selfTest": {
+      "passed": true,
+      "plantedFamily": "complement",
+      "rejectionHits": 2,
+      "deleted": true,
+      "committed": false,
+      "trueValueUsed": false
+    },
+    "failures": []
+  },
+  "comparisonTargetScan": {
+    "verdict": "FAIL",
+    "boundary": "GOV-518 R7",
+    "mode": "preflight",
+    "allowlistEntries": 10,
+    "decoyFixtures": 4,
+    "decoyFamilies": [
+      "complement",
+      "per-tier-difference",
+      "reordering",
+      "reversal"
+    ],
+    "production": [
+      {
+        "file": "scripts/compare-gov518-outcome.mjs",
+        "closureViolations": 5,
+        "reachabilityViolations": 2,
+        "integerLiterals": 47,
+        "unlistedIntegers": [],
+        "decoyHits": [],
+        "argvViolations": [],
+        "selfTest": "PASS"
+      }
+    ],
+    "failures": [
+      {
+        "check": "import-closure",
+        "file": "scripts/compare-gov518-outcome.mjs",
+        "rule": "fs-module",
+        "line": 10
+      },
+      {
+        "check": "import-closure",
+        "file": "scripts/compare-gov518-outcome.mjs",
+        "rule": "path-module",
+        "line": 11
+      },
+      {
+        "check": "import-closure",
+        "file": "scripts/compare-gov518-outcome.mjs",
+        "rule": "fs-use",
+        "line": 35
+      },
+      {
+        "check": "import-closure",
+        "file": "scripts/compare-gov518-outcome.mjs",
+        "rule": "path-use",
+        "line": 14
+      },
+      {
+        "check": "import-closure",
+        "file": "scripts/compare-gov518-outcome.mjs",
+        "rule": "sync-io",
+        "line": 35
+      },
+      {
+        "check": "input-reach-boundary",
+        "file": "scripts/compare-gov518-outcome.mjs",
+        "needle": "input-surface-path",
+        "line": 17
+      },
+      {
+        "check": "input-reach-boundary",
+        "file": "scripts/compare-gov518-outcome.mjs",
+        "needle": "input-surface-path",
+        "line": 17
+      }
+    ]
+  },
+  "liveSuite": {
+    "verdict": "PASS",
+    "mode": "live",
+    "canonical": {
+      "record": "canonical/fivefold-incubator/d-shadow-complement-span-v0.json",
+      "fingerprint": "8c2416b8f51f8ae8cdb0fc9f2490beeb9e3cc49f435be7d992f55f5f7c122cb8",
+      "binding": "CHECKSUMS.sha256"
+    },
+    "needleStats": {
+      "trueIntegers": 104,
+      "sequenceNeedles": 72,
+      "stringNeedles": 22
+    },
+    "scope": [
+      {
+        "file": "scripts/run-gov518-enumeration.mjs",
+        "matches": 0,
+        "kinds": [],
+        "policy": "strict-zero"
+      },
+      {
+        "file": "scripts/compare-gov518-outcome.mjs",
+        "matches": 2,
+        "kinds": [
+          "observation-vocabulary"
+        ],
+        "policy": "comparison-role",
+        "allowedKinds": [
+          "observation-vocabulary"
+        ],
+        "forbiddenMatches": 0,
+        "forbiddenKinds": []
+      },
+      {
+        "file": "tests/gov_518/decoy-*.json",
+        "matches": 0,
+        "kinds": []
+      }
+    ],
+    "persistedFiles": [],
+    "failures": []
+  },
+  "exhaustiveCompletion": {
+    "verdict": "PASS",
+    "certificate": {
+      "boundaryId": "GOV-518",
+      "N": 823543,
+      "N_orbit": 60028,
+      "visited": 60028,
+      "classCount": 906,
+      "classesLength": 906,
+      "burnside": 60028
+    },
+    "outputDigest": "bd17e81b8509aefe53d708b123c49cfa38fd4151f3614a3f07458bb46559f21a",
+    "outputBytes": 79825
+  },
+  "reorderedInput": {
+    "verdict": "PASS",
+    "basis": "satisfied-by-construction: enumerator source carries zero option tokens (argv allowlist scan passes vacuously); empirically confirmed by permuted wrapper-side orders",
+    "argvTokens": [],
+    "runs": [
+      {
+        "args": [],
+        "status": 0,
+        "digest": "bd17e81b8509aefe53d708b123c49cfa38fd4151f3614a3f07458bb46559f21a",
+        "bytes": 79825
+      },
+      {
+        "args": [
+          "--enumerate"
+        ],
+        "status": 0,
+        "digest": "bd17e81b8509aefe53d708b123c49cfa38fd4151f3614a3f07458bb46559f21a",
+        "bytes": 79825
+      },
+      {
+        "args": [
+          "--preflight-only"
+        ],
+        "status": 0,
+        "digest": "bd17e81b8509aefe53d708b123c49cfa38fd4151f3614a3f07458bb46559f21a",
+        "bytes": 79825
+      },
+      {
+        "args": [
+          "--enumerate",
+          "--preflight-only"
+        ],
+        "status": 0,
+        "digest": "bd17e81b8509aefe53d708b123c49cfa38fd4151f3614a3f07458bb46559f21a",
+        "bytes": 79825
+      },
+      {
+        "args": [
+          "--preflight-only",
+          "--enumerate"
+        ],
+        "status": 0,
+        "digest": "bd17e81b8509aefe53d708b123c49cfa38fd4151f3614a3f07458bb46559f21a",
+        "bytes": 79825
+      }
+    ],
+    "identical": true
+  },
+  "failClosedMatrix": {
+    "decoyPlants": [
+      {
+        "family": "complement",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      },
+      {
+        "family": "per-tier-difference",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      },
+      {
+        "family": "reversal",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      },
+      {
+        "family": "reordering",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      }
+    ],
+    "tamperSplices": [
+      {
+        "fixture": "qa/fixtures/gov-518/tamper-01-observation-sequence.json",
+        "archivedBytes": 638,
+        "rejected": true,
+        "kinds": [
+          "observation-vocabulary",
+          "true-sequence-base"
+        ],
+        "source": "git show 7f61d7c:ref spliced into enumerator surface, in-memory live scan"
+      },
+      {
+        "fixture": "qa/fixtures/gov-518/tamper-02-contact-signature.json",
+        "archivedBytes": 568,
+        "rejected": true,
+        "kinds": [
+          "observation-vocabulary"
+        ],
+        "source": "git show 7f61d7c:ref spliced into enumerator surface, in-memory live scan"
+      },
+      {
+        "fixture": "qa/fixtures/gov-518/tamper-03-position-masks.json",
+        "archivedBytes": 713,
+        "rejected": true,
+        "kinds": [
+          "observation-vocabulary",
+          "observation-vocabulary-folded",
+          "true-integer"
+        ],
+        "source": "git show 7f61d7c:ref spliced into enumerator surface, in-memory live scan"
+      },
+      {
+        "fixture": "qa/fixtures/gov-518/tamper-04-scalar-reordering.json",
+        "archivedBytes": 761,
+        "rejected": true,
+        "kinds": [
+          "observation-vocabulary",
+          "observation-vocabulary-folded"
+        ],
+        "source": "git show 7f61d7c:ref spliced into enumerator surface, in-memory live scan"
+      }
+    ],
+    "note": "Decoy plants rejected via checker target probes (FAIL = rejected). Tamper splices rejected via history-fetch in-memory live scan (archived bytes match GOV-519 values 638/568/713/761 with identical kinds)."
+  },
+  "harness": {
+    "verdict": "FAIL",
+    "handoff": "BLOCKED",
+    "stages": {
+      "checker": {
+        "stage": "checker",
+        "passed": true,
+        "status": 0,
+        "verdict": "PASS",
+        "selfTest": "PASS",
+        "stderr": ""
+      },
+      "decoyTamper": {
+        "stage": "decoy-tamper-suite",
+        "passed": false,
+        "decoys": [
+          {
+            "fixture": "tests/gov_518/decoy-01-complement.json",
+            "family": "complement",
+            "rejected": true
+          },
+          {
+            "fixture": "tests/gov_518/decoy-02-difference.json",
+            "family": "per-tier-difference",
+            "rejected": true
+          },
+          {
+            "fixture": "tests/gov_518/decoy-03-reversal.json",
+            "family": "reversal",
+            "rejected": true
+          },
+          {
+            "fixture": "tests/gov_518/decoy-04-reordering.json",
+            "family": "reordering",
+            "rejected": true
+          }
+        ],
+        "tampers": [
+          {
+            "fixture": "qa/fixtures/gov-518/tamper-01-observation-sequence.json",
+            "archivedBytes": 0,
+            "rejected": false,
+            "kinds": []
+          },
+          {
+            "fixture": "qa/fixtures/gov-518/tamper-02-contact-signature.json",
+            "archivedBytes": 0,
+            "rejected": false,
+            "kinds": []
+          },
+          {
+            "fixture": "qa/fixtures/gov-518/tamper-03-position-masks.json",
+            "archivedBytes": 0,
+            "rejected": false,
+            "kinds": []
+          },
+          {
+            "fixture": "qa/fixtures/gov-518/tamper-04-scalar-reordering.json",
+            "archivedBytes": 0,
+            "rejected": false,
+            "kinds": []
+          }
+        ]
+      },
+      "live": {
+        "stage": "live-suite",
+        "passed": true,
+        "status": 0,
+        "verdict": "PASS",
+        "persistedFiles": [],
+        "worktreeUnchanged": true
+      },
+      "blindness": {
+        "stage": "target-blindness",
+        "passed": true,
+        "identical": true,
+        "conditions": {
+          "clean": {
+            "status": 0,
+            "stdoutDigest": "bd17e81b8509aefe53d708b123c49cfa38fd4151f3614a3f07458bb46559f21a",
+            "stderrDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdoutBytes": 79825
+          },
+          "present": {
+            "status": 0,
+            "stdoutDigest": "bd17e81b8509aefe53d708b123c49cfa38fd4151f3614a3f07458bb46559f21a",
+            "stderrDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdoutBytes": 79825
+          },
+          "absent": {
+            "status": 0,
+            "stdoutDigest": "bd17e81b8509aefe53d708b123c49cfa38fd4151f3614a3f07458bb46559f21a",
+            "stderrDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdoutBytes": 79825
+          },
+          "unreadable": {
+            "status": 0,
+            "stdoutDigest": "bd17e81b8509aefe53d708b123c49cfa38fd4151f3614a3f07458bb46559f21a",
+            "stderrDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdoutBytes": 79825
+          }
+        }
+      }
+    },
+    "environment": {
+      "node": "v22.22.0",
+      "platform": "linux",
+      "arch": "x64",
+      "python": "Python 3.12.3",
+      "timeoutSeconds": 60,
+      "orbitBound": 60028,
+      "boundary": "GOV-518"
+    },
+    "tamperFetchNote": "Built-in tamper fetch reads HEAD where the four tamper fixtures are absent per the recorded correction (deleted at 62a70c1; present at 7f61d7c), so built-in tampers show 0 bytes and not-rejected; decoys 4/4 rejected; history-based tamper proof above covers the same four fixtures 4/4 rejected."
+  },
+  "blindnessDigests": {
+    "clean": {
+      "status": 0,
+      "stdoutDigest": "bd17e81b8509aefe53d708b123c49cfa38fd4151f3614a3f07458bb46559f21a",
+      "stderrDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 79825
+    },
+    "present": {
+      "status": 0,
+      "stdoutDigest": "bd17e81b8509aefe53d708b123c49cfa38fd4151f3614a3f07458bb46559f21a",
+      "stderrDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 79825
+    },
+    "absent": {
+      "status": 0,
+      "stdoutDigest": "bd17e81b8509aefe53d708b123c49cfa38fd4151f3614a3f07458bb46559f21a",
+      "stderrDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 79825
+    },
+    "unreadable": {
+      "status": 0,
+      "stdoutDigest": "bd17e81b8509aefe53d708b123c49cfa38fd4151f3614a3f07458bb46559f21a",
+      "stderrDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 79825
+    }
+  },
+  "blindnessNote": "Four output digests byte-identical and non-empty (79825 bytes each, status 0); empty-output identity does not apply per ENTRY 4(b).",
+  "certificateArithmetic": {
+    "N": 823543,
+    "N_orbit": 60028,
+    "visited": 60028,
+    "burnside": 60028,
+    "burnsideRemainder": 0,
+    "classCount": 906,
+    "classesLength": 906,
+    "order": "lex by representative then run vector verified",
+    "admissibility": "all listed representatives satisfy the three predicates",
+    "interpretation": "none: classCount recorded only; no verdict category emitted; rehearsal outputs discarded after digest capture"
+  },
+  "fileInventory": [
+    {
+      "path": "scripts/run-gov518-enumeration.mjs",
+      "sha256": "0bd436f249bd7bb3995d5ab5378f14f387cf8ad581d1056421d9def89cf8f080",
+      "bytes": 4722
+    },
+    {
+      "path": "scripts/compare-gov518-outcome.mjs",
+      "sha256": "5432a5adfa54d10a3a76224fc7038aaec439808f359f9c29e090f7519c4e8af6",
+      "bytes": 5753
+    },
+    {
+      "path": "tests/gov_518/structural-allowlist.json",
+      "sha256": "559a6defc3327135baf7e204d2454064100e86b0c4716781aeabc3e8ce09fa58",
+      "bytes": 1060
+    },
+    {
+      "path": "tests/gov_518/gov518-live-suite.mjs",
+      "sha256": "b2777a473a54cf75e8fe7b96e147f21138143dcaaea0dab1f12901f72daee4cb",
+      "bytes": 11625
+    },
+    {
+      "path": "tests/gov_518/exhaustive-completion.mjs",
+      "sha256": "180550ae1ed95a5429576016297f05e0e73daca2356876082f26748931916aec",
+      "bytes": 4031
+    },
+    {
+      "path": "tests/gov_518/reordered-input.mjs",
+      "sha256": "190181cb77fe36171ad1e4479b0fd60817455b07cc300c858dc588c1315b3a92",
+      "bytes": 3018
+    },
+    {
+      "path": "tests/gov_518/decoy-01-complement.json",
+      "sha256": "e18f1bce5ededd0df2348780f82dd03f34ee4ef829730bc536c1e43778d31012",
+      "bytes": 588
+    },
+    {
+      "path": "tests/gov_518/decoy-02-difference.json",
+      "sha256": "01f833c911bf30eb6dc15b6bc7115bba3d315b411714d2ff65c7af06df43bab9",
+      "bytes": 577
+    },
+    {
+      "path": "tests/gov_518/decoy-03-reversal.json",
+      "sha256": "6527ecc279b58d493e57f507a991cf3a79ce0beae577bc462e59c4fdf35ce259",
+      "bytes": 547
+    },
+    {
+      "path": "tests/gov_518/decoy-04-reordering.json",
+      "sha256": "64af588903b618aa039dd9097fd9e97781ac54e75f5a5778486e22f07d2921a2",
+      "bytes": 606
+    }
+  ],
+  "d8Pin": {
+    "node": "v22.22.0",
+    "platform": "linux",
+    "arch": "x64",
+    "python": "Python 3.12.3",
+    "timeoutSeconds": 60,
+    "orbitBound": 60028,
+    "boundary": "GOV-518"
+  },
+  "commit": "none performed here"
+}

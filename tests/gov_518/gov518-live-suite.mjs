@@ -21,8 +21,15 @@ const root = path.resolve(scriptDirectory, "..", "..");
 const CANONICAL_RECORD = "canonical/fivefold-incubator/d-shadow-complement-span-v0.json";
 const EXPECTED_CANDIDATE_FINGERPRINT = "8c2416b8f51f8ae8cdb0fc9f2490beeb9e3cc49f435be7d992f55f5f7c122cb8";
 
-// Production/input surfaces scanned for true-value matches.
+// Production/input surfaces scanned for true-value matches. The enumerator
+// surface carries the strict zero-match policy. The comparison entry source
+// is scanned under its own role-aware policy (see COMPARISON_SCOPE): it must
+// derive the observed side at runtime, so identifier-class vocabulary for the
+// registered record fields is expected by role; true integers and true
+// sequences must still be zero.
 const LIVE_SCOPE = ["scripts/run-gov518-enumeration.mjs"];
+const COMPARISON_SCOPE = ["scripts/compare-gov518-outcome.mjs"];
+const COMPARISON_ALLOWED_KINDS = ["observation-vocabulary"];
 
 // Observation-side vocabulary needles (identifier class per CR-5: artifact
 // fields, relation names, ledger/record ids that the boundary declares
@@ -203,9 +210,26 @@ for (const relativePath of LIVE_SCOPE) {
   }
   const matches = scanSurface(text, needles);
   const kinds = [...new Set(matches.map((m) => m.kind))].sort();
-  scopeReport.push({ file: relativePath, matches: matches.length, kinds });
+  scopeReport.push({ file: relativePath, matches: matches.length, kinds, policy: "strict-zero" });
   if (matches.length > 0) {
     failures.push({ check: "live-true-value", file: relativePath, kinds });
+  }
+}
+for (const relativePath of COMPARISON_SCOPE) {
+  let text;
+  try {
+    text = fs.readFileSync(path.join(root, relativePath), "utf8");
+  } catch (error) {
+    failures.push({ check: "scope-present", file: relativePath, error: String(error?.message ?? error) });
+    continue;
+  }
+  const matches = scanSurface(text, needles);
+  const kinds = [...new Set(matches.map((m) => m.kind))].sort();
+  const forbidden = matches.filter((m) => !COMPARISON_ALLOWED_KINDS.includes(m.kind));
+  const forbiddenKinds = [...new Set(forbidden.map((m) => m.kind))].sort();
+  scopeReport.push({ file: relativePath, matches: matches.length, kinds, policy: "comparison-role", allowedKinds: COMPARISON_ALLOWED_KINDS, forbiddenMatches: forbidden.length, forbiddenKinds });
+  if (forbidden.length > 0) {
+    failures.push({ check: "live-true-value", file: relativePath, kinds: forbiddenKinds });
   }
 }
 
