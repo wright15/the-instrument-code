@@ -1,0 +1,2087 @@
+{
+  "schemaVersion": "gov-519-scaffolding-receipt.v0",
+  "formatNote": "Envelope mirrors the established qa validation-report format (schemaVersion/verdict/checks[] with checkId/status/diagnostic, e.g. qa/twin-hub-convergence-validation.json); no GOV-516 QA receipt file exists in qa/ or provenance/ (rg confirms), so content follows the GOV-519 directive spec.",
+  "ticket": "GOV-519",
+  "boundaryBinding": "77379a8654357a784cdadf23b230ff05845f840ea51f7997f1832fd6f25325bf",
+  "ledgerBinding": "9a8a2b7ac2aadbe902653d523dab4a68a70f0fd8ed2d5665c7a6539117068dbf",
+  "verdict": "PASS",
+  "verdictNote": "Scaffolding proven fail-closed (matrix 17/17, gate blocks, blindness digest-equal). The FAIL items below are the recorded W6 enumerator finding and its fail-closed consequence, not scaffolding defects.",
+  "preflightGate": "FAIL",
+  "handoff": "BLOCKED",
+  "handoffReason": "Pre-flight red on the unmodified specificity specimen (W6 recorded finding); enumeration never starts per CR-7. Fix ownership: GOV-520 first gated step.",
+  "checksPassed": 10,
+  "checksFailed": 2,
+  "checks": [
+    {
+      "checkId": "orientation-pinned",
+      "status": "PASS",
+      "diagnostic": "HEAD 9a0764b; B2 77379a86; ledger 9a8a2b7a; four fingerprints invariant."
+    },
+    {
+      "checkId": "w1-fixture-deletion",
+      "status": "PASS",
+      "diagnostic": "4 tamper fixtures removed via git rm (staged, uncommitted); pre-deletion SHAs captured."
+    },
+    {
+      "checkId": "checker-redesign",
+      "status": "PASS",
+      "diagnostic": "True-value rule table replaced; 6 fail-closed detectors; self-test unconditional."
+    },
+    {
+      "checkId": "decoy-corpus",
+      "status": "PASS",
+      "diagnostic": "4 synthetic decoys across complement/per-tier-difference/reversal/reordering + structural allowlist (10 entries)."
+    },
+    {
+      "checkId": "live-suite",
+      "status": "PASS",
+      "diagnostic": "In-memory scan: 0 matches on clean surfaces over 104 ints + 72 sequences; nothing persisted."
+    },
+    {
+      "checkId": "w6-conformance",
+      "status": "FAIL",
+      "diagnostic": "Specificity specimen RED (recorded finding, fix owned by GOV-520): import-closure x7, unlisted integers [60,1000,2000,8191], argv --out x2. Enumerator unmodified."
+    },
+    {
+      "checkId": "fail-closed-matrix",
+      "status": "PASS",
+      "diagnostic": "17/17 probes behave as specified (17/17 ok)."
+    },
+    {
+      "checkId": "harness-gate",
+      "status": "FAIL",
+      "diagnostic": "Harness verdict FAIL by design while the W6 finding stands: handoff BLOCKED (CR-7 fail-closed). Decoy/tamper, live, blindness stages all pass."
+    },
+    {
+      "checkId": "target-blindness",
+      "status": "PASS",
+      "diagnostic": "Digest equality across present/absent/unreadable conditions; digests only, never content."
+    },
+    {
+      "checkId": "cr8-audit",
+      "status": "PASS",
+      "diagnostic": "Tier-A true values confined to 5 allowlisted files; sitting scope zero-match except suite self-needles (CR-5). 193 Tier-B context files pre-existing, none introduced."
+    },
+    {
+      "checkId": "prose-consistency",
+      "status": "PASS",
+      "diagnostic": "validate 418/0 (run 1, exit 0); scripts/qa/tests outside scan set; no ticket bytes changed."
+    },
+    {
+      "checkId": "graph-identical",
+      "status": "PASS",
+      "diagnostic": "graph/index.html untouched (sha pinned in orientation)."
+    }
+  ],
+  "orientation": {
+    "head": "9a0764b67450d2396e0579e404dc353a7aaefbc8",
+    "headOneline": "9a0764b SCRUM: GOV-519 scaffolding re-scope + rename, GOV-520 gated shell, ENTRY 3 registration, ledger-coupled regen to L''",
+    "statusOpen": "## main...origin/main (clean)",
+    "ticketB2": {
+      "path": "scrum/GOV-518-ring-constraint-forcing-enumeration.md",
+      "bytes": 22865,
+      "sha256": "77379a8654357a784cdadf23b230ff05845f840ea51f7997f1832fd6f25325bf",
+      "hex64": 0
+    },
+    "ledger": {
+      "path": "provenance/DECISION_LEDGER.md",
+      "bytes": 103573,
+      "sha256": "9a8a2b7ac2aadbe902653d523dab4a68a70f0fd8ed2d5665c7a6539117068dbf"
+    },
+    "fingerprints": {
+      "twinHub": "cbf32d04d53c224d79d31b1b74a064bdefaa8a0f32444633b27e3fdceaa48019",
+      "fifthSpace": "4fa312d08f5a6ce579808158243e296c00fc776a93b75ca6ff2fe7d6a603ce54",
+      "shadowLadder": "b279af9b986bd044e10e5c3615bd6b48f8e6c6ac75d37f95196486369a2b7170",
+      "pentatonicReport": "4cb32bb33f763edbcea93c3b97e582ee490283d5b178c4056fe0843305fd5f03"
+    },
+    "boardRows": "GOV-519 + GOV-520 present (Sprint 4, Backlog) in scrum/README.md",
+    "gov519Ticket": {
+      "bytes": 9649,
+      "sha256": "a0337d70ce36cf05d1240c0fbf338c7121835c306e9ccd1cccd2645270e33d4e"
+    },
+    "gov520Ticket": {
+      "bytes": 3855,
+      "sha256": "ce6a8b7fb20d5741c1fe2968ff12d1abd0b6a39c9cb02caf8fdaf495abf3ebf1"
+    },
+    "graphIndex": "9d3aebb318f31e6cd53f737bcb66ff33400beb3bfed2e1da71c4a874b51cdef6"
+  },
+  "w1Deletion": {
+    "method": "git rm (single sanctioned staging operation; uncommitted)",
+    "files": [
+      {
+        "path": "qa/fixtures/gov-518/tamper-01-observation-sequence.json",
+        "sha256": "a49a1928fced7d5f9378e122d9239f91d632d9cf966e2cca1cfa4ed628889f1b"
+      },
+      {
+        "path": "qa/fixtures/gov-518/tamper-02-contact-signature.json",
+        "sha256": "444c7372d03ed2721b6c36071412413ba13e70c0a9c65a0beb8d3414e3bdfe47"
+      },
+      {
+        "path": "qa/fixtures/gov-518/tamper-03-position-masks.json",
+        "sha256": "5b01e794f50514d96474fab7f7757d3e0835efa8df75a4cca77cd98a185f22c1"
+      },
+      {
+        "path": "qa/fixtures/gov-518/tamper-04-scalar-reordering.json",
+        "sha256": "b120f7edcb3f54349c8f4144391c33e64dc09c5ff75bc3b926a5a6d316fa3000"
+      }
+    ],
+    "historyNote": "History retention already recorded state (process record: early fixed-point commit 7f61d7c); working-tree removal only."
+  },
+  "suiteTable": [
+    {
+      "suite": "source-binding",
+      "status": "ran",
+      "implementingFile": "scripts/verify-gov518-boundary.mjs",
+      "conformanceMap": "D9",
+      "note": "Import-closure + argv allowlist detectors; checker stage of harness."
+    },
+    {
+      "suite": "schema",
+      "status": "ran",
+      "implementingFile": "tests/gov_518/decoy-*.json + scripts/verify-gov518-boundary.mjs",
+      "conformanceMap": "D9/D10",
+      "note": "Decoy corpus shape/fixture validation; corpus load fails closed below 4 decoys."
+    },
+    {
+      "suite": "exhaustive-completion",
+      "status": "skipped",
+      "reason": "Pre-flight red on the specificity specimen: enumeration never starts per CR-7. Executes at GOV-520 pre-flight after the recorded finding is fixed.",
+      "implementingFile": "scripts/run-gov518-enumeration.mjs",
+      "conformanceMap": "R6/D8"
+    },
+    {
+      "suite": "determinism",
+      "status": "ran",
+      "implementingFile": "scripts/check-gov518-target-blindness.mjs",
+      "conformanceMap": "R6/D8",
+      "note": "Ran in blocked-identical control form: digest equality across 4 comparison-artifact conditions + D8 environment pin."
+    },
+    {
+      "suite": "build-twice",
+      "status": "ran",
+      "implementingFile": "scripts/check-gov518-target-blindness.mjs",
+      "conformanceMap": "R6/D8",
+      "note": "Ran in control form: repeated entry-point runs digest-equal; no content compared."
+    },
+    {
+      "suite": "reordered-input",
+      "status": "skipped",
+      "reason": "Requires enumeration output; blocked by the red pre-flight (CR-7). Executes at GOV-520 pre-flight after the recorded finding is fixed.",
+      "implementingFile": "scripts/run-gov518-enumeration.mjs",
+      "conformanceMap": "D5"
+    },
+    {
+      "suite": "negative-control",
+      "status": "ran",
+      "implementingFile": "scripts/verify-gov518-boundary.mjs + tests/gov_518/gov518-live-suite.mjs",
+      "conformanceMap": "D3/D6 evidentiary",
+      "note": "R7/input_reach_boundary primary: decoy plants, tamper splices, live true-value scan."
+    },
+    {
+      "suite": "adversarial-tamper",
+      "status": "ran",
+      "implementingFile": "scripts/verify-gov518-boundary.mjs",
+      "conformanceMap": "D3/D6 evidentiary",
+      "note": "Unconditional adversarial self-test (plant/reject/delete) in every pre-flight."
+    },
+    {
+      "suite": "target_blindness",
+      "status": "ran",
+      "implementingFile": "scripts/check-gov518-target-blindness.mjs",
+      "conformanceMap": "D2",
+      "note": "Comparison-target exclusion per R5/A3: present/absent/unreadable digest equality, digests only."
+    }
+  ],
+  "w6Conformance": {
+    "verdict": "RED",
+    "disposition": "Recorded finding per GOV-519 build rules; enumerator left UNMODIFIED (verified: git diff empty for scripts/run-gov518-enumeration.mjs); fix ownership is GOV-520's first gated step. Fail-closed proof unaffected.",
+    "detectorOutput": {
+      "verdict": "FAIL",
+      "boundary": "GOV-518 R7",
+      "mode": "preflight",
+      "allowlistEntries": 10,
+      "decoyFixtures": 4,
+      "decoyFamilies": [
+        "complement",
+        "per-tier-difference",
+        "reordering",
+        "reversal"
+      ],
+      "production": [
+        {
+          "file": "scripts/run-gov518-enumeration.mjs",
+          "closureViolations": 7,
+          "reachabilityViolations": 0,
+          "integerLiterals": 62,
+          "unlistedIntegers": [
+            60,
+            1000,
+            2000,
+            8191
+          ],
+          "decoyHits": [],
+          "argvViolations": [
+            {
+              "token": "--out",
+              "note": "path-taking option is forbidden (pathless tokens only)"
+            },
+            {
+              "token": "--out",
+              "note": "path value reaches the filesystem surface"
+            }
+          ],
+          "selfTest": "PASS"
+        }
+      ],
+      "failures": [
+        {
+          "check": "import-closure",
+          "file": "scripts/run-gov518-enumeration.mjs",
+          "rule": "fs-module",
+          "line": 11
+        },
+        {
+          "check": "import-closure",
+          "file": "scripts/run-gov518-enumeration.mjs",
+          "rule": "path-module",
+          "line": 12
+        },
+        {
+          "check": "import-closure",
+          "file": "scripts/run-gov518-enumeration.mjs",
+          "rule": "child-process-module",
+          "line": 13
+        },
+        {
+          "check": "import-closure",
+          "file": "scripts/run-gov518-enumeration.mjs",
+          "rule": "fs-use",
+          "line": 129
+        },
+        {
+          "check": "import-closure",
+          "file": "scripts/run-gov518-enumeration.mjs",
+          "rule": "path-use",
+          "line": 16
+        },
+        {
+          "check": "import-closure",
+          "file": "scripts/run-gov518-enumeration.mjs",
+          "rule": "spawn-use",
+          "line": 13
+        },
+        {
+          "check": "import-closure",
+          "file": "scripts/run-gov518-enumeration.mjs",
+          "rule": "sync-io",
+          "line": 129
+        },
+        {
+          "check": "integer-allowlist",
+          "file": "scripts/run-gov518-enumeration.mjs",
+          "unlisted": [
+            60,
+            1000,
+            2000,
+            8191
+          ]
+        },
+        {
+          "check": "argv-allowlist",
+          "file": "scripts/run-gov518-enumeration.mjs",
+          "token": "--out",
+          "note": "path-taking option is forbidden (pathless tokens only)"
+        },
+        {
+          "check": "argv-allowlist",
+          "file": "scripts/run-gov518-enumeration.mjs",
+          "token": "--out",
+          "note": "path value reaches the filesystem surface"
+        }
+      ]
+    }
+  },
+  "failClosedMatrix": {
+    "matrixVerdict": "PASS",
+    "summary": [
+      {
+        "id": "w6-production",
+        "detector": "all",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      },
+      {
+        "id": "selftest-mode",
+        "detector": "adversarial-self-test",
+        "expected": "GREEN",
+        "status": 0,
+        "verdict": "PASS",
+        "ok": true
+      },
+      {
+        "id": "clean-specimen",
+        "detector": "all",
+        "expected": "GREEN",
+        "status": 0,
+        "verdict": "PASS",
+        "ok": true
+      },
+      {
+        "id": "structural-constants",
+        "detector": "integer-allowlist",
+        "expected": "GREEN",
+        "status": 0,
+        "verdict": "PASS",
+        "ok": true
+      },
+      {
+        "id": "import-negative",
+        "detector": "import-closure",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      },
+      {
+        "id": "reachability-negative",
+        "detector": "input-reach-boundary",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      },
+      {
+        "id": "allowlist-negative",
+        "detector": "integer-allowlist",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      },
+      {
+        "id": "argv-negative",
+        "detector": "argv-allowlist",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      },
+      {
+        "id": "decoy-plant-complement",
+        "detector": "decoy-literal",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      },
+      {
+        "id": "decoy-plant-per-tier-difference",
+        "detector": "decoy-literal",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      },
+      {
+        "id": "decoy-plant-reversal",
+        "detector": "decoy-literal",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      },
+      {
+        "id": "decoy-plant-reordering",
+        "detector": "decoy-literal",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      },
+      {
+        "id": "tamper-splice-tamper-01-observation-sequence",
+        "detector": "live-true-value",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      },
+      {
+        "id": "tamper-splice-tamper-02-contact-signature",
+        "detector": "live-true-value",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      },
+      {
+        "id": "tamper-splice-tamper-03-position-masks",
+        "detector": "live-true-value",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      },
+      {
+        "id": "tamper-splice-tamper-04-scalar-reordering",
+        "detector": "live-true-value",
+        "expected": "RED",
+        "status": 1,
+        "verdict": "FAIL",
+        "ok": true
+      },
+      {
+        "id": "live-clean",
+        "detector": "live-true-value",
+        "expected": "GREEN",
+        "status": 0,
+        "verdict": "PASS",
+        "ok": true
+      }
+    ],
+    "probes": [
+      {
+        "id": "w6-production",
+        "detector": "all",
+        "expected": "RED",
+        "status": 1,
+        "stdout": "{\n  \"verdict\": \"FAIL\",\n  \"boundary\": \"GOV-518 R7\",\n  \"mode\": \"preflight\",\n  \"allowlistEntries\": 10,\n  \"decoyFixtures\": 4,\n  \"decoyFamilies\": [\n    \"complement\",\n    \"per-tier-difference\",\n    \"reordering\",\n    \"reversal\"\n  ],\n  \"production\": [\n    {\n      \"file\": \"scripts/run-gov518-enumeration.mjs\",\n      \"closureViolations\": 7,\n      \"reachabilityViolations\": 0,\n      \"integerLiterals\": 62,\n      \"unlistedIntegers\": [\n        60,\n        1000,\n        2000,\n        8191\n      ],\n      \"decoyHits\": [],\n      \"argvViolations\": [\n        {\n          \"token\": \"--out\",\n          \"note\": \"path-taking option is forbidden (pathless tokens only)\"\n        },\n        {\n          \"token\": \"--out\",\n          \"note\": \"path value reaches the filesystem surface\"\n        }\n      ],\n      \"selfTest\": \"PASS\"\n    }\n  ],\n  \"failures\": [\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"scripts/run-gov518-enumeration.mjs\",\n      \"rule\": \"fs-module\",\n      \"line\": 11\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"scripts/run-gov518-enumeration.mjs\",\n      \"rule\": \"path-module\",\n      \"line\": 12\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"scripts/run-gov518-enumeration.mjs\",\n      \"rule\": \"child-process-module\",\n      \"line\": 13\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"scripts/run-gov518-enumeration.mjs\",\n      \"rule\": \"fs-use\",\n      \"line\": 129\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"scripts/run-gov518-enumeration.mjs\",\n      \"rule\": \"path-use\",\n      \"line\": 16\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"scripts/run-gov518-enumeration.mjs\",\n      \"rule\": \"spawn-use\",\n      \"line\": 13\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"scripts/run-gov518-enumeration.mjs\",\n      \"rule\": \"sync-io\",\n      \"line\": 129\n    },\n    {\n      \"check\": \"integer-allowlist\",\n      \"file\": \"scripts/run-gov518-enumeration.mjs\",\n      \"unlisted\": [\n        60,\n        1000,\n        2000,\n        8191\n      ]\n    },\n    {\n      \"check\": \"argv-allowlist\",\n      \"file\": \"scripts/run-gov518-enumeration.mjs\",\n      \"token\": \"--out\",\n      \"note\": \"path-taking option is forbidden (pathless tokens only)\"\n    },\n    {\n      \"check\": \"argv-allowlist\",\n      \"file\": \"scripts/run-gov518-enumeration.mjs\",\n      \"token\": \"--out\",\n      \"note\": \"path value reaches the filesystem surface\"\n    }\n  ]\n}\n"
+      },
+      {
+        "id": "selftest-mode",
+        "detector": "adversarial-self-test",
+        "expected": "GREEN",
+        "status": 0,
+        "stdout": "{\n  \"verdict\": \"PASS\",\n  \"boundary\": \"GOV-518 R7\",\n  \"mode\": \"adversarial-self-test\",\n  \"selfTest\": {\n    \"passed\": true,\n    \"plantedFamily\": \"complement\",\n    \"rejectionHits\": 2,\n    \"deleted\": true,\n    \"committed\": false,\n    \"trueValueUsed\": false\n  },\n  \"failures\": []\n}\n"
+      },
+      {
+        "id": "clean-specimen",
+        "detector": "all",
+        "expected": "GREEN",
+        "status": 0,
+        "stdout": "{\n  \"verdict\": \"PASS\",\n  \"boundary\": \"GOV-518 R7\",\n  \"mode\": \"preflight\",\n  \"allowlistEntries\": 10,\n  \"decoyFixtures\": 4,\n  \"decoyFamilies\": [\n    \"complement\",\n    \"per-tier-difference\",\n    \"reordering\",\n    \"reversal\"\n  ],\n  \"production\": [\n    {\n      \"file\": \"/tmp/gov519-matrix-55011-clean.mjs\",\n      \"closureViolations\": 0,\n      \"reachabilityViolations\": 0,\n      \"integerLiterals\": 5,\n      \"unlistedIntegers\": [],\n      \"decoyHits\": [],\n      \"argvViolations\": [],\n      \"selfTest\": \"PASS\"\n    }\n  ],\n  \"failures\": []\n}\n"
+      },
+      {
+        "id": "structural-constants",
+        "detector": "integer-allowlist",
+        "expected": "GREEN",
+        "status": 0,
+        "stdout": "{\n  \"verdict\": \"PASS\",\n  \"boundary\": \"GOV-518 R7\",\n  \"mode\": \"preflight\",\n  \"allowlistEntries\": 10,\n  \"decoyFixtures\": 4,\n  \"decoyFamilies\": [\n    \"complement\",\n    \"per-tier-difference\",\n    \"reordering\",\n    \"reversal\"\n  ],\n  \"production\": [\n    {\n      \"file\": \"/tmp/gov519-matrix-55011-constants.mjs\",\n      \"closureViolations\": 0,\n      \"reachabilityViolations\": 0,\n      \"integerLiterals\": 10,\n      \"unlistedIntegers\": [],\n      \"decoyHits\": [],\n      \"argvViolations\": [],\n      \"selfTest\": \"PASS\"\n    }\n  ],\n  \"failures\": []\n}\n"
+      },
+      {
+        "id": "import-negative",
+        "detector": "import-closure",
+        "expected": "RED",
+        "status": 1,
+        "stdout": "{\n  \"verdict\": \"FAIL\",\n  \"boundary\": \"GOV-518 R7\",\n  \"mode\": \"preflight\",\n  \"allowlistEntries\": 10,\n  \"decoyFixtures\": 4,\n  \"decoyFamilies\": [\n    \"complement\",\n    \"per-tier-difference\",\n    \"reordering\",\n    \"reversal\"\n  ],\n  \"production\": [\n    {\n      \"file\": \"/tmp/gov519-matrix-55011-importneg.mjs\",\n      \"closureViolations\": 5,\n      \"reachabilityViolations\": 0,\n      \"integerLiterals\": 0,\n      \"unlistedIntegers\": [],\n      \"decoyHits\": [],\n      \"argvViolations\": [],\n      \"selfTest\": \"PASS\"\n    }\n  ],\n  \"failures\": [\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-importneg.mjs\",\n      \"rule\": \"dynamic-import\",\n      \"line\": 3\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-importneg.mjs\",\n      \"rule\": \"require-call\",\n      \"line\": 2\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-importneg.mjs\",\n      \"rule\": \"fs-module\",\n      \"line\": 1\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-importneg.mjs\",\n      \"rule\": \"fs-use\",\n      \"line\": 4\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-importneg.mjs\",\n      \"rule\": \"sync-io\",\n      \"line\": 4\n    }\n  ]\n}\n"
+      },
+      {
+        "id": "reachability-negative",
+        "detector": "input-reach-boundary",
+        "expected": "RED",
+        "status": 1,
+        "stdout": "{\n  \"verdict\": \"FAIL\",\n  \"boundary\": \"GOV-518 R7\",\n  \"mode\": \"preflight\",\n  \"allowlistEntries\": 10,\n  \"decoyFixtures\": 4,\n  \"decoyFamilies\": [\n    \"complement\",\n    \"per-tier-difference\",\n    \"reordering\",\n    \"reversal\"\n  ],\n  \"production\": [\n    {\n      \"file\": \"/tmp/gov519-matrix-55011-reachneg.mjs\",\n      \"closureViolations\": 0,\n      \"reachabilityViolations\": 2,\n      \"integerLiterals\": 0,\n      \"unlistedIntegers\": [],\n      \"decoyHits\": [],\n      \"argvViolations\": [],\n      \"selfTest\": \"PASS\"\n    }\n  ],\n  \"failures\": [\n    {\n      \"check\": \"input-reach-boundary\",\n      \"file\": \"/tmp/gov519-matrix-55011-reachneg.mjs\",\n      \"needle\": \"input-surface-path\",\n      \"line\": 1\n    },\n    {\n      \"check\": \"input-reach-boundary\",\n      \"file\": \"/tmp/gov519-matrix-55011-reachneg.mjs\",\n      \"needle\": \"input-surface-path\",\n      \"line\": 1\n    }\n  ]\n}\n"
+      },
+      {
+        "id": "allowlist-negative",
+        "detector": "integer-allowlist",
+        "expected": "RED",
+        "status": 1,
+        "stdout": "{\n  \"verdict\": \"FAIL\",\n  \"boundary\": \"GOV-518 R7\",\n  \"mode\": \"preflight\",\n  \"allowlistEntries\": 10,\n  \"decoyFixtures\": 4,\n  \"decoyFamilies\": [\n    \"complement\",\n    \"per-tier-difference\",\n    \"reordering\",\n    \"reversal\"\n  ],\n  \"production\": [\n    {\n      \"file\": \"/tmp/gov519-matrix-55011-allowneg.mjs\",\n      \"closureViolations\": 0,\n      \"reachabilityViolations\": 0,\n      \"integerLiterals\": 2,\n      \"unlistedIntegers\": [\n        99991\n      ],\n      \"decoyHits\": [],\n      \"argvViolations\": [],\n      \"selfTest\": \"PASS\"\n    }\n  ],\n  \"failures\": [\n    {\n      \"check\": \"integer-allowlist\",\n      \"file\": \"/tmp/gov519-matrix-55011-allowneg.mjs\",\n      \"unlisted\": [\n        99991\n      ]\n    }\n  ]\n}\n"
+      },
+      {
+        "id": "argv-negative",
+        "detector": "argv-allowlist",
+        "expected": "RED",
+        "status": 1,
+        "stdout": "{\n  \"verdict\": \"FAIL\",\n  \"boundary\": \"GOV-518 R7\",\n  \"mode\": \"preflight\",\n  \"allowlistEntries\": 10,\n  \"decoyFixtures\": 4,\n  \"decoyFamilies\": [\n    \"complement\",\n    \"per-tier-difference\",\n    \"reordering\",\n    \"reversal\"\n  ],\n  \"production\": [\n    {\n      \"file\": \"/tmp/gov519-matrix-55011-argvneg.mjs\",\n      \"closureViolations\": 0,\n      \"reachabilityViolations\": 0,\n      \"integerLiterals\": 1,\n      \"unlistedIntegers\": [],\n      \"decoyHits\": [],\n      \"argvViolations\": [\n        {\n          \"token\": \"--custom-flag\",\n          \"note\": \"token is not on the argv allowlist\"\n        }\n      ],\n      \"selfTest\": \"PASS\"\n    }\n  ],\n  \"failures\": [\n    {\n      \"check\": \"argv-allowlist\",\n      \"file\": \"/tmp/gov519-matrix-55011-argvneg.mjs\",\n      \"token\": \"--custom-flag\",\n      \"note\": \"token is not on the argv allowlist\"\n    }\n  ]\n}\n"
+      },
+      {
+        "id": "decoy-plant-complement",
+        "detector": "decoy-literal",
+        "expected": "RED",
+        "status": 1,
+        "stdout": "{\n  \"verdict\": \"FAIL\",\n  \"boundary\": \"GOV-518 R7\",\n  \"mode\": \"preflight\",\n  \"allowlistEntries\": 10,\n  \"decoyFixtures\": 4,\n  \"decoyFamilies\": [\n    \"complement\",\n    \"per-tier-difference\",\n    \"reordering\",\n    \"reversal\"\n  ],\n  \"production\": [\n    {\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-complement.mjs\",\n      \"closureViolations\": 7,\n      \"reachabilityViolations\": 0,\n      \"integerLiterals\": 63,\n      \"unlistedIntegers\": [\n        60,\n        1000,\n        2000,\n        8191,\n        9101\n      ],\n      \"decoyHits\": [\n        \"needle:complement\",\n        \"numeric:complement\"\n      ],\n      \"argvViolations\": [\n        {\n          \"token\": \"--out\",\n          \"note\": \"path-taking option is forbidden (pathless tokens only)\"\n        },\n        {\n          \"token\": \"--out\",\n          \"note\": \"path value reaches the filesystem surface\"\n        }\n      ],\n      \"selfTest\": \"PASS\"\n    }\n  ],\n  \"failures\": [\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-complement.mjs\",\n      \"rule\": \"fs-module\",\n      \"line\": 11\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-complement.mjs\",\n      \"rule\": \"path-module\",\n      \"line\": 12\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-complement.mjs\",\n      \"rule\": \"child-process-module\",\n      \"line\": 13\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-complement.mjs\",\n      \"rule\": \"fs-use\",\n      \"line\": 129\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-complement.mjs\",\n      \"rule\": \"path-use\",\n      \"line\": 16\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-complement.mjs\",\n      \"rule\": \"spawn-use\",\n      \"line\": 13\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-complement.mjs\",\n      \"rule\": \"sync-io\",\n      \"line\": 129\n    },\n    {\n      \"check\": \"integer-allowlist\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-complement.mjs\",\n      \"unlisted\": [\n        60,\n        1000,\n        2000,\n        8191,\n        9101\n      ]\n    },\n    {\n      \"check\": \"decoy-literal\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-complement.mjs\",\n      \"marker\": \"needle:complement\"\n    },\n    {\n      \"check\": \"decoy-literal\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-complement.mjs\",\n      \"marker\": \"numeric:complement\"\n    },\n    {\n      \"check\": \"argv-allowlist\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-complement.mjs\",\n      \"token\": \"--out\",\n      \"note\": \"path-taking option is forbidden (pathless tokens only)\"\n    },\n    {\n      \"check\": \"argv-allowlist\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-complement.mjs\",\n      \"token\": \"--out\",\n      \"note\": \"path value reaches the filesystem surface\"\n    }\n  ]\n}\n"
+      },
+      {
+        "id": "decoy-plant-per-tier-difference",
+        "detector": "decoy-literal",
+        "expected": "RED",
+        "status": 1,
+        "stdout": "{\n  \"verdict\": \"FAIL\",\n  \"boundary\": \"GOV-518 R7\",\n  \"mode\": \"preflight\",\n  \"allowlistEntries\": 10,\n  \"decoyFixtures\": 4,\n  \"decoyFamilies\": [\n    \"complement\",\n    \"per-tier-difference\",\n    \"reordering\",\n    \"reversal\"\n  ],\n  \"production\": [\n    {\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-per-tier-difference.mjs\",\n      \"closureViolations\": 7,\n      \"reachabilityViolations\": 0,\n      \"integerLiterals\": 63,\n      \"unlistedIntegers\": [\n        60,\n        1000,\n        2000,\n        8191,\n        9201\n      ],\n      \"decoyHits\": [\n        \"needle:per-tier-difference\",\n        \"numeric:per-tier-difference\"\n      ],\n      \"argvViolations\": [\n        {\n          \"token\": \"--out\",\n          \"note\": \"path-taking option is forbidden (pathless tokens only)\"\n        },\n        {\n          \"token\": \"--out\",\n          \"note\": \"path value reaches the filesystem surface\"\n        }\n      ],\n      \"selfTest\": \"PASS\"\n    }\n  ],\n  \"failures\": [\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-per-tier-difference.mjs\",\n      \"rule\": \"fs-module\",\n      \"line\": 11\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-per-tier-difference.mjs\",\n      \"rule\": \"path-module\",\n      \"line\": 12\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-per-tier-difference.mjs\",\n      \"rule\": \"child-process-module\",\n      \"line\": 13\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-per-tier-difference.mjs\",\n      \"rule\": \"fs-use\",\n      \"line\": 129\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-per-tier-difference.mjs\",\n      \"rule\": \"path-use\",\n      \"line\": 16\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-per-tier-difference.mjs\",\n      \"rule\": \"spawn-use\",\n      \"line\": 13\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-per-tier-difference.mjs\",\n      \"rule\": \"sync-io\",\n      \"line\": 129\n    },\n    {\n      \"check\": \"integer-allowlist\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-per-tier-difference.mjs\",\n      \"unlisted\": [\n        60,\n        1000,\n        2000,\n        8191,\n        9201\n      ]\n    },\n    {\n      \"check\": \"decoy-literal\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-per-tier-difference.mjs\",\n      \"marker\": \"needle:per-tier-difference\"\n    },\n    {\n      \"check\": \"decoy-literal\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-per-tier-difference.mjs\",\n      \"marker\": \"numeric:per-tier-difference\"\n    },\n    {\n      \"check\": \"argv-allowlist\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-per-tier-difference.mjs\",\n      \"token\": \"--out\",\n      \"note\": \"path-taking option is forbidden (pathless tokens only)\"\n    },\n    {\n      \"check\": \"argv-allowlist\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-per-tier-difference.mjs\",\n      \"token\": \"--out\",\n      \"note\": \"path value reaches the filesystem surface\"\n    }\n  ]\n}\n"
+      },
+      {
+        "id": "decoy-plant-reversal",
+        "detector": "decoy-literal",
+        "expected": "RED",
+        "status": 1,
+        "stdout": "{\n  \"verdict\": \"FAIL\",\n  \"boundary\": \"GOV-518 R7\",\n  \"mode\": \"preflight\",\n  \"allowlistEntries\": 10,\n  \"decoyFixtures\": 4,\n  \"decoyFamilies\": [\n    \"complement\",\n    \"per-tier-difference\",\n    \"reordering\",\n    \"reversal\"\n  ],\n  \"production\": [\n    {\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reversal.mjs\",\n      \"closureViolations\": 7,\n      \"reachabilityViolations\": 0,\n      \"integerLiterals\": 63,\n      \"unlistedIntegers\": [\n        60,\n        1000,\n        2000,\n        8191,\n        9301\n      ],\n      \"decoyHits\": [\n        \"needle:reversal\",\n        \"numeric:reversal\"\n      ],\n      \"argvViolations\": [\n        {\n          \"token\": \"--out\",\n          \"note\": \"path-taking option is forbidden (pathless tokens only)\"\n        },\n        {\n          \"token\": \"--out\",\n          \"note\": \"path value reaches the filesystem surface\"\n        }\n      ],\n      \"selfTest\": \"PASS\"\n    }\n  ],\n  \"failures\": [\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reversal.mjs\",\n      \"rule\": \"fs-module\",\n      \"line\": 11\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reversal.mjs\",\n      \"rule\": \"path-module\",\n      \"line\": 12\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reversal.mjs\",\n      \"rule\": \"child-process-module\",\n      \"line\": 13\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reversal.mjs\",\n      \"rule\": \"fs-use\",\n      \"line\": 129\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reversal.mjs\",\n      \"rule\": \"path-use\",\n      \"line\": 16\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reversal.mjs\",\n      \"rule\": \"spawn-use\",\n      \"line\": 13\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reversal.mjs\",\n      \"rule\": \"sync-io\",\n      \"line\": 129\n    },\n    {\n      \"check\": \"integer-allowlist\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reversal.mjs\",\n      \"unlisted\": [\n        60,\n        1000,\n        2000,\n        8191,\n        9301\n      ]\n    },\n    {\n      \"check\": \"decoy-literal\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reversal.mjs\",\n      \"marker\": \"needle:reversal\"\n    },\n    {\n      \"check\": \"decoy-literal\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reversal.mjs\",\n      \"marker\": \"numeric:reversal\"\n    },\n    {\n      \"check\": \"argv-allowlist\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reversal.mjs\",\n      \"token\": \"--out\",\n      \"note\": \"path-taking option is forbidden (pathless tokens only)\"\n    },\n    {\n      \"check\": \"argv-allowlist\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reversal.mjs\",\n      \"token\": \"--out\",\n      \"note\": \"path value reaches the filesystem surface\"\n    }\n  ]\n}\n"
+      },
+      {
+        "id": "decoy-plant-reordering",
+        "detector": "decoy-literal",
+        "expected": "RED",
+        "status": 1,
+        "stdout": "{\n  \"verdict\": \"FAIL\",\n  \"boundary\": \"GOV-518 R7\",\n  \"mode\": \"preflight\",\n  \"allowlistEntries\": 10,\n  \"decoyFixtures\": 4,\n  \"decoyFamilies\": [\n    \"complement\",\n    \"per-tier-difference\",\n    \"reordering\",\n    \"reversal\"\n  ],\n  \"production\": [\n    {\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reordering.mjs\",\n      \"closureViolations\": 7,\n      \"reachabilityViolations\": 0,\n      \"integerLiterals\": 63,\n      \"unlistedIntegers\": [\n        60,\n        1000,\n        2000,\n        8191,\n        9401\n      ],\n      \"decoyHits\": [\n        \"needle:reordering\",\n        \"numeric:reordering\"\n      ],\n      \"argvViolations\": [\n        {\n          \"token\": \"--out\",\n          \"note\": \"path-taking option is forbidden (pathless tokens only)\"\n        },\n        {\n          \"token\": \"--out\",\n          \"note\": \"path value reaches the filesystem surface\"\n        }\n      ],\n      \"selfTest\": \"PASS\"\n    }\n  ],\n  \"failures\": [\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reordering.mjs\",\n      \"rule\": \"fs-module\",\n      \"line\": 11\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reordering.mjs\",\n      \"rule\": \"path-module\",\n      \"line\": 12\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reordering.mjs\",\n      \"rule\": \"child-process-module\",\n      \"line\": 13\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reordering.mjs\",\n      \"rule\": \"fs-use\",\n      \"line\": 129\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reordering.mjs\",\n      \"rule\": \"path-use\",\n      \"line\": 16\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reordering.mjs\",\n      \"rule\": \"spawn-use\",\n      \"line\": 13\n    },\n    {\n      \"check\": \"import-closure\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reordering.mjs\",\n      \"rule\": \"sync-io\",\n      \"line\": 129\n    },\n    {\n      \"check\": \"integer-allowlist\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reordering.mjs\",\n      \"unlisted\": [\n        60,\n        1000,\n        2000,\n        8191,\n        9401\n      ]\n    },\n    {\n      \"check\": \"decoy-literal\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reordering.mjs\",\n      \"marker\": \"needle:reordering\"\n    },\n    {\n      \"check\": \"decoy-literal\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reordering.mjs\",\n      \"marker\": \"numeric:reordering\"\n    },\n    {\n      \"check\": \"argv-allowlist\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reordering.mjs\",\n      \"token\": \"--out\",\n      \"note\": \"path-taking option is forbidden (pathless tokens only)\"\n    },\n    {\n      \"check\": \"argv-allowlist\",\n      \"file\": \"/tmp/gov519-matrix-55011-decoy-reordering.mjs\",\n      \"token\": \"--out\",\n      \"note\": \"path value reaches the filesystem surface\"\n    }\n  ]\n}\n"
+      },
+      {
+        "id": "tamper-splice-tamper-01-observation-sequence",
+        "detector": "live-true-value",
+        "expected": "RED",
+        "status": 1,
+        "stdout": "{\n  \"verdict\": \"FAIL\",\n  \"archivedBytes\": 638,\n  \"kinds\": [\n    \"observation-vocabulary\",\n    \"true-sequence-base\"\n  ]\n}\n"
+      },
+      {
+        "id": "tamper-splice-tamper-02-contact-signature",
+        "detector": "live-true-value",
+        "expected": "RED",
+        "status": 1,
+        "stdout": "{\n  \"verdict\": \"FAIL\",\n  \"archivedBytes\": 568,\n  \"kinds\": [\n    \"observation-vocabulary\"\n  ]\n}\n"
+      },
+      {
+        "id": "tamper-splice-tamper-03-position-masks",
+        "detector": "live-true-value",
+        "expected": "RED",
+        "status": 1,
+        "stdout": "{\n  \"verdict\": \"FAIL\",\n  \"archivedBytes\": 713,\n  \"kinds\": [\n    \"observation-vocabulary\",\n    \"observation-vocabulary-folded\",\n    \"true-integer\"\n  ]\n}\n"
+      },
+      {
+        "id": "tamper-splice-tamper-04-scalar-reordering",
+        "detector": "live-true-value",
+        "expected": "RED",
+        "status": 1,
+        "stdout": "{\n  \"verdict\": \"FAIL\",\n  \"archivedBytes\": 761,\n  \"kinds\": [\n    \"observation-vocabulary\",\n    \"observation-vocabulary-folded\"\n  ]\n}\n"
+      },
+      {
+        "id": "live-clean",
+        "detector": "live-true-value",
+        "expected": "GREEN",
+        "status": 0,
+        "stdout": "{\n  \"verdict\": \"PASS\",\n  \"mode\": \"live\",\n  \"canonical\": {\n    \"record\": \"canonical/fivefold-incubator/d-shadow-complement-span-v0.json\",\n    \"fingerprint\": \"8c2416b8f51f8ae8cdb0fc9f2490beeb9e3cc49f435be7d992f55f5f7c122cb8\",\n    \"binding\": \"CHECKSUMS.sha256\"\n  },\n  \"needleStats\": {\n    \"trueIntegers\": 104,\n    \"sequenceNeedles\": 72,\n    \"stringNeedles\": 22\n  },\n  \"scope\": [\n    {\n      \"file\": \"scripts/run-gov518-enumeration.mjs\",\n      \"matches\": 0,\n      \"kinds\": []\n    },\n    {\n      \"file\": \"tests/gov_518/decoy-*.json\",\n      \"matches\": 0,\n      \"kinds\": []\n    }\n  ],\n  \"persistedFiles\": [],\n  \"failures\": []\n}\n"
+      }
+    ],
+    "selfTestMode": {
+      "verdict": "PASS",
+      "boundary": "GOV-518 R7",
+      "mode": "adversarial-self-test",
+      "selfTest": {
+        "passed": true,
+        "plantedFamily": "complement",
+        "rejectionHits": 2,
+        "deleted": true,
+        "committed": false,
+        "trueValueUsed": false
+      },
+      "failures": []
+    }
+  },
+  "harness": {
+    "verdict": "FAIL",
+    "handoff": "BLOCKED",
+    "stages": {
+      "checker": {
+        "stage": "checker",
+        "passed": false,
+        "status": 1,
+        "verdict": "FAIL",
+        "selfTest": "PASS",
+        "stderr": ""
+      },
+      "decoyTamper": {
+        "stage": "decoy-tamper-suite",
+        "passed": true,
+        "decoys": [
+          {
+            "fixture": "tests/gov_518/decoy-01-complement.json",
+            "family": "complement",
+            "rejected": true
+          },
+          {
+            "fixture": "tests/gov_518/decoy-02-difference.json",
+            "family": "per-tier-difference",
+            "rejected": true
+          },
+          {
+            "fixture": "tests/gov_518/decoy-03-reversal.json",
+            "family": "reversal",
+            "rejected": true
+          },
+          {
+            "fixture": "tests/gov_518/decoy-04-reordering.json",
+            "family": "reordering",
+            "rejected": true
+          }
+        ],
+        "tampers": [
+          {
+            "fixture": "qa/fixtures/gov-518/tamper-01-observation-sequence.json",
+            "archivedBytes": 638,
+            "rejected": true,
+            "kinds": [
+              "observation-vocabulary",
+              "true-sequence-base"
+            ]
+          },
+          {
+            "fixture": "qa/fixtures/gov-518/tamper-02-contact-signature.json",
+            "archivedBytes": 568,
+            "rejected": true,
+            "kinds": [
+              "observation-vocabulary"
+            ]
+          },
+          {
+            "fixture": "qa/fixtures/gov-518/tamper-03-position-masks.json",
+            "archivedBytes": 713,
+            "rejected": true,
+            "kinds": [
+              "observation-vocabulary",
+              "observation-vocabulary-folded",
+              "true-integer"
+            ]
+          },
+          {
+            "fixture": "qa/fixtures/gov-518/tamper-04-scalar-reordering.json",
+            "archivedBytes": 761,
+            "rejected": true,
+            "kinds": [
+              "observation-vocabulary",
+              "observation-vocabulary-folded"
+            ]
+          }
+        ]
+      },
+      "live": {
+        "stage": "live-suite",
+        "passed": true,
+        "status": 0,
+        "verdict": "PASS",
+        "persistedFiles": [],
+        "worktreeUnchanged": true
+      },
+      "blindness": {
+        "stage": "target-blindness",
+        "passed": true,
+        "identical": true,
+        "conditions": {
+          "clean": {
+            "status": 1,
+            "stdoutDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderrDigest": "70e3dc222e7dc528a751a51d56f6382e094477580c7fe170eae0d776d601e73e",
+            "stdoutBytes": 0
+          },
+          "present": {
+            "status": 1,
+            "stdoutDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderrDigest": "70e3dc222e7dc528a751a51d56f6382e094477580c7fe170eae0d776d601e73e",
+            "stdoutBytes": 0
+          },
+          "absent": {
+            "status": 1,
+            "stdoutDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderrDigest": "70e3dc222e7dc528a751a51d56f6382e094477580c7fe170eae0d776d601e73e",
+            "stdoutBytes": 0
+          },
+          "unreadable": {
+            "status": 1,
+            "stdoutDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderrDigest": "70e3dc222e7dc528a751a51d56f6382e094477580c7fe170eae0d776d601e73e",
+            "stdoutBytes": 0
+          }
+        }
+      }
+    },
+    "environment": {
+      "node": "v22.22.0",
+      "platform": "linux",
+      "arch": "x64",
+      "python": "Python 3.12.3",
+      "timeoutSeconds": 60,
+      "orbitBound": 60028,
+      "boundary": "GOV-518"
+    },
+    "readSurface": [
+      "scripts/run-gov518-enumeration.mjs",
+      "tests/gov_518/decoy-*.json",
+      "tests/gov_518/structural-allowlist.json",
+      "subprocess pipes only (checker, live suite, runner digests)",
+      "archived tamper bytes via git-show pipe (memory only, never disk)"
+    ]
+  },
+  "liveSuite": {
+    "verdict": "PASS",
+    "mode": "live",
+    "canonical": {
+      "record": "canonical/fivefold-incubator/d-shadow-complement-span-v0.json",
+      "fingerprint": "8c2416b8f51f8ae8cdb0fc9f2490beeb9e3cc49f435be7d992f55f5f7c122cb8",
+      "binding": "CHECKSUMS.sha256"
+    },
+    "needleStats": {
+      "trueIntegers": 104,
+      "sequenceNeedles": 72,
+      "stringNeedles": 22
+    },
+    "scope": [
+      {
+        "file": "scripts/run-gov518-enumeration.mjs",
+        "matches": 0,
+        "kinds": []
+      },
+      {
+        "file": "tests/gov_518/decoy-*.json",
+        "matches": 0,
+        "kinds": []
+      }
+    ],
+    "persistedFiles": [],
+    "failures": []
+  },
+  "cr8Audit": {
+    "assertion": "No Tier-A true R7 value (sequence-level, incl. all transform-family images) outside the CR-8 audit allowlist; sitting scope zero-match except CR-5 suite self-needles.",
+    "scanned": 1037,
+    "matched": 351,
+    "tierAFiles": [
+      {
+        "file": "canonical/fivefold-incubator/d-shadow-complement-span-v0.json",
+        "basis": "canonical-artifact"
+      },
+      {
+        "file": "provenance/OBSERVATION_LEDGER.md",
+        "basis": "provenance-ledger"
+      },
+      {
+        "file": "scrum/GOV-516-run-space-d5-derivability-enumeration.md",
+        "basis": "registered-boundary-document"
+      },
+      {
+        "file": "src/governor/d_shadow_complement_span.py",
+        "basis": "validator-bound-to-canonical"
+      },
+      {
+        "file": "tests/test_d_shadow_complement_span.py",
+        "basis": "validator-bound-to-canonical"
+      }
+    ],
+    "sittingScope": [
+      {
+        "file": "scripts/verify-gov518-boundary.mjs",
+        "sha256": "8c297b45cb9c02f859d9cc02594fe7430a9016dc38f91537428cc70655958d10"
+      },
+      {
+        "file": "scripts/check-gov518-target-blindness.mjs",
+        "sha256": "0a8fac817220db8abe029c40f8f90dfd5837378a515094e6997891f2583c8ae7"
+      },
+      {
+        "file": "scripts/run-gov518-enumeration.mjs",
+        "sha256": "9a60c6b7500bd8bedd76cda122efbdfe739f5394bee2408d88670e49276d7c9f"
+      },
+      {
+        "file": "tests/gov_518/structural-allowlist.json",
+        "sha256": "559a6defc3327135baf7e204d2454064100e86b0c4716781aeabc3e8ce09fa58"
+      },
+      {
+        "file": "tests/gov_518/decoy-01-complement.json",
+        "sha256": "e18f1bce5ededd0df2348780f82dd03f34ee4ef829730bc536c1e43778d31012"
+      },
+      {
+        "file": "tests/gov_518/decoy-02-difference.json",
+        "sha256": "01f833c911bf30eb6dc15b6bc7115bba3d315b411714d2ff65c7af06df43bab9"
+      },
+      {
+        "file": "tests/gov_518/decoy-03-reversal.json",
+        "sha256": "6527ecc279b58d493e57f507a991cf3a79ce0beae577bc462e59c4fdf35ce259"
+      },
+      {
+        "file": "tests/gov_518/decoy-04-reordering.json",
+        "sha256": "64af588903b618aa039dd9097fd9e97781ac54e75f5a5778486e22f07d2921a2"
+      },
+      {
+        "file": "tests/gov_518/gov518-live-suite.mjs",
+        "sha256": "f72d2c019537eb41e40a7ee775cd7ce56733079b551291d962df7ddb721065a8"
+      }
+    ],
+    "tierBContext": "193 pre-existing files carry broad domain vocabulary or single mask integers (validators, schemas, graph, docs); none introduced this sitting. Full path/kind list embedded.",
+    "findingFiles": [
+      {
+        "file": ".env.example",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "bestiary/data/pinned-narratives.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "bestiary/site/src/components/TopologyNodeGraph.astro",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "bestiary/site/src/lib/bestiary.ts",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "bestiary/site/src/lib/networkLayout.ts",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "bestiary/site/src/pages/compare.astro",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "court-mathematics/src/court_mathematics/pitch_class.py",
+        "kinds": [
+          "observation-vocabulary-folded"
+        ]
+      },
+      {
+        "file": "docs/ARCHITECTURAL_BLUEPRINT.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "docs/COURT_ADMISSION_RELEASE_1_3.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "docs/COURT_VAULT_CONTEXT.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "docs/D_TIER_TRIADIC_COMPRESSION_THEOREM.md",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "docs/INTRA_NODE_DYNAMICS.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "docs/MATHEMATICAL_REALIZATION_SPECIFICATION.md",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "docs/NEO4J_PROPERTY_GRAPH_MODEL.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "docs/RELEASE_1_8_TAXONOMY_AND_ORRERY_GUIDE.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "docs/RELEASE_NOTES.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "docs/START_HERE.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "docs/TECHNICAL_REPORT.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "docs/TOPOLOGY_IDENTITY_AND_INVARIANTS.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "docs/verification/PHASE4_VERIFICATION.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "docs/verification/SHADOW_LADDER_THEOREM.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "framework/TOPOLOGICAL_ANCHORING.md",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "graph/explore.html",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "graph/index.html",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "graph/qa/interaction-validation-report.json",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "graph/runtime/neo4j-bootstrap.mjs",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "graph/runtime/neo4j-harness.mjs",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "graph/src/seven-governors-network.fragment.html",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "graph/vendor/3d-force-graph.min.js",
+        "kinds": [
+          "observation-vocabulary-folded",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "neo4j/README.md",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "neo4j/csv/audited-hamming2.csv",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "neo4j/csv/belongs-to-family.csv",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "neo4j/csv/constructs.csv",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "neo4j/csv/governs.csv",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "neo4j/csv/identity-ledger.csv",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "neo4j/csv/modal-successor.csv",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "neo4j/csv/occupies-office.csv",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "neo4j/csv/phase-shift.csv",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "neo4j/csv/relationships.csv",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "neo4j/csv/scale-families.csv",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "neo4j/csv/scale-states.csv",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "neo4j/csv/seat-contact.csv",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "neo4j/example-queries.cypher",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "neo4j/import.cypher",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "neo4j/integrated-example-queries.cypher",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "neo4j/provenance.cypher",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "neo4j/validation.cypher",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "orrery/README.md",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "orrery/scripts/validate-field-derivation-bundle.mjs",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "orrery/src/api.ts",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "orrery/src/audio.test.ts",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "orrery/src/court.test.ts",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "orrery/src/court.ts",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "orrery/src/evidence-bundle.ts",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "orrery/src/field-derivation.test.ts",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "orrery/src/field-derivation.ts",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "orrery/src/moves.test.ts",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "orrery/src/moves.ts",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "orrery/src/scene-composer.test.ts",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "orrery/src/style.css",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "orrery/src/types.ts",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "orrery/vite.config.ts",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "package.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "qa/court-admission-validation.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "qa/d-shadow-complement-span-validation.json",
+        "kinds": [
+          "observation-vocabulary",
+          "observation-vocabulary-folded",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "qa/d-shadow-uniqueness-validation.json",
+        "kinds": [
+          "observation-vocabulary",
+          "observation-vocabulary-folded"
+        ]
+      },
+      {
+        "file": "qa/d-tier-interleaving-check-validation.json",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "qa/fifth-space-census-validation.json",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "qa/harmonic-compression-candidates-validation.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "qa/independent-validation-report.json",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "qa/neo4j-export-validation-report.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "qa/neo4j-invariant-ledger.csv",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "qa/orrery-field-derivation-bundle-validation.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "qa/pentatonic-7-35-parent-audit-validation.json",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "qa/pentatonic-binding-audit-closure.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "qa/shadow-ladder-validation.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "qa/validation-prose-consistency.json",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "schemas/court-admission-contract.schema.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "schemas/court-context/court-vault-frontmatter.schema.json",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "schemas/court-runtime-policy.schema.json",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "schemas/court-runtime/court-runtime-types.schema.json",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "schemas/elemental-pentatonic-scale-map-v1.0.0.schema.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "schemas/elemental_pentatonic_scale_map_v1.0.0.yaml",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "schemas/execution_envelope.schema.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "schemas/fivefold-incubator/d-shadow-complement-span-v0.schema.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "schemas/fivefold-incubator/d-shadow-uniqueness-check-v0.schema.json",
+        "kinds": [
+          "observation-vocabulary",
+          "observation-vocabulary-folded"
+        ]
+      },
+      {
+        "file": "schemas/gov-210/context-housing.schema.json",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "schemas/gov-210/skill-availability.schema.json",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "schemas/governor-context/vault-note-frontmatter.schema.json",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "schemas/governors.yaml",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "schemas/harmonic-compression-candidates/candidate-release.schema.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "schemas/harmonic-compression-candidates/d-tier-candidate-release.schema.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "schemas/harmonic-orrery-legal-moves.schema.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "schemas/harmonic-orrery-nodes.schema.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "schemas/mechanics-thermodynamics-registry-v2.0.0.schema.json",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "schemas/mechanics_thermodynamics_registry.yaml",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "schemas/mechanics_thermodynamics_registry_v2.0.0.yaml",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "schemas/pentatonic-binding/pentatonic-7-35-negative-cases-v1.schema.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "schemas/pentatonic-binding/pentatonic-7-35-parent-audit-v1.schema.json",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "schemas/pentatonic-binding/pentatonic-7-35-validation-report-v1.schema.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "scripts/run-crt307-local-model-observation.mjs",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "scripts/run-harmonic-orrery.sh",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "scripts/test-harmonic-orrery-browser.sh",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "scripts/validate-court-admission.mjs",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "scripts/validate-cypher-syntax.mjs",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/canonical-governor-profiles.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/examples/compiled-landform-packets/1493-route-lydian-minor-1461-R4.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/examples/compiled-landform-packets/1493-route-lydian-minor-1749-L6.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/examples/compiled-landform-packets/1643-route-aeolian-square-M-R6.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/examples/compiled-landform-packets/1643-route-aeolian-square-R7-M.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/examples/compiled-landform-packets/1749-route-acoustic-1717-R4.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/examples/compiled-landform-packets/1749-route-acoustic-2773-L7.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/examples/compiled-landform-packets/2477-route-harmonic-minor-aeolian-R7.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/fixtures/acoustic-confluence.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/fixtures/aeolian-modal-covariance.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/fixtures/harmonic-minor-satellite.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/fixtures/lydian-minor-midpoint.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/fixtures/reference-fixture-index.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/canonical-profiles.csv",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/derivation-steps.csv",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/profile-feature-assertions.csv",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/source/framework/TOPOLOGICAL_ANCHORING.md",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/source/governors.yaml",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/source/operator-applications.csv",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/source/operator-candidates.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/source/topology-identity-definitions.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-canonical-feature-profile-registry-v0.1.1/source/universal-network-data.json",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-court-filter-algebra-v0.1.0/canonical/bridge-route-comparison.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-court-filter-algebra-v0.1.0/canonical/filter-operator-registry.json",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-court-filter-algebra-v0.1.0/fixtures/positive-cases.json",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-court-filter-algebra-v0.1.0/schemas/filter-operator.schema.json",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-court-filter-algebra-v0.1.0/scripts/validate_package.py",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-court-filter-algebra-v0.1.0/src/court_filter_algebra/algebra.py",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-court-filter-algebra-v0.1.0/tests/test_algebra.py",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-court-substrate-v0.1.0/README.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-court-substrate-v0.1.0/canonical/court-rooted-positions.json",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-court-substrate-v0.1.0/schemas/court-rooted-position.schema.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-harmonic-invariants-v0.1.0/README.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-harmonic-invariants-v0.1.0/docs/SOURCE_AUTHORITY.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-harmonic-invariants-v0.1.0/fixtures/positive-cases.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-harmonic-invariants-v0.1.0/qa/determinism-report.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-harmonic-invariants-v0.1.0/schemas/harmonic-invariant-release.schema.json",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-harmonic-invariants-v0.1.0/src/harmonic_invariants/builder.py",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-harmonic-invariants-v0.1.0/tests/test_court_invariants.py",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/SOURCE_AUTHORITY.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/audit/commutative-squares.csv",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/audit/confluence-witnesses.csv",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/audit/counterexamples.csv",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/audit/cycle-identities.csv",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/audit/field-edge-validation.csv",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/audit/inverse-witnesses.csv",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/audit/modal-completion-ledger.csv",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/audit/modal-covariance-witnesses.csv",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/audit/operator-candidates.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/audit/phase-completion-ledger.csv",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/audit/stabilizer-results.csv",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/audit/structural-edge-validation.csv",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/scripts/run-mutation-algebra-audit.mjs",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/scripts/validate-cypher-syntax.mjs",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/source/topology-identity-definitions.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-mutation-algebra-audit/source/universal-network-data.json",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/docs/START_HERE.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/neo4j/query-cookbook.cypher",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/qa/validation-report.json",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/source/canon/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/source/canon/TOPOLOGICAL_ANCHORING.md",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/source/governors.yaml",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "skills/court/schemas/common.schema.json",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "skills/governor/schemas/common.schema.json",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "src/governor/availability_housing_queries.py",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "src/governor/court_agent_api.py",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "src/governor/court_graph_queries.py",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "src/governor/court_runtime.py",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "src/governor/executors.py",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "src/governor/vault_context.py",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "tests/conftest.py",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "tests/court_graph/fixture-input.json",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "tests/fixtures/gov_205/site_server.py",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "tests/test_court_graph_projection.py",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      },
+      {
+        "file": "tests/test_court_runtime_transitions.py",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "tests/test_crt_307_court_agent_api.py",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "tests/test_crt_308_court_vault_context.py",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "tests/test_gov_205_evidence.py",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "tests/test_gov_205_loop_guards.py",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "tests/test_gov_205_start_site.py",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "tests/verification/test_court_admission_contract.py",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "tests/verification/test_graph_topology_locks.py",
+        "kinds": [
+          "observation-vocabulary"
+        ]
+      },
+      {
+        "file": "tests/verification/test_mutation_algebra.py",
+        "kinds": [
+          "true-integer"
+        ]
+      },
+      {
+        "file": "tests/verification/test_verification_report.py",
+        "kinds": [
+          "observation-vocabulary",
+          "true-integer"
+        ]
+      }
+    ],
+    "diskWrites": 0
+  },
+  "stateDeltaDisclosures": [
+    "(1) Enumerator provenance: built under preparation scope pre-acceptance; recorded, not repeated.",
+    "(2) True-value fixture corpus: staged into the commit path, entered history at commit 7f61d7c (per Process record entry), deleted from the working tree under this ticket as the recorded correction (pre-deletion SHAs above); the CR-8 audit operates on the working tree.",
+    "(3) Checker rule-table finding: the staged rule table embedded true observed values; redesigned per CR-1\u2013CR-8 (structural signatures + decoy needles; true-value detection in memory only).",
+    "(4) Commit-ordering narrow escape: the fixed-point commit landed before fixture deletion; superseded by the standing commit policy recorded in the same process-record entry.",
+    "(5) The pre-redesign scripts remain in history as provenance; the redesign is this ticket's build scope."
+  ],
+  "fileInventory": [
+    {
+      "path": "scripts/verify-gov518-boundary.mjs",
+      "sha256": "8c297b45cb9c02f859d9cc02594fe7430a9016dc38f91537428cc70655958d10"
+    },
+    {
+      "path": "scripts/check-gov518-target-blindness.mjs",
+      "sha256": "0a8fac817220db8abe029c40f8f90dfd5837378a515094e6997891f2583c8ae7"
+    },
+    {
+      "path": "scripts/run-gov518-enumeration.mjs",
+      "sha256": "9a60c6b7500bd8bedd76cda122efbdfe739f5394bee2408d88670e49276d7c9f"
+    },
+    {
+      "path": "tests/gov_518/structural-allowlist.json",
+      "sha256": "559a6defc3327135baf7e204d2454064100e86b0c4716781aeabc3e8ce09fa58"
+    },
+    {
+      "path": "tests/gov_518/decoy-01-complement.json",
+      "sha256": "e18f1bce5ededd0df2348780f82dd03f34ee4ef829730bc536c1e43778d31012"
+    },
+    {
+      "path": "tests/gov_518/decoy-02-difference.json",
+      "sha256": "01f833c911bf30eb6dc15b6bc7115bba3d315b411714d2ff65c7af06df43bab9"
+    },
+    {
+      "path": "tests/gov_518/decoy-03-reversal.json",
+      "sha256": "6527ecc279b58d493e57f507a991cf3a79ce0beae577bc462e59c4fdf35ce259"
+    },
+    {
+      "path": "tests/gov_518/decoy-04-reordering.json",
+      "sha256": "64af588903b618aa039dd9097fd9e97781ac54e75f5a5778486e22f07d2921a2"
+    },
+    {
+      "path": "tests/gov_518/gov518-live-suite.mjs",
+      "sha256": "f72d2c019537eb41e40a7ee775cd7ce56733079b551291d962df7ddb721065a8"
+    }
+  ],
+  "environment": {
+    "node": "v22.22.0",
+    "platform": "linux",
+    "arch": "x64",
+    "python": "Python 3.12.3",
+    "timeoutSeconds": 60,
+    "orbitBound": 60028,
+    "boundary": "GOV-518"
+  },
+  "fixedPoint": {
+    "manifestFileCount": 1035,
+    "validateRun1": {
+      "exit": 0,
+      "log": "/tmp/gov519-validate1.log (execution record; prose-consistency 418/0)"
+    },
+    "note": "Receipt landed pre-close; manifest rebuilt + checked + validate re-run at close for the convergence proof (see S2 report)."
+  },
+  "receiptSelfScan": {
+    "tierA": 0,
+    "tierB": [
+      "observation-vocabulary"
+    ],
+    "tierBJustification": "CR-5 identifier class only: embedded audit file paths (pentatonic-7-35-*.schema.json, qa/pentatonic-7-35-parent-audit-validation.json) and the formatNote ledger reference; no observed numeric literal, sequence, or transform image."
+  }
+}

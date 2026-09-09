@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1033,
-  "totalBytes": 72059388,
+  "fileCount": 1036,
+  "totalBytes": 72173910,
   "files": [
     {
       "path": ".env.example",
@@ -1431,29 +1431,14 @@
       "sha256": "9dbf7ebd58cdcc94ac5eaa9f3fce565ce620d95211bd6e0973f4edf8872161ab"
     },
     {
-      "path": "qa/fixtures/gov-518/tamper-01-observation-sequence.json",
-      "bytes": 638,
-      "sha256": "a49a1928fced7d5f9378e122d9239f91d632d9cf966e2cca1cfa4ed628889f1b"
-    },
-    {
-      "path": "qa/fixtures/gov-518/tamper-02-contact-signature.json",
-      "bytes": 568,
-      "sha256": "444c7372d03ed2721b6c36071412413ba13e70c0a9c65a0beb8d3414e3bdfe47"
-    },
-    {
-      "path": "qa/fixtures/gov-518/tamper-03-position-masks.json",
-      "bytes": 713,
-      "sha256": "5b01e794f50514d96474fab7f7757d3e0835efa8df75a4cca77cd98a185f22c1"
-    },
-    {
-      "path": "qa/fixtures/gov-518/tamper-04-scalar-reordering.json",
-      "bytes": 761,
-      "sha256": "b120f7edcb3f54349c8f4144391c33e64dc09c5ff75bc3b926a5a6d316fa3000"
-    },
-    {
       "path": "qa/gov-208-vault-context-validation.json",
       "bytes": 1730,
       "sha256": "3216042216d5e0e2ee458d8b74fef842645bccf6f5b5775e1640fb47f0e5dc9f"
+    },
+    {
+      "path": "qa/gov-519-scaffolding-receipt.json",
+      "bytes": 82245,
+      "sha256": "4401bceadfd2370d99b5202d985740344994865f1eb687c17c4fa6e0dd3d0bad"
     },
     {
       "path": "qa/governor-runtime-benchmark.json",
@@ -2127,8 +2112,8 @@
     },
     {
       "path": "scripts/check-gov518-target-blindness.mjs",
-      "bytes": 2403,
-      "sha256": "ea0e3c74fd0ed3fd439cd85433b3c675afa1cedfbf5c2de1d7cb0b81a6e5decc"
+      "bytes": 9025,
+      "sha256": "0a8fac817220db8abe029c40f8f90dfd5837378a515094e6997891f2583c8ae7"
     },
     {
       "path": "scripts/generate-availability-housing.py",
@@ -2407,8 +2392,8 @@
     },
     {
       "path": "scripts/verify-gov518-boundary.mjs",
-      "bytes": 5893,
-      "sha256": "26182ce5797503990678a3ebf59bca17a4b128d0e55859562f83e07e9d07a217"
+      "bytes": 20604,
+      "sha256": "8c297b45cb9c02f859d9cc02594fe7430a9016dc38f91537428cc70655958d10"
     },
     {
       "path": "scripts/verify-neo4j-roundtrip.mjs",
@@ -4914,6 +4899,36 @@
       "path": "tests/gov_211/neo4j-live.test.mjs",
       "bytes": 5227,
       "sha256": "4638b4ce982a854734db356c185e9a11b1ffaca55565830af9c1dfe813c0752f"
+    },
+    {
+      "path": "tests/gov_518/decoy-01-complement.json",
+      "bytes": 588,
+      "sha256": "e18f1bce5ededd0df2348780f82dd03f34ee4ef829730bc536c1e43778d31012"
+    },
+    {
+      "path": "tests/gov_518/decoy-02-difference.json",
+      "bytes": 577,
+      "sha256": "01f833c911bf30eb6dc15b6bc7115bba3d315b411714d2ff65c7af06df43bab9"
+    },
+    {
+      "path": "tests/gov_518/decoy-03-reversal.json",
+      "bytes": 547,
+      "sha256": "6527ecc279b58d493e57f507a991cf3a79ce0beae577bc462e59c4fdf35ce259"
+    },
+    {
+      "path": "tests/gov_518/decoy-04-reordering.json",
+      "bytes": 606,
+      "sha256": "64af588903b618aa039dd9097fd9e97781ac54e75f5a5778486e22f07d2921a2"
+    },
+    {
+      "path": "tests/gov_518/gov518-live-suite.mjs",
+      "bytes": 10246,
+      "sha256": "f72d2c019537eb41e40a7ee775cd7ce56733079b551291d962df7ddb721065a8"
+    },
+    {
+      "path": "tests/gov_518/structural-allowlist.json",
+      "bytes": 1060,
+      "sha256": "559a6defc3327135baf7e204d2454064100e86b0c4716781aeabc3e8ce09fa58"
     },
     {
       "path": "tests/neo4j/full-database-live.test.mjs",
