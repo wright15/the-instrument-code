@@ -1,6 +1,6 @@
 # GOV-520 — Ring-constraint forcing execution (gated shell)
 
-**Status:** Gated execution ticket (not authorized) · **Sprint:** Sprint 4 · **Epic:** EPIC-520
+**Status:** Done — category underdetermined (production receipt 475355836ef7bbbfb9a014f8e271447ebb625b5f03bdb07af718e422f892434b); closed per rule 5 · **Sprint:** Sprint 4 · **Epic:** EPIC-520
 **Depends on:** GOV-518 at B₃ = `bee5f2a19a7ebca153fe0331cb9e8691c305c32c03c16f765396047201cba382`; GOV-519 scaffolding receipt; activation entry · **Blocks:** the H2 verdict only
 
 **Lineage.** Mandate: DECISION_LEDGER.md:1309-1314. Grant: DECISION_LEDGER.md:1347-1349, as narrowed by "GOV-518 grant narrowing — execution condition — 2026-09-07". Authorized as a ticket by "GOV-518 boundary acceptance" paragraph (4) and the ticket-registration entry. Comparison semantics: amendment A1–A5.
