@@ -1,19 +1,19 @@
 {
   "schemaVersion": "gov-520-preflight-receipt.v0",
   "ticket": "GOV-520",
-  "sitting": "S-F3",
+  "sitting": "S-G2",
   "boundaryBinding": "bee5f2a19a7ebca153fe0331cb9e8691c305c32c03c16f765396047201cba382",
   "ledgerBinding": "d9736c0b19c9709a9a1abbd8ff58790bce45e73c6d27706887a333c46b5e5c41",
   "ledgerBytes": 110920,
-  "supersedes": "83a531c08490d2776ae6c08a3a7ad23f368bca6d0cbf4631a2d2376eea070fb2",
-  "supersedesNote": "This receipt supersedes two predecessors: (1) 38ed86987e05e425c7a6e03caf9f90cfd45f9971ac63662ef6ef739e2051c568 (superseded-boundary evidence about the degenerate boundary with C_step2 present, statistic constant); (2) 83a531c08490d2776ae6c08a3a7ad23f368bca6d0cbf4631a2d2376eea070fb2 (S-F2 state superseded for its stale three-predicate exhaustive-completion row, FAIL-expected-stale). S-F3 refreshes the exhaustive-completion row to current-boundary PASS under the amended two-predicate check with standing D6 witness assertions; all other S-F2 evidence carried forward.",
+  "supersedes": "8215d3fa375a717f84808b164a511c662a888f57c167f228853949a4c43e5d29",
+  "supersedesNote": "This receipt supersedes 8215d3fa375a717f84808b164a511c662a888f57c167f228853949a4c43e5d29 (S-F3 state superseded for its harness-control row, FAIL-blocked on the built-in HEAD tamper fetch with archivedBytes 0/0/0/0 per the recorded fixture deletion). S-G2 refreshes the harness-control row to PASS-unblocked via the pinned history source 7f61d7c with fail-closed fetch assertion; all other S-F3 evidence carried forward.",
   "verdict": "PASS",
-  "verdictNote": "Rehearsal pre-flight green in substance on the amended boundary: checker GREEN (61 literals, zero unlisted), decoys 4/4 rejected, history tampers 4/4 rejected, live zero forbidden match with nothing persisted, blindness byte-identical non-empty (228338 bytes), comparison statistic-assertion verified fail-closed (clean PASS, tampered ABORT), certificate N/N_orbit/visited/Burnside green with classCount 2859. Harness overall reports FAIL only on its built-in HEAD tamper fetch (fixtures absent from HEAD per the recorded correction); the history-based tamper proof covers the same four fixtures. No verdict category emitted; rehearsal outputs discarded after digest capture; production run not authorized here.",
-  "preflightGate": "GREEN-substance",
+  "verdictNote": "Rehearsal pre-flight green on the amended boundary: checker GREEN (61 literals, zero unlisted), decoys 4/4 rejected, history tampers 4/4 rejected via the pinned history source (638 -> [observation-vocabulary, true-sequence-base]; 568 -> [observation-vocabulary]; 713 -> [observation-vocabulary, observation-vocabulary-folded, true-integer]; 761 -> [observation-vocabulary, observation-vocabulary-folded]), live zero forbidden match with nothing persisted, blindness byte-identical non-empty (228338 bytes at 15b56a2c...ea653), comparison statistic-assertion verified fail-closed (clean PASS, tampered ABORT), certificate N/N_orbit/visited/Burnside green with classCount 2859. Harness overall PASS unblocked (this is the item that failed S-G). No verdict category emitted; rehearsal outputs discarded after digest capture; production run not authorized here.",
+  "preflightGate": "GREEN",
   "handoff": "READY-for-review",
   "handoffReason": "Enumerator repaired to the amended boundary (C_step2 removed, statistic-consistency assertion added); independent semantic-fidelity review of the repaired sources against the amended text is the remaining gate before any production run. No commit performed here.",
   "orientation": {
-    "head": "d591ff5a3cb6d7f2c8220c4cd1652e33ed20afc5",
+    "head": "ef855793969ba5f644172fb6981bb9bf34bafefd",
     "worktree": "clean at open",
     "aheadBehind": "0/0 recorded not gated",
     "ticketB3": {
@@ -44,7 +44,8 @@
   "repairSummary": {
     "W1_enumerator": "scripts/run-gov518-enumeration.mjs: deleted holdsStepTwo entirely; holdsAll is now holdsAdjacent(x) && holdsClose(x) (holdsClosure renamed to holdsClose, same body); projectionBits/runVector/argmaxSet/dihedralImages/canonicalRep/Burnside+visited asserts/ordering/output shape byte-identical in intent; header adds amendment lineage line \"C_step2 removed per 'GOV-518 degeneracy ruling and boundary amendment \u2014 2026-09-07'; the offset-2 comparison remains in the derivation map's mask, where it is now non-constant on the admissible set\"; offset-2 comparison in projectionBits retained as the registered mask; R2 header updated from three to two predicates.",
     "W2_comparison": "scripts/compare-gov518-outcome.mjs: inside per-class loop, recompute runOf(entry.representative) and require deep equality with entry.statistic; recompute peakSet and require deep equality with entry.argmax; any divergence aborts with {\"verdict\":\"abort\",\"error\":\"statistic divergence\",\"index\":k} fail-closed with no partial verdict; verified clean PASS (classCount 2859) and tampered ABORT at index 0 (statistic) and index 5 (argmax); no other change.",
-    "allowlist": "tests/gov_518/structural-allowlist.json unchanged (10 entries, SHA 559a6def\u202609fa58); enumerator 61 literals all allowlisted, comparison 49 literals all allowlisted; no amendment required."
+    "allowlist": "tests/gov_518/structural-allowlist.json unchanged (10 entries, SHA 559a6def\u202609fa58); enumerator 61 literals all allowlisted, comparison 49 literals all allowlisted; no amendment required.",
+    "W3_harness_SG2": "scripts/check-gov518-target-blindness.mjs: built-in tamper fixture source changed from HEAD:qa/fixtures/gov-518/... to pinned history ref 7f61d7c:qa/fixtures/gov-518/... (recorded provenance commit of the corpus per \"Process record \u2014 early fixed-point commit 7f61d7c\"); added fail-closed fetch assertion requiring all four fetches non-empty with byte counts [638, 568, 713, 761] (fetchOk = status 0 and exact byte count; any miss yields rejected false, kinds [], stage FAIL); header lineage citing the process-record entry and the S-G halt; no other behavior change (same detectors, same digest-only outputs, same unconditional self-test)."
   },
   "rebuildConformance": {
     "enumerator": "scripts/run-gov518-enumeration.mjs",
@@ -423,10 +424,10 @@
     "note": "Decoy plants rejected via checker target probes (FAIL = rejected). Tamper splices rejected via history-fetch in-memory live scan (archived bytes match GOV-519 values 638/568/713/761 with identical kinds)."
   },
   "harness": {
-    "verdict": "FAIL",
+    "verdict": "PASS",
     "boundary": "GOV-518 R7",
-    "handoff": "BLOCKED",
-    "handoffReason": "pre-flight red: enumeration never starts (CR-7 fail-closed)",
+    "handoff": "READY",
+    "handoffReason": "pre-flight green: single production run authorized at GOV-520 only",
     "stages": {
       "checker": {
         "stage": "checker",
@@ -438,7 +439,7 @@
       },
       "decoyTamper": {
         "stage": "decoy-tamper-suite",
-        "passed": false,
+        "passed": true,
         "decoys": [
           {
             "fixture": "tests/gov_518/decoy-01-complement.json",
@@ -464,27 +465,39 @@
         "tampers": [
           {
             "fixture": "qa/fixtures/gov-518/tamper-01-observation-sequence.json",
-            "archivedBytes": 0,
-            "rejected": false,
-            "kinds": []
+            "archivedBytes": 638,
+            "rejected": true,
+            "kinds": [
+              "observation-vocabulary",
+              "true-sequence-base"
+            ]
           },
           {
             "fixture": "qa/fixtures/gov-518/tamper-02-contact-signature.json",
-            "archivedBytes": 0,
-            "rejected": false,
-            "kinds": []
+            "archivedBytes": 568,
+            "rejected": true,
+            "kinds": [
+              "observation-vocabulary"
+            ]
           },
           {
             "fixture": "qa/fixtures/gov-518/tamper-03-position-masks.json",
-            "archivedBytes": 0,
-            "rejected": false,
-            "kinds": []
+            "archivedBytes": 713,
+            "rejected": true,
+            "kinds": [
+              "observation-vocabulary",
+              "observation-vocabulary-folded",
+              "true-integer"
+            ]
           },
           {
             "fixture": "qa/fixtures/gov-518/tamper-04-scalar-reordering.json",
-            "archivedBytes": 0,
-            "rejected": false,
-            "kinds": []
+            "archivedBytes": 761,
+            "rejected": true,
+            "kinds": [
+              "observation-vocabulary",
+              "observation-vocabulary-folded"
+            ]
           }
         ]
       },
@@ -544,7 +557,10 @@
       "subprocess pipes only (checker, live suite, runner digests)",
       "archived tamper bytes via git-show pipe (memory only, never disk)"
     ],
-    "rng": "none"
+    "rng": "none",
+    "sha256": "c10de900aa47634d079310a70d0d3700206eb33f893c65a450cd1d9247c810db",
+    "tamperSource": "7f61d7c:qa/fixtures/gov-518/tamper-01..04.json (pinned history ref; identifier-class CR-5)",
+    "fetchAssertion": "fail-closed: expected bytes [638, 568, 713, 761], non-empty required; mismatch yields rejected false"
   },
   "blindnessDigests": {
     "clean": {
@@ -772,6 +788,11 @@
       "path": "tests/gov_518/decoy-04-reordering.json",
       "sha256": "64af588903b618aa039dd9097fd9e97781ac54e75f5a5778486e22f07d2921a2",
       "bytes": 606
+    },
+    {
+      "path": "scripts/check-gov518-target-blindness.mjs",
+      "sha256": "c10de900aa47634d079310a70d0d3700206eb33f893c65a450cd1d9247c810db",
+      "bytes": 9761
     }
   ],
   "d8Pin": {
@@ -783,5 +804,32 @@
     "orbitBound": 60028,
     "boundary": "GOV-518"
   },
-  "commit": "none performed here"
+  "commit": "none performed here",
+  "harnessRepair": {
+    "pin": "7f61d7c",
+    "harnessFile": "scripts/check-gov518-target-blindness.mjs",
+    "harnessSha256": "c10de900aa47634d079310a70d0d3700206eb33f893c65a450cd1d9247c810db",
+    "harnessBytes": 9761,
+    "tamperSource": "7f61d7c:qa/fixtures/gov-518/tamper-01-observation-sequence.json (638), tamper-02-contact-signature.json (568), tamper-03-position-masks.json (713), tamper-04-scalar-reordering.json (761)",
+    "fetchAssertion": "all four fetches non-empty with byte counts {638, 568, 713, 761}; history source unavailable => control FAILs, never vacuous PASS",
+    "tamperKinds": {
+      "638": [
+        "observation-vocabulary",
+        "true-sequence-base"
+      ],
+      "568": [
+        "observation-vocabulary"
+      ],
+      "713": [
+        "observation-vocabulary",
+        "observation-vocabulary-folded",
+        "true-integer"
+      ],
+      "761": [
+        "observation-vocabulary",
+        "observation-vocabulary-folded"
+      ]
+    },
+    "lineageNote": "S-G halt \u2014 built-in tamper fetch returned zero bytes post-correction; source pinned to the recorded history commit; repair sitting S-G2"
+  }
 }

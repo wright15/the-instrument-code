@@ -13,6 +13,11 @@
 // canonical bytes are touched only inside the live-suite module (suite-scoped
 // per CR-6), and only in memory. No RNG is used anywhere (temp names derive
 // from the process id plus a counter). Captures the D8 environment pin.
+//
+// Tamper-control lineage (S-G2 repair): "Process record — early fixed-point commit
+// 7f61d7c" — tamper corpus lives in history per the recorded fixture deletion; source pinned to 7f61d7c
+// (S-G halt: HEAD fetch returned zero bytes post-correction; history pin restores the
+// control fail-closed).
 
 import crypto from "node:crypto";
 import fs from "node:fs";
@@ -33,6 +38,9 @@ const TAMPER_REFS = [
   "qa/fixtures/gov-518/tamper-03-position-masks.json",
   "qa/fixtures/gov-518/tamper-04-scalar-reordering.json",
 ];
+// Pinned history source for the tamper corpus (identifier-class CR-5).
+const TAMPER_PIN = "7f61d7c";
+const TAMPER_EXPECTED_BYTES = [638, 568, 713, 761];
 
 function sha256Hex(text) {
   return crypto.createHash("sha256").update(text, "utf8").digest("hex");
@@ -119,15 +127,18 @@ function stageDecoyTamper() {
     liveNeedles = null;
   }
   const tamperResults = [];
-  for (const ref of TAMPER_REFS) {
-    const shown = spawnSync("git", ["show", `HEAD:${ref}`], { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
+  for (let tamperIndex = 0; tamperIndex < TAMPER_REFS.length; tamperIndex += 1) {
+    const ref = TAMPER_REFS[tamperIndex];
+    const expectedBytes = TAMPER_EXPECTED_BYTES[tamperIndex];
+    const shown = spawnSync("git", ["show", `${TAMPER_PIN}:${ref}`], { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
     const archived = shown.status === 0 ? shown.stdout : "";
+    const fetchOk = shown.status === 0 && archived.length === expectedBytes && archived.length > 0;
     let matchedKinds = [];
-    if (liveNeedles && archived.length > 0) {
+    if (fetchOk && liveNeedles) {
       const spliced = `${enumeratorText}\n${archived}\n`;
       matchedKinds = [...new Set(scanSurface(spliced, liveNeedles.needles).map((m) => m.kind))].sort();
     }
-    tamperResults.push({ fixture: ref, archivedBytes: archived.length, rejected: matchedKinds.length > 0, kinds: matchedKinds });
+    tamperResults.push({ fixture: ref, archivedBytes: archived.length, rejected: fetchOk && matchedKinds.length > 0, kinds: fetchOk ? matchedKinds : [] });
   }
   const passed = decoyResults.every((r) => r.rejected)
     && tamperResults.every((r) => r.rejected)
