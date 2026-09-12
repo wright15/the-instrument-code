@@ -1,6 +1,6 @@
 # GOV-516 - Run-space max-run uniqueness check
 
-**Status:** Review · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-520](EPIC-520-unified-operator.md) · **Sprint:** Sprint 4
+**Status:** Done · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-520](EPIC-520-unified-operator.md) · **Sprint:** Sprint 4
 **Depends on:** [GOV-515](GOV-515-ring-force-enumeration-definition.md) Stage 1 definition and maintainer review · **Blocks:** H2 execution and any EPIC-520 synthesis
 
 **Mapping:** This is the separately scoped Stage 2 successor for EPIC-520-1
@@ -108,3 +108,9 @@ Without maintainer approval, completion is limited to this review-pending spec.
 - `canonical/fivefold-incubator/d-shadow-complement-span-v0.json`
 - `qa/d-shadow-complement-span-validation.json`
 - `MANIFEST.json`
+
+## Closure receipt — 2026-09-12
+
+Banked outcomes executed: uniqueness check `one_target` with `V = {5}` per OBS-020; candidate `canonical/fivefold-incubator/d-shadow-uniqueness-check-v0.json` file SHA-256 `389f98e01e54e7e0f88c7b36fad0b321662904db15c936815a82630461eb4d02` with candidate fingerprint `1aaf77169c7558cb927e2bb3dc8526b8bafb8b275529d989c59db70eb3705f51`; QA receipt `qa/d-shadow-uniqueness-validation.json` file SHA-256 `cf7c7519328192a870bd48506b044ab07fa99bda588b2c00c82d722e7bcc9f8f` with report fingerprint `abc1a72bf127d965e617c3261dbee14d26ee9fd2b665aeea692515e64a5df8c0`. Recorded in `provenance/DECISION_LEDGER.md:1309-1314` (GOV-516 Stage 2 review) and `provenance/DECISION_LEDGER.md:1347-1349` (parallel-capacity grant, banked outcomes); observation side in `provenance/OBSERVATION_LEDGER.md` OBS-020.
+
+Reconciliation note: banking ≠ closure; closure requires the ticket to say so (rule 8 sharpened, retroactive audit 2026-09-12).
