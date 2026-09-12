@@ -411,6 +411,41 @@ authority.
 
 ---
 
+## OBS-021 — Ring-constraint underdetermination count
+
+**Status:** derived `planning_evidence` 2026-09-12
+**Scope:** ring-constraint assignment space under boundary B₃
+**Provenance:** derived from the GOV-520 single-pass production run and receipted by the production enumeration, comparison, and receipt artifacts. The `comparisonTarget` verbatim reading is `[4]` per `qa/gov-520-production-comparison.json` `comparisonTarget`; the file states no labeling note and no coordinate convention; the separate uniqueness-check `candidateSet.coordinates` `[5]` is not a field in this file.
+**Artifact identity (enumeration digest):**
+`15b56a2c4f953e7bd19c583c04155d26728498e7bed66e6e82f8a450b34ea653`.
+**Artifact file SHA-256:**
+`15b56a2c4f953e7bd19c583c04155d26728498e7bed66e6e82f8a450b34ea653`.
+**Comparison artifact SHA-256:**
+`695c816cd4c86fb928c8f611ab6226d487b309763f1bdd99ed165cb23d5bc1df`.
+**Production receipt SHA-256:**
+`475355836ef7bbbfb9a014f8e271447ebb625b5f03bdb07af718e422f892434b`.
+**Boundary binding B₃:**
+`bee5f2a19a7ebca153fe0331cb9e8691c305c32c03c16f765396047201cba382`.
+**Canonical binding:**
+`91fead6b1e637ed6dd82dc4f47bd3c357abfee6958aabfe28406399414a6d34c`.
+
+```
+N = 823543, N_orbit = 60028, visited = 60028, classCount = 2859
+comparisonTarget = [4]; matches true = 1911, matches false = 948
+```
+
+The ring-constraint assignment space (`C_adj` + `C_close` over 7 coordinates, 7⁷ = 823543 assignments, D₇ quotient) admits 2859 outcome classes; the search was exhaustive (visited = orbit bound = 60028); the comparison target `[4]` falls on the MATCHING side of the split — 1911 `matches:true` vs 948 `matches:false` per `qa/gov-520-production-comparison.json` `results[]`; 53 distinct statistics occur.
+
+**Frame-level combinatorics guard:** this records the enumeration's structural facts only — counts, certificate arithmetic, and tally split — and asserts no hypothesis meaning, preference, or disposition. The disposition lives in the decision ledger, ENTRY 6, and stays there.
+
+**Falsification:** any re-run under the unchanged binding B₃ producing a different class count, orbit count, visited count, distinct-statistic count, or tally split breaks it.
+
+**Binding philosophy:** source-bound artifacts and receipts bind arithmetic; this ledger entry records the derived observation and creates no topology, admission, runtime, office, or `harmonic.C_H` authority.
+
+**Upstream:** `qa/gov-520-production-enumeration.json`, `qa/gov-520-production-comparison.json`, `qa/gov-520-production-receipt.json`, `qa/gov-520-preflight-receipt.json`, `qa/gov-519-scaffolding-receipt.json`; boundary B₃; "GOV-518 degeneracy ruling and boundary amendment — 2026-09-07" (ENTRY 5-A) and "GOV-520 production run record — underdetermined; GOV-520 closed — 2026-09-07" (ENTRY 6).
+
+---
+
 ## Index
 
 | ID | Scope | Verification | Admission impact |
@@ -432,5 +467,6 @@ authority.
 | OBS-018 D-channel run-space route | D1-D7 anchors | `3,3,3,3,5,2,2` hold/spike/floor | D5 is the run-space spike |
 | OBS-019 D5 Court-class five-run containment | 7 D5 anchors | all maximal runs `5-35`; intersection `{2383,3667}` | Bounded containment observation only |
 | OBS-020 D-channel max-run uniqueness | D1-D7 run-space summaries | complete maximum candidate set `{5}` | Unique target fact only; no hypothesis disposition |
+| OBS-021 ring-constraint underdetermination count | B₃ assignment space, 2859 classes | `N 823543, N_orbit 60028, visited 60028`; target `[4]` 1911 matching / 948 not-matching | Count only; no hypothesis disposition |
 
 No entry writes `ScaleState.office`, `OCCUPIES_OFFICE`, `mutation.degreeGovernor`, `C_H`, `photonicCompression`, or ledger state.
