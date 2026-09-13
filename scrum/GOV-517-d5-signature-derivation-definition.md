@@ -1,11 +1,11 @@
 # GOV-517 - D5 signature derivation definition
 
-**Status:** Backlog · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-520](EPIC-520-unified-operator.md) · **Sprint:** Sprint 4
+**Status:** Done · **Priority:** High · **Points:** TBD · **Epic:** [EPIC-520](EPIC-520-unified-operator.md) · **Sprint:** Sprint 4
 **Depends on:** GOV-516 completion or maintainer-approved parallel capacity · **Blocks:** None
 
-**Mapping:** EPIC-520-1 §4 check (iv), re-scoped to the D5 run-space target. This
-is a queued definition ticket only. It must not execute until GOV-516 completes
-or the maintainer records approved parallel capacity.
+**Mapping:** EPIC-520-1 §4 check (iv), re-scoped to the D5 run-space target.
+Closed by OBS-022 and DECISION_LEDGER ENTRY 8: the maintainer-approved canonical
+run is `derived` for D5 contact geometry only.
 
 ## Story
 
@@ -63,9 +63,9 @@ maintainer approves parallel capacity.
 
 ## Definition of done
 
-This ticket is complete only as a queued, non-executing D5 definition. A later
-approved successor is required for any derivation artifact, QA receipt, result,
-or hypothesis disposition.
+This ticket is complete: the approved single-pass D5 derivation receipt is
+`qa/gov-517-canonical-derivation-report.json`. Its `derived` category and
+bounded D5-only impacts are recorded by OBS-022 and DECISION_LEDGER ENTRY 8.
 
 ## References
 

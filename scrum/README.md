@@ -156,7 +156,7 @@ ORR-512, ORR-513, and ORR-514 run in parallel in Sprint 3 after ORR-511.
 | [GOV-514](GOV-514-d-tier-compression-interleaving-check.md) | D-tier compression interleaving check | Sprint 4 | TBD | High | **Done** |
 | [GOV-515](GOV-515-ring-force-enumeration-definition.md) | Ring-force enumeration definition gate | Sprint 4 | TBD | High | **Done** |
 | [GOV-516](GOV-516-run-space-d5-derivability-enumeration.md) | Run-space D5 derivability enumeration | Sprint 4 | TBD | High | **Review** |
-| [GOV-517](GOV-517-d5-signature-derivation-definition.md) | D5 signature derivation definition | Sprint 4 | TBD | High | **Backlog** |
+| [GOV-517](GOV-517-d5-signature-derivation-definition.md) | D5 signature derivation definition | Sprint 4 | TBD | High | **Done** |
 | [GOV-519](GOV-519-ring-forcing-scaffolding.md) | Ring-forcing negative-control scaffolding | Sprint 4 | TBD | High | **Done** |
 | [GOV-520](GOV-520-ring-constraint-forcing-execution.md) | Ring-constraint forcing execution (gated shell) | Sprint 4 | TBD | High | **Done** |
 
@@ -169,7 +169,8 @@ shape). GOV-513/514/515 close from the ledger receipt "Sprint 4 research
 receipts - 2026-09-05"; GOV-515 is Stage 1 only. No operator, implementation,
 or authority is granted by this board. GOV-516 is submitted for maintainer
 review and cannot execute until that review accepts GOV-515's fresh manifest
-binding; GOV-517 is queued for a later D5-only definition.
+binding. GOV-517 is closed `derived` for D5 contact geometry only by OBS-022
+and DECISION_LEDGER ENTRY 8; this does not open a unified-operator claim.
 
 ## Global definition of done
 

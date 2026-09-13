@@ -1,8 +1,8 @@
 {
-  "verdict": "PASS",
+  "verdict": "FAIL",
   "releaseId": "seven-governors-integrated-1.9.0-dev",
-  "checksPassed": 418,
-  "checksFailed": 0,
+  "checksPassed": 416,
+  "checksFailed": 2,
   "checks": [
     {
       "name": "release manifest fixed point",
@@ -817,12 +817,12 @@
     },
     {
       "name": "pentatonic binding closure freshness",
-      "status": "PASS",
-      "diagnostic": "passed"
+      "status": "FAIL",
+      "diagnostic": "    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)\n\nNode.js v22.22.0"
     },
     {
       "name": "pentatonic binding evidence fingerprint closure",
-      "status": "PASS",
+      "status": "FAIL",
       "diagnostic": {
         "candidateFingerprint": "7c38e457ce903a3dd72a007265eda256c48c5a326b66bc32bb4c92a93aacdf3e",
         "phase1ValidationReportFingerprint": "f7edfb035ab16682359bcf15474d533b214ab1259591284433928a6971239ddc",
@@ -831,7 +831,7 @@
         "cypherDeterministicFingerprint": "17a99dde862c5853031724a11c6435d372fd795eeb86a700fbc266068e7a8b61",
         "crt310BacklogFingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
         "sourceAuthoritySha256": "b27e9a23b58c1944f33629f103f0d9614c4347084d1aff7a9640f67ac386fd72",
-        "decisionLedgerSha256": "ce87bff076eb12a3b5223ac7ed4826fa51a9c5ef50db0b8108cd74325060285f"
+        "decisionLedgerSha256": "77fa4f276d78d88c6c688e71262702d4497eca08c59e185daf6e8d1c55701784"
       }
     },
     {
@@ -845,7 +845,7 @@
           "2": 48,
           "3": 12
         },
-        "closureFingerprint": "a985ffcde07471d948b2b37b9aaf02487273720c7126e076c30263fcc3941bb2"
+        "closureFingerprint": "e339c1e92b80d6a7ab50850f1139121af42e33fc378e3ee67215711da31fbc46"
       }
     },
     {
@@ -1345,8 +1345,8 @@
       "name": "checksums sha256 parity",
       "status": "PASS",
       "diagnostic": {
-        "checksumLines": 1043,
-        "manifestFiles": 1043
+        "checksumLines": 1064,
+        "manifestFiles": 1064
       }
     },
     {

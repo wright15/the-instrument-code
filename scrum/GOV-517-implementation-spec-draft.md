@@ -1,6 +1,6 @@
 # GOV-517 Implementation Specification Draft — D5 Signature Derivation
 
-**Status:** Draft — pending Maintainer review/sign-off · **No execution authorized**
+**Status:** Completed — Maintainer re-audit closed the authorized run as `derived`; see OBS-022 and DECISION_LEDGER ENTRY 8
 **Ticket:** `scrum/GOV-517-d5-signature-derivation-definition.md` · **Epic:** EPIC-520
 **Frozen body:** `### Derivation Targets (T1–T3)` through end-of-file, frozen per `provenance/DECISION_LEDGER.md` ENTRY 7 ("GOV-517 derivation boundary freeze — 2026-09-12")
 **Scope:** Phase 2 specification only. This file creates no derivation artifact, QA receipt, result, or H disposition. Internal algorithm implementation is deferred to Phase 2 code review.

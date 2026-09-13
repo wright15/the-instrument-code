@@ -1624,3 +1624,96 @@ Final `npm run validate` verdict lines are NOT in this entry; they belong to 0c 
 **GOV-520 production run record — underdetermined; GOV-520 closed — 2026-09-07.** Single-pass production run under the frozen §3 protocol against the GOV-518 boundary at B₃ = `bee5f2a19a7ebca153fe0331cb9e8691c305c32c03c16f765396047201cba382` ("GOV-518 degeneracy ruling and boundary amendment — 2026-09-07"). Run record: enumeration artifact `qa/gov-520-production-enumeration.json` (SHA-256 `15b56a2c4f953e7bd19c583c04155d26728498e7bed66e6e82f8a450b34ea653`, 228338 bytes — byte-identical to the four prior rehearsal executions of the same source, determinism confirmed); certificate N = 823543, N_orbit = 60028, visited = 60028, Burnside remainder 0, classCount = 2859; comparison artifact `qa/gov-520-production-comparison.json` (SHA-256 `695c816cd4c86fb928c8f611ab6226d487b309763f1bdd99ed165cb23d5bc1df`), comparison target [4] derived at run time from the canonical_observation_record (d-shadow complement-span record, binding `91fead6b1e637ed6dd82dc4f47bd3c357abfee6958aabfe28406399414a6d34c`, carrying `runSpace.dRunSequence` per OBS-018); production receipt `qa/gov-520-production-receipt.json` (SHA-256 `475355836ef7bbbfb9a014f8e271447ebb625b5f03bdb07af718e422f892434b`). Recorded category: **underdetermined** — 2859 admissible outcome classes (> 1); matches tally 1911 true / 948 false (the observed singleton-peak shape family is admissible but not unique among outcome classes; 53 distinct statistics occur). Disposition, exactly per the frozen §2 mapping: weakens H2-as-amended(B₃); H3 compatible-with-but-not-confirming; H1: no disposition; no prose selection among classes; no frame enlargement; per-signature D4/D5 readings require separate tickets — this sequence-level result covers neither signature alone. Lineage and anti-absorption (per "GOV-518 degeneracy ruling and boundary amendment — 2026-09-07"): this verdict disposes H2-as-amended only; the original registration was degenerate-by-construction and never ran; the original three-predicate constraint set was never tested against a discriminating statistic and remains unmeasured; any successor registration must demonstrate two-level non-vacuity at acceptance (constraint-level and statistic-level, per this entry's predecessor) and its verdicts answer that successor's boundary only. Pre-flight: all controls green (checker + adversarial self-test, decoys 4/4, pinned-history tampers 4/4 with fetch assertion, live suite zero-persist, target_blindness four-condition digest-identical, exhaustive-completion, reordered-input) per pre-flight receipt `34ffb566234497717cc62f89d1dc1bd9be282d0226804dd166d30d3d2978411e`. Gate evidence: "GOV-518 boundary acceptance"; "Activation — GOV-519 scaffolding receipt accepted; GOV-520 gate opened; GOV-519 closed — 2026-09-07"; GOV-516 remains Review under the registered grant (DECISION_LEDGER.md:1347-1349) — unaffected by this entry. Closure: GOV-520 is closed Done per rule 5 (category recorded, receipt landed, validate fixed point green); ticket status line and board row sync from this entry (rule 8); the EPIC-520-1 H2 outcome record appends from this entry with citation. Recorded without favoring any outcome (rule 5): all four categories close a story equally; this one is what the arithmetic produced.
 
 **Publication boundary — 2026-09-12.** Repository externally visible at origin/main (public GitHub, wright15/the-instrument-code); no tags pushed. All commits from 83052fe onward are externally consumed, including the fixture corpus in history at 7f61d7c (anticipated by ENTRY 0). Consequence: in-place close-outs of published releases are no longer available; 1.9.0 closes deliberately via ORR-524, never opportunistically; release notes gain a publication paragraph. Future tags: only at release closures, citing the ledger entry.
+
+## ENTRY 7 — GOV-517 derivation boundary freeze — 2026-09-12
+
+**Status:** frozen definition boundary; maintainer sign-off pending; no derivation
+execution authorized by this entry.
+
+### Decision
+
+The boundary specification in
+`scrum/GOV-517-d5-signature-derivation-definition.md`, beginning exactly at
+`### Derivation Targets (T1–T3)`, is frozen as the GOV-517 specification body.
+It defines pure generation targets T1–T3 from $I_1–I_4$, pre-flight negative
+controls NC-1 through NC-4, disposition mapping, halting conditions, and DoD.
+Observed canonical $D_5$ state remains outside the derivation runtime and may
+be consulted only by the downstream comparison layer named in the frozen body.
+
+### Scope Boundary Citations For Receipt References
+
+- `qa/twin-hub-convergence-validation.json` and
+  `canonical/fivefold-incubator/twin-hub-convergence-v0.json` remain
+  OBS-014 receipt references only. Their observed $D_5$ contact conclusions,
+  seat rows, and midpoint conclusions are excluded from GOV-517 runtime inputs
+  and are admissible only as downstream comparison evidence.
+- `qa/fifth-space-census-validation.json` and
+  `canonical/fivefold-incubator/fifth-space-census-v0.json` may cite the
+  source-bound A-tier fifth-position-mask provenance for $I_4$. They do not
+  authorize use of any D-tier row, D5 observation, or outcome conclusion.
+- `provenance/OBSERVATION_LEDGER.md` OBS-008 and OBS-009 are structural
+  provenance citations for the registered $I_1$ distance-2/K relation and
+  window geometry respectively; they are not observed $D_5$ inputs.
+- `qa/shadow-ladder-validation.json`,
+  `qa/pentatonic-binding-audit-closure.json`, and
+  `qa/orrery-field-derivation-bundle-validation.json` are dependent-suite
+  freshness receipts only. They have no GOV-517 runtime-input authority.
+
+### Guard
+
+This entry registers a definition boundary only. It grants no topology,
+admission, runtime, office assignment, graph, or global `harmonic.C_H`
+authority; it emits no target result or H disposition. The required cascade,
+manifest binding, and validation fixed point register freshness for this
+definition freeze but do not authorize the skeleton or live derivation. Any
+revision or re-test requires a new boundary registration and ticket; this
+frozen state remains preserved.
+
+### References
+
+- `scrum/GOV-517-d5-signature-derivation-definition.md` (frozen body)
+- `MANIFEST.json` (post-regeneration byte binding)
+- `qa/twin-hub-convergence-validation.json` (OBS-014 reference; excluded from runtime)
+- `qa/fifth-space-census-validation.json` ($I_4$ provenance reference)
+- `provenance/OBSERVATION_LEDGER.md` (OBS-008, OBS-009)
+
+## ENTRY 8 — GOV-517 D5 contact geometry verdict — 2026-09-12
+
+**Status:** closed, category `derived`.
+
+### Decision
+
+The maintainer-approved independent re-audit of
+`qa/gov-517-canonical-derivation-report.json` closes GOV-517 with category
+`derived`. The single production pass generated T1 (10 witnesses), T2 (28
+witnesses), and T3 (7/7 office convergence) from registered I1-I4 inputs. The
+complete downstream G5 comparison classified all 14 canonical D5 contact rows
+as `both`, with no primary-only, secondary-only, or neither rows. OBS-022
+records the frame-level combinatorics of that result.
+
+### Epistemic impacts
+
+Under the frozen category mapping, this supports the H1 mechanism route for D5
+and weakens H3 authorship for D5. H2 has no disposition.
+
+### Semantics bound
+
+The derivation is relative to the registered generative semantics (G1-G5,
+control-verified); the result's strength is bounded by that registration.
+
+### Scope fences
+
+- **D4 quarantine:** this result does not extrapolate to D4 and does not support
+  a unified-operator claim. An independent D4 derivation pass under identical
+  input-isolation, control, sealing, and comparison discipline is required.
+- **Per-signature scope:** the finding is confined to D5 contact geometry at
+  office-coordinate resolution. It authorizes no sequence-level, cosmological,
+  topology, admission, runtime, graph, or global `harmonic.C_H` assertion.
+
+### References
+
+- OBS-022 (`provenance/OBSERVATION_LEDGER.md`)
+- `qa/gov-517-canonical-derivation-report.json`
+- `qa/gov-517-preflight-report.json`
+- `qa/gov-517-input-boundary-registration.json`
+- `scripts/gov-517-d5-derivation-engine.mjs`
