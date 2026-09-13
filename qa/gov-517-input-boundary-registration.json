@@ -1,0 +1,251 @@
+{
+  "boundary": "GOV-517",
+  "registration_id": "GOV-517-I1-I4-maintainer-registration",
+  "authority": "Maintainer directive: Input Registrations (I1-I4) & Phase 2 Resume",
+  "status": "green",
+  "generation_authorized": true,
+  "manifest_binding": "per-file MANIFEST.json and CHECKSUMS.sha256 entries",
+  "bindings": [
+    {
+      "path": "canonical/universal-network-data.json",
+      "manifest_sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+      "recomputed_sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+      "checksums_match": true,
+      "pass": true
+    },
+    {
+      "path": "canonical/universal-heptatonic-ledger.json",
+      "manifest_sha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+      "recomputed_sha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+      "checksums_match": true,
+      "pass": true
+    },
+    {
+      "path": "canonical/fivefold-incubator/fifth-space-census-v0.json",
+      "manifest_sha256": "ad857ab957c54773f35047fb7618e8c8d9977991c0450efc56b0b81cd653a1d0",
+      "recomputed_sha256": "ad857ab957c54773f35047fb7618e8c8d9977991c0450efc56b0b81cd653a1d0",
+      "checksums_match": true,
+      "pass": true
+    }
+  ],
+  "i1": {
+    "source": "canonical/universal-network-data.json",
+    "section": "structuralEdges",
+    "selector": "row.type === \"CONSTRUCTS\"",
+    "expected_record_count": 28,
+    "consumption_profile": "Office-ring distance-2 pair structures; OBS-008 structural provenance only",
+    "status": "verified"
+  },
+  "i2": {
+    "source": "canonical/universal-network-data.json",
+    "section": "structuralEdges",
+    "selector": "row.type === \"CONSTRUCTS\"",
+    "expected_record_count": 28,
+    "consumption_profile": "A-tier CONSTRUCTS transitions with parentStateIds and constructionEdgeIds",
+    "excluded": "D4/D5 SEAT_CONTACT chain-audit rows",
+    "status": "verified"
+  },
+  "i3": {
+    "source": null,
+    "binding": null,
+    "content": null,
+    "load_time_empty": true,
+    "consumption_profile": "Empty envelope member; no target consumes it"
+  },
+  "i4": {
+    "sources": [
+      "canonical/universal-heptatonic-ledger.json",
+      "canonical/fivefold-incubator/fifth-space-census-v0.json"
+    ],
+    "slice_descriptor": "tier in {A0,A1,A2} AND role = anchor AND office != null",
+    "enumeration_method": "Filter bound ledger, project identity fields, sort ascending integer stateId; never transcribe an anchor list",
+    "enumerated_anchor_list": [
+      {
+        "stateId": 1367,
+        "tier": "A2",
+        "role": "anchor",
+        "office": "Moon",
+        "officeIndex": 1
+      },
+      {
+        "stateId": 1371,
+        "tier": "A1",
+        "role": "anchor",
+        "office": "Sun",
+        "officeIndex": 0
+      },
+      {
+        "stateId": 1373,
+        "tier": "A2",
+        "role": "anchor",
+        "office": "Saturn",
+        "officeIndex": 6
+      },
+      {
+        "stateId": 1387,
+        "tier": "A0",
+        "role": "anchor",
+        "office": "Saturn",
+        "officeIndex": 6
+      },
+      {
+        "stateId": 1389,
+        "tier": "A1",
+        "role": "anchor",
+        "office": "Venus",
+        "officeIndex": 5
+      },
+      {
+        "stateId": 1397,
+        "tier": "A2",
+        "role": "anchor",
+        "office": "Jupiter",
+        "officeIndex": 4
+      },
+      {
+        "stateId": 1451,
+        "tier": "A0",
+        "role": "anchor",
+        "office": "Venus",
+        "officeIndex": 5
+      },
+      {
+        "stateId": 1453,
+        "tier": "A0",
+        "role": "anchor",
+        "office": "Jupiter",
+        "officeIndex": 4
+      },
+      {
+        "stateId": 1461,
+        "tier": "A1",
+        "role": "anchor",
+        "office": "Mercury",
+        "officeIndex": 3
+      },
+      {
+        "stateId": 1493,
+        "tier": "A2",
+        "role": "anchor",
+        "office": "Mars",
+        "officeIndex": 2
+      },
+      {
+        "stateId": 1707,
+        "tier": "A1",
+        "role": "anchor",
+        "office": "Jupiter",
+        "officeIndex": 4
+      },
+      {
+        "stateId": 1709,
+        "tier": "A0",
+        "role": "anchor",
+        "office": "Mercury",
+        "officeIndex": 3
+      },
+      {
+        "stateId": 1717,
+        "tier": "A0",
+        "role": "anchor",
+        "office": "Mars",
+        "officeIndex": 2
+      },
+      {
+        "stateId": 1749,
+        "tier": "A1",
+        "role": "anchor",
+        "office": "Moon",
+        "officeIndex": 1
+      },
+      {
+        "stateId": 1877,
+        "tier": "A2",
+        "role": "anchor",
+        "office": "Sun",
+        "officeIndex": 0
+      },
+      {
+        "stateId": 2731,
+        "tier": "A2",
+        "role": "anchor",
+        "office": "Mercury",
+        "officeIndex": 3
+      },
+      {
+        "stateId": 2733,
+        "tier": "A1",
+        "role": "anchor",
+        "office": "Mars",
+        "officeIndex": 2
+      },
+      {
+        "stateId": 2741,
+        "tier": "A0",
+        "role": "anchor",
+        "office": "Moon",
+        "officeIndex": 1
+      },
+      {
+        "stateId": 2773,
+        "tier": "A0",
+        "role": "anchor",
+        "office": "Sun",
+        "officeIndex": 0
+      },
+      {
+        "stateId": 2901,
+        "tier": "A1",
+        "role": "anchor",
+        "office": "Saturn",
+        "officeIndex": 6
+      },
+      {
+        "stateId": 3413,
+        "tier": "A2",
+        "role": "anchor",
+        "office": "Venus",
+        "officeIndex": 5
+      }
+    ],
+    "enumerated_anchor_count": 21,
+    "tier_counts": {
+      "A0": 7,
+      "A1": 7,
+      "A2": 7
+    },
+    "loaded_record_count": 21,
+    "loaded_ids_exactly_match_enumeration": true,
+    "mask_payloads_persisted": false,
+    "status": "verified"
+  },
+  "source_schema_diagnostic": {
+    "root_constructionEdges_present": false,
+    "summary_constructionEdges": 28,
+    "authoritative_selector": "network.structuralEdges.filter(row => row.type === \"CONSTRUCTS\")",
+    "selected_count": 28,
+    "selected_all_a_tier": true,
+    "selector_confirmed_by_maintainer": true,
+    "prior_schema_halt_cleared": true
+  },
+  "findings": [],
+  "defect_provenance": {
+    "attribution": "Maintainer input-registration directive",
+    "review_gap": "Input-binding gap survived review rounds because audits targeted target phrasing, criteria, and control reachability rather than binding completeness",
+    "standing_lesson": "Input inventories must carry exact file paths, SHA bindings, and slice descriptors at freeze time.",
+    "selector_clarification": {
+      "authority": "Maintainer selector-confirmation directive",
+      "original_phrasing": "The directive section-name was prose-level shorthand for summary.constructionEdges, the counter rather than the row array",
+      "review_history": "The agent correctly declined silent substitution and requested confirmation; the structuralEdges CONSTRUCTS selector is hereby registered as authoritative",
+      "standing_note": "Directives describing source structure quote field names from bound files, not from memory. The summary counter and row array are distinct artifacts; bindings name the array with its selector."
+    }
+  },
+  "scope": {
+    "mode": "Registration and input-validation only; not generation",
+    "carrier_bytes_hashed_and_parsed": true,
+    "excluded_rows_passed_to_generation": false,
+    "mask_or_observation_payloads_persisted": false,
+    "frozen_specifications_modified": false,
+    "ledger_or_manifest_modified": false
+  }
+}

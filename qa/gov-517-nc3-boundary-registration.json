@@ -1,0 +1,41 @@
+{
+  "boundary": "GOV-517",
+  "registration_id": "GOV-517-NC3-width-amendment",
+  "authority": "Maintainer decision in Phase 2 execution directive: Option 2 accepted",
+  "scope": "Replacement NC-3 stimulus only; no runtime input binding or live-run authorization",
+  "frozen_files_modified": false,
+  "implementation_mapping": {
+    "reference": "scrum/GOV-517-implementation-spec-draft.md:174-176",
+    "superseded_stimulus": "W_c(k) = [-k+c, 6-k+c], constant c != 0",
+    "registered_stimulus": "W'(k) = [-k, 5-k]",
+    "integer_width": 6,
+    "expected_result": "engine fails the window-intersection rule check under T3",
+    "frozen_assertion_changed": false
+  },
+  "mathematical_rationale": {
+    "domain": "Integer intervals; j and d each range from 0 through 6 inclusive",
+    "translation": "W_c(k) = W_0(k) + c; common translation preserves intersection cardinality, so |W_c(j) intersect W_c(j+d)| = 7-d",
+    "width_mutation": "|W'(j) intersect W'(j+d)| = max(0, 6-d) = 6-d != 7-d for every d in [0,6]"
+  },
+  "empirical_verification": {
+    "arithmetic": "Node.js BigInt only",
+    "results": [
+      { "stimulus": "baseline", "cases": 49, "intersection_rule_failures": 0 },
+      { "stimulus": "uniform_offset", "cases": 49, "intersection_rule_failures": 0 },
+      { "stimulus": "width_mutant", "cases": 49, "intersection_rule_failures": 49 }
+    ],
+    "expected_results_observed": true,
+    "test_command": "node --test qa/gov-517-nc3-registration.test.mjs",
+    "scope": "Stimulus reachability only; not engine-path NC-3 verification"
+  },
+  "rejected_alternatives": [
+    { "alternative": "Absolute-geometry rejection", "reason": "Replaces invariant non-vacuity with conformance and penalizes invariant-preserving translations" },
+    { "alternative": "Non-uniform spacing mutants", "reason": "Rejected under the minimality criterion; changing one upper endpoint suffices" }
+  ],
+  "defect_provenance": {
+    "attribution": "Maintainer decision",
+    "review_gap": "The offset mutant survived review because auditing focused on T3 answer-smuggling rather than stimulus reachability",
+    "standing_rule": "Every negative control's stimulus must be demonstrated capable of producing its required failure before freeze."
+  },
+  "manifest_registration": "Not performed: MANIFEST writes are outside the operational boundary; this amendment records the Maintainer directive and does not claim a MANIFEST binding"
+}

@@ -29,6 +29,7 @@
     "validate:release": "node scripts/validate-release.mjs",
     "validate:prose-consistency": "node scripts/validate-validation-prose-consistency.mjs",
     "validate:manifest": "node scripts/build-manifest.mjs --check",
+    "run:gov517": "node qa/gov-517-live-derivation.mjs",
     "build:cypher": "node scripts/validate-cypher-syntax.mjs",
     "validate:cypher": "node scripts/validate-cypher-syntax.mjs --check",
     "validate": "npm run build:graph && npm run validate:graph && npm run validate:semantic-operators && npm run validate:mechanics-thermodynamics-registry --silent && npm run validate:mechanics-thermodynamics-registry-v2 --silent && npm run validate:tiered-photonic --silent && npm run validate:twin-hub --silent && npm run validate:fifth-space-census --silent && npm run validate:d-shadow --silent && npm run validate:gov514 --silent && npm run validate:release && npm run validate:prose-consistency && npm run validate:cypher",

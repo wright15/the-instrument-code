@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1043,
-  "totalBytes": 72655443,
+  "fileCount": 1063,
+  "totalBytes": 72920154,
   "files": [
     {
       "path": ".env.example",
@@ -278,17 +278,17 @@
     {
       "path": "canonical/fivefold-incubator/fifth-space-census-v0.json",
       "bytes": 194194,
-      "sha256": "2830c17a0e1b98ea84a4cf4ba3c88754d56f607cfa9ae761aa18424f1e4372f4"
+      "sha256": "ad857ab957c54773f35047fb7618e8c8d9977991c0450efc56b0b81cd653a1d0"
     },
     {
       "path": "canonical/fivefold-incubator/shadow-ladder-v0.json",
       "bytes": 3927,
-      "sha256": "59071be73744897ee599bd6342da1ee1292a5ea58a1889f0e6cc4782b4dabc3c"
+      "sha256": "81675386f6c73565694bb3fefac88c315369e762dcf836129b7a2d7edf69e693"
     },
     {
       "path": "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
       "bytes": 12396,
-      "sha256": "c817ea5c0894c9bf52ebe4bcbd0ba04a3d9c067a31752307368443e9d44de10b"
+      "sha256": "50b6152356121587ccbf28dab877bc8d9d17b4b895cddc4f7376ddddbe2e3a59"
     },
     {
       "path": "canonical/gov-210-availability-housing.json",
@@ -1153,7 +1153,7 @@
     {
       "path": "orrery/src/generated/field-derivation-bundle.v1.json",
       "bytes": 2783,
-      "sha256": "a7ed1fb3030662a70d397ec6dc35fa2438615d672328eac5f7dfee638bb8ad27"
+      "sha256": "f506b16ba81b5cbe28ce075ee6b9756fc8ddbd695692775586c461f5656d5696"
     },
     {
       "path": "orrery/src/generated/legal-moves.v2.json",
@@ -1307,13 +1307,13 @@
     },
     {
       "path": "package.json",
-      "bytes": 12608,
-      "sha256": "31b3a002eaf7b231da54bd84241fec8c558adb324646fb2fb687da3a2c2c1ad1"
+      "bytes": 12665,
+      "sha256": "33021fe704b174f3a9a305bbd5dc68d5191e78521f14c606aeb9a4df70a879ac"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
-      "bytes": 114715,
-      "sha256": "ce87bff076eb12a3b5223ac7ed4826fa51a9c5ef50db0b8108cd74325060285f"
+      "bytes": 117364,
+      "sha256": "77fa4f276d78d88c6c688e71262702d4497eca08c59e185daf6e8d1c55701784"
     },
     {
       "path": "provenance/NEXT_STEPS.md",
@@ -1418,7 +1418,7 @@
     {
       "path": "qa/fifth-space-census-validation.json",
       "bytes": 16323,
-      "sha256": "a93279bde773ff3a36cc47d3e112c3a0bfa63b866b702aafebb838ead5c3fb6e"
+      "sha256": "c0209e85cf0548f1317b10638abc24a7b15d8f96b8945f2ad064a3738414204d"
     },
     {
       "path": "qa/fivefold-capability-teleology-validation.json",
@@ -1434,6 +1434,96 @@
       "path": "qa/gov-208-vault-context-validation.json",
       "bytes": 1730,
       "sha256": "3216042216d5e0e2ee458d8b74fef842645bccf6f5b5775e1640fb47f0e5dc9f"
+    },
+    {
+      "path": "qa/gov-517-downstream-comparison.mjs",
+      "bytes": 13313,
+      "sha256": "8df98bb7c11c1fa6a617cd55d0086fb92f6914784e317e1df95282e023a19fe7"
+    },
+    {
+      "path": "qa/gov-517-downstream-comparison.test.mjs",
+      "bytes": 23773,
+      "sha256": "feae0238a11e2a12916f8184ecb88c52e0c86aee30c626c78895054e7e704d8a"
+    },
+    {
+      "path": "qa/gov-517-engine-preflight.mjs",
+      "bytes": 25179,
+      "sha256": "e72d57bec67fb4b2e0c7981beab3c52e8322a3d8c2f9303ab11d13e81e2e5bb0"
+    },
+    {
+      "path": "qa/gov-517-engine-preflight.test.mjs",
+      "bytes": 1180,
+      "sha256": "8157c8a08813efed166ac50ef2dbaabaf432cf77cf7f19537b5928ef0acf9a29"
+    },
+    {
+      "path": "qa/gov-517-generative-semantics-registration.json",
+      "bytes": 5481,
+      "sha256": "536f011699f65d36cffef6111f19fd94178649f2485a734707670ee280f101ec"
+    },
+    {
+      "path": "qa/gov-517-input-boundary-registration.json",
+      "bytes": 7524,
+      "sha256": "153bb87ea7710acbc493c2b628aa5e091a55e8149ab2d32fd4cc54bcce9553f8"
+    },
+    {
+      "path": "qa/gov-517-input-registration.mjs",
+      "bytes": 9792,
+      "sha256": "ff266a6e0874d78245f87b253b6c318653958245030ce18a1562252888f36802"
+    },
+    {
+      "path": "qa/gov-517-input-registration.test.mjs",
+      "bytes": 5815,
+      "sha256": "be15bc0cd0fd19f28c4045d32dfb6c5a8e35ff9724e3e12230dda6d6d034caab"
+    },
+    {
+      "path": "qa/gov-517-live-circularity-controls.mjs",
+      "bytes": 7121,
+      "sha256": "09463dae80b3922b3d64043cce2c0d80c2aa0fac9637d7db7fe79374144172e7"
+    },
+    {
+      "path": "qa/gov-517-live-circularity-controls.test.mjs",
+      "bytes": 3119,
+      "sha256": "5f9c0dba6e5cc567e1d8bc6e476bb5d515394423a9bd4151257d76cc2d1dcd27"
+    },
+    {
+      "path": "qa/gov-517-live-derivation.mjs",
+      "bytes": 7623,
+      "sha256": "630669c047ecaec7db3033d58bd7d8bb976cef679a69a3c91131db00fda8252b"
+    },
+    {
+      "path": "qa/gov-517-nc3-boundary-registration.json",
+      "bytes": 2426,
+      "sha256": "bbdcefe343ee7bc5e6de75e67c55010b2ab6e05620c6daee6032d0224f9251e4"
+    },
+    {
+      "path": "qa/gov-517-nc3-registration.test.mjs",
+      "bytes": 1301,
+      "sha256": "858e024c5ee7d526f20c407c1b50e13ef71df9ae397ebb34f5d40026d5c17829"
+    },
+    {
+      "path": "qa/gov-517-preflight-report.json",
+      "bytes": 54184,
+      "sha256": "3e9c3261ef63d2eff11761502e80428fe582ba2c15fc73a20e17af8720cbb241"
+    },
+    {
+      "path": "qa/gov-517-screened-inputs.mjs",
+      "bytes": 8212,
+      "sha256": "ad08291d8ff2a6bec304fae55b6258de5e30e2c72f028b60e37d8f1feea2d933"
+    },
+    {
+      "path": "qa/gov-517-screened-inputs.test.mjs",
+      "bytes": 6246,
+      "sha256": "3adf0d15545554e079f6f5741b1b930dfc971c3eb5b3741cb66b3582203d3259"
+    },
+    {
+      "path": "qa/gov-517-static-screen.mjs",
+      "bytes": 23092,
+      "sha256": "67f78e5748d5a2a06a54203f45d413eae5d5ac52f58cae86006f724e73b24157"
+    },
+    {
+      "path": "qa/gov-517-static-screen.test.mjs",
+      "bytes": 17577,
+      "sha256": "89fdf44af69713cce29766268bf3cdad1904c26ef8b49aeb1862625a66c0b57a"
     },
     {
       "path": "qa/gov-519-scaffolding-receipt.json",
@@ -1518,7 +1608,7 @@
     {
       "path": "qa/orrery-field-derivation-bundle-validation.json",
       "bytes": 1953,
-      "sha256": "62d05ccbc4efc5b5a51a6c1d87f3089b2646eaecd56c19ee0fcf2ef5d811c373"
+      "sha256": "9db91fa82e73e85d72dc361d16b5ea51db6dc7943d8da5186135ce051b644d92"
     },
     {
       "path": "qa/orrery-photonic-overlay-validation.json",
@@ -1533,7 +1623,7 @@
     {
       "path": "qa/pentatonic-binding-audit-closure.json",
       "bytes": 4552,
-      "sha256": "5908cf76dd8f1678306c3b0fcb09e91f9809fbc04dab489db88cf1c4deb2f19f"
+      "sha256": "36e4fe944baeee9fb98b9f2d81315d4694ae7820f3a067a01eecc4d6db3cc435"
     },
     {
       "path": "qa/pentatonic-binding-audit-neo4j-validation.json",
@@ -1558,7 +1648,7 @@
     {
       "path": "qa/shadow-ladder-validation.json",
       "bytes": 5382,
-      "sha256": "29fe5c5624b64252be7db84fbce9fe54b2e8349bd728af10879fa7f8f173def4"
+      "sha256": "9a3bb29f789a1aa3c0d2025309b80cc39c47453d10349886a1c46b0a478b9c41"
     },
     {
       "path": "qa/teleological-physics-registry-validation.json",
@@ -1573,7 +1663,7 @@
     {
       "path": "qa/twin-hub-convergence-validation.json",
       "bytes": 5369,
-      "sha256": "988ee9f2867564402de1726ff8c1eefe9b133ebeca2e1dd83772f9ad77fda553"
+      "sha256": "d6f8d3b7da7ac76da54488c45db853ddda8c939968c15d6a3cdaded9e4e82de5"
     },
     {
       "path": "requirements-orrery-dev.txt",
@@ -2206,6 +2296,11 @@
       "sha256": "892f50b4a3d3b7a45ef0f76d970650c1538cac04d6dabd2c2ef4d0fa1ea79bb4"
     },
     {
+      "path": "scripts/gov-517-d5-derivation-engine.mjs",
+      "bytes": 6103,
+      "sha256": "db4393163b9ed4e6dab231376ed6c3c977b06010ab9fc3056bc46e45f8e5740d"
+    },
+    {
       "path": "scripts/import-governor-graph.mjs",
       "bytes": 5727,
       "sha256": "33f5b89f9219b624fe62fe937c74582155457d3e028eeabba380df4443ab555e"
@@ -2682,8 +2777,13 @@
     },
     {
       "path": "scrum/GOV-517-d5-signature-derivation-definition.md",
-      "bytes": 10308,
-      "sha256": "c538211362b88aae780338e865181e5cc27f5a1036f91d115d922dbec901f5c1"
+      "bytes": 8454,
+      "sha256": "6b18028838eae7c95a971715797c06cbe3ccb2088ebe72a80a6010073c925d01"
+    },
+    {
+      "path": "scrum/GOV-517-implementation-spec-draft.md",
+      "bytes": 34798,
+      "sha256": "a418a6962f86f6e49dfaae922cf488544ccde8e1d693f63b55a51891dac4ea9f"
     },
     {
       "path": "scrum/GOV-518-ring-constraint-forcing-enumeration.md",

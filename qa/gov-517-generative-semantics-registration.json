@@ -1,0 +1,63 @@
+{
+  "boundary": "GOV-517",
+  "registration_id": "GOV-517-G1-G5-code-review-addendum",
+  "authority": "Maintainer Generative Semantics Registration G1-G5 directive",
+  "frozen_specifications_modified": false,
+  "live_derivation_authorized": true,
+  "G1": {
+    "space": "Ordered anchor pairs within each of the A0, A1, A2 tiers over the registered 21 I4 anchors, evaluated at each candidate office 0 through 6",
+    "tuple": ["tier", "child_office", "pair", "witness_class"],
+    "identity": "Office-resolution and witness class, not ledger stateId; state IDs are used only for structural-edge joins",
+    "enumeration": "Includes diagonal pairs, which both predicates reject; 3 * 7 * 7 * 7 = 1029 candidates, fixed finite enumeration, no heuristic search"
+  },
+  "G2": {
+    "T1_a": "Symmetric kernel only; office(p) = k-1 mod 7 and office(q) = k+1 mod 7",
+    "T1_b": "The selected I4 fifth masks have intersection cardinality exactly 5",
+    "conjunction": "T1_a AND T1_b; no global mask-overlap sweep substitutes for the selected pair check",
+    "NC1": "Kernel [-2,+1] is not the registered symmetric operator and produces no T1 witnesses"
+  },
+  "G3": {
+    "T2_a": "Traverse two distinct CONSTRUCTS edges from distinct same-tier parents sharing a child anchor in the next A tier",
+    "T2_b": "Both traversed edges must match the independently held I1 registered step records by edge ID, parent, child, and parent tier",
+    "distance2_provenance": "Comes from registered co-parenthood transitions; no office-ring shortcut or mask overlap is invoked",
+    "ordered_pairs": "Both parent orderings are traversed; neither is silently normalized to T1 orientation",
+    "corruption": "Non-CONSTRUCTS transitions produce no T2 witnesses, without changing I1 or I4"
+  },
+  "G4": {
+    "office_convergence": "Office k is generated iff at least one T1 and one T2 witness resolve to k, without requiring identical pair or tier",
+    "midpoints": "All office-pair structures carried by either route at convergent offices; no selected-only pair output",
+    "window_control": "The standing T3 window invariant is checked separately over all 49 (j,d) cases. Width 6 invalidates T3-PASS without rewriting the G4 office-membership predicate",
+    "mask_control": "Non-A-tier or non-anchor provenance prevents an unambiguous T3 assignment",
+    "empty_result": "Empty convergence is materialized; T3-PASS requires a nonempty unambiguous assignment and the window invariant"
+  },
+  "G5": {
+    "stage": "Canonical row classification occurs strictly downstream of a complete materialized generation seal",
+    "classification": ["primary-only", "secondary-only", "both", "neither"],
+    "row_resolution": "Compare observation office coordinate against primary and secondary witness office coordinates independently",
+    "raw_membership": "Harness per_state_routes retains raw witness-string membership; it is not substituted for canonical-row classification"
+  },
+  "harness_encoding": {
+    "coordinate": "Registered Z7 office indices; decimal strings 0 through 6 at the JSON boundary",
+    "witness": "JSON string of [tier, child_office, [parent_office_p,parent_office_q], primary_or_secondary]",
+    "ordering": "Unique full serialized witness strings sorted by JavaScript code-unit order; no source-order dependence",
+    "generation.t3_assignment": "Map from decimal office string to JSON string of the complete sorted unique [tier,[parent_office_p,parent_office_q]] structures",
+    "generation.t3_midpoints": "Sorted unique JSON strings of [child_office,tier,[parent_office_p,parent_office_q]]",
+    "neutral_encoding_only": "Serialization is lossless; ordered parent pairs are never swapped and witness classes are never erased"
+  },
+  "integer_utility_allowlist": {
+    "shared_named_helpers": [],
+    "rationale": "No named helper is needed by both route call trees; z7 and maskOverlap are T1-private, stepRegistered is T2-private",
+    "shared_intrinsics": ["BigInt"],
+    "intrinsic_justification": "Exact integer conversion only; collection intrinsics may not be shared by route roots"
+  },
+  "engine_literal_allowlist": {
+    "integers": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "21"],
+    "integerArrays": [["0", "1", "2", "3", "4", "5", "6"], ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]],
+    "array_justification": "Exhaustive ascending Z7 coordinate traversal and Z12 mask-bit traversal only; scalar allowlisting does not authorize arbitrary constant tuples",
+    "integer_justification": "Z7 coordinates and interval endpoints (0-7); Z12 bit indices (0-11); symmetric unit offsets; distance-2 overlap cardinality 5; registered three-tier anchor count 21",
+    "strings": ["A0", "A1", "A2", "anchor", "CONSTRUCTS", "primary", "secondary"],
+    "string_justification": "Registered A-tier/anchor provenance, registered edge class, and G1 witness route classes; no observed-state identifiers or office-name constants"
+  },
+  "epistemic_status": "G1-G5 are maintainer-registered semantics with receipt-lineage but no independent machine verification at registration time; the pre-flight control suite (NC-1, I2-corruption, NC-3, dissociation matrix) is their first verification, and control-exposed flaws halt for re-registration.",
+  "defect_provenance": "G1-G5 bridge claim-level definitions with operational engine logic. Prior tooling-only green tests did not verify target semantics and were not reported as a green pre-flight."
+}

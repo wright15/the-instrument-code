@@ -1,0 +1,1476 @@
+{
+  "boundary": "GOV-517",
+  "phase": "Phase 2 fixture pre-flight",
+  "status": "green",
+  "category": null,
+  "reason": null,
+  "controls_status": "green",
+  "all_controls_green": true,
+  "verdict_eligible": false,
+  "disposition": null,
+  "prior_halts_cleared_by": [
+    "I1-I4 input registration",
+    "Authoritative structuralEdges CONSTRUCTS selector",
+    "G1-G5 generative semantics registration"
+  ],
+  "engine_implemented": true,
+  "live_derivation_executed": false,
+  "canonical_observation_comparison_executed": false,
+  "canonical_input_generation_executed": false,
+  "detection_only_canonical_reads": true,
+  "input_registration": {
+    "status": "green",
+    "binding": {
+      "i1": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+      "i2": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+      "i3": null,
+      "i4": {
+        "ledger": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+        "census": "ad857ab957c54773f35047fb7618e8c8d9977991c0450efc56b0b81cd653a1d0"
+      },
+      "manifest_binding": "per-file MANIFEST.json and CHECKSUMS.sha256 entries",
+      "envelope_sha256": "af20e68108e3569aa78933b67f6bcbbfd951824a48b5cc85a077de66066beb46"
+    },
+    "i1_count": 28,
+    "i2_count": 28,
+    "i3": null,
+    "i4_count": 21
+  },
+  "semantics_registration": "qa/gov-517-generative-semantics-registration.json",
+  "code_verification_signatures": {
+    "static_ast_call_graph": {
+      "status": "green",
+      "shared_intrinsics": [
+        "BigInt"
+      ],
+      "integer_intrinsic_allowlist": [
+        "BigInt",
+        "Number.isSafeInteger"
+      ],
+      "compliant": true,
+      "reachability": {
+        "check_T1": [
+          "check_T1",
+          "maskOverlap",
+          "z7"
+        ],
+        "check_T2": [
+          "check_T2",
+          "stepRegistered"
+        ],
+        "intersection": [],
+        "registered_allowlist": [],
+        "compliant": true
+      },
+      "call_trees": {
+        "check_T1": {
+          "function": "check_T1",
+          "calls": [
+            {
+              "function": "maskOverlap",
+              "calls": []
+            },
+            {
+              "function": "z7",
+              "calls": []
+            }
+          ]
+        },
+        "check_T2": {
+          "function": "check_T2",
+          "calls": [
+            {
+              "function": "stepRegistered",
+              "calls": []
+            }
+          ]
+        }
+      },
+      "call_graph": {
+        "check_T1": [
+          "maskOverlap",
+          "z7"
+        ],
+        "z7": [],
+        "maskOverlap": [],
+        "check_T2": [
+          "stepRegistered"
+        ],
+        "stepRegistered": [],
+        "windowCheck": [],
+        "check_T3": [
+          "windowCheck"
+        ],
+        "generate": [
+          "check_T1",
+          "check_T2",
+          "check_T3"
+        ]
+      },
+      "intrinsics": {
+        "by_function": {
+          "check_T1": [
+            "BigInt"
+          ],
+          "z7": [
+            "BigInt"
+          ],
+          "maskOverlap": [
+            "BigInt"
+          ],
+          "check_T2": [
+            "BigInt"
+          ],
+          "stepRegistered": [],
+          "windowCheck": [
+            "BigInt"
+          ],
+          "check_T3": [
+            "Array.prototype.push",
+            "BigInt"
+          ],
+          "generate": [
+            "Array.prototype.push",
+            "BigInt"
+          ]
+        },
+        "by_route": {
+          "check_T1": [
+            "BigInt"
+          ],
+          "check_T2": [
+            "BigInt"
+          ]
+        }
+      },
+      "modules": [
+        {
+          "path": "/home/erick/projects/integrated-release/scripts/gov-517-d5-derivation-engine.mjs",
+          "sha256": "db4393163b9ed4e6dab231376ed6c3c977b06010ab9fc3056bc46e45f8e5740d",
+          "imports": {}
+        }
+      ],
+      "trusted_tooling": {
+        "parser": {
+          "name": "@babel/parser",
+          "version": "7.29.7",
+          "sha256": "201724d1415df7749087d9d6e88af50f2bcafe2eb68dfbe9347f49d3361ff426"
+        },
+        "scope": "Scanner and parser are trusted tooling; no zero-FPU claim applies to them."
+      }
+    },
+    "i3_quarantine": {
+      "compliant": true,
+      "load_time_null_asserted": true,
+      "nonempty_rejected": true,
+      "engine_has_no_i3_identifier": true,
+      "generation_parameters": [
+        "steps",
+        "transitions",
+        "anchors",
+        "kernel",
+        "width"
+      ]
+    },
+    "downstream_separation": {
+      "engine_imports": [],
+      "engine_filesystem_reads": 0,
+      "comparison_closure": {
+        "status": "green",
+        "path": "/home/erick/projects/integrated-release/qa/gov-517-downstream-comparison.mjs",
+        "sha256": "8df98bb7c11c1fa6a617cd55d0086fb92f6914784e317e1df95282e023a19fe7",
+        "imports": [
+          "node:crypto",
+          "node:util"
+        ],
+        "generation_import_reachable": false,
+        "filesystem_capability": false
+      },
+      "complete_generation_sealed_before_reference_read": true,
+      "premature_reference_reads": 0,
+      "t3_materialized_fields": [
+        "generation.t3_assignment",
+        "generation.t3_midpoints"
+      ],
+      "fixture_four_cells": [
+        "both",
+        "neither",
+        "primary-only",
+        "secondary-only"
+      ],
+      "canonical_adapter_status": "Deferred to live comparison registration; no canonical projection selector invented"
+    }
+  },
+  "ast_import_closure_screening": {
+    "status": "green",
+    "closure_root": "scripts/gov-517-d5-derivation-engine.mjs",
+    "scope": "Entire pure engine module, every declaration and reachable call; trusted I/O, serializer, parser and QA runners are outside the zero-FPU program",
+    "integer_arrays_preregistered": true,
+    "input_schema_screen": "green",
+    "bound_projection_screen": "green"
+  },
+  "negative_controls": {
+    "nc1": {
+      "status": "rejected",
+      "t1_pass": false,
+      "clean_specificity_pass": true
+    },
+    "i2_corruption": {
+      "status": "rejected",
+      "t2_pass": false,
+      "clean_specificity_pass": true
+    },
+    "nc2": {
+      "status": "rejected",
+      "synthetic_transform_matrix": [
+        {
+          "family": "complements",
+          "source_class": "seat-map",
+          "fixture_sha256": "61cedf2d1ec76b89e8b07ecc8264a61c4a60d0460a6e50b29945c718a8d7ae0e",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "complements",
+          "source_class": "run-mask",
+          "fixture_sha256": "b7151e193cb1c83b9dabee9e4bcd83700e051587e7f517ee1635832837fc4b7a",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "complements",
+          "source_class": "maxrun-sequence",
+          "fixture_sha256": "fde5e7746a26bf6b71c85949aa52482c782906f229eb694884e3f2f58a1e81ef",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "complements",
+          "source_class": "containment",
+          "fixture_sha256": "97b1a4fc7254bad948ff0e75efdc8d0f6d7e5acc9072e81c93b998dc72e1c174",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "complements",
+          "source_class": "twin-hub-conclusion",
+          "fixture_sha256": "c3ce1019d83d1110cc6510b90be88e38c357bef869daa528c0ce6960fef1674e",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "complements",
+          "source_class": "candidate-value",
+          "fixture_sha256": "77493eea172d2397a2502e353296173be73b6da87404215987c742897ae9c182",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "complements",
+          "source_class": "scalar-result",
+          "fixture_sha256": "5fd011a35fee525c4694727c650c28fd162cd783a5314db450a092708f04673e",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "per-tier-differences",
+          "source_class": "seat-map",
+          "fixture_sha256": "f0b372a94523be01bfdefbfee075356c9578676fe8a21b9a932d7957fa2fcc0c",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "per-tier-differences",
+          "source_class": "run-mask",
+          "fixture_sha256": "7fd3cfcfc2dc926eb38b7e7b83a4adf57b2c55c31e479b92217b1496a0eb81a3",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "per-tier-differences",
+          "source_class": "maxrun-sequence",
+          "fixture_sha256": "f3b2ef691f7b051b03daf5a15c8aea9d8b8e7e2ef31915b7751f97ca7cb04f36",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "per-tier-differences",
+          "source_class": "containment",
+          "fixture_sha256": "60cf424c8170873f08538cbbb1d1d01e97cc44213566fa49ec4cb71d293fe849",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "per-tier-differences",
+          "source_class": "twin-hub-conclusion",
+          "fixture_sha256": "295b26f0bcb0da97fb1535e77b8fdcab3000a4ec01f8869a3a48b85510b944ac",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "per-tier-differences",
+          "source_class": "candidate-value",
+          "fixture_sha256": "fb2c4fc09732b6aa8b2149f73e06f92d302725e07421cbba7a2c8563ca75b191",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "per-tier-differences",
+          "source_class": "scalar-result",
+          "fixture_sha256": "4b8a5672a3c8fe73cf2a371244b4b9cf49f5e964ce557dce4967497a82ef98f0",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "reversals",
+          "source_class": "seat-map",
+          "fixture_sha256": "1379c0442857510fbdd02c3f5d2caa9d0e24184729b50bf4690ace2263f246cf",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "reversals",
+          "source_class": "run-mask",
+          "fixture_sha256": "db83b0ec325c6fa45d0990da3e50870e318bbe7b8669239fb5df5f364a93686d",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "reversals",
+          "source_class": "maxrun-sequence",
+          "fixture_sha256": "5b253b726f32d1d22c31182a6651bf025241ed79014ca4ba5705045cfe226b65",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "reversals",
+          "source_class": "containment",
+          "fixture_sha256": "63f017d57b768bb0919d22583cbc28c5afbf8b2852898a3547e563b040517e95",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "reversals",
+          "source_class": "twin-hub-conclusion",
+          "fixture_sha256": "34fd028ab554efb6cc4c2b1e67d80550e215ce5837908a303764d30feebeb3e9",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "reversals",
+          "source_class": "candidate-value",
+          "fixture_sha256": "f93eb661dfe08cbd0b7d023182217da1da2c4b45af76878085b77c049f567094",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "reversals",
+          "source_class": "scalar-result",
+          "fixture_sha256": "c863d9deac4ccdf13857d1e0d52e80c33d4db5cc02df62b9d0017444a3c25693",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "reorderings",
+          "source_class": "seat-map",
+          "fixture_sha256": "358a444c20a88381ff0b768c57bb2ab345dc5243a480bf1622209fba74ac6c10",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "reorderings",
+          "source_class": "run-mask",
+          "fixture_sha256": "3c19e94df7eee0054969eb4cb95f83fc390dd905fccfe824e8d4c12c20a469af",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "reorderings",
+          "source_class": "maxrun-sequence",
+          "fixture_sha256": "0f016108350d809d4d296a1519091db744fef9095f7621780e490982705ec8b4",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "reorderings",
+          "source_class": "containment",
+          "fixture_sha256": "0e73785fb987a1ae7de0ab9d907cc22aebe6fd874d701de92b1ea8458d1a9158",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "reorderings",
+          "source_class": "twin-hub-conclusion",
+          "fixture_sha256": "d92401ab5b24bb914e667d67d11e4cd4f25000ac37d14ec29034dac2c9ab7196",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "reorderings",
+          "source_class": "candidate-value",
+          "fixture_sha256": "871d2d4a2e60848579e9f07099233c88ba6896f18e47011256dffcc9dfa6383c",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "reorderings",
+          "source_class": "scalar-result",
+          "fixture_sha256": "1fc09c490f8b0e35168a289f79df72b0643e15a244b0404d0287e1ddb8b4747f",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "dual-encodings",
+          "source_class": "seat-map",
+          "fixture_sha256": "6e51a8642614a252409aedfb5eb909a6ed5753b20263165034bfb1d836b18a9b",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "dual-encodings",
+          "source_class": "run-mask",
+          "fixture_sha256": "e6ad54b3874d1504353a50f4bcd10e3ac8ae87820d3d297ac743055a6c805978",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "dual-encodings",
+          "source_class": "maxrun-sequence",
+          "fixture_sha256": "c955e980f5a12d5c5e9253b9d8f058baea2cef46d0bdd5ffd8d2bf1caacdb675",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "dual-encodings",
+          "source_class": "containment",
+          "fixture_sha256": "5c1c7990753afff6e4db870e910bdfd005c2710127b1ff1ac5bb224084080752",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "dual-encodings",
+          "source_class": "twin-hub-conclusion",
+          "fixture_sha256": "b09006a840fde320b131934bfa199184a886d29b0df2629a8fdb851c6618b612",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "dual-encodings",
+          "source_class": "candidate-value",
+          "fixture_sha256": "0e49cce1af3ce5a88ab8d3711db1706960d71a5a42715407fc6fb824ac2329ac",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "dual-encodings",
+          "source_class": "scalar-result",
+          "fixture_sha256": "082b10d7c19c62998126f405c64f5db701c5002c5381d3e2aca88fbf67c77d35",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "paraphrases",
+          "source_class": "seat-map",
+          "fixture_sha256": "aa5d9af0b9e417c009d9309238ff2c010fac39cff487a0d2d5dec5bf0413b78f",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "paraphrases",
+          "source_class": "run-mask",
+          "fixture_sha256": "43ecef45f63d96b4f28261755746c6096447d1829dd4a8faa576db1236662f85",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "paraphrases",
+          "source_class": "maxrun-sequence",
+          "fixture_sha256": "cfa58ff05ddc98f779a118b555d37f79ea87ae0c5897a6c058f4ee62e15883bd",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "paraphrases",
+          "source_class": "containment",
+          "fixture_sha256": "be7cd46ee795d940c74975d6155a21cdff11e75afe3c289d4d156a49d1302f49",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "paraphrases",
+          "source_class": "twin-hub-conclusion",
+          "fixture_sha256": "a77cf9358f3195c214ae2cd8392787a23b070caae82123fc9c2ac87f050a90b1",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "paraphrases",
+          "source_class": "candidate-value",
+          "fixture_sha256": "aa89645ef6c4bf6d421bcebea936a87361592f7db753785c6f28a03a72dd4b2a",
+          "static": "invalid",
+          "runtime": "invalid"
+        },
+        {
+          "family": "paraphrases",
+          "source_class": "scalar-result",
+          "fixture_sha256": "6b48036b5b3a9f113760f40fa43bf6890efcf88ee89088877d0674a1d520efcd",
+          "static": "invalid",
+          "runtime": "invalid"
+        }
+      ],
+      "live_mask_transform_intercepts": 175,
+      "live_values_persisted": false,
+      "live_carrier_audit": {
+        "status": "green",
+        "bindings": [
+          {
+            "path": "canonical/universal-network-data.json",
+            "sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc"
+          },
+          {
+            "path": "canonical/universal-heptatonic-ledger.json",
+            "sha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d"
+          },
+          {
+            "path": "canonical/fivefold-incubator/fifth-space-census-v0.json",
+            "sha256": "ad857ab957c54773f35047fb7618e8c8d9977991c0450efc56b0b81cd653a1d0"
+          },
+          {
+            "path": "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
+            "sha256": "50b6152356121587ccbf28dab877bc8d9d17b4b895cddc4f7376ddddbe2e3a59"
+          },
+          {
+            "path": "canonical/fivefold-incubator/d-shadow-complement-span-v0.json",
+            "sha256": "91fead6b1e637ed6dd82dc4f47bd3c357abfee6958aabfe28406399414a6d34c"
+          },
+          {
+            "path": "canonical/fivefold-incubator/d-tier-interleaving-check-v0.json",
+            "sha256": "5ad6c3c433e2b4b0216d3715afe91405a88b9288ea3caae37f6008b2c53a2723"
+          },
+          {
+            "path": "canonical/fivefold-incubator/d-shadow-uniqueness-check-v0.json",
+            "sha256": "389f98e01e54e7e0f88c7b36fad0b321662904db15c936815a82630461eb4d02"
+          }
+        ],
+        "cases": [
+          {
+            "source_class": "d5-seat-rows",
+            "family": "complements",
+            "sha256": "0e56bed501964210772c56e8ca210d34ed0c7f22f658dbc4da0612f001afe582",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-seat-rows",
+            "family": "per-tier-differences",
+            "sha256": "8ce98edfb277bbc3a90d1c66d8333cf6d0440f70c5e4dad210a948a0fd69ace6",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-seat-rows",
+            "family": "reversals",
+            "sha256": "08b870ae2bb739a4da0790176279297f961389928968c29372c68b45665685dd",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-seat-rows",
+            "family": "reorderings",
+            "sha256": "6208f70f49f56055cfb88b20b680a29664a2942c5abfb17a9c1927c7e63caa07",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-seat-rows",
+            "family": "dual-encodings",
+            "sha256": "212fb417993cd39971453a37d22f28f089e404c29b18043335176336783f6887",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-seat-rows",
+            "family": "paraphrases",
+            "sha256": "3e8b0b2eec7a84269ef9fb87622ae895ddb96fe80d06ab546a8b6a0aa4522543",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d4-d5-audit-rows",
+            "family": "complements",
+            "sha256": "ed6f2450025306a6da5df4a8d1cc4ef394062fab50f05bb5344295829bfaf31c",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d4-d5-audit-rows",
+            "family": "per-tier-differences",
+            "sha256": "5ac8855d341b1f9e41a0c7aeb4659f5148f8c1b9af65c483091a51a96ac7c1f3",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d4-d5-audit-rows",
+            "family": "reversals",
+            "sha256": "9cc10096eda6130fa8001799d7cdcf3365700e6c0cfb9f76075bfb0cf6157ec7",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d4-d5-audit-rows",
+            "family": "reorderings",
+            "sha256": "7d9a51729922e13cee9598a644b6ca9109d473fc606a85a0ad83d6fdeda7dac1",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d4-d5-audit-rows",
+            "family": "dual-encodings",
+            "sha256": "c8661c5219d0b7aea8b72111f3cd934763e1e3a511ccbf154dee7e331dbc6820",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d4-d5-audit-rows",
+            "family": "paraphrases",
+            "sha256": "a4b0302189e9f1d274e32a90b759af7b1c8454271462cbe6fbf29acecd86dcbd",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-ledger-rows",
+            "family": "complements",
+            "sha256": "ea48a7df95f026a7688add04c3359b1fb72b1a22d5eda862b6c11b30d239196e",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-ledger-rows",
+            "family": "per-tier-differences",
+            "sha256": "81aae229a823461f98dd160dc3874f5f0d93ac5b8689e35fc9b7d252466908f5",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-ledger-rows",
+            "family": "reversals",
+            "sha256": "740e662e5cd96ef5ffa433b979ee27bccf3f4fbf540483e3bb2384c75d78f6a1",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-ledger-rows",
+            "family": "reorderings",
+            "sha256": "a9de690f4fc1cc1e189ba433c47c4b44cc4ed4d3b97e8dc45112dc52cda25545",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-ledger-rows",
+            "family": "dual-encodings",
+            "sha256": "cfb6d7ef74163653ddd818168e67ab69efbdab4353ce5188fa28e3443bc97bca",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-ledger-rows",
+            "family": "paraphrases",
+            "sha256": "724dd3e44d01bfb35054b6f8d9d9d7bdb00ad00556a2bb82e09970f2ac33d92f",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-fifth-masks",
+            "family": "complements",
+            "sha256": "8b7e46cdcb45819a66a9ebe2b61db21cc75b4cba42790202e783b4389d09ef32",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-fifth-masks",
+            "family": "per-tier-differences",
+            "sha256": "3bad529467fe7a6af4b04d32f3bf18ad612a28626ca1f39e8a6acdb6e1136189",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-fifth-masks",
+            "family": "reversals",
+            "sha256": "cb3ba493fd9c167be21cc662e7d08cc4dbd31648d8b45dad8431ca24a7675513",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-fifth-masks",
+            "family": "reorderings",
+            "sha256": "c05861f3e17cac288223d786f4ed27fc35ca8afab88b7608379a344f37612bfc",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-fifth-masks",
+            "family": "dual-encodings",
+            "sha256": "077f133f07d98578d7f809372c463bf7f32c4d1cdb13f7547aa4a384354b96f8",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-fifth-masks",
+            "family": "paraphrases",
+            "sha256": "487cc76f5afd7ed28bc61ac9cb3c587503c7929d57014d656c00ee40bb55e70d",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "twin-hub-conclusions",
+            "family": "complements",
+            "sha256": "c293730ccfc22be9cc8a676ca18573850b063927f38bc36089d9b8a31840aafc",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "twin-hub-conclusions",
+            "family": "per-tier-differences",
+            "sha256": "21e660dee824937bddfc62b5a4055aa979da0453b76e595bfc452f224e9188d2",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "twin-hub-conclusions",
+            "family": "reversals",
+            "sha256": "944399482df0960335c746a6b37871946fc4e7dff0e671832b4c899c75a0d725",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "twin-hub-conclusions",
+            "family": "reorderings",
+            "sha256": "5d9459dad41449166da344e93e5160139203995c88247b00fc345cc041d6d10c",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "twin-hub-conclusions",
+            "family": "dual-encodings",
+            "sha256": "c1fe056e155985ab1e60de6a9cc50754f30fd7b25219d50a7d1be490000e2fa4",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "twin-hub-conclusions",
+            "family": "paraphrases",
+            "sha256": "cda63a7820cab8c7961e30f7153a0ca6e567cde64925754f69dc595057927865",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-run-masks",
+            "family": "complements",
+            "sha256": "f599326ff534eccf05d0ba741cab07418cf974d646022d663d8999a95d940128",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-run-masks",
+            "family": "per-tier-differences",
+            "sha256": "4d74e4735cc12aadb5b11331ee2c6e8c1ef5758ff15f6f7dad2fdef62638b3b3",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-run-masks",
+            "family": "reversals",
+            "sha256": "d3a3a6a11373b1ed54e1972c5b4cb6fcaf469dc1f70e6c9cd3dd3e2766039942",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-run-masks",
+            "family": "reorderings",
+            "sha256": "6a5e41f6a1c722e0c5384dc7df82ebf62f4c47ed78d484fa7ed9161afa39818c",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-run-masks",
+            "family": "dual-encodings",
+            "sha256": "24a80112f5182d1fef01eab79ca02751b479566d301298b73816f7951493c99b",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d5-run-masks",
+            "family": "paraphrases",
+            "sha256": "574191db0b8404e105869611fd7f61bc970a5086093ea34953997bb1a7c3de29",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d-channel-maxrun-sequence",
+            "family": "complements",
+            "sha256": "55c0cd03e0d549da3eaea1d998513eba1332cb0a8f6986afab423195409a48f6",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d-channel-maxrun-sequence",
+            "family": "per-tier-differences",
+            "sha256": "02a66538fcbf1a642b1ab51e35a92fa71ef7d0a3b849636bace345990dc93d1d",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d-channel-maxrun-sequence",
+            "family": "reversals",
+            "sha256": "9ca340e286b8181c5680fd7691bb794147cb8337582dc1a8cd1e75b67cd85bcf",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d-channel-maxrun-sequence",
+            "family": "reorderings",
+            "sha256": "52327d6e5c1768022e681c72b4c8841173c38b0bc804b2ad4a3db72fb0047140",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d-channel-maxrun-sequence",
+            "family": "dual-encodings",
+            "sha256": "c8b759f81583cae5c9c3789dedd1a48ebfac64cf5bf575ae3b616d9e4c85bdda",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "d-channel-maxrun-sequence",
+            "family": "paraphrases",
+            "sha256": "f268a89feb760b93a4bd2e460d3b8042dd1f46bed163b4935686073f7f15450d",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "containment",
+            "family": "complements",
+            "sha256": "84f640c4369845796088c543b3a995e4e3bffccd034dea5e4e0eb81d2813aa58",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "containment",
+            "family": "per-tier-differences",
+            "sha256": "18d1e413efa189a886b2816c3f048149478dcb036942e606cdf481f669f0c367",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "containment",
+            "family": "reversals",
+            "sha256": "1a2038856d6dbc4b482f92ff30efca522d0d51a4b2d98275d971333fee0c0eb2",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "containment",
+            "family": "reorderings",
+            "sha256": "abfd6cc53ebbfc8e792b029e16d64261fdf53cde8c26959fe522bae8997769c6",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "containment",
+            "family": "dual-encodings",
+            "sha256": "7c88aeaacb3bc712934a168ffa2a03dd1ae05e36bbbd0c56242b0110e61c8fe2",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "containment",
+            "family": "paraphrases",
+            "sha256": "9fe929fc0ecc8242ce412b793efc22565e8cc645ab2a56b48f550d3c1e3035ef",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "intersection",
+            "family": "complements",
+            "sha256": "9ef12eb5e8aaa39220b27c9c36ae2f5f3598e8398b449fbd903080d5254fb7a3",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "intersection",
+            "family": "per-tier-differences",
+            "sha256": "00b2ab9ba73466aebe6de0691d29516a6ae32b6a44cd4461fe0012953d9d929a",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "intersection",
+            "family": "reversals",
+            "sha256": "458daf2284b264cf37c8ee0886b89a1b937e93dae9c86ef8a0b852e8bcd982a2",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "intersection",
+            "family": "reorderings",
+            "sha256": "f520c88c73c9aa6c62d1f00b3d1e614d99785e910a7c3bf2a4e9d3bab54ccc96",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "intersection",
+            "family": "dual-encodings",
+            "sha256": "a4e607c20045638ab4733ae3e32bb0195c47e0a4946bb59169a9a850397b1ec4",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "intersection",
+            "family": "paraphrases",
+            "sha256": "aeafcd39bf396eda18a26bb646cc909e0e120156aaed371fe13b81ac16b264b8",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "gov514-scalar-result",
+            "family": "complements",
+            "sha256": "37be9103d075937ce309007b3d4fc5f8fc9e50b02bdd70661ba9128ddf137c39",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "gov514-scalar-result",
+            "family": "per-tier-differences",
+            "sha256": "10cb4792c01e8c9b4ec7c25fc94dbbae1506f0ce0eb89ba01bfd661a0e3dab23",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "gov514-scalar-result",
+            "family": "reversals",
+            "sha256": "c0dd15a90c58e33b1c3669b1e8131df0708f20b73c779432957bd90044514470",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "gov514-scalar-result",
+            "family": "reorderings",
+            "sha256": "831aa562360cec2f0e1712189fb23eac68cd8a03db344e062ffd20a36412147a",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "gov514-scalar-result",
+            "family": "dual-encodings",
+            "sha256": "f3f91bc9d0c27fe54179ed047ccebd74884c2c91baf1974e624fd6925c442ded",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "gov514-scalar-result",
+            "family": "paraphrases",
+            "sha256": "bb060e89640c0336219e7e28d5c9b58dfdaf1dcc98e0928cf93ee03e709bb9f4",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "candidate-value-record",
+            "family": "complements",
+            "sha256": "65e64c670a1b9bb90760797fcac544163875f4763d59a7bb153aab31dd4aa470",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "candidate-value-record",
+            "family": "per-tier-differences",
+            "sha256": "26b4daefb47a55b245de55dc60d99aa75f5b4a2b690b6c0028f9cafe824a0cbd",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "candidate-value-record",
+            "family": "reversals",
+            "sha256": "f1596f61b52d08dea3becdcc03e3e5669cccf435ec43c8e1956d341950c8a438",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "candidate-value-record",
+            "family": "reorderings",
+            "sha256": "f22e14c18a433b3df694c17fc53c9d8c18a458239f2a06ffe3f8bdc2cfafb91c",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "candidate-value-record",
+            "family": "dual-encodings",
+            "sha256": "90c752e70c61db7acaddbdee80ddd9044fcde7ca277cd4d2b7dc265a887c5acf",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          },
+          {
+            "source_class": "candidate-value-record",
+            "family": "paraphrases",
+            "sha256": "8afd747baccee2dbd76b73501e3f3c9731ac12216f9e09bda6ebc87074f3215f",
+            "static_intercepted": true,
+            "runtime_intercepted": true
+          }
+        ],
+        "counts": {
+          "bindings": 7,
+          "source_classes": 11,
+          "families": 6,
+          "cases": 66,
+          "value_only_cases": 3,
+          "static_intercepts": 69,
+          "runtime_intercepts": 138,
+          "skipped_classes": 0
+        }
+      },
+      "file_backed_adversarial_self_test": true,
+      "temp_files_removed": true,
+      "coverage_note": "All registered excluded artifact classes have provenance-preserving live carrier controls, plus value-only mask/sequence and bound-projection tamper cases; no universal scalar blacklist is claimed."
+    },
+    "nc3": {
+      "status": "rejected",
+      "clean_cases": 49,
+      "clean_failures": 0,
+      "mutant_cases": 49,
+      "mutant_failures": 49,
+      "window_invariant_hold": false,
+      "t3_pass": false,
+      "g4_office_membership_preserved": true
+    },
+    "nc4": {
+      "status": "rejected",
+      "non_a_tier_mask_rejected": true,
+      "non_anchor_mask_rejected": true,
+      "tested_with_nonempty_route_witnesses": true,
+      "convergence_unambiguous": false
+    },
+    "g4_cross_pair_specificity": {
+      "pass": true,
+      "differing_pairs_and_tiers_converge_by_office": true,
+      "complete_pair_structures_retained": true
+    },
+    "differential_dissociation_matrix": {
+      "status": "green",
+      "mode": "exact_serialized_set_byte_equality",
+      "rows": [
+        {
+          "mutation": "NC-1",
+          "T1": {
+            "pass": false,
+            "rejected": true
+          },
+          "T2": {
+            "byte_identical_to_baseline": true,
+            "baseline_sha256": "4e7e194fca54b41c923d3a6c644a94a9dd1d503c1bb511431b2d05dd9adaf8b9",
+            "mutated_sha256": "4e7e194fca54b41c923d3a6c644a94a9dd1d503c1bb511431b2d05dd9adaf8b9"
+          }
+        },
+        {
+          "mutation": "I2-corruption",
+          "T1": {
+            "byte_identical_to_baseline": true,
+            "baseline_sha256": "d072b3d12dc7acf505be8de5829809386f38e878fd34b4ff6c7497f4b8ea7dc4",
+            "mutated_sha256": "d072b3d12dc7acf505be8de5829809386f38e878fd34b4ff6c7497f4b8ea7dc4"
+          },
+          "T2": {
+            "pass": false,
+            "rejected": true
+          }
+        }
+      ]
+    }
+  },
+  "determinism": {
+    "arithmetic": "BigInt only in all engine functions; AST-verified",
+    "single_pass_per_fixture": true,
+    "candidate_count_per_admissible_fixture": 1029,
+    "rng_time_locale_dependencies": false,
+    "build_twice_byte_identical": true,
+    "reordered_input_byte_identical": true
+  },
+  "fixture_runs": [
+    {
+      "input_sha256": "c895cce59f04f6b300bb71418a4116b74b64e36c445c0f942e6de4d3f8c43bfb",
+      "kernel": [
+        -1,
+        1
+      ],
+      "width": 7,
+      "candidate_count": "1029",
+      "generation_sha256": "87e514914a5907fc9ea5fddac112b698406bfd05c8aa0da21dc17c4917d9f2be",
+      "t1_sha256": "d072b3d12dc7acf505be8de5829809386f38e878fd34b4ff6c7497f4b8ea7dc4",
+      "t2_sha256": "4e7e194fca54b41c923d3a6c644a94a9dd1d503c1bb511431b2d05dd9adaf8b9",
+      "t3_sha256": "bbc5b3ebf22c205a8ad01674117f76ba3004e1763a0cf84fffa234edbaefd90b",
+      "t1_pass": true,
+      "t2_pass": true,
+      "t3_pass": true
+    },
+    {
+      "input_sha256": "c895cce59f04f6b300bb71418a4116b74b64e36c445c0f942e6de4d3f8c43bfb",
+      "kernel": [
+        -2,
+        1
+      ],
+      "width": 7,
+      "candidate_count": "1029",
+      "generation_sha256": "d503951afd220f120e36657e3fcff23bbcabeea5204b11ccc8033e40f4aa5582",
+      "t1_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "t2_sha256": "4e7e194fca54b41c923d3a6c644a94a9dd1d503c1bb511431b2d05dd9adaf8b9",
+      "t3_sha256": "7a38905296006c575d7d45d1d881690a3ee87361ed67ce64642e2504482da818",
+      "t1_pass": false,
+      "t2_pass": true,
+      "t3_pass": false
+    },
+    {
+      "input_sha256": "dd804437e9cde3cf4a844f955bd1f87c53dcbc3dde8fc764fbb0ad59a02eeec2",
+      "kernel": [
+        -1,
+        1
+      ],
+      "width": 7,
+      "candidate_count": "1029",
+      "generation_sha256": "127def613ccfdcd479fe78c182cf8f14b885c80351b0022c4ef66217d11d1d53",
+      "t1_sha256": "d072b3d12dc7acf505be8de5829809386f38e878fd34b4ff6c7497f4b8ea7dc4",
+      "t2_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "t3_sha256": "7a38905296006c575d7d45d1d881690a3ee87361ed67ce64642e2504482da818",
+      "t1_pass": true,
+      "t2_pass": false,
+      "t3_pass": false
+    },
+    {
+      "input_sha256": "c895cce59f04f6b300bb71418a4116b74b64e36c445c0f942e6de4d3f8c43bfb",
+      "kernel": [
+        -1,
+        1
+      ],
+      "width": 6,
+      "candidate_count": "1029",
+      "generation_sha256": "265692b54c3a3f3c8f209302ab4f1b091eee1ddf5523ff84ae924c575a477681",
+      "t1_sha256": "d072b3d12dc7acf505be8de5829809386f38e878fd34b4ff6c7497f4b8ea7dc4",
+      "t2_sha256": "4e7e194fca54b41c923d3a6c644a94a9dd1d503c1bb511431b2d05dd9adaf8b9",
+      "t3_sha256": "bbc5b3ebf22c205a8ad01674117f76ba3004e1763a0cf84fffa234edbaefd90b",
+      "t1_pass": true,
+      "t2_pass": true,
+      "t3_pass": false
+    },
+    {
+      "input_sha256": "e4b78b8314ec280b62827a7a84f70942b820a9c525bea82635d1c39f8ef838fb",
+      "kernel": [
+        -1,
+        1
+      ],
+      "width": 7,
+      "candidate_count": "0",
+      "generation_sha256": "0ac61d163f0720467bd3c5cca000d26f4757859b6ecce8af2597ec1121b23492",
+      "t1_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "t2_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "t3_sha256": "7a38905296006c575d7d45d1d881690a3ee87361ed67ce64642e2504482da818",
+      "t1_pass": false,
+      "t2_pass": false,
+      "t3_pass": false
+    },
+    {
+      "input_sha256": "9c187b587e6110cc2651613caa01126be032d587e5ba06829a5429f7b35ab77b",
+      "kernel": [
+        -1,
+        1
+      ],
+      "width": 7,
+      "candidate_count": "0",
+      "generation_sha256": "0ac61d163f0720467bd3c5cca000d26f4757859b6ecce8af2597ec1121b23492",
+      "t1_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "t2_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "t3_sha256": "7a38905296006c575d7d45d1d881690a3ee87361ed67ce64642e2504482da818",
+      "t1_pass": false,
+      "t2_pass": false,
+      "t3_pass": false
+    },
+    {
+      "input_sha256": "c895cce59f04f6b300bb71418a4116b74b64e36c445c0f942e6de4d3f8c43bfb",
+      "kernel": [
+        -1,
+        1
+      ],
+      "width": 7,
+      "candidate_count": "1029",
+      "generation_sha256": "87e514914a5907fc9ea5fddac112b698406bfd05c8aa0da21dc17c4917d9f2be",
+      "t1_sha256": "d072b3d12dc7acf505be8de5829809386f38e878fd34b4ff6c7497f4b8ea7dc4",
+      "t2_sha256": "4e7e194fca54b41c923d3a6c644a94a9dd1d503c1bb511431b2d05dd9adaf8b9",
+      "t3_sha256": "bbc5b3ebf22c205a8ad01674117f76ba3004e1763a0cf84fffa234edbaefd90b",
+      "t1_pass": true,
+      "t2_pass": true,
+      "t3_pass": true
+    },
+    {
+      "input_sha256": "07cb3553961a1b4bfb101d25264d3eeb4fc3de097e8231baec4534cdf18f54fb",
+      "kernel": [
+        -1,
+        1
+      ],
+      "width": 7,
+      "candidate_count": "1029",
+      "generation_sha256": "87e514914a5907fc9ea5fddac112b698406bfd05c8aa0da21dc17c4917d9f2be",
+      "t1_sha256": "d072b3d12dc7acf505be8de5829809386f38e878fd34b4ff6c7497f4b8ea7dc4",
+      "t2_sha256": "4e7e194fca54b41c923d3a6c644a94a9dd1d503c1bb511431b2d05dd9adaf8b9",
+      "t3_sha256": "bbc5b3ebf22c205a8ad01674117f76ba3004e1763a0cf84fffa234edbaefd90b",
+      "t1_pass": true,
+      "t2_pass": true,
+      "t3_pass": true
+    },
+    {
+      "input_sha256": "dd804437e9cde3cf4a844f955bd1f87c53dcbc3dde8fc764fbb0ad59a02eeec2",
+      "kernel": [
+        -2,
+        1
+      ],
+      "width": 7,
+      "candidate_count": "1029",
+      "generation_sha256": "0ac61d163f0720467bd3c5cca000d26f4757859b6ecce8af2597ec1121b23492",
+      "t1_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "t2_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "t3_sha256": "7a38905296006c575d7d45d1d881690a3ee87361ed67ce64642e2504482da818",
+      "t1_pass": false,
+      "t2_pass": false,
+      "t3_pass": false
+    }
+  ],
+  "implementation_bindings": [
+    {
+      "path": "scripts/gov-517-d5-derivation-engine.mjs",
+      "sha256": "db4393163b9ed4e6dab231376ed6c3c977b06010ab9fc3056bc46e45f8e5740d",
+      "manifest_expected": "db4393163b9ed4e6dab231376ed6c3c977b06010ab9fc3056bc46e45f8e5740d",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-generative-semantics-registration.json",
+      "sha256": "536f011699f65d36cffef6111f19fd94178649f2485a734707670ee280f101ec",
+      "manifest_expected": "536f011699f65d36cffef6111f19fd94178649f2485a734707670ee280f101ec",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-static-screen.mjs",
+      "sha256": "67f78e5748d5a2a06a54203f45d413eae5d5ac52f58cae86006f724e73b24157",
+      "manifest_expected": "67f78e5748d5a2a06a54203f45d413eae5d5ac52f58cae86006f724e73b24157",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-screened-inputs.mjs",
+      "sha256": "ad08291d8ff2a6bec304fae55b6258de5e30e2c72f028b60e37d8f1feea2d933",
+      "manifest_expected": "ad08291d8ff2a6bec304fae55b6258de5e30e2c72f028b60e37d8f1feea2d933",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-engine-preflight.mjs",
+      "sha256": "e72d57bec67fb4b2e0c7981beab3c52e8322a3d8c2f9303ab11d13e81e2e5bb0",
+      "manifest_expected": "e72d57bec67fb4b2e0c7981beab3c52e8322a3d8c2f9303ab11d13e81e2e5bb0",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-downstream-comparison.mjs",
+      "sha256": "8df98bb7c11c1fa6a617cd55d0086fb92f6914784e317e1df95282e023a19fe7",
+      "manifest_expected": "8df98bb7c11c1fa6a617cd55d0086fb92f6914784e317e1df95282e023a19fe7",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-live-circularity-controls.mjs",
+      "sha256": "09463dae80b3922b3d64043cce2c0d80c2aa0fac9637d7db7fe79374144172e7",
+      "manifest_expected": "09463dae80b3922b3d64043cce2c0d80c2aa0fac9637d7db7fe79374144172e7",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-input-registration.mjs",
+      "sha256": "ff266a6e0874d78245f87b253b6c318653958245030ce18a1562252888f36802",
+      "manifest_expected": "ff266a6e0874d78245f87b253b6c318653958245030ce18a1562252888f36802",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-input-boundary-registration.json",
+      "sha256": "153bb87ea7710acbc493c2b628aa5e091a55e8149ab2d32fd4cc54bcce9553f8",
+      "manifest_expected": "153bb87ea7710acbc493c2b628aa5e091a55e8149ab2d32fd4cc54bcce9553f8",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-nc3-boundary-registration.json",
+      "sha256": "bbdcefe343ee7bc5e6de75e67c55010b2ab6e05620c6daee6032d0224f9251e4",
+      "manifest_expected": "bbdcefe343ee7bc5e6de75e67c55010b2ab6e05620c6daee6032d0224f9251e4",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-downstream-comparison.test.mjs",
+      "sha256": "feae0238a11e2a12916f8184ecb88c52e0c86aee30c626c78895054e7e704d8a",
+      "manifest_expected": "feae0238a11e2a12916f8184ecb88c52e0c86aee30c626c78895054e7e704d8a",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-engine-preflight.test.mjs",
+      "sha256": "8157c8a08813efed166ac50ef2dbaabaf432cf77cf7f19537b5928ef0acf9a29",
+      "manifest_expected": "8157c8a08813efed166ac50ef2dbaabaf432cf77cf7f19537b5928ef0acf9a29",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-input-registration.test.mjs",
+      "sha256": "be15bc0cd0fd19f28c4045d32dfb6c5a8e35ff9724e3e12230dda6d6d034caab",
+      "manifest_expected": "be15bc0cd0fd19f28c4045d32dfb6c5a8e35ff9724e3e12230dda6d6d034caab",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-live-circularity-controls.test.mjs",
+      "sha256": "5f9c0dba6e5cc567e1d8bc6e476bb5d515394423a9bd4151257d76cc2d1dcd27",
+      "manifest_expected": "5f9c0dba6e5cc567e1d8bc6e476bb5d515394423a9bd4151257d76cc2d1dcd27",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-nc3-registration.test.mjs",
+      "sha256": "858e024c5ee7d526f20c407c1b50e13ef71df9ae397ebb34f5d40026d5c17829",
+      "manifest_expected": "858e024c5ee7d526f20c407c1b50e13ef71df9ae397ebb34f5d40026d5c17829",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-screened-inputs.test.mjs",
+      "sha256": "3adf0d15545554e079f6f5741b1b930dfc971c3eb5b3741cb66b3582203d3259",
+      "manifest_expected": "3adf0d15545554e079f6f5741b1b930dfc971c3eb5b3741cb66b3582203d3259",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-static-screen.test.mjs",
+      "sha256": "89fdf44af69713cce29766268bf3cdad1904c26ef8b49aeb1862625a66c0b57a",
+      "manifest_expected": "89fdf44af69713cce29766268bf3cdad1904c26ef8b49aeb1862625a66c0b57a",
+      "manifest_match": true
+    },
+    {
+      "path": "qa/gov-517-live-derivation.mjs",
+      "sha256": "630669c047ecaec7db3033d58bd7d8bb976cef679a69a3c91131db00fda8252b",
+      "manifest_expected": "630669c047ecaec7db3033d58bd7d8bb976cef679a69a3c91131db00fda8252b",
+      "manifest_match": true
+    }
+  ],
+  "implementation_regression_note": "Initial integration exposed enumeration of out-of-domain NC4 decoy tiers; generation now excludes non-A/non-anchor pairs as required by G1. Target rejection predicates were not weakened or re-registered.",
+  "suites": [
+    {
+      "name": "source-binding",
+      "status": "ran",
+      "result": "green",
+      "scope": "Registered I1-I4 sources and slices"
+    },
+    {
+      "name": "implementation-binding",
+      "status": "ran",
+      "result": "green"
+    },
+    {
+      "name": "schema",
+      "status": "ran",
+      "result": "green"
+    },
+    {
+      "name": "scope",
+      "status": "ran",
+      "result": "green"
+    },
+    {
+      "name": "arithmetic",
+      "status": "ran",
+      "result": "green"
+    },
+    {
+      "name": "build-twice",
+      "status": "ran",
+      "result": "green"
+    },
+    {
+      "name": "reordered-input",
+      "status": "ran",
+      "result": "green"
+    },
+    {
+      "name": "negative-control",
+      "status": "ran",
+      "result": "green"
+    },
+    {
+      "name": "adversarial-tamper",
+      "status": "ran",
+      "result": "green"
+    },
+    {
+      "name": "canonical-comparison",
+      "status": "skipped",
+      "reason": "Live derivation and observation comparison are not authorized"
+    },
+    {
+      "name": "live-value-carrier-audit",
+      "status": "ran",
+      "result": "green",
+      "source_classes": 11
+    },
+    {
+      "name": "fixed-point-convergence",
+      "status": "skipped",
+      "reason": "MANIFEST updates and aggregate validation writes are outside authorized Phase 2 file scope"
+    }
+  ],
+  "environment": {
+    "node": "v22.22.0",
+    "platform": "linux",
+    "arch": "x64",
+    "cpu_only_engine": true
+  },
+  "preservation": {
+    "protected_file_sha256": {
+      "scrum/GOV-517-d5-signature-derivation-definition.md": "6b18028838eae7c95a971715797c06cbe3ccb2088ebe72a80a6010073c925d01",
+      "scrum/GOV-517-implementation-spec-draft.md": "a418a6962f86f6e49dfaae922cf488544ccde8e1d693f63b55a51891dac4ea9f",
+      "provenance/DECISION_LEDGER.md": "77fa4f276d78d88c6c688e71262702d4497eca08c59e185daf6e8d1c55701784"
+    },
+    "unchanged_during_preflight": true,
+    "git_writes": false,
+    "remote_operations": false,
+    "canonical_writes": false
+  },
+  "halt": {
+    "active": false,
+    "awaiting": null,
+    "live_run_authorized": true
+  },
+  "executed_tests": {
+    "runner": "node:test run(), sequential file execution",
+    "equivalent_command": "node --test qa/gov-517-*.test.mjs",
+    "passed": 121,
+    "failed": 0,
+    "skipped": 0,
+    "stderr_events": 0,
+    "test_files": [
+      {
+        "path": "qa/gov-517-input-registration.test.mjs",
+        "sha256": "be15bc0cd0fd19f28c4045d32dfb6c5a8e35ff9724e3e12230dda6d6d034caab"
+      },
+      {
+        "path": "qa/gov-517-nc3-registration.test.mjs",
+        "sha256": "858e024c5ee7d526f20c407c1b50e13ef71df9ae397ebb34f5d40026d5c17829"
+      },
+      {
+        "path": "qa/gov-517-static-screen.test.mjs",
+        "sha256": "89fdf44af69713cce29766268bf3cdad1904c26ef8b49aeb1862625a66c0b57a"
+      },
+      {
+        "path": "qa/gov-517-downstream-comparison.test.mjs",
+        "sha256": "feae0238a11e2a12916f8184ecb88c52e0c86aee30c626c78895054e7e704d8a"
+      },
+      {
+        "path": "qa/gov-517-screened-inputs.test.mjs",
+        "sha256": "3adf0d15545554e079f6f5741b1b930dfc971c3eb5b3741cb66b3582203d3259"
+      },
+      {
+        "path": "qa/gov-517-live-circularity-controls.test.mjs",
+        "sha256": "5f9c0dba6e5cc567e1d8bc6e476bb5d515394423a9bd4151257d76cc2d1dcd27"
+      },
+      {
+        "path": "qa/gov-517-engine-preflight.test.mjs",
+        "sha256": "8157c8a08813efed166ac50ef2dbaabaf432cf77cf7f19537b5928ef0acf9a29"
+      }
+    ]
+  }
+}
