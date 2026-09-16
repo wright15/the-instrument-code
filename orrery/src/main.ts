@@ -39,13 +39,14 @@ import {
   type ObservationView,
 } from "./field-derivation";
 import {
-  TAXONOMY_READ_MODEL,
   filterTaxonomyRecords,
   taxonomyRecordById,
   type TaxonomyFilter,
   type TaxonomyRecord,
 } from "./taxonomy-read-model";
-import { D_TIER_DATASET, dTierDatasetView, type DTierViewRecord } from "./d-tier-taxonomy-dataset";
+import { dTierDatasetView, type DTierViewRecord } from "./d-tier-taxonomy-dataset";
+import { taxonomyReadModelView } from "./taxonomy-read-model";
+import { explainTaxonomyRecord, renderTaxonomyExplanation, taxonomySourceLink } from "./taxonomy-explain";
 import {
   ProvenanceCompatibilityError,
   ProvenanceExplainError,
@@ -193,6 +194,15 @@ const taxonomyRole = requiredElement<HTMLSelectElement>("#taxonomy-role");
 const taxonomyTier = requiredElement<HTMLSelectElement>("#taxonomy-tier");
 const taxonomyForte = requiredElement<HTMLSelectElement>("#taxonomy-forte");
 const taxonomyOfficeStatus = requiredElement<HTMLSelectElement>("#taxonomy-office-status");
+const taxonomyAuthority = document.createElement("select");
+taxonomyAuthority.id = "taxonomy-authority";
+const taxonomyAuthorityLabel = document.createElement("label");
+taxonomyAuthorityLabel.textContent = "Source authority";
+taxonomyAuthorityLabel.append(taxonomyAuthority);
+taxonomyOfficeStatus.closest("label")!.after(taxonomyAuthorityLabel);
+let taxonomyView = taxonomyReadModelView("loading");
+let taxonomyDataset: unknown = null;
+let taxonomyContext: unknown = null;
 const taxonomyStateId = requiredElement<HTMLInputElement>("#taxonomy-state-id");
 const taxonomyStatus = requiredElement<HTMLElement>("#taxonomy-status");
 const taxonomyRecordList = requiredElement<HTMLElement>("#taxonomy-record-list");
@@ -1063,7 +1073,7 @@ function renderTaxonomyInspector(record: TaxonomyRecord | null): void {
     taxonomyInspector.textContent = "No source-backed record is available for this ID. No nearby record is substituted.";
     return;
   }
-  taxonomyInspector.textContent = `${record.name} / ${record.stateId} / ${record.role} / ${record.tier ?? "tier withheld"} / ${record.forte} / office ${record.office ?? "withheld"} / ${record.authority} / ${record.provenancePath}`;
+  renderTaxonomyExplanation(taxonomyInspector, explainTaxonomyRecord(record.stateId, taxonomyView.model, taxonomyDataset, taxonomyContext));
 }
 
 function taxonomyFilter(): TaxonomyFilter {
@@ -1072,12 +1082,14 @@ function taxonomyFilter(): TaxonomyFilter {
     ...(taxonomyTier.value ? { tier: taxonomyTier.value } : {}),
     ...(taxonomyForte.value ? { forte: taxonomyForte.value } : {}),
     ...(taxonomyOfficeStatus.value ? { officeStatus: taxonomyOfficeStatus.value as "available" | "withheld" } : {}),
+    ...(taxonomyAuthority.value ? { authority: taxonomyAuthority.value as "canonical_release" } : {}),
   };
 }
 
 function renderTaxonomyRecords(): void {
-  const records = filterTaxonomyRecords(taxonomyFilter());
-  taxonomyStatus.textContent = `${records.length} / ${TAXONOMY_READ_MODEL.recordCount} canonical records / source order / ${TAXONOMY_READ_MODEL.authorityBoundary}`;
+  const model = taxonomyView.model;
+  const records = model ? filterTaxonomyRecords(taxonomyFilter(), model) : [];
+  taxonomyStatus.textContent = model ? `${records.length} / ${model.recordCount} canonical records / source order / ${model.authorityBoundary}` : `${taxonomyView.state} / ${taxonomyView.notice}`;
   taxonomyRecordList.replaceChildren(
     ...records.map((record) => {
       const button = document.createElement("button");
@@ -1108,15 +1120,46 @@ function renderDTierRecord(record: DTierViewRecord): HTMLButtonElement {
   return button;
 }
 
-function initializeTaxonomyExplorer(): void {
-  taxonomyAuthorityNote.textContent = TAXONOMY_READ_MODEL.authorityNote;
-  appendSelectOptions(taxonomyRole, TAXONOMY_READ_MODEL.records.map((record) => record.role));
-  appendSelectOptions(taxonomyTier, TAXONOMY_READ_MODEL.records.map((record) => record.tier));
-  appendSelectOptions(taxonomyForte, TAXONOMY_READ_MODEL.records.map((record) => record.forte));
+async function initializeTaxonomyExplorer(): Promise<void> {
   renderTaxonomyRecords();
-  const dTier = dTierDatasetView(D_TIER_DATASET);
+  dTierTaxonomyStatus.textContent = "loading / fifth-space values unavailable";
+  try {
+    const input = await import("./generated/taxonomy-read-model.v1.json?raw");
+    try { taxonomyView = taxonomyReadModelView(JSON.parse(input.default)); }
+    catch { taxonomyView = taxonomyReadModelView({}); }
+  } catch { taxonomyView = taxonomyReadModelView(null); }
+  const model = taxonomyView.model;
+  taxonomyAuthorityNote.textContent = model?.authorityNote ?? taxonomyView.notice;
+  appendSelectOptions(taxonomyRole, model?.records.map((record) => record.role) ?? []);
+  appendSelectOptions(taxonomyTier, model?.records.map((record) => record.tier) ?? []);
+  appendSelectOptions(taxonomyForte, model?.records.map((record) => record.forte) ?? []);
+  appendSelectOptions(taxonomyAuthority, model?.records.map((record) => record.authority) ?? []);
+  renderTaxonomyRecords();
+  if (!model) {
+    dTierTaxonomyStatus.textContent = "unavailable / Canonical taxonomy unavailable; no substitute identities are shown.";
+    renderTaxonomyInspector(null);
+    return;
+  }
+  taxonomyDataset = "loading";
+  const loading = dTierDatasetView(taxonomyDataset, model);
+  dTierTaxonomyStatus.textContent = `${loading.state} / ${loading.notice}`;
+  dTierTaxonomyList.replaceChildren(...loading.records.map(renderDTierRecord));
+  try {
+    const input = await import("./generated/d-tier-taxonomy-dataset.v1.json?raw");
+    try { taxonomyDataset = JSON.parse(input.default); }
+    catch { taxonomyDataset = {}; }
+  } catch { taxonomyDataset = null; }
+  const dTier = model ? dTierDatasetView(taxonomyDataset, model) : { state: "unavailable", verdict: null, notice: "Canonical taxonomy unavailable; no substitute identities are shown.", records: [] };
   dTierTaxonomyStatus.textContent = `${dTier.state} / ${dTier.verdict ?? "no research verdict"} / ${dTier.notice}`;
   dTierTaxonomyList.replaceChildren(...dTier.records.map(renderDTierRecord));
+  if (selectedTaxonomyRecord) renderTaxonomyInspector(selectedTaxonomyRecord);
+  try {
+    const context = await fetch(taxonomySourceLink("canonical/fivefold-incubator/twin-hub-convergence-v0.json")!);
+    if (!context.ok) throw new Error("Optional GOV-510 context unavailable");
+    try { taxonomyContext = await context.json(); }
+    catch { taxonomyContext = {}; }
+  } catch { taxonomyContext = null; }
+  if (selectedTaxonomyRecord) renderTaxonomyInspector(selectedTaxonomyRecord);
 }
 
 function photonicRecordEntry(record: PhotonicOverlayRecord): HTMLElement {
@@ -1742,12 +1785,12 @@ initializeTaxonomyExplorer();
 audioEngine.subscribe(renderAudioState);
 provenanceRun.addEventListener("click", () => void runProvenanceQuery());
 photonicVariant.addEventListener("change", renderPhotonicOverlay);
-for (const control of [taxonomyRole, taxonomyTier, taxonomyForte, taxonomyOfficeStatus]) {
+for (const control of [taxonomyRole, taxonomyTier, taxonomyForte, taxonomyOfficeStatus, taxonomyAuthority]) {
   control.addEventListener("change", renderTaxonomyRecords);
 }
 taxonomyStateId.addEventListener("change", () => {
   const value = taxonomyStateId.value.trim();
-  renderTaxonomyInspector(value === "" ? null : taxonomyRecordById(Number(value)));
+  renderTaxonomyInspector(value === "" || !taxonomyView.model ? null : taxonomyRecordById(Number(value), taxonomyView.model));
   renderTaxonomyRecords();
 });
 sceneQualityMode.addEventListener("change", () => {

@@ -127,7 +127,18 @@ test("current release full database bootstraps and round-trips byte-identically"
       }
       assert.equal(schemaValidator(firstSnapshot), true, JSON.stringify(schemaValidator.errors));
       if (!captureBaseline) {
-        assert.equal(verifyNormalizedNeo4jSnapshot(firstSnapshot, verificationInputs), true);
+        assert.equal(verifyNormalizedNeo4jSnapshot(firstSnapshot, verificationInputs), true,
+          JSON.stringify({
+            releaseId: firstSnapshot.releaseId,
+            namespaceMismatches: Object.entries(firstSnapshot.namespaces)
+              .filter(([namespace, value]) => value.namespaceFingerprint
+                !== verificationInputs.expectedNamespaceFingerprints[namespace])
+              .map(([namespace, value]) => ({
+                namespace,
+                expected: verificationInputs.expectedNamespaceFingerprints[namespace],
+                actual: value.namespaceFingerprint,
+              })),
+          }));
       }
       const expectedNamespaceFingerprints = Object.fromEntries(
         Object.entries(firstSnapshot.namespaces).map(([namespace, value]) => [

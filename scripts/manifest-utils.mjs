@@ -1,6 +1,12 @@
 import crypto from "node:crypto";
 import fs from "node:fs/promises";
 
+// Match the frozen Python packages' declared non-payload cache exclusions.
+export const frozenPayloadExcluded = new Set([
+  ".git", "MANIFEST.json", "PACKAGE_MANIFEST.json", "CHECKSUMS.sha256",
+  "__pycache__", ".pytest_cache",
+]);
+
 export async function walkFiles(packageRoot, { excluded = new Set() } = {}) {
   const files = [];
   const stack = [packageRoot];

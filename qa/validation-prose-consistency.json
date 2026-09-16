@@ -2,7 +2,7 @@
   "schemaVersion": "seven-governors.validation-prose-consistency.v2",
   "verdict": "PASS",
   "releaseId": "seven-governors-integrated-1.9.0-dev",
-  "authoritativeChecksPassed": 418,
+  "authoritativeChecksPassed": 416,
   "scope": [
     "docs/**/*.md",
     "orrery/*.md",
@@ -10,13 +10,13 @@
     "README.md"
   ],
   "statistics": {
-    "filesScanned": 128,
+    "filesScanned": 139,
     "claims": 2,
     "claimsMatchingCurrent": 0,
     "claimsReleaseQualified": 2,
     "claimsScoped": 0,
     "exemptions": 2,
-    "scrumFingerprintLiterals": 37,
+    "scrumFingerprintLiterals": 51,
     "scrumFingerprintViolations": 0,
     "violations": 0
   },
@@ -159,6 +159,90 @@
       "file": "scrum/NET-106-docs-closure.md",
       "line": 61,
       "fingerprint": "2034cc9eb6fa422c4c41695b63d89236efdb38d04bba2961c8b7a645f5466d27",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-freeze-handoff.md",
+      "line": 8,
+      "fingerprint": "751d56d4f01ea1a0d054c8119d178a64b20787aa9fb095a02c99f3ba3b135de2",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/ledger-pin-migration.md",
+      "line": 54,
+      "fingerprint": "751d56d4f01ea1a0d054c8119d178a64b20787aa9fb095a02c99f3ba3b135de2",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/post-d5-neo4j-investigation.md",
+      "line": 19,
+      "fingerprint": "1c3e6edf80af60ce1f64a4f5b7b4b519b9865bca47ab47ee1d876cee6a1b4127",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/post-d5-neo4j-investigation.md",
+      "line": 20,
+      "fingerprint": "ba2756b427f2d84fca099ba884c097da3e19845f71f65f0fcefece38ec8259b5",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/post-d5-neo4j-investigation.md",
+      "line": 26,
+      "fingerprint": "7584e88fb566b5a03334ff7c19114cd7bdb2277cd45874085795a4d33b2d5aeb",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/post-d5-neo4j-investigation.md",
+      "line": 46,
+      "fingerprint": "bd854a8c1ff61c55016ec024e927a899ba83f232f967ef7f4f00495d2b579e17",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/post-d5-neo4j-investigation.md",
+      "line": 47,
+      "fingerprint": "0ff74fc356a6eda0c694863ae185441dd94c986198062daa77d0b90aff4212fc",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/post-d5-neo4j-investigation.md",
+      "line": 54,
+      "fingerprint": "a87c6558bb43f0aeb971a879a0ee02a2e150f5496ca2fcdb47539fab779dfd2b",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/post-d5-neo4j-investigation.md",
+      "line": 55,
+      "fingerprint": "08b8d32967901cdabd34ae438934b0a8feb65eb4b2f56f70e46163ed7022e941",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/post-d5-receipt-check.md",
+      "line": 94,
+      "fingerprint": "15b56a2c4f953e7bd19c583c04155d26728498e7bed66e6e82f8a450b34ea653",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/post-d5-receipt-check.md",
+      "line": 95,
+      "fingerprint": "695c816cd4c86fb928c8f611ab6226d487b309763f1bdd99ed165cb23d5bc1df",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/post-d5-receipt-check.md",
+      "line": 96,
+      "fingerprint": "475355836ef7bbbfb9a014f8e271447ebb625b5f03bdb07af718e422f892434b",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/post-d5-release-repair.md",
+      "line": 35,
+      "fingerprint": "1f5b656e4c962eba5e60ac8a28d975ef35d7ddd833993545589bc09925ed7335",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/post-d5-release-repair.md",
+      "line": 36,
+      "fingerprint": "3d4f3b658dbd360cdd9dec0c05e5ff12695da9e4c0ec603d27bfb341af395679",
       "classification": "bound"
     },
     {

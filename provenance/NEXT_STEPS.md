@@ -4,6 +4,40 @@ Current release: `seven-governors-integrated-1.9.0-dev`, opened on `main` 2026-0
 
 **Development declaration:** `1.8.1` remains the sealed Neo4j baseline with separate native reproducibility and configured bootstrap/roundtrip receipts. `1.9.0-dev` plans bounded research and interface work on `main`; `681` geometry correction (`OBS-011` punched holes `{10,2}`) remains folded into the prior point. Sprint 2 closed `OBS-014` (twin-hub convergence, verdict `confirmed`, GOV-510), emitted the 462-record fifth-space census (GOV-511, verdict `confirmed`), and shipped the A-series evidence inspector bundle (ORR-511). No development emission changes canonical topology, admission, runtime authority, Court policy, or global `harmonic.C_H` without its own versioned evidence and release decision.
 
+## Queued - Rank 1 - D4 derivation boundary
+
+Frozen by ENTRY 9; [handoff](../scrum/plan/d4-freeze-handoff.md) points to the unchanged reviewed boundary and its registered contracts. Implementation-spec phase is next under separate gates; no implementation, engine or execution authorized (ENTRY 8 quarantine; [capture section 6](../scrum/plan/post-d5-analysis-capture.md#6-open-directions-ranked)).
+
+## Queued - Rank 2 - D-tier contact-count recurrence
+
+Defer registration until after the D4 verdict; define the signature unit and algebra-only prediction before sealed comparison. Currently definition-blocked, not a negative result ([research successors](../scrum/plan/post-d5-research-successors.md), [receipt check](../scrum/plan/post-d5-receipt-check.md), [capture section 2](../scrum/plan/post-d5-analysis-capture.md#2-the-fibonacci-thread-closed-twice--the-second-closure-is-new)).
+
+## Queued - Rank 3 - Continuous-typology scrutiny
+
+Review the [unregistered OBS draft](../scrum/plan/continuous-typology-obs-draft.md) against checked artifacts before any observation-ledger append; theurgy remains only in the [non-canonical capture](../scrum/plan/post-d5-analysis-capture.md).
+
+## Queued - Rank 4 - GOV-518 successor definition
+
+Define an independent run-sequence boundary preserving closed B3 lineage and excluding GOV-517 receipts and outputs as inputs, provenance citations only ([research successors](../scrum/plan/post-d5-research-successors.md); [capture section 6](../scrum/plan/post-d5-analysis-capture.md#6-open-directions-ranked)).
+
+## Queued - Rank 5 - Canalization discrimination design
+
+Seek a checkable discriminator without claiming a D4 pass separates authorship from derivation; no discriminator established ([research successors](../scrum/plan/post-d5-research-successors.md); [capture section 4](../scrum/plan/post-d5-analysis-capture.md#4-secular-theurgy-the-entry-8-reading-with-fences)).
+
+## Queued - Rank 6 - Product track closure
+
+Complete ORR-521/522/523 and ORR-524 gates, citing the browser defect plus six passing sessions and requiring refreshed native and configured Neo4j evidence; release remains blocked ([product gate status](../scrum/plan/post-d5-product-gate-status.md); [capture section 6](../scrum/plan/post-d5-analysis-capture.md#6-open-directions-ranked)).
+
+## Queued - ORR-524 authority decisions at the release flip
+
+416/2 -> 418/0 at the 1.9.0 flip by design is the planned closure path, not a promised test result: the ORR-524 closure entry must decide composite identity with an enumerated historical/current pin-set diff and the baseline lifecycle (recommended: release flips plus declared provenance checkpoints, with drift windows documented). Both are destination authority work, not en-route comparison weakening; fresh receipts must still pass after the decisions ([composite diagnosis](../scrum/plan/post-d5-release-repair.md), [baseline diagnosis](../scrum/plan/post-d5-neo4j-investigation.md)). This queue line makes no policy decision and waives neither gate.
+
+## Completed - Promotion ledger-pin class migration
+
+Promotion evidence now carries `decisionLedgerSha256`; stale evidence must regenerate before validation. `npm run validate:ledger-pins` inventories script consumers and checks exact immutable-pin exceptions with non-empty inline reasons. Migration verification precedes the next D4 ledger edit; spec relay remains separately gated ([pass record](../scrum/plan/ledger-pin-migration.md)).
+
+These ranked pointers record the maintainer's post-D5 intake priority, not registration or execution authority. The capture is preserved verbatim; corrections and unresolved claims are in the separate receipt check.
+
 ## Sprint 2 closure — shadow-ladder rebuild receipt — 2026-09-01
 
 The S2→S3 boundary rebuild is owned by GOV-511 (primary) per the kickoff directive. Sprint 3 closeout regeneration refreshed `canonical/fivefold-incubator/shadow-ladder-v0.json` to candidate fingerprint `534c4d3835efc4c8fadb5d52e0b07ab05153fc99ea94dee8b6bc865c681465bf`; `npm run validate:shadow-ladder` re-verified `qa/shadow-ladder-validation.json` at 37/37 (report fingerprint `d13e56669f607ba60be78b02164b0a6ef16954b560daab97a9bef08ccc41c940`). Refreshed ledger SHAs bound by the regenerated artifact: `decisionLedgerSha256` `7a3d3236cb4cf1cf8bc54756c72111dac9cb3455197a8b9343b298184f53bdb7`, `observationLedgerSha256` `7cdbd61aa2758f1817fad8a282e77f13172d9a0b62b3ee78f7fa12cb06824f33` (the ledger itself stays fingerprint-free — DAG: ledger → sidecar). Sprint 2 research artifacts: twin-hub `canonical/fivefold-incubator/twin-hub-convergence-v0.json` and fifth-space census `canonical/fivefold-incubator/fifth-space-census-v0.json` — each derived from the post-edit ledger SHAs and validated by their own qa receipts.

@@ -3,6 +3,13 @@
 Completed release 1.3.0 work, integrated release 1.4.0 database closure,
 release 1.5.0 GOV-213 admission, and release 1.6.0 GOV-227 D-tier admission.
 
+## D4 Boundary Freeze
+
+Definition frozen by `provenance/DECISION_LEDGER.md`, ENTRY 9 (2026-09-14).
+[Frozen-boundary handoff](plan/d4-freeze-handoff.md): implementation-spec phase
+eligible next under separate gates; no engine, scaffolding, execution or verdict
+authorized. This is not a Done derivation story or a release closure.
+
 ## EPIC-001 — Bestiary network replica
 
 | ID | Title | Points | Priority | Status |

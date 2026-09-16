@@ -34,6 +34,7 @@ describe("taxonomy read model", () => {
     invalid.recordCount = 461;
     expect(() => parseTaxonomyReadModel(invalid)).toThrow(TaxonomyCompatibilityError);
     expect(() => filterTaxonomyRecords({ role: 1 } as unknown as { role: string })).toThrow(TaxonomyCompatibilityError);
+    expect(() => filterTaxonomyRecords({ name: "Lydian" } as unknown as { role: string })).toThrow(TaxonomyCompatibilityError);
   });
 
   it("performs no network or mutation action", () => {

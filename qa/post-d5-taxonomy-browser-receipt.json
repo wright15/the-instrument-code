@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "scope": "Focused development-server taxonomy acceptance, not full release closure",
+  "command": "./node_modules/.bin/playwright-cli -s=taxonomy-product run-code --filename=tests/taxonomy-browser.js",
+  "workdir": "orrery",
+  "origin": "http://127.0.0.1:5183",
+  "records": 462,
+  "dTierRecords": 175,
+  "sourceLinksExercised": 9,
+  "matrix": [
+    "taxonomy:absent", "taxonomy:malformed", "taxonomy:incompatible",
+    "dataset:confirmed", "dataset:refuted", "dataset:partial",
+    "dataset:absent", "dataset:malformed", "dataset:stale",
+    "context:confirmed", "context:refuted", "context:partial",
+    "context:absent", "context:malformed", "context:stale"
+  ],
+  "negativeActions": "No API requests or storage writes from the exercised filters, selectors, or nine explanation links",
+  "mobile": { "status": "PASS", "width": 390, "height": 844 },
+  "bindings": {
+    "orrery/tests/taxonomy-browser.js": "e70da2196bb5e7cecb258b92ce03425a347720878fc00b61dc0c5f9fff97ce18",
+    "orrery/src/main.ts": "54cf04b400794fd2f8b8a335592ae464c45fd42085173add2bdc53ff4813e084",
+    "orrery/src/taxonomy-explain.ts": "63ec82567072e9af0766bea1883f2c8bf1c52b21acea3174fe08a7ef0469ec5d",
+    "orrery/src/generated/taxonomy-read-model.v1.json": "affb8ed00908887e5b385aa386215584b0e6c582de8efec169c88633e435e2bf",
+    "orrery/src/generated/d-tier-taxonomy-dataset.v1.json": "76ff32bbb9fd1732726b3852d9e00d2097074acca43837feda4445223dd858cf"
+  },
+  "limitations": [
+    "Transcribed from actual playwright-cli result; bindings recomputed with sha256sum",
+    "Not an exhaustive click-through of all 462 records or all record-specific links",
+    "Does not replace the legacy browser suite, GOV-512 research gate matrix, or Neo4j release gates",
+    "Earlier failed attempts are described in the implementation report; no game-timeout exception used for this test"
+  ]
+}

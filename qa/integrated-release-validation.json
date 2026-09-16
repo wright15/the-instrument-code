@@ -131,7 +131,7 @@
     },
     {
       "name": "frozen composite package payload identities",
-      "status": "PASS",
+      "status": "FAIL",
       "diagnostic": [
         {
           "directory": "seven-governors-mutation-algebra-audit",
@@ -165,15 +165,15 @@
         },
         {
           "directory": "seven-governors-harmonic-invariants-v0.1.0",
-          "fileCount": 40,
+          "fileCount": 31,
           "expected": "3bf5f1815369dba2b9ca918a743d18cf1aa388b12f9ba7915ee87e8d8c8363f1",
-          "actual": "3bf5f1815369dba2b9ca918a743d18cf1aa388b12f9ba7915ee87e8d8c8363f1"
+          "actual": "1f5b656e4c962eba5e60ac8a28d975ef35d7ddd833993545589bc09925ed7335"
         },
         {
           "directory": "seven-governors-court-filter-algebra-v0.1.0",
-          "fileCount": 44,
+          "fileCount": 36,
           "expected": "a2ca514125ca5d0531c8a3c888f1f9f5bb3a152e858a308709fa4c4b9a973a59",
-          "actual": "a2ca514125ca5d0531c8a3c888f1f9f5bb3a152e858a308709fa4c4b9a973a59"
+          "actual": "3d4f3b658dbd360cdd9dec0c05e5ff12695da9e4c0ec603d27bfb341af395679"
         }
       ]
     },
@@ -817,12 +817,12 @@
     },
     {
       "name": "pentatonic binding closure freshness",
-      "status": "FAIL",
-      "diagnostic": "    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)\n\nNode.js v22.22.0"
+      "status": "PASS",
+      "diagnostic": "passed"
     },
     {
       "name": "pentatonic binding evidence fingerprint closure",
-      "status": "FAIL",
+      "status": "PASS",
       "diagnostic": {
         "candidateFingerprint": "7c38e457ce903a3dd72a007265eda256c48c5a326b66bc32bb4c92a93aacdf3e",
         "phase1ValidationReportFingerprint": "f7edfb035ab16682359bcf15474d533b214ab1259591284433928a6971239ddc",
@@ -831,7 +831,7 @@
         "cypherDeterministicFingerprint": "17a99dde862c5853031724a11c6435d372fd795eeb86a700fbc266068e7a8b61",
         "crt310BacklogFingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
         "sourceAuthoritySha256": "b27e9a23b58c1944f33629f103f0d9614c4347084d1aff7a9640f67ac386fd72",
-        "decisionLedgerSha256": "77fa4f276d78d88c6c688e71262702d4497eca08c59e185daf6e8d1c55701784"
+        "decisionLedgerSha256": "ac50241b6c432394b55864e2ea79755d70ddca60529476edf470f2c39f509c74"
       }
     },
     {
@@ -845,7 +845,7 @@
           "2": 48,
           "3": 12
         },
-        "closureFingerprint": "e339c1e92b80d6a7ab50850f1139121af42e33fc378e3ee67215711da31fbc46"
+        "closureFingerprint": "b235fca8ca6b49dab5096d018b70fa8428a8b92bdf89c91b4a8aaefa69197306"
       }
     },
     {
@@ -900,7 +900,7 @@
     },
     {
       "name": "declared full-database reproducibility and deployment evidence",
-      "status": "PASS",
+      "status": "FAIL",
       "diagnostic": {
         "reportFingerprint": "f85d08ad10450c001d2d8cdcc9f2aa52c103f23db03d7c51b317e1f60650ddd3",
         "retainedReleaseId": "seven-governors-integrated-1.8.1",
@@ -1345,8 +1345,8 @@
       "name": "checksums sha256 parity",
       "status": "PASS",
       "diagnostic": {
-        "checksumLines": 1064,
-        "manifestFiles": 1064
+        "checksumLines": 1087,
+        "manifestFiles": 1087
       }
     },
     {
@@ -2591,7 +2591,7 @@
     {
       "name": "required file: tests/neo4j/full-database-live.test.mjs",
       "status": "PASS",
-      "diagnostic": 9691
+      "diagnostic": 10239
     },
     {
       "name": "required file: qa/neo4j-full-database-validation.json",
@@ -2601,7 +2601,7 @@
     {
       "name": "required file: qa/neo4j-deployment-roundtrip-validation.json",
       "status": "PASS",
-      "diagnostic": 25860
+      "diagnostic": 23087
     },
     {
       "name": "required file: provenance/neo4j-full-database-baseline.json",

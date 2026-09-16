@@ -8,6 +8,7 @@ export const SCHEMA_VERSION = "harmonic-orrery.taxonomy-read-model.v1";
 export const BUNDLE_ID = "TAXONOMY_READ_MODEL_v1";
 export const LEDGER_PATH = "canonical/universal-heptatonic-ledger.json";
 export const AUTHORITY_PATH = "provenance/SOURCE_AUTHORITY.md";
+export const NETWORK_PATH = "canonical/universal-network-data.json";
 export const OUTPUT_PATH = "orrery/src/generated/taxonomy-read-model.v1.json";
 
 const rootOf = (url) => path.resolve(path.dirname(fileURLToPath(url)), "..");
@@ -37,6 +38,10 @@ function sourceField(record, name) {
 
 export function buildBundle(root) {
   const ledger = readJson(root, LEDGER_PATH);
+  const network = readJson(root, NETWORK_PATH);
+  const edges = [...new Map([...network.structuralEdges, ...network.boundaryRelationRows].map((edge) => [edge.id, edge])).values()].sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+  const ids = new Set(recordOf(ledger).map((record) => record.id));
+  if (edges.some((edge) => !ids.has(edge.source) || !ids.has(edge.target))) throw new Error("TAXONOMY_RELATION_ENDPOINT_UNAVAILABLE");
   const records = recordOf(ledger).map((source, index) => {
     if (!Number.isSafeInteger(source.id)) throw new Error(`INVALID_STATE_ID:${index}`);
     const office = sourceField(source, "office");
@@ -57,6 +62,12 @@ export function buildBundle(root) {
       officeStatus: office === null ? "withheld" : "available",
       authority: "canonical_release",
       provenancePath: LEDGER_PATH,
+      sourceProvenance: sourceField(source, "sourceProvenance"),
+      universalClassification: sourceField(source, "universalClassification"),
+      declaredRelationships: edges.filter((edge) => edge.source === source.id || edge.target === source.id).map((edge) => ({
+        id: edge.id, type: edge.type, source: edge.source, target: edge.target,
+        directed: edge.directed, governing: edge.governing, provenance: edge.provenance,
+      })),
     };
   }).sort((left, right) => left.sourceOrder - right.sourceOrder);
   if (records.length !== 462 || new Set(records.map((record) => record.stateId)).size !== 462) {
@@ -71,9 +82,20 @@ export function buildBundle(root) {
     bundleId: BUNDLE_ID,
     authorityBoundary: "canonical_release",
     authorityNote: "Canonical taxonomy data is read-only. Filtering and inspection do not infer office, tier, topology, admission, or a relationship.",
+    evidenceBindings: Object.fromEntries([
+      ["census", "canonical/fivefold-incubator/fifth-space-census-v0.json"],
+      ["gov510", "canonical/fivefold-incubator/twin-hub-convergence-v0.json"],
+    ].map(([key, artifact]) => {
+      try {
+        const document = readJson(root, artifact);
+        if (!/^[a-f0-9]{64}$/.test(document.candidateFingerprint)) return [key, null];
+        return [key, { artifact, sha256: sha256(bytes(path.join(root, artifact))), candidateFingerprint: document.candidateFingerprint }];
+      } catch { return [key, null]; }
+    })),
     sources: [
       { artifact: LEDGER_PATH, sha256: sha256(bytes(path.join(root, LEDGER_PATH))) },
       { artifact: AUTHORITY_PATH, sha256: sha256(bytes(path.join(root, AUTHORITY_PATH))) },
+      { artifact: NETWORK_PATH, sha256: sha256(bytes(path.join(root, NETWORK_PATH))) },
     ],
     recordCount: records.length,
     roleCounts,

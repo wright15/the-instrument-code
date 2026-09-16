@@ -1,0 +1,456 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "d4-derivation-wire.v1",
+  "title": "D4 derivation wire receipt",
+  "description": "Exact wire shapes for the D4 frozen boundary ENTRY 9 and implementation spec draft. No engine, verdict, or H-disposition is authorized by this schema alone.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "boundarySha256",
+    "specSha256",
+    "bindings",
+    "generation",
+    "seal",
+    "comparison",
+    "controls",
+    "category"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "d4-derivation-wire.v1" },
+    "boundarySha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "Must equal the frozen boundary bytes bound by ENTRY 9."
+    },
+    "specSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "Accepted implementation-spec bytes, including the wire-schema addendum."
+    },
+    "bindings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ledgerSha256",
+        "networkSha256",
+        "twinHubReceiptSha256",
+        "implementationDigest",
+        "projectionDigests"
+      ],
+      "properties": {
+        "ledgerSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "networkSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "twinHubReceiptSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "implementationDigest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "projectionDigests": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["R", "E", "anchors"],
+          "properties": {
+            "R": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "E": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "anchors": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+          }
+        }
+      }
+    },
+    "generation": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+      "required": ["routes", "tC", "completion"],
+      "properties": {
+        "routes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["T-A", "T-B"],
+          "properties": {
+            "T-A": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["witnesses"],
+              "properties": {
+                "witnesses": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["tag", "a", "b", "h", "s", "k"],
+                    "properties": {
+                      "tag": { "const": "kernel_twin" },
+                      "a": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+                      "b": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+                      "h": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+                      "s": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+                      "k": { "type": "string", "pattern": "^[0-6]$" }
+                    }
+                  }
+                }
+              }
+            },
+            "T-B": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["witnesses"],
+              "properties": {
+                "witnesses": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["tag", "e1source", "e2source", "h", "s", "parentOffice", "e1id", "e2id"],
+                    "properties": {
+                      "tag": { "const": "construction_join" },
+                      "e1source": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+                      "e2source": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+                      "h": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+                      "s": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+                      "parentOffice": { "type": "string", "pattern": "^[0-6]$" },
+                      "e1id": { "type": "string", "minLength": 1 },
+                      "e2id": { "type": "string", "minLength": 1 }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tC": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["relations"],
+          "properties": {
+            "relations": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["tier", "a", "b", "mid"],
+                "properties": {
+                  "tier": { "enum": ["A0", "A1"] },
+                  "a": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+                  "b": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+                  "mid": { "type": "string", "pattern": "^[0-6]$" }
+                }
+              }
+            }
+          }
+        },
+        "completion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["perRoute", "status"],
+          "properties": {
+            "perRoute": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["T-A", "T-B", "T-C"],
+              "properties": {
+                "T-A": { "$ref": "#/definitions/routeCompletion" },
+                "T-B": { "$ref": "#/definitions/routeCompletion" },
+                "T-C": { "$ref": "#/definitions/routeCompletion" }
+              }
+            },
+            "status": { "enum": ["complete", "incomplete"] }
+          }
+        }
+          }
+        },
+        { "$ref": "#/definitions/absentMarker" }
+      ]
+    },
+    "seal": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["generationDigest", "inputIdentities", "complete"],
+      "properties": {
+        "generationDigest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "inputIdentities": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ledgerSha256", "networkSha256", "implementationDigest"],
+          "properties": {
+            "ledgerSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "networkSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "implementationDigest": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+          }
+        },
+        "complete": { "const": true }
+          }
+        },
+        { "$ref": "#/definitions/absentMarker" }
+      ]
+    },
+    "comparison": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["rows", "routes", "tC", "observedKeyCount", "fourCellCounts", "uKeys"],
+      "properties": {
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["contactRowId", "d", "s", "h", "parentOffice", "key", "membership"],
+            "properties": {
+              "contactRowId": { "type": "string", "minLength": 1 },
+              "d": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+              "s": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+              "h": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+              "parentOffice": { "type": "string", "pattern": "^[0-6]$" },
+              "key": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["parentOffice", "s"],
+                "properties": {
+                  "parentOffice": { "type": "string", "pattern": "^[0-6]$" },
+                  "s": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" }
+                }
+              },
+              "membership": { "enum": ["A-only", "B-only", "both", "neither"] }
+            }
+          }
+        },
+        "routes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["A", "B"],
+          "properties": {
+            "A": { "$ref": "#/definitions/routeAccounting" },
+            "B": { "$ref": "#/definitions/routeAccounting" }
+          }
+        },
+        "tC": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["matches", "missing", "extra", "midpoint_exact", "a1Separate", "generatedRelations", "observedRelations", "seamProvenance"],
+          "properties": {
+            "matches": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+            "missing": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+            "extra": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+            "midpoint_exact": { "type": "boolean" },
+            "a1Separate": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+            "generatedRelations": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/definitions/tCRelation" } },
+            "observedRelations": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/definitions/tCRelation" } },
+            "seamProvenance": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/definitions/seamGroup" } }
+          }
+        },
+        "observedKeyCount": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+        "fourCellCounts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["aOnly", "bOnly", "both", "neither"],
+          "properties": {
+            "aOnly": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+            "bOnly": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+            "both": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+            "neither": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" }
+          }
+        },
+        "uKeys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[0-6]:(0|[1-9][0-9]*)$" }
+        }
+          }
+        },
+        { "$ref": "#/definitions/absentMarker" }
+      ]
+    },
+    "controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "binding",
+        "isolation",
+        "route_isolation",
+        "kernel_perturbation",
+        "edge_deletion",
+        "production_E_completeness",
+        "anchor_input",
+        "edge_input",
+        "T-C",
+        "contact_join",
+        "seam_input",
+        "seal",
+        "completeness",
+        "R_bounds",
+        "accounting",
+        "outcome_precedence",
+        "determinism",
+        "nonvacuity"
+      ],
+      "properties": {
+        "binding": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "isolation": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "route_isolation": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "kernel_perturbation": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "edge_deletion": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "production_E_completeness": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "anchor_input": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "edge_input": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "T-C": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "contact_join": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "seam_input": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "seal": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "completeness": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "R_bounds": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "accounting": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "outcome_precedence": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "determinism": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] },
+        "nonvacuity": { "oneOf": [{ "$ref": "#/definitions/controlResult" }, { "$ref": "#/definitions/absentMarker" }] }
+      }
+    },
+    "category": {
+      "enum": [
+        "invalid",
+        "incomplete_or_anomalous",
+        "filter_plus_geometry",
+        "restatement_signature",
+        "overshoot",
+        "derived",
+        "not_derived"
+      ]
+    }
+  },
+  "definitions": {
+    "routeCompletion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["expected", "visited", "outputs", "digest"],
+      "properties": {
+        "expected": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+        "visited": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+        "outputs": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+        "digest": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "routeAccounting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generated_key_count",
+        "in_R_count",
+        "extra_beyond_R_count",
+        "R_missed_count",
+        "in_R_but_unmatched_count",
+        "generatedKeys",
+        "inRKeys",
+        "extraBeyondRKeys",
+        "rMissedKeys",
+        "inRButUnmatchedKeys",
+        "matchedObservedKeys",
+        "missedObservedKeys",
+        "restatement_signature"
+      ],
+      "properties": {
+        "generated_key_count": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+        "in_R_count": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+        "extra_beyond_R_count": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+        "R_missed_count": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+        "in_R_but_unmatched_count": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+        "generatedKeys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[0-6]:(0|[1-9][0-9]*)$" }
+        },
+        "matchedObservedKeys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[0-6]:(0|[1-9][0-9]*)$" }
+        },
+        "missedObservedKeys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[0-6]:(0|[1-9][0-9]*)$" }
+        },
+        "inRKeys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[0-6]:(0|[1-9][0-9]*)$" }
+        },
+        "extraBeyondRKeys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[0-6]:(0|[1-9][0-9]*)$" }
+        },
+        "rMissedKeys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[0-6]:(0|[1-9][0-9]*)$" }
+        },
+        "inRButUnmatchedKeys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[0-6]:(0|[1-9][0-9]*)$" }
+        },
+        "restatement_signature": { "type": "boolean" }
+      }
+    },
+    "absentMarker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reason"],
+      "properties": {
+        "status": { "const": "ABSENT" },
+        "reason": { "type": "string", "minLength": 1 }
+      }
+    },
+    "tCRelation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier", "a", "b", "mid"],
+      "properties": {
+        "tier": { "enum": ["A0", "A1"] },
+        "a": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+        "b": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+        "mid": { "type": "string", "pattern": "^[0-6]$" }
+      }
+    },
+    "seamGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["targetH", "parentA", "parentB", "parentOffice", "edgeId1", "edgeId2"],
+      "properties": {
+        "targetH": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+        "parentA": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+        "parentB": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+        "parentOffice": { "type": "string", "pattern": "^[0-6]$" },
+        "edgeId1": { "type": "string", "minLength": 1 },
+        "edgeId2": { "type": "string", "minLength": 1 }
+      }
+    },
+    "evidenceDetail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary"],
+      "properties": {
+        "summary": { "type": "string", "minLength": 1 },
+        "detail": { "type": "string" }
+      }
+    },
+    "controlResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "reason", "observed_gate", "rejected", "evidence", "cleanCounterpart", "implementationDigest"],
+      "properties": {
+        "state": { "enum": ["ran", "skipped"] },
+        "reason": { "type": "string", "minLength": 1 },
+        "observed_gate": { "type": "string", "minLength": 1 },
+        "rejected": { "type": "boolean" },
+        "evidence": { "$ref": "#/definitions/evidenceDetail" },
+        "cleanCounterpart": { "$ref": "#/definitions/evidenceDetail" },
+        "implementationDigest": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    }
+  }
+}

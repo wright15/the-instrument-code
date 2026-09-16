@@ -34,6 +34,7 @@ export function buildDataset(root) {
     .map((record) => {
       const identity = taxonomyById.get(record.stateId);
       if (!identity || identity.sourceOrder !== record.stateId) throw new Error(`D_TIER_TAXONOMY_IDENTITY_MISMATCH:${record.stateId}`);
+      if (["name", "forte", "role", "tier", "office"].some((field) => record[field] !== identity[field])) throw new Error(`D_TIER_CENSUS_IDENTITY_DRIFT:${record.stateId}`);
       return {
         stateId: identity.stateId,
         sourceOrder: identity.sourceOrder,

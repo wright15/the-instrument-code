@@ -9,10 +9,28 @@
     "datasetId": {"const": "D_TIER_TAXONOMY_DATASET_v1"},
     "authorityBoundary": {"const": "planning_evidence"},
     "authorityNote": {"type": "string"},
-    "taxonomyBinding": {"type": "object"},
-    "censusBinding": {"type": "object"},
+    "taxonomyBinding": {"type": "object", "additionalProperties": false, "required": ["artifact", "bundleFingerprint", "canonicalLedgerSha256"], "properties": {"artifact": {"const": "orrery/src/generated/taxonomy-read-model.v1.json"}, "bundleFingerprint": {"$ref": "#/$defs/hash"}, "canonicalLedgerSha256": {"$ref": "#/$defs/hash"}}},
+    "censusBinding": {"type": "object", "additionalProperties": false, "required": ["artifact", "sha256", "candidateId", "candidateFingerprint", "status", "researchVerdict"], "properties": {"artifact": {"const": "canonical/fivefold-incubator/fifth-space-census-v0.json"}, "sha256": {"$ref": "#/$defs/hash"}, "candidateId": {"const": "FIFTH_SPACE_CENSUS_v0"}, "candidateFingerprint": {"$ref": "#/$defs/hash"}, "status": {"type": "string"}, "researchVerdict": {"type": "object", "required": ["verdict"], "properties": {"verdict": {"enum": ["confirmed", "refuted", "partial"]}}}}},
     "recordCount": {"const": 175},
-    "records": {"type": "array", "minItems": 175, "maxItems": 175},
+    "records": {"type": "array", "minItems": 175, "maxItems": 175, "items": {"$ref": "#/$defs/record"}},
     "datasetFingerprint": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "record": {
+      "type": "object", "additionalProperties": false,
+      "required": ["stateId", "sourceOrder", "name", "forte", "role", "tier", "office", "officeStatus", "authority", "fifthMask", "fifthPositions", "fifthSpan", "fifthArc", "holes", "gapMultiset", "provenancePath"],
+      "properties": {
+        "stateId": {"type": "integer", "minimum": 1, "maximum": 4095}, "sourceOrder": {"type": "integer", "minimum": 1},
+        "name": {"type": "string", "minLength": 1}, "forte": {"type": "string"}, "role": {"enum": ["anchor", "satellite", "boundary"]},
+        "tier": {"type": "string", "pattern": "^D[1-7]$"}, "office": {"type": ["string", "null"]}, "officeStatus": {"enum": ["available", "withheld"]},
+        "authority": {"const": "planning_evidence"}, "fifthMask": {"type": "integer", "minimum": 1, "maximum": 4095},
+        "fifthPositions": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 11}},
+        "fifthSpan": {"type": "integer", "minimum": 6, "maximum": 11}, "fifthArc": {"type": "string", "pattern": "^\\[[0-9]+,[0-9]+\\]$"},
+        "holes": {"type": "integer", "minimum": 0, "maximum": 5},
+        "gapMultiset": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "integer", "minimum": 1, "maximum": 6}},
+        "provenancePath": {"const": "canonical/universal-heptatonic-ledger.json"}
+      }
+    }
   }
 }

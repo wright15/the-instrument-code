@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1064,
-  "totalBytes": 72937726,
+  "fileCount": 1087,
+  "totalBytes": 73686045,
   "files": [
     {
       "path": ".env.example",
@@ -278,17 +278,17 @@
     {
       "path": "canonical/fivefold-incubator/fifth-space-census-v0.json",
       "bytes": 194194,
-      "sha256": "b538105d0d1d0cb119a2777d4c5573895e9bd792b6f308142382987f799ed8c0"
+      "sha256": "c537bf547ceab5c4d4c49f85da92848cbd3bbbf342c8ffc43c354abc9af47e00"
     },
     {
       "path": "canonical/fivefold-incubator/shadow-ladder-v0.json",
       "bytes": 3927,
-      "sha256": "44e8f01d4a00cb6e3495305b3ae51f1f474448d74a129c06b52e80c0ba155aad"
+      "sha256": "7e6df4b916ab3418deae00367280d70d32adfd15eb6aa5fec5753b5876d5b871"
     },
     {
       "path": "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
       "bytes": 12396,
-      "sha256": "d910de27033ab14f2ad8d41dcfd0005bc9337e8985ae379cfdf126cd673ca99f"
+      "sha256": "972394e5c319c4497c4df6b64c7ba6e9a0639cdd3ea1f5a28844f2e6cfddb40d"
     },
     {
       "path": "canonical/gov-210-availability-housing.json",
@@ -592,8 +592,8 @@
     },
     {
       "path": "docs/verification/FINGERPRINT_BLAST_RADIUS.md",
-      "bytes": 5341,
-      "sha256": "50e3e9ceef607d58cba419ecc2852c1b207ceda8f6ec3489e98293e0e77fc157"
+      "bytes": 7406,
+      "sha256": "af6cc47d999f9eaa58626377d8e956be877398a92c4a4a08c82e0930d50908c3"
     },
     {
       "path": "docs/verification/PENTATONIC_GRAPH_BINDING_AUDIT_REPORT.md",
@@ -1112,13 +1112,13 @@
     },
     {
       "path": "orrery/src/d-tier-taxonomy-dataset.test.ts",
-      "bytes": 1942,
-      "sha256": "a6dd3d455374e67173393666a098f9253c5d25b5d16e30892ceb4a65f8421a71"
+      "bytes": 2681,
+      "sha256": "83ddabf446d81e7f8862bd4f815c1724aa887c3269fe76967521856c240ce866"
     },
     {
       "path": "orrery/src/d-tier-taxonomy-dataset.ts",
-      "bytes": 4493,
-      "sha256": "b80060685681f851ebf3a8d935df78a32ed0b18252fbb49ee695d6c09fddb1f7"
+      "bytes": 7698,
+      "sha256": "dd00c1786e23efa01148e6d8c819a9b7c25d0b42e0c403a4357c10adec3c86f0"
     },
     {
       "path": "orrery/src/evidence-bundle.test.ts",
@@ -1143,7 +1143,7 @@
     {
       "path": "orrery/src/generated/d-tier-taxonomy-dataset.v1.json",
       "bytes": 66006,
-      "sha256": "5a6fb4a4f3bba6bef74ccc37a1dd31008272c77b207b50ae4d64f13d8042b88a"
+      "sha256": "4b90723d00f9e85fa804286d5cf60a5f5faa10e6b31b27f600f893f3a8c1c2d2"
     },
     {
       "path": "orrery/src/generated/evidence-bundle.v1.json",
@@ -1153,7 +1153,7 @@
     {
       "path": "orrery/src/generated/field-derivation-bundle.v1.json",
       "bytes": 2783,
-      "sha256": "f506b16ba81b5cbe28ce075ee6b9756fc8ddbd695692775586c461f5656d5696"
+      "sha256": "e3e6d80c20a8b9468212dd364cba41eb3dac58534ef151910d4e4684ac15ddd4"
     },
     {
       "path": "orrery/src/generated/legal-moves.v2.json",
@@ -1167,8 +1167,8 @@
     },
     {
       "path": "orrery/src/generated/taxonomy-read-model.v1.json",
-      "bytes": 143714,
-      "sha256": "976fc68203ab598d49122a958d30365dbcc368f0c9fb7475f1974f0af8541b06"
+      "bytes": 664518,
+      "sha256": "92e151fda61dd414c1bfa1598b2268e35d8b3cd4170c28e2547ff9101b93d45d"
     },
     {
       "path": "orrery/src/harmony.test.ts",
@@ -1187,8 +1187,8 @@
     },
     {
       "path": "orrery/src/main.ts",
-      "bytes": 72232,
-      "sha256": "651251a9e5e8d9f81208c0188de2108a0ddd625d854533e6ea9e1f60909140c5"
+      "bytes": 74814,
+      "sha256": "54cf04b400794fd2f8b8a335592ae464c45fd42085173add2bdc53ff4813e084"
     },
     {
       "path": "orrery/src/moves.math.test.ts",
@@ -1266,14 +1266,24 @@
       "sha256": "0d948f09abd65823c0360a59f31e2fb038bda4e279ef6ab4005fe02c162b6fc1"
     },
     {
+      "path": "orrery/src/taxonomy-explain.test.ts",
+      "bytes": 6119,
+      "sha256": "4e1f55f6a16876a804abb96621355082b49f942e7eed7f6ca68490ad1f8855d2"
+    },
+    {
+      "path": "orrery/src/taxonomy-explain.ts",
+      "bytes": 6294,
+      "sha256": "63ec82567072e9af0766bea1883f2c8bf1c52b21acea3174fe08a7ef0469ec5d"
+    },
+    {
       "path": "orrery/src/taxonomy-read-model.test.ts",
-      "bytes": 2301,
-      "sha256": "b6bda8f2d87bfd18688f7185088825c231a67b208054b51bdc4e69922d3835b3"
+      "bytes": 2429,
+      "sha256": "01f26f9b08046d52585cf0e67333e751cce3e793bcf54a015ea9b55ebcdd7a7d"
     },
     {
       "path": "orrery/src/taxonomy-read-model.ts",
-      "bytes": 4819,
-      "sha256": "a445c426772b78c282d2220d2a6828bf88e56d8496588f89b90b032cdd811e83"
+      "bytes": 8258,
+      "sha256": "abed540c9d4ca6566d0c60c5683ded451ae9ad4515695f22b6e815472b49aa8d"
     },
     {
       "path": "orrery/src/types.ts",
@@ -1289,6 +1299,16 @@
       "path": "orrery/test/fixtures/nodes-response.mjs",
       "bytes": 2496,
       "sha256": "3f3420bdee82f48288e81fa73d9cf91f6284909d4236e521e71e55a803379186"
+    },
+    {
+      "path": "orrery/tests/taxonomy-browser.js",
+      "bytes": 9023,
+      "sha256": "e70da2196bb5e7cecb258b92ce03425a347720878fc00b61dc0c5f9fff97ce18"
+    },
+    {
+      "path": "orrery/tests/taxonomy-builders.node.mjs",
+      "bytes": 3157,
+      "sha256": "58060ada03c2e160d3b5b629a068cabd6232d77ee12b46d8605cc9979e2c6ffd"
     },
     {
       "path": "orrery/tsconfig.json",
@@ -1307,18 +1327,18 @@
     },
     {
       "path": "package.json",
-      "bytes": 12665,
-      "sha256": "33021fe704b174f3a9a305bbd5dc68d5191e78521f14c606aeb9a4df70a879ac"
+      "bytes": 12835,
+      "sha256": "f1674f3fb6c5431aa464f01a19629a57f92b3b3104fed69eb6497f15b917e432"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
-      "bytes": 119025,
-      "sha256": "baa5db55de37c72e6fe5c7e2430f82d2ed04c9ff50914ffee8ba67bf412f14da"
+      "bytes": 147043,
+      "sha256": "ac50241b6c432394b55864e2ea79755d70ddca60529476edf470f2c39f509c74"
     },
     {
       "path": "provenance/NEXT_STEPS.md",
-      "bytes": 10924,
-      "sha256": "3a045604a98361f12a25d27a4d69ca76a4c77d690f3b02589da8277726f80e06"
+      "bytes": 14605,
+      "sha256": "6575cc40dc2dc3d48f5eeff8dccddfc337c6e14895a23e9d6474d13230f1dc90"
     },
     {
       "path": "provenance/OBSERVATION_LEDGER.md",
@@ -1418,7 +1438,7 @@
     {
       "path": "qa/fifth-space-census-validation.json",
       "bytes": 16323,
-      "sha256": "8288f63210e3a940161f30ce646b2651ec86c1e1e7711535fb2e0a03e68182d0"
+      "sha256": "b93d50bd8a9ea4b071d12920ff6a313c0ce29e429985f3a6bb77546b82cbe0e6"
     },
     {
       "path": "qa/fivefold-capability-teleology-validation.json",
@@ -1427,8 +1447,8 @@
     },
     {
       "path": "qa/fivefold-engine-promotion-evidence.json",
-      "bytes": 22859,
-      "sha256": "9dbf7ebd58cdcc94ac5eaa9f3fce565ce620d95211bd6e0973f4edf8872161ab"
+      "bytes": 22949,
+      "sha256": "1f022986b6d4e7e4e4a321e8d067774eac27dece449934ed6159624cdb546abc"
     },
     {
       "path": "qa/gov-208-vault-context-validation.json",
@@ -1587,8 +1607,8 @@
     },
     {
       "path": "qa/neo4j-deployment-roundtrip-validation.json",
-      "bytes": 25860,
-      "sha256": "be45bce7ef7ecd7814f12944ce2ff4750eb0a22547f78b5a17789fd044ab7829"
+      "bytes": 23087,
+      "sha256": "16607954e11c23e918d94752a766c803b5e24c6ff0fa91a838df580ee0a4b8f3"
     },
     {
       "path": "qa/neo4j-export-validation-report.json",
@@ -1613,7 +1633,7 @@
     {
       "path": "qa/orrery-field-derivation-bundle-validation.json",
       "bytes": 1953,
-      "sha256": "9db91fa82e73e85d72dc361d16b5ea51db6dc7943d8da5186135ce051b644d92"
+      "sha256": "e1cd464c9eab0986ce65fe964c08f846cc5462462d705abba118944b21ec6c16"
     },
     {
       "path": "qa/orrery-photonic-overlay-validation.json",
@@ -1628,7 +1648,7 @@
     {
       "path": "qa/pentatonic-binding-audit-closure.json",
       "bytes": 4552,
-      "sha256": "36e4fe944baeee9fb98b9f2d81315d4694ae7820f3a067a01eecc4d6db3cc435"
+      "sha256": "13edaa2762ce52d8d75a29dbb09cf6b9d9f9eb077a36bc66783d08e2a2dc1667"
     },
     {
       "path": "qa/pentatonic-binding-audit-neo4j-validation.json",
@@ -1646,6 +1666,11 @@
       "sha256": "e12daa14dfb6f9be64f2b9d852ea1ee8962406f90bb5124a480216519b8b4aa9"
     },
     {
+      "path": "qa/post-d5-taxonomy-browser-receipt.json",
+      "bytes": 1879,
+      "sha256": "6a8c820c609a34cf3f0c3a4710b9bda5ccda30482c835266b08789ec7ee38ff5"
+    },
+    {
       "path": "qa/server-health.json",
       "bytes": 392,
       "sha256": "4153a3a916a0a0727c9b76e0929dddbb35e7da2614e21cae158ae1fe48ffbfb6"
@@ -1653,7 +1678,7 @@
     {
       "path": "qa/shadow-ladder-validation.json",
       "bytes": 5382,
-      "sha256": "5825293d1c2e9461196bbfea96793c99283387913cb2329729db3e9e807dcd9e"
+      "sha256": "040d1f6b47936d766e971bac8fa0eb0c7166b3104b9697f31360cf01a9cfe561"
     },
     {
       "path": "qa/teleological-physics-registry-validation.json",
@@ -1668,7 +1693,7 @@
     {
       "path": "qa/twin-hub-convergence-validation.json",
       "bytes": 5369,
-      "sha256": "7c54147651552bef3714cae2658f604372043c83c9699a925631e8163fddf968"
+      "sha256": "b7f924ca53859b832334200245f690196433e8c8eb213e2ce26afa5e62e230d2"
     },
     {
       "path": "requirements-orrery-dev.txt",
@@ -1847,8 +1872,8 @@
     },
     {
       "path": "schemas/fivefold-engine-promotion-evidence.schema.json",
-      "bytes": 3488,
-      "sha256": "3e47637641bedc2b08d6b597c70a7de44b540ec66c3362b3329af4a9e98e29be"
+      "bytes": 3595,
+      "sha256": "2b59e925e1d6e366a288c740ab4afc7e598774cc2dae32793fee16e54b924d24"
     },
     {
       "path": "schemas/fivefold-incubator/d-shadow-complement-span-v0.schema.json",
@@ -2022,8 +2047,8 @@
     },
     {
       "path": "schemas/harmonic-orrery-d-tier-taxonomy-dataset.schema.json",
-      "bytes": 858,
-      "sha256": "9646c211e4e34220eb594c3d47b976e81d0d93faa0ed505663ab2f6be7c6645f"
+      "bytes": 3226,
+      "sha256": "9dc45f167e8088e79066526e69122652bbd57a4e3ef67b50f831e704a1245cd1"
     },
     {
       "path": "schemas/harmonic-orrery-evidence-bundle.schema.json",
@@ -2052,8 +2077,13 @@
     },
     {
       "path": "schemas/harmonic-orrery-taxonomy-read-model.schema.json",
-      "bytes": 849,
-      "sha256": "4c1598870e0afa6a35e080c9536f79fff0bb9c4f69f643a4377e3e4573fcd264"
+      "bytes": 3847,
+      "sha256": "792da178fd93065fadef2d477deb435f5ee610b0059f0edb8aa1f69d33f07b49"
+    },
+    {
+      "path": "schemas/ledger-pin-allowlist.json",
+      "bytes": 1465,
+      "sha256": "7ee1213883511b762f041ca7460e497659eb6be9ab1521ca27ffe4c68548a259"
     },
     {
       "path": "schemas/mechanics-thermodynamics-registry-v1.0.0.schema.json",
@@ -2182,8 +2212,8 @@
     },
     {
       "path": "scripts/build-fivefold-engine-promotion-evidence.py",
-      "bytes": 31509,
-      "sha256": "686c03295b72e5e456d4071abc96cd3aae7b11c3e8f50975e5e0334272002a09"
+      "bytes": 31732,
+      "sha256": "d737b268b2d650ce199cef4a30587a677b879d216e7aef869470c9995c6f839b"
     },
     {
       "path": "scripts/build-manifest.mjs",
@@ -2192,8 +2222,8 @@
     },
     {
       "path": "scripts/build-orrery-d-tier-taxonomy-dataset.mjs",
-      "bytes": 4729,
-      "sha256": "fb7b608b88feb07415217dbc7f4028b1febdebedaf97c09ffe2f56be69125cc2"
+      "bytes": 4902,
+      "sha256": "250f0a047c005cbf8cf69e4b49494972f265b48b5bc43f6baf9eb26bdcbc6b30"
     },
     {
       "path": "scripts/build-orrery-evidence-bundle.mjs",
@@ -2207,8 +2237,8 @@
     },
     {
       "path": "scripts/build-orrery-taxonomy-read-model.mjs",
-      "bytes": 4378,
-      "sha256": "bb127a76997d80bb66ed496a0ce716dc355da43926b86764e5485498e1671493"
+      "bytes": 5991,
+      "sha256": "ea186db8bbd13462bc44f42cfed5d0fb8385acd3f3b23cdddef9f0efe6c2eeed"
     },
     {
       "path": "scripts/build-pentatonic-admission-backlog.mjs",
@@ -2322,8 +2352,13 @@
     },
     {
       "path": "scripts/manifest-utils.mjs",
-      "bytes": 1105,
-      "sha256": "82721119866a5af9f1e2c627fb5b63d1accde9694cd8ca7afdd660c5880ae0c0"
+      "bytes": 1339,
+      "sha256": "1a78b2b4b4377b9cb5716f319a16a9a4631009bafbd765e82cb734e19bd88037"
+    },
+    {
+      "path": "scripts/manifest-utils.test.mjs",
+      "bytes": 2050,
+      "sha256": "44472304e1c35b657602ee00ba2f9b7ddc05653220d36505f4a471167a99a191"
     },
     {
       "path": "scripts/run-court-admission-benchmark.mjs",
@@ -2364,6 +2399,11 @@
       "path": "scripts/test-harmonic-orrery.sh",
       "bytes": 548,
       "sha256": "4920507ba7fa2354d14e19889445c1b1aa3ba0fdda13350b41184cd131c5856f"
+    },
+    {
+      "path": "scripts/test-release-repair.py",
+      "bytes": 2583,
+      "sha256": "92ca6561f1dc390287340491f30fd988b61a779d10ee1d758c29cef9b03ee777"
     },
     {
       "path": "scripts/validate-court-admission.mjs",
@@ -2417,8 +2457,8 @@
     },
     {
       "path": "scripts/validate-fivefold-engine-promotion-evidence.py",
-      "bytes": 11637,
-      "sha256": "989342f61107b5ebb1b1b4e34ded7006213ed9cff712c98c15c44445026d50b2"
+      "bytes": 12331,
+      "sha256": "a8c94626dff4564e595bcd2661c2bee78cfcf5fa4e31330d49f05888ae5efb38"
     },
     {
       "path": "scripts/validate-full-database.mjs",
@@ -2439,6 +2479,16 @@
       "path": "scripts/validate-harmonic-compression-candidates.py",
       "bytes": 10908,
       "sha256": "153d3861c4b9bd547d835b19e47df5168425b697ee7b69cae5b2b3daec625c8b"
+    },
+    {
+      "path": "scripts/validate-harmonic-invariants.py",
+      "bytes": 2188,
+      "sha256": "c22aa199cad7eaa13249766e907d5a15516abeb694a95c289a5856b83d11aa94"
+    },
+    {
+      "path": "scripts/validate-ledger-pins.py",
+      "bytes": 4704,
+      "sha256": "8ce21394f4b20ff3f5f5e01a53e9c15ed1e245da8d18a39043557c90a398962f"
     },
     {
       "path": "scripts/validate-mechanics-thermodynamics-registry-v2.py",
@@ -2477,8 +2527,8 @@
     },
     {
       "path": "scripts/validate-release.mjs",
-      "bytes": 98221,
-      "sha256": "5f78d2a3cd0f0bc1ccf0dcc4ca7e22251a5283b4c387557bc1c8a1dcb418c875"
+      "bytes": 98263,
+      "sha256": "c8265e5b5f0fdcbf5be77c12a0e50c45fe684880cbbccb3ca18e74778f341508"
     },
     {
       "path": "scripts/validate-semantic-operator-registry.mjs",
@@ -2917,13 +2967,68 @@
     },
     {
       "path": "scrum/README.md",
-      "bytes": 15570,
-      "sha256": "a1825cf9cb93dfafa873568405c4415c5d42491e276a75ae86e9bb158cde4f42"
+      "bytes": 15901,
+      "sha256": "736e3a0a25579e9961f50cd5f7630f7a944f1015b9686748f2393e206613c315"
+    },
+    {
+      "path": "scrum/plan/continuous-typology-obs-draft.md",
+      "bytes": 6545,
+      "sha256": "756828838bd92fe98d54d88c0d4ab1238e10e6bfe47f67f8723212b012ddd2ec"
+    },
+    {
+      "path": "scrum/plan/d4-boundary-draft.md",
+      "bytes": 29608,
+      "sha256": "751d56d4f01ea1a0d054c8119d178a64b20787aa9fb095a02c99f3ba3b135de2"
+    },
+    {
+      "path": "scrum/plan/d4-freeze-handoff.md",
+      "bytes": 6893,
+      "sha256": "73dbe003e7e5ffcfd4932ad38c41f3481a7e0283194ec0024ed9936de2bc4fd9"
     },
     {
       "path": "scrum/plan/epic-520-1-planning-handoff.md",
       "bytes": 4791,
       "sha256": "dc3a26e6d4eeabc96bd4a1811316e103d5e95539b62da8ed9176c124592e44f5"
+    },
+    {
+      "path": "scrum/plan/ledger-pin-migration.md",
+      "bytes": 5881,
+      "sha256": "02fccc6e7af533a4a923c32504a8de010463c23201062b92b04dacf7383e4342"
+    },
+    {
+      "path": "scrum/plan/post-d5-analysis-capture.md",
+      "bytes": 12164,
+      "sha256": "5b82570e584cf78365693ad1150a91d96976eb9a147f58c9cbf8385404817c93"
+    },
+    {
+      "path": "scrum/plan/post-d5-neo4j-investigation.md",
+      "bytes": 9484,
+      "sha256": "078ab5415556fa7ed675cbf5ff6a652ee4aa1d45942bb4b0caf6e7c5c9da5fe8"
+    },
+    {
+      "path": "scrum/plan/post-d5-product-gate-status.md",
+      "bytes": 18936,
+      "sha256": "a78386e7872377832902deaa2f2738d0e96c1275888635713f263f450b14467d"
+    },
+    {
+      "path": "scrum/plan/post-d5-receipt-check.md",
+      "bytes": 8872,
+      "sha256": "dbdd7b8b63dc04a14531d426c31bdedbc13e1f8b4839a6836950788d6d12daf0"
+    },
+    {
+      "path": "scrum/plan/post-d5-release-repair.md",
+      "bytes": 9237,
+      "sha256": "0d6c906e4202a7502ce746d4648557ecde67282161c03e7c54d98d6101c03bda"
+    },
+    {
+      "path": "scrum/plan/post-d5-research-successors.md",
+      "bytes": 9360,
+      "sha256": "3218f0650639bd03a07986ae9ea003e470d68c40e239df2bc75db5ae509ae881"
+    },
+    {
+      "path": "scrum/plan/post-d5-taxonomy-implementation.md",
+      "bytes": 10618,
+      "sha256": "9b1081dba230c46f38ff08128ba0b20c1c23e1e657b11394de3ad1bd9e05f803"
     },
     {
       "path": "scrum/plan/sprint-3-closeout.md",
@@ -5072,8 +5177,13 @@
     },
     {
       "path": "tests/neo4j/full-database-live.test.mjs",
-      "bytes": 9691,
-      "sha256": "d7ae0021b72c0c469ab3f942d2fa2b9f5957eccf694c1300f7ca9b3aac1c8ae7"
+      "bytes": 10239,
+      "sha256": "5783f744c8f807b1103146031a3a3a1d1cbe95241619d3298138949ed907a027"
+    },
+    {
+      "path": "tests/neo4j/investigate-roundtrip.mjs",
+      "bytes": 4117,
+      "sha256": "ef9a79c3fded5ace8da040fca677ede3a9ecaf16300c8974acf0dfbcba9518a0"
     },
     {
       "path": "tests/pentatonic_binding_audit/neo4j-live.test.mjs",
@@ -5137,8 +5247,8 @@
     },
     {
       "path": "tests/test_fivefold_engine_promotion_evidence.py",
-      "bytes": 7186,
-      "sha256": "91cbdde4fd982c4ec88621b48cc097eb894631b11ddaa3f38729faa05a57fb56"
+      "bytes": 10287,
+      "sha256": "ae6ccc59ef698c61b39d72877f63bd3df36f5456baca644bc6a681aebb6ea872"
     },
     {
       "path": "tests/test_gov_203_classifier.py",
@@ -5234,6 +5344,11 @@
       "path": "tests/test_harmonic_runtime.py",
       "bytes": 8804,
       "sha256": "115d438e4a40ea67530f40e3f394ae9e6921a9eb73f690b11073045c23244b64"
+    },
+    {
+      "path": "tests/test_ledger_pin_inventory.py",
+      "bytes": 2562,
+      "sha256": "ff9b536c1c489130d06a62f54bbea3c9e07da3b3dbefa83bcd363024af84eb1f"
     },
     {
       "path": "tests/test_mechanics_thermodynamics_registry.py",

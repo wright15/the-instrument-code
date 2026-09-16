@@ -4,7 +4,7 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { canonicalJsonBytes } from "../graph/runtime/canonical.mjs";
-import { recordFile, walkFiles } from "./manifest-utils.mjs";
+import { frozenPayloadExcluded, recordFile, walkFiles } from "./manifest-utils.mjs";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const packageRoot = path.resolve(scriptDirectory, "..");
@@ -240,9 +240,7 @@ const frozenPackagePayloads = await Promise.all(frozenPackagePayloadSpecs.map(
   async ([directory, expected]) => {
     const absoluteRoot = path.join(packageRoot, directory);
     const files = await walkFiles(absoluteRoot, {
-      excluded: new Set([
-        ".git", "MANIFEST.json", "PACKAGE_MANIFEST.json", "CHECKSUMS.sha256",
-      ]),
+      excluded: frozenPayloadExcluded,
     });
     const records = await Promise.all(
       files.map((absolutePath) => recordFile(absolutePath, absoluteRoot)),
@@ -526,14 +524,14 @@ record(
 // 6. Harmonic invariant registry (post-1.2.0 candidate package)
 // ---------------------------------------------------------------------------
 
-const harmonicInvariantValidate = runNpmScript(
-  "seven-governors-harmonic-invariants-v0.1.0",
-  "validate",
+const harmonicInvariantValidate = runIn(
+  ".", "python3", ["scripts/validate-harmonic-invariants.py"],
 );
 record(
   "harmonic invariant validation",
-  harmonicInvariantValidate.passed,
-  harmonicInvariantValidate.passed ? "passed" : harmonicInvariantValidate.tail,
+  harmonicInvariantValidate.status === 0,
+  harmonicInvariantValidate.status === 0 ? "passed"
+    : (harmonicInvariantValidate.stderr || harmonicInvariantValidate.stdout).trim().split(/\r?\n/).slice(-10).join("\n"),
 );
 const harmonicInvariantReport = JSON.parse(
   (

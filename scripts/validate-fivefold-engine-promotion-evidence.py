@@ -23,7 +23,6 @@ SCHEMA_VERSION = "crt-348.fivefold-engine-promotion-evidence.v1"
 EVIDENCE_ID = "fivefold-engine-promotion-evidence-v1"
 
 FROZEN_ENGINE_SHA256 = "9cbf038c93a72719387e6a8094f5b466a79e61ce03371f5b2334fb26a480b64a"
-DECISION_LEDGER_SHA256 = "7a3d3236cb4cf1cf8bc54756c72111dac9cb3455197a8b9343b298184f53bdb7"
 
 SOURCE_PATHS = (
     "schemas/court-admission-contract.json",
@@ -192,6 +191,19 @@ def _contract_replays_sources(contract: dict[str, Any], engine: dict[str, Any]) 
 
 
 def _evidence_is_internally_consistent(evidence: dict[str, Any]) -> None:
+    ledger_sha = _sha256_bytes((ROOT / "provenance/DECISION_LEDGER.md").read_bytes())
+    if evidence.get("decisionLedgerSha256") != ledger_sha:
+        raise PromotionEvidenceValidationError("decision_ledger_digest_drift:regenerate_required")
+    ledger_checks = [
+        check for group in evidence.get("exclusionEvidence", []) for check in group["checks"]
+        if check["checkId"] == "decision-ledger-digest"
+    ]
+    if len(ledger_checks) != 1 or any(
+        check["expected"] != ledger_sha or check["actual"] != ledger_sha
+        or check["pass"] is not True or check["locator"] != "provenance/DECISION_LEDGER.md"
+        for check in ledger_checks
+    ):
+        raise PromotionEvidenceValidationError("decision_ledger_check_binding_invalid")
     if evidence.get("admissionStatus") != "admitted":
         raise PromotionEvidenceValidationError("evidence_admission_status_invalid")
     if evidence.get("contractSha256") != _sha256_bytes(CONTRACT_PATH.read_bytes()):
@@ -234,11 +246,10 @@ def _recompute_critical_checks() -> None:
         ).read_bytes()
     ) != FROZEN_ENGINE_SHA256:
         raise PromotionEvidenceValidationError("frozen_engine_digest_drift")
-    if (
-        _sha256_bytes((ROOT / "provenance/DECISION_LEDGER.md").read_bytes())
-        != DECISION_LEDGER_SHA256
-    ):
-        raise PromotionEvidenceValidationError("decision_ledger_digest_drift")
+    if "Fivefold engine promotion admission (CRT-348)" not in (
+        ROOT / "provenance/DECISION_LEDGER.md"
+    ).read_text(encoding="utf-8"):
+        raise PromotionEvidenceValidationError("decision_ledger_admission_entry_missing")
     backlog = _read_json(ROOT / "provenance/pentatonic-set-class-admission-backlog.json")
     if backlog.get("bulkPromotionAllowed") is not False:
         raise PromotionEvidenceValidationError("crt310_bulk_promotion_drift")

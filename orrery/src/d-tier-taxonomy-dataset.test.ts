@@ -24,7 +24,7 @@ describe("D-tier taxonomy dataset", () => {
       const view = dTierDatasetView(input);
       expect(["loading", "unavailable", "incompatible"]).toContain(view.state);
       expect(view.records).toHaveLength(175);
-      expect(view.records.every((record, index) => record.ordinal === index + 1 && record.fifthSpace === null)).toBe(true);
+      expect(view.records.every((record, index) => record.ordinal === (index === 0 || view.records[index - 1].identity.tier !== record.identity.tier ? 1 : view.records[index - 1].ordinal + 1) && record.fifthSpace === null)).toBe(true);
       expect(view.verdict).toBeNull();
     }
   });
@@ -38,5 +38,16 @@ describe("D-tier taxonomy dataset", () => {
     } finally {
       vi.unstubAllGlobals();
     }
+  });
+
+  it.each(["unknown", "duplicate", "source-drift"])("rejects %s record identity without substituting data", (kind) => {
+    const dataset = structuredClone(D_TIER_DATASET);
+    if (kind === "unknown") dataset.records[0].stateId = -1;
+    if (kind === "duplicate") dataset.records[1].stateId = dataset.records[0].stateId;
+    if (kind === "source-drift") dataset.records[0].name = "invented";
+    const view = dTierDatasetView(dataset);
+    expect(view.state).toBe("incompatible");
+    expect(view.verdict).toBeNull();
+    expect(view.records.every((record) => record.identity && record.fifthSpace === null)).toBe(true);
   });
 });

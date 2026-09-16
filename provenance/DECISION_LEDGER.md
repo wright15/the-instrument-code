@@ -1717,3 +1717,475 @@ control-verified); the result's strength is bounded by that registration.
 - `qa/gov-517-preflight-report.json`
 - `qa/gov-517-input-boundary-registration.json`
 - `scripts/gov-517-d5-derivation-engine.mjs`
+
+## D4 pre-freeze reachability hold - 2026-09-14
+
+**Status:** freeze landing blocked by prerequisite arithmetic; boundary remains
+unfrozen. This is not ENTRY 9, a D4 derivation verdict, or implementation authority.
+
+### Authority And Review Trail
+
+The maintainer directed freeze landing after review through the maintainer relay
+by the independent review seat: four amendments, verbatim-relay verification of
+targets and semantics and the H-mapping timing block, midpoint arithmetic, and
+T+1 twin-predicate justification. The subsequent directions accepted the complete
+A1 GOVERNS substrate, required non-restatement accounting (including the fifth
+in-R-but-unmatched count), and required same-landing pre-freeze dissociation
+demonstrations with clean counterparts. The direction to execute does not waive
+those prerequisite demonstrations. Standing rule 1 makes arithmetic controlling.
+
+The H block actually present in the reviewed draft names its future landing
+surface; it is not a completed H-disposition table. The D4-specific `not_derived`
+qualifier is not yet present there. Prior relay prose promising a grep-confirmed
+qualifier must not be read as evidence that the qualifier had been written.
+
+### Binding At This Attempt
+
+The following SHA-256 values were recomputed with `sha256sum` at this sitting:
+
+- Reviewed draft `scrum/plan/d4-boundary-draft.md`:
+  `3e8c4ae458728b8d58cd351fc60c7c49ef981f0cc3e160b55cf4cef9d9573567`.
+- Arithmetic source `canonical/universal-heptatonic-ledger.json`:
+  `e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d`.
+
+These bind the attempted registration, not an accepted freeze. The reviewed
+draft bytes are unchanged. This entry contains its proof attachments directly;
+it does not attempt to embed its own SHA-256 and create a self-reference.
+
+### Attachment A - T-A Orientation Reachability
+
+The trusted pre-freeze arithmetic check selected only records with `tier=A0`
+and `role=anchor` from the canonical ledger. It checked all 49 ordered pairs
+of the seven anchors, rejecting diagonals and applying the declared pitch-mask
+rotation. No R/E relation or D4 contact comparison was evaluated. The mixed
+ledger file was deserialized for extraction; this is not a runtime input-isolation
+or blind-engine receipt.
+
+The complete directed T+1 matches, computed from the selected source records:
+
+```text
+a mask  b mask  o(a)  o(b)  mid  (o(b)-o(a)) mod 7  reviewed K  reversed K
+2741    1387    1     6     0    5                   false       true
+2773    1451    0     5     6    5                   false       true
+```
+
+Reproduction of the performed arithmetic, without an engine or output files:
+
+```js
+const a0 = ledger.filter(x => x.tier === "A0" && x.role === "anchor");
+const z = x => (x % 7 + 7) % 7;
+const rot = m => ((m << 1) & 4095) | (m >> 11);
+for (const a of a0) for (const b of a0) {
+  if (a.id === b.id || rot(a.id) !== b.id) continue;
+  const k = z(4 * (a.officeIndex + b.officeIndex));
+  // Reviewed orientation:
+  const accepted = a.officeIndex === z(k - 1) && b.officeIndex === z(k + 1);
+  // Diagnostic contrast only, not an amended predicate:
+  const reversed = a.officeIndex === z(k + 1) && b.officeIndex === z(k - 1);
+}
+```
+
+The reviewed T-A conjunction requires `o(b)-o(a)=2 mod 7`. Both actual directed
+T+1 pairs instead have delta 5, that is -2 modulo 7. They cannot satisfy that
+conjunction at any k. Consequently T-A has no witness for these granted A0
+anchors regardless of R. The midpoint formula is correct; its compatibility
+with the directed twin/kernel orientation was not established by the earlier
+midpoint-only review.
+
+The reversed-kernel contrast shows that changing the orientation can make the
+anchor-pair predicate fire. It does not supply a positive clean counterpart
+under the reviewed predicate, and it is not permission to reverse that predicate.
+An empty route forced by this incompatibility must not be mistaken for an
+empirical `not_derived` outcome about D4. No D4 observation was needed to expose
+the defect, and no D4 verdict is emitted.
+
+### Attachment B - Non-Restatement Accounting Reachability
+
+Let U = {(o(h),s) : (h,s) in R}, O be the downstream observed D4 contact-key set,
+and G be either generated route-key set. The five requested counts are:
+
+- generated-key: |G|.
+- in-R: |G intersect U|.
+- extra-beyond-R: |G minus U|.
+- R-missed: |U minus G|.
+- in-R-but-unmatched: |(G intersect U) minus O|.
+
+Pure restatement is exactly G=U, including the empty-set equality case; contact
+coverage is separate and does not erase the restatement flag. Full observed
+coverage must be computed from O, retaining the original contact-row identities
+as well as deduplicated keys.
+
+Both reviewed routes explicitly select (h,s) from R and emit (o(h),s). Therefore
+G is a subset of U for every conforming execution of either route. This follows
+from the output definition, not from a production result. `extra-beyond-R` is
+necessarily zero; a nonzero value would signal semantic nonconformance, not an
+authorized discovery beyond the grant. `in-R-but-unmatched` can still be nonzero
+and remains a distinct, necessary field. The earlier proposed beyond-R overshoot
+interpretation is unreachable under these predicates and must be corrected in
+the outcome contract before freeze, not introduced as a new generation capability.
+T-C remains the proposed source of additional midpoint structure, but no T-C
+agreement or independence result has been run or established by this attachment.
+
+### Disposition And Required Return To Review
+
+Do not land the requested freeze as if its demonstrations passed. Preserve the
+reviewed draft and return the directed T+1/K orientation to the review seat;
+reversing K, symmetrizing the twin relation, or accepting the forced-empty route
+would each be a substantive boundary decision, not silent implementation repair.
+The complete outcome contract must also distinguish in-R overshoot from the
+unreachable beyond-R branch and include the promised D4 `not_derived` qualifier:
+derivation difficulty under the registered route, not authorship proof.
+
+The accepted GOVERNS grant is not the source of this orientation defect. Its
+required future freeze interpretation is retained here as maintainer direction:
+"D4's derivation is relative to granted inheritance structure; a positive result
+derives the contact geometry, not the inheritance relation; comparability with D5
+is preserved by substrate-parity (CONSTRUCTS granted there, GOVERNS granted here)."
+This records the received grant decision, not an input-loader authorization.
+
+### Verification And HALT
+
+- **Ran:** source and draft review; SHA-256 recomputation; exhaustive A0-only
+  directed twin and kernel-orientation arithmetic over 49 pairs.
+- **Ran:** independent exact BigInt recomputation of both extracted pair
+  calculations; midpoint identities, reviewed-orientation rejection and
+  reversed-orientation acceptance all asserted successfully. Draft/source hashes
+  remained unchanged; `git diff --check -- provenance/DECISION_LEDGER.md` passed.
+- **Ran:** symbolic output-domain proof for both routes and the five-field
+  non-restatement accounting definitions above.
+- **Skipped:** full R/E dissociation matrix, edge-deletion and malformed-input
+  demonstrations; the reviewed clean T-A predicate already fails reachability,
+  so these have not been claimed complete or repackaged as green evidence.
+- **Skipped:** endpoint/contact-parent and A1 seam comparator registration,
+  completed H-mapping, and accepted freeze binding, pending corrected boundary
+  review and fulfillment of the remaining pre-freeze obligations.
+- **Skipped:** engine, scaffolding, implementation spec, D4 generation/comparison,
+  QA generation, manifest regeneration and dependent-ledger cascade. This sitting
+  records a hold within the requested ledger/registration scope, not a release
+  fixed point. The ledger edit leaves dependent freshness to a later authorized
+  cascade; the prior 416/2 receipt is not fresh evidence for this changed tree.
+
+**HALT:** no D4 freeze, engine, scaffolding, execution, verdict, topology,
+admission, runtime, office, graph, Court, or global `harmonic.C_H` authority is
+created. Implementation-spec opening remains blocked until the freeze actually
+lands with its prerequisites satisfied.
+
+## D4 boundary orientation correction registered - 2026-09-14
+
+**Status:** maintainer-approved boundary correction recorded; corrected predicate
+awaits the requested one-line verbatim re-verification before freeze. No D4
+freeze, implementation-spec opening, engine, scaffolding, or execution is granted.
+The preceding reachability-hold entry remains unchanged as the pre-correction
+record and must be cited by the eventual freeze entry.
+
+### Review Authority And Correction
+
+Through the maintainer relay, following the independent review seat's boundary
+review, the maintainer approved reversing T-A's kernel endpoints to
+`o(a)=k+1 mod 7`, `o(b)=k-1 mod 7`, with the directed T+1 test unchanged. The
+review trail now includes: reachability demonstrations caught a review defect;
+review verified meaning, enumeration verified possibility. This correction
+records that approval, not a retroactive assertion that the old conjunction
+could fire.
+
+The phase-seam retrograde rationale is specific to the registered coordinate
+convention: forward one-semitone pitch-mask rotation traverses these directed
+A0 twin pairs by -2 modulo 7 in office coordinates. The complete A0 pair check
+in the hold found (2741,1387) at (1,6) and (2773,1451) at (0,5), both delta 5.
+The corrected ordered endpoints accommodate that direction without changing
+the unordered K support {-1,+1}, the input masks, T+1, the midpoint formula,
+or any observed D4 comparison target. The choice was not made by comparing D4
+outcomes. Pair identities here are proof witnesses, not an engine literal grant.
+
+### Corrected Predicate For Re-Verification
+
+```text
+Enumerate (a,b,h,s,k) in A0 x A0 x R x Z7, preserving ordered a,b.
+Emit the tuple tagged kernel_twin iff a != b, o(a)=k+1 mod 7,
+o(b)=k-1 mod 7, T+1(m(a))=m(b), and o(h)=k.
+```
+
+### Corrected Boundary Binding
+
+Recomputed SHA-256 bindings at correction landing:
+
+- `scrum/plan/d4-boundary-draft.md`:
+  `751d56d4f01ea1a0d054c8119d178a64b20787aa9fb095a02c99f3ba3b135de2`.
+- `canonical/universal-heptatonic-ledger.json`:
+  `e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d`.
+- `canonical/universal-network-data.json`:
+  `21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc`.
+
+This binds the corrected document, including its completed Comparator And
+Non-Restatement Contract, Outcome Contract and Pre-Freeze Dissociation Attachment.
+It is a correction binding, not the still-pending freeze binding. The full
+disposition table is now present, rather than promised for a later document.
+
+### Same-Sitting Dissociation Evidence
+
+Source-only arithmetic extracted seven A0 and seven A1 anchors, the complete
+28-edge A1 GOVERNS relation R and the complete 14-edge A0-to-A1 CONSTRUCTS
+relation E. It did not select D4 contacts or compare midpoint outputs to observed
+seams. This was trusted mixed-source extraction for pre-freeze proof, not a
+blind production engine or a D4 run.
+
+```text
+Stimulus                               T-A keys  T-B keys
+Corrected clean predicates             8         28
+K endpoints swapped to old orientation 0         28
+Delete constructs:A0:1387:1371:0        8         24
+Restore E and corrected K              8         28
+```
+
+The deleted edge is first in ascending edge-ID order, with source 1387 and
+target 1371. Deletion removes the co-parent pair for that child and its four
+R keys from T-B, with T-A unchanged. K perturbation changes T-A while E/R
+and T-B stay fixed. Set equality of unchanged and restored routes was asserted,
+not just count equality. A valid seven-note mask 2741 passed; 4096 failed
+12-bit range/cardinality. The valid edge passed its bound ID/type/endpoint
+predicate; wrong type GOVERNS and reversed endpoints each failed. These clean
+counterparts and negative stimuli prove boundary-level reachability only;
+engine-path verification still belongs to separately authorized pre-flight.
+
+### Non-Restatement And Outcome Completion
+
+The maintainer accepted the correction that G_A and G_B are subsets of U,
+the projected R key set. Beyond-R keys are semantic nonconformance, not
+discovery. The five first-class count fields are generated-key, in-R,
+extra-beyond-R, R-missed, and in-R-but-unmatched; the contract retains witness
+key lists, observed row/key coverage and both route-level equality flags.
+T-C carries the non-restatement evidence exclusively. In-R overshoot is
+still separately reported and cannot be conflated with beyond-grant output.
+
+The completed table in the bound draft names `invalid`,
+`incomplete_or_anomalous`, `filter_plus_geometry`, `restatement_signature`,
+`overshoot`, `derived`, and `not_derived`, in first-applicable precedence order,
+with all diagnostic flags retained. Its conservative `derived` branch requires
+both routes to equal the observed contact-key set as a proper subset of U,
+plus exact nonempty T-C seam agreement. The source-only clean check shows
+T-B=U on the current complete E/R input, so that strict branch is not reachable
+with this T-B key set; the contract does not hide that fact or turn a
+restatement into full derivation. No downstream category has been emitted.
+
+The D4-specific qualifier is now actual contract text: `not_derived` is
+derivation difficulty under the registered route, not authorship proof. The
+inheritance substrate was granted, so a negative result concerns failure to
+generate the required pattern even with R given, not the origin of satellite
+membership or parent assignment. It is not a proof against every other operator
+and does not automatically imply a stronger H3 signal than D5.
+
+### Pending Freeze And HALT
+
+The corrected predicate is relayed for the one-line re-verification explicitly
+requested before freeze. The eventual same-landing freeze must incorporate the
+corrected boundary, completed contract, source bindings and (f)/(g) attachments,
+including this correction and the original hold in its review trail. The
+accepted GOVERNS declaration and its interpretive cost travel with that freeze.
+No self-referential ledger hash or unperformed proof is asserted here.
+
+**Ran:** source-only BigInt predicate arithmetic and set assertions described
+above, malformed-mask/edge rejection demonstrations with clean counterparts,
+SHA-256 recomputation, and draft whitespace validation. **Skipped:** D4 contact
+and seam comparison, any production verdict, implementation/scaffolding, QA
+generation, manifest regeneration and dependent-ledger cascade. This correction
+is not a fresh integrated-release validation or release fixed point.
+
+**HALT before freeze:** awaiting requested corrected-predicate re-verification;
+no implementation or execution authority, topology, admission, office, graph,
+Court, or global `harmonic.C_H` change follows from this correction.
+
+## ENTRY 9 - D4 contact-geometry boundary freeze - 2026-09-14
+
+**Status:** frozen definition boundary, maintainer signed. No implementation,
+scaffolding, engine, production execution or verdict authorized by this entry.
+
+### Decision And SHA Binding
+
+The maintainer's explicit freeze instruction accepts the corrected predicate
+and completed contract and freezes the exact reviewed bytes of
+`scrum/plan/d4-boundary-draft.md`, SHA-256
+`751d56d4f01ea1a0d054c8119d178a64b20787aa9fb095a02c99f3ba3b135de2`.
+The hash was recomputed at landing. Preserve those bytes, including the historical
+draft filename/status and pending-review notes. This entry supersedes those
+process-status notes only; it does not silently revise any mathematical predicate.
+T-A/T-B/T-C, the ten-item semantics, exclusions, comparator, Outcome Contract,
+and pre-freeze proof attachment are incorporated under that binding. Subsequent
+predicate changes require a new boundary registration, not edits to these bytes.
+
+Canonical structural input bindings (recomputed SHA-256):
+
+- `canonical/universal-heptatonic-ledger.json`:
+  `e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d`.
+- `canonical/universal-network-data.json`:
+  `21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc`.
+
+Generation projects complete A0/A1 anchors, A1 GOVERNS R, and A0-to-A1
+CONSTRUCTS E exactly as specified in the bound comparator/input contract.
+Pitch masks are the canonical mask identities; office indices use the declared
+Z7 convention. Mixed source files are not blanket runtime grants. The future
+implementation spec must implement isolated projections, not import whole ledgers,
+sidecars or review prose. Source-dependent display/census sidecars may regenerate
+in the freshness cascade without changing these structural inputs or this freeze.
+
+### Review Trail
+
+Reviewed through the maintainer relay by the independent review seat:
+first-draft review, four required amendments, verbatim-relay verification of
+targets/semantics and the H-mapping timing block, midpoint arithmetic and T+1
+twin-predicate justification. The timing block was subsequently replaced by the
+actual completed Outcome Contract, accepted in the present freeze instruction.
+The GOVERNS grant was surfaced by the drafting agent and explicitly accepted
+with its interpretive cost. The five-field non-restatement condition and
+pre-freeze demonstrations were required as same-landing attachments.
+
+The review trail includes both preceding records, preserved unchanged:
+"D4 pre-freeze reachability hold - 2026-09-14" and
+"D4 boundary orientation correction registered - 2026-09-14".
+Reachability demonstrations caught a review defect; review verified meaning,
+enumeration verified possibility. Exhaustive A0 checking showed the old ordered
+K conjunction could not fire. The maintainer approved the phase-seam retrograde
+correction: forward semitone T+1 corresponds to office delta -2 mod 7 for the
+directed A0 twin pairs, so T-A uses o(a)=k+1 and o(b)=k-1, not the reverse.
+The unordered K support, masks, midpoint formula and observation target did not
+change. Corrected-predicate relay and this explicit instruction complete sign-off.
+
+### Principal Authored Input Declaration
+
+The complete A1 GOVERNS relation R is the principal authored inheritance input.
+It gives parent/satellite membership, not a derived inheritance theorem. No
+selection by D4 contact rows is permitted. The required interpretation is:
+
+"D₄'s derivation is relative to granted inheritance structure; a positive result derives the contact geometry, not the inheritance relation; comparability with D₅ is preserved by substrate-parity (CONSTRUCTS granted there, GOVERNS granted here)."
+
+Substrate-parity does not assert identical input sets, identical semantics or a
+quantitative ordering of evidence strength. The completed categories below
+further constrain what may actually be called a positive contact derivation.
+
+### Attachment F - Comparator And Non-Restatement
+
+R uses GOVERNS.source=h (A1 anchor), GOVERNS.target=s (A1 satellite).
+E uses CONSTRUCTS.source in A0 and CONSTRUCTS.target in A1. Generation receives
+only the bound structural projections; phase-seam provenance and D4 contacts
+remain downstream. After sealing, select SEAT_CONTACT.source=s (A1 satellite),
+SEAT_CONTACT.target=d (D4 anchor), and join to the unique R parent h. Retain
+(contact row ID,d,s,h,o(h)); comparison keys are (o(h),s), not d's office.
+Invalid/ambiguous parents, duplicate row IDs, wrong endpoint types or binding
+drift are invalid input, not `neither`. Preserve row multiplicity separately
+from deduplicated keys. O denotes observed keys, U={(o(h),s):(h,s) in R}, and
+G_A/G_B the sealed route-key sets.
+
+| Field Per Route | Definition |
+|---|---|
+| `generated_key_count` | cardinality of G |
+| `in_R_count` | cardinality of G intersect U |
+| `extra_beyond_R_count` | cardinality of G minus U |
+| `R_missed_count` | cardinality of U minus G |
+| `in_R_but_unmatched_count` | cardinality of (G intersect U) minus O |
+
+Each field carries its sorted witness key list. Also report observed-key count,
+per-route observed matches/misses, four-cell contact-row counts, and each route's
+`restatement_signature=(G==U)`. Empty equality still sets the flag; it is not
+positive evidence. Both routes are R-bounded by construction. Any beyond-R key
+is semantic nonconformance, never generation-beyond-grant discovery. In-R keys
+for non-contacting satellites remain a distinct overshoot dimension.
+
+T-C carries the non-restatement evidence exclusively. After sealing, group
+A0-to-A1 CONSTRUCTS rows with provenance `phase-seam construction` by A1 target,
+requiring two distinct A0 parents. Compare (unordered parent pair, parent-target
+office) with the A0 T-C relation, normalizing pair order only downstream while
+preserving directed witnesses. `midpoint_exact` requires nonempty equality of
+the complete relation sets; report all missing/extra relations and A1 T-C output
+separately. T-C shares masks with T-A; non-restatement does not claim statistical
+independence or freedom from all authored provenance. No midpoint agreement is
+assumed by this registration.
+
+### Attachment D - Completed Outcome Contract
+
+The following table is registered now, before a D4 comparison. First applicable
+row wins; retain all diagnostic flags irrespective of precedence. `covered`
+means O is nonempty and O is a subset of both G_A and G_B; C means
+`midpoint_exact=true`.
+
+| Category | Condition | Bounded H-Disposition |
+|---|---|---|
+| `invalid` | Any input/binding/type/direction/control/isolation/semantic-conformance failure, including a beyond-R key; invalidity overrides apparent agreement | No H1/H2/H3 disposition; no mathematical verdict from invalid evidence |
+| `incomplete_or_anomalous` | No known invalidity, but required suites, complete enumeration, seal, observations, or comparison evidence are missing; an empty expected observation/seam domain cannot pass vacuously | No H1/H2/H3 disposition; not a negative derivation result |
+| `filter_plus_geometry` | Complete valid evidence, covered, at least one route has G=U, and C | Supports only the bounded T-C seam-geometry mechanism under granted structure; contact coverage retains its restatement flag; no claim of full D4 contact derivation and no H3 weakening from restated contacts; H2 no disposition |
+| `restatement_signature` | Complete valid evidence, covered, at least one route has G=U, and not C | Coverage is restatement-suspect, not `derived`; no H1 support from coverage and no authorship proof; H2 no disposition; retain T-C mismatch explicitly |
+| `overshoot` | Complete valid evidence, covered, neither route equals U, and either route has in-R-but-unmatched keys | Generated filters include non-contacting granted satellites; not full derivation, with C reported separately; no whole-contact H1 support or H3 confirmation; H2 no disposition |
+| `derived` | Complete valid evidence, covered, neither route equals U, both in-R-but-unmatched counts are zero, and C (therefore G_A=G_B=O is a proper subset of U) | Supports H1 for D4 contact geometry under these semantics and the R grant; weakens H3 for that bounded contact pattern only; H2 no disposition; neither inheritance nor a unified operator is derived |
+| `not_derived` | All remaining complete valid outcomes, including incomplete contact coverage or exact selective contact coverage with midpoint disagreement | Weakens only this registered route to H1(D4); compatible with H3, not confirmation; H2 no disposition; apply the qualifier below |
+
+**D4 `not_derived` qualifier:** this is derivation difficulty under the registered
+route, not authorship proof. The complete A1 GOVERNS inheritance substrate was
+granted: a negative result says the required contact/seam pattern was not
+generated even with that substrate given. It does not test the origin of satellite
+membership or parent assignment, prove non-entailment under every other operator,
+or automatically strengthen H3 relative to D5; the input grants and semantics
+differ and provide no quantitative cross-boundary evidential ordering.
+
+No retry, observed-output tuning, predicate change or favorable reclassification
+is allowed under the same freeze. Every category retains all five counts and
+four contact cells. Partial coverage with a restating route remains `not_derived`
+with the flag retained. Even `filter_plus_geometry` does not derive R.
+
+### Attachment G - Pre-Freeze Demonstrations
+
+These are the performed source-only arithmetic demonstrations from the correction
+sitting, accepted here as freeze attachments, not production-engine receipts.
+Seven A0 and seven A1 anchors, 28 A1 GOVERNS edges and 14 A0-to-A1 CONSTRUCTS
+edges were extracted; no D4 contact or observed-seam comparison ran.
+
+| Directed A0 T+1 Pair | Office Indices | Delta Mod 7 | Midpoint | Old Ordered K | Corrected Ordered K |
+|---|---|---:|---:|---|---|
+| 2741 to 1387 | 1 to 6 | 5 | 0 | rejects | accepts |
+| 2773 to 1451 | 0 to 5 | 5 | 6 | rejects | accepts |
+
+These are the complete matches from all 49 ordered A0 pairs, with diagonals
+rejected. They are proof witnesses, not literal allowed input selections.
+
+| Stimulus | T-A Keys | T-B Keys | Held Fixed |
+|---|---:|---:|---|
+| Corrected clean predicates | 8 | 28 | Complete structural slices |
+| Swap K endpoints to old order | 0 | 28 | A0/A1 masks, E and R |
+| Delete `constructs:A0:1387:1371:0` | 8 | 24 | T-A inputs, all anchors and R |
+| Restore original E and corrected K | 8 | 28 | Exact original inputs |
+
+The edge was chosen by ascending edge ID, not D4 effects. Removing one of the
+child's co-parent edges removes that child's four R keys from T-B. Actual set
+equality of unchanged and restored routes was asserted, not inferred from counts.
+BigInt arithmetic checked rotation and modular offices. Clean mask 2741 passed;
+4096 failed range/cardinality. The clean bound edge passed; wrong type GOVERNS
+and reversed endpoints failed. These are malformed-input rejections, not valid
+empty results. Future pre-flight must demonstrate the stimuli reach actual
+engine gates; arithmetic reachability is not engine-path verification.
+
+The clean T-B set equals U (28 keys). This is registered openly: with that
+unchanged set, the strict `derived` branch is unavailable. No D4 coverage or
+T-C agreement follows from this structural fact. Integer-window translation is
+not a negative stimulus; no D4 target here depends on windows, so D5's width
+mutant is not imported. Corrected K and its ordered perturbation supply the
+relevant demonstrated geometry control.
+
+### Freshness, Sync And HALT
+
+Ledger-to-Scrum sync records a frozen boundary, not a completed derivation story.
+The implementation-spec phase is the next eligible planning phase, with its own
+review/authorization gates; it is not executed by this landing. Preserve the
+frozen draft bytes and use a separate handoff for current status.
+
+The maintainer authorizes the standard ledger-dependent cascade and packaging
+checks for this landing. Record actual ran/skipped outcomes separately so adding
+the freshness report cannot create a ledger/sidecar hash cycle. The earlier
+416/2 receipt is stale for this edit. The expected two open authority gates are
+`frozen composite package payload identities` and
+`declared full-database reproducibility and deployment evidence`; a fresh run
+must verify those names, not assume a matching count. Neither failure is waived.
+Composite pin reconciliation remains for ORR-524; baseline lifecycle policy
+remains a separate decision. No green release fixed point is claimed here.
+
+**HALT.** This entry freezes definitions and registers their reviewed vocabulary
+only. It grants zero engine/scaffolding/implementation/production-execution
+authority and emits no D4 verdict or H disposition. No topology, admission,
+office, graph, Court policy, runtime or global `harmonic.C_H` authority changes.
+No release flip, tag, commit or push is authorized by this freeze.

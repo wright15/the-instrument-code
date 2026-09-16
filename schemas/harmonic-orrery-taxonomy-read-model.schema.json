@@ -3,16 +3,36 @@
   "$id": "harmonic-orrery.taxonomy-read-model.v1",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "bundleId", "authorityBoundary", "authorityNote", "sources", "recordCount", "roleCounts", "records", "bundleFingerprint"],
+  "required": ["schemaVersion", "bundleId", "authorityBoundary", "authorityNote", "evidenceBindings", "sources", "recordCount", "roleCounts", "records", "bundleFingerprint"],
   "properties": {
     "schemaVersion": {"const": "harmonic-orrery.taxonomy-read-model.v1"},
     "bundleId": {"const": "TAXONOMY_READ_MODEL_v1"},
     "authorityBoundary": {"const": "canonical_release"},
     "authorityNote": {"type": "string"},
-    "sources": {"type": "array", "minItems": 2, "maxItems": 2},
+    "evidenceBindings": {"type": "object", "additionalProperties": false, "required": ["census", "gov510"], "properties": {"census": {"$ref": "#/$defs/evidenceBinding"}, "gov510": {"$ref": "#/$defs/evidenceBinding"}}},
+    "sources": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "additionalProperties": false, "required": ["artifact", "sha256"], "properties": {"artifact": {"enum": ["canonical/universal-heptatonic-ledger.json", "provenance/SOURCE_AUTHORITY.md", "canonical/universal-network-data.json"]}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}}},
     "recordCount": {"const": 462},
-    "roleCounts": {"type": "object"},
-    "records": {"type": "array", "minItems": 462, "maxItems": 462},
+    "roleCounts": {"type": "object", "additionalProperties": false, "required": ["anchor", "satellite", "boundary"], "properties": {"anchor": {"const": 70}, "satellite": {"const": 238}, "boundary": {"const": 154}}},
+    "records": {"type": "array", "minItems": 462, "maxItems": 462, "items": {"$ref": "#/$defs/record"}},
     "bundleFingerprint": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "$defs": {
+    "evidenceBinding": {"type": ["object", "null"], "additionalProperties": false, "required": ["artifact", "sha256", "candidateFingerprint"], "properties": {"artifact": {"enum": ["canonical/fivefold-incubator/fifth-space-census-v0.json", "canonical/fivefold-incubator/twin-hub-convergence-v0.json"]}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "candidateFingerprint": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}},
+    "record": {
+      "type": "object", "additionalProperties": false,
+      "required": ["stateId", "sourceOrder", "name", "forte", "chirality", "role", "fineRole", "tier", "office", "officeIndex", "officeStatus", "authority", "provenancePath", "sourceProvenance", "universalClassification", "declaredRelationships"],
+      "properties": {
+        "stateId": {"type": "integer", "minimum": 1, "maximum": 4095},
+        "sourceOrder": {"type": "integer", "minimum": 1, "maximum": 4095},
+        "name": {"type": "string", "minLength": 1}, "forte": {"type": "string", "pattern": "^7-Z?[0-9]+$"},
+        "chirality": {"enum": ["achiral", "chiral"]}, "role": {"enum": ["anchor", "satellite", "boundary"]},
+        "fineRole": {"type": ["string", "null"]}, "tier": {"type": ["string", "null"]},
+        "office": {"type": ["string", "null"]}, "officeIndex": {"type": ["integer", "null"], "minimum": 0, "maximum": 6},
+        "officeStatus": {"enum": ["available", "withheld"]}, "authority": {"const": "canonical_release"},
+        "provenancePath": {"const": "canonical/universal-heptatonic-ledger.json"},
+        "declaredRelationships": {"type": "array", "maxItems": 100, "items": {"type": "object", "additionalProperties": false, "required": ["id", "type", "source", "target", "directed", "governing", "provenance"], "properties": {"id": {"type": "string", "minLength": 1}, "type": {"type": "string", "minLength": 1}, "source": {"type": "integer", "minimum": 1, "maximum": 4095}, "target": {"type": "integer", "minimum": 1, "maximum": 4095}, "directed": {"type": "boolean"}, "governing": {"type": "boolean"}, "provenance": {"type": "string"}}}},
+        "sourceProvenance": {"type": ["string", "null"]}, "universalClassification": {"type": ["string", "null"]}
+      }
+    }
   }
 }

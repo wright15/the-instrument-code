@@ -1,0 +1,32 @@
+[
+  {
+    "path": "scripts/build-fivefold-engine-promotion-evidence.py",
+    "name": "FROZEN_ENGINE_SHA256",
+    "sha256": "9cbf038c93a72719387e6a8094f5b466a79e61ce03371f5b2334fb26a480b64a",
+    "reason": "Immutable admitted Fivefold toolkit payload, not the mutable decision ledger."
+  },
+  {
+    "path": "scripts/validate-fivefold-engine-promotion-evidence.py",
+    "name": "FROZEN_ENGINE_SHA256",
+    "sha256": "9cbf038c93a72719387e6a8094f5b466a79e61ce03371f5b2334fb26a480b64a",
+    "reason": "Independent verifier pin for the same immutable admitted Fivefold toolkit payload."
+  },
+  {
+    "path": "scripts/validate-mechanics-thermodynamics-registry.py",
+    "name": "EXPECTED_AUTHORING_FINGERPRINT",
+    "sha256": "d4d31aec34f5568014b21b57340682e5b461cc348dc8d2333bf86695449536ff",
+    "reason": "Fixed v1 authored-registry baseline; not a live ledger freshness binding."
+  },
+  {
+    "path": "scripts/validate-mechanics-thermodynamics-registry-v2.py",
+    "name": "EXPECTED_AUTHORING_FINGERPRINT",
+    "sha256": "0691837291afcd1cd2abe3ff998b4835dffdb03e5910be3a8ea3058662e8cf3c",
+    "reason": "Fixed v2 authored-registry baseline; not a live ledger freshness binding."
+  },
+  {
+    "path": "scripts/compare-gov518-outcome.mjs",
+    "name": "EXPECTED_FINGERPRINT",
+    "sha256": "8c2416b8f51f8ae8cdb0fc9f2490beeb9e3cc49f435be7d992f55f5f7c122cb8",
+    "reason": "Frozen GOV-518 comparison target under its registered boundary, not a mutable ledger pin."
+  }
+]

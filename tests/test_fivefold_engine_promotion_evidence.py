@@ -190,3 +190,66 @@ def test_evidence_declares_no_active_relations(evidence) -> None:
     assert "active SUBSET_OF_7_35 projection" in exclusion_ids
     assert "CRT-310 gate satisfaction" in exclusion_ids
     assert "win-condition enforcement" in exclusion_ids
+
+
+def test_ledger_edit_requires_regeneration_without_constant_changes(evidence, monkeypatch):
+    ledger = ROOT / "provenance/DECISION_LEDGER.md"
+    read_bytes = Path.read_bytes
+    changed = read_bytes(ledger) + b"\nPlanning-only test amendment.\n"
+    monkeypatch.setattr(Path, "read_bytes", lambda path: changed if path == ledger else read_bytes(path))
+    with pytest.raises(VALIDATOR.PromotionEvidenceValidationError, match="regenerate_required"):
+        VALIDATOR.validate_evidence(evidence)
+    rebuilt = GENERATOR.build_evidence(ROOT)
+    assert rebuilt["decisionLedgerSha256"] == hashlib.sha256(changed).hexdigest()
+    assert rebuilt["decisionLedgerSha256"] != evidence["decisionLedgerSha256"]
+    assert rebuilt["verdict"] == "PASS"
+    VALIDATOR.validate_evidence(rebuilt)
+    assert GENERATOR.build_evidence(ROOT) == rebuilt
+
+
+def test_rehashed_ledger_binding_tamper_rejected(evidence):
+    for target in ("top-level", "check"):
+        changed = deepcopy(evidence)
+        if target == "top-level":
+            changed["decisionLedgerSha256"] = "0" * 64
+        else:
+            for group in changed["exclusionEvidence"]:
+                for check in group["checks"]:
+                    if check["checkId"] == "decision-ledger-digest":
+                        check["actual"] = "0" * 64
+        core = {key: value for key, value in changed.items() if key != "evidenceFingerprint"}
+        changed["evidenceFingerprint"] = GENERATOR._sha256_payload(core)
+        with pytest.raises(VALIDATOR.PromotionEvidenceValidationError, match="decision_ledger"):
+            VALIDATOR.validate_evidence(changed)
+
+
+def test_ledger_change_during_build_is_rejected(monkeypatch):
+    ledger = ROOT / "provenance/DECISION_LEDGER.md"
+    read_bytes = Path.read_bytes
+    calls = 0
+
+    def changing_bytes(path):
+        nonlocal calls
+        data = read_bytes(path)
+        if path == ledger:
+            calls += 1
+            if calls > 1:
+                return data + b"\nConcurrent test amendment.\n"
+        return data
+
+    monkeypatch.setattr(Path, "read_bytes", changing_bytes)
+    with pytest.raises(GENERATOR.PromotionEvidenceBuildError, match="source_changed_during_build"):
+        GENERATOR.build_evidence(ROOT)
+
+
+def test_live_binding_cannot_replace_missing_admission_entry(monkeypatch):
+    ledger = ROOT / "provenance/DECISION_LEDGER.md"
+    read_bytes, read_text = Path.read_bytes, Path.read_text
+    changed = read_bytes(ledger).replace(b"Fivefold engine promotion admission (CRT-348)", b"Removed admission entry")
+    monkeypatch.setattr(Path, "read_bytes", lambda path: changed if path == ledger else read_bytes(path))
+    monkeypatch.setattr(Path, "read_text", lambda path, *args, **kwargs: changed.decode() if path == ledger else read_text(path, *args, **kwargs))
+    rebuilt = GENERATOR.build_evidence(ROOT)
+    assert rebuilt["decisionLedgerSha256"] == hashlib.sha256(changed).hexdigest()
+    assert rebuilt["verdict"] == "FAIL"
+    with pytest.raises(VALIDATOR.PromotionEvidenceValidationError, match="admission_entry_missing"):
+        VALIDATOR.validate_evidence(rebuilt)

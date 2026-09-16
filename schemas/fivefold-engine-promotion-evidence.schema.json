@@ -10,6 +10,7 @@
     "admissionStatus",
     "contractPath",
     "contractSha256",
+    "decisionLedgerSha256",
     "contractSchemaValid",
     "verdict",
     "sourceBindings",
@@ -23,6 +24,7 @@
     "admissionStatus": { "const": "admitted" },
     "contractPath": { "const": "schemas/fivefold-engine-admission-contract.json" },
     "contractSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "decisionLedgerSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
     "contractSchemaValid": { "const": true },
     "verdict": { "enum": ["PASS", "FAIL"] },
     "sourceBindings": {

@@ -22,7 +22,6 @@ CONTRACT_PATH = "schemas/fivefold-engine-admission-contract.json"
 CONTRACT_SCHEMA_PATH = "schemas/fivefold-engine-admission-contract.schema.json"
 
 FROZEN_ENGINE_SHA256 = "9cbf038c93a72719387e6a8094f5b466a79e61ce03371f5b2334fb26a480b64a"
-DECISION_LEDGER_SHA256 = "7a3d3236cb4cf1cf8bc54756c72111dac9cb3455197a8b9343b298184f53bdb7"
 
 SOURCE_BINDINGS = (
     ("court-admission-contract", "schemas/court-admission-contract.json", "machine Court authority boundary"),
@@ -508,7 +507,7 @@ def build_item_evidence(root: Path) -> list[dict[str, Any]]:
     return evidence
 
 
-def build_exclusion_evidence(root: Path) -> list[dict[str, Any]]:
+def build_exclusion_evidence(root: Path, decision_ledger_sha256: str) -> list[dict[str, Any]]:
     admission_contract = _load_admission_contract(root)
     admission_release = _load_admission_release(root)
     contract = _load_proposed_contract(root)
@@ -728,7 +727,7 @@ def build_exclusion_evidence(root: Path) -> list[dict[str, Any]]:
                 _check(
                     "decision-ledger-digest",
                     "provenance/DECISION_LEDGER.md",
-                    DECISION_LEDGER_SHA256,
+                    decision_ledger_sha256,
                     _sha256_bytes((root / "provenance/DECISION_LEDGER.md").read_bytes()),
                 ),
             ],
@@ -771,11 +770,12 @@ def _sha256_payload(value: Any) -> str:
 
 
 def build_evidence(root: Path = ROOT) -> dict[str, Any]:
+    decision_ledger_sha256 = _sha256_bytes((root / "provenance/DECISION_LEDGER.md").read_bytes())
     source_bindings = _source_bindings(root)
     contract = _load_proposed_contract(root)
     jsonschema.Draft202012Validator(_read_json(root / CONTRACT_SCHEMA_PATH)).validate(contract)
     item_evidence = build_item_evidence(root)
-    exclusion_evidence = build_exclusion_evidence(root)
+    exclusion_evidence = build_exclusion_evidence(root, decision_ledger_sha256)
     all_checks = item_evidence + exclusion_evidence
     verdict = "PASS" if all(item["status"] == "PASS" for item in all_checks) else "FAIL"
     core = {
@@ -784,6 +784,7 @@ def build_evidence(root: Path = ROOT) -> dict[str, Any]:
         "admissionStatus": "admitted",
         "contractPath": CONTRACT_PATH,
         "contractSha256": _sha256_bytes((root / CONTRACT_PATH).read_bytes()),
+        "decisionLedgerSha256": decision_ledger_sha256,
         "contractSchemaValid": True,
         "verdict": verdict,
         "sourceBindings": source_bindings,
@@ -791,7 +792,8 @@ def build_evidence(root: Path = ROOT) -> dict[str, Any]:
         "exclusionEvidence": exclusion_evidence,
     }
     document = {**core, "evidenceFingerprint": _sha256_payload(core)}
-    if _source_bindings(root) != source_bindings:
+    if (_source_bindings(root) != source_bindings
+        or _sha256_bytes((root / "provenance/DECISION_LEDGER.md").read_bytes()) != decision_ledger_sha256):
         raise PromotionEvidenceBuildError("source_changed_during_build")
     return document
 
