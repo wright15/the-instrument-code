@@ -1,0 +1,248 @@
+{
+  "specId": "SPEC-FIVEFOLD-CONSTRUCTS-001",
+  "candidateVersion": "0.2.1",
+  "status": "HALTED_INPUT_BINDING_MISMATCH",
+  "admitted": false,
+  "promotionClaim": false,
+  "bindingMismatches": [
+    {
+      "registration": "qa/gov-517-input-boundary-registration.json",
+      "path": "canonical/fivefold-incubator/fifth-space-census-v0.json",
+      "registeredSha256": "ad857ab957c54773f35047fb7618e8c8d9977991c0450efc56b0b81cd653a1d0",
+      "currentSha256": "c537bf547ceab5c4d4c49f85da92848cbd3bbbf342c8ffc43c354abc9af47e00",
+      "status": "FAIL",
+      "disposition": "HALT_ADMISSION_NO_REBINDING"
+    }
+  ],
+  "specWrite": "NOT_EXECUTED: input binding mismatch halted admission before the v0.2.1 write",
+  "scope": "Recompute counts and inspect citations in existing sealed GOV-517 evidence. No generator execution, canonical mutation, promotion refresh, or re-signing.",
+  "attempt1Preservation": {
+    "path": "qa/specs/fivefold-constructs-001-admission-attempt-1.json",
+    "sha256": "3a535ad8de05301f879a9ac565b32b3e2883ee4dd652e7e1dd477cdf21092f43",
+    "source": "/tmp/opencode/fivefoldconstructsenginespec-qa.json",
+    "byteIdentical": true,
+    "originalRetained": true,
+    "registeredManifestCheck": "PASS: 1119 files, 76525375 bytes",
+    "historicalReceiptUnmodified": true
+  },
+  "invariants": {
+    "INV-1": {
+      "status": "PASS",
+      "T1": 10,
+      "T2": 28
+    },
+    "INV-2": {
+      "status": "PASS",
+      "T1Coverage": "14/14",
+      "T2Coverage": "14/14",
+      "resolution": "D5 canonical contact office coordinate, not raw witness identity"
+    },
+    "INV-3": {
+      "status": "PASS",
+      "offices": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    "INV-4": {
+      "status": "PASS",
+      "both": 14,
+      "meaning": "Each canonical contact reached by both T1 and T2"
+    }
+  },
+  "gates": {
+    "authority": {
+      "status": "RESOLVED_WITH_BOUNDED_DEFERRAL",
+      "verdict": "provenance/DECISION_LEDGER.md:1686-1692",
+      "contextOnly": "provenance/DECISION_LEDGER.md:1349",
+      "liveAuthorization": "qa/gov-517-generative-semantics-registration.json:3-6",
+      "limitation": "No separate numbered GOV-517 instrument identified in inspected records. Global nonexistence is not established. Grant 2 is D4-only."
+    },
+    "q": {
+      "status": "DEFERRED",
+      "evidenceClass": "GATED",
+      "debt": "authoring-or-extraction",
+      "invariant": "INV-5",
+      "finding": "Inspected GOV-517 artifacts use Z7 office coordinates and Z12 mask bits, not the proposed Z12-indexed 16-state table. Separate Court-state artifacts do not establish a GOV-517 mapping.",
+      "consequence": "If no existing admissible table can be extracted, authoring and a new evidence trail are design/derivation work, not a reproducibility refresh."
+    },
+    "t3StrongForm": {
+      "status": "DEMOTED",
+      "evidenceClass": "GATED",
+      "invariant": "INV-3b",
+      "finding": "Seven-office assignment and midpoint lists do not establish a 7x7 diagonal matrix, exactly-once per direction, or governor-channel purity."
+    }
+  },
+  "additionalScopeFindings": [
+    "Candidate elemental I1-I4 and G1-G5 role labels are a DEFINED design overlay, not the registered meanings. In particular, registered I3 is empty; G2 produces T1, G3 produces T2, G4 convergence, G5 post-seal comparison. No registered semantics were changed.",
+    "Decision line 1349 is GOV-518 parallel-capacity context, not the GOV-517 verdict. Any eventual specification must cite the verdict at 1686-1692 separately.",
+    "C(5,2)=10 and 28=2*14 are arithmetic identities, not evidence for five generative voices or a per-canonical-contact bijection of witnesses."
+  ],
+  "bindings": {
+    "qa/specs/fivefold-constructs-001-admission-attempt-1.json": {
+      "sha256": "3a535ad8de05301f879a9ac565b32b3e2883ee4dd652e7e1dd477cdf21092f43",
+      "bytes": 6699,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "provenance/DECISION_LEDGER.md": {
+      "sha256": "54b4e825f6d12e3fea570b25a4eeea6915d89616778ea601705268cca6308c0e",
+      "bytes": 153214,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "provenance/OBSERVATION_LEDGER.md": {
+      "sha256": "8e0be9f5bcee0af1aeb87b8ee71fa18121376c1e2b8e23416439c8834e17787f",
+      "bytes": 33153,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/gov-517-canonical-derivation-report.json": {
+      "sha256": "1b0432c9426d5cdd1fabb01a073967bc5c9ccee2166c07c03e36e5359bbdbb0e",
+      "bytes": 13671,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "scrum/GOV-517-d5-signature-derivation-definition.md": {
+      "sha256": "613b8a6112c495cd1c23b720969f655b34edad702a5df1c94555fa105548c42b",
+      "bytes": 8480,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "canonical/universal-network-data.json": {
+      "sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+      "bytes": 2765575,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "canonical/universal-heptatonic-ledger.json": {
+      "sha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+      "bytes": 356936,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/gov-517-input-boundary-registration.json": {
+      "sha256": "153bb87ea7710acbc493c2b628aa5e091a55e8149ab2d32fd4cc54bcce9553f8",
+      "bytes": 7524,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/gov-517-generative-semantics-registration.json": {
+      "sha256": "536f011699f65d36cffef6111f19fd94178649f2485a734707670ee280f101ec",
+      "bytes": 5481,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "scripts/gov-517-d5-derivation-engine.mjs": {
+      "sha256": "db4393163b9ed4e6dab231376ed6c3c977b06010ab9fc3056bc46e45f8e5740d",
+      "bytes": 6103,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "canonical/fivefold-incubator/fifth-space-census-v0.json": {
+      "sha256": "c537bf547ceab5c4d4c49f85da92848cbd3bbbf342c8ffc43c354abc9af47e00",
+      "bytes": 194194,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    }
+  },
+  "excerpts": [
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "1635-1641",
+      "text": "The boundary specification in\n`scrum/GOV-517-d5-signature-derivation-definition.md`, beginning exactly at\n`### Derivation Targets (T1–T3)`, is frozen as the GOV-517 specification body.\nIt defines pure generation targets T1–T3 from $I_1–I_4$, pre-flight negative\ncontrols NC-1 through NC-4, disposition mapping, halting conditions, and DoD.\nObserved canonical $D_5$ state remains outside the derivation runtime and may\nbe consulted only by the downstream comparison layer named in the frozen body."
+    },
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "1686-1692",
+      "text": "The maintainer-approved independent re-audit of\n`qa/gov-517-canonical-derivation-report.json` closes GOV-517 with category\n`derived`. The single production pass generated T1 (10 witnesses), T2 (28\nwitnesses), and T3 (7/7 office convergence) from registered I1-I4 inputs. The\ncomplete downstream G5 comparison classified all 14 canonical D5 contact rows\nas `both`, with no primary-only, secondary-only, or neither rows. OBS-022\nrecords the frame-level combinatorics of that result."
+    },
+    {
+      "path": "provenance/OBSERVATION_LEDGER.md",
+      "lines": "454-463",
+      "text": "**Provenance:** Maintainer independent re-audit closed and approved the single-pass\nGOV-517 generator receipt. The pure engine generated 10 T1 witnesses and 28 T2\nwitnesses from registered I1-I4 inputs, then the downstream G5 comparison mapped\nthem to all 14 canonical D5 contacts after generation was sealed. T1 covers all\n14 contacts through its 10 office-pair witnesses; T2 covers all 14 contacts\nthrough its 28 construction-edge witnesses. The exact G5 distribution is\n`both: 14, primary-only: 0, secondary-only: 0, neither: 0`; T3 converges at all\nseven offices. Every canonical D5 contact's office coordinate is\nconvergence-generated by both routes, reproducing the canonical contact geometry\nexactly at office-coordinate resolution."
+    },
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "2195",
+      "text": "## ENTRY 10 - D4 Grant 2 production record - not_derived"
+    },
+    {
+      "path": "qa/gov-517-input-boundary-registration.json",
+      "lines": "23-29",
+      "text": "    {\n      \"path\": \"canonical/fivefold-incubator/fifth-space-census-v0.json\",\n      \"manifest_sha256\": \"ad857ab957c54773f35047fb7618e8c8d9977991c0450efc56b0b81cd653a1d0\",\n      \"recomputed_sha256\": \"ad857ab957c54773f35047fb7618e8c8d9977991c0450efc56b0b81cd653a1d0\",\n      \"checksums_match\": true,\n      \"pass\": true\n    }"
+    },
+    {
+      "path": "qa/gov-517-input-boundary-registration.json",
+      "lines": "31-61",
+      "text": "  \"i1\": {\n    \"source\": \"canonical/universal-network-data.json\",\n    \"section\": \"structuralEdges\",\n    \"selector\": \"row.type === \\\"CONSTRUCTS\\\"\",\n    \"expected_record_count\": 28,\n    \"consumption_profile\": \"Office-ring distance-2 pair structures; OBS-008 structural provenance only\",\n    \"status\": \"verified\"\n  },\n  \"i2\": {\n    \"source\": \"canonical/universal-network-data.json\",\n    \"section\": \"structuralEdges\",\n    \"selector\": \"row.type === \\\"CONSTRUCTS\\\"\",\n    \"expected_record_count\": 28,\n    \"consumption_profile\": \"A-tier CONSTRUCTS transitions with parentStateIds and constructionEdgeIds\",\n    \"excluded\": \"D4/D5 SEAT_CONTACT chain-audit rows\",\n    \"status\": \"verified\"\n  },\n  \"i3\": {\n    \"source\": null,\n    \"binding\": null,\n    \"content\": null,\n    \"load_time_empty\": true,\n    \"consumption_profile\": \"Empty envelope member; no target consumes it\"\n  },\n  \"i4\": {\n    \"sources\": [\n      \"canonical/universal-heptatonic-ledger.json\",\n      \"canonical/fivefold-incubator/fifth-space-census-v0.json\"\n    ],\n    \"slice_descriptor\": \"tier in {A0,A1,A2} AND role = anchor AND office != null\",\n    \"enumeration_method\": \"Filter bound ledger, project identity fields, sort ascending integer stateId; never transcribe an anchor list\","
+    },
+    {
+      "path": "qa/gov-517-generative-semantics-registration.json",
+      "lines": "3-6",
+      "text": "  \"registration_id\": \"GOV-517-G1-G5-code-review-addendum\",\n  \"authority\": \"Maintainer Generative Semantics Registration G1-G5 directive\",\n  \"frozen_specifications_modified\": false,\n  \"live_derivation_authorized\": true,"
+    },
+    {
+      "path": "qa/gov-517-generative-semantics-registration.json",
+      "lines": "7-45",
+      "text": "  \"G1\": {\n    \"space\": \"Ordered anchor pairs within each of the A0, A1, A2 tiers over the registered 21 I4 anchors, evaluated at each candidate office 0 through 6\",\n    \"tuple\": [\"tier\", \"child_office\", \"pair\", \"witness_class\"],\n    \"identity\": \"Office-resolution and witness class, not ledger stateId; state IDs are used only for structural-edge joins\",\n    \"enumeration\": \"Includes diagonal pairs, which both predicates reject; 3 * 7 * 7 * 7 = 1029 candidates, fixed finite enumeration, no heuristic search\"\n  },\n  \"G2\": {\n    \"T1_a\": \"Symmetric kernel only; office(p) = k-1 mod 7 and office(q) = k+1 mod 7\",\n    \"T1_b\": \"The selected I4 fifth masks have intersection cardinality exactly 5\",\n    \"conjunction\": \"T1_a AND T1_b; no global mask-overlap sweep substitutes for the selected pair check\",\n    \"NC1\": \"Kernel [-2,+1] is not the registered symmetric operator and produces no T1 witnesses\"\n  },\n  \"G3\": {\n    \"T2_a\": \"Traverse two distinct CONSTRUCTS edges from distinct same-tier parents sharing a child anchor in the next A tier\",\n    \"T2_b\": \"Both traversed edges must match the independently held I1 registered step records by edge ID, parent, child, and parent tier\",\n    \"distance2_provenance\": \"Comes from registered co-parenthood transitions; no office-ring shortcut or mask overlap is invoked\",\n    \"ordered_pairs\": \"Both parent orderings are traversed; neither is silently normalized to T1 orientation\",\n    \"corruption\": \"Non-CONSTRUCTS transitions produce no T2 witnesses, without changing I1 or I4\"\n  },\n  \"G4\": {\n    \"office_convergence\": \"Office k is generated iff at least one T1 and one T2 witness resolve to k, without requiring identical pair or tier\",\n    \"midpoints\": \"All office-pair structures carried by either route at convergent offices; no selected-only pair output\",\n    \"window_control\": \"The standing T3 window invariant is checked separately over all 49 (j,d) cases. Width 6 invalidates T3-PASS without rewriting the G4 office-membership predicate\",\n    \"mask_control\": \"Non-A-tier or non-anchor provenance prevents an unambiguous T3 assignment\",\n    \"empty_result\": \"Empty convergence is materialized; T3-PASS requires a nonempty unambiguous assignment and the window invariant\"\n  },\n  \"G5\": {\n    \"stage\": \"Canonical row classification occurs strictly downstream of a complete materialized generation seal\",\n    \"classification\": [\"primary-only\", \"secondary-only\", \"both\", \"neither\"],\n    \"row_resolution\": \"Compare observation office coordinate against primary and secondary witness office coordinates independently\",\n    \"raw_membership\": \"Harness per_state_routes retains raw witness-string membership; it is not substituted for canonical-row classification\"\n  },\n  \"harness_encoding\": {\n    \"coordinate\": \"Registered Z7 office indices; decimal strings 0 through 6 at the JSON boundary\",\n    \"witness\": \"JSON string of [tier, child_office, [parent_office_p,parent_office_q], primary_or_secondary]\",\n    \"ordering\": \"Unique full serialized witness strings sorted by JavaScript code-unit order; no source-order dependence\",\n    \"generation.t3_assignment\": \"Map from decimal office string to JSON string of the complete sorted unique [tier,[parent_office_p,parent_office_q]] structures\",\n    \"generation.t3_midpoints\": \"Sorted unique JSON strings of [child_office,tier,[parent_office_p,parent_office_q]]\",\n    \"neutral_encoding_only\": \"Serialization is lossless; ordered parent pairs are never swapped and witness classes are never erased\""
+    },
+    {
+      "path": "qa/gov-517-generative-semantics-registration.json",
+      "lines": "53-59",
+      "text": "  \"engine_literal_allowlist\": {\n    \"integers\": [\"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"10\", \"11\", \"21\"],\n    \"integerArrays\": [[\"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\"], [\"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"10\", \"11\"]],\n    \"array_justification\": \"Exhaustive ascending Z7 coordinate traversal and Z12 mask-bit traversal only; scalar allowlisting does not authorize arbitrary constant tuples\",\n    \"integer_justification\": \"Z7 coordinates and interval endpoints (0-7); Z12 bit indices (0-11); symmetric unit offsets; distance-2 overlap cardinality 5; registered three-tier anchor count 21\",\n    \"strings\": [\"A0\", \"A1\", \"A2\", \"anchor\", \"CONSTRUCTS\", \"primary\", \"secondary\"],\n    \"string_justification\": \"Registered A-tier/anchor provenance, registered edge class, and G1 witness route classes; no observed-state identifiers or office-name constants\""
+    },
+    {
+      "path": "qa/gov-517-canonical-derivation-report.json",
+      "lines": "74-113",
+      "text": "    \"t3_pass\": true,\n    \"t3_assignment\": {\n      \"0\": \"[[\\\"A0\\\",[\\\"1\\\",\\\"6\\\"]],[\\\"A0\\\",[\\\"6\\\",\\\"1\\\"]],[\\\"A1\\\",[\\\"1\\\",\\\"6\\\"]],[\\\"A1\\\",[\\\"6\\\",\\\"1\\\"]]]\",\n      \"1\": \"[[\\\"A0\\\",[\\\"0\\\",\\\"2\\\"]],[\\\"A0\\\",[\\\"2\\\",\\\"0\\\"]],[\\\"A1\\\",[\\\"0\\\",\\\"2\\\"]],[\\\"A1\\\",[\\\"2\\\",\\\"0\\\"]]]\",\n      \"2\": \"[[\\\"A0\\\",[\\\"1\\\",\\\"3\\\"]],[\\\"A0\\\",[\\\"3\\\",\\\"1\\\"]],[\\\"A1\\\",[\\\"1\\\",\\\"3\\\"]],[\\\"A1\\\",[\\\"3\\\",\\\"1\\\"]]]\",\n      \"3\": \"[[\\\"A0\\\",[\\\"2\\\",\\\"4\\\"]],[\\\"A0\\\",[\\\"4\\\",\\\"2\\\"]],[\\\"A1\\\",[\\\"2\\\",\\\"4\\\"]],[\\\"A1\\\",[\\\"4\\\",\\\"2\\\"]]]\",\n      \"4\": \"[[\\\"A0\\\",[\\\"3\\\",\\\"5\\\"]],[\\\"A0\\\",[\\\"5\\\",\\\"3\\\"]],[\\\"A1\\\",[\\\"3\\\",\\\"5\\\"]],[\\\"A1\\\",[\\\"5\\\",\\\"3\\\"]]]\",\n      \"5\": \"[[\\\"A0\\\",[\\\"4\\\",\\\"6\\\"]],[\\\"A0\\\",[\\\"6\\\",\\\"4\\\"]],[\\\"A1\\\",[\\\"4\\\",\\\"6\\\"]],[\\\"A1\\\",[\\\"6\\\",\\\"4\\\"]]]\",\n      \"6\": \"[[\\\"A0\\\",[\\\"0\\\",\\\"5\\\"]],[\\\"A0\\\",[\\\"5\\\",\\\"0\\\"]],[\\\"A1\\\",[\\\"0\\\",\\\"5\\\"]],[\\\"A1\\\",[\\\"5\\\",\\\"0\\\"]]]\"\n    },\n    \"t3_midpoints\": [\n      \"[\\\"0\\\",\\\"A0\\\",[\\\"1\\\",\\\"6\\\"]]\",\n      \"[\\\"0\\\",\\\"A0\\\",[\\\"6\\\",\\\"1\\\"]]\",\n      \"[\\\"0\\\",\\\"A1\\\",[\\\"1\\\",\\\"6\\\"]]\",\n      \"[\\\"0\\\",\\\"A1\\\",[\\\"6\\\",\\\"1\\\"]]\",\n      \"[\\\"1\\\",\\\"A0\\\",[\\\"0\\\",\\\"2\\\"]]\",\n      \"[\\\"1\\\",\\\"A0\\\",[\\\"2\\\",\\\"0\\\"]]\",\n      \"[\\\"1\\\",\\\"A1\\\",[\\\"0\\\",\\\"2\\\"]]\",\n      \"[\\\"1\\\",\\\"A1\\\",[\\\"2\\\",\\\"0\\\"]]\",\n      \"[\\\"2\\\",\\\"A0\\\",[\\\"1\\\",\\\"3\\\"]]\",\n      \"[\\\"2\\\",\\\"A0\\\",[\\\"3\\\",\\\"1\\\"]]\",\n      \"[\\\"2\\\",\\\"A1\\\",[\\\"1\\\",\\\"3\\\"]]\",\n      \"[\\\"2\\\",\\\"A1\\\",[\\\"3\\\",\\\"1\\\"]]\",\n      \"[\\\"3\\\",\\\"A0\\\",[\\\"2\\\",\\\"4\\\"]]\",\n      \"[\\\"3\\\",\\\"A0\\\",[\\\"4\\\",\\\"2\\\"]]\",\n      \"[\\\"3\\\",\\\"A1\\\",[\\\"2\\\",\\\"4\\\"]]\",\n      \"[\\\"3\\\",\\\"A1\\\",[\\\"4\\\",\\\"2\\\"]]\",\n      \"[\\\"4\\\",\\\"A0\\\",[\\\"3\\\",\\\"5\\\"]]\",\n      \"[\\\"4\\\",\\\"A0\\\",[\\\"5\\\",\\\"3\\\"]]\",\n      \"[\\\"4\\\",\\\"A1\\\",[\\\"3\\\",\\\"5\\\"]]\",\n      \"[\\\"4\\\",\\\"A1\\\",[\\\"5\\\",\\\"3\\\"]]\",\n      \"[\\\"5\\\",\\\"A0\\\",[\\\"4\\\",\\\"6\\\"]]\",\n      \"[\\\"5\\\",\\\"A0\\\",[\\\"6\\\",\\\"4\\\"]]\",\n      \"[\\\"5\\\",\\\"A1\\\",[\\\"4\\\",\\\"6\\\"]]\",\n      \"[\\\"5\\\",\\\"A1\\\",[\\\"6\\\",\\\"4\\\"]]\",\n      \"[\\\"6\\\",\\\"A0\\\",[\\\"0\\\",\\\"5\\\"]]\",\n      \"[\\\"6\\\",\\\"A0\\\",[\\\"5\\\",\\\"0\\\"]]\",\n      \"[\\\"6\\\",\\\"A1\\\",[\\\"0\\\",\\\"5\\\"]]\",\n      \"[\\\"6\\\",\\\"A1\\\",[\\\"5\\\",\\\"0\\\"]]\"\n    ],"
+    },
+    {
+      "path": "qa/gov-517-canonical-derivation-report.json",
+      "lines": "309-318",
+      "text": "  \"witness_set_counts\": {\n    \"T1\": 10,\n    \"T2\": 28,\n    \"T3\": 7\n  },\n  \"target_flags\": {\n    \"T1-PASS\": true,\n    \"T2-PASS\": true,\n    \"T3-PASS\": true\n  },"
+    },
+    {
+      "path": "qa/gov-517-canonical-derivation-report.json",
+      "lines": "338-429",
+      "text": "    \"g5_state_classification_pairs\": [\n      {\n        \"state\": \"seat-contact:D5:3881:3753:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:3881:1941:1\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:2383:2391:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:2383:1359:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:997:981:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:997:1509:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:3239:3243:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:3239:2727:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:1273:1269:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:1273:1401:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:3667:3669:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:3667:3411:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:671:687:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:671:1341:-1\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      }\n    ],\n    \"four_cell_distribution\": {\n      \"both\": 14,\n      \"primary-only\": 0,\n      \"secondary-only\": 0,\n      \"neither\": 0\n    }"
+    },
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "1347-1349",
+      "text": "### Grant — parallel capacity without awaiting GOV-516 Done\n\nGOV-516 mathematical and observational outcomes are banked; its ticket remains Review. This entry grants parallel capacity for the GOV-518 freeze (and, once D1–D6/D8 are filled and the fresh manifest binding accepted, its execution) without awaiting an administrative flip to Done. Queue discipline mirrors the GOV-517 grant pattern; GOV-517 itself is untouched. The grant confers no operator, topology, admission, runtime, or synthesis authority."
+    },
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "1699-1711",
+      "text": "### Semantics bound\n\nThe derivation is relative to the registered generative semantics (G1-G5,\ncontrol-verified); the result's strength is bounded by that registration.\n\n### Scope fences\n\n- **D4 quarantine:** this result does not extrapolate to D4 and does not support\n  a unified-operator claim. An independent D4 derivation pass under identical\n  input-isolation, control, sealing, and comparison discipline is required.\n- **Per-signature scope:** the finding is confined to D5 contact geometry at\n  office-coordinate resolution. It authorizes no sequence-level, cosmological,\n  topology, admission, runtime, graph, or global `harmonic.C_H` assertion."
+    }
+  ],
+  "spec": null,
+  "validation": {
+    "full": {
+      "command": "npm run validate",
+      "status": "FAIL",
+      "firstFailure": "STALE_TWIN_HUB_CONVERGENCE",
+      "detail": "Command invoked in full; npm short-circuited at validate:twin-hub after preceding suites. Later suites were not executed. No stale sidecar was regenerated to force a pass.",
+      "outputLog": "/home/erick/.local/share/opencode/tool-output/tool_0b04a27ce001p6hlh2xFANoTMA"
+    },
+    "manifest": {
+      "command": "npm run validate:manifest",
+      "status": "PASS",
+      "detail": "Both attempt receipts registered using npm run package:manifest; manifest freshness passes. This is not specification admission or a green release."
+    },
+    "protectedFiles": {
+      "status": "PASS",
+      "baseline": "Clean git worktree before execution",
+      "trackedChanges": ["MANIFEST.json", "CHECKSUMS.sha256"],
+      "newFiles": ["qa/specs/fivefold-constructs-001-admission-attempt-1.json", "qa/specs/fivefold-constructs-001-admission-attempt-2.json"],
+      "detail": "No modifications to test suites, preflight controls, D4 evidence logs, canonical/, schemas/, Court runtime, Neo4j projection, ledgers, or promotion evidence."
+    }
+  }
+}

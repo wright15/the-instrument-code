@@ -1,0 +1,55 @@
+{
+  "specId": "SPEC-FIVEFOLD-CONSTRUCTS-001",
+  "candidateVersion": "0.1.1",
+  "status": "FAIL",
+  "admitted": false,
+  "promotionClaim": false,
+  "scope": "Read-only pre-write gate audit; no generation or promotion refresh executed.",
+  "receiptPlacement": "Outside the release inventory to preserve the passing baseline manifest and stop on semantic mismatches without adapting the candidate.",
+  "checks": [
+    {"id": "5.1", "status": "FAIL", "detail": "docs/ exists; docs/specs/ is absent. Creation deferred after pre-write semantic gate failure."},
+    {"id": "5.2", "status": "FAIL", "detail": "Not executed: candidate not written or adapted because provenance gates fail."},
+    {"id": "5.3.paths", "status": "FAIL", "detail": "Literal DECISIONLEDGER.md and OBSERVATIONLEDGER.md references do not exist. Corresponding sources are provenance/DECISION_LEDGER.md and provenance/OBSERVATION_LEDGER.md."},
+    {"id": "5.3.gov517", "status": "PASS", "detail": "Corresponding decision-ledger line ranges identify the GOV-517 boundary and derived verdict; observation range identifies T1/T2 counts, contact coverage and seven-office convergence."},
+    {"id": "5.3.grant2", "status": "FAIL", "detail": "Cited decision ranges do not establish Grant 2 for D5. ENTRY 10 at lines 2195-2227 instead records D4 Grant 2 production authority. Header attribution is unsupported by the cited provenance."},
+    {"id": "5.3.t3", "status": "FAIL", "detail": "Cited ledger states convergence at seven offices, not a 7x7 governor-channel matrix, zero off-cell leakage or exactly once in each convergence direction. Frozen target at scrum/GOV-517-d5-signature-derivation-definition.md:86 defines office-convergence assignment and midpoint geometry. Numeric agreement alone does not verify the stronger candidate claim."},
+    {"id": "5.3.cboth", "status": "FAIL", "detail": "Cboth=14 is confirmed. Both denotes membership in T1 and T2 for each canonical contact, not two contact directions. qa/gov-517-canonical-derivation-report.json:338-429 explicitly records in_t1=true and in_t2=true on all 14 rows. The proposed both-direction explanation is not established. No target-yield amendment made because other hard gates fail."},
+    {"id": "q.reference", "status": "FAIL", "detail": "OBSERVATION_LEDGER.md:454-463 contains no Z12-indexed 16-state bit-flip transition table. It cannot supply the normative-by-reference table claimed in section 1.3."},
+    {"id": "gate.token", "status": "FAIL", "detail": "Repository token is STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE, not STALEFIVEFOLDENGINEPROMOTIONEVIDENCE; see scripts/build-fivefold-engine-promotion-evidence.py:811-818. No refresh attempted and current promotion-gate status was not independently rerun."},
+    {"id": "5.4.source-bindings", "status": "PASS", "detail": "All four source raw-byte SHA-256 values below match their entries in both MANIFEST.json and CHECKSUMS.sha256; OBS-022 upstream report hash also matches."},
+    {"id": "5.4.spec-hash", "status": "FAIL", "detail": "Not executed. Replacing an embedded placeholder with the file's raw-byte digest changes the hashed bytes. A normalized-content hash convention or external-only digest must be specified; an ordinary raw-byte self-hash is not a reproducible procedure."},
+    {"id": "5.4.registration", "status": "FAIL", "detail": "Not executed after hard-gate failure. MANIFEST.json and CHECKSUMS.sha256 unchanged."},
+    {"id": "baseline.manifest", "status": "PASS", "command": "npm run validate:manifest", "exitCode": 0, "fileCount": 1118, "totalBytes": 76518676},
+    {"id": "5.5", "status": "FAIL", "command": "npm run validate", "execution": "not_run", "detail": "Downstream validation withheld after admission gate failure; baseline manifest check is not full release validation."}
+  ],
+  "excerpts": [
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "1635-1641",
+      "text": "The boundary specification in\n`scrum/GOV-517-d5-signature-derivation-definition.md`, beginning exactly at\n`### Derivation Targets (T1\u2013T3)`, is frozen as the GOV-517 specification body.\nIt defines pure generation targets T1\u2013T3 from $I_1\u2013I_4$, pre-flight negative\ncontrols NC-1 through NC-4, disposition mapping, halting conditions, and DoD.\nObserved canonical $D_5$ state remains outside the derivation runtime and may\nbe consulted only by the downstream comparison layer named in the frozen body."
+    },
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "1686-1692",
+      "text": "The maintainer-approved independent re-audit of\n`qa/gov-517-canonical-derivation-report.json` closes GOV-517 with category\n`derived`. The single production pass generated T1 (10 witnesses), T2 (28\nwitnesses), and T3 (7/7 office convergence) from registered I1-I4 inputs. The\ncomplete downstream G5 comparison classified all 14 canonical D5 contact rows\nas `both`, with no primary-only, secondary-only, or neither rows. OBS-022\nrecords the frame-level combinatorics of that result."
+    },
+    {
+      "path": "provenance/OBSERVATION_LEDGER.md",
+      "lines": "454-463",
+      "text": "**Provenance:** Maintainer independent re-audit closed and approved the single-pass\nGOV-517 generator receipt. The pure engine generated 10 T1 witnesses and 28 T2\nwitnesses from registered I1-I4 inputs, then the downstream G5 comparison mapped\nthem to all 14 canonical D5 contacts after generation was sealed. T1 covers all\n14 contacts through its 10 office-pair witnesses; T2 covers all 14 contacts\nthrough its 28 construction-edge witnesses. The exact G5 distribution is\n`both: 14, primary-only: 0, secondary-only: 0, neither: 0`; T3 converges at all\nseven offices. Every canonical D5 contact's office coordinate is\nconvergence-generated by both routes, reproducing the canonical contact geometry\nexactly at office-coordinate resolution."
+    },
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "2195",
+      "text": "## ENTRY 10 - D4 Grant 2 production record - not_derived"
+    }
+  ],
+  "sha256": {
+    "provenance/DECISION_LEDGER.md": "54b4e825f6d12e3fea570b25a4eeea6915d89616778ea601705268cca6308c0e",
+    "provenance/OBSERVATION_LEDGER.md": "8e0be9f5bcee0af1aeb87b8ee71fa18121376c1e2b8e23416439c8834e17787f",
+    "qa/gov-517-canonical-derivation-report.json": "1b0432c9426d5cdd1fabb01a073967bc5c9ccee2166c07c03e36e5359bbdbb0e",
+    "scrum/GOV-517-d5-signature-derivation-definition.md": "613b8a6112c495cd1c23b720969f655b34edad702a5df1c94555fa105548c42b",
+    "MANIFEST.json": "935d8ef846697a7e0c56470bd8d6f22ce019bb0fea5cf6e4bc781f5e041e34aa",
+    "CHECKSUMS.sha256": "fa60f0c250c28124b2d609b92d1521d00a068614d5576aaa1370b12d8799b67f"
+  }
+}

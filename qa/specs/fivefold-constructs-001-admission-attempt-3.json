@@ -1,0 +1,451 @@
+{
+  "specId": "SPEC-FIVEFOLD-CONSTRUCTS-001",
+  "version": "0.2.1",
+  "attempt": 3,
+  "status": "ADMITTED_WITH_DEFERRALS",
+  "admitted": true,
+  "admissionScope": "CONSTRUCTS specification only; no runtime, topology, GOVERNS or release promotion authority",
+  "promotionClaim": false,
+  "integratedReleaseGreen": false,
+  "authority": "Maintainer-approved R2 execution and attempt-3 admission rule; ENTRY 11 records the incident and deferred refresh boundary",
+  "spec": {
+    "path": "docs/specs/fivefold_constructs_engine_spec.md",
+    "sha256": "55eb1779a4025da995771fc4519e67cd9f5d67ebedb53648c4192eddfa4d8990",
+    "bytes": 20510
+  },
+  "evidencePreservation": [
+    {
+      "path": "qa/specs/fivefold-constructs-001-r1-forensics.md",
+      "sha256": "6ef521bf6e2773c2a57574efb212a53c6fd8284d397272cec4017f3e31c25ecc",
+      "sourceCopyByteIdentical": true,
+      "originalRetained": true
+    },
+    {
+      "path": "qa/specs/r1-census-history.txt",
+      "sha256": "f5c882df6037c79c37c703ffff8f88272dbc5e7006fe491a053560e616e77235",
+      "sourceCopyByteIdentical": true,
+      "originalRetained": true
+    },
+    {
+      "path": "qa/specs/r1-census-odb.txt",
+      "sha256": "2d13e90bb3185015f6866981c3c00f9486646b21b9d9dde57a2296e02c973a6a",
+      "sourceCopyByteIdentical": true,
+      "originalRetained": true
+    },
+    {
+      "path": "qa/specs/r1-all-blob-sha256.txt",
+      "sha256": "1565550764f65c904c4391444b7ab6fcceb20647e0dde4639087f1ae3f21fb9b",
+      "sourceCopyByteIdentical": true,
+      "originalRetained": true
+    },
+    {
+      "path": "qa/specs/r1-census-normalization-exact.txt",
+      "sha256": "6f378039c77b88721e9b61cc5270c3ebee1b826c9117a1a5b104a08c9ebd675b",
+      "sourceCopyByteIdentical": true,
+      "originalRetained": true
+    },
+    {
+      "path": "qa/specs/r1-registration-binding-history.txt",
+      "sha256": "c781f42d336d90c850739398f8565e59e11e0f52bd518db12967ea631b7b86d1",
+      "sourceCopyByteIdentical": true,
+      "originalRetained": true
+    },
+    {
+      "path": "qa/specs/r1-census-history-envelope-bindings.txt",
+      "sha256": "f9eae5ae7a44730259c2dafa892791f9b44e17fccc9fd005c84f3dcece3b8226",
+      "sourceCopyByteIdentical": true,
+      "originalRetained": true
+    },
+    {
+      "path": "qa/specs/r1-census-ab86a90-c530e41.diff",
+      "sha256": "5c6f57c580c67af495ce3015963a164a650aba8655226f7d0f409cf45713d542",
+      "sourceCopyByteIdentical": true,
+      "originalRetained": true
+    },
+    {
+      "path": "qa/specs/r1-census-c530e41-67dcd14.diff",
+      "sha256": "799800c9980808c14564ea593ad2c9b2c092c38f9646109b6900290fce480d47",
+      "sourceCopyByteIdentical": true,
+      "originalRetained": true
+    },
+    {
+      "path": "qa/specs/r1-census-payload-comparison.txt",
+      "sha256": "d5c6e589ac34e9a0d4c8a0299d3fc69c106aaa2014bceca08d74232f3c2f670b",
+      "sourceCopyByteIdentical": true,
+      "originalRetained": true
+    },
+    {
+      "path": "qa/specs/r1-pin-history.txt",
+      "sha256": "0506fcd53efc73b94fcc7c95e10c27f7a641be37bdd0b3e41364105ff76645a9",
+      "sourceCopyByteIdentical": true,
+      "originalRetained": true
+    },
+    {
+      "path": "qa/specs/r1-census-registration-committed.json",
+      "sha256": "2830c17a0e1b98ea84a4cf4ba3c88754d56f607cfa9ae761aa18424f1e4372f4",
+      "sourceCopyByteIdentical": true,
+      "originalRetained": true
+    }
+  ],
+  "incident": {
+    "entry": "ENTRY 11",
+    "path": "provenance/DECISION_LEDGER.md",
+    "appendOnly": true,
+    "historicalPin": "ad857ab957c54773f35047fb7618e8c8d9977991c0450efc56b0b81cd653a1d0",
+    "currentCensusSha256": "c537bf547ceab5c4d4c49f85da92848cbd3bbbf342c8ffc43c354abc9af47e00",
+    "bindingMismatchNotRepaired": true,
+    "classifiedAs": "Committed-snapshot hygiene defect; session-hygiene cause remains inference",
+    "probes": [
+      {
+        "recipe": "JSON.stringify(JSON.parse(blob),null,0)",
+        "bytes": 194194,
+        "sha256": "2830c17a0e1b98ea84a4cf4ba3c88754d56f607cfa9ae761aa18424f1e4372f4"
+      },
+      {
+        "recipe": "JSON.stringify(JSON.parse(blob),null,0) + LF",
+        "bytes": 194195,
+        "sha256": "d9e01cbc749f05cf4471d038752be6791ad6743ba8454c5374a461528a221752"
+      },
+      {
+        "recipe": "JSON.stringify(JSON.parse(blob),null,2)",
+        "bytes": 369402,
+        "sha256": "026e0b47e71ed29a8b2d882b3af33b4dc608d8dee586ebba278049fc8dcf5ec0"
+      },
+      {
+        "recipe": "JSON.stringify(JSON.parse(blob),null,2) + LF",
+        "bytes": 369403,
+        "sha256": "cf5c86ba00e08d19c250b7d1d438b8c882eb79ee7959500e95320e8891268de8"
+      }
+    ]
+  },
+  "timeline": {
+    "registrationCommit": "ab86a9063f8fad64c77b477b9734345464837238",
+    "registrationCommitTime": "2026-09-12T23:04:25-04:00",
+    "reportCommit": "9d768fbea3705639ded94284b5a6305b0b909a53",
+    "reportCommitTime": "2026-09-12T23:05:07-04:00",
+    "commitIntervalSeconds": 42,
+    "timestampsAreNotExecutionTimestamps": true,
+    "identicalCensusPinInReport": true,
+    "registrationLoadBearing": true
+  },
+  "invariants": {
+    "INV-1": {
+      "status": "PASS",
+      "T1": 10,
+      "T2": 28
+    },
+    "INV-2": {
+      "status": "PASS",
+      "T1": "14/14",
+      "T2": "14/14"
+    },
+    "INV-3": {
+      "status": "PASS",
+      "offices": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    "INV-4": {
+      "status": "PASS",
+      "both": 14
+    }
+  },
+  "verificationLimit": "Assertions inspect existing sealed report and unchanged anchors; no fresh G1-G5 execution or reconstruction of unavailable historical census bytes",
+  "deferrals": {
+    "INV-3b": "GATED: T3 strong matrix form demoted to open questions",
+    "INV-5": "GATED: Q table is authoring-or-extraction debt; type is DEFINED only",
+    "authority": "Positive authority citations supplied; no separate numbered GOV-517 grant identified, not an exhaustive nonexistence claim",
+    "refresh": "Mandatory new registration and any authorized G1-G5 re-execution folded into later section 4.2 ceremony; no execution grant issued now",
+    "d4": "Preservation is a precondition under ENTRY 10 and qa/d4-production-landing.json:67-77, not executed in R2"
+  },
+  "validation": {
+    "full": {
+      "command": "npm run validate",
+      "exitCode": 1,
+      "signal": null,
+      "error": null,
+      "firstFailure": "STALE_TWIN_HUB_CONVERGENCE",
+      "outputSha256": "e164985c293dce088362dbb75b39ce9bd1a183cd95176dea58cc2e45fce4e382",
+      "outputBytes": 91671,
+      "terminalExcerpt": "}\n.......................                                                  [100%]\n23 passed in 2.94s\nSTALE_TWIN_HUB_CONVERGENCE",
+      "scope": "Full npm command invoked; chained stages stop at the first failing suite. No refresh or bypass attempted.",
+      "disposition": "Expected recorded freshness failure, nonblocking for document-only admission under maintainer directive; later chained suites not run"
+    },
+    "manifest": {
+      "command": "npm run validate:manifest",
+      "status": "PASS",
+      "scope": "Spec, evidence bundle and attempt-3 receipt registered; final manifest freshness and per-file bindings passed. No green integrated release is implied.",
+      "fileCount": 1134
+    },
+    "derivedSurface": "PASS",
+    "citations": "PASS",
+    "protectedFiles": "PASS"
+  },
+  "checks": {
+    "invariants": "PASS",
+    "anchors": "PASS",
+    "bundle": "PASS",
+    "protectedFiles": "PASS",
+    "definedArithmetic": "PASS",
+    "citationCount": 18,
+    "boundFileCount": 25
+  },
+  "bindings": {
+    "docs/specs/fivefold_constructs_engine_spec.md": {
+      "sha256": "55eb1779a4025da995771fc4519e67cd9f5d67ebedb53648c4192eddfa4d8990",
+      "bytes": 20510,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "provenance/DECISION_LEDGER.md": {
+      "sha256": "e34e0a1ba643fc65d2537dff209658fbf15b6244d890c37afdd78c0ef2a63aa2",
+      "bytes": 160741,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/gov-517-input-registration.mjs": {
+      "sha256": "ff266a6e0874d78245f87b253b6c318653958245030ce18a1562252888f36802",
+      "bytes": 9792,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/gov-517-live-derivation.mjs": {
+      "sha256": "630669c047ecaec7db3033d58bd7d8bb976cef679a69a3c91131db00fda8252b",
+      "bytes": 7623,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "scripts/manifest-utils.mjs": {
+      "sha256": "1a78b2b4b4377b9cb5716f319a16a9a4631009bafbd765e82cb734e19bd88037",
+      "bytes": 1339,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "canonical/fivefold-incubator/fifth-space-census-v0.json": {
+      "sha256": "c537bf547ceab5c4d4c49f85da92848cbd3bbbf342c8ffc43c354abc9af47e00",
+      "bytes": 194194,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/specs/fivefold-constructs-001-r1-forensics.md": {
+      "sha256": "6ef521bf6e2773c2a57574efb212a53c6fd8284d397272cec4017f3e31c25ecc",
+      "bytes": 29954,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/specs/r1-census-history.txt": {
+      "sha256": "f5c882df6037c79c37c703ffff8f88272dbc5e7006fe491a053560e616e77235",
+      "bytes": 2512,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/specs/r1-census-odb.txt": {
+      "sha256": "2d13e90bb3185015f6866981c3c00f9486646b21b9d9dde57a2296e02c973a6a",
+      "bytes": 1744,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/specs/r1-all-blob-sha256.txt": {
+      "sha256": "1565550764f65c904c4391444b7ab6fcceb20647e0dde4639087f1ae3f21fb9b",
+      "bytes": 227140,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/specs/r1-census-normalization-exact.txt": {
+      "sha256": "6f378039c77b88721e9b61cc5270c3ebee1b826c9117a1a5b104a08c9ebd675b",
+      "bytes": 733,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/specs/r1-registration-binding-history.txt": {
+      "sha256": "c781f42d336d90c850739398f8565e59e11e0f52bd518db12967ea631b7b86d1",
+      "bytes": 2022,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/specs/r1-census-history-envelope-bindings.txt": {
+      "sha256": "f9eae5ae7a44730259c2dafa892791f9b44e17fccc9fd005c84f3dcece3b8226",
+      "bytes": 5264,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/specs/r1-census-ab86a90-c530e41.diff": {
+      "sha256": "5c6f57c580c67af495ce3015963a164a650aba8655226f7d0f409cf45713d542",
+      "bytes": 1237,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/specs/r1-census-c530e41-67dcd14.diff": {
+      "sha256": "799800c9980808c14564ea593ad2c9b2c092c38f9646109b6900290fce480d47",
+      "bytes": 1045,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/specs/r1-census-payload-comparison.txt": {
+      "sha256": "d5c6e589ac34e9a0d4c8a0299d3fc69c106aaa2014bceca08d74232f3c2f670b",
+      "bytes": 457,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/specs/r1-pin-history.txt": {
+      "sha256": "0506fcd53efc73b94fcc7c95e10c27f7a641be37bdd0b3e41364105ff76645a9",
+      "bytes": 329,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/specs/r1-census-registration-committed.json": {
+      "sha256": "2830c17a0e1b98ea84a4cf4ba3c88754d56f607cfa9ae761aa18424f1e4372f4",
+      "bytes": 194194,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/specs/fivefold-constructs-001-admission-attempt-1.json": {
+      "sha256": "3a535ad8de05301f879a9ac565b32b3e2883ee4dd652e7e1dd477cdf21092f43",
+      "bytes": 6699,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/specs/fivefold-constructs-001-admission-attempt-2.json": {
+      "sha256": "be356c710760b1168503aa78bb753fd3424b0269742d0bed4815fe09c774aa43",
+      "bytes": 24008,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/gov-517-generative-semantics-registration.json": {
+      "sha256": "536f011699f65d36cffef6111f19fd94178649f2485a734707670ee280f101ec",
+      "bytes": 5481,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "provenance/OBSERVATION_LEDGER.md": {
+      "sha256": "8e0be9f5bcee0af1aeb87b8ee71fa18121376c1e2b8e23416439c8834e17787f",
+      "bytes": 33153,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/gov-517-canonical-derivation-report.json": {
+      "sha256": "1b0432c9426d5cdd1fabb01a073967bc5c9ccee2166c07c03e36e5359bbdbb0e",
+      "bytes": 13671,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/gov-517-input-boundary-registration.json": {
+      "sha256": "153bb87ea7710acbc493c2b628aa5e091a55e8149ab2d32fd4cc54bcce9553f8",
+      "bytes": 7524,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    },
+    "qa/d4-production-landing.json": {
+      "sha256": "2c6609d41d65a8eb997197cbc4aed756af513edcfca798c95de5a6c62dd90700",
+      "bytes": 3836,
+      "manifestMatch": true,
+      "checksumsMatch": true
+    }
+  },
+  "excerpts": [
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "1686-1692",
+      "text": "The maintainer-approved independent re-audit of\n`qa/gov-517-canonical-derivation-report.json` closes GOV-517 with category\n`derived`. The single production pass generated T1 (10 witnesses), T2 (28\nwitnesses), and T3 (7/7 office convergence) from registered I1-I4 inputs. The\ncomplete downstream G5 comparison classified all 14 canonical D5 contact rows\nas `both`, with no primary-only, secondary-only, or neither rows. OBS-022\nrecords the frame-level combinatorics of that result."
+    },
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "1349-1349",
+      "text": "GOV-516 mathematical and observational outcomes are banked; its ticket remains Review. This entry grants parallel capacity for the GOV-518 freeze (and, once D1–D6/D8 are filled and the fresh manifest binding accepted, its execution) without awaiting an administrative flip to Done. Queue discipline mirrors the GOV-517 grant pattern; GOV-517 itself is untouched. The grant confers no operator, topology, admission, runtime, or synthesis authority."
+    },
+    {
+      "path": "qa/gov-517-generative-semantics-registration.json",
+      "lines": "3-6",
+      "text": "  \"registration_id\": \"GOV-517-G1-G5-code-review-addendum\",\n  \"authority\": \"Maintainer Generative Semantics Registration G1-G5 directive\",\n  \"frozen_specifications_modified\": false,\n  \"live_derivation_authorized\": true,"
+    },
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "2195-2217",
+      "text": "## ENTRY 10 - D4 Grant 2 production record - not_derived\n\n**Authorization date:** 2026-09-16. **Execution clock:**\n2026-09-17T00:39:09.758Z through 2026-09-17T00:39:10.488Z, UTC.\n\n### Authority And Limitation Acceptance\n\nMaintainer Erick Wright's directive, timestamp `2026-09-16T16:22:00Z`, grants\nproduction generation, production seal, canonical comparison, and writes to\nboth ledgers, `MANIFEST.json`, and `CHECKSUMS.sha256`. His subsequent explicit\nconfirmation, \"yes i authorize this opencode session full authrization\",\nauthorizes this OpenCode session (`openai/gpt-6-astra`) in place of the original\n`Astra-Medium` label, the complete canonical scope, and a separately identified\nproduction launcher and new evidence files. This is a record of conversation\nauthority, not a claim of cryptographically authenticated signature.\n\n`qa/d4-grant2-authorization.json` records the authorized transitions\n`grant2: NOT_GRANTED -> GRANTED`, `productionAuthorized: false -> true`, and\nD4 execution `status: HALT -> ACTIVE`. `D4_CANONICAL_DOMAIN` denotes the complete\ngeneration/comparison domains in sections 3.1-3.3 of the frozen implementation\nspecification, not a selected-only generation profile. This supersedes the\nhistorical Grant 1 production prohibition prospectively; no historical preflight\nrecord or its HALT state is rewritten."
+    },
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "1635-1641",
+      "text": "The boundary specification in\n`scrum/GOV-517-d5-signature-derivation-definition.md`, beginning exactly at\n`### Derivation Targets (T1–T3)`, is frozen as the GOV-517 specification body.\nIt defines pure generation targets T1–T3 from $I_1–I_4$, pre-flight negative\ncontrols NC-1 through NC-4, disposition mapping, halting conditions, and DoD.\nObserved canonical $D_5$ state remains outside the derivation runtime and may\nbe consulted only by the downstream comparison layer named in the frozen body."
+    },
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "2298-2426",
+      "text": "## ENTRY 11 - GOV-517 census binding hygiene incident and SPEC-001 admission scope\n\n**Date:** 2026-09-17. **Status:** historical committed-snapshot defect recorded;\nforward amendment selected; refresh execution authorization deferred.\n\n### Authority And Evidence\n\nThe maintainer approved the R2 sequence for SPEC-FIVEFOLD-CONSTRUCTS-001:\nregister the R1 memo and eleven annexes, complete bounded static generator and\ntimeline checks, append one self-contained incident entry, and proceed to\ndocument-only admission attempt 3. No restoration or historical overwrite is\nauthorized. Re-registration is mandatory at the later promotion refresh, not a\nstandalone execution in this session. This records conversation authority, not\na cryptographically authenticated signature.\n\nThe evidentiary basis is the already registered\n`qa/specs/fivefold-constructs-001-r1-forensics.md`, sections 3-9 and 12, and its\neleven named sibling annexes. The memo and annexes were promoted byte-for-byte;\ntheir release inventory check passed before this entry was appended. The R1\nmemo's proposed standalone replay sequencing is historical planning evidence;\nthe maintainer's decision here folds that work into the later refresh instead.\n\n### Historical Defect And Impact Bound\n\nAt commit `ab86a9063f8fad64c77b477b9734345464837238`, the registration and both\nrelease inventories named census SHA-256\n`ad857ab957c54773f35047fb7618e8c8d9977991c0450efc56b0b81cd653a1d0`.\nThe committed census blob `93d3079264f0780001b0dd45977d7abe59e80608` instead\nhashed to SHA-256\n`2830c17a0e1b98ea84a4cf4ba3c88754d56f607cfa9ae761aa18424f1e4372f4`.\nThis inconsistency exists from the first committed registration; it is not\nexplained solely by subsequent regeneration. The sealed report carries the\nidentical unavailable pin in\n`qa/gov-517-canonical-derivation-report.json:11-28`, matching\n`qa/gov-517-input-boundary-registration.json:23-29`.\n\nR1 hashed all 16 census-history blobs and all 1,985 available local Git blob\ncontents, including available unreachable objects, without finding that pin.\nThis is a bounded local recovery failure, not proof of permanent global loss\nor proof of tampering. No bytes are restored, synthesized as the historical\ninput, or silently substituted into a historical registration or receipt.\n\nFor the inspected committed snapshots `ab86a90`, `c530e41`, `67dcd14`, and\nHEAD at R1, the diagnostic projection\n`jq -cS 'del(.candidateFingerprint, .evidenceBindings)'` has identical SHA-256\n`0e96c29537a5a1ff8b22dd052b257008a6fa3e09dafa9d3088910af17f068719`.\nThe two post-registration changes affect only ledger bindings and the resulting\nfingerprint, with sanctioned ceremony trails. This is not a replacement hash\nrecipe and does not recover the unavailable input. Scientific impact is bounded\nat **none known in those inspected payloads**; no fresh execution or blanket\nproof of no tampering is claimed. ENTRY 8's historical `derived` verdict and\nthe sealed report remain intact, with this reproducibility limitation recorded.\n\n### Static Generator And Four-Probe Findings\n\nStatic reading of `qa/gov-517-input-registration.mjs:14-29,96-103,183-186`\nidentifies a matching registration emitter: it reads raw source-file bytes,\nhashes those bytes with SHA-256, asserts parity with MANIFEST and CHECKSUMS,\nthen writes the registration. JSON serialization formats the output\nregistration; it is not the census hash input. The script is unchanged between\n`ab86a90` and this inspection. The inventory helper likewise hashes raw file\nbytes (`scripts/manifest-utils.mjs:31-37`). These are code-path findings, not\nproof that a particular historical process invoked that code unchanged.\n\nThe four authorized manual probes parsed the committed census blob and used\n`JSON.stringify(value, null, spaces)` with spaces 0 or 2, with or without one\ntrailing LF. No project emitter or generator was executed. Results:\n\n| Spaces | Trailing LF | Bytes | SHA-256 |\n|---|---|---|---|\n| 0 | no | 194194 | `2830c17a0e1b98ea84a4cf4ba3c88754d56f607cfa9ae761aa18424f1e4372f4` |\n| 0 | yes | 194195 | `d9e01cbc749f05cf4471d038752be6791ad6743ba8454c5374a461528a221752` |\n| 2 | no | 369402 | `026e0b47e71ed29a8b2d882b3af33b4dc608d8dee586ebba278049fc8dcf5ec0` |\n| 2 | yes | 369403 | `cf5c86ba00e08d19c250b7d1d438b8c882eb79ee7959500e95320e8891268de8` |\n\nNone reproduces the pin. Classification: committed-snapshot hygiene defect;\nsession-hygiene failure involving uncommitted working bytes or incomplete\nstaging remains the leading **inference**, not a recovered execution history.\nNeither normalization nor an exact causal mechanism has been established.\n\n### Timeline And Binding Weight\n\n| Artifact landing | Commit | Git author/committer time (-04:00) |\n|---|---|---|\n| Registration/preflight | `ab86a9063f8fad64c77b477b9734345464837238` | 2026-09-12 23:04:25 |\n| Sealed derivation report | `9d768fbea3705639ded94284b5a6305b0b909a53` | 2026-09-12 23:05:07 |\n| Accepted GOV-517 verdict | `c530e417667cba9d1f64a9b3b1f1ec26502e3015` | 2026-09-12 23:41:52 |\n\nThe first two commits are 42 seconds apart; these are commit timestamps, not\nmeasured execution or seal timestamps. Identical report pins and the registered\nlive input path show that this registration is load-bearing, not demonstrated\nvestigial scaffolding. The `underdetermined` result belongs to GOV-520 / ENTRY 6;\nGOV-517 / ENTRY 8 records `derived`. The light-amendment branch is closed.\n\n### Deferred Refresh And D4 Preservation\n\nMandatory GOV-517 re-registration and any authorized G1-G5 re-execution are\nfolded into the later section 4.2 promotion-refresh work item. Its own new\nboundary/ticket, input bindings, receipt and execution authorization must be\nsettled there, consistently with ENTRY 7's revision/re-test guard. This entry\ndoes not grant a replay, rebind historical evidence, or waive INV-1 through\nINV-4. It does not issue a forward execution authorization without that context.\n\nBefore any shared-artifact refresh, preserve the D4-bound twin-hub evidence\nunder the deferral authority in ENTRY 10 and\n`qa/d4-production-landing.json:67-77`. This is a recorded precondition for that\nlater ceremony, not preservation or refresh work performed here. R2 does not\nchange census, twin-hub, existing preflight or production receipts, canonical\ntopology, schemas, Court runtime, Neo4j projection, or existing test suites.\n\n### Document Admission Boundary\n\nThe maintainer permits SPEC-FIVEFOLD-CONSTRUCTS-001 v0.2.1 admission after memo\nregistration, these findings, resolved citations, exact historical INV-1 through\nINV-4 checks, and green manifest freshness. The known census binding incident\nis disclosed, not repaired by document admission. Authority, Q-table and T3\nstrong-form limitations must remain explicit; only honestly tagged gated claims\nare deferrable. Any new derived-surface contradiction is a halt, not a deferral.\n\nThe expected `STALE_TWIN_HUB_CONVERGENCE` stop from full validation is recorded\nrelease state, not a blocker to this document-only admission. No stale control\nis disabled, no shared artifact is regenerated to force green, and no promotion\nor green integrated release is claimed. Attempt-3's subsequent receipt owns\nits actual checks and disposition; it is not evidence cited by this entry.\n\nImproved evidence-binding conventions are planned remediation in a separate\nwork item and ceremony. No convention candidate is authored, registered or\nadopted here. Historical evidence, existing ledger text and prior line anchors\nremain unchanged; this entry is append-only."
+    },
+    {
+      "path": "provenance/OBSERVATION_LEDGER.md",
+      "lines": "454-463",
+      "text": "**Provenance:** Maintainer independent re-audit closed and approved the single-pass\nGOV-517 generator receipt. The pure engine generated 10 T1 witnesses and 28 T2\nwitnesses from registered I1-I4 inputs, then the downstream G5 comparison mapped\nthem to all 14 canonical D5 contacts after generation was sealed. T1 covers all\n14 contacts through its 10 office-pair witnesses; T2 covers all 14 contacts\nthrough its 28 construction-edge witnesses. The exact G5 distribution is\n`both: 14, primary-only: 0, secondary-only: 0, neither: 0`; T3 converges at all\nseven offices. Every canonical D5 contact's office coordinate is\nconvergence-generated by both routes, reproducing the canonical contact geometry\nexactly at office-coordinate resolution."
+    },
+    {
+      "path": "qa/gov-517-canonical-derivation-report.json",
+      "lines": "338-429",
+      "text": "    \"g5_state_classification_pairs\": [\n      {\n        \"state\": \"seat-contact:D5:3881:3753:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:3881:1941:1\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:2383:2391:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:2383:1359:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:997:981:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:997:1509:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:3239:3243:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:3239:2727:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:1273:1269:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:1273:1401:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:3667:3669:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:3667:3411:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:671:687:0\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      },\n      {\n        \"state\": \"seat-contact:D5:671:1341:-1\",\n        \"in_t1\": true,\n        \"in_t2\": true,\n        \"classification\": \"both\"\n      }\n    ],\n    \"four_cell_distribution\": {\n      \"both\": 14,\n      \"primary-only\": 0,\n      \"secondary-only\": 0,\n      \"neither\": 0\n    }"
+    },
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "2246-2266",
+      "text": "The resulting frozen category is **`not_derived`**. OBS-023 records the complete\nmechanics: T-A covers 4 of 14 observed contact keys; T-B covers all 14 but equals\nthe complete 28-key U domain. Cells are `A-only: 0`, `B-only: 10`, `both: 4`,\n`neither: 0`. T-C matches both normalized A0 seam relations exactly, with A1\nrelations separate. The T-B `restatement_signature=true` flag and both routes'\nin-R-but-unmatched counts (4 and 14) remain in the receipt. Partial T-A coverage\nprevents `filter_plus_geometry`; exact seam agreement does not repair it.\n\nThe registered outcome row is applied without reinterpretation:\n\n| Category | Condition | Bounded H-Disposition |\n|---|---|---|\n| `not_derived` | All remaining complete valid outcomes, including incomplete contact coverage or exact selective contact coverage with midpoint disagreement | Weakens only this registered route to H1(D4); compatible with H3, not confirmation; H2 no disposition; apply the qualifier below |\n\n**D4 `not_derived` qualifier:** this is derivation difficulty under the registered\nroute, not authorship proof. The complete A1 GOVERNS inheritance substrate was\ngranted: a negative result says the required contact/seam pattern was not\ngenerated even with that substrate given. It does not test the origin of satellite\nmembership or parent assignment, prove non-entailment under every other operator,\nor automatically strengthen H3 relative to D5; the input grants and semantics\ndiffer and provide no quantitative cross-boundary evidential ordering."
+    },
+    {
+      "path": "qa/gov-517-input-boundary-registration.json",
+      "lines": "31-61",
+      "text": "  \"i1\": {\n    \"source\": \"canonical/universal-network-data.json\",\n    \"section\": \"structuralEdges\",\n    \"selector\": \"row.type === \\\"CONSTRUCTS\\\"\",\n    \"expected_record_count\": 28,\n    \"consumption_profile\": \"Office-ring distance-2 pair structures; OBS-008 structural provenance only\",\n    \"status\": \"verified\"\n  },\n  \"i2\": {\n    \"source\": \"canonical/universal-network-data.json\",\n    \"section\": \"structuralEdges\",\n    \"selector\": \"row.type === \\\"CONSTRUCTS\\\"\",\n    \"expected_record_count\": 28,\n    \"consumption_profile\": \"A-tier CONSTRUCTS transitions with parentStateIds and constructionEdgeIds\",\n    \"excluded\": \"D4/D5 SEAT_CONTACT chain-audit rows\",\n    \"status\": \"verified\"\n  },\n  \"i3\": {\n    \"source\": null,\n    \"binding\": null,\n    \"content\": null,\n    \"load_time_empty\": true,\n    \"consumption_profile\": \"Empty envelope member; no target consumes it\"\n  },\n  \"i4\": {\n    \"sources\": [\n      \"canonical/universal-heptatonic-ledger.json\",\n      \"canonical/fivefold-incubator/fifth-space-census-v0.json\"\n    ],\n    \"slice_descriptor\": \"tier in {A0,A1,A2} AND role = anchor AND office != null\",\n    \"enumeration_method\": \"Filter bound ledger, project identity fields, sort ascending integer stateId; never transcribe an anchor list\","
+    },
+    {
+      "path": "qa/gov-517-generative-semantics-registration.json",
+      "lines": "39-59",
+      "text": "  \"harness_encoding\": {\n    \"coordinate\": \"Registered Z7 office indices; decimal strings 0 through 6 at the JSON boundary\",\n    \"witness\": \"JSON string of [tier, child_office, [parent_office_p,parent_office_q], primary_or_secondary]\",\n    \"ordering\": \"Unique full serialized witness strings sorted by JavaScript code-unit order; no source-order dependence\",\n    \"generation.t3_assignment\": \"Map from decimal office string to JSON string of the complete sorted unique [tier,[parent_office_p,parent_office_q]] structures\",\n    \"generation.t3_midpoints\": \"Sorted unique JSON strings of [child_office,tier,[parent_office_p,parent_office_q]]\",\n    \"neutral_encoding_only\": \"Serialization is lossless; ordered parent pairs are never swapped and witness classes are never erased\"\n  },\n  \"integer_utility_allowlist\": {\n    \"shared_named_helpers\": [],\n    \"rationale\": \"No named helper is needed by both route call trees; z7 and maskOverlap are T1-private, stepRegistered is T2-private\",\n    \"shared_intrinsics\": [\"BigInt\"],\n    \"intrinsic_justification\": \"Exact integer conversion only; collection intrinsics may not be shared by route roots\"\n  },\n  \"engine_literal_allowlist\": {\n    \"integers\": [\"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"10\", \"11\", \"21\"],\n    \"integerArrays\": [[\"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\"], [\"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"10\", \"11\"]],\n    \"array_justification\": \"Exhaustive ascending Z7 coordinate traversal and Z12 mask-bit traversal only; scalar allowlisting does not authorize arbitrary constant tuples\",\n    \"integer_justification\": \"Z7 coordinates and interval endpoints (0-7); Z12 bit indices (0-11); symmetric unit offsets; distance-2 overlap cardinality 5; registered three-tier anchor count 21\",\n    \"strings\": [\"A0\", \"A1\", \"A2\", \"anchor\", \"CONSTRUCTS\", \"primary\", \"secondary\"],\n    \"string_justification\": \"Registered A-tier/anchor provenance, registered edge class, and G1 witness route classes; no observed-state identifiers or office-name constants\""
+    },
+    {
+      "path": "qa/gov-517-generative-semantics-registration.json",
+      "lines": "7-37",
+      "text": "  \"G1\": {\n    \"space\": \"Ordered anchor pairs within each of the A0, A1, A2 tiers over the registered 21 I4 anchors, evaluated at each candidate office 0 through 6\",\n    \"tuple\": [\"tier\", \"child_office\", \"pair\", \"witness_class\"],\n    \"identity\": \"Office-resolution and witness class, not ledger stateId; state IDs are used only for structural-edge joins\",\n    \"enumeration\": \"Includes diagonal pairs, which both predicates reject; 3 * 7 * 7 * 7 = 1029 candidates, fixed finite enumeration, no heuristic search\"\n  },\n  \"G2\": {\n    \"T1_a\": \"Symmetric kernel only; office(p) = k-1 mod 7 and office(q) = k+1 mod 7\",\n    \"T1_b\": \"The selected I4 fifth masks have intersection cardinality exactly 5\",\n    \"conjunction\": \"T1_a AND T1_b; no global mask-overlap sweep substitutes for the selected pair check\",\n    \"NC1\": \"Kernel [-2,+1] is not the registered symmetric operator and produces no T1 witnesses\"\n  },\n  \"G3\": {\n    \"T2_a\": \"Traverse two distinct CONSTRUCTS edges from distinct same-tier parents sharing a child anchor in the next A tier\",\n    \"T2_b\": \"Both traversed edges must match the independently held I1 registered step records by edge ID, parent, child, and parent tier\",\n    \"distance2_provenance\": \"Comes from registered co-parenthood transitions; no office-ring shortcut or mask overlap is invoked\",\n    \"ordered_pairs\": \"Both parent orderings are traversed; neither is silently normalized to T1 orientation\",\n    \"corruption\": \"Non-CONSTRUCTS transitions produce no T2 witnesses, without changing I1 or I4\"\n  },\n  \"G4\": {\n    \"office_convergence\": \"Office k is generated iff at least one T1 and one T2 witness resolve to k, without requiring identical pair or tier\",\n    \"midpoints\": \"All office-pair structures carried by either route at convergent offices; no selected-only pair output\",\n    \"window_control\": \"The standing T3 window invariant is checked separately over all 49 (j,d) cases. Width 6 invalidates T3-PASS without rewriting the G4 office-membership predicate\",\n    \"mask_control\": \"Non-A-tier or non-anchor provenance prevents an unambiguous T3 assignment\",\n    \"empty_result\": \"Empty convergence is materialized; T3-PASS requires a nonempty unambiguous assignment and the window invariant\"\n  },\n  \"G5\": {\n    \"stage\": \"Canonical row classification occurs strictly downstream of a complete materialized generation seal\",\n    \"classification\": [\"primary-only\", \"secondary-only\", \"both\", \"neither\"],\n    \"row_resolution\": \"Compare observation office coordinate against primary and secondary witness office coordinates independently\",\n    \"raw_membership\": \"Harness per_state_routes retains raw witness-string membership; it is not substituted for canonical-row classification\""
+    },
+    {
+      "path": "qa/gov-517-canonical-derivation-report.json",
+      "lines": "74-113",
+      "text": "    \"t3_pass\": true,\n    \"t3_assignment\": {\n      \"0\": \"[[\\\"A0\\\",[\\\"1\\\",\\\"6\\\"]],[\\\"A0\\\",[\\\"6\\\",\\\"1\\\"]],[\\\"A1\\\",[\\\"1\\\",\\\"6\\\"]],[\\\"A1\\\",[\\\"6\\\",\\\"1\\\"]]]\",\n      \"1\": \"[[\\\"A0\\\",[\\\"0\\\",\\\"2\\\"]],[\\\"A0\\\",[\\\"2\\\",\\\"0\\\"]],[\\\"A1\\\",[\\\"0\\\",\\\"2\\\"]],[\\\"A1\\\",[\\\"2\\\",\\\"0\\\"]]]\",\n      \"2\": \"[[\\\"A0\\\",[\\\"1\\\",\\\"3\\\"]],[\\\"A0\\\",[\\\"3\\\",\\\"1\\\"]],[\\\"A1\\\",[\\\"1\\\",\\\"3\\\"]],[\\\"A1\\\",[\\\"3\\\",\\\"1\\\"]]]\",\n      \"3\": \"[[\\\"A0\\\",[\\\"2\\\",\\\"4\\\"]],[\\\"A0\\\",[\\\"4\\\",\\\"2\\\"]],[\\\"A1\\\",[\\\"2\\\",\\\"4\\\"]],[\\\"A1\\\",[\\\"4\\\",\\\"2\\\"]]]\",\n      \"4\": \"[[\\\"A0\\\",[\\\"3\\\",\\\"5\\\"]],[\\\"A0\\\",[\\\"5\\\",\\\"3\\\"]],[\\\"A1\\\",[\\\"3\\\",\\\"5\\\"]],[\\\"A1\\\",[\\\"5\\\",\\\"3\\\"]]]\",\n      \"5\": \"[[\\\"A0\\\",[\\\"4\\\",\\\"6\\\"]],[\\\"A0\\\",[\\\"6\\\",\\\"4\\\"]],[\\\"A1\\\",[\\\"4\\\",\\\"6\\\"]],[\\\"A1\\\",[\\\"6\\\",\\\"4\\\"]]]\",\n      \"6\": \"[[\\\"A0\\\",[\\\"0\\\",\\\"5\\\"]],[\\\"A0\\\",[\\\"5\\\",\\\"0\\\"]],[\\\"A1\\\",[\\\"0\\\",\\\"5\\\"]],[\\\"A1\\\",[\\\"5\\\",\\\"0\\\"]]]\"\n    },\n    \"t3_midpoints\": [\n      \"[\\\"0\\\",\\\"A0\\\",[\\\"1\\\",\\\"6\\\"]]\",\n      \"[\\\"0\\\",\\\"A0\\\",[\\\"6\\\",\\\"1\\\"]]\",\n      \"[\\\"0\\\",\\\"A1\\\",[\\\"1\\\",\\\"6\\\"]]\",\n      \"[\\\"0\\\",\\\"A1\\\",[\\\"6\\\",\\\"1\\\"]]\",\n      \"[\\\"1\\\",\\\"A0\\\",[\\\"0\\\",\\\"2\\\"]]\",\n      \"[\\\"1\\\",\\\"A0\\\",[\\\"2\\\",\\\"0\\\"]]\",\n      \"[\\\"1\\\",\\\"A1\\\",[\\\"0\\\",\\\"2\\\"]]\",\n      \"[\\\"1\\\",\\\"A1\\\",[\\\"2\\\",\\\"0\\\"]]\",\n      \"[\\\"2\\\",\\\"A0\\\",[\\\"1\\\",\\\"3\\\"]]\",\n      \"[\\\"2\\\",\\\"A0\\\",[\\\"3\\\",\\\"1\\\"]]\",\n      \"[\\\"2\\\",\\\"A1\\\",[\\\"1\\\",\\\"3\\\"]]\",\n      \"[\\\"2\\\",\\\"A1\\\",[\\\"3\\\",\\\"1\\\"]]\",\n      \"[\\\"3\\\",\\\"A0\\\",[\\\"2\\\",\\\"4\\\"]]\",\n      \"[\\\"3\\\",\\\"A0\\\",[\\\"4\\\",\\\"2\\\"]]\",\n      \"[\\\"3\\\",\\\"A1\\\",[\\\"2\\\",\\\"4\\\"]]\",\n      \"[\\\"3\\\",\\\"A1\\\",[\\\"4\\\",\\\"2\\\"]]\",\n      \"[\\\"4\\\",\\\"A0\\\",[\\\"3\\\",\\\"5\\\"]]\",\n      \"[\\\"4\\\",\\\"A0\\\",[\\\"5\\\",\\\"3\\\"]]\",\n      \"[\\\"4\\\",\\\"A1\\\",[\\\"3\\\",\\\"5\\\"]]\",\n      \"[\\\"4\\\",\\\"A1\\\",[\\\"5\\\",\\\"3\\\"]]\",\n      \"[\\\"5\\\",\\\"A0\\\",[\\\"4\\\",\\\"6\\\"]]\",\n      \"[\\\"5\\\",\\\"A0\\\",[\\\"6\\\",\\\"4\\\"]]\",\n      \"[\\\"5\\\",\\\"A1\\\",[\\\"4\\\",\\\"6\\\"]]\",\n      \"[\\\"5\\\",\\\"A1\\\",[\\\"6\\\",\\\"4\\\"]]\",\n      \"[\\\"6\\\",\\\"A0\\\",[\\\"0\\\",\\\"5\\\"]]\",\n      \"[\\\"6\\\",\\\"A0\\\",[\\\"5\\\",\\\"0\\\"]]\",\n      \"[\\\"6\\\",\\\"A1\\\",[\\\"0\\\",\\\"5\\\"]]\",\n      \"[\\\"6\\\",\\\"A1\\\",[\\\"5\\\",\\\"0\\\"]]\"\n    ],"
+    },
+    {
+      "path": "qa/gov-517-canonical-derivation-report.json",
+      "lines": "309-318",
+      "text": "  \"witness_set_counts\": {\n    \"T1\": 10,\n    \"T2\": 28,\n    \"T3\": 7\n  },\n  \"target_flags\": {\n    \"T1-PASS\": true,\n    \"T2-PASS\": true,\n    \"T3-PASS\": true\n  },"
+    },
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "2320-2390",
+      "text": "### Historical Defect And Impact Bound\n\nAt commit `ab86a9063f8fad64c77b477b9734345464837238`, the registration and both\nrelease inventories named census SHA-256\n`ad857ab957c54773f35047fb7618e8c8d9977991c0450efc56b0b81cd653a1d0`.\nThe committed census blob `93d3079264f0780001b0dd45977d7abe59e80608` instead\nhashed to SHA-256\n`2830c17a0e1b98ea84a4cf4ba3c88754d56f607cfa9ae761aa18424f1e4372f4`.\nThis inconsistency exists from the first committed registration; it is not\nexplained solely by subsequent regeneration. The sealed report carries the\nidentical unavailable pin in\n`qa/gov-517-canonical-derivation-report.json:11-28`, matching\n`qa/gov-517-input-boundary-registration.json:23-29`.\n\nR1 hashed all 16 census-history blobs and all 1,985 available local Git blob\ncontents, including available unreachable objects, without finding that pin.\nThis is a bounded local recovery failure, not proof of permanent global loss\nor proof of tampering. No bytes are restored, synthesized as the historical\ninput, or silently substituted into a historical registration or receipt.\n\nFor the inspected committed snapshots `ab86a90`, `c530e41`, `67dcd14`, and\nHEAD at R1, the diagnostic projection\n`jq -cS 'del(.candidateFingerprint, .evidenceBindings)'` has identical SHA-256\n`0e96c29537a5a1ff8b22dd052b257008a6fa3e09dafa9d3088910af17f068719`.\nThe two post-registration changes affect only ledger bindings and the resulting\nfingerprint, with sanctioned ceremony trails. This is not a replacement hash\nrecipe and does not recover the unavailable input. Scientific impact is bounded\nat **none known in those inspected payloads**; no fresh execution or blanket\nproof of no tampering is claimed. ENTRY 8's historical `derived` verdict and\nthe sealed report remain intact, with this reproducibility limitation recorded.\n\n### Static Generator And Four-Probe Findings\n\nStatic reading of `qa/gov-517-input-registration.mjs:14-29,96-103,183-186`\nidentifies a matching registration emitter: it reads raw source-file bytes,\nhashes those bytes with SHA-256, asserts parity with MANIFEST and CHECKSUMS,\nthen writes the registration. JSON serialization formats the output\nregistration; it is not the census hash input. The script is unchanged between\n`ab86a90` and this inspection. The inventory helper likewise hashes raw file\nbytes (`scripts/manifest-utils.mjs:31-37`). These are code-path findings, not\nproof that a particular historical process invoked that code unchanged.\n\nThe four authorized manual probes parsed the committed census blob and used\n`JSON.stringify(value, null, spaces)` with spaces 0 or 2, with or without one\ntrailing LF. No project emitter or generator was executed. Results:\n\n| Spaces | Trailing LF | Bytes | SHA-256 |\n|---|---|---|---|\n| 0 | no | 194194 | `2830c17a0e1b98ea84a4cf4ba3c88754d56f607cfa9ae761aa18424f1e4372f4` |\n| 0 | yes | 194195 | `d9e01cbc749f05cf4471d038752be6791ad6743ba8454c5374a461528a221752` |\n| 2 | no | 369402 | `026e0b47e71ed29a8b2d882b3af33b4dc608d8dee586ebba278049fc8dcf5ec0` |\n| 2 | yes | 369403 | `cf5c86ba00e08d19c250b7d1d438b8c882eb79ee7959500e95320e8891268de8` |\n\nNone reproduces the pin. Classification: committed-snapshot hygiene defect;\nsession-hygiene failure involving uncommitted working bytes or incomplete\nstaging remains the leading **inference**, not a recovered execution history.\nNeither normalization nor an exact causal mechanism has been established.\n\n### Timeline And Binding Weight\n\n| Artifact landing | Commit | Git author/committer time (-04:00) |\n|---|---|---|\n| Registration/preflight | `ab86a9063f8fad64c77b477b9734345464837238` | 2026-09-12 23:04:25 |\n| Sealed derivation report | `9d768fbea3705639ded94284b5a6305b0b909a53` | 2026-09-12 23:05:07 |\n| Accepted GOV-517 verdict | `c530e417667cba9d1f64a9b3b1f1ec26502e3015` | 2026-09-12 23:41:52 |\n\nThe first two commits are 42 seconds apart; these are commit timestamps, not\nmeasured execution or seal timestamps. Identical report pins and the registered\nlive input path show that this registration is load-bearing, not demonstrated\nvestigial scaffolding. The `underdetermined` result belongs to GOV-520 / ENTRY 6;\nGOV-517 / ENTRY 8 records `derived`. The light-amendment branch is closed."
+    },
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "2408-2426",
+      "text": "### Document Admission Boundary\n\nThe maintainer permits SPEC-FIVEFOLD-CONSTRUCTS-001 v0.2.1 admission after memo\nregistration, these findings, resolved citations, exact historical INV-1 through\nINV-4 checks, and green manifest freshness. The known census binding incident\nis disclosed, not repaired by document admission. Authority, Q-table and T3\nstrong-form limitations must remain explicit; only honestly tagged gated claims\nare deferrable. Any new derived-surface contradiction is a halt, not a deferral.\n\nThe expected `STALE_TWIN_HUB_CONVERGENCE` stop from full validation is recorded\nrelease state, not a blocker to this document-only admission. No stale control\nis disabled, no shared artifact is regenerated to force green, and no promotion\nor green integrated release is claimed. Attempt-3's subsequent receipt owns\nits actual checks and disposition; it is not evidence cited by this entry.\n\nImproved evidence-binding conventions are planned remediation in a separate\nwork item and ceremony. No convention candidate is authored, registered or\nadopted here. Historical evidence, existing ledger text and prior line anchors\nremain unchanged; this entry is append-only."
+    },
+    {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "2392-2406",
+      "text": "### Deferred Refresh And D4 Preservation\n\nMandatory GOV-517 re-registration and any authorized G1-G5 re-execution are\nfolded into the later section 4.2 promotion-refresh work item. Its own new\nboundary/ticket, input bindings, receipt and execution authorization must be\nsettled there, consistently with ENTRY 7's revision/re-test guard. This entry\ndoes not grant a replay, rebind historical evidence, or waive INV-1 through\nINV-4. It does not issue a forward execution authorization without that context.\n\nBefore any shared-artifact refresh, preserve the D4-bound twin-hub evidence\nunder the deferral authority in ENTRY 10 and\n`qa/d4-production-landing.json:67-77`. This is a recorded precondition for that\nlater ceremony, not preservation or refresh work performed here. R2 does not\nchange census, twin-hub, existing preflight or production receipts, canonical\ntopology, schemas, Court runtime, Neo4j projection, or existing test suites."
+    },
+    {
+      "path": "qa/d4-production-landing.json",
+      "lines": "67-77",
+      "text": "  \"preserved\": [\n    \"Accepted nine-file implementation closure\",\n    \"Frozen boundary/spec/schema/cardinality documents\",\n    \"Original canonical ledger/network bytes and bound twin-hub receipt\",\n    \"Existing qa/d4-preflight-*.json and qa/halt-evidence/\"\n  ],\n  \"deferred\": [\n    \"Ledger-dependent sidecar/closure and UI freshness cascade; would alter the bound twin-hub provenance receipt, requiring explicit historical evidence preservation rather than production rebinding\",\n    \"Integrated release validation; no fresh integrated PASS or prior failure count asserted\",\n    \"Browser and Neo4j validation; not part of this bounded production comparison\",\n    \"Any new boundary, recurrence probe, retry or favorable reclassification\""
+    }
+  ],
+  "protectedScope": "Every baseline manifest payload unchanged except append-only decision ledger. Historical registrations, prior receipts, canonical/, schemas/, tests, preflight controls, D4 evidence, Court runtime, Neo4j projection and promotion evidence unchanged.",
+  "outOfScope": [
+    "shared-artifact refresh",
+    "new production execution",
+    "evidence-binding convention drafting or registration",
+    "green release claim",
+    "commit or push"
+  ]
+}

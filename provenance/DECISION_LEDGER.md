@@ -2292,3 +2292,135 @@ to avoid a ledger/sidecar hash cycle. No green integrated release is claimed.
 No recurrence probe, topology/admission change, office/graph/Court authority
 change, global `harmonic.C_H` change, release promotion, commit, tag or push is
 authorized or performed by this production record.
+
+---
+
+## ENTRY 11 - GOV-517 census binding hygiene incident and SPEC-001 admission scope
+
+**Date:** 2026-09-17. **Status:** historical committed-snapshot defect recorded;
+forward amendment selected; refresh execution authorization deferred.
+
+### Authority And Evidence
+
+The maintainer approved the R2 sequence for SPEC-FIVEFOLD-CONSTRUCTS-001:
+register the R1 memo and eleven annexes, complete bounded static generator and
+timeline checks, append one self-contained incident entry, and proceed to
+document-only admission attempt 3. No restoration or historical overwrite is
+authorized. Re-registration is mandatory at the later promotion refresh, not a
+standalone execution in this session. This records conversation authority, not
+a cryptographically authenticated signature.
+
+The evidentiary basis is the already registered
+`qa/specs/fivefold-constructs-001-r1-forensics.md`, sections 3-9 and 12, and its
+eleven named sibling annexes. The memo and annexes were promoted byte-for-byte;
+their release inventory check passed before this entry was appended. The R1
+memo's proposed standalone replay sequencing is historical planning evidence;
+the maintainer's decision here folds that work into the later refresh instead.
+
+### Historical Defect And Impact Bound
+
+At commit `ab86a9063f8fad64c77b477b9734345464837238`, the registration and both
+release inventories named census SHA-256
+`ad857ab957c54773f35047fb7618e8c8d9977991c0450efc56b0b81cd653a1d0`.
+The committed census blob `93d3079264f0780001b0dd45977d7abe59e80608` instead
+hashed to SHA-256
+`2830c17a0e1b98ea84a4cf4ba3c88754d56f607cfa9ae761aa18424f1e4372f4`.
+This inconsistency exists from the first committed registration; it is not
+explained solely by subsequent regeneration. The sealed report carries the
+identical unavailable pin in
+`qa/gov-517-canonical-derivation-report.json:11-28`, matching
+`qa/gov-517-input-boundary-registration.json:23-29`.
+
+R1 hashed all 16 census-history blobs and all 1,985 available local Git blob
+contents, including available unreachable objects, without finding that pin.
+This is a bounded local recovery failure, not proof of permanent global loss
+or proof of tampering. No bytes are restored, synthesized as the historical
+input, or silently substituted into a historical registration or receipt.
+
+For the inspected committed snapshots `ab86a90`, `c530e41`, `67dcd14`, and
+HEAD at R1, the diagnostic projection
+`jq -cS 'del(.candidateFingerprint, .evidenceBindings)'` has identical SHA-256
+`0e96c29537a5a1ff8b22dd052b257008a6fa3e09dafa9d3088910af17f068719`.
+The two post-registration changes affect only ledger bindings and the resulting
+fingerprint, with sanctioned ceremony trails. This is not a replacement hash
+recipe and does not recover the unavailable input. Scientific impact is bounded
+at **none known in those inspected payloads**; no fresh execution or blanket
+proof of no tampering is claimed. ENTRY 8's historical `derived` verdict and
+the sealed report remain intact, with this reproducibility limitation recorded.
+
+### Static Generator And Four-Probe Findings
+
+Static reading of `qa/gov-517-input-registration.mjs:14-29,96-103,183-186`
+identifies a matching registration emitter: it reads raw source-file bytes,
+hashes those bytes with SHA-256, asserts parity with MANIFEST and CHECKSUMS,
+then writes the registration. JSON serialization formats the output
+registration; it is not the census hash input. The script is unchanged between
+`ab86a90` and this inspection. The inventory helper likewise hashes raw file
+bytes (`scripts/manifest-utils.mjs:31-37`). These are code-path findings, not
+proof that a particular historical process invoked that code unchanged.
+
+The four authorized manual probes parsed the committed census blob and used
+`JSON.stringify(value, null, spaces)` with spaces 0 or 2, with or without one
+trailing LF. No project emitter or generator was executed. Results:
+
+| Spaces | Trailing LF | Bytes | SHA-256 |
+|---|---|---|---|
+| 0 | no | 194194 | `2830c17a0e1b98ea84a4cf4ba3c88754d56f607cfa9ae761aa18424f1e4372f4` |
+| 0 | yes | 194195 | `d9e01cbc749f05cf4471d038752be6791ad6743ba8454c5374a461528a221752` |
+| 2 | no | 369402 | `026e0b47e71ed29a8b2d882b3af33b4dc608d8dee586ebba278049fc8dcf5ec0` |
+| 2 | yes | 369403 | `cf5c86ba00e08d19c250b7d1d438b8c882eb79ee7959500e95320e8891268de8` |
+
+None reproduces the pin. Classification: committed-snapshot hygiene defect;
+session-hygiene failure involving uncommitted working bytes or incomplete
+staging remains the leading **inference**, not a recovered execution history.
+Neither normalization nor an exact causal mechanism has been established.
+
+### Timeline And Binding Weight
+
+| Artifact landing | Commit | Git author/committer time (-04:00) |
+|---|---|---|
+| Registration/preflight | `ab86a9063f8fad64c77b477b9734345464837238` | 2026-09-12 23:04:25 |
+| Sealed derivation report | `9d768fbea3705639ded94284b5a6305b0b909a53` | 2026-09-12 23:05:07 |
+| Accepted GOV-517 verdict | `c530e417667cba9d1f64a9b3b1f1ec26502e3015` | 2026-09-12 23:41:52 |
+
+The first two commits are 42 seconds apart; these are commit timestamps, not
+measured execution or seal timestamps. Identical report pins and the registered
+live input path show that this registration is load-bearing, not demonstrated
+vestigial scaffolding. The `underdetermined` result belongs to GOV-520 / ENTRY 6;
+GOV-517 / ENTRY 8 records `derived`. The light-amendment branch is closed.
+
+### Deferred Refresh And D4 Preservation
+
+Mandatory GOV-517 re-registration and any authorized G1-G5 re-execution are
+folded into the later section 4.2 promotion-refresh work item. Its own new
+boundary/ticket, input bindings, receipt and execution authorization must be
+settled there, consistently with ENTRY 7's revision/re-test guard. This entry
+does not grant a replay, rebind historical evidence, or waive INV-1 through
+INV-4. It does not issue a forward execution authorization without that context.
+
+Before any shared-artifact refresh, preserve the D4-bound twin-hub evidence
+under the deferral authority in ENTRY 10 and
+`qa/d4-production-landing.json:67-77`. This is a recorded precondition for that
+later ceremony, not preservation or refresh work performed here. R2 does not
+change census, twin-hub, existing preflight or production receipts, canonical
+topology, schemas, Court runtime, Neo4j projection, or existing test suites.
+
+### Document Admission Boundary
+
+The maintainer permits SPEC-FIVEFOLD-CONSTRUCTS-001 v0.2.1 admission after memo
+registration, these findings, resolved citations, exact historical INV-1 through
+INV-4 checks, and green manifest freshness. The known census binding incident
+is disclosed, not repaired by document admission. Authority, Q-table and T3
+strong-form limitations must remain explicit; only honestly tagged gated claims
+are deferrable. Any new derived-surface contradiction is a halt, not a deferral.
+
+The expected `STALE_TWIN_HUB_CONVERGENCE` stop from full validation is recorded
+release state, not a blocker to this document-only admission. No stale control
+is disabled, no shared artifact is regenerated to force green, and no promotion
+or green integrated release is claimed. Attempt-3's subsequent receipt owns
+its actual checks and disposition; it is not evidence cited by this entry.
+
+Improved evidence-binding conventions are planned remediation in a separate
+work item and ceremony. No convention candidate is authored, registered or
+adopted here. Historical evidence, existing ledger text and prior line anchors
+remain unchanged; this entry is append-only.
