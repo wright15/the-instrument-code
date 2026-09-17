@@ -8,9 +8,9 @@ import { rotateMaskZ12, midZ7, generateRouteTA, generateRouteTB } from "../../sc
 import { extractGeneration, extractBound, validateProjection, projectionDigests } from "../../scripts/d4-inputs.mjs";
 import { generate, sealGeneration } from "../../scripts/d4-generation.mjs";
 import { canonicalJSON, digestBytes, digestObject, specPreimage, implementationDigest, decimal, validateWire, absentReceipt } from "../../scripts/d4-wire.mjs";
-import { compareSealed, compareSynthetic, routeAccounting, selectCategory, verifySeal, buildReceipt } from "../../scripts/d4-downstream-comparison.mjs";
+import { compareSealed, compareSynthetic, routeAccounting, selectCategory, verifySeal, buildReceipt, extractObservations } from "../../scripts/d4-downstream-comparison.mjs";
 import { inspectFile } from "../../scripts/lib/static-callgraph.mjs";
-import { syntheticPacket, syntheticDocuments } from "./synthetic.mjs";
+import { syntheticPacket, syntheticDocuments, regressionDocuments } from "./synthetic.mjs";
 
 const root = new URL("../../", import.meta.url);
 const read = path => readFileSync(new URL(path, root));
@@ -159,6 +159,27 @@ test("synthetic seal verification prevents premature reads and observes endpoint
   assert.throws(() => compareSealed(wrong.packet, () => wrong.reference), /contact_endpoint/);
   const mismatched = { ...reference, networkBytes: Buffer.from("{}") };
   assert.throws(() => compareSealed(packet, () => mismatched), /comparison_binding/);
+});
+
+for (const [name, error] of [["D4 target role satellite", /invalid:contact_endpoint/],
+  ["D4 target tier A2", /invalid:contact_endpoint/], ["seam provenance flip", /invalid:seam_group/]]) {
+  test(name, () => {
+    const { packet, reference } = syntheticPacket(regressionDocuments(name));
+    assert.throws(() => compareSealed(packet, () => reference), error);
+  });
+}
+
+test("benign A2 satellite to D5 anchor increments excludedContacts without entering O", () => {
+  const docs = regressionDocuments("benign A2 satellite to D5 anchor");
+  const { packet, reference } = syntheticPacket(docs);
+  const observations = extractObservations(docs.ledger, docs.network, packet.projection);
+  assert.equal(observations.excludedContacts, "1");
+  assert.equal(observations.contacts.length, 2);
+  const comparison = compareSealed(packet, () => reference);
+  const clean = syntheticPacket();
+  assert.deepEqual(comparison, compareSealed(clean.packet, () => clean.reference));
+  assert(!JSON.stringify(buildReceipt(packet, comparison, schema)).includes("excludedContacts"));
+  assert(!JSON.stringify(packet.seal).includes("excludedContacts"));
 });
 
 test("worked full synthetic receipt: schema accepts honest absent controls", () => {

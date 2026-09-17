@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1087,
-  "totalBytes": 73686045,
+  "fileCount": 1118,
+  "totalBytes": 76518676,
   "files": [
     {
       "path": ".env.example",
@@ -1332,8 +1332,8 @@
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
-      "bytes": 147043,
-      "sha256": "ac50241b6c432394b55864e2ea79755d70ddca60529476edf470f2c39f509c74"
+      "bytes": 153214,
+      "sha256": "54b4e825f6d12e3fea570b25a4eeea6915d89616778ea601705268cca6308c0e"
     },
     {
       "path": "provenance/NEXT_STEPS.md",
@@ -1342,8 +1342,8 @@
     },
     {
       "path": "provenance/OBSERVATION_LEDGER.md",
-      "bytes": 30101,
-      "sha256": "20793bdc3c509a84951a39578a40285ed8205f87033a12f494000fe712e8da52"
+      "bytes": 33153,
+      "sha256": "8e0be9f5bcee0af1aeb87b8ee71fa18121376c1e2b8e23416439c8834e17787f"
     },
     {
       "path": "provenance/SOURCE_AUTHORITY.md",
@@ -1429,6 +1429,56 @@
       "path": "qa/d-tier-interleaving-check-validation.json",
       "bytes": 8912,
       "sha256": "5d81cd34f64a3eb2988364e326e880fb257c5968d10a3eb20deb3b6656226f36"
+    },
+    {
+      "path": "qa/d4-grant1-revision.json",
+      "bytes": 5122,
+      "sha256": "0340e3161e46d68255df0bc21599b76a56ac26160950b4c4544f81f586686c35"
+    },
+    {
+      "path": "qa/d4-grant2-authorization.json",
+      "bytes": 1798,
+      "sha256": "29dc5b78637bcfb6d787af86604b69dcda35c4d110f79d8786f4cf65e6da4ab4"
+    },
+    {
+      "path": "qa/d4-preflight-receipt.json",
+      "bytes": 12837,
+      "sha256": "e2086bd0072c453d75cc8afb229a1a69f1881afb7600482c86a8230d2d63f527"
+    },
+    {
+      "path": "qa/d4-preflight-registration.json",
+      "bytes": 1357028,
+      "sha256": "4d2068bca9f6bd358ce3d11dcbab873d428ab1ecf8e929e857bc625d7618df50"
+    },
+    {
+      "path": "qa/d4-preflight-seal.json",
+      "bytes": 547,
+      "sha256": "6a675bd4d8e54d1c41cd254d4641ece1c1b56b9ddbfc70f7f1a758be7264030e"
+    },
+    {
+      "path": "qa/d4-production-generation.json",
+      "bytes": 32552,
+      "sha256": "f9ab736eb14a31ab68d0b1424e7e20dffc42768f7a8ccbf358e6f0ce107496ae"
+    },
+    {
+      "path": "qa/d4-production-landing.json",
+      "bytes": 3836,
+      "sha256": "2c6609d41d65a8eb997197cbc4aed756af513edcfca798c95de5a6c62dd90700"
+    },
+    {
+      "path": "qa/d4-production-receipt.json",
+      "bytes": 42575,
+      "sha256": "2057a75702ddb4952151d962fb680474ab6543387b604b3b5c37758b8e9c49d0"
+    },
+    {
+      "path": "qa/d4-production-run.json",
+      "bytes": 6641,
+      "sha256": "a753e43d7d0f61bd7e2f7a67ff9daf792a12970a55f8bf16f919a863122b990b"
+    },
+    {
+      "path": "qa/d4-production-seal.json",
+      "bytes": 537,
+      "sha256": "2b1c6c284b52850463ff05179e43976b845196e6d96bd6e80deccf9de38a0b58"
     },
     {
       "path": "qa/elemental-pentatonic-scale-map-validation.json",
@@ -1584,6 +1634,36 @@
       "path": "qa/governor-runtime-validation.json",
       "bytes": 1685,
       "sha256": "eae31fa9fa348ad37199106b4525fa0c8ba17c8106a4eb94ed39659c9244d4f6"
+    },
+    {
+      "path": "qa/halt-evidence/phase-b-grant1-contact-join/d4-preflight-receipt.json",
+      "bytes": 8475,
+      "sha256": "4bd0e3de919f50eebac73ad95e58ffb8bda2b6301266b2f02deeffb5fe897a15"
+    },
+    {
+      "path": "qa/halt-evidence/phase-b-grant1-contact-join/d4-preflight-registration.json",
+      "bytes": 595876,
+      "sha256": "100cacd23e6d02fe9f5a95b0eb531e1c1c3c336839d355e34d341363104d84f4"
+    },
+    {
+      "path": "qa/halt-evidence/phase-b-grant1-contact-join/d4-preflight-seal.json",
+      "bytes": 547,
+      "sha256": "85b7bbd73ced0bcdfde8dfd2351fd7d32d639029598d66951bb1fe038a058520"
+    },
+    {
+      "path": "qa/halt-evidence/phase-b-grant1-harness-fixture/d4-preflight-receipt.json",
+      "bytes": 8386,
+      "sha256": "d2dcd18b9c7341e069f9a40ac2224fc9c3975542151b4066f5a6f1c76674e311"
+    },
+    {
+      "path": "qa/halt-evidence/phase-b-grant1-harness-fixture/d4-preflight-registration.json",
+      "bytes": 546523,
+      "sha256": "251ad712914ae813249c27b635431af9b2e336f27a6d7a9f030da27922dbb06e"
+    },
+    {
+      "path": "qa/halt-evidence/phase-b-grant1-harness-fixture/d4-preflight-seal.json",
+      "bytes": 547,
+      "sha256": "bd6f124edb9da7c9ada73b6770e9befb18e9af1a8cb983d249ffd4269525a6f8"
     },
     {
       "path": "qa/harmonic-compression-candidates-validation.json",
@@ -1814,6 +1894,11 @@
       "path": "schemas/court-runtime/topological-translocation-record.schema.json",
       "bytes": 269,
       "sha256": "09a9e65d2ccb4f0b83418754babbcd1f497733216e01c28e28ed5529d378d29a"
+    },
+    {
+      "path": "schemas/d4-derivation-wire.schema.json",
+      "bytes": 18597,
+      "sha256": "b2b3eaed07fba5082a9f6ff18cd40fbe75cb833b0bd8d8a7dc8055eefcbfc52d"
     },
     {
       "path": "schemas/domain_landform_registry.yaml",
@@ -2082,8 +2167,8 @@
     },
     {
       "path": "schemas/ledger-pin-allowlist.json",
-      "bytes": 1465,
-      "sha256": "7ee1213883511b762f041ca7460e497659eb6be9ab1521ca27ffe4c68548a259"
+      "bytes": 1778,
+      "sha256": "1c3b91ba72b46d5cd02a4c2b61e0a483f3be7408ecea6f54561df6e9fc7af61a"
     },
     {
       "path": "schemas/mechanics-thermodynamics-registry-v1.0.0.schema.json",
@@ -2266,6 +2351,36 @@
       "sha256": "4bde211c98c45b4ae586b17a2f4ec5aaa3ba0a6f0c8ec3869cfdc8037ee74aa0"
     },
     {
+      "path": "scripts/d4-derivation-engine.mjs",
+      "bytes": 2154,
+      "sha256": "28b1474c2a81d9715cc510cebffe18da24753270bc303b4fa1c3548040a413c8"
+    },
+    {
+      "path": "scripts/d4-downstream-comparison.mjs",
+      "bytes": 15265,
+      "sha256": "36ef3429098df11384cd7a6e0d7970a16dba93b77b6bd6b214207ae7f21e39c1"
+    },
+    {
+      "path": "scripts/d4-generation.mjs",
+      "bytes": 4056,
+      "sha256": "2fd7f5bc43a9883108397138508a5724171f03d4fca7b6afa0dd2311a6c0f1bd"
+    },
+    {
+      "path": "scripts/d4-inputs.mjs",
+      "bytes": 8023,
+      "sha256": "3bea18eccc6252a9b5578fecf60925da29a799a1ef17702dc7f66bd159de8199"
+    },
+    {
+      "path": "scripts/d4-production.mjs",
+      "bytes": 15242,
+      "sha256": "5bca3de6b39d4290d91fdbe63aa41163e86f64175806aaa38bfe9f41710f4008"
+    },
+    {
+      "path": "scripts/d4-wire.mjs",
+      "bytes": 6555,
+      "sha256": "f8c85a18d6c7c1df0f26fc456da935af80e75017db1f6699f792d415b9505adb"
+    },
+    {
       "path": "scripts/generate-availability-housing.py",
       "bytes": 4649,
       "sha256": "67e4498218da880b6dfb7da95594b8a82cdea71fd404e35bd4da5043b1f13d86"
@@ -2349,6 +2464,11 @@
       "path": "scripts/install-governor-skills.mjs",
       "bytes": 8937,
       "sha256": "a40ade504190a71b335669da31bab5f7268c161f51ad6a7a8068c8c37f2e5d65"
+    },
+    {
+      "path": "scripts/lib/static-callgraph.mjs",
+      "bytes": 18799,
+      "sha256": "2d45f5368515771f6732c64aa896ea82c7bb8398f3fb4758974b5535d0ef9a35"
     },
     {
       "path": "scripts/manifest-utils.mjs",
@@ -2981,9 +3101,29 @@
       "sha256": "751d56d4f01ea1a0d054c8119d178a64b20787aa9fb095a02c99f3ba3b135de2"
     },
     {
+      "path": "scrum/plan/d4-domain-cardinality-verification.md",
+      "bytes": 3720,
+      "sha256": "58717ab4ec26b615b617401da4c613d23a4d8cdeb3c3fb408f119e4e91e78946"
+    },
+    {
       "path": "scrum/plan/d4-freeze-handoff.md",
       "bytes": 6893,
       "sha256": "73dbe003e7e5ffcfd4932ad38c41f3481a7e0283194ec0024ed9936de2bc4fd9"
+    },
+    {
+      "path": "scrum/plan/d4-implementation-report.md",
+      "bytes": 37426,
+      "sha256": "d25641509f8ef03e4d51b840775a1be3cd390d5c82eb76ed1e39ef18528c6d06"
+    },
+    {
+      "path": "scrum/plan/d4-implementation-spec-draft.md",
+      "bytes": 32655,
+      "sha256": "5096f1e3caf5e1f2a9a3984bcb4aa54b38a7cab4d20a9d34bb57516dfafa9042"
+    },
+    {
+      "path": "scrum/plan/d4-wire-schema-addendum.md",
+      "bytes": 8693,
+      "sha256": "56db87ffcd73dd9b6c9a97a5c99d23881767c93ebc430c6a17e70c49e6b3a68c"
     },
     {
       "path": "scrum/plan/epic-520-1-planning-handoff.md",
@@ -5059,6 +5199,21 @@
       "path": "tests/crt_310/backlog.test.mjs",
       "bytes": 2002,
       "sha256": "1a48d8ca5592f9a090a6eefa86c6bf43f368c496d61e4ef351721769b457ae1d"
+    },
+    {
+      "path": "tests/d4/build.test.mjs",
+      "bytes": 15760,
+      "sha256": "617c40c01774ccf2cbeb7dac5dc91b53a62f3444a984160957524f438f456201"
+    },
+    {
+      "path": "tests/d4/static-callgraph.test.mjs",
+      "bytes": 8294,
+      "sha256": "7f2c12c6db0301b881b2b99a92f9c6950b8163a276705173ed47d2b2fbc36b7e"
+    },
+    {
+      "path": "tests/d4/synthetic.mjs",
+      "bytes": 4029,
+      "sha256": "e6336d5d12fdfcdd790ce9c76de44fc30c25b54a4557655488dd5cd6b7a70e4c"
     },
     {
       "path": "tests/fixtures/gov_205/site_server.py",

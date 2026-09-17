@@ -1,0 +1,143 @@
+{
+  "revision": "phase-b-grant1-contact-join-fix",
+  "priorImplementationDigest": "7202bdf1ff042a2136465b5bd5c5c7c02eeb5ef87c97cc9514e59e4b8cfe63fd",
+  "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f",
+  "inventory": [
+    {
+      "path": "scripts/d4-derivation-engine.mjs",
+      "sha256": "28b1474c2a81d9715cc510cebffe18da24753270bc303b4fa1c3548040a413c8"
+    },
+    {
+      "path": "scripts/d4-downstream-comparison.mjs",
+      "sha256": "36ef3429098df11384cd7a6e0d7970a16dba93b77b6bd6b214207ae7f21e39c1"
+    },
+    {
+      "path": "scripts/d4-generation.mjs",
+      "sha256": "2fd7f5bc43a9883108397138508a5724171f03d4fca7b6afa0dd2311a6c0f1bd"
+    },
+    {
+      "path": "scripts/d4-inputs.mjs",
+      "sha256": "3bea18eccc6252a9b5578fecf60925da29a799a1ef17702dc7f66bd159de8199"
+    },
+    {
+      "path": "scripts/d4-wire.mjs",
+      "sha256": "f8c85a18d6c7c1df0f26fc456da935af80e75017db1f6699f792d415b9505adb"
+    },
+    {
+      "path": "scripts/lib/static-callgraph.mjs",
+      "sha256": "2d45f5368515771f6732c64aa896ea82c7bb8398f3fb4758974b5535d0ef9a35"
+    },
+    {
+      "path": "tests/d4/build.test.mjs",
+      "sha256": "617c40c01774ccf2cbeb7dac5dc91b53a62f3444a984160957524f438f456201"
+    },
+    {
+      "path": "tests/d4/static-callgraph.test.mjs",
+      "sha256": "7f2c12c6db0301b881b2b99a92f9c6950b8163a276705173ed47d2b2fbc36b7e"
+    },
+    {
+      "path": "tests/d4/synthetic.mjs",
+      "sha256": "e6336d5d12fdfcdd790ce9c76de44fc30c25b54a4557655488dd5cd6b7a70e4c"
+    }
+  ],
+  "serialization": "SHA-256 of path-sorted {path,sha256} array, RFC8785 number-free JCS, no terminal newline",
+  "historicalReport": {
+    "path": "scrum/plan/d4-implementation-report.md",
+    "sha256": "d25641509f8ef03e4d51b840775a1be3cd390d5c82eb76ed1e39ef18528c6d06",
+    "unchanged": true
+  },
+  "frozenDocuments": [
+    {
+      "path": "scrum/plan/d4-boundary-draft.md",
+      "expected": "751d56d4f01ea1a0d054c8119d178a64b20787aa9fb095a02c99f3ba3b135de2",
+      "actual": "751d56d4f01ea1a0d054c8119d178a64b20787aa9fb095a02c99f3ba3b135de2",
+      "matches": true
+    },
+    {
+      "path": "scrum/plan/d4-implementation-spec-draft.md",
+      "expected": "5096f1e3caf5e1f2a9a3984bcb4aa54b38a7cab4d20a9d34bb57516dfafa9042",
+      "actual": "5096f1e3caf5e1f2a9a3984bcb4aa54b38a7cab4d20a9d34bb57516dfafa9042",
+      "matches": true
+    },
+    {
+      "path": "schemas/d4-derivation-wire.schema.json",
+      "expected": "b2b3eaed07fba5082a9f6ff18cd40fbe75cb833b0bd8d8a7dc8055eefcbfc52d",
+      "actual": "b2b3eaed07fba5082a9f6ff18cd40fbe75cb833b0bd8d8a7dc8055eefcbfc52d",
+      "matches": true
+    },
+    {
+      "path": "scrum/plan/d4-wire-schema-addendum.md",
+      "expected": "56db87ffcd73dd9b6c9a97a5c99d23881767c93ebc430c6a17e70c49e6b3a68c",
+      "actual": "56db87ffcd73dd9b6c9a97a5c99d23881767c93ebc430c6a17e70c49e6b3a68c",
+      "matches": true
+    },
+    {
+      "path": "scrum/plan/d4-domain-cardinality-verification.md",
+      "expected": "58717ab4ec26b615b617401da4c613d23a4d8cdeb3c3fb408f119e4e91e78946",
+      "actual": "58717ab4ec26b615b617401da4c613d23a4d8cdeb3c3fb408f119e4e91e78946",
+      "matches": true
+    }
+  ],
+  "syntaxChecks": [
+    {
+      "path": "scripts/d4-derivation-engine.mjs",
+      "status": "PASS"
+    },
+    {
+      "path": "scripts/d4-downstream-comparison.mjs",
+      "status": "PASS"
+    },
+    {
+      "path": "scripts/d4-generation.mjs",
+      "status": "PASS"
+    },
+    {
+      "path": "scripts/d4-inputs.mjs",
+      "status": "PASS"
+    },
+    {
+      "path": "scripts/d4-wire.mjs",
+      "status": "PASS"
+    },
+    {
+      "path": "scripts/lib/static-callgraph.mjs",
+      "status": "PASS"
+    },
+    {
+      "path": "tests/d4/build.test.mjs",
+      "status": "PASS"
+    },
+    {
+      "path": "tests/d4/static-callgraph.test.mjs",
+      "status": "PASS"
+    },
+    {
+      "path": "tests/d4/synthetic.mjs",
+      "status": "PASS"
+    }
+  ],
+  "archive": [
+    {
+      "path": "qa/halt-evidence/phase-b-grant1-contact-join/d4-preflight-receipt.json",
+      "sha256": "4bd0e3de919f50eebac73ad95e58ffb8bda2b6301266b2f02deeffb5fe897a15",
+      "byteIdentical": true
+    },
+    {
+      "path": "qa/halt-evidence/phase-b-grant1-contact-join/d4-preflight-registration.json",
+      "sha256": "100cacd23e6d02fe9f5a95b0eb531e1c1c3c336839d355e34d341363104d84f4",
+      "byteIdentical": true
+    },
+    {
+      "path": "qa/halt-evidence/phase-b-grant1-contact-join/d4-preflight-seal.json",
+      "sha256": "85b7bbd73ced0bcdfde8dfd2351fd7d32d639029598d66951bb1fe038a058520",
+      "byteIdentical": true
+    }
+  ],
+  "tests": {
+    "command": "node --test tests/d4/static-callgraph.test.mjs tests/d4/build.test.mjs",
+    "passed": "67",
+    "failed": "0"
+  },
+  "scope": "Grant1 revision only. Fresh preflight pending; Grant2 prohibited. Historical report and frozen hashes preserved.",
+  "auditLimitation": "A partial provenance flip fails seam_group. Whole-group relabeling to an exact benign class is distinguishable only against original source bindings, not after rebinding altered bytes; empty selected domains remain incomplete_or_anomalous."
+}

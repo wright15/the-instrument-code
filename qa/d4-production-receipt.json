@@ -1,0 +1,1433 @@
+{
+  "schemaVersion": "d4-derivation-wire.v1",
+  "boundarySha256": "751d56d4f01ea1a0d054c8119d178a64b20787aa9fb095a02c99f3ba3b135de2",
+  "specSha256": "9d8357cb05b73b4a25aeea3074ebe49d89a27dbf83f039d5698c4f77afc3a24c",
+  "bindings": {
+    "ledgerSha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+    "networkSha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+    "twinHubReceiptSha256": "b7f924ca53859b832334200245f690196433e8c8eb213e2ce26afa5e62e230d2",
+    "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f",
+    "projectionDigests": {
+      "anchors": "d2d74533332e5b33201cfdb73e2e51778389b101558df4f7796a2ccf2ccdb24f",
+      "R": "e17bf1f2f8665e92a4083168228995258cba987bc087d0b3aa93bfed8cfe88dc",
+      "E": "6f3100d8b8d8cf46ebd473adb0945ea6de29410bd0759f30aa28dc543f5784c1"
+    }
+  },
+  "generation": {
+    "routes": {
+      "T-A": {
+        "witnesses": [
+          {
+            "tag": "kernel_twin",
+            "a": "2741",
+            "b": "1387",
+            "h": "1371",
+            "s": "1243",
+            "k": "0"
+          },
+          {
+            "tag": "kernel_twin",
+            "a": "2741",
+            "b": "1387",
+            "h": "1371",
+            "s": "1339",
+            "k": "0"
+          },
+          {
+            "tag": "kernel_twin",
+            "a": "2741",
+            "b": "1387",
+            "h": "1371",
+            "s": "1627",
+            "k": "0"
+          },
+          {
+            "tag": "kernel_twin",
+            "a": "2741",
+            "b": "1387",
+            "h": "1371",
+            "s": "2395",
+            "k": "0"
+          },
+          {
+            "tag": "kernel_twin",
+            "a": "2773",
+            "b": "1451",
+            "h": "2901",
+            "s": "2893",
+            "k": "6"
+          },
+          {
+            "tag": "kernel_twin",
+            "a": "2773",
+            "b": "1451",
+            "h": "2901",
+            "s": "2899",
+            "k": "6"
+          },
+          {
+            "tag": "kernel_twin",
+            "a": "2773",
+            "b": "1451",
+            "h": "2901",
+            "s": "2917",
+            "k": "6"
+          },
+          {
+            "tag": "kernel_twin",
+            "a": "2773",
+            "b": "1451",
+            "h": "2901",
+            "s": "2965",
+            "k": "6"
+          }
+        ]
+      },
+      "T-B": {
+        "witnesses": [
+          {
+            "tag": "construction_join",
+            "e1source": "1387",
+            "e2source": "1453",
+            "h": "1389",
+            "s": "695",
+            "parentOffice": "5",
+            "e1id": "constructs:A0:1387:1389:0",
+            "e2id": "constructs:A0:1453:1389:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1387",
+            "e2source": "1453",
+            "h": "1389",
+            "s": "877",
+            "parentOffice": "5",
+            "e1id": "constructs:A0:1387:1389:0",
+            "e2id": "constructs:A0:1453:1389:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1387",
+            "e2source": "1453",
+            "h": "1389",
+            "s": "1261",
+            "parentOffice": "5",
+            "e1id": "constructs:A0:1387:1389:0",
+            "e2id": "constructs:A0:1453:1389:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1387",
+            "e2source": "1453",
+            "h": "1389",
+            "s": "2413",
+            "parentOffice": "5",
+            "e1id": "constructs:A0:1387:1389:0",
+            "e2id": "constructs:A0:1453:1389:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1387",
+            "e2source": "2741",
+            "h": "1371",
+            "s": "1243",
+            "parentOffice": "0",
+            "e1id": "constructs:A0:1387:1371:0",
+            "e2id": "constructs:A0:2741:1371:1"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1387",
+            "e2source": "2741",
+            "h": "1371",
+            "s": "1339",
+            "parentOffice": "0",
+            "e1id": "constructs:A0:1387:1371:0",
+            "e2id": "constructs:A0:2741:1371:1"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1387",
+            "e2source": "2741",
+            "h": "1371",
+            "s": "1627",
+            "parentOffice": "0",
+            "e1id": "constructs:A0:1387:1371:0",
+            "e2id": "constructs:A0:2741:1371:1"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1387",
+            "e2source": "2741",
+            "h": "1371",
+            "s": "2395",
+            "parentOffice": "0",
+            "e1id": "constructs:A0:1387:1371:0",
+            "e2id": "constructs:A0:2741:1371:1"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1451",
+            "e2source": "1709",
+            "h": "1707",
+            "s": "1691",
+            "parentOffice": "4",
+            "e1id": "constructs:A0:1451:1707:0",
+            "e2id": "constructs:A0:1709:1707:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1451",
+            "e2source": "1709",
+            "h": "1707",
+            "s": "1703",
+            "parentOffice": "4",
+            "e1id": "constructs:A0:1451:1707:0",
+            "e2id": "constructs:A0:1709:1707:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1451",
+            "e2source": "1709",
+            "h": "1707",
+            "s": "1739",
+            "parentOffice": "4",
+            "e1id": "constructs:A0:1451:1707:0",
+            "e2id": "constructs:A0:1709:1707:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1451",
+            "e2source": "1709",
+            "h": "1707",
+            "s": "1835",
+            "parentOffice": "4",
+            "e1id": "constructs:A0:1451:1707:0",
+            "e2id": "constructs:A0:1709:1707:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1451",
+            "e2source": "2773",
+            "h": "2901",
+            "s": "2893",
+            "parentOffice": "6",
+            "e1id": "constructs:A0:1451:2901:-1",
+            "e2id": "constructs:A0:2773:2901:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1451",
+            "e2source": "2773",
+            "h": "2901",
+            "s": "2899",
+            "parentOffice": "6",
+            "e1id": "constructs:A0:1451:2901:-1",
+            "e2id": "constructs:A0:2773:2901:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1451",
+            "e2source": "2773",
+            "h": "2901",
+            "s": "2917",
+            "parentOffice": "6",
+            "e1id": "constructs:A0:1451:2901:-1",
+            "e2id": "constructs:A0:2773:2901:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1451",
+            "e2source": "2773",
+            "h": "2901",
+            "s": "2965",
+            "parentOffice": "6",
+            "e1id": "constructs:A0:1451:2901:-1",
+            "e2id": "constructs:A0:2773:2901:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1453",
+            "e2source": "1387",
+            "h": "1389",
+            "s": "695",
+            "parentOffice": "5",
+            "e1id": "constructs:A0:1453:1389:0",
+            "e2id": "constructs:A0:1387:1389:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1453",
+            "e2source": "1387",
+            "h": "1389",
+            "s": "877",
+            "parentOffice": "5",
+            "e1id": "constructs:A0:1453:1389:0",
+            "e2id": "constructs:A0:1387:1389:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1453",
+            "e2source": "1387",
+            "h": "1389",
+            "s": "1261",
+            "parentOffice": "5",
+            "e1id": "constructs:A0:1453:1389:0",
+            "e2id": "constructs:A0:1387:1389:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1453",
+            "e2source": "1387",
+            "h": "1389",
+            "s": "2413",
+            "parentOffice": "5",
+            "e1id": "constructs:A0:1453:1389:0",
+            "e2id": "constructs:A0:1387:1389:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1453",
+            "e2source": "1717",
+            "h": "1461",
+            "s": "731",
+            "parentOffice": "3",
+            "e1id": "constructs:A0:1453:1461:0",
+            "e2id": "constructs:A0:1717:1461:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1453",
+            "e2source": "1717",
+            "h": "1461",
+            "s": "949",
+            "parentOffice": "3",
+            "e1id": "constructs:A0:1453:1461:0",
+            "e2id": "constructs:A0:1717:1461:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1453",
+            "e2source": "1717",
+            "h": "1461",
+            "s": "1465",
+            "parentOffice": "3",
+            "e1id": "constructs:A0:1453:1461:0",
+            "e2id": "constructs:A0:1717:1461:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1453",
+            "e2source": "1717",
+            "h": "1461",
+            "s": "2921",
+            "parentOffice": "3",
+            "e1id": "constructs:A0:1453:1461:0",
+            "e2id": "constructs:A0:1717:1461:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1709",
+            "e2source": "1451",
+            "h": "1707",
+            "s": "1691",
+            "parentOffice": "4",
+            "e1id": "constructs:A0:1709:1707:0",
+            "e2id": "constructs:A0:1451:1707:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1709",
+            "e2source": "1451",
+            "h": "1707",
+            "s": "1703",
+            "parentOffice": "4",
+            "e1id": "constructs:A0:1709:1707:0",
+            "e2id": "constructs:A0:1451:1707:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1709",
+            "e2source": "1451",
+            "h": "1707",
+            "s": "1739",
+            "parentOffice": "4",
+            "e1id": "constructs:A0:1709:1707:0",
+            "e2id": "constructs:A0:1451:1707:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1709",
+            "e2source": "1451",
+            "h": "1707",
+            "s": "1835",
+            "parentOffice": "4",
+            "e1id": "constructs:A0:1709:1707:0",
+            "e2id": "constructs:A0:1451:1707:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1709",
+            "e2source": "2741",
+            "h": "2733",
+            "s": "2669",
+            "parentOffice": "2",
+            "e1id": "constructs:A0:1709:2733:0",
+            "e2id": "constructs:A0:2741:2733:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1709",
+            "e2source": "2741",
+            "h": "2733",
+            "s": "2717",
+            "parentOffice": "2",
+            "e1id": "constructs:A0:1709:2733:0",
+            "e2id": "constructs:A0:2741:2733:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1709",
+            "e2source": "2741",
+            "h": "2733",
+            "s": "2861",
+            "parentOffice": "2",
+            "e1id": "constructs:A0:1709:2733:0",
+            "e2id": "constructs:A0:2741:2733:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1709",
+            "e2source": "2741",
+            "h": "2733",
+            "s": "3245",
+            "parentOffice": "2",
+            "e1id": "constructs:A0:1709:2733:0",
+            "e2id": "constructs:A0:2741:2733:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1717",
+            "e2source": "1453",
+            "h": "1461",
+            "s": "731",
+            "parentOffice": "3",
+            "e1id": "constructs:A0:1717:1461:0",
+            "e2id": "constructs:A0:1453:1461:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1717",
+            "e2source": "1453",
+            "h": "1461",
+            "s": "949",
+            "parentOffice": "3",
+            "e1id": "constructs:A0:1717:1461:0",
+            "e2id": "constructs:A0:1453:1461:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1717",
+            "e2source": "1453",
+            "h": "1461",
+            "s": "1465",
+            "parentOffice": "3",
+            "e1id": "constructs:A0:1717:1461:0",
+            "e2id": "constructs:A0:1453:1461:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1717",
+            "e2source": "1453",
+            "h": "1461",
+            "s": "2921",
+            "parentOffice": "3",
+            "e1id": "constructs:A0:1717:1461:0",
+            "e2id": "constructs:A0:1453:1461:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1717",
+            "e2source": "2773",
+            "h": "1749",
+            "s": "1747",
+            "parentOffice": "1",
+            "e1id": "constructs:A0:1717:1749:0",
+            "e2id": "constructs:A0:2773:1749:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1717",
+            "e2source": "2773",
+            "h": "1749",
+            "s": "1753",
+            "parentOffice": "1",
+            "e1id": "constructs:A0:1717:1749:0",
+            "e2id": "constructs:A0:2773:1749:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1717",
+            "e2source": "2773",
+            "h": "1749",
+            "s": "1765",
+            "parentOffice": "1",
+            "e1id": "constructs:A0:1717:1749:0",
+            "e2id": "constructs:A0:2773:1749:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "1717",
+            "e2source": "2773",
+            "h": "1749",
+            "s": "3497",
+            "parentOffice": "1",
+            "e1id": "constructs:A0:1717:1749:0",
+            "e2id": "constructs:A0:2773:1749:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "2741",
+            "e2source": "1387",
+            "h": "1371",
+            "s": "1243",
+            "parentOffice": "0",
+            "e1id": "constructs:A0:2741:1371:1",
+            "e2id": "constructs:A0:1387:1371:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "2741",
+            "e2source": "1387",
+            "h": "1371",
+            "s": "1339",
+            "parentOffice": "0",
+            "e1id": "constructs:A0:2741:1371:1",
+            "e2id": "constructs:A0:1387:1371:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "2741",
+            "e2source": "1387",
+            "h": "1371",
+            "s": "1627",
+            "parentOffice": "0",
+            "e1id": "constructs:A0:2741:1371:1",
+            "e2id": "constructs:A0:1387:1371:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "2741",
+            "e2source": "1387",
+            "h": "1371",
+            "s": "2395",
+            "parentOffice": "0",
+            "e1id": "constructs:A0:2741:1371:1",
+            "e2id": "constructs:A0:1387:1371:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "2741",
+            "e2source": "1709",
+            "h": "2733",
+            "s": "2669",
+            "parentOffice": "2",
+            "e1id": "constructs:A0:2741:2733:0",
+            "e2id": "constructs:A0:1709:2733:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "2741",
+            "e2source": "1709",
+            "h": "2733",
+            "s": "2717",
+            "parentOffice": "2",
+            "e1id": "constructs:A0:2741:2733:0",
+            "e2id": "constructs:A0:1709:2733:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "2741",
+            "e2source": "1709",
+            "h": "2733",
+            "s": "2861",
+            "parentOffice": "2",
+            "e1id": "constructs:A0:2741:2733:0",
+            "e2id": "constructs:A0:1709:2733:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "2741",
+            "e2source": "1709",
+            "h": "2733",
+            "s": "3245",
+            "parentOffice": "2",
+            "e1id": "constructs:A0:2741:2733:0",
+            "e2id": "constructs:A0:1709:2733:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "2773",
+            "e2source": "1451",
+            "h": "2901",
+            "s": "2893",
+            "parentOffice": "6",
+            "e1id": "constructs:A0:2773:2901:0",
+            "e2id": "constructs:A0:1451:2901:-1"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "2773",
+            "e2source": "1451",
+            "h": "2901",
+            "s": "2899",
+            "parentOffice": "6",
+            "e1id": "constructs:A0:2773:2901:0",
+            "e2id": "constructs:A0:1451:2901:-1"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "2773",
+            "e2source": "1451",
+            "h": "2901",
+            "s": "2917",
+            "parentOffice": "6",
+            "e1id": "constructs:A0:2773:2901:0",
+            "e2id": "constructs:A0:1451:2901:-1"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "2773",
+            "e2source": "1451",
+            "h": "2901",
+            "s": "2965",
+            "parentOffice": "6",
+            "e1id": "constructs:A0:2773:2901:0",
+            "e2id": "constructs:A0:1451:2901:-1"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "2773",
+            "e2source": "1717",
+            "h": "1749",
+            "s": "1747",
+            "parentOffice": "1",
+            "e1id": "constructs:A0:2773:1749:0",
+            "e2id": "constructs:A0:1717:1749:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "2773",
+            "e2source": "1717",
+            "h": "1749",
+            "s": "1753",
+            "parentOffice": "1",
+            "e1id": "constructs:A0:2773:1749:0",
+            "e2id": "constructs:A0:1717:1749:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "2773",
+            "e2source": "1717",
+            "h": "1749",
+            "s": "1765",
+            "parentOffice": "1",
+            "e1id": "constructs:A0:2773:1749:0",
+            "e2id": "constructs:A0:1717:1749:0"
+          },
+          {
+            "tag": "construction_join",
+            "e1source": "2773",
+            "e2source": "1717",
+            "h": "1749",
+            "s": "3497",
+            "parentOffice": "1",
+            "e1id": "constructs:A0:2773:1749:0",
+            "e2id": "constructs:A0:1717:1749:0"
+          }
+        ]
+      }
+    },
+    "tC": {
+      "relations": [
+        {
+          "tier": "A0",
+          "a": "2741",
+          "b": "1387",
+          "mid": "0"
+        },
+        {
+          "tier": "A0",
+          "a": "2773",
+          "b": "1451",
+          "mid": "6"
+        },
+        {
+          "tier": "A1",
+          "a": "2733",
+          "b": "1371",
+          "mid": "1"
+        },
+        {
+          "tier": "A1",
+          "a": "2901",
+          "b": "1707",
+          "mid": "5"
+        }
+      ]
+    },
+    "completion": {
+      "perRoute": {
+        "T-A": {
+          "expected": "9604",
+          "visited": "9604",
+          "outputs": "8",
+          "digest": "544022a73d9037102589e706e1cb997512fd24b6993ef891783f8fd20fa192d4"
+        },
+        "T-B": {
+          "expected": "5488",
+          "visited": "5488",
+          "outputs": "56",
+          "digest": "a6e5db4423913e24b3cb311de16aedb7e49d62f766a504bcab222524edbd226d"
+        },
+        "T-C": {
+          "expected": "84",
+          "visited": "84",
+          "outputs": "4",
+          "digest": "fbe396f128f157ef6bf02398edfffa12c9987696b46c7082601562e08a9f0426"
+        }
+      },
+      "status": "complete"
+    }
+  },
+  "seal": {
+    "generationDigest": "c4a7f48dd982c6d96f594ca8c03e045092b9a00b9615e05ef2d14648f04f83d7",
+    "inputIdentities": {
+      "ledgerSha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+      "networkSha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "complete": true
+  },
+  "comparison": {
+    "rows": [
+      {
+        "contactRowId": "seat-contact:D4:1831:1703:0",
+        "d": "1831",
+        "s": "1703",
+        "h": "1707",
+        "parentOffice": "4",
+        "key": {
+          "parentOffice": "4",
+          "s": "1703"
+        },
+        "membership": "B-only"
+      },
+      {
+        "contactRowId": "seat-contact:D4:1831:1835:0",
+        "d": "1831",
+        "s": "1835",
+        "h": "1707",
+        "parentOffice": "4",
+        "key": {
+          "parentOffice": "4",
+          "s": "1835"
+        },
+        "membership": "B-only"
+      },
+      {
+        "contactRowId": "seat-contact:D4:2363:1339:0",
+        "d": "2363",
+        "s": "1339",
+        "h": "1371",
+        "parentOffice": "0",
+        "key": {
+          "parentOffice": "0",
+          "s": "1339"
+        },
+        "membership": "both"
+      },
+      {
+        "contactRowId": "seat-contact:D4:2363:2395:0",
+        "d": "2363",
+        "s": "2395",
+        "h": "1371",
+        "parentOffice": "0",
+        "key": {
+          "parentOffice": "0",
+          "s": "2395"
+        },
+        "membership": "both"
+      },
+      {
+        "contactRowId": "seat-contact:D4:2963:2899:0",
+        "d": "2963",
+        "s": "2899",
+        "h": "2901",
+        "parentOffice": "6",
+        "key": {
+          "parentOffice": "6",
+          "s": "2899"
+        },
+        "membership": "both"
+      },
+      {
+        "contactRowId": "seat-contact:D4:2963:2965:0",
+        "d": "2963",
+        "s": "2965",
+        "h": "2901",
+        "parentOffice": "6",
+        "key": {
+          "parentOffice": "6",
+          "s": "2965"
+        },
+        "membership": "both"
+      },
+      {
+        "contactRowId": "seat-contact:D4:3229:2717:0",
+        "d": "3229",
+        "s": "2717",
+        "h": "2733",
+        "parentOffice": "2",
+        "key": {
+          "parentOffice": "2",
+          "s": "2717"
+        },
+        "membership": "B-only"
+      },
+      {
+        "contactRowId": "seat-contact:D4:3229:3245:0",
+        "d": "3229",
+        "s": "3245",
+        "h": "2733",
+        "parentOffice": "2",
+        "key": {
+          "parentOffice": "2",
+          "s": "3245"
+        },
+        "membership": "B-only"
+      },
+      {
+        "contactRowId": "seat-contact:D4:3529:1765:1",
+        "d": "3529",
+        "s": "1765",
+        "h": "1749",
+        "parentOffice": "1",
+        "key": {
+          "parentOffice": "1",
+          "s": "1765"
+        },
+        "membership": "B-only"
+      },
+      {
+        "contactRowId": "seat-contact:D4:3529:3497:0",
+        "d": "3529",
+        "s": "3497",
+        "h": "1749",
+        "parentOffice": "1",
+        "key": {
+          "parentOffice": "1",
+          "s": "3497"
+        },
+        "membership": "B-only"
+      },
+      {
+        "contactRowId": "seat-contact:D4:631:1261:-1",
+        "d": "631",
+        "s": "1261",
+        "h": "1389",
+        "parentOffice": "5",
+        "key": {
+          "parentOffice": "5",
+          "s": "1261"
+        },
+        "membership": "B-only"
+      },
+      {
+        "contactRowId": "seat-contact:D4:631:695:0",
+        "d": "631",
+        "s": "695",
+        "h": "1389",
+        "parentOffice": "5",
+        "key": {
+          "parentOffice": "5",
+          "s": "695"
+        },
+        "membership": "B-only"
+      },
+      {
+        "contactRowId": "seat-contact:D4:953:1465:0",
+        "d": "953",
+        "s": "1465",
+        "h": "1461",
+        "parentOffice": "3",
+        "key": {
+          "parentOffice": "3",
+          "s": "1465"
+        },
+        "membership": "B-only"
+      },
+      {
+        "contactRowId": "seat-contact:D4:953:949:0",
+        "d": "953",
+        "s": "949",
+        "h": "1461",
+        "parentOffice": "3",
+        "key": {
+          "parentOffice": "3",
+          "s": "949"
+        },
+        "membership": "B-only"
+      }
+    ],
+    "routes": {
+      "A": {
+        "generated_key_count": "8",
+        "in_R_count": "8",
+        "extra_beyond_R_count": "0",
+        "R_missed_count": "20",
+        "in_R_but_unmatched_count": "4",
+        "generatedKeys": [
+          "0:1243",
+          "0:1339",
+          "0:1627",
+          "0:2395",
+          "6:2893",
+          "6:2899",
+          "6:2917",
+          "6:2965"
+        ],
+        "inRKeys": [
+          "0:1243",
+          "0:1339",
+          "0:1627",
+          "0:2395",
+          "6:2893",
+          "6:2899",
+          "6:2917",
+          "6:2965"
+        ],
+        "extraBeyondRKeys": [],
+        "rMissedKeys": [
+          "1:1747",
+          "1:1753",
+          "1:1765",
+          "1:3497",
+          "2:2669",
+          "2:2717",
+          "2:2861",
+          "2:3245",
+          "3:731",
+          "3:949",
+          "3:1465",
+          "3:2921",
+          "4:1691",
+          "4:1703",
+          "4:1739",
+          "4:1835",
+          "5:695",
+          "5:877",
+          "5:1261",
+          "5:2413"
+        ],
+        "inRButUnmatchedKeys": [
+          "0:1243",
+          "0:1627",
+          "6:2893",
+          "6:2917"
+        ],
+        "matchedObservedKeys": [
+          "0:1339",
+          "0:2395",
+          "6:2899",
+          "6:2965"
+        ],
+        "missedObservedKeys": [
+          "1:1765",
+          "1:3497",
+          "2:2717",
+          "2:3245",
+          "3:949",
+          "3:1465",
+          "4:1703",
+          "4:1835",
+          "5:695",
+          "5:1261"
+        ],
+        "restatement_signature": false
+      },
+      "B": {
+        "generated_key_count": "28",
+        "in_R_count": "28",
+        "extra_beyond_R_count": "0",
+        "R_missed_count": "0",
+        "in_R_but_unmatched_count": "14",
+        "generatedKeys": [
+          "0:1243",
+          "0:1339",
+          "0:1627",
+          "0:2395",
+          "1:1747",
+          "1:1753",
+          "1:1765",
+          "1:3497",
+          "2:2669",
+          "2:2717",
+          "2:2861",
+          "2:3245",
+          "3:731",
+          "3:949",
+          "3:1465",
+          "3:2921",
+          "4:1691",
+          "4:1703",
+          "4:1739",
+          "4:1835",
+          "5:695",
+          "5:877",
+          "5:1261",
+          "5:2413",
+          "6:2893",
+          "6:2899",
+          "6:2917",
+          "6:2965"
+        ],
+        "inRKeys": [
+          "0:1243",
+          "0:1339",
+          "0:1627",
+          "0:2395",
+          "1:1747",
+          "1:1753",
+          "1:1765",
+          "1:3497",
+          "2:2669",
+          "2:2717",
+          "2:2861",
+          "2:3245",
+          "3:731",
+          "3:949",
+          "3:1465",
+          "3:2921",
+          "4:1691",
+          "4:1703",
+          "4:1739",
+          "4:1835",
+          "5:695",
+          "5:877",
+          "5:1261",
+          "5:2413",
+          "6:2893",
+          "6:2899",
+          "6:2917",
+          "6:2965"
+        ],
+        "extraBeyondRKeys": [],
+        "rMissedKeys": [],
+        "inRButUnmatchedKeys": [
+          "0:1243",
+          "0:1627",
+          "1:1747",
+          "1:1753",
+          "2:2669",
+          "2:2861",
+          "3:731",
+          "3:2921",
+          "4:1691",
+          "4:1739",
+          "5:877",
+          "5:2413",
+          "6:2893",
+          "6:2917"
+        ],
+        "matchedObservedKeys": [
+          "0:1339",
+          "0:2395",
+          "1:1765",
+          "1:3497",
+          "2:2717",
+          "2:3245",
+          "3:949",
+          "3:1465",
+          "4:1703",
+          "4:1835",
+          "5:695",
+          "5:1261",
+          "6:2899",
+          "6:2965"
+        ],
+        "missedObservedKeys": [],
+        "restatement_signature": true
+      }
+    },
+    "observedKeyCount": "14",
+    "fourCellCounts": {
+      "aOnly": "0",
+      "bOnly": "10",
+      "both": "4",
+      "neither": "0"
+    },
+    "uKeys": [
+      "0:1243",
+      "0:1339",
+      "0:1627",
+      "0:2395",
+      "1:1747",
+      "1:1753",
+      "1:1765",
+      "1:3497",
+      "2:2669",
+      "2:2717",
+      "2:2861",
+      "2:3245",
+      "3:731",
+      "3:949",
+      "3:1465",
+      "3:2921",
+      "4:1691",
+      "4:1703",
+      "4:1739",
+      "4:1835",
+      "5:695",
+      "5:877",
+      "5:1261",
+      "5:2413",
+      "6:2893",
+      "6:2899",
+      "6:2917",
+      "6:2965"
+    ],
+    "tC": {
+      "matches": [
+        "A0:1387:2741:0",
+        "A0:1451:2773:6"
+      ],
+      "missing": [],
+      "extra": [],
+      "midpoint_exact": true,
+      "a1Separate": [
+        "A1:2733:1371:1",
+        "A1:2901:1707:5"
+      ],
+      "generatedRelations": [
+        {
+          "a": "2741",
+          "b": "1387",
+          "mid": "0",
+          "tier": "A0"
+        },
+        {
+          "a": "2773",
+          "b": "1451",
+          "mid": "6",
+          "tier": "A0"
+        }
+      ],
+      "observedRelations": [
+        {
+          "tier": "A0",
+          "a": "1387",
+          "b": "2741",
+          "mid": "0"
+        },
+        {
+          "tier": "A0",
+          "a": "1451",
+          "b": "2773",
+          "mid": "6"
+        }
+      ],
+      "seamProvenance": [
+        {
+          "targetH": "1371",
+          "parentA": "1387",
+          "parentB": "2741",
+          "parentOffice": "0",
+          "edgeId1": "constructs:A0:1387:1371:0",
+          "edgeId2": "constructs:A0:2741:1371:1"
+        },
+        {
+          "targetH": "2901",
+          "parentA": "1451",
+          "parentB": "2773",
+          "parentOffice": "6",
+          "edgeId1": "constructs:A0:1451:2901:-1",
+          "edgeId2": "constructs:A0:2773:2901:0"
+        }
+      ]
+    }
+  },
+  "controls": {
+    "binding": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "binding",
+      "rejected": true,
+      "evidence": {
+        "summary": "binding: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/binding"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/binding/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "isolation": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "isolation",
+      "rejected": true,
+      "evidence": {
+        "summary": "isolation: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/isolation"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/isolation/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "route_isolation": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "isolation",
+      "rejected": true,
+      "evidence": {
+        "summary": "route_isolation: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/route_isolation"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/route_isolation/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "kernel_perturbation": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "route_conformance",
+      "rejected": true,
+      "evidence": {
+        "summary": "kernel_perturbation: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/kernel_perturbation"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/kernel_perturbation/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "edge_deletion": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "control_acceptance",
+      "rejected": false,
+      "evidence": {
+        "summary": "edge_deletion: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/edge_deletion"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/edge_deletion/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "production_E_completeness": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "binding",
+      "rejected": true,
+      "evidence": {
+        "summary": "production_E_completeness: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/production_E_completeness"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/production_E_completeness/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "anchor_input": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "input_well_formedness",
+      "rejected": true,
+      "evidence": {
+        "summary": "anchor_input: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/anchor_input"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/anchor_input/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "edge_input": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "input_well_formedness",
+      "rejected": true,
+      "evidence": {
+        "summary": "edge_input: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/edge_input"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/edge_input/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "T-C": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "route_conformance",
+      "rejected": true,
+      "evidence": {
+        "summary": "T-C: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/T-C"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/T-C/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "contact_join": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "comparison_input",
+      "rejected": true,
+      "evidence": {
+        "summary": "contact_join: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/contact_join"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/contact_join/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "seam_input": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "comparison_input",
+      "rejected": true,
+      "evidence": {
+        "summary": "seam_input: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/seam_input"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/seam_input/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "seal": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "seal",
+      "rejected": true,
+      "evidence": {
+        "summary": "seal: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/seal"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/seal/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "completeness": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "seal / control_acceptance",
+      "rejected": true,
+      "evidence": {
+        "summary": "completeness: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/completeness"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/completeness/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "R_bounds": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "comparison_accounting",
+      "rejected": true,
+      "evidence": {
+        "summary": "R_bounds: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/R_bounds"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/R_bounds/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "accounting": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "comparison_accounting",
+      "rejected": true,
+      "evidence": {
+        "summary": "accounting: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/accounting"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/accounting/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "outcome_precedence": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "outcome_precedence",
+      "rejected": true,
+      "evidence": {
+        "summary": "outcome_precedence: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/outcome_precedence"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/outcome_precedence/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "determinism": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "control_acceptance",
+      "rejected": false,
+      "evidence": {
+        "summary": "determinism: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/determinism"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/determinism/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "nonvacuity": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "comparison_input",
+      "rejected": false,
+      "evidence": {
+        "summary": "nonvacuity: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/nonvacuity"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/nonvacuity/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    }
+  },
+  "category": "not_derived"
+}

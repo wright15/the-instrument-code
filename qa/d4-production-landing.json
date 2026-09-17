@@ -1,0 +1,81 @@
+{
+  "scope": "D4 Grant 2 production and ledger/packaging landing; not integrated release promotion",
+  "authorization": "qa/d4-grant2-authorization.json",
+  "production": "qa/d4-production-run.json",
+  "productionStatus": "COMPLETE",
+  "category": "not_derived",
+  "observation": "provenance/OBSERVATION_LEDGER.md#obs-023---d4-sealed-contact-and-seam-comparison",
+  "decision": "provenance/DECISION_LEDGER.md#entry-10---d4-grant-2-production-record---not_derived",
+  "checks": [
+    {
+      "command": "env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C TZ=UTC /home/erick/.nvm/versions/node/v22.22.0/bin/node --test tests/d4/static-callgraph.test.mjs tests/d4/build.test.mjs",
+      "result": "PASS",
+      "passed": "67",
+      "failed": "0"
+    },
+    {
+      "command": "env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C TZ=UTC /home/erick/.nvm/versions/node/v22.22.0/bin/node scripts/d4-production.mjs --verify-bindings",
+      "result": "PASS",
+      "note": "Accepted closure, frozen documents, source bytes, preflight evidence and all 18 controls verified. Initial stale packaging rejected before execution; packaging refreshed without changing bound bytes."
+    },
+    {
+      "command": "env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C TZ=UTC /home/erick/.nvm/versions/node/v22.22.0/bin/node scripts/d4-production.mjs --verify-evidence",
+      "result": "PASS",
+      "canonicalComparatorRerun": false
+    },
+    {
+      "check": "Direct --compare-worker invocation",
+      "result": "EXPECTED_REJECTION",
+      "reason": "Parent IPC handoff required",
+      "productionExecuted": false
+    },
+    {
+      "check": "Post-completion --run invocation",
+      "result": "EXPECTED_REJECTION",
+      "reason": "Refusing overwrite: qa/d4-production-generation.json",
+      "productionExecuted": false
+    },
+    {
+      "command": "python3 -B scripts/validate-ledger-pins.py",
+      "result": "PASS",
+      "note": "Added the reviewed immutable D4 implementation closure to schemas/ledger-pin-allowlist.json; no mutable ledger pin and no scanner relaxation."
+    },
+    {
+      "command": "python3 -B -m pytest -p no:cacheprovider -q tests/test_ledger_pin_inventory.py",
+      "result": "PASS",
+      "passed": "8"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    },
+    {
+      "command": "python3 -B scripts/build-fivefold-engine-promotion-evidence.py --check",
+      "result": "FAIL",
+      "reason": "STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE",
+      "waived": false
+    }
+  ],
+  "packaging": {
+    "status": "PASS",
+    "builder": "scripts/build-manifest.mjs",
+    "checks": ["node scripts/build-manifest.mjs --check: PASS under pinned Node v22.22.0", "sha256sum --check --quiet CHECKSUMS.sha256: PASS"],
+    "outputs": ["MANIFEST.json", "CHECKSUMS.sha256"],
+    "scope": "Eligible workspace payload, including preserved Grant 1 revision and halt evidence; not only newly authored files",
+    "timestampPolicy": "Manifest generatedAt remains derived from provenance/release.json, not the production clock"
+  },
+  "preserved": [
+    "Accepted nine-file implementation closure",
+    "Frozen boundary/spec/schema/cardinality documents",
+    "Original canonical ledger/network bytes and bound twin-hub receipt",
+    "Existing qa/d4-preflight-*.json and qa/halt-evidence/"
+  ],
+  "deferred": [
+    "Ledger-dependent sidecar/closure and UI freshness cascade; would alter the bound twin-hub provenance receipt, requiring explicit historical evidence preservation rather than production rebinding",
+    "Integrated release validation; no fresh integrated PASS or prior failure count asserted",
+    "Browser and Neo4j validation; not part of this bounded production comparison",
+    "Any new boundary, recurrence probe, retry or favorable reclassification"
+  ],
+  "integratedReleaseGreen": false,
+  "commitOrPushPerformed": false
+}

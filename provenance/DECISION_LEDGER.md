@@ -2189,3 +2189,106 @@ only. It grants zero engine/scaffolding/implementation/production-execution
 authority and emits no D4 verdict or H disposition. No topology, admission,
 office, graph, Court policy, runtime or global `harmonic.C_H` authority changes.
 No release flip, tag, commit or push is authorized by this freeze.
+
+---
+
+## ENTRY 10 - D4 Grant 2 production record - not_derived
+
+**Authorization date:** 2026-09-16. **Execution clock:**
+2026-09-17T00:39:09.758Z through 2026-09-17T00:39:10.488Z, UTC.
+
+### Authority And Limitation Acceptance
+
+Maintainer Erick Wright's directive, timestamp `2026-09-16T16:22:00Z`, grants
+production generation, production seal, canonical comparison, and writes to
+both ledgers, `MANIFEST.json`, and `CHECKSUMS.sha256`. His subsequent explicit
+confirmation, "yes i authorize this opencode session full authrization",
+authorizes this OpenCode session (`openai/gpt-6-astra`) in place of the original
+`Astra-Medium` label, the complete canonical scope, and a separately identified
+production launcher and new evidence files. This is a record of conversation
+authority, not a claim of cryptographically authenticated signature.
+
+`qa/d4-grant2-authorization.json` records the authorized transitions
+`grant2: NOT_GRANTED -> GRANTED`, `productionAuthorized: false -> true`, and
+D4 execution `status: HALT -> ACTIVE`. `D4_CANONICAL_DOMAIN` denotes the complete
+generation/comparison domains in sections 3.1-3.3 of the frozen implementation
+specification, not a selected-only generation profile. This supersedes the
+historical Grant 1 production prohibition prospectively; no historical preflight
+record or its HALT state is rewritten.
+
+**OPTION A ACCEPTED.** Accepted implementation digest:
+`7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f`.
+Prior closure digest:
+`7202bdf1ff042a2136465b5bd5c5c7c02eeb5ef87c97cc9514e59e4b8cfe63fd`.
+Whole-group seam relabeling to a valid benign class relies on original
+byte-binding verification (`invalid:comparison_binding`), not post-rebind shape
+filtering (`invalid:seam_group`). Empty selected domains remain
+`incomplete_or_anomalous`. Neither acceptance nor execution authorizes altered
+source rebinding or claims a stronger post-rebind geometry control.
+
+### Execution And Frozen Outcome
+
+The separately identified `scripts/d4-production.mjs` launcher is outside the
+accepted nine-file implementation closure. Its executed SHA-256 is
+`5bca3de6b39d4290d91fdbe63aa41163e86f64175806aaa38bfe9f41710f4008`.
+Node `v22.22.0` and AJV `8.20.0`, including their recorded executable/package
+hashes, matched the preflight pins. Both processes used the restricted
+`PATH`, `LANG`, `LC_ALL`, `TZ` environment with no Node flags or preload.
+
+Source, frozen contract, implementation and preflight bytes were checked before
+execution. Packaging was refreshed before production because the old envelope
+did not cover the accepted specification; no contract/source bytes were changed.
+All 18 recorded live preflight controls passed against the same closure. They
+were carried forward as historical executed controls, not asserted to have run
+again. Generation completed and was durably materialized and sealed before a
+fresh parent-authorized comparison process read canonical observations once.
+
+The resulting frozen category is **`not_derived`**. OBS-023 records the complete
+mechanics: T-A covers 4 of 14 observed contact keys; T-B covers all 14 but equals
+the complete 28-key U domain. Cells are `A-only: 0`, `B-only: 10`, `both: 4`,
+`neither: 0`. T-C matches both normalized A0 seam relations exactly, with A1
+relations separate. The T-B `restatement_signature=true` flag and both routes'
+in-R-but-unmatched counts (4 and 14) remain in the receipt. Partial T-A coverage
+prevents `filter_plus_geometry`; exact seam agreement does not repair it.
+
+The registered outcome row is applied without reinterpretation:
+
+| Category | Condition | Bounded H-Disposition |
+|---|---|---|
+| `not_derived` | All remaining complete valid outcomes, including incomplete contact coverage or exact selective contact coverage with midpoint disagreement | Weakens only this registered route to H1(D4); compatible with H3, not confirmation; H2 no disposition; apply the qualifier below |
+
+**D4 `not_derived` qualifier:** this is derivation difficulty under the registered
+route, not authorship proof. The complete A1 GOVERNS inheritance substrate was
+granted: a negative result says the required contact/seam pattern was not
+generated even with that substrate given. It does not test the origin of satellite
+membership or parent assignment, prove non-entailment under every other operator,
+or automatically strengthen H3 relative to D5; the input grants and semantics
+differ and provide no quantitative cross-boundary evidential ordering.
+
+### Evidence And Landing Scope
+
+| Artifact | Raw-byte SHA-256 |
+|---|---|
+| `qa/d4-production-generation.json` | `f9ab736eb14a31ab68d0b1424e7e20dffc42768f7a8ccbf358e6f0ce107496ae` |
+| `qa/d4-production-seal.json` | `2b1c6c284b52850463ff05179e43976b845196e6d96bd6e80deccf9de38a0b58` |
+| `qa/d4-production-receipt.json` | `2057a75702ddb4952151d962fb680474ab6543387b604b3b5c37758b8e9c49d0` |
+| `qa/d4-production-run.json` | `a753e43d7d0f61bd7e2f7a67ff9daf792a12970a55f8bf16f919a863122b990b` |
+
+Evidence verification checked the original seal, wire schema, full accounting,
+frozen outcome selection, exact artifact inventory and carried preflight
+bindings without rerunning canonical comparison. The focused D4 suite passed
+67 tests. The launcher rejects direct worker invocation without its parent IPC
+handoff and refuses to overwrite existing production artifacts.
+
+Execution is COMPLETE, not an authorization to retry, tune predicates, rebind,
+or favorably reclassify. Production, ledger landing and repository-wide release
+freshness remain distinct. This landing preserves the bound twin-hub receipt
+and all preflight artifacts; it does not run the ledger-dependent sidecar/UI
+cascade, which would alter those provenance bindings. Mutable ledger freshness
+consumers therefore require a separately tracked reconciliation. Final packaging
+and actual verification outcomes are recorded in `qa/d4-production-landing.json`
+to avoid a ledger/sidecar hash cycle. No green integrated release is claimed.
+
+No recurrence probe, topology/admission change, office/graph/Court authority
+change, global `harmonic.C_H` change, release promotion, commit, tag or push is
+authorized or performed by this production record.

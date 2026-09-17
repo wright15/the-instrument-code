@@ -1,0 +1,212 @@
+{
+  "schemaVersion": "d4-derivation-wire.v1",
+  "boundarySha256": "751d56d4f01ea1a0d054c8119d178a64b20787aa9fb095a02c99f3ba3b135de2",
+  "specSha256": "9d8357cb05b73b4a25aeea3074ebe49d89a27dbf83f039d5698c4f77afc3a24c",
+  "bindings": {
+    "ledgerSha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+    "networkSha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+    "twinHubReceiptSha256": "b7f924ca53859b832334200245f690196433e8c8eb213e2ce26afa5e62e230d2",
+    "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f",
+    "projectionDigests": {
+      "anchors": "d2d74533332e5b33201cfdb73e2e51778389b101558df4f7796a2ccf2ccdb24f",
+      "R": "e17bf1f2f8665e92a4083168228995258cba987bc087d0b3aa93bfed8cfe88dc",
+      "E": "6f3100d8b8d8cf46ebd473adb0945ea6de29410bd0759f30aa28dc543f5784c1"
+    }
+  },
+  "generation": {
+    "status": "ABSENT",
+    "reason": "Phase B only; production not run"
+  },
+  "seal": {
+    "status": "ABSENT",
+    "reason": "Phase B only; production not run"
+  },
+  "comparison": {
+    "status": "ABSENT",
+    "reason": "Phase B only; production not run"
+  },
+  "controls": {
+    "binding": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "binding",
+      "rejected": true,
+      "evidence": {
+        "summary": "binding: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/binding"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/binding/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "isolation": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "isolation",
+      "rejected": true,
+      "evidence": {
+        "summary": "isolation: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/isolation"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/isolation/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "route_isolation": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "isolation",
+      "rejected": true,
+      "evidence": {
+        "summary": "route_isolation: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/route_isolation"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/route_isolation/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "kernel_perturbation": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "route_conformance",
+      "rejected": true,
+      "evidence": {
+        "summary": "kernel_perturbation: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/kernel_perturbation"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/kernel_perturbation/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "edge_deletion": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "control_acceptance",
+      "rejected": false,
+      "evidence": {
+        "summary": "edge_deletion: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/edge_deletion"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/edge_deletion/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "production_E_completeness": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "binding",
+      "rejected": true,
+      "evidence": {
+        "summary": "production_E_completeness: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/production_E_completeness"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/production_E_completeness/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "anchor_input": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "input_well_formedness",
+      "rejected": true,
+      "evidence": {
+        "summary": "anchor_input: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/anchor_input"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/anchor_input/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "edge_input": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "input_well_formedness",
+      "rejected": true,
+      "evidence": {
+        "summary": "edge_input: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/edge_input"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/edge_input/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "T-C": {
+      "state": "ran",
+      "reason": "Live Phase B control with clean counterpart",
+      "observed_gate": "route_conformance",
+      "rejected": true,
+      "evidence": {
+        "summary": "T-C: obligation satisfied",
+        "detail": "qa/d4-preflight-registration.json#/controls/T-C"
+      },
+      "cleanCounterpart": {
+        "summary": "Same registered implementation path accepted clean counterpart",
+        "detail": "qa/d4-preflight-registration.json#/controls/T-C/events"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "contact_join": {
+      "state": "ran",
+      "reason": "HALT at first failed obligation",
+      "observed_gate": "comparison_input",
+      "rejected": false,
+      "evidence": {
+        "summary": "invalid:seam_group",
+        "detail": "qa/d4-preflight-registration.json#/controls/contact_join"
+      },
+      "cleanCounterpart": {
+        "summary": "Clean counterpart accepted before failure"
+      },
+      "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+    },
+    "seam_input": {
+      "status": "ABSENT",
+      "reason": "Phase B only; production not run"
+    },
+    "seal": {
+      "status": "ABSENT",
+      "reason": "Phase B only; production not run"
+    },
+    "completeness": {
+      "status": "ABSENT",
+      "reason": "Phase B only; production not run"
+    },
+    "R_bounds": {
+      "status": "ABSENT",
+      "reason": "Phase B only; production not run"
+    },
+    "accounting": {
+      "status": "ABSENT",
+      "reason": "Phase B only; production not run"
+    },
+    "outcome_precedence": {
+      "status": "ABSENT",
+      "reason": "Phase B only; production not run"
+    },
+    "determinism": {
+      "status": "ABSENT",
+      "reason": "Phase B only; production not run"
+    },
+    "nonvacuity": {
+      "status": "ABSENT",
+      "reason": "Phase B only; production not run"
+    }
+  },
+  "category": "invalid"
+}

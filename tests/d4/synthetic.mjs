@@ -36,6 +36,19 @@ export function syntheticDocuments() {
   return { ledger, network: { structuralEdges } };
 }
 
+export function regressionDocuments(name) {
+  const docs = syntheticDocuments();
+  if (name === "D4 target role satellite") docs.ledger.find(a => a.id === 80001).role = "satellite";
+  else if (name === "D4 target tier A2") docs.ledger.find(a => a.id === 80001).tier = "A2";
+  else if (name === "benign A2 satellite to D5 anchor") {
+    docs.ledger.push({ id: 81001, tier: "A2", role: "satellite", officeIndex: 0 },
+      { id: 81002, tier: "D5", role: "anchor", officeIndex: 0 });
+    docs.network.structuralEdges.push({ id: "synthetic:benign", type: "SEAT_CONTACT", directed: false, source: 81001, target: 81002 });
+  } else if (name === "seam provenance flip") docs.network.structuralEdges[1].provenance = "exact midpoint construction";
+  else throw new Error("Unknown regression fixture");
+  return docs;
+}
+
 export function syntheticPacket(documents = syntheticDocuments()) {
   const reference = { ledgerBytes: Buffer.from(JSON.stringify(documents.ledger)),
     networkBytes: Buffer.from(JSON.stringify(documents.network)) };

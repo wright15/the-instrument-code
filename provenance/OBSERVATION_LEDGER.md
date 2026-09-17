@@ -482,6 +482,57 @@ invalidates this entry.
 
 ---
 
+## OBS-023 - D4 sealed contact and seam comparison
+
+**Status:** `planning_evidence`; Grant 2 authorized 2026-09-16, executed
+2026-09-17T00:39:09.758Z through 2026-09-17T00:39:10.488Z (runtime UTC clock).
+**Scope:** complete D4 canonical contact/seam comparison under ENTRY 9's frozen
+boundary, relative to the granted complete A1 GOVERNS inheritance substrate.
+
+**Observed mechanics:** complete enumeration visited 9,604 T-A candidates,
+5,488 T-B candidates, and 84 T-C candidates before sealing. T-A materialized
+8 witnesses / 8 keys; T-B materialized 56 witnesses / 28 keys; T-C materialized
+4 directed relations, with A0 and A1 results retained separately. Comparison
+started in a fresh process after durable generation and seal files existed.
+The 18 byte-bound Grant 1 controls were reused, not rerun or overwritten.
+
+The canonical comparison contains 14 contact rows and 14 distinct observed keys.
+Its exact cells are `A-only: 0`, `B-only: 10`, `both: 4`, `neither: 0`.
+T-A covers 4 observed keys and misses 10; T-B covers all 14. Both routes have
+zero beyond-R keys. T-B equals the complete 28-key U domain, so its
+`restatement_signature` remains true. T-A's flag remains false.
+
+| Route | generated_key_count | in_R_count | extra_beyond_R_count | R_missed_count | in_R_but_unmatched_count |
+|---|---|---|---|---|---|
+| T-A | 8 | 8 | 0 | 20 | 4 |
+| T-B | 28 | 28 | 0 | 0 | 14 |
+
+T-C's normalized A0 relation set equals both observed seam relations exactly:
+`A0:1387:2741:0` and `A0:1451:2773:6`. There are no missing or extra A0
+relations, and `midpoint_exact=true`. The two A1 directed relations remain
+separate evidence, not substitutes for A0 seam equality.
+
+**Frame-level guard:** these are bounded enumeration, coverage, accounting and
+relation-equality facts only. ENTRY 10 records the frozen category and its
+bounded interpretation. T-B restatement is not selective contact derivation.
+
+**Binding limitation:** maintainer Option A accepts original byte-binding
+enforcement for whole-group seam relabeling to a valid benign class; no
+post-rebind shape-detection claim is made. Empty selected domains remain
+`incomplete_or_anomalous`. Original canonical bytes were not changed or rebound.
+
+**Falsification:** any independent verification under these exact bindings
+finding different materialized witnesses, accounting, contact cells, or normalized
+seam equality invalidates this observation; it does not authorize an automatic rerun.
+
+**Upstream:** `qa/d4-production-receipt.json` (SHA-256
+`2057a75702ddb4952151d962fb680474ab6543387b604b3b5c37758b8e9c49d0`),
+`qa/d4-production-generation.json`, `qa/d4-production-seal.json`,
+`qa/d4-production-run.json`, `qa/d4-grant2-authorization.json`, and the unchanged
+`qa/d4-preflight-receipt.json` / `qa/d4-preflight-registration.json`.
+
+---
+
 ## Index
 
 | ID | Scope | Verification | Admission impact |
@@ -505,5 +556,6 @@ invalidates this entry.
 | OBS-020 D-channel max-run uniqueness | D1-D7 run-space summaries | complete maximum candidate set `{5}` | Unique target fact only; no hypothesis disposition |
 | OBS-021 ring-constraint underdetermination count | B₃ assignment space, 2859 classes | `N 823543, N_orbit 60028, visited 60028`; target `[4]` 1911 matching / 948 not-matching | Count only; no hypothesis disposition |
 | OBS-022 D5 contact geometry derivation | 14 canonical D5 contacts | T1 10 witnesses and T2 28 witnesses cover all contacts; G5 `both: 14`; T3 7/7 offices | Frame-level combinatorics only; decision entry carries the bounded D5 disposition |
+| OBS-023 D4 sealed contact and seam comparison | 14 canonical D4 contacts; 2 seam relations | T-A covers 4/14; T-B covers 14/14 with G_B=U; cells 0/10/4/0; exact A0 seam equality | Bounded mechanics only; ENTRY 10 carries the frozen outcome and qualifier |
 
 No entry writes `ScaleState.office`, `OCCUPIES_OFFICE`, `mutation.degreeGovernor`, `C_H`, `photonicCompression`, or ledger state.

@@ -1,0 +1,21 @@
+{
+  "maintainer": "Erick Wright",
+  "directiveTimestamp": "2026-09-16T16:22:00Z",
+  "authoritySource": "Maintainer directive and subsequent explicit authorization in this OpenCode conversation; not a cryptographic signature",
+  "executor": "OpenCode session powered by openai/gpt-6-astra",
+  "executorConfirmation": "yes i authorize this opencode session full authrization",
+  "originalExecutorLabel": "Astra-Medium",
+  "scope": "D4_CANONICAL_DOMAIN",
+  "scopeDefinition": "Complete generation and comparison domains in scrum/plan/d4-implementation-spec-draft.md sections 3.1-3.3 (lines 84-170); no selected-only generation",
+  "implementationDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f",
+  "priorImplementationDigest": "7202bdf1ff042a2136465b5bd5c5c7c02eeb5ef87c97cc9514e59e4b8cfe63fd",
+  "limitationDisposition": "OPTION A ACCEPTED",
+  "limitation": "Whole-group seam relabeling to a valid benign class relies on original byte-binding verification (invalid:comparison_binding), not post-rebind shape filtering (invalid:seam_group). Empty selected domains remain incomplete_or_anomalous.",
+  "runtime": { "node": "v22.22.0", "ajv": "8.20.0" },
+  "grant2": "GRANTED",
+  "productionAuthorized": true,
+  "status": "ACTIVE",
+  "operations": ["production generation", "production seal", "canonical comparison"],
+  "writePermissions": ["provenance/OBSERVATION_LEDGER.md", "provenance/DECISION_LEDGER.md", "MANIFEST.json", "CHECKSUMS.sha256", "separately identified production launcher and new production evidence files"],
+  "constraints": ["Preserve accepted implementation closure and frozen documents", "Do not overwrite or rerun existing preflight artifacts", "Do not rebind altered source bytes", "No commit, push, tag, topology change or global release promotion"]
+}

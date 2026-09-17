@@ -42,7 +42,7 @@ function relationKeys(rows, normalize) { return [...new Set(rows.map(r => relati
 
 // This registered observation extractor is called only after verifySeal.
 // Build tests supply synthetic byte documents; there is no canonical reader here.
-function extractObservations(ledger, network, projection) {
+export function extractObservations(ledger, network, projection) {
   const identities = new Map();
   for (const raw of array(ledger)) {
     const item = record(raw, ["id", "tier", "role", "officeIndex"]);
@@ -50,45 +50,69 @@ function extractObservations(ledger, network, projection) {
     assert(!identities.has(id), "invalid:comparison_duplicate_identity");
     identities.set(id, { ...item, id });
   }
-  const parents = new Map(projection.R.map(r => [r.target, r]));
+  const parents = new Map();
+  for (const r of projection.R) parents.set(r.target, [...(parents.get(r.target) ?? []), r]);
   const edges = array(record(network, ["structuralEdges"]).structuralEdges);
   const contacts = [], seamGroups = new Map(), contactIds = new Set();
+  let excludedContacts = 0, excludedSeam = 0, totalContacts = 0, totalSeam = 0;
+  const benignContacts = new Set(["A0:D1", "A0:D2", "A2:D3", "A2:D5", "D2:D3", "D3:D6", "D5:D6", "D6:D7"]);
   for (const raw of edges) {
     const edge = record(raw, ["id", "type", "source", "target", "directed"]);
     const s = sourceInteger(edge.source), d = sourceInteger(edge.target);
     const source = identities.get(s), target = identities.get(d);
-    assert(source && target, "invalid:comparison_endpoint");
-    if (edge.type === "SEAT_CONTACT" && target.tier === "D4" && target.role === "anchor") {
-      assert(source.tier === "A1" && source.role === "satellite" && edge.directed === false &&
-        typeof edge.id === "string" && edge.id.length > 0 && !contactIds.has(edge.id), "invalid:contact_endpoint");
-      const parent = parents.get(s);
-      assert(parent, "invalid:contact_parent");
-      contactIds.add(edge.id);
-      contacts.push({ contactRowId: edge.id, d, s, h: parent.source, parentOffice: parent.parentOffice });
-    } else if (edge.type === "SEAT_CONTACT" && source.tier === "D4" && source.role === "anchor") {
-      throw new Error("invalid:contact_reversed");
-    }
-    if (edge.type === "CONSTRUCTS" && source.tier === "A0" && target.tier === "A1") {
-      const provenance = record(raw, ["provenance"]).provenance;
-      assert(typeof provenance === "string", "invalid:seam_provenance");
-      if (provenance === "phase-seam construction") {
-        assert(edge.directed === true && source.role === "anchor" && target.role === "anchor", "invalid:seam_endpoint");
-        const group = seamGroups.get(d) ?? [];
-        group.push({ source: s, id: edge.id }); seamGroups.set(d, group);
+    if (edge.type === "SEAT_CONTACT") {
+      totalContacts++;
+      if (source?.tier === "D4" && source.role === "anchor") throw new Error("invalid:contact_reversed");
+      assert(source && target, "invalid:contact_endpoint");
+      if (target.tier === "D4" || parents.has(s)) {
+        assert(source.tier === "A1" && source.role === "satellite" && target.tier === "D4" &&
+          target.role === "anchor" && edge.directed === false, "invalid:contact_endpoint");
+        assert(typeof edge.id === "string" && edge.id.length > 0 && !contactIds.has(edge.id), "invalid:duplicate_contact");
+        const group = parents.get(s) ?? [];
+        assert(group.length === 1, "invalid:contact_parent");
+        const parent = group[0];
+        contactIds.add(edge.id);
+        contacts.push({ contactRowId: edge.id, d, s, h: parent.source, parentOffice: parent.parentOffice });
+      } else {
+        assert(source.role === "satellite" && target.role === "anchor" && edge.directed === false &&
+          benignContacts.has(`${source.tier}:${target.tier}`), "invalid:contact_endpoint");
+        excludedContacts++;
       }
-    }
+    } else if (edge.type === "CONSTRUCTS") {
+      totalSeam++;
+      assert(source && target && source.role === "anchor" && target.role === "anchor" &&
+        edge.directed === true, "invalid:seam_endpoint");
+      const provenance = raw.provenance;
+      if (source.tier === "A0" && target.tier === "A1") {
+        assert(["phase-seam construction", "exact midpoint construction"].includes(provenance), "invalid:seam_group");
+        const group = seamGroups.get(d) ?? [];
+        group.push({ source: s, id: edge.id, selected: provenance === "phase-seam construction" });
+        seamGroups.set(d, group);
+        if (provenance === "exact midpoint construction") excludedSeam++;
+      } else {
+        assert(source.tier === "A1" && target.tier === "A2" &&
+          ["phase-seam construction", "exact midpoint construction"].includes(provenance), "invalid:seam_endpoint");
+        excludedSeam++;
+      }
+    } else assert(source && target, "invalid:comparison_endpoint");
   }
   const seams = [];
   for (const [h, group] of seamGroups) {
+    if (!group.some(e => e.selected)) continue;
+    assert(group.every(e => e.selected), "invalid:seam_group");
     assert(group.length === 2 && group[0].source !== group[1].source, "invalid:seam_group");
     group.sort((a, b) => cmp(decimal(a.source), decimal(b.source)));
-    const parentOffice = sourceInteger(identities.get(h).officeIndex); office(parentOffice);
+    const value = identities.get(h).officeIndex;
+    assert(Number.isSafeInteger(value) && value >= 0 && value < 7 && !Object.is(value, -0), "invalid:seam_endpoint");
+    const parentOffice = sourceInteger(value);
     seams.push({ targetH: h, parentA: group[0].source, parentB: group[1].source, parentOffice,
       edgeId1: group[0].id, edgeId2: group[1].id });
   }
   seams.sort((a, b) => cmp(decimal(a.targetH), decimal(b.targetH)));
   contacts.sort((a, b) => cmp(a.contactRowId, b.contactRowId));
-  return { contacts, seams };
+  assert(contacts.length + excludedContacts === totalContacts, "invalid:contact_reconciliation");
+  assert(seams.length * 2 + excludedSeam === totalSeam, "invalid:seam_group");
+  return { contacts, seams, excludedContacts: String(excludedContacts), excludedSeam: String(excludedSeam) };
 }
 
 export function compareSynthetic(generation, projection, observations) {
@@ -185,7 +209,7 @@ export function compareSealed(packet, readReference) {
   assert(canonicalJSON(projectionDigests(independent)) === canonicalJSON(snapshot.bindings.projectionDigests), "invalid:comparison_projection");
   const observations = extractObservations(JSON.parse(reference.ledgerBytes.toString("utf8")),
     JSON.parse(reference.networkBytes.toString("utf8")), independent);
-  return compareSynthetic(snapshot.generation, independent, observations);
+  return compareSynthetic(snapshot.generation, independent, { contacts: observations.contacts, seams: observations.seams });
 }
 
 export function buildReceipt(packet, comparison, schema) {
