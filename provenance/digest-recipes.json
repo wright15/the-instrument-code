@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "evidence-binding-digest-recipes.v1",
+  "convention": "CONV-EVIDENCE-BINDING-001",
+  "recipes": {
+    "raw-bytes-sha256": {
+      "algorithm": "SHA-256",
+      "input": "exact selected raw bytes; no normalization, decoding or re-encoding",
+      "outputEncoding": "lowercase hexadecimal",
+      "implementation": {
+        "path": "scripts/manifest-utils.mjs",
+        "range": {
+          "startLine": 31,
+          "endLine": 37
+        },
+        "blobOid": "6f761dbecc620e4679dccae3d4ef8ca82e3a4833"
+      }
+    }
+  }
+}

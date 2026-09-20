@@ -1,0 +1,166 @@
+{
+  "receiptId": "CONV-EVIDENCE-BINDING-001-admission",
+  "ticket": "GOV-521",
+  "status": "ADMITTED_ATOMIC_LANDING",
+  "admissionDate": "2026-09-20",
+  "scope": {
+    "included": [
+      "Convention text provenance/EVIDENCE_BINDING_CONVENTION.md v0.1.2",
+      "Recipe registry provenance/digest-recipes.json created at birth",
+      "This admission receipt under qa/conventions/",
+      "Root inventories MANIFEST.json and CHECKSUMS.sha256",
+      "One append-only decision-ledger entry (ENTRY 12)"
+    ],
+    "excluded": [
+      "Validator code, tests or wiring",
+      "Shared-artifact refresh or sidecar/UI cascade",
+      "Canonical, schema, Court runtime or Neo4j projection changes",
+      "Release promotion or green-release claim"
+    ]
+  },
+  "convention": {
+    "id": "CONV-EVIDENCE-BINDING-001",
+    "version": "0.1.2",
+    "path": "provenance/EVIDENCE_BINDING_CONVENTION.md",
+    "sha256": "d6caee025f0146eebf468b21e3d18b4ac0af735d11bf665c579e8805d04538c3",
+    "blobOid": "90efdeec1e169aa38e25dfaa4226699718de0669",
+    "byteLength": 28622,
+    "recipe": "raw-bytes-sha256"
+  },
+  "registry": {
+    "path": "provenance/digest-recipes.json",
+    "sha256": "27c7b4be68ccabe159c5d70a73791e8d8c266e271873ba8550bde3dfee682139",
+    "blobOid": "69c08a20ab1762d7ad8322167a253b780e73a6e4",
+    "byteLength": 545,
+    "recipes": ["raw-bytes-sha256"]
+  },
+  "maintainerAttestation": {
+    "reviewedBaseline": {
+      "artifact": "Evidence Binding Convention v1 candidate v0.1.1 (reviewed)",
+      "sha256": "18aa3c022bf0ce6b2e610f393658e5b214a67a8adb31d1763c7262842ebeca9d",
+      "blobOid": "b30f3be8f02321d2ca142c879f0c0fdad643d51e",
+      "readEndToEnd": true
+    },
+    "authorizedDelta": "Four change locations on the reviewed baseline: header Version; header Status resolved to admitted-by-ledger-reference; 0.1.2 revision row; and the section 8 registry/receipt sentence converted from temporal to causal form. The section 8 correction was directed by the maintainer after the executor identified it as the same defect class as the header status row.",
+    "finalRehash": {
+      "sha256": "d6caee025f0146eebf468b21e3d18b4ac0af735d11bf665c579e8805d04538c3",
+      "blobOid": "90efdeec1e169aa38e25dfaa4226699718de0669",
+      "maintainerValuesMatchAgentValues": true,
+      "method": "Maintainer and executor independently computed the SHA-256 and the pre-commit blob OID on the final staged bytes before commit."
+    },
+    "originNote": "The reviewed baseline and the attested final bytes are preserved in durable out-of-repository staging; their digests, not the staging path, are the binding evidence here."
+  },
+  "reviewBoundaryCorrection": {
+    "decision": "The section 8 sentence asserting that the registry and receipt 'do not yet exist' was replaced by a causal statement of what creates them. The original asserted temporal non-existence, which would become false at the admission commit.",
+    "sweep": "Full-text sweep for temporal-at-admission claims performed on the reviewed baseline; one instance found and fixed; no others located."
+  },
+  "supersessionHistory": {
+    "note": "Unrecoverable predecessor bytes; historical facts, not bindings. No admitted artifact cites them.",
+    "orphanDigests": [
+      {
+        "sha256": "87c220531c3a6cd63b833d265db638d081127cd0db93cc80eb5e932a3e0443c1",
+        "artifact": "v0.1.0 reviewed candidate",
+        "context": "Lost to volatile storage before durable staging; superseded by v0.1.1."
+      },
+      {
+        "sha256": "afa885425179e02ff4c770de3a760ce362f54b565cc548762abea9ec3c463307",
+        "artifact": "v0.1.0 feedback memo",
+        "context": "Lost to the same volatile-storage event."
+      },
+      {
+        "sha256": "3e81cbb0c88eb1afeb7b4fd36cc42f2af34e419b6307d0c112d5e11276982344",
+        "artifact": "first v0.1.1 draft",
+        "context": "Lost to the same event before staging or approval."
+      },
+      {
+        "sha256": "676d8928886b31ace38c02f5d28ec2748c0599948f465ff095cb51583ee51de5",
+        "artifact": "first v0.1.1 feedback memo",
+        "context": "Lost to the same event."
+      }
+    ],
+    "reconstructionMap": {
+      "from": "3e81cbb0c88eb1afeb7b4fd36cc42f2af34e419b6307d0c112d5e11276982344",
+      "to": "18aa3c022bf0ce6b2e610f393658e5b214a67a8adb31d1763c7262842ebeca9d",
+      "note": "The regenerated v0.1.1 kept the version because the decisions were unchanged; its revision row records the reconstruction. No regenerated v0.1.0 exists."
+    },
+    "interimV012": {
+      "sha256": "3e95f50d1e6fc73752bd87a6ed1e87424454856b9d994a17dc1c102cf295487b",
+      "blobOid": "468508389f9b57d3fc0959b3a0af251c5d2e9b43",
+      "context": "Three-edit v0.1.2 draft, superseded in-session by the ratified fourth edit before maintainer hashing; never attested; bytes not retained."
+    }
+  },
+  "compliance": {
+    "R1": {
+      "status": "OBSERVED_PRE_COMMIT_AND_DECLARED_POST_COMMIT",
+      "observed": "The staged target bytes were copied byte-exact to provenance/EVIDENCE_BINDING_CONVENTION.md; git hash-object --no-filters equality holds between the durable staging copy and the destination (OID 90efdeec1e169aa38e25dfaa4226699718de0669).",
+      "declared": "Post-commit, git cat-file blob 90efdeec1e169aa38e25dfaa4226699718de0669 under recipe raw-bytes-sha256 must equal the attested SHA-256. Recorded as an obligation; not reported as an observed PASS before the commit exists."
+    },
+    "R2": {
+      "status": "PASS_DEFINITION_SCOPE",
+      "detail": "The convention defines span bindings prospectively. This admission introduces no whole-file ledger authority binding: this receipt and ENTRY 12 cite the decision ledger by entry identity and path, not by whole-file hash. Root inventory hashes remain inventory integrity under the R2 carve-out. No span binding is instantiated by this landing."
+    },
+    "R3": {
+      "status": "NOT_APPLICABLE",
+      "detail": "No living pipeline payload is regenerated, split or refreshed by this landing; no shared artifact is touched."
+    },
+    "R4": {
+      "status": "PASS",
+      "detail": "Registry created at birth with recipe raw-bytes-sha256 naming its SHA-256 primitive and pinned implementation reference (path scripts/manifest-utils.mjs, range 31-37, blobOid 6f761dbecc620e4679dccae3d4ef8ca82e3a4833). The pinned blob resolves as a 1339-byte blob whose content SHA-256 is 1a78b2b4b4377b9cb5716f319a16a9a4631009bafbd765e82cb734e19bd88037. Range selection remains a binding-field convention; no second recipe or hashing code is authored."
+    },
+    "R5": {
+      "status": "PASS_FOR_ADMISSION_SCOPE",
+      "detail": "This admission evidence was computed with standard utilities over raw bytes (SHA-256 via shasum; object identity via git hash-object --no-filters). No project emitter produced the admission evidence. Inventory emission tool and version recorded below. Prospective generator and digest-origin records for future machine-emitted evidence remain governed by the convention."
+    },
+    "R6": {
+      "status": "DECLARED_POST_COMMIT",
+      "detail": "All admission evidence is registered by the same atomic commit; durable staging paths and the volatile-storage history of prior drafts appear in this receipt only as historical origin, not as authority dependencies. Registration completes with the commit and is verifiable post-commit."
+    }
+  },
+  "inventoryEmission": "scripts/build-manifest.mjs via npm run package:manifest; package seven-governors-integrated-release 1.9.0-dev from package.json. The inventory generatedAt value is release-derived, not an execution timestamp.",
+  "predeclaredGates": [
+    {
+      "gate": "STALE_TWIN_HUB_CONVERGENCE",
+      "record": "provenance/DECISION_LEDGER.md ENTRY 10 and ENTRY 11; qa/specs/fivefold-constructs-001-r1-forensics.md twin-hub scope section"
+    },
+    {
+      "gate": "STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE",
+      "record": "qa/d4-production-landing.json check record; docs/specs/fivefold_constructs_engine_spec.md section 4.1"
+    }
+  ],
+  "validation": {
+    "full": {
+      "command": "npm run validate",
+      "exitCode": 1,
+      "firstFailure": "STALE_TWIN_HUB_CONVERGENCE",
+      "outputSha256": "9ffa73776ca3749d2f3e9b0fc09605ff64e126499af860ccb78d7b59187a1312",
+      "outputBytes": 91671,
+      "scope": "Full command invoked; chained stages stop at the first failing suite. Executed at the pre-commit admission tree with convention, registry and ENTRY 12 present; this receipt was added afterwards as the record of the run. No refresh or bypass attempted.",
+      "disposition": "Predeclared, ledger-recorded stale gate; recorded, not repaired. Later chained suites did not run. No green integrated release claimed."
+    },
+    "manifest": {
+      "command": "npm run validate:manifest",
+      "status": "PASS",
+      "scope": "Final envelope check executed after this receipt was registered; per-file bindings and totals matched.",
+      "fileCount": 1137
+    }
+  },
+  "postCommitObligation": {
+    "point": "c",
+    "check": "git cat-file blob 90efdeec1e169aa38e25dfaa4226699718de0669 piped to raw-bytes-sha256",
+    "expectedSha256": "d6caee025f0146eebf468b21e3d18b4ac0af735d11bf665c579e8805d04538c3",
+    "status": "DECLARED; result to be confirmed post-commit in the session record and durable staging notes, never written into this receipt as an observed PASS before it can be true."
+  },
+  "evidencePaths": {
+    "new": [
+      "provenance/EVIDENCE_BINDING_CONVENTION.md",
+      "provenance/digest-recipes.json",
+      "qa/conventions/evidence-binding-001-admission.json"
+    ],
+    "modified": [
+      "provenance/DECISION_LEDGER.md",
+      "MANIFEST.json",
+      "CHECKSUMS.sha256"
+    ]
+  },
+  "protectedScope": "Existing test suites, preflight controls, D4 evidence, canonical data, schemas, Court runtime, Neo4j projection, shared sidecars and prior receipts were not modified."
+}

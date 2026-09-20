@@ -2424,3 +2424,63 @@ Improved evidence-binding conventions are planned remediation in a separate
 work item and ceremony. No convention candidate is authored, registered or
 adopted here. Historical evidence, existing ledger text and prior line anchors
 remain unchanged; this entry is append-only.
+
+---
+
+## ENTRY 12 - CONV-EVIDENCE-BINDING-001 convention admission under GOV-521
+
+**Date:** 2026-09-20. **Status:** admitted in one atomic five-category landing;
+release gates recorded, not cleared.
+
+### Decision
+
+The Evidence Binding Convention `provenance/EVIDENCE_BINDING_CONVENTION.md`
+(version 0.1.2, artifact ID CONV-EVIDENCE-BINDING-001) is admitted under GOV-521,
+together with the recipe registry `provenance/digest-recipes.json`, the admission
+receipt `qa/conventions/evidence-binding-001-admission.json`, refreshed root
+inventories, and this entry, in one atomic admission commit. The convention text
+was read end-to-end by the maintainer and its final bytes were independently
+hashed by the maintainer and the executor before commit; the attested digests,
+the reviewed-baseline digest, and the unrecoverable predecessor digests are
+recorded in the receipt.
+
+Admission-time corrections on the reviewed baseline were limited to the admitted
+status reference and one temporal-to-causal wording correction in the review
+boundary section; both are documented in the receipt and the convention's
+revision history.
+
+### Scope
+
+The landing includes no validator code, no shared-artifact refresh, no
+ledger-dependent sidecar or UI cascade, and no canonical, schema, Court runtime,
+Neo4j projection, or release-promotion change. The advisory validator, the
+enforcement-boundary classifier, binding-collection migration and the first live
+applications remain separate follow-up work under their own authorization.
+
+### References
+
+- `provenance/EVIDENCE_BINDING_CONVENTION.md` (admitted convention text)
+- `provenance/digest-recipes.json` (registry created at this admission)
+- `qa/conventions/evidence-binding-001-admission.json` (admission receipt: maintainer attestation, supersession history, per-rule compliance, observed validation result, declared post-commit obligation)
+- `provenance/DECISION_LEDGER.md` ENTRY 11 (motivates the convention; adopted nothing)
+- `qa/specs/fivefold-constructs-001-r1-forensics.md` (incident evidence cited by the convention)
+
+### Release Gate Disposition
+
+Full `npm run validate` was executed for this landing; the observed first stop
+and chained-stage behavior are recorded in the admission receipt. The
+predeclared acceptable stop is the ledger-recorded `STALE_TWIN_HUB_CONVERGENCE`
+state (ENTRY 10/11; R1 forensic scope record) or the recorded
+`STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE` state
+(`qa/d4-production-landing.json` check record;
+`docs/specs/fivefold_constructs_engine_spec.md` section 4.1). Any other failure
+halts. No stale control is disabled, no shared artifact is regenerated, and no
+green integrated release is claimed. D4-bound evidence preservation remains a
+precondition for any later shared-artifact refresh.
+
+### Guard
+
+This entry grants no runtime, topology, admission, office, graph, Court or
+global `harmonic.C_H` authority. It does not adopt the convention's future
+enforcement tooling and does not rebind historical evidence. Prior entries and
+prior line anchors remain unchanged; this entry is append-only.
