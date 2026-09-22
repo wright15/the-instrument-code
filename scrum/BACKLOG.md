@@ -60,7 +60,7 @@ records); default-to-fast rule; Q-table worked example (authoring = sprint per S
 
 ## TIER 1 — ENGINE PROGRAM (sprint)
 
-### BL-010 — Q transition table authoring [ACTIVE]
+### BL-010 — Q transition table authoring [DONE]
 
 Author the concrete Z12-indexed 16-state table for Quintessence
 (SPEC-001 §1.3 `:102-115`; §6 item 2 `:290`). First extraction-or-authoring: search GOV-517
@@ -74,6 +74,15 @@ assertion graduates to a claim event. Downstream: resolves §6(2) either way; fe
 an extraction receipt or an authoring trail. Extraction = reproducibility; authoring = new
 derivation with its own ceremony — the biggest timeline variable, resolve early.
 Next up per sequencing.
+
+**Landed:** extraction NOT FOUND + designation search + freeze decisions recorded in
+[`plan/bl-010-q-table-freeze-memo.md`](plan/bl-010-q-table-freeze-memo.md). Authored object is
+Q1 + action law `Q_z = Q1^z`; 12×16 table generated, not transcribed; still-set behavior
+primary fixed, rotation variant recorded. Artifacts: `src/fivefold/quintessence.py`,
+`tests/test_fivefold_q_table.py`, `tests/fixtures/fivefold_q_table.v1.json` (192 rows).
+Suite green (13 passed) including the completion/closure pair. **INV-5 graduation decision:
+deferred** — documented decision point, no claim event opened; the §6(4) composition
+hypothesis carries forward to BL-011.
 
 ### BL-011 — Overlay correspondence evidence (CONDITIONAL) [ACTIVE]
 
@@ -255,3 +264,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v0.1 | Pre-validation capture (mutable plan space). |
 | v0.2 | Planning-agent validation: §6 renumber, §4.2 retarget, cut-line fix, PROPOSAL demotions, dedupe findings, BL-033 guards, cascade disambiguation. |
 | v0.3 | BL-031(b) fixture correction: tonic-for-tonic handoff relation; B Lydian ↔ C Locrian replaces C Lydian ↔ B Locrian as flat-side seam; C Ionian ↔ C Aeolian reclassified as control; mirror relation as census prediction. Graduated to ACTIVE in this commit. |
+| v0.4 | BL-010 landed DONE: Q table authored under the freeze memo; suite green; INV-5 graduation deferred. Next: BL-011 gated on maintainer decision; debugger program (BL-020–023) open. |
