@@ -107,6 +107,9 @@ Audio rendering of state-machine transition paths (Orrery or companion surface).
 Extension of `ORR-404:19` (static mode-change events only — no path sonification exists).
 Deliverables: path replay through legality checks with sonification; minimal start/end UI.
 Exit: any two connected states heard as a move.
+Candidate sonification mappings (decision deferred to the sprint's design discussion):
+rest-state/bucket reading (sounds still-set 1111 as pure stack; HYPOTHESIS) vs.
+positional/cursor mapping — see `plan/harmonic-comprehension-map.md` §2.1-2.2.
 
 ### BL-021 — Andalusian cadence (cross-set-class seam edge) [ACTIVE]
 
@@ -170,6 +173,10 @@ GOV-511 census count):
 Exit: probes run clean on canonical data; findings memo (sprint artifact) states whether the
 Phase B claim is supportable.
 
+Required Phase-A findings-memo context: the fa-distance argument (poles as boundary entities
+of the motion; eleven-steps-for-one) — see `plan/harmonic-comprehension-map.md` §2.5; the seam
+census (d) treats the mirror-relation prediction under that lens (prediction, not conclusion).
+
 ### BL-032 — Phase B: claim event (ceremony — ONE session) [ACTIVE]
 
 If and only if Phase A's memo supports it: admit the phase-extended topology as a candidate
@@ -190,6 +197,10 @@ Neo4j/canonical/Court/schema/shared-sidecar writes (SPEC-001 §4.3); no D4 verdi
 sandbox; memo labeled sprint artifact. Gate: BL-032 admission, OR explicit maintainer decision
 for pre-admission sandbox probing (allowed, costs nothing). Exit: results memo; any amendment
 graduates to its own ceremony.
+
+Test hypothesis (prediction, not conclusion): D4 is not single-phase-constructible — the
+bracket reading carries the ledger's difficulty-of-derivation-not-authorship qualifier; see
+`plan/harmonic-comprehension-map.md` §2.4-2.5.
 
 ---
 
@@ -265,3 +276,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v0.2 | Planning-agent validation: §6 renumber, §4.2 retarget, cut-line fix, PROPOSAL demotions, dedupe findings, BL-033 guards, cascade disambiguation. |
 | v0.3 | BL-031(b) fixture correction: tonic-for-tonic handoff relation; B Lydian ↔ C Locrian replaces C Lydian ↔ B Locrian as flat-side seam; C Ionian ↔ C Aeolian reclassified as control; mirror relation as census prediction. Graduated to ACTIVE in this commit. |
 | v0.4 | BL-010 landed DONE: Q table authored under the freeze memo; suite green; INV-5 graduation deferred. Next: BL-011 gated on maintainer decision; debugger program (BL-020–023) open. |
+| v0.5 | Comprehension map landed (`plan/harmonic-comprehension-map.md`): admitted/hypothesis/open- canon tags; antiparallel direction-only precision fix; D4 qualifier carried; Sun/Moon pole question recorded with both citations. One-line cross-refs added to BL-020/031/033. |
