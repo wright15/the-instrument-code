@@ -1086,10 +1086,10 @@ run_cli "${audio_session}" run-code "async page => {
     filter: document.querySelector('#selected-court-filter')?.textContent?.trim(),
   }));
   if (
-    JSON.stringify(pentatonic.frequencies) !== JSON.stringify([0, 2, 7, 0]) ||
-    !pentatonic.filter.includes('retains {0, 2, 7}')
+    JSON.stringify(pentatonic.frequencies) !== JSON.stringify([5, 7, 10, 0]) ||
+    !pentatonic.filter.includes('own five mask pitches {0, 2, 5, 7, 10}')
   ) {
-    throw new Error('Court pentatonic voicing did not re-filter through the Court mask: ' + JSON.stringify(pentatonic));
+    throw new Error('Court pentatonic voicing did not voice the position\'s own five mask pitches: ' + JSON.stringify(pentatonic));
   }
 }"
 assert_page "${audio_session}" "() => {

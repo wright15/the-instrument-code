@@ -13,6 +13,7 @@ export interface CourtPresentation {
   positionId: CourtPosition;
   index: number;
   emblem: string;
+  engagementLabel: string;
   scaleId: number;
   scaleName: string;
   maskStringMsb: string;
@@ -31,6 +32,7 @@ export const COURT_POSITIONS = [
     positionId: "C0",
     index: 0,
     emblem: "Fire / Mars",
+    engagementLabel: "seed / all elements external",
     scaleId: 661,
     scaleName: "Major Pentatonic",
     maskStringMsb: "101010010100",
@@ -46,6 +48,7 @@ export const COURT_POSITIONS = [
     positionId: "C1",
     index: 1,
     emblem: "Air / Wind / Jupiter",
+    engagementLabel: "Mars internalized / three external",
     scaleId: 677,
     scaleName: "Scottish Pentatonic",
     maskStringMsb: "101001010100",
@@ -61,6 +64,7 @@ export const COURT_POSITIONS = [
     positionId: "C2",
     index: 2,
     emblem: "Quintessence / Mercury",
+    engagementLabel: "Mars + Jupiter internalized / engine hinge",
     scaleId: 1189,
     scaleName: "Qing Yu",
     maskStringMsb: "101001010010",
@@ -76,6 +80,7 @@ export const COURT_POSITIONS = [
     positionId: "C3",
     index: 3,
     emblem: "Water / Venus",
+    engagementLabel: "Mars + Jupiter + Venus internalized / Saturn external",
     scaleId: 1193,
     scaleName: "Minor Pentatonic",
     maskStringMsb: "100101010010",
@@ -91,6 +96,7 @@ export const COURT_POSITIONS = [
     positionId: "C4",
     index: 4,
     emblem: "Earth / Saturn",
+    engagementLabel: "fully realized / all elements internal",
     scaleId: 1321,
     scaleName: "Man Gong",
     maskStringMsb: "100101001010",

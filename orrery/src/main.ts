@@ -17,6 +17,7 @@ import {
   type ProgressionStepView,
 } from "./audio";
 import { DEGREE_GOVERNORS, isChordSize, type ChordSize } from "./harmony";
+import { planAndalusianCadenceReplay, planFivefoldOrbitReplay, planOrreryRouteReplay, toReplayVoices } from "./path-replay";
 import {
   COURT_POLE_ORDER,
   COURT_POSITIONS,
@@ -160,6 +161,11 @@ const startRouteButton = requiredElement<HTMLButtonElement>("#start-route");
 const resumeRouteButton = requiredElement<HTMLButtonElement>("#resume-route");
 const clearRouteButton = requiredElement<HTMLButtonElement>("#clear-route");
 const applyLegalMoveButton = requiredElement<HTMLButtonElement>("#apply-legal-move");
+const replayRouteButton = requiredElement<HTMLButtonElement>("#replay-route");
+const replayQOrbitButton = requiredElement<HTMLButtonElement>("#replay-q-orbit");
+const replayAndalusianButton = requiredElement<HTMLButtonElement>("#replay-andalusian");
+const replayBucketOverlay = requiredElement<HTMLInputElement>("#replay-bucket-overlay");
+const replayStatus = requiredElement<HTMLElement>("#replay-status");
 const audioEnableButton = requiredElement<HTMLButtonElement>("#audio-enable");
 const audioPauseButton = requiredElement<HTMLButtonElement>("#audio-pause");
 const audioMuteButton = requiredElement<HTMLButtonElement>("#audio-mute");
@@ -512,6 +518,7 @@ function renderAudioState(state: AudioEngineState): void {
   audioStatus.textContent = state.detail;
   audioStatus.dataset.state = state.readiness;
   syncHarmonyControls(state);
+  syncReplayControls();
 }
 
 function renderAudioPalette(selection: AudioSelection): void {
@@ -525,14 +532,97 @@ function renderAudioPalette(selection: AudioSelection): void {
   }
 
   const sourcePitchClasses = formatPitchClasses(selection.palette.pitchClasses);
-  const suppressedPitchClasses = formatPitchClasses(selection.suppressedPitchClasses);
   const paletteLabel = `${selection.office} A0 / ${selection.palette.mode} / source ${sourcePitchClasses}`;
   selectedAudioPalette.textContent = paletteLabel;
   selectedAudioNote.textContent = selection.inheritedOfficePalette
-    ? `${selection.selectedStateName} remains an ${selection.selectedTier} state; its authored sound inherits the ${selection.office} A0 palette.`
+    ? `${selection.selectedStateName} remains an ${selection.selectedTier} state; its timbre inherits the authored ${selection.office} A0 preset (presentation, not a pitch claim).`
     : `${selection.selectedStateName} is the canonical A0 state for this authored palette.`;
-  selectedCourtFilter.textContent = `Court ${selection.court.positionId} / ${selection.court.scaleName} / mask ${selection.court.pitchMask} retains ${retainedPitchClasses} and suppresses ${suppressedPitchClasses}.`;
-  audioPalette.textContent = `Current voiced palette: ${selection.office} A0 / ${selection.palette.mode} / Court ${selection.court.positionId} ${retainedPitchClasses}`;
+  selectedCourtFilter.textContent = `Voicing: Court ${selection.court.positionId} / ${selection.court.scaleName}'s own five mask pitches ${retainedPitchClasses} (canon, per CRT-302/CRT-309). Timbre: ${selection.office} preset (presentation, not a pitch claim). Pitch-color associations, if shown, are hypothesis-layer (bucket overlay), toggleable and unasserted.`;
+  audioPalette.textContent = `Current voiced palette: Court ${selection.court.positionId} ${retainedPitchClasses} / timbre ${selection.office} A0 (presentation)`;
+}
+
+function syncReplayControls(): void {
+  const audio = audioEngine.snapshot();
+  const soundReady = audio.transport === "playing" && !audio.visualOnly;
+  const routeReady = Boolean(session && legalMoveCatalog && session.modalRoute.moveIds.length > 0);
+  replayRouteButton.disabled = !soundReady || !routeReady;
+  replayQOrbitButton.disabled = !soundReady;
+  replayAndalusianButton.disabled = !soundReady;
+  replayBucketOverlay.disabled = !soundReady;
+  if (!soundReady) {
+    replayStatus.textContent = "Enable & play sound to replay paths.";
+  }
+}
+
+function replayRouteSound(): void {
+  if (!session || !legalMoveCatalog) {
+    replayStatus.textContent = "The legal-move catalog is unavailable for this projection.";
+    return;
+  }
+  const plan = planOrreryRouteReplay({
+    startAnchorId: session.modalRoute.startAnchorId,
+    moveIds: session.modalRoute.moveIds,
+    catalog: legalMoveCatalog,
+    nodesById,
+    courtPosition: session.courtPresentationPosition,
+    voicingMode: audioEngine.currentVoicingMode(),
+  });
+  if (plan.kind === "invalid") {
+    replayStatus.textContent = plan.message;
+    setMoveStatus(plan.message, "error");
+    return;
+  }
+  const started = audioEngine.replayPath(toReplayVoices(plan), {
+    onHop: (voice, index, total) => {
+      replayStatus.textContent = `Route hop ${index + 1} / ${total}: ${voice.label}`;
+    },
+  });
+  if (!started) {
+    replayStatus.textContent = "Enable & play sound before replaying a path.";
+    return;
+  }
+  setMoveStatus(`Replaying ${plan.hops.length} recorded route hops as sound.`, "ready");
+}
+
+function replayQOrbitSound(): void {
+  const mapping = replayBucketOverlay.checked ? "bucket-overlay" : "cursor";
+  const plan = planFivefoldOrbitReplay({ mapping });
+  if (plan.kind === "invalid") {
+    replayStatus.textContent = plan.message;
+    return;
+  }
+  const started = audioEngine.replayPath(toReplayVoices(plan), {
+    onHop: (voice, index, total) => {
+      replayStatus.textContent = `Q hop ${index + 1} / ${total}: ${voice.label}`;
+    },
+  });
+  if (!started) {
+    replayStatus.textContent = "Enable & play sound before replaying a path.";
+    return;
+  }
+  replayStatus.textContent =
+    mapping === "cursor"
+      ? `Replaying the Q orbit (${plan.hops.length} hops, cursor layer: admitted).`
+      : `Replaying the Q orbit (${plan.hops.length} hops, bucket overlay: hypothesis, not canonical).`;
+}
+
+function replayAndalusianSound(): void {
+  const plan = planAndalusianCadenceReplay();
+  if (plan.kind === "invalid") {
+    replayStatus.textContent = plan.message;
+    return;
+  }
+  const started = audioEngine.replayPath(toReplayVoices(plan), {
+    stepSeconds: 1.6,
+    onHop: (voice, index, total) => {
+      replayStatus.textContent = `Cadence ${index + 1} / ${total}: ${voice.label}`;
+    },
+  });
+  if (!started) {
+    replayStatus.textContent = "Enable & play sound before replaying a path.";
+    return;
+  }
+  replayStatus.textContent = `Replaying the Andalusian cadence (seam crossing at hop ${plan.seamHopIndex + 1}; admitted bridge CRT-302/CRT-304).`;
 }
 
 function showProjectionUnavailable(error: unknown): void {
@@ -899,6 +989,7 @@ function renderMoveConsole(): void {
   renderMoveTargetPreview(session.selectedLegalMoveId);
   renderRouteHistory();
   renderObjectives();
+  syncReplayControls();
 
   if (!legalMoveCatalog) {
     setMoveStatus(
@@ -1256,7 +1347,7 @@ function renderCourtSurface(): void {
   );
   courtRouteStatus.textContent = `${court.positionId} is active. Adjacent local presentation moves: ${adjacentPositions.map((position) => position.positionId).join(", ")}.`;
   courtCurrent.textContent = `${court.positionId} / ${court.scaleName} / ${court.emblem}`;
-  courtStrategy.textContent = court.strategyEmphasis;
+  courtStrategy.textContent = `Engagement: ${court.engagementLabel}. ${court.strategyEmphasis} (presentation).`;
   courtMask.textContent = `${court.pitchMask} / ${court.maskStringMsb}`;
   courtPitchClasses.textContent = formatPitchClasses(court.pitchClasses);
   courtRatio.textContent = formatCourtRatio(court.kappaCourt);
@@ -1710,6 +1801,9 @@ startRouteButton.addEventListener("click", startRouteAtInspectedAnchor);
 resumeRouteButton.addEventListener("click", resumeRouteInspection);
 clearRouteButton.addEventListener("click", clearRoute);
 applyLegalMoveButton.addEventListener("click", applySelectedLegalMove);
+replayRouteButton.addEventListener("click", replayRouteSound);
+replayQOrbitButton.addEventListener("click", replayQOrbitSound);
+replayAndalusianButton.addEventListener("click", replayAndalusianSound);
 
 audioEnableButton.addEventListener("click", () => {
   if (profileRegistryReleaseId) {

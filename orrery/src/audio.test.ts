@@ -6,6 +6,7 @@ import {
   AUDIO_LOOP_ASSETS,
   AUDIO_PROFILE_REGISTRY_RELEASE_ID,
   AUDIO_PROGRESSION_STEP_SECONDS,
+  AUDIO_REPLAY_STEP_SECONDS,
   AUDIO_ROOT_MIDI_NOTE,
   AUDIO_VOICE_STAGGER_SECONDS,
   AUDIO_VOICING_STORAGE_KEY,
@@ -22,6 +23,7 @@ import {
   type AudioRuntime,
 } from "./audio";
 import { generateProgression } from "./harmony";
+import { COURT_POSITIONS } from "./court";
 import type { Governor, OrreryNode } from "./types";
 
 class FakeParam {
@@ -252,13 +254,35 @@ describe("Harmonic Orrery audio manifest", () => {
     expect(a2.palette).toBe(OFFICE_PALETTES.Mars);
   });
 
-  it("retains and exposes only office pitches admitted by the selected Court mask in court-pentatonic mode", () => {
+  it("voices the selected Court position's own five registered mask pitches in court-pentatonic mode", () => {
     const selection = resolveAudioSelection(node("Sun"), "C1", "court-pentatonic");
 
     expect(selection.court).toMatchObject({ positionId: "C1", scaleName: "Scottish Pentatonic", pitchMask: 677 });
     expect(selection.palette.pitchClasses).toEqual([0, 2, 4, 6, 7, 9, 11]);
-    expect(selection.retainedPitchClasses).toEqual([0, 2, 7, 9]);
+    expect(selection.retainedPitchClasses).toEqual([0, 2, 5, 7, 9]);
     expect(selection.suppressedPitchClasses).toEqual([4, 6, 11]);
+  });
+
+  it("voices each Court position from registered mask data, never a bucket re-derivation", () => {
+    for (const position of COURT_POSITIONS) {
+      const selection = resolveAudioSelection(node("Saturn"), position.positionId, "court-pentatonic");
+      expect(selection.retainedPitchClasses).toEqual([...position.pitchClasses]);
+    }
+  });
+
+  it("keeps sharpened members as registered, not as their diatonic neighbors", () => {
+    // C1 raises 4->5 against C0; C3 raises 2->3 and 9->10. The voicing must
+    // follow the mask bytes, so the bucket layer can never leak into canon.
+    const c1 = resolveAudioSelection(node("Sun"), "C1", "court-pentatonic");
+    expect(c1.retainedPitchClasses).toContain(5);
+    expect(c1.retainedPitchClasses).not.toContain(4);
+
+    const c3 = resolveAudioSelection(node("Sun"), "C3", "court-pentatonic");
+    expect(c3.retainedPitchClasses).toEqual([0, 3, 5, 7, 10]);
+    expect(c3.retainedPitchClasses).toContain(3);
+    expect(c3.retainedPitchClasses).not.toContain(2);
+    expect(c3.retainedPitchClasses).toContain(10);
+    expect(c3.retainedPitchClasses).not.toContain(9);
   });
 
   it("voices an anchor's own seven-note mask under heptatonic voicing regardless of Court", () => {
@@ -545,6 +569,118 @@ describe("Intra-node progression engine", () => {
       const finalCount = context.oscillators.length;
       vi.advanceTimersByTime(AUDIO_PROGRESSION_STEP_SECONDS * 5000);
       expect(context.oscillators).toHaveLength(finalCount);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+});
+
+describe("Path replay engine", () => {
+  it("refuses to replay before sound is enabled", () => {
+    const context = new FakeAudioContext();
+    const fake = audioRuntime(context);
+    const engine = new OrreryAudioEngine(fake.runtime);
+
+    const started = engine.replayPath([
+      { label: "hop A", pitchClasses: [0], preset: OFFICE_PALETTES.Sun.preset },
+    ]);
+
+    expect(started).toBe(false);
+    expect(engine.snapshot().replay).toBe(false);
+    expect(engine.snapshot().detail).toContain("Enable & play sound before replaying a path");
+    expect(context.oscillators).toHaveLength(0);
+  });
+
+  it("voices hops in sequence, reports progress, and completes", async () => {
+    vi.useFakeTimers();
+    try {
+      const context = new FakeAudioContext();
+      const fake = audioRuntime(context);
+      const engine = new OrreryAudioEngine(fake.runtime);
+
+      engine.select(node("Sun"), "C0");
+      await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID);
+      const baseline = context.oscillators.length;
+      expect(baseline).toBe(8);
+
+      const seen: string[] = [];
+      const started = engine.replayPath(
+        [
+          { label: "hop A", pitchClasses: [7], preset: OFFICE_PALETTES.Mars.preset },
+          { label: "hop B", pitchClasses: [2, 9], preset: OFFICE_PALETTES.Mars.preset },
+        ],
+        { onHop: (voice, index, total) => seen.push(`${index + 1}/${total}:${voice.label}`) },
+      );
+
+      expect(started).toBe(true);
+      expect(engine.snapshot().replay).toBe(true);
+      expect(engine.isReplaying()).toBe(true);
+      expect(pitchClassesFromOscillators(context).slice(baseline)).toEqual([7, 7]);
+      expect(engine.snapshot().detail).toContain("hop 1 / 2");
+
+      vi.advanceTimersByTime(AUDIO_REPLAY_STEP_SECONDS * 1000);
+      expect(pitchClassesFromOscillators(context).slice(baseline + 2)).toEqual([2, 9, 2]);
+      expect(engine.snapshot().detail).toContain("hop 2 / 2");
+
+      vi.advanceTimersByTime(AUDIO_REPLAY_STEP_SECONDS * 1000);
+      expect(engine.snapshot().replay).toBe(false);
+      expect(engine.isReplaying()).toBe(false);
+      expect(seen).toEqual(["1/2:hop A", "2/2:hop B"]);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it("stops the replay on selection change and on pause", async () => {
+    vi.useFakeTimers();
+    try {
+      const context = new FakeAudioContext();
+      const fake = audioRuntime(context);
+      const engine = new OrreryAudioEngine(fake.runtime);
+
+      engine.select(node("Sun"), "C0");
+      await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID);
+      engine.replayPath([
+        { label: "hop A", pitchClasses: [7], preset: OFFICE_PALETTES.Mars.preset },
+        { label: "hop B", pitchClasses: [2], preset: OFFICE_PALETTES.Mars.preset },
+      ]);
+      expect(engine.snapshot().replay).toBe(true);
+
+      engine.select(node("Moon"), "C0");
+      expect(engine.snapshot().replay).toBe(false);
+      const afterSelect = context.oscillators.length;
+      vi.advanceTimersByTime(AUDIO_REPLAY_STEP_SECONDS * 3000);
+      expect(context.oscillators).toHaveLength(afterSelect);
+
+      engine.replayPath([
+        { label: "hop A", pitchClasses: [7], preset: OFFICE_PALETTES.Mars.preset },
+        { label: "hop B", pitchClasses: [2], preset: OFFICE_PALETTES.Mars.preset },
+      ]);
+      expect(engine.snapshot().replay).toBe(true);
+      await engine.pause();
+      expect(engine.snapshot().replay).toBe(false);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it("renders an empty hop as intentional silence", async () => {
+    vi.useFakeTimers();
+    try {
+      const context = new FakeAudioContext();
+      const fake = audioRuntime(context);
+      const engine = new OrreryAudioEngine(fake.runtime);
+
+      engine.select(node("Sun"), "C0");
+      await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID);
+      const baseline = context.oscillators.length;
+
+      engine.replayPath([
+        { label: "rest: absence", pitchClasses: [], preset: OFFICE_PALETTES.Mercury.preset },
+      ]);
+      expect(context.oscillators).toHaveLength(baseline);
+      expect(context.bufferSources).toHaveLength(1);
+      expect(engine.snapshot().replay).toBe(true);
     } finally {
       vi.useRealTimers();
     }

@@ -109,10 +109,11 @@ Jupiter/Aeolian, Venus/Phrygian, and Saturn/Locrian. It uses authored C4/MIDI
 60, 12-TET, A4=440 Hz register conventions. A1 and A2 anchors retain their
 own displayed state identity while using their office's A0 palette.
 
-The selected local Court position filters an office palette with its admitted
-Court mask before it is voiced. The control surface exposes the source,
-retained, and suppressed pitch classes so that this authored presentation
-filter is visible. It never replaces an anchor's intrinsic identity.
+The selected local Court position voices its own five registered mask pitches
+(canon, per CRT-302/CRT-309). The office A0 palette supplies timbre only
+(presentation, not a pitch claim); the control surface discloses source,
+retained, and suppressed pitch classes. It never replaces an anchor's
+intrinsic identity, and no pitch-color association is asserted.
 
 Timbres, register choices, and percussion loops are authored choices. They do
 not derive from wavelength, `C_P`, `W_A012`, or unresolved `C_H`, and make no

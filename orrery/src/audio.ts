@@ -1,4 +1,4 @@
-import { courtPositionById, filterPitchClasses, type CourtPosition, type CourtPresentation } from "./court";
+import { courtPositionById, type CourtPosition, type CourtPresentation } from "./court";
 import {
   CHALDEAN_WEIGHT_NUMERATORS,
   buildNodeChords,
@@ -19,6 +19,7 @@ export const AUDIO_VOICE_STAGGER_SECONDS = 0.5;
 export const AUDIO_OCTAVE_SEMITONES = 12;
 export const AUDIO_PROGRESSION_STEP_SECONDS = 1.8;
 export const AUDIO_CHORD_ROLL_SECONDS = 0.04;
+export const AUDIO_REPLAY_STEP_SECONDS = 1.2;
 
 export interface ProgressionStepView {
   index: number;
@@ -338,9 +339,25 @@ export interface AudioEngineState {
   muted: boolean;
   progression: boolean;
   readiness: AudioReadiness;
+  replay: boolean;
   transport: AudioTransport;
   visualOnly: boolean;
   volume: number;
+}
+
+/**
+ * A single voiced hop of a path replay. Provided by the path-replay planner;
+ * the engine renders it and never computes transition semantics itself.
+ */
+export interface ReplayVoice {
+  label: string;
+  pitchClasses: readonly number[];
+  preset: TimbrePreset;
+}
+
+export interface ReplayPathOptions {
+  onHop?: (voice: ReplayVoice, index: number, total: number) => void;
+  stepSeconds?: number;
 }
 
 interface ActiveVoice {
@@ -406,14 +423,15 @@ export function resolveAudioSelection(
   const palette = OFFICE_PALETTES[office];
   const court = courtPositionById(courtPosition);
   // Heptatonic voicing plays the inspected anchor's own seven-note mask, so
-  // every node is audibly distinct. Court pentatonic keeps the legacy behavior:
-  // the office A0 palette re-filtered through the Court position mask.
+  // every node is audibly distinct. Court pentatonic voices the selected
+  // position's own five registered mask pitches (canon, per CRT-302/CRT-309);
+  // the office palette supplies timbre only, never pitch content.
   const inheritedOfficePalette =
     voicingMode === "court-pentatonic" && node.state.tier !== "A0";
   const retainedPitchClasses =
     voicingMode === "heptatonic"
       ? [...node.state.pitchClasses]
-      : filterPitchClasses(palette.pitchClasses, court);
+      : [...court.pitchClasses];
   return {
     court,
     voicingMode,
@@ -482,6 +500,7 @@ export class OrreryAudioEngine {
     muted: false,
     progression: false,
     readiness: "idle",
+    replay: false,
     transport: "stopped",
     visualOnly: false,
     volume: 0.65,
@@ -490,6 +509,11 @@ export class OrreryAudioEngine {
   private progressionIndex = 0;
   private progressionPlan: ProgressionStepView[] = [];
   private progressionTimer: ReturnType<typeof setTimeout> | undefined;
+  private replayActive = false;
+  private replayIndex = 0;
+  private replayOptions: ReplayPathOptions = {};
+  private replayTimer: ReturnType<typeof setTimeout> | undefined;
+  private replayVoices: ReplayVoice[] = [];
 
   constructor(runtime: AudioRuntime = browserRuntime()) {
     validateAudioManifest();
@@ -507,9 +531,10 @@ export class OrreryAudioEngine {
   }
 
   select(node: OrreryNode, courtPosition: CourtPosition, playSound = true): AudioSelection {
-    // A node change ends any active progression; the UI may restart it for the
-    // newly selected node.
+    // A node change ends any active progression or path replay; the UI may
+    // restart either for the newly selected node.
     this.stopProgression();
+    this.stopReplay();
     const selection = resolveAudioSelection(node, courtPosition, this.voicingMode);
     this.currentSource = { node, courtPosition };
     this.currentSelection = selection;
@@ -575,6 +600,7 @@ export class OrreryAudioEngine {
     const seed = options.seed ?? nodeProgressionSeed(source.node.state.stateId, steps, chordSize);
 
     this.stopProgression();
+    this.stopReplay();
     const chords = buildNodeChords(source.node.state.pitchClasses, chordSize);
     const sizeLabel = chordSize === 2 ? "dyad" : chordSize === 3 ? "trichord" : "tetrachord";
     this.progressionPlan = generateProgression(seed, steps).map((rootDegree, index) => {
@@ -617,6 +643,91 @@ export class OrreryAudioEngine {
       detail: "Intra-node progression stopped. Anchor selections resume their melodic arpeggio.",
       progression: false,
     });
+  }
+
+  /**
+   * Replay a planned path as a sequence of voiced hops. Voices are supplied by
+   * the path-replay planner: the engine renders them and never computes
+   * transition legality. Returns false when playback is unavailable.
+   */
+  replayPath(voices: readonly ReplayVoice[], options: ReplayPathOptions = {}): boolean {
+    if (
+      voices.length === 0 ||
+      this.state.transport !== "playing" ||
+      this.state.visualOnly ||
+      !this.context ||
+      !this.masterGain
+    ) {
+      this.replaceState({
+        detail: "Enable & play sound before replaying a path.",
+      });
+      return false;
+    }
+
+    this.stopProgression();
+    this.stopReplay();
+    this.replayVoices = voices.map((voice) => ({ ...voice, pitchClasses: [...voice.pitchClasses] }));
+    this.replayOptions = options;
+    this.replayActive = true;
+    this.replayIndex = 0;
+    // Clear the current selection voicing so the replay starts from silence.
+    this.stopSources();
+    this.runReplayTick();
+    this.replaceState({ replay: true });
+    return true;
+  }
+
+  stopReplay(): void {
+    if (this.replayTimer !== undefined) {
+      clearTimeout(this.replayTimer);
+      this.replayTimer = undefined;
+    }
+    if (!this.replayActive) {
+      return;
+    }
+    this.replayActive = false;
+    this.replayIndex = 0;
+    this.replayVoices = [];
+    this.replaceState({ detail: "Path replay stopped.", replay: false });
+  }
+
+  isReplaying(): boolean {
+    return this.replayActive;
+  }
+
+  private runReplayTick(): void {
+    if (!this.replayActive) {
+      return;
+    }
+    const context = this.context;
+    const masterGain = this.masterGain;
+    if (!context || !masterGain || this.state.transport !== "playing" || this.state.visualOnly) {
+      this.stopReplay();
+      return;
+    }
+
+    const voice = this.replayVoices[this.replayIndex];
+    if (!voice) {
+      this.replayActive = false;
+      this.replayTimer = undefined;
+      this.replayIndex = 0;
+      this.replaceState({
+        detail: `Path replay complete (${this.replayVoices.length} hops). The last hop remains voiced.`,
+        replay: false,
+      });
+      return;
+    }
+
+    this.crossfadeVoicing(voice.pitchClasses, voice.preset);
+    this.replayOptions.onHop?.(voice, this.replayIndex, this.replayVoices.length);
+    this.replaceState({
+      detail: `Path replay hop ${this.replayIndex + 1} / ${this.replayVoices.length}: ${voice.label}`,
+    });
+    this.replayIndex += 1;
+    this.replayTimer = setTimeout(
+      () => this.runReplayTick(),
+      (this.replayOptions.stepSeconds ?? AUDIO_REPLAY_STEP_SECONDS) * 1000,
+    );
   }
 
   private resolveChordVoices(pitchClasses: readonly number[]): number[] {
@@ -691,6 +802,7 @@ export class OrreryAudioEngine {
 
   clearSelection(): void {
     this.stopProgression();
+    this.stopReplay();
     this.currentSelection = undefined;
     this.currentSource = undefined;
     this.stopSources();
@@ -765,6 +877,7 @@ export class OrreryAudioEngine {
       return;
     }
     this.stopProgression();
+    this.stopReplay();
     this.stopSources();
     try {
       await this.context.suspend();
@@ -783,6 +896,7 @@ export class OrreryAudioEngine {
   setVisualOnly(visualOnly: boolean): void {
     if (visualOnly) {
       this.stopProgression();
+      this.stopReplay();
       this.stopSources();
       void this.context?.suspend().catch(() => undefined);
       this.replaceState({
@@ -807,6 +921,7 @@ export class OrreryAudioEngine {
 
   dispose(): void {
     this.stopProgression();
+    this.stopReplay();
     this.stopSources();
     this.listeners.clear();
     if (this.context) {
@@ -868,6 +983,10 @@ export class OrreryAudioEngine {
   }
 
   private crossfadeSelection(selection: AudioSelection): void {
+    this.crossfadeVoicing(selection.retainedPitchClasses, selection.palette.preset);
+  }
+
+  private crossfadeVoicing(pitchClasses: readonly number[], preset: TimbrePreset): void {
     const context = this.context;
     const masterGain = this.masterGain;
     if (!context || !masterGain) {
@@ -891,7 +1010,7 @@ export class OrreryAudioEngine {
       this.activeLoop = undefined;
     }
 
-    this.startSelection(context, masterGain, selection, now + 0.02);
+    this.startVoicing(context, masterGain, pitchClasses, preset, now + 0.02);
   }
 
   private startSelection(
@@ -900,29 +1019,43 @@ export class OrreryAudioEngine {
     selection: AudioSelection,
     start: number,
   ): void {
-    selection.retainedPitchClasses.forEach((pitchClass, index) => {
+    this.startVoicing(context, masterGain, selection.retainedPitchClasses, selection.palette.preset, start);
+  }
+
+  private startVoicing(
+    context: AudioContextLike,
+    masterGain: GainNodeLike,
+    pitchClasses: readonly number[],
+    preset: TimbrePreset,
+    start: number,
+  ): void {
+    // An empty hop is an intentional silence (e.g. the cursor mapping at the
+    // still anchor), so release-only crossfades stay silent instead of
+    // restarting the percussion loop.
+    if (pitchClasses.length === 0) {
+      return;
+    }
+    pitchClasses.forEach((pitchClass, index) => {
       this.startVoice(
         context,
         masterGain,
-        midiToFrequency(pitchClassToMidi(pitchClass, selection.palette.preset.registerOffset)),
-        selection.palette.preset,
+        midiToFrequency(pitchClassToMidi(pitchClass, preset.registerOffset)),
+        preset,
         start + index * AUDIO_VOICE_STAGGER_SECONDS,
       );
     });
     // Close the arpeggio on the root an octave up, one stagger after the last note.
-    const rootPitchClass = selection.retainedPitchClasses[0];
+    const rootPitchClass = pitchClasses[0];
     if (rootPitchClass !== undefined) {
       this.startVoice(
         context,
         masterGain,
-        midiToFrequency(
-          pitchClassToMidi(rootPitchClass, selection.palette.preset.registerOffset) + AUDIO_OCTAVE_SEMITONES,
-        ),
-        selection.palette.preset,
-        start + selection.retainedPitchClasses.length * AUDIO_VOICE_STAGGER_SECONDS,
+        midiToFrequency(pitchClassToMidi(rootPitchClass, preset.registerOffset) + AUDIO_OCTAVE_SEMITONES),
+        preset,
+        start + pitchClasses.length * AUDIO_VOICE_STAGGER_SECONDS,
       );
     }
-    this.startLoop(context, masterGain, selection.palette.preset.loopAssetId);
+    this.startLoop(context, masterGain, preset.loopAssetId);
   }
 
   private startVoice(

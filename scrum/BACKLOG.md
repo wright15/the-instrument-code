@@ -101,7 +101,7 @@ No existing sonified paths, cadences, or golden catalog
 (`orrery/README.md:3-4,30-33,176-184`; `scrum/EPIC-009-harmonic-orrery-mvp.md:92-101`):
 audio mutates nothing, no new fences — recorded here, not in the ledger.
 
-### BL-020 — Debugger foundation: sonified transition paths [ACTIVE]
+### BL-020 — Debugger foundation: sonified transition paths [DONE]
 
 Audio rendering of state-machine transition paths (Orrery or companion surface).
 Extension of `ORR-404:19` (static mode-change events only — no path sonification exists).
@@ -110,6 +110,14 @@ Exit: any two connected states heard as a move.
 Candidate sonification mappings (decision deferred to the sprint's design discussion):
 rest-state/bucket reading (sounds still-set 1111 as pure stack; HYPOTHESIS) vs.
 positional/cursor mapping — see `plan/harmonic-comprehension-map.md` §2.1-2.2.
+
+**Landed:** both mappings layered, per maintainer ruling — cursor base (admitted) always on;
+bucket overlay opt-in behind a labeled toggle (hypothesis, offered not asserted; provisional
+orbit-prefix formalization). Three substrates share the replay contract: Orrery route, Q orbit
+(cursor + overlay), Andalusian cadence. `scrum/plan/bl-020-debugger-foundation-memo.md`.
+Suite 155 passed; tsc and all Orrery checks green; no catalog/manifest bytes changed.
+Listening verdicts pending maintainer (recipe in memo). Pre-existing browser-harness
+objective-id mismatch surfaced in memo, untouched.
 
 ### BL-021 — Andalusian cadence (cross-set-class seam edge) [ACTIVE]
 
@@ -120,6 +128,11 @@ sonified — this item gives admitted theory a voice, plus per-hop legality veri
 Register as named golden path. Exit: cadence plays, every hop legal, seam flagged in trace.
 Theory hook (hypothesis only, no repo source): seam move as audible signature of a D7-class
 govern pull across a seam — links to BL-033.
+
+**Progress (from BL-020 sprint):** cadence replay planner landed (`planAndalusianCadenceReplay`):
+four hops, per-hop membership check against the admitted collections, seam hop flagged in trace
+and UI. Remaining for this item: maintainer listening verdict (memo) and golden-path
+registration once BL-023's catalog format lands.
 
 ### BL-022 — Parallel minor modulation (mode-axis edge) [ACTIVE]
 
@@ -228,6 +241,27 @@ Read-only analysis of Governor Seat Invariant coverage (70-anchor verified:
 proposer-defined phase classes (`phase-class`, `2×5×7`: 0 repo hits — hypothesis, not source).
 Cheap; feeds Phase A iff informative.
 
+### BL-044 — Court voicing surface audit vs. canon [DONE]
+
+Pre-D5-era C0–C4 voicing feature (palette thinning, pole labels) predates
+the engagement-semantics freeze (BL-010) and the bucket-layer hypothesis
+(comprehension map). Audit: (1) reconcile C0–C4 labels to engagement
+semantics per canon; (2) verify position→mask-pitch mappings against
+admitted Court records (CRT-302/304, schema); (3) decide thinning's fate:
+retire, or relabel as explicit "mask filter demo"; (4) document which
+pitch-color associations are hypothesis-layer vs. canon-layer, with the
+toggle/label convention consistent with the bucket overlay elsewhere.
+Sprint. Outcome: relabeled/verified surface + audit note in memo.
+
+**Landed:** audit note `scrum/plan/bl-044-court-voicing-audit.md`. Certify table: all five
+positions match `court-rooted-positions.json` field-for-field (mask, pitchClasses, pole
+vector, internalPoles, kappa); registry clean, no drift. Labels relabeled to engagement
+semantics; three-layer disclosure sentence added to the voicing readout. Thinning retired
+from the voicing path — Court pentatonic now voices the position's own five registered mask
+pitches; `filterPitchClasses` retained for demo use, the "mask filter demo" explicitly not
+built. Tests pin the layer boundary (position-identity voicing + sharpened-member
+assertions).
+
 ---
 
 ## TIER 2 — GOVERNANCE REMAINDER (parked until pre-release)
@@ -277,3 +311,5 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v0.3 | BL-031(b) fixture correction: tonic-for-tonic handoff relation; B Lydian ↔ C Locrian replaces C Lydian ↔ B Locrian as flat-side seam; C Ionian ↔ C Aeolian reclassified as control; mirror relation as census prediction. Graduated to ACTIVE in this commit. |
 | v0.4 | BL-010 landed DONE: Q table authored under the freeze memo; suite green; INV-5 graduation deferred. Next: BL-011 gated on maintainer decision; debugger program (BL-020–023) open. |
 | v0.5 | Comprehension map landed (`plan/harmonic-comprehension-map.md`): admitted/hypothesis/open- canon tags; antiparallel direction-only precision fix; D4 qualifier carried; Sun/Moon pole question recorded with both citations. One-line cross-refs added to BL-020/031/033. |
+| v0.6 | BL-020 landed DONE: layered cursor/bucket replay, three substrates (route, Q orbit, cadence), 155 tests green, no catalog/manifest bytes changed; listening verdicts pending. BL-021 cadence planner landed as BL-020 acceptance; maintainer listening verdict remains. Pre-existing browser-harness objective-id mismatch surfaced. |
+| v0.7 | BL-044 landed DONE: Court voicing surface audited — registry clean (certify table in audit memo), labels relabeled to engagement semantics, three-layer disclosure added, thinning retired in favor of position-identity voicing, layer-boundary tests added. |

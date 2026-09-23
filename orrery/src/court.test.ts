@@ -21,6 +21,7 @@ describe("Harmonic Orrery Court presentation", () => {
         ratio: formatCourtRatio(position.kappaCourt),
         poles: position.poleVector,
         internalPoles: position.internalPoles,
+        engagement: position.engagementLabel,
       })),
     ).toEqual([
       {
@@ -32,6 +33,7 @@ describe("Harmonic Orrery Court presentation", () => {
         ratio: "0 / 1",
         poles: "0000",
         internalPoles: [],
+        engagement: "seed / all elements external",
       },
       {
         id: "C1",
@@ -42,6 +44,7 @@ describe("Harmonic Orrery Court presentation", () => {
         ratio: "1 / 4",
         poles: "1000",
         internalPoles: ["Mars"],
+        engagement: "Mars internalized / three external",
       },
       {
         id: "C2",
@@ -52,6 +55,7 @@ describe("Harmonic Orrery Court presentation", () => {
         ratio: "1 / 2",
         poles: "1100",
         internalPoles: ["Mars", "Jupiter"],
+        engagement: "Mars + Jupiter internalized / engine hinge",
       },
       {
         id: "C3",
@@ -62,6 +66,7 @@ describe("Harmonic Orrery Court presentation", () => {
         ratio: "3 / 4",
         poles: "1110",
         internalPoles: ["Mars", "Jupiter", "Venus"],
+        engagement: "Mars + Jupiter + Venus internalized / Saturn external",
       },
       {
         id: "C4",
@@ -72,6 +77,7 @@ describe("Harmonic Orrery Court presentation", () => {
         ratio: "1 / 1",
         poles: "1111",
         internalPoles: ["Mars", "Jupiter", "Venus", "Saturn"],
+        engagement: "fully realized / all elements internal",
       },
     ]);
   });

@@ -155,6 +155,7 @@
             <button id="start-route" type="button" disabled>Start route here</button>
             <button id="resume-route" type="button" hidden>Resume route position</button>
             <button id="clear-route" type="button" disabled>Clear local route</button>
+            <button id="replay-route" type="button" disabled>Replay route sound</button>
           </div>
         </div>
         <div class="legal-move-block">
@@ -179,6 +180,17 @@
           <button id="apply-legal-move" class="apply-legal-move" type="button" disabled>
             Apply selected local move
           </button>
+          <div class="move-actions" aria-label="Path replay experiments">
+            <button id="replay-q-orbit" type="button" disabled>Replay Q orbit</button>
+            <button id="replay-andalusian" type="button" disabled>Replay Andalusian cadence</button>
+            <label class="field-hint">
+              <input id="replay-bucket-overlay" type="checkbox" disabled />
+              Bucket overlay (hypothesis, not canonical)
+            </label>
+          </div>
+          <p id="replay-status" class="field-hint" role="status" aria-live="polite">
+            Enable &amp; play sound to replay paths. Cursor layer is admitted; the bucket overlay is an opt-in experiment.
+          </p>
         </div>
         <div class="route-history-block">
           <p class="field-label">Local route history</p>
