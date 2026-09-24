@@ -619,7 +619,7 @@ describe("Path replay engine", () => {
       expect(engine.snapshot().detail).toContain("hop 1 / 2");
 
       vi.advanceTimersByTime(AUDIO_REPLAY_STEP_SECONDS * 1000);
-      expect(pitchClassesFromOscillators(context).slice(baseline + 2)).toEqual([2, 9, 2]);
+      expect(pitchClassesFromOscillators(context).slice(baseline + 2)).toEqual([2, 9]);
       expect(engine.snapshot().detail).toContain("hop 2 / 2");
 
       vi.advanceTimersByTime(AUDIO_REPLAY_STEP_SECONDS * 1000);
@@ -681,6 +681,116 @@ describe("Path replay engine", () => {
       expect(context.oscillators).toHaveLength(baseline);
       expect(context.bufferSources).toHaveLength(1);
       expect(engine.snapshot().replay).toBe(true);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it("renders replay hops chordally: one onset for colors, tone plus octave for the cursor", async () => {
+    vi.useFakeTimers();
+    try {
+      const context = new FakeAudioContext();
+      const fake = audioRuntime(context);
+      const engine = new OrreryAudioEngine(fake.runtime);
+
+      engine.select(node("Sun"), "C0");
+      await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID);
+      const baseline = context.oscillators.length;
+
+      engine.replayPath([
+        { label: "bucket color", pitchClasses: [0, 4, 7], preset: OFFICE_PALETTES.Mars.preset },
+        { label: "cursor tone", pitchClasses: [7], preset: OFFICE_PALETTES.Mars.preset },
+      ]);
+
+      const firstHop = context.oscillators.slice(baseline);
+      expect(firstHop).toHaveLength(3);
+      expect(new Set(firstHop.map((voice) => voice.startTimes[0])).size).toBe(1);
+      expect(pitchClassesFromOscillators(context).slice(baseline)).toEqual([0, 4, 7]);
+
+      vi.advanceTimersByTime(AUDIO_REPLAY_STEP_SECONDS * 1000);
+      const secondHop = context.oscillators.slice(baseline + 3);
+      expect(secondHop).toHaveLength(2);
+      expect(new Set(secondHop.map((voice) => voice.startTimes[0])).size).toBe(1);
+      expect(pitchClassesFromOscillators(context).slice(baseline + 3)).toEqual([7, 7]);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it("waits for the hop tail before the next hop (sequential replay)", async () => {
+    vi.useFakeTimers();
+    try {
+      const context = new FakeAudioContext();
+      const fake = audioRuntime(context);
+      const engine = new OrreryAudioEngine(fake.runtime);
+
+      engine.select(node("Sun"), "C0");
+      await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID);
+      const baseline = context.oscillators.length;
+
+      // Mars releaseSeconds is 0.28, so the effective step is 0.33s even
+      // though a 0.1s step was requested.
+      engine.replayPath(
+        [
+          { label: "hop A", pitchClasses: [0], preset: OFFICE_PALETTES.Mars.preset },
+          { label: "hop B", pitchClasses: [7], preset: OFFICE_PALETTES.Mars.preset },
+        ],
+        { stepSeconds: 0.1 },
+      );
+      expect(context.oscillators).toHaveLength(baseline + 2);
+
+      vi.advanceTimersByTime(100);
+      expect(context.oscillators).toHaveLength(baseline + 2);
+
+      vi.advanceTimersByTime(250);
+      expect(context.oscillators).toHaveLength(baseline + 4);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it("keeps every voice of a large bucket hop sounding past the selection voice cap", async () => {
+    vi.useFakeTimers();
+    try {
+      const context = new FakeAudioContext();
+      const fake = audioRuntime(context);
+      const engine = new OrreryAudioEngine(fake.runtime);
+
+      engine.select(node("Sun"), "C0");
+      await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID);
+      const baseline = context.oscillators.length;
+
+      const chromatic = Array.from({ length: 12 }, (_value, pitchClass) => pitchClass);
+      engine.replayPath([{ label: "full color", pitchClasses: chromatic, preset: OFFICE_PALETTES.Mars.preset }]);
+
+      const hopVoices = context.oscillators.slice(baseline);
+      expect(hopVoices).toHaveLength(12);
+      expect(hopVoices.every((voice) => voice.stopTimes.length === 1)).toBe(true);
+      expect(pitchClassesFromOscillators(context).slice(baseline)).toEqual(chromatic);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it("accepts the reserved seam emphasis without altering rendering yet", async () => {
+    vi.useFakeTimers();
+    try {
+      const context = new FakeAudioContext();
+      const fake = audioRuntime(context);
+      const engine = new OrreryAudioEngine(fake.runtime);
+
+      engine.select(node("Sun"), "C0");
+      await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID);
+      const baseline = context.oscillators.length;
+
+      engine.replayPath([
+        { label: "cadence seam", pitchClasses: [4, 8, 11], preset: OFFICE_PALETTES.Jupiter.preset, emphasis: "seam" },
+      ]);
+
+      const voices = context.oscillators.slice(baseline);
+      expect(voices).toHaveLength(3);
+      expect(new Set(voices.map((voice) => voice.startTimes[0])).size).toBe(1);
+      expect(pitchClassesFromOscillators(context).slice(baseline)).toEqual([4, 8, 11]);
     } finally {
       vi.useRealTimers();
     }

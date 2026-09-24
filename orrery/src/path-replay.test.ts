@@ -253,5 +253,7 @@ describe("Andalusian cadence planner", () => {
     expect(voices).toHaveLength(4);
     expect(voices[3].label).toContain("[seam crossing]");
     expect(voices[0].preset).toBe(OFFICE_PALETTES.Jupiter.preset);
+    expect(voices[3].emphasis).toBe("seam");
+    expect(voices.slice(0, 3).every((voice) => voice.emphasis === "none")).toBe(true);
   });
 });

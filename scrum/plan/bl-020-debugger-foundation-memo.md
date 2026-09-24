@@ -68,6 +68,45 @@ absences under each mapping; (b) does any bucket behavior survive contact with t
   maintainer-verified in session but never repo-recorded; the provisional accumulation
   rule is this sprint's formalization, explicitly provisional.
 
+## Timing fix (maintainer ear report)
+
+The first listening pass found hops cutting off the sequence. Root causes and fixes:
+
+1. **Stagger leaked into replay.** The 0.5s per-voice arpeggio (a single-selection
+   habit) spread multi-note hops across seconds. Replay is now **chordal**: all voices of a
+   multi-note hop share one onset, and the octave double is reserved for single-tone cursor
+   hops. A bucket color is a simultaneity, not a process; arpeggio stays exclusive to
+   single-selection inspection, where hearing a voicing's contents is the point.
+   (`AUDIO_VOICE_STAGGER_SECONDS` retired from the replay path.)
+2. **Tail cancellation.** The next hop's crossfade faded the previous hop at a fixed step
+   shorter than the release tail. Replay is now **sequential**: the next tick is
+   `max(stepSeconds, releaseSeconds + 0.05)`, so every scheduled onset sounds.
+3. **Voice-cap eviction.** The 8-voice cap evicted future-scheduled voices, silencing the
+   first onsets of large bucket hops. Eviction now removes only already-sounding voices and
+   allows temporary overflow when every slot is a future onset (the cap is a resource
+   guard, not a musical rule).
+4. **Reserved emphasis parameter.** `ReplayVoice.emphasis` (`"none" | "seam"`) rides
+   planner → engine today; the cadence's seam hop carries `"seam"`. The engine ignores it
+   for now — BL-021's golden-path registration decides any onset separation/emphasis.
+
+Onset policy is now per-mode: chordal for multi-note bucket hops, tone+octave for cursor
+hops, arpeggio only for single selections. Effect: the Q orbit compacts (~13 hops, ~1s
+apart) and completion-at-5 / closure-at-12 become audible **events** rather than arpeggio
+blur — a direct upgrade to the listening recipe above.
+
+## Tetrachord observation (listening finding, deferred)
+
+The report "it would be nice to hear the cadence in its tetrachord form instead of
+arpeggiated" points at vertical structure. Two candidate readings, both deferred to the
+audition-mode experiment (state selector + bucket voicing + optional cursor), neither built:
+
+1. **Tetrachord-as-voicing:** the four still-set states might sound together as one
+   composite sonority when the orbit reaches rest — the engine's resting configuration as one
+   chord rather than four separate tones/silences. ("What does the boundary sound like?")
+2. **Tetrachord-as-structure:** if bucket mapping extends to all 16 states, the four
+   still-set members' pitch sets might share enough content to hear as a family; whether they
+   do or don't is itself evidence about the still set's coherence as a boundary region.
+
 ## Exit
 
 BL-020 implementation exit met: any two connected states can be heard as a move

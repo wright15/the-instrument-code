@@ -115,9 +115,15 @@ positional/cursor mapping — see `plan/harmonic-comprehension-map.md` §2.1-2.2
 bucket overlay opt-in behind a labeled toggle (hypothesis, offered not asserted; provisional
 orbit-prefix formalization). Three substrates share the replay contract: Orrery route, Q orbit
 (cursor + overlay), Andalusian cadence. `scrum/plan/bl-020-debugger-foundation-memo.md`.
-Suite 155 passed; tsc and all Orrery checks green; no catalog/manifest bytes changed.
+Suite 161 passed; tsc and all Orrery checks green; no catalog/manifest bytes changed.
 Listening verdicts pending maintainer (recipe in memo). Pre-existing browser-harness
 objective-id mismatch surfaced in memo, untouched.
+
+**Timing fix (post-listening):** replay onset is per-mode — chordal for multi-note bucket
+hops, tone+octave for cursor hops, arpeggio only for single selections; staggering retired
+from the replay path. Hops are sequential (`max(step, release tail)`) so no scheduled onset
+is cut; the voice-cap evicts only sounding voices. `ReplayVoice.emphasis` reserved for
+BL-021 seam rendering (engine accepts, ignores today).
 
 ### BL-021 — Andalusian cadence (cross-set-class seam edge) [ACTIVE]
 
@@ -132,7 +138,9 @@ govern pull across a seam — links to BL-033.
 **Progress (from BL-020 sprint):** cadence replay planner landed (`planAndalusianCadenceReplay`):
 four hops, per-hop membership check against the admitted collections, seam hop flagged in trace
 and UI. Remaining for this item: maintainer listening verdict (memo) and golden-path
-registration once BL-023's catalog format lands.
+registration once BL-023's catalog format lands. Seam emphasis is reserved
+(`ReplayVoice.emphasis`, planner sets `"seam"`, engine accepts and ignores) pending this
+item's golden-path onset-separation decision.
 
 ### BL-022 — Parallel minor modulation (mode-axis edge) [ACTIVE]
 
@@ -313,3 +321,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v0.5 | Comprehension map landed (`plan/harmonic-comprehension-map.md`): admitted/hypothesis/open- canon tags; antiparallel direction-only precision fix; D4 qualifier carried; Sun/Moon pole question recorded with both citations. One-line cross-refs added to BL-020/031/033. |
 | v0.6 | BL-020 landed DONE: layered cursor/bucket replay, three substrates (route, Q orbit, cadence), 155 tests green, no catalog/manifest bytes changed; listening verdicts pending. BL-021 cadence planner landed as BL-020 acceptance; maintainer listening verdict remains. Pre-existing browser-harness objective-id mismatch surfaced. |
 | v0.7 | BL-044 landed DONE: Court voicing surface audited — registry clean (certify table in audit memo), labels relabeled to engagement semantics, three-layer disclosure added, thinning retired in favor of position-identity voicing, layer-boundary tests added. |
+| v0.8 | Replay timing fix from maintainer listening: chordal replay onset (stagger retired from replay), sequential hop timing, eviction guard for future-scheduled voices; seam emphasis parameter reserved for BL-021; tetrachord listening finding deferred to audition mode. 161 tests green. |

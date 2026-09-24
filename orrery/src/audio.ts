@@ -348,11 +348,14 @@ export interface AudioEngineState {
 /**
  * A single voiced hop of a path replay. Provided by the path-replay planner;
  * the engine renders it and never computes transition semantics itself.
+ * `emphasis` is reserved for golden-path seam rendering (BL-021); the engine
+ * accepts it today but does not alter timing or voicing from it yet.
  */
 export interface ReplayVoice {
   label: string;
   pitchClasses: readonly number[];
   preset: TimbrePreset;
+  emphasis?: "none" | "seam";
 }
 
 export interface ReplayPathOptions {
@@ -363,6 +366,7 @@ export interface ReplayPathOptions {
 interface ActiveVoice {
   source: OscillatorNodeLike;
   envelope: GainNodeLike;
+  startTime: number;
 }
 
 interface ActiveLoop {
@@ -718,16 +722,16 @@ export class OrreryAudioEngine {
       return;
     }
 
-    this.crossfadeVoicing(voice.pitchClasses, voice.preset);
+    this.crossfadeVoicing(voice.pitchClasses, voice.preset, true);
     this.replayOptions.onHop?.(voice, this.replayIndex, this.replayVoices.length);
     this.replaceState({
       detail: `Path replay hop ${this.replayIndex + 1} / ${this.replayVoices.length}: ${voice.label}`,
     });
     this.replayIndex += 1;
-    this.replayTimer = setTimeout(
-      () => this.runReplayTick(),
-      (this.replayOptions.stepSeconds ?? AUDIO_REPLAY_STEP_SECONDS) * 1000,
-    );
+    // Sequential replay: the next hop never cuts the current hop's tail.
+    const stepSeconds = this.replayOptions.stepSeconds ?? AUDIO_REPLAY_STEP_SECONDS;
+    const delaySeconds = Math.max(stepSeconds, voice.preset.releaseSeconds + 0.05);
+    this.replayTimer = setTimeout(() => this.runReplayTick(), delaySeconds * 1000);
   }
 
   private resolveChordVoices(pitchClasses: readonly number[]): number[] {
@@ -986,7 +990,11 @@ export class OrreryAudioEngine {
     this.crossfadeVoicing(selection.retainedPitchClasses, selection.palette.preset);
   }
 
-  private crossfadeVoicing(pitchClasses: readonly number[], preset: TimbrePreset): void {
+  private crossfadeVoicing(
+    pitchClasses: readonly number[],
+    preset: TimbrePreset,
+    chordal = false,
+  ): void {
     const context = this.context;
     const masterGain = this.masterGain;
     if (!context || !masterGain) {
@@ -1010,7 +1018,7 @@ export class OrreryAudioEngine {
       this.activeLoop = undefined;
     }
 
-    this.startVoicing(context, masterGain, pitchClasses, preset, now + 0.02);
+    this.startVoicing(context, masterGain, pitchClasses, preset, now + 0.02, chordal);
   }
 
   private startSelection(
@@ -1028,11 +1036,38 @@ export class OrreryAudioEngine {
     pitchClasses: readonly number[],
     preset: TimbrePreset,
     start: number,
+    chordal = false,
   ): void {
     // An empty hop is an intentional silence (e.g. the cursor mapping at the
     // still anchor), so release-only crossfades stay silent instead of
     // restarting the percussion loop.
     if (pitchClasses.length === 0) {
+      return;
+    }
+    // Replay hops are chordal: a bucket color is a simultaneity, not a
+    // process. Single-tone cursor hops keep the tone + octave double without
+    // stagger. The 0.5s arpeggio remains exclusive to single selections,
+    // where inspecting a voicing's contents is the point.
+    if (chordal) {
+      for (const pitchClass of pitchClasses) {
+        this.startVoice(
+          context,
+          masterGain,
+          midiToFrequency(pitchClassToMidi(pitchClass, preset.registerOffset)),
+          preset,
+          start,
+        );
+      }
+      if (pitchClasses.length === 1) {
+        this.startVoice(
+          context,
+          masterGain,
+          midiToFrequency(pitchClassToMidi(pitchClasses[0], preset.registerOffset) + AUDIO_OCTAVE_SEMITONES),
+          preset,
+          start,
+        );
+      }
+      this.startLoop(context, masterGain, preset.loopAssetId);
       return;
     }
     pitchClasses.forEach((pitchClass, index) => {
@@ -1067,7 +1102,15 @@ export class OrreryAudioEngine {
     gainScale = 1,
   ): void {
     while (this.activeVoices.length >= AUDIO_VOICE_LIMIT) {
-      this.activeVoices.shift()?.source.stop(context.currentTime);
+      const evictableIndex = this.activeVoices.findIndex(
+        (activeVoice) => activeVoice.startTime <= context.currentTime,
+      );
+      if (evictableIndex < 0) {
+        // All slots hold voices scheduled in the future: allow temporary
+        // overflow rather than cancelling a scheduled onset before it sounds.
+        break;
+      }
+      this.activeVoices.splice(evictableIndex, 1)[0]?.source.stop(context.currentTime);
     }
 
     const source = context.createOscillator();
@@ -1084,7 +1127,7 @@ export class OrreryAudioEngine {
     source.onended = () => {
       this.activeVoices = this.activeVoices.filter((voice) => voice.source !== source);
     };
-    this.activeVoices.push({ source, envelope });
+    this.activeVoices.push({ source, envelope, startTime: start });
     source.start(start);
     source.stop(end);
   }

@@ -345,6 +345,9 @@ export function toReplayVoices(plan: ReplayPlan): ReplayVoice[] {
   return plan.hops.map((hop) => ({
     label: hop.label,
     pitchClasses: [...hop.pitchClasses],
+    // Reserved: the engine accepts seam emphasis but does not render it yet;
+    // golden-path registration (BL-021) decides onset separation/emphasis.
+    emphasis: hop.kind === "cadence" && hop.seamCrossing ? "seam" : "none",
     preset:
       hop.kind === "route"
         ? hop.selection.palette.preset
