@@ -84,19 +84,23 @@ Suite green (13 passed) including the completion/closure pair. **INV-5 graduatio
 deferred** — documented decision point, no claim event opened; the §6(4) composition
 hypothesis carries forward to BL-011.
 
-### BL-011 — Court engagement correspondence admission (claim event) [ACTIVE]
+### BL-011 — Court engagement correspondence admission (claim event) [DONE]
 
-Maintainer decision 2026-09-25: **open with redefined scope**. The claim: the Q substrate's
-engagement states and the admitted Court registry positions are the same object family
-(engagement-Cn = position-Cn) with the element↔degree mapping derived
-(Fire 4→5, Air 9→10, Water 2→3, Earth 7→8), the rejected polarity recorded with reason.
-Ceremony plan: [`plan/bl-011-ceremony-plan.md`](plan/bl-011-ceremony-plan.md). Shape:
-candidate record + compliance receipt + append-only ledger entry + born-compliant evidence
-per `provenance/EVIDENCE_BINDING_CONVENTION.md` §§1-3, gated on maintainer review of the
-final candidate. **SPEC-001 §6(4) (overlay↔GOV-517 input lanes) remains separately open
-and is not resolved by this claim.** Evidence: `plan/fivefold-mesh-adjudication.md` (A1/A2),
-registry pairing, BL-044 certification. No ledger entry, admission, or claim event until
-the maintainer reviews the final candidate.
+Maintainer decision 2026-09-25: opened with redefined scope; admitted the same day under
+GOV-522.
+
+**Landed:** `SPEC-FIVEFOLD-COURT-CORRESPONDENCE-001` v0.1.1
+(`docs/specs/fivefold-court-engagement-correspondence-v0.1.0.md`) admitted in one atomic
+landing with receipt `qa/specs/bl-011-correspondence-admission.json`, ENTRY 13,
+inventories, and the comprehension-map §1.5 / spec-v3 §1b status propagation. Claim:
+engagement-Cn = position-Cn with the derived element↔degree mapping (Fire 4→5, Air 9→10,
+Water 2→3, Earth 7→8); rejected polarity recorded with reason and retained only as the
+Orrery counterfactual overlay. Machine check:
+`tests/test_court_engagement_correspondence.py`, green before admission. **SPEC-001 §6(4)
+(overlay↔GOV-517 input lanes) remains separately open and is not resolved by this claim.**
+Adjudication: `plan/fivefold-mesh-adjudication.md` (A1/A2); corrected spec:
+`plan/fivefold-mesh-spec-v3.md`. Full validate observed first stop
+`STALE_TWIN_HUB_CONVERGENCE` (predeclared, recorded); no promotion or green-release claim.
 
 ---
 
@@ -329,3 +333,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v0.6 | BL-020 landed DONE: layered cursor/bucket replay, three substrates (route, Q orbit, cadence), 155 tests green, no catalog/manifest bytes changed; listening verdicts pending. BL-021 cadence planner landed as BL-020 acceptance; maintainer listening verdict remains. Pre-existing browser-harness objective-id mismatch surfaced. |
 | v0.7 | BL-044 landed DONE: Court voicing surface audited — registry clean (certify table in audit memo), labels relabeled to engagement semantics, three-layer disclosure added, thinning retired in favor of position-identity voicing, layer-boundary tests added. |
 | v0.8 | Replay timing fix from maintainer listening: chordal replay onset (stagger retired from replay), sequential hop timing, eviction guard for future-scheduled voices; seam emphasis parameter reserved for BL-021; tetrachord listening finding deferred to audition mode. 161 tests green. |
+| v0.9 | Adjudication arc: fivefold mesh spec v2.2.0 adjudicated read-only (registry polarity retained; session flip rejected), corrected spec v3 landed, BL-011 opened and admitted under GOV-522 same day as `SPEC-FIVEFOLD-COURT-CORRESPONDENCE-001` v0.1.1 with receipt + ENTRY 13 + status propagation; correspondence machine check green before admission; manifest 1,155. |
