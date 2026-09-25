@@ -84,12 +84,19 @@ Suite green (13 passed) including the completion/closure pair. **INV-5 graduatio
 deferred** — documented decision point, no claim event opened; the §6(4) composition
 hypothesis carries forward to BL-011.
 
-### BL-011 — Overlay correspondence evidence (CONDITIONAL) [ACTIVE]
+### BL-011 — Court engagement correspondence admission (claim event) [ACTIVE]
 
-Only on explicit maintainer decision that the elemental overlay becomes reality: build the
-§6 item 4 correspondence evidence (`:292`). Asymmetry verified (`:91-95`): I1 distance-2 pairs,
-I2 A-tier CONSTRUCTS, **I3 empty**, I4 A-tier masks — the Water lane is free design.
-Must not rewrite historical execution (`:165-168`). Sprint.
+Maintainer decision 2026-09-25: **open with redefined scope**. The claim: the Q substrate's
+engagement states and the admitted Court registry positions are the same object family
+(engagement-Cn = position-Cn) with the element↔degree mapping derived
+(Fire 4→5, Air 9→10, Water 2→3, Earth 7→8), the rejected polarity recorded with reason.
+Ceremony plan: [`plan/bl-011-ceremony-plan.md`](plan/bl-011-ceremony-plan.md). Shape:
+candidate record + compliance receipt + append-only ledger entry + born-compliant evidence
+per `provenance/EVIDENCE_BINDING_CONVENTION.md` §§1-3, gated on maintainer review of the
+final candidate. **SPEC-001 §6(4) (overlay↔GOV-517 input lanes) remains separately open
+and is not resolved by this claim.** Evidence: `plan/fivefold-mesh-adjudication.md` (A1/A2),
+registry pairing, BL-044 certification. No ledger entry, admission, or claim event until
+the maintainer reviews the final candidate.
 
 ---
 
