@@ -26,6 +26,12 @@ behavior untouched; route/Court state remains local experience data.
   window (the pure stack). **Labeled in code and UI as hypothesis, offered not asserted.**
   The exact session-level bucket mapping was not repo-recorded; if the maintainer's
   intended rule differs, this is a sprint-priced adjustment.
+- **Adjudication note (2026-09-25):** `scrum/plan/fivefold-mesh-adjudication.md` A1
+  resolves the polarity question against the overlay's current rest reading. The
+  keep-or-sharpen form is registry-grounded; the overlay's still-anchor-sounds-the-window
+  behavior embodies the rejected polarity and is retained as the
+  **counterfactual-polarity experiment** — labeled, toggleable, unasserted. No code or
+  behavior change; the cursor mapping remains the admitted base.
 - **Q substrate timbre:** Mercury A0 preset (Quintessence engine emblem) — authored
   presentation choice, no correspondence claim.
 - **Cadence timbre:** Jupiter A0 preset (Aeolian office) — authored presentation choice.
