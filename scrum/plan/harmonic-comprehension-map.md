@@ -48,8 +48,8 @@ gated SPEC-001 §6(4). Source: freeze memo §2 (repaired wording and motivation)
 
 Precision note (2026-09-25): the gate named here is the composition's use as the SPEC-001
 §6(4) bridge (overlay↔GOV-517 input lanes; freeze memo §4). The engagement↔position
-correspondence (§1.5) is a separate new Tier-2 admission candidate, **not** a §6(4)
-resolution; §6(4) remains separately open
+correspondence (§1.5) is a separate new Tier-2 admission (admitted per ENTRY 13), **not** a
+§6(4) resolution; §6(4) remains separately open
 (`scrum/plan/fivefold-mesh-adjudication.md`, pre-landing corrections).
 
 ### 1.4 Teleology completes early
@@ -72,8 +72,11 @@ Mars -> Jupiter -> Venus -> Saturn (Fire -> Air/Wind -> Water -> Earth). The ori
 `seven-governors-court-substrate-v0.1.0/canonical/court-rooted-positions.json:11-36`).
 Field-for-field certification: `scrum/plan/bl-044-court-voicing-audit.md:15-21`. The
 identification of these Court engagement configurations with the Q substrate's 16-state
-states is the **BL-011 candidate claim** — `[PROPOSAL — new Tier-2 canonical admission]`,
-not yet admitted; SPEC-001 §6(4) (overlay↔GOV-517 input lanes) remains separately open.
+states is **admitted** as `SPEC-FIVEFOLD-COURT-CORRESPONDENCE-001` v0.1.1
+(`provenance/DECISION_LEDGER.md` ENTRY 13; receipt
+`qa/specs/bl-011-correspondence-admission.json`; machine check
+`tests/test_court_engagement_correspondence.py`). SPEC-001 §6(4) (overlay↔GOV-517 input
+lanes) remains separately open.
 
 ## 2. Hypotheses
 

@@ -70,25 +70,26 @@ disjoint XOR supports, and it was already adjudicated as a layer confusion in BL
 overlay's counterfactual version — labeled, toggleable, unasserted
 (`orrery/src/path-replay.ts:15-19`; `scrum/plan/bl-020-debugger-foundation-memo.md`).
 
-## §1b Forced correspondence (BL-011 candidate)
+## §1b Forced correspondence (admitted)
 
-`[PROPOSAL — new canonical admission, TIERING claim-catalog class 2 (docs/TIERING.md:18-20);
-BL-011 candidate claim]` Given the identification engagement-Cn = registry-position-Cn, the
-element-to-degree mapping is forced with zero free choices: Fire <-> 4->5, Air <-> 9->10,
-Water <-> 2->3, Earth <-> 7->8 (canon internalization order Mars -> Jupiter -> Venus ->
-Saturn with disjoint supports and Gram matrix `2I_4`; `framework/AGENTS.md:285-302`). The
-identification itself is the claim; no admitted record asserts or denies it, and the
-derivation is conditional on it.
+`[ADMITTED — SPEC-FIVEFOLD-COURT-CORRESPONDENCE-001 v0.1.1, ENTRY 13; TIERING claim-catalog
+class 2 (docs/TIERING.md:18-20)]` Given the admitted identification
+engagement-Cn = registry-position-Cn, the element-to-degree mapping is forced with zero
+free choices: Fire <-> 4->5, Air <-> 9->10, Water <-> 2->3, Earth <-> 7->8 (canon
+internalization order Mars -> Jupiter -> Venus -> Saturn with disjoint supports and Gram
+matrix `2I_4`; `framework/AGENTS.md:285-302`). The identification is admitted at
+configuration level; the derivation above is its declared content. Machine check:
+`tests/test_court_engagement_correspondence.py`.
 
 **Scope note (binding).** This is **not** a SPEC-001 §6(4) resolution. §6(4) gates the
 overlay-to-GOV-517 **input-lane** correspondence (I1 distance-2 pairs, I2 A-tier CONSTRUCTS
 transitions, I3 empty, I4 A-tier masks;
 `docs/specs/fivefold_constructs_engine_spec.md:287-296`;
 `qa/gov-517-input-boundary-registration.json:31-61`), which remains entirely unevidenced and
-separately open. The present correspondence is overlay-to-**Court registry positions**: a
-new canonical admission under its own claim record and ceremony. Candidate evidence for
-that ceremony: the registry lines, the BL-044 certification, the bit-order test, the XOR
-geometry, and the adjudication report.
+separately open. The present correspondence is overlay-to-**Court registry positions**:
+admitted as `SPEC-FIVEFOLD-COURT-CORRESPONDENCE-001` v0.1.1 (ENTRY 13). Admission
+evidence: the registry lines, the BL-044 certification, the bit-order test, the XOR
+geometry, the machine-check test, and the adjudication report.
 
 ## §2 Scale universes (corrected)
 

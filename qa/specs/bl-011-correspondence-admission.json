@@ -1,0 +1,186 @@
+{
+  "receiptId": "SPEC-FIVEFOLD-COURT-CORRESPONDENCE-001-admission",
+  "ticket": "GOV-522",
+  "status": "ADMITTED_ATOMIC_LANDING",
+  "admissionDate": "2026-09-25",
+  "ticketVerification": "GOV-522 verified free at execution: the highest allocated GOV-52X in the repository was GOV-521 (qa/conventions/evidence-binding-001-admission.json).",
+  "scope": {
+    "included": [
+      "Candidate record docs/specs/fivefold-court-engagement-correspondence-v0.1.0.md version 0.1.1",
+      "This admission receipt under qa/specs/",
+      "One append-only decision-ledger entry (ENTRY 13)",
+      "Root inventories MANIFEST.json and CHECKSUMS.sha256",
+      "Status propagation: scrum/plan/harmonic-comprehension-map.md section 1.5 (and the section 1.3 precision-note wording); scrum/plan/fivefold-mesh-spec-v3.md section 1b"
+    ],
+    "excluded": [
+      "Runtime, schema, canonical topology, Court runtime, Neo4j projection, graph or policy changes",
+      "GOV-517 re-registration; SPEC-001 section 6(4) input-lane correspondence",
+      "Shared-artifact refresh; D4-bound evidence preservation untouched",
+      "Release promotion or green-release claim"
+    ]
+  },
+  "candidate": {
+    "id": "SPEC-FIVEFOLD-COURT-CORRESPONDENCE-001",
+    "version": "0.1.1",
+    "path": "docs/specs/fivefold-court-engagement-correspondence-v0.1.0.md",
+    "sha256": "d0beb490fdc2a6a1f7cbcb564cd8689ded1c5db2f982c303db1271698424e8a0",
+    "blobOid": "00460da7f13fe7d1222073079a3c0ba431e504a0",
+    "byteLength": 10845,
+    "recipe": "raw-bytes-sha256"
+  },
+  "claim": {
+    "statement": "engagement-Cn = Court registry position Cn: vector equality (0000..1111 with internalPoles cardinality 0..4), mask equality (each position's pitch mask is the keep-or-sharpen chain at that engagement: External keeps the fifth-stack degree, Internal sharpens it to the semitone-raised neighbor), and the element-to-degree mapping derived with zero free choices (Fire 4->5, Air 9->10, Water 2->3, Earth 7->8).",
+    "rejectedAlternative": "internal = keep the stack degree (1111 = pure stack; 0000 = sharpened minor pentatonic). Rejected as a registry claim; survives only as the Orrery bucket overlay's labeled counterfactual experiment.",
+    "scopeExclusions": [
+      "Not SPEC-001 section 6(4) (overlay-to-GOV-517 input lanes I1-I4; separately open, entirely unevidenced)",
+      "Configuration identification only: the Q1 orbit order bears no asserted relationship to Court register moves",
+      "Five canonical positions only; the eleven off-chain 4-bit configurations remain out of scope",
+      "No per-domain element semantics, no INV-5 graduation, no D4/D7 implication",
+      "Document-only: no runtime, schema, Court runtime, topology, graph or policy effect; no poleDisposition writes",
+      "No GOV-517 re-registration; no shared-artifact refresh; no promotion or green-release claim"
+    ]
+  },
+  "reviewedBaseline": {
+    "artifact": "Fivefold Court Engagement Correspondence candidate v0.1.0 (reviewed in session)",
+    "sha256": "353c5696a4659c654cc33d61cbedc9b40ba2a8fe71bf9fa0bc35cce101b1d2b5",
+    "blobOid": "2b86a5c55e258d46ac37baed4584267a3eeff524",
+    "byteLength": 10608,
+    "reviewAuthority": "Maintainer end-to-end review and authorization of the eight-item v0.1.0 -> v0.1.1 status-propagation delta, recorded in session. This records conversation authority, not a cryptographically authenticated signature (ENTRY 11 precedent)."
+  },
+  "authorizedDelta": {
+    "items": [
+      "Header Version resolved to 0.1.1",
+      "Header Status resolved to admitted-by-ledger-reference",
+      "Header Authority re-pointed to ENTRY 13 and this receipt",
+      "Header Work Item allocated as GOV-522",
+      "Section 1.1 tag annotated (admitted per ENTRY 13)",
+      "Section 5 converted from status to causal form and retagged DEFINED",
+      "0.1.1 revision-history row added",
+      "Section 3.1 registry row annotated: section 3.2 JSON Pointers are canonical, line ranges are human locators"
+    ],
+    "verification": "Byte-diff of the staged v0.1.1 against the preserved reviewed v0.1.0 baseline contains exactly these eight items; claim text unchanged."
+  },
+  "finalRehash": {
+    "sha256": "d0beb490fdc2a6a1f7cbcb564cd8689ded1c5db2f982c303db1271698424e8a0",
+    "blobOid": "00460da7f13fe7d1222073079a3c0ba431e504a0",
+    "byteLength": 10845,
+    "computedBy": "executor on the final staged v0.1.1 bytes via shasum -a 256 and git hash-object --no-filters",
+    "independentMaintainerRecomputation": "Not performed inside this session; the digest and subject blob OID are presented for the maintainer's independent verification. The post-commit obligation below is the enforceable R1 check."
+  },
+  "evidence": {
+    "pointerCitations": {
+      "artifact": "seven-governors-court-substrate-v0.1.0/canonical/court-rooted-positions.json",
+      "rule": "CONV-EVIDENCE-BINDING-001 section 1.1 JSON Pointer citations; first live use",
+      "pointers": [
+        "/courtRootedPositions/0/poleRegister/vector",
+        "/courtRootedPositions/1/poleRegister/vector",
+        "/courtRootedPositions/2/poleRegister/vector",
+        "/courtRootedPositions/3/poleRegister/vector",
+        "/courtRootedPositions/4/poleRegister/vector",
+        "/courtRootedPositions/0/pitchClasses",
+        "/courtRootedPositions/1/pitchClasses",
+        "/courtRootedPositions/2/pitchClasses",
+        "/courtRootedPositions/3/pitchClasses",
+        "/courtRootedPositions/4/pitchClasses"
+      ],
+      "pointerVerification": "All ten pointers resolved against the staged registry bytes pre-commit, in the same admission step that verifies line ranges.",
+      "byteIdentity": "Carried by the R1 whole-file binding (recipe raw-bytes-sha256; digest, byte length and subject blob OID recorded in the root inventories for the registry at this commit).",
+      "spanBindings": "None instantiated; the decision ledger is cited by entry identity (ENTRY 12 pattern)."
+    },
+    "machineCheck": {
+      "path": "tests/test_court_engagement_correspondence.py",
+      "role": "pins vector equality, internal-pole vectors, mask equality, forced degree mappings, support disjointness and union, rejected-polarity negative, origin-window equality",
+      "status": "landed in a prior sprint commit; green run recorded below"
+    },
+    "citedRecords": [
+      "scrum/plan/fivefold-mesh-adjudication.md",
+      "scrum/plan/bl-011-ceremony-plan.md",
+      "scrum/plan/bl-044-court-voicing-audit.md (lines 15-21)",
+      "framework/AGENTS.md (lines 279-302)",
+      "framework/TOPOLOGICAL_ANCHORING.md (lines 90-96, 162-184)",
+      "docs/specs/fivefold_constructs_engine_spec.md (lines 130-149, 287-296)",
+      "src/fivefold/quintessence.py (lines 37-41, 47-55)"
+    ]
+  },
+  "consequenceUpdates": {
+    "R6": "The admitted claim's declared consequence updates - scrum/plan/harmonic-comprehension-map.md section 1.5 (plus the section 1.3 precision-note wording) and scrum/plan/fivefold-mesh-spec-v3.md section 1b - land in the same atomic commit; their pre-admission states are recoverable from the parent commit."
+  },
+  "compliance": {
+    "R1": {
+      "status": "OBSERVED_PRE_COMMIT_AND_DECLARED_POST_COMMIT",
+      "observed": "candidate sha256/blobOid/byteLength computed on the staged v0.1.1 bytes; the receipt itself is registered by the same commit and covered by the root inventories.",
+      "declared": "Post-commit, git cat-file blob 00460da7f13fe7d1222073079a3c0ba431e504a0 under recipe raw-bytes-sha256 must equal d0beb490fdc2a6a1f7cbcb564cd8689ded1c5db2f982c303db1271698424e8a0. Declared obligation; not reported as observed before the commit exists."
+    },
+    "R2": {
+      "status": "PASS_DEFINITION_SCOPE",
+      "detail": "First live use of the JSON-Pointer citation rule. No whole-file ledger authority binding is introduced; the decision ledger is cited by entry identity. No span binding is instantiated."
+    },
+    "R3": {
+      "status": "NOT_APPLICABLE",
+      "detail": "No living pipeline payload is regenerated, split or refreshed by this landing."
+    },
+    "R4": {
+      "status": "PASS",
+      "detail": "Recipe raw-bytes-sha256 per provenance/digest-recipes.json (pinned primitive scripts/manifest-utils.mjs); digests computed with standard utilities over raw bytes."
+    },
+    "R5": {
+      "status": "PASS_FOR_ADMISSION_SCOPE",
+      "detail": "No project emitter produced the admission evidence. Inventory emission recorded below."
+    },
+    "R6": {
+      "status": "DECLARED_POST_COMMIT",
+      "detail": "All admission evidence is registered by the same atomic commit; the consequence updates are included in the same commit as recorded above."
+    }
+  },
+  "inventoryEmission": "scripts/build-manifest.mjs via npm run package:manifest; package seven-governors-integrated-release 1.9.0-dev from package.json. The inventory generatedAt value is release-derived, not an execution timestamp.",
+  "predeclaredGates": [
+    {
+      "gate": "STALE_TWIN_HUB_CONVERGENCE",
+      "record": "provenance/DECISION_LEDGER.md ENTRY 10/11/12; qa/specs/fivefold-constructs-001-r1-forensics.md"
+    },
+    {
+      "gate": "STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE",
+      "record": "qa/d4-production-landing.json; docs/specs/fivefold_constructs_engine_spec.md section 4.1"
+    }
+  ],
+  "validation": {
+    "full": {
+      "command": "npm run validate",
+      "exitCode": 1,
+      "firstFailure": "STALE_TWIN_HUB_CONVERGENCE",
+      "outputSha256": "a077cb982706e322aa1b54f113089bef9d98964595086465383e734d48f599c9",
+      "outputBytes": 91671,
+      "scope": "Full command invoked; chained stages stop at the first failing suite. Executed at the pre-commit admission tree with the candidate v0.1.1, ENTRY 13 and the status-propagation edits present; this receipt is the record of the run. No refresh or bypass attempted.",
+      "disposition": "Predeclared, ledger-recorded stale gate; recorded, not repaired. Later chained stages (release, prose consistency, cypher) did not run. No green integrated release claimed."
+    },
+    "focused": {
+      "command": "python3 -m pytest -p no:cacheprovider -q tests/test_court_engagement_correspondence.py tests/test_fivefold_q_table.py",
+      "result": "21 passed"
+    },
+    "manifest": {
+      "command": "npm run validate:manifest",
+      "status": "DECLARED_POST_COMMIT",
+      "detail": "Final envelope check runs after this receipt's bytes are registered; recording an observed PASS inside the receipt itself would falsify the check's subject. The observed result is reported in the session record."
+    }
+  },
+  "postCommitObligation": {
+    "point": "c",
+    "check": "git cat-file blob 00460da7f13fe7d1222073079a3c0ba431e504a0 piped to raw-bytes-sha256 (shasum -a 256)",
+    "expectedSha256": "d0beb490fdc2a6a1f7cbcb564cd8689ded1c5db2f982c303db1271698424e8a0",
+    "status": "DECLARED; result confirmed post-commit in the session record, never written into this receipt as an observed PASS before it can be true."
+  },
+  "evidencePaths": {
+    "new": [
+      "docs/specs/fivefold-court-engagement-correspondence-v0.1.0.md",
+      "qa/specs/bl-011-correspondence-admission.json"
+    ],
+    "modified": [
+      "provenance/DECISION_LEDGER.md",
+      "scrum/plan/harmonic-comprehension-map.md",
+      "scrum/plan/fivefold-mesh-spec-v3.md",
+      "MANIFEST.json",
+      "CHECKSUMS.sha256"
+    ]
+  },
+  "protectedScope": "Existing test suites, preflight controls, D4 evidence, canonical data, schemas, Court runtime, Neo4j projection, shared sidecars and prior receipts were not modified."
+}

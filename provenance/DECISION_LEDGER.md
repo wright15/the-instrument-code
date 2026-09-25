@@ -2484,3 +2484,82 @@ This entry grants no runtime, topology, admission, office, graph, Court or
 global `harmonic.C_H` authority. It does not adopt the convention's future
 enforcement tooling and does not rebind historical evidence. Prior entries and
 prior line anchors remain unchanged; this entry is append-only.
+
+---
+
+## ENTRY 13 - SPEC-FIVEFOLD-COURT-CORRESPONDENCE-001 admission under GOV-522
+
+**Date:** 2026-09-25. **Status:** admitted in one atomic landing; release gates recorded,
+not cleared.
+
+### Decision
+
+The Fivefold Court Engagement Correspondence candidate
+`docs/specs/fivefold-court-engagement-correspondence-v0.1.0.md` (version 0.1.1, artifact
+ID `SPEC-FIVEFOLD-COURT-CORRESPONDENCE-001`) is admitted under GOV-522, together with the
+compliance receipt `qa/specs/bl-011-correspondence-admission.json`, the declared status
+propagation (`scrum/plan/harmonic-comprehension-map.md` section 1.5;
+`scrum/plan/fivefold-mesh-spec-v3.md` section 1b), refreshed root inventories, and this
+entry, in one atomic admission commit.
+
+The admitted claim: the Quintessence overlay substrate's engagement configurations and
+the admitted Court registry positions are the same object family,
+**engagement-Cn = position-Cn** - vector equality (`0000`..`1111` with `internalPoles`
+cardinality 0..4), mask equality (each position's pitch mask is the keep-or-sharpen chain
+at that engagement: External keeps the fifth-stack degree, Internal sharpens it to the
+semitone-raised neighbor), and the element-to-degree mapping derived with zero free
+choices (Fire 4->5, Air 9->10, Water 2->3, Earth 7->8).
+
+The rejected alternative (internal = keep the stack degree; 1111 = pure stack) is
+recorded in the candidate with its reason and survives only as the Orrery bucket
+overlay's labeled counterfactual experiment. The claim's core is pinned by
+`tests/test_court_engagement_correspondence.py`, landed in a prior sprint commit with a
+green run. The maintainer reviewed the candidate end-to-end and authorized the eight-item
+v0.1.0 -> v0.1.1 status-propagation delta; the claim text is unchanged and the delta diff
+against the preserved reviewed baseline contains exactly those items. The receipt records
+the reviewed-baseline digest, the authorized delta, the final subject bindings (recipe,
+digest, byte length, blob OID), and the declared post-commit obligation. This entry
+records conversation authority for the review and the delta, not a cryptographically
+authenticated signature (ENTRY 11 precedent).
+
+### Scope
+
+The claim is a configuration-level identification only. SPEC-001 section 6(4)
+(overlay-to-GOV-517 input lanes I1-I4) remains entirely unevidenced and separately open;
+the orbit order under Q1 bears no asserted relationship to Court register moves; the
+eleven off-chain 4-bit configurations remain out of scope. No runtime, schema, canonical
+topology, Court runtime, Neo4j projection, graph, policy, or office authority is granted.
+No `poleDisposition` is written; no GOV-517 re-registration occurs; no shared artifact is
+refreshed; D4-bound evidence preservation remains untouched. No release promotion or
+green-release claim is made.
+
+### References
+
+- `docs/specs/fivefold-court-engagement-correspondence-v0.1.0.md` (admitted text, v0.1.1)
+- `qa/specs/bl-011-correspondence-admission.json` (admission receipt: reviewed baseline,
+  authorized delta, final bindings, JSON-Pointer citations, per-rule compliance, observed
+  validation result, declared post-commit obligation)
+- `tests/test_court_engagement_correspondence.py` (machine check, landed before admission)
+- `scrum/plan/fivefold-mesh-adjudication.md` (A1/A2 findings: registry polarity, forced
+  mapping)
+- `scrum/plan/bl-011-ceremony-plan.md` (planning record and scope exclusions)
+- `seven-governors-court-substrate-v0.1.0/canonical/court-rooted-positions.json` (registry
+  pairing)
+- `scrum/plan/bl-044-court-voicing-audit.md` (field-for-field certification, lines 15-21)
+
+### Release Gate Disposition
+
+Full `npm run validate` was executed for this landing; the observed first stop is recorded
+in the admission receipt. The predeclared acceptable stops are the ledger-recorded
+`STALE_TWIN_HUB_CONVERGENCE` state (ENTRY 10/11/12) and the recorded
+`STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE` state (`qa/d4-production-landing.json`;
+`docs/specs/fivefold_constructs_engine_spec.md` section 4.1). Any other failure halts. No
+stale control is disabled, no shared artifact is regenerated to force green, and no green
+integrated release is claimed.
+
+### Guard
+
+This entry grants no runtime, topology, graph, Court, office, schema, policy or global
+`harmonic.C_H` authority. It does not resolve SPEC-001 section 6(4), does not graduate
+INV-5, and does not amend the D4/D7 records. Prior entries and prior line anchors remain
+unchanged; this entry is append-only.
