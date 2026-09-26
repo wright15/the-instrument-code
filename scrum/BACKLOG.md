@@ -153,6 +153,15 @@ registration once BL-023's catalog format lands. Seam emphasis is reserved
 (`ReplayVoice.emphasis`, planner sets `"seam"`, engine accepts and ignores) pending this
 item's golden-path onset-separation decision.
 
+**Prerequisite landed (containment graph):** spec v1.4
+(`plan/bipartite-inclusion-spec-v1.4.md`), generator `scripts/generate_hypergraph_matrix.py`,
+artifact `derived/hypergraph/bipartite-inclusion-v1.json` (`planning_evidence`, byte-stable),
+12-test pin `tests/test_bipartite_inclusion.py`, memo `plan/bl-021-hypergraph-memo.md`. Seam
+query is now a lookup: `intersection(parentsRooted(7-35:0), parentsRooted(7-32:9))` = 5-23
+`{9,11,0,2,4}` and 5-27 `{0,2,4,5,9}`. Measured census: 70 diatonic-boundary bridge subnodes,
+55 of them shared with the 7-32 family (20 admitted-vocabulary). Destination corrected to
+`7-32:9` (A harmonic minor); the abandoned `7-32:4` reading shares exactly one 5-27 voicing.
+
 ### BL-022 — Parallel minor modulation (mode-axis edge) [ACTIVE]
 
 7-35 Ionian → 7-35 Aeolian on a shared tonic (C Ionian ↔ C Aeolian). Same set-class, different
@@ -334,3 +343,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v0.7 | BL-044 landed DONE: Court voicing surface audited — registry clean (certify table in audit memo), labels relabeled to engagement semantics, three-layer disclosure added, thinning retired in favor of position-identity voicing, layer-boundary tests added. |
 | v0.8 | Replay timing fix from maintainer listening: chordal replay onset (stagger retired from replay), sequential hop timing, eviction guard for future-scheduled voices; seam emphasis parameter reserved for BL-021; tetrachord listening finding deferred to audition mode. 161 tests green. |
 | v0.9 | Adjudication arc: fivefold mesh spec v2.2.0 adjudicated read-only (registry polarity retained; session flip rejected), corrected spec v3 landed, BL-011 opened and admitted under GOV-522 same day as `SPEC-FIVEFOLD-COURT-CORRESPONDENCE-001` v0.1.1 with receipt + ENTRY 13 + status propagation; correspondence machine check green before admission; manifest 1,155. |
+| v1.10 | BL-021 prerequisite landed: bipartite containment spec v1.4, generator, `derived/hypergraph/bipartite-inclusion-v1.json` (planning evidence, byte-stable), 12 tests green; Andalusian destination corrected to `7-32:9`; census 70 boundary bridges / 330 literal orbit-span; manifest regen. |

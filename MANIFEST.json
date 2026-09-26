@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1155,
-  "totalBytes": 77311294,
+  "fileCount": 1160,
+  "totalBytes": 77687723,
   "files": [
     {
       "path": ".env.example",
@@ -429,6 +429,11 @@
       "path": "court-mathematics/tests/test_voice_leading.py",
       "bytes": 3279,
       "sha256": "432b42d6ee9e7cc17c1fc35d5e8b765f405191ae879567d0bc7360dcb2479ee3"
+    },
+    {
+      "path": "derived/hypergraph/bipartite-inclusion-v1.json",
+      "bytes": 320972,
+      "sha256": "903eebf0e1122d8ba81971abcd7efc8ac934d3bfd7885b98b49e58ab0bbe3e41"
     },
     {
       "path": "docs/ARCHITECTURAL_BLUEPRINT.md",
@@ -2566,6 +2571,11 @@
       "sha256": "892f50b4a3d3b7a45ef0f76d970650c1538cac04d6dabd2c2ef4d0fa1ea79bb4"
     },
     {
+      "path": "scripts/generate_hypergraph_matrix.py",
+      "bytes": 20863,
+      "sha256": "5d086ff6c56600c852346323fb7103be0b67b4395bb49d0deeaea9558568fd31"
+    },
+    {
       "path": "scripts/gov-517-d5-derivation-engine.mjs",
       "bytes": 6103,
       "sha256": "db4393163b9ed4e6dab231376ed6c3c977b06010ab9fc3056bc46e45f8e5740d"
@@ -2817,8 +2827,8 @@
     },
     {
       "path": "scrum/BACKLOG.md",
-      "bytes": 20986,
-      "sha256": "5af41407ae940f9755b7150089359b5535bd66a5c15c522c4fff7cc6698455ea"
+      "bytes": 21989,
+      "sha256": "1aadd2afa2b63ffe75f23eea5f857035115c95fb87d086bd3b72eeca27069b32"
     },
     {
       "path": "scrum/CRT-301-court-admission-contract.md",
@@ -3216,6 +3226,11 @@
       "sha256": "736e3a0a25579e9961f50cd5f7630f7a944f1015b9686748f2393e206613c315"
     },
     {
+      "path": "scrum/plan/bipartite-inclusion-spec-v1.4.md",
+      "bytes": 15704,
+      "sha256": "1b8a3ae6a6de165cc3252ccf44b7d0ddfb932acbef4dae22ddfb691142bb985b"
+    },
+    {
       "path": "scrum/plan/bl-010-q-table-freeze-memo.md",
       "bytes": 7014,
       "sha256": "eda2e07fc0df7f508f402cc51df8ecace7d02e5ea9b88bbcd0466eff5caf4449"
@@ -3229,6 +3244,11 @@
       "path": "scrum/plan/bl-020-debugger-foundation-memo.md",
       "bytes": 7709,
       "sha256": "3d16d0d8c8aa46346793c3686b0ebb2a592742863b33ec4974937cb0d8814366"
+    },
+    {
+      "path": "scrum/plan/bl-021-hypergraph-memo.md",
+      "bytes": 5688,
+      "sha256": "11b8626de95d64556ad9c3007ac37a5c4415ca58717d90b509de8b456e7e65c2"
     },
     {
       "path": "scrum/plan/bl-044-court-voicing-audit.md",
@@ -5519,6 +5539,11 @@
       "path": "tests/pentatonic_binding_audit/neo4j-live.test.mjs",
       "bytes": 19012,
       "sha256": "9817635861993f8a650e495514bf8df703f10e0bdfeea44b13d0331992b949f6"
+    },
+    {
+      "path": "tests/test_bipartite_inclusion.py",
+      "bytes": 12199,
+      "sha256": "fc955447a726c655f756acbbf9e7a67e5bb7980c7545f836661639e3e2f1c1e6"
     },
     {
       "path": "tests/test_court_engagement_correspondence.py",
