@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1160,
-  "totalBytes": 77687723,
+  "fileCount": 1164,
+  "totalBytes": 77955511,
   "files": [
     {
       "path": ".env.example",
@@ -434,6 +434,11 @@
       "path": "derived/hypergraph/bipartite-inclusion-v1.json",
       "bytes": 320972,
       "sha256": "903eebf0e1122d8ba81971abcd7efc8ac934d3bfd7885b98b49e58ab0bbe3e41"
+    },
+    {
+      "path": "derived/hypergraph/parallel-signatures-v1.json",
+      "bytes": 220611,
+      "sha256": "bec45d0a4324530e0976daedfe2b9e1dd0ea63e3097eb75778aea0eccaec4128"
     },
     {
       "path": "docs/ARCHITECTURAL_BLUEPRINT.md",
@@ -2396,6 +2401,11 @@
       "sha256": "f68355ab9f6134d24bcc6d4c3c51b99ffa6c4563c2f5198ba25dca78bc4ad9ba"
     },
     {
+      "path": "scripts/analyze_parallel_signatures.py",
+      "bytes": 23511,
+      "sha256": "4b81e41c765b49e9fdf0c458d672a17abcbdc47feeedbba19281a8ac2b45069d"
+    },
+    {
       "path": "scripts/bootstrap-neo4j.mjs",
       "bytes": 7995,
       "sha256": "e9722ffe38ffe4286729f4a0d99e14e3c775d29b51fa3ad2b45eaeb269709d33"
@@ -3249,6 +3259,11 @@
       "path": "scrum/plan/bl-021-hypergraph-memo.md",
       "bytes": 5688,
       "sha256": "11b8626de95d64556ad9c3007ac37a5c4415ca58717d90b509de8b456e7e65c2"
+    },
+    {
+      "path": "scrum/plan/bl-021a-signature-analysis-memo.md",
+      "bytes": 7269,
+      "sha256": "63a34ce89d43458caaa10e5ea0970997bc54640caf41a53427f5c7bad154db85"
     },
     {
       "path": "scrum/plan/bl-044-court-voicing-audit.md",
@@ -5724,6 +5739,11 @@
       "path": "tests/test_mechanics_thermodynamics_registry_v2.py",
       "bytes": 12631,
       "sha256": "7997d9240ad4ea8dc903516f7c34ada71a7c5f323301482acaf002572394c0b9"
+    },
+    {
+      "path": "tests/test_parallel_signatures.py",
+      "bytes": 16397,
+      "sha256": "3cadb5d1702a3216a33b51a052ace18f35dbad5e6ebd37dea2aca14a18fc0eb3"
     },
     {
       "path": "tests/test_pentatonic_7_35_parent_audit.py",
