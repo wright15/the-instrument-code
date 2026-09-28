@@ -195,6 +195,14 @@ BL-031 seam-edge seed fixtures. Exit: format defined, both cadences exported, co
 Inherits the `golden-path.v1` schema pioneered by BL-021
 (`orrery/test/fixtures/golden-paths.v1.json`); generalizes it to multi-path catalog export.
 
+### BL-024 — Pentatonic intra-family edge definition + unified route graph [CAPTURED]
+
+The 330's internal connectivity is unformalized; the global edge rule is a design decision
+(semitone adjacency? complement? voice-leading distance?) to be driven by the first route or
+procedure that needs intra-family hops. Candidates and the decision record land here;
+visualization parity and procedural pathfinding consume the result. Not blocking BL-023.
+Structural gap G1 and layer-3 fragments: `docs/ARCHITECTURE_MAP.md` §1/§4.
+
 ---
 
 ## TIER 1 → CEREMONY — THREE-PHASE LATTICE PROGRAM
@@ -363,3 +371,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v0.9 | Adjudication arc: fivefold mesh spec v2.2.0 adjudicated read-only (registry polarity retained; session flip rejected), corrected spec v3 landed, BL-011 opened and admitted under GOV-522 same day as `SPEC-FIVEFOLD-COURT-CORRESPONDENCE-001` v0.1.1 with receipt + ENTRY 13 + status propagation; correspondence machine check green before admission; manifest 1,155. |
 | v1.10 | BL-021 prerequisite landed: bipartite containment spec v1.4, generator, `derived/hypergraph/bipartite-inclusion-v1.json` (planning evidence, byte-stable), 12 tests green; Andalusian destination corrected to `7-32:9`; census 70 boundary bridges / 330 literal orbit-span; manifest regen. |
 | v1.11 | BL-021 golden-path registration: tonic-fixed C-minor parallel seam `7-35:3` -> bridge `5-27:0` (audition pick, `5-23:0` alternative) -> `7-32:0`; first both-collections-containment legality; pioneering `golden-path.v1` fixture; engine bridge hold; root-dependence finding; listening verdicts recorded (seam reads as motion, interior as one gesture, verified hopwise); 166 orrery tests green; no catalog bytes changed. |
+| v1.12 | Cross-layer architecture map landed (`docs/ARCHITECTURE_MAP.md`, sprint artifact): four structural layers, 11-row operator/algebra catalog with owns/consumes columns, invariant ledger with the three distinct 66s, grounding receipts; BL-024 captured (pentatonic intra-family edge definition + unified route graph, structural gap G1); manifest regen. |
