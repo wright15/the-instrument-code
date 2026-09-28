@@ -148,10 +148,9 @@ govern pull across a seam — links to BL-033.
 
 **Progress (from BL-020 sprint):** cadence replay planner landed (`planAndalusianCadenceReplay`):
 four hops, per-hop membership check against the admitted collections, seam hop flagged in trace
-and UI. Remaining for this item: maintainer listening verdict (memo) and golden-path
-registration once BL-023's catalog format lands. Seam emphasis is reserved
-(`ReplayVoice.emphasis`, planner sets `"seam"`, engine accepts and ignores) pending this
-item's golden-path onset-separation decision.
+and UI. Seam emphasis reserved (`ReplayVoice.emphasis`, planner sets `"seam"`, engine accepts
+and ignores); golden-path registration added the bridge hold (0.6s) as the audible pivot.
+Remaining for this item: maintainer listening verdicts (seam motion/arrival; bridge color).
 
 **Prerequisite landed (containment graph):** spec v1.4
 (`plan/bipartite-inclusion-spec-v1.4.md`), generator `scripts/generate_hypergraph_matrix.py`,
@@ -161,6 +160,23 @@ query is now a lookup: `intersection(parentsRooted(7-35:0), parentsRooted(7-32:9
 `{9,11,0,2,4}` and 5-27 `{0,2,4,5,9}`. Measured census: 70 diatonic-boundary bridge subnodes,
 55 of them shared with the 7-32 family (20 admitted-vocabulary). Destination corrected to
 `7-32:9` (A harmonic minor); the abandoned `7-32:4` reading shares exactly one 5-27 voicing.
+
+**Golden-path registration landed (C-minor parallel seam):** route origin `7-35:3`
+(C Aeolian, tonic pc 0) -> interior kernels C2/C3/C4 -> bridge `5-27:0`/`5-23:0`
+(chosen `5-27:0` by maintainer audition, `5-23:0` recorded as the alternative; both
+legal, selectable voicing options)
+-> `7-32:0` (C harmonic minor). New replay legality class: both-collections
+containment (first instance). Fixture `orrery/test/fixtures/golden-paths.v1.json`
+(pioneering `golden-path.v1` schema) + memo `plan/bl-021-golden-path-memo.md`;
+substrate `path-replay.ts`, engine per-hop hold `audio.ts`, UI trigger + bridge
+selector; 4 planner tests + 1 engine test; orrery suite 166 green; catalog and
+audio-manifest bytes untouched. Root-dependence finding: the tonic-fixed seam admits
+both vocabulary bridges (`5-23:0`, `5-27:0`), the collection-root-fixed seam admits
+none (single `5-29:11`), and the A-route pair admits two — anchor choice decides
+whether the admitted vocabulary serves the crossing. Listening verdicts recorded:
+the seam reads as motion (tonic fixed, dominant tension unspent), the bridge 5-27:0
+was chosen by ear (5-23 alternative), and the interior reads as one cadence gesture
+while verification stays hopwise.
 
 ### BL-022 — Parallel minor modulation (mode-axis edge) [ACTIVE]
 
@@ -176,6 +192,8 @@ Binding constraint (`EPIC-511:24`, `ORR-511:23-24` forbid legal-move byte change
 read-only views + local session overlays; reuse `legal-moves.v2` pin + `audio.v1` manifest guard;
 fail closed (`orrery/README.md:61-67,155-157`). Consumers: transition-logic regression tests;
 BL-031 seam-edge seed fixtures. Exit: format defined, both cadences exported, consumed by ≥1 suite.
+Inherits the `golden-path.v1` schema pioneered by BL-021
+(`orrery/test/fixtures/golden-paths.v1.json`); generalizes it to multi-path catalog export.
 
 ---
 
@@ -344,3 +362,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v0.8 | Replay timing fix from maintainer listening: chordal replay onset (stagger retired from replay), sequential hop timing, eviction guard for future-scheduled voices; seam emphasis parameter reserved for BL-021; tetrachord listening finding deferred to audition mode. 161 tests green. |
 | v0.9 | Adjudication arc: fivefold mesh spec v2.2.0 adjudicated read-only (registry polarity retained; session flip rejected), corrected spec v3 landed, BL-011 opened and admitted under GOV-522 same day as `SPEC-FIVEFOLD-COURT-CORRESPONDENCE-001` v0.1.1 with receipt + ENTRY 13 + status propagation; correspondence machine check green before admission; manifest 1,155. |
 | v1.10 | BL-021 prerequisite landed: bipartite containment spec v1.4, generator, `derived/hypergraph/bipartite-inclusion-v1.json` (planning evidence, byte-stable), 12 tests green; Andalusian destination corrected to `7-32:9`; census 70 boundary bridges / 330 literal orbit-span; manifest regen. |
+| v1.11 | BL-021 golden-path registration: tonic-fixed C-minor parallel seam `7-35:3` -> bridge `5-27:0` (audition pick, `5-23:0` alternative) -> `7-32:0`; first both-collections-containment legality; pioneering `golden-path.v1` fixture; engine bridge hold; root-dependence finding; listening verdicts recorded (seam reads as motion, interior as one gesture, verified hopwise); 166 orrery tests green; no catalog bytes changed. |

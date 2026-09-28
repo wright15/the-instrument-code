@@ -183,9 +183,17 @@
           <div class="move-actions" aria-label="Path replay experiments">
             <button id="replay-q-orbit" type="button" disabled>Replay Q orbit</button>
             <button id="replay-andalusian" type="button" disabled>Replay Andalusian cadence</button>
+            <button id="replay-golden-path" type="button" disabled>Replay golden path (C minor)</button>
             <label class="field-hint">
               <input id="replay-bucket-overlay" type="checkbox" disabled />
               Bucket overlay (hypothesis, not canonical)
+            </label>
+            <label class="field-hint">
+              Golden-path bridge
+              <select id="golden-path-bridge" disabled>
+                <option value="5-27:0">5-27:0 {0,3,5,7,8} (audition pick)</option>
+                <option value="5-23:0">5-23:0 {0,2,3,5,7} (alternative)</option>
+              </select>
             </label>
           </div>
           <p id="replay-status" class="field-hint" role="status" aria-live="polite">

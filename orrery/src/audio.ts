@@ -350,12 +350,15 @@ export interface AudioEngineState {
  * the engine renders it and never computes transition semantics itself.
  * `emphasis` is reserved for golden-path seam rendering (BL-021); the engine
  * accepts it today but does not alter timing or voicing from it yet.
+ * `holdSeconds` is an optional per-hop hold (golden-path bridge pivot): the
+ * next hop never starts before it, and never before the release tail.
  */
 export interface ReplayVoice {
   label: string;
   pitchClasses: readonly number[];
   preset: TimbrePreset;
   emphasis?: "none" | "seam";
+  holdSeconds?: number;
 }
 
 export interface ReplayPathOptions {
@@ -728,9 +731,11 @@ export class OrreryAudioEngine {
       detail: `Path replay hop ${this.replayIndex + 1} / ${this.replayVoices.length}: ${voice.label}`,
     });
     this.replayIndex += 1;
-    // Sequential replay: the next hop never cuts the current hop's tail.
+    // Sequential replay: the next hop never cuts the current hop's tail. A
+    // per-hop hold (golden-path bridge) overrides the global step when longer.
     const stepSeconds = this.replayOptions.stepSeconds ?? AUDIO_REPLAY_STEP_SECONDS;
-    const delaySeconds = Math.max(stepSeconds, voice.preset.releaseSeconds + 0.05);
+    const holdSeconds = voice.holdSeconds ?? stepSeconds;
+    const delaySeconds = Math.max(holdSeconds, voice.preset.releaseSeconds + 0.05);
     this.replayTimer = setTimeout(() => this.runReplayTick(), delaySeconds * 1000);
   }
 

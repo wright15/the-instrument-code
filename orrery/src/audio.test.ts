@@ -749,6 +749,39 @@ describe("Path replay engine", () => {
     }
   });
 
+  it("honors a per-hop hold longer than the global step (golden-path bridge)", async () => {
+    vi.useFakeTimers();
+    try {
+      const context = new FakeAudioContext();
+      const fake = audioRuntime(context);
+      const engine = new OrreryAudioEngine(fake.runtime);
+
+      engine.select(node("Sun"), "C0");
+      await engine.enable(AUDIO_PROFILE_REGISTRY_RELEASE_ID);
+      const baseline = context.oscillators.length;
+
+      engine.replayPath([
+        {
+          label: "bridge",
+          pitchClasses: [0, 2, 3, 5, 7],
+          preset: OFFICE_PALETTES.Jupiter.preset,
+          holdSeconds: 3,
+        },
+        { label: "arrival", pitchClasses: [7, 11, 2], preset: OFFICE_PALETTES.Jupiter.preset },
+      ]);
+      expect(context.oscillators).toHaveLength(baseline + 5);
+
+      // The global step has elapsed, but the bridge's hold has not.
+      vi.advanceTimersByTime(AUDIO_REPLAY_STEP_SECONDS * 1000 + 500);
+      expect(context.oscillators).toHaveLength(baseline + 5);
+
+      vi.advanceTimersByTime(1500);
+      expect(context.oscillators).toHaveLength(baseline + 8);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
   it("keeps every voice of a large bucket hop sounding past the selection voice cap", async () => {
     vi.useFakeTimers();
     try {

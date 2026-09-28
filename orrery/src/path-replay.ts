@@ -20,6 +20,11 @@
 //
 // The Q substrate is rendered, not executed: fivefold data feeds pitch
 // content only, and no fivefold module imports Orrery code.
+//
+// Golden path (BL-021): the C-minor parallel-seam route C Aeolian -> C
+// harmonic minor is planned from artifact-derived presentation data; the
+// bridge hop is the first replay hop whose legality is both-collections
+// containment rather than single-collection membership.
 
 import {
   OFFICE_PALETTES,
@@ -93,7 +98,39 @@ export type CadenceReplayPlan =
   | { substrate: "golden-cadence"; kind: "ok"; seamHopIndex: number; hops: CadenceReplayHop[] }
   | { substrate: "golden-cadence"; kind: "invalid"; message: string };
 
-export type ReplayPlan = OrreryReplayPlan | FivefoldReplayPlan | CadenceReplayPlan;
+/**
+ * A hop of the registered golden path (BL-021). `kind: "bridge"` hops carry
+ * `legality: "both-collections-containment"` — the first replay legality class
+ * that asserts containment in two collections at once, which is what makes the
+ * voicing a bridge. `seamCrossing` marks the bridge pivot and its
+ * harmonic-minor resolution (the raised-seventh arrival).
+ */
+export interface GoldenPathReplayHop extends ReplayHopBase {
+  kind: "chord" | "bridge";
+  nodeId: string;
+  chordLabel: string;
+  chordRoot: number | undefined;
+  collection: "aeolian" | "harmonic-minor" | "bridge";
+  seamCrossing: boolean;
+  legality: "collection-membership" | "both-collections-containment";
+}
+
+export type GoldenPathReplayPlan =
+  | {
+      substrate: "golden-path";
+      kind: "ok";
+      bridgeNodeId: GoldenPathBridgeId;
+      bridgeHopIndex: number;
+      seamHopIndex: number;
+      hops: GoldenPathReplayHop[];
+    }
+  | { substrate: "golden-path"; kind: "invalid"; message: string };
+
+export type ReplayPlan =
+  | OrreryReplayPlan
+  | FivefoldReplayPlan
+  | CadenceReplayPlan
+  | GoldenPathReplayPlan;
 
 export interface OrreryReplayOptions {
   startAnchorId: number | null;
@@ -337,22 +374,205 @@ export function planAndalusianCadenceReplay(): CadenceReplayPlan {
 // uses the Jupiter (Aeolian office) A0 preset as a presentation choice.
 const CADENCE_REPLAY_PRESET = OFFICE_PALETTES.Jupiter.preset;
 
+// Registered golden path (BL-021): C Aeolian -> C harmonic minor with the
+// tonic pc 0 held across the seam. Origin collection is 7-35:3 (the E-flat
+// major collection sounding on C, tonic pc 0 as mode context); destination is
+// 7-32:0 (C harmonic minor). The seam is the raised seventh: 10 -> 11, one
+// semitone, six common tones. Every number below mirrors an artifact lookup in
+// derived/hypergraph/bipartite-inclusion-v1.json (7-35:3 and 7-32:0 share
+// exactly one anchored pentatonic per direction checks; both listed bridge
+// candidates are contained in both endpoint collections). The planner asserts
+// containment; it derives no containment itself.
+export const GOLDEN_PATH_C_AEOLIAN_COLLECTION: readonly number[] = [0, 2, 3, 5, 7, 8, 10];
+export const GOLDEN_PATH_C_HARMONIC_MINOR_COLLECTION: readonly number[] = [0, 2, 3, 5, 7, 8, 11];
+export const GOLDEN_PATH_ORIGIN_NODE_ID = "7-35:3";
+export const GOLDEN_PATH_DESTINATION_NODE_ID = "7-32:0";
+
+export type GoldenPathBridgeId = "5-23:0" | "5-27:0";
+
+export interface GoldenPathBridgeVoicing {
+  nodeId: GoldenPathBridgeId;
+  setClassId: "5-23" | "5-27";
+  pitchClasses: readonly number[];
+}
+
+// Both admitted-class bridge voicings shared by the endpoint collections. The
+// maintainer listening audition chose 5-27:0 ("more character and energy") for
+// the registered path; 5-23:0 is the documented alternative. Both are legal
+// pivots and remain selectable voicing options.
+export const GOLDEN_PATH_BRIDGE_VOICINGS: readonly GoldenPathBridgeVoicing[] = [
+  { nodeId: "5-23:0", setClassId: "5-23", pitchClasses: [0, 2, 3, 5, 7] },
+  { nodeId: "5-27:0", setClassId: "5-27", pitchClasses: [0, 3, 5, 7, 8] },
+];
+export const GOLDEN_PATH_DEFAULT_BRIDGE: GoldenPathBridgeId = "5-27:0";
+
+// The bridge is a brief pivot, not a fifth chord of equal weight: its hold is
+// distinct from the chord-hop step. Rendering parameter; not part of the
+// bridge-color audition.
+export const GOLDEN_PATH_BRIDGE_HOLD_SECONDS = 0.6;
+
+export function isGoldenPathBridgeId(value: string): value is GoldenPathBridgeId {
+  return GOLDEN_PATH_BRIDGE_VOICINGS.some((voicing) => voicing.nodeId === value);
+}
+
+export interface GoldenPathChord {
+  label: string;
+  root: number;
+  pitchClasses: readonly number[];
+  collection: "aeolian" | "harmonic-minor";
+}
+
+// Cm - Bb - Ab - G: the Andalusian descent on a fixed C tonic. The G chord's
+// B natural (11) is the raised seventh and the only pitch outside the origin
+// collection.
+export const GOLDEN_PATH_CADENCE_CHORDS: readonly GoldenPathChord[] = [
+  { label: "Cm", root: 0, pitchClasses: [0, 3, 7], collection: "aeolian" },
+  { label: "Bb", root: 10, pitchClasses: [10, 2, 5], collection: "aeolian" },
+  { label: "Ab", root: 8, pitchClasses: [8, 0, 3], collection: "aeolian" },
+  { label: "G", root: 7, pitchClasses: [7, 11, 2], collection: "harmonic-minor" },
+];
+
+export interface GoldenPathReplayOptions {
+  bridge?: GoldenPathBridgeId;
+}
+
+function goldenPathCollectionFor(kind: GoldenPathChord["collection"]): readonly number[] {
+  return kind === "aeolian"
+    ? GOLDEN_PATH_C_AEOLIAN_COLLECTION
+    : GOLDEN_PATH_C_HARMONIC_MINOR_COLLECTION;
+}
+
+/**
+ * Plan the registered golden-path replay: Cm - Bb - Ab inside C Aeolian, one
+ * bridge voicing contained in both endpoint collections, then the raised
+ * seventh arrival on G inside C harmonic minor. Interior chords verify by
+ * collection membership; the bridge verifies by both-collections containment.
+ */
+export function planGoldenPathCadenceReplay(
+  options: GoldenPathReplayOptions = {},
+): GoldenPathReplayPlan {
+  const bridgeNodeId = options.bridge ?? GOLDEN_PATH_DEFAULT_BRIDGE;
+  const bridge = GOLDEN_PATH_BRIDGE_VOICINGS.find((voicing) => voicing.nodeId === bridgeNodeId);
+  if (!bridge) {
+    return { substrate: "golden-path", kind: "invalid", message: `Unknown golden-path bridge voicing: ${bridgeNodeId}` };
+  }
+  const outsideOrigin = bridge.pitchClasses.filter(
+    (pitchClass) => !GOLDEN_PATH_C_AEOLIAN_COLLECTION.includes(pitchClass),
+  );
+  const outsideDestination = bridge.pitchClasses.filter(
+    (pitchClass) => !GOLDEN_PATH_C_HARMONIC_MINOR_COLLECTION.includes(pitchClass),
+  );
+  if (outsideOrigin.length > 0 || outsideDestination.length > 0) {
+    return {
+      substrate: "golden-path",
+      kind: "invalid",
+      message: `Bridge ${bridge.nodeId} is not contained in both endpoint collections.`,
+    };
+  }
+
+  const hops: GoldenPathReplayHop[] = [];
+  let bridgeHopIndex = -1;
+  let seamHopIndex = -1;
+  for (const chord of GOLDEN_PATH_CADENCE_CHORDS) {
+    if (chord.collection === "harmonic-minor" && bridgeHopIndex < 0) {
+      bridgeHopIndex = hops.length;
+      seamHopIndex = hops.length;
+      hops.push({
+        index: hops.length,
+        kind: "bridge",
+        label: `bridge ${bridge.nodeId} [seam crossing]`,
+        pitchClasses: [...bridge.pitchClasses],
+        nodeId: bridge.nodeId,
+        chordLabel: "",
+        chordRoot: undefined,
+        collection: "bridge",
+        seamCrossing: true,
+        legality: "both-collections-containment",
+      });
+    }
+    const collection = goldenPathCollectionFor(chord.collection);
+    const outside = chord.pitchClasses.filter((pitchClass) => !collection.includes(pitchClass));
+    if (outside.length > 0) {
+      return {
+        substrate: "golden-path",
+        kind: "invalid",
+        message: `Golden-path chord ${chord.label} contains pitches outside its admitted collection: ${outside.join(", ")}`,
+      };
+    }
+    const arrival = chord.collection === "harmonic-minor";
+    hops.push({
+      index: hops.length,
+      kind: "chord",
+      label: `${chord.label} (${chord.collection})${arrival ? " [seam arrival]" : ""}`,
+      pitchClasses: [...chord.pitchClasses],
+      nodeId: arrival ? GOLDEN_PATH_DESTINATION_NODE_ID : GOLDEN_PATH_ORIGIN_NODE_ID,
+      chordLabel: chord.label,
+      chordRoot: chord.root,
+      collection: chord.collection,
+      seamCrossing: arrival,
+      legality: "collection-membership",
+    });
+  }
+
+  if (bridgeHopIndex < 0 || seamHopIndex < 0) {
+    return {
+      substrate: "golden-path",
+      kind: "invalid",
+      message: "The golden path never reaches its harmonic-minor destination.",
+    };
+  }
+
+  return {
+    substrate: "golden-path",
+    kind: "ok",
+    bridgeNodeId: bridge.nodeId,
+    bridgeHopIndex,
+    seamHopIndex,
+    hops,
+  };
+}
+
 /** Convert a plan into engine voices. Invalid plans produce no voices. */
 export function toReplayVoices(plan: ReplayPlan): ReplayVoice[] {
   if (plan.kind !== "ok") {
     return [];
   }
-  return plan.hops.map((hop) => ({
-    label: hop.label,
-    pitchClasses: [...hop.pitchClasses],
-    // Reserved: the engine accepts seam emphasis but does not render it yet;
-    // golden-path registration (BL-021) decides onset separation/emphasis.
-    emphasis: hop.kind === "cadence" && hop.seamCrossing ? "seam" : "none",
-    preset:
-      hop.kind === "route"
-        ? hop.selection.palette.preset
-        : hop.kind === "cadence"
-          ? CADENCE_REPLAY_PRESET
-          : FIVEFOLD_REPLAY_PRESET,
-  }));
+  return plan.hops.map((hop) => {
+    if (hop.kind === "route") {
+      return {
+        label: hop.label,
+        pitchClasses: [...hop.pitchClasses],
+        emphasis: "none",
+        preset: hop.selection.palette.preset,
+      };
+    }
+    if (hop.kind === "cadence") {
+      // Reserved: the engine accepts seam emphasis but does not alter timing
+      // or voicing from it yet; golden-path registration (BL-021) decides
+      // onset separation/emphasis.
+      return {
+        label: hop.label,
+        pitchClasses: [...hop.pitchClasses],
+        emphasis: hop.seamCrossing ? "seam" : "none",
+        preset: CADENCE_REPLAY_PRESET,
+      };
+    }
+    if (hop.kind === "chord" || hop.kind === "bridge") {
+      // Golden-path hop: the bridge gets a distinct hold (brief pivot) and
+      // both seam hops carry the reserved emphasis.
+      return {
+        label: hop.label,
+        pitchClasses: [...hop.pitchClasses],
+        emphasis: hop.seamCrossing ? "seam" : "none",
+        holdSeconds: hop.kind === "bridge" ? GOLDEN_PATH_BRIDGE_HOLD_SECONDS : undefined,
+        preset: CADENCE_REPLAY_PRESET,
+      };
+    }
+    return {
+      label: hop.label,
+      pitchClasses: [...hop.pitchClasses],
+      emphasis: "none",
+      preset: FIVEFOLD_REPLAY_PRESET,
+    };
+  });
 }

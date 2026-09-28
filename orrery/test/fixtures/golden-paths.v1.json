@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "golden-path.v1",
+  "status": "planning_evidence",
+  "paths": [
+    {
+      "pathId": "c-minor-parallel-seam",
+      "substrate": "golden-path",
+      "tonicPitchClass": 0,
+      "origin": {
+        "nodeId": "7-35:3",
+        "mode": "aeolian",
+        "modeTonicPitchClass": 0,
+        "pitchClasses": [0, 2, 3, 5, 7, 8, 10]
+      },
+      "destination": {
+        "nodeId": "7-32:0",
+        "mode": "harmonic-minor",
+        "modeTonicPitchClass": 0,
+        "pitchClasses": [0, 2, 3, 5, 7, 8, 11]
+      },
+      "seam": {
+        "kind": "raised-seventh",
+        "driftSemitones": 1,
+        "replacedPitchClass": 10,
+        "raisedPitchClass": 11,
+        "commonTones": 6
+      },
+      "interiorKernels": [
+        { "courtPositionId": "C2", "nodeId": "5-35:10", "pitchClasses": [0, 2, 5, 7, 10] },
+        { "courtPositionId": "C3", "nodeId": "5-35:3", "pitchClasses": [0, 3, 5, 7, 10] },
+        { "courtPositionId": "C4", "nodeId": "5-35:8", "pitchClasses": [0, 3, 5, 8, 10] }
+      ],
+      "bridge": {
+        "chosen": { "nodeId": "5-27:0", "setClassId": "5-27", "pitchClasses": [0, 3, 5, 7, 8] },
+        "alternative": { "nodeId": "5-23:0", "setClassId": "5-23", "pitchClasses": [0, 2, 3, 5, 7] },
+        "basis": "maintainer listening audition: 5-27 has more character/energy; both legal, selectable as voicing options",
+        "legality": "both-collections-containment per derived/hypergraph/bipartite-inclusion-v1.json"
+      },
+      "hops": [
+        {
+          "index": 0,
+          "kind": "chord",
+          "label": "Cm (aeolian)",
+          "nodeId": "7-35:3",
+          "chordLabel": "Cm",
+          "chordRoot": 0,
+          "collection": "aeolian",
+          "pitchClasses": [0, 3, 7],
+          "seamCrossing": false,
+          "legality": "collection-membership"
+        },
+        {
+          "index": 1,
+          "kind": "chord",
+          "label": "Bb (aeolian)",
+          "nodeId": "7-35:3",
+          "chordLabel": "Bb",
+          "chordRoot": 10,
+          "collection": "aeolian",
+          "pitchClasses": [10, 2, 5],
+          "seamCrossing": false,
+          "legality": "collection-membership"
+        },
+        {
+          "index": 2,
+          "kind": "chord",
+          "label": "Ab (aeolian)",
+          "nodeId": "7-35:3",
+          "chordLabel": "Ab",
+          "chordRoot": 8,
+          "collection": "aeolian",
+          "pitchClasses": [8, 0, 3],
+          "seamCrossing": false,
+          "legality": "collection-membership"
+        },
+        {
+          "index": 3,
+          "kind": "bridge",
+          "label": "bridge 5-27:0 [seam crossing]",
+          "nodeId": "5-27:0",
+          "chordLabel": "",
+          "chordRoot": null,
+          "collection": "bridge",
+          "pitchClasses": [0, 3, 5, 7, 8],
+          "seamCrossing": true,
+          "legality": "both-collections-containment"
+        },
+        {
+          "index": 4,
+          "kind": "chord",
+          "label": "G (harmonic-minor) [seam arrival]",
+          "nodeId": "7-32:0",
+          "chordLabel": "G",
+          "chordRoot": 7,
+          "collection": "harmonic-minor",
+          "pitchClasses": [7, 11, 2],
+          "seamCrossing": true,
+          "legality": "collection-membership"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import fixture from "../../tests/fixtures/fivefold_q_table.v1.json";
+import goldenPathFixture from "../test/fixtures/golden-paths.v1.json";
 import { OFFICE_PALETTES } from "./audio";
 import { LEGAL_MOVE_CATALOG, type LegalMoveCatalogAnchor, type LegalMoveCatalogIndex } from "./moves";
 import {
@@ -10,10 +11,17 @@ import {
   FIVEFOLD_REST_STATE,
   FIVEFOLD_STILL_SET,
   FIVEFOLD_TRAVERSAL_CYCLE,
+  GOLDEN_PATH_BRIDGE_HOLD_SECONDS,
+  GOLDEN_PATH_BRIDGE_VOICINGS,
+  GOLDEN_PATH_C_AEOLIAN_COLLECTION,
+  GOLDEN_PATH_C_HARMONIC_MINOR_COLLECTION,
   planAndalusianCadenceReplay,
   planFivefoldOrbitReplay,
+  planGoldenPathCadenceReplay,
   planOrreryRouteReplay,
   toReplayVoices,
+  type GoldenPathBridgeId,
+  type GoldenPathReplayHop,
 } from "./path-replay";
 import type { OrreryNode } from "./types";
 
@@ -255,5 +263,147 @@ describe("Andalusian cadence planner", () => {
     expect(voices[0].preset).toBe(OFFICE_PALETTES.Jupiter.preset);
     expect(voices[3].emphasis).toBe("seam");
     expect(voices.slice(0, 3).every((voice) => voice.emphasis === "none")).toBe(true);
+  });
+});
+
+function projectGoldenHop(hop: GoldenPathReplayHop) {
+  return {
+    index: hop.index,
+    kind: hop.kind,
+    label: hop.label,
+    nodeId: hop.nodeId,
+    chordLabel: hop.chordLabel,
+    chordRoot: hop.chordRoot ?? null,
+    collection: hop.collection,
+    pitchClasses: [...hop.pitchClasses],
+    seamCrossing: hop.seamCrossing,
+    legality: hop.legality,
+  };
+}
+
+describe("Golden-path C-minor cadence planner", () => {
+  it("plans the tonic-fixed C route with the bridge as its own legality class", () => {
+    const plan = planGoldenPathCadenceReplay();
+    expect(plan.kind).toBe("ok");
+    if (plan.kind !== "ok") {
+      return;
+    }
+
+    expect(plan.hops.map((hop) => hop.label)).toEqual([
+      "Cm (aeolian)",
+      "Bb (aeolian)",
+      "Ab (aeolian)",
+      "bridge 5-27:0 [seam crossing]",
+      "G (harmonic-minor) [seam arrival]",
+    ]);
+    expect(plan.bridgeHopIndex).toBe(3);
+    expect(plan.seamHopIndex).toBe(3);
+    expect(plan.bridgeNodeId).toBe("5-27:0");
+
+    for (const [index, hop] of plan.hops.entries()) {
+      if (hop.kind === "chord" && index < 3) {
+        expect(hop.legality).toBe("collection-membership");
+        expect(
+          hop.pitchClasses.every((pitchClass) => GOLDEN_PATH_C_AEOLIAN_COLLECTION.includes(pitchClass)),
+        ).toBe(true);
+        expect(hop.nodeId).toBe("7-35:3");
+        expect(hop.seamCrossing).toBe(false);
+      }
+    }
+
+    const bridge = plan.hops[3];
+    expect(bridge.kind).toBe("bridge");
+    expect(bridge.legality).toBe("both-collections-containment");
+    expect(bridge.collection).toBe("bridge");
+    expect(bridge.seamCrossing).toBe(true);
+    expect(
+      bridge.pitchClasses.every(
+        (pitchClass) =>
+          GOLDEN_PATH_C_AEOLIAN_COLLECTION.includes(pitchClass) &&
+          GOLDEN_PATH_C_HARMONIC_MINOR_COLLECTION.includes(pitchClass),
+      ),
+    ).toBe(true);
+
+    const arrival = plan.hops[4];
+    expect(arrival.nodeId).toBe("7-32:0");
+    expect(arrival.legality).toBe("collection-membership");
+    expect(arrival.seamCrossing).toBe(true);
+    expect(arrival.pitchClasses).toContain(11);
+    expect(arrival.pitchClasses).not.toContain(10);
+  });
+
+  it("carries both admitted bridge candidates so the ear can pick", () => {
+    expect(GOLDEN_PATH_BRIDGE_VOICINGS.map((voicing) => voicing.nodeId)).toEqual([
+      "5-23:0",
+      "5-27:0",
+    ]);
+
+    const alternative = planGoldenPathCadenceReplay({ bridge: "5-23:0" });
+    expect(alternative.kind).toBe("ok");
+    if (alternative.kind !== "ok") {
+      return;
+    }
+    expect(alternative.bridgeHopIndex).toBe(3);
+    expect(alternative.hops[3].pitchClasses).toEqual([0, 2, 3, 5, 7]);
+    expect(alternative.hops[3].label).toContain("5-23:0");
+
+    for (const voicing of GOLDEN_PATH_BRIDGE_VOICINGS) {
+      expect(
+        voicing.pitchClasses.every(
+          (pitchClass) =>
+            GOLDEN_PATH_C_AEOLIAN_COLLECTION.includes(pitchClass) &&
+            GOLDEN_PATH_C_HARMONIC_MINOR_COLLECTION.includes(pitchClass),
+        ),
+      ).toBe(true);
+    }
+
+    const unknown = planGoldenPathCadenceReplay({ bridge: "5-99:0" as GoldenPathBridgeId });
+    expect(unknown.kind).toBe("invalid");
+    expect(unknown.kind === "invalid" ? unknown.message : "").toContain(
+      "Unknown golden-path bridge voicing",
+    );
+  });
+
+  it("matches the pioneering golden-path fixture", () => {
+    const plan = planGoldenPathCadenceReplay();
+    expect(plan.kind).toBe("ok");
+    if (plan.kind !== "ok") {
+      return;
+    }
+
+    const path = goldenPathFixture.paths[0];
+    expect(goldenPathFixture.schemaVersion).toBe("golden-path.v1");
+    expect(path.substrate).toBe("golden-path");
+    expect(path.tonicPitchClass).toBe(0);
+    expect(path.origin.nodeId).toBe("7-35:3");
+    expect(path.origin.mode).toBe("aeolian");
+    expect(path.origin.modeTonicPitchClass).toBe(0);
+    expect(path.destination.nodeId).toBe("7-32:0");
+    expect(path.destination.mode).toBe("harmonic-minor");
+    expect(path.destination.modeTonicPitchClass).toBe(0);
+    expect(path.bridge.chosen.nodeId).toBe("5-27:0");
+    expect(path.bridge.alternative.nodeId).toBe("5-23:0");
+    expect(path.bridge.basis).toBe(
+      "maintainer listening audition: 5-27 has more character/energy; both legal, selectable as voicing options",
+    );
+    expect(plan.hops.map(projectGoldenHop)).toEqual(path.hops);
+  });
+
+  it("voices the bridge with a distinct hold and both seam hops with emphasis", () => {
+    const plan = planGoldenPathCadenceReplay();
+    expect(plan.kind).toBe("ok");
+    if (plan.kind !== "ok") {
+      return;
+    }
+
+    const voices = toReplayVoices(plan);
+    expect(voices).toHaveLength(5);
+    expect(voices[3].holdSeconds).toBe(GOLDEN_PATH_BRIDGE_HOLD_SECONDS);
+    expect(voices.slice(0, 3).every((voice) => voice.holdSeconds === undefined)).toBe(true);
+    expect(voices[4].holdSeconds).toBeUndefined();
+    expect(voices[3].emphasis).toBe("seam");
+    expect(voices[4].emphasis).toBe("seam");
+    expect(voices.slice(0, 3).every((voice) => voice.emphasis === "none")).toBe(true);
+    expect(voices.every((voice) => voice.preset === OFFICE_PALETTES.Jupiter.preset)).toBe(true);
   });
 });

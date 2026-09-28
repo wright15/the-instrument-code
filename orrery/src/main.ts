@@ -17,7 +17,14 @@ import {
   type ProgressionStepView,
 } from "./audio";
 import { DEGREE_GOVERNORS, isChordSize, type ChordSize } from "./harmony";
-import { planAndalusianCadenceReplay, planFivefoldOrbitReplay, planOrreryRouteReplay, toReplayVoices } from "./path-replay";
+import {
+  isGoldenPathBridgeId,
+  planAndalusianCadenceReplay,
+  planFivefoldOrbitReplay,
+  planGoldenPathCadenceReplay,
+  planOrreryRouteReplay,
+  toReplayVoices,
+} from "./path-replay";
 import {
   COURT_POLE_ORDER,
   COURT_POSITIONS,
@@ -164,6 +171,8 @@ const applyLegalMoveButton = requiredElement<HTMLButtonElement>("#apply-legal-mo
 const replayRouteButton = requiredElement<HTMLButtonElement>("#replay-route");
 const replayQOrbitButton = requiredElement<HTMLButtonElement>("#replay-q-orbit");
 const replayAndalusianButton = requiredElement<HTMLButtonElement>("#replay-andalusian");
+const replayGoldenPathButton = requiredElement<HTMLButtonElement>("#replay-golden-path");
+const goldenPathBridgeSelect = requiredElement<HTMLSelectElement>("#golden-path-bridge");
 const replayBucketOverlay = requiredElement<HTMLInputElement>("#replay-bucket-overlay");
 const replayStatus = requiredElement<HTMLElement>("#replay-status");
 const audioEnableButton = requiredElement<HTMLButtonElement>("#audio-enable");
@@ -548,6 +557,8 @@ function syncReplayControls(): void {
   replayRouteButton.disabled = !soundReady || !routeReady;
   replayQOrbitButton.disabled = !soundReady;
   replayAndalusianButton.disabled = !soundReady;
+  replayGoldenPathButton.disabled = !soundReady;
+  goldenPathBridgeSelect.disabled = !soundReady;
   replayBucketOverlay.disabled = !soundReady;
   if (!soundReady) {
     replayStatus.textContent = "Enable & play sound to replay paths.";
@@ -623,6 +634,28 @@ function replayAndalusianSound(): void {
     return;
   }
   replayStatus.textContent = `Replaying the Andalusian cadence (seam crossing at hop ${plan.seamHopIndex + 1}; admitted bridge CRT-302/CRT-304).`;
+}
+
+function replayGoldenPathSound(): void {
+  const bridgeValue = goldenPathBridgeSelect.value;
+  const plan = planGoldenPathCadenceReplay(
+    isGoldenPathBridgeId(bridgeValue) ? { bridge: bridgeValue } : {},
+  );
+  if (plan.kind === "invalid") {
+    replayStatus.textContent = plan.message;
+    return;
+  }
+  const started = audioEngine.replayPath(toReplayVoices(plan), {
+    stepSeconds: 1.6,
+    onHop: (voice, index, total) => {
+      replayStatus.textContent = `Golden path ${index + 1} / ${total}: ${voice.label}`;
+    },
+  });
+  if (!started) {
+    replayStatus.textContent = "Enable & play sound before replaying a path.";
+    return;
+  }
+  replayStatus.textContent = `Replaying the golden path (C Aeolian -> C harmonic minor; bridge ${plan.bridgeNodeId} at hop ${plan.bridgeHopIndex + 1}, seam crossing at hop ${plan.seamHopIndex + 1}).`;
 }
 
 function showProjectionUnavailable(error: unknown): void {
@@ -1804,6 +1837,7 @@ applyLegalMoveButton.addEventListener("click", applySelectedLegalMove);
 replayRouteButton.addEventListener("click", replayRouteSound);
 replayQOrbitButton.addEventListener("click", replayQOrbitSound);
 replayAndalusianButton.addEventListener("click", replayAndalusianSound);
+replayGoldenPathButton.addEventListener("click", replayGoldenPathSound);
 
 audioEnableButton.addEventListener("click", () => {
   if (profileRegistryReleaseId) {
