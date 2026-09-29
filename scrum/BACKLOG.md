@@ -203,6 +203,16 @@ procedure that needs intra-family hops. Candidates and the decision record land 
 visualization parity and procedural pathfinding consume the result. Not blocking BL-023.
 Structural gap G1 and layer-3 fragments: `docs/ARCHITECTURE_MAP.md` §1/§4.
 
+### BL-026 — ARCHITECTURE_MAP semantic layer [CAPTURED]
+
+One meaning-paragraph per algebra catalog row (11 rows + precursor),
+sourced from existing repo documents (framework prose, package docs,
+court lexicon, comprehension map, ledger entries). Rows with no
+recorded meaning anywhere → finding rows, not invented text.
+Fast lane, normal commit. Extends, does not replace, the map's
+structural/receipt discipline.
+Landed same commit: `docs/ARCHITECTURE_MAP.md` §2.5 (10 sourced paragraphs, 2 findings).
+
 ---
 
 ## TIER 1 → CEREMONY — THREE-PHASE LATTICE PROGRAM
@@ -372,3 +382,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.10 | BL-021 prerequisite landed: bipartite containment spec v1.4, generator, `derived/hypergraph/bipartite-inclusion-v1.json` (planning evidence, byte-stable), 12 tests green; Andalusian destination corrected to `7-32:9`; census 70 boundary bridges / 330 literal orbit-span; manifest regen. |
 | v1.11 | BL-021 golden-path registration: tonic-fixed C-minor parallel seam `7-35:3` -> bridge `5-27:0` (audition pick, `5-23:0` alternative) -> `7-32:0`; first both-collections-containment legality; pioneering `golden-path.v1` fixture; engine bridge hold; root-dependence finding; listening verdicts recorded (seam reads as motion, interior as one gesture, verified hopwise); 166 orrery tests green; no catalog bytes changed. |
 | v1.12 | Cross-layer architecture map landed (`docs/ARCHITECTURE_MAP.md`, sprint artifact): four structural layers, 11-row operator/algebra catalog with owns/consumes columns, invariant ledger with the three distinct 66s, grounding receipts; BL-024 captured (pentatonic intra-family edge definition + unified route graph, structural gap G1); manifest regen. |
+| v1.13 | BL-026 landed: semantic layer at `docs/ARCHITECTURE_MAP.md` §2.5 (descriptive authority) — one meaning-paragraph per catalog row sourced to existing repo documents; 9 sourced rows, 2 finding rows (governor-runtime schemas-only; T-primitives meaning-less), 1 sourced precursor; manifest regen. |
