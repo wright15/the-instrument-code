@@ -19,10 +19,12 @@ import {
 import { DEGREE_GOVERNORS, isChordSize, type ChordSize } from "./harmony";
 import {
   isGoldenPathBridgeId,
+  isParallelMinorRoute,
   planAndalusianCadenceReplay,
   planFivefoldOrbitReplay,
   planGoldenPathCadenceReplay,
   planOrreryRouteReplay,
+  planParallelMinorModulationReplay,
   toReplayVoices,
 } from "./path-replay";
 import {
@@ -173,6 +175,9 @@ const replayQOrbitButton = requiredElement<HTMLButtonElement>("#replay-q-orbit")
 const replayAndalusianButton = requiredElement<HTMLButtonElement>("#replay-andalusian");
 const replayGoldenPathButton = requiredElement<HTMLButtonElement>("#replay-golden-path");
 const goldenPathBridgeSelect = requiredElement<HTMLSelectElement>("#golden-path-bridge");
+const replayParallelMinorButton = requiredElement<HTMLButtonElement>("#replay-parallel-minor");
+const parallelMinorRouteSelect = requiredElement<HTMLSelectElement>("#parallel-minor-route");
+const parallelMinorTriadOverlay = requiredElement<HTMLInputElement>("#parallel-minor-triad-overlay");
 const replayBucketOverlay = requiredElement<HTMLInputElement>("#replay-bucket-overlay");
 const replayStatus = requiredElement<HTMLElement>("#replay-status");
 const audioEnableButton = requiredElement<HTMLButtonElement>("#audio-enable");
@@ -559,6 +564,9 @@ function syncReplayControls(): void {
   replayAndalusianButton.disabled = !soundReady;
   replayGoldenPathButton.disabled = !soundReady;
   goldenPathBridgeSelect.disabled = !soundReady;
+  replayParallelMinorButton.disabled = !soundReady;
+  parallelMinorRouteSelect.disabled = !soundReady;
+  parallelMinorTriadOverlay.disabled = !soundReady;
   replayBucketOverlay.disabled = !soundReady;
   if (!soundReady) {
     replayStatus.textContent = "Enable & play sound to replay paths.";
@@ -656,6 +664,33 @@ function replayGoldenPathSound(): void {
     return;
   }
   replayStatus.textContent = `Replaying the golden path (C Aeolian -> C harmonic minor; bridge ${plan.bridgeNodeId} at hop ${plan.bridgeHopIndex + 1}, seam crossing at hop ${plan.seamHopIndex + 1}).`;
+}
+
+function replayParallelMinorSound(): void {
+  const routeValue = parallelMinorRouteSelect.value;
+  const plan = planParallelMinorModulationReplay({
+    route: isParallelMinorRoute(routeValue) ? routeValue : undefined,
+    includeTriadOverlay: parallelMinorTriadOverlay.checked,
+  });
+  if (plan.kind === "invalid") {
+    replayStatus.textContent = plan.message;
+    return;
+  }
+  const started = audioEngine.replayPath(toReplayVoices(plan), {
+    stepSeconds: 1.6,
+    onHop: (voice, index, total) => {
+      replayStatus.textContent = `Parallel-minor ${index + 1} / ${total}: ${voice.label}`;
+    },
+  });
+  if (!started) {
+    replayStatus.textContent = "Enable & play sound before replaying a path.";
+    return;
+  }
+  const demonstrationNote =
+    plan.variant === "m-demonstration"
+      ? " The M hop is an audit demonstration, not a catalog-legal move."
+      : "";
+  replayStatus.textContent = `Replaying the parallel-minor golden path (C Ionian <-> C Aeolian; set-class 7-35 preserved, tonic pc 0 fixed).${demonstrationNote}`;
 }
 
 function showProjectionUnavailable(error: unknown): void {
@@ -1838,6 +1873,7 @@ replayRouteButton.addEventListener("click", replayRouteSound);
 replayQOrbitButton.addEventListener("click", replayQOrbitSound);
 replayAndalusianButton.addEventListener("click", replayAndalusianSound);
 replayGoldenPathButton.addEventListener("click", replayGoldenPathSound);
+replayParallelMinorButton.addEventListener("click", replayParallelMinorSound);
 
 audioEnableButton.addEventListener("click", () => {
   if (profileRegistryReleaseId) {

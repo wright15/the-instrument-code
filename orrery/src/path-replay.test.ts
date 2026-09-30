@@ -15,13 +15,22 @@ import {
   GOLDEN_PATH_BRIDGE_VOICINGS,
   GOLDEN_PATH_C_AEOLIAN_COLLECTION,
   GOLDEN_PATH_C_HARMONIC_MINOR_COLLECTION,
+  PARALLEL_MINOR_M_APPLICATIONS,
+  PARALLEL_MINOR_SET_CLASS_ID,
+  PARALLEL_MINOR_STATES,
+  PARALLEL_MINOR_TONIC_PITCH_CLASS,
+  PARALLEL_MINOR_TRIAD_HOLD_SECONDS,
+  PARALLEL_MINOR_WALK_MOVES,
   planAndalusianCadenceReplay,
   planFivefoldOrbitReplay,
   planGoldenPathCadenceReplay,
   planOrreryRouteReplay,
+  planParallelMinorModulationReplay,
   toReplayVoices,
   type GoldenPathBridgeId,
   type GoldenPathReplayHop,
+  type ParallelMinorCollectionHop,
+  type ParallelMinorRoute,
 } from "./path-replay";
 import type { OrreryNode } from "./types";
 
@@ -372,6 +381,9 @@ describe("Golden-path C-minor cadence planner", () => {
     }
 
     const path = goldenPathFixture.paths[0];
+    if (!path.bridge) {
+      throw new Error("The pioneering c-minor path must carry a bridge record.");
+    }
     expect(goldenPathFixture.schemaVersion).toBe("golden-path.v1");
     expect(path.substrate).toBe("golden-path");
     expect(path.tonicPitchClass).toBe(0);
@@ -405,5 +417,320 @@ describe("Golden-path C-minor cadence planner", () => {
     expect(voices[4].emphasis).toBe("seam");
     expect(voices.slice(0, 3).every((voice) => voice.emphasis === "none")).toBe(true);
     expect(voices.every((voice) => voice.preset === OFFICE_PALETTES.Jupiter.preset)).toBe(true);
+  });
+});
+
+function projectParallelMinorCollectionHop(hop: ParallelMinorCollectionHop) {
+  return {
+    index: hop.index,
+    kind: hop.kind,
+    layer: hop.layer,
+    label: hop.label,
+    nodeId: hop.nodeId,
+    mode: hop.mode,
+    moveId: hop.moveId,
+    pitchClasses: [...hop.pitchClasses],
+    legality: hop.legality,
+    setClassId: hop.setClassId,
+    rotationAxis: hop.rotationAxis,
+    seamCrossing: hop.seamCrossing,
+  };
+}
+
+function catalogMove(moveId: string) {
+  return LEGAL_MOVE_CATALOG.moves.find((move) => move.id === moveId);
+}
+
+describe("Parallel-minor mode-axis planner (BL-022)", () => {
+  it("walks the flattening direction with the set-class-preserved legality class", () => {
+    const plan = planParallelMinorModulationReplay({ includeTriadOverlay: false });
+    expect(plan.kind).toBe("ok");
+    if (plan.kind !== "ok") {
+      return;
+    }
+
+    expect(plan.route).toBe("walk-ionian-to-aeolian");
+    expect(plan.direction).toBe("ionian-to-aeolian");
+    expect(plan.variant).toBe("walk");
+    expect(plan.hops).toHaveLength(4);
+    expect(plan.hops.map((hop) => hop.kind)).toEqual([
+      "collection",
+      "collection",
+      "collection",
+      "collection",
+    ]);
+    expect(plan.hops.map((hop) => hop.nodeId)).toEqual([
+      "7-35:0",
+      "7-35:5",
+      "7-35:10",
+      "7-35:3",
+    ]);
+    expect(plan.hops.map((hop) => hop.label)).toEqual([
+      "C Ionian collection (origin)",
+      "C Mixolydian collection (L7:2741:1717)",
+      "C Dorian collection (L3:1717:1709)",
+      "C Aeolian collection (L6:1709:1453)",
+    ]);
+
+    const stateIds = PARALLEL_MINOR_STATES.map((state) => state.stateId);
+    expect(stateIds).toEqual([2741, 1717, 1709, 1453]);
+    for (const state of PARALLEL_MINOR_STATES) {
+      const anchor = LEGAL_MOVE_CATALOG.scope.anchors.find((entry) => entry.stateId === state.stateId);
+      expect(anchor?.forteFamily).toBe(PARALLEL_MINOR_SET_CLASS_ID);
+      expect(state.pitchClasses).toContain(PARALLEL_MINOR_TONIC_PITCH_CLASS);
+    }
+
+    for (const [index, hop] of plan.hops.entries()) {
+      expect(hop.kind).toBe("collection");
+      if (hop.kind !== "collection") {
+        continue;
+      }
+      expect(hop.legality).toBe("set-class-preserved");
+      expect(hop.rotationAxis).toBe(true);
+      expect(hop.seamCrossing).toBe(false);
+      expect(hop.setClassId).toBe(PARALLEL_MINOR_SET_CLASS_ID);
+      expect(hop.pitchClasses).toContain(PARALLEL_MINOR_TONIC_PITCH_CLASS);
+      expect(hop.pitchClasses).toHaveLength(7);
+      const expectedMoveId = index === 0 ? null : PARALLEL_MINOR_WALK_MOVES["ionian-to-aeolian"][index - 1];
+      expect(hop.moveId).toBe(expectedMoveId);
+      if (hop.moveId) {
+        const move = catalogMove(hop.moveId);
+        expect(move).toBeDefined();
+        expect(move?.operatorId).toMatch(/^L[2367]$/);
+        expect(move?.sourceId).toBe(PARALLEL_MINOR_STATES[index - 1].stateId);
+        expect(move?.targetId).toBe(PARALLEL_MINOR_STATES[index].stateId);
+      }
+    }
+  });
+
+  it("reverses to the brightening direction with the R chain", () => {
+    const plan = planParallelMinorModulationReplay({
+      route: "walk-aeolian-to-ionian",
+      includeTriadOverlay: false,
+    });
+    expect(plan.kind).toBe("ok");
+    if (plan.kind !== "ok") {
+      return;
+    }
+
+    expect(plan.direction).toBe("aeolian-to-ionian");
+    expect(plan.hops.map((hop) => hop.nodeId)).toEqual([
+      "7-35:3",
+      "7-35:10",
+      "7-35:5",
+      "7-35:0",
+    ]);
+    expect(plan.hops.map((hop) => (hop.kind === "collection" ? hop.moveId : null))).toEqual([
+      null,
+      "R6:1453:1709",
+      "R3:1709:1717",
+      "R7:1717:2741",
+    ]);
+    for (const moveId of PARALLEL_MINOR_WALK_MOVES["aeolian-to-ionian"]) {
+      const move = catalogMove(moveId);
+      expect(move).toBeDefined();
+      expect(move?.operatorId).toMatch(/^R[2367]$/);
+      expect(move?.availability).toBe("available");
+    }
+    for (const hop of plan.hops) {
+      expect(hop.kind === "collection" ? hop.legality : null).toBe("set-class-preserved");
+    }
+  });
+
+  it("interleaves the triad overlay and lands the third quality flip at the right step", () => {
+    const plan = planParallelMinorModulationReplay({ includeTriadOverlay: true });
+    expect(plan.kind).toBe("ok");
+    if (plan.kind !== "ok") {
+      return;
+    }
+
+    expect(plan.hops).toHaveLength(8);
+    expect(plan.hops.map((hop) => hop.kind)).toEqual([
+      "collection",
+      "triad",
+      "collection",
+      "triad",
+      "collection",
+      "triad",
+      "collection",
+      "triad",
+    ]);
+    const triads = plan.hops.filter((hop) => hop.kind === "triad");
+    expect(triads.map((hop) => hop.pitchClasses)).toEqual([
+      [0, 4, 7],
+      [0, 4, 7],
+      [0, 3, 7],
+      [0, 3, 7],
+    ]);
+    expect(triads.map((hop) => hop.label)).toEqual([
+      "C major triad",
+      "C major triad",
+      "C minor triad [minor third arrives]",
+      "C minor triad",
+    ]);
+    expect(triads.map((hop) => hop.arrival)).toEqual([false, false, true, false]);
+    expect(triads.every((hop) => hop.legality === null)).toBe(true);
+
+    const reverse = planParallelMinorModulationReplay({
+      route: "walk-aeolian-to-ionian",
+      includeTriadOverlay: true,
+    });
+    expect(reverse.kind).toBe("ok");
+    if (reverse.kind !== "ok") {
+      return;
+    }
+    const reverseTriads = reverse.hops.filter((hop) => hop.kind === "triad");
+    expect(reverseTriads.map((hop) => hop.label)).toEqual([
+      "C minor triad",
+      "C minor triad",
+      "C major triad [major third arrives]",
+      "C major triad",
+    ]);
+  });
+
+  it("voices triad tags with the overlay hold and walk hops with the plain step", () => {
+    const plan = planParallelMinorModulationReplay({ includeTriadOverlay: true });
+    expect(plan.kind).toBe("ok");
+    if (plan.kind !== "ok") {
+      return;
+    }
+
+    const voices = toReplayVoices(plan);
+    expect(voices).toHaveLength(8);
+    expect(
+      voices
+        .filter((_voice, index) => index % 2 === 1)
+        .every((voice) => voice.holdSeconds === PARALLEL_MINOR_TRIAD_HOLD_SECONDS),
+    ).toBe(true);
+    expect(
+      voices
+        .filter((_voice, index) => index % 2 === 0)
+        .every((voice) => voice.holdSeconds === undefined),
+    ).toBe(true);
+    expect(voices.every((voice) => voice.emphasis === "none")).toBe(true);
+    expect(voices.every((voice) => voice.preset === OFFICE_PALETTES.Jupiter.preset)).toBe(true);
+  });
+
+  it("renders the M successor applications as audit demonstrations, never as legal walks", () => {
+    const first = planParallelMinorModulationReplay({
+      route: "m-demonstration-compress-first",
+      includeTriadOverlay: false,
+    });
+    expect(first.kind).toBe("ok");
+    if (first.kind !== "ok") {
+      return;
+    }
+    expect(first.variant).toBe("m-demonstration");
+    expect(first.hops.map((hop) => hop.kind)).toEqual(["collection", "m-jump", "collection"]);
+    expect(first.mJumpIndices).toEqual([1]);
+    const firstJump = first.hops[1];
+    expect(firstJump.kind).toBe("m-jump");
+    if (firstJump.kind !== "m-jump") {
+      return;
+    }
+    expect(firstJump.demonstration).toBe(true);
+    expect(firstJump.legality).toBeNull();
+    expect(firstJump.nodeId).toBe("7-35:10");
+    expect(firstJump.sourceNodeId).toBe("7-35:0");
+    expect(firstJump.applicationId).toBe("M:2741:1709");
+    expect(firstJump.canonicalId).toBe("modal:A0:2741:1709");
+    expect(firstJump.auditSource).toContain("operator-applications.csv:291");
+    expect(firstJump.compresses).toEqual(["L7:2741:1717", "L3:1717:1709"]);
+    expect(firstJump.label).toContain("audit demonstration");
+
+    const second = planParallelMinorModulationReplay({
+      route: "m-demonstration-compress-second",
+      includeTriadOverlay: false,
+    });
+    expect(second.kind).toBe("ok");
+    if (second.kind !== "ok") {
+      return;
+    }
+    expect(second.hops.map((hop) => hop.kind)).toEqual(["collection", "collection", "m-jump"]);
+    const secondJump = second.hops[2];
+    expect(secondJump.kind).toBe("m-jump");
+    if (secondJump.kind !== "m-jump") {
+      return;
+    }
+    expect(secondJump.applicationId).toBe("M:1717:1453");
+    expect(secondJump.auditSource).toContain("operator-applications.csv:165");
+    expect(secondJump.compresses).toEqual(["L3:1717:1709", "L6:1709:1453"]);
+
+    for (const application of PARALLEL_MINOR_M_APPLICATIONS) {
+      expect(catalogMove(application.applicationId)).toBeUndefined();
+      let currentStateId = application.sourceStateId;
+      for (const moveId of application.compresses) {
+        const move = catalogMove(moveId);
+        expect(move).toBeDefined();
+        if (!move) {
+          return;
+        }
+        expect(move.sourceId).toBe(currentStateId);
+        currentStateId = move.targetId;
+      }
+      expect(currentStateId).toBe(application.targetStateId);
+    }
+
+    const voices = toReplayVoices(first);
+    expect(voices[1].holdSeconds).toBeUndefined();
+    expect(voices[1].emphasis).toBe("none");
+  });
+
+  it("matches the parallel-minor fixture record", () => {
+    const plan = planParallelMinorModulationReplay({ includeTriadOverlay: false });
+    expect(plan.kind).toBe("ok");
+    if (plan.kind !== "ok") {
+      return;
+    }
+
+    const path = goldenPathFixture.paths[1];
+    expect(path.pathId).toBe("c-parallel-minor-mode-axis");
+    expect(path.substrate).toBe("golden-path-parallel-minor");
+    expect(path.tonicPitchClass).toBe(0);
+    expect(path.origin.nodeId).toBe("7-35:0");
+    expect(path.origin.mode).toBe("ionian");
+    expect(path.destination.nodeId).toBe("7-35:3");
+    expect(path.destination.mode).toBe("aeolian");
+
+    if (!path.modeAxis || !path.chosen || !path.alternatives || !path.triadOverlay) {
+      throw new Error("The parallel-minor fixture must carry its mode-axis record.");
+    }
+    expect(path.modeAxis.setClassId).toBe(PARALLEL_MINOR_SET_CLASS_ID);
+    expect(path.modeAxis.structurePreserved).toBe(true);
+    expect(path.modeAxis.flattenedPitchClasses).toEqual([4, 9, 11]);
+    expect(path.modeAxis.sharpenedPitchClasses).toEqual([3, 8, 10]);
+    expect(path.modeAxis.commonTones).toBe(4);
+    expect(path.chosen.direction).toBe("ionian-to-aeolian");
+    expect(path.chosen.moves).toEqual([...PARALLEL_MINOR_WALK_MOVES["ionian-to-aeolian"]]);
+
+    const reverse = path.alternatives.find((entry) => entry.kind === "reverse-chain");
+    expect(reverse?.moves).toEqual([...PARALLEL_MINOR_WALK_MOVES["aeolian-to-ionian"]]);
+    const demonstration = path.alternatives.find((entry) => entry.kind === "m-demonstration");
+    expect(demonstration).toBeDefined();
+    if (!demonstration || !("variants" in demonstration) || !demonstration.variants) {
+      throw new Error("The m-demonstration alternative must carry its variants.");
+    }
+    expect(demonstration.variants.map((variant) => variant.variantId)).toEqual([
+      "compress-first-pair",
+      "compress-second-pair",
+    ]);
+    expect(path.triadOverlay.map((entry) => entry.minorThird)).toEqual([false, false, true, true]);
+
+    expect(
+      plan.hops.map((hop) => {
+        if (hop.kind !== "collection") {
+          throw new Error("The fixture-comparison plan must contain only walk hops.");
+        }
+        return projectParallelMinorCollectionHop(hop);
+      }),
+    ).toEqual(path.hops);
+  });
+
+  it("fails closed on an unknown route", () => {
+    const plan = planParallelMinorModulationReplay({
+      route: "walk-locrian-to-mixolydian" as ParallelMinorRoute,
+    });
+    expect(plan.kind).toBe("invalid");
+    expect(plan.kind === "invalid" ? plan.message : "").toContain("Unknown parallel-minor route");
   });
 });

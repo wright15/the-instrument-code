@@ -98,6 +98,152 @@
           "legality": "collection-membership"
         }
       ]
+    },
+    {
+      "pathId": "c-parallel-minor-mode-axis",
+      "substrate": "golden-path-parallel-minor",
+      "tonicPitchClass": 0,
+      "origin": {
+        "nodeId": "7-35:0",
+        "mode": "ionian",
+        "modeTonicPitchClass": 0,
+        "pitchClasses": [0, 2, 4, 5, 7, 9, 11]
+      },
+      "destination": {
+        "nodeId": "7-35:3",
+        "mode": "aeolian",
+        "modeTonicPitchClass": 0,
+        "pitchClasses": [0, 2, 3, 5, 7, 8, 10]
+      },
+      "modeAxis": {
+        "setClassId": "7-35",
+        "structurePreserved": true,
+        "focalPoint": { "from": "ionian", "to": "aeolian", "tonicPitchClass": 0 },
+        "flattenedPitchClasses": [4, 9, 11],
+        "sharpenedPitchClasses": [3, 8, 10],
+        "commonTones": 4,
+        "basis": "same rotated structure, different focal point; the property only same-family structures have"
+      },
+      "chosen": {
+        "direction": "ionian-to-aeolian",
+        "moves": ["L7:2741:1717", "L3:1717:1709", "L6:1709:1453"],
+        "basis": "flattening direction; stepwise legal-move walk"
+      },
+      "alternatives": [
+        {
+          "kind": "reverse-chain",
+          "direction": "aeolian-to-ionian",
+          "moves": ["R6:1453:1709", "R3:1709:1717", "R7:1717:2741"],
+          "basis": "brightening direction; stepwise legal-move walk"
+        },
+        {
+          "kind": "m-demonstration",
+          "basis": "audit-real M successor applications; not in the committed legal-move catalog",
+          "variants": [
+            {
+              "variantId": "compress-first-pair",
+              "moves": [
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:2741:1709",
+                  "canonicalId": "modal:A0:2741:1709",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:291",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "compresses": ["L7:2741:1717", "L3:1717:1709"]
+                },
+                { "moveId": "L6:1709:1453", "legality": "set-class-preserved" }
+              ]
+            },
+            {
+              "variantId": "compress-second-pair",
+              "moves": [
+                { "moveId": "L7:2741:1717", "legality": "set-class-preserved" },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:1717:1453",
+                  "canonicalId": "modal:A0:1717:1453",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:165",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "compresses": ["L3:1717:1709", "L6:1709:1453"]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "triadOverlay": [
+        { "mode": "ionian", "label": "C major triad", "pitchClasses": [0, 4, 7], "minorThird": false },
+        { "mode": "mixolydian", "label": "C major triad", "pitchClasses": [0, 4, 7], "minorThird": false },
+        {
+          "mode": "dorian",
+          "label": "C minor triad",
+          "pitchClasses": [0, 3, 7],
+          "minorThird": true,
+          "note": "the minor third (E-flat) arrives at the Dorian step"
+        },
+        { "mode": "aeolian", "label": "C minor triad", "pitchClasses": [0, 3, 7], "minorThird": true }
+      ],
+      "schemaNote": "first multi-path instance: alternatives may differ in hop topology and legality typing (BL-023 generalizes); no bridge is present because the mode-axis path crosses no collection seam",
+      "hops": [
+        {
+          "index": 0,
+          "kind": "collection",
+          "layer": "walk",
+          "label": "C Ionian collection (origin)",
+          "nodeId": "7-35:0",
+          "mode": "ionian",
+          "moveId": null,
+          "pitchClasses": [0, 2, 4, 5, 7, 9, 11],
+          "legality": "set-class-preserved",
+          "setClassId": "7-35",
+          "rotationAxis": true,
+          "seamCrossing": false
+        },
+        {
+          "index": 1,
+          "kind": "collection",
+          "layer": "walk",
+          "label": "C Mixolydian collection (L7:2741:1717)",
+          "nodeId": "7-35:5",
+          "mode": "mixolydian",
+          "moveId": "L7:2741:1717",
+          "pitchClasses": [0, 2, 4, 5, 7, 9, 10],
+          "legality": "set-class-preserved",
+          "setClassId": "7-35",
+          "rotationAxis": true,
+          "seamCrossing": false
+        },
+        {
+          "index": 2,
+          "kind": "collection",
+          "layer": "walk",
+          "label": "C Dorian collection (L3:1717:1709)",
+          "nodeId": "7-35:10",
+          "mode": "dorian",
+          "moveId": "L3:1717:1709",
+          "pitchClasses": [0, 2, 3, 5, 7, 9, 10],
+          "legality": "set-class-preserved",
+          "setClassId": "7-35",
+          "rotationAxis": true,
+          "seamCrossing": false
+        },
+        {
+          "index": 3,
+          "kind": "collection",
+          "layer": "walk",
+          "label": "C Aeolian collection (L6:1709:1453)",
+          "nodeId": "7-35:3",
+          "mode": "aeolian",
+          "moveId": "L6:1709:1453",
+          "pitchClasses": [0, 2, 3, 5, 7, 8, 10],
+          "legality": "set-class-preserved",
+          "setClassId": "7-35",
+          "rotationAxis": true,
+          "seamCrossing": false
+        }
+      ]
     }
   ]
 }

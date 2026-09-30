@@ -178,12 +178,26 @@ the seam reads as motion (tonic fixed, dominant tension unspent), the bridge 5-2
 was chosen by ear (5-23 alternative), and the interior reads as one cadence gesture
 while verification stays hopwise.
 
-### BL-022 — Parallel minor modulation (mode-axis edge) [ACTIVE]
+### BL-022 — Parallel minor modulation (mode-axis edge) [DONE]
 
 7-35 Ionian → 7-35 Aeolian on a shared tonic (C Ionian ↔ C Aeolian). Same set-class, different
 root — closed mod-7 rotation coordinate (PROPOSAL language). Genuinely new: only existing
 modulation objective is Lydian→Aeolian (`ORR-406:44-46`). Second golden path.
 Exit: plays and verifies; trace shows rotation-axis move, zero set-class change.
+
+**Landed:** bidirectional mode-axis golden path `c-parallel-minor-mode-axis` registered:
+forward walk `L7/L3/L6` (Ionian→Mixolydian→Dorian→Aeolian), reverse `R6/R3/R7`, new legality
+class `set-class-preserved` on every walk hop (`seamCrossing:false`, 7-35 pinned). Both layers
+landed per maintainer ruling — collection walk + per-state tonic-triad overlay (E♭ arrival at
+the Dorian step; default-on toggle), M-comparison recorded as findings: audit applications
+`M:2741:1709` (`operator-applications.csv:291`) and `M:1717:1453` (`:165`) each compress two
+adjacent walk steps into one successor op; both compressed routes rendered as
+`demonstration:true`/`legality:null` hops with audit provenance (M is not catalog vocabulary).
+First multi-path `golden-path.v1` instance (alternatives differ in hop topology; `bridge`
+optional). 7 new tests; orrery suite 173 green; `orrery:check` all green; no catalog/manifest/
+palette bytes changed. Memo `plan/bl-022-parallel-minor-memo.md` (both theses, compression
+table, G1 preview, BL-031 control reconciliation). Objective layer untouched — a future
+`ionian-to-aeolian` objective is a one-line scoring addition if the game surface wants it.
 
 ### BL-023 — Golden-path catalog export [ACTIVE]
 
@@ -194,6 +208,9 @@ fail closed (`orrery/README.md:61-67,155-157`). Consumers: transition-logic regr
 BL-031 seam-edge seed fixtures. Exit: format defined, both cadences exported, consumed by ≥1 suite.
 Inherits the `golden-path.v1` schema pioneered by BL-021
 (`orrery/test/fixtures/golden-paths.v1.json`); generalizes it to multi-path catalog export.
+BL-022 landed the first multi-path instance (`paths[1]`; alternatives may differ in hop
+topology, `bridge` now optional, `modeAxis`/`triadOverlay` fields) — BL-023 formalizes the
+export format on top of it.
 
 ### BL-024 — Pentatonic intra-family edge definition + unified route graph [CAPTURED]
 
@@ -383,3 +400,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.11 | BL-021 golden-path registration: tonic-fixed C-minor parallel seam `7-35:3` -> bridge `5-27:0` (audition pick, `5-23:0` alternative) -> `7-32:0`; first both-collections-containment legality; pioneering `golden-path.v1` fixture; engine bridge hold; root-dependence finding; listening verdicts recorded (seam reads as motion, interior as one gesture, verified hopwise); 166 orrery tests green; no catalog bytes changed. |
 | v1.12 | Cross-layer architecture map landed (`docs/ARCHITECTURE_MAP.md`, sprint artifact): four structural layers, 11-row operator/algebra catalog with owns/consumes columns, invariant ledger with the three distinct 66s, grounding receipts; BL-024 captured (pentatonic intra-family edge definition + unified route graph, structural gap G1); manifest regen. |
 | v1.13 | BL-026 landed: semantic layer at `docs/ARCHITECTURE_MAP.md` §2.5 (descriptive authority) — one meaning-paragraph per catalog row sourced to existing repo documents; 9 sourced rows, 2 finding rows (governor-runtime schemas-only; T-primitives meaning-less), 1 sourced precursor; manifest regen. |
+| v1.14 | BL-022 landed DONE: bidirectional parallel-minor golden path (`c-parallel-minor-mode-axis`) — stepwise L/R walk with `set-class-preserved` legality, walk+triad overlay (both layers), M compression comparisons rendered as audit demonstrations (`M:2741:1709`, `M:1717:1453`); first multi-path `golden-path.v1` instance; 7 tests, suite 173 green; memo `plan/bl-022-parallel-minor-memo.md`; objective layer untouched. |

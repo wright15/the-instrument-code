@@ -184,6 +184,7 @@
             <button id="replay-q-orbit" type="button" disabled>Replay Q orbit</button>
             <button id="replay-andalusian" type="button" disabled>Replay Andalusian cadence</button>
             <button id="replay-golden-path" type="button" disabled>Replay golden path (C minor)</button>
+            <button id="replay-parallel-minor" type="button" disabled>Replay parallel minor (mode axis)</button>
             <label class="field-hint">
               <input id="replay-bucket-overlay" type="checkbox" disabled />
               Bucket overlay (hypothesis, not canonical)
@@ -194,6 +195,19 @@
                 <option value="5-27:0">5-27:0 {0,3,5,7,8} (audition pick)</option>
                 <option value="5-23:0">5-23:0 {0,2,3,5,7} (alternative)</option>
               </select>
+            </label>
+            <label class="field-hint">
+              Mode-axis route
+              <select id="parallel-minor-route" disabled>
+                <option value="walk-ionian-to-aeolian">Ionian -&gt; Aeolian (stepwise walk)</option>
+                <option value="walk-aeolian-to-ionian">Aeolian -&gt; Ionian (stepwise walk)</option>
+                <option value="m-demonstration-compress-first">Ionian -&gt; Aeolian (M:2741:1709, then L6)</option>
+                <option value="m-demonstration-compress-second">Ionian -&gt; Aeolian (L7, then M:1717:1453)</option>
+              </select>
+            </label>
+            <label class="field-hint">
+              <input id="parallel-minor-triad-overlay" type="checkbox" disabled checked />
+              Triad overlay (C major -&gt; C minor, the third-quality flip heard as it arrives)
             </label>
           </div>
           <p id="replay-status" class="field-hint" role="status" aria-live="polite">
