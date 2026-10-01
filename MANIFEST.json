@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1168,
-  "totalBytes": 78064354,
+  "fileCount": 1174,
+  "totalBytes": 78286983,
   "files": [
     {
       "path": ".env.example",
@@ -447,8 +447,8 @@
     },
     {
       "path": "docs/ARCHITECTURE_MAP.md",
-      "bytes": 31006,
-      "sha256": "3d00e419cb22993b55c794cec59059db2f4491e8fd24d0cee59124ebc155ec56"
+      "bytes": 31295,
+      "sha256": "6838bd39605a4cfee0069c553057e3c3de73740e753dbd2b00b0ca2089c533fd"
     },
     {
       "path": "docs/AUDIT_METHOD_AND_REPRODUCIBILITY.md",
@@ -1052,8 +1052,8 @@
     },
     {
       "path": "orrery/index.html",
-      "bytes": 30567,
-      "sha256": "4dabe04a804f60fb4abc39ca4a122292891d9aba732116298c8da18ebc8b2e53"
+      "bytes": 31452,
+      "sha256": "86fc115ecf6369085fdc27ee80198b26f542be28823d0c79b7d93a32e539a59d"
     },
     {
       "path": "orrery/package-lock.json",
@@ -1062,8 +1062,8 @@
     },
     {
       "path": "orrery/package.json",
-      "bytes": 1766,
-      "sha256": "80303d1a2b2e872bd55ddd17c01839262bad7588bcd96edefce78659e853e90e"
+      "bytes": 1974,
+      "sha256": "124219b10bded00651b4477f6fb038989f78c70ffacae83c1bcf31190c5143d6"
     },
     {
       "path": "orrery/public/AUDIO_ASSETS.md",
@@ -1089,6 +1089,11 @@
       "path": "orrery/public/favicon.svg",
       "bytes": 375,
       "sha256": "14683dd4b6dc375258dc1a21d1e606a11c3cc3b6b2ec394c5c6732ef4f3cf07d"
+    },
+    {
+      "path": "orrery/scripts/validate-derived-path-graph.mjs",
+      "bytes": 8520,
+      "sha256": "3f76a668f7b505105438549f4e6754ce442b40a0650d461050c9e416d15c4d17"
     },
     {
       "path": "orrery/scripts/validate-field-derivation-bundle.mjs",
@@ -1176,6 +1181,11 @@
       "sha256": "4b90723d00f9e85fa804286d5cf60a5f5faa10e6b31b27f600f893f3a8c1c2d2"
     },
     {
+      "path": "orrery/src/generated/derived-path-graph.v1.json",
+      "bytes": 149204,
+      "sha256": "98d224e9b6c1cd72128777e07ce1998e4ce000e602708991e0612d088e9d59a3"
+    },
+    {
       "path": "orrery/src/generated/evidence-bundle.v1.json",
       "bytes": 16384,
       "sha256": "1d0bfb7a77743e8006230993b21c52d9918ccc62c9b7dc0172130e03ccf2de6b"
@@ -1217,8 +1227,8 @@
     },
     {
       "path": "orrery/src/main.ts",
-      "bytes": 81684,
-      "sha256": "fb5745e6cb6ef4e9c185f792a9242f6646ca00beee6db203f442e1ec9a71dbf5"
+      "bytes": 88416,
+      "sha256": "4d7b1d858e8c7cf6a21dd6ea76123e70a8e61006c142256c660bbb992fa7d1a2"
     },
     {
       "path": "orrery/src/moves.math.test.ts",
@@ -1246,14 +1256,24 @@
       "sha256": "36899808c0d24906c2f33e8296bd8c6edf9f5223016381b11b5555d11d2c7f93"
     },
     {
+      "path": "orrery/src/path-find.test.ts",
+      "bytes": 6050,
+      "sha256": "f70fc7d7883263915e6cc8376f7b0046d9c3e9b4a8e625a542e8651acbe96c11"
+    },
+    {
+      "path": "orrery/src/path-find.ts",
+      "bytes": 16576,
+      "sha256": "e39a17664fc8d6e872096d3678d0a5f96864791fc5bbaf86d4afa27a12111e07"
+    },
+    {
       "path": "orrery/src/path-replay.test.ts",
-      "bytes": 26227,
-      "sha256": "f44b5e8a752547739fd255b1dd60ce4a0e9f14726da5b0c95647593fed3c71cc"
+      "bytes": 32318,
+      "sha256": "e8310592c9a78277365379698fbec6ed2eae1dfa3d0963e68d8de74f9e297be0"
     },
     {
       "path": "orrery/src/path-replay.ts",
-      "bytes": 37486,
-      "sha256": "2f61cb56eade1f88e295c7e5d8c8d0d0d9bf35259d2f90105b52c9673cddc021"
+      "bytes": 45472,
+      "sha256": "22db4d163bf06d0cbe424516d8a43745fc95490174626d74a6c36e0eeea621aa"
     },
     {
       "path": "orrery/src/photonic-overlay.test.ts",
@@ -1372,8 +1392,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 12835,
-      "sha256": "f1674f3fb6c5431aa464f01a19629a57f92b3b3104fed69eb6497f15b917e432"
+      "bytes": 12982,
+      "sha256": "0a860e4fbbf763a4a44d2edf7e56fca88e39d3c0015be689dd44af325ed332d3"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
@@ -2431,6 +2451,11 @@
       "sha256": "34199d91513b19f647f7d9f8dee353388b924b02726558ec1ce457ef6b33e158"
     },
     {
+      "path": "scripts/build-derived-path-graph.mjs",
+      "bytes": 10110,
+      "sha256": "2edd242020bd31c91771667be8a28631df0866251d6793421b3ca0f853042a24"
+    },
+    {
       "path": "scripts/build-field-derivation-bundle.mjs",
       "bytes": 10380,
       "sha256": "249501849faca5fd2bdfa0dad251c2833d22843e202a0b73d56b1a87c1871d5c"
@@ -2847,8 +2872,8 @@
     },
     {
       "path": "scrum/BACKLOG.md",
-      "bytes": 27300,
-      "sha256": "4b2efe9a2acc35f63159e03373a58c4d60c9db71abe8890fca48a8816ded2913"
+      "bytes": 30892,
+      "sha256": "21c5a873a5885c39b56287e2fb8ebbd9a9a407aaebfd2056de533551913c1f32"
     },
     {
       "path": "scrum/CRT-301-court-admission-contract.md",
@@ -3284,6 +3309,11 @@
       "path": "scrum/plan/bl-022-parallel-minor-memo.md",
       "bytes": 9602,
       "sha256": "45576ceb4a894a5ecc20ca719701e5ede6bd6dfbea6b81378e5420b0ffe2abc1"
+    },
+    {
+      "path": "scrum/plan/bl-028-path-finder-memo.md",
+      "bytes": 6239,
+      "sha256": "7285fef4d5e3b6d153046b310d83009bcb0d147a14960392e288ef4e745cc687"
     },
     {
       "path": "scrum/plan/bl-044-court-voicing-audit.md",

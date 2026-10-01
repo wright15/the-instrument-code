@@ -48,7 +48,7 @@
   - `derived/hypergraph/parallel-signatures-v1.json` — `pentatonicSignatures` 330, `pentatonicClassProfiles` 66 (= `metadata.totalTnOrbits`).
   - Generators: `scripts/generate_hypergraph_matrix.py`, `scripts/analyze_parallel_signatures.py`.
 - **Census:** 70 bridge subnodes out of 330, across 8 bridge set-classes (`metadata.bridgeCensus.bySetClass`); `bridgeSpanCensus` records 55 spanning diatonic and harmonic minor, 15 without.
-- **Consumers:** algebra #3 and #9 (filter/bridge mediation); BL-023 route catalog cites this layer rather than embedding it.
+- **Consumers:** algebra #3 and #9 (filter/bridge mediation); BL-023 route catalog cites this layer rather than embedding it; the BL-028 derived-path finder traverses these edges as planning evidence through the generated `orrery/src/generated/derived-path-graph.v1.json` (containment stored once, inverted at load; no intra-330 edges).
 
 ### Layer 3 — Pentatonic inter-node space (330 rooted nodes)
 
@@ -170,7 +170,7 @@ Worked examples of the ownership rule:
 | # | Gap | Tier | Status |
 |---|---|---|---|
 | G1 | **Pentatonic intra-family edge rule (the 330-algebra)** — which pentatonic node connects to which, by what rule | **Tier 2 — the project's one known structural gap** | BL-024 capture (landed with this map) |
-| G2 | Unified cross-layer route graph (one namespace, mixed cross-family and intra-family edges, weighted) | downstream of G1 | vision; build when the first route needs intra-family hops |
+| G2 | Unified cross-layer route graph (one namespace, mixed cross-family and intra-family edges, weighted) | downstream of G1 | **partially realized by BL-028** for cross-family containment + intra-collection operator edges only; intra-330 hops remain fenced by G1 |
 
 The edge rule for G1 is a design decision (semitone adjacency? complement relations? voice-leading distance?), to be driven by the first route or procedure that needs intra-family hops. Formalizing the 330 graph is not one task; each candidate rule defines a different graph.
 

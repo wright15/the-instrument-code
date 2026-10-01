@@ -41,6 +41,7 @@ import {
   type ReplayVoice,
 } from "./audio";
 import type { CourtPosition } from "./court";
+import type { DerivedPath } from "./path-find";
 import type { LegalMoveCatalogIndex } from "./moves";
 import type { OrreryNode } from "./types";
 
@@ -138,7 +139,8 @@ export type ReplayPlan =
   | FivefoldReplayPlan
   | CadenceReplayPlan
   | GoldenPathReplayPlan
-  | ParallelMinorReplayPlan;
+  | ParallelMinorReplayPlan
+  | DerivedPathReplayPlan;
 
 export interface OrreryReplayOptions {
   startAnchorId: number | null;
@@ -963,6 +965,226 @@ export function planParallelMinorModulationReplay(
 // with the BL-021 golden path; a presentation choice, no pitch claim.
 const PARALLEL_MINOR_REPLAY_PRESET = OFFICE_PALETTES.Jupiter.preset;
 
+// ---------------------------------------------------------------------------
+// Derived-path replay (BL-028)
+// ---------------------------------------------------------------------------
+//
+// The finder (`path-find.ts`) derives a path over the composed graph; this
+// planner renders it and asserts each hop's legality. Operator hops resolve in
+// the committed legal-move catalog (`catalog-membership`). Containment hops
+// assert the pentatonic subset relation against every heptatonic neighbor on
+// the path; a pentatonic node with heptatonic neighbors on both sides is a
+// bridge crossing (`both-collections-containment`, reusing the BL-021 class),
+// otherwise a single containment step (`containment-membership`). Where two
+// consecutive operator hops equal an audit M application's compressed pair, the
+// first hop is annotated with the application id — annotation only; the M
+// application is never walked as a legal move.
+
+export type DerivedPathLegality =
+  | "catalog-membership"
+  | "both-collections-containment"
+  | "containment-membership";
+
+export interface DerivedPathReplayHop extends ReplayHopBase {
+  kind: "derived-node";
+  nodeId: string;
+  nodeKind: "heptatonic" | "pentatonic";
+  setClassId: string;
+  arrivedBy: "origin" | "operator" | "containment";
+  moveId: string | null;
+  legality: DerivedPathLegality | null;
+  bridge: boolean;
+  admittedBridge: boolean;
+  mShortcut: string | null;
+}
+
+export interface DerivedPathMShortcut {
+  applicationId: string;
+  canonicalId: string;
+  hopIndices: readonly number[];
+}
+
+export type DerivedPathReplayPlan =
+  | {
+      substrate: "derived-path";
+      kind: "ok";
+      originId: string;
+      destinationId: string;
+      hopCount: number;
+      crossesBridge: boolean;
+      mShortcuts: readonly DerivedPathMShortcut[];
+      hops: DerivedPathReplayHop[];
+    }
+  | { substrate: "derived-path"; kind: "invalid"; message: string };
+
+function invalidDerivedPlan(message: string): DerivedPathReplayPlan {
+  return { substrate: "derived-path", kind: "invalid", message };
+}
+
+/**
+ * Plan the replay of a finder-produced derived path. Every hop is re-asserted
+ * here (catalog move identity for operator hops, subset relations for
+ * containment hops); a malformed path fails closed.
+ */
+export function planDerivedPathReplay(path: DerivedPath): DerivedPathReplayPlan {
+  if (path.nodes.length === 0 || path.nodes.length !== path.edges.length + 1) {
+    return invalidDerivedPlan("Derived path is malformed: node and edge counts disagree.");
+  }
+  if (path.nodes[0].id !== path.originId || path.nodes[path.nodes.length - 1].id !== path.destinationId) {
+    return invalidDerivedPlan("Derived path endpoints do not match its declared origin/destination.");
+  }
+
+  const hops: DerivedPathReplayHop[] = [];
+  for (const [index, node] of path.nodes.entries()) {
+    if (index === 0) {
+      hops.push({
+        index: 0,
+        kind: "derived-node",
+        nodeId: node.id,
+        nodeKind: node.kind,
+        setClassId: node.setClassId,
+        arrivedBy: "origin",
+        moveId: null,
+        legality: null,
+        bridge: false,
+        admittedBridge: node.admittedBridge,
+        mShortcut: null,
+        label: `${node.id} (${node.kind} origin)`,
+        pitchClasses: [...node.pitchClasses],
+      });
+      continue;
+    }
+
+    const edge = path.edges[index - 1];
+    if (edge.kind === "operator") {
+      if (!edge.moveId || !edge.operatorId) {
+        return invalidDerivedPlan(`Derived path hop ${index} is an operator hop without a move identity.`);
+      }
+      hops.push({
+        index,
+        kind: "derived-node",
+        nodeId: node.id,
+        nodeKind: node.kind,
+        setClassId: node.setClassId,
+        arrivedBy: "operator",
+        moveId: edge.moveId,
+        legality: "catalog-membership",
+        bridge: false,
+        admittedBridge: false,
+        mShortcut: null,
+        label: `${node.id} (${edge.moveId})`,
+        pitchClasses: [...node.pitchClasses],
+      });
+      continue;
+    }
+
+    const pentatonicIndex = node.kind === "pentatonic" ? index : index - 1;
+    const pentatonicNode = path.nodes[pentatonicIndex];
+    if (pentatonicNode.kind !== "pentatonic") {
+      return invalidDerivedPlan(`Derived path hop ${index} is a containment hop without a pentatonic node.`);
+    }
+    const neighborIndices = [pentatonicIndex - 1, pentatonicIndex + 1];
+    const heptatonicNeighbors = neighborIndices
+      .map((neighborIndex) => path.nodes[neighborIndex])
+      .filter((neighbor): neighbor is NonNullable<typeof neighbor> => Boolean(neighbor) && neighbor.kind === "heptatonic");
+    if (heptatonicNeighbors.length === 0) {
+      return invalidDerivedPlan(`Containment hop ${index} (${pentatonicNode.id}) has no heptatonic endpoint.`);
+    }
+    for (const neighbor of heptatonicNeighbors) {
+      const outside = pentatonicNode.pitchClasses.filter(
+        (pitchClass) => !neighbor.pitchClasses.includes(pitchClass),
+      );
+      if (outside.length > 0) {
+        return invalidDerivedPlan(
+          `Containment hop ${index} (${pentatonicNode.id}) is not contained in ${neighbor.id}.`,
+        );
+      }
+    }
+    const bridge = heptatonicNeighbors.length === 2;
+    hops.push({
+      index,
+      kind: "derived-node",
+      nodeId: node.id,
+      nodeKind: node.kind,
+      setClassId: node.setClassId,
+      arrivedBy: "containment",
+      moveId: null,
+      legality: bridge ? "both-collections-containment" : "containment-membership",
+      bridge,
+      admittedBridge: pentatonicNode.admittedBridge,
+      mShortcut: null,
+      label: `${node.id} (${node.kind}${bridge ? ", bridge crossing" : ""}${pentatonicNode.admittedBridge ? ", admitted bridge" : ""})`,
+      pitchClasses: [...node.pitchClasses],
+    });
+  }
+
+  const mShortcuts: DerivedPathMShortcut[] = [];
+  for (let index = 0; index + 1 < hops.length; index += 1) {
+    const first = hops[index];
+    const second = hops[index + 1];
+    if (first.arrivedBy !== "operator" || second.arrivedBy !== "operator") {
+      continue;
+    }
+    const application = PARALLEL_MINOR_M_APPLICATIONS.find(
+      (candidate) =>
+        candidate.compresses[0] === first.moveId && candidate.compresses[1] === second.moveId,
+    );
+    if (application) {
+      hops[index] = { ...first, mShortcut: application.applicationId };
+      mShortcuts.push({
+        applicationId: application.applicationId,
+        canonicalId: application.canonicalId,
+        hopIndices: [index, index + 1],
+      });
+    }
+  }
+
+  return {
+    substrate: "derived-path",
+    kind: "ok",
+    originId: path.originId,
+    destinationId: path.destinationId,
+    hopCount: path.hopCount,
+    crossesBridge: hops.some((hop) => hop.bridge),
+    mShortcuts,
+    hops,
+  };
+}
+
+export interface DerivedPathRecord {
+  pathId: string;
+  substrate: "derived-path";
+  origin: { nodeId: string; pitchClasses: number[] };
+  destination: { nodeId: string; pitchClasses: number[] };
+  hopCount: number;
+  crossesBridge: boolean;
+  mShortcuts: readonly DerivedPathMShortcut[];
+  hops: DerivedPathReplayHop[];
+}
+
+/**
+ * Export a derived plan in `golden-path.v1`-compatible fields so BL-023's
+ * catalog can adopt finder output without inventing a new shape.
+ */
+export function derivedPathRecord(plan: DerivedPathReplayPlan): DerivedPathRecord | null {
+  if (plan.kind !== "ok") {
+    return null;
+  }
+  return {
+    pathId: `derived-${plan.originId}-to-${plan.destinationId}`,
+    substrate: "derived-path",
+    origin: { nodeId: plan.originId, pitchClasses: [...plan.hops[0].pitchClasses] },
+    destination: {
+      nodeId: plan.destinationId,
+      pitchClasses: [...plan.hops[plan.hops.length - 1].pitchClasses],
+    },
+    hopCount: plan.hopCount,
+    crossesBridge: plan.crossesBridge,
+    mShortcuts: plan.mShortcuts,
+    hops: plan.hops.map((hop) => ({ ...hop, pitchClasses: [...hop.pitchClasses] })),
+  };
+}
+
 /** Convert a plan into engine voices. Invalid plans produce no voices. */
 export function toReplayVoices(plan: ReplayPlan): ReplayVoice[] {
   if (plan.kind !== "ok") {
@@ -999,10 +1221,15 @@ export function toReplayVoices(plan: ReplayPlan): ReplayVoice[] {
         preset: CADENCE_REPLAY_PRESET,
       };
     }
-    if (hop.kind === "collection" || hop.kind === "triad" || hop.kind === "m-jump") {
-      // Parallel-minor hop: walk and M-demonstration steps carry no emphasis
-      // (the "seam" class belongs to cross-family crossings); the triad overlay
-      // is a brief color tag with its own hold.
+    if (
+      hop.kind === "collection" ||
+      hop.kind === "triad" ||
+      hop.kind === "m-jump" ||
+      hop.kind === "derived-node"
+    ) {
+      // Parallel-minor and derived-path hops carry no emphasis (the "seam"
+      // class belongs to cross-family crossings); the triad overlay is a brief
+      // color tag with its own hold.
       return {
         label: hop.label,
         pitchClasses: [...hop.pitchClasses],

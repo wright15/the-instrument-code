@@ -21,12 +21,18 @@ import {
   isGoldenPathBridgeId,
   isParallelMinorRoute,
   planAndalusianCadenceReplay,
+  planDerivedPathReplay,
   planFivefoldOrbitReplay,
   planGoldenPathCadenceReplay,
   planOrreryRouteReplay,
   planParallelMinorModulationReplay,
   toReplayVoices,
 } from "./path-replay";
+import {
+  DERIVED_PATH_GRAPH,
+  findDerivedPaths,
+  type DerivedPathSearchResult,
+} from "./path-find";
 import {
   COURT_POLE_ORDER,
   COURT_POSITIONS,
@@ -178,6 +184,12 @@ const goldenPathBridgeSelect = requiredElement<HTMLSelectElement>("#golden-path-
 const replayParallelMinorButton = requiredElement<HTMLButtonElement>("#replay-parallel-minor");
 const parallelMinorRouteSelect = requiredElement<HTMLSelectElement>("#parallel-minor-route");
 const parallelMinorTriadOverlay = requiredElement<HTMLInputElement>("#parallel-minor-triad-overlay");
+const derivedPathFromSelect = requiredElement<HTMLSelectElement>("#derived-path-from");
+const derivedPathToSelect = requiredElement<HTMLSelectElement>("#derived-path-to");
+const derivedPathAdmittedBridges = requiredElement<HTMLInputElement>("#derived-path-admitted-bridges");
+const replayDerivedPathButton = requiredElement<HTMLButtonElement>("#replay-derived-path");
+const derivedPathResultSelect = requiredElement<HTMLSelectElement>("#derived-path-result");
+const derivedPathCoverage = requiredElement<HTMLElement>("#derived-path-coverage");
 const replayBucketOverlay = requiredElement<HTMLInputElement>("#replay-bucket-overlay");
 const replayStatus = requiredElement<HTMLElement>("#replay-status");
 const audioEnableButton = requiredElement<HTMLButtonElement>("#audio-enable");
@@ -244,6 +256,8 @@ let legalMoveCatalogNotice: string | undefined;
 let evidenceRecords: Map<number, EvidenceBundleRecord> | undefined;
 let evidenceBundleNotice: string | undefined;
 let selectedTaxonomyRecord: TaxonomyRecord | null = null;
+type DerivedPathSearch = Extract<DerivedPathSearchResult, { kind: "ok" }>;
+let derivedPathSearch: DerivedPathSearch | null = null;
 const anchorButtons = new Map<number, HTMLButtonElement>();
 const courtButtons = new Map<CourtPosition, HTMLButtonElement>();
 const audioEngine = new OrreryAudioEngine();
@@ -567,6 +581,11 @@ function syncReplayControls(): void {
   replayParallelMinorButton.disabled = !soundReady;
   parallelMinorRouteSelect.disabled = !soundReady;
   parallelMinorTriadOverlay.disabled = !soundReady;
+  derivedPathFromSelect.disabled = !soundReady;
+  derivedPathToSelect.disabled = !soundReady;
+  derivedPathAdmittedBridges.disabled = !soundReady;
+  replayDerivedPathButton.disabled = !soundReady;
+  derivedPathResultSelect.disabled = !soundReady || derivedPathSearch === null;
   replayBucketOverlay.disabled = !soundReady;
   if (!soundReady) {
     replayStatus.textContent = "Enable & play sound to replay paths.";
@@ -691,6 +710,132 @@ function replayParallelMinorSound(): void {
       ? " The M hop is an audit demonstration, not a catalog-legal move."
       : "";
   replayStatus.textContent = `Replaying the parallel-minor golden path (C Ionian <-> C Aeolian; set-class 7-35 preserved, tonic pc 0 fixed).${demonstrationNote}`;
+}
+
+function derivedPathEndpointLabel(nodeId: string): string {
+  const node = DERIVED_PATH_GRAPH.nodes.get(nodeId);
+  if (!node) {
+    return `${nodeId}: unknown node.`;
+  }
+  if (node.kind === "heptatonic") {
+    if (node.operatorCovered) {
+      return `${nodeId}: A-anchor — full operator coverage (catalog R/L) and containment reachability.`;
+    }
+    if (node.boundaryAnchor) {
+      return `${nodeId}: D-anchor — reachable-to via containment; no operator departure (no catalog coverage).`;
+    }
+    return `${nodeId}: heptatonic ${node.setClassId} — reachability by containment crossings only.`;
+  }
+  if (node.admittedBridge) {
+    return `${nodeId}: pentatonic ${node.setClassId} — admitted-bridge vocabulary; containment reachability.`;
+  }
+  if (node.isBridge) {
+    return `${nodeId}: pentatonic ${node.setClassId} — census bridge; containment reachability.`;
+  }
+  return `${nodeId}: pentatonic ${node.setClassId} — containment reachability only.`;
+}
+
+function updateDerivedPathCoverage(): void {
+  derivedPathCoverage.textContent = `${derivedPathEndpointLabel(derivedPathFromSelect.value)} ${derivedPathEndpointLabel(derivedPathToSelect.value)}`;
+}
+
+function populateDerivedPathSelectors(): void {
+  const byId = (a: { id: string }, b: { id: string }) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+  const heptatonic = [...DERIVED_PATH_GRAPH.heptatonicNodes.values()].sort(byId);
+  const pentatonic = [...DERIVED_PATH_GRAPH.pentatonicNodes.values()].sort(byId);
+  for (const select of [derivedPathFromSelect, derivedPathToSelect]) {
+    const heptatonicGroup = document.createElement("optgroup");
+    heptatonicGroup.label = `Heptatonic (${heptatonic.length})`;
+    for (const node of heptatonic) {
+      const option = document.createElement("option");
+      option.value = node.id;
+      option.textContent = node.operatorCovered
+        ? `${node.id} — ${node.tier ?? "?"} anchor`
+        : node.boundaryAnchor
+          ? `${node.id} — ${node.tier ?? "D"} anchor (containment-only)`
+          : `${node.id} — ${node.setClassId}`;
+      heptatonicGroup.append(option);
+    }
+    const pentatonicGroup = document.createElement("optgroup");
+    pentatonicGroup.label = `Pentatonic (${pentatonic.length})`;
+    for (const node of pentatonic) {
+      const option = document.createElement("option");
+      option.value = node.id;
+      option.textContent = node.admittedBridge
+        ? `${node.id} — admitted bridge`
+        : node.isBridge
+          ? `${node.id} — bridge`
+          : node.id;
+      pentatonicGroup.append(option);
+    }
+    select.append(heptatonicGroup, pentatonicGroup);
+  }
+  derivedPathFromSelect.value = "7-35:3";
+  derivedPathToSelect.value = "7-32:0";
+  updateDerivedPathCoverage();
+}
+
+function replayDerivedPathOption(): void {
+  if (!derivedPathSearch) {
+    replayStatus.textContent = "Derive a path first.";
+    return;
+  }
+  const index = Number(derivedPathResultSelect.value);
+  const path = derivedPathSearch.paths[index];
+  if (!path) {
+    return;
+  }
+  const plan = planDerivedPathReplay(path);
+  if (plan.kind !== "ok") {
+    replayStatus.textContent = plan.message;
+    return;
+  }
+  const started = audioEngine.replayPath(toReplayVoices(plan), {
+    onHop: (voice, hopIndex, total) => {
+      replayStatus.textContent = `Derived path ${index + 1} / ${derivedPathSearch?.paths.length ?? 1}, hop ${hopIndex + 1} / ${total}: ${voice.label}`;
+    },
+  });
+  if (!started) {
+    replayStatus.textContent = "Enable & play sound before replaying a path.";
+    return;
+  }
+  const filterNote = derivedPathSearch.admittedBridgesOnly ? " with the admitted-bridge filter" : "";
+  const truncationNote = derivedPathSearch.truncated
+    ? ` More than ${derivedPathSearch.paths.length} minimal paths exist; showing ${derivedPathSearch.paths.length}.`
+    : "";
+  const shortcutNote =
+    plan.mShortcuts.length > 0
+      ? ` M shortcut available: ${plan.mShortcuts.map((shortcut) => shortcut.applicationId).join(", ")} (audit demonstration only).`
+      : "";
+  replayStatus.textContent = `Replaying derived path ${index + 1} / ${derivedPathSearch.paths.length}${filterNote}: ${plan.hopCount} hops${plan.crossesBridge ? ", bridge crossing" : ""}.${shortcutNote}${truncationNote}`;
+}
+
+function replayDerivedPathSound(): void {
+  const admittedBridgesOnly = derivedPathAdmittedBridges.checked;
+  const result = findDerivedPaths(
+    DERIVED_PATH_GRAPH,
+    derivedPathFromSelect.value,
+    derivedPathToSelect.value,
+    { admittedBridgesOnly, maxPaths: 3 },
+  );
+  derivedPathResultSelect.replaceChildren();
+  derivedPathSearch = null;
+  if (result.kind === "invalid" || result.kind === "none") {
+    replayStatus.textContent = result.message;
+    syncReplayControls();
+    return;
+  }
+  derivedPathSearch = result;
+  for (const [index, path] of result.paths.entries()) {
+    const option = document.createElement("option");
+    option.value = String(index);
+    const crossings = path.nodes.filter((node) => node.kind === "pentatonic").map((node) => node.id);
+    option.textContent = `path ${index + 1}: ${path.hopCount} hops${crossings.length > 0 ? ` via ${crossings.join(", ")}` : ""}`;
+    derivedPathResultSelect.append(option);
+  }
+  derivedPathResultSelect.value = "0";
+  syncReplayControls();
+  replayDerivedPathOption();
 }
 
 function showProjectionUnavailable(error: unknown): void {
@@ -1874,6 +2019,10 @@ replayQOrbitButton.addEventListener("click", replayQOrbitSound);
 replayAndalusianButton.addEventListener("click", replayAndalusianSound);
 replayGoldenPathButton.addEventListener("click", replayGoldenPathSound);
 replayParallelMinorButton.addEventListener("click", replayParallelMinorSound);
+replayDerivedPathButton.addEventListener("click", replayDerivedPathSound);
+derivedPathResultSelect.addEventListener("change", replayDerivedPathOption);
+derivedPathFromSelect.addEventListener("change", updateDerivedPathCoverage);
+derivedPathToSelect.addEventListener("change", updateDerivedPathCoverage);
 
 audioEnableButton.addEventListener("click", () => {
   if (profileRegistryReleaseId) {
@@ -1946,6 +2095,8 @@ harmonyReseed.addEventListener("click", () => {
 
 initializeCourtControls();
 initializeTaxonomyExplorer();
+populateDerivedPathSelectors();
+syncReplayControls();
 audioEngine.subscribe(renderAudioState);
 provenanceRun.addEventListener("click", () => void runProvenanceQuery());
 photonicVariant.addEventListener("change", renderPhotonicOverlay);

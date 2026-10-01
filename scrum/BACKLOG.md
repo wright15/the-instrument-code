@@ -230,6 +230,49 @@ Fast lane, normal commit. Extends, does not replace, the map's
 structural/receipt discipline.
 Landed same commit: `docs/ARCHITECTURE_MAP.md` §2.5 (10 sourced paragraphs, 2 findings).
 
+### BL-028 — General path finder: derive-and-play over the composed graph [DONE]
+
+BFS/shortest-path over the union graph (row-2 legal moves intra-collection +
+row-given containment cross-family). Inputs: any origin/destination node IDs
+across both universes (462 heptatonic + 330 pentatonic). Output: hops in the
+replay contract, legality typed per hop (`catalog-membership`,
+`both-collections-containment`, `containment-membership`), bridge hops flagged
+where crossings use census-bridge nodes. Return up to 3 minimal-hop paths +
+admitted-bridge filter (5-23 / 5-27 vocabulary) + truncation flag; M
+applications annotate derived routes where a hop-pair compresses (audit-real,
+not traversable). Endpoints: 21 A-anchors first-class (full operator coverage);
+all 792 nodes selectable via containment; D-anchor labeling states
+reachable-to/not-departable. Validation: finder must reproduce consistency with
+the two registered golden paths (match or recorded divergence). Consumes
+BL-021/BL-022 ground truth; feeds BL-023 export shape and BL-031 path
+enumeration. No intra-330 edges (G1 open).
+
+**Landed:** generated composed graph (`scripts/build-derived-path-graph.mjs` → 149 KB
+`orrery/src/generated/derived-path-graph.v1.json`; 462+330 nodes, 60 operator + 6,930
+containment edges; canonical fingerprint) with an independent validator wired into
+`orrery:check`; pure BFS finder (`orrery/src/path-find.ts`; ≤3 minimal paths, admitted-bridge
+filter, truncation flag, deterministic); `planDerivedPathReplay` + `derivedPathRecord` export
+seam; 792-node from/to selectors + endpoint-coverage labeling + result options in the Orrery
+UI. Validation-as-audit: seam route `7-35:3 → 7-32:0` returns exactly 5 minimal crossings
+(registered `5-27:0` among them); mode axis `7-35:0 → 7-35:3` returns exactly 7 minimal paths
+(the exact `L7/L3/L6` chain among them, both M compressions annotated); full graph is one
+792-node component; the seven 7-35 modes are mutually operator-reachable and all 21 anchors
+operator-reachable. 12 new tests; suite 185 green; `orrery:check` + `orrery:build` green; no
+catalog/manifest/palette bytes changed; no intra-330 edges. Memo
+`plan/bl-028-path-finder-memo.md`. Feeds BL-023 export and BL-031 path enumeration; D-tier
+asymmetry queued as BL-029.
+
+### BL-029 — D-tier operator coverage investigation [CAPTURED]
+
+D1–D7 anchors (49) are admitted mathematics (GOV-227/`CH_D17_q_v2`) with zero
+legal-move catalog coverage (verified: catalog scope = 21 A-anchors exactly;
+D-anchor overlap ∅) and no office-network seating. Investigate whether the
+D-tier compression theorem implies an operator set (row-1 analogue over
+D-anchors). If yes, a D-tier move-catalog projection is a candidate work item
+(row 2 extension or new row); if no, the asymmetry is structural and gets
+recorded in the architecture map. Feeds BL-028's endpoint scope (currently
+A-first by catalog coverage).
+
 ---
 
 ## TIER 1 → CEREMONY — THREE-PHASE LATTICE PROGRAM
@@ -401,3 +444,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.12 | Cross-layer architecture map landed (`docs/ARCHITECTURE_MAP.md`, sprint artifact): four structural layers, 11-row operator/algebra catalog with owns/consumes columns, invariant ledger with the three distinct 66s, grounding receipts; BL-024 captured (pentatonic intra-family edge definition + unified route graph, structural gap G1); manifest regen. |
 | v1.13 | BL-026 landed: semantic layer at `docs/ARCHITECTURE_MAP.md` §2.5 (descriptive authority) — one meaning-paragraph per catalog row sourced to existing repo documents; 9 sourced rows, 2 finding rows (governor-runtime schemas-only; T-primitives meaning-less), 1 sourced precursor; manifest regen. |
 | v1.14 | BL-022 landed DONE: bidirectional parallel-minor golden path (`c-parallel-minor-mode-axis`) — stepwise L/R walk with `set-class-preserved` legality, walk+triad overlay (both layers), M compression comparisons rendered as audit demonstrations (`M:2741:1709`, `M:1717:1453`); first multi-path `golden-path.v1` instance; 7 tests, suite 173 green; memo `plan/bl-022-parallel-minor-memo.md`; objective layer untouched. |
+| v1.15 | BL-028 landed DONE: derived-path finder over the composed graph (60 catalog operator edges + 6,930 containment pairs; generated artifact + independent validator in `orrery:check`); ≤3 minimal paths, admitted-bridge filter, legality-typed replay, 792-node UI selectors with coverage labeling. Validation-as-audit: both registered golden paths reproduced consistently among minimal routes; 792-node connectivity census + seven-mode operator reachability pinned. BL-029 captured (D-tier operator coverage, verified 0/49 catalog overlap). 12 tests, suite 185 green; memo `plan/bl-028-path-finder-memo.md`; architecture map updated (G2 partially realized, no G1 change). |

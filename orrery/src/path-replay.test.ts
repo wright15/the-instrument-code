@@ -26,6 +26,8 @@ import {
   planGoldenPathCadenceReplay,
   planOrreryRouteReplay,
   planParallelMinorModulationReplay,
+  derivedPathRecord,
+  planDerivedPathReplay,
   toReplayVoices,
   type GoldenPathBridgeId,
   type GoldenPathReplayHop,
@@ -33,6 +35,7 @@ import {
   type ParallelMinorRoute,
 } from "./path-replay";
 import type { OrreryNode } from "./types";
+import { DERIVED_PATH_GRAPH, findDerivedPaths, type DerivedPath, type DerivedPathNode } from "./path-find";
 
 function node(anchor: LegalMoveCatalogAnchor): OrreryNode {
   const { stateId, office } = anchor;
@@ -732,5 +735,160 @@ describe("Parallel-minor mode-axis planner (BL-022)", () => {
     });
     expect(plan.kind).toBe("invalid");
     expect(plan.kind === "invalid" ? plan.message : "").toContain("Unknown parallel-minor route");
+  });
+});
+
+describe("Derived-path replay planner (BL-028)", () => {
+  function findPath(originId: string, destinationId: string, maxPaths: number, predicate?: (path: DerivedPath) => boolean) {
+    const result = findDerivedPaths(DERIVED_PATH_GRAPH, originId, destinationId, { maxPaths });
+    expect(result.kind).toBe("ok");
+    if (result.kind !== "ok") {
+      throw new Error(result.kind === "none" ? result.message : result.message);
+    }
+    const path = predicate ? result.paths.find(predicate) : result.paths[0];
+    expect(path).toBeDefined();
+    if (!path) {
+      throw new Error("no matching derived path");
+    }
+    return path;
+  }
+
+  it("renders the registered seam crossing with both-collections containment", () => {
+    const path = findPath("7-35:3", "7-32:0", 5, (candidate) => candidate.nodes[1].id === "5-27:0");
+    const plan = planDerivedPathReplay(path);
+    expect(plan.kind).toBe("ok");
+    if (plan.kind !== "ok") {
+      return;
+    }
+    expect(plan.hopCount).toBe(2);
+    expect(plan.hops.map((hop) => hop.nodeId)).toEqual(["7-35:3", "5-27:0", "7-32:0"]);
+    expect(plan.crossesBridge).toBe(true);
+    expect(plan.mShortcuts).toEqual([]);
+
+    expect(plan.hops[0].arrivedBy).toBe("origin");
+    expect(plan.hops[0].legality).toBeNull();
+    expect(plan.hops[0].pitchClasses).toEqual([0, 2, 3, 5, 7, 8, 10]);
+
+    for (const hop of plan.hops.slice(1)) {
+      expect(hop.kind).toBe("derived-node");
+      expect(hop.arrivedBy).toBe("containment");
+      expect(hop.legality).toBe("both-collections-containment");
+      expect(hop.bridge).toBe(true);
+    }
+    expect(plan.hops[1].admittedBridge).toBe(true);
+
+    const voices = toReplayVoices(plan);
+    expect(voices).toHaveLength(3);
+    expect(voices.every((voice) => voice.preset === OFFICE_PALETTES.Jupiter.preset)).toBe(true);
+    expect(voices.every((voice) => voice.holdSeconds === undefined)).toBe(true);
+    expect(voices.every((voice) => voice.emphasis === "none")).toBe(true);
+  });
+
+  it("annotates the mode-axis L-chain with its M successor compressions", () => {
+    const path = findPath(
+      "7-35:0",
+      "7-35:3",
+      8,
+      (candidate) =>
+        candidate.operatorMoveIds.join(",") === "L7:2741:1717,L3:1717:1709,L6:1709:1453",
+    );
+    const plan = planDerivedPathReplay(path);
+    expect(plan.kind).toBe("ok");
+    if (plan.kind !== "ok") {
+      return;
+    }
+    expect(plan.hopCount).toBe(3);
+    expect(plan.hops.map((hop) => hop.nodeId)).toEqual(["7-35:0", "7-35:5", "7-35:10", "7-35:3"]);
+    for (const hop of plan.hops.slice(1)) {
+      expect(hop.arrivedBy).toBe("operator");
+      expect(hop.legality).toBe("catalog-membership");
+      expect(hop.bridge).toBe(false);
+    }
+    expect(plan.mShortcuts.map((shortcut) => shortcut.applicationId)).toEqual([
+      "M:2741:1709",
+      "M:1717:1453",
+    ]);
+    expect(plan.hops[1].mShortcut).toBe("M:2741:1709");
+    expect(plan.hops[2].mShortcut).toBe("M:1717:1453");
+    expect(plan.hops[3].mShortcut).toBeNull();
+  });
+
+  it("types a single pentatonic endpoint hop as containment-membership", () => {
+    const path = findPath("7-35:3", "5-27:0", 1);
+    const plan = planDerivedPathReplay(path);
+    expect(plan.kind).toBe("ok");
+    if (plan.kind !== "ok") {
+      return;
+    }
+    expect(plan.hopCount).toBe(1);
+    expect(plan.crossesBridge).toBe(false);
+    expect(plan.hops[1].legality).toBe("containment-membership");
+    expect(plan.hops[1].bridge).toBe(false);
+    expect(plan.hops[1].admittedBridge).toBe(true);
+  });
+
+  it("fails closed on a malformed or unverifiable derived path", () => {
+    const origin = DERIVED_PATH_GRAPH.heptatonicNodes.get("7-35:0");
+    const pentatonic = DERIVED_PATH_GRAPH.pentatonicNodes.get("5-1:0");
+    expect(origin).toBeDefined();
+    expect(pentatonic).toBeDefined();
+    if (!origin || !pentatonic) {
+      return;
+    }
+    const originNode: DerivedPathNode = {
+      id: origin.id,
+      kind: origin.kind,
+      pitchMask: origin.pitchMask,
+      pitchClasses: origin.pitchClasses,
+      setClassId: origin.setClassId,
+      isBridge: false,
+      admittedBridge: false,
+    };
+    const outsideNode: DerivedPathNode = {
+      id: pentatonic.id,
+      kind: pentatonic.kind,
+      pitchMask: pentatonic.pitchMask,
+      pitchClasses: pentatonic.pitchClasses,
+      setClassId: pentatonic.setClassId,
+      isBridge: pentatonic.isBridge,
+      admittedBridge: pentatonic.admittedBridge,
+    };
+    const malformed: DerivedPath = {
+      originId: origin.id,
+      destinationId: pentatonic.id,
+      nodes: [originNode, outsideNode],
+      edges: [{ kind: "containment", moveId: null, operatorId: null }],
+      hopCount: 1,
+      operatorMoveIds: [],
+    };
+    const plan = planDerivedPathReplay(malformed);
+    expect(plan.kind).toBe("invalid");
+    expect(plan.kind === "invalid" ? plan.message : "").toContain("not contained");
+
+    const broken: DerivedPath = { ...malformed, edges: [] };
+    expect(planDerivedPathReplay(broken).kind).toBe("invalid");
+  });
+
+  it("exports a derived plan in golden-path-compatible record fields", () => {
+    const path = findPath("7-35:3", "7-32:0", 5, (candidate) => candidate.nodes[1].id === "5-27:0");
+    const plan = planDerivedPathReplay(path);
+    expect(plan.kind).toBe("ok");
+    if (plan.kind !== "ok") {
+      return;
+    }
+    const record = derivedPathRecord(plan);
+    expect(record).not.toBeNull();
+    if (!record) {
+      return;
+    }
+    expect(record.pathId).toBe("derived-7-35:3-to-7-32:0");
+    expect(record.substrate).toBe("derived-path");
+    expect(record.origin.nodeId).toBe("7-35:3");
+    expect(record.destination.nodeId).toBe("7-32:0");
+    expect(record.hopCount).toBe(2);
+    expect(record.crossesBridge).toBe(true);
+    expect(record.hops).toHaveLength(3);
+    expect(record.hops[1].legality).toBe("both-collections-containment");
+    expect(derivedPathRecord({ substrate: "derived-path", kind: "invalid", message: "x" })).toBeNull();
   });
 });

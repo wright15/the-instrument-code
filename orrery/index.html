@@ -209,6 +209,24 @@
               <input id="parallel-minor-triad-overlay" type="checkbox" disabled checked />
               Triad overlay (C major -&gt; C minor, the third-quality flip heard as it arrives)
             </label>
+            <label class="field-hint">
+              Derived path origin
+              <select id="derived-path-from" disabled></select>
+            </label>
+            <label class="field-hint">
+              Derived path destination
+              <select id="derived-path-to" disabled></select>
+            </label>
+            <label class="field-hint">
+              <input id="derived-path-admitted-bridges" type="checkbox" disabled />
+              Admitted bridges only (5-23 / 5-27 vocabulary)
+            </label>
+            <button id="replay-derived-path" type="button" disabled>Derive &amp; replay path</button>
+            <label class="field-hint">
+              Derived path option
+              <select id="derived-path-result" disabled></select>
+            </label>
+            <p id="derived-path-coverage" class="field-hint" role="status" aria-live="polite"></p>
           </div>
           <p id="replay-status" class="field-hint" role="status" aria-live="polite">
             Enable &amp; play sound to replay paths. Cursor layer is admitted; the bucket overlay is an opt-in experiment.
