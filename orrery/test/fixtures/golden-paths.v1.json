@@ -1,6 +1,12 @@
 {
   "schemaVersion": "golden-path.v1",
   "status": "planning_evidence",
+  "catalog": {
+    "thesis": "The two registered paths are the movement vocabulary's founding evidence: cross-family movement via admitted bridges (route-dependence, anticipation/prolongation axis) and same-family movement via window traversal (stepwise L/R versus the M successor, linear versus stepped brightness).",
+    "segmentation": "Routes are selected gestaltwise (the cadence-as-gesture) and verified hopwise (membership, containment, seam flags).",
+    "promotion": "Finder-derived routes enter as candidates (derived-path records); registration requires the same human layer as the founders — audition plus recorded verdicts. Machine derivation alone never promotes.",
+    "versioning": "Additive-only contract: v1.x bumps may add optional fields or enum members; registered records are never migrated or rewritten."
+  },
   "paths": [
     {
       "pathId": "c-minor-parallel-seam",
@@ -34,7 +40,7 @@
         "chosen": { "nodeId": "5-27:0", "setClassId": "5-27", "pitchClasses": [0, 3, 5, 7, 8] },
         "alternative": { "nodeId": "5-23:0", "setClassId": "5-23", "pitchClasses": [0, 2, 3, 5, 7] },
         "basis": "maintainer listening audition: 5-27 has more character/energy; both legal, selectable as voicing options",
-        "legality": "both-collections-containment per derived/hypergraph/bipartite-inclusion-v1.json"
+        "legalityNote": "both-collections-containment per derived/hypergraph/bipartite-inclusion-v1.json"
       },
       "hops": [
         {
@@ -96,6 +102,24 @@
           "pitchClasses": [7, 11, 2],
           "seamCrossing": true,
           "legality": "collection-membership"
+        }
+      ],
+      "verdicts": [
+        {
+          "verdictId": "seam-motion-not-arrival",
+          "status": "recorded",
+          "subject": "seam",
+          "statement": "The tonic remains C minor throughout; the leading tone (B natural) pulls onward rather than landing. The crossing reads as intra-tonic motion with the cadence's dominant tension unspent at the seam.",
+          "source": "scrum/plan/bl-021-golden-path-memo.md",
+          "date": "2026-09-27"
+        },
+        {
+          "verdictId": "interior-one-gesture",
+          "status": "recorded",
+          "subject": "interior",
+          "statement": "The three minor chords are perceived as one cadence gesture, not four events; the seam does not fracture the family. The perceptual unit is the gesture while the verification unit stays the hop.",
+          "source": "scrum/plan/bl-021-golden-path-memo.md",
+          "date": "2026-09-27"
         }
       ]
     },
@@ -242,6 +266,32 @@
           "setClassId": "7-35",
           "rotationAxis": true,
           "seamCrossing": false
+        }
+      ],
+      "verdicts": [
+        {
+          "verdictId": "mode-axis-reillumination",
+          "status": "pending",
+          "subject": "walk",
+          "statement": null,
+          "source": "scrum/plan/bl-022-parallel-minor-memo.md",
+          "recipe": "scrum/plan/bl-022-parallel-minor-memo.md §Listening recipe step 2-3: does the mode axis read as re-illumination of one structure rather than a change of object (overlay on and off)?"
+        },
+        {
+          "verdictId": "m-shortcut-compression",
+          "status": "pending",
+          "subject": "m-demonstration",
+          "statement": null,
+          "source": "scrum/plan/bl-022-parallel-minor-memo.md",
+          "recipe": "scrum/plan/bl-022-parallel-minor-memo.md §Listening recipe step 5: does the M jump sound like compressed darkening compared with the stepwise pass?"
+        },
+        {
+          "verdictId": "triad-overlay-flip",
+          "status": "pending",
+          "subject": "triad-overlay",
+          "statement": null,
+          "source": "scrum/plan/bl-022-parallel-minor-memo.md",
+          "recipe": "scrum/plan/bl-022-parallel-minor-memo.md §Listening recipe step 2: does the C minor triad tag carry the third-quality flip as it arrives at the Dorian step?"
         }
       ]
     }

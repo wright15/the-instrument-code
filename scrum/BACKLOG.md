@@ -199,7 +199,7 @@ palette bytes changed. Memo `plan/bl-022-parallel-minor-memo.md` (both theses, c
 table, G1 preview, BL-031 control reconciliation). Objective layer untouched — a future
 `ionian-to-aeolian` objective is a one-line scoring addition if the game surface wants it.
 
-### BL-023 — Golden-path catalog export [ACTIVE]
+### BL-023 — Golden-path catalog export [DONE]
 
 Machine-readable fixture catalog of verified paths (test data — sprint artifact, not evidence).
 Binding constraint (`EPIC-511:24`, `ORR-511:23-24` forbid legal-move byte changes): layer
@@ -211,6 +211,21 @@ Inherits the `golden-path.v1` schema pioneered by BL-021
 BL-022 landed the first multi-path instance (`paths[1]`; alternatives may differ in hop
 topology, `bridge` now optional, `modeAxis`/`triadOverlay` fields) — BL-023 formalizes the
 export format on top of it.
+
+**Landed:** `schemas/harmonic-orrery-golden-path-catalog.schema.json` (required core, closed
+hop/legality/substrate/alternative enums, verdict contract recorded-needs-date /
+pending-needs-recipe, additive-only versioning) + `orrery/scripts/validate-golden-path-catalog.mjs`
+(ajv strict + semantic closure: hop contiguity, endpoint match, catalog move chaining, bridge/
+kernel subset checks, mode-axis arithmetic, derived-path promotion checks) wired into
+`orrery:check`/`orrery:build`; 4-test conformance suite including a BL-028 finder-export
+record validating through the same schema (forward-compatibility proof) and a full-validator
+promotion smoke test (validator PASS, reverted). Fixture: catalog thesis/segmentation/
+promotion/versioning block; BL-021 verdicts recorded in-data, BL-022 verdicts pending with
+recipe pointers; `bridge.legality` renamed `legalityNote` (prose vs enum finding); endpoint
+`mode` optional (derived/pentatonic endpoints). Promotion ceremony documented (audition +
+verdicts required; machine derivation alone never promotes). Suite 189 green; memo
+`plan/bl-023-golden-path-catalog-memo.md`; no catalog/audio/palette bytes changed; no graph
+embedding; G1 untouched.
 
 ### BL-024 — Pentatonic intra-family edge definition + unified route graph [CAPTURED]
 
@@ -445,3 +460,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.13 | BL-026 landed: semantic layer at `docs/ARCHITECTURE_MAP.md` §2.5 (descriptive authority) — one meaning-paragraph per catalog row sourced to existing repo documents; 9 sourced rows, 2 finding rows (governor-runtime schemas-only; T-primitives meaning-less), 1 sourced precursor; manifest regen. |
 | v1.14 | BL-022 landed DONE: bidirectional parallel-minor golden path (`c-parallel-minor-mode-axis`) — stepwise L/R walk with `set-class-preserved` legality, walk+triad overlay (both layers), M compression comparisons rendered as audit demonstrations (`M:2741:1709`, `M:1717:1453`); first multi-path `golden-path.v1` instance; 7 tests, suite 173 green; memo `plan/bl-022-parallel-minor-memo.md`; objective layer untouched. |
 | v1.15 | BL-028 landed DONE: derived-path finder over the composed graph (60 catalog operator edges + 6,930 containment pairs; generated artifact + independent validator in `orrery:check`); ≤3 minimal paths, admitted-bridge filter, legality-typed replay, 792-node UI selectors with coverage labeling. Validation-as-audit: both registered golden paths reproduced consistently among minimal routes; 792-node connectivity census + seven-mode operator reachability pinned. BL-029 captured (D-tier operator coverage, verified 0/49 catalog overlap). 12 tests, suite 185 green; memo `plan/bl-028-path-finder-memo.md`; architecture map updated (G2 partially realized, no G1 change). |
+| v1.16 | BL-023 landed DONE: golden-path catalog formalized — JSON schema (closed hop/legality/substrate/alternative enums, verdict contract, additive-only versioning) + strict validator with semantic closure wired into `orrery:check`; conformance suite proves both registered paths and a BL-028 finder-export record validate through one schema; BL-021 verdicts transcribed (recorded), BL-022 verdicts pending with recipe pointers; `bridge.legality`→`legalityNote` finding; promotion ceremony documented (audition + verdicts required). 4 tests, suite 189 green; memo `plan/bl-023-golden-path-catalog-memo.md`; no catalog/audio/palette bytes changed; no graph embedding; G1 untouched. |

@@ -15,6 +15,7 @@
     "orrery:check": "npm run check --prefix orrery",
     "orrery:catalog:check": "node scripts/build-orrery-legal-move-catalog.mjs --check && node orrery/scripts/validate-orrery-legal-move-catalog.mjs",
     "orrery:derived-path-graph:check": "node scripts/build-derived-path-graph.mjs --check && node orrery/scripts/validate-derived-path-graph.mjs",
+    "orrery:golden-path-catalog:check": "node orrery/scripts/validate-golden-path-catalog.mjs",
     "orrery:test": "npm run test --prefix orrery",
     "orrery:audio:check": "npm run audio:check --prefix orrery",
     "orrery:bundle:build": "node scripts/build-orrery-evidence-bundle.mjs",
