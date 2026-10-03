@@ -384,6 +384,16 @@ two-motivation probe: if interior transport holds but boundary-adjacent paths sh
 path-dependence, that is a second measured motivation for the phase-extended topology alongside
 the BL-029 boundary wall.
 
+**Phase-1 spin-out and gating (BL-034/BL-035).** The semantic census originally sketched as
+Phase 1 is now its own two-mechanism item, BL-035 (`plan/bl-035-semantic-derivation-census-memo.md`):
+pentatonic four-way claimant classification (single 50 / agreeing 0 / conflicting 25 / zero 255;
+all 70 census bridges claimed; the five 5-35 cornerstones are the only 3-claimant, windowed
+nodes) plus the 455-node heptatonic office-following baseline. The 255-node zero-claimant
+coverage map is the gap multi-hop transport must address, and the BL-034 surface fix
+(`plan/bl-034-orrery-provenance-fix-memo.md`) makes the recording layer provenance-trustworthy.
+Multi-hop transport is gated on BL-035's gap map and the BL-034 rule; direction semantics stay
+unassigned (no admitted source) and any direction key is a follow-on input, not a census column.
+
 ### BL-032 — Phase B: claim event (ceremony — ONE session) [ACTIVE]
 
 If and only if Phase A's memo supports it: admit the phase-extended topology as a candidate
@@ -412,6 +422,42 @@ bracket reading carries the ledger's difficulty-of-derivation-not-authorship qua
 ---
 
 ## TIER 1 — BOUNDED INVESTIGATIONS (sprint; filler)
+
+### BL-034 — Orrery semantic provenance fix [DONE]
+
+A1/A2 surfaces stated the office A0 landform pool under the static A0 label; canon carries no
+native pool for non-seed tiers (the office-following projection is admitted, the provenance
+display was not). Fix: tier-branched provenance labels (A0 native with seed; A1/A2 explicitly
+derived with office + seed citation), inheritance-pattern audit across the surface
+(find-and-report; A1/A2 fixed only), rule recorded: no tier's semantic payload displays as
+another tier's native content; inherited display carries office + seed. Fast lane; prerequisite
+for BL-031's recording layer.
+
+**Landed:** `orrery/src/landform-provenance.ts` (pure resolver + labels) with 4 vitest pins;
+`main.ts` tier-branched render + inspector reset; `index.html`/`style.css` label/note surface.
+Audit: scene prompt and audio palette already explicitly derived (not fixed); no kernel-window
+surface exists. Memo `plan/bl-034-orrery-provenance-fix-memo.md`; no payload/canonical/audio
+bytes changed.
+
+### BL-035 — Semantic-derivation census (two-mechanism) [DONE]
+
+Pentatonic (330): four-way landform-claimant census via the seven A0 seeds among each node's 21
+containment parents (single / multi-agreeing / multi-conflicting / zero), stratified by
+diatonic-parent count, census-bridge flag, and kernel-window presence. Heptatonic (455): 
+office-following baseline table from the canonical ledger; mechanism verified from canon
+(`projection:landforms:v0.1.1`, `compiler.mjs`) before use. Comparison: teleological vs.
+ontological derivation behavior. Direction fields recorded; no Earth-ward/Fire-ward value
+assigned (no admitted source). Feeds BL-031 multi-hop design (zero-claimant gap map) and gives
+the teleology/ontology design its first measured comparison.
+
+**Landed:** `scripts/build-semantic-derivation-census.mjs` →
+`orrery/src/generated/semantic-derivation-census.v1.json`; independent validator + 7 vitest pins
+wired into `orrery:check`/`orrery:build`. Results: single 50 / agreeing 0 / conflicting 25 /
+zero 255; 105 claims over 75 nodes; all 70 census bridges claimed (50 single + 20 conflicting);
+the five 5-35 cornerstones are the only 3-claimant, windowed nodes; 255-node derivation gap;
+heptatonic baseline 301 office-bearing + 154 boundary, collision-free at office level;
+direction unassigned (finding). Memo `plan/bl-035-semantic-derivation-census-memo.md`; no
+topology claims, no G1 movement, no governs implications, no M-walkability promotion.
 
 ### BL-040 — T3 strong-form artifact hunt [ACTIVE]
 
@@ -518,3 +564,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.16 | BL-023 landed DONE: golden-path catalog formalized — JSON schema (closed hop/legality/substrate/alternative enums, verdict contract, additive-only versioning) + strict validator with semantic closure wired into `orrery:check`; conformance suite proves both registered paths and a BL-028 finder-export record validate through one schema; BL-021 verdicts transcribed (recorded), BL-022 verdicts pending with recipe pointers; `bridge.legality`→`legalityNote` finding; promotion ceremony documented (audition + verdicts required). 4 tests, suite 189 green; memo `plan/bl-023-golden-path-catalog-memo.md`; no catalog/audio/palette bytes changed; no graph embedding; G1 untouched. |
 | v1.17 | BL-029 landed DONE: read-only D-tier operator probe + independent validator + vitest pins wired into `orrery:check`/`orrery:build`; corrected framing (row 1 domain-local; gap is row-2 projection scope); zero fixed-degree anchor-to-anchor D applications (full admitted universe), exact A-control 60/12/21×21, discriminant assertions PASS, M-closure seven tier cycles, 228 satellite-only fixed-degree touches each way, no phase entanglement; classification outcome (3) refined — no row-2 D extension available; architecture map §1/§4 updated; memo `plan/bl-029-d-tier-operator-probe-memo.md`. |
 | v1.18 | BL-030 landed DONE: seven D-tier M-cycle demonstration routes (`d-cycle:D1`–`d-cycle:D7`, substrate `boundary-demonstration`) + schema v1.1 additive defs + validator boundary-demonstration branch (probe-cycle match, audit-line resolution, cycle closure, exhibit-citation checks; fail-closed mutation-verified); founders byte-identical (payload hash pin); BL-029 memo §3(c) edge-set provenance completed; BL-031 boundary-stratification amendment; spec `plan/bl-030-d-cycle-demonstration-routes-spec.md`; pathCount 9, suite 202 green. |
+| v1.19 | BL-034 landed DONE: Orrery semantic provenance fix — pure landform provenance resolver, tier-branched labels (A0 native with seed; A1/A2 explicitly derived with office + seed citation), inheritance audit (scene prompt + audio palette already derived; no kernel-window surface), rule recorded. BL-035 landed DONE: two-mechanism semantic-derivation census — pentatonic four-way claimant classification (single 50 / agreeing 0 / conflicting 25 / zero 255; 105 claims over 75 nodes; all 70 census bridges claimed; five 5-35 cornerstones the only 3-claimant, windowed nodes) + 455-node heptatonic office-following baseline (301 + 154, collision-free at office level); direction recorded unassigned (negative derivability finding); generator + independent validator + 7 vitest pins wired into `orrery:check`/`orrery:build`; BL-031 Phase-1 spin-out/gating note; memos `plan/bl-034-*`, `plan/bl-035-*`; suite 213 green. |

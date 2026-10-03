@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1184,
-  "totalBytes": 78492132,
+  "fileCount": 1192,
+  "totalBytes": 78688742,
   "files": [
     {
       "path": ".env.example",
@@ -1052,8 +1052,8 @@
     },
     {
       "path": "orrery/index.html",
-      "bytes": 31452,
-      "sha256": "86fc115ecf6369085fdc27ee80198b26f542be28823d0c79b7d93a32e539a59d"
+      "bytes": 31552,
+      "sha256": "8a4d09552c5ce5029751d7d0fd49bf8ccfb54e850e86397ce5e86950c55a4087"
     },
     {
       "path": "orrery/package-lock.json",
@@ -1062,8 +1062,8 @@
     },
     {
       "path": "orrery/package.json",
-      "bytes": 2353,
-      "sha256": "f1e640a77ed64d58ef1b882a71fa0b4ed2a784de7e25252980e5a48109732298"
+      "bytes": 2601,
+      "sha256": "a7dee4d8487e8897a869e35f698b740f58739cb8001d32ba792ddd62d8a779a5"
     },
     {
       "path": "orrery/public/AUDIO_ASSETS.md",
@@ -1124,6 +1124,11 @@
       "path": "orrery/scripts/validate-photonic-overlay.mjs",
       "bytes": 7117,
       "sha256": "9a033507da83aa48d62fcbee47848096e4be0e2b1ebe6e9220c40f4ed7c91af0"
+    },
+    {
+      "path": "orrery/scripts/validate-semantic-derivation-census.mjs",
+      "bytes": 14714,
+      "sha256": "7af787ba6636f45e1a7a8494a556a8f432d72dd6485acc8ef8f2e6dd0092e97a"
     },
     {
       "path": "orrery/src/api.test.ts",
@@ -1226,6 +1231,11 @@
       "sha256": "35e8958d6e6d2455ceb6442ef7dc50d07de80416bbed7bf78260c670cc10901e"
     },
     {
+      "path": "orrery/src/generated/semantic-derivation-census.v1.json",
+      "bytes": 141291,
+      "sha256": "23020708565b081a332b9557e027181ad44d8ae78ade107ce3eae2d099809259"
+    },
+    {
       "path": "orrery/src/generated/taxonomy-read-model.v1.json",
       "bytes": 664518,
       "sha256": "92e151fda61dd414c1bfa1598b2268e35d8b3cd4170c28e2547ff9101b93d45d"
@@ -1246,14 +1256,24 @@
       "sha256": "aae18721cc52f9e7a81cbded65ea8422cf8de140cdd68ae2639293ebcea4f868"
     },
     {
+      "path": "orrery/src/landform-provenance.test.ts",
+      "bytes": 2970,
+      "sha256": "ef48dd165f290a8176f64f30d318e7df128e5834b6537a73bf15273121105647"
+    },
+    {
+      "path": "orrery/src/landform-provenance.ts",
+      "bytes": 1392,
+      "sha256": "7c451d3d98fe28b8cd6506692da5426e359c8cf28d5f1b111676239e7c95a05d"
+    },
+    {
       "path": "orrery/src/layout.ts",
       "bytes": 852,
       "sha256": "6ce0ad434fefd460f72666def0fa321a756c729a47d282d1c8f8b42f291f3429"
     },
     {
       "path": "orrery/src/main.ts",
-      "bytes": 88416,
-      "sha256": "4d7b1d858e8c7cf6a21dd6ea76123e70a8e61006c142256c660bbb992fa7d1a2"
+      "bytes": 89002,
+      "sha256": "be903b60a0ef6e8e3f1f592d22ce33a27759f07c9e817aeba4ab031de45d282f"
     },
     {
       "path": "orrery/src/moves.math.test.ts",
@@ -1336,6 +1356,11 @@
       "sha256": "c3ea86e0d144e0c14b7c74579e26c137f7ba075618c841ce0a57dfe51efa8a67"
     },
     {
+      "path": "orrery/src/semantic-derivation-census.test.ts",
+      "bytes": 4311,
+      "sha256": "cc585fd8820091fc4b62908412d5ab011afdd4c6e24db881bd45549a7127809d"
+    },
+    {
       "path": "orrery/src/session.test.ts",
       "bytes": 17118,
       "sha256": "12db29967c3d497a876305c3f8506c9e26ca16ce964d91e3c38a4b0f063d9c78"
@@ -1347,8 +1372,8 @@
     },
     {
       "path": "orrery/src/style.css",
-      "bytes": 41432,
-      "sha256": "0d948f09abd65823c0360a59f31e2fb038bda4e279ef6ab4005fe02c162b6fc1"
+      "bytes": 41523,
+      "sha256": "dc0fb672b14ff5e3bf26caef10c4779f5548173c20a2e12a6b023acfdc7f6d3a"
     },
     {
       "path": "orrery/src/taxonomy-explain.test.ts",
@@ -1417,8 +1442,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 13234,
-      "sha256": "a80fb61932930f4616fe8e279ab27fea1f1bb1c7770a9f4b2ae4ff29662a6bf2"
+      "bytes": 13405,
+      "sha256": "cde26a80240df02364c7135db137c61a8274d12a5e77e7ab6e125844b2c57d96"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
@@ -2546,6 +2571,11 @@
       "sha256": "5edfe953e83d5e69392c83ce30f283bd460ef1a49110ac053a3b7599591c4692"
     },
     {
+      "path": "scripts/build-semantic-derivation-census.mjs",
+      "bytes": 17166,
+      "sha256": "a1b76f910f53dbd07d66750977ec129ab9bcd5cac72aaabb5ccaaa86ad3f1182"
+    },
+    {
       "path": "scripts/check-gov518-target-blindness.mjs",
       "bytes": 9761,
       "sha256": "c10de900aa47634d079310a70d0d3700206eb33f893c65a450cd1d9247c810db"
@@ -2907,8 +2937,8 @@
     },
     {
       "path": "scrum/BACKLOG.md",
-      "bytes": 37805,
-      "sha256": "9b9ebbdb3ba56abb2e50e982699192074fe14b6165f4490df4b2e33c69aa4530"
+      "bytes": 42078,
+      "sha256": "8fe9693a60e83bf3fb04ac3e795e96126e156d658a0ca2523467f6164ccd7ab8"
     },
     {
       "path": "scrum/CRT-301-court-admission-contract.md",
@@ -3364,6 +3394,16 @@
       "path": "scrum/plan/bl-030-d-cycle-demonstration-routes-spec.md",
       "bytes": 9230,
       "sha256": "4f9e961a0e7f4d1c4ab314a5bf5e830d1ff01aa5d78bf615825a1888fc597856"
+    },
+    {
+      "path": "scrum/plan/bl-034-orrery-provenance-fix-memo.md",
+      "bytes": 3460,
+      "sha256": "d409d162532f4351b1dec4e165151a09877daeeec62a02c5e3a431e9653ffe5b"
+    },
+    {
+      "path": "scrum/plan/bl-035-semantic-derivation-census-memo.md",
+      "bytes": 5837,
+      "sha256": "a3f18c438e19c28ac74879c94b0ce2b907fc8f1997eeabdd808075d7c3060439"
     },
     {
       "path": "scrum/plan/bl-044-court-voicing-audit.md",

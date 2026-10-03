@@ -43,6 +43,11 @@ import {
 } from "./court";
 import { composeSceneParameters, type SceneQuality } from "./scene-composer";
 import {
+  landformPoolLabel,
+  landformPoolNote,
+  landformProvenance,
+} from "./landform-provenance";
+import {
   OVERLAY_DISCLAIMER,
   PHOTONIC_OVERLAY_BUNDLE,
   VARIANT_A,
@@ -137,6 +142,8 @@ const selectedPhotonicCompression = requiredElement<HTMLElement>("#selected-phot
 const selectedWeight = requiredElement<HTMLElement>("#selected-weight");
 const selectedProfile = requiredElement<HTMLElement>("#selected-profile");
 const selectedLandforms = requiredElement<HTMLUListElement>("#selected-landforms");
+const selectedLandformsLabel = requiredElement<HTMLParagraphElement>("#selected-landforms-label");
+const selectedLandformsNote = requiredElement<HTMLParagraphElement>("#selected-landforms-note");
 const selectedQs = requiredElement<HTMLOListElement>("#selected-qs");
 const selectedWWording = requiredElement<HTMLElement>("#selected-w-wording");
 const selectedCertificateStatus = requiredElement<HTMLElement>("#selected-certificate-status");
@@ -870,9 +877,12 @@ function browserStorage(): StorageLike | undefined {
   }
 }
 
-function renderLandforms(landforms: string[]): void {
+function renderLandforms(node: OrreryNode): void {
+  const provenance = landformProvenance(node);
+  selectedLandformsLabel.textContent = landformPoolLabel(provenance);
+  selectedLandformsNote.textContent = landformPoolNote(provenance, node.state.tier);
   selectedLandforms.replaceChildren(
-    ...landforms.map((landform) => {
+    ...provenance.landforms.map((landform) => {
       const item = document.createElement("li");
       item.textContent = landform;
       return item;
@@ -928,6 +938,8 @@ function clearInspector(): void {
   selectedWeight.textContent = "-";
   selectedProfile.textContent = "-";
 
+  selectedLandformsLabel.textContent = "Baseline A0 landform reference pool";
+  selectedLandformsNote.textContent = "";
   const item = document.createElement("li");
   item.textContent = "Select an anchor to view its reference pool.";
   selectedLandforms.replaceChildren(item);
@@ -1642,7 +1654,7 @@ function selectAnchor(node: OrreryNode, selectionSource: "restore" | "user" = "r
   selectedPhotonicCompression.textContent = node.photonic.photonicCompression.toFixed(3);
   selectedWeight.textContent = formatRatio(node.scopedHarmonicDescriptor.weightedProjection);
   selectedProfile.textContent = node.canonicalProfile.profileVersion;
-  renderLandforms(node.canonicalProfile.domainReferences.landforms);
+  renderLandforms(node);
   renderEvidenceBlock(node);
   renderAudioPalette(audioEngine.select(node, session.courtPresentationPosition, selectionSource === "user"));
   // The engine stops any progression on node change; re-issue it for the new
