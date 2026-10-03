@@ -315,6 +315,55 @@
         }
       }
     },
+    "cycleDemonstrationMove": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operatorId",
+        "applicationId",
+        "canonicalId",
+        "auditSource",
+        "status",
+        "legality",
+        "cycleEdge"
+      ],
+      "properties": {
+        "operatorId": { "const": "M" },
+        "applicationId": { "type": "string", "minLength": 1 },
+        "canonicalId": { "type": "string", "minLength": 1 },
+        "auditSource": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "minLength": 1 },
+        "legality": { "const": "demonstration" },
+        "cycleEdge": { "const": true }
+      }
+    },
+    "cycleDemonstrationVariant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["variantId", "moves"],
+      "properties": {
+        "variantId": { "type": "string", "minLength": 1 },
+        "moves": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/cycleDemonstrationMove" }
+        }
+      }
+    },
+    "cycleDemonstration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "basis", "variants"],
+      "properties": {
+        "kind": { "const": "cycle-demonstration" },
+        "basis": { "type": "string", "minLength": 1 },
+        "variants": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/cycleDemonstrationVariant" }
+        }
+      }
+    },
     "reverseChain": {
       "type": "object",
       "additionalProperties": false,
@@ -333,7 +382,8 @@
     "alternative": {
       "oneOf": [
         { "$ref": "#/$defs/reverseChain" },
-        { "$ref": "#/$defs/mDemonstration" }
+        { "$ref": "#/$defs/mDemonstration" },
+        { "$ref": "#/$defs/cycleDemonstration" }
       ]
     },
     "triadEntry": {
@@ -351,8 +401,21 @@
     "verdict": {
       "oneOf": [
         { "$ref": "#/$defs/recordedVerdict" },
-        { "$ref": "#/$defs/pendingVerdict" }
+        { "$ref": "#/$defs/pendingVerdict" },
+        { "$ref": "#/$defs/exhibitVerdict" }
       ]
+    },
+    "exhibitVerdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verdictId", "status", "subject", "statement", "source"],
+      "properties": {
+        "verdictId": { "type": "string", "minLength": 1 },
+        "status": { "const": "exhibit" },
+        "subject": { "type": "string", "minLength": 1 },
+        "statement": { "type": "string", "minLength": 1 },
+        "source": { "type": "string", "minLength": 1 }
+      }
     },
     "recordedVerdict": {
       "type": "object",
@@ -390,7 +453,8 @@
           "enum": [
             "golden-path",
             "golden-path-parallel-minor",
-            "derived-path"
+            "derived-path",
+            "boundary-demonstration"
           ]
         },
         "tonicPitchClass": { "type": "integer", "minimum": 0, "maximum": 11 },

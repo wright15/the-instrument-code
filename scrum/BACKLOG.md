@@ -307,6 +307,32 @@ item); finder label confirmed with a sharper cause (recommendation recorded,
 not implemented). Memo `plan/bl-029-d-tier-operator-probe-memo.md`; no
 canonical/catalog/audio bytes changed; G1 untouched.
 
+### BL-030 — D-tier M-cycle demonstration routes [DONE]
+
+Seven boundary-layer exhibit routes, one per D1–D7 M-cycle (BL-029's `modalClosure.dToD`),
+authored as demonstration-typed catalog entries grouped by the `d-cycle:` pathId prefix:
+`d-cycle:{tier}`, substrate `boundary-demonstration`, audit-cited hops, discriminant-preservation
+exhibits, no listening verdict. Full entry spec + the four additive schema decisions:
+`plan/bl-030-d-cycle-demonstration-routes-spec.md`. Promotion is conformance-based (structural
+exhibit; no audition — nothing to hear until the C-substrate question is answered). Feeds
+BL-031's boundary-stratified sampling as the boundary layer's canonical traversal paths.
+
+**Deferred claim event (recorded, not started):** M-walkability promotion (row-2 extension,
+adding M to the Move-Desk set). Requires a motivation-driven claim event; candidate trigger:
+BL-032 admission if phase work makes boundary traversal central. Named here so the exhibit
+routes are not read as walkability.
+
+**Landed:** seven `d-cycle:D1`–`d-cycle:D7` exhibit entries in
+`orrery/test/fixtures/golden-paths.v1.json` (eight hops per closed cycle, seven audit-cited M
+edges, one exhibit verdict per entry citing the discriminant check); schema v1.1 additive defs
+(cycle demonstration move/variant/alternative, exhibit verdict, `boundary-demonstration`
+substrate) in `schemas/harmonic-orrery-golden-path-catalog.schema.json`; validator
+boundary-demonstration branch (BL-029 probe-cycle match, audit-line resolution, cycle closure,
+alternative/hop agreement, citation checks; fail-closed verified by mutation test); founders
+byte-identical (payload hash pinned in the test); spec §9 build record. `golden-path-catalog:check`
+PASS at pathCount 9; suite 202 green; `orrery:check`/`orrery:build` green; no legal-move/audio
+bytes changed; G1 untouched.
+
 ---
 
 ## TIER 1 → CEREMONY — THREE-PHASE LATTICE PROGRAM
@@ -347,6 +373,16 @@ Phase B claim is supportable.
 Required Phase-A findings-memo context: the fa-distance argument (poles as boundary entities
 of the motion; eleven-steps-for-one) — see `plan/harmonic-comprehension-map.md` §2.5; the seam
 census (d) treats the mirror-relation prediction under that lens (prediction, not conclusion).
+
+**Boundary-stratification amendment (BL-029/BL-030).** The seam census (d) and the mutation
+equivariance probe (c) stratify their sampling by boundary-proximity: interior paths vs. paths
+touching boundary-adjacent structures (the 70-bridge switchboard; the D-tier's M-closed,
+fixed-degree-isolated anchors). The `d-cycle:{tier}` exhibit routes (BL-030) are the boundary
+layer's canonical sampling paths. Naming note: the session's "transport probe" is this Phase A
+census/equivariance sampling in repo terms — one item, not two. This makes Phase A the
+two-motivation probe: if interior transport holds but boundary-adjacent paths show
+path-dependence, that is a second measured motivation for the phase-extended topology alongside
+the BL-029 boundary wall.
 
 ### BL-032 — Phase B: claim event (ceremony — ONE session) [ACTIVE]
 
@@ -481,3 +517,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.15 | BL-028 landed DONE: derived-path finder over the composed graph (60 catalog operator edges + 6,930 containment pairs; generated artifact + independent validator in `orrery:check`); ≤3 minimal paths, admitted-bridge filter, legality-typed replay, 792-node UI selectors with coverage labeling. Validation-as-audit: both registered golden paths reproduced consistently among minimal routes; 792-node connectivity census + seven-mode operator reachability pinned. BL-029 captured (D-tier operator coverage, verified 0/49 catalog overlap). 12 tests, suite 185 green; memo `plan/bl-028-path-finder-memo.md`; architecture map updated (G2 partially realized, no G1 change). |
 | v1.16 | BL-023 landed DONE: golden-path catalog formalized — JSON schema (closed hop/legality/substrate/alternative enums, verdict contract, additive-only versioning) + strict validator with semantic closure wired into `orrery:check`; conformance suite proves both registered paths and a BL-028 finder-export record validate through one schema; BL-021 verdicts transcribed (recorded), BL-022 verdicts pending with recipe pointers; `bridge.legality`→`legalityNote` finding; promotion ceremony documented (audition + verdicts required). 4 tests, suite 189 green; memo `plan/bl-023-golden-path-catalog-memo.md`; no catalog/audio/palette bytes changed; no graph embedding; G1 untouched. |
 | v1.17 | BL-029 landed DONE: read-only D-tier operator probe + independent validator + vitest pins wired into `orrery:check`/`orrery:build`; corrected framing (row 1 domain-local; gap is row-2 projection scope); zero fixed-degree anchor-to-anchor D applications (full admitted universe), exact A-control 60/12/21×21, discriminant assertions PASS, M-closure seven tier cycles, 228 satellite-only fixed-degree touches each way, no phase entanglement; classification outcome (3) refined — no row-2 D extension available; architecture map §1/§4 updated; memo `plan/bl-029-d-tier-operator-probe-memo.md`. |
+| v1.18 | BL-030 landed DONE: seven D-tier M-cycle demonstration routes (`d-cycle:D1`–`d-cycle:D7`, substrate `boundary-demonstration`) + schema v1.1 additive defs + validator boundary-demonstration branch (probe-cycle match, audit-line resolution, cycle closure, exhibit-citation checks; fail-closed mutation-verified); founders byte-identical (payload hash pin); BL-029 memo §3(c) edge-set provenance completed; BL-031 boundary-stratification amendment; spec `plan/bl-030-d-cycle-demonstration-routes-spec.md`; pathCount 9, suite 202 green. |

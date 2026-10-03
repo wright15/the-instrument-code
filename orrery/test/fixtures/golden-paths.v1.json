@@ -3,9 +3,9 @@
   "status": "planning_evidence",
   "catalog": {
     "thesis": "The two registered paths are the movement vocabulary's founding evidence: cross-family movement via admitted bridges (route-dependence, anticipation/prolongation axis) and same-family movement via window traversal (stepwise L/R versus the M successor, linear versus stepped brightness).",
-    "segmentation": "Routes are selected gestaltwise (the cadence-as-gesture) and verified hopwise (membership, containment, seam flags).",
+    "segmentation": "Routes are selected gestaltwise (the cadence-as-gesture) and verified hopwise (membership, containment, seam flags). Boundary-layer exhibit routes (d-cycle:*): structural demonstrations of the D-tier M-cycles, verified against the BL-029 probe, not musical routes.",
     "promotion": "Finder-derived routes enter as candidates (derived-path records); registration requires the same human layer as the founders — audition plus recorded verdicts. Machine derivation alone never promotes.",
-    "versioning": "Additive-only contract: v1.x bumps may add optional fields or enum members; registered records are never migrated or rewritten."
+    "versioning": "Additive-only contract: v1.x bumps may add optional fields or enum members; registered records are never migrated or rewritten. v1.1 (BL-030): added the boundary-demonstration substrate, cycle demonstration move, and exhibit verdict; additive only."
   },
   "paths": [
     {
@@ -292,6 +292,1546 @@
           "statement": null,
           "source": "scrum/plan/bl-022-parallel-minor-memo.md",
           "recipe": "scrum/plan/bl-022-parallel-minor-memo.md §Listening recipe step 2: does the C minor triad tag carry the third-quality flip as it arrives at the Dorian step?"
+        }
+      ]
+    },
+    {
+      "pathId": "d-cycle:D1",
+      "substrate": "boundary-demonstration",
+      "origin": {
+        "nodeId": "7-22:0",
+        "pitchClasses": [0, 1, 2, 5, 6, 8, 9]
+      },
+      "destination": {
+        "nodeId": "7-22:0",
+        "pitchClasses": [0, 1, 2, 5, 6, 8, 9]
+      },
+      "schemaNote": "Boundary-layer exhibit (BL-030): structural demonstration of the D1 (7-22) M-cycle, not a musical route; no listening verdict applies.",
+      "alternatives": [
+        {
+          "kind": "cycle-demonstration",
+          "basis": "No alternative exists: the D1 M-cycle is the only traversal structure for these anchors (BL-029); M is row-2-excluded and audit-real. The reverse walk is the same edges in opposite order, still demonstration-typed.",
+          "variants": [
+            {
+              "variantId": "m-successor-cycle",
+              "moves": [
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:871:2483",
+                  "canonicalId": "modal:D1:871:2483",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:60",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:2483:3289",
+                  "canonicalId": "modal:D1:2483:3289",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:255",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:3289:923",
+                  "canonicalId": "modal:D1:3289:923",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:368",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:923:2509",
+                  "canonicalId": "modal:D1:923:2509",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:68",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:2509:1651",
+                  "canonicalId": "modal:D1:2509:1651",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:260",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:1651:2873",
+                  "canonicalId": "modal:D1:1651:2873",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:154",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:2873:871",
+                  "canonicalId": "modal:D1:2873:871",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:312",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "verdicts": [
+        {
+          "verdictId": "d-cycle-D1-exhibit",
+          "status": "exhibit",
+          "subject": "boundary-demonstration",
+          "statement": "D1 (7-22) is M-closed: seven anchors in one 7-cycle, tier-, family-, and rooted-Q-preserving; discriminant check PASS over the complete D-D relation set (tier-preserving, family-preserving, D2/D5 twin-separated, D3/D4 Z-partner-separated, rooted-Q preserved). Traversal limitation: the D-tier is fixed-degree-isolated (zero anchor-to-anchor R/L applications), so these anchors are reachable only by M-jump.",
+          "source": "scrum/plan/bl-029-d-tier-operator-probe-memo.md; scrum/plan/bl-030-d-cycle-demonstration-routes-spec.md"
+        }
+      ],
+      "hops": [
+        {
+          "index": 0,
+          "kind": "derived-node",
+          "nodeId": "7-22:0",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-22",
+          "arrivedBy": "origin",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": null,
+          "label": "D1 M-cycle origin (7-22:0)",
+          "pitchClasses": [0, 1, 2, 5, 6, 8, 9]
+        },
+        {
+          "index": 1,
+          "kind": "derived-node",
+          "nodeId": "7-22:11",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-22",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:871:2483",
+          "label": "D1 M-cycle edge M:871:2483 -> 7-22:11",
+          "pitchClasses": [0, 1, 4, 5, 7, 8, 11]
+        },
+        {
+          "index": 2,
+          "kind": "derived-node",
+          "nodeId": "7-22:10",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-22",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:2483:3289",
+          "label": "D1 M-cycle edge M:2483:3289 -> 7-22:10",
+          "pitchClasses": [0, 3, 4, 6, 7, 10, 11]
+        },
+        {
+          "index": 3,
+          "kind": "derived-node",
+          "nodeId": "7-22:7",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-22",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:3289:923",
+          "label": "D1 M-cycle edge M:3289:923 -> 7-22:7",
+          "pitchClasses": [0, 1, 3, 4, 7, 8, 9]
+        },
+        {
+          "index": 4,
+          "kind": "derived-node",
+          "nodeId": "7-22:6",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-22",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:923:2509",
+          "label": "D1 M-cycle edge M:923:2509 -> 7-22:6",
+          "pitchClasses": [0, 2, 3, 6, 7, 8, 11]
+        },
+        {
+          "index": 5,
+          "kind": "derived-node",
+          "nodeId": "7-22:4",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-22",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:2509:1651",
+          "label": "D1 M-cycle edge M:2509:1651 -> 7-22:4",
+          "pitchClasses": [0, 1, 4, 5, 6, 9, 10]
+        },
+        {
+          "index": 6,
+          "kind": "derived-node",
+          "nodeId": "7-22:3",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-22",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:1651:2873",
+          "label": "D1 M-cycle edge M:1651:2873 -> 7-22:3",
+          "pitchClasses": [0, 3, 4, 5, 8, 9, 11]
+        },
+        {
+          "index": 7,
+          "kind": "derived-node",
+          "nodeId": "7-22:0",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-22",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:2873:871",
+          "label": "D1 M-cycle edge M:2873:871 -> 7-22:0",
+          "pitchClasses": [0, 1, 2, 5, 6, 8, 9]
+        }
+      ]
+    },
+    {
+      "pathId": "d-cycle:D2",
+      "substrate": "boundary-demonstration",
+      "origin": {
+        "nodeId": "7-15:0",
+        "pitchClasses": [0, 1, 2, 4, 6, 7, 8]
+      },
+      "destination": {
+        "nodeId": "7-15:0",
+        "pitchClasses": [0, 1, 2, 4, 6, 7, 8]
+      },
+      "schemaNote": "Boundary-layer exhibit (BL-030): structural demonstration of the D2 (7-15) M-cycle, not a musical route; no listening verdict applies.",
+      "alternatives": [
+        {
+          "kind": "cycle-demonstration",
+          "basis": "No alternative exists: the D2 M-cycle is the only traversal structure for these anchors (BL-029); M is row-2-excluded and audit-real. The reverse walk is the same edges in opposite order, still demonstration-typed.",
+          "variants": [
+            {
+              "variantId": "m-successor-cycle",
+              "moves": [
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:471:2283",
+                  "canonicalId": "modal:D2:471:2283",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:21",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:2283:3189",
+                  "canonicalId": "modal:D2:2283:3189",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:228",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:3189:1821",
+                  "canonicalId": "modal:D2:3189:1821",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:351",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:1821:1479",
+                  "canonicalId": "modal:D2:1821:1479",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:180",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:1479:2787",
+                  "canonicalId": "modal:D2:1479:2787",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:132",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:2787:3441",
+                  "canonicalId": "modal:D2:2787:3441",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:299",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:3441:471",
+                  "canonicalId": "modal:D2:3441:471",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:392",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "verdicts": [
+        {
+          "verdictId": "d-cycle-D2-exhibit",
+          "status": "exhibit",
+          "subject": "boundary-demonstration",
+          "statement": "D2 (7-15) is M-closed: seven anchors in one 7-cycle, tier-, family-, and rooted-Q-preserving; discriminant check PASS over the complete D-D relation set (tier-preserving, family-preserving, D2/D5 twin-separated, D3/D4 Z-partner-separated, rooted-Q preserved). Traversal limitation: the D-tier is fixed-degree-isolated (zero anchor-to-anchor R/L applications), so these anchors are reachable only by M-jump.",
+          "source": "scrum/plan/bl-029-d-tier-operator-probe-memo.md; scrum/plan/bl-030-d-cycle-demonstration-routes-spec.md"
+        }
+      ],
+      "hops": [
+        {
+          "index": 0,
+          "kind": "derived-node",
+          "nodeId": "7-15:0",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-15",
+          "arrivedBy": "origin",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": null,
+          "label": "D2 M-cycle origin (7-15:0)",
+          "pitchClasses": [0, 1, 2, 4, 6, 7, 8]
+        },
+        {
+          "index": 1,
+          "kind": "derived-node",
+          "nodeId": "7-15:11",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-15",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:471:2283",
+          "label": "D2 M-cycle edge M:471:2283 -> 7-15:11",
+          "pitchClasses": [0, 1, 3, 5, 6, 7, 11]
+        },
+        {
+          "index": 2,
+          "kind": "derived-node",
+          "nodeId": "7-15:10",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-15",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:2283:3189",
+          "label": "D2 M-cycle edge M:2283:3189 -> 7-15:10",
+          "pitchClasses": [0, 2, 4, 5, 6, 10, 11]
+        },
+        {
+          "index": 3,
+          "kind": "derived-node",
+          "nodeId": "7-15:8",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-15",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:3189:1821",
+          "label": "D2 M-cycle edge M:3189:1821 -> 7-15:8",
+          "pitchClasses": [0, 2, 3, 4, 8, 9, 10]
+        },
+        {
+          "index": 4,
+          "kind": "derived-node",
+          "nodeId": "7-15:6",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-15",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:1821:1479",
+          "label": "D2 M-cycle edge M:1821:1479 -> 7-15:6",
+          "pitchClasses": [0, 1, 2, 6, 7, 8, 10]
+        },
+        {
+          "index": 5,
+          "kind": "derived-node",
+          "nodeId": "7-15:5",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-15",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:1479:2787",
+          "label": "D2 M-cycle edge M:1479:2787 -> 7-15:5",
+          "pitchClasses": [0, 1, 5, 6, 7, 9, 11]
+        },
+        {
+          "index": 6,
+          "kind": "derived-node",
+          "nodeId": "7-15:4",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-15",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:2787:3441",
+          "label": "D2 M-cycle edge M:2787:3441 -> 7-15:4",
+          "pitchClasses": [0, 4, 5, 6, 8, 10, 11]
+        },
+        {
+          "index": 7,
+          "kind": "derived-node",
+          "nodeId": "7-15:0",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-15",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:3441:471",
+          "label": "D2 M-cycle edge M:3441:471 -> 7-15:0",
+          "pitchClasses": [0, 1, 2, 4, 6, 7, 8]
+        }
+      ]
+    },
+    {
+      "pathId": "d-cycle:D3",
+      "substrate": "boundary-demonstration",
+      "origin": {
+        "nodeId": "7-Z37:0",
+        "pitchClasses": [0, 1, 3, 4, 5, 7, 8]
+      },
+      "destination": {
+        "nodeId": "7-Z37:0",
+        "pitchClasses": [0, 1, 3, 4, 5, 7, 8]
+      },
+      "schemaNote": "Boundary-layer exhibit (BL-030): structural demonstration of the D3 (7-Z37) M-cycle, not a musical route; no listening verdict applies.",
+      "alternatives": [
+        {
+          "kind": "cycle-demonstration",
+          "basis": "No alternative exists: the D3 M-cycle is the only traversal structure for these anchors (BL-029); M is row-2-excluded and audit-real. The reverse walk is the same edges in opposite order, still demonstration-typed.",
+          "variants": [
+            {
+              "variantId": "m-successor-cycle",
+              "moves": [
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:443:2269",
+                  "canonicalId": "modal:D3:443:2269",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:18",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:2269:1591",
+                  "canonicalId": "modal:D3:2269:1591",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:226",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:1591:2843",
+                  "canonicalId": "modal:D3:1591:2843",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:144",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:2843:3469",
+                  "canonicalId": "modal:D3:2843:3469",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:305",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:3469:1891",
+                  "canonicalId": "modal:D3:3469:1891",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:395",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:1891:2993",
+                  "canonicalId": "modal:D3:1891:2993",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:193",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:2993:443",
+                  "canonicalId": "modal:D3:2993:443",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:332",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "verdicts": [
+        {
+          "verdictId": "d-cycle-D3-exhibit",
+          "status": "exhibit",
+          "subject": "boundary-demonstration",
+          "statement": "D3 (7-Z37) is M-closed: seven anchors in one 7-cycle, tier-, family-, and rooted-Q-preserving; discriminant check PASS over the complete D-D relation set (tier-preserving, family-preserving, D2/D5 twin-separated, D3/D4 Z-partner-separated, rooted-Q preserved). Traversal limitation: the D-tier is fixed-degree-isolated (zero anchor-to-anchor R/L applications), so these anchors are reachable only by M-jump.",
+          "source": "scrum/plan/bl-029-d-tier-operator-probe-memo.md; scrum/plan/bl-030-d-cycle-demonstration-routes-spec.md"
+        }
+      ],
+      "hops": [
+        {
+          "index": 0,
+          "kind": "derived-node",
+          "nodeId": "7-Z37:0",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z37",
+          "arrivedBy": "origin",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": null,
+          "label": "D3 M-cycle origin (7-Z37:0)",
+          "pitchClasses": [0, 1, 3, 4, 5, 7, 8]
+        },
+        {
+          "index": 1,
+          "kind": "derived-node",
+          "nodeId": "7-Z37:11",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z37",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:443:2269",
+          "label": "D3 M-cycle edge M:443:2269 -> 7-Z37:11",
+          "pitchClasses": [0, 2, 3, 4, 6, 7, 11]
+        },
+        {
+          "index": 2,
+          "kind": "derived-node",
+          "nodeId": "7-Z37:9",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z37",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:2269:1591",
+          "label": "D3 M-cycle edge M:2269:1591 -> 7-Z37:9",
+          "pitchClasses": [0, 1, 2, 4, 5, 9, 10]
+        },
+        {
+          "index": 3,
+          "kind": "derived-node",
+          "nodeId": "7-Z37:8",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z37",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:1591:2843",
+          "label": "D3 M-cycle edge M:1591:2843 -> 7-Z37:8",
+          "pitchClasses": [0, 1, 3, 4, 8, 9, 11]
+        },
+        {
+          "index": 4,
+          "kind": "derived-node",
+          "nodeId": "7-Z37:7",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z37",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:2843:3469",
+          "label": "D3 M-cycle edge M:2843:3469 -> 7-Z37:7",
+          "pitchClasses": [0, 2, 3, 7, 8, 10, 11]
+        },
+        {
+          "index": 5,
+          "kind": "derived-node",
+          "nodeId": "7-Z37:5",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z37",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:3469:1891",
+          "label": "D3 M-cycle edge M:3469:1891 -> 7-Z37:5",
+          "pitchClasses": [0, 1, 5, 6, 8, 9, 10]
+        },
+        {
+          "index": 6,
+          "kind": "derived-node",
+          "nodeId": "7-Z37:4",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z37",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:1891:2993",
+          "label": "D3 M-cycle edge M:1891:2993 -> 7-Z37:4",
+          "pitchClasses": [0, 4, 5, 7, 8, 9, 11]
+        },
+        {
+          "index": 7,
+          "kind": "derived-node",
+          "nodeId": "7-Z37:0",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z37",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:2993:443",
+          "label": "D3 M-cycle edge M:2993:443 -> 7-Z37:0",
+          "pitchClasses": [0, 1, 3, 4, 5, 7, 8]
+        }
+      ]
+    },
+    {
+      "pathId": "d-cycle:D4",
+      "substrate": "boundary-demonstration",
+      "origin": {
+        "nodeId": "7-Z17:0",
+        "pitchClasses": [0, 1, 2, 4, 5, 6, 9]
+      },
+      "destination": {
+        "nodeId": "7-Z17:0",
+        "pitchClasses": [0, 1, 2, 4, 5, 6, 9]
+      },
+      "schemaNote": "Boundary-layer exhibit (BL-030): structural demonstration of the D4 (7-Z17) M-cycle, not a musical route; no listening verdict applies.",
+      "alternatives": [
+        {
+          "kind": "cycle-demonstration",
+          "basis": "No alternative exists: the D4 M-cycle is the only traversal structure for these anchors (BL-029); M is row-2-excluded and audit-real. The reverse walk is the same edges in opposite order, still demonstration-typed.",
+          "variants": [
+            {
+              "variantId": "m-successor-cycle",
+              "moves": [
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:631:2363",
+                  "canonicalId": "modal:D4:631:2363",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:33",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:2363:3229",
+                  "canonicalId": "modal:D4:2363:3229",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:236",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:3229:1831",
+                  "canonicalId": "modal:D4:3229:1831",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:356",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:1831:2963",
+                  "canonicalId": "modal:D4:1831:2963",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:181",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:2963:3529",
+                  "canonicalId": "modal:D4:2963:3529",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:326",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:3529:953",
+                  "canonicalId": "modal:D4:3529:953",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:405",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:953:631",
+                  "canonicalId": "modal:D4:953:631",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:75",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "verdicts": [
+        {
+          "verdictId": "d-cycle-D4-exhibit",
+          "status": "exhibit",
+          "subject": "boundary-demonstration",
+          "statement": "D4 (7-Z17) is M-closed: seven anchors in one 7-cycle, tier-, family-, and rooted-Q-preserving; discriminant check PASS over the complete D-D relation set (tier-preserving, family-preserving, D2/D5 twin-separated, D3/D4 Z-partner-separated, rooted-Q preserved). Traversal limitation: the D-tier is fixed-degree-isolated (zero anchor-to-anchor R/L applications), so these anchors are reachable only by M-jump.",
+          "source": "scrum/plan/bl-029-d-tier-operator-probe-memo.md; scrum/plan/bl-030-d-cycle-demonstration-routes-spec.md"
+        }
+      ],
+      "hops": [
+        {
+          "index": 0,
+          "kind": "derived-node",
+          "nodeId": "7-Z17:0",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z17",
+          "arrivedBy": "origin",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": null,
+          "label": "D4 M-cycle origin (7-Z17:0)",
+          "pitchClasses": [0, 1, 2, 4, 5, 6, 9]
+        },
+        {
+          "index": 1,
+          "kind": "derived-node",
+          "nodeId": "7-Z17:11",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z17",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:631:2363",
+          "label": "D4 M-cycle edge M:631:2363 -> 7-Z17:11",
+          "pitchClasses": [0, 1, 3, 4, 5, 8, 11]
+        },
+        {
+          "index": 2,
+          "kind": "derived-node",
+          "nodeId": "7-Z17:10",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z17",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:2363:3229",
+          "label": "D4 M-cycle edge M:2363:3229 -> 7-Z17:10",
+          "pitchClasses": [0, 2, 3, 4, 7, 10, 11]
+        },
+        {
+          "index": 3,
+          "kind": "derived-node",
+          "nodeId": "7-Z17:8",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z17",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:3229:1831",
+          "label": "D4 M-cycle edge M:3229:1831 -> 7-Z17:8",
+          "pitchClasses": [0, 1, 2, 5, 8, 9, 10]
+        },
+        {
+          "index": 4,
+          "kind": "derived-node",
+          "nodeId": "7-Z17:7",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z17",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:1831:2963",
+          "label": "D4 M-cycle edge M:1831:2963 -> 7-Z17:7",
+          "pitchClasses": [0, 1, 4, 7, 8, 9, 11]
+        },
+        {
+          "index": 5,
+          "kind": "derived-node",
+          "nodeId": "7-Z17:6",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z17",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:2963:3529",
+          "label": "D4 M-cycle edge M:2963:3529 -> 7-Z17:6",
+          "pitchClasses": [0, 3, 6, 7, 8, 10, 11]
+        },
+        {
+          "index": 6,
+          "kind": "derived-node",
+          "nodeId": "7-Z17:3",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z17",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:3529:953",
+          "label": "D4 M-cycle edge M:3529:953 -> 7-Z17:3",
+          "pitchClasses": [0, 3, 4, 5, 7, 8, 9]
+        },
+        {
+          "index": 7,
+          "kind": "derived-node",
+          "nodeId": "7-Z17:0",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z17",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:953:631",
+          "label": "D4 M-cycle edge M:953:631 -> 7-Z17:0",
+          "pitchClasses": [0, 1, 2, 4, 5, 6, 9]
+        }
+      ]
+    },
+    {
+      "pathId": "d-cycle:D5",
+      "substrate": "boundary-demonstration",
+      "origin": {
+        "nodeId": "7-Z12:0",
+        "pitchClasses": [0, 1, 2, 3, 4, 7, 9]
+      },
+      "destination": {
+        "nodeId": "7-Z12:0",
+        "pitchClasses": [0, 1, 2, 3, 4, 7, 9]
+      },
+      "schemaNote": "Boundary-layer exhibit (BL-030): structural demonstration of the D5 (7-Z12) M-cycle, not a musical route; no listening verdict applies.",
+      "alternatives": [
+        {
+          "kind": "cycle-demonstration",
+          "basis": "No alternative exists: the D5 M-cycle is the only traversal structure for these anchors (BL-029); M is row-2-excluded and audit-real. The reverse walk is the same edges in opposite order, still demonstration-typed.",
+          "variants": [
+            {
+              "variantId": "m-successor-cycle",
+              "moves": [
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:671:2383",
+                  "canonicalId": "modal:D5:671:2383",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:36",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:2383:3239",
+                  "canonicalId": "modal:D5:2383:3239",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:238",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:3239:3667",
+                  "canonicalId": "modal:D5:3239:3667",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:357",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:3667:3881",
+                  "canonicalId": "modal:D5:3667:3881",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:421",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:3881:997",
+                  "canonicalId": "modal:D5:3881:997",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:451",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:997:1273",
+                  "canonicalId": "modal:D5:997:1273",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:83",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:1273:671",
+                  "canonicalId": "modal:D5:1273:671",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:106",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "verdicts": [
+        {
+          "verdictId": "d-cycle-D5-exhibit",
+          "status": "exhibit",
+          "subject": "boundary-demonstration",
+          "statement": "D5 (7-Z12) is M-closed: seven anchors in one 7-cycle, tier-, family-, and rooted-Q-preserving; discriminant check PASS over the complete D-D relation set (tier-preserving, family-preserving, D2/D5 twin-separated, D3/D4 Z-partner-separated, rooted-Q preserved). Traversal limitation: the D-tier is fixed-degree-isolated (zero anchor-to-anchor R/L applications), so these anchors are reachable only by M-jump.",
+          "source": "scrum/plan/bl-029-d-tier-operator-probe-memo.md; scrum/plan/bl-030-d-cycle-demonstration-routes-spec.md"
+        }
+      ],
+      "hops": [
+        {
+          "index": 0,
+          "kind": "derived-node",
+          "nodeId": "7-Z12:0",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z12",
+          "arrivedBy": "origin",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": null,
+          "label": "D5 M-cycle origin (7-Z12:0)",
+          "pitchClasses": [0, 1, 2, 3, 4, 7, 9]
+        },
+        {
+          "index": 1,
+          "kind": "derived-node",
+          "nodeId": "7-Z12:11",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z12",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:671:2383",
+          "label": "D5 M-cycle edge M:671:2383 -> 7-Z12:11",
+          "pitchClasses": [0, 1, 2, 3, 6, 8, 11]
+        },
+        {
+          "index": 2,
+          "kind": "derived-node",
+          "nodeId": "7-Z12:10",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z12",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:2383:3239",
+          "label": "D5 M-cycle edge M:2383:3239 -> 7-Z12:10",
+          "pitchClasses": [0, 1, 2, 5, 7, 10, 11]
+        },
+        {
+          "index": 3,
+          "kind": "derived-node",
+          "nodeId": "7-Z12:9",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z12",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:3239:3667",
+          "label": "D5 M-cycle edge M:3239:3667 -> 7-Z12:9",
+          "pitchClasses": [0, 1, 4, 6, 9, 10, 11]
+        },
+        {
+          "index": 4,
+          "kind": "derived-node",
+          "nodeId": "7-Z12:8",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z12",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:3667:3881",
+          "label": "D5 M-cycle edge M:3667:3881 -> 7-Z12:8",
+          "pitchClasses": [0, 3, 5, 8, 9, 10, 11]
+        },
+        {
+          "index": 5,
+          "kind": "derived-node",
+          "nodeId": "7-Z12:5",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z12",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:3881:997",
+          "label": "D5 M-cycle edge M:3881:997 -> 7-Z12:5",
+          "pitchClasses": [0, 2, 5, 6, 7, 8, 9]
+        },
+        {
+          "index": 6,
+          "kind": "derived-node",
+          "nodeId": "7-Z12:3",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z12",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:997:1273",
+          "label": "D5 M-cycle edge M:997:1273 -> 7-Z12:3",
+          "pitchClasses": [0, 3, 4, 5, 6, 7, 10]
+        },
+        {
+          "index": 7,
+          "kind": "derived-node",
+          "nodeId": "7-Z12:0",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-Z12",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:1273:671",
+          "label": "D5 M-cycle edge M:1273:671 -> 7-Z12:0",
+          "pitchClasses": [0, 1, 2, 3, 4, 7, 9]
+        }
+      ]
+    },
+    {
+      "pathId": "d-cycle:D6",
+      "substrate": "boundary-demonstration",
+      "origin": {
+        "nodeId": "7-8:0",
+        "pitchClasses": [0, 2, 3, 4, 5, 6, 8]
+      },
+      "destination": {
+        "nodeId": "7-8:0",
+        "pitchClasses": [0, 2, 3, 4, 5, 6, 8]
+      },
+      "schemaNote": "Boundary-layer exhibit (BL-030): structural demonstration of the D6 (7-8) M-cycle, not a musical route; no listening verdict applies.",
+      "alternatives": [
+        {
+          "kind": "cycle-demonstration",
+          "basis": "No alternative exists: the D6 M-cycle is the only traversal structure for these anchors (BL-029); M is row-2-excluded and audit-real. The reverse walk is the same edges in opposite order, still demonstration-typed.",
+          "variants": [
+            {
+              "variantId": "m-successor-cycle",
+              "moves": [
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:381:1119",
+                  "canonicalId": "modal:D6:381:1119",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:14",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:1119:2607",
+                  "canonicalId": "modal:D6:1119:2607",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:87",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:2607:3351",
+                  "canonicalId": "modal:D6:2607:3351",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:269",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:3351:3723",
+                  "canonicalId": "modal:D6:3351:3723",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:374",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:3723:3909",
+                  "canonicalId": "modal:D6:3723:3909",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:429",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:3909:2001",
+                  "canonicalId": "modal:D6:3909:2001",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:454",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:2001:381",
+                  "canonicalId": "modal:D6:2001:381",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:210",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "verdicts": [
+        {
+          "verdictId": "d-cycle-D6-exhibit",
+          "status": "exhibit",
+          "subject": "boundary-demonstration",
+          "statement": "D6 (7-8) is M-closed: seven anchors in one 7-cycle, tier-, family-, and rooted-Q-preserving; discriminant check PASS over the complete D-D relation set (tier-preserving, family-preserving, D2/D5 twin-separated, D3/D4 Z-partner-separated, rooted-Q preserved). Traversal limitation: the D-tier is fixed-degree-isolated (zero anchor-to-anchor R/L applications), so these anchors are reachable only by M-jump.",
+          "source": "scrum/plan/bl-029-d-tier-operator-probe-memo.md; scrum/plan/bl-030-d-cycle-demonstration-routes-spec.md"
+        }
+      ],
+      "hops": [
+        {
+          "index": 0,
+          "kind": "derived-node",
+          "nodeId": "7-8:0",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-8",
+          "arrivedBy": "origin",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": null,
+          "label": "D6 M-cycle origin (7-8:0)",
+          "pitchClasses": [0, 2, 3, 4, 5, 6, 8]
+        },
+        {
+          "index": 1,
+          "kind": "derived-node",
+          "nodeId": "7-8:10",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-8",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:381:1119",
+          "label": "D6 M-cycle edge M:381:1119 -> 7-8:10",
+          "pitchClasses": [0, 1, 2, 3, 4, 6, 10]
+        },
+        {
+          "index": 2,
+          "kind": "derived-node",
+          "nodeId": "7-8:9",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-8",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:1119:2607",
+          "label": "D6 M-cycle edge M:1119:2607 -> 7-8:9",
+          "pitchClasses": [0, 1, 2, 3, 5, 9, 11]
+        },
+        {
+          "index": 3,
+          "kind": "derived-node",
+          "nodeId": "7-8:8",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-8",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:2607:3351",
+          "label": "D6 M-cycle edge M:2607:3351 -> 7-8:8",
+          "pitchClasses": [0, 1, 2, 4, 8, 10, 11]
+        },
+        {
+          "index": 4,
+          "kind": "derived-node",
+          "nodeId": "7-8:7",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-8",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:3351:3723",
+          "label": "D6 M-cycle edge M:3351:3723 -> 7-8:7",
+          "pitchClasses": [0, 1, 3, 7, 9, 10, 11]
+        },
+        {
+          "index": 5,
+          "kind": "derived-node",
+          "nodeId": "7-8:6",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-8",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:3723:3909",
+          "label": "D6 M-cycle edge M:3723:3909 -> 7-8:6",
+          "pitchClasses": [0, 2, 6, 8, 9, 10, 11]
+        },
+        {
+          "index": 6,
+          "kind": "derived-node",
+          "nodeId": "7-8:4",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-8",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:3909:2001",
+          "label": "D6 M-cycle edge M:3909:2001 -> 7-8:4",
+          "pitchClasses": [0, 4, 6, 7, 8, 9, 10]
+        },
+        {
+          "index": 7,
+          "kind": "derived-node",
+          "nodeId": "7-8:0",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-8",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:2001:381",
+          "label": "D6 M-cycle edge M:2001:381 -> 7-8:0",
+          "pitchClasses": [0, 2, 3, 4, 5, 6, 8]
+        }
+      ]
+    },
+    {
+      "pathId": "d-cycle:D7",
+      "substrate": "boundary-demonstration",
+      "origin": {
+        "nodeId": "7-1:0",
+        "pitchClasses": [0, 1, 2, 3, 4, 5, 6]
+      },
+      "destination": {
+        "nodeId": "7-1:0",
+        "pitchClasses": [0, 1, 2, 3, 4, 5, 6]
+      },
+      "schemaNote": "Boundary-layer exhibit (BL-030): structural demonstration of the D7 (7-1) M-cycle, not a musical route; no listening verdict applies.",
+      "alternatives": [
+        {
+          "kind": "cycle-demonstration",
+          "basis": "No alternative exists: the D7 M-cycle is the only traversal structure for these anchors (BL-029); M is row-2-excluded and audit-real. The reverse walk is the same edges in opposite order, still demonstration-typed.",
+          "variants": [
+            {
+              "variantId": "m-successor-cycle",
+              "moves": [
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:127:2111",
+                  "canonicalId": "modal:D7:127:2111",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:2",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:2111:3103",
+                  "canonicalId": "modal:D7:2111:3103",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:212",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:3103:3599",
+                  "canonicalId": "modal:D7:3103:3599",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:338",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:3599:3847",
+                  "canonicalId": "modal:D7:3599:3847",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:408",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:3847:3971",
+                  "canonicalId": "modal:D7:3847:3971",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:443",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:3971:4033",
+                  "canonicalId": "modal:D7:3971:4033",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:458",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                },
+                {
+                  "operatorId": "M",
+                  "applicationId": "M:4033:127",
+                  "canonicalId": "modal:D7:4033:127",
+                  "auditSource": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv:463",
+                  "status": "formal_substrate_observed",
+                  "legality": "demonstration",
+                  "cycleEdge": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "verdicts": [
+        {
+          "verdictId": "d-cycle-D7-exhibit",
+          "status": "exhibit",
+          "subject": "boundary-demonstration",
+          "statement": "D7 (7-1) is M-closed: seven anchors in one 7-cycle, tier-, family-, and rooted-Q-preserving; discriminant check PASS over the complete D-D relation set (tier-preserving, family-preserving, D2/D5 twin-separated, D3/D4 Z-partner-separated, rooted-Q preserved). Traversal limitation: the D-tier is fixed-degree-isolated (zero anchor-to-anchor R/L applications), so these anchors are reachable only by M-jump.",
+          "source": "scrum/plan/bl-029-d-tier-operator-probe-memo.md; scrum/plan/bl-030-d-cycle-demonstration-routes-spec.md"
+        }
+      ],
+      "hops": [
+        {
+          "index": 0,
+          "kind": "derived-node",
+          "nodeId": "7-1:0",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-1",
+          "arrivedBy": "origin",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": null,
+          "label": "D7 M-cycle origin (7-1:0)",
+          "pitchClasses": [0, 1, 2, 3, 4, 5, 6]
+        },
+        {
+          "index": 1,
+          "kind": "derived-node",
+          "nodeId": "7-1:11",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-1",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:127:2111",
+          "label": "D7 M-cycle edge M:127:2111 -> 7-1:11",
+          "pitchClasses": [0, 1, 2, 3, 4, 5, 11]
+        },
+        {
+          "index": 2,
+          "kind": "derived-node",
+          "nodeId": "7-1:10",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-1",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:2111:3103",
+          "label": "D7 M-cycle edge M:2111:3103 -> 7-1:10",
+          "pitchClasses": [0, 1, 2, 3, 4, 10, 11]
+        },
+        {
+          "index": 3,
+          "kind": "derived-node",
+          "nodeId": "7-1:9",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-1",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:3103:3599",
+          "label": "D7 M-cycle edge M:3103:3599 -> 7-1:9",
+          "pitchClasses": [0, 1, 2, 3, 9, 10, 11]
+        },
+        {
+          "index": 4,
+          "kind": "derived-node",
+          "nodeId": "7-1:8",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-1",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:3599:3847",
+          "label": "D7 M-cycle edge M:3599:3847 -> 7-1:8",
+          "pitchClasses": [0, 1, 2, 8, 9, 10, 11]
+        },
+        {
+          "index": 5,
+          "kind": "derived-node",
+          "nodeId": "7-1:7",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-1",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:3847:3971",
+          "label": "D7 M-cycle edge M:3847:3971 -> 7-1:7",
+          "pitchClasses": [0, 1, 7, 8, 9, 10, 11]
+        },
+        {
+          "index": 6,
+          "kind": "derived-node",
+          "nodeId": "7-1:6",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-1",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:3971:4033",
+          "label": "D7 M-cycle edge M:3971:4033 -> 7-1:6",
+          "pitchClasses": [0, 6, 7, 8, 9, 10, 11]
+        },
+        {
+          "index": 7,
+          "kind": "derived-node",
+          "nodeId": "7-1:0",
+          "nodeKind": "heptatonic",
+          "setClassId": "7-1",
+          "arrivedBy": "operator",
+          "moveId": null,
+          "legality": null,
+          "bridge": false,
+          "admittedBridge": false,
+          "mShortcut": "M:4033:127",
+          "label": "D7 M-cycle edge M:4033:127 -> 7-1:0",
+          "pitchClasses": [0, 1, 2, 3, 4, 5, 6]
         }
       ]
     }

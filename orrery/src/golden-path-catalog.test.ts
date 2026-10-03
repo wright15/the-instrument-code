@@ -7,6 +7,54 @@ import { DERIVED_PATH_GRAPH, findDerivedPaths } from "./path-find";
 import { derivedPathRecord, planDerivedPathReplay } from "./path-replay";
 import goldenPathFixture from "../test/fixtures/golden-paths.v1.json";
 
+const FOUNDERS_PAYLOAD_SHA256 = "3b9d76b9afb72521efed5feaa0e6526755d37d7e23837cffe2a785d4d974bf14";
+const D_CYCLE_IDS = ["d-cycle:D1", "d-cycle:D2", "d-cycle:D3", "d-cycle:D4", "d-cycle:D5", "d-cycle:D6", "d-cycle:D7"];
+
+interface CatalogHop {
+  index: number;
+  kind: string;
+  nodeId: string;
+  arrivedBy?: string;
+  moveId: string | null;
+  legality: string | null;
+  mShortcut: string | null;
+}
+
+interface CatalogCycleMove {
+  operatorId: string;
+  applicationId: string;
+  cycleEdge?: boolean;
+  legality: string;
+}
+
+interface CatalogAlternative {
+  kind: string;
+  variants?: { variantId: string; moves: CatalogCycleMove[] }[];
+}
+
+interface CatalogVerdict {
+  status: string;
+  statement?: string | null;
+  source: string;
+}
+
+interface CatalogPath {
+  pathId: string;
+  substrate: string;
+  origin: { nodeId: string; pitchClasses: number[] };
+  destination: { nodeId: string; pitchClasses: number[] };
+  hops: CatalogHop[];
+  alternatives?: CatalogAlternative[];
+  verdicts?: CatalogVerdict[];
+}
+
+const catalogPaths = goldenPathFixture.paths as unknown as CatalogPath[];
+
+async function sha256Hex(value: string): Promise<string> {
+  const digest = await globalThis.crypto.subtle.digest("SHA-256", new TextEncoder().encode(value));
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
 function compileCatalogSchema() {
   const ajv = new Ajv2020({ allErrors: true, strict: true });
   return ajv.compile(catalogSchema as object);
@@ -60,7 +108,7 @@ function collectFixtureLegalityValues(node: unknown, values: Set<string | null>)
 }
 
 describe("Golden-path catalog schema (BL-023)", () => {
-  it("validates both registered paths against the formal schema", () => {
+  it("validates all registered paths (founders + boundary exhibits) against the formal schema", () => {
     const validate = compileCatalogSchema();
     expect(validate(goldenPathFixture)).toBe(true);
     expect(validate.errors ?? []).toEqual([]);
@@ -170,5 +218,67 @@ describe("Golden-path catalog schema (BL-023)", () => {
       ],
     };
     expect(validate(pendingMissingRecipe)).toBe(false);
+  });
+});
+
+describe("Boundary-demonstration exhibit routes (BL-030)", () => {
+  const exhibits = catalogPaths.filter((path) => path.substrate === "boundary-demonstration");
+
+  it("registers seven d-cycle exhibits with closed eight-hop cycles", () => {
+    expect(exhibits.map((path) => path.pathId)).toEqual(D_CYCLE_IDS);
+    for (const exhibit of exhibits) {
+      expect(exhibit.hops).toHaveLength(8);
+      expect(exhibit.destination.nodeId).toBe(exhibit.origin.nodeId);
+      expect(exhibit.hops[0].nodeId).toBe(exhibit.origin.nodeId);
+      expect(exhibit.hops[7].nodeId).toBe(exhibit.destination.nodeId);
+      expect(
+        exhibit.hops
+          .slice(1)
+          .every(
+            (hop) =>
+              hop.arrivedBy === "operator" &&
+              hop.moveId === null &&
+              hop.legality === null &&
+              typeof hop.mShortcut === "string",
+          ),
+      ).toBe(true);
+    }
+  });
+
+  it("carries one cycle-demonstration alternative with seven audit-cited M edges per exhibit", () => {
+    for (const exhibit of exhibits) {
+      expect(exhibit.alternatives).toHaveLength(1);
+      const alternative = exhibit.alternatives?.[0];
+      expect(alternative?.kind).toBe("cycle-demonstration");
+      const moves = alternative?.variants?.flatMap((variant) => variant.moves) ?? [];
+      expect(moves).toHaveLength(7);
+      expect(
+        moves.every(
+          (move) =>
+            move.operatorId === "M" &&
+            move.cycleEdge === true &&
+            move.legality === "demonstration" &&
+            /^M:\d+:\d+$/.test(move.applicationId),
+        ),
+      ).toBe(true);
+      expect(moves.map((move) => move.applicationId)).toEqual(
+        exhibit.hops.slice(1).map((hop) => hop.mShortcut),
+      );
+    }
+  });
+
+  it("carries a discriminant-citing exhibit verdict and no listening verdict", () => {
+    for (const exhibit of exhibits) {
+      const verdicts = exhibit.verdicts ?? [];
+      expect(verdicts).toHaveLength(1);
+      expect(verdicts[0].status).toBe("exhibit");
+      expect(verdicts[0].statement).toMatch(/discriminant/i);
+      expect(verdicts[0].source).toContain("bl-029-d-tier-operator-probe-memo.md");
+    }
+  });
+
+  it("keeps the founders byte-identical under the additive contract", async () => {
+    const founders = JSON.stringify(catalogPaths.slice(0, 2));
+    expect(await sha256Hex(founders)).toBe(FOUNDERS_PAYLOAD_SHA256);
   });
 });

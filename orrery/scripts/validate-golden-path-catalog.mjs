@@ -11,6 +11,8 @@ const fixturePath = path.join(orreryRoot, "test", "fixtures", "golden-paths.v1.j
 const schemaPath = path.join(root, "schemas", "harmonic-orrery-golden-path-catalog.schema.json");
 const catalogPath = path.join(orreryRoot, "src", "generated", "legal-moves.v2.json");
 const bipartitePath = path.join(root, "derived", "hypergraph", "bipartite-inclusion-v1.json");
+const probePath = path.join(orreryRoot, "src", "generated", "d-tier-operator-probe.v1.json");
+const applicationsPath = path.join(root, "seven-governors-mutation-algebra-audit", "audit", "operator-applications.csv");
 
 function fail(message) {
   throw new Error(`INVALID_GOLDEN_PATH_CATALOG: ${message}`);
@@ -32,6 +34,11 @@ const fixture = readJson(fixturePath);
 const schema = readJson(schemaPath);
 const catalog = readJson(catalogPath);
 const bipartite = readJson(bipartitePath);
+const probe = readJson(probePath);
+const applicationsLines = fs.readFileSync(applicationsPath, "utf8").split(/\r?\n/);
+const probeCyclesByTier = new Map(
+  probe.modalClosure.dToD.cycles.map((cycle) => [cycle.tier, cycle.stateIds]),
+);
 
 const ajv = new Ajv2020({ allErrors: true, strict: true });
 const validate = ajv.compile(schema);
@@ -159,6 +166,91 @@ for (const goldenPath of fixture.paths) {
     }
   }
 
+  if (goldenPath.substrate === "boundary-demonstration") {
+    if (hops.length !== 8) {
+      fail(`${goldenPath.pathId}: boundary-demonstration routes carry one origin hop plus seven cycle edges`);
+    }
+    if (
+      goldenPath.origin.nodeId !== goldenPath.destination.nodeId ||
+      JSON.stringify(goldenPath.origin.pitchClasses) !== JSON.stringify(goldenPath.destination.pitchClasses)
+    ) {
+      fail(`${goldenPath.pathId}: boundary-demonstration routes are closed cycles (origin == destination)`);
+    }
+    const tier = goldenPath.pathId.startsWith("d-cycle:") ? goldenPath.pathId.slice("d-cycle:".length) : null;
+    const cycle = tier ? probeCyclesByTier.get(tier) : null;
+    if (!cycle) {
+      fail(`${goldenPath.pathId}: no BL-029 probe cycle for this pathId`);
+    }
+    for (const [index, hop] of hops.entries()) {
+      const node = heptatonicById[hop.nodeId];
+      if (!node) {
+        fail(`${goldenPath.pathId}: hop ${index} node ${hop.nodeId} is not a heptatonic node`);
+      }
+      if (hop.nodeKind !== "heptatonic" || maskOf(hop.pitchClasses) !== node.pitchMask) {
+        fail(`${goldenPath.pathId}: hop ${index} node identity disagrees with the bipartite source`);
+      }
+      if (index === 0) {
+        if (hop.arrivedBy !== "origin" || hop.moveId !== null || hop.legality !== null || hop.mShortcut !== null) {
+          fail(`${goldenPath.pathId}: origin hop must carry no move, legality, or shortcut`);
+        }
+        continue;
+      }
+      if (hop.arrivedBy !== "operator" || hop.moveId !== null || hop.legality !== null || typeof hop.mShortcut !== "string") {
+        fail(`${goldenPath.pathId}: hop ${index} must be a demonstration-typed M edge`);
+      }
+      const edge = /^M:(\d+):(\d+)$/.exec(hop.mShortcut);
+      if (!edge) {
+        fail(`${goldenPath.pathId}: hop ${index} mShortcut ${hop.mShortcut} is not an M application id`);
+      }
+      const previous = hops[index - 1];
+      if (Number(edge[1]) !== maskOf(previous.pitchClasses) || Number(edge[2]) !== maskOf(hop.pitchClasses)) {
+        fail(`${goldenPath.pathId}: hop ${index} mShortcut does not chain ${previous.nodeId} -> ${hop.nodeId}`);
+      }
+    }
+    const hopMasks = hops.slice(0, 7).map((hop) => maskOf(hop.pitchClasses));
+    if (JSON.stringify(hopMasks) !== JSON.stringify(cycle)) {
+      fail(`${goldenPath.pathId}: hop sequence disagrees with the BL-029 probe cycle`);
+    }
+    if (maskOf(hops[7].pitchClasses) !== cycle[0]) {
+      fail(`${goldenPath.pathId}: closing hop does not return to the cycle origin`);
+    }
+    const alternatives = goldenPath.alternatives ?? [];
+    if (alternatives.length !== 1 || alternatives[0].kind !== "cycle-demonstration") {
+      fail(`${goldenPath.pathId}: boundary-demonstration routes carry exactly one cycle-demonstration alternative`);
+    }
+    const variantMoves = alternatives[0].variants.flatMap((variant) => variant.moves);
+    if (variantMoves.length !== 7) {
+      fail(`${goldenPath.pathId}: cycle-demonstration variant must carry seven moves`);
+    }
+    const hopShortcuts = hops.slice(1).map((hop) => hop.mShortcut);
+    if (JSON.stringify(variantMoves.map((move) => move.applicationId)) !== JSON.stringify(hopShortcuts)) {
+      fail(`${goldenPath.pathId}: cycle-demonstration moves disagree with the hop shortcuts`);
+    }
+    for (const move of variantMoves) {
+      const parts = /^M:(\d+):(\d+)$/.exec(move.applicationId);
+      const lineMatch = /^seven-governors-mutation-algebra-audit\/audit\/operator-applications\.csv:(\d+)$/.exec(move.auditSource);
+      if (!parts || !lineMatch || move.cycleEdge !== true) {
+        fail(`${goldenPath.pathId}: cycle move ${move.applicationId} has a malformed identity or provenance`);
+      }
+      if (move.canonicalId !== `modal:${tier}:${parts[1]}:${parts[2]}`) {
+        fail(`${goldenPath.pathId}: cycle move ${move.applicationId} canonicalId disagrees with its endpoints`);
+      }
+      const csvLine = applicationsLines[Number(lineMatch[1]) - 1];
+      if (!csvLine || !csvLine.startsWith(`${move.applicationId},M,`)) {
+        fail(`${goldenPath.pathId}: cycle move ${move.applicationId} does not resolve to its audit line`);
+      }
+    }
+    const exhibitVerdicts = (goldenPath.verdicts ?? []).filter((verdict) => verdict.status === "exhibit");
+    if (exhibitVerdicts.length === 0) {
+      fail(`${goldenPath.pathId}: boundary-demonstration routes require an exhibit verdict`);
+    }
+    for (const verdict of exhibitVerdicts) {
+      if (!/discriminant/i.test(verdict.statement) || !verdict.source.includes("bl-029-d-tier-operator-probe-memo.md")) {
+        fail(`${goldenPath.pathId}: exhibit verdict must cite the discriminant check and the BL-029 memo`);
+      }
+    }
+  }
+
   if (goldenPath.bridge) {
     const endpoints = [goldenPath.origin, goldenPath.destination];
     for (const voicing of [goldenPath.bridge.chosen, goldenPath.bridge.alternative]) {
@@ -227,6 +319,14 @@ for (const goldenPath of fixture.paths) {
     resolveMove(move, `${goldenPath.pathId} chosen`);
   }
   for (const alternative of goldenPath.alternatives ?? []) {
+    if (alternative.kind === "cycle-demonstration") {
+      for (const entry of alternative.variants.flatMap((variant) => variant.moves)) {
+        if (!entry.applicationId || entry.cycleEdge !== true) {
+          fail(`${goldenPath.pathId}: cycle demonstration entry must carry an applicationId and cycleEdge`);
+        }
+      }
+      continue;
+    }
     const entries =
       alternative.kind === "m-demonstration"
         ? alternative.variants.flatMap((variant) => variant.moves)
@@ -265,6 +365,7 @@ console.log(
       pathId: goldenPath.pathId,
       recorded: (goldenPath.verdicts ?? []).filter((verdict) => verdict.status === "recorded").length,
       pending: (goldenPath.verdicts ?? []).filter((verdict) => verdict.status === "pending").length,
+      exhibit: (goldenPath.verdicts ?? []).filter((verdict) => verdict.status === "exhibit").length,
     })),
   }),
 );

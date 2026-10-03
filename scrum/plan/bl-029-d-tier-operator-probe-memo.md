@@ -51,7 +51,10 @@ anchors as both source and target. Calibration verdict `EXACT`.
 the set is exactly the 49 modal applications): every edge preserves tier; every edge preserves
 the Forte family; no edge connects the D2/D5 q_v2-multiset twins; no edge connects the D3/D4
 Z-partners; every edge preserves the sorted rooted-Q multiset. The one D–D edge class that
-exists respects every distinction GOV-227 established.
+exists respects every distinction GOV-227 established. The edge set is the internal adjacency
+of the seven tier-cycles of §3(e) — each D-anchor's unique admitted M-successor — and it is the
+*complete* admitted D–D relation set, so the PASS is a census of all boundary-layer D–D
+structure, not a sample of it.
 
 **(d) D-anchor fixed-degree touches.** 228 out and 228 in, fully inverse-paired and
 registry-consistent (degree address, governor, direction), symmetrically distributed: 19 per
