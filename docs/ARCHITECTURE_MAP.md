@@ -37,6 +37,7 @@
   - `canonical/universal-heptatonic-ledger.json` (462 entries) and `canonical/universal-heptatonic-ledger.csv` (462 data rows).
   - Projections: `neo4j/csv/scale-states.csv` (462 rows); `neo4j/validation.cypher:4-9` (expects 462); `graph/index.html:167,199` ("462 states"; 308 seated + 154 typed boundary).
 - **Boundary note:** the numerals `66` and `38` recur on both sides with different meanings; never carry a count across layers without its quotient name (see §3).
+- **Anchor coverage note (BL-029, planning evidence):** the 21 A0–A2 anchors are closed under the row-2 fixed-degree projection (60 moves); the 49 D1–D7 anchors are not — the admitted universe contains zero fixed-degree applications with both endpoints in D, and each D-anchor's admitted fixed-degree touches (228 out / 228 in) all land on or originate from satellite states. The D-anchors are M-closed (seven tier cycles, one per tier). Receipts: `orrery/src/generated/d-tier-operator-probe.v1.json`; `scrum/plan/bl-029-d-tier-operator-probe-memo.md`.
 
 ### Layer 2 — Bipartite containment (330 ↔ 462)
 
@@ -178,6 +179,7 @@ The edge rule for G1 is a design decision (semitone adjacency? complement relati
 
 | Item | State | Receipt |
 |---|---|---|
+| D-tier fixed-degree anchor closure | **absent structurally, not by scope filter**: zero admitted R2–R7/L2–L7 applications have both endpoints in the 49 D-anchors; M-closure is seven tier cycles (row 2 excludes M for every tier); 228 fixed-degree departures/arrivals each way terminate at satellites | `orrery/src/generated/d-tier-operator-probe.v1.json`; `scrum/plan/bl-029-d-tier-operator-probe-memo.md` |
 | Per-L3-node Q instances | proposal, not admitted | `scrum/plan/fivefold-mesh-spec-v3.md:135-138` |
 | 11 off-chain engagement configurations | unlabeled, out of ENTRY 13 scope | `docs/specs/fivefold-court-engagement-correspondence-v0.1.0.md:100-102` |
 | Q orbit order vs Court register trajectory | explicitly not identified | `docs/specs/fivefold-court-engagement-correspondence-v0.1.0.md:95-99` |

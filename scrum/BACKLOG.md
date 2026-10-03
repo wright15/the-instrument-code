@@ -277,7 +277,11 @@ catalog/manifest/palette bytes changed; no intra-330 edges. Memo
 `plan/bl-028-path-finder-memo.md`. Feeds BL-023 export and BL-031 path enumeration; D-tier
 asymmetry queued as BL-029.
 
-### BL-029 — D-tier operator coverage investigation [CAPTURED]
+### BL-029 — D-tier operator coverage investigation [DONE]
+
+Dependency note (binding): self-contained against GOV-227 sidecars + operator canon;
+no multi-phase topology dependency. Phase-dependence in findings is an output
+(topology-candidate motivation), not an input.
 
 D1–D7 anchors (49) are admitted mathematics (GOV-227/`CH_D17_q_v2`) with zero
 legal-move catalog coverage (verified: catalog scope = 21 A-anchors exactly;
@@ -287,6 +291,21 @@ D-anchors). If yes, a D-tier move-catalog projection is a candidate work item
 (row 2 extension or new row); if no, the asymmetry is structural and gets
 recorded in the architecture map. Feeds BL-028's endpoint scope (currently
 A-first by catalog coverage).
+
+**Landed:** read-only probe (`scripts/build-d-tier-operator-probe.mjs` →
+`orrery/src/generated/d-tier-operator-probe.v1.json`; independent validator +
+vitest pins wired into `orrery:check`/`orrery:build`). Corrected framing: row 1
+is domain-local, not tier-gated; the gap is row-2 projection scope. Findings:
+zero admitted fixed-degree anchor-to-anchor applications in D (full 3,402-row
+universe, not a scope filter); A-control reproduces 60 moves / 12 operators /
+21×21 coverage exactly; discriminant assertions PASS; D-anchors are M-closed
+(seven tier cycles) but M is row-2-excluded for every tier; 228 fixed-degree
+touches each way all terminate at satellites; no phase entanglement.
+Classification: outcome (3) refined — structural asymmetry with no available
+row-2 extension; map updated (§1 Layer 1 anchor-coverage note, §4 bounded
+item); finder label confirmed with a sharper cause (recommendation recorded,
+not implemented). Memo `plan/bl-029-d-tier-operator-probe-memo.md`; no
+canonical/catalog/audio bytes changed; G1 untouched.
 
 ---
 
@@ -461,3 +480,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.14 | BL-022 landed DONE: bidirectional parallel-minor golden path (`c-parallel-minor-mode-axis`) — stepwise L/R walk with `set-class-preserved` legality, walk+triad overlay (both layers), M compression comparisons rendered as audit demonstrations (`M:2741:1709`, `M:1717:1453`); first multi-path `golden-path.v1` instance; 7 tests, suite 173 green; memo `plan/bl-022-parallel-minor-memo.md`; objective layer untouched. |
 | v1.15 | BL-028 landed DONE: derived-path finder over the composed graph (60 catalog operator edges + 6,930 containment pairs; generated artifact + independent validator in `orrery:check`); ≤3 minimal paths, admitted-bridge filter, legality-typed replay, 792-node UI selectors with coverage labeling. Validation-as-audit: both registered golden paths reproduced consistently among minimal routes; 792-node connectivity census + seven-mode operator reachability pinned. BL-029 captured (D-tier operator coverage, verified 0/49 catalog overlap). 12 tests, suite 185 green; memo `plan/bl-028-path-finder-memo.md`; architecture map updated (G2 partially realized, no G1 change). |
 | v1.16 | BL-023 landed DONE: golden-path catalog formalized — JSON schema (closed hop/legality/substrate/alternative enums, verdict contract, additive-only versioning) + strict validator with semantic closure wired into `orrery:check`; conformance suite proves both registered paths and a BL-028 finder-export record validate through one schema; BL-021 verdicts transcribed (recorded), BL-022 verdicts pending with recipe pointers; `bridge.legality`→`legalityNote` finding; promotion ceremony documented (audition + verdicts required). 4 tests, suite 189 green; memo `plan/bl-023-golden-path-catalog-memo.md`; no catalog/audio/palette bytes changed; no graph embedding; G1 untouched. |
+| v1.17 | BL-029 landed DONE: read-only D-tier operator probe + independent validator + vitest pins wired into `orrery:check`/`orrery:build`; corrected framing (row 1 domain-local; gap is row-2 projection scope); zero fixed-degree anchor-to-anchor D applications (full admitted universe), exact A-control 60/12/21×21, discriminant assertions PASS, M-closure seven tier cycles, 228 satellite-only fixed-degree touches each way, no phase entanglement; classification outcome (3) refined — no row-2 D extension available; architecture map §1/§4 updated; memo `plan/bl-029-d-tier-operator-probe-memo.md`. |
