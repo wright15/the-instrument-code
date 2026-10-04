@@ -394,6 +394,23 @@ coverage map is the gap multi-hop transport must address, and the BL-034 surface
 Multi-hop transport is gated on BL-035's gap map and the BL-034 rule; direction semantics stay
 unassigned (no admitted source) and any direction key is a follow-on input, not a census column.
 
+**Landed (semantic multi-hop transport probe, Phase 2).** The Phase-2 probe under the semantic
+transport reading of BL-031: `scripts/build-semantic-transport-probe.mjs` →
+`orrery/src/generated/semantic-transport-probe.v1.json` (`planning_evidence`; 1,750 queries,
+330 targets; fingerprint `9138a7ab…`) + independent validator + 8 vitest pins wired into
+`orrery:check`/`orrery:build`. Findings: every one of the 330 pentatonic targets receives ≥2
+seed origins within 3 hops (255 gap + 50 single + 25 conflict nodes all multi-origin); transport
+origins (d2–3) are disjoint from census claimants (d1), so multi-hop can only deepen one-hop
+collisions, never reproduce or resolve them; `5-35:10` receives all seven offices; 4,546 pool
+comparisons (3,926 disjoint / 620 overlapping / 0 identical / 0 subset) track exactly the
+admitted overlap inventory (`Jupiter–Sun` plains, `Mars–Saturn` cliffs, `Mercury–Moon`
+estuaries); 1,510 queries with divergent alternative routes; BL-028 ground truth reproduced
+(5 seam crossings / 2 admitted-bridge / 7 mode-axis paths with L-chain). Boundary layer
+(`d-cycle:D1–D7`) recorded as non-traversable geometry (M not walkable). No topology claims,
+G1 untouched, direction unassigned, no catalog promotion. Memo
+`plan/bl-031-semantic-transport-probe-memo.md`. This landing is the semantic transport probe
+only; the Phase-A seam/equivariance program above remains separately gated and untouched.
+
 ### BL-032 — Phase B: claim event (ceremony — ONE session) [ACTIVE]
 
 If and only if Phase A's memo supports it: admit the phase-extended topology as a candidate
@@ -565,3 +582,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.17 | BL-029 landed DONE: read-only D-tier operator probe + independent validator + vitest pins wired into `orrery:check`/`orrery:build`; corrected framing (row 1 domain-local; gap is row-2 projection scope); zero fixed-degree anchor-to-anchor D applications (full admitted universe), exact A-control 60/12/21×21, discriminant assertions PASS, M-closure seven tier cycles, 228 satellite-only fixed-degree touches each way, no phase entanglement; classification outcome (3) refined — no row-2 D extension available; architecture map §1/§4 updated; memo `plan/bl-029-d-tier-operator-probe-memo.md`. |
 | v1.18 | BL-030 landed DONE: seven D-tier M-cycle demonstration routes (`d-cycle:D1`–`d-cycle:D7`, substrate `boundary-demonstration`) + schema v1.1 additive defs + validator boundary-demonstration branch (probe-cycle match, audit-line resolution, cycle closure, exhibit-citation checks; fail-closed mutation-verified); founders byte-identical (payload hash pin); BL-029 memo §3(c) edge-set provenance completed; BL-031 boundary-stratification amendment; spec `plan/bl-030-d-cycle-demonstration-routes-spec.md`; pathCount 9, suite 202 green. |
 | v1.19 | BL-034 landed DONE: Orrery semantic provenance fix — pure landform provenance resolver, tier-branched labels (A0 native with seed; A1/A2 explicitly derived with office + seed citation), inheritance audit (scene prompt + audio palette already derived; no kernel-window surface), rule recorded. BL-035 landed DONE: two-mechanism semantic-derivation census — pentatonic four-way claimant classification (single 50 / agreeing 0 / conflicting 25 / zero 255; 105 claims over 75 nodes; all 70 census bridges claimed; five 5-35 cornerstones the only 3-claimant, windowed nodes) + 455-node heptatonic office-following baseline (301 + 154, collision-free at office level); direction recorded unassigned (negative derivability finding); generator + independent validator + 7 vitest pins wired into `orrery:check`/`orrery:build`; BL-031 Phase-1 spin-out/gating note; memos `plan/bl-034-*`, `plan/bl-035-*`; suite 213 green. |
+| v1.20 | BL-031 Phase 2 (semantic multi-hop transport probe) landed: seed-pool carry over the BL-028 composed graph at distances 2–3 — 1,750 queries / 330 targets; every target multi-origin within 3 hops; collisions deepen (d2–3 origins disjoint from d1 claimants); `5-35:10` all seven offices; pool relations exactly the three admitted overlaps (3,926 disjoint / 620 overlapping / 0 identical / 0 subset); route divergence 1,510 queries; BL-028 ground truth reproduced; boundary `d-cycle` layer geometry-only; generator + independent validator + 8 vitest pins wired into `orrery:check`/`orrery:build`; memo `plan/bl-031-semantic-transport-probe-memo.md`; suite 221 green; G1 untouched. |

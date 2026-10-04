@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1192,
-  "totalBytes": 78695513,
+  "fileCount": 1197,
+  "totalBytes": 81468631,
   "files": [
     {
       "path": ".env.example",
@@ -1062,8 +1062,8 @@
     },
     {
       "path": "orrery/package.json",
-      "bytes": 2601,
-      "sha256": "a7dee4d8487e8897a869e35f698b740f58739cb8001d32ba792ddd62d8a779a5"
+      "bytes": 2839,
+      "sha256": "6efca3c94df0ad5120e8b8f6834af51b5a4c4c4b6e14e40f960be50b6b7d0c90"
     },
     {
       "path": "orrery/public/AUDIO_ASSETS.md",
@@ -1129,6 +1129,11 @@
       "path": "orrery/scripts/validate-semantic-derivation-census.mjs",
       "bytes": 14714,
       "sha256": "7af787ba6636f45e1a7a8494a556a8f432d72dd6485acc8ef8f2e6dd0092e97a"
+    },
+    {
+      "path": "orrery/scripts/validate-semantic-transport-probe.mjs",
+      "bytes": 27891,
+      "sha256": "0e404bf1476784034731c4fc595e7b0a4597f3fe3d261ae2228a21263beb2f91"
     },
     {
       "path": "orrery/src/api.test.ts",
@@ -1234,6 +1239,11 @@
       "path": "orrery/src/generated/semantic-derivation-census.v1.json",
       "bytes": 141291,
       "sha256": "23020708565b081a332b9557e027181ad44d8ae78ade107ce3eae2d099809259"
+    },
+    {
+      "path": "orrery/src/generated/semantic-transport-probe.v1.json",
+      "bytes": 2689758,
+      "sha256": "ea6ee37f21d8a84e2e25b10c14a4a7c59e28cbe307733b7c7edf9e683273e707"
     },
     {
       "path": "orrery/src/generated/taxonomy-read-model.v1.json",
@@ -1361,6 +1371,11 @@
       "sha256": "cc585fd8820091fc4b62908412d5ab011afdd4c6e24db881bd45549a7127809d"
     },
     {
+      "path": "orrery/src/semantic-transport-probe.test.ts",
+      "bytes": 6907,
+      "sha256": "f4aa28f7d17d8dd5ddc9df973a1c5a21b927b473d7a722037ebf988f7da60fa5"
+    },
+    {
       "path": "orrery/src/session.test.ts",
       "bytes": 17118,
       "sha256": "12db29967c3d497a876305c3f8506c9e26ca16ce964d91e3c38a4b0f063d9c78"
@@ -1442,8 +1457,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 13405,
-      "sha256": "cde26a80240df02364c7135db137c61a8274d12a5e77e7ab6e125844b2c57d96"
+      "bytes": 13570,
+      "sha256": "c9e7801caef4a8c51d2ae079d561f70fadd33311d1db7c16da509b118088a2e5"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
@@ -2576,6 +2591,11 @@
       "sha256": "a1b76f910f53dbd07d66750977ec129ab9bcd5cac72aaabb5ccaaa86ad3f1182"
     },
     {
+      "path": "scripts/build-semantic-transport-probe.mjs",
+      "bytes": 36928,
+      "sha256": "0616d5c999b769c53b36d154e4c86ce473d415220cee32bab4aea94d22919d1b"
+    },
+    {
       "path": "scripts/check-gov518-target-blindness.mjs",
       "bytes": 9761,
       "sha256": "c10de900aa47634d079310a70d0d3700206eb33f893c65a450cd1d9247c810db"
@@ -2937,8 +2957,8 @@
     },
     {
       "path": "scrum/BACKLOG.md",
-      "bytes": 42078,
-      "sha256": "8fe9693a60e83bf3fb04ac3e795e96126e156d658a0ca2523467f6164ccd7ab8"
+      "bytes": 44217,
+      "sha256": "eca3e862dc3c01c02c07ed1d562dcf8c1a33067dd7bb54663acbffc3adfc7d51"
     },
     {
       "path": "scrum/CRT-301-court-admission-contract.md",
@@ -3394,6 +3414,11 @@
       "path": "scrum/plan/bl-030-d-cycle-demonstration-routes-spec.md",
       "bytes": 9230,
       "sha256": "4f9e961a0e7f4d1c4ab314a5bf5e830d1ff01aa5d78bf615825a1888fc597856"
+    },
+    {
+      "path": "scrum/plan/bl-031-semantic-transport-probe-memo.md",
+      "bytes": 9092,
+      "sha256": "d0b06a8a70fea982001a7b87cd30085c788adcb3b7bbcf3670edb1464f803e33"
     },
     {
       "path": "scrum/plan/bl-034-orrery-provenance-fix-memo.md",

@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run catalog:check && npm run bundle:check && npm run field-derivation:check && npm run photonic:check && npm run taxonomy:check && npm run d-tier:check && npm run d-tier-operator-probe:check && npm run semantic-derivation-census:check && npm run derived-path-graph:check && npm run golden-path-catalog:check && tsc --noEmit && vite build",
-    "check": "npm run catalog:check && npm run bundle:check && npm run field-derivation:check && npm run photonic:check && npm run taxonomy:check && npm run d-tier:check && npm run d-tier-operator-probe:check && npm run semantic-derivation-census:check && npm run derived-path-graph:check && npm run golden-path-catalog:check && tsc --noEmit",
+    "build": "npm run catalog:check && npm run bundle:check && npm run field-derivation:check && npm run photonic:check && npm run taxonomy:check && npm run d-tier:check && npm run d-tier-operator-probe:check && npm run semantic-derivation-census:check && npm run semantic-transport-probe:check && npm run derived-path-graph:check && npm run golden-path-catalog:check && tsc --noEmit && vite build",
+    "check": "npm run catalog:check && npm run bundle:check && npm run field-derivation:check && npm run photonic:check && npm run taxonomy:check && npm run d-tier:check && npm run d-tier-operator-probe:check && npm run semantic-derivation-census:check && npm run semantic-transport-probe:check && npm run derived-path-graph:check && npm run golden-path-catalog:check && tsc --noEmit",
     "catalog:check": "node ../scripts/build-orrery-legal-move-catalog.mjs --check && node scripts/validate-orrery-legal-move-catalog.mjs",
     "derived-path-graph:check": "node ../scripts/build-derived-path-graph.mjs --check && node scripts/validate-derived-path-graph.mjs",
     "golden-path-catalog:check": "node scripts/validate-golden-path-catalog.mjs",
@@ -17,6 +17,7 @@
     "d-tier:check": "node ../scripts/build-orrery-d-tier-taxonomy-dataset.mjs --check && node ../scripts/validate-orrery-d-tier-taxonomy-dataset.mjs",
     "d-tier-operator-probe:check": "node ../scripts/build-d-tier-operator-probe.mjs --check && node scripts/validate-d-tier-operator-probe.mjs",
     "semantic-derivation-census:check": "node ../scripts/build-semantic-derivation-census.mjs --check && node scripts/validate-semantic-derivation-census.mjs",
+    "semantic-transport-probe:check": "node ../scripts/build-semantic-transport-probe.mjs --check && node scripts/validate-semantic-transport-probe.mjs",
     "test": "vitest run",
     "audio:check": "node ../scripts/generate-orrery-audio-loops.mjs --check",
     "browser:test": "bash ../scripts/test-harmonic-orrery-browser.sh"
