@@ -135,6 +135,91 @@ hard; it must never be phrased as explaining the `not_derived` record.
 motion, so a single-phase construct cannot reach across them (eleven steps for one).
 This is BL-033's testable prediction, recorded as prediction, not conclusion.
 
+### 2.6 Ontology/teleology behavioral framing
+
+`[MAINTAINER HYPOTHESIS — registered framing]` Registered 2026-10-04 from the pre-build
+session. This entry registers the maintainer's being/becoming vocabulary for how the layer
+stack relates. It is not fresh invention: the split and its music-theory content are already
+an admitted Blueprint distinction (`docs/ARCHITECTURAL_BLUEPRINT.md:16-23` — Ontology = 7
+Governors / 7-35 / photonic `C_P`; Teleology = 4-pole Court + Quintessence / 5-35 /
+electric-magnetic labels as authored correspondence; built out at `:27-53` and `:55-97`).
+The frame is maintainer framing *extending* that admitted distinction into the
+transport/interpretation context — not a new layer model.
+
+**Founding distinction.** Ontology = the Forms at rest (what things are); teleology = a
+Form's repertoire of behavior in the mathematical substrate (the different ways any
+particular Form can behave). Applied here: the semantic payload layer (landforms) is the
+ontology — Forms assigned to coordinates; the operator algebras (row 1 structural mutation,
+row 2 R/L projection, row 6 Q-overlay) are the teleology — the universal physics of behavior
+any Form plugged into the substrate expresses. Identity-preservation guarantee: operations
+change a Form's posture, never its identity. Rests on: Q-engine closure on the 16-state
+substrate (`tests/test_fivefold_q_table.py`); row 1's exhaustive structural audit with
+semantic authority explicitly withheld (`seven-governors-mutation-algebra-audit/`;
+`tests/verification/test_mutation_algebra.py`); ENTRY 13's configuration-level-only boundary
+(`provenance/DECISION_LEDGER.md:2490-2565`; `qa/specs/bl-011-correspondence-admission.json`);
+the projection's own payload policy
+(`seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/domain-projection-registry.json`
+— office origin pools admitted; every office carries `semanticMutationPolicy: No
+operator-specific landform delta is admitted in v0.1.1`).
+
+**5/7 explanation (the office-key ruling's rationale).** The five-element schema (Fire,
+Water, Air, Earth, Quintessence) is native to the five-fold Court/pentatonic space; Sun and
+Moon are the luminary pair whose offices take the count from 5 to the full 7-35 heptatonic
+space. Cited structure: `semantic.element` is `authored_correspondence`, typed
+`string_or_null`
+(`seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/csv/feature-definitions.csv:16`);
+the population is 5/7 — Mars Fire, Mercury Quintessence, Jupiter Air, Venus Water, Saturn
+Earth, Sun and Moon null
+(`seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/canonical-governor-profiles.json:22,78,549,605,1077,1133,1655,1711,2218,2274,2793,2849,3454,3510`);
+the luminaries are identity-level brackets, `type: monopolar_luminary`
+(`schemas/governors.yaml:43,202`; `docs/ARCHITECTURAL_BLUEPRINT.md:49-53`). The *expansion*
+sentence (5-35 plus luminaries = 7-35) is this frame's language, not recorded canon wording —
+the artifacts record the 5/7 population and the bracket role, not the expansion claim. The
+frame's consequence: elemental keys force a lossy 7→5 projection; office identity keys
+preserve 7/7 native coverage. Probe design is untouched by this entry.
+
+**Transport reframing.** A multi-hop route does not mutate a Form; it puts the Form through
+a sequence of behavioral phase changes. Route divergences at one target are not corruption —
+they are the refractive measurement: different operator histories produce different postures
+at arrival while identity is carried in the pool ("verbatim carry", the frame's term) and
+expression is set by the route (geometry record). This is a reading lens for the transport
+probe's findings, not a probe input. Adjacent measured context: BL-035 already recorded the
+teleological/ontological derivation difference — pentatonic claims collision-prone at shared
+structure, heptatonic office inheritance collision-free
+(`scrum/plan/bl-035-semantic-derivation-census-memo.md:23-31,64-75`).
+
+**Falsifiable stake (dated).** As of this registration (2026-10-04), the frame's first
+empirical check is designated as the transport probe's same-origin multi-route
+pool-identity expectation (BL-031 Phase A: `scrum/BACKLOG.md:343-395`; gap map/feeds:
+`scrum/plan/bl-035-semantic-derivation-census-memo.md:88-102`): if operations change posture
+and not identity, same-origin multi-route arrivals must be pool-identical. Route-dependent
+pool divergence at same-origin falsifies the separation (mechanics would be altering Forms,
+not postures). The probe has not run; the check is pending. Recorded gap, not a citation: no
+repo artifact currently defines a same-origin control under that name — the operational
+definition lands with the probe's own build. At results-interpretation time this block is
+updated: control held → first check passed; control diverged → finding against the frame.
+When the probe's build memo lands, one line there should point back here (pointer deferred;
+BL-031 design is not edited by this entry).
+
+**Blueprint vs. map — two axes, no reduction.** The Blueprint's Ontology/Teleology is the
+being/becoming axis (7 Governors vs 4-pole Court + Quintessence); this map's Layers 1–4
+(`docs/ARCHITECTURE_MAP.md:28-76`) are the edge-ownership axis (heptatonic universe /
+bipartite containment / pentatonic inter-node space / engagement substrate). Different axes,
+both valid, neither reduces to the other: a payload Form is ontological under the Blueprint
+axis while its coordinate lives in Layer 1 or 3 under the map axis; the Q overlay is
+teleological behavior while it is Layer 4 dynamics under the map axis. Nothing in this entry
+renumbers either scheme.
+
+`[INTUITIVE GLOSS — UNCITED]` The maintainer's electric/magnetic and light/matter analogies
+(M as a phase rotation in an alternating magnetic field; R/L as electrical potential shifts;
+mechanics as electricity/magnetism running the circuit; forms as the light/matter spectrum
+emitted at the terminal) are carried as explicitly-labeled intuitive framing only. No
+artifact states them; they are intentionally uncited. Provenance separates them from the
+Blueprint's own electric/magnetic labels (`docs/ARCHITECTURAL_BLUEPRINT.md:72-83`), which are
+authored correspondence in the register-axis context with physical claims excluded by
+CRT-348: citing those labels does not cite this gloss, and this gloss does not extend them
+into probe context.
+
 ## 3. Open canon question
 
 `[OPEN CANON QUESTION]` **Sun/Moon <-> pole assignment.** Two cited readings conflict:
@@ -156,5 +241,6 @@ session (lattice Phase B, or the governs semantic layer) resolves it from the re
 |---|---|---|
 | BL-020 | 2.1, 2.2 as candidate sonification mappings (rest-state/bucket vs positional/cursor) | Decision deferred to the sprint's design discussion; hypotheses only. Post-adjudication: registry polarity corrects 2.1/2.2; the landed overlay is retained as the labeled counterfactual-polarity experiment (`scrum/plan/fivefold-mesh-adjudication.md` A1) |
 | BL-031 | 2.5 as required Phase-A findings-memo context; seam census treats the mirror-relation prediction under this lens | Prediction, not conclusion |
+| BL-031 (interpretation) | 2.6 as findings-interpretation vocabulary only | interpretation-only; never a probe input; hypotheses not citable as claims |
 | BL-033 | 2.4, 2.5 — the D4 bracket prediction is the hypothesis the Phase C probes test | Never phrased as explaining the `not_derived` record; qualifier binding |
 | claim documents | 1.x only | Hypotheses are not citable as claims anywhere |
