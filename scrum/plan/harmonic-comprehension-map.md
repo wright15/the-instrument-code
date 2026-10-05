@@ -220,6 +220,104 @@ authored correspondence in the register-axis context with physical claims exclud
 CRT-348: citing those labels does not cite this gloss, and this gloss does not extend them
 into probe context.
 
+### 2.7 Phenomena layer and electrodynamic teleology — proposed revision
+
+`[MAINTAINER DESIGN INTENT — registered]` Registered 2026-10-04 from the pre-build
+session. This entry registers the design intent behind the mutation algebra's
+natural-phenomena origins and the polar structure of the teleological layer. **It is a
+proposed canon revision, not a registration of existing canon.** The maintainer's
+photonic-coherence set (below) proposes changing, as primary at five of seven offices, the
+phenomena the framework currently records; adoption is a framework-revision-ceremony matter,
+not something this fast-lane entry effects. The recorded set is framework prose — §5 "Seven
+Natural Phenomena" (`framework/NATURAL_ORGANIZATION_THESIS.md:150-233`) and the functional-map
+column (`framework/AGENTS.md:408-414`) — formalized in the toolkit's proposed registry
+(`seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/schemas/physical_phenomena.yaml`,
+`admission: proposed`; the registry is **not** a pre-framework draft — it faithfully mirrors
+the canon). Nothing here demotes the recorded set by declaration.
+
+**Revision rationale (photonic coherence).** The ontological layer's register is light and
+matter; the proposed revision makes every governing phenomenon a photonic/light-matter
+interaction, matching that register. The delta is per-office, not wholesale: canon already
+contains some revision picks (blackbody under Sun `:162`; "refraction into medium" under
+Venus `:220`), so the proposal elevates the photonic subset to primary rather than importing
+foreign material; Mars and Saturn are the two genuine category shifts.
+
+**Three-way table (recorded canon → registry formalization → proposed revision).**
+
+| Office | Recorded canon (thesis §5 / AGENTS.md) | Registry formalization | Proposed revision | Delta |
+|---|---|---|---|---|
+| Sun | Thermal Emission / Radiative Release (`:157-166`; `AGENTS.md:408`) | Thermal radiative emission — Planck/blackbody (`:16-46`) | Direct spectral emission | reweight/relabel |
+| Moon | Reflected Reception / Warmth Held (`:168-177`; `:409`) | Diffuse reflection and reception — Lambertian (`:47-77`) | Specular reflection and phase angle | reweight/relabel |
+| Mars | Combustion / Ignition Fronts (`:179-188`; `:410`) | Combustion activation front — Arrhenius (`:78-110`) | Incandescent thermal radiation (blackbody emission) | category shift (chemistry → photonic) |
+| Mercury | Photosynthesis / Conversion Hinge (`:190-202`; `:411`) | Photosynthetic energy transduction (`:111-138`) | Photosynthesis | convergent |
+| Jupiter | Rayleigh Scattering / Diffusion (`:204-213`; `:412`) | Rayleigh scattering (`:139-170`) | Rayleigh scattering | convergent |
+| Venus | Selective Absorption / Molecular Bond (`:215-223`; `:413`) | Selective molecular absorption — Beer–Lambert (`:171-204`) | Refraction and polarization | reweight/relabel |
+| Saturn | Crystallization / Phase Boundary (`:225-233`; `:414`) | Crystallization and phase-boundary fixation (`:205-235`) | Optical absorption and occlusion | category shift (condensed-matter → photonic) |
+
+Tally: two convergent, three reweight/relabel, two category shifts. Registry line refs are
+within `.../schemas/physical_phenomena.yaml`; thesis refs are within
+`framework/NATURAL_ORGANIZATION_THESIS.md`.
+
+**Registry annotation (map-held).** The supersession marker is held here rather than edited
+into `physical_phenomena.yaml` because the toolkit package payload is pinned as a frozen
+composite package identity (`scripts/validate-release.mjs:233`, payload hash `b7ebc166…`);
+a comment-only edit would require re-pinning a frozen package payload — outside fast-lane
+scope. Wording for the closure review: the registry formalizes framework canon; the
+photonic-coherence revision is proposed; adjudication at closure.
+
+**Teleological polarity structure — three tiers.**
+
+1. *Declared (dipoles).* Each of the four classical elements (Fire, Air, Water, Earth)
+   carries **both poles** — electric and magnetic — as intrinsic capacity, and Quintessence
+   moves and pivots them. Declared design intent: the elements' polarity is native, not
+   position-derived.
+2. *Recorded tension (state-split).* The repo's proposed mechanics registry
+   (`schemas/mechanics_thermodynamics_registry.yaml:9-10,40`) splits Electric = External/0
+   and Magnetic = Internal/1 — pole-per-engagement-position, not both-poles-per-element.
+   Genuine structural tension with tier 1; not smoothed.
+3. *Proposed synthesis.* `[COMPOSITIONAL HYPOTHESIS — proposed resolution of polarity
+   tension]` The engagement bit is proposed as the selection rule over the dipoles:
+   elements carry both poles intrinsically (tier 1); the bit selects which is expressed
+   (tier 2); so direction becomes derivable per node from (element, engagement state).
+   Status: *"The registry's state-split is not contradicted by the directive's dipoles if
+   the former is the selection rule for the latter; this composition is proposed, not
+   admitted; the closure review adjudicates."* Intent rider: *"Synthesis consistent with
+   declared intent on dipole structure; selection mechanism proposed (engagement-state
+   projection), not declared — the closure review adjudicates whether engagement-projection
+   is the full selection rule or a special case of a richer one."*
+
+**Layer coupling.** Photonic and electromagnetic domains are physically coupled — light is
+electromagnetic radiation, and each proposed phenomenon is a place where light/matter
+(ontology) meets electrodynamic behavior (teleology). Distinguishable by register,
+continuous through the phenomena. Adjacent admitted context: the Blueprint's
+Ontology/Teleology distinction (`docs/ARCHITECTURAL_BLUEPRINT.md:16-23,55-97`); the
+directional non-derivability finding this frame addresses
+(`scrum/plan/bl-035-semantic-derivation-census-memo.md:77-86`).
+
+**Tier boundary.** Declared maintainer design intent proposing a canon revision; the design
+origin of the algebras' meaning, not a description of admitted semantics. Fills no finding
+row automatically; finding statuses unchanged; not citable as claims.
+
+**Forward hooks.** (a) Seeds the future governs-semantic-layer work item. (b) Supplies
+polarity vocabulary for the topology candidate's directional semantics (proposed only).
+(c) Transport-probe interpretation pointer (deferred): if the revision and synthesis are
+adopted, same-form arrivals through different operator histories could be read as
+pole-expression history — interpretation only; never a probe input. (d) Closure agenda, two
+questions: **Q1** — does the photonic-coherence set supersede the recorded phenomena set as
+primary? (evaluated by the register criterion at the revision ceremony). **Q2** — is the
+registry's state-split the selection rule for the directive's element-dipoles?
+(derivation-testable the way BL-035 tested non-derivability: attempt the direction
+derivation; check coherent directional structure at the boundary nodes where the hole was
+found). The ceremony validates or falsifies by whether the composition fills the hole
+without contradiction.
+
+`[INTUITIVE GLOSS — UNCITED]` The dipole/projection reading may be informally expressed as
+an intrinsic pole pair selected by an engagement-state operator (illustrative notation:
+P₀ → Electric expression, P₁ → Magnetic expression, D = f(e, s)); tensor/operator language
+is illustrative formalization of the proposed composition, not repo-derived mathematics and
+not cited. No electromagnetic equivalence or physical quantity claim is asserted (the
+mechanics registry's own boundary: `no_electromagnetic_equivalence: true`).
+
 ## 3. Open canon question
 
 `[OPEN CANON QUESTION]` **Sun/Moon <-> pole assignment.** Two cited readings conflict:
@@ -241,6 +339,7 @@ session (lattice Phase B, or the governs semantic layer) resolves it from the re
 |---|---|---|
 | BL-020 | 2.1, 2.2 as candidate sonification mappings (rest-state/bucket vs positional/cursor) | Decision deferred to the sprint's design discussion; hypotheses only. Post-adjudication: registry polarity corrects 2.1/2.2; the landed overlay is retained as the labeled counterfactual-polarity experiment (`scrum/plan/fivefold-mesh-adjudication.md` A1) |
 | BL-031 | 2.5 as required Phase-A findings-memo context; seam census treats the mirror-relation prediction under this lens | Prediction, not conclusion |
-| BL-031 (interpretation) | 2.6 as findings-interpretation vocabulary only | interpretation-only; never a probe input; hypotheses not citable as claims |
+| BL-031 (interpretation) | 2.6, 2.7 as findings-interpretation vocabulary only | interpretation-only; never a probe input; hypotheses not citable as claims |
 | BL-033 | 2.4, 2.5 — the D4 bracket prediction is the hypothesis the Phase C probes test | Never phrased as explaining the `not_derived` record; qualifier binding |
+| topology candidate (future) | 2.7 polarity vocabulary for directional semantics | Proposed only; closure review adjudicates; not citable as claims |
 | claim documents | 1.x only | Hypotheses are not citable as claims anywhere |
