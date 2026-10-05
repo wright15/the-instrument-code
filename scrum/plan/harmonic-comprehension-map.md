@@ -188,18 +188,42 @@ teleological/ontological derivation difference — pentatonic claims collision-p
 structure, heptatonic office inheritance collision-free
 (`scrum/plan/bl-035-semantic-derivation-census-memo.md:23-31,64-75`).
 
-**Falsifiable stake (dated).** As of this registration (2026-10-04), the frame's first
-empirical check is designated as the transport probe's same-origin multi-route
-pool-identity expectation (BL-031 Phase A: `scrum/BACKLOG.md:343-395`; gap map/feeds:
-`scrum/plan/bl-035-semantic-derivation-census-memo.md:88-102`): if operations change posture
-and not identity, same-origin multi-route arrivals must be pool-identical. Route-dependent
-pool divergence at same-origin falsifies the separation (mechanics would be altering Forms,
-not postures). The probe has not run; the check is pending. Recorded gap, not a citation: no
-repo artifact currently defines a same-origin control under that name — the operational
-definition lands with the probe's own build. At results-interpretation time this block is
-updated: control held → first check passed; control diverged → finding against the frame.
-When the probe's build memo lands, one line there should point back here (pointer deferred;
-BL-031 design is not edited by this entry).
+**Falsifiable stake (dated; first check resolved).** As of this registration (2026-10-04),
+the frame's first empirical check is the transport probe's same-origin multi-route
+pool-identity expectation: if operations change posture and not identity, same-origin
+multi-route arrivals must be pool-identical, and route-dependent pool divergence at
+same-origin would falsify the separation (mechanics altering Forms, not postures).
+
+**First empirical check PASSED (2026-10-04, BL-031 Phase 2 semantic transport probe,
+`fec745a`, artifact fingerprint
+`9138a7ab2988382a9a1012b0c0a07bd661ce61f8f6d9b40a5054a9d67e58a6d4`).** Same-origin
+multi-route arrivals were pool-identical across all queries — operations changed posture,
+never identity. The separation stands after its first test. Qualifier (binding): the control
+is verified as a construction invariant — "one origin's pool is carried verbatim on every
+route; same-origin multi-route agreement is a control, never a finding"
+(`orrery/src/generated/semantic-transport-probe.v1.json` `preRegistration.sameOriginControl`;
+`scrum/plan/bl-031-semantic-transport-probe-memo.md:90-91`) — with lossless verbatim carry
+and a passed fail-loud overlap check
+(`scrum/plan/bl-031-semantic-transport-probe-memo.md:80-85`). The pass validates the
+construction first and supports the frame through it, not as an independent discovery.
+Program note: this is the Phase 2 semantic transport probe; the Phase-A lattice program
+(`scrum/BACKLOG.md:343-395`) is separate and untouched
+(`scrum/plan/bl-031-semantic-transport-probe-memo.md:39-43`).
+
+**Interpretation (findings pinned; probe memo + artifact).** Transport divergence observed:
+1,510 divergent-route queries; arrivals distinct per office (0 identical / 0 subset
+cross-office; 3,926 disjoint / 620 overlapping, overlapping exactly the three admitted
+shared landforms) — refraction, not corruption, per this frame's prediction
+(`scrum/plan/bl-031-semantic-transport-probe-memo.md:80-91`). Postural layering observed:
+depth-2/3 transport origins are structurally disjoint from one-hop claimants, so the
+contested band is stable under deeper transport and new arrivals build new expression
+without disturbing existing conflicts
+(`scrum/plan/bl-031-semantic-transport-probe-memo.md:69-76`; gap map/feeds
+`scrum/plan/bl-035-semantic-derivation-census-memo.md:88-102`).
+
+**Second test (pending).** The directional-semantics check remains gated on the polarity
+synthesis's closure-review admission (§2.7 Q2). This block is updated at future
+interpretation points under this map's rules; BL-031 design is not edited by this entry.
 
 **Blueprint vs. map — two axes, no reduction.** The Blueprint's Ontology/Teleology is the
 being/becoming axis (7 Governors vs 4-pole Court + Quintessence); this map's Layers 1–4
