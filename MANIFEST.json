@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1197,
-  "totalBytes": 81479520,
+  "fileCount": 1203,
+  "totalBytes": 81627152,
   "files": [
     {
       "path": ".env.example",
@@ -1062,8 +1062,8 @@
     },
     {
       "path": "orrery/package.json",
-      "bytes": 2839,
-      "sha256": "6efca3c94df0ad5120e8b8f6834af51b5a4c4c4b6e14e40f960be50b6b7d0c90"
+      "bytes": 3022,
+      "sha256": "5c041e4ce0e61f2e28cce0a1a4953475899ce8aa1dc07c129eab08165dcfbe3c"
     },
     {
       "path": "orrery/public/AUDIO_ASSETS.md",
@@ -1119,6 +1119,11 @@
       "path": "orrery/scripts/validate-orrery-legal-move-catalog.mjs",
       "bytes": 3218,
       "sha256": "09518305c45251003d0f770a606aecfbe71facd27f052c958324e070f2b4cdb4"
+    },
+    {
+      "path": "orrery/scripts/validate-phase-a-probe.mjs",
+      "bytes": 21564,
+      "sha256": "8177b23d20446e377318af36d5303b1c7dbc38d6a80ba5f1cab15a50a8c7d9ee"
     },
     {
       "path": "orrery/scripts/validate-photonic-overlay.mjs",
@@ -1231,6 +1236,11 @@
       "sha256": "c017c3c66e10b803eccb82342d030575c8069434063657fb89b5d56169db4d4b"
     },
     {
+      "path": "orrery/src/generated/phase-a-probe.v1.json",
+      "bytes": 42551,
+      "sha256": "48f513679d505087277d5670952fb860b755832775f5fb5980aa3f71c73330bb"
+    },
+    {
       "path": "orrery/src/generated/photonic-overlay.v1.json",
       "bytes": 17403,
       "sha256": "35e8958d6e6d2455ceb6442ef7dc50d07de80416bbed7bf78260c670cc10901e"
@@ -1329,6 +1339,11 @@
       "path": "orrery/src/path-replay.ts",
       "bytes": 45472,
       "sha256": "22db4d163bf06d0cbe424516d8a43745fc95490174626d74a6c36e0eeea621aa"
+    },
+    {
+      "path": "orrery/src/phase-a-probe.test.ts",
+      "bytes": 9279,
+      "sha256": "c3861ab21805f03f54fbf71b3500c9d6d3c30488d9b862dfca47cd3759d215dd"
     },
     {
       "path": "orrery/src/photonic-overlay.test.ts",
@@ -1457,8 +1472,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 13570,
-      "sha256": "c9e7801caef4a8c51d2ae079d561f70fadd33311d1db7c16da509b118088a2e5"
+      "bytes": 13702,
+      "sha256": "514d1211a8bdf027dd85cc060a6340e34a66962ce67d66d9c845966cb89c1bb4"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
@@ -2581,6 +2596,11 @@
       "sha256": "06a0ec841cdad7c554ec1ae0ae9b9e37c3c008b16478e79517718e8d02061173"
     },
     {
+      "path": "scripts/build-phase-a-probe.mjs",
+      "bytes": 46053,
+      "sha256": "59deb0e42a9806c8136ec70349f4707c025cd5d2ab97fb7e723b490a14c3c0c8"
+    },
+    {
       "path": "scripts/build-photonic-overlay.mjs",
       "bytes": 8412,
       "sha256": "5edfe953e83d5e69392c83ce30f283bd460ef1a49110ac053a3b7599591c4692"
@@ -2954,6 +2974,11 @@
       "path": "scripts/verify-neo4j-roundtrip.mjs",
       "bytes": 2658,
       "sha256": "f18fb63e95cf9079509baa7f43e799b7ada7a7682e9fd6f3c5f91f9a2f4beaae"
+    },
+    {
+      "path": "scripts/verify-phase-a-proposals.mjs",
+      "bytes": 15536,
+      "sha256": "2667287c383931586f0e73a68383940d8c1c42c14837de2ea19d8e0db105fcaa"
     },
     {
       "path": "scrum/BACKLOG.md",
@@ -3414,6 +3439,11 @@
       "path": "scrum/plan/bl-030-d-cycle-demonstration-routes-spec.md",
       "bytes": 9230,
       "sha256": "4f9e961a0e7f4d1c4ab314a5bf5e830d1ff01aa5d78bf615825a1888fc597856"
+    },
+    {
+      "path": "scrum/plan/bl-031-phaseA-findings-memo.md",
+      "bytes": 12334,
+      "sha256": "aa92801b3d140e2d0b579295902dcd69dc031693d8cedae2c1c3117204bac885"
     },
     {
       "path": "scrum/plan/bl-031-semantic-transport-probe-memo.md",
