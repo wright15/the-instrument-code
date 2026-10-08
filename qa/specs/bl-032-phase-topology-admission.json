@@ -1,0 +1,210 @@
+{
+  "receiptId": "SPEC-PHASE-EXTENDED-TOPOLOGY-001-admission",
+  "ticket": "GOV-523",
+  "status": "ADMITTED_ATOMIC_LANDING",
+  "admissionDate": "2026-10-08",
+  "ticketVerification": "GOV-523 verified free at execution: the highest allocated GOV-52X in the repository was GOV-522 (qa/specs/bl-011-correspondence-admission.json; docs/specs/fivefold-court-engagement-correspondence-v0.1.0.md).",
+  "scope": {
+    "included": [
+      "Candidate record docs/specs/phase-extended-topology-candidate-v0.1.0.md version 0.1.1",
+      "This admission receipt under qa/specs/",
+      "One append-only decision-ledger entry (ENTRY 14)",
+      "Root inventories MANIFEST.json and CHECKSUMS.sha256",
+      "Status propagation: scrum/BACKLOG.md BL-032 status flip and revision-history row"
+    ],
+    "excluded": [
+      "Runtime, schema, canonical topology, Court runtime, Neo4j projection, graph or policy changes",
+      "Governs verdicts; D4/D7 records; SPEC-001 amendment (fence #5 cited as charter only)",
+      "Boundary-wall dissolution claims; G1 movement (no intra-330 edges)",
+      "Directional-semantics assignment",
+      "Shared-artifact refresh; D4-bound evidence preservation untouched",
+      "Release promotion or green-release claim"
+    ]
+  },
+  "candidate": {
+    "id": "SPEC-PHASE-EXTENDED-TOPOLOGY-001",
+    "version": "0.1.1",
+    "path": "docs/specs/phase-extended-topology-candidate-v0.1.0.md",
+    "sha256": "1134fe20d4b09d41d63e7b2a5aa8d554674d8d087be1bb84c5324de1901e3aeb",
+    "blobOid": "70f90696d12976f8cae6a41457fd771ca0e53aaa",
+    "byteLength": 16563,
+    "recipe": "raw-bytes-sha256"
+  },
+  "claim": {
+    "statement": "that the phase-extended topology machinery - the covering-pair lift of the anchored universes (5,544 heptatonic + 3,960 pentatonic pairs over 792+792 concrete sets, uniform multiplicity 7/5), with phase-equivariant operator semantics (40,824/40,824 commutation, zero rooting-dependent witnesses, R1/L1 phase-carry +/-1) and a completed seam census (two edge families, radius-1 confirmed, mirror relation confirmed) - is admitted as a candidate record: available for dependent work (Phase C governs probes), explicitly not canon, explicitly not a claim that boundary governs now derive.",
+    "rejectedAlternatives": "Five recorded: (a) bare-pc-set quotient (792 collapse) - rejected by the OD-1 multiplicity pin (7-fold redundant in concrete sets, exactly non-redundant in (anchored-form, phase) terms; the redundancy is the phase information); (b) single-phase seam closure - rejected (mode-tonic representatives at +/-1); (c) mirror-denial - rejected (12/12 mirror readings, L-ring realization inventoried); (d) wall-dissolved reading - rejected (zero D-D fixed-degree applications at every phase); (e) phase-as-annotation - rejected (collapses 5,544 to 462 and destroys the measured structure: 5,040 lifted Family-A edges, per-phase D-cycle families, 2,376-node patch).",
+    "scopeExclusions": [
+      "No governs verdicts: D4's registered not_derived outcome unchanged (DECISION_LEDGER.md:2195-2252); D7 has transition labels only (neo4j/csv/governs.csv); the governs retry is Phase C, gated on this admission",
+      "The wall stands: the boundary wall is not dissolved and no boundary-traversal claim is made (zero D-D fixed-degree at every phase)",
+      "No G1 movement: no intra-330 edge assumed, emitted, or consumed; G1 remains BL-024's decision",
+      "No directional-semantics assignment: the BL-035 negative result is carried; the eleven off-chain 4-bit configurations remain unlabeled",
+      "Candidate status only: never claims admitted topology, runtime, or canonical effect; not canon",
+      "Membrane: the being/becoming frame (harmonic-comprehension-map.md:138-246) and polarity synthesis (:247-343) are interpretation vocabulary in the motivation only, never design inputs",
+      "Session prose is context, not evidence: every load-bearing claim cites a landed artifact"
+    ]
+  },
+  "reviewedBaseline": {
+    "artifact": "Phase-Extended Topology candidate v0.1.0 (reviewed in session against the approved planning text)",
+    "sha256": "fcd661d7102475cb32154849876cda77f0c00125a58467e7dc1f4ce379af5f5d",
+    "blobOid": "40a729f223f3cf24bf05f1b547c5e9a42b3f3d78",
+    "byteLength": 15999,
+    "reviewAuthority": "Maintainer end-to-end review of the frozen claim text and authorization of the seven-item v0.1.0 -> v0.1.1 admission-time delta (status propagation plus evidence-table locator precision) under the dual re-hash protocol, recorded in session. This records conversation authority, not a cryptographically authenticated signature (ENTRY 11 precedent)."
+  },
+  "authorizedDelta": {
+    "items": [
+      "Header Version resolved to 0.1.1",
+      "Header Status resolved to admitted-by-ledger-reference",
+      "Header Work Item resolved to verified-next-free (GOV-523 allocated)",
+      "Section 1.1 tag annotated (admitted per ENTRY 14)",
+      "Section 5 converted from prospective to causal form and ENTRY 14 named",
+      "0.1.1 revision-history row added",
+      "Evidence-table locator precision corrected against staged bytes: docs/TIERING.md:12-25 -> 11-24; harmonic-comprehension-map.md:138-246 -> 138-245; scrum/BACKLOG.md:338-447 -> 338-446; phase-A memo Family A :69-73 -> :69-72, P4 :107-109 -> :107-110, P5 :110-116 -> :111-116"
+    ],
+    "verification": "Byte-diff of the staged v0.1.1 against the preserved reviewed v0.1.0 baseline contains exactly these seven items; claim text unchanged."
+  },
+  "finalRehash": {
+    "sha256": "1134fe20d4b09d41d63e7b2a5aa8d554674d8d087be1bb84c5324de1901e3aeb",
+    "blobOid": "70f90696d12976f8cae6a41457fd771ca0e53aaa",
+    "byteLength": 16563,
+    "computedBy": "executor on the final staged v0.1.1 bytes via shasum -a 256 and git hash-object --no-filters",
+    "independentMaintainerRecomputation": "Not performed inside this session; the digest and subject blob OID are presented for the maintainer's independent verification. The post-commit obligation below is the enforceable R1 check."
+  },
+  "evidence": {
+    "pointerCitations": {
+      "artifact": "orrery/src/generated/phase-a-probe.v1.json",
+      "rule": "CONV-EVIDENCE-BINDING-001 section 1.1 JSON Pointer citations",
+      "pointers": [
+        "/p0Verification/claims/0",
+        "/p0Verification/claims/1",
+        "/p0Verification/claims/2",
+        "/p1PhaseCoordinate/covering",
+        "/p2Equivariance/sweep",
+        "/p2Equivariance/calibration",
+        "/p2Equivariance/perOperator",
+        "/p2Equivariance/strata",
+        "/p3SeamCensus/familyA",
+        "/p3SeamCensus/familyB",
+        "/p3SeamCensus/histogram",
+        "/p3SeamCensus/modalSeamCensus",
+        "/p3SeamCensus/modalSeamCensus/readingRefinement",
+        "/p3SeamCensus/radiusOneVerdict",
+        "/p4LiftArchitecture",
+        "/p5BoundaryLayer",
+        "/p6MinimalPatch",
+        "/sourceBindings",
+        "/probeFingerprint"
+      ],
+      "pointerVerification": "All pointers resolved against the staged artifact bytes pre-commit, in the same admission step that verifies line ranges.",
+      "byteIdentity": "Carried by the R1 whole-file binding over the artifact (recipe raw-bytes-sha256; digest 48f513679d505087277d5670952fb860b755832775f5fb5980aa3f71c73330bb; subject blob OID 90abe9065bb0886b60592eec427202d7ff8cecdf). No span binding is instantiated.",
+      "fingerprint": "c8271c20a7aaf23c8f25fbe12d849854eb02ffbfd6fa24fb3f091b15970b87ac",
+      "spanBindings": "None instantiated; the decision ledger is cited by entry identity (ENTRY 12 pattern)."
+    },
+    "machineChecks": {
+      "test": {
+        "path": "orrery/src/phase-a-probe.test.ts",
+        "role": "12 pins: scope, P0 receipt, sweep, strata, families A/B, mirror verdict, specs, fences"
+      },
+      "validator": {
+        "path": "orrery/scripts/validate-phase-a-probe.mjs",
+        "role": "independent re-derivation of P0 arithmetic, the 15 generators, the 40,824-check sweep, the seam census, patch counts, and the fingerprint"
+      },
+      "emitters": [
+        "scripts/build-phase-a-probe.mjs",
+        "scripts/verify-phase-a-proposals.mjs"
+      ]
+    },
+    "citedRecords": [
+      "scrum/plan/bl-031-phaseA-findings-memo.md",
+      "scrum/plan/bl-029-d-tier-operator-probe-memo.md",
+      "scrum/plan/bl-035-semantic-derivation-census-memo.md",
+      "scrum/plan/bl-031-semantic-transport-probe-memo.md",
+      "scrum/BACKLOG.md (BL-031-BL-033; lattice program charter)",
+      "docs/specs/fivefold_constructs_engine_spec.md (lines 33-40, fence #5)",
+      "docs/TIERING.md (lines 12-25, 48-49)",
+      "docs/ARCHITECTURE_MAP.md (lines 167-176, gaps and fences)",
+      "scrum/plan/harmonic-comprehension-map.md (lines 138-343, interpretation vocabulary only)"
+    ],
+    "crossSessionReDerivation": "All load-bearing quantities (5,544/3,960/9,504; multiplicity 7/5; 40,824; seam histograms) were re-verified by two separate planning passes - Phase A's P0 gate grounding and Phase B's admission-planning spot-checks - against landed artifacts. Class: dual-agent verification."
+  },
+  "consequenceUpdates": {
+    "R6": "The admitted claim's declared consequence update - scrum/BACKLOG.md BL-032 status flip and revision-history row - lands in the same atomic commit; its pre-admission state is recoverable from the parent commit. No comprehension-map or architecture-map propagation is included: the admission creates a new candidate record and changes no recorded layer, gap, hypothesis, or consumption row. The architecture-map check (section 1 Layer table; section 4 gaps) found no row made stale or newly required; the map records admitted layers and structural gaps, and the candidate is planning-evidence machinery that moves neither."
+  },
+  "compliance": {
+    "R1": {
+      "status": "OBSERVED_PRE_COMMIT_AND_DECLARED_POST_COMMIT",
+      "observed": "candidate sha256/blobOid/byteLength computed on the staged v0.1.1 bytes; the reviewed v0.1.0 baseline digest and blob OID are preserved from before the delta; the receipt itself is registered by the same commit and covered by the root inventories.",
+      "declared": "Post-commit, git cat-file blob 70f90696d12976f8cae6a41457fd771ca0e53aaa under recipe raw-bytes-sha256 must equal 1134fe20d4b09d41d63e7b2a5aa8d554674d8d087be1bb84c5324de1901e3aeb. Declared obligation; not reported as observed before the commit exists."
+    },
+    "R2": {
+      "status": "PASS_DEFINITION_SCOPE",
+      "detail": "No whole-file ledger authority binding is introduced; the decision ledger is cited by entry identity, and the candidate also cites one prior ledger line range (DECISION_LEDGER.md:2195-2252, the D4 outcome) as a human locator. No span binding is instantiated."
+    },
+    "R3": {
+      "status": "NOT_APPLICABLE",
+      "detail": "No living pipeline payload is regenerated, split or refreshed by this landing; the phase-a probe artifact and its bindings are untouched."
+    },
+    "R4": {
+      "status": "PASS",
+      "detail": "Recipe raw-bytes-sha256 per provenance/digest-recipes.json (pinned primitive scripts/manifest-utils.mjs); digests computed with standard utilities over raw bytes."
+    },
+    "R5": {
+      "status": "PASS_FOR_ADMISSION_SCOPE",
+      "detail": "No project emitter produced the admission evidence; the phase-a artifact's own emitter provenance (scripts/build-phase-a-probe.mjs; independent validator) is recorded in the artifact and receipt. Inventory emission recorded below."
+    },
+    "R6": {
+      "status": "DECLARED_POST_COMMIT",
+      "detail": "All admission evidence is registered by the same atomic commit; the consequence update (BACKLOG BL-032 flip) is included in the same commit as recorded above. The reviewed v0.1.0 baseline bytes were session-transit review material, recorded by digest only, not active authority dependencies."
+    }
+  },
+  "inventoryEmission": "scripts/build-manifest.mjs via npm run package:manifest; package seven-governors-integrated-release 1.9.0-dev from package.json. The inventory generatedAt value is release-derived, not an execution timestamp.",
+  "predeclaredGates": [
+    {
+      "gate": "STALE_TWIN_HUB_CONVERGENCE",
+      "record": "provenance/DECISION_LEDGER.md ENTRY 10/11/12/13; qa/specs/fivefold-constructs-001-r1-forensics.md"
+    },
+    {
+      "gate": "STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE",
+      "record": "qa/d4-production-landing.json; docs/specs/fivefold_constructs_engine_spec.md section 4.1"
+    }
+  ],
+  "validation": {
+    "full": {
+      "command": "npm run validate",
+      "exitCode": 1,
+      "firstFailure": "STALE_TWIN_HUB_CONVERGENCE",
+      "outputSha256": "5871e178fd32cb8f40374b17d72adb59cf38ad5439b48213f4af10d81f4cb810",
+      "outputBytes": 91671,
+      "scope": "Full command invoked; chained stages stop at the first failing suite. Executed at the final pre-commit admission tree with all landing files present (candidate v0.1.1, this receipt, ENTRY 14, the BACKLOG status flip, refreshed inventories); the recorded result corresponds to that tree. No refresh or bypass attempted.",
+      "disposition": "Predeclared, ledger-recorded stale gate; recorded, not repaired. Later chained stages (prose consistency, cypher) did not run. No green integrated release claimed."
+    },
+    "focused": {
+      "command": "npm run orrery:phase-a-probe:check",
+      "result": "PASS",
+      "detail": "P0 gate, the 15-generator reimplementation, the 40,824-check sweep, the seam census (12 canonical + 12 mirror readings) and the probe fingerprint all re-derived by the independent validator."
+    },
+    "manifest": {
+      "command": "npm run validate:manifest",
+      "status": "DECLARED_POST_COMMIT",
+      "detail": "Final envelope check runs after this receipt's bytes are registered; recording an observed PASS inside the receipt itself would falsify the check's subject. The observed result is reported in the session record."
+    }
+  },
+  "postCommitObligation": {
+    "point": "c",
+    "check": "git cat-file blob 70f90696d12976f8cae6a41457fd771ca0e53aaa piped to raw-bytes-sha256 (shasum -a 256)",
+    "expectedSha256": "1134fe20d4b09d41d63e7b2a5aa8d554674d8d087be1bb84c5324de1901e3aeb",
+    "status": "DECLARED; result confirmed post-commit in the session record, never written into this receipt as an observed PASS before it can be true."
+  },
+  "evidencePaths": {
+    "new": [
+      "docs/specs/phase-extended-topology-candidate-v0.1.0.md",
+      "qa/specs/bl-032-phase-topology-admission.json"
+    ],
+    "modified": [
+      "provenance/DECISION_LEDGER.md",
+      "scrum/BACKLOG.md",
+      "MANIFEST.json",
+      "CHECKSUMS.sha256"
+    ]
+  },
+  "protectedScope": "Existing test suites, preflight controls, D4 evidence, canonical data, schemas, Court runtime, Neo4j projection, shared sidecars and prior receipts were not modified."
+}

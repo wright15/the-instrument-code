@@ -2563,3 +2563,99 @@ This entry grants no runtime, topology, graph, Court, office, schema, policy or 
 `harmonic.C_H` authority. It does not resolve SPEC-001 section 6(4), does not graduate
 INV-5, and does not amend the D4/D7 records. Prior entries and prior line anchors remain
 unchanged; this entry is append-only.
+
+---
+
+## ENTRY 14 - SPEC-PHASE-EXTENDED-TOPOLOGY-001 admission under GOV-523
+
+**Date:** 2026-10-08. **Status:** admitted in one atomic landing; release gates recorded,
+not cleared.
+
+### Decision
+
+The Phase-Extended Topology candidate `docs/specs/phase-extended-topology-candidate-v0.1.0.md`
+(version 0.1.1, artifact ID `SPEC-PHASE-EXTENDED-TOPOLOGY-001`) is admitted under GOV-523,
+together with the compliance receipt `qa/specs/bl-032-phase-topology-admission.json`, the
+declared status propagation (`scrum/BACKLOG.md` BL-032 status flip and revision-history row),
+refreshed root inventories, and this entry, in one atomic admission commit.
+
+The admitted claim, verbatim: that the phase-extended topology machinery - the covering-pair
+lift of the anchored universes (5,544 heptatonic + 3,960 pentatonic pairs over 792+792
+concrete sets, uniform multiplicity 7/5), with phase-equivariant operator semantics
+(40,824/40,824 commutation, zero rooting-dependent witnesses, R1/L1 phase-carry +/-1) and a
+completed seam census (two edge families, radius-1 confirmed, mirror relation confirmed) - is
+admitted as a candidate record: available for dependent work (Phase C governs probes),
+explicitly not canon, explicitly not a claim that boundary governs now derive.
+
+The claim is bounded by design: it admits machinery, not outcomes. It does not claim that
+governs now derive, does not dissolve the boundary wall (zero D-D fixed-degree applications
+at every phase), does not move G1, and does not assign directional semantics (the BL-035
+negative result is carried; the eleven off-chain 4-bit configurations remain unlabeled). The
+rejected alternatives - the bare-pc-set quotient (792 collapse), single-phase closure,
+mirror-denial, the wall-dissolved reading, and the phase-as-annotation reading - are recorded
+in the candidate with their reasons. The machinery's numbers are machine-pinned by
+`orrery/src/phase-a-probe.test.ts` and independently re-derived by
+`orrery/scripts/validate-phase-a-probe.mjs`; Phase A's P0 gate grounded the session-derived
+mathematics before any artifact cited it, and the Phase B admission-planning pass re-verified
+the landed artifact before this candidate was drafted. The maintainer reviewed the candidate
+text end-to-end and authorized the seven-item v0.1.0 -> v0.1.1 admission-time delta (status
+propagation plus evidence-table locator precision) under the dual re-hash protocol; the
+claim text is unchanged and the delta diff against the preserved reviewed baseline contains
+exactly those items. The receipt records the
+reviewed-baseline digest, the authorized delta, the final subject bindings (recipe, digest,
+byte length, blob OID), and the declared post-commit obligation. This entry records
+conversation authority for the review and the delta, not a cryptographically authenticated
+signature (ENTRY 11 precedent).
+
+### Scope
+
+The admission is candidate-status only. No governs verdict is made or implied: D4's
+registered `not_derived` outcome (`provenance/DECISION_LEDGER.md:2195-2252`) is unchanged,
+and D7 has no derivation record beyond transition labels (`neo4j/csv/governs.csv`). The
+boundary wall stands at every phase and wall dissolution is Phase C's experiment, not this
+admission's claim. No G1 movement: no intra-330 edge is assumed, emitted, or consumed. No
+directional-semantics assignment. No runtime, schema, canonical topology, Court runtime,
+Neo4j projection, graph, policy, or office authority is granted; SPEC-001 is not amended
+(charter: fence #5); D4-bound evidence preservation remains untouched; no shared artifact is
+refreshed; no release promotion or green-release claim is made.
+
+### References
+
+- `docs/specs/phase-extended-topology-candidate-v0.1.0.md` (admitted text, v0.1.1)
+- `qa/specs/bl-032-phase-topology-admission.json` (admission receipt: reviewed baseline,
+  authorized delta, final bindings, JSON-Pointer citations, per-rule compliance, observed
+  validation result, declared post-commit obligation)
+- `orrery/src/generated/phase-a-probe.v1.json` (planning evidence; fingerprint
+  `c8271c20a7aaf23c8f25fbe12d849854eb02ffbfd6fa24fb3f091b15970b87ac`; sha256
+  `48f513679d505087277d5670952fb860b755832775f5fb5980aa3f71c73330bb`)
+- `orrery/scripts/validate-phase-a-probe.mjs`; `orrery/src/phase-a-probe.test.ts` (machine
+  checks)
+- `scrum/plan/bl-031-phaseA-findings-memo.md` (P0 grounding, P2/P3 censuses, Phase B
+  supportability)
+- `scrum/plan/bl-029-d-tier-operator-probe-memo.md`;
+  `scrum/plan/bl-035-semantic-derivation-census-memo.md`;
+  `scrum/plan/bl-031-semantic-transport-probe-memo.md` (motivation legs)
+- `docs/specs/fivefold_constructs_engine_spec.md:33-40` (fence #5 charter);
+  `scrum/BACKLOG.md:338-447` (BL-031-BL-033)
+- `scrum/plan/harmonic-comprehension-map.md:138-343` (sections 2.6-2.7; interpretation
+  vocabulary only)
+- Inventory emission: `scripts/build-manifest.mjs` via `npm run package:manifest`; package
+  `seven-governors-integrated-release` 1.9.0-dev from `package.json` (inventory tool and
+  version in one line per CONV-EVIDENCE-BINDING-001 section 7).
+
+### Release Gate Disposition
+
+Full `npm run validate` was executed for this landing; the observed first stop is recorded
+in the admission receipt. The predeclared acceptable stops are the ledger-recorded
+`STALE_TWIN_HUB_CONVERGENCE` state (ENTRY 10/11/12/13) and the recorded
+`STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE` state (`qa/d4-production-landing.json`;
+`docs/specs/fivefold_constructs_engine_spec.md` section 4.1). Any other failure halts. No
+stale control is disabled, no shared artifact is regenerated to force green, and no green
+integrated release is claimed.
+
+### Guard
+
+This entry grants no runtime, topology, graph, governs, Court, office, schema, policy or
+global `harmonic.C_H` authority. It does not derive any govern, does not amend the D4/D7
+records, does not dissolve the boundary wall, and does not assign directional semantics.
+Prior entries and prior line anchors remain unchanged; this entry is append-only.

@@ -411,7 +411,16 @@ G1 untouched, direction unassigned, no catalog promotion. Memo
 `plan/bl-031-semantic-transport-probe-memo.md`. This landing is the semantic transport probe
 only; the Phase-A seam/equivariance program above remains separately gated and untouched.
 
-### BL-032 — Phase B: claim event (ceremony — ONE session) [ACTIVE]
+### BL-032 — Phase B: claim event (ceremony — ONE session) [DONE]
+
+**Landed 2026-10-08:** phase-extended topology admitted as a candidate record
+`SPEC-PHASE-EXTENDED-TOPOLOGY-001` v0.1.1 (`docs/specs/phase-extended-topology-candidate-v0.1.0.md`),
+with receipt `qa/specs/bl-032-phase-topology-admission.json` and ENTRY 14 under GOV-523 (one
+atomic landing). The admitted claim is the bounded candidate-record form — covering-pair lift,
+equivariant operator semantics, seam census, radius-1, mirror confirmed — available for
+dependent work (Phase C governs probes); it explicitly does NOT claim that boundary governs
+now derive. Wall stands per-phase (P5); G1 untouched; direction unassigned; no governs
+verdicts; SPEC-001 unamended (fence #5 charter). Phase C gate satisfied.
 
 If and only if Phase A's memo supports it: admit the phase-extended topology as a candidate
 record. Standard ceremony: candidate doc, compliance receipt per convention, ledger entry,
@@ -598,3 +607,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.19 | BL-034 landed DONE: Orrery semantic provenance fix — pure landform provenance resolver, tier-branched labels (A0 native with seed; A1/A2 explicitly derived with office + seed citation), inheritance audit (scene prompt + audio palette already derived; no kernel-window surface), rule recorded. BL-035 landed DONE: two-mechanism semantic-derivation census — pentatonic four-way claimant classification (single 50 / agreeing 0 / conflicting 25 / zero 255; 105 claims over 75 nodes; all 70 census bridges claimed; five 5-35 cornerstones the only 3-claimant, windowed nodes) + 455-node heptatonic office-following baseline (301 + 154, collision-free at office level); direction recorded unassigned (negative derivability finding); generator + independent validator + 7 vitest pins wired into `orrery:check`/`orrery:build`; BL-031 Phase-1 spin-out/gating note; memos `plan/bl-034-*`, `plan/bl-035-*`; suite 213 green. |
 | v1.20 | BL-031 Phase 2 (semantic multi-hop transport probe) landed: seed-pool carry over the BL-028 composed graph at distances 2–3 — 1,750 queries / 330 targets; every target multi-origin within 3 hops; collisions deepen (d2–3 origins disjoint from d1 claimants); `5-35:10` all seven offices; pool relations exactly the three admitted overlaps (3,926 disjoint / 620 overlapping / 0 identical / 0 subset); route divergence 1,510 queries; BL-028 ground truth reproduced; boundary `d-cycle` layer geometry-only; generator + independent validator + 8 vitest pins wired into `orrery:check`/`orrery:build`; memo `plan/bl-031-semantic-transport-probe-memo.md`; suite 221 green; G1 untouched. |
 | v1.21 | BL-054 captured: phenomena closure review parked until EPIC-004 — adjudicates §2.7's photonic-coherence revision (Q1) + dipole-selector synthesis (Q2) at registry closure; no framework/registry bytes move until the ceremony; manifest regen. |
+| v1.22 | BL-032 landed DONE: phase-extended topology admitted as candidate record `SPEC-PHASE-EXTENDED-TOPOLOGY-001` v0.1.1 (`docs/specs/phase-extended-topology-candidate-v0.1.0.md`) with receipt `qa/specs/bl-032-phase-topology-admission.json` and ENTRY 14 under GOV-523, one atomic landing; bounded claim only (no governs verdicts, wall stands, G1 untouched, direction unassigned); candidate numbers machine-pinned before the candidate existed (phase-a probe 12 pins + independent validator); Phase C gate satisfied. |
