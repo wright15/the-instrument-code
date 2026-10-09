@@ -590,7 +590,7 @@ EPIC-004's opening (CRT-309 defers natural-phenomena/thermodynamic packages, sti
 framework/registry bytes move until the review's ceremony; §2.7's map-held annotation is the
 interim record.
 
-### BL-055 — D4 contract selection-mechanism review [CAPTURED]
+### BL-055 — D4 contract selection-mechanism review [FINDINGS RECORDED]
 
 Phase C finding (`plan/bl-033-phaseC-results-memo.md`; artifact
 `orrery/src/generated/phase-c-probe.v1.json`): the D4 contract's routes under-cover in
@@ -601,6 +601,40 @@ Review the contract's selection structure (T-A kernel-twin, T-B construction-joi
 midpoint) for a representation-stable predicate; feeds the governs semantic layer (rows 8/10
 + the directional finding) and any future amendment event. No claim event until the
 contract-level question is addressed (OD-C4).
+
+**Reviewed 2026-10-09:** sandbox planning evidence landed — generator
+`scripts/build-d4-selection-review.mjs` + artifact `orrery/src/generated/d4-selection-review.v1.json`
+(fingerprint `6d11fd93…`, raw-byte SHA-256 `40a1d758…`) + independent validator
+`orrery/scripts/validate-d4-selection-review.mjs` + 11 vitest pins wired into
+`orrery:check`/`orrery:build`; memo `plan/bl-055-d4-selection-review-memo.md`. Findings:
+Step 0 patch-only confirmed (three independent confirmations; the phase-scope-artifact
+hypothesis pre-falsified by execution scope). **The predicate exists and is intrinsic:
+`P(s) = [forte(s) = 7-27]` — a clean 14/14 split** (all 14 observed contacts are 7-27
+satellites; all 14 unobserved are 7-31; globally exactly fourteen of each, all A1
+satellites). T-B is definitionally a restatement generator (every A1 anchor has exactly two
+distinct E-parents; 56 witnesses = U; the join never reads the satellite except as payload).
+T-A's under-coverage is a T1-link limitation on one closed 7-edge A0 transposition cycle
+(5×T2 + 2×T1, sum 12): the frozen rotation sees only the two T1 edges (offices 0/6); the
+five T2 edges are exactly the seam's (1,11) flank pairs. Three independent blockers
+(frozen geometry, T-B definitional restatement, seam T-C overshoot) stand between the
+predicate and any positive contract row: **the failure is route geometry, not topology,
+semantics, or phase machinery.** Near-miss axis (cornerstone containment, one-sided 12/14)
+recorded as fail per OD-1; build-phase recomputation corrected three containment-axis
+numbers from the planning pass (recorded in the memo). No D4 verdict, no amendment.
+Follow-on captured as BL-056.
+
+### BL-056 — D4 new-route design [CAPTURED]
+
+Inputs: predicate `P(s) = [forte(s) = 7-27]` (BL-055; clean 14/14, intrinsic,
+representation-stable) + the cycle-edge identity (the 7 E-parent pairs are exactly the 7
+edges of the closed A0 transposition cycle and unordered-identical to the seam-pair
+geometries) + the T-B route-definitional proof (BL-055 W3). Design a contact route
+conjoining full cycle-edge traversal (T1+T2) with P, generating exactly O with G strictly
+inside U; T-B replaced or P-restricted; T-C scope adjudicated (7-edge seam reality vs 2-group
+observation). **Hard constraint: the design must break the cycle-edge ↔ construction-pair
+identity (BL-055 W3) — a route that merely joins the same A0 cycle-edges restates U
+regardless of predicate.** Precondition for any D4 amendment event (its own separate
+ceremony gated on this work). Sandbox-only until admission.
 
 ---
 
@@ -638,3 +672,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.22 | BL-032 landed DONE: phase-extended topology admitted as candidate record `SPEC-PHASE-EXTENDED-TOPOLOGY-001` v0.1.1 (`docs/specs/phase-extended-topology-candidate-v0.1.0.md`) with receipt `qa/specs/bl-032-phase-topology-admission.json` and ENTRY 14 under GOV-523, one atomic landing; bounded claim only (no governs verdicts, wall stands, G1 untouched, direction unassigned); candidate numbers machine-pinned before the candidate existed (phase-a probe 12 pins + independent validator); Phase C gate satisfied. |
 | v1.23 | BL-033 Phase C probed (sprint, read-only): boundary-govern derivation retry executed in the phase-extended sandbox — generator + artifact `orrery/src/generated/phase-c-probe.v1.json` (fingerprint `5085e274…`) + independent validator + 10 vitest pins wired into `orrery:check`/`orrery:build`; E1 PRESENT; calibration EXACT (OBS-023 reproduced per phase); seam keying completes the kernel relation to all 7 offices but collapses to `G_A = U` → contract `restatement_signature` (pre-registered expectation not held; new failure mode); strict-degree control reproduces frozen `not_derived` exactly; T-C seam overshoot (7 vs 2) with all observed seams realizable; D7 mirror asymmetric (`not_derived@seam-analogue`, rotation orbit does not close; contract seam clause inapplicable); wall NO_CHANGE at 12/12 phases; memos `plan/bl-033-phaseC-lifted-keying-spec.md`, `plan/bl-033-phaseC-results-memo.md`; suite 243 green; no D4/D7 verdict, no amendment; OD-C1…OD-C4 for maintainer. |
 | v1.24 | BL-033 findings recorded (maintainer rulings OD-C1…OD-C4): both keying readings ratified co-canonical at their own scope; D7 analogue adequate as labeled; fa/ti closure asymmetry recorded as a named structural finding; no amendment from Phase C (obstruction is in the contract). Follow-on captured as BL-055 (D4 contract selection-mechanism review); BL-033 status → findings-recorded (obstruction-visible row-class); manifest regen. |
+| v1.25 | BL-055 reviewed (sprint, read-only): D4 contract selection-mechanism review executed — generator + artifact `orrery/src/generated/d4-selection-review.v1.json` (fingerprint `6d11fd93…`) + independent validator + 11 vitest pins wired into `orrery:check`/`orrery:build`; Step 0 patch-only confirmed (Hypothesis B pre-falsified by execution scope); **clean 14/14 predicate found: `P(s) = [forte(s) = 7-27]`** (observed = 7-27, unobserved = 7-31, all A1 satellites); T-B definitional restatement proof (7 anchors × 2 distinct E-parents × 4 satellites = 56 = U); T-A under-coverage = T1-link limit on the closed 7-edge A0 cycle (5×T2 + 2×T1); OD-3 per-phase diagnostic (flanks reach U, center reproduces the frozen set); three independent blockers ⇒ failure is route geometry; near-miss axis (cornerstone) recorded as fail per OD-1; build-phase recomputation corrected three containment-axis numbers from the planning pass (memo §4/§8); no amendment; memo `plan/bl-055-d4-selection-review-memo.md`; suite 254 green; BL-056 (new-route design) captured with the cycle-edge ↔ construction-pair hard constraint. |
