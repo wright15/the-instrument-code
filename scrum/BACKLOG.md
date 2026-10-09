@@ -429,7 +429,23 @@ connections; govern re-evaluation warranted. Does NOT amend SPEC-001 — cites f
 Gate: maintainer decision on Phase A's memo. Exit: admitted topology record, or honest negative
 memo (legitimate).
 
-### BL-033 — Phase C: dependent govern probes (sprint until claim) [ACTIVE]
+### BL-033 — Phase C: dependent govern probes (sprint until claim) [FINDINGS RECORDED — obstruction-visible row-class]
+
+**Probed 2026-10-09:** the retry executed as sandbox planning evidence. Generator + artifact
+`orrery/src/generated/phase-c-probe.v1.json` (fingerprint `5085e274…`) + independent validator
++ 10 vitest pins wired into `orrery:check`/`orrery:build`; memo
+`scrum/plan/bl-033-phaseC-results-memo.md`; keying spec `scrum/plan/bl-033-phaseC-lifted-keying-spec.md`.
+Results: E1 boundary representation PRESENT (all 7 D4 anchors, patch phases, seam incidence);
+calibration EXACT (OBS-023 reproduced at every patch phase); the seam keying completes the
+kernel-twin relation to all seven offices but collapses to the full granted domain
+(`G_A = U`, contract `restatement_signature`, pre-registered expectation not held — new
+failure mode); the strict-degree control reproduces the frozen `not_derived` exactly; T-C at
+the seam overshoots (7 generated vs 2 observed; strict control exact); D7 mirror asymmetric
+(rotation orbit does not close; office 3 unqualified; `not_derived@seam-analogue`; contract
+seam clause inapplicable); wall NO_CHANGE at all 12 phases. No D4 verdict, no amendment, no
+D7 verdict; rulings OD-C1…OD-C4 in the memo (both readings co-canonical at their own scope;
+D7 analogue adequate as labeled; fa/ti closure asymmetry recorded as a named structural
+finding; no amendment from Phase C). Follow-on captured as BL-055. Suite 243 green.
 
 Re-run the D4 govern derivation in the phase-extended sandbox (dual-phase assignment at seams).
 D4 `not_derived` verified (`DECISION_LEDGER.md:2195-2252`): certification → amend D4 record
@@ -574,6 +590,18 @@ EPIC-004's opening (CRT-309 defers natural-phenomena/thermodynamic packages, sti
 framework/registry bytes move until the review's ceremony; §2.7's map-held annotation is the
 interim record.
 
+### BL-055 — D4 contract selection-mechanism review [CAPTURED]
+
+Phase C finding (`plan/bl-033-phaseC-results-memo.md`; artifact
+`orrery/src/generated/phase-c-probe.v1.json`): the D4 contract's routes under-cover in
+single-phase (4/14, frozen `not_derived`) and over-generate at full boundary representation
+(14/14 via restatement, `G_A = U`). The observed 14 contacts are real; the contract lacks a
+representation-stable selection mechanism separating them from the 28-key granted domain.
+Review the contract's selection structure (T-A kernel-twin, T-B construction-join, T-C
+midpoint) for a representation-stable predicate; feeds the governs semantic layer (rows 8/10
++ the directional finding) and any future amendment event. No claim event until the
+contract-level question is addressed (OD-C4).
+
 ---
 
 ## Sequencing
@@ -608,3 +636,5 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.20 | BL-031 Phase 2 (semantic multi-hop transport probe) landed: seed-pool carry over the BL-028 composed graph at distances 2–3 — 1,750 queries / 330 targets; every target multi-origin within 3 hops; collisions deepen (d2–3 origins disjoint from d1 claimants); `5-35:10` all seven offices; pool relations exactly the three admitted overlaps (3,926 disjoint / 620 overlapping / 0 identical / 0 subset); route divergence 1,510 queries; BL-028 ground truth reproduced; boundary `d-cycle` layer geometry-only; generator + independent validator + 8 vitest pins wired into `orrery:check`/`orrery:build`; memo `plan/bl-031-semantic-transport-probe-memo.md`; suite 221 green; G1 untouched. |
 | v1.21 | BL-054 captured: phenomena closure review parked until EPIC-004 — adjudicates §2.7's photonic-coherence revision (Q1) + dipole-selector synthesis (Q2) at registry closure; no framework/registry bytes move until the ceremony; manifest regen. |
 | v1.22 | BL-032 landed DONE: phase-extended topology admitted as candidate record `SPEC-PHASE-EXTENDED-TOPOLOGY-001` v0.1.1 (`docs/specs/phase-extended-topology-candidate-v0.1.0.md`) with receipt `qa/specs/bl-032-phase-topology-admission.json` and ENTRY 14 under GOV-523, one atomic landing; bounded claim only (no governs verdicts, wall stands, G1 untouched, direction unassigned); candidate numbers machine-pinned before the candidate existed (phase-a probe 12 pins + independent validator); Phase C gate satisfied. |
+| v1.23 | BL-033 Phase C probed (sprint, read-only): boundary-govern derivation retry executed in the phase-extended sandbox — generator + artifact `orrery/src/generated/phase-c-probe.v1.json` (fingerprint `5085e274…`) + independent validator + 10 vitest pins wired into `orrery:check`/`orrery:build`; E1 PRESENT; calibration EXACT (OBS-023 reproduced per phase); seam keying completes the kernel relation to all 7 offices but collapses to `G_A = U` → contract `restatement_signature` (pre-registered expectation not held; new failure mode); strict-degree control reproduces frozen `not_derived` exactly; T-C seam overshoot (7 vs 2) with all observed seams realizable; D7 mirror asymmetric (`not_derived@seam-analogue`, rotation orbit does not close; contract seam clause inapplicable); wall NO_CHANGE at 12/12 phases; memos `plan/bl-033-phaseC-lifted-keying-spec.md`, `plan/bl-033-phaseC-results-memo.md`; suite 243 green; no D4/D7 verdict, no amendment; OD-C1…OD-C4 for maintainer. |
+| v1.24 | BL-033 findings recorded (maintainer rulings OD-C1…OD-C4): both keying readings ratified co-canonical at their own scope; D7 analogue adequate as labeled; fa/ti closure asymmetry recorded as a named structural finding; no amendment from Phase C (obstruction is in the contract). Follow-on captured as BL-055 (D4 contract selection-mechanism review); BL-033 status → findings-recorded (obstruction-visible row-class); manifest regen. |
