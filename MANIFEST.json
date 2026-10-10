@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1222,
-  "totalBytes": 82003419,
+  "fileCount": 1228,
+  "totalBytes": 82100426,
   "files": [
     {
       "path": ".env.example",
@@ -1067,8 +1067,8 @@
     },
     {
       "path": "orrery/package.json",
-      "bytes": 3626,
-      "sha256": "11d42bffb3f75a94b578199d280740a413a93bc5d64c6c9eff2f7a6a96808e0d"
+      "bytes": 3814,
+      "sha256": "eed0b00583e63e973ea0aca012fa5b4b4f691f43b1d05bc23d33d111c4d0bafe"
     },
     {
       "path": "orrery/public/AUDIO_ASSETS.md",
@@ -1099,6 +1099,11 @@
       "path": "orrery/scripts/validate-d-tier-operator-probe.mjs",
       "bytes": 19182,
       "sha256": "c7b1181ad3a80b6b75e1fbe1898ba1f276dc3252850e06dad91762f7258ad99a"
+    },
+    {
+      "path": "orrery/scripts/validate-d4-r2-contract.mjs",
+      "bytes": 29204,
+      "sha256": "3a2cb01c5a887869550d66d726993bb43a59a8a714a69d4523edd8bf0b42789b"
     },
     {
       "path": "orrery/scripts/validate-d4-r2-route-review.mjs",
@@ -1206,6 +1211,11 @@
       "sha256": "dd00c1786e23efa01148e6d8c819a9b7c25d0b42e0c403a4357c10adec3c86f0"
     },
     {
+      "path": "orrery/src/d4-r2-contract.test.ts",
+      "bytes": 10242,
+      "sha256": "8171f8f0f98c68b57618ecfc0a7496f7115eb9f3811122a0c933f051ae50d3be"
+    },
+    {
       "path": "orrery/src/d4-r2-route-review.test.ts",
       "bytes": 6238,
       "sha256": "470db66330f1bf917d330cebd822afb1f7184c7cd1399fa331a5c836ec201f56"
@@ -1244,6 +1254,11 @@
       "path": "orrery/src/generated/d-tier-taxonomy-dataset.v1.json",
       "bytes": 66006,
       "sha256": "4b90723d00f9e85fa804286d5cf60a5f5faa10e6b31b27f600f893f3a8c1c2d2"
+    },
+    {
+      "path": "orrery/src/generated/d4-r2-contract.v1.json",
+      "bytes": 17638,
+      "sha256": "8b269412c222e0d6a1f26db1d6c491cca6f7a03c52e7b200137ab09c9fbf3cf0"
     },
     {
       "path": "orrery/src/generated/d4-r2-route-review.v1.json",
@@ -1522,8 +1537,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 14131,
-      "sha256": "a8758b98f104787f83d4956badefdb69fc4dafe23a218661b680e75bf65957ea"
+      "bytes": 14266,
+      "sha256": "a5a740ea6fa04dff2965a2ae1123e9b6ee6c6e2e1cae184f45d6b0319d235168"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
@@ -2596,6 +2611,11 @@
       "sha256": "555a29ede31162856894c94b463190b64f0a798a187a4e58239ac4d3758bcd88"
     },
     {
+      "path": "scripts/build-d4-r2-contract.mjs",
+      "bytes": 28694,
+      "sha256": "35f98f05b66e7a2899ad160d359c56c4a9e9e26c65e3f251ef552263f5cea60a"
+    },
+    {
       "path": "scripts/build-d4-r2-route-review.mjs",
       "bytes": 25434,
       "sha256": "d70a94e088d699616a45773077b18cffde896b692aed226262447801f204ac00"
@@ -2719,6 +2739,16 @@
       "path": "scripts/d4-production.mjs",
       "bytes": 15242,
       "sha256": "5bca3de6b39d4290d91fdbe63aa41163e86f64175806aaa38bfe9f41710f4008"
+    },
+    {
+      "path": "scripts/d4-r2-contract.d.mts",
+      "bytes": 2094,
+      "sha256": "5d267113ccdadecd67b7ee7c96d1a64e26e593bf1cde6aadf4c07d2028a5d660"
+    },
+    {
+      "path": "scripts/d4-r2-contract.mjs",
+      "bytes": 8812,
+      "sha256": "eef111a621475f63fb3707ec5f1b8c9476e2d675fdbc288b3265d855b89fc5da"
     },
     {
       "path": "scripts/d4-wire.mjs",
