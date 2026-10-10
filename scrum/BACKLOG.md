@@ -623,7 +623,7 @@ recorded as fail per OD-1; build-phase recomputation corrected three containment
 numbers from the planning pass (recorded in the memo). No D4 verdict, no amendment.
 Follow-on captured as BL-056.
 
-### BL-056 — D4 new-route design [CAPTURED]
+### BL-056 — D4 new-route design [FINDINGS RECORDED]
 
 Inputs: predicate `P(s) = [forte(s) = 7-27]` (BL-055; clean 14/14, intrinsic,
 representation-stable) + the cycle-edge identity (the 7 E-parent pairs are exactly the 7
@@ -635,6 +635,27 @@ observation). **Hard constraint: the design must break the cycle-edge ↔ constr
 identity (BL-055 W3) — a route that merely joins the same A0 cycle-edges restates U
 regardless of predicate.** Precondition for any D4 amendment event (its own separate
 ceremony gated on this work). Sandbox-only until admission.
+
+**Validated 2026-10-10:** design build landed — generator
+`scripts/build-d4-r2-route-review.mjs` + artifact `orrery/src/generated/d4-r2-route-review.v1.json`
+(fingerprint `e25851f9…`, raw-byte SHA-256 `5a1a787e…`) + independent validator
+`orrery/scripts/validate-d4-r2-route-review.mjs` (mutation-verified) + 10 vitest pins wired into
+`orrery:check`/`orrery:build`; memo `plan/bl-056-d4-r2-route-memo.md`. Route:
+**R2(h) = {(o(h), s) : s ∈ satellites(h) ∧ P(s)}** — cycle-edge derivation ground, predicate
+selection within. Findings: **G1 cycle-twin `rotateMaskZ12^d(a) = b` verified 7/7** (2×T1 +
+5×T2; the +2 mask rotation is the correct T2 generalization — no predicate-only fallbacks;
+per-office justification tier is uniformly `cycle-twin-verified`). **G2** predicate selects
+exactly 2 satellites per office at all 7 offices. **G3 `G_R2 = O` exactly** (14 keys,
+`missing: []`, `extra: []`) — the D4 contact geometry is derivable through a route that reads
+the satellites' set-class identity. **G4 non-collapse** |G_R2| = 14 ≠ 28 = U: the cycle-edge ↔
+construction-pair identity is broken by satellite-reading selection, not edge substitution
+(T-B remains satellite-blind and emits U). **G5** T-C midpoint census: 7 realized, 2
+observation-exact, 5 seam-derived predictions with confirmation-surface markers; midpoint =
+constructed-office invariant found; seam inventory cross-check green (7 = 7 realized, 2 = 2
+exact). Constraint table 4/4 satisfied in-artifact (P incorporated / T1+T2 traversal /
+identity broken / T-C tiered). Suite 264 green. Bounded: no D4 amendment, no route admission,
+no registered derivation execution, no governs admission, no wall movement, no direction
+assignment. Next: any R2 admission is its own separate ceremony.
 
 ---
 
@@ -673,3 +694,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.23 | BL-033 Phase C probed (sprint, read-only): boundary-govern derivation retry executed in the phase-extended sandbox — generator + artifact `orrery/src/generated/phase-c-probe.v1.json` (fingerprint `5085e274…`) + independent validator + 10 vitest pins wired into `orrery:check`/`orrery:build`; E1 PRESENT; calibration EXACT (OBS-023 reproduced per phase); seam keying completes the kernel relation to all 7 offices but collapses to `G_A = U` → contract `restatement_signature` (pre-registered expectation not held; new failure mode); strict-degree control reproduces frozen `not_derived` exactly; T-C seam overshoot (7 vs 2) with all observed seams realizable; D7 mirror asymmetric (`not_derived@seam-analogue`, rotation orbit does not close; contract seam clause inapplicable); wall NO_CHANGE at 12/12 phases; memos `plan/bl-033-phaseC-lifted-keying-spec.md`, `plan/bl-033-phaseC-results-memo.md`; suite 243 green; no D4/D7 verdict, no amendment; OD-C1…OD-C4 for maintainer. |
 | v1.24 | BL-033 findings recorded (maintainer rulings OD-C1…OD-C4): both keying readings ratified co-canonical at their own scope; D7 analogue adequate as labeled; fa/ti closure asymmetry recorded as a named structural finding; no amendment from Phase C (obstruction is in the contract). Follow-on captured as BL-055 (D4 contract selection-mechanism review); BL-033 status → findings-recorded (obstruction-visible row-class); manifest regen. |
 | v1.25 | BL-055 reviewed (sprint, read-only): D4 contract selection-mechanism review executed — generator + artifact `orrery/src/generated/d4-selection-review.v1.json` (fingerprint `6d11fd93…`) + independent validator + 11 vitest pins wired into `orrery:check`/`orrery:build`; Step 0 patch-only confirmed (Hypothesis B pre-falsified by execution scope); **clean 14/14 predicate found: `P(s) = [forte(s) = 7-27]`** (observed = 7-27, unobserved = 7-31, all A1 satellites); T-B definitional restatement proof (7 anchors × 2 distinct E-parents × 4 satellites = 56 = U); T-A under-coverage = T1-link limit on the closed 7-edge A0 cycle (5×T2 + 2×T1); OD-3 per-phase diagnostic (flanks reach U, center reproduces the frozen set); three independent blockers ⇒ failure is route geometry; near-miss axis (cornerstone) recorded as fail per OD-1; build-phase recomputation corrected three containment-axis numbers from the planning pass (memo §4/§8); no amendment; memo `plan/bl-055-d4-selection-review-memo.md`; suite 254 green; BL-056 (new-route design) captured with the cycle-edge ↔ construction-pair hard constraint. |
+| v1.26 | BL-056 validated (sprint): D4 R2 filtered-cycle-walk design validation executed — generator + artifact `orrery/src/generated/d4-r2-route-review.v1.json` (fingerprint `e25851f9…`) + independent validator (mutation-verified) + 10 vitest pins wired into `orrery:check`/`orrery:build`; **G1 cycle-twin `rotateMaskZ12^d(a) = b` verified 7/7** (2×T1 + 5×T2; +2 mask rotation confirmed as the T2 generalization; per-office justification tier uniformly `cycle-twin-verified`, no fallbacks); **G2** 2 selected per office × 7; **G3 `G_R2 = O` exactly** (14 keys, missing/extra empty); **G4 non-collapse** 14 ≠ 28 = U (identity broken by satellite-reading selection, not edge substitution; T-B remains satellite-blind); **G5** midpoint census 7 realized / 2 observation-exact / 5 seam-derived predictions with confirmation markers; midpoint = constructed-office invariant; seam cross-check 7 = 7 and 2 = 2; constraint table 4/4; no amendment, no route admission, no governs admission, no wall movement, no direction assignment; memo `plan/bl-056-d4-r2-route-memo.md`; suite 264 green; BL-056 status → findings-recorded. |

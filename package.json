@@ -32,6 +32,7 @@
     "orrery:phase-a-probe:check": "node scripts/build-phase-a-probe.mjs --check && node orrery/scripts/validate-phase-a-probe.mjs",
     "orrery:phase-c-probe:check": "node scripts/build-phase-c-probe.mjs --check && node orrery/scripts/validate-phase-c-probe.mjs",
     "orrery:d4-selection-review:check": "node scripts/build-d4-selection-review.mjs --check && node orrery/scripts/validate-d4-selection-review.mjs",
+    "orrery:d4-r2-route-review:check": "node scripts/build-d4-r2-route-review.mjs --check && node orrery/scripts/validate-d4-r2-route-review.mjs",
     "orrery:browser:test": "npm run browser:test --prefix orrery",
     "validate:graph": "node graph/scripts/verify-standalone.mjs",
     "validate:release": "node scripts/validate-release.mjs",
