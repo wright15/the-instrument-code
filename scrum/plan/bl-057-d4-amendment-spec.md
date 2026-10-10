@@ -1,12 +1,15 @@
 # BL-057 Track 1 — D4 amendment content specification (Gate 1 admission claim memo)
 
-**Status:** Gate 1 admission claim memo, submitted **2026-10-10** for maintainer
-ruling. Planning evidence only. No ledger entry, no evidence obligations accepted,
-no claims admitted, no verdicts. D4's registered `not_derived`
+**Status:** `claim_admitted` — Gate 1 ruling **approved** (maintainer ruling
+2026-10-10, this session; transition `design_validated → claim_admitted` executed
+by this landing). The R₂ filtered cycle-walk route is admitted as a claim event
+for D4 contract amendment, under the bounded scope, source pins, and non-claims
+recorded in this memo. Beyond admission this memo remains planning evidence: no
+ledger entry, no evidence obligations accepted, no verdicts, no implementation,
+no contract execution, no ledger write is performed or authorized by this memo;
+Gates 2–4 are separate, sequentially gated steps. D4's registered `not_derived`
 (`provenance/DECISION_LEDGER.md:2195-2252`) is unchanged and may be amended only by
-its own claim event (OD-7, additive). No implementation, no contract execution, no
-ledger write is performed or authorized by this memo; Gates 2–4 are separate,
-sequentially gated steps. The Track 2 §2.7 amendment
+its own claim event (OD-7, additive). The Track 2 §2.7 amendment
 (`scrum/plan/harmonic-comprehension-map.md:345-526`, landed `601d073`, raw-byte
 SHA-256 `07356d15a815862c34c05a9f73dbcfe06680ba1ed701f6759c559fcd4683d4d3`) is
 interpretation vocabulary only and was **not** used as design input here.
