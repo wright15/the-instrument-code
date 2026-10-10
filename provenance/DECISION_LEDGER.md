@@ -2659,3 +2659,152 @@ This entry grants no runtime, topology, graph, governs, Court, office, schema, p
 global `harmonic.C_H` authority. It does not derive any govern, does not amend the D4/D7
 records, does not dissolve the boundary wall, and does not assign directional semantics.
 Prior entries and prior line anchors remain unchanged; this entry is append-only.
+
+---
+
+## ENTRY 15 - D4 record amendment - record_amended (derivable-via-R2)
+
+**Date:** 2026-10-10. **Status:** `record_amended (derivable-via-R2)` - the record
+amendment gate of the BL-057 four-gate corridor (Gate 4); additive OD-7 provenance
+link; release gates recorded, not cleared.
+
+### Decision
+
+The D4 contract outcome is amended **additively**. The historical `not_derived` record
+(ENTRY 10, `provenance/DECISION_LEDGER.md:2195-2252`) stands immutable - its bytes are
+untouched, verified at this landing - and this entry links forward from it, recording
+that the D4 contact geometry is **derivable via the admitted R2 route**, per the Gate 3
+execution receipt (`qa/d4-r2-execution-receipt.json`, raw-byte SHA-256
+`7e14cbbc680d4827a0d82eb04f3c8c25c187b73d9435fdbade143f014a406fe2`; status
+`execution_verified`; branch `DERIVED@X`; `passFail: true`). Status transition:
+`execution_verified -> record_amended`. The record is **linked, not rewritten**:
+historical readers find ENTRY 10's original failure intact, with this amendment
+discoverable alongside it.
+
+The disposition (D2's formulation, carried verbatim):
+
+> "The single-phase under-coverage (4/14) is attributed to three individually verified
+> route-geometry limitations (T1-link blindness; satellite-blind T-B joins; T-C midpoint
+> overshoot); their joint sufficiency was validated by the Gate 3 execution run — the R2
+> route (cycle-walk + set-class predicate) derives O cleanly at all four licensed
+> contexts."
+
+The falsifiability structure is preserved in the record: the attribution was tested
+(Gate 3) and held; the pre-registered `attribution_incomplete` rejection branch did not
+trigger. The corridor's execution evidence, at the receipt's bytes: calibration EXACT
+at all three patch phases (the frozen pattern reproduced: route A 8 generated / 4
+matched / cells 0/10/4/0; route B 28 = U with `restatementSignature`; T-C exact); R2
+derives `O` (`14 = O`, `in_R_but_unmatched = 0`, cells 0/0/14/0) at all four licensed
+contexts (`phase-11`, `phase-0`, `phase-1`, `seam-familyA`), with the construction join
+restating `U` as the recorded contrast; the strict-degree control carries the frozen
+`not_derived@strict-degree-control` reproduction co-canonically (Phase C OD-C1 reading,
+side-by-side, not superseding).
+
+### D7 Clause (Hypothesis-Tier, Carried Honestly)
+
+The paired D7 test returned an **asymmetric finding**: the literal predicate
+`[forte = '7-27']` selects 0/14 (D7 contact satellites are set class 7-2 - input-level
+asymmetry); the domain-class predicate `[forte = '7-2']` selects 14/14 = U = O - a
+full-domain restatement (C2 guard), never a selective derivation; the cycle-twin
+verification is 0/7 (the modal orbit closes modally, not rotationally). The ti-pole's
+derivation behavior differs structurally from the fa-pole's (measured asymmetry across
+selection, structure and predicate axes). **No D7 claim, no D7 amendment; D7 remains
+hypothesis-tier, preserved.** The asymmetry feeds the governs semantic layer as data.
+
+### Scope
+
+This entry claims exactly: the D4 contact geometry is derivable via the admitted R2
+route, per the Gate 3 execution receipt - an additive provenance link in the decision
+ledger, no more.
+
+Excluded (carried verbatim from the corridor's standing fences): no governs admission
+(this amendment records *derivable contact geometry*, not the GOVERNS relation itself);
+no wall-dissolution claims (the wall holds at every phase - verified; R2 traverses the
+A0 cycle and emits A1 contact keys; no D-D edges); no G1 movement; no
+directional-semantics assignment (the polarity synthesis stays proposed; the
+directional-semantics hole remains a finding row); no INV-5 graduation; no
+M-walkability promotion; no canonical/Court/schema/Neo4j writes beyond the ledger's own
+append; no promotion or green-release claim.
+
+### References
+
+- ENTRY 10's immutable `not_derived` record: `provenance/DECISION_LEDGER.md:2195-2252`
+  (cells 0/10/4/0; T-A 4/14; T-B = U; T-C exact); qualifier `:2260-2266` (derivation
+  difficulty under the registered route, not authorship proof); pre-registered
+  impossibility note `:2163-2164` (strict T-B branch unavailable on the unchanged set).
+  Region SHA-256 `201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7`
+  (recipe: line-join, no trailing newline) and `50b8b73f75497082e6d2a38052a62da4f5374ee94fc08f8ff0312fc7746fbb00`
+  (keepends variant); both labeled with byte lengths in
+  `qa/specs/bl-057-d4-record-amendment.json`. Pre-amendment full-ledger SHA-256
+  `8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362`.
+- Phase machinery (licensed substrate): ENTRY 14 / GOV-523 / `b30833c`;
+  `docs/specs/phase-extended-topology-candidate-v0.1.0.md`
+  (SPEC-PHASE-EXTENDED-TOPOLOGY-001 v0.1.1; covering-pair lift, uniform multiplicity
+  7/5, phase-equivariant operators, radius-1 patch; raw-byte SHA-256
+  `1134fe20d4b09d41d63e7b2a5aa8d554674d8d087be1bb84c5324de1901e3aeb`).
+- BL-055 (predicate): `scrum/plan/bl-055-d4-selection-review-memo.md`;
+  `orrery/src/generated/d4-selection-review.v1.json` (raw-byte SHA-256
+  `40a1d7586c8643bac351a1b70c09fce35a977ce200888d08a40d2cc0022649d8`; `reviewFingerprint`
+  `6d11fd932efbe96892b3cf2e6a6cdad6f54e69cd2a8f284ebb72232c59d8b745`) - P(s) =
+  forte-7-27, clean 14/14, Tn-invariant, representation-stable; T-B route-definitional
+  restatement proven; T-A T1-limit proven.
+- BL-056 (route): `scrum/plan/bl-056-d4-r2-route-memo.md`;
+  `orrery/src/generated/d4-r2-route-review.v1.json` (raw-byte SHA-256
+  `5a1a787eb47a939d8f1ba727689a9cc2db0adb21fe716d5e1600d7a19406c4b3`; `reviewFingerprint`
+  `e25851f975a84a290bc4794916dd16ead7d99c7f3694bae21b7c6bb6f13e91b3`) - constraint
+  table 4/4; cycle-twin 7/7 (T1 + T2 both verified); midpoint-office invariant.
+- Gate 1 (admission): `scrum/plan/bl-057-d4-amendment-spec.md` (`6908e7b`; header
+  `claim_admitted` per ruling 2026-10-10, landed `ead2eec`) - six-token status set,
+  three obstructions, falsifiability structure.
+- Gate 2 (implementation): `59fa59a`; `orrery/src/generated/d4-r2-contract.v1.json`
+  (`contractFingerprint`
+  `5528510b495f12fa11ab713d8ee357e3798f728204eacd83ad491aafb8fdc7d5`); self-contained
+  engine + deterministic generator + fail-loud validator + 12 vitest pins; four
+  mutation-probe rejections.
+- Gate 3 (execution): `scrum/plan/bl-057-gate3-execution-memo.md`;
+  `qa/d4-r2-execution-receipt.json` (raw-byte SHA-256 `7e14cbbc...`; `executionFingerprint`
+  `3ed80e6fef3b1a5a8211d046facaf2f2d15daf7eb34a398ccfd1fded1c783634`;
+  `implementationDigest`
+  `2789c46cb542cc4d1771110b0cfe113fb44baabf40e478bb94e0dfe55cff70bd`;
+  `gate2ContractFingerprint`
+  `5528510b495f12fa11ab713d8ee357e3798f728204eacd83ad491aafb8fdc7d5`;
+  `generatedKeysDigest`
+  `e075eb63604b7d9d5d484e574fcdd313f6e86f7e66e828ed6b527671df247c56`).
+- Motivation legs: `scrum/plan/bl-029-d-tier-operator-probe-memo.md`;
+  `scrum/plan/bl-035-semantic-derivation-census-memo.md`;
+  `scrum/plan/bl-031-semantic-transport-probe-memo.md`.
+- Frame registrations (interpretation vocabulary only, per the membrane):
+  `scrum/plan/harmonic-comprehension-map.md:138-526` (sections 2.6-2.7, including the
+  Track 2 section 2.7 amendment landed `601d073`). The corridor's interpretation
+  vocabulary carried one passed empirical check during the arc (identity-preservation
+  under transport, `fec745a`) and one pending test (directional semantics, gated on
+  section 2.7 Q2) - carried as context, not authority.
+- Inventory emission: `scripts/build-manifest.mjs` via `npm run package:manifest`;
+  package `seven-governors-integrated-release` 1.9.0-dev from `package.json` (inventory
+  tool and version in one line per CONV-EVIDENCE-BINDING-001 section 7).
+
+### Release Gate Disposition
+
+A pre-existing validate:ledger-pins failure (13 violations in corridor scripts —
+unreviewed literal pins accumulated across the BL-028→Gate-3 generator lineage, the
+migration memo's documented ledger-named-literal class; reproducing at pre-corridor
+commit `85a62a6`) is recorded as accepted release state for this landing, with repair
+queued as a follow-up item; the ledger-pin scanner and allowlist are untouched. Full
+`npm run validate` was executed for this landing; the observed first stop is recorded
+in the compliance receipt `qa/specs/bl-057-d4-record-amendment.json`. The predeclared
+acceptable stops are the ledger-recorded `STALE_TWIN_HUB_CONVERGENCE` state
+(ENTRY 10/11/12/13), the recorded `STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE` state
+(`qa/d4-production-landing.json`; `docs/specs/fivefold_constructs_engine_spec.md`
+section 4.1), and the pre-existing `validate:ledger-pins` inventory recorded above.
+Any other failure halts. No stale control is disabled, no shared artifact is
+regenerated to force green, and no green integrated release is claimed.
+
+### Guard
+
+This entry grants no runtime, topology, graph, governs, Court, office, schema, policy or
+global `harmonic.C_H` authority. It does not admit GOVERNS as a derivation relation,
+does not dissolve the boundary wall, does not touch D7's hypothesis-tier, does not
+graduate INV-5, and does not assign directional semantics. Prior entries and prior line
+anchors remain unchanged; this entry is append-only. The historical record is linked,
+not rewritten: any reading of this entry as reversing or erasing ENTRY 10's
+`not_derived` record is rejected.

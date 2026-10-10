@@ -94,6 +94,7 @@ export const FROZEN_IMPLEMENTATION_DIGEST = "7ab950fac561016afc816e8b6947f7ce0b5
 export const DECISION_LEDGER_SHA256 = "8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362";
 export const ENTRY10_SHA256 = "201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7";
 export const ENTRY10_SPAN = "2195-2252";
+export const FROZEN_LEDGER_BYTE_LENGTH = 174314;
 export const PATCH_PHASES = [11, 0, 1];
 export const STRICT_OFFICES = ["0", "6"];
 export const LICENSED_CONTEXT_IDS = ["phase-11", "phase-0", "phase-1", "seam-familyA"];
@@ -926,15 +927,21 @@ function collectImplementationFiles() {
 }
 
 function readLedgerFence() {
-  const ledgerText = read(DECISION_LEDGER_PATH);
-  const ledgerSha = sha256(ledgerText);
+  const ledgerBytes = fs.readFileSync(path.join(root, DECISION_LEDGER_PATH));
+  const ledgerText = ledgerBytes.toString("utf8");
+  if (sha256(ledgerBytes.subarray(0, FROZEN_LEDGER_BYTE_LENGTH)) !== DECISION_LEDGER_SHA256) {
+    fail("decision ledger prefix drift: bytes preceding the execution-time endpoint changed (an end-append preserves the frozen prefix; any earlier modification does not)");
+  }
   const lines = ledgerText.split("\n");
   const entry10 = lines.slice(2194, 2252).join("\n");
   const entry10Sha = sha256(entry10);
   if (!entry10.includes("## ENTRY 10 - D4 Grant 2 production record - not_derived")) {
     fail("ENTRY 10 region drift: the frozen D4 record marker is missing");
   }
-  return { ledgerSha, entry10Sha, entry10Span: ENTRY10_SPAN };
+  if (entry10Sha !== ENTRY10_SHA256) {
+    fail("ENTRY 10 region drift: the frozen D4 record is not byte-untouched");
+  }
+  return { ledgerSha: DECISION_LEDGER_SHA256, entry10Sha: ENTRY10_SHA256, entry10Span: ENTRY10_SPAN };
 }
 
 export function buildReceipt({ executionTimestamp, runCompletedAt }) {
@@ -1025,12 +1032,6 @@ export function buildReceipt({ executionTimestamp, runCompletedAt }) {
 
   // ---- fences --------------------------------------------------------------
   const ledgerFence = readLedgerFence();
-  if (ledgerFence.ledgerSha !== DECISION_LEDGER_SHA256) {
-    fail("decision ledger drift: Gate 3 executes against the frozen record state (no ledger writes at this gate)");
-  }
-  if (ledgerFence.entry10Sha !== ENTRY10_SHA256) {
-    fail("ENTRY 10 region drift: the frozen D4 record is not byte-untouched");
-  }
 
   // ---- input/output hashes -------------------------------------------------
   const inputHashes = collectInputHashes(contractArtifact);

@@ -657,6 +657,49 @@ identity broken / T-C tiered). Suite 264 green. Bounded: no D4 amendment, no rou
 no registered derivation execution, no governs admission, no wall movement, no direction
 assignment. Next: any R2 admission is its own separate ceremony.
 
+### BL-057 — D4 record amendment (four-gate corridor) [DONE]
+
+The corridor admitting the R2 derivation route and amending the D4 record additively.
+Gates: (1) admission — `plan/bl-057-d4-amendment-spec.md` (`6908e7b`; header
+`claim_admitted` per ruling 2026-10-10, landed `ead2eec`); (2) contract implementation —
+`orrery/src/generated/d4-r2-contract.v1.json` (`contractFingerprint 5528510b…`) + engine +
+generator + validator + 12 pins (landed `59fa59a`); (3) execution — receipt
+`qa/d4-r2-execution-receipt.json` (raw-byte `7e14cbbc…`, status `execution_verified`,
+branch `DERIVED@X`; calibration EXACT; R2 = O at all four licensed contexts with the
+construction join = U contrast; D7 asymmetric analogue hypothesis-tier; memo
+`plan/bl-057-gate3-execution-memo.md`; landed `85a62a6`); (4) record amendment — ENTRY 15
+(`provenance/DECISION_LEDGER.md:2665-2804`, status `record_amended (derivable-via-R2)`),
+additive only; ENTRY 10's historical `not_derived` record stands immutable and is linked
+forward, never rewritten; receipt `qa/specs/bl-057-d4-record-amendment.json`.
+
+**Landed 2026-10-10:** ENTRY 15 appended additively; ENTRY 10 byte-untouched (region
+SHA-256 `201efe81…` line-join recipe / `50b8b73f…` keepends, both labeled in the
+receipt); the Gate 3 ledger fence evolved from whole-file equality to execution-time
+prefix preservation (frozen byteLength 174314; the Gate 3 receipt bytes and all corridor
+fingerprints unchanged); backlog, receipt and inventories in one atomic commit.
+
+**Governs program — still live (not closed by this corridor):** the BL-056 design item
+(queued), the 14-vs-14 predicate's semantic registration, the asymmetric fa/ti finding
+(row-class material), rows 8/10's semantic holes, and the directional-semantics gate all
+remain separate live items feeding the governs semantic layer. The corridor's completion
+does not close the program it was part of.
+
+### BL-058 [CAPTURED] — Ledger-pin inventory repair (ledger-named literal class)
+
+13 `validate:ledger-pins` violations in corridor generators (BL-033 Phase C → Gate 2/3
+lineage): 12 `unreviewed_literal_pin` + 1 `literal_ledger_pin` (structurally
+non-allowlistable per the migration memo — "ledger-named literals cannot be allowlisted;
+no generic frozen-prefix exemption exists"). Pre-existing since Phase C (`ac94862`);
+recorded as accepted release state at the Gate 4 landing (ENTRY 15 Release Gate
+Disposition). Repair design needed: the migration memo's own note implies the scanner's
+allowlist model doesn't cover ledger-named literals — the repair may be a scanner
+extension (entry-scoped pin recognition per the binding convention's R2) rather than
+allowlist additions. Queued; own ceremony. Scoping document:
+`scrum/plan/ledger-pin-migration.md`; destination design:
+`provenance/EVIDENCE_BINDING_CONVENTION.md` R2 (entry-scoped bindings) — these corridor
+scripts are pre-convention consumers whose pins predate the R2 model; the repair is a
+migration to entry-scoped bindings, the convention's first retroactive consumer.
+
 ---
 
 ## Sequencing
@@ -695,3 +738,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.24 | BL-033 findings recorded (maintainer rulings OD-C1…OD-C4): both keying readings ratified co-canonical at their own scope; D7 analogue adequate as labeled; fa/ti closure asymmetry recorded as a named structural finding; no amendment from Phase C (obstruction is in the contract). Follow-on captured as BL-055 (D4 contract selection-mechanism review); BL-033 status → findings-recorded (obstruction-visible row-class); manifest regen. |
 | v1.25 | BL-055 reviewed (sprint, read-only): D4 contract selection-mechanism review executed — generator + artifact `orrery/src/generated/d4-selection-review.v1.json` (fingerprint `6d11fd93…`) + independent validator + 11 vitest pins wired into `orrery:check`/`orrery:build`; Step 0 patch-only confirmed (Hypothesis B pre-falsified by execution scope); **clean 14/14 predicate found: `P(s) = [forte(s) = 7-27]`** (observed = 7-27, unobserved = 7-31, all A1 satellites); T-B definitional restatement proof (7 anchors × 2 distinct E-parents × 4 satellites = 56 = U); T-A under-coverage = T1-link limit on the closed 7-edge A0 cycle (5×T2 + 2×T1); OD-3 per-phase diagnostic (flanks reach U, center reproduces the frozen set); three independent blockers ⇒ failure is route geometry; near-miss axis (cornerstone) recorded as fail per OD-1; build-phase recomputation corrected three containment-axis numbers from the planning pass (memo §4/§8); no amendment; memo `plan/bl-055-d4-selection-review-memo.md`; suite 254 green; BL-056 (new-route design) captured with the cycle-edge ↔ construction-pair hard constraint. |
 | v1.26 | BL-056 validated (sprint): D4 R2 filtered-cycle-walk design validation executed — generator + artifact `orrery/src/generated/d4-r2-route-review.v1.json` (fingerprint `e25851f9…`) + independent validator (mutation-verified) + 10 vitest pins wired into `orrery:check`/`orrery:build`; **G1 cycle-twin `rotateMaskZ12^d(a) = b` verified 7/7** (2×T1 + 5×T2; +2 mask rotation confirmed as the T2 generalization; per-office justification tier uniformly `cycle-twin-verified`, no fallbacks); **G2** 2 selected per office × 7; **G3 `G_R2 = O` exactly** (14 keys, missing/extra empty); **G4 non-collapse** 14 ≠ 28 = U (identity broken by satellite-reading selection, not edge substitution; T-B remains satellite-blind); **G5** midpoint census 7 realized / 2 observation-exact / 5 seam-derived predictions with confirmation markers; midpoint = constructed-office invariant; seam cross-check 7 = 7 and 2 = 2; constraint table 4/4; no amendment, no route admission, no governs admission, no wall movement, no direction assignment; memo `plan/bl-056-d4-r2-route-memo.md`; suite 264 green; BL-056 status → findings-recorded. |
+| v1.27 | BL-057 four-gate corridor completed: D4 record amended additively — ENTRY 15 `record_amended (derivable-via-R2)` appended; ENTRY 10 stands immutable (region hashes labeled under both recipes); Gate 3 receipt certified (`execution_verified`, `DERIVED@X`, calibration EXACT, R2 = O at four licensed contexts, construction join = U contrast, D7 asymmetric analogue hypothesis-tier) in receipt `qa/specs/bl-057-d4-record-amendment.json`; Gate 3 ledger fence evolved to execution-time prefix preservation (Gate 3 receipt bytes/fingerprints unchanged); pre-existing `validate:ledger-pins` inventory recorded as accepted release state (BL-058 captured for repair); governs program left live (BL-056 remainder, 14-vs-14 predicate semantic registration, fa/ti asymmetry, rows 8/10 holes, directional-semantics gate); manifest regen; no governs admission, no wall dissolution, no G1 movement, no direction assignment, no green claim. |

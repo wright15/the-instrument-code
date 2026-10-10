@@ -43,6 +43,7 @@ const PHASE_C_FINGERPRINT = "5085e27404de2e591b146d38f289da660c6bc49041a54f073ac
 const FROZEN_IMPLEMENTATION_DIGEST = "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f";
 const DECISION_LEDGER_SHA256 = "8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362";
 const ENTRY10_SHA256 = "201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7";
+const FROZEN_LEDGER_BYTE_LENGTH = 174314;
 const PATCH = [11, 0, 1];
 const STATUS_TOKENS = ["execution_verified", "attribution_incomplete"];
 
@@ -554,6 +555,10 @@ function validate() {
   // ---- ledger fence -----------------------------------------------------------
   const ledgerText = read(DECISION_LEDGER_PATH);
   const liveLedgerSha = sha256(ledgerText);
+  const liveFrozenPrefix = sha256(fs.readFileSync(path.join(root, DECISION_LEDGER_PATH)).subarray(0, FROZEN_LEDGER_BYTE_LENGTH));
+  if (liveFrozenPrefix !== DECISION_LEDGER_SHA256) {
+    fail("live ledger prefix drift: bytes preceding the execution-time endpoint changed");
+  }
   const liveEntry10 = sha256(ledgerText.split("\n").slice(2194, 2252).join("\n"));
   if (receipt.recordFence.decisionLedgerSha256 !== DECISION_LEDGER_SHA256) fail("recorded ledger sha drift");
   if (receipt.recordFence.entry10Sha256 !== ENTRY10_SHA256) fail("recorded ENTRY 10 sha drift");
