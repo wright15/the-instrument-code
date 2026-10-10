@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1228,
-  "totalBytes": 82100426,
+  "fileCount": 1234,
+  "totalBytes": 82259480,
   "files": [
     {
       "path": ".env.example",
@@ -1067,8 +1067,8 @@
     },
     {
       "path": "orrery/package.json",
-      "bytes": 3814,
-      "sha256": "eed0b00583e63e973ea0aca012fa5b4b4f691f43b1d05bc23d33d111c4d0bafe"
+      "bytes": 4047,
+      "sha256": "d8680a6f7ac4704534459817c326c03022262dac38a176e779d3c032ef0cbff5"
     },
     {
       "path": "orrery/public/AUDIO_ASSETS.md",
@@ -1102,8 +1102,13 @@
     },
     {
       "path": "orrery/scripts/validate-d4-r2-contract.mjs",
-      "bytes": 29204,
-      "sha256": "3a2cb01c5a887869550d66d726993bb43a59a8a714a69d4523edd8bf0b42789b"
+      "bytes": 29999,
+      "sha256": "50fcfbd206d88ce9786689e2c875ba21890c0e65d9a8174d97a5aaed80c61779"
+    },
+    {
+      "path": "orrery/scripts/validate-d4-r2-execution-receipt.mjs",
+      "bytes": 32716,
+      "sha256": "5553ab43784e75e282cc0480a024238a445170e3e218ab6cfb53675766721928"
     },
     {
       "path": "orrery/scripts/validate-d4-r2-route-review.mjs",
@@ -1214,6 +1219,11 @@
       "path": "orrery/src/d4-r2-contract.test.ts",
       "bytes": 10242,
       "sha256": "8171f8f0f98c68b57618ecfc0a7496f7115eb9f3811122a0c933f051ae50d3be"
+    },
+    {
+      "path": "orrery/src/d4-r2-execution-receipt.test.ts",
+      "bytes": 11551,
+      "sha256": "6de589196f97b967dfb3ed530c715b47ad80d03035399646b9dfc373994a2c53"
     },
     {
       "path": "orrery/src/d4-r2-route-review.test.ts",
@@ -1537,8 +1547,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 14266,
-      "sha256": "a5a740ea6fa04dff2965a2ae1123e9b6ee6c6e2e1cae184f45d6b0319d235168"
+      "bytes": 14428,
+      "sha256": "a29160b979218b6892ee99a42c89ba10cf2a5978f840095503f21036dcd5329c"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
@@ -1704,6 +1714,11 @@
       "path": "qa/d4-production-seal.json",
       "bytes": 537,
       "sha256": "2b1c6c284b52850463ff05179e43976b845196e6d96bd6e80deccf9de38a0b58"
+    },
+    {
+      "path": "qa/d4-r2-execution-receipt.json",
+      "bytes": 34931,
+      "sha256": "7e14cbbc680d4827a0d82eb04f3c8c25c187b73d9435fdbade143f014a406fe2"
     },
     {
       "path": "qa/elemental-pentatonic-scale-map-validation.json",
@@ -2211,6 +2226,11 @@
       "sha256": "b2b3eaed07fba5082a9f6ff18cd40fbe75cb833b0bd8d8a7dc8055eefcbfc52d"
     },
     {
+      "path": "schemas/d4-r2-execution-receipt.schema.json",
+      "bytes": 9586,
+      "sha256": "4bab463a4f4d5b855a1c157e949a45e82bbd789541c9f1d7c349010e9a170f10"
+    },
+    {
       "path": "schemas/domain_landform_registry.yaml",
       "bytes": 134004,
       "sha256": "b42d07ac263bfd03f4ee026bc404f78d282dc7868c061a1bbdb21e6c3eb727c1"
@@ -2614,6 +2634,11 @@
       "path": "scripts/build-d4-r2-contract.mjs",
       "bytes": 28694,
       "sha256": "35f98f05b66e7a2899ad160d359c56c4a9e9e26c65e3f251ef552263f5cea60a"
+    },
+    {
+      "path": "scripts/build-d4-r2-execution-receipt.mjs",
+      "bytes": 58615,
+      "sha256": "67adbba2f2b90a72d1189a106ab73982bfc7dd0bd2647fcc3a6e54cf8dbba450"
     },
     {
       "path": "scripts/build-d4-r2-route-review.mjs",
@@ -3589,6 +3614,11 @@
       "path": "scrum/plan/bl-057-d4-amendment-spec.md",
       "bytes": 13728,
       "sha256": "f41546ac6ae7ec18e261a58ed14275ea5ec217824df03eccf941bddc5aa87047"
+    },
+    {
+      "path": "scrum/plan/bl-057-gate3-execution-memo.md",
+      "bytes": 10465,
+      "sha256": "5aa5f53bae96348eb3780b24ba1a6cf61da59e68d3f3a5f720f410db2bf5ebb6"
     },
     {
       "path": "scrum/plan/continuous-typology-obs-draft.md",

@@ -153,9 +153,21 @@ function validate() {
     fail("Gate 2 entry precondition not met: BL-057 memo header is not claim_admitted");
   }
 
-  // ---- no-collapse: the Gate 3 execution receipt must not exist -----------
+  // ---- no-collapse transition (Gate 3) ------------------------------------
+  // At Gate 2 the execution receipt must not exist. After the Gate 3 execution
+  // run the receipt legitimately exists; the guard transitions to: the receipt
+  // must be a well-formed execution receipt (documented shape, legal status
+  // token) and can never be an amendment - the Gate 2 artifact above is
+  // re-verified unchanged (status, fingerprint) and the frozen nine-file
+  // closure is re-checked before this point.
   if (fs.existsSync(path.join(root, EXECUTION_RECEIPT_PATH))) {
-    fail("Gate 3 execution receipt exists; the no-collapse rule is violated");
+    const executionReceipt = readJson(EXECUTION_RECEIPT_PATH);
+    if (executionReceipt.schemaVersion !== "d4-r2-execution-receipt.v1" ||
+        executionReceipt.routeId !== "R2" ||
+        !["execution_verified", "attribution_incomplete"].includes(executionReceipt.status) ||
+        typeof executionReceipt.passFail !== "boolean") {
+      fail("Gate 3 receipt present but not a well-formed execution receipt (no-collapse violation)");
+    }
   }
 
   // ---- frozen nine-file closure untouched ---------------------------------

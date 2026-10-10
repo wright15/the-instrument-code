@@ -1,0 +1,243 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "d4-r2-execution-receipt.v1",
+  "title": "D4 R2 derivation execution receipt (BL-057 Gate 3)",
+  "description": "The documented Gate 3 Derivation Execution Receipt shape reserved at Gate 2 (orrery/src/generated/d4-r2-contract.v1.json contractInterface). The receipt is evidence, not an amendment: it records the identity-phase calibration, the registered R2 route execution, the seam-phase derivation across the licensed contexts, the D7 hypothesis-analogue run, the two-fingerprint convention (implementationDigest = Gate 2 file-set; executionFingerprint = the run's own) and the branch classification. No D4 record amendment is performed or authorized by this receipt alone.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "routeId",
+    "workItem",
+    "naming",
+    "status",
+    "statusRationale",
+    "executionTimestamp",
+    "runCompletedAt",
+    "implementationDigest",
+    "implementationFiles",
+    "gate2ContractFingerprint",
+    "fingerprintConvention",
+    "inputHashes",
+    "outputHashes",
+    "calibration",
+    "routeExecution",
+    "gates",
+    "gateDetail",
+    "seamDerivation",
+    "d7Analogue",
+    "fences",
+    "recordFence",
+    "notAccomplished",
+    "passFail",
+    "executionFingerprint"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "d4-r2-execution-receipt.v1" },
+    "routeId": { "const": "R2" },
+    "workItem": { "const": "BL-057" },
+    "naming": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["workItem", "note"],
+      "properties": {
+        "workItem": { "const": "BL-057" },
+        "note": { "type": "string", "description": "The naming-drift correction: the corridor's gates are BL-057-track; BL-031 is the topology/lattice track." }
+      }
+    },
+    "status": { "enum": ["execution_verified", "attribution_incomplete"] },
+    "statusRationale": { "type": "string" },
+    "executionTimestamp": { "type": "string", "format": "date-time", "description": "ISO-8601 UTC timestamp of the Gate 3 execution run start." },
+    "runCompletedAt": { "type": "string", "format": "date-time", "description": "ISO-8601 UTC timestamp of the run record completion." },
+    "implementationDigest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "Canonical-manifest digest over the Gate 2 contract implementation file set (engine, generator, validator, pins, artifact)."
+    },
+    "implementationFiles": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    },
+    "gate2ContractFingerprint": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "fingerprintConvention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["implementationDigest", "executionFingerprint"],
+      "properties": {
+        "implementationDigest": { "type": "string" },
+        "executionFingerprint": { "type": "string" }
+      }
+    },
+    "inputHashes": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["artifact", "sha256", "role"],
+        "properties": {
+          "artifact": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "role": { "type": "string" }
+        }
+      }
+    },
+    "outputHashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generatedKeysDigest", "generatedKeys", "witnessesDigest", "calibrationKeysDigest", "realizedRelationKeysDigest"],
+      "properties": {
+        "generatedKeysDigest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "generatedKeys": {
+          "type": "array",
+          "minItems": 14,
+          "maxItems": 14,
+          "items": { "type": "string", "pattern": "^[0-6]:[0-9]+$" }
+        },
+        "witnessesDigest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "calibrationKeysDigest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "realizedRelationKeysDigest": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "calibration": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["verdict", "pass", "perPhase"],
+      "properties": {
+        "verdict": { "enum": ["EXACT"] },
+        "pass": { "const": true },
+        "perPhase": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["phase", "identicalToFrozen"],
+            "properties": {
+              "phase": { "enum": ["11", "0", "1"] },
+              "identicalToFrozen": { "const": true }
+            }
+          }
+        }
+      }
+    },
+    "routeExecution": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["method", "perOffice", "contacts", "cycleWalk", "outputComparison"],
+      "properties": {
+        "method": { "type": "string" },
+        "perOffice": { "type": "array", "minItems": 7, "maxItems": 7, "items": { "type": "object", "additionalProperties": true } },
+        "contacts": { "type": "object", "additionalProperties": true },
+        "cycleWalk": { "type": "object", "additionalProperties": true },
+        "outputComparison": { "type": "object", "additionalProperties": true }
+      }
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["G1", "G2", "G3", "G4", "G5"],
+      "properties": {
+        "G1": { "type": "boolean" },
+        "G2": { "type": "boolean" },
+        "G3": { "type": "boolean" },
+        "G4": { "type": "boolean" },
+        "G5": { "type": "boolean" }
+      }
+    },
+    "gateDetail": { "type": "object", "additionalProperties": true, "required": ["G1", "G2", "G3", "G4", "G5"] },
+    "seamDerivation": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["stageProvenance", "preRegistration", "contexts", "branchClassification"],
+      "properties": {
+        "stageProvenance": { "type": "string" },
+        "preRegistration": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": ["routeMapping", "C1", "C2", "C3", "C4"]
+        },
+        "contexts": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["id", "kind", "licensed", "control", "routeA", "routeB", "fourCellCounts", "criteria", "disposition"],
+            "properties": {
+              "id": { "enum": ["phase-11", "phase-0", "phase-1", "seam-familyA", "strict-degree-control"] },
+              "kind": { "enum": ["same-phase", "seam", "control"] },
+              "licensed": { "type": "boolean" },
+              "control": { "type": "boolean" },
+              "disposition": {
+                "type": "string",
+                "pattern": "^(derived|not_derived|invalid)@(phase-11|phase-0|phase-1|seam-familyA|strict-degree-control)$"
+              }
+            }
+          }
+        },
+        "branchClassification": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": ["branch", "derivedContexts", "gate4"],
+          "properties": {
+            "branch": { "enum": ["DERIVED@X", "same-failure", "new-failure-mode", "invalid"] },
+            "derivedContexts": { "type": "array", "items": { "type": "string" } },
+            "invalidContexts": { "type": "array", "items": { "type": "string" } },
+            "gate4": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["opens", "note"],
+              "properties": {
+                "opens": { "type": "boolean" },
+                "note": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "d7Analogue": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["label", "grantStatus", "claimEvent"],
+      "properties": {
+        "label": { "const": "hypothesis-analogue" },
+        "grantStatus": { "type": "string" },
+        "claimEvent": { "type": "string", "pattern": "^none" }
+      }
+    },
+    "fences": { "type": "object", "additionalProperties": true },
+    "recordFence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decisionLedgerSha256", "entry10Sha256", "entry10Span", "d4RegisteredCategory"],
+      "properties": {
+        "decisionLedgerSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "entry10Sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "entry10Span": { "type": "string" },
+        "d4RegisteredCategory": { "type": "string", "pattern": "not_derived" }
+      }
+    },
+    "notAccomplished": { "type": "array", "minItems": 6, "items": { "type": "string" } },
+    "passFail": { "type": "boolean" },
+    "executionFingerprint": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "sha256 over the receipt's canonical core (this field excluded); the run's own fingerprint, distinct from implementationDigest and from the Gate 2 contractFingerprint."
+    }
+  }
+}

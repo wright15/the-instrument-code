@@ -34,6 +34,7 @@
     "orrery:d4-selection-review:check": "node scripts/build-d4-selection-review.mjs --check && node orrery/scripts/validate-d4-selection-review.mjs",
     "orrery:d4-r2-route-review:check": "node scripts/build-d4-r2-route-review.mjs --check && node orrery/scripts/validate-d4-r2-route-review.mjs",
     "orrery:d4-r2-contract:check": "node scripts/build-d4-r2-contract.mjs --check && node orrery/scripts/validate-d4-r2-contract.mjs",
+    "orrery:d4-r2-execution-receipt:check": "node scripts/build-d4-r2-execution-receipt.mjs --check && node orrery/scripts/validate-d4-r2-execution-receipt.mjs",
     "orrery:browser:test": "npm run browser:test --prefix orrery",
     "validate:graph": "node graph/scripts/verify-standalone.mjs",
     "validate:release": "node scripts/validate-release.mjs",
