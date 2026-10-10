@@ -342,6 +342,189 @@ is illustrative formalization of the proposed composition, not repo-derived math
 not cited. No electromagnetic equivalence or physical quantity claim is asserted (the
 mechanics registry's own boundary: `no_electromagnetic_equivalence: true`).
 
+### 2.7 Amendment — BL-057 R₂ + optical taxonomy [MAINTAINER DESIGN INTENT — registered §2.7 amendment]
+
+Registered 2026-10-10 from the BL-057 planning pass. This entry extends the §2.7
+registration above (fast-lane additive, BL-026/§2.6 precedent); the two entries
+coexist — the original §2.7 (phenomena layer and electrodynamic teleology) and this
+D4-corridor amendment (R₂ route proof + seven-form optical taxonomy). Operating
+constraint: interpretation vocabulary only; never a probe input, design input, or
+admitted canon claim. Does not alter §§1.x, 2.1–2.6, or ENTRY 10
+(`provenance/DECISION_LEDGER.md:2195-2252`).
+
+**A. R₂ filtered cycle-walk derivation proof.** Route definition
+`R₂(h) = {(o(h), s) : s ∈ satellites(h) ∧ P(s)}` — for each A1 anchor `h`, the
+derived contacts are exactly its satellites satisfying `P(s) = [forte(s) = 7-27]`.
+Derivation steps: (1) extract the anchor's two A0 CONSTRUCTS parents (the cycle
+edge); (2) verify `cycle_twin(a, b, d) ⟺ rotateMaskZ12^d(a) = b` at the edge's
+interval `d` (gated, per-office justification tier); (3) select the `P` satellites;
+(4) emit contacts. The cycle edge is derivation ground; the predicate is selection
+within. Frozen cycle convention:
+`2741 → 1387 → 1453 → 1717 → 2773 → 1451 → 1709 → 2741` (closed; 2×T₁ + 5×T₂,
+interval sum 12; BL-055 §6 records the same cycle at a different entry point —
+start point is presentation convention only; the cycle is closed and
+M-successor-directed). The generalized twin relation holds at all 7 edges (offices
+0 and 6 T₁; offices 1–5 T₂; `justificationSummary: {cycleTwinVerified: 7,
+predicateOnly: 0}`; no fallback offices). Proof of non-collapse: `|G_R2| = 14 ≠ 28 =
+|U|`; the T-B join output remains U — the cycle-edge ↔ construction-pair identity
+is broken at the satellite-reading level (R₂ conjoins P where the T-B join never
+reads `s` except as payload). Sources: BL-056 artifact
+`orrery/src/generated/d4-r2-route-review.v1.json` (fingerprint `e25851f9…`), dual
+harness `scripts/build-d4-r2-route-review.mjs` (deterministic generator) +
+`orrery/scripts/validate-d4-r2-route-review.mjs` (fail-loud independent
+re-derivation), 10 vitest pins `orrery/src/d4-r2-route-review.test.ts`.
+
+**B. Intrinsic selection predicate.** `P(s) = [forte(s) = 7-27]`. Uniformly selects
+exactly 2 satellites per office (14 total across 7 offices), separating observed
+contacts (`7-27`, interval vector `<344451>`) from unobserved contacts (`7-31`,
+`<336333>`). The predicate is intrinsic (interval content), Tn-invariant,
+keying-invariant, and non-circular (canonical-ledger fields, not observation
+membership). G2/G3: `G_R2 = O` exactly (`missing: []`, `extra: []`). Sources: BL-055
+clean 14/14 split; BL-056 G2/G3.
+
+**C. Construction-midpoint invariant.** `midZ7(edge) = office(child)` (`midZ7`
+imported from `scripts/d4-derivation-engine.mjs`, the frozen T-C midpoint
+definition). Census: 7 realized relations; 2 observation-exact (the frozen T₁ seam
+relations `A0:1387:2741:0` and `A0:1451:2773:6`); 5 seam-derived predictions, each
+carrying `predicted: A0:…; confirmable against comparison.tC.observedRelations,
+qa/d4-production-receipt.json`. Seam cross-check: the Phase-C T-C relation inventory
+(7 generated) is set-identical to the route's realized midpoint set; its observed
+subset (2) is set-identical to the exact subset; `realizationOfObserved = true`.
+Source: BL-056 G5.
+
+**D. Seven-form optical & photophysical taxonomy.** `[MAINTAINER DESIGN INTENT —
+registered]` A phenomenologically coherent macroscopic taxonomy bridging the 7
+Governors to macroscopic light–matter phenomena, registered as declared design
+inspiration for the mutation algebra (§2.7). Design correspondence, not derived
+canon — see the closing line.
+
+*Coupling structure & non-exclusivity (preamble, verbatim).* The seven forms are
+not mutually exclusive quantum mechanisms; real physical light–matter interactions
+naturally couple and combine them across scales (e.g., Rayleigh scattering induces
+linear polarization, attenuation sums absorption and scattering, and optical
+absorption necessarily precedes photochemical transduction). The taxonomy organizes
+primary phenomenological regimes and operational roles, not mutually exclusive
+physical partitions.
+
+*The seven forms in motion.*
+
+1. **Sun → Direct Spectral Emission (primary radiative origin).** Macroscopic
+   observable spectrum: photospheric thermal emission governed by Planck's law
+   (T ≈ 5778 K, sharing a continuous thermal physics layer with the Mars register).
+   Microscopic mechanism: spontaneous and stimulated photon emission via quantum
+   transitions described by Einstein A and B rate equations,
+   `dN₂/dt = -A₂₁N₂ - B₂₁ρ(ν)N₂ + B₁₂ρ(ν)N₁`. Ontological invariant: primary
+   unconditioned radiation originating from internal state potential. Why it fits:
+   operates as the system's primary cosmological emitter — the origin point of
+   radiative flux before boundary interaction or intermediate medium modification.
+   Distinction from Mars: shared thermal physics, distinguished by role (primary
+   cosmological emitter vs. matter-driven kinetic/blackbody conversion).
+2. **Moon → Surface Reflection & Phase Angle (secondary luminance).** Directional
+   surface reflectance, albedo, and BRDF, modulated by illumination phase angle α:
+   `f_r(ω_i, ω_o) = dL_r(ω_o)/dE_i(ω_i) ≡ dL_r(ω_o)/(L_i(ω_i) cosθ_i dω_i)`.
+   Ontological invariant: secondary, non-originating redirection of incident flux
+   conditioned by surface orientation and phase geometry. Why it fits: produces no
+   intrinsic light in the visible spectrum; its observed posture depends entirely
+   on geometric position relative to primary illumination and the observer. Physics
+   qualification: lunar surface reflection is predominantly diffuse/rough (governed
+   by Lommel–Seeliger / Hapke particulate scattering) rather than specular; BRDF is
+   a distribution function, not a reflection tensor.
+3. **Mars (Fire) → Incandescent Thermal Radiation (blackbody emission).** Radiation
+   driven by thermodynamic kinetic excitation of matter, governed by Planck's law
+   `u(ν, T) = (8πhν³/c³) · 1/(e^{hν/k_B T} − 1)` and Wien's displacement law
+   `λ_max T = b`. Ontological invariant: direct conversion of thermal/kinetic
+   energy into electromagnetic radiation. Why it fits: incandescence is the
+   physical point where kinetic/thermal agitation (Fire) converts directly into
+   visible photonic flux — light born from heat and friction. Physics
+   qualification: matter-driven thermal conversion; shares the Planck layer with
+   the solar photosphere, but functions ontologically as energetic agitation of an
+   active substrate.
+4. **Jupiter (Air) → Rayleigh Scattering (atmospheric dispersion).** Elastic
+   scattering of electromagnetic radiation by dielectric particles much smaller
+   than the wavelength (r ≪ λ), with intensity scaling inversely with the fourth
+   power of wavelength: `I(λ) = I₀ · (8π⁴ N α²)/(λ⁴ R²) · (1 + cos²θ)`.
+   Ontological invariant: non-absorptive, wavelength-selective redirection of
+   propagation vectors across a distributed medium. Why it fits: defining physics
+   of planetary atmospheres (Air); explains blue-sky dispersion and sunset
+   reddening across gaseous media without requiring absorption. Physics
+   qualification: Rayleigh scattering is the small-particle limiting case of
+   general Mie theory; scattering intrinsically induces partial linear polarization
+   (coupling to Venus) and contributes to extinction (coupling to Saturn).
+5. **Venus (Water) → Refraction & Boundary Polarization (dielectric phase shift).**
+   Phase-velocity alteration and trajectory bending at dielectric interfaces
+   governed by Snell's law and the Fresnel equations, including complete linear
+   polarization at Brewster's angle: `n₁ sinθ₁ = n₂ sinθ₂`,
+   `θ_B = arctan(n₂/n₁)`. Ontological invariant: trajectory redirection, phase
+   deceleration, and transverse state filtering upon boundary entry into a
+   transparent dielectric medium. Why it fits: characterizes light passing through
+   fluid, transparent, or dielectric media (Water), altering propagation paths and
+   filtering polar orientation. Physics qualification: polarization is an
+   electromagnetic field state that arises through reflection, refraction, and
+   scattering; the Fresnel equations simultaneously describe transmitted
+   (refracted) and reflected amplitudes.
+6. **Saturn (Earth) → Optical Absorption & Propagation Attenuation (terminal
+   boundary).** Exponential decay of irradiance through absorbing media governed by
+   the Beer–Lambert law and the imaginary component of the complex refractive index
+   (`ñ = n + ik`): `I(x) = I₀ e^{−αx}`, `α = 4πk/λ`. Ontological invariant:
+   dissipative termination or geometric occlusion of propagation paths, defining
+   boundary limits and shadows. Why it fits: dense physical matter (Earth) absorbs
+   photon momentum, converts radiation into internal thermal excitation, casts
+   geometric shadows, and marks the terminal edge of propagation. Physics
+   qualification: absorption (energy transfer to matter) and occlusion (geometric
+   path obstruction) are distinct physical processes that produce a shared
+   macroscopic attenuation effect; extinction in matter sums absorption and
+   scattering (`κ_ext = κ_abs + κ_scat`).
+7. **Mercury (Quintessence) → Photochemical Transduction & Exciton Transfer.**
+   Quantum photochemistry, exciton transfer, and the conversion of absorbed photon
+   energy into chemical bond configurations, governed by the Stark–Einstein law:
+   `ΔE = N_A hν = N_A hc/λ`. Ontological invariant: functional mediation transducing
+   radiant electromagnetic energy into organized chemical and structural state
+   machines. Why it fits: Quintessence acts as the operative mediator — light is
+   neither merely reflected, scattered, nor lost to heat; its energy is transduced
+   into structured state machines (e.g., biological tissue, photochemical storage).
+   Physics qualification: photosynthesis is a specialized biological implementation;
+   the general physical category encompasses all molecular and electronic state
+   transductions driven by light.
+
+*Coverage & boundary matrix.* The seven forms are not mutually exclusive mechanisms
+— real light–matter events combine them (scattering polarizes, attenuation sums,
+absorption precedes transduction) — the taxonomy organizes primary phenomenological
+regimes, not exclusive partitions.
+
+| Form | Primary regime | Governing formulation | Known physical couplings / overlaps | Excluded / adjacent phenomena |
+|---|---|---|---|---|
+| Sun | Primary source emission | Einstein rate equations (A₂₁, B₁₂, B₂₁); Planck photosphere | Overlaps with thermal blackbody emission (Mars) | Non-thermal emission (synchrotron, Cherenkov); stimulated laser emission |
+| Moon | Surface reflection | BRDF `f_r(ω_i, ω_o)`; albedo | Shares Fresnel boundary mechanics with refraction (Venus) | Lambertian/diffuse scattering; planetary thermal re-radiation |
+| Mars | Incandescence / blackbody | Planck's law `u(ν, T)`; Wien's displacement law | Continuum overlap with solar photosphere | Combustion chemical kinetics (Arrhenius) |
+| Jupiter | Elastic scattering | Rayleigh dispersion `I ∝ λ⁻⁴` | Scattering induces polarization (Venus); part of extinction (Saturn) | Mie scattering (`r ≳ λ`); Raman/Compton inelastic scattering |
+| Venus | Dielectric refraction | Snell's law; Fresnel equations; Brewster's θ_B | Reflection occurs simultaneously at interfaces | Birefringence; optical activity; nonlinear Kerr/Pockels effects |
+| Saturn | Absorption & attenuation | Beer–Lambert `I(x) = I₀ e^{−αx}`; extinction `k` | Total extinction combines absorption and scattering | Geometric occlusion; diffraction edge effects; shadowing |
+| Mercury | Photochemical transduction | Stark–Einstein law; exciton transfer | Requires prior absorption (Saturn) before transduction occurs | Photoluminescence; fluorescence; phosphorescence; photoelectric effect |
+
+*Literature context & epistemic boundaries.* `[STRUCTURAL OBSERVATION — uncited
+context]` Standard remote-sensing models decompose observed radiance into direct
+solar irradiance, atmospheric path radiance, surface reflectance, and thermal
+emission; this demonstrates that macroscopic optical modeling naturally groups
+phenomena into operational regimes similar to the seven forms, but remote-sensing
+literature does not assert this specific sevenfold partition as a closed or
+exhaustive system. Textbook references (Hecht; Bohren & Huffman; Chandrasekhar) are
+cited strictly as sources of physical terminology and equations, not as empirical
+validations of the governor mappings. `[INTUITIVE GLOSS — historical/intellectual
+context, uncited]` Goethe (*Farbenlehre*, 1810): early qualitative observation of
+light through turbid media (*trübe Medien*). Robert Grosseteste (*De Luce*,
+c. 1225): early light-first metaphysical cosmology (lux as primary corporeal form).
+Johannes Kepler (*Harmonices Mundi*, 1619): historical precedent for harmonic and
+celestial correspondence; his optical work is separate (1604) and did not map
+planetary offices to these optical equations.
+
+*Core epistemic conclusion (verbatim).* Design Correspondence, Not Derived Canon:
+the seven forms represent a phenomenologically coherent macroscopic taxonomy that
+served as declared inspiration for the mutation algebra (§2.7). The framework
+claims design correspondence — that the mathematical postures of the operators are
+conceptually consistent with these optical regimes — not that the mutation algebra
+is derived from, isomorphic to, or an exhaustive partition of physical quantum
+electrodynamics.
+
 ## 3. Open canon question
 
 `[OPEN CANON QUESTION]` **Sun/Moon <-> pole assignment.** Two cited readings conflict:
@@ -366,4 +549,5 @@ session (lattice Phase B, or the governs semantic layer) resolves it from the re
 | BL-031 (interpretation) | 2.6, 2.7 as findings-interpretation vocabulary only | interpretation-only; never a probe input; hypotheses not citable as claims |
 | BL-033 | 2.4, 2.5 — the D4 bracket prediction is the hypothesis the Phase C probes test | Never phrased as explaining the `not_derived` record; qualifier binding |
 | topology candidate (future) | 2.7 polarity vocabulary for directional semantics | Proposed only; closure review adjudicates; not citable as claims |
+| BL-057 D3 | §2.7 amendment as interpretation vocabulary | never probe input, never citable as claim |
 | claim documents | 1.x only | Hypotheses are not citable as claims anywhere |
