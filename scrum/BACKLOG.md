@@ -776,6 +776,38 @@ the memo (memo not edited; accretes by its own discipline). Grounding: 15 claims
 Gate-2-native); ledger-pins inventory unchanged at the BL-058 13 (zero added). Fences: no
 claim event, no record amendment, no governs admission, no higher-theorem answer, no G1
 movement, no D7 computation, no canonical/Court/schema/Neo4j writes. Suite 299 green.
+Post-landing register: memo addendum §13 (exception pairs, mechanism-level representation
+stability, Z/non-Z follow-on); follow-ons captured as BL-061/BL-062.
+
+### BL-061 [CAPTURED] — The two escapee satellites (1765, 1261)
+
+Both observed keys are the residual pair of the Z-family side of the hunt: they are the two
+observed keys missed (fn = 2) by the one-sided 7-Z17/7-Z37 scans (`>= 5`) and by the zSum
+composite (`>= 14`), while sitting well inside the clean non-Z split (nonZ 8). Their
+incidence profile is otherwise high (seam 4, bridge 4, cornerstone 2). Characterize: what
+distinguishes them from the other 12 observed — they are the residual the Z-side partial
+axes do not explain, and their exception structure is correlated across three scans,
+suggesting a single unrecognized property. Feeds GSL-1's refinement.
+
+**Grounding correction (twelfth catch, maintainer-prose class).** The capture text proposed
+in the post-landing disposition described this pair with the profile of a different pair
+("zero seam incidence, no bridge subnodes, no cornerstone containment, below the non-Z
+containment threshold's clean split"): those facts belong to 2395/2899 (the BL-055
+zero-seam near-miss pair, which sits inside the clean split at its boundary value 13 and is
+already recorded in BL-055 §4). The pair named in the title — 1765/1261 — carries seam 4 /
+bridge 4 / cornerstone 2, nonZ 8, zSum 11 per the landed artifact `table28`. Corrected here
+before memorialization; the named pair stands, the description is replaced by the artifact
+bytes. The correction exposes the bracket structure: 2395/2899 (boundary 13, observed) and
+731/2921 (boundary 14, unobserved) are the pairs at the clean composite's boundary values —
+the two pairs that bracket the 1-integer gap.
+
+### BL-062 [CAPTURED] — The Z/non-Z boundary-selection asymmetry
+
+The D-tier containment composite selects on non-Z families only; the three Z-classes
+(7-Z12, 7-Z17, 7-Z37) fail as single axes and are absorbed by the composite's threshold.
+Investigate: is the non-Z selectivity structural (chiral classes genuinely don't participate
+in the selection geography) or threshold-artifact? Feeds the boundary-layer semantics
+(BL-029's wall, the directional finding) and the governs semantic layer.
 
 ---
 
@@ -818,3 +850,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.27 | BL-057 four-gate corridor completed: D4 record amended additively — ENTRY 15 `record_amended (derivable-via-R2)` appended; ENTRY 10 stands immutable (region hashes labeled under both recipes); Gate 3 receipt certified (`execution_verified`, `DERIVED@X`, calibration EXACT, R2 = O at four licensed contexts, construction join = U contrast, D7 asymmetric analogue hypothesis-tier) in receipt `qa/specs/bl-057-d4-record-amendment.json`; Gate 3 ledger fence evolved to execution-time prefix preservation (Gate 3 receipt bytes/fingerprints unchanged); pre-existing `validate:ledger-pins` inventory recorded as accepted release state (BL-058 captured for repair); governs program left live (BL-056 remainder, 14-vs-14 predicate semantic registration, fa/ti asymmetry, rows 8/10 holes, directional-semantics gate); manifest regen; no governs admission, no wall dissolution, no G1 movement, no direction assignment, no green claim. |
 | v1.28 | BL-059 landed: D4 Derivation Statement (`plan/bl-059-d4-derivation-statement.md` — bounded contact-geometry theorem restated from the corridor's receipts; citation-stable) + Higher-Theorem Scoping memo (`plan/bl-059-governs-derivability-scoping-memo.md` — first formal statement of the GOVERNS derivability question: grant status in the framework's own design, evidence for/against, candidate approaches with falsification shapes; no answer claimed); two companion memos, one commit; manifest regen; no claim event, no record amendment, no admission, no G1 movement. |
 | v1.29 | BL-060 hunted (sprint, read-only): D4 14-vs-14 structural hunt executed — generator + artifact `orrery/src/generated/d4-14v14-hunt.v1.json` (fingerprint `8a1295ca…`) + independent validator (mutation-verified, 4 probes) + 9 vitest pins wired into `orrery:check`/`orrery:build`; BL-055 imported by fingerprint (`6d11fd93…`, OD-60-4); **synthesis verdict DERIVED** — the non-Z D-tier containment composite (`nonZSum <= 13` vs the four non-Z D-tier anchor families 7-1/7-8/7-15/7-22) splits cleanly 14/14 with boundary gap 1 (13/14), within-class variance and inversion stability proving independence from the class label; IV-delta recomputed from ledger bytes (brief string dropped per OD-60-1); complement-bridge split restatement-grade under OD-60-2 (canon asymmetry recorded; representative probe hit 14); office lemma proves all office-level axes non-separating (cycle, governor-element, ENTRY 13 — last two correlation-only under the ENTRY 13 fence, OD-60-3); D7 fenced (OD-60-D7); governs semantic layer gains GSL-1; scoping memo §4 accretion item carried; memo `plan/bl-060-14v14-hunt-memo.md`; ledger-pins inventory unchanged (13, zero added); no claim event, no record amendment, no governs admission, no higher-theorem answer, no G1 movement; suite 299 green. |
+| v1.30 | BL-060 post-landing disposition: BL-061 captured (the 1765/1261 Z-family residual pair — twelfth grounding catch, maintainer-prose class: the proposed capture described this pair with the 2395/2899 zero-seam profile; corrected against landed `table28` bytes before memorialization; the three exception pairs and their boundary roles registered) + BL-062 captured (Z/non-Z boundary-selection asymmetry: structural or threshold-artifact?); memo addendum §13 (post-landing register: exception pairs, mechanism-level representation stability, Z/non-Z follow-on); no claim event, no record amendment, no admission, no G1 movement. |

@@ -122,3 +122,21 @@ No D4 record amendment; no governs admission; no higher-theorem answer (BL-059's
 ## 12. Result in one paragraph
 
 Read-only, the hunt extended BL-055's 28-key table with seven new characterization axes and tested each for the 14/14 split. Three split cleanly: the interval-vector delta and the complement-bridge link — both canonical relabelings of the class predicate, restatement-grade under the OD-60-2 guard — and, decisively, a containment composite over the four non-Z D-tier anchor families: every 7-27 satellite shares ≤13 pentatonic subnodes with 7-1/7-8/7-15/7-22, every 7-31 shares ≥14, a 1-integer boundary gap computed from an independent landed artifact, varying across rooted states within each class, and inversion-stable. Every office-level axis (cycle position, governor-element, ENTRY 13 degree-fates) is provably non-separating by the office lemma — the split lives strictly below the office level. The synthesis is **DERIVED**: the contact selection is boundary-geography-selective, the governs semantic layer gains its first substantive entry (GSL-1), and the higher-theorem question gains a signature any future organization-derivation route must recover. The hunt characterizes; it does not conclude the governs program.
+
+## 13. Post-landing register (additive; maintainer disposition 2026-10-10)
+
+Three structural observations from the post-landing review are registered here; one carries a grounding correction (twelfth catch, maintainer-prose class), applied before capture.
+
+**The exception pairs (corrected against artifact bytes).** Three distinct pairs carry the residual structure, and they must not be conflated:
+
+| Pair | Status | Profile (from `table28`) | Role |
+|---|---|---|---|
+| 1765, 1261 | observed | seam 4, bridge 4, cornerstone 2; nonZ 8; zSum 11 (7-Z17 = 7-Z37 = 2) | the Z-family residual pair: the two observed keys the one-sided 7-Z17/7-Z37 (`>= 5`) and zSum (`>= 14`) scans miss |
+| 2395, 2899 | observed | seam 0, bridge 1, cornerstone 0; nonZ 13 | the zero-seam pair (BL-055 record): the escapees of the bridge and cornerstone axes and the seam axis's zero-incidence keys; inside the clean split at its boundary value 13 |
+| 731, 2921 | unobserved | seam 2, bridge 1, cornerstone 0; nonZ 14 | the reverse-scan false-positive pair of 7-8 (`<= 3`) and 7-22 (`<= 5`); at the clean split's other boundary value 14 |
+
+The correction: the disposition's BL-061 parenthetical described the 1765/1261 pair with the 2395/2899 profile ("zero seam incidence, no bridge subnodes, no cornerstone containment"); the artifact bytes show 1765/1261 carry seam 4 / bridge 4 / cornerstone 2, and the zero-incidence profile belongs to 2395/2899. The ticket is captured with corrected facts (BL-061). Note the bracket structure the correction exposes: 2395/2899 and 731/2921 are exactly the pairs at the clean composite's boundary values (13 and 14) — the two pairs that bracket the 1-integer gap.
+
+**Phase-independence and keying-invariance carry to the mechanism.** The selection's phase-independence and keying-invariance are landed facts (BL-055 Step 0 / OD-3: the seam structure is not an observed-set discriminator; BL-057 Gate 3: calibration EXACT, cells 0/10/4/0 at all three patch phases), and the hunt's new columns are computed from satellite identity, which re-keying does not touch. The boundary geography is therefore a property of the containment structure itself, not of how it is addressed — representation stability verified at the mechanism level, not only at the predicate level.
+
+**The Z/non-Z follow-on question (BL-062).** The composite selects on the four non-Z D-tier families; the three Z-classes fail as single axes (7-Z12 outright; 7-Z17/7-Z37 one-sided 12/14) and are absorbed by the composite's threshold. Whether the non-Z selectivity is structural (the chiral Z-classes not participating in the selection geography) or an artifact of the composite's threshold form is captured as BL-062 and feeds the boundary-layer semantics.
