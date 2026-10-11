@@ -122,10 +122,26 @@ D7 clause `provenance/DECISION_LEDGER.md:2703-2712`; machine receipt
 corridor receipt `qa/specs/bl-057-d4-record-amendment.json:74`; BL-033
 `scrum/plan/bl-033-phaseC-results-memo.md:75`.
 
+**The mechanism (BL-068 — §6 Question 1, explained).** The asymmetry's explanation is
+landed: **different predicates over different domain multiplicities.** The fa-pole's
+domain is class-mixed — the A1 tier carries 14 × 7-27 (observed) + 14 × 7-31 (unobserved)
+and is office-flat (28/28) — so the intrinsic set-class predicate separates it
+(14/0/0/14). The ti-pole's domain is class-pure — the D6 tier carries 14 × 7-2 only — so
+the class predicate restates over the constructed availability domain (36/36) and the
+sole clean separator is the office-linking condition (14/0/0/22, remainder modal-bounded
+at ±2 mod 7, 11+11); the ti-pole's contact relation is class-exhaustive and office-pure.
+The boundary invariants are pole-universal (inversion pairs in-class, office sums 6 mod 7,
+status shared) while the Z-interface polarization is fa-specific (D7 mixed, 4/14
+Z-majority, non-separating) — **same invariants, different predicates.** The Venus/Moon
+coda below stays vocabulary; the mechanism is the finding. *Landing artifact:*
+`orrery/src/generated/bl068-d7-asymmetry.v1.json` (`synthesis.verdict`
+`DIFFERENT_PREDICATES`; `synthesis.asymmetry`; `axes`; `invariants`; fingerprint
+`b0d65bd6…`); memo `scrum/plan/bl-068-d7-asymmetry-memo.md:48-56`.
+
 **D7 fencing (binding, throughout).** D7 remains hypothesis-tier, preserved: no D7 claim,
 no D7 amendment, no D7 computation here; the asymmetry feeds the governs semantic layer as
-data. This section records the asymmetry; it does not interpret it (the explanation is §6
-Question 1).
+data. This section records the asymmetry and registers its landed explanation (BL-068,
+GSL-3); the explanation is cited, not computed here.
 
 **Coda (template-bound; the synthesis's reading, not a claim).** The finding reads as
 divergent optical regimes through the registered Venus (refraction, trajectory-bending)
@@ -194,12 +210,24 @@ synthesized claim; the un-granting chain is GOV-524's record, not re-stated here
 
 ## 6. Open questions inventory
 
-1. **The D7 asymmetry's explanation (the deepest open question).** *Why do the poles
-   obstruct differently?* Evidence status: the asymmetry is measured three ways (§4;
-   Gate 3 memo `:103-117`; ENTRY 15 D7 clause; BL-033 `:75`) and is a named structural
-   finding; the mechanism behind the different obstruction classes is uncomputed and
-   unexplained. Natural next investigation: the BL-059 Phase 4 dual-pole program (not
-   attempted; `bl-066-r-edge-derivation-memo.md:94`), with D7 hypothesis-tier throughout.
+1. **[Explained — mechanism: GSL-3 (BL-068)] The D7 asymmetry's explanation.** *Why do
+   the poles obstruct differently?* The asymmetry remains measured three ways (§4; Gate 3
+   memo `:103-117`; ENTRY 15 D7 clause; BL-033 `:75`) and is a named structural finding.
+   The mechanism is now landed: **different predicates over different domain
+   multiplicities** — the A1 tier carries two satellite classes (14 × 7-27 observed + 14 ×
+   7-31 unobserved; office-flat 28/28) so a class selection exists (the intrinsic predicate
+   separates 14/0/0/14); the D6 tier carries one (14 × 7-2; the class predicate restates
+   over the constructed availability domain, 36/36) so the sole clean separator is the
+   office-linking condition (14/0/0/22, remainder modal-bounded at ±2 mod 7, 11+11); the
+   boundary invariants are pole-universal while the Z-interface polarization is
+   fa-specific; the ti-pole's contact relation is class-exhaustive and office-pure.
+   Verdict `DIFFERENT_PREDICATES`. *Landing artifact:*
+   `orrery/src/generated/bl068-d7-asymmetry.v1.json` (`synthesis.gsl3`; fingerprint
+   `b0d65bd6…`); memo `scrum/plan/bl-068-d7-asymmetry-memo.md:48-56`. Hypothesis-tier
+   preserved (D7 fenced: no D7 claim, no D7 amendment, no D7 derivation admission); the
+   former next-investigation pointer (BL-059 Phase 4 dual-pole program;
+   `bl-066-r-edge-derivation-memo.md:94`) is consumed by BL-068's execution of this
+   question.
 
 2. **The Z12-corner case.** 1765/1261's Z12-only extreme interface (7/2/2; zSum 11;
    chiral-Z-only 5-Z18/5-Z36) — the mechanism's one extreme instance, explained at margin 3
@@ -252,7 +280,9 @@ never required: removing every coda leaves every finding intact.
 **7.3 New reading of old findings only.** The synthesis introduces no new structural
 claim, no new phenomena mapping, no lens extension (no eighth form); every substantive
 claim cites its landing artifact (§§1–5); no finding is discharged, and no finding-row
-status moves.
+status moves. *(BL-069 registration: the §4 mechanism paragraph and the §6 entry-1
+resolution register the landed BL-068 finding (GSL-3) — newly added content, cited to its
+landing artifact; the registration adds no measurement of its own.)*
 
 **7.4 Finding-row statuses untouched.** Rows 8 and 10 remain `finding: no repo source`
 (`docs/ARCHITECTURE_MAP.md:129,133-134`; tally `:139`); §5 remains planning evidence (map
@@ -268,13 +298,16 @@ does not discharge findings.
 `bl-033-phaseC-results-memo.md`; `bl-035-semantic-derivation-census-memo.md`;
 `harmonic-comprehension-map.md` §§2.7/4/5; `bl-066-r-edge-derivation-memo.md` +
 `bl066-r-edge-derivation.v1.json`; `docs/specs/governs-derivability-candidate-v0.1.0.md` +
-`qa/specs/gov-524-governs-derivability-admission.json`.
+`qa/specs/gov-524-governs-derivability-admission.json`; `bl-068-d7-asymmetry-memo.md` +
+`bl068-d7-asymmetry.v1.json` (the GSL-3 registration).
 
 **7.6 Bounded non-accomplishments.** No claim event; no record amendment; no governs
 admission; no G1 movement; no INV-5 graduation; no M-walkability promotion; no
 directional-semantics assignment; no D7 computation; no canonical/Court/schema/Neo4j
 writes; no new measurement; no new claims; no finding-row discharge; no lens extension.
-Session prose is context, not evidence.
+*(BL-069 registration, 2026-10-11: §6 entry 1 resolves to GSL-3 and §4 gains the mechanism
+paragraph — the registration adds no measurement; every added claim cites BL-068's
+artifact and memo.)* Session prose is context, not evidence.
 
 ## 8. Result in one paragraph
 
@@ -283,11 +316,13 @@ selection mechanism reads in three channels: set-class identity (the clean 14/14
 `P(s) = 7-27`, lens-free — the finding that grounds itself), Z-interface polarization
 (GSL-1R's sign rule, gap 4, with GSL-1 as its w = 0 projection), and composition content
 (GSL-2's chiral-Z-only corner, explained at margin 3). Its poles obstruct differently —
-measured three ways as the fa/ti asymmetry, D7 fenced hypothesis-tier throughout. Its
+measured three ways as the fa/ti asymmetry (its mechanism now registered as GSL-3, §4),
+D7 fenced hypothesis-tier throughout. Its
 geography is assembled: the tier↔family bijection, the threshold anatomy and its three
 exception pairs, inversion-invariance and office-linking. Three template-bound codas read
 the structurally adjacent findings through the registered §2.7 registers; the membrane
 holds — the lens colors, the measurements ground, the correspondence is design coherence,
-not mechanism. Five open questions are inventoried and aimed: the D7 asymmetry's
-explanation, the Z12-corner case, the Z/non-Z mechanism, the directional-semantics hole,
-the anchoring remainder. The synthesis organizes and reads; it does not measure or admit.
+not mechanism. Five open questions were inventoried and aimed; the first — the D7
+asymmetry's explanation — now resolves to GSL-3 (§4, §6 entry 1), while the Z12-corner
+case, the Z/non-Z mechanism, the directional-semantics hole, and the anchoring remainder
+stay open. The synthesis organizes and reads; it does not measure or admit.

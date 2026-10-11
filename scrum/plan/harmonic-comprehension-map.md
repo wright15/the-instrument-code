@@ -554,6 +554,7 @@ session (lattice Phase B, or the governs semantic layer) resolves it from the re
 | governs semantic layer (future synthesis) | §5 measured findings (selection mechanism, invariants, named residual) | planning evidence; measured, not admitted; not citable as claims |
 | claim record `SPEC-GOVERNS-DERIVABILITY-001` (admitted; ENTRY 16) | §5 measured findings (GSL-1/1R/2) as corroborating measurement context only — the claim's load-bearing evidence is the BL-063/BL-064/BL-066 artifacts | consumed as context; §5 remains planning evidence — measured, not admitted, not citable as claims; the admission changes no §5 tag |
 | BL-067 synthesis (`plan/bl-067-governs-semantic-synthesis.md`) | §5 measured findings (channels, polarity, geography) as the synthesis base; §2.7 lens in three template-bound codas | planning evidence; lens interpretation-only per the membrane; never load-bearing; finding statuses untouched; not citable as claims |
+| BL-069 registration (GSL-3) | §5.6 GSL-3 — the fa/ti asymmetry's mechanism (the synthesis §6 Question 1 resolution) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
 
 ## 5. Measured findings — the D4 boundary-geography selection layer [MEASURED — planning evidence]
 
@@ -604,6 +605,34 @@ case for any refined mechanism.
 
 `orrery/src/generated/d4-14v14-hunt.v1.json` (fingerprint `8a1295ca…`);
 `orrery/src/generated/d4-zresidual-hunt.v1.json` (fingerprint `e1b3f655…`);
-`scrum/plan/bl-060-14v14-hunt-memo.md`; `scrum/plan/bl-061-062-zresidual-memo.md`.
+`scrum/plan/bl-060-14v14-hunt-memo.md`; `scrum/plan/bl-061-062-zresidual-memo.md`;
+`orrery/src/generated/bl068-d7-asymmetry.v1.json` (fingerprint `b0d65bd6…`);
+`scrum/plan/bl-068-d7-asymmetry-memo.md`.
 Planning evidence: no claim event, no record amendment, no admission; GOVERNS remains
 granted input; the higher-theorem question remains open. Not citable as claims.
+
+### 5.6 The fa/ti asymmetry's mechanism (GSL-3)
+
+*D4's domain is class-mixed (7-27/7-31) → class-selective predicate, office-flat; D7's
+domain is class-pure (7-2) → class-exhaustive predicate, office-pure — same invariants,
+different predicates, the asymmetry's mechanism.*
+
+**GSL-3** (BL-068; the entry registering the synthesis §6 Question 1 resolution). The
+measurements beneath the sentence, all on the D7 side's constructed availability layer
+(the Hamming-2 reach of the 7-2 class): the recorded layer collapses (14 recorded / 0
+unrecorded, 2 per anchor); the availability domain restores a 36 = 14 + 22 structure
+(per-anchor 4–6; every unrecorded instance modal-bounded at office delta ±2 mod 7,
+11 × +2 / 11 × −2); the class predicate restates over the domain (36/36,
+`RESTATEMENT_UNIFORM`); the office-linking predicate is the sole clean separator
+(14/0/0/22, `CLEAN_SPLIT`); the Z-interface polarization is non-separating at D7 (4/14
+contact states Z-majority — GSL-1R's mechanism is fa-specific); the inversion-invariance
+and office-linking invariants hold at both poles (7/7 in-class pairs, all office sums
+6 mod 7, status shared — §5.3's invariants are pole-universal). Verdict
+`DIFFERENT_PREDICATES`; the ti-pole's contact relation is class-exhaustive and
+office-pure; the D4 remainder is governed-but-unreached, the D7 remainder
+reached-but-office-excluded. *Receipts:*
+`orrery/src/generated/bl068-d7-asymmetry.v1.json` (`synthesis.gsl3`,
+`synthesis.asymmetry`, `axes`, `invariants`; fingerprint `b0d65bd6…`); memo
+`scrum/plan/bl-068-d7-asymmetry-memo.md:20-56` (§5.5's list carries the registration).
+D7 hypothesis-tier throughout — no D7 claim, no amendment, no derivation admission. Not
+citable as claims.

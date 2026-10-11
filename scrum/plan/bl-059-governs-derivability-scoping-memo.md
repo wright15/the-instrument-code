@@ -223,6 +223,27 @@ the §5.1 asymmetry stands untouched. The formal claim event admitting the bound
 is `SPEC-GOVERNS-DERIVABILITY-001` (ENTRY 16, GOV-524); its scope exclusions bind the
 reading of this accretion.
 
+**4.8 The fa/ti selection asymmetry characterized at both poles (BL-068, GSL-3; 2026-10-11).**
+The paired poles' contact selection now has a landed structural characterization at both
+ends: the fa pole's selection is class-selective within a two-class, office-flat domain
+(the A1 tier: 14 × 7-27 observed + 14 × 7-31 unobserved; the intrinsic set-class predicate
+separates 14/0/0/14), while the ti pole's contact relation is class-exhaustive and
+office-pure over a single-class domain (the D6 tier: 14 × 7-2 only; the class predicate
+restates over the constructed availability layer, 36/36; the sole clean separator is the
+office-linking condition, 14/0/0/22, remainder modal-bounded at ±2 mod 7, 11+11). The
+boundary invariants (inversion-invariance; office-linking 6 mod 7) are pole-universal; the
+Z-interface polarization (GSL-1R) is fa-specific. Verdict `DIFFERENT_PREDICATES` —
+different predicates over different domain multiplicities. Receipts:
+`orrery/src/generated/bl068-d7-asymmetry.v1.json` (fingerprint `b0d65bd6…`), memo
+`scrum/plan/bl-068-d7-asymmetry-memo.md`. *Shows:* the GOVERNS relation's selection is
+structurally characterized at both poles — class-selective at fa, office-exhaustive at ti
+— discoverable structure in the relation itself, the kind a derivable GOVERNS would need
+to reproduce. *Does not show:* derivability — offices, parent/satellite membership, and
+edges are not derived from this characterization; no D7 route exists or is proposed; this
+is evidence accruing to §4's column, not an answer to the memo's question. D7
+hypothesis-tier throughout (no D7 claim, no amendment, no derivation admission; ENTRY 15's
+clause verbatim).
+
 ## 5. Evidence against / obstructing (honest tally)
 
 **5.1 D7's modal non-closure (ENTRY 15 §D7 Clause; `qa/d4-r2-execution-receipt.json`
