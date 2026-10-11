@@ -1,9 +1,15 @@
 # BL-059 (Track 2) — Higher-Theorem Scoping memo: can the GOVERNS organization itself be derived?
 
-**Status:** `planning_evidence` — **OPEN RESEARCH. This memo defines the question; it claims
-no answer.** No ledger entry, no evidence obligations accepted, no claim event, no verdicts,
-no admission of any kind. Companion to `scrum/plan/bl-059-d4-derivation-statement.md`
-(Track 1, citation-stable); this memo is the one that accretes.
+**Status:** `planning_evidence` — question defined (open research). **Status update
+2026-10-11:** the question's directly-testable core received its formal, bounded
+affirmative answer — the claim event `SPEC-GOVERNS-DERIVABILITY-001` (ENTRY 16, GOV-524)
+admitted that the GOVERNS relation's **edge content** is derivable from pre-grant
+machinery up to one named bit and the anchoring remainder. This memo accretes the finding
+(§4.7) and registers what remains open beyond the claim's bounded scope (§7). No ledger
+entry by this memo, no evidence obligations accepted here, no verdicts by this memo; the
+claim event is a separate artifact. Companion to
+`scrum/plan/bl-059-d4-derivation-statement.md` (Track 1, citation-stable); this memo is
+the one that accretes.
 
 **Mutation contract (this memo's own discipline).** This is a question-defining artifact, not
 a claims artifact. §4 (evidence for) and §5 (evidence against) are expected to accrete as
@@ -165,6 +171,58 @@ inversion-stable). *Does not show:* that the GOVERNS relation is derivable — t
 remains granted input; no route yet derives office labels, parent/satellite membership, or
 edges from this geography, and the geography characterizes selection *within* the grant.
 
+**4.7 The 28-edge R-edge derivation (BL-063 → BL-064 → BL-066; the un-granting programme, 2026-10-11).**
+The finding this memo's question was written to measure, recorded under the memo's own
+mutation contract (cited, tiered, fail-loud; no smoothing; the §5 tally is retained in
+place below).
+
+*Phase 1 (BL-063, κ).* The seven A0 masks carry the Hamming-2 line graph P₇ (endpoints
+1387/2773, pcSum ladder 33→39); κ₁ reproduces all seven canonical offices (κ₀: 1/7, the
+reflection-fixed centre); the constructor identification splits into 5 interior sandwich
++ 2 boundary twin-closure mechanisms; the frozen midpoint form is reflection-equivariant
+(49/49); H_B returns the containment-twin null. Office structure is intrinsically
+recoverable from mask geometry **up to the Lydian/Locrian reflection — exactly one bit**
+(verdict `CONSTRAINED_TO_REFLECTION`; artifact `6d33c67b…`, raw-byte `57932f37…`;
+commit `f5e8c78`).
+
+*Phase 2 (BL-064, cycle ground).* The seven constructor pairs are exactly the cyclic
+distance-2 pairs in κ (`{c−1, c+1}` mod 7); the coordinate rule and the frozen midpoint
+law are one relation read in opposite directions (`midZ7(c−1, c+1) = c`); two dual
+formulations (child-side S-int/T-bdy + coordinate-side K-int/K-bdy) independently
+re-proven equivalent; derived 14/14 directed pairs set-equal the granted E pairs
+(`missing: []`, `extra: []`, per-child 7/7, office alignment 7/7 under κ₁); direction
+masks-only 5/5 internal + canonical class 7/7. **Requirement 4 is discharged** (verdict
+`CYCLE_GROUND_DERIVED`; `aa975820…`; commit `341aada`).
+
+*Phase 3 (BL-066, the capstone).* The 28-edge R relation is derived masks-only: 24 edges
+by H2 reach (unique hubs, zero extras) and 4 by the **H8 reach-census closure law** (each
+unplaced satellite attaches to its H8-parent with the smaller H2-reach count; equivalently
+the unique equalizing matching — 16 enumerated, exactly one, the granted assignment); the
+derived set is set-equal the granted R (`missing: []`, `extra: []`), invariant under both
+κ orientations; the 4-per-parent count **emerges** from the completion, never input; the
+boundary-geography signature is reproduced (2×7-27 + 2×7-31 per parent, 28/28); gates
+V-P3-1…5 all PASS (verdict `R_EDGES_DERIVED`; `94f0661f…`; commit `582af2c`).
+**Requirements 2 and 3 are discharged**; the reach structure is definition-robust
+(H2-reach ≡ containment-reach — the same partition under two independent definitions).
+
+*The bit inventory (OD-66-3, ruled 2026-10-11).* Carried: **one named bit** —
+office-orientation (one identification, two registrations: the brightness premise H_A and
+one grant comparison M1; BL-065). Dissolved: the pre-registered swap-bit candidate — the
+resolution was the **census-consistency law**; the planning pass's distance-invisibility
+record tested **proximity** axes only, annotated here per OD-66-1: *no proximity
+discriminator exists; the census-consistency law was the discriminator*. Remaining
+granted (the anchoring remainder): the A1 anchor/satellite domain partition (role/tier —
+**requirement 1 is not discharged**); the orientation bit (labels only — the edge set
+does not depend on it); presentation conventions.
+
+*Shows:* the question's edge-structure core has a formal, bounded affirmative answer — the
+relation's edge content is intrinsic to the satellite layer's reach geometry. *Does not
+show:* semantic content, authority, the anchoring remainder's derivability, requirement 1
+(membership), or any D7 reading — the paired case was not computed by this programme, and
+the §5.1 asymmetry stands untouched. The formal claim event admitting the bounded answer
+is `SPEC-GOVERNS-DERIVABILITY-001` (ENTRY 16, GOV-524); its scope exclusions bind the
+reading of this accretion.
+
 ## 5. Evidence against / obstructing (honest tally)
 
 **5.1 D7's modal non-closure (ENTRY 15 §D7 Clause; `qa/d4-r2-execution-receipt.json`
@@ -248,12 +306,20 @@ future candidate runs the four gates — admission → implementation → execut
 and any amendment would revise an input's granted status, a deeper revision than Gate 4's
 additive link (§3).
 
-## 7. Open-research declaration (binding)
+## 7. Open-research declaration (binding, with status update)
 
 This memo scopes the question. It records no derivation, proposes no route, admits nothing,
 and amends nothing. Nothing in it constitutes evidence, a claim, an admission, or a verdict.
-**The question remains open.** It defines what would count as an answer, what evidence would
-bear on one, and what stands in the way — and stops there.
+
+**Status update 2026-10-11.** The question's directly-testable core now has a formal,
+bounded affirmative answer: the claim event `SPEC-GOVERNS-DERIVABILITY-001` (ENTRY 16,
+GOV-524) admitted that the GOVERNS relation's **edge content** is derivable from pre-grant
+machinery up to one named bit and the anchoring remainder (§4.7 records the finding under
+this memo's mutation contract). What this does **not** close: the anchoring remainder (the
+domain partition — requirement 1; the orientation bit, BL-065; presentation conventions),
+the relation's semantics and role, the claim's authority (the relation's formal status is
+unchanged), and any D7 reading. The question beyond the claim's bounded scope remains
+open — the memo accretes, and the claim is the artifact carrying the admitted answer.
 
 ## 8. Fences and what this memo does not do
 
@@ -265,6 +331,11 @@ canonical/Court/schema/Neo4j writes; no directional-semantics assignment. The fr
 evidence. The higher-theorem scoping is explicitly open research: it defines the question, it
 does not claim the answer. No manifest beyond the landing's own packaging is touched by the
 memo's content.
+
+(Accretion note, 2026-10-11: the separate claim event `SPEC-GOVERNS-DERIVABILITY-001` /
+ENTRY 16 / GOV-524 landed independently of this memo; §4.7 and the §7 status update record
+it under this memo's mutation contract. ENTRY 10 and ENTRY 15 remain byte-untouched by
+this memo; the claim event appends ENTRY 16 only.)
 
 ## 9. Closing note: the biggest open question in the project, made askable
 

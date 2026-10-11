@@ -883,7 +883,7 @@ canonical/Court/schema/Neo4j writes; requirement 2 only, up to the named bit. Su
 317 green; ledger-pins unchanged (13, zero added); manifest regen. Follow-ons
 captured as BL-064 and BL-065.
 
-### BL-064 [CAPTURED] — Phase 2: cycle-ground derivation via κ
+### BL-064 [LANDED] — Phase 2: cycle-ground derivation via κ (un-granting Phase 2)
 
 Derive the A0→A1 CONSTRUCTS pairs from κ (the recovered office coordinates) rather
 than reading granted E-edges. Inputs: κ (7/7 up to reflection), the sandwich
@@ -891,6 +891,26 @@ construction (internal), twin-closure (boundary). Pre-register: the derivation's
 output must set-equal the granted E-pairs (14 edges). Dependency: consumes BL-063's
 κ; the reflection bit is inherited (Phase 2's derivation is reflection-relative
 unless the bit resolves).
+
+**Landed 2026-10-11 (commit `341aada`; backlog registration completed at the GOV-524
+claim event).** Generator `scripts/build-bl064-cycle-ground.mjs` + artifact
+`orrery/src/generated/bl064-cycle-ground.v1.json` (fingerprint `aa975820…`, raw-byte
+`9432aa76…`) + independent validator (static grant-isolation + 10 mutation probes
+rejected incl. smuggled officeIndex and ledger reads) + 10 vitest pins wired into
+`orrery:check`/`orrery:build` after `bl063-office-reconstruction:check`; chain anchor
+BL-063 by self-checked fingerprint `6d33c67b…`; memo
+`plan/bl-064-cycle-ground-memo.md`. Findings: the seven constructor pairs are exactly
+the cyclic distance-2 pairs in κ; dual formulations (child-side S-int/T-bdy +
+coordinate-side K-int/K-bdy) independently re-proven equivalent; derived 14 directed
+edges set-equal the granted E pairs (`missing: []`, `extra: []`, per-child 7/7,
+office alignment 7/7 under κ₁); **`midZ7(c−1, c+1) = c` — the coordinate rule and the
+frozen midpoint law are one relation read backward** (boundary centres = the 2
+observation-exact T1 seam relations; internal = the 5 confirmation-marked T2
+predictions); direction masks-only 5/5 internal + canonical class 7/7; gates
+V-P2-1…4 PASS; **verdict `CYCLE_GROUND_DERIVED`**. Suite 327 green; ledger-pins
+unchanged (13, zero added); no claim event, no record amendment, no GOVERNS
+derivation claim, no GOVERNS admission, no higher-theorem answer, no G1 movement, no
+D7 computation. *(Claim event follow-on: BL-064's finding feeds GOV-524 below.)*
 
 ### BL-065 [CAPTURED] — The brightness-premise bit (the shared remaining dependency)
 
@@ -956,6 +976,36 @@ registration remains a separate step; BL-065 unchanged.
 
 ---
 
+### GOV-524 — GOVERNS edge-content derivability claim event (admission) [DONE]
+
+The fifth claim event; the formal admission of the un-granting programme's capstone
+finding (BL-063 → BL-064 → BL-066). **Landed 2026-10-11** in one atomic commit:
+candidate record `docs/specs/governs-derivability-candidate-v0.1.0.md`
+(`SPEC-GOVERNS-DERIVABILITY-001` v0.1.1) + compliance receipt
+`qa/specs/gov-524-governs-derivability-admission.json` + ENTRY 16 + the BL-059
+scoping-memo accretion (§4.7 + §7 status update + §8 accretion note) + the
+comprehension-map §4 consumption row + the BL-064 landing registration above + this
+row's revision entry + refreshed inventories. Claim (verbatim in the record): the A1
+GOVERNS relation's **edge content** — which parent–satellite pairs exist (28 edges,
+7 offices × 4 satellites) — is derivable from pre-grant machinery (κ coordinates,
+Hamming/containment reach, the H8 reach-census closure law) **up to one named bit**
+(office-orientation; BL-065) **and the anchoring remainder** (the A0/A1 anchor sets +
+tier/role partition + presentation conventions). Significance, recorded: the original
+D4 contract's modeling assumption ("the principal authored inheritance input") is
+revised **by evidence** — the relation's edge content is intrinsic to the satellite
+layer's reach geometry; the D4 ledger record itself is not amended. Excluded
+(binding): semantics, role, anchor-set/tier-partition derivability, GOVERNS
+authority, any D7 implication, INV-5/§6(4)/M-walkability, G1 movement, record
+amendments beyond the claim's own entry, release promotion. The BL-059
+higher-theorem question closes with its bounded affirmative answer; what remains
+open beyond the claim's bounded scope (orientation bit BL-065; anchoring remainder;
+semantics) is registered in the scoping memo §7. Gates: full validate observed first
+stop `validate:ledger-pins` (pre-existing 13-violation inventory, recorded not
+repaired; BL-058); focused phase-chain checks green. **No GOVERNS admission** — the
+claim is about derivability, not authority.
+
+---
+
 ## Sequencing
 
 BL-001/002 first (landed — everything else is now fast), BL-010 next (biggest timeline variable:
@@ -1001,3 +1051,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.33 | BL-063 landed (sprint, read-only): intrinsic office reconstruction via midZ7 — un-granting roadmap Phase 1 (BL-059 §3 requirement 2) — generator `scripts/build-bl063-office-reconstruction.mjs` + artifact `orrery/src/generated/bl063-office-reconstruction.v1.json` (fingerprint `6d33c67b…`, raw-byte `57932f37…`) + independent validator (static grant-isolation check + 5 mutation probes rejected) + 9 vitest pins wired into `orrery:check`/`orrery:build`; BL-060 chain anchor by self-checked fingerprint `8a1295ca…`; memo `plan/bl-063-office-reconstruction-memo.md`. Findings: **P7 Hamming-line confirmed** (endpoints 1387/2773; pcSum 33→39); **κ₁ = canonical 7/7 vs κ₀ 1/7 (M1)**; two construction mechanisms (5 interior sandwich + 2 boundary twin-closure; π = granted E-pairs); **reflection-equivariance 49/49** (`midZ7(6−a,6−b) = (6 − midZ7(a,b)) % 7`; midpoint law reflection-blind, g₀+g₁=6); H_B containment-twin null. Self-catches: unrestricted sandwich non-unique (Hamming-2 restriction load-bearing), sorted-degree expectation. **Verdict CONSTRAINED_TO_REFLECTION** (one bit: brightness premise or one grant comparison, agreeing). Follow-ons: **BL-064 captured** (Phase 2 cycle-ground derivation via κ; E-pair set-equality pre-registered) + **BL-065 captured** (the shared one-bit dependency — grounding correction, maintainer-prose class: the convergence is with map §3's open Sun/Moon pole question and the framework's canonical office assignment, not a §2.7 registration; nearest registered brightness material = §2.3's Court ordinal 22→26, field semantics `[OPEN]`). Suite 317 green; ledger-pins unchanged (13, zero added); no claim event, no record amendment, no GOVERNS derivation claim, no governs admission, no higher-theorem answer, no G1 movement, no D7 computation; manifest regen. |
 | v1.34 | BL-066 landed (sprint, read-only): the 28 R-edge derivation — un-granting roadmap Phase 3, the capstone (BL-059 §3 requirements 1 and 3) — generator `scripts/build-bl066-r-edge-derivation.mjs` + artifact `orrery/src/generated/bl066-r-edge-derivation.v1.json` (fingerprint `94f0661f…`, raw-byte `ac2db3d9…`) + independent validator (two-sided static input-isolation check — forbidden-token absence AND required canonical-input presence — + 25 mutation probes rejected incl. smuggled R/officeIndex/forte reads and a lobotomized region) + 13 vitest pins wired into `orrery:check`/`orrery:build` after `bl064-cycle-ground:check`; BL-064 chain anchor by self-checked fingerprint `aa975820…`; memo `plan/bl-066-r-edge-derivation-memo.md`. Findings: **R-H2 reach 24/28 masks-only, zero extras, unique hubs**; the 4 unplaced `{695, 3497, 731, 2921}` resolved by the **H8 reach-census closure law** (each attaches to its H8-parent with the smaller H2-reach count; equivalently the unique H8 matching that equalizes the reach census — 16 enumerated, exactly one, the granted assignment); **the pre-registered swap-bit candidate dissolved** (the planning-pass distance-invisibility record tested proximity axes, not census ordering; the battery corroborates: pcSum + mask-numeric agree, κ orientation-relative, containment inapplicable); **count-4 emergent** (OD-P3-5 strongest form); GSL-1R reproduced per parent (2×7-27 Z-majority + 2×7-31, 28/28); direction dual-report (unique-hub 24/24 + IC-distinguishability 28/28 candidate, A1-anchor IC `[2,5,4,4,4,2]` — grounding correction: the ruling's parenthetical is BL-064's A0-anchor IC); gates V-P3-1…5 all PASS (set-equal 28/28, `missing: []`, `extra: []`; reflection-invariant, labels `c → 6−c` carried to BL-065); **verdict `R_EDGES_DERIVED`** — the GOVERNS relation's edge content is intrinsic to the satellite layer's reach geometry; bit inventory: **one carried bit** (office-orientation, BL-065, two agreeing sources), the swap dissolved; the higher-theorem question (BL-059) gains its first direct, bounded, affirmative finding. Suite 340 green (34 files); ledger-pins unchanged (13, zero added); no claim event, no record amendment, no GOVERNS admission (finding, not admission), no orientation-bit resolution, no IC-tier promotion, no G1 movement, no D7 computation, no Phase-4 work; manifest regen. |
 | v1.35 | BL-066 post-landing dispositions (maintainer rulings 2026-10-11, memo §10, additive): **OD-66-1** — the H8 reach-census closure law recorded as the closure's **mechanism/primary**, the battery (pcSum + mask-numeric) as corroboration (the artifact already read this way; ruling ratifies, no bytes change); the planning-pass P3-E record to be annotated at the next BL-059 accretion cycle as "no **proximity** discriminator exists; the **census-consistency** law was the discriminator" (precision about what was searched). **OD-66-2** — the IC-extension held at candidate per OD-64-1's pattern (separation ≠ derivation; promotion would need *why*, not just *that*, the IC structure discriminates — the OD-60-2 restatement-vs-explanation line). **OD-66-3** — one named carried bit confirmed (office-orientation; one identification, two registrations); the swap dissolution resolved a **matching** ambiguity, the orientation bit is a **labeling** ambiguity — different classes, no interaction; BL-065's question exactly as open as before. No artifact bytes changed (`94f0661f…` unchanged), no record amendment, no claim event; the formal claim event ("GOVERNS is derivable") remains a separate ceremony, unperformed; manifest regen. |
+| v1.36 | GOV-524 claim event landed (the fifth ceremony): `SPEC-GOVERNS-DERIVABILITY-001` v0.1.1 admitted (`docs/specs/governs-derivability-candidate-v0.1.0.md`) with receipt `qa/specs/gov-524-governs-derivability-admission.json` and ENTRY 16, one atomic landing — the A1 GOVERNS relation's edge content is admitted as derivable from pre-grant machinery up to one named bit and the anchoring remainder (κ coordinates + Hamming/containment reach + the H8 reach-census closure law; 28/28 masks-only set-equal with `missing: []`/`extra: []`; count-4 emergent); the modeling-assumption revision recorded as the claim's significance; scope exclusions binding (no semantics, no role, no anchor-set/tier-partition derivability, no GOVERNS authority, no D7 implication, no INV-5/§6(4)/M-walkability, no G1, no record amendments beyond the claim's own entry, no green claim); consequence updates: BL-059 scoping memo §4.7 accretion + §7 status update + §8 accretion note, comprehension-map §4 consumption row, BL-064 landing registration completed above, this row; full validate observed first stop `validate:ledger-pins` (pre-existing 13, recorded not repaired; BL-058); ENTRY 10/15 byte-untouched; manifest regen. |

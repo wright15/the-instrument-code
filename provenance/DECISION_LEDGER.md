@@ -2808,3 +2808,157 @@ graduate INV-5, and does not assign directional semantics. Prior entries and pri
 anchors remain unchanged; this entry is append-only. The historical record is linked,
 not rewritten: any reading of this entry as reversing or erasing ENTRY 10's
 `not_derived` record is rejected.
+
+---
+
+## ENTRY 16 - SPEC-GOVERNS-DERIVABILITY-001 admission under GOV-524
+
+**Date:** 2026-10-11. **Status:** admitted in one atomic landing; release gates
+recorded, not cleared. The project's fifth claim event (ENTRY 12 convention, ENTRY 13
+correspondence, ENTRY 14 topology, ENTRY 15 amendment).
+
+### Decision
+
+The candidate record `docs/specs/governs-derivability-candidate-v0.1.0.md`
+(version 0.1.1, artifact ID `SPEC-GOVERNS-DERIVABILITY-001`) is admitted under
+GOV-524, together with the compliance receipt
+`qa/specs/gov-524-governs-derivability-admission.json`, the BL-059 scoping-memo
+accretion, the comprehension-map consumption row, the backlog registration, and
+refreshed root inventories, in one atomic landing.
+
+The claim, verbatim from the record:
+
+> the A1 GOVERNS relation's **edge content** - which parent-satellite pairs exist
+> (28 edges, 7 offices x 4 satellites; `provenance/DECISION_LEDGER.md:2052-2062`)
+> - is derivable from pre-grant machinery: the recovered coordinates (kappa;
+> `bl063-office-reconstruction.v1.json`), the mask geometry (Hamming/containment
+> reach; `bl066-r-edge-derivation.v1.json`), and the closure law (the H8
+> reach-census equalization; `bl066-r-edge-derivation.v1.json`) - **up to one
+> named bit** (office-orientation, the Lydian/Locrian reflection; carried to
+> BL-065) **and the anchoring remainder** (the A0/A1 anchor sets + the tier/role
+> partition remain granted; the presentation/bookkeeping conventions remain
+> granted).
+
+The derivation, at the artifacts' bytes: 24 of the 28 edges by masks-only H2
+reach (unique hubs, zero extras) and 4 by the masks-only H8 reach-census closure
+law (the unique equalizing matching among 16 enumerated - the granted
+assignment); the derived set set-equal the granted R (`missing: []`, `extra: []`),
+invariant under both kappa orientations; the per-parent count 4 emergent from the
+completion, never input; gates V-P3-1 to V-P3-5 all PASS
+(`orrery/src/generated/bl066-r-edge-derivation.v1.json`, `derivationFingerprint`
+`94f0661ff6e76b0dea69fbe9f09ead24da7901393fb735495f3a25c3d9a1a886`; chain
+BL-063 `6d33c67be7b8f87b8ad2f964cd3560ebcbc1ec0dc6b2088ad1f223c35caff8c3` ->
+BL-064 `aa975820136658dd2fb3c84d98b34bf7a1901d39edd6548a300f458858305918` ->
+BL-066). This entry **admits derivability, not authority**: the GOVERNS relation's
+formal status in the machinery is unchanged, and no GOVERNS admission is made.
+
+### Significance - the modeling-assumption revision (recorded)
+
+The original D4 contract declared the relation "the principal authored
+inheritance input... not a derived inheritance theorem"
+(`provenance/DECISION_LEDGER.md:2052-2062`). This admission revises that modeling
+assumption **by evidence**: the relation's edge content is intrinsic to the
+satellite layer's reach geometry. The revision is recorded as the claim's
+significance - the framework's own modeling assumption, tested and revised. The
+D4 record is **not amended**: the declaration stands as the historical modeling
+assumption this claim revises (contrast, not erasure); ENTRY 10 and ENTRY 15 are
+byte-untouched by this entry.
+
+### Scope
+
+This entry claims exactly: the GOVERNS relation's edge content is derivable from
+pre-grant machinery, up to one named bit and the anchoring remainder, per the
+admitted record.
+
+Excluded (binding, carried from the record):
+
+- No GOVERNS semantics; no role (the office structure's meaning).
+- No anchor-set derivability; no tier/role partition derivability (the anchoring
+  remainder is carried).
+- No GOVERNS authority - this claim is about derivability, not about the
+  relation's runtime/canonical status.
+- No D7 implication (the ti-pole's measured asymmetry stands; D7 remains
+  hypothesis-tier, preserved).
+- No INV-5 graduation; no section 6(4) movement; no M-walkability promotion; no
+  G1 movement; no directional-semantics assignment.
+- No record amendments beyond this claim's own entry (D4's `derivable-via-R2` and
+  D7's hypothesis-tier unchanged).
+- No canonical/Court/schema/Neo4j writes beyond the landing's own; no release
+  promotion or green-release claim.
+- The frame (comprehension map sections 2.6-2.7) is interpretation vocabulary;
+  session prose is context, not evidence.
+
+### References
+
+- The record: `docs/specs/governs-derivability-candidate-v0.1.0.md`
+  (`SPEC-GOVERNS-DERIVABILITY-001` v0.1.1; receipt
+  `qa/specs/gov-524-governs-derivability-admission.json`).
+- Gate 1 (admission): `scrum/plan/bl-057-d4-amendment-spec.md` (`6908e7b`;
+  header `claim_admitted` per ruling 2026-10-10, landed `ead2eec`).
+- Gate 2 (implementation): commit `59fa59a`;
+  `orrery/src/generated/d4-r2-contract.v1.json` (`contractFingerprint`
+  `5528510b495f12fa11ab713d8ee357e3798f728204eacd83ad491aafb8fdc7d5`).
+- Gate 3 (execution): `qa/d4-r2-execution-receipt.json` (raw-byte SHA-256
+  `7e14cbbc680d4827a0d82eb04f3c8c25c187b73d9435fdbade143f014a406fe2`;
+  `executionFingerprint`
+  `3ed80e6fef3b1a5a8211d046facaf2f2d15daf7eb34a398ccfd1fded1c783634`).
+- Gate 4 (amendment): ENTRY 15, `provenance/DECISION_LEDGER.md:2665-2810`;
+  landing commit `880c346`. Report-vs-log note: the Gate-4 execution report
+  recorded `5c84aee`; verification found `5c84aee` a present-but-unreachable
+  sibling commit (same parent `85a62a6`, byte-identical tree `1f935ca6...`) of
+  the reachable landing commit `880c346` - resolved to the log as authority
+  (commit identity verifies via git log, not via report prose).
+- Predicate (BL-055): `orrery/src/generated/d4-selection-review.v1.json`
+  (raw-byte `40a1d7586c8643bac351a1b70c09fce35a977ce200888d08a40d2cc0022649d8`;
+  `reviewFingerprint`
+  `6d11fd932efbe96892b3cf2e6a6cdad6f54e69cd2a8f284ebb72232c59d8b745`).
+- Route (BL-056): `orrery/src/generated/d4-r2-route-review.v1.json` (raw-byte
+  `5a1a787eb47a939d8f1ba727689a9cc2db0adb21fe716d5e1600d7a19406c4b3`;
+  `reviewFingerprint`
+  `e25851f975a84a290bc4794916dd16ead7d99c7f3694bae21b7c6bb6f13e91b3`).
+- BL-059: `scrum/plan/bl-059-d4-derivation-statement.md` (citation-stable);
+  `scrum/plan/bl-059-governs-derivability-scoping-memo.md` (accretes; section 4.7
+  record carried at this landing).
+- Phase 1 (BL-063, kappa): `orrery/src/generated/bl063-office-reconstruction.v1.json`
+  (raw-byte `57932f37d3acc867bf8c44d00d2ced44d4b2d8ccf39b871c2241e685b6e32b18`;
+  `reconstructionFingerprint` `6d33c67b...`; commit `f5e8c78`).
+- Phase 2 (BL-064, cycle ground): `orrery/src/generated/bl064-cycle-ground.v1.json`
+  (raw-byte `9432aa764a57823a06a4d36db3209507ed85af0f7675d3708ef388e369da6f24`;
+  `derivationFingerprint` `aa975820...`; commit `341aada`).
+- Phase 3 (BL-066, the capstone): `orrery/src/generated/bl066-r-edge-derivation.v1.json`
+  (raw-byte `ac2db3d92df89f9ae2e5f19dfc7c0489a56f55dfa8bd154a22ad74c875e7a8ab`;
+  `derivationFingerprint` `94f0661f...`; commit `582af2c`).
+- Motivation legs: `scrum/plan/bl-029-d-tier-operator-probe-memo.md`;
+  `scrum/plan/bl-035-semantic-derivation-census-memo.md`;
+  `scrum/plan/bl-031-semantic-transport-probe-memo.md`.
+- Inventory emission: `scripts/build-manifest.mjs` via `npm run package:manifest`;
+  package `seven-governors-integrated-release` 1.9.0-dev from `package.json`
+  (inventory tool and version in one line per CONV-EVIDENCE-BINDING-001 section 7).
+
+### Release Gate Disposition
+
+A pre-existing validate:ledger-pins failure (13 violations in corridor scripts -
+12 unreviewed_literal_pin + 1 literal_ledger_pin; reproducing at corridor-era
+commit `85a62a6`; the specific file-level inventory is carried in the compliance
+receipt's predeclaredGates) is recorded as accepted release state for this
+landing, with repair queued (BL-058); the ledger-pin scanner and allowlist are
+untouched. Full `npm run validate` was executed for this landing; the observed
+first stop is recorded in the compliance receipt. The predeclared acceptable
+stops are the ledger-recorded `STALE_TWIN_HUB_CONVERGENCE` state (ENTRY
+10/11/12/13), the recorded `STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE` state
+(`qa/d4-production-landing.json`; `docs/specs/fivefold_constructs_engine_spec.md`
+section 4.1), and the pre-existing `validate:ledger-pins` inventory recorded
+above. Any other failure halts. No stale control is disabled, no shared artifact
+is regenerated to force green, and no green integrated release is claimed.
+
+### Guard
+
+This entry grants no runtime, topology, graph, governs, Court, office, schema,
+policy or global `harmonic.C_H` authority. It does not change the GOVERNS
+relation's formal status (derivability is admitted, not authority), does not
+amend D4's `derivable-via-R2` or D7's hypothesis-tier, does not dissolve the
+boundary wall, does not graduate INV-5, does not promote M-walkability, and does
+not assign directional semantics. Prior entries and prior line anchors remain
+unchanged; this entry is append-only. The historical record is linked, not
+rewritten: any reading of this entry as changing the GOVERNS relation's
+authority, amending ENTRY 10 or ENTRY 15, or moving D7 is rejected.

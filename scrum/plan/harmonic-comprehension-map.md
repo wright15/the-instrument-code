@@ -552,6 +552,7 @@ session (lattice Phase B, or the governs semantic layer) resolves it from the re
 | BL-057 D3 | §2.7 amendment as interpretation vocabulary | never probe input, never citable as claim |
 | claim documents | 1.x only | Hypotheses are not citable as claims anywhere |
 | governs semantic layer (future synthesis) | §5 measured findings (selection mechanism, invariants, named residual) | planning evidence; measured, not admitted; not citable as claims |
+| claim record `SPEC-GOVERNS-DERIVABILITY-001` (admitted; ENTRY 16) | §5 measured findings (GSL-1/1R/2) as corroborating measurement context only — the claim's load-bearing evidence is the BL-063/BL-064/BL-066 artifacts | consumed as context; §5 remains planning evidence — measured, not admitted, not citable as claims; the admission changes no §5 tag |
 
 ## 5. Measured findings — the D4 boundary-geography selection layer [MEASURED — planning evidence]
 
