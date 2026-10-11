@@ -779,7 +779,7 @@ movement, no D7 computation, no canonical/Court/schema/Neo4j writes. Suite 299 g
 Post-landing register: memo addendum §13 (exception pairs, mechanism-level representation
 stability, Z/non-Z follow-on); follow-ons captured as BL-061/BL-062.
 
-### BL-061 [CAPTURED] — The two escapee satellites (1765, 1261)
+### BL-061 [FINDINGS RECORDED] — The two escapee satellites (1765, 1261)
 
 Both observed keys are the residual pair of the Z-family side of the hunt: they are the two
 observed keys missed (fn = 2) by the one-sided 7-Z17/7-Z37 scans (`>= 5`) and by the zSum
@@ -801,13 +801,37 @@ bytes. The correction exposes the bracket structure: 2395/2899 (boundary 13, obs
 731/2921 (boundary 14, unobserved) are the pairs at the clean composite's boundary values —
 the two pairs that bracket the 1-integer gap.
 
-### BL-062 [CAPTURED] — The Z/non-Z boundary-selection asymmetry
+**Characterized 2026-10-10 (joint artifact with BL-062):** `orrery/src/generated/d4-zresidual-hunt.v1.json`
+(fingerprint `e1b3f655…`) + generator + mutation-verified validator + 9 pins; memo
+`plan/bl-061-062-zresidual-memo.md`. **Verdict: EXPLAINED_NOT_PRIMITIVE** — the pair is the
+Z12-only interface extreme (Z12=7, Z17=Z37=2; zSum 11 = observed minimum) and the unique
+observed pair with chiral-Z-only pentatonic composition (5-Z18/5-Z36; achiralZClasses
+empty); it defeats per-family Z and per-content-type thresholds by construction and sits
+inside the canonical sign rule at margin 3. Its members are inversion siblings (status
+shared; not an orientation artifact). Feeds GSL-2.
+
+### BL-062 [FINDINGS RECORDED] — The Z/non-Z boundary-selection asymmetry
 
 The D-tier containment composite selects on non-Z families only; the three Z-classes
 (7-Z12, 7-Z17, 7-Z37) fail as single axes and are absorbed by the composite's threshold.
 Investigate: is the non-Z selectivity structural (chiral classes genuinely don't participate
 in the selection geography) or threshold-artifact? Feeds the boundary-layer semantics
 (BL-029's wall, the directional finding) and the governs semantic layer.
+
+**Characterized 2026-10-10 (joint artifact with BL-061):** **Verdict: STRUCTURAL** — the
+Z-structure participates through two channels: (i) interface polarization — observed
+satellites are Z-majority in D-tier containment (`nonZSum < zSum`; observed −13..−3,
+unobserved +1..+11, gap 4), the canonical refinement of GSL-1's `nonZSum <= 13` (its w = 0
+projection); (ii) composition content — every observed carries Z-class pentatonic subnodes
+(2-4 rooted) and achiral subnodes (2-4), every unobserved carries none. Mechanism verdicts:
+(a) Z-paired vs IV-unique anchor profiles PARTIAL (families individually distinct,
+cornerstones confined to D5/7-Z12, no clean band dichotomy); (b) satellite Z-content
+SUPPORTED; (c) achiral-content presence SUPPORTED, A/B counts NOT SUPPORTED. Refinement
+scan: 6 clean hits + 1 degenerate dual-threshold hit; near-misses 5 (complementary
+Z-content-type pairs); orientation-polarized shapes rejected as inversion-splitting. New
+structural facts: tier↔family bijection (D1=7-22 … D7=7-1); mesh subnodes = pc-0-anchored
+5-subsets (462/462); 14 inversion pairs all status-shared (selection selects whole pairs;
+pairs link offices summing to 6 mod 7). GSL-1R + GSL-2 recorded.
 
 ---
 
@@ -851,3 +875,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.28 | BL-059 landed: D4 Derivation Statement (`plan/bl-059-d4-derivation-statement.md` — bounded contact-geometry theorem restated from the corridor's receipts; citation-stable) + Higher-Theorem Scoping memo (`plan/bl-059-governs-derivability-scoping-memo.md` — first formal statement of the GOVERNS derivability question: grant status in the framework's own design, evidence for/against, candidate approaches with falsification shapes; no answer claimed); two companion memos, one commit; manifest regen; no claim event, no record amendment, no admission, no G1 movement. |
 | v1.29 | BL-060 hunted (sprint, read-only): D4 14-vs-14 structural hunt executed — generator + artifact `orrery/src/generated/d4-14v14-hunt.v1.json` (fingerprint `8a1295ca…`) + independent validator (mutation-verified, 4 probes) + 9 vitest pins wired into `orrery:check`/`orrery:build`; BL-055 imported by fingerprint (`6d11fd93…`, OD-60-4); **synthesis verdict DERIVED** — the non-Z D-tier containment composite (`nonZSum <= 13` vs the four non-Z D-tier anchor families 7-1/7-8/7-15/7-22) splits cleanly 14/14 with boundary gap 1 (13/14), within-class variance and inversion stability proving independence from the class label; IV-delta recomputed from ledger bytes (brief string dropped per OD-60-1); complement-bridge split restatement-grade under OD-60-2 (canon asymmetry recorded; representative probe hit 14); office lemma proves all office-level axes non-separating (cycle, governor-element, ENTRY 13 — last two correlation-only under the ENTRY 13 fence, OD-60-3); D7 fenced (OD-60-D7); governs semantic layer gains GSL-1; scoping memo §4 accretion item carried; memo `plan/bl-060-14v14-hunt-memo.md`; ledger-pins inventory unchanged (13, zero added); no claim event, no record amendment, no governs admission, no higher-theorem answer, no G1 movement; suite 299 green. |
 | v1.30 | BL-060 post-landing disposition: BL-061 captured (the 1765/1261 Z-family residual pair — twelfth grounding catch, maintainer-prose class: the proposed capture described this pair with the 2395/2899 zero-seam profile; corrected against landed `table28` bytes before memorialization; the three exception pairs and their boundary roles registered) + BL-062 captured (Z/non-Z boundary-selection asymmetry: structural or threshold-artifact?); memo addendum §13 (post-landing register: exception pairs, mechanism-level representation stability, Z/non-Z follow-on); no claim event, no record amendment, no admission, no G1 movement. |
+| v1.31 | BL-061/BL-062 combined sprint executed (read-only): artifact `orrery/src/generated/d4-zresidual-hunt.v1.json` (fingerprint `e1b3f655…`) importing BL-060 by fingerprint (`8a1295ca…`) + generator + mutation-verified validator (4 probes) + 9 pins wired into `orrery:check`/`orrery:build`; memo `plan/bl-061-062-zresidual-memo.md`. Findings: **Z-verdict STRUCTURAL** — the Z-structure participates via interface polarization (`nonZSum < zSum`, gap 4; GSL-1's `nonZSum <= 13` is its w = 0 projection) and composition content (observed carry Z-class + achiral subnodes, unobserved none; mechanisms b/c SUPPORTED; a PARTIAL); **residual verdict EXPLAINED_NOT_PRIMITIVE** — 1765/1261 = Z12-only interface extreme (7/2/2) with chiral-Z-only composition (5-Z18/5-Z36), margin 3 inside the sign rule; refinement scan: 6 clean hits + 1 degenerate dual hit, 5 near-misses, 2 orientation-polarized shapes rejected as inversion-splitting; new facts: tier↔family bijection (D1=7-22 … D7=7-1), mesh subnodes = pc-0-anchored 5-subsets (462/462), 14 inversion pairs all status-shared (whole-pair selection; office sums 6 mod 7), cornerstones confined to D5/7-Z12; GSL-1R + GSL-2 recorded; both tickets closed by the joint artifact; suite 308 green; ledger-pins unchanged (13, zero added); no claim event, no record amendment, no governs admission, no higher-theorem answer, no G1 movement, no D7 computation. |
