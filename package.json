@@ -37,6 +37,7 @@
     "orrery:d4-r2-execution-receipt:check": "node scripts/build-d4-r2-execution-receipt.mjs --check && node orrery/scripts/validate-d4-r2-execution-receipt.mjs",
     "orrery:d4-14v14-hunt:check": "node scripts/build-d4-14v14-hunt.mjs --check && node orrery/scripts/validate-d4-14v14-hunt.mjs",
     "orrery:d4-zresidual-hunt:check": "node scripts/build-d4-zresidual-hunt.mjs --check && node orrery/scripts/validate-d4-zresidual-hunt.mjs",
+    "orrery:bl063-office-reconstruction:check": "node scripts/build-bl063-office-reconstruction.mjs --check && node orrery/scripts/validate-bl063-office-reconstruction.mjs",
     "orrery:browser:test": "npm run browser:test --prefix orrery",
     "validate:graph": "node graph/scripts/verify-standalone.mjs",
     "validate:release": "node scripts/validate-release.mjs",

@@ -833,6 +833,91 @@ structural facts: tier↔family bijection (D1=7-22 … D7=7-1); mesh subnodes = 
 5-subsets (462/462); 14 inversion pairs all status-shared (selection selects whole pairs;
 pairs link offices summing to 6 mod 7). GSL-1R + GSL-2 recorded.
 
+### BL-063 [FINDINGS RECORDED] — Intrinsic office reconstruction via midZ7 (un-granting Phase 1)
+
+Phase 1 of the BL-059 un-granting roadmap (requirement 2 — office recovery from
+non-office data): derive the anchor office coordinates from pitch masks rather than
+reading granted ledger fields. Pre-registered before execution: the claim-free BFS
+scaffold (O-0), the brightness premise (O-A, interpretation-tagged), the D-tier
+containment asymmetry probe (O-B, existence-only), the Hamming-2-restricted sandwich
+identification for π(h) with the twin-closure boundary branch, and the M1/M2/M3
+midpoint protocol.
+
+**Reconstructed 2026-10-11 (read-only):** generator
+`scripts/build-bl063-office-reconstruction.mjs` + artifact
+`orrery/src/generated/bl063-office-reconstruction.v1.json` (fingerprint
+`6d33c67b…`, raw-byte SHA-256 `57932f37…`) + independent validator (static
+grant-isolation check + five mutation probes rejected: flipped endpoint, scrambled
+constructor pair, inverted orientation, smuggled officeIndex read, corrupted midpoint
+constant) + 9 vitest pins wired into `orrery:check`/`orrery:build`; memo
+`plan/bl-063-office-reconstruction-memo.md`; chain anchor BL-060 by self-checked
+fingerprint `8a1295ca…`.
+
+Findings: **the seven A0 masks carry the Hamming-2 line graph P7** (endpoints
+1387/2773; pcSum ladder 33→39, Locrian→Lydian; degrees 1,2,2,2,2,2,1). **κ₁
+reproduces all 7 canonical offices; κ₀ only the reflection-fixed center** (outcome
+M1; κ₀ 1/7). The constructor identification splits into **two construction
+mechanisms**: 5 interior anchors via the unique Hamming-2-adjacent sandwich pair,
+2 boundary anchors via **twin-closure** (sole Hamming-2 neighbor + unique T±1
+rotation partner, sandwich not holding); every π constructor set equals the granted
+E-pair (validation comparison only). **The frozen midpoint form is
+reflection-equivariant** (verified 49/49: `midZ7(6−a,6−b) = (6 − midZ7(a,b)) % 7`):
+the midpoint law is reflection-blind — g₀ and g₁ are complementary (sum 6 on every
+anchor, each orientation satisfying the law in its own frame); the canonical
+comparison resolves the orientation. Self-catches recorded: the **unrestricted
+sandwich is non-unique** (5/8/7/5/7 pairs; the boundary satisfying pair is the line
+terminals 1387/2773, not the constructor) — the Hamming-2 restriction is the
+identifying condition; and the degree expectation was corrected to sorted form
+before landing.
+
+**Verdict: `CONSTRAINED_TO_REFLECTION`** — office structure intrinsically recoverable
+from mask geometry up to the Lydian/Locrian reversal; the reversal requires exactly
+one bit, supplied by the interpretive brightness premise (corroborated by the unique
+canonical match; coincides with κ₁) or by one grant comparison (M1: κ₁ 7/7, κ₀ 1/7) —
+both routes agree. H_B (D-tier containment) returned the containment-twin null
+(identical terminal profiles; no structural asymmetry available). Precisely: without
+the bit each office is determined as {k, 6−k}; one bit determines all seven. Fences:
+no claim event, no record amendment, no GOVERNS derivation claim, no governs
+admission, no higher-theorem answer, no G1 movement, no D7 computation, no
+canonical/Court/schema/Neo4j writes; requirement 2 only, up to the named bit. Suite
+317 green; ledger-pins unchanged (13, zero added); manifest regen. Follow-ons
+captured as BL-064 and BL-065.
+
+### BL-064 [CAPTURED] — Phase 2: cycle-ground derivation via κ
+
+Derive the A0→A1 CONSTRUCTS pairs from κ (the recovered office coordinates) rather
+than reading granted E-edges. Inputs: κ (7/7 up to reflection), the sandwich
+construction (internal), twin-closure (boundary). Pre-register: the derivation's
+output must set-equal the granted E-pairs (14 edges). Dependency: consumes BL-063's
+κ; the reflection bit is inherited (Phase 2's derivation is reflection-relative
+unless the bit resolves).
+
+### BL-065 [CAPTURED] — The brightness-premise bit (the shared remaining dependency)
+
+Two independent derivations (the semantic layer's brightness ordinal, §2.7; the
+office reconstruction's endpoint orientation, BL-063) converge on one unresolved
+assumption: the bright-end identification (Lydian = office 0). One bit, shared,
+named. Resolution paths: (a) a mechanical office-independent discriminator (search —
+none found in BL-063's grounding); (b) one grant comparison (accept one bit of
+granted input as the resolution — the honest minimal grant); (c) future discovery.
+Queued; feeds both the semantic layer and the un-granting chain.
+
+**Grounding correction (maintainer-prose class, applied before capture).** The
+capture text attributed the one-bit registration to §2.7's amendment; grounding
+check — §2.7 (both entries) carries no brightness premise. The grounded convergence
+is with the comprehension map's §3 `[OPEN CANON QUESTION]` Sun/Moon pole assignment
+(office assignment `Lydian is the Sun office`, `framework/AGENTS.md:103` — the very
+premise BL-063's bit consumes — versus the pitch-governance reading,
+`framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md:83-84`); §3 requires
+resolution from framework docs and names the governs semantic layer among the
+expected resolvers — the layer BL-063/BL-065 sit in. The nearest registered
+brightness-ordinal material is §2.3's Court-compression ordinal 22→26
+(`schemas/elemental_pentatonic_scale_map_v1.0.0.yaml:95-218`, field semantics
+`[OPEN]`): a pentatonic/Court ordinal, adjacent to but distinct from BL-063's
+heptatonic pcSum ladder 33→39. The shared-dependency framing is recorded as
+corrected: **one unresolved identification, two framework registrations** (geometry
+endpoint; open Sun/Moon canon question).
+
 ---
 
 ## Sequencing
@@ -877,3 +962,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.30 | BL-060 post-landing disposition: BL-061 captured (the 1765/1261 Z-family residual pair — twelfth grounding catch, maintainer-prose class: the proposed capture described this pair with the 2395/2899 zero-seam profile; corrected against landed `table28` bytes before memorialization; the three exception pairs and their boundary roles registered) + BL-062 captured (Z/non-Z boundary-selection asymmetry: structural or threshold-artifact?); memo addendum §13 (post-landing register: exception pairs, mechanism-level representation stability, Z/non-Z follow-on); no claim event, no record amendment, no admission, no G1 movement. |
 | v1.31 | BL-061/BL-062 combined sprint executed (read-only): artifact `orrery/src/generated/d4-zresidual-hunt.v1.json` (fingerprint `e1b3f655…`) importing BL-060 by fingerprint (`8a1295ca…`) + generator + mutation-verified validator (4 probes) + 9 pins wired into `orrery:check`/`orrery:build`; memo `plan/bl-061-062-zresidual-memo.md`. Findings: **Z-verdict STRUCTURAL** — the Z-structure participates via interface polarization (`nonZSum < zSum`, gap 4; GSL-1's `nonZSum <= 13` is its w = 0 projection) and composition content (observed carry Z-class + achiral subnodes, unobserved none; mechanisms b/c SUPPORTED; a PARTIAL); **residual verdict EXPLAINED_NOT_PRIMITIVE** — 1765/1261 = Z12-only interface extreme (7/2/2) with chiral-Z-only composition (5-Z18/5-Z36), margin 3 inside the sign rule; refinement scan: 6 clean hits + 1 degenerate dual hit, 5 near-misses, 2 orientation-polarized shapes rejected as inversion-splitting; new facts: tier↔family bijection (D1=7-22 … D7=7-1), mesh subnodes = pc-0-anchored 5-subsets (462/462), 14 inversion pairs all status-shared (whole-pair selection; office sums 6 mod 7), cornerstones confined to D5/7-Z12; GSL-1R + GSL-2 recorded; both tickets closed by the joint artifact; suite 308 green; ledger-pins unchanged (13, zero added); no claim event, no record amendment, no governs admission, no higher-theorem answer, no G1 movement, no D7 computation. |
 | v1.32 | BL-060/061/062 post-landing registrations: comprehension map §5 (measured-findings class — GSL-1/1R/2, structural invariants, named Z12-corner residual; consumption row added; admitted §1/§2 tiers untouched) + scoping memo §4.6 accretion (boundary-geography selection layer as evidence-for, per its own mutation discipline; tally updated to five-for/six-against) + architecture map Layer 1 tier↔family bijection note; no claim event, no record amendment, no governs admission, no higher-theorem answer, no G1 movement; manifest regen. |
+| v1.33 | BL-063 landed (sprint, read-only): intrinsic office reconstruction via midZ7 — un-granting roadmap Phase 1 (BL-059 §3 requirement 2) — generator `scripts/build-bl063-office-reconstruction.mjs` + artifact `orrery/src/generated/bl063-office-reconstruction.v1.json` (fingerprint `6d33c67b…`, raw-byte `57932f37…`) + independent validator (static grant-isolation check + 5 mutation probes rejected) + 9 vitest pins wired into `orrery:check`/`orrery:build`; BL-060 chain anchor by self-checked fingerprint `8a1295ca…`; memo `plan/bl-063-office-reconstruction-memo.md`. Findings: **P7 Hamming-line confirmed** (endpoints 1387/2773; pcSum 33→39); **κ₁ = canonical 7/7 vs κ₀ 1/7 (M1)**; two construction mechanisms (5 interior sandwich + 2 boundary twin-closure; π = granted E-pairs); **reflection-equivariance 49/49** (`midZ7(6−a,6−b) = (6 − midZ7(a,b)) % 7`; midpoint law reflection-blind, g₀+g₁=6); H_B containment-twin null. Self-catches: unrestricted sandwich non-unique (Hamming-2 restriction load-bearing), sorted-degree expectation. **Verdict CONSTRAINED_TO_REFLECTION** (one bit: brightness premise or one grant comparison, agreeing). Follow-ons: **BL-064 captured** (Phase 2 cycle-ground derivation via κ; E-pair set-equality pre-registered) + **BL-065 captured** (the shared one-bit dependency — grounding correction, maintainer-prose class: the convergence is with map §3's open Sun/Moon pole question and the framework's canonical office assignment, not a §2.7 registration; nearest registered brightness material = §2.3's Court ordinal 22→26, field semantics `[OPEN]`). Suite 317 green; ledger-pins unchanged (13, zero added); no claim event, no record amendment, no GOVERNS derivation claim, no governs admission, no higher-theorem answer, no G1 movement, no D7 computation; manifest regen. |
