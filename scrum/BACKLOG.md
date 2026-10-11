@@ -737,6 +737,46 @@ hypothesis-tier unchanged); no G1 movement; no governs admission; no INV-5 gradu
 M-walkability promotion; no canonical/Court/schema/Neo4j writes; frame is interpretation
 vocabulary only; session prose is context, not evidence.
 
+### BL-060 — D4 14-vs-14 structural hunt [FINDINGS RECORDED]
+
+The governs semantic layer's first data-driven investigation: *why* the D4 anchors'
+observed contact selection follows the 7-27/7-31 satellite set-class split (BL-055's clean
+predicate), beyond the seven failed/constant BL-055 axes. Seven new characterization axes,
+each tested for the 14/14 split and adjudicated under the OD-60-2 restatement guard; D7
+fenced out entirely (OD-60-D7; ENTRY 15 D7 clause). Sandbox-only; feeds the higher-theorem
+question's evidence base (BL-059 §4); no attempt at the higher theorem itself.
+
+**Hunted 2026-10-10:** generator `scripts/build-d4-14v14-hunt.mjs` + artifact
+`orrery/src/generated/d4-14v14-hunt.v1.json` (fingerprint `8a1295ca…`, raw-byte SHA-256
+`3e31a653…`) + independent validator (mutation-verified; four probes rejected) + 9 vitest
+pins wired into `orrery:check`/`orrery:build`; memo `plan/bl-060-14v14-hunt-memo.md`.
+BL-055 imported by fingerprint (`6d11fd93…`) per OD-60-4; base artifact untouched.
+Findings: **the non-Z D-tier containment composite splits cleanly 14/14** —
+`nonZSum <= 13` (shared pentatonic subnodes with the four non-Z D-tier anchor families
+7-1/7-8/7-15/7-22) selects all 14 observed, `>= 14` all 14 unobserved; boundary gap exactly
+1 (13/14); within-class rooted-state variance (8..13 vs 14..19) proves it is not the class
+label restated; inversion-stable 28/28 — the hunt's **independent structural basis**.
+Per-family breakdown: four one-sided near-misses (7-Z17/7-Z37 `>= 5` selects 12/14 observed
+with 0 false positives; 7-8/7-22 reverse `<= 3`/`<= 5` select 14/14 with the same two false
+positives 731/2921); no single family splits cleanly. IV-delta recomputed from ledger bytes
+(signed `[0,1,-2,1,2,-2]`; absolute `[0,1,2,1,2,2]`; IC1 equal) — the brief's hand-derived
+`<010120>` dropped per OD-60-1 (build-phase self-catch: IC4 differs +1; thresholds scan to
+the values present). Complement-bridge link splits cleanly but is **restatement-grade**
+(canonical complement bijection; OD-60-2) — the canon-level asymmetry is recorded (5-27
+admitted bridge with rooted record vs 5-31 proposed, none; representative-mask probe hit
+14). Symmetry does not separate (both classes chiral, inversionally asymmetric, zPartner
+null). **The split is office-transverse** — every office contributes exactly 2 observed + 2
+unobserved, so every office-level axis (cycle position, governor-element, ENTRY 13
+degree-fates — the last two correlation-only under the ENTRY 13 scope fence, OD-60-3) is
+provably non-separating (office lemma, hit = 14 identically). **Synthesis verdict:
+DERIVED** — the contact selection is boundary-geography-selective; primitive branch did not
+fire; governs semantic layer gains entry GSL-1; scoping memo §4 accretion item carried in
+the memo (memo not edited; accretes by its own discipline). Grounding: 15 claims verified
+(two subagent passes); Gate-2 mutation-probe scope corrected (design-level, not
+Gate-2-native); ledger-pins inventory unchanged at the BL-058 13 (zero added). Fences: no
+claim event, no record amendment, no governs admission, no higher-theorem answer, no G1
+movement, no D7 computation, no canonical/Court/schema/Neo4j writes. Suite 299 green.
+
 ---
 
 ## Sequencing
@@ -777,3 +817,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.26 | BL-056 validated (sprint): D4 R2 filtered-cycle-walk design validation executed — generator + artifact `orrery/src/generated/d4-r2-route-review.v1.json` (fingerprint `e25851f9…`) + independent validator (mutation-verified) + 10 vitest pins wired into `orrery:check`/`orrery:build`; **G1 cycle-twin `rotateMaskZ12^d(a) = b` verified 7/7** (2×T1 + 5×T2; +2 mask rotation confirmed as the T2 generalization; per-office justification tier uniformly `cycle-twin-verified`, no fallbacks); **G2** 2 selected per office × 7; **G3 `G_R2 = O` exactly** (14 keys, missing/extra empty); **G4 non-collapse** 14 ≠ 28 = U (identity broken by satellite-reading selection, not edge substitution; T-B remains satellite-blind); **G5** midpoint census 7 realized / 2 observation-exact / 5 seam-derived predictions with confirmation markers; midpoint = constructed-office invariant; seam cross-check 7 = 7 and 2 = 2; constraint table 4/4; no amendment, no route admission, no governs admission, no wall movement, no direction assignment; memo `plan/bl-056-d4-r2-route-memo.md`; suite 264 green; BL-056 status → findings-recorded. |
 | v1.27 | BL-057 four-gate corridor completed: D4 record amended additively — ENTRY 15 `record_amended (derivable-via-R2)` appended; ENTRY 10 stands immutable (region hashes labeled under both recipes); Gate 3 receipt certified (`execution_verified`, `DERIVED@X`, calibration EXACT, R2 = O at four licensed contexts, construction join = U contrast, D7 asymmetric analogue hypothesis-tier) in receipt `qa/specs/bl-057-d4-record-amendment.json`; Gate 3 ledger fence evolved to execution-time prefix preservation (Gate 3 receipt bytes/fingerprints unchanged); pre-existing `validate:ledger-pins` inventory recorded as accepted release state (BL-058 captured for repair); governs program left live (BL-056 remainder, 14-vs-14 predicate semantic registration, fa/ti asymmetry, rows 8/10 holes, directional-semantics gate); manifest regen; no governs admission, no wall dissolution, no G1 movement, no direction assignment, no green claim. |
 | v1.28 | BL-059 landed: D4 Derivation Statement (`plan/bl-059-d4-derivation-statement.md` — bounded contact-geometry theorem restated from the corridor's receipts; citation-stable) + Higher-Theorem Scoping memo (`plan/bl-059-governs-derivability-scoping-memo.md` — first formal statement of the GOVERNS derivability question: grant status in the framework's own design, evidence for/against, candidate approaches with falsification shapes; no answer claimed); two companion memos, one commit; manifest regen; no claim event, no record amendment, no admission, no G1 movement. |
+| v1.29 | BL-060 hunted (sprint, read-only): D4 14-vs-14 structural hunt executed — generator + artifact `orrery/src/generated/d4-14v14-hunt.v1.json` (fingerprint `8a1295ca…`) + independent validator (mutation-verified, 4 probes) + 9 vitest pins wired into `orrery:check`/`orrery:build`; BL-055 imported by fingerprint (`6d11fd93…`, OD-60-4); **synthesis verdict DERIVED** — the non-Z D-tier containment composite (`nonZSum <= 13` vs the four non-Z D-tier anchor families 7-1/7-8/7-15/7-22) splits cleanly 14/14 with boundary gap 1 (13/14), within-class variance and inversion stability proving independence from the class label; IV-delta recomputed from ledger bytes (brief string dropped per OD-60-1); complement-bridge split restatement-grade under OD-60-2 (canon asymmetry recorded; representative probe hit 14); office lemma proves all office-level axes non-separating (cycle, governor-element, ENTRY 13 — last two correlation-only under the ENTRY 13 fence, OD-60-3); D7 fenced (OD-60-D7); governs semantic layer gains GSL-1; scoping memo §4 accretion item carried; memo `plan/bl-060-14v14-hunt-memo.md`; ledger-pins inventory unchanged (13, zero added); no claim event, no record amendment, no governs admission, no higher-theorem answer, no G1 movement; suite 299 green. |

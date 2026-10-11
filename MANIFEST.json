@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1237,
-  "totalBytes": 82340325,
+  "fileCount": 1242,
+  "totalBytes": 82495590,
   "files": [
     {
       "path": ".env.example",
@@ -1067,8 +1067,8 @@
     },
     {
       "path": "orrery/package.json",
-      "bytes": 4047,
-      "sha256": "d8680a6f7ac4704534459817c326c03022262dac38a176e779d3c032ef0cbff5"
+      "bytes": 4230,
+      "sha256": "e101f4f9ac143097d6f25b72eddf84fb845bb3eae5b6ed9a8717e60a3d2df1fc"
     },
     {
       "path": "orrery/public/AUDIO_ASSETS.md",
@@ -1099,6 +1099,11 @@
       "path": "orrery/scripts/validate-d-tier-operator-probe.mjs",
       "bytes": 19182,
       "sha256": "c7b1181ad3a80b6b75e1fbe1898ba1f276dc3252850e06dad91762f7258ad99a"
+    },
+    {
+      "path": "orrery/scripts/validate-d4-14v14-hunt.mjs",
+      "bytes": 30548,
+      "sha256": "85d5b08ae8dffdfa5cf501659c2aa4e9a8eb5cea32de89b19fcd0e1d8b5c0312"
     },
     {
       "path": "orrery/scripts/validate-d4-r2-contract.mjs",
@@ -1216,6 +1221,11 @@
       "sha256": "dd00c1786e23efa01148e6d8c819a9b7c25d0b42e0c403a4357c10adec3c86f0"
     },
     {
+      "path": "orrery/src/d4-14v14-hunt.test.ts",
+      "bytes": 8531,
+      "sha256": "b2ccbe58ed78bd191336716b34ab4986748ef177549c069219f1d706a83aa931"
+    },
+    {
       "path": "orrery/src/d4-r2-contract.test.ts",
       "bytes": 10242,
       "sha256": "8171f8f0f98c68b57618ecfc0a7496f7115eb9f3811122a0c933f051ae50d3be"
@@ -1264,6 +1274,11 @@
       "path": "orrery/src/generated/d-tier-taxonomy-dataset.v1.json",
       "bytes": 66006,
       "sha256": "4b90723d00f9e85fa804286d5cf60a5f5faa10e6b31b27f600f893f3a8c1c2d2"
+    },
+    {
+      "path": "orrery/src/generated/d4-14v14-hunt.v1.json",
+      "bytes": 46811,
+      "sha256": "3e31a6535ce9e5f913db27b252c66aff0504d38f57a9fe8769cbae8612588b8b"
     },
     {
       "path": "orrery/src/generated/d4-r2-contract.v1.json",
@@ -1547,8 +1562,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 14428,
-      "sha256": "a29160b979218b6892ee99a42c89ba10cf2a5978f840095503f21036dcd5329c"
+      "bytes": 14560,
+      "sha256": "ff99cf65d1c6e5d6033334f80a4a1738869599cca53808de1b579c8d9fd510d0"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
@@ -2636,6 +2651,11 @@
       "sha256": "555a29ede31162856894c94b463190b64f0a798a187a4e58239ac4d3758bcd88"
     },
     {
+      "path": "scripts/build-d4-14v14-hunt.mjs",
+      "bytes": 47184,
+      "sha256": "dff079d724ba5343257e8ff8f6159877dfa8a377464eccc9ce34d11942983abd"
+    },
+    {
       "path": "scripts/build-d4-r2-contract.mjs",
       "bytes": 28694,
       "sha256": "35f98f05b66e7a2899ad160d359c56c4a9e9e26c65e3f251ef552263f5cea60a"
@@ -3112,8 +3132,8 @@
     },
     {
       "path": "scrum/BACKLOG.md",
-      "bytes": 64304,
-      "sha256": "4834ff2dc18e70e725cfb7d034b0271044050ca3e46715fe6515db4e53423705"
+      "bytes": 68839,
+      "sha256": "79bfc0126102daeed0449ad180fe73ed67d29a0d131c7b9dad3b16e83f87d128"
     },
     {
       "path": "scrum/CRT-301-court-admission-contract.md",
@@ -3634,6 +3654,11 @@
       "path": "scrum/plan/bl-059-governs-derivability-scoping-memo.md",
       "bytes": 17959,
       "sha256": "dbdc7cd4085b6e79222e2306ce33931d552694362caf66c5a9cc02bd79495086"
+    },
+    {
+      "path": "scrum/plan/bl-060-14v14-hunt-memo.md",
+      "bytes": 17341,
+      "sha256": "0566c66c80eca57fc7134e8624b3f952251cc5e2d2f95467f2ffe9fc8fb270ea"
     },
     {
       "path": "scrum/plan/continuous-typology-obs-draft.md",
