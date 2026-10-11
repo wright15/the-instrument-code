@@ -918,6 +918,42 @@ heptatonic pcSum ladder 33→39. The shared-dependency framing is recorded as
 corrected: **one unresolved identification, two framework registrations** (geometry
 endpoint; open Sun/Moon canon question).
 
+### BL-066 [LANDED] — Phase 3: the 28 R-edge derivation (the capstone)
+
+Derive the 28-edge A1 GOVERNS relation (7 parents × 4 satellites) from the
+pre-grant machinery — masks, the canonical ledger's role/tier domain, Phase 1's
+coordinates and Phase 2's ground — with the granted R edges appearing only in the
+comparison gate. Generator `scripts/build-bl066-r-edge-derivation.mjs` + artifact
+`orrery/src/generated/bl066-r-edge-derivation.v1.json` (fingerprint `94f0661f…`,
+raw-byte `ac2db3d9…`) + independent validator (two-sided static input-isolation
+check + 25 mutation probes rejected, including a lobotomized region) + 13 vitest
+pins wired into `orrery:check`/`orrery:build` after `bl064-cycle-ground:check`;
+chain anchor BL-064 by self-checked fingerprint `aa975820…`; memo
+`plan/bl-066-r-edge-derivation-memo.md`. Findings: **reach R-H2 24/28 masks-only,
+zero extras, unique hubs**; the 4 unplaced `{695, 3497, 731, 2921}` resolved by the
+**H8 reach-census closure law** (each attaches to its H8-parent with the smaller
+H2-reach count; equivalently the unique H8 matching that equalizes the reach
+census — 16 matchings enumerated, exactly one, the granted assignment); the
+pre-registered **swap-bit candidate dissolved** (the planning-pass
+distance-invisibility record tested proximity axes, not census ordering); the
+battery corroborates (pcSum + mask-numeric agree; κ orientation-relative;
+containment the inapplicable control); **count-4 emerges** from the completion
+(OD-P3-5 strongest form); GSL-1R reproduced per parent (2×7-27 Z-majority +
+2×7-31, 28/28 sign agreement); direction dual-report (structural + unique-hub
+24/24 + IC-distinguishability 28/28 candidate, A1-anchor IC `[2,5,4,4,4,2]` —
+grounding correction applied: the ruling's parenthetical `[2,5,4,3,6,1]` is
+BL-064's A0-anchor IC); gates V-P3-1…5 all PASS (set-equal 28/28, `missing: []`,
+`extra: []`; reflection-invariant with labels `c → 6−c` carried to BL-065);
+**verdict `R_EDGES_DERIVED`** — the GOVERNS relation's edge content is intrinsic
+to the satellite layer's reach geometry; the bit inventory stands at **one carried
+bit** (office-orientation, BL-065, two agreeing sources), the swap dissolved; the
+higher-theorem question (BL-059) gains its first direct, bounded, affirmative
+finding. Suite 340 green (34 files); ledger-pins unchanged (13, zero added); no
+claim event, no record amendment, no GOVERNS admission (finding, not admission),
+no orientation-bit resolution, no IC-tier promotion, no G1 movement, no D7
+computation, no Phase-4 work; manifest regen. Follow-on: BL-064's backlog
+registration remains a separate step; BL-065 unchanged.
+
 ---
 
 ## Sequencing
@@ -963,3 +999,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.31 | BL-061/BL-062 combined sprint executed (read-only): artifact `orrery/src/generated/d4-zresidual-hunt.v1.json` (fingerprint `e1b3f655…`) importing BL-060 by fingerprint (`8a1295ca…`) + generator + mutation-verified validator (4 probes) + 9 pins wired into `orrery:check`/`orrery:build`; memo `plan/bl-061-062-zresidual-memo.md`. Findings: **Z-verdict STRUCTURAL** — the Z-structure participates via interface polarization (`nonZSum < zSum`, gap 4; GSL-1's `nonZSum <= 13` is its w = 0 projection) and composition content (observed carry Z-class + achiral subnodes, unobserved none; mechanisms b/c SUPPORTED; a PARTIAL); **residual verdict EXPLAINED_NOT_PRIMITIVE** — 1765/1261 = Z12-only interface extreme (7/2/2) with chiral-Z-only composition (5-Z18/5-Z36), margin 3 inside the sign rule; refinement scan: 6 clean hits + 1 degenerate dual hit, 5 near-misses, 2 orientation-polarized shapes rejected as inversion-splitting; new facts: tier↔family bijection (D1=7-22 … D7=7-1), mesh subnodes = pc-0-anchored 5-subsets (462/462), 14 inversion pairs all status-shared (whole-pair selection; office sums 6 mod 7), cornerstones confined to D5/7-Z12; GSL-1R + GSL-2 recorded; both tickets closed by the joint artifact; suite 308 green; ledger-pins unchanged (13, zero added); no claim event, no record amendment, no governs admission, no higher-theorem answer, no G1 movement, no D7 computation. |
 | v1.32 | BL-060/061/062 post-landing registrations: comprehension map §5 (measured-findings class — GSL-1/1R/2, structural invariants, named Z12-corner residual; consumption row added; admitted §1/§2 tiers untouched) + scoping memo §4.6 accretion (boundary-geography selection layer as evidence-for, per its own mutation discipline; tally updated to five-for/six-against) + architecture map Layer 1 tier↔family bijection note; no claim event, no record amendment, no governs admission, no higher-theorem answer, no G1 movement; manifest regen. |
 | v1.33 | BL-063 landed (sprint, read-only): intrinsic office reconstruction via midZ7 — un-granting roadmap Phase 1 (BL-059 §3 requirement 2) — generator `scripts/build-bl063-office-reconstruction.mjs` + artifact `orrery/src/generated/bl063-office-reconstruction.v1.json` (fingerprint `6d33c67b…`, raw-byte `57932f37…`) + independent validator (static grant-isolation check + 5 mutation probes rejected) + 9 vitest pins wired into `orrery:check`/`orrery:build`; BL-060 chain anchor by self-checked fingerprint `8a1295ca…`; memo `plan/bl-063-office-reconstruction-memo.md`. Findings: **P7 Hamming-line confirmed** (endpoints 1387/2773; pcSum 33→39); **κ₁ = canonical 7/7 vs κ₀ 1/7 (M1)**; two construction mechanisms (5 interior sandwich + 2 boundary twin-closure; π = granted E-pairs); **reflection-equivariance 49/49** (`midZ7(6−a,6−b) = (6 − midZ7(a,b)) % 7`; midpoint law reflection-blind, g₀+g₁=6); H_B containment-twin null. Self-catches: unrestricted sandwich non-unique (Hamming-2 restriction load-bearing), sorted-degree expectation. **Verdict CONSTRAINED_TO_REFLECTION** (one bit: brightness premise or one grant comparison, agreeing). Follow-ons: **BL-064 captured** (Phase 2 cycle-ground derivation via κ; E-pair set-equality pre-registered) + **BL-065 captured** (the shared one-bit dependency — grounding correction, maintainer-prose class: the convergence is with map §3's open Sun/Moon pole question and the framework's canonical office assignment, not a §2.7 registration; nearest registered brightness material = §2.3's Court ordinal 22→26, field semantics `[OPEN]`). Suite 317 green; ledger-pins unchanged (13, zero added); no claim event, no record amendment, no GOVERNS derivation claim, no governs admission, no higher-theorem answer, no G1 movement, no D7 computation; manifest regen. |
+| v1.34 | BL-066 landed (sprint, read-only): the 28 R-edge derivation — un-granting roadmap Phase 3, the capstone (BL-059 §3 requirements 1 and 3) — generator `scripts/build-bl066-r-edge-derivation.mjs` + artifact `orrery/src/generated/bl066-r-edge-derivation.v1.json` (fingerprint `94f0661f…`, raw-byte `ac2db3d9…`) + independent validator (two-sided static input-isolation check — forbidden-token absence AND required canonical-input presence — + 25 mutation probes rejected incl. smuggled R/officeIndex/forte reads and a lobotomized region) + 13 vitest pins wired into `orrery:check`/`orrery:build` after `bl064-cycle-ground:check`; BL-064 chain anchor by self-checked fingerprint `aa975820…`; memo `plan/bl-066-r-edge-derivation-memo.md`. Findings: **R-H2 reach 24/28 masks-only, zero extras, unique hubs**; the 4 unplaced `{695, 3497, 731, 2921}` resolved by the **H8 reach-census closure law** (each attaches to its H8-parent with the smaller H2-reach count; equivalently the unique H8 matching that equalizes the reach census — 16 enumerated, exactly one, the granted assignment); **the pre-registered swap-bit candidate dissolved** (the planning-pass distance-invisibility record tested proximity axes, not census ordering; the battery corroborates: pcSum + mask-numeric agree, κ orientation-relative, containment inapplicable); **count-4 emergent** (OD-P3-5 strongest form); GSL-1R reproduced per parent (2×7-27 Z-majority + 2×7-31, 28/28); direction dual-report (unique-hub 24/24 + IC-distinguishability 28/28 candidate, A1-anchor IC `[2,5,4,4,4,2]` — grounding correction: the ruling's parenthetical is BL-064's A0-anchor IC); gates V-P3-1…5 all PASS (set-equal 28/28, `missing: []`, `extra: []`; reflection-invariant, labels `c → 6−c` carried to BL-065); **verdict `R_EDGES_DERIVED`** — the GOVERNS relation's edge content is intrinsic to the satellite layer's reach geometry; bit inventory: **one carried bit** (office-orientation, BL-065, two agreeing sources), the swap dissolved; the higher-theorem question (BL-059) gains its first direct, bounded, affirmative finding. Suite 340 green (34 files); ledger-pins unchanged (13, zero added); no claim event, no record amendment, no GOVERNS admission (finding, not admission), no orientation-bit resolution, no IC-tier promotion, no G1 movement, no D7 computation, no Phase-4 work; manifest regen. |

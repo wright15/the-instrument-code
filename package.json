@@ -39,6 +39,7 @@
     "orrery:d4-zresidual-hunt:check": "node scripts/build-d4-zresidual-hunt.mjs --check && node orrery/scripts/validate-d4-zresidual-hunt.mjs",
     "orrery:bl063-office-reconstruction:check": "node scripts/build-bl063-office-reconstruction.mjs --check && node orrery/scripts/validate-bl063-office-reconstruction.mjs",
     "orrery:bl064-cycle-ground:check": "node scripts/build-bl064-cycle-ground.mjs --check && node orrery/scripts/validate-bl064-cycle-ground.mjs",
+    "orrery:bl066-r-edge-derivation:check": "node scripts/build-bl066-r-edge-derivation.mjs --check && node orrery/scripts/validate-bl066-r-edge-derivation.mjs",
     "orrery:browser:test": "npm run browser:test --prefix orrery",
     "validate:graph": "node graph/scripts/verify-standalone.mjs",
     "validate:release": "node scripts/validate-release.mjs",
