@@ -256,6 +256,25 @@ derivable, the paired boundary case would be expected to display analogous route
 it displays none. (D7 has no grant; the analogue-R is constructed. This is a constraint
 observation, not a parity claim — parity claims are forbidden, OD-3.)
 
+*§5.1 accretion (BL-070, 2026-10-11 — the derivation attempt executed; OD-70-6).* The paired
+case now has its executed derivation attempt. The D7 domain (36 anchor-satellite instances,
+per-anchor 4/5/6/6/6/5/4) **does derive masks-only** (role/tier partition + Hamming-2 reach;
+the per-anchor asymmetry is emergent — the projection of a uniform all-ledger reach), while
+the nine pre-registered mask-geometric selectors all fail (cleanSplitCount 0; the best is the
+near-miss `|ΔpcSum| = 1`, 12/0/2/22, missing exactly the two terminal tritone contacts
+127:253 and 4033:2017); the sole clean separator remains the office condition — **the
+selection is office-field-dependent** (`PARTIAL_DERIVATION`); the min-|Δ| + census composite
+C-TB-1 (14/0/0/22, masks-only) is recorded **un-promoted** per OD-70-5 (separation ≠
+derivation; its mechanism question is captured as BL-072). The cycle-twin clause is refined
+from the receipt's own per-edge bytes (`cycleTwinVerification.perEdge` rotateInterval
+11×6 + 6×1): every modal edge is an exact rotation, so the obstruction is an
+**interval-transport failure** (the D4 twin relation does not transport to the orbit's own
+intervals {11, 6}), not an absence of rotational structure. Cited:
+`orrery/src/generated/bl070-d7-derivation.v1.json` (`orbitalRotation`, `branch`; fingerprint
+`9db10a08…`), `scrum/plan/bl-070-d7-derivation-memo.md` §7, §9. Bounded refinement and
+planning evidence: D7 hypothesis-tier unchanged (no claim event, no record amendment, no
+corridor movement); the contrast reading above remains.
+
 **5.2 The cycle ground is itself granted (BL-055 §5 W3; BL-056 §2, §8).** R2's derivation
 ground — the closed 7-edge A0 cycle — is read from the granted CONSTRUCTS parent pairs; each
 office's unordered E-parent pair is asserted set-equal to its cycle edge. The contact theorem

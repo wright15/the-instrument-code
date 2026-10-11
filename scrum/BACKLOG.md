@@ -1073,6 +1073,71 @@ writes; finding-row statuses untouched; session prose context, not evidence.
 
 ---
 
+### BL-070 [LANDED] — The D7 derivation attempt (office-purity route): PARTIAL_DERIVATION, the third obstruction refined (interval-transport, not rotational absence)
+
+The ti-pole's R2-analogue, aimed by GSL-3's mechanism and executed against the pre-registered
+battery (OD-70-1…OD-70-4). **Branch classification `PARTIAL_DERIVATION`** (V-D7-1 PASS /
+V-D7-2 FAIL / V-D7-3/4/5 PASS): the domain — 36 anchor-satellite instances, per-anchor
+4/5/6/6/6/5/4 — **derives masks-only** (role/tier partition + Hamming-2 reach; set-equal to
+BL-068's availability domain; the per-anchor asymmetry is **emergent** — the projection of a
+**uniform all-ledger reach of 30 per anchor**); the nine pre-registered mask-geometric
+selectors (C-M1…C-M9: containment, Hamming/rotation, pc-sum/mask-numeric, chiral-Z,
+displacement, IC-counts, orientation, inversion, reach census) **all fail** (cleanSplitCount
+0). Near-miss anatomy: `|ΔpcSum| = 1` selects the 12 single-semitone substitutions (12/0/2/22),
+missing exactly the **terminal tritone contacts** 127:253 and 4033:2017 (both Δ=6, both
+reach-singletons); the 22 non-contacts all sit at |Δ| ∈ {4,6}. The min-|Δ| + census composite
+**C-TB-1** selects 14/0/0/22 masks-only, recorded **UNPROMOTED** (OD-70-5: separation ≠
+derivation; mechanism question = BL-072). **The third obstruction refined:** the Gate 3
+cycle-twin bytes show every modal edge is an **exact rotation** — rotateMaskZ12^11 ×6 plus the
+4033→127 closure at 6 (root-normalization offset); the landed 0/7 counts only the D4
+verification intervals {1, 2} — the obstruction is an **interval-transport failure**, not a
+rotational absence. Invariants pole-universal (7 whole pairs, all office sums 6 mod 7, status
+shared; whole-pair selection mechanically verified); the office field is the selection's
+ground; three-tier accounting (domain masks-only; selection canonical-read/granted).
+
+**Landed 2026-10-11:** generator `scripts/build-bl070-d7-derivation.mjs` + artifact
+`orrery/src/generated/bl070-d7-derivation.v1.json` (fingerprint `9db10a08…`, raw-byte
+`169ce706…`) + independent validator (34 mutation probes rejected; two-sided static
+input-isolation check — office/class/network tokens absent from the intrinsic region, required
+masks-only tokens present) + 11 vitest pins wired into `orrery:check`/`orrery:build` after
+`bl068-d7-asymmetry:check`; chain anchor BL-068 by self-checked fingerprint `b0d65bd6…`; the
+Gate 3 receipt re-read interval-by-interval (per-edge rotateInterval 11/6 matched); memo
+`plan/bl-070-d7-derivation-memo.md` (battery tables, near-miss anatomy, tie-break disclosure,
+orbital-rotation refinement, branch classification, three-tier accounting). Fences: **D7
+hypothesis-tier throughout** (no D7 claim event, no D7 record amendment, no D7 derivation
+admission; ENTRY 15's D7 clause verbatim); no GOVERNS admission; no G1 movement; no INV-5
+graduation; no M-walkability promotion; no canonical/Court/schema/Neo4j writes; the frame is
+vocabulary, not input. `orrery:check` exit 0; suite 362 green (36 files); `validate:ledger-pins`
+unchanged (pre-existing 13-violation BL-058 inventory, zero added); manifest regen.
+
+---
+
+### BL-071 [CAPTURED] — The interval-6 structure: the tritone as the shared geometry
+
+Three independent findings triangulate on interval 6: the modal orbit's closure
+offset (4033→127, root-normalized), the two terminal far contacts (127:253,
+4033:2017), and the near-miss anatomy's misses (C-M3/C-M5, exactly those two).
+The tritone interval — the structure that defines the boundary poles (fa/ti,
+the tritone pair) — appears as the shared geometry of the modal orbit, the
+selection misses, and the near-miss shape. Characterize: is interval 6 the
+boundary layer's own geometric signature (the fa/ti tritone pair's imprint
+on the contact geography)? Feeds the governs semantic layer's asymmetry
+entry and the directional-semantics question.
+
+---
+
+### BL-072 [CAPTURED] — C-TB-1's mechanism question (the composite's why)
+
+The min-|Δ| + census composite selects 14/0/0/22 masks-only (UNPROMOTED per
+OD-70-5). The composite separates; its mechanism is unexplained. The interval-
+transport finding (BL-070: the modal orbit's rotations exist at interval 6)
+and the near-miss anatomy (the tritone terminals) suggest the composite's
+separation power lives in the interval-6 structure. Investigate: why does
+min-|Δ| + census separate? Feeds the C-TB-1 promotion decision and the
+governs semantic layer's mechanism inventory.
+
+---
+
 ## Sequencing
 
 BL-001/002 first (landed — everything else is now fast), BL-010 next (biggest timeline variable:
@@ -1122,3 +1187,5 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.37 | BL-067 landed (the governs semantic layer synthesis — the boundary layer's first coherent statement): memo `plan/bl-067-governs-semantic-synthesis.md` + comprehension-map §4 consumption row; structure by channel per maintainer ruling — §1 set-class identity (P(s) = 7-27, clean 14/14) **lens-free by design** as the membrane demonstration; §2 Z-interface polarization (GSL-1R; Jupiter/Saturn coda); §3 composition content (GSL-2; Mercury coda); §4 fa/ti polarity (asymmetry measured three ways; Venus/Moon coda; D7 hypothesis-tier fenced); §5 geography (bijection, threshold anatomy, exception pairs, invariants; filtering-regime pointer; BL-066/GOV-524 corroboration context only); §6 open questions inventory (D7 asymmetry explanation; Z12-corner; Z/non-Z mechanism; directional-semantics gate; anchoring remainder); §7 integration verification + fences. Three template-bound codas are the synthesis's only novel prose, non-load-bearing; every substantive claim cites its landing artifact; no new measurement, no new structural claim, no new phenomena mapping, no lens extension; finding-row statuses untouched (rows 8/10, phenomena-closure items, directional-semantics gate); build-time grounding correction (maintainer-prose class): the approved reading-contract note read "§§2–3", corrected to "§§2–4" to match the authorized coda placement. No claim event, no record amendment, no governs admission, no G1 movement, no INV-5 graduation, no M-walkability promotion, no canonical/Court/schema/Neo4j writes; manifest regen. |
 | v1.38 | BL-068 landed (the D7 asymmetry investigation — GSL-3, the governs semantic layer's first explanatory entry): memo `plan/bl-068-d7-asymmetry-memo.md` + generator `scripts/build-bl068-d7-asymmetry.mjs` + artifact `orrery/src/generated/bl068-d7-asymmetry.v1.json` (fingerprint `b0d65bd6…`, raw-byte `3de92695…`) + independent validator (16 mutation probes rejected; static generator-isolation checks) + 11 vitest pins wired into `orrery:check`/`orrery:build` after `bl066-r-edge-derivation:check`; chain anchors by self-checked fingerprint (D4 hunt `8a1295ca…`, zresidual `e1b3f655…`, Phase C `5085e274…`). Findings: the premise corrected (OD-68-0 — the analogue-R consumed its own domain by construction; the recorded layer collapses too, 14/14/0); the availability domain constructed from ledger bytes (OD-68-1 — Hamming-2 reach of the 7-2 class: 36 = 14 recorded same-office + 22 unrecorded modal-neighbour, per-anchor 4–6, all unrecorded at ±2 mod 7, 11+11); **verdict `DIFFERENT_PREDICATES`** — axis 1 native set-class hunt RESTATEMENT_UNIFORM (the class is the domain, 36/36), axis 2 office-linking/modal remainder CLEAN_SPLIT (14/0/0/22), axis 3 Z-interface NON_SEPARATING (4/14 Z-majority — the GSL-1R polarization is fa-specific), axis 4 invariant geography INVARIANTS_OBEYED (7/7 in-class inversion pairs, all office sums 6 mod 7 — pole-universal); **GSL-3**: the contact-target tiers differ in class multiplicity (A1 two classes vs D6 one), so the fa-pole's selection rides set-class identity while the ti-pole's rides the office condition alone — same invariants, different predicates; the ti-pole's contact relation is class-exhaustive and office-pure. Grounding correction (maintainer-prose class): the brief's "59 7-2 states" figure was a JSON string-occurrence count — the ledger carries exactly 14 (corrected in-artifact). D7 hypothesis-tier throughout (no D7 claim event, no D7 record amendment, no D7 derivation admission; ENTRY 15's D7 clause verbatim); no GOVERNS admission; no G1 movement; no INV-5 graduation; no M-walkability promotion; no canonical/Court/schema/Neo4j writes; no D4-record movement; frame not design input; suite 351 green (35 files); ledger-pins unchanged (13, zero added); manifest regen. |
 | v1.39 | BL-069 registered (fast-lane additive): **GSL-3** — the fa/ti asymmetry's mechanism (different predicates over different domain multiplicities: fa class-selective/office-flat over the two-class A1 domain; ti class-exhaustive/office-pure over the single-class D6 domain; invariants pole-universal) — landed into the synthesis (`plan/bl-067-governs-semantic-synthesis.md`: §6 entry 1 resolves to *explained*, §4 mechanism paragraph beneath the Venus/Moon coda, §7/§8 carry the registration), the comprehension map (`plan/harmonic-comprehension-map.md`: §4 consumption row + §5.6 + §5.5 receipts), and the scoping memo (`plan/bl-059-governs-derivability-scoping-memo.md`: §4.8 accretion; §7 unchanged). Registration of BL-068's landed finding (commit `1a0a903`; artifact `orrery/src/generated/bl068-d7-asymmetry.v1.json`, fingerprint `b0d65bd6…`; memo `plan/bl-068-d7-asymmetry-memo.md`) — no measurement; no claim event, no record amendment, no D7 movement, no governs admission, no higher-theorem answer, no G1 movement; manifest/checksums regen. |
+| v1.40 | BL-070 landed (the D7 derivation attempt — the ti-pole's R2-analogue, office-purity route): **`PARTIAL_DERIVATION`** — the domain derives masks-only (36 instances, per-anchor 4/5/6/6/6/5/4, the asymmetry emergent from a uniform 30-per-anchor all-ledger reach; set-equal to BL-068's availability domain), all nine pre-registered mask-geometric selectors fail (cleanSplitCount 0); the near-miss `|ΔpcSum| = 1` = 12/0/2/22 missing exactly the terminal tritone contacts 127:253/4033:2017 (both reach-singletons); the min-|Δ| + census composite C-TB-1 (14/0/0/22) recorded un-promoted; **the third obstruction refined** from the Gate 3 bytes — every modal edge is an exact rotation (11×6 + 6×1), so the 0/7 is an interval-transport failure, not a rotational absence; invariants pole-universal (7 whole pairs, sums 6, status shared). Artifacts: generator `scripts/build-bl070-d7-derivation.mjs` + artifact `orrery/src/generated/bl070-d7-derivation.v1.json` (fingerprint `9db10a08…`, raw-byte `169ce706…`) + independent validator (34 mutation probes rejected; two-sided static isolation) + 11 vitest pins wired into `orrery:check`/`orrery:build` after `bl068-d7-asymmetry:check`; chain anchor BL-068 `b0d65bd6…`; memo `plan/bl-070-d7-derivation-memo.md`. D7 hypothesis-tier throughout (no claim event, no record amendment, no derivation admission; ENTRY 15's clause verbatim); no GOVERNS admission; no G1 movement; suite 362 green (36 files); ledger-pins unchanged (13, zero added); manifest regen. |
+| v1.41 | BL-070 post-landing dispositions + follow-on captures: **OD-70-5** — C-TB-1 held at **UNPROMOTED** (separation ≠ derivation; the promotion bar is a mechanism argument); **OD-70-6** — the interval-transport correction recorded as a **bounded refinement** (memo §14; scoping memo `plan/bl-059-governs-derivability-scoping-memo.md` §5.1 accretion: the attempt executed — domain derives masks-only, selection office-field-dependent; the cycle-twin clause refined to an interval-transport failure, the orbit's own intervals {11, 6} vs the D4 verification set). Captures: **BL-071** (the interval-6 structure — the tritone as the shared geometry: the orbit's closure offset, the two terminal far contacts, and the near-miss misses triangulate on interval 6) + **BL-072** (C-TB-1's mechanism question — why does min-|Δ| + census separate?); no artifact bytes changed (`9db10a08…` unchanged), no record amendment, no claim event; manifest/checksums regen. |
