@@ -700,6 +700,43 @@ allowlist additions. Queued; own ceremony. Scoping document:
 scripts are pre-convention consumers whose pins predate the R2 model; the repair is a
 migration to entry-scoped bindings, the convention's first retroactive consumer.
 
+### BL-059 — D4 Derivation Statement + higher-theorem scoping (governs derivability) [FINDINGS RECORDED]
+
+Two fast-lane planning artifacts landed in one commit (hypothesis/observation tier,
+planning evidence; no claim event, no record amendment, no admission):
+
+- **Track 1 — D4 Derivation Statement** (`plan/bl-059-d4-derivation-statement.md`): the
+  bounded contact-geometry theorem stated in theorem form — object (O = 14 keys, exactly
+  2/office), inputs-with-status (granted GOVERNS R, office assignments, CONSTRUCTS cycle
+  ground, canonical reads — vs derived cycle-walk output), rule R2 (filtered cycle-walk;
+  frozen cycle 2×T1 + 5×T2, interval sum 12), predicate P = forte-7-27, the discharged
+  obligations (exact coverage, non-collapse 14 ≠ 28 = U, edge validity 7/7, T-C scope
+  7 realized / 2 observation-exact / 5 confirmation-marked predictions, calibration +
+  strict-degree negative control + mutation probes), and the scope conclusion (bounded D4;
+  wall intact; D7 asymmetric boundary case carried hypothesis-tier). Formal restatement of a
+  discharged result: authority flows from the four-gate corridor's receipts (ENTRY 15), not
+  from the statement; citation-stable — not edited by future findings.
+- **Track 2 — Higher-Theorem Scoping memo**
+  (`plan/bl-059-governs-derivability-scoping-memo.md`): first formal statement of the open
+  question above the corridor — can the GOVERNS organization (seven offices, parent/satellite
+  assignments, edge structure) itself be derived from the same machinery rather than
+  entering as granted input? Sections: the grant as recorded; the grant's status in the
+  framework's own design (no recorded derivability intent — the question is contrary to the
+  original modeling assumption, which raises the bar for any future claim); what a
+  derivation would require; evidence for (14-vs-14 predicate, midpoint invariant, fa/ti
+  asymmetry, D-tier M-closure) and against (D7 modal non-closure, cycle ground read from
+  granted CONSTRUCTS, 5 unconfirmed midpoint predictions, G1 shut, BL-035
+  direction/collision findings, grant-status); candidate approaches as questions only
+  (cycle-walk generalization, predicate transport, D-tier asymmetry boundary case, midpoint
+  reconstruction), each with a falsification shape and none endorsed. **OPEN RESEARCH —
+  defines the question, claims no answer.** Accretes future evidence; the companion
+  statement does not.
+
+Fences both: no claim events; no record amendments (D4 `derivable-via-R2` and D7
+hypothesis-tier unchanged); no G1 movement; no governs admission; no INV-5 graduation; no
+M-walkability promotion; no canonical/Court/schema/Neo4j writes; frame is interpretation
+vocabulary only; session prose is context, not evidence.
+
 ---
 
 ## Sequencing
@@ -739,3 +776,4 @@ via BL-023), lattice after debugger fixtures, investigations as filler, governan
 | v1.25 | BL-055 reviewed (sprint, read-only): D4 contract selection-mechanism review executed — generator + artifact `orrery/src/generated/d4-selection-review.v1.json` (fingerprint `6d11fd93…`) + independent validator + 11 vitest pins wired into `orrery:check`/`orrery:build`; Step 0 patch-only confirmed (Hypothesis B pre-falsified by execution scope); **clean 14/14 predicate found: `P(s) = [forte(s) = 7-27]`** (observed = 7-27, unobserved = 7-31, all A1 satellites); T-B definitional restatement proof (7 anchors × 2 distinct E-parents × 4 satellites = 56 = U); T-A under-coverage = T1-link limit on the closed 7-edge A0 cycle (5×T2 + 2×T1); OD-3 per-phase diagnostic (flanks reach U, center reproduces the frozen set); three independent blockers ⇒ failure is route geometry; near-miss axis (cornerstone) recorded as fail per OD-1; build-phase recomputation corrected three containment-axis numbers from the planning pass (memo §4/§8); no amendment; memo `plan/bl-055-d4-selection-review-memo.md`; suite 254 green; BL-056 (new-route design) captured with the cycle-edge ↔ construction-pair hard constraint. |
 | v1.26 | BL-056 validated (sprint): D4 R2 filtered-cycle-walk design validation executed — generator + artifact `orrery/src/generated/d4-r2-route-review.v1.json` (fingerprint `e25851f9…`) + independent validator (mutation-verified) + 10 vitest pins wired into `orrery:check`/`orrery:build`; **G1 cycle-twin `rotateMaskZ12^d(a) = b` verified 7/7** (2×T1 + 5×T2; +2 mask rotation confirmed as the T2 generalization; per-office justification tier uniformly `cycle-twin-verified`, no fallbacks); **G2** 2 selected per office × 7; **G3 `G_R2 = O` exactly** (14 keys, missing/extra empty); **G4 non-collapse** 14 ≠ 28 = U (identity broken by satellite-reading selection, not edge substitution; T-B remains satellite-blind); **G5** midpoint census 7 realized / 2 observation-exact / 5 seam-derived predictions with confirmation markers; midpoint = constructed-office invariant; seam cross-check 7 = 7 and 2 = 2; constraint table 4/4; no amendment, no route admission, no governs admission, no wall movement, no direction assignment; memo `plan/bl-056-d4-r2-route-memo.md`; suite 264 green; BL-056 status → findings-recorded. |
 | v1.27 | BL-057 four-gate corridor completed: D4 record amended additively — ENTRY 15 `record_amended (derivable-via-R2)` appended; ENTRY 10 stands immutable (region hashes labeled under both recipes); Gate 3 receipt certified (`execution_verified`, `DERIVED@X`, calibration EXACT, R2 = O at four licensed contexts, construction join = U contrast, D7 asymmetric analogue hypothesis-tier) in receipt `qa/specs/bl-057-d4-record-amendment.json`; Gate 3 ledger fence evolved to execution-time prefix preservation (Gate 3 receipt bytes/fingerprints unchanged); pre-existing `validate:ledger-pins` inventory recorded as accepted release state (BL-058 captured for repair); governs program left live (BL-056 remainder, 14-vs-14 predicate semantic registration, fa/ti asymmetry, rows 8/10 holes, directional-semantics gate); manifest regen; no governs admission, no wall dissolution, no G1 movement, no direction assignment, no green claim. |
+| v1.28 | BL-059 landed: D4 Derivation Statement (`plan/bl-059-d4-derivation-statement.md` — bounded contact-geometry theorem restated from the corridor's receipts; citation-stable) + Higher-Theorem Scoping memo (`plan/bl-059-governs-derivability-scoping-memo.md` — first formal statement of the GOVERNS derivability question: grant status in the framework's own design, evidence for/against, candidate approaches with falsification shapes; no answer claimed); two companion memos, one commit; manifest regen; no claim event, no record amendment, no admission, no G1 movement. |
