@@ -553,6 +553,7 @@ session (lattice Phase B, or the governs semantic layer) resolves it from the re
 | claim documents | 1.x only | Hypotheses are not citable as claims anywhere |
 | governs semantic layer (future synthesis) | §5 measured findings (selection mechanism, invariants, named residual) | planning evidence; measured, not admitted; not citable as claims |
 | claim record `SPEC-GOVERNS-DERIVABILITY-001` (admitted; ENTRY 16) | §5 measured findings (GSL-1/1R/2) as corroborating measurement context only — the claim's load-bearing evidence is the BL-063/BL-064/BL-066 artifacts | consumed as context; §5 remains planning evidence — measured, not admitted, not citable as claims; the admission changes no §5 tag |
+| BL-067 synthesis (`plan/bl-067-governs-semantic-synthesis.md`) | §5 measured findings (channels, polarity, geography) as the synthesis base; §2.7 lens in three template-bound codas | planning evidence; lens interpretation-only per the membrane; never load-bearing; finding statuses untouched; not citable as claims |
 
 ## 5. Measured findings — the D4 boundary-geography selection layer [MEASURED — planning evidence]
 
