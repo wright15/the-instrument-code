@@ -551,3 +551,57 @@ session (lattice Phase B, or the governs semantic layer) resolves it from the re
 | topology candidate (future) | 2.7 polarity vocabulary for directional semantics | Proposed only; closure review adjudicates; not citable as claims |
 | BL-057 D3 | §2.7 amendment as interpretation vocabulary | never probe input, never citable as claim |
 | claim documents | 1.x only | Hypotheses are not citable as claims anywhere |
+| governs semantic layer (future synthesis) | §5 measured findings (selection mechanism, invariants, named residual) | planning evidence; measured, not admitted; not citable as claims |
+
+## 5. Measured findings — the D4 boundary-geography selection layer [MEASURED — planning evidence]
+
+*Class: measured findings (planning evidence). Distinct from §1 (admitted canon), §2
+(design-intent / hypothesis tiers) and §3 (open canon question). Every item below is
+computed by byte-stable generator-validated artifacts; none is citable as a claim, and
+the admitted tags of §1/§2 are untouched.*
+
+### 5.1 The selection mechanism (GSL-1, GSL-1R)
+
+The D4 anchors' observed contact selection (14 of the 28-key granted domain) is
+boundary-geography-selective. **GSL-1** (BL-060): the observed satellites are exactly
+those whose non-Z D-tier containment sum is `<= 13` (clean 14/14, boundary gap 1).
+**GSL-1R** (BL-061/062, the refinement): the canonical form is Z-interface polarization —
+observed satellites are Z-majority in their D-tier containment interface
+(`nonZSum < zSum`; observed −13..−3, unobserved +1..+11, gap 4), so GSL-1's threshold is
+the w = 0 projection of the same structure; complementarily, observed satellites'
+pentatonic composition carries Z-class subnodes (2–4 rooted entries) and achiral subnodes
+(2–4), and unobserved carry none. The refinement scan's six clean shapes are projections
+of this signal; the canonical sign rule is the sharpest.
+
+### 5.2 Residual anatomy (GSL-2)
+
+The 1765/1261 pair is explained, not primitive: the Z12-only interface extreme
+(Z12=7, Z17=Z37=2; zSum 11 = observed minimum) with chiral-Z-only composition
+(5-Z18/5-Z36; the unique observed pair with no achiral Z class), sitting inside the
+canonical rule at margin 3. It defeats per-family and per-content-type thresholds by
+construction — the mechanism's corner case, not an exception to it.
+
+### 5.3 Structural invariants (measured)
+
+- **Inversion-invariance:** all 14 inversion pairs share observed status; the selection
+  selects whole pairs; orientation-polarized refinements are rejected at scan level.
+- **Office-linking:** inversion pairs link offices summing to 6 (mod 7).
+- **Tier↔family bijection:** D1=7-22, D2=7-15, D3=7-Z37, D4=7-Z17, D5=7-Z12, D6=7-8,
+  D7=7-1 (49 anchors, 7 per tier; each tier family-pure). Also recorded at
+  `docs/ARCHITECTURE_MAP.md` Layer 1.
+- **Cornerstone confinement:** the five 5-35 cornerstones live only in D5/7-Z12 anchors.
+- **Anchored enumeration:** mesh subnodes = the pc-0-anchored 5-subsets (verified
+  462/462) — composition statistics are state-level, not class-determined.
+
+### 5.4 Named residual
+
+The Z12-corner case (1765/1261) — the mechanism's one extreme instance; the first test
+case for any refined mechanism.
+
+### 5.5 Receipts and fences
+
+`orrery/src/generated/d4-14v14-hunt.v1.json` (fingerprint `8a1295ca…`);
+`orrery/src/generated/d4-zresidual-hunt.v1.json` (fingerprint `e1b3f655…`);
+`scrum/plan/bl-060-14v14-hunt-memo.md`; `scrum/plan/bl-061-062-zresidual-memo.md`.
+Planning evidence: no claim event, no record amendment, no admission; GOVERNS remains
+granted input; the higher-theorem question remains open. Not citable as claims.

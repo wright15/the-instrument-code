@@ -143,6 +143,28 @@ baseline's cleanliness is a property *of the grant* (one office per state by con
 so it cannot testify for or against deriving the grant; it is listed here to keep the two
 readings distinct.
 
+**4.6 The boundary-geography selection layer (BL-060/061/062, measured; GSL-1/1R/2).**
+The D4 contact selection's structural signature has been characterized two levels beyond
+the predicate: observed contacts are exactly the satellites whose D-tier containment
+interface is Z-majority (`nonZSum < zSum`; gap 4; BL-060's `nonZSum <= 13` is the w = 0
+projection of the same structure) and whose pentatonic composition carries Z-class and
+achiral subnodes (unobserved carry none); the seven D-tiers each carry exactly one
+heptatonic family (D1=7-22 … D7=7-1); the five 5-35 cornerstones are confined to D5/7-Z12
+anchors; the selection is inversion-invariant (all 14 inversion pairs share status; pairs
+link offices summing to 6 mod 7, so the selection selects whole office-linked pairs); the
+residual pair 1765/1261 is explained, not primitive — the Z12-only interface extreme
+(7/2/2) with chiral-Z-only composition (5-Z18/5-Z36), inside the canonical rule at margin
+3. Receipts: `orrery/src/generated/d4-14v14-hunt.v1.json` (fingerprint `8a1295ca…`),
+`orrery/src/generated/d4-zresidual-hunt.v1.json` (fingerprint `e1b3f655…`),
+`scrum/plan/bl-060-14v14-hunt-memo.md`, `scrum/plan/bl-061-062-zresidual-memo.md`. *Shows:*
+the boundary layer has discoverable internal structure at its selection interface —
+multi-channel, Z-structured, with named extremes and structural invariants; this is the
+kind of internal structure a derivable GOVERNS would need to reproduce, and it is not
+restated from the class label (state-level variance under the anchored representation,
+inversion-stable). *Does not show:* that the GOVERNS relation is derivable — the selection
+remains granted input; no route yet derives office labels, parent/satellite membership, or
+edges from this geography, and the geography characterizes selection *within* the grant.
+
 ## 5. Evidence against / obstructing (honest tally)
 
 **5.1 D7's modal non-closure (ENTRY 15 §D7 Clause; `qa/d4-r2-execution-receipt.json`
@@ -254,7 +276,7 @@ difference between deriving a result *within* the framework and deriving the fra
 *architecture*.
 
 This memo does not answer it. It makes the question **askable for the first time**, with the
-evidence for and against stated honestly — four items for, six obstructing, four candidate
+evidence for and against stated honestly — five items for, six obstructing, four candidate
 approaches with their falsification shapes and none endorsed. That is the artifact's purpose:
 to make the biggest open question in the project formally approachable, so that future
 findings have a place to land and a question to be measured against.

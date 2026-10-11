@@ -38,6 +38,7 @@
   - Projections: `neo4j/csv/scale-states.csv` (462 rows); `neo4j/validation.cypher:4-9` (expects 462); `graph/index.html:167,199` ("462 states"; 308 seated + 154 typed boundary).
 - **Boundary note:** the numerals `66` and `38` recur on both sides with different meanings; never carry a count across layers without its quotient name (see §3).
 - **Anchor coverage note (BL-029, planning evidence):** the 21 A0–A2 anchors are closed under the row-2 fixed-degree projection (60 moves); the 49 D1–D7 anchors are not — the admitted universe contains zero fixed-degree applications with both endpoints in D, and each D-anchor's admitted fixed-degree touches (228 out / 228 in) all land on or originate from satellite states. The D-anchors are M-closed (seven tier cycles, one per tier). Receipts: `orrery/src/generated/d-tier-operator-probe.v1.json`; `scrum/plan/bl-029-d-tier-operator-probe-memo.md`.
+- **Tier↔family bijection (BL-061/062, planning evidence):** each D-tier carries exactly one heptatonic family — D1=7-22, D2=7-15, D3=7-Z37, D4=7-Z17, D5=7-Z12, D6=7-8, D7=7-1 (49 anchors, 7 per tier, each tier family-pure). The five 5-35 cornerstones are confined to D5/7-Z12 anchors. Receipts: `orrery/src/generated/d4-zresidual-hunt.v1.json`; `scrum/plan/bl-061-062-zresidual-memo.md`.
 
 ### Layer 2 — Bipartite containment (330 ↔ 462)
 
