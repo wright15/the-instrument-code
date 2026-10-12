@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1308,
-  "totalBytes": 84679635,
+  "fileCount": 1314,
+  "totalBytes": 84818602,
   "files": [
     {
       "path": ".env.example",
@@ -1072,8 +1072,8 @@
     },
     {
       "path": "orrery/package.json",
-      "bytes": 6901,
-      "sha256": "50aab3512decd025fe149e47a8d297abb610af7a240a446bc3eaa3fc800202c8"
+      "bytes": 7189,
+      "sha256": "cefc32e65da5a32a9e11558ffdf997f86291ccd9f5d850822e664dc3ae6c8470"
     },
     {
       "path": "orrery/public/AUDIO_ASSETS.md",
@@ -1149,6 +1149,11 @@
       "path": "orrery/scripts/validate-bl078-d7-retest.mjs",
       "bytes": 61440,
       "sha256": "041bd3de929630b728832fdfe4b3ced7c8fd735a86fa1bb991ad36d5d8828677"
+    },
+    {
+      "path": "orrery/scripts/validate-bl080-governs-derivation-execution.mjs",
+      "bytes": 32635,
+      "sha256": "4e283f45262dab4fde68ddfa8ad9e303b85ab84fd9f7913a2b0fc4b83f061556"
     },
     {
       "path": "orrery/scripts/validate-bl080-governs-derivation.mjs",
@@ -1309,6 +1314,11 @@
       "path": "orrery/src/bl078-d7-retest.test.ts",
       "bytes": 14548,
       "sha256": "3cc5fa1d0090fe106c63119c4afe3f7efdf1a744860ee41b10c5f5918112a1a2"
+    },
+    {
+      "path": "orrery/src/bl080-governs-derivation-execution.test.ts",
+      "bytes": 10411,
+      "sha256": "1b7e284b053da18d49f735d0ed4811e8377c91c339e136e055d939a0546fa266"
     },
     {
       "path": "orrery/src/bl080-governs-derivation.test.ts",
@@ -1747,8 +1757,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 16429,
-      "sha256": "3ee6998640abe337f8cfa74a41cde5ccfb881dcc089302be5a2257376bb9a43c"
+      "bytes": 16624,
+      "sha256": "11e5833c12313ded7cdce3655da195627654a665ce5d8ba72c2b7edf72cca8c9"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
@@ -1819,6 +1829,11 @@
       "path": "pytest.ini",
       "bytes": 161,
       "sha256": "175c108be46f732469a4a24358c4a7c1e2e1823e805e8ab8866787b375843d05"
+    },
+    {
+      "path": "qa/bl080-governs-derivation-receipt.json",
+      "bytes": 28634,
+      "sha256": "b7f9bfbcc13c14f02e75f686c820a7ff02ad4c0e5057e5ef512a0e6acc464f6a"
     },
     {
       "path": "qa/completion-validation-report.json",
@@ -2326,6 +2341,11 @@
       "sha256": "31550580668babab2053a4ee8d6839df7977b291b0bfbae0458943bbdb3667ab"
     },
     {
+      "path": "schemas/bl080-governs-derivation-receipt.schema.json",
+      "bytes": 14927,
+      "sha256": "408a660423c5a578d8d798db499b42bfa5efd32dd6b9ce66b531ac8631462b9a"
+    },
+    {
       "path": "schemas/court-admission-contract.json",
       "bytes": 9538,
       "sha256": "b4351a14aa3dfde6043a609e4158abcb17b006b666a35220e5833cf1cf7ffa9b"
@@ -2717,8 +2737,8 @@
     },
     {
       "path": "schemas/ledger-pin-allowlist.json",
-      "bytes": 1778,
-      "sha256": "1c3b91ba72b46d5cd02a4c2b61e0a483f3be7408ecea6f54561df6e9fc7af61a"
+      "bytes": 3929,
+      "sha256": "140906134353bf5f6a55114bcf7aa6ab0803dd14a163bbff603a0db7dc014f13"
     },
     {
       "path": "schemas/mechanics-thermodynamics-registry-v1.0.0.schema.json",
@@ -2884,6 +2904,11 @@
       "path": "scripts/build-bl078-d7-retest.mjs",
       "bytes": 75367,
       "sha256": "ebd548f8c9d04db62b226d445dfef0cb8808157fd431d11b3d110cbdaad82b62"
+    },
+    {
+      "path": "scripts/build-bl080-governs-derivation-execution.mjs",
+      "bytes": 30310,
+      "sha256": "4fbe26e6be5ed03bc7231feed2fe029590169322a79cff8cacb47eddbfa62c7d"
     },
     {
       "path": "scripts/build-bl080-governs-derivation.mjs",
@@ -3387,8 +3412,8 @@
     },
     {
       "path": "scrum/BACKLOG.md",
-      "bytes": 173719,
-      "sha256": "62a821ac9559455fb457367d912f464b86ca925de9558398bc2da1cbd6089979"
+      "bytes": 181134,
+      "sha256": "131f2e09a98dd572571aebc13a93190d6193cc03252a30b3efe3a2199404f4d7"
     },
     {
       "path": "scrum/CRT-301-court-admission-contract.md",
@@ -3984,6 +4009,11 @@
       "path": "scrum/plan/bl-079-governs-derivation-design-spec.md",
       "bytes": 19496,
       "sha256": "b00b749c1e1a5d84b4ad4692fe3c4cab859d605297871c2b6ee9e34eebec6afa"
+    },
+    {
+      "path": "scrum/plan/bl-080-governs-derivation-execution-memo.md",
+      "bytes": 12001,
+      "sha256": "25340ef9b59e5ec0aa29fc1920e4f155d1661e76fb815891fc3bc4ce741ce9cf"
     },
     {
       "path": "scrum/plan/bl-080-governs-derivation-memo.md",

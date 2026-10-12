@@ -34,5 +34,41 @@
     "name": "digest",
     "sha256": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f",
     "reason": "Maintainer-accepted immutable nine-file D4 implementation closure under Grant 2 (ENTRY 10), not a mutable decision or observation ledger hash."
+  },
+  {
+    "path": "scripts/build-bl080-governs-derivation-execution.mjs",
+    "name": "GATE2_FINGERPRINT",
+    "sha256": "63699437ed2a38713ea947edd3a9978cdc54a02cac5ebee38b286bb7370ed8af",
+    "reason": "BL-080 Gate 2 derivation fingerprint — the derived-input assembly baseline under the BL-079 design spec, self-checked at the Gate 3 run; not a mutable ledger hash."
+  },
+  {
+    "path": "scripts/build-bl080-governs-derivation-execution.mjs",
+    "name": "GATE2_SHA256",
+    "sha256": "50735819917ae36d59e49ef352d2867af377bff9a8186f720b28494e8010b398",
+    "reason": "Raw-byte pin of the landed BL-080 Gate 2 artifact (commit e2697d4) — the execution run's S0' input; not a mutable ledger hash."
+  },
+  {
+    "path": "scripts/build-bl080-governs-derivation-execution.mjs",
+    "name": "GENERATION_SHA256",
+    "sha256": "f9ab736eb14a31ab68d0b1424e7e20dffc42768f7a8ccbf358e6f0ce107496ae",
+    "reason": "Frozen D4 production generation file under Grant 2 (ENTRY 10) — the Gate 3 sealing-context baseline; not a mutable ledger hash."
+  },
+  {
+    "path": "scripts/build-bl080-governs-derivation-execution.mjs",
+    "name": "RECEIPT_SHA256",
+    "sha256": "2057a75702ddb4952151d962fb680474ab6543387b604b3b5c37758b8e9c49d0",
+    "reason": "Frozen D4 production receipt under Grant 2 (ENTRY 10) — the Gate 3 comparison baseline; not a mutable ledger hash."
+  },
+  {
+    "path": "scripts/build-bl080-governs-derivation-execution.mjs",
+    "name": "FROZEN_CLOSURE_DIGEST",
+    "sha256": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f",
+    "reason": "Maintainer-accepted immutable nine-file D4 implementation closure under Grant 2 (ENTRY 10) — the frozen sealing context, recorded separately from the run's implementation digest; not a mutable decision or observation ledger hash."
+  },
+  {
+    "path": "scripts/build-bl080-governs-derivation-execution.mjs",
+    "name": "FROZEN_GENERATION_DIGEST",
+    "sha256": "c4a7f48dd982c6d96f594ca8c03e045092b9a00b9615e05ef2d14648f04f83d7",
+    "reason": "Frozen D4 production seal generation digest under Grant 2 (ENTRY 10) — the Gate 3 seal baseline; not a mutable ledger hash."
   }
 ]

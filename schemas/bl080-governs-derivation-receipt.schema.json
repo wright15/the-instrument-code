@@ -1,0 +1,402 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "harmonic-orrery.bl080-governs-derivation-receipt.v1",
+  "title": "BL-080 GOVERNS derivation execution receipt (Gate 3)",
+  "description": "The Gate 3 execution receipt of the re-specified GOVERNS derivation (BL-079 design spec, Gate 3): the run of the frozen pipeline on the Gate 2 derived projection, sealed under the frozen sealing context, compared once against the canonical observation surface, and classified against the pre-registered baseline pattern. Deterministic and byte-stable (no timestamps). The receipt is evidence, not an amendment: it records the run and the branch classification determined by the run; Gate 4 (any record amendment) is a separate ceremony.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "derivationId",
+    "status",
+    "statusRationale",
+    "generator",
+    "inputProvenance",
+    "gate2DerivationFingerprint",
+    "bindings",
+    "implementationFiles",
+    "seal",
+    "generation",
+    "comparison",
+    "baseline",
+    "baselineComparison",
+    "preRegistration",
+    "branchClassification",
+    "gates",
+    "observation",
+    "category",
+    "isolation",
+    "controls",
+    "sourceBindings",
+    "fences",
+    "notAccomplished",
+    "contractCitations",
+    "executionFingerprint"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "harmonic-orrery.bl080-governs-derivation-receipt.v1" },
+    "derivationId": { "const": "BL080_GOVERNS_DERIVATION_EXECUTION_V1" },
+    "status": { "enum": ["execution_verified", "execution_deviation"] },
+    "statusRationale": { "type": "string" },
+    "generator": { "const": "scripts/build-bl080-governs-derivation-execution.mjs" },
+    "inputProvenance": { "const": "derived" },
+    "gate2DerivationFingerprint": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "bindings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ledgerSha256",
+        "networkSha256",
+        "twinHubReceiptSha256",
+        "boundarySha256",
+        "specSha256",
+        "implementationDigest",
+        "frozenClosureDigest",
+        "projectionDigests"
+      ],
+      "properties": {
+        "ledgerSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "networkSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "twinHubReceiptSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "boundarySha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "specSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "implementationDigest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "frozenClosureDigest": { "const": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f" },
+        "projectionDigests": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["anchors", "R", "E"],
+          "properties": {
+            "anchors": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "R": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "E": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+          }
+        }
+      }
+    },
+    "implementationFiles": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    },
+    "seal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generationDigest", "frozenGenerationDigest", "matchesFrozen", "inputIdentities", "complete", "statement"],
+      "properties": {
+        "generationDigest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "frozenGenerationDigest": { "const": "c4a7f48dd982c6d96f594ca8c03e045092b9a00b9615e05ef2d14648f04f83d7" },
+        "matchesFrozen": { "type": "boolean" },
+        "inputIdentities": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ledgerSha256", "networkSha256", "implementationDigest"],
+          "properties": {
+            "ledgerSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "networkSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "implementationDigest": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+          }
+        },
+        "complete": { "const": true },
+        "statement": { "type": "string" }
+      }
+    },
+    "generation": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["routes", "tC", "completion"]
+    },
+    "comparison": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["rows", "routes", "observedKeyCount", "fourCellCounts", "uKeys", "tC"]
+    },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "sha256",
+        "category",
+        "observedKeyCount",
+        "fourCellCounts",
+        "routeA",
+        "routeB",
+        "tC",
+        "comparisonDigest"
+      ],
+      "properties": {
+        "source": { "const": "qa/d4-production-receipt.json" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "category": { "const": "not_derived" },
+        "observedKeyCount": { "const": "14" },
+        "fourCellCounts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["aOnly", "bOnly", "both", "neither"],
+          "properties": {
+            "aOnly": { "const": "0" },
+            "bOnly": { "const": "10" },
+            "both": { "const": "4" },
+            "neither": { "const": "0" }
+          }
+        },
+        "routeA": { "$ref": "#/$defs/baselineRoute" },
+        "routeB": { "$ref": "#/$defs/baselineRoute" },
+        "tC": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["matches", "missing", "extra", "midpointExact"],
+          "properties": {
+            "matches": { "type": "array", "items": { "type": "string" } },
+            "missing": { "type": "array", "items": { "type": "string" } },
+            "extra": { "type": "array", "items": { "type": "string" } },
+            "midpointExact": { "type": "boolean" }
+          }
+        },
+        "comparisonDigest": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "baselineComparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonicallyEqual", "digestEqual", "runComparisonDigest", "frozenComparisonDigest", "fields", "statement"],
+      "properties": {
+        "canonicallyEqual": { "type": "boolean" },
+        "digestEqual": { "type": "boolean" },
+        "runComparisonDigest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "frozenComparisonDigest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "fields": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["rows", "routes", "routes.A", "routes.B", "observedKeyCount", "fourCellCounts", "uKeys", "tC", "category"],
+          "properties": {
+            "rows": { "type": "boolean" },
+            "routes": { "type": "boolean" },
+            "routes.A": { "type": "boolean" },
+            "routes.B": { "type": "boolean" },
+            "observedKeyCount": { "type": "boolean" },
+            "fourCellCounts": { "type": "boolean" },
+            "uKeys": { "type": "boolean" },
+            "tC": { "type": "boolean" },
+            "category": { "type": "boolean" }
+          }
+        },
+        "statement": { "type": "string" }
+      }
+    },
+    "preRegistration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "branches"],
+      "properties": {
+        "source": { "type": "string" },
+        "branches": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["DERIVED_FROM_DERIVED_INPUTS", "DERIVED_WITH_DEVIATION"],
+          "properties": {
+            "DERIVED_FROM_DERIVED_INPUTS": { "type": "string" },
+            "DERIVED_WITH_DEVIATION": { "type": "string" }
+          }
+        }
+      }
+    },
+    "branchClassification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification", "preRegistered", "reading", "sealMatches", "generationDigestsMatch", "deviation"],
+      "properties": {
+        "classification": { "enum": ["DERIVED_FROM_DERIVED_INPUTS", "DERIVED_WITH_DEVIATION"] },
+        "preRegistered": { "const": true },
+        "reading": { "type": "string" },
+        "sealMatches": { "type": "boolean" },
+        "generationDigestsMatch": { "type": "boolean" },
+        "deviation": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["scope", "entries", "designSpecFalsifiability"],
+              "properties": {
+                "scope": { "type": "string" },
+                "entries": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["stage", "field", "runDigest", "frozenDigest"],
+                    "properties": {
+                      "stage": { "type": "string" },
+                      "field": { "type": "string" },
+                      "runDigest": { "type": "string" },
+                      "frozenDigest": { "type": "string" }
+                    }
+                  }
+                },
+                "designSpecFalsifiability": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["a", "b", "c"],
+                  "properties": {
+                    "a": { "type": "string" },
+                    "b": { "type": "string" },
+                    "c": { "type": "string" }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["G3-1", "G3-2", "G3-3", "G3-4", "G3-5"],
+      "properties": {
+        "G3-1": { "$ref": "#/$defs/gate" },
+        "G3-2": { "$ref": "#/$defs/gate" },
+        "G3-3": { "$ref": "#/$defs/gate" },
+        "G3-4": { "$ref": "#/$defs/gate" },
+        "G3-5": { "$ref": "#/$defs/gate" }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["readCount", "asserted", "reader", "records"],
+      "properties": {
+        "readCount": { "const": 1 },
+        "asserted": { "const": true },
+        "reader": { "const": "d4-downstream-comparison.mjs compareSealed readReference" },
+        "records": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "category": {
+      "enum": ["invalid", "incomplete_or_anomalous", "filter_plus_geometry", "restatement_signature", "overshoot", "derived", "not_derived"]
+    },
+    "isolation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["regime", "grantedBytesInDerivationPath", "observationReads", "statements"],
+      "properties": {
+        "regime": { "const": "region-scoped" },
+        "grantedBytesInDerivationPath": { "const": 0 },
+        "observationReads": { "const": 1 },
+        "statements": { "type": "array", "minItems": 3, "items": { "type": "string" } }
+      }
+    },
+    "controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reason"],
+      "properties": {
+        "status": { "const": "ABSENT" },
+        "reason": { "type": "string" }
+      }
+    },
+    "sourceBindings": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["artifact", "sha256", "role"],
+        "properties": {
+          "artifact": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "role": { "type": "string" }
+        }
+      }
+    },
+    "fences": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "execution",
+        "observationRead",
+        "receiptRole",
+        "recordAmendment",
+        "governsAdmission",
+        "d4Record",
+        "d7Control",
+        "anchoringRemainder",
+        "g1Intra330",
+        "inv5",
+        "mWalkability",
+        "membrane",
+        "canonical",
+        "frozenStack",
+        "ledgerWrites",
+        "sessionProse",
+        "branchDetermination"
+      ],
+      "properties": {
+        "execution": { "type": "string" },
+        "observationRead": { "type": "string" },
+        "receiptRole": { "type": "string" },
+        "recordAmendment": { "type": "string" },
+        "governsAdmission": { "type": "string" },
+        "d4Record": { "type": "string" },
+        "d7Control": { "type": "string" },
+        "anchoringRemainder": { "type": "string" },
+        "g1Intra330": { "type": "string" },
+        "inv5": { "type": "string" },
+        "mWalkability": { "type": "string" },
+        "membrane": { "type": "string" },
+        "canonical": { "type": "string" },
+        "frozenStack": { "type": "string" },
+        "ledgerWrites": { "type": "string" },
+        "sessionProse": { "type": "string" },
+        "branchDetermination": { "type": "string" }
+      }
+    },
+    "notAccomplished": { "type": "array", "minItems": 6, "items": { "type": "string" } },
+    "contractCitations": { "type": "array", "minItems": 6, "items": { "type": "string" } },
+    "executionFingerprint": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+  },
+  "$defs": {
+    "baselineRoute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generated", "matched", "inRButUnmatched", "missed", "rMissed", "extra", "restatement"],
+      "properties": {
+        "generated": { "type": "string", "pattern": "^[0-9]+$" },
+        "matched": { "type": "integer" },
+        "inRButUnmatched": { "type": "string", "pattern": "^[0-9]+$" },
+        "missed": { "type": "integer" },
+        "rMissed": { "type": "string", "pattern": "^[0-9]+$" },
+        "extra": { "type": "string", "pattern": "^[0-9]+$" },
+        "restatement": { "type": "boolean" }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "result", "statement"],
+      "properties": {
+        "name": { "type": "string" },
+        "result": { "enum": ["PASS", "DEVIATION"] },
+        "statement": { "type": "string" }
+      }
+    }
+  }
+}
