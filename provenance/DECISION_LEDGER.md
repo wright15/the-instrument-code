@@ -2962,3 +2962,165 @@ not assign directional semantics. Prior entries and prior line anchors remain
 unchanged; this entry is append-only. The historical record is linked, not
 rewritten: any reading of this entry as changing the GOVERNS relation's
 authority, amending ENTRY 10 or ENTRY 15, or moving D7 is rejected.
+
+---
+
+## ENTRY 17 - SPEC-GOVERNS-DERIVABILITY-001 expansion admission under GOV-525
+
+**Date:** 2026-10-12. **Status:** admitted in one atomic landing; release gates
+recorded, not cleared. The project's sixth claim event (ENTRY 12 convention, ENTRY 13
+correspondence, ENTRY 14 topology, ENTRY 15 amendment, ENTRY 16 derivability).
+
+### Decision
+
+The candidate record `docs/specs/governs-derivability-candidate-v0.1.0.md`
+(version 0.2.0, artifact ID `SPEC-GOVERNS-DERIVABILITY-001`) is admitted, in its
+expanded form, under GOV-525, together with the expansion compliance receipt
+`qa/specs/gov-525-governs-derivability-expansion-admission.json`, the BL-059
+scoping-memo accretion (section 4.12), the comprehension-map consumption row, the
+backlog registration, and refreshed root inventories, in one atomic landing. The
+record's v0.1.1 text (the ENTRY 16 admission) is preserved: the version history is
+the expansion's own mechanism, the prior version remains in the git history, and its
+bytes are pinned in the expansion receipt.
+
+The expanded claim, verbatim from the record:
+
+> **Claimed (expanded).** In addition to the edge content admitted under ENTRY 16, the
+> **tier-to-family correspondence** - the coordinate action's family-level structure
+> over the ten anchor families (A0/A1/A2/D1-D7) - is derivable from pre-grant
+> machinery: the coordinate algebra (the Klein-4 unit subgroup {1,5,7,11} of
+> Aff(Z12), canonically determined by the interval-transport requirement 11u = 7
+> (mod 12); `bl075-coordinate-search.v1.json`) acts on the families as the exact
+> family-level involution - 7-35 <-> 7-1 (A0 <-> D7, the closure pair), 7-34 <-> 7-8
+> (A1 <-> D6, the contact-target pair), 7-Z37 <-> 7-Z17 (D3 <-> D4, the interior
+> swap), fixing 7-33, 7-22, 7-15, 7-Z12 - identical for T1 and T2, trivial for the
+> identity and the pc-reflection, whole-block, with the Z-pair structure and the
+> fa/ti crossing present (`bl076-bijection-probe.v1.json`; branch
+> COVARIANT_CONFIRMED, finding probe-verified) - **up to one named bit** and **the
+> anchoring remainder** as carried by ENTRY 16.
+
+**Scope precision (not a widening).** The claim is about the correspondence's
+derivability - the family-level involution's structure follows from the derived
+coordinate algebra - not about the identities' origin: which set-classes occupy the
+correspondence's slots remains read from the canonical ledger, and the offices'
+semantic assignments remain framework-declared. The anchoring remainder carries as
+under ENTRY 16.
+
+The derivation, at the artifacts' bytes: BL-075's canonically determined carrier
+(u = 5, the unique unit satisfying 11u = 7 (mod 12)) and its Klein-4 closure
+{1,5,7,11}; BL-076's masks-only probe of the induced action - all 49 D-tier and 21
+A-tier anchors imaged under the four maps with full-ledger lookups: zero family
+fragments, zero office fragments, zero ledger-absent images, 40/40 family blocks and
+40/40 office tiers whole, the family-level expectation exact; the family-level
+involution as stated; the pairing pairs the one IV-shared Z-partner pair
+(7-Z37 <-> 7-Z17) within its interval class and IV-unique families with IV-unique
+families; the fa/ti crossing present in both directions (D7 <-> A0, D6 <-> A1); the
+induced family and office tables compose consistently with the Klein-4
+multiplication (160/160 family + 1120/1120 office checks, zero mismatches)
+(`orrery/src/generated/bl076-bijection-probe.v1.json`, `investigationFingerprint`
+`81e6cf7211a94888c2adedeebc44674a6e4a78e5e8b3fc09bb7a8fd671569d1e`; chain BL-075
+`88838e225276432427f2a7c765d8e1f9105c5c6bd87d4db04ef5e1bb2e93704e`). The
+office-level action (registered as GSL-6) is recorded as the correspondence's
+companion structure: faithful whole per-tier permutations with Mercury the sole
+fixed point in every map and tier (the 4+1 signature measured); it is registered
+evidence, not part of the claimed sentence. This entry **admits derivability, not
+authority**: the GOVERNS relation's formal status in the machinery is unchanged, and
+no GOVERNS admission is made.
+
+### Significance - the correspondence joins the record
+
+ENTRY 16 revised the framework's modeling assumption for the relation's edge
+content. This entry extends the admitted object: the tier-to-family correspondence -
+measured at BL-061/062 and explained structurally at BL-075/BL-076 - is now admitted
+as coordinate-covariant, its family-level involution derived from the same
+canonically determined coordinate algebra. The D4 and D7 records are **not
+amended**; ENTRY 10, ENTRY 15, and ENTRY 16 are byte-untouched by this entry.
+
+### Scope
+
+This entry claims exactly: the edge content (as admitted under ENTRY 16) and the
+tier-to-family correspondence's derivability, per the admitted record.
+
+Excluded (binding, carried from the record):
+
+- No GOVERNS semantics; no role (the office structure's meaning).
+- No family-identity derivation: which set-classes occupy the correspondence's
+  slots remains the canonical ledger's data.
+- No office-semantics assignment: the offices' semantic assignments remain
+  framework-declared.
+- No anchor-set derivability; no tier/role partition derivability (the anchoring
+  remainder is carried).
+- No GOVERNS authority - this claim is about derivability, not about the
+  relation's runtime/canonical status.
+- No D7 implication (the ti-pole's measured asymmetry stands; D7 remains
+  hypothesis-tier, preserved).
+- No INV-5 graduation; no section 6(4) movement; no M-walkability promotion; no
+  G1 movement; no directional-semantics assignment.
+- No record amendments beyond this claim's own record and entry (D4's
+  `derivable-via-R2` and D7's hypothesis-tier unchanged; ENTRY 10, ENTRY 15, and
+  ENTRY 16 byte-untouched).
+- No canonical/Court/schema/Neo4j writes beyond the landing's own; no release
+  promotion or green-release claim.
+- The frame (comprehension map sections 2.6-2.7) is interpretation vocabulary;
+  session prose is context, not evidence.
+
+### References
+
+- The record: `docs/specs/governs-derivability-candidate-v0.1.0.md`
+  (`SPEC-GOVERNS-DERIVABILITY-001` v0.2.0; expansion receipt
+  `qa/specs/gov-525-governs-derivability-expansion-admission.json`; the v0.1.1
+  admission: ENTRY 16, receipt `qa/specs/gov-524-governs-derivability-admission.json`).
+- The coordinate search (BL-075): `orrery/src/generated/bl075-coordinate-search.v1.json`
+  (raw-byte `1cb710d872f3b5564c138c83c9fd589b2655a9133bf7aba8b1455cc28d426914`;
+  `investigationFingerprint`
+  `88838e225276432427f2a7c765d8e1f9105c5c6bd87d4db04ef5e1bb2e93704e`; commit
+  `7fe5d44`; memo `scrum/plan/bl-075-coordinate-search-memo.md`).
+- The bijection probe (BL-076): `orrery/src/generated/bl076-bijection-probe.v1.json`
+  (raw-byte `74bcd025259b89783f404c18286a8189d296fa2949057473634fd6d2dcf8a4f5`;
+  `investigationFingerprint`
+  `81e6cf7211a94888c2adedeebc44674a6e4a78e5e8b3fc09bb7a8fd671569d1e`; commit
+  `3c6d404`; memo `scrum/plan/bl-076-bijection-probe-memo.md`).
+- The registrations (GSL-5/GSL-6; BL-077; commit `936103b`): synthesis
+  `scrum/plan/bl-067-governs-semantic-synthesis.md` section 5; comprehension map
+  `scrum/plan/harmonic-comprehension-map.md` section 5.8.
+- The tier-to-family bijection measurement (BL-061/062):
+  `orrery/src/generated/d4-zresidual-hunt.v1.json` (`dTierTiers`; fingerprint
+  `e1b3f655...`).
+- The contact-target structure (BL-068):
+  `orrery/src/generated/bl068-d7-asymmetry.v1.json` (`derivationFingerprint`
+  `b0d65bd6...`).
+- The scoping memo: `scrum/plan/bl-059-governs-derivability-scoping-memo.md`
+  (section 4.11 evidence accretion; section 4.12 admission record).
+- Inventory emission: `scripts/build-manifest.mjs` via `npm run package:manifest`;
+  package `seven-governors-integrated-release` 1.9.0-dev from `package.json`.
+
+### Release Gate Disposition
+
+A pre-existing validate:ledger-pins failure (13 violations in corridor scripts -
+12 unreviewed_literal_pin + 1 literal_ledger_pin; reproducing at corridor-era
+commit `85a62a6`; the specific file-level inventory is carried in the compliance
+receipt's predeclaredGates) is recorded as accepted release state for this
+landing, with repair queued (BL-058); the ledger-pin scanner and allowlist are
+untouched. Full `npm run validate` was executed for this landing; the observed
+first stop is recorded in the compliance receipt. The predeclared acceptable
+stops are the ledger-recorded `STALE_TWIN_HUB_CONVERGENCE` state (ENTRY
+10/11/12/13), the recorded `STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE` state
+(`qa/d4-production-landing.json`; `docs/specs/fivefold_constructs_engine_spec.md`
+section 4.1), and the pre-existing `validate:ledger-pins` inventory recorded
+above. Any other failure halts. No stale control is disabled, no shared artifact
+is regenerated to force green, and no green integrated release is claimed.
+
+### Guard
+
+This entry grants no runtime, topology, graph, governs, Court, office, schema,
+policy or global `harmonic.C_H` authority. It does not change the GOVERNS
+relation's formal status (derivability is admitted, not authority), does not
+amend D4's `derivable-via-R2` or D7's hypothesis-tier, does not dissolve the
+boundary wall, does not graduate INV-5, does not promote M-walkability, and does
+not assign directional semantics. The expanded claim's scope precision is
+binding: the correspondence's derivability is admitted, not the family
+identities' origin and not any office semantics. Prior entries and prior line
+anchors remain unchanged; this entry is append-only. The historical record is
+linked, not rewritten: any reading of this entry as changing the GOVERNS
+relation's authority, amending ENTRY 10, ENTRY 15, or ENTRY 16, or moving D7 is
+rejected.

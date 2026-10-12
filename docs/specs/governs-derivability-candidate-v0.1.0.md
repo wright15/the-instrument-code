@@ -3,13 +3,13 @@
 | Field | Value |
 |---|---|
 | Artifact ID | `SPEC-GOVERNS-DERIVABILITY-001` `[DEFINED]` |
-| Version | 0.1.1 `[DEFINED]` |
-| Status | Admitted; the authority for that status is the admission ledger entry (ENTRY 16) and compliance receipt (`qa/specs/gov-524-governs-derivability-admission.json`), not this header. `[DEFINED]` |
+| Version | 0.2.0 `[DEFINED]` |
+| Status | Admitted; the authority for that status is the admission ledger entries (ENTRY 16; the expansion: ENTRY 17) and the compliance receipts (`qa/specs/gov-524-governs-derivability-admission.json`; the expansion: `qa/specs/gov-525-governs-derivability-expansion-admission.json`), not this header. `[DEFINED]` |
 | Claim Class | Canonical admission, TIERING claim-catalog class 2 (`docs/TIERING.md:18-20`) `[DERIVED - docs/TIERING.md:11-24]` |
-| Work Item | `GOV-524` (verified next-free at execution). Artifact ID `SPEC-GOVERNS-DERIVABILITY-001` is distinct from the ticket ID. `[DEFINED]` |
-| Authority | None by this text; authority flows from the admission ledger entry (ENTRY 16) and the compliance receipt (`qa/specs/gov-524-governs-derivability-admission.json`). `[DEFINED]` |
+| Work Item | `GOV-524` (verified next-free at execution); the expansion: `GOV-525` (verified next-free at execution). Artifact ID `SPEC-GOVERNS-DERIVABILITY-001` is distinct from the ticket IDs. `[DEFINED]` |
+| Authority | None by this text; authority flows from the admission ledger entries (ENTRY 16; the expansion: ENTRY 17) and the compliance receipts (`qa/specs/gov-524-governs-derivability-admission.json`; the expansion: `qa/specs/gov-525-governs-derivability-expansion-admission.json`). `[DEFINED]` |
 | Release Status | No gate is cleared and no green integrated release is claimed. `[DEFINED]` |
-| Provenance | Un-granting program BL-063 (Phase 1) / BL-064 (Phase 2) / BL-066 (Phase 3); D4 corridor BL-055 → BL-057 (ENTRY 15); BL-059 statement and higher-theorem scoping memo; motivation legs BL-029, BL-035, BL-031 Phase 2. `[DERIVED - cited sprint records]` |
+| Provenance | Un-granting program BL-063 (Phase 1) / BL-064 (Phase 2) / BL-066 (Phase 3); D4 corridor BL-055 → BL-057 (ENTRY 15); BL-059 statement and higher-theorem scoping memo; motivation legs BL-029, BL-035, BL-031 Phase 2; the expansion: BL-075/BL-076 (the coordinate algebra; the bijection probe), BL-077 (the GSL-5/GSL-6 registration). `[DERIVED - cited sprint records]` |
 | Charter | TIERING claim-catalog class 2 (`docs/TIERING.md:11-24`); the BL-059 scoping memo's formally stated question (`scrum/plan/bl-059-governs-derivability-scoping-memo.md` §1). This record does not amend SPEC-001, ENTRY 10, or ENTRY 15. `[DERIVED - cited records]` |
 | Fencing Class | Candidate record only. No GOVERNS authority, runtime, topology-effect, Court-runtime, graph, policy, or promotion authority. `[DEFINED]` |
 | Content Digest | External-only; no in-document self-hash. `[DEFINED]` |
@@ -22,6 +22,7 @@
 |---|---|
 | 0.1.0 | Initial candidate for maintainer §6 review. Any admission-time correction bumps the version with a row; the reviewed-baseline digest and the authorized delta are recorded in the receipt (ENTRY 12 precedent). |
 | 0.1.1 | Admission-time corrections: header Version resolved to 0.1.1; header Status resolved to admitted-by-ledger-reference; §1.1 tag annotated (admitted per ENTRY 16); §5 converted from prospective to causal form and ENTRY 16 named; this row added. Claim text unchanged from reviewed v0.1.0. |
+| 0.2.0 | Expansion admission (GOV-525; ENTRY 17): §1.1 gains the expanded claim subsection (the tier-to-family correspondence's derivability, with the scope precision); §1.2 gains the correspondence machine checks; §2 gains the two precise exclusions (family-identity derivation; office-semantics assignment); §3.1 gains the BL-075/BL-076 evidence rows; §0.1 and §5 updated for both admissions. The v0.1.1 claim text is preserved verbatim; the expansion is additive. |
 
 ## 0. Scope, Fencing, and Evidence Discipline
 
@@ -29,10 +30,12 @@
 
 `[DEFINED]` This record proposes the admission of one bounded object: the derivability of
 the A1 GOVERNS relation's **edge content** from pre-grant machinery, up to one named bit
-and the anchoring remainder. It does not restate, amend, or re-derive the relation's
-semantics, its role, its authority, or the status of any other record. The historical
-`not_derived` (ENTRY 10) and the additive `derivable-via-R2` amendment (ENTRY 15) are
-untouched; this record links forward from them.
+and the anchoring remainder, expanded at v0.2.0 (ENTRY 17) to include the
+**tier-to-family correspondence**'s derivability at the same bounds. It does not restate,
+amend, or re-derive the relation's semantics, its role, its authority, or the status of
+any other record. The historical `not_derived` (ENTRY 10) and the additive
+`derivable-via-R2` amendment (ENTRY 15) are untouched; this record links forward from
+them.
 
 ### 0.2 Evidence-class tags
 
@@ -72,6 +75,32 @@ orientations (`bl066` `reflection.edgeSetInvariant: true`); the carried bit bind
 office labels, not the edges. The bound "up to one named bit" is the programme's
 remainder statement, carried exactly (BL-066 §6 bit inventory; OD-66-3 ruling).
 
+**Expansion (v0.2.0; admission proposed — admitted per ENTRY 17).** The claim is
+extended to include the tier-to-family correspondence:
+
+> **Claimed (expanded).** In addition to the edge content admitted under ENTRY 16, the
+> **tier-to-family correspondence** — the coordinate action's family-level structure over
+> the ten anchor families (A0/A1/A2/D1–D7) — is derivable from pre-grant machinery: the
+> coordinate algebra (the Klein-4 unit subgroup {1,5,7,11} of Aff(Z₁₂), canonically
+> determined by the interval-transport requirement 11u ≡ 7 (mod 12);
+> `orrery/src/generated/bl075-coordinate-search.v1.json`) acts on the families as the
+> exact family-level involution — 7-35 ↔ 7-1 (A0 ↔ D7, the closure pair), 7-34 ↔ 7-8
+> (A1 ↔ D6, the contact-target pair), 7-Z37 ↔ 7-Z17 (D3 ↔ D4, the interior swap), fixing
+> 7-33, 7-22, 7-15, 7-Z12 — identical for T1 and T2, trivial for the identity and the
+> pc-reflection, whole-block, with the Z-pair structure and the fa/ti crossing present
+> (`orrery/src/generated/bl076-bijection-probe.v1.json`; branch `COVARIANT_CONFIRMED`,
+> finding `probe-verified`) — **up to one named bit** and **the anchoring remainder** as
+> carried by ENTRY 16.
+
+**Scope precision (not a widening).** The claim is about the correspondence's
+*derivability* — the family-level involution's structure follows from the derived
+coordinate algebra — not about the identities' origin: which set-classes occupy the
+correspondence's slots remains read from the canonical ledger, and the offices' semantic
+assignments remain framework-declared. The anchoring remainder carries as under
+ENTRY 16. The office-level action measured by the same probe (faithful whole per-tier
+office permutations with Mercury the sole fixed point in every map and tier; registered
+as GSL-6, BL-077) is registered evidence, not part of the claimed sentence.
+
 ### 1.2 Machine checks
 
 `[DERIVED - cited sprint records]` The claim's numbers are pinned by the three phase
@@ -98,6 +127,14 @@ region at Phase 3):
   (`missing: []`, `extra: []`); per-parent count 4 emergent, never input; GSL-1R signature
   reproduced 2×7-27 + 2×7-31 per parent; verdict `R_EDGES_DERIVED`; gates V-P3-1…5 all
   PASS (`bl066` `reach`, `closure`, `coverage`, `mechanism`, `gates`, `synthesis`).
+- **The correspondence (BL-075/BL-076).** BL-075's 48-map Aff(Z₁₂) census returns the
+  canonically determined carrier (`u = 5`, unique under `11u ≡ 7 (mod 12)`; the Klein-4
+  closure `{1,5,7,11}`; 61 mutation probes rejected). BL-076's bijection probe applies the
+  four maps to all 70 anchor states with full-ledger image lookups: zero family fragments,
+  zero office fragments, zero ledger-absent images; 40/40 family blocks and 40/40 office
+  tiers whole; the family-level expectation exact; the composition consistency 160/160 +
+  1120/1120; branch `COVARIANT_CONFIRMED`, finding `probe-verified` (81 mutation probes
+  rejected) (`bl075-coordinate-search.v1.json`; `bl076-bijection-probe.v1.json`).
 
 Corridor numbers carried as context (each at its own record): predicate 14/14 (BL-055);
 cycle-twin 7/7 and midpoint census 7/2/5 (BL-056); calibration EXACT and R2 = O at four
@@ -186,6 +223,12 @@ anchoring remainder remains granted.
 
 - **No GOVERNS semantics.** What the relation *means* in the framework is not claimed.
 - **No role.** The office structure's meaning is not claimed.
+- **No family-identity derivation.** Which set-classes occupy the correspondence's slots
+  remains read from the canonical ledger; the expansion claims the correspondence's
+  derivability (the coordinate action's family-level structure), not the identities'
+  origin.
+- **No office-semantics assignment.** The offices' semantic assignments remain
+  framework-declared.
 - **No anchor-set derivability.** The A0/A1 anchor sets are the anchoring remainder —
   carried, not claimed.
 - **No tier/role partition derivability.** The domain partition (role/tier membership) is
@@ -226,6 +269,8 @@ anchoring remainder remains granted.
 | Phase 2 — cycle ground: 14/14 directed set-equal (missing/extra empty; per-child 7/7; office alignment 7/7 under κ₁); rules S-int 5 + T-bdy 2, K-int 5 + K-bdy 2, unified 7; `midZ7(c−1,c+1) = c` (coordinate rule ≡ frozen midpoint law read backward; boundary centers = the 2 observation-exact T1 seam relations; internal = the 5 confirmation-marked predictions); D-mid 5/5 masks-only; class 7/7; verdict `CYCLE_GROUND_DERIVED` | `orrery/src/generated/bl064-cycle-ground.v1.json` (raw-byte `9432aa764a57823a06a4d36db3209507ed85af0f7675d3708ef388e369da6f24`; `derivationFingerprint` `aa975820136658dd2fb3c84d98b34bf7a1901d39edd6548a300f458858305918`; chain anchor BL-063 by self-checked fingerprint); memo `scrum/plan/bl-064-cycle-ground-memo.md`; commit `341aada` | cycle ground |
 | Phase 3 — R-edges: R-H2 reach 24/28 placed, zero extras, unique hubs; 4 unplaced `{695, 3497, 731, 2921}`; H8 reach-census closure law (member side: attach to the H8-parent with the smaller H2-reach count ≡ matching side: the unique equalizing matching; 16 enumerated, exactly one — the granted assignment); rotation census 0/44; battery corroborates (pcSum + mask-numeric agree; κ orientation-relative; containment the inapplicable control); count-4 emergent; derived 28 set-equal granted R (`missing: []`, `extra: []`); verdict `R_EDGES_DERIVED`; gates V-P3-1…5 PASS | `orrery/src/generated/bl066-r-edge-derivation.v1.json` (raw-byte `ac2db3d92df89f9ae2e5f19dfc7c0489a56f55dfa8bd154a22ad74c875e7a8ab`; `derivationFingerprint` `94f0661ff6e76b0dea69fbe9f09ead24da7901393fb735495f3a25c3d9a1a886`; chain anchor BL-064 by self-checked fingerprint); memo `scrum/plan/bl-066-r-edge-derivation-memo.md`; commit `582af2c` | the capstone |
 | Reach-robustness finding: H2-reach ≡ containment-reach (max-overlap) — the same partition under two independent definitions (24 placed agreed; the same 4 ties/misses) | `bl066` `reach.robustness`; memo §4.1 | robustness |
+| The coordinate algebra — the Klein-4 unit subgroup {1,5,7,11} of Aff(Z₁₂), canonically determined by the interval-transport requirement (u = 5 unique under 11u ≡ 7 (mod 12)); the 48-map census; the reflection sub-tests; the composition closure | `orrery/src/generated/bl075-coordinate-search.v1.json` (raw-byte `1cb710d872f3b5564c138c83c9fd589b2655a9133bf7aba8b1455cc28d426914`; `investigationFingerprint` `88838e225276432427f2a7c765d8e1f9105c5c6bd87d4db04ef5e1bb2e93704e`); memo `scrum/plan/bl-075-coordinate-search-memo.md`; commit `7fe5d44` | the coordinate algebra |
+| The tier-to-family correspondence's covariance — the family-level involution 7-35↔7-1, 7-34↔7-8, 7-Z37↔7-Z17, fixed 7-33/7-22/7-15/7-Z12; identical T1/T2, trivial {ID, ρ}; zero fragments; the Z-pair structure; the fa/ti crossing; the office-level action (Mercury fixed; the 4+1 signature) | `orrery/src/generated/bl076-bijection-probe.v1.json` (raw-byte `74bcd025259b89783f404c18286a8189d296fa2949057473634fd6d2dcf8a4f5`; `investigationFingerprint` `81e6cf7211a94888c2adedeebc44674a6e4a78e5e8b3fc09bb7a8fd671569d1e`); memo `scrum/plan/bl-076-bijection-probe-memo.md`; commit `3c6d404`; the registration `scrum/plan/bl-067-governs-semantic-synthesis.md` §5 (GSL-5/GSL-6; commit `936103b`) | the correspondence |
 | Bit inventory: carried = ONE bit (office-orientation; two registrations — brightness premise H_A, one grant comparison M1; one identification); dissolved = the swap-bit candidate (resolved by the closure law; pre-registered "carry only if nothing fires" condition not met) | `bl066` `synthesis.bitInventory`; `bl063` `synthesis.residualDependency`; OD-66-3 ruling (`scrum/plan/bl-066-r-edge-derivation-memo.md` §10) | bit inventory |
 | Anchoring remainder (granted): the A1 anchor/satellite domain partition (role/tier); the office-orientation bit (labels only — the edge set does not depend on it); presentation conventions (walk order, ids, tier tags) | `bl066` `accounting.tiers.remainingGranted`, `synthesis.grantDischarge` | grant ledger |
 | Motivation legs: boundary interrogation (D-tier closure absent; M-closed tier cycles); directional non-derivability (direction recorded unassigned); transport layering (deep collisions, boundary geometry-only) | `scrum/plan/bl-029-d-tier-operator-probe-memo.md`; `scrum/plan/bl-035-semantic-derivation-census-memo.md`; `scrum/plan/bl-031-semantic-transport-probe-memo.md` | planning evidence |
@@ -272,5 +317,8 @@ untouched.
 
 `[DEFINED]` This document was admitted as registered evidence through its §4 execution —
 the atomic landing that created the compliance receipt
-(`qa/specs/gov-524-governs-derivability-admission.json`) and appended ENTRY 16. Nothing
-else admits it. Before that landing it was a candidate with no effect.
+(`qa/specs/gov-524-governs-derivability-admission.json`) and appended ENTRY 16. Its
+v0.2.0 expansion was admitted through the GOV-525 landing — the compliance receipt
+(`qa/specs/gov-525-governs-derivability-expansion-admission.json`) and ENTRY 17; the
+v0.1.1 text remains preserved in the git history and pinned in the expansion receipt.
+Nothing else admits it. Before those landings it was a candidate with no effect.

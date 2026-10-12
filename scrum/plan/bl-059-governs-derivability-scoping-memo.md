@@ -317,6 +317,21 @@ set-classes occupy the correspondence's slots remains the canonical ledger's dat
 offices' semantic assignments (framework-declared); the anchoring remainder; any
 office-level semantic derivation. D7 hypothesis-tier unchanged.
 
+**4.12 The expanded claim admitted: the edge content and the tier↔family correspondence
+(GOV-525; ENTRY 17; 2026-10-12).** The sixth claim event admits the candidate record's
+v0.2.0 expansion: beyond the edge content (ENTRY 16), the **tier↔family correspondence** is
+admitted as derivable — the coordinate algebra's family-level involution carries the
+correspondence whole (per §4.11's evidence), up to the same one named bit and the anchoring
+remainder. Scope precision (binding): the correspondence's *derivability* is admitted; the
+families' identities remain read from the canonical ledger; the offices' semantic
+assignments remain framework-declared. Receipts:
+`docs/specs/governs-derivability-candidate-v0.1.0.md` (v0.2.0);
+`qa/specs/gov-525-governs-derivability-expansion-admission.json`; ENTRY 17
+(`provenance/DECISION_LEDGER.md:2968-3126`). *Shows:* the programme's admitted object now
+includes the correspondence — the record's scope beyond the edge content. *Does not show:*
+the identities' origin; office semantics; the anchoring remainder; any authority change
+(the admission is derivability, not authority).
+
 ## 5. Evidence against / obstructing (honest tally)
 
 **5.1 D7's modal non-closure (ENTRY 15 §D7 Clause; `qa/d4-r2-execution-receipt.json`
@@ -434,6 +449,15 @@ the relation's semantics and role, the claim's authority (the relation's formal 
 unchanged), and any D7 reading. The question beyond the claim's bounded scope remains
 open — the memo accretes, and the claim is the artifact carrying the admitted answer.
 
+**Status update 2026-10-12.** The admitted object has expanded: the claim event
+`SPEC-GOVERNS-DERIVABILITY-001` v0.2.0 (ENTRY 17, GOV-525) admitted that the
+**tier↔family correspondence** is additionally derivable at the same bounds — the
+coordinate algebra's family-level involution carries the correspondence whole (§4.11
+evidence; §4.12 admission record; GSL-5/GSL-6 registered at BL-077). What this does **not**
+close: unchanged from the 2026-10-11 update, plus the expansion's own precision — the
+families' identities' origin and the offices' semantic assignments are not claimed. The
+question beyond the claim's bounded scope remains open.
+
 ## 8. Fences and what this memo does not do
 
 No claim events; no record amendments (D4's `derivable-via-R2` and D7's hypothesis-tier are
@@ -449,6 +473,11 @@ memo's content.
 ENTRY 16 / GOV-524 landed independently of this memo; §4.7 and the §7 status update record
 it under this memo's mutation contract. ENTRY 10 and ENTRY 15 remain byte-untouched by
 this memo; the claim event appends ENTRY 16 only.)
+
+(Accretion note, 2026-10-12: the expansion claim event `SPEC-GOVERNS-DERIVABILITY-001`
+v0.2.0 / ENTRY 17 / GOV-525 landed independently of this memo; §4.11 (evidence), §4.12
+(admission record), and the §7 status update record it. ENTRY 10, ENTRY 15, and ENTRY 16
+remain byte-untouched by this memo; the claim event appends ENTRY 17 only.)
 
 ## 9. Closing note: the biggest open question in the project, made askable
 

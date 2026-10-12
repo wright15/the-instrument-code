@@ -557,6 +557,7 @@ session (lattice Phase B, or the governs semantic layer) resolves it from the re
 | BL-069 registration (GSL-3) | §5.6 GSL-3 — the fa/ti asymmetry's mechanism (the synthesis §6 Question 1 resolution) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
 | BL-071 registration (GSL-4) | §5.7 GSL-4 — the interval-6 characterization (five universes × three measures; the mixed role verdict; the dual seven-cycle closure) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
 | BL-077 registration (GSL-5, GSL-6) | §5.8 GSL-5/GSL-6 — the coordinate action's family-level involution (the tier↔family correspondence's covariance) and office-level permutation (Mercury fixed; the 4+1 signature) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
+| claim record `SPEC-GOVERNS-DERIVABILITY-001` v0.2.0 (expanded; ENTRY 17) | §5.8 GSL-5/GSL-6 as the correspondence's probe evidence — the claim's load-bearing evidence is the BL-075/BL-076 artifacts (chain-anchored) | consumed as context; §5 remains planning evidence — measured, not admitted, not citable as claims; the expansion changes no §5.8 tag |
 
 ## 5. Measured findings — the D4 boundary-geography selection layer [MEASURED — planning evidence]
 
