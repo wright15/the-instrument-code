@@ -193,6 +193,31 @@ structurally related offices, not arbitrary ones. *Memo `:99,129`; pin
 composition statistics are state-level, not class-determined. *Memo
 `bl-061-062-zresidual-memo.md:26`.*
 
+**The interval-6 structure (GSL-4; BL-071, registered 2026-10-11).** The boundary layer's
+tritone geometry, measured across five universes and three distinct measures — the measures
+disagree, and the disagreement is the characterization. **Displacement-6** (single-pitch
+tritone substitutions) concentrates in the ti-pole's contact domain: 12 of its 36 instances
+(1/3 against the 630/6930 structural baseline; the fa-pole domain carries none, 0/28 — the
+signature is ti-specific, not boundary-wide), the two recorded instances being exactly the
+near-miss's terminal far contacts 127:253 and 4033:2017; the fully excluded class is
+displacement 4, not 6. **Rotation-6** is the boundary cycles' closure interval: **both of
+the layer's seven-cycles close at rotation 6** — the D7 modal orbit (4033→127) and the A0
+P7 ring (2773→1387), both at Hamming 10 — and all seven D-tier anchor families carry at
+least one rotation-6 pair (12/1176 against the ledger's 126/106491). **IC6 content**
+(tritones inside a state) shows no boundary over-representation — the boundary is
+IC6-poor. The 7-27/7-31 selection split is *not* tritone-mediated (0 swap / 0 rotation-6 /
+0 complement over all 196 cross pairs; the split is class-structured, the tritone appearing
+only as the classes' IC6 content contrast). In the lifted space the fa/ti endpoints'
+relation is exact and phase-stable: `lifted(2773@(p+6)) = T_6(lifted(1387@p))` for every
+phase, root-coherent across all 126 ledger rotation-6 pairs. Role verdict: **mixed** (the
+closed vocabulary: separation / transition / none per measure); no mechanism claim — open
+edges are BL-072 (the composite's mechanism), BL-073 (the dual closure), BL-074 (the
+measures' disagreement). *Landing artifact:*
+`orrery/src/generated/bl071-interval-6-structure.v1.json` (fingerprint `8b2a1f6c…`;
+pre-registered Fisher tests TEST-1…TEST-4); memo
+`scrum/plan/bl-071-interval-6-memo.md`. Planning evidence; the registration adds no
+measurement.
+
 *Filtering-regime pointer (not a fourth reading):* the geography's threshold structure is
 the finding §2's coda reads as a filtering regime; this section adds no separate lens
 application — the lens coloring lives in §2's coda and is not extended here.
@@ -282,7 +307,10 @@ claim, no new phenomena mapping, no lens extension (no eighth form); every subst
 claim cites its landing artifact (§§1–5); no finding is discharged, and no finding-row
 status moves. *(BL-069 registration: the §4 mechanism paragraph and the §6 entry-1
 resolution register the landed BL-068 finding (GSL-3) — newly added content, cited to its
-landing artifact; the registration adds no measurement of its own.)*
+landing artifact; the registration adds no measurement of its own.)* *(BL-071 registration:
+§5 gains the interval-6 block (GSL-4) — newly added content, cited to its landing artifact
+(`orrery/src/generated/bl071-interval-6-structure.v1.json`, fingerprint `8b2a1f6c…`); the
+registration adds no measurement of its own.)*
 
 **7.4 Finding-row statuses untouched.** Rows 8 and 10 remain `finding: no repo source`
 (`docs/ARCHITECTURE_MAP.md:129,133-134`; tally `:139`); §5 remains planning evidence (map
@@ -307,7 +335,9 @@ directional-semantics assignment; no D7 computation; no canonical/Court/schema/N
 writes; no new measurement; no new claims; no finding-row discharge; no lens extension.
 *(BL-069 registration, 2026-10-11: §6 entry 1 resolves to GSL-3 and §4 gains the mechanism
 paragraph — the registration adds no measurement; every added claim cites BL-068's
-artifact and memo.)* Session prose is context, not evidence.
+artifact and memo.)* *(BL-071 registration, 2026-10-11: §5 gains the interval-6 block
+(GSL-4) — the registration adds no measurement; every added claim cites BL-071's artifact
+and memo.)* Session prose is context, not evidence.
 
 ## 8. Result in one paragraph
 
@@ -319,7 +349,10 @@ selection mechanism reads in three channels: set-class identity (the clean 14/14
 measured three ways as the fa/ti asymmetry (its mechanism now registered as GSL-3, §4),
 D7 fenced hypothesis-tier throughout. Its
 geography is assembled: the tier↔family bijection, the threshold anatomy and its three
-exception pairs, inversion-invariance and office-linking. Three template-bound codas read
+exception pairs, inversion-invariance and office-linking. Its interval-6 structure is
+measured across five universes and three distinct measures (GSL-4, §5: displacement-6
+ti-local, rotation-6 closing both seven-cycles, the boundary IC6-poor; role verdict mixed),
+and the 7-27/7-31 split is recorded as *not* tritone-mediated. Three template-bound codas read
 the structurally adjacent findings through the registered §2.7 registers; the membrane
 holds — the lens colors, the measurements ground, the correspondence is design coherence,
 not mechanism. Five open questions were inventoried and aimed; the first — the D7

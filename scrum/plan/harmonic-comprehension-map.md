@@ -555,6 +555,7 @@ session (lattice Phase B, or the governs semantic layer) resolves it from the re
 | claim record `SPEC-GOVERNS-DERIVABILITY-001` (admitted; ENTRY 16) | §5 measured findings (GSL-1/1R/2) as corroborating measurement context only — the claim's load-bearing evidence is the BL-063/BL-064/BL-066 artifacts | consumed as context; §5 remains planning evidence — measured, not admitted, not citable as claims; the admission changes no §5 tag |
 | BL-067 synthesis (`plan/bl-067-governs-semantic-synthesis.md`) | §5 measured findings (channels, polarity, geography) as the synthesis base; §2.7 lens in three template-bound codas | planning evidence; lens interpretation-only per the membrane; never load-bearing; finding statuses untouched; not citable as claims |
 | BL-069 registration (GSL-3) | §5.6 GSL-3 — the fa/ti asymmetry's mechanism (the synthesis §6 Question 1 resolution) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
+| BL-071 registration (GSL-4) | §5.7 GSL-4 — the interval-6 characterization (five universes × three measures; the mixed role verdict; the dual seven-cycle closure) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
 
 ## 5. Measured findings — the D4 boundary-geography selection layer [MEASURED — planning evidence]
 
@@ -607,7 +608,9 @@ case for any refined mechanism.
 `orrery/src/generated/d4-zresidual-hunt.v1.json` (fingerprint `e1b3f655…`);
 `scrum/plan/bl-060-14v14-hunt-memo.md`; `scrum/plan/bl-061-062-zresidual-memo.md`;
 `orrery/src/generated/bl068-d7-asymmetry.v1.json` (fingerprint `b0d65bd6…`);
-`scrum/plan/bl-068-d7-asymmetry-memo.md`.
+`scrum/plan/bl-068-d7-asymmetry-memo.md`;
+`orrery/src/generated/bl071-interval-6-structure.v1.json` (fingerprint `8b2a1f6c…`,
+raw-byte `80a98540…`); `scrum/plan/bl-071-interval-6-memo.md`.
 Planning evidence: no claim event, no record amendment, no admission; GOVERNS remains
 granted input; the higher-theorem question remains open. Not citable as claims.
 
@@ -636,3 +639,30 @@ reached-but-office-excluded. *Receipts:*
 `scrum/plan/bl-068-d7-asymmetry-memo.md:20-56` (§5.5's list carries the registration).
 D7 hypothesis-tier throughout — no D7 claim, no amendment, no derivation admission. Not
 citable as claims.
+
+### 5.7 The interval-6 structure (GSL-4)
+
+*The boundary layer's tritone geometry measured across five universes and three distinct
+measures — the measures disagree, and the disagreement is the characterization.*
+
+**GSL-4** (BL-071, registered 2026-10-11; the entry continuing the GSL series with a new
+interval-geometric finding class). **Displacement-6** (single-pitch tritone substitutions)
+is ti-local: 12 of the D7 contact domain's 36 instances (1/3 against the 630/6930
+structural baseline; the fa-pole domain carries none, 0/28 — ti-specific, not
+boundary-wide; Fisher TEST-2 p = 3.8e-4), the two recorded instances being exactly the
+terminal far contacts 127:253 and 4033:2017, while the fully excluded class is displacement
+4. **Rotation-6** is the boundary cycles' closure interval: both of the layer's
+seven-cycles close at rotation 6 — the D7 modal orbit (4033→127) and the A0 P7 ring
+(2773→1387), both at Hamming 10 — and all seven D-tier anchor families carry at least one
+rotation-6 pair (12/1176 against the ledger's 126/106491; TEST-3 p = 4.7e-8). **IC6
+content** shows no boundary over-representation (the boundary is IC6-poor; TEST-4). The
+7-27/7-31 split is *not* tritone-mediated (0 swap / 0 rotation-6 / 0 complement over all
+196 cross pairs). The lifted-space representation is exact:
+`lifted(2773@(p+6)) = T_6(lifted(1387@p))` for every phase, root-coherent across all 126
+ledger rotation-6 pairs. Role verdict: **mixed** (the closed vocabulary — separation /
+transition / none per measure); no mechanism claim; open edges BL-072 (the composite's
+mechanism), BL-073 (the dual closure), BL-074 (the measures' disagreement). *Receipts:*
+`orrery/src/generated/bl071-interval-6-structure.v1.json` (`investigationFingerprint`
+`8b2a1f6c…`; pre-registered baselines B1/B2 and Fisher tests TEST-1…TEST-4); memo
+`scrum/plan/bl-071-interval-6-memo.md`. D7 hypothesis-tier throughout — no D7 claim, no
+amendment, no derivation admission. Not citable as claims.

@@ -244,6 +244,26 @@ is evidence accruing to §4's column, not an answer to the memo's question. D7
 hypothesis-tier throughout (no D7 claim, no amendment, no derivation admission; ENTRY 15's
 clause verbatim).
 
+**4.9 The interval-6 structure (BL-071; 2026-10-11).** The boundary layer's tritone geometry
+now has a five-universe, three-measure census (D7-36, D6-tier, A1-28, A0-P7, D-anchor-49;
+displacement-6 / rotation-6 / IC6 content kept distinct — they disagree, and the
+disagreement is the finding). The structure most relevant to this memo's question: **both
+boundary seven-cycles close at rotation 6** — the D7 modal orbit (4033→127) and the A0 P7
+ring (2773→1387), both Hamming 10 — so §5.1's obstruction reading is bounded further: the
+ti-pole's orbit carries exact rotational structure at its own intervals, and its closure
+interval is *shared* with the fa-side mode line's ring. Complementarily, displacement-6 is
+ti-local (12/36 of the D7 contact domain; the fa-pole domain 0/28) while the 7-27/7-31
+selection split is *not* tritone-mediated (0 swap / 0 rotation-6 / 0 complement over all
+196 cross pairs) — the tritone's role is in the boundary layer's *relational* structure
+(closures, exclusions, crossings), not in the families' mutual relationship. The fa/ti
+endpoints' lifted relation is exact (`lifted(2773@(p+6)) = T_6(lifted(1387@p))` per phase;
+root-coherent 126/126). Receipts: `orrery/src/generated/bl071-interval-6-structure.v1.json`
+(fingerprint `8b2a1f6c…`), `scrum/plan/bl-071-interval-6-memo.md`. *Shows:* discoverable
+structure at the boundary layer's cycle and contact scales — the kind a derivable GOVERNS
+would need to reproduce. *Does not show:* derivability — no route, no selection mechanism
+(the mechanism questions are BL-072/BL-074, open); the §5.1 twin-transport failure stands.
+D7 hypothesis-tier unchanged.
+
 ## 5. Evidence against / obstructing (honest tally)
 
 **5.1 D7's modal non-closure (ENTRY 15 §D7 Clause; `qa/d4-r2-execution-receipt.json`
