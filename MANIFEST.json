@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1297,
-  "totalBytes": 84294092,
+  "fileCount": 1302,
+  "totalBytes": 84510953,
   "files": [
     {
       "path": ".env.example",
@@ -1072,8 +1072,8 @@
     },
     {
       "path": "orrery/package.json",
-      "bytes": 6470,
-      "sha256": "93c9cf10b06db455f9350d11f0b25908e4c61a47c71da70405349633aab69f5e"
+      "bytes": 6663,
+      "sha256": "3cb94f1411757c86bc9ee067e74316f84b71785ce33d95674bbb24c82e4aa0f7"
     },
     {
       "path": "orrery/public/AUDIO_ASSETS.md",
@@ -1144,6 +1144,11 @@
       "path": "orrery/scripts/validate-bl076-bijection-probe.mjs",
       "bytes": 48759,
       "sha256": "8a2bf58a84ad4e2d1a17cc5cd862cabc2bed820618f301149631e65eb5c1f3b4"
+    },
+    {
+      "path": "orrery/scripts/validate-bl078-d7-retest.mjs",
+      "bytes": 61440,
+      "sha256": "041bd3de929630b728832fdfe4b3ced7c8fd735a86fa1bb991ad36d5d8828677"
     },
     {
       "path": "orrery/scripts/validate-d-tier-operator-probe.mjs",
@@ -1296,6 +1301,11 @@
       "sha256": "ada1c8a5c14269c8d6a20104b7ce89e72e4ec7121b7c2542dd1d0890b62fe676"
     },
     {
+      "path": "orrery/src/bl078-d7-retest.test.ts",
+      "bytes": 14548,
+      "sha256": "3cc5fa1d0090fe106c63119c4afe3f7efdf1a744860ee41b10c5f5918112a1a2"
+    },
+    {
       "path": "orrery/src/court.test.ts",
       "bytes": 4121,
       "sha256": "19700e834968f2f0043d812a76176053ed2758b6bcf0eb0c53e5184027e6ee91"
@@ -1414,6 +1424,11 @@
       "path": "orrery/src/generated/bl076-bijection-probe.v1.json",
       "bytes": 97038,
       "sha256": "74bcd025259b89783f404c18286a8189d296fa2949057473634fd6d2dcf8a4f5"
+    },
+    {
+      "path": "orrery/src/generated/bl078-d7-retest.v1.json",
+      "bytes": 42808,
+      "sha256": "e9c3acdaedc9e0f59a893a05b22ece53092bd65c02760d5866dd8822a8995671"
     },
     {
       "path": "orrery/src/generated/d-tier-operator-probe.v1.json",
@@ -1717,8 +1732,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 16126,
-      "sha256": "07b435a158e4777ce69b246ac353886c14847889d63bce83bbfc3e33ff3d2d6b"
+      "bytes": 16264,
+      "sha256": "dfab04954f5fde8fa0489be08fe9ec3d64c4ceb6c50b16a5da8c3ed693a1e42a"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
@@ -2851,6 +2866,11 @@
       "sha256": "996e2dba55e5373b582b6b3e47a4b05c900e1a4b1833d81fa19ee703bb5dca28"
     },
     {
+      "path": "scripts/build-bl078-d7-retest.mjs",
+      "bytes": 75367,
+      "sha256": "ebd548f8c9d04db62b226d445dfef0cb8808157fd431d11b3d110cbdaad82b62"
+    },
+    {
       "path": "scripts/build-court-admission.mjs",
       "bytes": 5399,
       "sha256": "34199d91513b19f647f7d9f8dee353388b924b02726558ec1ce457ef6b33e158"
@@ -3347,8 +3367,8 @@
     },
     {
       "path": "scrum/BACKLOG.md",
-      "bytes": 156537,
-      "sha256": "9625c02cd1682340cba1e5ae0b9e1a20350a4f947dfbeff472313205a12b4224"
+      "bytes": 161902,
+      "sha256": "c0a81baefde29040c2d36added1a9a86eb56ed9c7b6214ee5a513aecdf3e5235"
     },
     {
       "path": "scrum/CRT-301-court-admission-contract.md",
@@ -3934,6 +3954,11 @@
       "path": "scrum/plan/bl-076-bijection-probe-memo.md",
       "bytes": 17353,
       "sha256": "5814acb0bc8cc9b5e8e2ca1bf6188e9b5df7ba6682e5d749de42d1f0f85b1539"
+    },
+    {
+      "path": "scrum/plan/bl-078-d7-retest-memo.md",
+      "bytes": 17002,
+      "sha256": "264d41c08d34d05b953350c39b6d70133c9ee46fad10e52e73112db0979afbd7"
     },
     {
       "path": "scrum/plan/continuous-typology-obs-draft.md",

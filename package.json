@@ -46,6 +46,7 @@
     "orrery:bl073-isometry-probe:check": "node scripts/build-bl073-isometry-probe.mjs --check && node orrery/scripts/validate-bl073-isometry-probe.mjs",
     "orrery:bl075-coordinate-search:check": "node scripts/build-bl075-coordinate-search.mjs --check && node orrery/scripts/validate-bl075-coordinate-search.mjs",
     "orrery:bl076-bijection-probe:check": "node scripts/build-bl076-bijection-probe.mjs --check && node orrery/scripts/validate-bl076-bijection-probe.mjs",
+    "orrery:bl078-d7-retest:check": "node scripts/build-bl078-d7-retest.mjs --check && node orrery/scripts/validate-bl078-d7-retest.mjs",
     "orrery:browser:test": "npm run browser:test --prefix orrery",
     "validate:graph": "node graph/scripts/verify-standalone.mjs",
     "validate:release": "node scripts/validate-release.mjs",
