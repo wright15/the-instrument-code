@@ -363,6 +363,29 @@ intervals {11, 6}), not an absence of rotational structure. Cited:
 planning evidence: D7 hypothesis-tier unchanged (no claim event, no record amendment, no
 corridor movement); the contrast reading above remains.
 
+*§5.1 accretion (BL-078, 2026-10-12 — the replication under stricter enforcement;
+OD-N0…OD-N3).* The paired case's derivation attempt has its replication: the BL-070 battery
+re-run against the re-verified 36-instance domain under **region-scoped input isolation**
+(the derivation path — domain + the eight mask-geometric candidate predicates — reads zero
+granted-office bytes; R-OFF and C-M7 are labelled comparison-region reads; the validator
+proves the scan region-scoped — a file-scoped over-ban rejected, the permissive probe
+passing, smuggled-read probes rejected) reproduces every candidate confusion, verdict, and
+distribution **exactly** — calibration R-OFF `[office(s) = office(h)]` 14/0/0/22 exact
+(evaluated against the landed seat-contact relation, not its own definition),
+`cleanSplitCount 0`, the near-miss `|ΔpcSum| = 1` (12/0/2/22, missing exactly the terminal
+tritone contacts 127:253/4033:2017), the BL-068 `zInterface` axis matched (4/2/10/20).
+**Comparison verdict `REPLICATED`** — the original findings are robust under the stricter
+enforcement; the isolation did not change what the candidates could see. The branch
+classification stands at `PARTIAL_DERIVATION`, interpretation `R_NONE` (canonical spelling;
+the brief's `R-NONE` alias rendered here per the landed bytes): **the office field is the
+selection's ground and joins the anchoring remainder** (OD-N3 framing; not
+wall-dissolution, not governs-admission). The composite C-TB-R1 (14/0/0/22, masks-only) is
+recorded un-promoted per OD-N2. Cited:
+`orrery/src/generated/bl078-d7-retest.v1.json` (fingerprint `11644d40…`),
+`scrum/plan/bl-078-d7-retest-memo.md` §§6, 10-11. D7 hypothesis-tier unchanged (no claim
+event, no record amendment, no derivation admission); this accretion strengthens the
+obstruction column, not §4's evidence-for column; the contrast reading above stands.
+
 **5.2 The cycle ground is itself granted (BL-055 §5 W3; BL-056 §2, §8).** R2's derivation
 ground — the closed 7-edge A0 cycle — is read from the granted CONSTRUCTS parent pairs; each
 office's unordered E-parent pair is asserted set-equal to its cycle edge. The contact theorem
@@ -457,6 +480,12 @@ evidence; §4.12 admission record; GSL-5/GSL-6 registered at BL-077). What this 
 close: unchanged from the 2026-10-11 update, plus the expansion's own precision — the
 families' identities' origin and the offices' semantic assignments are not claimed. The
 question beyond the claim's bounded scope remains open.
+
+**Status update 2026-10-12 (BL-078, the D7 re-test).** The paired case's obstruction has
+its replication (§5.1 accretion): the ti-pole's selection is granted-dependent under the
+stricter, region-scoped isolation — `R_NONE`, the office field joining the anchoring
+remainder. The remainder list in the updates above gains the D7-side office-field ground;
+the question beyond the claim's bounded scope otherwise remains open.
 
 ## 8. Fences and what this memo does not do
 

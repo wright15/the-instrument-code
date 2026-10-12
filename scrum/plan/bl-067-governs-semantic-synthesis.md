@@ -319,6 +319,23 @@ synthesized claim; the un-granting chain is GOV-524's record, not re-stated here
    grant comparison (the honest minimal grant), (c) future discovery
    (`scrum/BACKLOG.md:915-939`).
 
+6. **The D7 derivation status — replication-confirmed.** The paired pole's derivability
+   attempt has its re-test: the BL-070 battery re-run against the re-verified 36-instance
+   domain under region-scoped input isolation (the derivation path reads zero granted-office
+   bytes; the region-scoping proof enforced) reproduced all nine candidate confusions,
+   verdicts, and distributions **exactly** (comparison verdict `REPLICATED`; calibration
+   R-OFF exact, 14/0/0/22), and the branch classification stands at `PARTIAL_DERIVATION`
+   with interpretation `R_NONE` — **the office field is the selection's ground and joins the
+   anchoring remainder** (entry 5). No mask-geometric selector discriminates
+   (`cleanSplitCount 0`; the near-miss `|ΔpcSum| = 1` 12/0/2/22, missing exactly the terminal
+   tritone contacts 127:253/4033:2017; the composite C-TB-R1 recorded un-promoted —
+   separation ≠ derivation). The fa/ti asymmetry's mechanism remains GSL-3 (entry 1), and
+   the original finding is robust under the stricter enforcement. *Landing artifact:*
+   `orrery/src/generated/bl078-d7-retest.v1.json` (fingerprint `11644d40…`); memo
+   `scrum/plan/bl-078-d7-retest-memo.md` §§6, 10-11. D7 hypothesis-tier preserved (no D7
+   claim, no D7 amendment, no D7 derivation admission); the scoping memo §5.1 contrast
+   reading stays intact.
+
 ## 7. Integration verification and fences
 
 **7.1 The lens's landing confirmed.** The §2.7 seven-form taxonomy and R2 registration
@@ -347,7 +364,11 @@ landing artifact; the registration adds no measurement of its own.)* *(BL-071 re
 registration adds no measurement of its own.)* *(BL-077 registration: §5 gains the
 coordinate-action block (GSL-5/GSL-6) — newly added content, cited to its landing artifact
 (`orrery/src/generated/bl076-bijection-probe.v1.json`, fingerprint `81e6cf72…`); the
-registration adds no measurement of its own.)*
+registration adds no measurement of its own.)* *(BL-079 registration: §6 gains entry 6
+(the D7 derivation status — replication-confirmed; `R_NONE`) — newly added content, cited
+to its landing artifacts (`orrery/src/generated/bl078-d7-retest.v1.json`, fingerprint
+`11644d40…`; `scrum/plan/bl-078-d7-retest-memo.md` §§6, 10-11); the registration adds no
+measurement of its own.)*
 
 **7.4 Finding-row statuses untouched.** Rows 8 and 10 remain `finding: no repo source`
 (`docs/ARCHITECTURE_MAP.md:129,133-134`; tally `:139`); §5 remains planning evidence (map
@@ -366,7 +387,8 @@ does not discharge findings.
 `qa/specs/gov-524-governs-derivability-admission.json`; `bl-068-d7-asymmetry-memo.md` +
 `bl068-d7-asymmetry.v1.json` (the GSL-3 registration); `bl076-bijection-probe-memo.md` +
 `bl076-bijection-probe.v1.json` (the GSL-5/GSL-6 registration; chain
-`bl075-coordinate-search.v1.json`).
+`bl075-coordinate-search.v1.json`); `bl-078-d7-retest-memo.md` + `bl078-d7-retest.v1.json`
+(the BL-079 registration).
 
 **7.6 Bounded non-accomplishments.** No claim event; no record amendment; no governs
 admission; no G1 movement; no INV-5 graduation; no M-walkability promotion; no
@@ -378,7 +400,10 @@ artifact and memo.)* *(BL-071 registration, 2026-10-11: §5 gains the interval-6
 (GSL-4) — the registration adds no measurement; every added claim cites BL-071's artifact
 and memo.)* *(BL-077 registration, 2026-10-12: §5 gains the coordinate-action block
 (GSL-5/GSL-6) — the registration adds no measurement; every added claim cites BL-076's
-artifact and memo.)* Session prose is context, not evidence.
+artifact and memo.)* *(BL-079 registration, 2026-10-12: §6 gains entry 6 (the D7
+derivation status — replication-confirmed; `R_NONE`) — the registration adds no
+measurement; every added claim cites BL-078's artifact and memo.)* Session prose is
+context, not evidence.
 
 ## 8. Result in one paragraph
 
@@ -402,4 +427,7 @@ holds — the lens colors, the measurements ground, the correspondence is design
 not mechanism. Five open questions were inventoried and aimed; the first — the D7
 asymmetry's explanation — now resolves to GSL-3 (§4, §6 entry 1), while the Z12-corner
 case, the Z/non-Z mechanism, the directional-semantics hole, and the anchoring remainder
-stay open. The synthesis organizes and reads; it does not measure or admit.
+stay open; a sixth inventory entry records the paired pole's replication-confirmed
+grant-dependence (§6 entry 6: `R_NONE` — the office field is the selection's ground and
+joins the anchoring remainder). The synthesis organizes and reads; it does not measure or
+admit.

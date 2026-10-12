@@ -558,6 +558,7 @@ session (lattice Phase B, or the governs semantic layer) resolves it from the re
 | BL-071 registration (GSL-4) | §5.7 GSL-4 — the interval-6 characterization (five universes × three measures; the mixed role verdict; the dual seven-cycle closure) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
 | BL-077 registration (GSL-5, GSL-6) | §5.8 GSL-5/GSL-6 — the coordinate action's family-level involution (the tier↔family correspondence's covariance) and office-level permutation (Mercury fixed; the 4+1 signature) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
 | claim record `SPEC-GOVERNS-DERIVABILITY-001` v0.2.0 (expanded; ENTRY 17) | §5.8 GSL-5/GSL-6 as the correspondence's probe evidence — the claim's load-bearing evidence is the BL-075/BL-076 artifacts (chain-anchored) | consumed as context; §5 remains planning evidence — measured, not admitted, not citable as claims; the expansion changes no §5.8 tag |
+| BL-078 landing (the D7 derivation re-test; `R_NONE`) | §5.9 — the replication-confirmed grant-dependence (the office field as the selection's ground, joining the anchoring remainder) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
 
 ## 5. Measured findings — the D4 boundary-geography selection layer [MEASURED — planning evidence]
 
@@ -612,7 +613,9 @@ case for any refined mechanism.
 `orrery/src/generated/bl068-d7-asymmetry.v1.json` (fingerprint `b0d65bd6…`);
 `scrum/plan/bl-068-d7-asymmetry-memo.md`;
 `orrery/src/generated/bl071-interval-6-structure.v1.json` (fingerprint `8b2a1f6c…`,
-raw-byte `80a98540…`); `scrum/plan/bl-071-interval-6-memo.md`.
+raw-byte `80a98540…`); `scrum/plan/bl-071-interval-6-memo.md`;
+`orrery/src/generated/bl078-d7-retest.v1.json` (fingerprint `11644d40…`,
+raw-byte `e9c3acda…`); `scrum/plan/bl-078-d7-retest-memo.md`.
 Planning evidence: no claim event, no record amendment, no admission; GOVERNS remains
 granted input; the higher-theorem question remains open. Not citable as claims.
 
@@ -700,3 +703,28 @@ Klein-4 multiplication (family 160/160 + office 1120/1120 checks, zero mismatche
 `81e6cf72…`; chain BL-075 `88838e22…`; validator 81 mutation probes); memo
 `scrum/plan/bl-076-bijection-probe-memo.md`. D7 hypothesis-tier throughout — no D7 claim,
 no amendment, no derivation admission. Not citable as claims.
+
+### 5.9 The D7 derivation re-test (replication-confirmed; `R_NONE`)
+
+*The paired pole's selection re-tested under region-scoped isolation — the
+grant-dependence replicated: the office field is the selection's ground.*
+
+**The re-test** (BL-078, landed 2026-10-12; rulings OD-N0…OD-N3). The BL-070 battery
+re-run against the re-verified 36-instance domain with the derivation path statically
+fenced to zero granted-office bytes (`officeBytesInDerivationPath: 0`; the region-scoping
+proof — a file-scoped over-ban rejected by construction, the permissive region probe
+passing, smuggled-read probes rejected; 47 mutation probes rejected in total).
+**Comparison verdict `REPLICATED`:** all nine candidates (C-M1…C-M9) side-by-side
+identical to the landed BL-070 confusions, verdicts, and distributions
+(`cleanSplitCount 0`; near-miss `|ΔpcSum| = 1` 12/0/2/22, missing exactly the terminal
+tritone contacts 127:253 and 4033:2017; the BL-068 zInterface axis 4/2/10/20 matched;
+calibration R-OFF 14/0/0/22 exact, evaluated against the landed seat-contact relation).
+**Branch `PARTIAL_DERIVATION`; interpretation `R_NONE`:** no mask-geometric candidate
+discriminates same-office from cross-office; **the office field is the selection's ground
+and joins the anchoring remainder** (OD-N3 framing; not wall-dissolution, not
+governs-admission; the scoping memo §5.1 contrast reading intact). The composite C-TB-R1
+(14/0/0/22, masks-only) is recorded `UNPROMOTED_DISCOVERY` — separation ≠ derivation.
+*Receipts:* `orrery/src/generated/bl078-d7-retest.v1.json` (`derivationFingerprint`
+`11644d40…`, raw-byte `e9c3acda…`; chain BL-068 `b0d65bd6…`, BL-070 `9db10a08…`); memo
+`scrum/plan/bl-078-d7-retest-memo.md` §§6, 10-11. D7 hypothesis-tier throughout — no D7
+claim, no amendment, no derivation admission. Not citable as claims.
