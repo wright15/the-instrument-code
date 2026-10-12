@@ -43,6 +43,7 @@
     "orrery:bl068-d7-asymmetry:check": "node scripts/build-bl068-d7-asymmetry.mjs --check && node orrery/scripts/validate-bl068-d7-asymmetry.mjs",
     "orrery:bl070-d7-derivation:check": "node scripts/build-bl070-d7-derivation.mjs --check && node orrery/scripts/validate-bl070-d7-derivation.mjs",
     "orrery:bl071-interval-6-structure:check": "node scripts/build-bl071-interval-6-structure.mjs --check && node orrery/scripts/validate-bl071-interval-6-structure.mjs",
+    "orrery:bl073-isometry-probe:check": "node scripts/build-bl073-isometry-probe.mjs --check && node orrery/scripts/validate-bl073-isometry-probe.mjs",
     "orrery:browser:test": "npm run browser:test --prefix orrery",
     "validate:graph": "node graph/scripts/verify-standalone.mjs",
     "validate:release": "node scripts/validate-release.mjs",

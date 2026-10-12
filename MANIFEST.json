@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1281,
-  "totalBytes": 83675156,
+  "fileCount": 1286,
+  "totalBytes": 83821161,
   "files": [
     {
       "path": ".env.example",
@@ -1072,8 +1072,8 @@
     },
     {
       "path": "orrery/package.json",
-      "bytes": 5796,
-      "sha256": "2b886e0251ddcb6f4632b1c78320574d58e4d098fec32af9c2976f07b665608d"
+      "bytes": 6014,
+      "sha256": "6ef91eca075de73fba9cde64a08a7028b3a6014001c7aeb2a03388375d612409"
     },
     {
       "path": "orrery/public/AUDIO_ASSETS.md",
@@ -1129,6 +1129,11 @@
       "path": "orrery/scripts/validate-bl071-interval-6-structure.mjs",
       "bytes": 42553,
       "sha256": "46bcbdc5f20e0f436026a070b6d079b5ccd53b0966b3a259bbcd0e3ce43c7639"
+    },
+    {
+      "path": "orrery/scripts/validate-bl073-isometry-probe.mjs",
+      "bytes": 40993,
+      "sha256": "1c5011944bad4cf3d62ae9aa0cb839f8ea8fc5827dbf4da931afcb70066417f3"
     },
     {
       "path": "orrery/scripts/validate-d-tier-operator-probe.mjs",
@@ -1266,6 +1271,11 @@
       "sha256": "1542cb025996f6fd6ad4de4d546e42c3281465bdc8d5563034fa7b058bc2ddb0"
     },
     {
+      "path": "orrery/src/bl073-isometry-probe.test.ts",
+      "bytes": 10758,
+      "sha256": "e62de73ae0644d7f11e44491580de1cf8b08ea727e07c8d73381e11fc877f49d"
+    },
+    {
       "path": "orrery/src/court.test.ts",
       "bytes": 4121,
       "sha256": "19700e834968f2f0043d812a76176053ed2758b6bcf0eb0c53e5184027e6ee91"
@@ -1369,6 +1379,11 @@
       "path": "orrery/src/generated/bl071-interval-6-structure.v1.json",
       "bytes": 32523,
       "sha256": "80a98540ed282299ebdb8028fc4fdc2280b5b9e12d33dca213afc5d676f6382f"
+    },
+    {
+      "path": "orrery/src/generated/bl073-isometry-probe.v1.json",
+      "bytes": 23441,
+      "sha256": "2dca3e8b95eb3012136dd6e849b12b33b833ce0ef86d1580b376e6a06e3ce260"
     },
     {
       "path": "orrery/src/generated/d-tier-operator-probe.v1.json",
@@ -1672,8 +1687,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 15655,
-      "sha256": "68b164650efb791884c3e47106c4bb3393b96422923b76072c09b32e0f040fa3"
+      "bytes": 15808,
+      "sha256": "6f36549554dbd5fff731fc54a7ec6a04106b6182a9d852cef892a0e8cb8a319d"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
@@ -2786,6 +2801,11 @@
       "sha256": "93024c8681a51fd5b4f07b51ae4f7b30796ea0637ada930befae7977193acb1d"
     },
     {
+      "path": "scripts/build-bl073-isometry-probe.mjs",
+      "bytes": 48978,
+      "sha256": "b0fd0b16fbe6596ce3f8064e025491d4bbeb0cc85578dd6a21b022676a95c34e"
+    },
+    {
       "path": "scripts/build-court-admission.mjs",
       "bytes": 5399,
       "sha256": "34199d91513b19f647f7d9f8dee353388b924b02726558ec1ce457ef6b33e158"
@@ -3282,8 +3302,8 @@
     },
     {
       "path": "scrum/BACKLOG.md",
-      "bytes": 126035,
-      "sha256": "b153aee374f417ab63b81fef6d8ad10491c0220624c215f23a4b3f9b866785f3"
+      "bytes": 131241,
+      "sha256": "4773c9cd78846786428970b0010c0a86db27137a0eeacb3e563dbd61612bf5a5"
     },
     {
       "path": "scrum/CRT-301-court-admission-contract.md",
@@ -3849,6 +3869,11 @@
       "path": "scrum/plan/bl-071-interval-6-memo.md",
       "bytes": 20865,
       "sha256": "9a2c8fa5d985e2852865317745015de62e142649ed98771f21c7beea3f9fe026"
+    },
+    {
+      "path": "scrum/plan/bl-073-dual-cycle-isometry-and-synthesis-scoping.md",
+      "bytes": 16258,
+      "sha256": "011750b22e6f6a580cbd21b82f15759c5c3126804d326979c81568e75c3d56cc"
     },
     {
       "path": "scrum/plan/bl-074-tritone-anatomy-memo.md",
