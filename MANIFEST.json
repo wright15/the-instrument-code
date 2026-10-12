@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1286,
-  "totalBytes": 83829089,
+  "fileCount": 1291,
+  "totalBytes": 83984864,
   "files": [
     {
       "path": ".env.example",
@@ -1072,8 +1072,8 @@
     },
     {
       "path": "orrery/package.json",
-      "bytes": 6014,
-      "sha256": "6ef91eca075de73fba9cde64a08a7028b3a6014001c7aeb2a03388375d612409"
+      "bytes": 6247,
+      "sha256": "47d25883c462cb461a098394e457537e94c3e5b929dc2f926c294f3e024507fb"
     },
     {
       "path": "orrery/public/AUDIO_ASSETS.md",
@@ -1134,6 +1134,11 @@
       "path": "orrery/scripts/validate-bl073-isometry-probe.mjs",
       "bytes": 40993,
       "sha256": "1c5011944bad4cf3d62ae9aa0cb839f8ea8fc5827dbf4da931afcb70066417f3"
+    },
+    {
+      "path": "orrery/scripts/validate-bl075-coordinate-search.mjs",
+      "bytes": 45874,
+      "sha256": "d20e34f301666f9eafa9f0a9b3d5e1e7bc0efce62946c6021ce2a9d08d6883e2"
     },
     {
       "path": "orrery/scripts/validate-d-tier-operator-probe.mjs",
@@ -1276,6 +1281,11 @@
       "sha256": "e62de73ae0644d7f11e44491580de1cf8b08ea727e07c8d73381e11fc877f49d"
     },
     {
+      "path": "orrery/src/bl075-coordinate-search.test.ts",
+      "bytes": 11475,
+      "sha256": "29845b27557af54961334a1859a2bfde9f6bddb1e24d3bf07db8b1c6a8a6967a"
+    },
+    {
       "path": "orrery/src/court.test.ts",
       "bytes": 4121,
       "sha256": "19700e834968f2f0043d812a76176053ed2758b6bcf0eb0c53e5184027e6ee91"
@@ -1384,6 +1394,11 @@
       "path": "orrery/src/generated/bl073-isometry-probe.v1.json",
       "bytes": 23441,
       "sha256": "2dca3e8b95eb3012136dd6e849b12b33b833ce0ef86d1580b376e6a06e3ce260"
+    },
+    {
+      "path": "orrery/src/generated/bl075-coordinate-search.v1.json",
+      "bytes": 29020,
+      "sha256": "1cb710d872f3b5564c138c83c9fd589b2655a9133bf7aba8b1455cc28d426914"
     },
     {
       "path": "orrery/src/generated/d-tier-operator-probe.v1.json",
@@ -1687,8 +1702,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 15808,
-      "sha256": "6f36549554dbd5fff731fc54a7ec6a04106b6182a9d852cef892a0e8cb8a319d"
+      "bytes": 15970,
+      "sha256": "1d615a5c09b2cc4f008b438af59d42155f1d899198a2c46ee72186c64786b96e"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
@@ -2806,6 +2821,11 @@
       "sha256": "b0fd0b16fbe6596ce3f8064e025491d4bbeb0cc85578dd6a21b022676a95c34e"
     },
     {
+      "path": "scripts/build-bl075-coordinate-search.mjs",
+      "bytes": 49518,
+      "sha256": "429940710f80f4b2ae23e1272be52a6cc67783033059054584d175e985a5245b"
+    },
+    {
       "path": "scripts/build-court-admission.mjs",
       "bytes": 5399,
       "sha256": "34199d91513b19f647f7d9f8dee353388b924b02726558ec1ce457ef6b33e158"
@@ -3302,8 +3322,8 @@
     },
     {
       "path": "scrum/BACKLOG.md",
-      "bytes": 133852,
-      "sha256": "a78b17d2b10d7d4237652bdef3f594da51840f9d408bf9af0b3c62fb316cc440"
+      "bytes": 139064,
+      "sha256": "bab5da917ea0de5a710377cb9367889e506da61e9ee8ac0e0644abdbcc10586f"
     },
     {
       "path": "scrum/CRT-301-court-admission-contract.md",
@@ -3872,13 +3892,18 @@
     },
     {
       "path": "scrum/plan/bl-073-dual-cycle-isometry-and-synthesis-scoping.md",
-      "bytes": 19558,
-      "sha256": "1f569ec9038f69dfe8dfdd878b699450b990c8cc76c89989fa82dd0f5d849c67"
+      "bytes": 21506,
+      "sha256": "34b74172894e92d91c7f555f227ff6fe326d10dc16b22861ca56123eaaf24a09"
     },
     {
       "path": "scrum/plan/bl-074-tritone-anatomy-memo.md",
       "bytes": 19004,
       "sha256": "3fcd8173c1835d1d2bb14d5313010a93ae97fd2adc6cbbe2bf90003c8a086beb"
+    },
+    {
+      "path": "scrum/plan/bl-075-coordinate-search-memo.md",
+      "bytes": 12333,
+      "sha256": "76690193f0825bd841fb92e0ad187be5d7c333cd284fe27f7922d9b8cd2ba773"
     },
     {
       "path": "scrum/plan/continuous-typology-obs-draft.md",
