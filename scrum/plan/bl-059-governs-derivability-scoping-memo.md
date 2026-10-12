@@ -264,6 +264,29 @@ would need to reproduce. *Does not show:* derivability — no route, no selectio
 (the mechanism questions are BL-072/BL-074, open); the §5.1 twin-transport failure stands.
 D7 hypothesis-tier unchanged.
 
+**4.10 The dual-cycle isometry and the orientation bit's three registrations (BL-073; 2026-10-11).**
+The boundary layer's two seven-cycles now have their measured geometry (both derived masks-only;
+cross-checked key-for-key against the landed records). The pre-registered isometry probe returns
+**PARTIAL_ISOMETRY**: P1 (identical 21-pair Hamming histograms), P3 (distance matrices isomorphic
+under exactly two witnesses, both dihedral), and P4 (uniform tritone marking) pass; P2-strict
+(the directed rotation-interval signature `{11:6, 6:1}` vs `{7:6, 6:1}`) fails under every
+bijection in both search spaces. The two witnesses differ by exactly the cycles' reversal
+automorphism (`φ-2 = φ-1 ∘ reversal`; automorphism group `{identity, reversal}`). The disposition
+(2026-10-11) records two findings: **(a) the orientation bit gains a third registration** — the
+isometry's reflection witness (`φ-2`), the office-reconstruction's `κ₀` reflection orientation
+(BL-063), and the carried orientation bit's brightness premise (BL-065 / §4.7 above) are the
+*same reversal* — the P₇ line's reversal at three scales; the bit inventory is now **one bit,
+three registrations**, content and formal status otherwise unchanged; **(b) the tri-reading of
+the P2-only failure** — the coordinate-system reading (one structure, two addressings; leading),
+independence, and unity-constrained — with the coordinate-transformation search captured as
+**BL-075**. Receipts: `orrery/src/generated/bl073-isometry-probe.v1.json` (fingerprint
+`811fa786…`), `scrum/plan/bl-073-dual-cycle-isometry-and-synthesis-scoping.md` (§7 register).
+*Shows:* the boundary layer's two seven-structures carry the same one-bit orientation ambiguity
+at the isometry scale — a further registration of the already-carried bit, not a new bit.
+*Does not show:* derivability — no route, no office-field derivation (the selection's
+office-field-dependence stands; requirement 1 unchanged). D7 hypothesis-tier unchanged; no
+record amendment.
+
 ## 5. Evidence against / obstructing (honest tally)
 
 **5.1 D7's modal non-closure (ENTRY 15 §D7 Clause; `qa/d4-r2-execution-receipt.json`
