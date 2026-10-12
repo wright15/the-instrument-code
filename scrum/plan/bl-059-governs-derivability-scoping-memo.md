@@ -287,6 +287,36 @@ at the isometry scale — a further registration of the already-carried bit, not
 office-field-dependence stands; requirement 1 unchanged). D7 hypothesis-tier unchanged; no
 record amendment.
 
+**4.11 The coordinate-covariant bijection (BL-075 → BL-076; GSL-5/GSL-6; 2026-10-12).** The
+coordinate systems are canonically related (the unique affine map `u = 5` transporting the
+interval addressing `^11 → ^7`; BL-075), and the coordinate algebra — the Klein-4 unit
+subgroup `{1,5,7,11}` of Aff(Z₁₂) — has an induced action on the ten anchor families and on
+the offices, now probe-verified (BL-076, branch `COVARIANT_CONFIRMED`, finding
+`probe-verified`). The family-level involution carries the tier↔family correspondence whole:
+**7-35↔7-1** (the closure pair), **7-34↔7-8** (the BL-068 contact-target pair), **7-Z37↔7-Z17**
+(the interior swap), fixing **7-33/7-22/7-15/7-Z12**; identical for T1/T2, trivial for
+{ID, ρ} (the Klein-4 acts through its two-element quotient); zero fragments and zero
+ledger-absent images across all 40 blocks; the Z-pair structure confirmed (7-Z37↔7-Z17 is
+the IV-shared pair, mapped within its interval class); the action crosses the fa/ti pole in
+both directions (D7↔A0, D6↔A1). The office-level action is a faithful whole per-tier
+permutation with **Mercury the sole fixed point** in every map and every tier (the 4+1
+signature measured; GSL-6; the six-office permutation crosses the elemental/luminary
+brackets — grounding correction, maintainer-prose class). Composition consistent with the
+Klein-4 multiplication (family 160/160 + office 1120/1120 checks, zero mismatches).
+Receipts: `orrery/src/generated/bl075-coordinate-search.v1.json` (fingerprint `88838e22…`),
+`orrery/src/generated/bl076-bijection-probe.v1.json` (fingerprint `81e6cf72…`; validator 81
+mutation probes); memos `scrum/plan/bl-075-coordinate-search-memo.md`,
+`scrum/plan/bl-076-bijection-probe-memo.md`; the registrations (GSL-5/GSL-6) ride the
+synthesis §5 and the comprehension map §5.8.
+*Shows:* the tier↔family correspondence is **coordinate-covariant** — the same canonically
+determined affine algebra carries it whole, block by block, with the exact family-level
+involution — evidence-for at the correspondence scale (the correspondence's structure
+follows from the derived coordinate algebra; the arc's first probe-verified structure
+beyond the edge content). *Does not show:* the families' identities' origin (which
+set-classes occupy the correspondence's slots remains the canonical ledger's data); the
+offices' semantic assignments (framework-declared); the anchoring remainder; any
+office-level semantic derivation. D7 hypothesis-tier unchanged.
+
 ## 5. Evidence against / obstructing (honest tally)
 
 **5.1 D7's modal non-closure (ENTRY 15 §D7 Clause; `qa/d4-r2-execution-receipt.json`

@@ -556,6 +556,7 @@ session (lattice Phase B, or the governs semantic layer) resolves it from the re
 | BL-067 synthesis (`plan/bl-067-governs-semantic-synthesis.md`) | §5 measured findings (channels, polarity, geography) as the synthesis base; §2.7 lens in three template-bound codas | planning evidence; lens interpretation-only per the membrane; never load-bearing; finding statuses untouched; not citable as claims |
 | BL-069 registration (GSL-3) | §5.6 GSL-3 — the fa/ti asymmetry's mechanism (the synthesis §6 Question 1 resolution) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
 | BL-071 registration (GSL-4) | §5.7 GSL-4 — the interval-6 characterization (five universes × three measures; the mixed role verdict; the dual seven-cycle closure) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
+| BL-077 registration (GSL-5, GSL-6) | §5.8 GSL-5/GSL-6 — the coordinate action's family-level involution (the tier↔family correspondence's covariance) and office-level permutation (Mercury fixed; the 4+1 signature) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
 
 ## 5. Measured findings — the D4 boundary-geography selection layer [MEASURED — planning evidence]
 
@@ -666,3 +667,35 @@ mechanism), BL-073 (the dual closure), BL-074 (the measures' disagreement). *Rec
 `8b2a1f6c…`; pre-registered baselines B1/B2 and Fisher tests TEST-1…TEST-4); memo
 `scrum/plan/bl-071-interval-6-memo.md`. D7 hypothesis-tier throughout — no D7 claim, no
 amendment, no derivation admission. Not citable as claims.
+
+### 5.8 The coordinate action's structure (GSL-5, GSL-6)
+
+*The coordinate algebra's action on the ten anchor families and on the offices — the
+tier↔family correspondence carried whole, and the mediator's fixed point.*
+
+**GSL-5** (BL-076, registered 2026-10-12; the entry continuing the GSL series at the
+coordinate scale). The boundary layer's coordinate algebra — the Klein-4 unit subgroup
+`{1,5,7,11}` of Aff(Z₁₂), canonically determined by the interval-transport requirement
+(`11u ≡ 7 (mod 12)`; BL-075) — acts on the ten anchor families as the family-level
+involution: **7-35↔7-1** (A0↔D7, the closure pair), **7-34↔7-8** (A1↔D6, the BL-068
+contact-target pair), **7-Z37↔7-Z17** (D3↔D4, the interior swap), fixing **7-33, 7-22,
+7-15, 7-Z12**; identical for T1/T2, trivial for the identity and the pc-reflection (the
+Klein-4 acts through its two-element quotient); whole-block (zero fragments, zero
+ledger-absent images, 40/40 blocks, expectation exact); the pairing pairs the one IV-shared
+Z-partner pair (7-Z37↔7-Z17) within its interval class and pairs IV-unique families with
+IV-unique families; the action crosses the fa/ti pole in both directions. **GSL-6** (the
+coordinate action's office-level structure; the 4+1 signature measured). The same maps act
+on the offices as faithful whole per-tier permutations (moved office entries T1 56 / T2 52
+/ ρ 60 / ID 0); **Mercury — Quintessence, the transition law — is the office-level fixed
+point in every map and every tier** (the sole fixed point under each non-identity map),
+while the other six offices permute (the permutation crosses the elemental/luminary
+brackets — e.g., T1: Jupiter→Moon, Sun→Mars; grounding correction, maintainer-prose class:
+the disposition's reading "the four elemental governors permute among themselves" is
+recorded as the measured six-office permutation around the fixed mediator); ρ is
+tier-uniform (`Sun↔Saturn`, `Moon↔Venus`, `Mars↔Jupiter`). Composition consistent with the
+Klein-4 multiplication (family 160/160 + office 1120/1120 checks, zero mismatches); branch
+`COVARIANT_CONFIRMED`, finding `probe-verified`. *Receipts:*
+`orrery/src/generated/bl076-bijection-probe.v1.json` (`investigationFingerprint`
+`81e6cf72…`; chain BL-075 `88838e22…`; validator 81 mutation probes); memo
+`scrum/plan/bl-076-bijection-probe-memo.md`. D7 hypothesis-tier throughout — no D7 claim,
+no amendment, no derivation admission. Not citable as claims.

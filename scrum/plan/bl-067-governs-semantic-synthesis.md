@@ -218,6 +218,40 @@ pre-registered Fisher tests TEST-1…TEST-4); memo
 `scrum/plan/bl-071-interval-6-memo.md`. Planning evidence; the registration adds no
 measurement.
 
+**The coordinate action's structure (GSL-5, GSL-6; BL-076, registered 2026-10-12).** The
+boundary layer's coordinate algebra — the Klein-4 unit subgroup `{1,5,7,11}` of Aff(Z₁₂),
+canonically determined by the interval-transport requirement (`11u ≡ 7 (mod 12)`; BL-075) —
+acts on the ten anchor families and on the offices, and the action is the family-level and
+office-level signature measured at BL-076. **GSL-5 — the family-level involution.** The
+coordinate maps T1/T2 carry **7-35↔7-1** (A0↔D7, the closure pair), **7-34↔7-8** (A1↔D6, the
+BL-068 contact-target pair), and **7-Z37↔7-Z17** (D3↔D4, the interior swap), fixing **7-33,
+7-22, 7-15, 7-Z12**; the action is identical for T1 and T2 and trivial for the identity and
+the pc-reflection (the Klein-4 acts through its two-element quotient); every tier block maps
+whole (zero fragments, zero ledger-absent images, 40/40 blocks; the family-level
+expectation exact); the pairing pairs the one IV-shared Z-partner pair (7-Z37↔7-Z17) within
+its interval class and pairs IV-unique families with IV-unique families; and the action
+crosses the fa/ti pole in both directions (D7↔A0, D6↔A1). **GSL-6 — the coordinate action's
+office-level structure (the 4+1 signature measured).** The same maps act on the offices as
+faithful whole per-tier permutations (moved office entries T1 56 / T2 52 / ρ 60 / ID 0):
+**Mercury — Quintessence, the transition law — is the office-level fixed point in every map
+and every tier** (40/40 Mercury entries fixed; the sole fixed point under each non-identity
+map), while the other six offices permute — the coordinate-level form of the substrate's
+4+1 composition (map §1.2; freeze memo §1), with the precision that the six-office
+permutation does not preserve the elemental/luminary brackets (e.g., T1: Jupiter→Moon,
+Sun→Mars; grounding correction, maintainer-prose class: the disposition's reading "the four
+elemental governors permute among themselves" is recorded as the measured six-office
+permutation around the fixed mediator). The permutation structure varies by map and tier —
+ρ is tier-uniform (`Sun↔Saturn`, `Moon↔Venus`, `Mars↔Jupiter`); T1 on A0 is a 6-cycle
+(`Sun→Mars→Venus→Saturn→Jupiter→Moon→Sun`); T2 on A0 is 3+3; T1 on A2 is 2+2 with Sun and
+Saturn additionally fixed. Composition consistency: the induced tables compose correctly
+with the Klein-4 multiplication (family 160/160 + office 1120/1120 checks, zero mismatches;
+`T1∘T1 = T2∘T2 = ρ∘ρ = ID`, `T1∘T2 = ρ`). Branch `COVARIANT_CONFIRMED`; finding
+`probe-verified` (the tier↔family correspondence is coordinate-covariant). *Receipts:*
+`orrery/src/generated/bl076-bijection-probe.v1.json` (`investigationFingerprint`
+`81e6cf72…`; chain BL-075 `88838e22…`; validator 81 mutation probes); memo
+`scrum/plan/bl-076-bijection-probe-memo.md`. Planning evidence; the registration adds no
+measurement; D7 hypothesis-tier throughout.
+
 *Filtering-regime pointer (not a fourth reading):* the geography's threshold structure is
 the finding §2's coda reads as a filtering regime; this section adds no separate lens
 application — the lens coloring lives in §2's coda and is not extended here.
@@ -310,6 +344,9 @@ resolution register the landed BL-068 finding (GSL-3) — newly added content, c
 landing artifact; the registration adds no measurement of its own.)* *(BL-071 registration:
 §5 gains the interval-6 block (GSL-4) — newly added content, cited to its landing artifact
 (`orrery/src/generated/bl071-interval-6-structure.v1.json`, fingerprint `8b2a1f6c…`); the
+registration adds no measurement of its own.)* *(BL-077 registration: §5 gains the
+coordinate-action block (GSL-5/GSL-6) — newly added content, cited to its landing artifact
+(`orrery/src/generated/bl076-bijection-probe.v1.json`, fingerprint `81e6cf72…`); the
 registration adds no measurement of its own.)*
 
 **7.4 Finding-row statuses untouched.** Rows 8 and 10 remain `finding: no repo source`
@@ -327,7 +364,9 @@ does not discharge findings.
 `harmonic-comprehension-map.md` §§2.7/4/5; `bl-066-r-edge-derivation-memo.md` +
 `bl066-r-edge-derivation.v1.json`; `docs/specs/governs-derivability-candidate-v0.1.0.md` +
 `qa/specs/gov-524-governs-derivability-admission.json`; `bl-068-d7-asymmetry-memo.md` +
-`bl068-d7-asymmetry.v1.json` (the GSL-3 registration).
+`bl068-d7-asymmetry.v1.json` (the GSL-3 registration); `bl076-bijection-probe-memo.md` +
+`bl076-bijection-probe.v1.json` (the GSL-5/GSL-6 registration; chain
+`bl075-coordinate-search.v1.json`).
 
 **7.6 Bounded non-accomplishments.** No claim event; no record amendment; no governs
 admission; no G1 movement; no INV-5 graduation; no M-walkability promotion; no
@@ -337,7 +376,9 @@ writes; no new measurement; no new claims; no finding-row discharge; no lens ext
 paragraph — the registration adds no measurement; every added claim cites BL-068's
 artifact and memo.)* *(BL-071 registration, 2026-10-11: §5 gains the interval-6 block
 (GSL-4) — the registration adds no measurement; every added claim cites BL-071's artifact
-and memo.)* Session prose is context, not evidence.
+and memo.)* *(BL-077 registration, 2026-10-12: §5 gains the coordinate-action block
+(GSL-5/GSL-6) — the registration adds no measurement; every added claim cites BL-076's
+artifact and memo.)* Session prose is context, not evidence.
 
 ## 8. Result in one paragraph
 
@@ -352,7 +393,10 @@ geography is assembled: the tier↔family bijection, the threshold anatomy and i
 exception pairs, inversion-invariance and office-linking. Its interval-6 structure is
 measured across five universes and three distinct measures (GSL-4, §5: displacement-6
 ti-local, rotation-6 closing both seven-cycles, the boundary IC6-poor; role verdict mixed),
-and the 7-27/7-31 split is recorded as *not* tritone-mediated. Three template-bound codas read
+and the 7-27/7-31 split is recorded as *not* tritone-mediated. Its coordinate action now has
+its measured family- and office-level structure (GSL-5/GSL-6, §5: the ten-family involution
+carrying the tier↔family correspondence whole — the closure pair, the contact-target pair,
+the interior swap — and the faithful office permutation with Mercury the fixed mediator). Three template-bound codas read
 the structurally adjacent findings through the registered §2.7 registers; the membrane
 holds — the lens colors, the measurements ground, the correspondence is design coherence,
 not mechanism. Five open questions were inventoried and aimed; the first — the D7
