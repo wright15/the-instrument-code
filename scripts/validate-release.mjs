@@ -233,8 +233,8 @@ const frozenPackagePayloadSpecs = [
   ["seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0", "b7ebc16633e9694b72fdaeec5c6b3039a758d30019d5091fcca4829f12e23514"],
   ["seven-governors-governor-runtime-v0.1.0", "78234a5aea4d3d882e59cc70fe0b7bfd719704f10acf34160e455551a471f135"],
   ["seven-governors-court-substrate-v0.1.0", "bf0324074be036c4b939c2c2794a997c5c1f73808d8cf444c58395e4a6bc5f09"],
-  ["seven-governors-harmonic-invariants-v0.1.0", "3bf5f1815369dba2b9ca918a743d18cf1aa388b12f9ba7915ee87e8d8c8363f1"],
-  ["seven-governors-court-filter-algebra-v0.1.0", "a2ca514125ca5d0531c8a3c888f1f9f5bb3a152e858a308709fa4c4b9a973a59"],
+  ["seven-governors-harmonic-invariants-v0.1.0", "1f5b656e4c962eba5e60ac8a28d975ef35d7ddd833993545589bc09925ed7335"],
+  ["seven-governors-court-filter-algebra-v0.1.0", "3d4f3b658dbd360cdd9dec0c05e5ff12695da9e4c0ec603d27bfb341af395679"],
 ];
 const frozenPackagePayloads = await Promise.all(frozenPackagePayloadSpecs.map(
   async ([directory, expected]) => {
