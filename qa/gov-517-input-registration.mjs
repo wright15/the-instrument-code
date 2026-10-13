@@ -25,7 +25,12 @@ export function verifyBinding(path, bytes, manifest, checksums) {
   assert.match(expected, /^[a-f0-9]{64}$/);
   assert.equal(actual, expected, `binding_mismatch:${path}`);
   assert.equal(checksumRows[0], `${actual}  ${path}`, `checksum_mismatch:${path}`);
-  return { path, manifest_sha256: expected, recomputed_sha256: actual, checksums_match: true, pass: true };
+  // R1 mandatory-at-birth fields (CONV-EVIDENCE-BINDING-001): recipe, digest,
+  // byteLength over the exact raw bytes; the named recipe is raw-bytes-sha256
+  // from provenance/digest-recipes.json (R4). The legacy field names are
+  // retained for the historical consumers (loadRegisteredEnvelope deep-equal).
+  return { path, recipe: 'raw-bytes-sha256', digest: actual, byteLength: bytes.length,
+    manifest_sha256: expected, recomputed_sha256: actual, checksums_match: true, pass: true };
 }
 
 export function assertEmptyI3(value) {
@@ -115,11 +120,26 @@ export function buildRegistration() {
     ? network.structuralEdges.filter((row) => row.type === 'CONSTRUCTS') : [];
   return {
     boundary: 'GOV-517',
-    registration_id: 'GOV-517-I1-I4-maintainer-registration',
-    authority: 'Maintainer directive: Input Registrations (I1-I4) & Phase 2 Resume',
+    registration_id: 'GOV-526-GOV-517-re-registration',
+    authority: 'GOV-526 - GOV-517 input re-registration under the promotion refresh (BL-052 execution of the BL-082 approved plan; ENTRY 11 mandated)',
     status: findings.length === 0 ? 'green' : 'red',
     generation_authorized: true,
     manifest_binding: 'per-file MANIFEST.json and CHECKSUMS.sha256 entries',
+    generator: 'qa/gov-517-input-registration.mjs',
+    generatorDigest: digest(readFileSync(new URL('gov-517-input-registration.mjs', import.meta.url))),
+    invocation: ['node', 'qa/gov-517-input-registration.mjs'],
+    generatedAt: '2026-10-13T00:00:00.000Z',
+    re_registration: {
+      ticket: 'GOV-526',
+      mandate: 'ENTRY 11 (provenance/DECISION_LEDGER.md:2392-2406): mandatory GOV-517 re-registration at the later promotion refresh; this emitter binds the currently committed census/network/ledger bytes under the convention binding model.',
+      supersedes: 'the historical registration recorded prior to this landing (the ENTRY 11 census-binding incident: the registered census pin ad857ab957c54773f35047fb7618e8c8d9977991c0450efc56b0b81cd653a1d0 did not match the committed census snapshot at commit ab86a9063f8fad64c77b477b9734345464837238, whose blob 93d3079264f0780001b0dd45977d7abe59e80608 hashed to 2830c17a0e1b98ea84a4cf4ba3c88754d56f607cfa9ae761aa18424f1e4372f4); history is disclosed, never restored or synthesized',
+      bindingModel: {
+        R1: 'recipe/digest/byteLength over the exact committed bytes of each source',
+        R4: 'the named recipe raw-bytes-sha256 from provenance/digest-recipes.json',
+        R5: 'generator provenance fields (generator/generatorDigest/invocation/generatedAt) at this top level',
+      },
+      scope: 'bounded to the G1-G5 stages as originally scoped: input registration, preflight, live derivation, comparison; no new derivation stages, no new operators, no scope expansion',
+    },
     bindings,
     i1: {
       source: sourcePaths[0], section: 'structuralEdges', selector: 'row.type === "CONSTRUCTS"', expected_record_count: 28,

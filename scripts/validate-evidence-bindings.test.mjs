@@ -142,7 +142,7 @@ test("advisory CLI runs, reports, and exits 0", () => {
   assert.equal(r4[0].status, "PASS");
 });
 
-test("refreshed canonical planning evidence carries complete generator provenance and registration", () => {
+test("refreshed canonical planning and promotion evidence carry complete generator provenance and registration", () => {
   const result = spawnSync(process.execPath, [path.join(scriptDirectory, "validate-evidence-bindings.mjs"), "--json"], {
     cwd: root,
     encoding: "utf8",
@@ -151,6 +151,7 @@ test("refreshed canonical planning evidence carries complete generator provenanc
   const report = JSON.parse(result.stdout);
   for (const artifactPath of [
     "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
+    "qa/fivefold-engine-promotion-evidence.json",
   ]) {
     assert.ok(report.registry.all.includes(artifactPath), `${artifactPath} is a registry member`);
     const r5 = report.checks.find((check) => check.rule === "R5" && check.subject === artifactPath);

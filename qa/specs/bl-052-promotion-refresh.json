@@ -1,0 +1,204 @@
+{
+  "receiptId": "BL-052-promotion-refresh",
+  "date": "2026-10-13",
+  "authority": "BL-082 approved plan (OD-1(a)-OD-5(a) and the GOV-517 correction, 2026-10-13); ENTRY 20 records this landing; the re-registration executes the ENTRY 11 mandate under GOV-526.",
+  "gov517ReRegistration": {
+    "ticket": "GOV-526",
+    "registrationPath": "qa/gov-517-input-boundary-registration.json",
+    "registrationId": "GOV-526-GOV-517-re-registration",
+    "status": "green",
+    "bindings": [
+      {
+        "path": "canonical/universal-network-data.json",
+        "recipe": "raw-bytes-sha256",
+        "digest": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+        "byteLength": 2765575,
+        "manifest_sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+        "recomputed_sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+        "checksums_match": true,
+        "pass": true
+      },
+      {
+        "path": "canonical/universal-heptatonic-ledger.json",
+        "recipe": "raw-bytes-sha256",
+        "digest": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+        "byteLength": 356936,
+        "manifest_sha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+        "recomputed_sha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+        "checksums_match": true,
+        "pass": true
+      },
+      {
+        "path": "canonical/fivefold-incubator/fifth-space-census-v0.json",
+        "recipe": "raw-bytes-sha256",
+        "digest": "effa43894ced6a2d46a08aa2fa7d13173d3a74118844d879858de9437b6735e9",
+        "byteLength": 194194,
+        "manifest_sha256": "effa43894ced6a2d46a08aa2fa7d13173d3a74118844d879858de9437b6735e9",
+        "recomputed_sha256": "effa43894ced6a2d46a08aa2fa7d13173d3a74118844d879858de9437b6735e9",
+        "checksums_match": true,
+        "pass": true
+      }
+    ],
+    "compliance": {
+      "R1": "recipe/digest/byteLength per binding over the exact currently committed bytes",
+      "R4": "named recipe raw-bytes-sha256 from provenance/digest-recipes.json",
+      "R5": {
+        "generator": "qa/gov-517-input-registration.mjs",
+        "generatorDigest": "4a03cc5bbb8925caf3d42d488a392d8d6686abaa620034e35b43adfa97d2ea4f",
+        "invocation": [
+          "node",
+          "qa/gov-517-input-registration.mjs"
+        ],
+        "generatedAt": "2026-10-13T00:00:00.000Z"
+      }
+    },
+    "incidentResolution": "the census binding records the committed refreshed census digest effa4389\u2026 in place of the historical unmatched pin ad857ab9\u2026; nothing restored or synthesized; the incident is disclosed in the registration's re_registration block",
+    "preflight": {
+      "path": "qa/gov-517-preflight-report.json",
+      "status": "green",
+      "controls": "green",
+      "liveRunAuthorized": true,
+      "testsPassed": 121
+    },
+    "derivation": {
+      "path": "qa/gov-517-canonical-derivation-report.json",
+      "category": "derived",
+      "targetFlags": {
+        "T1-PASS": true,
+        "T2-PASS": true,
+        "T3-PASS": true
+      },
+      "fourCellDistribution": {
+        "both": 14,
+        "primary-only": 0,
+        "secondary-only": 0,
+        "neither": 0
+      },
+      "referenceSha256Reproduced": "02fd68db13ebe22021acccf6e89274a616803bf6151302be4607a4eabc29d1d9",
+      "referenceSha256": "02fd68db13ebe22021acccf6e89274a616803bf6151302be4607a4eabc29d1d9",
+      "generationIdenticalToHistoricalRun": true,
+      "sealSha256Changed": {
+        "from": "7bb41ba163d109c2962463b19b1af772521fd1d3bf991c940aec87afb7fbce6a",
+        "to": "170fd50b0ba651d334ef3bdb431ad0d8e2026aa1a9cd5f54cdff3bb73f854b7a",
+        "reason": "the seal covers the input bindings; the census digest moved from the unmatched pin to the committed refreshed bytes"
+      },
+      "invariantsReasserted": [
+        "INV-1 (|T1| = 10, |T2| = 28)",
+        "INV-2 (both routes cover 14/14 contacts)",
+        "INV-4 (C_both = 14, dual-route coverage of all observed contacts)"
+      ],
+      "invariantsGated": [
+        "INV-3b (strong form)",
+        "INV-5"
+      ],
+      "emitter": {
+        "generator": "qa/gov-517-live-derivation.mjs",
+        "generatorDigest": "7ea62934ed5a788bfafb1bee4ab7f87a547644dcb6faa5f66e0ec849b16ed0c5",
+        "invocation": [
+          "node",
+          "qa/gov-517-live-derivation.mjs"
+        ],
+        "generatedAt": "2026-10-13T00:00:00.000Z"
+      }
+    }
+  },
+  "promotionEvidence": {
+    "path": "qa/fivefold-engine-promotion-evidence.json",
+    "verdict": "PASS",
+    "itemEvidenceGroups": 10,
+    "exclusionEvidenceGroups": 11,
+    "decisionLedgerSha256": "a53a7fa94afb13fd4585eb39bc0175e52c405d25d454edffcc91c981af69f6a2",
+    "evidenceFingerprint": "ca578d49130b709a127dac0ef699bbda203d02bad622fa865074f90a92635437",
+    "r5": {
+      "generator": "scripts/build-fivefold-engine-promotion-evidence.py",
+      "generatorDigest": "45d9e903e1abc944f228e32aa8b16abef34db4dc7a0c1675704250e9a97b6743",
+      "invocation": [
+        "python3",
+        "scripts/build-fivefold-engine-promotion-evidence.py"
+      ],
+      "generatedAt": "2026-10-13T00:00:00.000Z"
+    },
+    "validator": "scripts/validate-fivefold-engine-promotion-evidence.py PASS",
+    "focusedSuite": "13 passed",
+    "gateCleared": "STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE cleared; builder --check reproduces the refreshed bytes"
+  },
+  "cascadeReRefresh": [
+    {
+      "artifact": "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
+      "candidateFingerprint": "6e020a5d11cb2183b2d5116409d23e31217895790146cb8ba532eff6711c1900",
+      "reportFingerprint": "09dcdba74b2b6cc227165b6858d98b5ffdf66f878882cf803acca44d2404afa6",
+      "verdict": "PASS",
+      "checksPassed": 30,
+      "checksFailed": 0,
+      "payloadProjectionSha256": "cf7969713099bf1ebe4ca2c99c338f83d1ac881de46ae254c9b5b10fc8ec9e81",
+      "payloadProjectionUnchanged": true
+    },
+    {
+      "artifact": "canonical/fivefold-incubator/fifth-space-census-v0.json",
+      "candidateFingerprint": "6918526a0e49c29f0a2753fa7bfb2cdedd281e6451538a94db1a911f3d258534",
+      "reportFingerprint": "eecc3e6faabca3de1cd82ff2472fa7431d41c1435234a259b703daf76b4ca669",
+      "verdict": "PASS",
+      "checksPassed": 24,
+      "checksFailed": 0,
+      "payloadProjectionSha256": "099528b8bf1eee8efa747b6145e02e49d14b5552b30bda43e3b18f1078c955e0",
+      "payloadProjectionUnchanged": true
+    },
+    {
+      "artifact": "canonical/fivefold-incubator/shadow-ladder-v0.json",
+      "candidateFingerprint": "9b64546369cc815bfb1f9c0edf689d3a1d5fc04c0e98057bf4df7eb1c3b46015",
+      "reportFingerprint": "93b605e09373b58050d7cf10f6c4b57899bd6e6b043e56d99d058145d80661fa",
+      "verdict": "PASS",
+      "checksPassed": 37,
+      "checksFailed": 0,
+      "payloadProjectionSha256": "25f7c68cbf2db22f0f2223067d68f4aa4b3978c325ad2c1b8e127b17c246d985",
+      "payloadProjectionUnchanged": true
+    },
+    {
+      "artifact": "qa/pentatonic-binding-audit-closure.json",
+      "reportFingerprint": "a0ed21f103ea69929b0f0c7a33a1fb04a7fd55df182479c2426ea2a82c6c8ace",
+      "checksPassed": 11,
+      "checksFailed": 0,
+      "decisionLedgerSha256": "a53a7fa94afb13fd4585eb39bc0175e52c405d25d454edffcc91c981af69f6a2"
+    }
+  ],
+  "downstreamProjections": [
+    "orrery/src/generated/field-derivation-bundle.v1.json",
+    "orrery/src/generated/taxonomy-read-model.v1.json",
+    "orrery/src/generated/d-tier-taxonomy-dataset.v1.json"
+  ],
+  "ledger": {
+    "postAppendSha256": "a53a7fa94afb13fd4585eb39bc0175e52c405d25d454edffcc91c981af69f6a2",
+    "postAppendByteLength": 227499,
+    "entry20": {
+      "lines": "3453-3543",
+      "regionSha256_lineJoinNoTrailingNewline": "fbfbd583287691c0f3c638b617acca0b140343dda0dd5967e4d50dcb1c72316c",
+      "regionSha256_keepends": "48d9687df98f2f60df382a48525209d01d0210d36b904fc439ad2d3151f4de3b"
+    },
+    "entry10FenceReverified": {
+      "lineJoin": "201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7",
+      "keepends": "50b8b73f75497082e6d2a38052a62da4f5374ee94fc08f8ff0312fc7746fbb00"
+    }
+  },
+  "verification": {
+    "focusedSuites": "35 passed (twin-hub + fifth-space-census + shadow-ladder + promotion evidence)",
+    "validateLedgerPins": "PASS (0 violations)",
+    "orreryCheck": "exit 0 (BL-080 execution check green via the preserved-binding resolution)",
+    "validateEvidence": "PASS (advisory validator + 11 tests; twin-hub and promotion evidence R5 PASS / R6 clean; registry 35/35 registered)",
+    "validateFivefoldEnginePromotionEvidence": "PASS (builder --check + independent validator + tests)",
+    "fullValidate": "npm run validate reaches validate:release; integrated receipt 416/2 \u2014 the two pre-existing recorded authority questions only; both stale gates cleared; no new unnamed regression",
+    "proseConsistency": "20 pre-existing violations (zero added; generated output restored)"
+  },
+  "fences": {
+    "noClaimEvent": true,
+    "noRecordAmendment": "ENTRY 10/15/16/17/18/19 byte-untouched",
+    "noGovernsAdmission": true,
+    "noInv5Graduation": true,
+    "noMWalkabilityPromotion": true,
+    "noDirectionalSemantics": true,
+    "noG1Movement": true,
+    "d4Record": "derivable-from-derived-inputs unchanged; historical not_derived immutable",
+    "d7": "hypothesis-tier unchanged",
+    "scope": "G1-G5 stages as originally scoped; no new derivation stages, no new operators, no scope expansion",
+    "writes": "no canonical/Court/Neo4j writes beyond the refresh's own artifacts"
+  }
+}

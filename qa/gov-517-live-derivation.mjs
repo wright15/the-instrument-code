@@ -104,6 +104,13 @@ export async function runCanonicalDerivation() {
   return {
     boundary: 'GOV-517',
     phase: 'canonical live derivation',
+    registrationTicket: 'GOV-526',
+    emitter: {
+      generator: 'qa/gov-517-live-derivation.mjs',
+      generatorDigest: digest(readFileSync(new URL('gov-517-live-derivation.mjs', import.meta.url))),
+      invocation: ['node', 'qa/gov-517-live-derivation.mjs'],
+      generatedAt: '2026-10-13T00:00:00.000Z',
+    },
     execution: { production_passes: 1, retries: 0, heuristic_search: false, arithmetic: 'BigInt engine',
       generation_sealed_before_canonical_read: true },
     inputs: bound.binding,

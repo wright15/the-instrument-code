@@ -3448,3 +3448,96 @@ M-walkability, and does not assign directional semantics. D4's
 unchanged; no claim event is opened. The session's frame vocabulary is
 interpretation context, not input; session prose is context, not evidence. Prior
 entries and prior line anchors remain unchanged; this entry is append-only.
+---
+
+## ENTRY 20 - BL-052 promotion refresh - GOV-517 re-registration under GOV-526 and the promotion evidence refresh
+
+**Date:** 2026-10-13. **Status:** GOV-517 re-registered under GOV-526 with the
+convention's R1/R4/R5 binding model; the promotion evidence refreshed; the second
+predeclared stale gate cleared; recorded, no claim event, no record amendment.
+
+### Authority And Scope
+
+The maintainer's BL-082 approval (OD-1(a)-OD-5(a), plus the GOV-517 correction)
+authorizes this landing: the re-registration under the next free GOV-52X ticket,
+GOV-526, with a full authorized re-execution bounded to the G1-G5 stages as
+originally scoped - input registration, preflight, live derivation, comparison;
+no new derivation stages, no new operators, no scope expansion - exercising the
+convention's R1, R4 and R5 model per the ENTRY 11 mandate. This entry records
+BL-052; the BL-051 cascade refresh is ENTRY 19.
+
+### GOV-517 Re-Registration (GOV-526)
+
+The re-registration emitter `qa/gov-517-input-registration.mjs` now records the
+R1 mandatory fields per binding (recipe, digest, byteLength over the exact raw
+bytes), declares the R4 named recipe `raw-bytes-sha256` from the recipe
+registry, and carries the R5 generator-provenance fields; the fresh registration
+`qa/gov-517-input-boundary-registration.json` (registration id
+`GOV-526-GOV-517-re-registration`, status green) binds the currently committed
+census, network and ledger bytes. The ENTRY 11 census-binding incident is
+resolved by binding what is committed - never by restoring or synthesizing
+history: the census binding records the committed refreshed census digest
+`effa4389…` in place of the historical unmatched pin `ad857ab9…`, with the
+incident disclosed in the registration's `re_registration` block.
+
+The full authorized re-execution ran: input registration; preflight
+(`qa/gov-517-preflight-report.json`, green; controls green; 121 tests passed);
+the single licensed derivation run (`qa/gov-517-canonical-derivation-report.json`,
+category `derived`; T1/T2/T3 PASS; four-cell 14/0/0/0 `both`); and the
+comparison. The fresh execution reproduces the historical outcomes exactly: the
+generation block is identical and the canonical reference digest `02fd68db…` is
+reproduced; the seal digest changes (`7bb41ba1…` to `170fd50b…`) because the seal
+covers the input bindings and the census digest moved from the unmatched pin to
+the committed refreshed bytes. INV-1 (`|T1| = 10`, `|T2| = 28`), INV-2 (both
+routes cover 14/14 contacts) and INV-4 (`C_both = 14`, dual-route coverage of
+all observed contacts) re-asserted exactly on the fresh execution. INV-3b
+(strong form) and INV-5 remain gated and are not asserted.
+
+### Promotion Evidence Refresh
+
+`qa/fivefold-engine-promotion-evidence.json` was re-emitted against this entry's
+ledger: admission status `admitted`, the promoted-field evidence (10 item
+groups) and the exclusion evidence (11 groups) all PASS, verdict PASS, the
+contract unchanged, and the new R5 generator-provenance fields present. The
+independent validator (`scripts/validate-fivefold-engine-promotion-evidence.py`)
+passes and the focused suite (13 tests) is green. The refreshed evidence is a
+registry member of the advisory validator's bounded registry (PROMOTION_EVIDENCE)
+and is R5/R6 clean at this landing. The `STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE`
+gate is cleared: the builder's `--check` reproduces the refreshed bytes.
+
+### Cascade Re-Refresh Against This Entry
+
+Because this entry's append changes the decision ledger, the ledger-bound
+cascade refreshed by ENTRY 19 was re-refreshed against this entry's ledger in
+this same landing (the established landed order: append first, then regenerate):
+the twin-hub convergence candidate, the fifth-space census candidate, the
+shadow-ladder candidate with their validation reports, and the pentatonic
+binding audit closure, together with the downstream orrery projections
+(field-derivation bundle, taxonomy read model, D-tier taxonomy dataset). Payload
+projections remain unchanged; the refreshed fingerprints and report digests are
+recorded in the refreshed validation reports and in the BL-052 receipt
+(`qa/specs/bl-052-promotion-refresh.json`), cited here by path.
+
+### Release Gate Disposition
+
+Both predeclared stale gates are now cleared (`STALE_TWIN_HUB_CONVERGENCE` at
+ENTRY 19; `STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE` here). `validate:ledger-pins`
+remains PASS. Full `npm run validate` was executed at this landing; the chain
+passes twin-hub, fifth-space-census, d-shadow and gov514 and reaches
+`validate:release`, whose integrated receipt records the pre-existing recorded
+authority-question state (frozen composite package payload identities; retained
+1.8.1 full-database baseline) - the two named blocking questions, unchanged,
+with no new unnamed regression. BL-053 (green release) remains the separate
+release ceremony and is not claimed here.
+
+### Guard
+
+This entry grants no runtime, topology, graph, governs, Court, office, schema,
+policy or global `harmonic.C_H` authority. It does not amend any record: ENTRY 10,
+ENTRY 15, ENTRY 16, ENTRY 17, ENTRY 18 and ENTRY 19 stand byte-untouched. It
+does not admit GOVERNS as a derivation relation, does not dissolve the boundary
+wall, does not touch D7's hypothesis-tier, does not graduate INV-5, does not
+promote M-walkability, and does not assign directional semantics. D4's
+`derivable-from-derived-inputs` and the historical `not_derived` record are
+unchanged; no claim event is opened. Prior entries and prior line anchors remain
+unchanged; this entry is append-only.

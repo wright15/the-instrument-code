@@ -21,6 +21,9 @@ test('binding verifier accepts exact manifest/checksum/byte agreement', () => {
   const sha256 = digest(bytes);
   const result = verifyBinding('fixture', bytes, { files: [{ path: 'fixture', sha256 }] }, `${sha256}  fixture\n`);
   assert.equal(result.pass, true);
+  assert.equal(result.recipe, 'raw-bytes-sha256');
+  assert.equal(result.digest, sha256);
+  assert.equal(result.byteLength, bytes.length);
 });
 
 test('binding verifier rejects altered bytes and missing or duplicate bindings', () => {

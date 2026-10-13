@@ -1,6 +1,16 @@
 {
   "boundary": "GOV-517",
   "phase": "canonical live derivation",
+  "registrationTicket": "GOV-526",
+  "emitter": {
+    "generator": "qa/gov-517-live-derivation.mjs",
+    "generatorDigest": "7ea62934ed5a788bfafb1bee4ab7f87a547644dcb6faa5f66e0ec849b16ed0c5",
+    "invocation": [
+      "node",
+      "qa/gov-517-live-derivation.mjs"
+    ],
+    "generatedAt": "2026-10-13T00:00:00.000Z"
+  },
   "execution": {
     "production_passes": 1,
     "retries": 0,
@@ -14,7 +24,7 @@
     "i3": null,
     "i4": {
       "ledger": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
-      "census": "ad857ab957c54773f35047fb7618e8c8d9977991c0450efc56b0b81cd653a1d0"
+      "census": "effa43894ced6a2d46a08aa2fa7d13173d3a74118844d879858de9437b6735e9"
     },
     "manifest_binding": "per-file MANIFEST.json and CHECKSUMS.sha256 entries",
     "envelope_sha256": "af20e68108e3569aa78933b67f6bcbbfd951824a48b5cc85a077de66066beb46"
@@ -24,7 +34,7 @@
     "i2_sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
     "i3_sha256": null,
     "i4_ledger_sha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
-    "i4_census_sha256": "ad857ab957c54773f35047fb7618e8c8d9977991c0450efc56b0b81cd653a1d0"
+    "i4_census_sha256": "effa43894ced6a2d46a08aa2fa7d13173d3a74118844d879858de9437b6735e9"
   },
   "generation": {
     "t1_pass": true,
@@ -320,6 +330,9 @@
     "canonical_bindings": [
       {
         "path": "canonical/universal-network-data.json",
+        "recipe": "raw-bytes-sha256",
+        "digest": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+        "byteLength": 2765575,
         "manifest_sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
         "recomputed_sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
         "checksums_match": true,
@@ -327,13 +340,16 @@
       },
       {
         "path": "canonical/universal-heptatonic-ledger.json",
+        "recipe": "raw-bytes-sha256",
+        "digest": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+        "byteLength": 356936,
         "manifest_sha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
         "recomputed_sha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
         "checksums_match": true,
         "pass": true
       }
     ],
-    "seal_sha256": "7bb41ba163d109c2962463b19b1af772521fd1d3bf991c940aec87afb7fbce6a",
+    "seal_sha256": "170fd50b0ba651d334ef3bdb431ad0d8e2026aa1a9cd5f54cdff3bb73f854b7a",
     "reference_sha256": "02fd68db13ebe22021acccf6e89274a616803bf6151302be4607a4eabc29d1d9",
     "g5_state_classification_pairs": [
       {
