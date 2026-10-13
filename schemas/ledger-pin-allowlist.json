@@ -70,5 +70,77 @@
     "name": "FROZEN_GENERATION_DIGEST",
     "sha256": "c4a7f48dd982c6d96f594ca8c03e045092b9a00b9615e05ef2d14648f04f83d7",
     "reason": "Frozen D4 production seal generation digest under Grant 2 (ENTRY 10) — the Gate 3 seal baseline; not a mutable ledger hash."
+  },
+  {
+    "path": "scripts/build-phase-c-probe.mjs",
+    "name": "PHASE_A_FINGERPRINT",
+    "sha256": "c8271c20a7aaf23c8f25fbe12d849854eb02ffbfd6fa24fb3f091b15970b87ac",
+    "reason": "R1-class committed-content fingerprint of the consumed Phase A probe artifact (orrery/src/generated/phase-a-probe.v1.json field probeFingerprint); the generator self-checks it at read time. A reviewed committed-bytes binding, not a mutable ledger hash."
+  },
+  {
+    "path": "scripts/build-d4-selection-review.mjs",
+    "name": "PHASE_A_FINGERPRINT",
+    "sha256": "c8271c20a7aaf23c8f25fbe12d849854eb02ffbfd6fa24fb3f091b15970b87ac",
+    "reason": "R1-class committed-content fingerprint of the consumed Phase A probe artifact (orrery/src/generated/phase-a-probe.v1.json field probeFingerprint); chain-anchor self-check. A reviewed committed-bytes binding, not a mutable ledger hash."
+  },
+  {
+    "path": "scripts/build-d4-selection-review.mjs",
+    "name": "PHASE_C_FINGERPRINT",
+    "sha256": "5085e27404de2e591b146d38f289da660c6bc49041a54f073acafcbfe10f2f49",
+    "reason": "R1-class committed-content fingerprint of the consumed Phase C probe artifact (orrery/src/generated/phase-c-probe.v1.json field probeFingerprint); chain-anchor self-check. A reviewed committed-bytes binding, not a mutable ledger hash."
+  },
+  {
+    "path": "scripts/build-d4-r2-route-review.mjs",
+    "name": "SELECTION_REVIEW_FINGERPRINT",
+    "sha256": "6d11fd932efbe96892b3cf2e6a6cdad6f54e69cd2a8f284ebb72232c59d8b745",
+    "reason": "R1-class committed-content fingerprint of the consumed BL-055 selection-review artifact (orrery/src/generated/d4-selection-review.v1.json field reviewFingerprint); chain-anchor self-check. A reviewed committed-bytes binding, not a mutable ledger hash."
+  },
+  {
+    "path": "scripts/build-d4-r2-route-review.mjs",
+    "name": "PHASE_C_FINGERPRINT",
+    "sha256": "5085e27404de2e591b146d38f289da660c6bc49041a54f073acafcbfe10f2f49",
+    "reason": "R1-class committed-content fingerprint of the consumed Phase C probe artifact (orrery/src/generated/phase-c-probe.v1.json field probeFingerprint); chain-anchor self-check. A reviewed committed-bytes binding, not a mutable ledger hash."
+  },
+  {
+    "path": "scripts/build-d4-r2-contract.mjs",
+    "name": "SELECTION_REVIEW_FINGERPRINT",
+    "sha256": "6d11fd932efbe96892b3cf2e6a6cdad6f54e69cd2a8f284ebb72232c59d8b745",
+    "reason": "R1-class committed-content fingerprint of the consumed BL-055 selection-review artifact (orrery/src/generated/d4-selection-review.v1.json field reviewFingerprint); chain-anchor self-check. A reviewed committed-bytes binding, not a mutable ledger hash."
+  },
+  {
+    "path": "scripts/build-d4-r2-contract.mjs",
+    "name": "PHASE_C_FINGERPRINT",
+    "sha256": "5085e27404de2e591b146d38f289da660c6bc49041a54f073acafcbfe10f2f49",
+    "reason": "R1-class committed-content fingerprint of the consumed Phase C probe artifact (orrery/src/generated/phase-c-probe.v1.json field probeFingerprint); chain-anchor self-check. A reviewed committed-bytes binding, not a mutable ledger hash."
+  },
+  {
+    "path": "scripts/build-d4-r2-execution-receipt.mjs",
+    "name": "CONTRACT_FINGERPRINT",
+    "sha256": "5528510b495f12fa11ab713d8ee357e3798f728204eacd83ad491aafb8fdc7d5",
+    "reason": "R1-class committed-content fingerprint of the consumed Gate 2 contract artifact (orrery/src/generated/d4-r2-contract.v1.json field contractFingerprint, recomputed over its canonical core); chain-anchor self-check. A reviewed committed-bytes binding, not a mutable ledger hash."
+  },
+  {
+    "path": "scripts/build-d4-r2-execution-receipt.mjs",
+    "name": "SELECTION_REVIEW_FINGERPRINT",
+    "sha256": "6d11fd932efbe96892b3cf2e6a6cdad6f54e69cd2a8f284ebb72232c59d8b745",
+    "reason": "R1-class committed-content fingerprint of the consumed BL-055 selection-review artifact (orrery/src/generated/d4-selection-review.v1.json field reviewFingerprint); chain-anchor self-check. A reviewed committed-bytes binding, not a mutable ledger hash."
+  },
+  {
+    "path": "scripts/build-d4-r2-execution-receipt.mjs",
+    "name": "PHASE_C_FINGERPRINT",
+    "sha256": "5085e27404de2e591b146d38f289da660c6bc49041a54f073acafcbfe10f2f49",
+    "reason": "R1-class committed-content fingerprint of the consumed Phase C probe artifact (orrery/src/generated/phase-c-probe.v1.json field probeFingerprint); chain-anchor self-check. A reviewed committed-bytes binding, not a mutable ledger hash."
+  },
+  {
+    "path": "scripts/build-d4-r2-execution-receipt.mjs",
+    "name": "FROZEN_IMPLEMENTATION_DIGEST",
+    "sha256": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f",
+    "reason": "Immutable nine-file D4 implementation closure digest recorded in qa/d4-production-receipt.json bindings.implementationDigest under Grant 2 (ENTRY 10); the Gate 3 comparison baseline. Already allowlisted for scripts/d4-production.mjs and scripts/build-bl080-governs-derivation-execution.mjs under the same value; not a mutable ledger hash."
+  },
+  {
+    "path": "scripts/build-d4-r2-execution-receipt.mjs",
+    "name": "ENTRY10_SHA256",
+    "sha256": "201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7",
+    "reason": "R2-class entry-scoped content pin: SHA-256 of the DECISION_LEDGER.md ENTRY 10 region (lines 2195-2252, the frozen D4 production record) consumed by the Gate 3 fence; reviewed under CONV-EVIDENCE-BINDING-001 R2 as an entry-scoped binding, not a whole-file ledger freshness pin."
   }
 ]

@@ -87,14 +87,17 @@ export const FROZEN_GENERATION_PATH = "qa/d4-production-generation.json";
 export const SELECTION_REVIEW_PATH = "orrery/src/generated/d4-selection-review.v1.json";
 export const PHASE_C_PROBE_PATH = "orrery/src/generated/phase-c-probe.v1.json";
 export const DECISION_LEDGER_PATH = "provenance/DECISION_LEDGER.md";
+// R2 ledger-fence binding sidecar (CONV-EVIDENCE-BINDING-001): the migrated
+// home of the frozen prefix guard. The binding was previously the literal
+// DECISION_LEDGER_SHA256 with FROZEN_LEDGER_BYTE_LENGTH; the pinned value and
+// endpoint are unchanged.
+export const LEDGER_BINDING_PATH = "qa/d4-r2-execution-receipt-ledger-binding.json";
 export const CONTRACT_FINGERPRINT = "5528510b495f12fa11ab713d8ee357e3798f728204eacd83ad491aafb8fdc7d5";
 export const SELECTION_REVIEW_FINGERPRINT = "6d11fd932efbe96892b3cf2e6a6cdad6f54e69cd2a8f284ebb72232c59d8b745";
 export const PHASE_C_FINGERPRINT = "5085e27404de2e591b146d38f289da660c6bc49041a54f073acafcbfe10f2f49";
 export const FROZEN_IMPLEMENTATION_DIGEST = "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f";
-export const DECISION_LEDGER_SHA256 = "8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362";
 export const ENTRY10_SHA256 = "201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7";
 export const ENTRY10_SPAN = "2195-2252";
-export const FROZEN_LEDGER_BYTE_LENGTH = 174314;
 export const PATCH_PHASES = [11, 0, 1];
 export const STRICT_OFFICES = ["0", "6"];
 export const LICENSED_CONTEXT_IDS = ["phase-11", "phase-0", "phase-1", "seam-familyA"];
@@ -927,9 +930,16 @@ function collectImplementationFiles() {
 }
 
 function readLedgerFence() {
+  const bindingFile = readJson(LEDGER_BINDING_PATH);
+  const binding = bindingFile.evidenceBindings && bindingFile.evidenceBindings.ledgerPrefix;
+  if (!binding) fail("ledger binding sidecar malformed: ledgerPrefix binding missing");
   const ledgerBytes = fs.readFileSync(path.join(root, DECISION_LEDGER_PATH));
   const ledgerText = ledgerBytes.toString("utf8");
-  if (sha256(ledgerBytes.subarray(0, FROZEN_LEDGER_BYTE_LENGTH)) !== DECISION_LEDGER_SHA256) {
+  const spanEnd = binding.spanByteOffset + binding.spanByteLength;
+  if (spanEnd > ledgerBytes.length) {
+    fail("ledger binding sidecar malformed: span out of bounds");
+  }
+  if (sha256(ledgerBytes.subarray(0, spanEnd)) !== binding.spanPrefixSha256) {
     fail("decision ledger prefix drift: bytes preceding the execution-time endpoint changed (an end-append preserves the frozen prefix; any earlier modification does not)");
   }
   const lines = ledgerText.split("\n");
@@ -941,7 +951,7 @@ function readLedgerFence() {
   if (entry10Sha !== ENTRY10_SHA256) {
     fail("ENTRY 10 region drift: the frozen D4 record is not byte-untouched");
   }
-  return { ledgerSha: DECISION_LEDGER_SHA256, entry10Sha: ENTRY10_SHA256, entry10Span: ENTRY10_SPAN };
+  return { ledgerSha: binding.spanPrefixSha256, entry10Sha: ENTRY10_SHA256, entry10Span: ENTRY10_SPAN };
 }
 
 export function buildReceipt({ executionTimestamp, runCompletedAt }) {

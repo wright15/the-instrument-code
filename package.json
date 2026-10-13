@@ -55,6 +55,7 @@
     "validate:prose-consistency": "node scripts/validate-validation-prose-consistency.mjs",
     "validate:manifest": "node scripts/build-manifest.mjs --check",
     "validate:ledger-pins": "python3 scripts/validate-ledger-pins.py && python3 -m pytest -p no:cacheprovider -q tests/test_ledger_pin_inventory.py",
+    "validate:evidence": "node scripts/validate-evidence-bindings.mjs && node --test scripts/validate-evidence-bindings.test.mjs",
     "run:gov517": "node qa/gov-517-live-derivation.mjs",
     "build:cypher": "node scripts/validate-cypher-syntax.mjs",
     "validate:cypher": "node scripts/validate-cypher-syntax.mjs --check",

@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0-dev",
   "generatedAt": "2026-08-29T00:00:00.000Z",
-  "fileCount": 1315,
-  "totalBytes": 84875103,
+  "fileCount": 1319,
+  "totalBytes": 84938437,
   "files": [
     {
       "path": ".env.example",
@@ -1072,8 +1072,8 @@
     },
     {
       "path": "orrery/package.json",
-      "bytes": 7189,
-      "sha256": "cefc32e65da5a32a9e11558ffdf997f86291ccd9f5d850822e664dc3ae6c8470"
+      "bytes": 7340,
+      "sha256": "e7c9982df5841e1bc099c0174bd446abbde5d683615b359f6276f7f6b443f64d"
     },
     {
       "path": "orrery/public/AUDIO_ASSETS.md",
@@ -1757,8 +1757,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 16624,
-      "sha256": "11e5833c12313ded7cdce3655da195627654a665ce5d8ba72c2b7edf72cca8c9"
+      "bytes": 16755,
+      "sha256": "5adf4d2e7c6863ffc3d7cc89f4b261f9507c0f3fb6fa06a0540640be1398d1c1"
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
@@ -1929,6 +1929,11 @@
       "path": "qa/d4-production-seal.json",
       "bytes": 537,
       "sha256": "2b1c6c284b52850463ff05179e43976b845196e6d96bd6e80deccf9de38a0b58"
+    },
+    {
+      "path": "qa/d4-r2-execution-receipt-ledger-binding.json",
+      "bytes": 2146,
+      "sha256": "4528e8c8693186c4d915d1e30e29f32c4b44e63d9437c37c901c90257e87e568"
     },
     {
       "path": "qa/d4-r2-execution-receipt.json",
@@ -2742,8 +2747,8 @@
     },
     {
       "path": "schemas/ledger-pin-allowlist.json",
-      "bytes": 3929,
-      "sha256": "140906134353bf5f6a55114bcf7aa6ab0803dd14a163bbff603a0db7dc014f13"
+      "bytes": 9380,
+      "sha256": "111e9071423adad8bf5cd434f55dfd3dcd9c8b30aa37e9e83ba05a9804894a90"
     },
     {
       "path": "schemas/mechanics-thermodynamics-registry-v1.0.0.schema.json",
@@ -2942,8 +2947,8 @@
     },
     {
       "path": "scripts/build-d4-r2-execution-receipt.mjs",
-      "bytes": 58827,
-      "sha256": "401ba839e51b490b997a00d9a19a27b8c1a94bb485ae8090066e6471beffc3ef"
+      "bytes": 59410,
+      "sha256": "81785de5d8b77d80250f34cd01a1111055db7069922c67ca1900d376be9edae2"
     },
     {
       "path": "scripts/build-d4-r2-route-review.mjs",
@@ -3281,6 +3286,16 @@
       "sha256": "fb3c5f87864d4cad7af13533090736f277728b97d0e4bdd3a72dbf367fd8a3b1"
     },
     {
+      "path": "scripts/validate-evidence-bindings.mjs",
+      "bytes": 25082,
+      "sha256": "d830571a9ba25e295652ae1a3c74bc7187f7d30bf9f1d222b0fb5bf573a6892b"
+    },
+    {
+      "path": "scripts/validate-evidence-bindings.test.mjs",
+      "bytes": 7355,
+      "sha256": "a910d2ee4887ce3328140771401f4a4139bb6c1110d9a531d7c284b1b74be650"
+    },
+    {
       "path": "scripts/validate-fifth-space-census.py",
       "bytes": 10432,
       "sha256": "2baf7a4a06333f9989b7abdb21c3124c2ef3b27072e8eb669feb4acec8b06745"
@@ -3417,8 +3432,8 @@
     },
     {
       "path": "scrum/BACKLOG.md",
-      "bytes": 188760,
-      "sha256": "51257edd78f7b6a4414a6aa74a2c4e26cd1238b7ab55efcba3c3bc77a77adbfb"
+      "bytes": 195672,
+      "sha256": "4dc6da452acb9e9aa218e22b4ac3e3e5feeb6c9cf8da338452b3f87aa206faae"
     },
     {
       "path": "scrum/CRT-301-court-admission-contract.md",
@@ -4024,6 +4039,11 @@
       "path": "scrum/plan/bl-080-governs-derivation-memo.md",
       "bytes": 11429,
       "sha256": "3dc62dccbefb58d0a3dafde0cca5d88e28f499459a9c272492f7cef7c229f186"
+    },
+    {
+      "path": "scrum/plan/bl-081-evidence-binding-validator-and-pin-migration.md",
+      "bytes": 15523,
+      "sha256": "2620a8f4ef7542bccc26c27bb94e3f8599062e7ad16554e315c5ab08f76d6062"
     },
     {
       "path": "scrum/plan/continuous-typology-obs-draft.md",

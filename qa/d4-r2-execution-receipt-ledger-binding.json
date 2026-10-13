@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "evidence-binding-sidecar.v1",
+  "conventionId": "CONV-EVIDENCE-BINDING-001",
+  "bindingId": "D4-R2-EXECUTION-RECEIPT-LEDGER-PREFIX-V1",
+  "subject": "qa/d4-r2-execution-receipt.json",
+  "subjectNote": "Gate 3 execution receipt (BL-057, route R2). This sidecar is the registered home of the receipt generator's ledger-fence binding; it carries no payload bytes of its own.",
+  "evidenceBindings": {
+    "ledgerPrefix": {
+      "artifactPath": "provenance/DECISION_LEDGER.md",
+      "entryIds": ["ENTRY 10", "ENTRY 11", "ENTRY 12", "ENTRY 13", "ENTRY 14"],
+      "spanByteOffset": 147049,
+      "spanByteLength": 27265,
+      "spanPrefixSha256": "8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362",
+      "spanLineRange": { "startLine": 2195, "endLine": 2661 },
+      "semantics": "R2 entry-scoped span binding: spanByteOffset is the raw-byte start of the ENTRY 10 heading; spanByteLength extends to the execution-time freeze endpoint (end of the ENTRY 14 region); spanPrefixSha256 is the SHA-256 over raw bytes [0, spanByteOffset + spanByteLength). An end-append preserves the bound prefix; any modification before the endpoint does not."
+    }
+  },
+  "payloadReference": {
+    "path": "qa/d4-r2-execution-receipt.json",
+    "fingerprintField": "executionFingerprint",
+    "note": "R3 payload/provenance separation: this sidecar is provenance; the payload is the receipt and its executionFingerprint is unchanged by the binding-source migration."
+  },
+  "migration": {
+    "preMigrationSource": "scripts/build-d4-r2-execution-receipt.mjs",
+    "preMigrationLiteral": "DECISION_LEDGER_SHA256 (with FROZEN_LEDGER_BYTE_LENGTH = 174314)",
+    "disposition": "Re-expressed under CONV-EVIDENCE-BINDING-001 R2 as an entry-scoped span binding; the generator reads this sidecar in place of the literal. The pinned value and the prefix endpoint are unchanged.",
+    "rationale": "Ledger-named literals are structurally non-allowlistable (scripts/validate-ledger-pins.py); the R2 model replaces the embedded prefix literal with a registered entry-scoped binding verified by scripts/validate-evidence-bindings.mjs."
+  }
+}
