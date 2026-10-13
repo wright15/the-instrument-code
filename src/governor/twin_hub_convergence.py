@@ -28,6 +28,9 @@ from .shadow_ladder import (
 
 SCHEMA_VERSION = "fivefold-incubator.twin-hub-convergence.v0"
 CANDIDATE_ID = "TWIN_HUB_CONVERGENCE_v0"
+GENERATOR_PATH = "scripts/generate-twin-hub-convergence.py"
+GENERATOR_INVOCATION = ["python3", "scripts/generate-twin-hub-convergence.py"]
+GENERATED_AT = "2026-10-13T00:00:00.000Z"
 TIERS = ("A0", "A1", "A2")
 D_TIERS = ("D4", "D5")
 FAMILIES = {"A0": "7-35", "A1": "7-34", "A2": "7-33"}
@@ -608,6 +611,10 @@ def build_twin_hub_candidate(*, root: Path, reverse_input: bool = False) -> dict
         "schemaVersion": SCHEMA_VERSION,
         "candidateId": CANDIDATE_ID,
         "status": "planning_evidence",
+        "generator": GENERATOR_PATH,
+        "generatorDigest": _sha(root / GENERATOR_PATH),
+        "invocation": list(GENERATOR_INVOCATION),
+        "generatedAt": GENERATED_AT,
         "scope": {
             "question": (
                 "Does D4/D5 SEAT_CONTACT evidence route through T1-twin structure, "

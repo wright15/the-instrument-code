@@ -24,7 +24,9 @@
  *
  * The registry is explicit and bounded: the convention's own chain, the
  * registered ledger-binding sidecars, the machine-emitted corridor artifacts
- * under orrery/src/generated, and the Gate 3 execution receipt. Root inventory
+ * under orrery/src/generated, the refreshed canonical planning evidence and
+ * the refreshed promotion evidence (BL-051/BL-052 refreshes, born under this
+ * validator per OD-4(a)), and the Gate 3 execution receipt. Root inventory
  * envelopes retain their own schema and are consumed, not checked, here.
  */
 import crypto from "node:crypto";
@@ -47,6 +49,8 @@ export const ADMISSION_RECEIPT_PATH = "qa/conventions/evidence-binding-001-admis
 export const LEDGER_BINDING_SIDECARS = ["qa/d4-r2-execution-receipt-ledger-binding.json"];
 export const MACHINE_EMITTED_DIR = "orrery/src/generated";
 export const MACHINE_EMITTED_EXTRA = ["qa/d4-r2-execution-receipt.json"];
+export const CANONICAL_PLANNING_EVIDENCE = ["canonical/fivefold-incubator/twin-hub-convergence-v0.json"];
+export const PROMOTION_EVIDENCE = ["qa/fivefold-engine-promotion-evidence.json"];
 export const CONVENTION_CHAIN = [CONVENTION_PATH, RECIPE_REGISTRY_PATH, ADMISSION_RECEIPT_PATH];
 export const GENERATOR_PATH_FIELDS = ["generator", "generatorPath"];
 export const GENERATOR_DIGEST_FIELDS = ["generatorDigest", "generatorSha256"];
@@ -226,9 +230,9 @@ export function discoverRegistry() {
     ? fs.readdirSync(generatedDir).filter((name) => name.endsWith(".json")).sort()
         .map((name) => `${MACHINE_EMITTED_DIR}/${name}`)
     : [];
-  const machineEmitted = [...generated, ...MACHINE_EMITTED_EXTRA].filter((value, index, all) => all.indexOf(value) === index).sort();
+  const machineEmitted = [...generated, ...MACHINE_EMITTED_EXTRA, ...CANONICAL_PLANNING_EVIDENCE, ...PROMOTION_EVIDENCE].filter((value, index, all) => all.indexOf(value) === index).sort();
   const all = [...CONVENTION_CHAIN, ...LEDGER_BINDING_SIDECARS, ...machineEmitted].sort();
-  return { conventionChain: [...CONVENTION_CHAIN], ledgerBindingSidecars: [...LEDGER_BINDING_SIDECARS], machineEmitted, all };
+  return { conventionChain: [...CONVENTION_CHAIN], ledgerBindingSidecars: [...LEDGER_BINDING_SIDECARS], machineEmitted, canonicalPlanningEvidence: [...CANONICAL_PLANNING_EVIDENCE], promotionEvidence: [...PROMOTION_EVIDENCE], all };
 }
 
 export function resolveCutLine() {

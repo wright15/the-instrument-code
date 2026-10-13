@@ -18,6 +18,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 SCHEMA_VERSION = "crt-348.fivefold-engine-promotion-evidence.v1"
 EVIDENCE_ID = "fivefold-engine-promotion-evidence-v1"
+GENERATOR_PATH = "scripts/build-fivefold-engine-promotion-evidence.py"
+GENERATOR_INVOCATION = ["python3", "scripts/build-fivefold-engine-promotion-evidence.py"]
+GENERATED_AT = "2026-10-13T00:00:00.000Z"
 CONTRACT_PATH = "schemas/fivefold-engine-admission-contract.json"
 CONTRACT_SCHEMA_PATH = "schemas/fivefold-engine-admission-contract.schema.json"
 
@@ -782,6 +785,10 @@ def build_evidence(root: Path = ROOT) -> dict[str, Any]:
         "schemaVersion": SCHEMA_VERSION,
         "evidenceId": EVIDENCE_ID,
         "admissionStatus": "admitted",
+        "generator": GENERATOR_PATH,
+        "generatorDigest": _sha256_bytes((root / GENERATOR_PATH).read_bytes()),
+        "invocation": list(GENERATOR_INVOCATION),
+        "generatedAt": GENERATED_AT,
         "contractPath": CONTRACT_PATH,
         "contractSha256": _sha256_bytes((root / CONTRACT_PATH).read_bytes()),
         "decisionLedgerSha256": decision_ledger_sha256,

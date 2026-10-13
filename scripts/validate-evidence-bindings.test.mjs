@@ -142,6 +142,25 @@ test("advisory CLI runs, reports, and exits 0", () => {
   assert.equal(r4[0].status, "PASS");
 });
 
+test("refreshed canonical planning evidence carries complete generator provenance and registration", () => {
+  const result = spawnSync(process.execPath, [path.join(scriptDirectory, "validate-evidence-bindings.mjs"), "--json"], {
+    cwd: root,
+    encoding: "utf8",
+  });
+  assert.equal(result.status, 0);
+  const report = JSON.parse(result.stdout);
+  for (const artifactPath of [
+    "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
+  ]) {
+    assert.ok(report.registry.all.includes(artifactPath), `${artifactPath} is a registry member`);
+    const r5 = report.checks.find((check) => check.rule === "R5" && check.subject === artifactPath);
+    assert.ok(r5, `${artifactPath} has an R5 check`);
+    assert.equal(r5.status, "PASS", `${artifactPath} R5 generator provenance`);
+    const r6 = report.findings.filter((finding) => finding.rule === "R6" && finding.subject === artifactPath);
+    assert.deepEqual(r6, [], `${artifactPath} R6 registration findings`);
+  }
+});
+
 test("repository data files that the validator reads exist and parse", () => {
   for (const relativePath of ["provenance/digest-recipes.json", "qa/conventions/evidence-binding-001-admission.json", "qa/d4-r2-execution-receipt-ledger-binding.json"]) {
     const parsed = JSON.parse(fs.readFileSync(path.join(root, relativePath), "utf8"));

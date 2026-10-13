@@ -1,0 +1,62 @@
+{
+  "receiptId": "BL-051-D4-preservation-twin-hub-pre-refresh",
+  "authority": "ENTRY 11 mandate (provenance/DECISION_LEDGER.md:2392-2406) under the ENTRY 10 deferral authority (qa/d4-production-landing.json:67-77); executed before the first shared-artifact refresh of the BL-051 cascade.",
+  "ruling": "OD-1(a) approved 2026-10-13: versioned copies under qa/halt-evidence/, full bytes + SHA + blob OID, registered in MANIFEST/CHECKSUMS, fingerprint pins recorded here.",
+  "preservedAt": "2026-10-13T15:28:51.128Z",
+  "preserved": {
+    "candidate": {
+      "sourcePath": "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
+      "preservedPath": "qa/halt-evidence/twin-hub-convergence-pre-refresh/twin-hub-convergence-v0.json",
+      "sha256": "972394e5c319c4497c4df6b64c7ba6e9a0639cdd3ea1f5a28844f2e6cfddb40d",
+      "byteLength": 12396,
+      "blobOid": "3b76f66422d7148a32b0bf45f6f7e466e260f719",
+      "candidateFingerprint": "3885bf831dde42f1b1075f81fdce765e5e202411d7a3fd8f49d6c6e55a226d32",
+      "payloadProjectionSha256": "cf7969713099bf1ebe4ca2c99c338f83d1ac881de46ae254c9b5b10fc8ec9e81",
+      "payloadProjectionRecipe": "json.dumps(core, ensure_ascii=False, sort_keys=True, separators=(',',':')) with core = document minus candidateFingerprint and evidenceBindings; raw-bytes-sha256",
+      "verdict": "confirmed",
+      "evidenceBindings": {
+        "canonicalLedgerSha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+        "decisionLedgerSha256": "ac50241b6c432394b55864e2ea79755d70ddca60529476edf470f2c39f509c74",
+        "networkFingerprint": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+        "observationLedgerSha256": "20793bdc3c509a84951a39578a40285ed8205f87033a12f494000fe712e8da52"
+      }
+    },
+    "validationReport": {
+      "sourcePath": "qa/twin-hub-convergence-validation.json",
+      "preservedPath": "qa/halt-evidence/twin-hub-convergence-pre-refresh/twin-hub-convergence-validation.json",
+      "sha256": "b7f924ca53859b832334200245f690196433e8c8eb213e2ce26afa5e62e230d2",
+      "byteLength": 5369,
+      "blobOid": "051e7fdf054f0b4ddc7468b5dbeaa788e6d2eb7d",
+      "reportFingerprint": "35f887201947dd5348db0fae6184486710072cfad45b387e6f62e052df1fe988",
+      "candidateFingerprint": "3885bf831dde42f1b1075f81fdce765e5e202411d7a3fd8f49d6c6e55a226d32",
+      "verdict": "PASS",
+      "checksPassed": 30,
+      "checksFailed": 0
+    },
+    "entry10Fence": {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "2195-2252 (1-indexed, heading through final content line)",
+      "regionSha256_lineJoinNoTrailingNewline": "201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7",
+      "regionSha256_keepends": "50b8b73f75497082e6d2a38052a62da4f5374ee94fc08f8ff0312fc7746fbb00",
+      "ledgerSha256AtPreservation": "fb2b9b9ef552c69217e764b42fe8cff37a3c795c4d1a620784664f195527e66e",
+      "ledgerByteLengthAtPreservation": 214223
+    },
+    "preservedListCitation": {
+      "path": "qa/d4-production-landing.json",
+      "lines": "67-77",
+      "sha256": "2c6609d41d65a8eb997197cbc4aed756af513edcfca798c95de5a6c62dd90700",
+      "members": [
+        "Accepted nine-file implementation closure",
+        "Frozen boundary/spec/schema/cardinality documents",
+        "Original canonical ledger/network bytes and bound twin-hub receipt",
+        "Existing qa/d4-preflight-*.json and qa/halt-evidence/"
+      ]
+    }
+  },
+  "notes": [
+    "Byte-identical copies; originals were not restored, synthesized or altered.",
+    "R1: digests are SHA-256 over the exact preserved bytes; blob OIDs are pre-commit git hash-object --no-filters identities of the same bytes.",
+    "This receipt is the ceremony-controlled execution provenance record; the refreshed payloads carry stable generator-provenance fields (R5) per OD-4(a).",
+    "The preserved validation report carries the stale-gate provenance: it records the 30/0 PASS verdict and the candidate fingerprint it validated against."
+  ]
+}

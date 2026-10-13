@@ -1,0 +1,162 @@
+{
+  "receiptId": "BL-051-twin-hub-cascade-refresh",
+  "date": "2026-10-13",
+  "authority": "BL-082 approved plan (rulings OD-1(a)-OD-5(a), 2026-10-13); ENTRY 19 records this landing; the preservation precondition executes the ENTRY 11 mandate under the ENTRY 10 deferral authority.",
+  "preservation": {
+    "directory": "qa/halt-evidence/twin-hub-convergence-pre-refresh/",
+    "receiptPath": "qa/halt-evidence/twin-hub-convergence-pre-refresh/preservation-receipt.json",
+    "candidate": {
+      "sourcePath": "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
+      "preservedPath": "qa/halt-evidence/twin-hub-convergence-pre-refresh/twin-hub-convergence-v0.json",
+      "sha256": "972394e5c319c4497c4df6b64c7ba6e9a0639cdd3ea1f5a28844f2e6cfddb40d",
+      "byteLength": 12396,
+      "blobOid": "3b76f66422d7148a32b0bf45f6f7e466e260f719",
+      "candidateFingerprint": "3885bf831dde42f1b1075f81fdce765e5e202411d7a3fd8f49d6c6e55a226d32",
+      "payloadProjectionSha256": "cf7969713099bf1ebe4ca2c99c338f83d1ac881de46ae254c9b5b10fc8ec9e81",
+      "payloadProjectionRecipe": "json.dumps(core, ensure_ascii=False, sort_keys=True, separators=(',',':')) with core = document minus candidateFingerprint and evidenceBindings; raw-bytes-sha256",
+      "verdict": "confirmed",
+      "evidenceBindings": {
+        "canonicalLedgerSha256": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+        "decisionLedgerSha256": "ac50241b6c432394b55864e2ea79755d70ddca60529476edf470f2c39f509c74",
+        "networkFingerprint": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+        "observationLedgerSha256": "20793bdc3c509a84951a39578a40285ed8205f87033a12f494000fe712e8da52"
+      }
+    },
+    "validationReport": {
+      "sourcePath": "qa/twin-hub-convergence-validation.json",
+      "preservedPath": "qa/halt-evidence/twin-hub-convergence-pre-refresh/twin-hub-convergence-validation.json",
+      "sha256": "b7f924ca53859b832334200245f690196433e8c8eb213e2ce26afa5e62e230d2",
+      "byteLength": 5369,
+      "blobOid": "051e7fdf054f0b4ddc7468b5dbeaa788e6d2eb7d",
+      "reportFingerprint": "35f887201947dd5348db0fae6184486710072cfad45b387e6f62e052df1fe988",
+      "candidateFingerprint": "3885bf831dde42f1b1075f81fdce765e5e202411d7a3fd8f49d6c6e55a226d32",
+      "verdict": "PASS",
+      "checksPassed": 30,
+      "checksFailed": 0
+    },
+    "entry10Fence": {
+      "path": "provenance/DECISION_LEDGER.md",
+      "lines": "2195-2252 (1-indexed, heading through final content line)",
+      "regionSha256_lineJoinNoTrailingNewline": "201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7",
+      "regionSha256_keepends": "50b8b73f75497082e6d2a38052a62da4f5374ee94fc08f8ff0312fc7746fbb00",
+      "ledgerSha256AtPreservation": "fb2b9b9ef552c69217e764b42fe8cff37a3c795c4d1a620784664f195527e66e",
+      "ledgerByteLengthAtPreservation": 214223
+    }
+  },
+  "cascade": [
+    {
+      "artifact": "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
+      "preCandidateFingerprint": "3885bf831dde42f1b1075f81fdce765e5e202411d7a3fd8f49d6c6e55a226d32",
+      "postCandidateFingerprint": "31c1bf00b8538ef79cd9bee5f3a317cf17cdc4074cace7d901e70f1e9bcabef1",
+      "payloadProjectionSha256": "cf7969713099bf1ebe4ca2c99c338f83d1ac881de46ae254c9b5b10fc8ec9e81",
+      "payloadProjectionUnchanged": true,
+      "verdict": "confirmed",
+      "validator": {
+        "verdict": "PASS",
+        "checksPassed": 30,
+        "checksFailed": 0,
+        "reportFingerprint": "c8f4cf5f230ae9ef46b15fcf888bd485e7d99222cd273a579af3a0cbe173941c",
+        "reportSha256": "6d717b396a3bbcf1ac572c30cd9dc70ad92a44c127ca4888e3e1b77bdf2e87bb"
+      }
+    },
+    {
+      "artifact": "canonical/fivefold-incubator/fifth-space-census-v0.json",
+      "preCandidateFingerprint": "8f984d0042f42907a797a52d956ef9051fe62952c6c43dbc402eef7193416fea",
+      "postCandidateFingerprint": "2bfad475b08d85961bef24faa88fa1dbc5f495acd5c853950666c16e29bc911b",
+      "payloadProjectionSha256": "099528b8bf1eee8efa747b6145e02e49d14b5552b30bda43e3b18f1078c955e0",
+      "payloadProjectionUnchanged": true,
+      "validator": {
+        "verdict": "PASS",
+        "checksPassed": 24,
+        "checksFailed": 0,
+        "reportFingerprint": "8bdcbd37a3bd5d2c3c9664f61f9b42d41f39489173c1f6ff3710959e8b745e49",
+        "reportSha256": "9b441f0e54967e34b243b71b2c92c0afce130c3e2ed8e589d4c50e066e0fd10d"
+      }
+    },
+    {
+      "artifact": "canonical/fivefold-incubator/shadow-ladder-v0.json",
+      "preCandidateFingerprint": "19dcfb5564bddda3b87a2837ba86b4aaf3a026f5c0750ddccd74c1487757a299",
+      "postCandidateFingerprint": "3aea3277238270654f16b0f49668ab09c580da9d5974f84907adab0b64e668d0",
+      "payloadProjectionSha256": "25f7c68cbf2db22f0f2223067d68f4aa4b3978c325ad2c1b8e127b17c246d985",
+      "payloadProjectionUnchanged": true,
+      "validator": {
+        "verdict": "PASS",
+        "checksPassed": 37,
+        "checksFailed": 0,
+        "reportFingerprint": "1605ed23bfc6557c254027b457e2e02aff83b02a56d15aeaa6e9ece3158b8352",
+        "reportSha256": "463ac60c2fee1a5eb6f567ba00c9250a4caff4ee78a21773eb3755be9bfa7f39"
+      }
+    },
+    {
+      "artifact": "qa/pentatonic-binding-audit-closure.json",
+      "reportFingerprint": "ed2c98d1793aad8f85686d044f5fd83105c627a812b663e0afbecaceeee4951b",
+      "checksPassed": 11,
+      "checksFailed": 0,
+      "decisionLedgerSha256": "fa0aa7b7700ebac043be2e68a845859d09a6d1ce7f3d8e4782f5537999f67e8e"
+    }
+  ],
+  "downstreamProjections": [
+    "orrery/src/generated/field-derivation-bundle.v1.json",
+    "orrery/src/generated/taxonomy-read-model.v1.json",
+    "orrery/src/generated/d-tier-taxonomy-dataset.v1.json"
+  ],
+  "frozenChainResolution": {
+    "validator": "orrery/scripts/validate-bl080-governs-derivation-execution.mjs",
+    "rule": "the frozen twinHubReceiptSha256 binding resolves against the live report or the preserved pre-refresh copy declared in the preservation receipt; fail-loud when neither location carries the pinned bytes",
+    "check": "orrery:bl080-governs-derivation-execution:check PASS (G3-1 through G3-5)",
+    "sealedArtifactsUntouched": [
+      "qa/bl080-governs-derivation-receipt.json",
+      "qa/d4-production-generation.json",
+      "qa/d4-production-receipt.json",
+      "scripts/d4-production.mjs"
+    ]
+  },
+  "conventionVehicle": {
+    "registryLists": [
+      "CANONICAL_PLANNING_EVIDENCE",
+      "PROMOTION_EVIDENCE"
+    ],
+    "r5Fields": [
+      "generator",
+      "generatorDigest",
+      "invocation",
+      "generatedAt"
+    ],
+    "twinHubR5": "PASS",
+    "promotionEvidence": "predeclared for BL-052"
+  },
+  "ledger": {
+    "postAppendSha256": "fa0aa7b7700ebac043be2e68a845859d09a6d1ce7f3d8e4782f5537999f67e8e",
+    "postAppendByteLength": 221915,
+    "entry19": {
+      "lines": "3333-3450",
+      "regionSha256_lineJoinNoTrailingNewline": "b5ab25923461a988526c5fffed3379c4146c969d971af0ea57a445216d5cb62c",
+      "regionSha256_keepends": "77fa6cd6fd855238bcb336eb2bf583e947cb1ce11d28afd2c71d45f233104ea6"
+    },
+    "entry10FenceReverifiedPostAppend": {
+      "lineJoin": "201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7",
+      "keepends": "50b8b73f75497082e6d2a38052a62da4f5374ee94fc08f8ff0312fc7746fbb00"
+    }
+  },
+  "verification": {
+    "focusedSuites": "22 passed (twin-hub + fifth-space-census + shadow-ladder)",
+    "validateLedgerPins": "PASS (0 violations; inventory tests 8 passed)",
+    "orreryCheck": "exit 0 (all chains + evidence-bindings advisory at tail + tsc)",
+    "fullValidate": "npm run validate reaches validate:release; integrated receipt 416/2: the two pre-existing recorded authority questions (frozen composite package payload identities; retained 1.8.1 full-database baseline); no stale gate remains, no new unnamed regression",
+    "evidenceBindingsAdvisory": "36 checks, 6 PASS, 30 findings (23 enforced under --strict); twin-hub R5 PASS and R6 clean; promotion evidence R5 finding remains the BL-052 target",
+    "proseConsistency": "20 pre-existing violations (16 recorded at BL-080 + the 4 introduced by the BL-081 memo); zero added by this landing",
+    "manifest": "regenerated after all writers; validate:manifest PASS; the receipt is registered by the final post-receipt regen"
+  },
+  "fences": {
+    "noClaimEvent": true,
+    "noRecordAmendment": "ENTRY 10/15/16/17/18 byte-untouched",
+    "noGovernsAdmission": true,
+    "noInv5Graduation": true,
+    "noMWalkabilityPromotion": true,
+    "noDirectionalSemantics": true,
+    "noG1Movement": true,
+    "d4Record": "derivable-from-derived-inputs unchanged; historical not_derived immutable",
+    "d7": "hypothesis-tier unchanged",
+    "writes": "no canonical/Court/Neo4j writes beyond the refresh's own artifacts; schema envelope additions limited to the four declared R5 properties"
+  }
+}

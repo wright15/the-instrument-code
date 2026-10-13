@@ -3328,3 +3328,123 @@ semantics. Prior entries and prior line anchors remain unchanged; this entry is
 append-only. The historical record is linked, not rewritten: any reading of this
 entry as reversing or erasing ENTRY 10's `not_derived` record or ENTRY 15's
 `derivable-via-R2` amendment is rejected.
+---
+
+## ENTRY 19 - BL-051 twin-hub cascade refresh and the D4-preservation precondition
+
+**Date:** 2026-10-13. **Status:** D4-bound evidence preserved before refresh; the
+ledger-dependent stale cascade refreshed against the current canonical sources and
+the amended ledger; recorded, no claim event, no record amendment.
+
+### Authority And Scope
+
+The maintainer approved the BL-082 planning pass on 2026-10-13 with rulings
+OD-1(a)-OD-5(a): versioned preservation under `qa/halt-evidence/`; halt on
+geometry drift; the GOV-517 re-registration under a new GOV-52X ticket in the
+separate promotion-refresh landing (BL-052, this ledger's next entry); the
+advisory validator's bounded registry extended with the refreshed canonical
+planning evidence and promotion evidence plus R5 generator-provenance fields at
+emit time; and two commits, two ledger entries, BL-051 and BL-052 as separate
+ceremonies. This entry records BL-051 only.
+
+Executed scope: (i) the ENTRY 11 mandated preservation of the D4-bound twin-hub
+evidence before any shared-artifact refresh, under the ENTRY 10 deferral authority
+and `qa/d4-production-landing.json:67-77`; (ii) the ledger-dependent stale cascade
+refresh - the twin-hub convergence candidate, the fifth-space census candidate and
+the shadow-ladder candidate with their validation reports, and the pentatonic
+binding audit closure, together with the downstream orrery projection bundles
+stale against the refreshed candidates (the field-derivation bundle, the taxonomy
+read model and the D-tier taxonomy dataset) - each re-run against the current
+canonical sources, with payload semantic content required byte-identical (the
+geometry-drift halt was pre-registered and not triggered; every candidate payload
+projection is unchanged); (iii) the convention-enforcement vehicle extension per
+OD-4(a); (iv) the frozen-chain resolution update: the BL-080 Gate 3 execution
+validator (`orrery/scripts/validate-bl080-governs-derivation-execution.mjs`) now
+resolves the frozen `twinHubReceiptSha256` binding against the preserved
+pre-refresh copy declared in the preservation receipt when the live report no
+longer carries the frozen bytes - ENTRY 11's historical evidence preservation
+rather than production rebinding; the sealed receipt, the frozen generation and
+the frozen D4 stack are byte-untouched, and the resolution fails loud when the
+pinned bytes resolve at neither location.
+
+### Preservation Before Refresh
+
+Preserved byte-identically before any refresh step under
+`qa/halt-evidence/twin-hub-convergence-pre-refresh/`: the pre-refresh twin-hub
+candidate (candidate fingerprint `3885bf83…`, payload projection `cf796971…`,
+raw-byte SHA-256 `972394e5…`, byte length 12396) and its validation report (report
+fingerprint `35f88720…`, raw-byte SHA-256 `b7f924ca…`, verdict PASS, 30 checks, 0
+failures). The preservation receipt in that directory records both raw-byte
+digests, the pre-commit blob OIDs, the payload-projection recipe, and the ENTRY 10
+region hashes under both labeled recipes - line-join `201efe81…`, keepends
+`50b8b73f…` - reproduced identically at this landing; the ledger state at
+preservation was SHA-256 `fb2b9b9e…` (214223 bytes). The preserved validation
+report carries the stale gate's provenance: the candidate fingerprint it validated
+and the coverage of its 30 checks. No historical byte was restored, synthesized or
+overwritten; the pre-refresh bytes remain resolvable at the preserved paths.
+
+### Cascade Refresh Results
+
+Each refreshed artifact clears its stale binding against the amended ledger and
+its payload projection is unchanged from the pre-refresh bytes - provenance-only
+refreshes, no geometry or semantic drift. The twin-hub convergence verdict remains
+`confirmed` with 30 of 30 validation checks PASS; the fifth-space census validation
+remains 24 of 24 PASS; the shadow-ladder validation remains 37 of 37 PASS; the
+pentatonic binding audit closure remains 11 of 11 PASS with its decision-ledger
+binding re-issued. The refreshed fingerprints and report fingerprints are recorded
+in the refreshed validation reports (`qa/twin-hub-convergence-validation.json`,
+`qa/fifth-space-census-validation.json`, `qa/shadow-ladder-validation.json`) and in
+the refresh receipt `qa/specs/bl-051-twin-hub-cascade-refresh.json`, cited here by
+path. The prior and refreshed artifacts coexist; the change is versioned, not
+destructive. The downstream orrery projections (the field-derivation bundle, the
+taxonomy read model and the D-tier taxonomy dataset) were refreshed from the
+refreshed candidates and pass `orrery:check`; their projection inputs now bind the
+refreshed fingerprints.
+
+### Convention Live Test 1 And The Enforcement Vehicle
+
+The refreshed artifacts are born under the advisory validator
+(`scripts/validate-evidence-bindings.mjs`): its bounded registry now includes the
+refreshed canonical planning evidence and the refreshed promotion evidence, and
+the twin-hub generator emits the convention's R5 generator-provenance fields
+(generator path, script digest at emit time, invocation arguments, timestamp) so
+the refreshed candidate is born with a complete R5 record rather than retrofitted.
+The twin-hub candidate envelope (schema and storage location) is unchanged; its
+schema gains only the four declared R5 property definitions, and the promotion
+evidence schema gains the same four. R3's resolvability requirement is exercised
+in the frozen chain: the BL-080 execution validator resolves the frozen twin-hub
+receipt binding against the preserved copy - historical bindings remain
+resolvable when a shared live artifact changes, without rebinding the sealed
+artifacts. This is the convention's first live test in
+its preservation aspect (ENTRY 11: preservation before any shared refresh); the
+span-binding migration for living payloads remains prospective follow-up under the
+convention's own section 4 and is not performed here.
+
+### Release Gate Disposition
+
+The predeclared `STALE_TWIN_HUB_CONVERGENCE` gate is cleared at this landing: the
+refreshed candidate binds the amended ledger and its validator reports PASS 30/30.
+The recorded `STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE` state remains predeclared
+for the BL-052 landing this entry's sequence authorizes. `validate:ledger-pins`
+remains PASS (0 violations, inventory tests green). Full `npm run validate` was
+executed at this landing; the chain passes `validate:twin-hub`,
+`validate:fifth-space-census`, `validate:d-shadow` and `validate:gov514` and
+reaches `validate:release`, whose integrated receipt records the pre-existing
+recorded authority-question state (frozen composite package payload identities;
+retained 1.8.1 full-database baseline) - the same two named blocking questions as
+the freeze-recorded 416/2, with no new unnamed regression. No stale control is
+disabled, no shared artifact is regenerated to force green, and no green
+integrated release is claimed.
+
+### Guard
+
+This entry grants no runtime, topology, graph, governs, Court, office, schema,
+policy or global `harmonic.C_H` authority. It does not amend any record: ENTRY 10,
+ENTRY 15, ENTRY 16, ENTRY 17 and ENTRY 18 stand byte-untouched. It does not admit
+GOVERNS as a derivation relation, does not dissolve the boundary wall, does not
+touch D7's hypothesis-tier, does not graduate INV-5, does not promote
+M-walkability, and does not assign directional semantics. D4's
+`derivable-from-derived-inputs` and the historical `not_derived` record are
+unchanged; no claim event is opened. The session's frame vocabulary is
+interpretation context, not input; session prose is context, not evidence. Prior
+entries and prior line anchors remain unchanged; this entry is append-only.

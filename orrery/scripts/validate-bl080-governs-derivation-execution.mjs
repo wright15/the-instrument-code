@@ -15,6 +15,13 @@
  * builder's source statically, and runs mutation probes (artifact drift,
  * baseline drift, seal drift, comparison drift, smuggled reads, presence
  * strips, a proof strip, a double-read probe, a permissive probe). Fail-loud.
+ *
+ * The frozen `twinHubReceiptSha256` binding resolves against the live
+ * twin-hub validation report, or, after the authorized BL-051 refresh
+ * (ENTRY 19), against the preserved pre-refresh copy declared in
+ * qa/halt-evidence/twin-hub-convergence-pre-refresh/preservation-receipt.json
+ * (ENTRY 11: historical evidence preservation rather than production
+ * rebinding; the frozen generation and the sealed receipt are byte-untouched).
  */
 import crypto from "node:crypto";
 import fs from "node:fs";
@@ -39,6 +46,27 @@ const RECEIPT_BASELINE_PATH = "qa/d4-production-receipt.json";
 const LEDGER_PATH = "canonical/universal-heptatonic-ledger.json";
 const NETWORK_PATH = "canonical/universal-network-data.json";
 const TWIN_HUB_PATH = "qa/twin-hub-convergence-validation.json";
+const TWIN_HUB_PRESERVATION_RECEIPT_PATH =
+  "qa/halt-evidence/twin-hub-convergence-pre-refresh/preservation-receipt.json";
+
+// The frozen twin-hub binding resolves against the live report (pre-refresh),
+// or, after the authorized BL-051 refresh (ENTRY 19), against the preserved
+// pre-refresh copy declared in the preservation receipt (ENTRY 11: historical
+// evidence preservation rather than production rebinding). Returns the
+// resolving repository-relative path, or null when the pinned bytes resolve
+// at neither location.
+function resolveTwinHubBinding(pinnedSha256) {
+  if (fileSha(TWIN_HUB_PATH) === pinnedSha256) return TWIN_HUB_PATH;
+  const receiptPath = path.join(root, TWIN_HUB_PRESERVATION_RECEIPT_PATH);
+  if (!fs.existsSync(receiptPath)) return null;
+  const preserved = JSON.parse(fs.readFileSync(receiptPath, "utf8"))?.preserved?.validationReport;
+  if (!preserved || typeof preserved.preservedPath !== "string" || preserved.sha256 !== pinnedSha256) {
+    return null;
+  }
+  if (!fs.existsSync(path.join(root, preserved.preservedPath))) return null;
+  if (fileSha(preserved.preservedPath) !== pinnedSha256) return null;
+  return preserved.preservedPath;
+}
 const BL063_PATH = "orrery/src/generated/bl063-office-reconstruction.v1.json";
 const BL064_PATH = "orrery/src/generated/bl064-cycle-ground.v1.json";
 const BL066_PATH = "orrery/src/generated/bl066-r-edge-derivation.v1.json";
@@ -207,7 +235,7 @@ function reDerive() {
   const networkBytes = fs.readFileSync(path.join(root, NETWORK_PATH));
   if (sha256(ledgerBytes) !== frozenGeneration.bindings.ledgerSha256) fail("ledger binding drift");
   if (sha256(networkBytes) !== frozenGeneration.bindings.networkSha256) fail("network binding drift");
-  if (fileSha(TWIN_HUB_PATH) !== frozenGeneration.bindings.twinHubReceiptSha256) fail("twin-hub binding drift");
+  if (resolveTwinHubBinding(frozenGeneration.bindings.twinHubReceiptSha256) === null) fail("twin-hub binding drift");
   const independent = extractBound(ledgerBytes, networkBytes, frozenGeneration.bindings);
   if (canonicalJSON(projectionDigests(independent)) !== canonicalJSON(frozenGeneration.bindings.projectionDigests)) {
     fail("independent projection extraction drift");
@@ -347,8 +375,12 @@ function checkAgainstSources(receipt, derived) {
   for (const [index, expectedPath] of EXPECTED_SOURCE_ARTIFACTS.entries()) {
     const binding = receipt.sourceBindings[index];
     if (binding.artifact !== expectedPath) fail(`source binding path drift at ${expectedPath}`);
-    const expectedSha = fileSha(expectedPath);
-    if (binding.sha256 !== expectedSha) fail(`source binding sha drift at ${expectedPath}`);
+    if (expectedPath === TWIN_HUB_PATH) {
+      if (resolveTwinHubBinding(binding.sha256) === null) fail(`source binding sha drift at ${expectedPath}`);
+    } else {
+      const expectedSha = fileSha(expectedPath);
+      if (binding.sha256 !== expectedSha) fail(`source binding sha drift at ${expectedPath}`);
+    }
     if (typeof binding.role !== "string" || binding.role.trim().length === 0) fail(`source binding role drift at ${expectedPath}`);
   }
 
