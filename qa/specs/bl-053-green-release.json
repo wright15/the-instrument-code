@@ -1,0 +1,233 @@
+{
+  "receiptId": "BL-053-green-release",
+  "date": "2026-10-13",
+  "authority": "Maintainer BL-083 disposition (OD-083-1 through OD-083-3, 2026-10-13); ENTRY 21 records this landing; the release ceremony of the BL-083 approved plan.",
+  "release": {
+    "releaseId": "seven-governors-integrated-1.9.0",
+    "version": "1.9.0",
+    "status": "validated_admitted",
+    "releaseDate": "2026-10-13",
+    "fixedPoint": "418/0",
+    "versionCarriers": [
+      "package.json",
+      "package-lock.json",
+      "provenance/release.json",
+      "MANIFEST.json",
+      "CHECKSUMS.sha256"
+    ]
+  },
+  "grounding": {
+    "receipt": "qa/specs/bl-083-416-2-grounding.json",
+    "r1Commit": "1b19d2f",
+    "failures": [
+      "frozen composite package payload identities",
+      "declared full-database reproducibility and deployment evidence"
+    ]
+  },
+  "releaseGateResolution": {
+    "q1": {
+      "classification": "payload digest mismatch - technical (spec drift, not payload drift), housekeeping under OD-083-3",
+      "rootCause": "the exclusion-rule change at 67dcd14 added __pycache__/.pytest_cache to the frozen-payload walk without re-canonicalizing the two expectations; .pyc-only delta; zero tracked-file change since 4ea389a",
+      "pins": [
+        {
+          "directory": "seven-governors-harmonic-invariants-v0.1.0",
+          "historical": "3bf5f1815369dba2b9ca918a743d18cf1aa388b12f9ba7915ee87e8d8c8363f1",
+          "current": "1f5b656e4c962eba5e60ac8a28d975ef35d7ddd833993545589bc09925ed7335",
+          "files": 31
+        },
+        {
+          "directory": "seven-governors-court-filter-algebra-v0.1.0",
+          "historical": "a2ca514125ca5d0531c8a3c888f1f9f5bb3a152e858a308709fa4c4b9a973a59",
+          "current": "3d4f3b658dbd360cdd9dec0c05e5ff12695da9e4c0ec603d27bfb341af395679",
+          "files": 36
+        }
+      ],
+      "walkerCheck": "tracked-only inputs verified; recomputation machine-stable; manifest-convention aligned",
+      "restored": "frozen composite package payload identities 7/7"
+    },
+    "q2": {
+      "classification": "release-scope policy with technical execution (OD-083-1)",
+      "rootCause": "retained 1.8.1 deployment receipt overwritten by a 1.9.0-dev dev-cycle run at 67dcd14; the retained baseline is release-stamped, so no development cycle can verify against it",
+      "decision": "release-state re-baseline to 1.9.0 under the GOV-501 precedent",
+      "historicalBaselineLineage": {
+        "retainedReleaseId": "seven-governors-integrated-1.8.1",
+        "snapshotFingerprint": "fd089ea9a0b91d1572b0efeeaa724a53e9d182e8bbc6f793111f52873a41c1a1",
+        "handling": "superseded but cited (OD-083-2); discoverable via git history; not restored, not synthesized",
+        "supersedingReceipt": "21e0eec"
+      },
+      "payloadByteIdentity": {
+        "identicalNamespaces": [
+          "topology",
+          "mutation",
+          "semantic",
+          "governorRuntime",
+          "court",
+          "gov210"
+        ],
+        "changedNamespace": "provenance (carries the release identity)",
+        "provenanceFingerprintHistorical": "1c3e6edf80af60ce1f64a4f5b7b4b519b9865bca47ab47ee1d876cee6a1b4127",
+        "provenanceFingerprintCurrent": "d2bd1f6df27496167e7d0df84f40a891ac08342a3581f70802bb19f383bd42b8"
+      }
+    }
+  },
+  "neo4jBaseline": {
+    "status": "current_release_baseline",
+    "retainedReleaseId": "seven-governors-integrated-1.9.0",
+    "snapshotFingerprint": "5d26a803e61fab385f7c183a8f21e5416f8fa8c5c4a0692500bbec8bc3e9c564",
+    "counts": {
+      "nodeCount": 3061,
+      "relationshipCount": 10506
+    },
+    "reproducibilityReceipt": {
+      "path": "qa/neo4j-full-database-validation.json",
+      "verdict": "PASS",
+      "checksPassed": 6,
+      "checksFailed": 0,
+      "reportFingerprint": "c61a9659019e7e51a3601a47fda0bf3724e58a6c46476d60f180744416f19fc4"
+    },
+    "deploymentReceipt": {
+      "path": "qa/neo4j-deployment-roundtrip-validation.json",
+      "verdict": "PASS",
+      "checksPassed": 3,
+      "checksFailed": 0,
+      "targetClass": "disposable_local",
+      "credentialsExcluded": true,
+      "reportFingerprint": "c650cc08081d37f0bfd09b0c8086750cad2691697cfc3bbf7b8d086f1d85c55b"
+    },
+    "evidenceBindings": {
+      "bothReceipts": 148,
+      "payloadHashEqual": true
+    },
+    "checkpoints": {
+      "preflightCapture": "7584e88fb566b5a03334ff7c19114cd7bdb2277cd45874085795a4d33b2d5aeb (1.9.0-dev pre-flip; 6/7 namespaces identical to the 1.8.1 baseline)",
+      "releaseCapture": "5d26a803e61fab385f7c183a8f21e5416f8fa8c5c4a0692500bbec8bc3e9c564 (1.9.0)",
+      "namespaceDrift": "provenance only (release identity); all six projected payload namespaces byte-identical to the 1.8.1 baseline"
+    }
+  },
+  "cascade": {
+    "order": "append-first (ENTRY 21, then regenerate)",
+    "twinHub": {
+      "candidateFingerprint": "5d0c5eef06e1f3590fcee2244def86079976789aba9f2a53e880ba14bc3a7efb",
+      "reportFingerprint": "96b18d4be0a57353aac44b71d8d8e2372fb4c746b4e826c0b7cc3dc9159b397d",
+      "verdict": "PASS",
+      "checksPassed": 30
+    },
+    "fifthSpaceCensus": {
+      "candidateFingerprint": "3234257c2f73335bc46df876a6e3c0d5a1871bec52d851b634a910b50f270048",
+      "reportFingerprint": "e38330acea5cf8d946d8f16c95c182587bf5257b66c7de4c8bd4969969f80736",
+      "verdict": "PASS",
+      "checksPassed": 24
+    },
+    "shadowLadder": {
+      "candidateFingerprint": "315bc72ff17630ccab617272585bba9815aab1735a201d595341da56794f5ccc",
+      "reportFingerprint": "0cc7747ba7621850a3bead43385d94d47c0d011c1355068e6a385f32cebc1b44",
+      "verdict": "PASS",
+      "checksPassed": 37
+    },
+    "dShadowComplementSpan": {
+      "candidateFingerprint": "021afb8360fab5de5f70bc7e06077fe0c879ef4a72eb72d6fe66f840171932fc",
+      "reportFingerprint": "8fb98f762963d426bf5f79ed6199324518e02f6797709e13fabef6d06f71bc96",
+      "verdict": "PASS",
+      "checksPassed": 19
+    },
+    "promotionEvidence": {
+      "evidenceFingerprint": "5ae56d69e3cc507927fd2ce97733c207982853b76fce602e7a1e8327aa871a02",
+      "verdict": "PASS",
+      "itemEvidenceCount": 10,
+      "exclusionEvidenceCount": 11
+    },
+    "pentatonicAudit": {
+      "candidateFingerprint": "16bd11bc99fb0dfc5c934b1f5d6782562b04f6999882d97cfdbcc24bf72a0f55",
+      "phase1ValidationReportFingerprint": "eee7460661a9e9f674eb15bc73cbc1eed6363dfa38e79c22cea95404ed420ba3",
+      "phase2Neo4jReportFingerprint": "e6375c261263632ddd32adedaf11dda8ea43b1fdddcc6d66444b276a1dab0d5b",
+      "closureReportFingerprint": "46f36a6c58c5480c6ba2c4835912b4928f7f82cb19deed3bc18602a67bc4b281",
+      "verdict": "PASS 11/11",
+      "source": "the SOURCE_AUTHORITY.md baseline-row update invalidated the audit under its source-authority binding; refreshed in dependency order (audit -> phase1 -> phase2 -> closure; shadow-ladder and d-shadow refreshed after)"
+    },
+    "downstreamProjections": {
+      "fieldDerivation": "dabe0bea9cdb9256f1f1b9e9e996fd5992217dd8ca4d5dc46c69df74b00769dc",
+      "taxonomyReadModel": "a235baba7c44b2cf28c3e97e605c51ec455fecc28c423e9c3722adf2e91d3002",
+      "dTierTaxonomyDataset": "ae0cba6e65eb8b4aef5c01e310f0822ac79ba4a9c3727ff042906ab551e75057",
+      "payloadProjectionsUnchanged": true
+    }
+  },
+  "proseRemediation": {
+    "validator": "scripts/validate-validation-prose-consistency.mjs",
+    "preExistingViolations": 20,
+    "resolution": "19 scrum fingerprint literals re-bound by context (line reflows / section-heading SHA-256 markers; no semantic change) + 1 docs test-count claim historical-qualified (docs/ARCHITECTURE_MAP.md:215)",
+    "postRemediation": {
+      "verdict": "PASS",
+      "violations": 0,
+      "authoritativeChecksPassed": 418
+    },
+    "files": [
+      "scrum/plan/bl-021a-signature-analysis-memo.md",
+      "scrum/plan/bl-057-d4-amendment-spec.md",
+      "scrum/plan/bl-057-gate3-execution-memo.md",
+      "scrum/plan/bl-059-d4-derivation-statement.md",
+      "scrum/plan/bl-081-evidence-binding-validator-and-pin-migration.md",
+      "scrum/plan/d4-implementation-report.md",
+      "scrum/plan/d4-implementation-spec-draft.md",
+      "scrum/plan/harmonic-comprehension-map.md",
+      "docs/ARCHITECTURE_MAP.md"
+    ]
+  },
+  "ledger": {
+    "entry": "ENTRY 21 - BL-053 green release - the 1.9.0 fixed point and the release-gate resolution",
+    "postAppendSha256": "45653693ea4b5471412ad60e518ffd8333e3d87091ff007a7b5c9eee026d8139",
+    "postAppendByteLength": 233926,
+    "entry21": {
+      "lines": "3545-3649",
+      "regionSha256_lineJoinNoTrailingNewline": "2b58d4998e8645320d175c2115902d28aa62eae733640395a47096882bd16e67",
+      "regionSha256_keepends": "d6b5e80d9d516b26a521cd288b29c60f0c1d39a650e0a09c13c1fc7016f22d81"
+    },
+    "entry10FenceReverified": {
+      "lineJoin": "201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7",
+      "keepends": "50b8b73f75497082e6d2a38052a62da4f5374ee94fc08f8ff0312fc7746fbb00",
+      "lines": "2195-2252"
+    },
+    "prefixPreservation": {
+      "first227499BytesSha256": "a53a7fa94afb13fd4585eb39bc0175e52c405d25d454edffcc91c981af69f6a2",
+      "meaning": "the pre-append ledger (ENTRY 20 state) is a byte-intact prefix of the post-append ledger"
+    }
+  },
+  "proseAndState": {
+    "releaseNotes": "docs/RELEASE_NOTES.md (1.9.0 section)",
+    "sourceAuthority": "provenance/SOURCE_AUTHORITY.md (baseline row: current release projection baseline at 1.9.0)",
+    "nextSteps": "provenance/NEXT_STEPS.md (fixed-point declaration; ORR-524 authority decisions marked resolved; baseline sections updated)",
+    "validationCensus": "docs/VALIDATION_CENSUS.md (transition row current release 1.9.0)",
+    "architectureMap": "docs/ARCHITECTURE_MAP.md (section 7 maintenance re-verification addendum; tree-health note superseded)",
+    "consumptionRow": "scrum/plan/harmonic-comprehension-map.md section 4 (BL-053 row)",
+    "backlog": "scrum/BACKLOG.md (release-state framing, BL-053 [DONE] section, revision row v1.60)"
+  },
+  "verification": {
+    "focusedSuites": "35 passed (twin-hub + fifth-space-census + shadow-ladder + promotion evidence); shadow-ladder + d-shadow focused suites 11 passed; pentatonic parent audit 12 passed",
+    "fullValidate": "npm run validate green end-to-end; integrated receipt PASS 418/0 for seven-governors-integrated-1.9.0 (qa/integrated-release-validation.json)",
+    "validateLedgerPins": "PASS (0 violations)",
+    "validateEvidence": "advisory run; registry 35/35 registered after inventory regen (R1-R6; the known R5 pre-cut advisory gap unchanged)",
+    "manifest": "validate:manifest PASS after regeneration (1,327 files)",
+    "proseConsistency": "PASS 0 violations (authoritative 418)",
+    "orreryCheck": "exit 0 (advisory findings only: the known R5 enforcement gap; R6 clears at the inventory regen)",
+    "environment": "project venv python (referencing/jsonschema present); disposable-local Neo4j harness for the deployment receipt"
+  },
+  "pointC": {
+    "point": "c",
+    "subject": "the release landing's own bytes",
+    "obligation": "The landing commit's tree is hash-attested by the root inventories carried in the same atomic commit: MANIFEST.json (per-file sha256 over the full tree) and CHECKSUMS.sha256 (flat digest list), regenerated over the landing's final bytes. The landing commit's own sha256 is confirmed post-commit in the session record; the integrated receipt qa/integrated-release-validation.json is regenerated by the final validate run over the landing tree (and is separately exempted from the manifest envelope by design).",
+    "status": "DECLARED; confirmed post-commit, never written into this receipt as an observed value before the commit exists."
+  },
+  "fences": {
+    "noClaimEvent": true,
+    "noRecordAmendment": "ENTRY 10/15/16/17/18/19/20 byte-untouched; ENTRY 21 appended; prefix preservation proven",
+    "noGovernsAdmission": true,
+    "noInv5Graduation": true,
+    "noMWalkabilityPromotion": true,
+    "noDirectionalSemantics": true,
+    "noG1Movement": true,
+    "noSemanticRegistrationBeyondHousekeeping": true,
+    "higherTheorem": "the scoping memo's question ships formally stated, not answered",
+    "d4Record": "derivable-from-derived-inputs unchanged; historical not_derived immutable",
+    "d7": "hypothesis-tier unchanged",
+    "writes": "no canonical/Court/Neo4j writes beyond the release's own artifacts and the ledger-bound refresh"
+  }
+}

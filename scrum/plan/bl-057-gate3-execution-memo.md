@@ -2,16 +2,13 @@
 
 **Status:** `execution_verified` — the registered R2 execution run derived `O`
 cleanly at every licensed context and the Derivation Execution Receipt
-(`qa/d4-r2-execution-receipt.json`, raw-byte SHA-256
-`7e14cbbc680d4827a0d82eb04f3c8c25c187b73d9435fdbade143f014a406fe2`) carries the
+(`qa/d4-r2-execution-receipt.json`, raw-byte SHA-256 `7e14cbbc680d4827a0d82eb04f3c8c25c187b73d9435fdbade143f014a406fe2`) carries the
 status. **No D4 record amendment was performed.** D4's registered `not_derived`
-(`provenance/DECISION_LEDGER.md:2195-2252`, region SHA-256
-`201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7`) is
+(`provenance/DECISION_LEDGER.md:2195-2252`, region SHA-256 `201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7`) is
 byte-untouched; ENTRY 10 stands. Gate 4 (the OD-7 additive amendment) opens on
 this receipt but is a **separate ceremony** — a passing run does not amend the
-record by itself (no-collapse). The ledger raw-byte SHA-256 remains
-`8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362` (no ledger
-writes at this gate). D7 remains hypothesis-tier; no D7 claim event.
+record by itself (no-collapse). The ledger raw-byte SHA-256 remains `8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362` (no
+ledger writes at this gate). D7 remains hypothesis-tier; no D7 claim event.
 
 **Naming drift note:** the corridor's gates are BL-057-track; earlier session
 prose referenced BL-031 for the D4 corridor — BL-031 is the topology/lattice

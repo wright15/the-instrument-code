@@ -76,7 +76,7 @@ Cut line `6e3607b` (2026-09-20); the convention's own admission-session artifact
 
 The finding inventory at landing: R5 — 23 enforced findings (post-cut machine-emitted artifacts carry a generator path but no script digest / invocation arguments / timestamp; `qa/d4-r2-execution-receipt.json` carries no generator record at all) + 6 advisory findings (pre-cut artifacts, no record); R6 — 0 findings after manifest regen; R1/R2/R3/R4 — all PASS.
 
-## 6. Zero-regression verification
+## 6. Zero-regression verification (SHA-256 byte-identity)
 
 **Pre-registered byte-identity baselines** (captured before any edit; `--check` green ×5 pre-migration):
 

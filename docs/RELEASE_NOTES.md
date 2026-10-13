@@ -1,5 +1,42 @@
 # Release Notes
 
+## Integrated release 1.9.0 - 2026-10-13
+
+- The project's first green release: full `npm run validate` passes at a fixed
+  point with no predeclared stops remaining and no known failures (integrated
+  receipt 418/0, `qa/integrated-release-validation.json`).
+- Resolves the two freeze-era authority questions at the release gate. The
+  frozen composite-package payload expectations are re-canonicalized (spec
+  drift, `.pyc`-only delta, zero tracked payload change; the enumerated
+  historical/current pin-set diff is recorded at `1b19d2f`). The Neo4j
+  baseline is re-established at `1.9.0` as a release-state update: the six
+  projected payload namespaces are byte-identical to the 1.8.1 baseline and
+  the projection boundary is unchanged at 3,061 nodes and 10,506 relationships.
+- Admits `CONV-EVIDENCE-BINDING-001` under GOV-521 with its advisory
+  evidence-binding validator (R1–R6, session classifier) and completes the
+  ledger-pin migration (13 to 0).
+- Completes the D4 corridor: boundary freeze, implementation, execution on
+  derived inputs (`DERIVED_FROM_DERIVED_INPUTS`), and the additive second
+  record amendment (`derivable-from-derived-inputs`) — the first amendment
+  whose evidence is provenance-independent. The historical `not_derived`
+  record stands immutable, and D7 remains hypothesis-tier.
+- Admits the bounded GOVERNS derivation (`SPEC-GOVERNS-DERIVABILITY-001` under
+  GOV-524: one named bit plus the anchoring remainder) and its
+  coordinate-covariant expansion (GOV-525). The higher-theorem question is
+  formally stated in the scoping memo and ships open, not answered.
+- Admits the phase-extended topology (GOV-523) and the fivefold Court
+  correspondence (`SPEC-FIVEFOLD-COURT-CORRESPONDENCE-001` under GOV-522).
+- Refreshes the ledger-bound evidence cascade (twin-hub convergence,
+  fifth-space census, shadow-ladder, pentatonic binding audit closure) and the
+  fivefold engine promotion evidence under the convention's R1–R6 model;
+  GOV-517 is re-registered under GOV-526 with the corrected census binding.
+- Ships the Orrery taxonomy explorer and regenerates the downstream
+  field-derivation, taxonomy, and D-tier projections against the release
+  ledger.
+- No admission, record, or authority changes beyond those recorded in the
+  decision ledger; canonical topology, Court policy, runtime authority, and
+  global `harmonic.C_H` remain as previously admitted.
+
 ## Integrated release 1.8.1 - 2026-08-29
 
 - Refreshes the Neo4j full-database baseline to the current release provenance

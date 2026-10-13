@@ -409,7 +409,7 @@ boundary has been amended. No frozen document was changed. Earlier claims that
 the wire schema was fully faithful were based on field-name presence checks,
 not these representability tests; those checks did not establish conformance.
 
-## 1. File Inventory And Input Bindings
+## 1. File Inventory And Input Bindings (SHA-256)
 
 Only `scrum/plan/d4-implementation-report.md` is created in this pass. No existing
 file is modified. Its final raw SHA-256 is emitted separately in the execution

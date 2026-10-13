@@ -3541,3 +3541,109 @@ promote M-walkability, and does not assign directional semantics. D4's
 `derivable-from-derived-inputs` and the historical `not_derived` record are
 unchanged; no claim event is opened. Prior entries and prior line anchors remain
 unchanged; this entry is append-only.
+
+## ENTRY 21 - BL-053 green release - the 1.9.0 fixed point and the release-gate resolution
+
+**Date:** 2026-10-13. **Status:** the `seven-governors-integrated-1.9.0` green
+release; the first full `npm run validate` fixed point (integrated receipt
+418/0, no predeclared stops remaining); the two freeze-era authority questions
+resolved at the release gate; recorded, no claim event, no record amendment.
+
+### Authority And Scope
+
+The maintainer's BL-083 disposition (OD-083-1 through OD-083-3, 2026-10-13)
+authorizes this landing: the release ceremony resolving the `validate:release`
+stop at 416/2 - the Q1 frozen composite payload re-canonicalization as
+housekeeping (OD-083-3), the Q2 Neo4j baseline re-establishment at 1.9.0 under
+the GOV-501 precedent (OD-083-1), and the superseded-but-cited handling of the
+1.8.1 baseline lineage (OD-083-2). Scope is bounded: no new research claims, no
+semantic registrations beyond the release's own housekeeping rows, no GOVERNS
+admission, no higher-theorem answer.
+
+### The Release-Gate Resolution
+
+The 416/2 stop was exactly two failing checks, both grounded mechanically in
+the planning pass (`qa/specs/bl-083-416-2-grounding.json`). Q1 - `frozen
+composite package payload identities`: the exclusion-rule change at the D4
+freeze landing (`67dcd14`) added `__pycache__`/`.pytest_cache` to the frozen
+payload walk without re-canonicalizing the two affected expectations; the
+delta is exclusively `*.pyc` bytecode, ephemeral caches (including coexisting
+pytest-8.4.2 and pytest-9.1.1 artifacts) baked into expectations that were
+inherently unreproducible, with zero tracked-file change in either package
+since `4ea389a`. The resolution is spec drift correction, not payload change:
+the expectations were recomputed under the landed rule
+(`3bf5f181…`/`a2ca5141…` -> `1f5b656e…`/`3d4f3b65…`) with the enumerated
+pin-set diff recorded at commit `1b19d2f`, and the walk was verified
+tracked-only. Q2 - `declared full-database reproducibility and deployment
+evidence`: the retained 1.8.1 deployment receipt had been overwritten by a
+1.9.0-dev dev-cycle run (`67dcd14`), whose verify compares against the retained
+baseline and therefore cannot pass during a development cycle by design. The
+resolution is the release-state re-baseline below; the historical 1.8.1 receipt
+remains discoverable in git history and its snapshot fingerprint `fd089ea9…`
+is cited here as lineage (OD-083-2; not restored, not synthesized).
+
+### The 1.9.0 Fixed Point
+
+`package.json`, `package-lock.json` and `provenance/release.json` flip to
+`1.9.0` (`validated_admitted`, release date 2026-10-13); `MANIFEST.json` and
+`CHECKSUMS.sha256` are regenerated over the landing's own bytes. Full
+`npm run validate` is executed at this landing: every gate passes with no
+predeclared stops remaining and no known failures - the integrated receipt
+`qa/integrated-release-validation.json` records 418/0 for release
+`seven-governors-integrated-1.9.0`. The release's artifacts are assembled in
+one atomic landing: the version flip, the release notes (`docs/RELEASE_NOTES.md`,
+1.9.0 section), this entry, the maintenance-rule re-verification
+(`docs/ARCHITECTURE_MAP.md`), the consumption-index row
+(`scrum/plan/harmonic-comprehension-map.md` section 4), the backlog status
+(`scrum/BACKLOG.md`, BL-053 DONE), the closure receipt
+`qa/specs/bl-053-green-release.json`, the memo
+`scrum/plan/bl-053-green-release-memo.md`, and the refreshed root inventories.
+Exact fingerprints and the enumerated evidence chain are carried by the
+closure receipt, cited here by path.
+
+### Release-State Re-Baseline
+
+The Neo4j baseline is re-established at `1.9.0` as a release-state update, not
+a data change: the fresh native reproducibility capture and the separately
+configured disposable-local bootstrap/roundtrip run on independent instances
+produce the identical normalized snapshot `5d26a803…`; against the retained
+1.8.1 baseline the six projected payload namespaces (`topology`, `mutation`,
+`semantic`, `governorRuntime`, `court`, `gov210`) are byte-identical, only the
+`provenance` namespace changes (it carries the release identity), and the
+projection boundary is unchanged at 3,061 nodes and 10,506 relationships. The
+baseline declaration moves from `retained_previous_release_baseline` to
+`current_release_baseline` (`provenance/release.json`); the baseline artifact
+is re-stamped accordingly, the fresh native receipt
+(`qa/neo4j-full-database-validation.json`, verdict PASS, 6/0) and deployment
+receipt (`qa/neo4j-deployment-roundtrip-validation.json`, verdict PASS, 3/0,
+target class `disposable_local`, credentials excluded) replace the
+development-cycle artifacts, and both bind the same 148-path evidence list.
+`provenance/SOURCE_AUTHORITY.md` and `provenance/NEXT_STEPS.md` carry the
+current-state prose for the new baseline.
+
+### Cascade Refresh Against This Entry
+
+Because this entry's append changes the decision ledger, the ledger-bound
+cascade was refreshed against this entry's ledger in this same landing (the
+established landed order: append first, then regenerate): the twin-hub
+convergence candidate, the fifth-space census candidate, the shadow-ladder
+candidate with their validation reports, the fivefold engine promotion
+evidence, and the pentatonic binding audit closure, together with the
+downstream orrery projections (field-derivation bundle, taxonomy read model,
+D-tier taxonomy dataset). Payload projections remain unchanged; the refreshed
+fingerprints and report digests are recorded in the refreshed validation
+reports and in the BL-053 closure receipt, cited here by path.
+
+### Guard
+
+This entry grants no runtime, topology, graph, governs, Court, office, schema,
+policy or global `harmonic.C_H` authority. It does not amend any record: ENTRY
+10, ENTRY 15, ENTRY 16, ENTRY 17, ENTRY 18, ENTRY 19 and ENTRY 20 stand
+byte-untouched. It does not admit GOVERNS as a derivation relation, does not
+dissolve the boundary wall, does not touch D7's hypothesis-tier, does not
+graduate INV-5, does not promote M-walkability, and does not assign directional
+semantics. D4's `derivable-from-derived-inputs` and the historical
+`not_derived` record are unchanged. The release is an operational event: it
+ships the framework with the scoping memo's higher-theorem question formally
+stated, not answered, and opens no claim event. Prior entries and prior line
+anchors remain unchanged; this entry is append-only.

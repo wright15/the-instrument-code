@@ -1,8 +1,8 @@
 {
   "schemaVersion": "seven-governors.validation-prose-consistency.v2",
   "verdict": "PASS",
-  "releaseId": "seven-governors-integrated-1.9.0-dev",
-  "authoritativeChecksPassed": 416,
+  "releaseId": "seven-governors-integrated-1.9.0",
+  "authoritativeChecksPassed": 418,
   "scope": [
     "docs/**/*.md",
     "orrery/*.md",
@@ -10,17 +10,25 @@
     "README.md"
   ],
   "statistics": {
-    "filesScanned": 139,
-    "claims": 2,
+    "filesScanned": 199,
+    "claims": 4,
     "claimsMatchingCurrent": 0,
-    "claimsReleaseQualified": 2,
+    "claimsReleaseQualified": 4,
     "claimsScoped": 0,
     "exemptions": 2,
-    "scrumFingerprintLiterals": 51,
+    "scrumFingerprintLiterals": 200,
     "scrumFingerprintViolations": 0,
     "violations": 0
   },
   "claims": [
+    {
+      "file": "docs/ARCHITECTURE_MAP.md",
+      "line": 215,
+      "number": 58,
+      "unit": "tests",
+      "classification": "release_qualified",
+      "qualifier": "historical"
+    },
     {
       "file": "docs/RELEASE_1_8_TAXONOMY_AND_ORRERY_GUIDE.md",
       "line": 272,
@@ -31,11 +39,19 @@
     },
     {
       "file": "docs/RELEASE_NOTES.md",
-      "line": 230,
+      "line": 267,
       "number": 58,
       "unit": "checks",
       "classification": "release_qualified",
       "qualifier": "5.0.0"
+    },
+    {
+      "file": "docs/specs/phase-extended-topology-candidate-v0.1.0.md",
+      "line": 131,
+      "number": 824,
+      "unit": "checks",
+      "classification": "release_qualified",
+      "qualifier": "3.1"
     }
   ],
   "exemptions": [
@@ -162,9 +178,903 @@
       "classification": "bound"
     },
     {
+      "file": "scrum/plan/bl-021-hypergraph-memo.md",
+      "line": 8,
+      "fingerprint": "903eebf0e1122d8ba81971abcd7efc8ac934d3bfd7885b98b49e58ab0bbe3e41",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-021a-signature-analysis-memo.md",
+      "line": 9,
+      "fingerprint": "bec45d0a4324530e0976daedfe2b9e1dd0ea63e3097eb75778aea0eccaec4128",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-033-phaseC-results-memo.md",
+      "line": 10,
+      "fingerprint": "5085e27404de2e591b146d38f289da660c6bc49041a54f073acafcbfe10f2f49",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-055-d4-selection-review-memo.md",
+      "line": 9,
+      "fingerprint": "6d11fd932efbe96892b3cf2e6a6cdad6f54e69cd2a8f284ebb72232c59d8b745",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-055-d4-selection-review-memo.md",
+      "line": 10,
+      "fingerprint": "40a1d7586c8643bac351a1b70c09fce35a977ce200888d08a40d2cc0022649d8",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-056-d4-r2-route-memo.md",
+      "line": 9,
+      "fingerprint": "e25851f975a84a290bc4794916dd16ead7d99c7f3694bae21b7c6bb6f13e91b3",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-056-d4-r2-route-memo.md",
+      "line": 10,
+      "fingerprint": "5a1a787eb47a939d8f1ba727689a9cc2db0adb21fe716d5e1600d7a19406c4b3",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 14,
+      "fingerprint": "07356d15a815862c34c05a9f73dbcfe06680ba1ed701f6759c559fcd4683d4d3",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 58,
+      "fingerprint": "2057a75702ddb4952151d962fb680474ab6543387b604b3b5c37758b8e9c49d0",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 59,
+      "fingerprint": "f9ab736eb14a31ab68d0b1424e7e20dffc42768f7a8ccbf358e6f0ce107496ae",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 60,
+      "fingerprint": "6d2603a2499aea55b6bc13d11694ae10e6bfad1d62cb488506a57333e182f6c9",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 61,
+      "fingerprint": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 62,
+      "fingerprint": "40a1d7586c8643bac351a1b70c09fce35a977ce200888d08a40d2cc0022649d8",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 63,
+      "fingerprint": "48d460a2f001e54dc53d34cedde2a03c5d354b0ba0991b8dd941afa28b141d0c",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 69,
+      "fingerprint": "40a1d7586c8643bac351a1b70c09fce35a977ce200888d08a40d2cc0022649d8",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 69,
+      "fingerprint": "6d11fd932efbe96892b3cf2e6a6cdad6f54e69cd2a8f284ebb72232c59d8b745",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 70,
+      "fingerprint": "5a1a787eb47a939d8f1ba727689a9cc2db0adb21fe716d5e1600d7a19406c4b3",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 70,
+      "fingerprint": "e25851f975a84a290bc4794916dd16ead7d99c7f3694bae21b7c6bb6f13e91b3",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 71,
+      "fingerprint": "d70a94e088d699616a45773077b18cffde896b692aed226262447801f204ac00",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 72,
+      "fingerprint": "1462fc0588b8c894079b9b546ee0f5e1daa3ae1ec136b22c73486de96d675ff1",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 73,
+      "fingerprint": "470db66330f1bf917d330cebd822afb1f7184c7cd1399fa331a5c836ec201f56",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 90,
+      "fingerprint": "8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 157,
+      "fingerprint": "8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-d4-amendment-spec.md",
+      "line": 160,
+      "fingerprint": "07356d15a815862c34c05a9f73dbcfe06680ba1ed701f6759c559fcd4683d4d3",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-gate3-execution-memo.md",
+      "line": 5,
+      "fingerprint": "7e14cbbc680d4827a0d82eb04f3c8c25c187b73d9435fdbade143f014a406fe2",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-gate3-execution-memo.md",
+      "line": 7,
+      "fingerprint": "201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-gate3-execution-memo.md",
+      "line": 10,
+      "fingerprint": "8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-gate3-execution-memo.md",
+      "line": 124,
+      "fingerprint": "5528510b495f12fa11ab713d8ee357e3798f728204eacd83ad491aafb8fdc7d5",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-gate3-execution-memo.md",
+      "line": 126,
+      "fingerprint": "2789c46cb542cc4d1771110b0cfe113fb44baabf40e478bb94e0dfe55cff70bd",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-gate3-execution-memo.md",
+      "line": 128,
+      "fingerprint": "3ed80e6fef3b1a5a8211d046facaf2f2d15daf7eb34a398ccfd1fded1c783634",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-057-gate3-execution-memo.md",
+      "line": 130,
+      "fingerprint": "e075eb63604b7d9d5d484e574fcdd313f6e86f7e66e828ed6b527671df247c56",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-059-d4-derivation-statement.md",
+      "line": 197,
+      "fingerprint": "201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-059-d4-derivation-statement.md",
+      "line": 197,
+      "fingerprint": "50b8b73f75497082e6d2a38052a62da4f5374ee94fc08f8ff0312fc7746fbb00",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-060-14v14-hunt-memo.md",
+      "line": 9,
+      "fingerprint": "8a1295ca9639fab7e16b980576954a1f12824d839e6743abebe176e3df23cac9",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-060-14v14-hunt-memo.md",
+      "line": 10,
+      "fingerprint": "3e31a6535ce9e5f913db27b252c66aff0504d38f57a9fe8769cbae8612588b8b",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-060-14v14-hunt-memo.md",
+      "line": 17,
+      "fingerprint": "6d11fd932efbe96892b3cf2e6a6cdad6f54e69cd2a8f284ebb72232c59d8b745",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-061-062-zresidual-memo.md",
+      "line": 9,
+      "fingerprint": "e1b3f655b7d79c67e2002ef2bf6da5db298bcd846306db6878896b3f24c4cd8a",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-061-062-zresidual-memo.md",
+      "line": 10,
+      "fingerprint": "f1484ce450a6ebd397078903cef77d4c295aec976aca26302b988988c5109a1f",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-061-062-zresidual-memo.md",
+      "line": 15,
+      "fingerprint": "8a1295ca9639fab7e16b980576954a1f12824d839e6743abebe176e3df23cac9",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-063-office-reconstruction-memo.md",
+      "line": 10,
+      "fingerprint": "57932f37d3acc867bf8c44d00d2ced44d4b2d8ccf39b871c2241e685b6e32b18",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-063-office-reconstruction-memo.md",
+      "line": 10,
+      "fingerprint": "6d33c67be7b8f87b8ad2f964cd3560ebcbc1ec0dc6b2088ad1f223c35caff8c3",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-064-cycle-ground-memo.md",
+      "line": 10,
+      "fingerprint": "9432aa764a57823a06a4d36db3209507ed85af0f7675d3708ef388e369da6f24",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-064-cycle-ground-memo.md",
+      "line": 10,
+      "fingerprint": "aa975820136658dd2fb3c84d98b34bf7a1901d39edd6548a300f458858305918",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-066-r-edge-derivation-memo.md",
+      "line": 10,
+      "fingerprint": "ac2db3d92df89f9ae2e5f19dfc7c0489a56f55dfa8bd154a22ad74c875e7a8ab",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-066-r-edge-derivation-memo.md",
+      "line": 10,
+      "fingerprint": "94f0661ff6e76b0dea69fbe9f09ead24da7901393fb735495f3a25c3d9a1a886",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-068-d7-asymmetry-memo.md",
+      "line": 5,
+      "fingerprint": "3de9269529fb9aaf5cba9c588bc3605d3b3a52d9122466c44a1334bbd5ed39d4",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-068-d7-asymmetry-memo.md",
+      "line": 5,
+      "fingerprint": "b0d65bd6149978de4f5ef3f1a0b281d0f6324a81114e8aa9da07eda8ef5ef849",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-070-d7-derivation-memo.md",
+      "line": 5,
+      "fingerprint": "169ce7064c2ee11ab857f5a8fec682fe3a245ed945ba9d61d5f659851eccd7c5",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-070-d7-derivation-memo.md",
+      "line": 5,
+      "fingerprint": "9db10a088a05664a5cf60f6fad14514a4fc9aab278dcf0359d684bce70607731",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-070-d7-derivation-memo.md",
+      "line": 5,
+      "fingerprint": "85e631e1440b6d36cadf057d275374af7902f38e75659afa9a430df66e7d2caf",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-070-d7-derivation-memo.md",
+      "line": 7,
+      "fingerprint": "b0d65bd6149978de4f5ef3f1a0b281d0f6324a81114e8aa9da07eda8ef5ef849",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-071-interval-6-memo.md",
+      "line": 5,
+      "fingerprint": "80a98540ed282299ebdb8028fc4fdc2280b5b9e12d33dca213afc5d676f6382f",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-071-interval-6-memo.md",
+      "line": 5,
+      "fingerprint": "8b2a1f6ca1776851f721eb6bc6ee6532059d81d150ce3f7c9fda1febfe84c3fe",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-071-interval-6-memo.md",
+      "line": 5,
+      "fingerprint": "93024c8681a51fd5b4f07b51ae4f7b30796ea0637ada930befae7977193acb1d",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-071-interval-6-memo.md",
+      "line": 5,
+      "fingerprint": "46bcbdc5f20e0f436026a070b6d079b5ccd53b0966b3a259bbcd0e3ce43c7639",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-071-interval-6-memo.md",
+      "line": 5,
+      "fingerprint": "1542cb025996f6fd6ad4de4d546e42c3281465bdc8d5563034fa7b058bc2ddb0",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-073-dual-cycle-isometry-and-synthesis-scoping.md",
+      "line": 5,
+      "fingerprint": "2dca3e8b95eb3012136dd6e849b12b33b833ce0ef86d1580b376e6a06e3ce260",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-073-dual-cycle-isometry-and-synthesis-scoping.md",
+      "line": 5,
+      "fingerprint": "811fa786f3a03b03b0c334fe797c85b9b4aeed93332a183be43f86fa1133a65c",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-073-dual-cycle-isometry-and-synthesis-scoping.md",
+      "line": 5,
+      "fingerprint": "b0fd0b16fbe6596ce3f8064e025491d4bbeb0cc85578dd6a21b022676a95c34e",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-073-dual-cycle-isometry-and-synthesis-scoping.md",
+      "line": 5,
+      "fingerprint": "1c5011944bad4cf3d62ae9aa0cb839f8ea8fc5827dbf4da931afcb70066417f3",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-073-dual-cycle-isometry-and-synthesis-scoping.md",
+      "line": 5,
+      "fingerprint": "e62de73ae0644d7f11e44491580de1cf8b08ea727e07c8d73381e11fc877f49d",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-074-tritone-anatomy-memo.md",
+      "line": 5,
+      "fingerprint": "8b2a1f6ca1776851f721eb6bc6ee6532059d81d150ce3f7c9fda1febfe84c3fe",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-074-tritone-anatomy-memo.md",
+      "line": 5,
+      "fingerprint": "80a98540ed282299ebdb8028fc4fdc2280b5b9e12d33dca213afc5d676f6382f",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-075-coordinate-search-memo.md",
+      "line": 5,
+      "fingerprint": "1cb710d872f3b5564c138c83c9fd589b2655a9133bf7aba8b1455cc28d426914",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-075-coordinate-search-memo.md",
+      "line": 5,
+      "fingerprint": "88838e225276432427f2a7c765d8e1f9105c5c6bd87d4db04ef5e1bb2e93704e",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-075-coordinate-search-memo.md",
+      "line": 5,
+      "fingerprint": "429940710f80f4b2ae23e1272be52a6cc67783033059054584d175e985a5245b",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-075-coordinate-search-memo.md",
+      "line": 5,
+      "fingerprint": "d20e34f301666f9eafa9f0a9b3d5e1e7bc0efce62946c6021ce2a9d08d6883e2",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-075-coordinate-search-memo.md",
+      "line": 5,
+      "fingerprint": "29845b27557af54961334a1859a2bfde9f6bddb1e24d3bf07db8b1c6a8a6967a",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-076-bijection-probe-memo.md",
+      "line": 5,
+      "fingerprint": "74bcd025259b89783f404c18286a8189d296fa2949057473634fd6d2dcf8a4f5",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-076-bijection-probe-memo.md",
+      "line": 5,
+      "fingerprint": "81e6cf7211a94888c2adedeebc44674a6e4a78e5e8b3fc09bb7a8fd671569d1e",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-076-bijection-probe-memo.md",
+      "line": 5,
+      "fingerprint": "996e2dba55e5373b582b6b3e47a4b05c900e1a4b1833d81fa19ee703bb5dca28",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-076-bijection-probe-memo.md",
+      "line": 5,
+      "fingerprint": "8a2bf58a84ad4e2d1a17cc5cd862cabc2bed820618f301149631e65eb5c1f3b4",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-076-bijection-probe-memo.md",
+      "line": 5,
+      "fingerprint": "ada1c8a5c14269c8d6a20104b7ce89e72e4ec7121b7c2542dd1d0890b62fe676",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-076-bijection-probe-memo.md",
+      "line": 7,
+      "fingerprint": "88838e225276432427f2a7c765d8e1f9105c5c6bd87d4db04ef5e1bb2e93704e",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-076-bijection-probe-memo.md",
+      "line": 7,
+      "fingerprint": "b0d65bd6149978de4f5ef3f1a0b281d0f6324a81114e8aa9da07eda8ef5ef849",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-076-bijection-probe-memo.md",
+      "line": 7,
+      "fingerprint": "e1b3f655b7d79c67e2002ef2bf6da5db298bcd846306db6878896b3f24c4cd8a",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-078-d7-retest-memo.md",
+      "line": 5,
+      "fingerprint": "e9c3acdaedc9e0f59a893a05b22ece53092bd65c02760d5866dd8822a8995671",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-078-d7-retest-memo.md",
+      "line": 5,
+      "fingerprint": "11644d401eff5ef951a2173f390041531743df682ad9c502f98a048c0f76e1b1",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-078-d7-retest-memo.md",
+      "line": 5,
+      "fingerprint": "ebd548f8c9d04db62b226d445dfef0cb8808157fd431d11b3d110cbdaad82b62",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-078-d7-retest-memo.md",
+      "line": 5,
+      "fingerprint": "041bd3de929630b728832fdfe4b3ced7c8fd735a86fa1bb991ad36d5d8828677",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-078-d7-retest-memo.md",
+      "line": 5,
+      "fingerprint": "3cc5fa1d0090fe106c63119c4afe3f7efdf1a744860ee41b10c5f5918112a1a2",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-078-d7-retest-memo.md",
+      "line": 7,
+      "fingerprint": "b0d65bd6149978de4f5ef3f1a0b281d0f6324a81114e8aa9da07eda8ef5ef849",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-078-d7-retest-memo.md",
+      "line": 7,
+      "fingerprint": "9db10a088a05664a5cf60f6fad14514a4fc9aab278dcf0359d684bce70607731",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-080-governs-derivation-execution-memo.md",
+      "line": 5,
+      "fingerprint": "b7f9bfbcc13c14f02e75f686c820a7ff02ad4c0e5057e5ef512a0e6acc464f6a",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-080-governs-derivation-execution-memo.md",
+      "line": 5,
+      "fingerprint": "437de068456cc7280e14015f442c720ebebbe4150f3abdf4ff221e774f7a82e3",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-080-governs-derivation-execution-memo.md",
+      "line": 5,
+      "fingerprint": "408a660423c5a578d8d798db499b42bfa5efd32dd6b9ce66b531ac8631462b9a",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-080-governs-derivation-execution-memo.md",
+      "line": 5,
+      "fingerprint": "4fbe26e6be5ed03bc7231feed2fe029590169322a79cff8cacb47eddbfa62c7d",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-080-governs-derivation-execution-memo.md",
+      "line": 5,
+      "fingerprint": "4e283f45262dab4fde68ddfa8ad9e303b85ab84fd9f7913a2b0fc4b83f061556",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-080-governs-derivation-execution-memo.md",
+      "line": 5,
+      "fingerprint": "1b7e284b053da18d49f735d0ed4811e8377c91c339e136e055d939a0546fa266",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-080-governs-derivation-execution-memo.md",
+      "line": 7,
+      "fingerprint": "2d53cee4b5f92f22cafadf2fd654351e0688b49f1b8861094fb2c52de9a6642a",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-080-governs-derivation-execution-memo.md",
+      "line": 7,
+      "fingerprint": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-080-governs-derivation-execution-memo.md",
+      "line": 22,
+      "fingerprint": "c4a7f48dd982c6d96f594ca8c03e045092b9a00b9615e05ef2d14648f04f83d7",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-080-governs-derivation-memo.md",
+      "line": 5,
+      "fingerprint": "50735819917ae36d59e49ef352d2867af377bff9a8186f720b28494e8010b398",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-080-governs-derivation-memo.md",
+      "line": 5,
+      "fingerprint": "63699437ed2a38713ea947edd3a9978cdc54a02cac5ebee38b286bb7370ed8af",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-080-governs-derivation-memo.md",
+      "line": 5,
+      "fingerprint": "df596df13223df9cd834280aea36ef6f9f79d256be712af9f313d524214bfee8",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-080-governs-derivation-memo.md",
+      "line": 5,
+      "fingerprint": "67889d35956d03648e6024ea2e81b379ffb94c3ed52b0e82888de3da9a8634c4",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-080-governs-derivation-memo.md",
+      "line": 5,
+      "fingerprint": "43da7c5a5d76f9c512c11efe21a16c4b6654e23e0942d2a0d3b08ea6d7cdf774",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-081-evidence-binding-validator-and-pin-migration.md",
+      "line": 85,
+      "fingerprint": "48d460a2f001e54dc53d34cedde2a03c5d354b0ba0991b8dd941afa28b141d0c",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-081-evidence-binding-validator-and-pin-migration.md",
+      "line": 86,
+      "fingerprint": "40a1d7586c8643bac351a1b70c09fce35a977ce200888d08a40d2cc0022649d8",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-081-evidence-binding-validator-and-pin-migration.md",
+      "line": 87,
+      "fingerprint": "5a1a787eb47a939d8f1ba727689a9cc2db0adb21fe716d5e1600d7a19406c4b3",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-081-evidence-binding-validator-and-pin-migration.md",
+      "line": 88,
+      "fingerprint": "8b269412c222e0d6a1f26db1d6c491cca6f7a03c52e7b200137ab09c9fbf3cf0",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/bl-081-evidence-binding-validator-and-pin-migration.md",
+      "line": 89,
+      "fingerprint": "7e14cbbc680d4827a0d82eb04f3c8c25c187b73d9435fdbade143f014a406fe2",
+      "classification": "bound"
+    },
+    {
       "file": "scrum/plan/d4-freeze-handoff.md",
       "line": 8,
       "fingerprint": "751d56d4f01ea1a0d054c8119d178a64b20787aa9fb095a02c99f3ba3b135de2",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 15,
+      "fingerprint": "93ddea6d7bca50b2326ce129f87018182e97e4d39b67db4d2d46d7206b57d53c",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 21,
+      "fingerprint": "28b1474c2a81d9715cc510cebffe18da24753270bc303b4fa1c3548040a413c8",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 22,
+      "fingerprint": "3bea18eccc6252a9b5578fecf60925da29a799a1ef17702dc7f66bd159de8199",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 23,
+      "fingerprint": "2fd7f5bc43a9883108397138508a5724171f03d4fca7b6afa0dd2311a6c0f1bd",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 24,
+      "fingerprint": "eb8ae60620b2cc7a2161acb2f122b64d03f18b8a85a4caa74681e5bed2d65bfe",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 25,
+      "fingerprint": "f8c85a18d6c7c1df0f26fc456da935af80e75017db1f6699f792d415b9505adb",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 26,
+      "fingerprint": "2d45f5368515771f6732c64aa896ea82c7bb8398f3fb4758974b5535d0ef9a35",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 27,
+      "fingerprint": "66f1be8749ad467972d635d654827e2d73b34d0e256f8f94081179c0cddaa43f",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 28,
+      "fingerprint": "7f2c12c6db0301b881b2b99a92f9c6950b8163a276705173ed47d2b2fbc36b7e",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 29,
+      "fingerprint": "f273210e20013a631be39ae466b33435d37c6f16cef2f42bf82efb3e2d58a435",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 35,
+      "fingerprint": "751d56d4f01ea1a0d054c8119d178a64b20787aa9fb095a02c99f3ba3b135de2",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 36,
+      "fingerprint": "5096f1e3caf5e1f2a9a3984bcb4aa54b38a7cab4d20a9d34bb57516dfafa9042",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 37,
+      "fingerprint": "b2b3eaed07fba5082a9f6ff18cd40fbe75cb833b0bd8d8a7dc8055eefcbfc52d",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 38,
+      "fingerprint": "56db87ffcd73dd9b6c9a97a5c99d23881767c93ebc430c6a17e70c49e6b3a68c",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 39,
+      "fingerprint": "58717ab4ec26b615b617401da4c613d23a4d8cdeb3c3fb408f119e4e91e78946",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 46,
+      "fingerprint": "9d8357cb05b73b4a25aeea3074ebe49d89a27dbf83f039d5698c4f77afc3a24c",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 272,
+      "fingerprint": "83cbe63ecfbb14d78833d37c9438a6e39bab18a28b8221306c9a79a495fdd794",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 288,
+      "fingerprint": "fd1ba87f9362ef51887b3755a3abdf6797c6c254bc253a424fbecfc9c78a924e",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 289,
+      "fingerprint": "96036307f1de5daf6269fb17ac3cbedce2b60341f9364041f784514cf8f16363",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 291,
+      "fingerprint": "7ee55f073f352e740f6e1d56bb417868ecf054547b601ed579f57da579b53f47",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 292,
+      "fingerprint": "676d3c4d01bd472c519c182ee277190aff029dd357b13f707663fbf6d8b6c944",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 293,
+      "fingerprint": "e03e7730fa0d95cd3c8dcf28d25aa5c324ab0a0071dae587a49f4d324bd62977",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 294,
+      "fingerprint": "d808fb3ba10a793a3dc9677417a658447cf0574d2fa172e2db68b69c2e5ba18c",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 296,
+      "fingerprint": "319933c6d1644a19db734160a9e51ccfc98e22e81a8a894117e40b04f70a23e8",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 297,
+      "fingerprint": "659637bedcda694d09b98994d1174979ea90778032f6ed78e30dfacbda1bd29d",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 298,
+      "fingerprint": "99d15476c53b47f3d084828cbbbbd8d21c69a4e0c2569f180ae851143abe1083",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 314,
+      "fingerprint": "8d35f84e079028ca8737f95bf7511d157b833aab9e8fe5855d526d36d754956d",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 315,
+      "fingerprint": "d0c1453225c592428eb5793ed605d200a98f00ade841f3c2858f39d4b3588bfa",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 316,
+      "fingerprint": "13e5cb2fa0df4d18299dbce084beb7476b31aaa93096b6bf91a5c910dca99ab3",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 322,
+      "fingerprint": "a7065591f317afb7dc3cb0f0f2312ca2e7edd32034b94b60fbd6de2a7fd9d1ea",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 324,
+      "fingerprint": "7ee55f073f352e740f6e1d56bb417868ecf054547b601ed579f57da579b53f47",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 325,
+      "fingerprint": "676d3c4d01bd472c519c182ee277190aff029dd357b13f707663fbf6d8b6c944",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 326,
+      "fingerprint": "d808fb3ba10a793a3dc9677417a658447cf0574d2fa172e2db68b69c2e5ba18c",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 424,
+      "fingerprint": "751d56d4f01ea1a0d054c8119d178a64b20787aa9fb095a02c99f3ba3b135de2",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 425,
+      "fingerprint": "5096f1e3caf5e1f2a9a3984bcb4aa54b38a7cab4d20a9d34bb57516dfafa9042",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 426,
+      "fingerprint": "beb422487def16ca68c9c377a2acfa7d05c15acdfeccf1fde540a3b82d5d8c80",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 427,
+      "fingerprint": "cbf54aba073e8e759f0a7f1c1a1186dd91005e81024c255bf5638c7b65acd1fe",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 428,
+      "fingerprint": "58717ab4ec26b615b617401da4c613d23a4d8cdeb3c3fb408f119e4e91e78946",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 434,
+      "fingerprint": "ac50241b6c432394b55864e2ea79755d70ddca60529476edf470f2c39f509c74",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 435,
+      "fingerprint": "688ad597a3bfcc1e0da1b4426359332cc718d6a6774ca2d1a013583cd632fcd0",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-report.md",
+      "line": 436,
+      "fingerprint": "59123b2dbfb395494bb83df1334b8aac9103a3dc582ef826c9d757851cfcc967",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-spec-draft.md",
+      "line": 14,
+      "fingerprint": "751d56d4f01ea1a0d054c8119d178a64b20787aa9fb095a02c99f3ba3b135de2",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-spec-draft.md",
+      "line": 20,
+      "fingerprint": "e6570972260fdae5c4ca878272dc89a9ff353d48762eefbe019707d229cd242d",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-spec-draft.md",
+      "line": 21,
+      "fingerprint": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-implementation-spec-draft.md",
+      "line": 22,
+      "fingerprint": "b7f924ca53859b832334200245f690196433e8c8eb213e2ce26afa5e62e230d2",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/d4-wire-schema-addendum.md",
+      "line": 38,
+      "fingerprint": "beb422487def16ca68c9c377a2acfa7d05c15acdfeccf1fde540a3b82d5d8c80",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/harmonic-comprehension-map.md",
+      "line": 198,
+      "fingerprint": "9138a7ab2988382a9a1012b0c0a07bd661ce61f8f6d9b40a5054a9d67e58a6d4",
       "classification": "bound"
     },
     {

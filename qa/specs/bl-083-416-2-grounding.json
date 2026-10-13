@@ -1,0 +1,66 @@
+{
+  "receiptId": "BL-083-416-2-grounding",
+  "date": "2026-10-13",
+  "authority": "BL-083 planning pass (read-only grounding), executed under the maintainer's BL-083 disposition of 2026-10-13; resolution landed by BL-053 ENTRY 21.",
+  "stop": {
+    "gate": "validate:release",
+    "runner": "npm run validate:release",
+    "script": "scripts/validate-release.mjs",
+    "receiptPath": "qa/integrated-release-validation.json",
+    "meaning": "416 checks PASS of 418 total; the integrated verdict FAIL since the first BL-070 execution observation; reproduced on clean worktrees across landings until BL-083 R1/R2.",
+    "failingChecks": [
+      "frozen composite package payload identities",
+      "declared full-database reproducibility and deployment evidence"
+    ]
+  },
+  "q1": {
+    "check": "frozen composite package payload identities",
+    "checkLocation": "scripts/validate-release.mjs:230-255 (expectations :230-238)",
+    "meaning": "Compares live payload digests of 7 composite packages against hardcoded expectations; 5/7 matched, 2/7 stale.",
+    "staleExpectations": {
+      "seven-governors-harmonic-invariants-v0.1.0": {
+        "expected": "3bf5f1815369dba2b9ca918a743d18cf1aa388b12f9ba7915ee87e8d8c8363f1",
+        "actual": "1f5b656e4c962eba5e60ac8a28d975ef35d7ddd833993545589bc09925ed7335",
+        "fileCount": 31
+      },
+      "seven-governors-court-filter-algebra-v0.1.0": {
+        "expected": "a2ca514125ca5d0531c8a3c888f1f9f5bb3a152e858a308709fa4c4b9a973a59",
+        "actual": "3d4f3b658dbd360cdd9dec0c05e5ff12695da9e4c0ec603d27bfb341af395679",
+        "fileCount": 36
+      }
+    },
+    "origin": "commit 67dcd14 changed scripts/manifest-utils.mjs (new frozenPayloadExcluded adding __pycache__/.pytest_cache) and scripts/validate-release.mjs (lines 7, 243) to use it, without re-canonicalizing the two expectations; the expectations date to dbc878e (release 1.6.0) and were computed under the old rule.",
+    "evidence": [
+      "git log shows no commit touching either package directory since 4ea389a; worktree clean; zero tracked-file change.",
+      "The walker delta between old and new rules is exclusively *.pyc bytecode: 12 files (harmonic-invariants) and 11 files (court-filter-algebra), including coexisting pytest-8.4.2 and pytest-9.1.1 artifacts regenerated across runs; .pyc embeds source mtimes, so the old expectation was inherently unreproducible.",
+      "Recomputation under the new rule (module scripts/manifest-utils.mjs frozenPayloadExcluded, graph/runtime/canonical.mjs canonicalJsonBytes) reproduces the repository-stable values above; walker-verified tracked-only inputs (untracked non-cache files: none).",
+      "The new rule matches the landed manifest convention (scripts/build-manifest.mjs:13-34 excludes the same caches; validate:manifest PASS)."
+    ],
+    "classification": "payload digest mismatch - technical (spec drift, not payload drift); no composite-package identity question (7/7 manifest identities PASS).",
+    "resolution": "Re-canonicalization as housekeeping under OD-083-3; expectations updated at commit 1b19d2f with the root-cause message; frozen payload checks restored to 7/7."
+  },
+  "q2": {
+    "check": "declared full-database reproducibility and deployment evidence",
+    "checkLocation": "scripts/validate-release.mjs:1054-1127 (about 65 conjuncts)",
+    "meaning": "The full-database leg PASSES conjunct-by-conjunct (report, baseline, ingestion template all consistent at 1.8.1). The failure is entirely the deployment-roundtrip leg: the committed qa/neo4j-deployment-roundtrip-validation.json is a live FAIL 1/2 receipt stamped seven-governors-integrated-1.9.0-dev (configured-roundtrip FAIL, normalizedSnapshot null), so releaseId === 1.8.1, verdict PASS, 3/0 and both snapshot-equality conjuncts fail.",
+    "origin": "commit 67dcd14 overwrote the retained 1.8.1 PASS deployment receipt (committed at 21e0eec, GOV-501) with a live dev-cycle run; scripts/validate-neo4j-deployment-roundtrip.mjs:140-168 unconditionally overwrites the receipt and stamps the current release.releaseId.",
+    "mechanism": "The retained baseline is release-stamped by design: the deployment/full verify compares the live snapshot against provenance/neo4j-full-database-baseline.json (namespace fingerprints and provenance/release.json source binding), so a development cycle cannot pass the retained-baseline check; the 67dcd14 failure was deterministic, not incidental.",
+    "classification": "release-scope policy with technical execution: the baseline lifecycle question (retain 1.8.1 vs re-baseline at close) required a maintainer ruling; the receipt overwrite is fixable tooling behavior.",
+    "resolution": "OD-083-1: re-baseline to 1.9.0 at close (Path B), following the GOV-501 precedent; release-state update, not a data change (six projected payload namespaces byte-identical; counts 3061/10506). OD-083-2: the 1.8.1 receipt superseded but cited by lineage (snapshot fingerprint fd089ea9..., discoverable via git log)."
+  },
+  "rulings": {
+    "OD-083-1": "Re-baseline to 1.9.0 (Path B). Confirmed.",
+    "OD-083-2": "Superseded but cited; no separate preservation tree. Confirmed.",
+    "OD-083-3": "Q1 re-canonicalization approved as housekeeping; commit message carries the root cause. Confirmed, with the commit-message addition."
+  },
+  "environment": {
+    "finding": "The configured server import directory (/var/lib/neo4j/import/seven-governors/csv) is root-owned and not writable by the build user; sudo requires a password. The governed path is the disposable-local instance (targetClass disposable_local, matching the GOV-501 precedent), executed via the repository harness.",
+    "deploymentTargetClass": "disposable_local"
+  },
+  "outcome": {
+    "r1Commit": "1b19d2f",
+    "q1Restored": "frozen composite package payload identities 7/7",
+    "q2Resolution": "release-state re-baseline; fresh receipts PASS after the decisions (see qa/specs/bl-053-green-release.json)",
+    "fixedPoint": "418/0"
+  }
+}

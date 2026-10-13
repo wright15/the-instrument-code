@@ -6,7 +6,7 @@ emitted. No GOV identifier is allocated. ENTRY 9 freezes the boundary, not this
 implementation spec. Proposed interface/gate names below are reviewable receipt
 labels, not additional research categories or independently registered authority.
 
-## 1. Authority And Bindings
+## 1. Authority And Bindings (SHA-256)
 
 `provenance/DECISION_LEDGER.md`, ENTRY 9, is the authority for the unchanged
 `scrum/plan/d4-boundary-draft.md` bytes, despite their historical draft wording.

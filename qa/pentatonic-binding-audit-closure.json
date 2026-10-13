@@ -7,14 +7,14 @@
   "crt310Execution": false,
   "verdict": "PASS",
   "evidenceBindings": {
-    "candidateFingerprint": "7c38e457ce903a3dd72a007265eda256c48c5a326b66bc32bb4c92a93aacdf3e",
-    "phase1ValidationReportFingerprint": "f7edfb035ab16682359bcf15474d533b214ab1259591284433928a6971239ddc",
-    "phase2Neo4jReportFingerprint": "3acbef33a20f25af58702fd7cee5dd3989b163a3914e05fce7740823d34cbecf",
+    "candidateFingerprint": "16bd11bc99fb0dfc5c934b1f5d6782562b04f6999882d97cfdbcc24bf72a0f55",
+    "phase1ValidationReportFingerprint": "eee7460661a9e9f674eb15bc73cbc1eed6363dfa38e79c22cea95404ed420ba3",
+    "phase2Neo4jReportFingerprint": "e6375c261263632ddd32adedaf11dda8ea43b1fdddcc6d66444b276a1dab0d5b",
     "phase3ReportSha256": "814512d4f4360dc7e9ab77b8190043a155ae8253d2729dbb21f33db91e37f1df",
     "cypherDeterministicFingerprint": "17a99dde862c5853031724a11c6435d372fd795eeb86a700fbc266068e7a8b61",
     "crt310BacklogFingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
-    "sourceAuthoritySha256": "b27e9a23b58c1944f33629f103f0d9614c4347084d1aff7a9640f67ac386fd72",
-    "decisionLedgerSha256": "a53a7fa94afb13fd4585eb39bc0175e52c405d25d454edffcc91c981af69f6a2"
+    "sourceAuthoritySha256": "b8ab5030869ceb376e18fab412de759c68f988f113ddf5493dfecd1f14a6667b",
+    "decisionLedgerSha256": "45653693ea4b5471412ad60e518ffd8333e3d87091ff007a7b5c9eee026d8139"
   },
   "counts": {
     "pitchSetCount": 792,
@@ -31,12 +31,12 @@
   "checks": [
     {
       "checkId": "candidate-fingerprint-integrity",
-      "diagnostic": "7c38e457ce903a3dd72a007265eda256c48c5a326b66bc32bb4c92a93aacdf3e",
+      "diagnostic": "16bd11bc99fb0dfc5c934b1f5d6782562b04f6999882d97cfdbcc24bf72a0f55",
       "status": "PASS"
     },
     {
       "checkId": "phase1-independent-validation",
-      "diagnostic": "f7edfb035ab16682359bcf15474d533b214ab1259591284433928a6971239ddc",
+      "diagnostic": "eee7460661a9e9f674eb15bc73cbc1eed6363dfa38e79c22cea95404ed420ba3",
       "status": "PASS"
     },
     {
@@ -66,14 +66,14 @@
     },
     {
       "checkId": "phase2-detached-neo4j-closure",
-      "diagnostic": "3acbef33a20f25af58702fd7cee5dd3989b163a3914e05fce7740823d34cbecf",
+      "diagnostic": "e6375c261263632ddd32adedaf11dda8ea43b1fdddcc6d66444b276a1dab0d5b",
       "status": "PASS"
     },
     {
       "checkId": "active-source-and-decision-ledger-isolation",
       "diagnostic": {
         "activeSourceCount": 5,
-        "decisionLedgerSha256": "a53a7fa94afb13fd4585eb39bc0175e52c405d25d454edffcc91c981af69f6a2"
+        "decisionLedgerSha256": "45653693ea4b5471412ad60e518ffd8333e3d87091ff007a7b5c9eee026d8139"
       },
       "status": "PASS"
     },
@@ -121,5 +121,5 @@
       "status": "PASS"
     }
   ],
-  "reportFingerprint": "a0ed21f103ea69929b0f0c7a33a1fb04a7fd55df182479c2426ea2a82c6c8ace"
+  "reportFingerprint": "46f36a6c58c5480c6ba2c4835912b4928f7f82cb19deed3bc18602a67bc4b281"
 }

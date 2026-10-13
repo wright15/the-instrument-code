@@ -212,7 +212,7 @@ Every invariant and status above was verified against the committed tree at the 
 
 Documents deliberately **not** cited as formalization: `docs/FOUR_LAYER_FORMALIZATION.md` (authority flow), `docs/START_HERE.md` (installed-release orientation), `framework/*` prose beyond its executable claims. Cross-references to ledger entries use `provenance/DECISION_LEDGER.md` line ranges; JSON artifacts are cited by path and field rather than line, since their formatting is generated.
 
-**Tree health at landing (fail-loud).** The seven receipt suites above pass (58 tests). Two modules fail collection for environment reasons (`tests/test_harmonic_orrery_api.py`: `No module named 'main'`; `tests/verification/test_mathematical_invariants.py`: missing `hypothesis`). Ten further tests fail as **pre-existing candidate-freshness pins** that reproduce on the clean parent commit `d0ff0fd` — `tests/test_fifth_space_census.py`, `tests/test_fivefold_capability_teleology.py`, `tests/test_fivefold_engine_promotion_evidence.py`, `tests/test_shadow_ladder.py`, `tests/test_twin_hub_convergence.py`. They are candidate drift, not structural error, and none is attributed to this landing. Do not read this map as a green-release claim.
+**Tree health at landing (fail-loud).** The seven receipt suites above pass (58 tests at that historical landing). Two modules fail collection for environment reasons (`tests/test_harmonic_orrery_api.py`: `No module named 'main'`; `tests/verification/test_mathematical_invariants.py`: missing `hypothesis`). Ten further tests fail as **pre-existing candidate-freshness pins** that reproduce on the clean parent commit `d0ff0fd` — `tests/test_fifth_space_census.py`, `tests/test_fivefold_capability_teleology.py`, `tests/test_fivefold_engine_promotion_evidence.py`, `tests/test_shadow_ladder.py`, `tests/test_twin_hub_convergence.py`. They are candidate drift, not structural error, and none is attributed to this landing. Do not read this map as a green-release claim.
 
 ---
 
@@ -223,3 +223,31 @@ Documents deliberately **not** cited as formalization: `docs/FOUR_LAYER_FORMALIZ
 3. **Layer separation.** Q-engine substrate states (16) are never pentatonic node transformations (330). The admitted correspondence is configuration-level, not trajectory-level.
 4. **Consumes-column rule.** New algebras get a catalog row before they emit edges; consumers read, they do not author.
 5. **Naming rule.** Never write "the mutation algebra" unqualified; name the row number and scope (e.g., "row 1, structural, 462-side").
+
+---
+
+## 7. Release 1.9.0 maintenance re-verification (2026-10-13)
+
+Under the maintenance rule above, the tier/status columns were re-verified at
+the 1.9.0 release fixed point against their owning receipts. No node-universe,
+edge-algebra ownership, or catalog-row status changed in this cycle: the
+cycle's admissions (`SPEC-FIVEFOLD-COURT-CORRESPONDENCE-001` under GOV-522,
+reflected in §1 Layer 3 since its landing; `SPEC-PHASE-EXTENDED-TOPOLOGY-001`
+under GOV-523; `SPEC-GOVERNS-DERIVABILITY-001` under GOV-524 and its
+coordinate-covariant expansion under GOV-525) register candidate machinery,
+relation content, or specifications within existing layers; none adds a
+catalog-row algebra or moves a row's ownership. The D4 record amendments
+(BL-080) and the D7 re-tests leave the structural-gap table unchanged.
+
+§5's dated tree-health note is superseded at this fixed point: the
+candidate-freshness pins named there (`tests/test_fifth_space_census.py`,
+`tests/test_fivefold_engine_promotion_evidence.py`, `tests/test_shadow_ladder.py`,
+`tests/test_twin_hub_convergence.py`) are green after the BL-051/BL-052 cascade
+refreshes, the promotion evidence refresh, and the BL-053 ledger-bound refresh
+(35 focused tests passed at the release landing). `tests/test_fivefold_capability_teleology.py`
+remains the one queued candidate staleness (registered in
+`provenance/NEXT_STEPS.md`; not a release-gate item).
+
+This addendum is dated and scoped to the 1.9.0 fixed point; the map body above
+remains anchored to its own landing commit, and this section makes no claim and
+adjudicates no meaning.

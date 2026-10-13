@@ -1,8 +1,8 @@
 {
-  "verdict": "FAIL",
-  "releaseId": "seven-governors-integrated-1.9.0-dev",
-  "checksPassed": 416,
-  "checksFailed": 2,
+  "verdict": "PASS",
+  "releaseId": "seven-governors-integrated-1.9.0",
+  "checksPassed": 418,
+  "checksFailed": 0,
   "checks": [
     {
       "name": "release manifest fixed point",
@@ -23,8 +23,8 @@
       "name": "release id",
       "status": "PASS",
       "diagnostic": {
-        "releaseId": "seven-governors-integrated-1.9.0-dev",
-        "version": "1.9.0-dev"
+        "releaseId": "seven-governors-integrated-1.9.0",
+        "version": "1.9.0"
       }
     },
     {
@@ -131,7 +131,7 @@
     },
     {
       "name": "frozen composite package payload identities",
-      "status": "FAIL",
+      "status": "PASS",
       "diagnostic": [
         {
           "directory": "seven-governors-mutation-algebra-audit",
@@ -166,13 +166,13 @@
         {
           "directory": "seven-governors-harmonic-invariants-v0.1.0",
           "fileCount": 31,
-          "expected": "3bf5f1815369dba2b9ca918a743d18cf1aa388b12f9ba7915ee87e8d8c8363f1",
+          "expected": "1f5b656e4c962eba5e60ac8a28d975ef35d7ddd833993545589bc09925ed7335",
           "actual": "1f5b656e4c962eba5e60ac8a28d975ef35d7ddd833993545589bc09925ed7335"
         },
         {
           "directory": "seven-governors-court-filter-algebra-v0.1.0",
           "fileCount": 36,
-          "expected": "a2ca514125ca5d0531c8a3c888f1f9f5bb3a152e858a308709fa4c4b9a973a59",
+          "expected": "3d4f3b658dbd360cdd9dec0c05e5ff12695da9e4c0ec603d27bfb341af395679",
           "actual": "3d4f3b658dbd360cdd9dec0c05e5ff12695da9e4c0ec603d27bfb341af395679"
         }
       ]
@@ -824,28 +824,28 @@
       "name": "pentatonic binding evidence fingerprint closure",
       "status": "PASS",
       "diagnostic": {
-        "candidateFingerprint": "7c38e457ce903a3dd72a007265eda256c48c5a326b66bc32bb4c92a93aacdf3e",
-        "phase1ValidationReportFingerprint": "f7edfb035ab16682359bcf15474d533b214ab1259591284433928a6971239ddc",
-        "phase2Neo4jReportFingerprint": "3acbef33a20f25af58702fd7cee5dd3989b163a3914e05fce7740823d34cbecf",
+        "candidateFingerprint": "16bd11bc99fb0dfc5c934b1f5d6782562b04f6999882d97cfdbcc24bf72a0f55",
+        "phase1ValidationReportFingerprint": "eee7460661a9e9f674eb15bc73cbc1eed6363dfa38e79c22cea95404ed420ba3",
+        "phase2Neo4jReportFingerprint": "e6375c261263632ddd32adedaf11dda8ea43b1fdddcc6d66444b276a1dab0d5b",
         "phase3ReportSha256": "814512d4f4360dc7e9ab77b8190043a155ae8253d2729dbb21f33db91e37f1df",
         "cypherDeterministicFingerprint": "17a99dde862c5853031724a11c6435d372fd795eeb86a700fbc266068e7a8b61",
         "crt310BacklogFingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
-        "sourceAuthoritySha256": "b27e9a23b58c1944f33629f103f0d9614c4347084d1aff7a9640f67ac386fd72",
-        "decisionLedgerSha256": "a53a7fa94afb13fd4585eb39bc0175e52c405d25d454edffcc91c981af69f6a2"
+        "sourceAuthoritySha256": "b8ab5030869ceb376e18fab412de759c68f988f113ddf5493dfecd1f14a6667b",
+        "decisionLedgerSha256": "45653693ea4b5471412ad60e518ffd8333e3d87091ff007a7b5c9eee026d8139"
       }
     },
     {
       "name": "pentatonic binding finite result closure",
       "status": "PASS",
       "diagnostic": {
-        "candidateFingerprint": "7c38e457ce903a3dd72a007265eda256c48c5a326b66bc32bb4c92a93aacdf3e",
+        "candidateFingerprint": "16bd11bc99fb0dfc5c934b1f5d6782562b04f6999882d97cfdbcc24bf72a0f55",
         "distribution": {
           "0": 612,
           "1": 120,
           "2": 48,
           "3": 12
         },
-        "closureFingerprint": "a0ed21f103ea69929b0f0c7a33a1fb04a7fd55df182479c2426ea2a82c6c8ace"
+        "closureFingerprint": "46f36a6c58c5480c6ba2c4835912b4928f7f82cb19deed3bc18602a67bc4b281"
       }
     },
     {
@@ -900,17 +900,17 @@
     },
     {
       "name": "declared full-database reproducibility and deployment evidence",
-      "status": "FAIL",
+      "status": "PASS",
       "diagnostic": {
-        "reportFingerprint": "f85d08ad10450c001d2d8cdcc9f2aa52c103f23db03d7c51b317e1f60650ddd3",
-        "retainedReleaseId": "seven-governors-integrated-1.8.1",
+        "reportFingerprint": "c61a9659019e7e51a3601a47fda0bf3724e58a6c46476d60f180744416f19fc4",
+        "retainedReleaseId": "seven-governors-integrated-1.9.0",
         "baselineStatus": {
-          "status": "retained_previous_release_baseline",
-          "retainedReleaseId": "seven-governors-integrated-1.8.1",
-          "reason": "the closed 1.8.1 native reproducibility and separately configured disposable-local bootstrap/roundtrip receipts remain the retained baseline while 1.9.0-dev plans new work",
+          "status": "current_release_baseline",
+          "retainedReleaseId": "seven-governors-integrated-1.9.0",
+          "reason": "native clean-import reproducibility and a separately configured disposable-local bootstrap/roundtrip both pass against the current release provenance; the projected payload namespaces are byte-identical to the 1.8.1 baseline and the re-baseline is a release-state update only",
           "reproducibilityReceipt": "qa/neo4j-full-database-validation.json",
           "deploymentReceipt": "qa/neo4j-deployment-roundtrip-validation.json",
-          "refreshRequired": "before 1.9.0 close if provenance or projected data changes"
+          "refreshRequired": "next release provenance or projected-data change"
         },
         "deploymentTargetClass": "disposable_local"
       }
@@ -1314,7 +1314,7 @@
       "name": "manifest completeness",
       "status": "PASS",
       "diagnostic": {
-        "version": "1.9.0-dev",
+        "version": "1.9.0",
         "missingFromManifest": [],
         "missingFromDisk": []
       }
@@ -1345,8 +1345,8 @@
       "name": "checksums sha256 parity",
       "status": "PASS",
       "diagnostic": {
-        "checksumLines": 1326,
-        "manifestFiles": 1326
+        "checksumLines": 1329,
+        "manifestFiles": 1329
       }
     },
     {
@@ -1471,7 +1471,7 @@
     {
       "name": "bestiary:fresh",
       "status": "PASS",
-      "diagnostic": "{\n  \"verdict\": \"PASS\",\n  \"target\": \"bestiary/data/bestiary-data.json\",\n  \"bytes\": 1006759\n}"
+      "diagnostic": "{\n  \"verdict\": \"PASS\",\n  \"target\": \"bestiary/data/bestiary-data.json\",\n  \"bytes\": 1006755\n}"
     },
     {
       "name": "bestiary:refs-closed",
@@ -2596,17 +2596,17 @@
     {
       "name": "required file: qa/neo4j-full-database-validation.json",
       "status": "PASS",
-      "diagnostic": 26230
+      "diagnostic": 26986
     },
     {
       "name": "required file: qa/neo4j-deployment-roundtrip-validation.json",
       "status": "PASS",
-      "diagnostic": 23087
+      "diagnostic": 26616
     },
     {
       "name": "required file: provenance/neo4j-full-database-baseline.json",
       "status": "PASS",
-      "diagnostic": 2159
+      "diagnostic": 2327
     },
     {
       "name": "required file: provenance/neo4j-ingestion-template-baseline.json",
@@ -2741,7 +2741,7 @@
     {
       "name": "required file: bestiary/data/bestiary-data.json",
       "status": "PASS",
-      "diagnostic": 1006759
+      "diagnostic": 1006755
     },
     {
       "name": "required file: bestiary/data/bestiary-data.schema.json",

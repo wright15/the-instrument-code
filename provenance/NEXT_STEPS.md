@@ -1,8 +1,8 @@
 # Recommended Next Steps
 
-Current release: `seven-governors-integrated-1.9.0-dev`, opened on `main` 2026-08-29.
+Current release: `seven-governors-integrated-1.9.0`, closed at fixed point 2026-10-13, no further emissions this cycle.
 
-**Development declaration:** `1.8.1` remains the sealed Neo4j baseline with separate native reproducibility and configured bootstrap/roundtrip receipts. `1.9.0-dev` plans bounded research and interface work on `main`; `681` geometry correction (`OBS-011` punched holes `{10,2}`) remains folded into the prior point. Sprint 2 closed `OBS-014` (twin-hub convergence, verdict `confirmed`, GOV-510), emitted the 462-record fifth-space census (GOV-511, verdict `confirmed`), and shipped the A-series evidence inspector bundle (ORR-511). No development emission changes canonical topology, admission, runtime authority, Court policy, or global `harmonic.C_H` without its own versioned evidence and release decision.
+**Fixed-point declaration:** `1.9.0` closes the development cycle at fixed point — the project's first green release. The two freeze-era authority questions were resolved at the flip: the frozen composite payload expectations re-canonicalized (spec drift, `.pyc`-only, zero payload change) and the Neo4j baseline re-established at `1.9.0` with the projected payload namespaces byte-identical to the 1.8.1 baseline. `681` geometry correction (`OBS-011` punched holes `{10,2}`) remains folded into the prior point; `OBS-014` resolved (GOV-510). Next emissions are `planning_evidence` only.
 
 ## Queued - Rank 1 - D4 derivation boundary
 
@@ -28,9 +28,23 @@ Seek a checkable discriminator without claiming a D4 pass separates authorship f
 
 Complete ORR-521/522/523 and ORR-524 gates, citing the browser defect plus six passing sessions and requiring refreshed native and configured Neo4j evidence; release remains blocked ([product gate status](../scrum/plan/post-d5-product-gate-status.md); [capture section 6](../scrum/plan/post-d5-analysis-capture.md#6-open-directions-ranked)).
 
-## Queued - ORR-524 authority decisions at the release flip
+## Completed — ORR-524 authority decisions at the release flip (resolved 2026-10-13 by BL-053)
 
-416/2 -> 418/0 at the 1.9.0 flip by design is the planned closure path, not a promised test result: the ORR-524 closure entry must decide composite identity with an enumerated historical/current pin-set diff and the baseline lifecycle (recommended: release flips plus declared provenance checkpoints, with drift windows documented). Both are destination authority work, not en-route comparison weakening; fresh receipts must still pass after the decisions ([composite diagnosis](../scrum/plan/post-d5-release-repair.md), [baseline diagnosis](../scrum/plan/post-d5-neo4j-investigation.md)). This queue line makes no policy decision and waives neither gate.
+The two decisions recorded here as destination authority work were taken at the
+`1.9.0` flip. **Composite identity:** resolved as re-canonicalization, not a
+repackaging — the two stale frozen-payload expectations (`3bf5f181…`/`a2ca5141…`)
+were recomputed under the landed exclusion rule to `1f5b656e…`/`3d4f3b65…`,
+with the enumerated historical/current pin-set diff and the `.pyc`-only delta
+proof recorded at commit `1b19d2f` (spec drift at `67dcd14`, zero tracked-file
+change in either package). **Baseline lifecycle:** resolved as the release flip
+plus the declared provenance checkpoint — the retained 1.8.1 baseline was
+re-established at `1.9.0` (release-state update; the six projected payload
+namespaces byte-identical to the 1.8.1 baseline, counts `3061`/`10506`), with
+fresh native reproducibility and disposable-local bootstrap/roundtrip receipts
+PASS (`5d26a803…`). Fresh receipts were issued after the decisions and pass;
+the release-gate closure receipt is `qa/specs/bl-053-green-release.json`.
+([composite diagnosis](../scrum/plan/post-d5-release-repair.md);
+[baseline diagnosis](../scrum/plan/post-d5-neo4j-investigation.md)).
 
 ## Completed - Promotion ledger-pin class migration
 
@@ -61,7 +75,7 @@ Twin-hub convergence at the `A2` boundary: `D4` (`7-Z17`, `2× A1-sat`) and `D5`
 
 ## Queued — fivefold-capability-teleology regeneration (known stale)
 
-`canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json` binds `provenance/SOURCE_AUTHORITY.md` at sha `7420bbcc…`, but the file has been at `b27e9a23…` since the 1.9.0-dev cycle open (`4a3989f`); the teleology tests were failing at HEAD before Sprint 2. Regeneration was not applied in Sprint 2 (out-of-directive); queue the rebuild plus a recommendations review of hard-coded source pins (same class as the promotion-evidence ledger pin, which Sprint 2 refreshed because its own ledger edit invalidated it).
+`canonical/fivefold-capability-candidates/fivefold-capability-teleology-v1.json` binds `provenance/SOURCE_AUTHORITY.md` at sha `7420bbcc…`, but the file has been at `b27e9a23…` since the 1.9.0-dev cycle open (`4a3989f`) and now stands at `b8ab5030…` after the 1.9.0 release ceremony's baseline-row update; the teleology tests were failing at HEAD before Sprint 2. Regeneration was not applied in Sprint 2 (out-of-directive); queue the rebuild plus a recommendations review of hard-coded source pins (same class as the promotion-evidence ledger pin, which Sprint 2 refreshed because its own ledger edit invalidated it).
 
 ## Queued — ORR-522 fifth-space census consumption
 
@@ -85,7 +99,7 @@ Prose only: `d=3→4` consecutive fifths, `d=4→3` (quartal/sus, not tertian tr
 
 ---
 
-The retained Neo4j baseline is closed release `seven-governors-integrated-1.8.1`.
+The current Neo4j baseline is release `seven-governors-integrated-1.9.0`.
 The release includes the audited topology, mutation algebra, canonical profile
 registry/compiler, Governor runtime, bounded Pentatonic Court, read projection,
 agent skills, optional read-only vault context, GOV-210 availability/housing,
@@ -94,10 +108,10 @@ A0-A2 harmonic-compression sidecar, and GOV-227's scoped D1-D7 q_v2 sidecar.
 
 ## 1. Establish the full database
 
-Release 1.9.0-dev retains the 1.8.1 Neo4j baseline without changing graph
+Release 1.9.0 refreshes the current Neo4j baseline without changing graph
 payload. The native reproducibility receipt and separately configured
-bootstrap/roundtrip receipt remain in `qa/`; refresh both before a 1.9.0 close
-claims parity for changed provenance or projected data.
+bootstrap/roundtrip receipt are retained in `qa/`; refresh both before a later
+release changes provenance or projected data.
 
 ## 2. Use explanation-first queries
 
@@ -177,10 +191,9 @@ precedence rules for tier resolution. Global `harmonic.C_H` remains null.
 Future work may independently test satellites and boundaries, all 15 operator
 deltas, and `C_P`/`C_H`/`C_S` correspondence.
 
-The 1.8.1 Neo4j baseline is retained through the 1.9.0-dev cycle. A future
-provenance or projected-data change requires fresh native reproducibility and
-configured bootstrap/roundtrip evidence before claiming 1.9.0 round-trip
-parity.
+The Neo4j baseline is release 1.9.0. A future provenance or projected-data
+change requires fresh native reproducibility and configured bootstrap/roundtrip
+evidence before claiming current-release round-trip parity.
 
 ## 8. Version every protocol change
 

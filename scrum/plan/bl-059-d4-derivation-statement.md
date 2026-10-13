@@ -194,9 +194,7 @@ Excluded (carried verbatim in substance from the corridor's fences, ENTRY 15 §S
   promotion; no canonical/Court/schema/Neo4j writes beyond ENTRY 15's own append.
 
 The historical record is linked, not rewritten: ENTRY 10's `not_derived`
-(`provenance/DECISION_LEDGER.md:2195-2252`) stands immutable, region SHA-256
-`201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7` (line-join recipe) /
-`50b8b73f75497082e6d2a38052a62da4f5374ee94fc08f8ff0312fc7746fbb00` (keepends variant). The
+(`provenance/DECISION_LEDGER.md:2195-2252`) stands immutable, SHA-256 region `201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7` (line-join recipe) / `50b8b73f75497082e6d2a38052a62da4f5374ee94fc08f8ff0312fc7746fbb00` (keepends variant). The
 D4 qualifier remains binding at every reading: the historical negative was **derivation
 difficulty under the registered route, not authorship proof** (`:2260-2266`).
 

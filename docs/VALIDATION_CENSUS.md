@@ -22,11 +22,12 @@ recorded rather than counted. Its receipt is `qa/validation-prose-consistency.js
 
 | Prior total | Current total | Prior release | Current release | Artifact | Runner |
 |---:|---:|---|---|---|---|
-| 414 | 418 | `1.8.0` | `1.9.0-dev` | `qa/integrated-release-validation.json` | `npm run validate:release` |
+| 414 | 418 | `1.8.0` | `1.9.0` | `qa/integrated-release-validation.json` | `npm run validate:release` |
 
 The 414→418 delta is the release-total transition from the closed 1.8.0
-integrated receipt to the current 1.9.0-dev receipt. The 414 value is release
-qualified to 1.8.0 and is not a current total.
+integrated receipt to the current 1.9.0 receipt. The 414 value is release
+qualified to 1.8.0 and is not a current total. The 1.9.0 receipt is the
+project's first green fixed point (418/0); the 1.8.0 receipt closed at 414/0.
 
 ### 2. Per-validator receipts invoked by the integrated validator
 

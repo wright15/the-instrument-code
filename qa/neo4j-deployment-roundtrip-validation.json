@@ -1,11 +1,11 @@
 {
   "schemaVersion": "seven-governors.neo4j-deployment-roundtrip-validation.v1",
-  "verdict": "FAIL",
-  "releaseId": "seven-governors-integrated-1.9.0-dev",
+  "verdict": "PASS",
+  "releaseId": "seven-governors-integrated-1.9.0",
   "targetClass": "disposable_local",
   "credentialsExcluded": true,
-  "checksPassed": 1,
-  "checksFailed": 2,
+  "checksPassed": 3,
+  "checksFailed": 0,
   "checks": [
     {
       "checkId": "configured-bootstrap",
@@ -17,17 +17,79 @@
     },
     {
       "checkId": "configured-roundtrip",
-      "status": "FAIL",
-      "diagnostic": "roundtrip_failed"
+      "status": "PASS",
+      "diagnostic": {
+        "snapshotFingerprint": "5d26a803e61fab385f7c183a8f21e5416f8fa8c5c4a0692500bbec8bc3e9c564"
+      }
     },
     {
       "checkId": "bootstrap-roundtrip-byte-identity",
-      "status": "FAIL",
-      "diagnostic": "normalized_snapshot_mismatch"
+      "status": "PASS",
+      "diagnostic": true
     }
   ],
-  "normalizedSnapshot": null,
+  "normalizedSnapshot": {
+    "snapshotFingerprint": "5d26a803e61fab385f7c183a8f21e5416f8fa8c5c4a0692500bbec8bc3e9c564",
+    "namespaceFingerprints": {
+      "topology": "5504690205e5d06adbbecbeddba03deaef746b9ca219835285dcf80f4c0c2c24",
+      "provenance": "d2bd1f6df27496167e7d0df84f40a891ac08342a3581f70802bb19f383bd42b8",
+      "mutation": "50e6f2c2bfa8c685cbdca34acac2e88c68b1cf92fdf7f3f1b9f04afe8f1062e5",
+      "semantic": "5ce8d0969416fbd3e414ca54975aa2a3f628887462b171a8259db2a18d0395d7",
+      "governorRuntime": "7f3bce665fff468f1f6e19b8bb72dd2d81e232b31b77d739d37e26e4ebed5222",
+      "court": "5eafe5e5970a2a286a4bb24525c0bf6c5bbee57da4343826022eeb3dc1573422",
+      "gov210": "4644528335fcb6c06280d5f4a67f05c2c14918f1bbfd9e7561732d95b510dd24"
+    },
+    "sourceBindings": [
+      {
+        "namespace": "court",
+        "path": "tests/court_graph/fixture-input.json",
+        "sha256": "ed46bb74a84a28348ac0c004e0f4501282fe02b6fbd97950bd8df7eb24894455"
+      },
+      {
+        "namespace": "gov210",
+        "path": "canonical/gov-210-availability-housing.json",
+        "sha256": "7382b8ca818682a95b9f6f8d75e3130762ae992f761c1e25de7e31905d214858"
+      },
+      {
+        "namespace": "governorRuntime",
+        "path": "seven-governors-governor-runtime-v0.1.0/canonical/policy-release.json",
+        "sha256": "ab0a9d2827ae262a0e85bcaf3882839e070520ae596fa2c87d68ab0e1eae33d8"
+      },
+      {
+        "namespace": "mutation",
+        "path": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv",
+        "sha256": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e"
+      },
+      {
+        "namespace": "provenance",
+        "path": "provenance/release.json",
+        "sha256": "bcac8d87c53b52e5b8649d76c6d60cb0ef2b79ba6bfaa3330e3abca9adde0492"
+      },
+      {
+        "namespace": "semantic",
+        "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/registry-release.json",
+        "sha256": "5072761cb53b98a1c0fa99cb6807f148963ca8ec8394af461b2c9822553f0a22"
+      },
+      {
+        "namespace": "topology",
+        "path": "canonical/universal-network-data.json",
+        "sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc"
+      }
+    ],
+    "counts": {
+      "nodeCount": 3061,
+      "relationshipCount": 10506
+    }
+  },
   "evidenceBindings": [
+    {
+      "path": "canonical/gov-210-availability-housing.json",
+      "sha256": "7382b8ca818682a95b9f6f8d75e3130762ae992f761c1e25de7e31905d214858"
+    },
+    {
+      "path": "canonical/universal-network-data.json",
+      "sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc"
+    },
     {
       "path": "court-mathematics/pyproject.toml",
       "sha256": "48bd8d45d08de33c5c5e104899f8055384fe0a9c2dc01981ed011fba1fba199a"
@@ -214,19 +276,23 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "408706c808783a95be88336d3c44f5e81e1703d9a464174012e072e949414430"
+      "sha256": "9ae767f4be7db952917971a4682d41193b6ab64e57a719c86626c9ec4e9d0c5c"
     },
     {
       "path": "package.json",
-      "sha256": "33021fe704b174f3a9a305bbd5dc68d5191e78521f14c606aeb9a4df70a879ac"
+      "sha256": "a0b1a1a563dab188ce028ae3520740180045ab9fe35769f62f749a6eb57cfce7"
     },
     {
       "path": "provenance/neo4j-full-database-baseline.json",
-      "sha256": "094f91274ce04a359ddf60d6fa3980fc3304a07b7d61fa6d73a7c77145073c44"
+      "sha256": "a1fe979c0dceb75c893172efbc4078c7757f9f6524637ab76c7367b3513d1da6"
     },
     {
       "path": "provenance/neo4j-ingestion-template-baseline.json",
       "sha256": "f66b0573e94d9e4cd704f9a987356659ae455a75b40066db1c89a12ec2a5b5d9"
+    },
+    {
+      "path": "provenance/release.json",
+      "sha256": "bcac8d87c53b52e5b8649d76c6d60cb0ef2b79ba6bfaa3330e3abca9adde0492"
     },
     {
       "path": "schemas/court-admission-contract.json",
@@ -279,6 +345,10 @@
     {
       "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/PACKAGE_MANIFEST.json",
       "sha256": "c4ac240b24b7be39e9ab04c3fa475512adb65faef529968dfc0909a5f95e586c"
+    },
+    {
+      "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/canonical/registry-release.json",
+      "sha256": "5072761cb53b98a1c0fa99cb6807f148963ca8ec8394af461b2c9822553f0a22"
     },
     {
       "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/neo4j/01_semantic_schema.cypher",
@@ -369,12 +439,20 @@
       "sha256": "6906a5b7a495feee7dddb02ee936393052e58315c28893a58c700ec60000f9a3"
     },
     {
+      "path": "seven-governors-governor-runtime-v0.1.0/canonical/policy-release.json",
+      "sha256": "ab0a9d2827ae262a0e85bcaf3882839e070520ae596fa2c87d68ab0e1eae33d8"
+    },
+    {
       "path": "seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json",
       "sha256": "75b3ffaa0b126c4dbf0abf6e42a4674724092b0e403a2862d893b6f1493d0e6f"
     },
     {
       "path": "seven-governors-mutation-algebra-audit/MANIFEST.json",
       "sha256": "e45e685e9b85622e0581dfb32da46d31a9efe30e5d082e4bd4bc18b835a95cdd"
+    },
+    {
+      "path": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv",
+      "sha256": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e"
     },
     {
       "path": "seven-governors-mutation-algebra-audit/audit/operator-registry.csv",
@@ -574,7 +652,7 @@
     },
     {
       "path": "src/governor/twin_hub_convergence.py",
-      "sha256": "238828e87c2e1d3f8b2bc9fb1d8c1e85fa6cb62213b084d0fd5d8348df3d5efb"
+      "sha256": "c9ae5240709df236186b840e1cae3bc1fe04ad3fdbce0e3b0f01d7c9dbc5c9fa"
     },
     {
       "path": "src/governor/vault_context.py",
@@ -589,9 +667,13 @@
       "sha256": "9461d52c2b36eec083d7d5266a2c59b197164352027c5f32614e1450744250a0"
     },
     {
+      "path": "tests/court_graph/fixture-input.json",
+      "sha256": "ed46bb74a84a28348ac0c004e0f4501282fe02b6fbd97950bd8df7eb24894455"
+    },
+    {
       "path": "tests/neo4j/full-database-live.test.mjs",
-      "sha256": "d7ae0021b72c0c469ab3f942d2fa2b9f5957eccf694c1300f7ca9b3aac1c8ae7"
+      "sha256": "5783f744c8f807b1103146031a3a3a1d1cbe95241619d3298138949ed907a027"
     }
   ],
-  "reportFingerprint": "cc367d1b3f37c00dbade637e5ff9577605c9d1892101a86bcd42189b7f12ef3c"
+  "reportFingerprint": "c650cc08081d37f0bfd09b0c8086750cad2691697cfc3bbf7b8d086f1d85c55b"
 }

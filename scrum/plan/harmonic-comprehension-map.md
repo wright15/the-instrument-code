@@ -195,8 +195,7 @@ multi-route arrivals must be pool-identical, and route-dependent pool divergence
 same-origin would falsify the separation (mechanics altering Forms, not postures).
 
 **First empirical check PASSED (2026-10-04, BL-031 Phase 2 semantic transport probe,
-`fec745a`, artifact fingerprint
-`9138a7ab2988382a9a1012b0c0a07bd661ce61f8f6d9b40a5054a9d67e58a6d4`).** Same-origin
+`fec745a`, artifact fingerprint `9138a7ab2988382a9a1012b0c0a07bd661ce61f8f6d9b40a5054a9d67e58a6d4`).** Same-origin
 multi-route arrivals were pool-identical across all queries — operations changed posture,
 never identity. The separation stands after its first test. Qualifier (binding): the control
 is verified as a construction invariant — "one origin's pool is carried verbatim on every
@@ -559,6 +558,7 @@ session (lattice Phase B, or the governs semantic layer) resolves it from the re
 | BL-077 registration (GSL-5, GSL-6) | §5.8 GSL-5/GSL-6 — the coordinate action's family-level involution (the tier↔family correspondence's covariance) and office-level permutation (Mercury fixed; the 4+1 signature) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
 | claim record `SPEC-GOVERNS-DERIVABILITY-001` v0.2.0 (expanded; ENTRY 17) | §5.8 GSL-5/GSL-6 as the correspondence's probe evidence — the claim's load-bearing evidence is the BL-075/BL-076 artifacts (chain-anchored) | consumed as context; §5 remains planning evidence — measured, not admitted, not citable as claims; the expansion changes no §5.8 tag |
 | BL-078 landing (the D7 derivation re-test; `R_NONE`) | §5.9 — the replication-confirmed grant-dependence (the office field as the selection's ground, joining the anchoring remainder) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
+| BL-053 green release (ENTRY 21) | the map as shipped: §5 measured findings as planning evidence, §2 design-intent tiers, §3 open canon question | the release ships the framework with the higher-theorem question formally stated, not answered; no §5 tag change; measured findings remain planning evidence, not citable as claims |
 
 ## 5. Measured findings — the D4 boundary-geography selection layer [MEASURED — planning evidence]
 

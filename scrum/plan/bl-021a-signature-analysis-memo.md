@@ -6,8 +6,8 @@ Read-only analysis over the landed bipartite containment matrix
 
 **Landed:** generator `scripts/analyze_parallel_signatures.py` (625 lines); artifact
 `derived/hypergraph/parallel-signatures-v1.json` (`status: planning_evidence`, 220,611
-bytes, sha256
-`bec45d0a4324530e0976daedfe2b9e1dd0ea63e3097eb75778aea0eccaec4128`); test suite
+bytes, sha256 `bec45d0a4324530e0976daedfe2b9e1dd0ea63e3097eb75778aea0eccaec4128`);
+test suite
 `tests/test_parallel_signatures.py` (12 tests, green). Manifest regenerated (1,163
 files). The artifact is discovered by `scripts/build-manifest.mjs` like any tracked
 file.

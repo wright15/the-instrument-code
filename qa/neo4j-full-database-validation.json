@@ -1,7 +1,7 @@
 {
   "schemaVersion": "seven-governors.neo4j-full-database-validation.v1",
   "verdict": "PASS",
-  "releaseId": "seven-governors-integrated-1.8.1",
+  "releaseId": "seven-governors-integrated-1.9.0",
   "checksPassed": 6,
   "checksFailed": 0,
   "checks": [
@@ -48,10 +48,10 @@
     }
   ],
   "normalizedSnapshot": {
-    "snapshotFingerprint": "fd089ea9a0b91d1572b0efeeaa724a53e9d182e8bbc6f793111f52873a41c1a1",
+    "snapshotFingerprint": "5d26a803e61fab385f7c183a8f21e5416f8fa8c5c4a0692500bbec8bc3e9c564",
     "namespaceFingerprints": {
       "topology": "5504690205e5d06adbbecbeddba03deaef746b9ca219835285dcf80f4c0c2c24",
-      "provenance": "1c3e6edf80af60ce1f64a4f5b7b4b519b9865bca47ab47ee1d876cee6a1b4127",
+      "provenance": "d2bd1f6df27496167e7d0df84f40a891ac08342a3581f70802bb19f383bd42b8",
       "mutation": "50e6f2c2bfa8c685cbdca34acac2e88c68b1cf92fdf7f3f1b9f04afe8f1062e5",
       "semantic": "5ce8d0969416fbd3e414ca54975aa2a3f628887462b171a8259db2a18d0395d7",
       "governorRuntime": "7f3bce665fff468f1f6e19b8bb72dd2d81e232b31b77d739d37e26e4ebed5222",
@@ -82,7 +82,7 @@
       {
         "namespace": "provenance",
         "path": "provenance/release.json",
-        "sha256": "bd854a8c1ff61c55016ec024e927a899ba83f232f967ef7f4f00495d2b579e17"
+        "sha256": "bcac8d87c53b52e5b8649d76c6d60cb0ef2b79ba6bfaa3330e3abca9adde0492"
       },
       {
         "namespace": "semantic",
@@ -295,15 +295,15 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "b8c2e917d574bab91edba15528af069fe3cead95d16a0b483cd6f73458037be6"
+      "sha256": "9ae767f4be7db952917971a4682d41193b6ab64e57a719c86626c9ec4e9d0c5c"
     },
     {
       "path": "package.json",
-      "sha256": "a934a342bcad9cb0610afd5d25674c51b932377acf9f8c7e69c9dc201f3a61f5"
+      "sha256": "a0b1a1a563dab188ce028ae3520740180045ab9fe35769f62f749a6eb57cfce7"
     },
     {
       "path": "provenance/neo4j-full-database-baseline.json",
-      "sha256": "094f91274ce04a359ddf60d6fa3980fc3304a07b7d61fa6d73a7c77145073c44"
+      "sha256": "a1fe979c0dceb75c893172efbc4078c7757f9f6524637ab76c7367b3513d1da6"
     },
     {
       "path": "provenance/neo4j-ingestion-template-baseline.json",
@@ -311,7 +311,7 @@
     },
     {
       "path": "provenance/release.json",
-      "sha256": "bd854a8c1ff61c55016ec024e927a899ba83f232f967ef7f4f00495d2b579e17"
+      "sha256": "bcac8d87c53b52e5b8649d76c6d60cb0ef2b79ba6bfaa3330e3abca9adde0492"
     },
     {
       "path": "schemas/court-admission-contract.json",
@@ -554,6 +554,18 @@
       "sha256": "d61ef3eee5613c78dae8ecbd3129d2e3e7ad4720001cd717d7ebbd9703481dba"
     },
     {
+      "path": "src/governor/d_shadow_complement_span.py",
+      "sha256": "b790baa5ffa78e4673ea915e6bf4b9ef10f42266c71f751f4d79a394a3edac23"
+    },
+    {
+      "path": "src/governor/d_shadow_uniqueness.py",
+      "sha256": "1458aa98075f56bb3395ec0c6467e2a5aefcc2bbfc5ca931bcb2688e8a4bb8f7"
+    },
+    {
+      "path": "src/governor/d_tier_interleaving_check.py",
+      "sha256": "3bae1b8ab0fe3153bb3ba845887505e2e08b123cb546bfefba66017afa66b409"
+    },
+    {
       "path": "src/governor/dynamic_menu.py",
       "sha256": "de3ae71e92d197a8ad32a582a66778a1f8a292375dd4021de1a7df01143b60b5"
     },
@@ -568,6 +580,10 @@
     {
       "path": "src/governor/executors.py",
       "sha256": "7235c382b8cf56725ee829e7a61ae04620333868a6b519302d53f14deb386c22"
+    },
+    {
+      "path": "src/governor/fifth_space_census.py",
+      "sha256": "1215b32818c0eea46860d8d239f431f169a36db197a03599eabbf9a14959e6ba"
     },
     {
       "path": "src/governor/graph_export.py",
@@ -654,6 +670,10 @@
       "sha256": "3d48881f5f419fd2c7eb7caa04a5bd79b61caa3ebd560a7fe59a1917e327cc4e"
     },
     {
+      "path": "src/governor/twin_hub_convergence.py",
+      "sha256": "c9ae5240709df236186b840e1cae3bc1fe04ad3fdbce0e3b0f01d7c9dbc5c9fa"
+    },
+    {
       "path": "src/governor/vault_context.py",
       "sha256": "475fd41741a3e45867055ea07fb45cd8806ce93b1dab1323cb6c9bf1c958652b"
     },
@@ -671,8 +691,8 @@
     },
     {
       "path": "tests/neo4j/full-database-live.test.mjs",
-      "sha256": "d7ae0021b72c0c469ab3f942d2fa2b9f5957eccf694c1300f7ca9b3aac1c8ae7"
+      "sha256": "5783f744c8f807b1103146031a3a3a1d1cbe95241619d3298138949ed907a027"
     }
   ],
-  "reportFingerprint": "f85d08ad10450c001d2d8cdcc9f2aa52c103f23db03d7c51b317e1f60650ddd3"
+  "reportFingerprint": "c61a9659019e7e51a3601a47fda0bf3724e58a6c46476d60f180744416f19fc4"
 }

@@ -87,8 +87,7 @@ repair) at the corresponding content check.
 - The amendment operates strictly via an **additive provenance link** (OD-7 claim
   event) citing the Gate 3 execution receipt and the R2 route validation.
 - Landing-time fence verification (this pass, 2026-10-10):
-  `git diff -- provenance/DECISION_LEDGER.md` is empty; ledger raw-byte SHA-256 at
-  memo date `8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362`.
+  `git diff -- provenance/DECISION_LEDGER.md` is empty; ledger raw-byte SHA-256 at memo date `8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362`.
 - The D4 qualifier (`provenance/DECISION_LEDGER.md:2260-2266`) remains binding at
   every gate: derivation difficulty under the registered route, not authorship proof.
 
