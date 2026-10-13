@@ -1,0 +1,494 @@
+{
+  "receiptId": "BL-080-D4-RECORD-AMENDMENT",
+  "ticket": "BL-080",
+  "status": "AMENDED_ATOMIC_LANDING",
+  "amendmentDate": "2026-10-12",
+  "scope": {
+    "included": [
+      "One append-only decision-ledger entry (ENTRY 18, provenance/DECISION_LEDGER.md:3130-3330) amending the D4 record additively toward derivable-from-derived-inputs per the Gate 3 execution receipt",
+      "This compliance receipt under qa/specs/",
+      "Status propagation: scrum/BACKLOG.md BL-080 Gate 4 section (the D4 corridor marked complete - all four gates plus this second amendment; the un-granting program's completion recorded; follow-on pointers, no new captures) and revision row v1.56",
+      "Recorded release state: the pre-existing validate:ledger-pins inventory (13 violations; specific file-level breakdown and provenance in predeclaredGates) - recorded, not repaired; repair queued as BL-058",
+      "Root inventories MANIFEST.json and CHECKSUMS.sha256 (refreshed in the same atomic commit)"
+    ],
+    "excluded": [
+      "Runtime, schema, canonical topology, Court runtime, Neo4j projection, graph or policy changes",
+      "Governs admission: the amendment records derivable contact geometry and its provenance independence, not the GOVERNS relation itself",
+      "Boundary-wall dissolution claims (the wall holds at every phase - verified per-phase in the lift); G1 movement (no intra-330 edges)",
+      "D7 claim or D7 amendment (hypothesis-tier preserved; the measured asymmetry, refined by BL-070 to an interval-transport failure, is carried as data)",
+      "Anchoring-remainder resolution (the A0/A1 anchor sets + tier/role partition, the orientation bit, and the presentation conventions remain carried per ENTRY 16/17)",
+      "Directional-semantics assignment; INV-5 graduation; M-walkability promotion",
+      "Any mutation of ENTRY 10's or ENTRY 15's historical bytes (the record is linked, not rewritten)",
+      "Release promotion or green-release claim"
+    ]
+  },
+  "amendment": {
+    "entry": "ENTRY 18",
+    "heading": "## ENTRY 18 - D4 record amendment - record_amended (derivable-from-derived-inputs)",
+    "statusToken": "record_amended (derivable-from-derived-inputs)",
+    "statusTokenRationale": "dual form per the ENTRY 15 precedent (maintainer ruling 2026-10-10): the mechanism (record_amended, the additive event class) and the content (derivable-from-derived-inputs, what the record now says) at their correct granularities",
+    "transition": "record_amended (derivable-via-R2) -> record_amended (derivable-from-derived-inputs)",
+    "mechanism": "second additive OD-7 provenance link; ENTRY 10 and ENTRY 15 stand immutable and are linked forward, never edited or erased; historical readers find the original failure and the first amendment intact with this amendment discoverable alongside them",
+    "ledgerShaLineage": {
+      "preCorridor": {
+        "sha256": "8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362",
+        "byteLength": 174314,
+        "landing": "ead2eec",
+        "role": "historical lineage quotation (the pre-amendment ledger at the Gate 1 ruling; ENTRY 10 era)"
+      },
+      "postEntry15": {
+        "sha256": "e551850c66f7d214700e9669a6a83254f264dda90211586de197fc15408186e4",
+        "byteLength": 183663,
+        "commit": "880c346",
+        "role": "historical lineage quotation (the ledger at the first amendment's landing; ENTRY 15 era)"
+      },
+      "preAmendmentAuthority": {
+        "sha256": "701ff3006e235e331b28ae2d3a045111875e26486fb52368c9c0bd5c5e3bc6d8",
+        "byteLength": 202266,
+        "blobOid": "b19eff9788ea6eb4d788d2685cc73e184fdb2d04",
+        "role": "current pre-amendment authority at this landing (observed): the ledger after ENTRY 16/17, before this append"
+      }
+    },
+    "amendedLedger": {
+      "path": "provenance/DECISION_LEDGER.md",
+      "recipe": "raw-bytes-sha256",
+      "sha256": "fb2b9b9ef552c69217e764b42fe8cff37a3c795c4d1a620784664f195527e66e",
+      "byteLength": 214223,
+      "blobOid": "06252d7030a009e1fcc7b520fc03b2e5e35ce22e",
+      "computation": "deterministically computed pre-commit on finalized worktree bytes (shasum -a 256; git hash-object --no-filters); post-commit verification must reproduce digest and OID from the committed blob",
+      "status": "DECLARED_POST_COMMIT (not reported as observed before the commit exists)"
+    },
+    "entry18Attestation": {
+      "entryId": "ENTRY 18",
+      "span": "3130-3330",
+      "recipe": "line-join-no-trailing-newline (split raw bytes on 0x0A; select 1-indexed content lines 3130 through 3330, the heading line through the final content line; join with 0x0A; no trailing newline; apply raw-bytes-sha256)",
+      "sha256": "9fb561f00cb2116cba0847a9fab8391c744c786ab07f6209def20f20b16efb9a",
+      "byteLength": 11950,
+      "keependsVariant": {
+        "sha256": "7ed4a45ba66f391a949db1627e61543af6406d4101923f111343e40c45f8ab42",
+        "byteLength": 11951
+      },
+      "overSpecification": "both variants are labeled with byte lengths so an auditor re-hashing with either tool reproduces one of the two values (the BL-057 Q4 precedent)",
+      "status": "DECLARED_POST_COMMIT (computed pre-commit on finalized bytes; result confirmed post-commit in the session record)"
+    },
+    "entry10Fence": {
+      "entryId": "ENTRY 10",
+      "span": "2195-2252",
+      "qualifierLines": "2260-2266",
+      "impossibilityNoteLines": "2163-2164",
+      "regionSha256_lineJoinNoTrailingNewline": "201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7",
+      "regionByteLength_lineJoinNoTrailingNewline": 3487,
+      "regionSha256_keepends": "50b8b73f75497082e6d2a38052a62da4f5374ee94fc08f8ff0312fc7746fbb00",
+      "regionByteLength_keepends": 3488,
+      "overSpecification": "dual-recipe over-specification per the BL-057 Q4 ruling; both values reproduced byte-exactly on the amended ledger at this landing",
+      "verifiedAtLanding": "ENTRY 10 region byte-untouched on the amended bytes (both recipes reproduced exactly); the append is a true end-append (sha256 of the first 202266 bytes of the amended ledger equals 701ff300...; sha256 of the first 174314 bytes equals 8b7084bc...)"
+    },
+    "entry15Fence": {
+      "entryId": "ENTRY 15",
+      "span": "2665-2810",
+      "recipe": "line-join-no-trailing-newline (the BL-057 declared recipe)",
+      "sha256": "26c0cb43ba32525406b59668d03b563da9c1f85f382f60dfa2f5d840c62b909e",
+      "byteLength": 9342,
+      "verifiedAtLanding": "ENTRY 15 region byte-intact on the amended bytes (digest and byte length reproduce exactly; line anchors unchanged)",
+      "status": "OBSERVED_PRE_COMMIT_AND_RECHECKED_POST_COMMIT"
+    }
+  },
+  "claim": {
+    "statement": "the D4 contract outcome is amended additively, a second time: the historical not_derived record (ENTRY 10) and the first amendment (ENTRY 15, derivable-via-R2) stand immutable (their bytes untouched, verified at this landing), and ENTRY 18 records that the D4 contact geometry is derivable from derived inputs via the admitted R2 route, per the Gate 3 execution receipt (qa/bl080-governs-derivation-receipt.json, status execution_verified, branch DERIVED_FROM_DERIVED_INPUTS). Status transition record_amended (derivable-via-R2) -> record_amended (derivable-from-derived-inputs).",
+    "disposition": "The single-phase under-coverage (4/14) is attributed to three individually verified route-geometry limitations (T1-link blindness; satellite-blind T-B joins; T-C midpoint overshoot); their joint sufficiency was validated by the Gate 3 execution run — the R2 route (cycle-walk + set-class predicate) derives O cleanly at all four licensed contexts. The derivation was then re-executed on derived inputs (the un-granting program's recovered κ, cycle-ground, and R-edges replacing the granted architecture) and produced the identical comparison block — field-for-field, digest-for-digest — proving the pipeline's semantics are independent of the inputs' provenance.",
+    "significance": "The input-isolation assertion is the amendment's distinguishing evidence: the derivation ran on derived inputs with zero granted bytes in the derivation path (grantedBytesInDerivationPath: 0, mechanically enforced by the two-sided static isolation check; 59 mutation probes rejected; one licensed observation read, asserted) — the first amendment in project history with this property. The D4 record's original not_derived outcome was derived under granted inputs; this corridor's re-derivation ran under derived inputs and produced the identical comparison block — proving the record's resolution is independent of the inputs' provenance, and completing the un-granting program's arc from granted architecture to derived architecture.",
+    "falsifiability": "The corridor's success branch was pre-registered (the BL-079 design specification's three-branch falsifiability structure; the deepest branch: provenance-dependence). The Gate 3 run determined the branch by measurement, never toward an expected outcome. The pre-registered baseline was the frozen receipt's comparison block itself; any deviation would have been a finding (the branch table existing and tested; a spurious-deviation probe rejected by the validator). No deviation occurred; the branch classified DERIVED_FROM_DERIVED_INPUTS. The provenance-independence of the record's resolution is thereby demonstrated at the registered bounds (derived inputs plus the named anchoring remainder).",
+    "d7Clause": "Hypothesis-tier context, carried honestly: the paired D7 test returned an asymmetric finding (literal-P 0/14, input-level class asymmetry; class-P 14/14 = U = O full-domain restatement, C2 guard; cycle-twin 0/7 as refined by BL-070: the modal orbit's rotations exist at interval 6 but don't transport to the D4 verification set {1, 2} — an interval-transport failure, not a rotational absence); the ti-pole's derivation behavior differs structurally from the fa-pole's; no D7 claim, no D7 amendment, D7 hypothesis-tier preserved; the asymmetry feeds the governs semantic layer as data.",
+    "scopeExclusions": [
+      "No governs admission (derivable contact geometry and its provenance independence, not the GOVERNS relation)",
+      "No wall-dissolution claims (the wall holds at every phase - verified per-phase in the lift)",
+      "No G1 movement",
+      "No directional-semantics assignment (polarity synthesis stays proposed; the directional-semantics hole remains a finding row)",
+      "No INV-5 graduation",
+      "No M-walkability promotion",
+      "No anchoring-remainder resolution",
+      "No canonical/Court/schema/Neo4j writes beyond the ledger's own append",
+      "No promotion or green-release claim"
+    ]
+  },
+  "evidence": {
+    "corridorChain": [
+      {
+        "link": "original failure (immutable, unedited)",
+        "path": "provenance/DECISION_LEDGER.md",
+        "span": "2195-2252",
+        "bindings": {
+          "regionSha256_lineJoinNoTrailingNewline": "201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7",
+          "regionSha256_keepends": "50b8b73f75497082e6d2a38052a62da4f5374ee94fc08f8ff0312fc7746fbb00",
+          "qualifier": "2260-2266",
+          "impossibilityNote": "2163-2164"
+        },
+        "content": "not_derived; cells 0/10/4/0; T-A 4/14; T-B = U; T-C exact; ledger SHA lineage 8b7084bc... (174314 bytes)"
+      },
+      {
+        "link": "prior amendment (first additive link)",
+        "path": "provenance/DECISION_LEDGER.md",
+        "span": "2665-2810",
+        "regionSha256": "26c0cb43ba32525406b59668d03b563da9c1f85f382f60dfa2f5d840c62b909e",
+        "regionByteLength": 9342,
+        "content": "record_amended (derivable-via-R2); receipt qa/specs/bl-057-d4-record-amendment.json; ledger SHA lineage e551850c... (183663 bytes)"
+      },
+      {
+        "link": "admission (Gate 1)",
+        "paths": [
+          "scrum/plan/bl-057-d4-amendment-spec.md"
+        ],
+        "commits": [
+          "6908e7b",
+          "ead2eec"
+        ],
+        "state": "claim_admitted (maintainer ruling 2026-10-10)",
+        "content": "six-token status set, three obstructions, falsifiability structure"
+      },
+      {
+        "link": "contract implementation (Gate 2 of the BL-057 corridor)",
+        "paths": [
+          "orrery/src/generated/d4-r2-contract.v1.json"
+        ],
+        "sha256": "8b269412c222e0d6a1f26db1d6c491cca6f7a03c52e7b200137ab09c9fbf3cf0",
+        "fingerprint": {
+          "name": "contractFingerprint",
+          "value": "5528510b495f12fa11ab713d8ee357e3798f728204eacd83ad491aafb8fdc7d5"
+        },
+        "commit": "59fa59a",
+        "content": "self-contained engine, deterministic generator, fail-loud validator, 12 vitest pins, four mutation-probe rejections"
+      },
+      {
+        "link": "Gate 3 execution run of the BL-057 corridor (the admitted R2 route)",
+        "paths": [
+          "qa/d4-r2-execution-receipt.json",
+          "scrum/plan/bl-057-gate3-execution-memo.md"
+        ],
+        "sha256": "7e14cbbc680d4827a0d82eb04f3c8c25c187b73d9435fdbade143f014a406fe2",
+        "fingerprints": {
+          "executionFingerprint": "3ed80e6fef3b1a5a8211d046facaf2f2d15daf7eb34a398ccfd1fded1c783634",
+          "implementationDigest": "2789c46cb542cc4d1771110b0cfe113fb44baabf40e478bb94e0dfe55cff70bd",
+          "gate2ContractFingerprint": "5528510b495f12fa11ab713d8ee357e3798f728204eacd83ad491aafb8fdc7d5"
+        },
+        "content": "calibration EXACT; DERIVED@X at four licensed contexts (R2 = O); construction join = U contrast; D7 asymmetric analogue hypothesis-tier"
+      },
+      {
+        "link": "design layer (BL-079 design specification)",
+        "paths": [
+          "scrum/plan/bl-079-governs-derivation-design-spec.md"
+        ],
+        "content": "per-stage derived-input mapping; remaining-grant verification (conditional green light); pre-registered success criteria; three-branch falsifiability structure; output contract"
+      },
+      {
+        "link": "Gate 2 of this corridor (derived-input implementation)",
+        "paths": [
+          "scrum/plan/bl-080-governs-derivation-memo.md",
+          "orrery/src/generated/bl080-governs-derivation.v1.json"
+        ],
+        "sha256": "50735819917ae36d59e49ef352d2867af377bff9a8186f720b28494e8010b398",
+        "fingerprint": {
+          "name": "derivationFingerprint",
+          "value": "63699437ed2a38713ea947edd3a9978cdc54a02cac5ebee38b286bb7370ed8af"
+        },
+        "content": "derived projection set-equal to the frozen projection (anchors 14/14, R 28/28, E 14/14; missing [] / extra []); derived predicate 14/0/0/14; orientation labels c -> 6-c; region-scoped, grantedBytesInDerivationPath: 0; frozen validateProjection PASS"
+      },
+      {
+        "link": "Gate 3 of this corridor (execution on derived inputs)",
+        "paths": [
+          "scrum/plan/bl-080-governs-derivation-execution-memo.md",
+          "qa/bl080-governs-derivation-receipt.json"
+        ],
+        "sha256": "b7f9bfbcc13c14f02e75f686c820a7ff02ad4c0e5057e5ef512a0e6acc464f6a",
+        "fingerprints": {
+          "executionFingerprint": "437de068456cc7280e14015f442c720ebebbe4150f3abdf4ff221e774f7a82e3",
+          "implementationDigest": "2d53cee4b5f92f22cafadf2fd654351e0688b49f1b8861094fb2c52de9a6642a",
+          "frozenClosureDigest": "7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f"
+        },
+        "content": "branch DERIVED_FROM_DERIVED_INPUTS; comparison canonically equal field-for-field 9/9; whole-block digests equal 1f66764b...; seal generationDigest c4a7f48d... matching the frozen receipt's seal; category not_derived; single observation read asserted; 59 mutation probes rejected"
+      },
+      {
+        "link": "the un-granting program (the derived architecture)",
+        "phases": [
+          {
+            "phase": "Phase 1 kappa (BL-063)",
+            "artifact": "orrery/src/generated/bl063-office-reconstruction.v1.json",
+            "sha256": "57932f37d3acc867bf8c44d00d2ced44d4b2d8ccf39b871c2241e685b6e32b18",
+            "fingerprint": {
+              "name": "reconstructionFingerprint",
+              "value": "6d33c67be7b8f87b8ad2f964cd3560ebcbc1ec0dc6b2088ad1f223c35caff8c3"
+            }
+          },
+          {
+            "phase": "Phase 2 cycle-ground (BL-064)",
+            "artifact": "orrery/src/generated/bl064-cycle-ground.v1.json",
+            "sha256": "9432aa764a57823a06a4d36db3209507ed85af0f7675d3708ef388e369da6f24",
+            "fingerprint": {
+              "name": "derivationFingerprint",
+              "value": "aa975820136658dd2fb3c84d98b34bf7a1901d39edd6548a300f458858305918"
+            }
+          },
+          {
+            "phase": "Phase 3 R-edges (BL-066)",
+            "artifact": "orrery/src/generated/bl066-r-edge-derivation.v1.json",
+            "sha256": "ac2db3d92df89f9ae2e5f19dfc7c0489a56f55dfa8bd154a22ad74c875e7a8ab",
+            "fingerprint": {
+              "name": "derivationFingerprint",
+              "value": "94f0661ff6e76b0dea69fbe9f09ead24da7901393fb735495f3a25c3d9a1a886"
+            }
+          }
+        ]
+      },
+      {
+        "link": "the coordinate relationship",
+        "paths": [
+          "orrery/src/generated/bl075-coordinate-search.v1.json",
+          "orrery/src/generated/bl073-isometry-probe.v1.json"
+        ],
+        "artifacts": [
+          {
+            "artifact": "orrery/src/generated/bl075-coordinate-search.v1.json",
+            "sha256": "1cb710d872f3b5564c138c83c9fd589b2655a9133bf7aba8b1455cc28d426914",
+            "fingerprint": {
+              "name": "investigationFingerprint",
+              "value": "88838e225276432427f2a7c765d8e1f9105c5c6bd87d4db04ef5e1bb2e93704e"
+            },
+            "content": "the Klein-4 coordinate algebra (T1 = x->5x, T2 = x->7x, rho = x->11x; canonically determined by 11u = 7 mod 12)"
+          },
+          {
+            "artifact": "orrery/src/generated/bl073-isometry-probe.v1.json",
+            "sha256": "2dca3e8b95eb3012136dd6e849b12b33b833ce0ef86d1580b376e6a06e3ce260",
+            "fingerprint": {
+              "name": "investigationFingerprint",
+              "value": "811fa786f3a03b03b0c334fe797c85b9b4aeed93332a183be43f86fa1133a65c"
+            },
+            "content": "PARTIAL_ISOMETRY: three shared layers, one divergent (the interval-transport layer independent)"
+          }
+        ]
+      },
+      {
+        "link": "the selection predicate",
+        "paths": [
+          "scrum/plan/bl-055-d4-selection-review-memo.md",
+          "orrery/src/generated/d4-selection-review.v1.json"
+        ],
+        "sha256": "40a1d7586c8643bac351a1b70c09fce35a977ce200888d08a40d2cc0022649d8",
+        "fingerprint": {
+          "name": "reviewFingerprint",
+          "value": "6d11fd932efbe96892b3cf2e6a6cdad6f54e69cd2a8f284ebb72232c59d8b745"
+        },
+        "content": "P(s) = forte-7-27, clean 14/14, Tn-invariant, representation-stable"
+      },
+      {
+        "link": "motivation legs",
+        "paths": [
+          "scrum/plan/bl-029-d-tier-operator-probe-memo.md",
+          "scrum/plan/bl-035-semantic-derivation-census-memo.md",
+          "scrum/plan/bl-031-semantic-transport-probe-memo.md"
+        ],
+        "content": "boundary isolation; directional non-derivability; Phase 2 transport layering"
+      },
+      {
+        "link": "frame registrations (interpretation vocabulary only, per the membrane)",
+        "paths": [
+          "scrum/plan/harmonic-comprehension-map.md:138-526 (sections 2.6-2.7, including the Track 2 section 2.7 amendment landed 601d073)"
+        ],
+        "context": "one passed empirical check during the arc (identity-preservation under transport, fec745a); one pending test (directional semantics, gated on section 2.7 Q2) - carried as context, not authority"
+      }
+    ],
+    "sourceBindings": [
+      {
+        "artifact": "qa/d4-production-receipt.json",
+        "sha256": "2057a75702ddb4952151d962fb680474ab6543387b604b3b5c37758b8e9c49d0",
+        "role": "frozen D4 comparison (the pre-registered baseline for the Gate 3 derived-input run)"
+      },
+      {
+        "artifact": "qa/d4-production-generation.json",
+        "sha256": "f9ab736eb14a31ab68d0b1424e7e20dffc42768f7a8ccbf358e6f0ce107496ae",
+        "role": "frozen projection and sealed generation (the sealing context's reference)"
+      },
+      {
+        "artifact": "qa/d4-production-seal.json",
+        "sha256": "2b1c6c284b52850463ff05179e43976b845196e6d96bd6e80deccf9de38a0b58",
+        "role": "the frozen seal (generationDigest c4a7f48d...; matched by the derived-input run)"
+      },
+      {
+        "artifact": "orrery/src/generated/bl080-governs-derivation.v1.json",
+        "sha256": "50735819917ae36d59e49ef352d2867af377bff9a8186f720b28494e8010b398",
+        "role": "the Gate 2 derived projection (the run's S0' input; fingerprint 63699437...)"
+      },
+      {
+        "artifact": "qa/bl080-governs-derivation-receipt.json",
+        "sha256": "b7f9bfbcc13c14f02e75f686c820a7ff02ad4c0e5057e5ef512a0e6acc464f6a",
+        "role": "the Gate 3 execution receipt (status execution_verified; branch DERIVED_FROM_DERIVED_INPUTS)"
+      }
+    ],
+    "pointerCitations": {
+      "artifact": "qa/bl080-governs-derivation-receipt.json",
+      "rule": "CONV-EVIDENCE-BINDING-001 section 1.1 JSON Pointer citations",
+      "pointers": [
+        "/status",
+        "/statusRationale",
+        "/branchClassification/classification",
+        "/executionFingerprint",
+        "/gate2DerivationFingerprint",
+        "/bindings/implementationDigest",
+        "/bindings/frozenClosureDigest",
+        "/baselineComparison/canonicallyEqual",
+        "/baselineComparison/frozenComparisonDigest",
+        "/baselineComparison/runComparisonDigest",
+        "/seal/generationDigest",
+        "/seal/frozenGenerationDigest",
+        "/seal/matchesFrozen",
+        "/isolation/grantedBytesInDerivationPath",
+        "/observation/readCount",
+        "/observation/asserted",
+        "/inputProvenance",
+        "/fences/recordAmendment",
+        "/fences/d4Record",
+        "/fences/d7Control",
+        "/notAccomplished"
+      ],
+      "pointerVerification": "All pointers resolved against the staged artifact bytes pre-commit, in the same landing step that verifies the ledger fences.",
+      "byteIdentity": "Carried by the whole-file binding over the receipt (recipe raw-bytes-sha256; digest b7f9bfbcc13c14f02e75f686c820a7ff02ad4c0e5057e5ef512a0e6acc464f6a). No span binding is instantiated.",
+      "spanBindings": "None instantiated; the decision ledger is cited by entry identity with labeled region hashes as amendment-internal redundancy (R2 definition-scope pass)."
+    },
+    "machineChecks": {
+      "gate2": {
+        "builder": "scripts/build-bl080-governs-derivation.mjs",
+        "validator": "orrery/scripts/validate-bl080-governs-derivation.mjs",
+        "pins": "orrery/src/bl080-governs-derivation.test.ts (12 pins)",
+        "mutationProbes": "60 (46 artifact-drift + 2 fingerprint + 10 smuggled-read/presence-strip/proof-strip rejected; 1 permissive probe passing)"
+      },
+      "gate3": {
+        "builder": "scripts/build-bl080-governs-derivation-execution.mjs",
+        "validator": "orrery/scripts/validate-bl080-governs-derivation-execution.mjs",
+        "pins": "orrery/src/bl080-governs-derivation-execution.test.ts (12 pins)",
+        "schema": "schemas/bl080-governs-derivation-receipt.schema.json",
+        "mutationProbes": "59 (48 receipt-drift + 2 fingerprint + 4 smuggled-read/double-read + 3 presence-strip + 1 proof-strip rejected; 1 permissive region probe passing)"
+      },
+      "unGrantingProgram": {
+        "phase1": "scripts/build-bl063-office-reconstruction.mjs + orrery/scripts/validate-bl063-office-reconstruction.mjs (5 probes rejected)",
+        "phase2": "scripts/build-bl064-cycle-ground.mjs + independent validator (10 probes rejected)",
+        "phase3": "scripts/build-bl066-r-edge-derivation.mjs + independent validator (25 probes rejected)"
+      },
+      "firstCorridor": {
+        "gate3": "scripts/build-d4-r2-execution-receipt.mjs + orrery/scripts/validate-d4-r2-execution-receipt.mjs (ledger fence: execution-time prefix preservation)"
+      }
+    },
+    "crossGateReDerivation": "The corridor's load-bearing quantities (projection set-equality 14/14+28/28+14/14; predicate confusion 14/0/0/14; seal c4a7f48d...; comparison block 1f66764b...; single observation read) were re-derived independently at Gate 2 (60 probes), Gate 3 (59 probes), and re-verified from the landed bytes at this landing pass (grounding receipt G-1...G-13, all PASS)."
+  },
+  "compliance": {
+    "R1": {
+      "status": "OBSERVED_PRE_COMMIT_AND_DECLARED_POST_COMMIT",
+      "observed": "pre-amendment ledger sha256 701ff300... and byteLength 202266 read from the pre-append worktree and from the committed ENTRY 17 blob (git rev-parse b19eff97...); ENTRY 10 region reproduced under both labeled recipes (201efe81.../3487; 50b8b73f.../3488); ENTRY 15 region reproduced (26c0cb43.../9342); the append verified as a true end-append (sha256 of the first 202266 bytes of the amended ledger = 701ff300...; sha256 of the first 174314 bytes = 8b7084bc...); amended-ledger digest, byteLength and blob OID computed on finalized post-append bytes; ENTRY 18 region digest computed under the declared line-join recipe (and the keepends variant); all landing files present at their registered paths.",
+      "declared": "Post-commit, the committed blob piped to raw-bytes-sha256 must equal fb2b9b9ef552c69217e764b42fe8cff37a3c795c4d1a620784664f195527e66e; the ENTRY 18 region extracted from the committed blob under the declared recipe must equal 9fb561f00cb2116cba0847a9fab8391c744c786ab07f6209def20f20b16efb9a; the ENTRY 10 and ENTRY 15 regions and the frozen prefixes must reproduce. Declared obligation; not reported as observed before the commit exists; results confirmed post-commit in the session record."
+    },
+    "R2": {
+      "status": "PASS_DEFINITION_SCOPE",
+      "detail": "No whole-file ledger authority binding is introduced. The three ledger digests are historical lineage quotations (supersedesWholeFileSha-class per R2 permitted use 2), not current-authority checks. ENTRY 10, ENTRY 15, and ENTRY 18 are cited by entry identity and line ranges as human locators; the labeled region hashes are amendment-internal redundancy per the BL-057 Q4 over-specification precedent, not evidenceBindings span bindings. No span binding is instantiated. The append is an end-append: it preserves the old prefix; insertion or alteration before its endpoint does not."
+    },
+    "R3": {
+      "status": "NOT_APPLICABLE",
+      "detail": "No living pipeline payload is regenerated, split or refreshed by this landing; the corridor's artifacts and bindings are untouched. MANIFEST/CHECKSUMS are root inventory envelopes."
+    },
+    "R4": {
+      "status": "PASS",
+      "detail": "Recipe raw-bytes-sha256 per provenance/digest-recipes.json (pinned primitive scripts/manifest-utils.mjs:31-37); digests computed with standard utilities over raw bytes; the ENTRY 18 region recipe is R2 prefix selection applied to raw bytes, declared explicitly; the ENTRY 10 dual-recipe over-specification removes tool-dependent ambiguity."
+    },
+    "R5": {
+      "status": "PASS_FOR_ADMISSION_SCOPE",
+      "detail": "No project emitter produced this amendment receipt's evidence; the corridor's emitters and validators are recorded in evidence.machineChecks. Inventory emission recorded below."
+    },
+    "R6": {
+      "status": "DECLARED_POST_COMMIT",
+      "detail": "All amendment evidence (ENTRY 18, this receipt, the backlog propagation, refreshed inventories) is registered by the same atomic commit; the post-commit obligation below is the R1 check. Receipt registered at birth under qa/specs/."
+    }
+  },
+  "maintainerAttestation": {
+    "rulings": [
+      "OD-80-4-1 ledger SHA citation form: confirmed - cite all three (pre-corridor lineage 8b7084bc...; ENTRY-15-landing lineage e551850c...; current pre-amendment authority 701ff300...); the three-SHA lineage is the ledger's own history and the amendment entry records it completely",
+      "OD-80-4-2 status-token form: confirmed - dual form record_amended (derivable-from-derived-inputs), mirroring ENTRY 15's mechanism/content dual",
+      "OD-80-4-3 D2 disposition second sentence: confirmed - carried verbatim; the provenance-independence proof is the amendment's load-bearing claim and matches the receipt's DERIVED_FROM_DERIVED_INPUTS classification byte-for-byte; no paraphrase",
+      "OD-80-4-4 D7 clause BL-070 refinement: confirmed - ENTRY 15's text plus the BL-070 interval-transport clause, included verbatim (OD-70-6's bounded refinement, already ruled)",
+      "OD-80-4-5 backlog scope: confirmed - single BL-080 Gate 4 section with (a) the D4 corridor complete, (b) the un-granting program completion recorded, (c) follow-on pointers only; no new ticket captures without separate rulings",
+      "OD-80-4-6 release-gate handling: confirmed - record, not repair (the ledger-pins 13-violation inventory as accepted release state, BL-058 queued); the full-validate first stop observed and recorded",
+      "Addition ruling: one explicit sentence added to the input-isolation assertion naming the amendment's significance - the first amendment whose evidence is provenance-independent; the record's original not_derived outcome was derived under granted inputs, this re-derivation ran under derived inputs and produced the identical comparison block, completing the un-granting program's arc"
+    ],
+    "authority": "Maintainer rulings 2026-10-12, this session (all six confirmed as recommended, plus the significance-sentence addition); landing executed under explicit 'execute the plan' authorization. Conversation authority, not a cryptographically authenticated signature (ENTRY 11 precedent)."
+  },
+  "inventoryEmission": "scripts/build-manifest.mjs via npm run package:manifest; package seven-governors-integrated-release 1.9.0-dev from package.json. The inventory generatedAt value is release-derived, not an execution timestamp.",
+  "predeclaredGates": [
+    {
+      "gate": "STALE_TWIN_HUB_CONVERGENCE",
+      "record": "provenance/DECISION_LEDGER.md ENTRY 10/11/12/13; qa/specs/fivefold-constructs-001-r1-forensics.md"
+    },
+    {
+      "gate": "STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE",
+      "record": "qa/d4-production-landing.json; docs/specs/fivefold_constructs_engine_spec.md section 4.1"
+    },
+    {
+      "gate": "validate:ledger-pins (pre-existing inventory, recorded not repaired)",
+      "status": "FAIL, 13 violations: 12 unreviewed_literal_pin + 1 literal_ledger_pin",
+      "inventory": [
+        "scripts/build-phase-c-probe.mjs: PHASE_A_FINGERPRINT (unreviewed_literal_pin)",
+        "scripts/build-d4-selection-review.mjs: PHASE_A_FINGERPRINT, PHASE_C_FINGERPRINT (unreviewed_literal_pin)",
+        "scripts/build-d4-r2-route-review.mjs: PHASE_C_FINGERPRINT, SELECTION_REVIEW_FINGERPRINT (unreviewed_literal_pin)",
+        "scripts/build-d4-r2-contract.mjs: PHASE_C_FINGERPRINT, SELECTION_REVIEW_FINGERPRINT (unreviewed_literal_pin)",
+        "scripts/build-d4-r2-execution-receipt.mjs: CONTRACT_FINGERPRINT, DECISION_LEDGER_SHA256 (literal_ledger_pin; structurally non-allowlistable), ENTRY10_SHA256, FROZEN_IMPLEMENTATION_DIGEST, PHASE_C_FINGERPRINT, SELECTION_REVIEW_FINGERPRINT (unreviewed_literal_pin)"
+      ],
+      "provenance": "pre-existing at pre-corridor commit 85a62a6 (identical 13 violations reproduced in a detached worktree); unchanged across the BL-080 corridor landings (zero added; the Gate 3 builder's new immutable-baseline literal pins were reviewed and allowlisted in schemas/ledger-pin-allowlist.json)",
+      "repairQueued": "BL-058 (captured in scrum/BACKLOG.md); scoping document scrum/plan/ledger-pin-migration.md; destination design provenance/EVIDENCE_BINDING_CONVENTION.md R2 (entry-scoped bindings); the ledger-pin scanner and allowlist are untouched by this landing",
+      "specificity": "this inventory and this provenance only - an arbitrary new STALE_* state or a new ledger-pin violation shape still halts"
+    }
+  ],
+  "validation": {
+    "full": {
+      "command": "npm run validate",
+      "status": "OBSERVED",
+      "exitCode": 1,
+      "firstFailure": "validate:ledger-pins (pre-existing recorded inventory: 13 violations - 12 unreviewed_literal_pin + 1 literal_ledger_pin; see predeclaredGates)",
+      "outputSha256": "e20feafafa5dd2c08aa625660ea7da8db57a75e344f86209759568fce7c0a2a7",
+      "outputBytes": 12198,
+      "scope": "Full command invoked at the final pre-commit admission tree with all landing files present (ENTRY 18 as appended, this receipt, the BACKLOG propagation); the chained stages stop at the first failing suite. The first-stage (validate:ledger-pins) output is byte-identical to the pre-landing worktree run (same output digest be58b3ce4308e81eb9ae66e3b792946d94a0d14fcc239e6d475065ae1b3df010), confirming the failure is pre-existing and untouched by this landing. No refresh or bypass attempted.",
+      "disposition": "Predeclared recorded state (specific inventory per this landing's ruling): recorded, not repaired; repair queued as BL-058. The two original stale gates remain predeclared for later chained stages (validate:twin-hub independently confirmed STALE_TWIN_HUB_CONVERGENCE). Any other failure halts. No green integrated release claimed."
+    },
+    "focused": {
+      "orrery:bl080-governs-derivation-execution:check": "PASS (builder --check fresh; independent validator PASS; 59 mutation probes; the ledger fence re-verified against the amended ledger: pre-amendment prefix and ENTRY 10 region preserved)",
+      "orrery:bl080-governs-derivation:check": "PASS (builder --check fresh; independent validator PASS; 60 mutation probes; region-scoped isolation, grantedBytesInDerivationPath: 0)",
+      "orrery:d4-r2-execution-receipt:check": "PASS (runner --check byte-identical rebuild; independent validator PASS; ledgerNote: additive post-execution amendment, ENTRY 10 region unchanged)",
+      "validate:ledger-pins": "FAIL unchanged (13 violations - 12 unreviewed_literal_pin + 1 literal_ledger_pin; output byte-identical pre/post landing, digest be58b3ce...; recorded not repaired)",
+      "validate:prose-consistency": "FAIL unchanged (16 violations, 416 authoritative checks passed; the violation set is the pre-existing inventory, none in the touched files; generated output qa/validation-prose-consistency.json restored to HEAD per house discipline)",
+      "orrery:check": "exit 0 (all gates including the BL-080 Gate 3 execution gate; tsc --noEmit clean)"
+    },
+    "manifest": {
+      "command": "npm run validate:manifest",
+      "status": "DECLARED_POST_COMMIT",
+      "detail": "Final envelope check runs after this receipt's bytes are registered; recording an observed PASS inside the receipt itself would falsify the check's subject. The observed result is reported in the session record."
+    }
+  },
+  "postCommitObligation": {
+    "point": "c",
+    "subject": "ENTRY 18 region and the amended ledger",
+    "checks": [
+      "git cat-file blob 06252d7030a009e1fcc7b520fc03b2e5e35ce22e piped to raw-bytes-sha256 must equal fb2b9b9ef552c69217e764b42fe8cff37a3c795c4d1a620784664f195527e66e",
+      "the ENTRY 18 region of the committed blob (content lines 3130-3330, joined with 0x0A, no trailing newline) must hash to 9fb561f00cb2116cba0847a9fab8391c744c786ab07f6209def20f20b16efb9a",
+      "the ENTRY 10 region of the committed blob (content lines 2195-2252, line-join recipe) must still hash to 201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7",
+      "the ENTRY 15 region of the committed blob (content lines 2665-2810, line-join recipe) must still hash to 26c0cb43ba32525406b59668d03b563da9c1f85f382f60dfa2f5d840c62b909e",
+      "the first 202266 bytes of the committed blob must hash to 701ff3006e235e331b28ae2d3a045111875e26486fb52368c9c0bd5c5e3bc6d8 (pre-amendment prefix preserved)",
+      "the first 174314 bytes of the committed blob must hash to 8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362 (pre-corridor prefix preserved)"
+    ],
+    "status": "DECLARED; results confirmed post-commit in the session record, never written into this receipt as an observed PASS before the commit exists."
+  },
+  "evidencePaths": {
+    "new": [
+      "qa/specs/bl-080-d4-record-amendment.json"
+    ],
+    "modified": [
+      "provenance/DECISION_LEDGER.md",
+      "scrum/BACKLOG.md",
+      "MANIFEST.json",
+      "CHECKSUMS.sha256"
+    ]
+  },
+  "protectedScope": "Existing test suites, preflight controls, D4 evidence, canonical data, schemas, Court runtime, Neo4j projection, shared sidecars and prior receipts were not modified; the only ledger change is the ENTRY 18 append; the BL-057 corridor's receipt bytes and all corridor fingerprints (BL-055/BL-063/BL-064/BL-066/BL-073/BL-075/BL-080-Gate-2/BL-080-Gate-3) are unchanged."
+}

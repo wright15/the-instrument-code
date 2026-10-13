@@ -3124,3 +3124,207 @@ anchors remain unchanged; this entry is append-only. The historical record is
 linked, not rewritten: any reading of this entry as changing the GOVERNS
 relation's authority, amending ENTRY 10, ENTRY 15, or ENTRY 16, or moving D7 is
 rejected.
+
+---
+
+## ENTRY 18 - D4 record amendment - record_amended (derivable-from-derived-inputs)
+
+**Date:** 2026-10-12. **Status:** `record_amended (derivable-from-derived-inputs)` -
+the record-amendment gate of the BL-080 corridor (Gate 4); second additive OD-7
+provenance link on the D4 record; release gates recorded, not cleared.
+
+### Decision
+
+The D4 contract outcome is amended **additively, a second time**. The historical
+`not_derived` record (ENTRY 10, `provenance/DECISION_LEDGER.md:2195-2252`) stands
+immutable - its bytes are untouched, verified at this landing by prefix
+preservation (sha256 of the first 174314 bytes of the amended ledger =
+`8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362`) - and the
+first amendment (ENTRY 15, `:2665-2810`, region SHA-256
+`26c0cb43ba32525406b59668d03b563da9c1f85f382f60dfa2f5d840c62b909e`, 9342 bytes,
+verified byte-intact at this landing) stands likewise untouched. This entry links
+forward from both, recording that the D4 contact geometry is
+**derivable-from-derived-inputs**, per the Gate 3 execution receipt
+(`qa/bl080-governs-derivation-receipt.json`, raw-byte SHA-256
+`b7f9bfbcc13c14f02e75f686c820a7ff02ad4c0e5057e5ef512a0e6acc464f6a`; status
+`execution_verified`; branch `DERIVED_FROM_DERIVED_INPUTS`; comparison block
+canonically equal field-for-field, 9/9, whole-block digests equal at
+`1f66764bf441d3a7b4c18dc65a64955f82570813648286fbcf3ef806c0c8850b`). Status
+transition: `record_amended (derivable-via-R2) -> record_amended
+(derivable-from-derived-inputs)`. The record is **linked, not rewritten**:
+historical readers find ENTRY 10's original failure and ENTRY 15's first
+amendment intact, with this amendment discoverable alongside them.
+
+The disposition (D2's formulation, carried verbatim with the
+provenance-independence proof):
+
+> "The single-phase under-coverage (4/14) is attributed to three individually
+> verified route-geometry limitations (T1-link blindness; satellite-blind T-B
+> joins; T-C midpoint overshoot); their joint sufficiency was validated by the
+> Gate 3 execution run — the R2 route (cycle-walk + set-class predicate) derives
+> O cleanly at all four licensed contexts. **The derivation was then re-executed
+> on derived inputs (the un-granting program's recovered κ, cycle-ground, and
+> R-edges replacing the granted architecture) and produced the identical
+> comparison block — field-for-field, digest-for-digest — proving the pipeline's
+> semantics are independent of the inputs' provenance.**"
+
+The input-isolation assertion (this amendment's unique evidence): the derivation
+ran on **derived inputs with zero granted bytes in the derivation path**
+(`grantedBytesInDerivationPath: 0`, mechanically enforced by the two-sided static
+isolation check; 59 mutation probes rejected; one observation read, asserted) -
+the first amendment in project history with this property. This property is the
+amendment's distinguishing evidence: the D4 record's original `not_derived`
+outcome was derived under granted inputs; this corridor's re-derivation ran under
+derived inputs and produced the identical comparison block — proving the record's
+resolution is independent of the inputs' provenance, and completing the
+un-granting program's arc from granted architecture to derived architecture. The
+run sealed under the frozen sealing context; its `generationDigest`
+`c4a7f48dd982c6d96f594ca8c03e045092b9a00b9615e05ef2d14648f04f83d7` matches the
+frozen seal; the canonical observation surface was read exactly once (the single
+licensed read), and the frozen comparison block was reproduced field-for-field
+with equal whole-block digests.
+
+### D7 Clause (Hypothesis-Tier, Carried Honestly)
+
+The paired D7 test returned an **asymmetric finding**: the literal predicate
+`[forte = '7-27']` selects 0/14 (D7 contact satellites are set class 7-2 -
+input-level asymmetry); the domain-class predicate `[forte = '7-2']` selects
+14/14 = U = O - a full-domain restatement (C2 guard), never a selective
+derivation; the cycle-twin verification is 0/7 *as refined by BL-070: the modal
+orbit's rotations exist at interval 6 but don't transport to the D4 verification
+set {1, 2}* - an interval-transport failure, not a rotational absence. The
+ti-pole's derivation behavior differs structurally from the fa-pole's (measured
+asymmetry across selection, structure and predicate axes). **No D7 claim, no D7
+amendment; D7 remains hypothesis-tier, preserved.** The asymmetry feeds the
+governs semantic layer as data.
+
+### Scope
+
+This entry claims exactly: the D4 contact geometry is derivable from derived
+inputs via the admitted R2 route, per the Gate 3 execution receipt - an additive
+provenance link in the decision ledger, no more.
+
+Excluded (carried verbatim from the corridor's standing fences): no governs
+admission (this amendment records *derivable contact geometry and its provenance
+independence*, not the GOVERNS relation itself); no wall-dissolution claims (the
+wall holds at every phase - verified per-phase in the lift); no G1 movement; no
+directional-semantics assignment (the polarity synthesis stays proposed; the
+directional-semantics hole remains a finding row); no INV-5 graduation; no
+M-walkability promotion; no canonical/Court/schema/Neo4j writes beyond the
+ledger's own append; no promotion or green-release claim.
+
+### References
+
+- The original failure (immutable, unedited): ENTRY 10
+  (`provenance/DECISION_LEDGER.md:2195-2252`; cells 0/10/4/0; T-A 4/14; T-B = U;
+  T-C exact); qualifier `:2260-2266` (derivation difficulty under the registered
+  route, not authorship proof); pre-registered impossibility note `:2163-2164`;
+  region SHA-256 `201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7`
+  (line-join recipe) and
+  `50b8b73f75497082e6d2a38052a62da4f5374ee94fc08f8ff0312fc7746fbb00` (keepends
+  variant).
+- The prior amendment: ENTRY 15 (`:2665-2810`; region SHA-256
+  `26c0cb43ba32525406b59668d03b563da9c1f85f382f60dfa2f5d840c62b909e`/9342;
+  status `record_amended (derivable-via-R2)`; receipt
+  `qa/specs/bl-057-d4-record-amendment.json`). The ledger's own history, three
+  SHAs: pre-corridor
+  `8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362` (174314
+  bytes; landing `ead2eec`); post-ENTRY-15
+  `e551850c66f7d214700e9669a6a83254f264dda90211586de197fc15408186e4` (183663
+  bytes; commit `880c346`); current pre-amendment authority
+  `701ff3006e235e331b28ae2d3a045111875e26486fb52368c9c0bd5c5e3bc6d8` (202266
+  bytes; this landing).
+- Gate 1 (admission claim): `scrum/plan/bl-057-d4-amendment-spec.md` (`6908e7b`;
+  ruling landing `ead2eec`) - six-token status set, three obstructions,
+  falsifiability structure.
+- Gate 2 (this corridor's design layer):
+  `scrum/plan/bl-079-governs-derivation-design-spec.md`;
+  `scrum/plan/bl-080-governs-derivation-memo.md`;
+  `orrery/src/generated/bl080-governs-derivation.v1.json` (fingerprint
+  `63699437ed2a38713ea947edd3a9978cdc54a02cac5ebee38b286bb7370ed8af`; raw-byte
+  `50735819917ae36d59e49ef352d2867af377bff9a8186f720b28494e8010b398`). The D4
+  R2 contract itself: `orrery/src/generated/d4-r2-contract.v1.json` (raw-byte
+  `8b269412c222e0d6a1f26db1d6c491cca6f7a03c52e7b200137ab09c9fbf3cf0`;
+  `contractFingerprint`
+  `5528510b495f12fa11ab713d8ee357e3798f728204eacd83ad491aafb8fdc7d5`).
+- Gate 3 (execution): `scrum/plan/bl-080-governs-derivation-execution-memo.md`;
+  `qa/bl080-governs-derivation-receipt.json` (raw-byte
+  `b7f9bfbcc13c14f02e75f686c820a7ff02ad4c0e5057e5ef512a0e6acc464f6a`;
+  `executionFingerprint`
+  `437de068456cc7280e14015f442c720ebebbe4150f3abdf4ff221e774f7a82e3`;
+  `implementationDigest`
+  `2d53cee4b5f92f22cafadf2fd654351e0688b49f1b8861094fb2c52de9a6642a`;
+  `frozenClosureDigest`
+  `7ab950fac561016afc816e8b6947f7ce0b5f25573f1472321054ddbc9c1e097f`; seal
+  `generationDigest`
+  `c4a7f48dd982c6d96f594ca8c03e045092b9a00b9615e05ef2d14648f04f83d7`,
+  matching the frozen receipt's seal; comparison digest `1f66764b...`; single
+  observation read asserted).
+- The un-granting program: Phase 1 κ
+  (`orrery/src/generated/bl063-office-reconstruction.v1.json`;
+  `reconstructionFingerprint`
+  `6d33c67be7b8f87b8ad2f964cd3560ebcbc1ec0dc6b2088ad1f223c35caff8c3`); Phase
+  2 cycle-ground (`orrery/src/generated/bl064-cycle-ground.v1.json`;
+  `derivationFingerprint`
+  `aa975820136658dd2fb3c84d98b34bf7a1901d39edd6548a300f458858305918`);
+  Phase 3 R-edges (`orrery/src/generated/bl066-r-edge-derivation.v1.json`;
+  `derivationFingerprint`
+  `94f0661ff6e76b0dea69fbe9f09ead24da7901393fb735495f3a25c3d9a1a886`).
+- The coordinate relationship: BL-075 (the Klein-4 coordinate algebra, T1/T2/ρ;
+  `orrery/src/generated/bl075-coordinate-search.v1.json`;
+  `investigationFingerprint`
+  `88838e225276432427f2a7c765d8e1f9105c5c6bd87d4db04ef5e1bb2e93704e`); BL-073
+  (PARTIAL_ISOMETRY: three shared layers, one divergent;
+  `orrery/src/generated/bl073-isometry-probe.v1.json`;
+  `investigationFingerprint`
+  `811fa786f3a03b03b0c334fe797c85b9b4aeed93332a183be43f86fa1133a65c`).
+- The selection predicate: BL-055
+  (`scrum/plan/bl-055-d4-selection-review-memo.md`;
+  `orrery/src/generated/d4-selection-review.v1.json`; raw-byte
+  `40a1d7586c8643bac351a1b70c09fce35a977ce200888d08a40d2cc0022649d8`;
+  `reviewFingerprint`
+  `6d11fd932efbe96892b3cf2e6a6cdad6f54e69cd2a8f284ebb72232c59d8b745`) -
+  P(s) = forte-7-27, clean 14/14, Tn-invariant, representation-stable.
+- The motivation legs: `scrum/plan/bl-029-d-tier-operator-probe-memo.md`
+  (boundary isolation); `scrum/plan/bl-035-semantic-derivation-census-memo.md`
+  (directional non-derivability);
+  `scrum/plan/bl-031-semantic-transport-probe-memo.md` (Phase 2 transport
+  layering).
+- Frame registrations (interpretation vocabulary only, per the membrane):
+  `scrum/plan/harmonic-comprehension-map.md:138-526` (sections 2.6-2.7,
+  including the Track 2 section 2.7 amendment landed `601d073`). The corridor's
+  interpretation vocabulary carried one passed empirical check during the arc
+  (identity-preservation under transport, `fec745a`) and one pending test
+  (directional semantics, gated on section 2.7 Q2) - carried as context, not
+  authority.
+- Inventory emission: `scripts/build-manifest.mjs` via `npm run package:manifest`;
+  package `seven-governors-integrated-release` 1.9.0-dev from `package.json`
+  (inventory tool and version in one line per CONV-EVIDENCE-BINDING-001 section 7).
+
+### Release Gate Disposition
+
+A pre-existing validate:ledger-pins failure (the BL-058 13-violation inventory:
+12 unreviewed_literal_pin + 1 literal_ledger_pin; the specific file-level
+breakdown is carried in the compliance receipt
+`qa/specs/bl-080-d4-record-amendment.json`) is recorded as accepted release state
+for this landing, with repair queued (BL-058); the ledger-pin scanner and
+allowlist are untouched. Full `npm run validate` was executed for this landing;
+the observed first stop is recorded in the compliance receipt. The predeclared
+acceptable stops are the ledger-recorded `STALE_TWIN_HUB_CONVERGENCE` state
+(ENTRY 10/11/12/13), the recorded `STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE`
+state (`qa/d4-production-landing.json`;
+`docs/specs/fivefold_constructs_engine_spec.md` section 4.1), and the
+pre-existing `validate:ledger-pins` inventory recorded above. Any other failure
+halts. No stale control is disabled, no shared artifact is regenerated to force
+green, and no green integrated release is claimed.
+
+### Guard
+
+This entry grants no runtime, topology, graph, governs, Court, office, schema,
+policy or global `harmonic.C_H` authority. It does not admit GOVERNS as a
+derivation relation, does not dissolve the boundary wall, does not touch D7's
+hypothesis-tier, does not graduate INV-5, and does not assign directional
+semantics. Prior entries and prior line anchors remain unchanged; this entry is
+append-only. The historical record is linked, not rewritten: any reading of this
+entry as reversing or erasing ENTRY 10's `not_derived` record or ENTRY 15's
+`derivable-via-R2` amendment is rejected.
