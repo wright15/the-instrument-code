@@ -50,6 +50,7 @@
     "orrery:bl072-composite-mechanism:check": "node scripts/build-bl072-composite-mechanism.mjs --check && node orrery/scripts/validate-bl072-composite-mechanism.mjs",
     "orrery:bl084-window-ladder:check": "node scripts/build-bl084-window-ladder.mjs --check && node orrery/scripts/validate-bl084-window-ladder.mjs",
     "orrery:bl087-klein-ladder-probe:check": "node scripts/build-bl087-klein-ladder-probe.mjs --check && node orrery/scripts/validate-bl087-klein-ladder-probe.mjs",
+    "orrery:bl088-co-parenting-probe:check": "node scripts/build-bl088-co-parenting-probe.mjs --check && node orrery/scripts/validate-bl088-co-parenting-probe.mjs",
     "orrery:bl080-governs-derivation:check": "node scripts/build-bl080-governs-derivation.mjs --check && node orrery/scripts/validate-bl080-governs-derivation.mjs",
     "orrery:bl080-governs-derivation-execution:check": "node scripts/build-bl080-governs-derivation-execution.mjs --check && node orrery/scripts/validate-bl080-governs-derivation-execution.mjs",
     "orrery:browser:test": "npm run browser:test --prefix orrery",
