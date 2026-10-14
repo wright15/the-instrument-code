@@ -332,6 +332,30 @@ includes the correspondence — the record's scope beyond the edge content. *Doe
 the identities' origin; office semantics; the anchoring remainder; any authority change
 (the admission is derivability, not authority).
 
+**4.13 The window-ladder generalization: the boundary geography is alignment-conditional
+(BL-084; 2026-10-14).** The D₇ orbit's consecutive-window reach ladder (the composite
+mechanism's geometric form, BL-072 §6) has its generalization verdict:
+**boundary-layer-conditional** — the ladder is a **reach-order alignment** property,
+recurring on the boundary layer's reach-aligned orders (the **dual-closure pair**: D7 via
+the dense class-pure D6 layer; A0 via its own-tier layer; the only two-interval orders,
+both closing `^6` Hamming-10) and on a minority of the composed graph's operator cycles
+(14 directed / 14 unordered of 476/238, each sliding in exactly one orientation), and
+absent elsewhere in the tested topology (462 non-consecutive operator cycles; six of the
+seven D-tier cycles carry no sliding layer; the four theoretical conditions resolve:
+length-7 refuted, satellite:anchor ratio refuted, uniform all-ledger reach
+supported-but-non-discriminating, Hamming-2 generality refuted as stated). The calibration
+gate reproduced BL-072's ladder field-for-field. *Shows:* the boundary geography's
+window-ladder structure is not a universal topological property but a **reach-order
+alignment** — a measured scope condition on the boundary layer's geometry; the geometry
+recurs exactly where the anchor order tracks the layer's reach geography. *Does not show:*
+any new derivability (the alignment is a descriptive characterization; production
+questions stay open — the qualification carries from BL-072); any relation-level
+consequence for the grant or the anchoring remainder; any D7 movement (hypothesis-tier).
+Cited: `orrery/src/generated/bl084-window-ladder.v1.json` (fingerprint `6865b076…`,
+raw-byte `88c1a92f…`), `scrum/plan/bl-084-window-ladder-memo.md`; registered in the
+synthesis §5 and the comprehension map §5.10. Planning evidence; the accretion reads
+landed bytes only.
+
 ## 5. Evidence against / obstructing (honest tally)
 
 **5.1 D7's modal non-closure (ENTRY 15 §D7 Clause; `qa/d4-r2-execution-receipt.json`
@@ -487,6 +511,15 @@ stricter, region-scoped isolation — `R_NONE`, the office field joining the anc
 remainder. The remainder list in the updates above gains the D7-side office-field ground;
 the question beyond the claim's bounded scope otherwise remains open.
 
+**Status update 2026-10-14 (BL-084).** The boundary geography's window-ladder structure
+received its generalization verdict (§4.13 accretion): **boundary-layer-conditional** — a
+reach-order alignment, scope-bounded within the tested topology (the dual-closure pair;
+14/238 unordered operator cycles; the calibration reproduced field-for-field). What this
+does **not** close: unchanged — the alignment is a descriptive characterization
+(production questions stay open; the qualification carries verbatim); the anchoring
+remainder, the semantics/role question, and any D7 reading are untouched. The question
+beyond the claim's bounded scope otherwise remains open.
+
 ## 8. Fences and what this memo does not do
 
 No claim events; no record amendments (D4's `derivable-via-R2` and D7's hypothesis-tier are
@@ -507,6 +540,13 @@ this memo; the claim event appends ENTRY 16 only.)
 v0.2.0 / ENTRY 17 / GOV-525 landed independently of this memo; §4.11 (evidence), §4.12
 (admission record), and the §7 status update record it. ENTRY 10, ENTRY 15, and ENTRY 16
 remain byte-untouched by this memo; the claim event appends ENTRY 17 only.)
+
+(Accretion note, 2026-10-14: the BL-084 generalization landing accretes into §4.13
+(evidence), the §7 status update, and this note under this memo's mutation contract;
+every added claim cites `orrery/src/generated/bl084-window-ladder.v1.json` (fingerprint
+`6865b076…`) and `scrum/plan/bl-084-window-ladder-memo.md`. No claim event, no record
+amendment; ENTRY 10/15/16/17 byte-untouched; the frame is interpretation vocabulary;
+session prose is context, not evidence.)
 
 ## 9. Closing note: the biggest open question in the project, made askable
 

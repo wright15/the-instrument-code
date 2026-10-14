@@ -558,6 +558,7 @@ session (lattice Phase B, or the governs semantic layer) resolves it from the re
 | BL-077 registration (GSL-5, GSL-6) | §5.8 GSL-5/GSL-6 — the coordinate action's family-level involution (the tier↔family correspondence's covariance) and office-level permutation (Mercury fixed; the 4+1 signature) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
 | claim record `SPEC-GOVERNS-DERIVABILITY-001` v0.2.0 (expanded; ENTRY 17) | §5.8 GSL-5/GSL-6 as the correspondence's probe evidence — the claim's load-bearing evidence is the BL-075/BL-076 artifacts (chain-anchored) | consumed as context; §5 remains planning evidence — measured, not admitted, not citable as claims; the expansion changes no §5.8 tag |
 | BL-078 landing (the D7 derivation re-test; `R_NONE`) | §5.9 — the replication-confirmed grant-dependence (the office field as the selection's ground, joining the anchoring remainder) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
+| BL-084 registration (the window-ladder generalization) | §5.10 — the reach-order alignment principle (boundary-layer-conditional; the dual-closure pair; 14/238 unordered operator cycles; the descriptive-not-production qualification carried verbatim) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
 | BL-053 green release (ENTRY 21) | the map as shipped: §5 measured findings as planning evidence, §2 design-intent tiers, §3 open canon question | the release ships the framework with the higher-theorem question formally stated, not answered; no §5 tag change; measured findings remain planning evidence, not citable as claims |
 
 ## 5. Measured findings — the D4 boundary-geography selection layer [MEASURED — planning evidence]
@@ -728,3 +729,39 @@ governs-admission; the scoping memo §5.1 contrast reading intact). The composit
 `11644d40…`, raw-byte `e9c3acda…`; chain BL-068 `b0d65bd6…`, BL-070 `9db10a08…`); memo
 `scrum/plan/bl-078-d7-retest-memo.md` §§6, 10-11. D7 hypothesis-tier throughout — no D7
 claim, no amendment, no derivation admission. Not citable as claims.
+
+### 5.10 The window-ladder generalization (boundary-layer-conditional; reach-order alignment)
+
+*The D₇ orbit's consecutive-window reach ladder, tested across the topology — not
+universal, not D₇-specific: boundary-layer-conditional.*
+
+**The finding** (BL-084, landed 2026-10-13; registered 2026-10-14). The BL-072 orbit-window
+ladder re-derived through the shared window machinery **field-for-field** (the calibration
+gate: 14 windows, sizes `{1:2, 2:2, 3:10}`, per-anchor `4/5/6/6/6/5/4` = overlap counts,
+terminals `253`/`2017`, mirroring, `^6` closure `4033→127`) is neither a general
+topological principle nor a D₇ peculiarity. **The A₀ ring** — the orbit's coordinate image
+(BL-075) and dual-closure partner (BL-071/BL-073) — carries the same geometry in different
+layers: the designated A1 population gives a **sliding one-regime ladder** (12 consecutive
+size-2 windows, no terminals; the reached set sound and set-equal to the BL-055
+cornerstone near-miss, misses `2395`/`2899` — comparison-only), its own-tier layer the
+**FULL two-regime ladder**. The **dual-closure pair** (D7 via the dense class-pure D6
+layer; A₀ via its own-tier layer — the only two-interval orders, both closing `^6`
+Hamming-10) is the boundary layer's window-ladder locus; of the seven D-tier cycles only
+the D₇ orbit slides (D1/D3/D4/D5/D6 are singleton partitions; D2's top layers are
+non-consecutive). The composed graph's operator layer (476 directed cycles over the 60
+catalog edges, all Hamming-2, inverse-paired; no length-7 cycles) carries the ladder on a
+minority: **14 directed (14 unordered) slide**, lengths 4/10/12, each in exactly one
+orientation; 462 are non-consecutive. **The principle: reach-order alignment** — contiguous
+windows hold exactly when the anchor order tracks the layer's reach geography; it is not
+implied by length, layer cardinality, uniform all-ledger reach, or Hamming-2 order alone.
+*Qualification, carried verbatim (BL-084):* "reach-order alignment is a descriptive
+characterization; production questions stay open." The four theoretical conditions
+resolve: length-7 refuted; satellite:anchor ratio refuted; uniform all-ledger reach
+supported-as-property, non-discriminating; Hamming-2 generality refuted as stated.
+*Receipts:* `orrery/src/generated/bl084-window-ladder.v1.json`
+(`investigationFingerprint` `6865b076…`, raw-byte `88c1a92f…`; the
+`scopeC.aggregate.slidingUnorderedCount` field = 14 authoritative for the operator count —
+the `gslTreatment` one-liner "7 of 238" is a recorded prose slip, OD-P2-5); memo
+`scrum/plan/bl-084-window-ladder-memo.md`. GSL treatment (ruled `f1a4b80`): the GSL-4
+annotated refinement, inline, unapplied; no new GSL entry. D7 hypothesis-tier throughout —
+no D7 claim, no amendment, no derivation admission. Not citable as claims.

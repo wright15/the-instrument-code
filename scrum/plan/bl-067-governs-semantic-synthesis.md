@@ -252,6 +252,45 @@ with the Klein-4 multiplication (family 160/160 + office 1120/1120 checks, zero 
 `scrum/plan/bl-076-bijection-probe-memo.md`. Planning evidence; the registration adds no
 measurement; D7 hypothesis-tier throughout.
 
+**The window-ladder geometry — boundary-layer-conditional (GSL-4 annotated refinement;
+BL-084, registered 2026-10-14).** The D₇ orbit's consecutive-window reach ladder (BL-072's
+geometric mapping) is neither a general topological principle nor a D₇ peculiarity: it is
+**boundary-layer-conditional**. The calibration gate re-derived the ladder field-for-field
+(14 windows, sizes `{1:2, 2:2, 3:10}`, per-anchor `4/5/6/6/6/5/4` = window-overlap counts,
+terminals at the inversion poles, `^6` closure `4033→127`); the A₀ ring — the orbit's
+coordinate image (BL-075) and dual-closure partner (BL-071/BL-073) — carries the same
+geometry in different layers: the designated A1 population gives the Scope A sliding
+one-regime ladder (12 consecutive size-2 windows, no terminal windows, per-anchor
+`2/4/4/4/4/4/2`; its reached set sound and set-equal to the BL-055 cornerstone near-miss,
+the two missed observed keys `2395`/`2899` — comparison-only), its own-tier layer the FULL
+two-regime ladder. The **dual-closure pair** — D7 via the D6 layer, A₀ via its own-tier
+layer; the only two-interval orders, both closing `^6` Hamming-10 — is the boundary
+layer's window-ladder locus; of the seven D-tier cycles only the D₇ orbit slides (D1/D3/D4/
+D5/D6 are singleton partitions with no overlap structure; D2's top layers are
+non-consecutive). **The principle: reach-order alignment** — contiguous windows hold
+exactly when the anchor order tracks the layer's reach geography; it is not implied by
+length, layer cardinality, uniform all-ledger reach, or Hamming-2 order alone.
+*Qualification, carried verbatim (BL-084):* "reach-order alignment is a descriptive
+characterization; production questions stay open." **The D₇ orbit's special property:**
+its dedicated satellite layer (D6, class-pure 7-2 — BL-068) is dense relative to the
+orbit (36 instances over 14 satellites), so its two-interval order (`^11` path + `^6`
+closure) yields the FULL two-regime ladder whose terminals are exactly the recorded
+tritone contacts (the calibration, reproduced field-for-field). **The composed graph's
+operator layer** (476 directed cycles over the 60 catalog edges, all Hamming-2,
+inverse-paired; no length-7 cycles exist) carries the ladder on a minority: **14 directed
+(14 unordered) cycles slide**, lengths 4/10/12, each in exactly one orientation; 462 are
+non-consecutive. The four theoretical conditions resolve: length-7 REFUTED;
+satellite:anchor ratio REFUTED; uniform all-ledger reach SUPPORTED as a property,
+non-discriminating; Hamming-2 generality REFUTED as stated. *Receipts:*
+`orrery/src/generated/bl084-window-ladder.v1.json` (`investigationFingerprint`
+`6865b076…`, raw-byte `88c1a92f…`; the `scopeC.aggregate.slidingUnorderedCount` field = 14
+is the authoritative operator-layer count — the artifact's `gslTreatment` one-liner "7 of
+238" is recorded as a prose slip, corrected here without touching artifact bytes,
+OD-P2-5); memo `scrum/plan/bl-084-window-ladder-memo.md`. GSL treatment (ruled
+`f1a4b80`): the GSL-4 annotated refinement, inline, unapplied; no new GSL entry (the
+GSL-7 candidate stands un-promoted). Planning evidence; the registration adds no
+measurement; D7 hypothesis-tier throughout.
+
 *Filtering-regime pointer (not a fourth reading):* the geography's threshold structure is
 the finding §2's coda reads as a filtering regime; this section adds no separate lens
 application — the lens coloring lives in §2's coda and is not extended here.
@@ -368,7 +407,12 @@ registration adds no measurement of its own.)* *(BL-079 registration: §6 gains 
 (the D7 derivation status — replication-confirmed; `R_NONE`) — newly added content, cited
 to its landing artifacts (`orrery/src/generated/bl078-d7-retest.v1.json`, fingerprint
 `11644d40…`; `scrum/plan/bl-078-d7-retest-memo.md` §§6, 10-11); the registration adds no
-measurement of its own.)*
+measurement of its own.)* *(BL-084 registration: §5 gains the window-ladder geography
+block (the boundary-layer-conditional verdict; the reach-order alignment principle with
+its descriptive-not-production qualification carried verbatim) — newly added content,
+cited to its landing artifacts (`orrery/src/generated/bl084-window-ladder.v1.json`,
+fingerprint `6865b076…`; `scrum/plan/bl-084-window-ladder-memo.md`); the registration adds
+no measurement of its own.)*
 
 **7.4 Finding-row statuses untouched.** Rows 8 and 10 remain `finding: no repo source`
 (`docs/ARCHITECTURE_MAP.md:129,133-134`; tally `:139`); §5 remains planning evidence (map
@@ -388,7 +432,8 @@ does not discharge findings.
 `bl068-d7-asymmetry.v1.json` (the GSL-3 registration); `bl076-bijection-probe-memo.md` +
 `bl076-bijection-probe.v1.json` (the GSL-5/GSL-6 registration; chain
 `bl075-coordinate-search.v1.json`); `bl-078-d7-retest-memo.md` + `bl078-d7-retest.v1.json`
-(the BL-079 registration).
+(the BL-079 registration); `bl-084-window-ladder-memo.md` +
+`bl084-window-ladder.v1.json` (the BL-084 registration).
 
 **7.6 Bounded non-accomplishments.** No claim event; no record amendment; no governs
 admission; no G1 movement; no INV-5 graduation; no M-walkability promotion; no
@@ -402,8 +447,13 @@ and memo.)* *(BL-077 registration, 2026-10-12: §5 gains the coordinate-action b
 (GSL-5/GSL-6) — the registration adds no measurement; every added claim cites BL-076's
 artifact and memo.)* *(BL-079 registration, 2026-10-12: §6 gains entry 6 (the D7
 derivation status — replication-confirmed; `R_NONE`) — the registration adds no
-measurement; every added claim cites BL-078's artifact and memo.)* Session prose is
-context, not evidence.
+measurement; every added claim cites BL-078's artifact and memo.)* *(BL-084 registration,
+2026-10-14: §5 gains the window-ladder geography block (the boundary-layer-conditional
+verdict; the reach-order alignment principle; the dual-closure pair; the 14/238 operator
+rarity) — the registration adds no measurement; every added claim cites BL-084's artifact
+and memo; the G-9 prose correction (the `gslTreatment` one-liner "7 of 238" vs the
+authoritative `scopeC.aggregate.slidingUnorderedCount` 14) is recorded per OD-P2-5.)*
+Session prose is context, not evidence.
 
 ## 8. Result in one paragraph
 
@@ -421,7 +471,12 @@ ti-local, rotation-6 closing both seven-cycles, the boundary IC6-poor; role verd
 and the 7-27/7-31 split is recorded as *not* tritone-mediated. Its coordinate action now has
 its measured family- and office-level structure (GSL-5/GSL-6, §5: the ten-family involution
 carrying the tier↔family correspondence whole — the closure pair, the contact-target pair,
-the interior swap — and the faithful office permutation with Mercury the fixed mediator). Three template-bound codas read
+the interior swap — and the faithful office permutation with Mercury the fixed mediator). Its
+boundary geography now carries its window-ladder generalization verdict (BL-084, §5:
+boundary-layer-conditional — the reach-order alignment principle recurring on the
+dual-closure pair and 14 of 238 unordered operator cycles, absent elsewhere; the
+descriptive-not-production qualification carried verbatim; registration, no new GSL
+number). Three template-bound codas read
 the structurally adjacent findings through the registered §2.7 registers; the membrane
 holds — the lens colors, the measurements ground, the correspondence is design coherence,
 not mechanism. Five open questions were inventoried and aimed; the first — the D7

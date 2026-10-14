@@ -63,6 +63,8 @@ Every cycle's all-ledger Hamming-2 reach is uniform **30 per anchor** (the asymm
 
 **Population:** all simple directed cycles over the derived-path-graph's 60 catalog edges (21 A-tier anchors); the containment-mixed cycles are outside the bounded population. **Census:** 60 edges — **all Hamming-2**, all inverse-paired; 476 directed cycles / 238 unordered, lengths `{4:20, 6:24, 8:48, 10:88, 12:120, 14:108, 16:56, 18:12}` — **no length-7 cycles exist in the operator layer**. **Window verdicts:** **14 directed cycles (14 unordered) exhibit consecutive sliding windows** — at lengths 4 (5), 10 (4), 12 (5); the other 462 are non-consecutive. **Orientation sensitivity:** every sliding cycle slides in exactly **one orientation**; its reverse is non-consecutive (recorded per pair). Sample: `1371→1373→1389→1387` is FULL on the A2 layer (sizes `{1:10, 2:5, 4:2}`, two full-range windows); its reverse is ABSENT.
 
+*(G-9 prose correction, 2026-10-14, ruled OD-P2-5: the artifact's `gslTreatment` generalization-refinement text reads "7 of 238 unordered"; the authoritative count is the artifact's `scopeC.aggregate.slidingUnorderedCount` = 14 — corroborated by `slidingDirectedCount` = 14, `slidingUnorderedCount` = 14, and the "14 directed cycles (14 unordered)" line above. Recorded as a memo-level prose correction; artifact bytes unchanged; the registration cites the aggregate field.)*
+
 ## 7. Scope D — the theoretical conditions (each tested, not theorized)
 
 | id | condition | verdict | evidence in one line |
