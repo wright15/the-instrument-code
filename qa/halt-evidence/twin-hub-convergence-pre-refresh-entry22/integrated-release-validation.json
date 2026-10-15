@@ -1,0 +1,2842 @@
+{
+  "verdict": "PASS",
+  "releaseId": "seven-governors-integrated-1.9.0",
+  "checksPassed": 418,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "name": "release manifest fixed point",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "Orrery legal-move catalog freshness",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "shadow-ladder source-derived planning-evidence validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "release id",
+      "status": "PASS",
+      "diagnostic": {
+        "releaseId": "seven-governors-integrated-1.9.0",
+        "version": "1.9.0"
+      }
+    },
+    {
+      "name": "release root extension and declared database baseline",
+      "status": "PASS",
+      "diagnostic": {
+        "rootExtensions": [
+          {
+            "storyId": "GOV-210",
+            "releaseId": "gov-210-availability-housing:1.0.0",
+            "fingerprint": "2b87a0ed677e4e75286ac2d6833d840fa674a051ffca1d3de5d92a8e979916df",
+            "authority": "informational_catalog_only"
+          },
+          {
+            "storyId": "GOV-211",
+            "releaseId": "gov-211-menu-organization:1.0.0",
+            "fingerprint": "798336db2b977d40d819b6b64282b88eda5191f44954a87a5bb2386a6b0ab98a",
+            "authority": "presentation_order_only"
+          },
+          {
+            "storyId": "GOV-213",
+            "releaseId": "harmonic-compression-candidate:CH_A012_q_v1:1.0.0",
+            "fingerprint": "b2e57f6b0e2d8ac10113dc1861430ff5c205dedb8b079312232b2a76f167df5f",
+            "authority": "scoped_A012_harmonic_descriptor_only"
+          },
+          {
+            "storyId": "GOV-2XX",
+            "releaseId": "tiered-photonic-candidate:CH_TIERED_v1:1.0.0",
+            "fingerprint": "a05b0b543c473b3ffb0c282eff0300fc2d392b7d97a5cbf382d20a4a928ae404",
+            "authority": "informational_sidecar_only"
+          },
+          {
+            "storyId": "GOV-227",
+            "releaseId": "harmonic-compression-candidate:CH_D17_q_v2:1.0.0",
+            "fingerprint": "c078171a73465e256b43ad4bc3a75c787866b582ec7783edf6e42c13e096b685",
+            "authority": "scoped_D17_harmonic_descriptor_only"
+          },
+          {
+            "storyId": "CRT-310",
+            "releaseId": "court-admission-backlog:crt-310:1",
+            "fingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
+            "authority": "admission_planning_only"
+          }
+        ],
+        "databaseBootstrap": {
+          "script": "scripts/bootstrap-neo4j.mjs",
+          "normalizedSnapshotSchema": "schemas/neo4j-normalized-snapshot.schema.json",
+          "readinessSchemaVersion": "seven-governors.neo4j-full-readiness.v1",
+          "expectedNodeCount": 3061,
+          "expectedRelationshipCount": 10506,
+          "neo4jAuthority": false
+        },
+        "importStages": 13,
+        "tieredValidation": "passed"
+      }
+    },
+    {
+      "name": "frozen composite package manifest identities",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "packageId": "seven-governors-mutation-algebra-audit",
+          "expected": "e45e685e9b85622e0581dfb32da46d31a9efe30e5d082e4bd4bc18b835a95cdd",
+          "actual": "e45e685e9b85622e0581dfb32da46d31a9efe30e5d082e4bd4bc18b835a95cdd",
+          "path": "seven-governors-mutation-algebra-audit/MANIFEST.json"
+        },
+        {
+          "packageId": "seven-governors-canonical-feature-profile-registry",
+          "expected": "c4ac240b24b7be39e9ab04c3fa475512adb65faef529968dfc0909a5f95e586c",
+          "actual": "c4ac240b24b7be39e9ab04c3fa475512adb65faef529968dfc0909a5f95e586c",
+          "path": "seven-governors-canonical-feature-profile-registry-v0.1.1/PACKAGE_MANIFEST.json"
+        },
+        {
+          "packageId": "seven-governors-state-machine-spec-and-authoring-toolkit",
+          "expected": "36d18b81efffd22494a45d96d437aa559152fb5f453c029f5457ae07e3ac98db",
+          "actual": "36d18b81efffd22494a45d96d437aa559152fb5f453c029f5457ae07e3ac98db",
+          "path": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/PACKAGE_MANIFEST.json"
+        },
+        {
+          "packageId": "seven-governors-governor-runtime",
+          "expected": "aef75a3057527e524562c3c04f0ee87bed2777a3616f2ec6e693062d64b74932",
+          "actual": "aef75a3057527e524562c3c04f0ee87bed2777a3616f2ec6e693062d64b74932",
+          "path": "seven-governors-governor-runtime-v0.1.0/PACKAGE_MANIFEST.json"
+        },
+        {
+          "packageId": "seven-governors-court-substrate",
+          "expected": "376a64dd44a0d667e3778d8deafaddfc2c1b33377c3b00358f1f63eb0ff8c044",
+          "actual": "376a64dd44a0d667e3778d8deafaddfc2c1b33377c3b00358f1f63eb0ff8c044",
+          "path": "seven-governors-court-substrate-v0.1.0/PACKAGE_MANIFEST.json"
+        },
+        {
+          "packageId": "seven-governors-harmonic-invariants",
+          "expected": "b1548524df9a04150d497f40d972311ce3163fb76ad832301529e0d353b9f4c3",
+          "actual": "b1548524df9a04150d497f40d972311ce3163fb76ad832301529e0d353b9f4c3",
+          "path": "seven-governors-harmonic-invariants-v0.1.0/PACKAGE_MANIFEST.json"
+        },
+        {
+          "packageId": "seven-governors-court-filter-algebra",
+          "expected": "6b7f4ea79e4b4d151154544608cf6d46da55959b37208938467bf6bd11f4215a",
+          "actual": "6b7f4ea79e4b4d151154544608cf6d46da55959b37208938467bf6bd11f4215a",
+          "path": "seven-governors-court-filter-algebra-v0.1.0/PACKAGE_MANIFEST.json"
+        }
+      ]
+    },
+    {
+      "name": "frozen composite package payload identities",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "directory": "seven-governors-mutation-algebra-audit",
+          "fileCount": 35,
+          "expected": "902619fce7f45dc52c30d4f245cb1ffee2caebc91f4504552acd26a489f28479",
+          "actual": "902619fce7f45dc52c30d4f245cb1ffee2caebc91f4504552acd26a489f28479"
+        },
+        {
+          "directory": "seven-governors-canonical-feature-profile-registry-v0.1.1",
+          "fileCount": 82,
+          "expected": "b80b16f1a4a11ea877e47f37350a9e7a289bd10394501f97a8557e220cd943c6",
+          "actual": "b80b16f1a4a11ea877e47f37350a9e7a289bd10394501f97a8557e220cd943c6"
+        },
+        {
+          "directory": "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0",
+          "fileCount": 43,
+          "expected": "b7ebc16633e9694b72fdaeec5c6b3039a758d30019d5091fcca4829f12e23514",
+          "actual": "b7ebc16633e9694b72fdaeec5c6b3039a758d30019d5091fcca4829f12e23514"
+        },
+        {
+          "directory": "seven-governors-governor-runtime-v0.1.0",
+          "fileCount": 30,
+          "expected": "78234a5aea4d3d882e59cc70fe0b7bfd719704f10acf34160e455551a471f135",
+          "actual": "78234a5aea4d3d882e59cc70fe0b7bfd719704f10acf34160e455551a471f135"
+        },
+        {
+          "directory": "seven-governors-court-substrate-v0.1.0",
+          "fileCount": 31,
+          "expected": "bf0324074be036c4b939c2c2794a997c5c1f73808d8cf444c58395e4a6bc5f09",
+          "actual": "bf0324074be036c4b939c2c2794a997c5c1f73808d8cf444c58395e4a6bc5f09"
+        },
+        {
+          "directory": "seven-governors-harmonic-invariants-v0.1.0",
+          "fileCount": 31,
+          "expected": "1f5b656e4c962eba5e60ac8a28d975ef35d7ddd833993545589bc09925ed7335",
+          "actual": "1f5b656e4c962eba5e60ac8a28d975ef35d7ddd833993545589bc09925ed7335"
+        },
+        {
+          "directory": "seven-governors-court-filter-algebra-v0.1.0",
+          "fileCount": 36,
+          "expected": "3d4f3b658dbd360cdd9dec0c05e5ff12695da9e4c0ec603d27bfb341af395679",
+          "actual": "3d4f3b658dbd360cdd9dec0c05e5ff12695da9e4c0ec603d27bfb341af395679"
+        }
+      ]
+    },
+    {
+      "name": "framework source hash: agents",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24",
+        "actual": "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24",
+        "path": "framework/AGENTS.md"
+      }
+    },
+    {
+      "name": "framework source hash: feature-profiles",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": "5ba49b157aa6fd8ac672610f88df8ac01464fd71387f3c0e21b042e912636960",
+        "actual": "5ba49b157aa6fd8ac672610f88df8ac01464fd71387f3c0e21b042e912636960",
+        "path": "framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md"
+      }
+    },
+    {
+      "name": "framework source hash: topological-anchoring",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c",
+        "actual": "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c",
+        "path": "framework/TOPOLOGICAL_ANCHORING.md"
+      }
+    },
+    {
+      "name": "framework source hash: natural-organization-thesis",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": "898626127fbc7d7538bb954326f230db4bf97f084f35122c6e42b68dcdd37af9",
+        "actual": "898626127fbc7d7538bb954326f230db4bf97f084f35122c6e42b68dcdd37af9",
+        "path": "framework/NATURAL_ORGANIZATION_THESIS.md"
+      }
+    },
+    {
+      "name": "framework source hash: governor-registry",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2",
+        "actual": "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2",
+        "path": "schemas/governors.yaml"
+      }
+    },
+    {
+      "name": "canonical rooted states",
+      "status": "PASS",
+      "diagnostic": 462
+    },
+    {
+      "name": "canonical anchors",
+      "status": "PASS",
+      "diagnostic": 70
+    },
+    {
+      "name": "canonical satellites",
+      "status": "PASS",
+      "diagnostic": 238
+    },
+    {
+      "name": "canonical boundaries",
+      "status": "PASS",
+      "diagnostic": 154
+    },
+    {
+      "name": "office-bearing states",
+      "status": "PASS",
+      "diagnostic": 308
+    },
+    {
+      "name": "boundary office withheld",
+      "status": "PASS",
+      "diagnostic": "all boundary offices must be null"
+    },
+    {
+      "name": "unique rooted state ids",
+      "status": "PASS",
+      "diagnostic": 462
+    },
+    {
+      "name": "canonical relationship total",
+      "status": "PASS",
+      "diagnostic": 2594
+    },
+    {
+      "name": "universal rendered relationship total",
+      "status": "PASS",
+      "diagnostic": 1824
+    },
+    {
+      "name": "family registry",
+      "status": "PASS",
+      "diagnostic": 38
+    },
+    {
+      "name": "CSV rows: scale-states.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 462,
+        "actual": 462
+      }
+    },
+    {
+      "name": "CSV rows: scale-families.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 38,
+        "actual": 38
+      }
+    },
+    {
+      "name": "CSV rows: governor-offices.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 7,
+        "actual": 7
+      }
+    },
+    {
+      "name": "CSV rows: governs.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 238,
+        "actual": 238
+      }
+    },
+    {
+      "name": "CSV rows: constructs.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 28,
+        "actual": 28
+      }
+    },
+    {
+      "name": "CSV rows: seat-contact.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 140,
+        "actual": 140
+      }
+    },
+    {
+      "name": "CSV rows: modal-successor.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 182,
+        "actual": 182
+      }
+    },
+    {
+      "name": "CSV rows: audited-hamming2.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 585,
+        "actual": 585
+      }
+    },
+    {
+      "name": "CSV rows: phase-shift.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 175,
+        "actual": 175
+      }
+    },
+    {
+      "name": "CSV rows: convergence-contact.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 210,
+        "actual": 210
+      }
+    },
+    {
+      "name": "CSV rows: junction-contact.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 252,
+        "actual": 252
+      }
+    },
+    {
+      "name": "CSV rows: leaf-contact.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 14,
+        "actual": 14
+      }
+    },
+    {
+      "name": "CSV rows: belongs-to-family.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 462,
+        "actual": 462
+      }
+    },
+    {
+      "name": "CSV rows: occupies-office.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 308,
+        "actual": 308
+      }
+    },
+    {
+      "name": "CSV rows: relational-office-evidence.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 224,
+        "actual": 224
+      }
+    },
+    {
+      "name": "CSV rows: relationships.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 2818,
+        "actual": 2818
+      }
+    },
+    {
+      "name": "audit rows: operator-registry.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 15,
+        "actual": 15
+      }
+    },
+    {
+      "name": "audit rows: operator-applications.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 3402,
+        "actual": 3402
+      }
+    },
+    {
+      "name": "audit rows: cycle-identities.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 66,
+        "actual": 66
+      }
+    },
+    {
+      "name": "audit rows: commutation-summary.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 91,
+        "actual": 91
+      }
+    },
+    {
+      "name": "audit rows: inverse-witnesses.csv",
+      "status": "PASS",
+      "diagnostic": {
+        "expected": 3402,
+        "actual": 3402
+      }
+    },
+    {
+      "name": "audit validation report",
+      "status": "PASS",
+      "diagnostic": {
+        "allPass": true,
+        "assertions": null,
+        "counts": {
+          "scaleStates": 462,
+          "operatorCandidates": 15,
+          "modalOperators": 1,
+          "localDegreeOperators": 14,
+          "operatorApplications": 3402,
+          "modalApplications": 462,
+          "localApplications": 2940,
+          "inverseWitnesses": 3402,
+          "modalCycles": 66,
+          "modalCovarianceCases": 6468,
+          "commutativeSquares": 7644,
+          "directConfluenceDiamonds": 7644,
+          "structuralCospans": 14,
+          "counterexamples": 3978,
+          "partialDomainAsymmetryCounterexamples": 3528,
+          "commonDomainValueMismatches": 0,
+          "structuralEdgesValidated": 588,
+          "fieldEdgesValidated": 760,
+          "auditedHamming2Edges": 585,
+          "adjacentPrimitiveHamming2Edges": 150,
+          "nonlocalHamming2Edges": 435,
+          "phaseEdges": 175,
+          "completePhasePairs": 210,
+          "phasePairsFieldProjected": 175,
+          "phasePairsStructuralOnly": 5,
+          "phasePairsUnprojected": 30,
+          "canonicalModalApplicationsProjected": 182,
+          "formalModalApplicationsUnprojected": 280,
+          "officeBearingModalApplications": 308
+        }
+      }
+    },
+    {
+      "name": "audit operator-registry schema",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "audit cypher syntax",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "profile registry full validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "profile registry report",
+      "status": "PASS",
+      "diagnostic": {
+        "status": "passed",
+        "failedCount": 0
+      }
+    },
+    {
+      "name": "governor runtime validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "governor runtime report",
+      "status": "PASS",
+      "diagnostic": {
+        "status": "passed",
+        "failed": 0,
+        "packageVersion": "0.1.0",
+        "releaseId": "governor-runtime:0.1.0",
+        "policyFingerprint": "460e6c40bf96f58a0be36936a91939b930701dfee5875d5e5d0cd6311402f819"
+      }
+    },
+    {
+      "name": "governor runtime determinism",
+      "status": "PASS",
+      "diagnostic": {
+        "status": "passed",
+        "failed": 0,
+        "checks": 4
+      }
+    },
+    {
+      "name": "court substrate validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "court substrate report",
+      "status": "PASS",
+      "diagnostic": {
+        "status": "passed",
+        "failed": 0,
+        "packageVersion": "0.1.0",
+        "releaseId": "court-substrate:0.1.0",
+        "substrateFingerprint": "fda4707f63b08ca02a155f8d5d8c738534f17e0ab2a234d79f83bf30f16a2fc2"
+      }
+    },
+    {
+      "name": "court substrate determinism",
+      "status": "PASS",
+      "diagnostic": {
+        "status": "passed",
+        "failed": 0,
+        "checks": 4
+      }
+    },
+    {
+      "name": "harmonic invariant validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "harmonic invariant report",
+      "status": "PASS",
+      "diagnostic": {
+        "status": "passed",
+        "failed": 0,
+        "checks": 11,
+        "packageVersion": "0.1.0",
+        "releaseId": "harmonic-invariants:0.1.0",
+        "invariantFingerprint": "ad604fdb42144882d38433e734759fcd5c160dfe628139ce0ede1ff093481323"
+      }
+    },
+    {
+      "name": "harmonic invariant determinism",
+      "status": "PASS",
+      "diagnostic": {
+        "status": "passed",
+        "failed": 0,
+        "checks": 4
+      }
+    },
+    {
+      "name": "court filter algebra validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "court filter algebra report",
+      "status": "PASS",
+      "diagnostic": {
+        "status": "passed",
+        "failed": 0,
+        "checks": 8,
+        "packageVersion": "0.1.0",
+        "releaseId": "court-filter-algebra:0.1.0",
+        "filterAlgebraFingerprint": "40bd74397ff9f4c8c0f0b845630e008cea66c9495413195c1e1c92ff02968589"
+      }
+    },
+    {
+      "name": "court filter algebra determinism",
+      "status": "PASS",
+      "diagnostic": {
+        "status": "passed",
+        "failed": 0,
+        "checks": 4
+      }
+    },
+    {
+      "name": "court runtime lifecycle validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "court runtime policy contract",
+      "status": "PASS",
+      "diagnostic": {
+        "policyId": "court-runtime-policy:0.1.0",
+        "policyFingerprint": "90431c79b8bc06da7e6f5cb5ce207cb6cbfd86519bdb91df5aacc137065ec456",
+        "positionCount": 5,
+        "ordinaryMoveCount": 8,
+        "dependencyCount": 8
+      }
+    },
+    {
+      "name": "court runtime dependency closure",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "dependencyId": "crt-301-contract",
+          "expected": "b4351a14aa3dfde6043a609e4158abcb17b006b666a35220e5833cf1cf7ffa9b",
+          "actual": "b4351a14aa3dfde6043a609e4158abcb17b006b666a35220e5833cf1cf7ffa9b"
+        },
+        {
+          "dependencyId": "crt-302-substrate",
+          "expected": "6906a5b7a495feee7dddb02ee936393052e58315c28893a58c700ec60000f9a3",
+          "actual": "6906a5b7a495feee7dddb02ee936393052e58315c28893a58c700ec60000f9a3"
+        },
+        {
+          "dependencyId": "crt-303-invariants",
+          "expected": "75b3ffaa0b126c4dbf0abf6e42a4674724092b0e403a2862d893b6f1493d0e6f",
+          "actual": "75b3ffaa0b126c4dbf0abf6e42a4674724092b0e403a2862d893b6f1493d0e6f"
+        },
+        {
+          "dependencyId": "crt-304-filter-algebra",
+          "expected": "83bb95522b91170914c1a1306d2ae0d5e084842eea2723c2c0d9d44ef0543368",
+          "actual": "83bb95522b91170914c1a1306d2ae0d5e084842eea2723c2c0d9d44ef0543368"
+        },
+        {
+          "dependencyId": "mutation-operator-registry",
+          "expected": "e5a9e6929fca048078e0db6ff044facc7137a6ef61e994d74f1d526e27b6482e",
+          "actual": "e5a9e6929fca048078e0db6ff044facc7137a6ef61e994d74f1d526e27b6482e"
+        },
+        {
+          "dependencyId": "mutation-operator-applications",
+          "expected": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e",
+          "actual": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e"
+        },
+        {
+          "dependencyId": "gov-generic-ledger",
+          "expected": "ee9292ae3a0c2f1b75a3053b22c0b8e0e188f8b1e9d5497b08cd955a8a368962",
+          "actual": "ee9292ae3a0c2f1b75a3053b22c0b8e0e188f8b1e9d5497b08cd955a8a368962"
+        },
+        {
+          "dependencyId": "gov-generic-ledger-model",
+          "expected": "cf730121e3f8a15016323e37f2deee40d22d7e6fcabc9d88e899f235b434094c",
+          "actual": "cf730121e3f8a15016323e37f2deee40d22d7e6fcabc9d88e899f235b434094c"
+        }
+      ]
+    },
+    {
+      "name": "court graph replay projection validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "GOV-210 availability and housing projection validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "GOV-210 canonical coverage and non-authority contract",
+      "status": "PASS",
+      "diagnostic": {
+        "projectionFingerprint": "2b87a0ed677e4e75286ac2d6833d840fa674a051ffca1d3de5d92a8e979916df",
+        "counts": {
+          "assignmentCount": 1873,
+          "availabilityCount": 10,
+          "courtTargetCount": 5,
+          "eligibilityCount": 10,
+          "housingCount": 0,
+          "lifecycleCount": 0,
+          "nodeCount": 2361,
+          "relationshipCount": 3766,
+          "topologyTargetCount": 462
+        },
+        "coverage": {
+          "availabilityByNamespace": {
+            "court": 5,
+            "governor": 5
+          },
+          "courtFilterCount": 5,
+          "courtOrdinaryMoveCount": 8,
+          "courtOrdinaryMoveCoverageBySkill": {
+            "list_legal_court_moves": 8,
+            "validate_and_execute_court_transition": 8,
+            "verify_court_postcondition": 8
+          },
+          "courtPositionCount": 5,
+          "eligibilityCount": 10,
+          "mutationApplicationCount": 3402,
+          "mutationApplicationCoverageBySkill": {
+            "list_legal_moves": 3402,
+            "validate_and_execute_move": 3402,
+            "verify_outcome": 3402
+          },
+          "mutationOperatorCount": 15,
+          "topologyTargetCount": 462
+        }
+      }
+    },
+    {
+      "name": "GOV-210 source fingerprint closure",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "path": "canonical/universal-network-data.json",
+          "expected": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+          "actual": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc"
+        },
+        {
+          "path": "schemas/court-runtime-policy.json",
+          "expected": "5164b74bf6cbbb55625eb0e9b958542cf20ddacb426813b7a93c1bffd7347605",
+          "actual": "5164b74bf6cbbb55625eb0e9b958542cf20ddacb426813b7a93c1bffd7347605"
+        },
+        {
+          "path": "schemas/gov-210/skill-eligibility-policy.json",
+          "expected": "0f5b19a232e55aa5b96deddf86c86da32b7d5221ff536031b87053f745a7c2d7",
+          "actual": "0f5b19a232e55aa5b96deddf86c86da32b7d5221ff536031b87053f745a7c2d7"
+        },
+        {
+          "path": "seven-governors-court-filter-algebra-v0.1.0/canonical/filter-operator-registry.json",
+          "expected": "278abdbd5df579407d5dd8d7b8a0d1213b8d0aa0d67d7ce9c72f42dac5e8ab8b",
+          "actual": "278abdbd5df579407d5dd8d7b8a0d1213b8d0aa0d67d7ce9c72f42dac5e8ab8b"
+        },
+        {
+          "path": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv",
+          "expected": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e",
+          "actual": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e"
+        },
+        {
+          "path": "seven-governors-mutation-algebra-audit/audit/operator-registry.csv",
+          "expected": "e5a9e6929fca048078e0db6ff044facc7137a6ef61e994d74f1d526e27b6482e",
+          "actual": "e5a9e6929fca048078e0db6ff044facc7137a6ef61e994d74f1d526e27b6482e"
+        },
+        {
+          "path": "skills/court/registry.json",
+          "expected": "9eb2f62a6c30f6e608c37d9c9c383917f26475ec9d33c4a4b471bddd67803ca3",
+          "actual": "9eb2f62a6c30f6e608c37d9c9c383917f26475ec9d33c4a4b471bddd67803ca3"
+        },
+        {
+          "path": "skills/governor/registry.json",
+          "expected": "f326aabe01c4be4d80589c84c7b8e9591e283c50d63d4b40b140bab11fbf64ae",
+          "actual": "f326aabe01c4be4d80589c84c7b8e9591e283c50d63d4b40b140bab11fbf64ae"
+        }
+      ]
+    },
+    {
+      "name": "GOV-210 legacy projection fingerprint isolation",
+      "status": "PASS",
+      "diagnostic": "GOV-206 and CRT-306 query catalogs retain their release 1.3.0 bytes"
+    },
+    {
+      "name": "GOV-211 assignment-aware menu validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "GOV-211 presentation-only policy closure",
+      "status": "PASS",
+      "diagnostic": {
+        "policyFingerprint": "798336db2b977d40d819b6b64282b88eda5191f44954a87a5bb2386a6b0ab98a",
+        "authority": "presentation_order_only",
+        "runtimeAuthority": false
+      }
+    },
+    {
+      "name": "GOV-211 closed-runtime and GOV-210 identity isolation",
+      "status": "PASS",
+      "diagnostic": "GOV-207, CRT-307, and GOV-210 release identities retain their 1.3.0 bytes"
+    },
+    {
+      "name": "CRT-310 per-class admission backlog validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "CRT-310 zero-admission and fingerprint closure",
+      "status": "PASS",
+      "diagnostic": {
+        "backlogFingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
+        "summary": {
+          "itemCount": 35,
+          "proposedCount": 35,
+          "eligibleForAdmissionReviewCount": 0,
+          "admittedCount": 0,
+          "gateDefinitionCount": 7,
+          "satisfiedGateResultCount": 70,
+          "pendingGateResultCount": 175,
+          "failedGateResultCount": 0
+        },
+        "reportFingerprint": "2366b940743ed79aea0e5b08de04000bff796be3c40f2b3cf799f0a9cbfa02e6"
+      }
+    },
+    {
+      "name": "pentatonic binding planning-evidence validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "pentatonic binding closure freshness",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "pentatonic binding evidence fingerprint closure",
+      "status": "PASS",
+      "diagnostic": {
+        "candidateFingerprint": "16bd11bc99fb0dfc5c934b1f5d6782562b04f6999882d97cfdbcc24bf72a0f55",
+        "phase1ValidationReportFingerprint": "eee7460661a9e9f674eb15bc73cbc1eed6363dfa38e79c22cea95404ed420ba3",
+        "phase2Neo4jReportFingerprint": "e6375c261263632ddd32adedaf11dda8ea43b1fdddcc6d66444b276a1dab0d5b",
+        "phase3ReportSha256": "814512d4f4360dc7e9ab77b8190043a155ae8253d2729dbb21f33db91e37f1df",
+        "cypherDeterministicFingerprint": "17a99dde862c5853031724a11c6435d372fd795eeb86a700fbc266068e7a8b61",
+        "crt310BacklogFingerprint": "ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c",
+        "sourceAuthoritySha256": "b8ab5030869ceb376e18fab412de759c68f988f113ddf5493dfecd1f14a6667b",
+        "decisionLedgerSha256": "45653693ea4b5471412ad60e518ffd8333e3d87091ff007a7b5c9eee026d8139"
+      }
+    },
+    {
+      "name": "pentatonic binding finite result closure",
+      "status": "PASS",
+      "diagnostic": {
+        "candidateFingerprint": "16bd11bc99fb0dfc5c934b1f5d6782562b04f6999882d97cfdbcc24bf72a0f55",
+        "distribution": {
+          "0": 612,
+          "1": 120,
+          "2": 48,
+          "3": 12
+        },
+        "closureFingerprint": "46f36a6c58c5480c6ba2c4835912b4928f7f82cb19deed3bc18602a67bc4b281"
+      }
+    },
+    {
+      "name": "pentatonic binding planning-evidence wording boundary",
+      "status": "PASS",
+      "diagnostic": "planning_evidence only; CRT-310 remains zero-eligible and zero-admission"
+    },
+    {
+      "name": "GOV-213 scoped harmonic-compression validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "GOV-213 scoped admission and global C_H guard — Theorem 3′ certificate",
+      "status": "PASS",
+      "diagnostic": {
+        "candidateFingerprint": "b2e57f6b0e2d8ac10113dc1861430ff5c205dedb8b079312232b2a76f167df5f",
+        "recordCount": 21,
+        "globalAggregate": {
+          "guardLiteral": "C_H is a derived harmonic property, not a photonic measurement, not C_P, not C_S, not kappa_court, and not a thermodynamic quantity: not temperature, entropy, enthalpy, or free energy.",
+          "namespace": "harmonic.C_H",
+          "status": "unresolved",
+          "value": null
+        },
+        "reportFingerprint": "e15024ed0a764854b568b91ecdf726db03d81c6638cd84e9e97905dffb5c02f6"
+      }
+    },
+    {
+      "name": "GOV-227 scoped D-tier harmonic-compression validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "GOV-227 scoped admission, topology boundary, and global C_H guard",
+      "status": "PASS",
+      "diagnostic": {
+        "candidateFingerprint": "c078171a73465e256b43ad4bc3a75c787866b582ec7783edf6e42c13e096b685",
+        "recordCount": 49,
+        "lpStatuses": [
+          "WEAK_SYSTEM_INFEASIBLE",
+          "WEAK_SYSTEM_INFEASIBLE",
+          "WEAK_SYSTEM_INFEASIBLE"
+        ],
+        "globalAggregate": {
+          "guardLiteral": "C_H is a derived harmonic property, not a photonic measurement, not C_P, not C_S, not kappa_court, and not a thermodynamic quantity: not temperature, entropy, enthalpy, or free energy.",
+          "namespace": "harmonic.C_H",
+          "status": "unresolved",
+          "value": null
+        },
+        "reportFingerprint": "0cd03f739fe17189541c6c29c706254d32a8dcafdaa3f4ef11b00a1cbda640aa"
+      }
+    },
+    {
+      "name": "declared full-database reproducibility and deployment evidence",
+      "status": "PASS",
+      "diagnostic": {
+        "reportFingerprint": "c61a9659019e7e51a3601a47fda0bf3724e58a6c46476d60f180744416f19fc4",
+        "retainedReleaseId": "seven-governors-integrated-1.9.0",
+        "baselineStatus": {
+          "status": "current_release_baseline",
+          "retainedReleaseId": "seven-governors-integrated-1.9.0",
+          "reason": "native clean-import reproducibility and a separately configured disposable-local bootstrap/roundtrip both pass against the current release provenance; the projected payload namespaces are byte-identical to the 1.8.1 baseline and the re-baseline is a release-state update only",
+          "reproducibilityReceipt": "qa/neo4j-full-database-validation.json",
+          "deploymentReceipt": "qa/neo4j-deployment-roundtrip-validation.json",
+          "refreshRequired": "next release provenance or projected-data change"
+        },
+        "deploymentTargetClass": "disposable_local"
+      }
+    },
+    {
+      "name": "court agent skill bundle validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "court local model observational traces",
+      "status": "PASS",
+      "diagnostic": {
+        "verdict": "PASS",
+        "model": "koboldcpp/Qwen3.6-35B-A3B-UD-IQ2_XXS",
+        "traceCount": 8,
+        "canonicalFingerprintExcluded": true
+      }
+    },
+    {
+      "name": "GOV-208 and CRT-308 vault context validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "GOV-208 optional vault provider report",
+      "status": "PASS",
+      "diagnostic": {
+        "verdict": "PASS",
+        "checksPassed": 3,
+        "reportFingerprint": "e9a2aba3d0c675d85327154a825df09c37ec9d10457a5286baf8abe1d255b189"
+      }
+    },
+    {
+      "name": "CRT-308 Court vault provider report",
+      "status": "PASS",
+      "diagnostic": {
+        "verdict": "PASS",
+        "checksPassed": 3,
+        "reportFingerprint": "79c25e45425d945a311a88ee8def800536876e1e73d95282ef4d5c0092c0b644"
+      }
+    },
+    {
+      "name": "GOV-209 Governor runtime admission report",
+      "status": "PASS",
+      "diagnostic": {
+        "verdict": "PASS",
+        "checksPassed": 7,
+        "reportFingerprint": "9d3b57f138badf46aeeeaa1698b5e87773075bb74603775db98e0d88d78c43ac",
+        "benchmarkFingerprint": "dca438ec04fddcd488df6e1d78abb5c9ad317f9300f6c3fbb5dace6d2d354777"
+      }
+    },
+    {
+      "name": "CRT-309 admission release record",
+      "status": "PASS",
+      "diagnostic": {
+        "admissionId": "court-admission:crt-309:1.0.0",
+        "admissionFingerprint": "df7e4c52131705b168efa14072d7fed14735fd073e9f8b4679d85a9c05ca0d26",
+        "artifactBindings": [
+          {
+            "artifactId": "crt-301-contract",
+            "expected": "b4351a14aa3dfde6043a609e4158abcb17b006b666a35220e5833cf1cf7ffa9b",
+            "actual": "b4351a14aa3dfde6043a609e4158abcb17b006b666a35220e5833cf1cf7ffa9b"
+          },
+          {
+            "artifactId": "crt-302-substrate",
+            "expected": "6906a5b7a495feee7dddb02ee936393052e58315c28893a58c700ec60000f9a3",
+            "actual": "6906a5b7a495feee7dddb02ee936393052e58315c28893a58c700ec60000f9a3"
+          },
+          {
+            "artifactId": "crt-303-invariants",
+            "expected": "75b3ffaa0b126c4dbf0abf6e42a4674724092b0e403a2862d893b6f1493d0e6f",
+            "actual": "75b3ffaa0b126c4dbf0abf6e42a4674724092b0e403a2862d893b6f1493d0e6f"
+          },
+          {
+            "artifactId": "crt-304-filters",
+            "expected": "83bb95522b91170914c1a1306d2ae0d5e084842eea2723c2c0d9d44ef0543368",
+            "actual": "83bb95522b91170914c1a1306d2ae0d5e084842eea2723c2c0d9d44ef0543368"
+          },
+          {
+            "artifactId": "crt-305-runtime",
+            "expected": "5164b74bf6cbbb55625eb0e9b958542cf20ddacb426813b7a93c1bffd7347605",
+            "actual": "5164b74bf6cbbb55625eb0e9b958542cf20ddacb426813b7a93c1bffd7347605"
+          },
+          {
+            "artifactId": "crt-306-projection",
+            "expected": "4a5e13ebe69aa96f4a3319bdd5f3ea19bec745b3aa024532297acc885c85bb10",
+            "actual": "4a5e13ebe69aa96f4a3319bdd5f3ea19bec745b3aa024532297acc885c85bb10"
+          },
+          {
+            "artifactId": "crt-306-query-catalog",
+            "expected": "3442e4cd03a3885a5cd7706d8146974eba20fc564edf08acb4bb2db0479ddcc8",
+            "actual": "3442e4cd03a3885a5cd7706d8146974eba20fc564edf08acb4bb2db0479ddcc8"
+          },
+          {
+            "artifactId": "crt-307-skill-registry",
+            "expected": "9eb2f62a6c30f6e608c37d9c9c383917f26475ec9d33c4a4b471bddd67803ca3",
+            "actual": "9eb2f62a6c30f6e608c37d9c9c383917f26475ec9d33c4a4b471bddd67803ca3"
+          },
+          {
+            "artifactId": "gov-208-vault-provider",
+            "expected": "475fd41741a3e45867055ea07fb45cd8806ce93b1dab1323cb6c9bf1c958652b",
+            "actual": "475fd41741a3e45867055ea07fb45cd8806ce93b1dab1323cb6c9bf1c958652b"
+          },
+          {
+            "artifactId": "crt-308-court-vault-provider",
+            "expected": "d61ef3eee5613c78dae8ecbd3129d2e3e7ad4720001cd717d7ebbd9703481dba",
+            "actual": "d61ef3eee5613c78dae8ecbd3129d2e3e7ad4720001cd717d7ebbd9703481dba"
+          },
+          {
+            "artifactId": "crt-308-context-schema",
+            "expected": "65b1f9e5506df691da38e55320850dc3fcf886b921a60352380bb9176116f220",
+            "actual": "65b1f9e5506df691da38e55320850dc3fcf886b921a60352380bb9176116f220"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CRT-309 admission validator report",
+      "status": "PASS",
+      "diagnostic": {
+        "verdict": "PASS",
+        "checksPassed": 18,
+        "reportFingerprint": "58b3d99e09b1782f8bc2e12ef52145b44895c0743ab3e260b505e858b835ec75"
+      }
+    },
+    {
+      "name": "CRT-309 machine-scored Court benchmark",
+      "status": "PASS",
+      "diagnostic": {
+        "corpusFingerprint": "455f00a82835ad95b0fc3bb2c1740e314d031113e29640305e06acae6a930680",
+        "reportFingerprint": "9ec25fc8e19c7ab3916b525d48c2301433de4aa0afa4ae544127e60ab801f62e",
+        "deterministicToolRates": {
+          "success": 1,
+          "offChainRejection": 1,
+          "nonAdjacentRejection": 1,
+          "filterNonCommutation": 1,
+          "repeatedActionStop": 1,
+          "recovery": 1
+        }
+      }
+    },
+    {
+      "name": "companion toolkit validation",
+      "status": "PASS",
+      "diagnostic": "passed"
+    },
+    {
+      "name": "companion toolkit report",
+      "status": "PASS",
+      "diagnostic": {
+        "status": "passed",
+        "failed": 0
+      }
+    },
+    {
+      "name": "syntax: server.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "syntax: scripts/validate-release.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "syntax: scripts/build-manifest.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "syntax: scripts/validate-cypher-syntax.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "syntax: scripts/build-pentatonic-admission-backlog.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "syntax: scripts/validate-pentatonic-admission-backlog.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "syntax: scripts/bootstrap-neo4j.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "syntax: scripts/verify-neo4j-roundtrip.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "syntax: scripts/validate-full-database.mjs",
+      "status": "PASS",
+      "diagnostic": "ok"
+    },
+    {
+      "name": "server release id binding",
+      "status": "PASS",
+      "diagnostic": "server must target registry release 0.1.1"
+    },
+    {
+      "name": "server expected topology counts",
+      "status": "PASS",
+      "diagnostic": "server parity expectations must match canonical counts"
+    },
+    {
+      "name": "server expected mutation counts",
+      "status": "PASS",
+      "diagnostic": "server parity expectations must match audit counts"
+    },
+    {
+      "name": "server expected semantic counts",
+      "status": "PASS",
+      "diagnostic": "server parity expectations must match registry 0.1.1"
+    },
+    {
+      "name": "creation packet schema bound",
+      "status": "PASS",
+      "diagnostic": "server must compile packets through the registry compiler"
+    },
+    {
+      "name": "compiled-profile.schema.json contract",
+      "status": "PASS",
+      "diagnostic": []
+    },
+    {
+      "name": "standalone graph document",
+      "status": "PASS",
+      "diagnostic": {
+        "bytes": 859710
+      }
+    },
+    {
+      "name": "standalone graph offline closure",
+      "status": "PASS",
+      "diagnostic": "no remote runtime assets"
+    },
+    {
+      "name": "explorer: graph/explore.html",
+      "status": "PASS",
+      "diagnostic": {
+        "bytes": 26765
+      }
+    },
+    {
+      "name": "explorer vendor: graph/vendor/vis-network.min.js",
+      "status": "PASS",
+      "diagnostic": 643839
+    },
+    {
+      "name": "explorer vendor: graph/vendor/3d-force-graph.min.js",
+      "status": "PASS",
+      "diagnostic": 1313897
+    },
+    {
+      "name": "cross-package fingerprint: universal-network-data.json",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "canonical/universal-network-data.json",
+          "seven-governors-canonical-feature-profile-registry-v0.1.1/source/universal-network-data.json",
+          "seven-governors-mutation-algebra-audit/source/universal-network-data.json"
+        ],
+        "digests": [
+          "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+          "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+          "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc"
+        ]
+      }
+    },
+    {
+      "name": "cross-package fingerprint: topology-identity-definitions.json",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "canonical/topology-identity-definitions.json",
+          "seven-governors-canonical-feature-profile-registry-v0.1.1/source/topology-identity-definitions.json",
+          "seven-governors-mutation-algebra-audit/source/topology-identity-definitions.json"
+        ],
+        "digests": [
+          "ce7b3a3b8bed85d67df203a0dd6d2ba395effd19f0855869faa1a4d343bf127b",
+          "ce7b3a3b8bed85d67df203a0dd6d2ba395effd19f0855869faa1a4d343bf127b",
+          "ce7b3a3b8bed85d67df203a0dd6d2ba395effd19f0855869faa1a4d343bf127b"
+        ]
+      }
+    },
+    {
+      "name": "cross-package fingerprint: governors.yaml",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "schemas/governors.yaml",
+          "seven-governors-canonical-feature-profile-registry-v0.1.1/source/governors.yaml",
+          "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/source/governors.yaml"
+        ],
+        "digests": [
+          "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2",
+          "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2",
+          "841fc52f1874de28d98a79e1635cbdd8ece134792a2a1f48ccb7e11a7a534ad2"
+        ]
+      }
+    },
+    {
+      "name": "cross-package fingerprint: framework/AGENTS.md",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "framework/AGENTS.md",
+          "seven-governors-canonical-feature-profile-registry-v0.1.1/source/framework/AGENTS.md",
+          "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/source/canon/AGENTS.md"
+        ],
+        "digests": [
+          "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24",
+          "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24",
+          "6109987102ce576874ee5a113d9a0fc556537a2c8ac29e1bc109bd6b2c2e0e24"
+        ]
+      }
+    },
+    {
+      "name": "cross-package fingerprint: framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+          "seven-governors-canonical-feature-profile-registry-v0.1.1/source/framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+          "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/source/canon/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md"
+        ],
+        "digests": [
+          "5ba49b157aa6fd8ac672610f88df8ac01464fd71387f3c0e21b042e912636960",
+          "5ba49b157aa6fd8ac672610f88df8ac01464fd71387f3c0e21b042e912636960",
+          "5ba49b157aa6fd8ac672610f88df8ac01464fd71387f3c0e21b042e912636960"
+        ]
+      }
+    },
+    {
+      "name": "cross-package fingerprint: framework/NATURAL_ORGANIZATION_THESIS.md",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "framework/NATURAL_ORGANIZATION_THESIS.md",
+          "seven-governors-canonical-feature-profile-registry-v0.1.1/source/framework/NATURAL_ORGANIZATION_THESIS.md",
+          "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/source/canon/NATURAL_ORGANIZATION_THESIS.md"
+        ],
+        "digests": [
+          "898626127fbc7d7538bb954326f230db4bf97f084f35122c6e42b68dcdd37af9",
+          "898626127fbc7d7538bb954326f230db4bf97f084f35122c6e42b68dcdd37af9",
+          "898626127fbc7d7538bb954326f230db4bf97f084f35122c6e42b68dcdd37af9"
+        ]
+      }
+    },
+    {
+      "name": "cross-package fingerprint: framework/TOPOLOGICAL_ANCHORING.md",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "framework/TOPOLOGICAL_ANCHORING.md",
+          "seven-governors-canonical-feature-profile-registry-v0.1.1/source/framework/TOPOLOGICAL_ANCHORING.md",
+          "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/source/canon/TOPOLOGICAL_ANCHORING.md"
+        ],
+        "digests": [
+          "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c",
+          "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c",
+          "a3aa1dea0ac4ec08fb4d526b860ed40fd146c52e4e6e579a0f75b23816f4691c"
+        ]
+      }
+    },
+    {
+      "name": "cross-package fingerprint: docs/START_HERE.md",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "docs/START_HERE.md",
+          "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/docs/START_HERE.md"
+        ],
+        "digests": [
+          "5d7da3b424e5c67cc48f82ad7902dc85231b05cc9d8d0f27253ab1f0dff59226",
+          "5d7da3b424e5c67cc48f82ad7902dc85231b05cc9d8d0f27253ab1f0dff59226"
+        ]
+      }
+    },
+    {
+      "name": "cross-package fingerprint: docs/GRAPH_AND_COMPILER_API.md",
+      "status": "PASS",
+      "diagnostic": {
+        "paths": [
+          "docs/GRAPH_AND_COMPILER_API.md",
+          "seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/docs/GRAPH_AND_COMPILER_API.md"
+        ],
+        "digests": [
+          "e75004e4935500ba21ed8ebfdb1f6df1c59cd5d6fb45fdf7254275f62444e025",
+          "e75004e4935500ba21ed8ebfdb1f6df1c59cd5d6fb45fdf7254275f62444e025"
+        ]
+      }
+    },
+    {
+      "name": "manifest completeness",
+      "status": "PASS",
+      "diagnostic": {
+        "version": "1.9.0",
+        "missingFromManifest": [],
+        "missingFromDisk": []
+      }
+    },
+    {
+      "name": "manifest hash parity",
+      "status": "PASS",
+      "diagnostic": {
+        "mismatched": []
+      }
+    },
+    {
+      "name": "court runtime live state excluded",
+      "status": "PASS",
+      "diagnostic": []
+    },
+    {
+      "name": "court local model observation excluded from canonical manifest",
+      "status": "PASS",
+      "diagnostic": "observational model output is QA evidence, not canonical identity"
+    },
+    {
+      "name": "live vault artifacts excluded from canonical manifest",
+      "status": "PASS",
+      "diagnostic": []
+    },
+    {
+      "name": "checksums sha256 parity",
+      "status": "PASS",
+      "diagnostic": {
+        "checksumLines": 1361,
+        "manifestFiles": 1361
+      }
+    },
+    {
+      "name": "bestiary:schema-valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "court admission contract: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "CRT-309 admission release: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "CRT-309 admission validation: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "CRT-309 Court benchmark: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "CRT-310 admission backlog: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "CRT-310 admission backlog validation: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "pentatonic 7-35 parent audit candidate: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "pentatonic 7-35 parent audit validation: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "pentatonic binding audit closure: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "GOV-227 D-tier candidate: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "GOV-227 D-tier validation: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "declared full-database reproducibility validation: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "declared full-database deployment validation: schema valid",
+      "status": "PASS",
+      "diagnostic": "valid"
+    },
+    {
+      "name": "court admission contract: namespace closure",
+      "status": "PASS",
+      "diagnostic": [
+        "court.compression",
+        "court.filter",
+        "court.fivefoldEngine",
+        "court.poleDisposition",
+        "court.poleRegister",
+        "court.registerGovernor",
+        "court.state",
+        "court.transition",
+        "court.translocation"
+      ]
+    },
+    {
+      "name": "court admission contract: source closure",
+      "status": "PASS",
+      "diagnostic": {
+        "checked": 9,
+        "missing": []
+      }
+    },
+    {
+      "name": "court admission contract: topology locks",
+      "status": "PASS",
+      "diagnostic": [
+        {
+          "scaleStateId": 1749,
+          "office": "Moon",
+          "officeDisposition": "validated",
+          "requiredOccupiesOfficeCount": 1
+        },
+        {
+          "scaleStateId": 2477,
+          "office": "Jupiter",
+          "officeDisposition": "inherited",
+          "incomingDegreeGovernor": "Moon",
+          "requiredOccupiesOfficeCount": 1
+        },
+        {
+          "scaleStateId": 223,
+          "office": null,
+          "officeDisposition": "unassigned",
+          "relationalOffice": "Jupiter",
+          "requiredOccupiesOfficeCount": 0
+        }
+      ]
+    },
+    {
+      "name": "bestiary:fresh",
+      "status": "PASS",
+      "diagnostic": "{\n  \"verdict\": \"PASS\",\n  \"target\": \"bestiary/data/bestiary-data.json\",\n  \"bytes\": 1006755\n}"
+    },
+    {
+      "name": "bestiary:refs-closed",
+      "status": "PASS",
+      "diagnostic": {
+        "violations": []
+      }
+    },
+    {
+      "name": "bestiary:counts",
+      "status": "PASS",
+      "diagnostic": {
+        "violations": []
+      }
+    },
+    {
+      "name": "bestiary:narrative-pins",
+      "status": "PASS",
+      "diagnostic": {
+        "violations": [],
+        "detail": "22 pinned narratives, sha256 bound, template narratives clean"
+      }
+    },
+    {
+      "name": "bestiary:site-built",
+      "status": "PASS",
+      "diagnostic": "index.html 1786414473769.5867 >= newest source 1785551338095.5579"
+    },
+    {
+      "name": "bestiary:offline-closure",
+      "status": "PASS",
+      "diagnostic": {
+        "violations": [],
+        "files": 628
+      }
+    },
+    {
+      "name": "bestiary:detail-routes",
+      "status": "PASS",
+      "diagnostic": "598 detail routes (expected 598)"
+    },
+    {
+      "name": "bestiary:compare-route",
+      "status": "PASS",
+      "diagnostic": "compare page: selects=true, sections=true"
+    },
+    {
+      "name": "bestiary:alias-routes",
+      "status": "PASS",
+      "diagnostic": "operator aliases=15 (expected 15), profile aliases=7 (expected 7), redirects=22"
+    },
+    {
+      "name": "required file: framework/AGENTS.md",
+      "status": "PASS",
+      "diagnostic": 33553
+    },
+    {
+      "name": "required file: framework/TOPOLOGICAL_ANCHORING.md",
+      "status": "PASS",
+      "diagnostic": 26506
+    },
+    {
+      "name": "required file: framework/CANONICAL_FEATURE_PROFILES_AND_MUTATION_ALGEBRA.md",
+      "status": "PASS",
+      "diagnostic": 51939
+    },
+    {
+      "name": "required file: framework/NATURAL_ORGANIZATION_THESIS.md",
+      "status": "PASS",
+      "diagnostic": 33625
+    },
+    {
+      "name": "required file: schemas/governors.yaml",
+      "status": "PASS",
+      "diagnostic": 44118
+    },
+    {
+      "name": "required file: schemas/court-admission-contract.schema.json",
+      "status": "PASS",
+      "diagnostic": 9612
+    },
+    {
+      "name": "required file: schemas/court-admission-contract.json",
+      "status": "PASS",
+      "diagnostic": 9538
+    },
+    {
+      "name": "required file: docs/COURT_ADMISSION_AND_AUTHORITY.md",
+      "status": "PASS",
+      "diagnostic": 10560
+    },
+    {
+      "name": "required file: docs/TOPOLOGY_IDENTITY_AND_INVARIANTS.md",
+      "status": "PASS",
+      "diagnostic": 11593
+    },
+    {
+      "name": "required file: docs/A_TIER_TRIADIC_COMPRESSION_THEOREM.md",
+      "status": "PASS",
+      "diagnostic": 17070
+    },
+    {
+      "name": "required file: docs/FOUR_LAYER_FORMALIZATION.md",
+      "status": "PASS",
+      "diagnostic": 4502
+    },
+    {
+      "name": "required file: docs/START_HERE.md",
+      "status": "PASS",
+      "diagnostic": 4195
+    },
+    {
+      "name": "required file: docs/GRAPH_AND_COMPILER_API.md",
+      "status": "PASS",
+      "diagnostic": 15656
+    },
+    {
+      "name": "required file: neo4j/schema.cypher",
+      "status": "PASS",
+      "diagnostic": 1149
+    },
+    {
+      "name": "required file: neo4j/import.cypher",
+      "status": "PASS",
+      "diagnostic": 15471
+    },
+    {
+      "name": "required file: neo4j/validation.cypher",
+      "status": "PASS",
+      "diagnostic": 14727
+    },
+    {
+      "name": "required file: neo4j/provenance.cypher",
+      "status": "PASS",
+      "diagnostic": 3745
+    },
+    {
+      "name": "required file: neo4j/provenance-validation.cypher",
+      "status": "PASS",
+      "diagnostic": 1397
+    },
+    {
+      "name": "required file: seven-governors-mutation-algebra-audit/audit/operator-registry.csv",
+      "status": "PASS",
+      "diagnostic": 4434
+    },
+    {
+      "name": "required file: seven-governors-canonical-feature-profile-registry-v0.1.1/schemas/compiled-profile.schema.json",
+      "status": "PASS",
+      "diagnostic": 2392
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/package.json",
+      "status": "PASS",
+      "diagnostic": 1037
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/PACKAGE_MANIFEST.json",
+      "status": "PASS",
+      "diagnostic": 5332
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/canonical/policy-release.json",
+      "status": "PASS",
+      "diagnostic": 24529
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/canonical/feature-typed-aspect-crosswalk.json",
+      "status": "PASS",
+      "diagnostic": 6243
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/canonical/canonical-bridge-examples.json",
+      "status": "PASS",
+      "diagnostic": 7718
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/schemas/typed-aspect.schema.json",
+      "status": "PASS",
+      "diagnostic": 1299
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/schemas/quantity.schema.json",
+      "status": "PASS",
+      "diagnostic": 4628
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/schemas/bridge-rule.schema.json",
+      "status": "PASS",
+      "diagnostic": 3527
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/schemas/classification-request.schema.json",
+      "status": "PASS",
+      "diagnostic": 3474
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/schemas/classification-result.schema.json",
+      "status": "PASS",
+      "diagnostic": 4944
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/schemas/policy-release.schema.json",
+      "status": "PASS",
+      "diagnostic": 5820
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/fixtures/negative-cases.json",
+      "status": "PASS",
+      "diagnostic": 20792
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/qa/validation-report.json",
+      "status": "PASS",
+      "diagnostic": 11319
+    },
+    {
+      "name": "required file: seven-governors-governor-runtime-v0.1.0/qa/determinism-report.json",
+      "status": "PASS",
+      "diagnostic": 2175
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/package.json",
+      "status": "PASS",
+      "diagnostic": 1015
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/PACKAGE_MANIFEST.json",
+      "status": "PASS",
+      "diagnostic": 5555
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/canonical/substrate-registry-release.json",
+      "status": "PASS",
+      "diagnostic": 51341
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/canonical/pentatonic-set-class-registry.json",
+      "status": "PASS",
+      "diagnostic": 20670
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/canonical/court-rooted-positions.json",
+      "status": "PASS",
+      "diagnostic": 4478
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/canonical/bridge-rootings.json",
+      "status": "PASS",
+      "diagnostic": 1611
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/canonical/t5-cycle.json",
+      "status": "PASS",
+      "diagnostic": 2078
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/canonical/complement-map.json",
+      "status": "PASS",
+      "diagnostic": 20996
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/canonical/admission-status-ledger.json",
+      "status": "PASS",
+      "diagnostic": 968
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/schemas/common.schema.json",
+      "status": "PASS",
+      "diagnostic": 1683
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/schemas/admission-status.schema.json",
+      "status": "PASS",
+      "diagnostic": 554
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/schemas/pentatonic-set-class.schema.json",
+      "status": "PASS",
+      "diagnostic": 2072
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/schemas/court-rooted-position.schema.json",
+      "status": "PASS",
+      "diagnostic": 2252
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/schemas/bridge-rooting.schema.json",
+      "status": "PASS",
+      "diagnostic": 1424
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/schemas/t5-cycle-entry.schema.json",
+      "status": "PASS",
+      "diagnostic": 787
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/schemas/complement-map.schema.json",
+      "status": "PASS",
+      "diagnostic": 1957
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/schemas/substrate-registry-release.schema.json",
+      "status": "PASS",
+      "diagnostic": 3265
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/fixtures/negative-cases.json",
+      "status": "PASS",
+      "diagnostic": 2343
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/qa/validation-report.json",
+      "status": "PASS",
+      "diagnostic": 5123
+    },
+    {
+      "name": "required file: seven-governors-court-substrate-v0.1.0/qa/determinism-report.json",
+      "status": "PASS",
+      "diagnostic": 2527
+    },
+    {
+      "name": "required file: seven-governors-harmonic-invariants-v0.1.0/package.json",
+      "status": "PASS",
+      "diagnostic": 1006
+    },
+    {
+      "name": "required file: seven-governors-harmonic-invariants-v0.1.0/PACKAGE_MANIFEST.json",
+      "status": "PASS",
+      "diagnostic": 5485
+    },
+    {
+      "name": "required file: seven-governors-harmonic-invariants-v0.1.0/canonical/harmonic-invariant-registry.json",
+      "status": "PASS",
+      "diagnostic": 20020
+    },
+    {
+      "name": "required file: seven-governors-harmonic-invariants-v0.1.0/canonical/court-geometry.json",
+      "status": "PASS",
+      "diagnostic": 2666
+    },
+    {
+      "name": "required file: seven-governors-harmonic-invariants-v0.1.0/canonical/carey-5-35.json",
+      "status": "PASS",
+      "diagnostic": 9941
+    },
+    {
+      "name": "required file: seven-governors-harmonic-invariants-v0.1.0/canonical/compression-namespace-guard.json",
+      "status": "PASS",
+      "diagnostic": 1135
+    },
+    {
+      "name": "required file: seven-governors-harmonic-invariants-v0.1.0/schemas/common.schema.json",
+      "status": "PASS",
+      "diagnostic": 1741
+    },
+    {
+      "name": "required file: seven-governors-harmonic-invariants-v0.1.0/schemas/invariant-record.schema.json",
+      "status": "PASS",
+      "diagnostic": 859
+    },
+    {
+      "name": "required file: seven-governors-harmonic-invariants-v0.1.0/schemas/harmonic-invariant-release.schema.json",
+      "status": "PASS",
+      "diagnostic": 6606
+    },
+    {
+      "name": "required file: seven-governors-harmonic-invariants-v0.1.0/fixtures/negative-cases.json",
+      "status": "PASS",
+      "diagnostic": 1548
+    },
+    {
+      "name": "required file: seven-governors-harmonic-invariants-v0.1.0/qa/validation-report.json",
+      "status": "PASS",
+      "diagnostic": 5612
+    },
+    {
+      "name": "required file: seven-governors-harmonic-invariants-v0.1.0/qa/determinism-report.json",
+      "status": "PASS",
+      "diagnostic": 2792
+    },
+    {
+      "name": "required file: seven-governors-court-filter-algebra-v0.1.0/package.json",
+      "status": "PASS",
+      "diagnostic": 989
+    },
+    {
+      "name": "required file: seven-governors-court-filter-algebra-v0.1.0/PACKAGE_MANIFEST.json",
+      "status": "PASS",
+      "diagnostic": 6377
+    },
+    {
+      "name": "required file: seven-governors-court-filter-algebra-v0.1.0/canonical/filter-algebra-release.json",
+      "status": "PASS",
+      "diagnostic": 6507
+    },
+    {
+      "name": "required file: seven-governors-court-filter-algebra-v0.1.0/canonical/filter-operator-registry.json",
+      "status": "PASS",
+      "diagnostic": 13821
+    },
+    {
+      "name": "required file: seven-governors-court-filter-algebra-v0.1.0/canonical/bridge-route-comparison.json",
+      "status": "PASS",
+      "diagnostic": 3681
+    },
+    {
+      "name": "required file: seven-governors-court-filter-algebra-v0.1.0/canonical/commutation-table.json",
+      "status": "PASS",
+      "diagnostic": 33852
+    },
+    {
+      "name": "required file: seven-governors-court-filter-algebra-v0.1.0/canonical/non-commutation-records.json",
+      "status": "PASS",
+      "diagnostic": 30863380
+    },
+    {
+      "name": "required file: seven-governors-court-filter-algebra-v0.1.0/schemas/filter-operator.schema.json",
+      "status": "PASS",
+      "diagnostic": 3226
+    },
+    {
+      "name": "required file: seven-governors-court-filter-algebra-v0.1.0/schemas/filter-algebra-release.schema.json",
+      "status": "PASS",
+      "diagnostic": 2926
+    },
+    {
+      "name": "required file: seven-governors-court-filter-algebra-v0.1.0/schemas/commutation-table.schema.json",
+      "status": "PASS",
+      "diagnostic": 1720
+    },
+    {
+      "name": "required file: seven-governors-court-filter-algebra-v0.1.0/schemas/non-commutation-records.schema.json",
+      "status": "PASS",
+      "diagnostic": 2353
+    },
+    {
+      "name": "required file: seven-governors-court-filter-algebra-v0.1.0/fixtures/negative-cases.json",
+      "status": "PASS",
+      "diagnostic": 1730
+    },
+    {
+      "name": "required file: seven-governors-court-filter-algebra-v0.1.0/qa/validation-report.json",
+      "status": "PASS",
+      "diagnostic": 5823
+    },
+    {
+      "name": "required file: seven-governors-court-filter-algebra-v0.1.0/qa/determinism-report.json",
+      "status": "PASS",
+      "diagnostic": 2749
+    },
+    {
+      "name": "required file: schemas/court-runtime-policy.json",
+      "status": "PASS",
+      "diagnostic": 7597
+    },
+    {
+      "name": "required file: schemas/court-runtime-policy.schema.json",
+      "status": "PASS",
+      "diagnostic": 7482
+    },
+    {
+      "name": "required file: schemas/court-runtime/court-runtime-types.schema.json",
+      "status": "PASS",
+      "diagnostic": 13911
+    },
+    {
+      "name": "required file: schemas/court-runtime/court-runtime-state.schema.json",
+      "status": "PASS",
+      "diagnostic": 235
+    },
+    {
+      "name": "required file: schemas/court-runtime/court-legal-move.schema.json",
+      "status": "PASS",
+      "diagnostic": 233
+    },
+    {
+      "name": "required file: schemas/court-runtime/court-validation-token.schema.json",
+      "status": "PASS",
+      "diagnostic": 241
+    },
+    {
+      "name": "required file: schemas/court-runtime/court-validated-move.schema.json",
+      "status": "PASS",
+      "diagnostic": 245
+    },
+    {
+      "name": "required file: schemas/court-runtime/court-transition-event.schema.json",
+      "status": "PASS",
+      "diagnostic": 261
+    },
+    {
+      "name": "required file: schemas/court-runtime/topological-translocation-record.schema.json",
+      "status": "PASS",
+      "diagnostic": 269
+    },
+    {
+      "name": "required file: schemas/court-runtime/court-runtime-snapshot.schema.json",
+      "status": "PASS",
+      "diagnostic": 244
+    },
+    {
+      "name": "required file: schemas/court-runtime/court-runtime-replay-result.schema.json",
+      "status": "PASS",
+      "diagnostic": 258
+    },
+    {
+      "name": "required file: schemas/court-runtime/court-runtime-session.schema.json",
+      "status": "PASS",
+      "diagnostic": 241
+    },
+    {
+      "name": "required file: src/governor/court_runtime.py",
+      "status": "PASS",
+      "diagnostic": 71979
+    },
+    {
+      "name": "required file: src/governor/court_session_store.py",
+      "status": "PASS",
+      "diagnostic": 10692
+    },
+    {
+      "name": "required file: src/governor/court_agent_api.py",
+      "status": "PASS",
+      "diagnostic": 59713
+    },
+    {
+      "name": "required file: tests/test_court_runtime_transitions.py",
+      "status": "PASS",
+      "diagnostic": 13285
+    },
+    {
+      "name": "required file: tests/test_court_runtime_store.py",
+      "status": "PASS",
+      "diagnostic": 3838
+    },
+    {
+      "name": "required file: tests/test_crt_307_court_agent_api.py",
+      "status": "PASS",
+      "diagnostic": 34858
+    },
+    {
+      "name": "required file: tests/verification/test_court_runtime_security.py",
+      "status": "PASS",
+      "diagnostic": 9340
+    },
+    {
+      "name": "required file: skills/court/registry.json",
+      "status": "PASS",
+      "diagnostic": 9528
+    },
+    {
+      "name": "required file: skills/court/capabilities.json",
+      "status": "PASS",
+      "diagnostic": 3025
+    },
+    {
+      "name": "required file: skills/court/workflows/inspect_court_state/SKILL.md",
+      "status": "PASS",
+      "diagnostic": 2358
+    },
+    {
+      "name": "required file: skills/court/workflows/list_legal_court_moves/SKILL.md",
+      "status": "PASS",
+      "diagnostic": 2187
+    },
+    {
+      "name": "required file: skills/court/workflows/validate_and_execute_court_transition/SKILL.md",
+      "status": "PASS",
+      "diagnostic": 3406
+    },
+    {
+      "name": "required file: skills/court/workflows/project_through_court/SKILL.md",
+      "status": "PASS",
+      "diagnostic": 2676
+    },
+    {
+      "name": "required file: skills/court/workflows/verify_court_postcondition/SKILL.md",
+      "status": "PASS",
+      "diagnostic": 2608
+    },
+    {
+      "name": "required file: scripts/install-court-skills.mjs",
+      "status": "PASS",
+      "diagnostic": 18252
+    },
+    {
+      "name": "required file: scripts/validate-court-skills.mjs",
+      "status": "PASS",
+      "diagnostic": 14996
+    },
+    {
+      "name": "required file: scripts/run-crt307-local-model-observation.mjs",
+      "status": "PASS",
+      "diagnostic": 3900
+    },
+    {
+      "name": "required file: qa/crt-307-local-model-observation.json",
+      "status": "PASS",
+      "diagnostic": 930
+    },
+    {
+      "name": "required file: docs/GOVERNOR_VAULT_CONTEXT.md",
+      "status": "PASS",
+      "diagnostic": 1684
+    },
+    {
+      "name": "required file: docs/COURT_VAULT_CONTEXT.md",
+      "status": "PASS",
+      "diagnostic": 1273
+    },
+    {
+      "name": "required file: docs/COURT_ADMISSION_RELEASE_1_3.md",
+      "status": "PASS",
+      "diagnostic": 1860
+    },
+    {
+      "name": "required file: src/governor/vault_context.py",
+      "status": "PASS",
+      "diagnostic": 21021
+    },
+    {
+      "name": "required file: src/governor/court_vault_context.py",
+      "status": "PASS",
+      "diagnostic": 7622
+    },
+    {
+      "name": "required file: schemas/governor-context/vault-note-frontmatter.schema.json",
+      "status": "PASS",
+      "diagnostic": 988
+    },
+    {
+      "name": "required file: schemas/governor-context/context-request.schema.json",
+      "status": "PASS",
+      "diagnostic": 571
+    },
+    {
+      "name": "required file: schemas/governor-context/context-bundle.schema.json",
+      "status": "PASS",
+      "diagnostic": 3216
+    },
+    {
+      "name": "required file: schemas/governor-context/contextual-classification-result.schema.json",
+      "status": "PASS",
+      "diagnostic": 1862
+    },
+    {
+      "name": "required file: schemas/governor-context/dependency-bindings.json",
+      "status": "PASS",
+      "diagnostic": 720
+    },
+    {
+      "name": "required file: schemas/governor-context/validation-report.schema.json",
+      "status": "PASS",
+      "diagnostic": 948
+    },
+    {
+      "name": "required file: schemas/court-context/court-vault-frontmatter.schema.json",
+      "status": "PASS",
+      "diagnostic": 1493
+    },
+    {
+      "name": "required file: schemas/court-context/court-context-bundle.schema.json",
+      "status": "PASS",
+      "diagnostic": 2842
+    },
+    {
+      "name": "required file: schemas/court-context/dependency-bindings.json",
+      "status": "PASS",
+      "diagnostic": 1042
+    },
+    {
+      "name": "required file: schemas/court-admission/court-admission-release.schema.json",
+      "status": "PASS",
+      "diagnostic": 1943
+    },
+    {
+      "name": "required file: schemas/court-admission/court-admission-validation.schema.json",
+      "status": "PASS",
+      "diagnostic": 1123
+    },
+    {
+      "name": "required file: schemas/court-admission/court-benchmark-report.schema.json",
+      "status": "PASS",
+      "diagnostic": 1811
+    },
+    {
+      "name": "required file: scripts/validate-vault-context.mjs",
+      "status": "PASS",
+      "diagnostic": 5132
+    },
+    {
+      "name": "required file: scripts/run-court-admission-benchmark.mjs",
+      "status": "PASS",
+      "diagnostic": 1783
+    },
+    {
+      "name": "required file: scripts/build-court-admission.mjs",
+      "status": "PASS",
+      "diagnostic": 5399
+    },
+    {
+      "name": "required file: scripts/validate-court-admission.mjs",
+      "status": "PASS",
+      "diagnostic": 7425
+    },
+    {
+      "name": "required file: tests/test_gov_208_vault_context.py",
+      "status": "PASS",
+      "diagnostic": 6387
+    },
+    {
+      "name": "required file: tests/test_crt_308_court_vault_context.py",
+      "status": "PASS",
+      "diagnostic": 5898
+    },
+    {
+      "name": "required file: tests/crt_309/benchmark-corpus.json",
+      "status": "PASS",
+      "diagnostic": 2404
+    },
+    {
+      "name": "required file: qa/gov-208-vault-context-validation.json",
+      "status": "PASS",
+      "diagnostic": 1730
+    },
+    {
+      "name": "required file: qa/crt-308-court-vault-context-validation.json",
+      "status": "PASS",
+      "diagnostic": 2166
+    },
+    {
+      "name": "required file: qa/court-admission-benchmark.json",
+      "status": "PASS",
+      "diagnostic": 1211
+    },
+    {
+      "name": "required file: qa/court-admission-validation.json",
+      "status": "PASS",
+      "diagnostic": 4154
+    },
+    {
+      "name": "required file: qa/governor-runtime-benchmark.json",
+      "status": "PASS",
+      "diagnostic": 1436
+    },
+    {
+      "name": "required file: qa/governor-runtime-validation.json",
+      "status": "PASS",
+      "diagnostic": 1685
+    },
+    {
+      "name": "required file: provenance/court-admission-release.json",
+      "status": "PASS",
+      "diagnostic": 6111
+    },
+    {
+      "name": "required file: scripts/run-governor-admission-benchmark.mjs",
+      "status": "PASS",
+      "diagnostic": 1780
+    },
+    {
+      "name": "required file: scripts/validate-governor-admission.mjs",
+      "status": "PASS",
+      "diagnostic": 3567
+    },
+    {
+      "name": "required file: tests/gov_209/benchmark-corpus.json",
+      "status": "PASS",
+      "diagnostic": 1975
+    },
+    {
+      "name": "required file: canonical/gov-210-availability-housing.json",
+      "status": "PASS",
+      "diagnostic": 4271217
+    },
+    {
+      "name": "required file: schemas/gov-210/skill-eligibility-policy.json",
+      "status": "PASS",
+      "diagnostic": 3654
+    },
+    {
+      "name": "required file: schemas/gov-210/skill-availability.schema.json",
+      "status": "PASS",
+      "diagnostic": 994
+    },
+    {
+      "name": "required file: schemas/gov-210/skill-eligibility.schema.json",
+      "status": "PASS",
+      "diagnostic": 926
+    },
+    {
+      "name": "required file: schemas/gov-210/skill-assignment.schema.json",
+      "status": "PASS",
+      "diagnostic": 1574
+    },
+    {
+      "name": "required file: schemas/gov-210/context-housing.schema.json",
+      "status": "PASS",
+      "diagnostic": 1554
+    },
+    {
+      "name": "required file: schemas/gov-210/skill-lifecycle.schema.json",
+      "status": "PASS",
+      "diagnostic": 715
+    },
+    {
+      "name": "required file: schemas/gov-210/graph-projection.schema.json",
+      "status": "PASS",
+      "diagnostic": 9095
+    },
+    {
+      "name": "required file: src/governor/availability_housing.py",
+      "status": "PASS",
+      "diagnostic": 81624
+    },
+    {
+      "name": "required file: src/governor/availability_housing_queries.py",
+      "status": "PASS",
+      "diagnostic": 14900
+    },
+    {
+      "name": "required file: scripts/generate-availability-housing.py",
+      "status": "PASS",
+      "diagnostic": 4649
+    },
+    {
+      "name": "required file: tests/test_gov_210_availability_housing.py",
+      "status": "PASS",
+      "diagnostic": 20144
+    },
+    {
+      "name": "required file: tests/gov_210/neo4j-live.test.mjs",
+      "status": "PASS",
+      "diagnostic": 8049
+    },
+    {
+      "name": "required file: tests/gov_210/context-fixture.json",
+      "status": "PASS",
+      "diagnostic": 977
+    },
+    {
+      "name": "required file: tests/gov_210/lifecycle-fixture.json",
+      "status": "PASS",
+      "diagnostic": 227
+    },
+    {
+      "name": "required file: neo4j/gov-210/schema.cypher",
+      "status": "PASS",
+      "diagnostic": 2090
+    },
+    {
+      "name": "required file: neo4j/gov-210/validation.cypher",
+      "status": "PASS",
+      "diagnostic": 7813
+    },
+    {
+      "name": "required file: neo4j/gov-210/reset.cypher",
+      "status": "PASS",
+      "diagnostic": 573
+    },
+    {
+      "name": "required file: docs/GOV_210_AVAILABILITY_AND_HOUSING.md",
+      "status": "PASS",
+      "diagnostic": 2701
+    },
+    {
+      "name": "required file: schemas/gov-211/menu-organization-policy.json",
+      "status": "PASS",
+      "diagnostic": 768
+    },
+    {
+      "name": "required file: schemas/gov-211/assignment-query-result.schema.json",
+      "status": "PASS",
+      "diagnostic": 5965
+    },
+    {
+      "name": "required file: schemas/gov-211/menu-organization.schema.json",
+      "status": "PASS",
+      "diagnostic": 4795
+    },
+    {
+      "name": "required file: schemas/gov-211/assignment-aware-response.schema.json",
+      "status": "PASS",
+      "diagnostic": 1407
+    },
+    {
+      "name": "required file: src/governor/assignment_menu.py",
+      "status": "PASS",
+      "diagnostic": 43502
+    },
+    {
+      "name": "required file: tests/test_gov_211_assignment_menu.py",
+      "status": "PASS",
+      "diagnostic": 20693
+    },
+    {
+      "name": "required file: tests/gov_211/neo4j-live.test.mjs",
+      "status": "PASS",
+      "diagnostic": 5227
+    },
+    {
+      "name": "required file: docs/GOV_211_ASSIGNMENT_AWARE_MENU.md",
+      "status": "PASS",
+      "diagnostic": 3227
+    },
+    {
+      "name": "required file: scrum/GOV-211-assignment-aware-menu-integration.md",
+      "status": "PASS",
+      "diagnostic": 2303
+    },
+    {
+      "name": "required file: provenance/pentatonic-set-class-admission-backlog.json",
+      "status": "PASS",
+      "diagnostic": 164999
+    },
+    {
+      "name": "required file: schemas/court-admission/pentatonic-set-class-admission-backlog.schema.json",
+      "status": "PASS",
+      "diagnostic": 7316
+    },
+    {
+      "name": "required file: schemas/court-admission/pentatonic-set-class-admission-backlog-validation.schema.json",
+      "status": "PASS",
+      "diagnostic": 4400
+    },
+    {
+      "name": "required file: scripts/build-pentatonic-admission-backlog.mjs",
+      "status": "PASS",
+      "diagnostic": 9547
+    },
+    {
+      "name": "required file: scripts/validate-pentatonic-admission-backlog.mjs",
+      "status": "PASS",
+      "diagnostic": 7848
+    },
+    {
+      "name": "required file: tests/crt_310/backlog.test.mjs",
+      "status": "PASS",
+      "diagnostic": 2002
+    },
+    {
+      "name": "required file: qa/pentatonic-set-class-admission-backlog-validation.json",
+      "status": "PASS",
+      "diagnostic": 2334
+    },
+    {
+      "name": "required file: docs/CRT_310_ADMISSION_WORKFLOW.md",
+      "status": "PASS",
+      "diagnostic": 1578
+    },
+    {
+      "name": "required file: docs/PENTATONIC_GRAPH_BINDING_AUDIT_SPEC.md",
+      "status": "PASS",
+      "diagnostic": 20884
+    },
+    {
+      "name": "required file: docs/verification/PENTATONIC_GRAPH_BINDING_AUDIT_REPORT.md",
+      "status": "PASS",
+      "diagnostic": 7820
+    },
+    {
+      "name": "required file: canonical/pentatonic-binding-candidates/pentatonic-7-35-parent-audit-v1.json",
+      "status": "PASS",
+      "diagnostic": 245494
+    },
+    {
+      "name": "required file: canonical/pentatonic-binding-candidates/negative-cases-v1.json",
+      "status": "PASS",
+      "diagnostic": 1878
+    },
+    {
+      "name": "required file: schemas/pentatonic-binding/pentatonic-7-35-parent-audit-v1.schema.json",
+      "status": "PASS",
+      "diagnostic": 12573
+    },
+    {
+      "name": "required file: schemas/pentatonic-binding/pentatonic-7-35-negative-cases-v1.schema.json",
+      "status": "PASS",
+      "diagnostic": 1316
+    },
+    {
+      "name": "required file: schemas/pentatonic-binding/pentatonic-7-35-validation-report-v1.schema.json",
+      "status": "PASS",
+      "diagnostic": 1243
+    },
+    {
+      "name": "required file: schemas/pentatonic-binding/pentatonic-binding-audit-closure-v1.schema.json",
+      "status": "PASS",
+      "diagnostic": 2969
+    },
+    {
+      "name": "required file: scripts/generate-pentatonic-7-35-parent-audit.py",
+      "status": "PASS",
+      "diagnostic": 28453
+    },
+    {
+      "name": "required file: scripts/validate-pentatonic-7-35-parent-audit.py",
+      "status": "PASS",
+      "diagnostic": 47373
+    },
+    {
+      "name": "required file: scripts/build-pentatonic-binding-audit-closure.mjs",
+      "status": "PASS",
+      "diagnostic": 10900
+    },
+    {
+      "name": "required file: tests/test_pentatonic_7_35_parent_audit.py",
+      "status": "PASS",
+      "diagnostic": 10080
+    },
+    {
+      "name": "required file: tests/pentatonic_binding_audit/neo4j-live.test.mjs",
+      "status": "PASS",
+      "diagnostic": 19012
+    },
+    {
+      "name": "required file: neo4j/pentatonic-binding-audit/README.md",
+      "status": "PASS",
+      "diagnostic": 2032
+    },
+    {
+      "name": "required file: neo4j/pentatonic-binding-audit/schema.cypher",
+      "status": "PASS",
+      "diagnostic": 334
+    },
+    {
+      "name": "required file: neo4j/pentatonic-binding-audit/import.cypher",
+      "status": "PASS",
+      "diagnostic": 2237
+    },
+    {
+      "name": "required file: neo4j/pentatonic-binding-audit/validation.cypher",
+      "status": "PASS",
+      "diagnostic": 5237
+    },
+    {
+      "name": "required file: neo4j/pentatonic-binding-audit/reset.cypher",
+      "status": "PASS",
+      "diagnostic": 130
+    },
+    {
+      "name": "required file: neo4j/pentatonic-binding-audit/teardown.cypher",
+      "status": "PASS",
+      "diagnostic": 182
+    },
+    {
+      "name": "required file: qa/pentatonic-7-35-parent-audit-validation.json",
+      "status": "PASS",
+      "diagnostic": 5584
+    },
+    {
+      "name": "required file: qa/pentatonic-binding-audit-neo4j-validation.json",
+      "status": "PASS",
+      "diagnostic": 3061
+    },
+    {
+      "name": "required file: qa/pentatonic-binding-audit-closure.json",
+      "status": "PASS",
+      "diagnostic": 4552
+    },
+    {
+      "name": "required file: scrum/pre-epic-400-pentatonic-graph-binding-audit.md",
+      "status": "PASS",
+      "diagnostic": 14732
+    },
+    {
+      "name": "required file: scrum/pre-epic-400-pentatonic-graph-binding-phase-2-4-handoff.md",
+      "status": "PASS",
+      "diagnostic": 18667
+    },
+    {
+      "name": "required file: graph/runtime/neo4j-bootstrap.mjs",
+      "status": "PASS",
+      "diagnostic": 27095
+    },
+    {
+      "name": "required file: graph/runtime/neo4j-roundtrip.mjs",
+      "status": "PASS",
+      "diagnostic": 13368
+    },
+    {
+      "name": "required file: scripts/bootstrap-neo4j.mjs",
+      "status": "PASS",
+      "diagnostic": 7995
+    },
+    {
+      "name": "required file: scripts/verify-neo4j-roundtrip.mjs",
+      "status": "PASS",
+      "diagnostic": 2658
+    },
+    {
+      "name": "required file: scripts/validate-full-database.mjs",
+      "status": "PASS",
+      "diagnostic": 2969
+    },
+    {
+      "name": "required file: scripts/validate-neo4j-deployment-roundtrip.mjs",
+      "status": "PASS",
+      "diagnostic": 6109
+    },
+    {
+      "name": "required file: schemas/neo4j-normalized-snapshot.schema.json",
+      "status": "PASS",
+      "diagnostic": 3247
+    },
+    {
+      "name": "required file: schemas/neo4j-full-database-validation.schema.json",
+      "status": "PASS",
+      "diagnostic": 3728
+    },
+    {
+      "name": "required file: schemas/neo4j-deployment-roundtrip-validation.schema.json",
+      "status": "PASS",
+      "diagnostic": 3853
+    },
+    {
+      "name": "required file: tests/neo4j/full-database-live.test.mjs",
+      "status": "PASS",
+      "diagnostic": 10239
+    },
+    {
+      "name": "required file: qa/neo4j-full-database-validation.json",
+      "status": "PASS",
+      "diagnostic": 26986
+    },
+    {
+      "name": "required file: qa/neo4j-deployment-roundtrip-validation.json",
+      "status": "PASS",
+      "diagnostic": 26616
+    },
+    {
+      "name": "required file: provenance/neo4j-full-database-baseline.json",
+      "status": "PASS",
+      "diagnostic": 2327
+    },
+    {
+      "name": "required file: provenance/neo4j-ingestion-template-baseline.json",
+      "status": "PASS",
+      "diagnostic": 3785
+    },
+    {
+      "name": "required file: scrum/GOV-212-integrated-release-1.4-closure.md",
+      "status": "PASS",
+      "diagnostic": 2093
+    },
+    {
+      "name": "required file: canonical/harmonic-compression-candidates/CH_A012_q_v1.json",
+      "status": "PASS",
+      "diagnostic": 16008
+    },
+    {
+      "name": "required file: canonical/harmonic-compression-candidates/negative-cases.json",
+      "status": "PASS",
+      "diagnostic": 1056
+    },
+    {
+      "name": "required file: schemas/harmonic-compression-candidates/candidate-release.schema.json",
+      "status": "PASS",
+      "diagnostic": 9486
+    },
+    {
+      "name": "required file: schemas/harmonic-compression-candidates/validation-report.schema.json",
+      "status": "PASS",
+      "diagnostic": 1064
+    },
+    {
+      "name": "required file: src/governor/harmonic_compression.py",
+      "status": "PASS",
+      "diagnostic": 15797
+    },
+    {
+      "name": "required file: scripts/generate-harmonic-compression-candidates.py",
+      "status": "PASS",
+      "diagnostic": 1617
+    },
+    {
+      "name": "required file: scripts/validate-harmonic-compression-candidates.py",
+      "status": "PASS",
+      "diagnostic": 10908
+    },
+    {
+      "name": "required file: tests/test_gov_213_harmonic_compression.py",
+      "status": "PASS",
+      "diagnostic": 9388
+    },
+    {
+      "name": "required file: qa/harmonic-compression-candidates-validation.json",
+      "status": "PASS",
+      "diagnostic": 6521
+    },
+    {
+      "name": "required file: scrum/GOV-213-harmonic-compression-formalization.md",
+      "status": "PASS",
+      "diagnostic": 5068
+    },
+    {
+      "name": "required file: canonical/harmonic-compression-candidates/CH_D17_q_v2.json",
+      "status": "PASS",
+      "diagnostic": 40486
+    },
+    {
+      "name": "required file: canonical/harmonic-compression-candidates/d-tier-negative-cases.json",
+      "status": "PASS",
+      "diagnostic": 1263
+    },
+    {
+      "name": "required file: schemas/harmonic-compression-candidates/d-tier-candidate-release.schema.json",
+      "status": "PASS",
+      "diagnostic": 15887
+    },
+    {
+      "name": "required file: schemas/harmonic-compression-candidates/d-tier-validation-report.schema.json",
+      "status": "PASS",
+      "diagnostic": 1057
+    },
+    {
+      "name": "required file: src/governor/exact_lp.py",
+      "status": "PASS",
+      "diagnostic": 6864
+    },
+    {
+      "name": "required file: src/governor/harmonic_compression_d_tier.py",
+      "status": "PASS",
+      "diagnostic": 27958
+    },
+    {
+      "name": "required file: scripts/generate-d-tier-harmonic-compression.py",
+      "status": "PASS",
+      "diagnostic": 1749
+    },
+    {
+      "name": "required file: scripts/validate-d-tier-harmonic-compression.py",
+      "status": "PASS",
+      "diagnostic": 11925
+    },
+    {
+      "name": "required file: tests/test_gov_227_d_tier_harmonic_compression.py",
+      "status": "PASS",
+      "diagnostic": 6929
+    },
+    {
+      "name": "required file: qa/d-tier-harmonic-compression-validation.json",
+      "status": "PASS",
+      "diagnostic": 13966
+    },
+    {
+      "name": "required file: docs/D_TIER_TRIADIC_COMPRESSION_THEOREM.md",
+      "status": "PASS",
+      "diagnostic": 7703
+    },
+    {
+      "name": "required file: scrum/GOV-227-d-tier-harmonic-compression-audit.md",
+      "status": "PASS",
+      "diagnostic": 9270
+    },
+    {
+      "name": "required file: seven-governors-state-machine-spec-and-authoring-toolkit-v0.2.0/docs/START_HERE.md",
+      "status": "PASS",
+      "diagnostic": 4195
+    },
+    {
+      "name": "required file: bestiary/ARCH-SPEC.md",
+      "status": "PASS",
+      "diagnostic": 48982
+    },
+    {
+      "name": "required file: bestiary/data/bestiary-data.json",
+      "status": "PASS",
+      "diagnostic": 1006755
+    },
+    {
+      "name": "required file: bestiary/data/bestiary-data.schema.json",
+      "status": "PASS",
+      "diagnostic": 19310
+    },
+    {
+      "name": "required file: bestiary/data/pinned-narratives.json",
+      "status": "PASS",
+      "diagnostic": 16125
+    },
+    {
+      "name": "required file: bestiary/site/astro.config.mjs",
+      "status": "PASS",
+      "diagnostic": 191
+    },
+    {
+      "name": "required file: bestiary/site/package.json",
+      "status": "PASS",
+      "diagnostic": 349
+    },
+    {
+      "name": "required file: bestiary/site/src/lib/bestiary.ts",
+      "status": "PASS",
+      "diagnostic": 13340
+    },
+    {
+      "name": "required file: bestiary/site/src/pages/index.astro",
+      "status": "PASS",
+      "diagnostic": 2844
+    },
+    {
+      "name": "required file: bestiary/site/src/pages/archetypes/[id].astro",
+      "status": "PASS",
+      "diagnostic": 2077
+    },
+    {
+      "name": "required file: bestiary/site/src/layouts/ArchetypeLayout.astro",
+      "status": "PASS",
+      "diagnostic": 2816
+    },
+    {
+      "name": "required file: bestiary/site/src/components/StatComparisonMatrix.astro",
+      "status": "PASS",
+      "diagnostic": 8561
+    },
+    {
+      "name": "required file: bestiary/site/src/components/ArchetypeNarrative.astro",
+      "status": "PASS",
+      "diagnostic": 1184
+    },
+    {
+      "name": "required file: bestiary/site/src/components/Scatterplot.astro",
+      "status": "PASS",
+      "diagnostic": 25204
+    },
+    {
+      "name": "required file: bestiary/site/src/components/TopologyNodeGraph.astro",
+      "status": "PASS",
+      "diagnostic": 6278
+    },
+    {
+      "name": "required file: bestiary/site/src/components/PitchSetDialMini.astro",
+      "status": "PASS",
+      "diagnostic": 1705
+    },
+    {
+      "name": "required file: bestiary/site/src/lib/dialGeometry.ts",
+      "status": "PASS",
+      "diagnostic": 692
+    },
+    {
+      "name": "required file: bestiary/site/src/lib/dialClient.ts",
+      "status": "PASS",
+      "diagnostic": 9478
+    },
+    {
+      "name": "required file: bestiary/site/src/lib/networkLayout.ts",
+      "status": "PASS",
+      "diagnostic": 13305
+    },
+    {
+      "name": "required file: bestiary/site/src/lib/nodeShapes.ts",
+      "status": "PASS",
+      "diagnostic": 8343
+    },
+    {
+      "name": "required file: bestiary/site/src/pages/compare.astro",
+      "status": "PASS",
+      "diagnostic": 18296
+    },
+    {
+      "name": "required file: scripts/build-bestiary.mjs",
+      "status": "PASS",
+      "diagnostic": 33109
+    }
+  ]
+}

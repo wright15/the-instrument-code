@@ -1,0 +1,354 @@
+{
+  "receiptId": "BL-092-ledger-cascade-refresh",
+  "date": "2026-10-15",
+  "authority": "The BL-092 directive (2026-10-15) under maintainer rulings OD-92-1 through OD-92-4; the ENTRY 11 preservation mandate under the ENTRY 10 deferral authority (the BL-051/BL-052 precedent, not reusing BL-051's directory); ENTRY 23 records this landing.",
+  "rulings": {
+    "OD-92-1": "stale inventory scope - both shadow-ladder and d-shadow-complement-span verified against the live tree; only the stale members refreshed; the closed set determined by the artifact tree (the d-shadow span verified fresh and not refreshed)",
+    "OD-92-2": "ENTRY 23 appended after ENTRY 22 (never edits); the refresh's provenance recorded",
+    "OD-92-3": "the release closure is qa/integrated-release-validation.json (releaseId seven-governors-integrated-1.9.0; 418/0 verified)",
+    "OD-92-4": "the cascade recursion's termination condition recorded (the refreshed bindings are born current; the next ledger append begins its own refresh)"
+  },
+  "preservation": {
+    "directory": "qa/halt-evidence/twin-hub-convergence-pre-refresh-entry22/",
+    "receiptPath": "qa/halt-evidence/twin-hub-convergence-pre-refresh-entry22/preservation-receipt.json",
+    "receiptSha256": "6f07851c311988f48182fb7c3922499548d10a92a97a18eadfa28f94fda7b3d5",
+    "fileCount": 17,
+    "ledgerAtPreservation": {
+      "sha256": "6d043fc168ba7e09f82fe7d71df38801aa4b6d41fdfd0bf0495060ea3d7df793",
+      "byteLength": 244527,
+      "lastEntry": "ENTRY 22 (the append that staled the cascade)"
+    },
+    "fencesVerifiedBeforeRefresh": {
+      "entry10": {
+        "span": "2195-2252",
+        "lineJoin": "201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7",
+        "keepends": "50b8b73f75497082e6d2a38052a62da4f5374ee94fc08f8ff0312fc7746fbb00"
+      },
+      "entry22": {
+        "span": "3651-3806",
+        "lineJoin": "218a89cdf8d5658a4820b5b8801da1dd7aca204b8a1688ef9969d243933cd857",
+        "keepends": "47cbf3e2a57f9023e98df10315b8d9d7ebeb7e6905d7d87b68feecbb0c86b8cb"
+      },
+      "prefixChain": "all six prefix endpoints (174314/183663/202266/214223/233926/244527) reproduced byte-exactly at preservation"
+    },
+    "precondition": "recorded met before the first shared-artifact refresh (ENTRY 11 mandate; the BL-051 discipline)"
+  },
+  "inventoryVerification": {
+    "method": "read-only generator --check runs at the pre-refresh tree (before the ledger append and before any writer ran)",
+    "observedStale": [
+      {
+        "artifact": "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
+        "gate": "STALE_TWIN_HUB_CONVERGENCE",
+        "exitCode": 1
+      },
+      {
+        "artifact": "canonical/fivefold-incubator/fifth-space-census-v0.json",
+        "gate": "STALE_FIFTH_SPACE_CENSUS",
+        "exitCode": 1
+      },
+      {
+        "artifact": "canonical/fivefold-incubator/shadow-ladder-v0.json",
+        "gate": "STALE_SHADOW_LADDER",
+        "exitCode": 1
+      },
+      {
+        "artifact": "qa/pentatonic-binding-audit-closure.json",
+        "gate": "STALE_PENTATONIC_BINDING_AUDIT_CLOSURE",
+        "exitCode": 1
+      },
+      {
+        "artifact": "qa/fivefold-engine-promotion-evidence.json",
+        "gate": "STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE",
+        "exitCode": 1
+      }
+    ],
+    "verifiedFresh": {
+      "artifact": "canonical/fivefold-incubator/d-shadow-complement-span-v0.json",
+      "fingerprint": "021afb8360fab5de5f70bc7e06077fe0c879ef4a72eb72d6fe66f840171932fc",
+      "reportFingerprint": "8fb98f762963d426bf5f79ed6199324518e02f6797709e13fabef6d06f71bc96",
+      "evidence": "generator --check exit 0; no decision-ledger digest in its evidenceBindings chain",
+      "disposition": "not in the refreshed set; byte-untouched (OD-92-1)"
+    }
+  },
+  "cascade": [
+    {
+      "artifact": "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
+      "pre": {
+        "candidateFingerprint": "5d0c5eef06e1f3590fcee2244def86079976789aba9f2a53e880ba14bc3a7efb",
+        "sha256": "1ce9dbc730683e046cf5e7464bd171d4c4d078b61dcd4319292012b8f1e2cafe",
+        "byteLength": 12645,
+        "reportPath": "qa/twin-hub-convergence-validation.json",
+        "reportFingerprint": "96b18d4be0a57353aac44b71d8d8e2372fb4c746b4e826c0b7cc3dc9159b397d"
+      },
+      "post": {
+        "candidateFingerprint": "b42b2d13a01842ce406dd812ddf8e1c0145e386424cf204a805f28a1d490cfeb",
+        "sha256": "aeec8197739b5db065fe1ece7656c32de5f2a81329b7f37dc8ea7b52ed439c14",
+        "byteLength": 12645,
+        "reportSha256": "f19fdc1166192062d90d42fc7fde86d8d1d30c4dbc96e41ae5ab6bde983f30c2",
+        "reportFingerprint": "515745a7f6d4825e2a8977238ba048bfd35cf22cfd62ff2a0ada0dc5abf69a82",
+        "verdict": "confirmed",
+        "checksPassed": 30,
+        "checksFailed": 0
+      },
+      "binding": {
+        "field": "evidenceBindings.decisionLedgerSha256",
+        "pre": "45653693ea4b5471412ad60e518ffd8333e3d87091ff007a7b5c9eee026d8139",
+        "post": "f58b8440ed109a455151569f8c33cfb1f2b70782f081e997e5ad5f65701fd50b"
+      },
+      "projection": {
+        "recipe": "payload-minus-bindings-and-r5 (canonical-json minus candidateFingerprint, evidenceBindings and the four R5 provenance fields)",
+        "sha256": "cf7969713099bf1ebe4ca2c99c338f83d1ac881de46ae254c9b5b10fc8ec9e81",
+        "unchanged": true
+      }
+    },
+    {
+      "artifact": "canonical/fivefold-incubator/fifth-space-census-v0.json",
+      "pre": {
+        "candidateFingerprint": "3234257c2f73335bc46df876a6e3c0d5a1871bec52d851b634a910b50f270048",
+        "sha256": "ca4a5a46c768189ae08cbd96279aab580c2e6cc66dfd822bebeddbdc6c31b5eb",
+        "byteLength": 194194,
+        "reportPath": "qa/fifth-space-census-validation.json",
+        "reportFingerprint": "e38330acea5cf8d946d8f16c95c182587bf5257b66c7de4c8bd4969969f80736"
+      },
+      "post": {
+        "candidateFingerprint": "9fb5d860f73cc8958fd425f751770a8bc018cf8a3ef9beff4ec590e08e909e18",
+        "sha256": "0f678da4776c81a38c4357622fc23e5726a683dfcada4063db55ae936d95b4b4",
+        "byteLength": 194194,
+        "reportSha256": "06eab7561983c31feae32ea2c13a2a4d603aa176d1cd645df47d3d967a3ad8af",
+        "reportFingerprint": "351dda8b487004a2ece74613b8e4c67c218578a56036e5cc35f92a73f0f20df8",
+        "checksPassed": 24,
+        "checksFailed": 0
+      },
+      "binding": {
+        "field": "evidenceBindings.decisionLedgerSha256",
+        "pre": "45653693ea4b5471412ad60e518ffd8333e3d87091ff007a7b5c9eee026d8139",
+        "post": "f58b8440ed109a455151569f8c33cfb1f2b70782f081e997e5ad5f65701fd50b"
+      },
+      "projection": {
+        "recipe": "payload-minus-bindings-and-r5",
+        "sha256": "099528b8bf1eee8efa747b6145e02e49d14b5552b30bda43e3b18f1078c955e0",
+        "unchanged": true
+      }
+    },
+    {
+      "artifact": "canonical/fivefold-incubator/shadow-ladder-v0.json",
+      "pre": {
+        "candidateFingerprint": "315bc72ff17630ccab617272585bba9815aab1735a201d595341da56794f5ccc",
+        "sha256": "e2acc251c6ea1cb068869460464da58008fdf9b8d90186779d1569f7744295b2",
+        "byteLength": 3927,
+        "reportPath": "qa/shadow-ladder-validation.json",
+        "reportFingerprint": "0cc7747ba7621850a3bead43385d94d47c0d011c1355068e6a385f32cebc1b44"
+      },
+      "post": {
+        "candidateFingerprint": "bedfe62c56a76df5673409f7db14d88f46d7ce0715f249d8f35bf1223f76555a",
+        "sha256": "6744f597be7e1b3aac8935e42da728f9678a0a478e5bd5116b51b53601ae51e0",
+        "byteLength": 3927,
+        "reportSha256": "35fd0903276c24c6d05d0f547184719a69fa3ef3606f4b3c67c7fd88b655c789",
+        "reportFingerprint": "914a74b95fbfc3ac63976bd7c4d6e3fba89991b58357b79e49329c553c62a8c1",
+        "checksPassed": 37,
+        "checksFailed": 0
+      },
+      "binding": {
+        "field": "evidenceBindings.decisionLedgerSha256",
+        "pre": "45653693ea4b5471412ad60e518ffd8333e3d87091ff007a7b5c9eee026d8139",
+        "post": "f58b8440ed109a455151569f8c33cfb1f2b70782f081e997e5ad5f65701fd50b"
+      },
+      "projection": {
+        "recipe": "payload-minus-bindings-and-r5",
+        "sha256": "25f7c68cbf2db22f0f2223067d68f4aa4b3978c325ad2c1b8e127b17c246d985",
+        "unchanged": true
+      }
+    },
+    {
+      "artifact": "qa/pentatonic-binding-audit-closure.json",
+      "pre": {
+        "reportFingerprint": "46f36a6c58c5480c6ba2c4835912b4928f7f82cb19deed3bc18602a67bc4b281",
+        "sha256": "52f3a1b1d730e0f72d4888985a269c4061c8208e3265b637c427eb6b7cb59807",
+        "byteLength": 4552
+      },
+      "post": {
+        "reportFingerprint": "010db6420bf766eae067925097f88ec98800ed2373ae990381ecead28a5c196c",
+        "sha256": "130cddae1dedc96fdbae3042dd74c8b37d97975e1add2166257583603526566b",
+        "byteLength": 4552,
+        "verdict": "PASS",
+        "checksPassed": 11,
+        "checksFailed": 0
+      },
+      "binding": {
+        "field": "evidenceBindings.decisionLedgerSha256",
+        "pre": "45653693ea4b5471412ad60e518ffd8333e3d87091ff007a7b5c9eee026d8139",
+        "post": "f58b8440ed109a455151569f8c33cfb1f2b70782f081e997e5ad5f65701fd50b"
+      },
+      "projection": {
+        "recipe": "closure-payload (canonical-json minus reportFingerprint with the ledger-derived fields blanked)",
+        "sha256": "81b83e1e085ca002c017b90201cfae245f5ddbc19dd3019760b81171511a123d",
+        "unchanged": true
+      }
+    },
+    {
+      "artifact": "qa/fivefold-engine-promotion-evidence.json",
+      "pre": {
+        "evidenceFingerprint": "5ae56d69e3cc507927fd2ce97733c207982853b76fce602e7a1e8327aa871a02",
+        "sha256": "0b11dced3bbe89a04abe4fb14f1d359f54f6b714ee08308bd78c7495e0af3468",
+        "byteLength": 23220
+      },
+      "post": {
+        "evidenceFingerprint": "7092913e78b187d8cf317cdc29b5467550c349b5f327cb0ccdc48bfa29f87987",
+        "sha256": "6586269a02aa0f0cf16fbbf7f612e3c391b9a20e11ee6710c7fa1d7c06cde7db",
+        "byteLength": 23220,
+        "verdict": "PASS",
+        "itemEvidenceGroups": 10,
+        "exclusionEvidenceGroups": 11
+      },
+      "binding": {
+        "field": "decisionLedgerSha256",
+        "pre": "45653693ea4b5471412ad60e518ffd8333e3d87091ff007a7b5c9eee026d8139",
+        "post": "f58b8440ed109a455151569f8c33cfb1f2b70782f081e997e5ad5f65701fd50b"
+      },
+      "projection": {
+        "recipe": "promotion-payload (canonical-json minus evidenceFingerprint, decisionLedgerSha256, the four R5 fields and the decision-ledger-digest check values)",
+        "sha256": "a3b7870cd34098c2",
+        "unchanged": true
+      }
+    }
+  ],
+  "releaseClosure": {
+    "path": "qa/integrated-release-validation.json",
+    "writer": "scripts/validate-release.mjs (the integrated 418-check validation)",
+    "pre": {
+      "sha256": "758bbff0a1f812c94a5ba4302a4dce7127132e3224989d7eff934de7c9b2cf14",
+      "verdict": "PASS",
+      "releaseId": "seven-governors-integrated-1.9.0",
+      "checksPassed": 418,
+      "checksFailed": 0
+    },
+    "post": {
+      "sha256": "706cc1270850d2f8ccd70bf643f9fff602d5d8e3c13979850b292845f708af81",
+      "verdict": "PASS",
+      "releaseId": "seven-governors-integrated-1.9.0",
+      "checksPassed": 418,
+      "checksFailed": 0
+    },
+    "verdictInvariant": true,
+    "note": "the receipt is re-emitted from the refreshed live tree; its manifest-count diagnostic moves with the landing's file inventory; the final count fixpoint is confirmed at the pre-commit full run"
+  },
+  "downstreamProjections": [
+    {
+      "artifact": "orrery/src/generated/field-derivation-bundle.v1.json",
+      "projectionSha256": "ea36d7612823837b91d37573c93ef2b8f9691f4d7dbd9a23a95511f1ff99a48b",
+      "unchanged": true
+    },
+    {
+      "artifact": "orrery/src/generated/taxonomy-read-model.v1.json",
+      "projectionSha256": "9b9f0dd7b7d24c48acd3787c5968bee3c684d5a37771ccfb1b31f7756a5ad112",
+      "unchanged": true
+    },
+    {
+      "artifact": "orrery/src/generated/d-tier-taxonomy-dataset.v1.json",
+      "projectionSha256": "d439b460ed78adc4bc1f7b7a45c44d6a000b008d7d8164ca7bc0bcb6083a6780",
+      "unchanged": true
+    }
+  ],
+  "hygieneRecord": {
+    "path": "orrery/src/generated/bl092-cascade-refresh.v1.json",
+    "artifactFingerprint": "8ebbb7182d4d4586d113b0a0941c140e5fb7bf672878620c5228d71d177894f9",
+    "generator": "scripts/build-bl092-cascade-refresh.mjs",
+    "validator": "orrery/scripts/validate-bl092-cascade-refresh.mjs",
+    "probes": {
+      "rejected": 35,
+      "permissive": 1,
+      "classes": [
+        "artifact-drift",
+        "fingerprint-zero",
+        "smuggled-read",
+        "presence-strip",
+        "geometry-drift-proof-strip"
+      ]
+    },
+    "pins": {
+      "path": "orrery/src/bl092-cascade-refresh.test.ts",
+      "tests": 7
+    },
+    "wiring": "orrery:bl092-cascade-refresh:check after bl090-d7-office-purity-derivation:check, before bl080-governs-derivation:check"
+  },
+  "ledger": {
+    "preAppendSha256": "6d043fc168ba7e09f82fe7d71df38801aa4b6d41fdfd0bf0495060ea3d7df793",
+    "preAppendByteLength": 244527,
+    "postAppendSha256": "f58b8440ed109a455151569f8c33cfb1f2b70782f081e997e5ad5f65701fd50b",
+    "postAppendByteLength": 251837,
+    "entry23": {
+      "lines": "3810-3921",
+      "regionSha256_lineJoinNoTrailingNewline": "4f8e2289364b5b9d2e98d952718ab7f75687a81f5cf34dd298418056ed6452bf",
+      "regionByteLength_lineJoinNoTrailingNewline": 7303,
+      "regionSha256_keepends": "d939074cb27d9131985f810c610334e18c507722473988b47995029b188581ac",
+      "regionByteLength_keepends": 7304
+    }
+  },
+  "verification": {
+    "focusedSuites": "40 pytest passes (twin-hub 8, fifth-space-census 8, shadow-ladder 6, d-shadow 5, promotion evidence 13) + the pentatonic binding audit (pytest + node neo4j-live 1 pass)",
+    "validateLedgerPins": "PASS (0 violations; inventory tests 8 passed)",
+    "validateEvidence": "advisory run recorded: 43 checks, 7 PASS, 36 findings (30 enforced under --strict); registry 42/42 registered; the BL-092 record's manifest/checksums findings resolved at the final inventory regen",
+    "orreryCheck": "exit 0 (all chains green including the wired bl092 check; tsc clean)",
+    "fullValidate": "OBSERVED exit 0 at the final pre-commit tree: the chain passes validate:ledger-pins (0 violations), build:graph + validate:graph, the mechanics registries, validate:tiered-photonic, validate:twin-hub, validate:fifth-space-census, validate:d-shadow and validate:gov514, reaches validate:release (integrated receipt 418/0) and closes validate:prose-consistency (418 authoritative checks, 0 violations) + validate:cypher; the chain no longer stops at validate:twin-hub; no new stop",
+    "manifest": "regenerated after all writers; validate:manifest PASS; post-commit confirmation below"
+  },
+  "postCommitObligation": {
+    "point": "c",
+    "subject": "ENTRY 23 region and the amended ledger",
+    "checks": [
+      "the committed ledger blob piped to raw-bytes-sha256 must equal f58b8440ed109a455151569f8c33cfb1f2b70782f081e997e5ad5f65701fd50b",
+      "the ENTRY 23 region (content lines 3810-3921, line-join) must hash to 4f8e2289364b5b9d2e98d952718ab7f75687a81f5cf34dd298418056ed6452bf (keepends variant d939074cb27d9131985f810c610334e18c507722473988b47995029b188581ac)",
+      "the ENTRY 10 region (2195-2252) must still hash to 201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7 (keepends 50b8b73f75497082e6d2a38052a62da4f5374ee94fc08f8ff0312fc7746fbb00)",
+      "the ENTRY 22 region (3651-3806) must still hash to 218a89cdf8d5658a4820b5b8801da1dd7aca204b8a1688ef9969d243933cd857",
+      "the prefix chain (174314/183663/202266/214223/233926/244527) must reproduce byte-exactly"
+    ],
+    "status": "DECLARED; results confirmed post-commit in the session record."
+  },
+  "fences": {
+    "noClaimEvent": "true - not the ninth; the refresh creates no derivation status",
+    "noRecordAmendment": "ENTRY 10/15/16/17/18/19/20/21/22 byte-untouched (re-verified post-append)",
+    "noGovernsAdmission": true,
+    "noG1Movement": true,
+    "noInv5Graduation": true,
+    "noSection64Movement": true,
+    "noMWalkabilityPromotion": true,
+    "noDirectionalSemantics": true,
+    "noAnchoringRemainderResolution": true,
+    "d4Record": "derivable-from-derived-inputs unchanged",
+    "d7": "derivable-via-R2-office-purity unchanged",
+    "frozenStack": "the frozen D4 stack and the frozen BL-090 execution byte-untouched",
+    "writes": "no canonical/Court/schema/Neo4j writes beyond the refresh's own artifacts; no stale control disabled; no artifact regenerated beyond the declared inventory",
+    "recursionTermination": "OD-92-4: the refreshed bindings are born current against ENTRY 23; the cascade converges at this landing and re-opens only on the next ledger append"
+  },
+  "evidencePaths": {
+    "new": [
+      "qa/halt-evidence/twin-hub-convergence-pre-refresh-entry22/ (17 files + preservation-receipt.json)",
+      "orrery/src/generated/bl092-cascade-refresh.v1.json",
+      "scripts/build-bl092-cascade-refresh.mjs",
+      "orrery/scripts/validate-bl092-cascade-refresh.mjs",
+      "orrery/src/bl092-cascade-refresh.test.ts",
+      "qa/specs/bl-092-ledger-cascade-refresh.json",
+      "scrum/plan/bl-092-ledger-cascade-refresh-memo.md"
+    ],
+    "modified": [
+      "provenance/DECISION_LEDGER.md",
+      "scrum/BACKLOG.md",
+      "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
+      "canonical/fivefold-incubator/fifth-space-census-v0.json",
+      "canonical/fivefold-incubator/shadow-ladder-v0.json",
+      "qa/twin-hub-convergence-validation.json",
+      "qa/fifth-space-census-validation.json",
+      "qa/shadow-ladder-validation.json",
+      "qa/pentatonic-binding-audit-closure.json",
+      "qa/fivefold-engine-promotion-evidence.json",
+      "orrery/src/generated/field-derivation-bundle.v1.json",
+      "orrery/src/generated/taxonomy-read-model.v1.json",
+      "orrery/src/generated/d-tier-taxonomy-dataset.v1.json",
+      "qa/integrated-release-validation.json",
+      "package.json",
+      "orrery/package.json",
+      "MANIFEST.json",
+      "CHECKSUMS.sha256"
+    ]
+  }
+}

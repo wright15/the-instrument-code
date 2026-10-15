@@ -3804,3 +3804,118 @@ historical record is linked, not rewritten. **Any reading of this entry as
 overturning or superseding the D4 corridor's results (ENTRY 15's `derivable-via-R2`
 or ENTRY 18's `derivable-from-derived-inputs`) is rejected: the two corridors are
 independent, both admitted, both standing.**
+
+---
+
+## ENTRY 23 - BL-092 ledger-bound cascade refresh - the post-ENTRY 22 re-bind
+
+**Date:** 2026-10-15. **Status:** the ledger-bound cascade staled mechanically by
+the ENTRY 22 append is refreshed against the amended ledger with payload
+projections byte-identical (provenance-only); preservation executed before the
+first shared-artifact refresh; no claim event, no record amendment.
+
+### Authority And Scope
+
+The BL-092 directive (2026-10-15) followed the BL-051/BL-052 precedent for the
+cascade the ENTRY 22 append staled, with the maintainer rulings OD-92-1 through
+OD-92-4: the stale inventory scope (both shadow-ladder and d-shadow-complement-span
+verified against the live tree; the closed set determined by the artifact tree);
+ENTRY 23 appended after ENTRY 22, never editing; the release closure identified as
+`qa/integrated-release-validation.json` (releaseId `seven-governors-integrated-1.9.0`,
+418/0 verified); and the cascade recursion's termination condition recorded (the
+refreshed bindings are born current against this entry's ledger; the next ledger
+append begins its own refresh landing).
+
+Executed scope, in the order executed: (i) the P0 preservation of every pre-refresh
+candidate artifact and its validation report - byte-identical copies under
+`qa/halt-evidence/twin-hub-convergence-pre-refresh-entry22/` - before any refresh
+step (the ENTRY 11 precondition; the BL-051 discipline, not reusing BL-051's
+directory); (ii) the cascade refresh in dependency order - the twin-hub convergence
+candidate, the fifth-space census candidate, the shadow-ladder candidate, the
+pentatonic binding audit closure, and the downstream orrery projections (the
+field-derivation bundle, the taxonomy read model, the D-tier taxonomy dataset);
+(iii) the fivefold-engine promotion evidence refresh and the release closure
+re-emission; (iv) the hygiene record with its independent validator and pins
+(`orrery/src/generated/bl092-cascade-refresh.v1.json`) and the refresh receipt
+`qa/specs/bl-092-ledger-cascade-refresh.json`. The inventory was verified by
+execution, not assumed: `STALE_TWIN_HUB_CONVERGENCE`,
+`STALE_FIFTH_SPACE_CENSUS`, `STALE_SHADOW_LADDER`,
+`STALE_PENTATONIC_BINDING_AUDIT_CLOSURE` and
+`STALE_FIVEFOLD_ENGINE_PROMOTION_EVIDENCE` were observed at the pre-refresh tree;
+the d-shadow complement-span artifact verified FRESH (its binding chain carries no
+decision-ledger digest) and was left byte-untouched - the OD-92-1 tree-determined
+set.
+
+### Preservation Before Refresh
+
+Preserved byte-identically before any refresh step under
+`qa/halt-evidence/twin-hub-convergence-pre-refresh-entry22/`: seventeen files - the
+pre-refresh candidates (twin-hub convergence fingerprint `5d0c5eef…`, payload
+projection `cf796971…`; fifth-space census `3234257c…`, projection `099528b8…`;
+shadow-ladder `315bc72f…`, projection `25f7c68c…`; the d-shadow span `021afb83…`;
+the fivefold-engine promotion evidence `5ae56d69…`; the pentatonic binding audit
+closure `46f36a6c…`), their validation reports (twin-hub report `96b18d4b…` 30/0;
+census report `e38330ac…` 24/0; shadow-ladder report `0cc7747b…` 37/0; d-shadow
+report `8fb98f76…` 19/0), the pentatonic binding audit dependency chain, the three
+downstream orrery projections, and the release closure receipt (verdict PASS,
+releaseId `seven-governors-integrated-1.9.0`, 418/0). The preservation receipt in
+that directory records each raw-byte digest and pre-commit blob OID, the
+payload-projection recipe per artifact, the ENTRY 10/15/16/17/18/19/20/21/22 region
+hashes under the labeled recipes, and the prefix chain - all reproduced at this
+landing; the ledger state at preservation was SHA-256 `6d043fc1…` (244527 bytes -
+the ENTRY 22 state). The preserved candidates carry the stale-gate provenance:
+their `evidenceBindings` recorded the pre-append decision-ledger digest `45653693…`
+(the ENTRY 21 era). No historical byte was restored, synthesized or overwritten;
+the pre-refresh bytes remain resolvable at the preserved paths.
+
+### Refresh Results
+
+Each refreshed artifact clears its stale binding against this entry's ledger and
+its payload projection is byte-identical to the preserved pre-refresh bytes -
+provenance-only refreshes, no geometry or semantic drift. The twin-hub convergence
+verdict remains `confirmed` with 30 of 30 validation checks PASS; the fifth-space
+census validation remains 24 of 24 PASS; the shadow-ladder validation remains
+37 of 37 PASS; the pentatonic binding audit closure remains 11 of 11 PASS with its
+decision-ledger binding re-issued; the fivefold-engine promotion evidence re-emits
+with verdict PASS (10 item-evidence and 11 exclusion-evidence groups) and its
+ledger digest re-bound; the release closure receipt re-emits with verdict PASS,
+releaseId `seven-governors-integrated-1.9.0`, 418/0. The downstream orrery
+projections were refreshed from the refreshed candidates; their records are
+unchanged and their binding digests are re-issued. The OD-2-class geometry-drift
+halt was pre-registered before the first refresh: any payload-projection byte
+difference would have been a halt, not a finding; it was not triggered. The
+refreshed fingerprints and binding digests are recorded in the refreshed
+validation reports, in the hygiene record, and in the refresh receipt, cited here
+by path.
+
+### Verification And The Recursion's Termination
+
+The focused suites, `validate:ledger-pins` (0 violations), the `validate:evidence`
+advisory run, and the full `npm run validate` observation - the success criterion
+being that the chain no longer stops at `validate:twin-hub`; any new stop recorded,
+not repaired - are recorded with their outcomes in the refresh receipt. Termination
+condition (OD-92-4): the refreshed artifacts' bindings are born current against
+this entry's ledger; the cascade converges at this landing and re-opens only on the
+next ledger append, which begins its own refresh under the same discipline. The
+recursion is a known pattern with a known termination condition, not a permanent
+tax. This entry grants no green-release claim; the 1.9.0 release stands at
+ENTRY 21.
+
+### Guard
+
+This entry grants no runtime, topology, graph, governs, Court, office, schema,
+policy or global `harmonic.C_H` authority. It creates no claim event - not the
+ninth; the refresh creates no derivation status. It does not amend any record:
+ENTRY 10, ENTRY 15, ENTRY 16, ENTRY 17, ENTRY 18, ENTRY 19, ENTRY 20, ENTRY 21 and
+ENTRY 22 stand byte-untouched - the fences re-verified post-append. It does not
+admit GOVERNS as a derivation relation, does not dissolve the boundary wall, does
+not touch D4's `derivable-from-derived-inputs` or D7's
+`derivable-via-R2-office-purity`, does not move G1 or section 6(4), does not
+graduate INV-5, does not promote M-walkability, and does not assign directional
+semantics. The anchoring remainder stands unresolved; no canonical, Court, schema
+or Neo4j write is made beyond the refresh's own artifacts; the frozen D4 stack and
+the frozen BL-090 execution are byte-untouched; no stale control is disabled and
+no artifact is regenerated beyond the declared inventory. The session's frame
+vocabulary is interpretation context, not input; session prose is context, not
+evidence. Prior entries and prior line anchors remain unchanged; this entry is
+append-only.
