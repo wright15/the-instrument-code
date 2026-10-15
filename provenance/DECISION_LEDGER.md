@@ -3647,3 +3647,160 @@ semantics. D4's `derivable-from-derived-inputs` and the historical
 ships the framework with the scoping memo's higher-theorem question formally
 stated, not answered, and opens no claim event. Prior entries and prior line
 anchors remain unchanged; this entry is append-only.
+---
+## ENTRY 22 - D7 first-derivation admission - derivable-via-R2-office-purity
+
+**Date:** 2026-10-15. **Status:** `derivable-via-R2-office-purity` - the first
+derivation admission for a pole-level contact relation; D7's hypothesis-tier status
+resolved additively; release gates recorded, not cleared. The project's eighth claim
+event (ENTRY 12 convention, ENTRY 13 correspondence, ENTRY 14 topology, ENTRY 15
+amendment, ENTRY 16 derivability, ENTRY 17 expansion, ENTRY 18 D4 amendment).
+
+### Decision
+
+The candidate record `docs/specs/d7-derivation-admission-v0.1.0.md` (version 0.1.0,
+artifact ID `SPEC-D7-DERIVATION-001`) is admitted under BL-091, together with the
+compliance receipt `qa/specs/bl-091-d7-derivation-admission.json`, the BL-059
+scoping-memo accretion (section 4.14), the comprehension-map and synthesis consumption
+rows, the backlog registration, and refreshed root inventories, in one atomic landing.
+
+The admitted claim, verbatim from the record:
+
+> **Claimed:** the D7 contact geometry — 14 same-office contact keys, 7 D₇ anchors × 2
+> D6 satellites each, within the 36-instance anchor-satellite domain (per-anchor
+> 4/5/6/6/6/5/4) — is **derivable via the office-purity route**: the selection predicate
+> `o(s) = o(h)` (same-office), grounded in the recovered coordinates κ (BL-063's office
+> reconstruction, κ₁ 7/7), consuming the derived cycle-ground (BL-064's sandwich +
+> twin-closure construction) and the derived R-edges (BL-066's H2-reach + H8-census
+> closure), per the BL-090 execution's FULL_DERIVATION result (all pre-registered gates
+> V-D7D-1 through V-D7D-5 PASS; calibration EXACT; the 14-key contact set set-equal O;
+> the 36-instance domain re-derived set-equal BL-068 + BL-070).
+
+The derivation, at the artifact's bytes: BL-090's single-primary rule
+`R-κ(h) = {(h, s) : s ∈ D2(h) ∧ o_κ(s) = o_κ(h)}` evaluated on the re-derived
+36-instance domain (per-anchor 4/5/6/6/6/5/4; 14 distinct states; multiplicities
+2/2/10; set-equal BL-068 + BL-070 key-by-key) emits exactly the 14 landed contacts —
+**set-equal at 14/0/0/22** — under both mappings: **M1** (the anchor rule
+`office = (C − pcSum) mod 7` with **C = 4** plus governing inherit over the licensed
+GOVERNS edge content; the recovered field matches the canonical offices 28/28
+node-by-node; κ₁ 7/7; midpoints 7/7) and **M2** (the affine transports T1
+`y = 5x + 2` and T2 `y = 2x + 4` from the κ₁ positions; the D7-pole offices 7/7 +
+7/7) — the κ-verdict **BOTH, over-determined on the D7 pole**. The one structural
+non-equivalence is the D6 pole's A1↔D6 office transport (non-affine; the exact defect
+is the route-affine law composed with the terminal-office source swap {0, 6}, zero
+residual); the declared residue — the anchor rule — carries that pole. The
+calibration control R-OFF reproduces the 14 landed contacts exactly (14/0/0/22); the
+Z-interface guard is NON_SEPARATING 4/2/10/20, field-for-field equal to BL-068; zero
+granted-office bytes enter the derivation path (region-scoped, validator-enforced; 49
+mutation probes rejected); the gates V-D7D-1 through V-D7D-5 all PASS. The record's
+scope precision is binding: **derivability is admitted — not the D7 GOVERNS relation's
+semantics, not its authority, not its role** (the GOV-524/525 distinction: how the
+relation can be constructed, not what it means or what authority it carries).
+
+### Significance - the first derivation admission for a pole-level contact relation, and the symmetric completion
+
+The D4 amendment linked to an existing `not_derived` failure record; this admission
+creates D7's derivation status for the first time — the ceremony's form is
+admission-class (the ENTRY 16/17 precedent), not amendment-class (the ENTRY 18
+precedent). The hypothesis-tier's resolution is likewise a first: a finding's status
+resolved by a derivation, rather than by a claim event about an existing result. The
+symmetric completion is recorded: D4 `derivable-from-derived-inputs` (ENTRY 18) and D7
+`derivable-via-R2-office-purity` (this entry) both stand; the fa/ti asymmetry is fully
+characterized at the derivation level (different predicates, different domain
+multiplicities, both derivable). The characterization is bounded: both poles carry
+derivation status on the record; the asymmetry's mechanism (GSL-3; registered BL-069)
+now carries both predicates' derivability; the semantic difference between the poles'
+predicates remains framework-declared, not derived.
+
+### Hypothesis-Tier Resolution (Additive)
+
+D7's hypothesis-tier status is **superseded additively** by the derivation status
+`derivable-via-R2-office-purity`: the hypothesis-tier finding's evidence — BL-068's
+measured asymmetry, BL-070's `PARTIAL_DERIVATION` attempt (**co-cited as historical
+context and obstruction record, not superseded science** — the nine-candidate battery,
+the near-miss anatomy, and the `R_NONE` finding are the evidence that motivated the
+office-purity redesign), BL-078's replication under region-scoped isolation, and GSL-3
+— remains cited; nothing is erased. ENTRY 18's D7 clause stands unedited in its own
+bytes (the ledger is append-only); historically it recorded the state at its landing;
+this entry records the transition.
+
+### Scope
+
+This entry claims exactly: the D7 contact geometry is derivable via the office-purity
+route, per the BL-090 execution — the derivation consumes the recovered coordinates κ,
+the derived cycle-ground, and the D6-satellite domain, and generates exactly the 14
+same-office contacts. No more.
+
+Excluded (binding, carried from the corridor's standing fences): no GOVERNS admission;
+no D7 GOVERNS relation semantics, authority, or role (derivability admitted, not the
+relation's runtime/canonical/semantic status); no wall dissolution (the D-tier
+boundary wall stands; the D7 derivation operates within the modal-orbit structure, not
+through the wall); no D4 implication (D4's `derivable-from-derived-inputs` and D7's
+derivation are independent results; ENTRY 15 and ENTRY 18 unchanged); no G1 movement;
+no INV-5 graduation; no section 6(4) movement; no M-walkability promotion; no
+directional-semantics assignment; no anchoring-remainder resolution (the tier/role
+partition and the GOVERNS edge content remain licensed inputs; the office field is
+consumed through the recovered coordinates, never through the granted labels; the
+anchoring remainder stands); no canonical/Court/schema/Neo4j writes beyond this
+landing's own; no promotion or green-release claim; the frame (comprehension map
+sections 2.6-2.7) is interpretation vocabulary; session prose is context, not
+evidence.
+
+### References
+
+- The record: `docs/specs/d7-derivation-admission-v0.1.0.md`
+  (`SPEC-D7-DERIVATION-001` v0.1.0); the receipt:
+  `qa/specs/bl-091-d7-derivation-admission.json`.
+- The execution (BL-090): `orrery/src/generated/bl090-d7-office-purity-derivation.v1.json`
+  (raw-byte SHA-256 `145077a5…`; `derivationFingerprint` `656aa20a…`); generator
+  `scripts/build-bl090-d7-office-purity-derivation.mjs` (raw-byte `d7a830b8…`);
+  independent validator `orrery/scripts/validate-bl090-d7-office-purity-derivation.mjs`
+  (raw-byte `14dcb0c7…`; 49 mutation probes rejected; the two-sided static region
+  check); pins `orrery/src/bl090-d7-office-purity-derivation.test.ts` (raw-byte
+  `a780caa0…`; 13 tests); memo `scrum/plan/bl-090-d7-office-purity-derivation-memo.md`.
+- The corridor chain (each self-checked by fingerprint at BL-090): BL-063 κ
+  (`6d33c67b…`), BL-064 cycle-ground (`aa975820…`), BL-066 R-edges (`94f0661f…`),
+  BL-068 (GSL-3; `b0d65bd6…`), BL-070 (PARTIAL; `9db10a08…`), BL-078 (REPLICATED;
+  `11644d40…`), BL-089 (the license; `eb1526be…`); the coordinate algebra BL-075
+  (`88838e22…`) and BL-076 (`81e6cf72…`).
+- The D4 corridor as sibling context (not input):
+  `scrum/plan/bl-057-d4-amendment-spec.md` (`6908e7b`; ruling landing `ead2eec`);
+  `orrery/src/generated/d4-r2-contract.v1.json` (`contractFingerprint` `5528510b…`);
+  `qa/bl080-governs-derivation-receipt.json` (`executionFingerprint` `437de068…`;
+  comparison digest `1f66764b…`); ENTRY 15 (`:2665-2810`); ENTRY 18 (`:3130-3330`).
+- Consequence updates: BL-059 scoping-memo accretion (section 4.14; the section 8
+  accretion note); the comprehension-map consumption row; the synthesis registration
+  note; the backlog BL-091 section and revision row v1.71.
+- Inventory emission: `scripts/build-manifest.mjs` via `npm run package:manifest`;
+  package `seven-governors-integrated-release` 1.9.0 from `package.json`.
+
+### Release Gate Disposition
+
+This entry's append extends the decision ledger; the ledger-bound cascade (the
+twin-hub convergence candidate, the fifth-space census candidate, the shadow-ladder
+candidate, the fivefold-engine promotion evidence, and the pentatonic binding audit
+closure) is thereby staled mechanically — the ENTRY 18 class (the BL-080 landing
+recorded the same class before BL-051/BL-052 refreshed it). Full `npm run validate`
+was executed for this landing; the observed first stop is recorded in the compliance
+receipt, with the specific stale-binding inventory and its provenance. The stale
+bindings are recorded as accepted release state for this landing — not repaired here
+(the refresh is a separate future landing, the BL-051/BL-052 precedent); no stale
+control is disabled, no shared artifact is regenerated to force green, and no green
+integrated release is claimed. Any failure outside the recorded inventory halts.
+
+### Guard
+
+This entry grants no runtime, topology, graph, governs, Court, office, schema, policy
+or global `harmonic.C_H` authority. It does not change the D7 GOVERNS relation's
+formal status (derivability is admitted, not authority), does not dissolve the
+boundary wall, does not amend D4's `derivable-from-derived-inputs` or the historical
+`not_derived` record, does not graduate INV-5, does not move section 6(4), does not
+promote M-walkability, and does not assign directional semantics. The D7
+hypothesis-tier status is superseded additively by the derivation status; the
+hypothesis-tier finding's evidence remains cited; nothing is erased. ENTRY 10, ENTRY
+15, ENTRY 16, ENTRY 17, ENTRY 18, ENTRY 19, ENTRY 20 and ENTRY 21 stand
+byte-untouched; prior line anchors remain unchanged; this entry is append-only. The
+historical record is linked, not rewritten. **Any reading of this entry as
+overturning or superseding the D4 corridor's results (ENTRY 15's `derivable-via-R2`
+or ENTRY 18's `derivable-from-derived-inputs`) is rejected: the two corridors are
+independent, both admitted, both standing.**

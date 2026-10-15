@@ -375,6 +375,19 @@ synthesized claim; the un-granting chain is GOV-524's record, not re-stated here
    claim, no D7 amendment, no D7 derivation admission); the scoping memo §5.1 contrast
    reading stays intact.
 
+   *(BL-091/ENTRY 22 resolution, 2026-10-15: the derivation status resolves — the
+   ti-pole's selection is admitted as `derivable-via-R2-office-purity` (the BL-090
+   execution's `FULL_DERIVATION`; the office-purity route grounded in the recovered
+   coordinates κ; the selection set-equal 14/0/0/22 under M1 and M2; zero granted-office
+   bytes in the derivation path). The hypothesis-tier status is superseded additively;
+   the replication-confirmed grant-dependence recorded above remains cited as the
+   obstruction record that motivated the office-purity redesign — the BL-070
+   `PARTIAL_DERIVATION` attempt co-cited as history, not superseded science. The
+   symmetric completion stands: both poles' contact relations carry derivation status
+   on the record (D4 `derivable-from-derived-inputs`, ENTRY 18; D7
+   `derivable-via-R2-office-purity`, ENTRY 22). The registration adds no measurement of
+   its own.)*
+
 ## 7. Integration verification and fences
 
 **7.1 The lens's landing confirmed.** The §2.7 seven-form taxonomy and R2 registration
@@ -412,7 +425,18 @@ block (the boundary-layer-conditional verdict; the reach-order alignment princip
 its descriptive-not-production qualification carried verbatim) — newly added content,
 cited to its landing artifacts (`orrery/src/generated/bl084-window-ladder.v1.json`,
 fingerprint `6865b076…`; `scrum/plan/bl-084-window-ladder-memo.md`); the registration adds
-no measurement of its own.)*
+no measurement of its own.)* *(BL-091/ENTRY 22 registration, 2026-10-15: the D7
+derivation status (section 6 entry 6) resolves — the ti-pole's selection is admitted as
+`derivable-via-R2-office-purity` (BL-090's `FULL_DERIVATION`; the κ-grounded selection
+set-equal 14/0/0/22; zero granted-office bytes in the derivation path); the claim event
+is ENTRY 22 + record `docs/specs/d7-derivation-admission-v0.1.0.md`
+(`SPEC-D7-DERIVATION-001` v0.1.0) + receipt
+`qa/specs/bl-091-d7-derivation-admission.json`. The hypothesis-tier status is superseded
+additively; the hypothesis-tier finding's evidence (§6 entry 6's replication-confirmed
+record; the BL-070 `PARTIAL_DERIVATION` attempt co-cited as history) remains cited; the
+symmetric completion — both poles' contact relations carry derivation status on the
+record (D4 ENTRY 18; D7 ENTRY 22) — is the registration's significance. The registration
+adds no measurement of its own.)*
 
 **7.4 Finding-row statuses untouched.** Rows 8 and 10 remain `finding: no repo source`
 (`docs/ARCHITECTURE_MAP.md:129,133-134`; tally `:139`); §5 remains planning evidence (map
@@ -453,6 +477,13 @@ verdict; the reach-order alignment principle; the dual-closure pair; the 14/238 
 rarity) — the registration adds no measurement; every added claim cites BL-084's artifact
 and memo; the G-9 prose correction (the `gslTreatment` one-liner "7 of 238" vs the
 authoritative `scopeC.aggregate.slidingUnorderedCount` 14) is recorded per OD-P2-5.)*
+*(BL-091/ENTRY 22 registration, 2026-10-15: §6 entry 6 gains the resolution note (the
+D7 derivation status admitted — `derivable-via-R2-office-purity`; the symmetric
+completion recorded) — the registration adds no measurement; every added claim cites
+BL-090's artifact (`orrery/src/generated/bl090-d7-office-purity-derivation.v1.json`,
+fingerprint `656aa20a…`), the record, and the receipt; the D7 hypothesis-tier status is
+superseded additively — the hypothesis-tier evidence remains cited; no D4 movement (the
+corridors are independent, both admitted, both standing).)*
 Session prose is context, not evidence.
 
 ## 8. Result in one paragraph

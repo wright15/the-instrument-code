@@ -560,6 +560,16 @@ session (lattice Phase B, or the governs semantic layer) resolves it from the re
 | BL-078 landing (the D7 derivation re-test; `R_NONE`) | §5.9 — the replication-confirmed grant-dependence (the office field as the selection's ground, joining the anchoring remainder) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
 | BL-084 registration (the window-ladder generalization) | §5.10 — the reach-order alignment principle (boundary-layer-conditional; the dual-closure pair; 14/238 unordered operator cycles; the descriptive-not-production qualification carried verbatim) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
 | BL-053 green release (ENTRY 21) | the map as shipped: §5 measured findings as planning evidence, §2 design-intent tiers, §3 open canon question | the release ships the framework with the higher-theorem question formally stated, not answered; no §5 tag change; measured findings remain planning evidence, not citable as claims |
+| claim record `SPEC-D7-DERIVATION-001` (admitted; ENTRY 22) | §5.6 GSL-3 and the D7-side records as context — the claim's load-bearing evidence is the BL-090 execution artifact (chain-anchored: BL-063/BL-064/BL-066/BL-068/BL-070/BL-078/BL-089) | consumed as context; §5 remains planning evidence — measured, not admitted, not citable as claims; the admission changes no §5 tag; the D7 hypothesis-tier status is superseded additively by `derivable-via-R2-office-purity` (the hypothesis-tier findings' evidence remains cited; the BL-070 `PARTIAL_DERIVATION` attempt co-cited as history) |
+
+(ENTRY 22, 2026-10-15 — the D7 hypothesis-tier resolution: the D7 hypothesis-tier
+status carried in the D7-side consumption rows above is superseded additively by the
+derivation status `derivable-via-R2-office-purity` (the D7 first-derivation admission;
+record `docs/specs/d7-derivation-admission-v0.1.0.md`, `SPEC-D7-DERIVATION-001` v0.1.0;
+receipt `qa/specs/bl-091-d7-derivation-admission.json`; ENTRY 22 —
+`provenance/DECISION_LEDGER.md:3651-3806`). The rows above record their landing-time
+status; the resolution is additive — the hypothesis-tier findings' evidence remains
+cited and nothing is erased; §5 remains planning evidence throughout.)
 
 ## 5. Measured findings — the D4 boundary-geography selection layer [MEASURED — planning evidence]
 

@@ -356,6 +356,44 @@ raw-byte `88c1a92f…`), `scrum/plan/bl-084-window-ladder-memo.md`; registered i
 synthesis §5 and the comprehension map §5.10. Planning evidence; the accretion reads
 landed bytes only.
 
+**4.14 The D7 first-derivation admission: the D7 contact geometry is derivable via the
+office-purity route (BL-091; ENTRY 22; 2026-10-15).** The ti-pole's contact relation's
+derivation status is now on the record: the D7 contact geometry — the 14 same-office
+contact keys, 7 D₇ anchors × 2 D6 satellites each, within the 36-instance
+anchor-satellite domain (per-anchor 4/5/6/6/6/5/4) — is admitted as **derivable via the
+office-purity route**: the selection predicate `o(s) = o(h)` (same-office) grounded in
+the recovered coordinates κ (BL-063's office reconstruction; κ₁ 7/7), consuming the
+derived cycle-ground (BL-064's sandwich + twin-closure construction) and the derived
+R-edges (BL-066's H2-reach + H8-census closure), per the BL-090 execution's
+`FULL_DERIVATION` result (V-D7D-1 through V-D7D-5 PASS; calibration R-OFF 14/0/0/22
+EXACT; the 14-key contact set set-equal O; the 36-instance domain set-equal BL-068 +
+BL-070; M1 anchor rule `office = (C − pcSum) mod 7` with C = 4 + governing inherit and
+M2 affine transport T1/T2 both set-equal 14/0/0/22 — the κ-verdict BOTH, over-determined
+on the D7 pole; zero granted-office bytes in the derivation path — the granted office
+field demoted to comparison target and control). Status transition: hypothesis-tier →
+`derivable-via-R2-office-purity`, **superseded additively** — the hypothesis-tier
+finding's evidence (§4.8 GSL-3; the §5.1 accretions) remains cited; the BL-070
+`PARTIAL_DERIVATION` attempt is co-cited as historical context and obstruction record
+(the corridor's scaffolding, not superseded science); nothing is erased. Scope
+precision (binding): derivability is admitted, not the D7 GOVERNS relation's semantics,
+authority, or role (the GOV-524/525 distinction); the anchoring remainder stands (the
+tier/role partition + the GOVERNS edge content + C = 4 remain licensed inputs; the
+office field is consumed through the recovered coordinates, never through the granted
+labels). **The symmetric completion:** with the D4 side's admitted R2 route (§4.7;
+ENTRY 15/18), both poles now carry derivation status on the record — different
+predicates, different domain multiplicities, both derivable; GSL-3's mechanism carries
+both predicates' derivability, and the semantic difference between the poles'
+predicates remains framework-declared, not derived. Receipts:
+`docs/specs/d7-derivation-admission-v0.1.0.md` (`SPEC-D7-DERIVATION-001` v0.1.0);
+`qa/specs/bl-091-d7-derivation-admission.json`; ENTRY 22
+(`provenance/DECISION_LEDGER.md:3651-3806`); the execution:
+`orrery/src/generated/bl090-d7-office-purity-derivation.v1.json` (fingerprint
+`656aa20a…`). *Shows:* the question's paired-case core is answered — the ti-pole's
+selection derives through its own geometry, grounded in the same recovered coordinates
+as the fa-pole's. *Does not show:* the D7 relation's semantics, authority, or role; any
+wall dissolution; any D4 movement (the corridors are independent, both standing); any
+anchoring-remainder resolution.
+
 ## 5. Evidence against / obstructing (honest tally)
 
 **5.1 D7's modal non-closure (ENTRY 15 §D7 Clause; `qa/d4-r2-execution-receipt.json`
@@ -409,6 +447,24 @@ recorded un-promoted per OD-N2. Cited:
 `scrum/plan/bl-078-d7-retest-memo.md` §§6, 10-11. D7 hypothesis-tier unchanged (no claim
 event, no record amendment, no derivation admission); this accretion strengthens the
 obstruction column, not §4's evidence-for column; the contrast reading above stands.
+
+*§5.1 accretion (BL-091/ENTRY 22, 2026-10-15 — the D7 derivation completed and
+admitted).* The obstruction entries above are history, not verdict: the office field
+that BL-070/BL-078 identified as the selection's sole clean separator is now consumed
+as a **licensed input** through the κ-recovered coordinates, and the BL-090 execution's
+`FULL_DERIVATION` (M1 anchor rule + M2 affine transport both set-equal 14/0/0/22;
+calibration R-OFF 14/0/0/22; zero granted-office bytes in the derivation path)
+concluded the route — ENTRY 22 records the D7 contact geometry as
+`derivable-via-R2-office-purity` (see §4.14). The hypothesis-tier status is superseded
+additively; the BL-070 `PARTIAL_DERIVATION` attempt and the BL-078 `REPLICATED`
+re-test remain cited as the obstruction record that motivated the office-purity
+redesign (co-cited, not superseded science). What this does **not** change: the
+anchoring remainder — the office field stays a licensed input (recovered through masks
++ the licensed edge content, never read as granted labels), and the remainder's other
+components are untouched. Cited:
+`orrery/src/generated/bl090-d7-office-purity-derivation.v1.json` (fingerprint
+`656aa20a…`), `scrum/plan/bl-090-d7-office-purity-derivation-memo.md`; the admission:
+ENTRY 22 (`provenance/DECISION_LEDGER.md:3651-3806`).
 
 **5.2 The cycle ground is itself granted (BL-055 §5 W3; BL-056 §2, §8).** R2's derivation
 ground — the closed 7-edge A0 cycle — is read from the granted CONSTRUCTS parent pairs; each
@@ -520,6 +576,21 @@ does **not** close: unchanged — the alignment is a descriptive characterizatio
 remainder, the semantics/role question, and any D7 reading are untouched. The question
 beyond the claim's bounded scope otherwise remains open.
 
+**Status update 2026-10-15 (BL-091/ENTRY 22, the D7 first-derivation admission).** The
+paired case's core has its admitted answer: the D7 contact geometry is
+`derivable-via-R2-office-purity` — the office-purity route grounded in the recovered
+coordinates κ (the BL-090 execution's `FULL_DERIVATION`; §4.14 the admission record;
+the §5.1 accretion). The hypothesis-tier status is superseded additively; the symmetric
+completion stands — both poles' contact relations carry derivation status on the
+record (D4 `derivable-from-derived-inputs`, ENTRY 18; D7 `derivable-via-R2-office-purity`,
+ENTRY 22), different predicates over different domain multiplicities, both derivable.
+What this does **not** close: the anchoring remainder (unchanged — the office field
+remains a licensed input; the orientation bit and the presentation conventions
+carried); the relation's semantics, role, and authority (the admission is derivability,
+not authority); the boundary wall (unmoved — the derivation operates within the
+modal-orbit structure). The question beyond the claim's bounded scope otherwise
+remains open.
+
 ## 8. Fences and what this memo does not do
 
 No claim events; no record amendments (D4's `derivable-via-R2` and D7's hypothesis-tier are
@@ -547,6 +618,17 @@ every added claim cites `orrery/src/generated/bl084-window-ladder.v1.json` (fing
 `6865b076…`) and `scrum/plan/bl-084-window-ladder-memo.md`. No claim event, no record
 amendment; ENTRY 10/15/16/17 byte-untouched; the frame is interpretation vocabulary;
 session prose is context, not evidence.)
+
+(Accretion note, 2026-10-15: the D7 first-derivation admission (ENTRY 22; BL-091)
+accretes into §4.14 (admission record), the §5.1 note, the §7 status update, and this
+note under this memo's mutation contract; every added claim cites
+`orrery/src/generated/bl090-d7-office-purity-derivation.v1.json` (fingerprint
+`656aa20a…`), `docs/specs/d7-derivation-admission-v0.1.0.md`, and
+`qa/specs/bl-091-d7-derivation-admission.json`. The D7 hypothesis-tier status is
+superseded additively; the hypothesis-tier evidence remains cited. No D4 movement — the
+corridors are independent, both admitted, both standing; ENTRY 10/15/16/17/18
+byte-untouched by this memo; the frame is interpretation vocabulary; session prose is
+context, not evidence.)
 
 ## 9. Closing note: the biggest open question in the project, made askable
 

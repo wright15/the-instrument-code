@@ -1,0 +1,453 @@
+{
+  "receiptId": "BL-091-D7-DERIVATION-ADMISSION",
+  "ticket": "BL-091",
+  "status": "ADMITTED_ATOMIC_LANDING",
+  "admissionDate": "2026-10-15",
+  "ticketVerification": "BL-091 verified next-free at allocation against the committed pre-landing tree: git grep 'BL-091' HEAD returns no match (likewise 'SPEC-D7-DERIVATION-001' and 'ENTRY 22'); the highest landed ticket is BL-090 (commits aa01cb9/ab7b2e8; backlog revision v1.70); the ledger's last entry is ENTRY 21 (the BL-053 green release). The corridor-era 'ENTRY 19 / BL-0XX' numbering was stale (ENTRY 19/20/21 were consumed by BL-051/052/053) and was corrected to ENTRY 22 / BL-091 at execution per maintainer ruling OD-91-1.",
+  "scope": {
+    "included": [
+      "One append-only decision-ledger entry (ENTRY 22, provenance/DECISION_LEDGER.md:3651-3806) admitting the D7 contact geometry's derivability via the office-purity route as derivable-via-R2-office-purity per the BL-090 execution result",
+      "The candidate record docs/specs/d7-derivation-admission-v0.1.0.md (v0.1.0, SPEC-D7-DERIVATION-001), admission-class (the ENTRY 16/17 precedent)",
+      "This compliance receipt under qa/specs/",
+      "Consequence updates (per OD-91-4): the BL-059 scoping-memo accretion (section 4.14, the section 5.1 accretion note, the section 7 status update, the section 8 accretion note); the comprehension-map consumption row and the D7 hypothesis-tier resolution note; the synthesis registration (section 6 entry 6 resolution note; sections 7.3/7.6); the backlog BL-091 section and revision row v1.71",
+      "Root inventories MANIFEST.json and CHECKSUMS.sha256 (refreshed in the same atomic commit)",
+      "Recorded release state: the ledger-bound cascade staled mechanically by this entry's append (the ENTRY 18 class; the specific inventory in predeclaredGates) - recorded, not repaired; the refresh is a separate future landing (the BL-051/BL-052 precedent)"
+    ],
+    "excluded": [
+      "Runtime, schema, canonical topology, Court runtime, Neo4j projection, graph or policy changes",
+      "Cascade refresh: the ledger-bound artifacts (the twin-hub convergence candidate, the fifth-space census candidate, the shadow-ladder candidate, the fivefold-engine promotion evidence, the pentatonic binding audit closure, and the downstream orrery projections) are not regenerated at this landing (OD-91-4; OD-91-5 record-not-repair) - their refresh requires its own landing",
+      "Governs admission: the admission records the D7 contact geometry's derivability, not the D7 GOVERNS relation itself; no D7 semantics, authority, or role (the GOV-524/525 distinction: how the relation can be constructed, not what it means or what authority it carries)",
+      "Boundary-wall dissolution claims (the wall stands; the derivation operates within the modal-orbit structure); G1 movement; INV-5 graduation; section 6(4) movement; M-walkability promotion; directional-semantics assignment",
+      "D4 corridor movement: ENTRY 15's derivable-via-R2 and ENTRY 18's derivable-from-derived-inputs unchanged; the two corridors independent, both admitted, both standing; any reading of this admission as overturning or superseding the D4 corridor's results is rejected",
+      "Anchoring-remainder resolution (the tier/role partition + the GOVERNS edge content + the orientation constant C = 4 + the presentation conventions remain carried; the office field is consumed as a licensed input through the recovered coordinates, never through the granted labels)",
+      "Any mutation of ENTRY 10/15/16/17/18/19/20/21 historical bytes (the record is linked, not rewritten; the D7 hypothesis-tier resolution is additive)",
+      "D-90-1 promotion (the orbit-alignment restatement stays un-promoted per OD-70-5/OD-66-2; separation != derivation); any new GSL number",
+      "Release promotion or green-release claim"
+    ]
+  },
+  "candidate": {
+    "id": "SPEC-D7-DERIVATION-001",
+    "version": "0.1.0",
+    "path": "docs/specs/d7-derivation-admission-v0.1.0.md",
+    "sha256": "374e3d131e925a3c7d29e3c715753bc85b6dde02ea3a1f6fb8b8b8ef27b3d791",
+    "blobOid": "50a49ac147b8805562c839f4feabf1263ee86fbb",
+    "byteLength": 17327,
+    "recipe": "raw-bytes-sha256",
+    "admissionClass": "admission-class (the ENTRY 16/17 precedent), not amendment-class (the ENTRY 18 precedent): the ceremony creates D7's derivation status for the first time - the first derivation admission for a pole-level contact relation and the first hypothesis-tier resolution by a derivation (rather than a claim event about an existing result)"
+  },
+  "ledgerAppend": {
+    "entry": "ENTRY 22",
+    "heading": "## ENTRY 22 - D7 first-derivation admission - derivable-via-R2-office-purity",
+    "statusToken": "derivable-via-R2-office-purity",
+    "statusTokenRationale": "dual form per the ENTRY 15/18 precedent: the mechanism ('first derivation admission for a pole-level contact relation') and the content ('derivable-via-R2-office-purity', what the record now says); the D7 hypothesis-tier status is superseded additively",
+    "transition": "hypothesis-tier (no derivation status) -> derivable-via-R2-office-purity (additive supersession; the hypothesis-tier finding's evidence remains cited)",
+    "mechanism": "admission-class additive status creation, not an amendment link: the ceremony creates D7's derivation status for the first time (the ENTRY 16/17 precedent), where the D4 amendment linked to an existing not_derived failure record (the ENTRY 18 precedent); nothing is erased - the corruption's evidence chain stays cited",
+    "preAppendLedger": {
+      "path": "provenance/DECISION_LEDGER.md",
+      "recipe": "raw-bytes-sha256",
+      "sha256": "45653693ea4b5471412ad60e518ffd8333e3d87091ff007a7b5c9eee026d8139",
+      "byteLength": 233926,
+      "blobOid": "e261cc1ea7a77fce01978c399870a6a41ebbaaff",
+      "role": "historical lineage quotation (supersedesWholeFileSha-class per R2 permitted use 2), not a current-authority check; the pre-append authority at this landing (the ENTRY 21 era)"
+    },
+    "postAppendLedger": {
+      "path": "provenance/DECISION_LEDGER.md",
+      "recipe": "raw-bytes-sha256",
+      "sha256": "6d043fc168ba7e09f82fe7d71df38801aa4b6d41fdfd0bf0495060ea3d7df793",
+      "byteLength": 244527,
+      "blobOid": "e06d6e178dfe9d47faf5223ceb08fdce398028b3",
+      "computation": "deterministically computed pre-commit on finalized worktree bytes (shasum -a 256; git hash-object --no-filters); post-commit verification must reproduce digest and OID from the committed blob",
+      "status": "DECLARED_POST_COMMIT (not reported as observed before the commit exists)"
+    },
+    "entry22Attestation": {
+      "entryId": "ENTRY 22",
+      "span": "3651-3806",
+      "recipe": "line-join-no-trailing-newline (split raw bytes on 0x0A; select 1-indexed content lines 3651 through 3806, the heading line through the final content line; join with 0x0A; no trailing newline; apply raw-bytes-sha256)",
+      "sha256": "218a89cdf8d5658a4820b5b8801da1dd7aca204b8a1688ef9969d243933cd857",
+      "byteLength": 10596,
+      "keependsVariant": {
+        "sha256": "47cbf3e2a57f9023e98df10315b8d9d7ebeb7e6905d7d87b68feecbb0c86b8cb",
+        "byteLength": 10597
+      },
+      "overSpecification": "both variants are labeled with byte lengths so an auditor re-hashing with either tool reproduces one of the two values (the BL-057 Q4 precedent)",
+      "status": "DECLARED_POST_COMMIT (computed pre-commit on finalized bytes; result confirmed post-commit in the session record)"
+    },
+    "entryFences": {
+      "entry10Region": {
+        "span": "2195-2252",
+        "qualifierLines": "2260-2266",
+        "impossibilityNoteLines": "2163-2164",
+        "regionSha256_lineJoinNoTrailingNewline": "201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7",
+        "regionByteLength_lineJoinNoTrailingNewline": 3487,
+        "regionSha256_keepends": "50b8b73f75497082e6d2a38052a62da4f5374ee94fc08f8ff0312fc7746fbb00",
+        "regionByteLength_keepends": 3488,
+        "status": "verified byte-untouched at this landing (both recipes reproduce exactly)"
+      },
+      "entry15Region": {
+        "span": "2665-2810",
+        "regionSha256_lineJoinNoTrailingNewline": "26c0cb43ba32525406b59668d03b563da9c1f85f382f60dfa2f5d840c62b909e",
+        "regionByteLength_lineJoinNoTrailingNewline": 9342,
+        "status": "verified byte-untouched at this landing"
+      },
+      "entry16Region": {
+        "span": "2814-2964",
+        "regionSha256_lineJoinNoTrailingNewline": "b9cefaaecb235b2a0a132abd3c8b562b57dbfc80aa6014abcf0cfb99d87e6e90",
+        "regionByteLength_lineJoinNoTrailingNewline": 8938,
+        "status": "verified byte-untouched at this landing (matches the GOV-524 admission attestation)"
+      },
+      "entry17Region": {
+        "span": "2968-3126",
+        "regionSha256_lineJoinNoTrailingNewline": "9fba63cceae54c414e11da289d8b547f2c0b2bd725dd16a23a5cc153c0853f00",
+        "regionByteLength_lineJoinNoTrailingNewline": 9651,
+        "status": "verified byte-untouched at this landing (matches the GOV-525 admission attestation)"
+      },
+      "entry18Region": {
+        "span": "3130-3330",
+        "regionSha256_lineJoinNoTrailingNewline": "9fb561f00cb2116cba0847a9fab8391c744c786ab07f6209def20f20b16efb9a",
+        "regionByteLength_lineJoinNoTrailingNewline": 11950,
+        "regionSha256_keepends": "7ed4a45ba66f391a949db1627e61543af6406d4101923f111343e40c45f8ab42",
+        "regionByteLength_keepends": 11951,
+        "status": "verified byte-untouched at this landing (matches the ENTRY 18 amendment attestation)"
+      },
+      "prefixPreservation": {
+        "recipe": "raw-bytes-sha256 over the first N bytes of the amended ledger",
+        "preCorridor_174314": "8b7084bc7c55bd53a060434fbcaef1d0c7f4eb572079a01d3c1f3f05db4f2362",
+        "postEntry15_183663": "e551850c66f7d214700e9669a6a83254f264dda90211586de197fc15408186e4",
+        "postEntry17_202266": "701ff3006e235e331b28ae2d3a045111875e26486fb52368c9c0bd5c5e3bc6d8",
+        "postEntry18_214223": "fb2b9b9ef552c69217e764b42fe8cff37a3c795c4d1a620784664f195527e66e",
+        "preAdmission_233926": "45653693ea4b5471412ad60e518ffd8333e3d87091ff007a7b5c9eee026d8139",
+        "status": "all six prefixes reproduced byte-exactly on the amended ledger at this landing; the append is a true end-append"
+      }
+    }
+  },
+  "claim": {
+    "statement": "the D7 contact geometry - 14 same-office contact keys, 7 D7 anchors x 2 D6 satellites each, within the 36-instance anchor-satellite domain (per-anchor 4/5/6/6/6/5/4) - is derivable via the office-purity route: the selection predicate o(s) = o(h) (same-office), grounded in the recovered coordinates kappa (BL-063's office reconstruction, kappa-1 7/7), consuming the derived cycle-ground (BL-064's sandwich + twin-closure construction) and the derived R-edges (BL-066's H2-reach + H8-census closure), per the BL-090 execution's FULL_DERIVATION result (all pre-registered gates V-D7D-1 through V-D7D-5 PASS; calibration EXACT; the 14-key contact set set-equal O; the 36-instance domain re-derived set-equal BL-068 + BL-070).",
+    "statementProvenance": "verbatim in the record (docs/specs/d7-derivation-admission-v0.1.0.md section 1.1) and in ENTRY 22's Decision; the receipt carries the same text with the house's JSON character normalization (kappa for the Greek letter; x for the multiplication sign)",
+    "disposition": "The ti-pole's selection derives: BL-090's single-primary rule R-kappa(h) = {(h, s) : s in D2(h) and o_kappa(s) = o_kappa(h)} evaluated on the re-derived 36-instance domain emits exactly the 14 landed contacts - set-equal at 14/0/0/22 - under M1 (the anchor rule office = (C - pcSum) mod 7 with C = 4 plus governing inherit over the licensed GOVERNS edge content; the recovered field matches the canonical offices 28/28 node-by-node; kappa-1 7/7; midpoints 7/7) and under M2 (the affine transports T1 y = 5x + 2 and T2 y = 2x + 4 from the kappa-1 positions; the D7-pole offices 7/7 + 7/7) - the kappa-verdict BOTH, over-determined on the D7 pole. The one structural non-equivalence is the D6 pole's A1-D6 office transport (non-affine; the exact defect is the route-affine law composed with the terminal-office source swap {0, 6}, zero residual); the declared residue - the anchor rule - carries that pole. Calibration R-OFF 14/0/0/22 EXACT; the Z guard NON_SEPARATING 4/2/10/20, field-for-field equal to BL-068; zero granted-office bytes in the derivation path (region-scoped, validator-enforced).",
+    "symmetricCompletion": "The symmetric completion is recorded: D4 derivable-from-derived-inputs (ENTRY 18) and D7 derivable-via-R2-office-purity (this entry) both stand; the fa/ti asymmetry is fully characterized at the derivation level (different predicates, different domain multiplicities, both derivable). Bounds (binding): both poles carry derivation status on the record; the asymmetry's mechanism (GSL-3; registered BL-069) now carries both predicates' derivability; the semantic difference between the poles' predicates remains framework-declared, not derived.",
+    "hypothesisTierResolution": "D7's hypothesis-tier status is superseded additively by the derivation status derivable-via-R2-office-purity: the hypothesis-tier finding's evidence (BL-068's measured asymmetry; BL-070's PARTIAL_DERIVATION attempt - co-cited as historical context and obstruction record, not superseded science; BL-078's replication under region-scoped isolation; GSL-3) remains cited; nothing is erased; ENTRY 18's D7 clause stands unedited in its own bytes (the ledger is append-only).",
+    "falsifiability": [
+      "A contact outside the 14 that satisfies the office-purity predicate -> the derivation is incomplete (the selection rule is under-specified).",
+      "A recorded contact that violates the office-purity predicate -> the derivation is wrong (the selection rule is over-specified).",
+      "The D7 orbit's geometry changing under new canonical data -> the derivation's ground shifts; re-derivation required.",
+      "The anchoring remainder expanding (a new granted dependency discovered) -> the conditional-green status is revised (the remaining-grant verification re-run)."
+    ],
+    "rejectedAlternatives": "Two routes rejected, each grounded in the artifact that rejected it. (a) The D4-analogue route - rejected by the three obstructions: the literal predicate [forte = '7-27'] selects 0/14 (D7 contact satellites are set class 7-2 - input-level class asymmetry); the domain-class predicate [forte = '7-2'] selects 14/14 = U = O - a full-domain restatement (the C2 guard), never a selective derivation; the cycle-twin verification is 0/7 - every modal edge is an exact rotation at the orbit's own intervals {11, 6} but does not transport to the D4 verification set {1, 2} - an interval-transport failure, not a rotational absence (BL-070's bounded refinement, OD-70-6; replicated at BL-078). (b) The mask-geometric selection - rejected by the nine-candidate battery: C-M1...C-M9 evaluated on the 36-instance domain yield cleanSplitCount 0; the best are near-misses (12/0/2/22, missing exactly the terminal tritone contacts 127:253 and 4033:2017); the min-|Delta| + census composite (14/0/0/22) is recorded un-promoted (separation != derivation; OD-70-5/OD-N2); the battery replicated exactly at BL-078 (verdict NO_PRE_REGISTERED_CLEAN_SPLIT; interpretation R_NONE).",
+    "scopeExclusions": [
+      "No GOVERNS admission; no D7 GOVERNS relation semantics, authority, or role - derivability admitted, not the relation's runtime/canonical/semantic status (the GOV-524/525 distinction)",
+      "No wall dissolution (the D-tier boundary wall stands; the D7 derivation operates within the modal-orbit structure, not through the wall)",
+      "No D4 implication (D4's derivable-from-derived-inputs and D7's derivation are independent results; ENTRY 15 and ENTRY 18 unchanged; the two corridors independent, both admitted, both standing)",
+      "No G1 movement; no INV-5 graduation; no section 6(4) movement; no M-walkability promotion; no directional-semantics assignment",
+      "No anchoring-remainder resolution (the tier/role partition + the GOVERNS edge content + C = 4 + the presentation conventions remain licensed inputs; the office field is consumed through the recovered coordinates, never through the granted labels)",
+      "No hypothesis-tier erasure (the resolution is additive; the hypothesis-tier finding's evidence remains cited)"
+    ]
+  },
+  "evidence": {
+    "corridorChain": [
+      {
+        "link": "the execution (BL-090; the load-bearing evidence)",
+        "paths": [
+          "orrery/src/generated/bl090-d7-office-purity-derivation.v1.json",
+          "scrum/plan/bl-090-d7-office-purity-derivation-memo.md"
+        ],
+        "sha256": "145077a5cf13ea8cbf19adddf6051312d57e463857128fd16804564dc5fcc3f3",
+        "fingerprint": {
+          "name": "derivationFingerprint",
+          "value": "656aa20a0bff897ceefbe79e449dad194530756e25420479e79487425149b23a"
+        },
+        "content": "FULL_DERIVATION; V-D7D-1 through V-D7D-5 all PASS; R-OFF 14/0/0/22 EXACT; M1 + M2 both set-equal 14/0/0/22 (kappa-verdict BOTH); zero granted-office bytes in the derivation path; the Z guard NON_SEPARATING 4/2/10/20 (BL-068 field-for-field); the orbit-alignment discovery D-90-1 un-promoted"
+      },
+      {
+        "link": "the asymmetry investigation (BL-068; GSL-3; the domain's characterization)",
+        "paths": [
+          "orrery/src/generated/bl068-d7-asymmetry.v1.json",
+          "scrum/plan/bl-068-d7-asymmetry-memo.md"
+        ],
+        "sha256": "3de9269529fb9aaf5cba9c588bc3605d3b3a52d9122466c44a1334bbd5ed39d4",
+        "fingerprint": {
+          "name": "derivationFingerprint",
+          "value": "b0d65bd6149978de4f5ef3f1a0b281d0f6324a81114e8aa9da07eda8ef5ef849"
+        },
+        "content": "the 36-instance availability domain (4/5/6/6/6/5/4; 14 distinct; 2/2/10); office-linking CLEAN_SPLIT 14/0/0/22; Z-interface NON_SEPARATING (Z-majority states 191, 253, 2017, 4001); the class predicate RESTATEMENT 36/36; DIFFERENT_PREDICATES; GSL-3"
+      },
+      {
+        "link": "the derivation attempt (BL-070; PARTIAL_DERIVATION - co-cited as historical context and obstruction record per OD-91-3)",
+        "paths": [
+          "orrery/src/generated/bl070-d7-derivation.v1.json",
+          "scrum/plan/bl-070-d7-derivation-memo.md"
+        ],
+        "sha256": "169ce7064c2ee11ab857f5a8fec682fe3a245ed945ba9d61d5f659851eccd7c5",
+        "fingerprint": {
+          "name": "derivationFingerprint",
+          "value": "9db10a088a05664a5cf60f6fad14514a4fc9aab278dcf0359d684bce70607731"
+        },
+        "content": "PARTIAL_DERIVATION; the nine-candidate battery cleanSplitCount 0; the near-miss 12/0/2/22 missing 127:253 + 4033:2017; the composite C-TB-1 un-promoted; the interval-transport refinement (OD-70-6)"
+      },
+      {
+        "link": "the re-test under region-scoped isolation (BL-078; REPLICATED)",
+        "paths": [
+          "orrery/src/generated/bl078-d7-retest.v1.json",
+          "scrum/plan/bl-078-d7-retest-memo.md"
+        ],
+        "sha256": "e9c3acdaedc9e0f59a893a05b22ece53092bd65c02760d5866dd8822a8995671",
+        "fingerprint": {
+          "name": "derivationFingerprint",
+          "value": "11644d401eff5ef951a2173f390041531743df682ad9c502f98a048c0f76e1b1"
+        },
+        "content": "REPLICATED; R_NONE confirmed under enforced input isolation; R-OFF 14/0/0/22 on the re-verified 36-instance domain"
+      },
+      {
+        "link": "the anchoring-remainder interaction (BL-089; the license)",
+        "paths": [
+          "orrery/src/generated/bl089-anchoring-remainder-interaction.v1.json",
+          "scrum/plan/bl-089-anchoring-remainder-interaction-memo.md"
+        ],
+        "sha256": "26a4b196ec141a7f8a96da1bb39463201cb8bd6c3286ed4a645d2c7df0770715",
+        "fingerprint": {
+          "name": "investigationFingerprint",
+          "value": "eb1526bed7f333f83ce6f610b59e0d4ced933d2b8ad91579a63da2d7277e2fb0"
+        },
+        "content": "INTERACTION_DERIVED; the anchor rule 70/70; the satellite rule 238/238; the D7-A0 transports affine (T1 5x+2; T2 2x+4); the D6-A1 transports non-affine; the remainder's named residual"
+      },
+      {
+        "link": "the un-granting program (the derived architecture)",
+        "phases": [
+          {
+            "phase": "Phase 1 kappa (BL-063)",
+            "artifact": "orrery/src/generated/bl063-office-reconstruction.v1.json",
+            "sha256": "57932f37d3acc867bf8c44d00d2ced44d4b2d8ccf39b871c2241e685b6e32b18",
+            "fingerprint": {
+              "name": "reconstructionFingerprint",
+              "value": "6d33c67be7b8f87b8ad2f964cd3560ebcbc1ec0dc6b2088ad1f223c35caff8c3"
+            }
+          },
+          {
+            "phase": "Phase 2 cycle-ground (BL-064)",
+            "artifact": "orrery/src/generated/bl064-cycle-ground.v1.json",
+            "sha256": "9432aa764a57823a06a4d36db3209507ed85af0f7675d3708ef388e369da6f24",
+            "fingerprint": {
+              "name": "derivationFingerprint",
+              "value": "aa975820136658dd2fb3c84d98b34bf7a1901d39edd6548a300f458858305918"
+            }
+          },
+          {
+            "phase": "Phase 3 R-edges (BL-066)",
+            "artifact": "orrery/src/generated/bl066-r-edge-derivation.v1.json",
+            "sha256": "ac2db3d92df89f9ae2e5f19dfc7c0489a56f55dfa8bd154a22ad74c875e7a8ab",
+            "fingerprint": {
+              "name": "derivationFingerprint",
+              "value": "94f0661ff6e76b0dea69fbe9f09ead24da7901393fb735495f3a25c3d9a1a886"
+            }
+          }
+        ]
+      },
+      {
+        "link": "the coordinate structure",
+        "artifacts": [
+          {
+            "artifact": "orrery/src/generated/bl075-coordinate-search.v1.json",
+            "sha256": "1cb710d872f3b5564c138c83c9fd589b2655a9133bf7aba8b1455cc28d426914",
+            "fingerprint": {
+              "name": "investigationFingerprint",
+              "value": "88838e225276432427f2a7c765d8e1f9105c5c6bd87d4db04ef5e1bb2e93704e"
+            },
+            "content": "the Klein-4 coordinate algebra (T1 = x->5x, T2 = x->7x, rho = x->11x; canonically determined)"
+          },
+          {
+            "artifact": "orrery/src/generated/bl076-bijection-probe.v1.json",
+            "sha256": "74bcd025259b89783f404c18286a8189d296fa2949057473634fd6d2dcf8a4f5",
+            "fingerprint": {
+              "name": "investigationFingerprint",
+              "value": "81e6cf7211a94888c2adedeebc44674a6e4a78e5e8b3fc09bb7a8fd671569d1e"
+            },
+            "content": "the family-level involution carrying the tier-to-family correspondence whole (COVARIANT_CONFIRMED)"
+          }
+        ]
+      },
+      {
+        "link": "the D4 corridor as sibling context (not input; independent, both standing)",
+        "paths": [
+          "scrum/plan/bl-057-d4-amendment-spec.md",
+          "orrery/src/generated/d4-r2-contract.v1.json",
+          "qa/bl080-governs-derivation-receipt.json"
+        ],
+        "bindings": {
+          "bl057Spec": {
+            "commits": [
+              "6908e7b",
+              "ead2eec"
+            ],
+            "state": "claim_admitted (maintainer ruling 2026-10-10)"
+          },
+          "r2Contract": {
+            "sha256": "8b269412c222e0d6a1f26db1d6c491cca6f7a03c52e7b200137ab09c9fbf3cf0",
+            "contractFingerprint": "5528510b495f12fa11ab713d8ee357e3798f728204eacd83ad491aafb8fdc7d5"
+          },
+          "gate3Receipt": {
+            "sha256": "b7f9bfbcc13c14f02e75f686c820a7ff02ad4c0e5057e5ef512a0e6acc464f6a",
+            "executionFingerprint": "437de068456cc7280e14015f442c720ebebbe4150f3abdf4ff221e774f7a82e3",
+            "comparisonDigest": "1f66764bf441d3a7b4c18dc65a64955f82570813648286fbcf3ef806c0c8850b",
+            "branch": "DERIVED_FROM_DERIVED_INPUTS"
+          }
+        }
+      }
+    ],
+    "sourceBindings": [
+      {
+        "artifact": "canonical/universal-heptatonic-ledger.csv",
+        "sha256": "6d2603a2499aea55b6bc13d11694ae10e6bfad1d62cb488506a57333e182f6c9",
+        "role": "the 462-record universe (received via BL-090's sourceBindings; the derivation's canonical ground)"
+      },
+      {
+        "artifact": "canonical/universal-network-data.json",
+        "sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+        "role": "the GOVERNS edge content and seat contacts (received via BL-090's sourceBindings)"
+      },
+      {
+        "artifact": "derived/hypergraph/bipartite-inclusion-v1.json",
+        "sha256": "903eebf0e1122d8ba81971abcd7efc8ac934d3bfd7885b98b49e58ab0bbe3e41",
+        "role": "the containment mesh (the Z control only; received via BL-090's sourceBindings)"
+      }
+    ],
+    "machineChecks": {
+      "bl090": {
+        "builder": "scripts/build-bl090-d7-office-purity-derivation.mjs (raw-byte d7a830b8b7adcd86c8a4ede6ac5f36c317058a505fe548de11edd54cf6eb1886)",
+        "validator": "orrery/scripts/validate-bl090-d7-office-purity-derivation.mjs (raw-byte 14dcb0c773c58642d86a1b6524cfb0db63dfbdefb6b45890bbed3cf870a0b224; 49 mutation probes rejected; 11 static rejections; the two-sided static region check; the kappa functions independently reimplemented)",
+        "pins": "orrery/src/bl090-d7-office-purity-derivation.test.ts (raw-byte a780caa0e79ec9a1e2822fb194b58487452dd61d424838d3d16d80b5890af2d7; 13 tests)",
+        "wiring": "orrery:bl090-d7-office-purity-derivation:check (after bl089-anchoring-remainder-interaction:check, before bl080-governs-derivation:check)"
+      }
+    },
+    "crossGateReDerivation": "The claim's load-bearing quantities were re-verified from the landed bytes at this landing: the candidate record digest and blob OID (dual re-hash); the corridor fingerprints self-checked (BL-063 6d33c67b...; BL-064 aa975820...; BL-066 94f0661f...; BL-068 b0d65bd6...; BL-070 9db10a08...; BL-078 11644d40...; BL-089 eb1526be...; BL-090 656aa20a...); the ledger fence regions (ENTRY 10/15/16/17/18) and the full prefix chain reproduced; the planning pass's grounding receipt (13 gates, all PASS) re-derived the corridor chain before this build pass. No mismatch occurred; any mismatch was a halt."
+  },
+  "compliance": {
+    "R1": {
+      "status": "OBSERVED_PRE_COMMIT_AND_DECLARED_POST_COMMIT",
+      "observed": "candidate v0.1.0 sha256/blobOid/byteLength computed on the finalized staged bytes; the pre-append ledger sha256 45653693... and byteLength 233926 read from the pre-append worktree and the committed ENTRY-21 blob (e261cc1e...); the append verified as a true end-append (sha256 of the first 233926 bytes of the amended ledger = 45653693...; the historical prefixes 174314/183663/202266/214223 reproduce 8b7084bc.../e551850c.../701ff300.../fb2b9b9e...); ENTRY 10 region reproduced under both labeled recipes (201efe81.../3487; 50b8b73f.../3488); ENTRY 15 (26c0cb43.../9342), ENTRY 16 (b9cefaae.../8938), ENTRY 17 (9fba63cc.../9651), ENTRY 18 (9fb561f0.../11950 line-join; 7ed4a45b.../11951 keepends) reproduced; the ENTRY 22 region digest computed under the declared line-join recipe (and the keepends variant); all landing files present at their registered paths.",
+      "declared": "Post-commit, the committed ledger blob e06d6e178dfe9d47faf5223ceb08fdce398028b3 piped to raw-bytes-sha256 must equal 6d043fc168ba7e09f82fe7d71df38801aa4b6d41fdfd0bf0495060ea3d7df793; the ENTRY 22 region of the committed blob (content lines 3651-3806, line-join recipe) must equal 218a89cdf8d5658a4820b5b8801da1dd7aca204b8a1688ef9969d243933cd857 (keepends variant 47cbf3e2.../10597); the ENTRY 10/15/16/17/18 regions and the frozen prefixes must reproduce. Declared obligation; not reported as observed before the commit exists; results confirmed post-commit in the session record."
+    },
+    "R2": {
+      "status": "PASS_DEFINITION_SCOPE",
+      "detail": "No whole-file ledger authority binding is introduced by this receipt. The pre-append ledger digest and the historical prefixes are lineage quotations (supersedesWholeFileSha-class per R2 permitted use 2), not current-authority checks. ENTRY 10/15/16/17/18/22 are cited by entry identity and line ranges as human locators; the labeled region hashes are landing-internal redundancy per the BL-057 Q4 over-specification precedent, not evidenceBindings span bindings. No span binding is instantiated. The append is an end-append: it preserves the old prefix; insertion or alteration before its endpoint does not. Note (the ENTRY 18 class): the ledger-bound cascade validators (validate:twin-hub, validate:fifth-space-census, validate:d-shadow, validate:release) carry whole-file current-authority bindings to the live ledger; this entry's append stales them mechanically - recorded in predeclaredGates, not repaired at this landing."
+    },
+    "R3": {
+      "status": "NOT_APPLICABLE",
+      "detail": "No living pipeline payload is regenerated, split or refreshed by this landing; the corridor artifacts and their bindings are untouched (read-only re-verification). The ledger-bound cascade is staled but not regenerated or refreshed (recorded; the refresh is a separate future landing). MANIFEST/CHECKSUMS are root inventory envelopes."
+    },
+    "R4": {
+      "status": "PASS",
+      "detail": "Recipe raw-bytes-sha256 per provenance/digest-recipes.json (pinned primitive scripts/manifest-utils.mjs); digests computed with standard utilities over raw bytes. The ENTRY 22 region recipe is R2 prefix selection applied to raw bytes, declared explicitly with byte lengths; the ENTRY 10 dual-recipe over-specification removes tool-dependent ambiguity."
+    },
+    "R5": {
+      "status": "PASS_FOR_ADMISSION_SCOPE",
+      "detail": "No project emitter produced this admission receipt's evidence beyond the recorded machine checks (the BL-090 generator/validator/pins; the corridor artifacts fingerprinted; the ledger fences recomputed with house utilities). Inventory emission recorded below."
+    },
+    "R6": {
+      "status": "DECLARED_POST_COMMIT",
+      "detail": "All admission evidence (ENTRY 22, this receipt, the record v0.1.0, the BL-059 accretion, the comprehension-map row, the synthesis registration, the backlog propagation, refreshed inventories) is registered by the same atomic commit; the post-commit obligation below is the R1 check. Receipt registered at birth under qa/specs/."
+    }
+  },
+  "maintainerAttestation": {
+    "rulings": [
+      "OD-91-1 (D1) entry/ticket/record home: confirmed - ENTRY 22, BL-091, record docs/specs/d7-derivation-admission-v0.1.0.md, receipt qa/specs/bl-091-d7-derivation-admission.json; the corridor-era 'ENTRY 19 / BL-0XX' numbering was stale (ENTRY 19/20/21 consumed by BL-051/052/053) and was corrected at execution",
+      "OD-91-2 (D2) ENTRY scope wording: confirmed verbatim - the dual token derivable-via-R2-office-purity preserves the route's mechanism; 'superseded additively' correctly describes the hypothesis-tier's resolution",
+      "OD-91-3 (D3) BL-070 co-cite vs supersede: confirmed - co-cited; the PARTIAL attempt is the corridor's scaffolding and obstruction record (the nine-candidate battery, the near-miss anatomy, and the R_NONE finding are the evidence that motivated the office-purity redesign), not superseded science",
+      "OD-91-4 (D4) consequence-update scope: confirmed - backlog row + BL-059 accretion + comprehension-map/synthesis consumption rows + inventories only; no cascade refresh, no GSL number, no D-90-1 promotion (the un-promoted discovery stays un-promoted per OD-70-5/OD-66-2)",
+      "OD-91-5 (D5) release-gate handling: confirmed - record-not-repair (the observed validate first stop recorded in predeclaredGates; no repair, no green claim)",
+      "Precision ruling (symmetric completion): the sentence stays verbatim in ENTRY 22's Decision; the characterization is bounded at the derivation level - the semantic difference between the poles' predicates is framework-declared, not derived",
+      "Scope clarification (binding): the admission establishes the D7 contact geometry's derivation status; it does not admit the D7 GOVERNS relation's semantics, authority, or role - derivability is about how the relation can be constructed, not what it means or what authority it carries (the GOV-524/525 distinction); carried into the record's section 2, the ENTRY 22 Guard, and this receipt's protectedScope"
+    ],
+    "authority": "Maintainer rulings 2026-10-15, this session (all five decisions confirmed as recommended, plus the symmetric-completion precision and the scope clarification); landing executed under explicit 'execute the plan' authorization. Conversation authority, not a cryptographically authenticated signature (ENTRY 11 precedent)."
+  },
+  "inventoryEmission": "scripts/build-manifest.mjs via npm run package:manifest; package seven-governors-integrated-release 1.9.0 from package.json. The inventory generatedAt value is release-derived, not an execution timestamp.",
+  "predeclaredGates": [
+    {
+      "gate": "STALE_TWIN_HUB_CONVERGENCE",
+      "record": "observed first stop: validate:twin-hub in the npm run validate chain; canonical/fivefold-incubator/twin-hub-convergence-v0.json; scripts/validate-twin-hub-convergence.py:284; the generate-twin-hub-convergence.py --check stage",
+      "status": "FAIL by this entry's append - the candidate's decisionLedgerSha256 binding no longer matches the append-extended ledger",
+      "provenance": "mechanically caused by ENTRY 22's append (a true end-append preserving all prior bytes; the pre-landing tree was fully green at BL-090's validate:release 418/418); the ledger-bound cascade class, the ENTRY 18 precedent (the BL-080 landing recorded the same state class before BL-051/BL-052 refreshed it)",
+      "repairQueued": "the ledger-bound cascade refresh is a separate future landing (the BL-051/BL-052 precedent); capture pending maintainer ruling; recorded, not repaired (OD-91-5)",
+      "specificity": "this inventory and this provenance only - an arbitrary new STALE_* state or any other failure still halts"
+    },
+    {
+      "gate": "STALE_FIFTH_SPACE_CENSUS",
+      "record": "validate:fifth-space-census (predeclared; the chain stops before it); canonical/fivefold-incubator/fifth-space-census-v0.json; scripts/validate-fifth-space-census.py:236-238",
+      "status": "FAIL by the same append (same decisionLedgerSha256 binding class)",
+      "provenance": "same class and cause as the observed stop",
+      "repairQueued": "same refresh landing as above",
+      "specificity": "this inventory and this provenance only"
+    },
+    {
+      "gate": "STALE_D_SHADOW_COMPLEMENT_SPAN",
+      "record": "validate:d-shadow (predeclared; the chain stops before it); canonical/fivefold-incubator/shadow-ladder-v0.json; scripts/validate-shadow-ladder.py:426",
+      "status": "FAIL by the same append (same decisionLedgerSha256 binding class)",
+      "provenance": "same class and cause as the observed stop",
+      "repairQueued": "same refresh landing as above",
+      "specificity": "this inventory and this provenance only"
+    },
+    {
+      "gate": "STALE_PENTATONIC_BINDING_CLOSURE (and the fivefold-engine promotion evidence binding)",
+      "record": "validate:release (predeclared; the chain stops before it); qa/pentatonic-binding-audit-closure.json; scripts/validate-release.mjs:889-890; qa/fivefold-engine-promotion-evidence.json; scripts/validate-fivefold-engine-promotion-evidence.py:194-204",
+      "status": "FAIL by the same append (the pentatonic closure's decisionLedgerSha256 binding vs the live ledger; the promotion evidence's ledger binding is the same class)",
+      "provenance": "same class and cause as the observed stop",
+      "repairQueued": "same refresh landing as above",
+      "specificity": "this inventory and this provenance only"
+    }
+  ],
+  "validation": {
+    "full": {
+      "command": "npm run validate",
+      "status": "OBSERVED",
+      "exitCode": 1,
+      "firstStop": "validate:twin-hub - STALE_TWIN_HUB_CONVERGENCE (the ledger-bound cascade staled by this entry's append; see predeclaredGates)",
+      "outputSha256": "e634cf780b9ee78a92ae24128d23c8a800f020e2aa55db609561a54e8d97a464",
+      "outputBytes": 100894,
+      "scope": "Full command invoked at the final pre-commit admission tree with all landing files present (ENTRY 22 as appended, this receipt, the record, the BL-059 accretion, the comprehension-map row, the synthesis registration, the backlog propagation); the chained stages before validate:twin-hub pass (validate:ledger-pins, build:graph, validate:graph, validate:semantic-operators, validate:mechanics-thermodynamics-registry, validate:mechanics-thermodynamics-registry-v2, validate:tiered-photonic); the chain stops at the first ledger-bound stale stage.",
+      "disposition": "Recorded, not repaired (OD-91-5; the ENTRY 18 precedent). The stale bindings are the mechanical consequence of this entry's append; the refresh is a separate future landing (the BL-051/BL-052 precedent). Any other failure halts. No stale control is disabled, no shared artifact is regenerated to force green, and no green integrated release is claimed.",
+      "outputSha256FirstRun": "b21e4e6684d5bd532f38aa1c30f10d68f4cb96e4519d49bf2f76bedc10fd6f64",
+      "outputVariance": "two runs at the final tree are byte-identical except two pytest duration strings (both 100894 bytes; diff limited to '14 passed in 0.2Xs' and '23 passed in 2.8Xs'); the recorded digest is the final-tree run"
+    },
+    "focused": {
+      "validate:ledger-pins": "PASS (0 violations; 8 inventory tests passed)",
+      "validate:prose-consistency": "PASS (418 authoritative checks passed; 0 violations; output qa/validation-prose-consistency.json refreshed in the landing)",
+      "orrery:bl080-governs-derivation-execution:check": "PASS (the ledger fence re-verified against the amended ledger: pre-amendment prefix and ENTRY 10 region preserved; G3-1...G3-5 PASS; 59 mutation probes)",
+      "orrery:bl090-d7-office-purity-derivation:check": "PASS (builder --check fresh; independent validator PASS; V-D7D-1...V-D7D-5 PASS; 49 mutation probes; 11 static rejections; the two-sided static region check)"
+    },
+    "manifest": {
+      "command": "npm run validate:manifest",
+      "status": "DECLARED_POST_COMMIT",
+      "detail": "Final envelope check runs after this receipt's bytes are registered; recording an observed PASS inside the receipt itself would falsify the check's subject. The observed result is reported in the session record."
+    }
+  },
+  "postCommitObligation": {
+    "point": "c",
+    "subject": "ENTRY 22 region and the amended ledger",
+    "checks": [
+      "git cat-file blob e06d6e178dfe9d47faf5223ceb08fdce398028b3 piped to raw-bytes-sha256 must equal 6d043fc168ba7e09f82fe7d71df38801aa4b6d41fdfd0bf0495060ea3d7df793",
+      "the ENTRY 22 region of the committed blob (content lines 3651-3806, joined with 0x0A, no trailing newline) must hash to 218a89cdf8d5658a4820b5b8801da1dd7aca204b8a1688ef9969d243933cd857",
+      "the ENTRY 10 region (2195-2252, line-join recipe) must still hash to 201efe8193e1967cb91bb07b4876c906be5ba71a23bf4735be6d18a7df69f7a7",
+      "the ENTRY 15 region (2665-2810) must still hash to 26c0cb43ba32525406b59668d03b563da9c1f85f382f60dfa2f5d840c62b909e",
+      "the ENTRY 16 region (2814-2964) must still hash to b9cefaaecb235b2a0a132abd3c8b562b57dbfc80aa6014abcf0cfb99d87e6e90",
+      "the ENTRY 17 region (2968-3126) must still hash to 9fba63cceae54c414e11da289d8b547f2c0b2bd725dd16a23a5cc153c0853f00",
+      "the ENTRY 18 region (3130-3330) must still hash to 9fb561f00cb2116cba0847a9fab8391c744c786ab07f6209def20f20b16efb9a",
+      "the first 233926 bytes of the committed blob must hash to 45653693ea4b5471412ad60e518ffd8333e3d87091ff007a7b5c9eee026d8139 (pre-admission prefix preserved)"
+    ],
+    "status": "DECLARED; results confirmed post-commit in the session record, never written into this receipt as an observed PASS before the commit exists."
+  },
+  "evidencePaths": {
+    "new": [
+      "docs/specs/d7-derivation-admission-v0.1.0.md",
+      "qa/specs/bl-091-d7-derivation-admission.json"
+    ],
+    "modified": [
+      "provenance/DECISION_LEDGER.md",
+      "scrum/BACKLOG.md",
+      "scrum/plan/bl-059-governs-derivability-scoping-memo.md",
+      "scrum/plan/bl-067-governs-semantic-synthesis.md",
+      "scrum/plan/harmonic-comprehension-map.md",
+      "qa/validation-prose-consistency.json",
+      "MANIFEST.json",
+      "CHECKSUMS.sha256"
+    ]
+  },
+  "protectedScope": "Existing test suites, preflight controls, D4 evidence, canonical data, schemas, Court runtime, Neo4j projection, shared sidecars and prior receipts were not modified; the only ledger change is the ENTRY 22 append; the BL-057 corridor's receipt bytes and all corridor fingerprints (BL-055/BL-063/BL-064/BL-066/BL-073/BL-075/BL-080-Gate-2/BL-080-Gate-3) are unchanged; the D7 corridor artifacts and fingerprints (BL-068/BL-070/BL-078/BL-089/BL-090) are unchanged. The scope clarification is binding: the admission does not touch the D7 GOVERNS relation's semantics, authority, or role; no D4 movement (ENTRY 15/18 unchanged; the two corridors independent, both standing); no wall dissolution; no anchoring-remainder resolution."
+}
