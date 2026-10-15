@@ -561,6 +561,7 @@ session (lattice Phase B, or the governs semantic layer) resolves it from the re
 | BL-084 registration (the window-ladder generalization) | §5.10 — the reach-order alignment principle (boundary-layer-conditional; the dual-closure pair; 14/238 unordered operator cycles; the descriptive-not-production qualification carried verbatim) | planning evidence; D7 hypothesis-tier; finding statuses untouched; not citable as claims |
 | BL-053 green release (ENTRY 21) | the map as shipped: §5 measured findings as planning evidence, §2 design-intent tiers, §3 open canon question | the release ships the framework with the higher-theorem question formally stated, not answered; no §5 tag change; measured findings remain planning evidence, not citable as claims |
 | claim record `SPEC-D7-DERIVATION-001` (admitted; ENTRY 22) | §5.6 GSL-3 and the D7-side records as context — the claim's load-bearing evidence is the BL-090 execution artifact (chain-anchored: BL-063/BL-064/BL-066/BL-068/BL-070/BL-078/BL-089) | consumed as context; §5 remains planning evidence — measured, not admitted, not citable as claims; the admission changes no §5 tag; the D7 hypothesis-tier status is superseded additively by `derivable-via-R2-office-purity` (the hypothesis-tier findings' evidence remains cited; the BL-070 `PARTIAL_DERIVATION` attempt co-cited as history) |
+| BL-093 synthesis (`scrum/plan/bl-093-master-framework-synthesis.md`) | §5 as the synthesis base — the boundary object's unified definition (four properties + the §2.4 scale-dependent tritone decomposition; the §5.11 architecture; the mechanism inventory; the C1–C5 evaluation + C6 elevated status; the alignment promotion path; the higher-theorem remaining scope; the post-brief appendix) | planning evidence; organization and interpretation only — no new measurement, no new facts; the object's type endorsement deferred to closure review (OD-2); C6's scale statement and the D7 time-scope carried; §5 remains planning evidence throughout; not citable as claims |
 
 (ENTRY 22, 2026-10-15 — the D7 hypothesis-tier resolution: the D7 hypothesis-tier
 status carried in the D7-side consumption rows above is superseded additively by the
@@ -775,3 +776,54 @@ the `gslTreatment` one-liner "7 of 238" is a recorded prose slip, OD-P2-5); memo
 `scrum/plan/bl-084-window-ladder-memo.md`. GSL treatment (ruled `f1a4b80`): the GSL-4
 annotated refinement, inline, unapplied; no new GSL entry. D7 hypothesis-tier throughout —
 no D7 claim, no amendment, no derivation admission. Not citable as claims.
+
+### 5.11 The Master Framework Synthesis (the boundary object's unified definition)
+
+*The governs semantic layer's capstone: the four measured properties, the PARTIAL_ISOMETRY
+architecture, the mechanism inventory, and the coordinate structure, stated as one object.*
+
+**The synthesis** (BL-093, landed 2026-10-15; memo
+`scrum/plan/bl-093-master-framework-synthesis.md`; planning evidence — organization and
+interpretation over landed artifacts; **no new measurement, no new fact, no claim event, no
+record amendment**; the decision ledger is untouched by this landing; the object's
+mathematical-type endorsement remains a closure-review decision per the OD-2 ruling). Its
+content, all citing landed bytes:
+
+- **The four properties as the definition** — polarized GSL-1R (`e1b3f655…`); asymmetric
+  GSL-3 (`b0d65bd6…`; the symmetric completion — both predicates now derivable, ENTRY 18 /
+  ENTRY 22); invariant (whole-pair selection, offices summing 6 mod 7); tritone-structured
+  GSL-4 with the **scale-dependent decomposition** (the G-6 landing): M-DISP distributed at
+  the anchor-pair scale (15 pairs incl. 6× fa↔ti bridges) and ti-local at the contact-domain
+  scale (D7 12/36; fa 0/28); M-ROT anchor-scale-only (0 in every contact domain); M-IC6
+  class-tracking at every scale — the anatomy refined to *scale-dependent* (OD-74-2's
+  reconciliation carried exactly; the maintainer-prose "0/36" read recorded corrected to the
+  rotation measure).
+- **The architecture** — **shared closure geometry** (`^6` Hamming-10 closures; interval 6
+  fixed by the whole unit group, `6u ≡ 6`) + **divergent traversal addressing** (`^11` vs
+  `^7` path edges, exactly bridged by the forced `u = 5` maps T1/T2); P1/P3/P4 shared, P2
+  divergent (`811fa786…`; the canonicity `88838e22…`); the reading made precise — one object
+  traversed in different directions, agreeing at the closure and diverging in the path;
+  the asymmetry is **addressing-relative, not structure-relative**.
+- **The mechanism inventory, end-to-end** — GSL-1R…GSL-6 + the tritone anatomy + reach-order
+  alignment, composed from the coordinates through the geometry to the contacts; GSL-7
+  recorded un-promoted; the production "why" stays open.
+- **The candidates** — C1–C5 evaluated with falsification shapes, **none endorsed**; the
+  leading combination (shared geometric core + divergent coordinate addressing) recorded as
+  interpretation only; **C6 elevated**: the unity hypothesis is supported at the
+  polarization / marking / geometry scales and constrained at the rotation-addressing scale —
+  both canonically (the BL-075 canonicity; the BL-086 Branch-L bound: "FULL-with-terminals"
+  names the regime structure, not the count).
+- **The alignment promotion path** — a production account would promote; scope is bounded by
+  the tested topology (and BL-088's `BOUNDARY_LAYER_CONDITIONAL` bound); the qualification
+  carries verbatim.
+- **The higher-theorem remaining scope** — the anchoring remainder, the office field
+  (`C = 4`), the orientation bit (one bit, three registrations), the relation's
+  semantics/role/authority; the **D7 three-tier time-scope** (hypothesis-tier era through
+  1.9.0/ENTRY 21 → BL-090 `FULL_DERIVATION` → ENTRY 22 admission
+  `derivable-via-R2-office-purity`; nothing erased).
+- **Appendix A** — the post-brief integration (BL-087 `ad74a7e6…`; BL-088 `cc865af8…`;
+  BL-090 `656aa20a…`; BL-091/ENTRY 22), each bounded to its landed status.
+
+*Receipts:* memo `scrum/plan/bl-093-master-framework-synthesis.md` (the citations chain
+through the §5.1–5.10 artifacts above; planning-pass fingerprint re-verification recorded
+therein). No endorsement of the object's type; no claim; no admission. Not citable as claims.
