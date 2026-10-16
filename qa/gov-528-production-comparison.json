@@ -1,0 +1,2293 @@
+{
+  "schemaVersion": "gov-528-production-comparison.v0",
+  "artifactId": "GOV_528_PRODUCTION_COMPARISON",
+  "ticket": "GOV-528",
+  "entryPoint": "separate comparison entry point; the census office field is read here as the comparison target only",
+  "aggregateArtifact": {
+    "path": "qa/gov-528-production-aggregate.json",
+    "sha256": "b16d4cf39b0a855005acdf3bd6917587d870aed43756375cf15f6e05b1b59b21",
+    "bytes": 47976
+  },
+  "inputs": {
+    "census": {
+      "path": "canonical/fivefold-incubator/fifth-space-census-v0.json",
+      "sha256": "88c4accccb0d10098379c5dd38e1eab467c716e39a16882d323ac31b839c2046"
+    },
+    "network": {
+      "path": "canonical/universal-network-data.json",
+      "sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc"
+    },
+    "bl089": {
+      "path": "orrery/src/generated/bl089-anchoring-remainder-interaction.v1.json",
+      "sha256": "26a4b196ec141a7f8a96da1bb39463201cb8bd6c3286ed4a645d2c7df0770715",
+      "bytes": 50336
+    }
+  },
+  "anchorRule": {
+    "checked": 70,
+    "matches": 70,
+    "mismatches": 0,
+    "mismatchRecords": []
+  },
+  "satelliteInheritance": {
+    "checked": 238,
+    "matches": 238,
+    "mismatches": 0,
+    "mismatchRecords": []
+  },
+  "officeFieldReference": {
+    "anchorRule": {
+      "computedMatches": 70,
+      "recordedMatches": 70,
+      "equal": true
+    },
+    "satelliteRule": {
+      "computedMatches": 238,
+      "recordedMatches": 238,
+      "equal": true
+    },
+    "deltaHistogram": {
+      "computed": {
+        "-6": 17,
+        "-1": 102,
+        "1": 102,
+        "6": 17
+      },
+      "recorded": {
+        "-1": 102,
+        "-6": 17,
+        "1": 102,
+        "6": 17
+      },
+      "equal": true
+    },
+    "support": {
+      "recorded": {
+        "officeCarrying": 308,
+        "withheld": 154
+      },
+      "equal": true
+    }
+  },
+  "blockAgreementCrossCheck": {
+    "blocksCompared": 57,
+    "mismatches": 0,
+    "mismatchRecords": [],
+    "classes": {
+      "exact": 11,
+      "degenerate": 33,
+      "partial": 13
+    },
+    "recordedClasses": {
+      "exact": 11,
+      "degenerate": 33,
+      "partial": 13
+    }
+  },
+  "membershipIdentity": {
+    "source": "/tmp/opencode/g528-rederivation.json",
+    "sourceSha256": "f03df06576030f4b1a5efad0d286f8c1adf17906c874e2ca860eaf54879e77db",
+    "identical": true,
+    "perOrbit": [
+      {
+        "tier": "A0",
+        "members": 49,
+        "allPathsEqual": true
+      },
+      {
+        "tier": "A1",
+        "members": 35,
+        "allPathsEqual": true
+      },
+      {
+        "tier": "A2",
+        "members": 49,
+        "allPathsEqual": true
+      },
+      {
+        "tier": "D1",
+        "members": 21,
+        "allPathsEqual": true
+      },
+      {
+        "tier": "D2",
+        "members": 35,
+        "allPathsEqual": true
+      },
+      {
+        "tier": "D3",
+        "members": 21,
+        "allPathsEqual": true
+      },
+      {
+        "tier": "D4",
+        "members": 35,
+        "allPathsEqual": true
+      },
+      {
+        "tier": "D5",
+        "members": 35,
+        "allPathsEqual": true
+      },
+      {
+        "tier": "D6",
+        "members": 21,
+        "allPathsEqual": true
+      },
+      {
+        "tier": "D7",
+        "members": 7,
+        "allPathsEqual": true
+      }
+    ]
+  },
+  "prongEvaluation": {
+    "prongA": {
+      "constancyHolds": true,
+      "basis": "membership re-derivation identity over all ten declared orbits (attachment path == tier-partition path == S3 members; independent sums equal)"
+    },
+    "prongB": {
+      "constancyHolds": true,
+      "satelliteChecks": {
+        "checked": 238,
+        "matches": 238,
+        "mismatchRecords": []
+      },
+      "anchorChecks": {
+        "checked": 70,
+        "matches": 70,
+        "mismatchRecords": []
+      }
+    },
+    "distinctOrbitAggregateValues": [
+      252,
+      756,
+      1260,
+      1764
+    ],
+    "precedenceEvaluated": [
+      {
+        "category": "incomplete_or_anomalous/invalid",
+        "fired": false,
+        "evidence": "gate green before aggregate; binding check passed"
+      },
+      {
+        "category": "inheritance_inconsistency",
+        "fired": false,
+        "evidence": "238/238 satellite checks; 70/70 anchor checks"
+      },
+      {
+        "category": "orbit_inconstancy_finding",
+        "fired": false,
+        "evidence": "membership identity 10/10 orbits"
+      },
+      {
+        "category": "underpowered",
+        "fired": false,
+        "evidence": "4 distinct orbit-level aggregate values across the ten declared orbits"
+      }
+    ],
+    "category": "orbit_invariant"
+  },
+  "perRecordFlags": {
+    "anchors": [
+      {
+        "stateId": 127,
+        "predicted": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 381,
+        "predicted": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 443,
+        "predicted": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 471,
+        "predicted": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 631,
+        "predicted": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 671,
+        "predicted": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 871,
+        "predicted": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 923,
+        "predicted": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 953,
+        "predicted": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 997,
+        "predicted": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 1119,
+        "predicted": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 1273,
+        "predicted": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 1367,
+        "predicted": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 1371,
+        "predicted": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 1373,
+        "predicted": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 1387,
+        "predicted": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 1389,
+        "predicted": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 1397,
+        "predicted": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 1451,
+        "predicted": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 1453,
+        "predicted": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 1461,
+        "predicted": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 1479,
+        "predicted": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 1493,
+        "predicted": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 1591,
+        "predicted": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 1651,
+        "predicted": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 1707,
+        "predicted": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 1709,
+        "predicted": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 1717,
+        "predicted": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 1749,
+        "predicted": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 1821,
+        "predicted": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 1831,
+        "predicted": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 1877,
+        "predicted": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 1891,
+        "predicted": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 2001,
+        "predicted": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 2111,
+        "predicted": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2269,
+        "predicted": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2283,
+        "predicted": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2363,
+        "predicted": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 2383,
+        "predicted": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 2483,
+        "predicted": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 2509,
+        "predicted": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 2607,
+        "predicted": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 2731,
+        "predicted": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 2733,
+        "predicted": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 2741,
+        "predicted": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 2773,
+        "predicted": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 2787,
+        "predicted": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 2843,
+        "predicted": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 2873,
+        "predicted": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2901,
+        "predicted": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2963,
+        "predicted": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2993,
+        "predicted": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 3103,
+        "predicted": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 3189,
+        "predicted": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 3229,
+        "predicted": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 3239,
+        "predicted": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 3289,
+        "predicted": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3351,
+        "predicted": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 3413,
+        "predicted": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3441,
+        "predicted": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 3469,
+        "predicted": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3529,
+        "predicted": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 3599,
+        "predicted": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 3667,
+        "predicted": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3723,
+        "predicted": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3847,
+        "predicted": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3881,
+        "predicted": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 3909,
+        "predicted": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 3971,
+        "predicted": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 4033,
+        "predicted": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      }
+    ],
+    "satellites": [
+      {
+        "stateId": 191,
+        "governingAnchor": 381,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 253,
+        "governingAnchor": 381,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 375,
+        "governingAnchor": 631,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 379,
+        "governingAnchor": 443,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 415,
+        "governingAnchor": 671,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 439,
+        "governingAnchor": 471,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 445,
+        "governingAnchor": 443,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 463,
+        "governingAnchor": 471,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 475,
+        "governingAnchor": 471,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 477,
+        "governingAnchor": 953,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 487,
+        "governingAnchor": 471,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 499,
+        "governingAnchor": 997,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 607,
+        "governingAnchor": 671,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 623,
+        "governingAnchor": 631,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 635,
+        "governingAnchor": 631,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 637,
+        "governingAnchor": 1273,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 687,
+        "governingAnchor": 1373,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 695,
+        "governingAnchor": 1389,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 699,
+        "governingAnchor": 1397,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 727,
+        "governingAnchor": 1453,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 731,
+        "governingAnchor": 1461,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 743,
+        "governingAnchor": 871,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 747,
+        "governingAnchor": 1493,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 761,
+        "governingAnchor": 1273,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 799,
+        "governingAnchor": 671,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 855,
+        "governingAnchor": 1709,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 859,
+        "governingAnchor": 1717,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 861,
+        "governingAnchor": 1373,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 875,
+        "governingAnchor": 1387,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 877,
+        "governingAnchor": 1389,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 885,
+        "governingAnchor": 1397,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 889,
+        "governingAnchor": 953,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 911,
+        "governingAnchor": 1821,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 919,
+        "governingAnchor": 923,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 925,
+        "governingAnchor": 923,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 935,
+        "governingAnchor": 871,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 939,
+        "governingAnchor": 1451,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 941,
+        "governingAnchor": 1453,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 949,
+        "governingAnchor": 1461,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 967,
+        "governingAnchor": 1479,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 981,
+        "governingAnchor": 1493,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 985,
+        "governingAnchor": 953,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 995,
+        "governingAnchor": 997,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 1001,
+        "governingAnchor": 997,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 1087,
+        "governingAnchor": 1119,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 1135,
+        "governingAnchor": 2269,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 1143,
+        "governingAnchor": 631,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 1183,
+        "governingAnchor": 671,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 1239,
+        "governingAnchor": 1367,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 1243,
+        "governingAnchor": 1371,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 1245,
+        "governingAnchor": 1373,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 1255,
+        "governingAnchor": 2509,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 1259,
+        "governingAnchor": 1387,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 1261,
+        "governingAnchor": 1389,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 1269,
+        "governingAnchor": 1397,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 1335,
+        "governingAnchor": 1367,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 1339,
+        "governingAnchor": 1371,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 1341,
+        "governingAnchor": 1373,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 1359,
+        "governingAnchor": 1367,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 1383,
+        "governingAnchor": 1387,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 1395,
+        "governingAnchor": 1387,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 1401,
+        "governingAnchor": 1397,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 1431,
+        "governingAnchor": 1367,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 1435,
+        "governingAnchor": 1451,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 1437,
+        "governingAnchor": 1453,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 1447,
+        "governingAnchor": 1451,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 1459,
+        "governingAnchor": 1451,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 1465,
+        "governingAnchor": 1461,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 1483,
+        "governingAnchor": 1451,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 1485,
+        "governingAnchor": 1453,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 1491,
+        "governingAnchor": 1493,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 1497,
+        "governingAnchor": 1493,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 1509,
+        "governingAnchor": 1493,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 1583,
+        "governingAnchor": 1591,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 1595,
+        "governingAnchor": 3189,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 1615,
+        "governingAnchor": 3229,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 1623,
+        "governingAnchor": 1367,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 1627,
+        "governingAnchor": 1371,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 1629,
+        "governingAnchor": 1373,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 1643,
+        "governingAnchor": 1387,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 1645,
+        "governingAnchor": 1709,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 1653,
+        "governingAnchor": 1717,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 1691,
+        "governingAnchor": 1707,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 1693,
+        "governingAnchor": 1709,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 1703,
+        "governingAnchor": 1707,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 1715,
+        "governingAnchor": 1717,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 1721,
+        "governingAnchor": 1717,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 1735,
+        "governingAnchor": 1479,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 1739,
+        "governingAnchor": 1707,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 1741,
+        "governingAnchor": 1709,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 1747,
+        "governingAnchor": 1749,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 1753,
+        "governingAnchor": 1749,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 1763,
+        "governingAnchor": 2787,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 1765,
+        "governingAnchor": 1749,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 1815,
+        "governingAnchor": 1831,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 1819,
+        "governingAnchor": 1821,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 1835,
+        "governingAnchor": 1707,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 1837,
+        "governingAnchor": 1709,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 1845,
+        "governingAnchor": 1717,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 1849,
+        "governingAnchor": 2873,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 1863,
+        "governingAnchor": 1831,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 1869,
+        "governingAnchor": 1877,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 1875,
+        "governingAnchor": 1877,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 1881,
+        "governingAnchor": 1877,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 1893,
+        "governingAnchor": 1877,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 1905,
+        "governingAnchor": 953,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 1939,
+        "governingAnchor": 2963,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 1941,
+        "governingAnchor": 1877,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 1955,
+        "governingAnchor": 1891,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 1969,
+        "governingAnchor": 2993,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 1993,
+        "governingAnchor": 997,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 2017,
+        "governingAnchor": 2001,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 2143,
+        "governingAnchor": 1119,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2235,
+        "governingAnchor": 2363,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 2237,
+        "governingAnchor": 2269,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2255,
+        "governingAnchor": 2383,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 2267,
+        "governingAnchor": 2283,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2279,
+        "governingAnchor": 2283,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2285,
+        "governingAnchor": 2283,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2291,
+        "governingAnchor": 2283,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2297,
+        "governingAnchor": 1273,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 2351,
+        "governingAnchor": 2383,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 2359,
+        "governingAnchor": 2363,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 2365,
+        "governingAnchor": 2363,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 2391,
+        "governingAnchor": 1367,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 2395,
+        "governingAnchor": 1371,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 2397,
+        "governingAnchor": 1373,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2411,
+        "governingAnchor": 1387,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2413,
+        "governingAnchor": 1389,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 2419,
+        "governingAnchor": 2483,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 2421,
+        "governingAnchor": 1397,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 2447,
+        "governingAnchor": 2383,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 2475,
+        "governingAnchor": 1451,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 2477,
+        "governingAnchor": 1453,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 2485,
+        "governingAnchor": 2741,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 2503,
+        "governingAnchor": 1479,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 2507,
+        "governingAnchor": 2509,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 2515,
+        "governingAnchor": 2483,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 2517,
+        "governingAnchor": 2773,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 2531,
+        "governingAnchor": 2787,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 2545,
+        "governingAnchor": 1273,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 2591,
+        "governingAnchor": 2607,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 2615,
+        "governingAnchor": 1591,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 2619,
+        "governingAnchor": 2363,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 2639,
+        "governingAnchor": 2383,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 2667,
+        "governingAnchor": 2731,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 2669,
+        "governingAnchor": 2733,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 2675,
+        "governingAnchor": 1651,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 2677,
+        "governingAnchor": 2741,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 2715,
+        "governingAnchor": 2731,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 2717,
+        "governingAnchor": 2733,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 2727,
+        "governingAnchor": 2731,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 2739,
+        "governingAnchor": 2741,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 2745,
+        "governingAnchor": 2741,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 2763,
+        "governingAnchor": 2731,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 2765,
+        "governingAnchor": 2773,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 2771,
+        "governingAnchor": 2773,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 2777,
+        "governingAnchor": 2773,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 2789,
+        "governingAnchor": 2773,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 2793,
+        "governingAnchor": 1397,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 2839,
+        "governingAnchor": 2843,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 2845,
+        "governingAnchor": 1821,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 2855,
+        "governingAnchor": 1831,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 2859,
+        "governingAnchor": 2731,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 2861,
+        "governingAnchor": 2733,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 2869,
+        "governingAnchor": 2741,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 2893,
+        "governingAnchor": 2901,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2899,
+        "governingAnchor": 2901,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2905,
+        "governingAnchor": 1453,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 2915,
+        "governingAnchor": 2787,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 2917,
+        "governingAnchor": 2901,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2921,
+        "governingAnchor": 1461,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 2929,
+        "governingAnchor": 3441,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 2955,
+        "governingAnchor": 2963,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2957,
+        "governingAnchor": 1479,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 2965,
+        "governingAnchor": 2901,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2979,
+        "governingAnchor": 2963,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 2985,
+        "governingAnchor": 1493,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 3017,
+        "governingAnchor": 3529,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 3025,
+        "governingAnchor": 2993,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 3119,
+        "governingAnchor": 2607,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 3165,
+        "governingAnchor": 3229,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 3175,
+        "governingAnchor": 3239,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 3181,
+        "governingAnchor": 3189,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 3187,
+        "governingAnchor": 3189,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 3193,
+        "governingAnchor": 3189,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 3223,
+        "governingAnchor": 3239,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 3227,
+        "governingAnchor": 3229,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 3243,
+        "governingAnchor": 2731,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 3245,
+        "governingAnchor": 2733,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 3253,
+        "governingAnchor": 2741,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 3257,
+        "governingAnchor": 3289,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3271,
+        "governingAnchor": 3239,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 3285,
+        "governingAnchor": 2773,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 3299,
+        "governingAnchor": 2787,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 3301,
+        "governingAnchor": 1651,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 3305,
+        "governingAnchor": 3289,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3313,
+        "governingAnchor": 3441,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 3343,
+        "governingAnchor": 3351,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 3355,
+        "governingAnchor": 2843,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 3357,
+        "governingAnchor": 3229,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 3367,
+        "governingAnchor": 3239,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 3381,
+        "governingAnchor": 3413,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3385,
+        "governingAnchor": 2873,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 3405,
+        "governingAnchor": 3413,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3411,
+        "governingAnchor": 3413,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3417,
+        "governingAnchor": 1709,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 3429,
+        "governingAnchor": 3413,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3433,
+        "governingAnchor": 1717,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 3467,
+        "governingAnchor": 3469,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3475,
+        "governingAnchor": 2963,
+        "inherited": 6,
+        "censusOfficeIndex": 6,
+        "match": true
+      },
+      {
+        "stateId": 3477,
+        "governingAnchor": 3413,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3497,
+        "governingAnchor": 1749,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 3505,
+        "governingAnchor": 3441,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 3525,
+        "governingAnchor": 3529,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 3537,
+        "governingAnchor": 3529,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 3607,
+        "governingAnchor": 3351,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 3635,
+        "governingAnchor": 3667,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3641,
+        "governingAnchor": 1821,
+        "inherited": 3,
+        "censusOfficeIndex": 3,
+        "match": true
+      },
+      {
+        "stateId": 3659,
+        "governingAnchor": 3667,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3661,
+        "governingAnchor": 1831,
+        "inherited": 4,
+        "censusOfficeIndex": 4,
+        "match": true
+      },
+      {
+        "stateId": 3669,
+        "governingAnchor": 3413,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3683,
+        "governingAnchor": 3667,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3697,
+        "governingAnchor": 3441,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      },
+      {
+        "stateId": 3719,
+        "governingAnchor": 3723,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3725,
+        "governingAnchor": 3469,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3731,
+        "governingAnchor": 3667,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3753,
+        "governingAnchor": 1877,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 3781,
+        "governingAnchor": 1891,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 3785,
+        "governingAnchor": 3529,
+        "inherited": 1,
+        "censusOfficeIndex": 1,
+        "match": true
+      },
+      {
+        "stateId": 3851,
+        "governingAnchor": 3723,
+        "inherited": 5,
+        "censusOfficeIndex": 5,
+        "match": true
+      },
+      {
+        "stateId": 3865,
+        "governingAnchor": 3881,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 3877,
+        "governingAnchor": 3881,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 3889,
+        "governingAnchor": 3881,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 3907,
+        "governingAnchor": 3909,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 3913,
+        "governingAnchor": 3881,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 3973,
+        "governingAnchor": 3909,
+        "inherited": 0,
+        "censusOfficeIndex": 0,
+        "match": true
+      },
+      {
+        "stateId": 4001,
+        "governingAnchor": 2001,
+        "inherited": 2,
+        "censusOfficeIndex": 2,
+        "match": true
+      }
+    ]
+  },
+  "checks": {
+    "anchorRule70of70": true,
+    "satelliteInheritance238of238": true,
+    "officeFieldReferenceExact": true,
+    "blockAgreement57of57": true,
+    "membershipIdentity": true,
+    "distinctValuesAtLeastTwo": true
+  },
+  "verdict": "orbit_invariant"
+}

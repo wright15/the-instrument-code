@@ -1,0 +1,2202 @@
+{
+  "schemaVersion": "gov-528-production-aggregate.v0",
+  "artifactId": "GOV_528_PRODUCTION_AGGREGATE",
+  "ticket": "GOV-528",
+  "statement": "Per-orbit exact integer aggregate A(o) = sum of pcSum(m) over the declared orbit/fiber's member masks m; evaluation per-orbit from member masks, never global-then-partitioned; exact integers (zero floating-point in the computation or comparison path).",
+  "authorityBoundary": "Planning evidence only. No topology, admission, runtime, office, or harmonic.C_H authority. Answers the registered question within the frozen GOV-527 boundary only.",
+  "engine": {
+    "pcSum": "set-bit-index sum over pitchMask (12 bits; indices 0..11)",
+    "anchorRule": "office(anchor) = (4 - pcSum) mod 7 (C = 4; predicted field, masks-only; orbit-order derivation)",
+    "orbitOrderDerivation": "per tier: the seven anchors ordered by the +2 predicted-office cycle starting at the lowest stateId; the predicted offices cover all seven values exactly once",
+    "aggregate": "A(o) = sum of member pcSum over the orbit's member masks; exact integer",
+    "officePathFence": "this artifact contains zero office-field bytes; the census office/officeIndex fields are not read on the computation path (self-checked below)"
+  },
+  "inputs": {
+    "census": {
+      "path": "canonical/fivefold-incubator/fifth-space-census-v0.json",
+      "sha256": "88c4accccb0d10098379c5dd38e1eab467c716e39a16882d323ac31b839c2046",
+      "bytes": 194194
+    },
+    "network": {
+      "path": "canonical/universal-network-data.json",
+      "sha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+      "bytes": 2765575
+    },
+    "gateReceipt": {
+      "path": "qa/fifth-space-census-validation.json",
+      "sha256": "ff336d464f0351feb2d8c60503a1cfada24bd31549a6fd2f8a2cc2f4b8789483",
+      "verdict": "PASS",
+      "checksPassed": 24,
+      "checksFailed": 0
+    }
+  },
+  "governsCoverage": {
+    "edges": 238,
+    "distinctGoverningAnchors": 63,
+    "satellitesCovered": 238,
+    "oneEdgePerSatellite": true,
+    "targetsAllSatellites": true,
+    "sourcesAllAnchors": true,
+    "allGoverningFlagTrue": true,
+    "allPairsSameTier": true,
+    "attachmentHammingDistribution": {
+      "2": 204,
+      "4": 10,
+      "6": 8,
+      "8": 16
+    },
+    "attachmentModeDistribution": {
+      "root_phase": 34,
+      "single_degree": 204
+    }
+  },
+  "satelliteAttachmentDeltaHistogram": {
+    "-6": 17,
+    "-1": 102,
+    "1": 102,
+    "6": 17
+  },
+  "blockInventory": {
+    "blocks": 57,
+    "instances": 1128,
+    "byTierPair": {
+      "A0xA0": 48,
+      "A0xA1": 24,
+      "A0xA2": 12,
+      "A0xD3": 12,
+      "A1xA0": 36,
+      "A1xA1": 24,
+      "A1xA2": 48,
+      "A1xD2": 12,
+      "A1xD3": 12,
+      "A2xA0": 24,
+      "A2xA2": 72,
+      "A2xD4": 24,
+      "D1xA0": 24,
+      "D1xA1": 12,
+      "D1xA2": 12,
+      "D1xD1": 12,
+      "D1xD2": 24,
+      "D1xD4": 24,
+      "D1xD5": 12,
+      "D2xA0": 24,
+      "D2xA2": 36,
+      "D2xD1": 12,
+      "D2xD2": 36,
+      "D2xD4": 12,
+      "D2xD5": 12,
+      "D3xA0": 24,
+      "D3xA1": 12,
+      "D3xA2": 12,
+      "D3xD2": 12,
+      "D3xD3": 12,
+      "D3xD4": 12,
+      "D3xD5": 12,
+      "D3xD6": 12,
+      "D4xA0": 24,
+      "D4xA1": 12,
+      "D4xA2": 12,
+      "D4xD1": 12,
+      "D4xD3": 12,
+      "D4xD4": 24,
+      "D4xD5": 12,
+      "D5xA0": 12,
+      "D5xA1": 24,
+      "D5xA2": 24,
+      "D5xD1": 12,
+      "D5xD2": 12,
+      "D5xD5": 24,
+      "D5xD6": 12,
+      "D6xA1": 12,
+      "D6xA2": 36,
+      "D6xD3": 12,
+      "D6xD4": 24,
+      "D6xD5": 12,
+      "D6xD6": 12,
+      "D7xD3": 12,
+      "D7xD4": 24,
+      "D7xD5": 12,
+      "D7xD6": 36
+    }
+  },
+  "orbits": [
+    {
+      "orbitId": "ORBIT-A0",
+      "tier": "A0",
+      "order": [
+        1387,
+        2741,
+        1709,
+        1451,
+        2773,
+        1717,
+        1453
+      ],
+      "step": 2,
+      "coversAllSevenPredictedOfficesExactlyOnce": true,
+      "anchorCount": 7,
+      "satelliteCount": 42,
+      "memberCount": 49,
+      "members": [
+        {
+          "stateId": 727,
+          "role": "satellite",
+          "pcSum": 29,
+          "pitchMask": 727
+        },
+        {
+          "stateId": 855,
+          "role": "satellite",
+          "pcSum": 30,
+          "pitchMask": 855
+        },
+        {
+          "stateId": 859,
+          "role": "satellite",
+          "pcSum": 31,
+          "pitchMask": 859
+        },
+        {
+          "stateId": 875,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 875
+        },
+        {
+          "stateId": 939,
+          "role": "satellite",
+          "pcSum": 33,
+          "pitchMask": 939
+        },
+        {
+          "stateId": 941,
+          "role": "satellite",
+          "pcSum": 34,
+          "pitchMask": 941
+        },
+        {
+          "stateId": 1259,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 1259
+        },
+        {
+          "stateId": 1383,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 1383
+        },
+        {
+          "stateId": 1387,
+          "role": "anchor",
+          "pcSum": 33,
+          "pitchMask": 1387
+        },
+        {
+          "stateId": 1395,
+          "role": "satellite",
+          "pcSum": 34,
+          "pitchMask": 1395
+        },
+        {
+          "stateId": 1435,
+          "role": "satellite",
+          "pcSum": 33,
+          "pitchMask": 1435
+        },
+        {
+          "stateId": 1437,
+          "role": "satellite",
+          "pcSum": 34,
+          "pitchMask": 1437
+        },
+        {
+          "stateId": 1447,
+          "role": "satellite",
+          "pcSum": 33,
+          "pitchMask": 1447
+        },
+        {
+          "stateId": 1451,
+          "role": "anchor",
+          "pcSum": 34,
+          "pitchMask": 1451
+        },
+        {
+          "stateId": 1453,
+          "role": "anchor",
+          "pcSum": 35,
+          "pitchMask": 1453
+        },
+        {
+          "stateId": 1459,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 1459
+        },
+        {
+          "stateId": 1483,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 1483
+        },
+        {
+          "stateId": 1485,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 1485
+        },
+        {
+          "stateId": 1643,
+          "role": "satellite",
+          "pcSum": 34,
+          "pitchMask": 1643
+        },
+        {
+          "stateId": 1645,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 1645
+        },
+        {
+          "stateId": 1653,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 1653
+        },
+        {
+          "stateId": 1693,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 1693
+        },
+        {
+          "stateId": 1709,
+          "role": "anchor",
+          "pcSum": 36,
+          "pitchMask": 1709
+        },
+        {
+          "stateId": 1715,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 1715
+        },
+        {
+          "stateId": 1717,
+          "role": "anchor",
+          "pcSum": 37,
+          "pitchMask": 1717
+        },
+        {
+          "stateId": 1721,
+          "role": "satellite",
+          "pcSum": 38,
+          "pitchMask": 1721
+        },
+        {
+          "stateId": 1741,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 1741
+        },
+        {
+          "stateId": 1837,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 1837
+        },
+        {
+          "stateId": 1845,
+          "role": "satellite",
+          "pcSum": 38,
+          "pitchMask": 1845
+        },
+        {
+          "stateId": 2411,
+          "role": "satellite",
+          "pcSum": 34,
+          "pitchMask": 2411
+        },
+        {
+          "stateId": 2475,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 2475
+        },
+        {
+          "stateId": 2477,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 2477
+        },
+        {
+          "stateId": 2485,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 2485
+        },
+        {
+          "stateId": 2517,
+          "role": "satellite",
+          "pcSum": 38,
+          "pitchMask": 2517
+        },
+        {
+          "stateId": 2677,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 2677
+        },
+        {
+          "stateId": 2739,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 2739
+        },
+        {
+          "stateId": 2741,
+          "role": "anchor",
+          "pcSum": 38,
+          "pitchMask": 2741
+        },
+        {
+          "stateId": 2745,
+          "role": "satellite",
+          "pcSum": 39,
+          "pitchMask": 2745
+        },
+        {
+          "stateId": 2765,
+          "role": "satellite",
+          "pcSum": 38,
+          "pitchMask": 2765
+        },
+        {
+          "stateId": 2771,
+          "role": "satellite",
+          "pcSum": 38,
+          "pitchMask": 2771
+        },
+        {
+          "stateId": 2773,
+          "role": "anchor",
+          "pcSum": 39,
+          "pitchMask": 2773
+        },
+        {
+          "stateId": 2777,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 2777
+        },
+        {
+          "stateId": 2789,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 2789
+        },
+        {
+          "stateId": 2869,
+          "role": "satellite",
+          "pcSum": 39,
+          "pitchMask": 2869
+        },
+        {
+          "stateId": 2905,
+          "role": "satellite",
+          "pcSum": 41,
+          "pitchMask": 2905
+        },
+        {
+          "stateId": 3253,
+          "role": "satellite",
+          "pcSum": 39,
+          "pitchMask": 3253
+        },
+        {
+          "stateId": 3285,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 3285
+        },
+        {
+          "stateId": 3417,
+          "role": "satellite",
+          "pcSum": 42,
+          "pitchMask": 3417
+        },
+        {
+          "stateId": 3433,
+          "role": "satellite",
+          "pcSum": 43,
+          "pitchMask": 3433
+        }
+      ],
+      "aggregate": 1764
+    },
+    {
+      "orbitId": "ORBIT-A1",
+      "tier": "A1",
+      "order": [
+        1371,
+        2733,
+        1707,
+        2901,
+        1749,
+        1461,
+        1389
+      ],
+      "step": 2,
+      "coversAllSevenPredictedOfficesExactlyOnce": true,
+      "anchorCount": 7,
+      "satelliteCount": 28,
+      "memberCount": 35,
+      "members": [
+        {
+          "stateId": 695,
+          "role": "satellite",
+          "pcSum": 28,
+          "pitchMask": 695
+        },
+        {
+          "stateId": 731,
+          "role": "satellite",
+          "pcSum": 30,
+          "pitchMask": 731
+        },
+        {
+          "stateId": 877,
+          "role": "satellite",
+          "pcSum": 33,
+          "pitchMask": 877
+        },
+        {
+          "stateId": 949,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 949
+        },
+        {
+          "stateId": 1243,
+          "role": "satellite",
+          "pcSum": 31,
+          "pitchMask": 1243
+        },
+        {
+          "stateId": 1261,
+          "role": "satellite",
+          "pcSum": 33,
+          "pitchMask": 1261
+        },
+        {
+          "stateId": 1339,
+          "role": "satellite",
+          "pcSum": 31,
+          "pitchMask": 1339
+        },
+        {
+          "stateId": 1371,
+          "role": "anchor",
+          "pcSum": 32,
+          "pitchMask": 1371
+        },
+        {
+          "stateId": 1389,
+          "role": "anchor",
+          "pcSum": 34,
+          "pitchMask": 1389
+        },
+        {
+          "stateId": 1461,
+          "role": "anchor",
+          "pcSum": 36,
+          "pitchMask": 1461
+        },
+        {
+          "stateId": 1465,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 1465
+        },
+        {
+          "stateId": 1627,
+          "role": "satellite",
+          "pcSum": 33,
+          "pitchMask": 1627
+        },
+        {
+          "stateId": 1691,
+          "role": "satellite",
+          "pcSum": 34,
+          "pitchMask": 1691
+        },
+        {
+          "stateId": 1703,
+          "role": "satellite",
+          "pcSum": 34,
+          "pitchMask": 1703
+        },
+        {
+          "stateId": 1707,
+          "role": "anchor",
+          "pcSum": 35,
+          "pitchMask": 1707
+        },
+        {
+          "stateId": 1739,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 1739
+        },
+        {
+          "stateId": 1747,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 1747
+        },
+        {
+          "stateId": 1749,
+          "role": "anchor",
+          "pcSum": 38,
+          "pitchMask": 1749
+        },
+        {
+          "stateId": 1753,
+          "role": "satellite",
+          "pcSum": 39,
+          "pitchMask": 1753
+        },
+        {
+          "stateId": 1765,
+          "role": "satellite",
+          "pcSum": 39,
+          "pitchMask": 1765
+        },
+        {
+          "stateId": 1835,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 1835
+        },
+        {
+          "stateId": 2395,
+          "role": "satellite",
+          "pcSum": 33,
+          "pitchMask": 2395
+        },
+        {
+          "stateId": 2413,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 2413
+        },
+        {
+          "stateId": 2669,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 2669
+        },
+        {
+          "stateId": 2717,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 2717
+        },
+        {
+          "stateId": 2733,
+          "role": "anchor",
+          "pcSum": 37,
+          "pitchMask": 2733
+        },
+        {
+          "stateId": 2861,
+          "role": "satellite",
+          "pcSum": 38,
+          "pitchMask": 2861
+        },
+        {
+          "stateId": 2893,
+          "role": "satellite",
+          "pcSum": 39,
+          "pitchMask": 2893
+        },
+        {
+          "stateId": 2899,
+          "role": "satellite",
+          "pcSum": 39,
+          "pitchMask": 2899
+        },
+        {
+          "stateId": 2901,
+          "role": "anchor",
+          "pcSum": 40,
+          "pitchMask": 2901
+        },
+        {
+          "stateId": 2917,
+          "role": "satellite",
+          "pcSum": 41,
+          "pitchMask": 2917
+        },
+        {
+          "stateId": 2921,
+          "role": "satellite",
+          "pcSum": 42,
+          "pitchMask": 2921
+        },
+        {
+          "stateId": 2965,
+          "role": "satellite",
+          "pcSum": 41,
+          "pitchMask": 2965
+        },
+        {
+          "stateId": 3245,
+          "role": "satellite",
+          "pcSum": 38,
+          "pitchMask": 3245
+        },
+        {
+          "stateId": 3497,
+          "role": "satellite",
+          "pcSum": 44,
+          "pitchMask": 3497
+        }
+      ],
+      "aggregate": 1260
+    },
+    {
+      "orbitId": "ORBIT-A2",
+      "tier": "A2",
+      "order": [
+        1367,
+        2731,
+        3413,
+        1877,
+        1493,
+        1397,
+        1373
+      ],
+      "step": 2,
+      "coversAllSevenPredictedOfficesExactlyOnce": true,
+      "anchorCount": 7,
+      "satelliteCount": 42,
+      "memberCount": 49,
+      "members": [
+        {
+          "stateId": 687,
+          "role": "satellite",
+          "pcSum": 27,
+          "pitchMask": 687
+        },
+        {
+          "stateId": 699,
+          "role": "satellite",
+          "pcSum": 29,
+          "pitchMask": 699
+        },
+        {
+          "stateId": 747,
+          "role": "satellite",
+          "pcSum": 31,
+          "pitchMask": 747
+        },
+        {
+          "stateId": 861,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 861
+        },
+        {
+          "stateId": 885,
+          "role": "satellite",
+          "pcSum": 34,
+          "pitchMask": 885
+        },
+        {
+          "stateId": 981,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 981
+        },
+        {
+          "stateId": 1239,
+          "role": "satellite",
+          "pcSum": 30,
+          "pitchMask": 1239
+        },
+        {
+          "stateId": 1245,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 1245
+        },
+        {
+          "stateId": 1269,
+          "role": "satellite",
+          "pcSum": 34,
+          "pitchMask": 1269
+        },
+        {
+          "stateId": 1335,
+          "role": "satellite",
+          "pcSum": 30,
+          "pitchMask": 1335
+        },
+        {
+          "stateId": 1341,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 1341
+        },
+        {
+          "stateId": 1359,
+          "role": "satellite",
+          "pcSum": 30,
+          "pitchMask": 1359
+        },
+        {
+          "stateId": 1367,
+          "role": "anchor",
+          "pcSum": 31,
+          "pitchMask": 1367
+        },
+        {
+          "stateId": 1373,
+          "role": "anchor",
+          "pcSum": 33,
+          "pitchMask": 1373
+        },
+        {
+          "stateId": 1397,
+          "role": "anchor",
+          "pcSum": 35,
+          "pitchMask": 1397
+        },
+        {
+          "stateId": 1401,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 1401
+        },
+        {
+          "stateId": 1431,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 1431
+        },
+        {
+          "stateId": 1491,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 1491
+        },
+        {
+          "stateId": 1493,
+          "role": "anchor",
+          "pcSum": 37,
+          "pitchMask": 1493
+        },
+        {
+          "stateId": 1497,
+          "role": "satellite",
+          "pcSum": 38,
+          "pitchMask": 1497
+        },
+        {
+          "stateId": 1509,
+          "role": "satellite",
+          "pcSum": 38,
+          "pitchMask": 1509
+        },
+        {
+          "stateId": 1623,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 1623
+        },
+        {
+          "stateId": 1629,
+          "role": "satellite",
+          "pcSum": 34,
+          "pitchMask": 1629
+        },
+        {
+          "stateId": 1869,
+          "role": "satellite",
+          "pcSum": 38,
+          "pitchMask": 1869
+        },
+        {
+          "stateId": 1875,
+          "role": "satellite",
+          "pcSum": 38,
+          "pitchMask": 1875
+        },
+        {
+          "stateId": 1877,
+          "role": "anchor",
+          "pcSum": 39,
+          "pitchMask": 1877
+        },
+        {
+          "stateId": 1881,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 1881
+        },
+        {
+          "stateId": 1893,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 1893
+        },
+        {
+          "stateId": 1941,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 1941
+        },
+        {
+          "stateId": 2391,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 2391
+        },
+        {
+          "stateId": 2397,
+          "role": "satellite",
+          "pcSum": 34,
+          "pitchMask": 2397
+        },
+        {
+          "stateId": 2421,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 2421
+        },
+        {
+          "stateId": 2667,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 2667
+        },
+        {
+          "stateId": 2715,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 2715
+        },
+        {
+          "stateId": 2727,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 2727
+        },
+        {
+          "stateId": 2731,
+          "role": "anchor",
+          "pcSum": 36,
+          "pitchMask": 2731
+        },
+        {
+          "stateId": 2763,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 2763
+        },
+        {
+          "stateId": 2793,
+          "role": "satellite",
+          "pcSum": 41,
+          "pitchMask": 2793
+        },
+        {
+          "stateId": 2859,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 2859
+        },
+        {
+          "stateId": 2985,
+          "role": "satellite",
+          "pcSum": 43,
+          "pitchMask": 2985
+        },
+        {
+          "stateId": 3243,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 3243
+        },
+        {
+          "stateId": 3381,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 3381
+        },
+        {
+          "stateId": 3405,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 3405
+        },
+        {
+          "stateId": 3411,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 3411
+        },
+        {
+          "stateId": 3413,
+          "role": "anchor",
+          "pcSum": 41,
+          "pitchMask": 3413
+        },
+        {
+          "stateId": 3429,
+          "role": "satellite",
+          "pcSum": 42,
+          "pitchMask": 3429
+        },
+        {
+          "stateId": 3477,
+          "role": "satellite",
+          "pcSum": 42,
+          "pitchMask": 3477
+        },
+        {
+          "stateId": 3669,
+          "role": "satellite",
+          "pcSum": 42,
+          "pitchMask": 3669
+        },
+        {
+          "stateId": 3753,
+          "role": "satellite",
+          "pcSum": 45,
+          "pitchMask": 3753
+        }
+      ],
+      "aggregate": 1764
+    },
+    {
+      "orbitId": "ORBIT-D1",
+      "tier": "D1",
+      "order": [
+        871,
+        2483,
+        3289,
+        923,
+        2509,
+        1651,
+        2873
+      ],
+      "step": 2,
+      "coversAllSevenPredictedOfficesExactlyOnce": true,
+      "anchorCount": 7,
+      "satelliteCount": 14,
+      "memberCount": 21,
+      "members": [
+        {
+          "stateId": 743,
+          "role": "satellite",
+          "pcSum": 30,
+          "pitchMask": 743
+        },
+        {
+          "stateId": 871,
+          "role": "anchor",
+          "pcSum": 31,
+          "pitchMask": 871
+        },
+        {
+          "stateId": 919,
+          "role": "satellite",
+          "pcSum": 31,
+          "pitchMask": 919
+        },
+        {
+          "stateId": 923,
+          "role": "anchor",
+          "pcSum": 32,
+          "pitchMask": 923
+        },
+        {
+          "stateId": 925,
+          "role": "satellite",
+          "pcSum": 33,
+          "pitchMask": 925
+        },
+        {
+          "stateId": 935,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 935
+        },
+        {
+          "stateId": 1255,
+          "role": "satellite",
+          "pcSum": 31,
+          "pitchMask": 1255
+        },
+        {
+          "stateId": 1651,
+          "role": "anchor",
+          "pcSum": 35,
+          "pitchMask": 1651
+        },
+        {
+          "stateId": 1849,
+          "role": "satellite",
+          "pcSum": 39,
+          "pitchMask": 1849
+        },
+        {
+          "stateId": 2419,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 2419
+        },
+        {
+          "stateId": 2483,
+          "role": "anchor",
+          "pcSum": 36,
+          "pitchMask": 2483
+        },
+        {
+          "stateId": 2507,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 2507
+        },
+        {
+          "stateId": 2509,
+          "role": "anchor",
+          "pcSum": 37,
+          "pitchMask": 2509
+        },
+        {
+          "stateId": 2515,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 2515
+        },
+        {
+          "stateId": 2675,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 2675
+        },
+        {
+          "stateId": 2873,
+          "role": "anchor",
+          "pcSum": 40,
+          "pitchMask": 2873
+        },
+        {
+          "stateId": 3257,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 3257
+        },
+        {
+          "stateId": 3289,
+          "role": "anchor",
+          "pcSum": 41,
+          "pitchMask": 3289
+        },
+        {
+          "stateId": 3301,
+          "role": "satellite",
+          "pcSum": 41,
+          "pitchMask": 3301
+        },
+        {
+          "stateId": 3305,
+          "role": "satellite",
+          "pcSum": 42,
+          "pitchMask": 3305
+        },
+        {
+          "stateId": 3385,
+          "role": "satellite",
+          "pcSum": 41,
+          "pitchMask": 3385
+        }
+      ],
+      "aggregate": 756
+    },
+    {
+      "orbitId": "ORBIT-D2",
+      "tier": "D2",
+      "order": [
+        471,
+        2283,
+        3189,
+        1821,
+        1479,
+        2787,
+        3441
+      ],
+      "step": 2,
+      "coversAllSevenPredictedOfficesExactlyOnce": true,
+      "anchorCount": 7,
+      "satelliteCount": 28,
+      "memberCount": 35,
+      "members": [
+        {
+          "stateId": 439,
+          "role": "satellite",
+          "pcSum": 27,
+          "pitchMask": 439
+        },
+        {
+          "stateId": 463,
+          "role": "satellite",
+          "pcSum": 27,
+          "pitchMask": 463
+        },
+        {
+          "stateId": 471,
+          "role": "anchor",
+          "pcSum": 28,
+          "pitchMask": 471
+        },
+        {
+          "stateId": 475,
+          "role": "satellite",
+          "pcSum": 29,
+          "pitchMask": 475
+        },
+        {
+          "stateId": 487,
+          "role": "satellite",
+          "pcSum": 29,
+          "pitchMask": 487
+        },
+        {
+          "stateId": 911,
+          "role": "satellite",
+          "pcSum": 30,
+          "pitchMask": 911
+        },
+        {
+          "stateId": 967,
+          "role": "satellite",
+          "pcSum": 33,
+          "pitchMask": 967
+        },
+        {
+          "stateId": 1479,
+          "role": "anchor",
+          "pcSum": 34,
+          "pitchMask": 1479
+        },
+        {
+          "stateId": 1595,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 1595
+        },
+        {
+          "stateId": 1735,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 1735
+        },
+        {
+          "stateId": 1763,
+          "role": "satellite",
+          "pcSum": 38,
+          "pitchMask": 1763
+        },
+        {
+          "stateId": 1819,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 1819
+        },
+        {
+          "stateId": 1821,
+          "role": "anchor",
+          "pcSum": 36,
+          "pitchMask": 1821
+        },
+        {
+          "stateId": 2267,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 2267
+        },
+        {
+          "stateId": 2279,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 2279
+        },
+        {
+          "stateId": 2283,
+          "role": "anchor",
+          "pcSum": 33,
+          "pitchMask": 2283
+        },
+        {
+          "stateId": 2285,
+          "role": "satellite",
+          "pcSum": 34,
+          "pitchMask": 2285
+        },
+        {
+          "stateId": 2291,
+          "role": "satellite",
+          "pcSum": 34,
+          "pitchMask": 2291
+        },
+        {
+          "stateId": 2503,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 2503
+        },
+        {
+          "stateId": 2531,
+          "role": "satellite",
+          "pcSum": 38,
+          "pitchMask": 2531
+        },
+        {
+          "stateId": 2787,
+          "role": "anchor",
+          "pcSum": 39,
+          "pitchMask": 2787
+        },
+        {
+          "stateId": 2845,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 2845
+        },
+        {
+          "stateId": 2915,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 2915
+        },
+        {
+          "stateId": 2929,
+          "role": "satellite",
+          "pcSum": 43,
+          "pitchMask": 2929
+        },
+        {
+          "stateId": 2957,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 2957
+        },
+        {
+          "stateId": 3181,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 3181
+        },
+        {
+          "stateId": 3187,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 3187
+        },
+        {
+          "stateId": 3189,
+          "role": "anchor",
+          "pcSum": 38,
+          "pitchMask": 3189
+        },
+        {
+          "stateId": 3193,
+          "role": "satellite",
+          "pcSum": 39,
+          "pitchMask": 3193
+        },
+        {
+          "stateId": 3299,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 3299
+        },
+        {
+          "stateId": 3313,
+          "role": "satellite",
+          "pcSum": 43,
+          "pitchMask": 3313
+        },
+        {
+          "stateId": 3441,
+          "role": "anchor",
+          "pcSum": 44,
+          "pitchMask": 3441
+        },
+        {
+          "stateId": 3505,
+          "role": "satellite",
+          "pcSum": 45,
+          "pitchMask": 3505
+        },
+        {
+          "stateId": 3641,
+          "role": "satellite",
+          "pcSum": 42,
+          "pitchMask": 3641
+        },
+        {
+          "stateId": 3697,
+          "role": "satellite",
+          "pcSum": 45,
+          "pitchMask": 3697
+        }
+      ],
+      "aggregate": 1260
+    },
+    {
+      "orbitId": "ORBIT-D3",
+      "tier": "D3",
+      "order": [
+        443,
+        2269,
+        1591,
+        2843,
+        3469,
+        1891,
+        2993
+      ],
+      "step": 2,
+      "coversAllSevenPredictedOfficesExactlyOnce": true,
+      "anchorCount": 7,
+      "satelliteCount": 14,
+      "memberCount": 21,
+      "members": [
+        {
+          "stateId": 379,
+          "role": "satellite",
+          "pcSum": 27,
+          "pitchMask": 379
+        },
+        {
+          "stateId": 443,
+          "role": "anchor",
+          "pcSum": 28,
+          "pitchMask": 443
+        },
+        {
+          "stateId": 445,
+          "role": "satellite",
+          "pcSum": 29,
+          "pitchMask": 445
+        },
+        {
+          "stateId": 1135,
+          "role": "satellite",
+          "pcSum": 27,
+          "pitchMask": 1135
+        },
+        {
+          "stateId": 1583,
+          "role": "satellite",
+          "pcSum": 30,
+          "pitchMask": 1583
+        },
+        {
+          "stateId": 1591,
+          "role": "anchor",
+          "pcSum": 31,
+          "pitchMask": 1591
+        },
+        {
+          "stateId": 1891,
+          "role": "anchor",
+          "pcSum": 39,
+          "pitchMask": 1891
+        },
+        {
+          "stateId": 1955,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 1955
+        },
+        {
+          "stateId": 1969,
+          "role": "satellite",
+          "pcSum": 43,
+          "pitchMask": 1969
+        },
+        {
+          "stateId": 2237,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 2237
+        },
+        {
+          "stateId": 2269,
+          "role": "anchor",
+          "pcSum": 33,
+          "pitchMask": 2269
+        },
+        {
+          "stateId": 2615,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 2615
+        },
+        {
+          "stateId": 2839,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 2839
+        },
+        {
+          "stateId": 2843,
+          "role": "anchor",
+          "pcSum": 36,
+          "pitchMask": 2843
+        },
+        {
+          "stateId": 2993,
+          "role": "anchor",
+          "pcSum": 44,
+          "pitchMask": 2993
+        },
+        {
+          "stateId": 3025,
+          "role": "satellite",
+          "pcSum": 45,
+          "pitchMask": 3025
+        },
+        {
+          "stateId": 3355,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 3355
+        },
+        {
+          "stateId": 3467,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 3467
+        },
+        {
+          "stateId": 3469,
+          "role": "anchor",
+          "pcSum": 41,
+          "pitchMask": 3469
+        },
+        {
+          "stateId": 3725,
+          "role": "satellite",
+          "pcSum": 42,
+          "pitchMask": 3725
+        },
+        {
+          "stateId": 3781,
+          "role": "satellite",
+          "pcSum": 45,
+          "pitchMask": 3781
+        }
+      ],
+      "aggregate": 756
+    },
+    {
+      "orbitId": "ORBIT-D4",
+      "tier": "D4",
+      "order": [
+        631,
+        2363,
+        3229,
+        1831,
+        2963,
+        3529,
+        953
+      ],
+      "step": 2,
+      "coversAllSevenPredictedOfficesExactlyOnce": true,
+      "anchorCount": 7,
+      "satelliteCount": 28,
+      "memberCount": 35,
+      "members": [
+        {
+          "stateId": 375,
+          "role": "satellite",
+          "pcSum": 26,
+          "pitchMask": 375
+        },
+        {
+          "stateId": 477,
+          "role": "satellite",
+          "pcSum": 30,
+          "pitchMask": 477
+        },
+        {
+          "stateId": 623,
+          "role": "satellite",
+          "pcSum": 26,
+          "pitchMask": 623
+        },
+        {
+          "stateId": 631,
+          "role": "anchor",
+          "pcSum": 27,
+          "pitchMask": 631
+        },
+        {
+          "stateId": 635,
+          "role": "satellite",
+          "pcSum": 28,
+          "pitchMask": 635
+        },
+        {
+          "stateId": 889,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 889
+        },
+        {
+          "stateId": 953,
+          "role": "anchor",
+          "pcSum": 36,
+          "pitchMask": 953
+        },
+        {
+          "stateId": 985,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 985
+        },
+        {
+          "stateId": 1143,
+          "role": "satellite",
+          "pcSum": 28,
+          "pitchMask": 1143
+        },
+        {
+          "stateId": 1615,
+          "role": "satellite",
+          "pcSum": 31,
+          "pitchMask": 1615
+        },
+        {
+          "stateId": 1815,
+          "role": "satellite",
+          "pcSum": 34,
+          "pitchMask": 1815
+        },
+        {
+          "stateId": 1831,
+          "role": "anchor",
+          "pcSum": 35,
+          "pitchMask": 1831
+        },
+        {
+          "stateId": 1863,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 1863
+        },
+        {
+          "stateId": 1905,
+          "role": "satellite",
+          "pcSum": 42,
+          "pitchMask": 1905
+        },
+        {
+          "stateId": 1939,
+          "role": "satellite",
+          "pcSum": 39,
+          "pitchMask": 1939
+        },
+        {
+          "stateId": 2235,
+          "role": "satellite",
+          "pcSum": 31,
+          "pitchMask": 2235
+        },
+        {
+          "stateId": 2359,
+          "role": "satellite",
+          "pcSum": 31,
+          "pitchMask": 2359
+        },
+        {
+          "stateId": 2363,
+          "role": "anchor",
+          "pcSum": 32,
+          "pitchMask": 2363
+        },
+        {
+          "stateId": 2365,
+          "role": "satellite",
+          "pcSum": 33,
+          "pitchMask": 2365
+        },
+        {
+          "stateId": 2619,
+          "role": "satellite",
+          "pcSum": 33,
+          "pitchMask": 2619
+        },
+        {
+          "stateId": 2855,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 2855
+        },
+        {
+          "stateId": 2955,
+          "role": "satellite",
+          "pcSum": 39,
+          "pitchMask": 2955
+        },
+        {
+          "stateId": 2963,
+          "role": "anchor",
+          "pcSum": 40,
+          "pitchMask": 2963
+        },
+        {
+          "stateId": 2979,
+          "role": "satellite",
+          "pcSum": 41,
+          "pitchMask": 2979
+        },
+        {
+          "stateId": 3017,
+          "role": "satellite",
+          "pcSum": 44,
+          "pitchMask": 3017
+        },
+        {
+          "stateId": 3165,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 3165
+        },
+        {
+          "stateId": 3227,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 3227
+        },
+        {
+          "stateId": 3229,
+          "role": "anchor",
+          "pcSum": 37,
+          "pitchMask": 3229
+        },
+        {
+          "stateId": 3357,
+          "role": "satellite",
+          "pcSum": 38,
+          "pitchMask": 3357
+        },
+        {
+          "stateId": 3475,
+          "role": "satellite",
+          "pcSum": 41,
+          "pitchMask": 3475
+        },
+        {
+          "stateId": 3525,
+          "role": "satellite",
+          "pcSum": 44,
+          "pitchMask": 3525
+        },
+        {
+          "stateId": 3529,
+          "role": "anchor",
+          "pcSum": 45,
+          "pitchMask": 3529
+        },
+        {
+          "stateId": 3537,
+          "role": "satellite",
+          "pcSum": 46,
+          "pitchMask": 3537
+        },
+        {
+          "stateId": 3661,
+          "role": "satellite",
+          "pcSum": 41,
+          "pitchMask": 3661
+        },
+        {
+          "stateId": 3785,
+          "role": "satellite",
+          "pcSum": 46,
+          "pitchMask": 3785
+        }
+      ],
+      "aggregate": 1260
+    },
+    {
+      "orbitId": "ORBIT-D5",
+      "tier": "D5",
+      "order": [
+        671,
+        2383,
+        3239,
+        3667,
+        3881,
+        997,
+        1273
+      ],
+      "step": 2,
+      "coversAllSevenPredictedOfficesExactlyOnce": true,
+      "anchorCount": 7,
+      "satelliteCount": 28,
+      "memberCount": 35,
+      "members": [
+        {
+          "stateId": 415,
+          "role": "satellite",
+          "pcSum": 25,
+          "pitchMask": 415
+        },
+        {
+          "stateId": 499,
+          "role": "satellite",
+          "pcSum": 31,
+          "pitchMask": 499
+        },
+        {
+          "stateId": 607,
+          "role": "satellite",
+          "pcSum": 25,
+          "pitchMask": 607
+        },
+        {
+          "stateId": 637,
+          "role": "satellite",
+          "pcSum": 29,
+          "pitchMask": 637
+        },
+        {
+          "stateId": 671,
+          "role": "anchor",
+          "pcSum": 26,
+          "pitchMask": 671
+        },
+        {
+          "stateId": 761,
+          "role": "satellite",
+          "pcSum": 34,
+          "pitchMask": 761
+        },
+        {
+          "stateId": 799,
+          "role": "satellite",
+          "pcSum": 27,
+          "pitchMask": 799
+        },
+        {
+          "stateId": 995,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 995
+        },
+        {
+          "stateId": 997,
+          "role": "anchor",
+          "pcSum": 37,
+          "pitchMask": 997
+        },
+        {
+          "stateId": 1001,
+          "role": "satellite",
+          "pcSum": 38,
+          "pitchMask": 1001
+        },
+        {
+          "stateId": 1183,
+          "role": "satellite",
+          "pcSum": 27,
+          "pitchMask": 1183
+        },
+        {
+          "stateId": 1273,
+          "role": "anchor",
+          "pcSum": 35,
+          "pitchMask": 1273
+        },
+        {
+          "stateId": 1993,
+          "role": "satellite",
+          "pcSum": 43,
+          "pitchMask": 1993
+        },
+        {
+          "stateId": 2255,
+          "role": "satellite",
+          "pcSum": 30,
+          "pitchMask": 2255
+        },
+        {
+          "stateId": 2297,
+          "role": "satellite",
+          "pcSum": 36,
+          "pitchMask": 2297
+        },
+        {
+          "stateId": 2351,
+          "role": "satellite",
+          "pcSum": 30,
+          "pitchMask": 2351
+        },
+        {
+          "stateId": 2383,
+          "role": "anchor",
+          "pcSum": 31,
+          "pitchMask": 2383
+        },
+        {
+          "stateId": 2447,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 2447
+        },
+        {
+          "stateId": 2545,
+          "role": "satellite",
+          "pcSum": 41,
+          "pitchMask": 2545
+        },
+        {
+          "stateId": 2639,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 2639
+        },
+        {
+          "stateId": 3175,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 3175
+        },
+        {
+          "stateId": 3223,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 3223
+        },
+        {
+          "stateId": 3239,
+          "role": "anchor",
+          "pcSum": 36,
+          "pitchMask": 3239
+        },
+        {
+          "stateId": 3271,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 3271
+        },
+        {
+          "stateId": 3367,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 3367
+        },
+        {
+          "stateId": 3635,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 3635
+        },
+        {
+          "stateId": 3659,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 3659
+        },
+        {
+          "stateId": 3667,
+          "role": "anchor",
+          "pcSum": 41,
+          "pitchMask": 3667
+        },
+        {
+          "stateId": 3683,
+          "role": "satellite",
+          "pcSum": 42,
+          "pitchMask": 3683
+        },
+        {
+          "stateId": 3731,
+          "role": "satellite",
+          "pcSum": 42,
+          "pitchMask": 3731
+        },
+        {
+          "stateId": 3865,
+          "role": "satellite",
+          "pcSum": 45,
+          "pitchMask": 3865
+        },
+        {
+          "stateId": 3877,
+          "role": "satellite",
+          "pcSum": 45,
+          "pitchMask": 3877
+        },
+        {
+          "stateId": 3881,
+          "role": "anchor",
+          "pcSum": 46,
+          "pitchMask": 3881
+        },
+        {
+          "stateId": 3889,
+          "role": "satellite",
+          "pcSum": 47,
+          "pitchMask": 3889
+        },
+        {
+          "stateId": 3913,
+          "role": "satellite",
+          "pcSum": 47,
+          "pitchMask": 3913
+        }
+      ],
+      "aggregate": 1260
+    },
+    {
+      "orbitId": "ORBIT-D6",
+      "tier": "D6",
+      "order": [
+        381,
+        1119,
+        2607,
+        3351,
+        3723,
+        3909,
+        2001
+      ],
+      "step": 2,
+      "coversAllSevenPredictedOfficesExactlyOnce": true,
+      "anchorCount": 7,
+      "satelliteCount": 14,
+      "memberCount": 21,
+      "members": [
+        {
+          "stateId": 191,
+          "role": "satellite",
+          "pcSum": 22,
+          "pitchMask": 191
+        },
+        {
+          "stateId": 253,
+          "role": "satellite",
+          "pcSum": 27,
+          "pitchMask": 253
+        },
+        {
+          "stateId": 381,
+          "role": "anchor",
+          "pcSum": 28,
+          "pitchMask": 381
+        },
+        {
+          "stateId": 1087,
+          "role": "satellite",
+          "pcSum": 25,
+          "pitchMask": 1087
+        },
+        {
+          "stateId": 1119,
+          "role": "anchor",
+          "pcSum": 26,
+          "pitchMask": 1119
+        },
+        {
+          "stateId": 2001,
+          "role": "anchor",
+          "pcSum": 44,
+          "pitchMask": 2001
+        },
+        {
+          "stateId": 2017,
+          "role": "satellite",
+          "pcSum": 45,
+          "pitchMask": 2017
+        },
+        {
+          "stateId": 2143,
+          "role": "satellite",
+          "pcSum": 27,
+          "pitchMask": 2143
+        },
+        {
+          "stateId": 2591,
+          "role": "satellite",
+          "pcSum": 30,
+          "pitchMask": 2591
+        },
+        {
+          "stateId": 2607,
+          "role": "anchor",
+          "pcSum": 31,
+          "pitchMask": 2607
+        },
+        {
+          "stateId": 3119,
+          "role": "satellite",
+          "pcSum": 32,
+          "pitchMask": 3119
+        },
+        {
+          "stateId": 3343,
+          "role": "satellite",
+          "pcSum": 35,
+          "pitchMask": 3343
+        },
+        {
+          "stateId": 3351,
+          "role": "anchor",
+          "pcSum": 36,
+          "pitchMask": 3351
+        },
+        {
+          "stateId": 3607,
+          "role": "satellite",
+          "pcSum": 37,
+          "pitchMask": 3607
+        },
+        {
+          "stateId": 3719,
+          "role": "satellite",
+          "pcSum": 40,
+          "pitchMask": 3719
+        },
+        {
+          "stateId": 3723,
+          "role": "anchor",
+          "pcSum": 41,
+          "pitchMask": 3723
+        },
+        {
+          "stateId": 3851,
+          "role": "satellite",
+          "pcSum": 42,
+          "pitchMask": 3851
+        },
+        {
+          "stateId": 3907,
+          "role": "satellite",
+          "pcSum": 45,
+          "pitchMask": 3907
+        },
+        {
+          "stateId": 3909,
+          "role": "anchor",
+          "pcSum": 46,
+          "pitchMask": 3909
+        },
+        {
+          "stateId": 3973,
+          "role": "satellite",
+          "pcSum": 47,
+          "pitchMask": 3973
+        },
+        {
+          "stateId": 4001,
+          "role": "satellite",
+          "pcSum": 50,
+          "pitchMask": 4001
+        }
+      ],
+      "aggregate": 756
+    },
+    {
+      "orbitId": "ORBIT-D7",
+      "tier": "D7",
+      "order": [
+        127,
+        2111,
+        3103,
+        3599,
+        3847,
+        3971,
+        4033
+      ],
+      "step": 2,
+      "coversAllSevenPredictedOfficesExactlyOnce": true,
+      "anchorCount": 7,
+      "satelliteCount": 0,
+      "memberCount": 7,
+      "members": [
+        {
+          "stateId": 127,
+          "role": "anchor",
+          "pcSum": 21,
+          "pitchMask": 127
+        },
+        {
+          "stateId": 2111,
+          "role": "anchor",
+          "pcSum": 26,
+          "pitchMask": 2111
+        },
+        {
+          "stateId": 3103,
+          "role": "anchor",
+          "pcSum": 31,
+          "pitchMask": 3103
+        },
+        {
+          "stateId": 3599,
+          "role": "anchor",
+          "pcSum": 36,
+          "pitchMask": 3599
+        },
+        {
+          "stateId": 3847,
+          "role": "anchor",
+          "pcSum": 41,
+          "pitchMask": 3847
+        },
+        {
+          "stateId": 3971,
+          "role": "anchor",
+          "pcSum": 46,
+          "pitchMask": 3971
+        },
+        {
+          "stateId": 4033,
+          "role": "anchor",
+          "pcSum": 51,
+          "pitchMask": 4033
+        }
+      ],
+      "aggregate": 252
+    }
+  ],
+  "partitionCheck": {
+    "memberRecords": 308,
+    "anchors": 70,
+    "satellites": 238,
+    "withheldBoundary": 154,
+    "pairwiseDisjoint": true,
+    "coversAllOfficeSupported": true
+  },
+  "checks": {
+    "censusCardinality462": true,
+    "roleReconciliation": true,
+    "governsCoverageExact": true,
+    "attachmentDeltaHistogramExact": true,
+    "blockInventoryExact": true,
+    "orbitOrderStepLawPlusTwo": true,
+    "orbitPartitionOf308": true,
+    "gateGreenBeforeAggregate": true,
+    "zeroOfficeBytesSelfCheck": true
+  },
+  "fences": "single pass under the frozen binding; no retry-with-changes; append-only evidence; cited lineage: the acceptance entry and the E-CAL registration; session prose is context, not evidence."
+}

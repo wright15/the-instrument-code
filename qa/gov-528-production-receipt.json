@@ -1,0 +1,2892 @@
+{
+  "schemaVersion": "gov-528-production-receipt.v0",
+  "ticket": "GOV-528",
+  "sitting": "E-RUN",
+  "openPin": {
+    "head": "48060c5766ef4cbc118a71ce745683e28ed79ab0",
+    "originMain": "48060c5766ef4cbc118a71ce745683e28ed79ab0",
+    "aheadBehind": "0 0",
+    "worktreePreRun": "clean"
+  },
+  "bindingCheck": {
+    "ledger": {
+      "path": "provenance/DECISION_LEDGER.md",
+      "computed": "2d3d23cba005c05a2e69e20aa99376f273acc8704463f7edb7322c75a93c10d8",
+      "manifest": "2d3d23cba005c05a2e69e20aa99376f273acc8704463f7edb7322c75a93c10d8",
+      "orientationCarried": "2d3d23cba005c05a2e69e20aa99376f273acc8704463f7edb7322c75a93c10d8",
+      "passed": true
+    },
+    "ticket": {
+      "path": "scrum/GOV-528-census-orbit-invariance-execution.md",
+      "computed": "02889fb21c46b25d64836eaad73fc753ba0cc44449eba12073ca112cb0ebedfa",
+      "manifest": "02889fb21c46b25d64836eaad73fc753ba0cc44449eba12073ca112cb0ebedfa",
+      "ledgerEntryRecorded": true,
+      "passed": true
+    }
+  },
+  "preflight": {
+    "interpreterProbe": ".venv/bin/python3 -c 'import referencing' exit 0",
+    "probePassed": true,
+    "node": "v22.22.0",
+    "python": "Python 3.12.3"
+  },
+  "gateWalkthrough": [
+    {
+      "requirement": "acceptance landed",
+      "evidence": "DECISION_LEDGER.md 'Track 2 acceptance - E7 demonstrated; execution successor opened - 2026-10-16' (L10 2d3d23cb...)"
+    },
+    {
+      "requirement": "interpreter probe-first",
+      "evidence": "import referencing exit 0 before any chain command"
+    },
+    {
+      "requirement": "binding check before any run",
+      "evidence": "ledger and ticket three-way green (computed == MANIFEST == orientation/entry)"
+    },
+    {
+      "requirement": "census verification gate first; fail-closed before any aggregate output",
+      "evidence": "qa/fifth-space-census-validation.json re-executed 24/0 PASS; byte-identical re-emission"
+    },
+    {
+      "requirement": "planner fidelity review + maintainer go before execution",
+      "evidence": "E-RUN directive issued by the maintainer (the review gate cleared; the sitting is the authorized execution)"
+    }
+  ],
+  "gateEvidence": {
+    "receiptPath": "qa/fifth-space-census-validation.json",
+    "receiptSha256": "ff336d464f0351feb2d8c60503a1cfada24bd31549a6fd2f8a2cc2f4b8789483",
+    "verdict": "PASS",
+    "checksPassed": 24,
+    "checksFailed": 0,
+    "checkIds": [
+      "schema",
+      "fingerprint",
+      "freshness",
+      "determinism-build-twice",
+      "determinism-reorder",
+      "determinism-schema",
+      "cardinality-462",
+      "ordering-unique",
+      "role-reconciliation",
+      "binary-field-equivalence",
+      "span-arc-holes",
+      "gap-multiset",
+      "span-ceiling-10",
+      "c0-binding",
+      "c0-negative-fixture",
+      "satellite-family-uniformity",
+      "governs-out-degree",
+      "obs013-addendum",
+      "research-verdict-consistency",
+      "research-verdict-non-gating",
+      "guards-namespace",
+      "bindings-ledger-shas",
+      "bindings-court",
+      "bindings-source-derivation"
+    ],
+    "checkIdsOracle": "read from the receipt's own machine structure at execution open"
+  },
+  "productionAggregate": {
+    "path": "qa/gov-528-production-aggregate.json",
+    "sha256": "b16d4cf39b0a855005acdf3bd6917587d870aed43756375cf15f6e05b1b59b21",
+    "bytes": 47976
+  },
+  "productionComparison": {
+    "path": "qa/gov-528-production-comparison.json",
+    "sha256": "9886ae9c1c3484c18afdcbc49c5e3c2042b2ecb3e59e2ea09dc231e37ab6f057",
+    "bytes": 49674
+  },
+  "category": "orbit_invariant",
+  "completionCertificate": {
+    "verifiedRecordCount": 462,
+    "roleReconciliation": {
+      "anchors": 70,
+      "satellites": 238,
+      "boundaries": 154
+    },
+    "aggregateDomainRecordCount": 308,
+    "withheld": 154,
+    "inheritanceChecks": {
+      "satelliteChecks": 238,
+      "matches": 238,
+      "mismatches": 0
+    },
+    "anchorRuleChecks": {
+      "checked": 70,
+      "matches": 70,
+      "mismatches": 0
+    },
+    "declaredOrbitCount": 10,
+    "declaredFiberBlockCount": 57,
+    "fiberBlockInstances": 1128,
+    "distinctOrbitAggregateValueCount": 4,
+    "orbitAggregates": {
+      "A0": 1764,
+      "A1": 1260,
+      "A2": 1764,
+      "D1": 756,
+      "D2": 1260,
+      "D3": 756,
+      "D4": 1260,
+      "D5": 1260,
+      "D6": 756,
+      "D7": 252
+    },
+    "environmentFingerprint": {
+      "node": "v22.22.0",
+      "python": "Python 3.12.3"
+    }
+  },
+  "perOrbitTable": [
+    {
+      "orbitId": "ORBIT-A0",
+      "tier": "A0",
+      "order": [
+        1387,
+        2741,
+        1709,
+        1451,
+        2773,
+        1717,
+        1453
+      ],
+      "anchorCount": 7,
+      "satelliteCount": 42,
+      "memberCount": 49,
+      "aggregate": 1764,
+      "members": [
+        {
+          "stateId": 727,
+          "role": "satellite",
+          "pcSum": 29,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 855,
+          "role": "satellite",
+          "pcSum": 30,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 859,
+          "role": "satellite",
+          "pcSum": 31,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 875,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 939,
+          "role": "satellite",
+          "pcSum": 33,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 941,
+          "role": "satellite",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1259,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1383,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1387,
+          "role": "anchor",
+          "pcSum": 33,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1395,
+          "role": "satellite",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1435,
+          "role": "satellite",
+          "pcSum": 33,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1437,
+          "role": "satellite",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1447,
+          "role": "satellite",
+          "pcSum": 33,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1451,
+          "role": "anchor",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1453,
+          "role": "anchor",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1459,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1483,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1485,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1643,
+          "role": "satellite",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1645,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1653,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1693,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1709,
+          "role": "anchor",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1715,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1717,
+          "role": "anchor",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1721,
+          "role": "satellite",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1741,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1837,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1845,
+          "role": "satellite",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2411,
+          "role": "satellite",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2475,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2477,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2485,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2517,
+          "role": "satellite",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2677,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2739,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2741,
+          "role": "anchor",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2745,
+          "role": "satellite",
+          "pcSum": 39,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2765,
+          "role": "satellite",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2771,
+          "role": "satellite",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2773,
+          "role": "anchor",
+          "pcSum": 39,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2777,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2789,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2869,
+          "role": "satellite",
+          "pcSum": 39,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2905,
+          "role": "satellite",
+          "pcSum": 41,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3253,
+          "role": "satellite",
+          "pcSum": 39,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3285,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3417,
+          "role": "satellite",
+          "pcSum": 42,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3433,
+          "role": "satellite",
+          "pcSum": 43,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        }
+      ]
+    },
+    {
+      "orbitId": "ORBIT-A1",
+      "tier": "A1",
+      "order": [
+        1371,
+        2733,
+        1707,
+        2901,
+        1749,
+        1461,
+        1389
+      ],
+      "anchorCount": 7,
+      "satelliteCount": 28,
+      "memberCount": 35,
+      "aggregate": 1260,
+      "members": [
+        {
+          "stateId": 695,
+          "role": "satellite",
+          "pcSum": 28,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 731,
+          "role": "satellite",
+          "pcSum": 30,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 877,
+          "role": "satellite",
+          "pcSum": 33,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 949,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1243,
+          "role": "satellite",
+          "pcSum": 31,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1261,
+          "role": "satellite",
+          "pcSum": 33,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1339,
+          "role": "satellite",
+          "pcSum": 31,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1371,
+          "role": "anchor",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1389,
+          "role": "anchor",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1461,
+          "role": "anchor",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1465,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1627,
+          "role": "satellite",
+          "pcSum": 33,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1691,
+          "role": "satellite",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1703,
+          "role": "satellite",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1707,
+          "role": "anchor",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1739,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1747,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1749,
+          "role": "anchor",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1753,
+          "role": "satellite",
+          "pcSum": 39,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1765,
+          "role": "satellite",
+          "pcSum": 39,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1835,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2395,
+          "role": "satellite",
+          "pcSum": 33,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2413,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2669,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2717,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2733,
+          "role": "anchor",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2861,
+          "role": "satellite",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2893,
+          "role": "satellite",
+          "pcSum": 39,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2899,
+          "role": "satellite",
+          "pcSum": 39,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2901,
+          "role": "anchor",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2917,
+          "role": "satellite",
+          "pcSum": 41,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2921,
+          "role": "satellite",
+          "pcSum": 42,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2965,
+          "role": "satellite",
+          "pcSum": 41,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3245,
+          "role": "satellite",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3497,
+          "role": "satellite",
+          "pcSum": 44,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        }
+      ]
+    },
+    {
+      "orbitId": "ORBIT-A2",
+      "tier": "A2",
+      "order": [
+        1367,
+        2731,
+        3413,
+        1877,
+        1493,
+        1397,
+        1373
+      ],
+      "anchorCount": 7,
+      "satelliteCount": 42,
+      "memberCount": 49,
+      "aggregate": 1764,
+      "members": [
+        {
+          "stateId": 687,
+          "role": "satellite",
+          "pcSum": 27,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 699,
+          "role": "satellite",
+          "pcSum": 29,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 747,
+          "role": "satellite",
+          "pcSum": 31,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 861,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 885,
+          "role": "satellite",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 981,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1239,
+          "role": "satellite",
+          "pcSum": 30,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1245,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1269,
+          "role": "satellite",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1335,
+          "role": "satellite",
+          "pcSum": 30,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1341,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1359,
+          "role": "satellite",
+          "pcSum": 30,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1367,
+          "role": "anchor",
+          "pcSum": 31,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1373,
+          "role": "anchor",
+          "pcSum": 33,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1397,
+          "role": "anchor",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1401,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1431,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1491,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1493,
+          "role": "anchor",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1497,
+          "role": "satellite",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1509,
+          "role": "satellite",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1623,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1629,
+          "role": "satellite",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1869,
+          "role": "satellite",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1875,
+          "role": "satellite",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1877,
+          "role": "anchor",
+          "pcSum": 39,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1881,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1893,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1941,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2391,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2397,
+          "role": "satellite",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2421,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2667,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2715,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2727,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2731,
+          "role": "anchor",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2763,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2793,
+          "role": "satellite",
+          "pcSum": 41,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2859,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2985,
+          "role": "satellite",
+          "pcSum": 43,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3243,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3381,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3405,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3411,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3413,
+          "role": "anchor",
+          "pcSum": 41,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3429,
+          "role": "satellite",
+          "pcSum": 42,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3477,
+          "role": "satellite",
+          "pcSum": 42,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3669,
+          "role": "satellite",
+          "pcSum": 42,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3753,
+          "role": "satellite",
+          "pcSum": 45,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        }
+      ]
+    },
+    {
+      "orbitId": "ORBIT-D1",
+      "tier": "D1",
+      "order": [
+        871,
+        2483,
+        3289,
+        923,
+        2509,
+        1651,
+        2873
+      ],
+      "anchorCount": 7,
+      "satelliteCount": 14,
+      "memberCount": 21,
+      "aggregate": 756,
+      "members": [
+        {
+          "stateId": 743,
+          "role": "satellite",
+          "pcSum": 30,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 871,
+          "role": "anchor",
+          "pcSum": 31,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 919,
+          "role": "satellite",
+          "pcSum": 31,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 923,
+          "role": "anchor",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 925,
+          "role": "satellite",
+          "pcSum": 33,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 935,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1255,
+          "role": "satellite",
+          "pcSum": 31,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1651,
+          "role": "anchor",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1849,
+          "role": "satellite",
+          "pcSum": 39,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2419,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2483,
+          "role": "anchor",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2507,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2509,
+          "role": "anchor",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2515,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2675,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2873,
+          "role": "anchor",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3257,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3289,
+          "role": "anchor",
+          "pcSum": 41,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3301,
+          "role": "satellite",
+          "pcSum": 41,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3305,
+          "role": "satellite",
+          "pcSum": 42,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3385,
+          "role": "satellite",
+          "pcSum": 41,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        }
+      ]
+    },
+    {
+      "orbitId": "ORBIT-D2",
+      "tier": "D2",
+      "order": [
+        471,
+        2283,
+        3189,
+        1821,
+        1479,
+        2787,
+        3441
+      ],
+      "anchorCount": 7,
+      "satelliteCount": 28,
+      "memberCount": 35,
+      "aggregate": 1260,
+      "members": [
+        {
+          "stateId": 439,
+          "role": "satellite",
+          "pcSum": 27,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 463,
+          "role": "satellite",
+          "pcSum": 27,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 471,
+          "role": "anchor",
+          "pcSum": 28,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 475,
+          "role": "satellite",
+          "pcSum": 29,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 487,
+          "role": "satellite",
+          "pcSum": 29,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 911,
+          "role": "satellite",
+          "pcSum": 30,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 967,
+          "role": "satellite",
+          "pcSum": 33,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1479,
+          "role": "anchor",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1595,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1735,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1763,
+          "role": "satellite",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1819,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1821,
+          "role": "anchor",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2267,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2279,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2283,
+          "role": "anchor",
+          "pcSum": 33,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2285,
+          "role": "satellite",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2291,
+          "role": "satellite",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2503,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2531,
+          "role": "satellite",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2787,
+          "role": "anchor",
+          "pcSum": 39,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2845,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2915,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2929,
+          "role": "satellite",
+          "pcSum": 43,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2957,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3181,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3187,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3189,
+          "role": "anchor",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3193,
+          "role": "satellite",
+          "pcSum": 39,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3299,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3313,
+          "role": "satellite",
+          "pcSum": 43,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3441,
+          "role": "anchor",
+          "pcSum": 44,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3505,
+          "role": "satellite",
+          "pcSum": 45,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3641,
+          "role": "satellite",
+          "pcSum": 42,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3697,
+          "role": "satellite",
+          "pcSum": 45,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        }
+      ]
+    },
+    {
+      "orbitId": "ORBIT-D3",
+      "tier": "D3",
+      "order": [
+        443,
+        2269,
+        1591,
+        2843,
+        3469,
+        1891,
+        2993
+      ],
+      "anchorCount": 7,
+      "satelliteCount": 14,
+      "memberCount": 21,
+      "aggregate": 756,
+      "members": [
+        {
+          "stateId": 379,
+          "role": "satellite",
+          "pcSum": 27,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 443,
+          "role": "anchor",
+          "pcSum": 28,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 445,
+          "role": "satellite",
+          "pcSum": 29,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1135,
+          "role": "satellite",
+          "pcSum": 27,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1583,
+          "role": "satellite",
+          "pcSum": 30,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1591,
+          "role": "anchor",
+          "pcSum": 31,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1891,
+          "role": "anchor",
+          "pcSum": 39,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1955,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1969,
+          "role": "satellite",
+          "pcSum": 43,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2237,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2269,
+          "role": "anchor",
+          "pcSum": 33,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2615,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2839,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2843,
+          "role": "anchor",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2993,
+          "role": "anchor",
+          "pcSum": 44,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3025,
+          "role": "satellite",
+          "pcSum": 45,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3355,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3467,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3469,
+          "role": "anchor",
+          "pcSum": 41,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3725,
+          "role": "satellite",
+          "pcSum": 42,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3781,
+          "role": "satellite",
+          "pcSum": 45,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        }
+      ]
+    },
+    {
+      "orbitId": "ORBIT-D4",
+      "tier": "D4",
+      "order": [
+        631,
+        2363,
+        3229,
+        1831,
+        2963,
+        3529,
+        953
+      ],
+      "anchorCount": 7,
+      "satelliteCount": 28,
+      "memberCount": 35,
+      "aggregate": 1260,
+      "members": [
+        {
+          "stateId": 375,
+          "role": "satellite",
+          "pcSum": 26,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 477,
+          "role": "satellite",
+          "pcSum": 30,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 623,
+          "role": "satellite",
+          "pcSum": 26,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 631,
+          "role": "anchor",
+          "pcSum": 27,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 635,
+          "role": "satellite",
+          "pcSum": 28,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 889,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 953,
+          "role": "anchor",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 985,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1143,
+          "role": "satellite",
+          "pcSum": 28,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1615,
+          "role": "satellite",
+          "pcSum": 31,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1815,
+          "role": "satellite",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1831,
+          "role": "anchor",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1863,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1905,
+          "role": "satellite",
+          "pcSum": 42,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1939,
+          "role": "satellite",
+          "pcSum": 39,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2235,
+          "role": "satellite",
+          "pcSum": 31,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2359,
+          "role": "satellite",
+          "pcSum": 31,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2363,
+          "role": "anchor",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2365,
+          "role": "satellite",
+          "pcSum": 33,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2619,
+          "role": "satellite",
+          "pcSum": 33,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2855,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2955,
+          "role": "satellite",
+          "pcSum": 39,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2963,
+          "role": "anchor",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2979,
+          "role": "satellite",
+          "pcSum": 41,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3017,
+          "role": "satellite",
+          "pcSum": 44,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3165,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3227,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3229,
+          "role": "anchor",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3357,
+          "role": "satellite",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3475,
+          "role": "satellite",
+          "pcSum": 41,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3525,
+          "role": "satellite",
+          "pcSum": 44,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3529,
+          "role": "anchor",
+          "pcSum": 45,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3537,
+          "role": "satellite",
+          "pcSum": 46,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3661,
+          "role": "satellite",
+          "pcSum": 41,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3785,
+          "role": "satellite",
+          "pcSum": 46,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        }
+      ]
+    },
+    {
+      "orbitId": "ORBIT-D5",
+      "tier": "D5",
+      "order": [
+        671,
+        2383,
+        3239,
+        3667,
+        3881,
+        997,
+        1273
+      ],
+      "anchorCount": 7,
+      "satelliteCount": 28,
+      "memberCount": 35,
+      "aggregate": 1260,
+      "members": [
+        {
+          "stateId": 415,
+          "role": "satellite",
+          "pcSum": 25,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 499,
+          "role": "satellite",
+          "pcSum": 31,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 607,
+          "role": "satellite",
+          "pcSum": 25,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 637,
+          "role": "satellite",
+          "pcSum": 29,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 671,
+          "role": "anchor",
+          "pcSum": 26,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 761,
+          "role": "satellite",
+          "pcSum": 34,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 799,
+          "role": "satellite",
+          "pcSum": 27,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 995,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 997,
+          "role": "anchor",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1001,
+          "role": "satellite",
+          "pcSum": 38,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1183,
+          "role": "satellite",
+          "pcSum": 27,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1273,
+          "role": "anchor",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1993,
+          "role": "satellite",
+          "pcSum": 43,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2255,
+          "role": "satellite",
+          "pcSum": 30,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2297,
+          "role": "satellite",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2351,
+          "role": "satellite",
+          "pcSum": 30,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2383,
+          "role": "anchor",
+          "pcSum": 31,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2447,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2545,
+          "role": "satellite",
+          "pcSum": 41,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2639,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3175,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3223,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3239,
+          "role": "anchor",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3271,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3367,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3635,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3659,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3667,
+          "role": "anchor",
+          "pcSum": 41,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3683,
+          "role": "satellite",
+          "pcSum": 42,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3731,
+          "role": "satellite",
+          "pcSum": 42,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3865,
+          "role": "satellite",
+          "pcSum": 45,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3877,
+          "role": "satellite",
+          "pcSum": 45,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3881,
+          "role": "anchor",
+          "pcSum": 46,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3889,
+          "role": "satellite",
+          "pcSum": 47,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3913,
+          "role": "satellite",
+          "pcSum": 47,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        }
+      ]
+    },
+    {
+      "orbitId": "ORBIT-D6",
+      "tier": "D6",
+      "order": [
+        381,
+        1119,
+        2607,
+        3351,
+        3723,
+        3909,
+        2001
+      ],
+      "anchorCount": 7,
+      "satelliteCount": 14,
+      "memberCount": 21,
+      "aggregate": 756,
+      "members": [
+        {
+          "stateId": 191,
+          "role": "satellite",
+          "pcSum": 22,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 253,
+          "role": "satellite",
+          "pcSum": 27,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 381,
+          "role": "anchor",
+          "pcSum": 28,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1087,
+          "role": "satellite",
+          "pcSum": 25,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 1119,
+          "role": "anchor",
+          "pcSum": 26,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2001,
+          "role": "anchor",
+          "pcSum": 44,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2017,
+          "role": "satellite",
+          "pcSum": 45,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2143,
+          "role": "satellite",
+          "pcSum": 27,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2591,
+          "role": "satellite",
+          "pcSum": 30,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2607,
+          "role": "anchor",
+          "pcSum": 31,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3119,
+          "role": "satellite",
+          "pcSum": 32,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3343,
+          "role": "satellite",
+          "pcSum": 35,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3351,
+          "role": "anchor",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3607,
+          "role": "satellite",
+          "pcSum": 37,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3719,
+          "role": "satellite",
+          "pcSum": 40,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3723,
+          "role": "anchor",
+          "pcSum": 41,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3851,
+          "role": "satellite",
+          "pcSum": 42,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3907,
+          "role": "satellite",
+          "pcSum": 45,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3909,
+          "role": "anchor",
+          "pcSum": 46,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3973,
+          "role": "satellite",
+          "pcSum": 47,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 4001,
+          "role": "satellite",
+          "pcSum": 50,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        }
+      ]
+    },
+    {
+      "orbitId": "ORBIT-D7",
+      "tier": "D7",
+      "order": [
+        127,
+        2111,
+        3103,
+        3599,
+        3847,
+        3971,
+        4033
+      ],
+      "anchorCount": 7,
+      "satelliteCount": 0,
+      "memberCount": 7,
+      "aggregate": 252,
+      "members": [
+        {
+          "stateId": 127,
+          "role": "anchor",
+          "pcSum": 21,
+          "predictedOrInheritedOffice": 4,
+          "censusOfficeIndex": 4,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 2111,
+          "role": "anchor",
+          "pcSum": 26,
+          "predictedOrInheritedOffice": 6,
+          "censusOfficeIndex": 6,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3103,
+          "role": "anchor",
+          "pcSum": 31,
+          "predictedOrInheritedOffice": 1,
+          "censusOfficeIndex": 1,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3599,
+          "role": "anchor",
+          "pcSum": 36,
+          "predictedOrInheritedOffice": 3,
+          "censusOfficeIndex": 3,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3847,
+          "role": "anchor",
+          "pcSum": 41,
+          "predictedOrInheritedOffice": 5,
+          "censusOfficeIndex": 5,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 3971,
+          "role": "anchor",
+          "pcSum": 46,
+          "predictedOrInheritedOffice": 0,
+          "censusOfficeIndex": 0,
+          "inheritanceFlag": true
+        },
+        {
+          "stateId": 4033,
+          "role": "anchor",
+          "pcSum": 51,
+          "predictedOrInheritedOffice": 2,
+          "censusOfficeIndex": 2,
+          "inheritanceFlag": true
+        }
+      ]
+    }
+  ],
+  "membershipReDerivation": {
+    "source": "/tmp/opencode/g528-rederivation.json",
+    "sourceSha256": "f03df06576030f4b1a5efad0d286f8c1adf17906c874e2ca860eaf54879e77db",
+    "identical": true
+  },
+  "nonVacuity": {
+    "constraintLevel": {
+      "tamperFixture": {
+        "path": "/tmp/opencode/g528-fixture-tampered-census.json",
+        "sha256": "65685b0550c0ba47675636ab863efbe91a4f1caa7fc77ac4e7bc8036682afe01",
+        "mutations": [
+          "stateId 127 pitchMask bit0 flipped",
+          "stateId 2111 fifthPositions reversed"
+        ]
+      },
+      "gateRejection": {
+        "verdict": "FAIL",
+        "checksPassed": 21,
+        "checksFailed": 3,
+        "failedCheckIds": [
+          "fingerprint",
+          "freshness",
+          "binary-field-equivalence"
+        ],
+        "rejected": true
+      },
+      "inheritanceTamper": {
+        "satellite": 191,
+        "trueAnchor": 381,
+        "wrongAnchor": 631,
+        "trueInheritanceMatches": true,
+        "tamperFlagged": true
+      }
+    },
+    "statisticLevel": {
+      "registeredWitnessPair": {
+        "stateIds": [
+          127,
+          2111
+        ],
+        "pcSums": [
+          21,
+          26
+        ],
+        "distinct": true
+      },
+      "d7OrbitMemberPcSumDistinctCount": 7,
+      "d7OrbitMemberPcSums": [
+        21,
+        26,
+        31,
+        36,
+        41,
+        46,
+        51
+      ],
+      "inconstancyBranchReachable": true
+    },
+    "fixtureSource": "/tmp/opencode/g528-fixtures.json",
+    "fixtureSourceSha256": "36364c8a4feec0b75f75a82f18b1a2c6528bb3fbaa6e3e2ddc61cad1ef50a9da",
+    "note": "fixtures never enter the real input path; their presence in a production run invalidates the run"
+  },
+  "amendmentLineage": "answers the registered question within the frozen boundary only; per the gate entry's routing, any structural or inconstancy finding is reported as-is with successor-boundary rule applying",
+  "d8EnvironmentPin": {
+    "node": "v22.22.0",
+    "platform": "linux",
+    "arch": "x86_64",
+    "python": "Python 3.12.3",
+    "interpreter": "repository .venv (probe-first: import referencing exit 0)",
+    "singlePass": true,
+    "timeoutSeconds": 600,
+    "boundary": "GOV-527"
+  },
+  "fileInventory": {
+    "scope": "execution dependency and output inventory; the production receipt is excluded from its own inventory to avoid a recursive SHA-256 entry",
+    "outputs": {
+      "qa/gov-528-production-aggregate.json": "b16d4cf39b0a855005acdf3bd6917587d870aed43756375cf15f6e05b1b59b21",
+      "qa/gov-528-production-comparison.json": "9886ae9c1c3484c18afdcbc49c5e3c2042b2ecb3e59e2ea09dc231e37ab6f057"
+    },
+    "dependencies": {
+      "canonical/fivefold-incubator/fifth-space-census-v0.json": "88c4accccb0d10098379c5dd38e1eab467c716e39a16882d323ac31b839c2046",
+      "canonical/universal-network-data.json": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+      "orrery/src/generated/bl089-anchoring-remainder-interaction.v1.json": "26a4b196ec141a7f8a96da1bb39463201cb8bd6c3286ed4a645d2c7df0770715",
+      "qa/fifth-space-census-validation.json": "ff336d464f0351feb2d8c60503a1cfada24bd31549a6fd2f8a2cc2f4b8789483",
+      "provenance/DECISION_LEDGER.md": "2d3d23cba005c05a2e69e20aa99376f273acc8704463f7edb7322c75a93c10d8",
+      "scrum/GOV-528-census-orbit-invariance-execution.md": "02889fb21c46b25d64836eaad73fc753ba0cc44449eba12073ca112cb0ebedfa"
+    }
+  },
+  "checks": {
+    "bindingThreeWay": true,
+    "gateGreen": true,
+    "categoryEmittedPerPrecedence": true,
+    "certificateComplete": true,
+    "fullListReporting": "per-orbit values and per-record inheritance flags, stateId-ascending; verdict-only reporting prohibited"
+  },
+  "fences": "this execution disposes GOV-528 within the frozen boundary only; no new boundary; no group action; no cross-census reconciliation; no fallback activation; no topology, admission, runtime, office, or harmonic.C_H authority; single pass - no retry-with-changes; ledger-to-scrum with citation, never reverse; session prose is context, not evidence."
+}
