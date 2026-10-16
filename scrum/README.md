@@ -162,10 +162,12 @@ ORR-512, ORR-513, and ORR-514 run in parallel in Sprint 3 after ORR-511.
 | [GOV-513](GOV-513-d-shadow-complement-span-audit.md) | D-shadow complement-span audit | Sprint 4 | TBD | High | **Done** |
 | [GOV-514](GOV-514-d-tier-compression-interleaving-check.md) | D-tier compression interleaving check | Sprint 4 | TBD | High | **Done** |
 | [GOV-515](GOV-515-ring-force-enumeration-definition.md) | Ring-force enumeration definition gate | Sprint 4 | TBD | High | **Done** |
-| [GOV-516](GOV-516-run-space-d5-derivability-enumeration.md) | Run-space D5 derivability enumeration | Sprint 4 | TBD | High | **Review** |
+| [GOV-516](GOV-516-run-space-d5-derivability-enumeration.md) | Run-space D5 derivability enumeration | Sprint 4 | TBD | High | **Done** |
 | [GOV-517](GOV-517-d5-signature-derivation-definition.md) | D5 signature derivation definition | Sprint 4 | TBD | High | **Done** |
+| [GOV-518](GOV-518-ring-constraint-forcing-enumeration.md) | Ring-constraint forcing-enumeration boundary (freeze-shell) | Sprint 4 | TBD | High | **Done** |
 | [GOV-519](GOV-519-ring-forcing-scaffolding.md) | Ring-forcing negative-control scaffolding | Sprint 4 | TBD | High | **Done** |
 | [GOV-520](GOV-520-ring-constraint-forcing-execution.md) | Ring-constraint forcing execution (gated shell) | Sprint 4 | TBD | High | **Done** |
+| [GOV-527](GOV-527-census-orbit-invariance-boundary.md) | Census-orbit invariance boundary (Track 2 freeze-shell) | Sprint 4 | TBD | High | **Done** |
 | [GOV-528](GOV-528-census-orbit-invariance-execution.md) | Census-orbit invariance execution (Track 2) | Sprint 4 | TBD | High | **Done** |
 
 Research Gate 3 opened EPIC-520 as a research question, not a conclusion, on
