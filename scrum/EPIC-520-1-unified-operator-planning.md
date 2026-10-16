@@ -92,6 +92,10 @@ Consolidated structural invariants registered here and cited by anchor from `GOV
 | `statistic_orbit` | stat-orbit(C) per A2: the set of P(S) over S in C, exactly one D₇-orbit of argmax sets under A1 equivariance; underscore token distinct from the superseded hyphenated comparison-target scaffolding wording; ticket hyphenated stat-orbit(C) prose denotes this token. | Registered here 2026-09-07; cited by GOV-518 A2, A3 and A5. |
 | `equality_mode` | Membership-based comparison per A3 (observed set element of stat-orbit(C), exact set equality); representative-anchored equality rejected as order-dependent per R4; underscore token distinct from the superseded hyphenated comparison-target scaffolding wording. | Registered here 2026-09-07; cited by GOV-518 A3 and A5. |
 | `matches` | A class C matches iff its statistic_orbit contains the comparison_target per A3; verb token, not a category label; underscore token distinct from the superseded hyphenated comparison-target scaffolding wording. | Registered here 2026-09-07; cited by GOV-518 A3 and A5. |
+| `three_part_typology` | The registered governance typology for continuous-facing claims (registered by "Three-Part Continuous Typology registration — docs/THREE_PART_CONTINUOUS_TYPOLOGY.md — 2026-09-07"; content at the cited doc path); hyphenated prose "Three-Part Continuous Typology" denotes this token | Registered here 2026-09-07 |
+| `domesticated_optimization` | Modality 1 of the typology: convex/LP geometry as question generators, executed exclusively in exact rational arithmetic over a stated coefficient ring; no floating-point operations in receipts | Registered here 2026-09-07 |
+| `boundary_conditioned_contact` | Modality 2 of the typology: physical/wave constants admitted strictly as external boundary conditions under registered claim flags (enforcement is a successor's scope); structural correspondence only, never physical assertion | Registered here 2026-09-07 |
+| `excluded_substrate` | Modality 3 of the typology: the discrete bitmask/Q-engine substrate; zero continuous mathematics; native home of discrete-derived scalars | Registered here 2026-09-07 |
 
 ## Acceptance criteria
 
