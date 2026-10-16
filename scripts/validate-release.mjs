@@ -525,7 +525,7 @@ record(
 // ---------------------------------------------------------------------------
 
 const harmonicInvariantValidate = runIn(
-  ".", "python3", ["scripts/validate-harmonic-invariants.py"],
+  ".", path.join(packageRoot, ".venv", "bin", "python3"), ["scripts/validate-harmonic-invariants.py"],
 );
 record(
   "harmonic invariant validation",
