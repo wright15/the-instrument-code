@@ -166,6 +166,7 @@ ORR-512, ORR-513, and ORR-514 run in parallel in Sprint 3 after ORR-511.
 | [GOV-517](GOV-517-d5-signature-derivation-definition.md) | D5 signature derivation definition | Sprint 4 | TBD | High | **Done** |
 | [GOV-519](GOV-519-ring-forcing-scaffolding.md) | Ring-forcing negative-control scaffolding | Sprint 4 | TBD | High | **Done** |
 | [GOV-520](GOV-520-ring-constraint-forcing-execution.md) | Ring-constraint forcing execution (gated shell) | Sprint 4 | TBD | High | **Done** |
+| [GOV-528](GOV-528-census-orbit-invariance-execution.md) | Census-orbit invariance execution (Track 2) | Sprint 4 | TBD | High | **Done** |
 
 Research Gate 3 opened EPIC-520 as a research question, not a conclusion, on
 dual GOV-510/GOV-511 confirmation (`provenance/DECISION_LEDGER.md:65-88`). Its

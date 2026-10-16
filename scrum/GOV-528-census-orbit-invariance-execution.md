@@ -1,6 +1,6 @@
 # GOV-528 - Census-orbit invariance execution (Track 2)
 
-**Status:** Queued (gated behind the planner fidelity review and the maintainer's go) · **Priority:** High · **Points:** TBD · **Track:** Track 2 (aggregate program) · **Sprint:** unassigned
+**Status:** Done — category orbit_invariant (production receipt 19c095d42d2dd5b72be672c6997787de1afa967688ec1021f46a24f4a0cfe0e5); closed per rule 5 · **Priority:** High · **Points:** TBD · **Track:** Track 2 (aggregate program) · **Sprint:** Sprint 4 · **Epic:** EPIC-520
 
 **Depends on:** `provenance/DECISION_LEDGER.md`, "Track 2 acceptance — E7 demonstrated; execution successor opened — 2026-10-16" (the opening record) · the gate entry, "Track 2 gate answer — aggregate design question registered — 2026-10-15" · the GOV-527 acceptance entry, "GOV-527 registration and freeze — 2026-10-16", and its freeze-shell `scrum/GOV-527-census-orbit-invariance-boundary.md` (R1–R8, D1–D10, the frozen outcome categories with mechanical precedence, the stop point) · the E-CAL calibration entry, "E-CAL calibration — Track 2 aggregate registration (E1+E7 paired) — 2026-10-16" · **Blocks:** any aggregate synthesis; the Track 2 execution run
 
