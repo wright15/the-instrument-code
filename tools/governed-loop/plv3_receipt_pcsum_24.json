@@ -1,0 +1,82 @@
+{
+  "absentFromGovernedSet": true,
+  "boundaryCensus": {
+    "distinctValues": 25,
+    "pcSumSpan": [
+      23,
+      49
+    ],
+    "records": 154
+  },
+  "decision": "gamma",
+  "governedCensus": {
+    "distinctValues": 27,
+    "pcSumSpan": [
+      21,
+      51
+    ],
+    "records": 308
+  },
+  "insideGovernedNumericSpan": true,
+  "method": "pcSum computed from pitchMask bits; census_462.json records carry no pcSum key",
+  "novel": true,
+  "primaryWitness": 239,
+  "receiptId": "gamma-pcsum-24",
+  "schemaVersion": "governed-loop.plv3-receipt.pcsum.v1",
+  "substrateSha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+  "value": 24,
+  "witnessCount": 3,
+  "witnesses": [
+    {
+      "forte": "7-5",
+      "name": "Infra-Alt 6\ud834\udd2b\ud834\udd2b7",
+      "pcSum": 24,
+      "pitchClasses": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "pitchMask": 239,
+      "role": "boundary",
+      "stateId": 239
+    },
+    {
+      "forte": "7-9",
+      "name": "Infra-Alt 567",
+      "pcSum": 24,
+      "pitchClasses": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        8
+      ],
+      "pitchMask": 351,
+      "role": "boundary",
+      "stateId": 351
+    },
+    {
+      "forte": "7-3",
+      "name": "Scale 575",
+      "pcSum": 24,
+      "pitchClasses": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        9
+      ],
+      "pitchMask": 575,
+      "role": "boundary",
+      "stateId": 575
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+{
+  "T1_41": {
+    "allOrbitsExact41": true,
+    "c11SpecialForm": "delta = 12*n0 - k; anchored 7-note masks have n0=1, so delta = +5 exactly",
+    "everyAnchoredMaskHasExactlyOnePc0": true,
+    "identityHolds": true,
+    "lift": {
+      "anchoredHeptatonic": 462,
+      "countsConsistent": true,
+      "definition": "phase p in Z12 is the transposition offset applied to an anchored record: the lifted node (record, p) denotes the concrete configuration (T_p(pitchClasses), T_p(root)); the anchored cut (pc 0 of the record) sits at absolute pc p",
+      "everyAnchoredRecordContributes12": true,
+      "heptatonicPairs": 5544,
+      "liftCountsFromP4": {
+        "liftedHeptatonic": 5544,
+        "liftedPentatonic": 3960,
+        "liftedTotal": 9504
+      },
+      "nodeIdentity": "{anchoredId}@{phase}",
+      "operatorEdgeRule": "operator edges lift by equivariance; R1/L1 carry phase p+1 / p-1, all other operators preserve p",
+      "pentatonicPairs": 3960,
+      "totalPairs": 9504
+    },
+    "orbitPhaseSpreads": [
+      {
+        "max": 41.0,
+        "means": [
+          36.0,
+          38.102,
+          38.4898,
+          38.6327,
+          39.0204,
+          38.1837,
+          38.8163,
+          37.9796,
+          38.3673,
+          38.5102,
+          38.898,
+          41.0
+        ],
+        "min": 36.0,
+        "orbitId": "ORBIT-A0",
+        "spread": 5.0,
+        "tier": "A0"
+      },
+      {
+        "max": 41.0,
+        "means": [
+          36.0,
+          38.2,
+          38.6857,
+          37.4571,
+          38.2857,
+          38.4286,
+          38.5714,
+          38.7143,
+          39.5429,
+          38.3143,
+          38.8,
+          41.0
+        ],
+        "min": 36.0,
+        "orbitId": "ORBIT-A1",
+        "spread": 5.0,
+        "tier": "A1"
+      },
+      {
+        "max": 41.0,
+        "means": [
+          36.0,
+          38.102,
+          37.2653,
+          38.3878,
+          37.551,
+          39.1633,
+          37.8367,
+          39.449,
+          38.6122,
+          39.7347,
+          38.898,
+          41.0
+        ],
+        "min": 36.0,
+        "orbitId": "ORBIT-A2",
+        "spread": 5.0,
+        "tier": "A2"
+      },
+      {
+        "max": 41.0,
+        "means": [
+          36.0,
+          36.1429,
+          38.5714,
+          39.8571,
+          39.4286,
+          38.4286,
+          38.5714,
+          37.5714,
+          37.1429,
+          38.4286,
+          40.8571,
+          41.0
+        ],
+        "min": 36.0,
+        "orbitId": "ORBIT-D1",
+        "spread": 5.0,
+        "tier": "D1"
+      },
+      {
+        "max": 41.542857142857144,
+        "means": [
+          36.0,
+          35.4571,
+          36.9714,
+          39.1714,
+          40.0,
+          39.4571,
+          37.5429,
+          37.0,
+          37.8286,
+          40.0286,
+          41.5429,
+          41.0
+        ],
+        "min": 35.457142857142856,
+        "orbitId": "ORBIT-D2",
+        "spread": 6.0857,
+        "tier": "D2"
+      },
+      {
+        "max": 41.0,
+        "means": [
+          36.0,
+          36.1429,
+          36.8571,
+          37.0,
+          36.5714,
+          36.7143,
+          40.2857,
+          40.4286,
+          40.0,
+          40.1429,
+          40.8571,
+          41.0
+        ],
+        "min": 36.0,
+        "orbitId": "ORBIT-D3",
+        "spread": 5.0,
+        "tier": "D3"
+      },
+      {
+        "max": 41.0,
+        "means": [
+          36.0,
+          36.1429,
+          37.3143,
+          37.4571,
+          36.5714,
+          38.0857,
+          38.9143,
+          40.4286,
+          39.5429,
+          39.6857,
+          40.8571,
+          41.0
+        ],
+        "min": 36.0,
+        "orbitId": "ORBIT-D4",
+        "spread": 5.0,
+        "tier": "D4"
+      },
+      {
+        "max": 41.542857142857144,
+        "means": [
+          36.0,
+          35.4571,
+          36.2857,
+          36.4286,
+          37.6,
+          38.4286,
+          38.5714,
+          39.4,
+          40.5714,
+          40.7143,
+          41.5429,
+          41.0
+        ],
+        "min": 35.457142857142856,
+        "orbitId": "ORBIT-D5",
+        "spread": 6.0857,
+        "tier": "D5"
+      },
+      {
+        "max": 43.57142857142857,
+        "means": [
+          36.0,
+          35.0,
+          33.4286,
+          33.5714,
+          34.8571,
+          37.2857,
+          39.7143,
+          42.1429,
+          43.4286,
+          43.5714,
+          42.0,
+          41.0
+        ],
+        "min": 33.42857142857143,
+        "orbitId": "ORBIT-D6",
+        "spread": 10.1429,
+        "tier": "D6"
+      },
+      {
+        "max": 45.857142857142854,
+        "means": [
+          36.0,
+          32.7143,
+          31.1429,
+          31.2857,
+          33.1429,
+          36.7143,
+          40.2857,
+          43.8571,
+          45.7143,
+          45.8571,
+          44.2857,
+          41.0
+        ],
+        "min": 31.142857142857142,
+        "orbitId": "ORBIT-D7",
+        "spread": 14.7143,
+        "tier": "D7"
+      }
+    ],
+    "pc0Counts": {
+      "1": 462
+    },
+    "perOrbitPhase11": [
+      {
+        "n": 49,
+        "orbitId": "ORBIT-A0",
+        "phase0Mean": 36.0,
+        "phase11Exact41": true,
+        "phase11Mean": 41.0
+      },
+      {
+        "n": 35,
+        "orbitId": "ORBIT-A1",
+        "phase0Mean": 36.0,
+        "phase11Exact41": true,
+        "phase11Mean": 41.0
+      },
+      {
+        "n": 49,
+        "orbitId": "ORBIT-A2",
+        "phase0Mean": 36.0,
+        "phase11Exact41": true,
+        "phase11Mean": 41.0
+      },
+      {
+        "n": 21,
+        "orbitId": "ORBIT-D1",
+        "phase0Mean": 36.0,
+        "phase11Exact41": true,
+        "phase11Mean": 41.0
+      },
+      {
+        "n": 35,
+        "orbitId": "ORBIT-D2",
+        "phase0Mean": 36.0,
+        "phase11Exact41": true,
+        "phase11Mean": 41.0
+      },
+      {
+        "n": 21,
+        "orbitId": "ORBIT-D3",
+        "phase0Mean": 36.0,
+        "phase11Exact41": true,
+        "phase11Mean": 41.0
+      },
+      {
+        "n": 35,
+        "orbitId": "ORBIT-D4",
+        "phase0Mean": 36.0,
+        "phase11Exact41": true,
+        "phase11Mean": 41.0
+      },
+      {
+        "n": 35,
+        "orbitId": "ORBIT-D5",
+        "phase0Mean": 36.0,
+        "phase11Exact41": true,
+        "phase11Mean": 41.0
+      },
+      {
+        "n": 21,
+        "orbitId": "ORBIT-D6",
+        "phase0Mean": 36.0,
+        "phase11Exact41": true,
+        "phase11Mean": 41.0
+      },
+      {
+        "n": 7,
+        "orbitId": "ORBIT-D7",
+        "phase0Mean": 36.0,
+        "phase11Exact41": true,
+        "phase11Mean": 41.0
+      }
+    ],
+    "status": "derived from census composition + transposition law; lift-consistent with the admitted candidate record's own phase definition",
+    "wrapCountIdentityChecks": 5544,
+    "wrapCountIdentityFailures": []
+  },
+  "T2_seams": {
+    "assembly": {
+      "familyAAssembled": 5040,
+      "familyBAssembled": 90,
+      "totalAssembledSeams": 5130
+    },
+    "equivariance": {
+      "applications": 3402,
+      "calibration": {
+        "checked": 3402,
+        "failures": 0,
+        "matched": 3402,
+        "method": "anchored reimplementation of the fifteen admitted generators applied to all admitted applications",
+        "verdict": "EXACT"
+      },
+      "carries": {
+        "L1": -1,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "L5": 0,
+        "L6": 0,
+        "L7": 0,
+        "M": 0,
+        "R1": 1,
+        "R2": 0,
+        "R3": 0,
+        "R4": 0,
+        "R5": 0,
+        "R6": 0,
+        "R7": 0
+      },
+      "checks": 40824,
+      "expectedChecks": 40824,
+      "l1Carry": -1,
+      "otherCarriesZero": true,
+      "r1Carry": 1,
+      "rootingDependenceFound": false
+    },
+    "familyA": {
+      "applications": 420,
+      "crossFamily": 418,
+      "histogram": {
+        "L1": {
+          "count": 209,
+          "phaseCarry": -1
+        },
+        "R1": {
+          "count": 209,
+          "phaseCarry": 1
+        }
+      },
+      "intraFamily": 2,
+      "liftedSeamEdges": 5040,
+      "phaseDistance": "R1 +1, L1 -1 (the seam operator moves the cut that carries the phase)"
+    },
+    "familyB": {
+      "crossingHistogram": {
+        "1": 30,
+        "5": 12
+      },
+      "crossings": 90,
+      "pairsWithSharedSubnodes": 42,
+      "phaseDistance": 0
+    },
+    "minimalPatch": {
+      "containment": "the same-phase fiberwise rule restricted to the patch phases",
+      "definition": "the B/C/C# three-phase patch: all lifted nodes with phase in {11, 0, 1}; covers both flanks of the C cut"
+    },
+    "radiusOneVerdict": "PASS"
+  },
+  "schemaVersion": "governed-loop.spike01-evidence.v1",
+  "source": {
+    "censusSha256": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+    "checkpointCommit": "482a1bfb",
+    "probeSha256": "48f513679d505087277d5670952fb860b755832775f5fb5980aa3f71c73330bb"
+  }
+}

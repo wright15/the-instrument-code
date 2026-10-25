@@ -1,0 +1,82 @@
+{
+  "absentFromGovernedSet": true,
+  "boundaryCensus": {
+    "distinctValues": 25,
+    "pcSumSpan": [
+      23,
+      49
+    ],
+    "records": 154
+  },
+  "decision": "gamma",
+  "governedCensus": {
+    "distinctValues": 27,
+    "pcSumSpan": [
+      21,
+      51
+    ],
+    "records": 308
+  },
+  "insideGovernedNumericSpan": true,
+  "method": "pcSum computed from pitchMask bits; census_462.json records carry no pcSum key",
+  "novel": true,
+  "primaryWitness": 3809,
+  "receiptId": "gamma-pcsum-48",
+  "schemaVersion": "governed-loop.plv3-receipt.pcsum.v1",
+  "substrateSha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+  "value": 48,
+  "witnessCount": 3,
+  "witnesses": [
+    {
+      "forte": "7-5",
+      "name": "Borean Mode I",
+      "pcSum": 48,
+      "pitchClasses": [
+        0,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11
+      ],
+      "pitchMask": 3809,
+      "role": "boundary",
+      "stateId": 3809
+    },
+    {
+      "forte": "7-9",
+      "name": "Superlydian Augmented 23\u266f45",
+      "pcSum": 48,
+      "pitchClasses": [
+        0,
+        4,
+        6,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pitchMask": 3921,
+      "role": "boundary",
+      "stateId": 3921
+    },
+    {
+      "forte": "7-3",
+      "name": "Scale 3977",
+      "pcSum": 48,
+      "pitchClasses": [
+        0,
+        3,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pitchMask": 3977,
+      "role": "boundary",
+      "stateId": 3977
+    }
+  ]
+}

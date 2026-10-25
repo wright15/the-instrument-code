@@ -1,0 +1,65 @@
+{
+  "absentFromGovernedSet": true,
+  "boundaryCensus": {
+    "distinctValues": 25,
+    "pcSumSpan": [
+      23,
+      49
+    ],
+    "records": 154
+  },
+  "decision": "gamma",
+  "governedCensus": {
+    "distinctValues": 27,
+    "pcSumSpan": [
+      21,
+      51
+    ],
+    "records": 308
+  },
+  "insideGovernedNumericSpan": true,
+  "method": "pcSum computed from pitchMask bits; census_462.json records carry no pcSum key",
+  "novel": true,
+  "primaryWitness": 3937,
+  "receiptId": "gamma-pcsum-49",
+  "schemaVersion": "governed-loop.plv3-receipt.pcsum.v1",
+  "substrateSha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+  "value": 49,
+  "witnessCount": 2,
+  "witnesses": [
+    {
+      "forte": "7-4",
+      "name": "Scale 3937",
+      "pcSum": 49,
+      "pitchClasses": [
+        0,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pitchMask": 3937,
+      "role": "boundary",
+      "stateId": 3937
+    },
+    {
+      "forte": "7-3",
+      "name": "7-3 rooted state 3985",
+      "pcSum": 49,
+      "pitchClasses": [
+        0,
+        4,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pitchMask": 3985,
+      "role": "boundary",
+      "stateId": 3985
+    }
+  ]
+}

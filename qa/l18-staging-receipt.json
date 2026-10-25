@@ -1,0 +1,448 @@
+{
+  "bridgeExpected": {
+    "count": 24,
+    "missing": [],
+    "resolved": 24,
+    "shaMismatch": []
+  },
+  "closingReport": {
+    "firstUsePin": true,
+    "path": "scrum/plan/l18-landing-closing-report.md",
+    "status": "produced-at-close"
+  },
+  "destination": "tools/governed-loop/",
+  "directive": "L18-INCUBATOR-LANDING rev 1",
+  "generatedAt": "2026-10-25",
+  "ledgerPre": {
+    "bytes": 307304,
+    "lines": 3967,
+    "prefix": "8901b4a3",
+    "sha256": "8901b4a33fadf1f8d20f1bb9f57016f8f75a880ab197775545a77de1a749ad13"
+  },
+  "manifestPre": {
+    "fileCount": 1402,
+    "totalBytes": 90516292
+  },
+  "p0Preservation": {
+    "fileCount": 17,
+    "path": "qa/halt-evidence/twin-hub-convergence-pre-refresh-l18/",
+    "receipt": "preservation-receipt.json",
+    "receiptSha256": "cf09f83f295c77b83b92e1129a6c9943f357788ffedb2c71ee035ba8c8320235"
+  },
+  "realmFileBytes": 3176343,
+  "realmFileCount": 51,
+  "realmFiles": [
+    {
+      "bytes": 194194,
+      "destination": "tools/governed-loop/census_462.json",
+      "match": true,
+      "sha256": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+      "source": "realm/census_462.json"
+    },
+    {
+      "bytes": 91360,
+      "destination": "tools/governed-loop/frozen_ground_truth.json",
+      "match": true,
+      "sha256": "007b0ffe65015bd2c5f1a6fe0df8969961ce8cfb3d499677b143d971e1fc5744",
+      "source": "realm/frozen_ground_truth.json"
+    },
+    {
+      "bytes": 42668,
+      "destination": "tools/governed-loop/frozen_seam_substrate.json",
+      "match": true,
+      "sha256": "8a5e82ac5f3b596720db2b62f2ba82484bab5250d168035e4c84cf9870c90bac",
+      "source": "realm/frozen_seam_substrate.json"
+    },
+    {
+      "bytes": 47207,
+      "destination": "tools/governed-loop/frozen_seam_substrate_v3.json",
+      "match": true,
+      "sha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+      "source": "realm/frozen_seam_substrate_v3.json"
+    },
+    {
+      "bytes": 551287,
+      "destination": "tools/governed-loop/seam_legal_moves_v3.json",
+      "match": true,
+      "sha256": "e6cf62a8eefa0924da9286f2e664c1914d9d620ed2d299929f684fd48225c274",
+      "source": "realm/seam_legal_moves_v3.json"
+    },
+    {
+      "bytes": 44269,
+      "destination": "tools/governed-loop/seam_legal_moves_v2.json",
+      "match": true,
+      "sha256": "c017c3c66e10b803eccb82342d030575c8069434063657fb89b5d56169db4d4b",
+      "source": "realm/seam_legal_moves_v2.json"
+    },
+    {
+      "bytes": 1042979,
+      "destination": "tools/governed-loop/seam_operator_applications.csv",
+      "match": true,
+      "sha256": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e",
+      "source": "realm/seam_operator_applications.csv"
+    },
+    {
+      "bytes": 4434,
+      "destination": "tools/governed-loop/seam_operator_registry.csv",
+      "match": true,
+      "sha256": "e5a9e6929fca048078e0db6ff044facc7137a6ef61e994d74f1d526e27b6482e",
+      "source": "realm/seam_operator_registry.csv"
+    },
+    {
+      "bytes": 42551,
+      "destination": "tools/governed-loop/seam_phase_a_probe.json",
+      "match": true,
+      "sha256": "48f513679d505087277d5670952fb860b755832775f5fb5980aa3f71c73330bb",
+      "source": "realm/seam_phase_a_probe.json"
+    },
+    {
+      "bytes": 42551,
+      "destination": "tools/governed-loop/phase_a_probe.json",
+      "match": true,
+      "sha256": "48f513679d505087277d5670952fb860b755832775f5fb5980aa3f71c73330bb",
+      "source": "realm/phase_a_probe.json"
+    },
+    {
+      "bytes": 320972,
+      "destination": "tools/governed-loop/seam_bipartite_inclusion.json",
+      "match": true,
+      "sha256": "903eebf0e1122d8ba81971abcd7efc8ac934d3bfd7885b98b49e58ab0bbe3e41",
+      "source": "realm/seam_bipartite_inclusion.json"
+    },
+    {
+      "bytes": 194194,
+      "destination": "tools/governed-loop/seam_census_head.json",
+      "match": true,
+      "sha256": "f7e56b2b180c456fd4abc96069796d6737f77d13ba66c751604fe95cd19e6d5a",
+      "source": "realm/seam_census_head.json"
+    },
+    {
+      "bytes": 2731,
+      "destination": "tools/governed-loop/freeze_report.json",
+      "match": true,
+      "sha256": "4e76c1396cf7be8e45619b38bce7b051f75f2c3e9adebd142b07fa9f2de5c7d0",
+      "source": "realm/freeze_report.json"
+    },
+    {
+      "bytes": 1317,
+      "destination": "tools/governed-loop/freeze_report_v2.json",
+      "match": true,
+      "sha256": "da14de46d36aa8f183655bbc56605d7d785dd531f898a25e99805666cbbaefeb",
+      "source": "realm/freeze_report_v2.json"
+    },
+    {
+      "bytes": 6573,
+      "destination": "tools/governed-loop/freeze_report_v3.json",
+      "match": true,
+      "sha256": "1c65a07c37740797b2a16048ddac4c17c9877465e7c03498d783291a4a433683",
+      "source": "realm/freeze_report_v3.json"
+    },
+    {
+      "bytes": 2652,
+      "destination": "tools/governed-loop/plv3_receipts_manifest.json",
+      "match": true,
+      "sha256": "461a16b060e9ffc7c81e3cd8ea4d7f14e1d3e11022984dcb2eae9b36a67a8307",
+      "source": "realm/plv3_receipts_manifest.json"
+    },
+    {
+      "bytes": 1236,
+      "destination": "tools/governed-loop/plv3_receipt_pcsum_23.json",
+      "match": true,
+      "sha256": "f9666daf9f34922c20833357044e8110a7a5df3da2a74cf55454d760e27cd60f",
+      "source": "realm/plv3_receipt_pcsum_23.json"
+    },
+    {
+      "bytes": 1517,
+      "destination": "tools/governed-loop/plv3_receipt_pcsum_24.json",
+      "match": true,
+      "sha256": "0128748ae0a0cb92074e8b12a748f7365af2cd7f13a447b7e26cbc1ffb75298d",
+      "source": "realm/plv3_receipt_pcsum_24.json"
+    },
+    {
+      "bytes": 1527,
+      "destination": "tools/governed-loop/plv3_receipt_pcsum_48.json",
+      "match": true,
+      "sha256": "6bd2e4e752fc533bbab8d4e482f076c080d29bd96717ea3fc3374c05e7718d2e",
+      "source": "realm/plv3_receipt_pcsum_48.json"
+    },
+    {
+      "bytes": 1247,
+      "destination": "tools/governed-loop/plv3_receipt_pcsum_49.json",
+      "match": true,
+      "sha256": "8a06b2113ebb03e67ae4559bfae1c0046b4a2e6368608cc37a8bc39c64a12c6d",
+      "source": "realm/plv3_receipt_pcsum_49.json"
+    },
+    {
+      "bytes": 48313,
+      "destination": "tools/governed-loop/plv3_receipt_boundary_exits.json",
+      "match": true,
+      "sha256": "ea20bc952a5b79e5f1b33aad7011eca7a0984a8e8ebf2986a107b9608299ffe8",
+      "source": "realm/plv3_receipt_boundary_exits.json"
+    },
+    {
+      "bytes": 48316,
+      "destination": "tools/governed-loop/plv3_receipt_boundary_entries.json",
+      "match": true,
+      "sha256": "12ca0625355991441d39cc72f1028cea445d7e148168d6e2a63e8f528f7b8be6",
+      "source": "realm/plv3_receipt_boundary_entries.json"
+    },
+    {
+      "bytes": 952,
+      "destination": "tools/governed-loop/plv3_receipt_crossphase_census.json",
+      "match": true,
+      "sha256": "806dfa06b0d88b159a78b0e1452ceb50434f5524ce416e6293a94bada78cda7b",
+      "source": "realm/plv3_receipt_crossphase_census.json"
+    },
+    {
+      "bytes": 15286,
+      "destination": "tools/governed-loop/plv3_receipt_familyb_classification.json",
+      "match": true,
+      "sha256": "cb2180bd6ea021ed731264827293ee586c96e37f517e694dccb70a1a03c45ffd",
+      "source": "realm/plv3_receipt_familyb_classification.json"
+    },
+    {
+      "bytes": 1579,
+      "destination": "tools/governed-loop/plv3_receipt_beta_supersession.json",
+      "match": true,
+      "sha256": "53a12654a5003e549c83c973e245ec093108ed72fb8ed74ef824c718fc97d778",
+      "source": "realm/plv3_receipt_beta_supersession.json"
+    },
+    {
+      "bytes": 5046,
+      "destination": "tools/governed-loop/plv3_receipt_nonvacuity.json",
+      "match": true,
+      "sha256": "cb9fa9e65b0ad5425d7c3f40b82d05a9d8b08f1b02f20812549cf4e306c12aae",
+      "source": "realm/plv3_receipt_nonvacuity.json"
+    },
+    {
+      "bytes": 3180,
+      "destination": "tools/governed-loop/plv3_receipt_case501.json",
+      "match": true,
+      "sha256": "0fab6bc4b2710dabe02105d98fc16f4e546e367ac7f4773a44ab284c23fc38d7",
+      "source": "realm/plv3_receipt_case501.json"
+    },
+    {
+      "bytes": 7164,
+      "destination": "tools/governed-loop/gate_log_mvp2_live_mac1.jsonl",
+      "match": true,
+      "sha256": "de90eb47d05cfe28646929123f3a01efe1cc156b413676473894c541f1620c29",
+      "source": "realm/gate_log_mvp2_live_mac1.jsonl"
+    },
+    {
+      "bytes": 583,
+      "destination": "tools/governed-loop/dispute_analysis_mvp2c.json",
+      "match": true,
+      "sha256": "df90f405e653e7d148f4bd60c405e47d87a7c7e8c2c893f3ecbbefa43d303d50",
+      "source": "realm/dispute_analysis_mvp2c.json"
+    },
+    {
+      "bytes": 8836,
+      "destination": "tools/governed-loop/spike01_evidence.json",
+      "match": true,
+      "sha256": "cb170c0d00cea3f2db2b69779dc339848befa60f5a78d257c8680f99f6e56fec",
+      "source": "realm/spike01_evidence.json"
+    },
+    {
+      "bytes": 71590,
+      "destination": "tools/governed-loop/degenerate_boundary.jsonl",
+      "match": true,
+      "sha256": "f728f8eedec6606a39f95fa41188126aec4447bc1907375fb3eb51395e1d48e1",
+      "source": "realm/degenerate_boundary.jsonl"
+    },
+    {
+      "bytes": 1056,
+      "destination": "tools/governed-loop/degenerate_boundary_report.json",
+      "match": true,
+      "sha256": "339dc8934bb0e5a1f3ec8438c9b2d0f9dd0efabc42bb732322ec3e60093e74d6",
+      "source": "realm/degenerate_boundary_report.json"
+    },
+    {
+      "bytes": 38909,
+      "destination": "tools/governed-loop/mvp2.py",
+      "match": true,
+      "sha256": "fb9db3cd69234d41417582e0ffae27bbb15c52c777fe3856cf598b2664ca736a",
+      "source": "realm/mvp2.py"
+    },
+    {
+      "bytes": 24735,
+      "destination": "tools/governed-loop/orrery_nav_bridge.py",
+      "match": true,
+      "sha256": "ae6502b960924b7c94b663ef9ccac67558533833e04500f0722f9c4fd2edc98e",
+      "source": "realm/orrery_nav_bridge.py"
+    },
+    {
+      "bytes": 17265,
+      "destination": "tools/governed-loop/orrery_nav_overlay.js",
+      "match": true,
+      "sha256": "ad558decfa6547c2b6f7b3ceb9247326a0ee9508df5e9c4523ee90b4a64a0613",
+      "source": "realm/orrery_nav_overlay.js"
+    },
+    {
+      "bytes": 2518,
+      "destination": "tools/governed-loop/orrery_nav_run.sh",
+      "match": true,
+      "sha256": "2678f719345defd83200a66802f1bcd5faac4e8c6ed22095c752e465eb6082fc",
+      "source": "realm/orrery_nav_run.sh"
+    },
+    {
+      "bytes": 2521,
+      "destination": "tools/governed-loop/bridge_init.js",
+      "match": true,
+      "sha256": "aef2b7429e939dd1cf3e71f96ba8d9790e782b1fc8fc73bf0c59d8ee7336406a",
+      "source": "realm/bridge_init.js"
+    },
+    {
+      "bytes": 27063,
+      "destination": "tools/governed-loop/mvp2_orrery_nav_smoke.py",
+      "match": true,
+      "sha256": "fe81ee3adb3228e788302530471a93f95797cf98c33806ff820b150fb1bce6ec",
+      "source": "realm/mvp2_orrery_nav_smoke.py"
+    },
+    {
+      "bytes": 3766,
+      "destination": "tools/governed-loop/orrery_nav_opening.py",
+      "match": true,
+      "sha256": "2461ac90fe63f9db0ea721124a60133f31f1cacbe0c543f6be426b3799f907a2",
+      "source": "realm/orrery_nav_opening.py"
+    },
+    {
+      "bytes": 2901,
+      "destination": "tools/governed-loop/orrery_nav_opening_probe.js",
+      "match": true,
+      "sha256": "597563ec22a030c9a8965f800056acbcd232aef5f97c3bd7bd81c590998aedfd",
+      "source": "realm/orrery_nav_opening_probe.js"
+    },
+    {
+      "bytes": 7757,
+      "destination": "tools/governed-loop/orrery_nav_opening.json",
+      "match": true,
+      "sha256": "a29ba9a317d010cc64ea7c872c7089312c0f8a1ad405ed58147c679485a85673",
+      "source": "realm/orrery_nav_opening.json"
+    },
+    {
+      "bytes": 56078,
+      "destination": "tools/governed-loop/orrery_nav_report.json",
+      "match": true,
+      "sha256": "8c95483ebb745e85969eb555060f8f3dca1995ee0f59e46a8638e0b23bd9477b",
+      "source": "realm/orrery_nav_report.json"
+    },
+    {
+      "bytes": 14964,
+      "destination": "tools/governed-loop/policy-v3-registration.md",
+      "match": true,
+      "sha256": "48290a2fa89dcaf4e77d91dc134af69db252dc625f2ccb0bd6e97973de4a2357",
+      "source": "realm/policy-v3-registration.md"
+    },
+    {
+      "bytes": 14591,
+      "destination": "tools/governed-loop/freeze.py",
+      "match": true,
+      "sha256": "78c939ea1d9bbf710c56647f641b624854338c2f4328368d785686da2bd0a50f",
+      "source": "realm/freeze.py"
+    },
+    {
+      "bytes": 11715,
+      "destination": "tools/governed-loop/freeze_v2.py",
+      "match": true,
+      "sha256": "53ff56c385ca1bcf36ef827e90629aab7831a3bd7a3ed5a06057800d79675e12",
+      "source": "realm/freeze_v2.py"
+    },
+    {
+      "bytes": 8206,
+      "destination": "tools/governed-loop/spike01.py",
+      "match": true,
+      "sha256": "1e7bbbc318aac79b02911f74d3635328cbcd17b2f2083ca7fa76a3167186878b",
+      "source": "realm/spike01.py"
+    },
+    {
+      "bytes": 3929,
+      "destination": "tools/governed-loop/analyze_disputes.py",
+      "match": true,
+      "sha256": "8328798ad20bc2eb03b5e9dddc4de7f98269663133e11a79f06b1e61d354217d",
+      "source": "realm/analyze_disputes.py"
+    },
+    {
+      "bytes": 46053,
+      "destination": "tools/governed-loop/seam_build_phase_a_probe.mjs",
+      "match": true,
+      "sha256": "59deb0e42a9806c8136ec70349f4707c025cd5d2ab97fb7e723b490a14c3c0c8",
+      "source": "realm/seam_build_phase_a_probe.mjs"
+    },
+    {
+      "bytes": 21564,
+      "destination": "tools/governed-loop/seam_validate_phase_a_probe.mjs",
+      "match": true,
+      "sha256": "8177b23d20446e377318af36d5303b1c7dbc38d6a80ba5f1cab15a50a8c7d9ee",
+      "source": "realm/seam_validate_phase_a_probe.mjs"
+    },
+    {
+      "bytes": 13265,
+      "destination": "tools/governed-loop/seam_rl_operator_math.md",
+      "match": true,
+      "sha256": "ab5746357090e8e314b019f41107664e9c701f08f266b00a34784623e00c4f4b",
+      "source": "realm/seam_rl_operator_math.md"
+    },
+    {
+      "bytes": 9176,
+      "destination": "tools/governed-loop/spike-01-phase-policy.md",
+      "match": true,
+      "sha256": "015d0b4332edc676df4df3f0849ae05287fa324e6c3f275487fb9b56da0465e2",
+      "source": "realm/spike-01-phase-policy.md"
+    }
+  ],
+  "recordCount": 7,
+  "records": [
+    {
+      "bytes": 20433,
+      "firstUsePin": true,
+      "path": "scrum/plan/orrery-nav-1-directive-rev2.1.md",
+      "sha256": "ebae8de1f08856ca2ed86208aac9843e425a5d4d0a0ebefd0082b178f31aa3ad",
+      "sourceType": "thread-text-as-cut"
+    },
+    {
+      "bytes": 9209,
+      "firstUsePin": true,
+      "path": "scrum/plan/orrery-nav-1-closing-report.md",
+      "sha256": "8649d73b715f5af8d9df1015e3292ce74dc6172e4c8e431dd17169b0b4580999",
+      "sourceType": "thread-text-as-issued"
+    },
+    {
+      "bytes": 2216,
+      "firstUsePin": true,
+      "path": "scrum/plan/orrery-nav-1-acceptance-record.md",
+      "sha256": "d45e78a8d1dc2fc5b3bcddff3c962bdf94b7be8eaca92a3583129615b87ea3e0",
+      "sourceType": "embedded-SS6.B-verbatim"
+    },
+    {
+      "bytes": 1013,
+      "firstUsePin": true,
+      "path": "scrum/plan/orrery-nav-1-f3-erratum.md",
+      "sha256": "f8f3ae77dda29552796f784f75f9bc774287ea7c3ff19ba9aaf3e9c2b320fc9b",
+      "sourceType": "embedded-SS6.A-verbatim"
+    },
+    {
+      "bytes": 1911,
+      "firstUsePin": true,
+      "path": "scrum/plan/l18-landing-ruling.md",
+      "sha256": "de102fac5ec8b59492abf9b05983fe5e8f4be1b1aad1be5e95928bb23db508a9",
+      "sourceType": "embedded-SS6.C-verbatim"
+    },
+    {
+      "bytes": 26841,
+      "firstUsePin": true,
+      "path": "scrum/plan/l18-phase0-report.md",
+      "sha256": "41e2cd9ef1a1a0ade095ecb8f11eb8db36c7186d4f0cd199ee27956852bb7b4f",
+      "sourceType": "thread-text-as-issued"
+    },
+    {
+      "bytes": 17912,
+      "firstUsePin": true,
+      "path": "scrum/plan/l18-incubator-landing-directive-rev1.md",
+      "sha256": "80cc118b56e08c15ff505477b62af8fe9d66135c2b431d5f3862dc0811c3ebe4",
+      "sourceType": "thread-text-as-cut"
+    }
+  ],
+  "repoHeadPre": "65c72478d83ce3982e51e24d9422191510e89962",
+  "schemaVersion": "seven-governors.l18-staging-receipt.v1",
+  "status": "staged"
+}

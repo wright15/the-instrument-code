@@ -1,0 +1,70 @@
+{
+  "checkpointCommit": "482a1bfb",
+  "ecalEquivalence": {
+    "censusRecordsIdenticalToExecution": true,
+    "gateCheckInventoryIdenticalToExecution": true,
+    "gateInventory24of24": true,
+    "networkByteIdentical": true,
+    "verdict": "PAYLOAD_EQUIVALENT"
+  },
+  "executionCommit": "a27bd3e",
+  "files": {
+    "census_462.json": {
+      "ecalPin": "88c4accccb0d10098379c5dd38e1eab467c716e39a16882d323ac31b839c2046",
+      "ecalPinFileAtExecution": {
+        "match": true,
+        "path": "census_exec.json",
+        "rawSha256": "88c4accccb0d10098379c5dd38e1eab467c716e39a16882d323ac31b839c2046"
+      },
+      "note": "closing commit rebound candidateFingerprint + evidenceBindings only; records[462] payload identical to a27bd3e",
+      "payloadRecordsMatchExecution": true,
+      "rawBytePinMatch": false,
+      "rawSha256": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a"
+    },
+    "census_val.json": {
+      "checkInventoryMatchesExecution": true,
+      "checksFailed": 0,
+      "checksPassed": 24,
+      "ecalPin": "ff336d464f0351feb2d8c60503a1cfada24bd31549a6fd2f8a2cc2f4b8789483",
+      "ecalPinFileAtExecution": {
+        "match": true,
+        "path": "census_val_exec.json",
+        "rawSha256": "ff336d464f0351feb2d8c60503a1cfada24bd31549a6fd2f8a2cc2f4b8789483"
+      },
+      "note": "checksPassed/Failed and check inventory stable; fingerprints rebound at closing",
+      "rawBytePinMatch": false,
+      "rawSha256": "bebb7afd2c0a208bc8e992ba709139b0e4068122187efe37ca2775b1d539a948",
+      "verdict": "PASS"
+    },
+    "network_data.json": {
+      "ecalPin": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc",
+      "payloadRecordsMatchExecution": true,
+      "rawBytePinMatch": true,
+      "rawSha256": "21e2a632837ecf40fe9229e9eb4ec0a5cceb9e2043fe89cb8e1d320518d7bdbc"
+    }
+  },
+  "frozenGroundTruthSha256": "007b0ffe65015bd2c5f1a6fe0df8969961ce8cfb3d499677b143d971e1fc5744",
+  "proposerMath": {
+    "expectedVetoMixedRandomUniformArm308": 0.49166174734356555,
+    "expectedVetoMixedRandomUniformArm462": 0.49444116489571033,
+    "familySizeSquares": 1582,
+    "pSameFamilyBothUniform308": 0.01667650531286895,
+    "pSameFamilyUniformArmOver462": 0.0111176702085793
+  },
+  "schemaVersion": "governed-loop.freeze-report.v1",
+  "structuralChecks": {
+    "anchorOfficeRule": "70/70",
+    "censusCardinality462": true,
+    "distinctSources63": true,
+    "everyAnchoredMaskHasPc0": true,
+    "families70": true,
+    "familyMembers308": true,
+    "governsCoverage238": true,
+    "orbitMeans36": true,
+    "orbitUnionEqualsOfficeSupported": true,
+    "orbits10": true,
+    "roleReconciliation": true,
+    "satelliteInheritance": "238/238",
+    "selfRootedEqualsD7": true
+  }
+}

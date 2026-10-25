@@ -1,0 +1,121 @@
+{
+  "changed": false,
+  "classification": "still-ungoverned",
+  "contrast": {
+    "licensedBoundaryEntry": {
+      "candidate": [
+        501,
+        1
+      ],
+      "candidate_pcSum": 32,
+      "candidate_role": "boundary",
+      "checks": {
+        "boundary_endpoint": true,
+        "candidate_governing_root": null,
+        "candidate_membership": true,
+        "current_governing_root": 997,
+        "hamming": 4,
+        "pair_known_attachment": false,
+        "phaseDelta": 1,
+        "same_family": false,
+        "self_transition": false
+      },
+      "citation": "FamilyA:R1",
+      "current": [
+        1001,
+        0
+      ],
+      "current_pcSum": 38,
+      "current_role": "satellite",
+      "reasons": [],
+      "verdict": "ACCEPT"
+    },
+    "licensedBoundaryExit": {
+      "candidate": [
+        247,
+        1
+      ],
+      "candidate_pcSum": 25,
+      "candidate_role": "boundary",
+      "checks": {
+        "boundary_endpoint": true,
+        "candidate_governing_root": null,
+        "candidate_membership": true,
+        "current_governing_root": null,
+        "hamming": 4,
+        "pair_known_attachment": false,
+        "phaseDelta": 1,
+        "same_family": false,
+        "self_transition": false
+      },
+      "citation": "FamilyA:R1",
+      "current": [
+        493,
+        0
+      ],
+      "current_pcSum": 31,
+      "current_role": "boundary",
+      "reasons": [],
+      "verdict": "ACCEPT"
+    }
+  },
+  "decision": "gamma/case-501",
+  "familyBPartnersOfCurrent": [],
+  "firingRulePath": "mvp2.py:183-184 (boundary_endpoint -> ungoverned-transition)",
+  "licensedEdgesFromCurrent": [],
+  "notes": "The candidate is a boundary state, the current is office-supported, the phase delta is 0, there is no R1/L1 row from 2771 to 501, and 501 is not a Family B partner of 2771. The v3 cross-phase set does not contain the transition; the boundary rule fires unchanged. Scope: licensed-seam context.",
+  "originalLog": {
+    "candidate": [
+      501,
+      11
+    ],
+    "current": [
+      2771,
+      11
+    ],
+    "dispute": true,
+    "path": "gate_log_mvp2_live_mac1.jsonl",
+    "reasons": [
+      "ungoverned-transition"
+    ],
+    "seamCitation": null,
+    "seq": 5,
+    "sha256": "de90eb47d05cfe28646929123f3a01efe1cc156b413676473894c541f1620c29",
+    "verdict": "REJECT"
+  },
+  "phaseDelta": 0,
+  "receiptId": "case-501-v3",
+  "schemaVersion": "governed-loop.plv3-receipt.case501.v1",
+  "scope": "licensed-seam",
+  "substrateSha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+  "v3Rerun": {
+    "candidate": [
+      501,
+      11
+    ],
+    "candidate_pcSum": 32,
+    "candidate_role": "boundary",
+    "checks": {
+      "boundary_endpoint": true,
+      "candidate_governing_root": null,
+      "candidate_membership": true,
+      "current_governing_root": 2773,
+      "hamming": 6,
+      "pair_known_attachment": false,
+      "phaseDelta": 0,
+      "same_family": false,
+      "self_transition": false
+    },
+    "citation": null,
+    "current": [
+      2771,
+      11
+    ],
+    "current_pcSum": 38,
+    "current_role": "satellite",
+    "reasons": [
+      "ungoverned-transition"
+    ],
+    "verdict": "REJECT"
+  }
+}

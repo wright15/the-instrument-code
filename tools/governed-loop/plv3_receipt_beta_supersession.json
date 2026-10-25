@@ -1,0 +1,46 @@
+{
+  "aliasResolution": {
+    "leg1CountIdentity": {
+      "moves": 60,
+      "operators": 12
+    },
+    "leg2SubstrateLineagePin": {
+      "path": "frozen_seam_substrate.json",
+      "sha256": "c017c3c66e10b803eccb82342d030575c8069434063657fb89b5d56169db4d4b",
+      "sourceFilesEntry": "seam_legal_moves_v2.json"
+    },
+    "leg3RecordedInCombinedEntry": {
+      "path": "policy-v3-registration.md",
+      "section": "3",
+      "status": "recorded"
+    },
+    "legitimate": true
+  },
+  "decision": "beta",
+  "receiptId": "beta-supersession",
+  "schemaVersion": "governed-loop.plv3-receipt.beta-supersession.v1",
+  "substrateSha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+  "successor": {
+    "artifact": "seam_legal_moves_v3.json",
+    "catalogFingerprint": "e3db04957f10c64c9b33120e0b6b777b6ce8b430b848732903afb2e39bf1ef74",
+    "catalogId": "governed-loop.gate-legal-seam-edges.v1",
+    "familyALiftedEdges": 5040,
+    "familyBBridges": 90,
+    "gateLicensedOperators": [
+      "R1",
+      "L1"
+    ],
+    "seamMoves": 5130,
+    "sha256": "e6cf62a8eefa0924da9286f2e664c1914d9d620ed2d299929f684fd48225c274"
+  },
+  "superseded": {
+    "alias": "legal-moves.v2",
+    "artifact": "seam_legal_moves_v2.json",
+    "catalogFingerprint": "8a4b1b58f562502eb6b149d8d5cb9223fc0ed69007004d7d2466f7bd58f2e48d",
+    "catalogId": "harmonic-orrery.parallel-anchor-edges.v1",
+    "disposition": "readable as lineage; not live authority",
+    "moves": 60,
+    "operators": 12,
+    "sha256": "c017c3c66e10b803eccb82342d030575c8069434063657fb89b5d56169db4d4b"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "baseApplications": 420,
+  "cross735": 418,
+  "decision": "alpha",
+  "definition": "420 R1/L1 applications x 12 lifted images = 5,040 lifted edges; edge (source,p) -> (target,(p+carry) mod 12); R1 carry +1, L1 carry -1",
+  "edgeSetDigest": "7c428a86e6fa60b632eab448a4946c42d79949c4010981dad81e455b081d6b39",
+  "excludedFamilyB": {
+    "crossings": 90,
+    "pairs": 42,
+    "phaseDistance": 0,
+    "reason": "same-phase bridges within the seam story; outside the cross-phase transition set"
+  },
+  "intra735": {
+    "L1": 1,
+    "R1": 1,
+    "total": 2
+  },
+  "liftedEdges": 5040,
+  "lowered": 2520,
+  "noOtherCrossPhaseEdges": true,
+  "operatorCounts": {
+    "L1": 210,
+    "R1": 210
+  },
+  "phases": 12,
+  "raised": 2520,
+  "receiptId": "alpha-crossphase-census",
+  "schemaVersion": "governed-loop.plv3-receipt.crossphase-census.v1",
+  "substrateSha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+  "uniqueEdges": 5040
+}

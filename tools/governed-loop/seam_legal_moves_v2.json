@@ -1,0 +1,1586 @@
+{
+  "schemaVersion": "harmonic-orrery.legal-moves.v2",
+  "catalogId": "harmonic-orrery.parallel-anchor-edges.v1",
+  "scope": {
+    "nodesSchemaVersion": "harmonic-orrery.nodes.v2",
+    "harmonicDescriptorReleaseId": "harmonic-compression-candidate:CH_A012_q_v1:1.0.0",
+    "harmonicDescriptorFingerprint": "b2e57f6b0e2d8ac10113dc1861430ff5c205dedb8b079312232b2a76f167df5f",
+    "anchorIds": [
+      1367,
+      1371,
+      1373,
+      1387,
+      1389,
+      1397,
+      1451,
+      1453,
+      1461,
+      1493,
+      1707,
+      1709,
+      1717,
+      1749,
+      1877,
+      2731,
+      2733,
+      2741,
+      2773,
+      2901,
+      3413
+    ],
+    "anchors": [
+      {
+        "stateId": 1367,
+        "tier": "A2",
+        "forteFamily": "7-33",
+        "office": "Moon"
+      },
+      {
+        "stateId": 1371,
+        "tier": "A1",
+        "forteFamily": "7-34",
+        "office": "Sun"
+      },
+      {
+        "stateId": 1373,
+        "tier": "A2",
+        "forteFamily": "7-33",
+        "office": "Saturn"
+      },
+      {
+        "stateId": 1387,
+        "tier": "A0",
+        "forteFamily": "7-35",
+        "office": "Saturn"
+      },
+      {
+        "stateId": 1389,
+        "tier": "A1",
+        "forteFamily": "7-34",
+        "office": "Venus"
+      },
+      {
+        "stateId": 1397,
+        "tier": "A2",
+        "forteFamily": "7-33",
+        "office": "Jupiter"
+      },
+      {
+        "stateId": 1451,
+        "tier": "A0",
+        "forteFamily": "7-35",
+        "office": "Venus"
+      },
+      {
+        "stateId": 1453,
+        "tier": "A0",
+        "forteFamily": "7-35",
+        "office": "Jupiter"
+      },
+      {
+        "stateId": 1461,
+        "tier": "A1",
+        "forteFamily": "7-34",
+        "office": "Mercury"
+      },
+      {
+        "stateId": 1493,
+        "tier": "A2",
+        "forteFamily": "7-33",
+        "office": "Mars"
+      },
+      {
+        "stateId": 1707,
+        "tier": "A1",
+        "forteFamily": "7-34",
+        "office": "Jupiter"
+      },
+      {
+        "stateId": 1709,
+        "tier": "A0",
+        "forteFamily": "7-35",
+        "office": "Mercury"
+      },
+      {
+        "stateId": 1717,
+        "tier": "A0",
+        "forteFamily": "7-35",
+        "office": "Mars"
+      },
+      {
+        "stateId": 1749,
+        "tier": "A1",
+        "forteFamily": "7-34",
+        "office": "Moon"
+      },
+      {
+        "stateId": 1877,
+        "tier": "A2",
+        "forteFamily": "7-33",
+        "office": "Sun"
+      },
+      {
+        "stateId": 2731,
+        "tier": "A2",
+        "forteFamily": "7-33",
+        "office": "Mercury"
+      },
+      {
+        "stateId": 2733,
+        "tier": "A1",
+        "forteFamily": "7-34",
+        "office": "Mars"
+      },
+      {
+        "stateId": 2741,
+        "tier": "A0",
+        "forteFamily": "7-35",
+        "office": "Moon"
+      },
+      {
+        "stateId": 2773,
+        "tier": "A0",
+        "forteFamily": "7-35",
+        "office": "Sun"
+      },
+      {
+        "stateId": 2901,
+        "tier": "A1",
+        "forteFamily": "7-34",
+        "office": "Saturn"
+      },
+      {
+        "stateId": 3413,
+        "tier": "A2",
+        "forteFamily": "7-33",
+        "office": "Venus"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "artifact": "canonical/harmonic-compression-candidates/CH_A012_q_v1.json",
+      "sha256": "2c6ffae3acc7d5e6bc7154783967ad463d99fab96c0e410b69b27fb21af59c6e",
+      "role": "A0-A2 anchor scope"
+    },
+    {
+      "artifact": "seven-governors-mutation-algebra-audit/audit/operator-registry.csv",
+      "sha256": "e5a9e6929fca048078e0db6ff044facc7137a6ef61e994d74f1d526e27b6482e",
+      "role": "parallel operator metadata (fixed_degree_shift)"
+    },
+    {
+      "artifact": "seven-governors-mutation-algebra-audit/audit/operator-applications.csv",
+      "sha256": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e",
+      "role": "source-backed parallel applications (R/L)"
+    }
+  ],
+  "operators": [
+    {
+      "operatorId": "L2",
+      "notation": "L_2",
+      "name": "Lower Degree 2 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 2,
+      "degreeGovernor": "Jupiter",
+      "direction": "lower",
+      "inverseOperatorId": "R2",
+      "partial": true,
+      "status": "structurally_validated"
+    },
+    {
+      "operatorId": "L3",
+      "notation": "L_3",
+      "name": "Lower Degree 3 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 3,
+      "degreeGovernor": "Mars",
+      "direction": "lower",
+      "inverseOperatorId": "R3",
+      "partial": true,
+      "status": "structurally_validated"
+    },
+    {
+      "operatorId": "L4",
+      "notation": "L_4",
+      "name": "Lower Degree 4 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 4,
+      "degreeGovernor": "Sun",
+      "direction": "lower",
+      "inverseOperatorId": "R4",
+      "partial": true,
+      "status": "structurally_validated"
+    },
+    {
+      "operatorId": "L5",
+      "notation": "L_5",
+      "name": "Lower Degree 5 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 5,
+      "degreeGovernor": "Venus",
+      "direction": "lower",
+      "inverseOperatorId": "R5",
+      "partial": true,
+      "status": "structurally_validated"
+    },
+    {
+      "operatorId": "L6",
+      "notation": "L_6",
+      "name": "Lower Degree 6 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 6,
+      "degreeGovernor": "Mercury",
+      "direction": "lower",
+      "inverseOperatorId": "R6",
+      "partial": true,
+      "status": "structurally_validated"
+    },
+    {
+      "operatorId": "L7",
+      "notation": "L_7",
+      "name": "Lower Degree 7 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 7,
+      "degreeGovernor": "Moon",
+      "direction": "lower",
+      "inverseOperatorId": "R7",
+      "partial": true,
+      "status": "structurally_validated"
+    },
+    {
+      "operatorId": "R2",
+      "notation": "R_2",
+      "name": "Raise Degree 2 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 2,
+      "degreeGovernor": "Jupiter",
+      "direction": "raise",
+      "inverseOperatorId": "L2",
+      "partial": true,
+      "status": "structurally_validated"
+    },
+    {
+      "operatorId": "R3",
+      "notation": "R_3",
+      "name": "Raise Degree 3 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 3,
+      "degreeGovernor": "Mars",
+      "direction": "raise",
+      "inverseOperatorId": "L3",
+      "partial": true,
+      "status": "structurally_validated"
+    },
+    {
+      "operatorId": "R4",
+      "notation": "R_4",
+      "name": "Raise Degree 4 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 4,
+      "degreeGovernor": "Sun",
+      "direction": "raise",
+      "inverseOperatorId": "L4",
+      "partial": true,
+      "status": "structurally_validated"
+    },
+    {
+      "operatorId": "R5",
+      "notation": "R_5",
+      "name": "Raise Degree 5 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 5,
+      "degreeGovernor": "Venus",
+      "direction": "raise",
+      "inverseOperatorId": "L5",
+      "partial": true,
+      "status": "structurally_validated"
+    },
+    {
+      "operatorId": "R6",
+      "notation": "R_6",
+      "name": "Raise Degree 6 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 6,
+      "degreeGovernor": "Mercury",
+      "direction": "raise",
+      "inverseOperatorId": "L6",
+      "partial": true,
+      "status": "structurally_validated"
+    },
+    {
+      "operatorId": "R7",
+      "notation": "R_7",
+      "name": "Raise Degree 7 by one semitone",
+      "operatorClass": "fixed_degree_shift",
+      "degree": 7,
+      "degreeGovernor": "Moon",
+      "direction": "raise",
+      "inverseOperatorId": "L7",
+      "partial": true,
+      "status": "structurally_validated"
+    }
+  ],
+  "moves": [
+    {
+      "id": "R3:1367:1371",
+      "sourceId": 1367,
+      "targetId": 1371,
+      "operatorId": "R3",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R3:1367:1371",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1367:1371"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1367:1371"
+        ]
+      }
+    },
+    {
+      "id": "L3:1371:1367",
+      "sourceId": 1371,
+      "targetId": 1367,
+      "operatorId": "L3",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L3:1371:1367",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A1:1371:1367:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A1:1371:1367:0"
+        ]
+      }
+    },
+    {
+      "id": "R2:1371:1373",
+      "sourceId": 1371,
+      "targetId": 1373,
+      "operatorId": "R2",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R2:1371:1373",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A1:1371:1373:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A1:1371:1373:0"
+        ]
+      }
+    },
+    {
+      "id": "R4:1371:1387",
+      "sourceId": 1371,
+      "targetId": 1387,
+      "operatorId": "R4",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R4:1371:1387",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1371:1387"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1371:1387"
+        ]
+      }
+    },
+    {
+      "id": "L2:1373:1371",
+      "sourceId": 1373,
+      "targetId": 1371,
+      "operatorId": "L2",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L2:1373:1371",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1371:1373"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1371:1373"
+        ]
+      }
+    },
+    {
+      "id": "R4:1373:1389",
+      "sourceId": 1373,
+      "targetId": 1389,
+      "operatorId": "R4",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R4:1373:1389",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1373:1389"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1373:1389"
+        ]
+      }
+    },
+    {
+      "id": "L4:1387:1371",
+      "sourceId": 1387,
+      "targetId": 1371,
+      "operatorId": "L4",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L4:1387:1371",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A0:1387:1371:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A0:1387:1371:0"
+        ]
+      }
+    },
+    {
+      "id": "R2:1387:1389",
+      "sourceId": 1387,
+      "targetId": 1389,
+      "operatorId": "R2",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R2:1387:1389",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A0:1387:1389:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A0:1387:1389:0"
+        ]
+      }
+    },
+    {
+      "id": "R5:1387:1451",
+      "sourceId": 1387,
+      "targetId": 1451,
+      "operatorId": "R5",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R5:1387:1451",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1387:1451"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1387:1451"
+        ]
+      }
+    },
+    {
+      "id": "L4:1389:1373",
+      "sourceId": 1389,
+      "targetId": 1373,
+      "operatorId": "L4",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L4:1389:1373",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A1:1389:1373:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A1:1389:1373:0"
+        ]
+      }
+    },
+    {
+      "id": "L2:1389:1387",
+      "sourceId": 1389,
+      "targetId": 1387,
+      "operatorId": "L2",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L2:1389:1387",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1387:1389"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1387:1389"
+        ]
+      }
+    },
+    {
+      "id": "R3:1389:1397",
+      "sourceId": 1389,
+      "targetId": 1397,
+      "operatorId": "R3",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R3:1389:1397",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A1:1389:1397:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A1:1389:1397:0"
+        ]
+      }
+    },
+    {
+      "id": "R5:1389:1453",
+      "sourceId": 1389,
+      "targetId": 1453,
+      "operatorId": "R5",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R5:1389:1453",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1389:1453"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1389:1453"
+        ]
+      }
+    },
+    {
+      "id": "L3:1397:1389",
+      "sourceId": 1397,
+      "targetId": 1389,
+      "operatorId": "L3",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L3:1397:1389",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1389:1397"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1389:1397"
+        ]
+      }
+    },
+    {
+      "id": "R5:1397:1461",
+      "sourceId": 1397,
+      "targetId": 1461,
+      "operatorId": "R5",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R5:1397:1461",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1397:1461"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1397:1461"
+        ]
+      }
+    },
+    {
+      "id": "L5:1451:1387",
+      "sourceId": 1451,
+      "targetId": 1387,
+      "operatorId": "L5",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L5:1451:1387",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1387:1451"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1387:1451"
+        ]
+      }
+    },
+    {
+      "id": "R2:1451:1453",
+      "sourceId": 1451,
+      "targetId": 1453,
+      "operatorId": "R2",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R2:1451:1453",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1451:1453"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1451:1453"
+        ]
+      }
+    },
+    {
+      "id": "R6:1451:1707",
+      "sourceId": 1451,
+      "targetId": 1707,
+      "operatorId": "R6",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R6:1451:1707",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A0:1451:1707:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A0:1451:1707:0"
+        ]
+      }
+    },
+    {
+      "id": "L5:1453:1389",
+      "sourceId": 1453,
+      "targetId": 1389,
+      "operatorId": "L5",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L5:1453:1389",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A0:1453:1389:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A0:1453:1389:0"
+        ]
+      }
+    },
+    {
+      "id": "L2:1453:1451",
+      "sourceId": 1453,
+      "targetId": 1451,
+      "operatorId": "L2",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L2:1453:1451",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1451:1453"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1451:1453"
+        ]
+      }
+    },
+    {
+      "id": "R3:1453:1461",
+      "sourceId": 1453,
+      "targetId": 1461,
+      "operatorId": "R3",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R3:1453:1461",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A0:1453:1461:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A0:1453:1461:0"
+        ]
+      }
+    },
+    {
+      "id": "R6:1453:1709",
+      "sourceId": 1453,
+      "targetId": 1709,
+      "operatorId": "R6",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R6:1453:1709",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1453:1709"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1453:1709"
+        ]
+      }
+    },
+    {
+      "id": "L5:1461:1397",
+      "sourceId": 1461,
+      "targetId": 1397,
+      "operatorId": "L5",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L5:1461:1397",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A1:1461:1397:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A1:1461:1397:0"
+        ]
+      }
+    },
+    {
+      "id": "L3:1461:1453",
+      "sourceId": 1461,
+      "targetId": 1453,
+      "operatorId": "L3",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L3:1461:1453",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1453:1461"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1453:1461"
+        ]
+      }
+    },
+    {
+      "id": "R4:1461:1493",
+      "sourceId": 1461,
+      "targetId": 1493,
+      "operatorId": "R4",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R4:1461:1493",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A1:1461:1493:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A1:1461:1493:0"
+        ]
+      }
+    },
+    {
+      "id": "R6:1461:1717",
+      "sourceId": 1461,
+      "targetId": 1717,
+      "operatorId": "R6",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R6:1461:1717",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1461:1717"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1461:1717"
+        ]
+      }
+    },
+    {
+      "id": "L4:1493:1461",
+      "sourceId": 1493,
+      "targetId": 1461,
+      "operatorId": "L4",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L4:1493:1461",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1461:1493"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1461:1493"
+        ]
+      }
+    },
+    {
+      "id": "R6:1493:1749",
+      "sourceId": 1493,
+      "targetId": 1749,
+      "operatorId": "R6",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R6:1493:1749",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1493:1749"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1493:1749"
+        ]
+      }
+    },
+    {
+      "id": "L6:1707:1451",
+      "sourceId": 1707,
+      "targetId": 1451,
+      "operatorId": "L6",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L6:1707:1451",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1451:1707"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1451:1707"
+        ]
+      }
+    },
+    {
+      "id": "R2:1707:1709",
+      "sourceId": 1707,
+      "targetId": 1709,
+      "operatorId": "R2",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R2:1707:1709",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1707:1709"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1707:1709"
+        ]
+      }
+    },
+    {
+      "id": "R7:1707:2731",
+      "sourceId": 1707,
+      "targetId": 2731,
+      "operatorId": "R7",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R7:1707:2731",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A1:1707:2731:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A1:1707:2731:0"
+        ]
+      }
+    },
+    {
+      "id": "L6:1709:1453",
+      "sourceId": 1709,
+      "targetId": 1453,
+      "operatorId": "L6",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L6:1709:1453",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1453:1709"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1453:1709"
+        ]
+      }
+    },
+    {
+      "id": "L2:1709:1707",
+      "sourceId": 1709,
+      "targetId": 1707,
+      "operatorId": "L2",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L2:1709:1707",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A0:1709:1707:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A0:1709:1707:0"
+        ]
+      }
+    },
+    {
+      "id": "R3:1709:1717",
+      "sourceId": 1709,
+      "targetId": 1717,
+      "operatorId": "R3",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R3:1709:1717",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1709:1717"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1709:1717"
+        ]
+      }
+    },
+    {
+      "id": "R7:1709:2733",
+      "sourceId": 1709,
+      "targetId": 2733,
+      "operatorId": "R7",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R7:1709:2733",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A0:1709:2733:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A0:1709:2733:0"
+        ]
+      }
+    },
+    {
+      "id": "L6:1717:1461",
+      "sourceId": 1717,
+      "targetId": 1461,
+      "operatorId": "L6",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L6:1717:1461",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A0:1717:1461:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A0:1717:1461:0"
+        ]
+      }
+    },
+    {
+      "id": "L3:1717:1709",
+      "sourceId": 1717,
+      "targetId": 1709,
+      "operatorId": "L3",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L3:1717:1709",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1709:1717"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1709:1717"
+        ]
+      }
+    },
+    {
+      "id": "R4:1717:1749",
+      "sourceId": 1717,
+      "targetId": 1749,
+      "operatorId": "R4",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R4:1717:1749",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A0:1717:1749:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A0:1717:1749:0"
+        ]
+      }
+    },
+    {
+      "id": "R7:1717:2741",
+      "sourceId": 1717,
+      "targetId": 2741,
+      "operatorId": "R7",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R7:1717:2741",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1717:2741"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1717:2741"
+        ]
+      }
+    },
+    {
+      "id": "L6:1749:1493",
+      "sourceId": 1749,
+      "targetId": 1493,
+      "operatorId": "L6",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L6:1749:1493",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A1:1749:1493:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A1:1749:1493:0"
+        ]
+      }
+    },
+    {
+      "id": "L4:1749:1717",
+      "sourceId": 1749,
+      "targetId": 1717,
+      "operatorId": "L4",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L4:1749:1717",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1717:1749"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1717:1749"
+        ]
+      }
+    },
+    {
+      "id": "R5:1749:1877",
+      "sourceId": 1749,
+      "targetId": 1877,
+      "operatorId": "R5",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R5:1749:1877",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A1:1749:1877:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A1:1749:1877:0"
+        ]
+      }
+    },
+    {
+      "id": "R7:1749:2773",
+      "sourceId": 1749,
+      "targetId": 2773,
+      "operatorId": "R7",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R7:1749:2773",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1749:2773"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1749:2773"
+        ]
+      }
+    },
+    {
+      "id": "L5:1877:1749",
+      "sourceId": 1877,
+      "targetId": 1749,
+      "operatorId": "L5",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L5:1877:1749",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1749:1877"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1749:1877"
+        ]
+      }
+    },
+    {
+      "id": "R7:1877:2901",
+      "sourceId": 1877,
+      "targetId": 2901,
+      "operatorId": "R7",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R7:1877:2901",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1877:2901"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1877:2901"
+        ]
+      }
+    },
+    {
+      "id": "L7:2731:1707",
+      "sourceId": 2731,
+      "targetId": 1707,
+      "operatorId": "L7",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L7:2731:1707",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1707:2731"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1707:2731"
+        ]
+      }
+    },
+    {
+      "id": "R2:2731:2733",
+      "sourceId": 2731,
+      "targetId": 2733,
+      "operatorId": "R2",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R2:2731:2733",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:2731:2733"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:2731:2733"
+        ]
+      }
+    },
+    {
+      "id": "L7:2733:1709",
+      "sourceId": 2733,
+      "targetId": 1709,
+      "operatorId": "L7",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L7:2733:1709",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1709:2733"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1709:2733"
+        ]
+      }
+    },
+    {
+      "id": "L2:2733:2731",
+      "sourceId": 2733,
+      "targetId": 2731,
+      "operatorId": "L2",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L2:2733:2731",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A1:2733:2731:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A1:2733:2731:0"
+        ]
+      }
+    },
+    {
+      "id": "R3:2733:2741",
+      "sourceId": 2733,
+      "targetId": 2741,
+      "operatorId": "R3",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R3:2733:2741",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:2733:2741"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:2733:2741"
+        ]
+      }
+    },
+    {
+      "id": "L7:2741:1717",
+      "sourceId": 2741,
+      "targetId": 1717,
+      "operatorId": "L7",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L7:2741:1717",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:1717:2741"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:1717:2741"
+        ]
+      }
+    },
+    {
+      "id": "L3:2741:2733",
+      "sourceId": 2741,
+      "targetId": 2733,
+      "operatorId": "L3",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L3:2741:2733",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A0:2741:2733:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A0:2741:2733:0"
+        ]
+      }
+    },
+    {
+      "id": "R4:2741:2773",
+      "sourceId": 2741,
+      "targetId": 2773,
+      "operatorId": "R4",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R4:2741:2773",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:2741:2773"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:2741:2773"
+        ]
+      }
+    },
+    {
+      "id": "L7:2773:1749",
+      "sourceId": 2773,
+      "targetId": 1749,
+      "operatorId": "L7",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L7:2773:1749",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A0:2773:1749:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A0:2773:1749:0"
+        ]
+      }
+    },
+    {
+      "id": "L4:2773:2741",
+      "sourceId": 2773,
+      "targetId": 2741,
+      "operatorId": "L4",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L4:2773:2741",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:2741:2773"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:2741:2773"
+        ]
+      }
+    },
+    {
+      "id": "R5:2773:2901",
+      "sourceId": 2773,
+      "targetId": 2901,
+      "operatorId": "R5",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R5:2773:2901",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A0:2773:2901:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A0:2773:2901:0"
+        ]
+      }
+    },
+    {
+      "id": "L7:2901:1877",
+      "sourceId": 2901,
+      "targetId": 1877,
+      "operatorId": "L7",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L7:2901:1877",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A1:2901:1877:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A1:2901:1877:0"
+        ]
+      }
+    },
+    {
+      "id": "L5:2901:2773",
+      "sourceId": 2901,
+      "targetId": 2773,
+      "operatorId": "L5",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L5:2901:2773",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:2773:2901"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:2773:2901"
+        ]
+      }
+    },
+    {
+      "id": "R6:2901:3413",
+      "sourceId": 2901,
+      "targetId": 3413,
+      "operatorId": "R6",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "R6:2901:3413",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": true,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "CONSTRUCTS",
+        "provenanceEdgeIds": [
+          "constructs:A1:2901:3413:0"
+        ],
+        "structuralEdgeTypes": "CONSTRUCTS",
+        "structuralEdgeIds": [
+          "constructs:A1:2901:3413:0"
+        ]
+      }
+    },
+    {
+      "id": "L6:3413:2901",
+      "sourceId": 3413,
+      "targetId": 2901,
+      "operatorId": "L6",
+      "availability": "available",
+      "provenance": {
+        "applicationId": "L6:3413:2901",
+        "projectionStatus": "audited_parallel_edge_projected",
+        "structuralEvidence": false,
+        "fieldEvidence": true,
+        "provenanceEdgeTypes": "AUDITED_HAMMING2",
+        "provenanceEdgeIds": [
+          "audit:fixed:2901:3413"
+        ],
+        "structuralEdgeTypes": "AUDITED_HAMMING2",
+        "structuralEdgeIds": [
+          "audit:fixed:2901:3413"
+        ]
+      }
+    }
+  ],
+  "catalogFingerprint": "8a4b1b58f562502eb6b149d8d5cb9223fc0ed69007004d7d2466f7bd58f2e48d"
+}

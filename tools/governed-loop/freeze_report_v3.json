@@ -1,0 +1,175 @@
+{
+  "c2AbsenceCheck": {
+    "hits": [],
+    "tokens": [
+      "conservation",
+      "scalar-field",
+      "scalar_field",
+      "drift",
+      "phase-relative",
+      "phase_relative"
+    ],
+    "verdict": "PASS"
+  },
+  "checks": {
+    "C1_forbiddenPhraseOnlyInsideC1": true,
+    "C1_presentVerbatim": true,
+    "C2_presentVerbatim": true,
+    "E10_lineAnchorsVerbatim": true,
+    "E1_crossPhaseCensus5040": true,
+    "E2_familyB90SamePhase": true,
+    "E3_boundary154NovelFour": true,
+    "E4_boundaryExits128Entries128": true,
+    "E5_equivariance40824ZeroFailures": true,
+    "E6_case501Seq5DisputeNoCitation": true,
+    "E7_groundTruth462_70_308_154_10x36": true,
+    "E8_applications3402": true,
+    "E9_legalMoves60_12": true,
+    "betaAliasLeg1Count": true,
+    "betaAliasLeg2Lineage": true,
+    "betaAliasLeg3Entry": true,
+    "c2GateBodyAbsenceCheck": true,
+    "case501Classified": true,
+    "e3E7CorrespondenceRecorded": true,
+    "noContinuousFacingSentence": true,
+    "noForbiddenRangeLanguage": true,
+    "noLandedHexLiterals": true,
+    "noOrreryChanges": true,
+    "nonvacuityConstraint": true,
+    "nonvacuityStatistic": true,
+    "oneCombinedEntryOneHash": true,
+    "repoTreeClean": true,
+    "typologyFiniteCombinatorial": true
+  },
+  "directive": "PLV3-REG-1",
+  "e3E7Correspondence": {
+    "boundaryRecords": 154,
+    "disposition": "recorded; non-fatal by evidence hierarchy",
+    "gov528WithheldBoundary": 154,
+    "match": true
+  },
+  "entry": {
+    "bytes": 14964,
+    "contentHash": "48290a2fa89dcaf4e77d91dc134af69db252dc625f2ccb0bd6e97973de4a2357",
+    "decisions": [
+      "alpha",
+      "beta",
+      "gamma",
+      "delta"
+    ],
+    "hashCoversAllDecisions": true,
+    "landedTextHexLiterals": 0,
+    "lines": 142,
+    "oneCombinedEntry": true,
+    "path": "policy-v3-registration.md"
+  },
+  "evidenceHierarchy": {
+    "correspondenceOnly": [
+      {
+        "fatal": false,
+        "field": "partitionCheck.withheldBoundary",
+        "path": "qa/gov-528-production-aggregate.json",
+        "value": 154
+      }
+    ],
+    "primary": [
+      "seam_phase_a_probe.json p3SeamCensus",
+      "frozen_seam_substrate.json boundary fields",
+      "degenerate_boundary.jsonl",
+      "degenerate_boundary_report.json"
+    ],
+    "verdict": "PASS"
+  },
+  "evidenceLineage": {
+    "cadenceFix": {
+      "env": "ORRERY_BRIDGE_DWELL_MS",
+      "liveDefaultMs": 1500,
+      "pin": "mvp2.py:733",
+      "smokeMs": 0,
+      "statement": "boundary-strictness ear approvals are valid post-cadence-fix only; the approvals are evidence-dependent on that tool fix"
+    }
+  },
+  "inputPins": {
+    "census_462.json": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+    "degenerate_boundary.jsonl": "f728f8eedec6606a39f95fa41188126aec4447bc1907375fb3eb51395e1d48e1",
+    "degenerate_boundary_report.json": "339dc8934bb0e5a1f3ec8438c9b2d0f9dd0efabc42bb732322ec3e60093e74d6",
+    "dispute_analysis_mvp2c.json": "df90f405e653e7d148f4bd60c405e47d87a7c7e8c2c893f3ecbbefa43d303d50",
+    "freeze_report_v2.json": "da14de46d36aa8f183655bbc56605d7d785dd531f898a25e99805666cbbaefeb",
+    "frozen_ground_truth.json": "007b0ffe65015bd2c5f1a6fe0df8969961ce8cfb3d499677b143d971e1fc5744",
+    "frozen_seam_substrate.json": "8a5e82ac5f3b596720db2b62f2ba82484bab5250d168035e4c84cf9870c90bac",
+    "gate_log_mvp2_live_mac1.jsonl": "de90eb47d05cfe28646929123f3a01efe1cc156b413676473894c541f1620c29",
+    "mvp2.py": "fb9db3cd69234d41417582e0ffae27bbb15c52c777fe3856cf598b2664ca736a",
+    "seam_bipartite_inclusion.json": "903eebf0e1122d8ba81971abcd7efc8ac934d3bfd7885b98b49e58ab0bbe3e41",
+    "seam_census_head.json": "f7e56b2b180c456fd4abc96069796d6737f77d13ba66c751604fe95cd19e6d5a",
+    "seam_legal_moves_v2.json": "c017c3c66e10b803eccb82342d030575c8069434063657fb89b5d56169db4d4b",
+    "seam_operator_applications.csv": "1f7b2abb047132fa957f761a73e7c76038766f617bed9c916f971a8c0072f53e",
+    "seam_operator_registry.csv": "e5a9e6929fca048078e0db6ff044facc7137a6ef61e994d74f1d526e27b6482e",
+    "seam_phase_a_probe.json": "48f513679d505087277d5670952fb860b755832775f5fb5980aa3f71c73330bb",
+    "spike01_evidence.json": "cb170c0d00cea3f2db2b69779dc339848befa60f5a78d257c8680f99f6e56fec"
+  },
+  "lineAnchors": {
+    "gateBody": {
+      "endLineText": "        return \"REJECT\", [\"unlicensed-transition\"], checks, None",
+      "lineCount": 48,
+      "lines": "138-185",
+      "path": "mvp2.py",
+      "sha256": "2a75c6632ed4fdf951cd2da36f6fa5b41e03ebd45065f67846064842ad71fbaa",
+      "startLineText": "    def gate(self, cur, cand, tier2=True):"
+    },
+    "sameRootNonNone": {
+      "lines": "169",
+      "path": "mvp2.py",
+      "quote": "        same_root = cr is not None and nr is not None and cr == nr"
+    },
+    "selfTransitionVetoBoundary": {
+      "lines": "150-154",
+      "path": "mvp2.py",
+      "quotes": [
+        "        if cm == nm and cp == np_:",
+        "            if self.gov_root[cm] is None:",
+        "                checks[\"boundary_endpoint\"] = True",
+        "                checks[\"same_family\"] = False",
+        "                return \"REJECT\", [\"ungoverned-transition\"], checks, None"
+      ]
+    },
+    "tier1SamePhase": {
+      "lines": "171-172",
+      "path": "mvp2.py",
+      "quotes": [
+        "        if same_root and cp == np_:",
+        "            return \"ACCEPT\", [], checks, None"
+      ]
+    }
+  },
+  "postLandingSweep": {
+    "note": "runs only if this registration is green; alpha's receipt-level check",
+    "predeclarationPath": "plv3_sweep_predeclared.json",
+    "receiptPath": "plv3_sweep.json",
+    "status": "scheduled"
+  },
+  "realmArtifacts": {
+    "catalogFingerprint": "e3db04957f10c64c9b33120e0b6b777b6ce8b430b848732903afb2e39bf1ef74",
+    "frozen_seam_substrate_v3.json": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+    "receiptsManifest": {
+      "path": "plv3_receipts_manifest.json",
+      "sha256": "461a16b060e9ffc7c81e3cd8ea4d7f14e1d3e11022984dcb2eae9b36a67a8307"
+    },
+    "seam_legal_moves_v3.json": "e6cf62a8eefa0924da9286f2e664c1914d9d620ed2d299929f684fd48225c274"
+  },
+  "repoContext": {
+    "fileCount": 1402,
+    "head": "65c72478d83ce3982e51e24d9422191510e89962",
+    "ledgerBytes": 307304,
+    "ledgerLines": 3967,
+    "ledgerPrefix": "8901b4a3",
+    "readOnly": true,
+    "treeClean": true
+  },
+  "schemaVersion": "governed-loop.freeze-report-v3.v1",
+  "typologyCheck": {
+    "continuousFacingClaims": 0,
+    "registeredDocPrefix": "11a7f70f",
+    "registeredDocument": "docs/THREE_PART_CONTINUOUS_TYPOLOGY.md",
+    "verdict": "PASS"
+  }
+}
