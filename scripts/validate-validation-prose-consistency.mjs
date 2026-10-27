@@ -1,3 +1,4 @@
+import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -48,6 +49,15 @@ const SCOPED_MARKERS =
 const VERSION_TOKEN = /\b\d+\.\d+(?:\.\d+)?(?:-dev)?\b/g;
 const FINGERPRINT_LITERAL = /\b[a-f0-9]{64}\b/g;
 const FINGERPRINT_BINDING_MARKERS = /\b(?:sha-?256|fingerprint|manifest|receipt|historical)\b|(?:canonical|qa)\//i;
+
+// sanctioned by planning seat, MVP3-L19-AUTH1-STOP-ADJUDICATION-1; adjudicated
+// byte-identical historical record (MVP-3 closing report, MVP3-CLOSING-ADJUDICATION-1)
+const SANCTIONED_FINGERPRINT_RECORDS = [
+  {
+    path: "scrum/plan/mvp3-sprint-closing-report.md",
+    sha256: "8afa9911093e307bb43bf32da70945b5cbdfcc91f0efb69ac56088a3a75d5463",
+  },
+];
 
 function readText(relativePath) {
   return fs.readFile(path.join(packageRoot, relativePath), "utf8");
@@ -146,12 +156,19 @@ async function main() {
   const watchedViolations = [];
   const scrumFingerprintLiterals = [];
   const scrumFingerprintViolations = [];
+  const sanctionedFingerprintRecords = [];
 
   const files = await collectScopeFiles();
 
   for (const absolutePath of files) {
     const relativePath = absolutePath.slice(packageRoot.length + 1);
-    const text = await fs.readFile(absolutePath, "utf8");
+    const fileBytes = await fs.readFile(absolutePath);
+    const text = fileBytes.toString("utf8");
+    const fileSha256 = crypto.createHash("sha256").update(fileBytes).digest("hex");
+    const sanctionedRecord = SANCTIONED_FINGERPRINT_RECORDS.find(
+      (record) => record.path === relativePath && record.sha256 === fileSha256,
+    );
+    let sanctionedFingerprintsBound = 0;
     const lines = text.split(/\r?\n/);
 
     const headings = [];
@@ -246,7 +263,9 @@ async function main() {
         let fingerprintMatch;
         while ((fingerprintMatch = FINGERPRINT_LITERAL.exec(line)) !== null) {
           const bindingContext = [line, heading, documentTitle].join("\n");
-          const bound = historicalScrumRecord || FINGERPRINT_BINDING_MARKERS.test(bindingContext);
+          const markerBound = historicalScrumRecord || FINGERPRINT_BINDING_MARKERS.test(bindingContext);
+          const bound = markerBound || sanctionedRecord !== undefined;
+          if (sanctionedRecord && !markerBound) sanctionedFingerprintsBound += 1;
           const item = {
             file: relativePath,
             line: lineIndex + 1,
@@ -258,6 +277,15 @@ async function main() {
         }
         FINGERPRINT_LITERAL.lastIndex = 0;
       }
+    }
+    if (sanctionedRecord) {
+      sanctionedFingerprintRecords.push({
+        file: relativePath,
+        path: sanctionedRecord.path,
+        sha256: fileSha256,
+        matched: true,
+        fingerprintsBound: sanctionedFingerprintsBound,
+      });
     }
   }
 
@@ -297,11 +325,17 @@ async function main() {
       exemptions: exemptions.length,
       scrumFingerprintLiterals: scrumFingerprintLiterals.length,
       scrumFingerprintViolations: scrumFingerprintViolations.length,
+      sanctionedFingerprintRecords: sanctionedFingerprintRecords.length,
+      sanctionedFingerprintsBound: sanctionedFingerprintRecords.reduce(
+        (total, item) => total + item.fingerprintsBound,
+        0,
+      ),
       violations: violations.length,
     },
     claims: dedupedClaims,
     exemptions,
     scrumFingerprintLiterals,
+    sanctionedFingerprintRecords,
     violations,
   };
 
