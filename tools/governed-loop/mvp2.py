@@ -27,7 +27,7 @@ import sys
 from collections import Counter
 from random import Random
 
-SCRATCH = "/home/erick/workspace/governed-loop"
+SCRATCH = __import__("os").environ.get("GOVERNED_LOOP_SCRATCH", __import__("os").path.dirname(__import__("os").path.abspath(__file__)))
 GT_PATH = f"{SCRATCH}/frozen_ground_truth.json"
 SUB_PATH = f"{SCRATCH}/frozen_seam_substrate.json"
 MVP1_LOG = f"{SCRATCH}/gate_log.jsonl"

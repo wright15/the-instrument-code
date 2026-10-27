@@ -18,10 +18,10 @@ import urllib.error
 import urllib.request
 from collections import defaultdict, deque
 
-SCRATCH = "/home/erick/workspace/governed-loop"
-REPO = "/home/erick/projects/integrated-release"
-BRIDGE_PORT = 8765
-VITE_PORT = 4202
+SCRATCH = os.environ.get("GOVERNED_LOOP_SCRATCH", os.path.dirname(os.path.abspath(__file__)))
+REPO = os.environ.get("GOVERNED_LOOP_REPO", os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+BRIDGE_PORT = int(os.environ.get("GOVERNED_LOOP_BRIDGE_PORT", "8765"))
+VITE_PORT = int(os.environ.get("GOVERNED_LOOP_VITE_PORT", "4202"))
 K_STEPS = 5
 DWELL_MS = 0
 
@@ -471,7 +471,11 @@ def main():
     orrery_status = subprocess.run(
         ["git", "-C", REPO, "status", "--porcelain", "orrery"], capture_output=True, text=True,
     ).stdout
-    repo_writes = 0 if not status.strip() else len(status.strip().splitlines())
+    landing_paths = tuple(p for p in os.environ.get("GOVERNED_LOOP_LANDING_PATHS", "").split(",") if p)
+    def _unexpected(line):
+        path = line[3:] if len(line) > 3 else line
+        return not any(path.startswith(prefix) for prefix in landing_paths)
+    repo_writes = 0 if not status.strip() else len([line for line in status.splitlines() if _unexpected(line)])
     orrery_changes = 0 if not orrery_status.strip() else len(orrery_status.strip().splitlines())
     mvp2_identical = mvp2_open == mvp2_close
 

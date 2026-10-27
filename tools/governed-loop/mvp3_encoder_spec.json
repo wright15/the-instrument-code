@@ -1,0 +1,133 @@
+{
+  "corpora": [
+    {
+      "corpus_id": "bach_chorales",
+      "license_note": "music21 BSD-3-Clause; Bach compositions public domain",
+      "mask_rule": "vertical pitch-class slice -> chord pc set -> anchored heptatonic completion against the key collection",
+      "phase_fallback_counters": [
+        "phase_bach_key_missing",
+        "phase_bach_chord_root"
+      ],
+      "phase_fallback_order": [
+        "score key signature",
+        "first sounding chord root"
+      ],
+      "phase_rule": "phase = key tonic pc parsed from the score key signature/key context",
+      "retrieval_status": "declared; retrieval deferred to B1",
+      "role": "tonal functional reference",
+      "source_origin": "music21 Bach chorales (score corpus); package version pinned in B1",
+      "underdetermined_rule": "score key context; if absent, the prevailing chord root's major collection, counted"
+    },
+    {
+      "corpus_id": "billboard_pop",
+      "license_note": "Research-use annotations; cite Burgoyne et al. 2011",
+      "mask_rule": "Harte label -> root/quality/bass pcs -> anchored heptatonic completion against the key-track collection",
+      "phase_fallback_counters": [
+        "phase_billboard_prev_root",
+        "phase_billboard_key_tonic"
+      ],
+      "phase_fallback_order": [
+        "previous sounding chord root",
+        "key-track tonic"
+      ],
+      "phase_rule": "phase = chord root pc from the Harte chord label",
+      "retrieval_status": "declared; retrieval deferred to B1",
+      "role": "modern diatonic/modal reference",
+      "source_origin": "McGill Billboard Project chord annotations (Burgoyne et al. 2011); distribution pinned in B1",
+      "underdetermined_rule": "key track if present; else the chord root's major collection, counted"
+    },
+    {
+      "corpus_id": "weimar_jazz",
+      "license_note": "WJazzD research license requiring registration/acceptance; no redistribution",
+      "mask_rule": "chord-track label -> pcs -> anchored heptatonic completion against the key-center collection",
+      "phase_fallback_counters": [
+        "phase_weimar_key_center",
+        "phase_weimar_prev_root"
+      ],
+      "phase_fallback_order": [
+        "key center",
+        "previous chord root"
+      ],
+      "phase_rule": "phase = chord-track root pc; melodic solo track is explicitly out of scope",
+      "retrieval_status": "declared; access may be registration-gated; recorded in B1",
+      "role": "extended/chromatic modulation reference",
+      "source_origin": "Weimar Jazz Database (WJazzD) v2.1, Jazzomat Research Project",
+      "underdetermined_rule": "key center if present; else the chord root's major collection, counted"
+    },
+    {
+      "corpus_id": "isophonics",
+      "license_note": "Public research annotations; cite the Isophonics/QMUL reference",
+      "mask_rule": "Harte label -> pcs -> anchored heptatonic completion against the key-track collection",
+      "phase_fallback_counters": [
+        "phase_isophonics_key_tonic",
+        "phase_isophonics_prev_root"
+      ],
+      "phase_fallback_order": [
+        "key-track tonic",
+        "previous chord root"
+      ],
+      "phase_rule": "phase = chord root pc from the Harte label",
+      "retrieval_status": "declared; retrieval deferred to B1",
+      "role": "Beatles/modal rock reference",
+      "source_origin": "Isophonics Beatles chord annotations (QMUL)",
+      "underdetermined_rule": "key track if present; else the chord root's major collection, counted"
+    },
+    {
+      "corpus_id": "DCMLab/ABC (beethoven_quartets)",
+      "license_note": "Attribution-NonCommercial-ShareAlike 4.0 International; CC BY-NC-SA 4.0; LICENSE sha256 8529d8cd7747e8bf310a7950d189cd2ebfe771d32f8d1e988649b98cde404949; cite Neuwirth et al. 2018 (DOI 10.3389/fdigh.2018.00016)",
+      "mask_rule": "chord_tones (fifths coordinates) -> pcs relative to the local key tonic -> anchored heptatonic completion against the local key collection (major if localkey uppercase, natural minor if lowercase)",
+      "phase_fallback_counters": [
+        "phase_global_key_default",
+        "phase_global_key_unparsed",
+        "phase_local_key_unparsed"
+      ],
+      "phase_fallback_order": [
+        "global key tonic",
+        "chord root pc"
+      ],
+      "phase_rule": "phase = local key tonic pc derived from globalkey + localkey (Roman numeral degree in the global key's scale)",
+      "retrieval_status": "retrieved and pinned",
+      "role": "classical/diachronic reference; named B0 subcorpus",
+      "source_origin": "https://github.com/DCMLab/ABC.git @ b6b7d38500bacb30c81db7e09d8790df1a2edd46 (v2.6)",
+      "underdetermined_rule": "local key collection first; global completion rule; counted"
+    }
+  ],
+  "fallback_counters": [
+    "parse_errors",
+    "non_harmonic_rows",
+    "chord_tones_missing",
+    "mask_key_used",
+    "mask_key_override",
+    "mask_tie_broken",
+    "mask_no_superset",
+    "mask_not_in_census",
+    "phase_local_key",
+    "phase_global_key_default",
+    "phase_global_key_unparsed",
+    "phase_local_key_unparsed"
+  ],
+  "frozen": true,
+  "frozen_at": "2026-10-27T15:23:01.309509+00:00",
+  "frozen_scope_note": "B0 freezes the rules and pins the named DCMLab subcorpus. B1 performs corpus retrieval and gate calibration under these rules; no encoder rule changes after freeze without a new authorization.",
+  "global_rules": {
+    "anchoring": "absolute heptatonic set S is represented as anchored mask S - phase; phase is the declared per-corpus root/tonic pc",
+    "determinism": "completion tie-break = max overlap with the key collection, then smallest anchored mask",
+    "fallback_policy": "Every non-primary branch increments a named counter. B1 receipts must emit all counters. Silent fallbacks are prohibited.",
+    "heptatonic_completion": "Given chord pcs C, key collection K, and phase p: if C is a subset of K use K; otherwise choose the absolute heptatonic set S (represented by a census mask shifted by p) that contains C, maximizes |S intersect K|, and has the smallest anchored mask integer; if no census set contains C, use K and count mask_no_superset.",
+    "non_harmonic_policy": "DCMLab @none rows are non-harmonic events: skipped and counted as non_harmonic_rows. B1 must declare carry-forward vs skip before calibration.",
+    "pedal_policy": "DCMLab pedal column is not merged into chord pcs in B0; B1 may add a declared pedal-overlay variant.",
+    "phase_policy": "one declared phase rule per corpus; no implicit defaults",
+    "pitch_encoding": "12-bit pitch-class mask; bit pc set",
+    "triad_underdetermination": "A triad/7th does not determine a heptatonic mask. Completion uses the declared per-corpus key context and the deterministic rule above; there is no runtime guessing."
+  },
+  "spec_id": "MVP3_ENCODER_SPEC",
+  "substrate": {
+    "census_masks": 462,
+    "census_path": "/home/erick/workspace/scratch-governed-loop-run/census_462.json",
+    "census_sha256": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+    "lifted_nodes": 5544,
+    "representation": "node = mask@phase; mask is anchored (bit 0 set); sounding pcs = {(pc + phase) mod 12 for pc in mask}; every mask must be a member of the 462-mask census",
+    "seam_moves": 5130
+  },
+  "version": "1.0.0"
+}

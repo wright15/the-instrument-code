@@ -1633,7 +1633,7 @@
       ]
     },
     "returncode": 0,
-    "seconds": 10.26,
+    "seconds": 9.73,
     "stderr": "",
     "stdout": "ORRERY-NAV PROBE OK: steps=38 consoleErrors=0 pageErrors=0\n"
   },
@@ -1840,7 +1840,7 @@
     "nodes": {
       "count": 5544,
       "expected": 5544,
-      "latencyMs": 19.59,
+      "latencyMs": 19.54,
       "length": 5544
     },
     "seamCatalog": {
@@ -1848,13 +1848,13 @@
       "expected": 5130,
       "familyA": 5040,
       "familyB": 90,
-      "latencyMs": 11.85,
+      "latencyMs": 12.27,
       "length": 5130
     },
     "tier1": {
       "count": 18984,
       "expected": 18984,
-      "latencyMs": 118.99,
+      "latencyMs": 125.61,
       "length": 18984
     },
     "writeRoute": {
@@ -1863,8 +1863,8 @@
     }
   },
   "fixedPoint": {
-    "mvp2ShaClose": "fb9db3cd69234d41417582e0ffae27bbb15c52c777fe3856cf598b2664ca736a",
-    "mvp2ShaOpen": "fb9db3cd69234d41417582e0ffae27bbb15c52c777fe3856cf598b2664ca736a",
+    "mvp2ShaClose": "79c0cf706fffc23745cab6e87ffbc46d34d70ad94a93291135725e388dc17328",
+    "mvp2ShaOpen": "79c0cf706fffc23745cab6e87ffbc46d34d70ad94a93291135725e388dc17328",
     "opening": {
       "anchors": {
         "boundaryReject": [
@@ -2035,12 +2035,12 @@
       "sha256": "a29ba9a317d010cc64ea7c872c7089312c0f8a1ad405ed58147c679485a85673"
     },
     "repo": {
-      "fileCount": 1402,
-      "head": "65c72478d83ce3982e51e24d9422191510e89962",
-      "ledgerBytes": 307304,
-      "ledgerLines": 3967,
-      "ledgerPrefix": "8901b4a3",
-      "treeClean": true
+      "fileCount": 1480,
+      "head": "008bdbedc04695c1126f9fda0e29cb7322dc3b8d",
+      "ledgerBytes": 323099,
+      "ledgerLines": 4059,
+      "ledgerPrefix": "6d4ab925",
+      "treeClean": false
     }
   },
   "notes": {
@@ -2055,7 +2055,7 @@
       "nav-hl-seam",
       "nav-hl-tier1"
     ],
-    "path": "/home/erick/workspace/governed-loop/orrery_nav_overlay.js",
+    "path": "/home/erick/projects/integrated-release/tools/governed-loop/orrery_nav_overlay.js",
     "sha256": "ad558decfa6547c2b6f7b3ceb9247326a0ee9508df5e9c4523ee90b4a64a0613"
   },
   "phaseConnectivity": {
@@ -2080,16 +2080,16 @@
     "orreryChanges": 0,
     "orreryStatus": "",
     "repoWrites": 0,
-    "status": ""
+    "status": "M tools/governed-loop/mvp2.py\n M tools/governed-loop/mvp2_orrery_nav_smoke.py\n M tools/governed-loop/orrery_nav_bridge.py\n M tools/governed-loop/orrery_nav_report.json\n?? qa/mvp3_harness_repin_report.json\n?? qa/mvp3_task_a_receipt.json\n?? qa/mvp3_task_b0_receipt.json\n?? qa/mvp3_task_b1_receipt.json\n?? qa/mvp3_task_c_receipt.json\n?? scrum/plan/mvp3-sprint-closing-report.md\n?? tools/governed-loop/mvp3_encoder.py\n?? tools/governed-loop/mvp3_encoder_spec.json\n?? tools/governed-loop/orrery_nav_browser_log.json\n?? tools/governed-loop/orrery_nav_probe.js"
   },
   "runParameters": {
     "K": 5,
-    "bridge": "/home/erick/workspace/governed-loop/orrery_nav_bridge.py",
+    "bridge": "/home/erick/projects/integrated-release/tools/governed-loop/orrery_nav_bridge.py",
     "bridgePort": 8765,
     "dwellMs": 0,
-    "overlay": "/home/erick/workspace/governed-loop/orrery_nav_overlay.js",
-    "probe": "/home/erick/workspace/governed-loop/orrery_nav_probe.js",
-    "runner": "/home/erick/workspace/governed-loop/orrery_nav_run.sh",
+    "overlay": "/home/erick/projects/integrated-release/tools/governed-loop/orrery_nav_overlay.js",
+    "probe": "/home/erick/projects/integrated-release/tools/governed-loop/orrery_nav_probe.js",
+    "runner": "/home/erick/projects/integrated-release/tools/governed-loop/orrery_nav_run.sh",
     "vitePort": 4202
   },
   "schemaVersion": "governed-loop.orrery-nav-report.v1",

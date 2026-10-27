@@ -1,0 +1,222 @@
+{
+  "artifacts": {
+    "clone_log_sha256": "ad2e57a9b2312b608584708a909776031fd6821a66accec47c68a67bde6f47b7",
+    "encoder_sha256": "dc2379277afb1a9bf92a26cd3a83ea3f16a33a12ca331a9742f7d5861422f745",
+    "manifest_digest_field": "dcb265cc80727ae3b0e6b070b0e298a996404b5ca846d4c36eca4f3bdf64bcd9",
+    "manifest_sha256": "dcb265cc80727ae3b0e6b070b0e298a996404b5ca846d4c36eca4f3bdf64bcd9",
+    "runner_sha256": "eea1e4a8e877cc60dc6228fada95560150e8724b659fc5c28b95f3c5fe182c85",
+    "smoke_sha256": "940d049c5f55b82b1196c797c9f0ed1f7659b964fdde56841f038e095f0bfeb5",
+    "spec_sha256": "918228d497fc57e7c63b79ebd33c554ac4e52cb58760a9b68d86c52f6daae17c"
+  },
+  "base_realm_untouched": {
+    "after": {
+      "digest": "15d521ea5d9fd38394ff0a580819f13970072812c619daf60274fd43d2b140da",
+      "file_count": 62
+    },
+    "before": {
+      "digest": "15d521ea5d9fd38394ff0a580819f13970072812c619daf60274fd43d2b140da",
+      "file_count": 62
+    },
+    "verified": true
+  },
+  "corpus_provenance": {
+    "commit": "b6b7d38500bacb30c81db7e09d8790df1a2edd46",
+    "corpus_id": "DCMLab/ABC (beethoven_quartets)",
+    "integrity": {
+      "file_count": 989,
+      "harmony_dir_files": 140,
+      "harmony_tsv_files": 70,
+      "manifest_definition": "sorted git ls-files relative path + TAB + sha256 + newline",
+      "sha256_manifest_digest": "dcb265cc80727ae3b0e6b070b0e298a996404b5ca846d4c36eca4f3bdf64bcd9"
+    },
+    "license_id": "CC BY-NC-SA 4.0",
+    "license_note": "Attribution-NonCommercial-ShareAlike 4.0 International; CC BY-NC-SA 4.0; LICENSE sha256 8529d8cd7747e8bf310a7950d189cd2ebfe771d32f8d1e988649b98cde404949; cite Neuwirth et al. 2018 (DOI 10.3389/fdigh.2018.00016)",
+    "license_sha256": "8529d8cd7747e8bf310a7950d189cd2ebfe771d32f8d1e988649b98cde404949",
+    "retrieval_date": "2026-10-27T15:19:36.478843+00:00",
+    "retrieval_method": "git clone --depth 1; HEAD verified equal to the pinned commit",
+    "source_origin": "https://github.com/DCMLab/ABC.git @ b6b7d38500bacb30c81db7e09d8790df1a2edd46 (v2.6)",
+    "tag": "v2.6"
+  },
+  "declared_corpora": [
+    {
+      "corpus_id": "bach_chorales",
+      "license_note": "music21 BSD-3-Clause; Bach compositions public domain",
+      "phase_rule": "phase = key tonic pc parsed from the score key signature/key context",
+      "retrieval_status": "declared; retrieval deferred to B1",
+      "source_origin": "music21 Bach chorales (score corpus); package version pinned in B1"
+    },
+    {
+      "corpus_id": "billboard_pop",
+      "license_note": "Research-use annotations; cite Burgoyne et al. 2011",
+      "phase_rule": "phase = chord root pc from the Harte chord label",
+      "retrieval_status": "declared; retrieval deferred to B1",
+      "source_origin": "McGill Billboard Project chord annotations (Burgoyne et al. 2011); distribution pinned in B1"
+    },
+    {
+      "corpus_id": "weimar_jazz",
+      "license_note": "WJazzD research license requiring registration/acceptance; no redistribution",
+      "phase_rule": "phase = chord-track root pc; melodic solo track is explicitly out of scope",
+      "retrieval_status": "declared; access may be registration-gated; recorded in B1",
+      "source_origin": "Weimar Jazz Database (WJazzD) v2.1, Jazzomat Research Project"
+    },
+    {
+      "corpus_id": "isophonics",
+      "license_note": "Public research annotations; cite the Isophonics/QMUL reference",
+      "phase_rule": "phase = chord root pc from the Harte label",
+      "retrieval_status": "declared; retrieval deferred to B1",
+      "source_origin": "Isophonics Beatles chord annotations (QMUL)"
+    },
+    {
+      "corpus_id": "DCMLab/ABC (beethoven_quartets)",
+      "license_note": "Attribution-NonCommercial-ShareAlike 4.0 International; CC BY-NC-SA 4.0; LICENSE sha256 8529d8cd7747e8bf310a7950d189cd2ebfe771d32f8d1e988649b98cde404949; cite Neuwirth et al. 2018 (DOI 10.3389/fdigh.2018.00016)",
+      "phase_rule": "phase = local key tonic pc derived from globalkey + localkey (Roman numeral degree in the global key's scale)",
+      "retrieval_status": "retrieved and pinned",
+      "source_origin": "https://github.com/DCMLab/ABC.git @ b6b7d38500bacb30c81db7e09d8790df1a2edd46 (v2.6)"
+    }
+  ],
+  "encoder_spec": {
+    "declared_phase_rules": [
+      {
+        "corpus_id": "bach_chorales",
+        "phase_fallback_order": [
+          "score key signature",
+          "first sounding chord root"
+        ],
+        "phase_rule": "phase = key tonic pc parsed from the score key signature/key context"
+      },
+      {
+        "corpus_id": "billboard_pop",
+        "phase_fallback_order": [
+          "previous sounding chord root",
+          "key-track tonic"
+        ],
+        "phase_rule": "phase = chord root pc from the Harte chord label"
+      },
+      {
+        "corpus_id": "weimar_jazz",
+        "phase_fallback_order": [
+          "key center",
+          "previous chord root"
+        ],
+        "phase_rule": "phase = chord-track root pc; melodic solo track is explicitly out of scope"
+      },
+      {
+        "corpus_id": "isophonics",
+        "phase_fallback_order": [
+          "key-track tonic",
+          "previous chord root"
+        ],
+        "phase_rule": "phase = chord root pc from the Harte label"
+      },
+      {
+        "corpus_id": "DCMLab/ABC (beethoven_quartets)",
+        "phase_fallback_order": [
+          "global key tonic",
+          "chord root pc"
+        ],
+        "phase_rule": "phase = local key tonic pc derived from globalkey + localkey (Roman numeral degree in the global key's scale)"
+      }
+    ],
+    "encoder_sha256": "dc2379277afb1a9bf92a26cd3a83ea3f16a33a12ca331a9742f7d5861422f745",
+    "fallback_counts": {
+      "chord_tones_missing": 0,
+      "mask_key_override": 10364,
+      "mask_key_used": 17626,
+      "mask_no_superset": 0,
+      "mask_not_in_census": 0,
+      "mask_tie_broken": 10364,
+      "non_harmonic_rows": 99,
+      "parse_errors": 0,
+      "phase_global_key_default": 0,
+      "phase_global_key_unparsed": 0,
+      "phase_local_key": 28089,
+      "phase_local_key_unparsed": 0,
+      "rows_total": 28089
+    },
+    "fallback_counts_scope": "DCMLab/ABC all 70 harmony TSVs; encoder dry-run only; no gate calibration",
+    "frozen": true,
+    "smoke_sha256": "940d049c5f55b82b1196c797c9f0ed1f7659b964fdde56841f038e095f0bfeb5",
+    "smoke_summary": {
+      "chord_subset_of_mask_all": true,
+      "determinism": {
+        "digest": "e55218dec4af10d42d2128a520ac58307243323c36e0705266a128bf74cbae42",
+        "digest_rerun": "e55218dec4af10d42d2128a520ac58307243323c36e0705266a128bf74cbae42",
+        "identical": true
+      },
+      "distinct_masks": 60,
+      "distinct_phases": 12,
+      "events_encoded": 27990,
+      "files_encoded": 70,
+      "mask_in_census_all": true,
+      "rows_total": 28089
+    },
+    "spec_digest": "918228d497fc57e7c63b79ebd33c554ac4e52cb58760a9b68d86c52f6daae17c",
+    "spec_path": "task-b0/mvp3_encoder_spec.json"
+  },
+  "execution_mode": "disjoint-subrealm (task-b0; base Task-0 harness read-only)",
+  "generated_at": "2026-10-27T15:23:10.065752+00:00",
+  "machine": {
+    "hostname": "DESKTOP-PMG2A64",
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python_version": "3.12.3"
+  },
+  "measured_vs_expected": {
+    "corpora_declared": {
+      "expected": 5,
+      "measured": 5
+    },
+    "dcmlab_subcorpus_named": {
+      "expected": "DCMLab/ABC (beethoven_quartets)",
+      "measured": "DCMLab/ABC (beethoven_quartets)"
+    },
+    "encoder_determinism": {
+      "expected": true,
+      "measured": true
+    },
+    "fallback_counters_declared": {
+      "expected": true,
+      "measured": 12
+    },
+    "masks_in_census": {
+      "expected": "all",
+      "measured": "27990/27990"
+    },
+    "non_harmonic_rows": {
+      "expected": "declared @none skip",
+      "measured": 99
+    },
+    "parse_errors": {
+      "expected": 0,
+      "measured": 0
+    },
+    "phase_rule_per_corpus": {
+      "expected": "5/5",
+      "measured": "5/5"
+    },
+    "silent_fallbacks": {
+      "expected": false,
+      "measured": false
+    },
+    "spec_frozen": {
+      "expected": true,
+      "measured": true
+    }
+  },
+  "repo_untouched": {
+    "close": {
+      "head": "8c66cf16a9a364b3b4096e9aab31e4ba6f24d3c2",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tree_clean": true
+    },
+    "open": {
+      "head": "8c66cf16a9a364b3b4096e9aab31e4ba6f24d3c2",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tree_clean": true
+    },
+    "verified": true
+  },
+  "schema_version": "1.0.0",
+  "scratch_path": "/home/erick/workspace/scratch-governed-loop-run/task-b0",
+  "status": "PASS",
+  "stop_rules_triggered": []
+}

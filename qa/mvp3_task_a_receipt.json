@@ -1,0 +1,2007 @@
+{
+  "artifacts": {
+    "card_spec_sha256": "bff1cc4cb270e4883125c6ca431dd8440d8f73be3e33be51fc54c580ad7dc289",
+    "postprocess_script_sha256": "adb884b0c6190efe10f612f190bcd2821b1d724e119540961696c1b1251a0f25",
+    "proposer_script_sha256": "69deb1e6d55ea37eafd97ad2ea868faef3e55e0520bbca05afda9a3a44898936",
+    "transcripts_count": 20,
+    "transcripts_manifest_sha256": "0777e737cd7c2f378c03ac3ccf5cca29fdb4b1340beb31bae386a837238ccc47"
+  },
+  "boundary_protocol": {
+    "auto_transit": {
+      "choice_rule": "smallest (target mask, target phase, operator) seam exit",
+      "gate": {
+        "checks": {
+          "boundary_endpoint": true,
+          "candidate_audit": {
+            "attachmentMode": null,
+            "governingRoot": null,
+            "office": null,
+            "officeIndex": null,
+            "orbit": null,
+            "pcSum": 26,
+            "phase": 2,
+            "role": "boundary",
+            "tier": null
+          },
+          "candidate_governing_root": null,
+          "candidate_membership": true,
+          "current_audit": {
+            "attachmentMode": null,
+            "governingRoot": null,
+            "office": null,
+            "officeIndex": null,
+            "orbit": null,
+            "pcSum": 32,
+            "phase": 1,
+            "role": "boundary",
+            "tier": null
+          },
+          "current_governing_root": null,
+          "hamming": 4,
+          "pair_known_attachment": false,
+          "phaseDelta": 1,
+          "same_family": false,
+          "self_transition": false
+        },
+        "citation": "FamilyA:R1",
+        "reasons": [],
+        "verdict": "ACCEPT"
+      },
+      "kind": "auto-transit",
+      "llm_invoked": false,
+      "source": "501@1",
+      "target": "251@2"
+    },
+    "boundary_llm_invoked": false,
+    "entry": {
+      "boundary_state": "501@1",
+      "gate": {
+        "checks": {
+          "boundary_endpoint": true,
+          "candidate_audit": {
+            "attachmentMode": null,
+            "governingRoot": null,
+            "office": null,
+            "officeIndex": null,
+            "orbit": null,
+            "pcSum": 32,
+            "phase": 1,
+            "role": "boundary",
+            "tier": null
+          },
+          "candidate_governing_root": null,
+          "candidate_membership": true,
+          "current_audit": {
+            "attachmentMode": "single_degree",
+            "governingRoot": 997,
+            "office": "Mars",
+            "officeIndex": 2,
+            "orbit": "ORBIT-D5",
+            "orbitMemberCount": 35,
+            "orbitPhaseSum": 1260,
+            "pcSum": 38,
+            "phase": 0,
+            "role": "satellite",
+            "tier": "D5"
+          },
+          "current_governing_root": 997,
+          "hamming": 4,
+          "pair_known_attachment": false,
+          "phaseDelta": 1,
+          "same_family": false,
+          "self_transition": false
+        },
+        "citation": "FamilyA:R1",
+        "reasons": [],
+        "verdict": "ACCEPT"
+      },
+      "operator": "R1",
+      "source": "1001@0"
+    },
+    "exercised": true,
+    "exit_state": "251@2"
+  },
+  "chaldean_card": {
+    "card_gate_inputs": 0,
+    "card_output_affects_gate": false,
+    "ranked_vs_unranked_baseline": {
+      "arms": {
+        "chaldean-ranked": {
+          "arm": "chaldean-ranked",
+          "auto_transits": [],
+          "final_state": "1259@0",
+          "ranked": true,
+          "steps": [
+            {
+              "arm": "chaldean-ranked",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": null,
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 33,
+                    "phase": 0,
+                    "role": "anchor",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 2,
+                  "pair_known_attachment": true,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 12,
+              "llm_invoked": true,
+              "outbound_count": 11,
+              "presented_count": 11,
+              "presented_index": 0,
+              "presented_order": [
+                "875@0",
+                "1259@0",
+                "1383@0",
+                "1395@0",
+                "1643@0",
+                "2411@0",
+                "1435@0",
+                "1459@0",
+                "1645@0",
+                "859@0",
+                "2773@11"
+              ],
+              "repair_calls": 0,
+              "source": "1387@0",
+              "step": 1,
+              "target": "875@0",
+              "transcript": "transcripts/chaldean-ranked_call_011.json"
+            },
+            {
+              "arm": "chaldean-ranked",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 4,
+                  "pair_known_attachment": false,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 9,
+              "llm_invoked": true,
+              "outbound_count": 8,
+              "presented_count": 8,
+              "presented_index": 0,
+              "presented_order": [
+                "1259@0",
+                "1383@0",
+                "1387@0",
+                "1395@0",
+                "1643@0",
+                "2411@0",
+                "1451@0",
+                "1749@11"
+              ],
+              "repair_calls": 0,
+              "source": "875@0",
+              "step": 2,
+              "target": "1259@0",
+              "transcript": "transcripts/chaldean-ranked_call_012.json"
+            },
+            {
+              "arm": "chaldean-ranked",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 4,
+                  "pair_known_attachment": false,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 8,
+              "llm_invoked": true,
+              "outbound_count": 7,
+              "presented_count": 7,
+              "presented_index": 1,
+              "presented_order": [
+                "875@0",
+                "1383@0",
+                "1387@0",
+                "1395@0",
+                "1643@0",
+                "2411@0",
+                "2517@11"
+              ],
+              "repair_calls": 0,
+              "source": "1259@0",
+              "step": 3,
+              "target": "1383@0",
+              "transcript": "transcripts/chaldean-ranked_call_013.json"
+            },
+            {
+              "arm": "chaldean-ranked",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": null,
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 33,
+                    "phase": 0,
+                    "role": "anchor",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 2,
+                  "pair_known_attachment": true,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 8,
+              "llm_invoked": true,
+              "outbound_count": 7,
+              "presented_count": 7,
+              "presented_index": 2,
+              "presented_order": [
+                "875@0",
+                "1259@0",
+                "1387@0",
+                "1395@0",
+                "1643@0",
+                "2411@0",
+                "2765@11"
+              ],
+              "repair_calls": 0,
+              "source": "1383@0",
+              "step": 4,
+              "target": "1387@0",
+              "transcript": "transcripts/chaldean-ranked_call_014.json"
+            },
+            {
+              "arm": "chaldean-ranked",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": null,
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 33,
+                    "phase": 0,
+                    "role": "anchor",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 2,
+                  "pair_known_attachment": true,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 12,
+              "llm_invoked": true,
+              "outbound_count": 11,
+              "presented_count": 11,
+              "presented_index": 0,
+              "presented_order": [
+                "875@0",
+                "1259@0",
+                "1383@0",
+                "1395@0",
+                "1643@0",
+                "2411@0",
+                "1435@0",
+                "1459@0",
+                "1645@0",
+                "859@0",
+                "2773@11"
+              ],
+              "repair_calls": 0,
+              "source": "1387@0",
+              "step": 5,
+              "target": "875@0",
+              "transcript": "transcripts/chaldean-ranked_call_015.json"
+            },
+            {
+              "arm": "chaldean-ranked",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 4,
+                  "pair_known_attachment": false,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 9,
+              "llm_invoked": true,
+              "outbound_count": 8,
+              "presented_count": 8,
+              "presented_index": 0,
+              "presented_order": [
+                "1259@0",
+                "1383@0",
+                "1387@0",
+                "1395@0",
+                "1643@0",
+                "2411@0",
+                "1451@0",
+                "1749@11"
+              ],
+              "repair_calls": 0,
+              "source": "875@0",
+              "step": 6,
+              "target": "1259@0",
+              "transcript": "transcripts/chaldean-ranked_call_016.json"
+            },
+            {
+              "arm": "chaldean-ranked",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 4,
+                  "pair_known_attachment": false,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 8,
+              "llm_invoked": true,
+              "outbound_count": 7,
+              "presented_count": 7,
+              "presented_index": 1,
+              "presented_order": [
+                "875@0",
+                "1383@0",
+                "1387@0",
+                "1395@0",
+                "1643@0",
+                "2411@0",
+                "2517@11"
+              ],
+              "repair_calls": 0,
+              "source": "1259@0",
+              "step": 7,
+              "target": "1383@0",
+              "transcript": "transcripts/chaldean-ranked_call_017.json"
+            },
+            {
+              "arm": "chaldean-ranked",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": null,
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 33,
+                    "phase": 0,
+                    "role": "anchor",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 2,
+                  "pair_known_attachment": true,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 8,
+              "llm_invoked": true,
+              "outbound_count": 7,
+              "presented_count": 7,
+              "presented_index": 2,
+              "presented_order": [
+                "875@0",
+                "1259@0",
+                "1387@0",
+                "1395@0",
+                "1643@0",
+                "2411@0",
+                "2765@11"
+              ],
+              "repair_calls": 0,
+              "source": "1383@0",
+              "step": 8,
+              "target": "1387@0",
+              "transcript": "transcripts/chaldean-ranked_call_018.json"
+            },
+            {
+              "arm": "chaldean-ranked",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": null,
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 33,
+                    "phase": 0,
+                    "role": "anchor",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 2,
+                  "pair_known_attachment": true,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 12,
+              "llm_invoked": true,
+              "outbound_count": 11,
+              "presented_count": 11,
+              "presented_index": 0,
+              "presented_order": [
+                "875@0",
+                "1259@0",
+                "1383@0",
+                "1395@0",
+                "1643@0",
+                "2411@0",
+                "1435@0",
+                "1459@0",
+                "1645@0",
+                "859@0",
+                "2773@11"
+              ],
+              "repair_calls": 0,
+              "source": "1387@0",
+              "step": 9,
+              "target": "875@0",
+              "transcript": "transcripts/chaldean-ranked_call_019.json"
+            },
+            {
+              "arm": "chaldean-ranked",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 4,
+                  "pair_known_attachment": false,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 9,
+              "llm_invoked": true,
+              "outbound_count": 8,
+              "presented_count": 8,
+              "presented_index": 0,
+              "presented_order": [
+                "1259@0",
+                "1383@0",
+                "1387@0",
+                "1395@0",
+                "1643@0",
+                "2411@0",
+                "1451@0",
+                "1749@11"
+              ],
+              "repair_calls": 0,
+              "source": "875@0",
+              "step": 10,
+              "target": "1259@0",
+              "transcript": "transcripts/chaldean-ranked_call_020.json"
+            }
+          ],
+          "terminated_reason": "completed"
+        },
+        "unranked-baseline": {
+          "arm": "unranked-baseline",
+          "auto_transits": [],
+          "final_state": "1387@0",
+          "ranked": false,
+          "steps": [
+            {
+              "arm": "unranked-baseline",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": null,
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 33,
+                    "phase": 0,
+                    "role": "anchor",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 2,
+                  "pair_known_attachment": true,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 12,
+              "llm_invoked": true,
+              "outbound_count": 11,
+              "presented_count": 11,
+              "presented_index": 3,
+              "presented_order": [
+                "859@0",
+                "875@0",
+                "1259@0",
+                "1383@0",
+                "1395@0",
+                "1435@0",
+                "1459@0",
+                "1643@0",
+                "1645@0",
+                "2411@0",
+                "2773@11"
+              ],
+              "repair_calls": 0,
+              "source": "1387@0",
+              "step": 1,
+              "target": "1383@0",
+              "transcript": "transcripts/unranked-baseline_call_001.json"
+            },
+            {
+              "arm": "unranked-baseline",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": null,
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 33,
+                    "phase": 0,
+                    "role": "anchor",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 2,
+                  "pair_known_attachment": true,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 8,
+              "llm_invoked": true,
+              "outbound_count": 7,
+              "presented_count": 7,
+              "presented_index": 2,
+              "presented_order": [
+                "875@0",
+                "1259@0",
+                "1387@0",
+                "1395@0",
+                "1643@0",
+                "2411@0",
+                "2765@11"
+              ],
+              "repair_calls": 0,
+              "source": "1383@0",
+              "step": 2,
+              "target": "1387@0",
+              "transcript": "transcripts/unranked-baseline_call_002.json"
+            },
+            {
+              "arm": "unranked-baseline",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": null,
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 33,
+                    "phase": 0,
+                    "role": "anchor",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 2,
+                  "pair_known_attachment": true,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 12,
+              "llm_invoked": true,
+              "outbound_count": 11,
+              "presented_count": 11,
+              "presented_index": 3,
+              "presented_order": [
+                "859@0",
+                "875@0",
+                "1259@0",
+                "1383@0",
+                "1395@0",
+                "1435@0",
+                "1459@0",
+                "1643@0",
+                "1645@0",
+                "2411@0",
+                "2773@11"
+              ],
+              "repair_calls": 0,
+              "source": "1387@0",
+              "step": 3,
+              "target": "1383@0",
+              "transcript": "transcripts/unranked-baseline_call_003.json"
+            },
+            {
+              "arm": "unranked-baseline",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": null,
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 33,
+                    "phase": 0,
+                    "role": "anchor",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 2,
+                  "pair_known_attachment": true,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 8,
+              "llm_invoked": true,
+              "outbound_count": 7,
+              "presented_count": 7,
+              "presented_index": 2,
+              "presented_order": [
+                "875@0",
+                "1259@0",
+                "1387@0",
+                "1395@0",
+                "1643@0",
+                "2411@0",
+                "2765@11"
+              ],
+              "repair_calls": 0,
+              "source": "1383@0",
+              "step": 4,
+              "target": "1387@0",
+              "transcript": "transcripts/unranked-baseline_call_004.json"
+            },
+            {
+              "arm": "unranked-baseline",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": null,
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 33,
+                    "phase": 0,
+                    "role": "anchor",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 2,
+                  "pair_known_attachment": true,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 12,
+              "llm_invoked": true,
+              "outbound_count": 11,
+              "presented_count": 11,
+              "presented_index": 3,
+              "presented_order": [
+                "859@0",
+                "875@0",
+                "1259@0",
+                "1383@0",
+                "1395@0",
+                "1435@0",
+                "1459@0",
+                "1643@0",
+                "1645@0",
+                "2411@0",
+                "2773@11"
+              ],
+              "repair_calls": 0,
+              "source": "1387@0",
+              "step": 5,
+              "target": "1383@0",
+              "transcript": "transcripts/unranked-baseline_call_005.json"
+            },
+            {
+              "arm": "unranked-baseline",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": null,
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 33,
+                    "phase": 0,
+                    "role": "anchor",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 2,
+                  "pair_known_attachment": true,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 8,
+              "llm_invoked": true,
+              "outbound_count": 7,
+              "presented_count": 7,
+              "presented_index": 2,
+              "presented_order": [
+                "875@0",
+                "1259@0",
+                "1387@0",
+                "1395@0",
+                "1643@0",
+                "2411@0",
+                "2765@11"
+              ],
+              "repair_calls": 0,
+              "source": "1383@0",
+              "step": 6,
+              "target": "1387@0",
+              "transcript": "transcripts/unranked-baseline_call_006.json"
+            },
+            {
+              "arm": "unranked-baseline",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": null,
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 33,
+                    "phase": 0,
+                    "role": "anchor",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 2,
+                  "pair_known_attachment": true,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 12,
+              "llm_invoked": true,
+              "outbound_count": 11,
+              "presented_count": 11,
+              "presented_index": 3,
+              "presented_order": [
+                "859@0",
+                "875@0",
+                "1259@0",
+                "1383@0",
+                "1395@0",
+                "1435@0",
+                "1459@0",
+                "1643@0",
+                "1645@0",
+                "2411@0",
+                "2773@11"
+              ],
+              "repair_calls": 0,
+              "source": "1387@0",
+              "step": 7,
+              "target": "1383@0",
+              "transcript": "transcripts/unranked-baseline_call_007.json"
+            },
+            {
+              "arm": "unranked-baseline",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": null,
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 33,
+                    "phase": 0,
+                    "role": "anchor",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 2,
+                  "pair_known_attachment": true,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 8,
+              "llm_invoked": true,
+              "outbound_count": 7,
+              "presented_count": 7,
+              "presented_index": 2,
+              "presented_order": [
+                "875@0",
+                "1259@0",
+                "1387@0",
+                "1395@0",
+                "1643@0",
+                "2411@0",
+                "2765@11"
+              ],
+              "repair_calls": 0,
+              "source": "1383@0",
+              "step": 8,
+              "target": "1387@0",
+              "transcript": "transcripts/unranked-baseline_call_008.json"
+            },
+            {
+              "arm": "unranked-baseline",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": null,
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 33,
+                    "phase": 0,
+                    "role": "anchor",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 2,
+                  "pair_known_attachment": true,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 12,
+              "llm_invoked": true,
+              "outbound_count": 11,
+              "presented_count": 11,
+              "presented_index": 3,
+              "presented_order": [
+                "859@0",
+                "875@0",
+                "1259@0",
+                "1383@0",
+                "1395@0",
+                "1435@0",
+                "1459@0",
+                "1643@0",
+                "1645@0",
+                "2411@0",
+                "2773@11"
+              ],
+              "repair_calls": 0,
+              "source": "1387@0",
+              "step": 9,
+              "target": "1383@0",
+              "transcript": "transcripts/unranked-baseline_call_009.json"
+            },
+            {
+              "arm": "unranked-baseline",
+              "chosen_card": {
+                "active_degree": 1,
+                "delta": 0,
+                "fifths_step": 0,
+                "m5_distance": 0,
+                "rank": 0,
+                "target_degree": 1,
+                "target_weight_numerator": 116
+              },
+              "chosen_category": "tier-1",
+              "gate": {
+                "checks": {
+                  "boundary_endpoint": false,
+                  "candidate_audit": {
+                    "attachmentMode": null,
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 33,
+                    "phase": 0,
+                    "role": "anchor",
+                    "tier": "A0"
+                  },
+                  "candidate_governing_root": 1387,
+                  "candidate_membership": true,
+                  "current_audit": {
+                    "attachmentMode": "single_degree",
+                    "governingRoot": 1387,
+                    "office": "Saturn",
+                    "officeIndex": 6,
+                    "orbit": "ORBIT-A0",
+                    "orbitMemberCount": 49,
+                    "orbitPhaseSum": 1764,
+                    "pcSum": 32,
+                    "phase": 0,
+                    "role": "satellite",
+                    "tier": "A0"
+                  },
+                  "current_governing_root": 1387,
+                  "hamming": 2,
+                  "pair_known_attachment": true,
+                  "phaseDelta": 0,
+                  "same_family": true,
+                  "self_transition": false
+                },
+                "citation": null,
+                "reasons": [],
+                "verdict": "ACCEPT"
+              },
+              "kind": "llm-choice",
+              "legal_set_count_including_self": 8,
+              "llm_invoked": true,
+              "outbound_count": 7,
+              "presented_count": 7,
+              "presented_index": 2,
+              "presented_order": [
+                "875@0",
+                "1259@0",
+                "1387@0",
+                "1395@0",
+                "1643@0",
+                "2411@0",
+                "2765@11"
+              ],
+              "repair_calls": 0,
+              "source": "1383@0",
+              "step": 10,
+              "target": "1387@0",
+              "transcript": "transcripts/unranked-baseline_call_010.json"
+            }
+          ],
+          "terminated_reason": "completed"
+        }
+      },
+      "effect": {
+        "first_presented_choice_rate_delta": 0.6,
+        "interpretation": "descriptive only: the ranked arm did not change the chosen card-rank distribution in this run (both arms mean rank 0); presentation-order effect is recorded separately",
+        "mean_chosen_rank_delta_ranked_minus_unranked": 0.0,
+        "top_rank_choice_rate_delta": 0.0
+      },
+      "metrics": {
+        "chaldean-ranked": {
+          "auto_transits": 0,
+          "final_state": "1259@0",
+          "first_presented_choice_rate": 0.6,
+          "llm_decisions": 10,
+          "mean_chosen_rank": 0.0,
+          "rank_histogram": {
+            "0": 10
+          },
+          "terminated_reason": "completed",
+          "top_rank_choice_rate": 1.0
+        },
+        "unranked-baseline": {
+          "auto_transits": 0,
+          "final_state": "1387@0",
+          "first_presented_choice_rate": 0.0,
+          "llm_decisions": 10,
+          "mean_chosen_rank": 0.0,
+          "rank_histogram": {
+            "0": 10
+          },
+          "terminated_reason": "completed",
+          "top_rank_choice_rate": 1.0
+        }
+      }
+    },
+    "ranking_order_degrees": [
+      1,
+      5,
+      2,
+      6,
+      3,
+      7,
+      4
+    ],
+    "role": "rank-only zero-veto",
+    "spec_path": "task-a/mvp3_chaldean_card.json",
+    "spec_sha256": "bff1cc4cb270e4883125c6ca431dd8440d8f73be3e33be51fc54c580ad7dc289",
+    "veto_exercised": false
+  },
+  "execution_mode": "disjoint-subrealm (task-a seeded read-only from Task-0 realm)",
+  "gate_interaction": {
+    "boundary_gate_calls": 2,
+    "gate_calls": 26,
+    "negative_probes": [
+      {
+        "expected_reason": "not-census-state",
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "127@0",
+        "target": "0@0",
+        "verdict": "REJECT"
+      },
+      {
+        "expected_reason": "ungoverned-transition",
+        "reasons": [
+          "ungoverned-transition"
+        ],
+        "source": "223@0",
+        "target": "223@0",
+        "verdict": "REJECT"
+      },
+      {
+        "expected_reason": "unlicensed-transition",
+        "reasons": [
+          "unlicensed-transition"
+        ],
+        "source": "127@0",
+        "target": "191@0",
+        "verdict": "REJECT"
+      }
+    ],
+    "observed_pairs": [
+      [
+        "ACCEPT",
+        null
+      ],
+      [
+        "REJECT",
+        "not-census-state"
+      ],
+      [
+        "REJECT",
+        "ungoverned-transition"
+      ],
+      [
+        "REJECT",
+        "unlicensed-transition"
+      ]
+    ],
+    "observed_subset_of_pinned": true,
+    "probe_gate_calls": 4,
+    "transition_gate_calls": 22,
+    "verdict_counts": [
+      {
+        "count": 22,
+        "reasons": [],
+        "verdict": "ACCEPT"
+      },
+      {
+        "count": 1,
+        "reasons": [
+          "not-census-state"
+        ],
+        "verdict": "REJECT"
+      },
+      {
+        "count": 1,
+        "reasons": [
+          "ungoverned-transition"
+        ],
+        "verdict": "REJECT"
+      },
+      {
+        "count": 2,
+        "reasons": [
+          "unlicensed-transition"
+        ],
+        "verdict": "REJECT"
+      }
+    ],
+    "witness_search_calls": 1
+  },
+  "generated_at": "2026-10-27T15:24:40.105124+00:00",
+  "lineage": {
+    "base": "task-0 scratch realm",
+    "base_realm_after": {
+      "digest": "15d521ea5d9fd38394ff0a580819f13970072812c619daf60274fd43d2b140da",
+      "file_count": 62
+    },
+    "base_realm_before": {
+      "digest": "15d521ea5d9fd38394ff0a580819f13970072812c619daf60274fd43d2b140da",
+      "file_count": 62
+    },
+    "base_untouched": true,
+    "files_touched": [],
+    "new_files": [
+      {
+        "path": "task-a/mvp3_chaldean_card.json",
+        "sha256": "bff1cc4cb270e4883125c6ca431dd8440d8f73be3e33be51fc54c580ad7dc289"
+      },
+      {
+        "path": "task-a/mvp3_llm_proposer.py",
+        "sha256": "69deb1e6d55ea37eafd97ad2ea868faef3e55e0520bbca05afda9a3a44898936"
+      },
+      {
+        "path": "task-a/mvp3_task_a_postprocess.py",
+        "sha256": "adb884b0c6190efe10f612f190bcd2821b1d724e119540961696c1b1251a0f25"
+      },
+      {
+        "path": "task-a/run.out",
+        "sha256": "2e29a4f945b3d6182ff35f08a4a4a61033ae3ddb3e43077d9ca5f3a3d66520fd"
+      },
+      {
+        "path": "task-a/transcripts/chaldean-ranked_call_011.json",
+        "sha256": "c39fd04cb5ab66ef5dc96980d1175e2fa0a3ea4ebf765f9146e1e6ca75b67794"
+      },
+      {
+        "path": "task-a/transcripts/chaldean-ranked_call_012.json",
+        "sha256": "59064c722f1e27382ebaf9472399f123ae241f044a6cff6931a028c529e8b8a2"
+      },
+      {
+        "path": "task-a/transcripts/chaldean-ranked_call_013.json",
+        "sha256": "a91d0657064ec5e3f76b55c6a6c5f22bb92a610b1c9911247d4a55007b292cf8"
+      },
+      {
+        "path": "task-a/transcripts/chaldean-ranked_call_014.json",
+        "sha256": "f96c2209a03ee21c2fc5ade0966ab1c77e290b5a69502af154a25b602cc4ec34"
+      },
+      {
+        "path": "task-a/transcripts/chaldean-ranked_call_015.json",
+        "sha256": "843d814f56d425b82e4e31ba692f0e5f0a50b6dbecbef7ee8b91968b3a5c26d8"
+      },
+      {
+        "path": "task-a/transcripts/chaldean-ranked_call_016.json",
+        "sha256": "bc1d533f384e0b09a260e75260f10f15a01d7a5fb1a4f532eaaf68b5eff1abf0"
+      },
+      {
+        "path": "task-a/transcripts/chaldean-ranked_call_017.json",
+        "sha256": "d23250d24b6f5b3121a05d3e193466ac06ad3d22e71f1fabb7ea0c57487dea5e"
+      },
+      {
+        "path": "task-a/transcripts/chaldean-ranked_call_018.json",
+        "sha256": "8b4e682ad0d495b52a70af47a052d555fa111e650a53ac319e381e71ef3e7424"
+      },
+      {
+        "path": "task-a/transcripts/chaldean-ranked_call_019.json",
+        "sha256": "9293f2b2d4da14f295048875a00164377aecdd5d9e7ee0f1fa6cb0b0fd56835f"
+      },
+      {
+        "path": "task-a/transcripts/chaldean-ranked_call_020.json",
+        "sha256": "0685b295fe96abffbe29075f057b1a901b44c73587603d63252a03174bf161c4"
+      },
+      {
+        "path": "task-a/transcripts/unranked-baseline_call_001.json",
+        "sha256": "4f4f1ba0909607a143118c6fdaf38e84068f1c6b94dd96d85cc81d73b962d559"
+      },
+      {
+        "path": "task-a/transcripts/unranked-baseline_call_002.json",
+        "sha256": "d4fdaf61ec92e5d835f88aa0dd8b6b4a2ad524959e4ce6c68f18b4e0bdd39e84"
+      },
+      {
+        "path": "task-a/transcripts/unranked-baseline_call_003.json",
+        "sha256": "7398af778f3065d0669dc08e1c34f3a0d63ea0ae363f6d5872665df26678ff16"
+      },
+      {
+        "path": "task-a/transcripts/unranked-baseline_call_004.json",
+        "sha256": "82859bd1c132b837001a4283611319f78f3c6862e18a3bde5ff3cf81edc1e48a"
+      },
+      {
+        "path": "task-a/transcripts/unranked-baseline_call_005.json",
+        "sha256": "df5839cade52a95c337b43966fe35db09c1716e08f7ab0c0677d3d2cbaddfbda"
+      },
+      {
+        "path": "task-a/transcripts/unranked-baseline_call_006.json",
+        "sha256": "7c32cd1787727b35976ba61892645feb19ab09bb7d0577c6bd4fade3c516a6fb"
+      },
+      {
+        "path": "task-a/transcripts/unranked-baseline_call_007.json",
+        "sha256": "2ff7700d411b2ad155cc9f2595c5ec03211921916580e67ac41d18fd797effae"
+      },
+      {
+        "path": "task-a/transcripts/unranked-baseline_call_008.json",
+        "sha256": "5cf923b7d8604f31b0c922de87d6abc4465efe10f87a1c58b1d1995bbdd22835"
+      },
+      {
+        "path": "task-a/transcripts/unranked-baseline_call_009.json",
+        "sha256": "c2ef4a346a474d1ad95ae4fd82e8b3525c24276f1611610f9455d2092b9fa66d"
+      },
+      {
+        "path": "task-a/transcripts/unranked-baseline_call_010.json",
+        "sha256": "2635f515e9aaffafc3786573ba9dc5496fe7296d9a9ba83ab46da3d6ebf308d2"
+      },
+      {
+        "path": "task-a/llm_work/opencode.json",
+        "sha256": "9cb555deeef3db0bdbf9f30b1daddd8cc95bdbd029202a0008aa5ee3043c642f"
+      }
+    ]
+  },
+  "machine": {
+    "hostname": "DESKTOP-PMG2A64",
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python_version": "3.12.3"
+  },
+  "measured_vs_expected": {
+    "boundary_llm_calls": {
+      "expected": 0,
+      "measured": 0
+    },
+    "boundary_protocol_exercised": {
+      "expected": true,
+      "measured": true
+    },
+    "candidate_count_bounds": {
+      "expected": "1..15 outbound candidates",
+      "legal_set_max_including_self": 12,
+      "legal_set_min_including_self": 8,
+      "measured_max": 11,
+      "measured_min": 7,
+      "nodes_visited": 4,
+      "scope": "Task A trajectory (20 LLM decisions; not a full node census)",
+      "violations": []
+    },
+    "chaldean_veto_exercised": {
+      "expected": false,
+      "measured": false
+    },
+    "gate_determinism": {
+      "checked_transitions": 22,
+      "expected": "100%",
+      "mismatches": 0
+    },
+    "gate_vocabulary_subset": {
+      "expected": true,
+      "measured": true
+    },
+    "llm_choice_validity": {
+      "expected": "all choices valid indices",
+      "repair_calls": 0,
+      "transcripts_checked": 20,
+      "valid_transcripts": 20
+    },
+    "self_transitions": "included (legal no-op; Tier-1 catalog includes self)"
+  },
+  "proposer_execution": {
+    "boundary_auto_transit_count": 1,
+    "boundary_llm_calls": 0,
+    "gate_call_breakdown": {
+      "boundary_gate_calls_included": 2,
+      "determinism_repeats": 22,
+      "probe_gate_calls": 4,
+      "transition_gate_calls": 22
+    },
+    "gate_call_count": 22,
+    "gate_determinism_checks": 22,
+    "gate_probe_calls": 4,
+    "invocation_locus": "in-harness subprocess",
+    "llm_call_count": 20,
+    "llm_planned_calls": 20,
+    "max_tokens_or_equivalent": null,
+    "mode": "performer-direct-gate",
+    "model": "opencode-go/claude-haiku-5-5",
+    "model_selection_note": "opencode-go/claude-haiku-5-5 was selected after transport timing tests. opencode-go/deepseek-v4.1-flash was available but produced 10-146s calls; the chosen model returned strict JSON in ~3-4s. The exact model used is pinned above.",
+    "sampling_controls_note": "opencode CLI transport does not expose sampling controls; provider defaults apply",
+    "sdk": "opencode CLI 1.19.4 (non-interactive run --format json, agent=proposer, --pure, --auto)",
+    "seed_state": "1387@0",
+    "steps_per_arm": 10,
+    "temperature": null,
+    "token_usage": {
+      "cache_read": 56488,
+      "cache_write": 2434,
+      "cost": 0.00235063,
+      "input": 80,
+      "output": 200,
+      "reasoning": 2747,
+      "total": 61949
+    },
+    "top_p": null
+  },
+  "repo_untouched": {
+    "close": {
+      "head": "8c66cf16a9a364b3b4096e9aab31e4ba6f24d3c2",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tree_clean": true
+    },
+    "open": {
+      "head": "8c66cf16a9a364b3b4096e9aab31e4ba6f24d3c2",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tree_clean": true
+    },
+    "verified": true
+  },
+  "schema_version": "1.0.0",
+  "scratch_path": "/home/erick/workspace/scratch-governed-loop-run/task-a",
+  "status": "PASS",
+  "stop_rules_triggered": []
+}

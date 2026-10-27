@@ -1,0 +1,249 @@
+{
+  "artifacts": {
+    "bridge_check_out_sha256": "f796cbee2e2af7a028ca911f3d663202fcd5f11a76b3b207f649a88e0bb8c2f4",
+    "census_measurements_sha256": "576ddbd86581104214df60fa1538d0a60e81a515f3c0bd4839a2549a13ed697c",
+    "census_script_sha256": "b7c265ffb20ac5d914953bf9aed218f07727ddb6cd352c31ccc3bb378ae82fb7",
+    "smoke_out_sha256": "757108986ee8806982d1d92cadd1c7fd6ece009424a1164acd9fbebca1482a54"
+  },
+  "bridge_check": {
+    "exit_code": 0,
+    "mode": "offline --check; no socket bound; port 8765 used only by full smoke server",
+    "mvp2_pin_status": "MATCH",
+    "output_sha256": "f796cbee2e2af7a028ca911f3d663202fcd5f11a76b3b207f649a88e0bb8c2f4",
+    "result": "PASS"
+  },
+  "census_population": {
+    "covered_nodes": 3696,
+    "definition": "all governed lifted states: census masks with governingRoot != None (anchors + satellites) across all 12 phases",
+    "governed_masks": 308
+  },
+  "checks": {
+    "bridge": true,
+    "census": true,
+    "counts": true,
+    "pins": true,
+    "repo": true,
+    "smoke": true,
+    "vocabulary": true
+  },
+  "counts_measured_vs_expected": {
+    "boundary_rows": {
+      "expected": 256,
+      "measured": 256
+    },
+    "candidate_census": {
+      "census_rejects": 0,
+      "expected_fence_max": 15,
+      "measured_familyA_max": 2,
+      "measured_familyB_max": 6,
+      "measured_max": 14,
+      "measured_mean": 6.279220779220779,
+      "measured_min": 1,
+      "measured_tier1_max": 7,
+      "nodes_measured": 3696
+    },
+    "distinct_application_ids": {
+      "expected": 196,
+      "measured": 196
+    },
+    "nodes": {
+      "expected": 5544,
+      "measured": 5544
+    },
+    "seam_moves": {
+      "expected": 5130,
+      "measured": 5130
+    },
+    "tier1_moves": {
+      "expected": 18984,
+      "measured": 18984
+    },
+    "withheld_boundary_states": {
+      "expected": 154,
+      "measured": 154
+    }
+  },
+  "fixed_point": {
+    "file_count": 1480,
+    "ledger_bytes": 323099,
+    "ledger_digest": "6d4ab925748a72865a3e7ee60ac1becb6d39380eb3f5270f6f9dc21b5e944923",
+    "ledger_lines": 4059,
+    "ledger_prefix": "6d4ab925",
+    "manifest_total_bytes": 95207429,
+    "repo_head": "8c66cf16a9a364b3b4096e9aab31e4ba6f24d3c2"
+  },
+  "gate_vocabulary_observed": {
+    "gate_calls": 23212,
+    "negative_probes": [
+      {
+        "expected_reason": "not-census-state",
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "127@0",
+        "target": "0@0",
+        "verdict": "REJECT"
+      },
+      {
+        "expected_reason": "ungoverned-transition",
+        "reasons": [
+          "ungoverned-transition"
+        ],
+        "source": "223@0",
+        "target": "223@0",
+        "verdict": "REJECT"
+      },
+      {
+        "expected_reason": "unlicensed-transition",
+        "reasons": [
+          "unlicensed-transition"
+        ],
+        "source": "127@0",
+        "target": "191@0",
+        "verdict": "REJECT"
+      }
+    ],
+    "observed_pairs": [
+      [
+        "ACCEPT",
+        null
+      ],
+      [
+        "REJECT",
+        "not-census-state"
+      ],
+      [
+        "REJECT",
+        "ungoverned-transition"
+      ],
+      [
+        "REJECT",
+        "unlicensed-transition"
+      ]
+    ],
+    "observed_subset_of_pinned": true,
+    "verdict_counts": [
+      {
+        "count": 23208,
+        "reasons": [],
+        "verdict": "ACCEPT"
+      },
+      {
+        "count": 1,
+        "reasons": [
+          "not-census-state"
+        ],
+        "verdict": "REJECT"
+      },
+      {
+        "count": 1,
+        "reasons": [
+          "ungoverned-transition"
+        ],
+        "verdict": "REJECT"
+      },
+      {
+        "count": 2,
+        "reasons": [
+          "unlicensed-transition"
+        ],
+        "verdict": "REJECT"
+      }
+    ]
+  },
+  "generated_at": "2026-10-27T14:34:38.373073+00:00",
+  "lineage": {
+    "all_matched_pre_patch": true,
+    "files_checked": 51,
+    "mvp2_post_patch_sha256": "5957a290d3d23e458fb4ddf641868719ac940514eb3aee5aa0df417112ca04e2",
+    "mvp2_pre_patch_sha256": "fb9db3cd69234d41417582e0ffae27bbb15c52c777fe3856cf598b2664ca736a",
+    "patch_scope": "path variables and fixed-point constants only; gate logic, priorities, and return vocabulary untouched",
+    "patched_files": {
+      "mvp2.py": {
+        "post": "5957a290d3d23e458fb4ddf641868719ac940514eb3aee5aa0df417112ca04e2",
+        "pre": "fb9db3cd69234d41417582e0ffae27bbb15c52c777fe3856cf598b2664ca736a"
+      },
+      "mvp2_orrery_nav_smoke.py": {
+        "post": "7718193bfd793c75c5fc5e871225e73a42c089bce49732050edb615c11ba0398",
+        "pre": "fe81ee3adb3228e788302530471a93f95797cf98c33806ff820b150fb1bce6ec"
+      },
+      "orrery_nav_bridge.py": {
+        "post": "77d87207d721af47210d9bfc446089e48e32bad2cca66463307a808e89a0c997",
+        "pre": "ae6502b960924b7c94b663ef9ccac67558533833e04500f0722f9c4fd2edc98e"
+      }
+    },
+    "pins_authority": "qa/l18-staging-receipt.json realmFiles[51]",
+    "pre_patch_mismatches": [],
+    "pre_patch_pin_matches": 51,
+    "scratch_current": {
+      "modified_or_regenerated": [
+        "mvp2.py",
+        "mvp2_orrery_nav_smoke.py",
+        "orrery_nav_bridge.py",
+        "orrery_nav_report.json"
+      ],
+      "pin_match": 47,
+      "smoke_added": [
+        ".playwright-cli",
+        "__pycache__",
+        "bridge_check.out",
+        "mvp3_census_measurements.json",
+        "mvp3_task0_census.py",
+        "mvp3_task0_receipt.py",
+        "orrery_nav_browser_log.json",
+        "orrery_nav_probe.js",
+        "smoke.out"
+      ]
+    },
+    "source": "tools/governed-loop/ @ 8c66cf16 (landed bytes)",
+    "source_commit": "8c66cf16a9a364b3b4096e9aab31e4ba6f24d3c2"
+  },
+  "machine": {
+    "hostname": "DESKTOP-PMG2A64",
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python_version": "3.12.3"
+  },
+  "repo_untouched": {
+    "close_snapshot": {
+      "head": "8c66cf16a9a364b3b4096e9aab31e4ba6f24d3c2",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tree_clean": true
+    },
+    "head_sha": "8c66cf16a9a364b3b4096e9aab31e4ba6f24d3c2",
+    "open_snapshot": {
+      "head": "8c66cf16a9a364b3b4096e9aab31e4ba6f24d3c2",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tree_clean": true
+    },
+    "porcelain_status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verified": true
+  },
+  "schema_version": "1.0.0",
+  "scratch_path": "/home/erick/workspace/scratch-governed-loop-run",
+  "smoke": {
+    "bridge_port": 8765,
+    "mode": "full",
+    "notes": "Full Vite :4202 + Playwright smoke; zero stop rules; overlay 12/12 phases, 0 console errors. Vite's gitignored cache and the runner's /tmp log are runner infrastructure; tracked-tree porcelain stayed empty.",
+    "report_sha256": "951bec1283430422783443c9144ea8cb80f1c63d1251df0449239d55331b8285",
+    "result": "PASS",
+    "verdicts": {
+      "BAKE-CHECK": "CLEAN",
+      "BOUNDARY-TRANSIT": "256 EXPECTATION 256 MATCH",
+      "CONFORMANCE-5130": "EXHAUSTIVE-ACCEPT",
+      "CONSOLE-ERRORS": "0",
+      "MVP2-BYTE-IDENTICAL": "TRUE",
+      "NODES": "5544/5544 MATCH",
+      "ORRERY-CHANGES": "0",
+      "ORRERY-NAV-1-VERDICT": "PASS",
+      "OVERLAY-EXPRESSIBILITY": "VERIFIED",
+      "PROBES": "7/7 MATCH",
+      "REPO-WRITES": "0",
+      "SEAM-CATALOG": "5130/5130 MATCH",
+      "STOP-RULE-FIRED": "none",
+      "TIER1-DERIVED": "18984 EXPECTATION 18984 MATCH"
+    },
+    "vite_port": 4202
+  },
+  "status": "PASS",
+  "stop_rules_triggered": []
+}

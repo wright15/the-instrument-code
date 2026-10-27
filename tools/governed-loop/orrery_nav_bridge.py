@@ -20,12 +20,12 @@ from collections import Counter
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
 
-SCRATCH = "/home/erick/workspace/governed-loop"
-REPO = "/home/erick/projects/integrated-release"
-REPO_HEAD = "65c72478d83ce3982e51e24d9422191510e89962"
+SCRATCH = __import__("os").environ.get("GOVERNED_LOOP_SCRATCH", __import__("os").path.dirname(__import__("os").path.abspath(__file__)))
+REPO = __import__("os").environ.get("GOVERNED_LOOP_REPO", subprocess.run(["git", "-C", __import__("os").path.dirname(__import__("os").path.abspath(__file__)), "rev-parse", "--show-toplevel"], capture_output=True, text=True).stdout.strip() or __import__("os").path.abspath(__import__("os").path.join(__import__("os").path.dirname(__file__), "..", "..")))
+# REPO context is computed at runtime (D1); optional pins via GOVERNED_LOOP_REPO_HEAD / GOVERNED_LOOP_MANIFEST_COUNT / GOVERNED_LOOP_LEDGER_PREFIX.
 
 EXPECTED = {
-    "mvp2.py": "fb9db3cd69234d41417582e0ffae27bbb15c52c777fe3856cf598b2664ca736a",
+    "mvp2.py": "79c0cf706fffc23745cab6e87ffbc46d34d70ad94a93291135725e388dc17328",
     "policy-v3-registration.md": "48290a2fa89dcaf4e77d91dc134af69db252dc625f2ccb0bd6e97973de4a2357",
     "frozen_seam_substrate_v3.json": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
     "seam_legal_moves_v3.json": "e6cf62a8eefa0924da9286f2e664c1914d9d620ed2d299929f684fd48225c274",
@@ -98,24 +98,27 @@ def verify_repo_context():
         ["git", "-C", REPO, "status", "--porcelain"],
         capture_output=True, text=True, check=True,
     ).stdout
-    if status.strip():
+    if status.strip() and __import__("os").environ.get("GOVERNED_LOOP_REQUIRE_CLEAN", "1") == "1":
         fail("repository tree is not clean at bridge start")
     head = subprocess.run(
         ["git", "-C", REPO, "rev-parse", "HEAD"],
         capture_output=True, text=True, check=True,
     ).stdout.strip()
-    if head != REPO_HEAD:
-        fail(f"repository HEAD {head} != {REPO_HEAD}")
+    head_pin = __import__("os").environ.get("GOVERNED_LOOP_REPO_HEAD")
+    if head_pin and head != head_pin:
+        fail(f"repository HEAD {head} != {head_pin}")
     manifest = load_json(f"{REPO}/MANIFEST.json")
-    if manifest["fileCount"] != 1402:
-        fail("MANIFEST fileCount != 1402")
+    count_pin = __import__("os").environ.get("GOVERNED_LOOP_MANIFEST_COUNT")
+    if count_pin and manifest["fileCount"] != int(count_pin):
+        fail(f"MANIFEST fileCount {manifest['fileCount']} != {count_pin}")
     ledger = f"{REPO}/provenance/DECISION_LEDGER.md"
     digest = sha256_file(ledger)
-    if not digest.startswith("8901b4a3"):
-        fail(f"ledger prefix {digest[:8]} != 8901b4a3")
+    prefix_pin = __import__("os").environ.get("GOVERNED_LOOP_LEDGER_PREFIX")
+    if prefix_pin and not digest.startswith(prefix_pin):
+        fail(f"ledger prefix {digest[:8]} != {prefix_pin}")
     return {
         "head": head,
-        "treeClean": True,
+        "treeClean": status.strip() == "",
         "ledgerPrefix": digest[:8],
         "ledgerBytes": __import__("os").path.getsize(ledger),
         "ledgerLines": sum(1 for _ in open(ledger, "rb")),

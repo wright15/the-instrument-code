@@ -1,0 +1,1620 @@
+{
+  "artifacts": {
+    "corpus_result_sha256": {
+      "DCMLab/ABC (beethoven_quartets)": "21c72a8febe02a5847bddfff094b0184e73e9a90520ccec5691977a612034920",
+      "bach_chorales": "21233e1757d98901a8bc37de21d19be0c96864868e29975a50fa282fc785066d",
+      "billboard_pop": "0296c1fce7b964c8472057a11501457ad5ce88db3813a6a7b58dd4a4a4edb58f",
+      "isophonics": "c799c3670f14b6c5b74663a8b9382a9297f2f7e2c87a1df1150882c99584e3ff",
+      "weimar_jazz": "d811a688bcb1a4c114a19f87bb61a621be56fba42f963bfbdac1a7869a8d10d6"
+    },
+    "encoder_sha256": "dc2379277afb1a9bf92a26cd3a83ea3f16a33a12ca331a9742f7d5861422f745",
+    "manifest_sha256": {
+      "bach_chorales": "cf201f438767477e787482d18be9a02fb1650a9e35382ad787b98297137302f1",
+      "billboard_pop": "aab530a2824cd7937ffd0d0adcc9f489c143f754f477ebce346ef0b92c78a29a",
+      "isophonics": "bb73801088e3a70c020915f37b313d2b0cedba71751cc6c3e3370ffeb14980f7"
+    },
+    "runner_sha256": "796bac0a1be2d29f5af318577595f1a0925a3ba0006fd4cda13c7bab144ab2d8",
+    "spec_sha256": "918228d497fc57e7c63b79ebd33c554ac4e52cb58760a9b68d86c52f6daae17c",
+    "weimar_db_sha256": "af6a0d9debf042c3581565bd75baad591d32e166cd2ec7298519883de614bf12"
+  },
+  "base_realm_untouched": {
+    "after": {
+      "digest": "15d521ea5d9fd38394ff0a580819f13970072812c619daf60274fd43d2b140da",
+      "file_count": 62
+    },
+    "before": {
+      "digest": "15d521ea5d9fd38394ff0a580819f13970072812c619daf60274fd43d2b140da",
+      "file_count": 62
+    },
+    "verified": true
+  },
+  "calibration": {
+    "aggregate": {
+      "accepted": 8172,
+      "boundary_transit": {
+        "accepted": 18,
+        "distinct_application_ids": 1,
+        "entries": 18,
+        "exits": 0
+      },
+      "corpora": 5,
+      "raw_acceptance_rate": 0.05570096515622444,
+      "rejected": 138540,
+      "teleport_labels": 138540,
+      "transitions": 146712,
+      "veto_breakdown": [
+        {
+          "count": 52810,
+          "reason": "ungoverned-transition"
+        },
+        {
+          "count": 85730,
+          "reason": "unlicensed-transition"
+        }
+      ]
+    },
+    "per_corpus": [
+      {
+        "acceptance": {
+          "accepted": 2998,
+          "raw_acceptance_rate": 0.22829728906487967,
+          "rejected": 10134
+        },
+        "accepted_not_adjacent": 0,
+        "accounting": {
+          "deduped_events": 13202,
+          "duplicates_collapsed": 14788,
+          "events_encoded": 27990,
+          "non_harmonic_rows": 99,
+          "rows_total": 28089,
+          "segments": 70,
+          "transitions": 13132
+        },
+        "boundary_transit_usage": {
+          "accepted": 0,
+          "distinct_application_ids": 0,
+          "entries": 0,
+          "exits": 0
+        },
+        "corpus_id": "DCMLab/ABC (beethoven_quartets)",
+        "deduped_events": 13202,
+        "duplicates_collapsed": 14788,
+        "events_encoded": 27990,
+        "fallback_counts": {
+          "chord_tones_missing": 0,
+          "mask_key_override": 10364,
+          "mask_key_used": 17626,
+          "mask_no_superset": 0,
+          "mask_not_in_census": 0,
+          "mask_tie_broken": 10364,
+          "non_harmonic_rows": 99,
+          "parse_errors": 0,
+          "phase_fallback_1": 0,
+          "phase_fallback_2": 0,
+          "phase_primary_used": 28089,
+          "unparsed_labels": 0
+        },
+        "key_analysis_failures": null,
+        "key_used_vs_override_split": {
+          "any_key_override": {
+            "accepted": 2998,
+            "raw_acceptance_rate": 0.23238508642740874,
+            "transitions": 12901
+          },
+          "both_key_used": {
+            "accepted": 0,
+            "raw_acceptance_rate": 0.0,
+            "transitions": 231
+          }
+        },
+        "non_harmonic_rows": 99,
+        "phase_coverage": {
+          "distinct_phases": 12,
+          "phases": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        "raw_counters": {
+          "mask_key_override": 10364,
+          "mask_key_used": 17626,
+          "mask_tie_broken": 10364,
+          "non_harmonic_rows": 99,
+          "phase_local_key": 28089,
+          "rows_total": 28089
+        },
+        "rows_total": 28089,
+        "samples": [
+          {
+            "citation": null,
+            "left_label": "F.I",
+            "reasons": [],
+            "right_label": "#viio7(6)/vi",
+            "source": "2741@5",
+            "target": "2485@5",
+            "teleport": false,
+            "verdict": "ACCEPT"
+          },
+          {
+            "citation": null,
+            "left_label": "#viio7(6)/vi",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "#viio7(4)/ii",
+            "source": "2485@5",
+            "target": "1207@5",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "#viio7(4)/ii",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "ii6",
+            "source": "1207@5",
+            "target": "2741@5",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "ii6",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "viio7(b4)/V",
+            "source": "2741@5",
+            "target": "1149@5",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "viio7(b4)/V",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "viio7/V",
+            "source": "1149@5",
+            "target": "637@5",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "viio7/V",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "V7(4)",
+            "source": "637@5",
+            "target": "2741@5",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "V7(4)",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "V7(4)/IV",
+            "source": "2741@5",
+            "target": "1717@5",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "V7(4)/IV",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "ii6(9#4)",
+            "source": "1717@5",
+            "target": "949@5",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "ii6(9#4)",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "ii6",
+            "source": "949@5",
+            "target": "2741@5",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "ii6",
+            "reasons": [],
+            "right_label": "V65/vi",
+            "source": "2741@5",
+            "target": "2485@5",
+            "teleport": false,
+            "verdict": "ACCEPT"
+          },
+          {
+            "citation": null,
+            "left_label": "V65/vi",
+            "reasons": [],
+            "right_label": "vi",
+            "source": "2485@5",
+            "target": "2741@5",
+            "teleport": false,
+            "verdict": "ACCEPT"
+          },
+          {
+            "citation": null,
+            "left_label": "vi",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "V65/V",
+            "source": "2741@5",
+            "target": "757@5",
+            "teleport": true,
+            "verdict": "REJECT"
+          }
+        ],
+        "segments": 70,
+        "teleport": {
+          "by_gate_reason": [
+            {
+              "count": 2998,
+              "reason": null,
+              "teleport": false,
+              "verdict": "ACCEPT"
+            },
+            {
+              "count": 5094,
+              "reason": "ungoverned-transition",
+              "teleport": true,
+              "verdict": "REJECT"
+            },
+            {
+              "count": 5040,
+              "reason": "unlicensed-transition",
+              "teleport": true,
+              "verdict": "REJECT"
+            }
+          ],
+          "labels": 10134,
+          "not_teleport": 2998
+        },
+        "transition_count": 13132,
+        "transition_digest": "b3904ec48797f595826a4f308a4583efb93ff2ff4b3d41ed942fcc1f9abbea8a",
+        "transitions": 13132,
+        "veto_breakdown": [
+          {
+            "count": 5094,
+            "reason": "ungoverned-transition"
+          },
+          {
+            "count": 5040,
+            "reason": "unlicensed-transition"
+          }
+        ]
+      },
+      {
+        "acceptance": {
+          "accepted": 4285,
+          "raw_acceptance_rate": 0.45444904019514265,
+          "rejected": 5144
+        },
+        "accepted_not_adjacent": 0,
+        "accounting": {
+          "deduped_events": 9800,
+          "duplicates_collapsed": 21351,
+          "events_encoded": 31151,
+          "non_harmonic_rows": 0,
+          "rows_total": 31151,
+          "segments": 371,
+          "transitions": 9429
+        },
+        "boundary_transit_usage": {
+          "accepted": 0,
+          "distinct_application_ids": 0,
+          "entries": 0,
+          "exits": 0
+        },
+        "corpus_id": "bach_chorales",
+        "deduped_events": 9800,
+        "duplicates_collapsed": 21351,
+        "events_encoded": 31151,
+        "fallback_counts": {
+          "chord_tones_missing": 0,
+          "mask_key_override": 7243,
+          "mask_key_used": 23908,
+          "mask_no_superset": 0,
+          "mask_not_in_census": 0,
+          "mask_tie_broken": 7241,
+          "non_harmonic_rows": 0,
+          "parse_errors": 0,
+          "phase_fallback_1": 0,
+          "phase_fallback_2": 0,
+          "phase_primary_used": 371,
+          "unparsed_labels": 0
+        },
+        "key_analysis_failures": 0,
+        "key_used_vs_override_split": {
+          "any_key_override": {
+            "accepted": 4285,
+            "raw_acceptance_rate": 0.45444904019514265,
+            "transitions": 9429
+          },
+          "both_key_used": {
+            "accepted": 0,
+            "raw_acceptance_rate": null,
+            "transitions": 0
+          }
+        },
+        "non_harmonic_rows": 0,
+        "phase_coverage": {
+          "distinct_phases": 11,
+          "phases": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        "raw_counters": {
+          "key_analysis_used": 371,
+          "mask_key_override": 7243,
+          "mask_key_used": 23908,
+          "mask_tie_broken": 7241,
+          "phase_primary_used": 371,
+          "rows_total": 31151
+        },
+        "rows_total": 31151,
+        "samples": [
+          {
+            "citation": null,
+            "left_label": null,
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": null,
+            "source": "2741@7",
+            "target": "1717@7",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": null,
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": null,
+            "source": "1717@7",
+            "target": "2741@7",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": null,
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": null,
+            "source": "2741@9",
+            "target": "757@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": null,
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": null,
+            "source": "757@9",
+            "target": "1717@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": null,
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": null,
+            "source": "1717@9",
+            "target": "757@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": null,
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": null,
+            "source": "757@9",
+            "target": "2741@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": null,
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": null,
+            "source": "2741@9",
+            "target": "2293@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": null,
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": null,
+            "source": "2293@9",
+            "target": "757@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": null,
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": null,
+            "source": "757@9",
+            "target": "2741@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": null,
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": null,
+            "source": "2741@9",
+            "target": "757@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": null,
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": null,
+            "source": "757@9",
+            "target": "2741@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": null,
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": null,
+            "source": "2741@9",
+            "target": "1717@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          }
+        ],
+        "segments": 371,
+        "teleport": {
+          "by_gate_reason": [
+            {
+              "count": 4285,
+              "reason": null,
+              "teleport": false,
+              "verdict": "ACCEPT"
+            },
+            {
+              "count": 3017,
+              "reason": "ungoverned-transition",
+              "teleport": true,
+              "verdict": "REJECT"
+            },
+            {
+              "count": 2127,
+              "reason": "unlicensed-transition",
+              "teleport": true,
+              "verdict": "REJECT"
+            }
+          ],
+          "labels": 5144,
+          "not_teleport": 4285
+        },
+        "transition_count": 9429,
+        "transition_digest": "8d676d2e54a281648164fe7da5fe6ecf14cf61bc6c8212da05e1f9e9254d1136",
+        "transitions": 9429,
+        "veto_breakdown": [
+          {
+            "count": 3017,
+            "reason": "ungoverned-transition"
+          },
+          {
+            "count": 2127,
+            "reason": "unlicensed-transition"
+          }
+        ]
+      },
+      {
+        "acceptance": {
+          "accepted": 546,
+          "raw_acceptance_rate": 0.00650147057072433,
+          "rejected": 83435
+        },
+        "accepted_not_adjacent": 0,
+        "accounting": {
+          "deduped_events": 84871,
+          "duplicates_collapsed": 35065,
+          "events_encoded": 119936,
+          "non_harmonic_rows": 4917,
+          "rows_total": 124895,
+          "segments": 890,
+          "transitions": 83981
+        },
+        "boundary_transit_usage": {
+          "accepted": 0,
+          "distinct_application_ids": 0,
+          "entries": 0,
+          "exits": 0
+        },
+        "corpus_id": "billboard_pop",
+        "deduped_events": 84871,
+        "duplicates_collapsed": 35065,
+        "events_encoded": 119936,
+        "fallback_counts": {
+          "chord_tones_missing": 0,
+          "mask_key_override": 45786,
+          "mask_key_used": 74150,
+          "mask_no_superset": 0,
+          "mask_not_in_census": 0,
+          "mask_tie_broken": 45750,
+          "non_harmonic_rows": 4917,
+          "parse_errors": 0,
+          "phase_fallback_1": 0,
+          "phase_fallback_2": 0,
+          "phase_primary_used": 119936,
+          "unparsed_labels": 42
+        },
+        "key_analysis_failures": null,
+        "key_used_vs_override_split": {
+          "any_key_override": {
+            "accepted": 546,
+            "raw_acceptance_rate": 0.011667414577857554,
+            "transitions": 46797
+          },
+          "both_key_used": {
+            "accepted": 0,
+            "raw_acceptance_rate": 0.0,
+            "transitions": 37184
+          }
+        },
+        "non_harmonic_rows": 4917,
+        "phase_coverage": {
+          "distinct_phases": 12,
+          "phases": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        "raw_counters": {
+          "duplicates_source": 34860,
+          "mask_key_override": 45786,
+          "mask_key_source_chord_root": 119936,
+          "mask_key_used": 74150,
+          "mask_tie_broken": 45750,
+          "non_harmonic_rows": 4917,
+          "rows_total": 124895,
+          "unparsed_labels": 42
+        },
+        "rows_total": 124895,
+        "samples": [
+          {
+            "citation": null,
+            "left_label": "A:min",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "C:maj",
+            "source": "701@9",
+            "target": "2741@0",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "C:maj",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "A:min",
+            "source": "2741@0",
+            "target": "701@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "A:min",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "C:maj",
+            "source": "701@9",
+            "target": "2741@0",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "C:maj",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "A:min",
+            "source": "2741@0",
+            "target": "701@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "A:min",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "C:maj",
+            "source": "701@9",
+            "target": "2741@0",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "C:maj",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "A:min",
+            "source": "2741@0",
+            "target": "701@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "A:min",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "C:maj",
+            "source": "701@9",
+            "target": "2741@0",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "C:maj",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "A:min",
+            "source": "2741@0",
+            "target": "701@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "A:min",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "C:maj",
+            "source": "701@9",
+            "target": "2741@0",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "C:maj",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "F:maj",
+            "source": "2741@0",
+            "target": "2741@5",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "F:maj",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "D:maj",
+            "source": "2741@5",
+            "target": "2741@2",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "D:maj",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "G:maj",
+            "source": "2741@2",
+            "target": "2741@7",
+            "teleport": true,
+            "verdict": "REJECT"
+          }
+        ],
+        "segments": 890,
+        "teleport": {
+          "by_gate_reason": [
+            {
+              "count": 546,
+              "reason": null,
+              "teleport": false,
+              "verdict": "ACCEPT"
+            },
+            {
+              "count": 32116,
+              "reason": "ungoverned-transition",
+              "teleport": true,
+              "verdict": "REJECT"
+            },
+            {
+              "count": 51319,
+              "reason": "unlicensed-transition",
+              "teleport": true,
+              "verdict": "REJECT"
+            }
+          ],
+          "labels": 83435,
+          "not_teleport": 546
+        },
+        "transition_count": 83981,
+        "transition_digest": "ee00bba79442ab72fbb8175629485e6de0716a24373d10de4da357054ece8b75",
+        "transitions": 83981,
+        "veto_breakdown": [
+          {
+            "count": 32116,
+            "reason": "ungoverned-transition"
+          },
+          {
+            "count": 51319,
+            "reason": "unlicensed-transition"
+          }
+        ]
+      },
+      {
+        "acceptance": {
+          "accepted": 127,
+          "raw_acceptance_rate": 0.010251856635453666,
+          "rejected": 12261
+        },
+        "accepted_not_adjacent": 0,
+        "accounting": {
+          "deduped_events": 12568,
+          "duplicates_collapsed": 1596,
+          "events_encoded": 14164,
+          "non_harmonic_rows": 427,
+          "rows_total": 14624,
+          "segments": 180,
+          "transitions": 12388
+        },
+        "boundary_transit_usage": {
+          "accepted": 0,
+          "distinct_application_ids": 0,
+          "entries": 0,
+          "exits": 0
+        },
+        "corpus_id": "isophonics",
+        "deduped_events": 12568,
+        "duplicates_collapsed": 1596,
+        "events_encoded": 14164,
+        "fallback_counts": {
+          "chord_tones_missing": 0,
+          "mask_key_override": 3791,
+          "mask_key_used": 10373,
+          "mask_no_superset": 0,
+          "mask_not_in_census": 0,
+          "mask_tie_broken": 3791,
+          "non_harmonic_rows": 427,
+          "parse_errors": 0,
+          "phase_fallback_1": 0,
+          "phase_fallback_2": 0,
+          "phase_primary_used": 14030,
+          "unparsed_labels": 33
+        },
+        "key_analysis_failures": null,
+        "key_used_vs_override_split": {
+          "any_key_override": {
+            "accepted": 127,
+            "raw_acceptance_rate": 0.02217953195948306,
+            "transitions": 5726
+          },
+          "both_key_used": {
+            "accepted": 0,
+            "raw_acceptance_rate": 0.0,
+            "transitions": 6662
+          }
+        },
+        "non_harmonic_rows": 427,
+        "phase_coverage": {
+          "distinct_phases": 12,
+          "phases": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        "raw_counters": {
+          "duplicates_source": 1581,
+          "mask_key_override": 3791,
+          "mask_key_source_chord_root": 134,
+          "mask_key_used": 10373,
+          "mask_tie_broken": 3791,
+          "non_harmonic_rows": 427,
+          "phase_primary_used": 14030,
+          "rows_total": 14624,
+          "unparsed_labels": 33
+        },
+        "rows_total": 14624,
+        "samples": [
+          {
+            "citation": null,
+            "left_label": "E",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "A",
+            "source": "2741@4",
+            "target": "2773@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "A",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "E",
+            "source": "2773@9",
+            "target": "2741@4",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "E",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "B",
+            "source": "2741@4",
+            "target": "1717@11",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "B",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "E",
+            "source": "1717@11",
+            "target": "2741@4",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "E",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "E:7/3",
+            "source": "2741@4",
+            "target": "1717@4",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "E:7/3",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "A",
+            "source": "1717@4",
+            "target": "2773@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "A",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "A:min/b3",
+            "source": "2773@9",
+            "target": "733@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "A:min/b3",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "E",
+            "source": "733@9",
+            "target": "2741@4",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "E",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "B",
+            "source": "2741@4",
+            "target": "1717@11",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "B",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "E",
+            "source": "1717@11",
+            "target": "2741@4",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "E",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "A",
+            "source": "2741@4",
+            "target": "2773@9",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "A",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "E",
+            "source": "2773@9",
+            "target": "2741@4",
+            "teleport": true,
+            "verdict": "REJECT"
+          }
+        ],
+        "segments": 180,
+        "teleport": {
+          "by_gate_reason": [
+            {
+              "count": 127,
+              "reason": null,
+              "teleport": false,
+              "verdict": "ACCEPT"
+            },
+            {
+              "count": 2452,
+              "reason": "ungoverned-transition",
+              "teleport": true,
+              "verdict": "REJECT"
+            },
+            {
+              "count": 9809,
+              "reason": "unlicensed-transition",
+              "teleport": true,
+              "verdict": "REJECT"
+            }
+          ],
+          "labels": 12261,
+          "not_teleport": 127
+        },
+        "transition_count": 12388,
+        "transition_digest": "d71e8e12b1bff2b1151de6aaaad35973fbe9c7f046358051fe9bdf5db5baea8f",
+        "transitions": 12388,
+        "veto_breakdown": [
+          {
+            "count": 2452,
+            "reason": "ungoverned-transition"
+          },
+          {
+            "count": 9809,
+            "reason": "unlicensed-transition"
+          }
+        ]
+      },
+      {
+        "acceptance": {
+          "accepted": 216,
+          "raw_acceptance_rate": 0.007774818227629401,
+          "rejected": 27566
+        },
+        "accepted_not_adjacent": 0,
+        "accounting": {
+          "deduped_events": 28226,
+          "duplicates_collapsed": 279,
+          "events_encoded": 28505,
+          "non_harmonic_rows": 401,
+          "rows_total": 132329,
+          "segments": 444,
+          "transitions": 27782
+        },
+        "boundary_transit_usage": {
+          "accepted": 18,
+          "distinct_application_ids": 1,
+          "entries": 18,
+          "exits": 0
+        },
+        "corpus_id": "weimar_jazz",
+        "deduped_events": 28226,
+        "duplicates_collapsed": 279,
+        "events_encoded": 28505,
+        "fallback_counts": {
+          "chord_tones_missing": 0,
+          "mask_key_override": 17314,
+          "mask_key_used": 11191,
+          "mask_no_superset": 0,
+          "mask_not_in_census": 0,
+          "mask_tie_broken": 17314,
+          "non_harmonic_rows": 401,
+          "parse_errors": 0,
+          "phase_fallback_1": 0,
+          "phase_fallback_2": 0,
+          "phase_primary_used": 26983,
+          "unparsed_labels": 482
+        },
+        "key_analysis_failures": null,
+        "key_used_vs_override_split": {
+          "any_key_override": {
+            "accepted": 216,
+            "raw_acceptance_rate": 0.009490333919156414,
+            "transitions": 22760
+          },
+          "both_key_used": {
+            "accepted": 0,
+            "raw_acceptance_rate": 0.0,
+            "transitions": 5022
+          }
+        },
+        "non_harmonic_rows": 401,
+        "phase_coverage": {
+          "distinct_phases": 12,
+          "phases": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        "raw_counters": {
+          "duplicates_source": 1160,
+          "mask_key_override": 17314,
+          "mask_key_source_chord_root": 1522,
+          "mask_key_used": 11191,
+          "mask_tie_broken": 17314,
+          "non_harmonic_rows": 401,
+          "phase_primary_used": 26983,
+          "rows_total": 132329,
+          "unparsed_labels": 482
+        },
+        "rows_total": 132329,
+        "samples": [
+          {
+            "citation": null,
+            "left_label": "Bb6",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "G7",
+            "source": "2741@10",
+            "target": "1213@7",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "G7",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "C-7",
+            "source": "1213@7",
+            "target": "1709@0",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "C-7",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "F7",
+            "source": "1709@0",
+            "target": "1717@5",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "F7",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "Bb",
+            "source": "1717@5",
+            "target": "2741@10",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "Bb",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "G-7",
+            "source": "2741@10",
+            "target": "1453@7",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "G-7",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "C-7",
+            "source": "1453@7",
+            "target": "1709@0",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "C-7",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "F7",
+            "source": "1709@0",
+            "target": "1717@5",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "F7",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "F-7",
+            "source": "1717@5",
+            "target": "1213@5",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "F-7",
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "right_label": "Bb7",
+            "source": "1213@5",
+            "target": "1717@10",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "Bb7",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "Eb7",
+            "source": "1717@10",
+            "target": "1749@3",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "Eb7",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "Ab7",
+            "source": "1749@3",
+            "target": "1239@8",
+            "teleport": true,
+            "verdict": "REJECT"
+          },
+          {
+            "citation": null,
+            "left_label": "Ab7",
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "right_label": "D-7",
+            "source": "1239@8",
+            "target": "1451@2",
+            "teleport": true,
+            "verdict": "REJECT"
+          }
+        ],
+        "segments": 444,
+        "teleport": {
+          "by_gate_reason": [
+            {
+              "count": 216,
+              "reason": null,
+              "teleport": false,
+              "verdict": "ACCEPT"
+            },
+            {
+              "count": 10131,
+              "reason": "ungoverned-transition",
+              "teleport": true,
+              "verdict": "REJECT"
+            },
+            {
+              "count": 17435,
+              "reason": "unlicensed-transition",
+              "teleport": true,
+              "verdict": "REJECT"
+            }
+          ],
+          "labels": 27566,
+          "not_teleport": 216
+        },
+        "transition_count": 27782,
+        "transition_digest": "bba616e356a4d2b106c59426eb0c96e358b35d3df102c9767c950910ec847773",
+        "transitions": 27782,
+        "veto_breakdown": [
+          {
+            "count": 10131,
+            "reason": "ungoverned-transition"
+          },
+          {
+            "count": 17435,
+            "reason": "unlicensed-transition"
+          }
+        ]
+      }
+    ],
+    "split_note": "both_key_used counts state transitions whose two endpoints were both key-collection completions; because same-key chords collapse, this population is small or zero for some corpora and is reported as measured.",
+    "state_mapping_note": "The frozen encoder maps every chord whose pcs are a subset of the key collection to that key-collection mask. Same-key chord changes therefore collapse to one heptatonic state; calibration transitions are state transitions, not chord-label transitions.",
+    "transition_policy": "adjacent encoded harmonic events; consecutive identical states collapsed; DCMLab @none carried through; Billboard/Isophonics/Weimar N/X/NC break the segment"
+  },
+  "execution_mode": "disjoint-subrealm (task-b1; frozen spec+encoder from task-b0; gate read-only from task-0)",
+  "gate_interaction": {
+    "determinism": {
+      "mismatches": 0,
+      "repeats": 146712,
+      "result": "PASS"
+    },
+    "determinism_mismatches": 0,
+    "determinism_repeats": 146712,
+    "gate_calls": 146716,
+    "negative_probes": [
+      {
+        "expected_reason": "not-census-state",
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "127@0",
+        "target": "0@0",
+        "verdict": "REJECT"
+      },
+      {
+        "expected_reason": "ungoverned-transition",
+        "reasons": [
+          "ungoverned-transition"
+        ],
+        "source": "223@0",
+        "target": "223@0",
+        "verdict": "REJECT"
+      },
+      {
+        "expected_reason": "unlicensed-transition",
+        "reasons": [
+          "unlicensed-transition"
+        ],
+        "source": "127@0",
+        "target": "191@0",
+        "verdict": "REJECT"
+      }
+    ],
+    "observed_pairs": [
+      [
+        "ACCEPT",
+        null
+      ],
+      [
+        "REJECT",
+        "not-census-state"
+      ],
+      [
+        "REJECT",
+        "ungoverned-transition"
+      ],
+      [
+        "REJECT",
+        "unlicensed-transition"
+      ]
+    ],
+    "observed_subset_of_pinned": true,
+    "probe_calls": 3,
+    "search_verdicts": [
+      {
+        "count": 1,
+        "reasons": [
+          "unlicensed-transition"
+        ],
+        "verdict": "REJECT"
+      }
+    ],
+    "transition_gate_calls": 146712,
+    "verdict_counts": [
+      {
+        "count": 8172,
+        "reasons": [],
+        "verdict": "ACCEPT"
+      },
+      {
+        "count": 1,
+        "reasons": [
+          "not-census-state"
+        ],
+        "verdict": "REJECT"
+      },
+      {
+        "count": 52811,
+        "reasons": [
+          "ungoverned-transition"
+        ],
+        "verdict": "REJECT"
+      },
+      {
+        "count": 85732,
+        "reasons": [
+          "unlicensed-transition"
+        ],
+        "verdict": "REJECT"
+      }
+    ],
+    "witness_search_calls": 1
+  },
+  "generated_at": "2026-10-27T15:48:29.990350+00:00",
+  "input_pins": {
+    "corpora_retrieved": [
+      {
+        "commit_or_tag": "b6b7d38500bacb30c81db7e09d8790df1a2edd46 (v2.6)",
+        "corpus_id": "DCMLab/ABC (beethoven_quartets)",
+        "file_count": 989,
+        "license_note": "CC BY-NC-SA 4.0; cite Neuwirth et al. 2018",
+        "sha256_manifest_digest": "dcb265cc80727ae3b0e6b070b0e298a996404b5ca846d4c36eca4f3bdf64bcd9",
+        "source_origin": "https://github.com/DCMLab/ABC.git"
+      },
+      {
+        "commit_or_tag": "music21 9.1.0 (PyPI)",
+        "corpus_id": "bach_chorales",
+        "file_count": 371,
+        "license_note": "music21 BSD-3-Clause; Bach compositions public domain",
+        "sha256_manifest_digest": "cf201f438767477e787482d18be9a02fb1650a9e35382ad787b98297137302f1",
+        "source_origin": "music21 9.1.0 corpus (chorales)"
+      },
+      {
+        "commit_or_tag": "billboard-2.0.1-lab.tar.gz (2013 archive)",
+        "corpus_id": "billboard_pop",
+        "file_count": 890,
+        "license_note": "CC0; cite Burgoyne et al. 2011",
+        "sha256_manifest_digest": "aab530a2824cd7937ffd0d0adcc9f489c143f754f477ebce346ef0b92c78a29a",
+        "source_origin": "McGill Billboard 2.0.1 LAB (official DDMAL Dropbox)"
+      },
+      {
+        "commit_or_tag": "The Beatles Annotations v1.2",
+        "corpus_id": "isophonics",
+        "file_count": 180,
+        "license_note": "Public research annotations; cite Harte 2010",
+        "sha256_manifest_digest": "bb73801088e3a70c020915f37b313d2b0cedba71751cc6c3e3370ffeb14980f7",
+        "source_origin": "Isophonics The Beatles Annotations v1.2 (official tar.gz)"
+      },
+      {
+        "commit_or_tag": "WJazzD v2.1, db_info created 2018-01-07",
+        "corpus_id": "weimar_jazz",
+        "file_count": 1,
+        "license_note": "ODbL 1.0 (db_info.license); cite Pfleiderer et al.; DB downloaded from the official Jazzomat link",
+        "sha256_manifest_digest": "af6a0d9debf042c3581565bd75baad591d32e166cd2ec7298519883de614bf12",
+        "source_origin": "Weimar Jazz Database 2.1 (official wjazzd.db)"
+      }
+    ],
+    "corpora_unavailable": [],
+    "encoder_digest": "dc2379277afb1a9bf92a26cd3a83ea3f16a33a12ca331a9742f7d5861422f745",
+    "gate_digest": "5957a290d3d23e458fb4ddf641868719ac940514eb3aee5aa0df417112ca04e2",
+    "spec_digest": "918228d497fc57e7c63b79ebd33c554ac4e52cb58760a9b68d86c52f6daae17c"
+  },
+  "machine": {
+    "hostname": "DESKTOP-PMG2A64",
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python_version": "3.12.3"
+  },
+  "measured_vs_expected": {
+    "base_realm_untouched": {
+      "expected": true,
+      "measured": true
+    },
+    "boundary_transit_usage_counted": {
+      "expected": true,
+      "measured": true
+    },
+    "corpora_retrieved": {
+      "expected": 5,
+      "measured": 5
+    },
+    "corpora_unavailable": {
+      "expected": 0,
+      "measured": 0
+    },
+    "fallback_counts_12": {
+      "expected": 12,
+      "measured": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "gate_determinism": {
+      "expected": "100%",
+      "measured": "100%"
+    },
+    "gate_vocabulary_subset": {
+      "expected": true,
+      "measured": true
+    },
+    "input_pins_match": {
+      "expected": true,
+      "measured": true
+    },
+    "key_used_override_split": {
+      "expected": true,
+      "measured": true
+    },
+    "per_corpus_transitions_nonzero": {
+      "expected": true,
+      "measured": true
+    },
+    "repo_untouched": {
+      "expected": true,
+      "measured": true
+    },
+    "teleport_labels_counted": {
+      "expected": true,
+      "measured": true
+    }
+  },
+  "repo_untouched": {
+    "close": {
+      "head": "8c66cf16a9a364b3b4096e9aab31e4ba6f24d3c2",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tree_clean": true
+    },
+    "open": {
+      "head": "8c66cf16a9a364b3b4096e9aab31e4ba6f24d3c2",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tree_clean": true
+    },
+    "verified": true
+  },
+  "schema_version": "1.0.0",
+  "scratch_path": "/home/erick/workspace/scratch-governed-loop-run/task-b1",
+  "status": "PASS",
+  "stop_rules_triggered": [],
+  "teleport_discipline": {
+    "accepted_not_adjacent": 0,
+    "definition": "teleport := NOT adjacent(s,t) in the frozen substrate graph (Tier-1 same-root same-phase or licensed seam row) AND NOT a licensed seam transit; corpus-side label only; gate vocabulary untouched",
+    "gate_bytes_untouched": true,
+    "teleport_labels_counted": 138540
+  }
+}

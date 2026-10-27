@@ -1,0 +1,555 @@
+{
+  "artifacts": {
+    "latency_samples_sha256": "53f0ddc0523935a202507c88d25cdd6e8ac1a007925564c395b961a905ed3088",
+    "llm_work_config_sha256": "9cb555deeef3db0bdbf9f30b1daddd8cc95bdbd029202a0008aa5ee3043c642f",
+    "postprocess_script_sha256": "5a769d9d0ac3f4dd600a1e05a1c519512727bc8f627f85d29983482f5d28bd37",
+    "probe_script_sha256": "aff45d9199aeb4c3eeec59d757c4d16c64a6fa3a328fa5bfedfe1bba775398ac",
+    "task_a_receipt_sha256": "cb9083f435a41b17a009d5fb249661c1998d107556bf6a6ee97fa5293f1461a0",
+    "task_b1_receipt_sha256": "c658a5885c5fb989eec6eab1a3a3964ae3e2228606cb806f0867c6c1d829e5d4",
+    "transcripts_count": 20,
+    "transcripts_manifest_sha256": "552f0aa82b39767ac451644fc7335b6e670352717ac9da4b7eb396ac3dd7cb42"
+  },
+  "base_realm_untouched": {
+    "after": {
+      "digest": "15d521ea5d9fd38394ff0a580819f13970072812c619daf60274fd43d2b140da",
+      "file_count": 62
+    },
+    "before": {
+      "digest": "15d521ea5d9fd38394ff0a580819f13970072812c619daf60274fd43d2b140da",
+      "file_count": 62
+    },
+    "verified": true
+  },
+  "energy": {
+    "coefficient_source": null,
+    "fields_omitted": [
+      "probe_mode_avoidance.energy_coefficient_joules_per_token",
+      "probe_mode_avoidance.estimated_joules_saved"
+    ],
+    "joules_reported": false,
+    "note": "A-5: energy fields optional; no Joule figure is asserted without a pinned, cited coefficient.",
+    "operations_primary": true
+  },
+  "execution_mode": "disjoint-subrealm (task-c; Task-A/B1 read-only seeds; gate read-only from task-0)",
+  "gate_interaction": {
+    "boundary_transit_calls": 0,
+    "determinism": {
+      "mismatches": 0,
+      "repeats": 1000,
+      "result": "PASS"
+    },
+    "gate_calls": 20024,
+    "latency_benchmark_calls": 20000,
+    "negative_probe_calls": 4,
+    "negative_probes": [
+      {
+        "expected_reason": "not-census-state",
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "127@0",
+        "target": "0@0",
+        "verdict": "REJECT"
+      },
+      {
+        "expected_reason": "ungoverned-transition",
+        "reasons": [
+          "ungoverned-transition"
+        ],
+        "source": "223@0",
+        "target": "223@0",
+        "verdict": "REJECT"
+      },
+      {
+        "expected_reason": "unlicensed-transition",
+        "reasons": [
+          "unlicensed-transition"
+        ],
+        "source": "127@0",
+        "target": "191@0",
+        "verdict": "REJECT"
+      }
+    ],
+    "observed_pairs": [
+      [
+        "ACCEPT",
+        null
+      ],
+      [
+        "REJECT",
+        "not-census-state"
+      ],
+      [
+        "REJECT",
+        "ungoverned-transition"
+      ],
+      [
+        "REJECT",
+        "unlicensed-transition"
+      ]
+    ],
+    "observed_subset_of_pinned": true,
+    "probe_gate_calls": 20,
+    "probe_transition_calls": 20,
+    "search_verdicts": [
+      {
+        "count": 1,
+        "reasons": [
+          "unlicensed-transition"
+        ],
+        "verdict": "REJECT"
+      }
+    ],
+    "verdict_counts": [
+      {
+        "count": 19,
+        "reasons": [],
+        "verdict": "ACCEPT"
+      },
+      {
+        "count": 21,
+        "reasons": [
+          "not-census-state"
+        ],
+        "verdict": "REJECT"
+      },
+      {
+        "count": 11032,
+        "reasons": [
+          "ungoverned-transition"
+        ],
+        "verdict": "REJECT"
+      },
+      {
+        "count": 8952,
+        "reasons": [
+          "unlicensed-transition"
+        ],
+        "verdict": "REJECT"
+      }
+    ],
+    "witness_search_calls": 1
+  },
+  "gate_latency_profile": {
+    "comparison_baseline": {
+      "mean_microseconds": 4.08,
+      "median_microseconds": 3.95,
+      "p99_microseconds": 8.52,
+      "source": "review machine, 20,000 random pairs; comparison only"
+    },
+    "determinism": {
+      "mismatches": 0,
+      "repeats": 1000,
+      "result": "PASS"
+    },
+    "gate_seconds_total": 0.038659866,
+    "max_microseconds": 63.105,
+    "mean_microseconds": 1.9329933000000001,
+    "median_microseconds": 1.838,
+    "min_microseconds": 1.333,
+    "p99_microseconds": 3.665,
+    "rng_seed": 20261027,
+    "sample_size": 20000,
+    "samples_path": "task-c/latency_samples.jsonl",
+    "samples_sha256": "53f0ddc0523935a202507c88d25cdd6e8ac1a007925564c395b961a905ed3088",
+    "stddev_microseconds": 1.0291682667353819,
+    "verdict_counts": [
+      {
+        "count": 19,
+        "reasons": [],
+        "verdict": "ACCEPT"
+      },
+      {
+        "count": 11031,
+        "reasons": [
+          "ungoverned-transition"
+        ],
+        "verdict": "REJECT"
+      },
+      {
+        "count": 8950,
+        "reasons": [
+          "unlicensed-transition"
+        ],
+        "verdict": "REJECT"
+      }
+    ]
+  },
+  "generated_at": "2026-10-27T16:44:39.686869+00:00",
+  "input_pins": {
+    "encoder": {
+      "actual": "dc2379277afb1a9bf92a26cd3a83ea3f16a33a12ca331a9742f7d5861422f745",
+      "expected": "dc2379277afb1a9bf92a26cd3a83ea3f16a33a12ca331a9742f7d5861422f745",
+      "match": true,
+      "path": "task-b1/mvp3_encoder.py"
+    },
+    "gate": {
+      "actual": "5957a290d3d23e458fb4ddf641868719ac940514eb3aee5aa0df417112ca04e2",
+      "expected": "5957a290d3d23e458fb4ddf641868719ac940514eb3aee5aa0df417112ca04e2",
+      "match": true,
+      "path": "mvp2.py"
+    },
+    "llm_work_config": {
+      "actual": "9cb555deeef3db0bdbf9f30b1daddd8cc95bdbd029202a0008aa5ee3043c642f",
+      "expected": "9cb555deeef3db0bdbf9f30b1daddd8cc95bdbd029202a0008aa5ee3043c642f",
+      "match": true,
+      "path": "task-c/llm_work/opencode.json"
+    },
+    "spec": {
+      "actual": "918228d497fc57e7c63b79ebd33c554ac4e52cb58760a9b68d86c52f6daae17c",
+      "expected": "918228d497fc57e7c63b79ebd33c554ac4e52cb58760a9b68d86c52f6daae17c",
+      "match": true,
+      "path": "task-b1/mvp3_encoder_spec.json"
+    },
+    "task_a_card": {
+      "actual": "bff1cc4cb270e4883125c6ca431dd8440d8f73be3e33be51fc54c580ad7dc289",
+      "expected": "bff1cc4cb270e4883125c6ca431dd8440d8f73be3e33be51fc54c580ad7dc289",
+      "match": true,
+      "path": "task-a/mvp3_chaldean_card.json"
+    },
+    "task_a_proposer": {
+      "actual": "69deb1e6d55ea37eafd97ad2ea868faef3e55e0520bbca05afda9a3a44898936",
+      "expected": "69deb1e6d55ea37eafd97ad2ea868faef3e55e0520bbca05afda9a3a44898936",
+      "match": true,
+      "path": "task-a/mvp3_llm_proposer.py"
+    },
+    "task_a_receipt": {
+      "actual": "cb9083f435a41b17a009d5fb249661c1998d107556bf6a6ee97fa5293f1461a0",
+      "expected": "cb9083f435a41b17a009d5fb249661c1998d107556bf6a6ee97fa5293f1461a0",
+      "match": true,
+      "path": "task-a/task_a_receipt.json"
+    },
+    "task_b1_receipt": {
+      "actual": "c658a5885c5fb989eec6eab1a3a3964ae3e2228606cb806f0867c6c1d829e5d4",
+      "expected": "c658a5885c5fb989eec6eab1a3a3964ae3e2228606cb806f0867c6c1d829e5d4",
+      "match": true,
+      "path": "task-b1/task_b1_receipt.json"
+    }
+  },
+  "machine": {
+    "hostname": "DESKTOP-PMG2A64",
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python_version": "3.12.3"
+  },
+  "measured_vs_expected": {
+    "base_realm_untouched": {
+      "expected": true,
+      "measured": true
+    },
+    "boundary_llm_calls": {
+      "expected": 0,
+      "measured": 0
+    },
+    "counterfactual_baselines": {
+      "expected": "declared",
+      "measured": true
+    },
+    "gate_bytes_untouched": {
+      "expected": true,
+      "measured": true
+    },
+    "gate_determinism": {
+      "expected": "100%",
+      "measured": "100%"
+    },
+    "joules_reported": {
+      "expected": false,
+      "measured": false
+    },
+    "k_rollout_tokens": {
+      "expected": "declared",
+      "measured": 64
+    },
+    "latency_sample_size": {
+      "expected": ">=20000",
+      "measured": 20000
+    },
+    "repo_untouched": {
+      "expected": true,
+      "measured": true
+    },
+    "single_compute_avoidance_ratio": {
+      "expected": null,
+      "measured": null
+    },
+    "two_mode_scoped_ratios": {
+      "expected": true,
+      "measured": true
+    }
+  },
+  "notes": {
+    "boundary_auto_transits": [],
+    "probe_contract_failure": null,
+    "probe_transitions": [
+      {
+        "proposal": 1,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "1388@1",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 2,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "2730@6",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 3,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "1388@1",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 4,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "1388@1",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 5,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "1388@1",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 6,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "1388@1",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 7,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "2730@4",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 8,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "2730@6",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 9,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "1388@1",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 10,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "1388@1",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 11,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "2730@6",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 12,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "1388@1",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 13,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "1388@1",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 14,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "2730@4",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 15,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "2048@6",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 16,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "2048@6",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 17,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "1388@1",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 18,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "1388@1",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 19,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "2048@6",
+        "verdict": "REJECT"
+      },
+      {
+        "proposal": 20,
+        "reasons": [
+          "not-census-state"
+        ],
+        "source": "1387@0",
+        "target": "1388@1",
+        "verdict": "REJECT"
+      }
+    ],
+    "probe_transport_failure": null
+  },
+  "performer_mode_avoidance": {
+    "accepted_transitions": 22,
+    "baseline_decodes_total": 394.9662261380321,
+    "corpus_scale_projection": {
+      "accepted_transitions": 8172,
+      "baseline_decodes": 146712,
+      "baseline_veto_rate": 0.9442990348437755,
+      "decodes_saved": 138540,
+      "note": "Projection using the B1 corpus transition population; not a measured proposer stream."
+    },
+    "counterfactual_baseline_veto_rate": 0.9442990348437755,
+    "decodes_saved_per_step": 16.953010279001457,
+    "gate_seconds_basis": "accepted_transitions x measured mean latency",
+    "gate_seconds_estimate": 4.2525852600000004e-05,
+    "ratio_decodes_saved_per_gate_second": 8770340.94168948,
+    "source": "task-a/task_a_receipt.json (read-only seed, digest-pinned)",
+    "total_decodes_saved": 372.9662261380321,
+    "total_steps_evaluated": 22
+  },
+  "probe_mode_avoidance": {
+    "accepted": 0,
+    "corpus_scale_projection": {
+      "k_rollout_tokens": 64,
+      "note": "Projection using the B1 corpus veto count; not the measured probe stream.",
+      "tokens_avoided": 8866560,
+      "vetoes": 138540
+    },
+    "downstream_rollout_tokens_avoided": 1280,
+    "gate_seconds": 5.440499999999999e-05,
+    "intercepted_vetoes": 20,
+    "k_rollout_tokens": 64,
+    "proposal_decode_ops_sunk": 20,
+    "ratio_tokens_avoided_per_gate_second": 23527249.33370095,
+    "total_evaluations": 20,
+    "verdict_breakdown": [
+      {
+        "count": 20,
+        "reasons": [
+          "not-census-state"
+        ],
+        "verdict": "REJECT"
+      }
+    ],
+    "veto_rate": 1.0
+  },
+  "proposer_execution": {
+    "boundary_auto_transit_count": 0,
+    "boundary_llm_calls": 0,
+    "gate_call_count": 20,
+    "invocation_locus": "in-harness subprocess",
+    "llm_call_count": 20,
+    "llm_planned_calls": 20,
+    "max_tokens_or_equivalent": null,
+    "mode": "probe-unconstrained",
+    "model": "opencode-go/claude-haiku-5-5",
+    "sampling_controls_note": "opencode CLI transport does not expose sampling controls; provider defaults apply",
+    "sdk": "opencode CLI 1.19.4 (non-interactive run --format json, agent=proposer, --pure, --auto)",
+    "seed_state": "1387@0",
+    "temperature": null,
+    "token_usage": {
+      "cache_read": 54200,
+      "cache_write": 0,
+      "cost": 0.0036485000000000003,
+      "input": 80,
+      "output": 360,
+      "reasoning": 5837,
+      "total": 60477
+    },
+    "top_p": null
+  },
+  "repo_untouched": {
+    "close": {
+      "head": "8c66cf16a9a364b3b4096e9aab31e4ba6f24d3c2",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tree_clean": true
+    },
+    "open": {
+      "head": "8c66cf16a9a364b3b4096e9aab31e4ba6f24d3c2",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tree_clean": true
+    },
+    "verified": true
+  },
+  "schema_version": "1.0.0",
+  "scratch_path": "/home/erick/workspace/scratch-governed-loop-run/task-c",
+  "single_compute_avoidance_ratio": null,
+  "status": "PASS",
+  "stop_rules_triggered": []
+}

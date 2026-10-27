@@ -1,0 +1,424 @@
+{
+  "authority": [
+    "MVP3-L19-AUTH-1",
+    "MVP3-L19-AUTH-2",
+    "MVP3-L19-AUTH2-STOP2-ADJUDICATION-1",
+    "MVP3-L19-AUTH-2-SUPPLEMENT-1"
+  ],
+  "battery_a": {
+    "bridge_check": "PASS",
+    "full_smoke": "PASS",
+    "probes": "PASS: 127@0->0@0 not-census-state; 223@0->223@0 ungoverned-transition; 127@0->191@0 unlicensed-transition; determinism re-run identical",
+    "regenerated_report": "9affbe8f46847c2ce9d7c81fe14f6863a67e39730b7c18867903b20d1e409266",
+    "smoke_verdict": "ORRERY-NAV-1-VERDICT: PASS; STOP-RULE-FIRED: none; REPO-WRITES: 0; ORRERY-CHANGES: 0"
+  },
+  "close_snapshot": {
+    "census": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+    "dirty_entries": 30,
+    "head": "008bdbedc04695c1126f9fda0e29cb7322dc3b8d",
+    "ledger": {
+      "bytes": 330954,
+      "digest": "037424774910287b29a9101569127d4a7850d4f86376540e350bbe14f0c6663b",
+      "lines": 4073
+    },
+    "manifest": {
+      "checksums_sha256": "fd918c280c9f0789102bc09b0fd041c5875a73cb9ae7f1754d5740b2ecd0daeb",
+      "fileCount": 1488,
+      "manifest_sha256": "93fb9c836f1fa108a607b74d50d3bc3adcc3dcd9311e0edb994685241f4b8a05",
+      "totalBytes": 95403413
+    },
+    "note": "After landing-receipt write; close record outside the manifest.",
+    "porcelain_sha256": "d4bc4c4fd6857410a1ef800914823ec2b511d0bd2c017774249e6dd701f6b19c",
+    "release_closure": {
+      "checksFailed": 0,
+      "checksPassed": 418,
+      "releaseId": "seven-governors-integrated-1.9.0",
+      "sha256": "cff3c3157d520a4bedceb5f62a4c04cb482d5e4843de41cda812292c881a8fa5",
+      "verdict": "PASS"
+    }
+  },
+  "dirty_state_reconciliation": {
+    "excluded_close_receipts": [
+      "qa/integrated-release-validation.json",
+      "qa/validation-prose-consistency.json"
+    ],
+    "landed_new_payloads": 8,
+    "landing_receipt_in_manifest": false,
+    "manifest_included_files": 1488,
+    "modified_landed_files": 17,
+    "note": "Close record outside the manifest per L18 convention; validate:manifest PASS on the landed set before the close record. Final dirty entries include MANIFEST/CHECKSUMS, the two excluded close receipts, and this receipt.",
+    "stop_state_dirty_entries": 25,
+    "stop_state_porcelain_sha256": "e4b286335afa1cab7661b9200809bd980638b325da45a3f9bbc9df37080149a8"
+  },
+  "expected_reds": {
+    "bl092": {
+      "expected": "exit 1 STALE_BL092_CASCADE_REFRESH",
+      "measured": "exit 1 STALE_BL092_CASCADE_REFRESH",
+      "status": "PRESERVED",
+      "verbatim": "Error: STALE_BL092_CASCADE_REFRESH at scripts/build-bl092-cascade-refresh.mjs:498"
+    },
+    "evidence_advisory": {
+      "expected": "advisory",
+      "measured": "exit 1; 9 pass / 1 fail",
+      "status": "RECORDED"
+    },
+    "field_derivation": {
+      "expected": "exit 1 STALE_FIELD_DERIVATION_BUNDLE",
+      "measured": "exit 0 PASS",
+      "status": "RESOLVED BY R2"
+    }
+  },
+  "five_direct_rebinds": {
+    "canonical/fivefold-incubator/fifth-space-census-v0.json": {
+      "after": "729f78728f3e5f8a5ac4181375ae4c2802bf65777befb3d3963e098557a1e58e",
+      "before": "7ea2e72cf038786b46e52a83ba1e3af184db064d1149c1193df0d39f2efdf3b9"
+    },
+    "canonical/fivefold-incubator/shadow-ladder-v0.json": {
+      "after": "e76f942bf250dd0d79daa2b6bca56b9f27b6a301ec504baee0795d5ef944e02f",
+      "before": "3b1dbd0ba1fb7de42cff47314b8155b9d82d8dab564ff1115614872f73efa507"
+    },
+    "canonical/fivefold-incubator/twin-hub-convergence-v0.json": {
+      "after": "16766c2a54d86ec48c573bd68c38ae5bb98493f29e6fd02dfe453c9d322f08af",
+      "before": "70707b5a77e0cbe75bb1edb406cfbb68e4019ad5245295a94f836cdfa3454a55"
+    },
+    "decision_digest_all_five": "037424774910287b29a9101569127d4a7850d4f86376540e350bbe14f0c6663b",
+    "qa/fivefold-engine-promotion-evidence.json": {
+      "after": "c419d3bc7d7c952fd4fec075f6c5c5a31258d698200998a265c8409acaef227c",
+      "before": "9c3d566edf8a718861dac0b1949e91ea51ba1cfaffb8a8c41fb58c127e2be8fb"
+    },
+    "qa/pentatonic-binding-audit-closure.json": {
+      "after": "80f8e1b3eb3a43e717a81fbfd04f3e0044aa44f7599314c1a84b24e1274f7b14",
+      "before": "c366bf94033104d6965f8d6917bd74cdd981dc502ad17a9cbd0ba820efcdae9e"
+    },
+    "validators": "PASS: twin 8/8, fifth 8/8, shadow 6/6, pentatonic closure check 0, fivefold 13/13"
+  },
+  "generated_at": "2026-10-27T19:57:21.300541+00:00",
+  "harness_d1": {
+    "env_names": [
+      "GOVERNED_LOOP_SCRATCH",
+      "GOVERNED_LOOP_REPO",
+      "GOVERNED_LOOP_REQUIRE_CLEAN",
+      "GOVERNED_LOOP_REPO_HEAD",
+      "GOVERNED_LOOP_MANIFEST_COUNT",
+      "GOVERNED_LOOP_LEDGER_PREFIX",
+      "GOVERNED_LOOP_LANDING_PATHS",
+      "GOVERNED_LOOP_BRIDGE_PORT",
+      "GOVERNED_LOOP_VITE_PORT"
+    ],
+    "mvp2.py": {
+      "after": "79c0cf706fffc23745cab6e87ffbc46d34d70ad94a93291135725e388dc17328",
+      "before": "fb9db3cd69234d41417582e0ffae27bbb15c52c777fe3856cf598b2664ca736a",
+      "scope": "SCRATCH env-overridable with __file__-derived default; gate logic/priorities/vocabulary untouched; mvp2 line anchors 150\u2013154/169/171\u2013172/183\u2013184 and dwell line 733 intact"
+    },
+    "mvp2_orrery_nav_smoke.py": {
+      "after": "851c9bf2a29c2c5a0a74f88875fc5420ee81c27c246dcdb8ef6f0e079e277c9c",
+      "before": "fe81ee3adb3228e788302530471a93f95797cf98c33806ff820b150fb1bce6ec",
+      "scope": "SCRATCH/REPO env-overridable; expected-landing-write allowance for the authorized dirty tree; D-7 browser artifacts removed"
+    },
+    "orrery_nav_bridge.py": {
+      "after": "9f2b3da60f0aa3695608d60640b0303a7d5ec0500d27fbe49284c7f399ae4824",
+      "before": "ae6502b960924b7c94b663ef9ccac67558533833e04500f0722f9c4fd2edc98e",
+      "scope": "SCRATCH/REPO env-overridable; stale L17 REPO_HEAD/fileCount/ledger-prefix literals replaced by computed context with optional GOVERNED_LOOP_* pins; EXPECTED[mvp2.py] knock-on; gate logic untouched"
+    },
+    "orrery_nav_report.json": {
+      "after": "9affbe8f46847c2ce9d7c81fe14f6863a67e39730b7c18867903b20d1e409266",
+      "before": "8c95483ebb745e85969eb555060f8f3dca1995ee0f59e46a8638e0b23bd9477b",
+      "source": "regenerated by the landed full smoke"
+    }
+  },
+  "l19_entry_prediction_vs_final": {
+    "entry_prediction": "Battery B prose 0 violations; release closure checksFailed 0/verdict PASS; expected-reds predicted preserved",
+    "final_state": "prose 0; release closure 418/0 PASS; BL092 preserved; field green per R2",
+    "ledger_modified_after_append": false,
+    "note": "R5: the appended L19 entry is not modified; the field deviation is recorded here, not in a second ledger entry"
+  },
+  "ledger": {
+    "entry_note": "one combined L19 entry; no prior entry amended; no second entry per R5",
+    "entry_occurrences": 1,
+    "new": {
+      "bytes": 330954,
+      "digest": "037424774910287b29a9101569127d4a7850d4f86376540e350bbe14f0c6663b",
+      "lines": 4073
+    },
+    "old": {
+      "bytes": 323099,
+      "digest": "6d4ab925748a72865a3e7ee60ac1becb6d39380eb3f5270f6f9dc21b5e944923",
+      "lines": 4059
+    },
+    "prefix_identity": true,
+    "tail_anchor": "Session prose is context, not evidence."
+  },
+  "machine_verdict": [
+    "MVP3-L19-AUTH-2",
+    "STEP-0: PASS (commit 008bdbe / preflight violations 0 / sanctioned fingerprints 16)",
+    "PAYLOADS: 8/8 BYTE-IDENTICAL",
+    "HARNESS: D1 3/3 (79c0cf70 / 9f2b3da6 / 851c9bf2)",
+    "BATTERY-A: PASS",
+    "LEDGER: L19 03742477... / 330954 B / 4073 lines",
+    "D3: FIVE + THREE REBOUND",
+    "H-CLEAN(I): RESOLVED BY R2 (field check exit 0 / a6d5a290...)",
+    "BL092: PRESERVED (exit 1 STALE_BL092_CASCADE_REFRESH)",
+    "EVIDENCE: ADVISORY 9 pass / 1 fail",
+    "MANIFEST: 1488 FILES / 95403413 B / validate:manifest PASS",
+    "PROSE: PASS / 0 violations",
+    "RELEASE-CLOSURE: 418/0 PASS (checksPassed measured 418)",
+    "STATUS: LANDED"
+  ],
+  "manifest": {
+    "after": {
+      "checksums_sha256": "fd918c280c9f0789102bc09b0fd041c5875a73cb9ae7f1754d5740b2ecd0daeb",
+      "fileCount": 1488,
+      "manifest_sha256": "93fb9c836f1fa108a607b74d50d3bc3adcc3dcd9311e0edb994685241f4b8a05",
+      "totalBytes": 95403413
+    },
+    "before": {
+      "checksums_sha256": "1383d62dc167e9cd30e54077768f56ce1f34f1469445a705950c1799a8728d67",
+      "fileCount": 1480,
+      "manifest_sha256": "1c8e829e1e622adf2a708b40b18ccc5a6f35980028a77da290b4e09261fd6b38",
+      "totalBytes": 95207429
+    },
+    "post_root_check": "PASS (manifest fresh; fileCount 1488 / totalBytes 95403413)",
+    "validate_manifest": "PASS"
+  },
+  "payloads": {
+    "qa/mvp3_harness_repin_report.json": "db891a446c9ab3bcf49d439db70967ad2677eeb48a64887cebf19ebcc59d4292",
+    "qa/mvp3_task_a_receipt.json": "cb9083f435a41b17a009d5fb249661c1998d107556bf6a6ee97fa5293f1461a0",
+    "qa/mvp3_task_b0_receipt.json": "ae50fd2b9b7c6b68157ae2a745d85be213e2d2afcf1db66d42766c5a61f7801e",
+    "qa/mvp3_task_b1_receipt.json": "c658a5885c5fb989eec6eab1a3a3964ae3e2228606cb806f0867c6c1d829e5d4",
+    "qa/mvp3_task_c_receipt.json": "022856bb9a2bb88162f77e04ca4dd60b0b93f68c62d2bb1404f14334d0729bfc",
+    "result": "8/8 BYTE-IDENTICAL",
+    "scrum/plan/mvp3-sprint-closing-report.md": "8afa9911093e307bb43bf32da70945b5cbdfcc91f0efb69ac56088a3a75d5463",
+    "tools/governed-loop/mvp3_encoder.py": "dc2379277afb1a9bf92a26cd3a83ea3f16a33a12ca331a9742f7d5861422f745",
+    "tools/governed-loop/mvp3_encoder_spec.json": "918228d497fc57e7c63b79ebd33c554ac4e52cb58760a9b68d86c52f6daae17c"
+  },
+  "per_step_snapshots": [
+    {
+      "dirty_entries": 0,
+      "head": "8c66cf16a9a364b3b4096e9aab31e4ba6f24d3c2",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step": "Step 0 open"
+    },
+    {
+      "dirty_entries": 0,
+      "head": "008bdbedc04695c1126f9fda0e29cb7322dc3b8d",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step": "Step 0 close (commit)"
+    },
+    {
+      "dirty_entries": 0,
+      "head": "008bdbedc04695c1126f9fda0e29cb7322dc3b8d",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step": "Payload land open"
+    },
+    {
+      "dirty_entries": 8,
+      "head": "008bdbedc04695c1126f9fda0e29cb7322dc3b8d",
+      "porcelain_sha256": "adcb2b1238f52d858cd9b03ef73757d101c8297d7addd796bd6a78a7cf5d4bf7",
+      "step": "Payload land close"
+    },
+    {
+      "dirty_entries": 11,
+      "head": "008bdbedc04695c1126f9fda0e29cb7322dc3b8d",
+      "porcelain_sha256": "b13b0255fb62d25ea1d0bc8eb65e279c9a0c76fbefaee86464b94f6cfe7b989b",
+      "step": "D1 harness close"
+    },
+    {
+      "dirty_entries": 12,
+      "head": "008bdbedc04695c1126f9fda0e29cb7322dc3b8d",
+      "porcelain_sha256": "355d372764ee6d06f79f0396cb672d9c748ebd459212da5d0c9ca5245d2d0b6c",
+      "step": "Battery A / smoke filter correction / cleanup"
+    },
+    {
+      "dirty_entries": 25,
+      "head": "008bdbedc04695c1126f9fda0e29cb7322dc3b8d",
+      "porcelain_sha256": "e4b286335afa1cab7661b9200809bd980638b325da45a3f9bbc9df37080149a8",
+      "step": "Ledger + five/three rebinds + validators (STOP state)"
+    },
+    {
+      "dirty_entries": 27,
+      "head": "008bdbedc04695c1126f9fda0e29cb7322dc3b8d",
+      "porcelain_sha256": "ef4862207b32d06fee75f5c54ba5c12ebef4bd20208b9bb452ee4e2baee6fbf0",
+      "step": "Manifest/checksums"
+    },
+    {
+      "dirty_entries": 28,
+      "head": "008bdbedc04695c1126f9fda0e29cb7322dc3b8d",
+      "porcelain_sha256": "d49678f33051a88c59ff12a88bd8df16b0049b0082cfc3aad68224e78220ea60",
+      "step": "Prose final"
+    },
+    {
+      "dirty_entries": 29,
+      "head": "008bdbedc04695c1126f9fda0e29cb7322dc3b8d",
+      "porcelain_sha256": "dd6005e1cb2ba924413b070f70d3fe3b25ccb85957a175da399f5bb22ee2f118",
+      "step": "Root validate / release closure"
+    }
+  ],
+  "prose": {
+    "statistics": {
+      "claims": 5,
+      "claimsMatchingCurrent": 0,
+      "claimsReleaseQualified": 5,
+      "claimsScoped": 0,
+      "exemptions": 2,
+      "filesScanned": 230,
+      "sanctionedFingerprintRecords": 1,
+      "sanctionedFingerprintsBound": 16,
+      "scrumFingerprintLiterals": 378,
+      "scrumFingerprintViolations": 0,
+      "violations": 0
+    },
+    "verdict": "PASS",
+    "violations": 0
+  },
+  "r2_field_deviation": {
+    "disposition": "H-CLEAN(i) resolved during landing by authorized rebind; exits the post-landing pending list; no field source edited; no second ledger entry; L19 entry prediction carried as prediction",
+    "expected_red": "exit 1 STALE_FIELD_DERIVATION_BUNDLE (H-CLEAN(i))",
+    "field_validator_reportFingerprint": "a6d5a2902011a8cc469e558795b1ed598fd558d87691c1a01447cb77e1b43415",
+    "final_state": "exit 0; validator PASS",
+    "resolved_by": "D3 field-derivation projection rebind, planning-seat ruling MVP3-L19-AUTH2-STOP2-ADJUDICATION-1"
+  },
+  "r6_adaptation_hunk": {
+    "allowance_block": [
+      "landing_paths = tuple(p for p in os.environ.get(\"GOVERNED_LOOP_LANDING_PATHS\", \"\").split(\",\") if p)",
+      "def _unexpected(line):",
+      "    path = line[3:] if len(line) > 3 else line",
+      "    return not any(path.startswith(prefix) for prefix in landing_paths)"
+    ],
+    "classification": "D1 environment adaptation only; non-gate-logic; final smoke PASS with repo writes 0 unexpected / orrery changes 0",
+    "exact_diff": [
+      "-    repo_writes = 0 if not status.strip() else len([line for line in status.strip().splitlines() if _unexpected(line)])",
+      "+    repo_writes = 0 if not status.strip() else len([line for line in status.splitlines() if _unexpected(line)])"
+    ],
+    "file": "tools/governed-loop/mvp2_orrery_nav_smoke.py",
+    "reason": "git porcelain leading-space format; .strip() removed the leading space of the first modified line, shifting the allowed-path slice and counting it as unexpected"
+  },
+  "r7_registry_check": {
+    "action": "no sync; no closure-logic edit; no 'expected failure did not occur' deviation reported",
+    "mechanism_found": false,
+    "search": "no expected-red registry/whitelist referenced in scripts/validate-release.mjs or the closure config; field check is outside the root validate chain"
+  },
+  "release_closure": {
+    "battery_delta_note": "checksPassed measured, not transcribed. Two authorized deltas: (1) sanctioned-record mechanism (prose validator; 16 fingerprints bound; exemptions unchanged 2); (2) field-derivation check green per R2 (outside the root chain). checksFailed 0 and verdict PASS are pins.",
+    "checksFailed": 0,
+    "checksPassed": 418,
+    "checks_length": 418,
+    "releaseId": "seven-governors-integrated-1.9.0",
+    "sha256": "cff3c3157d520a4bedceb5f62a4c04cb482d5e4843de41cda812292c881a8fa5",
+    "verdict": "PASS"
+  },
+  "repo_path": "/home/erick/projects/integrated-release",
+  "schema_version": "1.0.0",
+  "scratch_root": "/home/erick/workspace/scratch-governed-loop-run",
+  "session": "MVP3-L19-AUTH-2",
+  "session_open": {
+    "diff_8c66cf16_to_head": [
+      "scripts/validate-validation-prose-consistency.mjs"
+    ],
+    "e1": {
+      "disposition": "E-1 RESOLVED (planning seat; maintainer-side authenticated admin confirmation)",
+      "executor_note": "gh absent; unauthenticated GitHub API HTTP 401; protection rules not exposed to executor; carried as permanent context"
+    },
+    "head": "008bdbedc04695c1126f9fda0e29cb7322dc3b8d",
+    "l18_content_pins": {
+      "census": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+      "ledger": {
+        "bytes": 323099,
+        "digest": "6d4ab925748a72865a3e7ee60ac1becb6d39380eb3f5270f6f9dc21b5e944923",
+        "lines": 4059
+      },
+      "manifest": {
+        "fileCount": 1480,
+        "totalBytes": 95207429
+      },
+      "release_closure": {
+        "checksFailed": 0,
+        "checksPassed": 418,
+        "verdict": "PASS"
+      }
+    },
+    "maintainer_stability": "CONFIRMED (AUTH-2; carried from AUTH-1)",
+    "tree_clean": true
+  },
+  "status": "LANDED",
+  "step0": {
+    "after_sha256": "aad94c1ffaeda53114d8ffa0e8bcff62e731ae2b7a8ee4f45401e67ed6a781d6",
+    "before_sha256": "8cbadb01b69d3a9ad6cd5c9f82be23c019383470792a75a80d1851b35f53ab23",
+    "commit": "008bdbedc04695c1126f9fda0e29cb7322dc3b8d",
+    "diff_stat": "1 file changed, 36 insertions(+), 2 deletions(-)",
+    "existing_exemption_mechanisms_verbatim": {
+      "scrum_fingerprints": {
+        "bound_rule": "const bound = historicalScrumRecord || FINGERPRINT_BINDING_MARKERS.test(bindingContext);",
+        "declaration": "const FINGERPRINT_LITERAL = /\\b[a-f0-9]{64}\\b/g; const FINGERPRINT_BINDING_MARKERS = /\\b(?:sha-?256|fingerprint|manifest|receipt|historical)\\b|(?:canonical|qa)\\//i;",
+        "entry_shape": "scrumFingerprintLiterals.push({ file: relativePath, line: lineIndex + 1, fingerprint: fingerprintMatch[0], classification: bound ? \"bound\" : \"violation\" })",
+        "violation_rule": "scrumFingerprintViolations.push(item) only if !bound"
+      },
+      "watched_literals": {
+        "declaration": "const WATCHED_LITERALS = [440, 441];",
+        "entry_shape": "exemptions.push({ file: relativePath, line: lineIndex + 1, literal, reason: reason ?? \"unclassified\" })",
+        "reasons": [
+          "audio_tuning",
+          "line_reference",
+          "registry_cardinality",
+          "release_qualified",
+          "unclassified"
+        ],
+        "violation_rule": "watchedViolations.push({ file, line, number: literal, unit: \"watched_literal\", classification: \"violation\", qualifier: null }) only when reason === null"
+      }
+    },
+    "external_preflight": {
+      "method": "temp-copy outside repo (/tmp/opencode/mvp3-prose-test-auth2) with byte-identical closing report 8afa9911...",
+      "result": "PASS",
+      "sanctionedRecord": {
+        "file": "scrum/plan/mvp3-sprint-closing-report.md",
+        "fingerprintsBound": 16,
+        "matched": true,
+        "path": "scrum/plan/mvp3-sprint-closing-report.md",
+        "sha256": "8afa9911093e307bb43bf32da70945b5cbdfcc91f0efb69ac56088a3a75d5463"
+      },
+      "statistics": {
+        "claims": 5,
+        "claimsMatchingCurrent": 0,
+        "claimsReleaseQualified": 5,
+        "claimsScoped": 0,
+        "exemptions": 2,
+        "filesScanned": 230,
+        "sanctionedFingerprintRecords": 1,
+        "sanctionedFingerprintsBound": 16,
+        "scrumFingerprintLiterals": 378,
+        "scrumFingerprintViolations": 0,
+        "violations": 0
+      },
+      "violations": 0
+    },
+    "file": "scripts/validate-validation-prose-consistency.mjs",
+    "ledger_pin_gate": {
+      "note": "literal is not ledger-named and is not a JS_ASSIGN/JS_LEDGER match",
+      "result": "PASS",
+      "tests": 8,
+      "violations": 0
+    },
+    "sanctioned_record_diff_summary": {
+      "accounting": "sanctionedFingerprintsBound increments only when sanctionedRecord && !markerBound; sanctionedFingerprintRecords.push({file,path,sha256,matched:true,fingerprintsBound}); statistics sanctionedFingerprintRecords=1, sanctionedFingerprintsBound=16; exemptions[] unchanged at 2",
+      "bound_extension": "const markerBound = historicalScrumRecord || FINGERPRINT_BINDING_MARKERS.test(bindingContext); const bound = markerBound || sanctionedRecord !== undefined;",
+      "comment": "sanctioned by planning seat, MVP3-L19-AUTH1-STOP-ADJUDICATION-1; adjudicated byte-identical historical record (MVP-3 closing report, MVP3-CLOSING-ADJUDICATION-1)",
+      "constant": "SANCTIONED_FINGERPRINT_RECORDS = [{ path: \"scrum/plan/mvp3-sprint-closing-report.md\", sha256: \"8afa9911093e307bb43bf32da70945b5cbdfcc91f0efb69ac56088a3a75d5463\" }]",
+      "hash_at_validation": "fileBytes = await fs.readFile(absolutePath); fileSha256 = crypto.createHash(\"sha256\").update(fileBytes).digest(\"hex\"); sanctionedRecord = SANCTIONED_FINGERPRINT_RECORDS.find(r => r.path === relativePath && r.sha256 === fileSha256)",
+      "scope_fence": "no change to either regex, the scope walk, the exemptions array, or other files' outcomes; 362 previously-bound literals remain bound"
+    }
+  },
+  "three_projection_rebinds": {
+    "orrery/src/generated/d-tier-taxonomy-dataset.v1.json": {
+      "after": "66581b39b26a2b17167c6efb7ec929dbb32f407bb0f6bface273a008f1e2a710",
+      "before": "2353f8f2c32797c16dafb9c768b8c0dd2650b03c34c1d56612c5885c6dbcb2a4"
+    },
+    "orrery/src/generated/field-derivation-bundle.v1.json": {
+      "after": "2fbe6b4cc0e7e96e3dbe9ed8a1adeea0eb72b69b7e0f8229be2d9b3ec1448eac",
+      "before": "d391c11c60f4f91d9c71ae23623f80d053426baffe17c28b86d62a8d4717f0ef"
+    },
+    "orrery/src/generated/taxonomy-read-model.v1.json": {
+      "after": "2890717e5cf80df6ced8bf961b21df96a0e86ad4c5aa9577ae90be9dfbea723b",
+      "before": "d585f55b0557a8833318e970e544080015a628eb1d0096b6aaca473cf80124e8"
+    },
+    "validators": "PASS: taxonomy 462, d-tier 175/confirmed, field validator PASS"
+  }
+}
