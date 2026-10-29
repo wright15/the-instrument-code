@@ -1,0 +1,1118 @@
+{
+  "artifacts": {
+    "censusPath": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-b/mvp4_graph_census.json",
+    "censusSha256": "165fb6b33a1ced983b45189738541bba3e206d5655a729c8deeff5cd72627d12",
+    "plannerPath": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-b/mvp4_symbolic_planner.py",
+    "plannerSha256": "9ff511f14282cbe6ee48010d67092c70c25da0bf5fa6dbd1e50382afeb85f5c0",
+    "runnerPath": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-b/mvp4_task_b.py",
+    "runnerSha256": "7545139e8510ef4259882440fbb8f11245160cf102ecdb8882b2ba40bf5a4383",
+    "toolCallLogPath": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-b/tool_call_log.json",
+    "toolCallLogSha256": "6e77ae6cc9609acc20981a97aa543b25a8db01e18f733c68500735763f1896e5",
+    "toolsPath": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-b/mvp4_symbolic_tools.py",
+    "toolsSha256": "1d74b401cea788edf237458e8c8844c987c77c94814f8b533c766aaa147701ab"
+  },
+  "b1GateAcceptance": {
+    "allHopsAccepted": true,
+    "hops": [
+      {
+        "citation": "FamilyA:L1",
+        "from": "1387@0",
+        "gate": {
+          "citation": "FamilyA:L1",
+          "reasons": [],
+          "verdict": "ACCEPT"
+        },
+        "kind": "seamA:L1",
+        "operator": "L1",
+        "to": "2773@11"
+      },
+      {
+        "citation": "FamilyB:bridge",
+        "from": "2773@11",
+        "gate": {
+          "citation": "FamilyB:bridge",
+          "reasons": [],
+          "verdict": "ACCEPT"
+        },
+        "kind": "seamB:bridge",
+        "operator": null,
+        "to": "2905@11"
+      }
+    ]
+  },
+  "b2VetoExplanation": {
+    "exactFieldMatch": true,
+    "matchCount": 5,
+    "total": 5
+  },
+  "battery": {
+    "B1": {
+      "allHopsAccepted": true,
+      "executedGateAcceptCount": 2,
+      "executedHopCount": 2,
+      "executedHops": [
+        {
+          "citation": "FamilyA:L1",
+          "from": "1387@0",
+          "gate": {
+            "citation": "FamilyA:L1",
+            "reasons": [],
+            "verdict": "ACCEPT"
+          },
+          "kind": "seamA:L1",
+          "operator": "L1",
+          "to": "2773@11"
+        },
+        {
+          "citation": "FamilyB:bridge",
+          "from": "2773@11",
+          "gate": {
+            "citation": "FamilyB:bridge",
+            "reasons": [],
+            "verdict": "ACCEPT"
+          },
+          "kind": "seamB:bridge",
+          "operator": null,
+          "to": "2905@11"
+        }
+      ],
+      "label": "B1",
+      "llmNeighborhoodCallValid": true,
+      "llmQueryCallValid": true,
+      "llmSelectedPathValid": true,
+      "neighborhoodNodes": [
+        "1387@0",
+        "2773@11",
+        "2905@11"
+      ],
+      "queryResult": {
+        "gateFailures": [],
+        "hopCount": 2,
+        "paths": [
+          {
+            "hopCount": 2,
+            "hops": [
+              {
+                "citation": "FamilyA:L1",
+                "from": "1387@0",
+                "gate": {
+                  "citation": "FamilyA:L1",
+                  "reasons": [],
+                  "verdict": "ACCEPT"
+                },
+                "kind": "seamA:L1",
+                "operator": "L1",
+                "to": "2773@11"
+              },
+              {
+                "citation": "FamilyB:bridge",
+                "from": "2773@11",
+                "gate": {
+                  "citation": "FamilyB:bridge",
+                  "reasons": [],
+                  "verdict": "ACCEPT"
+                },
+                "kind": "seamB:bridge",
+                "operator": null,
+                "to": "2905@11"
+              }
+            ],
+            "path": [
+              "1387@0",
+              "2773@11",
+              "2905@11"
+            ]
+          }
+        ],
+        "plannerVerifiedHops": 2,
+        "reachable": true,
+        "source": "1387@0",
+        "target": "2905@11",
+        "targetSpec": "2905@11"
+      },
+      "retries": {
+        "neighborhood": 0,
+        "query": 0,
+        "selection": 0
+      },
+      "selectedPath": [
+        "1387@0",
+        "2773@11",
+        "2905@11"
+      ],
+      "selectedPathIndex": 0,
+      "source": "1387@0",
+      "target": "2905@11",
+      "transcripts": [
+        "transcripts/B1-query_001.json",
+        "transcripts/B1-neighborhood_002.json",
+        "transcripts/B1-select_003.json"
+      ]
+    },
+    "B2": {
+      "exactFieldMatch": true,
+      "llmToolCallValid": true,
+      "matchCount": 5,
+      "probes": [
+        {
+          "actual": {
+            "candidateGoverningRoot": null,
+            "candidateMembership": false,
+            "governingRoot": 127,
+            "phaseDelta": 0,
+            "reason": "not-census-state"
+          },
+          "allFieldsMatch": true,
+          "candidate": "0@0",
+          "expected": {
+            "candidateGoverningRoot": null,
+            "candidateMembership": false,
+            "governingRoot": 127,
+            "phaseDelta": 0,
+            "reason": "not-census-state"
+          },
+          "fieldMatches": {
+            "candidateGoverningRoot": true,
+            "candidateMembership": true,
+            "governingRoot": true,
+            "phaseDelta": true,
+            "reason": true
+          },
+          "source": "127@0",
+          "toolResult": {
+            "candidate": "0@0",
+            "canonicalExplanation": "REJECT not-census-state: candidate 0@0 is not in the 462-mask census (candidate_membership=false); no gate rule can apply.",
+            "checks": {
+              "boundary_endpoint": true,
+              "candidate_audit": null,
+              "candidate_governing_root": null,
+              "candidate_membership": false,
+              "current_audit": {
+                "boundaryStatus": "governed",
+                "governingRoot": 127,
+                "id": "127@0",
+                "mask": 127,
+                "office": "Jupiter",
+                "officeIndex": 4,
+                "orbit": "ORBIT-D7",
+                "pcSum": 21,
+                "phase": 0,
+                "pitchClasses": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "role": "anchor",
+                "tier": "D7"
+              },
+              "current_governing_root": 127,
+              "hamming": null,
+              "phaseDelta": 0,
+              "same_family": false
+            },
+            "citation": null,
+            "reasons": [
+              "not-census-state"
+            ],
+            "source": "127@0",
+            "verdict": "REJECT"
+          }
+        },
+        {
+          "actual": {
+            "candidateGoverningRoot": null,
+            "candidateMembership": true,
+            "governingRoot": null,
+            "phaseDelta": 0,
+            "reason": "ungoverned-transition"
+          },
+          "allFieldsMatch": true,
+          "candidate": "223@0",
+          "expected": {
+            "candidateGoverningRoot": null,
+            "candidateMembership": true,
+            "governingRoot": null,
+            "phaseDelta": 0,
+            "reason": "ungoverned-transition"
+          },
+          "fieldMatches": {
+            "candidateGoverningRoot": true,
+            "candidateMembership": true,
+            "governingRoot": true,
+            "phaseDelta": true,
+            "reason": true
+          },
+          "source": "223@0",
+          "toolResult": {
+            "candidate": "223@0",
+            "canonicalExplanation": "REJECT ungoverned-transition: boundary endpoint present; current governingRoot=None, candidate governingRoot=None. Boundary states can be transited but cannot govern or be camped on.",
+            "checks": {
+              "boundary_endpoint": true,
+              "candidate_audit": {
+                "boundaryStatus": "boundary-escapable-single",
+                "governingRoot": null,
+                "id": "223@0",
+                "mask": 223,
+                "office": null,
+                "officeIndex": null,
+                "orbit": null,
+                "pcSum": 23,
+                "phase": 0,
+                "pitchClasses": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  6,
+                  7
+                ],
+                "role": "boundary",
+                "tier": null
+              },
+              "candidate_governing_root": null,
+              "candidate_membership": true,
+              "current_audit": {
+                "boundaryStatus": "boundary-escapable-single",
+                "governingRoot": null,
+                "id": "223@0",
+                "mask": 223,
+                "office": null,
+                "officeIndex": null,
+                "orbit": null,
+                "pcSum": 23,
+                "phase": 0,
+                "pitchClasses": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  6,
+                  7
+                ],
+                "role": "boundary",
+                "tier": null
+              },
+              "current_governing_root": null,
+              "hamming": 0,
+              "phaseDelta": 0,
+              "same_family": false,
+              "self_transition": true
+            },
+            "citation": null,
+            "reasons": [
+              "ungoverned-transition"
+            ],
+            "source": "223@0",
+            "verdict": "REJECT"
+          }
+        },
+        {
+          "actual": {
+            "candidateGoverningRoot": 381,
+            "candidateMembership": true,
+            "governingRoot": 127,
+            "phaseDelta": 0,
+            "reason": "unlicensed-transition"
+          },
+          "allFieldsMatch": true,
+          "candidate": "191@0",
+          "expected": {
+            "candidateGoverningRoot": 381,
+            "candidateMembership": true,
+            "governingRoot": 127,
+            "phaseDelta": 0,
+            "reason": "unlicensed-transition"
+          },
+          "fieldMatches": {
+            "candidateGoverningRoot": true,
+            "candidateMembership": true,
+            "governingRoot": true,
+            "phaseDelta": true,
+            "reason": true
+          },
+          "source": "127@0",
+          "toolResult": {
+            "candidate": "191@0",
+            "canonicalExplanation": "REJECT unlicensed-transition: current governingRoot=127, candidate governingRoot=381, phaseDelta=0, hamming=2; no licensed Family A R1/L1 or Family B bridge seam matches.",
+            "checks": {
+              "boundary_endpoint": false,
+              "candidate_audit": {
+                "boundaryStatus": "governed",
+                "governingRoot": 381,
+                "id": "191@0",
+                "mask": 191,
+                "office": "Jupiter",
+                "officeIndex": 4,
+                "orbit": "ORBIT-D6",
+                "pcSum": 22,
+                "phase": 0,
+                "pitchClasses": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  7
+                ],
+                "role": "satellite",
+                "tier": "D6"
+              },
+              "candidate_governing_root": 381,
+              "candidate_membership": true,
+              "current_audit": {
+                "boundaryStatus": "governed",
+                "governingRoot": 127,
+                "id": "127@0",
+                "mask": 127,
+                "office": "Jupiter",
+                "officeIndex": 4,
+                "orbit": "ORBIT-D7",
+                "pcSum": 21,
+                "phase": 0,
+                "pitchClasses": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "role": "anchor",
+                "tier": "D7"
+              },
+              "current_governing_root": 127,
+              "hamming": 2,
+              "pair_known_attachment": false,
+              "phaseDelta": 0,
+              "same_family": false,
+              "self_transition": false
+            },
+            "citation": null,
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "source": "127@0",
+            "verdict": "REJECT"
+          }
+        },
+        {
+          "actual": {
+            "candidateGoverningRoot": null,
+            "candidateMembership": false,
+            "governingRoot": 1387,
+            "phaseDelta": 1,
+            "reason": "not-census-state"
+          },
+          "allFieldsMatch": true,
+          "candidate": "1388@1",
+          "expected": {
+            "candidateGoverningRoot": null,
+            "candidateMembership": false,
+            "governingRoot": 1387,
+            "phaseDelta": 1,
+            "reason": "not-census-state"
+          },
+          "fieldMatches": {
+            "candidateGoverningRoot": true,
+            "candidateMembership": true,
+            "governingRoot": true,
+            "phaseDelta": true,
+            "reason": true
+          },
+          "source": "1387@0",
+          "toolResult": {
+            "candidate": "1388@1",
+            "canonicalExplanation": "REJECT not-census-state: candidate 1388@1 is not in the 462-mask census (candidate_membership=false); no gate rule can apply.",
+            "checks": {
+              "boundary_endpoint": true,
+              "candidate_audit": null,
+              "candidate_governing_root": null,
+              "candidate_membership": false,
+              "current_audit": {
+                "boundaryStatus": "governed",
+                "governingRoot": 1387,
+                "id": "1387@0",
+                "mask": 1387,
+                "office": "Saturn",
+                "officeIndex": 6,
+                "orbit": "ORBIT-A0",
+                "pcSum": 33,
+                "phase": 0,
+                "pitchClasses": [
+                  0,
+                  1,
+                  3,
+                  5,
+                  6,
+                  8,
+                  10
+                ],
+                "role": "anchor",
+                "tier": "A0"
+              },
+              "current_governing_root": 1387,
+              "hamming": null,
+              "phaseDelta": 1,
+              "same_family": false
+            },
+            "citation": null,
+            "reasons": [
+              "not-census-state"
+            ],
+            "source": "1387@0",
+            "verdict": "REJECT"
+          }
+        },
+        {
+          "actual": {
+            "candidateGoverningRoot": 2741,
+            "candidateMembership": true,
+            "governingRoot": 2741,
+            "phaseDelta": 5,
+            "reason": "unlicensed-transition"
+          },
+          "allFieldsMatch": true,
+          "candidate": "2741@5",
+          "expected": {
+            "candidateGoverningRoot": 2741,
+            "candidateMembership": true,
+            "governingRoot": 2741,
+            "phaseDelta": 5,
+            "reason": "unlicensed-transition"
+          },
+          "fieldMatches": {
+            "candidateGoverningRoot": true,
+            "candidateMembership": true,
+            "governingRoot": true,
+            "phaseDelta": true,
+            "reason": true
+          },
+          "source": "2741@0",
+          "toolResult": {
+            "candidate": "2741@5",
+            "canonicalExplanation": "REJECT unlicensed-transition: current governingRoot=2741, candidate governingRoot=2741, phaseDelta=5, hamming=0; no licensed Family A R1/L1 or Family B bridge seam matches.",
+            "checks": {
+              "boundary_endpoint": false,
+              "candidate_audit": {
+                "boundaryStatus": "governed",
+                "governingRoot": 2741,
+                "id": "2741@5",
+                "mask": 2741,
+                "office": "Moon",
+                "officeIndex": 1,
+                "orbit": "ORBIT-A0",
+                "pcSum": 38,
+                "phase": 5,
+                "pitchClasses": [
+                  5,
+                  7,
+                  9,
+                  10,
+                  0,
+                  2,
+                  4
+                ],
+                "role": "anchor",
+                "tier": "A0"
+              },
+              "candidate_governing_root": 2741,
+              "candidate_membership": true,
+              "current_audit": {
+                "boundaryStatus": "governed",
+                "governingRoot": 2741,
+                "id": "2741@0",
+                "mask": 2741,
+                "office": "Moon",
+                "officeIndex": 1,
+                "orbit": "ORBIT-A0",
+                "pcSum": 38,
+                "phase": 0,
+                "pitchClasses": [
+                  0,
+                  2,
+                  4,
+                  5,
+                  7,
+                  9,
+                  11
+                ],
+                "role": "anchor",
+                "tier": "A0"
+              },
+              "current_governing_root": 2741,
+              "hamming": 0,
+              "pair_known_attachment": false,
+              "phaseDelta": 5,
+              "same_family": true,
+              "self_transition": false
+            },
+            "citation": null,
+            "reasons": [
+              "unlicensed-transition"
+            ],
+            "source": "2741@0",
+            "verdict": "REJECT"
+          }
+        }
+      ],
+      "retries": {
+        "answers": 0,
+        "tools": 0
+      },
+      "total": 5,
+      "transcripts": [
+        "transcripts/veto-tools_007.json",
+        "transcripts/veto-answers_008.json"
+      ]
+    },
+    "B3": {
+      "allHopsAccepted": true,
+      "executedGateAcceptCount": 2,
+      "executedHopCount": 2,
+      "executedHops": [
+        {
+          "citation": "FamilyA:L1",
+          "from": "1387@7",
+          "gate": {
+            "citation": "FamilyA:L1",
+            "reasons": [],
+            "verdict": "ACCEPT"
+          },
+          "kind": "seamA:L1",
+          "operator": "L1",
+          "to": "2773@6"
+        },
+        {
+          "citation": "FamilyB:bridge",
+          "from": "2773@6",
+          "gate": {
+            "citation": "FamilyB:bridge",
+            "reasons": [],
+            "verdict": "ACCEPT"
+          },
+          "kind": "seamB:bridge",
+          "operator": null,
+          "to": "2905@6"
+        }
+      ],
+      "label": "B3",
+      "llmNeighborhoodCallValid": true,
+      "llmQueryCallValid": true,
+      "llmSelectedPathValid": true,
+      "neighborhoodNodes": [
+        "1387@7",
+        "2773@6",
+        "2905@6"
+      ],
+      "queryResult": {
+        "gateFailures": [],
+        "hopCount": 2,
+        "paths": [
+          {
+            "hopCount": 2,
+            "hops": [
+              {
+                "citation": "FamilyA:L1",
+                "from": "1387@7",
+                "gate": {
+                  "citation": "FamilyA:L1",
+                  "reasons": [],
+                  "verdict": "ACCEPT"
+                },
+                "kind": "seamA:L1",
+                "operator": "L1",
+                "to": "2773@6"
+              },
+              {
+                "citation": "FamilyB:bridge",
+                "from": "2773@6",
+                "gate": {
+                  "citation": "FamilyB:bridge",
+                  "reasons": [],
+                  "verdict": "ACCEPT"
+                },
+                "kind": "seamB:bridge",
+                "operator": null,
+                "to": "2905@6"
+              }
+            ],
+            "path": [
+              "1387@7",
+              "2773@6",
+              "2905@6"
+            ]
+          }
+        ],
+        "plannerVerifiedHops": 2,
+        "reachable": true,
+        "source": "1387@7",
+        "target": "2905@6",
+        "targetSpec": "2905@6"
+      },
+      "retries": {
+        "neighborhood": 0,
+        "query": 0,
+        "selection": 0
+      },
+      "selectedPath": [
+        "1387@7",
+        "2773@6",
+        "2905@6"
+      ],
+      "selectedPathIndex": 0,
+      "source": "1387@7",
+      "target": "2905@6",
+      "transcripts": [
+        "transcripts/B3-query_004.json",
+        "transcripts/B3-neighborhood_005.json",
+        "transcripts/B3-select_006.json"
+      ]
+    }
+  },
+  "bridge": {
+    "lockedPins": {
+      "GOVERNED_LOOP_LEDGER_PREFIX": "03742477",
+      "GOVERNED_LOOP_MANIFEST_COUNT": "1488",
+      "GOVERNED_LOOP_REPO_HEAD": "148a96f8c5ce5bcd83fad832170bc76c7075a943",
+      "GOVERNED_LOOP_REQUIRE_CLEAN": "1"
+    },
+    "negative": {
+      "exitCode": 1,
+      "ledgerPrefix": "00000000",
+      "logPath": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-b/bridge_check_negative.out",
+      "logSha256": "765c5ee8098369b52812f3d887a9dc98fe75a3f51bb32666c9c8e6f7939d9e93",
+      "mode": "negative",
+      "stderr": "",
+      "stdout": "FAIL-CLOSED: ledger prefix 03742477 != 00000000\n"
+    },
+    "positive": {
+      "exitCode": 0,
+      "ledgerPrefix": "03742477",
+      "logPath": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-b/bridge_check_positive.out",
+      "logSha256": "32b9675a594d2066373ed2d662346518ac95e9cd98c464d38d2609c65a85ed8f",
+      "mode": "positive",
+      "stderr": "",
+      "stdout": "ORRERY-NAV-1 BRIDGE\n{\n  \"boundaryDerivation\": {\n    \"distinctRows\": 196,\n    \"entries\": 128,\n    \"exits\": 128\n  },\n  \"boundaryTransit\": 256,\n  \"governsEdges\": 238,\n  \"nodeDerivation\": {\n    \"census\": 462,\n    \"phases\": 12,\n    \"product\": 5544\n  },\n  \"nodes\": 5544,\n  \"offices\": 7,\n  \"repo\": {\n    \"fileCount\": 1488,\n    \"head\": \"148a96f8c5ce5bcd83fad832170bc76c7075a943\",\n    \"ledgerBytes\": 330954,\n    \"ledgerLines\": 4073,\n    \"ledgerPrefix\": \"03742477\",\n    \"treeClean\": true\n  },\n  \"seamCatalog\": 5130,\n  \"seamCatalogDerivation\": {\n    \"familyA\": 5040,\n    \"familyB\": 90\n  },\n  \"tier1\": 18984,\n  \"tier1Derivation\": {\n    \"familySizeSquares\": 1582,\n    \"includesSelf\": true,\n    \"phases\": 12,\n    \"product\": 18984\n  }\n}\n"
+    }
+  },
+  "close": {
+    "head": "148a96f8c5ce5bcd83fad832170bc76c7075a943",
+    "statusPorcelainSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "treeClean": true
+  },
+  "constraints": {
+    "REPO_WRITES": 0,
+    "cardGateInputs": 0,
+    "cardOutputAffectsGate": false,
+    "encoderBytesModified": false,
+    "gateBytesModified": false,
+    "qEngineBytesModified": false
+  },
+  "directive": "MVP4-DIR-1",
+  "equivariance": {
+    "executedEquivariant": true,
+    "executedFirstDivergence": null,
+    "executedPathLifted": [
+      "1387@7",
+      "2773@6",
+      "2905@6"
+    ],
+    "executedPathPhase0": [
+      "1387@0",
+      "2773@11",
+      "2905@11"
+    ],
+    "executedPathPhase7": [
+      "1387@7",
+      "2773@6",
+      "2905@6"
+    ],
+    "phaseDelta": 7,
+    "plannerEquivariant": true,
+    "plannerFirstDivergence": null,
+    "plannerPathLifted": [
+      "1387@7",
+      "2773@6",
+      "2905@6"
+    ],
+    "plannerPathPhase0": [
+      "1387@0",
+      "2773@11",
+      "2905@11"
+    ],
+    "plannerPathPhase7": [
+      "1387@7",
+      "2773@6",
+      "2905@6"
+    ],
+    "verdict": "EQUIVARIANT"
+  },
+  "gateInteraction": {
+    "observedPairs": [
+      [
+        "ACCEPT",
+        []
+      ],
+      [
+        "REJECT",
+        [
+          "not-census-state"
+        ]
+      ],
+      [
+        "REJECT",
+        [
+          "ungoverned-transition"
+        ]
+      ],
+      [
+        "REJECT",
+        [
+          "unlicensed-transition"
+        ]
+      ]
+    ],
+    "observedSubsetOfPinned": true,
+    "pinnedVocabulary": [
+      [
+        "ACCEPT",
+        []
+      ],
+      [
+        "REJECT",
+        [
+          "not-census-state"
+        ]
+      ],
+      [
+        "REJECT",
+        [
+          "ungoverned-transition"
+        ]
+      ],
+      [
+        "REJECT",
+        [
+          "unlicensed-transition"
+        ]
+      ]
+    ]
+  },
+  "notes": null,
+  "opening": {
+    "checksumsSha256": "fd918c280c9f0789102bc09b0fd041c5875a73cb9ae7f1754d5740b2ecd0daeb",
+    "handoff": {
+      "task0CensusSha256": "38c271898ecfcbb8731239dbde38d58bf8e686aa1d31b648f22418c78eb40faf",
+      "taskAReceiptSha256": "d4e63cb51f6339edf7dcdb721d9753ea6c6cac580f35cf9397201803cd8fdbc1"
+    },
+    "ledger": {
+      "bytes": 330954,
+      "lines": 4073,
+      "sha256": "037424774910287b29a9101569127d4a7850d4f86376540e350bbe14f0c6663b"
+    },
+    "manifest": {
+      "fileCount": 1488,
+      "sha256": "93fb9c836f1fa108a607b74d50d3bc3adcc3dcd9311e0edb994685241f4b8a05",
+      "totalBytes": 95403413
+    },
+    "repoHead": "148a96f8c5ce5bcd83fad832170bc76c7075a943",
+    "statusPorcelainSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "timestampUtc": "2026-10-29T19:04:38.895095+00:00",
+    "treeClean": true,
+    "validation": {
+      "checksFailed": 0,
+      "checksPassed": 418,
+      "releaseId": "seven-governors-integrated-1.9.0",
+      "sha256": "cff3c3157d520a4bedceb5f62a4c04cb482d5e4843de41cda812292c881a8fa5"
+    }
+  },
+  "planner": {
+    "censusFloatsDetected": [],
+    "censusPath": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-b/mvp4_graph_census.json",
+    "censusSha256": "165fb6b33a1ced983b45189738541bba3e206d5655a729c8deeff5cd72627d12",
+    "edges": 20760,
+    "gateFailures": [],
+    "gateVerifiedEdges": 21048,
+    "governedMaskPhaseReachability": {
+      "governedMasks": 308,
+      "mask127Phases": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "masksBelowTwelvePhases": 42,
+      "phaseCountDistribution": {
+        "1": 42,
+        "12": 266
+      }
+    },
+    "isolatedBoundaryLiftedNodes": 600,
+    "nodes": 5544,
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-b/mvp4_symbolic_planner.py",
+    "rawEdgeCounts": {
+      "boundary_auto": 1248,
+      "familyA_active": 3504,
+      "familyA_catalog": 5040,
+      "familyB_active": 1008,
+      "tier1": 15288
+    },
+    "seedReachability": {
+      "reachableNodes": 3204,
+      "reachableOffices": {
+        "Jupiter": 384,
+        "Mars": 324,
+        "Mercury": 204,
+        "Moon": 324,
+        "Saturn": 444,
+        "Sun": 444,
+        "Venus": 420
+      },
+      "reachablePhases": {
+        "0": 267,
+        "1": 267,
+        "10": 267,
+        "11": 267,
+        "2": 267,
+        "3": 267,
+        "4": 267,
+        "5": 267,
+        "6": 267,
+        "7": 267,
+        "8": 267,
+        "9": 267
+      },
+      "source": "1387@0"
+    },
+    "sha256": "9ff511f14282cbe6ee48010d67092c70c25da0bf5fa6dbd1e50382afeb85f5c0",
+    "strongComponentCount": 1102,
+    "weakComponentCount": 943
+  },
+  "proposerExecution": {
+    "cliVersion": "1.19.5",
+    "costDecimal": "0.004461435",
+    "llmCallCount": 8,
+    "mode": "harness-mediated-tool-calls",
+    "model": "opencode-go/claude-haiku-5-5",
+    "modelAvailable": true,
+    "sdk": "opencode CLI (run --format json, agent=proposer, --pure, --auto)",
+    "tokenUsage": {
+      "cache_read": 18011,
+      "cache_write": 25537,
+      "input": 32,
+      "output": 1087,
+      "reasoning": 1085,
+      "total": 45752
+    },
+    "transcriptCount": 8,
+    "transcripts": [
+      {
+        "label": "B1-query",
+        "parsed": true,
+        "path": "transcripts/B1-query_001.json",
+        "sha256": "f13b720a98b8c112ed5b84decdfa9281a388d2fb7c2430504c8e4fccea9258c0"
+      },
+      {
+        "label": "B1-neighborhood",
+        "parsed": true,
+        "path": "transcripts/B1-neighborhood_002.json",
+        "sha256": "90d333fe833ba6d4267112e9bc2d827075009537d6822383621569a874cf00d6"
+      },
+      {
+        "label": "B1-select",
+        "parsed": true,
+        "path": "transcripts/B1-select_003.json",
+        "sha256": "7f3841f2d1e4e6975fe9f3ce6df0a32b69a1b8ce8884759dd0dbe9202db3f7c3"
+      },
+      {
+        "label": "B3-query",
+        "parsed": true,
+        "path": "transcripts/B3-query_004.json",
+        "sha256": "23c735eea30c6bb5792700f199b4843c01b4f8be22ff3c7feca0f306a79f4d6d"
+      },
+      {
+        "label": "B3-neighborhood",
+        "parsed": true,
+        "path": "transcripts/B3-neighborhood_005.json",
+        "sha256": "c8eabd51f3fb6175c08a1f3ab2bbe658814f64c12114fa91adb74057abd708e8"
+      },
+      {
+        "label": "B3-select",
+        "parsed": true,
+        "path": "transcripts/B3-select_006.json",
+        "sha256": "7e816e87eeba35ea7de8daa15e6440dcc5f0810fc30d10eb8c905da1e32076b1"
+      },
+      {
+        "label": "veto-tools",
+        "parsed": true,
+        "path": "transcripts/veto-tools_007.json",
+        "sha256": "ac6d7ea72abcc14a50b12ac5beb84e63db6fedeffd367d8c7735e144a9cbc0e1"
+      },
+      {
+        "label": "veto-answers",
+        "parsed": true,
+        "path": "transcripts/veto-answers_008.json",
+        "sha256": "04a18924701226914df6710a5848d46f0c33746094a040558daeb0f3f5e2bca3"
+      }
+    ]
+  },
+  "repoPins": [
+    {
+      "actualSha256": "79c0cf706fffc23745cab6e87ffbc46d34d70ad94a93291135725e388dc17328",
+      "expectedSha256": "79c0cf706fffc23745cab6e87ffbc46d34d70ad94a93291135725e388dc17328",
+      "match": true,
+      "path": "tools/governed-loop/mvp2.py"
+    },
+    {
+      "actualSha256": "9f2b3da60f0aa3695608d60640b0303a7d5ec0500d27fbe49284c7f399ae4824",
+      "expectedSha256": "9f2b3da60f0aa3695608d60640b0303a7d5ec0500d27fbe49284c7f399ae4824",
+      "match": true,
+      "path": "tools/governed-loop/orrery_nav_bridge.py"
+    },
+    {
+      "actualSha256": "851c9bf2a29c2c5a0a74f88875fc5420ee81c27c246dcdb8ef6f0e079e277c9c",
+      "expectedSha256": "851c9bf2a29c2c5a0a74f88875fc5420ee81c27c246dcdb8ef6f0e079e277c9c",
+      "match": true,
+      "path": "tools/governed-loop/mvp2_orrery_nav_smoke.py"
+    },
+    {
+      "actualSha256": "dc2379277afb1a9bf92a26cd3a83ea3f16a33a12ca331a9742f7d5861422f745",
+      "expectedSha256": "dc2379277afb1a9bf92a26cd3a83ea3f16a33a12ca331a9742f7d5861422f745",
+      "match": true,
+      "path": "tools/governed-loop/mvp3_encoder.py"
+    },
+    {
+      "actualSha256": "918228d497fc57e7c63b79ebd33c554ac4e52cb58760a9b68d86c52f6daae17c",
+      "expectedSha256": "918228d497fc57e7c63b79ebd33c554ac4e52cb58760a9b68d86c52f6daae17c",
+      "match": true,
+      "path": "tools/governed-loop/mvp3_encoder_spec.json"
+    },
+    {
+      "actualSha256": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+      "expectedSha256": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+      "match": true,
+      "path": "tools/governed-loop/census_462.json"
+    },
+    {
+      "actualSha256": "007b0ffe65015bd2c5f1a6fe0df8969961ce8cfb3d499677b143d971e1fc5744",
+      "expectedSha256": "007b0ffe65015bd2c5f1a6fe0df8969961ce8cfb3d499677b143d971e1fc5744",
+      "match": true,
+      "path": "tools/governed-loop/frozen_ground_truth.json"
+    },
+    {
+      "actualSha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+      "expectedSha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+      "match": true,
+      "path": "tools/governed-loop/frozen_seam_substrate_v3.json"
+    },
+    {
+      "actualSha256": "e6cf62a8eefa0924da9286f2e664c1914d9d620ed2d299929f684fd48225c274",
+      "expectedSha256": "e6cf62a8eefa0924da9286f2e664c1914d9d620ed2d299929f684fd48225c274",
+      "match": true,
+      "path": "tools/governed-loop/seam_legal_moves_v3.json"
+    },
+    {
+      "actualSha256": "eefd7e1e060189261c8063652d2ed73a09b16d3ffdcb9f259502a107ef9ceaa0",
+      "expectedSha256": "eefd7e1e060189261c8063652d2ed73a09b16d3ffdcb9f259502a107ef9ceaa0",
+      "match": true,
+      "path": "src/fivefold/quintessence.py"
+    },
+    {
+      "actualSha256": "bd361793d7c1295872fc95c230f3f9ce234f2cd4ea6899e9a3df08700aa8d604",
+      "expectedSha256": "bd361793d7c1295872fc95c230f3f9ce234f2cd4ea6899e9a3df08700aa8d604",
+      "match": true,
+      "path": "tests/fixtures/fivefold_q_table.v1.json"
+    },
+    {
+      "actualSha256": "cb9083f435a41b17a009d5fb249661c1998d107556bf6a6ee97fa5293f1461a0",
+      "expectedSha256": "cb9083f435a41b17a009d5fb249661c1998d107556bf6a6ee97fa5293f1461a0",
+      "match": true,
+      "path": "qa/mvp3_task_a_receipt.json"
+    },
+    {
+      "actualSha256": "ae50fd2b9b7c6b68157ae2a745d85be213e2d2afcf1db66d42766c5a61f7801e",
+      "expectedSha256": "ae50fd2b9b7c6b68157ae2a745d85be213e2d2afcf1db66d42766c5a61f7801e",
+      "match": true,
+      "path": "qa/mvp3_task_b0_receipt.json"
+    },
+    {
+      "actualSha256": "c658a5885c5fb989eec6eab1a3a3964ae3e2228606cb806f0867c6c1d829e5d4",
+      "expectedSha256": "c658a5885c5fb989eec6eab1a3a3964ae3e2228606cb806f0867c6c1d829e5d4",
+      "match": true,
+      "path": "qa/mvp3_task_b1_receipt.json"
+    },
+    {
+      "actualSha256": "022856bb9a2bb88162f77e04ca4dd60b0b93f68c62d2bb1404f14334d0729bfc",
+      "expectedSha256": "022856bb9a2bb88162f77e04ca4dd60b0b93f68c62d2bb1404f14334d0729bfc",
+      "match": true,
+      "path": "qa/mvp3_task_c_receipt.json"
+    }
+  ],
+  "schemaVersion": "mvp4.task-b-receipt.v1",
+  "staging": {
+    "aggregateManifest": "/home/erick/workspace/scratch-governed-loop-run/mvp4/l20_runner_staging_manifest.json",
+    "aggregateManifestSha256": "b8ffc1e03a5212bb54da7e99a9582d194fcf4c86b3f73224c8fae77d7960d12e",
+    "aggregateTotal": 19,
+    "aggregateVerified": 19
+  },
+  "status": "COMPLETE",
+  "stopRulesTriggered": [],
+  "task": "Task B",
+  "tools": {
+    "overlayStatus": "OVERLAY_NOT_STAGED",
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-b/mvp4_symbolic_tools.py",
+    "schemas": {
+      "explain_veto": {
+        "args": {
+          "candidate_id": "mask@phase",
+          "source_id": "mask@phase"
+        },
+        "description": "Deterministic gate veto diagnostic with checks and canonical explanation."
+      },
+      "get_neighborhood": {
+        "args": {
+          "card_state": "optional {order:[node_id,...]} or {scores:{node_id:int}}",
+          "node_id": "mask@phase"
+        },
+        "description": "Read-only node audit, boundary status, and legal outbound menu."
+      },
+      "query_path": {
+        "args": {
+          "max_paths": "int <= 3",
+          "source_id": "mask@phase",
+          "target_spec": "mask@phase | office"
+        },
+        "description": "Deterministic BFS shortest legal path(s) over the 5,544-node graph."
+      },
+      "step_intra_node_q": {
+        "args": {
+          "node_id": "mask@phase",
+          "q_state": "int 0..15",
+          "still_behavior": "fixed",
+          "z_step": "int"
+        },
+        "description": "Task C intra-node Q-engine overlay step inside a held macro node."
+      }
+    },
+    "sha256": "1d74b401cea788edf237458e8c8844c987c77c94814f8b533c766aaa147701ab",
+    "toolCallCount": 13,
+    "toolCallLogPath": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-b/tool_call_log.json",
+    "toolCallLogSha256": "6e77ae6cc9609acc20981a97aa543b25a8db01e18f733c68500735763f1896e5"
+  }
+}

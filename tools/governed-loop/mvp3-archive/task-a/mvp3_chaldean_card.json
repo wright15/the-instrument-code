@@ -1,0 +1,48 @@
+{
+  "card_id": "CHALDEAN_WEIGHTED_FIFTH_SPACE_v1",
+  "degree_governors": {
+    "Jupiter": 2,
+    "Mars": 3,
+    "Mercury": 6,
+    "Moon": 7,
+    "Saturn": 1,
+    "Sun": 4,
+    "Venus": 5
+  },
+  "fence": "The card ranks already-legal candidates; it never alters a gate verdict.",
+  "formula": {
+    "delta": "(target_degree - active_degree) mod 7",
+    "fifths_step_k": "(2 * delta) mod 7",
+    "m5_distance_d": "(4 * k) mod 7",
+    "rank": "k ascending; 0 = most proximate"
+  },
+  "ranking_numerals": [
+    "I",
+    "V",
+    "II",
+    "VI",
+    "III",
+    "VII",
+    "IV"
+  ],
+  "ranking_order_degrees": [
+    1,
+    5,
+    2,
+    6,
+    3,
+    7,
+    4
+  ],
+  "role": "rank-only zero-veto",
+  "weights_denominator": 407,
+  "weights_numerator": {
+    "1": 116,
+    "2": 56,
+    "3": 41,
+    "4": 35,
+    "5": 77,
+    "6": 44,
+    "7": 38
+  }
+}

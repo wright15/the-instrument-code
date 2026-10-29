@@ -1,0 +1,59 @@
+{
+  "card_id": "MVP4_DYNAMIC_CHALDEAN_CONTEXT_CARD_v1",
+  "role": "dynamic rank-only zero-veto",
+  "layer": "trajectory steering",
+  "base_card": {
+    "card_id": "CHALDEAN_WEIGHTED_FIFTH_SPACE_v1",
+    "sha256": "bff1cc4cb270e4883125c6ca431dd8440d8f73be3e33be51fc54c580ad7dc289"
+  },
+  "parameters": {
+    "W": 8,
+    "alpha": 40,
+    "N_threshold": 3,
+    "beta": 70,
+    "W_seam_base": 50,
+    "weights_denominator": 407,
+    "weights_numerator": {
+      "1": 116,
+      "2": 56,
+      "3": 41,
+      "4": 35,
+      "5": 77,
+      "6": 44,
+      "7": 38
+    }
+  },
+  "scoring": {
+    "formula": "Score_t(c) = W_base(c) - alpha * Visits_W(c, H_t) + beta * I[is_seam(c)] * max(0, N_in_family(H_t) - N_threshold + 1)",
+    "W_base": "Tier-1 candidates use weights_numerator[target Chaldean degree]; every cross-family seam candidate uses W_seam_base",
+    "Visits_W": "count of occurrences of candidate mask@phase in the last W states of H_t, inclusive of the current state",
+    "N_in_family": "number of consecutive prior states ending at s_t whose (governingRoot, phase) equals the current (governingRoot, phase)",
+    "is_seam": "candidate category is familyA-seam or familyB-seam",
+    "tie_break": [
+      "-Score_t(c)",
+      "category_rank",
+      "target_mask",
+      "target_phase",
+      "operator"
+    ],
+    "category_rank": {
+      "tier-1": 0,
+      "seamA:R1": 1,
+      "seamA:L1": 2,
+      "seamB:bridge": 3
+    },
+    "randomness": 0,
+    "integer_only": true,
+    "float_values": 0
+  },
+  "parameter_justification": {
+    "max_tier1_weight_numerator": 116,
+    "seam_score_at_threshold": 120,
+    "beta": 70,
+    "note": "W_seam_base + beta = 120 > 116 guarantees a licensed seam reaches presented_index 0 at N_in_family = N_threshold; beta = 50 would yield 100 and leave Tier-1 candidates ahead."
+  },
+  "fence": "The card ranks already-legal candidates; it never alters a gate verdict.",
+  "card_gate_inputs": 0,
+  "card_output_affects_gate": false,
+  "veto_exercised": false
+}

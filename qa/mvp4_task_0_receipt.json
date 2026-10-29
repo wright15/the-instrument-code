@@ -1,0 +1,361 @@
+{
+  "boundaryCensus": {
+    "dualExitTieBreakRows": 288,
+    "partition": {
+      "dualExitMasks": 24,
+      "entryRows": 128,
+      "escapableBoundaryMasks": 104,
+      "escapableLiftedStates": 1248,
+      "exitRows": 128,
+      "identityChecks": {
+        "entriesEqualExits": true,
+        "sideRowsIdentity": true,
+        "singlePlusDualEqualsEscapable": true,
+        "totalEqualsEscapablePlusIsolated": true
+      },
+      "isolatedBoundaryMasks": 50,
+      "isolatedLiftedStates": 600,
+      "sideRows": 256,
+      "singleExitMasks": 80,
+      "totalBoundaryLiftedStates": 1848,
+      "totalBoundaryMasks": 154,
+      "withEntries": 104,
+      "withExits": 104
+    },
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-0/boundary_topology_census.json",
+    "sha256": "38c271898ecfcbb8731239dbde38d58bf8e686aa1d31b648f22418c78eb40faf"
+  },
+  "bridge": {
+    "lockedPins": {
+      "GOVERNED_LOOP_LEDGER_PREFIX": "03742477",
+      "GOVERNED_LOOP_MANIFEST_COUNT": "1488",
+      "GOVERNED_LOOP_REPO_HEAD": "148a96f8c5ce5bcd83fad832170bc76c7075a943",
+      "GOVERNED_LOOP_REQUIRE_CLEAN": "1"
+    },
+    "negative": {
+      "exitCode": 1,
+      "ledgerPrefix": "00000000",
+      "logPath": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-0/bridge_check_negative.out",
+      "logSha256": "765c5ee8098369b52812f3d887a9dc98fe75a3f51bb32666c9c8e6f7939d9e93",
+      "mode": "negative",
+      "stderr": "",
+      "stdout": "FAIL-CLOSED: ledger prefix 03742477 != 00000000\n"
+    },
+    "positive": {
+      "exitCode": 0,
+      "ledgerPrefix": "03742477",
+      "logPath": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-0/bridge_check_positive.out",
+      "logSha256": "32b9675a594d2066373ed2d662346518ac95e9cd98c464d38d2609c65a85ed8f",
+      "mode": "positive",
+      "stderr": "",
+      "stdout": "ORRERY-NAV-1 BRIDGE\n{\n  \"boundaryDerivation\": {\n    \"distinctRows\": 196,\n    \"entries\": 128,\n    \"exits\": 128\n  },\n  \"boundaryTransit\": 256,\n  \"governsEdges\": 238,\n  \"nodeDerivation\": {\n    \"census\": 462,\n    \"phases\": 12,\n    \"product\": 5544\n  },\n  \"nodes\": 5544,\n  \"offices\": 7,\n  \"repo\": {\n    \"fileCount\": 1488,\n    \"head\": \"148a96f8c5ce5bcd83fad832170bc76c7075a943\",\n    \"ledgerBytes\": 330954,\n    \"ledgerLines\": 4073,\n    \"ledgerPrefix\": \"03742477\",\n    \"treeClean\": true\n  },\n  \"seamCatalog\": 5130,\n  \"seamCatalogDerivation\": {\n    \"familyA\": 5040,\n    \"familyB\": 90\n  },\n  \"tier1\": 18984,\n  \"tier1Derivation\": {\n    \"familySizeSquares\": 1582,\n    \"includesSelf\": true,\n    \"phases\": 12,\n    \"product\": 18984\n  }\n}\n"
+    }
+  },
+  "close": {
+    "repoHead": "148a96f8c5ce5bcd83fad832170bc76c7075a943",
+    "statusPorcelainSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "constraints": {
+    "REPO_WRITES": 0,
+    "cardGateInputs": 0,
+    "cardOutputAffectsGate": false,
+    "encoderBytesModified": false,
+    "gateBytesModified": false,
+    "qEngineBytesModified": false
+  },
+  "directive": "MVP4-DIR-1",
+  "gateAnchors": [
+    {
+      "actual": "        if cm == nm and cp == np_:",
+      "expected": "        if cm == nm and cp == np_:",
+      "line": 150,
+      "match": true
+    },
+    {
+      "actual": "            if self.gov_root[cm] is None:",
+      "expected": "            if self.gov_root[cm] is None:",
+      "line": 151,
+      "match": true
+    },
+    {
+      "actual": "                checks[\"boundary_endpoint\"] = True",
+      "expected": "                checks[\"boundary_endpoint\"] = True",
+      "line": 152,
+      "match": true
+    },
+    {
+      "actual": "                checks[\"same_family\"] = False",
+      "expected": "                checks[\"same_family\"] = False",
+      "line": 153,
+      "match": true
+    },
+    {
+      "actual": "                return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "expected": "                return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "line": 154,
+      "match": true
+    },
+    {
+      "actual": "        same_root = cr is not None and nr is not None and cr == nr",
+      "expected": "        same_root = cr is not None and nr is not None and cr == nr",
+      "line": 169,
+      "match": true
+    },
+    {
+      "actual": "        if same_root and cp == np_:",
+      "expected": "        if same_root and cp == np_:",
+      "line": 171,
+      "match": true
+    },
+    {
+      "actual": "            return \"ACCEPT\", [], checks, None",
+      "expected": "            return \"ACCEPT\", [], checks, None",
+      "line": 172,
+      "match": true
+    },
+    {
+      "actual": "        if checks[\"boundary_endpoint\"]:",
+      "expected": "        if checks[\"boundary_endpoint\"]:",
+      "line": 183,
+      "match": true
+    },
+    {
+      "actual": "            return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "expected": "            return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "line": 184,
+      "match": true
+    },
+    {
+      "actual": "        plan[\"dwellMs\"] = int(__import__(\"os\").environ.get(\"ORRERY_BRIDGE_DWELL_MS\", \"1500\"))",
+      "expected": "ORRERY_BRIDGE_DWELL_MS marker",
+      "line": 733,
+      "match": true
+    }
+  ],
+  "harnessSync": {
+    "newPins": [
+      {
+        "expectedSha256": "79c0cf706fffc23745cab6e87ffbc46d34d70ad94a93291135725e388dc17328",
+        "match": true,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp4/mvp2.py",
+        "role": "l19_harness_mvp2.py",
+        "sha256": "79c0cf706fffc23745cab6e87ffbc46d34d70ad94a93291135725e388dc17328"
+      },
+      {
+        "expectedSha256": "9f2b3da60f0aa3695608d60640b0303a7d5ec0500d27fbe49284c7f399ae4824",
+        "match": true,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp4/orrery_nav_bridge.py",
+        "role": "l19_harness_orrery_nav_bridge.py",
+        "sha256": "9f2b3da60f0aa3695608d60640b0303a7d5ec0500d27fbe49284c7f399ae4824"
+      },
+      {
+        "expectedSha256": "851c9bf2a29c2c5a0a74f88875fc5420ee81c27c246dcdb8ef6f0e079e277c9c",
+        "match": true,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp4/mvp2_orrery_nav_smoke.py",
+        "role": "l19_harness_mvp2_orrery_nav_smoke.py",
+        "sha256": "851c9bf2a29c2c5a0a74f88875fc5420ee81c27c246dcdb8ef6f0e079e277c9c"
+      }
+    ],
+    "preSyncArchived": [
+      {
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-0/pre_sync_harness/mvp2.py",
+        "sha256": "5957a290d3d23e458fb4ddf641868719ac940514eb3aee5aa0df417112ca04e2"
+      },
+      {
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-0/pre_sync_harness/orrery_nav_bridge.py",
+        "sha256": "77d87207d721af47210d9bfc446089e48e32bad2cca66463307a808e89a0c997"
+      },
+      {
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-0/pre_sync_harness/mvp2_orrery_nav_smoke.py",
+        "sha256": "7718193bfd793c75c5fc5e871225e73a42c089bce49732050edb615c11ba0398"
+      }
+    ]
+  },
+  "opening": {
+    "checksumsSha256": "fd918c280c9f0789102bc09b0fd041c5875a73cb9ae7f1754d5740b2ecd0daeb",
+    "ledger": {
+      "bytes": 330954,
+      "lines": 4073,
+      "sha256": "037424774910287b29a9101569127d4a7850d4f86376540e350bbe14f0c6663b"
+    },
+    "manifest": {
+      "fileCount": 1488,
+      "sha256": "93fb9c836f1fa108a607b74d50d3bc3adcc3dcd9311e0edb994685241f4b8a05",
+      "totalBytes": 95403413
+    },
+    "repoHead": "148a96f8c5ce5bcd83fad832170bc76c7075a943",
+    "statusPorcelainEmpty": true,
+    "statusPorcelainSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "timestampUtc": "2026-10-29T16:16:23Z",
+    "validation": {
+      "checksFailed": 0,
+      "checksPassed": 418,
+      "releaseId": "seven-governors-integrated-1.9.0",
+      "sha256": "cff3c3157d520a4bedceb5f62a4c04cb482d5e4843de41cda812292c881a8fa5"
+    }
+  },
+  "repoPins": [
+    {
+      "actualSha256": "79c0cf706fffc23745cab6e87ffbc46d34d70ad94a93291135725e388dc17328",
+      "expectedSha256": "79c0cf706fffc23745cab6e87ffbc46d34d70ad94a93291135725e388dc17328",
+      "match": true,
+      "path": "tools/governed-loop/mvp2.py"
+    },
+    {
+      "actualSha256": "9f2b3da60f0aa3695608d60640b0303a7d5ec0500d27fbe49284c7f399ae4824",
+      "expectedSha256": "9f2b3da60f0aa3695608d60640b0303a7d5ec0500d27fbe49284c7f399ae4824",
+      "match": true,
+      "path": "tools/governed-loop/orrery_nav_bridge.py"
+    },
+    {
+      "actualSha256": "851c9bf2a29c2c5a0a74f88875fc5420ee81c27c246dcdb8ef6f0e079e277c9c",
+      "expectedSha256": "851c9bf2a29c2c5a0a74f88875fc5420ee81c27c246dcdb8ef6f0e079e277c9c",
+      "match": true,
+      "path": "tools/governed-loop/mvp2_orrery_nav_smoke.py"
+    },
+    {
+      "actualSha256": "dc2379277afb1a9bf92a26cd3a83ea3f16a33a12ca331a9742f7d5861422f745",
+      "expectedSha256": "dc2379277afb1a9bf92a26cd3a83ea3f16a33a12ca331a9742f7d5861422f745",
+      "match": true,
+      "path": "tools/governed-loop/mvp3_encoder.py"
+    },
+    {
+      "actualSha256": "918228d497fc57e7c63b79ebd33c554ac4e52cb58760a9b68d86c52f6daae17c",
+      "expectedSha256": "918228d497fc57e7c63b79ebd33c554ac4e52cb58760a9b68d86c52f6daae17c",
+      "match": true,
+      "path": "tools/governed-loop/mvp3_encoder_spec.json"
+    },
+    {
+      "actualSha256": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+      "expectedSha256": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+      "match": true,
+      "path": "tools/governed-loop/census_462.json"
+    },
+    {
+      "actualSha256": "007b0ffe65015bd2c5f1a6fe0df8969961ce8cfb3d499677b143d971e1fc5744",
+      "expectedSha256": "007b0ffe65015bd2c5f1a6fe0df8969961ce8cfb3d499677b143d971e1fc5744",
+      "match": true,
+      "path": "tools/governed-loop/frozen_ground_truth.json"
+    },
+    {
+      "actualSha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+      "expectedSha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+      "match": true,
+      "path": "tools/governed-loop/frozen_seam_substrate_v3.json"
+    },
+    {
+      "actualSha256": "e6cf62a8eefa0924da9286f2e664c1914d9d620ed2d299929f684fd48225c274",
+      "expectedSha256": "e6cf62a8eefa0924da9286f2e664c1914d9d620ed2d299929f684fd48225c274",
+      "match": true,
+      "path": "tools/governed-loop/seam_legal_moves_v3.json"
+    },
+    {
+      "actualSha256": "eefd7e1e060189261c8063652d2ed73a09b16d3ffdcb9f259502a107ef9ceaa0",
+      "expectedSha256": "eefd7e1e060189261c8063652d2ed73a09b16d3ffdcb9f259502a107ef9ceaa0",
+      "match": true,
+      "path": "src/fivefold/quintessence.py"
+    },
+    {
+      "actualSha256": "bd361793d7c1295872fc95c230f3f9ce234f2cd4ea6899e9a3df08700aa8d604",
+      "expectedSha256": "bd361793d7c1295872fc95c230f3f9ce234f2cd4ea6899e9a3df08700aa8d604",
+      "match": true,
+      "path": "tests/fixtures/fivefold_q_table.v1.json"
+    },
+    {
+      "actualSha256": "cb9083f435a41b17a009d5fb249661c1998d107556bf6a6ee97fa5293f1461a0",
+      "expectedSha256": "cb9083f435a41b17a009d5fb249661c1998d107556bf6a6ee97fa5293f1461a0",
+      "match": true,
+      "path": "qa/mvp3_task_a_receipt.json"
+    },
+    {
+      "actualSha256": "ae50fd2b9b7c6b68157ae2a745d85be213e2d2afcf1db66d42766c5a61f7801e",
+      "expectedSha256": "ae50fd2b9b7c6b68157ae2a745d85be213e2d2afcf1db66d42766c5a61f7801e",
+      "match": true,
+      "path": "qa/mvp3_task_b0_receipt.json"
+    },
+    {
+      "actualSha256": "c658a5885c5fb989eec6eab1a3a3964ae3e2228606cb806f0867c6c1d829e5d4",
+      "expectedSha256": "c658a5885c5fb989eec6eab1a3a3964ae3e2228606cb806f0867c6c1d829e5d4",
+      "match": true,
+      "path": "qa/mvp3_task_b1_receipt.json"
+    },
+    {
+      "actualSha256": "022856bb9a2bb88162f77e04ca4dd60b0b93f68c62d2bb1404f14334d0729bfc",
+      "expectedSha256": "022856bb9a2bb88162f77e04ca4dd60b0b93f68c62d2bb1404f14334d0729bfc",
+      "match": true,
+      "path": "qa/mvp3_task_c_receipt.json"
+    }
+  ],
+  "runner": {
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-0/mvp4_task_0.py",
+    "sha256": "5db1c5fe000822f23d5a74b3c358ef712da72d99047bec546f4dddf3af0a3f6e"
+  },
+  "schemaVersion": "mvp4.task-0-receipt.v1",
+  "scratchRunnerPins": [
+    {
+      "actualSha256": "bff1cc4cb270e4883125c6ca431dd8440d8f73be3e33be51fc54c580ad7dc289",
+      "expectedSha256": "bff1cc4cb270e4883125c6ca431dd8440d8f73be3e33be51fc54c580ad7dc289",
+      "match": true,
+      "path": "/home/erick/workspace/scratch-governed-loop-run/task-a/mvp3_chaldean_card.json",
+      "role": "mvp3_static_card"
+    },
+    {
+      "actualSha256": "69deb1e6d55ea37eafd97ad2ea868faef3e55e0520bbca05afda9a3a44898936",
+      "expectedSha256": "69deb1e6d55ea37eafd97ad2ea868faef3e55e0520bbca05afda9a3a44898936",
+      "match": true,
+      "path": "/home/erick/workspace/scratch-governed-loop-run/task-a/mvp3_llm_proposer.py",
+      "role": "mvp3_llm_proposer"
+    },
+    {
+      "actualSha256": "adb884b0c6190efe10f612f190bcd2821b1d724e119540961696c1b1251a0f25",
+      "expectedSha256": "adb884b0c6190efe10f612f190bcd2821b1d724e119540961696c1b1251a0f25",
+      "match": true,
+      "path": "/home/erick/workspace/scratch-governed-loop-run/task-a/mvp3_task_a_postprocess.py",
+      "role": "mvp3_task_a_postprocess"
+    },
+    {
+      "actualSha256": "eea1e4a8e877cc60dc6228fada95560150e8724b659fc5c28b95f3c5fe182c85",
+      "expectedSha256": "eea1e4a8e877cc60dc6228fada95560150e8724b659fc5c28b95f3c5fe182c85",
+      "match": true,
+      "path": "/home/erick/workspace/scratch-governed-loop-run/task-b0/mvp3_b0_run.py",
+      "role": "mvp3_task_b0_runner"
+    },
+    {
+      "actualSha256": "796bac0a1be2d29f5af318577595f1a0925a3ba0006fd4cda13c7bab144ab2d8",
+      "expectedSha256": "796bac0a1be2d29f5af318577595f1a0925a3ba0006fd4cda13c7bab144ab2d8",
+      "match": true,
+      "path": "/home/erick/workspace/scratch-governed-loop-run/task-b1/mvp3_b1_run.py",
+      "role": "mvp3_task_b1_runner"
+    },
+    {
+      "actualSha256": "aff45d9199aeb4c3eeec59d757c4d16c64a6fa3a328fa5bfedfe1bba775398ac",
+      "expectedSha256": "aff45d9199aeb4c3eeec59d757c4d16c64a6fa3a328fa5bfedfe1bba775398ac",
+      "match": true,
+      "path": "/home/erick/workspace/scratch-governed-loop-run/task-c/mvp3_task_c.py",
+      "role": "mvp3_task_c_probe"
+    },
+    {
+      "actualSha256": "5a769d9d0ac3f4dd600a1e05a1c519512727bc8f627f85d29983482f5d28bd37",
+      "expectedSha256": "5a769d9d0ac3f4dd600a1e05a1c519512727bc8f627f85d29983482f5d28bd37",
+      "match": true,
+      "path": "/home/erick/workspace/scratch-governed-loop-run/task-c/mvp3_task_c_postprocess.py",
+      "role": "mvp3_task_c_postprocess"
+    },
+    {
+      "actualSha256": "b7c265ffb20ac5d914953bf9aed218f07727ddb6cd352c31ccc3bb378ae82fb7",
+      "expectedSha256": "b7c265ffb20ac5d914953bf9aed218f07727ddb6cd352c31ccc3bb378ae82fb7",
+      "match": true,
+      "path": "/home/erick/workspace/scratch-governed-loop-run/mvp3_task0_census.py",
+      "role": "mvp3_task0_census"
+    }
+  ],
+  "stagingManifest": {
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-0/l20_runner_staging_manifest.json",
+    "sha256": "e53e791c16e142bad1574b4af31dd5c5188c02addcdb01da3ed0e0340d261763",
+    "total": 12,
+    "verified": 12
+  },
+  "status": "COMPLETE",
+  "stopRulesTriggered": [],
+  "task": "Task 0"
+}

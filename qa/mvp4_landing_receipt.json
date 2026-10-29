@@ -1,0 +1,381 @@
+{
+  "batteryA": {
+    "boundaryCensus": {
+      "batteryRunnerStop": "S-3 isolated to the dirty landing tree; census and bridge checks completed",
+      "expectedSha256": "38c271898ecfcbb8731239dbde38d58bf8e686aa1d31b648f22418c78eb40faf",
+      "match": true,
+      "partition": "154 = 104 escapable (80 single + 24 dual) + 50 isolated / 256 side-rows",
+      "recomputedSha256": "38c271898ecfcbb8731239dbde38d58bf8e686aa1d31b648f22418c78eb40faf"
+    },
+    "bridgeNegative": {
+      "exitCode": 1,
+      "failClosedText": "FAIL-CLOSED: ledger prefix 03742477 != 00000000",
+      "inTree": true
+    },
+    "bridgePositive": {
+      "exitCode": 0,
+      "inTree": true,
+      "scratch": "tools/governed-loop"
+    },
+    "planner": {
+      "censusLandedSha256": "165fb6b33a1ced983b45189738541bba3e206d5655a729c8deeff5cd72627d12",
+      "censusMatch": true,
+      "censusRecomputedSha256": "165fb6b33a1ced983b45189738541bba3e206d5655a729c8deeff5cd72627d12",
+      "edges": 20760,
+      "gateFailures": 0,
+      "gateVerified": 21048,
+      "nodes": 5544,
+      "query1387_0_to_2905_11": [
+        "1387@0",
+        "2773@11",
+        "2905@11"
+      ],
+      "query1387_7_to_2905_6": [
+        "1387@7",
+        "2773@6",
+        "2905@6"
+      ],
+      "queryHopsAccepted": "4/4"
+    },
+    "qEngine": {
+      "q1_12_id": true,
+      "q1_4_not_id": true,
+      "sampleNextQ": 7,
+      "sampleProjectionMode": "degree_modulo_7",
+      "stillEvaluations": 243936,
+      "stillLeaks": 0,
+      "stillStatus": "PASS",
+      "tableMatch": true,
+      "tableRows": 192
+    }
+  },
+  "batteryB": {
+    "hashOnly": [
+      "Task A LLM 3-arm battery (provider-nondeterministic)",
+      "Task B LLM tool battery (provider-nondeterministic)",
+      "Task D five-corpus re-derivation (scratch corpora + task-b1 venv; reproduced in scratch)"
+    ],
+    "honestyNote": "Portable subset is re-executed in-tree; nondeterministic and corpus-bound batteries are hash-verified against staged bytes and archived evidence, not re-executed during landing.",
+    "portableSubsetReexecuted": [
+      "Task 0 boundary census logic",
+      "Task B planner import/census/query",
+      "Task C Q-table and still-set checks"
+    ]
+  },
+  "cascade": {
+    "allPaths": [
+      "canonical/fivefold-incubator/fifth-space-census-v0.json",
+      "canonical/fivefold-incubator/shadow-ladder-v0.json",
+      "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
+      "qa/pentatonic-binding-audit-closure.json",
+      "qa/fivefold-engine-promotion-evidence.json",
+      "orrery/src/generated/field-derivation-bundle.v1.json",
+      "orrery/src/generated/taxonomy-read-model.v1.json",
+      "orrery/src/generated/d-tier-taxonomy-dataset.v1.json"
+    ],
+    "directLedgerBound": [
+      {
+        "path": "canonical/fivefold-incubator/fifth-space-census-v0.json",
+        "sha256": "486e063ceacdc3c6c843686d1c4d3a38a943da2745054bcf78da17c1a65399ac"
+      },
+      {
+        "path": "canonical/fivefold-incubator/shadow-ladder-v0.json",
+        "sha256": "d65555fbbbb533004e643808e789a6db710b13caa2c82c02242f918b7b4268c4"
+      },
+      {
+        "path": "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
+        "sha256": "7666d9d834d59df0c699007a3de42db298aa4c691cd5d007804b551d4c459f30"
+      },
+      {
+        "path": "qa/pentatonic-binding-audit-closure.json",
+        "sha256": "c9a9f00f479ddf391689784c2e60917178ca43889c91ca2411a15af3698b4d7a"
+      },
+      {
+        "path": "qa/fivefold-engine-promotion-evidence.json",
+        "sha256": "4b50b67c4da9dfe7764521d39e78e3d5a34aa1618c9fc896a570bbb723f4e783"
+      }
+    ],
+    "downstream": [
+      {
+        "path": "orrery/src/generated/field-derivation-bundle.v1.json",
+        "sha256": "73c4d703dfacde61560ae422cb64537b23539f4e1853e16890bfc56b7ef8e6df"
+      },
+      {
+        "path": "orrery/src/generated/taxonomy-read-model.v1.json",
+        "sha256": "d3e05e70f12e62b7e178f1c552574a6722d7f32d1303d20014ac9f8dbaac0fbf"
+      },
+      {
+        "path": "orrery/src/generated/d-tier-taxonomy-dataset.v1.json",
+        "sha256": "9b18a36516393655166e234f73878e6c80eac733600bf96020f155375baeae73"
+      }
+    ]
+  },
+  "constraints": {
+    "claimEvent": false,
+    "encoderBytesModified": false,
+    "gateBytesModified": false,
+    "qEngineBytesModified": false,
+    "repoWrites": "1 commit",
+    "tagOrPush": false
+  },
+  "directive": "MVP4-L20-AUTH-1",
+  "landing": {
+    "closingReports": 1,
+    "landingReceipts": 1,
+    "mode": "single-combined-commit",
+    "newFiles": 27,
+    "receiptFiles": 5,
+    "rows": [
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp3-archive/task-a/mvp3_chaldean_card.json",
+        "role": "mvp3_static_card",
+        "sha256": "bff1cc4cb270e4883125c6ca431dd8440d8f73be3e33be51fc54c580ad7dc289",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/l20-staged/task-a/mvp3_chaldean_card.json",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp3-archive/task-a/mvp3_llm_proposer.py",
+        "role": "mvp3_llm_proposer",
+        "sha256": "69deb1e6d55ea37eafd97ad2ea868faef3e55e0520bbca05afda9a3a44898936",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/l20-staged/task-a/mvp3_llm_proposer.py",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp3-archive/task-a/mvp3_task_a_postprocess.py",
+        "role": "mvp3_task_a_postprocess",
+        "sha256": "adb884b0c6190efe10f612f190bcd2821b1d724e119540961696c1b1251a0f25",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/l20-staged/task-a/mvp3_task_a_postprocess.py",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp3-archive/task-b0/mvp3_b0_run.py",
+        "role": "mvp3_task_b0_runner",
+        "sha256": "eea1e4a8e877cc60dc6228fada95560150e8724b659fc5c28b95f3c5fe182c85",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/l20-staged/task-b0/mvp3_b0_run.py",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp3-archive/task-b1/mvp3_b1_run.py",
+        "role": "mvp3_task_b1_runner",
+        "sha256": "796bac0a1be2d29f5af318577595f1a0925a3ba0006fd4cda13c7bab144ab2d8",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/l20-staged/task-b1/mvp3_b1_run.py",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp3-archive/task-c/mvp3_task_c.py",
+        "role": "mvp3_task_c_probe",
+        "sha256": "aff45d9199aeb4c3eeec59d757c4d16c64a6fa3a328fa5bfedfe1bba775398ac",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/l20-staged/task-c/mvp3_task_c.py",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp3-archive/task-c/mvp3_task_c_postprocess.py",
+        "role": "mvp3_task_c_postprocess",
+        "sha256": "5a769d9d0ac3f4dd600a1e05a1c519512727bc8f627f85d29983482f5d28bd37",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/l20-staged/task-c/mvp3_task_c_postprocess.py",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp3-archive/mvp3_task0_census.py",
+        "role": "mvp3_task0_census",
+        "sha256": "b7c265ffb20ac5d914953bf9aed218f07727ddb6cd352c31ccc3bb378ae82fb7",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/l20-staged/mvp3_task0_census.py",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp4/task-0/mvp4_task_0.py",
+        "role": "mvp4_task0_census_and_staging",
+        "sha256": "5db1c5fe000822f23d5a74b3c358ef712da72d99047bec546f4dddf3af0a3f6e",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-0/mvp4_task_0.py",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp4/task-a/mvp4_dynamic_chaldean_card.json",
+        "role": "mvp4_dynamic_chaldean_card",
+        "sha256": "6486599187687edb1e28481b2bbc79d9a11a06001e4a237505c5e44c1c1a1469",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-a/mvp4_dynamic_chaldean_card.json",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp4/task-a/mvp4_task_a.py",
+        "role": "mvp4_task_a_runner",
+        "sha256": "54210af9e303554b453bb5018e5cc740ea4108d0b42cc44396350b89599c75ab",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-a/mvp4_task_a.py",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp4/task-a/mvp4_task_a_postprocess.py",
+        "role": "mvp4_task_a_postprocess",
+        "sha256": "702e992da0a5267c1db8a0430517832ba1c139677f82efd26129fec815272f4c",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-a/mvp4_task_a_postprocess.py",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp4/task-b/mvp4_symbolic_planner.py",
+        "role": "mvp4_symbolic_planner",
+        "sha256": "9ff511f14282cbe6ee48010d67092c70c25da0bf5fa6dbd1e50382afeb85f5c0",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-b/mvp4_symbolic_planner.py",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp4/task-b/mvp4_symbolic_tools.py",
+        "role": "mvp4_symbolic_tools",
+        "sha256": "1d74b401cea788edf237458e8c8844c987c77c94814f8b533c766aaa147701ab",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-b/mvp4_symbolic_tools.py",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp4/task-b/mvp4_task_b.py",
+        "role": "mvp4_task_b_runner",
+        "sha256": "7545139e8510ef4259882440fbb8f11245160cf102ecdb8882b2ba40bf5a4383",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-b/mvp4_task_b.py",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp4/task-b/mvp4_graph_census.json",
+        "role": "mvp4_task_b_census",
+        "sha256": "165fb6b33a1ced983b45189738541bba3e206d5655a729c8deeff5cd72627d12",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-b/mvp4_graph_census.json",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp4/task-c/mvp4_q_intra_node.py",
+        "role": "mvp4_q_intra_node",
+        "sha256": "8b39ffe4be4d1f801cf1065cd8928c681002249de8ebad1d5246f277e94f815f",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-c/mvp4_q_intra_node.py",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp4/task-c/mvp4_task_c.py",
+        "role": "mvp4_task_c_runner",
+        "sha256": "e4499d5252fca5088b264e56a18c149621cd31a28c2d732b1cdd40d838f93568",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-c/mvp4_task_c.py",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp4/task-c/coupled_trace.jsonl",
+        "role": "mvp4_task_c_trace",
+        "sha256": "75d52c0ced56af403b4e4e6379474bf3add7138716d192fb7401a3b90c86bc9d",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-c/coupled_trace.jsonl",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/tools/governed-loop/mvp4/task-d/mvp4_b1_diagnostic.py",
+        "role": "mvp4_b1_diagnostic",
+        "sha256": "bfb310ac2b401fd90543b987af1b9332dab808396c68266abced0c448d80eaa0",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-d/mvp4_b1_diagnostic.py",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/qa/mvp4_task_0_receipt.json",
+        "role": "mvp4_task_0_receipt.json",
+        "sha256": "906ba0b196755eafe41ee8abf2d70a03040a0bc995502856984cec1d798e079e",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-0/mvp4_task_0_receipt.json",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/qa/mvp4_task_a_receipt.json",
+        "role": "mvp4_task_a_receipt.json",
+        "sha256": "d4e63cb51f6339edf7dcdb721d9753ea6c6cac580f35cf9397201803cd8fdbc1",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-a/mvp4_task_a_receipt.json",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/qa/mvp4_task_b_receipt.json",
+        "role": "mvp4_task_b_receipt.json",
+        "sha256": "ffab52b696aeda84204c463abd700e7be86d2e430d6dc8d43d72587381aa7d12",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-b/mvp4_task_b_receipt.json",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/qa/mvp4_task_c_receipt.json",
+        "role": "mvp4_task_c_receipt.json",
+        "sha256": "834e3a64c22fba07fa0179b95d8ee26d152c038f67a0a387ae3a2b1796cf4295",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-c/mvp4_task_c_receipt.json",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/qa/mvp4_task_d_receipt.json",
+        "role": "mvp4_task_d_receipt.json",
+        "sha256": "8b15f274538cc093e358c306a276a72cc0ca9e04ad8bbec35074ab57289dfc02",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/task-d/mvp4_task_d_receipt.json",
+        "verified": true
+      },
+      {
+        "destination": "/home/erick/projects/integrated-release/scrum/plan/mvp4-sprint-closing-report.md",
+        "role": "mvp4_sprint_closing_report",
+        "sha256": "3985643155fc6e8bfcbeae10fb77afa4318fa54e5d34126b809d22cc3e770fe3",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp4/MVP4-CLOSING-REPORT.md",
+        "verified": true
+      }
+    ],
+    "self": {
+      "note": "This receipt is the 27th new file; its own digest is recorded in MANIFEST.json and CHECKSUMS.sha256.",
+      "path": "qa/mvp4_landing_receipt.json",
+      "sha256": "self-referential-not-embedded"
+    },
+    "stagedFiles": 20
+  },
+  "ledger": {
+    "afterBytes": 340531,
+    "afterLines": 4112,
+    "afterSha256": "8d0a04732370167e84b439a1a019ff6475c951ab86c258b84c79304534f2102d",
+    "beforeSha256": "037424774910287b29a9101569127d4a7850d4f86376540e350bbe14f0c6663b",
+    "entry": "single combined L20 entry appended at tail; no prior entry amended",
+    "path": "provenance/DECISION_LEDGER.md",
+    "prefixIdentity": true
+  },
+  "manifestRegen": {
+    "checksumsArtifact": "CHECKSUMS.sha256",
+    "command": "node scripts/build-manifest.mjs",
+    "expectedFileCount": 1516,
+    "expectedNewFiles": 27,
+    "manifestArtifact": "MANIFEST.json",
+    "note": "MANIFEST.json and CHECKSUMS.sha256 are regenerated after this receipt is written. The count includes the 27 new L20 files plus the previously committed but unmanifested L19 landing receipt, yielding 1,516 files.",
+    "observedFileCount": 1516,
+    "previouslyOmittedL19ReceiptIncluded": "qa/mvp3_l19_landing_receipt.json"
+  },
+  "notes": "Landing receipt is written before MANIFEST regeneration; the receipt cannot embed the manifest or commit digest that depends on it. Both are recorded in MANIFEST.json and git log respectively.",
+  "opening": {
+    "baseHead": "148a96f8c5ce5bcd83fad832170bc76c7075a943",
+    "checksumsSha256": "fd918c280c9f0789102bc09b0fd041c5875a73cb9ae7f1754d5740b2ecd0daeb",
+    "closingReportSha256": "3985643155fc6e8bfcbeae10fb77afa4318fa54e5d34126b809d22cc3e770fe3",
+    "ledgerBefore": {
+      "bytes": 330954,
+      "lines": 4073,
+      "sha256": "037424774910287b29a9101569127d4a7850d4f86376540e350bbe14f0c6663b"
+    },
+    "manifestBefore": {
+      "fileCount": 1488,
+      "sha256": "93fb9c836f1fa108a607b74d50d3bc3adcc3dcd9311e0edb994685241f4b8a05",
+      "totalBytes": 95403413
+    },
+    "stagingManifestSha256": "32c2c468265c4bbd124152565e734412b7471b00e040832d47893746aee20a35",
+    "stagingTotal": 23,
+    "stagingVerified": 23,
+    "timestampUtc": "2026-10-29T21:40:51.510810+00:00",
+    "treeClean": true,
+    "validationBefore": {
+      "checksFailed": 0,
+      "checksPassed": 418,
+      "releaseId": "seven-governors-integrated-1.9.0",
+      "sha256": "cff3c3157d520a4bedceb5f62a4c04cb482d5e4843de41cda812292c881a8fa5"
+    }
+  },
+  "schemaVersion": "mvp4.l20-landing-receipt.v1",
+  "seal": "single combined commit; the commit object id is self-referential and is recorded by git log, not embedded here",
+  "status": "COMPLETE",
+  "stopRulesTriggered": [],
+  "task": "L20 landing",
+  "validation": {
+    "artifact": "qa/integrated-release-validation.json",
+    "command": "node scripts/validate-release.mjs",
+    "expectedChecksFailed": 0,
+    "expectedChecksPassed": 418,
+    "expectedVerdict": "PASS",
+    "observedChecksFailed": 0,
+    "observedChecksPassed": 418,
+    "observedVerdict": "PASS",
+    "validationFileSha256": "e31645789a84db704686def6d47f001e5986a07196c20bea041a099247df4636"
+  }
+}
