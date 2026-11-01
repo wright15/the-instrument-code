@@ -10,16 +10,16 @@
     "README.md"
   ],
   "statistics": {
-    "filesScanned": 230,
+    "filesScanned": 236,
     "claims": 5,
     "claimsMatchingCurrent": 0,
     "claimsReleaseQualified": 5,
     "claimsScoped": 0,
-    "exemptions": 2,
-    "scrumFingerprintLiterals": 378,
+    "exemptions": 4,
+    "scrumFingerprintLiterals": 406,
     "scrumFingerprintViolations": 0,
-    "sanctionedFingerprintRecords": 1,
-    "sanctionedFingerprintsBound": 16,
+    "sanctionedFingerprintRecords": 3,
+    "sanctionedFingerprintsBound": 27,
     "violations": 0
   },
   "claims": [
@@ -65,6 +65,18 @@
     }
   ],
   "exemptions": [
+    {
+      "file": "docs/mvp5/03-architecture-and-design.md",
+      "line": 234,
+      "literal": 440,
+      "reason": "audio_tuning"
+    },
+    {
+      "file": "docs/mvp5/03-architecture-and-design.md",
+      "line": 236,
+      "literal": 440,
+      "reason": "audio_tuning"
+    },
     {
       "file": "orrery/README.md",
       "line": 109,
@@ -1958,6 +1970,174 @@
       "classification": "bound"
     },
     {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 12,
+      "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 13,
+      "fingerprint": "037424774910287b29a9101569127d4a7850d4f86376540e350bbe14f0c6663b",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 14,
+      "fingerprint": "93fb9c836f1fa108a607b74d50d3bc3adcc3dcd9311e0edb994685241f4b8a05",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 15,
+      "fingerprint": "fd918c280c9f0789102bc09b0fd041c5875a73cb9ae7f1754d5740b2ecd0daeb",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 17,
+      "fingerprint": "38c271898ecfcbb8731239dbde38d58bf8e686aa1d31b648f22418c78eb40faf",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 18,
+      "fingerprint": "32c2c468265c4bbd124152565e734412b7471b00e040832d47893746aee20a35",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 26,
+      "fingerprint": "906ba0b196755eafe41ee8abf2d70a03040a0bc995502856984cec1d798e079e",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 38,
+      "fingerprint": "d4e63cb51f6339edf7dcdb721d9753ea6c6cac580f35cf9397201803cd8fdbc1",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 38,
+      "fingerprint": "6486599187687edb1e28481b2bbc79d9a11a06001e4a237505c5e44c1c1a1469",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 48,
+      "fingerprint": "ffab52b696aeda84204c463abd700e7be86d2e430d6dc8d43d72587381aa7d12",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 48,
+      "fingerprint": "9ff511f14282cbe6ee48010d67092c70c25da0bf5fa6dbd1e50382afeb85f5c0",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 48,
+      "fingerprint": "1d74b401cea788edf237458e8c8844c987c77c94814f8b533c766aaa147701ab",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 48,
+      "fingerprint": "165fb6b33a1ced983b45189738541bba3e206d5655a729c8deeff5cd72627d12",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 58,
+      "fingerprint": "834e3a64c22fba07fa0179b95d8ee26d152c038f67a0a387ae3a2b1796cf4295",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 58,
+      "fingerprint": "8b39ffe4be4d1f801cf1065cd8928c681002249de8ebad1d5246f277e94f815f",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 58,
+      "fingerprint": "75d52c0ced56af403b4e4e6379474bf3add7138716d192fb7401a3b90c86bc9d",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 67,
+      "fingerprint": "8b15f274538cc093e358c306a276a72cc0ca9e04ad8bbec35074ab57289dfc02",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 73,
+      "fingerprint": "906ba0b196755eafe41ee8abf2d70a03040a0bc995502856984cec1d798e079e",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 74,
+      "fingerprint": "d4e63cb51f6339edf7dcdb721d9753ea6c6cac580f35cf9397201803cd8fdbc1",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 75,
+      "fingerprint": "ffab52b696aeda84204c463abd700e7be86d2e430d6dc8d43d72587381aa7d12",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 76,
+      "fingerprint": "834e3a64c22fba07fa0179b95d8ee26d152c038f67a0a387ae3a2b1796cf4295",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 77,
+      "fingerprint": "8b15f274538cc093e358c306a276a72cc0ca9e04ad8bbec35074ab57289dfc02",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "line": 81,
+      "fingerprint": "32c2c468265c4bbd124152565e734412b7471b00e040832d47893746aee20a35",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp5-sprint-closing-report.md",
+      "line": 10,
+      "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp5-sprint-closing-report.md",
+      "line": 11,
+      "fingerprint": "8d0a04732370167e84b439a1a019ff6475c951ab86c258b84c79304534f2102d",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp5-sprint-closing-report.md",
+      "line": 12,
+      "fingerprint": "933ae6027145e8f636857b169bd3dac323f90fe8c707d045fdac5237db5ce355",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp5-sprint-closing-report.md",
+      "line": 14,
+      "fingerprint": "311e10ad155d1046f6c2b0800759552f2b8de5fe84cf3a1bab60a1a7268572db",
+      "classification": "bound"
+    },
+    {
+      "file": "scrum/plan/mvp5-sprint-closing-report.md",
+      "line": 23,
+      "fingerprint": "7c428a86e6fa60b632eab448a4946c42d79949c4010981dad81e455b081d6b39",
+      "classification": "bound"
+    },
+    {
       "file": "scrum/plan/orrery-nav-1-closing-report.md",
       "line": 9,
       "fingerprint": "a29ba9a317d010cc64ea7c872c7089312c0f8a1ad405ed58147c679485a85673",
@@ -2355,6 +2535,20 @@
       "sha256": "8afa9911093e307bb43bf32da70945b5cbdfcc91f0efb69ac56088a3a75d5463",
       "matched": true,
       "fingerprintsBound": 16
+    },
+    {
+      "file": "scrum/plan/mvp4-sprint-closing-report.md",
+      "path": "scrum/plan/mvp4-sprint-closing-report.md",
+      "sha256": "3985643155fc6e8bfcbeae10fb77afa4318fa54e5d34126b809d22cc3e770fe3",
+      "matched": true,
+      "fingerprintsBound": 8
+    },
+    {
+      "file": "scrum/plan/mvp5-sprint-closing-report.md",
+      "path": "scrum/plan/mvp5-sprint-closing-report.md",
+      "sha256": "c22e1b734a7429635992c0701f003c70b7ab3f54e1a69d8c64bd28d348fa8c57",
+      "matched": true,
+      "fingerprintsBound": 3
     }
   ],
   "violations": []

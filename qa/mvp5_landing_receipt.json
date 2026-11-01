@@ -1,0 +1,1538 @@
+{
+  "adjudication": {
+    "appliedAt": "2026-11-01T21:13:18.814994+00:00",
+    "bytesFrozen": true,
+    "id": "ADJ-PLANNING-SEAT-20261101-PROSE-M4M5",
+    "sanctionedFingerprintRecords": 3,
+    "sanctionedFingerprintsBound": 27,
+    "scope": [
+      "scrum/plan/mvp4-sprint-closing-report.md",
+      "scrum/plan/mvp5-sprint-closing-report.md"
+    ],
+    "statement": "Sanctioned as historical scrum fingerprint records for validate:prose-consistency only under ADJ-PLANNING-SEAT-20261101-PROSE-M4M5. This binds fixed-point, receipt, and evidence fingerprints as historical prose. It is not an endorsement, claim, or evidence amendment. Either file's bytes are frozen; any byte change voids its sanction."
+  },
+  "cascade": {
+    "commands": [
+      {
+        "command": "python3 scripts/generate-fifth-space-census.py",
+        "exitCode": 0,
+        "stderr": "",
+        "stdout": "{\"candidateFingerprint\": \"2827b9a27a5b8b409b6c17f16bcb68def2b75b15bda8b554a4e5e23a38d4ce59\", \"candidateId\": \"FIFTH_SPACE_CENSUS_v0\", \"records\": 462, \"verdict\": \"confirmed\"}\n"
+      },
+      {
+        "command": "python3 scripts/validate-fifth-space-census.py",
+        "exitCode": 0,
+        "stderr": "",
+        "stdout": "          \"forte\": \"7-33\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"Leading Whole-Tone Inverse\",\n            \"office\": \"Moon\",\n            \"role\": \"anchor\",\n            \"stateId\": 1367,\n            \"tier\": \"A2\"\n          },\n          {\n            \"forte\": \"7-33\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"Storian\",\n            \"office\": \"Saturn\",\n            \"role\": \"anchor\",\n            \"stateId\": 1373,\n            \"tier\": \"A2\"\n          },\n          {\n            \"forte\": \"7-33\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"Major Locrian\",\n            \"office\": \"Jupiter\",\n            \"role\": \"anchor\",\n            \"stateId\": 1397,\n            \"tier\": \"A2\"\n          },\n          {\n            \"forte\": \"7-33\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"Lydian Minor\",\n            \"office\": \"Mars\",\n            \"role\": \"anchor\",\n            \"stateId\": 1493,\n            \"tier\": \"A2\"\n          },\n          {\n            \"forte\": \"7-33\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"Aeroptian\",\n            \"office\": \"Sun\",\n            \"role\": \"anchor\",\n            \"stateId\": 1877,\n            \"tier\": \"A2\"\n          },\n          {\n            \"forte\": \"7-8\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"Dominant +234\",\n            \"office\": \"Mars\",\n            \"role\": \"anchor\",\n            \"stateId\": 2001,\n            \"tier\": \"D6\"\n          },\n          {\n            \"forte\": \"7-1\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"7-1 terminal cluster state 2111\",\n            \"office\": \"Saturn\",\n            \"role\": \"anchor\",\n            \"stateId\": 2111,\n            \"tier\": \"D7\"\n          },\n          {\n            \"forte\": \"7-8\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"Alt \\u266e67345\",\n            \"office\": \"Moon\",\n            \"role\": \"anchor\",\n            \"stateId\": 2607,\n            \"tier\": \"D6\"\n          },\n          {\n            \"forte\": \"7-33\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"Neapolitan Major\",\n            \"office\": \"Mercury\",\n            \"role\": \"anchor\",\n            \"stateId\": 2731,\n            \"tier\": \"A2\"\n          },\n          {\n            \"forte\": \"7-1\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"7-1 terminal cluster state 3103\",\n            \"office\": \"Moon\",\n            \"role\": \"anchor\",\n            \"stateId\": 3103,\n            \"tier\": \"D7\"\n          },\n          {\n            \"forte\": \"7-8\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"Crater Scale\",\n            \"office\": \"Mercury\",\n            \"role\": \"anchor\",\n            \"stateId\": 3351,\n            \"tier\": \"D6\"\n          },\n          {\n            \"forte\": \"7-33\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"Leading Whole-Tone\",\n            \"office\": \"Venus\",\n            \"role\": \"anchor\",\n            \"stateId\": 3413,\n            \"tier\": \"A2\"\n          },\n          {\n            \"forte\": \"7-1\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"7-1 terminal cluster state 3599\",\n            \"office\": \"Mercury\",\n            \"role\": \"anchor\",\n            \"stateId\": 3599,\n            \"tier\": \"D7\"\n          },\n          {\n            \"forte\": \"7-8\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"Phrygian +45\",\n            \"office\": \"Venus\",\n            \"role\": \"anchor\",\n            \"stateId\": 3723,\n            \"tier\": \"D6\"\n          },\n          {\n            \"forte\": \"7-1\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"7-1 terminal cluster state 3847\",\n            \"office\": \"Venus\",\n            \"role\": \"anchor\",\n            \"stateId\": 3847,\n            \"tier\": \"D7\"\n          },\n          {\n            \"forte\": \"7-8\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"Superlydian Augmented \\u266e235\\u266f4\",\n            \"office\": \"Sun\",\n            \"role\": \"anchor\",\n            \"stateId\": 3909,\n            \"tier\": \"D6\"\n          },\n          {\n            \"forte\": \"7-1\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"7-1 terminal cluster state 3971\",\n            \"office\": \"Sun\",\n            \"role\": \"anchor\",\n            \"stateId\": 3971,\n            \"tier\": \"D7\"\n          },\n          {\n            \"forte\": \"7-1\",\n            \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"7-1 terminal cluster state 4033\",\n            \"office\": \"Mars\",\n            \"role\": \"anchor\",\n            \"stateId\": 4033,\n            \"tier\": \"D7\"\n          }\n        ],\n        \"d7AnchorsAtCeiling\": true,\n        \"spanCeiling\": 10,\n        \"theorem\": \"seven points on the 12-cycle have seven gaps summing to 12, so the largest gap is at least 2 and the minimal covering arc span is at most 10: the A-ladder ceiling is geometry, not fiat\",\n        \"verified\": true\n      }\n    },\n    {\n      \"checkId\": \"research-verdict-consistency\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"confirmed\"\n    },\n    {\n      \"checkId\": \"research-verdict-non-gating\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"records carry no truth-value gate; ORR-522 consumes them regardless\"\n    },\n    {\n      \"checkId\": \"guards-namespace\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings (both ledgers)\"\n    },\n    {\n      \"checkId\": \"bindings-court\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen Court position binding\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"a9ec2a491f2487ea8f12be81aaca661645672adff7d3f5c4a0f837999a62eb1b\"\n}\n"
+      },
+      {
+        "command": "python3 scripts/generate-shadow-ladder.py",
+        "exitCode": 0,
+        "stderr": "",
+        "stdout": "{\"candidateFingerprint\": \"96cda1fd242dbf03bc96fd1ad7fa861d6f557e71178993f480ae00be85de91ad\", \"candidateId\": \"SHADOW_LADDER_v0\", \"records\": 10}\n"
+      },
+      {
+        "command": "python3 scripts/validate-shadow-ladder.py",
+        "exitCode": 0,
+        "stderr": "",
+        "stdout": "{\n  \"schemaVersion\": \"shadow-ladder-validation.v0\",\n  \"verdict\": \"PASS\",\n  \"candidateId\": \"SHADOW_LADDER_v0\",\n  \"candidateFingerprint\": \"96cda1fd242dbf03bc96fd1ad7fa861d6f557e71178993f480ae00be85de91ad\",\n  \"checksPassed\": 37,\n  \"checksFailed\": 0,\n  \"checks\": [\n    {\n      \"checkId\": \"schema\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"valid\"\n    },\n    {\n      \"checkId\": \"fingerprint\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"96cda1fd242dbf03bc96fd1ad7fa861d6f557e71178993f480ae00be85de91ad\"\n    },\n    {\n      \"checkId\": \"freshness\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"96cda1fd242dbf03bc96fd1ad7fa861d6f557e71178993f480ae00be85de91ad\"\n    },\n    {\n      \"checkId\": \"build-twice\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"source-derived\"\n    },\n    {\n      \"checkId\": \"determinism-build-twice\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"identical source builds\"\n    },\n    {\n      \"checkId\": \"determinism-reorder\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"ledger and construction-edge order independent\"\n    },\n    {\n      \"checkId\": \"determinism-schema\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"stable candidate envelope\"\n    },\n    {\n      \"checkId\": \"operators-Tn\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"A1 shifted-complement identities\"\n    },\n    {\n      \"checkId\": \"operators-comp\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"complement involution over all derived shadow masks\"\n    },\n    {\n      \"checkId\": \"span-arc\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all minimal fifth arcs\"\n    },\n    {\n      \"checkId\": \"span-C0-negative\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"C0 is a fifth-span four 5-35 window\"\n    },\n    {\n      \"checkId\": \"span-holes\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"span plus one minus cardinality\"\n    },\n    {\n      \"checkId\": \"span-ME-5-35\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"source audit maps span four to 5-35 and span six to 5-34\"\n    },\n    {\n      \"checkId\": \"court-mode-windows\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"seven source A0 mode windows\"\n    },\n    {\n      \"checkId\": \"court-Cj\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"five source Court windows\"\n    },\n    {\n      \"checkId\": \"court-intersection\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"A1 parent intersections equal C0-C4\"\n    },\n    {\n      \"checkId\": \"A1-overhang\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"five source-derived A1 cores\"\n    },\n    {\n      \"checkId\": \"A1-rigid-shift\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"successive A1 cores move by one fifth\"\n    },\n    {\n      \"checkId\": \"A2-punching\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"A2 parent-arc holes are source-derived\"\n    },\n    {\n      \"checkId\": \"A2-office-matched\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"each A2 core is a subset of its same-office A0 anchor\"\n    },\n    {\n      \"checkId\": \"A2-two-parents\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"five selected A2 midpoint pairs\"\n    },\n    {\n      \"checkId\": \"seam-pairs\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"four source phase-seam T1 twin pairs\"\n    },\n    {\n      \"checkId\": \"seam-per-tier\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"two seam pairs at A1 and A2\"\n    },\n    {\n      \"checkId\": \"seam-chain\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"source seam midpoints march inward\"\n    },\n    {\n      \"checkId\": \"termination-dH-census\",\n      \"status\": \"PASS\",\n      \"diagnostic\": {\n        \"dH2\": 5,\n        \"dH4\": 0,\n        \"dH10\": 2\n      }\n    },\n    {\n      \"checkId\": \"termination-hexachord\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all dH2 A2 pairs share the whole-tone hexachord\"\n    },\n    {\n      \"checkId\": \"termination-no-dH4\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"no A2 office-distance-two dH4 pair\"\n    },\n    {\n      \"checkId\": \"termination-5-33-detachment\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"T1-complement A3 predictions are detached 5-33 masks\"\n    },\n    {\n      \"checkId\": \"incidence-15-36\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"five selected 5-35 cores contribute 15 of 36 incidences\"\n    },\n    {\n      \"checkId\": \"incidence-5-120\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"five selected 5-34 cores are in the 120-mask one-parent stratum\"\n    },\n    {\n      \"checkId\": \"incidence-out-of-census\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"ten A2-to-A1 construction incidences are outside the detached audit\"\n    },\n    {\n      \"checkId\": \"guards-no-court\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"Court positions cross-check A1 only\"\n    },\n    {\n      \"checkId\": \"guards-seam-typed\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"midpoint and phase-seam provenance remain distinct\"\n    },\n    {\n      \"checkId\": \"guards-namespace\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"achirality\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all derived 5-35, 5-34, and predicted 5-33 masks are achiral\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"c69d646b97587c4d85ce373645ae17a8603eb739f9c62ac501b14d4bd4d71077\"\n}\n"
+      },
+      {
+        "command": "python3 scripts/generate-twin-hub-convergence.py",
+        "exitCode": 0,
+        "stderr": "",
+        "stdout": "{\"candidateFingerprint\": \"461f25e64383e8d196efbccc0fd030ed5bb603ae264fe8df43399f6a2644cfe6\", \"candidateId\": \"TWIN_HUB_CONVERGENCE_v0\", \"verdict\": \"confirmed\"}\n"
+      },
+      {
+        "command": "python3 scripts/validate-twin-hub-convergence.py",
+        "exitCode": 0,
+        "stderr": "",
+        "stdout": "{\n  \"schemaVersion\": \"twin-hub-convergence-validation.v0\",\n  \"verdict\": \"PASS\",\n  \"candidateId\": \"TWIN_HUB_CONVERGENCE_v0\",\n  \"candidateFingerprint\": \"461f25e64383e8d196efbccc0fd030ed5bb603ae264fe8df43399f6a2644cfe6\",\n  \"checksPassed\": 30,\n  \"checksFailed\": 0,\n  \"checks\": [\n    {\n      \"checkId\": \"schema\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"valid\"\n    },\n    {\n      \"checkId\": \"fingerprint\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"461f25e64383e8d196efbccc0fd030ed5bb603ae264fe8df43399f6a2644cfe6\"\n    },\n    {\n      \"checkId\": \"freshness\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"461f25e64383e8d196efbccc0fd030ed5bb603ae264fe8df43399f6a2644cfe6\"\n    },\n    {\n      \"checkId\": \"determinism-build-twice\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"identical source builds\"\n    },\n    {\n      \"checkId\": \"determinism-reorder\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"ledger and structural-edge order independent\"\n    },\n    {\n      \"checkId\": \"determinism-schema\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"stable candidate envelope\"\n    },\n    {\n      \"checkId\": \"t1-receipt-positive\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"T1(Ionian)=Locrian under the declared mask convention\"\n    },\n    {\n      \"checkId\": \"t1-receipt-near-match-rejected\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"T1(Locrian)=2774 is not accepted as the pre-registered partner\"\n    },\n    {\n      \"checkId\": \"t1-receipt-root-phase-edges\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"Ionian and Locrian are joined by root_phase phase-seam edges\"\n    },\n    {\n      \"checkId\": \"twin-census-pre-registered\",\n      \"status\": \"PASS\",\n      \"diagnostic\": {\n        \"A0\": [\n          [\n            1387,\n            2741\n          ],\n          [\n            1451,\n            2773\n          ]\n        ],\n        \"A1\": [\n          [\n            1371,\n            2733\n          ],\n          [\n            1707,\n            2901\n          ]\n        ],\n        \"A2\": [\n          [\n            1367,\n            2731\n          ],\n          [\n            2731,\n            3413\n          ]\n        ]\n      }\n    },\n    {\n      \"checkId\": \"twin-pair-dH10\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"every T1-twin pair sits at dH10\"\n    },\n    {\n      \"checkId\": \"hub-A0-undefined\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"A0 and A1 twin office pairs are disjoint; no hub\"\n    },\n    {\n      \"checkId\": \"hub-A2-mercury\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"A2 twin pairs share the Mercury hub\"\n    },\n    {\n      \"checkId\": \"d4-midpoints-seated\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"A1-generating twin midpoints {Sun, Saturn} are seated phase seams\"\n    },\n    {\n      \"checkId\": \"d4-pairs-disjoint-no-hub\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"D4 twin pairs disjoint; hub undefined\"\n    },\n    {\n      \"checkId\": \"d4-chains-valid\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all 14 D4 seat-contact rows route the permitted chain\"\n    },\n    {\n      \"checkId\": \"d4-case-verified\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"A1-generating twin pairs are disjoint (no hub) and their midpoints {Sun, Saturn} are seated as A1 phase seams; all 14 D4 seat-contact rows route the permitted single-hop chain.\"\n    },\n    {\n      \"checkId\": \"d5-midpoints-unseated\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"A2 twin midpoints {Mars, Jupiter} are unseated as seams; no A3\"\n    },\n    {\n      \"checkId\": \"d5-hub-mercury\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"D5 twins share the Mercury hub\"\n    },\n    {\n      \"checkId\": \"d5-chains-valid\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all 14 D5 seat-contact rows route the permitted chain\"\n    },\n    {\n      \"checkId\": \"d5-seats-unseated-offices\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"D5 anchors seat the unseated-midpoint offices Mars and Jupiter\"\n    },\n    {\n      \"checkId\": \"d5-case-verified\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"A2 twin pairs share the Mercury hub; their ring midpoints {Mars, Jupiter} are unseated as seams (exact midpoints, no A3); all 14 D5 seat-contact rows route the permitted single-hop chain, seating the unseated-midpoint offices.\"\n    },\n    {\n      \"checkId\": \"chain-total-28\",\n      \"status\": \"PASS\",\n      \"diagnostic\": {\n        \"total\": 28,\n        \"valid\": 28\n      }\n    },\n    {\n      \"checkId\": \"chain-two-contacts-per-anchor\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"exactly two selected contacts per D4/D5 anchor\"\n    },\n    {\n      \"checkId\": \"chain-no-violations\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"no missing, reversed, or cross-tier relation accepted\"\n    },\n    {\n      \"checkId\": \"negative-controls\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"six negative controls pass\"\n    },\n    {\n      \"checkId\": \"verdict-consistency\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"confirmed\"\n    },\n    {\n      \"checkId\": \"guards-namespace\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"df7f076490be163ff0bfeb3a2a529c09d2664e4724dea02c031a9d4d9eb4c0ed\"\n}\n"
+      },
+      {
+        "command": "node scripts/build-pentatonic-binding-audit-closure.mjs",
+        "exitCode": 0,
+        "stderr": "",
+        "stdout": "{\n  \"schemaVersion\": \"pre-epic-400.pentatonic-binding-audit-closure.v1\",\n  \"reportId\": \"pentatonic-binding-audit-closure-v1\",\n  \"status\": \"planning_evidence\",\n  \"admissionEffect\": \"none\",\n  \"graphScope\": \"detached_audit_only\",\n  \"crt310Execution\": false,\n  \"verdict\": \"PASS\",\n  \"evidenceBindings\": {\n    \"candidateFingerprint\": \"16bd11bc99fb0dfc5c934b1f5d6782562b04f6999882d97cfdbcc24bf72a0f55\",\n    \"phase1ValidationReportFingerprint\": \"eee7460661a9e9f674eb15bc73cbc1eed6363dfa38e79c22cea95404ed420ba3\",\n    \"phase2Neo4jReportFingerprint\": \"e6375c261263632ddd32adedaf11dda8ea43b1fdddcc6d66444b276a1dab0d5b\",\n    \"phase3ReportSha256\": \"814512d4f4360dc7e9ab77b8190043a155ae8253d2729dbb21f33db91e37f1df\",\n    \"cypherDeterministicFingerprint\": \"17a99dde862c5853031724a11c6435d372fd795eeb86a700fbc266068e7a8b61\",\n    \"crt310BacklogFingerprint\": \"ac8b31e31ad0fca8b5bcee9e7dee816a3e4e6c8095b429afdb23f8525ba9c19c\",\n    \"sourceAuthoritySha256\": \"b8ab5030869ceb376e18fab412de759c68f988f113ddf5493dfecd1f14a6667b\",\n    \"decisionLedgerSha256\": \"e74cf6a2d79e9170c6686f2fb5287043ab1dd2c41d4f9a56d62b97f766c8f1c4\"\n  },\n  \"counts\": {\n    \"pitchSetCount\": 792,\n    \"incidenceCount\": 252,\n    \"classCount\": 38,\n    \"reviewedRootedWitnessCount\": 7,\n    \"detachedRealizationCount\": 7,\n    \"subsetEdgeCount\": 19,\n    \"zodiacRecordCount\": 12,\n    \"proposedClassCount\": 35\n  },\n  \"checksPassed\": 11,\n  \"checksFailed\": 0,\n  \"checks\": [\n    {\n      \"checkId\": \"candidate-fingerprint-integrity\",\n      \"diagnostic\": \"16bd11bc99fb0dfc5c934b1f5d6782562b04f6999882d97cfdbcc24bf72a0f55\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"phase1-independent-validation\",\n      \"diagnostic\": \"eee7460661a9e9f674eb15bc73cbc1eed6363dfa38e79c22cea95404ed420ba3\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"phase1-mathematical-closure\",\n      \"diagnostic\": {\n        \"distribution\": [\n          {\n            \"parentCount\": 0,\n            \"pitchSetCount\": 612\n          },\n          {\n            \"parentCount\": 1,\n            \"pitchSetCount\": 120\n          },\n          {\n            \"parentCount\": 2,\n            \"pitchSetCount\": 48\n          },\n          {\n            \"parentCount\": 3,\n            \"pitchSetCount\": 12\n          }\n        ],\n        \"incidenceCount\": 252\n      },\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"phase2-detached-neo4j-closure\",\n      \"diagnostic\": \"e6375c261263632ddd32adedaf11dda8ea43b1fdddcc6d66444b276a1dab0d5b\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"active-source-and-decision-ledger-isolation\",\n      \"diagnostic\": {\n        \"activeSourceCount\": 5,\n        \"decisionLedgerSha256\": \"e74cf6a2d79e9170c6686f2fb5287043ab1dd2c41d4f9a56d62b97f766c8f1c4\"\n      },\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"phase3-prose-tier-boundary\",\n      \"diagnostic\": \"814512d4f4360dc7e9ab77b8190043a155ae8253d2729dbb21f33db91e37f1df\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"cypher-syntax-deterministic-closure\",\n      \"diagnostic\": \"17a99dde862c5853031724a11c6435d372fd795eeb86a700fbc266068e7a8b61\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"crt310-zero-admission-boundary\",\n      \"diagnostic\": {\n        \"itemCount\": 35,\n        \"proposedCount\": 35,\n        \"eligibleForAdmissionReviewCount\": 0,\n        \"admittedCount\": 0,\n        \"gateDefinitionCount\": 7,\n        \"satisfiedGateResultCount\": 70,\n        \"pendingGateResultCount\": 175,\n        \"failedGateResultCount\": 0\n      },\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"planning-evidence-cross-references\",\n      \"diagnostic\": \"authority and CRT-310 workflow references remain planning_evidence only\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"package-entrypoint-closure\",\n      \"diagnostic\": {\n        \"build\": \"python3 scripts/generate-pentatonic-7-35-parent-audit.py\",\n        \"test\": \"python3 -m pytest -p no:cacheprovider -q tests/test_pentatonic_7_35_parent_audit.py && node --test tests/pentatonic_binding_audit/neo4j-live.test.mjs\",\n        \"validate\": \"python3 scripts/generate-pentatonic-7-35-parent-audit.py --check && python3 scripts/validate-pentatonic-7-35-parent-audit.py && npm run test:pentatonic-binding-audit --silent && npm run validate:cypher --silent\"\n      },\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"intrinsic-environment-independence\",\n      \"diagnostic\": \"closure core excludes time, provider, host, process, port, and temporary-path identity\",\n      \"status\": \"PASS\"\n    }\n  ],\n  \"reportFingerprint\": \"862faf2f0494e845c08e95e66615fec87fdd9ff3bb212108b43c5b51460daaf9\"\n}\n"
+      },
+      {
+        "command": "python3 scripts/build-fivefold-engine-promotion-evidence.py",
+        "exitCode": 0,
+        "stderr": "",
+        "stdout": "{\"evidenceFingerprint\": \"db97b803c4900488c28efed57660c2900f132d2e3e78ee8e44be533f1f9ebb9c\", \"evidenceId\": \"fivefold-engine-promotion-evidence-v1\", \"exclusionEvidenceCount\": 11, \"itemEvidenceCount\": 10, \"verdict\": \"PASS\"}\n"
+      },
+      {
+        "command": "node scripts/build-field-derivation-bundle.mjs",
+        "exitCode": 0,
+        "stderr": "",
+        "stdout": "{\"bundleId\":\"FIELD_DERIVATION_OBS014_015_016_v1\",\"bundleFingerprint\":\"3003ecfd0b573c3155b7612c8829a78ee1cf6365c8a6d91948252d15b7102ec5\",\"observations\":3}\n"
+      },
+      {
+        "command": "node scripts/build-orrery-taxonomy-read-model.mjs",
+        "exitCode": 0,
+        "stderr": "",
+        "stdout": "{\"bundleId\":\"TAXONOMY_READ_MODEL_v1\",\"recordCount\":462,\"stale\":false}\n"
+      },
+      {
+        "command": "node scripts/build-orrery-d-tier-taxonomy-dataset.mjs",
+        "exitCode": 0,
+        "stderr": "",
+        "stdout": "{\"datasetId\":\"D_TIER_TAXONOMY_DATASET_v1\",\"recordCount\":175,\"stale\":false}\n"
+      }
+    ],
+    "directLedgerBound": [
+      {
+        "path": "canonical/fivefold-incubator/fifth-space-census-v0.json",
+        "sha256": "c5a20532902f7308cc3a26be935447e47308e200f60597ada2eb5d89fcba58c7"
+      },
+      {
+        "path": "canonical/fivefold-incubator/shadow-ladder-v0.json",
+        "sha256": "55e6f4b4dc1d3a5fa474f4322b4527dbf2d40ad91922b43611306388dbf8bfa7"
+      },
+      {
+        "path": "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
+        "sha256": "2551c7f3668e51df1babe42355f0a6e8fa376f2e98194941af73103d1623002d"
+      },
+      {
+        "path": "qa/pentatonic-binding-audit-closure.json",
+        "sha256": "406da09616b52cc89b3a5dc0acfaca1e5968d4777d049d02081bd1b4a8adf921"
+      },
+      {
+        "path": "qa/fivefold-engine-promotion-evidence.json",
+        "sha256": "3fe482b8a91c22f4ec94f4e287a7e388521e6675d48ec6ad3ddfbfce36628376"
+      }
+    ],
+    "downstream": [
+      {
+        "path": "orrery/src/generated/field-derivation-bundle.v1.json",
+        "sha256": "3e8450b42a20d316cd362b1a21a97710f52fa11491299c0e0a09b11707741335"
+      },
+      {
+        "path": "orrery/src/generated/taxonomy-read-model.v1.json",
+        "sha256": "b86da1b1827aa4b5223374220bc7c901ca669d6ff2e09c0806f6e1ef21433cb3"
+      },
+      {
+        "path": "orrery/src/generated/d-tier-taxonomy-dataset.v1.json",
+        "sha256": "689233ed7ff81b4681e8db8d5b93948f436319904c457f5bae7a263a262c2c04"
+      }
+    ],
+    "validationReports": [
+      {
+        "path": "qa/fifth-space-census-validation.json",
+        "sha256": "2c8ffc148ab0f4d44a2b110a40cf76d73516091c0544aac96313b5f3c1518c6e"
+      },
+      {
+        "path": "qa/shadow-ladder-validation.json",
+        "sha256": "3fb0c2951eef1c8804c0e0085706561914ba9168e06d5de59ce75af6b3178122"
+      },
+      {
+        "path": "qa/twin-hub-convergence-validation.json",
+        "sha256": "6d7d1cee7bbb250e4bdbf4a06f928aaf42f27bdd822a759c79693c3829dbdc34"
+      }
+    ]
+  },
+  "constraints": {
+    "claimEvent": false,
+    "encoderBytesModified": false,
+    "gateBytesModified": false,
+    "qEngineBytesModified": false,
+    "repoWrites": "working-tree landing; uncommitted",
+    "tagOrPush": false
+  },
+  "directive": "MVP5-DIR-1",
+  "documentation": {
+    "files": [
+      {
+        "bytes": 2285,
+        "path": "docs/mvp5/README.md",
+        "sha256": "52c3851b3b014ab3a3104bc78807c45a6c7fbdc07263dba6bd35bc28896136c1"
+      },
+      {
+        "bytes": 14091,
+        "path": "docs/mvp5/01-sprint-review.md",
+        "sha256": "e110f4bb5f1b9b859f219a368e94a2a122fd873c83425efcd00dc8695292210e"
+      },
+      {
+        "bytes": 11030,
+        "path": "docs/mvp5/02-product-increment.md",
+        "sha256": "3623cb14b3b03647d47dc1b3f12d5a4bf1c89fd812e54d8c5f629836bafa616c"
+      },
+      {
+        "bytes": 19675,
+        "path": "docs/mvp5/03-architecture-and-design.md",
+        "sha256": "e62688adfb5199e3836a8d1fa89382cebecbb3742af4700ae2218ad1652179b6"
+      }
+    ],
+    "newFiles": 4,
+    "note": "Derived from the landed L21 state. The documentation set is included in the manifest and checksums but is not part of the sixty-four-payload landing set. The prose-consistency warning was cleared under ADJ-PLANNING-SEAT-20261101-PROSE-M4M5.",
+    "status": "post-landing explanatory set"
+  },
+  "generatedAt": "2026-11-01T19:29:11.909292+00:00",
+  "landing": {
+    "closingReports": 1,
+    "mode": "working-tree; uncommitted",
+    "newFiles": 65,
+    "payloadFiles": 64,
+    "receiptFiles": 5,
+    "rows": [
+      {
+        "bytes": 18059,
+        "destination": "qa/mvp5_task_0_receipt.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/qa/mvp5_task_0_receipt.json",
+        "origin": "task-0",
+        "role": "receipt",
+        "sha256": "7c139a30447492fafa8b3fef7a4eec243c310a774405dc2cad2db4c2b73decff",
+        "source": "task-0/mvp5_task_0_receipt.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-0/mvp5_task_0_receipt.json",
+        "verified": true
+      },
+      {
+        "bytes": 85478,
+        "destination": "qa/mvp5_task_a_receipt.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/qa/mvp5_task_a_receipt.json",
+        "origin": "task-a",
+        "role": "receipt",
+        "sha256": "74373b3caf3f0e9a277789afa482da6b7f3274425ec2f124c62cc00e137888f7",
+        "source": "task-a/mvp5_task_a_receipt.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/mvp5_task_a_receipt.json",
+        "verified": true
+      },
+      {
+        "bytes": 15615,
+        "destination": "qa/mvp5_task_b_receipt.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/qa/mvp5_task_b_receipt.json",
+        "origin": "task-b",
+        "role": "receipt",
+        "sha256": "1d77bd7d93e7c33cd12f503f034c1c82c342c06c5aa95a62b8dafa68b5ca1eb7",
+        "source": "task-b/mvp5_task_b_receipt.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-b/mvp5_task_b_receipt.json",
+        "verified": true
+      },
+      {
+        "bytes": 9734,
+        "destination": "qa/mvp5_task_c_receipt.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/qa/mvp5_task_c_receipt.json",
+        "origin": "task-c",
+        "role": "receipt",
+        "sha256": "4c33254714cfecec1711e725040a785c35e03c0ee70f3859dcad115b6cefdfdb",
+        "source": "task-c/mvp5_task_c_receipt.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-c/mvp5_task_c_receipt.json",
+        "verified": true
+      },
+      {
+        "bytes": 16819,
+        "destination": "qa/mvp5_task_d_receipt.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/qa/mvp5_task_d_receipt.json",
+        "origin": "task-d",
+        "role": "receipt",
+        "sha256": "cf26a6a8815ea27d8d5e0518fc20799056a2ec13ec65c16e409700b9e7c41315",
+        "source": "task-d/mvp5_task_d_receipt.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-d/mvp5_task_d_receipt.json",
+        "verified": true
+      },
+      {
+        "bytes": 9979,
+        "destination": "scrum/plan/mvp5-sprint-closing-report.md",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/scrum/plan/mvp5-sprint-closing-report.md",
+        "origin": "mvp5",
+        "role": "closing-report",
+        "sha256": "c22e1b734a7429635992c0701f003c70b7ab3f54e1a69d8c64bd28d348fa8c57",
+        "source": "MVP5-CLOSING-REPORT.md",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/MVP5-CLOSING-REPORT.md",
+        "verified": true
+      },
+      {
+        "bytes": 24300,
+        "destination": "tools/governed-loop/mvp5/task-0/mvp5_task_0.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-0/mvp5_task_0.py",
+        "origin": "task-0",
+        "role": "runner",
+        "sha256": "56191ead64480c25d70c135b7b23a3cb7652b100a4e1376bab8f64b2c806d0c5",
+        "source": "task-0/mvp5_task_0.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-0/mvp5_task_0.py",
+        "verified": true
+      },
+      {
+        "bytes": 20663,
+        "destination": "tools/governed-loop/mvp5/task-a/mvp5_coupled_engine.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/mvp5_coupled_engine.py",
+        "origin": "task-a",
+        "role": "module",
+        "sha256": "c07940ccc90a73e220102000905d5af8da13ee03604224e49c71ff4c4718dd0c",
+        "source": "task-a/mvp5_coupled_engine.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/mvp5_coupled_engine.py",
+        "verified": true
+      },
+      {
+        "bytes": 25320,
+        "destination": "tools/governed-loop/mvp5/task-a/mvp5_task_a.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/mvp5_task_a.py",
+        "origin": "task-a",
+        "role": "runner",
+        "sha256": "470397b93b5b7adae2ad84d8d93ac5b143053c46991a8b102f953036a6a1bce4",
+        "source": "task-a/mvp5_task_a.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/mvp5_task_a.py",
+        "verified": true
+      },
+      {
+        "bytes": 63047,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/arm1_unranked_q_carried.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/arm1_unranked_q_carried.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "bf20119cb50c18317c93bef4e2bf0aeff1e0d937b84102d58e42d830479476df",
+        "source": "task-a/traces/arm1_unranked_q_carried.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/arm1_unranked_q_carried.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 62729,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/arm2_static_q_carried.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/arm2_static_q_carried.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "52f3b5137d5ae537c200dd1ac588dea21057c3c2c17daaf67bcc5b3616cf45e8",
+        "source": "task-a/traces/arm2_static_q_carried.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/arm2_static_q_carried.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 65011,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/arm3a_dynamic_q_reset.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/arm3a_dynamic_q_reset.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "dc941c1c30a32d8ab2a5813ba7e04c1a1605b3a5f681dfc9e6725ba10f7371c3",
+        "source": "task-a/traces/arm3a_dynamic_q_reset.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/arm3a_dynamic_q_reset.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 65530,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/arm3b_dynamic_q_carried.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/arm3b_dynamic_q_carried.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "4ea86bb188b08438498adbfc80dca164b4bb73f5ae31a8305ca7577abf14778d",
+        "source": "task-a/traces/arm3b_dynamic_q_carried.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/arm3b_dynamic_q_carried.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 9115,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/arm_tb_equiv_p0.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/arm_tb_equiv_p0.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "58c4ad8af84ad96a0241b204dae22538517cc189af8288b636ee0cdd06bc79dc",
+        "source": "task-a/traces/arm_tb_equiv_p0.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/arm_tb_equiv_p0.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 9080,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/arm_tb_equiv_p7.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/arm_tb_equiv_p7.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "786f99cc4f05c492fbdd74fabf6380a3eab8f703a5bedb8718b09e8a694b93fa",
+        "source": "task-a/traces/arm_tb_equiv_p7.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/arm_tb_equiv_p7.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 24767,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/arm_tc_8hop_carried.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/arm_tc_8hop_carried.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "9651a98dc30a6c09a57e46f0adabe1fab27f2d91cfa3e0cc160df11fe60a5cac",
+        "source": "task-a/traces/arm_tc_8hop_carried.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/arm_tc_8hop_carried.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 24671,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/arm_tc_8hop_reset.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/arm_tc_8hop_reset.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "7d5c502954dc94d6c67d817448541e1f119335f79bcd1971a6751f04529ca956",
+        "source": "task-a/traces/arm_tc_8hop_reset.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/arm_tc_8hop_reset.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 62013,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/127_0_D.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/127_0_D.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "0a814ed5f49ee5d6d04820f84c9d26dd1c0fcf6435b75dd2a78a3da5d9aef56a",
+        "source": "task-a/traces/battery/127_0_D.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/127_0_D.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 62013,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/127_0_U.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/127_0_U.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "6daa258291b31c65c33963eefa0742a78729b89dc3bcd1f379993b7e1c0c7a16",
+        "source": "task-a/traces/battery/127_0_U.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/127_0_U.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 63412,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/1387_0_D.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/1387_0_D.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "97ff8e43fbbb66e90a090ab89652fa5d96e0d0837cec2822d990c059c83d289d",
+        "source": "task-a/traces/battery/1387_0_D.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/1387_0_D.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 62945,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/1387_0_U.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/1387_0_U.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "d7c96157fb2e5794e0c1017a8c06c85040d141c090454fa73cb6f1db18d30391",
+        "source": "task-a/traces/battery/1387_0_U.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/1387_0_U.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 62547,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/1451_0_D.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/1451_0_D.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "70e334a478e14545d53219a56b80ae57031b23ea6d95133dacc12abbf7dff0f7",
+        "source": "task-a/traces/battery/1451_0_D.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/1451_0_D.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 62522,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/1451_0_U.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/1451_0_U.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "e7524f0d44f590ae6c7d3082e74eb7d6529b91d94941cd0e34ffcc7d3ee820a2",
+        "source": "task-a/traces/battery/1451_0_U.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/1451_0_U.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 63086,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/1453_0_D.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/1453_0_D.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "d417d2fbee7bf519b83f38208befe88c9337f399ee0de3d147bde340656f9c8c",
+        "source": "task-a/traces/battery/1453_0_D.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/1453_0_D.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 63086,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/1453_0_U.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/1453_0_U.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "4c8950f329a7fd73b1dd0df4496aaa749c2ed7ca55bf6f235451cd6d272263d0",
+        "source": "task-a/traces/battery/1453_0_U.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/1453_0_U.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 63225,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/1709_0_D.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/1709_0_D.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "b2a6942d3273ae7e91e26b79b097ddbcbd2a5e8c88053c0a8249ec5f2ecc9050",
+        "source": "task-a/traces/battery/1709_0_D.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/1709_0_D.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 63175,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/1709_0_U.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/1709_0_U.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "872a34aa95d05edc3acfbe564c7b83d88aac56f43026519898d0f126025a623e",
+        "source": "task-a/traces/battery/1709_0_U.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/1709_0_U.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 63143,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/1717_0_D.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/1717_0_D.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "c593cde55c73e0a405279463d6bcd696013bdb78ac2182f687dd79708e729bae",
+        "source": "task-a/traces/battery/1717_0_D.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/1717_0_D.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 62420,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/1717_0_U.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/1717_0_U.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "e365fc0d038b622027f7ff4bb9a0d14a4532b98a0ffeb1a5848f57eec4e2e83f",
+        "source": "task-a/traces/battery/1717_0_U.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/1717_0_U.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 62333,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/2667_0_D.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/2667_0_D.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "2f1442bca6235e1a41c568a2efac92c424921ae787a85a5e815b2ca641a7ebe7",
+        "source": "task-a/traces/battery/2667_0_D.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/2667_0_D.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 62341,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/2667_0_U.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/2667_0_U.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "ae5749ef2f1faca5e4482075fa5b6b3e6047ae3a1aa6f8b8868e7cf4fb9281ce",
+        "source": "task-a/traces/battery/2667_0_U.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/2667_0_U.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 63117,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/2741_0_D.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/2741_0_D.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "43dfe1e2be6c4eb0f7b7ecfea9d32cd03f96cd1b4278231e59a105cacdf23671",
+        "source": "task-a/traces/battery/2741_0_D.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/2741_0_D.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 62226,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/2741_0_U.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/2741_0_U.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "55b767962336c1e99784d5a56d60e52df5bbaab62603be994ca6b964969f2c9d",
+        "source": "task-a/traces/battery/2741_0_U.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/2741_0_U.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 63184,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/2773_0_D.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/2773_0_D.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "7883fc3f06b0b6e6ee51dbe07fabe9165b8cd1590329acc76356e7234cb56647",
+        "source": "task-a/traces/battery/2773_0_D.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/2773_0_D.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 62252,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/battery/2773_0_U.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/battery/2773_0_U.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "14e6f15773418d98c177e6e21f8a62cf6984e53878d6e6b9884e3251033ae015",
+        "source": "task-a/traces/battery/2773_0_U.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/battery/2773_0_U.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 64032,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/steering/greedy_d_1387.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/steering/greedy_d_1387.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "354431c430ad28812bb0589916ba6b0d95479652a8c7d029b5bd39fe36442cdd",
+        "source": "task-a/traces/steering/greedy_d_1387.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/steering/greedy_d_1387.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 63555,
+        "destination": "tools/governed-loop/mvp5/task-a/traces/steering/greedy_u_1387.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-a/traces/steering/greedy_u_1387.jsonl",
+        "origin": "task-a",
+        "role": "trace",
+        "sha256": "e54629776cd4394dda6a425ad6aff967f32388e4dce99428cece00936fc42100",
+        "source": "task-a/traces/steering/greedy_u_1387.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-a/traces/steering/greedy_u_1387.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 24696,
+        "destination": "tools/governed-loop/mvp5/task-b/mvp5_audio_renderer.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-b/mvp5_audio_renderer.py",
+        "origin": "task-b",
+        "role": "module",
+        "sha256": "0c917aab7a95851e90ce1c3244ea6b3af1ea35e362262cb0d7a0095ec40b9984",
+        "source": "task-b/mvp5_audio_renderer.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-b/mvp5_audio_renderer.py",
+        "verified": true
+      },
+      {
+        "bytes": 12733,
+        "destination": "tools/governed-loop/mvp5/task-b/mvp5_task_b.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-b/mvp5_task_b.py",
+        "origin": "task-b",
+        "role": "runner",
+        "sha256": "52f1593304adea377c81d8c9bf8b3fd624aa952684a473a8d83d3d3a483710fd",
+        "source": "task-b/mvp5_task_b.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-b/mvp5_task_b.py",
+        "verified": true
+      },
+      {
+        "bytes": 3391,
+        "destination": "tools/governed-loop/mvp5/task-b/renders/track1_arm1_unranked_2cycle.mid",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-b/renders/track1_arm1_unranked_2cycle.mid",
+        "origin": "task-b",
+        "role": "midi-render",
+        "sha256": "342be2caf450c556a2b1a83abfba4b16ce91622e842c891bedfca8a493a105e4",
+        "source": "task-b/renders/track1_arm1_unranked_2cycle.mid",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-b/renders/track1_arm1_unranked_2cycle.mid",
+        "verified": true
+      },
+      {
+        "bytes": 2646044,
+        "destination": "tools/governed-loop/mvp5/task-b/renders/track1_arm1_unranked_2cycle.wav",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-b/renders/track1_arm1_unranked_2cycle.wav",
+        "origin": "task-b",
+        "role": "wav-render",
+        "sha256": "dcca3792aaa8b211cff95daa851de0e6dae6a9c2a7e100494acfff3e4c8462c4",
+        "source": "task-b/renders/track1_arm1_unranked_2cycle.wav",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-b/renders/track1_arm1_unranked_2cycle.wav",
+        "verified": true
+      },
+      {
+        "bytes": 3381,
+        "destination": "tools/governed-loop/mvp5/task-b/renders/track2_arm2_static_4state.mid",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-b/renders/track2_arm2_static_4state.mid",
+        "origin": "task-b",
+        "role": "midi-render",
+        "sha256": "f6cc2f4ff5715418b5b9e76b8f4aff3d5c93b2bbd5f22b584c7d47668f3da433",
+        "source": "task-b/renders/track2_arm2_static_4state.mid",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-b/renders/track2_arm2_static_4state.mid",
+        "verified": true
+      },
+      {
+        "bytes": 2646044,
+        "destination": "tools/governed-loop/mvp5/task-b/renders/track2_arm2_static_4state.wav",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-b/renders/track2_arm2_static_4state.wav",
+        "origin": "task-b",
+        "role": "wav-render",
+        "sha256": "04dd46fadb5793b938555e27c8909884db071af6ba8fe03576ec33c0f74723ab",
+        "source": "task-b/renders/track2_arm2_static_4state.wav",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-b/renders/track2_arm2_static_4state.wav",
+        "verified": true
+      },
+      {
+        "bytes": 3555,
+        "destination": "tools/governed-loop/mvp5/task-b/renders/track3_arm3a_dynamic_q_reset.mid",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-b/renders/track3_arm3a_dynamic_q_reset.mid",
+        "origin": "task-b",
+        "role": "midi-render",
+        "sha256": "92a84da7c248394859acc79241aa187d5828ae8be4388c2709135286b1b57bd4",
+        "source": "task-b/renders/track3_arm3a_dynamic_q_reset.mid",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-b/renders/track3_arm3a_dynamic_q_reset.mid",
+        "verified": true
+      },
+      {
+        "bytes": 2672504,
+        "destination": "tools/governed-loop/mvp5/task-b/renders/track3_arm3a_dynamic_q_reset.wav",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-b/renders/track3_arm3a_dynamic_q_reset.wav",
+        "origin": "task-b",
+        "role": "wav-render",
+        "sha256": "b4e9b1674fd4ae3b94fc9e0921e3c461c642403fa34a91869fe851e069398307",
+        "source": "task-b/renders/track3_arm3a_dynamic_q_reset.wav",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-b/renders/track3_arm3a_dynamic_q_reset.wav",
+        "verified": true
+      },
+      {
+        "bytes": 3557,
+        "destination": "tools/governed-loop/mvp5/task-b/renders/track4_arm3b_dynamic_q_carried.mid",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-b/renders/track4_arm3b_dynamic_q_carried.mid",
+        "origin": "task-b",
+        "role": "midi-render",
+        "sha256": "6b5cb199627fc2ea11dd6df2677e862a64146c42acebf94bfc21ef29b2f9dc93",
+        "source": "task-b/renders/track4_arm3b_dynamic_q_carried.mid",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-b/renders/track4_arm3b_dynamic_q_carried.mid",
+        "verified": true
+      },
+      {
+        "bytes": 2672504,
+        "destination": "tools/governed-loop/mvp5/task-b/renders/track4_arm3b_dynamic_q_carried.wav",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-b/renders/track4_arm3b_dynamic_q_carried.wav",
+        "origin": "task-b",
+        "role": "wav-render",
+        "sha256": "d0fe3d2727593d22ee49ed50d64b0253ed36f52e64d9f202d43596106e735738",
+        "source": "task-b/renders/track4_arm3b_dynamic_q_carried.wav",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-b/renders/track4_arm3b_dynamic_q_carried.wav",
+        "verified": true
+      },
+      {
+        "bytes": 599,
+        "destination": "tools/governed-loop/mvp5/task-b/renders/track5_equiv_base_p0.mid",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-b/renders/track5_equiv_base_p0.mid",
+        "origin": "task-b",
+        "role": "midi-render",
+        "sha256": "d544717687eb0635ff27b99cf7b351d2589bbbc78e970901b77a658cfbf1e268",
+        "source": "task-b/renders/track5_equiv_base_p0.mid",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-b/renders/track5_equiv_base_p0.mid",
+        "verified": true
+      },
+      {
+        "bytes": 396944,
+        "destination": "tools/governed-loop/mvp5/task-b/renders/track5_equiv_base_p0.wav",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-b/renders/track5_equiv_base_p0.wav",
+        "origin": "task-b",
+        "role": "wav-render",
+        "sha256": "82a69919cd4d5bc7a8f0d14d40dfe653193bd6047c1088d3030e6c48098994a1",
+        "source": "task-b/renders/track5_equiv_base_p0.wav",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-b/renders/track5_equiv_base_p0.wav",
+        "verified": true
+      },
+      {
+        "bytes": 597,
+        "destination": "tools/governed-loop/mvp5/task-b/renders/track6_equiv_lifted_p7.mid",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-b/renders/track6_equiv_lifted_p7.mid",
+        "origin": "task-b",
+        "role": "midi-render",
+        "sha256": "1546c7e4787d4031ffda914d6d56965c8c0e4d29686359e76f06eabfafa21918",
+        "source": "task-b/renders/track6_equiv_lifted_p7.mid",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-b/renders/track6_equiv_lifted_p7.mid",
+        "verified": true
+      },
+      {
+        "bytes": 396944,
+        "destination": "tools/governed-loop/mvp5/task-b/renders/track6_equiv_lifted_p7.wav",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-b/renders/track6_equiv_lifted_p7.wav",
+        "origin": "task-b",
+        "role": "wav-render",
+        "sha256": "2fa02243432104eb6a1a48a3b287c7a4a8ef79064dc37bab0737fa3be44ce917",
+        "source": "task-b/renders/track6_equiv_lifted_p7.wav",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-b/renders/track6_equiv_lifted_p7.wav",
+        "verified": true
+      },
+      {
+        "bytes": 15223,
+        "destination": "tools/governed-loop/mvp5/task-c/mvp5_task_c.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-c/mvp5_task_c.py",
+        "origin": "task-c",
+        "role": "runner",
+        "sha256": "1df91c53451d1d8884b6d1432f9ff2651a90019018d23f24f41e13dd12986700",
+        "source": "task-c/mvp5_task_c.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-c/mvp5_task_c.py",
+        "verified": true
+      },
+      {
+        "bytes": 12551,
+        "destination": "tools/governed-loop/mvp5/task-c/mvp5_two_tier_bridge.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-c/mvp5_two_tier_bridge.py",
+        "origin": "task-c",
+        "role": "module",
+        "sha256": "69670d3e458d26a4f8ca22ae793d90f7834ebf1bf04a0114f74e23018d66abe2",
+        "source": "task-c/mvp5_two_tier_bridge.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-c/mvp5_two_tier_bridge.py",
+        "verified": true
+      },
+      {
+        "bytes": 50278,
+        "destination": "tools/governed-loop/mvp5/task-c/mvp5_two_tier_probe.js",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-c/mvp5_two_tier_probe.js",
+        "origin": "task-c",
+        "role": "probe",
+        "sha256": "65d199223a77e82a0b7f642cdb40511f72cb7e13c7a5fb791b771900e57688e9",
+        "source": "task-c/mvp5_two_tier_probe.js",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-c/mvp5_two_tier_probe.js",
+        "verified": true
+      },
+      {
+        "bytes": 4467,
+        "destination": "tools/governed-loop/mvp5/task-c/mvp5_two_tier_scheduler.js",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-c/mvp5_two_tier_scheduler.js",
+        "origin": "task-c",
+        "role": "scheduler",
+        "sha256": "8f3fd1549918ca97973b10701336c4188e58c649b57d5f2f55a96221d50f717f",
+        "source": "task-c/mvp5_two_tier_scheduler.js",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-c/mvp5_two_tier_scheduler.js",
+        "verified": true
+      },
+      {
+        "bytes": 7851,
+        "destination": "tools/governed-loop/mvp5/task-c/two_tier_bridge_log.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-c/two_tier_bridge_log.json",
+        "origin": "task-c",
+        "role": "log",
+        "sha256": "ef08e3e37405b9dc8f6150a20198df2dfc405faa39ebc59225f25628fe2db5c2",
+        "source": "task-c/two_tier_bridge_log.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-c/two_tier_bridge_log.json",
+        "verified": true
+      },
+      {
+        "bytes": 38279,
+        "destination": "tools/governed-loop/mvp5/task-c/two_tier_probe_out.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-c/two_tier_probe_out.json",
+        "origin": "task-c",
+        "role": "log",
+        "sha256": "b3696a0dedd7f6d127e680d7c6f022616c28c14c6bf6700bcfaf5ad265dd046a",
+        "source": "task-c/two_tier_probe_out.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-c/two_tier_probe_out.json",
+        "verified": true
+      },
+      {
+        "bytes": 8246,
+        "destination": "tools/governed-loop/mvp5/task-d/EAR_VALIDATION_PROTOCOL.md",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-d/EAR_VALIDATION_PROTOCOL.md",
+        "origin": "task-d",
+        "role": "protocol",
+        "sha256": "f4cd7055f64bfbf9160c0a855d355cea09efee1d06b0f40175edb172fbc9d4db",
+        "source": "task-d/EAR_VALIDATION_PROTOCOL.md",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-d/EAR_VALIDATION_PROTOCOL.md",
+        "verified": true
+      },
+      {
+        "bytes": 20010,
+        "destination": "tools/governed-loop/mvp5/task-d/mvp5_ear_validation.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-d/mvp5_ear_validation.py",
+        "origin": "task-d",
+        "role": "module",
+        "sha256": "7a3ed1334ba50c8af0ddcad25f490522e76cf0d2f58582f47ccd5997ec1e9562",
+        "source": "task-d/mvp5_ear_validation.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-d/mvp5_ear_validation.py",
+        "verified": true
+      },
+      {
+        "bytes": 3917,
+        "destination": "tools/governed-loop/mvp5/task-d/mvp5_live_listen.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-d/mvp5_live_listen.py",
+        "origin": "task-d",
+        "role": "module",
+        "sha256": "88d2c9427dd08669997a2982c239525168430ac01c8a669baddd3762e12d4b42",
+        "source": "task-d/mvp5_live_listen.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-d/mvp5_live_listen.py",
+        "verified": true
+      },
+      {
+        "bytes": 28345,
+        "destination": "tools/governed-loop/mvp5/task-d/mvp5_task_d.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5/task-d/mvp5_task_d.py",
+        "origin": "task-d",
+        "role": "runner",
+        "sha256": "e81140476e932f14a0f0252de0b724791f494a002b215efadf21a7ee63ccb965",
+        "source": "task-d/mvp5_task_d.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/task-d/mvp5_task_d.py",
+        "verified": true
+      },
+      {
+        "bytes": 10181,
+        "destination": "tools/governed-loop/plv3_sweep.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/plv3_sweep.json",
+        "origin": "task-0",
+        "role": "policy-v3-sweep",
+        "sha256": "6a943e44c9ed2dc0dc39810c9656872ee55d5ea86bcd4a1e80eb7de505ad8243",
+        "source": "l21-staged/policy-v3-sweep/plv3_sweep.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/l21-staged/policy-v3-sweep/plv3_sweep.json",
+        "verified": true
+      },
+      {
+        "bytes": 9318,
+        "destination": "tools/governed-loop/plv3_sweep.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/plv3_sweep.py",
+        "origin": "task-0",
+        "role": "policy-v3-sweep",
+        "sha256": "22e6b1e5998c92f445fe3a631b2842231b2d5fdbea56ca760436f3a022ac5c15",
+        "source": "l21-staged/policy-v3-sweep/plv3_sweep.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/l21-staged/policy-v3-sweep/plv3_sweep.py",
+        "verified": true
+      },
+      {
+        "bytes": 1712,
+        "destination": "tools/governed-loop/plv3_sweep_predeclared.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/plv3_sweep_predeclared.json",
+        "origin": "task-0",
+        "role": "policy-v3-sweep",
+        "sha256": "14117c9460a6b611f849747f4881f296a8f3ce2108bb23524fe8beecd354e87b",
+        "source": "l21-staged/policy-v3-sweep/plv3_sweep_predeclared.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5/l21-staged/policy-v3-sweep/plv3_sweep_predeclared.json",
+        "verified": true
+      }
+    ]
+  },
+  "ledger": {
+    "afterBytes": 356466,
+    "afterLines": 4189,
+    "afterSha256": "e74cf6a2d79e9170c6686f2fb5287043ab1dd2c41d4f9a56d62b97f766c8f1c4",
+    "beforeBytes": 340531,
+    "beforeLines": 4112,
+    "beforeSha256": "8d0a04732370167e84b439a1a019ff6475c951ab86c258b84c79304534f2102d",
+    "entry": "single combined L21 entry appended at tail; no prior entry amended",
+    "prefixIdentity": true
+  },
+  "manifestRegen": {
+    "checksumsArtifact": "CHECKSUMS.sha256",
+    "command": "node scripts/build-manifest.mjs",
+    "documentationNewFiles": 4,
+    "expectedNewFiles": 65,
+    "manifestArtifact": "MANIFEST.json",
+    "note": "MANIFEST.json and CHECKSUMS.sha256 are regenerated after this receipt is written; the count includes the sixty-four staged payloads, the landing receipt, and the four post-landing documentation files.",
+    "observedFileCount": 1585
+  },
+  "opening": {
+    "baseHead": "ba6ae1fe2c8b31ab739c91593701177678bff18b",
+    "checksumsBefore": {
+      "sha256": "63e1e776492d2b481e79ebd6c6c29f5e055c0f001cd75777534febbb0f65db34"
+    },
+    "ledgerBefore": {
+      "bytes": 340531,
+      "lines": 4112,
+      "path": "provenance/DECISION_LEDGER.md",
+      "sha256": "8d0a04732370167e84b439a1a019ff6475c951ab86c258b84c79304534f2102d"
+    },
+    "manifestBefore": {
+      "fileCount": 1516,
+      "sha256": "933ae6027145e8f636857b169bd3dac323f90fe8c707d045fdac5237db5ce355",
+      "totalBytes": 96848773
+    },
+    "stagingManifestSha256": "ddca2bb4d4a4d93a04a07e15decfc0c7aceee89128a76414907b33f33f09eb32",
+    "stagingTotal": 64,
+    "stagingVerified": 64,
+    "treeClean": true,
+    "validationBefore": {
+      "checksFailed": 0,
+      "checksPassed": 418,
+      "releaseId": "seven-governors-integrated-1.9.0",
+      "sha256": "e31645789a84db704686def6d47f001e5986a07196c20bea041a099247df4636"
+    }
+  },
+  "postChecks": {
+    "dTier": {
+      "exitCode": 0
+    },
+    "evidence": {
+      "exitCode": 0
+    },
+    "fieldDerivation": {
+      "exitCode": 0
+    },
+    "ledgerPins": {
+      "exitCode": 0
+    },
+    "manifest": {
+      "exitCode": 0
+    },
+    "proseConsistency": {
+      "adjudicationId": "ADJ-PLANNING-SEAT-20261101-PROSE-M4M5",
+      "exitCode": 0,
+      "note": "Cleared by Planning-Seat adjudication ADJ-PLANNING-SEAT-20261101-PROSE-M4M5; both historical closing reports remain byte-identical.",
+      "preFixHistory": {
+        "exitCode": 1,
+        "landingAddedViolations": 3,
+        "landingAddedWitnesses": [
+          {
+            "classification": "violation",
+            "file": "scrum/plan/mvp5-sprint-closing-report.md",
+            "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "line": 10
+          },
+          {
+            "classification": "violation",
+            "file": "scrum/plan/mvp5-sprint-closing-report.md",
+            "fingerprint": "8d0a04732370167e84b439a1a019ff6475c951ab86c258b84c79304534f2102d",
+            "line": 11
+          },
+          {
+            "classification": "violation",
+            "file": "scrum/plan/mvp5-sprint-closing-report.md",
+            "fingerprint": "7c428a86e6fa60b632eab448a4946c42d79949c4010981dad81e455b081d6b39",
+            "line": 23
+          }
+        ],
+        "note": "The prose-consistency check was already red at opening: 8 fingerprint literals in scrum/plan/mvp4-sprint-closing-report.md were unsanctioned. The landed MVP-5 closing report adds 3 more. The authoritative release closure remains PASS 418/0. Sanctioning closing-report fingerprints requires a separate planning-seat adjudication; no validator or closing-report bytes were changed.",
+        "preExistingViolations": 8,
+        "preExistingWitnesses": [
+          {
+            "classification": "violation",
+            "file": "scrum/plan/mvp4-sprint-closing-report.md",
+            "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "line": 12
+          },
+          {
+            "classification": "violation",
+            "file": "scrum/plan/mvp4-sprint-closing-report.md",
+            "fingerprint": "037424774910287b29a9101569127d4a7850d4f86376540e350bbe14f0c6663b",
+            "line": 13
+          },
+          {
+            "classification": "violation",
+            "file": "scrum/plan/mvp4-sprint-closing-report.md",
+            "fingerprint": "38c271898ecfcbb8731239dbde38d58bf8e686aa1d31b648f22418c78eb40faf",
+            "line": 17
+          },
+          {
+            "classification": "violation",
+            "file": "scrum/plan/mvp4-sprint-closing-report.md",
+            "fingerprint": "906ba0b196755eafe41ee8abf2d70a03040a0bc995502856984cec1d798e079e",
+            "line": 73
+          },
+          {
+            "classification": "violation",
+            "file": "scrum/plan/mvp4-sprint-closing-report.md",
+            "fingerprint": "d4e63cb51f6339edf7dcdb721d9753ea6c6cac580f35cf9397201803cd8fdbc1",
+            "line": 74
+          },
+          {
+            "classification": "violation",
+            "file": "scrum/plan/mvp4-sprint-closing-report.md",
+            "fingerprint": "ffab52b696aeda84204c463abd700e7be86d2e430d6dc8d43d72587381aa7d12",
+            "line": 75
+          },
+          {
+            "classification": "violation",
+            "file": "scrum/plan/mvp4-sprint-closing-report.md",
+            "fingerprint": "834e3a64c22fba07fa0179b95d8ee26d152c038f67a0a387ae3a2b1796cf4295",
+            "line": 76
+          },
+          {
+            "classification": "violation",
+            "file": "scrum/plan/mvp4-sprint-closing-report.md",
+            "fingerprint": "8b15f274538cc093e358c306a276a72cc0ca9e04ad8bbec35074ab57289dfc02",
+            "line": 77
+          }
+        ],
+        "totalViolations": 11,
+        "verdict": "FAIL"
+      },
+      "sanctionedFingerprintRecords": 3,
+      "sanctionedFingerprintsBound": 27,
+      "verdict": "PASS",
+      "violations": 0
+    },
+    "taxonomy": {
+      "exitCode": 0
+    }
+  },
+  "resolvedWarnings": [
+    {
+      "resolution": "ADJ-PLANNING-SEAT-20261101-PROSE-M4M5",
+      "resolvedAt": "2026-11-01T21:13:18.814994+00:00",
+      "warning": "Auxiliary prose-consistency check is red: 8 pre-existing L20 closing-report fingerprint literals plus 3 from the landed MVP-5 closing report. Release closure is PASS 418/0."
+    }
+  ],
+  "schemaVersion": "governed-loop.mvp5-landing.v1",
+  "status": "COMPLETE",
+  "stopRulesTriggered": [],
+  "task": "MVP5-L21-LANDING",
+  "validation": {
+    "artifact": "qa/integrated-release-validation.json",
+    "command": "node scripts/validate-release.mjs",
+    "expectedChecksFailed": 0,
+    "expectedChecksPassed": 418,
+    "expectedVerdict": "PASS",
+    "failures": [],
+    "observedChecksFailed": 0,
+    "observedChecksPassed": 418,
+    "observedVerdict": "PASS",
+    "validationFileSha256": "207b9aca105bc6d97310e1849a1ecb916507395ed87dabf433957a6891b2134a"
+  },
+  "verification": {
+    "audioReRender": {
+      "allMidiMatch": true,
+      "allPalettesMatch": true,
+      "allReRenderMatch": true,
+      "allSampleCountsExact": true,
+      "allWavMatch": true,
+      "clippedSamples": 0,
+      "constantsMatch": true,
+      "midiOutOfMaskNotes": 0,
+      "nonFiniteSamples": 0,
+      "tracks": [
+        {
+          "clippedSamples": 0,
+          "landedMidiSha256": "342be2caf450c556a2b1a83abfba4b16ce91622e842c891bedfca8a493a105e4",
+          "landedWavSha256": "dcca3792aaa8b211cff95daa851de0e6dae6a9c2a7e100494acfff3e4c8462c4",
+          "leadSequenceMatch": true,
+          "midiMatch": true,
+          "midiOutOfMaskNotes": 0,
+          "midiSha256": "342be2caf450c556a2b1a83abfba4b16ce91622e842c891bedfca8a493a105e4",
+          "nonFiniteSamples": 0,
+          "padContainerMatch": true,
+          "reRenderMatch": true,
+          "sampleCountExact": true,
+          "track": "track1_arm1_unranked_2cycle",
+          "wavMatch": true,
+          "wavSha256": "dcca3792aaa8b211cff95daa851de0e6dae6a9c2a7e100494acfff3e4c8462c4"
+        },
+        {
+          "clippedSamples": 0,
+          "landedMidiSha256": "f6cc2f4ff5715418b5b9e76b8f4aff3d5c93b2bbd5f22b584c7d47668f3da433",
+          "landedWavSha256": "04dd46fadb5793b938555e27c8909884db071af6ba8fe03576ec33c0f74723ab",
+          "leadSequenceMatch": true,
+          "midiMatch": true,
+          "midiOutOfMaskNotes": 0,
+          "midiSha256": "f6cc2f4ff5715418b5b9e76b8f4aff3d5c93b2bbd5f22b584c7d47668f3da433",
+          "nonFiniteSamples": 0,
+          "padContainerMatch": true,
+          "reRenderMatch": true,
+          "sampleCountExact": true,
+          "track": "track2_arm2_static_4state",
+          "wavMatch": true,
+          "wavSha256": "04dd46fadb5793b938555e27c8909884db071af6ba8fe03576ec33c0f74723ab"
+        },
+        {
+          "clippedSamples": 0,
+          "landedMidiSha256": "92a84da7c248394859acc79241aa187d5828ae8be4388c2709135286b1b57bd4",
+          "landedWavSha256": "b4e9b1674fd4ae3b94fc9e0921e3c461c642403fa34a91869fe851e069398307",
+          "leadSequenceMatch": true,
+          "midiMatch": true,
+          "midiOutOfMaskNotes": 0,
+          "midiSha256": "92a84da7c248394859acc79241aa187d5828ae8be4388c2709135286b1b57bd4",
+          "nonFiniteSamples": 0,
+          "padContainerMatch": true,
+          "reRenderMatch": true,
+          "sampleCountExact": true,
+          "track": "track3_arm3a_dynamic_q_reset",
+          "wavMatch": true,
+          "wavSha256": "b4e9b1674fd4ae3b94fc9e0921e3c461c642403fa34a91869fe851e069398307"
+        },
+        {
+          "clippedSamples": 0,
+          "landedMidiSha256": "6b5cb199627fc2ea11dd6df2677e862a64146c42acebf94bfc21ef29b2f9dc93",
+          "landedWavSha256": "d0fe3d2727593d22ee49ed50d64b0253ed36f52e64d9f202d43596106e735738",
+          "leadSequenceMatch": true,
+          "midiMatch": true,
+          "midiOutOfMaskNotes": 0,
+          "midiSha256": "6b5cb199627fc2ea11dd6df2677e862a64146c42acebf94bfc21ef29b2f9dc93",
+          "nonFiniteSamples": 0,
+          "padContainerMatch": true,
+          "reRenderMatch": true,
+          "sampleCountExact": true,
+          "track": "track4_arm3b_dynamic_q_carried",
+          "wavMatch": true,
+          "wavSha256": "d0fe3d2727593d22ee49ed50d64b0253ed36f52e64d9f202d43596106e735738"
+        },
+        {
+          "clippedSamples": 0,
+          "landedMidiSha256": "d544717687eb0635ff27b99cf7b351d2589bbbc78e970901b77a658cfbf1e268",
+          "landedWavSha256": "82a69919cd4d5bc7a8f0d14d40dfe653193bd6047c1088d3030e6c48098994a1",
+          "leadSequenceMatch": true,
+          "midiMatch": true,
+          "midiOutOfMaskNotes": 0,
+          "midiSha256": "d544717687eb0635ff27b99cf7b351d2589bbbc78e970901b77a658cfbf1e268",
+          "nonFiniteSamples": 0,
+          "padContainerMatch": true,
+          "reRenderMatch": true,
+          "sampleCountExact": true,
+          "track": "track5_equiv_base_p0",
+          "wavMatch": true,
+          "wavSha256": "82a69919cd4d5bc7a8f0d14d40dfe653193bd6047c1088d3030e6c48098994a1"
+        },
+        {
+          "clippedSamples": 0,
+          "landedMidiSha256": "1546c7e4787d4031ffda914d6d56965c8c0e4d29686359e76f06eabfafa21918",
+          "landedWavSha256": "2fa02243432104eb6a1a48a3b287c7a4a8ef79064dc37bab0737fa3be44ce917",
+          "leadSequenceMatch": true,
+          "midiMatch": true,
+          "midiOutOfMaskNotes": 0,
+          "midiSha256": "1546c7e4787d4031ffda914d6d56965c8c0e4d29686359e76f06eabfafa21918",
+          "nonFiniteSamples": 0,
+          "padContainerMatch": true,
+          "reRenderMatch": true,
+          "sampleCountExact": true,
+          "track": "track6_equiv_lifted_p7",
+          "wavMatch": true,
+          "wavSha256": "2fa02243432104eb6a1a48a3b287c7a4a8ef79064dc37bab0737fa3be44ce917"
+        }
+      ]
+    },
+    "browserHashOnly": {
+      "allMatch": true,
+      "note": "Playwright replay hash-verified only; not re-executed during landing.",
+      "rows": [
+        {
+          "artifact": "task-c/two_tier_bridge_log.json",
+          "landedSha256": "ef08e3e37405b9dc8f6150a20198df2dfc405faa39ebc59225f25628fe2db5c2",
+          "match": true,
+          "stagingSha256": "ef08e3e37405b9dc8f6150a20198df2dfc405faa39ebc59225f25628fe2db5c2"
+        },
+        {
+          "artifact": "task-c/two_tier_probe_out.json",
+          "landedSha256": "b3696a0dedd7f6d127e680d7c6f022616c28c14c6bf6700bcfaf5ad265dd046a",
+          "match": true,
+          "stagingSha256": "b3696a0dedd7f6d127e680d7c6f022616c28c14c6bf6700bcfaf5ad265dd046a"
+        }
+      ]
+    },
+    "greedyBattery": {
+      "acceptingSeeds": 9,
+      "gateAcceptAll": true,
+      "gateAccepted": 377,
+      "gateTotal": 377,
+      "outOfMaskPitches": 0,
+      "rows": [
+        {
+          "autoTransits": 1,
+          "distinctQStates": 12,
+          "distinctStates": 21,
+          "gateAcceptAll": true,
+          "gateAccepted": 21,
+          "gateTotal": 21,
+          "outOfMaskPitches": 0,
+          "seams": 5,
+          "seed": "1387@0",
+          "variant": "U"
+        },
+        {
+          "autoTransits": 2,
+          "distinctQStates": 12,
+          "distinctStates": 21,
+          "gateAcceptAll": true,
+          "gateAccepted": 22,
+          "gateTotal": 22,
+          "outOfMaskPitches": 0,
+          "seams": 11,
+          "seed": "1387@0",
+          "variant": "D"
+        },
+        {
+          "autoTransits": 0,
+          "distinctQStates": 12,
+          "distinctStates": 21,
+          "gateAcceptAll": true,
+          "gateAccepted": 20,
+          "gateTotal": 20,
+          "outOfMaskPitches": 0,
+          "seams": 4,
+          "seed": "2773@0",
+          "variant": "U"
+        },
+        {
+          "autoTransits": 2,
+          "distinctQStates": 12,
+          "distinctStates": 21,
+          "gateAcceptAll": true,
+          "gateAccepted": 22,
+          "gateTotal": 22,
+          "outOfMaskPitches": 0,
+          "seams": 12,
+          "seed": "2773@0",
+          "variant": "D"
+        },
+        {
+          "autoTransits": 0,
+          "distinctQStates": 12,
+          "distinctStates": 21,
+          "gateAcceptAll": true,
+          "gateAccepted": 20,
+          "gateTotal": 20,
+          "outOfMaskPitches": 0,
+          "seams": 4,
+          "seed": "2741@0",
+          "variant": "U"
+        },
+        {
+          "autoTransits": 2,
+          "distinctQStates": 12,
+          "distinctStates": 21,
+          "gateAcceptAll": true,
+          "gateAccepted": 22,
+          "gateTotal": 22,
+          "outOfMaskPitches": 0,
+          "seams": 7,
+          "seed": "2741@0",
+          "variant": "D"
+        },
+        {
+          "autoTransits": 0,
+          "distinctQStates": 12,
+          "distinctStates": 14,
+          "gateAcceptAll": true,
+          "gateAccepted": 20,
+          "gateTotal": 20,
+          "outOfMaskPitches": 0,
+          "seams": 4,
+          "seed": "1717@0",
+          "variant": "U"
+        },
+        {
+          "autoTransits": 2,
+          "distinctQStates": 12,
+          "distinctStates": 19,
+          "gateAcceptAll": true,
+          "gateAccepted": 22,
+          "gateTotal": 22,
+          "outOfMaskPitches": 0,
+          "seams": 12,
+          "seed": "1717@0",
+          "variant": "D"
+        },
+        {
+          "autoTransits": 2,
+          "distinctQStates": 12,
+          "distinctStates": 21,
+          "gateAcceptAll": true,
+          "gateAccepted": 22,
+          "gateTotal": 22,
+          "outOfMaskPitches": 0,
+          "seams": 5,
+          "seed": "1709@0",
+          "variant": "U"
+        },
+        {
+          "autoTransits": 2,
+          "distinctQStates": 12,
+          "distinctStates": 21,
+          "gateAcceptAll": true,
+          "gateAccepted": 22,
+          "gateTotal": 22,
+          "outOfMaskPitches": 0,
+          "seams": 13,
+          "seed": "1709@0",
+          "variant": "D"
+        },
+        {
+          "autoTransits": 2,
+          "distinctQStates": 12,
+          "distinctStates": 21,
+          "gateAcceptAll": true,
+          "gateAccepted": 22,
+          "gateTotal": 22,
+          "outOfMaskPitches": 0,
+          "seams": 5,
+          "seed": "1453@0",
+          "variant": "U"
+        },
+        {
+          "autoTransits": 2,
+          "distinctQStates": 12,
+          "distinctStates": 21,
+          "gateAcceptAll": true,
+          "gateAccepted": 22,
+          "gateTotal": 22,
+          "outOfMaskPitches": 0,
+          "seams": 5,
+          "seed": "1453@0",
+          "variant": "D"
+        },
+        {
+          "autoTransits": 0,
+          "distinctQStates": 12,
+          "distinctStates": 19,
+          "gateAcceptAll": true,
+          "gateAccepted": 20,
+          "gateTotal": 20,
+          "outOfMaskPitches": 0,
+          "seams": 4,
+          "seed": "1451@0",
+          "variant": "U"
+        },
+        {
+          "autoTransits": 0,
+          "distinctQStates": 12,
+          "distinctStates": 19,
+          "gateAcceptAll": true,
+          "gateAccepted": 20,
+          "gateTotal": 20,
+          "outOfMaskPitches": 0,
+          "seams": 8,
+          "seed": "1451@0",
+          "variant": "D"
+        },
+        {
+          "autoTransits": 0,
+          "distinctQStates": 12,
+          "distinctStates": 21,
+          "gateAcceptAll": true,
+          "gateAccepted": 20,
+          "gateTotal": 20,
+          "outOfMaskPitches": 0,
+          "seams": 7,
+          "seed": "127@0",
+          "variant": "U"
+        },
+        {
+          "autoTransits": 0,
+          "distinctQStates": 12,
+          "distinctStates": 21,
+          "gateAcceptAll": true,
+          "gateAccepted": 20,
+          "gateTotal": 20,
+          "outOfMaskPitches": 0,
+          "seams": 7,
+          "seed": "127@0",
+          "variant": "D"
+        },
+        {
+          "autoTransits": 0,
+          "distinctQStates": 12,
+          "distinctStates": 7,
+          "gateAcceptAll": true,
+          "gateAccepted": 20,
+          "gateTotal": 20,
+          "outOfMaskPitches": 0,
+          "seams": 0,
+          "seed": "2667@0",
+          "variant": "U"
+        },
+        {
+          "autoTransits": 0,
+          "distinctQStates": 12,
+          "distinctStates": 7,
+          "gateAcceptAll": true,
+          "gateAccepted": 20,
+          "gateTotal": 20,
+          "outOfMaskPitches": 0,
+          "seams": 0,
+          "seed": "2667@0",
+          "variant": "D"
+        }
+      ],
+      "seeds": 9
+    },
+    "orbitSweep": {
+      "digestMatch": true,
+      "edgeCount": 5040,
+      "edgeSetDigest": "7c428a86e6fa60b632eab448a4946c42d79949c4010981dad81e455b081d6b39",
+      "members": 308,
+      "orbits": [
+        {
+          "exact": true,
+          "memberCount": 49,
+          "orbitId": "ORBIT-A0",
+          "phase11Expected": 2009,
+          "phase11Total": 2009
+        },
+        {
+          "exact": true,
+          "memberCount": 35,
+          "orbitId": "ORBIT-A1",
+          "phase11Expected": 1435,
+          "phase11Total": 1435
+        },
+        {
+          "exact": true,
+          "memberCount": 49,
+          "orbitId": "ORBIT-A2",
+          "phase11Expected": 2009,
+          "phase11Total": 2009
+        },
+        {
+          "exact": true,
+          "memberCount": 21,
+          "orbitId": "ORBIT-D1",
+          "phase11Expected": 861,
+          "phase11Total": 861
+        },
+        {
+          "exact": true,
+          "memberCount": 35,
+          "orbitId": "ORBIT-D2",
+          "phase11Expected": 1435,
+          "phase11Total": 1435
+        },
+        {
+          "exact": true,
+          "memberCount": 21,
+          "orbitId": "ORBIT-D3",
+          "phase11Expected": 861,
+          "phase11Total": 861
+        },
+        {
+          "exact": true,
+          "memberCount": 35,
+          "orbitId": "ORBIT-D4",
+          "phase11Expected": 1435,
+          "phase11Total": 1435
+        },
+        {
+          "exact": true,
+          "memberCount": 35,
+          "orbitId": "ORBIT-D5",
+          "phase11Expected": 1435,
+          "phase11Total": 1435
+        },
+        {
+          "exact": true,
+          "memberCount": 21,
+          "orbitId": "ORBIT-D6",
+          "phase11Expected": 861,
+          "phase11Total": 861
+        },
+        {
+          "exact": true,
+          "memberCount": 7,
+          "orbitId": "ORBIT-D7",
+          "phase11Expected": 287,
+          "phase11Total": 287
+        }
+      ],
+      "orbitsExact10": true,
+      "pc0Count": 462,
+      "pc0ExactlyOne": true,
+      "records": 462,
+      "totalExact": true,
+      "totalT11": 12628,
+      "wrapChecks": 5544,
+      "wrapFailures": 0,
+      "wrapIdentity": true
+    },
+    "receipts": {
+      "allComplete": true,
+      "rows": [
+        {
+          "receipt": "mvp5_task_0_receipt.json",
+          "sha256": "7c139a30447492fafa8b3fef7a4eec243c310a774405dc2cad2db4c2b73decff",
+          "sha8": "7c139a30",
+          "status": "COMPLETE"
+        },
+        {
+          "receipt": "mvp5_task_a_receipt.json",
+          "sha256": "74373b3caf3f0e9a277789afa482da6b7f3274425ec2f124c62cc00e137888f7",
+          "sha8": "74373b3c",
+          "status": "COMPLETE"
+        },
+        {
+          "receipt": "mvp5_task_b_receipt.json",
+          "sha256": "1d77bd7d93e7c33cd12f503f034c1c82c342c06c5aa95a62b8dafa68b5ca1eb7",
+          "sha8": "1d77bd7d",
+          "status": "COMPLETE"
+        },
+        {
+          "receipt": "mvp5_task_c_receipt.json",
+          "sha256": "4c33254714cfecec1711e725040a785c35e03c0ee70f3859dcad115b6cefdfdb",
+          "sha8": "4c332547",
+          "status": "COMPLETE"
+        },
+        {
+          "receipt": "mvp5_task_d_receipt.json",
+          "sha256": "cf26a6a8815ea27d8d5e0518fc20799056a2ec13ec65c16e409700b9e7c41315",
+          "sha8": "cf26a6a8",
+          "status": "COMPLETE"
+        }
+      ]
+    }
+  },
+  "warnings": []
+}

@@ -1,0 +1,757 @@
+{
+  "checks": {
+    "allMicroSteps100": true,
+    "equivarianceIntervals14": true,
+    "equivariancePitchClasses15": true,
+    "fixedPointStable": true,
+    "forbiddenTokenAbsent": true,
+    "inputReceiptsComplete": true,
+    "layerFenceIntact": true,
+    "macroDiversityMatch": true,
+    "pitchClassCardinality12": true,
+    "protocolQuestions4": true,
+    "protocolTimestamps": true,
+    "qCoverageMatch": true,
+    "stillLifeReset": true,
+    "stillSetEntriesZero": true,
+    "throughComposedCarried": true
+  },
+  "checksPassed": 15,
+  "checksTotal": 15,
+  "close": {
+    "head": "ba6ae1fe2c8b31ab739c91593701177678bff18b",
+    "orreryClean": true,
+    "treeClean": true,
+    "treeDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "constraints": {
+    "gateBytesTouched": false,
+    "orreryChanges": 0,
+    "repoWrites": 0
+  },
+  "contrastMatrix": {
+    "arms": {
+      "arm1_unranked_q_carried": {
+        "boundaryDwell": 0,
+        "description": "unranked 2-state Saturn cycle, carried Q",
+        "label": "Arm 1",
+        "macro": {
+          "autoTransits": 0,
+          "distinctOffices": 1,
+          "distinctPhases": 1,
+          "distinctStates": 2,
+          "gateAcceptAll": true,
+          "seamModulations": 0
+        },
+        "micro": {
+          "degreeModuloCount": 43,
+          "directOrbitCount": 57,
+          "directToDegree": "57:43",
+          "distinctQStates": 12,
+          "emittedPcs": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            8,
+            10
+          ],
+          "emittedPitchClasses": 8,
+          "intervalHistogram": {
+            "1": 21,
+            "10": 8,
+            "2": 18,
+            "3": 4,
+            "6": 4,
+            "7": 40,
+            "8": 4
+          },
+          "microSteps": 100,
+          "ngram5Distinct": 12,
+          "ngram5Repeats": 8,
+          "ngram5Total": 20,
+          "qStatesVisited": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "repeatRate": "8/20",
+          "stillSetEntries": 0
+        },
+        "outOfMaskPitches": 0,
+        "trace": "task-a/traces/arm1_unranked_q_carried.jsonl",
+        "traceSha256": "bf20119cb50c18317c93bef4e2bf0aeff1e0d937b84102d58e42d830479476df"
+      },
+      "arm2_static_q_carried": {
+        "boundaryDwell": 0,
+        "description": "static Chaldean 4-state Saturn walk, carried Q",
+        "label": "Arm 2",
+        "macro": {
+          "autoTransits": 0,
+          "distinctOffices": 1,
+          "distinctPhases": 1,
+          "distinctStates": 4,
+          "gateAcceptAll": true,
+          "seamModulations": 0
+        },
+        "micro": {
+          "degreeModuloCount": 48,
+          "directOrbitCount": 52,
+          "directToDegree": "52:48",
+          "distinctQStates": 12,
+          "emittedPcs": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "emittedPitchClasses": 10,
+          "intervalHistogram": {
+            "0": 7,
+            "1": 19,
+            "10": 2,
+            "11": 6,
+            "2": 21,
+            "3": 1,
+            "6": 5,
+            "7": 32,
+            "8": 5,
+            "9": 1
+          },
+          "microSteps": 100,
+          "ngram5Distinct": 16,
+          "ngram5Repeats": 4,
+          "ngram5Total": 20,
+          "qStatesVisited": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "repeatRate": "4/20",
+          "stillSetEntries": 0
+        },
+        "outOfMaskPitches": 0,
+        "trace": "task-a/traces/arm2_static_q_carried.jsonl",
+        "traceSha256": "52f3b5137d5ae537c200dd1ac588dea21057c3c2c17daaf67bcc5b3616cf45e8"
+      },
+      "arm3a_dynamic_q_reset": {
+        "boundaryDwell": 0,
+        "description": "dynamic 21-state walk, reset Q still-life",
+        "label": "Arm 3a",
+        "macro": {
+          "autoTransits": 1,
+          "distinctOffices": 3,
+          "distinctPhases": 3,
+          "distinctStates": 21,
+          "gateAcceptAll": true,
+          "seamModulations": 5
+        },
+        "micro": {
+          "degreeModuloCount": 30,
+          "directOrbitCount": 70,
+          "directToDegree": "70:30",
+          "distinctQStates": 5,
+          "emittedPcs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11
+          ],
+          "emittedPitchClasses": 11,
+          "intervalHistogram": {
+            "0": 3,
+            "1": 12,
+            "10": 6,
+            "11": 1,
+            "2": 8,
+            "3": 2,
+            "4": 2,
+            "5": 6,
+            "6": 6,
+            "7": 40,
+            "8": 8,
+            "9": 5
+          },
+          "microSteps": 100,
+          "ngram5Distinct": 16,
+          "ngram5Repeats": 4,
+          "ngram5Total": 20,
+          "qStatesVisited": [
+            0,
+            2,
+            4,
+            7,
+            9
+          ],
+          "repeatRate": "4/20",
+          "stillSetEntries": 0
+        },
+        "outOfMaskPitches": 0,
+        "trace": "task-a/traces/arm3a_dynamic_q_reset.jsonl",
+        "traceSha256": "dc941c1c30a32d8ab2a5813ba7e04c1a1605b3a5f681dfc9e6725ba10f7371c3"
+      },
+      "arm3b_dynamic_q_carried": {
+        "boundaryDwell": 0,
+        "description": "dynamic 21-state walk, continuous carried Q",
+        "label": "Arm 3b",
+        "macro": {
+          "autoTransits": 1,
+          "distinctOffices": 3,
+          "distinctPhases": 3,
+          "distinctStates": 21,
+          "gateAcceptAll": true,
+          "seamModulations": 5
+        },
+        "micro": {
+          "degreeModuloCount": 46,
+          "directOrbitCount": 54,
+          "directToDegree": "54:46",
+          "distinctQStates": 12,
+          "emittedPcs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "emittedPitchClasses": 12,
+          "intervalHistogram": {
+            "0": 4,
+            "1": 16,
+            "10": 5,
+            "11": 1,
+            "2": 16,
+            "3": 4,
+            "4": 3,
+            "5": 5,
+            "6": 7,
+            "7": 32,
+            "8": 1,
+            "9": 5
+          },
+          "microSteps": 100,
+          "ngram5Distinct": 20,
+          "ngram5Repeats": 0,
+          "ngram5Total": 20,
+          "qStatesVisited": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "repeatRate": "0/20",
+          "stillSetEntries": 0
+        },
+        "outOfMaskPitches": 0,
+        "trace": "task-a/traces/arm3b_dynamic_q_carried.jsonl",
+        "traceSha256": "4ea86bb188b08438498adbfc80dca164b4bb73f5ae31a8305ca7577abf14778d"
+      }
+    },
+    "macroDiversity": {
+      "distinctOffices": [
+        1,
+        1,
+        3,
+        3
+      ],
+      "distinctPhases": [
+        1,
+        1,
+        3,
+        3
+      ],
+      "distinctStates": [
+        2,
+        4,
+        21,
+        21
+      ],
+      "seamModulations": [
+        0,
+        0,
+        5,
+        5
+      ]
+    },
+    "qCoverage": {
+      "directToDegree": [
+        "57:43",
+        "52:48",
+        "70:30",
+        "54:46"
+      ],
+      "distinctQStates": [
+        12,
+        12,
+        5,
+        12
+      ],
+      "emittedPitchClasses": [
+        8,
+        10,
+        11,
+        12
+      ],
+      "ngram5Repeats": [
+        8,
+        4,
+        4,
+        0
+      ],
+      "repeatRates": [
+        "8/20",
+        "4/20",
+        "4/20",
+        "0/20"
+      ]
+    },
+    "stillLifeContrast": {
+      "arm3aRepeats": 4,
+      "arm3bRepeats": 0,
+      "resetStillLife": true,
+      "throughComposed": true
+    }
+  },
+  "directive": "MVP5-DIR-1",
+  "equivariance": {
+    "base": {
+      "midiNotes": [
+        72,
+        73,
+        75,
+        77,
+        78,
+        94,
+        89,
+        95,
+        85,
+        87,
+        77,
+        79,
+        83,
+        74,
+        75
+      ],
+      "pitchClasses": [
+        0,
+        1,
+        3,
+        5,
+        6,
+        10,
+        5,
+        11,
+        1,
+        3,
+        5,
+        7,
+        11,
+        2,
+        3
+      ]
+    },
+    "baseIntervals": [
+      1,
+      2,
+      2,
+      1,
+      4,
+      7,
+      6,
+      2,
+      2,
+      2,
+      2,
+      4,
+      3,
+      1
+    ],
+    "intervalMatches": 14,
+    "intervalSequenceIdentical": true,
+    "intervalTotal": 14,
+    "lift": {
+      "midiNotes": [
+        79,
+        80,
+        82,
+        72,
+        73,
+        89,
+        84,
+        90,
+        92,
+        94,
+        72,
+        74,
+        78,
+        81,
+        82
+      ],
+      "pitchClasses": [
+        7,
+        8,
+        10,
+        0,
+        1,
+        5,
+        0,
+        6,
+        8,
+        10,
+        0,
+        2,
+        6,
+        9,
+        10
+      ]
+    },
+    "liftIntervals": [
+      1,
+      2,
+      2,
+      1,
+      4,
+      7,
+      6,
+      2,
+      2,
+      2,
+      2,
+      4,
+      3,
+      1
+    ],
+    "pitchClassChecks": [
+      {
+        "baseNote": 72,
+        "expectedLiftedPc": 7,
+        "liftedNote": 79,
+        "liftedPc": 7,
+        "match": true,
+        "step": 1
+      },
+      {
+        "baseNote": 73,
+        "expectedLiftedPc": 8,
+        "liftedNote": 80,
+        "liftedPc": 8,
+        "match": true,
+        "step": 2
+      },
+      {
+        "baseNote": 75,
+        "expectedLiftedPc": 10,
+        "liftedNote": 82,
+        "liftedPc": 10,
+        "match": true,
+        "step": 3
+      },
+      {
+        "baseNote": 77,
+        "expectedLiftedPc": 0,
+        "liftedNote": 72,
+        "liftedPc": 0,
+        "match": true,
+        "step": 4
+      },
+      {
+        "baseNote": 78,
+        "expectedLiftedPc": 1,
+        "liftedNote": 73,
+        "liftedPc": 1,
+        "match": true,
+        "step": 5
+      },
+      {
+        "baseNote": 94,
+        "expectedLiftedPc": 5,
+        "liftedNote": 89,
+        "liftedPc": 5,
+        "match": true,
+        "step": 6
+      },
+      {
+        "baseNote": 89,
+        "expectedLiftedPc": 0,
+        "liftedNote": 84,
+        "liftedPc": 0,
+        "match": true,
+        "step": 7
+      },
+      {
+        "baseNote": 95,
+        "expectedLiftedPc": 6,
+        "liftedNote": 90,
+        "liftedPc": 6,
+        "match": true,
+        "step": 8
+      },
+      {
+        "baseNote": 85,
+        "expectedLiftedPc": 8,
+        "liftedNote": 92,
+        "liftedPc": 8,
+        "match": true,
+        "step": 9
+      },
+      {
+        "baseNote": 87,
+        "expectedLiftedPc": 10,
+        "liftedNote": 94,
+        "liftedPc": 10,
+        "match": true,
+        "step": 10
+      },
+      {
+        "baseNote": 77,
+        "expectedLiftedPc": 0,
+        "liftedNote": 72,
+        "liftedPc": 0,
+        "match": true,
+        "step": 11
+      },
+      {
+        "baseNote": 79,
+        "expectedLiftedPc": 2,
+        "liftedNote": 74,
+        "liftedPc": 2,
+        "match": true,
+        "step": 12
+      },
+      {
+        "baseNote": 83,
+        "expectedLiftedPc": 6,
+        "liftedNote": 78,
+        "liftedPc": 6,
+        "match": true,
+        "step": 13
+      },
+      {
+        "baseNote": 74,
+        "expectedLiftedPc": 9,
+        "liftedNote": 81,
+        "liftedPc": 9,
+        "match": true,
+        "step": 14
+      },
+      {
+        "baseNote": 75,
+        "expectedLiftedPc": 10,
+        "liftedNote": 82,
+        "liftedPc": 10,
+        "match": true,
+        "step": 15
+      }
+    ],
+    "pitchClassMatches": 15,
+    "pitchClassShiftExact": true,
+    "pitchClassTotal": 15
+  },
+  "fixedPoint": {
+    "actual": {
+      "head": "ba6ae1fe2c8b31ab739c91593701177678bff18b",
+      "landingReceiptSha256": "311e10ad155d1046f6c2b0800759552f2b8de5fe84cf3a1bab60a1a7268572db",
+      "ledgerBytes": 340531,
+      "ledgerLines": 4112,
+      "ledgerSha256": "8d0a04732370167e84b439a1a019ff6475c951ab86c258b84c79304534f2102d",
+      "manifestBytes": 96848773,
+      "manifestFiles": 1516,
+      "manifestSha256": "933ae6027145e8f636857b169bd3dac323f90fe8c707d045fdac5237db5ce355",
+      "treeDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "validationFailed": 0,
+      "validationPassed": 418,
+      "validationRelease": "seven-governors-integrated-1.9.0",
+      "validationSha256": "e31645789a84db704686def6d47f001e5986a07196c20bea041a099247df4636"
+    },
+    "checks": {
+      "head": true,
+      "landingReceiptSha256": true,
+      "ledgerBytes": true,
+      "ledgerLines": true,
+      "ledgerSha256": true,
+      "manifestBytes": true,
+      "manifestFiles": true,
+      "manifestSha256": true,
+      "treeDigest": true,
+      "validationFailed": true,
+      "validationPassed": true,
+      "validationRelease": true,
+      "validationSha256": true
+    },
+    "passed": true
+  },
+  "floatScan": {
+    "values": 0,
+    "witnesses": []
+  },
+  "generatedAt": "2026-11-01T18:39:11.047421+00:00",
+  "gov517_correspondence_claimed": false,
+  "inputs": {
+    "T0": {
+      "path": "task-0/mvp5_task_0_receipt.json",
+      "sha256": "7c139a30447492fafa8b3fef7a4eec243c310a774405dc2cad2db4c2b73decff",
+      "status": "COMPLETE"
+    },
+    "TA": {
+      "path": "task-a/mvp5_task_a_receipt.json",
+      "sha256": "74373b3caf3f0e9a277789afa482da6b7f3274425ec2f124c62cc00e137888f7",
+      "status": "COMPLETE"
+    },
+    "TB": {
+      "path": "task-b/mvp5_task_b_receipt.json",
+      "sha256": "1d77bd7d93e7c33cd12f503f034c1c82c342c06c5aa95a62b8dafa68b5ca1eb7",
+      "status": "COMPLETE"
+    },
+    "TC": {
+      "path": "task-c/mvp5_task_c_receipt.json",
+      "sha256": "4c33254714cfecec1711e725040a785c35e03c0ee70f3859dcad115b6cefdfdb",
+      "status": "COMPLETE"
+    }
+  },
+  "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+  "markers": {
+    "barCount": 20,
+    "boundaryTransit": {
+      "citation": "FamilyA:L1",
+      "gate": "ACCEPT",
+      "kind": "boundary-auto-transit",
+      "source": "847@0",
+      "target": "1693@11",
+      "timeMs": 18000
+    },
+    "hopCount": 21,
+    "rests": [
+      {
+        "afterBar": 12,
+        "durationMs": 300,
+        "kind": "boundary-auto-transit",
+        "oscillators": 0,
+        "recordType": "rest",
+        "source": "847@0",
+        "startMs": 18000,
+        "target": "1693@11",
+        "trace": "arm3b_dynamic_q_carried"
+      }
+    ],
+    "seamHops": [
+      {
+        "citation": "FamilyA:L1",
+        "gate": "ACCEPT",
+        "kind": "familyA-seam",
+        "source": "1259@0",
+        "target": "2517@11",
+        "timeMs": 6000
+      },
+      {
+        "citation": "FamilyB:bridge",
+        "gate": "ACCEPT",
+        "kind": "familyB-seam",
+        "source": "2773@11",
+        "target": "1741@11",
+        "timeMs": 12000
+      },
+      {
+        "citation": "FamilyA:R1",
+        "gate": "ACCEPT",
+        "kind": "familyA-seam",
+        "source": "1693@11",
+        "target": "847@0",
+        "timeMs": 18000
+      },
+      {
+        "citation": "FamilyA:L1",
+        "gate": "ACCEPT",
+        "kind": "boundary-auto-transit",
+        "source": "847@0",
+        "target": "1693@11",
+        "timeMs": 18000
+      },
+      {
+        "citation": "FamilyA:R1",
+        "gate": "ACCEPT",
+        "kind": "familyA-seam",
+        "source": "3417@11",
+        "target": "1709@0",
+        "timeMs": 24300
+      },
+      {
+        "citation": "FamilyA:R1",
+        "gate": "ACCEPT",
+        "kind": "familyA-seam",
+        "source": "1693@0",
+        "target": "847@1",
+        "timeMs": 30300
+      }
+    ]
+  },
+  "opening": {
+    "head": "ba6ae1fe2c8b31ab739c91593701177678bff18b",
+    "orreryClean": true,
+    "treeClean": true,
+    "treeDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "protocol": {
+    "bytes": 8246,
+    "path": "task-d/EAR_VALIDATION_PROTOCOL.md",
+    "questions": 4,
+    "sha256": "f4cd7055f64bfbf9160c0a855d355cea09efee1d06b0f40175edb172fbc9d4db"
+  },
+  "schemaVersion": "governed-loop.mvp5-task-d.v1",
+  "staging": {
+    "finalManifestEntries": 64,
+    "manifest": "l21_staging_manifest.json",
+    "note": "manifest finalized with task-0 through task-d artifacts plus the closing report"
+  },
+  "status": "COMPLETE",
+  "still_set_label": "still_set",
+  "stopRulesTriggered": [],
+  "task": "MVP5-DIR-1 Task D"
+}

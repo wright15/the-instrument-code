@@ -1,0 +1,600 @@
+{
+  "close": {
+    "head": "ba6ae1fe2c8b31ab739c91593701177678bff18b",
+    "headUnchanged": true,
+    "orreryClean": true,
+    "treeClean": true,
+    "treeDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "constraints": {
+    "executionRealm": "/home/erick/workspace/scratch-governed-loop-run/mvp5",
+    "gateBytesTouched": false,
+    "orreryChanges": 0,
+    "repoWrites": 0
+  },
+  "directive": "MVP5-DIR-1",
+  "generatedAt": "2026-11-01T18:23:16.947186+00:00",
+  "gov517_correspondence_claimed": false,
+  "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+  "opening": {
+    "bridgeCheck": {
+      "negative": {
+        "exitCode": 1,
+        "expectedMessage": "FAIL-CLOSED: ledger prefix 8d0a0473 != 00000000",
+        "message": "FAIL-CLOSED: ledger prefix 8d0a0473 != 00000000",
+        "messageMatch": true,
+        "rejected": true
+      },
+      "passed": true,
+      "positive": {
+        "exitCode": 0,
+        "nodes": 5544,
+        "passed": true,
+        "summary": "ORRERY-NAV-1 BRIDGE"
+      }
+    },
+    "gateAnchors": {
+      "checks": {
+        "150-154": true,
+        "169": true,
+        "171-172": true,
+        "183-184": true,
+        "733": true
+      },
+      "lines": {
+        "150-154": [
+          "        if cm == nm and cp == np_:",
+          "            if self.gov_root[cm] is None:",
+          "                checks[\"boundary_endpoint\"] = True",
+          "                checks[\"same_family\"] = False",
+          "                return \"REJECT\", [\"ungoverned-transition\"], checks, None"
+        ],
+        "169": "        same_root = cr is not None and nr is not None and cr == nr",
+        "171-172": [
+          "        if same_root and cp == np_:",
+          "            return \"ACCEPT\", [], checks, None"
+        ],
+        "183-184": [
+          "        if checks[\"boundary_endpoint\"]:",
+          "            return \"REJECT\", [\"ungoverned-transition\"], checks, None"
+        ],
+        "733": "        plan[\"dwellMs\"] = int(__import__(\"os\").environ.get(\"ORRERY_BRIDGE_DWELL_MS\", \"1500\"))"
+      }
+    },
+    "repo": {
+      "checks": {
+        "checksumsSha256": true,
+        "head": true,
+        "landingReceiptSha256": true,
+        "ledgerBytes": true,
+        "ledgerLines": true,
+        "ledgerSha256": true,
+        "manifestFileCount": true,
+        "manifestSha256": true,
+        "manifestTotalBytes": true,
+        "treeClean": true,
+        "validationFailed": true,
+        "validationPassed": true,
+        "validationRelease": true,
+        "validationSha256": true
+      },
+      "checksumsSha256": "63e1e776492d2b481e79ebd6c6c29f5e055c0f001cd75777534febbb0f65db34",
+      "head": "ba6ae1fe2c8b31ab739c91593701177678bff18b",
+      "landingReceiptSha256": "311e10ad155d1046f6c2b0800759552f2b8de5fe84cf3a1bab60a1a7268572db",
+      "ledgerBytes": 340531,
+      "ledgerLines": 4112,
+      "ledgerPrefix": "8d0a0473",
+      "ledgerSha256": "8d0a04732370167e84b439a1a019ff6475c951ab86c258b84c79304534f2102d",
+      "manifestFileCount": 1516,
+      "manifestSha256": "933ae6027145e8f636857b169bd3dac323f90fe8c707d045fdac5237db5ce355",
+      "manifestTotalBytes": 96848773,
+      "treeClean": true,
+      "treeDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "validationFailed": 0,
+      "validationPassed": 418,
+      "validationRelease": "seven-governors-integrated-1.9.0",
+      "validationSha256": "e31645789a84db704686def6d47f001e5986a07196c20bea041a099247df4636"
+    },
+    "sizeNotes": [
+      {
+        "directiveBytes": 3572,
+        "note": "SHA-256 pin matches; directive byte column differs from observed file size",
+        "observedBytes": 8185,
+        "path": "tests/fixtures/fivefold_q_table.v1.json"
+      }
+    ],
+    "sweepSourcePins": {
+      "plv3_sweep.json": {
+        "bytes": 10181,
+        "match": true,
+        "sha256": "6a943e44c9ed2dc0dc39810c9656872ee55d5ea86bcd4a1e80eb7de505ad8243"
+      },
+      "plv3_sweep.py": {
+        "bytes": 9318,
+        "match": true,
+        "sha256": "22e6b1e5998c92f445fe3a631b2842231b2d5fdbea56ca760436f3a022ac5c15"
+      },
+      "plv3_sweep_predeclared.json": {
+        "bytes": 1712,
+        "match": true,
+        "sha256": "14117c9460a6b611f849747f4881f296a8f3ce2108bb23524fe8beecd354e87b"
+      }
+    },
+    "treePins": {
+      "orrery/src/audio.ts": {
+        "bytes": 37063,
+        "bytesMatch": true,
+        "expectedBytes": 37063,
+        "match": true,
+        "sha256": "e863b845c8f2709a0fe0e6fe706dce603e795b760c6561d110d240ddb1dfca88"
+      },
+      "qa/mvp4_task_0_receipt.json": {
+        "bytes": 15359,
+        "bytesMatch": true,
+        "expectedBytes": 15359,
+        "match": true,
+        "sha256": "906ba0b196755eafe41ee8abf2d70a03040a0bc995502856984cec1d798e079e"
+      },
+      "qa/mvp4_task_a_receipt.json": {
+        "bytes": 196067,
+        "bytesMatch": true,
+        "expectedBytes": 196067,
+        "match": true,
+        "sha256": "d4e63cb51f6339edf7dcdb721d9753ea6c6cac580f35cf9397201803cd8fdbc1"
+      },
+      "qa/mvp4_task_b_receipt.json": {
+        "bytes": 35008,
+        "bytesMatch": true,
+        "expectedBytes": 35008,
+        "match": true,
+        "sha256": "ffab52b696aeda84204c463abd700e7be86d2e430d6dc8d43d72587381aa7d12"
+      },
+      "qa/mvp4_task_c_receipt.json": {
+        "bytes": 126010,
+        "bytesMatch": true,
+        "expectedBytes": 126010,
+        "match": true,
+        "sha256": "834e3a64c22fba07fa0179b95d8ee26d152c038f67a0a387ae3a2b1796cf4295"
+      },
+      "qa/mvp4_task_d_receipt.json": {
+        "bytes": 36257,
+        "bytesMatch": true,
+        "expectedBytes": 36257,
+        "match": true,
+        "sha256": "8b15f274538cc093e358c306a276a72cc0ca9e04ad8bbec35074ab57289dfc02"
+      },
+      "src/fivefold/quintessence.py": {
+        "bytes": 5163,
+        "bytesMatch": true,
+        "expectedBytes": 5163,
+        "match": true,
+        "sha256": "eefd7e1e060189261c8063652d2ed73a09b16d3ffdcb9f259502a107ef9ceaa0"
+      },
+      "tests/fixtures/fivefold_q_table.v1.json": {
+        "bytes": 8185,
+        "bytesMatch": false,
+        "expectedBytes": 3572,
+        "match": true,
+        "sha256": "bd361793d7c1295872fc95c230f3f9ce234f2cd4ea6899e9a3df08700aa8d604"
+      },
+      "tools/governed-loop/bridge_init.js": {
+        "bytes": 2521,
+        "bytesMatch": true,
+        "expectedBytes": 2521,
+        "match": true,
+        "sha256": "aef2b7429e939dd1cf3e71f96ba8d9790e782b1fc8fc73bf0c59d8ee7336406a"
+      },
+      "tools/governed-loop/census_462.json": {
+        "bytes": 194194,
+        "bytesMatch": true,
+        "expectedBytes": 194194,
+        "match": true,
+        "sha256": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a"
+      },
+      "tools/governed-loop/freeze_report_v3.json": {
+        "bytes": 6573,
+        "bytesMatch": true,
+        "expectedBytes": 6573,
+        "match": true,
+        "sha256": "1c65a07c37740797b2a16048ddac4c17c9877465e7c03498d783291a4a433683"
+      },
+      "tools/governed-loop/frozen_ground_truth.json": {
+        "bytes": 91360,
+        "bytesMatch": true,
+        "expectedBytes": 91360,
+        "match": true,
+        "sha256": "007b0ffe65015bd2c5f1a6fe0df8969961ce8cfb3d499677b143d971e1fc5744"
+      },
+      "tools/governed-loop/frozen_seam_substrate_v3.json": {
+        "bytes": 47207,
+        "bytesMatch": true,
+        "expectedBytes": 47207,
+        "match": true,
+        "sha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f"
+      },
+      "tools/governed-loop/mvp2.py": {
+        "bytes": 38997,
+        "bytesMatch": true,
+        "expectedBytes": 38997,
+        "match": true,
+        "sha256": "79c0cf706fffc23745cab6e87ffbc46d34d70ad94a93291135725e388dc17328"
+      },
+      "tools/governed-loop/mvp2_orrery_nav_smoke.py": {
+        "bytes": 27574,
+        "bytesMatch": true,
+        "expectedBytes": 27574,
+        "match": true,
+        "sha256": "851c9bf2a29c2c5a0a74f88875fc5420ee81c27c246dcdb8ef6f0e079e277c9c"
+      },
+      "tools/governed-loop/mvp4/task-a/mvp4_dynamic_chaldean_card.json": {
+        "bytes": 1999,
+        "bytesMatch": true,
+        "expectedBytes": 1999,
+        "match": true,
+        "sha256": "6486599187687edb1e28481b2bbc79d9a11a06001e4a237505c5e44c1c1a1469"
+      },
+      "tools/governed-loop/mvp4/task-b/mvp4_graph_census.json": {
+        "bytes": 580743,
+        "bytesMatch": true,
+        "expectedBytes": 580743,
+        "match": true,
+        "sha256": "165fb6b33a1ced983b45189738541bba3e206d5655a729c8deeff5cd72627d12"
+      },
+      "tools/governed-loop/mvp4/task-b/mvp4_symbolic_planner.py": {
+        "bytes": 21348,
+        "bytesMatch": true,
+        "expectedBytes": 21348,
+        "match": true,
+        "sha256": "9ff511f14282cbe6ee48010d67092c70c25da0bf5fa6dbd1e50382afeb85f5c0"
+      },
+      "tools/governed-loop/mvp4/task-b/mvp4_symbolic_tools.py": {
+        "bytes": 7139,
+        "bytesMatch": true,
+        "expectedBytes": 7139,
+        "match": true,
+        "sha256": "1d74b401cea788edf237458e8c8844c987c77c94814f8b533c766aaa147701ab"
+      },
+      "tools/governed-loop/mvp4/task-c/coupled_trace.jsonl": {
+        "bytes": 52007,
+        "bytesMatch": true,
+        "expectedBytes": 52007,
+        "match": true,
+        "sha256": "75d52c0ced56af403b4e4e6379474bf3add7138716d192fb7401a3b90c86bc9d"
+      },
+      "tools/governed-loop/mvp4/task-c/mvp4_q_intra_node.py": {
+        "bytes": 4721,
+        "bytesMatch": true,
+        "expectedBytes": 4721,
+        "match": true,
+        "sha256": "8b39ffe4be4d1f801cf1065cd8928c681002249de8ebad1d5246f277e94f815f"
+      },
+      "tools/governed-loop/orrery_nav_bridge.py": {
+        "bytes": 25624,
+        "bytesMatch": true,
+        "expectedBytes": 25624,
+        "match": true,
+        "sha256": "9f2b3da60f0aa3695608d60640b0303a7d5ec0500d27fbe49284c7f399ae4824"
+      },
+      "tools/governed-loop/orrery_nav_overlay.js": {
+        "bytes": 17265,
+        "bytesMatch": true,
+        "expectedBytes": 17265,
+        "match": true,
+        "sha256": "ad558decfa6547c2b6f7b3ceb9247326a0ee9508df5e9c4523ee90b4a64a0613"
+      },
+      "tools/governed-loop/seam_legal_moves_v3.json": {
+        "bytes": 551287,
+        "bytesMatch": true,
+        "expectedBytes": 551287,
+        "match": true,
+        "sha256": "e6cf62a8eefa0924da9286f2e664c1914d9d620ed2d299929f684fd48225c274"
+      },
+      "tools/governed-loop/spike01_evidence.json": {
+        "bytes": 8836,
+        "bytesMatch": true,
+        "expectedBytes": 8836,
+        "match": true,
+        "sha256": "cb170c0d00cea3f2db2b69779dc339848befa60f5a78d257c8680f99f6e56fec"
+      }
+    }
+  },
+  "schemaVersion": "governed-loop.mvp5-task0.v1",
+  "status": "COMPLETE",
+  "still_set_label": "still_set",
+  "stopRulesTriggered": [],
+  "sweep": {
+    "recompute": {
+      "licensedSet": {
+        "digestMatch": true,
+        "edgeCount": 5040,
+        "edgeSetDigest": "7c428a86e6fa60b632eab448a4946c42d79949c4010981dad81e455b081d6b39",
+        "expectedDigest": "7c428a86e6fa60b632eab448a4946c42d79949c4010981dad81e455b081d6b39",
+        "lowered": 2520,
+        "raised": 2520
+      },
+      "orbits": [
+        {
+          "memberCount": 49,
+          "orbitId": "ORBIT-A0",
+          "phase11Exact41": true,
+          "phase11ExpectedTotal": 2009,
+          "phase11Total": 2009,
+          "tier": "A0",
+          "totals": [
+            1764,
+            1867,
+            1886,
+            1893,
+            1912,
+            1871,
+            1902,
+            1861,
+            1880,
+            1887,
+            1906,
+            2009
+          ]
+        },
+        {
+          "memberCount": 35,
+          "orbitId": "ORBIT-A1",
+          "phase11Exact41": true,
+          "phase11ExpectedTotal": 1435,
+          "phase11Total": 1435,
+          "tier": "A1",
+          "totals": [
+            1260,
+            1337,
+            1354,
+            1311,
+            1340,
+            1345,
+            1350,
+            1355,
+            1384,
+            1341,
+            1358,
+            1435
+          ]
+        },
+        {
+          "memberCount": 49,
+          "orbitId": "ORBIT-A2",
+          "phase11Exact41": true,
+          "phase11ExpectedTotal": 2009,
+          "phase11Total": 2009,
+          "tier": "A2",
+          "totals": [
+            1764,
+            1867,
+            1826,
+            1881,
+            1840,
+            1919,
+            1854,
+            1933,
+            1892,
+            1947,
+            1906,
+            2009
+          ]
+        },
+        {
+          "memberCount": 21,
+          "orbitId": "ORBIT-D1",
+          "phase11Exact41": true,
+          "phase11ExpectedTotal": 861,
+          "phase11Total": 861,
+          "tier": "D1",
+          "totals": [
+            756,
+            759,
+            810,
+            837,
+            828,
+            807,
+            810,
+            789,
+            780,
+            807,
+            858,
+            861
+          ]
+        },
+        {
+          "memberCount": 35,
+          "orbitId": "ORBIT-D2",
+          "phase11Exact41": true,
+          "phase11ExpectedTotal": 1435,
+          "phase11Total": 1435,
+          "tier": "D2",
+          "totals": [
+            1260,
+            1241,
+            1294,
+            1371,
+            1400,
+            1381,
+            1314,
+            1295,
+            1324,
+            1401,
+            1454,
+            1435
+          ]
+        },
+        {
+          "memberCount": 21,
+          "orbitId": "ORBIT-D3",
+          "phase11Exact41": true,
+          "phase11ExpectedTotal": 861,
+          "phase11Total": 861,
+          "tier": "D3",
+          "totals": [
+            756,
+            759,
+            774,
+            777,
+            768,
+            771,
+            846,
+            849,
+            840,
+            843,
+            858,
+            861
+          ]
+        },
+        {
+          "memberCount": 35,
+          "orbitId": "ORBIT-D4",
+          "phase11Exact41": true,
+          "phase11ExpectedTotal": 1435,
+          "phase11Total": 1435,
+          "tier": "D4",
+          "totals": [
+            1260,
+            1265,
+            1306,
+            1311,
+            1280,
+            1333,
+            1362,
+            1415,
+            1384,
+            1389,
+            1430,
+            1435
+          ]
+        },
+        {
+          "memberCount": 35,
+          "orbitId": "ORBIT-D5",
+          "phase11Exact41": true,
+          "phase11ExpectedTotal": 1435,
+          "phase11Total": 1435,
+          "tier": "D5",
+          "totals": [
+            1260,
+            1241,
+            1270,
+            1275,
+            1316,
+            1345,
+            1350,
+            1379,
+            1420,
+            1425,
+            1454,
+            1435
+          ]
+        },
+        {
+          "memberCount": 21,
+          "orbitId": "ORBIT-D6",
+          "phase11Exact41": true,
+          "phase11ExpectedTotal": 861,
+          "phase11Total": 861,
+          "tier": "D6",
+          "totals": [
+            756,
+            735,
+            702,
+            705,
+            732,
+            783,
+            834,
+            885,
+            912,
+            915,
+            882,
+            861
+          ]
+        },
+        {
+          "memberCount": 7,
+          "orbitId": "ORBIT-D7",
+          "phase11Exact41": true,
+          "phase11ExpectedTotal": 287,
+          "phase11Total": 287,
+          "tier": "D7",
+          "totals": [
+            252,
+            229,
+            218,
+            219,
+            232,
+            257,
+            282,
+            307,
+            320,
+            321,
+            310,
+            287
+          ]
+        }
+      ],
+      "passed": true,
+      "pc0": {
+        "allAnchoredMasksHaveExactlyOnePc0": true,
+        "evidenceFlag": true,
+        "masksWithExactlyOnePc0": 462,
+        "masksWithPc0": 462,
+        "records": 462
+      },
+      "receiptMatch": {
+        "allOrbitsExact41": true,
+        "orbitTotalsMatch": true,
+        "verdict": "PASS",
+        "wrapChecks": 5544,
+        "wrapFailures": 0
+      },
+      "t11": {
+        "allOrbitsExact41": true,
+        "expectedMembers": 308,
+        "expectedTotal": 12628,
+        "meanExact": true,
+        "members": 308,
+        "orbitCount": 10,
+        "total": 12628,
+        "totalExact": true
+      },
+      "wrapCountIdentity": {
+        "checks": 5544,
+        "failureWitnesses": [],
+        "failures": 0,
+        "identityHolds": true
+      }
+    },
+    "staged": [
+      {
+        "bytes": 1712,
+        "identity": true,
+        "name": "plv3_sweep_predeclared.json",
+        "source": "/home/erick/workspace/governed-loop/plv3_sweep_predeclared.json",
+        "sourceSha256": "14117c9460a6b611f849747f4881f296a8f3ce2108bb23524fe8beecd354e87b",
+        "staged": "/home/erick/workspace/scratch-governed-loop-run/mvp5/l21-staged/policy-v3-sweep/plv3_sweep_predeclared.json",
+        "stagedSha256": "14117c9460a6b611f849747f4881f296a8f3ce2108bb23524fe8beecd354e87b"
+      },
+      {
+        "bytes": 10181,
+        "identity": true,
+        "name": "plv3_sweep.json",
+        "source": "/home/erick/workspace/governed-loop/plv3_sweep.json",
+        "sourceSha256": "6a943e44c9ed2dc0dc39810c9656872ee55d5ea86bcd4a1e80eb7de505ad8243",
+        "staged": "/home/erick/workspace/scratch-governed-loop-run/mvp5/l21-staged/policy-v3-sweep/plv3_sweep.json",
+        "stagedSha256": "6a943e44c9ed2dc0dc39810c9656872ee55d5ea86bcd4a1e80eb7de505ad8243"
+      },
+      {
+        "bytes": 9318,
+        "identity": true,
+        "name": "plv3_sweep.py",
+        "source": "/home/erick/workspace/governed-loop/plv3_sweep.py",
+        "sourceSha256": "22e6b1e5998c92f445fe3a631b2842231b2d5fdbea56ca760436f3a022ac5c15",
+        "staged": "/home/erick/workspace/scratch-governed-loop-run/mvp5/l21-staged/policy-v3-sweep/plv3_sweep.py",
+        "stagedSha256": "22e6b1e5998c92f445fe3a631b2842231b2d5fdbea56ca760436f3a022ac5c15"
+      }
+    ]
+  },
+  "task": "MVP5-DIR-1 Task 0"
+}

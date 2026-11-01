@@ -1,0 +1,36 @@
+{
+  "derivation": "T1_41.allOrbitsExact41 is true and every orbitPhaseSpreads[].means[11] equals 41.0; the phase-11 result is 36 + 5 under the wrap-count identity.",
+  "derivedFrom": {
+    "fields": [
+      "T1_41.allOrbitsExact41",
+      "T1_41.orbitPhaseSpreads[].means[11]"
+    ],
+    "path": "spike01_evidence.json",
+    "sha256": "cb170c0d00cea3f2db2b69779dc339848befa60f5a78d257c8680f99f6e56fec",
+    "statement": "the recorded 41-at-T11 prediction is derived from the realm's Spike-01 artifacts, not from the directive"
+  },
+  "expectation": {
+    "T11": {
+      "allOrbitsExact41": true,
+      "integerRule": "phase-11 pcSum total = 41 * memberCount for every orbit",
+      "perOrbitMeans": {
+        "ORBIT-A0": 41.0,
+        "ORBIT-A1": 41.0,
+        "ORBIT-A2": 41.0,
+        "ORBIT-D1": 41.0,
+        "ORBIT-D2": 41.0,
+        "ORBIT-D3": 41.0,
+        "ORBIT-D4": 41.0,
+        "ORBIT-D5": 41.0,
+        "ORBIT-D6": 41.0,
+        "ORBIT-D7": 41.0
+      }
+    }
+  },
+  "falsification": "Any orbit whose phase-11 mean is not exactly 41 fires alpha's falsification shape: STOP, report, escalate; no in-session correction.",
+  "licenseContext": "The sweep runs against the Policy-v3 licensed transition set: 5,040 cross-phase lifted R1/L1 edges. Family B's 90 same-phase bridges are outside it.",
+  "predeclarationHash": "32630d1ffb90d40d6468ac12e392b98491b4205728404ea397dedd8a3b59bbff",
+  "schemaVersion": "governed-loop.plv3-sweep-predeclaration.v1",
+  "status": "locked-before-sweep",
+  "sweepDefinition": "For each of the 10 orbits and each phase p in 0..11, compute the mean pcSum of the orbit's lifted members T_p(mask); exact integer arithmetic. The recorded prediction is the phase-11 mean."
+}

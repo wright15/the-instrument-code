@@ -50,12 +50,26 @@ const VERSION_TOKEN = /\b\d+\.\d+(?:\.\d+)?(?:-dev)?\b/g;
 const FINGERPRINT_LITERAL = /\b[a-f0-9]{64}\b/g;
 const FINGERPRINT_BINDING_MARKERS = /\b(?:sha-?256|fingerprint|manifest|receipt|historical)\b|(?:canonical|qa)\//i;
 
-// sanctioned by planning seat, MVP3-L19-AUTH1-STOP-ADJUDICATION-1; adjudicated
-// byte-identical historical record (MVP-3 closing report, MVP3-CLOSING-ADJUDICATION-1)
+// sanctioned by planning seat, MVP3-L19-AUTH1-STOP-ADJUDICATION-1 and
+// ADJ-PLANNING-SEAT-20261101-PROSE-M4M5; adjudicated byte-identical historical records.
+// Each sanction binds fixed-point, receipt, and evidence fingerprints as historical
+// prose only. It is not an endorsement, claim, or evidence amendment. The file bytes
+// are frozen; any byte change voids the sanction.
 const SANCTIONED_FINGERPRINT_RECORDS = [
   {
+    // MVP3-L19-AUTH1-STOP-ADJUDICATION-1 / MVP3-CLOSING-ADJUDICATION-1
     path: "scrum/plan/mvp3-sprint-closing-report.md",
     sha256: "8afa9911093e307bb43bf32da70945b5cbdfcc91f0efb69ac56088a3a75d5463",
+  },
+  {
+    // ADJ-PLANNING-SEAT-20261101-PROSE-M4M5
+    path: "scrum/plan/mvp4-sprint-closing-report.md",
+    sha256: "3985643155fc6e8bfcbeae10fb77afa4318fa54e5d34126b809d22cc3e770fe3",
+  },
+  {
+    // ADJ-PLANNING-SEAT-20261101-PROSE-M4M5
+    path: "scrum/plan/mvp5-sprint-closing-report.md",
+    sha256: "c22e1b734a7429635992c0701f003c70b7ab3f54e1a69d8c64bd28d348fa8c57",
   },
 ];
 

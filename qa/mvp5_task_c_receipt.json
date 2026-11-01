@@ -1,0 +1,220 @@
+{
+  "browser": {
+    "consoleErrors": [],
+    "inspect": {
+      "boundaryChips": 12,
+      "boundaryCount": 1848,
+      "boundaryRows": 256,
+      "cells": 84,
+      "classes": [],
+      "displayAnchorButtons": 21,
+      "gridCount": 3696,
+      "nodes": 5544,
+      "seamCatalog": 5130,
+      "total": 5544
+    },
+    "pageErrors": [],
+    "probeAllPass": true,
+    "probeFailures": []
+  },
+  "checks": {
+    "allHopVerdictsAccept": true,
+    "arm3bBars20": true,
+    "arm3bCaptureClean100": true,
+    "arm3bFrequencyMatches100": true,
+    "arm3bHops21": true,
+    "arm3bMicro100": true,
+    "arm3bOutOfMaskZero": true,
+    "boundaryAutoHopPresent": true,
+    "boundaryAutoHopZeroMicro": true,
+    "boundaryChipHighlighted": true,
+    "boundaryChipPhaseZero": true,
+    "consoleErrorsZero": true,
+    "equivP0FrequencyMatches15": true,
+    "equivP0Micro15": true,
+    "equivP0OutOfMaskZero": true,
+    "equivP7FrequencyMatches15": true,
+    "equivP7Micro15": true,
+    "equivP7OutOfMaskZero": true,
+    "inspect12BoundaryChips": true,
+    "inspect256BoundaryRows": true,
+    "inspect5130SeamMoves": true,
+    "inspect5544Nodes": true,
+    "inspect84Cells": true,
+    "pageErrorsZero": true,
+    "probeAllPass": true
+  },
+  "checksPassed": 25,
+  "checksTotal": 25,
+  "close": {
+    "head": "ba6ae1fe2c8b31ab739c91593701177678bff18b",
+    "orreryClean": true,
+    "treeClean": true,
+    "treeDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "constraints": {
+    "gateBytesTouched": false,
+    "orreryChanges": 0,
+    "repoWrites": 0
+  },
+  "directive": "MVP5-DIR-1",
+  "floatScan": {
+    "values": 0,
+    "witnesses": []
+  },
+  "generatedAt": "2026-11-01T18:36:38.424982+00:00",
+  "gov517_correspondence_claimed": false,
+  "harness": {
+    "bridgeNodes": 5544,
+    "bridgePort": 8771,
+    "mode": "headless",
+    "overlay": "/home/erick/projects/integrated-release/tools/governed-loop/orrery_nav_overlay.js",
+    "overlaySha256": "ad558decfa6547c2b6f7b3ceb9247326a0ee9508df5e9c4523ee90b4a64a0613",
+    "probe": "task-c/mvp5_two_tier_probe.js",
+    "probeSha256": "65d199223a77e82a0b7f642cdb40511f72cb7e13c7a5fb791b771900e57688e9",
+    "runnerExitCode": 0,
+    "scheduler": "task-c/mvp5_two_tier_scheduler.js",
+    "schedulerSha256": "8f3fd1549918ca97973b10701336c4188e58c649b57d5f2f55a96221d50f717f",
+    "seconds": 11,
+    "stderr": "",
+    "stdout": "nt.querySelector(`.orrery-nav-boundary-chip[data-phase=\\\"${step.targetPhase}\\\"]`)\\n          : null;\\n        const targetChipActive = targetChip ? targetChip.classList.contains(\\\"is-active\\\") : null;\\n        const capture = {\\n          source: step.source,\\n          target: step.target,\\n          kind: step.kind,\\n          verdict: result.verdict,\\n          citation: result.citation,\\n          emission: result.emission,\\n          sourceBoundary: Boolean(step.sourceBoundary),\\n          boundaryChipActive: chipActive,\\n          boundaryChipPhase: step.sourceBoundary ? step.sourcePhase : null,\\n          targetBoundary: Boolean(step.targetBoundary),\\n          targetChipPhase: step.targetBoundary ? step.targetPhase : null,\\n          targetChipActive,\\n          microScheduled: 0,\\n          macroFrequencies,\\n        };\\n        log.hops.push(capture);\\n        if (step.kind === \\\"boundary-auto-transit\\\") {\\n          log.boundary = capture;\\n          if (live) await sleep(TRANSIT_REST_SECONDS * 1000);\\n        }\\n        continue;\\n      }\\n      throw new Error(`unknown step ${step.type}`);\\n    }\\n    const navState = nav.state();\\n    log.finalNode = navState.node;\\n    log.contexts = events.contexts;\\n    return log;\\n  }\\n\\n  window.__orreryTwoTierReplay = { replay };\\n})();\\n\";\n  const log = {\n    consoleErrors: [], pageErrors: [], failures: [], inspect: null,\n    replays: [], bridge: \"http://127.0.0.1:8771\", allPass: false,\n  };\n  page.on(\"console\", (message) => {\n    if (message.type() === \"error\") log.consoleErrors.push(message.text());\n  });\n  page.on(\"pageerror\", (error) => log.pageErrors.push(String(error.message)));\n  const check = (condition, label) => { if (!condition) log.failures.push(label); };\n  try {\n    await page.waitForFunction(\n      () => document.querySelector(\"#inspector-heading\")?.textContent === \"Saturn A0\",\n    );\n    await page.waitForFunction(\n      () => document.querySelector(\"#audio-enable\")?.disabled === false,\n    );\n    await page.locator(\"#audio-enable\").focus();\n    await page.keyboard.press(\"Enter\");\n    await page.waitForFunction(\n      () => document.querySelector(\"#audio-pause\")?.textContent === \"Pause sound\",\n    );\n    await page.evaluate((url) => { window.__ORRERY_NAV_BRIDGE__ = url; }, \"http://127.0.0.1:8771\");\n    await page.addScriptTag({ path: \"/home/erick/projects/integrated-release/tools/governed-loop/orrery_nav_overlay.js\" });\n    await page.waitForFunction(\n      () => window.__orreryNav && window.__orreryNav.ready === true, null, { timeout: 30000 },\n    );\n    const inspect = await page.evaluate(() => window.__orreryNav.inspect());\n    log.inspect = inspect;\n    check(inspect.cells === 84, \"84 cells\");\n    check(inspect.boundaryChips === 12, \"12 boundary chips\");\n    check(inspect.nodes === 5544, \"5544 nodes\");\n    check(inspect.seamCatalog === 5130, \"5130 seam moves\");\n    check(inspect.boundaryRows === 256, \"256 boundary rows\");\n    check(inspect.displayAnchorButtons === 21, \"21 display anchors\");\n    await page.addScriptTag({ content: SCHEDULER_SOURCE });\n    await page.waitForFunction(() => Boolean(window.__orreryTwoTierReplay));\n    for (const payload of REPLAYS) {\n      const replayed = await page.evaluate(\n        (data) => window.__orreryTwoTierReplay.replay(data), payload,\n      );\n      log.replays.push(replayed);\n    }\n    check(log.consoleErrors.length === 0, \"console clean\");\n    check(log.pageErrors.length === 0, \"page clean\");\n    log.allPass = log.failures.length === 0;\n  } catch (error) {\n    log.failures.push(String(error && error.message ? error.message : error));\n    log.allPass = false;\n  }\n  await page.evaluate((payload) => { window.__orreryNavLog = JSON.stringify(payload); }, log);\n  return \"mvp5-two-tier-complete\";\n}\n)(page);\n```\n### Page\n- Page URL: http://127.0.0.1:4211/?anchor=1453\n- Page Title: Harmonic Orrery\n- Console: 0 errors, 4 warnings\n### Events\n- New console entries: .playwright-cli/console-2026-11-01T18-36-30-788Z.log#L3-L4\n",
+    "vitePort": 4211
+  },
+  "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+  "opening": {
+    "head": "ba6ae1fe2c8b31ab739c91593701177678bff18b",
+    "orreryClean": true,
+    "treeClean": true,
+    "treeDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "replays": [
+    {
+      "bars": 20,
+      "barsVisited": [
+        "1387@0",
+        "1383@0",
+        "875@0",
+        "1259@0",
+        "2517@11",
+        "2765@11",
+        "2771@11",
+        "2773@11",
+        "1741@11",
+        "855@11",
+        "1645@11",
+        "1693@11",
+        "1693@11",
+        "1709@11",
+        "1837@11",
+        "3417@11",
+        "1709@0",
+        "855@0",
+        "1645@0",
+        "1693@0"
+      ],
+      "boundary": {
+        "boundaryChipActive": true,
+        "boundaryChipPhase": 0,
+        "kind": "boundary-auto-transit",
+        "macroFrequencies": 8,
+        "microScheduled": 0,
+        "source": "847@0",
+        "target": "1693@11",
+        "targetChipActive": null
+      },
+      "captureClean": 100,
+      "captureWitnesses": [],
+      "distinctCapturedFrequencies": 21,
+      "distinctPitchClasses": 12,
+      "finalNode": "847@1",
+      "frequencyMatches": 100,
+      "hopVerdicts": [
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT"
+      ],
+      "hops": 21,
+      "microTotal": 100,
+      "mode": "headless",
+      "outOfMask": 0,
+      "trace": "track4_arm3b_dynamic_q_carried"
+    },
+    {
+      "bars": 3,
+      "barsVisited": [
+        "1387@0",
+        "2773@11",
+        "2905@11"
+      ],
+      "boundary": null,
+      "captureClean": 15,
+      "captureWitnesses": [],
+      "distinctCapturedFrequencies": 13,
+      "distinctPitchClasses": 9,
+      "finalNode": "2905@11",
+      "frequencyMatches": 15,
+      "hopVerdicts": [
+        "ACCEPT",
+        "ACCEPT"
+      ],
+      "hops": 2,
+      "microTotal": 15,
+      "mode": "headless",
+      "outOfMask": 0,
+      "trace": "track5_equiv_base_p0"
+    },
+    {
+      "bars": 3,
+      "barsVisited": [
+        "1387@7",
+        "2773@6",
+        "2905@6"
+      ],
+      "boundary": null,
+      "captureClean": 15,
+      "captureWitnesses": [],
+      "distinctCapturedFrequencies": 13,
+      "distinctPitchClasses": 9,
+      "finalNode": "2905@6",
+      "frequencyMatches": 15,
+      "hopVerdicts": [
+        "ACCEPT",
+        "ACCEPT"
+      ],
+      "hops": 2,
+      "microTotal": 15,
+      "mode": "headless",
+      "outOfMask": 0,
+      "trace": "track6_equiv_lifted_p7"
+    }
+  ],
+  "schemaVersion": "governed-loop.mvp5-task-c.v1",
+  "staging": {
+    "allHashVerified": false,
+    "manifest": "l21_staging_manifest.json",
+    "manifestEntries": 57,
+    "manifestSha256": "526136ccdf578b3c6295de77dcbcf690af011da0c8992c3d4b22fb942219cbd4"
+  },
+  "status": "COMPLETE",
+  "still_set_label": "still_set",
+  "stopRulesTriggered": [],
+  "task": "MVP5-DIR-1 Task C"
+}
