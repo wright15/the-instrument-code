@@ -1,0 +1,367 @@
+{
+  "adjudication": {
+    "id": "ADJ-PLANNING-SEAT-20261102-PROSE-M5_5",
+    "proseVerdict": "PASS",
+    "sanctionedDocumentRecords": [
+      {
+        "file": "docs/analysis/ORBIT_SPECTRAL_CATALOG.md",
+        "matched": true,
+        "path": "docs/analysis/ORBIT_SPECTRAL_CATALOG.md",
+        "sha256": "1e14fb78bdb3914a0188d79dcee288377941bba04c6f79e5721f0e803d22da29"
+      }
+    ],
+    "sanctionedFingerprintRecords": 4,
+    "sanctionedFingerprintsBound": 29,
+    "scope": [
+      "scrum/plan/mvp5-5-sprint-closing-report.md",
+      "docs/analysis/ORBIT_SPECTRAL_CATALOG.md"
+    ],
+    "statement": "Binds the byte-frozen MVP-5.5 closing report fingerprints and the orbit spectral catalog scoped count/Hz literals as historical/scoped analysis prose only. Not an endorsement, claim, or evidence amendment. Any byte change voids the sanction."
+  },
+  "cascade": {
+    "commands": [
+      {
+        "command": "python3 scripts/generate-fifth-space-census.py",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "{\"candidateFingerprint\": \"9b9c7eb1695499326a237c20324811b205674c0cea120177dd9bef114277a34d\", \"candidateId\": \"FIFTH_SPACE_CENSUS_v0\", \"records\": 462, \"verdict\": \"confirmed\"}\n"
+      },
+      {
+        "command": "python3 scripts/validate-fifth-space-census.py",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "  \"status\": \"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings (both ledgers)\"\n    },\n    {\n      \"checkId\": \"bindings-court\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen Court position binding\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"66a9ec443aafb7fe1cf9c61affd720d834bc3898a5dbb6dd1178b5886b5402e4\"\n}\n"
+      },
+      {
+        "command": "python3 scripts/generate-shadow-ladder.py",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "{\"candidateFingerprint\": \"70c8865bad41527674f7c43859fb89980b932e205b49e9cf17fb5c5901943459\", \"candidateId\": \"SHADOW_LADDER_v0\", \"records\": 10}\n"
+      },
+      {
+        "command": "python3 scripts/validate-shadow-ladder.py",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "\"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"achirality\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all derived 5-35, 5-34, and predicted 5-33 masks are achiral\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"49d1d5268020ee7ee72a5bb0fe89d8b845c78674382c8e1c0690093a201ecc5f\"\n}\n"
+      },
+      {
+        "command": "python3 scripts/generate-twin-hub-convergence.py",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "{\"candidateFingerprint\": \"c127681047e886309d154725dc8ee23e7bea42d338584491feaf908615ed9c80\", \"candidateId\": \"TWIN_HUB_CONVERGENCE_v0\", \"verdict\": \"confirmed\"}\n"
+      },
+      {
+        "command": "python3 scripts/validate-twin-hub-convergence.py",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "kId\": \"verdict-consistency\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"confirmed\"\n    },\n    {\n      \"checkId\": \"guards-namespace\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"897d6426214857b041f62a9f8297c4efecda0ffe4ee5628bc10be2e49cc87f2c\"\n}\n"
+      },
+      {
+        "command": "node scripts/build-pentatonic-binding-audit-closure.mjs",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "ng_audit/neo4j-live.test.mjs\",\n        \"validate\": \"python3 scripts/generate-pentatonic-7-35-parent-audit.py --check && python3 scripts/validate-pentatonic-7-35-parent-audit.py && npm run test:pentatonic-binding-audit --silent && npm run validate:cypher --silent\"\n      },\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"intrinsic-environment-independence\",\n      \"diagnostic\": \"closure core excludes time, provider, host, process, port, and temporary-path identity\",\n      \"status\": \"PASS\"\n    }\n  ],\n  \"reportFingerprint\": \"0b7c227c9e1602760e6df8460759502e38ea36b37b1ff869d07f0ad36c15b468\"\n}\n"
+      },
+      {
+        "command": "python3 scripts/build-fivefold-engine-promotion-evidence.py",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "{\"evidenceFingerprint\": \"4db588f206761dd4ad4b4aeb47cc7ab3a509107695089b3ab4fa91bf3d42d7ae\", \"evidenceId\": \"fivefold-engine-promotion-evidence-v1\", \"exclusionEvidenceCount\": 11, \"itemEvidenceCount\": 10, \"verdict\": \"PASS\"}\n"
+      },
+      {
+        "command": "node scripts/build-field-derivation-bundle.mjs",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "{\"bundleId\":\"FIELD_DERIVATION_OBS014_015_016_v1\",\"bundleFingerprint\":\"5798a275eb6929a722034a268ea8f2ea22e0141bf0073153a3e1d40cfd9ecc34\",\"observations\":3}\n"
+      },
+      {
+        "command": "node scripts/build-orrery-taxonomy-read-model.mjs",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "{\"bundleId\":\"TAXONOMY_READ_MODEL_v1\",\"recordCount\":462,\"stale\":false}\n"
+      },
+      {
+        "command": "node scripts/build-orrery-d-tier-taxonomy-dataset.mjs",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "{\"datasetId\":\"D_TIER_TAXONOMY_DATASET_v1\",\"recordCount\":175,\"stale\":false}\n"
+      }
+    ]
+  },
+  "constraints": {
+    "claimEvent": false,
+    "encoderBytesModified": false,
+    "gateBytesModified": false,
+    "qEngineBytesModified": false,
+    "repoWrites": "working-tree landing; uncommitted at seal",
+    "tagOrPush": false
+  },
+  "directive": "MVP5.5-DIR-1",
+  "landing": {
+    "closingReports": 1,
+    "mode": "working-tree; uncommitted at seal",
+    "newFiles": 15,
+    "payloadFiles": 14,
+    "receiptFiles": 5,
+    "rows": [
+      {
+        "bytes": 29659,
+        "destination": "tools/governed-loop/mvp5_5/task-0/mvp5_5_task_0.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5_5/task-0/mvp5_5_task_0.py",
+        "origin": "task-0",
+        "role": "mvp5_5_task_0",
+        "sha256": "17a929821859d7e0f41c9fbc60835e5f39a28d739c2d4c402930d2489c792f1c",
+        "source": "task-0/mvp5_5_task_0.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5_5/task-0/mvp5_5_task_0.py",
+        "verified": true
+      },
+      {
+        "bytes": 6418,
+        "destination": "tools/governed-loop/mvp5_5/task-0/mvp5_5_predeclared_bets.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5_5/task-0/mvp5_5_predeclared_bets.json",
+        "origin": "task-0",
+        "role": "mvp5_5_predeclared_bets",
+        "sha256": "e51e95a40c093b1acc06f1d4bf934c38078ae33de6dcdd45b88559a340bd973c",
+        "source": "task-0/mvp5_5_predeclared_bets.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5_5/task-0/mvp5_5_predeclared_bets.json",
+        "verified": true
+      },
+      {
+        "bytes": 21998,
+        "destination": "qa/mvp5_5_task_0_receipt.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/qa/mvp5_5_task_0_receipt.json",
+        "origin": "task-0",
+        "role": "mvp5_5_task_0_receipt",
+        "sha256": "87761e937782d5fa12b0e61eab13549587c210ae83d46dee199a2715256d2bd0",
+        "source": "task-0/mvp5_5_task_0_receipt.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5_5/task-0/mvp5_5_task_0_receipt.json",
+        "verified": true
+      },
+      {
+        "bytes": 21605,
+        "destination": "tools/governed-loop/mvp5_5/task-a/mvp5_5_task_a.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5_5/task-a/mvp5_5_task_a.py",
+        "origin": "task-a",
+        "role": "mvp5_5_task_a",
+        "sha256": "09f3d4e492ede1e8b6327d0421a6adfcf417e3b8681baa4ca8de97be2a4834e2",
+        "source": "task-a/mvp5_5_task_a.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5_5/task-a/mvp5_5_task_a.py",
+        "verified": true
+      },
+      {
+        "bytes": 21933,
+        "destination": "qa/mvp5_5_task_a_receipt.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/qa/mvp5_5_task_a_receipt.json",
+        "origin": "task-a",
+        "role": "mvp5_5_task_a_receipt",
+        "sha256": "9d6ed3d8635680bbb839c39d40e7d02a6d820a030d6a50eed6c0cd7665c17fc9",
+        "source": "task-a/mvp5_5_task_a_receipt.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5_5/task-a/mvp5_5_task_a_receipt.json",
+        "verified": true
+      },
+      {
+        "bytes": 16476,
+        "destination": "tools/governed-loop/mvp5_5/task-b/mvp5_5_task_b.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5_5/task-b/mvp5_5_task_b.py",
+        "origin": "task-b",
+        "role": "mvp5_5_task_b",
+        "sha256": "a8945cf144dbd303aba2b3e08ab2896118b75c2703c8ab132c260a2dcdbfc7f2",
+        "source": "task-b/mvp5_5_task_b.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5_5/task-b/mvp5_5_task_b.py",
+        "verified": true
+      },
+      {
+        "bytes": 30926,
+        "destination": "qa/mvp5_5_task_b_receipt.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/qa/mvp5_5_task_b_receipt.json",
+        "origin": "task-b",
+        "role": "mvp5_5_task_b_receipt",
+        "sha256": "9def72961c11f4353c6aa229c98b74c53dc84d91e04eb8cd27c71dd4fcf93800",
+        "source": "task-b/mvp5_5_task_b_receipt.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5_5/task-b/mvp5_5_task_b_receipt.json",
+        "verified": true
+      },
+      {
+        "bytes": 25823,
+        "destination": "tools/governed-loop/mvp5_5/task-c/mvp5_5_task_c.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5_5/task-c/mvp5_5_task_c.py",
+        "origin": "task-c",
+        "role": "mvp5_5_task_c",
+        "sha256": "09a579d0c3798f16e0142470024e6f99616036c04a840919dbcec169ce661095",
+        "source": "task-c/mvp5_5_task_c.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5_5/task-c/mvp5_5_task_c.py",
+        "verified": true
+      },
+      {
+        "bytes": 45370,
+        "destination": "qa/mvp5_5_task_c_receipt.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/qa/mvp5_5_task_c_receipt.json",
+        "origin": "task-c",
+        "role": "mvp5_5_task_c_receipt",
+        "sha256": "de0db46c200291a247c1d5c8111413c2aa62a1fa11e7b26eacd12a6f96814f69",
+        "source": "task-c/mvp5_5_task_c_receipt.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5_5/task-c/mvp5_5_task_c_receipt.json",
+        "verified": true
+      },
+      {
+        "bytes": 42866,
+        "destination": "tools/governed-loop/mvp5_5/task-d/mvp5_5_task_d.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp5_5/task-d/mvp5_5_task_d.py",
+        "origin": "task-d",
+        "role": "mvp5_5_task_d",
+        "sha256": "dc8407c2ec54adee639e14f4f03e7afd493b8e055404f8b9b10f128a5f09c625",
+        "source": "task-d/mvp5_5_task_d.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5_5/task-d/mvp5_5_task_d.py",
+        "verified": true
+      },
+      {
+        "bytes": 2866,
+        "destination": "qa/mvp5_5_task_d_receipt.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/qa/mvp5_5_task_d_receipt.json",
+        "origin": "task-d",
+        "role": "mvp5_5_task_d_receipt",
+        "sha256": "5ccbff2dfbff4abf3a927a4f8367d7b4857abfb54dab5a8be1035eee60d140ff",
+        "source": "task-d/mvp5_5_task_d_receipt.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5_5/task-d/mvp5_5_task_d_receipt.json",
+        "verified": true
+      },
+      {
+        "bytes": 21189,
+        "destination": "docs/analysis/orbit_spectral_catalog.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/docs/analysis/orbit_spectral_catalog.json",
+        "origin": "task-d",
+        "role": "orbit_spectral_catalog",
+        "sha256": "6f782a5f9d89057273d4c13432d3cd6ef07e3f2dff338034c5319fc479151774",
+        "source": "task-d/orbit_spectral_catalog.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5_5/task-d/orbit_spectral_catalog.json",
+        "verified": true
+      },
+      {
+        "bytes": 18762,
+        "destination": "docs/analysis/ORBIT_SPECTRAL_CATALOG.md",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/docs/analysis/ORBIT_SPECTRAL_CATALOG.md",
+        "origin": "task-d",
+        "role": "ORBIT_SPECTRAL_CATALOG",
+        "sha256": "1e14fb78bdb3914a0188d79dcee288377941bba04c6f79e5721f0e803d22da29",
+        "source": "task-d/ORBIT_SPECTRAL_CATALOG.md",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5_5/task-d/ORBIT_SPECTRAL_CATALOG.md",
+        "verified": true
+      },
+      {
+        "bytes": 5492,
+        "destination": "scrum/plan/mvp5-5-sprint-closing-report.md",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/scrum/plan/mvp5-5-sprint-closing-report.md",
+        "origin": "MVP5_5-CLOSING-REPORT.md",
+        "role": "mvp5_5_sprint_closing_report",
+        "sha256": "8d6fac210731f4a5ad70d7d174abe4314c2f20d0a5d6b3af67b9bcfed39bc02e",
+        "source": "MVP5_5-CLOSING-REPORT.md",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp5_5/MVP5_5-CLOSING-REPORT.md",
+        "verified": true
+      }
+    ]
+  },
+  "ledger": {
+    "afterBytes": 364225,
+    "afterLines": 4216,
+    "afterSha256": "ab1416156b261d02afecebfaabf5d10d59e89e6faea7136c8f9cda2a2d0d2c28",
+    "beforeBytes": 356466,
+    "beforeLines": 4189,
+    "beforeSha256": "e74cf6a2d79e9170c6686f2fb5287043ab1dd2c41d4f9a56d62b97f766c8f1c4",
+    "entry": "single combined L22 entry appended at tail; no prior entry amended",
+    "path": "provenance/DECISION_LEDGER.md",
+    "prefixIdentity": true
+  },
+  "manifestRegen": {
+    "checksumsArtifact": "CHECKSUMS.sha256",
+    "command": "node scripts/build-manifest.mjs",
+    "expectedNewFiles": 15,
+    "manifestArtifact": "MANIFEST.json",
+    "note": "MANIFEST.json and CHECKSUMS.sha256 are regenerated after this receipt is written; the count includes the fourteen staged payloads and the landing receipt.",
+    "observedFileCount": 1600,
+    "preReceiptManifestSha256": "51a07df0e34fc8ae84a9107733b546bb00b7b2d5b1deb1845d12c85ade3a9778"
+  },
+  "opening": {
+    "baseHead": "52202ed9c4aad7d4baead2859972853aad28e7bb",
+    "checksumsBefore": {
+      "sha256": "44f3d07cd6a076f2c452a65be0643d6cf1998df06fb6b62018b884995678c8ca"
+    },
+    "ledgerBefore": {
+      "bytes": 356466,
+      "lines": 4189,
+      "path": "provenance/DECISION_LEDGER.md",
+      "sha256": "e74cf6a2d79e9170c6686f2fb5287043ab1dd2c41d4f9a56d62b97f766c8f1c4"
+    },
+    "manifestBefore": {
+      "fileCount": 1585,
+      "sha256": "076077b192364ab84d3258304a999f38ba993e8412db9f1b52a957c34fca9541",
+      "totalBytes": 110505727
+    },
+    "stagingManifestSha256": "277a0574a95516ef565a9cd1332a2580ca891fb557586d5203fe9a182455edb9",
+    "stagingTotal": 14,
+    "stagingVerified": 14,
+    "treeClean": true,
+    "validationBefore": {
+      "checksFailed": 0,
+      "checksPassed": 418,
+      "releaseId": "seven-governors-integrated-1.9.0",
+      "sha256": "207b9aca105bc6d97310e1849a1ecb916507395ed87dabf433957a6891b2134a",
+      "verdict": "PASS"
+    }
+  },
+  "postChecks": {
+    "dTier": {
+      "command": "node scripts/build-orrery-d-tier-taxonomy-dataset.mjs --check",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"datasetId\":\"D_TIER_TAXONOMY_DATASET_v1\",\"recordCount\":175,\"stale\":false}\n"
+    },
+    "evidence": {
+      "command": "npm run validate:evidence --silent",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "pe: 'test'\n  ...\n# Subtest: refreshed canonical planning and promotion evidence carry complete generator provenance and registration\nok 9 - refreshed canonical planning and promotion evidence carry complete generator provenance and registration\n  ---\n  duration_ms: 3441.07228\n  type: 'test'\n  ...\n# Subtest: repository data files that the validator reads exist and parse\nok 10 - repository data files that the validator reads exist and parse\n  ---\n  duration_ms: 0.5169\n  type: 'test'\n  ...\n1..10\n# tests 10\n# suites 0\n# pass 10\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 6938.845784\n"
+    },
+    "fieldDerivation": {
+      "command": "node scripts/build-field-derivation-bundle.mjs --check",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"bundleId\":\"FIELD_DERIVATION_OBS014_015_016_v1\",\"bundleFingerprint\":\"5798a275eb6929a722034a268ea8f2ea22e0141bf0073153a3e1d40cfd9ecc34\",\"observations\":3,\"stale\":false}\n"
+    },
+    "ledgerPins": {
+      "command": "npm run validate:ledger-pins --silent",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "not a live ledger freshness binding.\",\n      \"sha256\": \"0691837291afcd1cd2abe3ff998b4835dffdb03e5910be3a8ea3058662e8cf3c\"\n    },\n    {\n      \"line\": 364,\n      \"name\": \"EXPECTED_AUTHORING_FINGERPRINT\",\n      \"path\": \"scripts/validate-mechanics-thermodynamics-registry.py\",\n      \"reason\": \"Fixed v1 authored-registry baseline; not a live ledger freshness binding.\",\n      \"sha256\": \"d4d31aec34f5568014b21b57340682e5b461cc348dc8d2333bf86695449536ff\"\n    }\n  ],\n  \"verdict\": \"PASS\",\n  \"violations\": []\n}\n........                                                                 [100%]\n8 passed in 0.38s\n"
+    },
+    "proseConsistency": {
+      "command": "node scripts/validate-validation-prose-consistency.mjs",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\n  \"verdict\": \"PASS\",\n  \"authoritativeChecksPassed\": 418,\n  \"violations\": 0\n}\n"
+    }
+  },
+  "resolvedWarnings": [
+    {
+      "resolution": "ADJ-PLANNING-SEAT-20261102-PROSE-M5_5",
+      "resolvedAt": "2026-11-02",
+      "warning": "Prose-consistency literals in the new closing report and orbit spectral catalog."
+    }
+  ],
+  "schemaVersion": "governed-loop.mvp5-5-landing.v1",
+  "status": "COMPLETE",
+  "stopRulesTriggered": [],
+  "task": "MVP5.5-L22-LANDING",
+  "validation": {
+    "artifact": "qa/integrated-release-validation.json",
+    "command": "node scripts/validate-release.mjs",
+    "expectedChecksFailed": 0,
+    "expectedChecksPassed": 418,
+    "expectedVerdict": "PASS",
+    "failures": [],
+    "observedChecksFailed": 0,
+    "observedChecksPassed": 418,
+    "observedVerdict": "PASS",
+    "validationFileSha256": "917b65ab719a108cd1a32e0605cb699bedff2bb6f76c1e742eb73d6da59321c2"
+  },
+  "warnings": []
+}

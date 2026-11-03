@@ -1,0 +1,1155 @@
+{
+  "candidateB": {
+    "classification": "ORBIT_INVOLUTION_INVARIANT",
+    "grandMeanReflection": {
+      "allMatch": true,
+      "checks": [
+        {
+          "expected": 23716,
+          "match": true,
+          "mean": "77",
+          "phase": 0,
+          "total": 23716
+        },
+        {
+          "expected": 23716,
+          "match": true,
+          "mean": "77",
+          "phase": 1,
+          "total": 23716
+        },
+        {
+          "expected": 23716,
+          "match": true,
+          "mean": "77",
+          "phase": 2,
+          "total": 23716
+        },
+        {
+          "expected": 23716,
+          "match": true,
+          "mean": "77",
+          "phase": 3,
+          "total": 23716
+        },
+        {
+          "expected": 23716,
+          "match": true,
+          "mean": "77",
+          "phase": 4,
+          "total": 23716
+        },
+        {
+          "expected": 23716,
+          "match": true,
+          "mean": "77",
+          "phase": 5,
+          "total": 23716
+        }
+      ],
+      "grandTotalAtPhase0": 11812,
+      "memberCount": 308
+    },
+    "pairwiseInversionIdentity": {
+      "checks": 5544,
+      "failures": 0,
+      "identity": "pcSum(T_p(M)) + pcSum(T_(11-p)(I0(M))) = 77",
+      "value": 77
+    },
+    "perMaskTrivialityFalsification": {
+      "censusChecks": 2310,
+      "censusFailures": 2086,
+      "chiralMasks": 452,
+      "chiralPairFailures": 2086,
+      "governedChecks": 1540,
+      "governedFailures": 1362,
+      "identityFailsOnIndividualChiralMasks": true,
+      "witnesses": [
+        {
+          "chiral": true,
+          "mask": 127,
+          "phase": 1,
+          "stateId": 127,
+          "value": 59
+        },
+        {
+          "chiral": true,
+          "mask": 127,
+          "phase": 2,
+          "stateId": 127,
+          "value": 71
+        },
+        {
+          "chiral": true,
+          "mask": 127,
+          "phase": 3,
+          "stateId": 127,
+          "value": 83
+        },
+        {
+          "chiral": true,
+          "mask": 127,
+          "phase": 4,
+          "stateId": 127,
+          "value": 95
+        },
+        {
+          "chiral": true,
+          "mask": 127,
+          "phase": 5,
+          "stateId": 127,
+          "value": 107
+        }
+      ]
+    },
+    "perOrbitInvolutionClosure": {
+      "allClosed": true,
+      "boundary": {
+        "closed": true,
+        "fixedPointCount": 0,
+        "memberCount": 154,
+        "twoCycleCount": 77
+      },
+      "orbitCount": 10,
+      "orbits": [
+        {
+          "closed": true,
+          "fixedPointCount": 1,
+          "fixedPointMasks": [
+            1709
+          ],
+          "memberCount": 49,
+          "orbitId": "ORBIT-A0",
+          "twoCycleCount": 24
+        },
+        {
+          "closed": true,
+          "fixedPointCount": 1,
+          "fixedPointMasks": [
+            1461
+          ],
+          "memberCount": 35,
+          "orbitId": "ORBIT-A1",
+          "twoCycleCount": 17
+        },
+        {
+          "closed": true,
+          "fixedPointCount": 1,
+          "fixedPointMasks": [
+            2731
+          ],
+          "memberCount": 49,
+          "orbitId": "ORBIT-A2",
+          "twoCycleCount": 24
+        },
+        {
+          "closed": true,
+          "fixedPointCount": 1,
+          "fixedPointMasks": [
+            2483
+          ],
+          "memberCount": 21,
+          "orbitId": "ORBIT-D1",
+          "twoCycleCount": 10
+        },
+        {
+          "closed": true,
+          "fixedPointCount": 1,
+          "fixedPointMasks": [
+            1821
+          ],
+          "memberCount": 35,
+          "orbitId": "ORBIT-D2",
+          "twoCycleCount": 17
+        },
+        {
+          "closed": true,
+          "fixedPointCount": 1,
+          "fixedPointMasks": [
+            2843
+          ],
+          "memberCount": 21,
+          "orbitId": "ORBIT-D3",
+          "twoCycleCount": 10
+        },
+        {
+          "closed": true,
+          "fixedPointCount": 1,
+          "fixedPointMasks": [
+            953
+          ],
+          "memberCount": 35,
+          "orbitId": "ORBIT-D4",
+          "twoCycleCount": 17
+        },
+        {
+          "closed": true,
+          "fixedPointCount": 1,
+          "fixedPointMasks": [
+            3239
+          ],
+          "memberCount": 35,
+          "orbitId": "ORBIT-D5",
+          "twoCycleCount": 17
+        },
+        {
+          "closed": true,
+          "fixedPointCount": 1,
+          "fixedPointMasks": [
+            3351
+          ],
+          "memberCount": 21,
+          "orbitId": "ORBIT-D6",
+          "twoCycleCount": 10
+        },
+        {
+          "closed": true,
+          "fixedPointCount": 1,
+          "fixedPointMasks": [
+            3599
+          ],
+          "memberCount": 7,
+          "orbitId": "ORBIT-D7",
+          "twoCycleCount": 3
+        }
+      ]
+    },
+    "perOrbitReflection": {
+      "checks": 60,
+      "failures": 0,
+      "phasePairsPerOrbit": 6
+    }
+  },
+  "candidateC": {
+    "classification": "REPRESENTATION_ISOMORPHISM",
+    "d2D5Separation": {
+      "d2Wrap": [
+        22,
+        16,
+        14,
+        18,
+        22,
+        26,
+        22,
+        18,
+        14,
+        16,
+        22,
+        35
+      ],
+      "d5Wrap": [
+        22,
+        18,
+        20,
+        17,
+        18,
+        20,
+        18,
+        17,
+        20,
+        18,
+        22,
+        35
+      ],
+      "differingPhases": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "equalPhases": [
+        0,
+        1,
+        10,
+        11
+      ],
+      "equalSpread": true,
+      "wrapLaddersDistinct": true
+    },
+    "directiveLadderCrossCheck": {
+      "checks": 5,
+      "matches": 4,
+      "notes": [
+        {
+          "computedWrap": [
+            22,
+            16,
+            14,
+            18,
+            22,
+            26,
+            22,
+            18,
+            14,
+            16,
+            22,
+            35
+          ],
+          "differingPhases": [
+            2,
+            8
+          ],
+          "directiveWrap": [
+            22,
+            16,
+            13,
+            18,
+            22,
+            26,
+            22,
+            18,
+            13,
+            16,
+            22,
+            35
+          ],
+          "disposition": "generator law (7n - delta)/12 governs; directive ladder cell is a transcription note, sum(7n) must hold",
+          "orbitId": "ORBIT-D2"
+        }
+      ]
+    },
+    "dispersion": {
+      "ORBIT-A0": {
+        "class": "ANCHOR_FLAT",
+        "spreadExact": "5"
+      },
+      "ORBIT-A1": {
+        "class": "ANCHOR_FLAT",
+        "spreadExact": "5"
+      },
+      "ORBIT-A2": {
+        "class": "ANCHOR_FLAT",
+        "spreadExact": "5"
+      },
+      "ORBIT-D1": {
+        "class": "ANCHOR_FLAT",
+        "spreadExact": "5"
+      },
+      "ORBIT-D2": {
+        "class": "MODERATE_BEND",
+        "spreadExact": "213/35"
+      },
+      "ORBIT-D3": {
+        "class": "ANCHOR_FLAT",
+        "spreadExact": "5"
+      },
+      "ORBIT-D4": {
+        "class": "ANCHOR_FLAT",
+        "spreadExact": "5"
+      },
+      "ORBIT-D5": {
+        "class": "MODERATE_BEND",
+        "spreadExact": "213/35"
+      },
+      "ORBIT-D6": {
+        "class": "DEEP_DISPERSION",
+        "spreadExact": "71/7"
+      },
+      "ORBIT-D7": {
+        "class": "EXTREME_RAMP",
+        "spreadExact": "103/7"
+      }
+    },
+    "distinctSpectra": {
+      "allDistinct": true,
+      "distinctPairs": 45,
+      "duplicatePairs": [],
+      "orbitCount": 10,
+      "pairChecks": 45
+    },
+    "histogramMatch": {
+      "checks": 120,
+      "failures": 0,
+      "law": "w_p = h_O((11 - p) mod 12)"
+    },
+    "histogramSymmetry": {
+      "checks": 110,
+      "failures": 0,
+      "law": "w_p = w_(10-p); w_11 = h(0) = n"
+    },
+    "stepWrapRecovery": {
+      "checks": 120,
+      "failures": 0,
+      "integerWrapLaw": "w_p = (7n - (total_(p+1) - total_p)) / 12",
+      "wrapSumLaw": "sum_p w_p = 7n"
+    },
+    "trajectories": {
+      "ORBIT-A0": {
+        "dispersionClass": "ANCHOR_FLAT",
+        "histogram": [
+          49,
+          20,
+          27,
+          28,
+          27,
+          32,
+          26,
+          32,
+          27,
+          28,
+          27,
+          20
+        ],
+        "meansExact": [
+          "36",
+          "1867/49",
+          "1886/49",
+          "1893/49",
+          "1912/49",
+          "1871/49",
+          "1902/49",
+          "1861/49",
+          "1880/49",
+          "1887/49",
+          "1906/49",
+          "41"
+        ],
+        "memberCount": 49,
+        "spreadExact": "5",
+        "totals": [
+          1764,
+          1867,
+          1886,
+          1893,
+          1912,
+          1871,
+          1902,
+          1861,
+          1880,
+          1887,
+          1906,
+          2009
+        ],
+        "wrapLadder": [
+          20,
+          27,
+          28,
+          27,
+          32,
+          26,
+          32,
+          27,
+          28,
+          27,
+          20,
+          49
+        ]
+      },
+      "ORBIT-A1": {
+        "dispersionClass": "ANCHOR_FLAT",
+        "histogram": [
+          35,
+          14,
+          19,
+          24,
+          18,
+          20,
+          20,
+          20,
+          18,
+          24,
+          19,
+          14
+        ],
+        "meansExact": [
+          "36",
+          "191/5",
+          "1354/35",
+          "1311/35",
+          "268/7",
+          "269/7",
+          "270/7",
+          "271/7",
+          "1384/35",
+          "1341/35",
+          "194/5",
+          "41"
+        ],
+        "memberCount": 35,
+        "spreadExact": "5",
+        "totals": [
+          1260,
+          1337,
+          1354,
+          1311,
+          1340,
+          1345,
+          1350,
+          1355,
+          1384,
+          1341,
+          1358,
+          1435
+        ],
+        "wrapLadder": [
+          14,
+          19,
+          24,
+          18,
+          20,
+          20,
+          20,
+          18,
+          24,
+          19,
+          14,
+          35
+        ]
+      },
+      "ORBIT-A2": {
+        "dispersionClass": "ANCHOR_FLAT",
+        "histogram": [
+          49,
+          20,
+          32,
+          24,
+          32,
+          22,
+          34,
+          22,
+          32,
+          24,
+          32,
+          20
+        ],
+        "meansExact": [
+          "36",
+          "1867/49",
+          "1826/49",
+          "1881/49",
+          "1840/49",
+          "1919/49",
+          "1854/49",
+          "1933/49",
+          "1892/49",
+          "1947/49",
+          "1906/49",
+          "41"
+        ],
+        "memberCount": 49,
+        "spreadExact": "5",
+        "totals": [
+          1764,
+          1867,
+          1826,
+          1881,
+          1840,
+          1919,
+          1854,
+          1933,
+          1892,
+          1947,
+          1906,
+          2009
+        ],
+        "wrapLadder": [
+          20,
+          32,
+          24,
+          32,
+          22,
+          34,
+          22,
+          32,
+          24,
+          32,
+          20,
+          49
+        ]
+      },
+      "ORBIT-D1": {
+        "dispersionClass": "ANCHOR_FLAT",
+        "histogram": [
+          21,
+          12,
+          8,
+          10,
+          13,
+          14,
+          12,
+          14,
+          13,
+          10,
+          8,
+          12
+        ],
+        "meansExact": [
+          "36",
+          "253/7",
+          "270/7",
+          "279/7",
+          "276/7",
+          "269/7",
+          "270/7",
+          "263/7",
+          "260/7",
+          "269/7",
+          "286/7",
+          "41"
+        ],
+        "memberCount": 21,
+        "spreadExact": "5",
+        "totals": [
+          756,
+          759,
+          810,
+          837,
+          828,
+          807,
+          810,
+          789,
+          780,
+          807,
+          858,
+          861
+        ],
+        "wrapLadder": [
+          12,
+          8,
+          10,
+          13,
+          14,
+          12,
+          14,
+          13,
+          10,
+          8,
+          12,
+          21
+        ]
+      },
+      "ORBIT-D2": {
+        "dispersionClass": "MODERATE_BEND",
+        "histogram": [
+          35,
+          22,
+          16,
+          14,
+          18,
+          22,
+          26,
+          22,
+          18,
+          14,
+          16,
+          22
+        ],
+        "meansExact": [
+          "36",
+          "1241/35",
+          "1294/35",
+          "1371/35",
+          "40",
+          "1381/35",
+          "1314/35",
+          "37",
+          "1324/35",
+          "1401/35",
+          "1454/35",
+          "41"
+        ],
+        "memberCount": 35,
+        "spreadExact": "213/35",
+        "totals": [
+          1260,
+          1241,
+          1294,
+          1371,
+          1400,
+          1381,
+          1314,
+          1295,
+          1324,
+          1401,
+          1454,
+          1435
+        ],
+        "wrapLadder": [
+          22,
+          16,
+          14,
+          18,
+          22,
+          26,
+          22,
+          18,
+          14,
+          16,
+          22,
+          35
+        ]
+      },
+      "ORBIT-D3": {
+        "dispersionClass": "ANCHOR_FLAT",
+        "histogram": [
+          21,
+          12,
+          11,
+          12,
+          13,
+          12,
+          6,
+          12,
+          13,
+          12,
+          11,
+          12
+        ],
+        "meansExact": [
+          "36",
+          "253/7",
+          "258/7",
+          "37",
+          "256/7",
+          "257/7",
+          "282/7",
+          "283/7",
+          "40",
+          "281/7",
+          "286/7",
+          "41"
+        ],
+        "memberCount": 21,
+        "spreadExact": "5",
+        "totals": [
+          756,
+          759,
+          774,
+          777,
+          768,
+          771,
+          846,
+          849,
+          840,
+          843,
+          858,
+          861
+        ],
+        "wrapLadder": [
+          12,
+          11,
+          12,
+          13,
+          12,
+          6,
+          12,
+          13,
+          12,
+          11,
+          12,
+          21
+        ]
+      },
+      "ORBIT-D4": {
+        "dispersionClass": "ANCHOR_FLAT",
+        "histogram": [
+          35,
+          20,
+          17,
+          20,
+          23,
+          16,
+          18,
+          16,
+          23,
+          20,
+          17,
+          20
+        ],
+        "meansExact": [
+          "36",
+          "253/7",
+          "1306/35",
+          "1311/35",
+          "256/7",
+          "1333/35",
+          "1362/35",
+          "283/7",
+          "1384/35",
+          "1389/35",
+          "286/7",
+          "41"
+        ],
+        "memberCount": 35,
+        "spreadExact": "5",
+        "totals": [
+          1260,
+          1265,
+          1306,
+          1311,
+          1280,
+          1333,
+          1362,
+          1415,
+          1384,
+          1389,
+          1430,
+          1435
+        ],
+        "wrapLadder": [
+          20,
+          17,
+          20,
+          23,
+          16,
+          18,
+          16,
+          23,
+          20,
+          17,
+          20,
+          35
+        ]
+      },
+      "ORBIT-D5": {
+        "dispersionClass": "MODERATE_BEND",
+        "histogram": [
+          35,
+          22,
+          18,
+          20,
+          17,
+          18,
+          20,
+          18,
+          17,
+          20,
+          18,
+          22
+        ],
+        "meansExact": [
+          "36",
+          "1241/35",
+          "254/7",
+          "255/7",
+          "188/5",
+          "269/7",
+          "270/7",
+          "197/5",
+          "284/7",
+          "285/7",
+          "1454/35",
+          "41"
+        ],
+        "memberCount": 35,
+        "spreadExact": "213/35",
+        "totals": [
+          1260,
+          1241,
+          1270,
+          1275,
+          1316,
+          1345,
+          1350,
+          1379,
+          1420,
+          1425,
+          1454,
+          1435
+        ],
+        "wrapLadder": [
+          22,
+          18,
+          20,
+          17,
+          18,
+          20,
+          18,
+          17,
+          20,
+          18,
+          22,
+          35
+        ]
+      },
+      "ORBIT-D6": {
+        "dispersionClass": "DEEP_DISPERSION",
+        "histogram": [
+          21,
+          14,
+          15,
+          12,
+          10,
+          8,
+          8,
+          8,
+          10,
+          12,
+          15,
+          14
+        ],
+        "meansExact": [
+          "36",
+          "35",
+          "234/7",
+          "235/7",
+          "244/7",
+          "261/7",
+          "278/7",
+          "295/7",
+          "304/7",
+          "305/7",
+          "42",
+          "41"
+        ],
+        "memberCount": 21,
+        "spreadExact": "71/7",
+        "totals": [
+          756,
+          735,
+          702,
+          705,
+          732,
+          783,
+          834,
+          885,
+          912,
+          915,
+          882,
+          861
+        ],
+        "wrapLadder": [
+          14,
+          15,
+          12,
+          10,
+          8,
+          8,
+          8,
+          10,
+          12,
+          15,
+          14,
+          21
+        ]
+      },
+      "ORBIT-D7": {
+        "dispersionClass": "EXTREME_RAMP",
+        "histogram": [
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          2,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "meansExact": [
+          "36",
+          "229/7",
+          "218/7",
+          "219/7",
+          "232/7",
+          "257/7",
+          "282/7",
+          "307/7",
+          "320/7",
+          "321/7",
+          "310/7",
+          "41"
+        ],
+        "memberCount": 7,
+        "spreadExact": "103/7",
+        "totals": [
+          252,
+          229,
+          218,
+          219,
+          232,
+          257,
+          282,
+          307,
+          320,
+          321,
+          310,
+          287
+        ],
+        "wrapLadder": [
+          6,
+          5,
+          4,
+          3,
+          2,
+          2,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    }
+  },
+  "candidateD": {
+    "classification": "ORBIT_INVOLUTION_INVARIANT",
+    "crossOrbitSpread": {
+      "coincidenceSet": [
+        0,
+        11
+      ],
+      "mirrorChecks": [
+        {
+          "match": true,
+          "mirrorPhase": 11,
+          "mirrorSpreadExact": "0",
+          "phase": 0,
+          "spreadExact": "0"
+        },
+        {
+          "match": true,
+          "mirrorPhase": 10,
+          "mirrorSpreadExact": "192/35",
+          "phase": 1,
+          "spreadExact": "192/35"
+        },
+        {
+          "match": true,
+          "mirrorPhase": 9,
+          "mirrorSpreadExact": "264/35",
+          "phase": 2,
+          "spreadExact": "264/35"
+        },
+        {
+          "match": true,
+          "mirrorPhase": 8,
+          "mirrorSpreadExact": "60/7",
+          "phase": 3,
+          "spreadExact": "60/7"
+        },
+        {
+          "match": true,
+          "mirrorPhase": 7,
+          "mirrorSpreadExact": "48/7",
+          "phase": 4,
+          "spreadExact": "48/7"
+        },
+        {
+          "match": true,
+          "mirrorPhase": 6,
+          "mirrorSpreadExact": "96/35",
+          "phase": 5,
+          "spreadExact": "96/35"
+        },
+        {
+          "match": true,
+          "mirrorPhase": 5,
+          "mirrorSpreadExact": "96/35",
+          "phase": 6,
+          "spreadExact": "96/35"
+        },
+        {
+          "match": true,
+          "mirrorPhase": 4,
+          "mirrorSpreadExact": "48/7",
+          "phase": 7,
+          "spreadExact": "48/7"
+        },
+        {
+          "match": true,
+          "mirrorPhase": 3,
+          "mirrorSpreadExact": "60/7",
+          "phase": 8,
+          "spreadExact": "60/7"
+        },
+        {
+          "match": true,
+          "mirrorPhase": 2,
+          "mirrorSpreadExact": "264/35",
+          "phase": 9,
+          "spreadExact": "264/35"
+        },
+        {
+          "match": true,
+          "mirrorPhase": 1,
+          "mirrorSpreadExact": "192/35",
+          "phase": 10,
+          "spreadExact": "192/35"
+        },
+        {
+          "match": true,
+          "mirrorPhase": 0,
+          "mirrorSpreadExact": "0",
+          "phase": 11,
+          "spreadExact": "0"
+        }
+      ],
+      "mirrorSymmetric": true,
+      "phases": 12,
+      "vectorExact": [
+        "0",
+        "192/35",
+        "264/35",
+        "60/7",
+        "48/7",
+        "96/35",
+        "96/35",
+        "48/7",
+        "60/7",
+        "264/35",
+        "192/35",
+        "0"
+      ]
+    },
+    "crossOrbitVariance": {
+      "definition": "unweighted variance of the 10 orbit means at each phase",
+      "vectorExact": [
+        "0",
+        "3888144/1500625",
+        "7923984/1500625",
+        "9388816/1500625",
+        "6034944/1500625",
+        "1171344/1500625",
+        "1171344/1500625",
+        "6034944/1500625",
+        "9388816/1500625",
+        "7923984/1500625",
+        "3888144/1500625",
+        "0"
+      ]
+    },
+    "extrema": {
+      "globalMaxExact": "60/7",
+      "globalMaxPhases": [
+        3,
+        8
+      ],
+      "interiorMinExact": "96/35",
+      "interiorMinPhases": [
+        5,
+        6
+      ]
+    }
+  },
+  "directive": "MVP5.5-DIR-1",
+  "floatScan": {
+    "values": 0,
+    "witnesses": []
+  },
+  "gov517_correspondence_claimed": false,
+  "modality": {
+    "modality1ExactRational": true,
+    "modality1ZeroFloats": true,
+    "modality3DiscreteOnly": true
+  },
+  "predeclaration": {
+    "path": "task-0/mvp5_5_predeclared_bets.json",
+    "predeclarationHash": "4a762c28603e83103c03e91d3a1007d6b2581b7ade753ee7b1f0f1b87c75bb93",
+    "sha256": "e51e95a40c093b1acc06f1d4bf934c38078ae33de6dcdd45b88559a340bd973c",
+    "status": "verified-before-evaluation"
+  },
+  "schemaVersion": "governed-loop.mvp5-5-task-a.v1",
+  "status": "COMPLETE",
+  "still_set_label": "still_set",
+  "stopRulesTriggered": [],
+  "task": "TA"
+}

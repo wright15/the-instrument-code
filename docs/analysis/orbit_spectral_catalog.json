@@ -1,0 +1,1121 @@
+{
+  "candidateVerdicts": {
+    "A": {
+      "allSevenNoteMaskChecks": "792/792",
+      "censusChecks": "462/462",
+      "classification": "TRIVIAL_IDENTITY",
+      "identityValue": 462,
+      "orbitChecks": "10/10"
+    },
+    "B": {
+      "chiralCounterexamples": 2086,
+      "classification": "ORBIT_INVOLUTION_INVARIANT",
+      "pairwiseI0Checks": "5544/5544",
+      "perOrbitPhaseChecks": "60/60"
+    },
+    "C": {
+      "classification": "REPRESENTATION_ISOMORPHISM",
+      "distinctSpectra": "10/10",
+      "histogramMatchChecks": "120/120",
+      "pairwiseDistinct": "45/45",
+      "stepWrapChecks": "120/120"
+    },
+    "D": {
+      "classification": "ORBIT_INVOLUTION_INVARIANT",
+      "coincidenceSet": [
+        0,
+        11
+      ],
+      "interiorMinExact": "96/35",
+      "maxSpreadExact": "60/7"
+    }
+  },
+  "catalogFlags": {
+    "modality1ZeroFloats": true,
+    "modality2Guarded": true,
+    "modality3DiscreteOnly": true
+  },
+  "catalogId": "ORBIT_SPECTRAL_CATALOG_v1",
+  "crossOrbitSpread": {
+    "coincidenceSet": [
+      0,
+      11
+    ],
+    "globalMaxExact": "60/7",
+    "globalMaxPhases": [
+      3,
+      8
+    ],
+    "interiorMinExact": "96/35",
+    "interiorMinPhases": [
+      5,
+      6
+    ],
+    "mirrorSymmetric": true,
+    "vectorExact": [
+      "0",
+      "192/35",
+      "264/35",
+      "60/7",
+      "48/7",
+      "96/35",
+      "96/35",
+      "48/7",
+      "60/7",
+      "264/35",
+      "192/35",
+      "0"
+    ]
+  },
+  "crossOrbitVariance": {
+    "definition": "unweighted variance of the 10 orbit means at each phase",
+    "vectorExact": [
+      "0",
+      "3888144/1500625",
+      "7923984/1500625",
+      "9388816/1500625",
+      "6034944/1500625",
+      "1171344/1500625",
+      "1171344/1500625",
+      "6034944/1500625",
+      "9388816/1500625",
+      "7923984/1500625",
+      "3888144/1500625",
+      "0"
+    ]
+  },
+  "directive": "MVP5.5-DIR-1",
+  "gov517_correspondence_claimed": false,
+  "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+  "modality2PhotonicSummary": {
+    "acousticBridge": {
+      "barCount": 86,
+      "c1Disposition": "BOUNDARY_CONFIRMED",
+      "c2Disposition": "BOUNDARY_REFUTED",
+      "c3Verified": true,
+      "correlationCfftVsModel": 0.9997254884767137,
+      "equivariantRows": [
+        {
+          "bar": 1,
+          "deltaCfftHz": 47.7414279924069,
+          "deltaPhase": 7,
+          "deltaWraps": 4,
+          "nodeBase": 1387,
+          "observedPcSumShift": 1,
+          "phaseP0": 0,
+          "phaseP7": 7,
+          "signAgreement": true,
+          "symbolicLawHolds": true,
+          "symbolicPcSumShift": 1
+        },
+        {
+          "bar": 2,
+          "deltaCfftHz": -175.72882472774154,
+          "deltaPhase": -5,
+          "deltaWraps": -2,
+          "nodeBase": 2773,
+          "observedPcSumShift": -11,
+          "phaseP0": 11,
+          "phaseP7": 6,
+          "signAgreement": true,
+          "symbolicLawHolds": true,
+          "symbolicPcSumShift": -11
+        },
+        {
+          "bar": 3,
+          "deltaCfftHz": -34.55386297580998,
+          "deltaPhase": -5,
+          "deltaWraps": -2,
+          "nodeBase": 2905,
+          "observedPcSumShift": -11,
+          "phaseP0": 11,
+          "phaseP7": 6,
+          "signAgreement": true,
+          "symbolicLawHolds": true,
+          "symbolicPcSumShift": -11
+        }
+      ],
+      "medianAbsoluteRelativeError": 0.005046578954093679,
+      "officeBands": {
+        "Jupiter": {
+          "barCount": 2,
+          "maxCentroidHz": 529.3409065606205,
+          "meanCentroidHz": 512.0639750727155,
+          "minCentroidHz": 494.78704358481053,
+          "registerOffset": 0,
+          "waveform": "triangle"
+        },
+        "Mercury": {
+          "barCount": 24,
+          "maxCentroidHz": 518.3775638360163,
+          "meanCentroidHz": 484.71692957074714,
+          "minCentroidHz": 441.5281395110854,
+          "registerOffset": 0,
+          "waveform": "triangle"
+        },
+        "Saturn": {
+          "barCount": 50,
+          "maxCentroidHz": 787.6153056524519,
+          "meanCentroidHz": 708.661278638668,
+          "minCentroidHz": 659.7601255082302,
+          "registerOffset": -12,
+          "waveform": "square"
+        },
+        "Sun": {
+          "barCount": 10,
+          "maxCentroidHz": 2672.7824203222094,
+          "meanCentroidHz": 2574.152314207558,
+          "minCentroidHz": 2397.6779799435585,
+          "registerOffset": 12,
+          "waveform": "sawtooth"
+        }
+      },
+      "registerBands": {
+        "-12": {
+          "measuredOffices": {
+            "Saturn": {
+              "barCount": 50,
+              "maxCentroidHz": 787.6153056524519,
+              "meanCentroidHz": 708.661278638668,
+              "minCentroidHz": 659.7601255082302,
+              "registerOffset": -12,
+              "waveform": "square"
+            }
+          },
+          "offices": [
+            "Saturn"
+          ]
+        },
+        "0": {
+          "measuredOffices": {
+            "Jupiter": {
+              "barCount": 2,
+              "maxCentroidHz": 529.3409065606205,
+              "meanCentroidHz": 512.0639750727155,
+              "minCentroidHz": 494.78704358481053,
+              "registerOffset": 0,
+              "waveform": "triangle"
+            },
+            "Mercury": {
+              "barCount": 24,
+              "maxCentroidHz": 518.3775638360163,
+              "meanCentroidHz": 484.71692957074714,
+              "minCentroidHz": 441.5281395110854,
+              "registerOffset": 0,
+              "waveform": "triangle"
+            }
+          },
+          "offices": [
+            "Jupiter",
+            "Mercury",
+            "Moon"
+          ]
+        },
+        "12": {
+          "measuredOffices": {
+            "Sun": {
+              "barCount": 10,
+              "maxCentroidHz": 2672.7824203222094,
+              "meanCentroidHz": 2574.152314207558,
+              "minCentroidHz": 2397.6779799435585,
+              "registerOffset": 12,
+              "waveform": "sawtooth"
+            }
+          },
+          "offices": [
+            "Mars",
+            "Sun",
+            "Venus"
+          ]
+        }
+      }
+    },
+    "b1": {
+      "correlationMu2VsMeanAtP0": 0.9999993189292581,
+      "correlationMu2VsMeanAtP11": 0.999999318929258,
+      "disposition": "BOUNDARY_REFUTED",
+      "minCrossOrbitSpreadHz": 15.2277001870616,
+      "mu1OrbitInvariantAtP0": [
+        "36"
+      ],
+      "mu1OrbitInvariantAtP11": [
+        "41"
+      ],
+      "toleranceHz": 1e-09
+    },
+    "b2": {
+      "disposition": "BOUNDARY_CONFIRMED",
+      "logDualExact": true,
+      "logDualMaxDeviation": 7.105427357601002e-15,
+      "maxResidualHz": 4.547473508864641e-13,
+      "nonTrivialRatioCoincidences": 0,
+      "stepChecks": 5544,
+      "stepFailures": 0
+    },
+    "interpretationPolicy": {
+      "causationClaim": false,
+      "globalCHNull": true,
+      "physicalQuantityClaim": false,
+      "tierClassifier": false
+    }
+  },
+  "orbits": [
+    {
+      "dispersionClass": "ANCHOR_FLAT",
+      "histogramIndexOrder": "c = 0..11",
+      "involutionI0": {
+        "fixedPointCount": 1,
+        "fixedPointMasks": [
+          1709
+        ],
+        "twoCycleCount": 24
+      },
+      "meansExact": [
+        "36",
+        "1867/49",
+        "1886/49",
+        "1893/49",
+        "1912/49",
+        "1871/49",
+        "1902/49",
+        "1861/49",
+        "1880/49",
+        "1887/49",
+        "1906/49",
+        "41"
+      ],
+      "memberCount": 49,
+      "orbitId": "ORBIT-A0",
+      "pitchClassHistogram": [
+        49,
+        20,
+        27,
+        28,
+        27,
+        32,
+        26,
+        32,
+        27,
+        28,
+        27,
+        20
+      ],
+      "secondMomentExact": [
+        "13232/49",
+        "14223/49",
+        "14412/49",
+        "14495/49",
+        "14736/49",
+        "14295/49",
+        "14636/49",
+        "2025/7",
+        "14352/49",
+        "14423/49",
+        "14652/49",
+        "15927/49"
+      ],
+      "spreadExact": "5",
+      "tier": "A0",
+      "totals": [
+        1764,
+        1867,
+        1886,
+        1893,
+        1912,
+        1871,
+        1902,
+        1861,
+        1880,
+        1887,
+        1906,
+        2009
+      ],
+      "wrapLadder": [
+        20,
+        27,
+        28,
+        27,
+        32,
+        26,
+        32,
+        27,
+        28,
+        27,
+        20,
+        49
+      ]
+    },
+    {
+      "dispersionClass": "ANCHOR_FLAT",
+      "histogramIndexOrder": "c = 0..11",
+      "involutionI0": {
+        "fixedPointCount": 1,
+        "fixedPointMasks": [
+          1461
+        ],
+        "twoCycleCount": 17
+      },
+      "meansExact": [
+        "36",
+        "191/5",
+        "1354/35",
+        "1311/35",
+        "268/7",
+        "269/7",
+        "270/7",
+        "271/7",
+        "1384/35",
+        "1341/35",
+        "194/5",
+        "41"
+      ],
+      "memberCount": 35,
+      "orbitId": "ORBIT-A1",
+      "pitchClassHistogram": [
+        35,
+        14,
+        19,
+        24,
+        18,
+        20,
+        20,
+        20,
+        18,
+        24,
+        19,
+        14
+      ],
+      "secondMomentExact": [
+        "9484/35",
+        "10233/35",
+        "1488/5",
+        "9913/35",
+        "10188/35",
+        "10233/35",
+        "10288/35",
+        "1479/5",
+        "10716/35",
+        "10273/35",
+        "10464/35",
+        "11409/35"
+      ],
+      "spreadExact": "5",
+      "tier": "A1",
+      "totals": [
+        1260,
+        1337,
+        1354,
+        1311,
+        1340,
+        1345,
+        1350,
+        1355,
+        1384,
+        1341,
+        1358,
+        1435
+      ],
+      "wrapLadder": [
+        14,
+        19,
+        24,
+        18,
+        20,
+        20,
+        20,
+        18,
+        24,
+        19,
+        14,
+        35
+      ]
+    },
+    {
+      "dispersionClass": "ANCHOR_FLAT",
+      "histogramIndexOrder": "c = 0..11",
+      "involutionI0": {
+        "fixedPointCount": 1,
+        "fixedPointMasks": [
+          2731
+        ],
+        "twoCycleCount": 24
+      },
+      "meansExact": [
+        "36",
+        "1867/49",
+        "1826/49",
+        "1881/49",
+        "1840/49",
+        "1919/49",
+        "1854/49",
+        "1933/49",
+        "1892/49",
+        "1947/49",
+        "1906/49",
+        "41"
+      ],
+      "memberCount": 49,
+      "orbitId": "ORBIT-A2",
+      "pitchClassHistogram": [
+        49,
+        20,
+        32,
+        24,
+        32,
+        22,
+        34,
+        22,
+        32,
+        24,
+        32,
+        20
+      ],
+      "secondMomentExact": [
+        "13340/49",
+        "14331/49",
+        "13800/49",
+        "14339/49",
+        "13836/49",
+        "14691/49",
+        "13976/49",
+        "14859/49",
+        "14460/49",
+        "15131/49",
+        "14760/49",
+        "16035/49"
+      ],
+      "spreadExact": "5",
+      "tier": "A2",
+      "totals": [
+        1764,
+        1867,
+        1826,
+        1881,
+        1840,
+        1919,
+        1854,
+        1933,
+        1892,
+        1947,
+        1906,
+        2009
+      ],
+      "wrapLadder": [
+        20,
+        32,
+        24,
+        32,
+        22,
+        34,
+        22,
+        32,
+        24,
+        32,
+        20,
+        49
+      ]
+    },
+    {
+      "dispersionClass": "ANCHOR_FLAT",
+      "histogramIndexOrder": "c = 0..11",
+      "involutionI0": {
+        "fixedPointCount": 1,
+        "fixedPointMasks": [
+          2483
+        ],
+        "twoCycleCount": 10
+      },
+      "meansExact": [
+        "36",
+        "253/7",
+        "270/7",
+        "279/7",
+        "276/7",
+        "269/7",
+        "270/7",
+        "263/7",
+        "260/7",
+        "269/7",
+        "286/7",
+        "41"
+      ],
+      "memberCount": 21,
+      "orbitId": "ORBIT-D1",
+      "pitchClassHistogram": [
+        21,
+        12,
+        8,
+        10,
+        13,
+        14,
+        12,
+        14,
+        13,
+        10,
+        8,
+        12
+      ],
+      "secondMomentExact": [
+        "5704/21",
+        "805/3",
+        "6148/21",
+        "925/3",
+        "6424/21",
+        "6211/21",
+        "892/3",
+        "5995/21",
+        "5848/21",
+        "6115/21",
+        "6724/21",
+        "6859/21"
+      ],
+      "spreadExact": "5",
+      "tier": "D1",
+      "totals": [
+        756,
+        759,
+        810,
+        837,
+        828,
+        807,
+        810,
+        789,
+        780,
+        807,
+        858,
+        861
+      ],
+      "wrapLadder": [
+        12,
+        8,
+        10,
+        13,
+        14,
+        12,
+        14,
+        13,
+        10,
+        8,
+        12,
+        21
+      ]
+    },
+    {
+      "dispersionClass": "MODERATE_BEND",
+      "histogramIndexOrder": "c = 0..11",
+      "involutionI0": {
+        "fixedPointCount": 1,
+        "fixedPointMasks": [
+          1821
+        ],
+        "twoCycleCount": 17
+      },
+      "meansExact": [
+        "36",
+        "1241/35",
+        "1294/35",
+        "1371/35",
+        "40",
+        "1381/35",
+        "1314/35",
+        "37",
+        "1324/35",
+        "1401/35",
+        "1454/35",
+        "41"
+      ],
+      "memberCount": 35,
+      "orbitId": "ORBIT-D2",
+      "pitchClassHistogram": [
+        35,
+        22,
+        16,
+        14,
+        18,
+        22,
+        26,
+        22,
+        18,
+        14,
+        16,
+        22
+      ],
+      "secondMomentExact": [
+        "9612/35",
+        "9209/35",
+        "1376/5",
+        "10449/35",
+        "10844/35",
+        "10721/35",
+        "9984/35",
+        "9689/35",
+        "9932/35",
+        "10809/35",
+        "11552/35",
+        "11537/35"
+      ],
+      "spreadExact": "213/35",
+      "tier": "D2",
+      "totals": [
+        1260,
+        1241,
+        1294,
+        1371,
+        1400,
+        1381,
+        1314,
+        1295,
+        1324,
+        1401,
+        1454,
+        1435
+      ],
+      "wrapLadder": [
+        22,
+        16,
+        14,
+        18,
+        22,
+        26,
+        22,
+        18,
+        14,
+        16,
+        22,
+        35
+      ]
+    },
+    {
+      "dispersionClass": "ANCHOR_FLAT",
+      "histogramIndexOrder": "c = 0..11",
+      "involutionI0": {
+        "fixedPointCount": 1,
+        "fixedPointMasks": [
+          2843
+        ],
+        "twoCycleCount": 10
+      },
+      "meansExact": [
+        "36",
+        "253/7",
+        "258/7",
+        "37",
+        "256/7",
+        "257/7",
+        "282/7",
+        "283/7",
+        "40",
+        "281/7",
+        "286/7",
+        "41"
+      ],
+      "memberCount": 21,
+      "orbitId": "ORBIT-D3",
+      "pitchClassHistogram": [
+        21,
+        12,
+        11,
+        12,
+        13,
+        12,
+        6,
+        12,
+        13,
+        12,
+        11,
+        12
+      ],
+      "secondMomentExact": [
+        "1944/7",
+        "1921/7",
+        "1948/7",
+        "1937/7",
+        "1880/7",
+        "1865/7",
+        "2140/7",
+        "311",
+        "2168/7",
+        "2201/7",
+        "2284/7",
+        "2329/7"
+      ],
+      "spreadExact": "5",
+      "tier": "D3",
+      "totals": [
+        756,
+        759,
+        774,
+        777,
+        768,
+        771,
+        846,
+        849,
+        840,
+        843,
+        858,
+        861
+      ],
+      "wrapLadder": [
+        12,
+        11,
+        12,
+        13,
+        12,
+        6,
+        12,
+        13,
+        12,
+        11,
+        12,
+        21
+      ]
+    },
+    {
+      "dispersionClass": "ANCHOR_FLAT",
+      "histogramIndexOrder": "c = 0..11",
+      "involutionI0": {
+        "fixedPointCount": 1,
+        "fixedPointMasks": [
+          953
+        ],
+        "twoCycleCount": 17
+      },
+      "meansExact": [
+        "36",
+        "253/7",
+        "1306/35",
+        "1311/35",
+        "256/7",
+        "1333/35",
+        "1362/35",
+        "283/7",
+        "1384/35",
+        "1389/35",
+        "286/7",
+        "41"
+      ],
+      "memberCount": 35,
+      "orbitId": "ORBIT-D4",
+      "pitchClassHistogram": [
+        35,
+        20,
+        17,
+        20,
+        23,
+        16,
+        18,
+        16,
+        23,
+        20,
+        17,
+        20
+      ],
+      "secondMomentExact": [
+        "1936/7",
+        "1913/7",
+        "9892/35",
+        "9869/35",
+        "9424/35",
+        "1985/7",
+        "10244/35",
+        "10909/35",
+        "10672/35",
+        "2161/7",
+        "2276/7",
+        "2321/7"
+      ],
+      "spreadExact": "5",
+      "tier": "D4",
+      "totals": [
+        1260,
+        1265,
+        1306,
+        1311,
+        1280,
+        1333,
+        1362,
+        1415,
+        1384,
+        1389,
+        1430,
+        1435
+      ],
+      "wrapLadder": [
+        20,
+        17,
+        20,
+        23,
+        16,
+        18,
+        16,
+        23,
+        20,
+        17,
+        20,
+        35
+      ]
+    },
+    {
+      "dispersionClass": "MODERATE_BEND",
+      "histogramIndexOrder": "c = 0..11",
+      "involutionI0": {
+        "fixedPointCount": 1,
+        "fixedPointMasks": [
+          3239
+        ],
+        "twoCycleCount": 17
+      },
+      "meansExact": [
+        "36",
+        "1241/35",
+        "254/7",
+        "255/7",
+        "188/5",
+        "269/7",
+        "270/7",
+        "197/5",
+        "284/7",
+        "285/7",
+        "1454/35",
+        "41"
+      ],
+      "memberCount": 35,
+      "orbitId": "ORBIT-D5",
+      "pitchClassHistogram": [
+        35,
+        22,
+        18,
+        20,
+        17,
+        18,
+        20,
+        18,
+        17,
+        20,
+        18,
+        22
+      ],
+      "secondMomentExact": [
+        "9768/35",
+        "1873/7",
+        "1900/7",
+        "1881/7",
+        "9752/35",
+        "10037/35",
+        "10092/35",
+        "2089/7",
+        "2200/7",
+        "2241/7",
+        "11708/35",
+        "11693/35"
+      ],
+      "spreadExact": "213/35",
+      "tier": "D5",
+      "totals": [
+        1260,
+        1241,
+        1270,
+        1275,
+        1316,
+        1345,
+        1350,
+        1379,
+        1420,
+        1425,
+        1454,
+        1435
+      ],
+      "wrapLadder": [
+        22,
+        18,
+        20,
+        17,
+        18,
+        20,
+        18,
+        17,
+        20,
+        18,
+        22,
+        35
+      ]
+    },
+    {
+      "dispersionClass": "DEEP_DISPERSION",
+      "histogramIndexOrder": "c = 0..11",
+      "involutionI0": {
+        "fixedPointCount": 1,
+        "fixedPointMasks": [
+          3351
+        ],
+        "twoCycleCount": 10
+      },
+      "meansExact": [
+        "36",
+        "35",
+        "234/7",
+        "235/7",
+        "244/7",
+        "261/7",
+        "278/7",
+        "295/7",
+        "304/7",
+        "305/7",
+        "42",
+        "41"
+      ],
+      "memberCount": 21,
+      "orbitId": "ORBIT-D6",
+      "pitchClassHistogram": [
+        21,
+        14,
+        15,
+        12,
+        10,
+        8,
+        8,
+        8,
+        10,
+        12,
+        15,
+        14
+      ],
+      "secondMomentExact": [
+        "6028/21",
+        "5671/21",
+        "5128/21",
+        "4951/21",
+        "724/3",
+        "5527/21",
+        "6088/21",
+        "6751/21",
+        "7228/21",
+        "7471/21",
+        "7288/21",
+        "7183/21"
+      ],
+      "spreadExact": "71/7",
+      "tier": "D6",
+      "totals": [
+        756,
+        735,
+        702,
+        705,
+        732,
+        783,
+        834,
+        885,
+        912,
+        915,
+        882,
+        861
+      ],
+      "wrapLadder": [
+        14,
+        15,
+        12,
+        10,
+        8,
+        8,
+        8,
+        10,
+        12,
+        15,
+        14,
+        21
+      ]
+    },
+    {
+      "dispersionClass": "EXTREME_RAMP",
+      "histogramIndexOrder": "c = 0..11",
+      "involutionI0": {
+        "fixedPointCount": 1,
+        "fixedPointMasks": [
+          3599
+        ],
+        "twoCycleCount": 3
+      },
+      "meansExact": [
+        "36",
+        "229/7",
+        "218/7",
+        "219/7",
+        "232/7",
+        "257/7",
+        "282/7",
+        "307/7",
+        "320/7",
+        "321/7",
+        "310/7",
+        "41"
+      ],
+      "memberCount": 7,
+      "orbitId": "ORBIT-D7",
+      "pitchClassHistogram": [
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        2,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "secondMomentExact": [
+        "296",
+        "1761/7",
+        "1548/7",
+        "1457/7",
+        "216",
+        "1737/7",
+        "2012/7",
+        "2337/7",
+        "2568/7",
+        "383",
+        "2652/7",
+        "351"
+      ],
+      "spreadExact": "103/7",
+      "tier": "D7",
+      "totals": [
+        252,
+        229,
+        218,
+        219,
+        232,
+        257,
+        282,
+        307,
+        320,
+        321,
+        310,
+        287
+      ],
+      "wrapLadder": [
+        6,
+        5,
+        4,
+        3,
+        2,
+        2,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "schemaVersion": "governed-loop.mvp5-5-orbit-spectral-catalog.v1",
+  "sourcePins": {
+    "census_462.json": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+    "frozen_ground_truth.json": "007b0ffe65015bd2c5f1a6fe0df8969961ce8cfb3d499677b143d971e1fc5744",
+    "plv3_sweep.json": "6a943e44c9ed2dc0dc39810c9656872ee55d5ea86bcd4a1e80eb7de505ad8243"
+  },
+  "still_set_label": "still_set"
+}

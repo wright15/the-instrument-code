@@ -1,0 +1,85 @@
+{
+  "catalog": {
+    "discreteFloatScan": {
+      "values": 0,
+      "witnesses": []
+    },
+    "json": "task-d/orbit_spectral_catalog.json",
+    "jsonSha256": "6f782a5f9d89057273d4c13432d3cd6ef07e3f2dff338034c5319fc479151774",
+    "markdown": "task-d/ORBIT_SPECTRAL_CATALOG.md",
+    "markdownSha256": "1e14fb78bdb3914a0188d79dcee288377941bba04c6f79e5721f0e803d22da29",
+    "orbitCount": 10,
+    "phaseCount": 12
+  },
+  "closingFixedPoint": {
+    "gateBytesTouched": false,
+    "head": "52202ed9c4aad7d4baead2859972853aad28e7bb",
+    "ledgerBytes": 356466,
+    "ledgerLines": 4189,
+    "ledgerSha256": "e74cf6a2d79e9170c6686f2fb5287043ab1dd2c41d4f9a56d62b97f766c8f1c4",
+    "orreryChanges": 0,
+    "releaseManifestBytes": 110505727,
+    "releaseManifestFiles": 1585,
+    "releaseManifestSha256": "076077b192364ab84d3258304a999f38ba993e8412db9f1b52a957c34fca9541",
+    "repoWrites": 0,
+    "treeClean": true,
+    "treeDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "directive": "MVP5.5-DIR-1",
+  "gov517_correspondence_claimed": false,
+  "modality2Summary": {
+    "acousticC1Disposition": "BOUNDARY_CONFIRMED",
+    "acousticC2Disposition": "BOUNDARY_REFUTED",
+    "acousticC3Verified": true,
+    "fftModelCorrelation": 0.9997254884767137,
+    "interpretationPolicy": {
+      "causationClaim": false,
+      "globalCHNull": true,
+      "physicalQuantityClaim": false,
+      "tierClassifier": false
+    },
+    "photonicB1Disposition": "BOUNDARY_REFUTED",
+    "photonicB2Disposition": "BOUNDARY_CONFIRMED"
+  },
+  "receiptChain": {
+    "T0": {
+      "path": "task-0/mvp5_5_task_0_receipt.json",
+      "sha256": "87761e937782d5fa12b0e61eab13549587c210ae83d46dee199a2715256d2bd0"
+    },
+    "TA": {
+      "path": "task-a/mvp5_5_task_a_receipt.json",
+      "sha256": "9d6ed3d8635680bbb839c39d40e7d02a6d820a030d6a50eed6c0cd7665c17fc9"
+    },
+    "TB": {
+      "path": "task-b/mvp5_5_task_b_receipt.json",
+      "sha256": "9def72961c11f4353c6aa229c98b74c53dc84d91e04eb8cd27c71dd4fcf93800"
+    },
+    "TC": {
+      "path": "task-c/mvp5_5_task_c_receipt.json",
+      "sha256": "de0db46c200291a247c1d5c8111413c2aa62a1fa11e7b26eacd12a6f96814f69"
+    }
+  },
+  "schemaVersion": "governed-loop.mvp5-5-task-d.v1",
+  "stagingManifest": {
+    "allHashVerified": true,
+    "entryCount": 14,
+    "path": "l22_staging_manifest.json"
+  },
+  "status": "COMPLETE",
+  "still_set_label": "still_set",
+  "stopRulesTriggered": [],
+  "task": "TD",
+  "verdictSummary": {
+    "b1": "BOUNDARY_REFUTED",
+    "b2": "BOUNDARY_CONFIRMED",
+    "c1": "BOUNDARY_CONFIRMED",
+    "c2": "BOUNDARY_REFUTED",
+    "c3Verified": true,
+    "candidateA": "TRIVIAL_IDENTITY",
+    "candidateB": "ORBIT_INVOLUTION_INVARIANT",
+    "candidateC": "REPRESENTATION_ISOMORPHISM",
+    "candidateD": "ORBIT_INVOLUTION_INVARIANT",
+    "chiralCounterexamples": 2086,
+    "voicedBars": 86
+  }
+}

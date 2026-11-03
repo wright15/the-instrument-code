@@ -1,0 +1,119 @@
+{
+  "candidates": {
+    "A": {
+      "checks": {
+        "allSevenNoteMasks": 792,
+        "censusMasks": 462,
+        "orbits": 10
+      },
+      "expectedClassification": "TRIVIAL_IDENTITY",
+      "falsification": "any 7-note mask or census mask deviating from 462",
+      "name": "Phase-Sum Identity",
+      "statement": "sum over p in 0..11 of pcSum(T_p(M)) = 7 * 66 = 462 for every 7-note mask M",
+      "trivialityTest": "holds for arbitrary 7-subsets of Z_12 independent of census membership or orbit partition; checksum utility only"
+    },
+    "B": {
+      "checks": {
+        "orbits": 10,
+        "pairwiseIdentity": 5544,
+        "perOrbitPhasePairs": 60,
+        "phasePairs": 6
+      },
+      "expectedClassification": "ORBIT_INVOLUTION_INVARIANT",
+      "falsification": "any orbit/phase pair violating 77*|O|, any violation of pcSum(T_p(M)) + pcSum(T_(11-p)(I0(M))) = 77, or I0 escaping an orbit",
+      "name": "Reflection Pairing Involution",
+      "statement": "mean_p(O) + mean_(11-p)(O) = 77 within every governed orbit, while pcSum(T_p(M)) + pcSum(T_(11-p)(M)) != 77 in general on chiral masks",
+      "trivialityTest": "per-mask reflection fails on individual chiral masks (I0(M) != M); the orbit-level law is carried by the explicit involution I0: x -> (-x) mod 12"
+    },
+    "C": {
+      "checks": {
+        "distinctSpectra": 10,
+        "histogramMatches": 120,
+        "orbitPairs": 45,
+        "stepWraps": 120
+      },
+      "expectedClassification": "REPRESENTATION_ISOMORPHISM",
+      "falsification": "any non-integer w_p, any histogram mismatch, any duplicate orbit spectrum, or failure to separate D2 from D5",
+      "name": "Orbit Phase Curves as Pitch-Class Tomography",
+      "statement": "the cyclic step delta total_(p+1)-total_p = 7n - 12*w_p recovers the orbit pitch-class multiplicity histogram w_p = h_O((11-p) mod 12)",
+      "trivialityTest": "the wrap ladder is orbit-specific; it must separate ORBIT-D2 from ORBIT-D5 despite their equal spread 213/35, and all 10 phase curves must be distinct"
+    },
+    "D": {
+      "checks": {
+        "expectedInteriorMin": "96/35",
+        "expectedMax": "60/7",
+        "expectedZeroSet": [
+          0,
+          11
+        ],
+        "phases": 12
+      },
+      "expectedClassification": "ORBIT_INVOLUTION_INVARIANT",
+      "falsification": "any additional or missing zero phase, asymmetry under p -> 11-p, or mismatch of the declared extrema",
+      "name": "Achromatic Coincidence Set and Cross-Orbit Spread Profile",
+      "statement": "cross-orbit spread is exactly zero only at p in {0, 11}; interior minimum 96/35 at p in {5, 6}; global maximum 60/7 at p in {3, 8}",
+      "trivialityTest": "the zero set must be exactly {0, 11}, not a vacuous all-zero or all-nonzero profile"
+    }
+  },
+  "classificationTaxonomy": [
+    "TRIVIAL_IDENTITY",
+    "ORBIT_INVOLUTION_INVARIANT",
+    "REPRESENTATION_ISOMORPHISM",
+    "BOUNDARY_REFUTED",
+    "BOUNDARY_CONFIRMED"
+  ],
+  "continuousBets": {
+    "B1": {
+      "expectedDisposition": "BOUNDARY_REFUTED",
+      "falsification": "BOUNDARY_CONFIRMED if any phase shows cross-orbit spread below the predeclared tolerance; BOUNDARY_REFUTED otherwise",
+      "formulation": "S_f(M,p) = sum over pc in T_p(M) of 440*2^((60+pc-69)/12) Hz; test whether cross-orbit spread of the orbit mean falls below 1e-9 Hz at any phase",
+      "name": "Container Frequency Sum Convergence",
+      "rationale": "2^(x/12) is strictly convex, so orbit means at p in {0,11} split in proportion to differing second and higher pitch-class moments",
+      "toleranceHz": "1e-9"
+    },
+    "B2": {
+      "expectedDisposition": "BOUNDARY_CONFIRMED",
+      "falsification": "any step-law residual above tolerance, or log-dual deviation from pcSum",
+      "formulation": "S_f(M,(p+1) mod 12) = 2^(1/12)*S_f(M,p) - f_C4*1_(11 in T_p(M)), with f_C4 = 440*2^(-9/12); log dual (12/ln2)*sum ln(f(pc)/f_C4) = pcSum",
+      "name": "Multiplicative Frequency-Transport Step Law and Log Dual",
+      "rationale": "each wrapped pitch class loses exactly one octave; the logarithmic coordinate is linear in pitch class",
+      "toleranceHz": "1e-9"
+    },
+    "C1": {
+      "expectedDisposition": "BOUNDARY_CONFIRMED",
+      "falsification": "systematic mismatch beyond the predeclared relative tolerance of 1e-2 between measured and modelled centroids, or any non-finite centroid",
+      "formulation": "compare physical FFT spectral centroid C_FFT(b) against analytical overtone-weighted C_model(b) across all 86 voiced bars",
+      "name": "Renderer-to-Air FFT Fidelity"
+    },
+    "C2": {
+      "expectedDisposition": "BOUNDARY_CONFIRMED",
+      "falsification": "office deconfounding failing to raise correlation on multi-office walks, or a non-finite correlation",
+      "formulation": "raw correlation r(C_FFT, pcSum) versus office-deconfounded correlation r(C_FFT - mean_office, pcSum) on single- and multi-office walks",
+      "name": "Symbolic pcSum and Fundamental Centroid Tracking"
+    },
+    "C3": {
+      "expectedDisposition": "BOUNDARY_CONFIRMED",
+      "falsification": "any bar pair whose symbolic shift is not reproduced in sign or whose physical centroid is non-finite",
+      "formulation": "bar-by-bar physical centroid shift vs exact symbolic shift delta pcSum = 7*delta p - 12*delta w",
+      "name": "Equivariant Acoustic Shift track5 vs track6"
+    }
+  },
+  "directive": "MVP5.5-DIR-1",
+  "discipline": "Every candidate carries a triviality test and falsification criterion; classification is decided by generator case logic, never prose discretion.",
+  "guardFlags": {
+    "causationClaim": false,
+    "globalCHNull": true,
+    "physicalQuantityClaim": false,
+    "tierClassifier": false
+  },
+  "predeclarationHash": "4a762c28603e83103c03e91d3a1007d6b2581b7ade753ee7b1f0f1b87c75bb93",
+  "schemaVersion": "governed-loop.mvp5-5-predeclared-bets.v1",
+  "sourceArtifacts": {
+    "census_462.json": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+    "frozen_ground_truth.json": "007b0ffe65015bd2c5f1a6fe0df8969961ce8cfb3d499677b143d971e1fc5744",
+    "mvp5_audio_renderer.py": "0c917aab7a95851e90ce1c3244ea6b3af1ea35e362262cb0d7a0095ec40b9984",
+    "plv3_sweep.json": "6a943e44c9ed2dc0dc39810c9656872ee55d5ea86bcd4a1e80eb7de505ad8243",
+    "tiered_photonic-v1.json": "00ce6e315a66346fa9673ab5a64460a788702cc097fac4069444901af6930f4e"
+  },
+  "status": "locked-before-evaluation"
+}

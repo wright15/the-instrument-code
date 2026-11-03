@@ -71,6 +71,22 @@ const SANCTIONED_FINGERPRINT_RECORDS = [
     path: "scrum/plan/mvp5-sprint-closing-report.md",
     sha256: "c22e1b734a7429635992c0701f003c70b7ab3f54e1a69d8c64bd28d348fa8c57",
   },
+  {
+    // ADJ-PLANNING-SEAT-20261102-PROSE-M5_5
+    path: "scrum/plan/mvp5-5-sprint-closing-report.md",
+    sha256: "8d6fac210731f4a5ad70d7d174abe4314c2f20d0a5d6b3af67b9bcfed39bc02e",
+  },
+];
+
+// ADJ-PLANNING-SEAT-20261102-PROSE-M5_5: the MVP5.5 orbit spectral catalog is
+// a scoped analysis reference. Its exact check totals and Hz centroid tables are
+// bound as historical analysis values, not release-closure claims. The bytes are
+// frozen; any byte change voids the sanction.
+const SANCTIONED_DOCUMENT_RECORDS = [
+  {
+    path: "docs/analysis/ORBIT_SPECTRAL_CATALOG.md",
+    sha256: "1e14fb78bdb3914a0188d79dcee288377941bba04c6f79e5721f0e803d22da29",
+  },
 ];
 
 function readText(relativePath) {
@@ -171,6 +187,7 @@ async function main() {
   const scrumFingerprintLiterals = [];
   const scrumFingerprintViolations = [];
   const sanctionedFingerprintRecords = [];
+  const sanctionedDocumentRecords = [];
 
   const files = await collectScopeFiles();
 
@@ -180,6 +197,9 @@ async function main() {
     const text = fileBytes.toString("utf8");
     const fileSha256 = crypto.createHash("sha256").update(fileBytes).digest("hex");
     const sanctionedRecord = SANCTIONED_FINGERPRINT_RECORDS.find(
+      (record) => record.path === relativePath && record.sha256 === fileSha256,
+    );
+    const sanctionedDocument = SANCTIONED_DOCUMENT_RECORDS.find(
       (record) => record.path === relativePath && record.sha256 === fileSha256,
     );
     let sanctionedFingerprintsBound = 0;
@@ -239,6 +259,8 @@ async function main() {
                 "historical";
             } else if (SCOPED_MARKERS.test(line)) {
               claim.classification = "scoped";
+            } else if (sanctionedDocument !== undefined) {
+              claim.classification = "sanctioned";
             } else {
               claim.classification = "violation";
             }
@@ -253,7 +275,11 @@ async function main() {
         while ((match = literalPattern.exec(line)) !== null) {
           const reason =
             exemptionReason(line) ??
-            (hasHistoricalQualifier(context, currentVersion) ? "release_qualified" : null);
+            (sanctionedDocument !== undefined
+              ? "sanctioned_catalog"
+              : hasHistoricalQualifier(context, currentVersion)
+                ? "release_qualified"
+                : null);
           exemptions.push({
             file: relativePath,
             line: lineIndex + 1,
@@ -301,6 +327,14 @@ async function main() {
         fingerprintsBound: sanctionedFingerprintsBound,
       });
     }
+    if (sanctionedDocument) {
+      sanctionedDocumentRecords.push({
+        file: relativePath,
+        path: sanctionedDocument.path,
+        sha256: fileSha256,
+        matched: true,
+      });
+    }
   }
 
   const claimKey = (item) => `${item.file}:${item.line}:${item.number}:${item.unit}`;
@@ -336,7 +370,9 @@ async function main() {
         (item) => item.classification === "release_qualified",
       ).length,
       claimsScoped: dedupedClaims.filter((item) => item.classification === "scoped").length,
+      claimsSanctioned: dedupedClaims.filter((item) => item.classification === "sanctioned").length,
       exemptions: exemptions.length,
+      sanctionedDocumentRecords: sanctionedDocumentRecords.length,
       scrumFingerprintLiterals: scrumFingerprintLiterals.length,
       scrumFingerprintViolations: scrumFingerprintViolations.length,
       sanctionedFingerprintRecords: sanctionedFingerprintRecords.length,
@@ -350,6 +386,7 @@ async function main() {
     exemptions,
     scrumFingerprintLiterals,
     sanctionedFingerprintRecords,
+    sanctionedDocumentRecords,
     violations,
   };
 

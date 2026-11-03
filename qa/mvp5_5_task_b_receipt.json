@@ -1,0 +1,1171 @@
+{
+  "constants": {
+    "AUDIO_A4_HZ": 440.0,
+    "AUDIO_ROOT_MIDI_NOTE": 60,
+    "f0Hz": 261.6255653005986,
+    "toleranceHz": 1e-09
+  },
+  "directive": "MVP5.5-DIR-1",
+  "formulationB1": {
+    "convergencePhasesBelowTolerance": [],
+    "crossOrbitSpreadHz": [
+      16.133186360159925,
+      103.11681398282326,
+      154.09855573138748,
+      183.20917427907216,
+      155.00479283859386,
+      74.52166364394952,
+      52.01105314211782,
+      132.7645144752796,
+      176.08690271080377,
+      161.96748983410453,
+      126.74848105657384,
+      15.2277001870616
+    ],
+    "definition": "S_f(M,p) = sum over pc in T_p(M) of f0*2^(pc/12)",
+    "disposition": "BOUNDARY_REFUTED",
+    "name": "12-TET container frequency aggregate",
+    "orbitMeanHz": {
+      "ORBIT-A0": [
+        2515.1036816825826,
+        2557.8735842092324,
+        2565.811636728334,
+        2568.882413162375,
+        2577.4750847163027,
+        2559.8822168544766,
+        2573.2790061371284,
+        2555.4366264588098,
+        2563.2297699292485,
+        2566.1470205741925,
+        2574.5770372205393,
+        2620.8834094994068
+      ],
+      "ORBIT-A1": [
+        2515.6785682510204,
+        2560.618374212348,
+        2570.855359338814,
+        2544.325986520582,
+        2561.06919201184,
+        2563.857968008211,
+        2566.8125732548006,
+        2569.942868471963,
+        2588.209333031887,
+        2562.7118811888745,
+        2573.073352718228,
+        2621.4260301640606
+      ],
+      "ORBIT-A2": [
+        2516.4713284641907,
+        2559.322555500465,
+        2540.6502820810183,
+        2563.5820755135887,
+        2545.163086334607,
+        2579.0418195743996,
+        2550.8635201132115,
+        2585.0812187846695,
+        2567.9406351906605,
+        2592.495197465288,
+        2575.7954719851427,
+        2622.174296165388
+      ],
+      "ORBIT-D1": [
+        2516.095707407908,
+        2516.2102208456085,
+        2566.1649846162986,
+        2594.1734927139623,
+        2586.4723926142724,
+        2565.855001020275,
+        2568.9283560292993,
+        2547.267741732406,
+        2536.7774805361064,
+        2563.0385167056656,
+        2615.777835851767,
+        2621.8197570990606
+      ],
+      "ORBIT-D2": [
+        2517.969594063477,
+        2503.245502297305,
+        2532.4959673817602,
+        2578.4357879344775,
+        2597.2072677657866,
+        2587.194893267786,
+        2546.687087394468,
+        2533.670626643999,
+        2549.7802314654837,
+        2596.7478278443423,
+        2631.5582305356147,
+        2623.588470578129
+      ],
+      "ORBIT-D3": [
+        2519.8731209627335,
+        2520.212251099079,
+        2533.0299072151315,
+        2534.151380573868,
+        2522.8811799563473,
+        2523.3991785884687,
+        2598.698140536586,
+        2603.7244502497247,
+        2596.5912796392054,
+        2601.4923088840014,
+        2619.143128745647,
+        2625.385160721836
+      ],
+      "ORBIT-D4": [
+        2519.1645213087477,
+        2519.461515917005,
+        2542.2012191980148,
+        2543.868047146588,
+        2523.2089413884114,
+        2553.646494335277,
+        2570.943926062197,
+        2604.2199489069594,
+        2587.1495539779226,
+        2591.489148998807,
+        2618.5118382222363,
+        2624.7163317104637
+      ],
+      "ORBIT-D5": [
+        2520.730322657244,
+        2506.1703923559435,
+        2520.644748151055,
+        2521.02976162771,
+        2543.8627176513933,
+        2560.578375742169,
+        2563.337966284383,
+        2581.2116829222937,
+        2607.623242210641,
+        2613.18026608679,
+        2634.017760100935,
+        2626.1942513820713
+      ],
+      "ORBIT-D6": [
+        2525.6704254624383,
+        2501.4375607584598,
+        2463.3053746815835,
+        2460.2808115831203,
+        2481.9931191085566,
+        2529.9132281299544,
+        2580.6828151157997,
+        2634.4713188431665,
+        2666.5415329383004,
+        2675.6020206954768,
+        2647.826192333871,
+        2630.857087521901
+      ],
+      "ORBIT-D7": [
+        2531.2368680427426,
+        2457.501560229525,
+        2416.7568036074267,
+        2410.96431843489,
+        2442.2024749271927,
+        2512.6732296238365,
+        2587.3343934565773,
+        2666.435141119279,
+        2712.86438324691,
+        2724.679371022979,
+        2699.8218337748017,
+        2636.1111096864684
+      ]
+    },
+    "secondMomentAudit": {
+      "correlationMu2VsMeanAtP0": 0.9999993189292581,
+      "correlationMu2VsMeanAtP11": 0.999999318929258,
+      "mu1OrbitInvariantAtP0": [
+        "36"
+      ],
+      "mu1OrbitInvariantAtP11": [
+        "41"
+      ],
+      "note": "first pitch-class moment is orbit-invariant at both endpoints (36 at p=0, 41 at p=11), so the residual frequency split is carried by second and higher moments under strict convexity of 2^(x/12)",
+      "perOrbit": {
+        "ORBIT-A0": {
+          "0": {
+            "jensenGapHz": 422.09915927779366,
+            "mu1Exact": "36",
+            "mu2Exact": "13232/49",
+            "mu3Exact": "111168/49",
+            "muFHz": 2515.1036816825826
+          },
+          "11": {
+            "jensenGapHz": -172.94244196462387,
+            "mu1Exact": "41",
+            "mu2Exact": "15927/49",
+            "mu3Exact": "141689/49",
+            "muFHz": 2620.8834094994068
+          }
+        },
+        "ORBIT-A1": {
+          "0": {
+            "jensenGapHz": 422.67404584623137,
+            "mu1Exact": "36",
+            "mu2Exact": "9484/35",
+            "mu3Exact": "79992/35",
+            "muFHz": 2515.6785682510204
+          },
+          "11": {
+            "jensenGapHz": -172.39982129996997,
+            "mu1Exact": "41",
+            "mu2Exact": "11409/35",
+            "mu3Exact": "20339/7",
+            "muFHz": 2621.4260301640606
+          }
+        },
+        "ORBIT-A2": {
+          "0": {
+            "jensenGapHz": 423.46680605940173,
+            "mu1Exact": "36",
+            "mu2Exact": "13340/49",
+            "mu3Exact": "113112/49",
+            "muFHz": 2516.4713284641907
+          },
+          "11": {
+            "jensenGapHz": -171.6515552986425,
+            "mu1Exact": "41",
+            "mu2Exact": "16035/49",
+            "mu3Exact": "143309/49",
+            "muFHz": 2622.174296165388
+          }
+        },
+        "ORBIT-D1": {
+          "0": {
+            "jensenGapHz": 423.0911850031189,
+            "mu1Exact": "36",
+            "mu2Exact": "5704/21",
+            "mu3Exact": "16080/7",
+            "muFHz": 2516.095707407908
+          },
+          "11": {
+            "jensenGapHz": -172.00609436497007,
+            "mu1Exact": "41",
+            "mu2Exact": "6859/21",
+            "mu3Exact": "20407/7",
+            "muFHz": 2621.8197570990606
+          }
+        },
+        "ORBIT-D2": {
+          "0": {
+            "jensenGapHz": 424.965071658688,
+            "mu1Exact": "36",
+            "mu2Exact": "9612/35",
+            "mu3Exact": "82296/35",
+            "muFHz": 2517.969594063477
+          },
+          "11": {
+            "jensenGapHz": -170.23738088590153,
+            "mu1Exact": "41",
+            "mu2Exact": "11537/35",
+            "mu3Exact": "20723/7",
+            "muFHz": 2623.588470578129
+          }
+        },
+        "ORBIT-D3": {
+          "0": {
+            "jensenGapHz": 426.86859855794455,
+            "mu1Exact": "36",
+            "mu2Exact": "1944/7",
+            "mu3Exact": "16848/7",
+            "muFHz": 2519.8731209627335
+          },
+          "11": {
+            "jensenGapHz": -168.44069074219442,
+            "mu1Exact": "41",
+            "mu2Exact": "2329/7",
+            "mu3Exact": "21047/7",
+            "muFHz": 2625.385160721836
+          }
+        },
+        "ORBIT-D4": {
+          "0": {
+            "jensenGapHz": 426.1599989039587,
+            "mu1Exact": "36",
+            "mu2Exact": "1936/7",
+            "mu3Exact": "16704/7",
+            "muFHz": 2519.1645213087477
+          },
+          "11": {
+            "jensenGapHz": -169.10951975356693,
+            "mu1Exact": "41",
+            "mu2Exact": "2321/7",
+            "mu3Exact": "20927/7",
+            "muFHz": 2624.7163317104637
+          }
+        },
+        "ORBIT-D5": {
+          "0": {
+            "jensenGapHz": 427.725800252455,
+            "mu1Exact": "36",
+            "mu2Exact": "9768/35",
+            "mu3Exact": "85104/35",
+            "muFHz": 2520.730322657244
+          },
+          "11": {
+            "jensenGapHz": -167.63160008195928,
+            "mu1Exact": "41",
+            "mu2Exact": "11693/35",
+            "mu3Exact": "21191/7",
+            "muFHz": 2626.1942513820713
+          }
+        },
+        "ORBIT-D6": {
+          "0": {
+            "jensenGapHz": 432.6659030576493,
+            "mu1Exact": "36",
+            "mu2Exact": "6028/21",
+            "mu3Exact": "18024/7",
+            "muFHz": 2525.6704254624383
+          },
+          "11": {
+            "jensenGapHz": -162.9687639421295,
+            "mu1Exact": "41",
+            "mu2Exact": "7183/21",
+            "mu3Exact": "22027/7",
+            "muFHz": 2630.857087521901
+          }
+        },
+        "ORBIT-D7": {
+          "0": {
+            "jensenGapHz": 438.2323456379536,
+            "mu1Exact": "36",
+            "mu2Exact": "296",
+            "mu3Exact": "2736",
+            "muFHz": 2531.2368680427426
+          },
+          "11": {
+            "jensenGapHz": -157.71474177756227,
+            "mu1Exact": "41",
+            "mu2Exact": "351",
+            "mu3Exact": "3281",
+            "muFHz": 2636.1111096864684
+          }
+        }
+      }
+    }
+  },
+  "formulationB2": {
+    "checks": 5544,
+    "disposition": "BOUNDARY_CONFIRMED",
+    "failures": 0,
+    "logDual": {
+      "checks": 5544,
+      "exact": true,
+      "identity": "(12/ln2)*sum ln(f(pc)/f0) = pcSum(T_p(M))",
+      "maxDeviation": 7.105427357601002e-15
+    },
+    "maxResidualHz": 4.547473508864641e-13,
+    "minCrossOrbitRatioGap": {
+      "1": 1.6688137203013653e-05,
+      "10": 4.176952410639423e-05,
+      "11": 1.4649578624847948e-05,
+      "2": 0.0002617859251796695,
+      "3": 0.0015813135135214207,
+      "4": 0.0004117265692626937,
+      "5": 0.00028057218723609445,
+      "6": 0.000228069193645819,
+      "7": 0.000487335254100163,
+      "8": 0.0013181349415289922,
+      "9": 3.906946162524072e-05
+    },
+    "name": "multiplicative frequency-transport step law with octave-wrap defect",
+    "nonTrivialCoincidences": [],
+    "ratioMatrix": {
+      "ORBIT-A0": [
+        1.0,
+        1.0170052244120755,
+        1.0201613776064407,
+        1.0213823119386534,
+        1.02479874030163,
+        1.0178038525799213,
+        1.02313038817375,
+        1.0160362950720365,
+        1.0191348327296272,
+        1.020294725526966,
+        1.0236464826365208,
+        1.0420578000768772
+      ],
+      "ORBIT-A1": [
+        1.0,
+        1.017863890295242,
+        1.0219331641904295,
+        1.0113875511089154,
+        1.0180430935548244,
+        1.019151651711485,
+        1.0203261281664175,
+        1.021570442625613,
+        1.0288314913106298,
+        1.0186960741055855,
+        1.0228148322252115,
+        1.0420353630418528
+      ],
+      "ORBIT-A2": [
+        1.0,
+        1.0170282993299298,
+        1.0096082770120747,
+        1.0187209552187309,
+        1.011401583457709,
+        1.0248643767176937,
+        1.0136668323060174,
+        1.027264324272016,
+        1.0204529676711562,
+        1.0302105047417707,
+        1.0235743371481836,
+        1.0420044395124137
+      ],
+      "ORBIT-D1": [
+        1.0,
+        1.0000455123536691,
+        1.019899591681261,
+        1.0310313256670551,
+        1.027970591499823,
+        1.0197763914408602,
+        1.0209978692248634,
+        1.0123890495233234,
+        1.0082197879306845,
+        1.0186570046439603,
+        1.039617780893777,
+        1.0420190890910386
+      ],
+      "ORBIT-D2": [
+        1.0,
+        0.994152394929277,
+        1.0057690821019172,
+        1.0240138697518666,
+        1.0314688763077702,
+        1.027492507998317,
+        1.011405019901232,
+        1.0062355926050657,
+        1.0126334477894434,
+        1.0312864118639866,
+        1.0451112025895553,
+        1.0419460492150763
+      ],
+      "ORBIT-D3": [
+        1.0,
+        1.0001345822269876,
+        1.00522120980733,
+        1.0056662613257605,
+        1.001193734306934,
+        1.0013992996696548,
+        1.0312813446510898,
+        1.0332760124267508,
+        1.030445246642879,
+        1.0323901974437844,
+        1.03939484371538,
+        1.041871965251485
+      ],
+      "ORBIT-D4": [
+        1.0,
+        1.0001178940897846,
+        1.0091445785673812,
+        1.009806237595394,
+        1.0016054608761966,
+        1.0136878606914548,
+        1.0205541973600634,
+        1.033763347680851,
+        1.0269871348592412,
+        1.028709767495648,
+        1.0394366132394863,
+        1.0418995303835417
+      ],
+      "ORBIT-D5": [
+        1.0,
+        0.994223923848406,
+        0.9999660517011996,
+        1.0001187905615188,
+        1.0091768622713135,
+        1.015808138112497,
+        1.0169028964519393,
+        1.0239935861926288,
+        1.0344713271278454,
+        1.0366758564367526,
+        1.0449423075627815,
+        1.0418386400865174
+      ],
+      "ORBIT-D6": [
+        1.0,
+        0.9904053733774304,
+        0.9753075262108135,
+        0.9741099974010483,
+        0.9827066485343651,
+        1.001679871856891,
+        1.0217813017481443,
+        1.043078024861778,
+        1.0557757283197666,
+        1.0593630878049287,
+        1.0483656797181153,
+        1.0416470260723758
+      ],
+      "ORBIT-D7": [
+        1.0,
+        0.9708698507262843,
+        0.9547730732431072,
+        0.952484672167069,
+        0.9648257362874163,
+        0.992666178873548,
+        1.0221621003241832,
+        1.053411940535252,
+        1.0717544523380025,
+        1.0764221260453646,
+        1.0666018134693243,
+        1.0414320141144353
+      ]
+    },
+    "stepLaw": "S_f(M,(p+1) mod 12) = 2^(1/12)*S_f(M,p) - f0*1_(11 in T_p(M))",
+    "toleranceHz": 1e-09,
+    "wrapIndicatorChecks": {
+      "checks": 120,
+      "failures": 0,
+      "law": "sum over M in O of 1_(11 in T_p(M)) = w_p(O)"
+    }
+  },
+  "gov517_correspondence_claimed": false,
+  "interpretationPolicy": {
+    "causationClaim": false,
+    "globalCHNull": true,
+    "physicalQuantityClaim": false,
+    "tierClassifier": false
+  },
+  "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+  "modality": "boundary_conditioned_contact",
+  "predeclaration": {
+    "path": "task-0/mvp5_5_predeclared_bets.json",
+    "predeclarationHash": "4a762c28603e83103c03e91d3a1007d6b2581b7ade753ee7b1f0f1b87c75bb93",
+    "sha256": "e51e95a40c093b1acc06f1d4bf934c38078ae33de6dcdd45b88559a340bd973c",
+    "status": "verified-before-evaluation"
+  },
+  "schemaVersion": "governed-loop.mvp5-5-task-b.v1",
+  "status": "COMPLETE",
+  "still_set_label": "still_set",
+  "stopRulesTriggered": [],
+  "task": "TB",
+  "tieredAnchorCrossReference": {
+    "a0AnchorCount": 7,
+    "a1AnchorCount": 7,
+    "a2AnchorCount": 7,
+    "derivedAnchorCount": 14,
+    "mutation": false,
+    "phaseCurve": [
+      {
+        "orbitId": "ORBIT-A0",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 33,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 38,
+        "stateId": 1387,
+        "tier": "A0",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A0",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 34,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 39,
+        "stateId": 1451,
+        "tier": "A0",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A0",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 35,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 40,
+        "stateId": 1453,
+        "tier": "A0",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A0",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 36,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 41,
+        "stateId": 1709,
+        "tier": "A0",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A0",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 37,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 42,
+        "stateId": 1717,
+        "tier": "A0",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A0",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 38,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 43,
+        "stateId": 2741,
+        "tier": "A0",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A0",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 39,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 44,
+        "stateId": 2773,
+        "tier": "A0",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A1",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 32,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 37,
+        "stateId": 1371,
+        "tier": "A1",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A1",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 34,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 39,
+        "stateId": 1389,
+        "tier": "A1",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A1",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 36,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 41,
+        "stateId": 1461,
+        "tier": "A1",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A1",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 35,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 40,
+        "stateId": 1707,
+        "tier": "A1",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A1",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 38,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 43,
+        "stateId": 1749,
+        "tier": "A1",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A1",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 37,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 42,
+        "stateId": 2733,
+        "tier": "A1",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A1",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 40,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 45,
+        "stateId": 2901,
+        "tier": "A1",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A2",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 31,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 36,
+        "stateId": 1367,
+        "tier": "A2",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A2",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 33,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 38,
+        "stateId": 1373,
+        "tier": "A2",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A2",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 35,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 40,
+        "stateId": 1397,
+        "tier": "A2",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A2",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 37,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 42,
+        "stateId": 1493,
+        "tier": "A2",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A2",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 39,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 44,
+        "stateId": 1877,
+        "tier": "A2",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A2",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 36,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 41,
+        "stateId": 2731,
+        "tier": "A2",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      },
+      {
+        "orbitId": "ORBIT-A2",
+        "orbitPhase0Mean": "36",
+        "orbitPhase11Mean": "41",
+        "phase0PcSum": 41,
+        "phase11MinusPhase0": 5,
+        "phase11PcSum": 46,
+        "stateId": 3413,
+        "tier": "A2",
+        "wrapCount": 6,
+        "wrapLawHolds": true
+      }
+    ],
+    "recordCount": 28,
+    "records": [
+      {
+        "derivedWavelengthNm": 241.58415841584159,
+        "office": "Sun",
+        "parentStateIds": [
+          1387,
+          2741
+        ],
+        "recomputedWavelengthNm": 241.58415841584159,
+        "relativeError": 0.0,
+        "stateId": 1371,
+        "tier": "A1",
+        "variant": "sum_mixing"
+      },
+      {
+        "derivedWavelengthNm": 493.9635614091388,
+        "office": "Sun",
+        "parentStateIds": [
+          1387,
+          2741
+        ],
+        "recomputedWavelengthNm": 493.9635614091388,
+        "relativeError": 0.0,
+        "stateId": 1371,
+        "tier": "A1",
+        "variant": "geometric_mean"
+      },
+      {
+        "derivedWavelengthNm": 317.1875,
+        "office": "Moon",
+        "parentStateIds": [
+          2773,
+          1717
+        ],
+        "recomputedWavelengthNm": 317.1875,
+        "relativeError": 0.0,
+        "stateId": 1749,
+        "tier": "A1",
+        "variant": "sum_mixing"
+      },
+      {
+        "derivedWavelengthNm": 637.1812928829596,
+        "office": "Moon",
+        "parentStateIds": [
+          2773,
+          1717
+        ],
+        "recomputedWavelengthNm": 637.1812928829596,
+        "relativeError": 0.0,
+        "stateId": 1749,
+        "tier": "A1",
+        "variant": "geometric_mean"
+      },
+      {
+        "derivedWavelengthNm": 283.5964912280702,
+        "office": "Mars",
+        "parentStateIds": [
+          2741,
+          1709
+        ],
+        "recomputedWavelengthNm": 283.5964912280702,
+        "relativeError": 0.0,
+        "stateId": 2733,
+        "tier": "A1",
+        "variant": "sum_mixing"
+      },
+      {
+        "derivedWavelengthNm": 568.59475903318,
+        "office": "Mars",
+        "parentStateIds": [
+          2741,
+          1709
+        ],
+        "recomputedWavelengthNm": 568.59475903318,
+        "relativeError": 0.0,
+        "stateId": 2733,
+        "tier": "A1",
+        "variant": "geometric_mean"
+      },
+      {
+        "derivedWavelengthNm": 259.6190476190476,
+        "office": "Mercury",
+        "parentStateIds": [
+          1717,
+          1453
+        ],
+        "recomputedWavelengthNm": 259.6190476190476,
+        "relativeError": 0.0,
+        "stateId": 1461,
+        "tier": "A1",
+        "variant": "sum_mixing"
+      },
+      {
+        "derivedWavelengthNm": 522.1110992882645,
+        "office": "Mercury",
+        "parentStateIds": [
+          1717,
+          1453
+        ],
+        "recomputedWavelengthNm": 522.1110992882645,
+        "relativeError": 0.0,
+        "stateId": 1461,
+        "tier": "A1",
+        "variant": "geometric_mean"
+      },
+      {
+        "derivedWavelengthNm": 237.39583333333337,
+        "office": "Jupiter",
+        "parentStateIds": [
+          1709,
+          1451
+        ],
+        "recomputedWavelengthNm": 237.39583333333337,
+        "relativeError": 0.0,
+        "stateId": 1707,
+        "tier": "A1",
+        "variant": "sum_mixing"
+      },
+      {
+        "derivedWavelengthNm": 477.3887304912004,
+        "office": "Jupiter",
+        "parentStateIds": [
+          1709,
+          1451
+        ],
+        "recomputedWavelengthNm": 477.3887304912004,
+        "relativeError": 0.0,
+        "stateId": 1707,
+        "tier": "A1",
+        "variant": "geometric_mean"
+      },
+      {
+        "derivedWavelengthNm": 216.0919540229885,
+        "office": "Venus",
+        "parentStateIds": [
+          1453,
+          1387
+        ],
+        "recomputedWavelengthNm": 216.0919540229885,
+        "relativeError": 0.0,
+        "stateId": 1389,
+        "tier": "A1",
+        "variant": "sum_mixing"
+      },
+      {
+        "derivedWavelengthNm": 433.58966777357597,
+        "office": "Venus",
+        "parentStateIds": [
+          1453,
+          1387
+        ],
+        "recomputedWavelengthNm": 433.58966777357597,
+        "relativeError": 0.0,
+        "stateId": 1389,
+        "tier": "A1",
+        "variant": "geometric_mean"
+      },
+      {
+        "derivedWavelengthNm": 266.37168141592923,
+        "office": "Saturn",
+        "parentStateIds": [
+          1451,
+          2773
+        ],
+        "recomputedWavelengthNm": 266.37168141592923,
+        "relativeError": 0.0,
+        "stateId": 2901,
+        "tier": "A1",
+        "variant": "sum_mixing"
+      },
+      {
+        "derivedWavelengthNm": 548.6346689738081,
+        "office": "Saturn",
+        "parentStateIds": [
+          1451,
+          2773
+        ],
+        "recomputedWavelengthNm": 548.6346689738081,
+        "relativeError": 0.0,
+        "stateId": 2901,
+        "tier": "A1",
+        "variant": "geometric_mean"
+      },
+      {
+        "derivedWavelengthNm": 144.7835461933986,
+        "office": "Sun",
+        "parentStateIds": [
+          2901,
+          1749
+        ],
+        "recomputedWavelengthNm": 144.7835461933986,
+        "relativeError": 0.0,
+        "stateId": 1877,
+        "tier": "A2",
+        "variant": "sum_mixing"
+      },
+      {
+        "derivedWavelengthNm": 591.2526936066723,
+        "office": "Sun",
+        "parentStateIds": [
+          2901,
+          1749
+        ],
+        "recomputedWavelengthNm": 591.2526936066723,
+        "relativeError": 0.0,
+        "stateId": 1877,
+        "tier": "A2",
+        "variant": "geometric_mean"
+      },
+      {
+        "derivedWavelengthNm": 130.45495813578128,
+        "office": "Moon",
+        "parentStateIds": [
+          1371,
+          2733
+        ],
+        "recomputedWavelengthNm": 130.4549581357813,
+        "relativeError": 2.178660729845306e-16,
+        "stateId": 1367,
+        "tier": "A2",
+        "variant": "sum_mixing"
+      },
+      {
+        "derivedWavelengthNm": 529.9670670622852,
+        "office": "Moon",
+        "parentStateIds": [
+          1371,
+          2733
+        ],
+        "recomputedWavelengthNm": 529.9670670622852,
+        "relativeError": 0.0,
+        "stateId": 1367,
+        "tier": "A2",
+        "variant": "geometric_mean"
+      },
+      {
+        "derivedWavelengthNm": 142.76522519826426,
+        "office": "Mars",
+        "parentStateIds": [
+          1749,
+          1461
+        ],
+        "recomputedWavelengthNm": 142.76522519826423,
+        "relativeError": 1.9908005882338326e-16,
+        "stateId": 1493,
+        "tier": "A2",
+        "variant": "sum_mixing"
+      },
+      {
+        "derivedWavelengthNm": 576.7836901933338,
+        "office": "Mars",
+        "parentStateIds": [
+          1749,
+          1461
+        ],
+        "recomputedWavelengthNm": 576.7836901933338,
+        "relativeError": 0.0,
+        "stateId": 1493,
+        "tier": "A2",
+        "variant": "geometric_mean"
+      },
+      {
+        "derivedWavelengthNm": 129.22383342628743,
+        "office": "Mercury",
+        "parentStateIds": [
+          2733,
+          1707
+        ],
+        "recomputedWavelengthNm": 129.22383342628743,
+        "relativeError": 0.0,
+        "stateId": 2731,
+        "tier": "A2",
+        "variant": "sum_mixing"
+      },
+      {
+        "derivedWavelengthNm": 520.9997410544461,
+        "office": "Mercury",
+        "parentStateIds": [
+          2733,
+          1707
+        ],
+        "recomputedWavelengthNm": 520.9997410544461,
+        "relativeError": 0.0,
+        "stateId": 2731,
+        "tier": "A2",
+        "variant": "geometric_mean"
+      },
+      {
+        "derivedWavelengthNm": 117.93207873675104,
+        "office": "Jupiter",
+        "parentStateIds": [
+          1461,
+          1389
+        ],
+        "recomputedWavelengthNm": 117.93207873675101,
+        "relativeError": 2.4100066525450793e-16,
+        "stateId": 1397,
+        "tier": "A2",
+        "variant": "sum_mixing"
+      },
+      {
+        "derivedWavelengthNm": 475.7961518142987,
+        "office": "Jupiter",
+        "parentStateIds": [
+          1461,
+          1389
+        ],
+        "recomputedWavelengthNm": 475.7961518142987,
+        "relativeError": 0.0,
+        "stateId": 1397,
+        "tier": "A2",
+        "variant": "geometric_mean"
+      },
+      {
+        "derivedWavelengthNm": 125.52521834920137,
+        "office": "Venus",
+        "parentStateIds": [
+          1707,
+          2901
+        ],
+        "recomputedWavelengthNm": 125.52521834920137,
+        "relativeError": 0.0,
+        "stateId": 3413,
+        "tier": "A2",
+        "variant": "sum_mixing"
+      },
+      {
+        "derivedWavelengthNm": 511.77339528825274,
+        "office": "Venus",
+        "parentStateIds": [
+          1707,
+          2901
+        ],
+        "recomputedWavelengthNm": 511.77339528825274,
+        "relativeError": 0.0,
+        "stateId": 3413,
+        "tier": "A2",
+        "variant": "geometric_mean"
+      },
+      {
+        "derivedWavelengthNm": 114.06405410781777,
+        "office": "Saturn",
+        "parentStateIds": [
+          1389,
+          1371
+        ],
+        "recomputedWavelengthNm": 114.06405410781777,
+        "relativeError": 0.0,
+        "stateId": 1373,
+        "tier": "A2",
+        "variant": "sum_mixing"
+      },
+      {
+        "derivedWavelengthNm": 462.7931465391864,
+        "office": "Saturn",
+        "parentStateIds": [
+          1389,
+          1371
+        ],
+        "recomputedWavelengthNm": 462.7931465391864,
+        "relativeError": 0.0,
+        "stateId": 1373,
+        "tier": "A2",
+        "variant": "geometric_mean"
+      }
+    ],
+    "sha256After": "00ce6e315a66346fa9673ab5a64460a788702cc097fac4069444901af6930f4e",
+    "sha256Before": "00ce6e315a66346fa9673ab5a64460a788702cc097fac4069444901af6930f4e",
+    "sidecar": "canonical/tiered-photonic-candidates/tiered-photonic-v1.json"
+  }
+}

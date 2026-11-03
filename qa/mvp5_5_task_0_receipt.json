@@ -1,0 +1,770 @@
+{
+  "anchors": {
+    "count": 11,
+    "entries": [
+      {
+        "actual": "        if cm == nm and cp == np_:",
+        "expected": "        if cm == nm and cp == np_:",
+        "file": "tools/governed-loop/mvp2.py",
+        "line": 150,
+        "match": true
+      },
+      {
+        "actual": "            if self.gov_root[cm] is None:",
+        "expected": "            if self.gov_root[cm] is None:",
+        "file": "tools/governed-loop/mvp2.py",
+        "line": 151,
+        "match": true
+      },
+      {
+        "actual": "                checks[\"boundary_endpoint\"] = True",
+        "expected": "                checks[\"boundary_endpoint\"] = True",
+        "file": "tools/governed-loop/mvp2.py",
+        "line": 152,
+        "match": true
+      },
+      {
+        "actual": "                checks[\"same_family\"] = False",
+        "expected": "                checks[\"same_family\"] = False",
+        "file": "tools/governed-loop/mvp2.py",
+        "line": 153,
+        "match": true
+      },
+      {
+        "actual": "                return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+        "expected": "                return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+        "file": "tools/governed-loop/mvp2.py",
+        "line": 154,
+        "match": true
+      },
+      {
+        "actual": "        same_root = cr is not None and nr is not None and cr == nr",
+        "expected": "        same_root = cr is not None and nr is not None and cr == nr",
+        "file": "tools/governed-loop/mvp2.py",
+        "line": 169,
+        "match": true
+      },
+      {
+        "actual": "        if same_root and cp == np_:",
+        "expected": "        if same_root and cp == np_:",
+        "file": "tools/governed-loop/mvp2.py",
+        "line": 171,
+        "match": true
+      },
+      {
+        "actual": "            return \"ACCEPT\", [], checks, None",
+        "expected": "            return \"ACCEPT\", [], checks, None",
+        "file": "tools/governed-loop/mvp2.py",
+        "line": 172,
+        "match": true
+      },
+      {
+        "actual": "        if checks[\"boundary_endpoint\"]:",
+        "expected": "        if checks[\"boundary_endpoint\"]:",
+        "file": "tools/governed-loop/mvp2.py",
+        "line": 183,
+        "match": true
+      },
+      {
+        "actual": "            return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+        "expected": "            return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+        "file": "tools/governed-loop/mvp2.py",
+        "line": 184,
+        "match": true
+      },
+      {
+        "actual": "        plan[\"dwellMs\"] = int(__import__(\"os\").environ.get(\"ORRERY_BRIDGE_DWELL_MS\", \"1500\"))",
+        "expected": "        plan[\"dwellMs\"] = int(__import__(\"os\").environ.get(\"ORRERY_BRIDGE_DWELL_MS\", \"1500\"))",
+        "file": "tools/governed-loop/mvp2.py",
+        "line": 733,
+        "match": true
+      }
+    ],
+    "matches": 11
+  },
+  "candidateA": {
+    "allSevenNoteMasks": {
+      "checks": 792,
+      "failures": 0
+    },
+    "classification": "TRIVIAL_IDENTITY",
+    "identityValue": 462,
+    "orbitConstrainingPower": "none (checksum guardrail only)",
+    "perMaskCensus": {
+      "checks": 462,
+      "failures": 0
+    },
+    "perOrbit": {
+      "failures": 0,
+      "meanChecks": 10,
+      "phaseAverage": "77/2",
+      "totalChecks": 10
+    }
+  },
+  "directive": "MVP5.5-DIR-1",
+  "floatScan": {
+    "values": 0,
+    "witnesses": []
+  },
+  "gov517_correspondence_claimed": false,
+  "matrix": {
+    "ORBIT-A0": {
+      "meansExact": [
+        "36",
+        "1867/49",
+        "1886/49",
+        "1893/49",
+        "1912/49",
+        "1871/49",
+        "1902/49",
+        "1861/49",
+        "1880/49",
+        "1887/49",
+        "1906/49",
+        "41"
+      ],
+      "memberCount": 49,
+      "totals": [
+        1764,
+        1867,
+        1886,
+        1893,
+        1912,
+        1871,
+        1902,
+        1861,
+        1880,
+        1887,
+        1906,
+        2009
+      ]
+    },
+    "ORBIT-A1": {
+      "meansExact": [
+        "36",
+        "191/5",
+        "1354/35",
+        "1311/35",
+        "268/7",
+        "269/7",
+        "270/7",
+        "271/7",
+        "1384/35",
+        "1341/35",
+        "194/5",
+        "41"
+      ],
+      "memberCount": 35,
+      "totals": [
+        1260,
+        1337,
+        1354,
+        1311,
+        1340,
+        1345,
+        1350,
+        1355,
+        1384,
+        1341,
+        1358,
+        1435
+      ]
+    },
+    "ORBIT-A2": {
+      "meansExact": [
+        "36",
+        "1867/49",
+        "1826/49",
+        "1881/49",
+        "1840/49",
+        "1919/49",
+        "1854/49",
+        "1933/49",
+        "1892/49",
+        "1947/49",
+        "1906/49",
+        "41"
+      ],
+      "memberCount": 49,
+      "totals": [
+        1764,
+        1867,
+        1826,
+        1881,
+        1840,
+        1919,
+        1854,
+        1933,
+        1892,
+        1947,
+        1906,
+        2009
+      ]
+    },
+    "ORBIT-D1": {
+      "meansExact": [
+        "36",
+        "253/7",
+        "270/7",
+        "279/7",
+        "276/7",
+        "269/7",
+        "270/7",
+        "263/7",
+        "260/7",
+        "269/7",
+        "286/7",
+        "41"
+      ],
+      "memberCount": 21,
+      "totals": [
+        756,
+        759,
+        810,
+        837,
+        828,
+        807,
+        810,
+        789,
+        780,
+        807,
+        858,
+        861
+      ]
+    },
+    "ORBIT-D2": {
+      "meansExact": [
+        "36",
+        "1241/35",
+        "1294/35",
+        "1371/35",
+        "40",
+        "1381/35",
+        "1314/35",
+        "37",
+        "1324/35",
+        "1401/35",
+        "1454/35",
+        "41"
+      ],
+      "memberCount": 35,
+      "totals": [
+        1260,
+        1241,
+        1294,
+        1371,
+        1400,
+        1381,
+        1314,
+        1295,
+        1324,
+        1401,
+        1454,
+        1435
+      ]
+    },
+    "ORBIT-D3": {
+      "meansExact": [
+        "36",
+        "253/7",
+        "258/7",
+        "37",
+        "256/7",
+        "257/7",
+        "282/7",
+        "283/7",
+        "40",
+        "281/7",
+        "286/7",
+        "41"
+      ],
+      "memberCount": 21,
+      "totals": [
+        756,
+        759,
+        774,
+        777,
+        768,
+        771,
+        846,
+        849,
+        840,
+        843,
+        858,
+        861
+      ]
+    },
+    "ORBIT-D4": {
+      "meansExact": [
+        "36",
+        "253/7",
+        "1306/35",
+        "1311/35",
+        "256/7",
+        "1333/35",
+        "1362/35",
+        "283/7",
+        "1384/35",
+        "1389/35",
+        "286/7",
+        "41"
+      ],
+      "memberCount": 35,
+      "totals": [
+        1260,
+        1265,
+        1306,
+        1311,
+        1280,
+        1333,
+        1362,
+        1415,
+        1384,
+        1389,
+        1430,
+        1435
+      ]
+    },
+    "ORBIT-D5": {
+      "meansExact": [
+        "36",
+        "1241/35",
+        "254/7",
+        "255/7",
+        "188/5",
+        "269/7",
+        "270/7",
+        "197/5",
+        "284/7",
+        "285/7",
+        "1454/35",
+        "41"
+      ],
+      "memberCount": 35,
+      "totals": [
+        1260,
+        1241,
+        1270,
+        1275,
+        1316,
+        1345,
+        1350,
+        1379,
+        1420,
+        1425,
+        1454,
+        1435
+      ]
+    },
+    "ORBIT-D6": {
+      "meansExact": [
+        "36",
+        "35",
+        "234/7",
+        "235/7",
+        "244/7",
+        "261/7",
+        "278/7",
+        "295/7",
+        "304/7",
+        "305/7",
+        "42",
+        "41"
+      ],
+      "memberCount": 21,
+      "totals": [
+        756,
+        735,
+        702,
+        705,
+        732,
+        783,
+        834,
+        885,
+        912,
+        915,
+        882,
+        861
+      ]
+    },
+    "ORBIT-D7": {
+      "meansExact": [
+        "36",
+        "229/7",
+        "218/7",
+        "219/7",
+        "232/7",
+        "257/7",
+        "282/7",
+        "307/7",
+        "320/7",
+        "321/7",
+        "310/7",
+        "41"
+      ],
+      "memberCount": 7,
+      "totals": [
+        252,
+        229,
+        218,
+        219,
+        232,
+        257,
+        282,
+        307,
+        320,
+        321,
+        310,
+        287
+      ]
+    }
+  },
+  "matrixRecompute": {
+    "cells": 120,
+    "matches": 120,
+    "meansMatch": true,
+    "mismatches": [],
+    "totalsMatch": true
+  },
+  "modality": {
+    "modality1ZeroFloats": true,
+    "modality2Touched": false,
+    "modality3DiscreteOnly": true
+  },
+  "opening": {
+    "checksums": {
+      "sha256": "44f3d07cd6a076f2c452a65be0643d6cf1998df06fb6b62018b884995678c8ca"
+    },
+    "head": "52202ed9c4aad7d4baead2859972853aad28e7bb",
+    "landingReceipt": {
+      "sha256": "c45214dae93a6da0c73fdfd7c96a0611f9ca9218793a9105bf198a0530606f0c"
+    },
+    "ledger": {
+      "bytes": 356466,
+      "lines": 4189,
+      "sha256": "e74cf6a2d79e9170c6686f2fb5287043ab1dd2c41d4f9a56d62b97f766c8f1c4"
+    },
+    "manifest": {
+      "fileCount": 1585,
+      "sha256": "076077b192364ab84d3258304a999f38ba993e8412db9f1b52a957c34fca9541",
+      "totalBytes": 110505727
+    },
+    "treeClean": true,
+    "treeDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "validation": {
+      "fail": null,
+      "pass": null,
+      "sha256": "207b9aca105bc6d97310e1849a1ecb916507395ed87dabf433957a6891b2134a",
+      "version": null
+    }
+  },
+  "pins": {
+    "byteMetadataDiscrepancies": [
+      {
+        "actualBytes": 8597,
+        "directiveBytes": 6857,
+        "disposition": "directive byte-column metadata discrepancy; the SHA-256 pin (the cryptographic identity) matches at the L21 fixed point",
+        "path": "docs/TIERED_PHOTONIC_THEOREM.md",
+        "sha256Match": true
+      },
+      {
+        "actualBytes": 43639,
+        "directiveBytes": 26338,
+        "disposition": "directive byte-column metadata discrepancy; the SHA-256 pin (the cryptographic identity) matches at the L21 fixed point",
+        "path": "canonical/tiered-photonic-candidates/tiered-photonic-v1.json",
+        "sha256Match": true
+      },
+      {
+        "actualBytes": 17403,
+        "directiveBytes": 19586,
+        "disposition": "directive byte-column metadata discrepancy; the SHA-256 pin (the cryptographic identity) matches at the L21 fixed point",
+        "path": "orrery/src/generated/photonic-overlay.v1.json",
+        "sha256Match": true
+      }
+    ],
+    "count": 26,
+    "entries": [
+      {
+        "actualBytes": 38997,
+        "actualSha256": "79c0cf706fffc23745cab6e87ffbc46d34d70ad94a93291135725e388dc17328",
+        "byteMatch": true,
+        "expectedBytes": 38997,
+        "expectedSha256": "79c0cf706fffc23745cab6e87ffbc46d34d70ad94a93291135725e388dc17328",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/mvp2.py"
+      },
+      {
+        "actualBytes": 194194,
+        "actualSha256": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+        "byteMatch": true,
+        "expectedBytes": 194194,
+        "expectedSha256": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/census_462.json"
+      },
+      {
+        "actualBytes": 91360,
+        "actualSha256": "007b0ffe65015bd2c5f1a6fe0df8969961ce8cfb3d499677b143d971e1fc5744",
+        "byteMatch": true,
+        "expectedBytes": 91360,
+        "expectedSha256": "007b0ffe65015bd2c5f1a6fe0df8969961ce8cfb3d499677b143d971e1fc5744",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/frozen_ground_truth.json"
+      },
+      {
+        "actualBytes": 47207,
+        "actualSha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+        "byteMatch": true,
+        "expectedBytes": 47207,
+        "expectedSha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/frozen_seam_substrate_v3.json"
+      },
+      {
+        "actualBytes": 551287,
+        "actualSha256": "e6cf62a8eefa0924da9286f2e664c1914d9d620ed2d299929f684fd48225c274",
+        "byteMatch": true,
+        "expectedBytes": 551287,
+        "expectedSha256": "e6cf62a8eefa0924da9286f2e664c1914d9d620ed2d299929f684fd48225c274",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/seam_legal_moves_v3.json"
+      },
+      {
+        "actualBytes": 1712,
+        "actualSha256": "14117c9460a6b611f849747f4881f296a8f3ce2108bb23524fe8beecd354e87b",
+        "byteMatch": true,
+        "expectedBytes": 1712,
+        "expectedSha256": "14117c9460a6b611f849747f4881f296a8f3ce2108bb23524fe8beecd354e87b",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/plv3_sweep_predeclared.json"
+      },
+      {
+        "actualBytes": 10181,
+        "actualSha256": "6a943e44c9ed2dc0dc39810c9656872ee55d5ea86bcd4a1e80eb7de505ad8243",
+        "byteMatch": true,
+        "expectedBytes": 10181,
+        "expectedSha256": "6a943e44c9ed2dc0dc39810c9656872ee55d5ea86bcd4a1e80eb7de505ad8243",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/plv3_sweep.json"
+      },
+      {
+        "actualBytes": 9318,
+        "actualSha256": "22e6b1e5998c92f445fe3a631b2842231b2d5fdbea56ca760436f3a022ac5c15",
+        "byteMatch": true,
+        "expectedBytes": 9318,
+        "expectedSha256": "22e6b1e5998c92f445fe3a631b2842231b2d5fdbea56ca760436f3a022ac5c15",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/plv3_sweep.py"
+      },
+      {
+        "actualBytes": 6664,
+        "actualSha256": "11a7f70f71ccc061c115e1b0e2f38a9265d9872588b6b9e83be05e79e5568d6c",
+        "byteMatch": true,
+        "expectedBytes": 6664,
+        "expectedSha256": "11a7f70f71ccc061c115e1b0e2f38a9265d9872588b6b9e83be05e79e5568d6c",
+        "hashMatch": true,
+        "match": true,
+        "path": "docs/THREE_PART_CONTINUOUS_TYPOLOGY.md"
+      },
+      {
+        "actualBytes": 8597,
+        "actualSha256": "c1d6fcb53ff947b9aa32991d8d3dfc999f127bba0cb48ddf807ecc37386867c3",
+        "byteMatch": false,
+        "expectedBytes": 6857,
+        "expectedSha256": "c1d6fcb53ff947b9aa32991d8d3dfc999f127bba0cb48ddf807ecc37386867c3",
+        "hashMatch": true,
+        "match": true,
+        "path": "docs/TIERED_PHOTONIC_THEOREM.md"
+      },
+      {
+        "actualBytes": 43639,
+        "actualSha256": "00ce6e315a66346fa9673ab5a64460a788702cc097fac4069444901af6930f4e",
+        "byteMatch": false,
+        "expectedBytes": 26338,
+        "expectedSha256": "00ce6e315a66346fa9673ab5a64460a788702cc097fac4069444901af6930f4e",
+        "hashMatch": true,
+        "match": true,
+        "path": "canonical/tiered-photonic-candidates/tiered-photonic-v1.json"
+      },
+      {
+        "actualBytes": 17403,
+        "actualSha256": "35e8958d6e6d2455ceb6442ef7dc50d07de80416bbed7bf78260c670cc10901e",
+        "byteMatch": false,
+        "expectedBytes": 19586,
+        "expectedSha256": "35e8958d6e6d2455ceb6442ef7dc50d07de80416bbed7bf78260c670cc10901e",
+        "hashMatch": true,
+        "match": true,
+        "path": "orrery/src/generated/photonic-overlay.v1.json"
+      },
+      {
+        "actualBytes": 37063,
+        "actualSha256": "e863b845c8f2709a0fe0e6fe706dce603e795b760c6561d110d240ddb1dfca88",
+        "byteMatch": true,
+        "expectedBytes": 37063,
+        "expectedSha256": "e863b845c8f2709a0fe0e6fe706dce603e795b760c6561d110d240ddb1dfca88",
+        "hashMatch": true,
+        "match": true,
+        "path": "orrery/src/audio.ts"
+      },
+      {
+        "actualBytes": 24696,
+        "actualSha256": "0c917aab7a95851e90ce1c3244ea6b3af1ea35e362262cb0d7a0095ec40b9984",
+        "byteMatch": true,
+        "expectedBytes": 24696,
+        "expectedSha256": "0c917aab7a95851e90ce1c3244ea6b3af1ea35e362262cb0d7a0095ec40b9984",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/mvp5/task-b/mvp5_audio_renderer.py"
+      },
+      {
+        "actualBytes": 63047,
+        "actualSha256": "bf20119cb50c18317c93bef4e2bf0aeff1e0d937b84102d58e42d830479476df",
+        "byteMatch": true,
+        "expectedBytes": 63047,
+        "expectedSha256": "bf20119cb50c18317c93bef4e2bf0aeff1e0d937b84102d58e42d830479476df",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/mvp5/task-a/traces/arm1_unranked_q_carried.jsonl"
+      },
+      {
+        "actualBytes": 62729,
+        "actualSha256": "52f3b5137d5ae537c200dd1ac588dea21057c3c2c17daaf67bcc5b3616cf45e8",
+        "byteMatch": true,
+        "expectedBytes": 62729,
+        "expectedSha256": "52f3b5137d5ae537c200dd1ac588dea21057c3c2c17daaf67bcc5b3616cf45e8",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/mvp5/task-a/traces/arm2_static_q_carried.jsonl"
+      },
+      {
+        "actualBytes": 65011,
+        "actualSha256": "dc941c1c30a32d8ab2a5813ba7e04c1a1605b3a5f681dfc9e6725ba10f7371c3",
+        "byteMatch": true,
+        "expectedBytes": 65011,
+        "expectedSha256": "dc941c1c30a32d8ab2a5813ba7e04c1a1605b3a5f681dfc9e6725ba10f7371c3",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/mvp5/task-a/traces/arm3a_dynamic_q_reset.jsonl"
+      },
+      {
+        "actualBytes": 65530,
+        "actualSha256": "4ea86bb188b08438498adbfc80dca164b4bb73f5ae31a8305ca7577abf14778d",
+        "byteMatch": true,
+        "expectedBytes": 65530,
+        "expectedSha256": "4ea86bb188b08438498adbfc80dca164b4bb73f5ae31a8305ca7577abf14778d",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/mvp5/task-a/traces/arm3b_dynamic_q_carried.jsonl"
+      },
+      {
+        "actualBytes": 9115,
+        "actualSha256": "58c4ad8af84ad96a0241b204dae22538517cc189af8288b636ee0cdd06bc79dc",
+        "byteMatch": true,
+        "expectedBytes": 9115,
+        "expectedSha256": "58c4ad8af84ad96a0241b204dae22538517cc189af8288b636ee0cdd06bc79dc",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/mvp5/task-a/traces/arm_tb_equiv_p0.jsonl"
+      },
+      {
+        "actualBytes": 9080,
+        "actualSha256": "786f99cc4f05c492fbdd74fabf6380a3eab8f703a5bedb8718b09e8a694b93fa",
+        "byteMatch": true,
+        "expectedBytes": 9080,
+        "expectedSha256": "786f99cc4f05c492fbdd74fabf6380a3eab8f703a5bedb8718b09e8a694b93fa",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/mvp5/task-a/traces/arm_tb_equiv_p7.jsonl"
+      },
+      {
+        "actualBytes": 2646044,
+        "actualSha256": "dcca3792aaa8b211cff95daa851de0e6dae6a9c2a7e100494acfff3e4c8462c4",
+        "byteMatch": true,
+        "expectedBytes": 2646044,
+        "expectedSha256": "dcca3792aaa8b211cff95daa851de0e6dae6a9c2a7e100494acfff3e4c8462c4",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/mvp5/task-b/renders/track1_arm1_unranked_2cycle.wav"
+      },
+      {
+        "actualBytes": 2646044,
+        "actualSha256": "04dd46fadb5793b938555e27c8909884db071af6ba8fe03576ec33c0f74723ab",
+        "byteMatch": true,
+        "expectedBytes": 2646044,
+        "expectedSha256": "04dd46fadb5793b938555e27c8909884db071af6ba8fe03576ec33c0f74723ab",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/mvp5/task-b/renders/track2_arm2_static_4state.wav"
+      },
+      {
+        "actualBytes": 2672504,
+        "actualSha256": "b4e9b1674fd4ae3b94fc9e0921e3c461c642403fa34a91869fe851e069398307",
+        "byteMatch": true,
+        "expectedBytes": 2672504,
+        "expectedSha256": "b4e9b1674fd4ae3b94fc9e0921e3c461c642403fa34a91869fe851e069398307",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/mvp5/task-b/renders/track3_arm3a_dynamic_q_reset.wav"
+      },
+      {
+        "actualBytes": 2672504,
+        "actualSha256": "d0fe3d2727593d22ee49ed50d64b0253ed36f52e64d9f202d43596106e735738",
+        "byteMatch": true,
+        "expectedBytes": 2672504,
+        "expectedSha256": "d0fe3d2727593d22ee49ed50d64b0253ed36f52e64d9f202d43596106e735738",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/mvp5/task-b/renders/track4_arm3b_dynamic_q_carried.wav"
+      },
+      {
+        "actualBytes": 396944,
+        "actualSha256": "82a69919cd4d5bc7a8f0d14d40dfe653193bd6047c1088d3030e6c48098994a1",
+        "byteMatch": true,
+        "expectedBytes": 396944,
+        "expectedSha256": "82a69919cd4d5bc7a8f0d14d40dfe653193bd6047c1088d3030e6c48098994a1",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/mvp5/task-b/renders/track5_equiv_base_p0.wav"
+      },
+      {
+        "actualBytes": 396944,
+        "actualSha256": "2fa02243432104eb6a1a48a3b287c7a4a8ef79064dc37bab0737fa3be44ce917",
+        "byteMatch": true,
+        "expectedBytes": 396944,
+        "expectedSha256": "2fa02243432104eb6a1a48a3b287c7a4a8ef79064dc37bab0737fa3be44ce917",
+        "hashMatch": true,
+        "match": true,
+        "path": "tools/governed-loop/mvp5/task-b/renders/track6_equiv_lifted_p7.wav"
+      }
+    ],
+    "matches": 26,
+    "shaPinsEnforced": true
+  },
+  "predeclaration": {
+    "candidateCount": 4,
+    "continuousBetCount": 5,
+    "path": "task-0/mvp5_5_predeclared_bets.json",
+    "predeclarationHash": "4a762c28603e83103c03e91d3a1007d6b2581b7ade753ee7b1f0f1b87c75bb93",
+    "sha256": "e51e95a40c093b1acc06f1d4bf934c38078ae33de6dcdd45b88559a340bd973c",
+    "status": "locked-before-evaluation"
+  },
+  "schemaVersion": "governed-loop.mvp5-5-task-0.v1",
+  "stagingManifest": {
+    "entries": 0,
+    "initialized": true,
+    "path": "l22_staging_manifest.json",
+    "sha256": "69eb8ccb24957a7a9b69b0bb78d75557cbeb8a4830f32f922de95e64358e088f"
+  },
+  "status": "COMPLETE",
+  "still_set_label": "still_set",
+  "stopRulesTriggered": [],
+  "task": "T0"
+}
