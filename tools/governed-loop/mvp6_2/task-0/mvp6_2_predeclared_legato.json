@@ -1,0 +1,104 @@
+{
+  "control": {
+    "itinerarySha256": "ae32b4b75d81e115f34828ecd6284d1b65920a0f10cb52ff793883444e7e5bac",
+    "midiSha256": "8a8c545ffbff1740921355b8538c599a66ccd93a98daa9d67e76e845734225f6",
+    "traceSha256": "38ab32e5ebd1af7854d3241ecdab5879d5240293c3d62f80c3c28ffc38ad9e1b",
+    "wavSha256": "b2ce0b3f5ac39d0ac226083e5c2646a1d116222acc5473b746173a0d3125d7f1"
+  },
+  "controlPieceId": "piece_a_far_shore_delooped",
+  "directive": "MVP6.2-DIR-1",
+  "expected": {
+    "bars": 55,
+    "boundaryDwell": 0,
+    "controlWavSha256": "b2ce0b3f5ac39d0ac226083e5c2646a1d116222acc5473b746173a0d3125d7f1",
+    "directBoundaries": 53,
+    "durationMs": 122700,
+    "fftCorrelationMin": "0.95",
+    "fftMedianRelErrMax": "0.05",
+    "maxDipMaxDb": "12.0",
+    "medianDipMaxDb": "6.0",
+    "microSteps": 408,
+    "midiSha256": "8a8c545ffbff1740921355b8538c599a66ccd93a98daa9d67e76e845734225f6",
+    "outOfMask": 0,
+    "restRmsRatioMax": "0.25",
+    "restTailRatioMax": "0.05",
+    "samples": 5411070,
+    "stillSet": 0
+  },
+  "fences": {
+    "controlsFrozen": true,
+    "guardFlags": {
+      "causationClaim": false,
+      "globalCHNull": true,
+      "gov517_correspondence_claimed": false,
+      "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+      "physicalQuantityClaim": false,
+      "still_set_label": "still_set",
+      "tierClassifier": false
+    },
+    "noGateByteChange": true,
+    "noOrrerySourceChange": true,
+    "noQEngineByteChange": true,
+    "noSubstrateByteChange": true,
+    "pinnedRendererUntouched": true
+  },
+  "legatoRule": {
+    "attack": "unchanged",
+    "bufferLengthFixed": true,
+    "definition": "Each pad voice sustains through the bar end and decays over its release time into the next bar; the next bar's attack overlaps additively. The pre-rest bar (33) and the final bar (55) release to zero at their own bar end.",
+    "exemptBars": [
+      33,
+      55
+    ],
+    "midiUnchanged": true,
+    "name": "legato_pad_tail",
+    "noTailAcrossRest": true,
+    "padTailSeconds": "preset.releaseSeconds",
+    "restWindowMs": [
+      74700,
+      75000
+    ]
+  },
+  "opening": {
+    "baseHead": "154db019711570ade5558a78eb5abb0b63b3c884",
+    "checksumsBefore": {
+      "sha256": "babe56ee594c23b47a128b439fec326d18110403c2e2137ec8c26990852e0d5e"
+    },
+    "l24LandingReceipt": {
+      "sha256": "d1a34bd08743502f2079840cb7ae84281541be4257eba8239cedf1f84a4ec0c8"
+    },
+    "ledgerBefore": {
+      "bytes": 380933,
+      "lines": 4282,
+      "sha256": "8410ac254c3ce60425f8b77fcb0a268b728702f89425d1ac93b1bc66c74b52cb"
+    },
+    "manifestBefore": {
+      "fileCount": 1642,
+      "sha256": "155c68b763252347ae2e2a39e819a053eb6f2765656da53b32d0eed5afaab86b",
+      "totalBytes": 133531526
+    },
+    "openingStatusEntries": 35,
+    "treeClean": false,
+    "validationBefore": {
+      "sha256": "74487ba86e5f872a75e97a5a39e49beeb24be1832e40c4b735bd452d6174e2ca"
+    },
+    "workingTreeState": "stacked L23+L24 working-tree landing (uncommitted) on HEAD 154db01"
+  },
+  "pieceId": "piece_a_far_shore_legato",
+  "revision": 1,
+  "schemaVersion": "governed-loop.mvp6_2-predeclared-legato.v1",
+  "seamBaseline": {
+    "directBoundaries": 53,
+    "maxDepthDb": "35.412504",
+    "medianDepthDb": "9.662544",
+    "method": "min 10 ms RMS in +/-150 ms vs local mean of 1 s before/after"
+  },
+  "status": "locked-before-render",
+  "strongCore": {
+    "oneWayNodes": 276,
+    "reachableNodes": 3204,
+    "seed": "1387@0",
+    "shoreInStrongCore": true,
+    "strongCoreNodes": 2928
+  }
+}

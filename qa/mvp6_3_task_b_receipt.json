@@ -1,0 +1,54 @@
+{
+  "control": {
+    "maxAbsLast32": 215,
+    "path": "/home/erick/projects/integrated-release/tools/governed-loop/mvp6_2/task-d/renders/piece_a_far_shore_legato.wav",
+    "sha256": "defd27219fb292fb9e1071b4fa13020d4adc62e2f981bce88d9b936d6a3e9f50"
+  },
+  "directive": "MVP6.3-DIR-1",
+  "floatValues": 0,
+  "guardFlags": {
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "isolation": {
+    "differenceLocations": [],
+    "leadCarriesTheCut": true,
+    "padEndsClean": true,
+    "sumMatchesControl": true,
+    "sumMaxDifferenceLsb": 1,
+    "sumToleranceLsb": 2
+  },
+  "llmCalls": 0,
+  "predeclaration": {
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6_3/task-0/mvp6_3_predeclared_fade.json",
+    "sha256": "045c246cd6f0702f6a99d7433ceaf4a9e3ea4b1412fcdb1e93591d9b26598ccf"
+  },
+  "reRenderMatch": true,
+  "schemaVersion": "governed-loop.mvp6_3-task-b.v1",
+  "status": "COMPLETE",
+  "stems": {
+    "lead": {
+      "bytes": 10822184,
+      "endsAtZero": false,
+      "maxAbsLast32": 212,
+      "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6_3/task-b/renders/stem_lead_only.wav",
+      "samples": 5411070,
+      "sha256": "43502acbbfeb3d566bee8e9732849d7153747ebf6ed8a187144a03f2277d4c1d"
+    },
+    "pad": {
+      "bytes": 10822184,
+      "endsAtZero": true,
+      "maxAbsLast32": 3,
+      "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6_3/task-b/renders/stem_pad_only.wav",
+      "samples": 5411070,
+      "sha256": "3bd92782768054ae309dd0610a1bffb6b563c2fc87b39975d969dc86dd757040"
+    }
+  },
+  "stopRules": [],
+  "task": "MVP6_3-TB"
+}

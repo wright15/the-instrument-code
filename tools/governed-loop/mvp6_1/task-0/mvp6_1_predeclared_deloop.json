@@ -1,0 +1,157 @@
+{
+  "control": {
+    "itinerarySha256": "4a66d12a139be61dfb14b0b185d16a345d5cbe395595b4398999168be9654232",
+    "midiSha256": "d44f543b64deb0e6703b9c5906f8c78400015379a8aa166cbc07856be09ec0bb",
+    "traceSha256": "fc0c7a099ba117b3f2291f551df1ef28e4236e6668314861e58acfbbb16ad18a",
+    "wavSha256": "e5c8bf2b0e31f32d36a8816e6011f09e10b26cce5b94c4782aefd28406567a77"
+  },
+  "controlPieceId": "piece_a_far_shore",
+  "directive": "MVP6.1-DIR-1",
+  "expected": {
+    "bars": 55,
+    "boundaryDwell": 0,
+    "changedBars": [
+      16,
+      17,
+      23,
+      24,
+      25,
+      33,
+      34,
+      53,
+      54,
+      55
+    ],
+    "containerPerDwellBar": 7,
+    "distinctQPerDwellBar": 12,
+    "durationMs": 122700,
+    "microSteps": 408,
+    "minStepDelta": 2,
+    "outOfMask": 0,
+    "runDistinct": {
+      "1387@0": 4,
+      "1453@6": 3,
+      "379@7": 3,
+      "623@8": 4
+    },
+    "stillSet": 0,
+    "unchangedBars": 45
+  },
+  "fences": {
+    "controlFrozen": true,
+    "guardFlags": {
+      "causationClaim": false,
+      "globalCHNull": true,
+      "gov517_correspondence_claimed": false,
+      "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+      "physicalQuantityClaim": false,
+      "still_set_label": "still_set",
+      "tierClassifier": false
+    },
+    "noGateByteChange": true,
+    "noOrrerySourceChange": true,
+    "noQEngineByteChange": true,
+    "noRendererByteChange": true,
+    "noSubstrateByteChange": true,
+    "photonicOverlayOnly": true
+  },
+  "loopEvidence": {
+    "repeatBarCount": 10,
+    "repeatBars": [
+      16,
+      17,
+      23,
+      24,
+      25,
+      33,
+      34,
+      53,
+      54,
+      55
+    ],
+    "runs": [
+      {
+        "bars": [
+          15,
+          17
+        ],
+        "identical": true,
+        "length": 3,
+        "node": "1453@6"
+      },
+      {
+        "bars": [
+          22,
+          25
+        ],
+        "identical": true,
+        "length": 4,
+        "node": "623@8"
+      },
+      {
+        "bars": [
+          32,
+          34
+        ],
+        "identical": true,
+        "length": 3,
+        "node": "379@7"
+      },
+      {
+        "bars": [
+          52,
+          55
+        ],
+        "identical": true,
+        "length": 4,
+        "node": "1387@0"
+      }
+    ]
+  },
+  "opening": {
+    "baseHead": "154db019711570ade5558a78eb5abb0b63b3c884",
+    "checksums": {
+      "sha256": "9d76a4096fe89540b8480abc84f4dc63d147e0dd1b57a26b4905cd07fc21b02e"
+    },
+    "l23LandingReceipt": {
+      "sha256": "4692c3f8497da98a64faa1e4f97faaf0174e91c645ab6ff50626fb479f536420"
+    },
+    "ledger": {
+      "bytes": 372516,
+      "lines": 4249,
+      "sha256": "f174d9474db01e7ace6a49d9c3eb10ef63155f9d364c59275713e5e94aa7e7e5"
+    },
+    "manifest": {
+      "fileCount": 1621,
+      "sha256": "438a4cdfd084f01dc01676762a73d67a58aa187feb33819e7086bb0b75b4765d",
+      "totalBytes": 122194085
+    },
+    "statusEntryCount": 26,
+    "treeClean": false,
+    "validation": {
+      "checksFailed": 0,
+      "checksPassed": 418,
+      "sha256": "8d0dddd8a586bdb6678b0dc79485d30d9b2c36adeecd1e7b318d727ec98cc1f0",
+      "verdict": "PASS"
+    },
+    "workingTreeState": "L23 working-tree landing (uncommitted) on HEAD 154db01"
+  },
+  "pieceId": "piece_a_far_shore_delooped",
+  "revision": 1,
+  "rule": {
+    "canonicalCarry": "advanced normally so every non-repeat bar remains identical to the control",
+    "definition": "Within each same-node bar run the voice carry starts at the canonical carry and gains one extra Q1 advance between consecutive repeat bars; the canonical carry advances normally across the whole piece.",
+    "extraAdvancePerRepeat": 1,
+    "name": "run_local_q1_rotation",
+    "runScope": "maximal consecutive same-node bars, including across the boundary rest"
+  },
+  "schemaVersion": "governed-loop.mvp6_1-predeclared-deloop.v1",
+  "status": "locked-before-rebuild",
+  "strongCore": {
+    "oneWayNodes": 276,
+    "reachableNodes": 3204,
+    "seed": "1387@0",
+    "shoreInStrongCore": true,
+    "strongCoreNodes": 2928
+  }
+}

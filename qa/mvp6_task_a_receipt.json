@@ -1,0 +1,125 @@
+{
+  "coverage": {
+    "allInStrongCore": true,
+    "distinctStates": 42,
+    "offices": [
+      "Jupiter",
+      "Mars",
+      "Mercury",
+      "Moon",
+      "Saturn",
+      "Sun",
+      "Venus"
+    ],
+    "orbits": [
+      "ORBIT-A0",
+      "ORBIT-A2",
+      "ORBIT-D3",
+      "ORBIT-D4"
+    ],
+    "phases": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "returnHops": 19,
+    "returnInteriorNodes": 18,
+    "returnNewInterior": [
+      "699@6",
+      "1397@5",
+      "699@5",
+      "1397@4",
+      "2793@3",
+      "699@3",
+      "1397@2",
+      "2793@1",
+      "1269@1",
+      "635@2",
+      "623@2",
+      "1245@1",
+      "861@1",
+      "1721@0",
+      "859@0"
+    ],
+    "returnNewInteriorNodes": 15
+  },
+  "directive": "MVP6-DIR-1",
+  "floatValues": 0,
+  "formSpec": {
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6/task-0/mvp6_form_spec.json",
+    "sha256": "135fb1d1b7bca1a3ba9814e3c62bc2b531511326badb219d65aa93cd61cb1823"
+  },
+  "guardFlags": {
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "itinerary": {
+    "bytes": 27186,
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6/task-a/compiled_itinerary.json",
+    "sha256": "4a66d12a139be61dfb14b0b185d16a345d5cbe395595b4398999168be9654232"
+  },
+  "laws": {
+    "law1PlannerComposes": "deterministic BFS planner, zero LLM calls",
+    "law2StrongCore": "2928 nodes; all itinerary nodes inside",
+    "law5VoicedArrival": "terminal-bar convention exercised by Task B/C"
+  },
+  "llmCalls": 0,
+  "negativeTests": {
+    "bothRejected": true,
+    "isolatedBoundary": {
+      "boundaryStatus": "boundary-isolated",
+      "hasExit": false,
+      "rejected": true,
+      "role": "boundary",
+      "target": "2159@0",
+      "verdict": "ISOLATED_BOUNDARY"
+    },
+    "neverReturn": {
+      "inCensus": true,
+      "inStrongCore": false,
+      "outboundHops": 22,
+      "rejected": true,
+      "returnHops": null,
+      "target": "1831@6",
+      "verdict": "OUTSIDE_STRONG_CORE"
+    }
+  },
+  "schemaVersion": "governed-loop.mvp6-task-a.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "summary": {
+    "bars": 55,
+    "durationMs": 122700,
+    "dwellBars": 19,
+    "gateAccepted": 55,
+    "gateRejected": 0,
+    "llmCalls": 0,
+    "macroTransitions": 55,
+    "microSteps": 408,
+    "nonSelfHops": 46,
+    "restMs": 300,
+    "rests": 1,
+    "selfLoopExtensions": 9,
+    "transitBars": 36
+  },
+  "task": "MVP6-TA",
+  "variantReproduction": {
+    "D": 56,
+    "U": 56,
+    "identicalTrajectories": true
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "coverage": {
+    "allInStrongCore": true,
+    "distinctStates": 42,
+    "offices": [
+      "Jupiter",
+      "Mars",
+      "Mercury",
+      "Moon",
+      "Saturn",
+      "Sun",
+      "Venus"
+    ],
+    "orbits": [
+      "ORBIT-A0",
+      "ORBIT-A2",
+      "ORBIT-D3",
+      "ORBIT-D4"
+    ],
+    "phases": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "returnHops": 19,
+    "returnInteriorNodes": 18,
+    "returnNewInterior": [
+      "699@6",
+      "1397@5",
+      "699@5",
+      "1397@4",
+      "2793@3",
+      "699@3",
+      "1397@2",
+      "2793@1",
+      "1269@1",
+      "635@2",
+      "623@2",
+      "1245@1",
+      "861@1",
+      "1721@0",
+      "859@0"
+    ],
+    "returnNewInteriorNodes": 15
+  },
+  "directive": "MVP6.3-DIR-1",
+  "floatValues": 0,
+  "itinerary": {
+    "path": "/home/erick/projects/integrated-release/tools/governed-loop/mvp6_2/task-a/mvp6_2_itinerary.json",
+    "referencedNotRewritten": true,
+    "sha256": "d62a3c260c56bdf15304da0f7fd0978de2d6e91c517d4f8485e02a6e793eef44"
+  },
+  "llmCalls": 0,
+  "macro": {
+    "bars": 55,
+    "gateAccepted": 55,
+    "identicalToL25": true,
+    "rests": 1,
+    "selfLoops": 9,
+    "transitions": 55
+  },
+  "negativeTests": {
+    "bothRejected": true,
+    "isolatedBoundary": {
+      "boundaryStatus": "boundary-isolated",
+      "hasExit": false,
+      "rejected": true,
+      "role": "boundary",
+      "target": "2159@0",
+      "verdict": "ISOLATED_BOUNDARY"
+    },
+    "neverReturn": {
+      "inCensus": true,
+      "inStrongCore": false,
+      "outboundHops": 22,
+      "rejected": true,
+      "returnHops": null,
+      "target": "1831@6",
+      "verdict": "OUTSIDE_STRONG_CORE"
+    }
+  },
+  "predeclaration": {
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6_3/task-0/mvp6_3_predeclared_fade.json",
+    "sha256": "045c246cd6f0702f6a99d7433ceaf4a9e3ea4b1412fcdb1e93591d9b26598ccf"
+  },
+  "schemaVersion": "governed-loop.mvp6_3-task-a.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "task": "MVP6_3-TA",
+  "variantReproduction": {
+    "D": 56,
+    "U": 56,
+    "identical": true
+  }
+}

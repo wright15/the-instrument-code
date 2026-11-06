@@ -1,0 +1,345 @@
+{
+  "anchors": [
+    {
+      "line": 150,
+      "text": "        if cm == nm and cp == np_:",
+      "verified": true
+    },
+    {
+      "line": 151,
+      "text": "            if self.gov_root[cm] is None:",
+      "verified": true
+    },
+    {
+      "line": 152,
+      "text": "                checks[\"boundary_endpoint\"] = True",
+      "verified": true
+    },
+    {
+      "line": 153,
+      "text": "                checks[\"same_family\"] = False",
+      "verified": true
+    },
+    {
+      "line": 154,
+      "text": "                return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "verified": true
+    },
+    {
+      "line": 169,
+      "text": "        same_root = cr is not None and nr is not None and cr == nr",
+      "verified": true
+    },
+    {
+      "line": 171,
+      "text": "        if same_root and cp == np_:",
+      "verified": true
+    },
+    {
+      "line": 172,
+      "text": "            return \"ACCEPT\", [], checks, None",
+      "verified": true
+    },
+    {
+      "line": 183,
+      "text": "        if checks[\"boundary_endpoint\"]:",
+      "verified": true
+    },
+    {
+      "line": 184,
+      "text": "            return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "verified": true
+    },
+    {
+      "line": 733,
+      "text": "        plan[\"dwellMs\"] = int(__import__(\"os\").environ.get(\"ORRERY_BRIDGE_DWELL_MS\", \"1500\"))",
+      "verified": true
+    }
+  ],
+  "anchorsVerified": 11,
+  "directive": "MVP6-DIR-1",
+  "fixedPoint": {
+    "checksums": {
+      "sha256": "559c07b1ba36e55eda09e9f7bb034334ced5656d76149071e7de09b28e3c6d99"
+    },
+    "head": "154db019711570ade5558a78eb5abb0b63b3c884",
+    "ledger": {
+      "bytes": 364225,
+      "lines": 4216,
+      "sha256": "ab1416156b261d02afecebfaabf5d10d59e89e6faea7136c8f9cda2a2d0d2c28"
+    },
+    "manifest": {
+      "bytes": 110846414,
+      "files": 1600,
+      "sha256": "1a07456c3e42784010cf5ec1066eedd0a6db52b57b9d3bd408fc0a81156a5f93"
+    },
+    "treeClean": true,
+    "treeDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "validation": {
+      "checksFailed": 0,
+      "checksPassed": 418,
+      "sha256": "917b65ab719a108cd1a32e0605cb699bedff2bb6f76c1e742eb73d6da59321c2",
+      "verdict": "PASS"
+    }
+  },
+  "formSpec": {
+    "bars": 55,
+    "bytes": 10286,
+    "distinctBarStates": 41,
+    "distinctStatesWithBoundary": 42,
+    "durationMs": 122700,
+    "dwellBars": 19,
+    "floatValues": 0,
+    "microSteps": 408,
+    "offices": [
+      "Jupiter",
+      "Mars",
+      "Mercury",
+      "Moon",
+      "Saturn",
+      "Sun",
+      "Venus"
+    ],
+    "orbits": [
+      "ORBIT-A0",
+      "ORBIT-A2",
+      "ORBIT-D3",
+      "ORBIT-D4"
+    ],
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6/task-0/mvp6_form_spec.json",
+    "phases": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "predeclarationHash": "4960b11c9e69341991aad76d86f889be6a9b6a5d2875839b1530fe0a6acde287",
+    "rests": 1,
+    "sha256": "135fb1d1b7bca1a3ba9814e3c62bc2b531511326badb219d65aa93cd61cb1823",
+    "transitBars": 36
+  },
+  "guardFlags": {
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "pins": [
+    {
+      "bytes": 43639,
+      "path": "canonical/tiered-photonic-candidates/tiered-photonic-v1.json",
+      "sha256": "00ce6e315a66346fa9673ab5a64460a788702cc097fac4069444901af6930f4e",
+      "verified": true
+    },
+    {
+      "bytes": 34624,
+      "path": "docs/ARCHITECTURE_MAP.md",
+      "sha256": "62f552576abc982108f0df2a79d03f1a2e552628acf704faed4820befd61f1dc",
+      "verified": true
+    },
+    {
+      "bytes": 6664,
+      "path": "docs/THREE_PART_CONTINUOUS_TYPOLOGY.md",
+      "sha256": "11a7f70f71ccc061c115e1b0e2f38a9265d9872588b6b9e83be05e79e5568d6c",
+      "verified": true
+    },
+    {
+      "bytes": 8597,
+      "path": "docs/TIERED_PHOTONIC_THEOREM.md",
+      "sha256": "c1d6fcb53ff947b9aa32991d8d3dfc999f127bba0cb48ddf807ecc37386867c3",
+      "verified": true
+    },
+    {
+      "bytes": 18762,
+      "path": "docs/analysis/ORBIT_SPECTRAL_CATALOG.md",
+      "sha256": "1e14fb78bdb3914a0188d79dcee288377941bba04c6f79e5721f0e803d22da29",
+      "verified": true
+    },
+    {
+      "bytes": 21189,
+      "path": "docs/analysis/orbit_spectral_catalog.json",
+      "sha256": "6f782a5f9d89057273d4c13432d3cd6ef07e3f2dff338034c5319fc479151774",
+      "verified": true
+    },
+    {
+      "bytes": 37063,
+      "path": "orrery/src/audio.ts",
+      "sha256": "e863b845c8f2709a0fe0e6fe706dce603e795b760c6561d110d240ddb1dfca88",
+      "verified": true
+    },
+    {
+      "bytes": 17403,
+      "path": "orrery/src/generated/photonic-overlay.v1.json",
+      "sha256": "35e8958d6e6d2455ceb6442ef7dc50d07de80416bbed7bf78260c670cc10901e",
+      "verified": true
+    },
+    {
+      "bytes": 17840,
+      "path": "qa/mvp4_landing_receipt.json",
+      "sha256": "311e10ad155d1046f6c2b0800759552f2b8de5fe84cf3a1bab60a1a7268572db",
+      "verified": true
+    },
+    {
+      "bytes": 20059,
+      "path": "qa/mvp5_5_landing_receipt.json",
+      "sha256": "8409572788a841a48180aee76de4a3c11048a59771dd82263ea45ceb2295c78a",
+      "verified": true
+    },
+    {
+      "bytes": 92861,
+      "path": "qa/mvp5_landing_receipt.json",
+      "sha256": "c45214dae93a6da0c73fdfd7c96a0611f9ca9218793a9105bf198a0530606f0c",
+      "verified": true
+    },
+    {
+      "bytes": 5163,
+      "path": "src/fivefold/quintessence.py",
+      "sha256": "eefd7e1e060189261c8063652d2ed73a09b16d3ffdcb9f259502a107ef9ceaa0",
+      "verified": true
+    },
+    {
+      "bytes": 194194,
+      "path": "tools/governed-loop/census_462.json",
+      "sha256": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+      "verified": true
+    },
+    {
+      "bytes": 91360,
+      "path": "tools/governed-loop/frozen_ground_truth.json",
+      "sha256": "007b0ffe65015bd2c5f1a6fe0df8969961ce8cfb3d499677b143d971e1fc5744",
+      "verified": true
+    },
+    {
+      "bytes": 42668,
+      "path": "tools/governed-loop/frozen_seam_substrate.json",
+      "sha256": "8a5e82ac5f3b596720db2b62f2ba82484bab5250d168035e4c84cf9870c90bac",
+      "verified": true
+    },
+    {
+      "bytes": 47207,
+      "path": "tools/governed-loop/frozen_seam_substrate_v3.json",
+      "sha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+      "verified": true
+    },
+    {
+      "bytes": 38997,
+      "path": "tools/governed-loop/mvp2.py",
+      "sha256": "79c0cf706fffc23745cab6e87ffbc46d34d70ad94a93291135725e388dc17328",
+      "verified": true
+    },
+    {
+      "bytes": 1999,
+      "path": "tools/governed-loop/mvp4/task-a/mvp4_dynamic_chaldean_card.json",
+      "sha256": "6486599187687edb1e28481b2bbc79d9a11a06001e4a237505c5e44c1c1a1469",
+      "verified": true
+    },
+    {
+      "bytes": 580743,
+      "path": "tools/governed-loop/mvp4/task-b/mvp4_graph_census.json",
+      "sha256": "165fb6b33a1ced983b45189738541bba3e206d5655a729c8deeff5cd72627d12",
+      "verified": true
+    },
+    {
+      "bytes": 21348,
+      "path": "tools/governed-loop/mvp4/task-b/mvp4_symbolic_planner.py",
+      "sha256": "9ff511f14282cbe6ee48010d67092c70c25da0bf5fa6dbd1e50382afeb85f5c0",
+      "verified": true
+    },
+    {
+      "bytes": 4721,
+      "path": "tools/governed-loop/mvp4/task-c/mvp4_q_intra_node.py",
+      "sha256": "8b39ffe4be4d1f801cf1065cd8928c681002249de8ebad1d5246f277e94f815f",
+      "verified": true
+    },
+    {
+      "bytes": 20663,
+      "path": "tools/governed-loop/mvp5/task-a/mvp5_coupled_engine.py",
+      "sha256": "c07940ccc90a73e220102000905d5af8da13ee03604224e49c71ff4c4718dd0c",
+      "verified": true
+    },
+    {
+      "bytes": 24696,
+      "path": "tools/governed-loop/mvp5/task-b/mvp5_audio_renderer.py",
+      "sha256": "0c917aab7a95851e90ce1c3244ea6b3af1ea35e362262cb0d7a0095ec40b9984",
+      "verified": true
+    },
+    {
+      "bytes": 8246,
+      "path": "tools/governed-loop/mvp5/task-d/EAR_VALIDATION_PROTOCOL.md",
+      "sha256": "f4cd7055f64bfbf9160c0a855d355cea09efee1d06b0f40175edb172fbc9d4db",
+      "verified": true
+    },
+    {
+      "bytes": 10181,
+      "path": "tools/governed-loop/plv3_sweep.json",
+      "sha256": "6a943e44c9ed2dc0dc39810c9656872ee55d5ea86bcd4a1e80eb7de505ad8243",
+      "verified": true
+    },
+    {
+      "bytes": 9318,
+      "path": "tools/governed-loop/plv3_sweep.py",
+      "sha256": "22e6b1e5998c92f445fe3a631b2842231b2d5fdbea56ca760436f3a022ac5c15",
+      "verified": true
+    },
+    {
+      "bytes": 1712,
+      "path": "tools/governed-loop/plv3_sweep_predeclared.json",
+      "sha256": "14117c9460a6b611f849747f4881f296a8f3ce2108bb23524fe8beecd354e87b",
+      "verified": true
+    },
+    {
+      "bytes": 551287,
+      "path": "tools/governed-loop/seam_legal_moves_v3.json",
+      "sha256": "e6cf62a8eefa0924da9286f2e664c1914d9d620ed2d299929f684fd48225c274",
+      "verified": true
+    }
+  ],
+  "pinsVerified": 28,
+  "schemaVersion": "governed-loop.mvp6-task-0.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "strongCore": {
+    "i0MirrorRoundTrips": [
+      {
+        "back": 2,
+        "inStrongCore": true,
+        "node": "1709@0",
+        "out": 2
+      },
+      {
+        "back": 6,
+        "inStrongCore": true,
+        "node": "1461@0",
+        "out": 6
+      },
+      {
+        "back": 12,
+        "inStrongCore": true,
+        "node": "953@0",
+        "out": 11
+      }
+    ],
+    "oneWayBoundary": 120,
+    "oneWayGoverned": 156,
+    "oneWayNodes": 276,
+    "reachableNodes": 3204,
+    "seed": "1387@0",
+    "shoreInStrongCore": true,
+    "shoreOutboundHops": 19,
+    "shoreReturnHops": 19,
+    "strongCoreNodes": 2928
+  },
+  "task": "MVP6-T0"
+}

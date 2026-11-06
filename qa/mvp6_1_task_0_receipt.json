@@ -1,0 +1,113 @@
+{
+  "anchorsVerified": 11,
+  "directive": "MVP6.1-DIR-1",
+  "floatValues": 0,
+  "guardFlags": {
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "loopEvidence": {
+    "repeatBarCount": 10,
+    "repeatBars": [
+      16,
+      17,
+      23,
+      24,
+      25,
+      33,
+      34,
+      53,
+      54,
+      55
+    ],
+    "runs": [
+      {
+        "bars": [
+          15,
+          17
+        ],
+        "identical": true,
+        "length": 3,
+        "node": "1453@6"
+      },
+      {
+        "bars": [
+          22,
+          25
+        ],
+        "identical": true,
+        "length": 4,
+        "node": "623@8"
+      },
+      {
+        "bars": [
+          32,
+          34
+        ],
+        "identical": true,
+        "length": 3,
+        "node": "379@7"
+      },
+      {
+        "bars": [
+          52,
+          55
+        ],
+        "identical": true,
+        "length": 4,
+        "node": "1387@0"
+      }
+    ]
+  },
+  "opening": {
+    "baseHead": "154db019711570ade5558a78eb5abb0b63b3c884",
+    "checksums": {
+      "sha256": "9d76a4096fe89540b8480abc84f4dc63d147e0dd1b57a26b4905cd07fc21b02e"
+    },
+    "l23LandingReceipt": {
+      "sha256": "4692c3f8497da98a64faa1e4f97faaf0174e91c645ab6ff50626fb479f536420"
+    },
+    "ledger": {
+      "bytes": 372516,
+      "lines": 4249,
+      "sha256": "f174d9474db01e7ace6a49d9c3eb10ef63155f9d364c59275713e5e94aa7e7e5"
+    },
+    "manifest": {
+      "fileCount": 1621,
+      "sha256": "438a4cdfd084f01dc01676762a73d67a58aa187feb33819e7086bb0b75b4765d",
+      "totalBytes": 122194085
+    },
+    "statusEntryCount": 26,
+    "treeClean": false,
+    "validation": {
+      "checksFailed": 0,
+      "checksPassed": 418,
+      "sha256": "8d0dddd8a586bdb6678b0dc79485d30d9b2c36adeecd1e7b318d727ec98cc1f0",
+      "verdict": "PASS"
+    },
+    "workingTreeState": "L23 working-tree landing (uncommitted) on HEAD 154db01"
+  },
+  "pinsVerified": 37,
+  "predeclaration": {
+    "bytes": 4000,
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6_1/task-0/mvp6_1_predeclared_deloop.json",
+    "sha256": "7b7d9e876ea0fe54d52c232a41e18df34c7c329c1e36a1b4a122c8d5cb83e6c9"
+  },
+  "schemaVersion": "governed-loop.mvp6_1-task-0.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "strongCore": {
+    "oneWayNodes": 276,
+    "reachableNodes": 3204,
+    "seed": "1387@0",
+    "shoreInStrongCore": true,
+    "strongCoreNodes": 2928
+  },
+  "task": "MVP6_1-T0"
+}

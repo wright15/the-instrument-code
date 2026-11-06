@@ -1,0 +1,50 @@
+{
+  "arrivalBoundary": {
+    "legatoDepthDb": 3.070653,
+    "pinnedDepthDb": 35.397065,
+    "reduced": true,
+    "reducedDb": 32.326411,
+    "timeMs": 1500
+  },
+  "controlTrace": {
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6_1/task-b/traces/control_voiced_terminal.jsonl",
+    "sha256": "2a6343ece3395bc6e8b52b06b1bbfba7578cb68ba70ac87788a7f59ebd056eed"
+  },
+  "directive": "MVP6.2-DIR-1",
+  "floatValues": 0,
+  "guardFlags": {
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "midiIdentical": true,
+  "renderIntegrity": {
+    "clippedSamples": 0,
+    "nonFiniteSamples": 0,
+    "reRenderMatch": true
+  },
+  "renders": {
+    "legato": {
+      "bytes": 449864,
+      "midiSha256": "f46fd6d7a1c9ae2dfbdf6d0384d6696d5eb376bf84c3e11ac1cc6fc6600b0640",
+      "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6_2/task-b/renders/control_voiced_terminal_legato.wav",
+      "samples": 224910,
+      "sha256": "6a9ffa907bc4494e131901810fbee079a3391a5918ced040d8b152a0dca73660"
+    },
+    "pinned": {
+      "midiSha256": "f46fd6d7a1c9ae2dfbdf6d0384d6696d5eb376bf84c3e11ac1cc6fc6600b0640",
+      "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6_2/task-b/renders/control_voiced_terminal_pinned.wav",
+      "samples": 224910,
+      "sha256": "bd59d741e7d2a5202dbbdbf119505da1f2a4ac54a98f408168cde9a40d583fb0"
+    }
+  },
+  "schemaVersion": "governed-loop.mvp6_2-task-b.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "task": "MVP6_2-TB"
+}

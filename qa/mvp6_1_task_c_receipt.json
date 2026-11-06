@@ -1,0 +1,390 @@
+{
+  "ab": {
+    "changedBars": [
+      16,
+      17,
+      23,
+      24,
+      25,
+      33,
+      34,
+      53,
+      54,
+      55
+    ],
+    "controlTraceSha256": "fc0c7a099ba117b3f2291f551df1ef28e4236e6668314861e58acfbbb16ad18a",
+    "firstOfRunIdentical": true,
+    "unchangedBars": 45
+  },
+  "directive": "MVP6.1-DIR-1",
+  "floatValues": 0,
+  "guardFlags": {
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "laws": {
+    "law3LeadLine": {
+      "climaxRegisterOffsetSum": 24,
+      "climaxSectionLeadPcSum": 430,
+      "quietRegisterOffsetSum": 0,
+      "quietSectionLeadPcSum": 195
+    },
+    "law4DwellTerrain": {
+      "dwellBars": 19,
+      "fullContainer": true,
+      "fullQCycle": true,
+      "transitBars": 36
+    },
+    "law5TerminalVoiced": true
+  },
+  "llmCalls": 0,
+  "novelty": {
+    "allDeltasAtLeast": 2,
+    "allRunsFullyDistinct": true,
+    "repeatBars": [
+      16,
+      17,
+      23,
+      24,
+      25,
+      33,
+      34,
+      53,
+      54,
+      55
+    ],
+    "runs": [
+      {
+        "bars": [
+          15,
+          17
+        ],
+        "deltas": [
+          {
+            "bar": 16,
+            "delta": 12
+          },
+          {
+            "bar": 17,
+            "delta": 12
+          }
+        ],
+        "distinctSignatures": 3,
+        "length": 3,
+        "node": "1453@6"
+      },
+      {
+        "bars": [
+          22,
+          25
+        ],
+        "deltas": [
+          {
+            "bar": 23,
+            "delta": 9
+          },
+          {
+            "bar": 24,
+            "delta": 9
+          },
+          {
+            "bar": 25,
+            "delta": 9
+          }
+        ],
+        "distinctSignatures": 4,
+        "length": 4,
+        "node": "623@8"
+      },
+      {
+        "bars": [
+          32,
+          34
+        ],
+        "deltas": [
+          {
+            "bar": 33,
+            "delta": 10
+          },
+          {
+            "bar": 34,
+            "delta": 10
+          }
+        ],
+        "distinctSignatures": 3,
+        "length": 3,
+        "node": "379@7"
+      },
+      {
+        "bars": [
+          52,
+          55
+        ],
+        "deltas": [
+          {
+            "bar": 53,
+            "delta": 12
+          },
+          {
+            "bar": 54,
+            "delta": 12
+          },
+          {
+            "bar": 55,
+            "delta": 12
+          }
+        ],
+        "distinctSignatures": 4,
+        "length": 4,
+        "node": "1387@0"
+      }
+    ]
+  },
+  "predeclaration": {
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6_1/task-0/mvp6_1_predeclared_deloop.json",
+    "sha256": "7b7d9e876ea0fe54d52c232a41e18df34c7c329c1e36a1b4a122c8d5cb83e6c9"
+  },
+  "schemaVersion": "governed-loop.mvp6_1-task-c.v1",
+  "sections": [
+    {
+      "bars": 5,
+      "containerPcSum": 171,
+      "directCount": 25,
+      "distinctEmitted": 10,
+      "distinctQStates": 12,
+      "fallbackCount": 21,
+      "leadPcSum": 215,
+      "microSteps": 46,
+      "nodes": [
+        "1387@0",
+        "1643@0",
+        "1709@0",
+        "1645@0",
+        "1387@0"
+      ],
+      "registerOffsetSum": -36,
+      "section": 1,
+      "sectionKey": "home_mirror"
+    },
+    {
+      "bars": 9,
+      "containerPcSum": 360,
+      "directCount": 24,
+      "distinctEmitted": 12,
+      "distinctQStates": 12,
+      "fallbackCount": 21,
+      "leadPcSum": 241,
+      "microSteps": 45,
+      "nodes": [
+        "2773@11",
+        "2905@11",
+        "727@11",
+        "1453@10",
+        "2905@9",
+        "727@9",
+        "1453@8",
+        "2905@7",
+        "727@7"
+      ],
+      "registerOffsetSum": 12,
+      "section": 2,
+      "sectionKey": "departure"
+    },
+    {
+      "bars": 3,
+      "containerPcSum": 123,
+      "directCount": 21,
+      "distinctEmitted": 7,
+      "distinctQStates": 12,
+      "fallbackCount": 15,
+      "leadPcSum": 195,
+      "microSteps": 36,
+      "nodes": [
+        "1453@6",
+        "1453@6",
+        "1453@6"
+      ],
+      "registerOffsetSum": 0,
+      "section": 3,
+      "sectionKey": "first_dwell"
+    },
+    {
+      "bars": 8,
+      "containerPcSum": 363,
+      "directCount": 41,
+      "distinctEmitted": 10,
+      "distinctQStates": 12,
+      "fallbackCount": 27,
+      "leadPcSum": 430,
+      "microSteps": 68,
+      "nodes": [
+        "2485@6",
+        "2745@6",
+        "1373@7",
+        "1245@7",
+        "623@8",
+        "623@8",
+        "623@8",
+        "623@8"
+      ],
+      "registerOffsetSum": 24,
+      "section": 4,
+      "sectionKey": "climax"
+    },
+    {
+      "bars": 9,
+      "containerPcSum": 355,
+      "directCount": 41,
+      "distinctEmitted": 12,
+      "distinctQStates": 12,
+      "fallbackCount": 25,
+      "leadPcSum": 407,
+      "microSteps": 66,
+      "nodes": [
+        "635@8",
+        "1269@7",
+        "699@7",
+        "1397@6",
+        "885@6",
+        "443@7",
+        "379@7",
+        "379@7",
+        "379@7"
+      ],
+      "registerOffsetSum": 12,
+      "section": 5,
+      "sectionKey": "shore"
+    },
+    {
+      "bars": 17,
+      "containerPcSum": 672,
+      "directCount": 58,
+      "distinctEmitted": 12,
+      "distinctQStates": 12,
+      "fallbackCount": 41,
+      "leadPcSum": 560,
+      "microSteps": 99,
+      "nodes": [
+        "443@7",
+        "885@6",
+        "699@6",
+        "1397@5",
+        "699@5",
+        "1397@4",
+        "2793@3",
+        "699@3",
+        "1397@2",
+        "2793@1",
+        "1269@1",
+        "635@2",
+        "623@2",
+        "1245@1",
+        "861@1",
+        "1721@0",
+        "859@0"
+      ],
+      "registerOffsetSum": 24,
+      "section": 6,
+      "sectionKey": "return"
+    },
+    {
+      "bars": 4,
+      "containerPcSum": 132,
+      "directCount": 28,
+      "distinctEmitted": 7,
+      "distinctQStates": 12,
+      "fallbackCount": 20,
+      "leadPcSum": 224,
+      "microSteps": 48,
+      "nodes": [
+        "1387@0",
+        "1387@0",
+        "1387@0",
+        "1387@0"
+      ],
+      "registerOffsetSum": -48,
+      "section": 7,
+      "sectionKey": "homecoming"
+    }
+  ],
+  "status": "COMPLETE",
+  "stopRules": [],
+  "summary": {
+    "bars": 55,
+    "boundaryDwell": 0,
+    "degreeModuloCount": 170,
+    "directOrbitCount": 238,
+    "distinctMacroStates": 41,
+    "distinctOffices": 7,
+    "distinctPhases": 12,
+    "distinctQStates": 12,
+    "durationMs": 122700,
+    "emittedPcs": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "emittedPitchClasses": 12,
+    "floatValues": 0,
+    "intervalHistogram": {
+      "0": 27,
+      "1": 61,
+      "10": 16,
+      "11": 6,
+      "2": 66,
+      "3": 20,
+      "4": 9,
+      "5": 7,
+      "6": 30,
+      "7": 133,
+      "8": 26,
+      "9": 6
+    },
+    "llmCalls": 0,
+    "microSteps": 408,
+    "ngram5Distinct": 77,
+    "ngram5Repeats": 4,
+    "ngram5Total": 81,
+    "outOfMaskPitches": 0,
+    "projectionModes": {
+      "degree_modulo_7": 170,
+      "direct_orbit_pc": 238
+    },
+    "qStatesVisited": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "rests": 1,
+    "stillSetEntries": 0
+  },
+  "task": "MVP6_1-TC",
+  "trace": {
+    "bytes": 294526,
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6_1/task-c/traces/piece_a_far_shore_delooped.jsonl",
+    "sha256": "38ab32e5ebd1af7854d3241ecdab5879d5240293c3d62f80c3c28ffc38ad9e1b"
+  }
+}

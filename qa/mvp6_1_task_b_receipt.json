@@ -1,0 +1,41 @@
+{
+  "controls": {
+    "unvoicedTerminal": {
+      "bars": 1,
+      "durationMs": 1500,
+      "microSteps": 5,
+      "sha256": "dd53543d023eba634a3e6ae7d276b3fbc23fc475960e07ad60d887696b509cb6",
+      "trace": "/home/erick/workspace/scratch-governed-loop-run/mvp6_1/task-b/traces/control_unvoiced_terminal.jsonl"
+    },
+    "voicedTerminal": {
+      "bars": 2,
+      "durationMs": 5100,
+      "microSteps": 17,
+      "sha256": "2a6343ece3395bc6e8b52b06b1bbfba7578cb68ba70ac87788a7f59ebd056eed",
+      "trace": "/home/erick/workspace/scratch-governed-loop-run/mvp6_1/task-b/traces/control_voiced_terminal.jsonl"
+    }
+  },
+  "deLoopIsNoOpWithoutRepeats": true,
+  "directive": "MVP6.1-DIR-1",
+  "floatValues": 0,
+  "guardFlags": {
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "matchesL23Controls": {
+    "audioContentIdentical": true,
+    "jsonlMetadataDiffers": true,
+    "l23UnvoicedSha256": "70a1505ae894a2839da109d3df1551ea566396b002a496c84e471cc65e17efc8",
+    "l23VoicedSha256": "ec8fa224712ac53554a35b3c50214241fe7e69653b6beb2f7ec3cf85c9b5eec2"
+  },
+  "schemaVersion": "governed-loop.mvp6_1-task-b.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "task": "MVP6_1-TB"
+}

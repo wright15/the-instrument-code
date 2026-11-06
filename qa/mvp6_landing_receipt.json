@@ -1,0 +1,361 @@
+{
+  "adjudications": {
+    "destinationPhilosophy": "far_shore_return",
+    "dwellRoute": "biased_outbound_quiet_then_climax",
+    "earProtocol": "dual_listener_blind_ready",
+    "gc1CarryForward": true
+  },
+  "artifacts": {
+    "gc1": {
+      "applied": true,
+      "bytes": 34880,
+      "path": "docs/ARCHITECTURE_MAP.md",
+      "sha256": "865ab785164f85c0426d849cb3314c8c41efe81155ce14bd7fe6392ca5d0c381"
+    },
+    "payloads": [
+      {
+        "bytes": 22892,
+        "copied": true,
+        "destination": "tools/governed-loop/mvp6/task-0/mvp6_task_0.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp6/task-0/mvp6_task_0.py",
+        "role": "mvp6_task_0",
+        "sha256": "7a71418591d7c6ab61c847ded73c9cdd3c8721a87d4ddc95e3991a7a14e7a028",
+        "source": "task-0/mvp6_task_0.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp6/task-0/mvp6_task_0.py",
+        "verified": true
+      },
+      {
+        "bytes": 10286,
+        "copied": true,
+        "destination": "tools/governed-loop/mvp6/task-0/mvp6_form_spec.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp6/task-0/mvp6_form_spec.json",
+        "role": "mvp6_form_spec",
+        "sha256": "135fb1d1b7bca1a3ba9814e3c62bc2b531511326badb219d65aa93cd61cb1823",
+        "source": "task-0/mvp6_form_spec.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp6/task-0/mvp6_form_spec.json",
+        "verified": true
+      },
+      {
+        "bytes": 20540,
+        "copied": true,
+        "destination": "tools/governed-loop/mvp6/task-a/mvp6_form_compiler.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp6/task-a/mvp6_form_compiler.py",
+        "role": "mvp6_form_compiler",
+        "sha256": "523dd3fbd31047f4f03205a832519ba2d911c74bedfc8a2f7424a69e1a783677",
+        "source": "task-a/mvp6_form_compiler.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp6/task-a/mvp6_form_compiler.py",
+        "verified": true
+      },
+      {
+        "bytes": 27186,
+        "copied": true,
+        "destination": "tools/governed-loop/mvp6/task-a/compiled_itinerary.json",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp6/task-a/compiled_itinerary.json",
+        "role": "compiled_itinerary",
+        "sha256": "4a66d12a139be61dfb14b0b185d16a345d5cbe395595b4398999168be9654232",
+        "source": "task-a/compiled_itinerary.json",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp6/task-a/compiled_itinerary.json",
+        "verified": true
+      },
+      {
+        "bytes": 12194,
+        "copied": true,
+        "destination": "tools/governed-loop/mvp6/task-b/mvp6_coupled_form_engine.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp6/task-b/mvp6_coupled_form_engine.py",
+        "role": "mvp6_coupled_form_engine",
+        "sha256": "c1a309a0d4eb4ee518edf64540e3330419e124f13acca6660ba6a18e99022ec0",
+        "source": "task-b/mvp6_coupled_form_engine.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp6/task-b/mvp6_coupled_form_engine.py",
+        "verified": true
+      },
+      {
+        "bytes": 5182,
+        "copied": true,
+        "destination": "tools/governed-loop/mvp6/task-b/mvp6_task_b.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp6/task-b/mvp6_task_b.py",
+        "role": "mvp6_task_b",
+        "sha256": "aea46a3bb8f2d57d696ce2df3bd08e2dd46c5abaa4ffd26366ccce351a6b9eb5",
+        "source": "task-b/mvp6_task_b.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp6/task-b/mvp6_task_b.py",
+        "verified": true
+      },
+      {
+        "bytes": 281494,
+        "copied": true,
+        "destination": "tools/governed-loop/mvp6/task-c/traces/piece_a_far_shore.jsonl",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp6/task-c/traces/piece_a_far_shore.jsonl",
+        "role": "piece_a_far_shore_trace",
+        "sha256": "fc0c7a099ba117b3f2291f551df1ef28e4236e6668314861e58acfbbb16ad18a",
+        "source": "task-c/traces/piece_a_far_shore.jsonl",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp6/task-c/traces/piece_a_far_shore.jsonl",
+        "verified": true
+      },
+      {
+        "bytes": 6789,
+        "copied": true,
+        "destination": "tools/governed-loop/mvp6/task-c/mvp6_task_c.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp6/task-c/mvp6_task_c.py",
+        "role": "mvp6_task_c",
+        "sha256": "fc975ed67be8788c79f0eb8fd23fe8933886dbb703e4eb37b59079b129d59a2b",
+        "source": "task-c/mvp6_task_c.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp6/task-c/mvp6_task_c.py",
+        "verified": true
+      },
+      {
+        "bytes": 21342,
+        "copied": true,
+        "destination": "tools/governed-loop/mvp6/task-d/mvp6_task_d.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp6/task-d/mvp6_task_d.py",
+        "role": "mvp6_task_d",
+        "sha256": "b2e59733ddb4f503c244fd28289d172c03a372d407b0b5d0cfaff2ac91f8879c",
+        "source": "task-d/mvp6_task_d.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp6/task-d/mvp6_task_d.py",
+        "verified": true
+      },
+      {
+        "bytes": 10822184,
+        "copied": true,
+        "destination": "tools/governed-loop/mvp6/task-d/renders/piece_a_far_shore.wav",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp6/task-d/renders/piece_a_far_shore.wav",
+        "role": "piece_a_far_shore_wav",
+        "sha256": "e5c8bf2b0e31f32d36a8816e6011f09e10b26cce5b94c4782aefd28406567a77",
+        "source": "task-d/renders/piece_a_far_shore.wav",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp6/task-d/renders/piece_a_far_shore.wav",
+        "verified": true
+      },
+      {
+        "bytes": 10969,
+        "copied": true,
+        "destination": "tools/governed-loop/mvp6/task-d/renders/piece_a_far_shore.mid",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp6/task-d/renders/piece_a_far_shore.mid",
+        "role": "piece_a_far_shore_mid",
+        "sha256": "d44f543b64deb0e6703b9c5906f8c78400015379a8aa166cbc07856be09ec0bb",
+        "source": "task-d/renders/piece_a_far_shore.mid",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp6/task-d/renders/piece_a_far_shore.mid",
+        "verified": true
+      },
+      {
+        "bytes": 23194,
+        "copied": true,
+        "destination": "tools/governed-loop/mvp6/task-e/mvp6_task_e.py",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp6/task-e/mvp6_task_e.py",
+        "role": "mvp6_task_e",
+        "sha256": "62f333058f919e5c272575b07da36caea03df60d38b5f5f938c4d4607ed80149",
+        "source": "task-e/mvp6_task_e.py",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp6/task-e/mvp6_task_e.py",
+        "verified": true
+      },
+      {
+        "bytes": 6801,
+        "copied": true,
+        "destination": "tools/governed-loop/mvp6/task-e/EAR_VALIDATION_PROTOCOL_MVP6.md",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/tools/governed-loop/mvp6/task-e/EAR_VALIDATION_PROTOCOL_MVP6.md",
+        "role": "EAR_VALIDATION_PROTOCOL_MVP6",
+        "sha256": "257a6eb3522f1174f5184a0fe29d18d8aa0adfbad88ea5e7aae2b64ac0aced66",
+        "source": "task-e/EAR_VALIDATION_PROTOCOL_MVP6.md",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp6/task-e/EAR_VALIDATION_PROTOCOL_MVP6.md",
+        "verified": true
+      },
+      {
+        "bytes": 4297,
+        "copied": true,
+        "destination": "scrum/plan/mvp6-sprint-closing-report.md",
+        "destinationAbsolute": "/home/erick/projects/integrated-release/scrum/plan/mvp6-sprint-closing-report.md",
+        "role": "MVP6-CLOSING-REPORT",
+        "sha256": "366069f593fa8530477f89e169700ab39f9504fb3a65f56f9a412b5ad4348c00",
+        "source": "MVP6-CLOSING-REPORT.md",
+        "sourceAbsolute": "/home/erick/workspace/scratch-governed-loop-run/mvp6/MVP6-CLOSING-REPORT.md",
+        "verified": true
+      }
+    ],
+    "receipts": [
+      {
+        "bytes": 9868,
+        "copied": true,
+        "destination": "qa/mvp6_task_0_receipt.json",
+        "role": "mvp6_task_0_receipt",
+        "sha256": "9cd2dd9408ca6aeb5daddfda2a261178d0c9cb62d3701b095a7593f6cc985256",
+        "source": "task-0/mvp6_task_0_receipt.json"
+      },
+      {
+        "bytes": 2775,
+        "copied": true,
+        "destination": "qa/mvp6_task_a_receipt.json",
+        "role": "mvp6_task_a_receipt",
+        "sha256": "76344a181e3eb2403227ebefb65dc6c537e4f5af9bb03679585b701688a042ca",
+        "source": "task-a/mvp6_task_a_receipt.json"
+      },
+      {
+        "bytes": 1525,
+        "copied": true,
+        "destination": "qa/mvp6_task_b_receipt.json",
+        "role": "mvp6_task_b_receipt",
+        "sha256": "e91112e5169a48a8fa509d07b7789365ae7539b6d1d2aad1d95923c3f5a565cd",
+        "source": "task-b/mvp6_task_b_receipt.json"
+      },
+      {
+        "bytes": 5805,
+        "copied": true,
+        "destination": "qa/mvp6_task_c_receipt.json",
+        "role": "mvp6_task_c_receipt",
+        "sha256": "38da7f69f9c1e30fe532ae675cacf0ee1e0e3d9112d0dccd5e42dceba7390c67",
+        "source": "task-c/mvp6_task_c_receipt.json"
+      },
+      {
+        "bytes": 24198,
+        "copied": true,
+        "destination": "qa/mvp6_task_d_receipt.json",
+        "role": "mvp6_task_d_receipt",
+        "sha256": "72bde27cc781d8b8ab414c1069fd50bb3a7359f84c0fa0ba69e0f5a63fc679a1",
+        "source": "task-d/mvp6_task_d_receipt.json"
+      },
+      {
+        "bytes": 1091,
+        "copied": true,
+        "destination": "qa/mvp6_task_e_receipt.json",
+        "role": "mvp6_task_e_receipt",
+        "sha256": "d4671106b290bff2fe4f6656f689d78e249b93fd0dba911954a9b82f33278c83",
+        "source": "task-e/mvp6_task_e_receipt.json"
+      }
+    ]
+  },
+  "cascade": {
+    "commands": [
+      {
+        "command": ".venv/bin/python scripts/generate-fifth-space-census.py",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "{\"candidateFingerprint\": \"1af40ad35532efff1130aff4734a53ea3730ca53654795c0082bd66da804b060\", \"candidateId\": \"FIFTH_SPACE_CENSUS_v0\", \"records\": 462, \"verdict\": \"confirmed\"}\n"
+      },
+      {
+        "command": ".venv/bin/python scripts/validate-fifth-space-census.py",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "  \"status\": \"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings (both ledgers)\"\n    },\n    {\n      \"checkId\": \"bindings-court\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen Court position binding\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"05d0b4ff6928ffe69d6acd6378761baf96559613b3979baa0aacd2d8e603026d\"\n}\n"
+      },
+      {
+        "command": ".venv/bin/python scripts/generate-shadow-ladder.py",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "{\"candidateFingerprint\": \"892696bb77780ff5d474d64d8b48cea6be6ac1b15fe51cb8df6fe1da80178b8e\", \"candidateId\": \"SHADOW_LADDER_v0\", \"records\": 10}\n"
+      },
+      {
+        "command": ".venv/bin/python scripts/validate-shadow-ladder.py",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "\"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"achirality\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all derived 5-35, 5-34, and predicted 5-33 masks are achiral\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"6c9550ef18f9aaab733b20484cab1fcc3c5b9c0ddf405d74ed4ebcb7f7ed478a\"\n}\n"
+      },
+      {
+        "command": ".venv/bin/python scripts/generate-twin-hub-convergence.py",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "{\"candidateFingerprint\": \"40597b42b541573f623b2989289085c34b84417ab33485965cec0eb9cbd4aeb8\", \"candidateId\": \"TWIN_HUB_CONVERGENCE_v0\", \"verdict\": \"confirmed\"}\n"
+      },
+      {
+        "command": ".venv/bin/python scripts/validate-twin-hub-convergence.py",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "kId\": \"verdict-consistency\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"confirmed\"\n    },\n    {\n      \"checkId\": \"guards-namespace\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"bf3b5b34b44c112eb52ebc7927cf44aed691ab6db53fc46e23b1afa8d3300be1\"\n}\n"
+      },
+      {
+        "command": "node scripts/build-pentatonic-binding-audit-closure.mjs",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "ng_audit/neo4j-live.test.mjs\",\n        \"validate\": \"python3 scripts/generate-pentatonic-7-35-parent-audit.py --check && python3 scripts/validate-pentatonic-7-35-parent-audit.py && npm run test:pentatonic-binding-audit --silent && npm run validate:cypher --silent\"\n      },\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"intrinsic-environment-independence\",\n      \"diagnostic\": \"closure core excludes time, provider, host, process, port, and temporary-path identity\",\n      \"status\": \"PASS\"\n    }\n  ],\n  \"reportFingerprint\": \"5ee5569c1696de104cc68b97f6ff701b6b511775ab364dc01a99246830668338\"\n}\n"
+      },
+      {
+        "command": ".venv/bin/python scripts/build-fivefold-engine-promotion-evidence.py",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "{\"evidenceFingerprint\": \"0a67f5888dfe0d3840294f9c41edd21670c83506ec563fff6012134b9597a18a\", \"evidenceId\": \"fivefold-engine-promotion-evidence-v1\", \"exclusionEvidenceCount\": 11, \"itemEvidenceCount\": 10, \"verdict\": \"PASS\"}\n"
+      },
+      {
+        "command": "node scripts/build-field-derivation-bundle.mjs",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "{\"bundleId\":\"FIELD_DERIVATION_OBS014_015_016_v1\",\"bundleFingerprint\":\"0bf251114ebecc56047ec0c618f11d9a8579a65d42875f632947abb7556a3f63\",\"observations\":3}\n"
+      },
+      {
+        "command": "node scripts/build-orrery-taxonomy-read-model.mjs",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "{\"bundleId\":\"TAXONOMY_READ_MODEL_v1\",\"recordCount\":462,\"stale\":false}\n"
+      },
+      {
+        "command": "node scripts/build-orrery-d-tier-taxonomy-dataset.mjs",
+        "exitCode": 0,
+        "stderrTail": "",
+        "stdoutTail": "{\"datasetId\":\"D_TIER_TAXONOMY_DATASET_v1\",\"recordCount\":175,\"stale\":false}\n"
+      }
+    ]
+  },
+  "constraints": {
+    "claimEvent": false,
+    "encoderBytesModified": false,
+    "gateBytesModified": false,
+    "landingMode": "working-tree; uncommitted",
+    "orreryApplicationSourceModified": false,
+    "qEngineBytesModified": false,
+    "substrateBytesModified": false,
+    "tagOrPush": false
+  },
+  "directive": "MVP6-DIR-1",
+  "ledger": {
+    "afterBytes": 372516,
+    "afterLines": 4249,
+    "afterSha256": "f174d9474db01e7ace6a49d9c3eb10ef63155f9d364c59275713e5e94aa7e7e5",
+    "beforeBytes": 364225,
+    "beforeLines": 4216,
+    "beforeSha256": "ab1416156b261d02afecebfaabf5d10d59e89e6faea7136c8f9cda2a2d0d2c28",
+    "entry": "single combined L23 entry appended at tail; no prior entry amended",
+    "path": "provenance/DECISION_LEDGER.md",
+    "prefixIdentity": true
+  },
+  "manifestRegen": {
+    "command": "node scripts/build-manifest.mjs",
+    "expectedNewFiles": 21,
+    "postValidationManifestSha256": "531446a042d1f552e485cf8dd3ec430317f377a8c1a761f68f2aba25ea1f11b2",
+    "preReceiptFileCount": 1620,
+    "preReceiptManifestSha256": "531446a042d1f552e485cf8dd3ec430317f377a8c1a761f68f2aba25ea1f11b2",
+    "predictedFinalFileCount": 1621
+  },
+  "opening": {
+    "baseHead": "154db019711570ade5558a78eb5abb0b63b3c884",
+    "checksumsBefore": {
+      "sha256": "559c07b1ba36e55eda09e9f7bb034334ced5656d76149071e7de09b28e3c6d99"
+    },
+    "ledgerBefore": {
+      "bytes": 364225,
+      "lines": 4216,
+      "path": "provenance/DECISION_LEDGER.md",
+      "sha256": "ab1416156b261d02afecebfaabf5d10d59e89e6faea7136c8f9cda2a2d0d2c28"
+    },
+    "manifestBefore": {
+      "fileCount": 1600,
+      "sha256": "1a07456c3e42784010cf5ec1066eedd0a6db52b57b9d3bd408fc0a81156a5f93",
+      "totalBytes": 110846414
+    },
+    "treeClean": true,
+    "validationBefore": {
+      "sha256": "917b65ab719a108cd1a32e0605cb699bedff2bb6f76c1e742eb73d6da59321c2"
+    }
+  },
+  "proseConsistency": {
+    "command": "node scripts/validate-validation-prose-consistency.mjs",
+    "exitCode": 0,
+    "stderrTail": "",
+    "stdoutTail": "{\n  \"verdict\": \"PASS\",\n  \"authoritativeChecksPassed\": 418,\n  \"violations\": 0\n}\n"
+  },
+  "schemaVersion": "governed-loop.mvp6-landing.v1",
+  "status": "COMPLETE",
+  "stopRulesTriggered": [],
+  "task": "MVP6-L23-LANDING",
+  "validation": {
+    "checksFailed": 0,
+    "checksPassed": 418,
+    "command": "node scripts/validate-release.mjs",
+    "validationFileSha256": "8d0dddd8a586bdb6678b0dc79485d30d9b2c36adeecd1e7b318d727ec98cc1f0",
+    "verdict": "PASS"
+  },
+  "warnings": []
+}

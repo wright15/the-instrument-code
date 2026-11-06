@@ -1,0 +1,36 @@
+{
+  "artifacts": {
+    "closingReport": {
+      "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6_3/MVP6_3-CLOSING-REPORT.md",
+      "sha256": "9c55d6831b5d7b053dae8f9dd3affe51d773d60803386064301e84344b4d677e"
+    },
+    "protocol": {
+      "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6_3/task-e/EAR_VALIDATION_PROTOCOL_MVP6_3.md",
+      "sha256": "39a6407c6f3d966ef2cef169919f936ca0266a0ef4ec663c05d2930fbf238428"
+    },
+    "stagingManifest": {
+      "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6_3/task-e/l26_staging_manifest.json",
+      "sha256": "1948e8a51c3c9c913a42049f51e73048ca6c30da1e8bfbbf81616228c8eff5b0"
+    }
+  },
+  "directive": "MVP6-DIR-1",
+  "earProtocol": {
+    "blindPass": true,
+    "dualListener": true,
+    "listeners": [
+      "Erick (primary)",
+      "external listener (optional)"
+    ],
+    "questions": 5
+  },
+  "llmCalls": 0,
+  "schemaVersion": "governed-loop.mvp6-task-e.v1",
+  "staging": {
+    "payloadVerified": 14,
+    "payloads": 14,
+    "receipts": 5
+  },
+  "status": "COMPLETE",
+  "stopRules": [],
+  "task": "MVP6-TE"
+}

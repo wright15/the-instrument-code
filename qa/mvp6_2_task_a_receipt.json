@@ -1,0 +1,108 @@
+{
+  "control": {
+    "path": "/home/erick/projects/integrated-release/tools/governed-loop/mvp6_1/task-a/mvp6_1_itinerary.json",
+    "sha256": "ae32b4b75d81e115f34828ecd6284d1b65920a0f10cb52ff793883444e7e5bac"
+  },
+  "coverage": {
+    "allInStrongCore": true,
+    "distinctStates": 42,
+    "offices": [
+      "Jupiter",
+      "Mars",
+      "Mercury",
+      "Moon",
+      "Saturn",
+      "Sun",
+      "Venus"
+    ],
+    "orbits": [
+      "ORBIT-A0",
+      "ORBIT-A2",
+      "ORBIT-D3",
+      "ORBIT-D4"
+    ],
+    "phases": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "returnHops": 19,
+    "returnInteriorNodes": 18,
+    "returnNewInterior": [
+      "699@6",
+      "1397@5",
+      "699@5",
+      "1397@4",
+      "2793@3",
+      "699@3",
+      "1397@2",
+      "2793@1",
+      "1269@1",
+      "635@2",
+      "623@2",
+      "1245@1",
+      "861@1",
+      "1721@0",
+      "859@0"
+    ],
+    "returnNewInteriorNodes": 15
+  },
+  "directive": "MVP6.2-DIR-1",
+  "floatValues": 0,
+  "itinerary": {
+    "bytes": 29508,
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6_2/task-a/mvp6_2_itinerary.json",
+    "sha256": "d62a3c260c56bdf15304da0f7fd0978de2d6e91c517d4f8485e02a6e793eef44"
+  },
+  "llmCalls": 0,
+  "macro": {
+    "bars": 55,
+    "gateAccepted": 55,
+    "identicalToControl": true,
+    "rests": 1,
+    "selfLoops": 9,
+    "transitions": 55
+  },
+  "negativeTests": {
+    "bothRejected": true,
+    "isolatedBoundary": {
+      "boundaryStatus": "boundary-isolated",
+      "hasExit": false,
+      "rejected": true,
+      "role": "boundary",
+      "target": "2159@0",
+      "verdict": "ISOLATED_BOUNDARY"
+    },
+    "neverReturn": {
+      "inCensus": true,
+      "inStrongCore": false,
+      "outboundHops": 22,
+      "rejected": true,
+      "returnHops": null,
+      "target": "1831@6",
+      "verdict": "OUTSIDE_STRONG_CORE"
+    }
+  },
+  "predeclaration": {
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6_2/task-0/mvp6_2_predeclared_legato.json",
+    "sha256": "b5b824f4db4f43e553026515dce84759f02207e28f744ed000346b183e915d3c"
+  },
+  "schemaVersion": "governed-loop.mvp6_2-task-a.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "task": "MVP6_2-TA",
+  "variantReproduction": {
+    "D": 56,
+    "U": 56,
+    "identical": true
+  }
+}

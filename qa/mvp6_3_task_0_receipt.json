@@ -1,0 +1,78 @@
+{
+  "anchorsVerified": 11,
+  "directive": "MVP6.3-DIR-1",
+  "endCutEvidence": {
+    "endsAtZero": false,
+    "lastEight": [
+      -209,
+      -209,
+      -209,
+      -209,
+      -209,
+      -209,
+      -209,
+      -209
+    ],
+    "lastSecondRms": "2154.257508",
+    "maxAbsLast32": 215,
+    "totalSamples": 5411070
+  },
+  "floatValues": 0,
+  "guardFlags": {
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "opening": {
+    "baseHead": "154db019711570ade5558a78eb5abb0b63b3c884",
+    "checksumsBefore": {
+      "sha256": "736c46e36d98c824cc5599dbd230195f2cc64da411ea0e1159e6ea378383e119"
+    },
+    "l25LandingReceipt": {
+      "sha256": "ce8057b89985183357c7c1160f3d3800d174b8f07c563a6776f035c84764838f"
+    },
+    "ledgerBefore": {
+      "bytes": 389529,
+      "lines": 4315,
+      "sha256": "567157e8520e680c246a39cb1956ca595f391bbdb1c7c7308cb34ca56a042952"
+    },
+    "manifestBefore": {
+      "fileCount": 1663,
+      "sha256": "76c33d822f68945bb87fa5177f9e15f259f4b1475a53b417c36e960d0f8764b5",
+      "totalBytes": 145020217
+    },
+    "openingStatusEntries": 44,
+    "treeClean": false,
+    "validationBefore": {
+      "sha256": "23e74e0c918b9c82877341390214adc31df66239cde2e4686c7d806e076cd049"
+    },
+    "workingTreeState": "stacked L23+L24+L25 working-tree landing (uncommitted) on HEAD 154db01"
+  },
+  "pinsVerified": 31,
+  "predeclaration": {
+    "bytes": 3726,
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp6_3/task-0/mvp6_3_predeclared_fade.json",
+    "sha256": "045c246cd6f0702f6a99d7433ceaf4a9e3ea4b1412fcdb1e93591d9b26598ccf"
+  },
+  "schemaVersion": "governed-loop.mvp6_3-task-0.v1",
+  "seamBaseline": {
+    "boundaries": 53,
+    "maxDepthDb": 4.968152,
+    "medianDepthDb": 3.470323
+  },
+  "status": "COMPLETE",
+  "stopRules": [],
+  "strongCore": {
+    "oneWayNodes": 276,
+    "reachableNodes": 3204,
+    "seed": "1387@0",
+    "shoreInStrongCore": true,
+    "strongCoreNodes": 2928
+  },
+  "task": "MVP6_3-T0"
+}

@@ -1,0 +1,507 @@
+{
+  "climaxDwell": "623@8",
+  "destinationPhilosophy": "far_shore_return",
+  "directive": "MVP6-DIR-1",
+  "fences": {
+    "globalCHNull": true,
+    "guardFlags": {
+      "causationClaim": false,
+      "globalCHNull": true,
+      "gov517_correspondence_claimed": false,
+      "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+      "physicalQuantityClaim": false,
+      "still_set_label": "still_set",
+      "tierClassifier": false
+    },
+    "noClaimEvent": true,
+    "noGateByteChange": true,
+    "noOrrerySourceChange": true,
+    "noQEngineByteChange": true,
+    "noSubstrateByteChange": true,
+    "photonicOverlayOnly": true
+  },
+  "mirrorApex": "1709@0",
+  "modality": "discrete-only for Modality 1/3; Modality 2 guarded boundary measurements",
+  "pieceId": "piece_a_far_shore",
+  "predeclarationHash": "4960b11c9e69341991aad76d86f889be6a9b6a5d2875839b1530fe0a6acde287",
+  "quietDwell": "1453@6",
+  "revision": 1,
+  "schemaVersion": "governed-loop.mvp6-predeclared-form.v1",
+  "sections": [
+    {
+      "id": 1,
+      "key": "home_mirror",
+      "name": "Home and Mirror",
+      "steps": [
+        {
+          "k": 12,
+          "node": "1387@0",
+          "role": "dwell",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "1643@0",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 12,
+          "node": "1709@0",
+          "role": "dwell",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "1645@0",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 12,
+          "node": "1387@0",
+          "role": "dwell",
+          "type": "bar"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "key": "departure",
+      "name": "Departure",
+      "steps": [
+        {
+          "k": 5,
+          "node": "2773@11",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "2905@11",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "727@11",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "1453@10",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "2905@9",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "727@9",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "1453@8",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "2905@7",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "727@7",
+          "role": "transit",
+          "type": "bar"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "key": "first_dwell",
+      "name": "First Dwell (Quiet Zone)",
+      "steps": [
+        {
+          "k": 12,
+          "node": "1453@6",
+          "role": "dwell",
+          "type": "bar"
+        },
+        {
+          "k": 12,
+          "node": "1453@6",
+          "role": "dwell",
+          "type": "bar"
+        },
+        {
+          "k": 12,
+          "node": "1453@6",
+          "role": "dwell",
+          "type": "bar"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "key": "climax",
+      "name": "Climax Transit and Dwell",
+      "steps": [
+        {
+          "k": 5,
+          "node": "2485@6",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "2745@6",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "1373@7",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "1245@7",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 12,
+          "node": "623@8",
+          "role": "dwell",
+          "type": "bar"
+        },
+        {
+          "k": 12,
+          "node": "623@8",
+          "role": "dwell",
+          "type": "bar"
+        },
+        {
+          "k": 12,
+          "node": "623@8",
+          "role": "dwell",
+          "type": "bar"
+        },
+        {
+          "k": 12,
+          "node": "623@8",
+          "role": "dwell",
+          "type": "bar"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "key": "shore",
+      "name": "The Shore",
+      "steps": [
+        {
+          "k": 5,
+          "node": "635@8",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "1269@7",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "699@7",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "1397@6",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "885@6",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "443@7",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 12,
+          "node": "379@7",
+          "role": "dwell",
+          "type": "bar"
+        },
+        {
+          "k": 12,
+          "node": "379@7",
+          "role": "dwell",
+          "type": "bar"
+        },
+        {
+          "boundary": "757@6",
+          "durationMs": 300,
+          "source": "379@7",
+          "target": "379@7",
+          "type": "rest"
+        },
+        {
+          "k": 12,
+          "node": "379@7",
+          "role": "dwell",
+          "type": "bar"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "key": "return",
+      "name": "Return",
+      "steps": [
+        {
+          "k": 5,
+          "node": "443@7",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "885@6",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "699@6",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 12,
+          "node": "1397@5",
+          "role": "dwell",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "699@5",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "1397@4",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "2793@3",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "699@3",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "1397@2",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "2793@1",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "1269@1",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "635@2",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 12,
+          "node": "623@2",
+          "role": "dwell",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "1245@1",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "861@1",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "1721@0",
+          "role": "transit",
+          "type": "bar"
+        },
+        {
+          "k": 5,
+          "node": "859@0",
+          "role": "transit",
+          "type": "bar"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "key": "homecoming",
+      "name": "Homecoming",
+      "steps": [
+        {
+          "k": 12,
+          "node": "1387@0",
+          "role": "dwell",
+          "type": "bar"
+        },
+        {
+          "k": 12,
+          "node": "1387@0",
+          "role": "dwell",
+          "type": "bar"
+        },
+        {
+          "k": 12,
+          "node": "1387@0",
+          "role": "dwell",
+          "type": "bar"
+        },
+        {
+          "k": 12,
+          "node": "1387@0",
+          "role": "dwell",
+          "type": "bar"
+        }
+      ]
+    }
+  ],
+  "seed": "1387@0",
+  "shore": "757@6",
+  "status": "locked-before-evaluation",
+  "successCriteria": {
+    "expectedBoundaryDwell": 0,
+    "expectedClippedSamples": 0,
+    "expectedDistinctStates": 42,
+    "expectedDurationMaxMs": 180000,
+    "expectedDurationMinMs": 120000,
+    "expectedLlmCalls": 0,
+    "expectedMacroTransitions": 55,
+    "expectedNonFiniteSamples": 0,
+    "expectedOffices": 7,
+    "expectedOutOfMaskPitches": 0,
+    "expectedPhases": 12,
+    "expectedReturnNewInteriorNodes": 15,
+    "expectedSelfLoopExtensions": 9,
+    "expectedStillSetEntries": 0,
+    "expectedWavDeterminism": true,
+    "macroTransitionsAllAccept": true,
+    "negativeNeverReturnCode": "OUTSIDE_STRONG_CORE",
+    "negativeNeverReturnTarget": "1831@6"
+  },
+  "summary": {
+    "barNodes": [
+      "1387@0",
+      "1643@0",
+      "1709@0",
+      "1645@0",
+      "1387@0",
+      "2773@11",
+      "2905@11",
+      "727@11",
+      "1453@10",
+      "2905@9",
+      "727@9",
+      "1453@8",
+      "2905@7",
+      "727@7",
+      "1453@6",
+      "1453@6",
+      "1453@6",
+      "2485@6",
+      "2745@6",
+      "1373@7",
+      "1245@7",
+      "623@8",
+      "623@8",
+      "623@8",
+      "623@8",
+      "635@8",
+      "1269@7",
+      "699@7",
+      "1397@6",
+      "885@6",
+      "443@7",
+      "379@7",
+      "379@7",
+      "379@7",
+      "443@7",
+      "885@6",
+      "699@6",
+      "1397@5",
+      "699@5",
+      "1397@4",
+      "2793@3",
+      "699@3",
+      "1397@2",
+      "2793@1",
+      "1269@1",
+      "635@2",
+      "623@2",
+      "1245@1",
+      "861@1",
+      "1721@0",
+      "859@0",
+      "1387@0",
+      "1387@0",
+      "1387@0",
+      "1387@0"
+    ],
+    "bars": 55,
+    "durationMs": 122700,
+    "dwellBars": 19,
+    "microSteps": 408,
+    "restMs": 300,
+    "rests": 1,
+    "transitBars": 36
+  }
+}
