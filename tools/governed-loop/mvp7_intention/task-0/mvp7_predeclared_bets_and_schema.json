@@ -1,0 +1,357 @@
+{
+  "bets": {
+    "A1_Q2_calibration": {
+      "claim": "per-window log-centroid difference between quiet dwell and climax dwell lands in [0.60,0.80] octaves",
+      "expectedOctaves": 0.696,
+      "label": "calibration, not discovery",
+      "passRule": "0.60 <= observed <= 0.80"
+    },
+    "A2_negative_controls": {
+      "fade": {
+        "claim": "descriptor delta exactly zero on bars 1-54 and confined to bar 55",
+        "control": "L25 legato WAV",
+        "passRule": "max |delta| on bars 1-54 == 0.0 AND max |delta| in bar 55 > 0.0",
+        "test": "L26 faded WAV"
+      },
+      "legato": {
+        "claim": "descriptor delta concentrated at bar seams; interior median |delta| < 0.01 octaves",
+        "control": "L24 delooped WAV",
+        "passRule": "seam mean |delta| > 10 * interior mean |delta| AND interior mean |delta| < 0.01",
+        "test": "L25 legato WAV"
+      }
+    },
+    "A3_deloop_localisation": {
+      "claim": "descriptor delta on the 10 predeclared repeat bars (plus 500 ms release tails of their 3 successors) and zero elsewhere",
+      "control": "L23 WAV",
+      "passRule": "changed-bar recall == 1.0 AND unchanged-bar false-positive rate <= 0.05 at |delta| > 0.01 octaves",
+      "repeatBars": [
+        16,
+        17,
+        23,
+        24,
+        25,
+        33,
+        34,
+        53,
+        54,
+        55
+      ],
+      "source": "tools/governed-loop/mvp6_1/task-0/mvp6_1_predeclared_deloop.json expected.changedBars",
+      "successorBars": [
+        18,
+        26,
+        35
+      ],
+      "tailMs": 500,
+      "test": "L24 delooped WAV",
+      "unit": "bar"
+    },
+    "A4_carried_vs_reset": {
+      "carried": "track4_arm3b_dynamic_q_carried.wav",
+      "claim": "carried track has strictly greater inter-bar log-centroid variance than reset track",
+      "passRule": "var(carried) > var(reset)",
+      "reset": "track3_arm3a_dynamic_q_reset.wav"
+    }
+  },
+  "cadences": {
+    "B1_andalusian": {
+      "dwellBarsPerWaypoint": 2,
+      "dwellK": 12,
+      "renderLaw": "mvp6_3_fade_renderer legato + 50 ms fade",
+      "terminalDwellBars": 3,
+      "tonicPc": 0,
+      "transitK": 5,
+      "waypoints": [
+        {
+          "band": null,
+          "id": "i",
+          "requiredPcs": [
+            0,
+            3,
+            7
+          ]
+        },
+        {
+          "band": null,
+          "id": "VII",
+          "requiredPcs": [
+            10,
+            2,
+            5
+          ]
+        },
+        {
+          "band": null,
+          "id": "VI",
+          "requiredPcs": [
+            8,
+            0,
+            3
+          ]
+        },
+        {
+          "band": 12,
+          "id": "V",
+          "requiredPcs": [
+            7,
+            8,
+            11
+          ]
+        },
+        {
+          "band": null,
+          "id": "i_resolution",
+          "requiredPcs": [
+            0,
+            3,
+            7
+          ],
+          "requiresLeadPc": 0
+        }
+      ]
+    },
+    "B2_borrowed_minor": {
+      "dwellBarsPerWaypoint": 2,
+      "dwellK": 12,
+      "renderLaw": "mvp6_3_fade_renderer legato + 50 ms fade",
+      "terminalDwellBars": 3,
+      "tonicPc": 0,
+      "transitK": 5,
+      "waypoints": [
+        {
+          "band": null,
+          "id": "I6",
+          "requiredPcs": [
+            0,
+            4,
+            7,
+            9
+          ]
+        },
+        {
+          "band": null,
+          "id": "iv",
+          "requiredPcs": [
+            0,
+            5,
+            8
+          ]
+        },
+        {
+          "band": null,
+          "id": "I",
+          "requiredPcs": [
+            0,
+            4,
+            7
+          ]
+        }
+      ]
+    },
+    "candidateRule": "governed node inside S000 whose phase-transposed container contains all required pcs; band filter on registerOffset when set; deterministic order prefers phase in {0,11}, then (mask, phase)",
+    "routeRule": "shortest path inside governed S000 between consecutive waypoints; every hop gate ACCEPT"
+  },
+  "directive": "MVP7-INTENTION-DIR-1",
+  "earGate": {
+    "baselineWav": "tools/governed-loop/mvp6_3/task-d/renders/piece_a_far_shore_faded.wav",
+    "baselineWavSha256": "330abb9c9224f8526f52f25763c6902d581da3a0fe3ac3127161ae22056ae1a9",
+    "protocol": "tools/governed-loop/mvp6_3/task-e/EAR_VALIDATION_PROTOCOL_MVP6_3.md",
+    "rule": "No listener verdict may be authored by the agent; Q1-Q8 stay unsigned until Erick listens.",
+    "scorecard": "task-0/ear_baseline_scorecard.json",
+    "status": "PENDING_HUMAN"
+  },
+  "fences": {
+    "noCHFormulation": true,
+    "noEntropy": true,
+    "noPerceptionModel": true,
+    "noStructuredClaim": true,
+    "noSubsystemByteChange": true,
+    "noTagNoPush": true
+  },
+  "guards": {
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "intentionSchema": {
+    "allowedDestinationPhilosophy": [
+      "far_shore_return",
+      "interior_circuit",
+      "modal_pivot_return"
+    ],
+    "allowedDispersionClasses": [
+      "ANCHOR_FLAT",
+      "MODERATE_BEND",
+      "DEEP_DISPERSION",
+      "EXTREME_RAMP"
+    ],
+    "forbidden": [
+      "raw MIDI notes",
+      "raw pitch classes as output notes",
+      "node ids as executable transitions",
+      "floats in symbolic fields"
+    ],
+    "requiredFields": [
+      "pieceId",
+      "destinationPhilosophy",
+      "seedNode",
+      "sectionIntentions"
+    ],
+    "schemaVersion": "governed-loop.mvp7-intention-spec.v1",
+    "sectionFields": [
+      "section",
+      "name",
+      "role",
+      "targetDispersionClass",
+      "targetOrbitFilter",
+      "phaseZone",
+      "registerBand",
+      "requiredPitchClasses",
+      "dwellBars",
+      "kSteps"
+    ]
+  },
+  "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+  "lens": {
+    "aggregation": "mean over all analysis windows whose center lies in the unit",
+    "bandHighHz": 4186.01,
+    "bandLowHz": 27.5,
+    "descriptorCentroid": "power_weighted_mean(log2(f/440))",
+    "descriptorSpread": "power_weighted_std(log2(f/440))",
+    "fftSize": 4096,
+    "hopSamples": 1024,
+    "interiorFraction": 0.5,
+    "minBinPower": 1e-12,
+    "referenceHz": 440,
+    "sampleRate": 44100,
+    "seamHalfWindowMs": 300,
+    "units": "octaves",
+    "window": "hann"
+  },
+  "llm": {
+    "arms": {
+      "C1_free_proposal": "LLM proposes section intentions from catalog + laws + prompt",
+      "C2_verified_menu": "compiler enumerates legal waypoint menus per section; LLM selects/ranks"
+    },
+    "maxRetries": 3,
+    "model": "opencode-go/claude-haiku-5-5",
+    "modelRationale": "same model as the MVP-3 move-level proposer, so intention-level divergence is comparable to the recorded move-level convergence",
+    "prompts": {
+      "andalusian": "Plan a 5-section arc that executes an Andalusian cadential descent i-VII-VI-V in the lead line, reaching a Phrygian-dominant climax, then resolving to the tonic.",
+      "borrowed_minor": "Plan a 3-section arc that states the major tonic with natural sixth, pivots to the borrowed minor subdominant, and resolves to the major tonic.",
+      "open_arc": "Compose a 7-section arc that opens at home, departs through a quiet dwell, and reaches a high-dispersion climax. Decide for yourself whether the piece returns home, ends elsewhere, or stays interior; state the destination philosophy explicitly."
+    },
+    "timeoutSeconds": 120,
+    "transport": "opencode CLI 1.19.5 non-interactive run --format json --pure",
+    "trialCount": 2
+  },
+  "openingHead": "865abc8be20483e45176c378c4e078ebd3187c26",
+  "outcomes": {
+    "OUTCOME_1_INTENTION_PROPOSER": "divergence >= 0.25 AND (first-pass + retry-2 legality) >= 0.90 AND FM4 == 0 AND ear Q9 win-or-distinct-tie",
+    "OUTCOME_2_GUEST_CURATOR_MENU_BOUND": "free legality < 0.90 OR FM1-FM3 present, but C2 menu yields ear-preferred divergences on arc/proportion classes",
+    "OUTCOME_3_EXPLAINER_ANNOTATOR_ONLY": "divergence < 0.10 OR blind A/B loss to planner control",
+    "conditionalRule": "If the ear gate is unsigned, no OUTCOME_1 selection is final; emit CONDITIONAL_PENDING_EAR with the deterministic criterion result."
+  },
+  "preExecutionCorrections": [
+    {
+      "at": "before any measurement or LLM call",
+      "field": "bets.A3_deloop_localisation.repeatBars/successorBars",
+      "from": [
+        15,
+        16,
+        17,
+        22,
+        23,
+        24,
+        25,
+        31,
+        32,
+        34
+      ],
+      "reason": "initial transcription error; corrected to the landed MVP-6.1 predeclaration expected.changedBars before evaluation",
+      "thresholdsChanged": false,
+      "to": [
+        16,
+        17,
+        23,
+        24,
+        25,
+        33,
+        34,
+        53,
+        54,
+        55
+      ]
+    },
+    {
+      "at": "before any measurement or LLM call",
+      "field": "bets.A3_deloop_localisation.unit/passRule",
+      "from": "changed-window recall at analysis-window granularity",
+      "reason": "the predeclared claim is about bars changed by the de-loop; bar aggregation is the matching unit",
+      "thresholdsChanged": false,
+      "to": "changed-bar recall at bar granularity"
+    },
+    {
+      "at": "before any LLM call",
+      "field": "llm.model",
+      "from": "opencode-go/deepseek-v4.1-flash",
+      "reason": "match the MVP-3 move-level proposer model so the intention-level result is comparable to the recorded passenger result",
+      "thresholdsChanged": false,
+      "to": "opencode-go/claude-haiku-5-5"
+    },
+    {
+      "at": "before any LLM call",
+      "field": "llm.prompts.open_arc",
+      "from": "returns as new territory (destination fixed)",
+      "reason": "the home-always failure mode cannot be measured if the prompt requires a return",
+      "thresholdsChanged": false,
+      "to": "destination left open so FM3_HOME_ALWAYS is testable"
+    }
+  ],
+  "revision": 1,
+  "schemaVersion": "governed-loop.mvp7-predeclared-bets.v1",
+  "status": "locked-before-evaluation",
+  "takeawayMethods": {
+    "blindAB": "pair each accepted LLM render with the L26 planner control; the Q9 preference field stays unsigned until the human ear gate",
+    "defaultSignature": {
+      "destinationPhilosophy": "far_shore_return",
+      "dwellPhases": [
+        0,
+        2,
+        5,
+        6,
+        7,
+        8
+      ],
+      "requiredPitchClasses": [],
+      "sectionCount": 7,
+      "source": "tools/governed-loop/mvp6/task-0/mvp6_form_spec.json"
+    },
+    "divergenceFormula": "per trial, mean of six dimensions: (1) destinationPhilosophy differs from far_shore_return; (2) |sections-7|/7; (3) Jaccard distance of dwell-phase sets vs {0,2,5,6,7,8}; (4) Jaccard distance of orbit sets vs the default piece orbit set; (5) 1 if any requiredPitchClasses non-empty else 0; (6) Jaccard distance of dispersion-class sets",
+    "failureModes": {
+      "FM1_GENERIC_ARC_BIAS": "all accepted C1 open-arc trials reproduce the 7-section default role sequence",
+      "FM2_CLIMAX_BY_DEFAULT": "all accepted C1 trials request EXTREME_RAMP at phase 8",
+      "FM3_HOME_ALWAYS": "all accepted open-arc trials choose far_shore_return when the prompt leaves the destination open",
+      "FM4_VOCABULARY_DRIFT": "transcript text asserts linear ANCHOR_FLAT, a B2 proof, acoustic octave motion from D7, entropy/C_H, or perception/biology; schema or fence violations are counted separately"
+    },
+    "legalityFormula": "first-pass compile acceptance rate; retry recovery is compile acceptance by retry 2 over first-pass failures",
+    "menuRule": "C2 presents 12 pre-verified governed-S000 node entries per section (index, node, orbit, dispersion class, phase, register band, pitch classes, k, dwellBars); LLM returns one index per section"
+  },
+  "takeaways": {
+    "cost": "llmCalls, input/output tokens, latency ms, USD, plus safety isolation counters",
+    "delegationMap": "per dimension: DELEGATE_TO_LLM / REQUIRE_VERIFIED_MENU / KEEP_PLANNER_DEFAULT",
+    "divergence": "structural edit distance from planner default choices; <0.10 = converges",
+    "earAB": "blind planner vs LLM; Q1-Q8 + Q9 preference; single listener labelled composer taste calibration",
+    "failures": [
+      "FM1_GENERIC_ARC_BIAS",
+      "FM2_CLIMAX_BY_DEFAULT",
+      "FM3_HOME_ALWAYS",
+      "FM4_VOCABULARY_DRIFT"
+    ],
+    "legality": "first-pass acceptance, rejection codes, retry-2/3 recovery, C1 vs C2"
+  }
+}

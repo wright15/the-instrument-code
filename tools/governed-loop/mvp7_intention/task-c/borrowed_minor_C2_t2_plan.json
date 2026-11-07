@@ -1,0 +1,494 @@
+{
+  "chosen": [
+    {
+      "dispersionClass": "ANCHOR_FLAT",
+      "mask": 695,
+      "node": "695@0",
+      "office": "Venus",
+      "orbit": "ORBIT-A1",
+      "phase": 0,
+      "pitchClasses": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        7,
+        9
+      ],
+      "registerBand": 12,
+      "role": "satellite"
+    },
+    {
+      "dispersionClass": "ANCHOR_FLAT",
+      "mask": 445,
+      "node": "445@0",
+      "office": "Jupiter",
+      "orbit": "ORBIT-D3",
+      "phase": 0,
+      "pitchClasses": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "registerBand": 0,
+      "role": "satellite"
+    },
+    {
+      "dispersionClass": "ANCHOR_FLAT",
+      "mask": 379,
+      "node": "379@11",
+      "office": "Jupiter",
+      "orbit": "ORBIT-D3",
+      "phase": 11,
+      "pitchClasses": [
+        11,
+        0,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "registerBand": 0,
+      "role": "satellite"
+    }
+  ],
+  "divergence": {
+    "default": {
+      "destinationPhilosophy": "far_shore_return",
+      "dispersionClasses": [
+        "ANCHOR_FLAT"
+      ],
+      "dwellPhases": [
+        0,
+        2,
+        5,
+        6,
+        7,
+        8
+      ],
+      "orbits": [
+        "ORBIT-A0",
+        "ORBIT-A2",
+        "ORBIT-D3",
+        "ORBIT-D4"
+      ],
+      "requiredPitchClasses": [],
+      "sectionCount": 7
+    },
+    "dimensions": {
+      "destination": 1.0,
+      "dispersionClasses": 0.0,
+      "dwellPhases": 0.8571428571428572,
+      "orbits": 0.8,
+      "pitchClassConstraints": 0.0,
+      "sectionCount": 0.5714285714285714
+    },
+    "plan": {
+      "destinationPhilosophy": "interior_circuit",
+      "dispersionClasses": [
+        "ANCHOR_FLAT"
+      ],
+      "dwellPhases": [
+        0,
+        11
+      ],
+      "orbits": [
+        "ORBIT-A1",
+        "ORBIT-D3"
+      ],
+      "requiredPitchClasses": [],
+      "sectionCount": 3
+    },
+    "score": 0.5380952380952381
+  },
+  "events": [
+    {
+      "citation": null,
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "seamB:bridge",
+      "operator": null,
+      "source": "2773@11",
+      "target": "2777@11"
+    },
+    {
+      "citation": "FamilyA:R1",
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "seamA:R1",
+      "operator": "R1",
+      "source": "2777@11",
+      "target": "1389@0"
+    },
+    {
+      "citation": null,
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "tier-1",
+      "operator": null,
+      "source": "1389@0",
+      "target": "695@0"
+    },
+    {
+      "citation": "FamilyA:L1",
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "seamA:L1",
+      "operator": "L1",
+      "source": "695@0",
+      "target": "1389@11"
+    },
+    {
+      "citation": null,
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "tier-1",
+      "operator": null,
+      "source": "1389@11",
+      "target": "1261@11"
+    },
+    {
+      "citation": "FamilyA:R1",
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "seamA:R1",
+      "operator": "R1",
+      "source": "1261@11",
+      "target": "631@0"
+    },
+    {
+      "citation": null,
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "tier-1",
+      "operator": null,
+      "source": "631@0",
+      "target": "635@0"
+    },
+    {
+      "citation": "FamilyA:L1",
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "seamA:L1",
+      "operator": "L1",
+      "source": "635@0",
+      "target": "1269@11"
+    },
+    {
+      "citation": null,
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "tier-1",
+      "operator": null,
+      "source": "1269@11",
+      "target": "885@11"
+    },
+    {
+      "citation": "FamilyA:R1",
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "seamA:R1",
+      "operator": "R1",
+      "source": "885@11",
+      "target": "443@0"
+    },
+    {
+      "citation": null,
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "tier-1",
+      "operator": null,
+      "source": "443@0",
+      "target": "445@0"
+    },
+    {
+      "citation": "FamilyA:L1",
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "seamA:L1",
+      "operator": "L1",
+      "source": "445@0",
+      "target": "889@11"
+    },
+    {
+      "citation": null,
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "tier-1",
+      "operator": null,
+      "source": "889@11",
+      "target": "477@11"
+    },
+    {
+      "citation": "FamilyA:L1",
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "seamA:L1",
+      "operator": "L1",
+      "source": "477@11",
+      "target": "953@10"
+    },
+    {
+      "citation": null,
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "tier-1",
+      "operator": null,
+      "source": "953@10",
+      "target": "889@10"
+    },
+    {
+      "citation": "FamilyA:R1",
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "seamA:R1",
+      "operator": "R1",
+      "source": "889@10",
+      "target": "445@11"
+    },
+    {
+      "citation": null,
+      "gateReasons": [],
+      "gateVerdict": "ACCEPT",
+      "kind": "tier-1",
+      "operator": null,
+      "source": "445@11",
+      "target": "379@11"
+    }
+  ],
+  "intent": {
+    "destinationPhilosophy": "interior_circuit",
+    "pieceId": "mvp7-task-c-I6-iv-I",
+    "sectionIntentions": [
+      {
+        "dwellBars": 2,
+        "kSteps": 12,
+        "name": "I6",
+        "phaseZone": [
+          0,
+          11
+        ],
+        "registerBand": null,
+        "requiredPitchClasses": [],
+        "role": "dwell",
+        "section": 1,
+        "targetDispersionClass": null,
+        "targetOrbitFilter": []
+      },
+      {
+        "dwellBars": 2,
+        "kSteps": 12,
+        "name": "iv",
+        "phaseZone": [
+          0,
+          11
+        ],
+        "registerBand": null,
+        "requiredPitchClasses": [],
+        "role": "dwell",
+        "section": 2,
+        "targetDispersionClass": null,
+        "targetOrbitFilter": []
+      },
+      {
+        "dwellBars": 2,
+        "kSteps": 12,
+        "name": "I",
+        "phaseZone": [
+          0,
+          11
+        ],
+        "registerBand": null,
+        "requiredPitchClasses": [],
+        "role": "cadential_arrival",
+        "section": 3,
+        "targetDispersionClass": null,
+        "targetOrbitFilter": []
+      }
+    ],
+    "seedNode": "1387@0"
+  },
+  "label": "borrowed_minor_C2_t2",
+  "legs": [
+    {
+      "dwellBars": 2,
+      "hops": 4,
+      "kSteps": 12,
+      "path": [
+        "1387@0",
+        "2773@11",
+        "2777@11",
+        "1389@0",
+        "695@0"
+      ],
+      "section": 1,
+      "target": {
+        "dispersionClass": "ANCHOR_FLAT",
+        "mask": 695,
+        "node": "695@0",
+        "office": "Venus",
+        "orbit": "ORBIT-A1",
+        "phase": 0,
+        "pitchClasses": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          7,
+          9
+        ],
+        "registerBand": 12,
+        "role": "satellite"
+      }
+    },
+    {
+      "dwellBars": 2,
+      "hops": 8,
+      "kSteps": 12,
+      "path": [
+        "695@0",
+        "1389@11",
+        "1261@11",
+        "631@0",
+        "635@0",
+        "1269@11",
+        "885@11",
+        "443@0",
+        "445@0"
+      ],
+      "section": 2,
+      "target": {
+        "dispersionClass": "ANCHOR_FLAT",
+        "mask": 445,
+        "node": "445@0",
+        "office": "Jupiter",
+        "orbit": "ORBIT-D3",
+        "phase": 0,
+        "pitchClasses": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8
+        ],
+        "registerBand": 0,
+        "role": "satellite"
+      }
+    },
+    {
+      "dwellBars": 2,
+      "hops": 6,
+      "kSteps": 12,
+      "path": [
+        "445@0",
+        "889@11",
+        "477@11",
+        "953@10",
+        "889@10",
+        "445@11",
+        "379@11"
+      ],
+      "section": 3,
+      "target": {
+        "dispersionClass": "ANCHOR_FLAT",
+        "mask": 379,
+        "node": "379@11",
+        "office": "Jupiter",
+        "orbit": "ORBIT-D3",
+        "phase": 11,
+        "pitchClasses": [
+          11,
+          0,
+          2,
+          3,
+          4,
+          5,
+          7
+        ],
+        "registerBand": 0,
+        "role": "satellite"
+      }
+    }
+  ],
+  "summary": {
+    "bars": 21,
+    "boundaryDwell": 0,
+    "degreeModuloCount": 55,
+    "directOrbitCount": 92,
+    "distinctMacroStates": 18,
+    "distinctOffices": 4,
+    "distinctPhases": 3,
+    "distinctQStates": 12,
+    "durationMs": 44100,
+    "emittedPcs": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "emittedPitchClasses": 12,
+    "floatValues": 0,
+    "intervalHistogram": {
+      "0": 13,
+      "1": 25,
+      "10": 4,
+      "11": 1,
+      "2": 20,
+      "3": 6,
+      "4": 7,
+      "5": 3,
+      "6": 5,
+      "7": 53,
+      "8": 8,
+      "9": 1
+    },
+    "llmCalls": 0,
+    "microSteps": 147,
+    "ngram5Distinct": 29,
+    "ngram5Repeats": 0,
+    "ngram5Total": 29,
+    "outOfMaskPitches": 0,
+    "projectionModes": {
+      "degree_modulo_7": 55,
+      "direct_orbit_pc": 92
+    },
+    "qStatesVisited": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "rests": 0,
+    "stillSetEntries": 0
+  },
+  "textAudit": {
+    "1": []
+  },
+  "tracePath": "task-c/traces/borrowed_minor_C2_t2.jsonl",
+  "traceSha256": "0ce78168ebecb058d43722e6d10d6e1bc7f6a3324c926f0d7b9c79f20147c240"
+}

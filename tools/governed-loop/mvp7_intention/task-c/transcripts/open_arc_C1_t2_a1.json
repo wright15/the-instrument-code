@@ -1,0 +1,179 @@
+{
+  "cost": 0.00121252,
+  "elapsedSeconds": 9.189,
+  "exitCode": 0,
+  "label": "open_arc_C1_t2_a1",
+  "model": "opencode-go/claude-haiku-5-5",
+  "parsed": {
+    "destinationPhilosophy": "far_shore_return",
+    "pieceId": "orbit-arc-7s-home-departure-climax",
+    "sectionIntentions": [
+      {
+        "dwellBars": 2,
+        "kSteps": 12,
+        "name": "Home Threshold",
+        "phaseZone": [
+          0,
+          11
+        ],
+        "registerBand": 0,
+        "requiredPitchClasses": [
+          0,
+          4,
+          7
+        ],
+        "role": "dwell",
+        "section": 1,
+        "targetDispersionClass": "ANCHOR_FLAT",
+        "targetOrbitFilter": [
+          "ORBIT-A0"
+        ]
+      },
+      {
+        "dwellBars": 3,
+        "kSteps": 12,
+        "name": "Quiet Departure",
+        "phaseZone": [
+          1,
+          10
+        ],
+        "registerBand": -12,
+        "requiredPitchClasses": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "role": "dwell",
+        "section": 2,
+        "targetDispersionClass": "ANCHOR_FLAT",
+        "targetOrbitFilter": [
+          "ORBIT-A1",
+          "ORBIT-A2"
+        ]
+      },
+      {
+        "dwellBars": 1,
+        "kSteps": 5,
+        "name": "First Bend",
+        "phaseZone": [
+          2,
+          9
+        ],
+        "registerBand": 0,
+        "requiredPitchClasses": [
+          0,
+          2,
+          7,
+          9
+        ],
+        "role": "transit",
+        "section": 3,
+        "targetDispersionClass": "MODERATE_BEND",
+        "targetOrbitFilter": [
+          "ORBIT-D2"
+        ]
+      },
+      {
+        "dwellBars": 1,
+        "kSteps": 5,
+        "name": "Mirror Turn",
+        "phaseZone": [
+          3,
+          8
+        ],
+        "registerBand": 12,
+        "requiredPitchClasses": [
+          1,
+          5,
+          8
+        ],
+        "role": "mirror_gesture",
+        "section": 4,
+        "targetDispersionClass": "MODERATE_BEND",
+        "targetOrbitFilter": [
+          "ORBIT-D5"
+        ]
+      },
+      {
+        "dwellBars": 2,
+        "kSteps": 12,
+        "name": "Dispersion Entry",
+        "phaseZone": [
+          0,
+          11
+        ],
+        "registerBand": 0,
+        "requiredPitchClasses": [
+          0,
+          1,
+          4,
+          6,
+          8
+        ],
+        "role": "transit",
+        "section": 5,
+        "targetDispersionClass": "DEEP_DISPERSION",
+        "targetOrbitFilter": [
+          "ORBIT-D6"
+        ]
+      },
+      {
+        "dwellBars": 2,
+        "kSteps": 12,
+        "name": "High Dispersion Climax",
+        "phaseZone": [
+          0,
+          11
+        ],
+        "registerBand": 12,
+        "requiredPitchClasses": [
+          0,
+          3,
+          6,
+          9
+        ],
+        "role": "transit",
+        "section": 6,
+        "targetDispersionClass": "EXTREME_RAMP",
+        "targetOrbitFilter": [
+          "ORBIT-D7"
+        ]
+      },
+      {
+        "dwellBars": 3,
+        "kSteps": 12,
+        "name": "Far Shore Return",
+        "phaseZone": [
+          0,
+          11
+        ],
+        "registerBand": 0,
+        "requiredPitchClasses": [
+          0,
+          4,
+          7
+        ],
+        "role": "cadential_arrival",
+        "section": 7,
+        "targetDispersionClass": "ANCHOR_FLAT",
+        "targetOrbitFilter": [
+          "ORBIT-A0"
+        ]
+      }
+    ],
+    "seedNode": "1387@0"
+  },
+  "prompt": "You are a macro-form intention translator for a governed composition engine.\n\nORBIT SPECTRAL CATALOG v1 (L22), read-only facts:\n- ANCHOR_FLAT: ORBIT-A0, ORBIT-A1, ORBIT-A2, ORBIT-D1, ORBIT-D3, ORBIT-D4\n- MODERATE_BEND: ORBIT-D2, ORBIT-D5\n- DEEP_DISPERSION: ORBIT-D6\n- EXTREME_RAMP: ORBIT-D7\n- 12 phases per orbit; the strong core S000 has 2928 nodes; seed 1387@0.\n- Register bands: Saturn -12; Moon/Mercury/Jupiter 0; Sun/Mars/Venus +12.\n- ANCHOR_FLAT is not a linear ramp: interior phases hover near the phase average and only p0/p11 are achromatic bookends.\n- Bet B2 is the wrap step law; the log/geometric dual is a definitional implementation check.\n- ORBIT-D7 is a symbolic container coordinate; register is set by office bands and the lead line.\n- Fences: no entropy, no C_H formulation, no perception or biology claims.\nFive Laws: (1) planner composes, card steers, LLM waits; (2) form space is the strong core;\n(3) if it is not in the lead line it is not heard; (4) phase is terrain, not a dial;\n(5) arrival must be voiced.\n\nReturn exactly one JSON object with this shape:\n{\"pieceId\":\"string\",\"destinationPhilosophy\":\"far_shore_return|interior_circuit|modal_pivot_return\",\"seedNode\":\"1387@0\",\"sectionIntentions\":[{\"section\":1,\"name\":\"string\",\"role\":\"dwell|transit|mirror_gesture|shore_rest|cadential_arrival\",\"targetDispersionClass\":\"ANCHOR_FLAT|MODERATE_BEND|DEEP_DISPERSION|EXTREME_RAMP\",\"targetOrbitFilter\":[\"ORBIT-A0\"],\"phaseZone\":[0,11],\"registerBand\":-12,\"requiredPitchClasses\":[0,3,7],\"dwellBars\":2,\"kSteps\":12}]}\nRules: 3 to 9 sections; phaseZone is [low,high] with 0<=low<=high<=11; registerBand is -12, 0, or 12; kSteps is 5 or 12; dwellBars is 1..4; requiredPitchClasses are integers 0..11. Do not emit floats, notes, MIDI, velocities, or executable node transitions. Return JSON only.\n\nTask: Compose a 7-section arc that opens at home, departs through a quiet dwell, and reaches a high-dispersion climax. Decide for yourself whether the piece returns home, ends elsewhere, or stays interior; state the destination philosophy explicitly.\n\nReply with JSON only. Do not use tools.",
+  "stderr": "",
+  "stdoutLines": 3,
+  "text": "{\"pieceId\":\"orbit-arc-7s-home-departure-climax\",\"destinationPhilosophy\":\"far_shore_return\",\"seedNode\":\"1387@0\",\"sectionIntentions\":[{\"section\":1,\"name\":\"Home Threshold\",\"role\":\"dwell\",\"targetDispersionClass\":\"ANCHOR_FLAT\",\"targetOrbitFilter\":[\"ORBIT-A0\"],\"phaseZone\":[0,11],\"registerBand\":0,\"requiredPitchClasses\":[0,4,7],\"dwellBars\":2,\"kSteps\":12},{\"section\":2,\"name\":\"Quiet Departure\",\"role\":\"dwell\",\"targetDispersionClass\":\"ANCHOR_FLAT\",\"targetOrbitFilter\":[\"ORBIT-A1\",\"ORBIT-A2\"],\"phaseZone\":[1,10],\"registerBand\":-12,\"requiredPitchClasses\":[0,4,7,11],\"dwellBars\":3,\"kSteps\":12},{\"section\":3,\"name\":\"First Bend\",\"role\":\"transit\",\"targetDispersionClass\":\"MODERATE_BEND\",\"targetOrbitFilter\":[\"ORBIT-D2\"],\"phaseZone\":[2,9],\"registerBand\":0,\"requiredPitchClasses\":[0,2,7,9],\"dwellBars\":1,\"kSteps\":5},{\"section\":4,\"name\":\"Mirror Turn\",\"role\":\"mirror_gesture\",\"targetDispersionClass\":\"MODERATE_BEND\",\"targetOrbitFilter\":[\"ORBIT-D5\"],\"phaseZone\":[3,8],\"registerBand\":12,\"requiredPitchClasses\":[1,5,8],\"dwellBars\":1,\"kSteps\":5},{\"section\":5,\"name\":\"Dispersion Entry\",\"role\":\"transit\",\"targetDispersionClass\":\"DEEP_DISPERSION\",\"targetOrbitFilter\":[\"ORBIT-D6\"],\"phaseZone\":[0,11],\"registerBand\":0,\"requiredPitchClasses\":[0,1,4,6,8],\"dwellBars\":2,\"kSteps\":12},{\"section\":6,\"name\":\"High Dispersion Climax\",\"role\":\"transit\",\"targetDispersionClass\":\"EXTREME_RAMP\",\"targetOrbitFilter\":[\"ORBIT-D7\"],\"phaseZone\":[0,11],\"registerBand\":12,\"requiredPitchClasses\":[0,3,6,9],\"dwellBars\":2,\"kSteps\":12},{\"section\":7,\"name\":\"Far Shore Return\",\"role\":\"cadential_arrival\",\"targetDispersionClass\":\"ANCHOR_FLAT\",\"targetOrbitFilter\":[\"ORBIT-A0\"],\"phaseZone\":[0,11],\"registerBand\":0,\"requiredPitchClasses\":[0,4,7],\"dwellBars\":3,\"kSteps\":12}]}",
+  "tokens": {
+    "cache_read": 12912,
+    "cache_write": 0,
+    "input": 4,
+    "output": 948,
+    "reasoning": 1218,
+    "total": 15082
+  }
+}

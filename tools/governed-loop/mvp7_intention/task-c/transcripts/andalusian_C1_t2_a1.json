@@ -1,0 +1,138 @@
+{
+  "cost": 0.00144683,
+  "elapsedSeconds": 12.361,
+  "exitCode": 0,
+  "label": "andalusian_C1_t2_a1",
+  "model": "opencode-go/claude-haiku-5-5",
+  "parsed": {
+    "destinationPhilosophy": "far_shore_return",
+    "pieceId": "andalusian-phrygian-arc-01",
+    "sectionIntentions": [
+      {
+        "dwellBars": 2,
+        "kSteps": 12,
+        "name": "i_tonic_opening",
+        "phaseZone": [
+          0,
+          11
+        ],
+        "registerBand": 0,
+        "requiredPitchClasses": [
+          9,
+          0,
+          4
+        ],
+        "role": "dwell",
+        "section": 1,
+        "targetDispersionClass": "ANCHOR_FLAT",
+        "targetOrbitFilter": [
+          "ORBIT-A0",
+          "ORBIT-A1"
+        ]
+      },
+      {
+        "dwellBars": 1,
+        "kSteps": 12,
+        "name": "VII_descent",
+        "phaseZone": [
+          2,
+          9
+        ],
+        "registerBand": 0,
+        "requiredPitchClasses": [
+          7,
+          11,
+          2
+        ],
+        "role": "transit",
+        "section": 2,
+        "targetDispersionClass": "MODERATE_BEND",
+        "targetOrbitFilter": [
+          "ORBIT-D2",
+          "ORBIT-D5"
+        ]
+      },
+      {
+        "dwellBars": 2,
+        "kSteps": 5,
+        "name": "VI_mirror",
+        "phaseZone": [
+          1,
+          10
+        ],
+        "registerBand": 12,
+        "requiredPitchClasses": [
+          5,
+          9,
+          0
+        ],
+        "role": "mirror_gesture",
+        "section": 3,
+        "targetDispersionClass": "ANCHOR_FLAT",
+        "targetOrbitFilter": [
+          "ORBIT-D1",
+          "ORBIT-D3"
+        ]
+      },
+      {
+        "dwellBars": 3,
+        "kSteps": 12,
+        "name": "V_phrygian_dominant_climax",
+        "phaseZone": [
+          3,
+          8
+        ],
+        "registerBand": 12,
+        "requiredPitchClasses": [
+          1,
+          2,
+          4,
+          5,
+          7,
+          9,
+          10
+        ],
+        "role": "dwell",
+        "section": 4,
+        "targetDispersionClass": "DEEP_DISPERSION",
+        "targetOrbitFilter": [
+          "ORBIT-D6"
+        ]
+      },
+      {
+        "dwellBars": 2,
+        "kSteps": 12,
+        "name": "i_tonic_arrival",
+        "phaseZone": [
+          0,
+          11
+        ],
+        "registerBand": 0,
+        "requiredPitchClasses": [
+          9,
+          0,
+          4
+        ],
+        "role": "cadential_arrival",
+        "section": 5,
+        "targetDispersionClass": "ANCHOR_FLAT",
+        "targetOrbitFilter": [
+          "ORBIT-A2"
+        ]
+      }
+    ],
+    "seedNode": "1387@0"
+  },
+  "prompt": "You are a macro-form intention translator for a governed composition engine.\n\nORBIT SPECTRAL CATALOG v1 (L22), read-only facts:\n- ANCHOR_FLAT: ORBIT-A0, ORBIT-A1, ORBIT-A2, ORBIT-D1, ORBIT-D3, ORBIT-D4\n- MODERATE_BEND: ORBIT-D2, ORBIT-D5\n- DEEP_DISPERSION: ORBIT-D6\n- EXTREME_RAMP: ORBIT-D7\n- 12 phases per orbit; the strong core S000 has 2928 nodes; seed 1387@0.\n- Register bands: Saturn -12; Moon/Mercury/Jupiter 0; Sun/Mars/Venus +12.\n- ANCHOR_FLAT is not a linear ramp: interior phases hover near the phase average and only p0/p11 are achromatic bookends.\n- Bet B2 is the wrap step law; the log/geometric dual is a definitional implementation check.\n- ORBIT-D7 is a symbolic container coordinate; register is set by office bands and the lead line.\n- Fences: no entropy, no C_H formulation, no perception or biology claims.\nFive Laws: (1) planner composes, card steers, LLM waits; (2) form space is the strong core;\n(3) if it is not in the lead line it is not heard; (4) phase is terrain, not a dial;\n(5) arrival must be voiced.\n\nReturn exactly one JSON object with this shape:\n{\"pieceId\":\"string\",\"destinationPhilosophy\":\"far_shore_return|interior_circuit|modal_pivot_return\",\"seedNode\":\"1387@0\",\"sectionIntentions\":[{\"section\":1,\"name\":\"string\",\"role\":\"dwell|transit|mirror_gesture|shore_rest|cadential_arrival\",\"targetDispersionClass\":\"ANCHOR_FLAT|MODERATE_BEND|DEEP_DISPERSION|EXTREME_RAMP\",\"targetOrbitFilter\":[\"ORBIT-A0\"],\"phaseZone\":[0,11],\"registerBand\":-12,\"requiredPitchClasses\":[0,3,7],\"dwellBars\":2,\"kSteps\":12}]}\nRules: 3 to 9 sections; phaseZone is [low,high] with 0<=low<=high<=11; registerBand is -12, 0, or 12; kSteps is 5 or 12; dwellBars is 1..4; requiredPitchClasses are integers 0..11. Do not emit floats, notes, MIDI, velocities, or executable node transitions. Return JSON only.\n\nTask: Plan a 5-section arc that executes an Andalusian cadential descent i-VII-VI-V in the lead line, reaching a Phrygian-dominant climax, then resolving to the tonic.\n\nReply with JSON only. Do not use tools.",
+  "stderr": "",
+  "stdoutLines": 3,
+  "text": "{\"pieceId\":\"andalusian-phrygian-arc-01\",\"destinationPhilosophy\":\"far_shore_return\",\"seedNode\":\"1387@0\",\"sectionIntentions\":[{\"section\":1,\"name\":\"i_tonic_opening\",\"role\":\"dwell\",\"targetDispersionClass\":\"ANCHOR_FLAT\",\"targetOrbitFilter\":[\"ORBIT-A0\",\"ORBIT-A1\"],\"phaseZone\":[0,11],\"registerBand\":0,\"requiredPitchClasses\":[9,0,4],\"dwellBars\":2,\"kSteps\":12},{\"section\":2,\"name\":\"VII_descent\",\"role\":\"transit\",\"targetDispersionClass\":\"MODERATE_BEND\",\"targetOrbitFilter\":[\"ORBIT-D2\",\"ORBIT-D5\"],\"phaseZone\":[2,9],\"registerBand\":0,\"requiredPitchClasses\":[7,11,2],\"dwellBars\":1,\"kSteps\":12},{\"section\":3,\"name\":\"VI_mirror\",\"role\":\"mirror_gesture\",\"targetDispersionClass\":\"ANCHOR_FLAT\",\"targetOrbitFilter\":[\"ORBIT-D1\",\"ORBIT-D3\"],\"phaseZone\":[1,10],\"registerBand\":12,\"requiredPitchClasses\":[5,9,0],\"dwellBars\":2,\"kSteps\":5},{\"section\":4,\"name\":\"V_phrygian_dominant_climax\",\"role\":\"dwell\",\"targetDispersionClass\":\"DEEP_DISPERSION\",\"targetOrbitFilter\":[\"ORBIT-D6\"],\"phaseZone\":[3,8],\"registerBand\":12,\"requiredPitchClasses\":[1,2,4,5,7,9,10],\"dwellBars\":3,\"kSteps\":12},{\"section\":5,\"name\":\"i_tonic_arrival\",\"role\":\"cadential_arrival\",\"targetDispersionClass\":\"ANCHOR_FLAT\",\"targetOrbitFilter\":[\"ORBIT-A2\"],\"phaseZone\":[0,11],\"registerBand\":0,\"requiredPitchClasses\":[9,0,4],\"dwellBars\":2,\"kSteps\":12}]}",
+  "tokens": {
+    "cache_read": 12893,
+    "cache_write": 0,
+    "input": 4,
+    "output": 726,
+    "reasoning": 1909,
+    "total": 15532
+  }
+}

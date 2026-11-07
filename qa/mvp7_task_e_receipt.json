@@ -1,0 +1,63 @@
+{
+  "closingReport": {
+    "path": "MVP7-INTENTION-CLOSING-REPORT.md",
+    "sha256": "0beaa758230454d72b6bf8bdcb79c6c5bd30f7696bfd93a006750cc34ab3c6d5"
+  },
+  "directive": "MVP7-INTENTION-DIR-1",
+  "earGate": {
+    "blindManifest": "task-d/blind_manifest.json",
+    "scorecard": "task-0/ear_baseline_scorecard.json",
+    "signed": false,
+    "status": "PENDING_HUMAN"
+  },
+  "guardFlags": {
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "protocol": {
+    "path": "EAR_VALIDATION_PROTOCOL_MVP7.md",
+    "sha256": "1066c1b8b4d7a9b713b00b0bb878ca5da779df671c4cbd66a1d4b41fbedaa314"
+  },
+  "schemaVersion": "governed-loop.mvp7-task-e.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "task": "MVP7-TE",
+  "taskReceipts": {
+    "T0": {
+      "path": "mvp7_task_0_receipt.json",
+      "sha256": "a35503be503e178367d9620379acbb3882564d95df867ef18a5a6bb2b65f6748",
+      "status": "COMPLETE",
+      "task": "MVP7-T0"
+    },
+    "TA": {
+      "path": "mvp7_task_a_receipt.json",
+      "sha256": "7b45476f3c80715fca40c4e694efd3c9b7bd48c99b93663e45cb4e5f489aadaa",
+      "status": "COMPLETE",
+      "task": "MVP7-TA"
+    },
+    "TB": {
+      "path": "mvp7_task_b_receipt.json",
+      "sha256": "6b68c0d787e38b8ca9a03c15630d894df58e2e88ff67a9399ce3b7e673225f72",
+      "status": "COMPLETE",
+      "task": "MVP7-TB"
+    },
+    "TC": {
+      "path": "mvp7_task_c_receipt.json",
+      "sha256": "48e405535b128b421b37166eb58a191371ae2e218869832f4efbbab7e7f38598",
+      "status": "COMPLETE",
+      "task": "MVP7-TC"
+    },
+    "TD": {
+      "path": "mvp7_task_d_receipt.json",
+      "sha256": "89ff40999ee3aea9609c66baedb4bd454a1208b47b73f8567982030c49d00d97",
+      "status": "COMPLETE",
+      "task": "MVP7-TD"
+    }
+  }
+}

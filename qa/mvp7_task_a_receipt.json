@@ -1,0 +1,94 @@
+{
+  "a4VarianceCarried": 0.46561039911133645,
+  "a4VarianceReset": 0.4648970976957183,
+  "bets": {
+    "A1": {
+      "expectedOctaves": 0.696,
+      "label": "calibration, not discovery",
+      "observedOctaves": 0.6414065870878138,
+      "pass": true,
+      "passRule": "0.60 <= observed <= 0.80"
+    },
+    "A2_fade": {
+      "observed": {
+        "bar55Max": 7.064925749644679e-06,
+        "bars1to54Max": 0.0
+      },
+      "pass": true,
+      "passRule": "max |delta| on bars 1-54 == 0.0 AND max |delta| in bar 55 > 0.0"
+    },
+    "A2_legato": {
+      "observed": {
+        "interiorMean": 0.0048575821697206725,
+        "seamMean": 0.37484130092398654
+      },
+      "pass": true,
+      "passRule": "seam mean |delta| > 10 * interior mean |delta| AND interior mean |delta| < 0.01"
+    },
+    "A3": {
+      "falsePositiveRate": 0.0,
+      "pass": false,
+      "recall": 0.5384615384615384
+    },
+    "A4": {
+      "diagnosticNote": "the margin is small; the bet tests direction only, not effect size",
+      "difference": 0.0007133014156181505,
+      "pass": true,
+      "passRule": "var(carried) > var(reset)",
+      "relativeUplift": 0.0015343210769730733,
+      "varianceCarried": 0.46561039911133645,
+      "varianceReset": 0.4648970976957183
+    }
+  },
+  "betsPassed": 4,
+  "catalogPath": "task-a/log_spectral_catalog_far_shore.json",
+  "catalogSha256": "d2b7e11c4dc632ff59d735ce17a32c749ec3b4ce177c4db57c38d23a12a25b90",
+  "directive": "MVP7-INTENTION-DIR-1",
+  "guardFlags": {
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "inputs": {
+    "L21_carried": {
+      "path": "tools/governed-loop/mvp5/task-b/renders/track4_arm3b_dynamic_q_carried.wav",
+      "sha256": "d0fe3d2727593d22ee49ed50d64b0253ed36f52e64d9f202d43596106e735738"
+    },
+    "L21_reset": {
+      "path": "tools/governed-loop/mvp5/task-b/renders/track3_arm3a_dynamic_q_reset.wav",
+      "sha256": "b4e9b1674fd4ae3b94fc9e0921e3c461c642403fa34a91869fe851e069398307"
+    },
+    "L23": {
+      "path": "tools/governed-loop/mvp6/task-d/renders/piece_a_far_shore.wav",
+      "sha256": "e5c8bf2b0e31f32d36a8816e6011f09e10b26cce5b94c4782aefd28406567a77"
+    },
+    "L24": {
+      "path": "tools/governed-loop/mvp6_1/task-d/renders/piece_a_far_shore_delooped.wav",
+      "sha256": "b2ce0b3f5ac39d0ac226083e5c2646a1d116222acc5473b746173a0d3125d7f1"
+    },
+    "L25": {
+      "path": "tools/governed-loop/mvp6_2/task-d/renders/piece_a_far_shore_legato.wav",
+      "sha256": "defd27219fb292fb9e1071b4fa13020d4adc62e2f981bce88d9b936d6a3e9f50"
+    },
+    "L26": {
+      "path": "tools/governed-loop/mvp6_3/task-d/renders/piece_a_far_shore_faded.wav",
+      "sha256": "330abb9c9224f8526f52f25763c6902d581da3a0fe3ac3127161ae22056ae1a9"
+    }
+  },
+  "llmCalls": 0,
+  "predeclarationSha256": "0e64b09fd13ed9fd1c627c4800006fa169745c1632f249be1aa73bbc769d5c95",
+  "q2ArithmeticGapOct": 0.6960002870369565,
+  "q2OctaveGap": 0.6414065870878138,
+  "q7InteriorMeanAbsDeltaOct": 0.0048575821697206725,
+  "q7SeamMeanAbsDeltaOct": 0.37484130092398654,
+  "q8Bar55MaxAbsDeltaOct": 7.064925749644679e-06,
+  "q8Bars1to54MaxAbsDeltaOct": 0.0,
+  "schemaVersion": "governed-loop.mvp7-task-a.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "task": "MVP7-TA"
+}

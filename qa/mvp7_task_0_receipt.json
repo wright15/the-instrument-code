@@ -1,0 +1,293 @@
+{
+  "anchors": {
+    "150": {
+      "actual": "        if cm == nm and cp == np_:",
+      "expected": "        if cm == nm and cp == np_:",
+      "match": true
+    },
+    "151": {
+      "actual": "            if self.gov_root[cm] is None:",
+      "expected": "            if self.gov_root[cm] is None:",
+      "match": true
+    },
+    "152": {
+      "actual": "                checks[\"boundary_endpoint\"] = True",
+      "expected": "                checks[\"boundary_endpoint\"] = True",
+      "match": true
+    },
+    "153": {
+      "actual": "                checks[\"same_family\"] = False",
+      "expected": "                checks[\"same_family\"] = False",
+      "match": true
+    },
+    "154": {
+      "actual": "                return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "expected": "                return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "match": true
+    },
+    "169": {
+      "actual": "        same_root = cr is not None and nr is not None and cr == nr",
+      "expected": "        same_root = cr is not None and nr is not None and cr == nr",
+      "match": true
+    },
+    "171": {
+      "actual": "        if same_root and cp == np_:",
+      "expected": "        if same_root and cp == np_:",
+      "match": true
+    },
+    "172": {
+      "actual": "            return \"ACCEPT\", [], checks, None",
+      "expected": "            return \"ACCEPT\", [], checks, None",
+      "match": true
+    },
+    "183": {
+      "actual": "        if checks[\"boundary_endpoint\"]:",
+      "expected": "        if checks[\"boundary_endpoint\"]:",
+      "match": true
+    },
+    "184": {
+      "actual": "            return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "expected": "            return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "match": true
+    },
+    "733": {
+      "actual": "        plan[\"dwellMs\"] = int(__import__(\"os\").environ.get(\"ORRERY_BRIDGE_DWELL_MS\", \"1500\"))",
+      "expected": "        plan[\"dwellMs\"] = int(__import__(\"os\").environ.get(\"ORRERY_BRIDGE_DWELL_MS\", \"1500\"))",
+      "match": true
+    }
+  },
+  "anchorsVerified": 11,
+  "directive": "MVP7-INTENTION-DIR-1",
+  "earGate": {
+    "scorecard": "task-0/ear_baseline_scorecard.json",
+    "scorecardSha256": "07fc8856503f38c857c523c480fcf3709ba2b1ff21900d4db2ba0852c9644a00",
+    "signed": false,
+    "status": "PENDING_HUMAN"
+  },
+  "floatValues": 0,
+  "guardFlags": {
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "opening": {
+    "checksumsSha256": "a48874cc156969bdb6cb2217961979ad17282c74ecc5337a0eb8e2205cdb5f6f",
+    "completionPassed": true,
+    "completionReportSha256": "6b8cbf29d67f8d728f69bccdf84c4ead2689ff2c11a45bbe8f1b16a4a5dff20d",
+    "head": "865abc8be20483e45176c378c4e078ebd3187c26",
+    "landingReceiptSha256": "f57a6874facec561f93b1c2bbb36317e39ab0f3a7b7c023328e30d86275bba89",
+    "ledgerBytes": 398051,
+    "ledgerLines": 4348,
+    "ledgerSha256": "43a529af76875d1a8695ff66ab01780c951d12abf4224085a0ece1323acbb8d5",
+    "manifestBytes": 177672713,
+    "manifestFiles": 1684,
+    "manifestSha256": "a0ac68b91a987adf2d3434946c5872e588f90b5a8c6179d99ee67014a9f5591a",
+    "treeClean": true
+  },
+  "pins": {
+    "docs/analysis/ORBIT_SPECTRAL_CATALOG.md": {
+      "actualBytes": 18762,
+      "actualSha256": "1e14fb78bdb3914a0188d79dcee288377941bba04c6f79e5721f0e803d22da29",
+      "expectedBytes": 18762,
+      "expectedSha256": "1e14fb78bdb3914a0188d79dcee288377941bba04c6f79e5721f0e803d22da29",
+      "match": true
+    },
+    "docs/analysis/orbit_spectral_catalog.json": {
+      "actualBytes": 21189,
+      "actualSha256": "6f782a5f9d89057273d4c13432d3cd6ef07e3f2dff338034c5319fc479151774",
+      "expectedBytes": 21189,
+      "expectedSha256": "6f782a5f9d89057273d4c13432d3cd6ef07e3f2dff338034c5319fc479151774",
+      "match": true
+    },
+    "orrery/src/audio.ts": {
+      "actualBytes": 37063,
+      "actualSha256": "e863b845c8f2709a0fe0e6fe706dce603e795b760c6561d110d240ddb1dfca88",
+      "expectedBytes": 37063,
+      "expectedSha256": "e863b845c8f2709a0fe0e6fe706dce603e795b760c6561d110d240ddb1dfca88",
+      "match": true
+    },
+    "src/fivefold/quintessence.py": {
+      "actualBytes": 5163,
+      "actualSha256": "eefd7e1e060189261c8063652d2ed73a09b16d3ffdcb9f259502a107ef9ceaa0",
+      "expectedBytes": 5163,
+      "expectedSha256": "eefd7e1e060189261c8063652d2ed73a09b16d3ffdcb9f259502a107ef9ceaa0",
+      "match": true
+    },
+    "tools/governed-loop/census_462.json": {
+      "actualBytes": 194194,
+      "actualSha256": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+      "expectedBytes": 194194,
+      "expectedSha256": "242bce7423bc2eb0ae61ee431c27901d6a87401b8b3ffd6725a04d0e1ed0685a",
+      "match": true
+    },
+    "tools/governed-loop/frozen_ground_truth.json": {
+      "actualBytes": 91360,
+      "actualSha256": "007b0ffe65015bd2c5f1a6fe0df8969961ce8cfb3d499677b143d971e1fc5744",
+      "expectedBytes": 91360,
+      "expectedSha256": "007b0ffe65015bd2c5f1a6fe0df8969961ce8cfb3d499677b143d971e1fc5744",
+      "match": true
+    },
+    "tools/governed-loop/frozen_seam_substrate_v3.json": {
+      "actualBytes": 47207,
+      "actualSha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+      "expectedBytes": 47207,
+      "expectedSha256": "9f9818effa5d11e4ef2634122c9f484faf6790323cabae130561c1c75e8a295f",
+      "match": true
+    },
+    "tools/governed-loop/mvp2.py": {
+      "actualBytes": 38997,
+      "actualSha256": "79c0cf706fffc23745cab6e87ffbc46d34d70ad94a93291135725e388dc17328",
+      "expectedBytes": 38997,
+      "expectedSha256": "79c0cf706fffc23745cab6e87ffbc46d34d70ad94a93291135725e388dc17328",
+      "match": true
+    },
+    "tools/governed-loop/mvp4/task-a/mvp4_dynamic_chaldean_card.json": {
+      "actualBytes": 1999,
+      "actualSha256": "6486599187687edb1e28481b2bbc79d9a11a06001e4a237505c5e44c1c1a1469",
+      "expectedBytes": 1999,
+      "expectedSha256": "6486599187687edb1e28481b2bbc79d9a11a06001e4a237505c5e44c1c1a1469",
+      "match": true
+    },
+    "tools/governed-loop/mvp4/task-b/mvp4_symbolic_planner.py": {
+      "actualBytes": 21348,
+      "actualSha256": "9ff511f14282cbe6ee48010d67092c70c25da0bf5fa6dbd1e50382afeb85f5c0",
+      "expectedBytes": 21348,
+      "expectedSha256": "9ff511f14282cbe6ee48010d67092c70c25da0bf5fa6dbd1e50382afeb85f5c0",
+      "match": true
+    },
+    "tools/governed-loop/mvp4/task-c/mvp4_q_intra_node.py": {
+      "actualBytes": 4721,
+      "actualSha256": "8b39ffe4be4d1f801cf1065cd8928c681002249de8ebad1d5246f277e94f815f",
+      "expectedBytes": 4721,
+      "expectedSha256": "8b39ffe4be4d1f801cf1065cd8928c681002249de8ebad1d5246f277e94f815f",
+      "match": true
+    },
+    "tools/governed-loop/mvp5/task-a/mvp5_coupled_engine.py": {
+      "actualBytes": 20663,
+      "actualSha256": "c07940ccc90a73e220102000905d5af8da13ee03604224e49c71ff4c4718dd0c",
+      "expectedBytes": 20663,
+      "expectedSha256": "c07940ccc90a73e220102000905d5af8da13ee03604224e49c71ff4c4718dd0c",
+      "match": true
+    },
+    "tools/governed-loop/mvp5/task-b/mvp5_audio_renderer.py": {
+      "actualBytes": 24696,
+      "actualSha256": "0c917aab7a95851e90ce1c3244ea6b3af1ea35e362262cb0d7a0095ec40b9984",
+      "expectedBytes": 24696,
+      "expectedSha256": "0c917aab7a95851e90ce1c3244ea6b3af1ea35e362262cb0d7a0095ec40b9984",
+      "match": true
+    },
+    "tools/governed-loop/mvp5/task-b/renders/track3_arm3a_dynamic_q_reset.wav": {
+      "actualBytes": 2672504,
+      "actualSha256": "b4e9b1674fd4ae3b94fc9e0921e3c461c642403fa34a91869fe851e069398307",
+      "expectedBytes": 2672504,
+      "expectedSha256": "b4e9b1674fd4ae3b94fc9e0921e3c461c642403fa34a91869fe851e069398307",
+      "match": true
+    },
+    "tools/governed-loop/mvp5/task-b/renders/track4_arm3b_dynamic_q_carried.wav": {
+      "actualBytes": 2672504,
+      "actualSha256": "d0fe3d2727593d22ee49ed50d64b0253ed36f52e64d9f202d43596106e735738",
+      "expectedBytes": 2672504,
+      "expectedSha256": "d0fe3d2727593d22ee49ed50d64b0253ed36f52e64d9f202d43596106e735738",
+      "match": true
+    },
+    "tools/governed-loop/mvp6/task-a/mvp6_form_compiler.py": {
+      "actualBytes": 20540,
+      "actualSha256": "523dd3fbd31047f4f03205a832519ba2d911c74bedfc8a2f7424a69e1a783677",
+      "expectedBytes": 20540,
+      "expectedSha256": "523dd3fbd31047f4f03205a832519ba2d911c74bedfc8a2f7424a69e1a783677",
+      "match": true
+    },
+    "tools/governed-loop/mvp6/task-d/renders/piece_a_far_shore.wav": {
+      "actualBytes": 10822184,
+      "actualSha256": "e5c8bf2b0e31f32d36a8816e6011f09e10b26cce5b94c4782aefd28406567a77",
+      "expectedBytes": 10822184,
+      "expectedSha256": "e5c8bf2b0e31f32d36a8816e6011f09e10b26cce5b94c4782aefd28406567a77",
+      "match": true
+    },
+    "tools/governed-loop/mvp6_1/task-b/mvp6_1_coupled_form_engine.py": {
+      "actualBytes": 7039,
+      "actualSha256": "41cb80127d95f4dc7b2af4862c8871ae4d2574ea10ca46f9e06d282f5974f9de",
+      "expectedBytes": 7039,
+      "expectedSha256": "41cb80127d95f4dc7b2af4862c8871ae4d2574ea10ca46f9e06d282f5974f9de",
+      "match": true
+    },
+    "tools/governed-loop/mvp6_1/task-d/renders/piece_a_far_shore_delooped.wav": {
+      "actualBytes": 10822184,
+      "actualSha256": "b2ce0b3f5ac39d0ac226083e5c2646a1d116222acc5473b746173a0d3125d7f1",
+      "expectedBytes": 10822184,
+      "expectedSha256": "b2ce0b3f5ac39d0ac226083e5c2646a1d116222acc5473b746173a0d3125d7f1",
+      "match": true
+    },
+    "tools/governed-loop/mvp6_2/task-b/mvp6_2_legato_renderer.py": {
+      "actualBytes": 8624,
+      "actualSha256": "e91c6e749b1003da3ad4461b745ad0d35caf23cb394f369d92534d857f6e769c",
+      "expectedBytes": 8624,
+      "expectedSha256": "e91c6e749b1003da3ad4461b745ad0d35caf23cb394f369d92534d857f6e769c",
+      "match": true
+    },
+    "tools/governed-loop/mvp6_2/task-d/renders/piece_a_far_shore_legato.wav": {
+      "actualBytes": 10822184,
+      "actualSha256": "defd27219fb292fb9e1071b4fa13020d4adc62e2f981bce88d9b936d6a3e9f50",
+      "expectedBytes": 10822184,
+      "expectedSha256": "defd27219fb292fb9e1071b4fa13020d4adc62e2f981bce88d9b936d6a3e9f50",
+      "match": true
+    },
+    "tools/governed-loop/mvp6_3/task-b/mvp6_3_fade_renderer.py": {
+      "actualBytes": 8145,
+      "actualSha256": "673ac7083b59ee96f4a0d1f429778ad69ef4dd382f72e2f67bc1e3e7989769de",
+      "expectedBytes": 8145,
+      "expectedSha256": "673ac7083b59ee96f4a0d1f429778ad69ef4dd382f72e2f67bc1e3e7989769de",
+      "match": true
+    },
+    "tools/governed-loop/mvp6_3/task-d/renders/piece_a_far_shore_faded.mid": {
+      "actualBytes": 10978,
+      "actualSha256": "8a8c545ffbff1740921355b8538c599a66ccd93a98daa9d67e76e845734225f6",
+      "expectedBytes": 10978,
+      "expectedSha256": "8a8c545ffbff1740921355b8538c599a66ccd93a98daa9d67e76e845734225f6",
+      "match": true
+    },
+    "tools/governed-loop/mvp6_3/task-d/renders/piece_a_far_shore_faded.wav": {
+      "actualBytes": 10822184,
+      "actualSha256": "330abb9c9224f8526f52f25763c6902d581da3a0fe3ac3127161ae22056ae1a9",
+      "expectedBytes": 10822184,
+      "expectedSha256": "330abb9c9224f8526f52f25763c6902d581da3a0fe3ac3127161ae22056ae1a9",
+      "match": true
+    },
+    "tools/governed-loop/mvp6_3/task-e/EAR_VALIDATION_PROTOCOL_MVP6_3.md": {
+      "actualBytes": 7946,
+      "actualSha256": "39a6407c6f3d966ef2cef169919f936ca0266a0ef4ec663c05d2930fbf238428",
+      "expectedBytes": 7946,
+      "expectedSha256": "39a6407c6f3d966ef2cef169919f936ca0266a0ef4ec663c05d2930fbf238428",
+      "match": true
+    },
+    "tools/governed-loop/seam_legal_moves_v3.json": {
+      "actualBytes": 551287,
+      "actualSha256": "e6cf62a8eefa0924da9286f2e664c1914d9d620ed2d299929f684fd48225c274",
+      "expectedBytes": 551287,
+      "expectedSha256": "e6cf62a8eefa0924da9286f2e664c1914d9d620ed2d299929f684fd48225c274",
+      "match": true
+    }
+  },
+  "pinsVerified": 26,
+  "predeclaration": {
+    "path": "task-0/mvp7_predeclared_bets_and_schema.json",
+    "sha256": "0e64b09fd13ed9fd1c627c4800006fa169745c1632f249be1aa73bbc769d5c95",
+    "status": "locked-before-evaluation"
+  },
+  "schemaVersion": "governed-loop.mvp7-task-0.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "strongCore": {
+    "boundaryStrongCoreNodes": 540,
+    "governedStrongCoreNodes": 2388,
+    "oneWayNodes": 276,
+    "reachableNodes": 3204,
+    "strongCoreNodes": 2928
+  },
+  "task": "MVP7-T0"
+}

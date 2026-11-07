@@ -1,0 +1,2012 @@
+{
+  "catalog": "ORBIT SPECTRAL CATALOG v1 (L22), read-only facts:\n- ANCHOR_FLAT: ORBIT-A0, ORBIT-A1, ORBIT-A2, ORBIT-D1, ORBIT-D3, ORBIT-D4\n- MODERATE_BEND: ORBIT-D2, ORBIT-D5\n- DEEP_DISPERSION: ORBIT-D6\n- EXTREME_RAMP: ORBIT-D7\n- 12 phases per orbit; the strong core S000 has 2928 nodes; seed 1387@0.\n- Register bands: Saturn -12; Moon/Mercury/Jupiter 0; Sun/Mars/Venus +12.\n- ANCHOR_FLAT is not a linear ramp: interior phases hover near the phase average and only p0/p11 are achromatic bookends.\n- Bet B2 is the wrap step law; the log/geometric dual is a definitional implementation check.\n- ORBIT-D7 is a symbolic container coordinate; register is set by office bands and the lead line.\n- Fences: no entropy, no C_H formulation, no perception or biology claims.\nFive Laws: (1) planner composes, card steers, LLM waits; (2) form space is the strong core;\n(3) if it is not in the lead line it is not heard; (4) phase is terrain, not a dial;\n(5) arrival must be voiced.",
+  "cost": {
+    "calls": 28,
+    "cost": 0.030071490000000006,
+    "input": 112,
+    "latencySeconds": 215.424,
+    "output": 13217,
+    "total": 498228
+  },
+  "directive": "MVP7-INTENTION-DIR-1",
+  "divergence": {
+    "meanScore": 0.5031746031746032,
+    "rows": [
+      {
+        "arm": "C2",
+        "dimensions": {
+          "destination": 1.0,
+          "dispersionClasses": 0.0,
+          "dwellPhases": 0.8571428571428572,
+          "orbits": 0.4,
+          "pitchClassConstraints": 0.0,
+          "sectionCount": 0.2857142857142857
+        },
+        "label": "andalusian_C2_t1",
+        "prompt": "andalusian",
+        "score": 0.4238095238095238
+      },
+      {
+        "arm": "C2",
+        "dimensions": {
+          "destination": 1.0,
+          "dispersionClasses": 0.0,
+          "dwellPhases": 0.8571428571428572,
+          "orbits": 0.4,
+          "pitchClassConstraints": 0.0,
+          "sectionCount": 0.2857142857142857
+        },
+        "label": "andalusian_C2_t2",
+        "prompt": "andalusian",
+        "score": 0.4238095238095238
+      },
+      {
+        "arm": "C2",
+        "dimensions": {
+          "destination": 1.0,
+          "dispersionClasses": 0.0,
+          "dwellPhases": 0.8571428571428572,
+          "orbits": 0.8,
+          "pitchClassConstraints": 0.0,
+          "sectionCount": 0.5714285714285714
+        },
+        "label": "borrowed_minor_C2_t1",
+        "prompt": "borrowed_minor",
+        "score": 0.5380952380952381
+      },
+      {
+        "arm": "C2",
+        "dimensions": {
+          "destination": 1.0,
+          "dispersionClasses": 0.5,
+          "dwellPhases": 0.8571428571428572,
+          "orbits": 0.8333333333333334,
+          "pitchClassConstraints": 0.0,
+          "sectionCount": 0.5714285714285714
+        },
+        "label": "borrowed_minor_C2_t2",
+        "prompt": "borrowed_minor",
+        "score": 0.6269841269841271
+      }
+    ]
+  },
+  "earAB": {
+    "note": "blind pairs are prepared from accepted traces; the verdict stays unsigned",
+    "q9": null,
+    "status": "PENDING_HUMAN"
+  },
+  "failureModes": {
+    "FM1_GENERIC_ARC_BIAS": false,
+    "FM2_CLIMAX_BY_DEFAULT": null,
+    "FM3_HOME_ALWAYS": false,
+    "FM4_VOCABULARY_DRIFT": false,
+    "FM4_hits": [],
+    "note": "FM3 is only tested by the open-arc prompt, which leaves the destination open"
+  },
+  "guardFlags": {
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "judgmentMap": {
+    "destinationPhilosophy": {
+      "classification": "REQUIRE_VERIFIED_MENU",
+      "divergenceRate": 1.0,
+      "legality": null,
+      "trials": 4
+    },
+    "dwellPlacement": {
+      "classification": "REQUIRE_VERIFIED_MENU",
+      "divergenceRate": 1.0,
+      "legality": null,
+      "trials": 4
+    },
+    "orbitSelection": {
+      "classification": "REQUIRE_VERIFIED_MENU",
+      "divergenceRate": 1.0,
+      "legality": null,
+      "trials": 4
+    },
+    "pitchClassConstraints": {
+      "classification": "KEEP_PLANNER_DEFAULT",
+      "divergenceRate": 0.0,
+      "legality": null,
+      "trials": 4
+    },
+    "registerBands": {
+      "classification": "REQUIRE_VERIFIED_MENU",
+      "divergenceRate": 0.25,
+      "legality": null,
+      "trials": 4
+    },
+    "sectionCount": {
+      "classification": "REQUIRE_VERIFIED_MENU",
+      "divergenceRate": 1.0,
+      "legality": null,
+      "trials": 4
+    }
+  },
+  "legality": {
+    "compileRate": {
+      "C1": 0.0,
+      "C2": 0.6666666666666666
+    },
+    "firstPassRate": {
+      "C1": 0.0,
+      "C2": 0.6666666666666666
+    },
+    "retryRecovery": {
+      "C1": 0.0,
+      "C2": 0.0
+    },
+    "rows": [
+      {
+        "arm": "C1",
+        "attempts": 3,
+        "compiled": false,
+        "finalError": {
+          "code": "SCHEMA_OR_FENCE_VIOLATION",
+          "errors": [
+            "missing pieceId",
+            "missing destinationPhilosophy",
+            "missing seedNode",
+            "missing sectionIntentions",
+            "sectionIntentions must be a list of 3..9 sections"
+          ]
+        },
+        "firstPass": false,
+        "label": "open_arc_C1_t1",
+        "prompt": "open_arc"
+      },
+      {
+        "arm": "C1",
+        "attempts": 3,
+        "compiled": false,
+        "finalError": {
+          "code": "SCHEMA_OR_FENCE_VIOLATION",
+          "errors": [
+            "missing pieceId",
+            "missing destinationPhilosophy",
+            "missing seedNode",
+            "missing sectionIntentions",
+            "sectionIntentions must be a list of 3..9 sections"
+          ]
+        },
+        "firstPass": false,
+        "label": "open_arc_C1_t2",
+        "prompt": "open_arc"
+      },
+      {
+        "arm": "C2",
+        "attempts": 3,
+        "compiled": false,
+        "finalError": {
+          "code": "SCHEMA_OR_FENCE_VIOLATION",
+          "errors": [
+            "bad sectionChoices"
+          ]
+        },
+        "firstPass": null,
+        "label": "open_arc_C2_t1",
+        "prompt": "open_arc"
+      },
+      {
+        "arm": "C2",
+        "attempts": 3,
+        "compiled": false,
+        "finalError": {
+          "code": "SCHEMA_OR_FENCE_VIOLATION",
+          "errors": [
+            "bad sectionChoices"
+          ]
+        },
+        "firstPass": null,
+        "label": "open_arc_C2_t2",
+        "prompt": "open_arc"
+      },
+      {
+        "arm": "C1",
+        "attempts": 3,
+        "compiled": false,
+        "finalError": {
+          "code": "SCHEMA_OR_FENCE_VIOLATION",
+          "errors": [
+            "missing pieceId",
+            "missing destinationPhilosophy",
+            "missing seedNode",
+            "missing sectionIntentions",
+            "sectionIntentions must be a list of 3..9 sections"
+          ]
+        },
+        "firstPass": false,
+        "label": "andalusian_C1_t1",
+        "prompt": "andalusian"
+      },
+      {
+        "arm": "C1",
+        "attempts": 3,
+        "compiled": false,
+        "finalError": {
+          "code": "SCHEMA_OR_FENCE_VIOLATION",
+          "errors": [
+            "missing pieceId",
+            "missing destinationPhilosophy",
+            "missing seedNode",
+            "missing sectionIntentions",
+            "sectionIntentions must be a list of 3..9 sections"
+          ]
+        },
+        "firstPass": false,
+        "label": "andalusian_C1_t2",
+        "prompt": "andalusian"
+      },
+      {
+        "arm": "C2",
+        "attempts": 1,
+        "compiled": true,
+        "finalError": null,
+        "firstPass": true,
+        "label": "andalusian_C2_t1",
+        "prompt": "andalusian"
+      },
+      {
+        "arm": "C2",
+        "attempts": 1,
+        "compiled": true,
+        "finalError": null,
+        "firstPass": true,
+        "label": "andalusian_C2_t2",
+        "prompt": "andalusian"
+      },
+      {
+        "arm": "C1",
+        "attempts": 3,
+        "compiled": false,
+        "finalError": {
+          "code": "SCHEMA_OR_FENCE_VIOLATION",
+          "errors": [
+            "missing pieceId",
+            "missing destinationPhilosophy",
+            "missing seedNode",
+            "missing sectionIntentions",
+            "sectionIntentions must be a list of 3..9 sections"
+          ]
+        },
+        "firstPass": false,
+        "label": "borrowed_minor_C1_t1",
+        "prompt": "borrowed_minor"
+      },
+      {
+        "arm": "C1",
+        "attempts": 3,
+        "compiled": false,
+        "finalError": {
+          "code": "SCHEMA_OR_FENCE_VIOLATION",
+          "errors": [
+            "missing pieceId",
+            "missing destinationPhilosophy",
+            "missing seedNode",
+            "missing sectionIntentions",
+            "sectionIntentions must be a list of 3..9 sections"
+          ]
+        },
+        "firstPass": false,
+        "label": "borrowed_minor_C1_t2",
+        "prompt": "borrowed_minor"
+      },
+      {
+        "arm": "C2",
+        "attempts": 1,
+        "compiled": true,
+        "finalError": null,
+        "firstPass": true,
+        "label": "borrowed_minor_C2_t1",
+        "prompt": "borrowed_minor"
+      },
+      {
+        "arm": "C2",
+        "attempts": 1,
+        "compiled": true,
+        "finalError": null,
+        "firstPass": true,
+        "label": "borrowed_minor_C2_t2",
+        "prompt": "borrowed_minor"
+      }
+    ]
+  },
+  "llmCalls": 28,
+  "model": "opencode-go/claude-haiku-5-5",
+  "predeclarationSha256": "0e64b09fd13ed9fd1c627c4800006fa169745c1632f249be1aa73bbc769d5c95",
+  "runs": [
+    {
+      "arm": "C1",
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost": 0.0027069,
+          "elapsedSeconds": 8.657,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 2,
+            "kSteps": 12,
+            "name": "Home Cadence",
+            "phaseZone": [
+              0,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              0,
+              4,
+              7
+            ],
+            "role": "cadential_arrival",
+            "section": 7,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A2"
+            ]
+          },
+          "tokens": {
+            "cache_read": 0,
+            "cache_write": 12912,
+            "input": 4,
+            "output": 961,
+            "reasoning": 1224,
+            "total": 15101
+          },
+          "transcript": "task-c/transcripts/open_arc_C1_t1_a1.json"
+        },
+        {
+          "attempt": 2,
+          "cost": 0.001538225,
+          "elapsedSeconds": 11.539,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 2,
+            "kSteps": 12,
+            "name": "Far Shore Arrival",
+            "phaseZone": [
+              0,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              0,
+              4,
+              7
+            ],
+            "role": "cadential_arrival",
+            "section": 7,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A0"
+            ]
+          },
+          "tokens": {
+            "cache_read": 11795,
+            "cache_write": 1251,
+            "input": 4,
+            "output": 948,
+            "reasoning": 1579,
+            "total": 15577
+          },
+          "transcript": "task-c/transcripts/open_arc_C1_t1_a2.json"
+        },
+        {
+          "attempt": 3,
+          "cost": 0.00125736,
+          "elapsedSeconds": 10.241,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 3,
+            "kSteps": 12,
+            "name": "Modal Pivot Arrival",
+            "phaseZone": [
+              0,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              0,
+              4,
+              7
+            ],
+            "role": "cadential_arrival",
+            "section": 7,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A0"
+            ]
+          },
+          "tokens": {
+            "cache_read": 13046,
+            "cache_write": 0,
+            "input": 4,
+            "output": 955,
+            "reasoning": 1298,
+            "total": 15303
+          },
+          "transcript": "task-c/transcripts/open_arc_C1_t1_a3.json"
+        }
+      ],
+      "compiled": false,
+      "finalError": {
+        "code": "SCHEMA_OR_FENCE_VIOLATION",
+        "errors": [
+          "missing pieceId",
+          "missing destinationPhilosophy",
+          "missing seedNode",
+          "missing sectionIntentions",
+          "sectionIntentions must be a list of 3..9 sections"
+        ]
+      },
+      "firstPass": false,
+      "label": "open_arc_C1_t1",
+      "prompt": "open_arc",
+      "trial": 1
+    },
+    {
+      "arm": "C1",
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost": 0.00119802,
+          "elapsedSeconds": 8.81,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 3,
+            "kSteps": 12,
+            "name": "far_shore_return",
+            "phaseZone": [
+              0,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              0,
+              4,
+              7
+            ],
+            "role": "cadential_arrival",
+            "section": 7,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A0"
+            ]
+          },
+          "tokens": {
+            "cache_read": 12912,
+            "cache_write": 0,
+            "input": 4,
+            "output": 978,
+            "reasoning": 1159,
+            "total": 15053
+          },
+          "transcript": "task-c/transcripts/open_arc_C1_t2_a1.json"
+        },
+        {
+          "attempt": 2,
+          "cost": 0.00112586,
+          "elapsedSeconds": 9.735,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 4,
+            "kSteps": 12,
+            "name": "Far Shore Arrival",
+            "phaseZone": [
+              0,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              0,
+              4,
+              7
+            ],
+            "role": "cadential_arrival",
+            "section": 7,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A0"
+            ]
+          },
+          "tokens": {
+            "cache_read": 13046,
+            "cache_write": 0,
+            "input": 4,
+            "output": 969,
+            "reasoning": 1021,
+            "total": 15040
+          },
+          "transcript": "task-c/transcripts/open_arc_C1_t2_a2.json"
+        },
+        {
+          "attempt": 3,
+          "cost": 0.00130186,
+          "elapsedSeconds": 10.957,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 4,
+            "kSteps": 12,
+            "name": "Modal Pivot Return",
+            "phaseZone": [
+              0,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              0,
+              4,
+              7
+            ],
+            "role": "cadential_arrival",
+            "section": 7,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A2"
+            ]
+          },
+          "tokens": {
+            "cache_read": 13046,
+            "cache_write": 0,
+            "input": 4,
+            "output": 937,
+            "reasoning": 1405,
+            "total": 15392
+          },
+          "transcript": "task-c/transcripts/open_arc_C1_t2_a3.json"
+        }
+      ],
+      "compiled": false,
+      "finalError": {
+        "code": "SCHEMA_OR_FENCE_VIOLATION",
+        "errors": [
+          "missing pieceId",
+          "missing destinationPhilosophy",
+          "missing seedNode",
+          "missing sectionIntentions",
+          "sectionIntentions must be a list of 3..9 sections"
+        ]
+      },
+      "firstPass": false,
+      "label": "open_arc_C1_t2",
+      "prompt": "open_arc",
+      "trial": 2
+    },
+    {
+      "arm": "C2",
+      "attempts": [
+        {
+          "attempt": 1,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "bad sectionChoices"
+            ]
+          },
+          "transcript": "task-c/transcripts/open_arc_C2_t1_a1.json"
+        },
+        {
+          "attempt": 2,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "bad sectionChoices"
+            ]
+          },
+          "transcript": "task-c/transcripts/open_arc_C2_t1_a2.json"
+        },
+        {
+          "attempt": 3,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "bad sectionChoices"
+            ]
+          },
+          "transcript": "task-c/transcripts/open_arc_C2_t1_a3.json"
+        }
+      ],
+      "compiled": false,
+      "finalError": {
+        "code": "SCHEMA_OR_FENCE_VIOLATION",
+        "errors": [
+          "bad sectionChoices"
+        ]
+      },
+      "firstPass": null,
+      "label": "open_arc_C2_t1",
+      "prompt": "open_arc",
+      "trial": 1
+    },
+    {
+      "arm": "C2",
+      "attempts": [
+        {
+          "attempt": 1,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "bad sectionChoices"
+            ]
+          },
+          "transcript": "task-c/transcripts/open_arc_C2_t2_a1.json"
+        },
+        {
+          "attempt": 2,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "bad sectionChoices"
+            ]
+          },
+          "transcript": "task-c/transcripts/open_arc_C2_t2_a2.json"
+        },
+        {
+          "attempt": 3,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "bad sectionChoices"
+            ]
+          },
+          "transcript": "task-c/transcripts/open_arc_C2_t2_a3.json"
+        }
+      ],
+      "compiled": false,
+      "finalError": {
+        "code": "SCHEMA_OR_FENCE_VIOLATION",
+        "errors": [
+          "bad sectionChoices"
+        ]
+      },
+      "firstPass": null,
+      "label": "open_arc_C2_t2",
+      "prompt": "open_arc",
+      "trial": 2
+    },
+    {
+      "arm": "C1",
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost": 0.0011581,
+          "elapsedSeconds": 9.296,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 2,
+            "kSteps": 12,
+            "name": "i Am tonic return",
+            "phaseZone": [
+              0,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              9,
+              0,
+              4
+            ],
+            "role": "cadential_arrival",
+            "section": 5,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A0",
+              "ORBIT-A2"
+            ]
+          },
+          "tokens": {
+            "cache_read": 11795,
+            "cache_write": 1098,
+            "input": 4,
+            "output": 720,
+            "reasoning": 1085,
+            "total": 14702
+          },
+          "transcript": "task-c/transcripts/andalusian_C1_t1_a1.json"
+        },
+        {
+          "attempt": 2,
+          "cost": 0.00117585,
+          "elapsedSeconds": 8.241,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 4,
+            "kSteps": 12,
+            "name": "Tonic resolution",
+            "phaseZone": [
+              0,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              9,
+              0,
+              4
+            ],
+            "role": "cadential_arrival",
+            "section": 5,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A0",
+              "ORBIT-A2"
+            ]
+          },
+          "tokens": {
+            "cache_read": 11795,
+            "cache_write": 1232,
+            "input": 4,
+            "output": 713,
+            "reasoning": 1094,
+            "total": 14838
+          },
+          "transcript": "task-c/transcripts/andalusian_C1_t1_a2.json"
+        },
+        {
+          "attempt": 3,
+          "cost": 0.00123667,
+          "elapsedSeconds": 11.499,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 4,
+            "kSteps": 12,
+            "name": "tonic-cadential-arrival",
+            "phaseZone": [
+              0,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              9,
+              0,
+              4
+            ],
+            "role": "cadential_arrival",
+            "section": 5,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A2"
+            ]
+          },
+          "tokens": {
+            "cache_read": 13027,
+            "cache_write": 0,
+            "input": 4,
+            "output": 702,
+            "reasoning": 1510,
+            "total": 15243
+          },
+          "transcript": "task-c/transcripts/andalusian_C1_t1_a3.json"
+        }
+      ],
+      "compiled": false,
+      "finalError": {
+        "code": "SCHEMA_OR_FENCE_VIOLATION",
+        "errors": [
+          "missing pieceId",
+          "missing destinationPhilosophy",
+          "missing seedNode",
+          "missing sectionIntentions",
+          "sectionIntentions must be a list of 3..9 sections"
+        ]
+      },
+      "firstPass": false,
+      "label": "andalusian_C1_t1",
+      "prompt": "andalusian",
+      "trial": 1
+    },
+    {
+      "arm": "C1",
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost": 0.00106483,
+          "elapsedSeconds": 10.079,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 4,
+            "kSteps": 12,
+            "name": "Tonic i (A) cadential arrival",
+            "phaseZone": [
+              0,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              9,
+              0,
+              4
+            ],
+            "role": "cadential_arrival",
+            "section": 5,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A0",
+              "ORBIT-A1"
+            ]
+          },
+          "tokens": {
+            "cache_read": 12893,
+            "cache_write": 0,
+            "input": 4,
+            "output": 732,
+            "reasoning": 1139,
+            "total": 14768
+          },
+          "transcript": "task-c/transcripts/andalusian_C1_t2_a1.json"
+        },
+        {
+          "attempt": 2,
+          "cost": 0.00114017,
+          "elapsedSeconds": 9.254,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 4,
+            "kSteps": 12,
+            "name": "Tonic Cadential Arrival i",
+            "phaseZone": [
+              0,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              9,
+              0,
+              4
+            ],
+            "role": "cadential_arrival",
+            "section": 5,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A0",
+              "ORBIT-A2"
+            ]
+          },
+          "tokens": {
+            "cache_read": 13027,
+            "cache_write": 0,
+            "input": 4,
+            "output": 718,
+            "reasoning": 1301,
+            "total": 15050
+          },
+          "transcript": "task-c/transcripts/andalusian_C1_t2_a2.json"
+        },
+        {
+          "attempt": 3,
+          "cost": 0.00101417,
+          "elapsedSeconds": 9.048,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 4,
+            "kSteps": 12,
+            "name": "i_tonic_cadential_arrival",
+            "phaseZone": [
+              0,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              9,
+              0,
+              4
+            ],
+            "role": "cadential_arrival",
+            "section": 5,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A2",
+              "ORBIT-D1"
+            ]
+          },
+          "tokens": {
+            "cache_read": 13027,
+            "cache_write": 0,
+            "input": 4,
+            "output": 723,
+            "reasoning": 1044,
+            "total": 14798
+          },
+          "transcript": "task-c/transcripts/andalusian_C1_t2_a3.json"
+        }
+      ],
+      "compiled": false,
+      "finalError": {
+        "code": "SCHEMA_OR_FENCE_VIOLATION",
+        "errors": [
+          "missing pieceId",
+          "missing destinationPhilosophy",
+          "missing seedNode",
+          "missing sectionIntentions",
+          "sectionIntentions must be a list of 3..9 sections"
+        ]
+      },
+      "firstPass": false,
+      "label": "andalusian_C1_t2",
+      "prompt": "andalusian",
+      "trial": 2
+    },
+    {
+      "arm": "C2",
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost": 0.00175935,
+          "elapsedSeconds": 6.721,
+          "error": null,
+          "ok": true,
+          "parsed": {
+            "pieceId": "andalusian-descent-phrygian-dominant-01",
+            "sectionChoices": [
+              0,
+              2,
+              2,
+              1,
+              1
+            ]
+          },
+          "tokens": {
+            "cache_read": 11795,
+            "cache_write": 9024,
+            "input": 4,
+            "output": 48,
+            "reasoning": 978,
+            "total": 21849
+          },
+          "transcript": "task-c/transcripts/andalusian_C2_t1_a1.json"
+        }
+      ],
+      "compiled": true,
+      "divergence": {
+        "default": {
+          "destinationPhilosophy": "far_shore_return",
+          "dispersionClasses": [
+            "ANCHOR_FLAT"
+          ],
+          "dwellPhases": [
+            0,
+            2,
+            5,
+            6,
+            7,
+            8
+          ],
+          "orbits": [
+            "ORBIT-A0",
+            "ORBIT-A2",
+            "ORBIT-D3",
+            "ORBIT-D4"
+          ],
+          "requiredPitchClasses": [],
+          "sectionCount": 7
+        },
+        "dimensions": {
+          "destination": 1.0,
+          "dispersionClasses": 0.0,
+          "dwellPhases": 0.8571428571428572,
+          "orbits": 0.4,
+          "pitchClassConstraints": 0.0,
+          "sectionCount": 0.2857142857142857
+        },
+        "plan": {
+          "destinationPhilosophy": "interior_circuit",
+          "dispersionClasses": [
+            "ANCHOR_FLAT"
+          ],
+          "dwellPhases": [
+            0,
+            11
+          ],
+          "orbits": [
+            "ORBIT-A1",
+            "ORBIT-A2",
+            "ORBIT-D3",
+            "ORBIT-D4"
+          ],
+          "requiredPitchClasses": [],
+          "sectionCount": 5
+        },
+        "score": 0.4238095238095238
+      },
+      "finalError": null,
+      "firstPass": true,
+      "label": "andalusian_C2_t1",
+      "planPath": "task-c/andalusian_C2_t1_plan.json",
+      "prompt": "andalusian",
+      "summary": {
+        "bars": 38,
+        "boundaryDwell": 0,
+        "degreeModuloCount": 93,
+        "directOrbitCount": 139,
+        "distinctMacroStates": 30,
+        "distinctOffices": 4,
+        "distinctPhases": 4,
+        "distinctQStates": 12,
+        "durationMs": 69600,
+        "emittedPcs": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "emittedPitchClasses": 12,
+        "floatValues": 0,
+        "intervalHistogram": {
+          "0": 25,
+          "1": 36,
+          "10": 4,
+          "11": 7,
+          "2": 38,
+          "3": 10,
+          "4": 5,
+          "5": 6,
+          "6": 14,
+          "7": 73,
+          "8": 10,
+          "9": 3
+        },
+        "llmCalls": 0,
+        "microSteps": 232,
+        "ngram5Distinct": 44,
+        "ngram5Repeats": 2,
+        "ngram5Total": 46,
+        "outOfMaskPitches": 0,
+        "projectionModes": {
+          "degree_modulo_7": 93,
+          "direct_orbit_pc": 139
+        },
+        "qStatesVisited": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "rests": 0,
+        "stillSetEntries": 0
+      },
+      "tracePath": "task-c/traces/andalusian_C2_t1.jsonl",
+      "traceSha256": "f6b64b2f29b740d7dd121218d85bd1210fdf0a927714feeff518c442abe05eed",
+      "trial": 1
+    },
+    {
+      "arm": "C2",
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost": 0.00120059,
+          "elapsedSeconds": 10.323,
+          "error": null,
+          "ok": true,
+          "parsed": {
+            "pieceId": "andalusian-descent-phrygian-dominant-arc",
+            "sectionChoices": [
+              5,
+              3,
+              2,
+              1,
+              0
+            ]
+          },
+          "tokens": {
+            "cache_read": 20819,
+            "cache_write": 0,
+            "input": 4,
+            "output": 49,
+            "reasoning": 1935,
+            "total": 22807
+          },
+          "transcript": "task-c/transcripts/andalusian_C2_t2_a1.json"
+        }
+      ],
+      "compiled": true,
+      "divergence": {
+        "default": {
+          "destinationPhilosophy": "far_shore_return",
+          "dispersionClasses": [
+            "ANCHOR_FLAT"
+          ],
+          "dwellPhases": [
+            0,
+            2,
+            5,
+            6,
+            7,
+            8
+          ],
+          "orbits": [
+            "ORBIT-A0",
+            "ORBIT-A2",
+            "ORBIT-D3",
+            "ORBIT-D4"
+          ],
+          "requiredPitchClasses": [],
+          "sectionCount": 7
+        },
+        "dimensions": {
+          "destination": 1.0,
+          "dispersionClasses": 0.0,
+          "dwellPhases": 0.8571428571428572,
+          "orbits": 0.4,
+          "pitchClassConstraints": 0.0,
+          "sectionCount": 0.2857142857142857
+        },
+        "plan": {
+          "destinationPhilosophy": "interior_circuit",
+          "dispersionClasses": [
+            "ANCHOR_FLAT"
+          ],
+          "dwellPhases": [
+            0,
+            11
+          ],
+          "orbits": [
+            "ORBIT-A1",
+            "ORBIT-A2",
+            "ORBIT-D3",
+            "ORBIT-D4"
+          ],
+          "requiredPitchClasses": [],
+          "sectionCount": 5
+        },
+        "score": 0.4238095238095238
+      },
+      "finalError": null,
+      "firstPass": true,
+      "label": "andalusian_C2_t2",
+      "planPath": "task-c/andalusian_C2_t2_plan.json",
+      "prompt": "andalusian",
+      "summary": {
+        "bars": 49,
+        "boundaryDwell": 0,
+        "degreeModuloCount": 117,
+        "directOrbitCount": 170,
+        "distinctMacroStates": 25,
+        "distinctOffices": 5,
+        "distinctPhases": 3,
+        "distinctQStates": 12,
+        "durationMs": 86100,
+        "emittedPcs": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "emittedPitchClasses": 12,
+        "floatValues": 0,
+        "intervalHistogram": {
+          "0": 30,
+          "1": 39,
+          "10": 8,
+          "11": 5,
+          "2": 49,
+          "3": 13,
+          "4": 6,
+          "5": 5,
+          "6": 24,
+          "7": 91,
+          "8": 10,
+          "9": 6
+        },
+        "llmCalls": 0,
+        "microSteps": 287,
+        "ngram5Distinct": 50,
+        "ngram5Repeats": 7,
+        "ngram5Total": 57,
+        "outOfMaskPitches": 0,
+        "projectionModes": {
+          "degree_modulo_7": 117,
+          "direct_orbit_pc": 170
+        },
+        "qStatesVisited": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "rests": 0,
+        "stillSetEntries": 0
+      },
+      "tracePath": "task-c/traces/andalusian_C2_t2.jsonl",
+      "traceSha256": "59aae398131d06d9cf718463602e38035ccfca259cf7a962800be77252013afa",
+      "trial": 2
+    },
+    {
+      "arm": "C1",
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost": 0.00087885,
+          "elapsedSeconds": 6.088,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 2,
+            "kSteps": 12,
+            "name": "Return to major tonic, cadential arrival",
+            "phaseZone": [
+              6,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              0,
+              4,
+              7,
+              9
+            ],
+            "role": "cadential_arrival",
+            "section": 3,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A0",
+              "ORBIT-A2"
+            ]
+          },
+          "tokens": {
+            "cache_read": 11795,
+            "cache_write": 1084,
+            "input": 4,
+            "output": 492,
+            "reasoning": 758,
+            "total": 14133
+          },
+          "transcript": "task-c/transcripts/borrowed_minor_C1_t1_a1.json"
+        },
+        {
+          "attempt": 2,
+          "cost": 0.0008786,
+          "elapsedSeconds": 7.02,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 2,
+            "kSteps": 12,
+            "name": "Tonic Return and Cadential Arrival",
+            "phaseZone": [
+              0,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              0,
+              4,
+              7,
+              9
+            ],
+            "role": "cadential_arrival",
+            "section": 3,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A0",
+              "ORBIT-A2"
+            ]
+          },
+          "tokens": {
+            "cache_read": 11795,
+            "cache_write": 1218,
+            "input": 4,
+            "output": 501,
+            "reasoning": 715,
+            "total": 14233
+          },
+          "transcript": "task-c/transcripts/borrowed_minor_C1_t1_a2.json"
+        },
+        {
+          "attempt": 3,
+          "cost": 0.00068703,
+          "elapsedSeconds": 6.345,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 2,
+            "kSteps": 12,
+            "name": "Major Tonic Cadential Return",
+            "phaseZone": [
+              0,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              0,
+              4,
+              7,
+              9
+            ],
+            "role": "cadential_arrival",
+            "section": 3,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A0",
+              "ORBIT-A2"
+            ]
+          },
+          "tokens": {
+            "cache_read": 13013,
+            "cache_write": 0,
+            "input": 4,
+            "output": 495,
+            "reasoning": 618,
+            "total": 14130
+          },
+          "transcript": "task-c/transcripts/borrowed_minor_C1_t1_a3.json"
+        }
+      ],
+      "compiled": false,
+      "finalError": {
+        "code": "SCHEMA_OR_FENCE_VIOLATION",
+        "errors": [
+          "missing pieceId",
+          "missing destinationPhilosophy",
+          "missing seedNode",
+          "missing sectionIntentions",
+          "sectionIntentions must be a list of 3..9 sections"
+        ]
+      },
+      "firstPass": false,
+      "label": "borrowed_minor_C1_t1",
+      "prompt": "borrowed_minor",
+      "trial": 1
+    },
+    {
+      "arm": "C1",
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost": 0.00074319,
+          "elapsedSeconds": 7.054,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 4,
+            "kSteps": 12,
+            "name": "Return to major tonic with natural sixth",
+            "phaseZone": [
+              0,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              0,
+              4,
+              7,
+              9
+            ],
+            "role": "cadential_arrival",
+            "section": 3,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-D1",
+              "ORBIT-D3"
+            ]
+          },
+          "tokens": {
+            "cache_read": 12879,
+            "cache_write": 0,
+            "input": 4,
+            "output": 492,
+            "reasoning": 736,
+            "total": 14111
+          },
+          "transcript": "task-c/transcripts/borrowed_minor_C1_t2_a1.json"
+        },
+        {
+          "attempt": 2,
+          "cost": 0.00080603,
+          "elapsedSeconds": 6.735,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 2,
+            "kSteps": 12,
+            "name": "major_tonic_natural6_return",
+            "phaseZone": [
+              0,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              0,
+              4,
+              7,
+              9
+            ],
+            "role": "cadential_arrival",
+            "section": 3,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A0",
+              "ORBIT-D1"
+            ]
+          },
+          "tokens": {
+            "cache_read": 13013,
+            "cache_write": 0,
+            "input": 4,
+            "output": 503,
+            "reasoning": 848,
+            "total": 14368
+          },
+          "transcript": "task-c/transcripts/borrowed_minor_C1_t2_a2.json"
+        },
+        {
+          "attempt": 3,
+          "cost": 0.00067503,
+          "elapsedSeconds": 6.402,
+          "error": {
+            "code": "SCHEMA_OR_FENCE_VIOLATION",
+            "errors": [
+              "missing pieceId",
+              "missing destinationPhilosophy",
+              "missing seedNode",
+              "missing sectionIntentions",
+              "sectionIntentions must be a list of 3..9 sections"
+            ]
+          },
+          "ok": false,
+          "parsed": {
+            "dwellBars": 4,
+            "kSteps": 12,
+            "name": "Return to Major Tonic and Cadential Arrival",
+            "phaseZone": [
+              9,
+              11
+            ],
+            "registerBand": 0,
+            "requiredPitchClasses": [
+              0,
+              4,
+              7,
+              9
+            ],
+            "role": "cadential_arrival",
+            "section": 3,
+            "targetDispersionClass": "ANCHOR_FLAT",
+            "targetOrbitFilter": [
+              "ORBIT-A2",
+              "ORBIT-D1"
+            ]
+          },
+          "tokens": {
+            "cache_read": 13013,
+            "cache_write": 0,
+            "input": 4,
+            "output": 509,
+            "reasoning": 580,
+            "total": 14106
+          },
+          "transcript": "task-c/transcripts/borrowed_minor_C1_t2_a3.json"
+        }
+      ],
+      "compiled": false,
+      "finalError": {
+        "code": "SCHEMA_OR_FENCE_VIOLATION",
+        "errors": [
+          "missing pieceId",
+          "missing destinationPhilosophy",
+          "missing seedNode",
+          "missing sectionIntentions",
+          "sectionIntentions must be a list of 3..9 sections"
+        ]
+      },
+      "firstPass": false,
+      "label": "borrowed_minor_C1_t2",
+      "prompt": "borrowed_minor",
+      "trial": 2
+    },
+    {
+      "arm": "C2",
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost": 0.0018226,
+          "elapsedSeconds": 10.605,
+          "error": null,
+          "ok": true,
+          "parsed": {
+            "pieceId": "mvp7-task-c",
+            "sectionChoices": [
+              1,
+              4,
+              1
+            ]
+          },
+          "tokens": {
+            "cache_read": 11795,
+            "cache_write": 5598,
+            "input": 4,
+            "output": 34,
+            "reasoning": 1975,
+            "total": 19406
+          },
+          "transcript": "task-c/transcripts/borrowed_minor_C2_t1_a1.json"
+        }
+      ],
+      "compiled": true,
+      "divergence": {
+        "default": {
+          "destinationPhilosophy": "far_shore_return",
+          "dispersionClasses": [
+            "ANCHOR_FLAT"
+          ],
+          "dwellPhases": [
+            0,
+            2,
+            5,
+            6,
+            7,
+            8
+          ],
+          "orbits": [
+            "ORBIT-A0",
+            "ORBIT-A2",
+            "ORBIT-D3",
+            "ORBIT-D4"
+          ],
+          "requiredPitchClasses": [],
+          "sectionCount": 7
+        },
+        "dimensions": {
+          "destination": 1.0,
+          "dispersionClasses": 0.0,
+          "dwellPhases": 0.8571428571428572,
+          "orbits": 0.8,
+          "pitchClassConstraints": 0.0,
+          "sectionCount": 0.5714285714285714
+        },
+        "plan": {
+          "destinationPhilosophy": "interior_circuit",
+          "dispersionClasses": [
+            "ANCHOR_FLAT"
+          ],
+          "dwellPhases": [
+            0,
+            11
+          ],
+          "orbits": [
+            "ORBIT-A1",
+            "ORBIT-D3"
+          ],
+          "requiredPitchClasses": [],
+          "sectionCount": 3
+        },
+        "score": 0.5380952380952381
+      },
+      "finalError": null,
+      "firstPass": true,
+      "label": "borrowed_minor_C2_t1",
+      "planPath": "task-c/borrowed_minor_C2_t1_plan.json",
+      "prompt": "borrowed_minor",
+      "summary": {
+        "bars": 21,
+        "boundaryDwell": 0,
+        "degreeModuloCount": 55,
+        "directOrbitCount": 92,
+        "distinctMacroStates": 18,
+        "distinctOffices": 4,
+        "distinctPhases": 3,
+        "distinctQStates": 12,
+        "durationMs": 44100,
+        "emittedPcs": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "emittedPitchClasses": 12,
+        "floatValues": 0,
+        "intervalHistogram": {
+          "0": 13,
+          "1": 25,
+          "10": 4,
+          "11": 1,
+          "2": 20,
+          "3": 6,
+          "4": 7,
+          "5": 3,
+          "6": 5,
+          "7": 53,
+          "8": 8,
+          "9": 1
+        },
+        "llmCalls": 0,
+        "microSteps": 147,
+        "ngram5Distinct": 29,
+        "ngram5Repeats": 0,
+        "ngram5Total": 29,
+        "outOfMaskPitches": 0,
+        "projectionModes": {
+          "degree_modulo_7": 55,
+          "direct_orbit_pc": 92
+        },
+        "qStatesVisited": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "rests": 0,
+        "stillSetEntries": 0
+      },
+      "tracePath": "task-c/traces/borrowed_minor_C2_t1.jsonl",
+      "traceSha256": "0ce78168ebecb058d43722e6d10d6e1bc7f6a3324c926f0d7b9c79f20147c240",
+      "trial": 1
+    },
+    {
+      "arm": "C2",
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost": 0.00107733,
+          "elapsedSeconds": 9.782,
+          "error": null,
+          "ok": true,
+          "parsed": {
+            "pieceId": "mvp7-I6-iv-I",
+            "sectionChoices": [
+              1,
+              5,
+              0
+            ]
+          },
+          "tokens": {
+            "cache_read": 17393,
+            "cache_write": 0,
+            "input": 4,
+            "output": 38,
+            "reasoning": 1768,
+            "total": 19203
+          },
+          "transcript": "task-c/transcripts/borrowed_minor_C2_t2_a1.json"
+        }
+      ],
+      "compiled": true,
+      "divergence": {
+        "default": {
+          "destinationPhilosophy": "far_shore_return",
+          "dispersionClasses": [
+            "ANCHOR_FLAT"
+          ],
+          "dwellPhases": [
+            0,
+            2,
+            5,
+            6,
+            7,
+            8
+          ],
+          "orbits": [
+            "ORBIT-A0",
+            "ORBIT-A2",
+            "ORBIT-D3",
+            "ORBIT-D4"
+          ],
+          "requiredPitchClasses": [],
+          "sectionCount": 7
+        },
+        "dimensions": {
+          "destination": 1.0,
+          "dispersionClasses": 0.5,
+          "dwellPhases": 0.8571428571428572,
+          "orbits": 0.8333333333333334,
+          "pitchClassConstraints": 0.0,
+          "sectionCount": 0.5714285714285714
+        },
+        "plan": {
+          "destinationPhilosophy": "interior_circuit",
+          "dispersionClasses": [
+            "ANCHOR_FLAT",
+            "MODERATE_BEND"
+          ],
+          "dwellPhases": [
+            0,
+            11
+          ],
+          "orbits": [
+            "ORBIT-A1",
+            "ORBIT-D2",
+            "ORBIT-D4"
+          ],
+          "requiredPitchClasses": [],
+          "sectionCount": 3
+        },
+        "score": 0.6269841269841271
+      },
+      "finalError": null,
+      "firstPass": true,
+      "label": "borrowed_minor_C2_t2",
+      "planPath": "task-c/borrowed_minor_C2_t2_plan.json",
+      "prompt": "borrowed_minor",
+      "summary": {
+        "bars": 18,
+        "boundaryDwell": 0,
+        "degreeModuloCount": 54,
+        "directOrbitCount": 78,
+        "distinctMacroStates": 13,
+        "distinctOffices": 3,
+        "distinctPhases": 3,
+        "distinctQStates": 12,
+        "durationMs": 39600,
+        "emittedPcs": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "emittedPitchClasses": 12,
+        "floatValues": 0,
+        "intervalHistogram": {
+          "0": 17,
+          "1": 21,
+          "10": 1,
+          "11": 3,
+          "2": 20,
+          "3": 10,
+          "4": 3,
+          "5": 1,
+          "6": 7,
+          "7": 44,
+          "8": 4
+        },
+        "llmCalls": 0,
+        "microSteps": 132,
+        "ngram5Distinct": 26,
+        "ngram5Repeats": 0,
+        "ngram5Total": 26,
+        "outOfMaskPitches": 0,
+        "projectionModes": {
+          "degree_modulo_7": 54,
+          "direct_orbit_pc": 78
+        },
+        "qStatesVisited": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "rests": 0,
+        "stillSetEntries": 0
+      },
+      "tracePath": "task-c/traces/borrowed_minor_C2_t2.jsonl",
+      "traceSha256": "6cd0ee4f390c34e66c15a81446c8d8176a775c669e721dc54c7297df97c7f05b",
+      "trial": 2
+    }
+  ],
+  "schemaVersion": "governed-loop.mvp7-task-c.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "task": "MVP7-TC"
+}

@@ -1,0 +1,2733 @@
+{
+  "benchmarks": {
+    "B1_andalusian": {
+      "attempts": 1,
+      "render": {
+        "barCount": 45,
+        "clippedSamples": 0,
+        "durationMs": 90600,
+        "maxAbsLast32": 0,
+        "midiAudit": {
+          "division": 480,
+          "expectedLeadNotes": 302,
+          "expectedPadNoteOns": 360,
+          "format": 1,
+          "leadNoteOns": 302,
+          "leadSequenceMatch": true,
+          "metaEvents": 94,
+          "outOfMaskNotes": 0,
+          "outOfMaskWitnesses": [],
+          "padContainerMatch": true,
+          "padNoteOns": 360,
+          "trackChunks": 3
+        },
+        "midiPath": "task-b/renders/b1-andalusian.mid",
+        "midiSha256": "a3b40a89b3eb8efdecfba841e9e1031a024984f7bf0b630403a96503c9b27343",
+        "nonFiniteSamples": 0,
+        "reRenderMatch": true,
+        "samples": 3995460,
+        "seamMetric": {
+          "boundaries": 44,
+          "maxDepthDb": 6.099312,
+          "medianDepthDb": 3.166213
+        },
+        "sections": [
+          {
+            "arithmeticCentroidHz": 856.4235201163237,
+            "centroidOct": 0.6783048696312075,
+            "endMs": 20700,
+            "section": 1,
+            "sectionKey": "i",
+            "silentWindows": 0,
+            "spreadOct": 0.7138202131306983,
+            "startMs": 0,
+            "windows": 890
+          },
+          {
+            "arithmeticCentroidHz": 685.9102837219514,
+            "centroidOct": 0.2598996009135385,
+            "endMs": 36900,
+            "section": 2,
+            "sectionKey": "VII",
+            "silentWindows": 0,
+            "spreadOct": 0.8373803744495631,
+            "startMs": 20700,
+            "windows": 698
+          },
+          {
+            "arithmeticCentroidHz": 491.1016954103551,
+            "centroidOct": -0.04911031859153728,
+            "endMs": 50100,
+            "section": 3,
+            "sectionKey": "VI",
+            "silentWindows": 0,
+            "spreadOct": 0.6661890371830206,
+            "startMs": 36900,
+            "windows": 568
+          },
+          {
+            "arithmeticCentroidHz": 793.2713834496238,
+            "centroidOct": 0.5059133579521359,
+            "endMs": 70800,
+            "section": 4,
+            "sectionKey": "V",
+            "silentWindows": 0,
+            "spreadOct": 0.7685635516445929,
+            "startMs": 50100,
+            "windows": 892
+          },
+          {
+            "arithmeticCentroidHz": 828.4646366182709,
+            "centroidOct": 0.6514679647584369,
+            "endMs": 90600,
+            "section": 5,
+            "sectionKey": "i_resolution",
+            "silentWindows": 0,
+            "spreadOct": 0.6743541103772777,
+            "startMs": 70800,
+            "windows": 850
+          }
+        ],
+        "tracePath": "task-b/renders/b1-andalusian.jsonl",
+        "traceSha256": "bf51f9b5e8b1f3c647e2049a023cc625029f59f30c513993d7182b4728ca3746",
+        "wavPath": "task-b/renders/b1-andalusian.wav",
+        "wavSha256": "78dd4d8a2fdf57fd21231f4daabcbc7fa5e367df151fd87ba7522d69db2a66af"
+      },
+      "route": {
+        "legs": [
+          {
+            "candidate": {
+              "bandMatch": true,
+              "mask": 375,
+              "node": "375@11",
+              "office": "Venus",
+              "orbit": "ORBIT-D4",
+              "pcSum": 26,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                7,
+                11
+              ],
+              "registerOffset": 12
+            },
+            "dwellBars": 2,
+            "hops": 10,
+            "path": [
+              "1387@0",
+              "859@0",
+              "1717@11",
+              "859@11",
+              "1717@10",
+              "3433@9",
+              "1721@9",
+              "861@10",
+              "1245@10",
+              "623@11",
+              "375@11"
+            ],
+            "waypoint": "i"
+          },
+          {
+            "candidate": {
+              "bandMatch": true,
+              "mask": 1143,
+              "node": "1143@0",
+              "office": "Venus",
+              "orbit": "ORBIT-D4",
+              "pcSum": 28,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                6,
+                10
+              ],
+              "registerOffset": 12
+            },
+            "dwellBars": 2,
+            "hops": 7,
+            "path": [
+              "375@11",
+              "623@11",
+              "1245@10",
+              "1373@10",
+              "687@11",
+              "1245@11",
+              "623@0",
+              "1143@0"
+            ],
+            "waypoint": "VII"
+          },
+          {
+            "candidate": {
+              "bandMatch": true,
+              "mask": 379,
+              "node": "379@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 27,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                6,
+                8
+              ],
+              "registerOffset": 0
+            },
+            "dwellBars": 2,
+            "hops": 5,
+            "path": [
+              "1143@0",
+              "635@0",
+              "1269@11",
+              "885@11",
+              "443@0",
+              "379@0"
+            ],
+            "waypoint": "VI"
+          },
+          {
+            "candidate": {
+              "bandMatch": true,
+              "mask": 859,
+              "node": "859@11",
+              "office": "Mars",
+              "orbit": "ORBIT-A0",
+              "pcSum": 31,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                5,
+                7,
+                8,
+                11
+              ],
+              "registerOffset": 12
+            },
+            "dwellBars": 2,
+            "hops": 10,
+            "path": [
+              "379@0",
+              "443@0",
+              "885@11",
+              "1269@11",
+              "635@0",
+              "623@0",
+              "1245@11",
+              "861@11",
+              "1721@10",
+              "1717@10",
+              "859@11"
+            ],
+            "waypoint": "V"
+          },
+          {
+            "candidate": {
+              "bandMatch": true,
+              "mask": 375,
+              "node": "375@11",
+              "office": "Venus",
+              "orbit": "ORBIT-D4",
+              "pcSum": 26,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                7,
+                11
+              ],
+              "registerOffset": 12
+            },
+            "dwellBars": 3,
+            "hops": 7,
+            "path": [
+              "859@11",
+              "1717@10",
+              "3433@9",
+              "1721@9",
+              "861@10",
+              "1245@10",
+              "623@11",
+              "375@11"
+            ],
+            "waypoint": "i_resolution"
+          }
+        ]
+      },
+      "search": [
+        {
+          "band": null,
+          "candidateCount": 422,
+          "candidates": [
+            {
+              "bandMatch": true,
+              "mask": 375,
+              "node": "375@11",
+              "office": "Venus",
+              "orbit": "ORBIT-D4",
+              "pcSum": 26,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                7,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 379,
+              "node": "379@11",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 27,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                5,
+                7,
+                11
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 415,
+              "node": "415@0",
+              "office": "Saturn",
+              "orbit": "ORBIT-D5",
+              "pcSum": 25,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                7,
+                8
+              ],
+              "registerOffset": -12
+            },
+            {
+              "bandMatch": true,
+              "mask": 415,
+              "node": "415@11",
+              "office": "Saturn",
+              "orbit": "ORBIT-D5",
+              "pcSum": 25,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                3,
+                6,
+                7,
+                11
+              ],
+              "registerOffset": -12
+            },
+            {
+              "bandMatch": true,
+              "mask": 439,
+              "node": "439@11",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 27,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                6,
+                7,
+                11
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 443,
+              "node": "443@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 28,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 443,
+              "node": "443@11",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 28,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                6,
+                7,
+                11
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 445,
+              "node": "445@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 29,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                5,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 463,
+              "node": "463@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 27,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                3,
+                6,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 471,
+              "node": "471@11",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 28,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                5,
+                6,
+                7,
+                11
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 475,
+              "node": "475@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 29,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                6,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 475,
+              "node": "475@11",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 29,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                5,
+                6,
+                7,
+                11
+              ],
+              "registerOffset": 0
+            }
+          ],
+          "excludePcs": [],
+          "requiredPcs": [
+            0,
+            3,
+            7
+          ],
+          "waypoint": "i"
+        },
+        {
+          "band": null,
+          "candidateCount": 422,
+          "candidates": [
+            {
+              "bandMatch": true,
+              "mask": 1143,
+              "node": "1143@0",
+              "office": "Venus",
+              "orbit": "ORBIT-D4",
+              "pcSum": 28,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                6,
+                10
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 1261,
+              "node": "1261@0",
+              "office": "Venus",
+              "orbit": "ORBIT-A1",
+              "pcSum": 33,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                5,
+                6,
+                7,
+                10
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 1269,
+              "node": "1269@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-A2",
+              "pcSum": 34,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                4,
+                5,
+                6,
+                7,
+                10
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 1335,
+              "node": "1335@0",
+              "office": "Moon",
+              "orbit": "ORBIT-A2",
+              "pcSum": 30,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                8,
+                10
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 1341,
+              "node": "1341@0",
+              "office": "Saturn",
+              "orbit": "ORBIT-A2",
+              "pcSum": 32,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                5,
+                8,
+                10
+              ],
+              "registerOffset": -12
+            },
+            {
+              "bandMatch": true,
+              "mask": 1383,
+              "node": "1383@0",
+              "office": "Saturn",
+              "orbit": "ORBIT-A0",
+              "pcSum": 32,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                5,
+                6,
+                8,
+                10
+              ],
+              "registerOffset": -12
+            },
+            {
+              "bandMatch": true,
+              "mask": 1389,
+              "node": "1389@0",
+              "office": "Venus",
+              "orbit": "ORBIT-A1",
+              "pcSum": 34,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                5,
+                6,
+                8,
+                10
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 1397,
+              "node": "1397@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-A2",
+              "pcSum": 35,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                4,
+                5,
+                6,
+                8,
+                10
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 1447,
+              "node": "1447@0",
+              "office": "Venus",
+              "orbit": "ORBIT-A0",
+              "pcSum": 33,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                5,
+                7,
+                8,
+                10
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 1453,
+              "node": "1453@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-A0",
+              "pcSum": 35,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                5,
+                7,
+                8,
+                10
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 1461,
+              "node": "1461@0",
+              "office": "Mercury",
+              "orbit": "ORBIT-A1",
+              "pcSum": 36,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                4,
+                5,
+                7,
+                8,
+                10
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 1509,
+              "node": "1509@0",
+              "office": "Mars",
+              "orbit": "ORBIT-A2",
+              "pcSum": 38,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                5,
+                6,
+                7,
+                8,
+                10
+              ],
+              "registerOffset": 12
+            }
+          ],
+          "excludePcs": [],
+          "requiredPcs": [
+            10,
+            2,
+            5
+          ],
+          "waypoint": "VII"
+        },
+        {
+          "band": null,
+          "candidateCount": 422,
+          "candidates": [
+            {
+              "bandMatch": true,
+              "mask": 379,
+              "node": "379@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 27,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                6,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 415,
+              "node": "415@0",
+              "office": "Saturn",
+              "orbit": "ORBIT-D5",
+              "pcSum": 25,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                7,
+                8
+              ],
+              "registerOffset": -12
+            },
+            {
+              "bandMatch": true,
+              "mask": 443,
+              "node": "443@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 28,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 445,
+              "node": "445@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 29,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                5,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 463,
+              "node": "463@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 27,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                3,
+                6,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 475,
+              "node": "475@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 29,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                6,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 477,
+              "node": "477@0",
+              "office": "Mercury",
+              "orbit": "ORBIT-D4",
+              "pcSum": 30,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                6,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 607,
+              "node": "607@11",
+              "office": "Saturn",
+              "orbit": "ORBIT-D5",
+              "pcSum": 25,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                3,
+                5,
+                8,
+                11
+              ],
+              "registerOffset": -12
+            },
+            {
+              "bandMatch": true,
+              "mask": 631,
+              "node": "631@11",
+              "office": "Venus",
+              "orbit": "ORBIT-D4",
+              "pcSum": 27,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                8,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 635,
+              "node": "635@11",
+              "office": "Venus",
+              "orbit": "ORBIT-D4",
+              "pcSum": 28,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                5,
+                8,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 671,
+              "node": "671@11",
+              "office": "Saturn",
+              "orbit": "ORBIT-D5",
+              "pcSum": 26,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                3,
+                6,
+                8,
+                11
+              ],
+              "registerOffset": -12
+            },
+            {
+              "bandMatch": true,
+              "mask": 695,
+              "node": "695@11",
+              "office": "Venus",
+              "orbit": "ORBIT-A1",
+              "pcSum": 28,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                6,
+                8,
+                11
+              ],
+              "registerOffset": 12
+            }
+          ],
+          "excludePcs": [],
+          "requiredPcs": [
+            8,
+            0,
+            3
+          ],
+          "waypoint": "VI"
+        },
+        {
+          "band": 12,
+          "candidateCount": 163,
+          "candidates": [
+            {
+              "bandMatch": true,
+              "mask": 859,
+              "node": "859@11",
+              "office": "Mars",
+              "orbit": "ORBIT-A0",
+              "pcSum": 31,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                5,
+                7,
+                8,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 877,
+              "node": "877@11",
+              "office": "Venus",
+              "orbit": "ORBIT-A1",
+              "pcSum": 33,
+              "phase": 11,
+              "pitchClasses": [
+                1,
+                2,
+                4,
+                5,
+                7,
+                8,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 919,
+              "node": "919@11",
+              "office": "Sun",
+              "orbit": "ORBIT-D1",
+              "pcSum": 31,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                6,
+                7,
+                8,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 923,
+              "node": "923@11",
+              "office": "Sun",
+              "orbit": "ORBIT-D1",
+              "pcSum": 32,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                6,
+                7,
+                8,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 925,
+              "node": "925@11",
+              "office": "Sun",
+              "orbit": "ORBIT-D1",
+              "pcSum": 33,
+              "phase": 11,
+              "pitchClasses": [
+                1,
+                2,
+                3,
+                6,
+                7,
+                8,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 939,
+              "node": "939@11",
+              "office": "Venus",
+              "orbit": "ORBIT-A0",
+              "pcSum": 33,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                2,
+                4,
+                6,
+                7,
+                8,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 981,
+              "node": "981@11",
+              "office": "Mars",
+              "orbit": "ORBIT-A2",
+              "pcSum": 36,
+              "phase": 11,
+              "pitchClasses": [
+                1,
+                3,
+                5,
+                6,
+                7,
+                8,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 1845,
+              "node": "1845@11",
+              "office": "Mars",
+              "orbit": "ORBIT-A0",
+              "pcSum": 38,
+              "phase": 11,
+              "pitchClasses": [
+                1,
+                3,
+                4,
+                7,
+                8,
+                9,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 1869,
+              "node": "1869@11",
+              "office": "Sun",
+              "orbit": "ORBIT-A2",
+              "pcSum": 38,
+              "phase": 11,
+              "pitchClasses": [
+                1,
+                2,
+                5,
+                7,
+                8,
+                9,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 1875,
+              "node": "1875@11",
+              "office": "Sun",
+              "orbit": "ORBIT-A2",
+              "pcSum": 38,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                3,
+                5,
+                7,
+                8,
+                9,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 1877,
+              "node": "1877@11",
+              "office": "Sun",
+              "orbit": "ORBIT-A2",
+              "pcSum": 39,
+              "phase": 11,
+              "pitchClasses": [
+                1,
+                3,
+                5,
+                7,
+                8,
+                9,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 1881,
+              "node": "1881@11",
+              "office": "Sun",
+              "orbit": "ORBIT-A2",
+              "pcSum": 40,
+              "phase": 11,
+              "pitchClasses": [
+                2,
+                3,
+                5,
+                7,
+                8,
+                9,
+                11
+              ],
+              "registerOffset": 12
+            }
+          ],
+          "excludePcs": [],
+          "requiredPcs": [
+            7,
+            8,
+            11
+          ],
+          "waypoint": "V"
+        },
+        {
+          "band": null,
+          "candidateCount": 422,
+          "candidates": [
+            {
+              "bandMatch": true,
+              "mask": 375,
+              "node": "375@11",
+              "office": "Venus",
+              "orbit": "ORBIT-D4",
+              "pcSum": 26,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                7,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 379,
+              "node": "379@11",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 27,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                5,
+                7,
+                11
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 415,
+              "node": "415@0",
+              "office": "Saturn",
+              "orbit": "ORBIT-D5",
+              "pcSum": 25,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                7,
+                8
+              ],
+              "registerOffset": -12
+            },
+            {
+              "bandMatch": true,
+              "mask": 415,
+              "node": "415@11",
+              "office": "Saturn",
+              "orbit": "ORBIT-D5",
+              "pcSum": 25,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                3,
+                6,
+                7,
+                11
+              ],
+              "registerOffset": -12
+            },
+            {
+              "bandMatch": true,
+              "mask": 439,
+              "node": "439@11",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 27,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                6,
+                7,
+                11
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 443,
+              "node": "443@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 28,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 443,
+              "node": "443@11",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 28,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                6,
+                7,
+                11
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 445,
+              "node": "445@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 29,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                5,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 463,
+              "node": "463@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 27,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                3,
+                6,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 471,
+              "node": "471@11",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 28,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                5,
+                6,
+                7,
+                11
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 475,
+              "node": "475@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 29,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                6,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 475,
+              "node": "475@11",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 29,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                5,
+                6,
+                7,
+                11
+              ],
+              "registerOffset": 0
+            }
+          ],
+          "excludePcs": [],
+          "requiredPcs": [
+            0,
+            3,
+            7
+          ],
+          "waypoint": "i_resolution"
+        }
+      ],
+      "spec": {
+        "dwellBarsPerWaypoint": 2,
+        "dwellK": 12,
+        "id": "b1-andalusian",
+        "renderLaw": "mvp6_3_fade_renderer legato + 50 ms fade",
+        "terminalDwellBars": 3,
+        "tonicPc": 0,
+        "transitK": 5,
+        "waypoints": [
+          {
+            "band": null,
+            "id": "i",
+            "requiredPcs": [
+              0,
+              3,
+              7
+            ]
+          },
+          {
+            "band": null,
+            "id": "VII",
+            "requiredPcs": [
+              10,
+              2,
+              5
+            ]
+          },
+          {
+            "band": null,
+            "id": "VI",
+            "requiredPcs": [
+              8,
+              0,
+              3
+            ]
+          },
+          {
+            "band": 12,
+            "id": "V",
+            "requiredPcs": [
+              7,
+              8,
+              11
+            ]
+          },
+          {
+            "band": null,
+            "id": "i_resolution",
+            "requiredPcs": [
+              0,
+              3,
+              7
+            ],
+            "requiresLeadPc": 0
+          }
+        ]
+      },
+      "status": "COMPLETE",
+      "verification": {
+        "checks": {
+          "allBandsOk": true,
+          "allHopsGateAccept": true,
+          "allWaypointsSupported": true,
+          "bars": 45,
+          "boundaryDwell": 0,
+          "distinctOffices": 4,
+          "distinctPhases": 4,
+          "distinctQStates": 12,
+          "hopCount": 38,
+          "microSteps": 302,
+          "outOfMaskPitches": 0,
+          "pass": true,
+          "terminalResolution": {
+            "pass": true,
+            "requiredLeadPc": 0,
+            "terminalBarPcs": [
+              0,
+              1,
+              3,
+              4,
+              5,
+              7,
+              11
+            ]
+          }
+        },
+        "support": [
+          {
+            "band": null,
+            "bandOk": true,
+            "candidate": "375@11",
+            "container": [
+              0,
+              1,
+              3,
+              4,
+              5,
+              7,
+              11
+            ],
+            "registerOffset": 12,
+            "requiredPcs": [
+              0,
+              3,
+              7
+            ],
+            "supported": true,
+            "waypoint": "i"
+          },
+          {
+            "band": null,
+            "bandOk": true,
+            "candidate": "1143@0",
+            "container": [
+              0,
+              1,
+              2,
+              4,
+              5,
+              6,
+              10
+            ],
+            "registerOffset": 12,
+            "requiredPcs": [
+              10,
+              2,
+              5
+            ],
+            "supported": true,
+            "waypoint": "VII"
+          },
+          {
+            "band": null,
+            "bandOk": true,
+            "candidate": "379@0",
+            "container": [
+              0,
+              1,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "registerOffset": 0,
+            "requiredPcs": [
+              8,
+              0,
+              3
+            ],
+            "supported": true,
+            "waypoint": "VI"
+          },
+          {
+            "band": 12,
+            "bandOk": true,
+            "candidate": "859@11",
+            "container": [
+              0,
+              2,
+              3,
+              5,
+              7,
+              8,
+              11
+            ],
+            "registerOffset": 12,
+            "requiredPcs": [
+              7,
+              8,
+              11
+            ],
+            "supported": true,
+            "waypoint": "V"
+          },
+          {
+            "band": null,
+            "bandOk": true,
+            "candidate": "375@11",
+            "container": [
+              0,
+              1,
+              3,
+              4,
+              5,
+              7,
+              11
+            ],
+            "registerOffset": 12,
+            "requiredPcs": [
+              0,
+              3,
+              7
+            ],
+            "supported": true,
+            "waypoint": "i_resolution"
+          }
+        ]
+      }
+    },
+    "B2_borrowed_minor": {
+      "attempts": 1,
+      "render": {
+        "barCount": 22,
+        "clippedSamples": 0,
+        "durationMs": 47700,
+        "maxAbsLast32": 0,
+        "midiAudit": {
+          "division": 480,
+          "expectedLeadNotes": 159,
+          "expectedPadNoteOns": 176,
+          "format": 1,
+          "leadNoteOns": 159,
+          "leadSequenceMatch": true,
+          "metaEvents": 45,
+          "outOfMaskNotes": 0,
+          "outOfMaskWitnesses": [],
+          "padContainerMatch": true,
+          "padNoteOns": 176,
+          "trackChunks": 3
+        },
+        "midiPath": "task-b/renders/b2-borrowed-minor.mid",
+        "midiSha256": "f25b2985b5a78dbaabef6923fa09fb50dc8afa7db6080180a5a48f101e9b9fb8",
+        "nonFiniteSamples": 0,
+        "reRenderMatch": true,
+        "samples": 2103570,
+        "seamMetric": {
+          "boundaries": 21,
+          "maxDepthDb": 6.672433,
+          "medianDepthDb": 3.469211
+        },
+        "sections": [
+          {
+            "arithmeticCentroidHz": 649.2436383586391,
+            "centroidOct": -0.06886904743979112,
+            "endMs": 16200,
+            "section": 1,
+            "sectionKey": "I6",
+            "silentWindows": 0,
+            "spreadOct": 1.0526434804180753,
+            "startMs": 0,
+            "windows": 696
+          },
+          {
+            "arithmeticCentroidHz": 721.2551793779929,
+            "centroidOct": 0.3983029576571469,
+            "endMs": 27900,
+            "section": 2,
+            "sectionKey": "iv",
+            "silentWindows": 0,
+            "spreadOct": 0.7947108737049459,
+            "startMs": 16200,
+            "windows": 504
+          },
+          {
+            "arithmeticCentroidHz": 723.6642690153637,
+            "centroidOct": 0.39055528748693563,
+            "endMs": 47700,
+            "section": 3,
+            "sectionKey": "I",
+            "silentWindows": 0,
+            "spreadOct": 0.720746475009105,
+            "startMs": 27900,
+            "windows": 851
+          }
+        ],
+        "tracePath": "task-b/renders/b2-borrowed-minor.jsonl",
+        "traceSha256": "b03aea7997ae90a94018f7fafaa1238d43e77314c34c79bf2e01fcc9563bd7d8",
+        "wavPath": "task-b/renders/b2-borrowed-minor.wav",
+        "wavSha256": "02edb76a6b1637546994845ee45843d615cbf3656600e13ff4d9a7c2f240ca45"
+      },
+      "route": {
+        "legs": [
+          {
+            "candidate": {
+              "bandMatch": true,
+              "mask": 671,
+              "node": "671@0",
+              "office": "Saturn",
+              "orbit": "ORBIT-D5",
+              "pcSum": 26,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                7,
+                9
+              ],
+              "registerOffset": -12
+            },
+            "dwellBars": 2,
+            "hops": 7,
+            "path": [
+              "1387@0",
+              "859@0",
+              "1717@11",
+              "3433@10",
+              "1721@10",
+              "861@11",
+              "1341@11",
+              "671@0"
+            ],
+            "waypoint": "I6"
+          },
+          {
+            "candidate": {
+              "bandMatch": true,
+              "mask": 375,
+              "node": "375@0",
+              "office": "Venus",
+              "orbit": "ORBIT-D4",
+              "pcSum": 26,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                6,
+                8
+              ],
+              "registerOffset": 12
+            },
+            "dwellBars": 2,
+            "hops": 4,
+            "path": [
+              "671@0",
+              "1341@11",
+              "1245@11",
+              "623@0",
+              "375@0"
+            ],
+            "waypoint": "iv"
+          },
+          {
+            "candidate": {
+              "bandMatch": true,
+              "mask": 375,
+              "node": "375@11",
+              "office": "Venus",
+              "orbit": "ORBIT-D4",
+              "pcSum": 26,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                7,
+                11
+              ],
+              "registerOffset": 12
+            },
+            "dwellBars": 3,
+            "hops": 7,
+            "path": [
+              "375@0",
+              "623@0",
+              "1245@11",
+              "687@11",
+              "1373@10",
+              "1245@10",
+              "623@11",
+              "375@11"
+            ],
+            "waypoint": "I"
+          }
+        ]
+      },
+      "search": [
+        {
+          "band": null,
+          "candidateCount": 208,
+          "candidates": [
+            {
+              "bandMatch": true,
+              "mask": 671,
+              "node": "671@0",
+              "office": "Saturn",
+              "orbit": "ORBIT-D5",
+              "pcSum": 26,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                7,
+                9
+              ],
+              "registerOffset": -12
+            },
+            {
+              "bandMatch": true,
+              "mask": 695,
+              "node": "695@0",
+              "office": "Venus",
+              "orbit": "ORBIT-A1",
+              "pcSum": 28,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                7,
+                9
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 699,
+              "node": "699@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-A2",
+              "pcSum": 29,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                7,
+                9
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 727,
+              "node": "727@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-A0",
+              "pcSum": 29,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                4,
+                6,
+                7,
+                9
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 731,
+              "node": "731@0",
+              "office": "Mercury",
+              "orbit": "ORBIT-A1",
+              "pcSum": 30,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                6,
+                7,
+                9
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 919,
+              "node": "919@0",
+              "office": "Sun",
+              "orbit": "ORBIT-D1",
+              "pcSum": 31,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                4,
+                7,
+                8,
+                9
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 923,
+              "node": "923@0",
+              "office": "Sun",
+              "orbit": "ORBIT-D1",
+              "pcSum": 32,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                7,
+                8,
+                9
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 925,
+              "node": "925@0",
+              "office": "Sun",
+              "orbit": "ORBIT-D1",
+              "pcSum": 33,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                7,
+                8,
+                9
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 949,
+              "node": "949@0",
+              "office": "Mercury",
+              "orbit": "ORBIT-A1",
+              "pcSum": 35,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                4,
+                5,
+                7,
+                8,
+                9
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 953,
+              "node": "953@0",
+              "office": "Mercury",
+              "orbit": "ORBIT-D4",
+              "pcSum": 36,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 981,
+              "node": "981@0",
+              "office": "Mars",
+              "orbit": "ORBIT-A2",
+              "pcSum": 36,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                4,
+                6,
+                7,
+                8,
+                9
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 985,
+              "node": "985@0",
+              "office": "Mercury",
+              "orbit": "ORBIT-D4",
+              "pcSum": 37,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9
+              ],
+              "registerOffset": 0
+            }
+          ],
+          "excludePcs": [],
+          "requiredPcs": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "waypoint": "I6"
+        },
+        {
+          "band": null,
+          "candidateCount": 240,
+          "candidates": [
+            {
+              "bandMatch": true,
+              "mask": 375,
+              "node": "375@0",
+              "office": "Venus",
+              "orbit": "ORBIT-D4",
+              "pcSum": 26,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                6,
+                8
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 379,
+              "node": "379@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 27,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                6,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 439,
+              "node": "439@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 27,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 443,
+              "node": "443@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 28,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 445,
+              "node": "445@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 29,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                5,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 487,
+              "node": "487@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 29,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                5,
+                6,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 607,
+              "node": "607@11",
+              "office": "Saturn",
+              "orbit": "ORBIT-D5",
+              "pcSum": 25,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                3,
+                5,
+                8,
+                11
+              ],
+              "registerOffset": -12
+            },
+            {
+              "bandMatch": true,
+              "mask": 623,
+              "node": "623@11",
+              "office": "Venus",
+              "orbit": "ORBIT-D4",
+              "pcSum": 26,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                8,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 631,
+              "node": "631@11",
+              "office": "Venus",
+              "orbit": "ORBIT-D4",
+              "pcSum": 27,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                8,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 635,
+              "node": "635@11",
+              "office": "Venus",
+              "orbit": "ORBIT-D4",
+              "pcSum": 28,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                5,
+                8,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 727,
+              "node": "727@11",
+              "office": "Jupiter",
+              "orbit": "ORBIT-A0",
+              "pcSum": 29,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                5,
+                6,
+                8,
+                11
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 731,
+              "node": "731@11",
+              "office": "Mercury",
+              "orbit": "ORBIT-A1",
+              "pcSum": 30,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                5,
+                6,
+                8,
+                11
+              ],
+              "registerOffset": 0
+            }
+          ],
+          "excludePcs": [
+            9
+          ],
+          "requiredPcs": [
+            0,
+            5,
+            8
+          ],
+          "waypoint": "iv"
+        },
+        {
+          "band": null,
+          "candidateCount": 422,
+          "candidates": [
+            {
+              "bandMatch": true,
+              "mask": 375,
+              "node": "375@11",
+              "office": "Venus",
+              "orbit": "ORBIT-D4",
+              "pcSum": 26,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                7,
+                11
+              ],
+              "registerOffset": 12
+            },
+            {
+              "bandMatch": true,
+              "mask": 379,
+              "node": "379@11",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 27,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                5,
+                7,
+                11
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 415,
+              "node": "415@0",
+              "office": "Saturn",
+              "orbit": "ORBIT-D5",
+              "pcSum": 25,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                7,
+                8
+              ],
+              "registerOffset": -12
+            },
+            {
+              "bandMatch": true,
+              "mask": 439,
+              "node": "439@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 27,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 439,
+              "node": "439@11",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 27,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                6,
+                7,
+                11
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 443,
+              "node": "443@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 28,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 443,
+              "node": "443@11",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 28,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                6,
+                7,
+                11
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 445,
+              "node": "445@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D3",
+              "pcSum": 29,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                5,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 471,
+              "node": "471@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 28,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                2,
+                4,
+                6,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 475,
+              "node": "475@0",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 29,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                1,
+                3,
+                4,
+                6,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 477,
+              "node": "477@0",
+              "office": "Mercury",
+              "orbit": "ORBIT-D4",
+              "pcSum": 30,
+              "phase": 0,
+              "pitchClasses": [
+                0,
+                2,
+                3,
+                4,
+                6,
+                7,
+                8
+              ],
+              "registerOffset": 0
+            },
+            {
+              "bandMatch": true,
+              "mask": 487,
+              "node": "487@11",
+              "office": "Jupiter",
+              "orbit": "ORBIT-D2",
+              "pcSum": 29,
+              "phase": 11,
+              "pitchClasses": [
+                0,
+                1,
+                4,
+                5,
+                6,
+                7,
+                11
+              ],
+              "registerOffset": 0
+            }
+          ],
+          "excludePcs": [],
+          "requiredPcs": [
+            0,
+            4,
+            7
+          ],
+          "waypoint": "I"
+        }
+      ],
+      "spec": {
+        "dwellBarsPerWaypoint": 2,
+        "dwellK": 12,
+        "id": "b2-borrowed-minor",
+        "renderLaw": "mvp6_3_fade_renderer legato + 50 ms fade",
+        "terminalDwellBars": 3,
+        "tonicPc": 0,
+        "transitK": 5,
+        "waypoints": [
+          {
+            "band": null,
+            "id": "I6",
+            "requiredPcs": [
+              0,
+              4,
+              7,
+              9
+            ]
+          },
+          {
+            "band": null,
+            "excludePcs": [
+              9
+            ],
+            "id": "iv",
+            "requiredPcs": [
+              0,
+              5,
+              8
+            ]
+          },
+          {
+            "band": null,
+            "id": "I",
+            "requiredPcs": [
+              0,
+              4,
+              7
+            ]
+          }
+        ]
+      },
+      "status": "COMPLETE",
+      "verification": {
+        "checks": {
+          "allBandsOk": true,
+          "allHopsGateAccept": true,
+          "allWaypointsSupported": true,
+          "bars": 22,
+          "boundaryDwell": 0,
+          "distinctOffices": 3,
+          "distinctPhases": 3,
+          "distinctQStates": 12,
+          "hopCount": 17,
+          "microSteps": 159,
+          "outOfMaskPitches": 0,
+          "pass": true
+        },
+        "support": [
+          {
+            "band": null,
+            "bandOk": true,
+            "candidate": "671@0",
+            "container": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              7,
+              9
+            ],
+            "registerOffset": -12,
+            "requiredPcs": [
+              0,
+              4,
+              7,
+              9
+            ],
+            "supported": true,
+            "waypoint": "I6"
+          },
+          {
+            "band": null,
+            "bandOk": true,
+            "candidate": "375@0",
+            "container": [
+              0,
+              1,
+              2,
+              4,
+              5,
+              6,
+              8
+            ],
+            "registerOffset": 12,
+            "requiredPcs": [
+              0,
+              5,
+              8
+            ],
+            "supported": true,
+            "waypoint": "iv"
+          },
+          {
+            "band": null,
+            "bandOk": true,
+            "candidate": "375@11",
+            "container": [
+              0,
+              1,
+              3,
+              4,
+              5,
+              7,
+              11
+            ],
+            "registerOffset": 12,
+            "requiredPcs": [
+              0,
+              4,
+              7
+            ],
+            "supported": true,
+            "waypoint": "I"
+          }
+        ]
+      }
+    }
+  },
+  "directive": "MVP7-INTENTION-DIR-1",
+  "guardFlags": {
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "predeclarationSha256": "0e64b09fd13ed9fd1c627c4800006fa169745c1632f249be1aa73bbc769d5c95",
+  "schemaVersion": "governed-loop.mvp7-task-b.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "strongCore": {
+    "governedNodes": 2388,
+    "seed": "1387@0"
+  },
+  "task": "MVP7-TB"
+}
