@@ -76,6 +76,21 @@ const SANCTIONED_FINGERPRINT_RECORDS = [
     path: "scrum/plan/mvp5-5-sprint-closing-report.md",
     sha256: "8d6fac210731f4a5ad70d7d174abe4314c2f20d0a5d6b3af67b9bcfed39bc02e",
   },
+  {
+    // ADJ-PLANNING-SEAT-20261107-L28
+    path: "scrum/plan/mvp8-pentatonic-q-sprint-closing-report.md",
+    sha256: "98fada847e4c7125b57173fa0eaf8e15155eecbdac267b4df15d7edd4e570ff2",
+  },
+  {
+    // ADJ-PLANNING-SEAT-20261107-L28
+    path: "scrum/plan/mvp8-1-stem-calibration-closing-report.md",
+    sha256: "5290942c238f53e5cbc72ccb0faddb8861c77774980f6700c9dfd558de77eabd",
+  },
+  {
+    // ADJ-PLANNING-SEAT-20261107-L28
+    path: "scrum/plan/mvp8-1b-metric-fix-closing-report.md",
+    sha256: "b460b315952de7c58742ddfed69505e9b82f75ea22e6f1d8c2c9b0311759254b",
+  },
 ];
 
 // ADJ-PLANNING-SEAT-20261102-PROSE-M5_5: the MVP5.5 orbit spectral catalog is

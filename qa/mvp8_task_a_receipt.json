@@ -1,0 +1,65 @@
+{
+  "directive": "MVP8-DIR-1",
+  "floatValues": 0,
+  "guardFlags": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "lookup": {
+    "bytes": 34099980,
+    "path": "task-a/mvp8_pentatonic_lookup_v1.json",
+    "sha256": "7d4b0548247fac47904860b252951db3810cdacde8fb38f277e2da39b726851f"
+  },
+  "schemaVersion": "governed-loop.mvp8-task-a.v1",
+  "source": {
+    "admissionEffect": "none",
+    "graphScope": "detached_audit_only",
+    "path": "derived/hypergraph/bipartite-inclusion-v1.json",
+    "sha256": "903eebf0e1122d8ba81971abcd7efc8ac934d3bfd7885b98b49e58ab0bbe3e41",
+    "status": "planning_evidence"
+  },
+  "status": "COMPLETE",
+  "stopRules": [],
+  "task": "MVP8-TA",
+  "verification": {
+    "allTargetsMatch": true,
+    "anchoredRowsAllPhases": 83160,
+    "anchoredRowsPhase0": 6930,
+    "bridgeByClass": {
+      "5-20": 10,
+      "5-23": 10,
+      "5-24": 10,
+      "5-25": 10,
+      "5-27": 10,
+      "5-29": 10,
+      "5-34": 5,
+      "5-Z12": 5
+    },
+    "bridgeTotal": 70,
+    "liftedNodes": 5544,
+    "rootedDistribution": {
+      "0": 381,
+      "1": 60,
+      "2": 18,
+      "3": 3
+    },
+    "seed1387Unrooted": 3,
+    "totalSubsetRowsAllPhases": 116424,
+    "totalSubsetRowsPhase0": 9702,
+    "unrootedDistribution": {
+      "0": 357,
+      "1": 70,
+      "2": 28,
+      "3": 7
+    }
+  }
+}

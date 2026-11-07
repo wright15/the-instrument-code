@@ -1,0 +1,573 @@
+{
+  "artifacts": {
+    "directiveDocuments": [
+      {
+        "path": "scrum/plan/mvp8-dir-1-rev2.md",
+        "sha256": "546fa4e4d3f157d21273029c92a18a6b5b0700138eb272fd61b72edae8a0a428"
+      },
+      {
+        "path": "scrum/plan/mvp8-1-dir-1-rev1.md",
+        "sha256": "bc66690b775272cb9e67806d22b9195a3cc799257569cd821b3304fd5a64c4e6"
+      },
+      {
+        "path": "scrum/plan/mvp8-1b-dir-1-rev1.md",
+        "sha256": "06f3a838b295553c1e5abbd3131ed56d4c588ef1695c11211e744c4b8eda0e31"
+      }
+    ],
+    "excludedAudio": {
+      "bytes": 148484331,
+      "count": 48,
+      "note": "audio is reproducible from the landed code and traces; hashes remain in the landed receipts"
+    },
+    "payloadCount": 55,
+    "payloads": [
+      {
+        "bytes": 6006,
+        "destination": "tools/governed-loop/mvp8/mvp8_common.py",
+        "realm": "mvp8",
+        "sha256": "6027380c377903eb4c5e49481a460bd13fd8216173e4bb9f269cd24f6b60eeb4",
+        "source": "mvp8_common.py"
+      },
+      {
+        "bytes": 1191,
+        "destination": "tools/governed-loop/mvp8/task-0/mvp8_ear_scorecard.json",
+        "realm": "mvp8",
+        "sha256": "758d2d2b9481aebe90252df4bb5239ad7b5c2b921c4c1ffeff4b8d43333122b6",
+        "source": "task-0/mvp8_ear_scorecard.json"
+      },
+      {
+        "bytes": 11513,
+        "destination": "tools/governed-loop/mvp8/task-0/mvp8_predeclared_bets.json",
+        "realm": "mvp8",
+        "sha256": "12e0a9aedb252ae256074782208cad7e8e90ef804a2ef379542168d309a443b5",
+        "source": "task-0/mvp8_predeclared_bets.json"
+      },
+      {
+        "bytes": 23222,
+        "destination": "tools/governed-loop/mvp8/task-0/mvp8_task_0.py",
+        "realm": "mvp8",
+        "sha256": "f0bb1dcb50de674727fd58be9630e4d0ca48dc9fdd64da4079d336a1d18eaed8",
+        "source": "task-0/mvp8_task_0.py"
+      },
+      {
+        "bytes": 18536,
+        "destination": "qa/mvp8_task_0_receipt.json",
+        "realm": "mvp8",
+        "sha256": "f76007466f51a43cb973b11e928613dd8f64f72544e87df5f4889723334af37b",
+        "source": "task-0/mvp8_task_0_receipt.json"
+      },
+      {
+        "bytes": 34099980,
+        "destination": "tools/governed-loop/mvp8/task-a/mvp8_pentatonic_lookup_v1.json",
+        "realm": "mvp8",
+        "sha256": "7d4b0548247fac47904860b252951db3810cdacde8fb38f277e2da39b726851f",
+        "source": "task-a/mvp8_pentatonic_lookup_v1.json"
+      },
+      {
+        "bytes": 11292,
+        "destination": "tools/governed-loop/mvp8/task-a/mvp8_table_generator.py",
+        "realm": "mvp8",
+        "sha256": "7a278a18d60c95b6b78f9168df22ae84624d97c7121f1eade7c569fba024bcb3",
+        "source": "task-a/mvp8_table_generator.py"
+      },
+      {
+        "bytes": 1678,
+        "destination": "qa/mvp8_task_a_receipt.json",
+        "realm": "mvp8",
+        "sha256": "5e76c9aacf11f5ad273cbbc823d0e0301a3489024fe9f8281e8794696eb96698",
+        "source": "task-a/mvp8_task_a_receipt.json"
+      },
+      {
+        "bytes": 20443,
+        "destination": "tools/governed-loop/mvp8/task-b/mvp8_pentatonic_q_engine.py",
+        "realm": "mvp8",
+        "sha256": "e9ec9804661a10257d94a1af25fd1c03182bcd6bd4d4f516430ceb6833a54c8f",
+        "source": "task-b/mvp8_pentatonic_q_engine.py"
+      },
+      {
+        "bytes": 16087,
+        "destination": "tools/governed-loop/mvp8/task-b/mvp8_task_b.py",
+        "realm": "mvp8",
+        "sha256": "660ebbf94a5cc34f8c37d41822c282022e68558a042416433f8b68ad66c600de",
+        "source": "task-b/mvp8_task_b.py"
+      },
+      {
+        "bytes": 42354,
+        "destination": "qa/mvp8_task_b_receipt.json",
+        "realm": "mvp8",
+        "sha256": "1790682afba1a5a782ccabe1916b5c7001f47ff5e0118a6cd212e3fa4d65f39e",
+        "source": "task-b/mvp8_task_b_receipt.json"
+      },
+      {
+        "bytes": 281646,
+        "destination": "tools/governed-loop/mvp8/task-b/traces/b1-andalusian-pentatonic.jsonl",
+        "realm": "mvp8",
+        "sha256": "3e299b28aff967f63810fbadc42613103e3618dc3921b6afb8d80068d4cc3244",
+        "source": "task-b/traces/b1-andalusian-pentatonic.jsonl"
+      },
+      {
+        "bytes": 147529,
+        "destination": "tools/governed-loop/mvp8/task-b/traces/b2-borrowed-minor-pentatonic.jsonl",
+        "realm": "mvp8",
+        "sha256": "213155c3e0b007dcf8a2cdac42e8c0d3ad0cf05c94e2da37d9ac92b400366a74",
+        "source": "task-b/traces/b2-borrowed-minor-pentatonic.jsonl"
+      },
+      {
+        "bytes": 369006,
+        "destination": "tools/governed-loop/mvp8/task-b/traces/far-shore-pentatonic.jsonl",
+        "realm": "mvp8",
+        "sha256": "3fbd74270082d14aa46676c735ea963155f555d897ca0e8821673f095578e06e",
+        "source": "task-b/traces/far-shore-pentatonic.jsonl"
+      },
+      {
+        "bytes": 354375,
+        "destination": "tools/governed-loop/mvp8/task-b/traces/far-shore-ungoverned-control.jsonl",
+        "realm": "mvp8",
+        "sha256": "97c55be82422f6201c93e18bd36ccb29ca5e9c2b71fa0940a94608a252dc27bc",
+        "source": "task-b/traces/far-shore-ungoverned-control.jsonl"
+      },
+      {
+        "bytes": 18347,
+        "destination": "tools/governed-loop/mvp8/task-c/mvp8_task_c.py",
+        "realm": "mvp8",
+        "sha256": "8ff0630abae1c4d2fff6e508eae267050a1e7b9833e965ae296d946382e6fd96",
+        "source": "task-c/mvp8_task_c.py"
+      },
+      {
+        "bytes": 15663,
+        "destination": "qa/mvp8_task_c_receipt.json",
+        "realm": "mvp8",
+        "sha256": "1b35263cb76bd83dd672d2039e6d95f5d1ff0cc7523e5c225c14f94b1ee87b66",
+        "source": "task-c/mvp8_task_c_receipt.json"
+      },
+      {
+        "bytes": 21612,
+        "destination": "tools/governed-loop/mvp8/task-c/traces/c1-aeolian-harmonic-minor.jsonl",
+        "realm": "mvp8",
+        "sha256": "c00184d6c57a7c4836e9a143492a27f3eb528f10a43c9c2eb9dd16803b5b034c",
+        "source": "task-c/traces/c1-aeolian-harmonic-minor.jsonl"
+      },
+      {
+        "bytes": 56799,
+        "destination": "tools/governed-loop/mvp8/task-c/traces/c3b-major-mode-triangle.jsonl",
+        "realm": "mvp8",
+        "sha256": "05b3f6676e09bdcef8e9bf35eca1592cc2c6701b8326c6dfded79bada8e256d7",
+        "source": "task-c/traces/c3b-major-mode-triangle.jsonl"
+      },
+      {
+        "bytes": 2372,
+        "destination": "tools/governed-loop/mvp8/task-d/mvp8_ear_manifest.json",
+        "realm": "mvp8",
+        "sha256": "63cb3155da1402d969ce2ade171bde6d8563ebff26b4246de725ceb8d85fb0ce",
+        "source": "task-d/mvp8_ear_manifest.json"
+      },
+      {
+        "bytes": 50794,
+        "destination": "qa/mvp8_task_d_receipt.json",
+        "realm": "mvp8",
+        "sha256": "f19aabb14c86c582c079a8d2a1387200894f42a9da190e3f014d2f029a8c639a",
+        "source": "task-d/mvp8_task_d_receipt.json"
+      },
+      {
+        "bytes": 13044,
+        "destination": "tools/governed-loop/mvp8/task-d/mvp8_zero_pentatonic_study.py",
+        "realm": "mvp8",
+        "sha256": "d4e17c42101540797ae75b67acf06db45ea260a13c9b57ffc173f9bf02d97727",
+        "source": "task-d/mvp8_zero_pentatonic_study.py"
+      },
+      {
+        "bytes": 86792,
+        "destination": "tools/governed-loop/mvp8/task-d/traces/d-borrowed_connector-arc.jsonl",
+        "realm": "mvp8",
+        "sha256": "81d774dd5eae2691f87847311d84c770d82a47cb67fbbfcac87701125003ccd2",
+        "source": "task-d/traces/d-borrowed_connector-arc.jsonl"
+      },
+      {
+        "bytes": 64770,
+        "destination": "tools/governed-loop/mvp8/task-d/traces/d-borrowed_connector-pure.jsonl",
+        "realm": "mvp8",
+        "sha256": "1920aa69a1260ebf71f9d289e73ae005b346149480b00f6348c26ed8d3dc21e1",
+        "source": "task-d/traces/d-borrowed_connector-pure.jsonl"
+      },
+      {
+        "bytes": 83072,
+        "destination": "tools/governed-loop/mvp8/task-d/traces/d-naked_fifth_stack-arc.jsonl",
+        "realm": "mvp8",
+        "sha256": "f693bc9351f41f7eea8b8496f767dfc99bce064927ef421783910111fd78833f",
+        "source": "task-d/traces/d-naked_fifth_stack-arc.jsonl"
+      },
+      {
+        "bytes": 62160,
+        "destination": "tools/governed-loop/mvp8/task-d/traces/d-naked_fifth_stack-pure.jsonl",
+        "realm": "mvp8",
+        "sha256": "498a74e98d1feb0ce2d1fb01a383c8e602fef2905ec61da078848ef1456c7fc7",
+        "source": "task-d/traces/d-naked_fifth_stack-pure.jsonl"
+      },
+      {
+        "bytes": 87316,
+        "destination": "tools/governed-loop/mvp8/task-d/traces/d-native_class_dwell-arc.jsonl",
+        "realm": "mvp8",
+        "sha256": "507efc9b173427499e1c6f43f7a24b9d9a7330bf0365322c40144f1a6c05db2d",
+        "source": "task-d/traces/d-native_class_dwell-arc.jsonl"
+      },
+      {
+        "bytes": 65556,
+        "destination": "tools/governed-loop/mvp8/task-d/traces/d-native_class_dwell-pure.jsonl",
+        "realm": "mvp8",
+        "sha256": "9bfe8965154844ff1007f7662c2d54be1737fd741d266895db4cb26ef05d3c1e",
+        "source": "task-d/traces/d-native_class_dwell-pure.jsonl"
+      },
+      {
+        "bytes": 8191,
+        "destination": "scrum/plan/mvp8-pentatonic-q-sprint-closing-report.md",
+        "realm": "mvp8",
+        "sha256": "98fada847e4c7125b57173fa0eaf8e15155eecbdac267b4df15d7edd4e570ff2",
+        "source": "task-e/MVP8-PENTATONIC-Q-CLOSING-REPORT.md"
+      },
+      {
+        "bytes": 1147,
+        "destination": "tools/governed-loop/mvp8/task-e/mvp8_land.py",
+        "realm": "mvp8",
+        "sha256": "d6adaee8db6443997241d41c3cf70e62b1301b661ecc4ec565ebd52d77b47808",
+        "source": "task-e/mvp8_land.py"
+      },
+      {
+        "bytes": 21996,
+        "destination": "tools/governed-loop/mvp8/task-e/mvp8_task_e.py",
+        "realm": "mvp8",
+        "sha256": "ca0afc5bdfbf2676900674d7a01154b4ed5d1bd9ecc334ea40932c49e9288857",
+        "source": "task-e/mvp8_task_e.py"
+      },
+      {
+        "bytes": 11946,
+        "destination": "qa/mvp8_task_e_receipt.json",
+        "realm": "mvp8",
+        "sha256": "dfdbb8fc3a3a2c3170721fe50f16f4861bc60877c3de86bdbe81f8c2783900e8",
+        "source": "task-e/mvp8_task_e_receipt.json"
+      },
+      {
+        "bytes": 3783,
+        "destination": "tools/governed-loop/mvp8_1/task-0/mvp8_1_predeclared_bets.json",
+        "realm": "mvp8_1",
+        "sha256": "55b44a539a6b025e4aa95f3e0826a95283189458adef54c43b2018b9ec8c380c",
+        "source": "task-0/mvp8_1_predeclared_bets.json"
+      },
+      {
+        "bytes": 14198,
+        "destination": "tools/governed-loop/mvp8_1/task-0/mvp8_1_task_0.py",
+        "realm": "mvp8_1",
+        "sha256": "2203d4417985a251f917d9c1d2084e51a117c7cefb9cda1b09fd3975999b4733",
+        "source": "task-0/mvp8_1_task_0.py"
+      },
+      {
+        "bytes": 17733,
+        "destination": "qa/mvp8_1_task_0_receipt.json",
+        "realm": "mvp8_1",
+        "sha256": "ba44509af5261675801f8cf3908b32f38b4413f91c7ec753e6659083d79aa005",
+        "source": "task-0/mvp8_1_task_0_receipt.json"
+      },
+      {
+        "bytes": 5716,
+        "destination": "tools/governed-loop/mvp8_1/task-a/mvp8_1_stems.py",
+        "realm": "mvp8_1",
+        "sha256": "2f7dd7268e9e148e4fc3f088722ee79966cd8449cf40ed357d731f6169ca3125",
+        "source": "task-a/mvp8_1_stems.py"
+      },
+      {
+        "bytes": 17223,
+        "destination": "qa/mvp8_1_task_a_receipt.json",
+        "realm": "mvp8_1",
+        "sha256": "dfbececfc88cd5797d7b7f689851ec40d5901ef59073fec5a7c272e4edfd3e5f",
+        "source": "task-a/mvp8_1_task_a_receipt.json"
+      },
+      {
+        "bytes": 13746,
+        "destination": "tools/governed-loop/mvp8_1/task-b/mvp8_1_bets.py",
+        "realm": "mvp8_1",
+        "sha256": "be5d9f925ce3c3035d80fde72035c78debd110aec57a8c3b6d97769ddd5cf8f7",
+        "source": "task-b/mvp8_1_bets.py"
+      },
+      {
+        "bytes": 18456,
+        "destination": "qa/mvp8_1_task_b_receipt.json",
+        "realm": "mvp8_1",
+        "sha256": "043a96f52963a2632dbbfb904d1215dd95fefd1e35e8f0ed9c8f6eaea336ee2e",
+        "source": "task-b/mvp8_1_task_b_receipt.json"
+      },
+      {
+        "bytes": 5644,
+        "destination": "scrum/plan/mvp8-1-stem-calibration-closing-report.md",
+        "realm": "mvp8_1",
+        "sha256": "5290942c238f53e5cbc72ccb0faddb8861c77774980f6700c9dfd558de77eabd",
+        "source": "task-e/MVP8.1-STEM-CALIBRATION-CLOSING-REPORT.md"
+      },
+      {
+        "bytes": 818,
+        "destination": "tools/governed-loop/mvp8_1/task-e/mvp8_1_land.py",
+        "realm": "mvp8_1",
+        "sha256": "b26369770e200ed7fb4829541c0af6e38598b5aed3dc9fb36a70d17257a13519",
+        "source": "task-e/mvp8_1_land.py"
+      },
+      {
+        "bytes": 14477,
+        "destination": "tools/governed-loop/mvp8_1/task-e/mvp8_1_task_e.py",
+        "realm": "mvp8_1",
+        "sha256": "264c1ab5bc35ff88d404658ce8713de1565cbbc102ea2752f6b537f3fe5f06c0",
+        "source": "task-e/mvp8_1_task_e.py"
+      },
+      {
+        "bytes": 13531,
+        "destination": "qa/mvp8_1_task_e_receipt.json",
+        "realm": "mvp8_1",
+        "sha256": "09090c573eb2b08a603feff2fa65b8f6b14a3c74c63a05a5857581229077fde6",
+        "source": "task-e/mvp8_1_task_e_receipt.json"
+      },
+      {
+        "bytes": 4316,
+        "destination": "tools/governed-loop/mvp8_1b/task-0/mvp8_1b_predeclared_bets.json",
+        "realm": "mvp8_1b",
+        "sha256": "5c71d9521bceb6abe010612aa2cad4584946cdad0f21cf5f085ebb3f8b5132cc",
+        "source": "task-0/mvp8_1b_predeclared_bets.json"
+      },
+      {
+        "bytes": 15672,
+        "destination": "tools/governed-loop/mvp8_1b/task-0/mvp8_1b_task_0.py",
+        "realm": "mvp8_1b",
+        "sha256": "9c12f2d2e8af752d3d6f568c342c8c7f1fc134cf47e3ffda8b200a11be554336",
+        "source": "task-0/mvp8_1b_task_0.py"
+      },
+      {
+        "bytes": 23514,
+        "destination": "qa/mvp8_1b_task_0_receipt.json",
+        "realm": "mvp8_1b",
+        "sha256": "3ad78bc68e02240659dd6702f45ba570769fc2abbf8c67b9a4cd7ba752e4182f",
+        "source": "task-0/mvp8_1b_task_0_receipt.json"
+      },
+      {
+        "bytes": 16593,
+        "destination": "qa/mvp8_1b_task_a_receipt.json",
+        "realm": "mvp8_1b",
+        "sha256": "2989c67a2b6f1e0c489f7bd34d5339cc5b55d898f114ac603cde73591a7c9097",
+        "source": "task-a/mvp8_1b_task_a_receipt.json"
+      },
+      {
+        "bytes": 4505,
+        "destination": "tools/governed-loop/mvp8_1b/task-a/mvp8_1b_verify_stems.py",
+        "realm": "mvp8_1b",
+        "sha256": "925bd466dd11bd1988b2428e69978fed32568241c8cc2f63f0f66bc0d66ee98c",
+        "source": "task-a/mvp8_1b_verify_stems.py"
+      },
+      {
+        "bytes": 6016,
+        "destination": "tools/governed-loop/mvp8_1b/task-b/mvp8_1b_bets.py",
+        "realm": "mvp8_1b",
+        "sha256": "bfce75273f67b9b6dfb247651e626c7a6df4e0decc7d00dcb72a8f7efa1df171",
+        "source": "task-b/mvp8_1b_bets.py"
+      },
+      {
+        "bytes": 6723,
+        "destination": "qa/mvp8_1b_task_b_receipt.json",
+        "realm": "mvp8_1b",
+        "sha256": "ac9719fbb072167ecb13d78767107c4642cbcde16a691e7c7f93cd3d89eb8eee",
+        "source": "task-b/mvp8_1b_task_b_receipt.json"
+      },
+      {
+        "bytes": 5840,
+        "destination": "scrum/plan/mvp8-1b-metric-fix-closing-report.md",
+        "realm": "mvp8_1b",
+        "sha256": "b460b315952de7c58742ddfed69505e9b82f75ea22e6f1d8c2c9b0311759254b",
+        "source": "task-e/MVP8.1b-METRIC-FIX-CLOSING-REPORT.md"
+      },
+      {
+        "bytes": 2708,
+        "destination": "scrum/plan/mvp8-1b-proposed-amendment-spec-001-s1-3.md",
+        "realm": "mvp8_1b",
+        "sha256": "8dad1bc051947e72e388315464987b0e1e5f5271dcd8a53ea764894826b0f36b",
+        "source": "task-e/PROPOSED_AMENDMENT_SPEC_001_S1_3_PENTATONIC_CONTEXT.md"
+      },
+      {
+        "bytes": 24067,
+        "destination": "tools/governed-loop/mvp8_1b/task-e/mvp8_1b_land.py",
+        "realm": "mvp8_1b",
+        "sha256": "6ebe1146ac78ce86a31c19375f8f01dad6f33683df72b9b0b92d47a33b019ff3",
+        "source": "task-e/mvp8_1b_land.py"
+      },
+      {
+        "bytes": 17873,
+        "destination": "tools/governed-loop/mvp8_1b/task-e/mvp8_1b_task_e.py",
+        "realm": "mvp8_1b",
+        "sha256": "92f13dc8e32f76caa2e2a6647732559433d5908a65ffdadbdbae372837af0373",
+        "source": "task-e/mvp8_1b_task_e.py"
+      },
+      {
+        "bytes": 9112,
+        "destination": "qa/mvp8_1b_task_e_receipt.json",
+        "realm": "mvp8_1b",
+        "sha256": "719d373c4324d03f6ec49c0fde018038c3d2621a8cd13bb4edda39c6cc3aa0b4",
+        "source": "task-e/mvp8_1b_task_e_receipt.json"
+      }
+    ]
+  },
+  "cascade": [
+    {
+      "command": ".venv/bin/python scripts/generate-fifth-space-census.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"candidateFingerprint\": \"be00306206e10dc7c4e5ad970a3dbfb62090eca9da30b64fb3b717d4bd1b0a1e\", \"candidateId\": \"FIFTH_SPACE_CENSUS_v0\", \"records\": 462, \"verdict\": \"confirmed\"}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/validate-fifth-space-census.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "        \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"7-1 terminal cluster state 4033\",\n            \"office\": \"Mars\",\n            \"role\": \"anchor\",\n            \"stateId\": 4033,\n            \"tier\": \"D7\"\n          }\n        ],\n        \"d7AnchorsAtCeiling\": true,\n        \"spanCeiling\": 10,\n        \"theorem\": \"seven points on the 12-cycle have seven gaps summing to 12, so the largest gap is at least 2 and the minimal covering arc span is at most 10: the A-ladder ceiling is geometry, not fiat\",\n        \"verified\": true\n      }\n    },\n    {\n      \"checkId\": \"research-verdict-consistency\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"confirmed\"\n    },\n    {\n      \"checkId\": \"research-verdict-non-gating\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"records carry no truth-value gate; ORR-522 consumes them regardless\"\n    },\n    {\n      \"checkId\": \"guards-namespace\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings (both ledgers)\"\n    },\n    {\n      \"checkId\": \"bindings-court\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen Court position binding\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"b9a051e0b5532e2a19c78c3658ddc85687907c071b23e6f7f8fe8649bb2f1e90\"\n}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/generate-shadow-ladder.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"candidateFingerprint\": \"dc1d9960751ad7613aec60bf40685d91c289f575eb94d269ea6f0a77ca52862b\", \"candidateId\": \"SHADOW_LADDER_v0\", \"records\": 10}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/validate-shadow-ladder.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "two dH4 pair\"\n    },\n    {\n      \"checkId\": \"termination-5-33-detachment\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"T1-complement A3 predictions are detached 5-33 masks\"\n    },\n    {\n      \"checkId\": \"incidence-15-36\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"five selected 5-35 cores contribute 15 of 36 incidences\"\n    },\n    {\n      \"checkId\": \"incidence-5-120\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"five selected 5-34 cores are in the 120-mask one-parent stratum\"\n    },\n    {\n      \"checkId\": \"incidence-out-of-census\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"ten A2-to-A1 construction incidences are outside the detached audit\"\n    },\n    {\n      \"checkId\": \"guards-no-court\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"Court positions cross-check A1 only\"\n    },\n    {\n      \"checkId\": \"guards-seam-typed\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"midpoint and phase-seam provenance remain distinct\"\n    },\n    {\n      \"checkId\": \"guards-namespace\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"achirality\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all derived 5-35, 5-34, and predicted 5-33 masks are achiral\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"08dbe5a707d24fd8dee48802b3ab7186616067955c910cefd68092e608ce9f8a\"\n}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/generate-twin-hub-convergence.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"candidateFingerprint\": \"1154997eed86734148a6a6e4bb85a7167b7dc11d3b7eabb9ab3b315a66ff2fcf\", \"candidateId\": \"TWIN_HUB_CONVERGENCE_v0\", \"verdict\": \"confirmed\"}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/validate-twin-hub-convergence.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "iagnostic\": \"D5 anchors seat the unseated-midpoint offices Mars and Jupiter\"\n    },\n    {\n      \"checkId\": \"d5-case-verified\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"A2 twin pairs share the Mercury hub; their ring midpoints {Mars, Jupiter} are unseated as seams (exact midpoints, no A3); all 14 D5 seat-contact rows route the permitted single-hop chain, seating the unseated-midpoint offices.\"\n    },\n    {\n      \"checkId\": \"chain-total-28\",\n      \"status\": \"PASS\",\n      \"diagnostic\": {\n        \"total\": 28,\n        \"valid\": 28\n      }\n    },\n    {\n      \"checkId\": \"chain-two-contacts-per-anchor\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"exactly two selected contacts per D4/D5 anchor\"\n    },\n    {\n      \"checkId\": \"chain-no-violations\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"no missing, reversed, or cross-tier relation accepted\"\n    },\n    {\n      \"checkId\": \"negative-controls\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"six negative controls pass\"\n    },\n    {\n      \"checkId\": \"verdict-consistency\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"confirmed\"\n    },\n    {\n      \"checkId\": \"guards-namespace\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"da706b8d06eac63e89acdf9f41d09120309f37f299df010fda54ff55c3393555\"\n}\n"
+    },
+    {
+      "command": "node scripts/build-pentatonic-binding-audit-closure.mjs",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "c-closure\",\n      \"diagnostic\": \"17a99dde862c5853031724a11c6435d372fd795eeb86a700fbc266068e7a8b61\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"crt310-zero-admission-boundary\",\n      \"diagnostic\": {\n        \"itemCount\": 35,\n        \"proposedCount\": 35,\n        \"eligibleForAdmissionReviewCount\": 0,\n        \"admittedCount\": 0,\n        \"gateDefinitionCount\": 7,\n        \"satisfiedGateResultCount\": 70,\n        \"pendingGateResultCount\": 175,\n        \"failedGateResultCount\": 0\n      },\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"planning-evidence-cross-references\",\n      \"diagnostic\": \"authority and CRT-310 workflow references remain planning_evidence only\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"package-entrypoint-closure\",\n      \"diagnostic\": {\n        \"build\": \"python3 scripts/generate-pentatonic-7-35-parent-audit.py\",\n        \"test\": \"python3 -m pytest -p no:cacheprovider -q tests/test_pentatonic_7_35_parent_audit.py && node --test tests/pentatonic_binding_audit/neo4j-live.test.mjs\",\n        \"validate\": \"python3 scripts/generate-pentatonic-7-35-parent-audit.py --check && python3 scripts/validate-pentatonic-7-35-parent-audit.py && npm run test:pentatonic-binding-audit --silent && npm run validate:cypher --silent\"\n      },\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"intrinsic-environment-independence\",\n      \"diagnostic\": \"closure core excludes time, provider, host, process, port, and temporary-path identity\",\n      \"status\": \"PASS\"\n    }\n  ],\n  \"reportFingerprint\": \"4420ab000279f6b91d95a38edef2dc510eedece35297435b0cef6c4299fbf06c\"\n}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/build-fivefold-engine-promotion-evidence.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"evidenceFingerprint\": \"e2c2394405080c8dd0637b64914183b70bf7613c4acea73b639ead8419310c65\", \"evidenceId\": \"fivefold-engine-promotion-evidence-v1\", \"exclusionEvidenceCount\": 11, \"itemEvidenceCount\": 10, \"verdict\": \"PASS\"}\n"
+    },
+    {
+      "command": "node scripts/build-field-derivation-bundle.mjs",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"bundleId\":\"FIELD_DERIVATION_OBS014_015_016_v1\",\"bundleFingerprint\":\"5d7b977ad22d78d81b5b43fe54a63de7ad367269f7a2a4da2a0e7f4267901623\",\"observations\":3}\n"
+    },
+    {
+      "command": "node scripts/build-orrery-taxonomy-read-model.mjs",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"bundleId\":\"TAXONOMY_READ_MODEL_v1\",\"recordCount\":462,\"stale\":false}\n"
+    },
+    {
+      "command": "node scripts/build-orrery-d-tier-taxonomy-dataset.mjs",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"datasetId\":\"D_TIER_TAXONOMY_DATASET_v1\",\"recordCount\":175,\"stale\":false}\n"
+    }
+  ],
+  "constraints": {
+    "audioLanded": false,
+    "claimEvent": false,
+    "encoderBytesModified": false,
+    "gateBytesModified": false,
+    "landingMode": "working-tree + one dedicated commit",
+    "orreryApplicationSourceModified": false,
+    "qEngineBytesModified": false,
+    "rendererBytesModified": false,
+    "substrateBytesModified": false,
+    "tagOrPush": false
+  },
+  "decisions": {
+    "b4aPrime": "PASS 5/5",
+    "b4bGovernedMargin": "0.145169",
+    "b4bUngovernedMargin": "0.031118",
+    "earGate": "SIGNED_HUMAN",
+    "mvp81Outcome": "DEFER",
+    "mvp81bOutcome": "ADOPT_RUNTIME_READING",
+    "mvp8Outcome": "DEFER",
+    "spec001Proposal": "scrum/plan/mvp8-1b-proposed-amendment-spec-001-s1-3.md"
+  },
+  "directive": "MVP8.1b-DIR-1",
+  "ledger": {
+    "afterBytes": 417658,
+    "afterLines": 4436,
+    "afterSha256": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7",
+    "beforeSha256": "da9c79410cf2f3429509ca07f4a82effe49932d061ca96a4d36d28a401668149",
+    "entry": "single combined L28 entry appended at tail; no prior entry amended",
+    "prefixIdentity": true
+  },
+  "manifestRegen": {
+    "note": "the landing receipt is written after this manifest; the final packaging manifest includes it and is regenerated below",
+    "preReceiptFileCount": 1892,
+    "preReceiptManifestSha256": "bf76846232df0ab851dd52fd7ba5b634c38be207eb7cee37430b8c1bf56696b6",
+    "preReceiptTotalBytes": 299571387
+  },
+  "opening": {
+    "baseHead": "d1b2286a5b6f3783af24094eb78e40ab511bb8e5",
+    "ledgerBefore": {
+      "bytes": 407293,
+      "lines": 4383,
+      "path": "provenance/DECISION_LEDGER.md",
+      "sha256": "da9c79410cf2f3429509ca07f4a82effe49932d061ca96a4d36d28a401668149"
+    },
+    "manifestBefore": {
+      "fileCount": 1834,
+      "sha256": "6632ab6a3141e58519fe5846794eb9befd76d1cd3479f9d65934a2a30ce0bc27",
+      "totalBytes": 263181122
+    },
+    "stagingManifestSha256": "0c91f687d321087b8a93ee83940ea945dcd0005f28452330b14a4f41d901d402",
+    "treeClean": false,
+    "validationBefore": {
+      "failed": 0,
+      "passed": 418
+    },
+    "workingTreeException": {
+      "modified": [
+        "scripts/validate-validation-prose-consistency.mjs"
+      ],
+      "reason": "directive documents were written before execution at the Planning Seat's request; the prose validator carries the ADJ-PLANNING-SEAT-20261107-L28 closing-report sanctions; no pinned byte changed",
+      "untracked": [
+        "scrum/plan/mvp8-dir-1-rev2.md",
+        "scrum/plan/mvp8-1-dir-1-rev1.md",
+        "scrum/plan/mvp8-1b-dir-1-rev1.md"
+      ]
+    }
+  },
+  "proseConsistency": {
+    "authoritativeChecksPassed": 418,
+    "command": "node scripts/validate-validation-prose-consistency.mjs",
+    "verdict": "PASS",
+    "violations": 0
+  },
+  "schemaVersion": "governed-loop.mvp8_1b-landing.v1",
+  "scope": "lean: audio excluded",
+  "status": "COMPLETE",
+  "task": "MVP8.1b-L28-LANDING",
+  "validation": {
+    "checksFailed": 0,
+    "checksPassed": 418,
+    "command": "node scripts/validate-release.mjs",
+    "reportPath": "qa/integrated-release-validation.json",
+    "verdict": "PASS"
+  },
+  "validatorAmendments": [
+    {
+      "afterSha256": "15edc1ec5a188c9acd8ea431bf72460101994fe110f3bb08a28b17a66691d66d",
+      "beforeSha256": "dec82b423d1b90acaed3477b58125ed9093552ba6dd307027267a8a512585578",
+      "path": "scripts/validate-validation-prose-consistency.mjs",
+      "reason": "ADJ-PLANNING-SEAT-20261107-L28: sanction the three MVP8/MVP8.1/MVP8.1b closing reports as frozen historical prose records"
+    }
+  ],
+  "warnings": []
+}

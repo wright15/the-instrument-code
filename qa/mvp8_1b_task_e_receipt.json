@@ -1,0 +1,302 @@
+{
+  "acoustic": {
+    "cadenceDeltaComparison": null,
+    "directionalDiagnostic": null,
+    "farShoreMargins": {
+      "governed": {
+        "margin": 0.14516924748759683,
+        "rContainer": 0.2064361678817814,
+        "rLead": 0.3516054153693782
+      },
+      "ungovernedControl": {
+        "margin": 0.031117701402228026,
+        "rContainer": 0.5023602960996671,
+        "rLead": 0.5334779975018952
+      }
+    },
+    "stemTable": [
+      {
+        "bars": 45,
+        "label": "b1-andalusian-pentatonic",
+        "officeCount": 4,
+        "rContainer": 0.7400672428329375,
+        "rLeadPcSum": 0.34581278273162236,
+        "rMeanPc": 0.9858644290444383,
+        "reason": "scored",
+        "scored": true,
+        "scoredPass": true,
+        "windows": 45
+      },
+      {
+        "bars": 22,
+        "label": "b2-borrowed-minor-pentatonic",
+        "officeCount": 3,
+        "rContainer": 0.5609396145729939,
+        "rLeadPcSum": 0.3892444633624217,
+        "rMeanPc": 0.9908357405658488,
+        "reason": "scored",
+        "scored": true,
+        "scoredPass": true,
+        "windows": 22
+      },
+      {
+        "bars": 55,
+        "label": "far-shore-pentatonic",
+        "officeCount": 7,
+        "rContainer": 0.2064361678817814,
+        "rLeadPcSum": 0.3516054153693782,
+        "rMeanPc": 0.9911924517157787,
+        "reason": "scored",
+        "scored": true,
+        "scoredPass": true,
+        "windows": 55
+      },
+      {
+        "bars": 55,
+        "label": "far-shore-ungoverned-control",
+        "officeCount": 7,
+        "rContainer": 0.5023602960996671,
+        "rLeadPcSum": 0.5334779975018952,
+        "rMeanPc": 0.9959750004695397,
+        "reason": "scored",
+        "scored": true,
+        "scoredPass": true,
+        "windows": 55
+      },
+      {
+        "bars": 2,
+        "label": "c1-aeolian-harmonic-minor",
+        "officeCount": 1,
+        "rContainer": null,
+        "rLeadPcSum": null,
+        "rMeanPc": null,
+        "reason": "excluded: officeCount 1 < 2 or bars 2 < 3",
+        "scored": false,
+        "scoredPass": null,
+        "windows": 2
+      },
+      {
+        "bars": 7,
+        "label": "c3b-major-mode-triangle",
+        "officeCount": 3,
+        "rContainer": 0.1345220974150537,
+        "rLeadPcSum": 0.46927007470060006,
+        "rMeanPc": 0.9944996654799185,
+        "reason": "scored",
+        "scored": true,
+        "scoredPass": true,
+        "windows": 7
+      },
+      {
+        "bars": 8,
+        "label": "d-borrowed_connector-arc",
+        "officeCount": 1,
+        "rContainer": -0.9990337696708981,
+        "rLeadPcSum": 0.9990337696708981,
+        "rMeanPc": 0.9990337696708984,
+        "reason": "excluded: officeCount 1 < 2 or bars 8 < 3",
+        "scored": false,
+        "scoredPass": null,
+        "windows": 8
+      },
+      {
+        "bars": 6,
+        "label": "d-borrowed_connector-pure",
+        "officeCount": 1,
+        "rContainer": null,
+        "rLeadPcSum": null,
+        "rMeanPc": null,
+        "reason": "excluded: officeCount 1 < 2 or bars 6 < 3",
+        "scored": false,
+        "scoredPass": null,
+        "windows": 6
+      },
+      {
+        "bars": 8,
+        "label": "d-naked_fifth_stack-arc",
+        "officeCount": 1,
+        "rContainer": -0.9990337696708981,
+        "rLeadPcSum": 0.9990337696708981,
+        "rMeanPc": 0.9990337696708984,
+        "reason": "excluded: officeCount 1 < 2 or bars 8 < 3",
+        "scored": false,
+        "scoredPass": null,
+        "windows": 8
+      },
+      {
+        "bars": 6,
+        "label": "d-naked_fifth_stack-pure",
+        "officeCount": 1,
+        "rContainer": null,
+        "rLeadPcSum": null,
+        "rMeanPc": null,
+        "reason": "excluded: officeCount 1 < 2 or bars 6 < 3",
+        "scored": false,
+        "scoredPass": null,
+        "windows": 6
+      },
+      {
+        "bars": 8,
+        "label": "d-native_class_dwell-arc",
+        "officeCount": 1,
+        "rContainer": 0.9999638613118029,
+        "rLeadPcSum": 0.999963861311803,
+        "rMeanPc": 0.9999638613118033,
+        "reason": "excluded: officeCount 1 < 2 or bars 8 < 3",
+        "scored": false,
+        "scoredPass": null,
+        "windows": 8
+      },
+      {
+        "bars": 6,
+        "label": "d-native_class_dwell-pure",
+        "officeCount": 1,
+        "rContainer": null,
+        "rLeadPcSum": null,
+        "rMeanPc": null,
+        "reason": "excluded: officeCount 1 < 2 or bars 6 < 3",
+        "scored": false,
+        "scoredPass": null,
+        "windows": 6
+      }
+    ]
+  },
+  "adjudication": {
+    "b4aPrime": "PASS",
+    "b4b": "PASS",
+    "b4c": "DIAGNOSTIC",
+    "b4d": "PASS",
+    "carriedReverification": "PASS",
+    "earGate": "SIGNED_HUMAN",
+    "failingChecks": [],
+    "landingAuthorized": false,
+    "outcome": "ADOPT_RUNTIME_READING",
+    "proposedAmendment": true,
+    "rationale": "B4a' passes 5/5 scored stems on the corrected mean-emitted-pc metric; B4b passes with a governed stem margin of 0.145169 versus the ungoverned control 0.031118; B4c is 6/6 on both mixes; B4d and the carried A/B1/B2/B3/C1-C3b/D checks pass; the ear gate is SIGNED_HUMAN. The MVP8.1 DEFER remains recorded and is not retroactively amended; MVP8.1b is a new sprint with one pre-execution correction. ADOPT_RUNTIME_READING selects the SPEC-001 proposal; the L28 landing itself is not executed and awaits a separate authorization."
+  },
+  "bets": {
+    "B4aPrime": {
+      "metric": "mean emitted pc",
+      "pass": true,
+      "passing": 5,
+      "scoredStems": 5,
+      "threshold": "0.90"
+    },
+    "B4bCarriedRecomputed": {
+      "governedMarginAtLeastControl": true,
+      "governedMarginPositive": true,
+      "pass": true
+    },
+    "B4cCarried": {
+      "controlAgreements": 6,
+      "controlComparisons": 6,
+      "diagnosticOnly": true,
+      "governedAgreements": 6,
+      "governedComparisons": 6
+    },
+    "B4dCarried": {
+      "pass": true,
+      "stemIntegrity": true
+    },
+    "carriedReverification": {
+      "B1": {
+        "evaluations": 1064448,
+        "outOfMaskPitches": 0,
+        "pass": true,
+        "stillSetEvaluations": 243936,
+        "stillSetLeaks": 0
+      },
+      "B2": {
+        "baselineDenominator": 192,
+        "baselineNumerator": 144,
+        "governedInitiationDenominator": 192,
+        "governedInitiationNumerator": 192,
+        "pass": true,
+        "structuralDenominator": 80,
+        "structuralNumerator": 80,
+        "tailModalColorPasses": 4
+      },
+      "B3": {
+        "badFocalSelections": 0,
+        "badInitiationEmissions": 0,
+        "badOrbitEmissions": 0,
+        "emissionChecks": 55296,
+        "pass": true
+      },
+      "pass": true
+    }
+  },
+  "carriedMVP81": {
+    "outcome": "DEFER",
+    "primaryStemLaw3": "PASS",
+    "receiptSha256": "09090c573eb2b08a603feff2fa65b8f6b14a3c74c63a05a5857581229077fde6"
+  },
+  "checks": {
+    "B4aPrime": true,
+    "B4b": true,
+    "B4c": true,
+    "B4d": true,
+    "carriedReverification": true,
+    "earSigned": true,
+    "stemIntegrity": true
+  },
+  "deliverables": {
+    "closingReport": "task-e/MVP8.1b-METRIC-FIX-CLOSING-REPORT.md",
+    "landingExecuted": false,
+    "landingScript": "task-e/mvp8_1b_land.py",
+    "proposedAmendment": "task-e/PROPOSED_AMENDMENT_SPEC_001_S1_3_PENTATONIC_CONTEXT.md"
+  },
+  "directive": "MVP8.1b-DIR-1",
+  "fixedPoint": {
+    "anchorsVerified": 11,
+    "earGate": "SIGNED_HUMAN",
+    "head": "d1b2286a5b6f3783af24094eb78e40ab511bb8e5",
+    "ledgerBytes": 407293,
+    "ledgerLines": 4383,
+    "ledgerSha256": "da9c79410cf2f3429509ca07f4a82effe49932d061ca96a4d36d28a401668149",
+    "manifestBytes": 263181122,
+    "manifestFiles": 1834,
+    "manifestSha256": "6632ab6a3141e58519fe5846794eb9befd76d1cd3479f9d65934a2a30ce0bc27",
+    "mvp81EvidencePinCount": 23,
+    "pinsTotal": 28,
+    "pinsVerified": 28,
+    "workingTreeException": {
+      "declared": true,
+      "pinnedBytesUnchanged": true,
+      "reason": "the MVP8, MVP8.1, and MVP8.1b directive documents were written before execution at the Planning Seat's request; no pinned byte, HEAD, ledger, manifest, checksum, or validation artifact changed",
+      "untracked": [
+        "scrum/plan/mvp8-1-dir-1-rev1.md",
+        "scrum/plan/mvp8-1b-dir-1-rev1.md",
+        "scrum/plan/mvp8-dir-1-rev2.md"
+      ]
+    }
+  },
+  "floatValuesSymbolic": 0,
+  "guardFlags": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "predeclaration": {
+    "path": "task-0/mvp8_1b_predeclared_bets.json",
+    "sha256": "5c71d9521bceb6abe010612aa2cad4584946cdad0f21cf5f085ebb3f8b5132cc"
+  },
+  "schemaVersion": "governed-loop.mvp8_1b-task-e.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "task": "MVP8.1b-TE",
+  "taskStatus": {
+    "T0": "COMPLETE",
+    "TA": "COMPLETE",
+    "TB": "COMPLETE",
+    "TE": "COMPLETE"
+  }
+}

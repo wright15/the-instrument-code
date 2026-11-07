@@ -1,0 +1,441 @@
+{
+  "acoustic": {
+    "directionalDiagnostic": {
+      "far-shore-pentatonic": {
+        "agreements": 6,
+        "comparisonCount": 6,
+        "comparisons": [
+          {
+            "deltaCentroidOct": 0.6363931331782454,
+            "deltaRegisterOffset": 8.533333333333333,
+            "from": "home_mirror",
+            "sameDirection": true,
+            "to": "departure"
+          },
+          {
+            "deltaCentroidOct": -0.16294236193547776,
+            "deltaRegisterOffset": -1.3333333333333333,
+            "from": "departure",
+            "sameDirection": true,
+            "to": "first_dwell"
+          },
+          {
+            "deltaCentroidOct": 0.6469404206998908,
+            "deltaRegisterOffset": 3.0,
+            "from": "first_dwell",
+            "sameDirection": true,
+            "to": "climax"
+          },
+          {
+            "deltaCentroidOct": -0.5779330304457926,
+            "deltaRegisterOffset": -1.6666666666666667,
+            "from": "climax",
+            "sameDirection": true,
+            "to": "shore"
+          },
+          {
+            "deltaCentroidOct": 0.11263511842832039,
+            "deltaRegisterOffset": 0.07843137254901977,
+            "from": "shore",
+            "sameDirection": true,
+            "to": "return"
+          },
+          {
+            "deltaCentroidOct": -0.8040314218886434,
+            "deltaRegisterOffset": -13.411764705882353,
+            "from": "return",
+            "sameDirection": true,
+            "to": "homecoming"
+          }
+        ],
+        "sections": [
+          {
+            "centroidOct": -0.492747402463188,
+            "registerOffset": -7.2,
+            "section": 1,
+            "sectionKey": "home_mirror"
+          },
+          {
+            "centroidOct": 0.14364573071505746,
+            "registerOffset": 1.3333333333333333,
+            "section": 2,
+            "sectionKey": "departure"
+          },
+          {
+            "centroidOct": -0.01929663122042029,
+            "registerOffset": 0.0,
+            "section": 3,
+            "sectionKey": "first_dwell"
+          },
+          {
+            "centroidOct": 0.6276437894794705,
+            "registerOffset": 3.0,
+            "section": 4,
+            "sectionKey": "climax"
+          },
+          {
+            "centroidOct": 0.04971075903367798,
+            "registerOffset": 1.3333333333333333,
+            "section": 5,
+            "sectionKey": "shore"
+          },
+          {
+            "centroidOct": 0.16234587746199836,
+            "registerOffset": 1.411764705882353,
+            "section": 6,
+            "sectionKey": "return"
+          },
+          {
+            "centroidOct": -0.641685544426645,
+            "registerOffset": -12.0,
+            "section": 7,
+            "sectionKey": "homecoming"
+          }
+        ]
+      },
+      "far-shore-ungoverned-control": {
+        "agreements": 6,
+        "comparisonCount": 6,
+        "comparisons": [
+          {
+            "deltaCentroidOct": 0.6310055350588406,
+            "deltaRegisterOffset": 8.533333333333333,
+            "from": "home_mirror",
+            "sameDirection": true,
+            "to": "departure"
+          },
+          {
+            "deltaCentroidOct": -0.13747250284335907,
+            "deltaRegisterOffset": -1.3333333333333333,
+            "from": "departure",
+            "sameDirection": true,
+            "to": "first_dwell"
+          },
+          {
+            "deltaCentroidOct": 0.6387478395854281,
+            "deltaRegisterOffset": 3.0,
+            "from": "first_dwell",
+            "sameDirection": true,
+            "to": "climax"
+          },
+          {
+            "deltaCentroidOct": -0.5594908072196818,
+            "deltaRegisterOffset": -1.6666666666666667,
+            "from": "climax",
+            "sameDirection": true,
+            "to": "shore"
+          },
+          {
+            "deltaCentroidOct": 0.09032802795369967,
+            "deltaRegisterOffset": 0.07843137254901977,
+            "from": "shore",
+            "sameDirection": true,
+            "to": "return"
+          },
+          {
+            "deltaCentroidOct": -0.7986151230590126,
+            "deltaRegisterOffset": -13.411764705882353,
+            "from": "return",
+            "sameDirection": true,
+            "to": "homecoming"
+          }
+        ],
+        "sections": [
+          {
+            "centroidOct": -0.507318293042579,
+            "registerOffset": -7.2,
+            "section": 1,
+            "sectionKey": "home_mirror"
+          },
+          {
+            "centroidOct": 0.12368724201626159,
+            "registerOffset": 1.3333333333333333,
+            "section": 2,
+            "sectionKey": "departure"
+          },
+          {
+            "centroidOct": -0.013785260827097492,
+            "registerOffset": 0.0,
+            "section": 3,
+            "sectionKey": "first_dwell"
+          },
+          {
+            "centroidOct": 0.6249625787583306,
+            "registerOffset": 3.0,
+            "section": 4,
+            "sectionKey": "climax"
+          },
+          {
+            "centroidOct": 0.06547177153864876,
+            "registerOffset": 1.3333333333333333,
+            "section": 5,
+            "sectionKey": "shore"
+          },
+          {
+            "centroidOct": 0.15579979949234843,
+            "registerOffset": 1.411764705882353,
+            "section": 6,
+            "sectionKey": "return"
+          },
+          {
+            "centroidOct": -0.6428153235666642,
+            "registerOffset": -12.0,
+            "section": 7,
+            "sectionKey": "homecoming"
+          }
+        ]
+      }
+    },
+    "farShoreMargins": {
+      "governed": {
+        "margin": 0.14516924748759683,
+        "rContainer": 0.2064361678817814,
+        "rLead": 0.3516054153693782
+      },
+      "ungovernedControl": {
+        "margin": 0.031117701402228026,
+        "rContainer": 0.5023602960996671,
+        "rLead": 0.5334779975018952
+      }
+    },
+    "stemTable": [
+      {
+        "label": "b1-andalusian-pentatonic",
+        "rContainer": 0.7400672428329375,
+        "rLeadPcSum": 0.34581278273162236,
+        "rMeanPc": 0.9858644290444383,
+        "rMeanPcRaw": 0.03526670427471435,
+        "windows": 45
+      },
+      {
+        "label": "b2-borrowed-minor-pentatonic",
+        "rContainer": 0.5609396145729939,
+        "rLeadPcSum": 0.3892444633624217,
+        "rMeanPc": 0.9908357405658488,
+        "rMeanPcRaw": -0.15722109763450784,
+        "windows": 22
+      },
+      {
+        "label": "far-shore-pentatonic",
+        "rContainer": 0.2064361678817814,
+        "rLeadPcSum": 0.3516054153693782,
+        "rMeanPc": 0.9911924517157787,
+        "rMeanPcRaw": 0.1421381941182943,
+        "windows": 55
+      },
+      {
+        "label": "far-shore-ungoverned-control",
+        "rContainer": 0.5023602960996671,
+        "rLeadPcSum": 0.5334779975018952,
+        "rMeanPc": 0.9959750004695397,
+        "rMeanPcRaw": 0.2655015397926221,
+        "windows": 55
+      },
+      {
+        "label": "c1-aeolian-harmonic-minor",
+        "rContainer": null,
+        "rLeadPcSum": null,
+        "rMeanPc": null,
+        "rMeanPcRaw": null,
+        "windows": 2
+      },
+      {
+        "label": "c3b-major-mode-triangle",
+        "rContainer": 0.1345220974150537,
+        "rLeadPcSum": 0.46927007470060006,
+        "rMeanPc": 0.9944996654799185,
+        "rMeanPcRaw": 0.3298002628122615,
+        "windows": 7
+      },
+      {
+        "label": "d-borrowed_connector-arc",
+        "rContainer": -0.9990337696708981,
+        "rLeadPcSum": 0.9990337696708981,
+        "rMeanPc": 0.9990337696708984,
+        "rMeanPcRaw": 0.9990337696708982,
+        "windows": 8
+      },
+      {
+        "label": "d-borrowed_connector-pure",
+        "rContainer": null,
+        "rLeadPcSum": null,
+        "rMeanPc": null,
+        "rMeanPcRaw": null,
+        "windows": 6
+      },
+      {
+        "label": "d-naked_fifth_stack-arc",
+        "rContainer": -0.9990337696708981,
+        "rLeadPcSum": 0.9990337696708981,
+        "rMeanPc": 0.9990337696708984,
+        "rMeanPcRaw": 0.9990337696708982,
+        "windows": 8
+      },
+      {
+        "label": "d-naked_fifth_stack-pure",
+        "rContainer": null,
+        "rLeadPcSum": null,
+        "rMeanPc": null,
+        "rMeanPcRaw": null,
+        "windows": 6
+      },
+      {
+        "label": "d-native_class_dwell-arc",
+        "rContainer": 0.9999638613118029,
+        "rLeadPcSum": 0.999963861311803,
+        "rMeanPc": 0.9999638613118033,
+        "rMeanPcRaw": 0.9999638613118029,
+        "windows": 8
+      },
+      {
+        "label": "d-native_class_dwell-pure",
+        "rContainer": null,
+        "rLeadPcSum": null,
+        "rMeanPc": null,
+        "rMeanPcRaw": null,
+        "windows": 6
+      }
+    ]
+  },
+  "adjudication": {
+    "b4aDiagnostic": "PASS",
+    "b4aProxy": "FAIL_BY_LOCK",
+    "earGate": "SIGNED_HUMAN",
+    "failingChecks": [
+      "B4a"
+    ],
+    "landingAuthorized": false,
+    "outcome": "DEFER",
+    "primaryStemLaw3": "PASS",
+    "proposedAmendment": false,
+    "rationale": "The substantive stem-isolated Law-3 bet B4b passes: the governed Far Shore lead-stem margin is positive and exceeds the ungoverned control (0.145169 vs 0.031118). Stem integrity B4d passes. The locked B4a sanity proxy fails (3/12) because it used bar pcSum and office deconfounding is degenerate on single-office or two-bar stems; the non-bet mean-emitted-pc diagnostic passes 8/8 defined stems (>=0.90). Under the locked rule the outcome is DEFER, with B4a named as the only blocker; no SPEC-001 amendment and no L28 landing are proposed. The recommended next step is a one-line B4a metric correction (mean emitted pc, minimum two offices and three bars) in MVP8.1b."
+  },
+  "bets": {
+    "B4a": {
+      "pass": false,
+      "passing": 3,
+      "stems": 12,
+      "threshold": "0.90"
+    },
+    "B4aDiagnosticSanity": {
+      "definedStems": 8,
+      "nonBet": true,
+      "note": "mean emitted pc is the intended lead-tracking signal; the locked B4a proxy used pcSum. Single-office or two-bar stems have zero residual variance after office deconfounding and are undefined, not failed.",
+      "passing": 8,
+      "threshold": "0.90"
+    },
+    "B4b": {
+      "governedMarginAtLeastControl": true,
+      "governedMarginPositive": true,
+      "pass": true
+    },
+    "B4c": {
+      "controlAgreements": 6,
+      "controlComparisons": 6,
+      "diagnosticOnly": true,
+      "governedAgreements": 6,
+      "governedComparisons": 6
+    },
+    "B4d": {
+      "pass": true,
+      "stemIntegrity": true
+    },
+    "carriedReverification": {
+      "B1": {
+        "evaluations": 1064448,
+        "outOfMaskPitches": 0,
+        "pass": true,
+        "stillSetEvaluations": 243936,
+        "stillSetLeaks": 0
+      },
+      "B2": {
+        "baselineDenominator": 192,
+        "baselineNumerator": 144,
+        "governedInitiationDenominator": 192,
+        "governedInitiationNumerator": 192,
+        "pass": true,
+        "structuralDenominator": 80,
+        "structuralNumerator": 80,
+        "tailModalColorPasses": 4
+      },
+      "B3": {
+        "badFocalSelections": 0,
+        "badInitiationEmissions": 0,
+        "badOrbitEmissions": 0,
+        "emissionChecks": 55296,
+        "pass": true
+      },
+      "pass": true
+    }
+  },
+  "carriedMVP8": {
+    "outcome": "DEFER",
+    "receiptSha256": "dfdbb8fc3a3a2c3170721fe50f16f4861bc60877c3de86bdbe81f8c2783900e8"
+  },
+  "checks": {
+    "B4a": false,
+    "B4aDiagnosticSanity": true,
+    "B4b": true,
+    "B4c": true,
+    "B4d": true,
+    "carriedReverification": true,
+    "stemIntegrity": true
+  },
+  "deliverables": {
+    "closingReport": "task-e/MVP8.1-STEM-CALIBRATION-CLOSING-REPORT.md",
+    "landingExecuted": false,
+    "landingScript": "task-e/mvp8_1_land.py"
+  },
+  "directive": "MVP8.1-DIR-1",
+  "fixedPoint": {
+    "anchorsVerified": 11,
+    "earGate": "SIGNED_HUMAN",
+    "head": "d1b2286a5b6f3783af24094eb78e40ab511bb8e5",
+    "ledgerBytes": 407293,
+    "ledgerLines": 4383,
+    "ledgerSha256": "da9c79410cf2f3429509ca07f4a82effe49932d061ca96a4d36d28a401668149",
+    "manifestBytes": 263181122,
+    "manifestFiles": 1834,
+    "manifestSha256": "6632ab6a3141e58519fe5846794eb9befd76d1cd3479f9d65934a2a30ce0bc27",
+    "mvp8EvidencePinCount": 23,
+    "pinsTotal": 28,
+    "pinsVerified": 28,
+    "workingTreeException": {
+      "declared": true,
+      "pinnedBytesUnchanged": true,
+      "reason": "the MVP8 and MVP8.1 directive documents were written before execution at the Planning Seat's request; no pinned byte, HEAD, ledger, manifest, checksum, or validation artifact changed",
+      "untracked": [
+        "scrum/plan/mvp8-1-dir-1-rev1.md",
+        "scrum/plan/mvp8-dir-1-rev2.md"
+      ]
+    }
+  },
+  "floatValuesSymbolic": 0,
+  "guardFlags": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "predeclaration": {
+    "path": "task-0/mvp8_1_predeclared_bets.json",
+    "sha256": "55b44a539a6b025e4aa95f3e0826a95283189458adef54c43b2018b9ec8c380c"
+  },
+  "schemaVersion": "governed-loop.mvp8_1-task-e.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "task": "MVP8.1-TE",
+  "taskStatus": {
+    "T0": "COMPLETE",
+    "TA": "COMPLETE",
+    "TB": "COMPLETE",
+    "TE": "COMPLETE"
+  }
+}

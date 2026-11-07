@@ -1,0 +1,609 @@
+{
+  "acoustic": {
+    "directionalDiagnostic": {
+      "far-shore-pentatonic": {
+        "agreements": 6,
+        "comparisonCount": 6,
+        "comparisons": [
+          {
+            "deltaCentroidOct": 0.6363931331782454,
+            "deltaRegisterOffset": 8.533333333333333,
+            "from": "home_mirror",
+            "sameDirection": true,
+            "to": "departure"
+          },
+          {
+            "deltaCentroidOct": -0.16294236193547776,
+            "deltaRegisterOffset": -1.3333333333333333,
+            "from": "departure",
+            "sameDirection": true,
+            "to": "first_dwell"
+          },
+          {
+            "deltaCentroidOct": 0.6469404206998908,
+            "deltaRegisterOffset": 3.0,
+            "from": "first_dwell",
+            "sameDirection": true,
+            "to": "climax"
+          },
+          {
+            "deltaCentroidOct": -0.5779330304457926,
+            "deltaRegisterOffset": -1.6666666666666667,
+            "from": "climax",
+            "sameDirection": true,
+            "to": "shore"
+          },
+          {
+            "deltaCentroidOct": 0.11263511842832039,
+            "deltaRegisterOffset": 0.07843137254901977,
+            "from": "shore",
+            "sameDirection": true,
+            "to": "return"
+          },
+          {
+            "deltaCentroidOct": -0.8040314218886434,
+            "deltaRegisterOffset": -13.411764705882353,
+            "from": "return",
+            "sameDirection": true,
+            "to": "homecoming"
+          }
+        ],
+        "sections": [
+          {
+            "centroidOct": -0.492747402463188,
+            "registerOffset": -7.2,
+            "section": 1,
+            "sectionKey": "home_mirror"
+          },
+          {
+            "centroidOct": 0.14364573071505746,
+            "registerOffset": 1.3333333333333333,
+            "section": 2,
+            "sectionKey": "departure"
+          },
+          {
+            "centroidOct": -0.01929663122042029,
+            "registerOffset": 0.0,
+            "section": 3,
+            "sectionKey": "first_dwell"
+          },
+          {
+            "centroidOct": 0.6276437894794705,
+            "registerOffset": 3.0,
+            "section": 4,
+            "sectionKey": "climax"
+          },
+          {
+            "centroidOct": 0.04971075903367798,
+            "registerOffset": 1.3333333333333333,
+            "section": 5,
+            "sectionKey": "shore"
+          },
+          {
+            "centroidOct": 0.16234587746199836,
+            "registerOffset": 1.411764705882353,
+            "section": 6,
+            "sectionKey": "return"
+          },
+          {
+            "centroidOct": -0.641685544426645,
+            "registerOffset": -12.0,
+            "section": 7,
+            "sectionKey": "homecoming"
+          }
+        ]
+      },
+      "far-shore-ungoverned-control": {
+        "agreements": 6,
+        "comparisonCount": 6,
+        "comparisons": [
+          {
+            "deltaCentroidOct": 0.6310055350588406,
+            "deltaRegisterOffset": 8.533333333333333,
+            "from": "home_mirror",
+            "sameDirection": true,
+            "to": "departure"
+          },
+          {
+            "deltaCentroidOct": -0.13747250284335907,
+            "deltaRegisterOffset": -1.3333333333333333,
+            "from": "departure",
+            "sameDirection": true,
+            "to": "first_dwell"
+          },
+          {
+            "deltaCentroidOct": 0.6387478395854281,
+            "deltaRegisterOffset": 3.0,
+            "from": "first_dwell",
+            "sameDirection": true,
+            "to": "climax"
+          },
+          {
+            "deltaCentroidOct": -0.5594908072196818,
+            "deltaRegisterOffset": -1.6666666666666667,
+            "from": "climax",
+            "sameDirection": true,
+            "to": "shore"
+          },
+          {
+            "deltaCentroidOct": 0.09032802795369967,
+            "deltaRegisterOffset": 0.07843137254901977,
+            "from": "shore",
+            "sameDirection": true,
+            "to": "return"
+          },
+          {
+            "deltaCentroidOct": -0.7986151230590126,
+            "deltaRegisterOffset": -13.411764705882353,
+            "from": "return",
+            "sameDirection": true,
+            "to": "homecoming"
+          }
+        ],
+        "sections": [
+          {
+            "centroidOct": -0.507318293042579,
+            "registerOffset": -7.2,
+            "section": 1,
+            "sectionKey": "home_mirror"
+          },
+          {
+            "centroidOct": 0.12368724201626159,
+            "registerOffset": 1.3333333333333333,
+            "section": 2,
+            "sectionKey": "departure"
+          },
+          {
+            "centroidOct": -0.013785260827097492,
+            "registerOffset": 0.0,
+            "section": 3,
+            "sectionKey": "first_dwell"
+          },
+          {
+            "centroidOct": 0.6249625787583306,
+            "registerOffset": 3.0,
+            "section": 4,
+            "sectionKey": "climax"
+          },
+          {
+            "centroidOct": 0.06547177153864876,
+            "registerOffset": 1.3333333333333333,
+            "section": 5,
+            "sectionKey": "shore"
+          },
+          {
+            "centroidOct": 0.15579979949234843,
+            "registerOffset": 1.411764705882353,
+            "section": 6,
+            "sectionKey": "return"
+          },
+          {
+            "centroidOct": -0.6428153235666642,
+            "registerOffset": -12.0,
+            "section": 7,
+            "sectionKey": "homecoming"
+          }
+        ]
+      }
+    },
+    "farShoreMargins": {
+      "governed": {
+        "margin": 0.14516924748759683,
+        "rContainer": 0.2064361678817814,
+        "rLead": 0.3516054153693782
+      },
+      "ungovernedControl": {
+        "margin": 0.031117701402228026,
+        "rContainer": 0.5023602960996671,
+        "rLead": 0.5334779975018952
+      }
+    },
+    "stemMeasurements": [
+      {
+        "label": "b1-andalusian-pentatonic",
+        "lead": {
+          "containerDeconfounded": 0.7400672428329375,
+          "containerRaw": 0.06113447813791438,
+          "leadDeconfounded": 0.34581278273162236,
+          "leadRaw": 0.2230735673550545,
+          "meanPcDeconfounded": 0.9858644290444383,
+          "meanPcRaw": 0.03526670427471435,
+          "windows": 45
+        },
+        "pad": {
+          "containerDeconfounded": 0.7756903309553044,
+          "containerRaw": 0.07666792106390981,
+          "leadDeconfounded": 0.42355070258389443,
+          "leadRaw": 0.2726258216313452,
+          "meanPcDeconfounded": 0.5964074146437687,
+          "meanPcRaw": 0.01371971910951106,
+          "windows": 45
+        }
+      },
+      {
+        "label": "b2-borrowed-minor-pentatonic",
+        "lead": {
+          "containerDeconfounded": 0.5609396145729939,
+          "containerRaw": 0.060077454284479984,
+          "leadDeconfounded": 0.3892444633624217,
+          "leadRaw": 0.07129606541755522,
+          "meanPcDeconfounded": 0.9908357405658488,
+          "meanPcRaw": -0.15722109763450784,
+          "windows": 22
+        },
+        "pad": {
+          "containerDeconfounded": 0.8748519997417625,
+          "containerRaw": 0.032114176405237366,
+          "leadDeconfounded": 0.034855782806509354,
+          "leadRaw": 0.0024756149421353043,
+          "meanPcDeconfounded": 0.43552435988048516,
+          "meanPcRaw": -0.3084396216556477,
+          "windows": 22
+        }
+      },
+      {
+        "label": "far-shore-pentatonic",
+        "lead": {
+          "containerDeconfounded": 0.2064361678817814,
+          "containerRaw": 0.21425394096660227,
+          "leadDeconfounded": 0.3516054153693782,
+          "leadRaw": 0.26426584052684654,
+          "meanPcDeconfounded": 0.9911924517157787,
+          "meanPcRaw": 0.1421381941182943,
+          "windows": 55
+        },
+        "pad": {
+          "containerDeconfounded": 0.7339580134516553,
+          "containerRaw": 0.40536922800103137,
+          "leadDeconfounded": 0.049080847585226184,
+          "leadRaw": 0.051430545457493156,
+          "meanPcDeconfounded": 0.28067852055941345,
+          "meanPcRaw": 0.06131885172735087,
+          "windows": 55
+        }
+      },
+      {
+        "label": "far-shore-ungoverned-control",
+        "lead": {
+          "containerDeconfounded": 0.5023602960996671,
+          "containerRaw": 0.256736114879568,
+          "leadDeconfounded": 0.5334779975018952,
+          "leadRaw": 0.30063723348280025,
+          "meanPcDeconfounded": 0.9959750004695397,
+          "meanPcRaw": 0.2655015397926221,
+          "windows": 55
+        },
+        "pad": {
+          "containerDeconfounded": 0.7339580134516553,
+          "containerRaw": 0.40536922800103137,
+          "leadDeconfounded": 0.09174966690986547,
+          "leadRaw": 0.15823862153038423,
+          "meanPcDeconfounded": 0.3386507323594442,
+          "meanPcRaw": 0.3329223680125454,
+          "windows": 55
+        }
+      },
+      {
+        "label": "c1-aeolian-harmonic-minor",
+        "lead": {
+          "containerDeconfounded": null,
+          "containerRaw": null,
+          "leadDeconfounded": null,
+          "leadRaw": null,
+          "meanPcDeconfounded": null,
+          "meanPcRaw": null,
+          "windows": 2
+        },
+        "pad": {
+          "containerDeconfounded": null,
+          "containerRaw": null,
+          "leadDeconfounded": null,
+          "leadRaw": null,
+          "meanPcDeconfounded": null,
+          "meanPcRaw": null,
+          "windows": 2
+        }
+      },
+      {
+        "label": "c3b-major-mode-triangle",
+        "lead": {
+          "containerDeconfounded": 0.1345220974150537,
+          "containerRaw": 0.4327730213590988,
+          "leadDeconfounded": 0.46927007470060006,
+          "leadRaw": 0.5847326197928369,
+          "meanPcDeconfounded": 0.9944996654799185,
+          "meanPcRaw": 0.3298002628122615,
+          "windows": 7
+        },
+        "pad": {
+          "containerDeconfounded": -0.8455226990201621,
+          "containerRaw": 0.4162474763049493,
+          "leadDeconfounded": -0.7739502154391081,
+          "leadRaw": 0.4811738624795985,
+          "meanPcDeconfounded": -0.13985179324144315,
+          "meanPcRaw": 0.13311991478073595,
+          "windows": 7
+        }
+      },
+      {
+        "label": "d-borrowed_connector-arc",
+        "lead": {
+          "containerDeconfounded": -0.9990337696708981,
+          "containerRaw": -0.9990337696708979,
+          "leadDeconfounded": 0.9990337696708981,
+          "leadRaw": 0.9990337696708979,
+          "meanPcDeconfounded": 0.9990337696708984,
+          "meanPcRaw": 0.9990337696708982,
+          "windows": 8
+        },
+        "pad": {
+          "containerDeconfounded": 0.44642407868369355,
+          "containerRaw": 0.4464240786836935,
+          "leadDeconfounded": -0.44642407868369355,
+          "leadRaw": -0.4464240786836935,
+          "meanPcDeconfounded": -0.4464240786836936,
+          "meanPcRaw": -0.4464240786836935,
+          "windows": 8
+        }
+      },
+      {
+        "label": "d-borrowed_connector-pure",
+        "lead": {
+          "containerDeconfounded": null,
+          "containerRaw": null,
+          "leadDeconfounded": null,
+          "leadRaw": null,
+          "meanPcDeconfounded": null,
+          "meanPcRaw": null,
+          "windows": 6
+        },
+        "pad": {
+          "containerDeconfounded": null,
+          "containerRaw": null,
+          "leadDeconfounded": null,
+          "leadRaw": null,
+          "meanPcDeconfounded": null,
+          "meanPcRaw": null,
+          "windows": 6
+        }
+      },
+      {
+        "label": "d-naked_fifth_stack-arc",
+        "lead": {
+          "containerDeconfounded": -0.9990337696708981,
+          "containerRaw": -0.9990337696708979,
+          "leadDeconfounded": 0.9990337696708981,
+          "leadRaw": 0.9990337696708979,
+          "meanPcDeconfounded": 0.9990337696708984,
+          "meanPcRaw": 0.9990337696708982,
+          "windows": 8
+        },
+        "pad": {
+          "containerDeconfounded": 0.44642407868369355,
+          "containerRaw": 0.4464240786836935,
+          "leadDeconfounded": -0.44642407868369355,
+          "leadRaw": -0.4464240786836935,
+          "meanPcDeconfounded": -0.4464240786836936,
+          "meanPcRaw": -0.4464240786836935,
+          "windows": 8
+        }
+      },
+      {
+        "label": "d-naked_fifth_stack-pure",
+        "lead": {
+          "containerDeconfounded": null,
+          "containerRaw": null,
+          "leadDeconfounded": null,
+          "leadRaw": null,
+          "meanPcDeconfounded": null,
+          "meanPcRaw": null,
+          "windows": 6
+        },
+        "pad": {
+          "containerDeconfounded": null,
+          "containerRaw": null,
+          "leadDeconfounded": null,
+          "leadRaw": null,
+          "meanPcDeconfounded": null,
+          "meanPcRaw": null,
+          "windows": 6
+        }
+      },
+      {
+        "label": "d-native_class_dwell-arc",
+        "lead": {
+          "containerDeconfounded": 0.9999638613118029,
+          "containerRaw": 0.9999638613118028,
+          "leadDeconfounded": 0.999963861311803,
+          "leadRaw": 0.9999638613118028,
+          "meanPcDeconfounded": 0.9999638613118033,
+          "meanPcRaw": 0.9999638613118029,
+          "windows": 8
+        },
+        "pad": {
+          "containerDeconfounded": 0.44642407868369355,
+          "containerRaw": 0.4464240786836935,
+          "leadDeconfounded": 0.4464240786836936,
+          "leadRaw": 0.4464240786836936,
+          "meanPcDeconfounded": 0.4464240786836937,
+          "meanPcRaw": 0.44642407868369366,
+          "windows": 8
+        }
+      },
+      {
+        "label": "d-native_class_dwell-pure",
+        "lead": {
+          "containerDeconfounded": null,
+          "containerRaw": null,
+          "leadDeconfounded": null,
+          "leadRaw": null,
+          "meanPcDeconfounded": null,
+          "meanPcRaw": null,
+          "windows": 6
+        },
+        "pad": {
+          "containerDeconfounded": null,
+          "containerRaw": null,
+          "leadDeconfounded": null,
+          "leadRaw": null,
+          "meanPcDeconfounded": null,
+          "meanPcRaw": null,
+          "windows": 6
+        }
+      }
+    ],
+    "stemSelfTracking": [
+      {
+        "label": "b1-andalusian-pentatonic",
+        "pass": false,
+        "rContainer": 0.7400672428329375,
+        "rLead": 0.34581278273162236
+      },
+      {
+        "label": "b2-borrowed-minor-pentatonic",
+        "pass": false,
+        "rContainer": 0.5609396145729939,
+        "rLead": 0.3892444633624217
+      },
+      {
+        "label": "far-shore-pentatonic",
+        "pass": false,
+        "rContainer": 0.2064361678817814,
+        "rLead": 0.3516054153693782
+      },
+      {
+        "label": "far-shore-ungoverned-control",
+        "pass": false,
+        "rContainer": 0.5023602960996671,
+        "rLead": 0.5334779975018952
+      },
+      {
+        "label": "c1-aeolian-harmonic-minor",
+        "pass": false,
+        "rContainer": null,
+        "rLead": null
+      },
+      {
+        "label": "c3b-major-mode-triangle",
+        "pass": false,
+        "rContainer": 0.1345220974150537,
+        "rLead": 0.46927007470060006
+      },
+      {
+        "label": "d-borrowed_connector-arc",
+        "pass": true,
+        "rContainer": -0.9990337696708981,
+        "rLead": 0.9990337696708981
+      },
+      {
+        "label": "d-borrowed_connector-pure",
+        "pass": false,
+        "rContainer": null,
+        "rLead": null
+      },
+      {
+        "label": "d-naked_fifth_stack-arc",
+        "pass": true,
+        "rContainer": -0.9990337696708981,
+        "rLead": 0.9990337696708981
+      },
+      {
+        "label": "d-naked_fifth_stack-pure",
+        "pass": false,
+        "rContainer": null,
+        "rLead": null
+      },
+      {
+        "label": "d-native_class_dwell-arc",
+        "pass": true,
+        "rContainer": 0.9999638613118029,
+        "rLead": 0.999963861311803
+      },
+      {
+        "label": "d-native_class_dwell-pure",
+        "pass": false,
+        "rContainer": null,
+        "rLead": null
+      }
+    ]
+  },
+  "directive": "MVP8.1-DIR-1",
+  "floatValuesSymbolic": 0,
+  "guardFlags": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "predeclarationSha256": "55b44a539a6b025e4aa95f3e0826a95283189458adef54c43b2018b9ec8c380c",
+  "schemaVersion": "governed-loop.mvp8_1-task-b.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "symbolic": {
+    "B4a": {
+      "pass": false,
+      "passing": 3,
+      "stems": 12,
+      "threshold": "0.90"
+    },
+    "B4aDiagnosticSanity": {
+      "definedStems": 8,
+      "nonBet": true,
+      "note": "mean emitted pc is the intended lead-tracking signal; the locked B4a proxy used pcSum. Single-office or two-bar stems have zero residual variance after office deconfounding and are undefined, not failed.",
+      "passing": 8,
+      "threshold": "0.90"
+    },
+    "B4b": {
+      "governedMarginAtLeastControl": true,
+      "governedMarginPositive": true,
+      "pass": true
+    },
+    "B4c": {
+      "controlAgreements": 6,
+      "controlComparisons": 6,
+      "diagnosticOnly": true,
+      "governedAgreements": 6,
+      "governedComparisons": 6
+    },
+    "B4d": {
+      "pass": true,
+      "stemIntegrity": true
+    },
+    "carriedReverification": {
+      "B1": {
+        "evaluations": 1064448,
+        "outOfMaskPitches": 0,
+        "pass": true,
+        "stillSetEvaluations": 243936,
+        "stillSetLeaks": 0
+      },
+      "B2": {
+        "baselineDenominator": 192,
+        "baselineNumerator": 144,
+        "governedInitiationDenominator": 192,
+        "governedInitiationNumerator": 192,
+        "pass": true,
+        "structuralDenominator": 80,
+        "structuralNumerator": 80,
+        "tailModalColorPasses": 4
+      },
+      "B3": {
+        "badFocalSelections": 0,
+        "badInitiationEmissions": 0,
+        "badOrbitEmissions": 0,
+        "emissionChecks": 55296,
+        "pass": true
+      },
+      "pass": true
+    }
+  },
+  "task": "MVP8.1-TB",
+  "taskAReceiptSha256": "dfbececfc88cd5797d7b7f689851ec40d5901ef59073fec5a7c272e4edfd3e5f"
+}

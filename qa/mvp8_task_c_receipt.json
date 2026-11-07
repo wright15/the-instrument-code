@@ -1,0 +1,671 @@
+{
+  "C1": {
+    "focalPitchClasses": [
+      0,
+      3,
+      5,
+      7,
+      8
+    ],
+    "focalSubnode": "5-27:0@0",
+    "focalSwitches": 0,
+    "gate": {
+      "citation": null,
+      "reasons": [],
+      "verdict": "ACCEPT"
+    },
+    "hopCount": 1,
+    "outOfMaskPitches": 0,
+    "pass": true,
+    "path": [
+      "1453@0",
+      "2477@0"
+    ],
+    "render": {
+      "barCount": 2,
+      "clippedSamples": 0,
+      "durationMs": 7200,
+      "label": "c1-aeolian-harmonic-minor",
+      "midiPath": "task-c/renders/c1-aeolian-harmonic-minor.mid",
+      "midiSha256": "17398aebc4fcd0def023e1186d1b1ed5f073eca0beb5907a8053281f1631b376",
+      "nonFiniteSamples": 0,
+      "reRenderMatch": true,
+      "samples": 317520,
+      "tracePath": "task-c/traces/c1-aeolian-harmonic-minor.jsonl",
+      "traceSha256": "c00184d6c57a7c4836e9a143492a27f3eb528f10a43c9c2eb9dd16803b5b034c",
+      "wavPath": "task-c/renders/c1-aeolian-harmonic-minor.wav",
+      "wavSha256": "6b019451f7cdb5604106d73412b046c9225a581648196839847e7a1d0561be56"
+    },
+    "sharedSubnodeValid": {
+      "5-20:0B": true,
+      "5-23:0": true,
+      "5-25:0": true,
+      "5-27:0": true,
+      "5-29:0B": true
+    },
+    "sharedSubnodes": [
+      "5-20:0B",
+      "5-23:0",
+      "5-25:0",
+      "5-27:0",
+      "5-29:0B"
+    ],
+    "source": "1387@1",
+    "target": "1435@1"
+  },
+  "C2": {
+    "allPass": true,
+    "maxHopOverhead": 2,
+    "pairs": [
+      {
+        "connectorHops": 1,
+        "connectorPath": [
+          "1387@0",
+          "1435@0"
+        ],
+        "continuityMode": "base_subnode_phase_transposed",
+        "gateAllAccept": true,
+        "hopOverhead": 0,
+        "pass": true,
+        "shortestGovernedHops": 1,
+        "shortestGovernedPath": [
+          "1387@0",
+          "1435@0"
+        ],
+        "softCostBridgeBreaks": 0,
+        "softCostFocalBreaks": 0,
+        "softCostHops": 1,
+        "softCostPath": [
+          "1387@0",
+          "1435@0"
+        ],
+        "source": "1387@0",
+        "sourceGovRoot": 1387,
+        "strictFocalPitchClasses": [
+          0,
+          1,
+          3,
+          8,
+          10
+        ],
+        "strictFocalSubnode": "5-23:8B",
+        "strictFocalSubnodes": [
+          "5-23:8B"
+        ],
+        "target": "1435@0",
+        "targetGovRoot": 1451,
+        "unconstrainedHops": 1
+      },
+      {
+        "connectorHops": 1,
+        "connectorPath": [
+          "1453@0",
+          "1645@0"
+        ],
+        "continuityMode": "base_subnode_phase_transposed",
+        "gateAllAccept": true,
+        "hopOverhead": 0,
+        "pass": true,
+        "shortestGovernedHops": 1,
+        "shortestGovernedPath": [
+          "1453@0",
+          "1645@0"
+        ],
+        "softCostBridgeBreaks": 0,
+        "softCostFocalBreaks": 0,
+        "softCostHops": 1,
+        "softCostPath": [
+          "1453@0",
+          "1645@0"
+        ],
+        "source": "1453@0",
+        "sourceGovRoot": 1453,
+        "strictFocalPitchClasses": [
+          0,
+          2,
+          3,
+          5,
+          10
+        ],
+        "strictFocalSubnode": "5-23:10B",
+        "strictFocalSubnodes": [
+          "5-23:10B"
+        ],
+        "target": "1645@0",
+        "targetGovRoot": 1709,
+        "unconstrainedHops": 1
+      },
+      {
+        "connectorHops": 1,
+        "connectorPath": [
+          "1715@0",
+          "2741@0"
+        ],
+        "continuityMode": "base_subnode_phase_transposed",
+        "gateAllAccept": true,
+        "hopOverhead": 0,
+        "pass": true,
+        "shortestGovernedHops": 1,
+        "shortestGovernedPath": [
+          "1715@0",
+          "2741@0"
+        ],
+        "softCostBridgeBreaks": 0,
+        "softCostFocalBreaks": 0,
+        "softCostHops": 1,
+        "softCostPath": [
+          "1715@0",
+          "2741@0"
+        ],
+        "source": "1715@0",
+        "sourceGovRoot": 1717,
+        "strictFocalPitchClasses": [
+          0,
+          4,
+          5,
+          7,
+          9
+        ],
+        "strictFocalSubnode": "5-27:4B",
+        "strictFocalSubnodes": [
+          "5-27:4B"
+        ],
+        "target": "2741@0",
+        "targetGovRoot": 2741,
+        "unconstrainedHops": 1
+      },
+      {
+        "connectorHops": 1,
+        "connectorPath": [
+          "1849@0",
+          "3697@11"
+        ],
+        "continuityMode": "base_subnode_phase_transposed",
+        "gateAllAccept": true,
+        "hopOverhead": 0,
+        "pass": true,
+        "shortestGovernedHops": 1,
+        "shortestGovernedPath": [
+          "1849@0",
+          "3697@11"
+        ],
+        "softCostBridgeBreaks": 0,
+        "softCostFocalBreaks": 0,
+        "softCostHops": 1,
+        "softCostPath": [
+          "1849@0",
+          "3697@11"
+        ],
+        "source": "1849@0",
+        "sourceGovRoot": 2873,
+        "strictFocalPitchClasses": [
+          0,
+          4,
+          5,
+          9,
+          10
+        ],
+        "strictFocalSubnode": "5-20:4",
+        "strictFocalSubnodes": [
+          "5-20:4"
+        ],
+        "target": "3697@11",
+        "targetGovRoot": 3441,
+        "unconstrainedHops": 1
+      },
+      {
+        "connectorHops": 1,
+        "connectorPath": [
+          "1969@0",
+          "985@1"
+        ],
+        "continuityMode": "base_subnode_phase_transposed",
+        "gateAllAccept": true,
+        "hopOverhead": 0,
+        "pass": true,
+        "shortestGovernedHops": 1,
+        "shortestGovernedPath": [
+          "1969@0",
+          "985@1"
+        ],
+        "softCostBridgeBreaks": 0,
+        "softCostFocalBreaks": 0,
+        "softCostHops": 1,
+        "softCostPath": [
+          "1969@0",
+          "985@1"
+        ],
+        "source": "1969@0",
+        "sourceGovRoot": 2993,
+        "strictFocalPitchClasses": [
+          0,
+          4,
+          7,
+          8,
+          9
+        ],
+        "strictFocalSubnode": "5-Z37:4",
+        "strictFocalSubnodes": [
+          "5-Z37:4"
+        ],
+        "target": "985@1",
+        "targetGovRoot": 953,
+        "unconstrainedHops": 1
+      },
+      {
+        "connectorHops": 1,
+        "connectorPath": [
+          "463@0",
+          "925@11"
+        ],
+        "continuityMode": "base_subnode_phase_transposed",
+        "gateAllAccept": true,
+        "hopOverhead": 0,
+        "pass": true,
+        "shortestGovernedHops": 1,
+        "shortestGovernedPath": [
+          "463@0",
+          "925@11"
+        ],
+        "softCostBridgeBreaks": 0,
+        "softCostFocalBreaks": 0,
+        "softCostHops": 1,
+        "softCostPath": [
+          "463@0",
+          "925@11"
+        ],
+        "source": "463@0",
+        "sourceGovRoot": 471,
+        "strictFocalPitchClasses": [
+          0,
+          2,
+          3,
+          7,
+          8
+        ],
+        "strictFocalSubnode": "5-20:0B",
+        "strictFocalSubnodes": [
+          "5-20:0B"
+        ],
+        "target": "925@11",
+        "targetGovRoot": 923,
+        "unconstrainedHops": 1
+      },
+      {
+        "connectorHops": 1,
+        "connectorPath": [
+          "1387@0",
+          "1459@0"
+        ],
+        "continuityMode": "base_subnode_phase_transposed",
+        "gateAllAccept": true,
+        "hopOverhead": 0,
+        "pass": true,
+        "shortestGovernedHops": 1,
+        "shortestGovernedPath": [
+          "1387@0",
+          "1459@0"
+        ],
+        "softCostBridgeBreaks": 0,
+        "softCostFocalBreaks": 0,
+        "softCostHops": 1,
+        "softCostPath": [
+          "1387@0",
+          "1459@0"
+        ],
+        "source": "1387@0",
+        "sourceGovRoot": 1387,
+        "strictFocalPitchClasses": [
+          0,
+          1,
+          5,
+          8,
+          10
+        ],
+        "strictFocalSubnode": "5-27:5",
+        "strictFocalSubnodes": [
+          "5-27:5"
+        ],
+        "target": "1459@0",
+        "targetGovRoot": 1451,
+        "unconstrainedHops": 1
+      },
+      {
+        "connectorHops": 1,
+        "connectorPath": [
+          "1387@0",
+          "1645@0"
+        ],
+        "continuityMode": "base_subnode_phase_transposed",
+        "gateAllAccept": true,
+        "hopOverhead": 0,
+        "pass": true,
+        "shortestGovernedHops": 1,
+        "shortestGovernedPath": [
+          "1387@0",
+          "1645@0"
+        ],
+        "softCostBridgeBreaks": 0,
+        "softCostFocalBreaks": 0,
+        "softCostHops": 1,
+        "softCostPath": [
+          "1387@0",
+          "1645@0"
+        ],
+        "source": "1387@0",
+        "sourceGovRoot": 1387,
+        "strictFocalPitchClasses": [
+          0,
+          3,
+          5,
+          6,
+          10
+        ],
+        "strictFocalSubnode": "5-29:10B",
+        "strictFocalSubnodes": [
+          "5-29:10B"
+        ],
+        "target": "1645@0",
+        "targetGovRoot": 1709,
+        "unconstrainedHops": 1
+      },
+      {
+        "connectorHops": 1,
+        "connectorPath": [
+          "1387@0",
+          "859@0"
+        ],
+        "continuityMode": "base_subnode_phase_transposed",
+        "gateAllAccept": true,
+        "hopOverhead": 0,
+        "pass": true,
+        "shortestGovernedHops": 1,
+        "shortestGovernedPath": [
+          "1387@0",
+          "859@0"
+        ],
+        "softCostBridgeBreaks": 0,
+        "softCostFocalBreaks": 0,
+        "softCostHops": 1,
+        "softCostPath": [
+          "1387@0",
+          "859@0"
+        ],
+        "source": "1387@0",
+        "sourceGovRoot": 1387,
+        "strictFocalPitchClasses": [
+          0,
+          1,
+          3,
+          6,
+          8
+        ],
+        "strictFocalSubnode": "5-29:0",
+        "strictFocalSubnodes": [
+          "5-29:0"
+        ],
+        "target": "859@0",
+        "targetGovRoot": 1717,
+        "unconstrainedHops": 1
+      },
+      {
+        "connectorHops": 1,
+        "connectorPath": [
+          "1387@1",
+          "1435@1"
+        ],
+        "continuityMode": "base_subnode_phase_transposed",
+        "gateAllAccept": true,
+        "hopOverhead": 0,
+        "pass": true,
+        "shortestGovernedHops": 1,
+        "shortestGovernedPath": [
+          "1387@1",
+          "1435@1"
+        ],
+        "softCostBridgeBreaks": 0,
+        "softCostFocalBreaks": 0,
+        "softCostHops": 1,
+        "softCostPath": [
+          "1387@1",
+          "1435@1"
+        ],
+        "source": "1387@1",
+        "sourceGovRoot": 1387,
+        "strictFocalPitchClasses": [
+          1,
+          2,
+          4,
+          9,
+          11
+        ],
+        "strictFocalSubnode": "5-23:8B",
+        "strictFocalSubnodes": [
+          "5-23:8B"
+        ],
+        "target": "1435@1",
+        "targetGovRoot": 1451,
+        "unconstrainedHops": 1
+      }
+    ]
+  },
+  "C3a": {
+    "dwellFocalSwitches": 0,
+    "pass": true,
+    "pillars": [
+      {
+        "focalBaseSubnode": "5-35:0",
+        "focalPitchClasses": [
+          0,
+          2,
+          4,
+          7,
+          9
+        ],
+        "focalSubnode": "5-35:0@0",
+        "is535": true,
+        "matchesTarget": true,
+        "node": "2741@0"
+      },
+      {
+        "focalBaseSubnode": "5-35:0",
+        "focalPitchClasses": [
+          0,
+          2,
+          4,
+          7,
+          9
+        ],
+        "focalSubnode": "5-35:0@0",
+        "is535": true,
+        "matchesTarget": true,
+        "node": "1717@0"
+      },
+      {
+        "focalBaseSubnode": "5-35:0",
+        "focalPitchClasses": [
+          0,
+          2,
+          4,
+          7,
+          9
+        ],
+        "focalSubnode": "5-35:0@0",
+        "is535": true,
+        "matchesTarget": true,
+        "node": "2773@0"
+      }
+    ]
+  },
+  "C3b": {
+    "bars": [
+      {
+        "bar": 1,
+        "corePresent": true,
+        "focalSubnode": "5-35:0@0",
+        "node": "2741@0"
+      },
+      {
+        "bar": 2,
+        "corePresent": true,
+        "focalSubnode": "5-23:0B@0",
+        "node": "2485@0"
+      },
+      {
+        "bar": 3,
+        "corePresent": true,
+        "focalSubnode": "5-35:0@0",
+        "node": "1717@0"
+      },
+      {
+        "bar": 4,
+        "corePresent": true,
+        "focalSubnode": "5-27:11B@0",
+        "node": "2485@0"
+      },
+      {
+        "bar": 5,
+        "corePresent": true,
+        "focalSubnode": "5-35:0@0",
+        "node": "2773@0"
+      },
+      {
+        "bar": 6,
+        "corePresent": true,
+        "focalSubnode": "5-27:11B@0",
+        "node": "2485@0"
+      },
+      {
+        "bar": 7,
+        "corePresent": true,
+        "focalSubnode": "5-35:0@0",
+        "node": "2741@0"
+      }
+    ],
+    "focalSwitchesTotal": 6,
+    "gateAllAccept": true,
+    "legs": [
+      {
+        "allowed": 0,
+        "bridgeSwitches": 0,
+        "leg": 1,
+        "nodes": [
+          "2741@0",
+          "2485@0",
+          "1717@0"
+        ],
+        "sharedIntersection": [
+          "5-23:0B"
+        ],
+        "transitBar": 2,
+        "transitFocal": "5-23:0B"
+      },
+      {
+        "allowed": 1,
+        "bridgeSwitches": 1,
+        "leg": 2,
+        "nodes": [
+          "1717@0",
+          "2485@0",
+          "2773@0"
+        ],
+        "sharedIntersection": [],
+        "transitBar": 4,
+        "transitFocal": "5-27:11B"
+      },
+      {
+        "allowed": 0,
+        "bridgeSwitches": 0,
+        "leg": 3,
+        "nodes": [
+          "2773@0",
+          "2485@0",
+          "2741@0"
+        ],
+        "sharedIntersection": [
+          "5-27:11B"
+        ],
+        "transitBar": 6,
+        "transitFocal": "5-27:11B"
+      }
+    ],
+    "outOfMaskPitches": 0,
+    "pass": true,
+    "probe": [
+      {
+        "coreContinuousHops": 2,
+        "coreContinuousPath": [
+          "2741@0",
+          "2485@0",
+          "1717@0"
+        ],
+        "leg": "2741@0->1717@0",
+        "overhead": 0,
+        "unconstrainedHops": 2
+      },
+      {
+        "coreContinuousHops": 2,
+        "coreContinuousPath": [
+          "1717@0",
+          "2485@0",
+          "2773@0"
+        ],
+        "leg": "1717@0->2773@0",
+        "overhead": 0,
+        "unconstrainedHops": 2
+      },
+      {
+        "coreContinuousHops": 2,
+        "coreContinuousPath": [
+          "2773@0",
+          "2485@0",
+          "2741@0"
+        ],
+        "leg": "2773@0->2741@0",
+        "overhead": 0,
+        "unconstrainedHops": 2
+      }
+    ],
+    "render": {
+      "barCount": 7,
+      "clippedSamples": 0,
+      "durationMs": 18900,
+      "label": "c3b-major-mode-triangle",
+      "midiPath": "task-c/renders/c3b-major-mode-triangle.mid",
+      "midiSha256": "a0ef06dc93f1ab9414589405898ea12d455a1b2391a813ad282ccaa466460aa6",
+      "nonFiniteSamples": 0,
+      "reRenderMatch": true,
+      "samples": 833490,
+      "tracePath": "task-c/traces/c3b-major-mode-triangle.jsonl",
+      "traceSha256": "05b3f6676e09bdcef8e9bf35eca1592cc2c6701b8326c6dfded79bada8e256d7",
+      "wavPath": "task-c/renders/c3b-major-mode-triangle.wav",
+      "wavSha256": "1a4670de68a0c48209304bde4f8091d45d52c02ac182cb4db23f72c2824245cc"
+    }
+  },
+  "connectorWeights": {
+    "tieBreak": "(total_cost, hop_count, lex(path))",
+    "w_bridge": 30,
+    "w_focal": 15,
+    "w_hop": 10
+  },
+  "directive": "MVP8-DIR-1",
+  "floatValuesSymbolic": 0,
+  "guardFlags": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "predeclarationSha256": "12e0a9aedb252ae256074782208cad7e8e90ef804a2ef379542168d309a443b5",
+  "schemaVersion": "governed-loop.mvp8-task-c.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "task": "MVP8-TC"
+}

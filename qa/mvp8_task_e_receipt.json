@@ -1,0 +1,411 @@
+{
+  "acoustic": {
+    "cadenceCorrelations": {
+      "B1_andalusian": {
+        "containerDeconfounded": 0.7598656914118,
+        "containerRaw": 0.03839389144291043,
+        "leadDeconfounded": 0.4677167249164185,
+        "leadRaw": 0.30304673230797213
+      },
+      "B2_borrowed_minor": {
+        "containerDeconfounded": 0.8016786969178341,
+        "containerRaw": -0.02014414916272003,
+        "leadDeconfounded": 0.1855061718576621,
+        "leadRaw": 0.04488911426237332
+      }
+    },
+    "cadenceDeltaComparison": {
+      "governedCadenceDelta": {
+        "B1_andalusian": -0.2921489664953815,
+        "B2_borrowed_minor": -0.616172525060172
+      },
+      "l27UngovernedAndalusianDeltaRange": [
+        -0.8006026627320764,
+        -0.08566558411901226
+      ],
+      "l27UngovernedBorrowedMinorDeltaRange": [
+        -1.2235792795230038,
+        -0.7322103962612192
+      ],
+      "note": "The log-spectral cadence diagnostic does not rescue B4: the governed B1 delta is inside the L27 Andalusian range and the governed B2 delta is only slightly better than the L27 best borrowed-minor delta; both remain negative."
+    },
+    "farShoreGovernedCorrelations": {
+      "containerDeconfounded": 0.6738785432645615,
+      "containerRaw": 0.41801007760195347,
+      "leadDeconfounded": 0.20083587758056823,
+      "leadRaw": 0.09625518390711169
+    },
+    "farShoreUngovernedCorrelations": {
+      "containerDeconfounded": 0.7190808504630474,
+      "containerRaw": 0.42379738857700205,
+      "leadDeconfounded": 0.33066267850350595,
+      "leadRaw": 0.2031611095139154
+    }
+  },
+  "adjudication": {
+    "deterministic": true,
+    "earGate": "PENDING_HUMAN",
+    "failingBets": [
+      "B4"
+    ],
+    "landingAuthorized": false,
+    "outcome": "DEFER",
+    "proposedAmendment": false,
+    "rationale": "B1 (0/1,064,448 out-of-mask), B2 (144/192 baseline -> 192/192 governed initiation; 80/80 structural; 4 modal-color passes), and B3 (0 bad focal / 0 bad emissions) pass; C1, C2, C3a, C3b pass; Task D render integrity is 6/6. B4 fails as predeclared: the governed Far Shore log-spectral deconfounded lead correlation 0.200836 is below the container correlation 0.673879, and the ungoverned control is also below (0.330663 < 0.719081). Under the DEFER rule the failing task is named and the passing components are banked without proposing the SPEC-001 amendment."
+  },
+  "bets": {
+    "B1": {
+      "evaluations": 1064448,
+      "outOfMaskPitches": 0,
+      "pass": true,
+      "stillSetEvaluations": 243936,
+      "stillSetLeaks": 0
+    },
+    "B2": {
+      "baselineDenominator": 192,
+      "baselineNumerator": 144,
+      "governedInitiationDenominator": 192,
+      "governedInitiationNumerator": 192,
+      "pass": true,
+      "structuralDenominator": 80,
+      "structuralNumerator": 80,
+      "tailModalColorPasses": 4
+    },
+    "B3": {
+      "badFocalSelections": 0,
+      "badInitiationEmissions": 0,
+      "badOrbitEmissions": 0,
+      "emissionChecks": 55296,
+      "liftedNodes": 144,
+      "pass": true,
+      "sampleMasks": [
+        1387,
+        1453,
+        2477,
+        2741,
+        1717,
+        2773,
+        2869,
+        2485,
+        1715,
+        2765,
+        1749,
+        671
+      ]
+    },
+    "B4": {
+      "cadenceLeadTracks": 0,
+      "instrument": "log-spectral centroid log2(f/440), office-deconfounded",
+      "l27Baseline": "MVP-7 deconfounded r_lead > r_container was 0/9 on waypoint-driven pieces",
+      "mvp6InstrumentNote": "The landed MVP-6 Law-3 result used the Hz-centroid instrument (container 0.272628, lead 0.425925). The directive's B4 uses the log-spectral lens; the two instruments are not directly comparable, and the landed MVP-6 result is not withdrawn.",
+      "pass": false
+    },
+    "C1": {
+      "focalSubnode": "5-27:0@0",
+      "focalSwitches": 0,
+      "hopCount": 1,
+      "outOfMaskPitches": 0,
+      "pass": true,
+      "sharedSubnodes": [
+        "5-20:0B",
+        "5-23:0",
+        "5-25:0",
+        "5-27:0",
+        "5-29:0B"
+      ],
+      "source": "1387@1",
+      "target": "1435@1"
+    },
+    "C2": {
+      "allPass": true,
+      "continuityMode": "base_subnode_phase_transposed",
+      "maxHopOverhead": 0,
+      "methodNote": "C2 continuity is measured on the predeclared base subnode identity, phase-transposed per node per B3. The earlier literal fixed-pitch-set predicate was discarded as an implementation artifact; the predeclaration and threshold are unchanged.",
+      "pairs": 10
+    },
+    "C3a": {
+      "dwellFocalSwitches": 0,
+      "pass": true
+    },
+    "C3b": {
+      "focalSwitchesTotal": 6,
+      "gateAllAccept": true,
+      "outOfMaskPitches": 0,
+      "pass": true
+    },
+    "D": {
+      "arc": {
+        "borrowed_connector": {
+          "focalHits": 36,
+          "focalTotal": 48,
+          "modalColorPasses": 12,
+          "pc11Count": 8,
+          "pc8Count": 4,
+          "rubCensus": {
+            "histogram": {
+              "0": 8,
+              "11": 8,
+              "2": 4,
+              "3": 4,
+              "5": 12,
+              "7": 8,
+              "8": 4
+            },
+            "majorSeventh": 8,
+            "minorSecond": 0
+          }
+        },
+        "naked_fifth_stack": {
+          "focalHits": 0,
+          "focalTotal": 48,
+          "modalColorPasses": 0,
+          "pc11Count": 8,
+          "pc8Count": 4,
+          "rubCensus": {
+            "histogram": {
+              "0": 8,
+              "11": 8,
+              "2": 4,
+              "3": 4,
+              "5": 12,
+              "7": 8,
+              "8": 4
+            },
+            "majorSeventh": 8,
+            "minorSecond": 0
+          }
+        },
+        "native_class_dwell": {
+          "focalHits": 40,
+          "focalTotal": 48,
+          "modalColorPasses": 8,
+          "pc11Count": 8,
+          "pc8Count": 8,
+          "rubCensus": {
+            "histogram": {
+              "0": 8,
+              "11": 8,
+              "3": 4,
+              "5": 12,
+              "7": 8,
+              "8": 8
+            },
+            "majorSeventh": 8,
+            "minorSecond": 0
+          }
+        }
+      },
+      "integrity": [
+        {
+          "arm": "borrowed_connector",
+          "clippedSamples": 0,
+          "endPass": true,
+          "leadSequenceMatch": true,
+          "nonFiniteSamples": 0,
+          "outOfMaskNotes": 0,
+          "outOfMaskPitches": 0,
+          "padContainerMatch": true,
+          "pass": true,
+          "probe": "arc",
+          "reRenderMatch": true
+        },
+        {
+          "arm": "borrowed_connector",
+          "clippedSamples": 0,
+          "endPass": true,
+          "leadSequenceMatch": true,
+          "nonFiniteSamples": 0,
+          "outOfMaskNotes": 0,
+          "outOfMaskPitches": 0,
+          "padContainerMatch": true,
+          "pass": true,
+          "probe": "pure",
+          "reRenderMatch": true
+        },
+        {
+          "arm": "native_class_dwell",
+          "clippedSamples": 0,
+          "endPass": true,
+          "leadSequenceMatch": true,
+          "nonFiniteSamples": 0,
+          "outOfMaskNotes": 0,
+          "outOfMaskPitches": 0,
+          "padContainerMatch": true,
+          "pass": true,
+          "probe": "arc",
+          "reRenderMatch": true
+        },
+        {
+          "arm": "native_class_dwell",
+          "clippedSamples": 0,
+          "endPass": true,
+          "leadSequenceMatch": true,
+          "nonFiniteSamples": 0,
+          "outOfMaskNotes": 0,
+          "outOfMaskPitches": 0,
+          "padContainerMatch": true,
+          "pass": true,
+          "probe": "pure",
+          "reRenderMatch": true
+        },
+        {
+          "arm": "naked_fifth_stack",
+          "clippedSamples": 0,
+          "endPass": true,
+          "leadSequenceMatch": true,
+          "nonFiniteSamples": 0,
+          "outOfMaskNotes": 0,
+          "outOfMaskPitches": 0,
+          "padContainerMatch": true,
+          "pass": true,
+          "probe": "arc",
+          "reRenderMatch": true
+        },
+        {
+          "arm": "naked_fifth_stack",
+          "clippedSamples": 0,
+          "endPass": true,
+          "leadSequenceMatch": true,
+          "nonFiniteSamples": 0,
+          "outOfMaskNotes": 0,
+          "outOfMaskPitches": 0,
+          "padContainerMatch": true,
+          "pass": true,
+          "probe": "pure",
+          "reRenderMatch": true
+        }
+      ],
+      "pass": true,
+      "pure": {
+        "borrowed_connector": {
+          "focalHits": 54,
+          "focalTotal": 72,
+          "modalColorPasses": 18,
+          "pc11Count": 12,
+          "pc8Count": 6,
+          "rubCensus": {
+            "histogram": {
+              "0": 12,
+              "11": 12,
+              "2": 6,
+              "3": 6,
+              "5": 18,
+              "7": 12,
+              "8": 6
+            },
+            "majorSeventh": 12,
+            "minorSecond": 0
+          }
+        },
+        "naked_fifth_stack": {
+          "focalHits": 0,
+          "focalTotal": 72,
+          "modalColorPasses": 0,
+          "pc11Count": 12,
+          "pc8Count": 6,
+          "rubCensus": {
+            "histogram": {
+              "0": 12,
+              "11": 12,
+              "2": 6,
+              "3": 6,
+              "5": 18,
+              "7": 12,
+              "8": 6
+            },
+            "majorSeventh": 12,
+            "minorSecond": 0
+          }
+        },
+        "native_class_dwell": {
+          "focalHits": 60,
+          "focalTotal": 72,
+          "modalColorPasses": 12,
+          "pc11Count": 12,
+          "pc8Count": 12,
+          "rubCensus": {
+            "histogram": {
+              "0": 12,
+              "11": 12,
+              "3": 6,
+              "5": 18,
+              "7": 12,
+              "8": 12
+            },
+            "majorSeventh": 12,
+            "minorSecond": 0
+          }
+        }
+      }
+    }
+  },
+  "checks": {
+    "A_allTargetsMatch": true,
+    "B1": true,
+    "B2": true,
+    "B3": true,
+    "B4": false,
+    "C1": true,
+    "C2": true,
+    "C3a": true,
+    "C3b": true,
+    "D": true
+  },
+  "deliverables": {
+    "closingReport": "task-e/MVP8-PENTATONIC-Q-CLOSING-REPORT.md",
+    "landingExecuted": false,
+    "landingScript": "task-e/mvp8_land.py"
+  },
+  "directive": "MVP8-DIR-1",
+  "fixedPoint": {
+    "anchorsVerified": 11,
+    "head": "d1b2286a5b6f3783af24094eb78e40ab511bb8e5",
+    "ledgerBytes": 407293,
+    "ledgerLines": 4383,
+    "ledgerSha256": "da9c79410cf2f3429509ca07f4a82effe49932d061ca96a4d36d28a401668149",
+    "manifestBytes": 263181122,
+    "manifestFiles": 1834,
+    "manifestSha256": "6632ab6a3141e58519fe5846794eb9befd76d1cd3479f9d65934a2a30ce0bc27",
+    "pinsTotal": 28,
+    "pinsVerified": 28,
+    "substitutionsRequired": 0,
+    "workingTreeException": {
+      "declared": true,
+      "pinnedBytesUnchanged": true,
+      "reason": "the directive document was written before execution at the Planning Seat's request; no pinned byte, HEAD, ledger, manifest, checksum, or validation artifact changed",
+      "untracked": [
+        "scrum/plan/mvp8-dir-1-rev2.md"
+      ]
+    }
+  },
+  "floatValuesSymbolic": 0,
+  "guardFlags": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "predeclaration": {
+    "path": "task-0/mvp8_predeclared_bets.json",
+    "sha256": "12e0a9aedb252ae256074782208cad7e8e90ef804a2ef379542168d309a443b5"
+  },
+  "schemaVersion": "governed-loop.mvp8-task-e.v1",
+  "status": "COMPLETE",
+  "stopRules": [],
+  "task": "MVP8-TE",
+  "taskStatus": {
+    "T0": "COMPLETE",
+    "TA": "COMPLETE",
+    "TB": "COMPLETE",
+    "TC": "COMPLETE",
+    "TD": "COMPLETE",
+    "TE": "COMPLETE"
+  }
+}

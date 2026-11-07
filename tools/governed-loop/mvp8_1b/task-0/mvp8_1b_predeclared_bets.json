@@ -1,0 +1,138 @@
+{
+  "bets": {
+    "B4aPrime": {
+      "metric": "mean emitted pc",
+      "passRule": "every scored stem has office-deconfounded r(lead-stem log-centroid, mean emitted pc) >= 0.90",
+      "scoredStems": [
+        "b1-andalusian-pentatonic",
+        "b2-borrowed-minor-pentatonic",
+        "far-shore-pentatonic",
+        "far-shore-ungoverned-control",
+        "c3b-major-mode-triangle"
+      ],
+      "threshold": 0.9
+    },
+    "B4bCarried": {
+      "pass": true
+    },
+    "B4cCarried": {
+      "controlAgreements": 6,
+      "controlComparisons": 6,
+      "diagnosticOnly": true,
+      "governedAgreements": 6,
+      "governedComparisons": 6
+    },
+    "B4dCarried": {
+      "pass": true
+    },
+    "carried": {
+      "A": true,
+      "B1": true,
+      "B2": true,
+      "B3": true,
+      "C1": true,
+      "C2": true,
+      "C3a": true,
+      "C3b": true,
+      "D": true
+    }
+  },
+  "carriedFromMVP81": {
+    "directive": "MVP8.1-DIR-1",
+    "outcome": "DEFER",
+    "primaryStemLaw3": "PASS",
+    "taskBReceiptSha256": "043a96f52963a2632dbbfb904d1215dd95fefd1e35e8f0ed9c8f6eaea336ee2e",
+    "taskEReceiptSha256": "09090c573eb2b08a603feff2fa65b8f6b14a3c74c63a05a5857581229077fde6"
+  },
+  "directive": "MVP8.1b-DIR-1",
+  "earGate": {
+    "q9Question": "PENDING_HUMAN",
+    "q9Verdict": "not sure but they all sound good",
+    "sha256": "63cb3155da1402d969ce2ade171bde6d8563ebff26b4246de725ceb8d85fb0ce",
+    "signedAt": "19:14:10 PM",
+    "signedBy": "Erick",
+    "status": "SIGNED_HUMAN"
+  },
+  "excludedStems": [
+    {
+      "label": "c1-aeolian-harmonic-minor",
+      "reason": "excluded: officeCount 1 < 2 or bars 2 < 3"
+    },
+    {
+      "label": "d-borrowed_connector-arc",
+      "reason": "excluded: officeCount 1 < 2 or bars 8 < 3"
+    },
+    {
+      "label": "d-borrowed_connector-pure",
+      "reason": "excluded: officeCount 1 < 2 or bars 6 < 3"
+    },
+    {
+      "label": "d-naked_fifth_stack-arc",
+      "reason": "excluded: officeCount 1 < 2 or bars 8 < 3"
+    },
+    {
+      "label": "d-naked_fifth_stack-pure",
+      "reason": "excluded: officeCount 1 < 2 or bars 6 < 3"
+    },
+    {
+      "label": "d-native_class_dwell-arc",
+      "reason": "excluded: officeCount 1 < 2 or bars 8 < 3"
+    },
+    {
+      "label": "d-native_class_dwell-pure",
+      "reason": "excluded: officeCount 1 < 2 or bars 6 < 3"
+    }
+  ],
+  "fences": {
+    "bipartitePlanningEvidenceOnly": true,
+    "landingSeparateAuthorization": true,
+    "llmCalls": 0,
+    "noEngineByteChange": true,
+    "noLookupByteChange": true,
+    "noNewListening": true,
+    "noNewRenders": true,
+    "repoReadOnly": true
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+  "openingHead": "d1b2286a5b6f3783af24094eb78e40ab511bb8e5",
+  "outcomes": {
+    "ADOPT_RUNTIME_READING": "B4a' PASS and B4b/B4d carried PASS and ear signed",
+    "DEFER": "B4a' fails",
+    "KEEP_EVIDENCE_ONLY": "a carried hard check fails"
+  },
+  "preExecutionCorrection": {
+    "at": "before any MVP8.1b measurement",
+    "from": "B4a: office-deconfounded r(lead-stem log-centroid, bar pcSum) >= 0.90 on all 12 stems",
+    "reason": "the MVP8.1 pcSum proxy is degenerate when office deconfounding has zero residual variance (single-office or two-bar stems) and pcSum is a coarse lead-tracking signal; the MVP8.1 result is not amended retroactively",
+    "thresholdsChanged": false,
+    "to": "B4a': office-deconfounded r(lead-stem log-centroid, mean emitted pc) >= 0.90 on scored stems with >=2 offices and >=3 bars"
+  },
+  "revision": 1,
+  "schemaVersion": "governed-loop.mvp8_1b-predeclared-bets.v1",
+  "scoredStemRule": {
+    "metric": "mean emitted pc",
+    "minBars": 3,
+    "minOffices": 2,
+    "threshold": 0.9
+  },
+  "scoredStems": [
+    "b1-andalusian-pentatonic",
+    "b2-borrowed-minor-pentatonic",
+    "far-shore-pentatonic",
+    "far-shore-ungoverned-control",
+    "c3b-major-mode-triangle"
+  ],
+  "status": "locked-before-evaluation"
+}

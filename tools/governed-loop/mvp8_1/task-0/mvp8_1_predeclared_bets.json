@@ -1,0 +1,109 @@
+{
+  "bets": {
+    "B4a_stemSelfTracking": {
+      "appliesTo": "all 12 lead stems",
+      "passRule": "office-deconfounded r(lead-stem log-centroid, lead pcSum) >= 0.90 on every stem",
+      "threshold": 0.9
+    },
+    "B4b_stemLaw3": {
+      "control": "task-b/traces/far-shore-ungoverned-control.jsonl",
+      "diagnostic": "ungoverned margin is reported; it is expected positive for a stem",
+      "passRule": "governed (r_lead - r_container) > 0 AND governed margin >= ungoverned margin",
+      "source": "task-b/traces/far-shore-pentatonic.jsonl"
+    },
+    "B4c_directionalDiagnostic": {
+      "appliesTo": "full-mix Far Shore governed and ungoverned",
+      "measure": "sign(\u0394 log-centroid) vs sign(\u0394 office registerOffset) across adjacent sections",
+      "passRule": "report-only; cannot force DEFER"
+    },
+    "B4d_stemIntegrity": {
+      "passRule": "all stems mono 16-bit 44.1 kHz, two-pass deterministic, 0 clipped, 0 non-finite"
+    },
+    "carried": {
+      "A": true,
+      "B1": true,
+      "B2": true,
+      "B3": true,
+      "C1": true,
+      "C2": true,
+      "C3a": true,
+      "C3b": true,
+      "D": true
+    }
+  },
+  "carriedFromMVP8": {
+    "directive": "MVP8-DIR-1",
+    "failingBet": "B4",
+    "mvp8TaskEReceiptSha256": "dfdbb8fc3a3a2c3170721fe50f16f4861bc60877c3de86bdbe81f8c2783900e8",
+    "outcome": "DEFER",
+    "passing": [
+      "A",
+      "B1",
+      "B2",
+      "B3",
+      "C1",
+      "C2",
+      "C3a",
+      "C3b",
+      "D"
+    ],
+    "revision": 2
+  },
+  "directive": "MVP8.1-DIR-1",
+  "earGate": {
+    "note": "The signed verdict is human-authored; the q9Question field retains the framework placeholder.",
+    "q9Question": "PENDING_HUMAN",
+    "q9Verdict": "not sure but they all sound good",
+    "sha256": "63cb3155da1402d969ce2ade171bde6d8563ebff26b4246de725ceb8d85fb0ce",
+    "signedAt": "19:14:10 PM",
+    "signedBy": "Erick",
+    "status": "SIGNED_HUMAN"
+  },
+  "fences": {
+    "bipartitePlanningEvidenceOnly": true,
+    "earVerdictHumanAuthored": true,
+    "llmCalls": 0,
+    "noEngineByteChange": true,
+    "noLookupByteChange": true,
+    "noNewTraces": true,
+    "noRendererByteChange": true,
+    "repoReadOnly": true
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "layer": "SPEC-001 \u00a71.3 overlay dynamics",
+  "openingHead": "d1b2286a5b6f3783af24094eb78e40ab511bb8e5",
+  "outcomes": {
+    "ADOPT_RUNTIME_READING": "carried PASS and B4a/B4b/B4d PASS and ear signed",
+    "CONDITIONAL_ADOPT_RUNTIME_READING_PENDING_EAR": "carried PASS and B4a/B4b/B4d PASS and ear unsigned",
+    "DEFER": "B4a, B4b, or B4d fails",
+    "KEEP_EVIDENCE_ONLY": "B1 or B3 re-verification fails"
+  },
+  "revision": 1,
+  "schemaVersion": "governed-loop.mvp8_1-predeclared-bets.v1",
+  "status": "locked-before-evaluation",
+  "traces": [
+    "task-b/traces/b1-andalusian-pentatonic.jsonl",
+    "task-b/traces/b2-borrowed-minor-pentatonic.jsonl",
+    "task-b/traces/far-shore-pentatonic.jsonl",
+    "task-b/traces/far-shore-ungoverned-control.jsonl",
+    "task-c/traces/c1-aeolian-harmonic-minor.jsonl",
+    "task-c/traces/c3b-major-mode-triangle.jsonl",
+    "task-d/traces/d-borrowed_connector-arc.jsonl",
+    "task-d/traces/d-borrowed_connector-pure.jsonl",
+    "task-d/traces/d-naked_fifth_stack-arc.jsonl",
+    "task-d/traces/d-naked_fifth_stack-pure.jsonl",
+    "task-d/traces/d-native_class_dwell-arc.jsonl",
+    "task-d/traces/d-native_class_dwell-pure.jsonl"
+  ]
+}
