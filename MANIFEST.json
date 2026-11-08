@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0",
   "generatedAt": "2026-10-13T00:00:00.000Z",
-  "fileCount": 1894,
-  "totalBytes": 299622436,
+  "fileCount": 1960,
+  "totalBytes": 300627676,
   "files": [
     {
       "path": ".env.example",
@@ -278,17 +278,17 @@
     {
       "path": "canonical/fivefold-incubator/fifth-space-census-v0.json",
       "bytes": 194194,
-      "sha256": "a66494b325c8eee16c4e04dabeabb233d4f5e6a796030ca7449ead9144f62744"
+      "sha256": "640f8d47f403236d9cff8e1f6b49a5c38a9bce1f432dd7bbf19a137f5a856899"
     },
     {
       "path": "canonical/fivefold-incubator/shadow-ladder-v0.json",
       "bytes": 3927,
-      "sha256": "ed8c4bed2468d185cfbfc6f6250ce6974a2ad3bb0b6fc8bb51625d74b5a6c227"
+      "sha256": "654c651ea7e16c622291cd4fb5acb5b5b0d56f5df99a1d9aa8a4a24110f35137"
     },
     {
       "path": "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
       "bytes": 12645,
-      "sha256": "0e733636a31d29a5b5096fe17c903901ca95753086f320d933a37cbd60c49446"
+      "sha256": "53a0cbe739a98f5ee893c7a9efc4d241bf0a7a7cbf98ecc134aec92efd4fa48d"
     },
     {
       "path": "canonical/gov-210-availability-housing.json",
@@ -664,6 +664,11 @@
       "path": "docs/specs/governs-derivability-candidate-v0.1.0.md",
       "bytes": 29677,
       "sha256": "f56f98e1ad0d0c5471d3ff76b3fab9338c217e06ed1a114b3c9a03c19170450a"
+    },
+    {
+      "path": "docs/specs/ledger-formal-definition-v0.1.0.md",
+      "bytes": 5457,
+      "sha256": "c7617cc6853b426078f0fa9688a876478155a3ceb56d4229237b6d265235aa33"
     },
     {
       "path": "docs/specs/phase-extended-topology-candidate-v0.1.0.md",
@@ -1608,7 +1613,7 @@
     {
       "path": "orrery/src/generated/d-tier-taxonomy-dataset.v1.json",
       "bytes": 66006,
-      "sha256": "e7aa6fda08d2d8ae99abb79ef1231ae386661ed49a63491cd656cfea9506ce6a"
+      "sha256": "e81dd05d1168c1f9f50fc3b4d1672408395e08115c6de34baa8dbd4f3b6fdd65"
     },
     {
       "path": "orrery/src/generated/d4-14v14-hunt.v1.json",
@@ -1648,7 +1653,7 @@
     {
       "path": "orrery/src/generated/field-derivation-bundle.v1.json",
       "bytes": 2783,
-      "sha256": "8a9036a07d5d86ffdee0346dc31b642557f2f0f3b5ffbc1ad38d6d6c490f1e2d"
+      "sha256": "c446b90957f236f065acff2b1e5ed8ba52fc7f118ed08b3230c9f915e3dba349"
     },
     {
       "path": "orrery/src/generated/legal-moves.v2.json",
@@ -1683,7 +1688,7 @@
     {
       "path": "orrery/src/generated/taxonomy-read-model.v1.json",
       "bytes": 664518,
-      "sha256": "6f91c4c50cc787b365f141ab8582fdc3a4dd7320ca38fed6396894560c4a722b"
+      "sha256": "f9cc9694c8d9a35853a0b324e228d2657a6432ed3110d34fc2fa348cff462d78"
     },
     {
       "path": "orrery/src/golden-path-catalog.test.ts",
@@ -1907,8 +1912,8 @@
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
-      "bytes": 417658,
-      "sha256": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7"
+      "bytes": 426743,
+      "sha256": "b800cc402db2c9e40c4fe44f10a79f0dcf6ba635effd8083ecc3791c91631d40"
     },
     {
       "path": "provenance/EVIDENCE_BINDING_CONVENTION.md",
@@ -2093,7 +2098,7 @@
     {
       "path": "qa/fifth-space-census-validation.json",
       "bytes": 16323,
-      "sha256": "806ef7e5e6aed5310e3fe8963064c7bfa2e441c7d2a6d6aa659ec375899f8597"
+      "sha256": "df6cb02f553471cb3df598811cb41c6e6662463afc07c5fe67488d6884a85155"
     },
     {
       "path": "qa/fivefold-capability-teleology-validation.json",
@@ -2103,7 +2108,7 @@
     {
       "path": "qa/fivefold-engine-promotion-evidence.json",
       "bytes": 23220,
-      "sha256": "51d47b23e1f073ad0f6b5376235140262a60f6589a550ebd2594f7ce24422e01"
+      "sha256": "dbebdf75a9f030e74ef66c41defb98f0b047a9a8c9ebcc820f84d83e430eb824"
     },
     {
       "path": "qa/gov-208-vault-context-validation.json",
@@ -2846,6 +2851,61 @@
       "sha256": "719d373c4324d03f6ec49c0fde018038c3d2621a8cd13bb4edda39c6cc3aa0b4"
     },
     {
+      "path": "qa/mvp8_2_ear_scorecard.json",
+      "bytes": 1219,
+      "sha256": "64b0bd1ac1a2f962533fc67b66f13e441194952e80ddcfa679b93747bfc2a0a7"
+    },
+    {
+      "path": "qa/mvp8_2_ear_scorecard_pre_audition.json",
+      "bytes": 1272,
+      "sha256": "1ffab47ffc30c97b3c2bba4c97f6b667ebbb4477f05ff63fa4a9cfe3892b0c3e"
+    },
+    {
+      "path": "qa/mvp8_2_landing_receipt.json",
+      "bytes": 44538,
+      "sha256": "90f96013c0c802c0491740a4abc364192cda54e484aa416446c63aad2f766356"
+    },
+    {
+      "path": "qa/mvp8_2_task_0_receipt.json",
+      "bytes": 18935,
+      "sha256": "05166d53836d7d4aa12b24485bfe2f162e7cb919f8f8dc25be604f9a91d5a233"
+    },
+    {
+      "path": "qa/mvp8_2_task_a_receipt.json",
+      "bytes": 50149,
+      "sha256": "e384d3e48488d180277c989f820eae797472dafdc3e32413de871a71ddbef11f"
+    },
+    {
+      "path": "qa/mvp8_2_task_b_receipt.json",
+      "bytes": 5740,
+      "sha256": "6078260313d0cc86664875aae06ea3610691772015e61c81fd13a1737f63514a"
+    },
+    {
+      "path": "qa/mvp8_2_task_d_receipt.json",
+      "bytes": 112637,
+      "sha256": "288d76a41b64393a88dfc12040413d365fa10a8962a8a5ebd65f22aaa41f1684"
+    },
+    {
+      "path": "qa/mvp8_2_task_e_receipt.json",
+      "bytes": 7654,
+      "sha256": "081c1f85d1c7f77cb706842d5027e4550a87b6fde7ebad5d1571ba52ab6130d8"
+    },
+    {
+      "path": "qa/mvp8_2b_task_0_receipt.json",
+      "bytes": 7426,
+      "sha256": "3c91df7ea3ee80a2a7573bb4dea03daf6c5f80bd828f702ff0bb20c1251a1a45"
+    },
+    {
+      "path": "qa/mvp8_2b_task_a_receipt.json",
+      "bytes": 13174,
+      "sha256": "55aaa3306efe22f9dea9367c9333e51812154d56bfaa1c9acdd91ce31ca71765"
+    },
+    {
+      "path": "qa/mvp8_2b_task_e_receipt.json",
+      "bytes": 4274,
+      "sha256": "ac7e61a1bbe518ad3c5006107d6d3448b1e1790798d7cb2d1c2721235f02fe41"
+    },
+    {
       "path": "qa/mvp8_task_0_receipt.json",
       "bytes": 18536,
       "sha256": "f76007466f51a43cb973b11e928613dd8f64f72544e87df5f4889723334af37b"
@@ -2918,7 +2978,7 @@
     {
       "path": "qa/pentatonic-binding-audit-closure.json",
       "bytes": 4552,
-      "sha256": "6070b1fec7c087050fe7888cbdd1ffe2f146bcbd2ce8554897fb763f3de1831d"
+      "sha256": "9b7e2555d56f454d667677228de033edf9405c402eca64d18d686aab1cf565b4"
     },
     {
       "path": "qa/pentatonic-binding-audit-neo4j-validation.json",
@@ -2948,7 +3008,7 @@
     {
       "path": "qa/shadow-ladder-validation.json",
       "bytes": 5382,
-      "sha256": "d33d20e3177f4c4b6f6cf92cc2f942296393c9651e6e981e776af22d21c0d170"
+      "sha256": "f0d0adefda954c793d0b40a9f27832e34bc71bb160902b62d26e14131b6952e1"
     },
     {
       "path": "qa/specs/bl-011-correspondence-admission.json",
@@ -3098,7 +3158,7 @@
     {
       "path": "qa/twin-hub-convergence-validation.json",
       "bytes": 5369,
-      "sha256": "4e36cb6d48c33d5c0e67084cf305292470eb21cbbfcddc0cfd562bcb8764d3d0"
+      "sha256": "240e375fa697f518bb9d14fb22cf5f807767ba5d10d151c66786f45d19216120"
     },
     {
       "path": "requirements-orrery-dev.txt",
@@ -4202,8 +4262,8 @@
     },
     {
       "path": "scripts/validate-validation-prose-consistency.mjs",
-      "bytes": 15122,
-      "sha256": "15edc1ec5a188c9acd8ea431bf72460101994fe110f3bb08a28b17a66691d66d"
+      "bytes": 15492,
+      "sha256": "aecf750a8e9262d6ba89feb19389afa5f9caf78f7f1f682b59795cedfa8696a2"
     },
     {
       "path": "scripts/validate-vault-context.mjs",
@@ -5099,6 +5159,26 @@
       "path": "scrum/plan/mvp8-1b-proposed-amendment-spec-001-s1-3.md",
       "bytes": 2708,
       "sha256": "8dad1bc051947e72e388315464987b0e1e5f5271dcd8a53ea764894826b0f36b"
+    },
+    {
+      "path": "scrum/plan/mvp8-2-obs-ledger-closing-report.md",
+      "bytes": 6905,
+      "sha256": "8168ea29a42a406fa877f34bd540db683cfefe74441d230bb23ac44ea46645c2"
+    },
+    {
+      "path": "scrum/plan/mvp8-2-obs-ledger-dir-1-rev2.md",
+      "bytes": 8719,
+      "sha256": "a59d24d5d793c900f8e0f5fcacb64b09de2d9ddb286fc8f54302b5bbcf12b7e7"
+    },
+    {
+      "path": "scrum/plan/mvp8-2b-scope-closing-report.md",
+      "bytes": 3545,
+      "sha256": "f1a796cbdfb9dbb7e3b4d632f3e94fe678a7e914db607e8e620f1c92425ce101"
+    },
+    {
+      "path": "scrum/plan/mvp8-2b-scope-dir-1-rev1.md",
+      "bytes": 5713,
+      "sha256": "a1967e3720c0ed9942f599e80f73a975289b0d076489834e2a6585f67a1b8dcd"
     },
     {
       "path": "scrum/plan/mvp8-dir-1-rev2.md",
@@ -9289,6 +9369,256 @@
       "path": "tools/governed-loop/mvp8_1b/task-e/mvp8_1b_task_e.py",
       "bytes": 17873,
       "sha256": "92f13dc8e32f76caa2e2a6647732559433d5908a65ffdadbdbae372837af0373"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/mvp8_2_affordance_census.json",
+      "bytes": 7051,
+      "sha256": "42bf04fff162d733354a52d1706b0c5343271993c36706086f1bdefee04e7f5e"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/mvp8_2_common.py",
+      "bytes": 7614,
+      "sha256": "2be919d04f6f89b3f8452f6b04324459578cbe623df46d7663f8140138ac65d6"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/mvp8_2_ear_manifest.json",
+      "bytes": 5769,
+      "sha256": "322227f74c647ac1110f80884abfe46eb0ced7ff166cec9a51fd786cdb528511"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/mvp8_2_ear_manifest_pre_audition.json",
+      "bytes": 5448,
+      "sha256": "51e0857ff8c1ce8ca2b8eda437ba37627902871556351c3beb659fc0043062cc"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/mvp8_2_predeclared_bets.json",
+      "bytes": 31899,
+      "sha256": "5185e878be5ef87d797174aff26cf9527c3332aefb0fc641afd1a8d504b8b3ad"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/mvp8_2b_predeclared_bets.json",
+      "bytes": 13865,
+      "sha256": "7cd32eb6fc058aeced65656c54099ddf728222b32e76a8876b8783c28c6d59c5"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/node_observatory.py",
+      "bytes": 19313,
+      "sha256": "91744aaabb13b5b44029b7c0d28f13c6266d90353426d2eed601d2ed3b2a9af9"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/node_observatory_engine.py",
+      "bytes": 29682,
+      "sha256": "b4507765a75e82e5680a76b60b34e0e22423ae5fdd24519dae3872a77cf80270"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-bare.jsonl",
+      "bytes": 21468,
+      "sha256": "fb8d0e34b4d2135efc5d2a47025bce372cb7423514656013ab2335ff8cbb2af1"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-bare_receipt.json",
+      "bytes": 5083,
+      "sha256": "a1f4d450e76a49bc06029f32e8c10c978f24e7774929f036b5f5bd68de7ab35c"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-bare_session_sheet.md",
+      "bytes": 1666,
+      "sha256": "d7b9d46bfbe65473bf9076c89c523998bb7343881bbb0d0b833fd62ec1d7ecc6"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-full.jsonl",
+      "bytes": 21468,
+      "sha256": "5da2ada0eacf2dbfd021d9507158dfaa8700b14a96c4f3b85fe489fc3e817407"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-full_receipt.json",
+      "bytes": 8372,
+      "sha256": "f10fe16c158836cd273f937e7d9b49daee7a524fa3db748fa6147cf7c1818123"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-full_session_sheet.md",
+      "bytes": 2256,
+      "sha256": "a3717580ce09384a1c907cc9712527d7df32b0798e311f97c050f3dbe7b32238"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-ninth_drop5.jsonl",
+      "bytes": 21636,
+      "sha256": "6cf2487cc9b10d88bf03630a749e9e427dcbb22975d7057a2472db2a48184381"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-ninth_drop5_receipt.json",
+      "bytes": 7254,
+      "sha256": "4dd708b971e37297e9e9e30fe65ca1de0d0390f326ee56a83e56f6db7bd8808f"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-ninth_drop5_session_sheet.md",
+      "bytes": 2264,
+      "sha256": "a697303bd447c125900cb1284c22493b4f06196601d679e182f222f4bf21f188"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-rootless_13th.jsonl",
+      "bytes": 21684,
+      "sha256": "c414934080d259de8a9595ae5601e5c345d3ebb59bc8cfee4fb56cfbad76f58f"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-rootless_13th_receipt.json",
+      "bytes": 7120,
+      "sha256": "90c011285de37ecce71660273ebe7beb885e4bd2b06784371fce3eff8ef5f73a"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-rootless_13th_session_sheet.md",
+      "bytes": 2269,
+      "sha256": "54522fcd5a603aa49e8215d3c20382536009a017038975a89e1ed2351dfa35e0"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-seventh.jsonl",
+      "bytes": 21540,
+      "sha256": "fad6bcf587d80f2aa550fe9643239578448bfa947febb8efd9739b427e51c529"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-seventh_receipt.json",
+      "bytes": 5113,
+      "sha256": "c7657d5dffa251063b8da288dabd8bc8c7d4691b2081382aa68d8713ce4f8c8c"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-seventh_session_sheet.md",
+      "bytes": 1684,
+      "sha256": "4d13ca77f832b79a5e21b20b99ef0ce28dea55261b8d4eee0a66e82c65c1fa0b"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-shell.jsonl",
+      "bytes": 21492,
+      "sha256": "f8afcc5283ab43eee0951c36ddc67107a881e114e02a37fea239ff6ec786be1c"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-shell_receipt.json",
+      "bytes": 7147,
+      "sha256": "7c7303b4f85517548947a8482c2cba5b0bc5e2aeff2fc9830cc53e44a9e9a59d"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-shell_session_sheet.md",
+      "bytes": 2232,
+      "sha256": "31f64f6219e40a27a79996e10f593b67b88a4d4b22a1449ee0d78097eb439510"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-triad.jsonl",
+      "bytes": 21492,
+      "sha256": "413847357566169c47536b87182751437f88ba61ee15e2422da62b2cd99ced1f"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-triad_9.jsonl",
+      "bytes": 21540,
+      "sha256": "a1e5c24928ce5b4ccd97ecb740d560062d66b868d49651b6e0a6edd7b4155b63"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-triad_9_receipt.json",
+      "bytes": 5113,
+      "sha256": "ae3b85ff2d69aab9606b973027b3897aec3062b588db63ae45fe3bf30dbb0f96"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-triad_9_session_sheet.md",
+      "bytes": 1684,
+      "sha256": "e174eb37d7ab4146e52a312a0cfed57e0ad17e7a8aa305bb3b43da6ceb72e13f"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-triad_receipt.json",
+      "bytes": 5093,
+      "sha256": "4b792a5ed61a061e69be8499b1f5d3bf6503ddb1a2f04404a80ead2efd51ee13"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p1-2677-triad_session_sheet.md",
+      "bytes": 1672,
+      "sha256": "44a606d924b8e6b44924fba1c2d2c8a70a5ae9fe2730a6a59d4aba7db9eae1be"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p2-p2a-triangle.jsonl",
+      "bytes": 55426,
+      "sha256": "fb4bce20d96a31250f679d1d71c5cc7c93e1e09b1bbfa1f3c7501abc0d2f661e"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p2-p2a-triangle_receipt.json",
+      "bytes": 15358,
+      "sha256": "161db730f27e9a9e526e4b79ab7d58238c7c79d4c2e1c1162d9661580bc3fb26"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p2-p2a-triangle_session_sheet.md",
+      "bytes": 3219,
+      "sha256": "66c976933718962839fac7fa266a84f5dbed7c2ac435a30dc8816c9f2ed2048a"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p2-p2b-triangle.jsonl",
+      "bytes": 55426,
+      "sha256": "0e9e634967be6e0403e80b8f4adbf0ace7d44190af54f72e910f042665471d09"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p2-p2b-triangle_receipt.json",
+      "bytes": 15107,
+      "sha256": "584b97cd38e4f5879c9cc6496c97aa17052da478ec78b7b55a42b4e6343e919c"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p2-p2b-triangle_session_sheet.md",
+      "bytes": 3192,
+      "sha256": "0a4e151143e1d679eda4e63dd548850f644dfd53d5a9bf57a5d67f4e3be8e60a"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p2-p2c-triangle.jsonl",
+      "bytes": 55426,
+      "sha256": "5f3f08815784bf9d7d8450681911dcf92e405bf3f9e6576fbe86026c122f2647"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p2-p2c-triangle_receipt.json",
+      "bytes": 17025,
+      "sha256": "6543fa5ac1c460b61bd9cf5f51a43986d2d58ea11ad17f690c03dbf60a7c948a"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p2-p2c-triangle_session_sheet.md",
+      "bytes": 3222,
+      "sha256": "75897e7405f6aa56ee0584fce0d8cd83465d70f758ad103ce2d0084fe1fbefb1"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p3-forcing-governed.jsonl",
+      "bytes": 31802,
+      "sha256": "b3ffe09b7938e3f5a18609aa73fa7839314b6a2d61c42a1d686b78e8295c1773"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p3-forcing-governed_receipt.json",
+      "bytes": 10739,
+      "sha256": "2b064bc2c924297e86e44b65ed72b476a16ea56a58ed4458d8e986273b3e01fe"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p3-forcing-governed_session_sheet.md",
+      "bytes": 2500,
+      "sha256": "40b136b654455d9393d4077ef2af06279c2e0869a1e379ce7739f2d5778fc1f4"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p3-forcing-naked.jsonl",
+      "bytes": 30612,
+      "sha256": "6d0a76e80be9b565883817a6516f9f3294bdbd0cde67c65dbea4c4ebf4afd48f"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p3-forcing-naked_receipt.json",
+      "bytes": 9388,
+      "sha256": "416b7dfd03c2ccc27aac2594c0fdee3017bdb593a844fb0788685953a22c9eea"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/p3-forcing-naked_session_sheet.md",
+      "bytes": 2319,
+      "sha256": "3462a9432f4e3ac3c1581e0056da9a43a3315a351261ecd68e25fd6d70c0d3e5"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/smoke-2677-shell.jsonl",
+      "bytes": 21564,
+      "sha256": "d4805fd406bf169b20c97f526906bedf0d2357a9ac0959f1afda696b850aa478"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/smoke-2677-shell_receipt.json",
+      "bytes": 4885,
+      "sha256": "ce61deee846aa2a9a619378320d1bbde4cb28ab2d00e784acbf6be7256f7bd98"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/smoke-2677-shell_session_sheet.md",
+      "bytes": 2235,
+      "sha256": "14bc83b84ee311a51ba38992af84dd042244fa47b327968c575e717002c29c96"
     },
     {
       "path": "tools/governed-loop/orrery_nav_bridge.py",

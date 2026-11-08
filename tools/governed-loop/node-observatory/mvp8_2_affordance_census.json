@@ -1,0 +1,422 @@
+{
+  "census": {
+    "bareFailMasks": [
+      2677,
+      2869
+    ],
+    "barePass": 5,
+    "masks": {
+      "2485": {
+        "bare": true,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          8,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          8,
+          11
+        ],
+        "seventhInterval": 11,
+        "shell": true,
+        "thirdInterval": 4,
+        "triad": true
+      },
+      "2677": {
+        "bare": false,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          6,
+          9,
+          11
+        ],
+        "missingPc": [
+          7
+        ],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          6,
+          9,
+          11
+        ],
+        "seventhInterval": 11,
+        "shell": true,
+        "thirdInterval": 4,
+        "triad": false
+      },
+      "2739": {
+        "bare": true,
+        "delta": [
+          0,
+          1,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          1,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "seventhInterval": 11,
+        "shell": true,
+        "thirdInterval": 4,
+        "triad": true
+      },
+      "2741": {
+        "bare": true,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "seventhInterval": 11,
+        "shell": true,
+        "thirdInterval": 4,
+        "triad": true
+      },
+      "2745": {
+        "bare": true,
+        "delta": [
+          0,
+          3,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          3,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "seventhInterval": 11,
+        "shell": true,
+        "thirdInterval": 4,
+        "triad": true
+      },
+      "2869": {
+        "bare": false,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          8,
+          9,
+          11
+        ],
+        "missingPc": [
+          7
+        ],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          8,
+          9,
+          11
+        ],
+        "seventhInterval": 11,
+        "shell": true,
+        "thirdInterval": 4,
+        "triad": false
+      },
+      "3253": {
+        "bare": true,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          10,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          10,
+          11
+        ],
+        "seventhInterval": 11,
+        "shell": true,
+        "thirdInterval": 4,
+        "triad": true
+      }
+    },
+    "reproduced": true,
+    "shellPass": 7,
+    "triadFailMasks": [
+      2677,
+      2869
+    ],
+    "triadPass": 5
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + governance ledger specification",
+    "ledgerDefinitionStatus": "proposed",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "predeclared": {
+    "bareFailMasks": [
+      2677,
+      2869
+    ],
+    "barePass": 5,
+    "masks": {
+      "2485": {
+        "bare": true,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          8,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          8,
+          11
+        ],
+        "seventhPc": 11,
+        "shell": true,
+        "thirdPc": 4,
+        "triad": true
+      },
+      "2677": {
+        "bare": false,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          6,
+          9,
+          11
+        ],
+        "missingPc": [
+          7
+        ],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          6,
+          9,
+          11
+        ],
+        "seventhPc": 11,
+        "shell": true,
+        "thirdPc": 4,
+        "triad": false
+      },
+      "2739": {
+        "bare": true,
+        "delta": [
+          0,
+          1,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          1,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "seventhPc": 11,
+        "shell": true,
+        "thirdPc": 4,
+        "triad": true
+      },
+      "2741": {
+        "bare": true,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "seventhPc": 11,
+        "shell": true,
+        "thirdPc": 4,
+        "triad": true
+      },
+      "2745": {
+        "bare": true,
+        "delta": [
+          0,
+          3,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          3,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "seventhPc": 11,
+        "shell": true,
+        "thirdPc": 4,
+        "triad": true
+      },
+      "2869": {
+        "bare": false,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          8,
+          9,
+          11
+        ],
+        "missingPc": [
+          7
+        ],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          8,
+          9,
+          11
+        ],
+        "seventhPc": 11,
+        "shell": true,
+        "thirdPc": 4,
+        "triad": false
+      },
+      "3253": {
+        "bare": true,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          10,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          10,
+          11
+        ],
+        "seventhPc": 11,
+        "shell": true,
+        "thirdPc": 4,
+        "triad": true
+      }
+    },
+    "reproduced": true,
+    "shellPass": 7,
+    "triadFailMasks": [
+      2677,
+      2869
+    ],
+    "triadPass": 5
+  },
+  "schemaVersion": "governed-loop.mvp8_2-affordance-census.v1"
+}

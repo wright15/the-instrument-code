@@ -1,0 +1,1318 @@
+{
+  "a2Premise": {
+    "canonical/fivefold-incubator/fifth-space-census-v0.json": {
+      "bindings": [
+        {
+          "field": ".evidenceBindings.decisionLedgerSha256",
+          "value": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7"
+        }
+      ],
+      "match": true
+    },
+    "canonical/fivefold-incubator/shadow-ladder-v0.json": {
+      "bindings": [
+        {
+          "field": ".evidenceBindings.decisionLedgerSha256",
+          "value": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7"
+        }
+      ],
+      "match": true
+    },
+    "canonical/fivefold-incubator/twin-hub-convergence-v0.json": {
+      "bindings": [
+        {
+          "field": ".evidenceBindings.decisionLedgerSha256",
+          "value": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7"
+        }
+      ],
+      "match": true
+    },
+    "qa/fivefold-engine-promotion-evidence.json": {
+      "bindings": [
+        {
+          "field": ".decisionLedgerSha256",
+          "value": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7"
+        }
+      ],
+      "match": true
+    },
+    "qa/pentatonic-binding-audit-closure.json": {
+      "bindings": [
+        {
+          "field": ".evidenceBindings.decisionLedgerSha256",
+          "value": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7"
+        },
+        {
+          "field": ".checks[4].diagnostic.decisionLedgerSha256",
+          "value": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7"
+        }
+      ],
+      "match": true
+    }
+  },
+  "anchors": {
+    "150": {
+      "actual": "        if cm == nm and cp == np_:",
+      "expected": "        if cm == nm and cp == np_:",
+      "match": true
+    },
+    "151": {
+      "actual": "            if self.gov_root[cm] is None:",
+      "expected": "            if self.gov_root[cm] is None:",
+      "match": true
+    },
+    "152": {
+      "actual": "                checks[\"boundary_endpoint\"] = True",
+      "expected": "                checks[\"boundary_endpoint\"] = True",
+      "match": true
+    },
+    "153": {
+      "actual": "                checks[\"same_family\"] = False",
+      "expected": "                checks[\"same_family\"] = False",
+      "match": true
+    },
+    "154": {
+      "actual": "                return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "expected": "                return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "match": true
+    },
+    "169": {
+      "actual": "        same_root = cr is not None and nr is not None and cr == nr",
+      "expected": "        same_root = cr is not None and nr is not None and cr == nr",
+      "match": true
+    },
+    "171": {
+      "actual": "        if same_root and cp == np_:",
+      "expected": "        if same_root and cp == np_:",
+      "match": true
+    },
+    "172": {
+      "actual": "            return \"ACCEPT\", [], checks, None",
+      "expected": "            return \"ACCEPT\", [], checks, None",
+      "match": true
+    },
+    "183": {
+      "actual": "        if checks[\"boundary_endpoint\"]:",
+      "expected": "        if checks[\"boundary_endpoint\"]:",
+      "match": true
+    },
+    "184": {
+      "actual": "            return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "expected": "            return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "match": true
+    },
+    "733": {
+      "actual": "        plan[\"dwellMs\"] = int(__import__(\"os\").environ.get(\"ORRERY_BRIDGE_DWELL_MS\", \"1500\"))",
+      "expected": "        plan[\"dwellMs\"] = int(__import__(\"os\").environ.get(\"ORRERY_BRIDGE_DWELL_MS\", \"1500\"))",
+      "match": true
+    }
+  },
+  "b3Census": {
+    "bareFailMasks": [
+      2677,
+      2869
+    ],
+    "barePass": 5,
+    "masks": {
+      "2485": {
+        "bare": true,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          8,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          8,
+          11
+        ],
+        "seventhPc": 11,
+        "shell": true,
+        "thirdPc": 4,
+        "triad": true
+      },
+      "2677": {
+        "bare": false,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          6,
+          9,
+          11
+        ],
+        "missingPc": [
+          7
+        ],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          6,
+          9,
+          11
+        ],
+        "seventhPc": 11,
+        "shell": true,
+        "thirdPc": 4,
+        "triad": false
+      },
+      "2739": {
+        "bare": true,
+        "delta": [
+          0,
+          1,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          1,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "seventhPc": 11,
+        "shell": true,
+        "thirdPc": 4,
+        "triad": true
+      },
+      "2741": {
+        "bare": true,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "seventhPc": 11,
+        "shell": true,
+        "thirdPc": 4,
+        "triad": true
+      },
+      "2745": {
+        "bare": true,
+        "delta": [
+          0,
+          3,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          3,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "seventhPc": 11,
+        "shell": true,
+        "thirdPc": 4,
+        "triad": true
+      },
+      "2869": {
+        "bare": false,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          8,
+          9,
+          11
+        ],
+        "missingPc": [
+          7
+        ],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          8,
+          9,
+          11
+        ],
+        "seventhPc": 11,
+        "shell": true,
+        "thirdPc": 4,
+        "triad": false
+      },
+      "3253": {
+        "bare": true,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          10,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          10,
+          11
+        ],
+        "seventhPc": 11,
+        "shell": true,
+        "thirdPc": 4,
+        "triad": true
+      }
+    },
+    "reproduced": true,
+    "shellPass": 7,
+    "triadFailMasks": [
+      2677,
+      2869
+    ],
+    "triadPass": 5
+  },
+  "bets": {
+    "A1_prefixClosure": {
+      "method": "git log --reverse --format=%H -- provenance/DECISION_LEDGER.md; git show <commit>:provenance/DECISION_LEDGER.md per commit; consecutive byte-prefix identity; cross-check qa/ receipts",
+      "receiptCrossCheck": "before/after sha256 pairs resolved against enumerated states",
+      "scope": "every commit in git history that touched provenance/DECISION_LEDGER.md, enumerated by hash",
+      "threshold": 0
+    },
+    "A2_fixedPointTriple": {
+      "cascadeArtifacts": [
+        "canonical/fivefold-incubator/fifth-space-census-v0.json",
+        "canonical/fivefold-incubator/shadow-ladder-v0.json",
+        "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
+        "qa/pentatonic-binding-audit-closure.json",
+        "qa/fivefold-engine-promotion-evidence.json"
+      ],
+      "threshold": "5/5 bind to current ledger sha256",
+      "triple": [
+        "HEAD",
+        "MANIFEST.json sha256",
+        "DECISION_LEDGER.md sha256"
+      ]
+    },
+    "A3_regenerability": {
+      "method": "re-render landed traces with the pinned renderer; compare sha256 to qa/ receipts",
+      "samples": [
+        {
+          "kind": "mix",
+          "label": "c1-aeolian-harmonic-minor"
+        },
+        {
+          "kind": "mix",
+          "label": "c3b-major-mode-triangle"
+        },
+        {
+          "kind": "mix",
+          "label": "d-borrowed_connector-arc"
+        },
+        {
+          "kind": "mix",
+          "label": "d-native_class_dwell-pure"
+        },
+        {
+          "kind": "stems",
+          "label": "c1-aeolian-harmonic-minor"
+        }
+      ],
+      "threshold": "100% sha256 identity"
+    },
+    "B1_legality": {
+      "inversions": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "leadModes": [
+        "off",
+        "naked_q",
+        "governed",
+        "governed_dyads_downbeat",
+        "governed_dyads_structural",
+        "governed_dyads_alternating"
+      ],
+      "masks": [
+        671,
+        1387,
+        1453,
+        1715,
+        1717,
+        1749,
+        2477,
+        2485,
+        2677,
+        2739,
+        2741,
+        2745,
+        2765,
+        2773,
+        2869,
+        3253
+      ],
+      "threshold": {
+        "dyadUnisonLeaks": 0,
+        "outOfMaskLeadNotes": 0,
+        "outOfMaskPadNotes": 0
+      },
+      "treatments": [
+        "full",
+        "bare",
+        "shell",
+        "triad",
+        "triad_9",
+        "seventh",
+        "ninth_drop5",
+        "rootless_13th"
+      ]
+    },
+    "B2_scoreTrueMidi": {
+      "rule": "MIDI track 1 pitch-class set per bar == voiced WAV pad pitch-class set; track 1 note count == len(voicing)+1 (inversion bass); track 2 note count == singles + 2*dyads",
+      "threshold": "all rendered sessions"
+    },
+    "B3_a0MoonCensus": {
+      "expected": {
+        "bare": "5/7 fails 2677,2869 missing pc 7",
+        "shell": "7/7",
+        "triad": "5/7 fails 2677,2869 missing pc 7"
+      },
+      "masks": [
+        2485,
+        2677,
+        2739,
+        2741,
+        2745,
+        2869,
+        3253
+      ],
+      "measuredAtT0": {
+        "bareFailMasks": [
+          2677,
+          2869
+        ],
+        "barePass": 5,
+        "masks": {
+          "2485": {
+            "bare": true,
+            "delta": [
+              0,
+              2,
+              4,
+              5,
+              7,
+              8,
+              11
+            ],
+            "missingPc": [],
+            "pitchClasses": [
+              0,
+              2,
+              4,
+              5,
+              7,
+              8,
+              11
+            ],
+            "seventhPc": 11,
+            "shell": true,
+            "thirdPc": 4,
+            "triad": true
+          },
+          "2677": {
+            "bare": false,
+            "delta": [
+              0,
+              2,
+              4,
+              5,
+              6,
+              9,
+              11
+            ],
+            "missingPc": [
+              7
+            ],
+            "pitchClasses": [
+              0,
+              2,
+              4,
+              5,
+              6,
+              9,
+              11
+            ],
+            "seventhPc": 11,
+            "shell": true,
+            "thirdPc": 4,
+            "triad": false
+          },
+          "2739": {
+            "bare": true,
+            "delta": [
+              0,
+              1,
+              4,
+              5,
+              7,
+              9,
+              11
+            ],
+            "missingPc": [],
+            "pitchClasses": [
+              0,
+              1,
+              4,
+              5,
+              7,
+              9,
+              11
+            ],
+            "seventhPc": 11,
+            "shell": true,
+            "thirdPc": 4,
+            "triad": true
+          },
+          "2741": {
+            "bare": true,
+            "delta": [
+              0,
+              2,
+              4,
+              5,
+              7,
+              9,
+              11
+            ],
+            "missingPc": [],
+            "pitchClasses": [
+              0,
+              2,
+              4,
+              5,
+              7,
+              9,
+              11
+            ],
+            "seventhPc": 11,
+            "shell": true,
+            "thirdPc": 4,
+            "triad": true
+          },
+          "2745": {
+            "bare": true,
+            "delta": [
+              0,
+              3,
+              4,
+              5,
+              7,
+              9,
+              11
+            ],
+            "missingPc": [],
+            "pitchClasses": [
+              0,
+              3,
+              4,
+              5,
+              7,
+              9,
+              11
+            ],
+            "seventhPc": 11,
+            "shell": true,
+            "thirdPc": 4,
+            "triad": true
+          },
+          "2869": {
+            "bare": false,
+            "delta": [
+              0,
+              2,
+              4,
+              5,
+              8,
+              9,
+              11
+            ],
+            "missingPc": [
+              7
+            ],
+            "pitchClasses": [
+              0,
+              2,
+              4,
+              5,
+              8,
+              9,
+              11
+            ],
+            "seventhPc": 11,
+            "shell": true,
+            "thirdPc": 4,
+            "triad": false
+          },
+          "3253": {
+            "bare": true,
+            "delta": [
+              0,
+              2,
+              4,
+              5,
+              7,
+              10,
+              11
+            ],
+            "missingPc": [],
+            "pitchClasses": [
+              0,
+              2,
+              4,
+              5,
+              7,
+              10,
+              11
+            ],
+            "seventhPc": 11,
+            "shell": true,
+            "thirdPc": 4,
+            "triad": true
+          }
+        },
+        "reproduced": true,
+        "shellPass": 7,
+        "triadFailMasks": [
+          2677,
+          2869
+        ],
+        "triadPass": 5
+      }
+    },
+    "D1_preset1": {
+      "bars": 2,
+      "mode": "study",
+      "node": "2677@0",
+      "render": {
+        "outOfMaskLeadNotes": 0,
+        "outOfMaskPadNotes": 0,
+        "treatments": [
+          "full",
+          "shell",
+          "ninth_drop5",
+          "rootless_13th"
+        ]
+      },
+      "skip": {
+        "missingPc": [
+          7
+        ],
+        "treatments": [
+          "bare",
+          "triad",
+          "triad_9",
+          "seventh"
+        ]
+      }
+    },
+    "D2_preset2": {
+      "allHops": "ACCEPT",
+      "bet": "rubs(P2b) < rubs(P2c)",
+      "dwellFocalSwitches": 0,
+      "p2a": "rub count reported over primary+partner notes; no inequality bet",
+      "primary": "P2b vs P2c",
+      "rubDefinition": "incidences of (lead note, sounding pad pc) with circular interval in {1,11}"
+    },
+    "D3_preset3": {
+      "destinationSteps": 24,
+      "focalSwitches": 0,
+      "minDifferingSteps": 8,
+      "outOfMask": 0
+    }
+  },
+  "decisions": {
+    "D1": {
+      "chain": [
+        "requested",
+        "seventh",
+        "shell",
+        "triad",
+        "dyad_root_3rd"
+      ],
+      "fallback": "study=report_and_skip, walk=nearest_shell_fallback"
+    },
+    "D2": {
+      "bass": "lowest voiced pc at pitch_class_to_midi(pc,offset)-12 in WAV and MIDI",
+      "midi": "voiced pad + inversion bass only"
+    },
+    "D3": {
+      "dyadPartner": "skip-one in ordered focal pentatonic (index+2 mod 5); modal color fallback minimal consonant in F; both pcs in container; p2 != p1",
+      "leadModes": [
+        "off",
+        "naked_q",
+        "governed",
+        "governed_dyads_downbeat",
+        "governed_dyads_structural",
+        "governed_dyads_alternating"
+      ]
+    },
+    "D4": {
+      "order": [
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    "D5": {
+      "ledgerMemo": "PROPOSED",
+      "repoWrites": 0
+    }
+  },
+  "directive": "MVP8.2-OBS-LEDGER-DIR-1",
+  "fences": {
+    "bipartitePlanningEvidenceOnly": true,
+    "llmCalls": 0,
+    "noCHFormulation": true,
+    "noEntropy": true,
+    "noGateByteChange": true,
+    "noQSubstrateByteChange": true,
+    "noRendererByteChange": true,
+    "repoReadOnly": true
+  },
+  "fixedPoint": {
+    "architectureMap": {
+      "actualBytes": 34880,
+      "actualSha256": "865ab785164f85c0426d849cb3314c8c41efe81155ce14bd7fe6392ca5d0c381",
+      "expectedBytes": 34880,
+      "expectedSha256": "865ab785164f85c0426d849cb3314c8c41efe81155ce14bd7fe6392ca5d0c381",
+      "match": true
+    },
+    "checksums": {
+      "actualBytes": 225338,
+      "actualSha256": "a116900c357aa2c34a3b921849000115f406ac713e98613e999ac69a6da43962",
+      "expectedBytes": 225338,
+      "expectedSha256": "a116900c357aa2c34a3b921849000115f406ac713e98613e999ac69a6da43962",
+      "match": true
+    },
+    "completion": {
+      "actualBytes": 4998,
+      "actualSha256": "6b8cbf29d67f8d728f69bccdf84c4ead2689ff2c11a45bbe8f1b16a4a5dff20d",
+      "expectedBytes": 4998,
+      "expectedSha256": "6b8cbf29d67f8d728f69bccdf84c4ead2689ff2c11a45bbe8f1b16a4a5dff20d",
+      "match": true
+    },
+    "decisionLedger": {
+      "actualBytes": 417658,
+      "actualLines": 4436,
+      "actualSha256": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7",
+      "expectedBytes": 417658,
+      "expectedLines": 4436,
+      "expectedSha256": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7",
+      "match": true
+    },
+    "head": {
+      "actual": "6bde6a267fe3256d6f5ca52938b00b1d4b38a623",
+      "expected": "6bde6a267fe3256d6f5ca52938b00b1d4b38a623",
+      "match": true
+    },
+    "landingReceipt": {
+      "actualBytes": 29772,
+      "actualSha256": "ebea2cf3dc67fdcde66f640e26d8d760303f37dcc1a307ada8635bd78d78c8a8",
+      "expectedBytes": 29772,
+      "expectedSha256": "ebea2cf3dc67fdcde66f640e26d8d760303f37dcc1a307ada8635bd78d78c8a8",
+      "match": true
+    },
+    "manifest": {
+      "actualBytes": 355191,
+      "actualSha256": "6e56d32710c9d8bf69ef5b91656074f1ccc3083b0d96cea27e5f082ce72bde88",
+      "expectedBytes": 355191,
+      "expectedSha256": "6e56d32710c9d8bf69ef5b91656074f1ccc3083b0d96cea27e5f082ce72bde88",
+      "match": true
+    },
+    "manifestCounts": {
+      "files": 1894,
+      "match": true,
+      "totalBytes": 299622436
+    },
+    "observationLedger": {
+      "actualBytes": 33153,
+      "actualLines": 561,
+      "actualSha256": "8e0be9f5bcee0af1aeb87b8ee71fa18121376c1e2b8e23416439c8834e17787f",
+      "expectedBytes": 33153,
+      "expectedLines": 561,
+      "expectedSha256": "8e0be9f5bcee0af1aeb87b8ee71fa18121376c1e2b8e23416439c8834e17787f",
+      "match": true
+    },
+    "treeClean": true
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + governance ledger specification",
+    "ledgerDefinitionStatus": "proposed",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "layer": "SPEC-001 \u00a71.3 overlay dynamics + governance ledger specification",
+  "masks": {
+    "A0Moon": [
+      2485,
+      2677,
+      2739,
+      2741,
+      2745,
+      2869,
+      3253
+    ],
+    "B1Sweep": [
+      671,
+      1387,
+      1453,
+      1715,
+      1717,
+      1749,
+      2477,
+      2485,
+      2677,
+      2739,
+      2741,
+      2745,
+      2765,
+      2773,
+      2869,
+      3253
+    ],
+    "B3Sample": [
+      1387,
+      1453,
+      2477,
+      2741,
+      1717,
+      2773,
+      2869,
+      2485,
+      1715,
+      2765,
+      1749,
+      671
+    ]
+  },
+  "membership": {
+    "1717@0": {
+      "focal5of35Rooted": 3,
+      "govRoot": 1717,
+      "inDistance": 2,
+      "inGovernedS000": true,
+      "inStrongCore": true,
+      "office": "Mars",
+      "outDistance": 2,
+      "pitchClasses": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        10
+      ],
+      "role": "anchor"
+    },
+    "2363@0": {
+      "focal5of35Rooted": 0,
+      "govRoot": 2363,
+      "inDistance": 9,
+      "inGovernedS000": true,
+      "inStrongCore": true,
+      "office": "Sun",
+      "outDistance": 9,
+      "pitchClasses": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        8,
+        11
+      ],
+      "role": "anchor"
+    },
+    "2365@0": {
+      "focal5of35Rooted": 0,
+      "govRoot": 2363,
+      "inDistance": 8,
+      "inGovernedS000": true,
+      "inStrongCore": true,
+      "office": "Sun",
+      "outDistance": 8,
+      "pitchClasses": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        8,
+        11
+      ],
+      "role": "satellite"
+    },
+    "2485@0": {
+      "focal5of35Rooted": 0,
+      "govRoot": 2741,
+      "inDistance": 3,
+      "inGovernedS000": true,
+      "inStrongCore": true,
+      "office": "Moon",
+      "outDistance": 3,
+      "pitchClasses": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        8,
+        11
+      ],
+      "role": "satellite"
+    },
+    "2677@0": {
+      "focal5of35Rooted": 0,
+      "govRoot": 2741,
+      "inDistance": 4,
+      "inGovernedS000": true,
+      "inStrongCore": true,
+      "office": "Moon",
+      "outDistance": 4,
+      "pitchClasses": [
+        0,
+        2,
+        4,
+        5,
+        6,
+        9,
+        11
+      ],
+      "role": "satellite"
+    },
+    "2739@0": {
+      "focal5of35Rooted": 0,
+      "govRoot": 2741,
+      "inDistance": 4,
+      "inGovernedS000": true,
+      "inStrongCore": true,
+      "office": "Moon",
+      "outDistance": 4,
+      "pitchClasses": [
+        0,
+        1,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "role": "satellite"
+    },
+    "2741@0": {
+      "focal5of35Rooted": 2,
+      "govRoot": 2741,
+      "inDistance": 3,
+      "inGovernedS000": true,
+      "inStrongCore": true,
+      "office": "Moon",
+      "outDistance": 3,
+      "pitchClasses": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "role": "anchor"
+    },
+    "2745@0": {
+      "focal5of35Rooted": 0,
+      "govRoot": 2741,
+      "inDistance": 4,
+      "inGovernedS000": true,
+      "inStrongCore": true,
+      "office": "Moon",
+      "outDistance": 4,
+      "pitchClasses": [
+        0,
+        3,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "role": "satellite"
+    },
+    "2773@0": {
+      "focal5of35Rooted": 1,
+      "govRoot": 2773,
+      "inDistance": 3,
+      "inGovernedS000": true,
+      "inStrongCore": true,
+      "office": "Sun",
+      "outDistance": 3,
+      "pitchClasses": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        9,
+        11
+      ],
+      "role": "anchor"
+    },
+    "2869@0": {
+      "focal5of35Rooted": 0,
+      "govRoot": 2741,
+      "inDistance": 3,
+      "inGovernedS000": true,
+      "inStrongCore": true,
+      "office": "Moon",
+      "outDistance": 3,
+      "pitchClasses": [
+        0,
+        2,
+        4,
+        5,
+        8,
+        9,
+        11
+      ],
+      "role": "satellite"
+    },
+    "3253@0": {
+      "focal5of35Rooted": 1,
+      "govRoot": 2741,
+      "inDistance": 4,
+      "inGovernedS000": true,
+      "inStrongCore": true,
+      "office": "Moon",
+      "outDistance": 4,
+      "pitchClasses": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        10,
+        11
+      ],
+      "role": "satellite"
+    }
+  },
+  "openingHead": "6bde6a267fe3256d6f5ca52938b00b1d4b38a623",
+  "outcomes": {
+    "ADOPT": "A1-A3, B1-B3, D1-D3 pass; ear remains PENDING_HUMAN",
+    "DEFER": "any bet misses its threshold; report measured values"
+  },
+  "pins": {
+    "tools/governed-loop/mvp5/task-b/mvp5_audio_renderer.py": {
+      "actualBytes": 24696,
+      "actualSha256": "0c917aab7a95851e90ce1c3244ea6b3af1ea35e362262cb0d7a0095ec40b9984",
+      "expectedBytes": 24696,
+      "expectedSha256": "0c917aab7a95851e90ce1c3244ea6b3af1ea35e362262cb0d7a0095ec40b9984",
+      "match": true
+    },
+    "tools/governed-loop/mvp6_2/task-b/mvp6_2_legato_renderer.py": {
+      "actualBytes": 8624,
+      "actualSha256": "e91c6e749b1003da3ad4461b745ad0d35caf23cb394f369d92534d857f6e769c",
+      "expectedBytes": null,
+      "expectedSha256": "e91c6e749b1003da3ad4461b745ad0d35caf23cb394f369d92534d857f6e769c",
+      "match": true
+    },
+    "tools/governed-loop/mvp6_3/task-b/mvp6_3_fade_renderer.py": {
+      "actualBytes": 8145,
+      "actualSha256": "673ac7083b59ee96f4a0d1f429778ad69ef4dd382f72e2f67bc1e3e7989769de",
+      "expectedBytes": null,
+      "expectedSha256": "673ac7083b59ee96f4a0d1f429778ad69ef4dd382f72e2f67bc1e3e7989769de",
+      "match": true
+    },
+    "tools/governed-loop/mvp7_intention/task-a/mvp7_log_spectral_lens.py": {
+      "actualBytes": 21956,
+      "actualSha256": "6d3b971ab3750871e2f923d62814bc34a0e0563d3ecdf0ffd1d44f700bb0cdd6",
+      "expectedBytes": null,
+      "expectedSha256": "6d3b971ab3750871e2f923d62814bc34a0e0563d3ecdf0ffd1d44f700bb0cdd6",
+      "match": true
+    },
+    "tools/governed-loop/mvp8/mvp8_common.py": {
+      "actualBytes": 6006,
+      "actualSha256": "6027380c377903eb4c5e49481a460bd13fd8216173e4bb9f269cd24f6b60eeb4",
+      "expectedBytes": 6006,
+      "expectedSha256": "6027380c377903eb4c5e49481a460bd13fd8216173e4bb9f269cd24f6b60eeb4",
+      "match": true
+    },
+    "tools/governed-loop/mvp8/task-a/mvp8_pentatonic_lookup_v1.json": {
+      "actualBytes": 34099980,
+      "actualSha256": "7d4b0548247fac47904860b252951db3810cdacde8fb38f277e2da39b726851f",
+      "expectedBytes": 34099980,
+      "expectedSha256": "7d4b0548247fac47904860b252951db3810cdacde8fb38f277e2da39b726851f",
+      "match": true
+    },
+    "tools/governed-loop/mvp8/task-b/mvp8_pentatonic_q_engine.py": {
+      "actualBytes": 20443,
+      "actualSha256": "e9ec9804661a10257d94a1af25fd1c03182bcd6bd4d4f516430ceb6833a54c8f",
+      "expectedBytes": 20443,
+      "expectedSha256": "e9ec9804661a10257d94a1af25fd1c03182bcd6bd4d4f516430ceb6833a54c8f",
+      "match": true
+    },
+    "tools/governed-loop/mvp8/task-c/mvp8_task_c.py": {
+      "actualBytes": 18347,
+      "actualSha256": "8ff0630abae1c4d2fff6e508eae267050a1e7b9833e965ae296d946382e6fd96",
+      "expectedBytes": 18347,
+      "expectedSha256": "8ff0630abae1c4d2fff6e508eae267050a1e7b9833e965ae296d946382e6fd96",
+      "match": true
+    }
+  },
+  "presetPremises": {
+    "engineLookup": {
+      "engineSourcePath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_pentatonic_q/task-a/mvp8_pentatonic_lookup_v1.json",
+      "engineSourceSha256": "7d4b0548247fac47904860b252951db3810cdacde8fb38f277e2da39b726851f",
+      "identical": true,
+      "landedPath": "tools/governed-loop/mvp8/task-a/mvp8_pentatonic_lookup_v1.json",
+      "landedSha256": "7d4b0548247fac47904860b252951db3810cdacde8fb38f277e2da39b726851f"
+    },
+    "p2": {
+      "corePitchClasses": [
+        0,
+        2,
+        4,
+        7
+      ],
+      "dwellPillars": [
+        "2741@0",
+        "1717@0",
+        "2773@0",
+        "2741@0"
+      ],
+      "fourWayIntersectionExact": true,
+      "legs": [
+        {
+          "from": "2741@0",
+          "kind": "seamB:bridge",
+          "to": "2485@0",
+          "verdict": "ACCEPT"
+        },
+        {
+          "from": "2485@0",
+          "kind": "seamB:bridge",
+          "to": "1717@0",
+          "verdict": "ACCEPT"
+        },
+        {
+          "from": "1717@0",
+          "kind": "seamB:bridge",
+          "to": "2485@0",
+          "verdict": "ACCEPT"
+        },
+        {
+          "from": "2485@0",
+          "kind": "seamB:bridge",
+          "to": "2773@0",
+          "verdict": "ACCEPT"
+        },
+        {
+          "from": "2773@0",
+          "kind": "seamB:bridge",
+          "to": "2485@0",
+          "verdict": "ACCEPT"
+        },
+        {
+          "from": "2485@0",
+          "kind": "seamB:bridge",
+          "to": "2741@0",
+          "verdict": "ACCEPT"
+        }
+      ],
+      "transitNode": "2485@0"
+    },
+    "p3": {
+      "adjacent": true,
+      "kind": "tier-1",
+      "requiredShared": "5-32:11",
+      "sharedAnchoredSubnodes": [
+        "5-21:8B",
+        "5-22:4",
+        "5-32:11",
+        "5-6:11B",
+        "5-Z37:0"
+      ],
+      "source": "2363@0",
+      "target": "2365@0",
+      "verdict": "ACCEPT"
+    }
+  },
+  "presets": {
+    "P1": {
+      "bars": [
+        {
+          "k": 12,
+          "node": "2677@0"
+        },
+        {
+          "k": 12,
+          "node": "2677@0"
+        }
+      ],
+      "label": "p1-2677-affordance",
+      "lead": "governed_dyads_structural",
+      "mode": "study",
+      "node": "2677@0"
+    },
+    "P2": {
+      "arms": {
+        "P2a": {
+          "inversion": "voice_led",
+          "lead": "governed_dyads_structural",
+          "voicing": "cycle"
+        },
+        "P2b": {
+          "inversion": 0,
+          "lead": "governed",
+          "voicing": "cycle"
+        },
+        "P2c": {
+          "inversion": 0,
+          "lead": "governed",
+          "voicing": "full"
+        }
+      },
+      "bars": [
+        "2741@0",
+        "2485@0",
+        "1717@0",
+        "2485@0",
+        "2773@0",
+        "2485@0",
+        "2741@0"
+      ],
+      "dwell": 12,
+      "focalDwell": "5-35:0",
+      "label": "p2-major-triangle",
+      "lead": "governed",
+      "mode": "walk",
+      "transit": 5
+    },
+    "P3": {
+      "arms": {
+        "governed": "governed_dyads_structural",
+        "naked": "naked_q"
+      },
+      "bars": [
+        {
+          "k": 12,
+          "node": "2363@0"
+        },
+        {
+          "k": 12,
+          "node": "2365@0"
+        },
+        {
+          "k": 12,
+          "node": "2365@0"
+        }
+      ],
+      "destinationBar": [
+        2,
+        3
+      ],
+      "focal": "5-32:11",
+      "inversion": 0,
+      "label": "p3-forcing-2363-2365",
+      "mode": "walk",
+      "voicing": "shell"
+    }
+  },
+  "revision": 2,
+  "riders": {
+    "R1": "2677@0 strict study skip = bare, triad, triad_9, seventh missingPc [7]; render = full, shell, ninth_drop5, rootless_13th",
+    "R10": "A1 method and scope locked",
+    "R2": "primary D2 comparison P2b vs P2c; P2a reported only",
+    "R3": "structural dyad iff sub==0 or orbitIndex in {0,2,4}; named predicates per mode",
+    "R4": "shell iff a 3rd in {3,4} in delta and (10 or 11 in delta); interval reading only",
+    "R5": "membership is the T0.2 claim; distances from strong_core BFS seeded 1387@0; no degree parentheticals",
+    "R6": "B3 sample enumerated",
+    "R7": "voice_led: bar 1 inv 0; later bars minimize summed absolute voice motion, tie smallest inv; unequal-length cost 12*abs(len diff)+sum over min length",
+    "R8": "verdict block is measured slots; failures DEFER with measured values",
+    "R9": "mvp5_audio_renderer pinned"
+  },
+  "schemaVersion": "governed-loop.mvp8_2-predeclared-bets.v1",
+  "status": "locked-before-evaluation",
+  "strongCore": {
+    "boundary": 540,
+    "distanceSource": "strong_core outDist/inDist seeded at 1387@0",
+    "governed": 2388,
+    "inS000": 2928,
+    "oneWay": 276,
+    "reachable": 3204
+  },
+  "voicingCatalog": {
+    "bare": "[phase, phase+7] iff 7 in delta",
+    "cycle": [
+      "triad_9",
+      "seventh",
+      "ninth_drop5",
+      "rootless_13th"
+    ],
+    "full": "D[0:7]",
+    "ninth_drop5": "always; voices [D0,D2,D6,(D1+12)]",
+    "rootless_13th": "always; voices [D2,D5,D6,(D1+12)] over inversion bass",
+    "seventh": "strict iff 7 in delta, voices [D0,D2,D4,D6]; walk degree voices [D0,D2,D4,D6]",
+    "shell": "[phase, third, seventh] iff third in {3,4} in delta and (10 or 11 in delta); third = phase+4 if 4 in delta else phase+3; seventh = phase+11 if 11 in delta else phase+10",
+    "triad": "[phase, third, phase+7] iff third in {3,4} in delta and 7 in delta",
+    "triad_9": "strict iff {2, 3-or-4, 7} subset delta, voices [D0,D2,D4,(D1+12)]; walk degree voices [D0,D2,D4,(D1+12)]"
+  }
+}

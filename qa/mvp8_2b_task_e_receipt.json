@@ -1,0 +1,126 @@
+{
+  "bets": {
+    "A1": true,
+    "A2": true,
+    "A3": true,
+    "B1": true,
+    "B2": true,
+    "B3": true,
+    "D1": true,
+    "D2": true,
+    "D3": true
+  },
+  "carriedBetsMatchT0": true,
+  "carriedBetsRecomputed": {
+    "A2": true,
+    "A3": true,
+    "B1": true,
+    "B2": true,
+    "B3": true,
+    "D1": true,
+    "D2": true,
+    "D3": true
+  },
+  "directive": "MVP8.2b-SCOPE-DIR-1",
+  "earGate": {
+    "manifestSha256": "322227f74c647ac1110f80884abfe46eb0ced7ff166cec9a51fd786cdb528511",
+    "overallVerdict": "The auditions sound like they are described and i hear them in their entirety Signed Erick",
+    "pass": true,
+    "scorecardSha256": "64b0bd1ac1a2f962533fc67b66f13e441194952e80ddcfa679b93747bfc2a0a7",
+    "signedAt": "2026-11-08",
+    "signedBy": "Erick",
+    "signingMode": "brief_overall_verdict",
+    "status": "SIGNED_HUMAN"
+  },
+  "evidence": {
+    "frozenRealm": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger",
+    "task0ReceiptSha256": "3c91df7ea3ee80a2a7573bb4dea03daf6c5f80bd828f702ff0bb20c1251a1a45",
+    "taskAReceiptSha256": "55aaa3306efe22f9dea9367c9333e51812154d56bfaa1c9acdd91ce31ca71765"
+  },
+  "failingBets": [],
+  "fixedPoint": {
+    "expectedHead": "6bde6a267fe3256d6f5ca52938b00b1d4b38a623",
+    "head": "6bde6a267fe3256d6f5ca52938b00b1d4b38a623",
+    "ledgerBytes": 417658,
+    "ledgerSha256": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7",
+    "pass": true,
+    "predeclarationMatch": true,
+    "treeClean": true
+  },
+  "frozenEvidenceUnchanged": true,
+  "guardFlags": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + governance ledger specification",
+    "ledgerDefinitionStatus": "proposed",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "landing": {
+    "authorization": "separate L29 authorization required",
+    "planScript": "task-e/mvp8_2b_land.py",
+    "status": "NOT_EXECUTED"
+  },
+  "ledgerAudit": {
+    "baseInCleanEra": true,
+    "baseStateOk": true,
+    "headStateOk": true,
+    "historicalFindingRetained": {
+      "cleanEraBaseIsAncestorOfL12": true,
+      "cleanEraPairs": 40,
+      "cleanEraStartCommit": "9a0764b67450d2396e0579e404dc353a7aaefbc8",
+      "frozenA1CommitCount": 61,
+      "frozenA1PrefixViolations": 15,
+      "frozenFailingBets": [
+        "A1"
+      ],
+      "frozenOutcome": "DEFER",
+      "memoSha256": "c7617cc6853b426078f0fa9688a876478155a3ceb56d4229237b6d265235aa33",
+      "memoStatus": "PROPOSED"
+    },
+    "pairCount": 13,
+    "prefixViolations": 0,
+    "receiptChainLinkViolations": 0,
+    "receiptPairPrefixViolations": 0,
+    "receiptPairsResolved": 5,
+    "scope": {
+      "baseCommit": "23c15407fd6d2a95c83714134b882166f850b605",
+      "chainMatchesLocked": true,
+      "commitCount": 14,
+      "commits": [
+        "23c15407fd6d2a95c83714134b882166f850b605",
+        "4c5cb52026dedac63f3f7dabface46503b4c23e6",
+        "3fb68575c49d2a649728ec79ebdb2f541a55d2fb",
+        "669e89045c7f1af3628aa957a98be64e21e47099",
+        "3f3dbb77f9b3c2cbb3a31ebcfb81b3b8289b434c",
+        "65c72478d83ce3982e51e24d9422191510e89962",
+        "8c66cf16a9a364b3b4096e9aab31e4ba6f24d3c2",
+        "148a96f8c5ce5bcd83fad832170bc76c7075a943",
+        "ba6ae1fe2c8b31ab739c91593701177678bff18b",
+        "52202ed9c4aad7d4baead2859972853aad28e7bb",
+        "154db019711570ade5558a78eb5abb0b63b3c884",
+        "865abc8be20483e45176c378c4e078ebd3187c26",
+        "d1b2286a5b6f3783af24094eb78e40ab511bb8e5",
+        "7117d24297c49507d66fbc927ce12efdba768884"
+      ],
+      "headCommit": "7117d24297c49507d66fbc927ce12efdba768884",
+      "pairCount": 13
+    },
+    "status": "PASS",
+    "worktreeEqualsHeadState": true
+  },
+  "llmCalls": 0,
+  "outcome": "ADOPT",
+  "predeclarationSha256": "7cd32eb6fc058aeced65656c54099ddf728222b32e76a8876b8783c28c6d59c5",
+  "repoWrites": 0,
+  "schemaVersion": "governed-loop.mvp8_2b-task-e.v1",
+  "status": "COMPLETE",
+  "task": "MVP8.2b-TE"
+}

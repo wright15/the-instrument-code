@@ -1,0 +1,294 @@
+{
+  "B1": {
+    "evaluations": 73728,
+    "inversionCount": 4,
+    "leadModeCount": 6,
+    "masks": [
+      671,
+      1387,
+      1453,
+      1715,
+      1717,
+      1749,
+      2477,
+      2485,
+      2677,
+      2739,
+      2741,
+      2745,
+      2765,
+      2773,
+      2869,
+      3253
+    ],
+    "pass": true,
+    "treatmentCount": 8,
+    "violations": {
+      "dyadUnisonLeaks": 0,
+      "outOfMaskLeadNotes": 0,
+      "outOfMaskPadNotes": 0
+    }
+  },
+  "B2": {
+    "rule": "MIDI track 1 pitch-class set per bar == voiced WAV pad pitch-class set; track 1 note count == len(voicing)+1 (inversion bass); track 2 note count == singles + 2*dyads",
+    "status": "measured on rendered sessions in Task D"
+  },
+  "B3": {
+    "bareFailMasks": [
+      2677,
+      2869
+    ],
+    "barePass": 5,
+    "masks": {
+      "2485": {
+        "bare": true,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          8,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          8,
+          11
+        ],
+        "seventhInterval": 11,
+        "shell": true,
+        "thirdInterval": 4,
+        "triad": true
+      },
+      "2677": {
+        "bare": false,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          6,
+          9,
+          11
+        ],
+        "missingPc": [
+          7
+        ],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          6,
+          9,
+          11
+        ],
+        "seventhInterval": 11,
+        "shell": true,
+        "thirdInterval": 4,
+        "triad": false
+      },
+      "2739": {
+        "bare": true,
+        "delta": [
+          0,
+          1,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          1,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "seventhInterval": 11,
+        "shell": true,
+        "thirdInterval": 4,
+        "triad": true
+      },
+      "2741": {
+        "bare": true,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "seventhInterval": 11,
+        "shell": true,
+        "thirdInterval": 4,
+        "triad": true
+      },
+      "2745": {
+        "bare": true,
+        "delta": [
+          0,
+          3,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          3,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        "seventhInterval": 11,
+        "shell": true,
+        "thirdInterval": 4,
+        "triad": true
+      },
+      "2869": {
+        "bare": false,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          8,
+          9,
+          11
+        ],
+        "missingPc": [
+          7
+        ],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          8,
+          9,
+          11
+        ],
+        "seventhInterval": 11,
+        "shell": true,
+        "thirdInterval": 4,
+        "triad": false
+      },
+      "3253": {
+        "bare": true,
+        "delta": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          10,
+          11
+        ],
+        "missingPc": [],
+        "pitchClasses": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          10,
+          11
+        ],
+        "seventhInterval": 11,
+        "shell": true,
+        "thirdInterval": 4,
+        "triad": true
+      }
+    },
+    "reproduced": true,
+    "shellPass": 7,
+    "triadFailMasks": [
+      2677,
+      2869
+    ],
+    "triadPass": 5
+  },
+  "catalog": {
+    "cycle": [
+      "triad_9",
+      "seventh",
+      "ninth_drop5",
+      "rootless_13th"
+    ],
+    "dyadPartner": "skip-one in ordered focal pentatonic; modal-color fallback minimal consonant in F; both pcs in container",
+    "dyadPredicates": {
+      "governed_dyads_alternating": "sub % 2 == 0",
+      "governed_dyads_downbeat": "sub == 0",
+      "governed_dyads_structural": "sub == 0 or orbitIndex in {0,2,4}"
+    },
+    "leadModes": [
+      "off",
+      "naked_q",
+      "governed",
+      "governed_dyads_downbeat",
+      "governed_dyads_structural",
+      "governed_dyads_alternating"
+    ],
+    "treatments": [
+      "full",
+      "bare",
+      "shell",
+      "triad",
+      "triad_9",
+      "seventh",
+      "ninth_drop5",
+      "rootless_13th"
+    ],
+    "voiceLed": "bar 1 inversion 0; later bars minimize summed absolute voice motion, tie smallest inversion"
+  },
+  "censusPath": "task-b/mvp8_2_affordance_census.json",
+  "censusSha256": "42bf04fff162d733354a52d1706b0c5343271993c36706086f1bdefee04e7f5e",
+  "directive": "MVP8.2-OBS-LEDGER-DIR-1",
+  "guardFlags": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + governance ledger specification",
+    "ledgerDefinitionStatus": "proposed",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "repoWrites": 0,
+  "schemaVersion": "governed-loop.mvp8_2-task-b.v1",
+  "status": "COMPLETE",
+  "task": "MVP8.2-TB"
+}

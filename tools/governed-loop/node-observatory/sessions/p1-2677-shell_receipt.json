@@ -1,0 +1,381 @@
+{
+  "acoustic": {
+    "bars": [
+      {
+        "bar": 1,
+        "centroidOct": -0.003999004273342837,
+        "spreadOct": 0.8049604517968215,
+        "windows": 154
+      },
+      {
+        "bar": 2,
+        "centroidOct": 0.045730925926457715,
+        "spreadOct": 0.7550431904665866,
+        "windows": 153
+      }
+    ],
+    "global": {
+      "centroidOct": 0.020784967454896525,
+      "spreadOct": 0.780083119602926,
+      "windows": 307
+    },
+    "maxAbsLast32": 0,
+    "sampleCount": 317520,
+    "seam": {
+      "boundaries": 1,
+      "maxDepthDb": 1.814914,
+      "medianDepthDb": 1.814914
+    }
+  },
+  "barContainers": [
+    {
+      "bar": 1,
+      "node": "2677@0",
+      "pitchClasses": [
+        0,
+        2,
+        4,
+        5,
+        6,
+        9,
+        11
+      ]
+    },
+    {
+      "bar": 2,
+      "node": "2677@0",
+      "pitchClasses": [
+        0,
+        2,
+        4,
+        5,
+        6,
+        9,
+        11
+      ]
+    }
+  ],
+  "barCount": 2,
+  "barFocalSequence": [
+    {
+      "bar": 1,
+      "focal": "5-27:9@0",
+      "node": "2677@0",
+      "role": "dwell"
+    },
+    {
+      "bar": 2,
+      "focal": "5-27:9@0",
+      "node": "2677@0",
+      "role": "dwell"
+    }
+  ],
+  "barPlan": [
+    {
+      "activeTreatment": "shell",
+      "bar": 1,
+      "bassMidi": 48,
+      "bassPc": 0,
+      "chordMidi": [
+        60,
+        64,
+        71
+      ],
+      "chordPcs": [
+        0,
+        4,
+        11
+      ],
+      "fallbackUsed": false,
+      "inversion": 0,
+      "missingPc": [],
+      "node": "2677@0",
+      "office": "Moon",
+      "registerOffset": 0,
+      "requestedTreatment": "shell",
+      "status": "ok"
+    },
+    {
+      "activeTreatment": "shell",
+      "bar": 2,
+      "bassMidi": 48,
+      "bassPc": 0,
+      "chordMidi": [
+        60,
+        64,
+        71
+      ],
+      "chordPcs": [
+        0,
+        4,
+        11
+      ],
+      "fallbackUsed": false,
+      "inversion": 0,
+      "missingPc": [],
+      "node": "2677@0",
+      "office": "Moon",
+      "registerOffset": 0,
+      "requestedTreatment": "shell",
+      "status": "ok"
+    }
+  ],
+  "clippedSamples": 0,
+  "directive": "MVP8.2-OBS-LEDGER-DIR-1",
+  "durationMs": 7200,
+  "emittedSteps": [
+    {
+      "bar": 1,
+      "emittedPc": 0,
+      "sub": 0
+    },
+    {
+      "bar": 1,
+      "emittedPc": 2,
+      "sub": 1
+    },
+    {
+      "bar": 1,
+      "emittedPc": 2,
+      "sub": 2
+    },
+    {
+      "bar": 1,
+      "emittedPc": 9,
+      "sub": 3
+    },
+    {
+      "bar": 1,
+      "emittedPc": 4,
+      "sub": 4
+    },
+    {
+      "bar": 1,
+      "emittedPc": 11,
+      "sub": 5
+    },
+    {
+      "bar": 1,
+      "emittedPc": 6,
+      "sub": 6
+    },
+    {
+      "bar": 1,
+      "emittedPc": 0,
+      "sub": 7
+    },
+    {
+      "bar": 1,
+      "emittedPc": 2,
+      "sub": 8
+    },
+    {
+      "bar": 1,
+      "emittedPc": 4,
+      "sub": 9
+    },
+    {
+      "bar": 1,
+      "emittedPc": 5,
+      "sub": 10
+    },
+    {
+      "bar": 1,
+      "emittedPc": 5,
+      "sub": 11
+    },
+    {
+      "bar": 2,
+      "emittedPc": 0,
+      "sub": 0
+    },
+    {
+      "bar": 2,
+      "emittedPc": 2,
+      "sub": 1
+    },
+    {
+      "bar": 2,
+      "emittedPc": 2,
+      "sub": 2
+    },
+    {
+      "bar": 2,
+      "emittedPc": 9,
+      "sub": 3
+    },
+    {
+      "bar": 2,
+      "emittedPc": 4,
+      "sub": 4
+    },
+    {
+      "bar": 2,
+      "emittedPc": 11,
+      "sub": 5
+    },
+    {
+      "bar": 2,
+      "emittedPc": 6,
+      "sub": 6
+    },
+    {
+      "bar": 2,
+      "emittedPc": 0,
+      "sub": 7
+    },
+    {
+      "bar": 2,
+      "emittedPc": 2,
+      "sub": 8
+    },
+    {
+      "bar": 2,
+      "emittedPc": 4,
+      "sub": 9
+    },
+    {
+      "bar": 2,
+      "emittedPc": 5,
+      "sub": 10
+    },
+    {
+      "bar": 2,
+      "emittedPc": 5,
+      "sub": 11
+    }
+  ],
+  "expectedSamples": 317520,
+  "failures": [],
+  "focalSet": "lookup_default",
+  "guardFlags": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + governance ledger specification",
+    "ledgerDefinitionStatus": "proposed",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "inversion": 0,
+  "label": "p1-2677-shell",
+  "lead": "governed_dyads_structural",
+  "leadCensus": {
+    "dyadPresenceMatch": true,
+    "dyadSteps": 6,
+    "dyadUnisonLeaks": 0,
+    "leadPrimaryMatch": true,
+    "outOfMaskLeadNotes": 0,
+    "outOfMaskPadNotes": 0,
+    "padVoicedMatch": true,
+    "partnerNotes": 6,
+    "primarySteps": 24
+  },
+  "llmCalls": 0,
+  "midiPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-shell.mid",
+  "midiSha256": "3ab4e57702802d0148c5c5424cbf380b88e2661aa607d37f9e0c19c5f7dd2ae4",
+  "mode": "study",
+  "nodes": [
+    "2677@0"
+  ],
+  "nonFiniteSamples": 0,
+  "peakQ15": 9713,
+  "preset": "P1",
+  "reRenderMatch": true,
+  "rendered": true,
+  "repoWrites": 0,
+  "rmsMilli": 64,
+  "rubs": {
+    "pairs": [
+      {
+        "bar": 1,
+        "leadPc": 0,
+        "padPc": 11
+      },
+      {
+        "bar": 1,
+        "leadPc": 5,
+        "padPc": 4
+      },
+      {
+        "bar": 1,
+        "leadPc": 11,
+        "padPc": 0
+      },
+      {
+        "bar": 1,
+        "leadPc": 0,
+        "padPc": 11
+      },
+      {
+        "bar": 1,
+        "leadPc": 5,
+        "padPc": 4
+      },
+      {
+        "bar": 1,
+        "leadPc": 5,
+        "padPc": 4
+      },
+      {
+        "bar": 2,
+        "leadPc": 0,
+        "padPc": 11
+      },
+      {
+        "bar": 2,
+        "leadPc": 5,
+        "padPc": 4
+      },
+      {
+        "bar": 2,
+        "leadPc": 11,
+        "padPc": 0
+      },
+      {
+        "bar": 2,
+        "leadPc": 0,
+        "padPc": 11
+      },
+      {
+        "bar": 2,
+        "leadPc": 5,
+        "padPc": 4
+      },
+      {
+        "bar": 2,
+        "leadPc": 5,
+        "padPc": 4
+      }
+    ],
+    "perBar": {
+      "1": 6,
+      "2": 6
+    },
+    "phaseDelta": {
+      "majorSeventh": 2,
+      "minorSecond": 0
+    },
+    "rubs": 12
+  },
+  "samples": 317520,
+  "schemaVersion": "governed-loop.mvp8_2-session.v1",
+  "sessionSheetPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-shell_session_sheet.md",
+  "sessionSheetSha256": "31f64f6219e40a27a79996e10f593b67b88a4d4b22a1449ee0d78097eb439510",
+  "summary": {
+    "focalSwitches": 0,
+    "outOfMaskPitches": 0
+  },
+  "task": "MVP8.2-TC",
+  "tracePath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-shell.jsonl",
+  "traceSha256": "f8afcc5283ab43eee0951c36ddc67107a881e114e02a37fea239ff6ec786be1c",
+  "voicing": "shell",
+  "wavPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-shell.wav",
+  "wavSha256": "e9a74876de8dd289e98f44bbf187df9e3ad9a8c459a6212c1dd747b16496aa1a"
+}

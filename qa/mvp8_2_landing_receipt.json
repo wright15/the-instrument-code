@@ -1,0 +1,834 @@
+{
+  "artifacts": {
+    "closingReports": [
+      {
+        "path": "scrum/plan/mvp8-2-obs-ledger-closing-report.md",
+        "sha256": "8168ea29a42a406fa877f34bd540db683cfefe74441d230bb23ac44ea46645c2"
+      },
+      {
+        "path": "scrum/plan/mvp8-2b-scope-closing-report.md",
+        "sha256": "f1a796cbdfb9dbb7e3b4d632f3e94fe678a7e914db607e8e620f1c92425ce101"
+      }
+    ],
+    "directiveDocuments": [
+      {
+        "path": "scrum/plan/mvp8-2-obs-ledger-dir-1-rev2.md",
+        "sha256": "a59d24d5d793c900f8e0f5fcacb64b09de2d9ddb286fc8f54302b5bbcf12b7e7"
+      },
+      {
+        "path": "scrum/plan/mvp8-2b-scope-dir-1-rev1.md",
+        "sha256": "a1967e3720c0ed9942f599e80f73a975289b0d076489834e2a6585f67a1b8dcd"
+      }
+    ],
+    "excludedAudio": {
+      "bytes": 18112615,
+      "count": 30,
+      "files": [
+        {
+          "bytes": 577,
+          "realm": "mvp8_2",
+          "source": "p1-2677-full.mid"
+        },
+        {
+          "bytes": 635084,
+          "realm": "mvp8_2",
+          "source": "p1-2677-full.wav"
+        },
+        {
+          "bytes": 550,
+          "realm": "mvp8_2",
+          "source": "p1-2677-ninth_drop5.mid"
+        },
+        {
+          "bytes": 635084,
+          "realm": "mvp8_2",
+          "source": "p1-2677-ninth_drop5.wav"
+        },
+        {
+          "bytes": 556,
+          "realm": "mvp8_2",
+          "source": "p1-2677-rootless_13th.mid"
+        },
+        {
+          "bytes": 635084,
+          "realm": "mvp8_2",
+          "source": "p1-2677-rootless_13th.wav"
+        },
+        {
+          "bytes": 516,
+          "realm": "mvp8_2",
+          "source": "p1-2677-shell.mid"
+        },
+        {
+          "bytes": 635084,
+          "realm": "mvp8_2",
+          "source": "p1-2677-shell.wav"
+        },
+        {
+          "bytes": 1486,
+          "realm": "mvp8_2",
+          "source": "p2-p2a-triangle.mid"
+        },
+        {
+          "bytes": 1667024,
+          "realm": "mvp8_2",
+          "source": "p2-p2a-triangle.wav"
+        },
+        {
+          "bytes": 1318,
+          "realm": "mvp8_2",
+          "source": "p2-p2b-triangle.mid"
+        },
+        {
+          "bytes": 1667024,
+          "realm": "mvp8_2",
+          "source": "p2-p2b-triangle.wav"
+        },
+        {
+          "bytes": 1451,
+          "realm": "mvp8_2",
+          "source": "p2-p2c-triangle.mid"
+        },
+        {
+          "bytes": 1667024,
+          "realm": "mvp8_2",
+          "source": "p2-p2c-triangle.wav"
+        },
+        {
+          "bytes": 736,
+          "realm": "mvp8_2",
+          "source": "p3-forcing-governed.mid"
+        },
+        {
+          "bytes": 952604,
+          "realm": "mvp8_2",
+          "source": "p3-forcing-governed.wav"
+        },
+        {
+          "bytes": 646,
+          "realm": "mvp8_2",
+          "source": "p3-forcing-naked.mid"
+        },
+        {
+          "bytes": 952604,
+          "realm": "mvp8_2",
+          "source": "p3-forcing-naked.wav"
+        },
+        {
+          "bytes": 519,
+          "realm": "mvp8_2",
+          "source": "smoke-2677-shell.mid"
+        },
+        {
+          "bytes": 635084,
+          "realm": "mvp8_2",
+          "source": "smoke-2677-shell.wav"
+        },
+        {
+          "bytes": 635084,
+          "realm": "mvp8_2",
+          "source": "c1-aeolian-harmonic-minor-lead.wav"
+        },
+        {
+          "bytes": 635084,
+          "realm": "mvp8_2",
+          "source": "c1-aeolian-harmonic-minor-pad.wav"
+        },
+        {
+          "bytes": 510,
+          "realm": "mvp8_2",
+          "source": "c1-aeolian-harmonic-minor.mid"
+        },
+        {
+          "bytes": 635084,
+          "realm": "mvp8_2",
+          "source": "c1-aeolian-harmonic-minor.wav"
+        },
+        {
+          "bytes": 1327,
+          "realm": "mvp8_2",
+          "source": "c3b-major-mode-triangle.mid"
+        },
+        {
+          "bytes": 1667024,
+          "realm": "mvp8_2",
+          "source": "c3b-major-mode-triangle.wav"
+        },
+        {
+          "bytes": 1745,
+          "realm": "mvp8_2",
+          "source": "d-borrowed_connector-arc.mid"
+        },
+        {
+          "bytes": 2540204,
+          "realm": "mvp8_2",
+          "source": "d-borrowed_connector-arc.wav"
+        },
+        {
+          "bytes": 1334,
+          "realm": "mvp8_2",
+          "source": "d-native_class_dwell-pure.mid"
+        },
+        {
+          "bytes": 1905164,
+          "realm": "mvp8_2",
+          "source": "d-native_class_dwell-pure.wav"
+        }
+      ],
+      "note": "audio is reproducible from the landed code and traces; hashes remain in the landed receipts"
+    },
+    "payloadCount": 61,
+    "payloads": [
+      {
+        "bytes": 5457,
+        "destination": "docs/specs/ledger-formal-definition-v0.1.0.md",
+        "preexistingIdentical": true,
+        "role": "ledger_formal_definition",
+        "sha256": "c7617cc6853b426078f0fa9688a876478155a3ceb56d4229237b6d265235aa33",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-a/PROPOSED_SPEC_THE_LEDGER_V0_1_0.md"
+      },
+      {
+        "bytes": 29682,
+        "destination": "tools/governed-loop/node-observatory/node_observatory_engine.py",
+        "preexistingIdentical": false,
+        "role": "node_observatory_engine",
+        "sha256": "b4507765a75e82e5680a76b60b34e0e22423ae5fdd24519dae3872a77cf80270",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-b/node_observatory_engine.py"
+      },
+      {
+        "bytes": 19313,
+        "destination": "tools/governed-loop/node-observatory/node_observatory.py",
+        "preexistingIdentical": false,
+        "role": "node_observatory_driver",
+        "sha256": "91744aaabb13b5b44029b7c0d28f13c6266d90353426d2eed601d2ed3b2a9af9",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-c/node_observatory.py"
+      },
+      {
+        "bytes": 7614,
+        "destination": "tools/governed-loop/node-observatory/mvp8_2_common.py",
+        "preexistingIdentical": false,
+        "role": "node_observatory_common",
+        "sha256": "2be919d04f6f89b3f8452f6b04324459578cbe623df46d7663f8140138ac65d6",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/mvp8_2_common.py"
+      },
+      {
+        "bytes": 31899,
+        "destination": "tools/governed-loop/node-observatory/mvp8_2_predeclared_bets.json",
+        "preexistingIdentical": false,
+        "role": "mvp8_2_predeclared_bets",
+        "sha256": "5185e878be5ef87d797174aff26cf9527c3332aefb0fc641afd1a8d504b8b3ad",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-0/mvp8_2_predeclared_bets.json"
+      },
+      {
+        "bytes": 13865,
+        "destination": "tools/governed-loop/node-observatory/mvp8_2b_predeclared_bets.json",
+        "preexistingIdentical": false,
+        "role": "mvp8_2b_predeclared_bets",
+        "sha256": "7cd32eb6fc058aeced65656c54099ddf728222b32e76a8876b8783c28c6d59c5",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2b_scope_fix/task-0/mvp8_2b_predeclared_bets.json"
+      },
+      {
+        "bytes": 7051,
+        "destination": "tools/governed-loop/node-observatory/mvp8_2_affordance_census.json",
+        "preexistingIdentical": false,
+        "role": "mvp8_2_affordance_census",
+        "sha256": "42bf04fff162d733354a52d1706b0c5343271993c36706086f1bdefee04e7f5e",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-b/mvp8_2_affordance_census.json"
+      },
+      {
+        "bytes": 5769,
+        "destination": "tools/governed-loop/node-observatory/mvp8_2_ear_manifest.json",
+        "preexistingIdentical": false,
+        "role": "mvp8_2_ear_manifest_signed",
+        "sha256": "322227f74c647ac1110f80884abfe46eb0ced7ff166cec9a51fd786cdb528511",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2b_scope_fix/task-0/mvp8_2b_ear_manifest.json"
+      },
+      {
+        "bytes": 5448,
+        "destination": "tools/governed-loop/node-observatory/mvp8_2_ear_manifest_pre_audition.json",
+        "preexistingIdentical": false,
+        "role": "mvp8_2_ear_manifest_pre_audition",
+        "sha256": "51e0857ff8c1ce8ca2b8eda437ba37627902871556351c3beb659fc0043062cc",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/mvp8_2_ear_manifest.json"
+      },
+      {
+        "bytes": 1219,
+        "destination": "qa/mvp8_2_ear_scorecard.json",
+        "preexistingIdentical": false,
+        "role": "mvp8_2_ear_scorecard_signed",
+        "sha256": "64b0bd1ac1a2f962533fc67b66f13e441194952e80ddcfa679b93747bfc2a0a7",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2b_scope_fix/task-0/mvp8_2b_ear_scorecard.json"
+      },
+      {
+        "bytes": 1272,
+        "destination": "qa/mvp8_2_ear_scorecard_pre_audition.json",
+        "preexistingIdentical": false,
+        "role": "mvp8_2_ear_scorecard_pre_audition",
+        "sha256": "1ffab47ffc30c97b3c2bba4c97f6b667ebbb4477f05ff63fa4a9cfe3892b0c3e",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-0/mvp8_2_ear_scorecard.json"
+      },
+      {
+        "bytes": 18935,
+        "destination": "qa/mvp8_2_task_0_receipt.json",
+        "preexistingIdentical": false,
+        "role": "mvp8_2_task_0_receipt",
+        "sha256": "05166d53836d7d4aa12b24485bfe2f162e7cb919f8f8dc25be604f9a91d5a233",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-0/mvp8_2_task_0_receipt.json"
+      },
+      {
+        "bytes": 50149,
+        "destination": "qa/mvp8_2_task_a_receipt.json",
+        "preexistingIdentical": false,
+        "role": "mvp8_2_task_a_receipt",
+        "sha256": "e384d3e48488d180277c989f820eae797472dafdc3e32413de871a71ddbef11f",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-a/mvp8_2_task_a_receipt.json"
+      },
+      {
+        "bytes": 5740,
+        "destination": "qa/mvp8_2_task_b_receipt.json",
+        "preexistingIdentical": false,
+        "role": "mvp8_2_task_b_receipt",
+        "sha256": "6078260313d0cc86664875aae06ea3610691772015e61c81fd13a1737f63514a",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-b/mvp8_2_task_b_receipt.json"
+      },
+      {
+        "bytes": 112637,
+        "destination": "qa/mvp8_2_task_d_receipt.json",
+        "preexistingIdentical": false,
+        "role": "mvp8_2_task_d_receipt",
+        "sha256": "288d76a41b64393a88dfc12040413d365fa10a8962a8a5ebd65f22aaa41f1684",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/mvp8_2_task_d_receipt.json"
+      },
+      {
+        "bytes": 7654,
+        "destination": "qa/mvp8_2_task_e_receipt.json",
+        "preexistingIdentical": false,
+        "role": "mvp8_2_task_e_receipt",
+        "sha256": "081c1f85d1c7f77cb706842d5027e4550a87b6fde7ebad5d1571ba52ab6130d8",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-e/mvp8_2_task_e_receipt.json"
+      },
+      {
+        "bytes": 7426,
+        "destination": "qa/mvp8_2b_task_0_receipt.json",
+        "preexistingIdentical": false,
+        "role": "mvp8_2b_task_0_receipt",
+        "sha256": "3c91df7ea3ee80a2a7573bb4dea03daf6c5f80bd828f702ff0bb20c1251a1a45",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2b_scope_fix/task-0/mvp8_2b_task_0_receipt.json"
+      },
+      {
+        "bytes": 13174,
+        "destination": "qa/mvp8_2b_task_a_receipt.json",
+        "preexistingIdentical": false,
+        "role": "mvp8_2b_task_a_receipt",
+        "sha256": "55aaa3306efe22f9dea9367c9333e51812154d56bfaa1c9acdd91ce31ca71765",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2b_scope_fix/task-a/mvp8_2b_task_a_receipt.json"
+      },
+      {
+        "bytes": 4274,
+        "destination": "qa/mvp8_2b_task_e_receipt.json",
+        "preexistingIdentical": false,
+        "role": "mvp8_2b_task_e_receipt",
+        "sha256": "ac7e61a1bbe518ad3c5006107d6d3448b1e1790798d7cb2d1c2721235f02fe41",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2b_scope_fix/task-e/mvp8_2b_task_e_receipt.json"
+      },
+      {
+        "bytes": 21468,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-bare.jsonl",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "fb8d0e34b4d2135efc5d2a47025bce372cb7423514656013ab2335ff8cbb2af1",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-bare.jsonl"
+      },
+      {
+        "bytes": 5083,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-bare_receipt.json",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "a1f4d450e76a49bc06029f32e8c10c978f24e7774929f036b5f5bd68de7ab35c",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-bare_receipt.json"
+      },
+      {
+        "bytes": 1666,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-bare_session_sheet.md",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "d7b9d46bfbe65473bf9076c89c523998bb7343881bbb0d0b833fd62ec1d7ecc6",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-bare_session_sheet.md"
+      },
+      {
+        "bytes": 21468,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-full.jsonl",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "5da2ada0eacf2dbfd021d9507158dfaa8700b14a96c4f3b85fe489fc3e817407",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-full.jsonl"
+      },
+      {
+        "bytes": 8372,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-full_receipt.json",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "f10fe16c158836cd273f937e7d9b49daee7a524fa3db748fa6147cf7c1818123",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-full_receipt.json"
+      },
+      {
+        "bytes": 2256,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-full_session_sheet.md",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "a3717580ce09384a1c907cc9712527d7df32b0798e311f97c050f3dbe7b32238",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-full_session_sheet.md"
+      },
+      {
+        "bytes": 21636,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-ninth_drop5.jsonl",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "6cf2487cc9b10d88bf03630a749e9e427dcbb22975d7057a2472db2a48184381",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-ninth_drop5.jsonl"
+      },
+      {
+        "bytes": 7254,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-ninth_drop5_receipt.json",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "4dd708b971e37297e9e9e30fe65ca1de0d0390f326ee56a83e56f6db7bd8808f",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-ninth_drop5_receipt.json"
+      },
+      {
+        "bytes": 2264,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-ninth_drop5_session_sheet.md",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "a697303bd447c125900cb1284c22493b4f06196601d679e182f222f4bf21f188",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-ninth_drop5_session_sheet.md"
+      },
+      {
+        "bytes": 21684,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-rootless_13th.jsonl",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "c414934080d259de8a9595ae5601e5c345d3ebb59bc8cfee4fb56cfbad76f58f",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-rootless_13th.jsonl"
+      },
+      {
+        "bytes": 7120,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-rootless_13th_receipt.json",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "90c011285de37ecce71660273ebe7beb885e4bd2b06784371fce3eff8ef5f73a",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-rootless_13th_receipt.json"
+      },
+      {
+        "bytes": 2269,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-rootless_13th_session_sheet.md",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "54522fcd5a603aa49e8215d3c20382536009a017038975a89e1ed2351dfa35e0",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-rootless_13th_session_sheet.md"
+      },
+      {
+        "bytes": 21540,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-seventh.jsonl",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "fad6bcf587d80f2aa550fe9643239578448bfa947febb8efd9739b427e51c529",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-seventh.jsonl"
+      },
+      {
+        "bytes": 5113,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-seventh_receipt.json",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "c7657d5dffa251063b8da288dabd8bc8c7d4691b2081382aa68d8713ce4f8c8c",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-seventh_receipt.json"
+      },
+      {
+        "bytes": 1684,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-seventh_session_sheet.md",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "4d13ca77f832b79a5e21b20b99ef0ce28dea55261b8d4eee0a66e82c65c1fa0b",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-seventh_session_sheet.md"
+      },
+      {
+        "bytes": 21492,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-shell.jsonl",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "f8afcc5283ab43eee0951c36ddc67107a881e114e02a37fea239ff6ec786be1c",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-shell.jsonl"
+      },
+      {
+        "bytes": 7147,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-shell_receipt.json",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "7c7303b4f85517548947a8482c2cba5b0bc5e2aeff2fc9830cc53e44a9e9a59d",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-shell_receipt.json"
+      },
+      {
+        "bytes": 2232,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-shell_session_sheet.md",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "31f64f6219e40a27a79996e10f593b67b88a4d4b22a1449ee0d78097eb439510",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-shell_session_sheet.md"
+      },
+      {
+        "bytes": 21492,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-triad.jsonl",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "413847357566169c47536b87182751437f88ba61ee15e2422da62b2cd99ced1f",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-triad.jsonl"
+      },
+      {
+        "bytes": 5093,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-triad_receipt.json",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "4b792a5ed61a061e69be8499b1f5d3bf6503ddb1a2f04404a80ead2efd51ee13",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-triad_receipt.json"
+      },
+      {
+        "bytes": 1672,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-triad_session_sheet.md",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "44a606d924b8e6b44924fba1c2d2c8a70a5ae9fe2730a6a59d4aba7db9eae1be",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-triad_session_sheet.md"
+      },
+      {
+        "bytes": 21540,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-triad_9.jsonl",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "a1e5c24928ce5b4ccd97ecb740d560062d66b868d49651b6e0a6edd7b4155b63",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-triad_9.jsonl"
+      },
+      {
+        "bytes": 5113,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-triad_9_receipt.json",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "ae3b85ff2d69aab9606b973027b3897aec3062b588db63ae45fe3bf30dbb0f96",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-triad_9_receipt.json"
+      },
+      {
+        "bytes": 1684,
+        "destination": "tools/governed-loop/node-observatory/sessions/p1-2677-triad_9_session_sheet.md",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "e174eb37d7ab4146e52a312a0cfed57e0ad17e7a8aa305bb3b43da6ceb72e13f",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-triad_9_session_sheet.md"
+      },
+      {
+        "bytes": 55426,
+        "destination": "tools/governed-loop/node-observatory/sessions/p2-p2a-triangle.jsonl",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "fb4bce20d96a31250f679d1d71c5cc7c93e1e09b1bbfa1f3c7501abc0d2f661e",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p2-p2a-triangle.jsonl"
+      },
+      {
+        "bytes": 15358,
+        "destination": "tools/governed-loop/node-observatory/sessions/p2-p2a-triangle_receipt.json",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "161db730f27e9a9e526e4b79ab7d58238c7c79d4c2e1c1162d9661580bc3fb26",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p2-p2a-triangle_receipt.json"
+      },
+      {
+        "bytes": 3219,
+        "destination": "tools/governed-loop/node-observatory/sessions/p2-p2a-triangle_session_sheet.md",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "66c976933718962839fac7fa266a84f5dbed7c2ac435a30dc8816c9f2ed2048a",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p2-p2a-triangle_session_sheet.md"
+      },
+      {
+        "bytes": 55426,
+        "destination": "tools/governed-loop/node-observatory/sessions/p2-p2b-triangle.jsonl",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "0e9e634967be6e0403e80b8f4adbf0ace7d44190af54f72e910f042665471d09",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p2-p2b-triangle.jsonl"
+      },
+      {
+        "bytes": 15107,
+        "destination": "tools/governed-loop/node-observatory/sessions/p2-p2b-triangle_receipt.json",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "584b97cd38e4f5879c9cc6496c97aa17052da478ec78b7b55a42b4e6343e919c",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p2-p2b-triangle_receipt.json"
+      },
+      {
+        "bytes": 3192,
+        "destination": "tools/governed-loop/node-observatory/sessions/p2-p2b-triangle_session_sheet.md",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "0a4e151143e1d679eda4e63dd548850f644dfd53d5a9bf57a5d67f4e3be8e60a",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p2-p2b-triangle_session_sheet.md"
+      },
+      {
+        "bytes": 55426,
+        "destination": "tools/governed-loop/node-observatory/sessions/p2-p2c-triangle.jsonl",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "5f3f08815784bf9d7d8450681911dcf92e405bf3f9e6576fbe86026c122f2647",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p2-p2c-triangle.jsonl"
+      },
+      {
+        "bytes": 17025,
+        "destination": "tools/governed-loop/node-observatory/sessions/p2-p2c-triangle_receipt.json",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "6543fa5ac1c460b61bd9cf5f51a43986d2d58ea11ad17f690c03dbf60a7c948a",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p2-p2c-triangle_receipt.json"
+      },
+      {
+        "bytes": 3222,
+        "destination": "tools/governed-loop/node-observatory/sessions/p2-p2c-triangle_session_sheet.md",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "75897e7405f6aa56ee0584fce0d8cd83465d70f758ad103ce2d0084fe1fbefb1",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p2-p2c-triangle_session_sheet.md"
+      },
+      {
+        "bytes": 31802,
+        "destination": "tools/governed-loop/node-observatory/sessions/p3-forcing-governed.jsonl",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "b3ffe09b7938e3f5a18609aa73fa7839314b6a2d61c42a1d686b78e8295c1773",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p3-forcing-governed.jsonl"
+      },
+      {
+        "bytes": 10739,
+        "destination": "tools/governed-loop/node-observatory/sessions/p3-forcing-governed_receipt.json",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "2b064bc2c924297e86e44b65ed72b476a16ea56a58ed4458d8e986273b3e01fe",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p3-forcing-governed_receipt.json"
+      },
+      {
+        "bytes": 2500,
+        "destination": "tools/governed-loop/node-observatory/sessions/p3-forcing-governed_session_sheet.md",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "40b136b654455d9393d4077ef2af06279c2e0869a1e379ce7739f2d5778fc1f4",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p3-forcing-governed_session_sheet.md"
+      },
+      {
+        "bytes": 30612,
+        "destination": "tools/governed-loop/node-observatory/sessions/p3-forcing-naked.jsonl",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "6d0a76e80be9b565883817a6516f9f3294bdbd0cde67c65dbea4c4ebf4afd48f",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p3-forcing-naked.jsonl"
+      },
+      {
+        "bytes": 9388,
+        "destination": "tools/governed-loop/node-observatory/sessions/p3-forcing-naked_receipt.json",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "416b7dfd03c2ccc27aac2594c0fdee3017bdb593a844fb0788685953a22c9eea",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p3-forcing-naked_receipt.json"
+      },
+      {
+        "bytes": 2319,
+        "destination": "tools/governed-loop/node-observatory/sessions/p3-forcing-naked_session_sheet.md",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "3462a9432f4e3ac3c1581e0056da9a43a3315a351261ecd68e25fd6d70c0d3e5",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p3-forcing-naked_session_sheet.md"
+      },
+      {
+        "bytes": 21564,
+        "destination": "tools/governed-loop/node-observatory/sessions/smoke-2677-shell.jsonl",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "d4805fd406bf169b20c97f526906bedf0d2357a9ac0959f1afda696b850aa478",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-c/smoke/smoke-2677-shell.jsonl"
+      },
+      {
+        "bytes": 4885,
+        "destination": "tools/governed-loop/node-observatory/sessions/smoke-2677-shell_receipt.json",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "ce61deee846aa2a9a619378320d1bbde4cb28ab2d00e784acbf6be7256f7bd98",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-c/smoke/smoke-2677-shell_receipt.json"
+      },
+      {
+        "bytes": 2235,
+        "destination": "tools/governed-loop/node-observatory/sessions/smoke-2677-shell_session_sheet.md",
+        "preexistingIdentical": false,
+        "role": "session_evidence",
+        "sha256": "14bc83b84ee311a51ba38992af84dd042244fa47b327968c575e717002c29c96",
+        "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-c/smoke/smoke-2677-shell_session_sheet.md"
+      }
+    ]
+  },
+  "cascade": [
+    {
+      "command": ".venv/bin/python scripts/generate-fifth-space-census.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"candidateFingerprint\": \"242611636e9bb56b030ba2a4ca242809ca67271a960bb06dca917b097e6f1a13\", \"candidateId\": \"FIFTH_SPACE_CENSUS_v0\", \"records\": 462, \"verdict\": \"confirmed\"}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/validate-fifth-space-census.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "        \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"7-1 terminal cluster state 4033\",\n            \"office\": \"Mars\",\n            \"role\": \"anchor\",\n            \"stateId\": 4033,\n            \"tier\": \"D7\"\n          }\n        ],\n        \"d7AnchorsAtCeiling\": true,\n        \"spanCeiling\": 10,\n        \"theorem\": \"seven points on the 12-cycle have seven gaps summing to 12, so the largest gap is at least 2 and the minimal covering arc span is at most 10: the A-ladder ceiling is geometry, not fiat\",\n        \"verified\": true\n      }\n    },\n    {\n      \"checkId\": \"research-verdict-consistency\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"confirmed\"\n    },\n    {\n      \"checkId\": \"research-verdict-non-gating\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"records carry no truth-value gate; ORR-522 consumes them regardless\"\n    },\n    {\n      \"checkId\": \"guards-namespace\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings (both ledgers)\"\n    },\n    {\n      \"checkId\": \"bindings-court\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen Court position binding\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"2a925adb9dcb361072871c35448eb5388f39ce576ad22ce934e62e59d02eadf6\"\n}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/generate-shadow-ladder.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"candidateFingerprint\": \"df7c175a24b5b4d734e104222ec489712cb582ba2d649693eab87639ec8fc950\", \"candidateId\": \"SHADOW_LADDER_v0\", \"records\": 10}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/validate-shadow-ladder.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "two dH4 pair\"\n    },\n    {\n      \"checkId\": \"termination-5-33-detachment\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"T1-complement A3 predictions are detached 5-33 masks\"\n    },\n    {\n      \"checkId\": \"incidence-15-36\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"five selected 5-35 cores contribute 15 of 36 incidences\"\n    },\n    {\n      \"checkId\": \"incidence-5-120\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"five selected 5-34 cores are in the 120-mask one-parent stratum\"\n    },\n    {\n      \"checkId\": \"incidence-out-of-census\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"ten A2-to-A1 construction incidences are outside the detached audit\"\n    },\n    {\n      \"checkId\": \"guards-no-court\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"Court positions cross-check A1 only\"\n    },\n    {\n      \"checkId\": \"guards-seam-typed\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"midpoint and phase-seam provenance remain distinct\"\n    },\n    {\n      \"checkId\": \"guards-namespace\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"achirality\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all derived 5-35, 5-34, and predicted 5-33 masks are achiral\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"620ab28a836999e2d28134964cb0df5d7f952ed24406e47f3792b84bab4273bf\"\n}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/generate-twin-hub-convergence.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"candidateFingerprint\": \"9427d3a864139f54f3a2eebaa0b1523a978f600c1d3e50f874c4302129a2f5bb\", \"candidateId\": \"TWIN_HUB_CONVERGENCE_v0\", \"verdict\": \"confirmed\"}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/validate-twin-hub-convergence.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "iagnostic\": \"D5 anchors seat the unseated-midpoint offices Mars and Jupiter\"\n    },\n    {\n      \"checkId\": \"d5-case-verified\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"A2 twin pairs share the Mercury hub; their ring midpoints {Mars, Jupiter} are unseated as seams (exact midpoints, no A3); all 14 D5 seat-contact rows route the permitted single-hop chain, seating the unseated-midpoint offices.\"\n    },\n    {\n      \"checkId\": \"chain-total-28\",\n      \"status\": \"PASS\",\n      \"diagnostic\": {\n        \"total\": 28,\n        \"valid\": 28\n      }\n    },\n    {\n      \"checkId\": \"chain-two-contacts-per-anchor\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"exactly two selected contacts per D4/D5 anchor\"\n    },\n    {\n      \"checkId\": \"chain-no-violations\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"no missing, reversed, or cross-tier relation accepted\"\n    },\n    {\n      \"checkId\": \"negative-controls\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"six negative controls pass\"\n    },\n    {\n      \"checkId\": \"verdict-consistency\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"confirmed\"\n    },\n    {\n      \"checkId\": \"guards-namespace\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"1f9cd609953d5d9fa70cfb4238cc2735476585a302bd8f67ddcca1c00a5f9363\"\n}\n"
+    },
+    {
+      "command": "node scripts/build-pentatonic-binding-audit-closure.mjs",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "c-closure\",\n      \"diagnostic\": \"17a99dde862c5853031724a11c6435d372fd795eeb86a700fbc266068e7a8b61\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"crt310-zero-admission-boundary\",\n      \"diagnostic\": {\n        \"itemCount\": 35,\n        \"proposedCount\": 35,\n        \"eligibleForAdmissionReviewCount\": 0,\n        \"admittedCount\": 0,\n        \"gateDefinitionCount\": 7,\n        \"satisfiedGateResultCount\": 70,\n        \"pendingGateResultCount\": 175,\n        \"failedGateResultCount\": 0\n      },\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"planning-evidence-cross-references\",\n      \"diagnostic\": \"authority and CRT-310 workflow references remain planning_evidence only\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"package-entrypoint-closure\",\n      \"diagnostic\": {\n        \"build\": \"python3 scripts/generate-pentatonic-7-35-parent-audit.py\",\n        \"test\": \"python3 -m pytest -p no:cacheprovider -q tests/test_pentatonic_7_35_parent_audit.py && node --test tests/pentatonic_binding_audit/neo4j-live.test.mjs\",\n        \"validate\": \"python3 scripts/generate-pentatonic-7-35-parent-audit.py --check && python3 scripts/validate-pentatonic-7-35-parent-audit.py && npm run test:pentatonic-binding-audit --silent && npm run validate:cypher --silent\"\n      },\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"intrinsic-environment-independence\",\n      \"diagnostic\": \"closure core excludes time, provider, host, process, port, and temporary-path identity\",\n      \"status\": \"PASS\"\n    }\n  ],\n  \"reportFingerprint\": \"a8a8f15d88f930e49af6d4a1530a6bec3051c715dd3578ed34c9f4e048c50234\"\n}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/build-fivefold-engine-promotion-evidence.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"evidenceFingerprint\": \"8139d4f31f14ea5721d1b7658262fc52ab55dc78589099dadc565442a87d69a4\", \"evidenceId\": \"fivefold-engine-promotion-evidence-v1\", \"exclusionEvidenceCount\": 11, \"itemEvidenceCount\": 10, \"verdict\": \"PASS\"}\n"
+    },
+    {
+      "command": "node scripts/build-field-derivation-bundle.mjs",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"bundleId\":\"FIELD_DERIVATION_OBS014_015_016_v1\",\"bundleFingerprint\":\"1192e254c161ae1f46cacc519a36cdebc2348c2c23ff180dba52964051475fd7\",\"observations\":3}\n"
+    },
+    {
+      "command": "node scripts/build-orrery-taxonomy-read-model.mjs",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"bundleId\":\"TAXONOMY_READ_MODEL_v1\",\"recordCount\":462,\"stale\":false}\n"
+    },
+    {
+      "command": "node scripts/build-orrery-d-tier-taxonomy-dataset.mjs",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"datasetId\":\"D_TIER_TAXONOMY_DATASET_v1\",\"recordCount\":175,\"stale\":false}\n"
+    }
+  ],
+  "constraints": {
+    "audioLanded": false,
+    "claimEvent": false,
+    "encoderBytesModified": false,
+    "gateBytesModified": false,
+    "landingMode": "working-tree + one dedicated commit",
+    "ledgerDefinitionAdmitted": false,
+    "orreryApplicationSourceModified": false,
+    "qEngineBytesModified": false,
+    "rendererBytesModified": false,
+    "substrateBytesModified": false,
+    "tagOrPush": false
+  },
+  "decisions": {
+    "a1CorrectedScope": "14 states / 13 pairs / 0 violations",
+    "earGate": "SIGNED_HUMAN",
+    "earVerdict": "The auditions sound like they are described and i hear them in their entirety Signed Erick",
+    "ledgerMemoStatus": "PROPOSED (not admitted)",
+    "mvp82Outcome": "DEFER (A1 all-history scope)",
+    "mvp82bOutcome": "ADOPT (A1 formal-landing-chain scope)"
+  },
+  "directive": "MVP8.2-OBS-LEDGER-DIR-1 + MVP8.2b-SCOPE-DIR-1",
+  "ledger": {
+    "afterBytes": 426743,
+    "afterLines": 4472,
+    "afterSha256": "b800cc402db2c9e40c4fe44f10a79f0dcf6ba635effd8083ecc3791c91631d40",
+    "beforeSha256": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7",
+    "entry": "single combined L29 entry appended at tail; no prior entry amended",
+    "prefixIdentity": true
+  },
+  "manifestRegen": {
+    "note": "the landing receipt is written after this manifest; the final packaging manifest includes it and is regenerated below",
+    "preReceiptFileCount": 1959,
+    "preReceiptManifestSha256": "9f0c124a08bc5ddf82b80e98529cd89306749475c5c7133f86085f451af3dc5b",
+    "preReceiptTotalBytes": 300583138
+  },
+  "opening": {
+    "baseHead": "6bde6a267fe3256d6f5ca52938b00b1d4b38a623",
+    "ledgerBefore": {
+      "bytes": 417658,
+      "lines": 4436,
+      "path": "provenance/DECISION_LEDGER.md",
+      "sha256": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7"
+    },
+    "manifestBefore": {
+      "fileCount": 1894,
+      "sha256": "6e56d32710c9d8bf69ef5b91656074f1ccc3083b0d96cea27e5f082ce72bde88",
+      "totalBytes": 299622436
+    },
+    "stagingManifestSha256": "58e76a21e2fc1d90bc0e565d7f017f312516427755b04684197de1c0d7399cb2",
+    "treeClean": false,
+    "validationBefore": {
+      "failed": 0,
+      "passed": 418
+    },
+    "workingTreeException": {
+      "preStaged": [
+        "scrum/plan/mvp8-2-obs-ledger-dir-1-rev2.md",
+        "scrum/plan/mvp8-2b-scope-dir-1-rev1.md",
+        "scrum/plan/mvp8-2-obs-ledger-closing-report.md",
+        "scrum/plan/mvp8-2b-scope-closing-report.md",
+        "docs/specs/ledger-formal-definition-v0.1.0.md",
+        "scripts/validate-validation-prose-consistency.mjs",
+        "qa/validation-prose-consistency.json"
+      ],
+      "reason": "directive, reports, and the ledger memo were staged at authorization; the prose validator carries the ADJ-PLANNING-SEAT-20261108-L29 closing-report sanctions; no pinned byte changed"
+    }
+  },
+  "proseConsistency": {
+    "authoritativeChecksPassed": 418,
+    "command": "node scripts/validate-validation-prose-consistency.mjs",
+    "verdict": "PASS",
+    "violations": 0
+  },
+  "schemaVersion": "governed-loop.mvp8_2-landing.v1",
+  "scope": "lean: audio excluded",
+  "status": "COMPLETE",
+  "task": "MVP8.2-L29-LANDING",
+  "validation": {
+    "checksFailed": 0,
+    "checksPassed": 418,
+    "command": "node scripts/validate-release.mjs",
+    "reportPath": "qa/integrated-release-validation.json",
+    "verdict": "PASS"
+  },
+  "validatorAmendments": [
+    {
+      "afterSha256": "aecf750a8e9262d6ba89feb19389afa5f9caf78f7f1f682b59795cedfa8696a2",
+      "beforeSha256": "15edc1ec5a188c9acd8ea431bf72460101994fe110f3bb08a28b17a66691d66d",
+      "path": "scripts/validate-validation-prose-consistency.mjs",
+      "reason": "ADJ-PLANNING-SEAT-20261108-L29: sanction the two MVP8.2/MVP8.2b closing reports as frozen historical prose records"
+    }
+  ],
+  "warnings": []
+}

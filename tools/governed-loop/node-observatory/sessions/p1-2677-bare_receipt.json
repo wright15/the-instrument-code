@@ -1,0 +1,278 @@
+{
+  "acoustic": null,
+  "barContainers": [
+    {
+      "bar": 1,
+      "node": "2677@0",
+      "pitchClasses": [
+        0,
+        2,
+        4,
+        5,
+        6,
+        9,
+        11
+      ]
+    },
+    {
+      "bar": 2,
+      "node": "2677@0",
+      "pitchClasses": [
+        0,
+        2,
+        4,
+        5,
+        6,
+        9,
+        11
+      ]
+    }
+  ],
+  "barCount": 2,
+  "barFocalSequence": [
+    {
+      "bar": 1,
+      "focal": "5-27:9@0",
+      "node": "2677@0",
+      "role": "dwell"
+    },
+    {
+      "bar": 2,
+      "focal": "5-27:9@0",
+      "node": "2677@0",
+      "role": "dwell"
+    }
+  ],
+  "barPlan": [
+    {
+      "activeTreatment": "bare",
+      "bar": 1,
+      "bassMidi": null,
+      "bassPc": null,
+      "chordMidi": [],
+      "chordPcs": [],
+      "fallbackUsed": false,
+      "inversion": null,
+      "missingPc": [
+        7
+      ],
+      "node": "2677@0",
+      "office": "Moon",
+      "registerOffset": 0,
+      "requestedTreatment": "bare",
+      "status": "skip"
+    },
+    {
+      "activeTreatment": "bare",
+      "bar": 2,
+      "bassMidi": null,
+      "bassPc": null,
+      "chordMidi": [],
+      "chordPcs": [],
+      "fallbackUsed": false,
+      "inversion": null,
+      "missingPc": [
+        7
+      ],
+      "node": "2677@0",
+      "office": "Moon",
+      "registerOffset": 0,
+      "requestedTreatment": "bare",
+      "status": "skip"
+    }
+  ],
+  "directive": "MVP8.2-OBS-LEDGER-DIR-1",
+  "durationMs": 7200,
+  "emittedSteps": [
+    {
+      "bar": 1,
+      "emittedPc": 0,
+      "sub": 0
+    },
+    {
+      "bar": 1,
+      "emittedPc": 2,
+      "sub": 1
+    },
+    {
+      "bar": 1,
+      "emittedPc": 2,
+      "sub": 2
+    },
+    {
+      "bar": 1,
+      "emittedPc": 9,
+      "sub": 3
+    },
+    {
+      "bar": 1,
+      "emittedPc": 4,
+      "sub": 4
+    },
+    {
+      "bar": 1,
+      "emittedPc": 11,
+      "sub": 5
+    },
+    {
+      "bar": 1,
+      "emittedPc": 6,
+      "sub": 6
+    },
+    {
+      "bar": 1,
+      "emittedPc": 0,
+      "sub": 7
+    },
+    {
+      "bar": 1,
+      "emittedPc": 2,
+      "sub": 8
+    },
+    {
+      "bar": 1,
+      "emittedPc": 4,
+      "sub": 9
+    },
+    {
+      "bar": 1,
+      "emittedPc": 5,
+      "sub": 10
+    },
+    {
+      "bar": 1,
+      "emittedPc": 5,
+      "sub": 11
+    },
+    {
+      "bar": 2,
+      "emittedPc": 0,
+      "sub": 0
+    },
+    {
+      "bar": 2,
+      "emittedPc": 2,
+      "sub": 1
+    },
+    {
+      "bar": 2,
+      "emittedPc": 2,
+      "sub": 2
+    },
+    {
+      "bar": 2,
+      "emittedPc": 9,
+      "sub": 3
+    },
+    {
+      "bar": 2,
+      "emittedPc": 4,
+      "sub": 4
+    },
+    {
+      "bar": 2,
+      "emittedPc": 11,
+      "sub": 5
+    },
+    {
+      "bar": 2,
+      "emittedPc": 6,
+      "sub": 6
+    },
+    {
+      "bar": 2,
+      "emittedPc": 0,
+      "sub": 7
+    },
+    {
+      "bar": 2,
+      "emittedPc": 2,
+      "sub": 8
+    },
+    {
+      "bar": 2,
+      "emittedPc": 4,
+      "sub": 9
+    },
+    {
+      "bar": 2,
+      "emittedPc": 5,
+      "sub": 10
+    },
+    {
+      "bar": 2,
+      "emittedPc": 5,
+      "sub": 11
+    }
+  ],
+  "failures": [
+    {
+      "bar": 1,
+      "missingPc": [
+        7
+      ],
+      "node": "2677@0",
+      "requested": "bare",
+      "status": "skip"
+    },
+    {
+      "bar": 2,
+      "missingPc": [
+        7
+      ],
+      "node": "2677@0",
+      "requested": "bare",
+      "status": "skip"
+    }
+  ],
+  "focalSet": "lookup_default",
+  "guardFlags": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + governance ledger specification",
+    "ledgerDefinitionStatus": "proposed",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "inversion": 0,
+  "label": "p1-2677-bare",
+  "lead": "governed_dyads_structural",
+  "leadCensus": {
+    "dyadPresenceMatch": null,
+    "dyadSteps": 0,
+    "dyadUnisonLeaks": 0,
+    "leadPrimaryMatch": null,
+    "outOfMaskLeadNotes": 0,
+    "outOfMaskPadNotes": 0,
+    "padVoicedMatch": null,
+    "partnerNotes": 0,
+    "primarySteps": 0
+  },
+  "llmCalls": 0,
+  "mode": "study",
+  "nodes": [
+    "2677@0"
+  ],
+  "preset": "P1",
+  "rendered": false,
+  "repoWrites": 0,
+  "rubs": null,
+  "schemaVersion": "governed-loop.mvp8_2-session.v1",
+  "sessionSheetPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-bare_session_sheet.md",
+  "sessionSheetSha256": "d7b9d46bfbe65473bf9076c89c523998bb7343881bbb0d0b833fd62ec1d7ecc6",
+  "summary": {
+    "focalSwitches": 0,
+    "outOfMaskPitches": 0
+  },
+  "task": "MVP8.2-TC",
+  "tracePath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-bare.jsonl",
+  "traceSha256": "fb8d0e34b4d2135efc5d2a47025bce372cb7423514656013ab2335ff8cbb2af1",
+  "voicing": "bare"
+}

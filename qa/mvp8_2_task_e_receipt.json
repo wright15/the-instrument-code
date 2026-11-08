@@ -1,0 +1,260 @@
+{
+  "bets": {
+    "A1": false,
+    "A2": true,
+    "A3": true,
+    "B1": true,
+    "B2": true,
+    "B3": true,
+    "D1": true,
+    "D2": true,
+    "D3": true
+  },
+  "directive": "MVP8.2-OBS-LEDGER-DIR-1",
+  "earManifest": {
+    "path": "task-d/mvp8_2_ear_manifest.json",
+    "sha256": "51e0857ff8c1ce8ca2b8eda437ba37627902871556351c3beb659fc0043062cc",
+    "status": "PENDING_HUMAN"
+  },
+  "evidence": {
+    "task0Receipt": "task-0/mvp8_2_task_0_receipt.json",
+    "task0ReceiptSha256": "05166d53836d7d4aa12b24485bfe2f162e7cb919f8f8dc25be604f9a91d5a233",
+    "taskAReceipt": "task-a/mvp8_2_task_a_receipt.json",
+    "taskAReceiptSha256": "e384d3e48488d180277c989f820eae797472dafdc3e32413de871a71ddbef11f",
+    "taskBReceipt": "task-b/mvp8_2_task_b_receipt.json",
+    "taskBReceiptSha256": "6078260313d0cc86664875aae06ea3610691772015e61c81fd13a1737f63514a",
+    "taskC": {
+      "cliSmokeLabel": "smoke-2677-shell",
+      "cliSmokeReceiptSha256": "ce61deee846aa2a9a619378320d1bbde4cb28ab2d00e784acbf6be7256f7bd98",
+      "cliSmokeRendered": true,
+      "observeSignature": "observe(nodes, voicing, inversion, lead, bars, focal_set, mode, out_dir, label)",
+      "sessionSheetEmitted": true
+    },
+    "taskDReceipt": "task-d/mvp8_2_task_d_receipt.json",
+    "taskDReceiptSha256": "288d76a41b64393a88dfc12040413d365fa10a8962a8a5ebd65f22aaa41f1684"
+  },
+  "failingBets": [
+    "A1"
+  ],
+  "fixedPoint": {
+    "expectedHead": "6bde6a267fe3256d6f5ca52938b00b1d4b38a623",
+    "head": "6bde6a267fe3256d6f5ca52938b00b1d4b38a623",
+    "pass": true,
+    "predeclarationMatch": true,
+    "treeClean": true
+  },
+  "guardFlags": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + governance ledger specification",
+    "ledgerDefinitionStatus": "proposed",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "ledgerAudit": {
+    "A1": {
+      "cleanEraStartCommit": "9a0764b67450d2396e0579e404dc353a7aaefbc8",
+      "cleanEraStartSubject": "SCRUM: GOV-519 scaffolding re-scope + rename, GOV-520 gated shell, ENTRY 3 registration, ledger-coupled regen to L''",
+      "cleanPairs": 40,
+      "finding": "prefix closure holds from the clean-era base through L28; the pre-era ledger inserted entries mid-file (prepends and one regeneration normalization), so L1 as stated is not universally true over all git history",
+      "l12ToL28CoveredByCleanEra": true,
+      "pairs": 60,
+      "prefixViolations": 15,
+      "receiptChainLinkViolations": 0,
+      "receiptPairPrefixViolations": 0,
+      "status": "FAIL",
+      "violatingPairs": [
+        {
+          "from": "7e5c1689bb514e20847a10e479a0b4e64b0f638b",
+          "fromLength": 13337,
+          "to": "48df13c305c9b2e96b32afa956aba249200e196a",
+          "toLength": 15795
+        },
+        {
+          "from": "48df13c305c9b2e96b32afa956aba249200e196a",
+          "fromLength": 15795,
+          "to": "4ea389ac79089bce8e42855f996e4fcae91cbd7a",
+          "toLength": 38699
+        },
+        {
+          "from": "4ea389ac79089bce8e42855f996e4fcae91cbd7a",
+          "fromLength": 38699,
+          "to": "591a0ec34b67fccc96285e3e4416201454bebae7",
+          "toLength": 42765
+        },
+        {
+          "from": "591a0ec34b67fccc96285e3e4416201454bebae7",
+          "fromLength": 42765,
+          "to": "dbc878e64cc8dcb4fe901829a379e32b54ea273a",
+          "toLength": 48731
+        },
+        {
+          "from": "dbc878e64cc8dcb4fe901829a379e32b54ea273a",
+          "fromLength": 48731,
+          "to": "ac366cd210a829c471be064b84d698ad866886e2",
+          "toLength": 51054
+        },
+        {
+          "from": "ac366cd210a829c471be064b84d698ad866886e2",
+          "fromLength": 51054,
+          "to": "86371bbc1335a2f8f2e88ac27a9cf6b3e23a1822",
+          "toLength": 55581
+        },
+        {
+          "from": "86371bbc1335a2f8f2e88ac27a9cf6b3e23a1822",
+          "fromLength": 55581,
+          "to": "21e0eec6880f08ba7d74fa8a7862d0a2e5849d62",
+          "toLength": 57146
+        },
+        {
+          "from": "21e0eec6880f08ba7d74fa8a7862d0a2e5849d62",
+          "fromLength": 57146,
+          "to": "4a3989f2143925f9ea977c1248d710ceb0d8feaf",
+          "toLength": 58415
+        },
+        {
+          "from": "4a3989f2143925f9ea977c1248d710ceb0d8feaf",
+          "fromLength": 58415,
+          "to": "4730764ea38bc130a198eb27ff1442132933196b",
+          "toLength": 64877
+        },
+        {
+          "from": "4730764ea38bc130a198eb27ff1442132933196b",
+          "fromLength": 64877,
+          "to": "26694a15d87526f515dfc5069ad08deee67a6a3c",
+          "toLength": 66122
+        },
+        {
+          "from": "26694a15d87526f515dfc5069ad08deee67a6a3c",
+          "fromLength": 66122,
+          "to": "45d23d614c5f419856d6a60699d12cb440cf10a0",
+          "toLength": 67932
+        },
+        {
+          "from": "45d23d614c5f419856d6a60699d12cb440cf10a0",
+          "fromLength": 67932,
+          "to": "7e9be6d804a92b122375edeadfa98f64a347e3d2",
+          "toLength": 69995
+        },
+        {
+          "from": "7e9be6d804a92b122375edeadfa98f64a347e3d2",
+          "fromLength": 69995,
+          "to": "dc0016cc045f65455be3c41805b4eb4a5dc1d0a3",
+          "toLength": 70373
+        },
+        {
+          "from": "7f61d7cef1783c33824ea684b14474b4f79395d5",
+          "fromLength": 94312,
+          "to": "6f13c5f8c6f711f6c72625fa286b6bc62e76e8c2",
+          "toLength": 101912
+        },
+        {
+          "from": "6f13c5f8c6f711f6c72625fa286b6bc62e76e8c2",
+          "fromLength": 101912,
+          "to": "9a0764b67450d2396e0579e404dc353a7aaefbc8",
+          "toLength": 103573
+        }
+      ]
+    },
+    "A2": {
+      "status": "PASS"
+    },
+    "A3": {
+      "samples": 5,
+      "status": "PASS"
+    },
+    "memoStatus": "PROPOSED"
+  },
+  "llmCalls": 0,
+  "observatory": {
+    "B1": {
+      "evaluations": 73728,
+      "inversionCount": 4,
+      "leadModeCount": 6,
+      "masks": [
+        671,
+        1387,
+        1453,
+        1715,
+        1717,
+        1749,
+        2477,
+        2485,
+        2677,
+        2739,
+        2741,
+        2745,
+        2765,
+        2773,
+        2869,
+        3253
+      ],
+      "pass": true,
+      "treatmentCount": 8,
+      "violations": {
+        "dyadUnisonLeaks": 0,
+        "outOfMaskLeadNotes": 0,
+        "outOfMaskPadNotes": 0
+      }
+    },
+    "B2": {
+      "pass": true,
+      "sessions": 9
+    },
+    "B3": {
+      "bare": 5,
+      "failMasks": [
+        2677,
+        2869
+      ],
+      "pass": true,
+      "shell": 7,
+      "triad": 5
+    }
+  },
+  "outcome": "DEFER",
+  "predeclarationSha256": "5185e878be5ef87d797174aff26cf9527c3332aefb0fc641afd1a8d504b8b3ad",
+  "presets": {
+    "D1": {
+      "pass": true,
+      "render": [
+        "full",
+        "ninth_drop5",
+        "rootless_13th",
+        "shell"
+      ],
+      "skip": [
+        "bare",
+        "seventh",
+        "triad",
+        "triad_9"
+      ]
+    },
+    "D2": {
+      "allHopsAccept": true,
+      "coreEveryBar": true,
+      "dwellFocalSwitchesZero": true,
+      "pass": true,
+      "rubsP2a": 26,
+      "rubsP2b": 23,
+      "rubsP2c": 43
+    },
+    "D3": {
+      "destinationSteps": 24,
+      "differingSteps": 8,
+      "focalSwitches": 0,
+      "pass": true
+    }
+  },
+  "repoWrites": 0,
+  "schemaVersion": "governed-loop.mvp8_2-task-e.v1",
+  "status": "COMPLETE",
+  "task": "MVP8.2-TE"
+}

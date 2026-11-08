@@ -1,0 +1,365 @@
+{
+  "anchors": {
+    "150": {
+      "actual": "        if cm == nm and cp == np_:",
+      "expected": "        if cm == nm and cp == np_:",
+      "match": true
+    },
+    "151": {
+      "actual": "            if self.gov_root[cm] is None:",
+      "expected": "            if self.gov_root[cm] is None:",
+      "match": true
+    },
+    "152": {
+      "actual": "                checks[\"boundary_endpoint\"] = True",
+      "expected": "                checks[\"boundary_endpoint\"] = True",
+      "match": true
+    },
+    "153": {
+      "actual": "                checks[\"same_family\"] = False",
+      "expected": "                checks[\"same_family\"] = False",
+      "match": true
+    },
+    "154": {
+      "actual": "                return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "expected": "                return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "match": true
+    },
+    "169": {
+      "actual": "        same_root = cr is not None and nr is not None and cr == nr",
+      "expected": "        same_root = cr is not None and nr is not None and cr == nr",
+      "match": true
+    },
+    "171": {
+      "actual": "        if same_root and cp == np_:",
+      "expected": "        if same_root and cp == np_:",
+      "match": true
+    },
+    "172": {
+      "actual": "            return \"ACCEPT\", [], checks, None",
+      "expected": "            return \"ACCEPT\", [], checks, None",
+      "match": true
+    },
+    "183": {
+      "actual": "        if checks[\"boundary_endpoint\"]:",
+      "expected": "        if checks[\"boundary_endpoint\"]:",
+      "match": true
+    },
+    "184": {
+      "actual": "            return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "expected": "            return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "match": true
+    },
+    "733": {
+      "actual": "        plan[\"dwellMs\"] = int(__import__(\"os\").environ.get(\"ORRERY_BRIDGE_DWELL_MS\", \"1500\"))",
+      "expected": "        plan[\"dwellMs\"] = int(__import__(\"os\").environ.get(\"ORRERY_BRIDGE_DWELL_MS\", \"1500\"))",
+      "match": true
+    }
+  },
+  "bets": {
+    "A1_prefixClosure": {
+      "baseCommit": "23c15407fd6d2a95c83714134b882166f850b605",
+      "commits": [
+        "23c15407fd6d2a95c83714134b882166f850b605",
+        "4c5cb52026dedac63f3f7dabface46503b4c23e6",
+        "3fb68575c49d2a649728ec79ebdb2f541a55d2fb",
+        "669e89045c7f1af3628aa957a98be64e21e47099",
+        "3f3dbb77f9b3c2cbb3a31ebcfb81b3b8289b434c",
+        "65c72478d83ce3982e51e24d9422191510e89962",
+        "8c66cf16a9a364b3b4096e9aab31e4ba6f24d3c2",
+        "148a96f8c5ce5bcd83fad832170bc76c7075a943",
+        "ba6ae1fe2c8b31ab739c91593701177678bff18b",
+        "52202ed9c4aad7d4baead2859972853aad28e7bb",
+        "154db019711570ade5558a78eb5abb0b63b3c884",
+        "865abc8be20483e45176c378c4e078ebd3187c26",
+        "d1b2286a5b6f3783af24094eb78e40ab511bb8e5",
+        "7117d24297c49507d66fbc927ce12efdba768884"
+      ],
+      "expectedBaseBytes": 292767,
+      "expectedHeadBytes": 417658,
+      "expectedHeadSha256": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7",
+      "headCommit": "7117d24297c49507d66fbc927ce12efdba768884",
+      "method": "git show <commit>:provenance/DECISION_LEDGER.md per commit; pairwise byte-prefix identity; qa/ receipt before/after cross-check; receipt chain links",
+      "scope": "formal landing chain, enumerated",
+      "shortlist": [
+        "23c1540",
+        "4c5cb52",
+        "3fb6857",
+        "669e890",
+        "3f3dbb7",
+        "65c7247",
+        "8c66cf1",
+        "148a96f",
+        "ba6ae1f",
+        "52202ed",
+        "154db01",
+        "865abc8",
+        "d1b2286",
+        "7117d24"
+      ],
+      "threshold": 0
+    }
+  },
+  "carriedBets": {
+    "A2": true,
+    "A3": true,
+    "B1": true,
+    "B2": true,
+    "B3": true,
+    "D1": true,
+    "D2": true,
+    "D3": true
+  },
+  "correction": {
+    "from": "every git commit that touched provenance/DECISION_LEDGER.md",
+    "reason": "the pre-era ledger inserted entries mid-file; the clean append-only era begins at 9a0764b6 and covers L12-L28",
+    "thresholdsChanged": false,
+    "to": "the enumerated formal landing chain base+13 landings"
+  },
+  "directive": "MVP8.2b-SCOPE-DIR-1",
+  "earGate": {
+    "manifestSha256": "322227f74c647ac1110f80884abfe46eb0ced7ff166cec9a51fd786cdb528511",
+    "overallVerdict": "The auditions sound like they are described and i hear them in their entirety Signed Erick",
+    "scorecardSha256": "64b0bd1ac1a2f962533fc67b66f13e441194952e80ddcfa679b93747bfc2a0a7",
+    "signedAt": "2026-11-08",
+    "signedBy": "Erick",
+    "sourceManifestSha256": "51e0857ff8c1ce8ca2b8eda437ba37627902871556351c3beb659fc0043062cc",
+    "status": "SIGNED_HUMAN"
+  },
+  "fences": {
+    "bipartitePlanningEvidenceOnly": true,
+    "llmCalls": 0,
+    "noCHFormulation": true,
+    "noEntropy": true,
+    "noGateByteChange": true,
+    "noQSubstrateByteChange": true,
+    "noRendererByteChange": true,
+    "repoReadOnly": true
+  },
+  "fixedPoint": {
+    "architectureMap": {
+      "actualBytes": 34880,
+      "actualSha256": "865ab785164f85c0426d849cb3314c8c41efe81155ce14bd7fe6392ca5d0c381",
+      "expectedBytes": 34880,
+      "expectedSha256": "865ab785164f85c0426d849cb3314c8c41efe81155ce14bd7fe6392ca5d0c381",
+      "match": true
+    },
+    "checksums": {
+      "actualBytes": 225338,
+      "actualSha256": "a116900c357aa2c34a3b921849000115f406ac713e98613e999ac69a6da43962",
+      "expectedBytes": 225338,
+      "expectedSha256": "a116900c357aa2c34a3b921849000115f406ac713e98613e999ac69a6da43962",
+      "match": true
+    },
+    "completion": {
+      "actualBytes": 4998,
+      "actualSha256": "6b8cbf29d67f8d728f69bccdf84c4ead2689ff2c11a45bbe8f1b16a4a5dff20d",
+      "expectedBytes": 4998,
+      "expectedSha256": "6b8cbf29d67f8d728f69bccdf84c4ead2689ff2c11a45bbe8f1b16a4a5dff20d",
+      "match": true
+    },
+    "decisionLedger": {
+      "actualBytes": 417658,
+      "actualLines": 4436,
+      "actualSha256": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7",
+      "expectedBytes": 417658,
+      "expectedLines": 4436,
+      "expectedSha256": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7",
+      "match": true
+    },
+    "head": {
+      "actual": "6bde6a267fe3256d6f5ca52938b00b1d4b38a623",
+      "expected": "6bde6a267fe3256d6f5ca52938b00b1d4b38a623",
+      "match": true
+    },
+    "landingReceipt": {
+      "actualBytes": 29772,
+      "actualSha256": "ebea2cf3dc67fdcde66f640e26d8d760303f37dcc1a307ada8635bd78d78c8a8",
+      "expectedBytes": 29772,
+      "expectedSha256": "ebea2cf3dc67fdcde66f640e26d8d760303f37dcc1a307ada8635bd78d78c8a8",
+      "match": true
+    },
+    "manifest": {
+      "actualBytes": 355191,
+      "actualSha256": "6e56d32710c9d8bf69ef5b91656074f1ccc3083b0d96cea27e5f082ce72bde88",
+      "expectedBytes": 355191,
+      "expectedSha256": "6e56d32710c9d8bf69ef5b91656074f1ccc3083b0d96cea27e5f082ce72bde88",
+      "match": true
+    },
+    "manifestCounts": {
+      "files": 1894,
+      "match": true,
+      "totalBytes": 299622436
+    },
+    "observationLedger": {
+      "actualBytes": 33153,
+      "actualLines": 561,
+      "actualSha256": "8e0be9f5bcee0af1aeb87b8ee71fa18121376c1e2b8e23416439c8834e17787f",
+      "expectedBytes": 33153,
+      "expectedLines": 561,
+      "expectedSha256": "8e0be9f5bcee0af1aeb87b8ee71fa18121376c1e2b8e23416439c8834e17787f",
+      "match": true
+    },
+    "treeClean": true
+  },
+  "frozenEvidence": {
+    "census": {
+      "bytes": 7051,
+      "path": "task-b/mvp8_2_affordance_census.json",
+      "sha256": "42bf04fff162d733354a52d1706b0c5343271993c36706086f1bdefee04e7f5e"
+    },
+    "closingReport": {
+      "bytes": 6905,
+      "path": "task-e/MVP8_2-OBS-LEDGER-CLOSING-REPORT.md",
+      "sha256": "8168ea29a42a406fa877f34bd540db683cfefe74441d230bb23ac44ea46645c2"
+    },
+    "earManifest": {
+      "bytes": 5448,
+      "path": "task-d/mvp8_2_ear_manifest.json",
+      "sha256": "51e0857ff8c1ce8ca2b8eda437ba37627902871556351c3beb659fc0043062cc"
+    },
+    "earScorecard": {
+      "bytes": 1272,
+      "path": "task-0/mvp8_2_ear_scorecard.json",
+      "sha256": "1ffab47ffc30c97b3c2bba4c97f6b667ebbb4477f05ff63fa4a9cfe3892b0c3e"
+    },
+    "memo": {
+      "bytes": 5457,
+      "path": "task-a/PROPOSED_SPEC_THE_LEDGER_V0_1_0.md",
+      "sha256": "c7617cc6853b426078f0fa9688a876478155a3ceb56d4229237b6d265235aa33"
+    },
+    "predeclaration": {
+      "bytes": 31899,
+      "path": "task-0/mvp8_2_predeclared_bets.json",
+      "sha256": "5185e878be5ef87d797174aff26cf9527c3332aefb0fc641afd1a8d504b8b3ad"
+    },
+    "task0Receipt": {
+      "bytes": 18935,
+      "path": "task-0/mvp8_2_task_0_receipt.json",
+      "sha256": "05166d53836d7d4aa12b24485bfe2f162e7cb919f8f8dc25be604f9a91d5a233"
+    },
+    "taskAReceipt": {
+      "bytes": 50149,
+      "path": "task-a/mvp8_2_task_a_receipt.json",
+      "sha256": "e384d3e48488d180277c989f820eae797472dafdc3e32413de871a71ddbef11f"
+    },
+    "taskBReceipt": {
+      "bytes": 5740,
+      "path": "task-b/mvp8_2_task_b_receipt.json",
+      "sha256": "6078260313d0cc86664875aae06ea3610691772015e61c81fd13a1737f63514a"
+    },
+    "taskDReceipt": {
+      "bytes": 112637,
+      "path": "task-d/mvp8_2_task_d_receipt.json",
+      "sha256": "288d76a41b64393a88dfc12040413d365fa10a8962a8a5ebd65f22aaa41f1684"
+    },
+    "taskEReceipt": {
+      "bytes": 7654,
+      "path": "task-e/mvp8_2_task_e_receipt.json",
+      "sha256": "081c1f85d1c7f77cb706842d5027e4550a87b6fde7ebad5d1571ba52ab6130d8"
+    }
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + governance ledger specification",
+    "ledgerDefinitionStatus": "proposed",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "historicalFinding": {
+    "cleanEraBaseIsAncestorOfL12": true,
+    "cleanEraPairs": 40,
+    "cleanEraStartCommit": "9a0764b67450d2396e0579e404dc353a7aaefbc8",
+    "frozenA1CommitCount": 61,
+    "frozenA1PrefixViolations": 15,
+    "frozenFailingBets": [
+      "A1"
+    ],
+    "frozenOutcome": "DEFER",
+    "memoSha256": "c7617cc6853b426078f0fa9688a876478155a3ceb56d4229237b6d265235aa33",
+    "memoStatus": "PROPOSED"
+  },
+  "layer": "SPEC-001 \u00a71.3 overlay dynamics + governance ledger specification",
+  "openingHead": "6bde6a267fe3256d6f5ca52938b00b1d4b38a623",
+  "outcomes": {
+    "ADOPT": "A1 corrected scope PASS and all carried bets PASS and ear SIGNED_HUMAN",
+    "ADOPT_PENDING_EAR": "all bets PASS and ear unsigned; landing blocked",
+    "DEFER": "A1 or any carried bet fails; report measured values"
+  },
+  "pins": {
+    "tools/governed-loop/mvp5/task-b/mvp5_audio_renderer.py": {
+      "actualBytes": 24696,
+      "actualSha256": "0c917aab7a95851e90ce1c3244ea6b3af1ea35e362262cb0d7a0095ec40b9984",
+      "expectedBytes": 24696,
+      "expectedSha256": "0c917aab7a95851e90ce1c3244ea6b3af1ea35e362262cb0d7a0095ec40b9984",
+      "match": true
+    },
+    "tools/governed-loop/mvp6_2/task-b/mvp6_2_legato_renderer.py": {
+      "actualBytes": 8624,
+      "actualSha256": "e91c6e749b1003da3ad4461b745ad0d35caf23cb394f369d92534d857f6e769c",
+      "expectedBytes": null,
+      "expectedSha256": "e91c6e749b1003da3ad4461b745ad0d35caf23cb394f369d92534d857f6e769c",
+      "match": true
+    },
+    "tools/governed-loop/mvp6_3/task-b/mvp6_3_fade_renderer.py": {
+      "actualBytes": 8145,
+      "actualSha256": "673ac7083b59ee96f4a0d1f429778ad69ef4dd382f72e2f67bc1e3e7989769de",
+      "expectedBytes": null,
+      "expectedSha256": "673ac7083b59ee96f4a0d1f429778ad69ef4dd382f72e2f67bc1e3e7989769de",
+      "match": true
+    },
+    "tools/governed-loop/mvp7_intention/task-a/mvp7_log_spectral_lens.py": {
+      "actualBytes": 21956,
+      "actualSha256": "6d3b971ab3750871e2f923d62814bc34a0e0563d3ecdf0ffd1d44f700bb0cdd6",
+      "expectedBytes": null,
+      "expectedSha256": "6d3b971ab3750871e2f923d62814bc34a0e0563d3ecdf0ffd1d44f700bb0cdd6",
+      "match": true
+    },
+    "tools/governed-loop/mvp8/mvp8_common.py": {
+      "actualBytes": 6006,
+      "actualSha256": "6027380c377903eb4c5e49481a460bd13fd8216173e4bb9f269cd24f6b60eeb4",
+      "expectedBytes": 6006,
+      "expectedSha256": "6027380c377903eb4c5e49481a460bd13fd8216173e4bb9f269cd24f6b60eeb4",
+      "match": true
+    },
+    "tools/governed-loop/mvp8/task-a/mvp8_pentatonic_lookup_v1.json": {
+      "actualBytes": 34099980,
+      "actualSha256": "7d4b0548247fac47904860b252951db3810cdacde8fb38f277e2da39b726851f",
+      "expectedBytes": 34099980,
+      "expectedSha256": "7d4b0548247fac47904860b252951db3810cdacde8fb38f277e2da39b726851f",
+      "match": true
+    },
+    "tools/governed-loop/mvp8/task-b/mvp8_pentatonic_q_engine.py": {
+      "actualBytes": 20443,
+      "actualSha256": "e9ec9804661a10257d94a1af25fd1c03182bcd6bd4d4f516430ceb6833a54c8f",
+      "expectedBytes": 20443,
+      "expectedSha256": "e9ec9804661a10257d94a1af25fd1c03182bcd6bd4d4f516430ceb6833a54c8f",
+      "match": true
+    },
+    "tools/governed-loop/mvp8/task-c/mvp8_task_c.py": {
+      "actualBytes": 18347,
+      "actualSha256": "8ff0630abae1c4d2fff6e508eae267050a1e7b9833e965ae296d946382e6fd96",
+      "expectedBytes": 18347,
+      "expectedSha256": "8ff0630abae1c4d2fff6e508eae267050a1e7b9833e965ae296d946382e6fd96",
+      "match": true
+    }
+  },
+  "revision": 1,
+  "schemaVersion": "governed-loop.mvp8_2b-predeclared-bets.v1",
+  "status": "locked-before-evaluation",
+  "strongCore": {
+    "boundary": 540,
+    "governed": 2388,
+    "oneWay": 276,
+    "reachable": 3204,
+    "strongCore": 2928
+  }
+}

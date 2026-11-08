@@ -1,0 +1,213 @@
+{
+  "acoustic": {
+    "bars": [
+      {
+        "bar": 1,
+        "centroidOct": -0.003999004273342837,
+        "spreadOct": 0.8049604517968215,
+        "windows": 154
+      },
+      {
+        "bar": 2,
+        "centroidOct": 0.045730925926457715,
+        "spreadOct": 0.7550431904665866,
+        "windows": 153
+      }
+    ],
+    "global": {
+      "centroidOct": 0.020784967454896525,
+      "spreadOct": 0.780083119602926,
+      "windows": 307
+    },
+    "maxAbsLast32": 0,
+    "sampleCount": 317520,
+    "seam": {
+      "boundaries": 1,
+      "maxDepthDb": 1.814914,
+      "medianDepthDb": 1.814914
+    }
+  },
+  "barCount": 2,
+  "barPlan": [
+    {
+      "activeTreatment": "shell",
+      "bar": 1,
+      "bassMidi": 48,
+      "bassPc": 0,
+      "chordMidi": [
+        60,
+        64,
+        71
+      ],
+      "chordPcs": [
+        0,
+        4,
+        11
+      ],
+      "fallbackUsed": false,
+      "inversion": 0,
+      "missingPc": [],
+      "node": "2677@0",
+      "office": "Moon",
+      "registerOffset": 0,
+      "requestedTreatment": "shell",
+      "status": "ok"
+    },
+    {
+      "activeTreatment": "shell",
+      "bar": 2,
+      "bassMidi": 48,
+      "bassPc": 0,
+      "chordMidi": [
+        60,
+        64,
+        71
+      ],
+      "chordPcs": [
+        0,
+        4,
+        11
+      ],
+      "fallbackUsed": false,
+      "inversion": 0,
+      "missingPc": [],
+      "node": "2677@0",
+      "office": "Moon",
+      "registerOffset": 0,
+      "requestedTreatment": "shell",
+      "status": "ok"
+    }
+  ],
+  "clippedSamples": 0,
+  "directive": "MVP8.2-OBS-LEDGER-DIR-1",
+  "durationMs": 7200,
+  "expectedSamples": 317520,
+  "failures": [],
+  "focalSet": "lookup_default",
+  "guardFlags": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + governance ledger specification",
+    "ledgerDefinitionStatus": "proposed",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "inversion": 0,
+  "label": "smoke-2677-shell",
+  "lead": "governed_dyads_structural",
+  "leadCensus": {
+    "dyadPresenceMatch": true,
+    "dyadSteps": 6,
+    "dyadUnisonLeaks": 0,
+    "leadPrimaryMatch": true,
+    "outOfMaskLeadNotes": 0,
+    "outOfMaskPadNotes": 0,
+    "padVoicedMatch": true,
+    "partnerNotes": 6,
+    "primarySteps": 24
+  },
+  "llmCalls": 0,
+  "midiPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-c/smoke/smoke-2677-shell.mid",
+  "midiSha256": "c1d05f1c948d2102fc320f2a2664b7abbbfdeb56ea0d86ffc86656611c70dfc0",
+  "mode": "study",
+  "nodes": [
+    "2677@0"
+  ],
+  "nonFiniteSamples": 0,
+  "peakQ15": 9713,
+  "preset": null,
+  "reRenderMatch": true,
+  "rendered": true,
+  "repoWrites": 0,
+  "rmsMilli": 64,
+  "rubs": {
+    "pairs": [
+      {
+        "bar": 1,
+        "leadPc": 0,
+        "padPc": 11
+      },
+      {
+        "bar": 1,
+        "leadPc": 5,
+        "padPc": 4
+      },
+      {
+        "bar": 1,
+        "leadPc": 11,
+        "padPc": 0
+      },
+      {
+        "bar": 1,
+        "leadPc": 0,
+        "padPc": 11
+      },
+      {
+        "bar": 1,
+        "leadPc": 5,
+        "padPc": 4
+      },
+      {
+        "bar": 1,
+        "leadPc": 5,
+        "padPc": 4
+      },
+      {
+        "bar": 2,
+        "leadPc": 0,
+        "padPc": 11
+      },
+      {
+        "bar": 2,
+        "leadPc": 5,
+        "padPc": 4
+      },
+      {
+        "bar": 2,
+        "leadPc": 11,
+        "padPc": 0
+      },
+      {
+        "bar": 2,
+        "leadPc": 0,
+        "padPc": 11
+      },
+      {
+        "bar": 2,
+        "leadPc": 5,
+        "padPc": 4
+      },
+      {
+        "bar": 2,
+        "leadPc": 5,
+        "padPc": 4
+      }
+    ],
+    "perBar": {
+      "1": 6,
+      "2": 6
+    },
+    "phaseDelta": {
+      "majorSeventh": 2,
+      "minorSecond": 0
+    },
+    "rubs": 12
+  },
+  "samples": 317520,
+  "schemaVersion": "governed-loop.mvp8_2-session.v1",
+  "sessionSheetPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-c/smoke/smoke-2677-shell_session_sheet.md",
+  "sessionSheetSha256": "14bc83b84ee311a51ba38992af84dd042244fa47b327968c575e717002c29c96",
+  "task": "MVP8.2-TC",
+  "tracePath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-c/smoke/smoke-2677-shell.jsonl",
+  "traceSha256": "d4805fd406bf169b20c97f526906bedf0d2357a9ac0959f1afda696b850aa478",
+  "voicing": "shell",
+  "wavPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-c/smoke/smoke-2677-shell.wav",
+  "wavSha256": "e9a74876de8dd289e98f44bbf187df9e3ad9a8c459a6212c1dd747b16496aa1a"
+}

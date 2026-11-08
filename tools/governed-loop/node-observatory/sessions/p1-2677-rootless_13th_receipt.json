@@ -1,0 +1,375 @@
+{
+  "acoustic": {
+    "bars": [
+      {
+        "bar": 1,
+        "centroidOct": 0.035779844409354306,
+        "spreadOct": 0.7079758927841082,
+        "windows": 154
+      },
+      {
+        "bar": 2,
+        "centroidOct": 0.05576719921523511,
+        "spreadOct": 0.6941875109236831,
+        "windows": 153
+      }
+    ],
+    "global": {
+      "centroidOct": 0.045740969117171126,
+      "spreadOct": 0.7011041585018768,
+      "windows": 307
+    },
+    "maxAbsLast32": 0,
+    "sampleCount": 317520,
+    "seam": {
+      "boundaries": 1,
+      "maxDepthDb": 3.028858,
+      "medianDepthDb": 3.028858
+    }
+  },
+  "barContainers": [
+    {
+      "bar": 1,
+      "node": "2677@0",
+      "pitchClasses": [
+        0,
+        2,
+        4,
+        5,
+        6,
+        9,
+        11
+      ]
+    },
+    {
+      "bar": 2,
+      "node": "2677@0",
+      "pitchClasses": [
+        0,
+        2,
+        4,
+        5,
+        6,
+        9,
+        11
+      ]
+    }
+  ],
+  "barCount": 2,
+  "barFocalSequence": [
+    {
+      "bar": 1,
+      "focal": "5-27:9@0",
+      "node": "2677@0",
+      "role": "dwell"
+    },
+    {
+      "bar": 2,
+      "focal": "5-27:9@0",
+      "node": "2677@0",
+      "role": "dwell"
+    }
+  ],
+  "barPlan": [
+    {
+      "activeTreatment": "rootless_13th",
+      "bar": 1,
+      "bassMidi": 50,
+      "bassPc": 2,
+      "chordMidi": [
+        62,
+        64,
+        69,
+        71
+      ],
+      "chordPcs": [
+        2,
+        4,
+        9,
+        11
+      ],
+      "fallbackUsed": false,
+      "inversion": 0,
+      "missingPc": [],
+      "node": "2677@0",
+      "office": "Moon",
+      "registerOffset": 0,
+      "requestedTreatment": "rootless_13th",
+      "status": "ok"
+    },
+    {
+      "activeTreatment": "rootless_13th",
+      "bar": 2,
+      "bassMidi": 50,
+      "bassPc": 2,
+      "chordMidi": [
+        62,
+        64,
+        69,
+        71
+      ],
+      "chordPcs": [
+        2,
+        4,
+        9,
+        11
+      ],
+      "fallbackUsed": false,
+      "inversion": 0,
+      "missingPc": [],
+      "node": "2677@0",
+      "office": "Moon",
+      "registerOffset": 0,
+      "requestedTreatment": "rootless_13th",
+      "status": "ok"
+    }
+  ],
+  "clippedSamples": 0,
+  "directive": "MVP8.2-OBS-LEDGER-DIR-1",
+  "durationMs": 7200,
+  "emittedSteps": [
+    {
+      "bar": 1,
+      "emittedPc": 0,
+      "sub": 0
+    },
+    {
+      "bar": 1,
+      "emittedPc": 2,
+      "sub": 1
+    },
+    {
+      "bar": 1,
+      "emittedPc": 2,
+      "sub": 2
+    },
+    {
+      "bar": 1,
+      "emittedPc": 9,
+      "sub": 3
+    },
+    {
+      "bar": 1,
+      "emittedPc": 4,
+      "sub": 4
+    },
+    {
+      "bar": 1,
+      "emittedPc": 11,
+      "sub": 5
+    },
+    {
+      "bar": 1,
+      "emittedPc": 6,
+      "sub": 6
+    },
+    {
+      "bar": 1,
+      "emittedPc": 0,
+      "sub": 7
+    },
+    {
+      "bar": 1,
+      "emittedPc": 2,
+      "sub": 8
+    },
+    {
+      "bar": 1,
+      "emittedPc": 4,
+      "sub": 9
+    },
+    {
+      "bar": 1,
+      "emittedPc": 5,
+      "sub": 10
+    },
+    {
+      "bar": 1,
+      "emittedPc": 5,
+      "sub": 11
+    },
+    {
+      "bar": 2,
+      "emittedPc": 0,
+      "sub": 0
+    },
+    {
+      "bar": 2,
+      "emittedPc": 2,
+      "sub": 1
+    },
+    {
+      "bar": 2,
+      "emittedPc": 2,
+      "sub": 2
+    },
+    {
+      "bar": 2,
+      "emittedPc": 9,
+      "sub": 3
+    },
+    {
+      "bar": 2,
+      "emittedPc": 4,
+      "sub": 4
+    },
+    {
+      "bar": 2,
+      "emittedPc": 11,
+      "sub": 5
+    },
+    {
+      "bar": 2,
+      "emittedPc": 6,
+      "sub": 6
+    },
+    {
+      "bar": 2,
+      "emittedPc": 0,
+      "sub": 7
+    },
+    {
+      "bar": 2,
+      "emittedPc": 2,
+      "sub": 8
+    },
+    {
+      "bar": 2,
+      "emittedPc": 4,
+      "sub": 9
+    },
+    {
+      "bar": 2,
+      "emittedPc": 5,
+      "sub": 10
+    },
+    {
+      "bar": 2,
+      "emittedPc": 5,
+      "sub": 11
+    }
+  ],
+  "expectedSamples": 317520,
+  "failures": [],
+  "focalSet": "lookup_default",
+  "guardFlags": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + governance ledger specification",
+    "ledgerDefinitionStatus": "proposed",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "inversion": 0,
+  "label": "p1-2677-rootless_13th",
+  "lead": "governed_dyads_structural",
+  "leadCensus": {
+    "dyadPresenceMatch": true,
+    "dyadSteps": 6,
+    "dyadUnisonLeaks": 0,
+    "leadPrimaryMatch": true,
+    "outOfMaskLeadNotes": 0,
+    "outOfMaskPadNotes": 0,
+    "padVoicedMatch": true,
+    "partnerNotes": 6,
+    "primarySteps": 24
+  },
+  "llmCalls": 0,
+  "midiPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-rootless_13th.mid",
+  "midiSha256": "a7912d1b6050700fc2f64594d8b583dc3fd21d495c45614af2beb3d7142948cd",
+  "mode": "study",
+  "nodes": [
+    "2677@0"
+  ],
+  "nonFiniteSamples": 0,
+  "peakQ15": 9770,
+  "preset": "P1",
+  "reRenderMatch": true,
+  "rendered": true,
+  "repoWrites": 0,
+  "rmsMilli": 68,
+  "rubs": {
+    "pairs": [
+      {
+        "bar": 1,
+        "leadPc": 0,
+        "padPc": 11
+      },
+      {
+        "bar": 1,
+        "leadPc": 5,
+        "padPc": 4
+      },
+      {
+        "bar": 1,
+        "leadPc": 0,
+        "padPc": 11
+      },
+      {
+        "bar": 1,
+        "leadPc": 5,
+        "padPc": 4
+      },
+      {
+        "bar": 1,
+        "leadPc": 5,
+        "padPc": 4
+      },
+      {
+        "bar": 2,
+        "leadPc": 0,
+        "padPc": 11
+      },
+      {
+        "bar": 2,
+        "leadPc": 5,
+        "padPc": 4
+      },
+      {
+        "bar": 2,
+        "leadPc": 0,
+        "padPc": 11
+      },
+      {
+        "bar": 2,
+        "leadPc": 5,
+        "padPc": 4
+      },
+      {
+        "bar": 2,
+        "leadPc": 5,
+        "padPc": 4
+      }
+    ],
+    "perBar": {
+      "1": 5,
+      "2": 5
+    },
+    "phaseDelta": {
+      "majorSeventh": 2,
+      "minorSecond": 0
+    },
+    "rubs": 10
+  },
+  "samples": 317520,
+  "schemaVersion": "governed-loop.mvp8_2-session.v1",
+  "sessionSheetPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-rootless_13th_session_sheet.md",
+  "sessionSheetSha256": "54522fcd5a603aa49e8215d3c20382536009a017038975a89e1ed2351dfa35e0",
+  "summary": {
+    "focalSwitches": 0,
+    "outOfMaskPitches": 0
+  },
+  "task": "MVP8.2-TC",
+  "tracePath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-rootless_13th.jsonl",
+  "traceSha256": "c414934080d259de8a9595ae5601e5c345d3ebb59bc8cfee4fb56cfbad76f58f",
+  "voicing": "rootless_13th",
+  "wavPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-d/sessions/p1-2677-rootless_13th.wav",
+  "wavSha256": "5e888f00257b5b1c093907968f171a671d5230c972d350b9490763839c03f57e"
+}
