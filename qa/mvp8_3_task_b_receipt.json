@@ -1,0 +1,60 @@
+{
+  "censusPath": "task-b/mvp8_3_shape_census.json",
+  "censusSha256": "8995ccf706d409eadbe3210e975cac9c0d9bd923de66b742f4c1d142a1c4a4ba",
+  "directive": "MVP8.3-DEGREE-LADDER-DIR-1",
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + degree-ladder observatory",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "orbitPartitionPass": true,
+  "repoWrites": 0,
+  "schemaVersion": "governed-loop.mvp8_3-task-b.v1",
+  "status": "COMPLETE",
+  "summary": {
+    "all": {
+      "nodes": 5544,
+      "orbitFailedNodes": 0,
+      "orbitPassNodes": 5544,
+      "s1_k3_distinct": 54,
+      "s1_k4_distinct": 164,
+      "s2_k3_distinct": 28,
+      "s2_k4_distinct": 119,
+      "s3_k3_distinct": 43,
+      "s3_k4_distinct": 129
+    },
+    "governed": {
+      "nodes": 2388,
+      "orbitFailedNodes": 0,
+      "orbitPassNodes": 2388,
+      "s1_k3_distinct": 39,
+      "s1_k4_distinct": 140,
+      "s2_k3_distinct": 28,
+      "s2_k4_distinct": 107,
+      "s3_k3_distinct": 43,
+      "s3_k4_distinct": 108
+    },
+    "s000": {
+      "nodes": 2928,
+      "orbitFailedNodes": 0,
+      "orbitPassNodes": 2928,
+      "s1_k3_distinct": 45,
+      "s1_k4_distinct": 154,
+      "s2_k3_distinct": 28,
+      "s2_k4_distinct": 107,
+      "s3_k3_distinct": 43,
+      "s3_k4_distinct": 121
+    }
+  },
+  "task": "MVP8.3-TB"
+}

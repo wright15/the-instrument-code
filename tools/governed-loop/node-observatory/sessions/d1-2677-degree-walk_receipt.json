@@ -1,0 +1,400 @@
+{
+  "arm": "degree",
+  "barCount": 7,
+  "directive": "MVP8.3-DEGREE-LADDER-DIR-1",
+  "durationMs": 25200,
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + degree-ladder observatory",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "label": "d1-2677-degree-walk",
+  "leadCensus": {
+    "dyadSteps": 21,
+    "dyadUnisonLeaks": 0,
+    "outOfMaskLeadNotes": 0,
+    "partnerNotes": 21,
+    "primarySteps": 84
+  },
+  "llmCalls": 0,
+  "midiAudit": {
+    "division": 480,
+    "dyadPresenceMatch": true,
+    "format": 1,
+    "leadNoteOns": 105,
+    "leadPrimaryMatch": true,
+    "outOfMaskLeadNotes": 0,
+    "outOfMaskPadNotes": 0,
+    "padNoteOns": 35,
+    "padVoicedMatch": true,
+    "trackChunks": 3
+  },
+  "nodes": [
+    "2677@0",
+    "2677@0",
+    "2677@0",
+    "2677@0",
+    "2677@0",
+    "2677@0",
+    "2677@0"
+  ],
+  "planChecks": {
+    "barCount": 7,
+    "bassEqualsRoot": true,
+    "bassMidiRule": true,
+    "chordPcsInContainer": true,
+    "dyadPresenceMatch": true,
+    "dyadUnisonLeaks": 0,
+    "leadPrimaryMatch": true,
+    "outOfMaskLeadNotes": 0,
+    "outOfMaskPadNotes": 0,
+    "padVoicedMatch": true,
+    "reRenderMatch": true,
+    "rootIsLowest": true
+  },
+  "plans": [
+    {
+      "activeTreatment": "degree_walk",
+      "bar": 1,
+      "bassMidi": 48,
+      "bassPc": 0,
+      "chordMidi": [
+        60,
+        64,
+        66,
+        71
+      ],
+      "chordPcs": [
+        0,
+        4,
+        6,
+        11
+      ],
+      "degree": 1,
+      "depth": 4,
+      "fallbackUsed": false,
+      "inversion": 0,
+      "missingPc": [],
+      "node": "2677@0",
+      "office": "Moon",
+      "orbitCode": null,
+      "orderedPcs": [
+        0,
+        4,
+        6,
+        11
+      ],
+      "registerOffset": 0,
+      "requestedTreatment": "degree_walk",
+      "rootDegree": 1,
+      "rootPc": 0,
+      "rotation": 0,
+      "shape": [
+        0,
+        4,
+        6,
+        11
+      ],
+      "status": "ok",
+      "stride": 2
+    },
+    {
+      "activeTreatment": "degree_walk",
+      "bar": 2,
+      "bassMidi": 50,
+      "bassPc": 2,
+      "chordMidi": [
+        62,
+        65,
+        69,
+        72
+      ],
+      "chordPcs": [
+        0,
+        2,
+        5,
+        9
+      ],
+      "degree": 2,
+      "depth": 4,
+      "fallbackUsed": false,
+      "inversion": 1,
+      "missingPc": [],
+      "node": "2677@0",
+      "office": "Moon",
+      "orbitCode": null,
+      "orderedPcs": [
+        2,
+        5,
+        9,
+        0
+      ],
+      "registerOffset": 0,
+      "requestedTreatment": "degree_walk",
+      "rootDegree": 2,
+      "rootPc": 2,
+      "rotation": 0,
+      "shape": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "status": "ok",
+      "stride": 2
+    },
+    {
+      "activeTreatment": "degree_walk",
+      "bar": 3,
+      "bassMidi": 52,
+      "bassPc": 4,
+      "chordMidi": [
+        64,
+        66,
+        71,
+        74
+      ],
+      "chordPcs": [
+        2,
+        4,
+        6,
+        11
+      ],
+      "degree": 3,
+      "depth": 4,
+      "fallbackUsed": false,
+      "inversion": 1,
+      "missingPc": [],
+      "node": "2677@0",
+      "office": "Moon",
+      "orbitCode": null,
+      "orderedPcs": [
+        4,
+        6,
+        11,
+        2
+      ],
+      "registerOffset": 0,
+      "requestedTreatment": "degree_walk",
+      "rootDegree": 3,
+      "rootPc": 4,
+      "rotation": 0,
+      "shape": [
+        0,
+        2,
+        7,
+        10
+      ],
+      "status": "ok",
+      "stride": 2
+    },
+    {
+      "activeTreatment": "degree_walk",
+      "bar": 4,
+      "bassMidi": 53,
+      "bassPc": 5,
+      "chordMidi": [
+        65,
+        69,
+        72,
+        76
+      ],
+      "chordPcs": [
+        0,
+        4,
+        5,
+        9
+      ],
+      "degree": 4,
+      "depth": 4,
+      "fallbackUsed": false,
+      "inversion": 2,
+      "missingPc": [],
+      "node": "2677@0",
+      "office": "Moon",
+      "orbitCode": null,
+      "orderedPcs": [
+        5,
+        9,
+        0,
+        4
+      ],
+      "registerOffset": 0,
+      "requestedTreatment": "degree_walk",
+      "rootDegree": 4,
+      "rootPc": 5,
+      "rotation": 0,
+      "shape": [
+        0,
+        4,
+        7,
+        11
+      ],
+      "status": "ok",
+      "stride": 2
+    },
+    {
+      "activeTreatment": "degree_walk",
+      "bar": 5,
+      "bassMidi": 54,
+      "bassPc": 6,
+      "chordMidi": [
+        66,
+        71,
+        74,
+        77
+      ],
+      "chordPcs": [
+        2,
+        5,
+        6,
+        11
+      ],
+      "degree": 5,
+      "depth": 4,
+      "fallbackUsed": false,
+      "inversion": 2,
+      "missingPc": [],
+      "node": "2677@0",
+      "office": "Moon",
+      "orbitCode": null,
+      "orderedPcs": [
+        6,
+        11,
+        2,
+        5
+      ],
+      "registerOffset": 0,
+      "requestedTreatment": "degree_walk",
+      "rootDegree": 5,
+      "rootPc": 6,
+      "rotation": 0,
+      "shape": [
+        0,
+        5,
+        8,
+        11
+      ],
+      "status": "ok",
+      "stride": 2
+    },
+    {
+      "activeTreatment": "degree_walk",
+      "bar": 6,
+      "bassMidi": 57,
+      "bassPc": 9,
+      "chordMidi": [
+        69,
+        72,
+        76,
+        78
+      ],
+      "chordPcs": [
+        0,
+        4,
+        6,
+        9
+      ],
+      "degree": 6,
+      "depth": 4,
+      "fallbackUsed": false,
+      "inversion": 3,
+      "missingPc": [],
+      "node": "2677@0",
+      "office": "Moon",
+      "orbitCode": null,
+      "orderedPcs": [
+        9,
+        0,
+        4,
+        6
+      ],
+      "registerOffset": 0,
+      "requestedTreatment": "degree_walk",
+      "rootDegree": 6,
+      "rootPc": 9,
+      "rotation": 0,
+      "shape": [
+        0,
+        3,
+        7,
+        9
+      ],
+      "status": "ok",
+      "stride": 2
+    },
+    {
+      "activeTreatment": "degree_walk",
+      "bar": 7,
+      "bassMidi": 59,
+      "bassPc": 11,
+      "chordMidi": [
+        71,
+        74,
+        77,
+        81
+      ],
+      "chordPcs": [
+        2,
+        5,
+        9,
+        11
+      ],
+      "degree": 7,
+      "depth": 4,
+      "fallbackUsed": false,
+      "inversion": 3,
+      "missingPc": [],
+      "node": "2677@0",
+      "office": "Moon",
+      "orbitCode": null,
+      "orderedPcs": [
+        11,
+        2,
+        5,
+        9
+      ],
+      "registerOffset": 0,
+      "requestedTreatment": "degree_walk",
+      "rootDegree": 7,
+      "rootPc": 11,
+      "rotation": 0,
+      "shape": [
+        0,
+        3,
+        6,
+        10
+      ],
+      "status": "ok",
+      "stride": 2
+    }
+  ],
+  "render": {
+    "clippedSamples": 0,
+    "durationMs": 25200,
+    "expectedSamples": 1111320,
+    "midiPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_3_degree_ladder/task-d/sessions/d1-2677-degree-walk.mid",
+    "midiSha256": "bdb9613df1336c55add9e144edbca298704145e55b237de4d26e5f414ca5decf",
+    "nonFiniteSamples": 0,
+    "peakQ15": 10958,
+    "reRenderMatch": true,
+    "rmsMilli": 69,
+    "samples": 1111320,
+    "sessionSheetPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_3_degree_ladder/task-d/sessions/d1-2677-degree-walk_session_sheet.md",
+    "sessionSheetSha256": "bd25b9740bd25e8fbd8286cab29c4f83a50ac5e0cf8ff0f22450ef8445a5b47b",
+    "tracePath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_3_degree_ladder/task-d/sessions/d1-2677-degree-walk.jsonl",
+    "traceSha256": "131d1b89f785ea5998b546295f7a3d1ae9babdec2e733ef5318c9ed0ecd286bc",
+    "wavPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_3_degree_ladder/task-d/sessions/d1-2677-degree-walk.wav",
+    "wavSha256": "5b60ab7ceb59bf1c95a4612cff189136be40a05f19d0071e3a9ec81f080c806a"
+  },
+  "repoWrites": 0
+}

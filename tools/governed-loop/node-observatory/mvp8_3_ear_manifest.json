@@ -1,0 +1,162 @@
+{
+  "directive": "MVP8.3-DEGREE-LADDER-DIR-1",
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + degree-ladder observatory",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "leadLayer": "governed_dyads_structural",
+  "llmCalls": 0,
+  "note": "No listener field is authored by the agent; the ear gate is human.",
+  "overallVerdict": "D1 A harmonies all wound unique between sections and signifigantly different than B where the sections just sound the same and loop after 4 bars, D2 A sounds pleasant and the melody lines sound like they belong, D2 B sounds good as well but the variations are not there. D3 sounds unique and exotic and the andulusian cadence sounds like you would expect harmonically especially with way the harmony goes from bar to bar the melodies arent exactly what i would expect but they dont exactly sound totally off, maybe these melody lines are from 7-11 instead of 7-35 and 7-34. D3 B harmonically sounds good but does not have the andulusian character the same way that i would expect it and the way we hear in D3 A.\n\nVerdict: I adopt the degree path (the A arms) over template control (the B arms).",
+  "pairs": [
+    {
+      "control": "d1-2677-template-cycle",
+      "controlMicroSteps": 84,
+      "degree": "d1-2677-degree-walk",
+      "degreeMicroSteps": 84,
+      "leadMicroStepsMatch": true,
+      "pair": "D1"
+    },
+    {
+      "control": "d2-1453-template-cycle",
+      "controlMicroSteps": 84,
+      "degree": "d2-1453-degree-walk",
+      "degreeMicroSteps": 84,
+      "leadMicroStepsMatch": true,
+      "pair": "D2"
+    },
+    {
+      "control": "d3-andalusian-template-cycle",
+      "controlMicroSteps": 48,
+      "degree": "d3-andalusian-degree-pillars",
+      "degreeMicroSteps": 48,
+      "leadMicroStepsMatch": true,
+      "pair": "D3"
+    }
+  ],
+  "schemaVersion": "governed-loop.mvp8_3-ear-manifest.v1",
+  "sessions": [
+    {
+      "arm": "degree",
+      "barCount": 7,
+      "durationMs": 25200,
+      "label": "d1-2677-degree-walk",
+      "midiSha256": "bdb9613df1336c55add9e144edbca298704145e55b237de4d26e5f414ca5decf",
+      "nodes": [
+        "2677@0",
+        "2677@0",
+        "2677@0",
+        "2677@0",
+        "2677@0",
+        "2677@0",
+        "2677@0"
+      ],
+      "sessionSheetSha256": "bd25b9740bd25e8fbd8286cab29c4f83a50ac5e0cf8ff0f22450ef8445a5b47b",
+      "traceSha256": "131d1b89f785ea5998b546295f7a3d1ae9babdec2e733ef5318c9ed0ecd286bc",
+      "wavSha256": "5b60ab7ceb59bf1c95a4612cff189136be40a05f19d0071e3a9ec81f080c806a"
+    },
+    {
+      "arm": "template_control",
+      "barCount": 7,
+      "durationMs": 25200,
+      "label": "d1-2677-template-cycle",
+      "midiSha256": "08b0380d107a84994a2f10f7bfa09fbb294ac0aa723609d29db36b936c98071c",
+      "nodes": [
+        "2677@0",
+        "2677@0",
+        "2677@0",
+        "2677@0",
+        "2677@0",
+        "2677@0",
+        "2677@0"
+      ],
+      "sessionSheetSha256": "1f12fe389066a76b7c73fb9db63ac557cef5f5cfd0c937d9b4dd512f1608baf7",
+      "traceSha256": "619dee3c8ff547b45947567507acda539eb74367b238b8005f686478476706b6",
+      "wavSha256": "d91eb7d4a0ecc3adc1c141baf12c1b090bb0e620e6998254c340209fad31e3f2"
+    },
+    {
+      "arm": "degree",
+      "barCount": 7,
+      "durationMs": 25200,
+      "label": "d2-1453-degree-walk",
+      "midiSha256": "2f8f2a552009a562a9257d0114d53bf33015334f31a7680da4913ed64eabdaaa",
+      "nodes": [
+        "1453@0",
+        "1453@0",
+        "1453@0",
+        "1453@0",
+        "1453@0",
+        "1453@0",
+        "1453@0"
+      ],
+      "sessionSheetSha256": "62ff391fd6409575cc84c0032c439e971037513abed4573aaf8076ee5f3ac2b4",
+      "traceSha256": "3f507ecd6ac4b3c793022e901412166f57d33eb9922951fddb7be14b2ec030d1",
+      "wavSha256": "bb39118b2d83ea30d0262a6fa41302ef7c813254d6140c8426d22d553f01f2e4"
+    },
+    {
+      "arm": "template_control",
+      "barCount": 7,
+      "durationMs": 25200,
+      "label": "d2-1453-template-cycle",
+      "midiSha256": "7d70b4c7954eabf1163eb7c1298b9ddb8aef45a964448bb9c2d2c595b28e40e6",
+      "nodes": [
+        "1453@0",
+        "1453@0",
+        "1453@0",
+        "1453@0",
+        "1453@0",
+        "1453@0",
+        "1453@0"
+      ],
+      "sessionSheetSha256": "85625b36876efd021923ead52734d23c7ecb4a4a5104d48cca3571a1c2952f7d",
+      "traceSha256": "b4b40c770606049cef7789ae3604165575def9988b229d42803334965765a85b",
+      "wavSha256": "5273317affbe22a447c68dc3f527f50f0ec561b11610707597b01484bea3554c"
+    },
+    {
+      "arm": "degree",
+      "barCount": 4,
+      "durationMs": 14400,
+      "label": "d3-andalusian-degree-pillars",
+      "midiSha256": "27c9896474b92e9b701eabd1373ae6110ddd44a867efe8311ba15a229353e880",
+      "nodes": [
+        "375@11",
+        "1143@0",
+        "379@0",
+        "859@11"
+      ],
+      "sessionSheetSha256": "20c4d613f7fe5c576ff85d824b48aad98cf9bed0466e1dd21d5165f50cde3597",
+      "traceSha256": "a5286b06c48bcc2b9ad7a6a44ecee0972d60f2791a67315dccd922bfd65cb2d5",
+      "wavSha256": "cd539993640f1b7ceaa81a2e5859852f851d8635d4e2c969df805ad3e6857ec7"
+    },
+    {
+      "arm": "template_control",
+      "barCount": 4,
+      "durationMs": 14400,
+      "label": "d3-andalusian-template-cycle",
+      "midiSha256": "dc3ed7c5860da0f79473ddcb77d2effb2e49310ed417381fbe6da5c7a95a6014",
+      "nodes": [
+        "375@11",
+        "1143@0",
+        "379@0",
+        "859@11"
+      ],
+      "sessionSheetSha256": "94c3bb3d0c7c175b78eb709b3d308b0e2c6bd32c2f54ae4bfc0b470d70ed678f",
+      "traceSha256": "32176b936681d0b4413c44830ab8deb68cb875d566ba2d3541f80c69663745a6",
+      "wavSha256": "afd5e7e3698aa11cf61d5d5760aab959459da099d8fb2a22837eb945a2a42d39"
+    }
+  ],
+  "signed": true,
+  "signedAt": "2026-11-12",
+  "signedBy": "Erick",
+  "status": "SIGNED_HUMAN"
+}

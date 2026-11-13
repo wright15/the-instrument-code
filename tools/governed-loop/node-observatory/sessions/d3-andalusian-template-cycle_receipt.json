@@ -1,0 +1,182 @@
+{
+  "arm": "template_control",
+  "barCount": 4,
+  "directive": "MVP8.3-DEGREE-LADDER-DIR-1",
+  "durationMs": 14400,
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + degree-ladder observatory",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "label": "d3-andalusian-template-cycle",
+  "leadCensus": {
+    "dyadSteps": 12,
+    "dyadUnisonLeaks": 0,
+    "outOfMaskLeadNotes": 0,
+    "partnerNotes": 12,
+    "primarySteps": 48
+  },
+  "llmCalls": 0,
+  "midiAudit": {
+    "division": 480,
+    "dyadPresenceMatch": true,
+    "format": 1,
+    "leadNoteOns": 60,
+    "leadPrimaryMatch": true,
+    "outOfMaskLeadNotes": 0,
+    "outOfMaskPadNotes": 0,
+    "padNoteOns": 20,
+    "padVoicedMatch": true,
+    "trackChunks": 3
+  },
+  "nodes": [
+    "375@11",
+    "1143@0",
+    "379@0",
+    "859@11"
+  ],
+  "planChecks": {
+    "barCount": 4,
+    "dyadPresenceMatch": true,
+    "dyadUnisonLeaks": 0,
+    "leadPrimaryMatch": true,
+    "outOfMaskLeadNotes": 0,
+    "outOfMaskPadNotes": 0,
+    "padVoicedMatch": true,
+    "reRenderMatch": true
+  },
+  "plans": [
+    {
+      "activeTreatment": "triad_9",
+      "bar": 1,
+      "bassMidi": 60,
+      "bassPc": 0,
+      "chordMidi": [
+        72,
+        73,
+        76,
+        83
+      ],
+      "chordPcs": [
+        0,
+        1,
+        4,
+        11
+      ],
+      "fallbackUsed": false,
+      "inversion": 0,
+      "missingPc": [],
+      "node": "375@11",
+      "office": "Venus",
+      "registerOffset": 12,
+      "requestedTreatment": "triad_9",
+      "status": "ok"
+    },
+    {
+      "activeTreatment": "seventh",
+      "bar": 2,
+      "bassMidi": 60,
+      "bassPc": 0,
+      "chordMidi": [
+        72,
+        74,
+        77,
+        82
+      ],
+      "chordPcs": [
+        0,
+        2,
+        5,
+        10
+      ],
+      "fallbackUsed": false,
+      "inversion": 0,
+      "missingPc": [],
+      "node": "1143@0",
+      "office": "Venus",
+      "registerOffset": 12,
+      "requestedTreatment": "seventh",
+      "status": "ok"
+    },
+    {
+      "activeTreatment": "ninth_drop5",
+      "bar": 3,
+      "bassMidi": 48,
+      "bassPc": 0,
+      "chordMidi": [
+        60,
+        61,
+        63,
+        68
+      ],
+      "chordPcs": [
+        0,
+        1,
+        3,
+        8
+      ],
+      "fallbackUsed": false,
+      "inversion": 0,
+      "missingPc": [],
+      "node": "379@0",
+      "office": "Jupiter",
+      "registerOffset": 0,
+      "requestedTreatment": "ninth_drop5",
+      "status": "ok"
+    },
+    {
+      "activeTreatment": "rootless_13th",
+      "bar": 4,
+      "bassMidi": 60,
+      "bassPc": 0,
+      "chordMidi": [
+        72,
+        74,
+        79,
+        80
+      ],
+      "chordPcs": [
+        0,
+        2,
+        7,
+        8
+      ],
+      "fallbackUsed": false,
+      "inversion": 0,
+      "missingPc": [],
+      "node": "859@11",
+      "office": "Mars",
+      "registerOffset": 12,
+      "requestedTreatment": "rootless_13th",
+      "status": "ok"
+    }
+  ],
+  "render": {
+    "clippedSamples": 0,
+    "durationMs": 14400,
+    "expectedSamples": 635040,
+    "midiPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_3_degree_ladder/task-d/sessions/d3-andalusian-template-cycle.mid",
+    "midiSha256": "dc3ed7c5860da0f79473ddcb77d2effb2e49310ed417381fbe6da5c7a95a6014",
+    "nonFiniteSamples": 0,
+    "peakQ15": 10960,
+    "reRenderMatch": true,
+    "rmsMilli": 59,
+    "samples": 635040,
+    "sessionSheetPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_3_degree_ladder/task-d/sessions/d3-andalusian-template-cycle_session_sheet.md",
+    "sessionSheetSha256": "94c3bb3d0c7c175b78eb709b3d308b0e2c6bd32c2f54ae4bfc0b470d70ed678f",
+    "tracePath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_3_degree_ladder/task-d/sessions/d3-andalusian-template-cycle.jsonl",
+    "traceSha256": "32176b936681d0b4413c44830ab8deb68cb875d566ba2d3541f80c69663745a6",
+    "wavPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_3_degree_ladder/task-d/sessions/d3-andalusian-template-cycle.wav",
+    "wavSha256": "afd5e7e3698aa11cf61d5d5760aab959459da099d8fb2a22837eb945a2a42d39"
+  },
+  "repoWrites": 0
+}

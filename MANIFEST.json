@@ -2,8 +2,8 @@
   "package": "seven-governors-integrated-release",
   "version": "1.9.0",
   "generatedAt": "2026-10-13T00:00:00.000Z",
-  "fileCount": 1960,
-  "totalBytes": 300627676,
+  "fileCount": 1994,
+  "totalBytes": 302752603,
   "files": [
     {
       "path": ".env.example",
@@ -278,17 +278,17 @@
     {
       "path": "canonical/fivefold-incubator/fifth-space-census-v0.json",
       "bytes": 194194,
-      "sha256": "640f8d47f403236d9cff8e1f6b49a5c38a9bce1f432dd7bbf19a137f5a856899"
+      "sha256": "a47d3a45bad814e94f8052713981a385ad4d9ab079ed45305e2d38c1c04e09e2"
     },
     {
       "path": "canonical/fivefold-incubator/shadow-ladder-v0.json",
       "bytes": 3927,
-      "sha256": "654c651ea7e16c622291cd4fb5acb5b5b0d56f5df99a1d9aa8a4a24110f35137"
+      "sha256": "b6a7086207033d070ff5e989b2c34585bfc896054a3066d71db2af51a497f9ad"
     },
     {
       "path": "canonical/fivefold-incubator/twin-hub-convergence-v0.json",
       "bytes": 12645,
-      "sha256": "53a0cbe739a98f5ee893c7a9efc4d241bf0a7a7cbf98ecc134aec92efd4fa48d"
+      "sha256": "64854680b25264a198ef69c684f9db643075fa2b343848441906e917cc8731db"
     },
     {
       "path": "canonical/gov-210-availability-housing.json",
@@ -649,6 +649,11 @@
       "path": "docs/specs/d7-derivation-admission-v0.1.0.md",
       "bytes": 17327,
       "sha256": "374e3d131e925a3c7d29e3c715753bc85b6dde02ea3a1f6fb8b8b8ef27b3d791"
+    },
+    {
+      "path": "docs/specs/degree-ladder-v0.1.0.md",
+      "bytes": 5216,
+      "sha256": "542328b4e865690d321b72036927137cd16dff61acbcd9d7b65fef66bb448c73"
     },
     {
       "path": "docs/specs/fivefold-court-engagement-correspondence-v0.1.0.md",
@@ -1613,7 +1618,7 @@
     {
       "path": "orrery/src/generated/d-tier-taxonomy-dataset.v1.json",
       "bytes": 66006,
-      "sha256": "e81dd05d1168c1f9f50fc3b4d1672408395e08115c6de34baa8dbd4f3b6fdd65"
+      "sha256": "b403b1f4d1436b0a5c6781b96b8e2feef8bdc18d1fd354050714b73e9e2207c4"
     },
     {
       "path": "orrery/src/generated/d4-14v14-hunt.v1.json",
@@ -1653,7 +1658,7 @@
     {
       "path": "orrery/src/generated/field-derivation-bundle.v1.json",
       "bytes": 2783,
-      "sha256": "c446b90957f236f065acff2b1e5ed8ba52fc7f118ed08b3230c9f915e3dba349"
+      "sha256": "60257a5c4c2b3b08606e3dc17ef07806f12c3e7acb4fa7f0a40900bea4d9a8f9"
     },
     {
       "path": "orrery/src/generated/legal-moves.v2.json",
@@ -1688,7 +1693,7 @@
     {
       "path": "orrery/src/generated/taxonomy-read-model.v1.json",
       "bytes": 664518,
-      "sha256": "f9cc9694c8d9a35853a0b324e228d2657a6432ed3110d34fc2fa348cff462d78"
+      "sha256": "b1ad8da6d045e8147b489c704cc10407ba0d2a90b26be46ddac84ab45ec0f931"
     },
     {
       "path": "orrery/src/golden-path-catalog.test.ts",
@@ -1912,8 +1917,8 @@
     },
     {
       "path": "provenance/DECISION_LEDGER.md",
-      "bytes": 426743,
-      "sha256": "b800cc402db2c9e40c4fe44f10a79f0dcf6ba635effd8083ecc3791c91631d40"
+      "bytes": 433861,
+      "sha256": "c1b8915bfd84f33d2e7a990ea8c52f977e66df074b7e67981ba8c97f80b28fb2"
     },
     {
       "path": "provenance/EVIDENCE_BINDING_CONVENTION.md",
@@ -2098,7 +2103,7 @@
     {
       "path": "qa/fifth-space-census-validation.json",
       "bytes": 16323,
-      "sha256": "df6cb02f553471cb3df598811cb41c6e6662463afc07c5fe67488d6884a85155"
+      "sha256": "d4b702f1049e6acdff0328d69d09c0a6fa979302b819766c0f5d219f2f4694d7"
     },
     {
       "path": "qa/fivefold-capability-teleology-validation.json",
@@ -2108,7 +2113,7 @@
     {
       "path": "qa/fivefold-engine-promotion-evidence.json",
       "bytes": 23220,
-      "sha256": "dbebdf75a9f030e74ef66c41defb98f0b047a9a8c9ebcc820f84d83e430eb824"
+      "sha256": "b0ef598272bbef20e167f1f87e54352700bf27f97133a71de66bd2975a3f5dd3"
     },
     {
       "path": "qa/gov-208-vault-context-validation.json",
@@ -2906,6 +2911,46 @@
       "sha256": "ac7e61a1bbe518ad3c5006107d6d3448b1e1790798d7cb2d1c2721235f02fe41"
     },
     {
+      "path": "qa/mvp8_3_ear_scorecard.json",
+      "bytes": 1759,
+      "sha256": "fa395fdd085a2964520b5b83c63035bff73b92f102293fae40b1c8af6dc13fbf"
+    },
+    {
+      "path": "qa/mvp8_3_landing_receipt.json",
+      "bytes": 26750,
+      "sha256": "d4f756c4bc98fdfa89c2280faaafebc2c04cd04fa4c66c63ce9502f9edf00d61"
+    },
+    {
+      "path": "qa/mvp8_3_task_0_receipt.json",
+      "bytes": 12222,
+      "sha256": "fe250702eb3f145f3ff5bd28a2278bb6ebfe79c6ee69e4c11a49fad3b9c92c47"
+    },
+    {
+      "path": "qa/mvp8_3_task_a_receipt.json",
+      "bytes": 834116,
+      "sha256": "0320988ab96ad3945736057433a0bc36f372602c5c45e6a4617ca251bc5b2434"
+    },
+    {
+      "path": "qa/mvp8_3_task_b_receipt.json",
+      "bytes": 1697,
+      "sha256": "f895882ed6f92b0a9cb08fe0a37c25e2657796a20ac22b1fab0db3482a630528"
+    },
+    {
+      "path": "qa/mvp8_3_task_c_receipt.json",
+      "bytes": 8056,
+      "sha256": "7a78f37e5fbe623fc0e984bacc31d28ee018607150706b69644082a2d175d8e9"
+    },
+    {
+      "path": "qa/mvp8_3_task_d_receipt.json",
+      "bytes": 14915,
+      "sha256": "3cf74c73c3b2c1f3cf4e2c50abcbe7fe33f8851ac88c1f6d0493af3e1ad99584"
+    },
+    {
+      "path": "qa/mvp8_3_task_e_receipt.json",
+      "bytes": 7430,
+      "sha256": "ce8a2a8af629ec9a747d1e1fa3bf30861323dfcd681530afe6c0312551434f2f"
+    },
+    {
       "path": "qa/mvp8_task_0_receipt.json",
       "bytes": 18536,
       "sha256": "f76007466f51a43cb973b11e928613dd8f64f72544e87df5f4889723334af37b"
@@ -2978,7 +3023,7 @@
     {
       "path": "qa/pentatonic-binding-audit-closure.json",
       "bytes": 4552,
-      "sha256": "9b7e2555d56f454d667677228de033edf9405c402eca64d18d686aab1cf565b4"
+      "sha256": "b47ea06b69e156362ba293316fdb47dd14d4a2264d0a2c526476e1270ce07892"
     },
     {
       "path": "qa/pentatonic-binding-audit-neo4j-validation.json",
@@ -3008,7 +3053,7 @@
     {
       "path": "qa/shadow-ladder-validation.json",
       "bytes": 5382,
-      "sha256": "f0d0adefda954c793d0b40a9f27832e34bc71bb160902b62d26e14131b6952e1"
+      "sha256": "61b104502790cd5ae1e99692c6db2fbfa19c87447386ae9f697c39525a6dd157"
     },
     {
       "path": "qa/specs/bl-011-correspondence-admission.json",
@@ -3158,7 +3203,7 @@
     {
       "path": "qa/twin-hub-convergence-validation.json",
       "bytes": 5369,
-      "sha256": "240e375fa697f518bb9d14fb22cf5f807767ba5d10d151c66786f45d19216120"
+      "sha256": "6cdb5cfc8b2675b41b042692125e5244a963e843012b992b68f4bd933946a76c"
     },
     {
       "path": "requirements-orrery-dev.txt",
@@ -5179,6 +5224,16 @@
       "path": "scrum/plan/mvp8-2b-scope-dir-1-rev1.md",
       "bytes": 5713,
       "sha256": "a1967e3720c0ed9942f599e80f73a975289b0d076489834e2a6585f67a1b8dcd"
+    },
+    {
+      "path": "scrum/plan/mvp8-3-degree-ladder-closing-report.md",
+      "bytes": 5980,
+      "sha256": "4e3a6fb8ba87585427be13bf299fd660dd2fd8e183e6906734b56aaa53ac9aa0"
+    },
+    {
+      "path": "scrum/plan/mvp8-3-degree-ladder-dir-1-rev1.md",
+      "bytes": 7954,
+      "sha256": "6ffbbedb11f3fee333b41d424aeb59f40d95a33bdf4d9a84c45ce835af54fc2e"
     },
     {
       "path": "scrum/plan/mvp8-dir-1-rev2.md",
@@ -9371,6 +9426,11 @@
       "sha256": "92f13dc8e32f76caa2e2a6647732559433d5908a65ffdadbdbae372837af0373"
     },
     {
+      "path": "tools/governed-loop/node-observatory/degree_ladder.py",
+      "bytes": 9438,
+      "sha256": "e68c88a1b51903589957b798d3d46d0ac2040f5902dc51227cf66ccb5e0c10ba"
+    },
+    {
       "path": "tools/governed-loop/node-observatory/mvp8_2_affordance_census.json",
       "bytes": 7051,
       "sha256": "42bf04fff162d733354a52d1706b0c5343271993c36706086f1bdefee04e7f5e"
@@ -9401,14 +9461,124 @@
       "sha256": "7cd32eb6fc058aeced65656c54099ddf728222b32e76a8876b8783c28c6d59c5"
     },
     {
+      "path": "tools/governed-loop/node-observatory/mvp8_3_ear_manifest.json",
+      "bytes": 6094,
+      "sha256": "a04c83d5d9049905d1ff9fc5396f20693e952590ea28251f3cba932d2367a741"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/mvp8_3_predeclared_bets.json",
+      "bytes": 22234,
+      "sha256": "dad4842a68c46d75f7acb4f6fe626b5a57777414c89caab6f7c69db3a16b92dc"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/mvp8_3_shape_census.json",
+      "bytes": 701898,
+      "sha256": "8995ccf706d409eadbe3210e975cac9c0d9bd923de66b742f4c1d142a1c4a4ba"
+    },
+    {
       "path": "tools/governed-loop/node-observatory/node_observatory.py",
       "bytes": 19313,
       "sha256": "91744aaabb13b5b44029b7c0d28f13c6266d90353426d2eed601d2ed3b2a9af9"
     },
     {
+      "path": "tools/governed-loop/node-observatory/node_observatory_degree.py",
+      "bytes": 11914,
+      "sha256": "3868e1994e06863fe1544c2b19c5961571ed811907d4e53b7d293210397fc7fa"
+    },
+    {
       "path": "tools/governed-loop/node-observatory/node_observatory_engine.py",
       "bytes": 29682,
       "sha256": "b4507765a75e82e5680a76b60b34e0e22423ae5fdd24519dae3872a77cf80270"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d1-2677-degree-walk.jsonl",
+      "bytes": 75864,
+      "sha256": "131d1b89f785ea5998b546295f7a3d1ae9babdec2e733ef5318c9ed0ecd286bc"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d1-2677-degree-walk_receipt.json",
+      "bytes": 8028,
+      "sha256": "59f3c446aa0b25a8411ad0944f7bdc7e39c291dbc707ef0181d355cf3e78950e"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d1-2677-degree-walk_session_sheet.md",
+      "bytes": 2209,
+      "sha256": "bd25b9740bd25e8fbd8286cab29c4f83a50ac5e0cf8ff0f22450ef8445a5b47b"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d1-2677-template-cycle.jsonl",
+      "bytes": 76116,
+      "sha256": "619dee3c8ff547b45947567507acda539eb74367b238b8005f686478476706b6"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d1-2677-template-cycle_receipt.json",
+      "bytes": 5892,
+      "sha256": "f28205694de72cda2d4b6612e36f2c7ae1b753b192443cb84645edc5c6c97ec1"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d1-2677-template-cycle_session_sheet.md",
+      "bytes": 2086,
+      "sha256": "1f12fe389066a76b7c73fb9db63ac557cef5f5cfd0c937d9b4dd512f1608baf7"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d2-1453-degree-walk.jsonl",
+      "bytes": 75073,
+      "sha256": "3f507ecd6ac4b3c793022e901412166f57d33eb9922951fddb7be14b2ec030d1"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d2-1453-degree-walk_receipt.json",
+      "bytes": 8049,
+      "sha256": "bdd5970f2a1a7c8f9a2034075cb0dbb25d4ecec96956092cde415b6a2ea891b6"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d2-1453-degree-walk_session_sheet.md",
+      "bytes": 2231,
+      "sha256": "62ff391fd6409575cc84c0032c439e971037513abed4573aaf8076ee5f3ac2b4"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d2-1453-template-cycle.jsonl",
+      "bytes": 75325,
+      "sha256": "b4b40c770606049cef7789ae3604165575def9988b229d42803334965765a85b"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d2-1453-template-cycle_receipt.json",
+      "bytes": 5912,
+      "sha256": "06e91835f46257462a9beea46750d477f16e8826bd34f2915835f5f222d2d9df"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d2-1453-template-cycle_session_sheet.md",
+      "bytes": 2107,
+      "sha256": "85625b36876efd021923ead52734d23c7ecb4a4a5104d48cca3571a1c2952f7d"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d3-andalusian-degree-pillars.jsonl",
+      "bytes": 43809,
+      "sha256": "a5286b06c48bcc2b9ad7a6a44ecee0972d60f2791a67315dccd922bfd65cb2d5"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d3-andalusian-degree-pillars_receipt.json",
+      "bytes": 5574,
+      "sha256": "78de7bf6b2d4920bccf727c00a90783929a1c3beb7083fe84c8f6c18fe0b6c77"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d3-andalusian-degree-pillars_session_sheet.md",
+      "bytes": 1816,
+      "sha256": "20c4d613f7fe5c576ff85d824b48aad98cf9bed0466e1dd21d5165f50cde3597"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d3-andalusian-template-cycle.jsonl",
+      "bytes": 43809,
+      "sha256": "32176b936681d0b4413c44830ab8deb68cb875d566ba2d3541f80c69663745a6"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d3-andalusian-template-cycle_receipt.json",
+      "bytes": 4480,
+      "sha256": "69fad788355957b4b3846fba55db5e8d25579c30b895cb1c1102eadfee3d9bc5"
+    },
+    {
+      "path": "tools/governed-loop/node-observatory/sessions/d3-andalusian-template-cycle_session_sheet.md",
+      "bytes": 1756,
+      "sha256": "94c3bb3d0c7c175b78eb709b3d308b0e2c6bd32c2f54ae4bfc0b470d70ed678f"
     },
     {
       "path": "tools/governed-loop/node-observatory/sessions/p1-2677-bare.jsonl",
