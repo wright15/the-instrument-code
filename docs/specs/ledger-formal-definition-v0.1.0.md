@@ -1,12 +1,12 @@
-# Proposed Specification — THE LEDGER (v0.1.0)
+# Specification — THE LEDGER (v0.1.0)
 
-**Status:** PROPOSED — not admitted, not landed. `admissionEffect: none_until_entered`.
-**Authority required:** a separate governance admission act; this document changes no repository byte.
-**Prepared by:** `MVP8.2-OBS-LEDGER-DIR-1` Task A, 2026-11-08.
+**Spec ID:** `THE-LEDGER-V0.1.0`.
+**Status:** ADMITTED at L31 (`L31-GOV-ADMISSION-DIR-1`, 2026-11-14). `admissionEffect: admitted_at_L31`. Authority flows from the L31 entry in `provenance/DECISION_LEDGER.md` and `qa/l31_governance_admission_receipt.json`; this header grants nothing by its own text.
+**Prepared by:** `MVP8.2-OBS-LEDGER-DIR-1` Task A, 2026-11-08. Landed as PROPOSED at L29; admitted at L31.
 **Guard block:**
 
 ```json
-{"layer":"SPEC-001 §1.3 overlay dynamics + governance ledger specification","causationClaim":false,"physicalQuantityClaim":false,"tierClassifier":false,"globalCHNull":true,"gov517_correspondence_claimed":false,"still_set_label":"still_set","bipartiteEvidenceStatus":"planning_evidence","bipartiteAdmissionEffect":"none","bipartiteGraphScope":"detached_audit_only","ledgerDefinitionStatus":"proposed","observatoryArtifactClass":"observation_only","llmCalls":0}
+{"layer":"SPEC-001 §1.3 overlay dynamics + governance ledger specification","causationClaim":false,"physicalQuantityClaim":false,"tierClassifier":false,"globalCHNull":true,"gov517_correspondence_claimed":false,"still_set_label":"still_set","bipartiteEvidenceStatus":"planning_evidence","bipartiteAdmissionEffect":"none","bipartiteGraphScope":"detached_audit_only","ledgerDefinitionStatus":"admitted","observatoryArtifactClass":"observation_only","llmCalls":0}
 ```
 
 ## 1. Witnesses — the term is used everywhere and defined nowhere
@@ -74,9 +74,11 @@ their motions are carried in.
 - L4: **demonstrated explanation** at L28 plus the 2026-11-07 regeneration check.
 - L5: **valid structural relationship** in the loop design, not yet a formally
   admitted claim about the runtime.
-- The unified definition itself: **proposed**. Its admission path is the
-  ordinary one — a governance entry — at which point it would satisfy its own
-  L3 in the act of being admitted.
+- The unified definition itself: **formally admitted at L31** (2026-11-14).
+  Property L1 carries its measured historical boundary — append-only from the
+  clean era (`9a0764b6` onward) and the formal landing chain from L12; the
+  all-history scope failed and remains recorded evidence. The act of admission
+  is the L31 governance entry; by it, the definition satisfies its own L3.
 
 ## 5. What admission would decide
 

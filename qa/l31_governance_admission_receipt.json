@@ -1,0 +1,201 @@
+{
+  "schemaVersion": "governed-loop.l31-gov-admission.v1",
+  "task": "L31-GOV-ADMISSION",
+  "directive": "L31-GOV-ADMISSION-DIR-1",
+  "scope": "governance admission; zero engine code; zero audio",
+  "layer": "Governance admission — THE LEDGER v0.1.0 & DEGREE-LADDER v0.1.0",
+  "causationClaim": false,
+  "physicalQuantityClaim": false,
+  "tierClassifier": false,
+  "globalCHNull": true,
+  "gov517_correspondence_claimed": false,
+  "still_set_label": "still_set",
+  "bipartiteEvidenceStatus": "planning_evidence",
+  "bipartiteAdmissionEffect": "none",
+  "bipartiteGraphScope": "detached_audit_only",
+  "ledgerDefinitionStatus": "admitted",
+  "degreeLadderSpecStatus": "admitted",
+  "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+  "observatoryArtifactClass": "observation_only",
+  "llmCalls": 0,
+  "opening": {
+    "baseHead": "fd3174b5dc9f1c8561d9edb642a2f0541ecb9f93",
+    "treeClean": true,
+    "ledgerBefore": {
+      "path": "provenance/DECISION_LEDGER.md",
+      "sha256": "c1b8915bfd84f33d2e7a990ea8c52f977e66df074b7e67981ba8c97f80b28fb2",
+      "bytes": 433861,
+      "lines": 4500
+    },
+    "observationLedger": {
+      "path": "provenance/OBSERVATION_LEDGER.md",
+      "sha256": "8e0be9f5bcee0af1aeb87b8ee71fa18121376c1e2b8e23416439c8834e17787f",
+      "bytes": 33153,
+      "lines": 561
+    },
+    "architectureMap": {
+      "path": "docs/ARCHITECTURE_MAP.md",
+      "sha256": "865ab785164f85c0426d849cb3314c8c41efe81155ce14bd7fe6392ca5d0c381",
+      "bytes": 34880,
+      "pinnedUnchanged": true
+    },
+    "manifestBefore": {
+      "fileCount": 1994,
+      "totalBytes": 302752603,
+      "sha256": "4c542200abcb605d0eb035cb31827eaa480d644c731517fbd3024cb650c764e8",
+      "checksumsSha256": "50d395be36cb54973c89717424094bc5af11a7ec5e4dabba2b07c585ecb8b637"
+    },
+    "priorLandingReceipt": {
+      "path": "qa/mvp8_3_landing_receipt.json",
+      "sha256": "d4f756c4bc98fdfa89c2280faaafebc2c04cd04fa4c66c63ce9502f9edf00d61",
+      "bytes": 26750
+    },
+    "validationBefore": {
+      "passed": 418,
+      "failed": 0
+    },
+    "specsBefore": {
+      "docs/specs/ledger-formal-definition-v0.1.0.md": {
+        "sha256": "c7617cc6853b426078f0fa9688a876478155a3ceb56d4229237b6d265235aa33",
+        "bytes": 5457,
+        "status": "PROPOSED"
+      },
+      "docs/specs/degree-ladder-v0.1.0.md": {
+        "sha256": "542328b4e865690d321b72036927137cd16dff61acbcd9d7b65fef66bb448c73",
+        "bytes": 5216,
+        "status": "PROPOSED"
+      }
+    }
+  },
+  "specsAdmitted": {
+    "docs/specs/ledger-formal-definition-v0.1.0.md": {
+      "specId": "THE-LEDGER-V0.1.0",
+      "sha256": "8b6346abd151a96a8dd6c911317c749e68256e2feb91e72853df023d0f00022f",
+      "bytes": 5795,
+      "status": "ADMITTED",
+      "admissionEffect": "admitted_at_L31",
+      "guardField": "ledgerDefinitionStatus"
+    },
+    "docs/specs/degree-ladder-v0.1.0.md": {
+      "specId": "DEGREE-LADDER-V0.1.0",
+      "sha256": "7c3c403c9236c21f9c21d23018e6069023318f0bb765315743020cffca2228e6",
+      "bytes": 6824,
+      "status": "ADMITTED",
+      "admissionEffect": "admitted_at_L31",
+      "guardField": "degreeLadderSpecStatus",
+      "corollary": "Phase-Agnostic Chaldean Degree Address Corollary (§9)"
+    }
+  },
+  "decisions": {
+    "D1": "Canonical Andalusian reading locked: 1453@0 -> 2477@0, walk (1,7,6,5), strides (2,2,2,1), rotations (0,0,0,0), depth 3, governed Jupiter single-pc seam 10<->11, cover number 2; MVP-7 four-pillar itinerary retained as historical benchmark.",
+    "D2": "L32 authorized: composer-declared degree progressions with voice-led stack rotations m in {0..k-1} (explicit rotation sequences + optional voice-leading rotation solver); sequence-level pattern_query.py over all 5,544 lifted nodes; standalone-execution nit cleanup (mvp8_3_common, hardcoded paths, multi-node observe() bar lists).",
+    "D3": "Chaldean degree addresses are phase-agnostic positional indices 1..7 across all 12 phases (degree-ladder spec §9).",
+    "D4": "Two-tier cadence variable taxonomy adopted: Sequence Variables (degree_walk, stride_seq, rotation_seq, depth_seq, shape_seq, bass_step_pattern, cover_number) and Seam Variables (substitution_size, office_relation, role_pair, governed_connectivity, tier_relation); degree/shape vocabulary fence holds.",
+    "D5": "Six-sibling + Mixolydian near-miss audition package authorized for L32 (1387->1643, 1451->1459, 1453->2477, 1709->1741, 2741->2869, 2773->2777, plus 1717->949 control), subject to the SIGNED_HUMAN ear gate.",
+    "D6": "L31 admissions and L32 cadential sequence algebra precede MVP-9 temporal governance."
+  },
+  "ledger": {
+    "entry": "single L31 governance admission entry appended at tail; no prior entry amended",
+    "beforeBytes": 433861,
+    "afterBytes": 440222,
+    "afterLines": 4517,
+    "afterSha256": "14ebc6f4f7f1edba7a82525e668d8cf30fecf8df8eed4da58f13d57c1881acbb",
+    "prefixIdentity": true,
+    "prefixBytesVerified": 433861,
+    "entryOccurrencesAtTail": 1
+  },
+  "cascade": [
+    {
+      "command": ".venv/bin/python scripts/generate-fifth-space-census.py",
+      "exitCode": 0
+    },
+    {
+      "command": ".venv/bin/python scripts/validate-fifth-space-census.py",
+      "exitCode": 0
+    },
+    {
+      "command": ".venv/bin/python scripts/generate-shadow-ladder.py",
+      "exitCode": 0
+    },
+    {
+      "command": ".venv/bin/python scripts/validate-shadow-ladder.py",
+      "exitCode": 0
+    },
+    {
+      "command": ".venv/bin/python scripts/generate-twin-hub-convergence.py",
+      "exitCode": 0
+    },
+    {
+      "command": ".venv/bin/python scripts/validate-twin-hub-convergence.py",
+      "exitCode": 0
+    },
+    {
+      "command": "node scripts/build-pentatonic-binding-audit-closure.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": ".venv/bin/python scripts/build-fivefold-engine-promotion-evidence.py",
+      "exitCode": 0
+    },
+    {
+      "command": "node scripts/build-field-derivation-bundle.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node scripts/build-orrery-taxonomy-read-model.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node scripts/build-orrery-d-tier-taxonomy-dataset.mjs",
+      "exitCode": 0
+    }
+  ],
+  "artifacts": {
+    "directive": {
+      "path": "scrum/plan/l31-gov-admission-dir-1.md",
+      "sha256": "b08eb06dc651336284541ef2dd94c8e0e948d1bb6d12383ea4779d1c662e24df",
+      "bytes": 10259
+    },
+    "closingReport": {
+      "path": "scrum/plan/l31-gov-admission-closing-report.md",
+      "sha256": "306afc74618d4dab861e3c43d01b7c806c53ece36b31ce4e1f70a7973cfa3d0e",
+      "bytes": 5520
+    }
+  },
+  "manifestRegen": {
+    "note": "the landing receipt is written after this manifest; the final packaging manifest includes it and is regenerated below",
+    "preReceiptFileCount": 1996,
+    "preReceiptTotalBytes": 302776689,
+    "preReceiptManifestSha256": "23930e2453b962e5d68f5e613f2463af6d808b056a1d46b34acf953c800f853a",
+    "preReceiptChecksumsSha256": "6b33c20c31e2626d10797fddee91a203b1354181b360bd353a435e8da0690191"
+  },
+  "validation": {
+    "command": "node scripts/validate-release.mjs",
+    "verdict": "PASS",
+    "checksPassed": 418,
+    "checksFailed": 0,
+    "reportPath": "qa/integrated-release-validation.json",
+    "releaseId": "seven-governors-integrated-1.9.0"
+  },
+  "proseConsistency": {
+    "command": "node scripts/validate-validation-prose-consistency.mjs",
+    "verdict": "PASS",
+    "violations": 0,
+    "authoritativeChecksPassed": 418
+  },
+  "constraints": {
+    "engineBytesModified": false,
+    "sourceBytesModified": false,
+    "architectureMapPinned": true,
+    "audioLanded": false,
+    "gateBytesModified": false,
+    "qEngineBytesModified": false,
+    "pinnedRendererBytesModified": false,
+    "claimEvent": false,
+    "tag": false,
+    "push": false,
+    "landingMode": "working-tree + one dedicated commit"
+  },
+  "outcome": "ADMITTED_L31",
+  "status": "COMPLETE"
+}

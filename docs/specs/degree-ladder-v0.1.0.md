@@ -1,10 +1,10 @@
-# Degree-Ladder Voicing Geometry (PROPOSED)
+# Degree-Ladder Voicing Geometry (ADMITTED)
 
 - **Spec ID:** `DEGREE-LADDER-V0.1.0`
-- **Status:** PROPOSED. `admissionEffect: none_until_entered`. This note does not amend `SPEC-FIVEFOLD-CONSTRUCTS-001` and is not admitted into runtime.
+- **Status:** ADMITTED at L31 (`L31-GOV-ADMISSION-DIR-1`, 2026-11-14). `admissionEffect: admitted_at_L31`. Authority flows from the L31 entry in `provenance/DECISION_LEDGER.md` and `qa/l31_governance_admission_receipt.json`. This specification governs the degree-ladder observatory and voicing layer; it does not amend `SPEC-FIVEFOLD-CONSTRUCTS-001` or `src/fivefold/quintessence.py`.
 - **Layer:** `SPEC-001 §1.3 overlay dynamics + degree-ladder observatory`
 - **Origin:** `MVP8.3-DEGREE-LADDER-DIR-1` rev 1, executed in scratch and landed as L30 on 2026-11-12.
-- **Guard:** `causationClaim: false`, `physicalQuantityClaim: false`, `tierClassifier: false`, `globalCHNull: true`, `gov517_correspondence_claimed: false`, `bipartiteEvidenceStatus: planning_evidence`, `observatoryArtifactClass: observation_only`, `llmCalls: 0`.
+- **Guard:** `causationClaim: false`, `physicalQuantityClaim: false`, `tierClassifier: false`, `globalCHNull: true`, `gov517_correspondence_claimed: false`, `bipartiteEvidenceStatus: planning_evidence`, `observatoryArtifactClass: observation_only`, `degreeLadderSpecStatus: admitted`, `llmCalls: 0`.
 
 ## 1. Purpose
 
@@ -86,4 +86,12 @@ A degree walk advances the generator degree by `+1` per bar. The measured D1/D2 
 
 ## 8. Posture
 
-This spec is observation-language only. It makes no causal or physical-quantity claim, formulates no `C_H`, and does not admit the degree ladder into `SPEC-001` or runtime. Admission is a separate governance act.
+This spec is observation-language only. It makes no causal or physical-quantity claim, formulates no `C_H`, and does not admit the degree ladder into `SPEC-001` runtime. At L31 the specification itself is admitted as the canonical container-native degree voicing standard for the governed-loop observatory; `harmonic.C_H` remains null and the photonic fence stands.
+
+## 9. Phase-Agnostic Chaldean Degree Address Corollary (Admitted at L31)
+
+The ontology's seven fixed Chaldean degree addresses (`1=Saturn`, `2=Jupiter`, `3=Mars`, `4=Sun`, `5=Venus`, `6=Mercury`, `7=Moon`; `docs/INTRA_NODE_DYNAMICS.md` Chaldean degree weights, `docs/A_TIER_TRIADIC_COMPRESSION_THEOREM.md` §5, `framework/AGENTS.md` Orthogonal Matrix) coincide identically with the degree ladder's positional container indices `1..7` in `C(node) = (c_1, ..., c_7)`.
+
+- **Phase-Agnosticism Rule.** Chaldean degree addresses are strictly phase-relative positional addresses (`1..7`, anchored at `c_1 = phase`). Regardless of modal phase transposition (`phase = 0..11`), container index `d` carries the identical Chaldean degree address.
+- **Label and weight fence.** Positional address coincidence does not import Chaldean render-gravity weights (`116/407`, etc.) as harmonic tension metrics, and machine receipts continue to record integer degrees `1..7` and integer interval shapes without tonal quality names.
+- **Boundary.** The correspondence is positional; it is not a claim about modal rotation remapping (which never remaps the Chaldean weight map) and creates no runtime effect.
