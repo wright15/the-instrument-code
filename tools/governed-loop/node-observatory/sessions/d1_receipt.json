@@ -1,0 +1,942 @@
+{
+  "barSpecs": [
+    {
+      "degree": 7,
+      "depth": 3,
+      "k": 12,
+      "node": "1387@0",
+      "role": "dwell",
+      "rotation": 0,
+      "stride": 2
+    },
+    {
+      "degree": 6,
+      "depth": 3,
+      "k": 12,
+      "node": "1387@0",
+      "role": "dwell",
+      "rotation": 0,
+      "stride": 2
+    },
+    {
+      "degree": 5,
+      "depth": 3,
+      "k": 12,
+      "node": "1387@0",
+      "role": "dwell",
+      "rotation": 0,
+      "stride": 2
+    },
+    {
+      "degree": 4,
+      "depth": 3,
+      "k": 12,
+      "node": "1643@0",
+      "role": "dwell",
+      "rotation": 0,
+      "stride": 1
+    }
+  ],
+  "directive": "MVP8.4-CADENCE-ALGEBRA-DIR-1",
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + cadence stride algebra & voice-led rotations",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "label": "d1",
+  "leadCensus": {
+    "dyadSteps": 12,
+    "dyadUnisonLeaks": 0,
+    "outOfMaskLeadNotes": 0,
+    "partnerNotes": 12,
+    "primarySteps": 48
+  },
+  "llmCalls": 0,
+  "midiAudit": {
+    "division": 480,
+    "dyadPresenceMatch": true,
+    "format": 1,
+    "leadNoteOns": 60,
+    "leadPrimaryMatch": true,
+    "leadRows": [
+      {
+        "bar": 1,
+        "expectedPartner": 77,
+        "expectedPrimary": 72,
+        "observed": [
+          72,
+          77
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 0
+      },
+      {
+        "bar": 1,
+        "expectedPartner": null,
+        "expectedPrimary": 80,
+        "observed": [
+          80
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 1
+      },
+      {
+        "bar": 1,
+        "expectedPartner": 80,
+        "expectedPrimary": 75,
+        "observed": [
+          75,
+          80
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 2
+      },
+      {
+        "bar": 1,
+        "expectedPartner": null,
+        "expectedPrimary": 77,
+        "observed": [
+          77
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 3
+      },
+      {
+        "bar": 1,
+        "expectedPartner": 84,
+        "expectedPrimary": 80,
+        "observed": [
+          80,
+          84
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 4
+      },
+      {
+        "bar": 1,
+        "expectedPartner": null,
+        "expectedPrimary": 80,
+        "observed": [
+          80
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 5
+      },
+      {
+        "bar": 1,
+        "expectedPartner": null,
+        "expectedPrimary": 78,
+        "observed": [
+          78
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 6
+      },
+      {
+        "bar": 1,
+        "expectedPartner": null,
+        "expectedPrimary": 73,
+        "observed": [
+          73
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 7
+      },
+      {
+        "bar": 1,
+        "expectedPartner": null,
+        "expectedPrimary": 80,
+        "observed": [
+          80
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 8
+      },
+      {
+        "bar": 1,
+        "expectedPartner": null,
+        "expectedPrimary": 75,
+        "observed": [
+          75
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 9
+      },
+      {
+        "bar": 1,
+        "expectedPartner": null,
+        "expectedPrimary": 82,
+        "observed": [
+          82
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 10
+      },
+      {
+        "bar": 1,
+        "expectedPartner": null,
+        "expectedPrimary": 77,
+        "observed": [
+          77
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 11
+      },
+      {
+        "bar": 2,
+        "expectedPartner": 77,
+        "expectedPrimary": 72,
+        "observed": [
+          72,
+          77
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 0
+      },
+      {
+        "bar": 2,
+        "expectedPartner": null,
+        "expectedPrimary": 80,
+        "observed": [
+          80
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 1
+      },
+      {
+        "bar": 2,
+        "expectedPartner": 80,
+        "expectedPrimary": 75,
+        "observed": [
+          75,
+          80
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 2
+      },
+      {
+        "bar": 2,
+        "expectedPartner": null,
+        "expectedPrimary": 77,
+        "observed": [
+          77
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 3
+      },
+      {
+        "bar": 2,
+        "expectedPartner": 84,
+        "expectedPrimary": 80,
+        "observed": [
+          80,
+          84
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 4
+      },
+      {
+        "bar": 2,
+        "expectedPartner": null,
+        "expectedPrimary": 80,
+        "observed": [
+          80
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 5
+      },
+      {
+        "bar": 2,
+        "expectedPartner": null,
+        "expectedPrimary": 78,
+        "observed": [
+          78
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 6
+      },
+      {
+        "bar": 2,
+        "expectedPartner": null,
+        "expectedPrimary": 73,
+        "observed": [
+          73
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 7
+      },
+      {
+        "bar": 2,
+        "expectedPartner": null,
+        "expectedPrimary": 80,
+        "observed": [
+          80
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 8
+      },
+      {
+        "bar": 2,
+        "expectedPartner": null,
+        "expectedPrimary": 75,
+        "observed": [
+          75
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 9
+      },
+      {
+        "bar": 2,
+        "expectedPartner": null,
+        "expectedPrimary": 82,
+        "observed": [
+          82
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 10
+      },
+      {
+        "bar": 2,
+        "expectedPartner": null,
+        "expectedPrimary": 77,
+        "observed": [
+          77
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 11
+      },
+      {
+        "bar": 3,
+        "expectedPartner": 77,
+        "expectedPrimary": 72,
+        "observed": [
+          72,
+          77
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 0
+      },
+      {
+        "bar": 3,
+        "expectedPartner": null,
+        "expectedPrimary": 80,
+        "observed": [
+          80
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 1
+      },
+      {
+        "bar": 3,
+        "expectedPartner": 80,
+        "expectedPrimary": 75,
+        "observed": [
+          75,
+          80
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 2
+      },
+      {
+        "bar": 3,
+        "expectedPartner": null,
+        "expectedPrimary": 77,
+        "observed": [
+          77
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 3
+      },
+      {
+        "bar": 3,
+        "expectedPartner": 84,
+        "expectedPrimary": 80,
+        "observed": [
+          80,
+          84
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 4
+      },
+      {
+        "bar": 3,
+        "expectedPartner": null,
+        "expectedPrimary": 80,
+        "observed": [
+          80
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 5
+      },
+      {
+        "bar": 3,
+        "expectedPartner": null,
+        "expectedPrimary": 78,
+        "observed": [
+          78
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 6
+      },
+      {
+        "bar": 3,
+        "expectedPartner": null,
+        "expectedPrimary": 73,
+        "observed": [
+          73
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 7
+      },
+      {
+        "bar": 3,
+        "expectedPartner": null,
+        "expectedPrimary": 80,
+        "observed": [
+          80
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 8
+      },
+      {
+        "bar": 3,
+        "expectedPartner": null,
+        "expectedPrimary": 75,
+        "observed": [
+          75
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 9
+      },
+      {
+        "bar": 3,
+        "expectedPartner": null,
+        "expectedPrimary": 82,
+        "observed": [
+          82
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 10
+      },
+      {
+        "bar": 3,
+        "expectedPartner": null,
+        "expectedPrimary": 77,
+        "observed": [
+          77
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 11
+      },
+      {
+        "bar": 4,
+        "expectedPartner": 75,
+        "expectedPrimary": 72,
+        "observed": [
+          72,
+          75
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 0
+      },
+      {
+        "bar": 4,
+        "expectedPartner": null,
+        "expectedPrimary": 73,
+        "observed": [
+          73
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 1
+      },
+      {
+        "bar": 4,
+        "expectedPartner": 82,
+        "expectedPrimary": 75,
+        "observed": [
+          75,
+          82
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 2
+      },
+      {
+        "bar": 4,
+        "expectedPartner": null,
+        "expectedPrimary": 73,
+        "observed": [
+          73
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 3
+      },
+      {
+        "bar": 4,
+        "expectedPartner": 77,
+        "expectedPrimary": 73,
+        "observed": [
+          73,
+          77
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 4
+      },
+      {
+        "bar": 4,
+        "expectedPartner": null,
+        "expectedPrimary": 81,
+        "observed": [
+          81
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 5
+      },
+      {
+        "bar": 4,
+        "expectedPartner": null,
+        "expectedPrimary": 78,
+        "observed": [
+          78
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 6
+      },
+      {
+        "bar": 4,
+        "expectedPartner": null,
+        "expectedPrimary": 73,
+        "observed": [
+          73
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 7
+      },
+      {
+        "bar": 4,
+        "expectedPartner": null,
+        "expectedPrimary": 73,
+        "observed": [
+          73
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 8
+      },
+      {
+        "bar": 4,
+        "expectedPartner": null,
+        "expectedPrimary": 75,
+        "observed": [
+          75
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 9
+      },
+      {
+        "bar": 4,
+        "expectedPartner": null,
+        "expectedPrimary": 82,
+        "observed": [
+          82
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 10
+      },
+      {
+        "bar": 4,
+        "expectedPartner": null,
+        "expectedPrimary": 77,
+        "observed": [
+          77
+        ],
+        "partnerOk": true,
+        "primaryOk": true,
+        "sub": 11
+      }
+    ],
+    "outOfMaskLeadNotes": 0,
+    "outOfMaskPadNotes": 0,
+    "padNoteOns": 16,
+    "padRows": [
+      {
+        "bar": 1,
+        "expected": [
+          46,
+          58,
+          61,
+          65
+        ],
+        "match": true,
+        "observed": [
+          46,
+          58,
+          61,
+          65
+        ]
+      },
+      {
+        "bar": 2,
+        "expected": [
+          44,
+          56,
+          60,
+          63
+        ],
+        "match": true,
+        "observed": [
+          44,
+          56,
+          60,
+          63
+        ]
+      },
+      {
+        "bar": 3,
+        "expected": [
+          42,
+          54,
+          58,
+          61
+        ],
+        "match": true,
+        "observed": [
+          42,
+          54,
+          58,
+          61
+        ]
+      },
+      {
+        "bar": 4,
+        "expected": [
+          41,
+          53,
+          54,
+          57
+        ],
+        "match": true,
+        "observed": [
+          41,
+          53,
+          54,
+          57
+        ]
+      }
+    ],
+    "padVoicedMatch": true,
+    "trackChunks": 3
+  },
+  "planChecks": {
+    "bassEqualsRoot": true,
+    "chaldeanMatchesDegree": true,
+    "chordInContainer": true,
+    "dyadPresenceMatch": true,
+    "dyadUnisonLeaks": 0,
+    "leadPrimaryMatch": true,
+    "outOfMaskLeadNotes": 0,
+    "outOfMaskPadNotes": 0,
+    "padVoicedMatch": true,
+    "reRenderMatch": true,
+    "rootIsLowest": true
+  },
+  "plans": [
+    {
+      "activeTreatment": "degree_stack",
+      "bar": 1,
+      "bassMidi": 46,
+      "bassPc": 10,
+      "candidateRotations": [
+        0
+      ],
+      "chaldeanDegree": 7,
+      "chordMidi": [
+        58,
+        61,
+        65
+      ],
+      "chordPcs": [
+        1,
+        5,
+        10
+      ],
+      "degree": 7,
+      "depth": 3,
+      "fallbackUsed": false,
+      "inversion": 0,
+      "missingPc": [],
+      "node": "1387@0",
+      "office": "Saturn",
+      "orbitCode": null,
+      "orderedPcs": [
+        10,
+        1,
+        5
+      ],
+      "registerOffset": -12,
+      "requestedTreatment": "degree_stack",
+      "rootDegree": 7,
+      "rootPc": 10,
+      "rotation": 0,
+      "shape": [
+        0,
+        3,
+        7
+      ],
+      "status": "ok",
+      "stride": 2
+    },
+    {
+      "activeTreatment": "degree_stack",
+      "bar": 2,
+      "bassMidi": 44,
+      "bassPc": 8,
+      "candidateRotations": [
+        0
+      ],
+      "chaldeanDegree": 6,
+      "chordMidi": [
+        56,
+        60,
+        63
+      ],
+      "chordPcs": [
+        0,
+        3,
+        8
+      ],
+      "degree": 6,
+      "depth": 3,
+      "fallbackUsed": false,
+      "inversion": 0,
+      "missingPc": [],
+      "node": "1387@0",
+      "office": "Saturn",
+      "orbitCode": null,
+      "orderedPcs": [
+        8,
+        0,
+        3
+      ],
+      "registerOffset": -12,
+      "requestedTreatment": "degree_stack",
+      "rootDegree": 6,
+      "rootPc": 8,
+      "rotation": 0,
+      "shape": [
+        0,
+        4,
+        7
+      ],
+      "status": "ok",
+      "stride": 2
+    },
+    {
+      "activeTreatment": "degree_stack",
+      "bar": 3,
+      "bassMidi": 42,
+      "bassPc": 6,
+      "candidateRotations": [
+        0
+      ],
+      "chaldeanDegree": 5,
+      "chordMidi": [
+        54,
+        58,
+        61
+      ],
+      "chordPcs": [
+        1,
+        6,
+        10
+      ],
+      "degree": 5,
+      "depth": 3,
+      "fallbackUsed": false,
+      "inversion": 0,
+      "missingPc": [],
+      "node": "1387@0",
+      "office": "Saturn",
+      "orbitCode": null,
+      "orderedPcs": [
+        6,
+        10,
+        1
+      ],
+      "registerOffset": -12,
+      "requestedTreatment": "degree_stack",
+      "rootDegree": 5,
+      "rootPc": 6,
+      "rotation": 0,
+      "shape": [
+        0,
+        4,
+        7
+      ],
+      "status": "ok",
+      "stride": 2
+    },
+    {
+      "activeTreatment": "degree_stack",
+      "bar": 4,
+      "bassMidi": 41,
+      "bassPc": 5,
+      "candidateRotations": [
+        0
+      ],
+      "chaldeanDegree": 4,
+      "chordMidi": [
+        53,
+        54,
+        57
+      ],
+      "chordPcs": [
+        5,
+        6,
+        9
+      ],
+      "degree": 4,
+      "depth": 3,
+      "fallbackUsed": false,
+      "inversion": 0,
+      "missingPc": [],
+      "node": "1643@0",
+      "office": "Saturn",
+      "orbitCode": null,
+      "orderedPcs": [
+        5,
+        6,
+        9
+      ],
+      "registerOffset": -12,
+      "requestedTreatment": "degree_stack",
+      "rootDegree": 4,
+      "rootPc": 5,
+      "rotation": 0,
+      "shape": [
+        0,
+        1,
+        4
+      ],
+      "status": "ok",
+      "stride": 1
+    }
+  ],
+  "reference": false,
+  "render": {
+    "durationMs": 14400,
+    "midiPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_4_cadence_algebra/task-c/sessions/d1.mid",
+    "midiSha256": "cdd0b3a029e0cc91e80ce0c40da2254309d030aa9d435c59a57780952711bb6d",
+    "reRenderMatch": true,
+    "sessionSheetPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_4_cadence_algebra/task-c/sessions/d1_session_sheet.md",
+    "sessionSheetSha256": "b75cfcd60de0f3bb92581b7687e03ddff38ff0f46a6871fb627cde4085caf24f",
+    "tracePath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_4_cadence_algebra/task-c/sessions/d1.jsonl",
+    "traceSha256": "09b1b9e88d6258e7e8a4b260643fd29532bd4ea3ff9ba41905ececa31e2cf1d4",
+    "wavPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_4_cadence_algebra/task-c/sessions/d1.wav",
+    "wavSha256": "166027a43a50eb08b314e8a950881e9a37a8afd3817795c06b065a0071144745"
+  },
+  "repoWrites": 0,
+  "schemaVersion": "governed-loop.mvp8_4-session.v1",
+  "seams": [
+    {
+      "fromBar": 1,
+      "fromNode": "1387@0",
+      "governed_connectivity": "none",
+      "office_relation": "same_office",
+      "role_pair": "anchor->anchor",
+      "substitution_size": 0,
+      "tier_relation": "A0->A0",
+      "toBar": 2,
+      "toNode": "1387@0"
+    },
+    {
+      "fromBar": 2,
+      "fromNode": "1387@0",
+      "governed_connectivity": "none",
+      "office_relation": "same_office",
+      "role_pair": "anchor->anchor",
+      "substitution_size": 0,
+      "tier_relation": "A0->A0",
+      "toBar": 3,
+      "toNode": "1387@0"
+    },
+    {
+      "fromBar": 3,
+      "fromNode": "1387@0",
+      "governed_connectivity": "governs",
+      "office_relation": "same_office",
+      "role_pair": "anchor->satellite",
+      "substitution_size": 1,
+      "tier_relation": "A0->A0",
+      "toBar": 4,
+      "toNode": "1643@0"
+    }
+  ],
+  "solver": {
+    "mode": "explicit",
+    "rotationPath": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "totalDisplacement": 20
+  }
+}

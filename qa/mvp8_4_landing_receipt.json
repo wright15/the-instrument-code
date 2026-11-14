@@ -1,0 +1,666 @@
+{
+  "artifacts": {
+    "directiveDocuments": [
+      {
+        "path": "scrum/plan/mvp8-4-cadence-algebra-dir-1-rev1.md",
+        "sha256": "aad3734928631d22cd7d523f78e4e71b07d8731c7d54147633c713ac41f35c37"
+      },
+      {
+        "path": "scrum/plan/mvp8-4-cadence-algebra-closing-report.md",
+        "sha256": "8458179231cdbb4a26401f602d83164ac79c8d161455c1431b01b1e3d0240a96"
+      },
+      {
+        "path": "docs/specs/degree-ladder-v0.1.0.md",
+        "sha256": "7c3c403c9236c21f9c21d23018e6069023318f0bb765315743020cffca2228e6"
+      }
+    ],
+    "excludedAudio": {
+      "bytes": 12393225,
+      "count": 20,
+      "files": [
+        {
+          "bytes": 970,
+          "source": "d1.mid"
+        },
+        {
+          "bytes": 1270124,
+          "source": "d1.wav"
+        },
+        {
+          "bytes": 965,
+          "source": "d2.mid"
+        },
+        {
+          "bytes": 1270124,
+          "source": "d2.wav"
+        },
+        {
+          "bytes": 976,
+          "source": "d3.mid"
+        },
+        {
+          "bytes": 1270124,
+          "source": "d3.wav"
+        },
+        {
+          "bytes": 976,
+          "source": "d4.mid"
+        },
+        {
+          "bytes": 1270124,
+          "source": "d4.wav"
+        },
+        {
+          "bytes": 961,
+          "source": "d5.mid"
+        },
+        {
+          "bytes": 1270124,
+          "source": "d5.wav"
+        },
+        {
+          "bytes": 957,
+          "source": "d6.mid"
+        },
+        {
+          "bytes": 1270124,
+          "source": "d6.wav"
+        },
+        {
+          "bytes": 963,
+          "source": "d7.mid"
+        },
+        {
+          "bytes": 1270124,
+          "source": "d7.wav"
+        },
+        {
+          "bytes": 993,
+          "source": "d8.mid"
+        },
+        {
+          "bytes": 1270124,
+          "source": "d8.wav"
+        },
+        {
+          "bytes": 994,
+          "source": "d8b.mid"
+        },
+        {
+          "bytes": 1270124,
+          "source": "d8b.wav"
+        },
+        {
+          "bytes": 750,
+          "source": "d9.mid"
+        },
+        {
+          "bytes": 952604,
+          "source": "d9.wav"
+        }
+      ],
+      "note": "audio is reproducible from the landed code and traces; hashes remain in the landed receipts"
+    },
+    "payloadCount": 48,
+    "payloads": [
+      {
+        "beforeSha256": null,
+        "bytes": 20238,
+        "destination": "tools/governed-loop/node-observatory/pattern_query.py",
+        "role": "pattern_query",
+        "sha256": "9258312e98caeb8f9e4b826b219d3380dce49bf4c10a2e4ee158cea20560355a",
+        "source": "task-a/pattern_query.py"
+      },
+      {
+        "beforeSha256": "e68c88a1b51903589957b798d3d46d0ac2040f5902dc51227cf66ccb5e0c10ba",
+        "bytes": 12345,
+        "destination": "tools/governed-loop/node-observatory/degree_ladder.py",
+        "role": "degree_ladder",
+        "sha256": "f8c8767e0c4db0a59199167bd3062cc32eb53589a3bd67b895c91153e189c0bd",
+        "source": "task-b/degree_ladder.py"
+      },
+      {
+        "beforeSha256": "3868e1994e06863fe1544c2b19c5961571ed811907d4e53b7d293210397fc7fa",
+        "bytes": 23396,
+        "destination": "tools/governed-loop/node-observatory/node_observatory_degree.py",
+        "role": "node_observatory_degree",
+        "sha256": "de6c58181eec5588c8111ff6b5b221a7b86e290d9dceb492e5f5c4b567206a99",
+        "source": "task-b/node_observatory_degree.py"
+      },
+      {
+        "beforeSha256": "91744aaabb13b5b44029b7c0d28f13c6266d90353426d2eed601d2ed3b2a9af9",
+        "bytes": 19611,
+        "destination": "tools/governed-loop/node-observatory/node_observatory.py",
+        "role": "node_observatory",
+        "sha256": "246d4d68b0c44b6cc2466a5457367120fbe3926f078140659903f228088d2cb0",
+        "source": "task-b/node_observatory.py"
+      },
+      {
+        "beforeSha256": "b4507765a75e82e5680a76b60b34e0e22423ae5fdd24519dae3872a77cf80270",
+        "bytes": 29643,
+        "destination": "tools/governed-loop/node-observatory/node_observatory_engine.py",
+        "role": "node_observatory_engine",
+        "sha256": "d53fdfa7fa910bf170f9fe68e1ee475490e8d9b3dbd89d1355d747e087352dba",
+        "source": "task-b/node_observatory_engine.py"
+      },
+      {
+        "beforeSha256": "2be919d04f6f89b3f8452f6b04324459578cbe623df46d7663f8140138ac65d6",
+        "bytes": 8442,
+        "destination": "tools/governed-loop/node-observatory/mvp8_2_common.py",
+        "role": "node_observatory_common",
+        "sha256": "2f863a9a6051e7dbf726c721a61c210926e276076193e813f5a4c7d85cf4d80d",
+        "source": "task-b/mvp8_2_common.py"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 3067,
+        "destination": "tools/governed-loop/node-observatory/mvp8_3_common.py",
+        "role": "degree_ladder_common",
+        "sha256": "7d9f0bf3870d210f1e846f1fcd518df8a746b4208f2cb051bdb4516b18654ba8",
+        "source": "task-b/mvp8_3_common.py"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 23211,
+        "destination": "tools/governed-loop/node-observatory/mvp8_4_predeclared_bets.json",
+        "role": "mvp8_4_predeclared_bets",
+        "sha256": "1ec65ae3cf1f43b946aa59356b2650a161af996edc5157fec5aa1c2970feee11",
+        "source": "task-0/mvp8_4_predeclared_bets.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 23398,
+        "destination": "tools/governed-loop/node-observatory/mvp8_4_cadence_census.json",
+        "role": "mvp8_4_cadence_census",
+        "sha256": "a2c749f456ee8ce1114a2fa224def574e304bf4fefa251452ae780fe63319f82",
+        "source": "task-a/mvp8_4_cadence_census.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 15382,
+        "destination": "tools/governed-loop/node-observatory/mvp8_4_ear_manifest.json",
+        "role": "mvp8_4_ear_manifest_signed",
+        "sha256": "d0b4341e5ae2702c8b6b77cf2106e97489a8d8a3e5a55ca83ef38be0ac12621b",
+        "source": "task-c/mvp8_4_ear_manifest.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 5798,
+        "destination": "qa/mvp8_4_ear_scorecard.json",
+        "role": "mvp8_4_ear_scorecard_signed",
+        "sha256": "153ff0e9bbe54231624d63c48d4c61e7bec05b518b2d12a2d5b51e3840e7f40e",
+        "source": "task-0/mvp8_4_ear_scorecard.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 11850,
+        "destination": "qa/mvp8_4_task_0_receipt.json",
+        "role": "mvp8_4_task_0_receipt",
+        "sha256": "8c9b48ae73a6d52f410109b2fb1607cff5cf258019bc6787918b2ee544249f03",
+        "source": "task-0/mvp8_4_task_0_receipt.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 4184,
+        "destination": "qa/mvp8_4_task_a_receipt.json",
+        "role": "mvp8_4_task_a_receipt",
+        "sha256": "4d52b73a7299e97cb62429f7a85d8d2fb6a3d759b116fb3bbd1078d357903896",
+        "source": "task-a/mvp8_4_task_a_receipt.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 18902,
+        "destination": "qa/mvp8_4_task_b_receipt.json",
+        "role": "mvp8_4_task_b_receipt",
+        "sha256": "222aa2046959014f446b037fcee40bba4092d71eff9e5ab21a6965fbfbaf4136",
+        "source": "task-b/mvp8_4_task_b_receipt.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 19773,
+        "destination": "qa/mvp8_4_task_c_receipt.json",
+        "role": "mvp8_4_task_c_receipt",
+        "sha256": "12d584c7f073c87f8092bcb231a00b9fc0da4c0262aaebc4dc8449c4775e1b8f",
+        "source": "task-c/mvp8_4_task_c_receipt.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 4386,
+        "destination": "qa/mvp8_4_task_d_receipt.json",
+        "role": "mvp8_4_task_d_receipt",
+        "sha256": "869734c3cf04703ea120b884db75a2bb776405592e3196e808429f011be34eb9",
+        "source": "task-d/mvp8_4_task_d_receipt.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 14971,
+        "destination": "scrum/plan/mvp8-4-cadence-algebra-closing-report.md",
+        "role": "closing_report",
+        "sha256": "8458179231cdbb4a26401f602d83164ac79c8d161455c1431b01b1e3d0240a96",
+        "source": "task-d/MVP8_4-CADENCE-ALGEBRA-CLOSING-REPORT.md"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 3361,
+        "destination": "scrum/plan/mvp8-4-cadence-algebra-dir-1-rev1.md",
+        "role": "directive",
+        "sha256": "aad3734928631d22cd7d523f78e4e71b07d8731c7d54147633c713ac41f35c37",
+        "source": "task-d/mvp8-4-cadence-algebra-dir-1-rev1.md"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 42212,
+        "destination": "tools/governed-loop/node-observatory/sessions/d1.jsonl",
+        "role": "session_trace:d1",
+        "sha256": "09b1b9e88d6258e7e8a4b260643fd29532bd4ea3ff9ba41905ececa31e2cf1d4",
+        "source": "task-c/sessions/d1.jsonl"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 18848,
+        "destination": "tools/governed-loop/node-observatory/sessions/d1_receipt.json",
+        "role": "session_receipt:d1",
+        "sha256": "a7af61788c6cde3a72072e6842d854298637f64206a60bc47aa09cfe2d0003e3",
+        "source": "task-c/sessions/d1_receipt.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 2359,
+        "destination": "tools/governed-loop/node-observatory/sessions/d1_session_sheet.md",
+        "role": "session_sheet:d1",
+        "sha256": "b75cfcd60de0f3bb92581b7687e03ddff38ff0f46a6871fb627cde4085caf24f",
+        "source": "task-c/sessions/d1_session_sheet.md"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 42126,
+        "destination": "tools/governed-loop/node-observatory/sessions/d2.jsonl",
+        "role": "session_trace:d2",
+        "sha256": "2334161aa580923b864ab5b9a3256036a6cef1f96eb6433c391b12ea778cabba",
+        "source": "task-c/sessions/d2.jsonl"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 18836,
+        "destination": "tools/governed-loop/node-observatory/sessions/d2_receipt.json",
+        "role": "session_receipt:d2",
+        "sha256": "946b3ad3b57eb11029331e1c201cc5650ad730330cd9972e08112537d601937e",
+        "source": "task-c/sessions/d2_receipt.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 2349,
+        "destination": "tools/governed-loop/node-observatory/sessions/d2_session_sheet.md",
+        "role": "session_sheet:d2",
+        "sha256": "d50651fef2a613e9f3f9a0c31d29d117936bb2c538cfe06d9fa450a87d21e2fc",
+        "source": "task-c/sessions/d2_session_sheet.md"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 42123,
+        "destination": "tools/governed-loop/node-observatory/sessions/d3.jsonl",
+        "role": "session_trace:d3",
+        "sha256": "1a3b678217de249d042f6e44aed8ae69465ac14484e02ed10ca0a69deda08a80",
+        "source": "task-c/sessions/d3.jsonl"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 18844,
+        "destination": "tools/governed-loop/node-observatory/sessions/d3_receipt.json",
+        "role": "session_receipt:d3",
+        "sha256": "5d9144de81c23cf7dd4a8c3257c0adb812d468927f36b609b22fa4d1ad9f019e",
+        "source": "task-c/sessions/d3_receipt.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 2360,
+        "destination": "tools/governed-loop/node-observatory/sessions/d3_session_sheet.md",
+        "role": "session_sheet:d3",
+        "sha256": "ca670b412587dd1589bee33e27236dc11be797b73483c404306bb845efd13267",
+        "source": "task-c/sessions/d3_session_sheet.md"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 42181,
+        "destination": "tools/governed-loop/node-observatory/sessions/d4.jsonl",
+        "role": "session_trace:d4",
+        "sha256": "e2979637915aefe8d640b8061c23147d296be3b6d9271c360172b6ce24c4c65b",
+        "source": "task-c/sessions/d4.jsonl"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 18842,
+        "destination": "tools/governed-loop/node-observatory/sessions/d4_receipt.json",
+        "role": "session_receipt:d4",
+        "sha256": "b37582cb9ca4b94cb15b2f96ca560651c159ab4a1ebdd286e1e2e952406c150e",
+        "source": "task-c/sessions/d4_receipt.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 2361,
+        "destination": "tools/governed-loop/node-observatory/sessions/d4_session_sheet.md",
+        "role": "session_sheet:d4",
+        "sha256": "5c3b887f5aee8677aa2d69e86ffba7032d8d0dca83915748fe5d34656a731316",
+        "source": "task-c/sessions/d4_session_sheet.md"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 41899,
+        "destination": "tools/governed-loop/node-observatory/sessions/d5.jsonl",
+        "role": "session_trace:d5",
+        "sha256": "ef41ffc51c998500fc7213c05db43fc83877966946f61b019c7fd33f457adbff",
+        "source": "task-c/sessions/d5.jsonl"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 18828,
+        "destination": "tools/governed-loop/node-observatory/sessions/d5_receipt.json",
+        "role": "session_receipt:d5",
+        "sha256": "161fd3ec00b5ae6d1da912e4877074db0f3a66d1c8d11dd24b8150f8dfc273ef",
+        "source": "task-c/sessions/d5_receipt.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 2348,
+        "destination": "tools/governed-loop/node-observatory/sessions/d5_session_sheet.md",
+        "role": "session_sheet:d5",
+        "sha256": "2e360f307010aa346b4b42487f88476de17a1e5e0d6843b56ce6679d19999238",
+        "source": "task-c/sessions/d5_session_sheet.md"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 41941,
+        "destination": "tools/governed-loop/node-observatory/sessions/d6.jsonl",
+        "role": "session_trace:d6",
+        "sha256": "c569f31dcd86ca6acb35786970773195b15e1b442fab95b71ad6a114888b99d4",
+        "source": "task-c/sessions/d6.jsonl"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 18832,
+        "destination": "tools/governed-loop/node-observatory/sessions/d6_receipt.json",
+        "role": "session_receipt:d6",
+        "sha256": "f48be39e313ff8e530d9b4fd5d062c27b328f1176d42d327183fd725741bade4",
+        "source": "task-c/sessions/d6_receipt.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 2347,
+        "destination": "tools/governed-loop/node-observatory/sessions/d6_session_sheet.md",
+        "role": "session_sheet:d6",
+        "sha256": "00ca569083a46657caf89e3e0da83f42fc84c86bee6104ab0849ac9b9c7b227d",
+        "source": "task-c/sessions/d6_session_sheet.md"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 41669,
+        "destination": "tools/governed-loop/node-observatory/sessions/d7.jsonl",
+        "role": "session_trace:d7",
+        "sha256": "e3a2e95a2519beaf28c0132eac79dc71300f618b140b811bef0ffeeea72a677e",
+        "source": "task-c/sessions/d7.jsonl"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 18831,
+        "destination": "tools/governed-loop/node-observatory/sessions/d7_receipt.json",
+        "role": "session_receipt:d7",
+        "sha256": "38bcae6129180dffdff73fbac3ea504cadc7c0276271bca5893c051868733c3c",
+        "source": "task-c/sessions/d7_receipt.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 2347,
+        "destination": "tools/governed-loop/node-observatory/sessions/d7_session_sheet.md",
+        "role": "session_sheet:d7",
+        "sha256": "8438e2d5649c202027f0383b14452bda7f0ab944bc80977f4626ab8b01f8826e",
+        "source": "task-c/sessions/d7_session_sheet.md"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 42504,
+        "destination": "tools/governed-loop/node-observatory/sessions/d8.jsonl",
+        "role": "session_trace:d8",
+        "sha256": "921da89ad4019dfea5ac55f0ab663b46d63b892f125bfd395fa3fa5bbdbb5c57",
+        "source": "task-c/sessions/d8.jsonl"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 19184,
+        "destination": "tools/governed-loop/node-observatory/sessions/d8_receipt.json",
+        "role": "session_receipt:d8",
+        "sha256": "36eeb382f83f69adfc80add08ae3459d3b9a4d976fd60e1502cd58c272cd5889",
+        "source": "task-c/sessions/d8_receipt.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 2387,
+        "destination": "tools/governed-loop/node-observatory/sessions/d8_session_sheet.md",
+        "role": "session_sheet:d8",
+        "sha256": "d5e10b31f633ae1aac2af6bf8a328e5ac70390bb7f5cbe34da621adebab7b731",
+        "source": "task-c/sessions/d8_session_sheet.md"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 42552,
+        "destination": "tools/governed-loop/node-observatory/sessions/d8b.jsonl",
+        "role": "session_trace:d8b",
+        "sha256": "fb4b76954df87d49b6ada5db52905ae37cea88780f6872b9ce32926cd794c560",
+        "source": "task-c/sessions/d8b.jsonl"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 19057,
+        "destination": "tools/governed-loop/node-observatory/sessions/d8b_receipt.json",
+        "role": "session_receipt:d8b",
+        "sha256": "e165d7d8567bfe231d779765e8901eee60decbc4fbd3a4c34424ce53be860d9e",
+        "source": "task-c/sessions/d8b_receipt.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 2389,
+        "destination": "tools/governed-loop/node-observatory/sessions/d8b_session_sheet.md",
+        "role": "session_sheet:d8b",
+        "sha256": "a33f4639ad260f68f8201a3a48c8386699eaf38ac031667d983beb2a3e989e05",
+        "source": "task-c/sessions/d8b_session_sheet.md"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 31663,
+        "destination": "tools/governed-loop/node-observatory/sessions/d9.jsonl",
+        "role": "session_trace:d9",
+        "sha256": "a1b0b8aa809277e7c6c381d1806ef72b1d58ed1def1e4771dc9ca2f3f221615e",
+        "source": "task-c/sessions/d9.jsonl"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 14743,
+        "destination": "tools/governed-loop/node-observatory/sessions/d9_receipt.json",
+        "role": "session_receipt:d9",
+        "sha256": "99d7d8131292fff12374efe9321d7fa17d63d5283264dbf76bf23bf5a49231db",
+        "source": "task-c/sessions/d9_receipt.json"
+      },
+      {
+        "beforeSha256": null,
+        "bytes": 2146,
+        "destination": "tools/governed-loop/node-observatory/sessions/d9_session_sheet.md",
+        "role": "session_sheet:d9",
+        "sha256": "84b164e76dcf30dec941c03a12d5cd6766a7e02f0a84edaa46fc00fd04f3f572",
+        "source": "task-c/sessions/d9_session_sheet.md"
+      }
+    ]
+  },
+  "cascade": [
+    {
+      "command": ".venv/bin/python scripts/generate-fifth-space-census.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"candidateFingerprint\": \"d7227aaa4634cb13a9012ed119deb78d4ca3219321b15d91e7cf9226dac6789a\", \"candidateId\": \"FIFTH_SPACE_CENSUS_v0\", \"records\": 462, \"verdict\": \"confirmed\"}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/validate-fifth-space-census.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "        \"gapMultiset\": [\n              1,\n              1,\n              2,\n              2,\n              2,\n              2,\n              2\n            ],\n            \"name\": \"7-1 terminal cluster state 4033\",\n            \"office\": \"Mars\",\n            \"role\": \"anchor\",\n            \"stateId\": 4033,\n            \"tier\": \"D7\"\n          }\n        ],\n        \"d7AnchorsAtCeiling\": true,\n        \"spanCeiling\": 10,\n        \"theorem\": \"seven points on the 12-cycle have seven gaps summing to 12, so the largest gap is at least 2 and the minimal covering arc span is at most 10: the A-ladder ceiling is geometry, not fiat\",\n        \"verified\": true\n      }\n    },\n    {\n      \"checkId\": \"research-verdict-consistency\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"confirmed\"\n    },\n    {\n      \"checkId\": \"research-verdict-non-gating\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"records carry no truth-value gate; ORR-522 consumes them regardless\"\n    },\n    {\n      \"checkId\": \"guards-namespace\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings (both ledgers)\"\n    },\n    {\n      \"checkId\": \"bindings-court\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen Court position binding\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"d189693c3ecd5eec91c3366933d2b04306586e0fb15cb77fa852ad8a25b96c18\"\n}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/generate-shadow-ladder.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"candidateFingerprint\": \"2a4aea97f2b127696ff2d9c3c8f7457b02ade7580c587a65db9a80460473b09f\", \"candidateId\": \"SHADOW_LADDER_v0\", \"records\": 10}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/validate-shadow-ladder.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "two dH4 pair\"\n    },\n    {\n      \"checkId\": \"termination-5-33-detachment\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"T1-complement A3 predictions are detached 5-33 masks\"\n    },\n    {\n      \"checkId\": \"incidence-15-36\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"five selected 5-35 cores contribute 15 of 36 incidences\"\n    },\n    {\n      \"checkId\": \"incidence-5-120\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"five selected 5-34 cores are in the 120-mask one-parent stratum\"\n    },\n    {\n      \"checkId\": \"incidence-out-of-census\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"ten A2-to-A1 construction incidences are outside the detached audit\"\n    },\n    {\n      \"checkId\": \"guards-no-court\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"Court positions cross-check A1 only\"\n    },\n    {\n      \"checkId\": \"guards-seam-typed\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"midpoint and phase-seam provenance remain distinct\"\n    },\n    {\n      \"checkId\": \"guards-namespace\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"achirality\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all derived 5-35, 5-34, and predicted 5-33 masks are achiral\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"40b3fc422389bf3c6e142b059f8c9e1c7811b7bc687fc5f4bf4c43b418d3e50c\"\n}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/generate-twin-hub-convergence.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"candidateFingerprint\": \"778266e55cb8c67087e80ec134760aa537467fa11ea31ce7f7e50d76fb3479aa\", \"candidateId\": \"TWIN_HUB_CONVERGENCE_v0\", \"verdict\": \"confirmed\"}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/validate-twin-hub-convergence.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "iagnostic\": \"D5 anchors seat the unseated-midpoint offices Mars and Jupiter\"\n    },\n    {\n      \"checkId\": \"d5-case-verified\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"A2 twin pairs share the Mercury hub; their ring midpoints {Mars, Jupiter} are unseated as seams (exact midpoints, no A3); all 14 D5 seat-contact rows route the permitted single-hop chain, seating the unseated-midpoint offices.\"\n    },\n    {\n      \"checkId\": \"chain-total-28\",\n      \"status\": \"PASS\",\n      \"diagnostic\": {\n        \"total\": 28,\n        \"valid\": 28\n      }\n    },\n    {\n      \"checkId\": \"chain-two-contacts-per-anchor\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"exactly two selected contacts per D4/D5 anchor\"\n    },\n    {\n      \"checkId\": \"chain-no-violations\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"no missing, reversed, or cross-tier relation accepted\"\n    },\n    {\n      \"checkId\": \"negative-controls\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"six negative controls pass\"\n    },\n    {\n      \"checkId\": \"verdict-consistency\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"confirmed\"\n    },\n    {\n      \"checkId\": \"guards-namespace\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"planning evidence has no admission or topology coordinate\"\n    },\n    {\n      \"checkId\": \"bindings-ledger-shas\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"frozen ledger bindings\"\n    },\n    {\n      \"checkId\": \"bindings-source-derivation\",\n      \"status\": \"PASS\",\n      \"diagnostic\": \"all semantic source bindings\"\n    }\n  ],\n  \"reportFingerprint\": \"799557627ba5631e18d34cd8611d2dd43427e6eaaa4b48cad45d19e4f7b0ea33\"\n}\n"
+    },
+    {
+      "command": "node scripts/build-pentatonic-binding-audit-closure.mjs",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "c-closure\",\n      \"diagnostic\": \"17a99dde862c5853031724a11c6435d372fd795eeb86a700fbc266068e7a8b61\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"crt310-zero-admission-boundary\",\n      \"diagnostic\": {\n        \"itemCount\": 35,\n        \"proposedCount\": 35,\n        \"eligibleForAdmissionReviewCount\": 0,\n        \"admittedCount\": 0,\n        \"gateDefinitionCount\": 7,\n        \"satisfiedGateResultCount\": 70,\n        \"pendingGateResultCount\": 175,\n        \"failedGateResultCount\": 0\n      },\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"planning-evidence-cross-references\",\n      \"diagnostic\": \"authority and CRT-310 workflow references remain planning_evidence only\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"package-entrypoint-closure\",\n      \"diagnostic\": {\n        \"build\": \"python3 scripts/generate-pentatonic-7-35-parent-audit.py\",\n        \"test\": \"python3 -m pytest -p no:cacheprovider -q tests/test_pentatonic_7_35_parent_audit.py && node --test tests/pentatonic_binding_audit/neo4j-live.test.mjs\",\n        \"validate\": \"python3 scripts/generate-pentatonic-7-35-parent-audit.py --check && python3 scripts/validate-pentatonic-7-35-parent-audit.py && npm run test:pentatonic-binding-audit --silent && npm run validate:cypher --silent\"\n      },\n      \"status\": \"PASS\"\n    },\n    {\n      \"checkId\": \"intrinsic-environment-independence\",\n      \"diagnostic\": \"closure core excludes time, provider, host, process, port, and temporary-path identity\",\n      \"status\": \"PASS\"\n    }\n  ],\n  \"reportFingerprint\": \"1c3d6ab795b2e136e73350a4bd374498b206f92abf1b3f5cf69cc873c02a6a95\"\n}\n"
+    },
+    {
+      "command": ".venv/bin/python scripts/build-fivefold-engine-promotion-evidence.py",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"evidenceFingerprint\": \"7e340515cc4376bf2fbeba6614203fba4d26cf875909512d9a5db95ea30c3cd7\", \"evidenceId\": \"fivefold-engine-promotion-evidence-v1\", \"exclusionEvidenceCount\": 11, \"itemEvidenceCount\": 10, \"verdict\": \"PASS\"}\n"
+    },
+    {
+      "command": "node scripts/build-field-derivation-bundle.mjs",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"bundleId\":\"FIELD_DERIVATION_OBS014_015_016_v1\",\"bundleFingerprint\":\"94ce579159925de99488cc93120d542d06e19bb443da2c522f0a5b4de5ded252\",\"observations\":3}\n"
+    },
+    {
+      "command": "node scripts/build-orrery-taxonomy-read-model.mjs",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"bundleId\":\"TAXONOMY_READ_MODEL_v1\",\"recordCount\":462,\"stale\":false}\n"
+    },
+    {
+      "command": "node scripts/build-orrery-d-tier-taxonomy-dataset.mjs",
+      "exitCode": 0,
+      "stderrTail": "",
+      "stdoutTail": "{\"datasetId\":\"D_TIER_TAXONOMY_DATASET_v1\",\"recordCount\":175,\"stale\":false}\n"
+    }
+  ],
+  "constraints": {
+    "audioLanded": false,
+    "claimEvent": false,
+    "encoderBytesModified": false,
+    "forcePush": false,
+    "gateBytesModified": false,
+    "landingMode": "working-tree + one dedicated commit + one normal push",
+    "orreryApplicationSourceModified": false,
+    "pinnedRendererBytesModified": false,
+    "pushAuthorizedBy": "Planning Seat override of the no-push fence, 2026-11-14",
+    "qEngineBytesModified": false,
+    "substrateBytesModified": false,
+    "tag": false
+  },
+  "decisions": {
+    "betA1": "PASS 41,580 / 24,111 / 1,532 / 17 / 6",
+    "betA2": "PASS Andalusian unique cover 2",
+    "betB1": "PASS 12 progressions voice-led",
+    "betB2": "PASS standalone imports and multi-node bars",
+    "betC": "PASS 13,860/13,860 single-pc pairs at 5 bridges",
+    "betD": "PASS 9/9 MIDI true, 0 out-of-mask",
+    "legacyCatalog": "deprecated by evidence, not deleted",
+    "mvp84Outcome": "ADOPT_CADENCE_ALGEBRA"
+  },
+  "directive": "MVP8.4-CADENCE-ALGEBRA-DIR-1",
+  "earGate": {
+    "manifestSha256": "d0b4341e5ae2702c8b6b77cf2106e97489a8d8a3e5a55ca83ef38be0ac12621b",
+    "overallVerdict": "ADOPT_CADENCE_ALGEBRA",
+    "scorecardSha256": "153ff0e9bbe54231624d63c48d4c61e7bec05b518b2d12a2d5b51e3840e7f40e",
+    "signed": true,
+    "signedAt": "2026-11-14",
+    "signedBy": "Erick",
+    "status": "SIGNED_HUMAN",
+    "transcript": "After auditioning, I'm listening to D9 and I like the way it sounds a lot. The melody lines sound like they belong with the chord progressions and it catches the ear. It leaves you wanting to hear more. For D8b, the last chord sounds like it belongs the most. And the melody line sounds like it belongs, but it's pretty repetitive and there's a lot of ambiguity. I'm unsure if this is because of the node types that the progression in melody lines are using or if it's for another reason. The chord progressions for D8 sound better. Even though the melody line sounds like it's the same from D8b, the melody line and the chord progressions go together better. It still wouldn't surprise me if there was something odd about the notes that are used for this because the progressions themselves don't sound too harmonious, but they sound like they belong at least. The seventh's chord progression and melody line sound okay. The last progression sounds like maybe there's something off about it. The six sounds strong. The chord progressions and the melody cohesion sounds great, and there's a bit of variation in the melody that makes it stand out. For D5, the melody sounds like it almost matches, but the progressions themselves sound like they work. Maybe it's just not a very melodic or harmonic set of notes that are being used for this progression, but overall they sound like they work, just maybe an off note on the melody. D4 sounds great all around. The chord progressions sound like they belong with the melody line. There's variation in the melody that works, and it sounds like a very nice melody and chord progression. D3 also sounds very good. The chord progressions and melody line sound great together. D2 also sounds very good. The melody line and the chord progressions sound like they get along well. The wind sounds great as well. The chord progressions and the melody work well together, and the melody line has a variation and change to sound interesting. [STT note: 'The seventh's' = D7; 'The six' = D6; 'The wind' = D1.] Verdict: I adopt the cadence stride algebra, voice-led stack rotations (D8 [0,2,1,2] displacement 9 over D8b m=0 displacement 47, D9 r1->r0->r0), and the six-sibling family (ADOPT_CADENCE_ALGEBRA).",
+    "transcriptSha256": "d0b4341e5ae2702c8b6b77cf2106e97489a8d8a3e5a55ca83ef38be0ac12621b"
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + cadence stride algebra & voice-led rotations",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "ledger": {
+    "afterBytes": 449037,
+    "afterLines": 4548,
+    "afterSha256": "7b3cff2f83512fa0b2e1b988bdbcebc6e6612f608f42b76c44da0dc9be6062c3",
+    "beforeSha256": "14ebc6f4f7f1edba7a82525e668d8cf30fecf8df8eed4da58f13d57c1881acbb",
+    "entry": "single L32 entry appended at tail; no prior entry amended",
+    "prefixIdentity": true
+  },
+  "manifestRegen": {
+    "note": "the landing receipt is written after this manifest; the final packaging manifest includes it and is regenerated below",
+    "preReceiptFileCount": 2040,
+    "preReceiptManifestSha256": "4886a53461377a2e46c66a1d535ddc9e52454d5434550996899149afdb43789c",
+    "preReceiptTotalBytes": 303596496
+  },
+  "opening": {
+    "baseHead": "508f1f510602f97e0cc74b15ee99ed6b683f7fd9",
+    "ledgerBefore": {
+      "bytes": 440222,
+      "lines": 4517,
+      "path": "provenance/DECISION_LEDGER.md",
+      "sha256": "14ebc6f4f7f1edba7a82525e668d8cf30fecf8df8eed4da58f13d57c1881acbb"
+    },
+    "manifestBefore": {
+      "fileCount": 1997,
+      "sha256": "763c8499f78f1ecc693939c0b64aabebf7dce3ad8c68ee86e9d842564870ac89",
+      "totalBytes": 302784576
+    },
+    "stagingManifestSha256": "41c0365166aaff08251def1b66ad5b532c2408f44413160d59bb3712f9e1a8ce",
+    "treeClean": true,
+    "validationBefore": {
+      "failed": 0,
+      "passed": 418
+    }
+  },
+  "outcome": "ADOPT_CADENCE_ALGEBRA",
+  "proseConsistency": {
+    "authoritativeChecksPassed": 418,
+    "command": "node scripts/validate-validation-prose-consistency.mjs",
+    "verdict": "PASS",
+    "violations": 0
+  },
+  "schemaVersion": "governed-loop.mvp8_4-landing.v1",
+  "scope": "lean: audio excluded",
+  "status": "COMPLETE",
+  "task": "MVP8.4-L32-LANDING",
+  "validation": {
+    "checksFailed": 0,
+    "checksPassed": 418,
+    "command": "node scripts/validate-release.mjs",
+    "reportPath": "qa/integrated-release-validation.json",
+    "verdict": "PASS"
+  },
+  "warnings": []
+}

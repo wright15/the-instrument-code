@@ -1,0 +1,1399 @@
+{
+  "andalusianCensus": {
+    "bridgeCounts": {
+      "5": 41580
+    },
+    "descendingBass": {
+      "distinctPairs": 12440,
+      "distinctShapeSequences": 2053,
+      "instances": 24111,
+      "tierPreserving": 4962
+    },
+    "exactAndalusianShapeSequence": 17,
+    "exactShapesAndBass": 6,
+    "governed": {
+      "allSameOffice": true,
+      "anchorToSatellite": 546,
+      "anchorToSatelliteJupiter": 67,
+      "d1AnchorToSatellite": 91,
+      "instances": 1532,
+      "sameOfficeInstances": 1532,
+      "shapeSequences": 256
+    },
+    "nearMiss": [
+      {
+        "a": 1387,
+        "b": 1339,
+        "officeA": "Saturn",
+        "officeB": "Sun",
+        "roots": [
+          10,
+          8,
+          6,
+          4
+        ],
+        "shapes": [
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "startDegree": 7,
+        "steps": [
+          -2,
+          -2,
+          -2
+        ],
+        "tierA": "A0",
+        "tierB": "A1"
+      },
+      {
+        "a": 1453,
+        "b": 1261,
+        "officeA": "Jupiter",
+        "officeB": "Venus",
+        "roots": [
+          0,
+          10,
+          8,
+          6
+        ],
+        "shapes": [
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "startDegree": 1,
+        "steps": [
+          -2,
+          -2,
+          -2
+        ],
+        "tierA": "A0",
+        "tierB": "A1"
+      },
+      {
+        "a": 1709,
+        "b": 1703,
+        "officeA": "Mercury",
+        "officeB": "Jupiter",
+        "roots": [
+          7,
+          5,
+          3,
+          1
+        ],
+        "shapes": [
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "startDegree": 5,
+        "steps": [
+          -2,
+          -2,
+          -2
+        ],
+        "tierA": "A0",
+        "tierB": "A1"
+      },
+      {
+        "a": 1717,
+        "b": 949,
+        "officeA": "Mars",
+        "officeB": "Mercury",
+        "roots": [
+          2,
+          0,
+          10,
+          8
+        ],
+        "shapes": [
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "startDegree": 2,
+        "steps": [
+          -2,
+          -2,
+          -2
+        ],
+        "tierA": "A0",
+        "tierB": "A1"
+      },
+      {
+        "a": 2741,
+        "b": 2717,
+        "officeA": "Moon",
+        "officeB": "Mars",
+        "roots": [
+          9,
+          7,
+          5,
+          3
+        ],
+        "shapes": [
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "startDegree": 6,
+        "steps": [
+          -2,
+          -2,
+          -2
+        ],
+        "tierA": "A0",
+        "tierB": "A1"
+      }
+    ],
+    "noBassConstraint": {
+      "distinctPairs": 13860,
+      "distinctShapeSequences": 3141,
+      "instances": 41580,
+      "masksAsFirstContainer": 462
+    },
+    "siblings": [
+      {
+        "a": 1387,
+        "b": 1643,
+        "office": "Saturn",
+        "roots": [
+          10,
+          8,
+          6,
+          5
+        ],
+        "startDegree": 7,
+        "tierA": "A0",
+        "tierB": "A0"
+      },
+      {
+        "a": 1451,
+        "b": 1459,
+        "office": "Venus",
+        "roots": [
+          5,
+          3,
+          1,
+          0
+        ],
+        "startDegree": 4,
+        "tierA": "A0",
+        "tierB": "A0"
+      },
+      {
+        "a": 1453,
+        "b": 2477,
+        "office": "Jupiter",
+        "roots": [
+          0,
+          10,
+          8,
+          7
+        ],
+        "startDegree": 1,
+        "tierA": "A0",
+        "tierB": "A0"
+      },
+      {
+        "a": 1709,
+        "b": 1741,
+        "office": "Mercury",
+        "roots": [
+          7,
+          5,
+          3,
+          2
+        ],
+        "startDegree": 5,
+        "tierA": "A0",
+        "tierB": "A0"
+      },
+      {
+        "a": 2741,
+        "b": 2869,
+        "office": "Moon",
+        "roots": [
+          9,
+          7,
+          5,
+          4
+        ],
+        "startDegree": 6,
+        "tierA": "A0",
+        "tierB": "A0"
+      },
+      {
+        "a": 2773,
+        "b": 2777,
+        "office": "Sun",
+        "roots": [
+          4,
+          2,
+          0,
+          11
+        ],
+        "startDegree": 3,
+        "tierA": "A0",
+        "tierB": "A0"
+      }
+    ]
+  },
+  "bridgeCensus": {
+    "1": {
+      "distribution": {
+        "5": 13860
+      },
+      "governedDistribution": {
+        "5": 614
+      },
+      "pairs": 13860,
+      "predictedShared": 5
+    },
+    "2": {
+      "distribution": {
+        "1": 69300
+      },
+      "governedDistribution": {
+        "1": 516
+      },
+      "pairs": 69300,
+      "predictedShared": 1
+    },
+    "3": {
+      "distribution": {
+        "0": 92400
+      },
+      "governedDistribution": {
+        "0": 154
+      },
+      "pairs": 92400,
+      "predictedShared": 0
+    },
+    "4": {
+      "distribution": {
+        "0": 34650
+      },
+      "governedDistribution": {
+        "0": 50
+      },
+      "pairs": 34650,
+      "predictedShared": 0
+    },
+    "5": {
+      "distribution": {
+        "0": 2772
+      },
+      "governedDistribution": {},
+      "pairs": 2772,
+      "predictedShared": 0
+    },
+    "6": {
+      "distribution": {},
+      "governedDistribution": {},
+      "pairs": 0,
+      "predictedShared": 0
+    }
+  },
+  "cadenceCensus": {
+    "Andalusian": {
+      "chords": [
+        [
+          0,
+          3,
+          7
+        ],
+        [
+          2,
+          5,
+          10
+        ],
+        [
+          0,
+          3,
+          8
+        ],
+        [
+          7,
+          8,
+          11
+        ]
+      ],
+      "containmentCoverNumber": 2,
+      "containmentWitnesses": [
+        3493
+      ],
+      "coverNumber": 2,
+      "coverWitnesses": [
+        2447,
+        2459,
+        2461,
+        2475,
+        2477,
+        2507,
+        2509
+      ],
+      "minimalPath": {
+        "chords": [
+          {
+            "chord": 1,
+            "mask": 1453
+          },
+          {
+            "chord": 2,
+            "mask": 1453
+          },
+          {
+            "chord": 3,
+            "mask": 1453
+          },
+          {
+            "chord": 4,
+            "mask": 3971
+          }
+        ],
+        "containers": 2,
+        "coverNumber": 2,
+        "switches": 1
+      },
+      "singleContainerCount": 0,
+      "singleContainerReadings": []
+    },
+    "AuthenticMajor": {
+      "chords": [
+        [
+          2,
+          7,
+          11
+        ],
+        [
+          0,
+          4,
+          7
+        ]
+      ],
+      "containmentCoverNumber": 1,
+      "containmentWitnesses": [
+        2207,
+        2231,
+        2237,
+        2263,
+        2269,
+        2293,
+        2455,
+        2461,
+        2485,
+        2517,
+        2711,
+        2717,
+        2741,
+        2773,
+        2965,
+        3223,
+        3229,
+        3253,
+        3285,
+        3477,
+        3733
+      ],
+      "coverNumber": 1,
+      "coverWitnesses": [
+        2231,
+        2263,
+        2455,
+        2461,
+        2485,
+        2517,
+        2711,
+        2717,
+        2741,
+        2773,
+        3223,
+        3229,
+        3253,
+        3285
+      ],
+      "minimalPath": {
+        "chords": [
+          {
+            "chord": 1,
+            "mask": 3285
+          },
+          {
+            "chord": 2,
+            "mask": 3285
+          }
+        ],
+        "containers": 1,
+        "coverNumber": 1,
+        "switches": 0
+      },
+      "singleContainerCount": 14,
+      "singleContainerReadings": [
+        2231,
+        2263,
+        2455,
+        2461,
+        2485,
+        2517,
+        2711,
+        2717,
+        2741,
+        2773,
+        3223,
+        3229,
+        3253,
+        3285
+      ]
+    },
+    "AuthenticMinor": {
+      "chords": [
+        [
+          7,
+          8,
+          11
+        ],
+        [
+          0,
+          3,
+          7
+        ]
+      ],
+      "containmentCoverNumber": 1,
+      "containmentWitnesses": [
+        2447,
+        2459,
+        2461,
+        2475,
+        2477,
+        2489,
+        2507,
+        2509,
+        2521,
+        2537,
+        2955,
+        2957,
+        2969,
+        2985,
+        3017,
+        3467,
+        3469,
+        3481,
+        3497,
+        3529,
+        3977
+      ],
+      "coverNumber": 1,
+      "coverWitnesses": [
+        2447,
+        2459,
+        2461,
+        2475,
+        2477,
+        2489,
+        2507,
+        2509,
+        2521,
+        2537,
+        3977
+      ],
+      "minimalPath": {
+        "chords": [
+          {
+            "chord": 1,
+            "mask": 3977
+          },
+          {
+            "chord": 2,
+            "mask": 3977
+          }
+        ],
+        "containers": 1,
+        "coverNumber": 1,
+        "switches": 0
+      },
+      "singleContainerCount": 11,
+      "singleContainerReadings": [
+        2447,
+        2459,
+        2461,
+        2475,
+        2477,
+        2489,
+        2507,
+        2509,
+        2521,
+        2537,
+        3977
+      ]
+    },
+    "Axis": {
+      "chords": [
+        [
+          0,
+          4,
+          7
+        ],
+        [
+          2,
+          7,
+          11
+        ],
+        [
+          0,
+          4,
+          9
+        ],
+        [
+          0,
+          5,
+          9
+        ]
+      ],
+      "containmentCoverNumber": 1,
+      "containmentWitnesses": [
+        2741
+      ],
+      "coverNumber": 1,
+      "coverWitnesses": [
+        2741
+      ],
+      "minimalPath": {
+        "chords": [
+          {
+            "chord": 1,
+            "mask": 2741
+          },
+          {
+            "chord": 2,
+            "mask": 2741
+          },
+          {
+            "chord": 3,
+            "mask": 2741
+          },
+          {
+            "chord": 4,
+            "mask": 2741
+          }
+        ],
+        "containers": 1,
+        "coverNumber": 1,
+        "switches": 0
+      },
+      "singleContainerCount": 1,
+      "singleContainerReadings": [
+        2741
+      ]
+    },
+    "Backdoor": {
+      "chords": [
+        [
+          2,
+          5,
+          10
+        ],
+        [
+          0,
+          4,
+          7
+        ]
+      ],
+      "containmentCoverNumber": 1,
+      "containmentWitnesses": [
+        1207,
+        1213,
+        1269,
+        1461,
+        1717,
+        3253
+      ],
+      "coverNumber": 1,
+      "coverWitnesses": [
+        1207,
+        1213,
+        1269,
+        1461,
+        1717,
+        3253
+      ],
+      "minimalPath": {
+        "chords": [
+          {
+            "chord": 1,
+            "mask": 1717
+          },
+          {
+            "chord": 2,
+            "mask": 1717
+          }
+        ],
+        "containers": 1,
+        "coverNumber": 1,
+        "switches": 0
+      },
+      "singleContainerCount": 6,
+      "singleContainerReadings": [
+        1207,
+        1213,
+        1269,
+        1461,
+        1717,
+        3253
+      ]
+    },
+    "DeceptiveMajor": {
+      "chords": [
+        [
+          2,
+          7,
+          11
+        ],
+        [
+          0,
+          4,
+          9
+        ]
+      ],
+      "containmentCoverNumber": 1,
+      "containmentWitnesses": [
+        2711,
+        2717,
+        2741,
+        2773,
+        2965,
+        3733
+      ],
+      "coverNumber": 1,
+      "coverWitnesses": [
+        2711,
+        2717,
+        2741,
+        2773,
+        2965,
+        3733
+      ],
+      "minimalPath": {
+        "chords": [
+          {
+            "chord": 1,
+            "mask": 3733
+          },
+          {
+            "chord": 2,
+            "mask": 3733
+          }
+        ],
+        "containers": 1,
+        "coverNumber": 1,
+        "switches": 0
+      },
+      "singleContainerCount": 6,
+      "singleContainerReadings": [
+        2711,
+        2717,
+        2741,
+        2773,
+        2965,
+        3733
+      ]
+    },
+    "Fifties": {
+      "chords": [
+        [
+          0,
+          4,
+          7
+        ],
+        [
+          0,
+          4,
+          9
+        ],
+        [
+          0,
+          5,
+          9
+        ],
+        [
+          2,
+          7,
+          11
+        ]
+      ],
+      "containmentCoverNumber": 1,
+      "containmentWitnesses": [
+        2741
+      ],
+      "coverNumber": 1,
+      "coverWitnesses": [
+        2741
+      ],
+      "minimalPath": {
+        "chords": [
+          {
+            "chord": 1,
+            "mask": 2741
+          },
+          {
+            "chord": 2,
+            "mask": 2741
+          },
+          {
+            "chord": 3,
+            "mask": 2741
+          },
+          {
+            "chord": 4,
+            "mask": 2741
+          }
+        ],
+        "containers": 1,
+        "coverNumber": 1,
+        "switches": 0
+      },
+      "singleContainerCount": 1,
+      "singleContainerReadings": [
+        2741
+      ]
+    },
+    "Neapolitan": {
+      "chords": [
+        [
+          1,
+          5,
+          8
+        ],
+        [
+          7,
+          8,
+          11
+        ],
+        [
+          0,
+          3,
+          7
+        ]
+      ],
+      "containmentCoverNumber": 1,
+      "containmentWitnesses": [
+        2475
+      ],
+      "coverNumber": 1,
+      "coverWitnesses": [
+        2475
+      ],
+      "minimalPath": {
+        "chords": [
+          {
+            "chord": 1,
+            "mask": 2475
+          },
+          {
+            "chord": 2,
+            "mask": 2475
+          },
+          {
+            "chord": 3,
+            "mask": 2475
+          }
+        ],
+        "containers": 1,
+        "coverNumber": 1,
+        "switches": 0
+      },
+      "singleContainerCount": 1,
+      "singleContainerReadings": [
+        2475
+      ]
+    },
+    "Pachelbel": {
+      "chords": [
+        [
+          0,
+          4,
+          7
+        ],
+        [
+          2,
+          7,
+          11
+        ],
+        [
+          0,
+          4,
+          9
+        ],
+        [
+          4,
+          7,
+          11
+        ],
+        [
+          0,
+          5,
+          9
+        ],
+        [
+          0,
+          4,
+          7
+        ],
+        [
+          0,
+          5,
+          9
+        ],
+        [
+          2,
+          7,
+          11
+        ]
+      ],
+      "containmentCoverNumber": 1,
+      "containmentWitnesses": [
+        2741
+      ],
+      "coverNumber": 1,
+      "coverWitnesses": [
+        2741
+      ],
+      "minimalPath": {
+        "chords": [
+          {
+            "chord": 1,
+            "mask": 2741
+          },
+          {
+            "chord": 2,
+            "mask": 2741
+          },
+          {
+            "chord": 3,
+            "mask": 2741
+          },
+          {
+            "chord": 4,
+            "mask": 2741
+          },
+          {
+            "chord": 5,
+            "mask": 2741
+          },
+          {
+            "chord": 6,
+            "mask": 2741
+          },
+          {
+            "chord": 7,
+            "mask": 2741
+          },
+          {
+            "chord": 8,
+            "mask": 2741
+          }
+        ],
+        "containers": 1,
+        "coverNumber": 1,
+        "switches": 0
+      },
+      "singleContainerCount": 1,
+      "singleContainerReadings": [
+        2741
+      ]
+    },
+    "PhrygianHalf": {
+      "chords": [
+        [
+          0,
+          5,
+          8
+        ],
+        [
+          7,
+          8,
+          11
+        ]
+      ],
+      "containmentCoverNumber": 1,
+      "containmentWitnesses": [
+        2471,
+        2475,
+        2477,
+        2483,
+        2485,
+        2489,
+        2531,
+        2533,
+        2537,
+        2545,
+        2979,
+        2981,
+        2985,
+        2993,
+        3041,
+        3491,
+        3493,
+        3497,
+        3505,
+        3553,
+        4001
+      ],
+      "coverNumber": 1,
+      "coverWitnesses": [
+        2471,
+        2475,
+        2477,
+        2483,
+        2485,
+        2489,
+        2531,
+        2533,
+        2537,
+        2545
+      ],
+      "minimalPath": {
+        "chords": [
+          {
+            "chord": 1,
+            "mask": 2471
+          },
+          {
+            "chord": 2,
+            "mask": 2471
+          }
+        ],
+        "containers": 1,
+        "coverNumber": 1,
+        "switches": 0
+      },
+      "singleContainerCount": 10,
+      "singleContainerReadings": [
+        2471,
+        2475,
+        2477,
+        2483,
+        2485,
+        2489,
+        2531,
+        2533,
+        2537,
+        2545
+      ]
+    },
+    "Picardy": {
+      "chords": [
+        [
+          0,
+          3,
+          7
+        ],
+        [
+          0,
+          4,
+          7
+        ]
+      ],
+      "containmentCoverNumber": 1,
+      "containmentWitnesses": [
+        191,
+        223,
+        251,
+        253,
+        415,
+        443,
+        445,
+        475,
+        477,
+        505,
+        671,
+        699,
+        701,
+        731,
+        733,
+        761,
+        923,
+        925,
+        953,
+        985,
+        1183,
+        1211,
+        1213,
+        1243,
+        1245,
+        1273,
+        1435,
+        1437,
+        1465,
+        1497,
+        1691,
+        1693,
+        1721,
+        1753,
+        1945,
+        2207,
+        2235,
+        2237,
+        2267,
+        2269,
+        2297,
+        2459,
+        2461,
+        2489,
+        2521,
+        2715,
+        2717,
+        2745,
+        2777,
+        2969,
+        3227,
+        3229,
+        3257,
+        3289,
+        3481,
+        3737
+      ],
+      "coverNumber": 1,
+      "coverWitnesses": [
+        443,
+        445,
+        475,
+        477,
+        699,
+        701,
+        731,
+        733,
+        923,
+        925,
+        953,
+        985,
+        1211,
+        1213,
+        1243,
+        1245,
+        1435,
+        1437,
+        1465,
+        1497,
+        1691,
+        1693,
+        1721,
+        1753,
+        2235,
+        2237,
+        2267,
+        2269,
+        2459,
+        2461,
+        2489,
+        2521,
+        2715,
+        2717,
+        2745,
+        2777,
+        3227,
+        3229,
+        3257,
+        3289
+      ],
+      "minimalPath": {
+        "chords": [
+          {
+            "chord": 1,
+            "mask": 1691
+          },
+          {
+            "chord": 2,
+            "mask": 1691
+          }
+        ],
+        "containers": 1,
+        "coverNumber": 1,
+        "switches": 0
+      },
+      "singleContainerCount": 40,
+      "singleContainerReadings": [
+        443,
+        445,
+        475,
+        477,
+        699,
+        701,
+        731,
+        733,
+        923,
+        925,
+        953,
+        985,
+        1211,
+        1213,
+        1243,
+        1245,
+        1435,
+        1437,
+        1465,
+        1497,
+        1691,
+        1693,
+        1721,
+        1753,
+        2235,
+        2237,
+        2267,
+        2269,
+        2459,
+        2461,
+        2489,
+        2521,
+        2715,
+        2717,
+        2745,
+        2777,
+        3227,
+        3229,
+        3257,
+        3289
+      ]
+    },
+    "PlagalMajor": {
+      "chords": [
+        [
+          0,
+          5,
+          9
+        ],
+        [
+          0,
+          4,
+          7
+        ]
+      ],
+      "containmentCoverNumber": 1,
+      "containmentWitnesses": [
+        695,
+        699,
+        701,
+        755,
+        757,
+        761,
+        947,
+        949,
+        953,
+        1009,
+        1715,
+        1717,
+        1721,
+        1777,
+        1969,
+        2739,
+        2741,
+        2745,
+        2801,
+        2993,
+        3761
+      ],
+      "coverNumber": 1,
+      "coverWitnesses": [
+        755,
+        757,
+        761,
+        947,
+        949,
+        953,
+        1715,
+        1717,
+        1721,
+        1777,
+        2739,
+        2741,
+        2745,
+        2801
+      ],
+      "minimalPath": {
+        "chords": [
+          {
+            "chord": 1,
+            "mask": 1715
+          },
+          {
+            "chord": 2,
+            "mask": 1715
+          }
+        ],
+        "containers": 1,
+        "coverNumber": 1,
+        "switches": 0
+      },
+      "singleContainerCount": 14,
+      "singleContainerReadings": [
+        755,
+        757,
+        761,
+        947,
+        949,
+        953,
+        1715,
+        1717,
+        1721,
+        1777,
+        2739,
+        2741,
+        2745,
+        2801
+      ]
+    }
+  },
+  "directive": "MVP8.4-CADENCE-ALGEBRA-DIR-1",
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + cadence stride algebra & voice-led rotations",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "m1Verification": {
+    "families": {
+      "s1_k3": {
+        "actualDistinctShapes": 54,
+        "actualOccurrences": 116424,
+        "expectedDistinctShapes": 54,
+        "expectedOccurrences": 116424,
+        "match": true
+      },
+      "s1_k4": {
+        "actualDistinctShapes": 164,
+        "actualOccurrences": 155232,
+        "expectedDistinctShapes": 164,
+        "expectedOccurrences": 155232,
+        "match": true
+      },
+      "s2_k3": {
+        "actualDistinctShapes": 28,
+        "actualOccurrences": 116424,
+        "expectedDistinctShapes": 28,
+        "expectedOccurrences": 116424,
+        "match": true
+      },
+      "s2_k4": {
+        "actualDistinctShapes": 119,
+        "actualOccurrences": 155232,
+        "expectedDistinctShapes": 119,
+        "expectedOccurrences": 155232,
+        "match": true
+      },
+      "s3_k3": {
+        "actualDistinctShapes": 43,
+        "actualOccurrences": 116424,
+        "expectedDistinctShapes": 43,
+        "expectedOccurrences": 116424,
+        "match": true
+      },
+      "s3_k4": {
+        "actualDistinctShapes": 129,
+        "actualOccurrences": 155232,
+        "expectedDistinctShapes": 129,
+        "expectedOccurrences": 155232,
+        "match": true
+      }
+    },
+    "match": true
+  },
+  "predeclarationSha256": "1ec65ae3cf1f43b946aa59356b2650a161af996edc5157fec5aa1c2970feee11",
+  "schemaVersion": "governed-loop.mvp8_4-cadence-census.v1"
+}

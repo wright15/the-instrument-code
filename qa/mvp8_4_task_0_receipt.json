@@ -1,0 +1,332 @@
+{
+  "anchors": {
+    "150": {
+      "actual": "        if cm == nm and cp == np_:",
+      "expected": "        if cm == nm and cp == np_:",
+      "match": true
+    },
+    "151": {
+      "actual": "            if self.gov_root[cm] is None:",
+      "expected": "            if self.gov_root[cm] is None:",
+      "match": true
+    },
+    "152": {
+      "actual": "                checks[\"boundary_endpoint\"] = True",
+      "expected": "                checks[\"boundary_endpoint\"] = True",
+      "match": true
+    },
+    "153": {
+      "actual": "                checks[\"same_family\"] = False",
+      "expected": "                checks[\"same_family\"] = False",
+      "match": true
+    },
+    "154": {
+      "actual": "                return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "expected": "                return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "match": true
+    },
+    "169": {
+      "actual": "        same_root = cr is not None and nr is not None and cr == nr",
+      "expected": "        same_root = cr is not None and nr is not None and cr == nr",
+      "match": true
+    },
+    "171": {
+      "actual": "        if same_root and cp == np_:",
+      "expected": "        if same_root and cp == np_:",
+      "match": true
+    },
+    "172": {
+      "actual": "            return \"ACCEPT\", [], checks, None",
+      "expected": "            return \"ACCEPT\", [], checks, None",
+      "match": true
+    },
+    "183": {
+      "actual": "        if checks[\"boundary_endpoint\"]:",
+      "expected": "        if checks[\"boundary_endpoint\"]:",
+      "match": true
+    },
+    "184": {
+      "actual": "            return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "expected": "            return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "match": true
+    },
+    "733": {
+      "actual": "        plan[\"dwellMs\"] = int(__import__(\"os\").environ.get(\"ORRERY_BRIDGE_DWELL_MS\", \"1500\"))",
+      "expected": "        plan[\"dwellMs\"] = int(__import__(\"os\").environ.get(\"ORRERY_BRIDGE_DWELL_MS\", \"1500\"))",
+      "match": true
+    }
+  },
+  "directive": "MVP8.4-CADENCE-ALGEBRA-DIR-1",
+  "earScorecard": {
+    "path": "task-0/mvp8_4_ear_scorecard.json",
+    "sha256": "fb0c6ebd240da14375d04ced1ed6f23cf71303efb826878b35942bb61913835f",
+    "status": "PENDING_HUMAN"
+  },
+  "fixedPoint": {
+    "architectureMap": {
+      "actual": {
+        "bytes": 34880,
+        "lines": 254,
+        "match": true,
+        "sha256": "865ab785164f85c0426d849cb3314c8c41efe81155ce14bd7fe6392ca5d0c381"
+      },
+      "expected": {
+        "bytes": 34880,
+        "path": "docs/ARCHITECTURE_MAP.md",
+        "sha256": "865ab785164f85c0426d849cb3314c8c41efe81155ce14bd7fe6392ca5d0c381"
+      },
+      "match": true
+    },
+    "checksums": {
+      "actual": {
+        "bytes": 238618,
+        "lines": 1997,
+        "match": true,
+        "sha256": "0e1b31363cef733a4ff91a2195940f4bde394086bf772afdb1830d43ddd0be1a"
+      },
+      "expected": {
+        "bytes": 238618,
+        "path": "CHECKSUMS.sha256",
+        "sha256": "0e1b31363cef733a4ff91a2195940f4bde394086bf772afdb1830d43ddd0be1a"
+      },
+      "match": true
+    },
+    "decisionLedger": {
+      "actual": {
+        "bytes": 440222,
+        "lines": 4517,
+        "match": true,
+        "sha256": "14ebc6f4f7f1edba7a82525e668d8cf30fecf8df8eed4da58f13d57c1881acbb"
+      },
+      "expected": {
+        "bytes": 440222,
+        "lines": 4517,
+        "path": "provenance/DECISION_LEDGER.md",
+        "sha256": "14ebc6f4f7f1edba7a82525e668d8cf30fecf8df8eed4da58f13d57c1881acbb"
+      },
+      "match": true
+    },
+    "degreeLadderSpec": {
+      "actual": {
+        "bytes": 6824,
+        "lines": 97,
+        "match": true,
+        "sha256": "7c3c403c9236c21f9c21d23018e6069023318f0bb765315743020cffca2228e6"
+      },
+      "expected": {
+        "bytes": 6824,
+        "path": "docs/specs/degree-ladder-v0.1.0.md",
+        "sha256": "7c3c403c9236c21f9c21d23018e6069023318f0bb765315743020cffca2228e6"
+      },
+      "match": true
+    },
+    "head": {
+      "actual": "508f1f510602f97e0cc74b15ee99ed6b683f7fd9",
+      "expected": "508f1f510602f97e0cc74b15ee99ed6b683f7fd9",
+      "match": true
+    },
+    "landingReceipt": {
+      "actual": {
+        "bytes": 7887,
+        "lines": 201,
+        "match": true,
+        "sha256": "86d0ed220027f198e69d2d87b3cc04ad2e17a969b5c6542f2312a42b37470f30"
+      },
+      "expected": {
+        "bytes": 7887,
+        "path": "qa/l31_governance_admission_receipt.json",
+        "sha256": "86d0ed220027f198e69d2d87b3cc04ad2e17a969b5c6542f2312a42b37470f30"
+      },
+      "match": true
+    },
+    "ledgerSpec": {
+      "actual": {
+        "bytes": 5795,
+        "lines": 104,
+        "match": true,
+        "sha256": "8b6346abd151a96a8dd6c911317c749e68256e2feb91e72853df023d0f00022f"
+      },
+      "expected": {
+        "bytes": 5795,
+        "path": "docs/specs/ledger-formal-definition-v0.1.0.md",
+        "sha256": "8b6346abd151a96a8dd6c911317c749e68256e2feb91e72853df023d0f00022f"
+      },
+      "match": true
+    },
+    "manifest": {
+      "actual": {
+        "bytes": 375519,
+        "files": 1997,
+        "match": true,
+        "sha256": "763c8499f78f1ecc693939c0b64aabebf7dce3ad8c68ee86e9d842564870ac89",
+        "totalBytes": 302784576
+      },
+      "expected": {
+        "files": 1997,
+        "path": "MANIFEST.json",
+        "sha256": "763c8499f78f1ecc693939c0b64aabebf7dce3ad8c68ee86e9d842564870ac89",
+        "totalBytes": 302784576
+      },
+      "match": true
+    },
+    "observationLedger": {
+      "actual": {
+        "bytes": 33153,
+        "lines": 561,
+        "match": true,
+        "sha256": "8e0be9f5bcee0af1aeb87b8ee71fa18121376c1e2b8e23416439c8834e17787f"
+      },
+      "expected": {
+        "bytes": 33153,
+        "lines": 561,
+        "path": "provenance/OBSERVATION_LEDGER.md",
+        "sha256": "8e0be9f5bcee0af1aeb87b8ee71fa18121376c1e2b8e23416439c8834e17787f"
+      },
+      "match": true
+    },
+    "originSync": {
+      "ahead": 0,
+      "match": true,
+      "upstream": "origin/main"
+    },
+    "releaseClosure": {
+      "checksFailed": 0,
+      "checksPassed": 418,
+      "match": true,
+      "verdict": "PASS"
+    },
+    "treeClean": {
+      "match": true,
+      "porcelain": []
+    }
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + cadence stride algebra & voice-led rotations",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "pins": {
+    "tools/governed-loop/mvp5/task-b/mvp5_audio_renderer.py": {
+      "actualBytes": 24696,
+      "actualSha256": "0c917aab7a95851e90ce1c3244ea6b3af1ea35e362262cb0d7a0095ec40b9984",
+      "expectedBytes": 24696,
+      "expectedSha256": "0c917aab7a95851e90ce1c3244ea6b3af1ea35e362262cb0d7a0095ec40b9984",
+      "match": true
+    },
+    "tools/governed-loop/mvp6_2/task-b/mvp6_2_legato_renderer.py": {
+      "actualBytes": 8624,
+      "actualSha256": "e91c6e749b1003da3ad4461b745ad0d35caf23cb394f369d92534d857f6e769c",
+      "expectedBytes": 8624,
+      "expectedSha256": "e91c6e749b1003da3ad4461b745ad0d35caf23cb394f369d92534d857f6e769c",
+      "match": true
+    },
+    "tools/governed-loop/mvp6_3/task-b/mvp6_3_fade_renderer.py": {
+      "actualBytes": 8145,
+      "actualSha256": "673ac7083b59ee96f4a0d1f429778ad69ef4dd382f72e2f67bc1e3e7989769de",
+      "expectedBytes": 8145,
+      "expectedSha256": "673ac7083b59ee96f4a0d1f429778ad69ef4dd382f72e2f67bc1e3e7989769de",
+      "match": true
+    },
+    "tools/governed-loop/mvp7_intention/task-a/mvp7_log_spectral_lens.py": {
+      "actualBytes": 21956,
+      "actualSha256": "6d3b971ab3750871e2f923d62814bc34a0e0563d3ecdf0ffd1d44f700bb0cdd6",
+      "expectedBytes": 21956,
+      "expectedSha256": "6d3b971ab3750871e2f923d62814bc34a0e0563d3ecdf0ffd1d44f700bb0cdd6",
+      "match": true
+    },
+    "tools/governed-loop/mvp8/mvp8_common.py": {
+      "actualBytes": 6006,
+      "actualSha256": "6027380c377903eb4c5e49481a460bd13fd8216173e4bb9f269cd24f6b60eeb4",
+      "expectedBytes": 6006,
+      "expectedSha256": "6027380c377903eb4c5e49481a460bd13fd8216173e4bb9f269cd24f6b60eeb4",
+      "match": true
+    },
+    "tools/governed-loop/mvp8/task-a/mvp8_pentatonic_lookup_v1.json": {
+      "actualBytes": 34099980,
+      "actualSha256": "7d4b0548247fac47904860b252951db3810cdacde8fb38f277e2da39b726851f",
+      "expectedBytes": 34099980,
+      "expectedSha256": "7d4b0548247fac47904860b252951db3810cdacde8fb38f277e2da39b726851f",
+      "match": true
+    },
+    "tools/governed-loop/mvp8/task-b/mvp8_pentatonic_q_engine.py": {
+      "actualBytes": 20443,
+      "actualSha256": "e9ec9804661a10257d94a1af25fd1c03182bcd6bd4d4f516430ceb6833a54c8f",
+      "expectedBytes": 20443,
+      "expectedSha256": "e9ec9804661a10257d94a1af25fd1c03182bcd6bd4d4f516430ceb6833a54c8f",
+      "match": true
+    },
+    "tools/governed-loop/mvp8/task-c/mvp8_task_c.py": {
+      "actualBytes": 18347,
+      "actualSha256": "8ff0630abae1c4d2fff6e508eae267050a1e7b9833e965ae296d946382e6fd96",
+      "expectedBytes": 18347,
+      "expectedSha256": "8ff0630abae1c4d2fff6e508eae267050a1e7b9833e965ae296d946382e6fd96",
+      "match": true
+    },
+    "tools/governed-loop/node-observatory/degree_ladder.py": {
+      "actualBytes": 9438,
+      "actualSha256": "e68c88a1b51903589957b798d3d46d0ac2040f5902dc51227cf66ccb5e0c10ba",
+      "expectedBytes": 9438,
+      "expectedSha256": "e68c88a1b51903589957b798d3d46d0ac2040f5902dc51227cf66ccb5e0c10ba",
+      "match": true
+    },
+    "tools/governed-loop/node-observatory/mvp8_2_common.py": {
+      "actualBytes": 7614,
+      "actualSha256": "2be919d04f6f89b3f8452f6b04324459578cbe623df46d7663f8140138ac65d6",
+      "expectedBytes": 7614,
+      "expectedSha256": "2be919d04f6f89b3f8452f6b04324459578cbe623df46d7663f8140138ac65d6",
+      "match": true
+    },
+    "tools/governed-loop/node-observatory/node_observatory.py": {
+      "actualBytes": 19313,
+      "actualSha256": "91744aaabb13b5b44029b7c0d28f13c6266d90353426d2eed601d2ed3b2a9af9",
+      "expectedBytes": 19313,
+      "expectedSha256": "91744aaabb13b5b44029b7c0d28f13c6266d90353426d2eed601d2ed3b2a9af9",
+      "match": true
+    },
+    "tools/governed-loop/node-observatory/node_observatory_degree.py": {
+      "actualBytes": 11914,
+      "actualSha256": "3868e1994e06863fe1544c2b19c5961571ed811907d4e53b7d293210397fc7fa",
+      "expectedBytes": 11914,
+      "expectedSha256": "3868e1994e06863fe1544c2b19c5961571ed811907d4e53b7d293210397fc7fa",
+      "match": true
+    },
+    "tools/governed-loop/node-observatory/node_observatory_engine.py": {
+      "actualBytes": 29682,
+      "actualSha256": "b4507765a75e82e5680a76b60b34e0e22423ae5fdd24519dae3872a77cf80270",
+      "expectedBytes": 29682,
+      "expectedSha256": "b4507765a75e82e5680a76b60b34e0e22423ae5fdd24519dae3872a77cf80270",
+      "match": true
+    }
+  },
+  "predeclaration": {
+    "path": "task-0/mvp8_4_predeclared_bets.json",
+    "sha256": "1ec65ae3cf1f43b946aa59356b2650a161af996edc5157fec5aa1c2970feee11",
+    "status": "locked-before-evaluation"
+  },
+  "repoWrites": 0,
+  "schemaVersion": "governed-loop.mvp8_4-task-0.v1",
+  "status": "COMPLETE",
+  "strongCore": {
+    "boundary": 540,
+    "governed": 2388,
+    "nodes": 5544,
+    "oneWay": 276,
+    "reachable": 3204,
+    "strongCore": 2928
+  },
+  "strongCoreMatch": true,
+  "task": "MVP8.4-T0"
+}

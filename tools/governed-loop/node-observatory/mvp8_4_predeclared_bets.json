@@ -1,0 +1,1061 @@
+{
+  "anchors": {
+    "150": {
+      "actual": "        if cm == nm and cp == np_:",
+      "expected": "        if cm == nm and cp == np_:",
+      "match": true
+    },
+    "151": {
+      "actual": "            if self.gov_root[cm] is None:",
+      "expected": "            if self.gov_root[cm] is None:",
+      "match": true
+    },
+    "152": {
+      "actual": "                checks[\"boundary_endpoint\"] = True",
+      "expected": "                checks[\"boundary_endpoint\"] = True",
+      "match": true
+    },
+    "153": {
+      "actual": "                checks[\"same_family\"] = False",
+      "expected": "                checks[\"same_family\"] = False",
+      "match": true
+    },
+    "154": {
+      "actual": "                return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "expected": "                return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "match": true
+    },
+    "169": {
+      "actual": "        same_root = cr is not None and nr is not None and cr == nr",
+      "expected": "        same_root = cr is not None and nr is not None and cr == nr",
+      "match": true
+    },
+    "171": {
+      "actual": "        if same_root and cp == np_:",
+      "expected": "        if same_root and cp == np_:",
+      "match": true
+    },
+    "172": {
+      "actual": "            return \"ACCEPT\", [], checks, None",
+      "expected": "            return \"ACCEPT\", [], checks, None",
+      "match": true
+    },
+    "183": {
+      "actual": "        if checks[\"boundary_endpoint\"]:",
+      "expected": "        if checks[\"boundary_endpoint\"]:",
+      "match": true
+    },
+    "184": {
+      "actual": "            return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "expected": "            return \"REJECT\", [\"ungoverned-transition\"], checks, None",
+      "match": true
+    },
+    "733": {
+      "actual": "        plan[\"dwellMs\"] = int(__import__(\"os\").environ.get(\"ORRERY_BRIDGE_DWELL_MS\", \"1500\"))",
+      "expected": "        plan[\"dwellMs\"] = int(__import__(\"os\").environ.get(\"ORRERY_BRIDGE_DWELL_MS\", \"1500\"))",
+      "match": true
+    }
+  },
+  "bets": {
+    "A1_patternCensus": {
+      "predictions": {
+        "anchorToSatelliteGovernedSameOffice": 546,
+        "d1AnchorToSatelliteGovernedSameOffice": 91,
+        "descendingBass": {
+          "distinctShapeSequences": 2053,
+          "instances": 24111
+        },
+        "exactAndalusianShapeSequence": 17,
+        "exactShapesAndBass": 6,
+        "governedSameOffice": {
+          "allSameOffice": true,
+          "instances": 1532,
+          "shapeSequences": 256
+        },
+        "noBassConstraint": {
+          "distinctShapeSequences": 3141,
+          "instances": 41580
+        },
+        "tierPreservingAmongBassRule": 4962
+      },
+      "threshold": "100% exact count match (0 discrepancies)"
+    },
+    "A2_coverNumberCensus": {
+      "predictions": {
+        "AndalusianSingleContainerReadings": 0,
+        "AndalusianUniqueCover2": true,
+        "AxisSingleContainer": [
+          2741
+        ],
+        "FiftiesSingleContainer": [
+          2741
+        ],
+        "NeapolitanSingleContainer": [
+          2475
+        ],
+        "PachelbelSingleContainer": [
+          2741
+        ]
+      },
+      "threshold": "100% exact match"
+    },
+    "B1_rotationsAndVoiceLeading": {
+      "invariants": {
+        "bassEqualsRootPct": 100,
+        "dyadUnisonLeaks": 0,
+        "midiTruePct": 100,
+        "outOfMaskLeadNotes": 0,
+        "outOfMaskPadNotes": 0,
+        "voiceLeadLeqUnrotatedPct": 100
+      },
+      "progressions": 12
+    },
+    "B2_standaloneCleanup": {
+      "requirements": {
+        "hardcodedUserPaths": 0,
+        "missingScratchImports": 0,
+        "multiNodeBarListDefect": 0
+      }
+    },
+    "C_constantFive": {
+      "derivation": "two containers share 6 pcs including the root pc 0; the shared anchored 5-note subnodes are the 5-subsets of the shared 6 containing pc 0: C(5,4) = 5",
+      "multiPcDistribution": "measured for substitution sizes 2..6",
+      "sharedBridgeCount": 5,
+      "singlePcInstances": 41580,
+      "threshold": "41580/41580 exact"
+    },
+    "D_auditions": {
+      "sessions": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "D8",
+        "D9"
+      ],
+      "technicalInvariants": {
+        "dyadUnisonLeaks": 0,
+        "midiTrue": "9/9",
+        "outOfMaskLeadNotes": 0,
+        "outOfMaskPadNotes": 0,
+        "templateFreeSheets": true
+      }
+    }
+  },
+  "cadences": {
+    "Andalusian": [
+      [
+        0,
+        3,
+        7
+      ],
+      [
+        10,
+        2,
+        5
+      ],
+      [
+        8,
+        0,
+        3
+      ],
+      [
+        7,
+        8,
+        11
+      ]
+    ],
+    "AuthenticMajor": [
+      [
+        7,
+        11,
+        2
+      ],
+      [
+        0,
+        4,
+        7
+      ]
+    ],
+    "AuthenticMinor": [
+      [
+        7,
+        8,
+        11
+      ],
+      [
+        0,
+        3,
+        7
+      ]
+    ],
+    "Axis": [
+      [
+        0,
+        4,
+        7
+      ],
+      [
+        7,
+        11,
+        2
+      ],
+      [
+        9,
+        0,
+        4
+      ],
+      [
+        5,
+        9,
+        0
+      ]
+    ],
+    "Backdoor": [
+      [
+        10,
+        2,
+        5
+      ],
+      [
+        0,
+        4,
+        7
+      ]
+    ],
+    "DeceptiveMajor": [
+      [
+        7,
+        11,
+        2
+      ],
+      [
+        9,
+        0,
+        4
+      ]
+    ],
+    "Fifties": [
+      [
+        0,
+        4,
+        7
+      ],
+      [
+        9,
+        0,
+        4
+      ],
+      [
+        5,
+        9,
+        0
+      ],
+      [
+        7,
+        11,
+        2
+      ]
+    ],
+    "Neapolitan": [
+      [
+        1,
+        5,
+        8
+      ],
+      [
+        7,
+        8,
+        11
+      ],
+      [
+        0,
+        3,
+        7
+      ]
+    ],
+    "Pachelbel": [
+      [
+        0,
+        4,
+        7
+      ],
+      [
+        7,
+        11,
+        2
+      ],
+      [
+        9,
+        0,
+        4
+      ],
+      [
+        4,
+        7,
+        11
+      ],
+      [
+        5,
+        9,
+        0
+      ],
+      [
+        0,
+        4,
+        7
+      ],
+      [
+        5,
+        9,
+        0
+      ],
+      [
+        7,
+        11,
+        2
+      ]
+    ],
+    "PhrygianHalf": [
+      [
+        5,
+        8,
+        0
+      ],
+      [
+        7,
+        8,
+        11
+      ]
+    ],
+    "Picardy": [
+      [
+        0,
+        3,
+        7
+      ],
+      [
+        0,
+        4,
+        7
+      ]
+    ],
+    "PlagalMajor": [
+      [
+        5,
+        9,
+        0
+      ],
+      [
+        0,
+        4,
+        7
+      ]
+    ]
+  },
+  "directive": "MVP8.4-CADENCE-ALGEBRA-DIR-1",
+  "earGate": {
+    "overallVerdict": null,
+    "signed": false,
+    "signedAt": null,
+    "signedBy": null,
+    "status": "PENDING_HUMAN"
+  },
+  "fixedPoint": {
+    "architectureMap": {
+      "actual": {
+        "bytes": 34880,
+        "lines": 254,
+        "match": true,
+        "sha256": "865ab785164f85c0426d849cb3314c8c41efe81155ce14bd7fe6392ca5d0c381"
+      },
+      "expected": {
+        "bytes": 34880,
+        "path": "docs/ARCHITECTURE_MAP.md",
+        "sha256": "865ab785164f85c0426d849cb3314c8c41efe81155ce14bd7fe6392ca5d0c381"
+      },
+      "match": true
+    },
+    "checksums": {
+      "actual": {
+        "bytes": 238618,
+        "lines": 1997,
+        "match": true,
+        "sha256": "0e1b31363cef733a4ff91a2195940f4bde394086bf772afdb1830d43ddd0be1a"
+      },
+      "expected": {
+        "bytes": 238618,
+        "path": "CHECKSUMS.sha256",
+        "sha256": "0e1b31363cef733a4ff91a2195940f4bde394086bf772afdb1830d43ddd0be1a"
+      },
+      "match": true
+    },
+    "decisionLedger": {
+      "actual": {
+        "bytes": 440222,
+        "lines": 4517,
+        "match": true,
+        "sha256": "14ebc6f4f7f1edba7a82525e668d8cf30fecf8df8eed4da58f13d57c1881acbb"
+      },
+      "expected": {
+        "bytes": 440222,
+        "lines": 4517,
+        "path": "provenance/DECISION_LEDGER.md",
+        "sha256": "14ebc6f4f7f1edba7a82525e668d8cf30fecf8df8eed4da58f13d57c1881acbb"
+      },
+      "match": true
+    },
+    "degreeLadderSpec": {
+      "actual": {
+        "bytes": 6824,
+        "lines": 97,
+        "match": true,
+        "sha256": "7c3c403c9236c21f9c21d23018e6069023318f0bb765315743020cffca2228e6"
+      },
+      "expected": {
+        "bytes": 6824,
+        "path": "docs/specs/degree-ladder-v0.1.0.md",
+        "sha256": "7c3c403c9236c21f9c21d23018e6069023318f0bb765315743020cffca2228e6"
+      },
+      "match": true
+    },
+    "head": {
+      "actual": "508f1f510602f97e0cc74b15ee99ed6b683f7fd9",
+      "expected": "508f1f510602f97e0cc74b15ee99ed6b683f7fd9",
+      "match": true
+    },
+    "landingReceipt": {
+      "actual": {
+        "bytes": 7887,
+        "lines": 201,
+        "match": true,
+        "sha256": "86d0ed220027f198e69d2d87b3cc04ad2e17a969b5c6542f2312a42b37470f30"
+      },
+      "expected": {
+        "bytes": 7887,
+        "path": "qa/l31_governance_admission_receipt.json",
+        "sha256": "86d0ed220027f198e69d2d87b3cc04ad2e17a969b5c6542f2312a42b37470f30"
+      },
+      "match": true
+    },
+    "ledgerSpec": {
+      "actual": {
+        "bytes": 5795,
+        "lines": 104,
+        "match": true,
+        "sha256": "8b6346abd151a96a8dd6c911317c749e68256e2feb91e72853df023d0f00022f"
+      },
+      "expected": {
+        "bytes": 5795,
+        "path": "docs/specs/ledger-formal-definition-v0.1.0.md",
+        "sha256": "8b6346abd151a96a8dd6c911317c749e68256e2feb91e72853df023d0f00022f"
+      },
+      "match": true
+    },
+    "manifest": {
+      "actual": {
+        "bytes": 375519,
+        "files": 1997,
+        "match": true,
+        "sha256": "763c8499f78f1ecc693939c0b64aabebf7dce3ad8c68ee86e9d842564870ac89",
+        "totalBytes": 302784576
+      },
+      "expected": {
+        "files": 1997,
+        "path": "MANIFEST.json",
+        "sha256": "763c8499f78f1ecc693939c0b64aabebf7dce3ad8c68ee86e9d842564870ac89",
+        "totalBytes": 302784576
+      },
+      "match": true
+    },
+    "observationLedger": {
+      "actual": {
+        "bytes": 33153,
+        "lines": 561,
+        "match": true,
+        "sha256": "8e0be9f5bcee0af1aeb87b8ee71fa18121376c1e2b8e23416439c8834e17787f"
+      },
+      "expected": {
+        "bytes": 33153,
+        "lines": 561,
+        "path": "provenance/OBSERVATION_LEDGER.md",
+        "sha256": "8e0be9f5bcee0af1aeb87b8ee71fa18121376c1e2b8e23416439c8834e17787f"
+      },
+      "match": true
+    },
+    "originSync": {
+      "ahead": 0,
+      "match": true,
+      "upstream": "origin/main"
+    },
+    "releaseClosure": {
+      "checksFailed": 0,
+      "checksPassed": 418,
+      "match": true,
+      "verdict": "PASS"
+    },
+    "treeClean": {
+      "match": true,
+      "porcelain": []
+    }
+  },
+  "lockedAt": "2026-11-14",
+  "locks": {
+    "D1_canonicalAndalusian": {
+      "coverNumber": 2,
+      "degreeWalk": [
+        1,
+        7,
+        6,
+        5
+      ],
+      "depth": 3,
+      "historicalBenchmark": [
+        "375@11",
+        "1143@0",
+        "379@0",
+        "859@11"
+      ],
+      "pair": "1453@0 -> 2477@0",
+      "rotationSequence": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "seam": "single-pc substitution 10 <-> 11 (governed, Jupiter)",
+      "strideSequence": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    "D3_chaldeanAddresses": {
+      "addresses": {
+        "1": "Saturn",
+        "2": "Jupiter",
+        "3": "Mars",
+        "4": "Sun",
+        "5": "Venus",
+        "6": "Mercury",
+        "7": "Moon"
+      },
+      "boundary": "positional index only; render-gravity weights never imported",
+      "mode": "phase_agnostic_positional_1_to_7"
+    },
+    "D4_taxonomy": {
+      "seamVariables": [
+        "substitution_size",
+        "office_relation",
+        "role_pair",
+        "governed_connectivity",
+        "tier_relation"
+      ],
+      "sequenceVariables": [
+        "degree_walk",
+        "stride_seq",
+        "rotation_seq",
+        "depth_seq",
+        "shape_seq",
+        "bass_step_pattern",
+        "cover_number"
+      ]
+    },
+    "coverNumberDefinition": {
+      "crossCheck": "pure subset-containment cover over all 462 phase-0 containers (reported, not gating)",
+      "primary": "minimum number of containers such that every chord is expressible as a depth-3 degree stack (stride 1-3, rotation 0-2) on at least one chosen container"
+    },
+    "patternDefinition": {
+      "bassRule": "all three bass steps in {-1, -2, -3} semitones",
+      "degreeWalk": "start degree d, then d-1, d-2, d-3 modulo 7 (1..7)",
+      "depth": 3,
+      "exactAndalusianShapes": [
+        [
+          0,
+          3,
+          7
+        ],
+        [
+          0,
+          4,
+          7
+        ],
+        [
+          0,
+          4,
+          7
+        ],
+        [
+          0,
+          1,
+          4
+        ]
+      ],
+      "exactBassPattern": [
+        -2,
+        -2,
+        -1
+      ],
+      "forcing": "the fourth chord (on B) contains the new pc (B minus A)",
+      "singlePcSeam": "len(set(A) ^ set(B)) == 2 (one pc substituted)",
+      "strideSequence": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    "vocabularyFence": "degrees 1..7; integer interval shapes; no Roman-numeral or tonal-quality primitives in machine records",
+    "voiceLeadSolver": {
+      "candidateRotations": "m in {0..k-1} per bar",
+      "invariant": "total displacement <= the all-m=0 path by construction",
+      "objective": "exact dynamic-programming minimum of total semitone voice-leading displacement over the progression",
+      "tieBreak": "maximum pitch-class intersection on the transition, then smallest rotation index"
+    }
+  },
+  "mixolydianControl": {
+    "anchor": 1717,
+    "bassPattern": [
+      -2,
+      -2,
+      -2
+    ],
+    "satellite": 949,
+    "startDegree": 2
+  },
+  "openingHead": "508f1f510602f97e0cc74b15ee99ed6b683f7fd9",
+  "pins": {
+    "tools/governed-loop/mvp5/task-b/mvp5_audio_renderer.py": {
+      "actualBytes": 24696,
+      "actualSha256": "0c917aab7a95851e90ce1c3244ea6b3af1ea35e362262cb0d7a0095ec40b9984",
+      "expectedBytes": 24696,
+      "expectedSha256": "0c917aab7a95851e90ce1c3244ea6b3af1ea35e362262cb0d7a0095ec40b9984",
+      "match": true
+    },
+    "tools/governed-loop/mvp6_2/task-b/mvp6_2_legato_renderer.py": {
+      "actualBytes": 8624,
+      "actualSha256": "e91c6e749b1003da3ad4461b745ad0d35caf23cb394f369d92534d857f6e769c",
+      "expectedBytes": 8624,
+      "expectedSha256": "e91c6e749b1003da3ad4461b745ad0d35caf23cb394f369d92534d857f6e769c",
+      "match": true
+    },
+    "tools/governed-loop/mvp6_3/task-b/mvp6_3_fade_renderer.py": {
+      "actualBytes": 8145,
+      "actualSha256": "673ac7083b59ee96f4a0d1f429778ad69ef4dd382f72e2f67bc1e3e7989769de",
+      "expectedBytes": 8145,
+      "expectedSha256": "673ac7083b59ee96f4a0d1f429778ad69ef4dd382f72e2f67bc1e3e7989769de",
+      "match": true
+    },
+    "tools/governed-loop/mvp7_intention/task-a/mvp7_log_spectral_lens.py": {
+      "actualBytes": 21956,
+      "actualSha256": "6d3b971ab3750871e2f923d62814bc34a0e0563d3ecdf0ffd1d44f700bb0cdd6",
+      "expectedBytes": 21956,
+      "expectedSha256": "6d3b971ab3750871e2f923d62814bc34a0e0563d3ecdf0ffd1d44f700bb0cdd6",
+      "match": true
+    },
+    "tools/governed-loop/mvp8/mvp8_common.py": {
+      "actualBytes": 6006,
+      "actualSha256": "6027380c377903eb4c5e49481a460bd13fd8216173e4bb9f269cd24f6b60eeb4",
+      "expectedBytes": 6006,
+      "expectedSha256": "6027380c377903eb4c5e49481a460bd13fd8216173e4bb9f269cd24f6b60eeb4",
+      "match": true
+    },
+    "tools/governed-loop/mvp8/task-a/mvp8_pentatonic_lookup_v1.json": {
+      "actualBytes": 34099980,
+      "actualSha256": "7d4b0548247fac47904860b252951db3810cdacde8fb38f277e2da39b726851f",
+      "expectedBytes": 34099980,
+      "expectedSha256": "7d4b0548247fac47904860b252951db3810cdacde8fb38f277e2da39b726851f",
+      "match": true
+    },
+    "tools/governed-loop/mvp8/task-b/mvp8_pentatonic_q_engine.py": {
+      "actualBytes": 20443,
+      "actualSha256": "e9ec9804661a10257d94a1af25fd1c03182bcd6bd4d4f516430ceb6833a54c8f",
+      "expectedBytes": 20443,
+      "expectedSha256": "e9ec9804661a10257d94a1af25fd1c03182bcd6bd4d4f516430ceb6833a54c8f",
+      "match": true
+    },
+    "tools/governed-loop/mvp8/task-c/mvp8_task_c.py": {
+      "actualBytes": 18347,
+      "actualSha256": "8ff0630abae1c4d2fff6e508eae267050a1e7b9833e965ae296d946382e6fd96",
+      "expectedBytes": 18347,
+      "expectedSha256": "8ff0630abae1c4d2fff6e508eae267050a1e7b9833e965ae296d946382e6fd96",
+      "match": true
+    },
+    "tools/governed-loop/node-observatory/degree_ladder.py": {
+      "actualBytes": 9438,
+      "actualSha256": "e68c88a1b51903589957b798d3d46d0ac2040f5902dc51227cf66ccb5e0c10ba",
+      "expectedBytes": 9438,
+      "expectedSha256": "e68c88a1b51903589957b798d3d46d0ac2040f5902dc51227cf66ccb5e0c10ba",
+      "match": true
+    },
+    "tools/governed-loop/node-observatory/mvp8_2_common.py": {
+      "actualBytes": 7614,
+      "actualSha256": "2be919d04f6f89b3f8452f6b04324459578cbe623df46d7663f8140138ac65d6",
+      "expectedBytes": 7614,
+      "expectedSha256": "2be919d04f6f89b3f8452f6b04324459578cbe623df46d7663f8140138ac65d6",
+      "match": true
+    },
+    "tools/governed-loop/node-observatory/node_observatory.py": {
+      "actualBytes": 19313,
+      "actualSha256": "91744aaabb13b5b44029b7c0d28f13c6266d90353426d2eed601d2ed3b2a9af9",
+      "expectedBytes": 19313,
+      "expectedSha256": "91744aaabb13b5b44029b7c0d28f13c6266d90353426d2eed601d2ed3b2a9af9",
+      "match": true
+    },
+    "tools/governed-loop/node-observatory/node_observatory_degree.py": {
+      "actualBytes": 11914,
+      "actualSha256": "3868e1994e06863fe1544c2b19c5961571ed811907d4e53b7d293210397fc7fa",
+      "expectedBytes": 11914,
+      "expectedSha256": "3868e1994e06863fe1544c2b19c5961571ed811907d4e53b7d293210397fc7fa",
+      "match": true
+    },
+    "tools/governed-loop/node-observatory/node_observatory_engine.py": {
+      "actualBytes": 29682,
+      "actualSha256": "b4507765a75e82e5680a76b60b34e0e22423ae5fdd24519dae3872a77cf80270",
+      "expectedBytes": 29682,
+      "expectedSha256": "b4507765a75e82e5680a76b60b34e0e22423ae5fdd24519dae3872a77cf80270",
+      "match": true
+    }
+  },
+  "revision": 1,
+  "schemaVersion": "governed-loop.mvp8_4-predeclared-bets.v1",
+  "sessions": [
+    {
+      "anchor": 1387,
+      "degrees": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "depth": 3,
+      "id": "D1",
+      "kind": "sibling",
+      "rotations": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "satellite": 1643,
+      "startDegree": 7,
+      "strides": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "anchor": 1451,
+      "degrees": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "depth": 3,
+      "id": "D2",
+      "kind": "sibling",
+      "rotations": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "satellite": 1459,
+      "startDegree": 4,
+      "strides": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "anchor": 1453,
+      "degrees": [
+        1,
+        7,
+        6,
+        5
+      ],
+      "depth": 3,
+      "id": "D3",
+      "kind": "sibling",
+      "rotations": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "satellite": 2477,
+      "startDegree": 1,
+      "strides": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "anchor": 1709,
+      "degrees": [
+        5,
+        4,
+        3,
+        2
+      ],
+      "depth": 3,
+      "id": "D4",
+      "kind": "sibling",
+      "rotations": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "satellite": 1741,
+      "startDegree": 5,
+      "strides": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "anchor": 2741,
+      "degrees": [
+        6,
+        5,
+        4,
+        3
+      ],
+      "depth": 3,
+      "id": "D5",
+      "kind": "sibling",
+      "rotations": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "satellite": 2869,
+      "startDegree": 6,
+      "strides": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "anchor": 2773,
+      "degrees": [
+        3,
+        2,
+        1,
+        7
+      ],
+      "depth": 3,
+      "id": "D6",
+      "kind": "sibling",
+      "rotations": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "satellite": 2777,
+      "startDegree": 3,
+      "strides": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "anchor": 1717,
+      "degrees": [
+        2,
+        1,
+        7,
+        6
+      ],
+      "depth": 3,
+      "id": "D7",
+      "kind": "mixolydianControl",
+      "rotations": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "satellite": 949,
+      "startDegree": 2,
+      "strides": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "anchor": 2677,
+      "degrees": [
+        1,
+        5,
+        6,
+        4
+      ],
+      "depth": 4,
+      "id": "D8",
+      "kind": "voiceLeadShowcase",
+      "nodes": [
+        2677,
+        2677,
+        2677,
+        2677
+      ],
+      "reference": {
+        "id": "D8b",
+        "rotations": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "voiceLead": false
+      },
+      "rotations": null,
+      "strides": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "voiceLead": true
+    },
+    {
+      "anchor": 1453,
+      "degrees": [
+        4,
+        5,
+        1
+      ],
+      "depth": 3,
+      "id": "D9",
+      "kind": "rotationCadence",
+      "nodes": [
+        1453,
+        2477,
+        2477
+      ],
+      "rotations": [
+        1,
+        0,
+        0
+      ],
+      "strides": [
+        2,
+        1,
+        2
+      ]
+    }
+  ],
+  "siblings": [
+    {
+      "anchor": 1387,
+      "id": "D1",
+      "mutationDegree": 6,
+      "roots": [
+        10,
+        8,
+        6,
+        5
+      ],
+      "satellite": 1643,
+      "startDegree": 7
+    },
+    {
+      "anchor": 1451,
+      "id": "D2",
+      "mutationDegree": 3,
+      "roots": [
+        5,
+        3,
+        1,
+        0
+      ],
+      "satellite": 1459,
+      "startDegree": 4
+    },
+    {
+      "anchor": 1453,
+      "id": "D3",
+      "mutationDegree": 7,
+      "roots": [
+        0,
+        10,
+        8,
+        7
+      ],
+      "satellite": 2477,
+      "startDegree": 1
+    },
+    {
+      "anchor": 1709,
+      "id": "D4",
+      "mutationDegree": 4,
+      "roots": [
+        7,
+        5,
+        3,
+        2
+      ],
+      "satellite": 1741,
+      "startDegree": 5
+    },
+    {
+      "anchor": 2741,
+      "id": "D5",
+      "mutationDegree": 5,
+      "roots": [
+        9,
+        7,
+        5,
+        4
+      ],
+      "satellite": 2869,
+      "startDegree": 6
+    },
+    {
+      "anchor": 2773,
+      "id": "D6",
+      "mutationDegree": 2,
+      "roots": [
+        4,
+        2,
+        0,
+        11
+      ],
+      "satellite": 2777,
+      "startDegree": 3
+    }
+  ],
+  "status": "locked-before-evaluation",
+  "strongCore": {
+    "boundary": 540,
+    "governed": 2388,
+    "nodes": 5544,
+    "oneWay": 276,
+    "reachable": 3204,
+    "strongCore": 2928
+  }
+}

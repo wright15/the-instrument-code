@@ -1,0 +1,149 @@
+{
+  "betA1": {
+    "checks": {
+      "anchorSatellite": true,
+      "bassInstances": true,
+      "bassShapeSequences": true,
+      "d1AnchorSatellite": true,
+      "exactShapes": true,
+      "exactShapesAndBass": true,
+      "governedAllSameOffice": true,
+      "governedInstances": true,
+      "governedShapeSequences": true,
+      "nearMiss": true,
+      "noBassInstances": true,
+      "noBassShapeSequences": true,
+      "siblingSet": true,
+      "tierPreserving": true
+    },
+    "pass": true
+  },
+  "betA2": {
+    "checks": {
+      "andalusianCover2": true,
+      "andalusianUniqueCover2": true,
+      "andalusianZeroSingleContainer": true,
+      "axisSingleContainer": true,
+      "fiftiesSingleContainer": true,
+      "neapolitanSingleContainer": true,
+      "pachelbelSingleContainer": true
+    },
+    "coverNumbers": {
+      "Andalusian": 2,
+      "AuthenticMajor": 1,
+      "AuthenticMinor": 1,
+      "Axis": 1,
+      "Backdoor": 1,
+      "DeceptiveMajor": 1,
+      "Fifties": 1,
+      "Neapolitan": 1,
+      "Pachelbel": 1,
+      "PhrygianHalf": 1,
+      "Picardy": 1,
+      "PlagalMajor": 1
+    },
+    "pass": true
+  },
+  "betC": {
+    "allInstances": {
+      "5": 41580
+    },
+    "derivation": "two containers share 6 pcs including the root pc 0; the shared anchored 5-note subnodes are the 5-subsets of the shared 6 containing pc 0: C(5,4) = 5",
+    "multiPc": {
+      "2": {
+        "1": 69300
+      },
+      "3": {
+        "0": 92400
+      },
+      "4": {
+        "0": 34650
+      },
+      "5": {
+        "0": 2772
+      },
+      "6": {}
+    },
+    "pass": true,
+    "singlePcDistribution": {
+      "5": 13860
+    },
+    "singlePcInvariant": false,
+    "singlePcPairs": 13860
+  },
+  "censusPath": "task-a/mvp8_4_cadence_census.json",
+  "censusSha256": "a2c749f456ee8ce1114a2fa224def574e304bf4fefa251452ae780fe63319f82",
+  "directive": "MVP8.4-CADENCE-ALGEBRA-DIR-1",
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + cadence stride algebra & voice-led rotations",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "m1": {
+    "families": {
+      "s1_k3": {
+        "actualDistinctShapes": 54,
+        "actualOccurrences": 116424,
+        "expectedDistinctShapes": 54,
+        "expectedOccurrences": 116424,
+        "match": true
+      },
+      "s1_k4": {
+        "actualDistinctShapes": 164,
+        "actualOccurrences": 155232,
+        "expectedDistinctShapes": 164,
+        "expectedOccurrences": 155232,
+        "match": true
+      },
+      "s2_k3": {
+        "actualDistinctShapes": 28,
+        "actualOccurrences": 116424,
+        "expectedDistinctShapes": 28,
+        "expectedOccurrences": 116424,
+        "match": true
+      },
+      "s2_k4": {
+        "actualDistinctShapes": 119,
+        "actualOccurrences": 155232,
+        "expectedDistinctShapes": 119,
+        "expectedOccurrences": 155232,
+        "match": true
+      },
+      "s3_k3": {
+        "actualDistinctShapes": 43,
+        "actualOccurrences": 116424,
+        "expectedDistinctShapes": 43,
+        "expectedOccurrences": 116424,
+        "match": true
+      },
+      "s3_k4": {
+        "actualDistinctShapes": 129,
+        "actualOccurrences": 155232,
+        "expectedDistinctShapes": 129,
+        "expectedOccurrences": 155232,
+        "match": true
+      }
+    },
+    "match": true
+  },
+  "patternQueryPath": "task-a/pattern_query.py",
+  "patternQuerySha256": "9258312e98caeb8f9e4b826b219d3380dce49bf4c10a2e4ee158cea20560355a",
+  "predeclarationSha256": "1ec65ae3cf1f43b946aa59356b2650a161af996edc5157fec5aa1c2970feee11",
+  "repoWrites": 0,
+  "schemaVersion": "governed-loop.mvp8_4-task-a.v1",
+  "status": "COMPLETE",
+  "task": "MVP8.4-TA"
+}

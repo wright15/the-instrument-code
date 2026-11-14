@@ -262,3 +262,80 @@ def coverage_check(container):
             "pass": duplicates == 0 and not missing and not extra and len(unique) == len(expected),
         }
     return report
+
+
+CHALDEAN_DEGREE_ADDRESSES = {
+    1: "Saturn", 2: "Jupiter", 3: "Mars", 4: "Sun",
+    5: "Venus", 6: "Mercury", 7: "Moon",
+}
+
+
+def chaldean_degree(d):
+    """Phase-agnostic positional address: container index d maps to address d."""
+    if not 1 <= int(d) <= 7:
+        raise ValueError(f"degree outside 1..7: {d}")
+    return int(d)
+
+
+def stack_voicing(container, d, s=2, k=4, m=0, offset=0):
+    """Rotated stack with the stack-root bass and compact upper voicing."""
+    stack = degree_stack(container, d, s, k, m)
+    root_pc = stack["rootPc"]
+    notes = sorted(60 + int(pc) + int(offset) for pc in stack["pitchClasses"])
+    root_index = [note % 12 for note in notes].index(root_pc)
+    chord_midi = notes[root_index:] + [note + 12 for note in notes[:root_index]]
+    result = dict(stack)
+    result.update({
+        "chordMidi": chord_midi,
+        "bassPc": root_pc,
+        "bassMidi": 60 + root_pc + int(offset) - 12,
+        "chaldeanDegree": chaldean_degree(d),
+    })
+    return result
+
+
+def voice_lead_cost(previous, candidate):
+    """Semitone displacement between two ascending MIDI voicings."""
+    if previous is None:
+        return 0
+    left = list(previous)
+    right = list(candidate)
+    if len(left) < len(right):
+        left = [left[0] - 12] * (len(right) - len(left)) + left
+    elif len(right) < len(left):
+        right = [right[0] - 12] * (len(left) - len(right)) + right
+    return sum(abs(a - b) for a, b in zip(left, right))
+
+
+def solve_rotation_path(candidates):
+    """Exact dynamic-programming rotation solver.
+
+    `candidates` is a list of bars; each bar is a list of dicts with keys
+    `rotation`, `chordMidi`, and `pitchClasses`. The solver minimizes total
+    semitone displacement over the progression, breaking ties by maximum
+    pitch-class intersection on each transition and then by the smallest
+    rotation path. Returns (rotation_path, total_cost).
+    """
+    if not candidates:
+        return [], 0
+    states = {}
+    for row in candidates[0]:
+        states[row["rotation"]] = (
+            0, 0, [row["rotation"]], list(row["chordMidi"]),
+            set(row["pitchClasses"]))
+    for bar in range(1, len(candidates)):
+        new_states = {}
+        for row in candidates[bar]:
+            pcs = set(row["pitchClasses"])
+            best = None
+            for _, (cost, tie, path, midi, previous_pcs) in states.items():
+                intersection = len(previous_pcs & pcs)
+                value = (cost + voice_lead_cost(midi, row["chordMidi"]),
+                         -intersection, path + [row["rotation"]],
+                         list(row["chordMidi"]), pcs)
+                if best is None or value[:3] < best[:3]:
+                    best = value
+            new_states[row["rotation"]] = best
+        states = new_states
+    final = min(states.values(), key=lambda value: (value[0], value[1], value[2]))
+    return final[2], final[0]

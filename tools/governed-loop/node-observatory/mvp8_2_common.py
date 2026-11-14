@@ -1,23 +1,43 @@
 #!/usr/bin/env python3
-"""MVP8.2-OBS-LEDGER-DIR-1 shared scratch helpers.
+"""Node Observatory shared helpers (MVP8.4 standalone revision).
 
-Read-only against the repository. Everything written lives under the MVP-8.2
-scratch realm. Symbolic outputs are int/str/bool only; acoustic lens blocks are
-the only float-bearing regions and carry the guard flags.
+Read-only against the repository. Scratch writes resolve to
+`GOVERNED_LOOP_SCRATCH` when set, else a system temp directory; the repository
+tree is never written. Paths are repository-relative by construction.
 """
 import hashlib
 import importlib.util
 import json
+import os
 import sys
+import tempfile
 from pathlib import Path
 
 sys.dont_write_bytecode = True
 
-REPO = Path("/home/erick/projects/integrated-release")
-SCRATCH = Path("/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger")
+
+def _discover_repo():
+    env = os.environ.get("SEVEN_GOVERNORS_REPO")
+    if env:
+        candidate = Path(env).resolve()
+        if (candidate / "provenance/DECISION_LEDGER.md").is_file():
+            return candidate
+        raise RuntimeError(f"SEVEN_GOVERNORS_REPO does not resolve: {candidate}")
+    here = Path(__file__).resolve()
+    anchors = [here, *here.parents, Path.cwd().resolve(), *Path.cwd().resolve().parents]
+    for parent in anchors:
+        if (parent / "provenance/DECISION_LEDGER.md").is_file():
+            return parent
+    raise RuntimeError("repository root not found")
+
+
+REPO = _discover_repo()
+SCRATCH = Path(os.environ.get(
+    "GOVERNED_LOOP_SCRATCH",
+    Path(tempfile.gettempdir()) / "seven-governors-observatory"))
 
 GUARD = {
-    "layer": "SPEC-001 \u00a71.3 overlay dynamics + governance ledger specification",
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + cadence stride algebra & voice-led rotations",
     "causationClaim": False,
     "physicalQuantityClaim": False,
     "tierClassifier": False,
@@ -27,18 +47,20 @@ GUARD = {
     "bipartiteEvidenceStatus": "planning_evidence",
     "bipartiteAdmissionEffect": "none",
     "bipartiteGraphScope": "detached_audit_only",
-    "ledgerDefinitionStatus": "proposed",
+    "ledgerDefinitionStatus": "admitted",
+    "degreeLadderSpecStatus": "admitted",
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
     "observatoryArtifactClass": "observation_only",
     "llmCalls": 0,
 }
 
 EXPECTED = {
-    "head": "6bde6a267fe3256d6f5ca52938b00b1d4b38a623",
+    "head": "508f1f510602f97e0cc74b15ee99ed6b683f7fd9",
     "decisionLedger": {
         "path": "provenance/DECISION_LEDGER.md",
-        "sha256": "f1446e8181140d6b695280bf2d34fc44832cba9e4ca0b4b27a2105bf49648ed7",
-        "bytes": 417658,
-        "lines": 4436,
+        "sha256": "14ebc6f4f7f1edba7a82525e668d8cf30fecf8df8eed4da58f13d57c1881acbb",
+        "bytes": 440222,
+        "lines": 4517,
     },
     "observationLedger": {
         "path": "provenance/OBSERVATION_LEDGER.md",
@@ -48,30 +70,29 @@ EXPECTED = {
     },
     "manifest": {
         "path": "MANIFEST.json",
-        "sha256": "6e56d32710c9d8bf69ef5b91656074f1ccc3083b0d96cea27e5f082ce72bde88",
-        "files": 1894,
-        "bytes": 355191,
-        "totalBytes": 299622436,
-    },
-    "checksums": {
-        "path": "CHECKSUMS.sha256",
-        "sha256": "a116900c357aa2c34a3b921849000115f406ac713e98613e999ac69a6da43962",
-        "bytes": 225338,
-    },
-    "completion": {
-        "path": "qa/completion-validation-report.json",
-        "sha256": "6b8cbf29d67f8d728f69bccdf84c4ead2689ff2c11a45bbe8f1b16a4a5dff20d",
-        "bytes": 4998,
+        "sha256": "763c8499f78f1ecc693939c0b64aabebf7dce3ad8c68ee86e9d842564870ac89",
+        "files": 1997,
+        "totalBytes": 302784576,
     },
     "landingReceipt": {
-        "path": "qa/mvp8_1b_landing_receipt.json",
-        "sha256": "ebea2cf3dc67fdcde66f640e26d8d760303f37dcc1a307ada8635bd78d78c8a8",
-        "bytes": 29772,
+        "path": "qa/l31_governance_admission_receipt.json",
+        "sha256": "86d0ed220027f198e69d2d87b3cc04ad2e17a969b5c6542f2312a42b37470f30",
+        "bytes": 7887,
     },
     "architectureMap": {
         "path": "docs/ARCHITECTURE_MAP.md",
         "sha256": "865ab785164f85c0426d849cb3314c8c41efe81155ce14bd7fe6392ca5d0c381",
         "bytes": 34880,
+    },
+    "ledgerSpec": {
+        "path": "docs/specs/ledger-formal-definition-v0.1.0.md",
+        "sha256": "8b6346abd151a96a8dd6c911317c749e68256e2feb91e72853df023d0f00022f",
+        "bytes": 5795,
+    },
+    "degreeLadderSpec": {
+        "path": "docs/specs/degree-ladder-v0.1.0.md",
+        "sha256": "7c3c403c9236c21f9c21d23018e6069023318f0bb765315743020cffca2228e6",
+        "bytes": 6824,
     },
 }
 
@@ -87,11 +108,11 @@ PINS = {
     "tools/governed-loop/mvp5/task-b/mvp5_audio_renderer.py": (
         "0c917aab7a95851e90ce1c3244ea6b3af1ea35e362262cb0d7a0095ec40b9984", 24696),
     "tools/governed-loop/mvp6_2/task-b/mvp6_2_legato_renderer.py": (
-        "e91c6e749b1003da3ad4461b745ad0d35caf23cb394f369d92534d857f6e769c", None),
+        "e91c6e749b1003da3ad4461b745ad0d35caf23cb394f369d92534d857f6e769c", 8624),
     "tools/governed-loop/mvp6_3/task-b/mvp6_3_fade_renderer.py": (
-        "673ac7083b59ee96f4a0d1f429778ad69ef4dd382f72e2f67bc1e3e7989769de", None),
+        "673ac7083b59ee96f4a0d1f429778ad69ef4dd382f72e2f67bc1e3e7989769de", 8145),
     "tools/governed-loop/mvp7_intention/task-a/mvp7_log_spectral_lens.py": (
-        "6d3b971ab3750871e2f923d62814bc34a0e0563d3ecdf0ffd1d44f700bb0cdd6", None),
+        "6d3b971ab3750871e2f923d62814bc34a0e0563d3ecdf0ffd1d44f700bb0cdd6", 21956),
 }
 
 CASCADE_ARTIFACTS = [
@@ -112,8 +133,8 @@ PRESET_NODES = [
     "2363@0", "2365@0",
 ]
 
-PREDECL = SCRATCH / "task-0" / "mvp8_2_predeclared_bets.json"
-EAR_SCORECARD = SCRATCH / "task-0" / "mvp8_2_ear_scorecard.json"
+PREDECL = SCRATCH / "task-0" / "mvp8_4_predeclared_bets.json"
+EAR_SCORECARD = SCRATCH / "task-0" / "mvp8_4_ear_scorecard.json"
 
 
 def stop(rule, detail):
@@ -171,7 +192,7 @@ def load_m8():
 
 
 def load_engine():
-    """The landed L28 pentatonic-aware Q engine, read-only."""
+    """The landed pentatonic-aware Q engine, read-only."""
     tb = REPO / "tools/governed-loop/mvp8/task-b"
     if str(tb) not in sys.path:
         sys.path.insert(0, str(tb))
@@ -180,10 +201,11 @@ def load_engine():
 
 
 def load_fade():
-    fade_dir = REPO / "tools/governed-loop/mvp6_3/task-b"
-    if str(fade_dir) not in sys.path:
-        sys.path.insert(0, str(fade_dir))
-    return load_module("mvp8_2_fade_renderer", REPO / "tools/governed-loop/mvp6_3/task-b/mvp6_3_fade_renderer.py")
+    fade_dir = str(REPO / "tools/governed-loop/mvp6_3/task-b")
+    if fade_dir not in sys.path:
+        sys.path.insert(0, fade_dir)
+    return load_module("node_observatory_fade_renderer",
+                       REPO / "tools/governed-loop/mvp6_3/task-b/mvp6_3_fade_renderer.py")
 
 
 def palettes_and_offices(engine):
@@ -194,7 +216,8 @@ def palettes_and_offices(engine):
 
 
 def load_lens():
-    return load_module("mvp8_2_lens", REPO / "tools/governed-loop/mvp7_intention/task-a/mvp7_log_spectral_lens.py")
+    return load_module("node_observatory_lens",
+                       REPO / "tools/governed-loop/mvp7_intention/task-a/mvp7_log_spectral_lens.py")
 
 
 def load_predecl():

@@ -12,8 +12,7 @@ from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger")
-sys.path.insert(0, "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger/task-b")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 import mvp8_2_common as common
 import node_observatory_engine as obs
 
@@ -81,8 +80,14 @@ def build_bar_specs(engine, core, nodes, bars, focal_set):
         for k in counts:
             specs.append({"node": nodes[0], "k": k})
     else:
-        dwell = int(bars) if isinstance(bars, int) else 3
+        if isinstance(bars, (list, tuple)):
+            dwells = [int(value) for value in bars]
+        elif isinstance(bars, int):
+            dwells = [int(bars)] * len(nodes)
+        else:
+            dwells = [3] * len(nodes)
         for index, node in enumerate(nodes):
+            dwell = dwells[index] if index < len(dwells) else (dwells[-1] if dwells else 3)
             for _ in range(dwell):
                 specs.append({"node": node, "k": 12})
             if index < len(nodes) - 1:
@@ -411,14 +416,16 @@ def main():
     parser.add_argument("--voicing", default="cycle", choices=obs.TREATMENTS + ["cycle"])
     parser.add_argument("--inversion", default="0")
     parser.add_argument("--lead", default="governed_dyads_structural", choices=obs.LEAD_MODES)
-    parser.add_argument("--bars", default="3")
+    parser.add_argument("--bars", default="3",
+                        help="bar count (int) or per-node comma list in multi-node mode")
     parser.add_argument("--focal-set", default="lookup_default")
     parser.add_argument("--mode", default="walk", choices=["study", "walk"])
     parser.add_argument("--out-dir", default=None)
     parser.add_argument("--label", default=None)
     args = parser.parse_args()
     inversion = args.inversion if args.inversion == "voice_led" else int(args.inversion)
-    bars = int(args.bars)
+    bars = ([int(piece) for piece in args.bars.split(",")]
+            if "," in args.bars else int(args.bars))
     result = observe(args.nodes, args.voicing, inversion, args.lead, bars,
                      args.focal_set, args.mode, args.out_dir, args.label)
     print(json.dumps({

@@ -14,7 +14,7 @@ import sys
 import wave
 from pathlib import Path
 
-sys.path.insert(0, "/home/erick/workspace/scratch-governed-loop-run/mvp8_2_observatory_ledger")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 import mvp8_2_common as common
 
 TASK_B = common.SCRATCH / "task-b"
