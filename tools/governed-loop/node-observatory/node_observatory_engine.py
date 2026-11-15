@@ -25,11 +25,12 @@ JAZZ_CYCLE = ["triad_9", "seventh", "ninth_drop5", "rootless_13th"]
 TREATMENTS = ["full", "bare", "shell", "triad", "triad_9", "seventh",
               "ninth_drop5", "rootless_13th"]
 LEAD_MODES = ["off", "naked_q", "governed", "governed_dyads_downbeat",
-              "governed_dyads_structural", "governed_dyads_alternating"]
+              "governed_dyads_structural", "governed_dyads_alternating",
+              "governed_dyads_chord_responsive"]
 FALLBACK_CHAIN = ["seventh", "shell", "triad", "dyad_root_3rd"]
 FADE_SAMPLES = 2205
 DYAD_MODES = {"governed_dyads_downbeat", "governed_dyads_structural",
-              "governed_dyads_alternating"}
+              "governed_dyads_alternating", "governed_dyads_chord_responsive"}
 
 MODE_NAMES = {
     2741: "Ionian", 1717: "Mixolydian", 2773: "Lydian", 1453: "Aeolian",
@@ -331,8 +332,11 @@ def encode_pcm(buffer, sample_rate):
     }
 
 
-def lead_events(trace, lead_mode):
+def lead_events(trace, lead_mode, plans=None):
     """Yield per-step lead event dicts: primary pc, optional partner pc."""
+    plans_by_bar = {}
+    if plans is not None:
+        plans_by_bar = {int(plan["bar"]): plan for plan in plans}
     events = []
     for step in trace["microSteps"]:
         bar_row = next(bar for bar in trace["bars"] if bar["bar"] == step["bar"])
@@ -340,7 +344,28 @@ def lead_events(trace, lead_mode):
         focal = bar_row["focalContext"]["pitchClasses"]
         primary = int(step["emittedPc"])
         partner = None
-        if lead_mode in DYAD_MODES and is_dyad_step(step, lead_mode):
+        unsafe = False
+        snapped = False
+        if lead_mode == "governed_dyads_chord_responsive":
+            if plans is None:
+                raise ValueError("governed_dyads_chord_responsive requires plans")
+            plan = plans_by_bar[step["bar"]]
+            chord = sorted(set(int(pc) for pc in plan["chordPcs"]))
+            structural = (step["sub"] == 0
+                          or step.get("orbitIndex") in (0, 2, 4))
+            if structural:
+                if primary not in chord:
+                    emitted = primary
+                    primary = min(chord, key=lambda c: (
+                        min((c - emitted) % 12, (emitted - c) % 12), c))
+                    snapped = True
+                idx = chord.index(primary)
+                partner = chord[(idx + 1) % len(chord)]
+                unsafe = False
+            else:
+                safe = set(chord) | set(int(pc) for pc in focal)
+                unsafe = primary not in safe
+        elif lead_mode in DYAD_MODES and is_dyad_step(step, lead_mode):
             partner = dyad_partner(primary, focal, container)
         events.append({
             "bar": step["bar"],
@@ -349,6 +374,8 @@ def lead_events(trace, lead_mode):
             "partnerPc": partner,
             "projectionMode": step["projectionMode"],
             "orbitIndex": step.get("orbitIndex"),
+            "snapped": snapped,
+            "unsafeLanding": unsafe,
         })
     return events
 
@@ -366,7 +393,7 @@ def synthesize_wav(fade, trace, plans, palettes, lead_mode):
     total = trace_end_ms(trace) * sample_rate // 1000
     buffer = [0.0] * total
     lead_by_bar = {}
-    for event in lead_events(trace, lead_mode):
+    for event in lead_events(trace, lead_mode, plans):
         lead_by_bar.setdefault(event["bar"], []).append(event)
     for bar, plan in zip(trace["bars"], plans):
         start = bar["startMs"] * sample_rate // 1000
@@ -408,7 +435,7 @@ def synthesize_midi(fade, trace, plans, palettes, label, lead_mode):
     pad_events = []
     lead_events_midi = []
     lead_by_bar = {}
-    for event in lead_events(trace, lead_mode):
+    for event in lead_events(trace, lead_mode, plans):
         lead_by_bar.setdefault(event["bar"], []).append(event)
     for bar, plan in zip(trace["bars"], plans):
         start = base.ms_to_ticks(bar["startMs"])
@@ -498,7 +525,7 @@ def audit_midi(fade, midi_bytes, trace, plans, lead_mode):
         pad_rows.append({"bar": bar["bar"], "expected": expected, "observed": observed,
                          "match": match})
 
-    lead_expected = lead_events(trace, lead_mode)
+    lead_expected = lead_events(trace, lead_mode, plans)
     lead_primary_match = True
     dyad_presence_match = True
     lead_rows = []

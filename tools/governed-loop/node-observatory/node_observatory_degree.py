@@ -205,9 +205,9 @@ def seam_variables(engine, plans):
     return rows
 
 
-def lead_events_by_bar(trace):
+def lead_events_by_bar(trace, plans=None, lead_mode=LEAD_MODE):
     grouped = {}
-    for event in obs.lead_events(trace, LEAD_MODE):
+    for event in obs.lead_events(trace, lead_mode, plans):
         grouped.setdefault(event["bar"], []).append(event)
     return grouped
 
@@ -425,13 +425,13 @@ def render_progression_session(engine, label, bar_specs, palettes, out_dir,
     return trace, rendered, plans, solver
 
 
-def dyad_census(trace, lead_mode=LEAD_MODE):
+def dyad_census(trace, lead_mode=LEAD_MODE, plans=None):
     primary = 0
     dyads = 0
     partners = 0
     unison = 0
     out_of_mask = 0
-    for event in obs.lead_events(trace, lead_mode):
+    for event in obs.lead_events(trace, lead_mode, plans):
         bar = next(row for row in trace["bars"] if row["bar"] == event["bar"])
         container = set(bar["pitchClasses"])
         primary += 1

@@ -1,0 +1,1067 @@
+{
+  "artifacts": {
+    "evidence": [
+      {
+        "bytes": 51568,
+        "name": "a1-details",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-a/mvp8_5_task_a_a1_details.jsonl",
+        "sha256": "c114c12a78ae0ff396e99eb13698b3a5506d6b36c44fb616e333f91623829ec9"
+      },
+      {
+        "bytes": 3757,
+        "name": "a1-summaries",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-a/mvp8_5_task_a_a1_summaries.jsonl",
+        "sha256": "b42d82eac511493de9b8e2c9d9e5bc38963f2d2579b8d983c93843e40ef9fe97"
+      },
+      {
+        "bytes": 25251,
+        "name": "a2-details-00-01",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-a/mvp8_5_task_a_a2_details_00_01.jsonl",
+        "sha256": "22d88db11730a119f2f79bde5bb7c98e22f35af74abe06ee1a60ed323f7d7338"
+      },
+      {
+        "bytes": 145127,
+        "name": "a2-details-01-06",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-a/mvp8_5_task_a_a2_details_01_06.jsonl",
+        "sha256": "ff7aa81815894d07ade532ed998d03bc078d9c9d52dbd76216443e3a353804c7"
+      },
+      {
+        "bytes": 127645,
+        "name": "a2-details-06-11",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-a/mvp8_5_task_a_a2_details_06_11.jsonl",
+        "sha256": "32b4d33dd474f58d902f35962eb2ac52a9a7e081e79d06ffa23227e95cf0af16"
+      },
+      {
+        "bytes": 132649,
+        "name": "a2-details-11-16",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-a/mvp8_5_task_a_a2_details_11_16.jsonl",
+        "sha256": "bf7067a79f17155395c04e1db107f2a3def2c1d8fa6a1fb22227f15f1c1b501c"
+      },
+      {
+        "bytes": 117707,
+        "name": "a2-details-16-20",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-a/mvp8_5_task_a_a2_details_16_20.jsonl",
+        "sha256": "ce71816b3b012430f172a7efc767a8938e55c6a36eed13a2aaca208236e979ba"
+      },
+      {
+        "bytes": 1839,
+        "name": "a2-summaries-00-01",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-a/mvp8_5_task_a_a2_summaries_00_01.jsonl",
+        "sha256": "3cb32e1dfe6981ab60e6d7ace90501a1e753fc6c9664d9768b401830a3ad6688"
+      },
+      {
+        "bytes": 11107,
+        "name": "a2-summaries-01-06",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-a/mvp8_5_task_a_a2_summaries_01_06.jsonl",
+        "sha256": "dfb1e820c674c58573539a042348f3bf52ea499e1741803dd4f219e97434e8d8"
+      },
+      {
+        "bytes": 9324,
+        "name": "a2-summaries-06-11",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-a/mvp8_5_task_a_a2_summaries_06_11.jsonl",
+        "sha256": "407ed6e0af09a9079fd82f6c15deda1f4ded7dc0949a55b3549d72c6ac9b142f"
+      },
+      {
+        "bytes": 9652,
+        "name": "a2-summaries-11-16",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-a/mvp8_5_task_a_a2_summaries_11_16.jsonl",
+        "sha256": "811ab91e0833a85ebb032ac57bf1620c893222c92f527e53c918b0d2b333b0ca"
+      },
+      {
+        "bytes": 8444,
+        "name": "a2-summaries-16-20",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-a/mvp8_5_task_a_a2_summaries_16_20.jsonl",
+        "sha256": "888eca74a4873b76cfbf597b2db94843e7d650dfbf84f5a5feec3f9feb25ff9a"
+      }
+    ]
+  },
+  "baseCardNote": "The landed L20 runner resolves tier-1 W_base to the 50 default (office-name lookup against integer-keyed degree weights). MVP8.5 carries that measured behavior as the base term; the card JSON degree numerators are recorded but were not applied in L20.",
+  "bets": {
+    "A1": {
+      "arms": [
+        {
+          "arm": "harmonic",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 3,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 9,
+          "seed": "1387@0",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 3,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 9,
+          "seed": "1387@0",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 3,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 9,
+          "seed": "1387@0",
+          "steps": 20,
+          "terminatedReason": "completed"
+        }
+      ],
+      "identicalByConstruction": true,
+      "note": "three deterministic arms; LLM proposer transport unavailable, so the L21 greedy control is the card arm",
+      "pass": true,
+      "threshold": ">=21 states / >=3 families / >=5 seams; 20/20 accepts"
+    },
+    "A2": {
+      "harmonicArms": [
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 2,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 6,
+          "seed": "375@0",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 6,
+          "seed": "477@11",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 0,
+          "completions": 3,
+          "distinctFamilies": 4,
+          "distinctStates": 17,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 7,
+          "seed": "727@10",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 10,
+          "seed": "877@10",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 6,
+          "seed": "953@9",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 6,
+          "seed": "1269@9",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 10,
+          "seed": "1389@8",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 1,
+          "completions": 3,
+          "distinctFamilies": 3,
+          "distinctStates": 20,
+          "gateAccepts": 21,
+          "gateCalls": 21,
+          "seamTransitions": 6,
+          "seed": "1459@7",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 1,
+          "completions": 3,
+          "distinctFamilies": 4,
+          "distinctStates": 17,
+          "gateAccepts": 21,
+          "gateCalls": 21,
+          "seamTransitions": 7,
+          "seed": "1627@7",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 1,
+          "completions": 3,
+          "distinctFamilies": 4,
+          "distinctStates": 20,
+          "gateAccepts": 21,
+          "gateCalls": 21,
+          "seamTransitions": 7,
+          "seed": "1715@6",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 1,
+          "completions": 1,
+          "distinctFamilies": 5,
+          "distinctStates": 21,
+          "gateAccepts": 21,
+          "gateCalls": 21,
+          "seamTransitions": 6,
+          "seed": "1835@6",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 1,
+          "completions": 0,
+          "distinctFamilies": 3,
+          "distinctStates": 21,
+          "gateAccepts": 21,
+          "gateCalls": 21,
+          "seamTransitions": 4,
+          "seed": "1939@5",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 1,
+          "completions": 0,
+          "distinctFamilies": 3,
+          "distinctStates": 21,
+          "gateAccepts": 21,
+          "gateCalls": 21,
+          "seamTransitions": 6,
+          "seed": "2363@4",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 1,
+          "completions": 3,
+          "distinctFamilies": 3,
+          "distinctStates": 17,
+          "gateAccepts": 21,
+          "gateCalls": 21,
+          "seamTransitions": 7,
+          "seed": "2485@4",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 1,
+          "completions": 3,
+          "distinctFamilies": 3,
+          "distinctStates": 17,
+          "gateAccepts": 21,
+          "gateCalls": 21,
+          "seamTransitions": 6,
+          "seed": "2745@3",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 1,
+          "completions": 3,
+          "distinctFamilies": 4,
+          "distinctStates": 17,
+          "gateAccepts": 21,
+          "gateCalls": 21,
+          "seamTransitions": 7,
+          "seed": "2873@3",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 1,
+          "completions": 0,
+          "distinctFamilies": 3,
+          "distinctStates": 21,
+          "gateAccepts": 21,
+          "gateCalls": 21,
+          "seamTransitions": 4,
+          "seed": "2963@2",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 0,
+          "completions": 1,
+          "distinctFamilies": 2,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 9,
+          "seed": "3285@1",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 9,
+          "seed": "3417@1",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "harmonic-pattern",
+          "autoTransits": 1,
+          "completions": 0,
+          "distinctFamilies": 2,
+          "distinctStates": 22,
+          "gateAccepts": 21,
+          "gateCalls": 21,
+          "seamTransitions": 7,
+          "seed": "3537@0",
+          "steps": 20,
+          "terminatedReason": "completed"
+        }
+      ],
+      "harmonicCompletions": 9,
+      "harmonicTotalCompletions": 23,
+      "l20Arms": [
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 2,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 5,
+          "seed": "375@0",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 101,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 6,
+          "gateAccepts": 105,
+          "gateCalls": 105,
+          "seamTransitions": 1,
+          "seed": "477@11",
+          "steps": 4,
+          "terminatedReason": "boundary-auto-transit-runaway"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 5,
+          "seed": "727@10",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 5,
+          "seed": "877@10",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 101,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 6,
+          "gateAccepts": 105,
+          "gateCalls": 105,
+          "seamTransitions": 1,
+          "seed": "953@9",
+          "steps": 4,
+          "terminatedReason": "boundary-auto-transit-runaway"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 5,
+          "seed": "1269@9",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 3,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 5,
+          "seed": "1389@8",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 4,
+          "distinctStates": 18,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 4,
+          "seed": "1459@7",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 5,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 4,
+          "seed": "1627@7",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 5,
+          "seed": "1715@6",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 3,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 4,
+          "seed": "1835@6",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 2,
+          "completions": 0,
+          "distinctFamilies": 4,
+          "distinctStates": 22,
+          "gateAccepts": 22,
+          "gateCalls": 22,
+          "seamTransitions": 4,
+          "seed": "1939@5",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 5,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 5,
+          "seed": "2363@4",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 2,
+          "distinctStates": 9,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 4,
+          "seed": "2485@4",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 2,
+          "distinctStates": 10,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 4,
+          "seed": "2745@3",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 2,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 5,
+          "seed": "2873@3",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 2,
+          "completions": 0,
+          "distinctFamilies": 4,
+          "distinctStates": 22,
+          "gateAccepts": 22,
+          "gateCalls": 22,
+          "seamTransitions": 4,
+          "seed": "2963@2",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 2,
+          "distinctStates": 10,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 4,
+          "seed": "3285@1",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 101,
+          "completions": 0,
+          "distinctFamilies": 4,
+          "distinctStates": 21,
+          "gateAccepts": 120,
+          "gateCalls": 120,
+          "seamTransitions": 5,
+          "seed": "3417@1",
+          "steps": 19,
+          "terminatedReason": "boundary-auto-transit-runaway"
+        },
+        {
+          "arm": "l20-same-boost",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 3,
+          "distinctStates": 21,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 5,
+          "seed": "3537@0",
+          "steps": 20,
+          "terminatedReason": "completed"
+        }
+      ],
+      "l20Completions": 0,
+      "l20TotalCompletions": 0,
+      "pass": true,
+      "threshold": ">=12 total consecutive-bar completions across 20 arms; L20 and unranked <=2 total",
+      "unrankedArms": [
+        {
+          "arm": "unranked",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 2,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 0,
+          "seed": "375@0",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 19,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 2,
+          "gateAccepts": 39,
+          "gateCalls": 39,
+          "seamTransitions": 20,
+          "seed": "477@11",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 2,
+          "distinctStates": 5,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 1,
+          "seed": "727@10",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 2,
+          "distinctStates": 3,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 1,
+          "seed": "877@10",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 18,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 3,
+          "gateAccepts": 38,
+          "gateCalls": 38,
+          "seamTransitions": 19,
+          "seed": "953@9",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 2,
+          "distinctStates": 4,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 1,
+          "seed": "1269@9",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 2,
+          "distinctStates": 5,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 1,
+          "seed": "1389@8",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 3,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 0,
+          "seed": "1459@7",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 3,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 0,
+          "seed": "1627@7",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 2,
+          "distinctStates": 3,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 19,
+          "seed": "1715@6",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 3,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 0,
+          "seed": "1835@6",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 2,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 0,
+          "seed": "1939@5",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 3,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 0,
+          "seed": "2363@4",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 2,
+          "distinctStates": 3,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 1,
+          "seed": "2485@4",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 16,
+          "completions": 0,
+          "distinctFamilies": 2,
+          "distinctStates": 5,
+          "gateAccepts": 36,
+          "gateCalls": 36,
+          "seamTransitions": 18,
+          "seed": "2745@3",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 18,
+          "completions": 0,
+          "distinctFamilies": 2,
+          "distinctStates": 3,
+          "gateAccepts": 38,
+          "gateCalls": 38,
+          "seamTransitions": 20,
+          "seed": "2873@3",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 3,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 0,
+          "seed": "2963@2",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 0,
+          "completions": 0,
+          "distinctFamilies": 2,
+          "distinctStates": 4,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "seamTransitions": 1,
+          "seed": "3285@1",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 17,
+          "completions": 0,
+          "distinctFamilies": 1,
+          "distinctStates": 4,
+          "gateAccepts": 37,
+          "gateCalls": 37,
+          "seamTransitions": 18,
+          "seed": "3417@1",
+          "steps": 20,
+          "terminatedReason": "completed"
+        },
+        {
+          "arm": "unranked",
+          "autoTransits": 1,
+          "completions": 0,
+          "distinctFamilies": 3,
+          "distinctStates": 5,
+          "gateAccepts": 21,
+          "gateCalls": 21,
+          "seamTransitions": 2,
+          "seed": "3537@0",
+          "steps": 20,
+          "terminatedReason": "completed"
+        }
+      ],
+      "unrankedCompletions": 0,
+      "unrankedTotalCompletions": 0
+    },
+    "A3": {
+      "cardStates": 21,
+      "delta": 0,
+      "greedyStates": 21,
+      "llmCalls": 0,
+      "pass": true,
+      "threshold": "greedy within +/-2 states of the card arm; 0 LLM calls"
+    },
+    "L20exact": {
+      "expected": "21 states / 3 families / 5 seams",
+      "reported": {
+        "arm": "l20-exact",
+        "autoTransits": 1,
+        "completions": 0,
+        "distinctFamilies": 3,
+        "distinctStates": 21,
+        "gateAccepts": 21,
+        "gateCalls": 21,
+        "seamTransitions": 5,
+        "seed": "1387@0",
+        "steps": 20,
+        "terminatedReason": "completed"
+      }
+    },
+    "unranked1387": {
+      "arm": "unranked",
+      "autoTransits": 0,
+      "completions": 0,
+      "distinctFamilies": 2,
+      "distinctStates": 2,
+      "gateAccepts": 20,
+      "gateCalls": 20,
+      "seamTransitions": 20,
+      "seed": "1387@0",
+      "steps": 20,
+      "terminatedReason": "completed"
+    }
+  },
+  "directive": "MVP8.5-HARMONIC-DESIGN-DIR-1",
+  "execution": {
+    "candidateEvaluations": 7454,
+    "evidenceRetention": "Only the accepted decision is retained. Rejected menu rows are released during ranking; one runner-up score is retained for greedy audit. Decision rows are streamed to JSONL instead of aggregating all traces. Boundary auto-transit runs stop an arm after 100 transitions without changing candidate scoring.",
+    "stages": [
+      "a1",
+      "a2"
+    ]
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "harmonicBandStatus": "stated_hypothesis",
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + harmonic design card/Q integration",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "qEngineAdmissionStatus": "unadmitted",
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "parameters": {
+    "N_threshold": 3,
+    "W": 8,
+    "W_seam_base": 50,
+    "aTerm": {
+      "H1": 10,
+      "H2": 5,
+      "H3": 0,
+      "H4": -5,
+      "H5": -10
+    },
+    "alpha": 40,
+    "andalusianTarget": [
+      [
+        1,
+        2,
+        [
+          0,
+          3,
+          7
+        ]
+      ],
+      [
+        7,
+        2,
+        [
+          0,
+          4,
+          7
+        ]
+      ],
+      [
+        6,
+        2,
+        [
+          0,
+          4,
+          7
+        ]
+      ],
+      [
+        5,
+        1,
+        [
+          0,
+          1,
+          4
+        ]
+      ]
+    ],
+    "base": 50,
+    "beta": 70,
+    "defaultStep": [
+      1,
+      2,
+      3
+    ],
+    "pTerm": 50,
+    "selection": "greedy presented index 0",
+    "shapeConvention": "shape_root (degree-root intervals)"
+  },
+  "repoWrites": 0,
+  "runnerSha256": "c939ed96c1a6804dbe7a25cbfc40a8d0124f02860e184741ad8a02924eec926d",
+  "schemaVersion": "governed-loop.mvp8_5-task-a.v1",
+  "status": "COMPLETE",
+  "t0": {
+    "predeclaredPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-0/mvp8_5_rev2_predeclared_bets.json",
+    "predeclaredSha256": "2c71f9d6f668572aded07246b25f7667b517b08ca7a2727edd1fd75628fcd640",
+    "status": "locked-before-evaluation"
+  },
+  "task": "MVP8.5-TA",
+  "transport": {
+    "error": "api_key_expired",
+    "fallback": "deterministic greedy index-0 (L21 control)",
+    "llmCalls": 0,
+    "llmProposer": "unavailable",
+    "modelProbed": "opencode/claude-haiku-5-5"
+  }
+}

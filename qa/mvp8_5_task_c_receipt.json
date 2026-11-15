@@ -1,0 +1,111 @@
+{
+  "artifacts": {
+    "details": {
+      "bytes": 296674,
+      "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-c/mvp8_5_task_c_details.jsonl",
+      "sha256": "45124f04f786090198ca0784800b972b970e06a924318898ed3f253a3f0d5c3e"
+    },
+    "summaries": {
+      "bytes": 24994,
+      "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-c/mvp8_5_task_c_summaries.jsonl",
+      "sha256": "da7c6553a06310e1362c63021b28ee2bfe7cdb94c7130dc311b422f289e2c00e"
+    }
+  },
+  "bets": {
+    "C1": {
+      "firings": 95,
+      "immediateBoostApplications": 80,
+      "immediateBoostChecks": 80,
+      "pass": true,
+      "seamWithin5": 88,
+      "seamWithin5Rate": "88/95",
+      "threshold": "100% immediate boost; seam within 5 macro steps >=80%"
+    },
+    "C2": {
+      "pass": true,
+      "perSeedDiffs": [
+        34,
+        36,
+        0,
+        26,
+        0,
+        0,
+        0,
+        0,
+        4,
+        10,
+        2,
+        16,
+        27,
+        12,
+        10,
+        10,
+        30,
+        27,
+        34,
+        14,
+        0
+      ],
+      "threshold": ">=5 union state difference vs C3b; 20/20 accepts",
+      "unionStateDiff": 188
+    },
+    "C3a": {
+      "pass": true,
+      "reported": {
+        "distinctFamilies": 3,
+        "distinctStates": 21,
+        "gateAccepts": 21,
+        "gateCalls": 21,
+        "seamTransitions": 5
+      },
+      "threshold": "exact L20 21/3/5"
+    },
+    "C3b": {
+      "pass": true,
+      "reported": {
+        "distinctFamilies": 3,
+        "distinctStates": 21,
+        "gateAccepts": 20,
+        "gateCalls": 20,
+        "seamTransitions": 9
+      },
+      "taskA": {
+        "distinctFamilies": 3,
+        "distinctStates": 21,
+        "seamTransitions": 9
+      },
+      "threshold": "exact Task A card-only trajectory"
+    }
+  },
+  "directive": "MVP8.5-HARMONIC-DESIGN-DIR-1",
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "harmonicBandStatus": "stated_hypothesis",
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + harmonic design card/Q integration",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "qEngineAdmissionStatus": "unadmitted",
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "repoWrites": 0,
+  "runnerSha256": "6c5bb7f58c8177912046a8a4c6d4dfee8506dec42fe79b539c9ab8f50167d03b",
+  "schemaVersion": "governed-loop.mvp8_5-task-c.v1",
+  "status": "COMPLETE",
+  "t0": {
+    "predeclaredPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-0/mvp8_5_rev2_predeclared_bets.json",
+    "predeclaredSha256": "2c71f9d6f668572aded07246b25f7667b517b08ca7a2727edd1fd75628fcd640",
+    "status": "locked-before-evaluation"
+  },
+  "task": "MVP8.5-TC"
+}

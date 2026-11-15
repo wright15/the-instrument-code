@@ -1,0 +1,272 @@
+{
+  "authorization": "--authorize-mvp8-5",
+  "base": {
+    "branch": "mvp8.5-harmonic-design-rev2",
+    "head": "ce61c8164913142d2cbdff2dbf2e349c0100243b"
+  },
+  "cascade": [
+    {
+      "exit": 0,
+      "script": "scripts/generate-fifth-space-census.py",
+      "tail": [
+        "{\"candidateFingerprint\": \"be9843a0e9e65aa49f7855070dcbbf7295b35b68f0f640ff6da10e5fc766ee0a\", \"candidateId\": \"FIFTH_SPACE_CENSUS_v0\", \"records\": 462, \"verdict\": \"confirmed\"}"
+      ]
+    },
+    {
+      "exit": 0,
+      "script": "scripts/generate-shadow-ladder.py",
+      "tail": [
+        "{\"candidateFingerprint\": \"087e3474d2e41145c36f2a459c9a6d0c30355c49a620e8a90f9c8239cce97565\", \"candidateId\": \"SHADOW_LADDER_v0\", \"records\": 10}"
+      ]
+    },
+    {
+      "exit": 0,
+      "script": "scripts/generate-twin-hub-convergence.py",
+      "tail": [
+        "{\"candidateFingerprint\": \"00328fba28644585c8a07cb8218204d1b4ecc46319d0ead6b8740227e8cba3c4\", \"candidateId\": \"TWIN_HUB_CONVERGENCE_v0\", \"verdict\": \"confirmed\"}"
+      ]
+    },
+    {
+      "exit": 0,
+      "script": "scripts/build-pentatonic-binding-audit-closure.mjs",
+      "tail": [
+        "}"
+      ]
+    },
+    {
+      "exit": 0,
+      "script": "scripts/build-fivefold-engine-promotion-evidence.py",
+      "tail": [
+        "{\"evidenceFingerprint\": \"f61c615c3ecf5568c22e6640ca0b26bc24606027f9fdb175273c38088de8fa15\", \"evidenceId\": \"fivefold-engine-promotion-evidence-v1\", \"exclusionEvidenceCount\": 11, \"itemEvidenceCount\": 10, \"verdict\": \"PASS\"}"
+      ]
+    },
+    {
+      "exit": 0,
+      "script": "scripts/build-orrery-taxonomy-read-model.mjs",
+      "tail": [
+        "{\"bundleId\":\"TAXONOMY_READ_MODEL_v1\",\"recordCount\":462,\"stale\":false}"
+      ]
+    },
+    {
+      "exit": 0,
+      "script": "scripts/build-orrery-d-tier-taxonomy-dataset.mjs",
+      "tail": [
+        "{\"datasetId\":\"D_TIER_TAXONOMY_DATASET_v1\",\"recordCount\":175,\"stale\":false}"
+      ]
+    },
+    {
+      "exit": 0,
+      "script": "scripts/build-field-derivation-bundle.mjs",
+      "tail": [
+        "{\"bundleId\":\"FIELD_DERIVATION_OBS014_015_016_v1\",\"bundleFingerprint\":\"b743398e1ef596f52447ad317fa29f2d58b8e99923a112e530849838c92d07f5\",\"observations\":3}"
+      ]
+    }
+  ],
+  "constraints": {
+    "cHNull": true,
+    "forcePush": false,
+    "llmCalls": 0,
+    "push": false,
+    "qEngineAdmitted": false,
+    "tag": false,
+    "zeroSymbolicFloats": true
+  },
+  "directive": "MVP8.5-HARMONIC-DESIGN-DIR-1 rev 2",
+  "earGate": {
+    "armA": "adopt",
+    "armB": "adopt",
+    "armC": "adopt",
+    "armD_diag": "reject",
+    "priorSignedManifestSha256": "221bceb40a4ac1488f61bfd268b13ca6da085d0aed1ae26fc9b7840d75b435a0",
+    "signed": true,
+    "signedBy": "Erick",
+    "signedDate": "2026-11-15",
+    "status": "SIGNED"
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "harmonicBandStatus": "stated_hypothesis",
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + harmonic design card/Q integration",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "qEngineAdmissionStatus": "unadmitted",
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "ledger": {
+    "afterBytes": 459845,
+    "afterLines": 4593,
+    "afterSha256": "60215f9d120a2da7383c4d7f29bad28196be4621735ca951ce9c8ac4d9737b1d",
+    "beforeBytes": 454378,
+    "beforeLines": 4564,
+    "beforeSha256": "18d24f2c6158c513160b3e61356d544a551d7cc36d03966a2db4265b4a36b5ff",
+    "entry": "Governed-loop L34 landing \u2014 MVP8.5 rev 2 harmonic design",
+    "prefixIdentity": true
+  },
+  "outcome": "ADOPT",
+  "payloadCount": 14,
+  "payloads": [
+    {
+      "bytes": 30915,
+      "destination": "tools/governed-loop/node-observatory/node_observatory_engine.py",
+      "role": "node_observatory_engine",
+      "sha256": "43c172ccfcb725db94cc9d9252f7cefb501377b952e901ba5eb815c837491f43",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-b/node_observatory_engine.py"
+    },
+    {
+      "bytes": 23455,
+      "destination": "tools/governed-loop/node-observatory/node_observatory_degree.py",
+      "role": "node_observatory_degree",
+      "sha256": "6d95c82462a78ae2bb304404300e0af3c1790f9c800c8a41fa57730bfba3b69f",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-b/node_observatory_degree.py"
+    },
+    {
+      "bytes": 2613,
+      "destination": "tools/governed-loop/node-observatory/mvp8_5_harmonic.py",
+      "role": "mvp8_5_harmonic",
+      "sha256": "cf3037675030489db6a0eb238d7f061f640f9874ee2a0694a9feb0559a422266",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-e/mvp8_5_harmonic.py"
+    },
+    {
+      "bytes": 4449,
+      "destination": "tests/test_mvp8_5_harmonic_design.py",
+      "role": "tests",
+      "sha256": "455cd211e26293b190782481b28aefe1c10e9d914496698b6ac4730d000d18eb",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-e/test_mvp8_5_harmonic_design.py"
+    },
+    {
+      "bytes": 18469,
+      "destination": "tools/governed-loop/node-observatory/mvp8_5_predeclared_bets.json",
+      "role": "predeclared_bets",
+      "sha256": "2c71f9d6f668572aded07246b25f7667b517b08ca7a2727edd1fd75628fcd640",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-0/mvp8_5_rev2_predeclared_bets.json"
+    },
+    {
+      "bytes": 14710,
+      "destination": "tools/governed-loop/node-observatory/mvp8_5_ear_manifest.json",
+      "role": "ear_manifest_signed",
+      "sha256": "a017ff0502084eb51d3db265fe9d75c02c13baa50c67af2eec8e934a8df2053d",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-d/mvp8_5_ear_manifest.json"
+    },
+    {
+      "bytes": 3816,
+      "destination": "qa/mvp8_5_ear_scorecard.json",
+      "role": "ear_scorecard_signed",
+      "sha256": "a70d7028537d5704a016539764de4289d3619ee4501d55272fb4140d662b7f9c",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-0/mvp8_5_rev2_ear_scorecard.json"
+    },
+    {
+      "bytes": 6500,
+      "destination": "qa/mvp8_5_task_0_receipt.json",
+      "role": "task_0_receipt",
+      "sha256": "5a6686ee6bac9169c566c9f7aaa9338c2cc2485df09f24a6e1020038be0572a9",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-0/mvp8_5_rev2_task_0_receipt.json"
+    },
+    {
+      "bytes": 30967,
+      "destination": "qa/mvp8_5_task_a_receipt.json",
+      "role": "task_a_receipt",
+      "sha256": "503fc024ef1fc0d49e08d38e1fdcb08ccdce6fd1136b170a15e9cdbc8e4511d4",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-a/mvp8_5_task_a_receipt.json"
+    },
+    {
+      "bytes": 6298,
+      "destination": "qa/mvp8_5_task_b_receipt.json",
+      "role": "task_b_receipt",
+      "sha256": "c4669f497cc87ee164f76f16e4950fa6901acefc29a55abf546c6641758c70ec",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-b/mvp8_5_task_b_receipt.json"
+    },
+    {
+      "bytes": 3191,
+      "destination": "qa/mvp8_5_task_c_receipt.json",
+      "role": "task_c_receipt",
+      "sha256": "f3f791b2785305e93743f4019dd3c37bf1805ff852c2928dc83503b9f2e00b2f",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-c/mvp8_5_task_c_receipt.json"
+    },
+    {
+      "bytes": 11982,
+      "destination": "qa/mvp8_5_task_d_receipt.json",
+      "role": "task_d_receipt",
+      "sha256": "2577fc0edd1be898954ee4de95246fe1209704e903eff57e3542a43158774996",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-d/mvp8_5_task_d_receipt.json"
+    },
+    {
+      "bytes": 3389,
+      "destination": "qa/mvp8_5_task_e_receipt.json",
+      "role": "task_e_receipt",
+      "sha256": "0f2129c4c1e7d87d4cacf1569c49d6178f572a1da092127f1c3aa3897912d25f",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-e/mvp8_5_task_e_receipt.json"
+    },
+    {
+      "bytes": 6374,
+      "destination": "scrum/plan/mvp8-5-harmonic-design-closing-report.md",
+      "role": "closing_report",
+      "sha256": "750e74b4df0ad421d00fa2f8bc3a847869c66537168e0d19219e6aa3b763f525",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-e/mvp8-5-harmonic-design-closing-report.md"
+    }
+  ],
+  "proseConsistency": {
+    "exit": 0,
+    "verdict": "PASS",
+    "violations": 0
+  },
+  "schemaVersion": "governed-loop.mvp8_5-landing.v1",
+  "status": "STAGED",
+  "task": "L34",
+  "tests": {
+    "full": {
+      "exit": 2,
+      "note": "Full suite collection requires starlette, which is absent in this environment.",
+      "tail": [
+        "tests/test_harmonic_orrery_api.py:10: in <module>",
+        "from starlette.requests import Request",
+        "E   ModuleNotFoundError: No module named 'starlette'",
+        "ERROR tests/test_harmonic_orrery_api.py",
+        "Interrupted: 1 error during collection"
+      ]
+    },
+    "fullExcludingMissingDependency": {
+      "exit": 1,
+      "failed": 5,
+      "note": "The five failures reproduce unchanged in a clean L33 worktree; they are pre-existing and unrelated to the L34 payload.",
+      "passed": 583,
+      "tail": [
+        "FAILED tests/test_d_shadow_uniqueness.py::test_candidate_is_fresh_and_complete",
+        "FAILED tests/test_d_shadow_uniqueness.py::test_validator_records_every_ticket_suite",
+        "FAILED tests/test_d_shadow_uniqueness.py::test_validator_command",
+        "FAILED tests/test_fivefold_capability_teleology.py::test_candidate_is_schema_valid_fresh_and_deterministic",
+        "FAILED tests/test_fivefold_capability_teleology.py::test_negative_case_matrix_rejected_with_expected_codes",
+        "5 failed, 583 passed in 132.59s"
+      ]
+    },
+    "preExistingAtL33": [
+      "tests/test_d_shadow_uniqueness.py::test_candidate_is_fresh_and_complete",
+      "tests/test_d_shadow_uniqueness.py::test_validator_records_every_ticket_suite",
+      "tests/test_d_shadow_uniqueness.py::test_validator_command",
+      "tests/test_fivefold_capability_teleology.py::test_candidate_is_schema_valid_fresh_and_deterministic",
+      "tests/test_fivefold_capability_teleology.py::test_negative_case_matrix_rejected_with_expected_codes"
+    ],
+    "targeted": {
+      "exit": 0,
+      "tail": [
+        ".......                                                                  [100%]",
+        "7 passed in 17.65s"
+      ]
+    }
+  },
+  "validation": {
+    "checksFailed": 0,
+    "checksPassed": 418,
+    "exit": 0,
+    "verdict": "PASS"
+  }
+}

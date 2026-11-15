@@ -1,0 +1,208 @@
+{
+  "artifacts": {
+    "b1": {
+      "midi": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-b/renders/b1/mvp8-5-b1-chord.mid",
+      "wav": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-b/renders/b1/mvp8-5-b1-chord.wav"
+    },
+    "b1Control": {
+      "midi": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-b/renders/b1-control/mvp8-5-b1-control.mid",
+      "wav": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-b/renders/b1-control/mvp8-5-b1-control.wav"
+    },
+    "b3": {
+      "midi": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-b/renders/b3/mvp8-5-b3-chord.mid",
+      "wav": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-b/renders/b3/mvp8-5-b3-chord.wav"
+    }
+  },
+  "bets": {
+    "B1": {
+      "controlMidiSha256": "1eb217782eb0c51d21124f5cd3ad75dca51293a2885d63d1dc79ea5770595ef6",
+      "controlWavSha256": "688f1e4368520e6cd28fab9cfcda00205516b6eec0c1eae5bb7ea4f82a82d455",
+      "harmonyWavHashIdentical": true,
+      "harmonyWavSha256Chord": "fdcf3061f51415307c69148ce704f5e4a29a316b0eb3e93eb9ed050ae7fab7cf",
+      "harmonyWavSha256Control": "fdcf3061f51415307c69148ce704f5e4a29a316b0eb3e93eb9ed050ae7fab7cf",
+      "midiSha256": "0e69bc1283850d2853c8fc003d436f3c66486950aaeae6c07361eced4adcfa88",
+      "padRowsIdenticalToControl": true,
+      "padVoicedMatch": true,
+      "pass": true,
+      "passingUnsafeBlind": 38,
+      "passingUnsafeChord": 38,
+      "rotationPath": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "snappedSteps": 27,
+      "steps": 192,
+      "structuralUnsafeBlind": 27,
+      "structuralUnsafeChord": 0,
+      "threshold": "structural_unsafe == 0; total_unsafe_chord <= total_unsafe_blind - 15; passing_unsafe_chord == passing_unsafe_blind; harmony WAV hash identical",
+      "totalDisplacement": 129,
+      "totalUnsafeBlind": 65,
+      "totalUnsafeChord": 38,
+      "wavSha256": "e6a133911f1269999d70ce4938d7d7f2232ae55981d281834d68bc9d643e0c8f"
+    },
+    "B2": {
+      "checks": {
+        "b1": {
+          "distinctQStates": 12,
+          "emittedNgram5": {
+            "distinct": 12,
+            "repeats": 26,
+            "total": 38
+          },
+          "qNgram5": {
+            "distinct": 12,
+            "repeats": 26,
+            "total": 38
+          },
+          "qStatesVisited": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "steps": 192
+        },
+        "b3": {
+          "distinctQStates": 12,
+          "emittedNgram5": {
+            "distinct": 19,
+            "repeats": 9,
+            "total": 28
+          },
+          "qNgram5": {
+            "distinct": 12,
+            "repeats": 16,
+            "total": 28
+          },
+          "qStatesVisited": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "steps": 144
+        },
+        "l21": {
+          "distinctQStates": 12,
+          "emittedNgram5": {
+            "distinct": 48,
+            "repeats": 0,
+            "total": 48
+          },
+          "qNgram5": {
+            "distinct": 12,
+            "repeats": 36,
+            "total": 48
+          },
+          "qStatesVisited": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "steps": 240
+        }
+      },
+      "note": "The internal Q row is a fixed 12-cycle, so non-overlapping 5-grams necessarily repeat; the historical L21 measure used emitted pitch classes. Both measures are reported.",
+      "pass": true,
+      "qSequenceInvariant": true,
+      "threshold": "12/12 Q states, 0 5-gram repeats on internal Q row"
+    },
+    "B3": {
+      "dyadSteps": 36,
+      "midiSha256": "00ded42f68f9b3143eafff49ea4c4a914d438db39e3f3089601bff28dbfe2257",
+      "outOfMaskNotes": 0,
+      "pass": true,
+      "prototypeWavSha256": "7e7eb3eac1e83d82a7e4bf5b787c0690e222a8ed5535c8f32350bf58bfbd7a74",
+      "rotationPath": [
+        1,
+        1,
+        2,
+        2,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        0
+      ],
+      "snappedSteps": 21,
+      "steps": 144,
+      "threshold": "21/144 snaps, 36/36 dyads, 0 out-of-mask, prototype WAV hash",
+      "totalDisplacement": 54,
+      "wavSha256": "7e7eb3eac1e83d82a7e4bf5b787c0690e222a8ed5535c8f32350bf58bfbd7a74"
+    }
+  },
+  "directive": "MVP8.5-HARMONIC-DESIGN-DIR-1",
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "harmonicBandStatus": "stated_hypothesis",
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + harmonic design card/Q integration",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "qEngineAdmissionStatus": "unadmitted",
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "leadMode": "governed_dyads_chord_responsive",
+  "llmCalls": 0,
+  "repoWrites": 0,
+  "runnerSha256": "787360766ce09a7b7ae0a5072c11b47d8ed0833f6dc2fa896eb6fe81e95f0500",
+  "schemaVersion": "governed-loop.mvp8_5-task-b.v1",
+  "status": "COMPLETE",
+  "t0": {
+    "predeclaredPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-0/mvp8_5_rev2_predeclared_bets.json",
+    "predeclaredSha256": "2c71f9d6f668572aded07246b25f7667b517b08ca7a2727edd1fd75628fcd640",
+    "status": "locked-before-evaluation"
+  },
+  "task": "MVP8.5-TB"
+}

@@ -1,0 +1,159 @@
+{
+  "directive": "MVP8.5-HARMONIC-DESIGN-DIR-1 rev 2",
+  "frozenArtifacts": {
+    "cardSha256": "6486599187687edb1e28481b2bbc79d9a11a06001e4a237505c5e44c1c1a1469",
+    "earScorecard": {
+      "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-0/mvp8_5_rev2_ear_scorecard.json",
+      "sha256": "2ad2dc84ca541833861b1691cbe66e2c5adc4fe23bf2a5e2938564e6c1f241a3"
+    },
+    "harmonicAnalysisSha256": "2fc87cce5db2ed67f3ae7ae414d0aba4dc244b729730f5420c83fb4cc6b3bdd0",
+    "predeclaredBets": {
+      "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_5_harmonic_design_rev2/task-0/mvp8_5_rev2_predeclared_bets.json",
+      "sha256": "2c71f9d6f668572aded07246b25f7667b517b08ca7a2727edd1fd75628fcd640"
+    }
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "harmonicBandStatus": "stated_hypothesis",
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + harmonic design card/Q integration",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "qEngineAdmissionStatus": "unadmitted",
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "opening": {
+    "head": "ce61c8164913142d2cbdff2dbf2e349c0100243b",
+    "ledger": {
+      "bytes": 454378,
+      "lines": 4564,
+      "sha256": "18d24f2c6158c513160b3e61356d544a551d7cc36d03966a2db4265b4a36b5ff"
+    },
+    "manifest": {
+      "files": 2042,
+      "sha256": "1731f44e41750cc5075007e3f16aa1b6120fc4f42899d17bea59654c4e04345c",
+      "totalBytes": 303644249
+    },
+    "pins": {
+      "tools/governed-loop/mvp4/task-a/mvp4_dynamic_chaldean_card.json": {
+        "actual": "6486599187687edb1e28481b2bbc79d9a11a06001e4a237505c5e44c1c1a1469",
+        "expected": "6486599187687edb1e28481b2bbc79d9a11a06001e4a237505c5e44c1c1a1469",
+        "match": true
+      },
+      "tools/governed-loop/mvp6_3/task-b/mvp6_3_fade_renderer.py": {
+        "actual": "38332e34a1068bd3194ab354ec0654727e3d328b76f1614dbad84d0e94d83367",
+        "expected": "38332e34a1068bd3194ab354ec0654727e3d328b76f1614dbad84d0e94d83367",
+        "match": true
+      },
+      "tools/governed-loop/mvp8/mvp8_common.py": {
+        "actual": "8ab4b215e6965c6100ad031b5de9aac2e492e5f100b70d00c2d6d4a11d71d200",
+        "expected": "8ab4b215e6965c6100ad031b5de9aac2e492e5f100b70d00c2d6d4a11d71d200",
+        "match": true
+      },
+      "tools/governed-loop/mvp8/task-b/mvp8_pentatonic_q_engine.py": {
+        "actual": "45225a04df8f57a6eda85b5bc10a167e81b6ba34c2ecea4782781af9fe3b955d",
+        "expected": "45225a04df8f57a6eda85b5bc10a167e81b6ba34c2ecea4782781af9fe3b955d",
+        "match": true
+      },
+      "tools/governed-loop/node-observatory/degree_ladder.py": {
+        "actual": "f8c8767e0c4db0a59199167bd3062cc32eb53589a3bd67b895c91153e189c0bd",
+        "expected": "f8c8767e0c4db0a59199167bd3062cc32eb53589a3bd67b895c91153e189c0bd",
+        "match": true
+      },
+      "tools/governed-loop/node-observatory/mvp8_2_common.py": {
+        "actual": "2f863a9a6051e7dbf726c721a61c210926e276076193e813f5a4c7d85cf4d80d",
+        "expected": "2f863a9a6051e7dbf726c721a61c210926e276076193e813f5a4c7d85cf4d80d",
+        "match": true
+      },
+      "tools/governed-loop/node-observatory/mvp8_3_common.py": {
+        "actual": "7d9f0bf3870d210f1e846f1fcd518df8a746b4208f2cb051bdb4516b18654ba8",
+        "expected": "7d9f0bf3870d210f1e846f1fcd518df8a746b4208f2cb051bdb4516b18654ba8",
+        "match": true
+      },
+      "tools/governed-loop/node-observatory/node_observatory.py": {
+        "actual": "246d4d68b0c44b6cc2466a5457367120fbe3926f078140659903f228088d2cb0",
+        "expected": "246d4d68b0c44b6cc2466a5457367120fbe3926f078140659903f228088d2cb0",
+        "match": true
+      },
+      "tools/governed-loop/node-observatory/node_observatory_degree.py": {
+        "actual": "de6c58181eec5588c8111ff6b5b221a7b86e290d9dceb492e5f5c4b567206a99",
+        "expected": "de6c58181eec5588c8111ff6b5b221a7b86e290d9dceb492e5f5c4b567206a99",
+        "match": true
+      },
+      "tools/governed-loop/node-observatory/node_observatory_engine.py": {
+        "actual": "d53fdfa7fa910bf170f9fe68e1ee475490e8d9b3dbd89d1355d747e087352dba",
+        "expected": "d53fdfa7fa910bf170f9fe68e1ee475490e8d9b3dbd89d1355d747e087352dba",
+        "match": true
+      },
+      "tools/governed-loop/node-observatory/pattern_query.py": {
+        "actual": "9258312e98caeb8f9e4b826b219d3380dce49bf4c10a2e4ee158cea20560355a",
+        "expected": "9258312e98caeb8f9e4b826b219d3380dce49bf4c10a2e4ee158cea20560355a",
+        "match": true
+      }
+    },
+    "releaseClosure": {
+      "checksFailed": 0,
+      "checksPassed": 418,
+      "verdict": "PASS"
+    },
+    "treeClean": true
+  },
+  "parameters": {
+    "A1": {
+      "seeds": "1387@0, three arms",
+      "threshold": ">=21 states / >=3 families / >=5 seams; 20/20 accepts"
+    },
+    "A2": {
+      "completionMetric": "total consecutive-bar completions across the 20 arms; arms-with-completion also reported",
+      "threshold": ">=12/20 consecutive-bar completions vs <=2/20 for L20 and unranked baselines"
+    },
+    "B1": {
+      "baseline": 38,
+      "statedBaseline": 40,
+      "threshold": "structural_unsafe == 0; total_unsafe_chord <= total_unsafe_blind - 15; passing_unsafe_chord == passing_unsafe_blind (38/192); harmony WAV hash identical to control"
+    },
+    "aTermByBand": {
+      "H1": 10,
+      "H2": 5,
+      "H3": 0,
+      "H4": -5,
+      "H5": -10
+    },
+    "pTerm": 50,
+    "seamFeasibility": {
+      "cursorIndex": "L-2",
+      "depth": 3,
+      "rule": "candidate node u must have at least one outgoing governed single-pc edge (u -> v) where v voices target[L-1]",
+      "shapeRoot": [
+        0,
+        1,
+        4
+      ],
+      "singlePcEdge": "len(set(cont(u)) ^ set(cont(v))) == 2",
+      "targetFinal": [
+        5,
+        1,
+        [
+          0,
+          1,
+          4
+        ]
+      ]
+    }
+  },
+  "priorRev1T0ReceiptSha256": "358a9b25f8ca0c1e957644ebf01cfc7fdf63f84b8694003e7b7589244076b8e2",
+  "repoWrites": 0,
+  "schemaVersion": "governed-loop.mvp8_5-rev2-task-0.v1",
+  "status": "COMPLETE",
+  "task": "MVP8.5-REV2-T0"
+}
