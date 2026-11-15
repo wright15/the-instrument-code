@@ -9,12 +9,15 @@ import array
 import hashlib
 import io
 import math
+import os
 import struct
 import sys
 import wave
 from pathlib import Path
 
-REPO = Path("/home/erick/projects/integrated-release")
+_REPO_ENV = os.environ.get("SEVEN_GOVERNORS_REPO")
+REPO = (Path(_REPO_ENV).resolve() if _REPO_ENV
+        else Path(__file__).resolve().parents[4])
 sys.path.insert(0, str(REPO / "tools/governed-loop/mvp6_2/task-b"))
 sys.path.insert(0, str(REPO / "tools/governed-loop/mvp5/task-b"))
 

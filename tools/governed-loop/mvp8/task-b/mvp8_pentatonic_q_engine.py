@@ -19,7 +19,9 @@ import json
 import sys
 from pathlib import Path
 
-sys.path.insert(0, "/home/erick/workspace/scratch-governed-loop-run/mvp8_pentatonic_q")
+_MVP8_DIR = Path(__file__).resolve().parents[1]
+if str(_MVP8_DIR) not in sys.path:
+    sys.path.insert(0, str(_MVP8_DIR))
 import mvp8_common as common
 
 K_TRANSIT = 5

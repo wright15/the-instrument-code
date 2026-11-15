@@ -10,14 +10,33 @@ import importlib.util
 import json
 import os
 import sys
+import tempfile
 from collections import deque
 from pathlib import Path
 
 sys.dont_write_bytecode = True
 
-REPO = Path("/home/erick/projects/integrated-release")
-SCRATCH = Path("/home/erick/workspace/scratch-governed-loop-run/mvp8_pentatonic_q")
-LOOKUP_PATH = SCRATCH / "task-a" / "mvp8_pentatonic_lookup_v1.json"
+
+def _discover_repo():
+    env = os.environ.get("SEVEN_GOVERNORS_REPO")
+    if env:
+        candidate = Path(env).resolve()
+        if (candidate / "provenance/DECISION_LEDGER.md").is_file():
+            return candidate
+        raise RuntimeError(f"SEVEN_GOVERNORS_REPO does not resolve: {candidate}")
+    here = Path(__file__).resolve()
+    anchors = [here, *here.parents, Path.cwd().resolve(), *Path.cwd().resolve().parents]
+    for parent in anchors:
+        if (parent / "provenance/DECISION_LEDGER.md").is_file():
+            return parent
+    raise RuntimeError("repository root not found")
+
+
+REPO = _discover_repo()
+SCRATCH = Path(os.environ.get(
+    "GOVERNED_LOOP_SCRATCH",
+    Path(tempfile.gettempdir()) / "seven-governors-mvp8"))
+LOOKUP_PATH = REPO / "tools/governed-loop/mvp8/task-a/mvp8_pentatonic_lookup_v1.json"
 PREDECL_PATH = SCRATCH / "task-0" / "mvp8_predeclared_bets.json"
 
 GUARD = {
