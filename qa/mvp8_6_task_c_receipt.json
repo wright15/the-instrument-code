@@ -1,0 +1,117 @@
+{
+  "attribution": {
+    "fTermCard1387": {
+      "families": 3,
+      "gateAccepts": 20,
+      "seams": 9,
+      "states": 21
+    },
+    "greedyIndex0": {
+      "delta": 0,
+      "llmCalls": 0,
+      "states": 21
+    },
+    "l20Exact": {
+      "families": 3,
+      "seams": 5,
+      "states": 21
+    },
+    "l34DefaultControl": {
+      "distinctFamilies": 3,
+      "distinctStates": 21,
+      "gateAccepts": 20,
+      "seamTransitions": 9,
+      "steps": 20
+    },
+    "unranked": {
+      "families": 2,
+      "seams": 20,
+      "states": 2
+    }
+  },
+  "directive": "MVP8.6-FUNCTIONAL-HARMONY-DIR-1",
+  "fenceAudit": {
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-c/mvp8_6_fence_audit.json",
+    "sha256": "aa8db3979055e524c08e70e364c6cfba75ee543b52e95876920012105d32e657"
+  },
+  "fenceSummary": {
+    "bandsHypothesis": true,
+    "cHNull": true,
+    "degreesAndStride": true,
+    "noLlmTasteClaims": true,
+    "noRomanNumeralLabels": true,
+    "noWeightsInOntology": true,
+    "qEngineUntouchedUnadmitted": true,
+    "zeroSymbolicFloats": true
+  },
+  "fencesPass": true,
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "functionalHarmonyWeightsStatus": "recorded_underived_values_adopted_by_decision",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "harmonicBandStatus": "stated_hypothesis",
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + functional-harmony card (Chaldean degree hierarchy)",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "lookupPatchStatus": "unpatched_by_decision_option_c",
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "qEngineAdmissionStatus": "unadmitted",
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "inputs": {
+    "predeclaredSha256": "df95fe8a1fda7b3a42ba0357914638e7f237a45c60745c10db208a7f86024371",
+    "t0ReceiptSha256": "26151d12ea61677eb334ed22f4d15b1f4b6dd128e4e5141a76e5bb648043820d",
+    "taskAReceiptSha256": "2382f3ba9e681fb617b0317e71b0ff7d565739277d1d634fdd270410ad474be9",
+    "taskBReceiptSha256": "fde5f2a338ec3b0d133b78d154f57e57f7e8fe1caf4ac250381850260dffabf0"
+  },
+  "llmCalls": 0,
+  "lookupInvariant": {
+    "lookupText": "base = self.weights.get(degree, self.w_seam_base)",
+    "pass": true,
+    "sha256": "54210af9e303554b453bb5018e5cc740ea4108d0b42cc44396350b89599c75ab"
+  },
+  "positionBias": {
+    "chosenFirstRawPosition": 424,
+    "chosenRawPositionHistogram": {
+      "0": 424,
+      "1": 300,
+      "10": 10,
+      "2": 346,
+      "3": 215,
+      "4": 168,
+      "5": 30,
+      "6": 41,
+      "7": 48,
+      "8": 10,
+      "9": 7
+    },
+    "decisions": 1599,
+    "menuSize": {
+      "max": 13,
+      "meanTimes100": 693,
+      "min": 3,
+      "sum": 11094
+    },
+    "reading": "Selection is by score with the predeclared tie-break (category_rank, mask, phase, operator); raw menu order can decide only exact score ties, reported above.",
+    "runnerUpGap": {
+      "max": 102,
+      "meanTimes100": 922,
+      "min": 0
+    },
+    "selection": "deterministic score-maximizing greedy (presented index 0 of the score-sorted menu); zero LLM calls",
+    "singleCandidateDecisions": 0,
+    "tieDecisions": 954
+  },
+  "repoWrites": 0,
+  "schemaVersion": "governed-loop.mvp8_6-task-c.v1",
+  "status": "COMPLETE",
+  "task": "MVP8.6-TC"
+}

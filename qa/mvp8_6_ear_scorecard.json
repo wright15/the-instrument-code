@@ -1,0 +1,62 @@
+{
+  "arms": {
+    "A": {
+      "form": "fixed Andalusian form; walk 1,7,6,5; strides 2,2,2,1; depth 3",
+      "renderOff": "mvp8-6-arm-a-f-off.wav",
+      "renderOn": "mvp8-6-arm-a-f-on.wav",
+      "sttKey": null,
+      "title": "Andalusian form -- F-term on vs off (A/B)",
+      "verbatim": "between arm AF off and arm AF on, there's a big difference in the chords that it's selecting. I can't tell what the difference is.",
+      "verdict": "adopt"
+    },
+    "B": {
+      "form": "degree walk 4->1; stride 2; depth 3",
+      "renderAeolian": "mvp8-6-arm-b-plagal-1453.wav",
+      "renderIonian": "mvp8-6-arm-b-plagal-2741.wav",
+      "sttKey": null,
+      "title": "Plagal 4->1 walk on two containers",
+      "verbatim": "For the plagal 1453 and the plagal 2741, they both sound different. They both seem to be doing a vamp between one chord and the next, which is exactly what you would expect in a Plagal cadence. ... Also for the Plagal cadences, they are different chord qualities, as expected.",
+      "verdict": "adopt"
+    },
+    "C": {
+      "form": "20-step arm; default step (1,2,3)",
+      "render": "mvp8-6-arm-c-walk-20.wav",
+      "sttKey": null,
+      "title": "Fixed 20-step walk from 1387@0, F-term on",
+      "verbatim": "For the C-Walk 20 The chord changes seem to be very much related, like minimal steps in the chord changes, and it seems to be hitting all different types of chord progressions. So, it's hard for me to know what's happening, but the chord progressions definitely sound related.",
+      "verdict": "adopt"
+    }
+  },
+  "directive": "MVP8.6-FUNCTIONAL-HARMONY-DIR-1",
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "functionalHarmonyWeightsStatus": "recorded_underived_values_adopted_by_decision",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "harmonicBandStatus": "stated_hypothesis",
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + functional-harmony card (Chaldean degree hierarchy)",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "lookupPatchStatus": "unpatched_by_decision_option_c",
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "qEngineAdmissionStatus": "unadmitted",
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "overallVerbatim": "These are my verbatim verdicts, and I see no reason not to adopt.",
+  "overallVerdict": "adopt",
+  "schemaVersion": "governed-loop.mvp8_6-ear-scorecard.v1",
+  "signed": true,
+  "signedAt": "2026-11-15",
+  "signedBy": "Erick",
+  "status": "SIGNED",
+  "verbatimNotes": "These are my verbatim verdicts, and I see no reason not to adopt.",
+  "verdictProtocol": "Erick listens ad hoc and records a signed verdict per arm (adopt / reject / revise) in his own words; STT gloss, if any, stays in a separate sttKey field. The agent authors no listener field.",
+  "verdictProvenance": "Recorded by Erick 2026-11-15; sixth signed human ear-gate verdict."
+}

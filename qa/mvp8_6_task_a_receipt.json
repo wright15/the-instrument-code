@@ -1,0 +1,669 @@
+{
+  "artifacts": {
+    "evidence": [
+      {
+        "bytes": 32757,
+        "name": "f1-details",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-a/mvp8_6_task_a_f1_details.jsonl",
+        "sha256": "fc6893c59c6c46568e841d1213e75b0a4fd178d0c7730ed96e167350fd169908"
+      },
+      {
+        "bytes": 1980,
+        "name": "f1-summaries",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-a/mvp8_6_task_a_f1_summaries.jsonl",
+        "sha256": "e1b09827e43a584d7aff1b06e4fd35bc0c4659e2562c51a999cf7ec196ec12ba"
+      },
+      {
+        "bytes": 11087,
+        "name": "f3-details",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-a/mvp8_6_task_a_f3_details.jsonl",
+        "sha256": "184006eb97e4e2ceadc8b85d65e44f79ec8e606abb3f5324ba4b2cf10593b1aa"
+      },
+      {
+        "bytes": 668,
+        "name": "f3-summaries",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-a/mvp8_6_task_a_f3_summaries.jsonl",
+        "sha256": "c8bb44e3a4b2e7c0d3dd8f635ae0ffb616aa2a9e9bf0e6fdd382dd22e7caf51d"
+      },
+      {
+        "bytes": 22377,
+        "name": "controls-details",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-a/mvp8_6_task_a_controls_details.jsonl",
+        "sha256": "94b586a8a683f16d9a698ca7c7cb10909d25089c12cbacec195a0b9e67431759"
+      },
+      {
+        "bytes": 1331,
+        "name": "controls-summaries",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-a/mvp8_6_task_a_controls_summaries.jsonl",
+        "sha256": "14a96bd81c87a36a79da4a1df8de90d06ec6fc0b05d96fb73027270c83b3436d"
+      },
+      {
+        "bytes": 58235,
+        "name": "f4-summaries",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-a/mvp8_6_task_a_f4_summaries.jsonl",
+        "sha256": "1d5a5ea268822c38741f90236e98bb27bff27344756d2d530e302ad2ad50b188"
+      },
+      {
+        "bytes": 229117,
+        "name": "f4-details-plagal_4_1",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-a/mvp8_6_task_a_f4_plagal_4_1.jsonl",
+        "sha256": "531acd353af60f7f649dbdc64da2e01b0188f4e5784a44cad8f08410f2ce52e6"
+      },
+      {
+        "bytes": 228690,
+        "name": "f4-details-authentic_5_1",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-a/mvp8_6_task_a_f4_authentic_5_1.jsonl",
+        "sha256": "918822fa548ccacb47a460a0c29aa0508fd0283f584331402663b84d81f8886d"
+      },
+      {
+        "bytes": 234690,
+        "name": "f4-details-deceptive_5_6",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-a/mvp8_6_task_a_f4_deceptive_5_6.jsonl",
+        "sha256": "4ba918e0ba5117be5b9a7f79ce6b5e6f9034b3a191ce7fa9fc3f6521392e78a6"
+      },
+      {
+        "bytes": 220892,
+        "name": "f4-details-andalusian",
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-a/mvp8_6_task_a_f4_andalusian.jsonl",
+        "sha256": "a0590b3abe0840246e6477e012e30e25ddee6797296770c1ec94e32157532adc"
+      }
+    ]
+  },
+  "bets": {
+    "F1": {
+      "arms": [
+        {
+          "arm": "f-card",
+          "autoTransits": 0,
+          "candidateEvaluations": 129,
+          "completions": 0,
+          "distinctFamilies": 3,
+          "distinctStates": 21,
+          "fTermEvents": 11,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "llmCalls": 0,
+          "pTermEvents": 0,
+          "pattern": null,
+          "seamTransitions": 9,
+          "seed": "1387@0",
+          "stage": "f1",
+          "steps": 20,
+          "terminatedReason": "completed",
+          "tier1Decisions": 11,
+          "tier1DegreeHistogram": {
+            "1": 11
+          },
+          "tier1FTermMax": 23,
+          "tier1FTermMin": 11,
+          "tier1FTermSum": 169
+        },
+        {
+          "arm": "f-card",
+          "autoTransits": 0,
+          "candidateEvaluations": 129,
+          "completions": 0,
+          "distinctFamilies": 3,
+          "distinctStates": 21,
+          "fTermEvents": 11,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "llmCalls": 0,
+          "pTermEvents": 0,
+          "pattern": null,
+          "seamTransitions": 9,
+          "seed": "1387@0",
+          "stage": "f1",
+          "steps": 20,
+          "terminatedReason": "completed",
+          "tier1Decisions": 11,
+          "tier1DegreeHistogram": {
+            "1": 11
+          },
+          "tier1FTermMax": 23,
+          "tier1FTermMin": 11,
+          "tier1FTermSum": 169
+        },
+        {
+          "arm": "f-card",
+          "autoTransits": 0,
+          "candidateEvaluations": 129,
+          "completions": 0,
+          "distinctFamilies": 3,
+          "distinctStates": 21,
+          "fTermEvents": 11,
+          "gateAccepts": 20,
+          "gateCalls": 20,
+          "llmCalls": 0,
+          "pTermEvents": 0,
+          "pattern": null,
+          "seamTransitions": 9,
+          "seed": "1387@0",
+          "stage": "f1",
+          "steps": 20,
+          "terminatedReason": "completed",
+          "tier1Decisions": 11,
+          "tier1DegreeHistogram": {
+            "1": 11
+          },
+          "tier1FTermMax": 23,
+          "tier1FTermMin": 11,
+          "tier1FTermSum": 169
+        }
+      ],
+      "pass": true,
+      "threshold": ">=21 states / >=3 families / >=7 seams; 20/20 gate accepts"
+    },
+    "F3": {
+      "arm": {
+        "arm": "greedy-index-0",
+        "autoTransits": 0,
+        "candidateEvaluations": 129,
+        "completions": 0,
+        "distinctFamilies": 3,
+        "distinctStates": 21,
+        "fTermEvents": 11,
+        "gateAccepts": 20,
+        "gateCalls": 20,
+        "llmCalls": 0,
+        "pTermEvents": 0,
+        "pattern": null,
+        "seamTransitions": 9,
+        "seed": "1387@0",
+        "stage": "f3",
+        "steps": 20,
+        "terminatedReason": "completed",
+        "tier1Decisions": 11,
+        "tier1DegreeHistogram": {
+          "1": 11
+        },
+        "tier1FTermMax": 23,
+        "tier1FTermMin": 11,
+        "tier1FTermSum": 169
+      },
+      "cardStates": 21,
+      "delta": 0,
+      "greedyStates": 21,
+      "llmCalls": 0,
+      "pass": true,
+      "threshold": "greedy index-0 within +/-2 states of the F-term arm; 0 LLM calls"
+    },
+    "F4": {
+      "allPatternArms": {
+        "count": 1095,
+        "meanAtLeastPlus5": true,
+        "meanDenominator": 1095,
+        "meanNumerator": 13704,
+        "meanTimes100Trunc": 1251,
+        "sumF": 13704
+      },
+      "combinedAllArms": {
+        "count": 1128,
+        "meanAtLeastPlus5": true,
+        "meanDenominator": 1128,
+        "meanNumerator": 14211,
+        "meanTimes100Trunc": 1259,
+        "sumF": 14211
+      },
+      "defaultStep1387F1Arms": {
+        "count": 33,
+        "meanAtLeastPlus5": true,
+        "meanDenominator": 33,
+        "meanNumerator": 507,
+        "meanTimes100Trunc": 1536,
+        "sumF": 507
+      },
+      "evaluationArms": "four declared pattern arms across the 20 locked seeds (80 arms)",
+      "l34Baseline": {
+        "allPatternArms": {
+          "count": 1096,
+          "meanAtLeastPlus5": true,
+          "meanDenominator": 1096,
+          "meanNumerator": 13697,
+          "meanTimes100Trunc": 1249,
+          "sumF": 13697
+        },
+        "andalusian": {
+          "count": 264,
+          "meanAtLeastPlus5": true,
+          "meanDenominator": 264,
+          "meanNumerator": 3593,
+          "meanTimes100Trunc": 1360,
+          "sumF": 3593
+        },
+        "authentic_5_1": {
+          "count": 274,
+          "meanAtLeastPlus5": true,
+          "meanDenominator": 274,
+          "meanNumerator": 4336,
+          "meanTimes100Trunc": 1582,
+          "sumF": 4336
+        },
+        "deceptive_5_6": {
+          "count": 270,
+          "meanAtLeastPlus5": true,
+          "meanDenominator": 270,
+          "meanNumerator": 2678,
+          "meanTimes100Trunc": 991,
+          "sumF": 2678
+        },
+        "defaultStep1387": {
+          "count": 11,
+          "meanAtLeastPlus5": true,
+          "meanDenominator": 11,
+          "meanNumerator": 169,
+          "meanTimes100Trunc": 1536,
+          "sumF": 169
+        },
+        "defaultStep20Seeds": {
+          "count": 284,
+          "meanAtLeastPlus5": true,
+          "meanDenominator": 284,
+          "meanNumerator": 4865,
+          "meanTimes100Trunc": 1713,
+          "sumF": 4865
+        },
+        "plagal_4_1": {
+          "count": 288,
+          "meanAtLeastPlus5": true,
+          "meanDenominator": 288,
+          "meanNumerator": 3090,
+          "meanTimes100Trunc": 1072,
+          "sumF": 3090
+        }
+      },
+      "measurementNote": "At a fixed per-decision step degree the F-term is a monotone rescaling of the A-term (the degree weight is a constant factor and every 7x5 row is strictly increasing in band), so the within-menu tier-1 ordering is unchanged. Measured: the three walk arms choose the identical tier-1 sets as the L34 control (equal F sums/counts); the Andalusian arm differs by one decision (3600/263 vs 3593/264). The mean-F floor passes; the measured steering difference from the live L34 control is minimal.",
+      "pass": true,
+      "perPatternArms": {
+        "andalusian": {
+          "count": 263,
+          "meanAtLeastPlus5": true,
+          "meanDenominator": 263,
+          "meanNumerator": 3600,
+          "meanTimes100Trunc": 1368,
+          "sumF": 3600
+        },
+        "authentic_5_1": {
+          "count": 274,
+          "meanAtLeastPlus5": true,
+          "meanDenominator": 274,
+          "meanNumerator": 4336,
+          "meanTimes100Trunc": 1582,
+          "sumF": 4336
+        },
+        "deceptive_5_6": {
+          "count": 270,
+          "meanAtLeastPlus5": true,
+          "meanDenominator": 270,
+          "meanNumerator": 2678,
+          "meanTimes100Trunc": 991,
+          "sumF": 2678
+        },
+        "plagal_4_1": {
+          "count": 288,
+          "meanAtLeastPlus5": true,
+          "meanDenominator": 288,
+          "meanNumerator": 3090,
+          "meanTimes100Trunc": 1072,
+          "sumF": 3090
+        }
+      },
+      "threshold": "mean tier-1 F >= +5 across the evaluation arms"
+    },
+    "L20exact": {
+      "expected": {
+        "autoTransits": 1,
+        "completions": 0,
+        "distinctFamilies": 3,
+        "distinctStates": 21,
+        "gateAccepts": 21,
+        "gateCalls": 21,
+        "seamTransitions": 5,
+        "steps": 20
+      },
+      "match": true,
+      "reported": {
+        "arm": "l20-exact",
+        "autoTransits": 1,
+        "candidateEvaluations": 176,
+        "completions": 0,
+        "distinctFamilies": 3,
+        "distinctStates": 21,
+        "fTermEvents": 0,
+        "gateAccepts": 21,
+        "gateCalls": 21,
+        "llmCalls": 0,
+        "pTermEvents": 0,
+        "pattern": null,
+        "seamTransitions": 5,
+        "seed": "1387@0",
+        "stage": "controls",
+        "steps": 20,
+        "terminatedReason": "completed",
+        "tier1Decisions": 15,
+        "tier1DegreeHistogram": {
+          "1": 15
+        },
+        "tier1FTermMax": 23,
+        "tier1FTermMin": -11,
+        "tier1FTermSum": 95
+      }
+    },
+    "unranked1387": {
+      "expected": {
+        "autoTransits": 0,
+        "completions": 0,
+        "distinctFamilies": 2,
+        "distinctStates": 2,
+        "gateAccepts": 20,
+        "gateCalls": 20,
+        "seamTransitions": 20,
+        "steps": 20
+      },
+      "match": true,
+      "reported": {
+        "arm": "unranked",
+        "autoTransits": 0,
+        "candidateEvaluations": 20,
+        "completions": 0,
+        "distinctFamilies": 2,
+        "distinctStates": 2,
+        "fTermEvents": 0,
+        "gateAccepts": 20,
+        "gateCalls": 20,
+        "llmCalls": 0,
+        "pTermEvents": 0,
+        "pattern": null,
+        "seamTransitions": 20,
+        "seed": "1387@0",
+        "stage": "controls",
+        "steps": 20,
+        "terminatedReason": "completed",
+        "tier1Decisions": 0,
+        "tier1DegreeHistogram": {},
+        "tier1FTermMax": null,
+        "tier1FTermMin": null,
+        "tier1FTermSum": 0
+      }
+    }
+  },
+  "directive": "MVP8.6-FUNCTIONAL-HARMONY-DIR-1",
+  "execution": {
+    "candidateEvaluations": 11696,
+    "stages": [
+      "f1",
+      "f3",
+      "controls",
+      "f4"
+    ]
+  },
+  "fTerm": {
+    "divisor": 50,
+    "formula": "F = trunc((w[degree] * a[band]) / 50); integer truncation toward zero",
+    "matchesDirective": true,
+    "matchesPredeclared": true,
+    "rejectedDivisor": 60,
+    "rejectedMatchesRecord": true,
+    "rejectedTable": {
+      "1": {
+        "H1": 19,
+        "H2": 9,
+        "H3": 0,
+        "H4": -9,
+        "H5": -19
+      },
+      "2": {
+        "H1": 9,
+        "H2": 4,
+        "H3": 0,
+        "H4": -4,
+        "H5": -9
+      },
+      "3": {
+        "H1": 6,
+        "H2": 3,
+        "H3": 0,
+        "H4": -3,
+        "H5": -6
+      },
+      "4": {
+        "H1": 5,
+        "H2": 2,
+        "H3": 0,
+        "H4": -2,
+        "H5": -5
+      },
+      "5": {
+        "H1": 12,
+        "H2": 6,
+        "H3": 0,
+        "H4": -6,
+        "H5": -12
+      },
+      "6": {
+        "H1": 7,
+        "H2": 3,
+        "H3": 0,
+        "H4": -3,
+        "H5": -7
+      },
+      "7": {
+        "H1": 6,
+        "H2": 3,
+        "H3": 0,
+        "H4": -3,
+        "H5": -6
+      }
+    },
+    "scope": "tier-1 candidates only; 0 on seam candidates",
+    "table": {
+      "1": {
+        "H1": 23,
+        "H2": 11,
+        "H3": 0,
+        "H4": -11,
+        "H5": -23
+      },
+      "2": {
+        "H1": 11,
+        "H2": 5,
+        "H3": 0,
+        "H4": -5,
+        "H5": -11
+      },
+      "3": {
+        "H1": 8,
+        "H2": 4,
+        "H3": 0,
+        "H4": -4,
+        "H5": -8
+      },
+      "4": {
+        "H1": 7,
+        "H2": 3,
+        "H3": 0,
+        "H4": -3,
+        "H5": -7
+      },
+      "5": {
+        "H1": 15,
+        "H2": 7,
+        "H3": 0,
+        "H4": -7,
+        "H5": -15
+      },
+      "6": {
+        "H1": 8,
+        "H2": 4,
+        "H3": 0,
+        "H4": -4,
+        "H5": -8
+      },
+      "7": {
+        "H1": 7,
+        "H2": 3,
+        "H3": 0,
+        "H4": -3,
+        "H5": -7
+      }
+    }
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "functionalHarmonyWeightsStatus": "recorded_underived_values_adopted_by_decision",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "harmonicBandStatus": "stated_hypothesis",
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + functional-harmony card (Chaldean degree hierarchy)",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "lookupPatchStatus": "unpatched_by_decision_option_c",
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "qEngineAdmissionStatus": "unadmitted",
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "llmCalls": 0,
+  "parameters": {
+    "alpha": 40,
+    "chaldeanWeights": {
+      "1": 116,
+      "2": 56,
+      "3": 41,
+      "4": 35,
+      "5": 77,
+      "6": 44,
+      "7": 38
+    },
+    "defaultStep": [
+      1,
+      2,
+      3
+    ],
+    "lookupInvariant": {
+      "degreeFunctionSnippetSha256": "66958ee0b5d17b0b75af2899ebe85c987c31af5bfd73c0b672782178037f6d2b",
+      "lookupSnippetSha256": "21b307c972fa482a453157ce309dbcfa3a6cb4b032a448bf9d10d1074bba00b5",
+      "patched": false,
+      "path": "tools/governed-loop/mvp4/task-a/mvp4_task_a.py",
+      "sha256": "54210af9e303554b453bb5018e5cc740ea4108d0b42cc44396350b89599c75ab"
+    },
+    "pTerm": 50,
+    "patterns": {
+      "andalusian": {
+        "depth": 3,
+        "kind": "exact",
+        "label": "fixed Andalusian form (verbatim)",
+        "walk": [
+          [
+            1,
+            2,
+            [
+              0,
+              3,
+              7
+            ]
+          ],
+          [
+            7,
+            2,
+            [
+              0,
+              4,
+              7
+            ]
+          ],
+          [
+            6,
+            2,
+            [
+              0,
+              4,
+              7
+            ]
+          ],
+          [
+            5,
+            1,
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        ]
+      },
+      "authentic_5_1": {
+        "depth": 3,
+        "kind": "walk",
+        "label": "authentic degree walk 5->1",
+        "walk": [
+          [
+            5,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "deceptive_5_6": {
+        "depth": 3,
+        "kind": "walk",
+        "label": "deceptive degree walk 5->6",
+        "walk": [
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            2
+          ]
+        ]
+      },
+      "plagal_4_1": {
+        "depth": 3,
+        "kind": "walk",
+        "label": "plagal degree walk 4->1",
+        "walk": [
+          [
+            4,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "seamBoost": 70,
+    "visitWindow": 8,
+    "wBase": 50,
+    "weightsDenominator": 407
+  },
+  "repoWrites": 0,
+  "schemaVersion": "governed-loop.mvp8_6-task-a.v1",
+  "status": "COMPLETE",
+  "t0": {
+    "predeclaredPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-0/mvp8_6_predeclared_bets.json",
+    "predeclaredSha256": "df95fe8a1fda7b3a42ba0357914638e7f237a45c60745c10db208a7f86024371",
+    "receiptPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-0/mvp8_6_task_0_receipt.json",
+    "receiptSha256": "26151d12ea61677eb334ed22f4d15b1f4b6dd128e4e5141a76e5bb648043820d",
+    "status": "locked-before-evaluation"
+  },
+  "task": "MVP8.6-TA",
+  "transport": {
+    "fallback": "none required",
+    "llmCalls": 0,
+    "llmProposer": "not needed (card arithmetic + graph)",
+    "selection": "deterministic greedy presented index-0"
+  }
+}

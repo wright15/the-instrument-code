@@ -1,0 +1,258 @@
+{
+  "authorization": "--authorize-mvp8-6",
+  "base": {
+    "branch": "mvp8-6-functional-harmony",
+    "head": "47dcf854d38b6dd74a136811ef2262ce400e1637"
+  },
+  "cascade": [
+    {
+      "exit": 0,
+      "script": "scripts/generate-fifth-space-census.py",
+      "tail": [
+        "{\"candidateFingerprint\": \"8422af2c6477e32f48478a23c259e33d0e03e32c1c4d9b72ea85b4d35470a6d8\", \"candidateId\": \"FIFTH_SPACE_CENSUS_v0\", \"records\": 462, \"verdict\": \"confirmed\"}"
+      ]
+    },
+    {
+      "exit": 0,
+      "script": "scripts/generate-shadow-ladder.py",
+      "tail": [
+        "{\"candidateFingerprint\": \"7560c4004d9d30ed69ce2bf82fa5dec0d95ff88409b2b9aaae9a0a22d584a94e\", \"candidateId\": \"SHADOW_LADDER_v0\", \"records\": 10}"
+      ]
+    },
+    {
+      "exit": 0,
+      "script": "scripts/generate-twin-hub-convergence.py",
+      "tail": [
+        "{\"candidateFingerprint\": \"29fa575cbd4964d02594c88933a6d90f62003ff7a0fd95d47c5fdd6040b66dab\", \"candidateId\": \"TWIN_HUB_CONVERGENCE_v0\", \"verdict\": \"confirmed\"}"
+      ]
+    },
+    {
+      "exit": 0,
+      "script": "scripts/build-pentatonic-binding-audit-closure.mjs",
+      "tail": [
+        "}"
+      ]
+    },
+    {
+      "exit": 0,
+      "script": "scripts/build-fivefold-engine-promotion-evidence.py",
+      "tail": [
+        "{\"evidenceFingerprint\": \"0a9f073db852c4a93a37f4349f8880ff5df97a724835f3947321d2888eb9e32b\", \"evidenceId\": \"fivefold-engine-promotion-evidence-v1\", \"exclusionEvidenceCount\": 11, \"itemEvidenceCount\": 10, \"verdict\": \"PASS\"}"
+      ]
+    },
+    {
+      "exit": 0,
+      "script": "scripts/build-orrery-taxonomy-read-model.mjs",
+      "tail": [
+        "{\"bundleId\":\"TAXONOMY_READ_MODEL_v1\",\"recordCount\":462,\"stale\":false}"
+      ]
+    },
+    {
+      "exit": 0,
+      "script": "scripts/build-orrery-d-tier-taxonomy-dataset.mjs",
+      "tail": [
+        "{\"datasetId\":\"D_TIER_TAXONOMY_DATASET_v1\",\"recordCount\":175,\"stale\":false}"
+      ]
+    },
+    {
+      "exit": 0,
+      "script": "scripts/build-field-derivation-bundle.mjs",
+      "tail": [
+        "{\"bundleId\":\"FIELD_DERIVATION_OBS014_015_016_v1\",\"bundleFingerprint\":\"81a274217a19d3642d32473476bb033663f3ce8c9625ed7866707e822fef79d4\",\"observations\":3}"
+      ]
+    }
+  ],
+  "constraints": {
+    "cHNull": true,
+    "forcePush": false,
+    "llmCalls": 0,
+    "push": false,
+    "qEngineAdmitted": false,
+    "tag": false,
+    "zeroSymbolicFloats": true
+  },
+  "directive": "MVP8.6-FUNCTIONAL-HARMONY-DIR-1",
+  "earGate": {
+    "armA": "adopt",
+    "armB": "adopt",
+    "armC": "adopt",
+    "manifestSha256": "c169c5d932e06289dea8a55d672dc669aaf9a4e3d24c82b12e12872890254748",
+    "overallVerdict": "adopt",
+    "scorecardSha256": "e9934c25950886b41f50b7283116783e54b8ae7c7d3999533c816edad9570315",
+    "signed": true,
+    "signedBy": "Erick",
+    "signedDate": "2026-11-15",
+    "status": "SIGNED"
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "functionalHarmonyWeightsStatus": "recorded_underived_values_adopted_by_decision",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "harmonicBandStatus": "stated_hypothesis",
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + functional-harmony card (Chaldean degree hierarchy)",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "lookupPatchStatus": "unpatched_by_decision_option_c",
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "qEngineAdmissionStatus": "unadmitted",
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "ledger": {
+    "afterBytes": 465350,
+    "afterLines": 4623,
+    "afterSha256": "70a14ff39640127ca1306be86f37dd6e89d23db8bf4116354dd6d9537fd5e7ba",
+    "beforeBytes": 459845,
+    "beforeLines": 4593,
+    "beforeSha256": "60215f9d120a2da7383c4d7f29bad28196be4621735ca951ce9c8ac4d9737b1d",
+    "entry": "Governed-loop L35 landing \u2014 MVP8.6 functional harmony",
+    "prefixIdentity": true
+  },
+  "outcome": "ADOPT",
+  "payloadCount": 14,
+  "payloads": [
+    {
+      "bytes": 2846,
+      "destination": "tools/governed-loop/node-observatory/mvp8_6_harmonic.py",
+      "role": "mvp8_6_harmonic",
+      "sha256": "31c3afb529773456f6dea72b9be65054631fa3b0abafc0b1911fd6c1c7ab64bf",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-a/mvp8_6_harmonic.py"
+    },
+    {
+      "bytes": 11078,
+      "destination": "tests/test_mvp8_6_functional_harmony.py",
+      "role": "tests",
+      "sha256": "909be9f241560192adfed030178cd0b92a25cef4e45ff1368875092973ba3110",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-e/test_mvp8_6_functional_harmony.py"
+    },
+    {
+      "bytes": 97251,
+      "destination": "tools/governed-loop/node-observatory/mvp8_6_predeclared_bets.json",
+      "role": "predeclared_bets",
+      "sha256": "df95fe8a1fda7b3a42ba0357914638e7f237a45c60745c10db208a7f86024371",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-0/mvp8_6_predeclared_bets.json"
+    },
+    {
+      "bytes": 19423,
+      "destination": "tools/governed-loop/node-observatory/mvp8_6_ear_manifest.json",
+      "role": "ear_manifest_signed",
+      "sha256": "c169c5d932e06289dea8a55d672dc669aaf9a4e3d24c82b12e12872890254748",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-d/mvp8_6_ear_manifest.json"
+    },
+    {
+      "bytes": 3197,
+      "destination": "qa/mvp8_6_ear_scorecard.json",
+      "role": "ear_scorecard_signed",
+      "sha256": "e9934c25950886b41f50b7283116783e54b8ae7c7d3999533c816edad9570315",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-0/mvp8_6_ear_scorecard.json"
+    },
+    {
+      "bytes": 26481,
+      "destination": "qa/mvp8_6_task_0_receipt.json",
+      "role": "task_0_receipt",
+      "sha256": "26151d12ea61677eb334ed22f4d15b1f4b6dd128e4e5141a76e5bb648043820d",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-0/mvp8_6_task_0_receipt.json"
+    },
+    {
+      "bytes": 18396,
+      "destination": "qa/mvp8_6_task_a_receipt.json",
+      "role": "task_a_receipt",
+      "sha256": "2382f3ba9e681fb617b0317e71b0ff7d565739277d1d634fdd270410ad474be9",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-a/mvp8_6_task_a_receipt.json"
+    },
+    {
+      "bytes": 41698,
+      "destination": "qa/mvp8_6_task_b_receipt.json",
+      "role": "task_b_receipt",
+      "sha256": "fde5f2a338ec3b0d133b78d154f57e57f7e8fe1caf4ac250381850260dffabf0",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-b/mvp8_6_task_b_receipt.json"
+    },
+    {
+      "bytes": 3608,
+      "destination": "qa/mvp8_6_task_c_receipt.json",
+      "role": "task_c_receipt",
+      "sha256": "03c7a3cb58685d4301f38f1b6d5454ec13215a3ae1a6d2be0df9cceafe5b7114",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-c/mvp8_6_task_c_receipt.json"
+    },
+    {
+      "bytes": 11867,
+      "destination": "qa/mvp8_6_fence_audit.json",
+      "role": "fence_audit",
+      "sha256": "aa8db3979055e524c08e70e364c6cfba75ee543b52e95876920012105d32e657",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-c/mvp8_6_fence_audit.json"
+    },
+    {
+      "bytes": 17184,
+      "destination": "qa/mvp8_6_task_d_receipt.json",
+      "role": "task_d_receipt",
+      "sha256": "82ec3e965d2f1ba68285bd7fb53222c5f43e6c53f791adb7607feb3afac39241",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-d/mvp8_6_task_d_receipt.json"
+    },
+    {
+      "bytes": 8638,
+      "destination": "qa/mvp8_6_task_e_receipt.json",
+      "role": "task_e_receipt",
+      "sha256": "cbfe0fe21bdc99a6fe7fab39bf00d5afc76cb1cefef7b9331f33f989d907686e",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-e/mvp8_6_task_e_receipt.json"
+    },
+    {
+      "bytes": 6776,
+      "destination": "scrum/plan/mvp8-6-functional-harmony-closing-report.md",
+      "role": "closing_report",
+      "sha256": "60534c1741b5cc74bdd92e200082ec3e56069c6ccabd95d4aa815d8bf6b8ef13",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-e/mvp8-6-functional-harmony-closing-report.md"
+    },
+    {
+      "bytes": 1929,
+      "destination": "scrum/plan/mvp8-6-functional-harmony-dir-1-rev1.md",
+      "role": "directive",
+      "sha256": "86723b4ecfa0c656b97c49b20758c5976e30caccada35e9553fa4c12a8cd0462",
+      "source": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-e/mvp8-6-functional-harmony-dir-1-rev1.md"
+    }
+  ],
+  "proseConsistency": {
+    "exit": 0,
+    "verdict": "PASS",
+    "violations": 0
+  },
+  "schemaVersion": "governed-loop.mvp8_6-landing.v1",
+  "status": "STAGED",
+  "task": "L35",
+  "tests": {
+    "full": {
+      "exit": 2,
+      "note": "The five failures and the starlette collection error are pre-existing at L34 and reproduce unchanged.",
+      "tail": [
+        "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "tests/test_harmonic_orrery_api.py:10: in <module>",
+        "    from starlette.requests import Request",
+        "E   ModuleNotFoundError: No module named 'starlette'",
+        "=========================== short test summary info ============================",
+        "ERROR tests/test_harmonic_orrery_api.py",
+        "!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!",
+        "1 error in 0.32s"
+      ]
+    },
+    "targeted": {
+      "exit": 0,
+      "tail": [
+        "................                                                         [100%]",
+        "16 passed in 0.12s"
+      ]
+    }
+  },
+  "validation": {
+    "checksFailed": 0,
+    "checksPassed": 418,
+    "exit": 0,
+    "verdict": "PASS"
+  },
+  "validationNote": "Closure was re-run after the landing receipt was written and the manifest regenerated; the final closure is 418/0 PASS. The receipt itself is included in the final manifest."
+}

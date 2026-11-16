@@ -1,0 +1,179 @@
+{
+  "betSummary": {
+    "D": {
+      "pass": true,
+      "status": "SIGNED",
+      "verdicts": {
+        "armA": "adopt",
+        "armB": "adopt",
+        "armC": "adopt"
+      }
+    },
+    "F1": {
+      "measured": {
+        "accepts": 20,
+        "families": 3,
+        "seams": 9,
+        "states": 21
+      },
+      "pass": true
+    },
+    "F2": {
+      "measured": {
+        "andalusian": {
+          "completedArmsWithCompletion": 9,
+          "totalCompletions": 21
+        },
+        "authentic_5_1": {
+          "completedArmsWithCompletion": 19,
+          "totalCompletions": 192
+        },
+        "deceptive_5_6": {
+          "completedArmsWithCompletion": 18,
+          "totalCompletions": 184
+        },
+        "plagal_4_1": {
+          "completedArmsWithCompletion": 19,
+          "totalCompletions": 193
+        }
+      },
+      "pass": true
+    },
+    "F3": {
+      "measured": {
+        "cardStates": 21,
+        "delta": 0,
+        "greedyStates": 21,
+        "llmCalls": 0
+      },
+      "pass": true
+    },
+    "F4": {
+      "measured": {
+        "l34Baseline": {
+          "count": 1096,
+          "meanAtLeastPlus5": true,
+          "meanDenominator": 1096,
+          "meanNumerator": 13697,
+          "meanTimes100Trunc": 1249,
+          "sumF": 13697
+        },
+        "meanDenominator": 1095,
+        "meanNumerator": 13704,
+        "meanTimes100Trunc": 1251
+      },
+      "pass": true
+    }
+  },
+  "closingReport": {
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-e/mvp8-6-functional-harmony-closing-report.md",
+    "sha256": "60534c1741b5cc74bdd92e200082ec3e56069c6ccabd95d4aa815d8bf6b8ef13"
+  },
+  "directive": "MVP8.6-FUNCTIONAL-HARMONY-DIR-1",
+  "directiveArtifact": {
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-e/mvp8-6-functional-harmony-dir-1-rev1.md",
+    "sha256": "86723b4ecfa0c656b97c49b20758c5976e30caccada35e9553fa4c12a8cd0462"
+  },
+  "disclosures": {
+    "andalusianControlReading": "The L34 control targets the form and scores 9/20 arms / 23 completions; the F2 bar is a non-regression floor at >=8/20.",
+    "fTermMonotoneRescaling": "At a fixed per-decision step degree the F-term is a monotone rescaling of the A-term (the degree weight is a constant factor and every 7x5 row is strictly increasing in band), so the within-menu tier-1 ordering is unchanged. Measured: the three walk arms choose the identical tier-1 sets as the L34 control (equal F sums/counts); the Andalusian arm differs by one decision (3600/263 vs 3593/264). The mean-F floor passes; the measured steering difference from the live L34 control is minimal.",
+    "walkControlReading": "The requested-walk control also voices the requested steps (20/20 arms) because the arm drives the degree/stride; the default-step incidental control voices no walk (0/20). The F2 walk threshold is met; the separation is carried by the default-step control, not by the requested-walk control."
+  },
+  "earGate": {
+    "manifestPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-d/mvp8_6_ear_manifest.json",
+    "manifestSha256": "c169c5d932e06289dea8a55d672dc669aaf9a4e3d24c82b12e12872890254748",
+    "overallVerdict": "adopt",
+    "scorecardPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-0/mvp8_6_ear_scorecard.json",
+    "scorecardSha256": "e9934c25950886b41f50b7283116783e54b8ae7c7d3999533c816edad9570315",
+    "signed": true,
+    "signedAt": "2026-11-15",
+    "signedBy": "Erick",
+    "signedVerdicts": {
+      "armA": "adopt",
+      "armB": "adopt",
+      "armC": "adopt"
+    },
+    "status": "SIGNED",
+    "verbatimNotes": "These are my verbatim verdicts, and I see no reason not to adopt.",
+    "verdictNotes": {
+      "armA": "between arm AF off and arm AF on, there's a big difference in the chords that it's selecting. I can't tell what the difference is.",
+      "armB": "For the plagal 1453 and the plagal 2741, they both sound different. They both seem to be doing a vamp between one chord and the next, which is exactly what you would expect in a Plagal cadence. ... Also for the Plagal cadences, they are different chord qualities, as expected.",
+      "armC": "For the C-Walk 20 The chord changes seem to be very much related, like minimal steps in the chord changes, and it seems to be hitting all different types of chord progressions. So, it's hard for me to know what's happening, but the chord progressions definitely sound related."
+    },
+    "wavSha256": {
+      "mvp8-6-arm-a-f-off": "9acda01e6be2dccb784d47fdaf2d8f98512e679525d6969e927d3bdab0930d09",
+      "mvp8-6-arm-a-f-on": "899a724483db47e5f832f7925e4506b026a573c6070ee247a4791edba2287252",
+      "mvp8-6-arm-b-plagal-1453": "d62e5dce5be3cf301e04cb5842698709d4f82ceaf3555974bf0db932f2d8d10e",
+      "mvp8-6-arm-b-plagal-2741": "f510ad93d82f4df5100a4b817d7044a91b2bf819fdd380a946a29c135c387cbd",
+      "mvp8-6-arm-c-walk-20": "08ed0e15d9ea6379e1e3e4cd7264ffe51050ede8cc17f4b010de33af9f7d9ceb"
+    }
+  },
+  "fenceAudit": {
+    "fencesPass": true,
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-c/mvp8_6_fence_audit.json",
+    "sha256": "aa8db3979055e524c08e70e364c6cfba75ee543b52e95876920012105d32e657"
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "functionalHarmonyWeightsStatus": "recorded_underived_values_adopted_by_decision",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "harmonicBandStatus": "stated_hypothesis",
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + functional-harmony card (Chaldean degree hierarchy)",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "lookupPatchStatus": "unpatched_by_decision_option_c",
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "qEngineAdmissionStatus": "unadmitted",
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "inputs": {
+    "closingReportSha256": "60534c1741b5cc74bdd92e200082ec3e56069c6ccabd95d4aa815d8bf6b8ef13",
+    "directiveSha256": "86723b4ecfa0c656b97c49b20758c5976e30caccada35e9553fa4c12a8cd0462",
+    "earManifestSha256": "c169c5d932e06289dea8a55d672dc669aaf9a4e3d24c82b12e12872890254748",
+    "earScorecardSha256": "e9934c25950886b41f50b7283116783e54b8ae7c7d3999533c816edad9570315",
+    "fenceAuditSha256": "aa8db3979055e524c08e70e364c6cfba75ee543b52e95876920012105d32e657",
+    "landImplSha256": "805fa9045fc0805144f0d70346402b5374ffef9b69bfb650f9ddfbf351d447e4",
+    "landerSha256": "6581f40bef5c81f953eac47153b2dcf7d32d1fdae0389fcc3ba1d7ea8261d0ee",
+    "predeclaredSha256": "df95fe8a1fda7b3a42ba0357914638e7f237a45c60745c10db208a7f86024371",
+    "t0ReceiptSha256": "26151d12ea61677eb334ed22f4d15b1f4b6dd128e4e5141a76e5bb648043820d",
+    "taskAReceiptSha256": "2382f3ba9e681fb617b0317e71b0ff7d565739277d1d634fdd270410ad474be9",
+    "taskBReceiptSha256": "fde5f2a338ec3b0d133b78d154f57e57f7e8fe1caf4ac250381850260dffabf0",
+    "taskCReceiptSha256": "03c7a3cb58685d4301f38f1b6d5454ec13215a3ae1a6d2be0df9cceafe5b7114",
+    "taskDReceiptSha256": "82ec3e965d2f1ba68285bd7fb53222c5f43e6c53f791adb7607feb3afac39241",
+    "testSuiteSha256": "909be9f241560192adfed030178cd0b92a25cef4e45ff1368875092973ba3110"
+  },
+  "lander": {
+    "authorizationFlag": "--authorize-mvp8-6",
+    "implPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-e/mvp8_6_land_impl.py",
+    "implSha256": "805fa9045fc0805144f0d70346402b5374ffef9b69bfb650f9ddfbf351d447e4",
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-e/mvp8_6_land.py",
+    "refusalCheck": {
+      "exit": 2,
+      "pass": true,
+      "repoUnchanged": true,
+      "stderr": "",
+      "stdout": "REFUSED: --authorize-mvp8-6 is required"
+    },
+    "sha256": "6581f40bef5c81f953eac47153b2dcf7d32d1fdae0389fcc3ba1d7ea8261d0ee"
+  },
+  "landingStatus": "PREPARED_NOT_LANDED",
+  "llmCalls": 0,
+  "outcome": "ADOPT",
+  "repoWrites": 0,
+  "schemaVersion": "governed-loop.mvp8_6-task-e.v1",
+  "status": "COMPLETE",
+  "task": "MVP8.6-TE",
+  "technicalBetsPass": true,
+  "testSuite": {
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-e/test_mvp8_6_functional_harmony.py",
+    "sha256": "909be9f241560192adfed030178cd0b92a25cef4e45ff1368875092973ba3110"
+  }
+}

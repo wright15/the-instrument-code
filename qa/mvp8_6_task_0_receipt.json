@@ -1,0 +1,808 @@
+{
+  "baselineControl": {
+    "controlAnchors": {
+      "andalusianArmsWithCompletion": 9,
+      "andalusianPerSeedCompletions": {
+        "1269@9": 0,
+        "1389@8": 0,
+        "1459@7": 3,
+        "1627@7": 3,
+        "1715@6": 3,
+        "1835@6": 1,
+        "1939@5": 0,
+        "2363@4": 0,
+        "2485@4": 3,
+        "2745@3": 3,
+        "2873@3": 3,
+        "2963@2": 0,
+        "3285@1": 1,
+        "3417@1": 0,
+        "3537@0": 0,
+        "375@0": 0,
+        "477@11": 0,
+        "727@10": 3,
+        "877@10": 0,
+        "953@9": 0
+      },
+      "andalusianTotalCompletions": 23,
+      "defaultStep1387": {
+        "distinctFamilies": 3,
+        "distinctStates": 21,
+        "gateAccepts": 20,
+        "seamTransitions": 9,
+        "steps": 20
+      },
+      "note": "The live L34 control reproduces the landed MVP8.5 rev 2 A1 default-step arm (21/3/9, 20/20) and the A2 harmonic-pattern Andalusian result (9/20 arms, 23 total)."
+    },
+    "evidence": [
+      {
+        "bytes": 191055,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-0/baseline/l34_andalusian.jsonl",
+        "sha256": "44104db8af3d643ce2139cdcfd70ab103a9cffd8724e44c36451df141397ede5"
+      },
+      {
+        "bytes": 196408,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-0/baseline/l34_authentic_5_1.jsonl",
+        "sha256": "38c430d12693fc04d002e774bef3dc25453861ba0f3a760496faf355da7b5fb9"
+      },
+      {
+        "bytes": 200823,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-0/baseline/l34_deceptive_5_6.jsonl",
+        "sha256": "82efcf92fb4906e7fd2328ee10e1cb64320fd59efda420f6852ef470cfc28074"
+      },
+      {
+        "bytes": 9442,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-0/baseline/l34_default_1387.jsonl",
+        "sha256": "a67adce5a3e9bbe90cdeae61f859336c46bf8312847747904039168179f411f9"
+      },
+      {
+        "bytes": 188884,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-0/baseline/l34_default_step_20seeds.jsonl",
+        "sha256": "c2dce0d0a78f136dab69af0e4bcc1ba1067824aaf7b5d8389d83cc722fd861ed"
+      },
+      {
+        "bytes": 196469,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-0/baseline/l34_plagal_4_1.jsonl",
+        "sha256": "9ea5c604341135294358826c317c9679379eb2d805269503db9cc8d630cdd9d7"
+      },
+      {
+        "bytes": 60784,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-0/baseline/l34_summaries.jsonl",
+        "sha256": "f53c9b177f76f29683a779daf735e73056bc620b96434dc37a878ebc3b7ca743"
+      }
+    ],
+    "f2Baseline": {
+      "andalusian": {
+        "armsWithCompletion": 9,
+        "perSeedCompletions": {
+          "1269@9": 0,
+          "1389@8": 0,
+          "1459@7": 3,
+          "1627@7": 3,
+          "1715@6": 3,
+          "1835@6": 1,
+          "1939@5": 0,
+          "2363@4": 0,
+          "2485@4": 3,
+          "2745@3": 3,
+          "2873@3": 3,
+          "2963@2": 0,
+          "3285@1": 1,
+          "3417@1": 0,
+          "3537@0": 0,
+          "375@0": 0,
+          "477@11": 0,
+          "727@10": 3,
+          "877@10": 0,
+          "953@9": 0
+        },
+        "perSeedStates": {
+          "1269@9": 21,
+          "1389@8": 21,
+          "1459@7": 20,
+          "1627@7": 17,
+          "1715@6": 20,
+          "1835@6": 21,
+          "1939@5": 21,
+          "2363@4": 21,
+          "2485@4": 17,
+          "2745@3": 17,
+          "2873@3": 17,
+          "2963@2": 21,
+          "3285@1": 21,
+          "3417@1": 21,
+          "3537@0": 22,
+          "375@0": 21,
+          "477@11": 21,
+          "727@10": 17,
+          "877@10": 21,
+          "953@9": 21
+        },
+        "seedCount": 20,
+        "totalCompletions": 23,
+        "traceVerifiedArmsWithCompletion": 9,
+        "traceVerifiedPerSeedCompletions": {
+          "1269@9": 0,
+          "1389@8": 0,
+          "1459@7": 3,
+          "1627@7": 3,
+          "1715@6": 3,
+          "1835@6": 1,
+          "1939@5": 0,
+          "2363@4": 0,
+          "2485@4": 3,
+          "2745@3": 3,
+          "2873@3": 3,
+          "2963@2": 0,
+          "3285@1": 1,
+          "3417@1": 0,
+          "3537@0": 0,
+          "375@0": 0,
+          "477@11": 0,
+          "727@10": 3,
+          "877@10": 0,
+          "953@9": 0
+        },
+        "traceVerifiedTotalCompletions": 23
+      },
+      "definition": "completion = the traversed node sequence voices the pattern's walk in order on consecutive bars (trace-verified)",
+      "note": "walkArms is the L34 card under the identical requested-walk arm. walkDefaultStepIncidental is the L34 card under the default step, which targets no walk; it is the separation diagnostic. The Andalusian control targets the form and reproduces 9/20 arms / 23 total.",
+      "walkArms": {
+        "authentic_5_1": {
+          "armsWithCompletion": 20,
+          "perSeedCompletions": {
+            "1269@9": 10,
+            "1389@8": 10,
+            "1459@7": 10,
+            "1627@7": 10,
+            "1715@6": 10,
+            "1835@6": 10,
+            "1939@5": 10,
+            "2363@4": 10,
+            "2485@4": 10,
+            "2745@3": 10,
+            "2873@3": 10,
+            "2963@2": 10,
+            "3285@1": 10,
+            "3417@1": 10,
+            "3537@0": 10,
+            "375@0": 10,
+            "477@11": 2,
+            "727@10": 10,
+            "877@10": 10,
+            "953@9": 10
+          },
+          "perSeedStates": {
+            "1269@9": 21,
+            "1389@8": 21,
+            "1459@7": 18,
+            "1627@7": 11,
+            "1715@6": 21,
+            "1835@6": 12,
+            "1939@5": 20,
+            "2363@4": 21,
+            "2485@4": 16,
+            "2745@3": 19,
+            "2873@3": 21,
+            "2963@2": 20,
+            "3285@1": 21,
+            "3417@1": 21,
+            "3537@0": 22,
+            "375@0": 21,
+            "477@11": 6,
+            "727@10": 21,
+            "877@10": 21,
+            "953@9": 21
+          },
+          "seedCount": 20,
+          "totalCompletions": 192,
+          "traceVerifiedArmsWithCompletion": 20,
+          "traceVerifiedPerSeedCompletions": {
+            "1269@9": 10,
+            "1389@8": 10,
+            "1459@7": 10,
+            "1627@7": 10,
+            "1715@6": 10,
+            "1835@6": 10,
+            "1939@5": 10,
+            "2363@4": 10,
+            "2485@4": 10,
+            "2745@3": 10,
+            "2873@3": 10,
+            "2963@2": 10,
+            "3285@1": 10,
+            "3417@1": 10,
+            "3537@0": 10,
+            "375@0": 10,
+            "477@11": 2,
+            "727@10": 10,
+            "877@10": 10,
+            "953@9": 10
+          },
+          "traceVerifiedTotalCompletions": 192
+        },
+        "deceptive_5_6": {
+          "armsWithCompletion": 20,
+          "perSeedCompletions": {
+            "1269@9": 10,
+            "1389@8": 10,
+            "1459@7": 10,
+            "1627@7": 10,
+            "1715@6": 10,
+            "1835@6": 10,
+            "1939@5": 10,
+            "2363@4": 10,
+            "2485@4": 10,
+            "2745@3": 10,
+            "2873@3": 10,
+            "2963@2": 10,
+            "3285@1": 10,
+            "3417@1": 10,
+            "3537@0": 10,
+            "375@0": 10,
+            "477@11": 2,
+            "727@10": 10,
+            "877@10": 10,
+            "953@9": 2
+          },
+          "perSeedStates": {
+            "1269@9": 21,
+            "1389@8": 21,
+            "1459@7": 18,
+            "1627@7": 21,
+            "1715@6": 21,
+            "1835@6": 21,
+            "1939@5": 20,
+            "2363@4": 16,
+            "2485@4": 19,
+            "2745@3": 11,
+            "2873@3": 18,
+            "2963@2": 20,
+            "3285@1": 12,
+            "3417@1": 21,
+            "3537@0": 21,
+            "375@0": 17,
+            "477@11": 6,
+            "727@10": 21,
+            "877@10": 21,
+            "953@9": 6
+          },
+          "seedCount": 20,
+          "totalCompletions": 184,
+          "traceVerifiedArmsWithCompletion": 20,
+          "traceVerifiedPerSeedCompletions": {
+            "1269@9": 10,
+            "1389@8": 10,
+            "1459@7": 10,
+            "1627@7": 10,
+            "1715@6": 10,
+            "1835@6": 10,
+            "1939@5": 10,
+            "2363@4": 10,
+            "2485@4": 10,
+            "2745@3": 10,
+            "2873@3": 10,
+            "2963@2": 10,
+            "3285@1": 10,
+            "3417@1": 10,
+            "3537@0": 10,
+            "375@0": 10,
+            "477@11": 2,
+            "727@10": 10,
+            "877@10": 10,
+            "953@9": 2
+          },
+          "traceVerifiedTotalCompletions": 184
+        },
+        "plagal_4_1": {
+          "armsWithCompletion": 20,
+          "perSeedCompletions": {
+            "1269@9": 10,
+            "1389@8": 10,
+            "1459@7": 10,
+            "1627@7": 10,
+            "1715@6": 10,
+            "1835@6": 10,
+            "1939@5": 10,
+            "2363@4": 10,
+            "2485@4": 10,
+            "2745@3": 10,
+            "2873@3": 10,
+            "2963@2": 10,
+            "3285@1": 10,
+            "3417@1": 10,
+            "3537@0": 10,
+            "375@0": 10,
+            "477@11": 3,
+            "727@10": 10,
+            "877@10": 10,
+            "953@9": 10
+          },
+          "perSeedStates": {
+            "1269@9": 21,
+            "1389@8": 21,
+            "1459@7": 18,
+            "1627@7": 11,
+            "1715@6": 21,
+            "1835@6": 15,
+            "1939@5": 22,
+            "2363@4": 21,
+            "2485@4": 12,
+            "2745@3": 20,
+            "2873@3": 21,
+            "2963@2": 22,
+            "3285@1": 18,
+            "3417@1": 21,
+            "3537@0": 21,
+            "375@0": 21,
+            "477@11": 9,
+            "727@10": 21,
+            "877@10": 21,
+            "953@9": 18
+          },
+          "seedCount": 20,
+          "totalCompletions": 193,
+          "traceVerifiedArmsWithCompletion": 20,
+          "traceVerifiedPerSeedCompletions": {
+            "1269@9": 10,
+            "1389@8": 10,
+            "1459@7": 10,
+            "1627@7": 10,
+            "1715@6": 10,
+            "1835@6": 10,
+            "1939@5": 10,
+            "2363@4": 10,
+            "2485@4": 10,
+            "2745@3": 10,
+            "2873@3": 10,
+            "2963@2": 10,
+            "3285@1": 10,
+            "3417@1": 10,
+            "3537@0": 10,
+            "375@0": 10,
+            "477@11": 3,
+            "727@10": 10,
+            "877@10": 10,
+            "953@9": 10
+          },
+          "traceVerifiedTotalCompletions": 193
+        }
+      },
+      "walkDefaultStepIncidental": {
+        "authentic_5_1": {
+          "note": "L34 card under the default step (1,2,3), no walk requested; measures incidental walk voicing.",
+          "seedCount": 20,
+          "traceVerifiedArmsWithCompletion": 0,
+          "traceVerifiedPerSeedCompletions": {
+            "1269@9": 0,
+            "1389@8": 0,
+            "1459@7": 0,
+            "1627@7": 0,
+            "1715@6": 0,
+            "1835@6": 0,
+            "1939@5": 0,
+            "2363@4": 0,
+            "2485@4": 0,
+            "2745@3": 0,
+            "2873@3": 0,
+            "2963@2": 0,
+            "3285@1": 0,
+            "3417@1": 0,
+            "3537@0": 0,
+            "375@0": 0,
+            "477@11": 0,
+            "727@10": 0,
+            "877@10": 0,
+            "953@9": 0
+          },
+          "traceVerifiedTotalCompletions": 0
+        },
+        "deceptive_5_6": {
+          "note": "L34 card under the default step (1,2,3), no walk requested; measures incidental walk voicing.",
+          "seedCount": 20,
+          "traceVerifiedArmsWithCompletion": 0,
+          "traceVerifiedPerSeedCompletions": {
+            "1269@9": 0,
+            "1389@8": 0,
+            "1459@7": 0,
+            "1627@7": 0,
+            "1715@6": 0,
+            "1835@6": 0,
+            "1939@5": 0,
+            "2363@4": 0,
+            "2485@4": 0,
+            "2745@3": 0,
+            "2873@3": 0,
+            "2963@2": 0,
+            "3285@1": 0,
+            "3417@1": 0,
+            "3537@0": 0,
+            "375@0": 0,
+            "477@11": 0,
+            "727@10": 0,
+            "877@10": 0,
+            "953@9": 0
+          },
+          "traceVerifiedTotalCompletions": 0
+        },
+        "plagal_4_1": {
+          "note": "L34 card under the default step (1,2,3), no walk requested; measures incidental walk voicing.",
+          "seedCount": 20,
+          "traceVerifiedArmsWithCompletion": 0,
+          "traceVerifiedPerSeedCompletions": {
+            "1269@9": 0,
+            "1389@8": 0,
+            "1459@7": 0,
+            "1627@7": 0,
+            "1715@6": 0,
+            "1835@6": 0,
+            "1939@5": 0,
+            "2363@4": 0,
+            "2485@4": 0,
+            "2745@3": 0,
+            "2873@3": 0,
+            "2963@2": 0,
+            "3285@1": 0,
+            "3417@1": 0,
+            "3537@0": 0,
+            "375@0": 0,
+            "477@11": 0,
+            "727@10": 0,
+            "877@10": 0,
+            "953@9": 0
+          },
+          "traceVerifiedTotalCompletions": 0
+        }
+      }
+    },
+    "f4Baseline": {
+      "allPatternArms": {
+        "count": 1096,
+        "meanAtLeastPlus5": true,
+        "meanDenominator": 1096,
+        "meanNumerator": 13697,
+        "meanTimes100Trunc": 1249,
+        "sumF": 13697
+      },
+      "andalusian": {
+        "count": 264,
+        "meanAtLeastPlus5": true,
+        "meanDenominator": 264,
+        "meanNumerator": 3593,
+        "meanTimes100Trunc": 1360,
+        "sumF": 3593
+      },
+      "authentic_5_1": {
+        "count": 274,
+        "meanAtLeastPlus5": true,
+        "meanDenominator": 274,
+        "meanNumerator": 4336,
+        "meanTimes100Trunc": 1582,
+        "sumF": 4336
+      },
+      "deceptive_5_6": {
+        "count": 270,
+        "meanAtLeastPlus5": true,
+        "meanDenominator": 270,
+        "meanNumerator": 2678,
+        "meanTimes100Trunc": 991,
+        "sumF": 2678
+      },
+      "defaultStep1387": {
+        "count": 11,
+        "meanAtLeastPlus5": true,
+        "meanDenominator": 11,
+        "meanNumerator": 169,
+        "meanTimes100Trunc": 1536,
+        "sumF": 169
+      },
+      "defaultStep20Seeds": {
+        "count": 284,
+        "meanAtLeastPlus5": true,
+        "meanDenominator": 284,
+        "meanNumerator": 4865,
+        "meanTimes100Trunc": 1713,
+        "sumF": 4865
+      },
+      "plagal_4_1": {
+        "count": 288,
+        "meanAtLeastPlus5": true,
+        "meanDenominator": 288,
+        "meanNumerator": 3090,
+        "meanTimes100Trunc": 1072,
+        "sumF": 3090
+      }
+    }
+  },
+  "directive": "MVP8.6-FUNCTIONAL-HARMONY-DIR-1",
+  "endorsement": {
+    "date": "2026-11-15",
+    "signedBy": "Erick",
+    "text": "Yes its confirmed (itemized confirmation list covering all eight \u00a79 decisions)"
+  },
+  "frozenArtifacts": {
+    "cardWeightsSha256": "bff1cc4cb270e4883125c6ca431dd8440d8f73be3e33be51fc54c580ad7dc289",
+    "earScorecard": {
+      "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-0/mvp8_6_ear_scorecard.json",
+      "sha256": "6f9b38faa412f249c66a8890fbe62d59e7098648f9c20d0a3833386311769945"
+    },
+    "fTableD50": {
+      "1": {
+        "H1": 23,
+        "H2": 11,
+        "H3": 0,
+        "H4": -11,
+        "H5": -23
+      },
+      "2": {
+        "H1": 11,
+        "H2": 5,
+        "H3": 0,
+        "H4": -5,
+        "H5": -11
+      },
+      "3": {
+        "H1": 8,
+        "H2": 4,
+        "H3": 0,
+        "H4": -4,
+        "H5": -8
+      },
+      "4": {
+        "H1": 7,
+        "H2": 3,
+        "H3": 0,
+        "H4": -3,
+        "H5": -7
+      },
+      "5": {
+        "H1": 15,
+        "H2": 7,
+        "H3": 0,
+        "H4": -7,
+        "H5": -15
+      },
+      "6": {
+        "H1": 8,
+        "H2": 4,
+        "H3": 0,
+        "H4": -4,
+        "H5": -8
+      },
+      "7": {
+        "H1": 7,
+        "H2": 3,
+        "H3": 0,
+        "H4": -3,
+        "H5": -7
+      }
+    },
+    "harmonicAnalysisSha256": "2fc87cce5db2ed67f3ae7ae414d0aba4dc244b729730f5420c83fb4cc6b3bdd0",
+    "predeclaredBets": {
+      "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_6_functional_harmony/task-0/mvp8_6_predeclared_bets.json",
+      "sha256": "df95fe8a1fda7b3a42ba0357914638e7f237a45c60745c10db208a7f86024371"
+    }
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "functionalHarmonyWeightsStatus": "recorded_underived_values_adopted_by_decision",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "harmonicBandStatus": "stated_hypothesis",
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + functional-harmony card (Chaldean degree hierarchy)",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "lookupPatchStatus": "unpatched_by_decision_option_c",
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "qEngineAdmissionStatus": "unadmitted",
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "handoff": {
+    "bundle": "seven-governors-functional-harmony-handoff-v3",
+    "declaredZipSha256Prefix": "65a05447",
+    "files": {
+      "README.md": {
+        "actual": "09adfd0efa62ace1b098c38f1ef54b43971b644908623f8aa7535146ed8563f4",
+        "expected": "09adfd0efa62ace1b098c38f1ef54b43971b644908623f8aa7535146ed8563f4",
+        "match": true
+      },
+      "analysis/character-score-462.py": {
+        "actual": "b660673cf5807097201b4b5bb6c329eed2cf680bbaff75d95518f6731ce2be8e",
+        "expected": "b660673cf5807097201b4b5bb6c329eed2cf680bbaff75d95518f6731ce2be8e",
+        "match": true
+      },
+      "analysis/diatonic-shared-inventory-check.py": {
+        "actual": "f9fc6b413178b16b1265ce86697af9ea29fca27581a790e78508b5f9093a320b",
+        "expected": "f9fc6b413178b16b1265ce86697af9ea29fca27581a790e78508b5f9093a320b",
+        "match": true
+      },
+      "analysis/diatonic-shared-inventory-theorem.md": {
+        "actual": "a1dea54e6b84aa6b1a1c768e03c4239f947fc7d92042aa0ec9b60e271fa69ef8",
+        "expected": "a1dea54e6b84aa6b1a1c768e03c4239f947fc7d92042aa0ec9b60e271fa69ef8",
+        "match": true
+      },
+      "analysis/directive-mvp8-5-harmonic-design-DRAFT.md": {
+        "actual": "066f4fab4da437d37089d6a4395e84f41bb9bd3b403e7343385d95270d199818",
+        "expected": "066f4fab4da437d37089d6a4395e84f41bb9bd3b403e7343385d95270d199818",
+        "match": true
+      },
+      "analysis/next-decisions-signoff.md": {
+        "actual": "d7ad66adbd8fe120c502de9f1bf8d11ce4e8b60b63bf843be3c8b5bdf8f69023",
+        "expected": "d7ad66adbd8fe120c502de9f1bf8d11ce4e8b60b63bf843be3c8b5bdf8f69023",
+        "match": true
+      },
+      "directive/directive-mvp8-6-functional-harmony-DRAFT.md": {
+        "actual": "5f99bd6e76da0cacc7fa36475276dfc47e5efe46caf83b4c57e74bc2981dbfc7",
+        "expected": "5f99bd6e76da0cacc7fa36475276dfc47e5efe46caf83b4c57e74bc2981dbfc7",
+        "match": true
+      }
+    },
+    "harmonicTable": {
+      "path": "/home/erick/workspace/c-copies/seven-governors-harmonic-design-handoff-v1/analysis/harmonic-triad-analysis.json",
+      "sha256": "2fc87cce5db2ed67f3ae7ae414d0aba4dc244b729730f5420c83fb4cc6b3bdd0",
+      "status": "stated_hypothesis_source_for_A_term_bands"
+    },
+    "materialRoot": "/home/erick/workspace/c-copies/functional-harmony/seven-governors-functional-harmony-handoff-v3",
+    "verificationNote": "Per-file hashes of the extracted endorsed material are verified; the relay-declared zip prefix 65a05447 is recorded as the bundle id.",
+    "zipPresentInWorkspace": false
+  },
+  "llmCalls": 0,
+  "lookupInvariant": {
+    "degreeFunctionLines": "166-167",
+    "degreeFunctionSnippetSha256": "66958ee0b5d17b0b75af2899ebe85c987c31af5bfd73c0b672782178037f6d2b",
+    "lookupLine": 217,
+    "lookupSnippetSha256": "21b307c972fa482a453157ce309dbcfa3a6cb4b032a448bf9d10d1074bba00b5",
+    "lookupText": "base = self.weights.get(degree, self.w_seam_base)",
+    "note": "Option C: the office-name lookup stays unpatched; weights enter only via the tier-1 F-term.",
+    "patched": false,
+    "path": "tools/governed-loop/mvp4/task-a/mvp4_task_a.py",
+    "sha256": "54210af9e303554b453bb5018e5cc740ea4108d0b42cc44396350b89599c75ab"
+  },
+  "opening": {
+    "checksumsSha256": "2832ee53dee50c1835322e05aaab396c0f4daff6dddecfc3ee8af8f32adf0a84",
+    "head": "47dcf854d38b6dd74a136811ef2262ce400e1637",
+    "ledger": {
+      "bytes": 459845,
+      "lines": 4593,
+      "sha256": "60215f9d120a2da7383c4d7f29bad28196be4621735ca951ce9c8ac4d9737b1d"
+    },
+    "manifest": {
+      "files": 2056,
+      "sha256": "1cfbb46d1f7d8e1a4028b190f44d14fffb6d3a66472bfc8c20ca77273af192a3",
+      "totalBytes": 303776202
+    },
+    "pins": {
+      "tests/test_mvp8_5_harmonic_design.py": {
+        "actual": "455cd211e26293b190782481b28aefe1c10e9d914496698b6ac4730d000d18eb",
+        "expected": "455cd211e26293b190782481b28aefe1c10e9d914496698b6ac4730d000d18eb",
+        "match": true
+      },
+      "tools/governed-loop/mvp3-archive/task-a/mvp3_chaldean_card.json": {
+        "actual": "bff1cc4cb270e4883125c6ca431dd8440d8f73be3e33be51fc54c580ad7dc289",
+        "expected": "bff1cc4cb270e4883125c6ca431dd8440d8f73be3e33be51fc54c580ad7dc289",
+        "match": true
+      },
+      "tools/governed-loop/mvp4/task-a/mvp4_dynamic_chaldean_card.json": {
+        "actual": "6486599187687edb1e28481b2bbc79d9a11a06001e4a237505c5e44c1c1a1469",
+        "expected": "6486599187687edb1e28481b2bbc79d9a11a06001e4a237505c5e44c1c1a1469",
+        "match": true
+      },
+      "tools/governed-loop/mvp4/task-a/mvp4_task_a.py": {
+        "actual": "54210af9e303554b453bb5018e5cc740ea4108d0b42cc44396350b89599c75ab",
+        "expected": "54210af9e303554b453bb5018e5cc740ea4108d0b42cc44396350b89599c75ab",
+        "match": true
+      },
+      "tools/governed-loop/mvp6_3/task-b/mvp6_3_fade_renderer.py": {
+        "actual": "38332e34a1068bd3194ab354ec0654727e3d328b76f1614dbad84d0e94d83367",
+        "expected": "38332e34a1068bd3194ab354ec0654727e3d328b76f1614dbad84d0e94d83367",
+        "match": true
+      },
+      "tools/governed-loop/mvp8/mvp8_common.py": {
+        "actual": "8ab4b215e6965c6100ad031b5de9aac2e492e5f100b70d00c2d6d4a11d71d200",
+        "expected": "8ab4b215e6965c6100ad031b5de9aac2e492e5f100b70d00c2d6d4a11d71d200",
+        "match": true
+      },
+      "tools/governed-loop/mvp8/task-b/mvp8_pentatonic_q_engine.py": {
+        "actual": "45225a04df8f57a6eda85b5bc10a167e81b6ba34c2ecea4782781af9fe3b955d",
+        "expected": "45225a04df8f57a6eda85b5bc10a167e81b6ba34c2ecea4782781af9fe3b955d",
+        "match": true
+      },
+      "tools/governed-loop/node-observatory/degree_ladder.py": {
+        "actual": "f8c8767e0c4db0a59199167bd3062cc32eb53589a3bd67b895c91153e189c0bd",
+        "expected": "f8c8767e0c4db0a59199167bd3062cc32eb53589a3bd67b895c91153e189c0bd",
+        "match": true
+      },
+      "tools/governed-loop/node-observatory/mvp8_2_common.py": {
+        "actual": "2f863a9a6051e7dbf726c721a61c210926e276076193e813f5a4c7d85cf4d80d",
+        "expected": "2f863a9a6051e7dbf726c721a61c210926e276076193e813f5a4c7d85cf4d80d",
+        "match": true
+      },
+      "tools/governed-loop/node-observatory/mvp8_3_common.py": {
+        "actual": "7d9f0bf3870d210f1e846f1fcd518df8a746b4208f2cb051bdb4516b18654ba8",
+        "expected": "7d9f0bf3870d210f1e846f1fcd518df8a746b4208f2cb051bdb4516b18654ba8",
+        "match": true
+      },
+      "tools/governed-loop/node-observatory/mvp8_5_harmonic.py": {
+        "actual": "cf3037675030489db6a0eb238d7f061f640f9874ee2a0694a9feb0559a422266",
+        "expected": "cf3037675030489db6a0eb238d7f061f640f9874ee2a0694a9feb0559a422266",
+        "match": true
+      },
+      "tools/governed-loop/node-observatory/mvp8_5_predeclared_bets.json": {
+        "actual": "2c71f9d6f668572aded07246b25f7667b517b08ca7a2727edd1fd75628fcd640",
+        "expected": "2c71f9d6f668572aded07246b25f7667b517b08ca7a2727edd1fd75628fcd640",
+        "match": true
+      },
+      "tools/governed-loop/node-observatory/node_observatory.py": {
+        "actual": "246d4d68b0c44b6cc2466a5457367120fbe3926f078140659903f228088d2cb0",
+        "expected": "246d4d68b0c44b6cc2466a5457367120fbe3926f078140659903f228088d2cb0",
+        "match": true
+      },
+      "tools/governed-loop/node-observatory/node_observatory_degree.py": {
+        "actual": "6d95c82462a78ae2bb304404300e0af3c1790f9c800c8a41fa57730bfba3b69f",
+        "expected": "6d95c82462a78ae2bb304404300e0af3c1790f9c800c8a41fa57730bfba3b69f",
+        "match": true
+      },
+      "tools/governed-loop/node-observatory/node_observatory_engine.py": {
+        "actual": "43c172ccfcb725db94cc9d9252f7cefb501377b952e901ba5eb815c837491f43",
+        "expected": "43c172ccfcb725db94cc9d9252f7cefb501377b952e901ba5eb815c837491f43",
+        "match": true
+      },
+      "tools/governed-loop/node-observatory/pattern_query.py": {
+        "actual": "9258312e98caeb8f9e4b826b219d3380dce49bf4c10a2e4ee158cea20560355a",
+        "expected": "9258312e98caeb8f9e4b826b219d3380dce49bf4c10a2e4ee158cea20560355a",
+        "match": true
+      }
+    },
+    "releaseClosure": {
+      "checksFailed": 0,
+      "checksPassed": 418,
+      "validationSha256": "6455c21f3db7f254968992e7b13f8ea3c0d1361dee09e23a39dc9efaa108f060",
+      "verdict": "PASS"
+    },
+    "treeClean": true
+  },
+  "repoWrites": 0,
+  "schemaVersion": "governed-loop.mvp8_6-task-0.v1",
+  "seeds": {
+    "count": 20,
+    "list": [
+      "375@0",
+      "477@11",
+      "727@10",
+      "877@10",
+      "953@9",
+      "1269@9",
+      "1389@8",
+      "1459@7",
+      "1627@7",
+      "1715@6",
+      "1835@6",
+      "1939@5",
+      "2363@4",
+      "2485@4",
+      "2745@3",
+      "2873@3",
+      "2963@2",
+      "3285@1",
+      "3417@1",
+      "3537@0"
+    ],
+    "rule": "governed strong-core nodes sorted by (mask, phase); index i*n//20 for i in 0..19",
+    "strongCore": {
+      "boundaryStrongCoreNodes": 540,
+      "governedStrongCoreNodes": 2388,
+      "oneWayNodes": 276,
+      "reachableNodes": 3204,
+      "strongCoreNodes": 2928
+    }
+  },
+  "status": "COMPLETE",
+  "task": "MVP8.6-T0"
+}
