@@ -1,0 +1,11 @@
+--- /home/erick/projects/integrated-release/tools/governed-loop/mvp8/task-b/mvp8_pentatonic_q_engine.py	2026-11-15 12:00:05.972638064 -0500
++++ /home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-a/mvp8_pentatonic_q_engine_strict.py	2026-11-16 19:09:36.544153976 -0500
+@@ -243,7 +243,7 @@
+                 emitted = self._snap_pc(emitted, focal_pcs, self.parse(node)[1])
+                 action = "snapped_to_focal"
+                 focal_hit = True
+-            elif orbit_index is not None and 0 <= orbit_index <= 4:
++            elif orbit_index is not None:
+                 emitted = self._snap_pc(emitted, focal_pcs, self.parse(node)[1])
+                 action = "snapped_to_focal"
+                 focal_hit = True

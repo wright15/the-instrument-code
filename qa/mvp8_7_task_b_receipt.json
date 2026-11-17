@@ -1,0 +1,380 @@
+{
+  "directive": "MVP8.7-KERNEL-MELODY-DIR-1",
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "functionalHarmonyWeightsStatus": "recorded_underived_values_adopted_by_decision",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "harmonicBandStatus": "stated_hypothesis",
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + kernel-melody runtime overlay (strict focal snap)",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "lookupPatchStatus": "unpatched_by_decision_option_c",
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "qEngineAdmissionStatus": "unadmitted",
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "inputs": {
+    "predeclaredBetsSha256": "82f32fa5be6df9792773c45206c59833cf773e593c4393ce775bbdfa491cd590",
+    "strictEngineSha256": "6be94eee1573dcfeabf6980331118acb3682a4925c1349eed78e61a3f8d29f23",
+    "t0ReceiptSha256": "5d3121aae9c59497febeb59ba4cd5581e5453f9ddd2f1fa54daa0356d9d719c9",
+    "taskAReceiptSha256": "2781f719b31300fe4ede1bffc7ac7ada67988d9636ced72abe714372b0777b6b"
+  },
+  "k1": {
+    "dwell": {
+      "actions": {
+        "direct_focal": 31284,
+        "snapped_to_focal": 13068
+      },
+      "censusPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-b/mvp8_7_k1_dwell_census.jsonl",
+      "censusSha256": "5e6a47693936341d945479f81259b213d6ff87a3d68e1203049993f8b9e1a8a5",
+      "focalSetClasses": {
+        "5-1": 12,
+        "5-10": 12,
+        "5-11": 12,
+        "5-13": 24,
+        "5-20": 444,
+        "5-23": 384,
+        "5-24": 276,
+        "5-25": 384,
+        "5-27": 828,
+        "5-29": 240,
+        "5-34": 72,
+        "5-35": 708,
+        "5-Z12": 288,
+        "5-Z17": 12
+      },
+      "leakNodes": [],
+      "nodeCount": 3696,
+      "outsideFocalSet": 0,
+      "pass": true,
+      "projectionModes": {
+        "degree_modulo_7": 18480,
+        "direct_orbit_pc": 25872
+      },
+      "steps": 44352,
+      "stillSet": {
+        "actions": {},
+        "focalHolds": 0,
+        "leaks": 0,
+        "rows": 0
+      }
+    },
+    "transit": {
+      "actions": {
+        "direct_focal": 5475,
+        "snapped_to_focal": 2005
+      },
+      "censusPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-b/mvp8_7_k1_transit_census.jsonl",
+      "censusSha256": "069cd73e1850f946f491d4adcf8ba30a2da706061e78c27c3685b4d2bf6802bb",
+      "leakPairs": [],
+      "outsideFocalSet": 0,
+      "pairCount": 440,
+      "pass": true,
+      "projectionModes": {
+        "degree_modulo_7": 2966,
+        "direct_orbit_pc": 4514
+      },
+      "steps": 7480,
+      "stillSet": {
+        "actions": {},
+        "focalHolds": 0,
+        "leaks": 0,
+        "rows": 0
+      }
+    }
+  },
+  "k2": {
+    "changedRows": 202,
+    "detailPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-b/mvp8_7_k2_diff_details.jsonl",
+    "detailSha256": "ee5ae11a805e03f911835e9884c489061affa6efad861822c87b7e86df296f4f",
+    "pass": true,
+    "summaries": [
+      {
+        "actionDiffRows": 48,
+        "emittedPcDiffRows": 48,
+        "identityMismatches": 0,
+        "label": "2741@0",
+        "modalColorRows": 48,
+        "pass": true,
+        "rows": 144,
+        "tailIndices": {
+          "10": 12,
+          "11": 12,
+          "5": 12,
+          "6": 12
+        }
+      },
+      {
+        "actionDiffRows": 36,
+        "emittedPcDiffRows": 36,
+        "identityMismatches": 0,
+        "label": "1453@0",
+        "modalColorRows": 36,
+        "pass": true,
+        "rows": 144,
+        "tailIndices": {
+          "5": 12,
+          "8": 12,
+          "9": 12
+        }
+      },
+      {
+        "actionDiffRows": 36,
+        "emittedPcDiffRows": 36,
+        "identityMismatches": 0,
+        "label": "2773@0",
+        "modalColorRows": 36,
+        "pass": true,
+        "rows": 144,
+        "tailIndices": {
+          "10": 12,
+          "5": 12,
+          "6": 12
+        }
+      },
+      {
+        "actionDiffRows": 36,
+        "emittedPcDiffRows": 36,
+        "identityMismatches": 0,
+        "label": "1717@0",
+        "modalColorRows": 36,
+        "pass": true,
+        "rows": 144,
+        "tailIndices": {
+          "10": 12,
+          "11": 12,
+          "6": 12
+        }
+      },
+      {
+        "actionDiffRows": 46,
+        "emittedPcDiffRows": 46,
+        "identityMismatches": 0,
+        "label": "f1-default-step",
+        "modalColorRows": 46,
+        "pass": true,
+        "rows": 240,
+        "tailIndices": {
+          "10": 5,
+          "11": 7,
+          "5": 1,
+          "6": 13,
+          "7": 8,
+          "8": 10,
+          "9": 2
+        }
+      }
+    ]
+  },
+  "k3": {
+    "pass": true,
+    "renders": [
+      {
+        "actionCensus": {
+          "direct_focal": 96,
+          "snapped_to_focal": 48
+        },
+        "clippedSamples": 0,
+        "dyadCensus": {
+          "dyadSteps": 36,
+          "dyadUnisonLeaks": 0,
+          "outOfMaskLeadNotes": 0,
+          "partnerNotes": 36,
+          "primarySteps": 144
+        },
+        "expectedSamples": 1905120,
+        "expectedWavSha256": "5b876c9e1147a10d9904fdfbadd882431bcf061220d7989dafda60fe40566ac1",
+        "midiAudit": {
+          "dyadPresenceMatch": true,
+          "leadPrimaryMatch": true,
+          "outOfMaskLeadNotes": 0,
+          "outOfMaskPadNotes": 0,
+          "padVoicedMatch": true
+        },
+        "midiSha256": "60853ca8f26c8e9dcdbf544e615bab6f93d6d3e4622c15de115615835639b5a8",
+        "name": "mvp8-7-strict-plagal-2741",
+        "nonFiniteSamples": 0,
+        "outsideFocal": [],
+        "peakQ15": 8328,
+        "projectionCensus": {
+          "degree_modulo_7": 60,
+          "direct_orbit_pc": 84
+        },
+        "reRenderMatch": true,
+        "rmsMilli": 63,
+        "samples": 1905120,
+        "seed": "2741@0",
+        "sheetSha256": "d4f20790cac0d877b6c63a84218d67222f926deb4c22c92b65b7f377bfe59e6a",
+        "stillSet": {
+          "actions": {},
+          "focalHolds": 0,
+          "leaks": 0,
+          "rows": 0
+        },
+        "tracePath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-b/renders/mvp8-7-strict-plagal-2741.jsonl",
+        "traceSha256": "702ec83523cc4820f7dc1b8891fd0d85cad524bec25082474dd360a42a5ecfc3",
+        "wavMatch": true,
+        "wavSha256": "5b876c9e1147a10d9904fdfbadd882431bcf061220d7989dafda60fe40566ac1"
+      },
+      {
+        "actionCensus": {
+          "direct_focal": 108,
+          "snapped_to_focal": 36
+        },
+        "clippedSamples": 0,
+        "dyadCensus": {
+          "dyadSteps": 36,
+          "dyadUnisonLeaks": 0,
+          "outOfMaskLeadNotes": 0,
+          "partnerNotes": 36,
+          "primarySteps": 144
+        },
+        "expectedSamples": 1905120,
+        "expectedWavSha256": "fb259614dcd39463e6e255032d7c1d948a52c5951017aa60ec5026f68ea67129",
+        "midiAudit": {
+          "dyadPresenceMatch": true,
+          "leadPrimaryMatch": true,
+          "outOfMaskLeadNotes": 0,
+          "outOfMaskPadNotes": 0,
+          "padVoicedMatch": true
+        },
+        "midiSha256": "04686d040c9c797d707c4a4bbba44c2d9939d99287398b9fe3f70455c16b1f92",
+        "name": "mvp8-7-strict-plagal-1453",
+        "nonFiniteSamples": 0,
+        "outsideFocal": [],
+        "peakQ15": 9518,
+        "projectionCensus": {
+          "degree_modulo_7": 60,
+          "direct_orbit_pc": 84
+        },
+        "reRenderMatch": true,
+        "rmsMilli": 51,
+        "samples": 1905120,
+        "seed": "1453@0",
+        "sheetSha256": "c84ce6c2cf5938ee0d0e8f1846151fe4a7d4aa09eaa9f83e71eff11ee5f0dbd0",
+        "stillSet": {
+          "actions": {},
+          "focalHolds": 0,
+          "leaks": 0,
+          "rows": 0
+        },
+        "tracePath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-b/renders/mvp8-7-strict-plagal-1453.jsonl",
+        "traceSha256": "e5cc370a6bebc72ec4c3477733cceedf463be5bcd90d02cdd96df31c81d57d5a",
+        "wavMatch": true,
+        "wavSha256": "fb259614dcd39463e6e255032d7c1d948a52c5951017aa60ec5026f68ea67129"
+      },
+      {
+        "actionCensus": {
+          "direct_focal": 108,
+          "snapped_to_focal": 36
+        },
+        "clippedSamples": 0,
+        "dyadCensus": {
+          "dyadSteps": 36,
+          "dyadUnisonLeaks": 0,
+          "outOfMaskLeadNotes": 0,
+          "partnerNotes": 36,
+          "primarySteps": 144
+        },
+        "expectedSamples": 1905120,
+        "expectedWavSha256": "b5865ce19c89c02b9816d14d08e26afc24a09011918b6aa8d7f5e960ec902e8b",
+        "midiAudit": {
+          "dyadPresenceMatch": true,
+          "leadPrimaryMatch": true,
+          "outOfMaskLeadNotes": 0,
+          "outOfMaskPadNotes": 0,
+          "padVoicedMatch": true
+        },
+        "midiSha256": "5b48f20035a1a9737e9122e7dc252b4ec687274955a5b0412fb964b889dd1864",
+        "name": "mvp8-7-strict-plagal-2773",
+        "nonFiniteSamples": 0,
+        "outsideFocal": [],
+        "peakQ15": 10601,
+        "projectionCensus": {
+          "degree_modulo_7": 60,
+          "direct_orbit_pc": 84
+        },
+        "reRenderMatch": true,
+        "rmsMilli": 60,
+        "samples": 1905120,
+        "seed": "2773@0",
+        "sheetSha256": "98c111600509b153bc66a660ea78e2934b86c38682807f259d54643b78634469",
+        "stillSet": {
+          "actions": {},
+          "focalHolds": 0,
+          "leaks": 0,
+          "rows": 0
+        },
+        "tracePath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-b/renders/mvp8-7-strict-plagal-2773.jsonl",
+        "traceSha256": "57a744982964b6c2de0f22b642dc565c933e45db0791399d5f96084a51453df6",
+        "wavMatch": true,
+        "wavSha256": "b5865ce19c89c02b9816d14d08e26afc24a09011918b6aa8d7f5e960ec902e8b"
+      },
+      {
+        "actionCensus": {
+          "direct_focal": 108,
+          "snapped_to_focal": 36
+        },
+        "clippedSamples": 0,
+        "dyadCensus": {
+          "dyadSteps": 36,
+          "dyadUnisonLeaks": 0,
+          "outOfMaskLeadNotes": 0,
+          "partnerNotes": 36,
+          "primarySteps": 144
+        },
+        "expectedSamples": 1905120,
+        "expectedWavSha256": "afbe5670ed1c45e0f7187b8589879d682505126e544cefd7ba43434751f1b223",
+        "midiAudit": {
+          "dyadPresenceMatch": true,
+          "leadPrimaryMatch": true,
+          "outOfMaskLeadNotes": 0,
+          "outOfMaskPadNotes": 0,
+          "padVoicedMatch": true
+        },
+        "midiSha256": "ae6c905cceb37c1c9a9c45e1a2e88a01994eb7996c6409c2b46b4972518c46aa",
+        "name": "mvp8-7-strict-plagal-1717",
+        "nonFiniteSamples": 0,
+        "outsideFocal": [],
+        "peakQ15": 10793,
+        "projectionCensus": {
+          "degree_modulo_7": 60,
+          "direct_orbit_pc": 84
+        },
+        "reRenderMatch": true,
+        "rmsMilli": 67,
+        "samples": 1905120,
+        "seed": "1717@0",
+        "sheetSha256": "cfa3eb1d51d7e100e318bb40158a3f4c512cc5554292efa1b25036cf9b961721",
+        "stillSet": {
+          "actions": {},
+          "focalHolds": 0,
+          "leaks": 0,
+          "rows": 0
+        },
+        "tracePath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-b/renders/mvp8-7-strict-plagal-1717.jsonl",
+        "traceSha256": "9c1331a68a41184f633c37895d42b801267ef3e9e241a65f89bc8c556422263f",
+        "wavMatch": true,
+        "wavSha256": "afbe5670ed1c45e0f7187b8589879d682505126e544cefd7ba43434751f1b223"
+      }
+    ]
+  },
+  "k5": {
+    "pass": true,
+    "scope": "Task B strict-build traces and render censuses only",
+    "strictOutputsModalColorPass": 0
+  },
+  "llmCalls": 0,
+  "repoWrites": 0,
+  "schemaVersion": "governed-loop.mvp8_7-task-b-receipt.v1",
+  "status": "PASS",
+  "task": "MVP8.7-TB"
+}

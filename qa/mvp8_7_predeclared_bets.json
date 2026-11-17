@@ -1,0 +1,170 @@
+{
+  "base": {
+    "engineSha256": "45225a04df8f57a6eda85b5bc10a167e81b6ba34c2ecea4782781af9fe3b955d",
+    "head": "d724de62c1675cb0062f199f0bf80d6fb823a047",
+    "ledgerSha256": "70a14ff39640127ca1306be86f37dd6e89d23db8bf4116354dd6d9537fd5e7ba",
+    "manifestFiles": 2071,
+    "manifestTotalBytes": 304062543
+  },
+  "bets": {
+    "earGate": {
+      "bar": "SIGNED_HUMAN on arms i/ii/iii",
+      "measured": "PENDING_HUMAN"
+    },
+    "k1Dwell": {
+      "bar": "0 outside the resolved focal set",
+      "measured": "PENDING"
+    },
+    "k1Transit": {
+      "bar": "0 outside the resolved focal set",
+      "measured": "PENDING"
+    },
+    "k2RowInvariance": {
+      "bar": "row fields byte-identical; emittedPc and governanceAction differ only on modal_color_pass rows",
+      "measured": "PENDING"
+    },
+    "k3RenderReproduction": {
+      "bar": "four WAV shas exact",
+      "measured": "PENDING"
+    },
+    "k4DyadInvariants": {
+      "bar": "36 dyad steps, 36 partners, 0 out-of-mask, 0 unison",
+      "measured": "PENDING"
+    },
+    "k5ZeroModalColor": {
+      "bar": "0 modal_color_pass under MVP8.7",
+      "measured": "PENDING"
+    }
+  },
+  "change": {
+    "branchBefore": "            elif orbit_index is not None and 0 <= orbit_index <= 4:\n                emitted = self._snap_pc(emitted, focal_pcs, self.parse(node)[1])\n                action = \"snapped_to_focal\"\n                focal_hit = True\n            else:\n                action = \"modal_color_pass\"\n                focal_hit = False\n",
+    "branchBeforeSha256": "cc5d6fb8556d4b478002ad883d4678bb692e6eca246ba7ffd4d51ef3617dde8e",
+    "conditionAfter": "orbit_index is not None",
+    "conditionBefore": "orbit_index is not None and 0 <= orbit_index <= 4",
+    "file": "tools/governed-loop/mvp8/task-b/mvp8_pentatonic_q_engine.py",
+    "method": "PentatonicEngine.project",
+    "outsideDiffAllowance": [
+      "tests",
+      "receipts",
+      "docs"
+    ],
+    "projectSourceSha256": "8f6023c15c81f909b408d35c7b04e922bdea9d9690a900e333984b22318ea9f3",
+    "snapRule": "forward in station order (distance modulo 12 from emitted), tie-break by station index then pc; _snap_pc byte-identical",
+    "snapSourceSha256": "b8763d76414d83c51c57661a08df0c2de366b8864d1c7cdeacda6d78b9835f11"
+  },
+  "directive": "MVP8.7-KERNEL-MELODY-DIR-1",
+  "earArms": {
+    "i": "strict vs tail A/B on the 2741 plagal (MVP8.7 vs L35 control)",
+    "ii": "strict 20-step default traversal from 1387@0",
+    "iii": "strict Lydian + Mixolydian plagal pair (2773, 1717)"
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "functionalHarmonyWeightsStatus": "recorded_underived_values_adopted_by_decision",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "harmonicBandStatus": "stated_hypothesis",
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + kernel-melody runtime overlay (strict focal snap)",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "lookupPatchStatus": "unpatched_by_decision_option_c",
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "qEngineAdmissionStatus": "unadmitted",
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "lockedDate": "2026-11-16",
+  "protocols": {
+    "k1Dwell": {
+      "check": "emittedPc outside the bar's resolved focal pitchClasses",
+      "nodeCount": 3696,
+      "nodeListSha256": "33619de83464bd815c7bbf01377086d940fa0f993f10a9b952b2247f5433c2bb",
+      "scope": "all governed nodes, q_in=0, k=12, role=dwell",
+      "stepCount": 44352
+    },
+    "k1Transit": {
+      "barSpecs": [
+        {
+          "k": 5
+        },
+        {
+          "k": 12
+        }
+      ],
+      "check": "emittedPc outside the bar's resolved focal pitchClasses",
+      "pairCount": 440,
+      "pairListSha256": "b1c5a11da85b9b141a302aa98070e42000a11ed6de7d36e71f6f1cf007c3530d",
+      "pairRule": "ordered (u@0, v@0), both governed strong-core, v directly governed-adjacent to u, and |container(u) xor container(v)| == 2 (single pitch-class substitution)",
+      "scope": "2-bar chains (transit + dwell) over ordered phase-0 strong-core governed single-pc pairs; q carried via build_trace chaining",
+      "stepCount": 7480,
+      "stillSetPolicy": "observational only; if a chained transit leaks via still_set, report K1 as measured and do not widen the diff"
+    },
+    "k2": {
+      "actionRule": "differs ONLY modal_color_pass -> snapped_to_focal",
+      "emittedPcRule": "differs ONLY where L35 action was modal_color_pass",
+      "f1Sequence": [
+        "2773@11",
+        "2517@11",
+        "2765@11",
+        "2771@11",
+        "2777@11",
+        "1389@0",
+        "695@0",
+        "1389@11",
+        "695@11",
+        "1389@10",
+        "695@10",
+        "1389@9",
+        "695@9",
+        "1389@8",
+        "695@8",
+        "1389@7",
+        "695@7",
+        "1389@6",
+        "695@6",
+        "1389@5"
+      ],
+      "fields": [
+        "qStateIn",
+        "qStateUsed",
+        "nextQ",
+        "orbitIndex",
+        "fifthStackPc",
+        "moduleEmittedPc"
+      ],
+      "scope": "four plagal specs + the frozen F1 default-step node sequence"
+    },
+    "k3": {
+      "renderProtocol": "12-bar plagal 4->1 walk (degrees 4,1; stride 2; depth 3; k=12), voice_lead=True, lead mode governed_dyads_structural",
+      "wavSha256": {
+        "1453": "fb259614dcd39463e6e255032d7c1d948a52c5951017aa60ec5026f68ea67129",
+        "1717": "afbe5670ed1c45e0f7187b8589879d682505126e544cefd7ba43434751f1b223",
+        "2741": "5b876c9e1147a10d9904fdfbadd882431bcf061220d7989dafda60fe40566ac1",
+        "2773": "b5865ce19c89c02b9816d14d08e26afc24a09011918b6aa8d7f5e960ec902e8b"
+      }
+    },
+    "k4": {
+      "dyadSteps": 36,
+      "dyadUnisonLeaks": 0,
+      "outOfMaskLeadNotes": 0,
+      "partnerNotes": 36
+    },
+    "k5": {
+      "bar": 0,
+      "exclusions": [
+        "L35 control baseline traces",
+        "Arm (i) L35 control render",
+        "K2 diff metadata recording modal_color_pass as the L35 side of a transition"
+      ],
+      "scope": "all traces and receipt censuses generated under the MVP8.7 strict build"
+    }
+  },
+  "schemaVersion": "governed-loop.mvp8_7-predeclared-bets.v1",
+  "status": "locked-before-evaluation"
+}

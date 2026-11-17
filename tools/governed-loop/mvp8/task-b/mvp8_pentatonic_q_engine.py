@@ -243,7 +243,7 @@ class PentatonicEngine:
                 emitted = self._snap_pc(emitted, focal_pcs, self.parse(node)[1])
                 action = "snapped_to_focal"
                 focal_hit = True
-            elif orbit_index is not None and 0 <= orbit_index <= 4:
+            elif orbit_index is not None:
                 emitted = self._snap_pc(emitted, focal_pcs, self.parse(node)[1])
                 action = "snapped_to_focal"
                 focal_hit = True

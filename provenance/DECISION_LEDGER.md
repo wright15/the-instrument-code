@@ -4621,3 +4621,33 @@ The manifest is rebound first-class over the entire landed set after this append
 | `directive` | `scrum/plan/mvp8-6-functional-harmony-dir-1-rev1.md` | `86723b4ecfa0c656b97c49b20758c5976e30caccada35e9553fa4c12a8cd0462` |
 
 **(iv) Decisions, verification, and fences.** D-1: Option C — the recorded degree weights enter only through the tier-1 F-term; `W_base` stays flat 50; the `mvp4_task_a.py` office-name lookup stays unpatched. D-2: `D = 50`; the rejected `D = 60` table is recorded at T0. D-3: hybrid P-term `+50` — `(degree, stride)` with container-derived depth-3 shape for the node-independent walks, and exact `(degree, stride, shape)` for the Andalusian per §7.7 Option A with the bar-3 seam-feasibility lookahead preserved. D-4: the eight fences hold — no Roman-numeral-led labels, no weights in the ontology or ladder, zero symbolic floats, `harmonic.C_H` null, Q engine and pressure bridge untouched and unadmitted, bands and character stated hypothesis/choice, menu order and position bias reported with 0 LLM calls, degrees 1-7 and stride. D-5: no push, no tag, no force-push. After the append, the five direct ledger-bound artifacts are re-bound and the three downstream projections regenerated; MANIFEST.json and CHECKSUMS.sha256 are regenerated and the release closure and prose consistency checks re-run.
+
+**Governed-loop L36 landing — MVP8.7 kernel-only melody (strict focal snap) — 2026-11-16.** This is the L36 landing authorized by the Planning Seat (Erick, `--authorize-mvp8-7`, 2026-11-16) after the signed human ear gate. It widens one conditional in `PentatonicEngine.project()` so every non-focal orbit emission is snapped to the resolved focal set, lands the sprint tests, receipts, censuses, directive, and closing report, and appends this one L36 entry. L36 is a working-tree landing followed by one dedicated commit on a review branch; no tag, no push. Audio is excluded as reproducible evidence hashed in the landed receipts; this entry cannot carry its own digest.
+
+**(i) Opening state and append-position proof.** The opening ledger was L35 `70a14ff39640127ca1306be86f37dd6e89d23db8bf4116354dd6d9537fd5e7ba` (465350 B / 4623 lines); HEAD `d724de62c1675cb0062f199f0bf80d6fb823a047`. The complete L35 bytes are preserved byte-identically as the prefix of the post-append ledger; the new L36 entry occurs exactly once at the tail; no prior entry is amended.
+
+**(ii) MVP-8.7 closure.** K1 dwell: 44,352 steps over 3,696 governed nodes, 0 outside the resolved focal set. K1 transit: 440 ordered phase-0 strong-core governed single-pc pairs (7,480 steps), 0 outside the focal set; the still-set branch stayed observational with 0 rows. K2: 0 identity mismatches on the four plagal specs and the F1 default-step node sequence; 202 changed rows, all `modal_color_pass` -> `snapped_to_focal`. K3: the four strict WAV shas reproduce exactly. K4: 36 dyad steps / 36 partners / 0 out-of-mask / 0 unison on each of the four renders. K5: 0 `modal_color_pass` under the MVP8.7 build outputs (L35 controls and K2 diff metadata excluded). The ear gate is SIGNED (seventh signed verdict, 2026-11-16): Arm (i) adopt, Arm (ii) adopt, Arm (iii) adopt. Outcome: `ADOPT`.
+
+**(iii) Landed artifacts.**
+
+| Artifact | Path | SHA-256 |
+|---|---|---|
+| `mvp8_7_task_0_receipt.json` | `qa/mvp8_7_task_0_receipt.json` | `5d3121aae9c59497febeb59ba4cd5581e5453f9ddd2f1fa54daa0356d9d719c9` |
+| `mvp8_7_predeclared_bets.json` | `qa/mvp8_7_predeclared_bets.json` | `82f32fa5be6df9792773c45206c59833cf773e593c4393ce775bbdfa491cd590` |
+| `mvp8_7_task_a_receipt.json` | `qa/mvp8_7_task_a_receipt.json` | `2781f719b31300fe4ede1bffc7ac7ada67988d9636ced72abe714372b0777b6b` |
+| `mvp8_7_task_a_diff.patch` | `qa/mvp8_7_task_a_diff.patch` | `d845daae5a0544a1b32c4cb587ad9d8fa993b67a87b3b7c8223080b8d0699bed` |
+| `mvp8_7_task_b_receipt.json` | `qa/mvp8_7_task_b_receipt.json` | `f724dbdef048029b6cd00b7cbf30c6dfdb2ea08de9a4128aa9045aa97fdc6d4c` |
+| `mvp8_7_k1_dwell_census.jsonl` | `qa/mvp8_7_k1_dwell_census.jsonl` | `5e6a47693936341d945479f81259b213d6ff87a3d68e1203049993f8b9e1a8a5` |
+| `mvp8_7_k1_transit_census.jsonl` | `qa/mvp8_7_k1_transit_census.jsonl` | `069cd73e1850f946f491d4adcf8ba30a2da706061e78c27c3685b4d2bf6802bb` |
+| `mvp8_7_k2_diff_details.jsonl` | `qa/mvp8_7_k2_diff_details.jsonl` | `ee5ae11a805e03f911835e9884c489061affa6efad861822c87b7e86df296f4f` |
+| `mvp8_7_task_c_receipt.json` | `qa/mvp8_7_task_c_receipt.json` | `e0891dbe0c53ac8f76dfacd5b243169c701760d9d7e7d88578e97b46d9bab4ba` |
+| `mvp8_7_task_d_receipt.json` | `qa/mvp8_7_task_d_receipt.json` | `7889b310d5fe43eb0a0ea5f9d8b10e2abcd6ebe775ca8f1497eca8bedab0121e` |
+| `mvp8_7_ear_signature.json` | `qa/mvp8_7_ear_signature.json` | `1acce64a322865e3aeb2a4c1bce010ed72d62eef7b23eda13a02f35e62889b26` |
+| `mvp8-7-kernel-melody-closing-report.md` | `scrum/plan/mvp8-7-kernel-melody-closing-report.md` | `a4505b9728d5e52c2c23ed8422d5230aafa42fa449ad7f5a7a3e37573e0b3f6d` |
+| `mvp8-7-kernel-melody-dir-1.md` | `scrum/plan/mvp8-7-kernel-melody-dir-1.md` | `21b0c60e9c489fe744b32140fc17fa0150a487ac9b93437b11fef4a147db1041` |
+| `test_mvp8_7_kernel_melody.py` | `tests/test_mvp8_7_kernel_melody.py` | `e74668eb73174ffe2198618b9c08b7bc9b0e379b67a357f76213c37e7fc11bc3` |
+| `mvp8_7_ear_scorecard.json` | `qa/mvp8_7_ear_scorecard.json` | `b97ec5e8a68285ed413696d813cbf91364f6f72d682994c12886ec8b2d2ef21d` |
+| `mvp8_7_ear_manifest.json` | `qa/mvp8_7_ear_manifest.json` | `b5215bddb84aedc2bb3c5628e25b3dfb700bb72eb98dce51c25538b3a1cb9a91` |
+| `mvp8_7_task_e_receipt.json` | `qa/mvp8_7_task_e_receipt.json` | `96134c727ce19a2018f95d5e808f996de98c0003174e3ff4e916cbed65ce821b` |
+
+**(iv) Decisions, verification, and fences.** D-1: kernel-only melody; the harmony supplies the modal-color notes. D-2: the snap direction is forward (landed rule); `_snap_pc` is byte-identical. D-3: the still-set branch is untouched and was observational in transit (0 rows, 0 leaks). D-4: the other 9 snap equivalence classes remain explored-and-not-chosen. D-5: MVP-9 §5.1 re-authoring is recorded as a consequence, not in scope. D-6: one conditional only; the Q row, focal resolution, initiation, dyad rule, card, F-term, P-term, gate, census, encoder, planner, and renderer law are untouched. D-7: no Q-engine, band, weight, or card admission; `harmonic.C_H` remains null; zero symbolic floats; 0 LLM calls. D-8: no push, no tag, no force-push. MANIFEST.json and CHECKSUMS.sha256 are regenerated after the append and the landed test runs in the working tree.

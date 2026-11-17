@@ -1,0 +1,255 @@
+{
+  "bets": {
+    "k1Dwell": {
+      "bar": "0 outside the resolved focal set",
+      "outside": 0,
+      "pass": true,
+      "steps": 44352
+    },
+    "k1Transit": {
+      "bar": "0 outside the resolved focal set",
+      "outside": 0,
+      "pairs": 440,
+      "pass": true,
+      "steps": 7480
+    },
+    "k2RowInvariance": {
+      "bar": "row fields byte-identical; emitted/action differ only on modal-color rows",
+      "changedRows": 202,
+      "identityMismatches": 0,
+      "modalColorRows": 202,
+      "pass": true
+    },
+    "k3RenderReproduction": {
+      "bar": "four WAV shas exact",
+      "matches": {
+        "1453@0": true,
+        "1717@0": true,
+        "2741@0": true,
+        "2773@0": true
+      },
+      "pass": true
+    },
+    "k4DyadInvariants": {
+      "bar": "36 dyad steps / 36 partners / 0 out-of-mask / 0 unison",
+      "pass": true,
+      "renders": {
+        "1453@0": {
+          "dyadSteps": 36,
+          "dyadUnisonLeaks": 0,
+          "outOfMaskLeadNotes": 0,
+          "partnerNotes": 36,
+          "primarySteps": 144
+        },
+        "1717@0": {
+          "dyadSteps": 36,
+          "dyadUnisonLeaks": 0,
+          "outOfMaskLeadNotes": 0,
+          "partnerNotes": 36,
+          "primarySteps": 144
+        },
+        "2741@0": {
+          "dyadSteps": 36,
+          "dyadUnisonLeaks": 0,
+          "outOfMaskLeadNotes": 0,
+          "partnerNotes": 36,
+          "primarySteps": 144
+        },
+        "2773@0": {
+          "dyadSteps": 36,
+          "dyadUnisonLeaks": 0,
+          "outOfMaskLeadNotes": 0,
+          "partnerNotes": 36,
+          "primarySteps": 144
+        }
+      }
+    },
+    "k5ZeroModalColor": {
+      "bar": "0 modal_color_pass under MVP8.7 build outputs",
+      "count": 0,
+      "pass": true
+    }
+  },
+  "closingReport": {
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-e/mvp8_7_closing_report.md",
+    "sha256": "a4505b9728d5e52c2c23ed8422d5230aafa42fa449ad7f5a7a3e37573e0b3f6d"
+  },
+  "directive": "MVP8.7-KERNEL-MELODY-DIR-1",
+  "earGate": {
+    "arms": {
+      "i": "adopt",
+      "ii": "adopt",
+      "iii": "adopt"
+    },
+    "signed": true,
+    "signedAt": "2026-11-16",
+    "signedBy": "Erick",
+    "signedWords": "the melodies all sound to match the harmonies, the different melody steps that happen are audible and all work",
+    "status": "SIGNED",
+    "wavSha256": {
+      "arm-i-strict": "5b876c9e1147a10d9904fdfbadd882431bcf061220d7989dafda60fe40566ac1",
+      "arm-i-tail": "f510ad93d82f4df5100a4b817d7044a91b2bf819fdd380a946a29c135c387cbd",
+      "arm-ii": "46336975701982b457ed553d7f16af7d93fe32abc001f7cfc86d953ff2dabbdb",
+      "arm-iii-lydian": "b5865ce19c89c02b9816d14d08e26afc24a09011918b6aa8d7f5e960ec902e8b",
+      "arm-iii-mixolydian": "afbe5670ed1c45e0f7187b8589879d682505126e544cefd7ba43434751f1b223"
+    }
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "functionalHarmonyWeightsStatus": "recorded_underived_values_adopted_by_decision",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "harmonicBandStatus": "stated_hypothesis",
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + kernel-melody runtime overlay (strict focal snap)",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "lookupPatchStatus": "unpatched_by_decision_option_c",
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "qEngineAdmissionStatus": "unadmitted",
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "handoff": {
+    "bytes": 286926,
+    "entries": 27,
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/mvp8_7_handoff.zip",
+    "sha256": "f5f424ec73a2b47897fe029972aa784765f97393a0dcd53dc81a99d1970c1d67"
+  },
+  "inputs": {
+    "closingReportSha256": "a4505b9728d5e52c2c23ed8422d5230aafa42fa449ad7f5a7a3e37573e0b3f6d",
+    "directiveSha256": "21b0c60e9c489fe744b32140fc17fa0150a487ac9b93437b11fef4a147db1041",
+    "earManifestSha256": "b5215bddb84aedc2bb3c5628e25b3dfb700bb72eb98dce51c25538b3a1cb9a91",
+    "earScorecardSha256": "b97ec5e8a68285ed413696d813cbf91364f6f72d682994c12886ec8b2d2ef21d",
+    "landerSha256": "76cc368ad4d09d8253f6e6ff8c82bd74506c1948ab2d4dbbf544f9f9216d8430",
+    "predeclaredBetsSha256": "82f32fa5be6df9792773c45206c59833cf773e593c4393ce775bbdfa491cd590",
+    "signingReceiptSha256": "1acce64a322865e3aeb2a4c1bce010ed72d62eef7b23eda13a02f35e62889b26",
+    "strictEngineSha256": "6be94eee1573dcfeabf6980331118acb3682a4925c1349eed78e61a3f8d29f23",
+    "t0ReceiptSha256": "5d3121aae9c59497febeb59ba4cd5581e5453f9ddd2f1fa54daa0356d9d719c9",
+    "taskAReceiptSha256": "2781f719b31300fe4ede1bffc7ac7ada67988d9636ced72abe714372b0777b6b",
+    "taskBReceiptSha256": "f724dbdef048029b6cd00b7cbf30c6dfdb2ea08de9a4128aa9045aa97fdc6d4c",
+    "taskCReceiptSha256": "e0891dbe0c53ac8f76dfacd5b243169c701760d9d7e7d88578e97b46d9bab4ba",
+    "taskDReceiptSha256": "7889b310d5fe43eb0a0ea5f9d8b10e2abcd6ebe775ca8f1497eca8bedab0121e"
+  },
+  "k5Final": {
+    "excluded": [
+      {
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-0/baseline/l35-f1-default-1387.jsonl",
+        "reason": "L35 control baseline"
+      },
+      {
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-0/baseline/l35-plagal-1453.jsonl",
+        "reason": "L35 control baseline"
+      },
+      {
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-0/baseline/l35-plagal-1717.jsonl",
+        "reason": "L35 control baseline"
+      },
+      {
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-0/baseline/l35-plagal-2741.jsonl",
+        "reason": "L35 control baseline"
+      },
+      {
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-0/baseline/l35-plagal-2773.jsonl",
+        "reason": "L35 control baseline"
+      },
+      {
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-b/mvp8_7_k2_diff_details.jsonl",
+        "reason": "K2 diff metadata"
+      },
+      {
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-0/mvp8_7_task_0_receipt.json",
+        "reason": "T0 L35 control action censuses"
+      }
+    ],
+    "included": [
+      {
+        "count": 0,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-b/renders/mvp8-7-strict-plagal-1453.jsonl"
+      },
+      {
+        "count": 0,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-b/renders/mvp8-7-strict-plagal-1717.jsonl"
+      },
+      {
+        "count": 0,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-b/renders/mvp8-7-strict-plagal-2741.jsonl"
+      },
+      {
+        "count": 0,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-b/renders/mvp8-7-strict-plagal-2773.jsonl"
+      },
+      {
+        "count": 0,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-c/audit_renders/mvp8-7-k4-audit-1453.jsonl"
+      },
+      {
+        "count": 0,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-c/audit_renders/mvp8-7-k4-audit-1717.jsonl"
+      },
+      {
+        "count": 0,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-c/audit_renders/mvp8-7-k4-audit-2741.jsonl"
+      },
+      {
+        "count": 0,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-c/audit_renders/mvp8-7-k4-audit-2773.jsonl"
+      },
+      {
+        "count": 0,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-d/sessions/mvp8-7-arm-ii-strict-f1-default-1387.jsonl"
+      },
+      {
+        "count": 0,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-b/mvp8_7_k1_dwell_census.jsonl"
+      },
+      {
+        "count": 0,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-b/mvp8_7_k1_transit_census.jsonl"
+      },
+      {
+        "count": 0,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-b/mvp8_7_task_b_receipt.json",
+        "scope": "strict census fields"
+      },
+      {
+        "count": 0,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-a/mvp8_7_task_a_receipt.json",
+        "scope": "strict census fields"
+      },
+      {
+        "count": 0,
+        "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-d/mvp8_7_task_d_receipt.json",
+        "scope": "strict arm censuses"
+      }
+    ],
+    "pass": true,
+    "total": 0
+  },
+  "landedTest": {
+    "exit": 0,
+    "pass": true,
+    "tail": [
+      "......                                                                   [100%]",
+      "6 passed in 9.50s"
+    ]
+  },
+  "lander": {
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-e/mvp8_7_land.py",
+    "probeExit": 2,
+    "probeStdout": "REFUSED: --authorize-mvp8-7 is required",
+    "refusesWithoutAuthorization": true
+  },
+  "llmCalls": 0,
+  "outcome": "ADOPT",
+  "repoWrites": 0,
+  "schemaVersion": "governed-loop.mvp8_7-task-e-receipt.v1",
+  "status": "COMPLETE",
+  "task": "MVP8.7-TE",
+  "technicalPass": true
+}

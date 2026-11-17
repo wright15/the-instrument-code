@@ -1,0 +1,225 @@
+{
+  "directive": "MVP8.7-KERNEL-MELODY-DIR-1",
+  "fixedSpecs": {
+    "f1NodeSequence": [
+      "2773@11",
+      "2517@11",
+      "2765@11",
+      "2771@11",
+      "2777@11",
+      "1389@0",
+      "695@0",
+      "1389@11",
+      "695@11",
+      "1389@10",
+      "695@10",
+      "1389@9",
+      "695@9",
+      "1389@8",
+      "695@8",
+      "1389@7",
+      "695@7",
+      "1389@6",
+      "695@6",
+      "1389@5"
+    ],
+    "l35ProjectSourceSha256": "8f6023c15c81f909b408d35c7b04e922bdea9d9690a900e333984b22318ea9f3",
+    "plagalSeeds": [
+      "2741@0",
+      "1453@0",
+      "2773@0",
+      "1717@0"
+    ],
+    "strictProjectSourceSha256": "68469430602b1bbfbb9b384e4b3f285c1541dc72185e9550f17c1005c4b6c500"
+  },
+  "guards": {
+    "bipartiteAdmissionEffect": "none",
+    "bipartiteEvidenceStatus": "planning_evidence",
+    "bipartiteGraphScope": "detached_audit_only",
+    "causationClaim": false,
+    "chaldeanAddressMode": "phase_agnostic_positional_1_to_7",
+    "degreeLadderSpecStatus": "admitted",
+    "functionalHarmonyWeightsStatus": "recorded_underived_values_adopted_by_decision",
+    "globalCHNull": true,
+    "gov517_correspondence_claimed": false,
+    "harmonicBandStatus": "stated_hypothesis",
+    "layer": "SPEC-001 \u00a71.3 overlay dynamics + kernel-melody runtime overlay (strict focal snap)",
+    "ledgerDefinitionStatus": "admitted",
+    "llmCalls": 0,
+    "lookupPatchStatus": "unpatched_by_decision_option_c",
+    "observatoryArtifactClass": "observation_only",
+    "physicalQuantityClaim": false,
+    "qEngineAdmissionStatus": "unadmitted",
+    "still_set_label": "still_set",
+    "tierClassifier": false
+  },
+  "inputs": {
+    "landedEngineSha256": "45225a04df8f57a6eda85b5bc10a167e81b6ba34c2ecea4782781af9fe3b955d",
+    "predeclaredBetsSha256": "82f32fa5be6df9792773c45206c59833cf773e593c4393ce775bbdfa491cd590",
+    "t0ReceiptSha256": "5d3121aae9c59497febeb59ba4cd5581e5453f9ddd2f1fa54daa0356d9d719c9"
+  },
+  "llmCalls": 0,
+  "repoWrites": 0,
+  "schemaVersion": "governed-loop.mvp8_7-task-a-receipt.v1",
+  "status": "PASS",
+  "strictBuild": {
+    "bytes": 20451,
+    "changedLineCount": 2,
+    "diffPath": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-a/mvp8_7_task_a_diff.patch",
+    "diffSha256": "d845daae5a0544a1b32c4cb587ad9d8fa993b67a87b3b7c8223080b8d0699bed",
+    "path": "/home/erick/workspace/scratch-governed-loop-run/mvp8_7_kernel_melody/task-a/mvp8_pentatonic_q_engine_strict.py",
+    "sha256": "6be94eee1573dcfeabf6980331118acb3682a4925c1349eed78e61a3f8d29f23"
+  },
+  "task": "MVP8.7-TA",
+  "unitTests": {
+    "diff_is_one_conditional": {
+      "changedLines": [
+        "-            elif orbit_index is not None and 0 <= orbit_index <= 4:",
+        "+            elif orbit_index is not None:"
+      ],
+      "diffSha256": "d845daae5a0544a1b32c4cb587ad9d8fa993b67a87b3b7c8223080b8d0699bed",
+      "pass": true
+    },
+    "initiation_unchanged": {
+      "mismatches": [],
+      "pass": true,
+      "rows": 68
+    },
+    "snap_pc_byte_identical": {
+      "l35Sha256": "b8763d76414d83c51c57661a08df0c2de366b8864d1c7cdeacda6d78b9835f11",
+      "pass": true,
+      "strictSha256": "b8763d76414d83c51c57661a08df0c2de366b8864d1c7cdeacda6d78b9835f11"
+    },
+    "still_set_unchanged": {
+      "mismatches": [],
+      "pass": true,
+      "rows": 0
+    },
+    "strict_zero_modal_color_on_fixed_specs": {
+      "census": {
+        "1453@0": {
+          "direct_focal": 108,
+          "snapped_to_focal": 36
+        },
+        "1717@0": {
+          "direct_focal": 108,
+          "snapped_to_focal": 36
+        },
+        "2741@0": {
+          "direct_focal": 96,
+          "snapped_to_focal": 48
+        },
+        "2773@0": {
+          "direct_focal": 108,
+          "snapped_to_focal": 36
+        },
+        "f1": {
+          "direct_focal": 169,
+          "snapped_to_focal": 71
+        }
+      },
+      "pass": true
+    },
+    "tail_positions_5_11_snap": {
+      "pass": true,
+      "witnesses": {
+        "10": {
+          "bar": 1,
+          "expectedSnapPc": 0,
+          "found": true,
+          "l35Action": "modal_color_pass",
+          "l35EmittedPc": 5,
+          "moduleEmittedPc": 5,
+          "pass": true,
+          "seed": "2741@0",
+          "strictAction": "snapped_to_focal",
+          "strictEmittedPc": 0,
+          "sub": 10
+        },
+        "11": {
+          "bar": 1,
+          "expectedSnapPc": 0,
+          "found": true,
+          "l35Action": "modal_color_pass",
+          "l35EmittedPc": 5,
+          "moduleEmittedPc": 5,
+          "pass": true,
+          "seed": "2741@0",
+          "strictAction": "snapped_to_focal",
+          "strictEmittedPc": 0,
+          "sub": 11
+        },
+        "5": {
+          "bar": 1,
+          "expectedSnapPc": 0,
+          "found": true,
+          "l35Action": "modal_color_pass",
+          "l35EmittedPc": 11,
+          "moduleEmittedPc": 11,
+          "pass": true,
+          "seed": "2741@0",
+          "strictAction": "snapped_to_focal",
+          "strictEmittedPc": 0,
+          "sub": 5
+        },
+        "6": {
+          "bar": 1,
+          "expectedSnapPc": 0,
+          "found": true,
+          "l35Action": "modal_color_pass",
+          "l35EmittedPc": 11,
+          "moduleEmittedPc": 11,
+          "pass": true,
+          "seed": "2741@0",
+          "strictAction": "snapped_to_focal",
+          "strictEmittedPc": 0,
+          "sub": 6
+        },
+        "7": {
+          "bar": 1,
+          "expectedSnapPc": 3,
+          "found": true,
+          "l35Action": "modal_color_pass",
+          "l35EmittedPc": 1,
+          "moduleEmittedPc": 1,
+          "pass": true,
+          "seed": "1183@0",
+          "strictAction": "snapped_to_focal",
+          "strictEmittedPc": 3,
+          "sub": 7
+        },
+        "8": {
+          "bar": 1,
+          "expectedSnapPc": 10,
+          "found": true,
+          "l35Action": "modal_color_pass",
+          "l35EmittedPc": 8,
+          "moduleEmittedPc": 8,
+          "pass": true,
+          "seed": "1453@0",
+          "strictAction": "snapped_to_focal",
+          "strictEmittedPc": 10,
+          "sub": 8
+        },
+        "9": {
+          "bar": 1,
+          "expectedSnapPc": 10,
+          "found": true,
+          "l35Action": "modal_color_pass",
+          "l35EmittedPc": 3,
+          "moduleEmittedPc": 3,
+          "pass": true,
+          "seed": "1453@0",
+          "strictAction": "snapped_to_focal",
+          "strictEmittedPc": 10,
+          "sub": 9
+        }
+      }
+    },
+    "window_0_4_unchanged": {
+      "mismatches": [],
+      "pass": true,
+      "rows": 272
+    }
+  }
+}
